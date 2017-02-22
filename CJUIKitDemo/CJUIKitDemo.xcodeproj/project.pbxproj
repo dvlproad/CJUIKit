@@ -19,6 +19,11 @@
 		780E463F1E5DFCAE00980127 /* CJRefreshNormalFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = 780E463A1E5DFCAE00980127 /* CJRefreshNormalFooter.m */; };
 		780E46401E5DFCAE00980127 /* CJRefreshNormalHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 780E463C1E5DFCAE00980127 /* CJRefreshNormalHeader.m */; };
 		780E46411E5DFCAE00980127 /* cjRefreshArrowDown@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 780E463E1E5DFCAE00980127 /* cjRefreshArrowDown@2x.png */; };
+		780E465F1E5E0ACF00980127 /* sdRefeshView_arrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 780E46551E5E0ACF00980127 /* sdRefeshView_arrow@2x.png */; };
+		780E46601E5E0ACF00980127 /* CJRefreshFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 780E46581E5E0ACF00980127 /* CJRefreshFooterView.m */; };
+		780E46611E5E0ACF00980127 /* CJRefreshHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 780E465A1E5E0ACF00980127 /* CJRefreshHeaderView.m */; };
+		780E46621E5E0ACF00980127 /* CJRefreshView.m in Sources */ = {isa = PBXBuildFile; fileRef = 780E465C1E5E0ACF00980127 /* CJRefreshView.m */; };
+		780E46631E5E0ACF00980127 /* UIView+CJExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 780E465E1E5E0ACF00980127 /* UIView+CJExtension.m */; };
 		E2649F5BE7F7FEF404688168 /* libPods-CJUIKitDemoTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 935109AAB855F6CC8B84B9A5 /* libPods-CJUIKitDemoTests.a */; };
 /* End PBXBuildFile section */
 
@@ -64,6 +69,16 @@
 		780E463C1E5DFCAE00980127 /* CJRefreshNormalHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJRefreshNormalHeader.m; sourceTree = "<group>"; };
 		780E463E1E5DFCAE00980127 /* cjRefreshArrowDown@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cjRefreshArrowDown@2x.png"; sourceTree = "<group>"; };
 		780E46421E5DFCC900980127 /* CJUIKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CJUIKit.h; sourceTree = "<group>"; };
+		780E46551E5E0ACF00980127 /* sdRefeshView_arrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sdRefeshView_arrow@2x.png"; sourceTree = "<group>"; };
+		780E46561E5E0ACF00980127 /* CJRefresh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJRefresh.h; sourceTree = "<group>"; };
+		780E46571E5E0ACF00980127 /* CJRefreshFooterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJRefreshFooterView.h; sourceTree = "<group>"; };
+		780E46581E5E0ACF00980127 /* CJRefreshFooterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJRefreshFooterView.m; sourceTree = "<group>"; };
+		780E46591E5E0ACF00980127 /* CJRefreshHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJRefreshHeaderView.h; sourceTree = "<group>"; };
+		780E465A1E5E0ACF00980127 /* CJRefreshHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJRefreshHeaderView.m; sourceTree = "<group>"; };
+		780E465B1E5E0ACF00980127 /* CJRefreshView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJRefreshView.h; sourceTree = "<group>"; };
+		780E465C1E5E0ACF00980127 /* CJRefreshView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJRefreshView.m; sourceTree = "<group>"; };
+		780E465D1E5E0ACF00980127 /* UIView+CJExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+CJExtension.h"; sourceTree = "<group>"; };
+		780E465E1E5E0ACF00980127 /* UIView+CJExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+CJExtension.m"; sourceTree = "<group>"; };
 		789CAB597AD073D5F637D193 /* Pods-CJUIKitDemoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CJUIKitDemoTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-CJUIKitDemoTests/Pods-CJUIKitDemoTests.release.xcconfig"; sourceTree = "<group>"; };
 		935109AAB855F6CC8B84B9A5 /* libPods-CJUIKitDemoTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CJUIKitDemoTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9AC0A78AFE86FE250B370A06 /* Pods-CJUIKitDemoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CJUIKitDemoTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CJUIKitDemoTests/Pods-CJUIKitDemoTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -165,6 +180,7 @@
 		780E46361E5DFCAE00980127 /* CJUIKit */ = {
 			isa = PBXGroup;
 			children = (
+				780E46531E5E0ACF00980127 /* CJRefeshView */,
 				780E46371E5DFCAE00980127 /* CJRefreshComponent */,
 				780E46421E5DFCC900980127 /* CJUIKit.h */,
 			);
@@ -196,6 +212,31 @@
 			isa = PBXGroup;
 			children = (
 				780E463E1E5DFCAE00980127 /* cjRefreshArrowDown@2x.png */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		780E46531E5E0ACF00980127 /* CJRefeshView */ = {
+			isa = PBXGroup;
+			children = (
+				780E46541E5E0ACF00980127 /* Resources */,
+				780E46561E5E0ACF00980127 /* CJRefresh.h */,
+				780E46571E5E0ACF00980127 /* CJRefreshFooterView.h */,
+				780E46581E5E0ACF00980127 /* CJRefreshFooterView.m */,
+				780E46591E5E0ACF00980127 /* CJRefreshHeaderView.h */,
+				780E465A1E5E0ACF00980127 /* CJRefreshHeaderView.m */,
+				780E465B1E5E0ACF00980127 /* CJRefreshView.h */,
+				780E465C1E5E0ACF00980127 /* CJRefreshView.m */,
+				780E465D1E5E0ACF00980127 /* UIView+CJExtension.h */,
+				780E465E1E5E0ACF00980127 /* UIView+CJExtension.m */,
+			);
+			path = CJRefeshView;
+			sourceTree = "<group>";
+		};
+		780E46541E5E0ACF00980127 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				780E46551E5E0ACF00980127 /* sdRefeshView_arrow@2x.png */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -334,6 +375,7 @@
 			files = (
 				780E46131E5DF87B00980127 /* LaunchScreen.storyboard in Resources */,
 				780E46411E5DFCAE00980127 /* cjRefreshArrowDown@2x.png in Resources */,
+				780E465F1E5E0ACF00980127 /* sdRefeshView_arrow@2x.png in Resources */,
 				780E46101E5DF87B00980127 /* Assets.xcassets in Resources */,
 				780E460E1E5DF87B00980127 /* Main.storyboard in Resources */,
 			);
@@ -453,7 +495,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				780E46601E5E0ACF00980127 /* CJRefreshFooterView.m in Sources */,
+				780E46611E5E0ACF00980127 /* CJRefreshHeaderView.m in Sources */,
 				780E46401E5DFCAE00980127 /* CJRefreshNormalHeader.m in Sources */,
+				780E46621E5E0ACF00980127 /* CJRefreshView.m in Sources */,
+				780E46631E5E0ACF00980127 /* UIView+CJExtension.m in Sources */,
 				780E460B1E5DF87B00980127 /* ViewController.m in Sources */,
 				780E46081E5DF87B00980127 /* AppDelegate.m in Sources */,
 				780E463F1E5DFCAE00980127 /* CJRefreshNormalFooter.m in Sources */,
