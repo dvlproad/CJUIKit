@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
 
-  s.name         = "CJUIKit"
+  s.name         = "CJBaseUIKit"
   s.version      = "0.0.1"
   s.summary      = "自定义的基础UI"
   s.homepage     = "https://github.com/dvlproad/CJUIKit"
@@ -17,7 +17,7 @@ Pod::Spec.new do |s|
 
   s.platform     = :ios, "7.0"
  
-  s.source       = { :git => "https://github.com/dvlproad/CJUIKit.git", :tag => "CJRefreshComponent_0.0.1" }
+  s.source       = { :git => "https://github.com/dvlproad/CJUIKit.git", :tag => "CJRefreshComponent_0.0.1_1" }
   s.source_files  = "CJUIKit/*.{h,m}"
 
   s.frameworks = "UIKit"
