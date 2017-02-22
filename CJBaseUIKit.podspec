@@ -1,9 +1,21 @@
 Pod::Spec.new do |s|
 
   s.name         = "CJBaseUIKit"
-  s.version      = "0.0.1"
+  s.version      = "0.0.2"
   s.summary      = "自定义的基础UI"
   s.homepage     = "https://github.com/dvlproad/CJUIKit"
+
+  s.description  = <<-DESC
+                   已在CJRefreshComponent中包含pod 'MJRefresh', '~> 3.1.12'
+
+                   A longer description of CJPopupAction in Markdown format.
+
+                   * Think: Why did you write this? What is the focus? What does it do?
+                   * CocoaPods will be using this to generate tags, and improve search results.
+                   * Try to keep it short, snappy and to the point.
+                   * Finally, don't worry about the indent, CocoaPods strips it!
+                   DESC
+  
 
   #s.license      = {
   #  :type => 'Copyright',
@@ -17,7 +29,7 @@ Pod::Spec.new do |s|
 
   s.platform     = :ios, "7.0"
  
-  s.source       = { :git => "https://github.com/dvlproad/CJUIKit.git", :tag => "CJRefreshComponent_0.0.1_1" }
+  s.source       = { :git => "https://github.com/dvlproad/CJUIKit.git", :tag => "CJRefreshComponent_0.0.2" }
   s.source_files  = "CJUIKit/*.{h,m}"
 
   s.frameworks = "UIKit"
@@ -29,6 +41,7 @@ Pod::Spec.new do |s|
 
   s.subspec 'CJRefreshComponent' do |ss|
     ss.source_files = "CJUIKit/CJRefreshComponent/**/*.{h,m}"
+    ss.resources = "CJUIKit/CJRefreshComponent/**/*.{png,xib}"
     ss.dependency 'MJRefresh', '~> 3.1.12'
   end
 
