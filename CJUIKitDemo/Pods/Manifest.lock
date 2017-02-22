@@ -1,0 +1,15 @@
+PODS:
+  - MJRefresh (3.1.12)
+  - PureLayout (3.0.2)
+
+DEPENDENCIES:
+  - MJRefresh (~> 3.1.12)
+  - PureLayout (~> 3.0.2)
+
+SPEC CHECKSUMS:
+  MJRefresh: b96cdb21c4aa75a7b07654311ab2f315c497e806
+  PureLayout: 4d550abe49a94f24c2808b9b95db9131685fe4cd
+
+PODFILE CHECKSUM: 9e9d952e5862d5937ec115ac3e53b8fa03901705
+
+COCOAPODS: 1.1.0.rc.2

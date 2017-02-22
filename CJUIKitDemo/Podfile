@@ -1,0 +1,11 @@
+platform :ios, '7.0'
+#use_frameworks!
+
+target 'CJUIKitDemo' do  
+  pod 'PureLayout', '~> 3.0.2'
+  pod 'MJRefresh', '~> 3.1.12'
+end
+
+target 'CJUIKitDemoTests' do
+   
+end
