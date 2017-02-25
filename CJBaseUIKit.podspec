@@ -40,6 +40,16 @@ Pod::Spec.new do |s|
   # s.xcconfig = { "HEADER_SEARCH_PATHS" => "$(SDKROOT)/usr/include/libxml2" }
   # s.dependency "JSONKit", "~> 1.4"
 
+  s.subspec 'CJImageView' do |ss|
+    ss.source_files = "CJUIKit/CJImageView/**/*.{h,m}"
+    # ss.resources = "CJUIKit/CJImageView/**/*.{png,xib}"
+  end
+
+  s.subspec 'CJTextView' do |ss|
+    ss.source_files = "CJUIKit/CJTextView/**/*.{h,m}"
+    # ss.resources = "CJUIKit/CJTextView/**/*.{png,xib}"
+  end
+
   s.subspec 'CJRefreshComponent' do |ss|
     ss.source_files = "CJUIKit/CJRefreshComponent/**/*.{h,m}"
     ss.resources = "CJUIKit/CJRefreshComponent/**/*.{png,xib}"

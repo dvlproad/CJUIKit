@@ -9,9 +9,11 @@
 #import "HomeViewController.h"
 
 #import "ImageViewController.h"
+#import "TextViewController.h"
 
 typedef NS_ENUM(NSUInteger, TabelIndexType) {
     TabelIndexTypeCJImageView,
+    TabelIndexTypeCJTextView,
 };
 
 @interface HomeViewController ()
@@ -46,6 +48,11 @@ typedef NS_ENUM(NSUInteger, TabelIndexType) {
             cell.textLabel.text = @"CJImageView";
             break;
         }
+        case TabelIndexTypeCJTextView:
+        {
+            cell.textLabel.text = @"CJTextView";
+            break;
+        }
         default:
         {
             break;
@@ -63,6 +70,13 @@ typedef NS_ENUM(NSUInteger, TabelIndexType) {
         {
             ImageViewController *viewController = [[ImageViewController alloc] initWithNibName:@"ImageViewController" bundle:nil];
             viewController.title = NSLocalizedString(@"CJImageView", nil);
+            [self.navigationController pushViewController:viewController animated:YES];
+            break;
+        }
+        case TabelIndexTypeCJTextView:
+        {
+            TextViewController *viewController = [[TextViewController alloc] initWithNibName:@"TextViewController" bundle:nil];
+            viewController.title = NSLocalizedString(@"CJTextView", nil);
             [self.navigationController pushViewController:viewController animated:YES];
             break;
         }
