@@ -1,12 +1,13 @@
 Pod::Spec.new do |s|
 
   s.name         = "CJBaseUIKit"
-  s.version      = "0.0.2"
+  s.version      = "0.0.3"
   s.summary      = "自定义的基础UI"
   s.homepage     = "https://github.com/dvlproad/CJUIKit"
 
   s.description  = <<-DESC
-                   已在CJRefreshComponent中包含pod 'MJRefresh', '~> 3.1.12'
+                    1、CJImageView(包含CJBadgeImageView),用于设置imageView的title和badge;
+                   2、已在CJRefreshComponent中包含pod 'MJRefresh', '~> 3.1.12'
 
                    A longer description of CJPopupAction in Markdown format.
 
@@ -29,7 +30,7 @@ Pod::Spec.new do |s|
 
   s.platform     = :ios, "7.0"
  
-  s.source       = { :git => "https://github.com/dvlproad/CJUIKit.git", :tag => "CJRefreshComponent_0.0.2" }
+  s.source       = { :git => "https://github.com/dvlproad/CJUIKit.git", :tag => "CJImageView_0.0.3" }
   s.source_files  = "CJUIKit/*.{h,m}"
 
   s.frameworks = "UIKit"
