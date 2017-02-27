@@ -230,7 +230,6 @@ static CGFloat kDefaultCJBadgeSize = 20.0f;    /**< 默认badge的大小 */
 
 #pragma mark - addSubView
 - (void)cj_makeView:(UIView *)superView addSubView:(UIView *)subView withEdgeInsets:(UIEdgeInsets)edgeInsets {
-//- (void)cj_addSubView:(UIView *)subView toSuperView:(UIView *)superView withEdgeInsets:(UIEdgeInsets)edgeInsets {
     [superView addSubview:subView];
     subView.translatesAutoresizingMaskIntoConstraints = NO;
     

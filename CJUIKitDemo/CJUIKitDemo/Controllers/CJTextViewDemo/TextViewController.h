@@ -14,7 +14,6 @@
 @property (nonatomic, weak) IBOutlet CJTextView *textView;
 
 
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *bottomViewBottomConstranit;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *bottomViewHeightConstraint;
 
 @end

@@ -17,11 +17,10 @@
 /**
  *  设置文本框最大行数 及 监听文本框文字高度改变
  *
- *  @param maxNumberOfLines         textView的最大行数
- *  @param textHeightChangeBlock    文字高度改变block（文字高度改变会自动调用）
- *  block参数(text) → 文字内容
- *  block参数(textHeight) → 文字高度
+ *  @param maxNumberOfLines             textView的最大行数
+ *  @param textViewHeightChangeBlock    文字高度改变block（文字高度改变会自动调用）
+ *
  */
-- (void)setMaxNumberOfLines:(NSUInteger)maxNumberOfLines textHeightChangeBlock:(void(^)(NSString *text,CGFloat textHeight))textHeightChangeBlock;
+- (void)setMaxNumberOfLines:(NSUInteger)maxNumberOfLines textHeightChangeBlock:(void(^)(NSString *text,CGFloat currentTextViewHeight))textViewHeightChangeBlock;
 
 @end
