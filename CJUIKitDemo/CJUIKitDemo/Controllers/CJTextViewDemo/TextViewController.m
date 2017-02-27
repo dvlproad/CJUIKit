@@ -34,10 +34,30 @@
     }];
 }
 
+- (IBAction)resetTextView:(UIButton *)button {
+    self.textView.text = @"";
+    
+    _bottomViewHeightConstraint.constant = self.textView.originTextViewHeight + 10;
+}
+
+
 // 键盘弹出会调用
 - (void)keyboardWillChangeFrame:(NSNotification *)note
 {
+    // 获取键盘frame
+    CGRect endFrame = [note.userInfo[UIKeyboardFrameEndUserInfoKey] CGRectValue];
     
+    // 获取键盘弹出时长
+    CGFloat duration = [note.userInfo[UIKeyboardAnimationDurationUserInfoKey] floatValue];
+    CGFloat screenH = [UIScreen mainScreen].bounds.size.height;
+    
+    // 修改底部视图距离底部的间距
+    _bottomViewBottomConstraint.constant = endFrame.origin.y != screenH?endFrame.size.height:0;
+    
+    // 约束动画
+    [UIView animateWithDuration:duration animations:^{
+        [self.view layoutIfNeeded];
+    }];
 }
 
 -  (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event

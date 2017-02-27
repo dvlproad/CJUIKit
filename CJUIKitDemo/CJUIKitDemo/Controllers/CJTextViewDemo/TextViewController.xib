@@ -8,6 +8,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TextViewController">
             <connections>
+                <outlet property="bottomViewBottomConstraint" destination="AFx-5s-ODC" id="9Ha-0b-mh4"/>
                 <outlet property="bottomViewHeightConstraint" destination="OGA-Tj-Sjm" id="FIV-Ox-lYB"/>
                 <outlet property="textView" destination="Sgb-bB-HcR" id="QIX-SM-l6n"/>
                 <outlet property="view" destination="iN0-l3-epB" id="KeO-Td-QZH"/>
@@ -70,6 +71,14 @@
                         </mask>
                     </variation>
                 </view>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hmu-yk-MD6">
+                    <frame key="frameInset" minX="111" minY="196" width="191" height="30"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <state key="normal" title="reset"/>
+                    <connections>
+                        <action selector="resetTextView:" destination="-1" eventType="touchUpInside" id="tda-O8-alA"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
@@ -77,6 +86,7 @@
                 <constraint firstItem="2pF-Nh-7df" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="3hV-fN-tZP"/>
                 <constraint firstAttribute="bottom" secondItem="2pF-Nh-7df" secondAttribute="bottom" id="AFx-5s-ODC"/>
             </constraints>
+            <point key="canvasLocation" x="33.5" y="143.5"/>
         </view>
     </objects>
     <resources>

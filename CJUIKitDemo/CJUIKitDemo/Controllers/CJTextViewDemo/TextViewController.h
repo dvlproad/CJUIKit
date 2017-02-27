@@ -15,6 +15,7 @@
 
 
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *bottomViewHeightConstraint;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *bottomViewBottomConstraint;
 
 @end
 

@@ -11,6 +11,7 @@
 @interface CJTextView ()
 
 @property (nonatomic, strong) UITextView *placeholderView;      /**< 占位文字View: 为什么使用UITextView，这样直接让占位文字View = 当前textView,文字就会重叠显示 */
+
 @property (nonatomic, assign) NSInteger currentTexViewHeight;   /**< 文本框的当前高度 */
 @property (nonatomic, assign) NSInteger maxTextViewHeight;      /**< 文字框的最大显示高度 */
 @property (nonatomic, assign) NSUInteger maxNumberOfLines;      /**< 设置textView的最大行数 */
@@ -111,6 +112,10 @@
     self.placeholderView.hidden = self.text.length > 0; //占位文字是否显示
     
     NSInteger currentTextViewHeight = ceilf([self sizeThatFits:CGSizeMake(self.bounds.size.width, MAXFLOAT)].height);
+    if (_originTextViewHeight == 0) {
+        _originTextViewHeight = currentTextViewHeight;
+    }
+    
     if (self.currentTexViewHeight != currentTextViewHeight) { //高度不一样，就改变了高度
         self.currentTexViewHeight = currentTextViewHeight;
         

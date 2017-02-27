@@ -14,6 +14,8 @@
 @property (nonatomic, strong) UIColor *placeholderColor;    /**< 占位文字颜色 */
 @property (nonatomic, assign) NSUInteger cornerRadius;      /**< 设置圆角 */
 
+@property (nonatomic, assign, readonly) NSInteger originTextViewHeight;   /**< 文本框的初始高度 */
+
 /**
  *  设置文本框最大行数 及 监听文本框文字高度改变
  *
