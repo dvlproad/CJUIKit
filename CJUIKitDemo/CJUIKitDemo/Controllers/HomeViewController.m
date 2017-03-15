@@ -10,10 +10,12 @@
 
 #import "ImageViewController.h"
 #import "TextViewController.h"
+#import "KeyboardAvoidingViewController.h"
 
 typedef NS_ENUM(NSUInteger, TabelIndexType) {
     TabelIndexTypeCJImageView,
     TabelIndexTypeCJTextView,
+    TabelIndexTypeCJScrollView,
 };
 
 @interface HomeViewController ()
@@ -53,6 +55,11 @@ typedef NS_ENUM(NSUInteger, TabelIndexType) {
             cell.textLabel.text = @"CJTextView";
             break;
         }
+        case TabelIndexTypeCJScrollView:
+        {
+            cell.textLabel.text = @"CJScrollView";
+            break;
+        }
         default:
         {
             break;
@@ -77,6 +84,13 @@ typedef NS_ENUM(NSUInteger, TabelIndexType) {
         {
             TextViewController *viewController = [[TextViewController alloc] initWithNibName:@"TextViewController" bundle:nil];
             viewController.title = NSLocalizedString(@"CJTextView", nil);
+            [self.navigationController pushViewController:viewController animated:YES];
+            break;
+        }
+        case TabelIndexTypeCJScrollView:
+        {
+            KeyboardAvoidingViewController *viewController = [[KeyboardAvoidingViewController alloc] initWithNibName:@"KeyboardAvoidingViewController" bundle:nil];
+            viewController.title = NSLocalizedString(@"KeyboardAvoiding", nil);
             [self.navigationController pushViewController:viewController animated:YES];
             break;
         }

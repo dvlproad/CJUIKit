@@ -7,8 +7,9 @@
 //
 
 
-
+//参考SDRefreshView
+//所添加的view不像CJRefreshNormalFooter和CJRefreshNormalHeader那样依赖MJRefresh
 #import "CJRefreshHeaderView.h"
 #import "CJRefreshFooterView.h"
 
-//参考SDRefreshView
+

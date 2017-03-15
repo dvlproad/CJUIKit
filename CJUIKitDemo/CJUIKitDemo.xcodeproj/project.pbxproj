@@ -35,6 +35,11 @@
 		789A198E1E61D1C9008081E3 /* plus@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 789A198B1E61D1C9008081E3 /* plus@2x.png */; };
 		789A198F1E61D1C9008081E3 /* smail@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 789A198C1E61D1C9008081E3 /* smail@2x.png */; };
 		789A19901E61D1C9008081E3 /* sound@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 789A198D1E61D1C9008081E3 /* sound@2x.png */; };
+		78E61E9C1E7992A9009B1627 /* CJKeyboardAvoidingScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 78E61E971E7992A9009B1627 /* CJKeyboardAvoidingScrollView.m */; };
+		78E61E9D1E7992A9009B1627 /* CJKeyboardAvoidingTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 78E61E991E7992A9009B1627 /* CJKeyboardAvoidingTableView.m */; };
+		78E61E9E1E7992A9009B1627 /* UIScrollView+CJKeyboardAvoiding.m in Sources */ = {isa = PBXBuildFile; fileRef = 78E61E9B1E7992A9009B1627 /* UIScrollView+CJKeyboardAvoiding.m */; };
+		78E61EA31E7995D4009B1627 /* KeyboardAvoidingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78E61EA11E7995D4009B1627 /* KeyboardAvoidingViewController.m */; };
+		78E61EA41E7995D4009B1627 /* KeyboardAvoidingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 78E61EA21E7995D4009B1627 /* KeyboardAvoidingViewController.xib */; };
 		E2649F5BE7F7FEF404688168 /* libPods-CJUIKitDemoTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 935109AAB855F6CC8B84B9A5 /* libPods-CJUIKitDemoTests.a */; };
 /* End PBXBuildFile section */
 
@@ -108,6 +113,15 @@
 		789A198C1E61D1C9008081E3 /* smail@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "smail@2x.png"; sourceTree = "<group>"; };
 		789A198D1E61D1C9008081E3 /* sound@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sound@2x.png"; sourceTree = "<group>"; };
 		789CAB597AD073D5F637D193 /* Pods-CJUIKitDemoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CJUIKitDemoTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-CJUIKitDemoTests/Pods-CJUIKitDemoTests.release.xcconfig"; sourceTree = "<group>"; };
+		78E61E961E7992A9009B1627 /* CJKeyboardAvoidingScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJKeyboardAvoidingScrollView.h; sourceTree = "<group>"; };
+		78E61E971E7992A9009B1627 /* CJKeyboardAvoidingScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJKeyboardAvoidingScrollView.m; sourceTree = "<group>"; };
+		78E61E981E7992A9009B1627 /* CJKeyboardAvoidingTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJKeyboardAvoidingTableView.h; sourceTree = "<group>"; };
+		78E61E991E7992A9009B1627 /* CJKeyboardAvoidingTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJKeyboardAvoidingTableView.m; sourceTree = "<group>"; };
+		78E61E9A1E7992A9009B1627 /* UIScrollView+CJKeyboardAvoiding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+CJKeyboardAvoiding.h"; sourceTree = "<group>"; };
+		78E61E9B1E7992A9009B1627 /* UIScrollView+CJKeyboardAvoiding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+CJKeyboardAvoiding.m"; sourceTree = "<group>"; };
+		78E61EA01E7995D4009B1627 /* KeyboardAvoidingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeyboardAvoidingViewController.h; sourceTree = "<group>"; };
+		78E61EA11E7995D4009B1627 /* KeyboardAvoidingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeyboardAvoidingViewController.m; sourceTree = "<group>"; };
+		78E61EA21E7995D4009B1627 /* KeyboardAvoidingViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KeyboardAvoidingViewController.xib; sourceTree = "<group>"; };
 		935109AAB855F6CC8B84B9A5 /* libPods-CJUIKitDemoTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CJUIKitDemoTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9AC0A78AFE86FE250B370A06 /* Pods-CJUIKitDemoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CJUIKitDemoTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CJUIKitDemoTests/Pods-CJUIKitDemoTests.debug.xcconfig"; sourceTree = "<group>"; };
 		A078401C0E781545EB72B64D /* libPods-CJUIKitDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CJUIKitDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -213,6 +227,7 @@
 			isa = PBXGroup;
 			children = (
 				780E46421E5DFCC900980127 /* CJUIKit.h */,
+				78E61E941E7992A9009B1627 /* CJScrollView */,
 				789A197A1E61CD53008081E3 /* CJTextView */,
 				789A195F1E61B823008081E3 /* CJImageView */,
 				780E46531E5E0ACF00980127 /* CJRefeshView */,
@@ -291,6 +306,7 @@
 			children = (
 				789A196B1E61BBAE008081E3 /* HomeViewController.h */,
 				789A196C1E61BBAE008081E3 /* HomeViewController.m */,
+				78E61E9F1E799548009B1627 /* CJScrollViewDemo */,
 				789A197E1E61CD6F008081E3 /* CJTextViewDemo */,
 				789A19741E61BCBA008081E3 /* CJImageViewDemo */,
 			);
@@ -356,6 +372,37 @@
 				789A198D1E61D1C9008081E3 /* sound@2x.png */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		78E61E941E7992A9009B1627 /* CJScrollView */ = {
+			isa = PBXGroup;
+			children = (
+				78E61E951E7992A9009B1627 /* CJKeyboardAvoiding */,
+			);
+			path = CJScrollView;
+			sourceTree = "<group>";
+		};
+		78E61E951E7992A9009B1627 /* CJKeyboardAvoiding */ = {
+			isa = PBXGroup;
+			children = (
+				78E61E961E7992A9009B1627 /* CJKeyboardAvoidingScrollView.h */,
+				78E61E971E7992A9009B1627 /* CJKeyboardAvoidingScrollView.m */,
+				78E61E981E7992A9009B1627 /* CJKeyboardAvoidingTableView.h */,
+				78E61E991E7992A9009B1627 /* CJKeyboardAvoidingTableView.m */,
+				78E61E9A1E7992A9009B1627 /* UIScrollView+CJKeyboardAvoiding.h */,
+				78E61E9B1E7992A9009B1627 /* UIScrollView+CJKeyboardAvoiding.m */,
+			);
+			path = CJKeyboardAvoiding;
+			sourceTree = "<group>";
+		};
+		78E61E9F1E799548009B1627 /* CJScrollViewDemo */ = {
+			isa = PBXGroup;
+			children = (
+				78E61EA01E7995D4009B1627 /* KeyboardAvoidingViewController.h */,
+				78E61EA11E7995D4009B1627 /* KeyboardAvoidingViewController.m */,
+				78E61EA21E7995D4009B1627 /* KeyboardAvoidingViewController.xib */,
+			);
+			path = CJScrollViewDemo;
 			sourceTree = "<group>";
 		};
 		E75FB8B4AF71C8FE7F95B93C /* Pods */ = {
@@ -493,6 +540,7 @@
 				780E46131E5DF87B00980127 /* LaunchScreen.storyboard in Resources */,
 				780E46411E5DFCAE00980127 /* cjRefreshArrowDown@2x.png in Resources */,
 				789A19901E61D1C9008081E3 /* sound@2x.png in Resources */,
+				78E61EA41E7995D4009B1627 /* KeyboardAvoidingViewController.xib in Resources */,
 				780E465F1E5E0ACF00980127 /* sdRefeshView_arrow@2x.png in Resources */,
 				789A198F1E61D1C9008081E3 /* smail@2x.png in Resources */,
 				780E46101E5DF87B00980127 /* Assets.xcassets in Resources */,
@@ -617,8 +665,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				78E61E9E1E7992A9009B1627 /* UIScrollView+CJKeyboardAvoiding.m in Sources */,
 				780E46601E5E0ACF00980127 /* CJRefreshFooterView.m in Sources */,
+				78E61E9D1E7992A9009B1627 /* CJKeyboardAvoidingTableView.m in Sources */,
 				780E46611E5E0ACF00980127 /* CJRefreshHeaderView.m in Sources */,
+				78E61E9C1E7992A9009B1627 /* CJKeyboardAvoidingScrollView.m in Sources */,
 				780E46401E5DFCAE00980127 /* CJRefreshNormalHeader.m in Sources */,
 				780E46621E5E0ACF00980127 /* CJRefreshView.m in Sources */,
 				780E46631E5E0ACF00980127 /* UIView+CJExtension.m in Sources */,
@@ -632,6 +683,7 @@
 				780E463F1E5DFCAE00980127 /* CJRefreshNormalFooter.m in Sources */,
 				780E46051E5DF87B00980127 /* main.m in Sources */,
 				789A196D1E61BBAE008081E3 /* HomeViewController.m in Sources */,
+				78E61EA31E7995D4009B1627 /* KeyboardAvoidingViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

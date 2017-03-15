@@ -6,8 +6,9 @@ Pod::Spec.new do |s|
   s.homepage     = "https://github.com/dvlproad/CJUIKit"
 
   s.description  = <<-DESC
-                    1、CJImageView(包含CJBadgeImageView),用于设置imageView的title和badge;
-                   2、已在CJRefreshComponent中包含pod 'MJRefresh', '~> 3.1.12'
+                  1、CJImageView(包含CJBadgeImageView),用于设置imageView的title和badge;
+                  2、CJTextView：类似微信文本输入框实现
+                  3、已在CJRefreshComponent中包含pod 'MJRefresh', '~> 3.1.12'
 
                    A longer description of CJPopupAction in Markdown format.
 
@@ -30,7 +31,7 @@ Pod::Spec.new do |s|
 
   s.platform     = :ios, "7.0"
  
-  s.source       = { :git => "https://github.com/dvlproad/CJUIKit.git", :tag => "CJTextView_0.0.5" }
+  s.source       = { :git => "https://github.com/dvlproad/CJUIKit.git", :tag => "CJKeyboardAvoiding_0.0.5" }
   s.source_files  = "CJUIKit/*.{h,m}"
 
   s.frameworks = "UIKit"
@@ -48,6 +49,16 @@ Pod::Spec.new do |s|
   s.subspec 'CJTextView' do |ss|
     ss.source_files = "CJUIKit/CJTextView/**/*.{h,m}"
     # ss.resources = "CJUIKit/CJTextView/**/*.{png,xib}"
+  end
+
+  s.subspec 'CJScrollView' do |ss|
+    ss.source_files = "CJUIKit/CJScrollView/**/*.{h,m}"
+    # ss.resources = "CJUIKit/CJScrollView/**/*.{png,xib}"
+  end
+
+  s.subspec 'CJRefeshView' do |ss|
+    ss.source_files = "CJUIKit/CJRefeshView/**/*.{h,m}"
+    # ss.resources = "CJUIKit/CJRefeshView/**/*.{png,xib}"
   end
 
   s.subspec 'CJRefreshComponent' do |ss|
