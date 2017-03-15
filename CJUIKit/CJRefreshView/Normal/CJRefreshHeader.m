@@ -1,15 +1,15 @@
 //
-//  CJRefreshHeaderView.m
-//  CJRefreshView
+//  CJRefreshHeader.m
+//  CJRefreshBaseView
 //
 //  Created by dvlproad on 15-2-22.
 //  Copyright (c) 2015年 dvlproad. All rights reserved.
 //
 
-#import "CJRefreshHeaderView.h"
+#import "CJRefreshHeader.h"
 #import "UIView+CJExtension.h"
 
-@implementation CJRefreshHeaderView
+@implementation CJRefreshHeader
 {
     BOOL _hasLayoutedForManuallyRefreshing;
 }
@@ -21,14 +21,14 @@
         self.textForNormalState = @"下拉可以加载最新数据";
         self.stateIndicatorViewNormalTransformAngle = 0;
         self.stateIndicatorViewWillRefreshStateTransformAngle = M_PI;
-        [self setRefreshState:CJRefreshViewStateNormal];
+        [self setRefreshState:CJRefreshBaseViewStateNormal];
     }
     return self;
 }
 
 - (CGFloat)yOfCenterPoint
 {
-    //    if (self.isManuallyRefreshing && self.isEffectedByNavigationController && CJRefreshViewMethodIOS7) {
+    //    if (self.isManuallyRefreshing && self.isEffectedByNavigationController && CJRefreshBaseViewMethodIOS7) {
     //        return - (self.sd_height * 0.5 + self.originalEdgeInsets.top - SDKNavigationBarHeight);
     //    }
     return - (self.sd_height * 0.5);
@@ -70,7 +70,7 @@
 
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
 {
-    if (![keyPath isEqualToString:CJRefreshViewObservingkeyPath] || self.refreshState == CJRefreshViewStateRefreshing) return;
+    if (![keyPath isEqualToString:CJRefreshBaseViewObservingkeyPath] || self.refreshState == CJRefreshBaseViewStateRefreshing) return;
     
     CGFloat y = [change[@"new"] CGPointValue].y;
     CGFloat criticalY = -self.sd_height - self.scrollView.contentInset.top;
@@ -78,20 +78,20 @@
     // 只有在 y<=0 以及 scrollview的高度不为0 时才判断
     if ((y > 0) || (self.scrollView.bounds.size.height == 0)) return;
     
-    // 触发CJRefreshViewStateRefreshing状态
-    if (y <= criticalY && (self.refreshState == CJRefreshViewStateWillRefresh) && !self.scrollView.isDragging) {
-        [self setRefreshState:CJRefreshViewStateRefreshing];
+    // 触发CJRefreshBaseViewStateRefreshing状态
+    if (y <= criticalY && (self.refreshState == CJRefreshBaseViewStateWillRefresh) && !self.scrollView.isDragging) {
+        [self setRefreshState:CJRefreshBaseViewStateRefreshing];
         return;
     }
     
-    // 触发CJRefreshViewStateWillRefresh状态
-    if (y < criticalY && (CJRefreshViewStateNormal == self.refreshState)) {
-        [self setRefreshState:CJRefreshViewStateWillRefresh];
+    // 触发CJRefreshBaseViewStateWillRefresh状态
+    if (y < criticalY && (CJRefreshBaseViewStateNormal == self.refreshState)) {
+        [self setRefreshState:CJRefreshBaseViewStateWillRefresh];
         return;
     }
     
-    if (y > criticalY && self.scrollView.isDragging && (CJRefreshViewStateNormal != self.refreshState)) {
-        [self setRefreshState:CJRefreshViewStateNormal];
+    if (y > criticalY && self.scrollView.isDragging && (CJRefreshBaseViewStateNormal != self.refreshState)) {
+        [self setRefreshState:CJRefreshBaseViewStateNormal];
     }
 }
 

@@ -1,14 +1,14 @@
 //
-//  CJRefreshHeaderView.h
-//  CJRefreshView
+//  CJRefreshHeader.h
+//  CJRefreshBaseView
 //
 //  Created by dvlproad on 15-2-22.
 //  Copyright (c) 2015年 dvlproad. All rights reserved.
 //
 
-#import "CJRefreshView.h"
+#import "CJRefreshBaseView.h"
 
-@interface CJRefreshHeaderView : CJRefreshView
+@interface CJRefreshHeader : CJRefreshBaseView
 
 - (void)autoRefreshWhenViewDidAppear;
 

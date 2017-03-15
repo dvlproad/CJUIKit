@@ -20,8 +20,8 @@
 
 //CJRefeshView
 #import "CJRefresh.h"               //不依赖MJRefresh
-#import "CJRefreshNormalFooter.h"   //依赖MJRefresh
-#import "CJRefreshNormalHeader.h"   //依赖MJRefresh
+#import "CJMJRefreshNormalFooter.h"   //依赖MJRefresh
+#import "CJMJRefreshNormalHeader.h"   //依赖MJRefresh
 
 
 #endif /* CJUIKit_h */

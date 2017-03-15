@@ -7,7 +7,7 @@
 //
 
 #import "ViewController.h"
-#import "CJRefresh.h"
+#import "CJRefreshComponent.h"
 
 @interface ViewController ()
 
@@ -22,7 +22,7 @@
     
     //CJRefresh 的使用示例
     // 上拉加载
-//    CJRefreshFooterView *_refreshFooter = [CJRefreshFooterView refreshView];
+//    CJRefreshFooter *_refreshFooter = [CJRefreshFooter refreshView];
 //    [_refreshFooter addToScrollView:self.tableView];
 //    __weak typeof(self)weakSelf = self;
 //    __weak typeof(_refreshFooter) weakRefreshFooter = _refreshFooter;

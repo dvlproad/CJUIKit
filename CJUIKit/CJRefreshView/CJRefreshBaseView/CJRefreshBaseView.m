@@ -1,20 +1,20 @@
 //
-//  CJRefreshView.m
-//  CJRefreshView
+//  CJRefreshBaseView.m
+//  CJRefreshBaseView
 //
 //  Created by dvlproad on 15-2-22.
 //  Copyright (c) 2015年 dvlproad. All rights reserved.
 //
 
-#import "CJRefreshView.h"
+#import "CJRefreshBaseView.h"
 #import "UIView+CJExtension.h"
 
-CGFloat const CJRefreshViewDefaultHeight = 70.0f;
+CGFloat const CJRefreshBaseViewDefaultHeight = 70.0f;
 CGFloat const SDActivityIndicatorViewMargin = 50.0f;
 CGFloat const SDTextIndicatorMargin = 20.0f;
 CGFloat const SDTimeIndicatorMargin = 10.0f;
 
-@implementation CJRefreshView
+@implementation CJRefreshBaseView
 {
     UIImageView *_stateIndicatorView;
     UILabel *_textIndicator;
@@ -73,14 +73,14 @@ CGFloat const SDTimeIndicatorMargin = 10.0f;
     [super willMoveToSuperview:newSuperview];
     
     if (!newSuperview) {
-        [self.superview removeObserver:self forKeyPath:CJRefreshViewObservingkeyPath];
+        [self.superview removeObserver:self forKeyPath:CJRefreshBaseViewObservingkeyPath];
     }
 }
 
 - (void)didMoveToSuperview
 {
     [super didMoveToSuperview];
-    self.bounds = CGRectMake(0, 0, self.scrollView.frame.size.width, CJRefreshViewDefaultHeight);
+    self.bounds = CGRectMake(0, 0, self.scrollView.frame.size.width, CJRefreshBaseViewDefaultHeight);
 }
 
 - (void)layoutSubviews
@@ -107,7 +107,7 @@ CGFloat const SDTimeIndicatorMargin = 10.0f;
     _scrollView = scrollView;
     
     [_scrollView addSubview:self];
-    [_scrollView addObserver:self forKeyPath:CJRefreshViewObservingkeyPath options:NSKeyValueObservingOptionNew context:nil];
+    [_scrollView addObserver:self forKeyPath:CJRefreshBaseViewObservingkeyPath options:NSKeyValueObservingOptionNew context:nil];
     
     // 默认是在NavigationController控制下，否则可以调用addToScrollView:isEffectedByNavigationController:(设值为NO) 即可
     _isEffectedByNavigationController = YES;
@@ -133,13 +133,13 @@ CGFloat const SDTimeIndicatorMargin = 10.0f;
     return UIEdgeInsetsMake(_originalEdgeInsets.top + edgeInsets.top, _originalEdgeInsets.left + edgeInsets.left, _originalEdgeInsets.bottom + edgeInsets.bottom, _originalEdgeInsets.right + edgeInsets.right);
 }
 
-- (void)setRefreshState:(CJRefreshViewState)refreshState
+- (void)setRefreshState:(CJRefreshBaseViewState)refreshState
 {
     _refreshState = refreshState;
     
     switch (refreshState) {
             // 进入刷新状态
-        case CJRefreshViewStateRefreshing:
+        case CJRefreshBaseViewStateRefreshing:
         {
             if (!_hasSetOriginalInsets) {
                 _originalEdgeInsets = self.scrollView.contentInset;
@@ -152,7 +152,7 @@ CGFloat const SDTimeIndicatorMargin = 10.0f;
             _stateIndicatorView.hidden = YES;
             _activityIndicatorView.hidden = NO;
             _lastRefreshingTimeString = [self refreshingTimeString];
-            _textIndicator.text = CJRefreshViewRefreshingStateText;
+            _textIndicator.text = CJRefreshBaseViewRefreshingStateText;
             
             if (self.beginRefreshingOperation) {
                 self.beginRefreshingOperation();
@@ -168,16 +168,16 @@ CGFloat const SDTimeIndicatorMargin = 10.0f;
         }
             break;
             
-        case CJRefreshViewStateWillRefresh:
+        case CJRefreshBaseViewStateWillRefresh:
         {
-            _textIndicator.text = CJRefreshViewWillRefreshStateText;
+            _textIndicator.text = CJRefreshBaseViewWillRefreshStateText;
             [UIView animateWithDuration:0.5 animations:^{
                 _stateIndicatorView.transform = CGAffineTransformMakeRotation(self.stateIndicatorViewWillRefreshStateTransformAngle);
             }];
         }
             break;
             
-        case CJRefreshViewStateNormal:
+        case CJRefreshBaseViewStateNormal:
         {
             [UIView animateWithDuration:0.5 animations:^{
                 _stateIndicatorView.transform = CGAffineTransformMakeRotation(self.stateIndicatorViewNormalTransformAngle);
@@ -202,7 +202,7 @@ CGFloat const SDTimeIndicatorMargin = 10.0f;
     [UIView animateWithDuration:0.6 animations:^{
         _scrollView.contentInset = _originalEdgeInsets;
     } completion:^(BOOL finished) {
-        [self setRefreshState:CJRefreshViewStateNormal];
+        [self setRefreshState:CJRefreshBaseViewStateNormal];
         if (self.isManuallyRefreshing) {
             self.isManuallyRefreshing = NO;
         }

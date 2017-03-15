@@ -8,7 +8,7 @@ Pod::Spec.new do |s|
   s.description  = <<-DESC
                   1、CJImageView(包含CJBadgeImageView),用于设置imageView的title和badge;
                   2、CJTextView：类似微信文本输入框实现
-                  3、已在CJRefreshComponent中包含pod 'MJRefresh', '~> 3.1.12'
+                  3、已在CJMJRefreshComponent中包含pod 'MJRefresh', '~> 3.1.12'
 
                    A longer description of CJPopupAction in Markdown format.
 
@@ -56,14 +56,14 @@ Pod::Spec.new do |s|
     # ss.resources = "CJUIKit/CJScrollView/**/*.{png,xib}"
   end
 
-  s.subspec 'CJRefeshView' do |ss|
-    ss.source_files = "CJUIKit/CJRefeshView/**/*.{h,m}"
-    # ss.resources = "CJUIKit/CJRefeshView/**/*.{png,xib}"
+  s.subspec 'CJRefreshView' do |ss|
+    ss.source_files = "CJUIKit/CJRefreshView/**/*.{h,m}"
+    # ss.resources = "CJUIKit/CJRefreshView/**/*.{png,xib}"
   end
 
-  s.subspec 'CJRefreshComponent' do |ss|
-    ss.source_files = "CJUIKit/CJRefreshComponent/**/*.{h,m}"
-    ss.resources = "CJUIKit/CJRefreshComponent/**/*.{png,xib}"
+  s.subspec 'CJMJRefreshComponent' do |ss|
+    ss.source_files = "CJUIKit/CJMJRefreshComponent/**/*.{h,m}"
+    ss.resources = "CJUIKit/CJMJRefreshComponent/**/*.{png,xib}"
     ss.dependency 'MJRefresh', '~> 3.1.12'
   end
 

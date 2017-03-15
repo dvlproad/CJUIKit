@@ -1,5 +1,5 @@
 //
-//  CJRefreshNormalHeader.h
+//  CJMJRefreshNormalHeader.h
 //  CJRefreshVCDemo
 //
 //  Created by lichq on 15/11/10.
@@ -8,6 +8,6 @@
 
 #import <MJRefresh/MJRefresh.h>
 
-@interface CJRefreshNormalHeader : MJRefreshStateHeader
+@interface CJMJRefreshNormalHeader : MJRefreshStateHeader
 
 @end

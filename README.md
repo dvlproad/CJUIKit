@@ -1,6 +1,8 @@
 # CJUIKit
 自定义的基础UI控件
 
+如果只想加载某个类，可以用形如`pod 'CJBaseUIKit/CJTextView', '~> 0.0.1'`来加载
+
 
 ## CJImageView
 包含CJBadgeImageView

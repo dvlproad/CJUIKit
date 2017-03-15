@@ -1,5 +1,5 @@
 //
-//  CJRefreshNormalFooter.h
+//  CJMJRefreshNormalFooter.h
 //  CJRefreshVCDemo
 //
 //  Created by lichq on 15/11/10.
@@ -8,6 +8,6 @@
 
 #import <MJRefresh/MJRefresh.h>
 
-@interface CJRefreshNormalFooter : MJRefreshBackStateFooter
+@interface CJMJRefreshNormalFooter : MJRefreshBackStateFooter
 
 @end
