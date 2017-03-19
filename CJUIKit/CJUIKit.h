@@ -12,6 +12,9 @@
 //UIImageView
 #import "CJBadgeImageView.h"
 
+//CJTextField
+#import "CJTextField.h"
+
 //UITextView
 #import "CJTextView.h"
 
@@ -19,9 +22,8 @@
 #import "CJKeyboardAvoidingScrollView.h"
 
 //CJRefeshView
-#import "CJRefresh.h"               //不依赖MJRefresh
-#import "CJMJRefreshNormalFooter.h"   //依赖MJRefresh
-#import "CJMJRefreshNormalHeader.h"   //依赖MJRefresh
+#import "CJRefreshComponent.h"      //不依赖MJRefresh
+#import "CJMJRefreshComponent.h"    //依赖MJRefresh
 
 
 #endif /* CJUIKit_h */

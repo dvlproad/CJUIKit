@@ -36,6 +36,13 @@
     [self commonInit];
 }
 
+- (instancetype)init {
+    if (self = [super init]) {
+        [self commonInit];
+    }
+    return self;
+}
+
 - (instancetype)initWithFrame:(CGRect)frame
 {
     if (self = [super initWithFrame:frame]) {

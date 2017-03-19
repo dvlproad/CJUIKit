@@ -9,11 +9,13 @@
 #import "HomeViewController.h"
 
 #import "ImageViewController.h"
+#import "TextFieldViewController.h"
 #import "TextViewController.h"
 #import "KeyboardAvoidingViewController.h"
 
 typedef NS_ENUM(NSUInteger, TabelIndexType) {
     TabelIndexTypeCJImageView,
+    TabelIndexTypeCJTextField,
     TabelIndexTypeCJTextView,
     TabelIndexTypeCJScrollView,
 };
@@ -50,6 +52,11 @@ typedef NS_ENUM(NSUInteger, TabelIndexType) {
             cell.textLabel.text = @"CJImageView";
             break;
         }
+        case TabelIndexTypeCJTextField:
+        {
+            cell.textLabel.text = @"CJTextField";
+            break;
+        }
         case TabelIndexTypeCJTextView:
         {
             cell.textLabel.text = @"CJTextView";
@@ -77,6 +84,13 @@ typedef NS_ENUM(NSUInteger, TabelIndexType) {
         {
             ImageViewController *viewController = [[ImageViewController alloc] initWithNibName:@"ImageViewController" bundle:nil];
             viewController.title = NSLocalizedString(@"CJImageView", nil);
+            [self.navigationController pushViewController:viewController animated:YES];
+            break;
+        }
+        case TabelIndexTypeCJTextField:
+        {
+            TextFieldViewController *viewController = [[TextFieldViewController alloc] initWithNibName:@"TextFieldViewController" bundle:nil];
+            viewController.title = NSLocalizedString(@"CJTextField", nil);
             [self.navigationController pushViewController:viewController animated:YES];
             break;
         }
