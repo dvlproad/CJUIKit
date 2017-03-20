@@ -16,6 +16,7 @@
 		780E46131E5DF87B00980127 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 780E46111E5DF87B00980127 /* LaunchScreen.storyboard */; };
 		780E461E1E5DF87B00980127 /* CJUIKitDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 780E461D1E5DF87B00980127 /* CJUIKitDemoTests.m */; };
 		780E46291E5DF87B00980127 /* CJUIKitDemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 780E46281E5DF87B00980127 /* CJUIKitDemoUITests.m */; };
+		784B7D4A1E7F7DE300299457 /* UIColor+CJHex.m in Sources */ = {isa = PBXBuildFile; fileRef = 784B7D491E7F7DE300299457 /* UIColor+CJHex.m */; };
 		78553FB51E7D954300F320E6 /* CJTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 78553FB41E7D954300F320E6 /* CJTextField.m */; };
 		78553FBA1E7D981200F320E6 /* TextFieldViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78553FB81E7D981200F320E6 /* TextFieldViewController.m */; };
 		78553FBB1E7D981200F320E6 /* TextFieldViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 78553FB91E7D981200F320E6 /* TextFieldViewController.xib */; };
@@ -82,6 +83,8 @@
 		780E46241E5DF87B00980127 /* CJUIKitDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CJUIKitDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		780E46281E5DF87B00980127 /* CJUIKitDemoUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CJUIKitDemoUITests.m; sourceTree = "<group>"; };
 		780E462A1E5DF87B00980127 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		784B7D481E7F7DE300299457 /* UIColor+CJHex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+CJHex.h"; sourceTree = "<group>"; };
+		784B7D491E7F7DE300299457 /* UIColor+CJHex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+CJHex.m"; sourceTree = "<group>"; };
 		78553FB31E7D954300F320E6 /* CJTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJTextField.h; sourceTree = "<group>"; };
 		78553FB41E7D954300F320E6 /* CJTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJTextField.m; sourceTree = "<group>"; };
 		78553FB71E7D981200F320E6 /* TextFieldViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextFieldViewController.h; sourceTree = "<group>"; };
@@ -232,6 +235,15 @@
 			path = CJUIKitDemoUITests;
 			sourceTree = "<group>";
 		};
+		784B7D471E7F7DE300299457 /* UIColor+CJCategory */ = {
+			isa = PBXGroup;
+			children = (
+				784B7D481E7F7DE300299457 /* UIColor+CJHex.h */,
+				784B7D491E7F7DE300299457 /* UIColor+CJHex.m */,
+			);
+			path = "UIColor+CJCategory";
+			sourceTree = "<group>";
+		};
 		78553FB21E7D952700F320E6 /* CJTextField */ = {
 			isa = PBXGroup;
 			children = (
@@ -337,6 +349,7 @@
 			isa = PBXGroup;
 			children = (
 				78E61ECD1E79AA20009B1627 /* CJUIKit.h */,
+				784B7D471E7F7DE300299457 /* UIColor+CJCategory */,
 				78553FBC1E7D993300F320E6 /* CJSlider */,
 				78553FB21E7D952700F320E6 /* CJTextField */,
 				78E61EF21E79AF0A009B1627 /* CJRefreshView */,
@@ -737,6 +750,7 @@
 				78E61ED01E79AA20009B1627 /* CJMJRefreshNormalFooter.m in Sources */,
 				780E46051E5DF87B00980127 /* main.m in Sources */,
 				78E61F011E79AF0A009B1627 /* CJRefreshFooter.m in Sources */,
+				784B7D4A1E7F7DE300299457 /* UIColor+CJHex.m in Sources */,
 				78E61F021E79AF0A009B1627 /* CJRefreshHeader.m in Sources */,
 				789A196D1E61BBAE008081E3 /* HomeViewController.m in Sources */,
 				78E61ED11E79AA20009B1627 /* CJMJRefreshNormalHeader.m in Sources */,

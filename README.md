@@ -3,11 +3,16 @@
 
 如果只想加载某个类，可以用形如`pod 'CJBaseUIKit/CJTextView', '~> 0.0.1'`来加载
 
+## UIColor+CJCategory
+UIColor+CJHex用来通过十六进制来设置颜色。 支持@“#123456”、 @“0X123456”、 @“123456”三种格式
 
 ## CJImageView
 包含CJBadgeImageView
 
 CJImageView，可为ImageView设置title；而CJBadgeImageView则还可以设置badge;
+
+## CJTextField
+
 
 ## CJTextView
 类似微信文本输入框实现

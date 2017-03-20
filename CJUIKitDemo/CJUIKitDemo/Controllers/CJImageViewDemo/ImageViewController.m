@@ -7,6 +7,7 @@
 //
 
 #import "ImageViewController.h"
+#import "UIColor+CJHex.h"
 
 @interface ImageViewController ()
 
@@ -28,6 +29,11 @@
     [self.badgeImageView setTapCompleteBlock:^(CJImageView *imageView) {
         NSLog(@"点击照片");
     }];
+    
+    //以下三种设置颜色一样
+    self.view.backgroundColor = CJColorFromHex(0x43FBFE);
+    self.view.backgroundColor = [UIColor cjColorWithHexString:@"0x43FBFE"];
+    self.view.backgroundColor = [UIColor cjColorWithHexString:@"#43FBFE"];
 }
 
 - (void)didReceiveMemoryWarning {
