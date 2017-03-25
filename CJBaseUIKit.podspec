@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "CJBaseUIKit"
-  s.version      = "0.0.6"
+  s.version      = "0.0.7"
   s.summary      = "自定义的基础UI"
   s.homepage     = "https://github.com/dvlproad/CJUIKit"
 
@@ -10,6 +10,7 @@ Pod::Spec.new do |s|
                   2、CJTextView：类似微信文本输入框实现
                   3、已在CJMJRefreshComponent中包含pod 'MJRefresh', '~> 3.1.12'
                   *、UIColor+CJHex：用来通过十六进制来设置颜色。 支持@“#123456”、 @“0X123456”、 @“123456”三种格式
+                  4、CJSlider
 
                    A longer description of CJPopupAction in Markdown format.
 
@@ -32,7 +33,7 @@ Pod::Spec.new do |s|
 
   s.platform     = :ios, "7.0"
  
-  s.source       = { :git => "https://github.com/dvlproad/CJUIKit.git", :tag => "UIColor+CJCategory_0.0.6" }
+  s.source       = { :git => "https://github.com/dvlproad/CJUIKit.git", :tag => "CJSlider_0.0.7" }
   s.source_files  = "CJUIKit/*.{h,m}"
 
   s.frameworks = "UIKit"
@@ -45,6 +46,10 @@ Pod::Spec.new do |s|
 
   s.subspec 'UIColor+CJCategory' do |ss|
     ss.source_files = "CJUIKit/UIColor+CJCategory/**/*.{h,m}"
+  end
+
+  s.subspec 'UIImage+CJCategory' do |ss|
+    ss.source_files = "CJUIKit/UIImage+CJCategory/**/*.{h,m}"
   end
 
   s.subspec 'CJImageView' do |ss|
@@ -65,6 +70,22 @@ Pod::Spec.new do |s|
     ss.source_files = "CJUIKit/CJScrollView/**/*.{h,m}"
     # ss.resources = "CJUIKit/CJScrollView/**/*.{png,xib}"
   end
+
+
+  s.subspec 'CJSlider' do |ss|
+    ss.source_files = "CJUIKit/CJSlider/*.{h,m}", "CJUIKit/CJSlider/Model/**/*.{h,m}"
+
+    ss.subspec 'CJPlayerSlider' do |sss|
+      sss.source_files = "CJUIKit/CJSlider/CJPlayerSlider/**/*.{h,m}"
+    end
+
+    ss.subspec 'CJSliderControl' do |sss|
+      sss.source_files = "CJUIKit/CJSlider/CJSliderControl/**/*.{h,m}"
+      sss.dependency 'CJBaseUIKit/UIImage+CJCategory', '~> 0.0.7'
+    end
+    
+  end
+  
 
   s.subspec 'CJRefreshView' do |ss|
     ss.source_files = "CJUIKit/CJRefreshView/**/*.{h,m}"

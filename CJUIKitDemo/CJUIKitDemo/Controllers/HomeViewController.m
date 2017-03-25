@@ -12,12 +12,15 @@
 #import "TextFieldViewController.h"
 #import "TextViewController.h"
 #import "KeyboardAvoidingViewController.h"
+#import "SliderViewController.h"
+
 
 typedef NS_ENUM(NSUInteger, TabelIndexType) {
     TabelIndexTypeCJImageView,
     TabelIndexTypeCJTextField,
     TabelIndexTypeCJTextView,
     TabelIndexTypeCJScrollView,
+    TabelIndexTypeCJSlider,
 };
 
 @interface HomeViewController ()
@@ -29,6 +32,8 @@ typedef NS_ENUM(NSUInteger, TabelIndexType) {
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    self.title = NSLocalizedString(@"Home首页", nil);
     
     [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"cell"];
 }
@@ -65,6 +70,11 @@ typedef NS_ENUM(NSUInteger, TabelIndexType) {
         case TabelIndexTypeCJScrollView:
         {
             cell.textLabel.text = @"CJScrollView";
+            break;
+        }
+        case TabelIndexTypeCJSlider:
+        {
+            cell.textLabel.text = @"CJSlider";
             break;
         }
         default:
@@ -105,6 +115,13 @@ typedef NS_ENUM(NSUInteger, TabelIndexType) {
         {
             KeyboardAvoidingViewController *viewController = [[KeyboardAvoidingViewController alloc] initWithNibName:@"KeyboardAvoidingViewController" bundle:nil];
             viewController.title = NSLocalizedString(@"KeyboardAvoiding", nil);
+            [self.navigationController pushViewController:viewController animated:YES];
+            break;
+        }
+        case TabelIndexTypeCJSlider:
+        {
+            SliderViewController *viewController = [[SliderViewController alloc] initWithNibName:@"SliderViewController" bundle:nil];
+            viewController.title = NSLocalizedString(@"CJSliderControl", nil);
             [self.navigationController pushViewController:viewController animated:YES];
             break;
         }

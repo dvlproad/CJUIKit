@@ -16,6 +16,26 @@
 		780E46131E5DF87B00980127 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 780E46111E5DF87B00980127 /* LaunchScreen.storyboard */; };
 		780E461E1E5DF87B00980127 /* CJUIKitDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 780E461D1E5DF87B00980127 /* CJUIKitDemoTests.m */; };
 		780E46291E5DF87B00980127 /* CJUIKitDemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 780E46281E5DF87B00980127 /* CJUIKitDemoUITests.m */; };
+		782708D21E86732C00E21433 /* slider_double_thumbImage_a@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 782708C31E86732C00E21433 /* slider_double_thumbImage_a@2x.png */; };
+		782708D31E86732C00E21433 /* slider_double_thumbImage_a@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 782708C41E86732C00E21433 /* slider_double_thumbImage_a@3x.png */; };
+		782708D41E86732C00E21433 /* slider_double_thumbImage_b@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 782708C51E86732C00E21433 /* slider_double_thumbImage_b@2x.png */; };
+		782708D51E86732C00E21433 /* slider_double_thumbImage_b@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 782708C61E86732C00E21433 /* slider_double_thumbImage_b@3x.png */; };
+		782708D61E86732C00E21433 /* slider_maximum_trackimage@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 782708C71E86732C00E21433 /* slider_maximum_trackimage@2x.png */; };
+		782708D71E86732C00E21433 /* slider_maximum_trackimage@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 782708C81E86732C00E21433 /* slider_maximum_trackimage@3x.png */; };
+		782708D81E86732C00E21433 /* slider_minimum_trackimage@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 782708C91E86732C00E21433 /* slider_minimum_trackimage@2x.png */; };
+		782708D91E86732C00E21433 /* slider_minimum_trackimage@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 782708CA1E86732C00E21433 /* slider_minimum_trackimage@3x.png */; };
+		782708DA1E86732C00E21433 /* slider_thumbImage@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 782708CB1E86732C00E21433 /* slider_thumbImage@2x.png */; };
+		782708DB1E86732C00E21433 /* slider_thumbImage@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 782708CC1E86732C00E21433 /* slider_thumbImage@3x.png */; };
+		782708DC1E86732C00E21433 /* SliderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 782708CE1E86732C00E21433 /* SliderViewController.m */; };
+		782708DD1E86732C00E21433 /* SliderViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 782708CF1E86732C00E21433 /* SliderViewController.xib */; };
+		782708E31E86772600E21433 /* CJAdsorbModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 782708E01E86772600E21433 /* CJAdsorbModel.m */; };
+		782708E41E86772600E21433 /* CJBaseSlider.m in Sources */ = {isa = PBXBuildFile; fileRef = 782708E21E86772600E21433 /* CJBaseSlider.m */; };
+		782708E81E867C4700E21433 /* UIImage+CJCreate.m in Sources */ = {isa = PBXBuildFile; fileRef = 782708E71E867C4700E21433 /* UIImage+CJCreate.m */; };
+		782709021E867EFA00E21433 /* CJPlayerSlider.m in Sources */ = {isa = PBXBuildFile; fileRef = 782708F81E867EFA00E21433 /* CJPlayerSlider.m */; };
+		782709031E867EFA00E21433 /* CJRangeSliderControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 782708FB1E867EFA00E21433 /* CJRangeSliderControl.m */; };
+		782709041E867EFA00E21433 /* CJSliderControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 782708FD1E867EFA00E21433 /* CJSliderControl.m */; };
+		782709051E867EFA00E21433 /* CJSliderPopover.m in Sources */ = {isa = PBXBuildFile; fileRef = 782708FF1E867EFA00E21433 /* CJSliderPopover.m */; };
+		782709061E867EFA00E21433 /* CJSliderThumb.m in Sources */ = {isa = PBXBuildFile; fileRef = 782709011E867EFA00E21433 /* CJSliderThumb.m */; };
 		784B7D4A1E7F7DE300299457 /* UIColor+CJHex.m in Sources */ = {isa = PBXBuildFile; fileRef = 784B7D491E7F7DE300299457 /* UIColor+CJHex.m */; };
 		78553FB51E7D954300F320E6 /* CJTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 78553FB41E7D954300F320E6 /* CJTextField.m */; };
 		78553FBA1E7D981200F320E6 /* TextFieldViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78553FB81E7D981200F320E6 /* TextFieldViewController.m */; };
@@ -83,6 +103,36 @@
 		780E46241E5DF87B00980127 /* CJUIKitDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CJUIKitDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		780E46281E5DF87B00980127 /* CJUIKitDemoUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CJUIKitDemoUITests.m; sourceTree = "<group>"; };
 		780E462A1E5DF87B00980127 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		782708C31E86732C00E21433 /* slider_double_thumbImage_a@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "slider_double_thumbImage_a@2x.png"; sourceTree = "<group>"; };
+		782708C41E86732C00E21433 /* slider_double_thumbImage_a@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "slider_double_thumbImage_a@3x.png"; sourceTree = "<group>"; };
+		782708C51E86732C00E21433 /* slider_double_thumbImage_b@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "slider_double_thumbImage_b@2x.png"; sourceTree = "<group>"; };
+		782708C61E86732C00E21433 /* slider_double_thumbImage_b@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "slider_double_thumbImage_b@3x.png"; sourceTree = "<group>"; };
+		782708C71E86732C00E21433 /* slider_maximum_trackimage@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "slider_maximum_trackimage@2x.png"; sourceTree = "<group>"; };
+		782708C81E86732C00E21433 /* slider_maximum_trackimage@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "slider_maximum_trackimage@3x.png"; sourceTree = "<group>"; };
+		782708C91E86732C00E21433 /* slider_minimum_trackimage@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "slider_minimum_trackimage@2x.png"; sourceTree = "<group>"; };
+		782708CA1E86732C00E21433 /* slider_minimum_trackimage@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "slider_minimum_trackimage@3x.png"; sourceTree = "<group>"; };
+		782708CB1E86732C00E21433 /* slider_thumbImage@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "slider_thumbImage@2x.png"; sourceTree = "<group>"; };
+		782708CC1E86732C00E21433 /* slider_thumbImage@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "slider_thumbImage@3x.png"; sourceTree = "<group>"; };
+		782708CD1E86732C00E21433 /* SliderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SliderViewController.h; sourceTree = "<group>"; };
+		782708CE1E86732C00E21433 /* SliderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SliderViewController.m; sourceTree = "<group>"; };
+		782708CF1E86732C00E21433 /* SliderViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SliderViewController.xib; sourceTree = "<group>"; };
+		782708DF1E86772600E21433 /* CJAdsorbModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJAdsorbModel.h; sourceTree = "<group>"; };
+		782708E01E86772600E21433 /* CJAdsorbModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJAdsorbModel.m; sourceTree = "<group>"; };
+		782708E11E86772600E21433 /* CJBaseSlider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJBaseSlider.h; sourceTree = "<group>"; };
+		782708E21E86772600E21433 /* CJBaseSlider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJBaseSlider.m; sourceTree = "<group>"; };
+		782708E61E867C4700E21433 /* UIImage+CJCreate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+CJCreate.h"; sourceTree = "<group>"; };
+		782708E71E867C4700E21433 /* UIImage+CJCreate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+CJCreate.m"; sourceTree = "<group>"; };
+		782708F71E867EFA00E21433 /* CJPlayerSlider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJPlayerSlider.h; sourceTree = "<group>"; };
+		782708F81E867EFA00E21433 /* CJPlayerSlider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJPlayerSlider.m; sourceTree = "<group>"; };
+		782708FA1E867EFA00E21433 /* CJRangeSliderControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJRangeSliderControl.h; sourceTree = "<group>"; };
+		782708FB1E867EFA00E21433 /* CJRangeSliderControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJRangeSliderControl.m; sourceTree = "<group>"; };
+		782708FC1E867EFA00E21433 /* CJSliderControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJSliderControl.h; sourceTree = "<group>"; };
+		782708FD1E867EFA00E21433 /* CJSliderControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJSliderControl.m; sourceTree = "<group>"; };
+		782708FE1E867EFA00E21433 /* CJSliderPopover.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJSliderPopover.h; sourceTree = "<group>"; };
+		782708FF1E867EFA00E21433 /* CJSliderPopover.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJSliderPopover.m; sourceTree = "<group>"; };
+		782709001E867EFA00E21433 /* CJSliderThumb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJSliderThumb.h; sourceTree = "<group>"; };
+		782709011E867EFA00E21433 /* CJSliderThumb.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJSliderThumb.m; sourceTree = "<group>"; };
+		782709071E867F0B00E21433 /* CJSlider.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CJSlider.h; sourceTree = "<group>"; };
 		784B7D481E7F7DE300299457 /* UIColor+CJHex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+CJHex.h"; sourceTree = "<group>"; };
 		784B7D491E7F7DE300299457 /* UIColor+CJHex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+CJHex.m"; sourceTree = "<group>"; };
 		78553FB31E7D954300F320E6 /* CJTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJTextField.h; sourceTree = "<group>"; };
@@ -235,6 +285,76 @@
 			path = CJUIKitDemoUITests;
 			sourceTree = "<group>";
 		};
+		782708C11E86732C00E21433 /* CJSliderDemo */ = {
+			isa = PBXGroup;
+			children = (
+				782708C21E86732C00E21433 /* Resources */,
+				782708CD1E86732C00E21433 /* SliderViewController.h */,
+				782708CE1E86732C00E21433 /* SliderViewController.m */,
+				782708CF1E86732C00E21433 /* SliderViewController.xib */,
+			);
+			path = CJSliderDemo;
+			sourceTree = "<group>";
+		};
+		782708C21E86732C00E21433 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				782708C31E86732C00E21433 /* slider_double_thumbImage_a@2x.png */,
+				782708C41E86732C00E21433 /* slider_double_thumbImage_a@3x.png */,
+				782708C51E86732C00E21433 /* slider_double_thumbImage_b@2x.png */,
+				782708C61E86732C00E21433 /* slider_double_thumbImage_b@3x.png */,
+				782708C71E86732C00E21433 /* slider_maximum_trackimage@2x.png */,
+				782708C81E86732C00E21433 /* slider_maximum_trackimage@3x.png */,
+				782708C91E86732C00E21433 /* slider_minimum_trackimage@2x.png */,
+				782708CA1E86732C00E21433 /* slider_minimum_trackimage@3x.png */,
+				782708CB1E86732C00E21433 /* slider_thumbImage@2x.png */,
+				782708CC1E86732C00E21433 /* slider_thumbImage@3x.png */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		782708DE1E86772600E21433 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				782708DF1E86772600E21433 /* CJAdsorbModel.h */,
+				782708E01E86772600E21433 /* CJAdsorbModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		782708E51E867C2800E21433 /* UIImage+CJCategory */ = {
+			isa = PBXGroup;
+			children = (
+				782708E61E867C4700E21433 /* UIImage+CJCreate.h */,
+				782708E71E867C4700E21433 /* UIImage+CJCreate.m */,
+			);
+			path = "UIImage+CJCategory";
+			sourceTree = "<group>";
+		};
+		782708F61E867EFA00E21433 /* CJPlayerSlider */ = {
+			isa = PBXGroup;
+			children = (
+				782708F71E867EFA00E21433 /* CJPlayerSlider.h */,
+				782708F81E867EFA00E21433 /* CJPlayerSlider.m */,
+			);
+			path = CJPlayerSlider;
+			sourceTree = "<group>";
+		};
+		782708F91E867EFA00E21433 /* CJSliderControl */ = {
+			isa = PBXGroup;
+			children = (
+				782708FA1E867EFA00E21433 /* CJRangeSliderControl.h */,
+				782708FB1E867EFA00E21433 /* CJRangeSliderControl.m */,
+				782708FC1E867EFA00E21433 /* CJSliderControl.h */,
+				782708FD1E867EFA00E21433 /* CJSliderControl.m */,
+				782708FE1E867EFA00E21433 /* CJSliderPopover.h */,
+				782708FF1E867EFA00E21433 /* CJSliderPopover.m */,
+				782709001E867EFA00E21433 /* CJSliderThumb.h */,
+				782709011E867EFA00E21433 /* CJSliderThumb.m */,
+			);
+			path = CJSliderControl;
+			sourceTree = "<group>";
+		};
 		784B7D471E7F7DE300299457 /* UIColor+CJCategory */ = {
 			isa = PBXGroup;
 			children = (
@@ -266,6 +386,12 @@
 		78553FBC1E7D993300F320E6 /* CJSlider */ = {
 			isa = PBXGroup;
 			children = (
+				782708DE1E86772600E21433 /* Model */,
+				782708E11E86772600E21433 /* CJBaseSlider.h */,
+				782708E21E86772600E21433 /* CJBaseSlider.m */,
+				782708F61E867EFA00E21433 /* CJPlayerSlider */,
+				782708F91E867EFA00E21433 /* CJSliderControl */,
+				782709071E867F0B00E21433 /* CJSlider.h */,
 			);
 			path = CJSlider;
 			sourceTree = "<group>";
@@ -275,6 +401,7 @@
 			children = (
 				789A196B1E61BBAE008081E3 /* HomeViewController.h */,
 				789A196C1E61BBAE008081E3 /* HomeViewController.m */,
+				782708C11E86732C00E21433 /* CJSliderDemo */,
 				78553FB61E7D97F900F320E6 /* CJTextFieldDemo */,
 				78E61E9F1E799548009B1627 /* CJScrollViewDemo */,
 				789A197E1E61CD6F008081E3 /* CJTextViewDemo */,
@@ -349,6 +476,7 @@
 			isa = PBXGroup;
 			children = (
 				78E61ECD1E79AA20009B1627 /* CJUIKit.h */,
+				782708E51E867C2800E21433 /* UIImage+CJCategory */,
 				784B7D471E7F7DE300299457 /* UIColor+CJCategory */,
 				78553FBC1E7D993300F320E6 /* CJSlider */,
 				78553FB21E7D952700F320E6 /* CJTextField */,
@@ -561,7 +689,7 @@
 		780E45F81E5DF87B00980127 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0800;
+				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = dvlproad;
 				TargetAttributes = {
 					780E45FF1E5DF87B00980127 = {
@@ -605,18 +733,29 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				782708D61E86732C00E21433 /* slider_maximum_trackimage@2x.png in Resources */,
+				782708D51E86732C00E21433 /* slider_double_thumbImage_b@3x.png in Resources */,
 				78E61F031E79AF0A009B1627 /* sdRefeshView_arrow@2x.png in Resources */,
 				780E46131E5DF87B00980127 /* LaunchScreen.storyboard in Resources */,
+				782708D71E86732C00E21433 /* slider_maximum_trackimage@3x.png in Resources */,
 				78E61ED21E79AA20009B1627 /* cjRefreshArrowDown@2x.png in Resources */,
 				789A19901E61D1C9008081E3 /* sound@2x.png in Resources */,
+				782708D31E86732C00E21433 /* slider_double_thumbImage_a@3x.png in Resources */,
+				782708DA1E86732C00E21433 /* slider_thumbImage@2x.png in Resources */,
 				78E61EA41E7995D4009B1627 /* KeyboardAvoidingViewController.xib in Resources */,
 				789A198F1E61D1C9008081E3 /* smail@2x.png in Resources */,
+				782708DD1E86732C00E21433 /* SliderViewController.xib in Resources */,
 				780E46101E5DF87B00980127 /* Assets.xcassets in Resources */,
+				782708D21E86732C00E21433 /* slider_double_thumbImage_a@2x.png in Resources */,
+				782708D81E86732C00E21433 /* slider_minimum_trackimage@2x.png in Resources */,
 				789A198E1E61D1C9008081E3 /* plus@2x.png in Resources */,
+				782708D41E86732C00E21433 /* slider_double_thumbImage_b@2x.png in Resources */,
+				782708DB1E86732C00E21433 /* slider_thumbImage@3x.png in Resources */,
 				78553FBB1E7D981200F320E6 /* TextFieldViewController.xib in Resources */,
 				789A19791E61BCBA008081E3 /* ImageViewController.xib in Resources */,
 				780E460E1E5DF87B00980127 /* Main.storyboard in Resources */,
 				789A19831E61CE93008081E3 /* TextViewController.xib in Resources */,
+				782708D91E86732C00E21433 /* slider_minimum_trackimage@3x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -735,7 +874,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				78553FBA1E7D981200F320E6 /* TextFieldViewController.m in Sources */,
+				782709061E867EFA00E21433 /* CJSliderThumb.m in Sources */,
+				782708E31E86772600E21433 /* CJAdsorbModel.m in Sources */,
+				782709021E867EFA00E21433 /* CJPlayerSlider.m in Sources */,
 				78E61EDA1E79AA20009B1627 /* UIScrollView+CJKeyboardAvoiding.m in Sources */,
+				782708E81E867C4700E21433 /* UIImage+CJCreate.m in Sources */,
+				782709041E867EFA00E21433 /* CJSliderControl.m in Sources */,
 				78E61F081E79AF41009B1627 /* CJRefreshBaseView.m in Sources */,
 				789A19781E61BCBA008081E3 /* ImageViewController.m in Sources */,
 				78E61EDB1E79AA20009B1627 /* CJTextView.m in Sources */,
@@ -743,12 +887,15 @@
 				780E460B1E5DF87B00980127 /* ViewController.m in Sources */,
 				78E61ED81E79AA20009B1627 /* CJKeyboardAvoidingScrollView.m in Sources */,
 				780E46081E5DF87B00980127 /* AppDelegate.m in Sources */,
+				782708E41E86772600E21433 /* CJBaseSlider.m in Sources */,
 				78E61ECE1E79AA20009B1627 /* CJBadgeImageView.m in Sources */,
+				782708DC1E86732C00E21433 /* SliderViewController.m in Sources */,
 				78E61ECF1E79AA20009B1627 /* CJImageView.m in Sources */,
 				789A19811E61CD6F008081E3 /* TextViewController.m in Sources */,
 				78E61F041E79AF0A009B1627 /* UIView+CJExtension.m in Sources */,
 				78E61ED01E79AA20009B1627 /* CJMJRefreshNormalFooter.m in Sources */,
 				780E46051E5DF87B00980127 /* main.m in Sources */,
+				782709051E867EFA00E21433 /* CJSliderPopover.m in Sources */,
 				78E61F011E79AF0A009B1627 /* CJRefreshFooter.m in Sources */,
 				784B7D4A1E7F7DE300299457 /* UIColor+CJHex.m in Sources */,
 				78E61F021E79AF0A009B1627 /* CJRefreshHeader.m in Sources */,
@@ -756,6 +903,7 @@
 				78E61ED11E79AA20009B1627 /* CJMJRefreshNormalHeader.m in Sources */,
 				78553FB51E7D954300F320E6 /* CJTextField.m in Sources */,
 				78E61EA31E7995D4009B1627 /* KeyboardAvoidingViewController.m in Sources */,
+				782709031E867EFA00E21433 /* CJRangeSliderControl.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -828,6 +976,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -876,6 +1025,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
