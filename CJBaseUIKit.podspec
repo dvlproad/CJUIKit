@@ -52,6 +52,14 @@ Pod::Spec.new do |s|
     ss.source_files = "CJUIKit/UIImage+CJCategory/**/*.{h,m}"
   end
 
+  s.subspec 'UIView+Category' do |ss|
+    ss.source_files = "CJUIKit/UIView+Category/**/*.{h,m}"
+  end
+
+  s.subspec 'UIButton+CJCategory' do |ss|
+    ss.source_files = "CJUIKit/UIButton+CJCategory/**/*.{h,m}"
+  end
+
   s.subspec 'CJImageView' do |ss|
     ss.source_files = "CJUIKit/CJImageView/**/*.{h,m}"
     # ss.resources = "CJUIKit/CJImageView/**/*.{png,xib}"

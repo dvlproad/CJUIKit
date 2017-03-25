@@ -1,6 +1,6 @@
 //
 //  CJKeyboardAvoidingScrollView.h
-//  AllScrollViewDemo
+//  CJUIKitDemo
 //
 //  Created by lichq on 8/10/13.
 //  Copyright (c) 2013 ciyouzen. All rights reserved.
