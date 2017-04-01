@@ -15,12 +15,16 @@
 #import "SliderViewController.h"
 
 
+#import "ImageChangeColorViewController.h"
+
 typedef NS_ENUM(NSUInteger, TabelIndexType) {
     TabelIndexTypeCJImageView,
     TabelIndexTypeCJTextField,
     TabelIndexTypeCJTextView,
     TabelIndexTypeCJScrollView,
     TabelIndexTypeCJSlider,
+    
+    TabelIndexTypeUIImage,
 };
 
 @interface HomeViewController ()
@@ -77,6 +81,11 @@ typedef NS_ENUM(NSUInteger, TabelIndexType) {
             cell.textLabel.text = @"CJSlider";
             break;
         }
+        case TabelIndexTypeUIImage:
+        {
+            cell.textLabel.text = @"UIImage";
+            break;
+        }
         default:
         {
             break;
@@ -123,6 +132,14 @@ typedef NS_ENUM(NSUInteger, TabelIndexType) {
             SliderViewController *viewController = [[SliderViewController alloc] initWithNibName:@"SliderViewController" bundle:nil];
             viewController.title = NSLocalizedString(@"CJSliderControl", nil);
             [self.navigationController pushViewController:viewController animated:YES];
+            break;
+        }
+        case TabelIndexTypeUIImage:
+        {
+            ImageChangeColorViewController *viewController = [[ImageChangeColorViewController alloc] initWithNibName:@"ImageChangeColorViewController" bundle:nil];
+            viewController.title = NSLocalizedString(@"UIImage", nil);
+            [self.navigationController pushViewController:viewController animated:YES];
+            break;
             break;
         }
         default:

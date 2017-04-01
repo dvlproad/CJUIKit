@@ -7,9 +7,12 @@
 //
 
 #import "CJRangeSliderControl.h"
-#import "UIImage+CJCreate.h"
+
 #import "CJSliderThumb.h"
 #import "CJSliderPopover.h"
+
+#import "UIImage+CJCreate.h"
+#import "UIImage+CJTransformSize.h"
 
 static CGFloat const kCJRangeSliderControlLeftPadding                         = 10.0f;
 static CGFloat const kCJRangeSliderControlBackgroundImageViewHeight           = 15.0f;

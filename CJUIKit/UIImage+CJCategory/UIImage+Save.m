@@ -12,7 +12,7 @@
 
 - (NSString *)getImageCachePath{
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES);
-    NSString *diskCachePath = [[paths objectAtIndex:0] stringByAppendingPathComponent:@"ImageCache"];
+    NSString *diskCachePath = [[paths objectAtIndex:0] stringByAppendingPathComponent:@"CJImageCache"];
     return diskCachePath;
 }
 

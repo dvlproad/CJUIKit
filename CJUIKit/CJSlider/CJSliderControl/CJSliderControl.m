@@ -9,6 +9,9 @@
 #import "CJSliderControl.h"
 #import "CJSliderThumb.h"
 
+#import "UIImage+CJCreate.h"
+#import "UIImage+CJTransformSize.h"
+
 static CGFloat const kCJSliderControlLeftPadding                         = 10.0f;
 static CGFloat const kCJSliderControlBackgroundImageViewHeight           = 15.0f;
 static CGFloat const kCJSliderThumbSizeWidth                      = 30.0f;

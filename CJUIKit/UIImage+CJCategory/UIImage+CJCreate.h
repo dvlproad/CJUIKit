@@ -8,19 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface UIImage (MTUtils)
-
-/**
- *  获取固定size的图片
- *
- *  @param size 图片尺寸
- *
- *  @return 修改后的图片
- */
-- (UIImage *)cj_transformImageToSize:(CGSize)size;
-
-
-- (UIImage *)cj_resizableImageWithCapInsets:(UIEdgeInsets)insets;
+@interface UIImage (CJCreate)
 
 /**
  *  根据颜色创建图片
@@ -31,4 +19,5 @@
  *  @return 纯色的图片
  */
 + (UIImage *)cj_imageWithColor:(UIColor *)color size:(CGSize)size;
+
 @end

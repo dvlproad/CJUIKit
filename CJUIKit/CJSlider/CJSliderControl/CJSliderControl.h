@@ -8,7 +8,6 @@
 
 #import <UIKit/UIKit.h>
 #import "CJSliderPopover.h"
-#import "UIImage+CJCreate.h"
 
 @class CJSliderControl;
 /**

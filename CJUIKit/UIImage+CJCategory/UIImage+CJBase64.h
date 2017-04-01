@@ -1,5 +1,5 @@
 //
-//  UIImage+Category.h
+//  UIImage+CJBase64.h
 //  CJUIKitDemo
 //
 //  Created by lichq on 14-12-26.
@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface UIImage (Category)
+@interface UIImage (CJBase64)
 
 //1.UIImage转成base64
 - (NSString *)imageTobase64;

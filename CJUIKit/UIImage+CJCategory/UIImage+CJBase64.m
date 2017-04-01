@@ -1,14 +1,14 @@
 //
-//  UIImage+Category.m
+//  UIImage+CJBase64.m
 //  CJUIKitDemo
 //
 //  Created by lichq on 14-12-26.
 //  Copyright (c) 2014年 lichq. All rights reserved.
 //
 
-#import "UIImage+Category.h"
+#import "UIImage+CJBase64.h"
 
-@implementation UIImage (Category)
+@implementation UIImage (CJBase64)
 
 //1.UIImage转成base64
 - (NSString *)imageTobase64{
