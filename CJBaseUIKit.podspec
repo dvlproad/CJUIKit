@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "CJBaseUIKit"
-  s.version      = "0.0.8"
+  s.version      = "0.0.9"
   s.summary      = "自定义的基础UI"
   s.homepage     = "https://github.com/dvlproad/CJUIKit"
 
@@ -10,6 +10,7 @@ Pod::Spec.new do |s|
                   2、CJTextView：类似微信文本输入框实现
                   3、已在CJMJRefreshComponent中包含pod 'MJRefresh', '~> 3.1.12'
                   *、UIColor+CJHex：用来通过十六进制来设置颜色。 支持@“#123456”、 @“0X123456”、 @“123456”三种格式
+                  *、UIImage+CJCategory：
                   4、CJSlider
 
                    A longer description of CJPopupAction in Markdown format.
@@ -33,7 +34,7 @@ Pod::Spec.new do |s|
 
   s.platform     = :ios, "7.0"
  
-  s.source       = { :git => "https://github.com/dvlproad/CJUIKit.git", :tag => "UIImage_0.0.8" }
+  s.source       = { :git => "https://github.com/dvlproad/CJUIKit.git", :tag => "UIImage+CJCategory_0.0.9" }
   s.source_files  = "CJUIKit/*.{h,m}"
 
   s.frameworks = "UIKit"
