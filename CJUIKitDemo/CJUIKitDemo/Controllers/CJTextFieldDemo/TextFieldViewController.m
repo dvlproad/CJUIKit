@@ -18,8 +18,57 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
+    self.textFiled.text = @"原始文本";
     self.textFiled.delegate = self;
+    [self.textFiled setTextChangeBlock:^(CJTextField *textField) {
+        NSLog(@"文本改变了");
+    }];
+    
+    
+    //CJAddSubtractTextField
+    self.addSubtractTextField.delegate = self;
+    self.addSubtractTextField.text = @"20";
+    self.addSubtractTextField.hideMenuController = YES;
+    [self.addSubtractTextField addLeftButtonImage:[UIImage imageNamed:@"plus"] withLeftHandel:^(UITextField *textField) {
+        NSLog(@"左边按钮点击");
+        NSInteger value = [textField.text integerValue] - 1;
+        textField.text = [@(value) stringValue];
+    }];
+    
+    [self.addSubtractTextField addRightButtonImage:[UIImage imageNamed:@"plus"] withRightHandel:^(UITextField *textField) {
+        NSLog(@"右边按钮点击");
+        NSInteger value = [textField.text integerValue] + 1;
+        textField.text = [@(value) stringValue];
+    }];
+    
+    //CJAddSubtractTextField 不可手动输入
+    self.cannotInputAddSubtractTextField.delegate = self;
+    self.cannotInputAddSubtractTextField.text = @"20";
+    self.cannotInputAddSubtractTextField.hideCursor = YES;
+    self.cannotInputAddSubtractTextField.hideMenuController = YES;
+    [self.cannotInputAddSubtractTextField addLeftButtonImage:[UIImage imageNamed:@"plus"] withLeftHandel:^(UITextField *textField) {
+        NSLog(@"左边按钮点击");
+        NSInteger value = [textField.text integerValue] - 1;
+        textField.text = [@(value) stringValue];
+    }];
+    
+    [self.cannotInputAddSubtractTextField addRightButtonImage:[UIImage imageNamed:@"plus"] withRightHandel:^(UITextField *textField) {
+        NSLog(@"右边按钮点击");
+        NSInteger value = [textField.text integerValue] + 1;
+        textField.text = [@(value) stringValue];
+    }];
 }
+
+- (BOOL)textFieldShouldBeginEditing:(UITextField *)textField {
+    if (textField == self.cannotInputAddSubtractTextField) {
+        NSLog(@"点击了文本框，这里可以用于弹出视图");
+        return NO;
+    }
+    
+    return YES;
+}
+
+
 
 //UITextField 没有change的事件
 - (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string {

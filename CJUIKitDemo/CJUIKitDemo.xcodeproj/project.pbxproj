@@ -60,6 +60,7 @@
 		789A198E1E61D1C9008081E3 /* plus@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 789A198B1E61D1C9008081E3 /* plus@2x.png */; };
 		789A198F1E61D1C9008081E3 /* smail@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 789A198C1E61D1C9008081E3 /* smail@2x.png */; };
 		789A19901E61D1C9008081E3 /* sound@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 789A198D1E61D1C9008081E3 /* sound@2x.png */; };
+		78E2F8B31EA4926000892D86 /* CJAddSubtractTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 78E2F8B21EA4926000892D86 /* CJAddSubtractTextField.m */; };
 		78E61EA31E7995D4009B1627 /* KeyboardAvoidingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78E61EA11E7995D4009B1627 /* KeyboardAvoidingViewController.m */; };
 		78E61EA41E7995D4009B1627 /* KeyboardAvoidingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 78E61EA21E7995D4009B1627 /* KeyboardAvoidingViewController.xib */; };
 		78E61ECE1E79AA20009B1627 /* CJBadgeImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 78E61EAA1E79AA20009B1627 /* CJBadgeImageView.m */; };
@@ -76,6 +77,7 @@
 		78E61F031E79AF0A009B1627 /* sdRefeshView_arrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 78E61EFD1E79AF0A009B1627 /* sdRefeshView_arrow@2x.png */; };
 		78E61F041E79AF0A009B1627 /* UIView+CJExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 78E61EFF1E79AF0A009B1627 /* UIView+CJExtension.m */; };
 		78E61F081E79AF41009B1627 /* CJRefreshBaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 78E61F071E79AF41009B1627 /* CJRefreshBaseView.m */; };
+		78F3AA001E963197005D3DA4 /* UIImage+CJFixOrientation.m in Sources */ = {isa = PBXBuildFile; fileRef = 78F3A9FF1E963197005D3DA4 /* UIImage+CJFixOrientation.m */; };
 		E2649F5BE7F7FEF404688168 /* libPods-CJUIKitDemoTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 935109AAB855F6CC8B84B9A5 /* libPods-CJUIKitDemoTests.a */; };
 /* End PBXBuildFile section */
 
@@ -186,6 +188,8 @@
 		789A198C1E61D1C9008081E3 /* smail@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "smail@2x.png"; sourceTree = "<group>"; };
 		789A198D1E61D1C9008081E3 /* sound@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sound@2x.png"; sourceTree = "<group>"; };
 		789CAB597AD073D5F637D193 /* Pods-CJUIKitDemoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CJUIKitDemoTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-CJUIKitDemoTests/Pods-CJUIKitDemoTests.release.xcconfig"; sourceTree = "<group>"; };
+		78E2F8B11EA4926000892D86 /* CJAddSubtractTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJAddSubtractTextField.h; sourceTree = "<group>"; };
+		78E2F8B21EA4926000892D86 /* CJAddSubtractTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJAddSubtractTextField.m; sourceTree = "<group>"; };
 		78E61EA01E7995D4009B1627 /* KeyboardAvoidingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeyboardAvoidingViewController.h; sourceTree = "<group>"; };
 		78E61EA11E7995D4009B1627 /* KeyboardAvoidingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeyboardAvoidingViewController.m; sourceTree = "<group>"; };
 		78E61EA21E7995D4009B1627 /* KeyboardAvoidingViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KeyboardAvoidingViewController.xib; sourceTree = "<group>"; };
@@ -218,6 +222,8 @@
 		78E61EFF1E79AF0A009B1627 /* UIView+CJExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+CJExtension.m"; sourceTree = "<group>"; };
 		78E61F061E79AF41009B1627 /* CJRefreshBaseView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJRefreshBaseView.h; sourceTree = "<group>"; };
 		78E61F071E79AF41009B1627 /* CJRefreshBaseView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJRefreshBaseView.m; sourceTree = "<group>"; };
+		78F3A9FE1E963197005D3DA4 /* UIImage+CJFixOrientation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+CJFixOrientation.h"; sourceTree = "<group>"; };
+		78F3A9FF1E963197005D3DA4 /* UIImage+CJFixOrientation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+CJFixOrientation.m"; sourceTree = "<group>"; };
 		935109AAB855F6CC8B84B9A5 /* libPods-CJUIKitDemoTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CJUIKitDemoTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9AC0A78AFE86FE250B370A06 /* Pods-CJUIKitDemoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CJUIKitDemoTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CJUIKitDemoTests/Pods-CJUIKitDemoTests.debug.xcconfig"; sourceTree = "<group>"; };
 		A078401C0E781545EB72B64D /* libPods-CJUIKitDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CJUIKitDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -375,6 +381,8 @@
 				784C15E11E8E719A0019D652 /* UIImage+CJTransformSize.m */,
 				7847521C1E8F862F00B24507 /* UIImage+CJChangeColor.h */,
 				7847521D1E8F862F00B24507 /* UIImage+CJChangeColor.m */,
+				78F3A9FE1E963197005D3DA4 /* UIImage+CJFixOrientation.h */,
+				78F3A9FF1E963197005D3DA4 /* UIImage+CJFixOrientation.m */,
 			);
 			path = "UIImage+CJCategory";
 			sourceTree = "<group>";
@@ -446,6 +454,8 @@
 			children = (
 				78553FB31E7D954300F320E6 /* CJTextField.h */,
 				78553FB41E7D954300F320E6 /* CJTextField.m */,
+				78E2F8B11EA4926000892D86 /* CJAddSubtractTextField.h */,
+				78E2F8B21EA4926000892D86 /* CJAddSubtractTextField.m */,
 			);
 			path = CJTextField;
 			sourceTree = "<group>";
@@ -976,8 +986,10 @@
 				782709E31E8715A600E21433 /* UIImage+CJLaunchImage.m in Sources */,
 				780E46081E5DF87B00980127 /* AppDelegate.m in Sources */,
 				782708E41E86772600E21433 /* CJBaseSlider.m in Sources */,
+				78E2F8B31EA4926000892D86 /* CJAddSubtractTextField.m in Sources */,
 				78E61ECE1E79AA20009B1627 /* CJBadgeImageView.m in Sources */,
 				782709ED1E8715BB00E21433 /* UIButton+CJMoreProperty.m in Sources */,
+				78F3AA001E963197005D3DA4 /* UIImage+CJFixOrientation.m in Sources */,
 				782708DC1E86732C00E21433 /* SliderViewController.m in Sources */,
 				78E61ECF1E79AA20009B1627 /* CJImageView.m in Sources */,
 				789A19811E61CD6F008081E3 /* TextViewController.m in Sources */,

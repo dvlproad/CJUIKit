@@ -8,10 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
-/**
- *  一个用于通过textField的inputView和inputAccessoryView来弹出picker的textField
- *
- */
 @interface CJTextField : UITextField
+
+@property (nonatomic, copy) void (^textChangeBlock)(CJTextField *textField);  /**< 文本改变的通知事件 */
+@property (nonatomic, assign) BOOL hideMenuController;  /**< 是否隐藏弹出菜单(一般为选择、复制、粘贴) */
+@property (nonatomic, assign) BOOL hideCursor;          /**< 是否隐藏光标(默认NO),隐藏光标的时候最好同时禁止手动输入 */
+
+- (void)commonInit;
 
 @end
