@@ -29,13 +29,13 @@
     self.addSubtractTextField.delegate = self;
     self.addSubtractTextField.text = @"20";
     self.addSubtractTextField.hideMenuController = YES;
-    [self.addSubtractTextField addLeftButtonImage:[UIImage imageNamed:@"plus"] withLeftHandel:^(UITextField *textField) {
+    [self.addSubtractTextField addLeftButtonWithNormalImage:[UIImage imageNamed:@"plus"] leftHandel:^(UITextField *textField) {
         NSLog(@"左边按钮点击");
         NSInteger value = [textField.text integerValue] - 1;
         textField.text = [@(value) stringValue];
     }];
     
-    [self.addSubtractTextField addRightButtonImage:[UIImage imageNamed:@"plus"] withRightHandel:^(UITextField *textField) {
+    [self.addSubtractTextField addRightButtonWithNormalImage:[UIImage imageNamed:@"plus"] rightHandel:^(UITextField *textField) {
         NSLog(@"右边按钮点击");
         NSInteger value = [textField.text integerValue] + 1;
         textField.text = [@(value) stringValue];
@@ -46,13 +46,13 @@
     self.cannotInputAddSubtractTextField.text = @"20";
     self.cannotInputAddSubtractTextField.hideCursor = YES;
     self.cannotInputAddSubtractTextField.hideMenuController = YES;
-    [self.cannotInputAddSubtractTextField addLeftButtonImage:[UIImage imageNamed:@"plus"] withLeftHandel:^(UITextField *textField) {
+    [self.cannotInputAddSubtractTextField addLeftButtonWithNormalImage:[UIImage imageNamed:@"plus"] leftHandel:^(UITextField *textField) {
         NSLog(@"左边按钮点击");
         NSInteger value = [textField.text integerValue] - 1;
         textField.text = [@(value) stringValue];
     }];
     
-    [self.cannotInputAddSubtractTextField addRightButtonImage:[UIImage imageNamed:@"plus"] withRightHandel:^(UITextField *textField) {
+    [self.cannotInputAddSubtractTextField addRightButtonWithNormalImage:[UIImage imageNamed:@"plus"] rightHandel:^(UITextField *textField) {
         NSLog(@"右边按钮点击");
         NSInteger value = [textField.text integerValue] + 1;
         textField.text = [@(value) stringValue];

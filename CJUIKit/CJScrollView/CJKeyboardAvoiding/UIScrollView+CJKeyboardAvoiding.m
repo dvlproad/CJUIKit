@@ -48,26 +48,23 @@ static NSString *cjKeyboardAvoidingOffsetKey = @"cjKeyboardAvoidingOffsetKey";
     [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
-- (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
+- (void)cj_resignFirstResponder {
     UIView *firstResponder = [self findFirstResponderBeneathView:self];
     [firstResponder resignFirstResponder];
-    
-    [super touchesEnded:touches withEvent:event];
 }
 
 - (void)keyboardWillShow:(NSNotification *)notification {
-    NSDictionary *userInfo = notification.userInfo;
-    CGRect endFrame = [userInfo[UIKeyboardFrameEndUserInfoKey] CGRectValue];
-    //CGRect beginFrame = [userInfo[UIKeyboardFrameBeginUserInfoKey] CGRectValue];
-    CGFloat duration = [userInfo[UIKeyboardAnimationDurationUserInfoKey] doubleValue];
-    UIViewAnimationCurve curve = [userInfo[UIKeyboardAnimationCurveUserInfoKey] integerValue];
-    
     UIView *firstResponder = [self findFirstResponderBeneathView:self];
     if ( !firstResponder ) {
         //No child view is the first responder - nothing to do here
         return;
     }
     
+    NSDictionary *userInfo = notification.userInfo;
+    CGRect endFrame = [userInfo[UIKeyboardFrameEndUserInfoKey] CGRectValue];
+    //CGRect beginFrame = [userInfo[UIKeyboardFrameBeginUserInfoKey] CGRectValue];
+    CGFloat duration = [userInfo[UIKeyboardAnimationDurationUserInfoKey] doubleValue];
+    UIViewAnimationCurve curve = [userInfo[UIKeyboardAnimationCurveUserInfoKey] integerValue];
     
     [UIView beginAnimations:nil context:NULL];
     [UIView setAnimationCurve:curve];
@@ -98,7 +95,12 @@ static NSString *cjKeyboardAvoidingOffsetKey = @"cjKeyboardAvoidingOffsetKey";
     [UIView setAnimationCurve:curve];
     [UIView setAnimationDuration:duration];
     
-    CGFloat offset = self.contentOffset.y + CGRectGetHeight(self.frame) - self.contentSize.height;
+    CGFloat offset = 0;
+    if (self.contentSize.height < CGRectGetHeight(self.frame)) {
+        offset = self.contentOffset.y;
+    } else {
+        offset = self.contentOffset.y + CGRectGetHeight(self.frame) - self.contentSize.height;
+    }
     if (offset > self.cjKeyboardAvoidingOffset) {
         CGFloat newOffsetX = self.contentOffset.x;
         CGFloat newOffsetY = self.contentOffset.y - offset + self.cjKeyboardAvoidingOffset;

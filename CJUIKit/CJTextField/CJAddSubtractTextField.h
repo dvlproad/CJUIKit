@@ -9,13 +9,13 @@
 #import "CJTextField.h"
 
 /**
- *  可在两边添加加减的textField(可用于①数字加减、②日期加减、③登录文本框前的图片)
+ *  可在两边添加加减的textField(可用于①数字加减、②日期加减、③登录文本框前的图片) //TODO:待改成Category方法
  *
  */
 @interface CJAddSubtractTextField : CJTextField
 
-- (void)addLeftButtonImage:(UIImage *)leftImage withLeftHandel:(void (^)(UITextField *textField))leftHandle;
+- (UIButton *)addLeftButtonWithNormalImage:(UIImage *)leftNormalImage leftHandel:(void (^)(UITextField *textField))leftHandle;
 
-- (void)addRightButtonImage:(UIImage *)rightImage withRightHandel:(void (^)(UITextField *textField))rightHandle;
+- (UIButton *)addRightButtonWithNormalImage:(UIImage *)rightNormalImage rightHandel:(void (^)(UITextField *textField))rightHandle;
 
 @end

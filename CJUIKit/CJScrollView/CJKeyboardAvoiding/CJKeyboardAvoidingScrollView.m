@@ -47,4 +47,10 @@
     [self cj_registerKeyboardNotifications];
 }
 
+- (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
+    [self cj_resignFirstResponder];
+    
+    [super touchesEnded:touches withEvent:event];
+}
+
 @end

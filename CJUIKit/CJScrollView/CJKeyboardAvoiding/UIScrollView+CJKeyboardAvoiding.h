@@ -17,4 +17,9 @@
 - (void)cj_registerKeyboardNotifications;
 - (void)cj_unRegisterKeyboardNotifications;
 
+/**
+ *  取消弹出键盘
+ */
+- (void)cj_resignFirstResponder;
+
 @end
