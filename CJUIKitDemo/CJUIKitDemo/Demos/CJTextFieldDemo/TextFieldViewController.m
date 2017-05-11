@@ -7,6 +7,11 @@
 //
 
 #import "TextFieldViewController.h"
+#import "UITextField+CJAddLeftRightView.h"
+#import "UITextField+CJLimitTextLength.h"
+#import "UIView+CJShake.h"
+
+#import "CJToast.h"
 
 @interface TextFieldViewController () <UITextFieldDelegate>
 
@@ -18,14 +23,21 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
-    self.textFiled.text = @"原始文本";
+    self.textFiled.text = @"测试文本的改变";
     self.textFiled.delegate = self;
     [self.textFiled setTextChangeBlock:^(CJTextField *textField) {
         NSLog(@"文本改变了");
+        
+    }];
+    
+    [self.textFiled cj_limitTextLength:10 withLimitCompleteBlock:^{
+        [CJToast showMessage:@"文本过长，超过最大的10个字符了"];
+        [self.textFiled cjShake];
     }];
     
     
-    //CJAddSubtractTextField
+    
+    //CJTextField
     self.addSubtractTextField.delegate = self;
     self.addSubtractTextField.text = @"20";
     self.addSubtractTextField.hideMenuController = YES;
@@ -41,28 +53,24 @@
         textField.text = [@(value) stringValue];
     }];
     
-    //CJAddSubtractTextField 不可手动输入
-    self.cannotInputAddSubtractTextField.delegate = self;
-    self.cannotInputAddSubtractTextField.text = @"20";
-    self.cannotInputAddSubtractTextField.hideCursor = YES;
-    self.cannotInputAddSubtractTextField.hideMenuController = YES;
-    [self.cannotInputAddSubtractTextField addLeftButtonWithNormalImage:[UIImage imageNamed:@"plus"] leftHandel:^(UITextField *textField) {
-        NSLog(@"左边按钮点击");
-        NSInteger value = [textField.text integerValue] - 1;
-        textField.text = [@(value) stringValue];
-    }];
-    
-    [self.cannotInputAddSubtractTextField addRightButtonWithNormalImage:[UIImage imageNamed:@"plus"] rightHandel:^(UITextField *textField) {
-        NSLog(@"右边按钮点击");
-        NSInteger value = [textField.text integerValue] + 1;
-        textField.text = [@(value) stringValue];
-    }];
+    [self.canInputSwitch addTarget:self action:@selector(canInputSwitchAction:) forControlEvents:UIControlEventValueChanged];
+}
+
+- (void)canInputSwitchAction:(UISwitch *)canInputSwitch {
+    if (canInputSwitch.isOn) {
+        self.addSubtractTextField.hideCursor = NO;
+    } else {
+        self.addSubtractTextField.hideCursor = YES;
+    }
 }
 
 - (BOOL)textFieldShouldBeginEditing:(UITextField *)textField {
-    if (textField == self.cannotInputAddSubtractTextField) {
-        NSLog(@"点击了文本框，这里可以用于弹出视图");
-        return NO;
+    if ([textField isKindOfClass:[CJTextField class]]) {
+        CJTextField *cjTextField = (CJTextField *)textField;
+        if (cjTextField.hideCursor) { //隐藏光标的时候
+            NSLog(@"点击了文本框，这里可以用于弹出视图");
+            return NO;
+        }
     }
     
     return YES;

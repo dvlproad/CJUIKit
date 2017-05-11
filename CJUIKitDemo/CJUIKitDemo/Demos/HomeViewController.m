@@ -14,6 +14,7 @@
 #import "ScrollViewController.h"
 #import "KeyboardAvoidingViewController.h"
 #import "SliderViewController.h"
+#import "SearchBarViewController.h"
 
 
 #import "ImageChangeColorViewController.h"
@@ -72,6 +73,12 @@
     cjSliderModuleModel.title = @"CJSliderControl";
     cjSliderModuleModel.classEntry = [SliderViewController class];
     [self.datas addObject:cjSliderModuleModel];
+    
+    //CJSearchBar
+    ModuleModel *cjSearchBarModuleModel = [[ModuleModel alloc] init];
+    cjSearchBarModuleModel.title = @"CJSearchBar";
+    cjSearchBarModuleModel.classEntry = [SearchBarViewController class];
+    [self.datas addObject:cjSearchBarModuleModel];
     
     ModuleModel *UIImageModuleModel = [[ModuleModel alloc] init];
     UIImageModuleModel.title = @"UIImage";

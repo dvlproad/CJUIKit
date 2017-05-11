@@ -8,12 +8,13 @@
 
 #import <UIKit/UIKit.h>
 #import "CJTextField.h"
-#import "CJAddSubtractTextField.h"
 
 @interface TextFieldViewController : UIViewController
 
 @property (nonatomic, weak) IBOutlet CJTextField *textFiled;
-@property (nonatomic, weak) IBOutlet CJAddSubtractTextField *addSubtractTextField;
-@property (nonatomic, weak) IBOutlet CJAddSubtractTextField *cannotInputAddSubtractTextField;
+
+@property (nonatomic, weak) IBOutlet UISwitch *canInputSwitch;  //控制是否允许文本框输入的开关
+@property (nonatomic, weak) IBOutlet CJTextField *addSubtractTextField;
+
 
 @end

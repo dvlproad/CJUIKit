@@ -70,7 +70,12 @@
 - (void)setHideCursor:(BOOL)hideCursor {
     _hideCursor = hideCursor;
     
-    self.tintColor = [UIColor clearColor];  //隐藏光标
+    if (hideCursor) {
+        self.tintColor = [UIColor clearColor];  //隐藏光标
+    } else {
+        self.tintColor = [UIColor blackColor];
+    }
+    
 }
 
 //通过实现UIResponse的- (BOOL)canPerformAction: withSender:方法来去除双击时的弹出框
