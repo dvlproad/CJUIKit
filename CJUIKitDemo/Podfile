@@ -8,7 +8,7 @@ target 'CJUIKitDemo' do
   pod 'MJRefresh', '~> 3.1.12'
   pod 'MBProgressHUD', '~> 1.0.0' #CJToast需要使用
   
-  #pod 'CJFoundation/NSString', '~> 0.0.4'
+  pod 'CJFoundation/NSString', '~> 0.0.4'
   
 end
 

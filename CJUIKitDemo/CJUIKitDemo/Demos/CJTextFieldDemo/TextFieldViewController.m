@@ -12,6 +12,7 @@
 #import "UIView+CJShake.h"
 
 #import "CJToast.h"
+#import <CJFoundation/NSString+CJValidate.h>
 
 @interface TextFieldViewController () <UITextFieldDelegate>
 
@@ -27,11 +28,15 @@
     self.textFiled.delegate = self;
     [self.textFiled setTextChangeBlock:^(CJTextField *textField) {
         NSLog(@"文本改变了");
+        if (![textField.text cj_validateEmail]) {
+            NSLog(@"不满足邮件格式");
+            [textField cjShake];
+        }
         
     }];
     
-    [self.textFiled cj_limitTextLength:10 withLimitCompleteBlock:^{
-        [CJToast showMessage:@"文本过长，超过最大的10个字符了"];
+    [self.textFiled cj_limitTextLength:20 withLimitCompleteBlock:^{
+        [CJToast showMessage:@"文本过长，超过最大的20个字符了"];
         [self.textFiled cjShake];
     }];
     

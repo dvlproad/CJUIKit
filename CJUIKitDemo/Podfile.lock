@@ -1,21 +1,24 @@
 PODS:
+  - CJFoundation/NSString (0.0.4)
   - Masonry (1.0.2)
   - MBProgressHUD (1.0.0)
   - MJRefresh (3.1.12)
   - PureLayout (3.0.2)
 
 DEPENDENCIES:
+  - CJFoundation/NSString (~> 0.0.4)
   - Masonry (~> 1.0.2)
   - MBProgressHUD (~> 1.0.0)
   - MJRefresh (~> 3.1.12)
   - PureLayout (~> 3.0.2)
 
 SPEC CHECKSUMS:
+  CJFoundation: 0a4d15d9320cda8b861df3b7492bb289be588ae9
   Masonry: 7c429b56da9d4ee0bbb3ed77a5ea710d6a5df39e
   MBProgressHUD: 4890f671c94e8a0f3cf959aa731e9de2f036d71a
   MJRefresh: b96cdb21c4aa75a7b07654311ab2f315c497e806
   PureLayout: 4d550abe49a94f24c2808b9b95db9131685fe4cd
 
-PODFILE CHECKSUM: 7ad0168379b50757333b5d9d982e3b2e69b72808
+PODFILE CHECKSUM: 962bed8c9e27b13069fc0093f098d898aa3d1273
 
 COCOAPODS: 1.1.0.rc.2

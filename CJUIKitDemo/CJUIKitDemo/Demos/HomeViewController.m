@@ -18,7 +18,9 @@
 
 
 #import "ImageChangeColorViewController.h"
-#import "NavigationBarViewController.h"
+
+#import "NavigationBarChangeBGViewController.h"
+#import "NavigationBarChangePositonViewController.h"
 
 #import "CJMJRefreshViewController.h"
 
@@ -85,10 +87,15 @@
     UIImageModuleModel.classEntry = [ImageChangeColorViewController class];
     [self.datas addObject:UIImageModuleModel];
     
-    ModuleModel *UINavigationBarModuleModel = [[ModuleModel alloc] init];
-    UINavigationBarModuleModel.title = @"UINavigationBar";
-    UINavigationBarModuleModel.classEntry = [NavigationBarViewController class];
-    [self.datas addObject:UINavigationBarModuleModel];
+    ModuleModel *UINavigationBarModuleModel1 = [[ModuleModel alloc] init];
+    UINavigationBarModuleModel1.title = @"UINavigationBar(常见的导航栏背景色改变隐藏)";
+    UINavigationBarModuleModel1.classEntry = [NavigationBarChangeBGViewController class];
+    [self.datas addObject:UINavigationBarModuleModel1];
+    
+    ModuleModel *UINavigationBarModuleModel2 = [[ModuleModel alloc] init];
+    UINavigationBarModuleModel2.title = @"UINavigationBar(类似斗鱼的导航栏移动隐藏)";
+    UINavigationBarModuleModel2.classEntry = [NavigationBarChangePositonViewController class];
+    [self.datas addObject:UINavigationBarModuleModel2];
     
     ModuleModel *cjMJRefreshComponentModuleModel = [[ModuleModel alloc] init];
     cjMJRefreshComponentModuleModel.title = @"CJMJRefreshComponent";
@@ -121,17 +128,22 @@
     Class classEntry = moduleModel.classEntry;
     NSString *nibName = NSStringFromClass(moduleModel.classEntry);
     
+    
+    UIViewController *viewController = nil;
+    
     NSString *clsString = NSStringFromClass(moduleModel.classEntry);
     if ([clsString isEqualToString:NSStringFromClass([UIViewController class])] ||
-        [clsString isEqualToString:NSStringFromClass([ScrollViewController class])]) {
-        UIViewController *viewController = [[classEntry alloc] init];
+        [clsString isEqualToString:NSStringFromClass([ScrollViewController class])])
+    {
+        viewController = [[classEntry alloc] init];
         viewController.view.backgroundColor = [UIColor whiteColor];
-        viewController.title = NSLocalizedString(moduleModel.title, nil);
-        [self.navigationController pushViewController:viewController animated:YES];
-        return;
+        
+    } else if ([classEntry isSubclassOfClass:[NavigationBarBaseViewController class]]) {
+        viewController = [[classEntry alloc] initWithNibName:@"NavigationBarBaseViewController" bundle:nil];
+        
+    } else {
+        viewController = [[classEntry alloc] initWithNibName:nibName bundle:nil];
     }
-    
-    UIViewController *viewController = [[classEntry alloc] initWithNibName:nibName bundle:nil];
     viewController.title = NSLocalizedString(moduleModel.title, nil);
     [self.navigationController pushViewController:viewController animated:YES];
 }

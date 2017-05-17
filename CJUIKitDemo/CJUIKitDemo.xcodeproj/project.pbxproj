@@ -66,8 +66,8 @@
 		7840FB1C1EB09C4600B553F7 /* ImageChangeColorViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7840FB001EB09C4500B553F7 /* ImageChangeColorViewController.xib */; };
 		7840FB1D1EB09C4600B553F7 /* imageOriginColor@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7840FB011EB09C4500B553F7 /* imageOriginColor@2x.png */; };
 		7840FB211EB09C6E00B553F7 /* UINavigationBar+CJChangeBG.m in Sources */ = {isa = PBXBuildFile; fileRef = 7840FB201EB09C6E00B553F7 /* UINavigationBar+CJChangeBG.m */; };
-		7840FB251EB09CE900B553F7 /* NavigationBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7840FB231EB09CE900B553F7 /* NavigationBarViewController.m */; };
-		7840FB261EB09CE900B553F7 /* NavigationBarViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7840FB241EB09CE900B553F7 /* NavigationBarViewController.xib */; };
+		7840FB251EB09CE900B553F7 /* NavigationBarBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7840FB231EB09CE900B553F7 /* NavigationBarBaseViewController.m */; };
+		7840FB261EB09CE900B553F7 /* NavigationBarBaseViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7840FB241EB09CE900B553F7 /* NavigationBarBaseViewController.xib */; };
 		7840FB281EB09E0700B553F7 /* bg@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7840FB271EB09E0700B553F7 /* bg@2x.jpg */; };
 		7847521E1E8F862F00B24507 /* UIImage+CJChangeColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 7847521D1E8F862F00B24507 /* UIImage+CJChangeColor.m */; };
 		784B7D4A1E7F7DE300299457 /* UIColor+CJHex.m in Sources */ = {isa = PBXBuildFile; fileRef = 784B7D491E7F7DE300299457 /* UIColor+CJHex.m */; };
@@ -77,6 +77,13 @@
 		78A355341EB32D62005C5A9A /* CJMJRefreshViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78A355321EB32D62005C5A9A /* CJMJRefreshViewController.m */; };
 		78A355351EB32D62005C5A9A /* CJMJRefreshViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 78A355331EB32D62005C5A9A /* CJMJRefreshViewController.xib */; };
 		78B6761B1EB192EA006F4612 /* ModuleModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 78B6761A1EB192EA006F4612 /* ModuleModel.m */; };
+		78E269A41ECA92B9007D3686 /* NavigationBarChangeBGViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78E269A31ECA92B9007D3686 /* NavigationBarChangeBGViewController.m */; };
+		78E269A71ECA92E4007D3686 /* NavigationBarChangePositonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78E269A61ECA92E4007D3686 /* NavigationBarChangePositonViewController.m */; };
+		78E269AB1ECADDEA007D3686 /* UIScrollView+CJAddScaleHead.m in Sources */ = {isa = PBXBuildFile; fileRef = 78E269AA1ECADDEA007D3686 /* UIScrollView+CJAddScaleHead.m */; };
+		78E269AE1ECAF105007D3686 /* CJScaleHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = 78E269AD1ECAF105007D3686 /* CJScaleHeadView.m */; };
+		78E269B01ECAF678007D3686 /* car@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 78E269AF1ECAF678007D3686 /* car@2x.jpg */; };
+		78E269B31ECB0588007D3686 /* MyScaleHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = 78E269B21ECB0588007D3686 /* MyScaleHeadView.m */; };
+		78E269B51ECB0593007D3686 /* MyScaleHeadView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 78E269B41ECB0593007D3686 /* MyScaleHeadView.xib */; };
 		78E61ECE1E79AA20009B1627 /* CJBadgeImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 78E61EAA1E79AA20009B1627 /* CJBadgeImageView.m */; };
 		78E61ECF1E79AA20009B1627 /* CJImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 78E61EAC1E79AA20009B1627 /* CJImageView.m */; };
 		78E61ED01E79AA20009B1627 /* CJMJRefreshNormalFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = 78E61EB11E79AA20009B1627 /* CJMJRefreshNormalFooter.m */; };
@@ -211,9 +218,9 @@
 		7840FB011EB09C4500B553F7 /* imageOriginColor@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "imageOriginColor@2x.png"; sourceTree = "<group>"; };
 		7840FB1F1EB09C6E00B553F7 /* UINavigationBar+CJChangeBG.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationBar+CJChangeBG.h"; sourceTree = "<group>"; };
 		7840FB201EB09C6E00B553F7 /* UINavigationBar+CJChangeBG.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationBar+CJChangeBG.m"; sourceTree = "<group>"; };
-		7840FB221EB09CE900B553F7 /* NavigationBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NavigationBarViewController.h; sourceTree = "<group>"; };
-		7840FB231EB09CE900B553F7 /* NavigationBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NavigationBarViewController.m; sourceTree = "<group>"; };
-		7840FB241EB09CE900B553F7 /* NavigationBarViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NavigationBarViewController.xib; sourceTree = "<group>"; };
+		7840FB221EB09CE900B553F7 /* NavigationBarBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NavigationBarBaseViewController.h; sourceTree = "<group>"; };
+		7840FB231EB09CE900B553F7 /* NavigationBarBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NavigationBarBaseViewController.m; sourceTree = "<group>"; };
+		7840FB241EB09CE900B553F7 /* NavigationBarBaseViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NavigationBarBaseViewController.xib; sourceTree = "<group>"; };
 		7840FB271EB09E0700B553F7 /* bg@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "bg@2x.jpg"; sourceTree = "<group>"; };
 		7847521C1E8F862F00B24507 /* UIImage+CJChangeColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+CJChangeColor.h"; sourceTree = "<group>"; };
 		7847521D1E8F862F00B24507 /* UIImage+CJChangeColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+CJChangeColor.m"; sourceTree = "<group>"; };
@@ -231,6 +238,18 @@
 		78A355331EB32D62005C5A9A /* CJMJRefreshViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CJMJRefreshViewController.xib; sourceTree = "<group>"; };
 		78B676191EB192EA006F4612 /* ModuleModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModuleModel.h; sourceTree = "<group>"; };
 		78B6761A1EB192EA006F4612 /* ModuleModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModuleModel.m; sourceTree = "<group>"; };
+		78E269A21ECA92B9007D3686 /* NavigationBarChangeBGViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NavigationBarChangeBGViewController.h; sourceTree = "<group>"; };
+		78E269A31ECA92B9007D3686 /* NavigationBarChangeBGViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NavigationBarChangeBGViewController.m; sourceTree = "<group>"; };
+		78E269A51ECA92E4007D3686 /* NavigationBarChangePositonViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NavigationBarChangePositonViewController.h; sourceTree = "<group>"; };
+		78E269A61ECA92E4007D3686 /* NavigationBarChangePositonViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NavigationBarChangePositonViewController.m; sourceTree = "<group>"; };
+		78E269A91ECADDEA007D3686 /* UIScrollView+CJAddScaleHead.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+CJAddScaleHead.h"; sourceTree = "<group>"; };
+		78E269AA1ECADDEA007D3686 /* UIScrollView+CJAddScaleHead.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+CJAddScaleHead.m"; sourceTree = "<group>"; };
+		78E269AC1ECAF105007D3686 /* CJScaleHeadView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJScaleHeadView.h; sourceTree = "<group>"; };
+		78E269AD1ECAF105007D3686 /* CJScaleHeadView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJScaleHeadView.m; sourceTree = "<group>"; };
+		78E269AF1ECAF678007D3686 /* car@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "car@2x.jpg"; sourceTree = "<group>"; };
+		78E269B11ECB0588007D3686 /* MyScaleHeadView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyScaleHeadView.h; sourceTree = "<group>"; };
+		78E269B21ECB0588007D3686 /* MyScaleHeadView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyScaleHeadView.m; sourceTree = "<group>"; };
+		78E269B41ECB0593007D3686 /* MyScaleHeadView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyScaleHeadView.xib; sourceTree = "<group>"; };
 		78E61EA91E79AA20009B1627 /* CJBadgeImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJBadgeImageView.h; sourceTree = "<group>"; };
 		78E61EAA1E79AA20009B1627 /* CJBadgeImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJBadgeImageView.m; sourceTree = "<group>"; };
 		78E61EAB1E79AA20009B1627 /* CJImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJImageView.h; sourceTree = "<group>"; };
@@ -582,9 +601,16 @@
 		7840FB021EB09C4500B553F7 /* UINavigationBar */ = {
 			isa = PBXGroup;
 			children = (
-				7840FB221EB09CE900B553F7 /* NavigationBarViewController.h */,
-				7840FB231EB09CE900B553F7 /* NavigationBarViewController.m */,
-				7840FB241EB09CE900B553F7 /* NavigationBarViewController.xib */,
+				7840FB221EB09CE900B553F7 /* NavigationBarBaseViewController.h */,
+				7840FB231EB09CE900B553F7 /* NavigationBarBaseViewController.m */,
+				7840FB241EB09CE900B553F7 /* NavigationBarBaseViewController.xib */,
+				78E269A21ECA92B9007D3686 /* NavigationBarChangeBGViewController.h */,
+				78E269A31ECA92B9007D3686 /* NavigationBarChangeBGViewController.m */,
+				78E269A51ECA92E4007D3686 /* NavigationBarChangePositonViewController.h */,
+				78E269A61ECA92E4007D3686 /* NavigationBarChangePositonViewController.m */,
+				78E269B11ECB0588007D3686 /* MyScaleHeadView.h */,
+				78E269B21ECB0588007D3686 /* MyScaleHeadView.m */,
+				78E269B41ECB0593007D3686 /* MyScaleHeadView.xib */,
 			);
 			path = UINavigationBar;
 			sourceTree = "<group>";
@@ -646,6 +672,7 @@
 			isa = PBXGroup;
 			children = (
 				7840FB271EB09E0700B553F7 /* bg@2x.jpg */,
+				78E269AF1ECAF678007D3686 /* car@2x.jpg */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -667,24 +694,35 @@
 			path = RefreshDemo;
 			sourceTree = "<group>";
 		};
+		78E269A81ECADDD3007D3686 /* CJAddScaleHead */ = {
+			isa = PBXGroup;
+			children = (
+				78E269A91ECADDEA007D3686 /* UIScrollView+CJAddScaleHead.h */,
+				78E269AA1ECADDEA007D3686 /* UIScrollView+CJAddScaleHead.m */,
+				78E269AC1ECAF105007D3686 /* CJScaleHeadView.h */,
+				78E269AD1ECAF105007D3686 /* CJScaleHeadView.m */,
+			);
+			path = CJAddScaleHead;
+			sourceTree = "<group>";
+		};
 		78E61EA71E79AA20009B1627 /* CJUIKit */ = {
 			isa = PBXGroup;
 			children = (
 				78E61ECD1E79AA20009B1627 /* CJUIKit.h */,
-				781592EA1EC4387000DE1976 /* CJToast */,
-				781592E01EC40BEF00DE1976 /* CJSearchBar */,
-				7840FB1E1EB09C6E00B553F7 /* UINavigationBar+CJCategory */,
-				782709E71E8715BB00E21433 /* UIButton+CJCategory */,
-				782709EA1E8715BB00E21433 /* UIView+Category */,
-				782708E51E867C2800E21433 /* UIImage+CJCategory */,
-				784B7D471E7F7DE300299457 /* UIColor+CJCategory */,
-				78553FBC1E7D993300F320E6 /* CJSlider */,
-				78553FB21E7D952700F320E6 /* CJTextField */,
-				78E61EF21E79AF0A009B1627 /* CJRefreshView */,
 				78E61EA81E79AA20009B1627 /* CJImageView */,
 				78E61EAD1E79AA20009B1627 /* CJMJRefreshComponent */,
+				78E61EF21E79AF0A009B1627 /* CJRefreshView */,
 				78E61EC21E79AA20009B1627 /* CJScrollView */,
+				781592E01EC40BEF00DE1976 /* CJSearchBar */,
+				78553FBC1E7D993300F320E6 /* CJSlider */,
+				78553FB21E7D952700F320E6 /* CJTextField */,
 				78E61ECA1E79AA20009B1627 /* CJTextView */,
+				781592EA1EC4387000DE1976 /* CJToast */,
+				782709E71E8715BB00E21433 /* UIButton+CJCategory */,
+				784B7D471E7F7DE300299457 /* UIColor+CJCategory */,
+				782708E51E867C2800E21433 /* UIImage+CJCategory */,
+				7840FB1E1EB09C6E00B553F7 /* UINavigationBar+CJCategory */,
+				782709EA1E8715BB00E21433 /* UIView+Category */,
 			);
 			name = CJUIKit;
 			path = ../../CJUIKit;
@@ -733,6 +771,7 @@
 		78E61EC21E79AA20009B1627 /* CJScrollView */ = {
 			isa = PBXGroup;
 			children = (
+				78E269A81ECADDD3007D3686 /* CJAddScaleHead */,
 				78E61EC31E79AA20009B1627 /* CJKeyboardAvoiding */,
 			);
 			path = CJScrollView;
@@ -944,18 +983,20 @@
 				7840FB0D1EB09C4600B553F7 /* slider_minimum_trackimage@2x.png in Resources */,
 				7840FB0C1EB09C4600B553F7 /* slider_maximum_trackimage@3x.png in Resources */,
 				780E46131E5DF87B00980127 /* LaunchScreen.storyboard in Resources */,
+				78E269B51ECB0593007D3686 /* MyScaleHeadView.xib in Resources */,
 				7840FB0B1EB09C4600B553F7 /* slider_maximum_trackimage@2x.png in Resources */,
 				78E61ED21E79AA20009B1627 /* cjRefreshArrowDown@2x.png in Resources */,
 				7840FB071EB09C4500B553F7 /* slider_double_thumbImage_a@2x.png in Resources */,
 				7840FB041EB09C4500B553F7 /* ImageViewController.xib in Resources */,
 				7840FB061EB09C4500B553F7 /* KeyboardAvoidingViewController.xib in Resources */,
 				7840FB101EB09C4600B553F7 /* slider_thumbImage@3x.png in Resources */,
-				7840FB261EB09CE900B553F7 /* NavigationBarViewController.xib in Resources */,
+				7840FB261EB09CE900B553F7 /* NavigationBarBaseViewController.xib in Resources */,
 				7840FB191EB09C4600B553F7 /* TextViewController.xib in Resources */,
 				780E46101E5DF87B00980127 /* Assets.xcassets in Resources */,
 				7840FB141EB09C4600B553F7 /* TextFieldViewController.xib in Resources */,
 				7840FB0A1EB09C4600B553F7 /* slider_double_thumbImage_b@3x.png in Resources */,
 				7840FB0E1EB09C4600B553F7 /* slider_minimum_trackimage@3x.png in Resources */,
+				78E269B01ECAF678007D3686 /* car@2x.jpg in Resources */,
 				7840FB171EB09C4600B553F7 /* sound@2x.png in Resources */,
 				7840FB121EB09C4600B553F7 /* SliderViewController.xib in Resources */,
 				780E460E1E5DF87B00980127 /* Main.storyboard in Resources */,
@@ -1089,7 +1130,7 @@
 				78E61EDA1E79AA20009B1627 /* UIScrollView+CJKeyboardAvoiding.m in Sources */,
 				782708E81E867C4700E21433 /* UIImage+CJCreate.m in Sources */,
 				782709041E867EFA00E21433 /* CJSliderControl.m in Sources */,
-				7840FB251EB09CE900B553F7 /* NavigationBarViewController.m in Sources */,
+				7840FB251EB09CE900B553F7 /* NavigationBarBaseViewController.m in Sources */,
 				782709E51E8715A600E21433 /* UIImage+Save.m in Sources */,
 				7840FB111EB09C4600B553F7 /* SliderViewController.m in Sources */,
 				782709E61E8715A600E21433 /* UIImage+SplitImageIntoTwoParts.m in Sources */,
@@ -1108,11 +1149,15 @@
 				782708E41E86772600E21433 /* CJBaseSlider.m in Sources */,
 				78E61ECE1E79AA20009B1627 /* CJBadgeImageView.m in Sources */,
 				782709ED1E8715BB00E21433 /* UIButton+CJMoreProperty.m in Sources */,
+				78E269A41ECA92B9007D3686 /* NavigationBarChangeBGViewController.m in Sources */,
 				78F3AA001E963197005D3DA4 /* UIImage+CJFixOrientation.m in Sources */,
 				7840FB031EB09C4500B553F7 /* ImageViewController.m in Sources */,
 				7840FB1B1EB09C4600B553F7 /* ImageChangeColorViewController.m in Sources */,
+				78E269B31ECB0588007D3686 /* MyScaleHeadView.m in Sources */,
 				78E61ECF1E79AA20009B1627 /* CJImageView.m in Sources */,
+				78E269AE1ECAF105007D3686 /* CJScaleHeadView.m in Sources */,
 				78E61F041E79AF0A009B1627 /* UIView+CJExtension.m in Sources */,
+				78E269AB1ECADDEA007D3686 /* UIScrollView+CJAddScaleHead.m in Sources */,
 				781592E81EC40C8F00DE1976 /* SearchBarViewController.m in Sources */,
 				7840FB1A1EB09C4600B553F7 /* HomeViewController.m in Sources */,
 				782709E41E8715A600E21433 /* UIImage+MakeCircle.m in Sources */,
@@ -1131,6 +1176,7 @@
 				78553FB51E7D954300F320E6 /* CJTextField.m in Sources */,
 				7840FB051EB09C4500B553F7 /* KeyboardAvoidingViewController.m in Sources */,
 				781592F31EC4747300DE1976 /* UITextField+CJLimitTextLength.m in Sources */,
+				78E269A71ECA92E4007D3686 /* NavigationBarChangePositonViewController.m in Sources */,
 				782709031E867EFA00E21433 /* CJRangeSliderControl.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
