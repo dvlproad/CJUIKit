@@ -47,7 +47,7 @@
 }
 
 /** 完整的描述请参见文件头部 */
-- (void)addTableScaleHeaderViewWithPullUpMinHeight:(CGFloat)pullUpMinHeight supportPullSmall:(BOOL)canPullSmall  {
+- (void)addTableScaleHeaderViewWithAttachNavigationBar:(BOOL)attachNavigationBar supportPullSmall:(BOOL)canPullSmall  {
     CJScaleHeadView *scaleHeadView = nil;
     if (!canPullSmall) {
         NSArray *views = [[NSBundle mainBundle] loadNibNamed:@"MyScaleHeadView" owner:self options:nil];
@@ -61,9 +61,9 @@
     scaleHeadViewFrame.size.height = 200;
     scaleHeadView.frame = scaleHeadViewFrame;
     
-    scaleHeadView.scrollView = self.tableView;
-    scaleHeadView.pullUpMinHeight = pullUpMinHeight;
+    
     [self.tableView addSubview:scaleHeadView];
+    [scaleHeadView pullScaleByScrollView:self.tableView withAttachNavigationBar:attachNavigationBar];
 }
 
 #pragma mark - UITableViewDataSource & UITableViewDelegate

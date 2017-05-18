@@ -33,7 +33,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    [self addTableScaleHeaderViewWithPullUpMinHeight:0 supportPullSmall:NO];
+    [self addTableScaleHeaderViewWithAttachNavigationBar:NO supportPullSmall:NO];
 }
 
 - (void)setNavigationBarTransformProgress:(CGFloat)progress

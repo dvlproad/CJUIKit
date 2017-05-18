@@ -55,9 +55,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="2h2-gK-tMM">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="2h2-gK-tMM">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
                                     <outlet property="dataSource" destination="oVD-Ab-pve" id="pt2-Uo-Icj"/>
@@ -66,6 +65,12 @@
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="J3a-kI-nVu" firstAttribute="top" secondItem="2h2-gK-tMM" secondAttribute="bottom" id="JCU-LE-8vP"/>
+                            <constraint firstItem="2h2-gK-tMM" firstAttribute="leading" secondItem="frK-t4-ohx" secondAttribute="leading" id="Yq7-PU-3b2"/>
+                            <constraint firstItem="2h2-gK-tMM" firstAttribute="top" secondItem="frK-t4-ohx" secondAttribute="top" id="ejU-bp-NA7"/>
+                            <constraint firstAttribute="trailing" secondItem="2h2-gK-tMM" secondAttribute="trailing" id="toy-RW-IPg"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="8v5-h4-Qtu"/>
                     <connections>

@@ -13,6 +13,8 @@ static NSString *const CorePullScaleContentOffset = @"contentOffset";
 @interface CJScaleHeadView () {
 
 }
+@property (nonatomic, strong, readonly) UIScrollView *scrollView; /**< 当前视图被添加到的滚动视图 */
+@property (nonatomic, assign, readonly) BOOL attachNavigationBar;  /**< 滚动视图是否会依附在导航栏上 */
 @property (nonatomic, assign) CGFloat originY;       /**< 初始Y */
 
 @end
@@ -45,13 +47,17 @@ static NSString *const CorePullScaleContentOffset = @"contentOffset";
 
 - (void)commonInit {
     self.clipsToBounds = YES;   //剪切多余部分
+    
+    //事件监听
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(screenRotate) name:UIDeviceOrientationDidChangeNotification object:nil];
 }
 
 - (void)dealloc {
      [_scrollView removeObserver:self forKeyPath:@"contentOffset" context:nil];
 }
 
-- (void)setScrollView:(UIScrollView *)scrollView {
+- (void)pullScaleByScrollView:(UIScrollView *)scrollView withAttachNavigationBar:(BOOL)attachNavigationBar {
+    //①scrollView
     if (_scrollView) {
         [_scrollView removeObserver:self forKeyPath:@"contentOffset" context:nil];
     }
@@ -77,6 +83,12 @@ static NSString *const CorePullScaleContentOffset = @"contentOffset";
     self.originHeight = scaleHeadViewHeight;
     self.originY = -self.originHeight;
     NSLog(@"originHeight = %1.f, originY = %.1f", self.originHeight, self.originY);
+    
+    
+    //②attachNavigationBar
+    _attachNavigationBar = attachNavigationBar;
+    
+    [self resetNavigationBarHeight];
 }
 
 #pragma mark - 监听属性变化
@@ -110,6 +122,40 @@ static NSString *const CorePullScaleContentOffset = @"contentOffset";
     self.frame = frame;
 }
 
+
+/**
+ *  屏幕旋转
+ */
+- (void)screenRotate {
+    [self resetNavigationBarHeight];
+}
+
+/** 完整的描述请参见文件头部 */
+- (void)resetNavigationBarHeight {
+    if (!_attachNavigationBar) {
+        _pullUpMinHeight = 0;
+        return;
+    }
+    
+    UIViewController *viewController = [self getBelongViewControllerForView:self];
+    NSAssert(viewController != nil, @"请确保视图已经被添加到某个视图上");
+    
+    CGFloat navigationBarHeight = viewController.navigationController.navigationBar.bounds.size.height;
+    CGRect statusBarFrame = [[UIApplication sharedApplication] statusBarFrame];
+    CGFloat statusBarHeight = CGRectGetHeight(statusBarFrame);
+    //CGFloat systemVersion = [UIDevice currentDevice].systemVersion.floatValue;
+    
+    _pullUpMinHeight = navigationBarHeight + statusBarHeight;
+}
+
+- (nullable UIViewController *)getBelongViewControllerForView:(UIView *)view {
+    UIResponder *responder = view;
+    while ((responder = [responder nextResponder]))
+        if ([responder isKindOfClass: [UIViewController class]]) {
+            return (UIViewController *)responder;
+        }
+    return nil;
+}
 
 /*
 // Only override drawRect: if you perform custom drawing.

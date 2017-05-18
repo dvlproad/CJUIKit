@@ -19,9 +19,9 @@
 /**
  *  添加顶部视图
  *
- *  @param pullUpMinHeight  在上推缩小的过程中能推到的最小高度
- *  @param canPullSmall     所添加的view是否同时支持上推缩小
+ *  @param attachNavigationBar  滚动视图是否会依附在导航栏上
+ *  @param canPullSmall         所添加的view是否同时支持上推缩小
  */
-- (void)addTableScaleHeaderViewWithPullUpMinHeight:(CGFloat)pullUpMinHeight supportPullSmall:(BOOL)canPullSmall;
+- (void)addTableScaleHeaderViewWithAttachNavigationBar:(BOOL)attachNavigationBar supportPullSmall:(BOOL)canPullSmall;
 
 @end

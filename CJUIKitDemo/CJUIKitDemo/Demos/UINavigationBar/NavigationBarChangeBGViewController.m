@@ -31,7 +31,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    [self addTableScaleHeaderViewWithPullUpMinHeight:64 supportPullSmall:YES];
+    [self addTableScaleHeaderViewWithAttachNavigationBar:YES supportPullSmall:YES];
     
     [self.navigationController.navigationBar cj_setBackgroundColor:[UIColor clearColor]];//改变导航栏背景色
     self.automaticallyAdjustsScrollViewInsets = NO; //设成透明的时候，让顶部不会有一个statusBar的偏差

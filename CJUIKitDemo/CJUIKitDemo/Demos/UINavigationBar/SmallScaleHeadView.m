@@ -10,30 +10,9 @@
 
 @implementation SmallScaleHeadView
 
-- (void)awakeFromNib {
-    [super awakeFromNib];
-    
-    [self commonInit];
-}
-
-- (instancetype)init {
-    self = [super init];
-    if (self) {
-        [self commonInit];
-    }
-    
-    return self;
-}
-
-- (instancetype)initWithFrame:(CGRect)frame {
-    self = [super initWithFrame:frame];
-    if (self) {
-        [self commonInit];
-    }
-    return self;
-}
-
 - (void)commonInit {
+    [super commonInit]; //记得super
+    
     self.backgroundColor = [UIColor cyanColor];
     
     [self addSubview:self.backgroundImageView];
@@ -48,7 +27,6 @@
     self.originHeight = 200;
 }
 
-
 - (void)setFrame:(CGRect)frame {
     [super setFrame:frame];
     
@@ -60,7 +38,7 @@
     self.portraitButton.center = CGPointMake(width/2, height/2);
     self.portraitButton.layer.cornerRadius = CGRectGetHeight(self.portraitButton.frame)/2;
     
-//    self.pullUpMinHeight = 64;
+    NSLog(@"self.pullUpMinHeight = %.1f", self.pullUpMinHeight);
     if (height >= self.originHeight) {
         
     } else if (height > self.pullUpMinHeight && height <= self.originHeight) {
@@ -76,7 +54,10 @@
         CGFloat headerChangeHeight = (self.originHeight-height) * kEachPixel;//头像改变的大小
         CGFloat headerLastHeight = kHeaderWidth - headerChangeHeight;
         self.portraitButton.frame = CGRectMake(0, 0, headerLastHeight, headerLastHeight);
-        self.portraitButton.center = CGPointMake(width/2, (height-20)/2+20);
+        
+        CGRect statusBarFrame = [[UIApplication sharedApplication] statusBarFrame];
+        CGFloat statusBarHeight = CGRectGetHeight(statusBarFrame);
+        self.portraitButton.center = CGPointMake(width/2, (height-statusBarHeight)/2 + statusBarHeight);
         self.portraitButton.layer.cornerRadius = CGRectGetHeight(self.portraitButton.frame)/2;
         
         [self fixHeaderImageViewWithReachtop:NO];
