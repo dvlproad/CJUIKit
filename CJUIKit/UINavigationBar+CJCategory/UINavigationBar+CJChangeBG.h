@@ -12,6 +12,11 @@
 @interface UINavigationBar (CJChangeBG)
 
 /**
+ *  删除导航栏的下划线
+ */
+- (void)cj_removeUnderline;
+
+/**
  *  设置导航栏的背景色
  *
  *  @param backgroundColor  backgroundColor

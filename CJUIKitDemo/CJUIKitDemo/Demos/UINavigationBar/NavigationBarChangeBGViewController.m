@@ -7,7 +7,6 @@
 //
 
 #import "NavigationBarChangeBGViewController.h"
-#import "UINavigationBar+CJChangeBG.h"
 
 @interface NavigationBarChangeBGViewController ()
 
@@ -24,27 +23,18 @@
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:YES];
     
-    [self scrollViewDidScroll:self.tableView];
-    [self.navigationController.navigationBar setShadowImage:[UIImage new]];
+//    [self scrollViewDidScroll:self.tableView];
+//    [self.navigationController.navigationBar setShadowImage:[UIImage new]];
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    //改变导航栏背景色
-    [self.navigationController.navigationBar cj_setBackgroundColor:[UIColor clearColor]];
-}
-
-- (void)viewDidLayoutSubviews {
-    [super viewDidLayoutSubviews];
+    [self addTableScaleHeaderViewWithPullUpMinHeight:64 supportPullSmall:YES];
     
-    CJScaleHeadView *cjScaleHeadView = (CJScaleHeadView *)self.tableView.cjScaleHeadView;
-    [cjScaleHeadView adjustViewToScrollViewWhenViewDidLayoutSubviews:0];
-}
-
-- (BOOL)automaticallyAdjustsScrollViewInsets {
-    return NO;
+    [self.navigationController.navigationBar cj_setBackgroundColor:[UIColor clearColor]];//改变导航栏背景色
+    self.automaticallyAdjustsScrollViewInsets = NO; //设成透明的时候，让顶部不会有一个statusBar的偏差
 }
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
@@ -53,7 +43,7 @@
     CGFloat offsetY = scrollView.contentOffset.y + scrollView.contentInset.top; //注意加上top（top一般为0,但是在下拉图片放大的时候我们改变了contentInset）
     //NSLog(@"offsetY = %.1f", offsetY);
     
-    CGFloat navigationBarChangeAtPointY = 200;
+    CGFloat navigationBarChangeAtPointY = 100;
     CGFloat alpha = 0;
     if (offsetY > navigationBarChangeAtPointY) {
         alpha = MIN(1, 1 - ((navigationBarChangeAtPointY + 64 - offsetY) / 64));

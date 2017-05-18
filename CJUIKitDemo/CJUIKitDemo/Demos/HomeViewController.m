@@ -21,6 +21,7 @@
 
 #import "NavigationBarChangeBGViewController.h"
 #import "NavigationBarChangePositonViewController.h"
+#import "PullScaleTopImageViewController.h"
 
 #import "CJMJRefreshViewController.h"
 
@@ -87,6 +88,7 @@
     UIImageModuleModel.classEntry = [ImageChangeColorViewController class];
     [self.datas addObject:UIImageModuleModel];
     
+    //UINavigationBar
     ModuleModel *UINavigationBarModuleModel1 = [[ModuleModel alloc] init];
     UINavigationBarModuleModel1.title = @"UINavigationBar(常见的导航栏背景色改变隐藏)";
     UINavigationBarModuleModel1.classEntry = [NavigationBarChangeBGViewController class];
@@ -96,6 +98,12 @@
     UINavigationBarModuleModel2.title = @"UINavigationBar(类似斗鱼的导航栏移动隐藏)";
     UINavigationBarModuleModel2.classEntry = [NavigationBarChangePositonViewController class];
     [self.datas addObject:UINavigationBarModuleModel2];
+    
+    //PullScaleTopImageViewController
+    ModuleModel *pullScaleTopImageModuleModel = [[ModuleModel alloc] init];
+    pullScaleTopImageModuleModel.title = @"顶部图片下拉放大，上拉缩小";
+    pullScaleTopImageModuleModel.classEntry = [PullScaleTopImageViewController class];
+    [self.datas addObject:pullScaleTopImageModuleModel];
     
     ModuleModel *cjMJRefreshComponentModuleModel = [[ModuleModel alloc] init];
     cjMJRefreshComponentModuleModel.title = @"CJMJRefreshComponent";

@@ -22,6 +22,10 @@ static char overlayKey;
     objc_setAssociatedObject(self, &overlayKey, overlay, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
+/** 完整的描述请参见文件头部 */
+- (void)cj_removeUnderline {
+    [self setShadowImage:[[UIImage alloc] init]];
+}
 
 /** 完整的描述请参见文件头部 */
 - (void)cj_setBackgroundColor:(UIColor *)backgroundColor

@@ -26,34 +26,44 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
-    
-    [self addTableHeaderView];
-    
+    [self addTableHeaderView]; //warning：需要先设置完tableHeaderView后，再进行协议设置，否则协议走不进去
     
     [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"cell"];
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
+    [self.view addSubview:self.tableView];
 }
 
 - (void)addTableHeaderView {
-    //warning：需要先设置完tableHeaderView后，再进行协议设置，否则协议走不进去
-    //①
-//    NSArray *views = [[NSBundle mainBundle] loadNibNamed:@"NavigationBarBaseViewController" owner:self options:nil];
-//    UIView *tableHeaderView = [views objectAtIndex:1];
-    //②
-    NSArray *views = [[NSBundle mainBundle] loadNibNamed:@"MyScaleHeadView" owner:self options:nil];
-    MyScaleHeadView *tableHeaderView = [views objectAtIndex:0];
-    //③
-//    CJScaleHeadView *tableHeaderView = [[CJScaleHeadView alloc] initWithFrame:CGRectMake(10, 10, 320, 400)];
-//    tableHeaderView.backgroundColor = [UIColor greenColor];
+    NSArray *views = [[NSBundle mainBundle] loadNibNamed:@"NavigationBarBaseViewController" owner:self options:nil];
+    UIView *tableHeaderView = [views objectAtIndex:1];
     
     /* 改变tableHeaderView的高度 */
     CGRect tableHeaderViewFrame = tableHeaderView.frame;
     tableHeaderViewFrame.size.height = 200;
     tableHeaderView.frame = tableHeaderViewFrame;
     
-//    self.tableView.tableHeaderView = tableHeaderView;
-    self.tableView.cjScaleHeadView = tableHeaderView;
+    self.tableView.tableHeaderView = tableHeaderView;
+}
+
+/** 完整的描述请参见文件头部 */
+- (void)addTableScaleHeaderViewWithPullUpMinHeight:(CGFloat)pullUpMinHeight supportPullSmall:(BOOL)canPullSmall  {
+    CJScaleHeadView *scaleHeadView = nil;
+    if (!canPullSmall) {
+        NSArray *views = [[NSBundle mainBundle] loadNibNamed:@"MyScaleHeadView" owner:self options:nil];
+        scaleHeadView = (MyScaleHeadView *)[views objectAtIndex:0];
+    } else {
+        scaleHeadView = [[SmallScaleHeadView alloc] initWithFrame:CGRectMake(0, 0, 200, 200)];
+    }
+    
+    /* 改变scaleHeadView的高度 */
+    CGRect scaleHeadViewFrame = scaleHeadView.frame;
+    scaleHeadViewFrame.size.height = 200;
+    scaleHeadView.frame = scaleHeadViewFrame;
+    
+    scaleHeadView.scrollView = self.tableView;
+    scaleHeadView.pullUpMinHeight = pullUpMinHeight;
+    [self.tableView addSubview:scaleHeadView];
 }
 
 #pragma mark - UITableViewDataSource & UITableViewDelegate
@@ -68,13 +78,13 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
     cell.textLabel.text = [NSString stringWithFormat:@"%zd", indexPath.row];
-    //cell.backgroundColor = [UIColor redColor];
     
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    NSLog(@"didSelectRowAtIndexPath = %ld %ld", indexPath.section, indexPath.row);
+    //NSLog(@"didSelectRowAtIndexPath = %ld %ld", indexPath.section, indexPath.row);
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
 - (void)didReceiveMemoryWarning {

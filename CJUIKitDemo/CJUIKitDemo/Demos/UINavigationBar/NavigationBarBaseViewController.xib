@@ -27,10 +27,10 @@
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstAttribute="trailing" secondItem="lCU-lV-qgt" secondAttribute="trailing" id="Mj6-Z1-zfD"/>
-                <constraint firstItem="lCU-lV-qgt" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="P9k-qW-6IE"/>
-                <constraint firstAttribute="bottom" secondItem="lCU-lV-qgt" secondAttribute="bottom" id="TCj-02-c4q"/>
-                <constraint firstItem="lCU-lV-qgt" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="h4P-YE-9cQ"/>
+                <constraint firstAttribute="trailing" secondItem="lCU-lV-qgt" secondAttribute="trailing" id="4hr-0T-8bc"/>
+                <constraint firstAttribute="bottom" secondItem="lCU-lV-qgt" secondAttribute="bottom" id="Oka-Jj-SkS"/>
+                <constraint firstItem="lCU-lV-qgt" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Xtm-UI-BgK"/>
+                <constraint firstItem="lCU-lV-qgt" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="gxt-kU-lGk"/>
             </constraints>
             <point key="canvasLocation" x="63.5" y="53.5"/>
         </view>
@@ -38,7 +38,7 @@
             <rect key="frame" x="0.0" y="0.0" width="244" height="76"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="car.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="yUb-Ej-Gfm">
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bgCar.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="yUb-Ej-Gfm">
                     <rect key="frame" x="0.0" y="0.0" width="244" height="76"/>
                 </imageView>
             </subviews>
@@ -55,6 +55,6 @@
         </view>
     </objects>
     <resources>
-        <image name="car.jpg" width="800" height="579"/>
+        <image name="bgCar.jpg" width="800" height="579"/>
     </resources>
 </document>

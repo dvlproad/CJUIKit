@@ -32,13 +32,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-}
-
-- (void)viewDidLayoutSubviews {
-    [super viewDidLayoutSubviews];
     
-    CJScaleHeadView *cjScaleHeadView = (CJScaleHeadView *)self.tableView.cjScaleHeadView;
-    [cjScaleHeadView adjustViewToScrollViewWhenViewDidLayoutSubviews:64];
+    [self addTableScaleHeaderViewWithPullUpMinHeight:0 supportPullSmall:NO];
 }
 
 - (void)setNavigationBarTransformProgress:(CGFloat)progress

@@ -25,6 +25,9 @@
                         <constraint firstAttribute="width" constant="46" id="vba-Et-Yz8"/>
                     </constraints>
                     <state key="normal" image="imageOriginColor.png"/>
+                    <connections>
+                        <action selector="doPortrait:" destination="Qe4-b2-OkB" eventType="touchUpInside" id="O7d-1m-D91"/>
+                    </connections>
                 </button>
             </subviews>
             <color key="backgroundColor" red="0.99607843139999996" green="0.78039215689999997" blue="0.36862745099999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

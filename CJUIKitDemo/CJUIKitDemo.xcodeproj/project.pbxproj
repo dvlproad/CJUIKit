@@ -79,11 +79,17 @@
 		78B6761B1EB192EA006F4612 /* ModuleModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 78B6761A1EB192EA006F4612 /* ModuleModel.m */; };
 		78E269A41ECA92B9007D3686 /* NavigationBarChangeBGViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78E269A31ECA92B9007D3686 /* NavigationBarChangeBGViewController.m */; };
 		78E269A71ECA92E4007D3686 /* NavigationBarChangePositonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78E269A61ECA92E4007D3686 /* NavigationBarChangePositonViewController.m */; };
-		78E269AB1ECADDEA007D3686 /* UIScrollView+CJAddScaleHead.m in Sources */ = {isa = PBXBuildFile; fileRef = 78E269AA1ECADDEA007D3686 /* UIScrollView+CJAddScaleHead.m */; };
 		78E269AE1ECAF105007D3686 /* CJScaleHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = 78E269AD1ECAF105007D3686 /* CJScaleHeadView.m */; };
-		78E269B01ECAF678007D3686 /* car@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 78E269AF1ECAF678007D3686 /* car@2x.jpg */; };
 		78E269B31ECB0588007D3686 /* MyScaleHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = 78E269B21ECB0588007D3686 /* MyScaleHeadView.m */; };
 		78E269B51ECB0593007D3686 /* MyScaleHeadView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 78E269B41ECB0593007D3686 /* MyScaleHeadView.xib */; };
+		78E269BE1ECC5E1A007D3686 /* bgCar@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 78E269BB1ECC5E1A007D3686 /* bgCar@2x.jpg */; };
+		78E269BF1ECC5E1A007D3686 /* bgSky@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 78E269BC1ECC5E1A007D3686 /* bgSky@2x.jpg */; };
+		78E269C01ECC5E1A007D3686 /* header@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 78E269BD1ECC5E1A007D3686 /* header@2x.jpg */; };
+		78E269C31ECC5E29007D3686 /* LEOHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 78E269C21ECC5E29007D3686 /* LEOHeaderView.m */; };
+		78E269C61ECCD0DF007D3686 /* SmallScaleHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = 78E269C51ECCD0DF007D3686 /* SmallScaleHeadView.m */; };
+		78E269C91ECCF136007D3686 /* UIView+CJFind.m in Sources */ = {isa = PBXBuildFile; fileRef = 78E269C81ECCF136007D3686 /* UIView+CJFind.m */; };
+		78E269CD1ECCFB1E007D3686 /* PullScaleTopImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78E269CB1ECCFB1E007D3686 /* PullScaleTopImageViewController.m */; };
+		78E269CE1ECCFB1E007D3686 /* PullScaleTopImageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 78E269CC1ECCFB1E007D3686 /* PullScaleTopImageViewController.xib */; };
 		78E61ECE1E79AA20009B1627 /* CJBadgeImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 78E61EAA1E79AA20009B1627 /* CJBadgeImageView.m */; };
 		78E61ECF1E79AA20009B1627 /* CJImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 78E61EAC1E79AA20009B1627 /* CJImageView.m */; };
 		78E61ED01E79AA20009B1627 /* CJMJRefreshNormalFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = 78E61EB11E79AA20009B1627 /* CJMJRefreshNormalFooter.m */; };
@@ -242,14 +248,23 @@
 		78E269A31ECA92B9007D3686 /* NavigationBarChangeBGViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NavigationBarChangeBGViewController.m; sourceTree = "<group>"; };
 		78E269A51ECA92E4007D3686 /* NavigationBarChangePositonViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NavigationBarChangePositonViewController.h; sourceTree = "<group>"; };
 		78E269A61ECA92E4007D3686 /* NavigationBarChangePositonViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NavigationBarChangePositonViewController.m; sourceTree = "<group>"; };
-		78E269A91ECADDEA007D3686 /* UIScrollView+CJAddScaleHead.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+CJAddScaleHead.h"; sourceTree = "<group>"; };
-		78E269AA1ECADDEA007D3686 /* UIScrollView+CJAddScaleHead.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+CJAddScaleHead.m"; sourceTree = "<group>"; };
 		78E269AC1ECAF105007D3686 /* CJScaleHeadView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJScaleHeadView.h; sourceTree = "<group>"; };
 		78E269AD1ECAF105007D3686 /* CJScaleHeadView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJScaleHeadView.m; sourceTree = "<group>"; };
-		78E269AF1ECAF678007D3686 /* car@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "car@2x.jpg"; sourceTree = "<group>"; };
 		78E269B11ECB0588007D3686 /* MyScaleHeadView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyScaleHeadView.h; sourceTree = "<group>"; };
 		78E269B21ECB0588007D3686 /* MyScaleHeadView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyScaleHeadView.m; sourceTree = "<group>"; };
 		78E269B41ECB0593007D3686 /* MyScaleHeadView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyScaleHeadView.xib; sourceTree = "<group>"; };
+		78E269BB1ECC5E1A007D3686 /* bgCar@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "bgCar@2x.jpg"; sourceTree = "<group>"; };
+		78E269BC1ECC5E1A007D3686 /* bgSky@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "bgSky@2x.jpg"; sourceTree = "<group>"; };
+		78E269BD1ECC5E1A007D3686 /* header@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "header@2x.jpg"; sourceTree = "<group>"; };
+		78E269C11ECC5E29007D3686 /* LEOHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LEOHeaderView.h; sourceTree = "<group>"; };
+		78E269C21ECC5E29007D3686 /* LEOHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LEOHeaderView.m; sourceTree = "<group>"; };
+		78E269C41ECCD0DF007D3686 /* SmallScaleHeadView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SmallScaleHeadView.h; sourceTree = "<group>"; };
+		78E269C51ECCD0DF007D3686 /* SmallScaleHeadView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SmallScaleHeadView.m; sourceTree = "<group>"; };
+		78E269C71ECCF136007D3686 /* UIView+CJFind.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+CJFind.h"; sourceTree = "<group>"; };
+		78E269C81ECCF136007D3686 /* UIView+CJFind.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+CJFind.m"; sourceTree = "<group>"; };
+		78E269CA1ECCFB1E007D3686 /* PullScaleTopImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PullScaleTopImageViewController.h; sourceTree = "<group>"; };
+		78E269CB1ECCFB1E007D3686 /* PullScaleTopImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PullScaleTopImageViewController.m; sourceTree = "<group>"; };
+		78E269CC1ECCFB1E007D3686 /* PullScaleTopImageViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PullScaleTopImageViewController.xib; sourceTree = "<group>"; };
 		78E61EA91E79AA20009B1627 /* CJBadgeImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJBadgeImageView.h; sourceTree = "<group>"; };
 		78E61EAA1E79AA20009B1627 /* CJBadgeImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJBadgeImageView.m; sourceTree = "<group>"; };
 		78E61EAB1E79AA20009B1627 /* CJImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJImageView.h; sourceTree = "<group>"; };
@@ -484,6 +499,8 @@
 				782709EC1E8715BB00E21433 /* UIView+CJGestureRecognizer.m */,
 				781592F41EC475B000DE1976 /* UIView+CJShake.h */,
 				781592F51EC475B000DE1976 /* UIView+CJShake.m */,
+				78E269C71ECCF136007D3686 /* UIView+CJFind.h */,
+				78E269C81ECCF136007D3686 /* UIView+CJFind.m */,
 			);
 			path = "UIView+Category";
 			sourceTree = "<group>";
@@ -608,6 +625,11 @@
 				78E269A31ECA92B9007D3686 /* NavigationBarChangeBGViewController.m */,
 				78E269A51ECA92E4007D3686 /* NavigationBarChangePositonViewController.h */,
 				78E269A61ECA92E4007D3686 /* NavigationBarChangePositonViewController.m */,
+				78E269CA1ECCFB1E007D3686 /* PullScaleTopImageViewController.h */,
+				78E269CB1ECCFB1E007D3686 /* PullScaleTopImageViewController.m */,
+				78E269CC1ECCFB1E007D3686 /* PullScaleTopImageViewController.xib */,
+				78E269C41ECCD0DF007D3686 /* SmallScaleHeadView.h */,
+				78E269C51ECCD0DF007D3686 /* SmallScaleHeadView.m */,
 				78E269B11ECB0588007D3686 /* MyScaleHeadView.h */,
 				78E269B21ECB0588007D3686 /* MyScaleHeadView.m */,
 				78E269B41ECB0593007D3686 /* MyScaleHeadView.xib */,
@@ -672,7 +694,9 @@
 			isa = PBXGroup;
 			children = (
 				7840FB271EB09E0700B553F7 /* bg@2x.jpg */,
-				78E269AF1ECAF678007D3686 /* car@2x.jpg */,
+				78E269BB1ECC5E1A007D3686 /* bgCar@2x.jpg */,
+				78E269BC1ECC5E1A007D3686 /* bgSky@2x.jpg */,
+				78E269BD1ECC5E1A007D3686 /* header@2x.jpg */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -697,10 +721,10 @@
 		78E269A81ECADDD3007D3686 /* CJAddScaleHead */ = {
 			isa = PBXGroup;
 			children = (
-				78E269A91ECADDEA007D3686 /* UIScrollView+CJAddScaleHead.h */,
-				78E269AA1ECADDEA007D3686 /* UIScrollView+CJAddScaleHead.m */,
 				78E269AC1ECAF105007D3686 /* CJScaleHeadView.h */,
 				78E269AD1ECAF105007D3686 /* CJScaleHeadView.m */,
+				78E269C11ECC5E29007D3686 /* LEOHeaderView.h */,
+				78E269C21ECC5E29007D3686 /* LEOHeaderView.m */,
 			);
 			path = CJAddScaleHead;
 			sourceTree = "<group>";
@@ -976,6 +1000,8 @@
 				78A355351EB32D62005C5A9A /* CJMJRefreshViewController.xib in Resources */,
 				7840FB081EB09C4500B553F7 /* slider_double_thumbImage_a@3x.png in Resources */,
 				7840FB281EB09E0700B553F7 /* bg@2x.jpg in Resources */,
+				78E269CE1ECCFB1E007D3686 /* PullScaleTopImageViewController.xib in Resources */,
+				78E269BE1ECC5E1A007D3686 /* bgCar@2x.jpg in Resources */,
 				7840FB091EB09C4500B553F7 /* slider_double_thumbImage_b@2x.png in Resources */,
 				78E61F031E79AF0A009B1627 /* sdRefeshView_arrow@2x.png in Resources */,
 				7840FB1C1EB09C4600B553F7 /* ImageChangeColorViewController.xib in Resources */,
@@ -992,14 +1018,15 @@
 				7840FB101EB09C4600B553F7 /* slider_thumbImage@3x.png in Resources */,
 				7840FB261EB09CE900B553F7 /* NavigationBarBaseViewController.xib in Resources */,
 				7840FB191EB09C4600B553F7 /* TextViewController.xib in Resources */,
+				78E269C01ECC5E1A007D3686 /* header@2x.jpg in Resources */,
 				780E46101E5DF87B00980127 /* Assets.xcassets in Resources */,
 				7840FB141EB09C4600B553F7 /* TextFieldViewController.xib in Resources */,
 				7840FB0A1EB09C4600B553F7 /* slider_double_thumbImage_b@3x.png in Resources */,
 				7840FB0E1EB09C4600B553F7 /* slider_minimum_trackimage@3x.png in Resources */,
-				78E269B01ECAF678007D3686 /* car@2x.jpg in Resources */,
 				7840FB171EB09C4600B553F7 /* sound@2x.png in Resources */,
 				7840FB121EB09C4600B553F7 /* SliderViewController.xib in Resources */,
 				780E460E1E5DF87B00980127 /* Main.storyboard in Resources */,
+				78E269BF1ECC5E1A007D3686 /* bgSky@2x.jpg in Resources */,
 				7840FB151EB09C4600B553F7 /* plus@2x.png in Resources */,
 				7840FB0F1EB09C4600B553F7 /* slider_thumbImage@2x.png in Resources */,
 				7840FB1D1EB09C4600B553F7 /* imageOriginColor@2x.png in Resources */,
@@ -1123,10 +1150,12 @@
 				7847521E1E8F862F00B24507 /* UIImage+CJChangeColor.m in Sources */,
 				782709061E867EFA00E21433 /* CJSliderThumb.m in Sources */,
 				78A355341EB32D62005C5A9A /* CJMJRefreshViewController.m in Sources */,
+				78E269C61ECCD0DF007D3686 /* SmallScaleHeadView.m in Sources */,
 				7840FB181EB09C4600B553F7 /* TextViewController.m in Sources */,
 				782709EE1E8715BB00E21433 /* UIView+CJGestureRecognizer.m in Sources */,
 				782708E31E86772600E21433 /* CJAdsorbModel.m in Sources */,
 				782709021E867EFA00E21433 /* CJPlayerSlider.m in Sources */,
+				78E269C91ECCF136007D3686 /* UIView+CJFind.m in Sources */,
 				78E61EDA1E79AA20009B1627 /* UIScrollView+CJKeyboardAvoiding.m in Sources */,
 				782708E81E867C4700E21433 /* UIImage+CJCreate.m in Sources */,
 				782709041E867EFA00E21433 /* CJSliderControl.m in Sources */,
@@ -1134,6 +1163,7 @@
 				782709E51E8715A600E21433 /* UIImage+Save.m in Sources */,
 				7840FB111EB09C4600B553F7 /* SliderViewController.m in Sources */,
 				782709E61E8715A600E21433 /* UIImage+SplitImageIntoTwoParts.m in Sources */,
+				78E269CD1ECCFB1E007D3686 /* PullScaleTopImageViewController.m in Sources */,
 				781592F91EC47B6900DE1976 /* UITextField+CJAddLeftRightView.m in Sources */,
 				78E61F081E79AF41009B1627 /* CJRefreshBaseView.m in Sources */,
 				789CDB251EC0847E00D537D1 /* ScrollViewController.m in Sources */,
@@ -1157,7 +1187,6 @@
 				78E61ECF1E79AA20009B1627 /* CJImageView.m in Sources */,
 				78E269AE1ECAF105007D3686 /* CJScaleHeadView.m in Sources */,
 				78E61F041E79AF0A009B1627 /* UIView+CJExtension.m in Sources */,
-				78E269AB1ECADDEA007D3686 /* UIScrollView+CJAddScaleHead.m in Sources */,
 				781592E81EC40C8F00DE1976 /* SearchBarViewController.m in Sources */,
 				7840FB1A1EB09C4600B553F7 /* HomeViewController.m in Sources */,
 				782709E41E8715A600E21433 /* UIImage+MakeCircle.m in Sources */,
@@ -1175,6 +1204,7 @@
 				78E61ED11E79AA20009B1627 /* CJMJRefreshNormalHeader.m in Sources */,
 				78553FB51E7D954300F320E6 /* CJTextField.m in Sources */,
 				7840FB051EB09C4500B553F7 /* KeyboardAvoidingViewController.m in Sources */,
+				78E269C31ECC5E29007D3686 /* LEOHeaderView.m in Sources */,
 				781592F31EC4747300DE1976 /* UITextField+CJLimitTextLength.m in Sources */,
 				78E269A71ECA92E4007D3686 /* NavigationBarChangePositonViewController.m in Sources */,
 				782709031E867EFA00E21433 /* CJRangeSliderControl.m in Sources */,

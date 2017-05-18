@@ -17,18 +17,8 @@
     self.button.layer.cornerRadius = CGRectGetHeight(self.frame)/2;
 }
 
-
-- (void)setFrame:(CGRect)frame {
-    [super setFrame:frame];
-    
-    CGFloat height = CGRectGetHeight(frame);
-    if (height > 100) {
-        
-    } else if (height > 44 && height <= 100) {
-        
-    } else { //height <= 44
-        
-    }
+- (IBAction)doPortrait:(id)sender {
+    NSLog(@"点击头像");
 }
 
 /*

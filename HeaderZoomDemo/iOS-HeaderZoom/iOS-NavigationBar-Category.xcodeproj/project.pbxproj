@@ -1,0 +1,350 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		DD42F3841D4C48190008EFDF /* background@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DD42F3831D4C48190008EFDF /* background@2x.jpg */; };
+		DDDFE8671D4AFB5A004E4B47 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DDDFE8661D4AFB5A004E4B47 /* main.m */; };
+		DDDFE86A1D4AFB5A004E4B47 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DDDFE8691D4AFB5A004E4B47 /* AppDelegate.m */; };
+		DDDFE86D1D4AFB5A004E4B47 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DDDFE86C1D4AFB5A004E4B47 /* ViewController.m */; };
+		DDDFE8701D4AFB5A004E4B47 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DDDFE86E1D4AFB5A004E4B47 /* Main.storyboard */; };
+		DDDFE8721D4AFB5A004E4B47 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DDDFE8711D4AFB5A004E4B47 /* Assets.xcassets */; };
+		DDDFE8751D4AFB5A004E4B47 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DDDFE8731D4AFB5A004E4B47 /* LaunchScreen.storyboard */; };
+		DDDFE8901D4B301F004E4B47 /* header@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DDDFE88F1D4B301F004E4B47 /* header@2x.jpg */; };
+		DDDFE8981D4B530A004E4B47 /* LEOHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = DDDFE8931D4B530A004E4B47 /* LEOHeaderView.m */; };
+		DDDFE8991D4B530A004E4B47 /* UINavigationBar+leoAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = DDDFE8951D4B530A004E4B47 /* UINavigationBar+leoAdd.m */; };
+		DDDFE89A1D4B530A004E4B47 /* UIView+leoAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = DDDFE8971D4B530A004E4B47 /* UIView+leoAdd.m */; };
+		DDDFE89D1D4B55D9004E4B47 /* DemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DDDFE89C1D4B55D9004E4B47 /* DemoViewController.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		DD42F3831D4C48190008EFDF /* background@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "background@2x.jpg"; sourceTree = "<group>"; };
+		DDDFE8621D4AFB59004E4B47 /* iOS-NavigationBar-Category.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iOS-NavigationBar-Category.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DDDFE8661D4AFB5A004E4B47 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		DDDFE8681D4AFB5A004E4B47 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		DDDFE8691D4AFB5A004E4B47 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		DDDFE86B1D4AFB5A004E4B47 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		DDDFE86C1D4AFB5A004E4B47 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		DDDFE86F1D4AFB5A004E4B47 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		DDDFE8711D4AFB5A004E4B47 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		DDDFE8741D4AFB5A004E4B47 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		DDDFE8761D4AFB5A004E4B47 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DDDFE88F1D4B301F004E4B47 /* header@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "header@2x.jpg"; sourceTree = "<group>"; };
+		DDDFE8921D4B530A004E4B47 /* LEOHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LEOHeaderView.h; sourceTree = "<group>"; };
+		DDDFE8931D4B530A004E4B47 /* LEOHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LEOHeaderView.m; sourceTree = "<group>"; };
+		DDDFE8941D4B530A004E4B47 /* UINavigationBar+leoAdd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationBar+leoAdd.h"; sourceTree = "<group>"; };
+		DDDFE8951D4B530A004E4B47 /* UINavigationBar+leoAdd.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationBar+leoAdd.m"; sourceTree = "<group>"; };
+		DDDFE8961D4B530A004E4B47 /* UIView+leoAdd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+leoAdd.h"; sourceTree = "<group>"; };
+		DDDFE8971D4B530A004E4B47 /* UIView+leoAdd.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+leoAdd.m"; sourceTree = "<group>"; };
+		DDDFE89B1D4B55D9004E4B47 /* DemoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DemoViewController.h; sourceTree = "<group>"; };
+		DDDFE89C1D4B55D9004E4B47 /* DemoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DemoViewController.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		DDDFE85F1D4AFB59004E4B47 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		DDDFE8591D4AFB59004E4B47 = {
+			isa = PBXGroup;
+			children = (
+				DDDFE8641D4AFB5A004E4B47 /* iOS-NavigationBar-Category */,
+				DDDFE8631D4AFB59004E4B47 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		DDDFE8631D4AFB59004E4B47 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DDDFE8621D4AFB59004E4B47 /* iOS-NavigationBar-Category.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		DDDFE8641D4AFB5A004E4B47 /* iOS-NavigationBar-Category */ = {
+			isa = PBXGroup;
+			children = (
+				DDDFE88F1D4B301F004E4B47 /* header@2x.jpg */,
+				DD42F3831D4C48190008EFDF /* background@2x.jpg */,
+				DDDFE8911D4B530A004E4B47 /* LEOHeaderView */,
+				DDDFE8681D4AFB5A004E4B47 /* AppDelegate.h */,
+				DDDFE8691D4AFB5A004E4B47 /* AppDelegate.m */,
+				DDDFE86B1D4AFB5A004E4B47 /* ViewController.h */,
+				DDDFE86C1D4AFB5A004E4B47 /* ViewController.m */,
+				DDDFE89B1D4B55D9004E4B47 /* DemoViewController.h */,
+				DDDFE89C1D4B55D9004E4B47 /* DemoViewController.m */,
+				DDDFE86E1D4AFB5A004E4B47 /* Main.storyboard */,
+				DDDFE8711D4AFB5A004E4B47 /* Assets.xcassets */,
+				DDDFE8731D4AFB5A004E4B47 /* LaunchScreen.storyboard */,
+				DDDFE8761D4AFB5A004E4B47 /* Info.plist */,
+				DDDFE8651D4AFB5A004E4B47 /* Supporting Files */,
+			);
+			path = "iOS-NavigationBar-Category";
+			sourceTree = "<group>";
+		};
+		DDDFE8651D4AFB5A004E4B47 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				DDDFE8661D4AFB5A004E4B47 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		DDDFE8911D4B530A004E4B47 /* LEOHeaderView */ = {
+			isa = PBXGroup;
+			children = (
+				DDDFE8921D4B530A004E4B47 /* LEOHeaderView.h */,
+				DDDFE8931D4B530A004E4B47 /* LEOHeaderView.m */,
+				DDDFE8941D4B530A004E4B47 /* UINavigationBar+leoAdd.h */,
+				DDDFE8951D4B530A004E4B47 /* UINavigationBar+leoAdd.m */,
+				DDDFE8961D4B530A004E4B47 /* UIView+leoAdd.h */,
+				DDDFE8971D4B530A004E4B47 /* UIView+leoAdd.m */,
+			);
+			path = LEOHeaderView;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		DDDFE8611D4AFB59004E4B47 /* iOS-NavigationBar-Category */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DDDFE8791D4AFB5A004E4B47 /* Build configuration list for PBXNativeTarget "iOS-NavigationBar-Category" */;
+			buildPhases = (
+				DDDFE85E1D4AFB59004E4B47 /* Sources */,
+				DDDFE85F1D4AFB59004E4B47 /* Frameworks */,
+				DDDFE8601D4AFB59004E4B47 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "iOS-NavigationBar-Category";
+			productName = "iOS-NavigationBar-Category";
+			productReference = DDDFE8621D4AFB59004E4B47 /* iOS-NavigationBar-Category.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		DDDFE85A1D4AFB59004E4B47 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = Leiliang;
+				TargetAttributes = {
+					DDDFE8611D4AFB59004E4B47 = {
+						CreatedOnToolsVersion = 7.3.1;
+					};
+				};
+			};
+			buildConfigurationList = DDDFE85D1D4AFB59004E4B47 /* Build configuration list for PBXProject "iOS-NavigationBar-Category" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = DDDFE8591D4AFB59004E4B47;
+			productRefGroup = DDDFE8631D4AFB59004E4B47 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				DDDFE8611D4AFB59004E4B47 /* iOS-NavigationBar-Category */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		DDDFE8601D4AFB59004E4B47 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DDDFE8751D4AFB5A004E4B47 /* LaunchScreen.storyboard in Resources */,
+				DDDFE8721D4AFB5A004E4B47 /* Assets.xcassets in Resources */,
+				DDDFE8901D4B301F004E4B47 /* header@2x.jpg in Resources */,
+				DD42F3841D4C48190008EFDF /* background@2x.jpg in Resources */,
+				DDDFE8701D4AFB5A004E4B47 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		DDDFE85E1D4AFB59004E4B47 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DDDFE86D1D4AFB5A004E4B47 /* ViewController.m in Sources */,
+				DDDFE86A1D4AFB5A004E4B47 /* AppDelegate.m in Sources */,
+				DDDFE89A1D4B530A004E4B47 /* UIView+leoAdd.m in Sources */,
+				DDDFE8981D4B530A004E4B47 /* LEOHeaderView.m in Sources */,
+				DDDFE8991D4B530A004E4B47 /* UINavigationBar+leoAdd.m in Sources */,
+				DDDFE89D1D4B55D9004E4B47 /* DemoViewController.m in Sources */,
+				DDDFE8671D4AFB5A004E4B47 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		DDDFE86E1D4AFB5A004E4B47 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DDDFE86F1D4AFB5A004E4B47 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		DDDFE8731D4AFB5A004E4B47 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DDDFE8741D4AFB5A004E4B47 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		DDDFE8771D4AFB5A004E4B47 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		DDDFE8781D4AFB5A004E4B47 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		DDDFE87A1D4AFB5A004E4B47 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "iOS-NavigationBar-Category/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "Leiliang.iOS-NavigationBar-Category";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		DDDFE87B1D4AFB5A004E4B47 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "iOS-NavigationBar-Category/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "Leiliang.iOS-NavigationBar-Category";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		DDDFE85D1D4AFB59004E4B47 /* Build configuration list for PBXProject "iOS-NavigationBar-Category" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DDDFE8771D4AFB5A004E4B47 /* Debug */,
+				DDDFE8781D4AFB5A004E4B47 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DDDFE8791D4AFB5A004E4B47 /* Build configuration list for PBXNativeTarget "iOS-NavigationBar-Category" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DDDFE87A1D4AFB5A004E4B47 /* Debug */,
+				DDDFE87B1D4AFB5A004E4B47 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = DDDFE85A1D4AFB59004E4B47 /* Project object */;
+}
