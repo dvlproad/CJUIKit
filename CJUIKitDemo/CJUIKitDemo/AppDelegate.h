@@ -12,6 +12,8 @@
 
 @property (strong, nonatomic) UIWindow *window;
 
+@property (nonatomic, strong) UIWindow *cjWindow; //创建的window必须强制持有，且必须放在AppDelegate上。
+
 
 @end
 

@@ -8,6 +8,13 @@
 
 #import "HomeViewController.h"
 
+#import "ModuleModel.h"
+
+#import "ViewCategoryViewController.h"
+#import "DragViewController.h"
+
+#import "FloatingWindowViewController.h"
+
 #import "ImageViewController.h"
 #import "TextFieldViewController.h"
 #import "TextViewController.h"
@@ -25,9 +32,10 @@
 
 #import "CJMJRefreshViewController.h"
 
-#import "ModuleModel.h"
 
-@interface HomeViewController ()
+@interface HomeViewController () <UITableViewDataSource, UITableViewDelegate> {
+    
+}
 
 @end
 
@@ -40,8 +48,28 @@
     self.title = NSLocalizedString(@"Home首页", nil);
     
     [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"cell"];
+    self.tableView.dataSource = self;
+    self.tableView.delegate = self;
     
     self.datas = [[NSMutableArray alloc] init];
+    
+    //ViewCategoryViewController
+    ModuleModel *ViewCategoryModule = [[ModuleModel alloc] init];
+    ViewCategoryModule.title = @"ViewCategoryModule";
+    ViewCategoryModule.classEntry = [ViewCategoryViewController class];
+    [self.datas addObject:ViewCategoryModule];
+    
+    
+    ModuleModel *ViewDragCategoryModule = [[ModuleModel alloc] init];
+    ViewDragCategoryModule.title = @"Drag And KeepBounds";
+    ViewDragCategoryModule.classEntry = [DragViewController class];
+    [self.datas addObject:ViewDragCategoryModule];
+    
+    //FloatingWindow
+    ModuleModel *FloatingWindowModule = [[ModuleModel alloc] init];
+    FloatingWindowModule.title = @"FloatingWindow（悬浮视图）";
+    FloatingWindowModule.classEntry = [FloatingWindowViewController class];
+    [self.datas addObject:FloatingWindowModule];
     
     //CJImageView
     ModuleModel *cjImageViewModuleModel = [[ModuleModel alloc] init];

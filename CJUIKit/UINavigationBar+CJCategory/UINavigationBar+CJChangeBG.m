@@ -10,15 +10,15 @@
 #import <objc/runtime.h>
 
 @implementation UINavigationBar (CJChangeBG)
-static char overlayKey;
 
-- (UIView *)overlay
-{
+static NSString *overlayKey = @"overlayKey";
+
+#pragma mark - runtime
+- (UIView *)overlay {
     return objc_getAssociatedObject(self, &overlayKey);
 }
 
-- (void)setOverlay:(UIView *)overlay
-{
+- (void)setOverlay:(UIView *)overlay {
     objc_setAssociatedObject(self, &overlayKey, overlay, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
