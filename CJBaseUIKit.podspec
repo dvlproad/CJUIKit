@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "CJBaseUIKit"
-  s.version      = "0.0.12"
+  s.version      = "0.0.13"
   s.summary      = "自定义的基础UI"
   s.homepage     = "https://github.com/dvlproad/CJUIKit"
 
@@ -35,7 +35,7 @@ Pod::Spec.new do |s|
 
   s.platform     = :ios, "7.0"
  
-  s.source       = { :git => "https://github.com/dvlproad/CJUIKit.git", :tag => "UIView+Category_0.0.12" }
+  s.source       = { :git => "https://github.com/dvlproad/CJUIKit.git", :tag => "UIView+CJCategory_0.0.13" }
   s.source_files  = "CJUIKit/*.{h,m}"
 
   s.frameworks = "UIKit"
@@ -54,8 +54,8 @@ Pod::Spec.new do |s|
     ss.source_files = "CJUIKit/UIImage+CJCategory/**/*.{h,m}"
   end
 
-  s.subspec 'UIView+Category' do |ss|
-    ss.source_files = "CJUIKit/UIView+Category/**/*.{h,m}"
+  s.subspec 'UIView+CJCategory' do |ss|
+    ss.source_files = "CJUIKit/UIView+CJCategory/**/*.{h,m}"
   end
 
   s.subspec 'UIButton+CJCategory' do |ss|

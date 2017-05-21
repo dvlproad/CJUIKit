@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
+//①不仅能够满足view在superView上的黏合，②还能满足当该view是window时，在keyWindow上的黏合
 @interface UIView (CJKeepBounds)
 
 /**

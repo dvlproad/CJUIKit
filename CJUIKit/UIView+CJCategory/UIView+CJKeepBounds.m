@@ -22,10 +22,21 @@
           isKeepBoundsXYWhenBeyondBound:(BOOL)isKeepBoundsXYWhenBeyondBound
        isKeepBoundsXWhenContaintInBound:(BOOL)isKeepBoundsXWhenContaintInBound
 {
-    NSAssert(self.superview != nil, @"请先将当前视图添加到视图上，再执行此方法");
+    CGFloat originBondWidth = 0;    //原本宽的拖动限制范围(0到此值)
+    CGFloat originBondHeight = 0;   //原本高的拖动限制范围(0到此值)
+    if ([self isKindOfClass:[UIWindow class]]) {
+        originBondWidth = CGRectGetWidth([[UIApplication sharedApplication] keyWindow].frame);
+        originBondHeight = CGRectGetHeight([[UIApplication sharedApplication] keyWindow].frame);
+        
+    } else {
+        NSAssert(self.superview != nil, @"请先将当前视图添加到视图上，再执行此方法");
+        originBondWidth = CGRectGetWidth(self.superview.frame);
+        originBondHeight = CGRectGetHeight(self.superview.frame);
+    }
+    
     
     CGFloat bondMinX = MAX(0, boundEdgeInsets.left); //黏合区域的minX
-    CGFloat bondMaxX = MIN(CGRectGetWidth(self.superview.frame), CGRectGetWidth(self.superview.frame) - boundEdgeInsets.right);   //黏合区域的maxX
+    CGFloat bondMaxX = MIN(originBondWidth, originBondWidth - boundEdgeInsets.right);   //黏合区域的maxX
     
     //1、x的黏合：先判断是否超出边界，如果超出边界，是否自动黏合
     if (CGRectGetMinX(self.frame) < bondMinX)
@@ -83,7 +94,7 @@
     
     
     CGFloat bondMinY = MAX(0, boundEdgeInsets.top); //黏合区域的minY
-    CGFloat bondMaxY = MIN(CGRectGetHeight(self.superview.frame), CGRectGetHeight(self.superview.frame) - boundEdgeInsets.bottom); //黏合区域的maxY
+    CGFloat bondMaxY = MIN(originBondHeight, originBondHeight - boundEdgeInsets.bottom); //黏合区域的maxY
     //2、y的黏合：只需考虑超出边界是否黏合，不超出边界的话，不用处理y
     if (CGRectGetMinY(self.frame) < bondMinY) {
         if (isKeepBoundsXYWhenBeyondBound) { //超出边界，自动黏合

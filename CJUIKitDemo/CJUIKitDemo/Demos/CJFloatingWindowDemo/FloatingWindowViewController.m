@@ -24,7 +24,7 @@
     // Do any additional setup after loading the view from its nib.
     
     AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
-    if (appDelegate.cjWindow == nil) {
+    if (appDelegate.cjFloatingWindow == nil) {
         UIWindow *window = [[UIWindow alloc] initWithFrame:CGRectMake(100, 100, 200, 200)];
         window.windowLevel = UIWindowLevelAlert + 1;  //如果想在 alert 之上，则改成 + 2
         [window makeKeyAndVisible];
@@ -41,9 +41,9 @@
         [window addSubview:button];
         
 //        self.window = window;
-        appDelegate.cjWindow = window;
+        appDelegate.cjFloatingWindow = window;
     }
-    appDelegate.cjWindow.cjDragEnable = YES;
+    appDelegate.cjFloatingWindow.cjDragEnable = YES;
 }
 
 - (void)didReceiveMemoryWarning {
