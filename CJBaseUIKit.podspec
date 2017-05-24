@@ -1,13 +1,13 @@
 Pod::Spec.new do |s|
 
   s.name         = "CJBaseUIKit"
-  s.version      = "0.0.13"
+  s.version      = "0.0.14"
   s.summary      = "自定义的基础UI"
   s.homepage     = "https://github.com/dvlproad/CJUIKit"
 
   s.description  = <<-DESC
                   *、CJImageView(包含CJBadgeImageView),用于设置imageView的title和badge;
-                  *、CJTextField：文本框
+                  *、UITextField：包含文本框类别及新的自定义文本框
                   *、CJTextView：类似微信文本输入框实现
                   *、已在CJMJRefreshComponent中包含pod 'MJRefresh', '~> 3.1.12'
                   *、UIColor+CJHex：用来通过十六进制来设置颜色。 支持@“#123456”、 @“0X123456”、 @“123456”三种格式
@@ -35,7 +35,7 @@ Pod::Spec.new do |s|
 
   s.platform     = :ios, "7.0"
  
-  s.source       = { :git => "https://github.com/dvlproad/CJUIKit.git", :tag => "UIView+CJCategory_0.0.13" }
+  s.source       = { :git => "https://github.com/dvlproad/CJUIKit.git", :tag => "UITextField_0.0.14" }
   s.source_files  = "CJUIKit/*.{h,m}"
 
   s.frameworks = "UIKit"
@@ -67,8 +67,8 @@ Pod::Spec.new do |s|
     # ss.resources = "CJUIKit/CJImageView/**/*.{png,xib}"
   end
 
-  s.subspec 'CJTextField' do |ss|
-    ss.source_files = "CJUIKit/CJTextField/**/*.{h,m}"
+  s.subspec 'UITextField' do |ss|
+    ss.source_files = "CJUIKit/UITextField/**/*.{h,m}"
   end
 
   s.subspec 'CJTextView' do |ss|

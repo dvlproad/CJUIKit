@@ -15,8 +15,8 @@
 //UIImageView
 #import "CJBadgeImageView.h"
 
-//CJTextField
-#import "CJTextField.h"
+//CJSelectTextTextField
+#import "CJSelectTextTextField.h"
 
 //UITextView
 #import "CJTextView.h"

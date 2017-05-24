@@ -77,11 +77,11 @@
     cjImageViewModuleModel.classEntry = [ImageViewController class];
     [self.datas addObject:cjImageViewModuleModel];
     
-    //CJTextField
-    ModuleModel *cjTextFieldModuleModel = [[ModuleModel alloc] init];
-    cjTextFieldModuleModel.title = @"CJTextField";
-    cjTextFieldModuleModel.classEntry = [TextFieldViewController class];
-    [self.datas addObject:cjTextFieldModuleModel];
+    //CJSelectTextTextField
+    ModuleModel *CJSelectTextTextFieldModuleModel = [[ModuleModel alloc] init];
+    CJSelectTextTextFieldModuleModel.title = @"CJSelectTextTextField";
+    CJSelectTextTextFieldModuleModel.classEntry = [TextFieldViewController class];
+    [self.datas addObject:CJSelectTextTextFieldModuleModel];
     
     //CJTextView
     ModuleModel *cjTextViewModuleModel = [[ModuleModel alloc] init];

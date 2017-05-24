@@ -20,8 +20,6 @@
 		781592E81EC40C8F00DE1976 /* SearchBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 781592E61EC40C8F00DE1976 /* SearchBarViewController.m */; };
 		781592E91EC40C8F00DE1976 /* SearchBarViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 781592E71EC40C8F00DE1976 /* SearchBarViewController.xib */; };
 		781592ED1EC4391400DE1976 /* CJToast.m in Sources */ = {isa = PBXBuildFile; fileRef = 781592EC1EC4391400DE1976 /* CJToast.m */; };
-		781592F31EC4747300DE1976 /* UITextField+CJLimitTextLength.m in Sources */ = {isa = PBXBuildFile; fileRef = 781592F21EC4747300DE1976 /* UITextField+CJLimitTextLength.m */; };
-		781592F91EC47B6900DE1976 /* UITextField+CJAddLeftRightView.m in Sources */ = {isa = PBXBuildFile; fileRef = 781592F81EC47B6900DE1976 /* UITextField+CJAddLeftRightView.m */; };
 		782708E31E86772600E21433 /* CJAdsorbModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 782708E01E86772600E21433 /* CJAdsorbModel.m */; };
 		782708E41E86772600E21433 /* CJBaseSlider.m in Sources */ = {isa = PBXBuildFile; fileRef = 782708E21E86772600E21433 /* CJBaseSlider.m */; };
 		782708E81E867C4700E21433 /* UIImage+CJCreate.m in Sources */ = {isa = PBXBuildFile; fileRef = 782708E71E867C4700E21433 /* UIImage+CJCreate.m */; };
@@ -64,8 +62,6 @@
 		7840FB101EB09C4600B553F7 /* slider_thumbImage@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7840FAEB1EB09C4500B553F7 /* slider_thumbImage@3x.png */; };
 		7840FB111EB09C4600B553F7 /* SliderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7840FAED1EB09C4500B553F7 /* SliderViewController.m */; };
 		7840FB121EB09C4600B553F7 /* SliderViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7840FAEE1EB09C4500B553F7 /* SliderViewController.xib */; };
-		7840FB131EB09C4600B553F7 /* TextFieldViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7840FAF11EB09C4500B553F7 /* TextFieldViewController.m */; };
-		7840FB141EB09C4600B553F7 /* TextFieldViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7840FAF21EB09C4500B553F7 /* TextFieldViewController.xib */; };
 		7840FB151EB09C4600B553F7 /* plus@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7840FAF51EB09C4500B553F7 /* plus@2x.png */; };
 		7840FB161EB09C4600B553F7 /* smail@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7840FAF61EB09C4500B553F7 /* smail@2x.png */; };
 		7840FB171EB09C4600B553F7 /* sound@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7840FAF71EB09C4500B553F7 /* sound@2x.png */; };
@@ -82,7 +78,6 @@
 		7847521E1E8F862F00B24507 /* UIImage+CJChangeColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 7847521D1E8F862F00B24507 /* UIImage+CJChangeColor.m */; };
 		784B7D4A1E7F7DE300299457 /* UIColor+CJHex.m in Sources */ = {isa = PBXBuildFile; fileRef = 784B7D491E7F7DE300299457 /* UIColor+CJHex.m */; };
 		784C15E21E8E719A0019D652 /* UIImage+CJTransformSize.m in Sources */ = {isa = PBXBuildFile; fileRef = 784C15E11E8E719A0019D652 /* UIImage+CJTransformSize.m */; };
-		78553FB51E7D954300F320E6 /* CJTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 78553FB41E7D954300F320E6 /* CJTextField.m */; };
 		789CDB251EC0847E00D537D1 /* ScrollViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 789CDB241EC0847E00D537D1 /* ScrollViewController.m */; };
 		78A355341EB32D62005C5A9A /* CJMJRefreshViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78A355321EB32D62005C5A9A /* CJMJRefreshViewController.m */; };
 		78A355351EB32D62005C5A9A /* CJMJRefreshViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 78A355331EB32D62005C5A9A /* CJMJRefreshViewController.xib */; };
@@ -114,6 +109,12 @@
 		78E61F041E79AF0A009B1627 /* UIView+CJExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 78E61EFF1E79AF0A009B1627 /* UIView+CJExtension.m */; };
 		78E61F081E79AF41009B1627 /* CJRefreshBaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 78E61F071E79AF41009B1627 /* CJRefreshBaseView.m */; };
 		78F3AA001E963197005D3DA4 /* UIImage+CJFixOrientation.m in Sources */ = {isa = PBXBuildFile; fileRef = 78F3A9FF1E963197005D3DA4 /* UIImage+CJFixOrientation.m */; };
+		78FC3BB81ED53E700049F22D /* TextFieldViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78FC3BB61ED53E700049F22D /* TextFieldViewController.m */; };
+		78FC3BB91ED53E700049F22D /* TextFieldViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 78FC3BB71ED53E700049F22D /* TextFieldViewController.xib */; };
+		78FC3BC41ED541850049F22D /* CJSelectTextTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 78FC3BBD1ED541850049F22D /* CJSelectTextTextField.m */; };
+		78FC3BC51ED541850049F22D /* UITextField+CJAddLeftRightView.m in Sources */ = {isa = PBXBuildFile; fileRef = 78FC3BBF1ED541850049F22D /* UITextField+CJAddLeftRightView.m */; };
+		78FC3BC61ED541850049F22D /* UITextField+CJLimitTextLength.m in Sources */ = {isa = PBXBuildFile; fileRef = 78FC3BC11ED541850049F22D /* UITextField+CJLimitTextLength.m */; };
+		78FC3BC71ED541850049F22D /* UITextField+CJTextChangeBlock.m in Sources */ = {isa = PBXBuildFile; fileRef = 78FC3BC31ED541850049F22D /* UITextField+CJTextChangeBlock.m */; };
 		E2649F5BE7F7FEF404688168 /* libPods-CJUIKitDemoTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 935109AAB855F6CC8B84B9A5 /* libPods-CJUIKitDemoTests.a */; };
 /* End PBXBuildFile section */
 
@@ -160,10 +161,6 @@
 		781592E71EC40C8F00DE1976 /* SearchBarViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SearchBarViewController.xib; sourceTree = "<group>"; };
 		781592EB1EC4391400DE1976 /* CJToast.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJToast.h; sourceTree = "<group>"; };
 		781592EC1EC4391400DE1976 /* CJToast.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJToast.m; sourceTree = "<group>"; };
-		781592F11EC4747300DE1976 /* UITextField+CJLimitTextLength.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextField+CJLimitTextLength.h"; sourceTree = "<group>"; };
-		781592F21EC4747300DE1976 /* UITextField+CJLimitTextLength.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextField+CJLimitTextLength.m"; sourceTree = "<group>"; };
-		781592F71EC47B6900DE1976 /* UITextField+CJAddLeftRightView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextField+CJAddLeftRightView.h"; sourceTree = "<group>"; };
-		781592F81EC47B6900DE1976 /* UITextField+CJAddLeftRightView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextField+CJAddLeftRightView.m"; sourceTree = "<group>"; };
 		782708DF1E86772600E21433 /* CJAdsorbModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJAdsorbModel.h; sourceTree = "<group>"; };
 		782708E01E86772600E21433 /* CJAdsorbModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJAdsorbModel.m; sourceTree = "<group>"; };
 		782708E11E86772600E21433 /* CJBaseSlider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJBaseSlider.h; sourceTree = "<group>"; };
@@ -233,9 +230,6 @@
 		7840FAEC1EB09C4500B553F7 /* SliderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SliderViewController.h; sourceTree = "<group>"; };
 		7840FAED1EB09C4500B553F7 /* SliderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SliderViewController.m; sourceTree = "<group>"; };
 		7840FAEE1EB09C4500B553F7 /* SliderViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SliderViewController.xib; sourceTree = "<group>"; };
-		7840FAF01EB09C4500B553F7 /* TextFieldViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextFieldViewController.h; sourceTree = "<group>"; };
-		7840FAF11EB09C4500B553F7 /* TextFieldViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextFieldViewController.m; sourceTree = "<group>"; };
-		7840FAF21EB09C4500B553F7 /* TextFieldViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TextFieldViewController.xib; sourceTree = "<group>"; };
 		7840FAF51EB09C4500B553F7 /* plus@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "plus@2x.png"; sourceTree = "<group>"; };
 		7840FAF61EB09C4500B553F7 /* smail@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "smail@2x.png"; sourceTree = "<group>"; };
 		7840FAF71EB09C4500B553F7 /* sound@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sound@2x.png"; sourceTree = "<group>"; };
@@ -260,8 +254,6 @@
 		784B7D491E7F7DE300299457 /* UIColor+CJHex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+CJHex.m"; sourceTree = "<group>"; };
 		784C15E01E8E719A0019D652 /* UIImage+CJTransformSize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+CJTransformSize.h"; sourceTree = "<group>"; };
 		784C15E11E8E719A0019D652 /* UIImage+CJTransformSize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+CJTransformSize.m"; sourceTree = "<group>"; };
-		78553FB31E7D954300F320E6 /* CJTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJTextField.h; sourceTree = "<group>"; };
-		78553FB41E7D954300F320E6 /* CJTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJTextField.m; sourceTree = "<group>"; };
 		789CAB597AD073D5F637D193 /* Pods-CJUIKitDemoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CJUIKitDemoTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-CJUIKitDemoTests/Pods-CJUIKitDemoTests.release.xcconfig"; sourceTree = "<group>"; };
 		789CDB231EC0847E00D537D1 /* ScrollViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScrollViewController.h; sourceTree = "<group>"; };
 		789CDB241EC0847E00D537D1 /* ScrollViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScrollViewController.m; sourceTree = "<group>"; };
@@ -320,6 +312,17 @@
 		78E61F071E79AF41009B1627 /* CJRefreshBaseView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJRefreshBaseView.m; sourceTree = "<group>"; };
 		78F3A9FE1E963197005D3DA4 /* UIImage+CJFixOrientation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+CJFixOrientation.h"; sourceTree = "<group>"; };
 		78F3A9FF1E963197005D3DA4 /* UIImage+CJFixOrientation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+CJFixOrientation.m"; sourceTree = "<group>"; };
+		78FC3BB51ED53E700049F22D /* TextFieldViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextFieldViewController.h; sourceTree = "<group>"; };
+		78FC3BB61ED53E700049F22D /* TextFieldViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextFieldViewController.m; sourceTree = "<group>"; };
+		78FC3BB71ED53E700049F22D /* TextFieldViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TextFieldViewController.xib; sourceTree = "<group>"; };
+		78FC3BBC1ED541850049F22D /* CJSelectTextTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJSelectTextTextField.h; sourceTree = "<group>"; };
+		78FC3BBD1ED541850049F22D /* CJSelectTextTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJSelectTextTextField.m; sourceTree = "<group>"; };
+		78FC3BBE1ED541850049F22D /* UITextField+CJAddLeftRightView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextField+CJAddLeftRightView.h"; sourceTree = "<group>"; };
+		78FC3BBF1ED541850049F22D /* UITextField+CJAddLeftRightView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextField+CJAddLeftRightView.m"; sourceTree = "<group>"; };
+		78FC3BC01ED541850049F22D /* UITextField+CJLimitTextLength.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextField+CJLimitTextLength.h"; sourceTree = "<group>"; };
+		78FC3BC11ED541850049F22D /* UITextField+CJLimitTextLength.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextField+CJLimitTextLength.m"; sourceTree = "<group>"; };
+		78FC3BC21ED541850049F22D /* UITextField+CJTextChangeBlock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextField+CJTextChangeBlock.h"; sourceTree = "<group>"; };
+		78FC3BC31ED541850049F22D /* UITextField+CJTextChangeBlock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextField+CJTextChangeBlock.m"; sourceTree = "<group>"; };
 		935109AAB855F6CC8B84B9A5 /* libPods-CJUIKitDemoTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CJUIKitDemoTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9AC0A78AFE86FE250B370A06 /* Pods-CJUIKitDemoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CJUIKitDemoTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CJUIKitDemoTests/Pods-CJUIKitDemoTests.debug.xcconfig"; sourceTree = "<group>"; };
 		A078401C0E781545EB72B64D /* libPods-CJUIKitDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CJUIKitDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -577,6 +580,7 @@
 			children = (
 				7840FAFB1EB09C4500B553F7 /* HomeViewController.h */,
 				7840FAFC1EB09C4500B553F7 /* HomeViewController.m */,
+				78FC3BB41ED53E700049F22D /* TextFieldDemo */,
 				783658F61ECFB4D800AF7591 /* CJFloatingWindowDemo */,
 				783658E91ECFA6C700AF7591 /* DragViewDemo */,
 				783658E01ECF999A00AF7591 /* UIViewDemo */,
@@ -585,7 +589,6 @@
 				7840FAD81EB09C4500B553F7 /* CJImageViewDemo */,
 				7840FADC1EB09C4500B553F7 /* CJScrollViewDemo */,
 				7840FAE01EB09C4500B553F7 /* CJSliderDemo */,
-				7840FAEF1EB09C4500B553F7 /* CJTextFieldDemo */,
 				7840FAF31EB09C4500B553F7 /* CJTextViewDemo */,
 				7840FAFD1EB09C4500B553F7 /* UIImageDemo */,
 				7840FB021EB09C4500B553F7 /* UINavigationBar */,
@@ -641,16 +644,6 @@
 				7840FAEB1EB09C4500B553F7 /* slider_thumbImage@3x.png */,
 			);
 			path = Resources;
-			sourceTree = "<group>";
-		};
-		7840FAEF1EB09C4500B553F7 /* CJTextFieldDemo */ = {
-			isa = PBXGroup;
-			children = (
-				7840FAF01EB09C4500B553F7 /* TextFieldViewController.h */,
-				7840FAF11EB09C4500B553F7 /* TextFieldViewController.m */,
-				7840FAF21EB09C4500B553F7 /* TextFieldViewController.xib */,
-			);
-			path = CJTextFieldDemo;
 			sourceTree = "<group>";
 		};
 		7840FAF31EB09C4500B553F7 /* CJTextViewDemo */ = {
@@ -725,19 +718,6 @@
 			path = "UIColor+CJCategory";
 			sourceTree = "<group>";
 		};
-		78553FB21E7D952700F320E6 /* CJTextField */ = {
-			isa = PBXGroup;
-			children = (
-				78553FB31E7D954300F320E6 /* CJTextField.h */,
-				78553FB41E7D954300F320E6 /* CJTextField.m */,
-				781592F11EC4747300DE1976 /* UITextField+CJLimitTextLength.h */,
-				781592F21EC4747300DE1976 /* UITextField+CJLimitTextLength.m */,
-				781592F71EC47B6900DE1976 /* UITextField+CJAddLeftRightView.h */,
-				781592F81EC47B6900DE1976 /* UITextField+CJAddLeftRightView.m */,
-			);
-			path = CJTextField;
-			sourceTree = "<group>";
-		};
 		78553FBC1E7D993300F320E6 /* CJSlider */ = {
 			isa = PBXGroup;
 			children = (
@@ -803,6 +783,7 @@
 			isa = PBXGroup;
 			children = (
 				78E61ECD1E79AA20009B1627 /* CJUIKit.h */,
+				78FC3BBA1ED541850049F22D /* UITextField */,
 				783287F01ED2214100A01A8A /* UIView+CJCategory */,
 				783658F21ECFB16A00AF7591 /* CJFloatingWindow */,
 				78E61EA81E79AA20009B1627 /* CJImageView */,
@@ -811,7 +792,6 @@
 				78E61EC21E79AA20009B1627 /* CJScrollView */,
 				781592E01EC40BEF00DE1976 /* CJSearchBar */,
 				78553FBC1E7D993300F320E6 /* CJSlider */,
-				78553FB21E7D952700F320E6 /* CJTextField */,
 				78E61ECA1E79AA20009B1627 /* CJTextView */,
 				781592EA1EC4387000DE1976 /* CJToast */,
 				782709E71E8715BB00E21433 /* UIButton+CJCategory */,
@@ -933,6 +913,39 @@
 				78E61F071E79AF41009B1627 /* CJRefreshBaseView.m */,
 			);
 			path = CJRefreshBaseView;
+			sourceTree = "<group>";
+		};
+		78FC3BB41ED53E700049F22D /* TextFieldDemo */ = {
+			isa = PBXGroup;
+			children = (
+				78FC3BB51ED53E700049F22D /* TextFieldViewController.h */,
+				78FC3BB61ED53E700049F22D /* TextFieldViewController.m */,
+				78FC3BB71ED53E700049F22D /* TextFieldViewController.xib */,
+			);
+			path = TextFieldDemo;
+			sourceTree = "<group>";
+		};
+		78FC3BBA1ED541850049F22D /* UITextField */ = {
+			isa = PBXGroup;
+			children = (
+				78FC3BBB1ED541850049F22D /* CJTextField */,
+				78FC3BBE1ED541850049F22D /* UITextField+CJAddLeftRightView.h */,
+				78FC3BBF1ED541850049F22D /* UITextField+CJAddLeftRightView.m */,
+				78FC3BC01ED541850049F22D /* UITextField+CJLimitTextLength.h */,
+				78FC3BC11ED541850049F22D /* UITextField+CJLimitTextLength.m */,
+				78FC3BC21ED541850049F22D /* UITextField+CJTextChangeBlock.h */,
+				78FC3BC31ED541850049F22D /* UITextField+CJTextChangeBlock.m */,
+			);
+			path = UITextField;
+			sourceTree = "<group>";
+		};
+		78FC3BBB1ED541850049F22D /* CJTextField */ = {
+			isa = PBXGroup;
+			children = (
+				78FC3BBC1ED541850049F22D /* CJSelectTextTextField.h */,
+				78FC3BBD1ED541850049F22D /* CJSelectTextTextField.m */,
+			);
+			path = CJTextField;
 			sourceTree = "<group>";
 		};
 		E75FB8B4AF71C8FE7F95B93C /* Pods */ = {
@@ -1084,6 +1097,7 @@
 				78E269B51ECB0593007D3686 /* MyScaleHeadView.xib in Resources */,
 				7840FB0B1EB09C4600B553F7 /* slider_maximum_trackimage@2x.png in Resources */,
 				783658E51ECF99CF00AF7591 /* ViewCategoryViewController.xib in Resources */,
+				78FC3BB91ED53E700049F22D /* TextFieldViewController.xib in Resources */,
 				78E61ED21E79AA20009B1627 /* cjRefreshArrowDown@2x.png in Resources */,
 				7840FB071EB09C4500B553F7 /* slider_double_thumbImage_a@2x.png in Resources */,
 				7840FB041EB09C4500B553F7 /* ImageViewController.xib in Resources */,
@@ -1093,7 +1107,6 @@
 				7840FB191EB09C4600B553F7 /* TextViewController.xib in Resources */,
 				78E269C01ECC5E1A007D3686 /* header@2x.jpg in Resources */,
 				780E46101E5DF87B00980127 /* Assets.xcassets in Resources */,
-				7840FB141EB09C4600B553F7 /* TextFieldViewController.xib in Resources */,
 				7840FB0A1EB09C4600B553F7 /* slider_double_thumbImage_b@3x.png in Resources */,
 				7840FB0E1EB09C4600B553F7 /* slider_minimum_trackimage@3x.png in Resources */,
 				783658F01ECFA6C700AF7591 /* DragViewController.xib in Resources */,
@@ -1222,6 +1235,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7847521E1E8F862F00B24507 /* UIImage+CJChangeColor.m in Sources */,
+				78FC3BB81ED53E700049F22D /* TextFieldViewController.m in Sources */,
 				782709061E867EFA00E21433 /* CJSliderThumb.m in Sources */,
 				78A355341EB32D62005C5A9A /* CJMJRefreshViewController.m in Sources */,
 				78E269C61ECCD0DF007D3686 /* SmallScaleHeadView.m in Sources */,
@@ -1238,14 +1252,14 @@
 				7840FB111EB09C4600B553F7 /* SliderViewController.m in Sources */,
 				782709E61E8715A600E21433 /* UIImage+SplitImageIntoTwoParts.m in Sources */,
 				78E269CD1ECCFB1E007D3686 /* PullScaleTopImageViewController.m in Sources */,
-				781592F91EC47B6900DE1976 /* UITextField+CJAddLeftRightView.m in Sources */,
+				78FC3BC41ED541850049F22D /* CJSelectTextTextField.m in Sources */,
 				783287FF1ED2214100A01A8A /* UIView+CJShake.m in Sources */,
+				78FC3BC51ED541850049F22D /* UITextField+CJAddLeftRightView.m in Sources */,
 				783658E41ECF99CF00AF7591 /* ViewCategoryViewController.m in Sources */,
 				78E61F081E79AF41009B1627 /* CJRefreshBaseView.m in Sources */,
 				789CDB251EC0847E00D537D1 /* ScrollViewController.m in Sources */,
 				78E61EDB1E79AA20009B1627 /* CJTextView.m in Sources */,
 				781592E31EC40C1700DE1976 /* CJSearchBar.m in Sources */,
-				7840FB131EB09C4600B553F7 /* TextFieldViewController.m in Sources */,
 				78E61ED91E79AA20009B1627 /* CJKeyboardAvoidingTableView.m in Sources */,
 				780E460B1E5DF87B00980127 /* ViewController.m in Sources */,
 				78E61ED81E79AA20009B1627 /* CJKeyboardAvoidingScrollView.m in Sources */,
@@ -1271,6 +1285,7 @@
 				7840FB1A1EB09C4600B553F7 /* HomeViewController.m in Sources */,
 				782709E41E8715A600E21433 /* UIImage+MakeCircle.m in Sources */,
 				78E61ED01E79AA20009B1627 /* CJMJRefreshNormalFooter.m in Sources */,
+				78FC3BC71ED541850049F22D /* UITextField+CJTextChangeBlock.m in Sources */,
 				780E46051E5DF87B00980127 /* main.m in Sources */,
 				782709051E867EFA00E21433 /* CJSliderPopover.m in Sources */,
 				782709E21E8715A600E21433 /* UIImage+CJBase64.m in Sources */,
@@ -1282,10 +1297,9 @@
 				784C15E21E8E719A0019D652 /* UIImage+CJTransformSize.m in Sources */,
 				78E61F021E79AF0A009B1627 /* CJRefreshHeader.m in Sources */,
 				78E61ED11E79AA20009B1627 /* CJMJRefreshNormalHeader.m in Sources */,
-				78553FB51E7D954300F320E6 /* CJTextField.m in Sources */,
 				7840FB051EB09C4500B553F7 /* KeyboardAvoidingViewController.m in Sources */,
 				78E269C31ECC5E29007D3686 /* LEOHeaderView.m in Sources */,
-				781592F31EC4747300DE1976 /* UITextField+CJLimitTextLength.m in Sources */,
+				78FC3BC61ED541850049F22D /* UITextField+CJLimitTextLength.m in Sources */,
 				78E269A71ECA92E4007D3686 /* NavigationBarChangePositonViewController.m in Sources */,
 				782709031E867EFA00E21433 /* CJRangeSliderControl.m in Sources */,
 			);

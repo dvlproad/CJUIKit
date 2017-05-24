@@ -7,14 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "CJTextField.h"
+#import "CJSelectTextTextField.h"
 
 @interface TextFieldViewController : UIViewController
 
-@property (nonatomic, weak) IBOutlet CJTextField *textFiled;
+@property (nonatomic, weak) IBOutlet UITextField *textFiled;
 
 @property (nonatomic, weak) IBOutlet UISwitch *canInputSwitch;  //控制是否允许文本框输入的开关
-@property (nonatomic, weak) IBOutlet CJTextField *addSubtractTextField;
+@property (nonatomic, weak) IBOutlet CJSelectTextTextField *canInputTextField;
 
 
 @end

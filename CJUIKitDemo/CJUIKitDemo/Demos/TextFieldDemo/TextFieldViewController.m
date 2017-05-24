@@ -7,6 +7,7 @@
 //
 
 #import "TextFieldViewController.h"
+#import "UITextField+CJTextChangeBlock.h"
 #import "UITextField+CJAddLeftRightView.h"
 #import "UITextField+CJLimitTextLength.h"
 #import "UIView+CJShake.h"
@@ -24,16 +25,18 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
-    self.textFiled.text = @"测试文本的改变";
+    
     self.textFiled.delegate = self;
-    [self.textFiled setTextChangeBlock:^(CJTextField *textField) {
-        NSLog(@"文本改变了");
+    [self.textFiled setCjTextChangeBlock:^(UITextField *textField) {
+        NSLog(@"textField内容改变了:%@", textField.text);
         if (![textField.text cj_validateEmail]) {
             NSLog(@"不满足邮件格式");
             [textField cjShake];
         }
         
     }];
+    
+    self.textFiled.text = @"测试文本的改变";
     
     [self.textFiled cj_limitTextLength:20 withLimitCompleteBlock:^{
         [CJToast showMessage:@"文本过长，超过最大的20个字符了"];
@@ -42,17 +45,20 @@
     
     
     
-    //CJTextField
-    self.addSubtractTextField.delegate = self;
-    self.addSubtractTextField.text = @"20";
-    self.addSubtractTextField.hideMenuController = YES;
-    [self.addSubtractTextField addLeftButtonWithNormalImage:[UIImage imageNamed:@"plus"] leftHandel:^(UITextField *textField) {
+    //UITextField
+    self.canInputTextField.text = @"20";
+    
+    UIView *inputView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 0, 300)];
+    inputView.backgroundColor = [UIColor redColor];
+    
+    [self.canInputTextField setTextOnlyFromInputView:inputView];
+    [self.canInputTextField addLeftButtonWithNormalImage:[UIImage imageNamed:@"plus"] leftHandel:^(UITextField *textField) {
         NSLog(@"左边按钮点击");
         NSInteger value = [textField.text integerValue] - 1;
         textField.text = [@(value) stringValue];
     }];
     
-    [self.addSubtractTextField addRightButtonWithNormalImage:[UIImage imageNamed:@"plus"] rightHandel:^(UITextField *textField) {
+    [self.canInputTextField addRightButtonWithNormalImage:[UIImage imageNamed:@"plus"] rightHandel:^(UITextField *textField) {
         NSLog(@"右边按钮点击");
         NSInteger value = [textField.text integerValue] + 1;
         textField.text = [@(value) stringValue];
@@ -63,22 +69,10 @@
 
 - (void)canInputSwitchAction:(UISwitch *)canInputSwitch {
     if (canInputSwitch.isOn) {
-        self.addSubtractTextField.hideCursor = NO;
+        self.canInputTextField.hideMenuController = NO;
     } else {
-        self.addSubtractTextField.hideCursor = YES;
+        self.canInputTextField.hideMenuController = YES;
     }
-}
-
-- (BOOL)textFieldShouldBeginEditing:(UITextField *)textField {
-    if ([textField isKindOfClass:[CJTextField class]]) {
-        CJTextField *cjTextField = (CJTextField *)textField;
-        if (cjTextField.hideCursor) { //隐藏光标的时候
-            NSLog(@"点击了文本框，这里可以用于弹出视图");
-            return NO;
-        }
-    }
-    
-    return YES;
 }
 
 
