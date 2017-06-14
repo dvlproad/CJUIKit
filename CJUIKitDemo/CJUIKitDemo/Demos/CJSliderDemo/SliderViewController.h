@@ -10,10 +10,26 @@
 #import "CJBaseSlider.h"
 #import "CJPlayerSlider.h"
 
-@interface SliderViewController : UIViewController
+#import "CJSliderControl.h"
+#import "CJRangeSliderControl.h"
 
+@interface SliderViewController : UIViewController <CJSliderControlDelegate, CJRangeSliderControlDelegate> {
+    
+}
 @property (nonatomic, weak) IBOutlet CJBaseSlider *baseSlider;
+@property (nonatomic, weak) IBOutlet UILabel *baseSliderValuelabel;
+
 @property (nonatomic, weak) IBOutlet CJPlayerSlider *playerSlider;
-@property (nonatomic, weak) IBOutlet UILabel *label;
+
+
+@property (nonatomic, weak) IBOutlet CJSliderControl *sliderControl1;
+@property (nonatomic, weak) IBOutlet UILabel *sliderControlValueLabel1;
+
+@property (nonatomic, weak) IBOutlet CJSliderControl *sliderControl2;
+@property (nonatomic, weak) IBOutlet UILabel *sliderControlValueLabel2;
+
+@property (nonatomic, weak) IBOutlet CJSliderControl *rangeSliderControl;
+@property (nonatomic, weak) IBOutlet UILabel *rangeSliderControlValueLabel;
+
 
 @end
