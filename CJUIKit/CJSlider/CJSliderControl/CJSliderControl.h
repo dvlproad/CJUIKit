@@ -14,7 +14,7 @@
  *   弹出框显示内容的枚举类型
  */
 typedef NS_ENUM(NSUInteger, CJSliderPopoverDispalyType) {
-    CJSliderPopoverDispalyTypeNone,         /**< 不弹出值标注 */
+    CJSliderPopoverDispalyTypeNone,         /**< 没有Popover */
     CJSliderPopoverDispalyTypeNum,          /**< 纯数字显示 */
     CJSliderPopoverDispalyTypePercent,      /**< 百分比显示 */
 };
@@ -36,11 +36,13 @@ typedef NS_ENUM(NSUInteger, CJSliderPopoverDispalyType) {
  */
 @interface CJSliderControl : UIControl
 
-@property (nonatomic, assign) CGFloat minValue; /**< 最小值 */
-
+@property (nonatomic, assign) CGFloat value;        /**< 当前值 */
+@property (nonatomic, assign) CGFloat minValue;     /**< 最小值 */
 @property (nonatomic, assign) CGFloat maxValue; /**< 最大值 */
 
 @property (nonatomic, assign) CJSliderPopoverDispalyType popoverType; /**< 弹出框的类型 */
+@property (nonatomic, assign) CGSize thumbSize;
+@property (nonatomic, assign) CGSize popoverSize;
 
 @property (nonatomic, strong) UIColor *minimumTrackTintColor; /**< 最小值方向滑竿颜色值 */
 
@@ -48,15 +50,18 @@ typedef NS_ENUM(NSUInteger, CJSliderPopoverDispalyType) {
 
 @property (nonatomic, strong) UIImage *thumbImage; /**< 滑块图片,默认是橙色按钮 */
 
-@property (nonatomic, weak) id<CJSliderControlDelegate> delegate;  
-
-@property (nonatomic, assign, readonly) CGFloat currentValue;   /**< Slider的值 */
+@property (nonatomic, weak) id<CJSliderControlDelegate> delegate;
 
 @property (nonatomic, assign) CGFloat baseValue; // 基准值(默认0)
 @property (nonatomic, strong) UIImage *baseImage;// 基准图片,默认是橙色按钮(baseValue为0时无baseImage)
-@property (nonatomic, assign) CGFloat lineThick; // 线条粗细
+@property (nonatomic, assign) CGFloat trackHeight; //滑道高度
 
-@property (nonatomic, assign) CGFloat thumbSizeBeyondLineThick;     /**< 滑块的点相对于滑块线条的大小，默认+5，即默认比滑块大5像素 */
+/**
+ *  隐藏或显示文字
+ *
+ *  @param isHidden 是否隐藏
+ */
+- (void)hidePopover:(BOOL)isHidden;
 
 @end
 

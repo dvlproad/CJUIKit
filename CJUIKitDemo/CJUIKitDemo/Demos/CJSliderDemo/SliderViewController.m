@@ -94,7 +94,7 @@
     self.sliderControl2.maximumTrackTintColor = [UIColor colorWithRed:48/255.0 green:119/255.0 blue:162/255.0 alpha:1.0];
     self.sliderControl2.minimumTrackTintColor = [UIColor colorWithRed:255/255.0 green:254/255.0 blue:248/255.0 alpha:1.0];
     self.sliderControl2.baseValue = 0.5; // 设置基准值
-    self.sliderControl2.lineThick = 5;  // 设置线条粗细
+    self.sliderControl2.trackHeight = 5;  // 设置线条粗细
     self.sliderControl2.baseImage = [UIImage imageNamed:@"slider_double_thumbImage_b"];//设置基准图片
     self.sliderControl2.delegate = self;
     
