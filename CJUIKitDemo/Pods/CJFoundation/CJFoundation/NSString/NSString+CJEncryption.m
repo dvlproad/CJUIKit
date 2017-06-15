@@ -24,7 +24,7 @@
     return output;
 }
 
-/** 完整的描述请参见文件头部 */
+/* 完整的描述请参见文件头部 */
 + (NSString *)cj_base64StringFromText:(NSString *)text {
     NSData *data = [text dataUsingEncoding:NSUTF8StringEncoding];
     NSString *base64String = [data base64EncodedStringWithOptions:0];

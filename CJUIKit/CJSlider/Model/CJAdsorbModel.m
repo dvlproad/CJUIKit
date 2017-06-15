@@ -10,7 +10,7 @@
 
 @implementation CJAdsorbModel
 
-/** 完整的描述请参见文件头部 */
+/* 完整的描述请参见文件头部 */
 - (instancetype)initWithMin:(CGFloat)adsorbMin max:(CGFloat)adsorbMax toValue:(CGFloat)adsorbToValue {
     self = [super init];
     if (self) {

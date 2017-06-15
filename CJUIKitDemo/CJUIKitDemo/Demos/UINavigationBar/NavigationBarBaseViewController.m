@@ -46,7 +46,7 @@
     self.tableView.tableHeaderView = tableHeaderView;
 }
 
-/** 完整的描述请参见文件头部 */
+/* 完整的描述请参见文件头部 */
 - (void)addTableScaleHeaderViewWithAttachNavigationBar:(BOOL)attachNavigationBar supportPullSmall:(BOOL)canPullSmall  {
     CJScaleHeadView *scaleHeadView = nil;
     if (!canPullSmall) {

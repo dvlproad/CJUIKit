@@ -76,7 +76,7 @@ static CGFloat kDefaultCJBadgeSize = 20.0f;    /**< 默认badge的大小 */
 }
 
 
-/** 完整的描述请参见文件头部 */
+/* 完整的描述请参见文件头部 */
 - (void)setTapCompleteBlock:(void(^)(CJImageView *imageView))tapCompleteBlock {
     _tapCompleteBlock = tapCompleteBlock;
 }

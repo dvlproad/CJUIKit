@@ -10,7 +10,7 @@
 
 @implementation UIImage (CJTransformSize)
 
-/** 完整的描述请参见文件头部 */
+/* 完整的描述请参见文件头部 */
 - (UIImage *)cj_transformImageToSize:(CGSize)size withScaleType:(CJScaleType)scaleType {
     switch (scaleType) {
         case CJScaleTypeMinification:
@@ -43,7 +43,7 @@
     return [self cj_transformImageToSize:size];
 }
 
-/** 完整的描述请参见文件头部 */
+/* 完整的描述请参见文件头部 */
 - (UIImage *)cj_transformImageToSize:(CGSize)size {
     UIGraphicsBeginImageContext(size);  //创建一个bitmap的context
     [self drawInRect:CGRectMake(0, 0, size.width, size.height)];//绘制改变大小的图片
@@ -53,7 +53,7 @@
     return newImage;   //返回新的改变大小后的图片
 }
 
-/** 完整的描述请参见文件头部 */
+/* 完整的描述请参见文件头部 */
 - (UIImage *)cj_resizableImageWithCapInsets:(UIEdgeInsets)insets {
     
     return  [self resizableImageWithCapInsets:insets resizingMode:UIImageResizingModeStretch];

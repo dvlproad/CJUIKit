@@ -43,11 +43,9 @@ static NSTimeInterval const kCJSliderControlDidTapSlidAnimationDuration  = 0.3f;
 
 @implementation CJSliderControl
 
--(instancetype)initWithFrame:(CGRect)frame {
-    
+- (instancetype)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
     if (self) {
-        
         [self setupUI];
     }
     return self;
@@ -62,6 +60,8 @@ static NSTimeInterval const kCJSliderControlDidTapSlidAnimationDuration  = 0.3f;
 }
 
 - (void)setupUI {
+    self.backgroundColor = [UIColor clearColor];
+    
     _lineThick = kCJSliderControlBackgroundImageViewHeight;
     
     [self addSubview:self.backgroundImageView];
@@ -141,8 +141,20 @@ static NSTimeInterval const kCJSliderControlDidTapSlidAnimationDuration  = 0.3f;
  *  更新popover显示
  */
 - (void)updatePopover {
+    if (self.popoverType == CJSliderPopoverDispalyTypeNone) {
+        return;
+    }
     
-    NSString *popoverText = [self popoverText];
+    
+    CGFloat percent = self.thumb.frame.origin.x / (self.bounds.size.width - kCJSliderThumbSizeWidth);
+    NSString *popoverText = @"";
+    if (self.popoverType == CJSliderPopoverDispalyTypePercent) {    //百分比显示
+        popoverText = [NSString stringWithFormat:@"%.1f%%",percent * 100];
+        
+    } else if (self.popoverType == CJSliderPopoverDispalyTypeNum) { //具体数值显示
+        popoverText = [NSString stringWithFormat:@"%.1f",percent * (_maxValue - _minValue)];
+    }
+    
     _currentValue = [popoverText floatValue];
     [self.popover updatePopoverTextValue:popoverText];
     
@@ -155,26 +167,6 @@ static NSTimeInterval const kCJSliderControlDidTapSlidAnimationDuration  = 0.3f;
         
         [self.delegate slider:self didDargToValue:_currentValue];
     }
-}
-
-/**
- *  获取popover需要显示的内容
- *  
- *  @return 百分比或者数值
- */
-- (NSString *)popoverText {
-    
-    CGFloat percent = self.thumb.frame.origin.x / (self.bounds.size.width - kCJSliderThumbSizeWidth);
-    NSString *popoverText = @"";
-    if (_popoverType == CJSliderPopoverDispalyTypePercent) {
-        //百分比显示
-        popoverText = [NSString stringWithFormat:@"%.1f%%",percent * 100];
-        
-    } else {
-        
-        popoverText = [NSString stringWithFormat:@"%.1f",percent * (_maxValue - _minValue)];
-    }
-    return popoverText;
 }
 
 - (void)showPopoverAnimated:(BOOL)animated
@@ -201,7 +193,7 @@ static NSTimeInterval const kCJSliderControlDidTapSlidAnimationDuration  = 0.3f;
 
 
 #pragma mark - Event
-/** 完整的描述请参见文件头部 */
+/* 完整的描述请参见文件头部 */
 - (void)hidePopover:(BOOL)isHidden {
     self.popover.hidden = isHidden;
 }
@@ -274,7 +266,6 @@ static NSTimeInterval const kCJSliderControlDidTapSlidAnimationDuration  = 0.3f;
     
     if (_baseValue) {
         [self insertSubview:self.baseImageView aboveSubview:self.frontImageView];
-        [self hidePopover:YES];
     }
 }
 

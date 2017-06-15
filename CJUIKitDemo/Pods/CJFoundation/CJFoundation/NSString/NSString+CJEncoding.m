@@ -12,7 +12,7 @@ static NSString * const CharactersToBeEscapedInQueryString = @"!*'\"();:@&=+$,/?
 
 @implementation NSString (Encoding)
 
-/** 完整的描述请参见文件头部 */
+/* 完整的描述请参见文件头部 */
 - (NSString *)cjEncodeUnicodeToChinese{
     
     NSString *tempStr1 = [self stringByReplacingOccurrencesOfString:@"\\u"withString:@"\\U"];

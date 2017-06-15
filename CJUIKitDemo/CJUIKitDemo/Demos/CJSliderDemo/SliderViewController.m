@@ -36,20 +36,24 @@
 - (void)setupBaseSlier {
     
     CGRect baseSliderFrame = self.baseSlider.frame;
-    baseSliderFrame.size.height = 40;
+    baseSliderFrame.size.height = 80;
     self.baseSlider.frame = baseSliderFrame;
-//    self.baseSlider.backgroundColor = [UIColor redColor];
+    self.baseSlider.backgroundColor = [UIColor redColor];
+    
     self.baseSlider.minimumValue = -1;
     self.baseSlider.maximumValue = 1;
     self.baseSlider.value = 0;
+    
     
     self.baseSlider.adsorbInfos = @[[[CJAdsorbModel alloc] initWithMin:-1 max:0.4 toValue:-1],
                                     [[CJAdsorbModel alloc] initWithMin:0.4 max:1 toValue:1]
                                     ];
     
-    self.baseSlider.trackHeight = 40;
+    self.baseSlider.trackHeight = 40;  
 
-    UIImage *thumbImage = [[UIImage imageNamed:@"bg.jpg"] cj_transformImageToSize:CGSizeMake(40, 40)];
+    UIImage *thumbImage = [[UIImage imageNamed:@"bg.jpg"] cj_transformImageToSize:CGSizeMake(80, 80)];
+    
+    thumbImage = [thumbImage stretchableImageWithLeftCapWidth:1 topCapHeight:0];
     [self.baseSlider setThumbImage:thumbImage forState:UIControlStateNormal];
     
 //    self.baseSlider.sliderType = CJSliderTypeRange;

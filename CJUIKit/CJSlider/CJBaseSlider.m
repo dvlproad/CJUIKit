@@ -10,7 +10,7 @@
 
 @interface CJBaseSlider ()
 
-@property (nonatomic, assign) CGFloat thumbEnableTouchHeight;   /**< 设置滑块可触摸范围的大小,而不是滑块的大小（附：滑块的大小通过图片去设置）滑块可触摸范围的大小，跟通过图片改变的滑块大小应当一致。 */
+@property (nonatomic, assign) CGFloat thumbEnableTouchHeight;   /**< 设置滑块可触摸范围的大小,而不是滑块的大小（附：滑块的大小通过图片去设置）本控件滑块可触摸范围的大小，被我默认设置为frame的大小，而不是滑块的大小 */
 @property (nonatomic, strong) UIView *rangeView;    //非空白区域的视图
 
 
@@ -82,7 +82,7 @@
 - (CGRect)trackRectForBounds:(CGRect)bounds {
     CGRect trackRect = [super trackRectForBounds:bounds]; // 必须通过调用父类的trackRectForBounds 获取一个 bounds 值，否则 Autolayout 会失效，UISlider 的位置会跑偏。
     
-    /* 如果有设置滑块大小，则采用设置的大小 */
+    /* 如果有设置进度条的大小，则采用设置的大小 */
     if (self.trackHeight) {
         trackRect.origin.y = CGRectGetHeight(bounds)/2 - self.trackHeight/2;
         trackRect.size.height = self.trackHeight;
@@ -91,10 +91,10 @@
     return trackRect;
 }
 
-- (void)setThumbImage:(UIImage *)image forState:(UIControlState)state {
-    [super setThumbImage:image forState:state];
+- (void)setFrame:(CGRect)frame {
+    [super setFrame:frame];
     
-    self.thumbEnableTouchHeight = image.size.height;
+    self.thumbEnableTouchHeight = frame.size.height;
 }
 
 //设置滑块的位置及滑块可触摸范围的大小(注不是设置滑块的大小，滑块的大小应通过图片去设置)，其中bounds 是滑块的大小，rect 是进度条的尺寸，而 value 则是 UISlider 当前的值

@@ -10,13 +10,13 @@
 
 @implementation UIColor (CJHex)
 
-/** 完整的描述请参见文件头部 */
+/* 完整的描述请参见文件头部 */
 + (UIColor *)cjColorWithHexString:(NSString *)color
 {
     return [self cjColorWithHexString:color alpha:1.0f];
 }
 
-/** 完整的描述请参见文件头部 */
+/* 完整的描述请参见文件头部 */
 + (UIColor *)cjColorWithHexString:(NSString *)color alpha:(CGFloat)alpha
 {
     //删除字符串中的空格

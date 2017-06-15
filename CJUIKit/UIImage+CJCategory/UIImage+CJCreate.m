@@ -10,7 +10,7 @@
 
 @implementation UIImage (CJCreate)
 
-/** 完整的描述请参见文件头部 */
+/* 完整的描述请参见文件头部 */
 + (UIImage *)cj_imageWithColor:(UIColor *)color size:(CGSize)size
 {
     CGRect rect = CGRectMake(0, 0, size.width, size.height);

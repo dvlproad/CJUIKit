@@ -14,7 +14,7 @@
  *   弹出框显示内容的枚举类型
  */
 typedef NS_ENUM(NSUInteger, CJSliderPopoverDispalyType) {
-    
+    CJSliderPopoverDispalyTypeNone,         /**< 不弹出值标注 */
     CJSliderPopoverDispalyTypeNum,          /**< 纯数字显示 */
     CJSliderPopoverDispalyTypePercent,      /**< 百分比显示 */
 };
@@ -56,12 +56,7 @@ typedef NS_ENUM(NSUInteger, CJSliderPopoverDispalyType) {
 @property (nonatomic, strong) UIImage *baseImage;// 基准图片,默认是橙色按钮(baseValue为0时无baseImage)
 @property (nonatomic, assign) CGFloat lineThick; // 线条粗细
 
-/**
- *  隐藏或显示文字
- *
- *  @param isHidden 是否隐藏
- */
-- (void)hidePopover:(BOOL)isHidden;
+@property (nonatomic, assign) CGFloat thumbSizeBeyondLineThick;     /**< 滑块的点相对于滑块线条的大小，默认+5，即默认比滑块大5像素 */
 
 @end
 

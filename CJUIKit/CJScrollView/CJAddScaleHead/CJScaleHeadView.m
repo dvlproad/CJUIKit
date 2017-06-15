@@ -130,7 +130,7 @@ static NSString *const CorePullScaleContentOffset = @"contentOffset";
     [self resetNavigationBarHeight];
 }
 
-/** 完整的描述请参见文件头部 */
+/* 完整的描述请参见文件头部 */
 - (void)resetNavigationBarHeight {
     if (!_attachNavigationBar) {
         _pullUpMinHeight = 0;

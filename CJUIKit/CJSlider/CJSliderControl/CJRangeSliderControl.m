@@ -65,6 +65,7 @@ static NSTimeInterval const kMTRngeSliderDidTapSlidAnimationDuration   = 0.3f;
 }
 
 - (void)setupUI {
+    self.backgroundColor = [UIColor clearColor];
     
     [self addSubview:self.backgroundImageView];
     [self addSubview:self.frontImageView];

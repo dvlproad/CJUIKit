@@ -79,7 +79,7 @@
     return _placeholderView;
 }
 
-/** 完整的描述请参见文件头部 */
+/* 完整的描述请参见文件头部 */
 - (void)setMaxNumberOfLines:(NSUInteger)maxNumberOfLines textHeightChangeBlock:(void (^)(NSString *, CGFloat))textViewHeightChangeBlock {
     _maxNumberOfLines = maxNumberOfLines;
     

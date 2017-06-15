@@ -19,10 +19,10 @@ typedef NS_ENUM(NSUInteger, CJSliderType) {
  */
 @interface CJBaseSlider : UISlider
 
-@property (nonatomic, assign) CGFloat trackHeight;          /**< 进度条的高度,即线的高度 */
+@property (nonatomic, assign) CGFloat trackHeight;          /**< 滑道/进度条的高度,即线的高度（TODO:设置的值太大，太接近thumb高度的时候滑动到比较靠左和靠右的时候会有问题） */
 //附：滑块的大小请使用- (void)setThumbImage:(UIImage *)image forState:(UIControlState)state;设置
 
-@property (nonatomic, strong) NSArray<CJAdsorbModel *> *adsorbInfos; /** 设置吸附信息(含吸附区间及该区间要吸附到什么值)，上面的值是具体的滑块值，不是白费比 */
+@property (nonatomic, strong) NSArray<CJAdsorbModel *> *adsorbInfos; /** 设置吸附信息(含吸附区间及该区间要吸附到什么值)，上面的值是具体的滑块值，不是百分比 */
 
 
 @property (nonatomic, assign) CJSliderType sliderType;
