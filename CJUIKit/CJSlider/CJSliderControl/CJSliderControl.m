@@ -56,14 +56,26 @@ static NSTimeInterval const kCJSliderControlDidTapSlidAnimationDuration  = 0.3f;
 - (void)dealloc {
     [self removeObserver:self forKeyPath:@"self.mainThumb.frame"];
     [self removeObserver:self forKeyPath:@"self.value"];
+    
+    if (self.leftThumb) {
+        [self removeObserver:self forKeyPath:@"self.leftThumb.frame"];
+        [self removeObserver:self forKeyPath:@"self.baseValue"];
+    }
 }
 
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSKeyValueChangeKey,id> *)change context:(void *)context {
     if ([keyPath isEqualToString:@"self.mainThumb.frame"]) {
-        [self updateSliderValueAndMinimumTrackImageViewFrame];
+        [self updateIndicateValueForThumb:self.mainThumb];
         
     } else if ([keyPath isEqualToString:@"self.value"]) {
 //        [self layoutSubviews];
+        
+    } else if ([keyPath isEqualToString:@"self.leftThumb.frame"]) {
+        [self updateIndicateValueForThumb:self.leftThumb];
+        
+    } else if ([keyPath isEqualToString:@"self.baseValue"]) {
+//        [self layoutSubviews];
+        
     }
 }
 
@@ -71,8 +83,10 @@ static NSTimeInterval const kCJSliderControlDidTapSlidAnimationDuration  = 0.3f;
     self.backgroundColor = [UIColor cyanColor];
     
     //注册通知：self.mainThumb.frame更新的时候需要去更新选中区域 以及 value
-    [self addObserver:self forKeyPath:@"self.mainThumb.frame" options:NSKeyValueObservingOptionNew|NSKeyValueObservingOptionOld context:nil]; //这里采用监听机制来优化,这样就不用每次self.mainThumb.frame改变的时候再去调用要执行的方法
-    [self addObserver:self forKeyPath:@"self.value" options:NSKeyValueObservingOptionNew|NSKeyValueObservingOptionOld context:nil]; //这里采用监听机制来优化,这样就不用每次self.value改变的时候再去调用要执行的方法
+    //这里采用监听机制来优化,这样就不用每次self.mainThumb.frame\self.value改变的时候再去调用要执行的方法
+    [self addObserver:self forKeyPath:@"self.mainThumb.frame" options:NSKeyValueObservingOptionNew|NSKeyValueObservingOptionOld context:nil];
+    [self addObserver:self forKeyPath:@"self.value" options:NSKeyValueObservingOptionNew|NSKeyValueObservingOptionOld context:nil];
+    
     
     _minValue = 0;
     _maxValue = 1;
@@ -101,7 +115,7 @@ static NSTimeInterval const kCJSliderControlDidTapSlidAnimationDuration  = 0.3f;
     self.mainThumb.frame = thumbRect;
     
     if (self.leftThumb) {
-        CGSize baseThumbSize = CGSizeMake(self.thumbSize.width+10, self.thumbSize.height+10);
+        CGSize baseThumbSize = CGSizeMake(self.thumbSize.width-10, self.thumbSize.height-10);
         
 //        CGFloat basePointX = [self pointXForBounds:self.bounds trackRect:trackRect value:self.baseValue thumbWidth:CGRectGetWidth(thumbRect)];
         
@@ -146,7 +160,7 @@ static NSTimeInterval const kCJSliderControlDidTapSlidAnimationDuration  = 0.3f;
     //计算该值在坐标上的X是多少
     CGFloat thumbImageViewWidth = thumbSize.width;
     
-    CGFloat thumbCanMoveWidth = CGRectGetWidth(rect) - thumbImageViewWidth; //滑块可滑动的实际大小(要扣除滑块的大小0到总滑道减去滑块大小)
+    CGFloat thumbCanMoveWidth = CGRectGetWidth(rect); //滑块可滑动的实际大小
     CGFloat thumbImageViewOriginX = CGRectGetMinX(rect) + percent*thumbCanMoveWidth;
     
     CGFloat thumbImageViewHeight = thumbSize.height;
@@ -162,17 +176,16 @@ static NSTimeInterval const kCJSliderControlDidTapSlidAnimationDuration  = 0.3f;
 //}
 
 /**
- *  通过滑道和滑块宽度获取指定值的X坐标
+ *  通过滑道宽度获取指定值的X坐标
  *
  *  @param bounds           整个视图的bounds
  *  @param rect             滑道的frame
  *  @param value            要获取的滑块frame是value上的
- *  @param thumbWidth       滑块的宽度
  */
-- (CGFloat)pointXForBounds:(CGRect)bounds trackRect:(CGRect)rect value:(float)value thumbWidth:(CGFloat)thumbWidth {
+- (CGFloat)pointXForBounds:(CGRect)bounds trackRect:(CGRect)rect value:(float)value {
     CGFloat percent = value /(_maxValue - _minValue);
     
-    CGFloat thumbCanMoveWidth = CGRectGetWidth(rect) - thumbWidth; //滑块可滑动的实际大小(要扣除滑块的大小0到总滑道减去滑块大小)
+    CGFloat thumbCanMoveWidth = CGRectGetWidth(rect); //滑块可滑动的实际大小
     CGFloat basePointX = CGRectGetMinX(rect) + percent*thumbCanMoveWidth;
     
     return basePointX;
@@ -190,7 +203,7 @@ static NSTimeInterval const kCJSliderControlDidTapSlidAnimationDuration  = 0.3f;
 - (CGRect)baseThumbRectForBounds:(CGRect)bounds trackRect:(CGRect)rect value:(float)value thumbWidth:(CGFloat)thumbWidth baseThumbSize:(CGSize)baseThumbSize {
     CGFloat percent = value /(_maxValue - _minValue);
     
-    CGFloat thumbCanMoveWidth = CGRectGetWidth(rect) - thumbWidth; //滑块可滑动的实际大小(要扣除滑块的大小0到总滑道减去滑块大小)
+    CGFloat thumbCanMoveWidth = CGRectGetWidth(rect); //滑块可滑动的实际大小
     CGFloat baseThumbImageViewOriginX = CGRectGetMinX(rect) + percent*thumbCanMoveWidth;
     
     CGFloat baseThumbImageViewWidth = baseThumbSize.width;
@@ -225,22 +238,33 @@ static NSTimeInterval const kCJSliderControlDidTapSlidAnimationDuration  = 0.3f;
 #pragma mark - Private
 
 /**
- *  更新slider的值以及当前选中的区域(每当滑块thumb的位置移动后都要执行此更新)
+ *  更新对应thumb指示的值(每当滑块thumb的位置移动后都要执行此更新，并记得同时得当前选中的区域)
  */
-- (void)updateSliderValueAndMinimumTrackImageViewFrame {
+- (void)updateIndicateValueForThumb:(UIButton *)thumb {
     CGRect trackRect = self.trackImageView.frame;
-    CGRect thumbRect = self.mainThumb.frame;
+    CGRect thumbRect = thumb.frame;
+    
+    CGFloat thumbCanMoveWidth = CGRectGetWidth(trackRect); //滑块可滑动的实际大小
     
     //value
-    CGFloat percent = (thumbRect.origin.x - trackRect.origin.x) / (trackRect.size.width - thumbRect.size.width);
+    CGFloat percent = (CGRectGetMidX(thumbRect) - trackRect.origin.x) / thumbCanMoveWidth;
     CGFloat value = percent * (_maxValue - _minValue);
-    _value = value;
+    if (thumb == self.mainThumb) {
+        _value = value;
+        
+    } else if (thumb == self.leftThumb) {
+        _baseValue = value;
+        
+    } else {
+        NSAssert(NO, @"Error:CJSliderControl发生错误了!");
+    }
+    
     
     //minimumTrackImageView.frame
-    CGFloat basePointX = [self pointXForBounds:self.bounds trackRect:trackRect value:self.baseValue thumbWidth:CGRectGetWidth(thumbRect)];
+    CGFloat basePointX = [self pointXForBounds:self.bounds trackRect:trackRect value:self.baseValue];
     
-    CGFloat rangeOriginX = MIN(CGRectGetMinX(thumbRect), basePointX);
-    CGFloat rangeWidth = ABS(CGRectGetMinX(thumbRect) - basePointX);
+    CGFloat rangeOriginX = MIN(CGRectGetMidX(self.mainThumb.frame), basePointX);
+    CGFloat rangeWidth = ABS(CGRectGetMidX(self.mainThumb.frame) - basePointX);
     CGFloat rangeHeight = CGRectGetHeight(trackRect);
     CGFloat rangeOriginY = CGRectGetMinY(trackRect);
     
@@ -258,7 +282,7 @@ static NSTimeInterval const kCJSliderControlDidTapSlidAnimationDuration  = 0.3f;
 /**
  *  更新slider的值显示
  */
-- (void)sliderValueUpdateEnd {
+- (void)doSomethingWhenCompleteUpdateFrameForThumb:(UIButton *)thumb {
     CGFloat percent = self.value /(_maxValue - _minValue);
     
     if (self.popoverType != CJSliderPopoverDispalyTypeNone) {
@@ -269,7 +293,13 @@ static NSTimeInterval const kCJSliderControlDidTapSlidAnimationDuration  = 0.3f;
     [self showPopoverAnimated:YES];
     
     if (self.delegate && [self.delegate respondsToSelector:@selector(slider:didDargToValue:)]) {
-        [self.delegate slider:self didDargToValue:self.value];
+        if (thumb == self.mainThumb) {
+            [self.delegate slider:self didDargToValue:self.value];
+            
+        } else if (thumb == self.leftThumb) {
+            [self.delegate slider:self didDargToValue:self.baseValue];
+        }
+        
     }
 }
 
@@ -314,92 +344,19 @@ static NSTimeInterval const kCJSliderControlDidTapSlidAnimationDuration  = 0.3f;
     self.popover.hidden = isHidden;
 }
 
-- (void)buttonEndDrag:(UIButton *)button {
+
+#pragma mark - 点击的事件
+- (void)touchesEnded:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
     [self hidePopoverAnimated:YES];
-}
-
-- (CGFloat)validMoveDistanceForThumb:(UIButton *)thumb withMoveDistance:(CGFloat)moveDistance {
-    CGFloat validMoveDistance = moveDistance;
-    //判断是否左移(否，则是右移)
-    BOOL isSlideToLeft = moveDistance < 0;
-    if (self.leftThumb == nil) { //如果不是range类型的
-        if (isSlideToLeft) {
-            CGFloat canMaxMoveDistance = CGRectGetMinX(self.mainThumb.frame) - CGRectGetMinX(self.trackImageView.frame);
-            if (ABS(moveDistance) > ABS(canMaxMoveDistance)) {
-                validMoveDistance = -canMaxMoveDistance;
-            }
-            
-        } else {
-            CGFloat canMaxMoveDistance = CGRectGetMaxX(self.trackImageView.frame) - CGRectGetWidth(self.mainThumb.frame) - CGRectGetMinX(self.mainThumb.frame);
-            if (ABS(moveDistance) > ABS(canMaxMoveDistance)) {
-                validMoveDistance = canMaxMoveDistance;
-            }
-        }
-        return validMoveDistance;
-        
-    } else {
-        BOOL isLeftThumb  = ( thumb == self.leftThumb );
-        BOOL isIntersect  = CGRectIntersectsRect(self.leftThumb.frame, self.mainThumb.frame); //判断leftThumb和rightThumb是否会相交
-        if (!isLeftThumb) {
-            if (isSlideToLeft) {
-//                if (CGRectGetMinX(self.mainThumb.frame) > CGRectGetMinX(self.leftThumb.frame)) {
-//                    
-//                }
-                if (isIntersect) {  //如果相交,阻止rightThumb左移。
-                    validMoveDistance = 0;
-                }
-                
-            } else {
-                CGFloat canMaxMoveDistance = CGRectGetMaxX(self.trackImageView.frame) - CGRectGetWidth(self.mainThumb.frame) - CGRectGetMinX(self.mainThumb.frame);
-                if (ABS(moveDistance) > ABS(canMaxMoveDistance)) {
-                    validMoveDistance = canMaxMoveDistance;
-                }
-            }
-            
-        } else if (isLeftThumb) {
-            if (!isSlideToLeft) {
-                if (isIntersect) {  //如果相交,阻止leftThumb右移。
-                    validMoveDistance = 0;
-                }
-                
-            } else {
-                CGFloat canMaxMoveDistance = CGRectGetMinX(self.leftThumb.frame) - CGRectGetMinX(self.trackImageView.frame);
-                if (ABS(moveDistance) > ABS(canMaxMoveDistance)) {
-                    validMoveDistance = -canMaxMoveDistance;
-                }
-            }
-        }
-        
-        return validMoveDistance;
-    }
-}
-
-
-#pragma mark - Event
-- (void)buttonDidDrag:(UIButton *)thumb withEvent:(UIEvent *)event {
-    UITouch *touch = [[event touchesForView:thumb] anyObject];
-    CGPoint point = [touch locationInView:self];
-    CGPoint lastPoint = [touch previousLocationInView:self];
-    CGFloat moveDistance = (point.x - lastPoint.x); //滑动的距离
-    if (moveDistance == 0) {
-        return;
-    }
-    
-    //判断是否需要阻止leftThumb右移,阻止rightThumb左移
-    CGFloat validMoveDistance = [self validMoveDistanceForThumb:thumb withMoveDistance:moveDistance];
-    if (validMoveDistance == 0) {
-        return;
-    }
-    
-    CGRect thumbFrame = thumb.frame;
-    thumbFrame.origin.x += validMoveDistance;
-    thumb.frame = thumbFrame;
-    
-    [self sliderValueUpdateEnd];
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
     [super touchesBegan:touches withEvent:event];
+    
+    if (self.leftThumb) { //TODO:如果是range效果，暂不支持touch来选中值的效果
+        return;
+    }
+    
     UITouch *touch = [touches anyObject];
     CGPoint point = [touch locationInView:self];
     if (point.x < CGRectGetMinX(self.trackImageView.frame) ||
@@ -420,14 +377,97 @@ static NSTimeInterval const kCJSliderControlDidTapSlidAnimationDuration  = 0.3f;
         self.mainThumb.frame = thumbFrame;
         
     } completion:^(BOOL finished) {
-    
-        [self sliderValueUpdateEnd];
+        
+        [self doSomethingWhenCompleteUpdateFrameForThumb:self.mainThumb];
         [self hidePopoverAnimated:YES];
     }];
 }
 
-- (void)touchesEnded:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+#pragma mark - 拖动的事件
+- (void)buttonEndDrag:(UIButton *)button {
     [self hidePopoverAnimated:YES];
+}
+
+- (void)buttonDidDrag:(UIButton *)thumb withEvent:(UIEvent *)event {
+    UITouch *touch = [[event touchesForView:thumb] anyObject];
+    CGPoint point = [touch locationInView:self];
+    CGPoint lastPoint = [touch previousLocationInView:self];
+    CGFloat moveDistance = (point.x - lastPoint.x); //滑动的距离
+    if (moveDistance == 0) {
+        return;
+    }
+    
+    //判断是否需要阻止leftThumb右移,阻止rightThumb左移
+    CGFloat validMoveDistance = [self validMoveDistanceForThumb:thumb withMoveDistance:moveDistance];
+    if (validMoveDistance == 0) {
+        return;
+    }
+    
+    CGRect thumbFrame = thumb.frame;
+    thumbFrame.origin.x += validMoveDistance;
+    thumb.frame = thumbFrame;
+    
+    [self doSomethingWhenCompleteUpdateFrameForThumb:thumb];
+}
+
+- (CGFloat)validMoveDistanceForThumb:(UIButton *)thumb withMoveDistance:(CGFloat)moveDistance {
+    CGFloat validMoveDistance = moveDistance;
+    //判断是否左移(否，则是右移)
+    BOOL isSlideToLeft = moveDistance < 0;
+    if (self.leftThumb == nil) { //如果不是range类型的
+        if (isSlideToLeft) {
+            CGFloat thumbMoveMinMidX = CGRectGetMinX(self.trackImageView.frame); //滑块移动可到的最小中心
+            CGFloat canMaxMoveDistance = CGRectGetMidX(self.mainThumb.frame) - thumbMoveMinMidX;
+            if (ABS(moveDistance) > ABS(canMaxMoveDistance)) {
+                validMoveDistance = -canMaxMoveDistance;
+            }
+            
+        } else {
+            CGFloat thumbMoveMaxMidX = CGRectGetMaxX(self.trackImageView.frame); //滑块移动可到的最大中心
+            CGFloat canMaxMoveDistance = thumbMoveMaxMidX - CGRectGetMidX(self.mainThumb.frame);
+            if (ABS(moveDistance) > ABS(canMaxMoveDistance)) {
+                validMoveDistance = canMaxMoveDistance;
+            }
+        }
+        return validMoveDistance;
+        
+    } else {
+        BOOL isLeftThumb  = ( thumb == self.leftThumb );
+        if (!isLeftThumb) {
+            if (isSlideToLeft) {
+                CGFloat rightThumbMoveMinMidX = CGRectGetMidX(self.leftThumb.frame); //右侧滑块移动可到的最小中心
+                CGFloat canMaxMoveDistance = CGRectGetMidX(self.mainThumb.frame) - rightThumbMoveMinMidX;
+                if (ABS(moveDistance) > ABS(canMaxMoveDistance)) {
+                    validMoveDistance = -canMaxMoveDistance;
+                }
+                
+            } else {
+                CGFloat thumbMoveMaxMidX = CGRectGetMaxX(self.trackImageView.frame); //滑块移动可到的最大中心
+                CGFloat canMaxMoveDistance = thumbMoveMaxMidX - CGRectGetMidX(self.mainThumb.frame);
+                if (ABS(moveDistance) > ABS(canMaxMoveDistance)) {
+                    validMoveDistance = canMaxMoveDistance;
+                }
+            }
+            
+        } else if (isLeftThumb) {
+            if (!isSlideToLeft) {
+                CGFloat leftThumbMoveMaxMidX = CGRectGetMidX(self.mainThumb.frame); //左侧滑块移动可到的最大中心
+                CGFloat canMaxMoveDistance = leftThumbMoveMaxMidX - CGRectGetMidX(self.leftThumb.frame);
+                if (ABS(moveDistance) > ABS(canMaxMoveDistance)) {
+                    validMoveDistance = canMaxMoveDistance;
+                }
+                
+            } else {
+                CGFloat thumbMoveMinMidX = CGRectGetMinX(self.trackImageView.frame); //滑块移动可到的最小中心
+                CGFloat canMaxMoveDistance = CGRectGetMidX(self.leftThumb.frame) - thumbMoveMinMidX;
+                if (ABS(moveDistance) > ABS(canMaxMoveDistance)) {
+                    validMoveDistance = -canMaxMoveDistance;
+                }
+            }
+        }
+        
+        return validMoveDistance;
+    }
 }
 
 
@@ -476,6 +516,11 @@ static NSTimeInterval const kCJSliderControlDidTapSlidAnimationDuration  = 0.3f;
         
         [_leftThumb setBackgroundImage:[UIImage imageNamed:@"slider_thumbImage"] forState:UIControlStateNormal];
         [self insertSubview:_leftThumb aboveSubview:self.minimumTrackImageView];
+        
+        //注册通知：self.leftThumb.frame更新的时候需要去更新选中区域 以及 value
+        //这里采用监听机制来优化,这样就不用每次self.leftThumb.frame\self.value改变的时候再去调用要执行的方法
+        [self addObserver:self forKeyPath:@"self.leftThumb.frame" options:NSKeyValueObservingOptionNew|NSKeyValueObservingOptionOld context:nil];
+        [self addObserver:self forKeyPath:@"self.baseValue" options:NSKeyValueObservingOptionNew|NSKeyValueObservingOptionOld context:nil];
     }
 }
 
