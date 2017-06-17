@@ -68,13 +68,13 @@ static NSTimeInterval const kCJSliderControlDidTapSlidAnimationDuration  = 0.3f;
         [self updateIndicateValueForThumb:self.mainThumb];
         
     } else if ([keyPath isEqualToString:@"self.value"]) {
-//        [self layoutSubviews];
+        [self updateUIByAllValue];
         
     } else if ([keyPath isEqualToString:@"self.leftThumb.frame"]) {
         [self updateIndicateValueForThumb:self.leftThumb];
         
     } else if ([keyPath isEqualToString:@"self.baseValue"]) {
-//        [self layoutSubviews];
+//        [self updateUIByAllValue];
         
     }
 }
@@ -108,6 +108,10 @@ static NSTimeInterval const kCJSliderControlDidTapSlidAnimationDuration  = 0.3f;
     }
     self.lastFrame = self.frame;
     
+    [self updateUIByAllValue];
+}
+
+- (void)updateUIByAllValue {
     CGRect trackRect = [self trackRectForBounds:self.bounds];
     self.trackImageView.frame = trackRect;
     
@@ -117,7 +121,7 @@ static NSTimeInterval const kCJSliderControlDidTapSlidAnimationDuration  = 0.3f;
     if (self.leftThumb) {
         CGSize baseThumbSize = CGSizeMake(self.thumbSize.width-10, self.thumbSize.height-10);
         
-//        CGFloat basePointX = [self pointXForBounds:self.bounds trackRect:trackRect value:self.baseValue thumbWidth:CGRectGetWidth(thumbRect)];
+        //        CGFloat basePointX = [self pointXForBounds:self.bounds trackRect:trackRect value:self.baseValue thumbWidth:CGRectGetWidth(thumbRect)];
         
         CGRect baseThumbRect = [self baseThumbRectForBounds:self.bounds trackRect:trackRect value:self.baseValue thumbWidth:CGRectGetWidth(thumbRect) baseThumbSize:baseThumbSize];
         self.leftThumb.frame = baseThumbRect;
@@ -385,6 +389,10 @@ static NSTimeInterval const kCJSliderControlDidTapSlidAnimationDuration  = 0.3f;
 #pragma mark - 拖动的事件
 - (void)buttonEndDrag:(UIButton *)button {
     [self hidePopoverAnimated:YES];
+    
+    if (self.adsorbInfos) {
+        [self adsorbToValue];
+    }
 }
 
 - (void)buttonDidDrag:(UIButton *)thumb withEvent:(UIEvent *)event {
@@ -607,6 +615,41 @@ static NSTimeInterval const kCJSliderControlDidTapSlidAnimationDuration  = 0.3f;
     _leftThumbAlpha = leftThumbAlpha;
     
     self.leftThumb.alpha = leftThumbAlpha;
+}
+
+
+
+#pragma mark - 增加吸附功能模块
+/**
+ *  设置吸附信息
+ *
+ *  @param adsorbInfos 吸附信息(含吸附区间及该区间要吸附到什么值)
+ */
+- (void)setAdsorbInfos:(NSMutableArray<CJAdsorbModel *> *)adsorbInfos {
+    _adsorbInfos = adsorbInfos;
+    
+    [self addTarget:self action:@selector(adsorbToValue) forControlEvents:UIControlEventTouchUpInside];
+}
+
+
+/**
+ *  拖动结束后进行吸附判断及吸附到指定值
+ */
+- (void)adsorbToValue {
+    CGFloat curValue = self.value;
+    
+    for (CJAdsorbModel *adsorbInfo in self.adsorbInfos) {
+        if (curValue > adsorbInfo.adsorbMin && curValue < adsorbInfo.adsorbMax) {
+            [self setValue:adsorbInfo.adsorbToValue animated:YES];
+            
+            [self sendActionsForControlEvents:UIControlEventValueChanged];
+            break;
+        }
+    }
+}
+
+- (void)setValue:(float)value animated:(BOOL)animated {
+    self.value = value; //这样才能触发之前设置的KVO
 }
 
 

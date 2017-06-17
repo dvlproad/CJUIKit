@@ -112,6 +112,8 @@
     self.sliderControl3.thumbCannotBeyongXType = CJSliderControlThumbCannotBeyongXTypeAllX;
     self.sliderControl3.trackHeight = 30;
     self.sliderControl3.mainThumbImage = [[UIImage imageNamed:@"bg.jpg"] cj_transformImageToSize:CGSizeMake(80, 80)];
+    self.sliderControl3.adsorbInfos = @[[[CJAdsorbModel alloc] initWithMin:0 max:0.70 toValue:0],
+                                        [[CJAdsorbModel alloc] initWithMin:0.71 max:1 toValue:1]];
     
     
     

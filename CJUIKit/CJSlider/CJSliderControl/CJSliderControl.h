@@ -9,6 +9,7 @@
 
 #import <UIKit/UIKit.h>
 #import "CJSliderPopover.h"
+#import "CJAdsorbModel.h"
 
 @class CJSliderControl;
 /**
@@ -45,8 +46,8 @@ typedef NS_ENUM(NSUInteger, CJSliderControlThumbCannotBeyongXType) {
 }
 @property (nonatomic, weak) id<CJSliderControlDelegate> delegate;
 
-@property (nonatomic, assign) CGFloat minValue;     /**< 最小值 */
-@property (nonatomic, assign) CGFloat maxValue; /**< 最大值 */
+@property (nonatomic, assign) CGFloat minValue;     /**< 最小值(默认0) */
+@property (nonatomic, assign) CGFloat maxValue;     /**< 最大值(默认1) */
 
 @property (nonatomic, assign) CJSliderPopoverDispalyType popoverType; /**< 弹出框的类型 */
 @property (nonatomic, assign) CJSliderControlThumbCannotBeyongXType thumbCannotBeyongXType; /**< 滑块的哪些X不能越界 */
@@ -67,6 +68,8 @@ typedef NS_ENUM(NSUInteger, CJSliderControlThumbCannotBeyongXType) {
 
 @property (nonatomic, assign) CGFloat trackHeight; //滑道高度
 
+@property (nonatomic, strong) NSArray<CJAdsorbModel *> *adsorbInfos; /** 设置吸附信息(含吸附区间及该区间要吸附到什么值)，上面的值是具体的滑块值，不是百分比 */
+
 /**
  *  隐藏或显示文字
  *
@@ -75,6 +78,9 @@ typedef NS_ENUM(NSUInteger, CJSliderControlThumbCannotBeyongXType) {
 - (void)hidePopover:(BOOL)isHidden;
 
 - (void)showThumbOnBaseValue;
+
+
+- (void)setValue:(float)value animated:(BOOL)animated;
 
 @end
 
