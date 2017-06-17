@@ -20,6 +20,11 @@ typedef NS_ENUM(NSUInteger, CJSliderPopoverDispalyType) {
     CJSliderPopoverDispalyTypePercent,      /**< 百分比显示 */
 };
 
+typedef NS_ENUM(NSUInteger, CJSliderControlThumbCannotBeyongXType) {
+    CJSliderControlThumbCannotBeyongXTypeMidX,           /**< 默认(滑块的中心不可越界) */
+    CJSliderControlThumbCannotBeyongXTypeAllX,          /**< 滑块的左右边界都不应该越界 */
+};
+
 @protocol CJSliderControlDelegate <NSObject>
 
 /**
@@ -35,13 +40,16 @@ typedef NS_ENUM(NSUInteger, CJSliderPopoverDispalyType) {
 /**
  *  单向滑竿、popover支持百分比和纯数字显示
  */
-@interface CJSliderControl : UIControl
+@interface CJSliderControl : UIControl {
+    
+}
+@property (nonatomic, weak) id<CJSliderControlDelegate> delegate;
 
-@property (nonatomic, assign) CGFloat value;        /**< 当前值 */
 @property (nonatomic, assign) CGFloat minValue;     /**< 最小值 */
 @property (nonatomic, assign) CGFloat maxValue; /**< 最大值 */
 
 @property (nonatomic, assign) CJSliderPopoverDispalyType popoverType; /**< 弹出框的类型 */
+@property (nonatomic, assign) CJSliderControlThumbCannotBeyongXType thumbCannotBeyongXType; /**< 滑块的哪些X不能越界 */
 @property (nonatomic, assign) CGSize thumbSize;
 @property (nonatomic, assign) CGSize popoverSize;
 
@@ -49,12 +57,14 @@ typedef NS_ENUM(NSUInteger, CJSliderPopoverDispalyType) {
 
 @property (nonatomic, strong) UIColor *maximumTrackTintColor; /**< 最大值方向滑竿颜色值 */
 
-@property (nonatomic, strong) UIImage *thumbImage; /**< 滑块图片,默认是橙色按钮 */
+@property (nonatomic, assign) CGFloat value;            /**< 当前值 */
+@property (nonatomic, strong) UIImage *mainThumbImage;  /**< 滑块图片,默认是橙色按钮 */
+@property (nonatomic, assign) CGFloat mainThumbAlpha;   /**< 主滑块的透明度 */
 
-@property (nonatomic, weak) id<CJSliderControlDelegate> delegate;
+@property (nonatomic, assign) CGFloat baseValue;        /**< 基准值(默认0) */
+@property (nonatomic, strong) UIImage *leftThumbImage;  //**< 左滑块的图片,默认是橙色按钮 */
+@property (nonatomic, assign) CGFloat leftThumbAlpha;   /**< 左滑块的透明度 */
 
-@property (nonatomic, assign) CGFloat baseValue; // 基准值(默认0)
-@property (nonatomic, strong) UIImage *baseImage;// 基准图片,默认是橙色按钮(baseValue为0时无baseImage)
 @property (nonatomic, assign) CGFloat trackHeight; //滑道高度
 
 /**

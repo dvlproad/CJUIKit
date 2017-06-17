@@ -28,6 +28,8 @@
 @property (nonatomic, weak) IBOutlet CJSliderControl *sliderControl2;
 @property (nonatomic, weak) IBOutlet UILabel *sliderControlValueLabel2;
 
+@property (nonatomic, weak) IBOutlet CJSliderControl *sliderControl3;
+
 @property (nonatomic, weak) IBOutlet CJSliderControl *rangeSliderControl;
 @property (nonatomic, weak) IBOutlet UILabel *rangeSliderControlValueLabel;
 

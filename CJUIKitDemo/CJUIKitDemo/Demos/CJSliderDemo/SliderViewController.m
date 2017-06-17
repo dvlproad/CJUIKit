@@ -85,6 +85,7 @@
     self.sliderControl1.value = 52;
     self.sliderControl1.popoverType = CJSliderPopoverDispalyTypeNum; //设置popover显示的类型,百分比或者纯数字显示
     self.sliderControl1.delegate = self;                             //设置代理对象，用于接收滑竿滑动后值得改变
+    self.sliderControl1.mainThumbAlpha = 0.5;
     
     self.sliderControlValueLabel1.text = [NSString stringWithFormat:@"选取的值是: %.1f",self.sliderControl1.minValue];
     
@@ -96,9 +97,23 @@
     self.sliderControl2.minimumTrackTintColor = [UIColor colorWithRed:255/255.0 green:254/255.0 blue:248/255.0 alpha:1.0];
     self.sliderControl2.baseValue = 40; // 设置基准值
     self.sliderControl2.value = 80;
-    self.sliderControl2.trackHeight = 5;  // 设置线条粗细
-    self.sliderControl2.baseImage = [UIImage imageNamed:@"slider_double_thumbImage_b"];//设置基准图片
+    self.sliderControl2.trackHeight = 5;  // 设置滑道高度
+    self.sliderControl2.leftThumbImage = [UIImage imageNamed:@"slider_double_thumbImage_b"];//设置基准图片
     self.sliderControl2.delegate = self;
+    self.sliderControl1.mainThumbAlpha = 0.5;
+    self.sliderControl1.leftThumbAlpha = 0.5;
+    
+    /*
+    CGRect baseSliderFrame = self.sliderControl3.frame;
+    baseSliderFrame.size.height = 40;
+    self.sliderControl3.frame = baseSliderFrame;
+    self.sliderControl3.backgroundColor = [UIColor greenColor];
+    */
+    self.sliderControl3.thumbCannotBeyongXType = CJSliderControlThumbCannotBeyongXTypeAllX;
+    self.sliderControl3.trackHeight = 30;
+    self.sliderControl3.mainThumbImage = [[UIImage imageNamed:@"bg.jpg"] cj_transformImageToSize:CGSizeMake(80, 80)];
+    
+    
     
     /* CJRangeSliderControl */
     self.rangeSliderControl.minValue = 0.0f;    //设置滑竿的最小值

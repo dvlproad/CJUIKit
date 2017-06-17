@@ -80,7 +80,7 @@ static NSTimeInterval const kCJSliderControlDidTapSlidAnimationDuration  = 0.3f;
 }
 
 - (void)setupUI {
-    self.backgroundColor = [UIColor cyanColor];
+    self.backgroundColor = [UIColor clearColor];
     
     //注册通知：self.mainThumb.frame更新的时候需要去更新选中区域 以及 value
     //这里采用监听机制来优化,这样就不用每次self.mainThumb.frame\self.value改变的时候再去调用要执行的方法
@@ -121,7 +121,6 @@ static NSTimeInterval const kCJSliderControlDidTapSlidAnimationDuration  = 0.3f;
         
         CGRect baseThumbRect = [self baseThumbRectForBounds:self.bounds trackRect:trackRect value:self.baseValue thumbWidth:CGRectGetWidth(thumbRect) baseThumbSize:baseThumbSize];
         self.leftThumb.frame = baseThumbRect;
-        self.leftThumb.alpha = 0.2;
     }
     
     if (self.popoverType != CJSliderPopoverDispalyTypeNone) {
@@ -417,6 +416,10 @@ static NSTimeInterval const kCJSliderControlDidTapSlidAnimationDuration  = 0.3f;
     if (self.leftThumb == nil) { //如果不是range类型的
         if (isSlideToLeft) {
             CGFloat thumbMoveMinMidX = CGRectGetMinX(self.trackImageView.frame); //滑块移动可到的最小中心
+            if (self.thumbCannotBeyongXType == CJSliderControlThumbCannotBeyongXTypeAllX) {
+                thumbMoveMinMidX += CGRectGetWidth(thumb.frame)/2;
+            }
+            
             CGFloat canMaxMoveDistance = CGRectGetMidX(self.mainThumb.frame) - thumbMoveMinMidX;
             if (ABS(moveDistance) > ABS(canMaxMoveDistance)) {
                 validMoveDistance = -canMaxMoveDistance;
@@ -424,6 +427,10 @@ static NSTimeInterval const kCJSliderControlDidTapSlidAnimationDuration  = 0.3f;
             
         } else {
             CGFloat thumbMoveMaxMidX = CGRectGetMaxX(self.trackImageView.frame); //滑块移动可到的最大中心
+            if (self.thumbCannotBeyongXType == CJSliderControlThumbCannotBeyongXTypeAllX) {
+                thumbMoveMaxMidX -= CGRectGetWidth(thumb.frame)/2;
+            }
+            
             CGFloat canMaxMoveDistance = thumbMoveMaxMidX - CGRectGetMidX(self.mainThumb.frame);
             if (ABS(moveDistance) > ABS(canMaxMoveDistance)) {
                 validMoveDistance = canMaxMoveDistance;
@@ -436,6 +443,10 @@ static NSTimeInterval const kCJSliderControlDidTapSlidAnimationDuration  = 0.3f;
         if (!isLeftThumb) {
             if (isSlideToLeft) {
                 CGFloat rightThumbMoveMinMidX = CGRectGetMidX(self.leftThumb.frame); //右侧滑块移动可到的最小中心
+                if (self.thumbCannotBeyongXType == CJSliderControlThumbCannotBeyongXTypeAllX) {
+                    rightThumbMoveMinMidX += CGRectGetWidth(thumb.frame)/2;
+                }
+                
                 CGFloat canMaxMoveDistance = CGRectGetMidX(self.mainThumb.frame) - rightThumbMoveMinMidX;
                 if (ABS(moveDistance) > ABS(canMaxMoveDistance)) {
                     validMoveDistance = -canMaxMoveDistance;
@@ -443,6 +454,10 @@ static NSTimeInterval const kCJSliderControlDidTapSlidAnimationDuration  = 0.3f;
                 
             } else {
                 CGFloat thumbMoveMaxMidX = CGRectGetMaxX(self.trackImageView.frame); //滑块移动可到的最大中心
+                if (self.thumbCannotBeyongXType == CJSliderControlThumbCannotBeyongXTypeAllX) {
+                    thumbMoveMaxMidX -= CGRectGetWidth(thumb.frame)/2;
+                }
+                
                 CGFloat canMaxMoveDistance = thumbMoveMaxMidX - CGRectGetMidX(self.mainThumb.frame);
                 if (ABS(moveDistance) > ABS(canMaxMoveDistance)) {
                     validMoveDistance = canMaxMoveDistance;
@@ -452,6 +467,10 @@ static NSTimeInterval const kCJSliderControlDidTapSlidAnimationDuration  = 0.3f;
         } else if (isLeftThumb) {
             if (!isSlideToLeft) {
                 CGFloat leftThumbMoveMaxMidX = CGRectGetMidX(self.mainThumb.frame); //左侧滑块移动可到的最大中心
+                if (self.thumbCannotBeyongXType == CJSliderControlThumbCannotBeyongXTypeAllX) {
+                    leftThumbMoveMaxMidX -= CGRectGetWidth(thumb.frame)/2;
+                }
+                
                 CGFloat canMaxMoveDistance = leftThumbMoveMaxMidX - CGRectGetMidX(self.leftThumb.frame);
                 if (ABS(moveDistance) > ABS(canMaxMoveDistance)) {
                     validMoveDistance = canMaxMoveDistance;
@@ -459,6 +478,10 @@ static NSTimeInterval const kCJSliderControlDidTapSlidAnimationDuration  = 0.3f;
                 
             } else {
                 CGFloat thumbMoveMinMidX = CGRectGetMinX(self.trackImageView.frame); //滑块移动可到的最小中心
+                if (self.thumbCannotBeyongXType == CJSliderControlThumbCannotBeyongXTypeAllX) {
+                    thumbMoveMinMidX += CGRectGetWidth(thumb.frame)/2;
+                }
+                
                 CGFloat canMaxMoveDistance = CGRectGetMidX(self.leftThumb.frame) - thumbMoveMinMidX;
                 if (ABS(moveDistance) > ABS(canMaxMoveDistance)) {
                     validMoveDistance = -canMaxMoveDistance;
@@ -473,10 +496,6 @@ static NSTimeInterval const kCJSliderControlDidTapSlidAnimationDuration  = 0.3f;
 
 
 #pragma mark - Getter and Setter
-- (void)setTrackHeight:(CGFloat)trackHeight {
-    _trackHeight = trackHeight;
-}
-
 - (UIImageView *)trackImageView {
     if (!_trackImageView) {
         UIImage *backgroundImage = [UIImage imageNamed:@"slider_maximum_trackimage"];
@@ -485,7 +504,6 @@ static NSTimeInterval const kCJSliderControlDidTapSlidAnimationDuration  = 0.3f;
         _trackImageView = [[UIImageView alloc] initWithImage:backgroundImage];
 //        _trackImageView.layer.cornerRadius = 8;
         _trackImageView.layer.masksToBounds = YES;
-        _trackImageView.alpha = 0.5;
     }
     return _trackImageView;
 }
@@ -500,28 +518,6 @@ static NSTimeInterval const kCJSliderControlDidTapSlidAnimationDuration  = 0.3f;
         _minimumTrackImageView.layer.masksToBounds = YES;
     }
     return _minimumTrackImageView;
-}
-
-
-
-- (void)setBaseImage:(UIImage *)baseImage {
-    [self showThumbOnBaseValue];
-    
-    [_leftThumb setBackgroundImage:baseImage forState:UIControlStateNormal];
-}
-
-- (void)showThumbOnBaseValue {
-    if (!_leftThumb) {
-        _leftThumb = [self createThumb];
-        
-        [_leftThumb setBackgroundImage:[UIImage imageNamed:@"slider_thumbImage"] forState:UIControlStateNormal];
-        [self insertSubview:_leftThumb aboveSubview:self.minimumTrackImageView];
-        
-        //注册通知：self.leftThumb.frame更新的时候需要去更新选中区域 以及 value
-        //这里采用监听机制来优化,这样就不用每次self.leftThumb.frame\self.value改变的时候再去调用要执行的方法
-        [self addObserver:self forKeyPath:@"self.leftThumb.frame" options:NSKeyValueObservingOptionNew|NSKeyValueObservingOptionOld context:nil];
-        [self addObserver:self forKeyPath:@"self.baseValue" options:NSKeyValueObservingOptionNew|NSKeyValueObservingOptionOld context:nil];
-    }
 }
 
 - (UIButton *)mainThumb {
@@ -545,7 +541,7 @@ static NSTimeInterval const kCJSliderControlDidTapSlidAnimationDuration  = 0.3f;
 //        thumbImage = [thumbImage cj_transformImageToSize:CGSizeMake(kCJSliderThumbSizeWidth, kCJSliderThumbSizeHeight)];
 //        [thumb setImage:thumbImage forState:UIControlStateNormal];
         UIImage *colorImage = [UIImage cj_imageWithColor:[UIColor redColor] size:CGSizeMake(10, 10)];
-        thumb.alpha = 0.2;
+    
 //        [thumb setImage:colorImage forState:UIControlStateNormal];
 //        [thumb setBackgroundImage:colorImage forState:UIControlStateNormal];
         [thumb setBackgroundImage:[UIImage imageNamed:@"slider_thumbImage"] forState:UIControlStateNormal]; //注意①、不要使用setImage来设置图片，要使用setBackgroundImage来设置
@@ -559,23 +555,59 @@ static NSTimeInterval const kCJSliderControlDidTapSlidAnimationDuration  = 0.3f;
     return thumb;
 }
 
-
--(void)setThumbImage:(UIImage *)thumbImage {
+- (void)setMainThumbImage:(UIImage *)mainThumbImage {
+    _mainThumbImage = mainThumbImage;
     
-    [self.mainThumb setImage:thumbImage forState:UIControlStateNormal];
+//    [self.mainThumb setImage:thumbImage forState:UIControlStateNormal];
+    [self.mainThumb setBackgroundImage:mainThumbImage forState:UIControlStateNormal];
+    //注意①、不要使用setImage来设置图片，要使用setBackgroundImage来设置
 }
 
--(void)setMinimumTrackTintColor:(UIColor *)minimumTrackTintColor {
+- (void)setMainThumbAlpha:(CGFloat)mainThumbAlpha {
+    _mainThumbAlpha = mainThumbAlpha;
+    
+    self.mainThumb.alpha = mainThumbAlpha;
+}
+
+- (void)setMinimumTrackTintColor:(UIColor *)minimumTrackTintColor {
+    _minimumTrackTintColor = minimumTrackTintColor;
+    
     UIImage *image = [UIImage cj_imageWithColor:minimumTrackTintColor size:self.thumbSize];
     self.trackImageView.image = image;
 }
 
 - (void)setMaximumTrackTintColor:(UIColor *)maximumTrackTintColor {
+    _maximumTrackTintColor = maximumTrackTintColor;
+    
     UIImage *image = [UIImage cj_imageWithColor:maximumTrackTintColor size:self.thumbSize];
     self.minimumTrackImageView.image = image;
 }
 
 
+- (void)setLeftThumbImage:(UIImage *)leftThumbImage {
+    _leftThumbImage = leftThumbImage;
+    
+    if (!_leftThumb) {
+        _leftThumb = [self createThumb];
+        
+        [_leftThumb setBackgroundImage:[UIImage imageNamed:@"slider_thumbImage"] forState:UIControlStateNormal];
+        [self insertSubview:_leftThumb aboveSubview:self.minimumTrackImageView];
+        
+        //注册通知：self.leftThumb.frame更新的时候需要去更新选中区域 以及 value
+        //这里采用监听机制来优化,这样就不用每次self.leftThumb.frame\self.value改变的时候再去调用要执行的方法
+        [self addObserver:self forKeyPath:@"self.leftThumb.frame" options:NSKeyValueObservingOptionNew|NSKeyValueObservingOptionOld context:nil];
+        [self addObserver:self forKeyPath:@"self.baseValue" options:NSKeyValueObservingOptionNew|NSKeyValueObservingOptionOld context:nil];
+    }
+    
+//    [self.leftThumb setImage:leftThumbImage forState:UIControlStateNormal];
+    [self.leftThumb setBackgroundImage:leftThumbImage forState:UIControlStateNormal];
+}
+
+- (void)setLeftThumbAlpha:(CGFloat)leftThumbAlpha {
+    _leftThumbAlpha = leftThumbAlpha;
+    
+    self.leftThumb.alpha = leftThumbAlpha;
+}
 
 
 @end
