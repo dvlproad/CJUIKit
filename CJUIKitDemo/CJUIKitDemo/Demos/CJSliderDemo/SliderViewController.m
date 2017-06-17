@@ -82,6 +82,7 @@
     /* 基于UIControl封装的CJSliderControl */
     self.sliderControl1.minValue = 0.0f;        //设置滑竿的最小值
     self.sliderControl1.maxValue = 100.0f;      //设置滑竿的最大值
+    self.sliderControl1.value = 52;
     self.sliderControl1.popoverType = CJSliderPopoverDispalyTypeNum; //设置popover显示的类型,百分比或者纯数字显示
     self.sliderControl1.delegate = self;                             //设置代理对象，用于接收滑竿滑动后值得改变
     
@@ -93,7 +94,8 @@
     self.sliderControl2.popoverType = CJSliderPopoverDispalyTypeNone;
     self.sliderControl2.maximumTrackTintColor = [UIColor colorWithRed:48/255.0 green:119/255.0 blue:162/255.0 alpha:1.0];
     self.sliderControl2.minimumTrackTintColor = [UIColor colorWithRed:255/255.0 green:254/255.0 blue:248/255.0 alpha:1.0];
-    self.sliderControl2.baseValue = 0.5; // 设置基准值
+    self.sliderControl2.baseValue = 40; // 设置基准值
+    self.sliderControl2.value = 80;
     self.sliderControl2.trackHeight = 5;  // 设置线条粗细
     self.sliderControl2.baseImage = [UIImage imageNamed:@"slider_double_thumbImage_b"];//设置基准图片
     self.sliderControl2.delegate = self;
@@ -109,7 +111,7 @@
 
 #pragma mark - CJSliderControlDelegate
 - (void)slider:(CJSliderControl *)slider didDargToValue:(CGFloat)value {
-    NSLog(@"slider value is %1.0f",value);
+    NSLog(@"slider value is %1.2f",value);
     if (slider == self.sliderControl1) {
         self.sliderControlValueLabel1.text = [NSString stringWithFormat:@"选取的值是: %.1f", value];
     } else if (slider == self.sliderControl2) {

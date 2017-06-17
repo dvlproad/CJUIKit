@@ -63,5 +63,7 @@ typedef NS_ENUM(NSUInteger, CJSliderPopoverDispalyType) {
  */
 - (void)hidePopover:(BOOL)isHidden;
 
+- (void)showThumbOnBaseValue;
+
 @end
 
