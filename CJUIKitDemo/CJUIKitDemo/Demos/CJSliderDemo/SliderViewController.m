@@ -87,7 +87,7 @@
     self.sliderControl1.delegate = self;                             //设置代理对象，用于接收滑竿滑动后值得改变
     self.sliderControl1.mainThumbAlpha = 0.5;
     
-    self.sliderControlValueLabel1.text = [NSString stringWithFormat:@"选取的值是: %.1f",self.sliderControl1.minValue];
+    self.sliderControlValueLabel1.text = [NSString stringWithFormat:@"选取的值是: %.1f",self.sliderControl1.value];
     
     
     self.sliderControl2.minValue = 0.0f;
@@ -100,8 +100,9 @@
     self.sliderControl2.trackHeight = 5;  // 设置滑道高度
     self.sliderControl2.leftThumbImage = [UIImage imageNamed:@"slider_double_thumbImage_b"];//设置基准图片
     self.sliderControl2.delegate = self;
-    self.sliderControl1.mainThumbAlpha = 0.5;
-    self.sliderControl1.leftThumbAlpha = 0.5;
+    self.sliderControl2.mainThumbAlpha = 0.5;
+    self.sliderControl2.leftThumbAlpha = 0.5;
+    self.sliderControlValueLabel2.text = [NSString stringWithFormat:@"选取的区间是 : [ %.1f, %.1f ]",self.sliderControl2.baseValue, self.sliderControl2.value];
     
     /*
     CGRect baseSliderFrame = self.sliderControl3.frame;
@@ -132,7 +133,7 @@
     if (slider == self.sliderControl1) {
         self.sliderControlValueLabel1.text = [NSString stringWithFormat:@"选取的值是: %.1f", value];
     } else if (slider == self.sliderControl2) {
-        self.sliderControlValueLabel2.text = [NSString stringWithFormat:@"选取的值是: %.1f", value];
+        self.sliderControlValueLabel2.text = [NSString stringWithFormat:@"选取的区间是 : [ %.1f, %.1f ]",self.sliderControl2.baseValue, self.sliderControl2.value];
     }
 }
 

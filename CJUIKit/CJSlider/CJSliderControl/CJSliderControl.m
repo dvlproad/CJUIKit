@@ -20,6 +20,7 @@ static NSTimeInterval const kCJSliderControlDidTapSlidAnimationDuration  = 0.3f;
     CGFloat thumbMinimumOriginX;
     CGFloat thumbMaximumOriginX;
 }
+@property (nonatomic, assign) CGFloat thumbCanMoveWidth;  //滑块可滑动的实际大小
 
 @property (nonatomic, assign) CGRect lastFrame;
 
@@ -68,7 +69,7 @@ static NSTimeInterval const kCJSliderControlDidTapSlidAnimationDuration  = 0.3f;
         [self updateIndicateValueForThumb:self.mainThumb];
         
     } else if ([keyPath isEqualToString:@"self.value"]) {
-        [self updateUIByAllValue];
+//        [self updateUIByAllValue];
         
     } else if ([keyPath isEqualToString:@"self.leftThumb.frame"]) {
         [self updateIndicateValueForThumb:self.leftThumb];
@@ -121,8 +122,6 @@ static NSTimeInterval const kCJSliderControlDidTapSlidAnimationDuration  = 0.3f;
     if (self.leftThumb) {
         CGSize baseThumbSize = CGSizeMake(self.thumbSize.width-10, self.thumbSize.height-10);
         
-        //        CGFloat basePointX = [self pointXForBounds:self.bounds trackRect:trackRect value:self.baseValue thumbWidth:CGRectGetWidth(thumbRect)];
-        
         CGRect baseThumbRect = [self baseThumbRectForBounds:self.bounds trackRect:trackRect value:self.baseValue thumbWidth:CGRectGetWidth(thumbRect) baseThumbSize:baseThumbSize];
         self.leftThumb.frame = baseThumbRect;
     }
@@ -163,8 +162,9 @@ static NSTimeInterval const kCJSliderControlDidTapSlidAnimationDuration  = 0.3f;
     //计算该值在坐标上的X是多少
     CGFloat thumbImageViewWidth = thumbSize.width;
     
-    CGFloat thumbCanMoveWidth = CGRectGetWidth(rect); //滑块可滑动的实际大小
-    CGFloat thumbImageViewOriginX = CGRectGetMinX(rect) + percent*thumbCanMoveWidth;
+    self.thumbCanMoveWidth = CGRectGetWidth(rect); //滑块可滑动的实际大小
+    CGFloat thumbImageViewMidX = CGRectGetMinX(rect) + percent*self.thumbCanMoveWidth;
+    CGFloat thumbImageViewOriginX = thumbImageViewMidX - thumbImageViewWidth/2;
     
     CGFloat thumbImageViewHeight = thumbSize.height;
     CGFloat thumbImageViewOriginY = CGRectGetHeight(bounds)/2 - thumbImageViewHeight/2;
@@ -173,10 +173,6 @@ static NSTimeInterval const kCJSliderControlDidTapSlidAnimationDuration  = 0.3f;
     
     return thumbRect;
 }
-
-//- (CGRect)thumbRectForBounds:(CGRect)bounds thumbCanMoveWidth:(CGFloat)thumbCanMoveWidth value:(CGFloat)value thumbSize:(CGSize)thumbSize {
-//    
-//}
 
 /**
  *  通过滑道宽度获取指定值的X坐标
@@ -188,8 +184,7 @@ static NSTimeInterval const kCJSliderControlDidTapSlidAnimationDuration  = 0.3f;
 - (CGFloat)pointXForBounds:(CGRect)bounds trackRect:(CGRect)rect value:(float)value {
     CGFloat percent = value /(_maxValue - _minValue);
     
-    CGFloat thumbCanMoveWidth = CGRectGetWidth(rect); //滑块可滑动的实际大小
-    CGFloat basePointX = CGRectGetMinX(rect) + percent*thumbCanMoveWidth;
+    CGFloat basePointX = CGRectGetMinX(rect) + percent*self.thumbCanMoveWidth;
     
     return basePointX;
 }
@@ -204,10 +199,9 @@ static NSTimeInterval const kCJSliderControlDidTapSlidAnimationDuration  = 0.3f;
  *  @param baseThumbSize    基准块的大小
  */
 - (CGRect)baseThumbRectForBounds:(CGRect)bounds trackRect:(CGRect)rect value:(float)value thumbWidth:(CGFloat)thumbWidth baseThumbSize:(CGSize)baseThumbSize {
-    CGFloat percent = value /(_maxValue - _minValue);
     
-    CGFloat thumbCanMoveWidth = CGRectGetWidth(rect); //滑块可滑动的实际大小
-    CGFloat baseThumbImageViewOriginX = CGRectGetMinX(rect) + percent*thumbCanMoveWidth;
+    CGFloat basePointX = [self pointXForBounds:self.bounds trackRect:rect value:value];
+    CGFloat baseThumbImageViewOriginX = basePointX;
     
     CGFloat baseThumbImageViewWidth = baseThumbSize.width;
     
@@ -247,10 +241,8 @@ static NSTimeInterval const kCJSliderControlDidTapSlidAnimationDuration  = 0.3f;
     CGRect trackRect = self.trackImageView.frame;
     CGRect thumbRect = thumb.frame;
     
-    CGFloat thumbCanMoveWidth = CGRectGetWidth(trackRect); //滑块可滑动的实际大小
-    
     //value
-    CGFloat percent = (CGRectGetMidX(thumbRect) - trackRect.origin.x) / thumbCanMoveWidth;
+    CGFloat percent = (CGRectGetMidX(thumbRect) - trackRect.origin.x) / self.thumbCanMoveWidth;
     CGFloat value = percent * (_maxValue - _minValue);
     if (thumb == self.mainThumb) {
         _value = value;
@@ -289,11 +281,9 @@ static NSTimeInterval const kCJSliderControlDidTapSlidAnimationDuration  = 0.3f;
     CGFloat percent = self.value /(_maxValue - _minValue);
     
     if (self.popoverType != CJSliderPopoverDispalyTypeNone) {
-        [self updatePopoverTextByPercentValue:percent];
+        [self showPopoverTextWithPercentValue:percent animated:YES];
     }
     
-    
-    [self showPopoverAnimated:YES];
     
     if (self.delegate && [self.delegate respondsToSelector:@selector(slider:didDargToValue:)]) {
         if (thumb == self.mainThumb) {
@@ -306,7 +296,7 @@ static NSTimeInterval const kCJSliderControlDidTapSlidAnimationDuration  = 0.3f;
     }
 }
 
-- (void)updatePopoverTextByPercentValue:(CGFloat)percent {
+- (void)showPopoverTextWithPercentValue:(CGFloat)percent animated:(BOOL)animated {
     NSString *popoverText = @"";
     if (self.popoverType == CJSliderPopoverDispalyTypePercent) {
         popoverText = [NSString stringWithFormat:@"%.1f%%", percent * 100]; //百分比显示
@@ -316,18 +306,21 @@ static NSTimeInterval const kCJSliderControlDidTapSlidAnimationDuration  = 0.3f;
     }
     
     [self.popover updatePopoverTextValue:popoverText];
-}
-
-- (void)showPopoverAnimated:(BOOL)animated
-{
+    
     if (animated) {
-        [UIView animateWithDuration:kCJSliderPopoverAnimationDuration animations:^{
+        if (animated) {
+            [UIView animateWithDuration:kCJSliderPopoverAnimationDuration animations:^{
+                self.popover.alpha = 1.0;
+            }];
+        } else {
             self.popover.alpha = 1.0;
-        }];
+        }
+        
     } else {
         self.popover.alpha = 1.0;
     }
 }
+
 
 - (void)hidePopoverAnimated:(BOOL)animated
 {
@@ -410,10 +403,12 @@ static NSTimeInterval const kCJSliderControlDidTapSlidAnimationDuration  = 0.3f;
         return;
     }
     
+    //更新视图
     CGRect thumbFrame = thumb.frame;
     thumbFrame.origin.x += validMoveDistance;
     thumb.frame = thumbFrame;
     
+    //更新完后的额外操作(如显示popover之类的)
     [self doSomethingWhenCompleteUpdateFrameForThumb:thumb];
 }
 

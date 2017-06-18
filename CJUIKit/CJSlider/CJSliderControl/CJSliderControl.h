@@ -77,8 +77,6 @@ typedef NS_ENUM(NSUInteger, CJSliderControlThumbCannotBeyongXType) {
  */
 - (void)hidePopover:(BOOL)isHidden;
 
-- (void)showThumbOnBaseValue;
-
 
 - (void)setValue:(float)value animated:(BOOL)animated;
 
