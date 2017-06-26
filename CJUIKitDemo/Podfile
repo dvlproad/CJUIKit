@@ -10,6 +10,8 @@ target 'CJUIKitDemo' do
   
   pod 'CJFoundation/NSString', '~> 0.0.4'
   
+  pod 'Shimmer', '~> 1.0.2' #fackBook的闪光动画
+  
 end
 
 target 'CJUIKitDemoTests' do

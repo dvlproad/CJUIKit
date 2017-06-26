@@ -69,7 +69,7 @@ static NSTimeInterval const kCJSliderControlDidTapSlidAnimationDuration  = 0.3f;
         [self updateIndicateValueForThumb:self.mainThumb];
         
     } else if ([keyPath isEqualToString:@"self.value"]) {
-//        [self updateUIByAllValue];
+        [self updateUIByAllValue];
         
     } else if ([keyPath isEqualToString:@"self.leftThumb.frame"]) {
         [self updateIndicateValueForThumb:self.leftThumb];
@@ -343,11 +343,25 @@ static NSTimeInterval const kCJSliderControlDidTapSlidAnimationDuration  = 0.3f;
 
 #pragma mark - 点击的事件
 - (void)touchesEnded:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    [super touchesEnded:touches withEvent:event];
+    
+    if (self.allowTouchChangeValue == NO) {
+        return;
+    }
+    
     [self hidePopoverAnimated:YES];
+    
+    if (self.adsorbInfos) {
+        [self adsorbToValue];
+    }
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
     [super touchesBegan:touches withEvent:event];
+    
+    if (self.allowTouchChangeValue == NO) {
+        return;
+    }
     
     if (self.leftThumb) { //TODO:如果是range效果，暂不支持touch来选中值的效果
         return;
@@ -572,20 +586,33 @@ static NSTimeInterval const kCJSliderControlDidTapSlidAnimationDuration  = 0.3f;
     self.mainThumb.alpha = mainThumbAlpha;
 }
 
+
 - (void)setMinimumTrackTintColor:(UIColor *)minimumTrackTintColor {
     _minimumTrackTintColor = minimumTrackTintColor;
     
     UIImage *image = [UIImage cj_imageWithColor:minimumTrackTintColor size:self.thumbSize];
-    self.trackImageView.image = image;
+    self.minimumTrackImageView.image = image;
+}
+
+- (void)setMinimumTrackImage:(UIImage *)minimumTrackImage {
+    _minimumTrackImage = minimumTrackImage;
+    
+    self.minimumTrackImageView.image = minimumTrackImage;
 }
 
 - (void)setMaximumTrackTintColor:(UIColor *)maximumTrackTintColor {
     _maximumTrackTintColor = maximumTrackTintColor;
     
     UIImage *image = [UIImage cj_imageWithColor:maximumTrackTintColor size:self.thumbSize];
-    self.minimumTrackImageView.image = image;
+    self.trackImageView.image = image;
 }
 
+
+- (void)setMaximumTrackImage:(UIImage *)maximumTrackImage {
+    _maximumTrackImage = maximumTrackImage;
+    
+    self.trackImageView.image = maximumTrackImage;
+}
 
 - (void)setLeftThumbImage:(UIImage *)leftThumbImage {
     _leftThumbImage = leftThumbImage;
@@ -638,6 +665,9 @@ static NSTimeInterval const kCJSliderControlDidTapSlidAnimationDuration  = 0.3f;
             [self setValue:adsorbInfo.adsorbToValue animated:YES];
             
             [self sendActionsForControlEvents:UIControlEventValueChanged];
+            if (self.delegate && [self.delegate respondsToSelector:@selector(slider:adsorbToValue:)]) {
+                [self.delegate slider:self adsorbToValue:adsorbInfo.adsorbToValue];
+            }
             break;
         }
     }

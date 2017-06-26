@@ -36,6 +36,15 @@ typedef NS_ENUM(NSUInteger, CJSliderControlThumbCannotBeyongXType) {
  */
 - (void)slider:(CJSliderControl *)slider didDargToValue:(CGFloat)value;
 
+@optional
+/**
+ *  slider吸附到什么值
+ *
+ *  @param slider   当前slider控件
+ *  @param value    吸附到的值
+ */
+- (void)slider:(CJSliderControl *)slider adsorbToValue:(CGFloat)value;
+
 @end
 
 /**
@@ -55,8 +64,10 @@ typedef NS_ENUM(NSUInteger, CJSliderControlThumbCannotBeyongXType) {
 @property (nonatomic, assign) CGSize popoverSize;
 
 @property (nonatomic, strong) UIColor *minimumTrackTintColor; /**< 最小值方向滑竿颜色值 */
+@property (nonatomic, strong) UIImage *minimumTrackImage; /**< 最小值方向滑竿的图片 */
 
 @property (nonatomic, strong) UIColor *maximumTrackTintColor; /**< 最大值方向滑竿颜色值 */
+@property (nonatomic, strong) UIImage *maximumTrackImage; /**< 最大值方向滑竿的图片 */
 
 @property (nonatomic, assign) CGFloat value;            /**< 当前值 */
 @property (nonatomic, strong) UIImage *mainThumbImage;  /**< 滑块图片,默认是橙色按钮 */
@@ -69,6 +80,7 @@ typedef NS_ENUM(NSUInteger, CJSliderControlThumbCannotBeyongXType) {
 @property (nonatomic, assign) CGFloat trackHeight; //滑道高度
 
 @property (nonatomic, strong) NSArray<CJAdsorbModel *> *adsorbInfos; /** 设置吸附信息(含吸附区间及该区间要吸附到什么值)，上面的值是具体的滑块值，不是百分比 */
+@property (nonatomic, assign) BOOL allowTouchChangeValue;   /**< 是否允许通过点击来改变值(默认否) */
 
 /**
  *  隐藏或显示文字

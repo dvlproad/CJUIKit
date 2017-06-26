@@ -46,6 +46,8 @@
 		783658F51ECFB17E00AF7591 /* CJFloatingWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 783658F41ECFB17E00AF7591 /* CJFloatingWindow.m */; };
 		783658FA1ECFB4F100AF7591 /* FloatingWindowViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 783658F81ECFB4F100AF7591 /* FloatingWindowViewController.m */; };
 		783658FB1ECFB4F100AF7591 /* FloatingWindowViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 783658F91ECFB4F100AF7591 /* FloatingWindowViewController.xib */; };
+		783F49BC1F00E9F300E69901 /* ShimmeringSwitchSlider.m in Sources */ = {isa = PBXBuildFile; fileRef = 783F49BB1F00E9F300E69901 /* ShimmeringSwitchSlider.m */; };
+		783F49BE1F00EA7E00E69901 /* ShimmeringSwitchSlider.xib in Resources */ = {isa = PBXBuildFile; fileRef = 783F49BD1F00EA7E00E69901 /* ShimmeringSwitchSlider.xib */; };
 		7840FB031EB09C4500B553F7 /* ImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7840FADA1EB09C4500B553F7 /* ImageViewController.m */; };
 		7840FB041EB09C4500B553F7 /* ImageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7840FADB1EB09C4500B553F7 /* ImageViewController.xib */; };
 		7840FB051EB09C4500B553F7 /* KeyboardAvoidingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7840FADE1EB09C4500B553F7 /* KeyboardAvoidingViewController.m */; };
@@ -78,9 +80,15 @@
 		7847521E1E8F862F00B24507 /* UIImage+CJChangeColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 7847521D1E8F862F00B24507 /* UIImage+CJChangeColor.m */; };
 		784B7D4A1E7F7DE300299457 /* UIColor+CJHex.m in Sources */ = {isa = PBXBuildFile; fileRef = 784B7D491E7F7DE300299457 /* UIColor+CJHex.m */; };
 		784C15E21E8E719A0019D652 /* UIImage+CJTransformSize.m in Sources */ = {isa = PBXBuildFile; fileRef = 784C15E11E8E719A0019D652 /* UIImage+CJTransformSize.m */; };
+		7893125A1F00A8C500A91C29 /* btn_hd@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 789312581F00A8C500A91C29 /* btn_hd@2x.png */; };
+		7893125B1F00A8C500A91C29 /* btn_hd@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 789312591F00A8C500A91C29 /* btn_hd@3x.png */; };
+		7893125F1F00A8F300A91C29 /* OperateSliderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7893125D1F00A8F300A91C29 /* OperateSliderViewController.m */; };
+		789312601F00A8F300A91C29 /* OperateSliderViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7893125E1F00A8F300A91C29 /* OperateSliderViewController.xib */; };
 		789CDB251EC0847E00D537D1 /* ScrollViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 789CDB241EC0847E00D537D1 /* ScrollViewController.m */; };
 		78A355341EB32D62005C5A9A /* CJMJRefreshViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78A355321EB32D62005C5A9A /* CJMJRefreshViewController.m */; };
 		78A355351EB32D62005C5A9A /* CJMJRefreshViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 78A355331EB32D62005C5A9A /* CJMJRefreshViewController.xib */; };
+		78A703B71F00DED600103FA0 /* CJSliderStatusModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 78A703B61F00DED600103FA0 /* CJSliderStatusModel.m */; };
+		78A703BA1F00E46200103FA0 /* CJSwitchSlider.m in Sources */ = {isa = PBXBuildFile; fileRef = 78A703B91F00E46200103FA0 /* CJSwitchSlider.m */; };
 		78B6761B1EB192EA006F4612 /* ModuleModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 78B6761A1EB192EA006F4612 /* ModuleModel.m */; };
 		78E269A41ECA92B9007D3686 /* NavigationBarChangeBGViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78E269A31ECA92B9007D3686 /* NavigationBarChangeBGViewController.m */; };
 		78E269A71ECA92E4007D3686 /* NavigationBarChangePositonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78E269A61ECA92E4007D3686 /* NavigationBarChangePositonViewController.m */; };
@@ -211,6 +219,9 @@
 		783658F71ECFB4F100AF7591 /* FloatingWindowViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FloatingWindowViewController.h; sourceTree = "<group>"; };
 		783658F81ECFB4F100AF7591 /* FloatingWindowViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FloatingWindowViewController.m; sourceTree = "<group>"; };
 		783658F91ECFB4F100AF7591 /* FloatingWindowViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FloatingWindowViewController.xib; sourceTree = "<group>"; };
+		783F49BA1F00E9F300E69901 /* ShimmeringSwitchSlider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShimmeringSwitchSlider.h; sourceTree = "<group>"; };
+		783F49BB1F00E9F300E69901 /* ShimmeringSwitchSlider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShimmeringSwitchSlider.m; sourceTree = "<group>"; };
+		783F49BD1F00EA7E00E69901 /* ShimmeringSwitchSlider.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ShimmeringSwitchSlider.xib; sourceTree = "<group>"; };
 		7840FAD91EB09C4500B553F7 /* ImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageViewController.h; sourceTree = "<group>"; };
 		7840FADA1EB09C4500B553F7 /* ImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageViewController.m; sourceTree = "<group>"; };
 		7840FADB1EB09C4500B553F7 /* ImageViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ImageViewController.xib; sourceTree = "<group>"; };
@@ -254,12 +265,21 @@
 		784B7D491E7F7DE300299457 /* UIColor+CJHex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+CJHex.m"; sourceTree = "<group>"; };
 		784C15E01E8E719A0019D652 /* UIImage+CJTransformSize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+CJTransformSize.h"; sourceTree = "<group>"; };
 		784C15E11E8E719A0019D652 /* UIImage+CJTransformSize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+CJTransformSize.m"; sourceTree = "<group>"; };
+		789312581F00A8C500A91C29 /* btn_hd@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn_hd@2x.png"; sourceTree = "<group>"; };
+		789312591F00A8C500A91C29 /* btn_hd@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn_hd@3x.png"; sourceTree = "<group>"; };
+		7893125C1F00A8F300A91C29 /* OperateSliderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OperateSliderViewController.h; sourceTree = "<group>"; };
+		7893125D1F00A8F300A91C29 /* OperateSliderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OperateSliderViewController.m; sourceTree = "<group>"; };
+		7893125E1F00A8F300A91C29 /* OperateSliderViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OperateSliderViewController.xib; sourceTree = "<group>"; };
 		789CAB597AD073D5F637D193 /* Pods-CJUIKitDemoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CJUIKitDemoTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-CJUIKitDemoTests/Pods-CJUIKitDemoTests.release.xcconfig"; sourceTree = "<group>"; };
 		789CDB231EC0847E00D537D1 /* ScrollViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScrollViewController.h; sourceTree = "<group>"; };
 		789CDB241EC0847E00D537D1 /* ScrollViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScrollViewController.m; sourceTree = "<group>"; };
 		78A355311EB32D62005C5A9A /* CJMJRefreshViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJMJRefreshViewController.h; sourceTree = "<group>"; };
 		78A355321EB32D62005C5A9A /* CJMJRefreshViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJMJRefreshViewController.m; sourceTree = "<group>"; };
 		78A355331EB32D62005C5A9A /* CJMJRefreshViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CJMJRefreshViewController.xib; sourceTree = "<group>"; };
+		78A703B51F00DED600103FA0 /* CJSliderStatusModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJSliderStatusModel.h; sourceTree = "<group>"; };
+		78A703B61F00DED600103FA0 /* CJSliderStatusModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJSliderStatusModel.m; sourceTree = "<group>"; };
+		78A703B81F00E46200103FA0 /* CJSwitchSlider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJSwitchSlider.h; sourceTree = "<group>"; };
+		78A703B91F00E46200103FA0 /* CJSwitchSlider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJSwitchSlider.m; sourceTree = "<group>"; };
 		78B676191EB192EA006F4612 /* ModuleModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModuleModel.h; sourceTree = "<group>"; };
 		78B6761A1EB192EA006F4612 /* ModuleModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModuleModel.m; sourceTree = "<group>"; };
 		78E269A21ECA92B9007D3686 /* NavigationBarChangeBGViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NavigationBarChangeBGViewController.h; sourceTree = "<group>"; };
@@ -506,6 +526,8 @@
 				782708FF1E867EFA00E21433 /* CJSliderPopover.m */,
 				782709001E867EFA00E21433 /* CJSliderThumb.h */,
 				782709011E867EFA00E21433 /* CJSliderThumb.m */,
+				78A703B51F00DED600103FA0 /* CJSliderStatusModel.h */,
+				78A703B61F00DED600103FA0 /* CJSliderStatusModel.m */,
 			);
 			path = CJSliderControl;
 			sourceTree = "<group>";
@@ -625,6 +647,14 @@
 				7840FAEC1EB09C4500B553F7 /* SliderViewController.h */,
 				7840FAED1EB09C4500B553F7 /* SliderViewController.m */,
 				7840FAEE1EB09C4500B553F7 /* SliderViewController.xib */,
+				7893125C1F00A8F300A91C29 /* OperateSliderViewController.h */,
+				7893125D1F00A8F300A91C29 /* OperateSliderViewController.m */,
+				7893125E1F00A8F300A91C29 /* OperateSliderViewController.xib */,
+				78A703B81F00E46200103FA0 /* CJSwitchSlider.h */,
+				78A703B91F00E46200103FA0 /* CJSwitchSlider.m */,
+				783F49BA1F00E9F300E69901 /* ShimmeringSwitchSlider.h */,
+				783F49BB1F00E9F300E69901 /* ShimmeringSwitchSlider.m */,
+				783F49BD1F00EA7E00E69901 /* ShimmeringSwitchSlider.xib */,
 			);
 			path = CJSliderDemo;
 			sourceTree = "<group>";
@@ -632,6 +662,8 @@
 		7840FAE11EB09C4500B553F7 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				789312581F00A8C500A91C29 /* btn_hd@2x.png */,
+				789312591F00A8C500A91C29 /* btn_hd@3x.png */,
 				7840FAE21EB09C4500B553F7 /* slider_double_thumbImage_a@2x.png */,
 				7840FAE31EB09C4500B553F7 /* slider_double_thumbImage_a@3x.png */,
 				7840FAE41EB09C4500B553F7 /* slider_double_thumbImage_b@2x.png */,
@@ -1082,6 +1114,7 @@
 			files = (
 				781592E91EC40C8F00DE1976 /* SearchBarViewController.xib in Resources */,
 				78A355351EB32D62005C5A9A /* CJMJRefreshViewController.xib in Resources */,
+				789312601F00A8F300A91C29 /* OperateSliderViewController.xib in Resources */,
 				783658FB1ECFB4F100AF7591 /* FloatingWindowViewController.xib in Resources */,
 				7840FB081EB09C4500B553F7 /* slider_double_thumbImage_a@3x.png in Resources */,
 				7840FB281EB09E0700B553F7 /* bg@2x.jpg in Resources */,
@@ -1090,6 +1123,7 @@
 				7840FB091EB09C4500B553F7 /* slider_double_thumbImage_b@2x.png in Resources */,
 				78E61F031E79AF0A009B1627 /* sdRefeshView_arrow@2x.png in Resources */,
 				7840FB1C1EB09C4600B553F7 /* ImageChangeColorViewController.xib in Resources */,
+				783F49BE1F00EA7E00E69901 /* ShimmeringSwitchSlider.xib in Resources */,
 				7840FB161EB09C4600B553F7 /* smail@2x.png in Resources */,
 				7840FB0D1EB09C4600B553F7 /* slider_minimum_trackimage@2x.png in Resources */,
 				7840FB0C1EB09C4600B553F7 /* slider_maximum_trackimage@3x.png in Resources */,
@@ -1097,6 +1131,7 @@
 				78E269B51ECB0593007D3686 /* MyScaleHeadView.xib in Resources */,
 				7840FB0B1EB09C4600B553F7 /* slider_maximum_trackimage@2x.png in Resources */,
 				783658E51ECF99CF00AF7591 /* ViewCategoryViewController.xib in Resources */,
+				7893125A1F00A8C500A91C29 /* btn_hd@2x.png in Resources */,
 				78FC3BB91ED53E700049F22D /* TextFieldViewController.xib in Resources */,
 				78E61ED21E79AA20009B1627 /* cjRefreshArrowDown@2x.png in Resources */,
 				7840FB071EB09C4500B553F7 /* slider_double_thumbImage_a@2x.png in Resources */,
@@ -1104,6 +1139,7 @@
 				7840FB061EB09C4500B553F7 /* KeyboardAvoidingViewController.xib in Resources */,
 				7840FB101EB09C4600B553F7 /* slider_thumbImage@3x.png in Resources */,
 				7840FB261EB09CE900B553F7 /* NavigationBarBaseViewController.xib in Resources */,
+				7893125B1F00A8C500A91C29 /* btn_hd@3x.png in Resources */,
 				7840FB191EB09C4600B553F7 /* TextViewController.xib in Resources */,
 				78E269C01ECC5E1A007D3686 /* header@2x.jpg in Resources */,
 				780E46101E5DF87B00980127 /* Assets.xcassets in Resources */,
@@ -1149,7 +1185,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		18AD025421F8AEC7A0D4F8B2 /* [CP] Copy Pods Resources */ = {
@@ -1179,7 +1215,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		5B1AC43C6A8549772AAC7453 /* [CP] Embed Pods Frameworks */ = {
@@ -1245,6 +1281,7 @@
 				78E61EDA1E79AA20009B1627 /* UIScrollView+CJKeyboardAvoiding.m in Sources */,
 				782708E81E867C4700E21433 /* UIImage+CJCreate.m in Sources */,
 				783287FB1ED2214100A01A8A /* UIView+CJDragAction.m in Sources */,
+				783F49BC1F00E9F300E69901 /* ShimmeringSwitchSlider.m in Sources */,
 				782709041E867EFA00E21433 /* CJSliderControl.m in Sources */,
 				7840FB251EB09CE900B553F7 /* NavigationBarBaseViewController.m in Sources */,
 				782709E51E8715A600E21433 /* UIImage+Save.m in Sources */,
@@ -1277,6 +1314,7 @@
 				7840FB1B1EB09C4600B553F7 /* ImageChangeColorViewController.m in Sources */,
 				78E269B31ECB0588007D3686 /* MyScaleHeadView.m in Sources */,
 				78E61ECF1E79AA20009B1627 /* CJImageView.m in Sources */,
+				7893125F1F00A8F300A91C29 /* OperateSliderViewController.m in Sources */,
 				78E269AE1ECAF105007D3686 /* CJScaleHeadView.m in Sources */,
 				78E61F041E79AF0A009B1627 /* UIView+CJExtension.m in Sources */,
 				781592E81EC40C8F00DE1976 /* SearchBarViewController.m in Sources */,
@@ -1292,6 +1330,8 @@
 				781592ED1EC4391400DE1976 /* CJToast.m in Sources */,
 				783658EF1ECFA6C700AF7591 /* DragViewController.m in Sources */,
 				78B6761B1EB192EA006F4612 /* ModuleModel.m in Sources */,
+				78A703B71F00DED600103FA0 /* CJSliderStatusModel.m in Sources */,
+				78A703BA1F00E46200103FA0 /* CJSwitchSlider.m in Sources */,
 				78E61F011E79AF0A009B1627 /* CJRefreshFooter.m in Sources */,
 				784B7D4A1E7F7DE300299457 /* UIColor+CJHex.m in Sources */,
 				784C15E21E8E719A0019D652 /* UIImage+CJTransformSize.m in Sources */,

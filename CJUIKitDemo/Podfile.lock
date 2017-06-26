@@ -4,6 +4,7 @@ PODS:
   - MBProgressHUD (1.0.0)
   - MJRefresh (3.1.12)
   - PureLayout (3.0.2)
+  - Shimmer (1.0.2)
 
 DEPENDENCIES:
   - CJFoundation/NSString (~> 0.0.4)
@@ -11,6 +12,7 @@ DEPENDENCIES:
   - MBProgressHUD (~> 1.0.0)
   - MJRefresh (~> 3.1.12)
   - PureLayout (~> 3.0.2)
+  - Shimmer (~> 1.0.2)
 
 SPEC CHECKSUMS:
   CJFoundation: 0a4d15d9320cda8b861df3b7492bb289be588ae9
@@ -18,7 +20,8 @@ SPEC CHECKSUMS:
   MBProgressHUD: 4890f671c94e8a0f3cf959aa731e9de2f036d71a
   MJRefresh: b96cdb21c4aa75a7b07654311ab2f315c497e806
   PureLayout: 4d550abe49a94f24c2808b9b95db9131685fe4cd
+  Shimmer: c5374be1c2b0c9e292fb05b339a513cf291cac86
 
-PODFILE CHECKSUM: 962bed8c9e27b13069fc0093f098d898aa3d1273
+PODFILE CHECKSUM: a3a16f62fb3daaba5be86e980730d21ab582efef
 
-COCOAPODS: 1.1.0.rc.2
+COCOAPODS: 1.0.1

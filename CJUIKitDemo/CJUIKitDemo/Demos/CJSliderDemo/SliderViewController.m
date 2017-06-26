@@ -9,6 +9,8 @@
 #import "SliderViewController.h"
 #import "UIImage+CJTransformSize.h"
 
+#import "OperateSliderViewController.h"
+
 @interface SliderViewController ()
 
 @end
@@ -124,6 +126,11 @@
     self.rangeSliderControl.delegate = self;
     
     self.rangeSliderControlValueLabel.text = [NSString stringWithFormat:@"选取的区间是 : [ %.1f, %.1f ]",self.rangeSliderControl.minValue, self.rangeSliderControl.maxValue];
+}
+
+- (IBAction)goOperateSliderViewController:(id)sender {
+    OperateSliderViewController *viewController = [[OperateSliderViewController alloc] initWithNibName:@"OperateSliderViewController" bundle:nil];
+    [self.navigationController pushViewController:viewController animated:YES];
 }
 
 
