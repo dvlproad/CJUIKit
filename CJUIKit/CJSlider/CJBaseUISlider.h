@@ -1,5 +1,5 @@
 //
-//  CJBaseSlider.h
+//  CJBaseUISlider.h
 //  CJUIKitDemo
 //
 //  Created by dvlproad on 16/4/20.
@@ -17,7 +17,7 @@ typedef NS_ENUM(NSUInteger, CJSliderType) {
 /**
  *  可设置基准值的滑竿（即代表其是可自由左右滑动的Slider）
  */
-@interface CJBaseSlider : UISlider
+@interface CJBaseUISlider : UISlider
 
 @property (nonatomic, assign) CGFloat trackHeight;          /**< 滑道/进度条的高度,即线的高度（TODO:设置的值太大，太接近thumb高度的时候滑动到比较靠左和靠右的时候会有问题） */
 //附：滑块的大小请使用- (void)setThumbImage:(UIImage *)image forState:(UIControlState)state;设置

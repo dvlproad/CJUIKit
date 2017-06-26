@@ -9,7 +9,7 @@
 #ifndef CJSlider_h
 #define CJSlider_h
 
-#import "CJBaseSlider.h"
+#import "CJBaseUISlider.h"
 #import "CJPlayerSlider.h"
 
 #import "CJSliderControl.h"

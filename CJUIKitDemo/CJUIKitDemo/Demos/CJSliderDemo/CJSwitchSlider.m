@@ -48,7 +48,7 @@
      self.operateSliderControl.frame = baseSliderFrame;
      self.operateSliderControl.backgroundColor = [UIColor greenColor];
      */
-    self.thumbCannotBeyongXType = CJSliderControlThumbCannotBeyongXTypeAllX;
+    self.valueAccoringType = CJSliderValueAccoringTypeThumbMinX;
     self.trackHeight = 30;
     self.mainThumbImage = [[UIImage imageNamed:@"btn_hd.png"] cj_transformImageToSize:CGSizeMake(87, 46)];
     self.adsorbInfos = @[[[CJAdsorbModel alloc] initWithMin:0 max:0.70 toValue:0],

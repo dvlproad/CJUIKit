@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "CJBaseSlider.h"
+#import "CJBaseUISlider.h"
 #import "CJPlayerSlider.h"
 
 #import "CJSliderControl.h"
@@ -16,7 +16,7 @@
 @interface SliderViewController : UIViewController <CJSliderControlDelegate, CJRangeSliderControlDelegate> {
     
 }
-@property (nonatomic, weak) IBOutlet CJBaseSlider *baseSlider;
+@property (nonatomic, weak) IBOutlet CJBaseUISlider *baseSlider;
 @property (nonatomic, weak) IBOutlet UILabel *baseSliderValuelabel;
 
 @property (nonatomic, weak) IBOutlet CJPlayerSlider *playerSlider;
@@ -29,6 +29,7 @@
 @property (nonatomic, weak) IBOutlet UILabel *sliderControlValueLabel2;
 
 @property (nonatomic, weak) IBOutlet CJSliderControl *sliderControl3;
+@property (nonatomic, weak) IBOutlet UILabel *sliderControlValueLabel3;
 
 @property (nonatomic, weak) IBOutlet CJSliderControl *rangeSliderControl;
 @property (nonatomic, weak) IBOutlet UILabel *rangeSliderControlValueLabel;

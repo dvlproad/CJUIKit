@@ -34,7 +34,7 @@
 
 }
 
-#pragma mark - CJBaseSlider
+#pragma mark - CJBaseUISlider
 - (void)setupBaseSlier {
     
     CGRect baseSliderFrame = self.baseSlider.frame;
@@ -112,12 +112,14 @@
     self.sliderControl3.frame = baseSliderFrame;
     self.sliderControl3.backgroundColor = [UIColor greenColor];
     */
-    self.sliderControl3.thumbCannotBeyongXType = CJSliderControlThumbCannotBeyongXTypeAllX;
+    self.sliderControl3.valueAccoringType = CJSliderValueAccoringTypeThumbMinX;
+    self.sliderControl3.mainThumbAlpha = 0.3;
     self.sliderControl3.trackHeight = 30;
-    self.sliderControl3.mainThumbImage = [[UIImage imageNamed:@"bg.jpg"] cj_transformImageToSize:CGSizeMake(80, 80)];
+    self.sliderControl3.thumbSize = CGSizeMake(60, 30);
+    self.sliderControl3.mainThumbImage = [[UIImage imageNamed:@"bg.jpg"] cj_transformImageToSize:CGSizeMake(160, 80)];
     self.sliderControl3.adsorbInfos = @[[[CJAdsorbModel alloc] initWithMin:0 max:0.70 toValue:0],
-                                        [[CJAdsorbModel alloc] initWithMin:0.71 max:1 toValue:1]];
-    
+                                        [[CJAdsorbModel alloc] initWithMin:0.7 max:1 toValue:1]];
+    self.sliderControl3.delegate = self;
     
     
     /* CJRangeSliderControl */
@@ -138,9 +140,11 @@
 - (void)slider:(CJSliderControl *)slider didDargToValue:(CGFloat)value {
     NSLog(@"slider value is %1.2f",value);
     if (slider == self.sliderControl1) {
-        self.sliderControlValueLabel1.text = [NSString stringWithFormat:@"选取的值是: %.1f", value];
+        self.sliderControlValueLabel1.text = [NSString stringWithFormat:@"选取的值是: %.2f", value];
     } else if (slider == self.sliderControl2) {
         self.sliderControlValueLabel2.text = [NSString stringWithFormat:@"选取的区间是 : [ %.1f, %.1f ]",self.sliderControl2.baseValue, self.sliderControl2.value];
+    } else if (slider == self.sliderControl3) {
+        self.sliderControlValueLabel3.text = [NSString stringWithFormat:@"选取的值是: %.2f", value];
     }
 }
 

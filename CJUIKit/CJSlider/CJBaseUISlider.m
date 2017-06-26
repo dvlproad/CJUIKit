@@ -1,14 +1,14 @@
 //
-//  CJBaseSlider.m
+//  CJBaseUISlider.m
 //  CJUIKitDemo
 //
 //  Created by dvlproad on 16/4/20.
 //  Copyright © 2016年 dvlproad. All rights reserved.
 //
 
-#import "CJBaseSlider.h"
+#import "CJBaseUISlider.h"
 
-@interface CJBaseSlider ()
+@interface CJBaseUISlider ()
 
 @property (nonatomic, assign) CGFloat thumbEnableTouchHeight;   /**< 设置滑块可触摸范围的大小,而不是滑块的大小（附：滑块的大小通过图片去设置）本控件滑块可触摸范围的大小，被我默认设置为frame的大小，而不是滑块的大小 */
 @property (nonatomic, strong) UIView *rangeView;    //非空白区域的视图
@@ -16,7 +16,7 @@
 
 @end
 
-@implementation CJBaseSlider
+@implementation CJBaseUISlider
 
 - (instancetype)initWithCoder:(NSCoder *)aDecoder {
     self = [super initWithCoder:aDecoder];

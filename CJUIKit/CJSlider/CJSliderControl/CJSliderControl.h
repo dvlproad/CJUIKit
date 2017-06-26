@@ -21,9 +21,9 @@ typedef NS_ENUM(NSUInteger, CJSliderPopoverDispalyType) {
     CJSliderPopoverDispalyTypePercent,      /**< 百分比显示 */
 };
 
-typedef NS_ENUM(NSUInteger, CJSliderControlThumbCannotBeyongXType) {
-    CJSliderControlThumbCannotBeyongXTypeMidX,           /**< 默认(滑块的中心不可越界) */
-    CJSliderControlThumbCannotBeyongXTypeAllX,          /**< 滑块的左右边界都不应该越界 */
+typedef NS_ENUM(NSUInteger, CJSliderValueAccoringType) {
+    CJSliderValueAccoringTypeThumbMidX, /**< 滑块的中心点所在的值，即为slider的值此时滑道长为view长减去滑块长) */
+    CJSliderValueAccoringTypeThumbMinX, /**< 滑块的minX点所在的值，即为slider的值(此时滑道长即为view的长度) */
 };
 
 @protocol CJSliderControlDelegate <NSObject>
@@ -53,34 +53,40 @@ typedef NS_ENUM(NSUInteger, CJSliderControlThumbCannotBeyongXType) {
 @interface CJSliderControl : UIControl {
     
 }
+/**
+ *  slider的值有什么确认（默认根据滑块的中心确认值）
+ *
+ *  @attention ①值为CJSliderValueAccoringTypeThumbMidX时，滑块的中心点所在的值，即为slider的值，此时滑道长为view长减去滑块长；②CJSliderValueAccoringTypeThumbMinX时，滑块的minX点所在的值，即为slider的值(此时滑道长即为view的长度)
+ */
+@property (nonatomic, assign) CJSliderValueAccoringType valueAccoringType;
+
 @property (nonatomic, weak) id<CJSliderControlDelegate> delegate;
+@property (nonatomic, assign) BOOL allowTouchChangeValue;   /**< 是否允许通过点击来改变值(默认否) */
 
 @property (nonatomic, assign) CGFloat minValue;     /**< 最小值(默认0) */
 @property (nonatomic, assign) CGFloat maxValue;     /**< 最大值(默认1) */
 
-@property (nonatomic, assign) CJSliderPopoverDispalyType popoverType; /**< 弹出框的类型 */
-@property (nonatomic, assign) CJSliderControlThumbCannotBeyongXType thumbCannotBeyongXType; /**< 滑块的哪些X不能越界 */
-@property (nonatomic, assign) CGSize thumbSize;
-@property (nonatomic, assign) CGSize popoverSize;
+@property (nonatomic, assign) CGFloat trackHeight;  /**< 滑道高度 */
+@property (nonatomic, assign) CGSize thumbSize;     /**< 滑块大小 */
 
-@property (nonatomic, strong) UIColor *minimumTrackTintColor; /**< 最小值方向滑竿颜色值 */
-@property (nonatomic, strong) UIImage *minimumTrackImage; /**< 最小值方向滑竿的图片 */
+@property (nonatomic, strong) UIColor *minimumTrackTintColor;   /**< 最小值方向滑竿颜色值 */
+@property (nonatomic, strong) UIImage *minimumTrackImage;       /**< 最小值方向滑竿的图片 */
 
-@property (nonatomic, strong) UIColor *maximumTrackTintColor; /**< 最大值方向滑竿颜色值 */
-@property (nonatomic, strong) UIImage *maximumTrackImage; /**< 最大值方向滑竿的图片 */
+@property (nonatomic, strong) UIColor *maximumTrackTintColor;   /**< 最大值方向滑竿颜色值 */
+@property (nonatomic, strong) UIImage *maximumTrackImage;       /**< 最大值方向滑竿的图片 */
 
 @property (nonatomic, assign) CGFloat value;            /**< 当前值 */
 @property (nonatomic, strong) UIImage *mainThumbImage;  /**< 滑块图片,默认是橙色按钮 */
 @property (nonatomic, assign) CGFloat mainThumbAlpha;   /**< 主滑块的透明度 */
 
 @property (nonatomic, assign) CGFloat baseValue;        /**< 基准值(默认0) */
-@property (nonatomic, strong) UIImage *leftThumbImage;  //**< 左滑块的图片,默认是橙色按钮 */
+@property (nonatomic, strong) UIImage *leftThumbImage;  /**< 左滑块的图片,默认是橙色按钮 */
 @property (nonatomic, assign) CGFloat leftThumbAlpha;   /**< 左滑块的透明度 */
 
-@property (nonatomic, assign) CGFloat trackHeight; //滑道高度
+@property (nonatomic, assign) CJSliderPopoverDispalyType popoverType; /**< 弹出框的类型 */
+@property (nonatomic, assign) CGSize popoverSize;
 
 @property (nonatomic, strong) NSArray<CJAdsorbModel *> *adsorbInfos; /** 设置吸附信息(含吸附区间及该区间要吸附到什么值)，上面的值是具体的滑块值，不是百分比 */
-@property (nonatomic, assign) BOOL allowTouchChangeValue;   /**< 是否允许通过点击来改变值(默认否) */
 
 /**
  *  隐藏或显示文字

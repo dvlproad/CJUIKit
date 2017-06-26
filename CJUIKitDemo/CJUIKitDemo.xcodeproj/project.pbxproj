@@ -21,7 +21,7 @@
 		781592E91EC40C8F00DE1976 /* SearchBarViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 781592E71EC40C8F00DE1976 /* SearchBarViewController.xib */; };
 		781592ED1EC4391400DE1976 /* CJToast.m in Sources */ = {isa = PBXBuildFile; fileRef = 781592EC1EC4391400DE1976 /* CJToast.m */; };
 		782708E31E86772600E21433 /* CJAdsorbModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 782708E01E86772600E21433 /* CJAdsorbModel.m */; };
-		782708E41E86772600E21433 /* CJBaseSlider.m in Sources */ = {isa = PBXBuildFile; fileRef = 782708E21E86772600E21433 /* CJBaseSlider.m */; };
+		782708E41E86772600E21433 /* CJBaseUISlider.m in Sources */ = {isa = PBXBuildFile; fileRef = 782708E21E86772600E21433 /* CJBaseUISlider.m */; };
 		782708E81E867C4700E21433 /* UIImage+CJCreate.m in Sources */ = {isa = PBXBuildFile; fileRef = 782708E71E867C4700E21433 /* UIImage+CJCreate.m */; };
 		782709021E867EFA00E21433 /* CJPlayerSlider.m in Sources */ = {isa = PBXBuildFile; fileRef = 782708F81E867EFA00E21433 /* CJPlayerSlider.m */; };
 		782709031E867EFA00E21433 /* CJRangeSliderControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 782708FB1E867EFA00E21433 /* CJRangeSliderControl.m */; };
@@ -171,8 +171,8 @@
 		781592EC1EC4391400DE1976 /* CJToast.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJToast.m; sourceTree = "<group>"; };
 		782708DF1E86772600E21433 /* CJAdsorbModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJAdsorbModel.h; sourceTree = "<group>"; };
 		782708E01E86772600E21433 /* CJAdsorbModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJAdsorbModel.m; sourceTree = "<group>"; };
-		782708E11E86772600E21433 /* CJBaseSlider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJBaseSlider.h; sourceTree = "<group>"; };
-		782708E21E86772600E21433 /* CJBaseSlider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJBaseSlider.m; sourceTree = "<group>"; };
+		782708E11E86772600E21433 /* CJBaseUISlider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJBaseUISlider.h; sourceTree = "<group>"; };
+		782708E21E86772600E21433 /* CJBaseUISlider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJBaseUISlider.m; sourceTree = "<group>"; };
 		782708E61E867C4700E21433 /* UIImage+CJCreate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+CJCreate.h"; sourceTree = "<group>"; };
 		782708E71E867C4700E21433 /* UIImage+CJCreate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+CJCreate.m"; sourceTree = "<group>"; };
 		782708F71E867EFA00E21433 /* CJPlayerSlider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJPlayerSlider.h; sourceTree = "<group>"; };
@@ -754,8 +754,8 @@
 			isa = PBXGroup;
 			children = (
 				782708DE1E86772600E21433 /* Model */,
-				782708E11E86772600E21433 /* CJBaseSlider.h */,
-				782708E21E86772600E21433 /* CJBaseSlider.m */,
+				782708E11E86772600E21433 /* CJBaseUISlider.h */,
+				782708E21E86772600E21433 /* CJBaseUISlider.m */,
 				782708F61E867EFA00E21433 /* CJPlayerSlider */,
 				782708F91E867EFA00E21433 /* CJSliderControl */,
 				782709071E867F0B00E21433 /* CJSlider.h */,
@@ -1304,7 +1304,7 @@
 				7840FB211EB09C6E00B553F7 /* UINavigationBar+CJChangeBG.m in Sources */,
 				783287FC1ED2214100A01A8A /* UIView+CJFind.m in Sources */,
 				780E46081E5DF87B00980127 /* AppDelegate.m in Sources */,
-				782708E41E86772600E21433 /* CJBaseSlider.m in Sources */,
+				782708E41E86772600E21433 /* CJBaseUISlider.m in Sources */,
 				78E61ECE1E79AA20009B1627 /* CJBadgeImageView.m in Sources */,
 				782709ED1E8715BB00E21433 /* UIButton+CJMoreProperty.m in Sources */,
 				783658F51ECFB17E00AF7591 /* CJFloatingWindow.m in Sources */,
