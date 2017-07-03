@@ -1,29 +1,29 @@
 //
-//  OperateSliderViewController.m
+//  ButtonViewController.m
 //  CJUIKitDemo
 //
-//  Created by ciyouzen on 2017/6/26.
+//  Created by ciyouzen on 2017/7/3.
 //  Copyright © 2017年 dvlproad. All rights reserved.
 //
 
-#import "OperateSliderViewController.h"
+#import "ButtonViewController.h"
+#import "UIButton+CJUpDownStructure.h"
 
-
-@interface OperateSliderViewController () {
-    
-}
+@interface ButtonViewController ()
 
 @end
 
-@implementation OperateSliderViewController
+@implementation ButtonViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
-  
+    [self.button setBackgroundColor:[UIColor greenColor]];
+    [self.button setImage:[UIImage imageNamed:@"smail.png"] forState:UIControlStateNormal];
+    [self.button setTitle:@"测试上下结构的文字" forState:UIControlStateNormal];
+    [self.button cjVerticalImageAndTitle:10];
 }
-
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

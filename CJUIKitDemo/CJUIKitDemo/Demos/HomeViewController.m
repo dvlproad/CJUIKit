@@ -15,6 +15,7 @@
 
 #import "FloatingWindowViewController.h"
 
+#import "ButtonViewController.h"
 #import "ImageViewController.h"
 #import "TextFieldViewController.h"
 #import "TextViewController.h"
@@ -76,6 +77,11 @@
     cjImageViewModuleModel.title = @"CJImageView";
     cjImageViewModuleModel.classEntry = [ImageViewController class];
     [self.datas addObject:cjImageViewModuleModel];
+    
+    ModuleModel *buttonModule = [[ModuleModel alloc] init];
+    buttonModule.title = @"UIButton";
+    buttonModule.classEntry = [ButtonViewController class];
+    [self.datas addObject:buttonModule];
     
     //CJSelectTextTextField
     ModuleModel *CJSelectTextTextFieldModuleModel = [[ModuleModel alloc] init];

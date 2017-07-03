@@ -39,6 +39,9 @@
 		783287FD1ED2214100A01A8A /* UIView+CJGestureRecognizer.m in Sources */ = {isa = PBXBuildFile; fileRef = 783287F61ED2214100A01A8A /* UIView+CJGestureRecognizer.m */; };
 		783287FE1ED2214100A01A8A /* UIView+CJKeepBounds.m in Sources */ = {isa = PBXBuildFile; fileRef = 783287F81ED2214100A01A8A /* UIView+CJKeepBounds.m */; };
 		783287FF1ED2214100A01A8A /* UIView+CJShake.m in Sources */ = {isa = PBXBuildFile; fileRef = 783287FA1ED2214100A01A8A /* UIView+CJShake.m */; };
+		7832B2FE1F0A83AE0042B5D9 /* UIButton+CJUpDownStructure.m in Sources */ = {isa = PBXBuildFile; fileRef = 7832B2FD1F0A83AE0042B5D9 /* UIButton+CJUpDownStructure.m */; };
+		7832B3031F0A87A50042B5D9 /* ButtonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7832B3011F0A87A50042B5D9 /* ButtonViewController.m */; };
+		7832B3041F0A87A50042B5D9 /* ButtonViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7832B3021F0A87A50042B5D9 /* ButtonViewController.xib */; };
 		783658E41ECF99CF00AF7591 /* ViewCategoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 783658E21ECF99CF00AF7591 /* ViewCategoryViewController.m */; };
 		783658E51ECF99CF00AF7591 /* ViewCategoryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 783658E31ECF99CF00AF7591 /* ViewCategoryViewController.xib */; };
 		783658EF1ECFA6C700AF7591 /* DragViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 783658EB1ECFA6C700AF7591 /* DragViewController.m */; };
@@ -208,6 +211,11 @@
 		783287F81ED2214100A01A8A /* UIView+CJKeepBounds.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+CJKeepBounds.m"; sourceTree = "<group>"; };
 		783287F91ED2214100A01A8A /* UIView+CJShake.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+CJShake.h"; sourceTree = "<group>"; };
 		783287FA1ED2214100A01A8A /* UIView+CJShake.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+CJShake.m"; sourceTree = "<group>"; };
+		7832B2FC1F0A83AE0042B5D9 /* UIButton+CJUpDownStructure.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+CJUpDownStructure.h"; sourceTree = "<group>"; };
+		7832B2FD1F0A83AE0042B5D9 /* UIButton+CJUpDownStructure.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+CJUpDownStructure.m"; sourceTree = "<group>"; };
+		7832B3001F0A87A50042B5D9 /* ButtonViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ButtonViewController.h; sourceTree = "<group>"; };
+		7832B3011F0A87A50042B5D9 /* ButtonViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ButtonViewController.m; sourceTree = "<group>"; };
+		7832B3021F0A87A50042B5D9 /* ButtonViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ButtonViewController.xib; sourceTree = "<group>"; };
 		783658E11ECF99CF00AF7591 /* ViewCategoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewCategoryViewController.h; sourceTree = "<group>"; };
 		783658E21ECF99CF00AF7591 /* ViewCategoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewCategoryViewController.m; sourceTree = "<group>"; };
 		783658E31ECF99CF00AF7591 /* ViewCategoryViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ViewCategoryViewController.xib; sourceTree = "<group>"; };
@@ -537,6 +545,8 @@
 			children = (
 				782709E81E8715BB00E21433 /* UIButton+CJMoreProperty.h */,
 				782709E91E8715BB00E21433 /* UIButton+CJMoreProperty.m */,
+				7832B2FC1F0A83AE0042B5D9 /* UIButton+CJUpDownStructure.h */,
+				7832B2FD1F0A83AE0042B5D9 /* UIButton+CJUpDownStructure.m */,
 			);
 			path = "UIButton+CJCategory";
 			sourceTree = "<group>";
@@ -556,6 +566,16 @@
 				783287FA1ED2214100A01A8A /* UIView+CJShake.m */,
 			);
 			path = "UIView+CJCategory";
+			sourceTree = "<group>";
+		};
+		7832B2FF1F0A878D0042B5D9 /* UIButtonDemo */ = {
+			isa = PBXGroup;
+			children = (
+				7832B3001F0A87A50042B5D9 /* ButtonViewController.h */,
+				7832B3011F0A87A50042B5D9 /* ButtonViewController.m */,
+				7832B3021F0A87A50042B5D9 /* ButtonViewController.xib */,
+			);
+			path = UIButtonDemo;
 			sourceTree = "<group>";
 		};
 		783658E01ECF999A00AF7591 /* UIViewDemo */ = {
@@ -602,6 +622,7 @@
 			children = (
 				7840FAFB1EB09C4500B553F7 /* HomeViewController.h */,
 				7840FAFC1EB09C4500B553F7 /* HomeViewController.m */,
+				7832B2FF1F0A878D0042B5D9 /* UIButtonDemo */,
 				78FC3BB41ED53E700049F22D /* TextFieldDemo */,
 				783658F61ECFB4D800AF7591 /* CJFloatingWindowDemo */,
 				783658E91ECFA6C700AF7591 /* DragViewDemo */,
@@ -1148,6 +1169,7 @@
 				783658F01ECFA6C700AF7591 /* DragViewController.xib in Resources */,
 				7840FB171EB09C4600B553F7 /* sound@2x.png in Resources */,
 				7840FB121EB09C4600B553F7 /* SliderViewController.xib in Resources */,
+				7832B3041F0A87A50042B5D9 /* ButtonViewController.xib in Resources */,
 				780E460E1E5DF87B00980127 /* Main.storyboard in Resources */,
 				78E269BF1ECC5E1A007D3686 /* bgSky@2x.jpg in Resources */,
 				7840FB151EB09C4600B553F7 /* plus@2x.png in Resources */,
@@ -1304,6 +1326,7 @@
 				7840FB211EB09C6E00B553F7 /* UINavigationBar+CJChangeBG.m in Sources */,
 				783287FC1ED2214100A01A8A /* UIView+CJFind.m in Sources */,
 				780E46081E5DF87B00980127 /* AppDelegate.m in Sources */,
+				7832B2FE1F0A83AE0042B5D9 /* UIButton+CJUpDownStructure.m in Sources */,
 				782708E41E86772600E21433 /* CJBaseUISlider.m in Sources */,
 				78E61ECE1E79AA20009B1627 /* CJBadgeImageView.m in Sources */,
 				782709ED1E8715BB00E21433 /* UIButton+CJMoreProperty.m in Sources */,
@@ -1323,6 +1346,7 @@
 				7840FB1A1EB09C4600B553F7 /* HomeViewController.m in Sources */,
 				782709E41E8715A600E21433 /* UIImage+MakeCircle.m in Sources */,
 				78E61ED01E79AA20009B1627 /* CJMJRefreshNormalFooter.m in Sources */,
+				7832B3031F0A87A50042B5D9 /* ButtonViewController.m in Sources */,
 				78FC3BC71ED541850049F22D /* UITextField+CJTextChangeBlock.m in Sources */,
 				780E46051E5DF87B00980127 /* main.m in Sources */,
 				782709051E867EFA00E21433 /* CJSliderPopover.m in Sources */,
