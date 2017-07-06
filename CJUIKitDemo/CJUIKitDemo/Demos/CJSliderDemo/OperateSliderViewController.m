@@ -7,6 +7,8 @@
 //
 
 #import "OperateSliderViewController.h"
+#import "UIImage+CJCreate.h"
+#import "UIImage+CJTransformSize.h"
 
 
 @interface OperateSliderViewController () {
@@ -21,7 +23,34 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
-  
+    
+    NSMutableArray *sliderStatusModels = [[NSMutableArray alloc] init];
+    
+    {
+        CJSliderStatusModel *statusModel = [[CJSliderStatusModel alloc] init];
+        statusModel.image = [UIImage imageNamed:@"icon_ddlb_jd.png"];
+        [sliderStatusModels addObject:statusModel];
+    }
+    
+    {
+        CJSliderStatusModel *statusModel = [[CJSliderStatusModel alloc] init];
+        statusModel.image = [UIImage imageNamed:@"icon_ddlb_hd.png"];
+        [sliderStatusModels addObject:statusModel];
+    }
+    
+    {
+        CJSliderStatusModel *statusModel = [[CJSliderStatusModel alloc] init];
+        statusModel.image = [UIImage cj_imageWithColor:[UIColor lightGrayColor] size:CGSizeMake(30, 30)];
+        [sliderStatusModels addObject:statusModel];
+    }
+    
+    CJSwitchSlider *switchSlider = self.shimmeringSwitchSlider.switchSlider;
+    switchSlider.statusModels = sliderStatusModels;
+    [switchSlider updateStateForIndex:0];
+    
+    [switchSlider setSwitchSuccessBlock:^(NSInteger step){
+        NSLog(@"第%ld个步骤完成", step);
+    }];
 }
 
 

@@ -49,8 +49,6 @@
 		783658F51ECFB17E00AF7591 /* CJFloatingWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 783658F41ECFB17E00AF7591 /* CJFloatingWindow.m */; };
 		783658FA1ECFB4F100AF7591 /* FloatingWindowViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 783658F81ECFB4F100AF7591 /* FloatingWindowViewController.m */; };
 		783658FB1ECFB4F100AF7591 /* FloatingWindowViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 783658F91ECFB4F100AF7591 /* FloatingWindowViewController.xib */; };
-		783F49BC1F00E9F300E69901 /* ShimmeringSwitchSlider.m in Sources */ = {isa = PBXBuildFile; fileRef = 783F49BB1F00E9F300E69901 /* ShimmeringSwitchSlider.m */; };
-		783F49BE1F00EA7E00E69901 /* ShimmeringSwitchSlider.xib in Resources */ = {isa = PBXBuildFile; fileRef = 783F49BD1F00EA7E00E69901 /* ShimmeringSwitchSlider.xib */; };
 		7840FB031EB09C4500B553F7 /* ImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7840FADA1EB09C4500B553F7 /* ImageViewController.m */; };
 		7840FB041EB09C4500B553F7 /* ImageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7840FADB1EB09C4500B553F7 /* ImageViewController.xib */; };
 		7840FB051EB09C4500B553F7 /* KeyboardAvoidingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7840FADE1EB09C4500B553F7 /* KeyboardAvoidingViewController.m */; };
@@ -86,6 +84,10 @@
 		787E101A1F0E22A500034A5C /* TableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 787E10181F0E22A500034A5C /* TableViewController.m */; };
 		787E101B1F0E22A500034A5C /* TableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 787E10191F0E22A500034A5C /* TableViewController.xib */; };
 		787E101E1F0E28A500034A5C /* UITableView+CJEmptyView.m in Sources */ = {isa = PBXBuildFile; fileRef = 787E101D1F0E28A500034A5C /* UITableView+CJEmptyView.m */; };
+		787E102C1F0E335100034A5C /* CJSwitchSlider.m in Sources */ = {isa = PBXBuildFile; fileRef = 787E10211F0E335100034A5C /* CJSwitchSlider.m */; };
+		787E10301F0E335100034A5C /* icon_ddlb_hd@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 787E10281F0E335100034A5C /* icon_ddlb_hd@2x.png */; };
+		787E10311F0E335100034A5C /* icon_ddlb_jd@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 787E10291F0E335100034A5C /* icon_ddlb_jd@2x.png */; };
+		787E10321F0E335100034A5C /* ShimmeringSwitchSlider.m in Sources */ = {isa = PBXBuildFile; fileRef = 787E102B1F0E335100034A5C /* ShimmeringSwitchSlider.m */; };
 		7893125A1F00A8C500A91C29 /* btn_hd@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 789312581F00A8C500A91C29 /* btn_hd@2x.png */; };
 		7893125B1F00A8C500A91C29 /* btn_hd@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 789312591F00A8C500A91C29 /* btn_hd@3x.png */; };
 		7893125F1F00A8F300A91C29 /* OperateSliderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7893125D1F00A8F300A91C29 /* OperateSliderViewController.m */; };
@@ -94,7 +96,6 @@
 		78A355341EB32D62005C5A9A /* CJMJRefreshViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78A355321EB32D62005C5A9A /* CJMJRefreshViewController.m */; };
 		78A355351EB32D62005C5A9A /* CJMJRefreshViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 78A355331EB32D62005C5A9A /* CJMJRefreshViewController.xib */; };
 		78A703B71F00DED600103FA0 /* CJSliderStatusModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 78A703B61F00DED600103FA0 /* CJSliderStatusModel.m */; };
-		78A703BA1F00E46200103FA0 /* CJSwitchSlider.m in Sources */ = {isa = PBXBuildFile; fileRef = 78A703B91F00E46200103FA0 /* CJSwitchSlider.m */; };
 		78B6761B1EB192EA006F4612 /* ModuleModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 78B6761A1EB192EA006F4612 /* ModuleModel.m */; };
 		78E269A41ECA92B9007D3686 /* NavigationBarChangeBGViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78E269A31ECA92B9007D3686 /* NavigationBarChangeBGViewController.m */; };
 		78E269A71ECA92E4007D3686 /* NavigationBarChangePositonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78E269A61ECA92E4007D3686 /* NavigationBarChangePositonViewController.m */; };
@@ -230,9 +231,6 @@
 		783658F71ECFB4F100AF7591 /* FloatingWindowViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FloatingWindowViewController.h; sourceTree = "<group>"; };
 		783658F81ECFB4F100AF7591 /* FloatingWindowViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FloatingWindowViewController.m; sourceTree = "<group>"; };
 		783658F91ECFB4F100AF7591 /* FloatingWindowViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FloatingWindowViewController.xib; sourceTree = "<group>"; };
-		783F49BA1F00E9F300E69901 /* ShimmeringSwitchSlider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShimmeringSwitchSlider.h; sourceTree = "<group>"; };
-		783F49BB1F00E9F300E69901 /* ShimmeringSwitchSlider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShimmeringSwitchSlider.m; sourceTree = "<group>"; };
-		783F49BD1F00EA7E00E69901 /* ShimmeringSwitchSlider.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ShimmeringSwitchSlider.xib; sourceTree = "<group>"; };
 		7840FAD91EB09C4500B553F7 /* ImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageViewController.h; sourceTree = "<group>"; };
 		7840FADA1EB09C4500B553F7 /* ImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageViewController.m; sourceTree = "<group>"; };
 		7840FADB1EB09C4500B553F7 /* ImageViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ImageViewController.xib; sourceTree = "<group>"; };
@@ -281,6 +279,12 @@
 		787E10191F0E22A500034A5C /* TableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TableViewController.xib; sourceTree = "<group>"; };
 		787E101C1F0E28A500034A5C /* UITableView+CJEmptyView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableView+CJEmptyView.h"; sourceTree = "<group>"; };
 		787E101D1F0E28A500034A5C /* UITableView+CJEmptyView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableView+CJEmptyView.m"; sourceTree = "<group>"; };
+		787E10201F0E335100034A5C /* CJSwitchSlider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJSwitchSlider.h; sourceTree = "<group>"; };
+		787E10211F0E335100034A5C /* CJSwitchSlider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJSwitchSlider.m; sourceTree = "<group>"; };
+		787E10281F0E335100034A5C /* icon_ddlb_hd@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_ddlb_hd@2x.png"; sourceTree = "<group>"; };
+		787E10291F0E335100034A5C /* icon_ddlb_jd@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_ddlb_jd@2x.png"; sourceTree = "<group>"; };
+		787E102A1F0E335100034A5C /* ShimmeringSwitchSlider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShimmeringSwitchSlider.h; sourceTree = "<group>"; };
+		787E102B1F0E335100034A5C /* ShimmeringSwitchSlider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShimmeringSwitchSlider.m; sourceTree = "<group>"; };
 		789312581F00A8C500A91C29 /* btn_hd@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn_hd@2x.png"; sourceTree = "<group>"; };
 		789312591F00A8C500A91C29 /* btn_hd@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn_hd@3x.png"; sourceTree = "<group>"; };
 		7893125C1F00A8F300A91C29 /* OperateSliderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OperateSliderViewController.h; sourceTree = "<group>"; };
@@ -294,8 +298,6 @@
 		78A355331EB32D62005C5A9A /* CJMJRefreshViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CJMJRefreshViewController.xib; sourceTree = "<group>"; };
 		78A703B51F00DED600103FA0 /* CJSliderStatusModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJSliderStatusModel.h; sourceTree = "<group>"; };
 		78A703B61F00DED600103FA0 /* CJSliderStatusModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJSliderStatusModel.m; sourceTree = "<group>"; };
-		78A703B81F00E46200103FA0 /* CJSwitchSlider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJSwitchSlider.h; sourceTree = "<group>"; };
-		78A703B91F00E46200103FA0 /* CJSwitchSlider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJSwitchSlider.m; sourceTree = "<group>"; };
 		78B676191EB192EA006F4612 /* ModuleModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModuleModel.h; sourceTree = "<group>"; };
 		78B6761A1EB192EA006F4612 /* ModuleModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModuleModel.m; sourceTree = "<group>"; };
 		78E269A21ECA92B9007D3686 /* NavigationBarChangeBGViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NavigationBarChangeBGViewController.h; sourceTree = "<group>"; };
@@ -680,11 +682,6 @@
 				7893125C1F00A8F300A91C29 /* OperateSliderViewController.h */,
 				7893125D1F00A8F300A91C29 /* OperateSliderViewController.m */,
 				7893125E1F00A8F300A91C29 /* OperateSliderViewController.xib */,
-				78A703B81F00E46200103FA0 /* CJSwitchSlider.h */,
-				78A703B91F00E46200103FA0 /* CJSwitchSlider.m */,
-				783F49BA1F00E9F300E69901 /* ShimmeringSwitchSlider.h */,
-				783F49BB1F00E9F300E69901 /* ShimmeringSwitchSlider.m */,
-				783F49BD1F00EA7E00E69901 /* ShimmeringSwitchSlider.xib */,
 			);
 			path = CJSliderDemo;
 			sourceTree = "<group>";
@@ -783,6 +780,7 @@
 		78553FBC1E7D993300F320E6 /* CJSlider */ = {
 			isa = PBXGroup;
 			children = (
+				787E101F1F0E335100034A5C /* OrderOperateView */,
 				782708DE1E86772600E21433 /* Model */,
 				782708E11E86772600E21433 /* CJBaseUISlider.h */,
 				782708E21E86772600E21433 /* CJBaseUISlider.m */,
@@ -810,6 +808,27 @@
 				787E10191F0E22A500034A5C /* TableViewController.xib */,
 			);
 			path = TableViewDemo;
+			sourceTree = "<group>";
+		};
+		787E101F1F0E335100034A5C /* OrderOperateView */ = {
+			isa = PBXGroup;
+			children = (
+				787E10201F0E335100034A5C /* CJSwitchSlider.h */,
+				787E10211F0E335100034A5C /* CJSwitchSlider.m */,
+				787E10271F0E335100034A5C /* Resources */,
+				787E102A1F0E335100034A5C /* ShimmeringSwitchSlider.h */,
+				787E102B1F0E335100034A5C /* ShimmeringSwitchSlider.m */,
+			);
+			path = OrderOperateView;
+			sourceTree = "<group>";
+		};
+		787E10271F0E335100034A5C /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				787E10281F0E335100034A5C /* icon_ddlb_hd@2x.png */,
+				787E10291F0E335100034A5C /* icon_ddlb_jd@2x.png */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		789A19671E61B87D008081E3 /* Models */ = {
@@ -1173,8 +1192,8 @@
 				7840FB091EB09C4500B553F7 /* slider_double_thumbImage_b@2x.png in Resources */,
 				78E61F031E79AF0A009B1627 /* sdRefeshView_arrow@2x.png in Resources */,
 				7840FB1C1EB09C4600B553F7 /* ImageChangeColorViewController.xib in Resources */,
-				783F49BE1F00EA7E00E69901 /* ShimmeringSwitchSlider.xib in Resources */,
 				7840FB161EB09C4600B553F7 /* smail@2x.png in Resources */,
+				787E10301F0E335100034A5C /* icon_ddlb_hd@2x.png in Resources */,
 				7840FB0D1EB09C4600B553F7 /* slider_minimum_trackimage@2x.png in Resources */,
 				7840FB0C1EB09C4600B553F7 /* slider_maximum_trackimage@3x.png in Resources */,
 				780E46131E5DF87B00980127 /* LaunchScreen.storyboard in Resources */,
@@ -1200,6 +1219,7 @@
 				7840FB121EB09C4600B553F7 /* SliderViewController.xib in Resources */,
 				7832B3041F0A87A50042B5D9 /* ButtonViewController.xib in Resources */,
 				780E460E1E5DF87B00980127 /* Main.storyboard in Resources */,
+				787E10311F0E335100034A5C /* icon_ddlb_jd@2x.png in Resources */,
 				78E269BF1ECC5E1A007D3686 /* bgSky@2x.jpg in Resources */,
 				7840FB151EB09C4600B553F7 /* plus@2x.png in Resources */,
 				787E101B1F0E22A500034A5C /* TableViewController.xib in Resources */,
@@ -1334,7 +1354,6 @@
 				782708E81E867C4700E21433 /* UIImage+CJCreate.m in Sources */,
 				783287FB1ED2214100A01A8A /* UIView+CJDragAction.m in Sources */,
 				787E101E1F0E28A500034A5C /* UITableView+CJEmptyView.m in Sources */,
-				783F49BC1F00E9F300E69901 /* ShimmeringSwitchSlider.m in Sources */,
 				782709041E867EFA00E21433 /* CJSliderControl.m in Sources */,
 				7840FB251EB09CE900B553F7 /* NavigationBarBaseViewController.m in Sources */,
 				782709E51E8715A600E21433 /* UIImage+Save.m in Sources */,
@@ -1361,6 +1380,7 @@
 				782708E41E86772600E21433 /* CJBaseUISlider.m in Sources */,
 				78E61ECE1E79AA20009B1627 /* CJBadgeImageView.m in Sources */,
 				782709ED1E8715BB00E21433 /* UIButton+CJMoreProperty.m in Sources */,
+				787E102C1F0E335100034A5C /* CJSwitchSlider.m in Sources */,
 				783658F51ECFB17E00AF7591 /* CJFloatingWindow.m in Sources */,
 				78E269A41ECA92B9007D3686 /* NavigationBarChangeBGViewController.m in Sources */,
 				78F3AA001E963197005D3DA4 /* UIImage+CJFixOrientation.m in Sources */,
@@ -1387,13 +1407,13 @@
 				783658EF1ECFA6C700AF7591 /* DragViewController.m in Sources */,
 				78B6761B1EB192EA006F4612 /* ModuleModel.m in Sources */,
 				78A703B71F00DED600103FA0 /* CJSliderStatusModel.m in Sources */,
-				78A703BA1F00E46200103FA0 /* CJSwitchSlider.m in Sources */,
 				78E61F011E79AF0A009B1627 /* CJRefreshFooter.m in Sources */,
 				784B7D4A1E7F7DE300299457 /* UIColor+CJHex.m in Sources */,
 				784C15E21E8E719A0019D652 /* UIImage+CJTransformSize.m in Sources */,
 				78E61F021E79AF0A009B1627 /* CJRefreshHeader.m in Sources */,
 				78E61ED11E79AA20009B1627 /* CJMJRefreshNormalHeader.m in Sources */,
 				7840FB051EB09C4500B553F7 /* KeyboardAvoidingViewController.m in Sources */,
+				787E10321F0E335100034A5C /* ShimmeringSwitchSlider.m in Sources */,
 				78E269C31ECC5E29007D3686 /* LEOHeaderView.m in Sources */,
 				78FC3BC61ED541850049F22D /* UITextField+CJLimitTextLength.m in Sources */,
 				78E269A71ECA92E4007D3686 /* NavigationBarChangePositonViewController.m in Sources */,

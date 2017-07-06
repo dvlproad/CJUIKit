@@ -27,8 +27,8 @@
 }
 
 - (void)commonInit {
-    self.shimmering = NO;
-    self.shimmeringOpacity = 0;
+    self.shimmering = YES;
+    self.shimmeringOpacity = 1;
     self.shimmeringBeginFadeDuration = 0.3;
     self.shimmeringEndFadeDuration = 2;
     self.shimmeringAnimationOpacity = 0.6;
@@ -38,10 +38,20 @@
     
     
     
-    self.switchSlider = [[CJSwitchSlider alloc] initWithFrame:self.bounds];
-    [self cj_makeView:self addSubView:self.switchSlider withEdgeInsets:UIEdgeInsetsZero];
+    self.switchSlider = [[CJSwitchSlider alloc] initWithFrame:CGRectZero];
+    [self cj_makeView:self addSubView:self.switchSlider withEdgeInsets:UIEdgeInsetsMake(0, 0, 0, 0)];
     ((FBShimmeringLayer *)self.layer).contentLayer = self.switchSlider.layer;
 }
+
+//- (void)setModel:(OrderListModel *)model {
+//    _model = model;
+//    
+//    if (model.order_status == Order_state_sended) {
+//        [self.switchSlider showFromIndex:0];
+//    } else if (model.order_status == Order_state_get_on) {
+//        [self.switchSlider showFromIndex:1];
+//    }
+//}
 
 #pragma mark - addSubView
 - (void)cj_makeView:(UIView *)superView addSubView:(UIView *)subView withEdgeInsets:(UIEdgeInsets)edgeInsets {

@@ -12,8 +12,23 @@
 #import <Shimmer/FBShimmeringView.h>
 #import <Shimmer/FBShimmeringLayer.h>
 
+//#import "OrderListModel.h"
+
+//@class ShimmeringSwitchSlider;
+//@protocol ShimmeringSwitchSliderDelegate <NSObject>
+//
+//- (void)switchOKOnShimmeringSwitchSlider:(ShimmeringSwitchSlider *)switchSlider;
+//
+//@end
+
+
 @interface ShimmeringSwitchSlider : FBShimmeringView
 
 @property (nonatomic, strong) IBOutlet CJSwitchSlider *switchSlider;
+
+//@property (nonatomic, strong) OrderListModel *model;
+@property (nonatomic, assign) NSIndexPath *indexPath;
+
+@property (nonatomic, assign) NSInteger stautsValue;
 
 @end

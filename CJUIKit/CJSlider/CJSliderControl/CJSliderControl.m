@@ -611,8 +611,8 @@ static NSTimeInterval const kCJSliderControlDidTapSlidAnimationDuration  = 0.3f;
 - (void)setMainThumbImage:(UIImage *)mainThumbImage {
     _mainThumbImage = mainThumbImage;
     
-//    [self.mainThumb setImage:thumbImage forState:UIControlStateNormal];
-    [self.mainThumb setBackgroundImage:mainThumbImage forState:UIControlStateNormal];
+    [self.mainThumb setImage:mainThumbImage forState:UIControlStateNormal];
+//    [self.mainThumb setBackgroundImage:mainThumbImage forState:UIControlStateNormal];
     //注意①、不要使用setImage来设置图片，要使用setBackgroundImage来设置
 }
 
