@@ -23,36 +23,46 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
+    [self commonSetupToSwitchSlider:self.switchSlider];
     
+    [self commonSetupToSwitchSlider:self.shimmeringSwitchSlider.switchSlider];
+    [self.shimmeringSwitchSlider.switchSlider reloadSlider];
+}
+
+
+- (void)commonSetupToSwitchSlider:(CJSwitchSlider *)switchSlider {
     NSMutableArray *sliderStatusModels = [[NSMutableArray alloc] init];
     
     {
-        CJSliderStatusModel *statusModel = [[CJSliderStatusModel alloc] init];
+        CJSwitchSliderStatusModel *statusModel = [[CJSwitchSliderStatusModel alloc] init];
         statusModel.image = [UIImage imageNamed:@"icon_ddlb_jd.png"];
+        statusModel.goNextStepWhenSwitchEventOccur = YES;
         [sliderStatusModels addObject:statusModel];
     }
     
     {
-        CJSliderStatusModel *statusModel = [[CJSliderStatusModel alloc] init];
+        CJSwitchSliderStatusModel *statusModel = [[CJSwitchSliderStatusModel alloc] init];
         statusModel.image = [UIImage imageNamed:@"icon_ddlb_hd.png"];
+        statusModel.goNextStepWhenSwitchEventOccur = YES;
         [sliderStatusModels addObject:statusModel];
     }
     
     {
-        CJSliderStatusModel *statusModel = [[CJSliderStatusModel alloc] init];
+        CJSwitchSliderStatusModel *statusModel = [[CJSwitchSliderStatusModel alloc] init];
         statusModel.image = [UIImage cj_imageWithColor:[UIColor lightGrayColor] size:CGSizeMake(30, 30)];
         [sliderStatusModels addObject:statusModel];
     }
     
-    CJSwitchSlider *switchSlider = self.shimmeringSwitchSlider.switchSlider;
+    switchSlider.trackHeight = 65;
+    switchSlider.thumbSize = CGSizeMake(58, 31);
     switchSlider.statusModels = sliderStatusModels;
-    [switchSlider updateStateForIndex:0];
+    switchSlider.mainThumbImage = [UIImage imageNamed:@"btn_hd.png"];
+    [switchSlider showStep:0];
     
-    [switchSlider setSwitchSuccessBlock:^(NSInteger step){
-        NSLog(@"第%ld个步骤完成", step);
+    [switchSlider setSwitchEventOccuBlock:^(NSInteger execStep){
+        NSLog(@"第%ld个步骤执行", execStep);
     }];
 }
-
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

@@ -88,6 +88,12 @@ typedef NS_ENUM(NSUInteger, CJSliderValueAccoringType) {
 
 @property (nonatomic, strong) NSArray<CJAdsorbModel *> *adsorbInfos; /** 设置吸附信息(含吸附区间及该区间要吸附到什么值)，上面的值是具体的滑块值，不是百分比 */
 
+
+- (void)commonInit;
+
+///更新slider(可用于视图已经生成之后，有更改trackHeight或thumbSize的时候调用,一般很少用到)
+- (void)reloadSlider;
+
 /**
  *  隐藏或显示文字
  *

@@ -43,6 +43,8 @@
     ((FBShimmeringLayer *)self.layer).contentLayer = self.switchSlider.layer;
 }
 
+
+
 //- (void)setModel:(OrderListModel *)model {
 //    _model = model;
 //    

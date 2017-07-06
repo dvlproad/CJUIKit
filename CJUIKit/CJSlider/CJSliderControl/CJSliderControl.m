@@ -41,7 +41,7 @@ static NSTimeInterval const kCJSliderControlDidTapSlidAnimationDuration  = 0.3f;
 - (instancetype)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
     if (self) {
-        [self setupUI];
+        [self commonInit];
     }
     return self;
 }
@@ -49,10 +49,16 @@ static NSTimeInterval const kCJSliderControlDidTapSlidAnimationDuration  = 0.3f;
 - (id)initWithCoder:(NSCoder *)aDecoder {
     self = [super initWithCoder:aDecoder];
     if (self) {
-        [self setupUI];
+        [self commonInit];
     }
     return self;
 }
+
+//- (void)awakeFromNib {
+//    [super awakeFromNib];
+//    
+//    [self commonInit];
+//}
 
 - (void)dealloc {
     [self removeObserver:self forKeyPath:@"self.mainThumb.frame"];
@@ -69,18 +75,18 @@ static NSTimeInterval const kCJSliderControlDidTapSlidAnimationDuration  = 0.3f;
         [self updateIndicateValueForThumb:self.mainThumb];
         
     } else if ([keyPath isEqualToString:@"self.value"]) {
-        [self updateUIByAllValue];
+        [self reloadSlider];
         
     } else if ([keyPath isEqualToString:@"self.leftThumb.frame"]) {
         [self updateIndicateValueForThumb:self.leftThumb];
         
     } else if ([keyPath isEqualToString:@"self.baseValue"]) {
-//        [self updateUIByAllValue];
+//        [self reloadSlider];
         
     }
 }
 
-- (void)setupUI {
+- (void)commonInit {
     self.backgroundColor = [UIColor clearColor];
     
     //注册通知：self.mainThumb.frame更新的时候需要去更新选中区域 以及 value
@@ -109,10 +115,11 @@ static NSTimeInterval const kCJSliderControlDidTapSlidAnimationDuration  = 0.3f;
     }
     self.lastFrame = self.frame;
     
-    [self updateUIByAllValue];
+    [self reloadSlider];
 }
 
-- (void)updateUIByAllValue {
+/* 完整的描述请参见文件头部 */
+- (void)reloadSlider {
     CGRect trackRect = [self trackRectForBounds:self.bounds];
     self.trackImageView.frame = trackRect;
     
@@ -577,7 +584,8 @@ static NSTimeInterval const kCJSliderControlDidTapSlidAnimationDuration  = 0.3f;
     if (!_mainThumb) {
         _mainThumb = [self createThumb];
         
-        [_mainThumb setBackgroundImage:[UIImage imageNamed:@"slider_thumbImage"] forState:UIControlStateNormal]; //注意①、不要使用setImage来设置图片，要使用setBackgroundImage来设置
+        [_mainThumb setImage:[UIImage imageNamed:@"slider_thumbImage"] forState:UIControlStateNormal];
+//        [_mainThumb setBackgroundImage:[UIImage imageNamed:@"slider_thumbImage"] forState:UIControlStateNormal]; //注意①、不要使用setImage来设置图片，要使用setBackgroundImage来设置
     }
     return _mainThumb;
 }
@@ -593,12 +601,13 @@ static NSTimeInterval const kCJSliderControlDidTapSlidAnimationDuration  = 0.3f;
 //        UIImage *thumbImage = [UIImage imageNamed:@"slider_thumbImage"];
 //        thumbImage = [thumbImage cj_transformImageToSize:CGSizeMake(kCJSliderThumbSizeWidth, kCJSliderThumbSizeHeight)];
 //        [thumb setImage:thumbImage forState:UIControlStateNormal];
-        UIImage *colorImage = [UIImage cj_imageWithColor:[UIColor redColor] size:CGSizeMake(10, 10)];
+//        UIImage *colorImage = [UIImage cj_imageWithColor:[UIColor redColor] size:CGSizeMake(10, 10)];
     
 //        [thumb setImage:colorImage forState:UIControlStateNormal];
 //        [thumb setBackgroundImage:colorImage forState:UIControlStateNormal];
-        [thumb setBackgroundImage:[UIImage imageNamed:@"slider_thumbImage"] forState:UIControlStateNormal]; //注意①、不要使用setImage来设置图片，要使用setBackgroundImage来设置
-        
+        [thumb setImage:[UIImage imageNamed:@"slider_thumbImage"] forState:UIControlStateNormal];
+//        [thumb setBackgroundImage:[UIImage imageNamed:@"slider_thumbImage"] forState:UIControlStateNormal]; //注意①、不要使用setImage来设置图片，要使用setBackgroundImage来设置
+    
 //        [thumb setImage:[UIImage imageNamed:@"slider_thumbImage"] forState:UIControlStateNormal];
 //        [thumb setImage:[UIImage imageNamed:@"slider_thumbImage"] forState:UIControlStateSelected];
         
