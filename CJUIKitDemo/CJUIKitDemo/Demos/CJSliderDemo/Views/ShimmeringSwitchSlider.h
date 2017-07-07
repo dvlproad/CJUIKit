@@ -23,6 +23,4 @@
 
 @property (nonatomic, assign) NSInteger stautsValue;
 
-- (void)initSwitchSlider;
-
 @end

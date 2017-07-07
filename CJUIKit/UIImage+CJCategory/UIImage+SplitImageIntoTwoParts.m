@@ -2,7 +2,7 @@
 //  UIImage+SplitImageIntoTwoParts.m
 //  CJUIKitDemo
 //
-//  Created by lichq on 14-11-5.
+//  Created by ciyouzen on 14-11-5.
 //  Copyright (c) 2014年 lichq. All rights reserved.
 //
 #define SAWTOOTH_COUNT 10

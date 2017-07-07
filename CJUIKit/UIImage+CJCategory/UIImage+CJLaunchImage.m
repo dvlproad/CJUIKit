@@ -2,8 +2,8 @@
 //  UIImage+CJLaunchImage.m
 //  CJUIKitDemo
 //
-//  Created by lichq on 2016/12/14.
-//  Copyright © 2016年 ciyouzen. All rights reserved.
+//  Created by ciyouzen on 2016/12/14.
+//  Copyright © 2016年 dvlproad. All rights reserved.
 //
 
 #import "UIImage+CJLaunchImage.h"

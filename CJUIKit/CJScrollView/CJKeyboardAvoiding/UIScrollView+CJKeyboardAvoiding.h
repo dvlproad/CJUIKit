@@ -2,8 +2,8 @@
 //  UIScrollView+CJKeyboardAvoiding.h
 //  CJUIKitDemo
 //
-//  Created by lichq on 8/10/13.
-//  Copyright (c) 2013 ciyouzen. All rights reserved.
+//  Created by ciyouzen on 8/10/13.
+//  Copyright (c) 2013 dvlproad. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>

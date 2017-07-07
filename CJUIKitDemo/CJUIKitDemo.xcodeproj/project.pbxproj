@@ -77,6 +77,7 @@
 		7840FB251EB09CE900B553F7 /* NavigationBarBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7840FB231EB09CE900B553F7 /* NavigationBarBaseViewController.m */; };
 		7840FB261EB09CE900B553F7 /* NavigationBarBaseViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7840FB241EB09CE900B553F7 /* NavigationBarBaseViewController.xib */; };
 		7840FB281EB09E0700B553F7 /* bg@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7840FB271EB09E0700B553F7 /* bg@2x.jpg */; };
+		7847389C1F0F1F4F00EF4C40 /* ShimmeringSwitchSlider.m in Sources */ = {isa = PBXBuildFile; fileRef = 7847389B1F0F1F4F00EF4C40 /* ShimmeringSwitchSlider.m */; };
 		7847521E1E8F862F00B24507 /* UIImage+CJChangeColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 7847521D1E8F862F00B24507 /* UIImage+CJChangeColor.m */; };
 		784B7D4A1E7F7DE300299457 /* UIColor+CJHex.m in Sources */ = {isa = PBXBuildFile; fileRef = 784B7D491E7F7DE300299457 /* UIColor+CJHex.m */; };
 		784C15E21E8E719A0019D652 /* UIImage+CJTransformSize.m in Sources */ = {isa = PBXBuildFile; fileRef = 784C15E11E8E719A0019D652 /* UIImage+CJTransformSize.m */; };
@@ -85,8 +86,8 @@
 		787E101E1F0E28A500034A5C /* UITableView+CJEmptyView.m in Sources */ = {isa = PBXBuildFile; fileRef = 787E101D1F0E28A500034A5C /* UITableView+CJEmptyView.m */; };
 		7893125A1F00A8C500A91C29 /* btn_hd@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 789312581F00A8C500A91C29 /* btn_hd@2x.png */; };
 		7893125B1F00A8C500A91C29 /* btn_hd@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 789312591F00A8C500A91C29 /* btn_hd@3x.png */; };
-		7893125F1F00A8F300A91C29 /* OperateSliderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7893125D1F00A8F300A91C29 /* OperateSliderViewController.m */; };
-		789312601F00A8F300A91C29 /* OperateSliderViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7893125E1F00A8F300A91C29 /* OperateSliderViewController.xib */; };
+		7893125F1F00A8F300A91C29 /* SwitchSliderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7893125D1F00A8F300A91C29 /* SwitchSliderViewController.m */; };
+		789312601F00A8F300A91C29 /* SwitchSliderViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7893125E1F00A8F300A91C29 /* SwitchSliderViewController.xib */; };
 		789CDB251EC0847E00D537D1 /* ScrollViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 789CDB241EC0847E00D537D1 /* ScrollViewController.m */; };
 		78A355341EB32D62005C5A9A /* CJMJRefreshViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78A355321EB32D62005C5A9A /* CJMJRefreshViewController.m */; };
 		78A355351EB32D62005C5A9A /* CJMJRefreshViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 78A355331EB32D62005C5A9A /* CJMJRefreshViewController.xib */; };
@@ -95,7 +96,6 @@
 		78DC6E691F0E90A500DC025C /* icon_ddlb_jd@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 78DC6E671F0E90A500DC025C /* icon_ddlb_jd@2x.png */; };
 		78DC6E711F0E90B000DC025C /* CJSwitchSliderStatusModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 78DC6E6C1F0E90B000DC025C /* CJSwitchSliderStatusModel.m */; };
 		78DC6E721F0E90B000DC025C /* CJSwitchSlider.m in Sources */ = {isa = PBXBuildFile; fileRef = 78DC6E6E1F0E90B000DC025C /* CJSwitchSlider.m */; };
-		78DC6E731F0E90B000DC025C /* ShimmeringSwitchSlider.m in Sources */ = {isa = PBXBuildFile; fileRef = 78DC6E701F0E90B000DC025C /* ShimmeringSwitchSlider.m */; };
 		78DC6E771F0E90ED00DC025C /* CJAdsorbModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 78DC6E761F0E90ED00DC025C /* CJAdsorbModel.m */; };
 		78E269A41ECA92B9007D3686 /* NavigationBarChangeBGViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78E269A31ECA92B9007D3686 /* NavigationBarChangeBGViewController.m */; };
 		78E269A71ECA92E4007D3686 /* NavigationBarChangePositonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78E269A61ECA92E4007D3686 /* NavigationBarChangePositonViewController.m */; };
@@ -266,6 +266,8 @@
 		7840FB231EB09CE900B553F7 /* NavigationBarBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NavigationBarBaseViewController.m; sourceTree = "<group>"; };
 		7840FB241EB09CE900B553F7 /* NavigationBarBaseViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NavigationBarBaseViewController.xib; sourceTree = "<group>"; };
 		7840FB271EB09E0700B553F7 /* bg@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "bg@2x.jpg"; sourceTree = "<group>"; };
+		7847389A1F0F1F4F00EF4C40 /* ShimmeringSwitchSlider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShimmeringSwitchSlider.h; sourceTree = "<group>"; };
+		7847389B1F0F1F4F00EF4C40 /* ShimmeringSwitchSlider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShimmeringSwitchSlider.m; sourceTree = "<group>"; };
 		7847521C1E8F862F00B24507 /* UIImage+CJChangeColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+CJChangeColor.h"; sourceTree = "<group>"; };
 		7847521D1E8F862F00B24507 /* UIImage+CJChangeColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+CJChangeColor.m"; sourceTree = "<group>"; };
 		784B7D481E7F7DE300299457 /* UIColor+CJHex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+CJHex.h"; sourceTree = "<group>"; };
@@ -279,9 +281,9 @@
 		787E101D1F0E28A500034A5C /* UITableView+CJEmptyView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableView+CJEmptyView.m"; sourceTree = "<group>"; };
 		789312581F00A8C500A91C29 /* btn_hd@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn_hd@2x.png"; sourceTree = "<group>"; };
 		789312591F00A8C500A91C29 /* btn_hd@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn_hd@3x.png"; sourceTree = "<group>"; };
-		7893125C1F00A8F300A91C29 /* OperateSliderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OperateSliderViewController.h; sourceTree = "<group>"; };
-		7893125D1F00A8F300A91C29 /* OperateSliderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OperateSliderViewController.m; sourceTree = "<group>"; };
-		7893125E1F00A8F300A91C29 /* OperateSliderViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OperateSliderViewController.xib; sourceTree = "<group>"; };
+		7893125C1F00A8F300A91C29 /* SwitchSliderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwitchSliderViewController.h; sourceTree = "<group>"; };
+		7893125D1F00A8F300A91C29 /* SwitchSliderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SwitchSliderViewController.m; sourceTree = "<group>"; };
+		7893125E1F00A8F300A91C29 /* SwitchSliderViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SwitchSliderViewController.xib; sourceTree = "<group>"; };
 		789CAB597AD073D5F637D193 /* Pods-CJUIKitDemoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CJUIKitDemoTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-CJUIKitDemoTests/Pods-CJUIKitDemoTests.release.xcconfig"; sourceTree = "<group>"; };
 		789CDB231EC0847E00D537D1 /* ScrollViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScrollViewController.h; sourceTree = "<group>"; };
 		789CDB241EC0847E00D537D1 /* ScrollViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScrollViewController.m; sourceTree = "<group>"; };
@@ -296,8 +298,6 @@
 		78DC6E6C1F0E90B000DC025C /* CJSwitchSliderStatusModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJSwitchSliderStatusModel.m; sourceTree = "<group>"; };
 		78DC6E6D1F0E90B000DC025C /* CJSwitchSlider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJSwitchSlider.h; sourceTree = "<group>"; };
 		78DC6E6E1F0E90B000DC025C /* CJSwitchSlider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJSwitchSlider.m; sourceTree = "<group>"; };
-		78DC6E6F1F0E90B000DC025C /* ShimmeringSwitchSlider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShimmeringSwitchSlider.h; sourceTree = "<group>"; };
-		78DC6E701F0E90B000DC025C /* ShimmeringSwitchSlider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShimmeringSwitchSlider.m; sourceTree = "<group>"; };
 		78DC6E751F0E90ED00DC025C /* CJAdsorbModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJAdsorbModel.h; sourceTree = "<group>"; };
 		78DC6E761F0E90ED00DC025C /* CJAdsorbModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJAdsorbModel.m; sourceTree = "<group>"; };
 		78E269A21ECA92B9007D3686 /* NavigationBarChangeBGViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NavigationBarChangeBGViewController.h; sourceTree = "<group>"; };
@@ -664,13 +664,14 @@
 		7840FAE01EB09C4500B553F7 /* CJSliderDemo */ = {
 			isa = PBXGroup;
 			children = (
+				784738991F0F1F4F00EF4C40 /* Views */,
 				7840FAE11EB09C4500B553F7 /* Resources */,
 				7840FAEC1EB09C4500B553F7 /* SliderViewController.h */,
 				7840FAED1EB09C4500B553F7 /* SliderViewController.m */,
 				7840FAEE1EB09C4500B553F7 /* SliderViewController.xib */,
-				7893125C1F00A8F300A91C29 /* OperateSliderViewController.h */,
-				7893125D1F00A8F300A91C29 /* OperateSliderViewController.m */,
-				7893125E1F00A8F300A91C29 /* OperateSliderViewController.xib */,
+				7893125C1F00A8F300A91C29 /* SwitchSliderViewController.h */,
+				7893125D1F00A8F300A91C29 /* SwitchSliderViewController.m */,
+				7893125E1F00A8F300A91C29 /* SwitchSliderViewController.xib */,
 			);
 			path = CJSliderDemo;
 			sourceTree = "<group>";
@@ -759,6 +760,15 @@
 			path = "UINavigationBar+CJCategory";
 			sourceTree = "<group>";
 		};
+		784738991F0F1F4F00EF4C40 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				7847389A1F0F1F4F00EF4C40 /* ShimmeringSwitchSlider.h */,
+				7847389B1F0F1F4F00EF4C40 /* ShimmeringSwitchSlider.m */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		784B7D471E7F7DE300299457 /* UIColor+CJCategory */ = {
 			isa = PBXGroup;
 			children = (
@@ -845,8 +855,6 @@
 				78DC6E6C1F0E90B000DC025C /* CJSwitchSliderStatusModel.m */,
 				78DC6E6D1F0E90B000DC025C /* CJSwitchSlider.h */,
 				78DC6E6E1F0E90B000DC025C /* CJSwitchSlider.m */,
-				78DC6E6F1F0E90B000DC025C /* ShimmeringSwitchSlider.h */,
-				78DC6E701F0E90B000DC025C /* ShimmeringSwitchSlider.m */,
 			);
 			path = CJSwitchSlider;
 			sourceTree = "<group>";
@@ -1175,7 +1183,7 @@
 			files = (
 				781592E91EC40C8F00DE1976 /* SearchBarViewController.xib in Resources */,
 				78A355351EB32D62005C5A9A /* CJMJRefreshViewController.xib in Resources */,
-				789312601F00A8F300A91C29 /* OperateSliderViewController.xib in Resources */,
+				789312601F00A8F300A91C29 /* SwitchSliderViewController.xib in Resources */,
 				783658FB1ECFB4F100AF7591 /* FloatingWindowViewController.xib in Resources */,
 				7840FB081EB09C4500B553F7 /* slider_double_thumbImage_a@3x.png in Resources */,
 				7840FB281EB09E0700B553F7 /* bg@2x.jpg in Resources */,
@@ -1366,6 +1374,7 @@
 				78E61ED81E79AA20009B1627 /* CJKeyboardAvoidingScrollView.m in Sources */,
 				782709E31E8715A600E21433 /* UIImage+CJLaunchImage.m in Sources */,
 				7840FB211EB09C6E00B553F7 /* UINavigationBar+CJChangeBG.m in Sources */,
+				7847389C1F0F1F4F00EF4C40 /* ShimmeringSwitchSlider.m in Sources */,
 				783287FC1ED2214100A01A8A /* UIView+CJFind.m in Sources */,
 				780E46081E5DF87B00980127 /* AppDelegate.m in Sources */,
 				7832B2FE1F0A83AE0042B5D9 /* UIButton+CJUpDownStructure.m in Sources */,
@@ -1379,8 +1388,7 @@
 				7840FB1B1EB09C4600B553F7 /* ImageChangeColorViewController.m in Sources */,
 				78E269B31ECB0588007D3686 /* MyScaleHeadView.m in Sources */,
 				78E61ECF1E79AA20009B1627 /* CJImageView.m in Sources */,
-				78DC6E731F0E90B000DC025C /* ShimmeringSwitchSlider.m in Sources */,
-				7893125F1F00A8F300A91C29 /* OperateSliderViewController.m in Sources */,
+				7893125F1F00A8F300A91C29 /* SwitchSliderViewController.m in Sources */,
 				78E269AE1ECAF105007D3686 /* CJScaleHeadView.m in Sources */,
 				78E61F041E79AF0A009B1627 /* UIView+CJExtension.m in Sources */,
 				781592E81EC40C8F00DE1976 /* SearchBarViewController.m in Sources */,

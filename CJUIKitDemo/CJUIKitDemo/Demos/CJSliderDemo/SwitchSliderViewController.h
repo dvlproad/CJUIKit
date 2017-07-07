@@ -1,5 +1,5 @@
 //
-//  OperateSliderViewController.h
+//  SwitchSliderViewController.h
 //  CJUIKitDemo
 //
 //  Created by ciyouzen on 2017/6/26.
@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "ShimmeringSwitchSlider.h"
 
-@interface OperateSliderViewController : UIViewController
+@interface SwitchSliderViewController : UIViewController
 
 @property (nonatomic, strong) IBOutlet CJSwitchSlider *switchSlider;
 @property (nonatomic, strong) IBOutlet ShimmeringSwitchSlider *shimmeringSwitchSlider;

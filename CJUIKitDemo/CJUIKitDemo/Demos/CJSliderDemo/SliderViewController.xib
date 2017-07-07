@@ -120,7 +120,7 @@
                     <color key="backgroundColor" red="0.0" green="1" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
                     <state key="normal" title="事例"/>
                     <connections>
-                        <action selector="goOperateSliderViewController:" destination="-2" eventType="touchUpInside" id="WM5-jJ-4FK"/>
+                        <action selector="goSwitchSliderViewController:" destination="-2" eventType="touchUpInside" id="WM5-jJ-4FK"/>
                     </connections>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="选取的值是:52.00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5ND-Xd-tgf">

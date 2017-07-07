@@ -1,23 +1,23 @@
 //
-//  OperateSliderViewController.m
+//  SwitchSliderViewController.m
 //  CJUIKitDemo
 //
 //  Created by ciyouzen on 2017/6/26.
 //  Copyright © 2017年 dvlproad. All rights reserved.
 //
 
-#import "OperateSliderViewController.h"
+#import "SwitchSliderViewController.h"
 #import "UIImage+CJCreate.h"
 #import "UIImage+CJTransformSize.h"
 
 
-@interface OperateSliderViewController () {
+@interface SwitchSliderViewController () {
     
 }
 
 @end
 
-@implementation OperateSliderViewController
+@implementation SwitchSliderViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];

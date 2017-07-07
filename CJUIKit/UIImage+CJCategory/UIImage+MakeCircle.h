@@ -2,7 +2,7 @@
 //  UIImage+MakeCircle.h
 //  CJUIKitDemo
 //
-//  Created by lichq on 15-1-30.
+//  Created by ciyouzen on 15-1-30.
 //  Copyright (c) 2015年 lichq. All rights reserved.
 //
 
