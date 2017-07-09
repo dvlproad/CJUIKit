@@ -7,8 +7,6 @@
 //
 
 #import "CJSwitchSlider.h"
-#import "UIImage+CJCreate.h"
-#import "UIImage+CJTransformSize.h"
 
 @interface CJSwitchSlider () <CJSliderControlDelegate>
 

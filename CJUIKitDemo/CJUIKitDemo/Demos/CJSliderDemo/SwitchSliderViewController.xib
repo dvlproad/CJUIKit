@@ -13,6 +13,8 @@
             <connections>
                 <outlet property="operateSliderControlValueLabel" destination="LiC-Se-Zoa" id="kAc-6C-JEL"/>
                 <outlet property="shimmeringSwitchSlider" destination="60T-7f-kz0" id="M9c-0y-2m9"/>
+                <outlet property="sliderControl3" destination="QaP-yd-mu8" id="Bjp-m2-AJx"/>
+                <outlet property="sliderControlValueLabel3" destination="07p-5A-0tq" id="6om-eX-0Lp"/>
                 <outlet property="switchSlider" destination="2K9-XZ-Ef7" id="cR8-Pc-eMa"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -39,6 +41,18 @@
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" red="0.41176471110000001" green="0.75686275960000005" blue="0.9529411793" alpha="1" colorSpace="calibratedRGB"/>
                 </view>
+                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QaP-yd-mu8" customClass="CJSliderControl">
+                    <rect key="frame" x="43" y="136" width="287" height="34"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </view>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="选取的值是:52.00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="07p-5A-0tq">
+                    <rect key="frame" x="43" y="112" width="288" height="21"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <color key="backgroundColor" red="0.81960784310000001" green="0.81960784310000001" blue="0.81960784310000001" alpha="1" colorSpace="calibratedRGB"/>
             <point key="canvasLocation" x="33.5" y="86.5"/>

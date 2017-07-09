@@ -90,7 +90,12 @@ static NSTimeInterval const kCJSliderControlDidTapSlidAnimationDuration  = 0.3f;
     _thumbSize = CGSizeMake(30, 30);
     _popoverSize = CGSizeMake(30, 32);
     
-    [self addSubview:self.trackImageView];
+    if (!_trackImageView) {
+        _trackImageView = [[UIImageView alloc] initWithFrame:CGRectZero];
+        _trackImageView.layer.masksToBounds = YES;
+        [self addSubview:_trackImageView];
+    }
+    
     
     if (!_minimumTrackImageView) {
         _minimumTrackImageView = [[UIImageView alloc] initWithFrame:CGRectZero];
@@ -110,22 +115,9 @@ static NSTimeInterval const kCJSliderControlDidTapSlidAnimationDuration  = 0.3f;
 }
 
 #pragma mark - Lazy
-- (UIImageView *)trackImageView {
-    if (!_trackImageView) {
-        UIImage *backgroundImage = [UIImage imageNamed:@"slider_maximum_trackimage"];
-        UIEdgeInsets insets = UIEdgeInsetsMake(3, 7, 3, 7);
-        backgroundImage = [backgroundImage resizableImageWithCapInsets:insets resizingMode:UIImageResizingModeStretch];
-        _trackImageView = [[UIImageView alloc] initWithImage:backgroundImage];
-        _trackImageView.layer.masksToBounds = YES;
-    }
-    return _trackImageView;
-}
-
 - (UIButton *)mainThumb {
     if (!_mainThumb) {
         _mainThumb = [self createThumb];
-        
-        [_mainThumb setImage:[UIImage imageNamed:@"slider_thumbImage"] forState:UIControlStateNormal];
     }
     return _mainThumb;
 }
@@ -608,9 +600,6 @@ static NSTimeInterval const kCJSliderControlDidTapSlidAnimationDuration  = 0.3f;
             //这里采用监听机制来优化,这样就不用每次self.leftThumb.frame\self.value改变的时候再去调用要执行的方法
             [self addObserver:self forKeyPath:@"self.leftThumb.frame" options:NSKeyValueObservingOptionNew|NSKeyValueObservingOptionOld context:nil];
             [self addObserver:self forKeyPath:@"self.baseValue" options:NSKeyValueObservingOptionNew|NSKeyValueObservingOptionOld context:nil];
-            
-            
-            [_leftThumb setBackgroundImage:[UIImage imageNamed:@"slider_thumbImage"] forState:UIControlStateNormal];
         }
     }
 }
@@ -622,8 +611,6 @@ static NSTimeInterval const kCJSliderControlDidTapSlidAnimationDuration  = 0.3f;
     [thumb addTarget:self action:@selector(buttonEndDrag:) forControlEvents:UIControlEventTouchUpInside | UIControlEventTouchUpOutside];
     
     thumb.adjustsImageWhenHighlighted = NO;
-    
-    [thumb setImage:[UIImage imageNamed:@"slider_thumbImage"] forState:UIControlStateNormal];
     
     return thumb;
 }

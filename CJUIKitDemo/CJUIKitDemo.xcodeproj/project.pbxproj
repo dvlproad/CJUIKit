@@ -88,6 +88,8 @@
 		7893125B1F00A8C500A91C29 /* btn_hd@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 789312591F00A8C500A91C29 /* btn_hd@3x.png */; };
 		7893125F1F00A8F300A91C29 /* SwitchSliderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7893125D1F00A8F300A91C29 /* SwitchSliderViewController.m */; };
 		789312601F00A8F300A91C29 /* SwitchSliderViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7893125E1F00A8F300A91C29 /* SwitchSliderViewController.xib */; };
+		7898C92E1F12795900F06820 /* RangeSliderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7898C92C1F12795900F06820 /* RangeSliderViewController.m */; };
+		7898C92F1F12795900F06820 /* RangeSliderViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7898C92D1F12795900F06820 /* RangeSliderViewController.xib */; };
 		789CDB251EC0847E00D537D1 /* ScrollViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 789CDB241EC0847E00D537D1 /* ScrollViewController.m */; };
 		78A355341EB32D62005C5A9A /* CJMJRefreshViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78A355321EB32D62005C5A9A /* CJMJRefreshViewController.m */; };
 		78A355351EB32D62005C5A9A /* CJMJRefreshViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 78A355331EB32D62005C5A9A /* CJMJRefreshViewController.xib */; };
@@ -284,6 +286,9 @@
 		7893125C1F00A8F300A91C29 /* SwitchSliderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwitchSliderViewController.h; sourceTree = "<group>"; };
 		7893125D1F00A8F300A91C29 /* SwitchSliderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SwitchSliderViewController.m; sourceTree = "<group>"; };
 		7893125E1F00A8F300A91C29 /* SwitchSliderViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SwitchSliderViewController.xib; sourceTree = "<group>"; };
+		7898C92B1F12795900F06820 /* RangeSliderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RangeSliderViewController.h; sourceTree = "<group>"; };
+		7898C92C1F12795900F06820 /* RangeSliderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RangeSliderViewController.m; sourceTree = "<group>"; };
+		7898C92D1F12795900F06820 /* RangeSliderViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RangeSliderViewController.xib; sourceTree = "<group>"; };
 		789CAB597AD073D5F637D193 /* Pods-CJUIKitDemoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CJUIKitDemoTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-CJUIKitDemoTests/Pods-CJUIKitDemoTests.release.xcconfig"; sourceTree = "<group>"; };
 		789CDB231EC0847E00D537D1 /* ScrollViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScrollViewController.h; sourceTree = "<group>"; };
 		789CDB241EC0847E00D537D1 /* ScrollViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScrollViewController.m; sourceTree = "<group>"; };
@@ -669,6 +674,9 @@
 				7840FAEC1EB09C4500B553F7 /* SliderViewController.h */,
 				7840FAED1EB09C4500B553F7 /* SliderViewController.m */,
 				7840FAEE1EB09C4500B553F7 /* SliderViewController.xib */,
+				7898C92B1F12795900F06820 /* RangeSliderViewController.h */,
+				7898C92C1F12795900F06820 /* RangeSliderViewController.m */,
+				7898C92D1F12795900F06820 /* RangeSliderViewController.xib */,
 				7893125C1F00A8F300A91C29 /* SwitchSliderViewController.h */,
 				7893125D1F00A8F300A91C29 /* SwitchSliderViewController.m */,
 				7893125E1F00A8F300A91C29 /* SwitchSliderViewController.xib */,
@@ -1204,6 +1212,7 @@
 				78FC3BB91ED53E700049F22D /* TextFieldViewController.xib in Resources */,
 				78E61ED21E79AA20009B1627 /* cjRefreshArrowDown@2x.png in Resources */,
 				7840FB071EB09C4500B553F7 /* slider_double_thumbImage_a@2x.png in Resources */,
+				7898C92F1F12795900F06820 /* RangeSliderViewController.xib in Resources */,
 				7840FB041EB09C4500B553F7 /* ImageViewController.xib in Resources */,
 				7840FB061EB09C4500B553F7 /* KeyboardAvoidingViewController.xib in Resources */,
 				7840FB101EB09C4600B553F7 /* slider_thumbImage@3x.png in Resources */,
@@ -1391,6 +1400,7 @@
 				7893125F1F00A8F300A91C29 /* SwitchSliderViewController.m in Sources */,
 				78E269AE1ECAF105007D3686 /* CJScaleHeadView.m in Sources */,
 				78E61F041E79AF0A009B1627 /* UIView+CJExtension.m in Sources */,
+				7898C92E1F12795900F06820 /* RangeSliderViewController.m in Sources */,
 				781592E81EC40C8F00DE1976 /* SearchBarViewController.m in Sources */,
 				783658FA1ECFB4F100AF7591 /* FloatingWindowViewController.m in Sources */,
 				783287FD1ED2214100A01A8A /* UIView+CJGestureRecognizer.m in Sources */,

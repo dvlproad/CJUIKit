@@ -10,6 +10,7 @@
 #import "UIImage+CJCreate.h"
 #import "UIImage+CJTransformSize.h"
 
+#import "RangeSliderViewController.h"
 #import "SwitchSliderViewController.h"
 
 @interface SliderViewController ()
@@ -95,53 +96,16 @@
     //self.sliderControl1.valueAccoringType = CJSliderValueAccoringTypeThumbMinX;
     self.sliderControl1.popoverType = CJSliderPopoverDispalyTypeNum; //设置popover显示的类型,百分比或者纯数字显示
     
+    UIImage *trackImage = [UIImage imageNamed:@"slider_maximum_trackimage"];
+    trackImage = [trackImage resizableImageWithCapInsets:UIEdgeInsetsMake(3, 7, 3, 7) resizingMode:UIImageResizingModeStretch];
+    [self.sliderControl1.trackImageView setImage:trackImage];
+    
     self.sliderControlValueLabel1.text = [NSString stringWithFormat:@"选取的值是: %.1f",self.sliderControl1.value];
-    
-    
-    [self.sliderControl2.trackImageView setBackgroundColor:[UIColor lightGrayColor]];
-    [self.sliderControl2.minimumTrackImageView setBackgroundColor:[UIColor yellowColor]];
-    [self.sliderControl2.maximumTrackImageView setBackgroundColor:[UIColor greenColor]];
-    self.sliderControl2.baseValue = 40; // 设置基准值
-    self.sliderControl2.minValue = 0.0f;
-    self.sliderControl2.maxValue = 100.0f;
-    self.sliderControl2.value = 80;
-    self.sliderControl2.trackHeight = 5;  // 设置滑道高度
-    self.sliderControl2.delegate = self;
-    self.sliderControl2.mainThumb.alpha = 0.5;
-    self.sliderControlValueLabel2.text = [NSString stringWithFormat:@"选取的区间是 : [ %.1f, %.1f ]",self.sliderControl2.baseValue, self.sliderControl2.value];
-    
-    self.sliderControl2.sliderType = CJSliderTypeRange;
-    UIImage *image2 = [UIImage imageNamed:@"slider_double_thumbImage_b"];
-    [self.sliderControl2.leftThumb setImage:image2 forState:UIControlStateNormal];//设置基准图片
-    self.sliderControl2.leftThumb.alpha = 0.5;
-    
-    self.sliderControl2.popoverType = CJSliderPopoverDispalyTypeNum;
-    
-    
-    
-    /*
-    CGRect baseSliderFrame = self.sliderControl3.frame;
-    baseSliderFrame.size.height = 40;
-    self.sliderControl3.frame = baseSliderFrame;
-    self.sliderControl3.backgroundColor = [UIColor greenColor];
-    */
-    self.sliderControl3.valueAccoringType = CJSliderValueAccoringTypeThumbMinX;
-    self.sliderControl3.mainThumb.alpha = 0.3;
-    self.sliderControl3.trackHeight = 30;
-    self.sliderControl3.thumbSize = CGSizeMake(60, 30);
-    UIImage *image3 = [mainThumbImage cj_transformImageToSize:CGSizeMake(160, 80)];
-    [self.sliderControl3.mainThumb setImage:image3 forState:UIControlStateNormal];
-    self.sliderControl3.adsorbInfos = @[[[CJAdsorbModel alloc] initWithMin:0 max:0.70 toValue:0],
-                                        [[CJAdsorbModel alloc] initWithMin:0.7 max:1 toValue:1]];
-    self.sliderControl3.delegate = self;
-    
-    
-    /* CJRangeSliderControl */
-    self.rangeSliderControl.minValue = 0.0f;    //设置滑竿的最小值
-    self.rangeSliderControl.maxValue = 100.0f;  //设置滑竿的最大值
-    self.rangeSliderControl.delegate = self;
-    
-    self.rangeSliderControlValueLabel.text = [NSString stringWithFormat:@"选取的区间是 : [ %.1f, %.1f ]",self.rangeSliderControl.minValue, self.rangeSliderControl.maxValue];
+}
+
+- (IBAction)goRangeSliderViewController:(id)sender {
+    RangeSliderViewController *viewController = [[RangeSliderViewController alloc] initWithNibName:@"RangeSliderViewController" bundle:nil];
+    [self.navigationController pushViewController:viewController animated:YES];
 }
 
 - (IBAction)goSwitchSliderViewController:(id)sender {
@@ -155,19 +119,7 @@
     NSLog(@"slider value is %1.2f",value);
     if (slider == self.sliderControl1) {
         self.sliderControlValueLabel1.text = [NSString stringWithFormat:@"选取的值是: %.2f", value];
-    } else if (slider == self.sliderControl2) {
-        self.sliderControlValueLabel2.text = [NSString stringWithFormat:@"选取的区间是 : [ %.1f, %.1f ]",self.sliderControl2.baseValue, self.sliderControl2.value];
-    } else if (slider == self.sliderControl3) {
-        self.sliderControlValueLabel3.text = [NSString stringWithFormat:@"选取的值是: %.2f", value];
     }
-}
-
-
-#pragma mark - CJRangeSliderControlDelegate
-- (void)rangeSlider:(CJRangeSliderControl *)slider didChangedMinValue:(CGFloat)minValue didChangedMaxValue:(CGFloat)maxValue {
-    NSLog(@"rangeSlider rangion:%f,%f",minValue,maxValue);
-    
-    self.rangeSliderControlValueLabel.text = [NSString stringWithFormat:@"选取的区间是 : [ %.1f, %.1f ]",minValue,maxValue];
 }
 
 

@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "CJBaseUIKit"
-  s.version      = "0.0.14"
+  s.version      = "0.0.15"
   s.summary      = "自定义的基础UI"
   s.homepage     = "https://github.com/dvlproad/CJUIKit"
 
@@ -35,7 +35,7 @@ Pod::Spec.new do |s|
 
   s.platform     = :ios, "7.0"
  
-  s.source       = { :git => "https://github.com/dvlproad/CJUIKit.git", :tag => "UITextField_0.0.14" }
+  s.source       = { :git => "https://github.com/dvlproad/CJUIKit.git", :tag => "CJSlider_0.0.15" }
   s.source_files  = "CJUIKit/*.{h,m}"
 
   s.frameworks = "UIKit"
@@ -83,17 +83,8 @@ Pod::Spec.new do |s|
 
 
   s.subspec 'CJSlider' do |ss|
-    ss.source_files = "CJUIKit/CJSlider/*.{h,m}", "CJUIKit/CJSlider/Model/**/*.{h,m}"
-
-    ss.subspec 'CJPlayerSlider' do |sss|
-      sss.source_files = "CJUIKit/CJSlider/CJPlayerSlider/**/*.{h,m}"
-    end
-
-    ss.subspec 'CJSliderControl' do |sss|
-      sss.source_files = "CJUIKit/CJSlider/CJSliderControl/**/*.{h,m}"
-      sss.dependency 'CJBaseUIKit/UIImage+CJCategory', '~> 0.0.7'
-    end
-    
+    # ss.source_files = "CJUIKit/CJSlider/*.{h,m}", "CJUIKit/CJSlider/CJAdsorbModel/**/*.{h,m}"
+    ss.source_files = "CJUIKit/CJSlider/**/*.{h,m}"
   end
   
 

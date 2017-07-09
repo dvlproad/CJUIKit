@@ -11,9 +11,6 @@
 #import "CJSliderThumb.h"
 #import "CJSliderPopover.h"
 
-#import "UIImage+CJCreate.h"
-#import "UIImage+CJTransformSize.h"
-
 static CGFloat const kCJRangeSliderControlLeftPadding                         = 10.0f;
 static CGFloat const kCJRangeSliderControlBackgroundImageViewHeight           = 15.0f;
 static CGFloat const kCJRangeSliderControlThumbSizeWidth                      = 30.0f;
@@ -345,7 +342,7 @@ static NSTimeInterval const kMTRngeSliderDidTapSlidAnimationDuration   = 0.3f;
         
         UIImage *backgroundImage = [UIImage imageNamed:@"slider_maximum_trackimage"];
         UIEdgeInsets insets = UIEdgeInsetsMake(3, 7, 3, 7);
-        backgroundImage = [backgroundImage cj_resizableImageWithCapInsets:insets];
+        backgroundImage = [backgroundImage resizableImageWithCapInsets:insets resizingMode:UIImageResizingModeStretch];
         _backgroundImageView = [[UIImageView alloc] initWithImage:backgroundImage];
         _backgroundImageView.userInteractionEnabled = YES;
         _backgroundImageView.layer.cornerRadius = kCJRangeSliderControlBackgroundViewCornerRadius;
@@ -361,7 +358,7 @@ static NSTimeInterval const kMTRngeSliderDidTapSlidAnimationDuration   = 0.3f;
         
         UIImage *frontImageView = [UIImage imageNamed:@"slider_minimum_trackimage"];
         UIEdgeInsets insets = UIEdgeInsetsMake(0, 5, 0, 5);
-        frontImageView = [frontImageView cj_resizableImageWithCapInsets:insets];
+        frontImageView = [frontImageView resizableImageWithCapInsets:insets resizingMode:UIImageResizingModeStretch];
         _frontImageView = [[UIImageView alloc] initWithImage:frontImageView];
         _frontImageView.userInteractionEnabled = YES;
         _frontImageView.layer.cornerRadius = kCJRangeSliderControlBackgroundViewCornerRadius;
