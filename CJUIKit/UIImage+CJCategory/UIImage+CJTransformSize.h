@@ -34,7 +34,13 @@ typedef NS_ENUM(NSUInteger, CJScaleType) {
  */
 - (UIImage *)cj_transformImageToSize:(CGSize)size;
 
-
+/**
+ *  将图片Stretch拉伸处理
+ *
+ *  @param insets 原始图像要被保护的区域
+ *
+ *  @return 返回拉伸后的图片
+ */
 - (UIImage *)cj_resizableImageWithCapInsets:(UIEdgeInsets)insets;
 
 

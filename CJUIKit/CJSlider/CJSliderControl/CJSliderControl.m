@@ -9,10 +9,6 @@
 #import "CJSliderControl.h"
 #import "CJSliderThumb.h"
 
-#import "UIImage+CJCreate.h"
-#import "UIImage+CJTransformSize.h"
-
-static CGFloat const kCJSliderControlLeftPadding                         = 30.0f;
 static NSTimeInterval const kCJSliderPopoverAnimationDuration     = 0.7f;
 static NSTimeInterval const kCJSliderControlDidTapSlidAnimationDuration  = 0.3f;
 
@@ -23,13 +19,6 @@ static NSTimeInterval const kCJSliderControlDidTapSlidAnimationDuration  = 0.3f;
 @property (nonatomic, assign, readonly) CGFloat thumbCanMoveWidth;  //滑块可滑动的实际大小
 
 @property (nonatomic, assign) CGRect lastFrame;
-
-@property (nonatomic, strong) UIImageView *trackImageView;
-@property (nonatomic, strong) UIImageView *minimumTrackImageView;
-
-@property (nonatomic, strong) UIButton *mainThumb;
-@property (nonatomic, strong) UIButton *leftThumb;
-
 
 @property (nonatomic, strong) CJSliderPopover *popover;
 
@@ -102,9 +91,45 @@ static NSTimeInterval const kCJSliderControlDidTapSlidAnimationDuration  = 0.3f;
     _popoverSize = CGSizeMake(30, 32);
     
     [self addSubview:self.trackImageView];
-    [self addSubview:self.minimumTrackImageView];
+    
+    if (!_minimumTrackImageView) {
+        _minimumTrackImageView = [[UIImageView alloc] initWithFrame:CGRectZero];
+        _minimumTrackImageView.backgroundColor = [UIColor magentaColor];
+        _minimumTrackImageView.layer.masksToBounds = YES;
+        [self addSubview:_minimumTrackImageView];
+    }
+    
+    
+    if (!_maximumTrackImageView) {
+        _maximumTrackImageView = [[UIImageView alloc] initWithFrame:CGRectZero];
+        _maximumTrackImageView.layer.masksToBounds = YES;
+        [self addSubview:_maximumTrackImageView];
+    }
+    
     [self addSubview:self.mainThumb];
 }
+
+#pragma mark - Lazy
+- (UIImageView *)trackImageView {
+    if (!_trackImageView) {
+        UIImage *backgroundImage = [UIImage imageNamed:@"slider_maximum_trackimage"];
+        UIEdgeInsets insets = UIEdgeInsetsMake(3, 7, 3, 7);
+        backgroundImage = [backgroundImage resizableImageWithCapInsets:insets resizingMode:UIImageResizingModeStretch];
+        _trackImageView = [[UIImageView alloc] initWithImage:backgroundImage];
+        _trackImageView.layer.masksToBounds = YES;
+    }
+    return _trackImageView;
+}
+
+- (UIButton *)mainThumb {
+    if (!_mainThumb) {
+        _mainThumb = [self createThumb];
+        
+        [_mainThumb setImage:[UIImage imageNamed:@"slider_thumbImage"] forState:UIControlStateNormal];
+    }
+    return _mainThumb;
+}
+
 
 
 - (void)layoutSubviews {
@@ -157,7 +182,12 @@ static NSTimeInterval const kCJSliderControlDidTapSlidAnimationDuration  = 0.3f;
     }
     CGFloat trackImageViewWidth = CGRectGetWidth(bounds) - 2*trackImageViewOriginX;
     
-    _thumbCanMoveWidth = trackImageViewWidth - self.thumbSize.width; //滑块可滑动的实际大小
+    if (self.valueAccoringType == CJSliderValueAccoringTypeThumbMinX) {
+        _thumbCanMoveWidth = trackImageViewWidth - self.thumbSize.width; //滑块可滑动的实际大小
+    } else {
+        _thumbCanMoveWidth = trackImageViewWidth; //滑块可滑动的实际大小
+    }
+    
     
     return CGRectMake(trackImageViewOriginX, trackImageViewOriginY, trackImageViewWidth,trackImageViewHeight);
 }
@@ -282,20 +312,22 @@ static NSTimeInterval const kCJSliderControlDidTapSlidAnimationDuration  = 0.3f;
     //minimumTrackImageView.frame
     CGFloat basePointX = [self pointXForBounds:self.bounds trackRect:trackRect value:self.baseValue];
     
-    CGFloat rangeOriginX = 0;
+    CGFloat rangeMinX = 0;
     CGFloat rangeWidth = 0;
     if (self.valueAccoringType == CJSliderValueAccoringTypeThumbMidX) {
-        rangeOriginX = MIN(CGRectGetMidX(self.mainThumb.frame), basePointX);
+        rangeMinX = MIN(CGRectGetMidX(self.mainThumb.frame), basePointX);
         rangeWidth = ABS(CGRectGetMidX(self.mainThumb.frame) - basePointX);
     } else {
-        rangeOriginX = MIN(CGRectGetMinX(self.mainThumb.frame), basePointX);
+        rangeMinX = MIN(CGRectGetMinX(self.mainThumb.frame), basePointX);
         rangeWidth = ABS(CGRectGetMinX(self.mainThumb.frame) - basePointX);
     }
     
     CGFloat rangeHeight = CGRectGetHeight(trackRect);
     CGFloat rangeOriginY = CGRectGetMinY(trackRect);
     
-    self.minimumTrackImageView.frame = CGRectMake(rangeOriginX, rangeOriginY, rangeWidth, rangeHeight);
+    CGFloat rangeMaxX = rangeMinX+rangeWidth;
+    self.minimumTrackImageView.frame = CGRectMake(rangeMinX, rangeOriginY, rangeWidth, rangeHeight);
+    self.maximumTrackImageView.frame = CGRectMake(rangeMaxX, rangeOriginY, CGRectGetMaxX(trackRect)-rangeMaxX, rangeHeight);
     
     //popover
     if (self.popoverType != CJSliderPopoverDispalyTypeNone) {
@@ -310,7 +342,12 @@ static NSTimeInterval const kCJSliderControlDidTapSlidAnimationDuration  = 0.3f;
  *  更新slider的值显示
  */
 - (void)doSomethingWhenCompleteUpdateFrameForThumb:(UIButton *)thumb {
-    CGFloat percent = self.value /(_maxValue - _minValue);
+    CGFloat percent = 0;
+    if (thumb == _mainThumb) {
+        percent = self.value /(_maxValue - _minValue);
+    } else {
+        percent = self.baseValue /(_maxValue - _minValue);
+    }
     
     if (self.popoverType != CJSliderPopoverDispalyTypeNone) {
         [self showPopoverTextWithPercentValue:percent animated:YES];
@@ -556,132 +593,39 @@ static NSTimeInterval const kCJSliderControlDidTapSlidAnimationDuration  = 0.3f;
 
 
 #pragma mark - Getter and Setter
-- (UIImageView *)trackImageView {
-    if (!_trackImageView) {
-        UIImage *backgroundImage = [UIImage imageNamed:@"slider_maximum_trackimage"];
-        UIEdgeInsets insets = UIEdgeInsetsMake(3, 7, 3, 7);
-        backgroundImage = [backgroundImage cj_resizableImageWithCapInsets:insets];
-        _trackImageView = [[UIImageView alloc] initWithImage:backgroundImage];
-//        _trackImageView.layer.cornerRadius = 8;
-        _trackImageView.layer.masksToBounds = YES;
-    }
-    return _trackImageView;
-}
-
-- (UIImageView *)minimumTrackImageView {
-    if (!_minimumTrackImageView) {
-        UIImage *minimumTrackImageView = [UIImage imageNamed:@"slider_minimum_trackimage"];
-        UIEdgeInsets insets = UIEdgeInsetsMake(0, 5, 0, 5);
-        minimumTrackImageView = [minimumTrackImageView cj_resizableImageWithCapInsets:insets];
-        _minimumTrackImageView = [[UIImageView alloc] initWithImage:minimumTrackImageView];
-//        _minimumTrackImageView.layer.cornerRadius = kCJSliderControlBackgroundViewCornerRadius;
-        _minimumTrackImageView.layer.masksToBounds = YES;
-    }
-    return _minimumTrackImageView;
-}
-
-- (UIButton *)mainThumb {
-    if (!_mainThumb) {
-        _mainThumb = [self createThumb];
+- (void)setSliderType:(CJSliderType)sliderType {
+    if (sliderType == CJSliderTypeNormal) {
+        if (!_leftThumb) {
+            [_leftThumb removeFromSuperview];
+        }
         
-        [_mainThumb setImage:[UIImage imageNamed:@"slider_thumbImage"] forState:UIControlStateNormal];
-//        [_mainThumb setBackgroundImage:[UIImage imageNamed:@"slider_thumbImage"] forState:UIControlStateNormal]; //注意①、不要使用setImage来设置图片，要使用setBackgroundImage来设置
+    } else if (sliderType == CJSliderTypeRange) {
+        if (!_leftThumb) {
+            _leftThumb = [self createThumb];
+            [self insertSubview:_leftThumb aboveSubview:self.minimumTrackImageView];
+            
+            //注册通知：self.leftThumb.frame更新的时候需要去更新选中区域 以及 value
+            //这里采用监听机制来优化,这样就不用每次self.leftThumb.frame\self.value改变的时候再去调用要执行的方法
+            [self addObserver:self forKeyPath:@"self.leftThumb.frame" options:NSKeyValueObservingOptionNew|NSKeyValueObservingOptionOld context:nil];
+            [self addObserver:self forKeyPath:@"self.baseValue" options:NSKeyValueObservingOptionNew|NSKeyValueObservingOptionOld context:nil];
+            
+            
+            [_leftThumb setBackgroundImage:[UIImage imageNamed:@"slider_thumbImage"] forState:UIControlStateNormal];
+        }
     }
-    return _mainThumb;
 }
+
 
 - (UIButton *)createThumb {
     UIButton *thumb = [UIButton buttonWithType:UIButtonTypeCustom];
-        [thumb addTarget:self action:@selector(buttonDidDrag:withEvent:) forControlEvents:UIControlEventTouchDragInside];
-        [thumb addTarget:self action:@selector(buttonEndDrag:) forControlEvents:UIControlEventTouchUpInside | UIControlEventTouchUpOutside];
-      
-        
-        thumb.adjustsImageWhenHighlighted = NO;
-        
-//        UIImage *thumbImage = [UIImage imageNamed:@"slider_thumbImage"];
-//        thumbImage = [thumbImage cj_transformImageToSize:CGSizeMake(kCJSliderThumbSizeWidth, kCJSliderThumbSizeHeight)];
-//        [thumb setImage:thumbImage forState:UIControlStateNormal];
-//        UIImage *colorImage = [UIImage cj_imageWithColor:[UIColor redColor] size:CGSizeMake(10, 10)];
+    [thumb addTarget:self action:@selector(buttonDidDrag:withEvent:) forControlEvents:UIControlEventTouchDragInside];
+    [thumb addTarget:self action:@selector(buttonEndDrag:) forControlEvents:UIControlEventTouchUpInside | UIControlEventTouchUpOutside];
     
-//        [thumb setImage:colorImage forState:UIControlStateNormal];
-//        [thumb setBackgroundImage:colorImage forState:UIControlStateNormal];
-        [thumb setImage:[UIImage imageNamed:@"slider_thumbImage"] forState:UIControlStateNormal];
-//        [thumb setBackgroundImage:[UIImage imageNamed:@"slider_thumbImage"] forState:UIControlStateNormal]; //注意①、不要使用setImage来设置图片，要使用setBackgroundImage来设置
+    thumb.adjustsImageWhenHighlighted = NO;
     
-//        [thumb setImage:[UIImage imageNamed:@"slider_thumbImage"] forState:UIControlStateNormal];
-//        [thumb setImage:[UIImage imageNamed:@"slider_thumbImage"] forState:UIControlStateSelected];
-        
-//        [thumb setImage:[UIImage imageNamed:@"slider_double_thumbImage_a"] forState:UIControlStateNormal];
-//        [thumb setImage:[UIImage imageNamed:@"slider_double_thumbImage_b"] forState:UIControlStateSelected];
+    [thumb setImage:[UIImage imageNamed:@"slider_thumbImage"] forState:UIControlStateNormal];
     
     return thumb;
-}
-
-- (void)setMainThumbImage:(UIImage *)mainThumbImage {
-    _mainThumbImage = mainThumbImage;
-    
-    [self.mainThumb setImage:mainThumbImage forState:UIControlStateNormal];
-//    [self.mainThumb setBackgroundImage:mainThumbImage forState:UIControlStateNormal];
-    //注意①、不要使用setImage来设置图片，要使用setBackgroundImage来设置
-}
-
-- (void)setMainThumbAlpha:(CGFloat)mainThumbAlpha {
-    _mainThumbAlpha = mainThumbAlpha;
-    
-    self.mainThumb.alpha = mainThumbAlpha;
-}
-
-
-- (void)setMinimumTrackTintColor:(UIColor *)minimumTrackTintColor {
-    _minimumTrackTintColor = minimumTrackTintColor;
-    
-    UIImage *image = [UIImage cj_imageWithColor:minimumTrackTintColor size:self.thumbSize];
-    self.minimumTrackImageView.image = image;
-}
-
-- (void)setMinimumTrackImage:(UIImage *)minimumTrackImage {
-    _minimumTrackImage = minimumTrackImage;
-    
-    self.minimumTrackImageView.image = minimumTrackImage;
-}
-
-- (void)setMaximumTrackTintColor:(UIColor *)maximumTrackTintColor {
-    _maximumTrackTintColor = maximumTrackTintColor;
-    
-    UIImage *image = [UIImage cj_imageWithColor:maximumTrackTintColor size:self.thumbSize];
-    self.trackImageView.image = image;
-}
-
-
-- (void)setMaximumTrackImage:(UIImage *)maximumTrackImage {
-    _maximumTrackImage = maximumTrackImage;
-    
-    self.trackImageView.image = maximumTrackImage;
-}
-
-- (void)setLeftThumbImage:(UIImage *)leftThumbImage {
-    _leftThumbImage = leftThumbImage;
-    
-    if (!_leftThumb) {
-        _leftThumb = [self createThumb];
-        
-        [_leftThumb setBackgroundImage:[UIImage imageNamed:@"slider_thumbImage"] forState:UIControlStateNormal];
-        [self insertSubview:_leftThumb aboveSubview:self.minimumTrackImageView];
-        
-        //注册通知：self.leftThumb.frame更新的时候需要去更新选中区域 以及 value
-        //这里采用监听机制来优化,这样就不用每次self.leftThumb.frame\self.value改变的时候再去调用要执行的方法
-        [self addObserver:self forKeyPath:@"self.leftThumb.frame" options:NSKeyValueObservingOptionNew|NSKeyValueObservingOptionOld context:nil];
-        [self addObserver:self forKeyPath:@"self.baseValue" options:NSKeyValueObservingOptionNew|NSKeyValueObservingOptionOld context:nil];
-    }
-    
-//    [self.leftThumb setImage:leftThumbImage forState:UIControlStateNormal];
-    [self.leftThumb setBackgroundImage:leftThumbImage forState:UIControlStateNormal];
-}
-
-- (void)setLeftThumbAlpha:(CGFloat)leftThumbAlpha {
-    _leftThumbAlpha = leftThumbAlpha;
-    
-    self.leftThumb.alpha = leftThumbAlpha;
 }
 
 

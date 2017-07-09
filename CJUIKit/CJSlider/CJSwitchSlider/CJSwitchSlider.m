@@ -76,8 +76,8 @@
     
     CJSwitchSliderStatusModel *nextStepStatusModel = [self.statusModels objectAtIndex:self.currentStep+1];
     
-    self.maximumTrackImage = currentStepStatusModel.image;
-    self.minimumTrackImage = nextStepStatusModel.image;
+    [self.trackImageView setImage:currentStepStatusModel.image];
+    [self.minimumTrackImageView setImage:nextStepStatusModel.image];
 }
 
 @end

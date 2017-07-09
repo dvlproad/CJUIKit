@@ -9,9 +9,9 @@
 #import <UIKit/UIKit.h>
 #import "CJAdsorbModel.h"
 
-typedef NS_ENUM(NSUInteger, CJSliderType) {
-    CJSliderTypeDefault,
-    CJSliderTypeRange,
+typedef NS_ENUM(NSUInteger, CJUISliderType) {
+    CJUISliderTypeDefault,
+    CJUISliderTypeRange,
 };
 
 /**
@@ -25,7 +25,7 @@ typedef NS_ENUM(NSUInteger, CJSliderType) {
 @property (nonatomic, strong) NSArray<CJAdsorbModel *> *adsorbInfos; /** 设置吸附信息(含吸附区间及该区间要吸附到什么值)，上面的值是具体的滑块值，不是百分比 */
 
 
-@property (nonatomic, assign) CJSliderType sliderType;
+@property (nonatomic, assign) CJUISliderType sliderType;
 
 //以下值，只当sliderType为CJSliderTypeRange时，才有用
 @property (nonatomic, assign) CGFloat basePercentValue; /** 基准值(默认50%，即为滑竿正中间) */

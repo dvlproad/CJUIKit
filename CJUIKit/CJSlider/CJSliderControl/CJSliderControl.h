@@ -12,6 +12,17 @@
 #import "CJAdsorbModel.h"
 
 @class CJSliderControl;
+
+typedef NS_ENUM(NSUInteger, CJSliderType) {
+    CJSliderTypeNormal,
+    CJSliderTypeRange,
+};
+
+typedef NS_ENUM(NSUInteger, CJSliderValueAccoringType) {
+    CJSliderValueAccoringTypeThumbMidX, /**< 滑块的中心点所在的值，即为slider的值此时滑道长为view长减去滑块长) */
+    CJSliderValueAccoringTypeThumbMinX, /**< 滑块的minX点所在的值，即为slider的值(此时滑道长即为view的长度) */
+};
+
 /**
  *   弹出框显示内容的枚举类型
  */
@@ -19,11 +30,6 @@ typedef NS_ENUM(NSUInteger, CJSliderPopoverDispalyType) {
     CJSliderPopoverDispalyTypeNone,         /**< 没有Popover */
     CJSliderPopoverDispalyTypeNum,          /**< 纯数字显示 */
     CJSliderPopoverDispalyTypePercent,      /**< 百分比显示 */
-};
-
-typedef NS_ENUM(NSUInteger, CJSliderValueAccoringType) {
-    CJSliderValueAccoringTypeThumbMidX, /**< 滑块的中心点所在的值，即为slider的值此时滑道长为view长减去滑块长) */
-    CJSliderValueAccoringTypeThumbMinX, /**< 滑块的minX点所在的值，即为slider的值(此时滑道长即为view的长度) */
 };
 
 @protocol CJSliderControlDelegate <NSObject>
@@ -51,7 +57,7 @@ typedef NS_ENUM(NSUInteger, CJSliderValueAccoringType) {
  *  单向滑竿、popover支持百分比和纯数字显示
  */
 @interface CJSliderControl : UIControl {
-    
+    //注意①、不要使用setImage来设置图片，要使用setBackgroundImage来设置
 }
 /**
  *  slider的值有什么确认（默认根据滑块的中心确认值）
@@ -66,22 +72,23 @@ typedef NS_ENUM(NSUInteger, CJSliderValueAccoringType) {
 @property (nonatomic, assign) CGFloat minValue;     /**< 最小值(默认0) */
 @property (nonatomic, assign) CGFloat maxValue;     /**< 最大值(默认1) */
 
+//滑道视图
+@property (nonatomic, strong) UIImageView *trackImageView;  /**< 滑道视图 */
 @property (nonatomic, assign) CGFloat trackHeight;  /**< 滑道高度 */
 @property (nonatomic, assign) CGSize thumbSize;     /**< 滑块大小 */
 
-@property (nonatomic, strong) UIColor *minimumTrackTintColor;   /**< 最小值方向滑竿颜色值 */
-@property (nonatomic, strong) UIImage *minimumTrackImage;       /**< 最小值方向滑竿的图片 */
-
-@property (nonatomic, strong) UIColor *maximumTrackTintColor;   /**< 最大值方向滑竿颜色值 */
-@property (nonatomic, strong) UIImage *maximumTrackImage;       /**< 最大值方向滑竿的图片 */
+@property (nonatomic, strong) UIImageView *minimumTrackImageView; /**< 主滑块左侧的视图 */
+@property (nonatomic, strong) UIImageView *maximumTrackImageView; /**< 主滑块右侧的视图 */
 
 @property (nonatomic, assign) CGFloat value;            /**< 当前值 */
-@property (nonatomic, strong) UIImage *mainThumbImage;  /**< 滑块图片,默认是橙色按钮 */
-@property (nonatomic, assign) CGFloat mainThumbAlpha;   /**< 主滑块的透明度 */
+
+//滑块视图
+@property (nonatomic, strong) UIButton *mainThumb;      /**< 主滑块视图 */
+@property (nonatomic, strong) UIButton *leftThumb;      /**< 主滑块左侧的另一个滑块 */
+@property (nonatomic, assign) CJSliderType sliderType;  /**< slider的类型 */
+
 
 @property (nonatomic, assign) CGFloat baseValue;        /**< 基准值(默认0) */
-@property (nonatomic, strong) UIImage *leftThumbImage;  /**< 左滑块的图片,默认是橙色按钮 */
-@property (nonatomic, assign) CGFloat leftThumbAlpha;   /**< 左滑块的透明度 */
 
 @property (nonatomic, assign) CJSliderPopoverDispalyType popoverType; /**< 弹出框的类型 */
 @property (nonatomic, assign) CGSize popoverSize;

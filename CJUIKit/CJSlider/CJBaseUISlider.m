@@ -139,13 +139,13 @@
  *
  *  @param sliderType 滑块样式(CJSliderType)
  */
-- (void)setSliderType:(CJSliderType)sliderType {
-    if (sliderType == CJSliderTypeDefault) {
+- (void)setSliderType:(CJUISliderType)sliderType {
+    if (sliderType == CJUISliderTypeDefault) {
         if (_rangeView) {
             [_rangeView removeFromSuperview];
         }
         
-    } else if (sliderType == CJSliderTypeRange) {
+    } else if (sliderType == CJUISliderTypeRange) {
         if (!_rangeView) { //有基准值的时候才有range
             _rangeView = [[UIView alloc] initWithFrame:CGRectZero];
             _rangeColor = [UIColor blueColor];

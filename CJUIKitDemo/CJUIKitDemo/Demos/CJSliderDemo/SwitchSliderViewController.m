@@ -56,7 +56,7 @@
     switchSlider.trackHeight = 65;
     switchSlider.thumbSize = CGSizeMake(58, 31);
     switchSlider.statusModels = sliderStatusModels;
-    switchSlider.mainThumbImage = [UIImage imageNamed:@"btn_hd.png"];
+    [switchSlider.mainThumb setImage:[UIImage imageNamed:@"btn_hd.png"] forState:UIControlStateNormal];
     [switchSlider showStep:0];
     
     [switchSlider setSwitchEventOccuBlock:^(NSInteger execStep){
