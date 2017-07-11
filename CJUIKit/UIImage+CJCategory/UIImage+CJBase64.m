@@ -3,7 +3,7 @@
 //  CJUIKitDemo
 //
 //  Created by ciyouzen on 14-12-26.
-//  Copyright (c) 2014年 lichq. All rights reserved.
+//  Copyright (c) 2014年 dvlproad. All rights reserved.
 //
 
 #import "UIImage+CJBase64.h"

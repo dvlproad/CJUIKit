@@ -81,6 +81,7 @@
 		7847521E1E8F862F00B24507 /* UIImage+CJChangeColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 7847521D1E8F862F00B24507 /* UIImage+CJChangeColor.m */; };
 		784B7D4A1E7F7DE300299457 /* UIColor+CJHex.m in Sources */ = {isa = PBXBuildFile; fileRef = 784B7D491E7F7DE300299457 /* UIColor+CJHex.m */; };
 		784C15E21E8E719A0019D652 /* UIImage+CJTransformSize.m in Sources */ = {isa = PBXBuildFile; fileRef = 784C15E11E8E719A0019D652 /* UIImage+CJTransformSize.m */; };
+		785088071F1466AA00B38F38 /* CJSwitchView.m in Sources */ = {isa = PBXBuildFile; fileRef = 785088061F1466AA00B38F38 /* CJSwitchView.m */; };
 		787E101A1F0E22A500034A5C /* TableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 787E10181F0E22A500034A5C /* TableViewController.m */; };
 		787E101B1F0E22A500034A5C /* TableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 787E10191F0E22A500034A5C /* TableViewController.xib */; };
 		787E101E1F0E28A500034A5C /* UITableView+CJEmptyView.m in Sources */ = {isa = PBXBuildFile; fileRef = 787E101D1F0E28A500034A5C /* UITableView+CJEmptyView.m */; };
@@ -276,6 +277,8 @@
 		784B7D491E7F7DE300299457 /* UIColor+CJHex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+CJHex.m"; sourceTree = "<group>"; };
 		784C15E01E8E719A0019D652 /* UIImage+CJTransformSize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+CJTransformSize.h"; sourceTree = "<group>"; };
 		784C15E11E8E719A0019D652 /* UIImage+CJTransformSize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+CJTransformSize.m"; sourceTree = "<group>"; };
+		785088051F1466AA00B38F38 /* CJSwitchView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJSwitchView.h; sourceTree = "<group>"; };
+		785088061F1466AA00B38F38 /* CJSwitchView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJSwitchView.m; sourceTree = "<group>"; };
 		787E10171F0E22A500034A5C /* TableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewController.h; sourceTree = "<group>"; };
 		787E10181F0E22A500034A5C /* TableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewController.m; sourceTree = "<group>"; };
 		787E10191F0E22A500034A5C /* TableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TableViewController.xib; sourceTree = "<group>"; };
@@ -786,6 +789,15 @@
 			path = "UIColor+CJCategory";
 			sourceTree = "<group>";
 		};
+		785088041F14668D00B38F38 /* CJSwitchView */ = {
+			isa = PBXGroup;
+			children = (
+				785088051F1466AA00B38F38 /* CJSwitchView.h */,
+				785088061F1466AA00B38F38 /* CJSwitchView.m */,
+			);
+			path = CJSwitchView;
+			sourceTree = "<group>";
+		};
 		78553FBC1E7D993300F320E6 /* CJSlider */ = {
 			isa = PBXGroup;
 			children = (
@@ -891,6 +903,7 @@
 			isa = PBXGroup;
 			children = (
 				78E61ECD1E79AA20009B1627 /* CJUIKit.h */,
+				785088041F14668D00B38F38 /* CJSwitchView */,
 				787E10151F0E228200034A5C /* UITableView */,
 				78FC3BBA1ED541850049F22D /* UITextField */,
 				783287F01ED2214100A01A8A /* UIView+CJCategory */,
@@ -1378,6 +1391,7 @@
 				789CDB251EC0847E00D537D1 /* ScrollViewController.m in Sources */,
 				78E61EDB1E79AA20009B1627 /* CJTextView.m in Sources */,
 				781592E31EC40C1700DE1976 /* CJSearchBar.m in Sources */,
+				785088071F1466AA00B38F38 /* CJSwitchView.m in Sources */,
 				78E61ED91E79AA20009B1627 /* CJKeyboardAvoidingTableView.m in Sources */,
 				780E460B1E5DF87B00980127 /* ViewController.m in Sources */,
 				78E61ED81E79AA20009B1627 /* CJKeyboardAvoidingScrollView.m in Sources */,

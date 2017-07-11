@@ -49,7 +49,7 @@ typedef NS_ENUM(NSUInteger, CJSliderPopoverDispalyType) {
  *  @param slider   当前slider控件
  *  @param value    吸附到的值
  */
-- (void)slider:(CJSliderControl *)slider adsorbToValue:(CGFloat)value;
+- (void)slider:(CJSliderControl *)slider adsorbToValue:(CGFloat)value animatedDuration:(CGFloat)animatedDuration;
 
 @end
 

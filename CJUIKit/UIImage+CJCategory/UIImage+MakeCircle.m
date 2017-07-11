@@ -3,7 +3,7 @@
 //  CJUIKitDemo
 //
 //  Created by ciyouzen on 15-1-30.
-//  Copyright (c) 2015年 lichq. All rights reserved.
+//  Copyright (c) 2015年 dvlproad. All rights reserved.
 //
 
 #import "UIImage+MakeCircle.h"

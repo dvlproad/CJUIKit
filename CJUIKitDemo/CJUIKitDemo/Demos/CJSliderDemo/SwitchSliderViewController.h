@@ -12,12 +12,15 @@
 @interface SwitchSliderViewController : UIViewController <CJSliderControlDelegate> {
     
 }
-
-@property (nonatomic, strong) IBOutlet CJSwitchSlider *switchSlider;
-@property (nonatomic, strong) IBOutlet ShimmeringSwitchSlider *shimmeringSwitchSlider;
-@property (nonatomic, strong) IBOutlet UILabel *operateSliderControlValueLabel;
-
 @property (nonatomic, weak) IBOutlet CJSliderControl *sliderControl3;
 @property (nonatomic, weak) IBOutlet UILabel *sliderControlValueLabel3;
+
+
+@property (nonatomic, strong) IBOutlet CJSwitchSlider *switchSlider;
+@property (nonatomic, strong) IBOutlet UILabel *switchSliderControlValueLabel;
+
+@property (nonatomic, strong) IBOutlet ShimmeringSwitchSlider *shimmeringSwitchSlider1;
+@property (nonatomic, strong) IBOutlet ShimmeringSwitchSlider *shimmeringSwitchSlider2;
+@property (nonatomic, strong) IBOutlet ShimmeringSwitchSlider *shimmeringSwitchSlider3;
 
 @end

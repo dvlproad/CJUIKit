@@ -11,8 +11,9 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SwitchSliderViewController">
             <connections>
-                <outlet property="operateSliderControlValueLabel" destination="LiC-Se-Zoa" id="kAc-6C-JEL"/>
-                <outlet property="shimmeringSwitchSlider" destination="60T-7f-kz0" id="M9c-0y-2m9"/>
+                <outlet property="shimmeringSwitchSlider1" destination="60T-7f-kz0" id="fHn-ZS-NlS"/>
+                <outlet property="shimmeringSwitchSlider2" destination="krl-UR-tZm" id="SOa-Sd-8Fo"/>
+                <outlet property="shimmeringSwitchSlider3" destination="bQ1-Nc-3YX" id="72n-TO-jsX"/>
                 <outlet property="sliderControl3" destination="QaP-yd-mu8" id="Bjp-m2-AJx"/>
                 <outlet property="sliderControlValueLabel3" destination="07p-5A-0tq" id="6om-eX-0Lp"/>
                 <outlet property="switchSlider" destination="2K9-XZ-Ef7" id="cR8-Pc-eMa"/>
@@ -29,15 +30,13 @@
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" red="0.41176471110000001" green="0.75686275960000005" blue="0.9529411793" alpha="1" colorSpace="calibratedRGB"/>
                 </view>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LiC-Se-Zoa">
-                    <rect key="frame" x="48" y="191" width="292" height="21"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <nil key="textColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
                 <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="60T-7f-kz0" customClass="ShimmeringSwitchSlider">
-                    <rect key="frame" x="48" y="284" width="292" height="44"/>
+                    <rect key="frame" x="48" y="311" width="292" height="44"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" red="0.41176471110000001" green="0.75686275960000005" blue="0.9529411793" alpha="1" colorSpace="calibratedRGB"/>
+                </view>
+                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="krl-UR-tZm" customClass="ShimmeringSwitchSlider">
+                    <rect key="frame" x="51" y="419" width="292" height="54"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" red="0.41176471110000001" green="0.75686275960000005" blue="0.9529411793" alpha="1" colorSpace="calibratedRGB"/>
                 </view>
@@ -50,6 +49,39 @@
                     <rect key="frame" x="43" y="112" width="288" height="21"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LiC-Se-Zoa">
+                    <rect key="frame" x="48" y="191" width="292" height="21"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bQ1-Nc-3YX" customClass="ShimmeringSwitchSlider">
+                    <rect key="frame" x="49" y="521" width="292" height="44"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" red="0.41176471110000001" green="0.75686275960000005" blue="0.9529411793" alpha="1" colorSpace="calibratedRGB"/>
+                </view>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="滑道左侧当下一步，滑道本身当当前步" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TFI-ob-fUE">
+                    <rect key="frame" x="50" y="492" width="295" height="21"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="滑道本身当下一步，滑道右侧当当前步" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u2M-ZX-NJb">
+                    <rect key="frame" x="51" y="390" width="295" height="21"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="背景色当下一步，滑道本身当当前步" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vrM-N3-joO">
+                    <rect key="frame" x="48" y="282" width="295" height="21"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>

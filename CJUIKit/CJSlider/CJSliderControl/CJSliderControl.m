@@ -86,12 +86,12 @@ static NSTimeInterval const kCJSliderControlDidTapSlidAnimationDuration  = 0.3f;
     
     _minValue = 0;
     _maxValue = 1;
-    _trackHeight = 15;
     _thumbSize = CGSizeMake(30, 30);
     _popoverSize = CGSizeMake(30, 32);
     
     if (!_trackImageView) {
         _trackImageView = [[UIImageView alloc] initWithFrame:CGRectZero];
+        _trackImageView.backgroundColor = [UIColor clearColor];
         _trackImageView.layer.masksToBounds = YES;
         [self addSubview:_trackImageView];
     }
@@ -99,7 +99,7 @@ static NSTimeInterval const kCJSliderControlDidTapSlidAnimationDuration  = 0.3f;
     
     if (!_minimumTrackImageView) {
         _minimumTrackImageView = [[UIImageView alloc] initWithFrame:CGRectZero];
-        _minimumTrackImageView.backgroundColor = [UIColor magentaColor];
+        _minimumTrackImageView.backgroundColor = [UIColor clearColor];
         _minimumTrackImageView.layer.masksToBounds = YES;
         [self addSubview:_minimumTrackImageView];
     }
@@ -107,6 +107,7 @@ static NSTimeInterval const kCJSliderControlDidTapSlidAnimationDuration  = 0.3f;
     
     if (!_maximumTrackImageView) {
         _maximumTrackImageView = [[UIImageView alloc] initWithFrame:CGRectZero];
+        _maximumTrackImageView.backgroundColor = [UIColor clearColor];
         _maximumTrackImageView.layer.masksToBounds = YES;
         [self addSubview:_maximumTrackImageView];
     }
@@ -163,6 +164,10 @@ static NSTimeInterval const kCJSliderControlDidTapSlidAnimationDuration  = 0.3f;
  *  @param bounds   整个视图的bounds
  */
 - (CGRect)trackRectForBounds:(CGRect)bounds {
+    if (self.trackHeight == 0 || self.trackHeight > CGRectGetHeight(bounds)) {
+        //NSLog(@"修正trackHeight的高度");
+        self.trackHeight = CGRectGetHeight(bounds);
+    }
     CGFloat trackImageViewHeight = self.trackHeight;
     CGFloat trackImageViewOriginY = CGRectGetHeight(bounds)/2 - trackImageViewHeight/2;
     
@@ -641,8 +646,8 @@ static NSTimeInterval const kCJSliderControlDidTapSlidAnimationDuration  = 0.3f;
             [self setValue:adsorbInfo.adsorbToValue animated:YES];
             
             [self sendActionsForControlEvents:UIControlEventValueChanged];
-            if (self.delegate && [self.delegate respondsToSelector:@selector(slider:adsorbToValue:)]) {
-                [self.delegate slider:self adsorbToValue:adsorbInfo.adsorbToValue];
+            if (self.delegate && [self.delegate respondsToSelector:@selector(slider:adsorbToValue:animatedDuration:)]) {
+                [self.delegate slider:self adsorbToValue:adsorbInfo.adsorbToValue animatedDuration:0.3];
             }
             break;
         }
@@ -650,7 +655,14 @@ static NSTimeInterval const kCJSliderControlDidTapSlidAnimationDuration  = 0.3f;
 }
 
 - (void)setValue:(float)value animated:(BOOL)animated {
-    self.value = value; //这样才能触发之前设置的KVO
+    if (animated) {
+        [UIView animateWithDuration:0.3 animations:^{
+            self.value = value;
+        }];
+        
+    } else {
+        self.value = value; //调用self.value这样才能触发之前设置的KVO
+    }
 }
 
 

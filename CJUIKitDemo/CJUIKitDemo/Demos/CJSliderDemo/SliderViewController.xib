@@ -73,7 +73,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Q2-DQ-mLL">
-                    <rect key="frame" x="67" y="509" width="255" height="30"/>
+                    <rect key="frame" x="71" y="412" width="255" height="30"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" red="0.54502182980000002" green="1" blue="0.48569014189999998" alpha="1" colorSpace="calibratedRGB"/>
                     <state key="normal" title="RangeSliderViewController"/>
@@ -82,7 +82,7 @@
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hTh-38-ADX">
-                    <rect key="frame" x="57" y="450" width="293" height="34"/>
+                    <rect key="frame" x="58" y="483" width="293" height="34"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" red="0.0" green="1" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
                     <state key="normal" title="SwitchSliderViewController"/>

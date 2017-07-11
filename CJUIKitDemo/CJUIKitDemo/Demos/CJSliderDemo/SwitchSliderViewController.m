@@ -24,10 +24,20 @@
     // Do any additional setup after loading the view from its nib.
     self.title = NSLocalizedString(@"SwitchSliderViewController", nil);
     
+    self.switchSlider.switchAnimatedType = CJSwitchAnimatedTypeNextStepInTrackImageViewCurrentInMaximumTrackImageView;
     [self commonSetupToSwitchSlider:self.switchSlider];
     
-    [self commonSetupToSwitchSlider:self.shimmeringSwitchSlider.switchSlider];
-    [self.shimmeringSwitchSlider.switchSlider reloadSlider];
+//    self.shimmeringSwitchSlider1.switchSlider.switchAnimatedType = CJSwitchAnimatedTypeNextStepInBackgroundColorViewCurrentInTrackImageView;
+//    [self commonSetupToSwitchSlider:self.shimmeringSwitchSlider1.switchSlider];
+//    [self.shimmeringSwitchSlider1.switchSlider reloadSlider];
+    
+    self.shimmeringSwitchSlider2.switchSlider.switchAnimatedType = CJSwitchAnimatedTypeNextStepInTrackImageViewCurrentInMaximumTrackImageView;
+    [self commonSetupToSwitchSlider:self.shimmeringSwitchSlider2.switchSlider];
+    [self.shimmeringSwitchSlider2.switchSlider reloadSlider];
+    
+    self.shimmeringSwitchSlider3.switchSlider.switchAnimatedType = CJSwitchAnimatedTypeNextStepInMinimumTrackImageViewCurrentInTrackImageView;
+    [self commonSetupToSwitchSlider:self.shimmeringSwitchSlider3.switchSlider];
+    [self.shimmeringSwitchSlider3.switchSlider reloadSlider];
     
     
     /*
@@ -76,7 +86,7 @@
         [sliderStatusModels addObject:statusModel];
     }
     
-    switchSlider.trackHeight = 65;
+    switchSlider.criticalValue = 0.5;
     switchSlider.thumbSize = CGSizeMake(58, 31);
     switchSlider.statusModels = sliderStatusModels;
     [switchSlider.mainThumb setImage:[UIImage imageNamed:@"btn_hd.png"] forState:UIControlStateNormal];

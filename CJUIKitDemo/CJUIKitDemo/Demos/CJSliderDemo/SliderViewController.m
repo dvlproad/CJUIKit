@@ -86,6 +86,13 @@
     UIImage *mainThumbImage = [UIImage imageNamed:@"bg.jpg"];
     
     /* 基于UIControl封装的CJSliderControl */
+    UIImage *trackImage = [UIImage imageNamed:@"slider_maximum_trackimage"];
+    trackImage = [trackImage resizableImageWithCapInsets:UIEdgeInsetsMake(3, 7, 3, 7) resizingMode:UIImageResizingModeStretch];
+    [self.sliderControl1.trackImageView setImage:trackImage];
+    //[self.sliderControl1.trackImageView setBackgroundColor:[UIColor redColor]];
+    [self.sliderControl1.minimumTrackImageView setBackgroundColor:[UIColor magentaColor]];
+    [self.sliderControl1.maximumTrackImageView setBackgroundColor:[UIColor clearColor]];
+    
     self.sliderControl1.minValue = 0.0f;        //设置滑竿的最小值
     self.sliderControl1.maxValue = 100.0f;      //设置滑竿的最大值
     self.sliderControl1.value = 52;
@@ -95,10 +102,6 @@
     self.sliderControl1.mainThumb.alpha = 0.5;
     //self.sliderControl1.valueAccoringType = CJSliderValueAccoringTypeThumbMinX;
     self.sliderControl1.popoverType = CJSliderPopoverDispalyTypeNum; //设置popover显示的类型,百分比或者纯数字显示
-    
-    UIImage *trackImage = [UIImage imageNamed:@"slider_maximum_trackimage"];
-    trackImage = [trackImage resizableImageWithCapInsets:UIEdgeInsetsMake(3, 7, 3, 7) resizingMode:UIImageResizingModeStretch];
-    [self.sliderControl1.trackImageView setImage:trackImage];
     
     self.sliderControlValueLabel1.text = [NSString stringWithFormat:@"选取的值是: %.1f",self.sliderControl1.value];
 }
