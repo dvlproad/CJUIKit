@@ -12,6 +12,7 @@
 @interface CJSwitchSliderStatusModel : NSObject
 
 @property (nonatomic, strong) UIImage *image;
+@property (nonatomic, strong) UIColor *dragingColor;
 @property (nonatomic, copy) NSString *title;
 @property (nonatomic, assign) BOOL goNextStepWhenSwitchEventOccur;   /**< 已默认初始化为YES(只对非最后一步有效) */
 

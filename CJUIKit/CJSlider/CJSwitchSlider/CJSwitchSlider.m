@@ -13,6 +13,8 @@
 }
 @property (nonatomic, strong) UIView *beforeBackgroundView;
 
+@property (nonatomic, strong, readonly) UIImageView *currentStepImageView;
+
 @end
 
 
@@ -36,11 +38,23 @@
 
 #pragma mark - CJSliderControlDelegate
 - (void)slider:(CJSliderControl *)slider didDargToValue:(CGFloat)value {
-    NSLog(@"slider value is %1.2f",value);
+    NSLog(@"slider value is %1.2f", value);
+    
+    CJSwitchSliderStatusModel *currentStepStatusModel = [self.statusModels objectAtIndex:self.currentStep];
+    if (currentStepStatusModel.dragingColor) {
+        [self.currentStepImageView setImage:nil];
+        [self.currentStepImageView setBackgroundColor:currentStepStatusModel.dragingColor];
+    }
 }
 
 - (void)slider:(CJSliderControl *)slider adsorbToValue:(CGFloat)value animatedDuration:(CGFloat)animatedDuration {
-    NSLog(@"slider adsorbToValue %1.2f",value);
+    NSLog(@"slider adsorbToValue %1.2f", value);
+    CJSwitchSliderStatusModel *currentStepStatusModel = [self.statusModels objectAtIndex:self.currentStep];
+    if (currentStepStatusModel.dragingColor) {
+        [self.currentStepImageView setImage:currentStepStatusModel.image];
+        [self.currentStepImageView setBackgroundColor:[UIColor clearColor]];
+    }
+    
     if (value >= 1.0) {
         if (self.switchEventOccuBlock) {
             self.switchEventOccuBlock(self.currentStep);
@@ -86,10 +100,12 @@
     CJSwitchSliderStatusModel *nextStepStatusModel = [self.statusModels objectAtIndex:self.currentStep+1];
     
     switch (self.switchAnimatedType) {
-        case CJSwitchAnimatedTypeNextStepInTrackImageViewCurrentInMaximumTrackImageView:
+        case CJSwitchAnimatedTypeCurrentStepInMaximumTrackImageView:
         {
-            [self.trackImageView setImage:nextStepStatusModel.image];
+            _currentStepImageView = self.maximumTrackImageView;
+            
             [self.maximumTrackImageView setImage:currentStepStatusModel.image];
+            [self.trackImageView setImage:nextStepStatusModel.image];
             
             /* //此种方法占用太大内存
             UIColor *nextStepColor = [UIColor colorWithPatternImage:nextStepStatusModel.image];
@@ -102,8 +118,10 @@
             
             break;
         }
-        case CJSwitchAnimatedTypeNextStepInMinimumTrackImageViewCurrentInTrackImageView:
+        case CJSwitchAnimatedTypeCurrentStepInTrackImageView:
         {
+            _currentStepImageView = self.trackImageView;
+            
             [self.trackImageView setImage:currentStepStatusModel.image];
             
 //            [self.minimumTrackImageView setImage:nextStepStatusModel.image];

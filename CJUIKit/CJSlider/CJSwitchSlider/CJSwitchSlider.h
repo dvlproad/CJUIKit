@@ -11,19 +11,14 @@
 
 typedef NS_ENUM(NSUInteger, CJSwitchAnimatedType) {
     /**
-     *  滑道本身当下一步，滑道右侧当当前步
+     *  滑道右侧当当前步,则相应的滑道本身当下一步
      */
-    CJSwitchAnimatedTypeNextStepInTrackImageViewCurrentInMaximumTrackImageView,
+    CJSwitchAnimatedTypeCurrentStepInMaximumTrackImageView,
     
     /**
-     *  滑道左侧当下一步，滑道本身当当前步
+     *  滑道本身当当前步,则相应的滑道左侧当下一步，
      */
-    CJSwitchAnimatedTypeNextStepInMinimumTrackImageViewCurrentInTrackImageView,
-    
-    /**
-     *  背景色当下一步，滑道本身当当前步
-     */
-//    CJSwitchAnimatedTypeNextStepInBackgroundColorViewCurrentInTrackImageView,
+    CJSwitchAnimatedTypeCurrentStepInTrackImageView
 };
 
 @interface CJSwitchSlider : CJSliderControl {

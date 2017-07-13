@@ -9,6 +9,7 @@
 #import "SwitchSliderViewController.h"
 #import "UIImage+CJCreate.h"
 #import "UIImage+CJTransformSize.h"
+#import "UIColor+CJHex.h"
 
 
 @interface SwitchSliderViewController () {
@@ -24,18 +25,18 @@
     // Do any additional setup after loading the view from its nib.
     self.title = NSLocalizedString(@"SwitchSliderViewController", nil);
     
-    self.switchSlider.switchAnimatedType = CJSwitchAnimatedTypeNextStepInTrackImageViewCurrentInMaximumTrackImageView;
+    self.switchSlider.switchAnimatedType = CJSwitchAnimatedTypeCurrentStepInMaximumTrackImageView;
     [self commonSetupToSwitchSlider:self.switchSlider];
     
 //    self.shimmeringSwitchSlider1.switchSlider.switchAnimatedType = CJSwitchAnimatedTypeNextStepInBackgroundColorViewCurrentInTrackImageView;
 //    [self commonSetupToSwitchSlider:self.shimmeringSwitchSlider1.switchSlider];
 //    [self.shimmeringSwitchSlider1.switchSlider reloadSlider];
     
-    self.shimmeringSwitchSlider2.switchSlider.switchAnimatedType = CJSwitchAnimatedTypeNextStepInTrackImageViewCurrentInMaximumTrackImageView;
+    self.shimmeringSwitchSlider2.switchSlider.switchAnimatedType = CJSwitchAnimatedTypeCurrentStepInMaximumTrackImageView;
     [self commonSetupToSwitchSlider:self.shimmeringSwitchSlider2.switchSlider];
     [self.shimmeringSwitchSlider2.switchSlider reloadSlider];
     
-    self.shimmeringSwitchSlider3.switchSlider.switchAnimatedType = CJSwitchAnimatedTypeNextStepInMinimumTrackImageViewCurrentInTrackImageView;
+    self.shimmeringSwitchSlider3.switchSlider.switchAnimatedType = CJSwitchAnimatedTypeCurrentStepInTrackImageView;
     [self commonSetupToSwitchSlider:self.shimmeringSwitchSlider3.switchSlider];
     [self.shimmeringSwitchSlider3.switchSlider reloadSlider];
     
@@ -69,6 +70,7 @@
     {
         CJSwitchSliderStatusModel *statusModel = [[CJSwitchSliderStatusModel alloc] init];
         statusModel.image = [UIImage imageNamed:@"icon_ddlb_jd.png"];
+        statusModel.dragingColor = [UIColor cjColorWithHexString:@"#0a6fa2"];
         statusModel.goNextStepWhenSwitchEventOccur = YES;
         [sliderStatusModels addObject:statusModel];
     }
@@ -76,6 +78,7 @@
     {
         CJSwitchSliderStatusModel *statusModel = [[CJSwitchSliderStatusModel alloc] init];
         statusModel.image = [UIImage imageNamed:@"icon_ddlb_hd.png"];
+        statusModel.dragingColor = [UIColor cjColorWithHexString:@"#cd3737"];
         statusModel.goNextStepWhenSwitchEventOccur = YES;
         [sliderStatusModels addObject:statusModel];
     }
