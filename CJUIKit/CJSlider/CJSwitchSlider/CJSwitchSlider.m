@@ -40,10 +40,18 @@
 - (void)slider:(CJSliderControl *)slider didDargToValue:(CGFloat)value {
     NSLog(@"slider value is %1.2f", value);
     
+    
     CJSwitchSliderStatusModel *currentStepStatusModel = [self.statusModels objectAtIndex:self.currentStep];
-    if (currentStepStatusModel.dragingColor) {
-        [self.currentStepImageView setImage:nil];
-        [self.currentStepImageView setBackgroundColor:currentStepStatusModel.dragingColor];
+    if (value == self.minValue) {
+        if (currentStepStatusModel.dragingColor) {
+            [self.currentStepImageView setImage:currentStepStatusModel.image];
+            [self.currentStepImageView setBackgroundColor:[UIColor clearColor]];
+        }
+    } else {
+        if (currentStepStatusModel.dragingColor) {
+            [self.currentStepImageView setImage:nil];
+            [self.currentStepImageView setBackgroundColor:currentStepStatusModel.dragingColor];
+        }
     }
 }
 
