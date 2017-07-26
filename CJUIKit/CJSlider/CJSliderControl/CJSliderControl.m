@@ -171,20 +171,11 @@ static NSTimeInterval const kCJSliderControlDidTapSlidAnimationDuration  = 0.3f;
     CGFloat trackImageViewHeight = self.trackHeight;
     CGFloat trackImageViewOriginY = CGRectGetHeight(bounds)/2 - trackImageViewHeight/2;
     
-    CGFloat trackImageViewOriginX = 0;
-    if (self.valueAccoringType == CJSliderValueAccoringTypeThumbMidX) {
-        trackImageViewOriginX = self.thumbSize.width/2;
-    } else {
-        trackImageViewOriginX = 0;
-    }
-    CGFloat trackImageViewWidth = CGRectGetWidth(bounds) - 2*trackImageViewOriginX;
+    CGFloat trackImageViewOriginX = self.trackViewMinX;
     
-    if (self.valueAccoringType == CJSliderValueAccoringTypeThumbMinX) {
-        _thumbCanMoveWidth = trackImageViewWidth - self.thumbSize.width; //滑块可滑动的实际大小
-    } else {
-        _thumbCanMoveWidth = trackImageViewWidth; //滑块可滑动的实际大小
-    }
-    
+    _trackViewMinX = 0 + self.trackViewMinXMargin;
+    _trackViewMaxX = CGRectGetWidth(bounds) - self.trackViewMaxXMargin;
+    CGFloat trackImageViewWidth = self.trackViewMaxX - self.trackViewMinX;
     
     return CGRectMake(trackImageViewOriginX, trackImageViewOriginY, trackImageViewWidth,trackImageViewHeight);
 }
@@ -206,15 +197,10 @@ static NSTimeInterval const kCJSliderControlDidTapSlidAnimationDuration  = 0.3f;
     CGFloat thumbImageViewHeight = thumbSize.height;
     CGFloat thumbImageViewOriginY = CGRectGetHeight(bounds)/2 - thumbImageViewHeight/2;
     
-    CGFloat thumbImageViewOriginX = 0;
-    if (self.valueAccoringType == CJSliderValueAccoringTypeThumbMidX) {
-        CGFloat thumbImageViewMidX = CGRectGetMinX(rect) + percent*self.thumbCanMoveWidth;
-        thumbImageViewOriginX = thumbImageViewMidX - thumbImageViewWidth/2;
-        
-    } else {
-        CGFloat thumbImageViewMinX = CGRectGetMinX(rect) + percent*self.thumbCanMoveWidth;
-        thumbImageViewOriginX = thumbImageViewMinX;
-    }
+    _thumbMoveMinX = 0 + self.thumbMoveMinXMargin;
+    _thumbMoveMaxX = CGRectGetWidth(bounds) - self.thumbMoveMaxXMargin;
+    _thumbCanMoveWidth = (self.thumbMoveMaxX-thumbImageViewWidth) - self.thumbMoveMinX; //滑块可滑动的实际大小
+    CGFloat thumbImageViewOriginX = CGRectGetMinX(rect) + percent*self.thumbCanMoveWidth;
     
     CGRect thumbRect = CGRectMake(thumbImageViewOriginX, thumbImageViewOriginY, thumbImageViewWidth, thumbImageViewHeight);
     return thumbRect;
@@ -288,12 +274,9 @@ static NSTimeInterval const kCJSliderControlDidTapSlidAnimationDuration  = 0.3f;
     CGRect thumbRect = thumb.frame;
     
     //value
-    CGFloat percent = 0;
-    if (self.valueAccoringType == CJSliderValueAccoringTypeThumbMidX) {
-        percent = (CGRectGetMidX(thumbRect) - trackRect.origin.x) / self.thumbCanMoveWidth;
-    } else {
-        percent = (CGRectGetMinX(thumbRect) - trackRect.origin.x) / self.thumbCanMoveWidth;
-    }
+    NSAssert(self.thumbCanMoveWidth != 0, @"除数不能为0");
+    CGFloat percent = (CGRectGetMinX(thumbRect) - self.thumbMoveMinX) / self.thumbCanMoveWidth;
+    
     CGFloat value = percent * (self.maxValue - self.minValue);
     if (thumb == self.mainThumb) {
         _value = value;
@@ -309,14 +292,22 @@ static NSTimeInterval const kCJSliderControlDidTapSlidAnimationDuration  = 0.3f;
     //minimumTrackImageView.frame
     CGFloat basePointX = [self pointXForBounds:self.bounds trackRect:trackRect value:self.baseValue];
     
+    
     CGFloat rangeMinX = 0;
     CGFloat rangeWidth = 0;
-    if (self.valueAccoringType == CJSliderValueAccoringTypeThumbMidX) {
-        rangeMinX = MIN(CGRectGetMidX(self.mainThumb.frame), basePointX);
-        rangeWidth = ABS(CGRectGetMidX(self.mainThumb.frame) - basePointX);
-    } else {
-        rangeMinX = MIN(CGRectGetMinX(self.mainThumb.frame), basePointX);
-        rangeWidth = ABS(CGRectGetMinX(self.mainThumb.frame) - basePointX);
+    switch (self.rangeType) {
+        case CJSliderRangeTypeMinToMin:
+        {
+            rangeMinX = MIN(CGRectGetMinX(self.mainThumb.frame), basePointX);
+            rangeWidth = ABS(CGRectGetMinX(self.mainThumb.frame) - basePointX);
+            break;
+        }
+        default:
+        {
+            rangeMinX = MIN(CGRectGetMidX(self.mainThumb.frame), basePointX);
+            rangeWidth = ABS(CGRectGetMidX(self.mainThumb.frame) - basePointX);
+            break;
+        }
     }
     
     CGFloat rangeHeight = CGRectGetHeight(trackRect);
@@ -498,29 +489,14 @@ static NSTimeInterval const kCJSliderControlDidTapSlidAnimationDuration  = 0.3f;
     BOOL isSlideToLeft = moveDistance < 0;
     if (self.leftThumb == nil) { //如果不是range类型的
         if (isSlideToLeft) {
-            CGFloat canMaxMoveDistance = 0;
-            if (self.valueAccoringType == CJSliderValueAccoringTypeThumbMidX) {
-                CGFloat thumbMoveMinMidX = CGRectGetMinX(self.trackImageView.frame); //滑块移动可到的最小MidX
-                canMaxMoveDistance = CGRectGetMidX(self.mainThumb.frame) - thumbMoveMinMidX;
-                
-            } else {
-                CGFloat thumbMoveMinMinX = CGRectGetMinX(self.trackImageView.frame); //滑块移动可到的最小MinX
-                canMaxMoveDistance = CGRectGetMinX(self.mainThumb.frame) - thumbMoveMinMinX;
-            }
+            CGFloat canMaxMoveDistance = CGRectGetMinX(self.mainThumb.frame) - self.thumbMoveMinX;
             
             if (ABS(moveDistance) > ABS(canMaxMoveDistance)) {
                 validMoveDistance = -canMaxMoveDistance;
             }
             
         } else {
-            CGFloat canMaxMoveDistance = 0;
-            if (self.valueAccoringType == CJSliderValueAccoringTypeThumbMidX) {
-                CGFloat thumbMoveMaxMidX = CGRectGetMaxX(self.trackImageView.frame); //滑块移动可到的最大MidX
-                canMaxMoveDistance = thumbMoveMaxMidX - CGRectGetMidX(self.mainThumb.frame);
-            } else {
-                CGFloat thumbMoveMaxMinX = CGRectGetMaxX(self.trackImageView.frame)-CGRectGetWidth(self.mainThumb.frame); //滑块移动可到的最大MinX
-                canMaxMoveDistance = thumbMoveMaxMinX - CGRectGetMinX(self.mainThumb.frame);
-            }
+            CGFloat canMaxMoveDistance = self.thumbMoveMaxX - CGRectGetMaxX(self.mainThumb.frame);
             
             if (ABS(moveDistance) > ABS(canMaxMoveDistance)) {
                 validMoveDistance = canMaxMoveDistance;
@@ -532,51 +508,35 @@ static NSTimeInterval const kCJSliderControlDidTapSlidAnimationDuration  = 0.3f;
         BOOL isLeftThumb  = ( thumb == self.leftThumb );
         if (!isLeftThumb) {
             if (isSlideToLeft) { //主滑块向左滑时候
-                CGFloat canMaxMoveDistance = 0;
-                if (self.valueAccoringType == CJSliderValueAccoringTypeThumbMidX) {
-                    CGFloat rightThumbMoveMinMidX = CGRectGetMidX(self.leftThumb.frame); //右侧滑块移动可到的最小MidX
-                    canMaxMoveDistance = CGRectGetMidX(self.mainThumb.frame) - rightThumbMoveMinMidX;
-                    
-                } else {
-                    CGFloat rightThumbMoveMinMinX = CGRectGetMidX(self.leftThumb.frame); //右侧滑块移动可到的最小MinX
-                    canMaxMoveDistance = CGRectGetMinX(self.mainThumb.frame) - rightThumbMoveMinMinX;
-                }
+                CGFloat rightThumbMoveMinMidX = CGRectGetMidX(self.leftThumb.frame); //右侧滑块移动可到的最小MidX
+                CGFloat canMaxMoveDistance = CGRectGetMidX(self.mainThumb.frame) - rightThumbMoveMinMidX;
                 
                 if (ABS(moveDistance) > ABS(canMaxMoveDistance)) {
                     validMoveDistance = -canMaxMoveDistance;
                 }
                 
             } else { //主滑块向右滑时候
-                CGFloat thumbMoveMaxMidX = CGRectGetMaxX(self.trackImageView.frame); //滑块移动可到的最大中心
-                if (self.valueAccoringType == CJSliderValueAccoringTypeThumbMinX) {
-                    thumbMoveMaxMidX -= CGRectGetWidth(thumb.frame)/2;
-                }
+                CGFloat rightThumbMoveMaxMidX = self.thumbMoveMaxX - CGRectGetWidth(thumb.frame)/2; //右侧滑块移动可到的最大中心
+                CGFloat canMaxMoveDistance = rightThumbMoveMaxMidX - CGRectGetMidX(self.mainThumb.frame);
                 
-                CGFloat canMaxMoveDistance = thumbMoveMaxMidX - CGRectGetMidX(self.mainThumb.frame);
                 if (ABS(moveDistance) > ABS(canMaxMoveDistance)) {
                     validMoveDistance = canMaxMoveDistance;
                 }
             }
             
         } else if (isLeftThumb) {
-            if (!isSlideToLeft) { //左滑块向左滑时候
-                CGFloat leftThumbMoveMaxMidX = CGRectGetMidX(self.mainThumb.frame); //左侧滑块移动可到的最大中心
-                if (self.valueAccoringType == CJSliderValueAccoringTypeThumbMinX) {
-                    leftThumbMoveMaxMidX -= CGRectGetWidth(thumb.frame)/2;
-                }
-                
+            if (!isSlideToLeft) { //左滑块向右滑时候
+                CGFloat leftThumbMoveMaxMidX = CGRectGetMidX(self.mainThumb.frame); //左侧滑块移动可到的最小MidX
                 CGFloat canMaxMoveDistance = leftThumbMoveMaxMidX - CGRectGetMidX(self.leftThumb.frame);
+                
                 if (ABS(moveDistance) > ABS(canMaxMoveDistance)) {
                     validMoveDistance = canMaxMoveDistance;
                 }
                 
-            } else { //左滑块向右滑时候
-                CGFloat thumbMoveMinMidX = CGRectGetMinX(self.trackImageView.frame); //滑块移动可到的最小中心
-                if (self.valueAccoringType == CJSliderValueAccoringTypeThumbMinX) {
-                    thumbMoveMinMidX += CGRectGetWidth(thumb.frame)/2;
-                }
+            } else { //左滑块向左滑时候
+                CGFloat leftThumbMoveMinMidX = self.thumbMoveMinX + CGRectGetWidth(thumb.frame)/2; //右侧滑块移动可到的最大中心
+                CGFloat canMaxMoveDistance = CGRectGetMidX(self.leftThumb.frame) - leftThumbMoveMinMidX;
                 
-                CGFloat canMaxMoveDistance = CGRectGetMidX(self.leftThumb.frame) - thumbMoveMinMidX;
                 if (ABS(moveDistance) > ABS(canMaxMoveDistance)) {
                     validMoveDistance = -canMaxMoveDistance;
                 }

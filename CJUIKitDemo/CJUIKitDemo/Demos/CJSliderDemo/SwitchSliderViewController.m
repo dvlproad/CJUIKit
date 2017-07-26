@@ -51,10 +51,10 @@
     trackImage = [trackImage resizableImageWithCapInsets:UIEdgeInsetsMake(3, 7, 3, 7) resizingMode:UIImageResizingModeStretch];
     [self.sliderControl3.trackImageView setImage:trackImage];
     
-    self.sliderControl3.valueAccoringType = CJSliderValueAccoringTypeThumbMinX;
     self.sliderControl3.mainThumb.alpha = 0.3;
     self.sliderControl3.trackHeight = 30;
     self.sliderControl3.thumbSize = CGSizeMake(60, 30);
+    self.sliderControl3.thumbMoveMaxXMargin = -self.sliderControl3.thumbSize.width;
     UIImage *mainThumbImage = [UIImage imageNamed:@"bg.jpg"];
     UIImage *image3 = [mainThumbImage cj_transformImageToSize:CGSizeMake(160, 80)];
     [self.sliderControl3.mainThumb setImage:image3 forState:UIControlStateNormal];

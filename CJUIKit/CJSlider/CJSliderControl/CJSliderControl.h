@@ -18,9 +18,9 @@ typedef NS_ENUM(NSUInteger, CJSliderType) {
     CJSliderTypeRange,
 };
 
-typedef NS_ENUM(NSUInteger, CJSliderValueAccoringType) {
-    CJSliderValueAccoringTypeThumbMidX, /**< 滑块的中心点所在的值，即为slider的值此时滑道长为view长减去滑块长) */
-    CJSliderValueAccoringTypeThumbMinX, /**< 滑块的minX点所在的值，即为slider的值(此时滑道长即为view的长度) */
+typedef NS_ENUM(NSUInteger, CJSliderRangeType) {
+    CJSliderRangeTypeMidToMid,
+    CJSliderRangeTypeMinToMin,
 };
 
 /**
@@ -59,12 +59,15 @@ typedef NS_ENUM(NSUInteger, CJSliderPopoverDispalyType) {
 @interface CJSliderControl : UIControl {
     //注意①、不要使用setImage来设置图片，要使用setBackgroundImage来设置
 }
-/**
- *  slider的值有什么确认（默认根据滑块的中心确认值）
- *
- *  @attention ①值为CJSliderValueAccoringTypeThumbMidX时，滑块的中心点所在的值，即为slider的值，此时滑道长为view长减去滑块长；②CJSliderValueAccoringTypeThumbMinX时，滑块的minX点所在的值，即为slider的值(此时滑道长即为view的长度)
- */
-@property (nonatomic, assign) CJSliderValueAccoringType valueAccoringType;
+@property (nonatomic, assign) CGFloat trackViewMinXMargin;  /**< 滑道的最小值离bound的边缘距离 */
+@property (nonatomic, assign) CGFloat trackViewMaxXMargin;  /**< 滑道的最大值离bound的边缘距离 */
+@property (nonatomic, assign) CGFloat thumbMoveMinXMargin;  /**< 滑块可移动到的最小X值离bound的边缘距离 */
+@property (nonatomic, assign) CGFloat thumbMoveMaxXMargin;  /**< 滑块可移动到的最大X值离bound的边缘距离 */
+
+@property (nonatomic, assign, readonly) CGFloat trackViewMinX;  /**< 滑道的最小值 */
+@property (nonatomic, assign, readonly) CGFloat trackViewMaxX;  /**< 滑道的最大值 */
+@property (nonatomic, assign, readonly) CGFloat thumbMoveMinX;  /**< 滑块可移动到的最小X值 */
+@property (nonatomic, assign, readonly) CGFloat thumbMoveMaxX;  /**< 滑块可移动到的最大X值 */
 
 @property (nonatomic, weak) id<CJSliderControlDelegate> delegate;
 @property (nonatomic, assign) BOOL allowTouchChangeValue;   /**< 是否允许通过点击来改变值(默认否) */
@@ -82,11 +85,12 @@ typedef NS_ENUM(NSUInteger, CJSliderPopoverDispalyType) {
 
 @property (nonatomic, assign) CGFloat value;            /**< 当前值 */
 
+@property (nonatomic, assign) CJSliderRangeType rangeType;  /**< 标注区域的绘制是从哪到哪 */
+
 //滑块视图
 @property (nonatomic, strong) UIButton *mainThumb;      /**< 主滑块视图 */
 @property (nonatomic, strong) UIButton *leftThumb;      /**< 主滑块左侧的另一个滑块 */
 @property (nonatomic, assign) CJSliderType sliderType;  /**< slider的类型 */
-
 
 @property (nonatomic, assign) CGFloat baseValue;        /**< 基准值(默认0) */
 

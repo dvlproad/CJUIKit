@@ -32,14 +32,17 @@
     self.sliderControlValueLabel2.text = [NSString stringWithFormat:@"选取的区间是 : [ %.1f, %.1f ]",self.sliderControl2.baseValue, self.sliderControl2.value];
     
     self.sliderControl2.sliderType = CJSliderTypeRange;
+//    self.sliderControl2.thumbSize = CGSizeMake(50, 36);
+//    self.sliderControl2.thumbMoveMinXMargin = -self.sliderControl2.thumbSize.width/2;
+//    self.sliderControl2.thumbMoveMaxXMargin = -self.sliderControl2.thumbSize.width/2;
     UIImage *normalImage = [UIImage imageNamed:@"slider_double_thumbImage_b"];
     UIImage *highlightedImage = [UIImage imageNamed:@"slider_double_thumbImage_a"];
     [self.sliderControl2.mainThumb setImage:normalImage forState:UIControlStateNormal];
     [self.sliderControl2.mainThumb setImage:highlightedImage forState:UIControlStateHighlighted];
-    self.sliderControl2.mainThumb.alpha = 0.8;
+    self.sliderControl2.mainThumb.alpha = 0.5;
     [self.sliderControl2.leftThumb setImage:normalImage forState:UIControlStateNormal];
     [self.sliderControl2.leftThumb setImage:highlightedImage forState:UIControlStateHighlighted];
-    self.sliderControl2.leftThumb.alpha = 0.8;
+    self.sliderControl2.leftThumb.alpha = 0.5;
     
     self.sliderControl2.popoverType = CJSliderPopoverDispalyTypeNum;
 

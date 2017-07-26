@@ -23,7 +23,12 @@
 - (void)commonInit {
     [super commonInit];
     
-    self.valueAccoringType = CJSliderValueAccoringTypeThumbMinX;
+    self.trackViewMinXMargin = 0;
+    self.trackViewMaxXMargin = 0;
+    self.thumbMoveMinXMargin = 0;
+    self.thumbMoveMaxXMargin = 0;
+    self.rangeType = CJSliderRangeTypeMinToMin;
+    
     self.criticalValue = 0.7;
     
     self.delegate = self;
