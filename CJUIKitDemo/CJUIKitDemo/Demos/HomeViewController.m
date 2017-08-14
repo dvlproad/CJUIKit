@@ -34,6 +34,8 @@
 
 #import "CJMJRefreshViewController.h"
 
+#import "ProcessLineViewController.h"
+
 
 @interface HomeViewController () <UITableViewDataSource, UITableViewDelegate> {
     
@@ -54,114 +56,165 @@
     self.tableView.delegate = self;
     
     self.datas = [[NSMutableArray alloc] init];
+    self.indexTitles = [[NSMutableArray alloc] init];
     
     //ViewCategoryViewController
-    ModuleModel *ViewCategoryModule = [[ModuleModel alloc] init];
-    ViewCategoryModule.title = @"ViewCategoryModule";
-    ViewCategoryModule.classEntry = [ViewCategoryViewController class];
-    [self.datas addObject:ViewCategoryModule];
+    {
+        NSMutableArray *array = [[NSMutableArray alloc] init];
+        
+        ModuleModel *ViewCategoryModule = [[ModuleModel alloc] init];
+        ViewCategoryModule.title = @"Drag And KeepBounds 1 (视图的拖曳和吸附)";
+        ViewCategoryModule.classEntry = [ViewCategoryViewController class];
+        [array addObject:ViewCategoryModule];
+        
+        ModuleModel *ViewDragCategoryModule = [[ModuleModel alloc] init];
+        ViewDragCategoryModule.title = @"Drag And KeepBounds 2 (视图的拖曳和吸附)";
+        ViewDragCategoryModule.classEntry = [DragViewController class];
+        [array addObject:ViewDragCategoryModule];
+        
+        [self.datas addObject:array];
+        [self.indexTitles addObject:@"UIView相关"];
+    }
     
     
-    ModuleModel *ViewDragCategoryModule = [[ModuleModel alloc] init];
-    ViewDragCategoryModule.title = @"Drag And KeepBounds";
-    ViewDragCategoryModule.classEntry = [DragViewController class];
-    [self.datas addObject:ViewDragCategoryModule];
+    {
+        NSMutableArray *array = [[NSMutableArray alloc] init];
+        
+        //CJImageView
+        ModuleModel *cjImageViewModuleModel = [[ModuleModel alloc] init];
+        cjImageViewModuleModel.title = @"CJImageView";
+        cjImageViewModuleModel.classEntry = [ImageViewController class];
+        [array addObject:cjImageViewModuleModel];
+        
+        ModuleModel *buttonModule = [[ModuleModel alloc] init];
+        buttonModule.title = @"UIButton";
+        buttonModule.classEntry = [ButtonViewController class];
+        [array addObject:buttonModule];
+        
+        //CJSelectTextTextField
+        ModuleModel *CJSelectTextTextFieldModuleModel = [[ModuleModel alloc] init];
+        CJSelectTextTextFieldModuleModel.title = @"CJSelectTextTextField";
+        CJSelectTextTextFieldModuleModel.classEntry = [TextFieldViewController class];
+        [array addObject:CJSelectTextTextFieldModuleModel];
+        
+        //CJTextView
+        ModuleModel *cjTextViewModuleModel = [[ModuleModel alloc] init];
+        cjTextViewModuleModel.title = @"CJTextView";
+        cjTextViewModuleModel.classEntry = [TextViewController class];
+        [array addObject:cjTextViewModuleModel];
+        
+        ModuleModel *cjScrollViewModuleModel = [[ModuleModel alloc] init];
+        cjScrollViewModuleModel.title = @"用代码创建的CJScrollView";
+        cjScrollViewModuleModel.classEntry = [ScrollViewController class];
+        [array addObject:cjScrollViewModuleModel];
+        
+        ModuleModel *TableViewModule = [[ModuleModel alloc] init];
+        TableViewModule.title = @"TableView";
+        TableViewModule.classEntry = [TableViewController class];
+        [array addObject:TableViewModule];
+        
+        //CJSlider
+        ModuleModel *cjSliderModuleModel = [[ModuleModel alloc] init];
+        cjSliderModuleModel.title = @"CJSliderControl";
+        cjSliderModuleModel.classEntry = [SliderViewController class];
+        [array addObject:cjSliderModuleModel];
+        
+        //CJSearchBar
+        ModuleModel *cjSearchBarModuleModel = [[ModuleModel alloc] init];
+        cjSearchBarModuleModel.title = @"CJSearchBar";
+        cjSearchBarModuleModel.classEntry = [SearchBarViewController class];
+        [array addObject:cjSearchBarModuleModel];
+        
+        ModuleModel *UIImageModuleModel = [[ModuleModel alloc] init];
+        UIImageModuleModel.title = @"UIImage";
+        UIImageModuleModel.classEntry = [ImageChangeColorViewController class];
+        [array addObject:UIImageModuleModel];
+        
+        //UINavigationBar
+        ModuleModel *UINavigationBarModuleModel1 = [[ModuleModel alloc] init];
+        UINavigationBarModuleModel1.title = @"UINavigationBar(常见的导航栏背景色改变隐藏)";
+        UINavigationBarModuleModel1.classEntry = [NavigationBarChangeBGViewController class];
+        [array addObject:UINavigationBarModuleModel1];
+        
+        ModuleModel *UINavigationBarModuleModel2 = [[ModuleModel alloc] init];
+        UINavigationBarModuleModel2.title = @"UINavigationBar(类似斗鱼的导航栏移动隐藏)";
+        UINavigationBarModuleModel2.classEntry = [NavigationBarChangePositonViewController class];
+        [array addObject:UINavigationBarModuleModel2];
+        
+        [self.datas addObject:array];
+        [self.indexTitles addObject:@"UIView的子类相关"];
+    }
     
-    //FloatingWindow
-    ModuleModel *FloatingWindowModule = [[ModuleModel alloc] init];
-    FloatingWindowModule.title = @"FloatingWindow（悬浮视图）";
-    FloatingWindowModule.classEntry = [FloatingWindowViewController class];
-    [self.datas addObject:FloatingWindowModule];
+    {
+        NSMutableArray *array = [[NSMutableArray alloc] init];
+        
+        ModuleModel *keyboardAvoidingModuleModel = [[ModuleModel alloc] init];
+        keyboardAvoidingModuleModel.title = @"KeyboardAvoiding";
+        keyboardAvoidingModuleModel.classEntry = [KeyboardAvoidingViewController class];
+        [array addObject:keyboardAvoidingModuleModel];
+        
+        ModuleModel *cjMJRefreshComponentModuleModel = [[ModuleModel alloc] init];
+        cjMJRefreshComponentModuleModel.title = @"CJMJRefreshComponent";
+        cjMJRefreshComponentModuleModel.classEntry = [CJMJRefreshViewController class];
+        [array addObject:cjMJRefreshComponentModuleModel];
+        
+        [self.datas addObject:array];
+        [self.indexTitles addObject:@"其他"];
+    }
     
-    //CJImageView
-    ModuleModel *cjImageViewModuleModel = [[ModuleModel alloc] init];
-    cjImageViewModuleModel.title = @"CJImageView";
-    cjImageViewModuleModel.classEntry = [ImageViewController class];
-    [self.datas addObject:cjImageViewModuleModel];
+    {
+        NSMutableArray *array = [[NSMutableArray alloc] init];
+        
+        //FloatingWindow
+        ModuleModel *FloatingWindowModule = [[ModuleModel alloc] init];
+        FloatingWindowModule.title = @"FloatingWindow（悬浮视图）";
+        FloatingWindowModule.classEntry = [FloatingWindowViewController class];
+        [array addObject:FloatingWindowModule];
+        
+        //PullScaleTopImageViewController
+        ModuleModel *pullScaleTopImageModuleModel = [[ModuleModel alloc] init];
+        pullScaleTopImageModuleModel.title = @"顶部图片下拉放大，上拉缩小";
+        pullScaleTopImageModuleModel.classEntry = [PullScaleTopImageViewController class];
+        [array addObject:pullScaleTopImageModuleModel];
+        
+        [self.datas addObject:array];
+        [self.indexTitles addObject:@"其他"];
+    }
     
-    ModuleModel *buttonModule = [[ModuleModel alloc] init];
-    buttonModule.title = @"UIButton";
-    buttonModule.classEntry = [ButtonViewController class];
-    [self.datas addObject:buttonModule];
-    
-    //CJSelectTextTextField
-    ModuleModel *CJSelectTextTextFieldModuleModel = [[ModuleModel alloc] init];
-    CJSelectTextTextFieldModuleModel.title = @"CJSelectTextTextField";
-    CJSelectTextTextFieldModuleModel.classEntry = [TextFieldViewController class];
-    [self.datas addObject:CJSelectTextTextFieldModuleModel];
-    
-    //CJTextView
-    ModuleModel *cjTextViewModuleModel = [[ModuleModel alloc] init];
-    cjTextViewModuleModel.title = @"CJTextView";
-    cjTextViewModuleModel.classEntry = [TextViewController class];
-    [self.datas addObject:cjTextViewModuleModel];
-    
-    ModuleModel *cjScrollViewModuleModel = [[ModuleModel alloc] init];
-    cjScrollViewModuleModel.title = @"用代码创建的CJScrollView";
-    cjScrollViewModuleModel.classEntry = [ScrollViewController class];
-    [self.datas addObject:cjScrollViewModuleModel];
-    
-    ModuleModel *TableViewModule = [[ModuleModel alloc] init];
-    TableViewModule.title = @"TableView";
-    TableViewModule.classEntry = [TableViewController class];
-    [self.datas addObject:TableViewModule];
-    
-    ModuleModel *keyboardAvoidingModuleModel = [[ModuleModel alloc] init];
-    keyboardAvoidingModuleModel.title = @"KeyboardAvoiding";
-    keyboardAvoidingModuleModel.classEntry = [KeyboardAvoidingViewController class];
-    [self.datas addObject:keyboardAvoidingModuleModel];
-    
-    //CJSlider
-    ModuleModel *cjSliderModuleModel = [[ModuleModel alloc] init];
-    cjSliderModuleModel.title = @"CJSliderControl";
-    cjSliderModuleModel.classEntry = [SliderViewController class];
-    [self.datas addObject:cjSliderModuleModel];
-    
-    //CJSearchBar
-    ModuleModel *cjSearchBarModuleModel = [[ModuleModel alloc] init];
-    cjSearchBarModuleModel.title = @"CJSearchBar";
-    cjSearchBarModuleModel.classEntry = [SearchBarViewController class];
-    [self.datas addObject:cjSearchBarModuleModel];
-    
-    ModuleModel *UIImageModuleModel = [[ModuleModel alloc] init];
-    UIImageModuleModel.title = @"UIImage";
-    UIImageModuleModel.classEntry = [ImageChangeColorViewController class];
-    [self.datas addObject:UIImageModuleModel];
-    
-    //UINavigationBar
-    ModuleModel *UINavigationBarModuleModel1 = [[ModuleModel alloc] init];
-    UINavigationBarModuleModel1.title = @"UINavigationBar(常见的导航栏背景色改变隐藏)";
-    UINavigationBarModuleModel1.classEntry = [NavigationBarChangeBGViewController class];
-    [self.datas addObject:UINavigationBarModuleModel1];
-    
-    ModuleModel *UINavigationBarModuleModel2 = [[ModuleModel alloc] init];
-    UINavigationBarModuleModel2.title = @"UINavigationBar(类似斗鱼的导航栏移动隐藏)";
-    UINavigationBarModuleModel2.classEntry = [NavigationBarChangePositonViewController class];
-    [self.datas addObject:UINavigationBarModuleModel2];
-    
-    //PullScaleTopImageViewController
-    ModuleModel *pullScaleTopImageModuleModel = [[ModuleModel alloc] init];
-    pullScaleTopImageModuleModel.title = @"顶部图片下拉放大，上拉缩小";
-    pullScaleTopImageModuleModel.classEntry = [PullScaleTopImageViewController class];
-    [self.datas addObject:pullScaleTopImageModuleModel];
-    
-    ModuleModel *cjMJRefreshComponentModuleModel = [[ModuleModel alloc] init];
-    cjMJRefreshComponentModuleModel.title = @"CJMJRefreshComponent";
-    cjMJRefreshComponentModuleModel.classEntry = [CJMJRefreshViewController class];
-    [self.datas addObject:cjMJRefreshComponentModuleModel];
+    //QuartzCore
+    {
+        NSMutableArray *array = [[NSMutableArray alloc] init];
+        
+        //ProcessLineViewController
+        ModuleModel *processLineViewModule = [[ModuleModel alloc] init];
+        processLineViewModule.title = @"流程线";
+        processLineViewModule.classEntry = [ProcessLineViewController class];
+        [array addObject:processLineViewModule];
+        
+        [self.datas addObject:array];
+        [self.indexTitles addObject:@"QuartzCore相关(如画线)"];
+    }
 }
 
 #pragma mark - UITableViewDataSource & UITableViewDelegate
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 1;
-}
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return [self.datas count];
 }
 
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    NSArray *array = [self.datas objectAtIndex:section];
+    return [array count];
+}
+
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+    NSString *indexTitle = [self.indexTitles objectAtIndex:section];
+    return indexTitle;
+}
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    ModuleModel *moduleModel = [self.datas objectAtIndex:indexPath.row];
+    NSArray *array = [self.datas objectAtIndex:indexPath.section];
+    
+    ModuleModel *moduleModel = [array objectAtIndex:indexPath.row];
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
     cell.textLabel.text = moduleModel.title;
@@ -172,7 +225,9 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     NSLog(@"didSelectRowAtIndexPath = %ld %ld", indexPath.section, indexPath.row);
     
-    ModuleModel *moduleModel = [self.datas objectAtIndex:indexPath.row];
+    NSArray *array = [self.datas objectAtIndex:indexPath.section];
+    
+    ModuleModel *moduleModel = [array objectAtIndex:indexPath.row];
     Class classEntry = moduleModel.classEntry;
     NSString *nibName = NSStringFromClass(moduleModel.classEntry);
     

@@ -33,6 +33,10 @@
 		782709E51E8715A600E21433 /* UIImage+Save.m in Sources */ = {isa = PBXBuildFile; fileRef = 782709DF1E8715A600E21433 /* UIImage+Save.m */; };
 		782709E61E8715A600E21433 /* UIImage+SplitImageIntoTwoParts.m in Sources */ = {isa = PBXBuildFile; fileRef = 782709E11E8715A600E21433 /* UIImage+SplitImageIntoTwoParts.m */; };
 		782709ED1E8715BB00E21433 /* UIButton+CJMoreProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = 782709E91E8715BB00E21433 /* UIButton+CJMoreProperty.m */; };
+		783281041F4198BC008267E0 /* CustomTripProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 783281031F4198BC008267E0 /* CustomTripProgressView.m */; };
+		783281091F41A0AC008267E0 /* ProcessLineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 783281071F41A0AC008267E0 /* ProcessLineViewController.m */; };
+		7832810A1F41A0AC008267E0 /* ProcessLineViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 783281081F41A0AC008267E0 /* ProcessLineViewController.xib */; };
+		7832810D1F41AA96008267E0 /* ProcessLineView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7832810C1F41AA96008267E0 /* ProcessLineView.m */; };
 		783287FB1ED2214100A01A8A /* UIView+CJDragAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 783287F21ED2214100A01A8A /* UIView+CJDragAction.m */; };
 		783287FC1ED2214100A01A8A /* UIView+CJFind.m in Sources */ = {isa = PBXBuildFile; fileRef = 783287F41ED2214100A01A8A /* UIView+CJFind.m */; };
 		783287FD1ED2214100A01A8A /* UIView+CJGestureRecognizer.m in Sources */ = {isa = PBXBuildFile; fileRef = 783287F61ED2214100A01A8A /* UIView+CJGestureRecognizer.m */; };
@@ -206,6 +210,13 @@
 		782709E11E8715A600E21433 /* UIImage+SplitImageIntoTwoParts.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+SplitImageIntoTwoParts.m"; sourceTree = "<group>"; };
 		782709E81E8715BB00E21433 /* UIButton+CJMoreProperty.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+CJMoreProperty.h"; sourceTree = "<group>"; };
 		782709E91E8715BB00E21433 /* UIButton+CJMoreProperty.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+CJMoreProperty.m"; sourceTree = "<group>"; };
+		783281021F4198BC008267E0 /* CustomTripProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomTripProgressView.h; sourceTree = "<group>"; };
+		783281031F4198BC008267E0 /* CustomTripProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomTripProgressView.m; sourceTree = "<group>"; };
+		783281061F41A0AC008267E0 /* ProcessLineViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProcessLineViewController.h; sourceTree = "<group>"; };
+		783281071F41A0AC008267E0 /* ProcessLineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProcessLineViewController.m; sourceTree = "<group>"; };
+		783281081F41A0AC008267E0 /* ProcessLineViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProcessLineViewController.xib; sourceTree = "<group>"; };
+		7832810B1F41AA96008267E0 /* ProcessLineView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProcessLineView.h; sourceTree = "<group>"; };
+		7832810C1F41AA96008267E0 /* ProcessLineView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProcessLineView.m; sourceTree = "<group>"; };
 		783287F11ED2214100A01A8A /* UIView+CJDragAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+CJDragAction.h"; sourceTree = "<group>"; };
 		783287F21ED2214100A01A8A /* UIView+CJDragAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+CJDragAction.m"; sourceTree = "<group>"; };
 		783287F31ED2214100A01A8A /* UIView+CJFind.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+CJFind.h"; sourceTree = "<group>"; };
@@ -430,6 +441,7 @@
 				780E46071E5DF87B00980127 /* AppDelegate.m */,
 				780E46091E5DF87B00980127 /* ViewController.h */,
 				780E460A1E5DF87B00980127 /* ViewController.m */,
+				783281011F4198BC008267E0 /* CJSmallCustomView */,
 				78E61EA71E79AA20009B1627 /* CJUIKit */,
 				780E460C1E5DF87B00980127 /* Main.storyboard */,
 				7840FAD71EB09C4500B553F7 /* Demos */,
@@ -558,6 +570,28 @@
 			path = "UIButton+CJCategory";
 			sourceTree = "<group>";
 		};
+		783281011F4198BC008267E0 /* CJSmallCustomView */ = {
+			isa = PBXGroup;
+			children = (
+				783281021F4198BC008267E0 /* CustomTripProgressView.h */,
+				783281031F4198BC008267E0 /* CustomTripProgressView.m */,
+				7832810B1F41AA96008267E0 /* ProcessLineView.h */,
+				7832810C1F41AA96008267E0 /* ProcessLineView.m */,
+			);
+			name = CJSmallCustomView;
+			path = ../../CJSmallCustomView;
+			sourceTree = "<group>";
+		};
+		783281051F41A094008267E0 /* ProcessLineViewDemo */ = {
+			isa = PBXGroup;
+			children = (
+				783281061F41A0AC008267E0 /* ProcessLineViewController.h */,
+				783281071F41A0AC008267E0 /* ProcessLineViewController.m */,
+				783281081F41A0AC008267E0 /* ProcessLineViewController.xib */,
+			);
+			path = ProcessLineViewDemo;
+			sourceTree = "<group>";
+		};
 		783287F01ED2214100A01A8A /* UIView+CJCategory */ = {
 			isa = PBXGroup;
 			children = (
@@ -629,6 +663,7 @@
 			children = (
 				7840FAFB1EB09C4500B553F7 /* HomeViewController.h */,
 				7840FAFC1EB09C4500B553F7 /* HomeViewController.m */,
+				783281051F41A094008267E0 /* ProcessLineViewDemo */,
 				787E10161F0E229000034A5C /* TableViewDemo */,
 				7832B2FF1F0A878D0042B5D9 /* UIButtonDemo */,
 				78FC3BB41ED53E700049F22D /* TextFieldDemo */,
@@ -1219,6 +1254,7 @@
 				7840FB0D1EB09C4600B553F7 /* slider_minimum_trackimage@2x.png in Resources */,
 				7840FB0C1EB09C4600B553F7 /* slider_maximum_trackimage@3x.png in Resources */,
 				780E46131E5DF87B00980127 /* LaunchScreen.storyboard in Resources */,
+				7832810A1F41A0AC008267E0 /* ProcessLineViewController.xib in Resources */,
 				78E269B51ECB0593007D3686 /* MyScaleHeadView.xib in Resources */,
 				7840FB0B1EB09C4600B553F7 /* slider_maximum_trackimage@2x.png in Resources */,
 				783658E51ECF99CF00AF7591 /* ViewCategoryViewController.xib in Resources */,
@@ -1405,6 +1441,7 @@
 				782708E41E86772600E21433 /* CJBaseUISlider.m in Sources */,
 				78E61ECE1E79AA20009B1627 /* CJBadgeImageView.m in Sources */,
 				782709ED1E8715BB00E21433 /* UIButton+CJMoreProperty.m in Sources */,
+				7832810D1F41AA96008267E0 /* ProcessLineView.m in Sources */,
 				783658F51ECFB17E00AF7591 /* CJFloatingWindow.m in Sources */,
 				78E269A41ECA92B9007D3686 /* NavigationBarChangeBGViewController.m in Sources */,
 				78F3AA001E963197005D3DA4 /* UIImage+CJFixOrientation.m in Sources */,
@@ -1425,7 +1462,9 @@
 				7832B3031F0A87A50042B5D9 /* ButtonViewController.m in Sources */,
 				78FC3BC71ED541850049F22D /* UITextField+CJTextChangeBlock.m in Sources */,
 				780E46051E5DF87B00980127 /* main.m in Sources */,
+				783281091F41A0AC008267E0 /* ProcessLineViewController.m in Sources */,
 				78DC6E771F0E90ED00DC025C /* CJAdsorbModel.m in Sources */,
+				783281041F4198BC008267E0 /* CustomTripProgressView.m in Sources */,
 				782709051E867EFA00E21433 /* CJSliderPopover.m in Sources */,
 				787E101A1F0E22A500034A5C /* TableViewController.m in Sources */,
 				782709E21E8715A600E21433 /* UIImage+CJBase64.m in Sources */,

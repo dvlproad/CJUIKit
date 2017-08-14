@@ -12,6 +12,7 @@
     
 }
 @property (nonatomic, weak) IBOutlet UITableView *tableView;
-@property (nonatomic, strong) NSMutableArray *datas;
+@property (nonatomic, strong) NSMutableArray<NSArray *> *datas;
+@property (nonatomic, strong) NSMutableArray<NSString *> *indexTitles;
 
 @end

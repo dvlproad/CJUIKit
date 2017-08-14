@@ -8,6 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
+/**
+ *  类目说明：通过给View添加UIPanGestureRecognizer手势，使其可以移动到拖动的位置
+ */
 @interface UIView (CJDragAction)
 
 @property (nonatomic, assign) BOOL cjDragEnable;   /**< 是否允许拖曳(默认YES) */
