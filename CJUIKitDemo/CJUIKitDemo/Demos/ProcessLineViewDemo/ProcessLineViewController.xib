@@ -1,12 +1,21 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12121"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ProcessLineViewController">
             <connections>
+                <outlet property="processLineView1" destination="Miu-xi-M9s" id="GKY-Ji-eR3"/>
+                <outlet property="processLineView2" destination="Dud-Qo-sp1" id="Fph-T9-5CZ"/>
+                <outlet property="processLineView3" destination="dQl-0k-lUx" id="Mnn-bO-StM"/>
+                <outlet property="processLineView4" destination="BGH-pi-BIr" id="uZi-MH-hqQ"/>
+                <outlet property="processLineView5" destination="FMk-7k-YPY" id="XSv-9D-bBQ"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -14,7 +23,63 @@
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Miu-xi-M9s" customClass="ProcessLineView">
+                    <rect key="frame" x="10" y="300" width="355" height="41"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="41" id="1lt-q4-6rI"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dud-Qo-sp1" customClass="ProcessLineView">
+                    <rect key="frame" x="10" y="341" width="355" height="60"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="60" id="Gdu-PC-YgL"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dQl-0k-lUx" customClass="ProcessLineView">
+                    <rect key="frame" x="10" y="401" width="355" height="41"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="41" id="bxw-Ch-HEV"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BGH-pi-BIr" customClass="ProcessLineView">
+                    <rect key="frame" x="10" y="442" width="355" height="100"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="100" id="yjF-ml-08p"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FMk-7k-YPY" customClass="ProcessLineView">
+                    <rect key="frame" x="10" y="542" width="355" height="41"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="41" id="joF-CI-y6F"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="0.80784313725490198" green="0.8901960784313725" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="dQl-0k-lUx" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="10" id="4nI-qs-CN3"/>
+                <constraint firstItem="FMk-7k-YPY" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="10" id="6oh-f8-buF"/>
+                <constraint firstItem="Dud-Qo-sp1" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="10" id="9iB-GU-GRK"/>
+                <constraint firstItem="Miu-xi-M9s" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="10" id="EQx-6a-fV3"/>
+                <constraint firstAttribute="trailing" secondItem="Dud-Qo-sp1" secondAttribute="trailing" constant="10" id="IJ7-4N-KH4"/>
+                <constraint firstItem="FMk-7k-YPY" firstAttribute="top" secondItem="BGH-pi-BIr" secondAttribute="bottom" id="Qzm-Zc-3HE"/>
+                <constraint firstItem="BGH-pi-BIr" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="10" id="Wpm-RN-N51"/>
+                <constraint firstItem="dQl-0k-lUx" firstAttribute="top" secondItem="Dud-Qo-sp1" secondAttribute="bottom" id="aDj-Jf-3Qi"/>
+                <constraint firstItem="Miu-xi-M9s" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="300" id="bbT-Gq-KFo"/>
+                <constraint firstAttribute="trailing" secondItem="FMk-7k-YPY" secondAttribute="trailing" constant="10" id="d52-Jn-izp"/>
+                <constraint firstAttribute="trailing" secondItem="dQl-0k-lUx" secondAttribute="trailing" constant="10" id="hlC-fm-ALq"/>
+                <constraint firstItem="Dud-Qo-sp1" firstAttribute="top" secondItem="Miu-xi-M9s" secondAttribute="bottom" id="iA7-RD-WjB"/>
+                <constraint firstAttribute="trailing" secondItem="Miu-xi-M9s" secondAttribute="trailing" constant="10" id="jHx-YK-haE"/>
+                <constraint firstAttribute="trailing" secondItem="BGH-pi-BIr" secondAttribute="trailing" constant="10" id="pqe-iK-2Ed"/>
+                <constraint firstItem="BGH-pi-BIr" firstAttribute="top" secondItem="dQl-0k-lUx" secondAttribute="bottom" id="sfr-ac-yXf"/>
+            </constraints>
+            <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+            <point key="canvasLocation" x="53.5" y="125.5"/>
         </view>
     </objects>
 </document>

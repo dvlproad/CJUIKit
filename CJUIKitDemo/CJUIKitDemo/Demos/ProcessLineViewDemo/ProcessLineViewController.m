@@ -12,6 +12,12 @@
 
 @interface ProcessLineViewController ()
 
+@property (nonatomic, weak) IBOutlet ProcessLineView *processLineView1;
+@property (nonatomic, weak) IBOutlet ProcessLineView *processLineView2;
+@property (nonatomic, weak) IBOutlet ProcessLineView *processLineView3;
+@property (nonatomic, weak) IBOutlet ProcessLineView *processLineView4;
+@property (nonatomic, weak) IBOutlet ProcessLineView *processLineView5;
+
 @end
 
 @implementation ProcessLineViewController
@@ -20,12 +26,31 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
-    CustomTripProgressView *processLineView1 = [[CustomTripProgressView alloc] initWithFrame:CGRectMake(20, 100, 300, 40) andTitles:@[@"1", @"2", @"3", @"4", @"5"]];
-    [processLineView1 setSelectIndex:2];
-    [self.view addSubview:processLineView1];
+    CustomTripProgressView *tripProgressView = [[CustomTripProgressView alloc] initWithFrame:CGRectMake(20, 100, 300, 40) andTitles:@[@"1", @"2", @"3", @"4", @"5"]];
+    [tripProgressView setSelectIndex:2];
+    [self.view addSubview:tripProgressView];
     
     ProcessLineView *processLineView = [[ProcessLineView alloc] initWithFrame:CGRectMake(20, 200, 300, 40)];
+    processLineView.backgroundColor = [UIColor whiteColor];
     [self.view addSubview:processLineView];
+    
+    
+    
+    
+    self.processLineView1.processLineViewType = ProcessLineViewTypeDone;
+    self.processLineView1.processLineViewIndexType = ProcessLineViewIndexTypeStart;
+    
+    self.processLineView2.processLineViewType = ProcessLineViewTypeDone;
+//    self.processLineView2.processLineViewIndexType = ProcessLineViewIndexTypeOther;
+    
+    self.processLineView3.processLineViewType = ProcessLineViewTypeDoing;
+//    self.processLineView3.processLineViewIndexType = ProcessLineViewIndexTypeOther;
+    
+    self.processLineView4.processLineViewType = ProcessLineViewTypeToDo;
+//    self.processLineView4.processLineViewIndexType = ProcessLineViewIndexTypeOther;
+    
+    self.processLineView5.processLineViewType = ProcessLineViewTypeToDo;
+    self.processLineView5.processLineViewIndexType = ProcessLineViewIndexTypeLast;
 }
 
 - (void)didReceiveMemoryWarning {
