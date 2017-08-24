@@ -8,12 +8,14 @@
 
 #import "ImageChangeColorViewController.h"
 #import "UIImage+CJChangeColor.h"
+#import "UIImage+CJQRCode.h"
 
 @interface ImageChangeColorViewController ()
 
 @property (nonatomic, weak) IBOutlet UIImageView *imageView;
 @property (nonatomic, weak) IBOutlet UIImageView *imageView1;
 @property (nonatomic, weak) IBOutlet UIImageView *imageView2;
+@property (nonatomic, weak) IBOutlet UIImageView *imageView3;
 
 @end
 
@@ -32,6 +34,8 @@
     
     //kCGBlendModeOverlay
     self.imageView2.image = [originImage cj_imageWithGradientTintColor:[UIColor orangeColor]];
+    
+    self.imageView3.image = [originImage cj_QRImageWithColor:[UIColor orangeColor]];
 }
 
 - (void)didReceiveMemoryWarning {

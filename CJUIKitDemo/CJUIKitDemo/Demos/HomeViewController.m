@@ -16,7 +16,11 @@
 #import "FloatingWindowViewController.h"
 
 #import "ButtonViewController.h"
+
+//image
 #import "ImageViewController.h"
+#import "QRCodeViewController.h"
+
 #import "TextFieldViewController.h"
 #import "TextViewController.h"
 #import "ScrollViewController.h"
@@ -125,10 +129,17 @@
         cjSearchBarModuleModel.classEntry = [SearchBarViewController class];
         [array addObject:cjSearchBarModuleModel];
         
+        //UIImage
         ModuleModel *UIImageModuleModel = [[ModuleModel alloc] init];
         UIImageModuleModel.title = @"UIImage";
         UIImageModuleModel.classEntry = [ImageChangeColorViewController class];
         [array addObject:UIImageModuleModel];
+        
+        ModuleModel *QRCodeModule = [[ModuleModel alloc] init];
+        QRCodeModule.title = @"QRCode";
+        QRCodeModule.classEntry = [QRCodeViewController class];
+        [array addObject:QRCodeModule];
+        
         
         //UINavigationBar
         ModuleModel *UINavigationBarModuleModel1 = [[ModuleModel alloc] init];

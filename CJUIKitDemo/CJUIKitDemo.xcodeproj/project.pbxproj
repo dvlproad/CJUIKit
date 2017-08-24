@@ -85,6 +85,9 @@
 		7847521E1E8F862F00B24507 /* UIImage+CJChangeColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 7847521D1E8F862F00B24507 /* UIImage+CJChangeColor.m */; };
 		784B7D4A1E7F7DE300299457 /* UIColor+CJHex.m in Sources */ = {isa = PBXBuildFile; fileRef = 784B7D491E7F7DE300299457 /* UIColor+CJHex.m */; };
 		784C15E21E8E719A0019D652 /* UIImage+CJTransformSize.m in Sources */ = {isa = PBXBuildFile; fileRef = 784C15E11E8E719A0019D652 /* UIImage+CJTransformSize.m */; };
+		784D55061F4E7F9D00C21003 /* UIImage+CJQRCode.m in Sources */ = {isa = PBXBuildFile; fileRef = 784D55051F4E7F9D00C21003 /* UIImage+CJQRCode.m */; };
+		784D550A1F4E81EF00C21003 /* QRCodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 784D55081F4E81EF00C21003 /* QRCodeViewController.m */; };
+		784D550B1F4E81EF00C21003 /* QRCodeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 784D55091F4E81EF00C21003 /* QRCodeViewController.xib */; };
 		785088071F1466AA00B38F38 /* CJSwitchView.m in Sources */ = {isa = PBXBuildFile; fileRef = 785088061F1466AA00B38F38 /* CJSwitchView.m */; };
 		787E101A1F0E22A500034A5C /* TableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 787E10181F0E22A500034A5C /* TableViewController.m */; };
 		787E101B1F0E22A500034A5C /* TableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 787E10191F0E22A500034A5C /* TableViewController.xib */; };
@@ -288,6 +291,11 @@
 		784B7D491E7F7DE300299457 /* UIColor+CJHex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+CJHex.m"; sourceTree = "<group>"; };
 		784C15E01E8E719A0019D652 /* UIImage+CJTransformSize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+CJTransformSize.h"; sourceTree = "<group>"; };
 		784C15E11E8E719A0019D652 /* UIImage+CJTransformSize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+CJTransformSize.m"; sourceTree = "<group>"; };
+		784D55041F4E7F9D00C21003 /* UIImage+CJQRCode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+CJQRCode.h"; sourceTree = "<group>"; };
+		784D55051F4E7F9D00C21003 /* UIImage+CJQRCode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+CJQRCode.m"; sourceTree = "<group>"; };
+		784D55071F4E81EF00C21003 /* QRCodeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QRCodeViewController.h; sourceTree = "<group>"; };
+		784D55081F4E81EF00C21003 /* QRCodeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QRCodeViewController.m; sourceTree = "<group>"; };
+		784D55091F4E81EF00C21003 /* QRCodeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QRCodeViewController.xib; sourceTree = "<group>"; };
 		785088051F1466AA00B38F38 /* CJSwitchView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJSwitchView.h; sourceTree = "<group>"; };
 		785088061F1466AA00B38F38 /* CJSwitchView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJSwitchView.m; sourceTree = "<group>"; };
 		787E10171F0E22A500034A5C /* TableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewController.h; sourceTree = "<group>"; };
@@ -515,6 +523,8 @@
 			children = (
 				782708E61E867C4700E21433 /* UIImage+CJCreate.h */,
 				782708E71E867C4700E21433 /* UIImage+CJCreate.m */,
+				784D55041F4E7F9D00C21003 /* UIImage+CJQRCode.h */,
+				784D55051F4E7F9D00C21003 /* UIImage+CJQRCode.m */,
 				782709D81E8715A600E21433 /* UIImage+CJBase64.h */,
 				782709D91E8715A600E21433 /* UIImage+CJBase64.m */,
 				782709DA1E8715A600E21433 /* UIImage+CJLaunchImage.h */,
@@ -771,6 +781,9 @@
 				7840FAFF1EB09C4500B553F7 /* ImageChangeColorViewController.m */,
 				7840FB001EB09C4500B553F7 /* ImageChangeColorViewController.xib */,
 				7840FB011EB09C4500B553F7 /* imageOriginColor@2x.png */,
+				784D55071F4E81EF00C21003 /* QRCodeViewController.h */,
+				784D55081F4E81EF00C21003 /* QRCodeViewController.m */,
+				784D55091F4E81EF00C21003 /* QRCodeViewController.xib */,
 			);
 			path = UIImageDemo;
 			sourceTree = "<group>";
@@ -1280,6 +1293,7 @@
 				780E460E1E5DF87B00980127 /* Main.storyboard in Resources */,
 				78DC6E691F0E90A500DC025C /* icon_ddlb_jd@2x.png in Resources */,
 				78E269BF1ECC5E1A007D3686 /* bgSky@2x.jpg in Resources */,
+				784D550B1F4E81EF00C21003 /* QRCodeViewController.xib in Resources */,
 				7840FB151EB09C4600B553F7 /* plus@2x.png in Resources */,
 				787E101B1F0E22A500034A5C /* TableViewController.xib in Resources */,
 				7840FB0F1EB09C4600B553F7 /* slider_thumbImage@2x.png in Resources */,
@@ -1453,6 +1467,7 @@
 				78E269AE1ECAF105007D3686 /* CJScaleHeadView.m in Sources */,
 				78E61F041E79AF0A009B1627 /* UIView+CJExtension.m in Sources */,
 				7898C92E1F12795900F06820 /* RangeSliderViewController.m in Sources */,
+				784D550A1F4E81EF00C21003 /* QRCodeViewController.m in Sources */,
 				781592E81EC40C8F00DE1976 /* SearchBarViewController.m in Sources */,
 				783658FA1ECFB4F100AF7591 /* FloatingWindowViewController.m in Sources */,
 				783287FD1ED2214100A01A8A /* UIView+CJGestureRecognizer.m in Sources */,
@@ -1469,6 +1484,7 @@
 				787E101A1F0E22A500034A5C /* TableViewController.m in Sources */,
 				782709E21E8715A600E21433 /* UIImage+CJBase64.m in Sources */,
 				781592ED1EC4391400DE1976 /* CJToast.m in Sources */,
+				784D55061F4E7F9D00C21003 /* UIImage+CJQRCode.m in Sources */,
 				783658EF1ECFA6C700AF7591 /* DragViewController.m in Sources */,
 				78B6761B1EB192EA006F4612 /* ModuleModel.m in Sources */,
 				78E61F011E79AF0A009B1627 /* CJRefreshFooter.m in Sources */,

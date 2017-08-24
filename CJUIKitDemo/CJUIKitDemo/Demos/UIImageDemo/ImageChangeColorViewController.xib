@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -14,6 +14,7 @@
                 <outlet property="imageView" destination="Slb-20-f4y" id="954-1T-3Ex"/>
                 <outlet property="imageView1" destination="7td-MY-yzf" id="Trd-6h-LMX"/>
                 <outlet property="imageView2" destination="N3o-jf-xnd" id="saQ-pt-6hF"/>
+                <outlet property="imageView3" destination="iAt-87-kPQ" id="hBJ-HN-koF"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -22,16 +23,20 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView opaque="NO" multipleTouchEnabled="YES" contentMode="center" fixedFrame="YES" image="imageOriginColor.png" translatesAutoresizingMaskIntoConstraints="NO" id="7td-MY-yzf">
-                    <rect key="frame" x="113" y="278" width="148" height="148"/>
-                    <autoresizingMask key="autoresizingMask"/>
-                </imageView>
                 <imageView opaque="NO" multipleTouchEnabled="YES" contentMode="center" fixedFrame="YES" image="imageOriginColor.png" translatesAutoresizingMaskIntoConstraints="NO" id="Slb-20-f4y">
                     <rect key="frame" x="113" y="158" width="148" height="148"/>
                     <autoresizingMask key="autoresizingMask"/>
                 </imageView>
+                <imageView opaque="NO" multipleTouchEnabled="YES" contentMode="center" fixedFrame="YES" image="imageOriginColor.png" translatesAutoresizingMaskIntoConstraints="NO" id="7td-MY-yzf">
+                    <rect key="frame" x="113" y="278" width="148" height="148"/>
+                    <autoresizingMask key="autoresizingMask"/>
+                </imageView>
                 <imageView opaque="NO" multipleTouchEnabled="YES" contentMode="center" fixedFrame="YES" image="imageOriginColor.png" translatesAutoresizingMaskIntoConstraints="NO" id="N3o-jf-xnd">
                     <rect key="frame" x="113" y="400" width="148" height="148"/>
+                    <autoresizingMask key="autoresizingMask"/>
+                </imageView>
+                <imageView opaque="NO" multipleTouchEnabled="YES" contentMode="center" fixedFrame="YES" image="imageOriginColor.png" translatesAutoresizingMaskIntoConstraints="NO" id="iAt-87-kPQ">
+                    <rect key="frame" x="113" y="519" width="148" height="148"/>
                     <autoresizingMask key="autoresizingMask"/>
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="同样一张图片，利用代码改变图片上的颜色，使其看起来像另一张图片" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zEe-bO-JsP">
