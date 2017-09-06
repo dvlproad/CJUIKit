@@ -5,6 +5,7 @@
 //  Created by ciyouzen on 2017/8/24.
 //  Copyright © 2017年 dvlproad. All rights reserved.
 //
+//  其他参考文档：[iOS中生成指定大小、指定颜色的二维码和条形码](http://www.jianshu.com/p/b893690b472e)
 
 #import <UIKit/UIKit.h>
 

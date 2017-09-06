@@ -39,6 +39,7 @@
 #import "CJMJRefreshViewController.h"
 
 #import "ProcessLineViewController.h"
+#import "CountDownTimeViewController.h"
 
 
 @interface HomeViewController () <UITableViewDataSource, UITableViewDelegate> {
@@ -204,6 +205,21 @@
         
         [self.datas addObject:array];
         [self.indexTitles addObject:@"QuartzCore相关(如画线)"];
+    }
+    
+    //其他
+    {
+        NSMutableArray *array = [[NSMutableArray alloc] init];
+        
+        //CountDownTimeViewController
+        ModuleModel *countDownTimeModule = [[ModuleModel alloc] init];
+        countDownTimeModule.title = @"倒计时 CountDownTime";
+        countDownTimeModule.classEntry = [CountDownTimeViewController class];
+        [array addObject:countDownTimeModule];
+        
+        [self.datas addObject:array];
+        [self.indexTitles addObject:@"其他"];
+        
     }
 }
 
