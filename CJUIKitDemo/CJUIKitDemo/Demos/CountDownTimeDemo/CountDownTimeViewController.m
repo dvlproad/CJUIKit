@@ -29,24 +29,36 @@
 }
 
 - (IBAction)countDownTimeButtonAction:(id)sender {
-    [[MyCountDownTimeManager sharedInstance] beginCountDownWithPeriodDuration:5 timeZeroBlock:^NSInteger(NSTimer *timer) {
-        
-        NSInteger currentSecond = 5;
-        [self.countDownTimeButton setTitle:@"发送验证码(5s)" forState:UIControlStateNormal];
-        [self.countDownTimeButton setEnabled:YES];
-        
-        //是否要结束计时器
-        [timer invalidate];
-        timer = nil;
-        
-        return currentSecond;
-        
-    } timeNoZeroBlock:^(NSInteger currentSecond) {
-        NSString *title = [NSString stringWithFormat:@"倒计时(%lds)", currentSecond];
-        [self.countDownTimeButton setTitle:title forState:UIControlStateNormal];
-        [self.countDownTimeButton setEnabled:NO];
-        
-    }];
+    if ([MyCountDownTimeManager sharedInstance].timer == nil) {
+        NSLog(@"这里将会创建定时器");
+        [[MyCountDownTimeManager sharedInstance] createCountDownWithPeriodDuration:5 timeZeroBlock:^NSInteger(void) {
+            
+            NSInteger currentSecond = 5;
+            [self.countDownTimeButton setTitle:@"发送验证码(5s)" forState:UIControlStateNormal];
+            [self.countDownTimeButton setEnabled:YES];
+            
+            //是否要结束计时器
+            /* //错误的销毁计时器的方法
+            [timer invalidate];
+            timer = nil;
+            */
+            [[MyCountDownTimeManager sharedInstance].timer invalidate];
+            [MyCountDownTimeManager sharedInstance].timer = nil;
+            //或[[MyCountDownTimeManager sharedInstance] invalidateCountDownWithCompleteBlock:nil];
+            
+            return currentSecond;
+            
+        } timeNoZeroBlock:^(NSInteger currentSecond) {
+            NSString *title = [NSString stringWithFormat:@"倒计时(%lds)", currentSecond];
+            [self.countDownTimeButton setTitle:title forState:UIControlStateNormal];
+            [self.countDownTimeButton setEnabled:NO];
+            
+        }];
+    }
+    
+    [[MyCountDownTimeManager sharedInstance] beginCountDown];
+    
+    
 }
 
 - (void)didReceiveMemoryWarning {

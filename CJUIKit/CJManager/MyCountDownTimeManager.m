@@ -11,11 +11,10 @@
 @interface MyCountDownTimeManager() {
     
 }
-@property (nonatomic, strong) NSTimer *timer;
 @property (nonatomic, assign) NSInteger periodDuration; /**< 周期时长 */
 @property (nonatomic, assign) NSInteger currentSecond;  /**< 当前显示的时间数值 */
 
-@property (nonatomic, copy) NSInteger (^timeZeroBlock)(NSTimer *timer);
+@property (nonatomic, copy) NSInteger (^timeZeroBlock)(void);
 @property (nonatomic, copy) void (^timeNoZeroBlock)(NSInteger currentSecond);
 
 @end
@@ -31,8 +30,9 @@
     return _sharedInstance;
 }
 
-- (void)beginCountDownWithPeriodDuration:(NSTimeInterval)periodDuration
-                           timeZeroBlock:(NSInteger (^)(NSTimer *timer))timeZeroBlock
+/* 完整的描述请参见文件头部 */
+- (void)createCountDownWithPeriodDuration:(NSTimeInterval)periodDuration
+                           timeZeroBlock:(NSInteger (^)(void))timeZeroBlock
                          timeNoZeroBlock:(void (^)(NSInteger currentSecond))timeNoZeroBlock
 {
     [self invalidateCountDownWithCompleteBlock:nil]; //防止没取消的时候，一直调用begin,导致开辟很多timer
@@ -43,17 +43,30 @@
     self.periodDuration = periodDuration;
     self.currentSecond = periodDuration;
     
-    _timer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(timerEvent:) userInfo:nil repeats:YES];
+    _timer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(timerEvent) userInfo:nil repeats:YES];
+    
+}
+
+/* 完整的描述请参见文件头部 */
+- (void)beginCountDown {
     [_timer fire];
 }
 
-- (void)timerEvent:(NSTimer *)timer
+
+
+- (void)timerEvent
 {
-    self.currentSecond--;
+    NSInteger currentSecond = --self.currentSecond;
+    [self updateCurrentSecond:currentSecond];
+}
+
+/* 完整的描述请参见文件头部 */
+- (void)updateCurrentSecond:(NSInteger)currentSecond {
+    self.currentSecond = currentSecond;
     
     if(self.currentSecond == 0) { //变为0一个周期结束
         if(self.timeZeroBlock) {
-            self.currentSecond = self.timeZeroBlock(timer);
+            self.currentSecond = self.timeZeroBlock();
         }
     } else {
         if(self.timeNoZeroBlock) {
@@ -62,6 +75,7 @@
     }
 }
 
+/* 完整的描述请参见文件头部 */
 - (void)invalidateCountDownWithCompleteBlock:(void(^)())completeBlock
 {
     if(!_timer) {
@@ -76,5 +90,6 @@
         completeBlock();
     }
 }
+
 
 @end

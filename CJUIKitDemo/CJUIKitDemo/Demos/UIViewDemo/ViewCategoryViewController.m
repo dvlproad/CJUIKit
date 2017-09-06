@@ -11,6 +11,8 @@
 #import "UIView+CJDragAction.h"
 #import "UIView+CJKeepBounds.h"
 
+#import "UIViewController+CJBackButtonHandler.h"
+
 @interface ViewCategoryViewController ()
 
 @end
@@ -26,6 +28,15 @@
                 isKeepBoundsXYWhenBeyondBound:YES
              isKeepBoundsXWhenContaintInBound:NO];
     }];
+    
+    
+    
+    [self cj_setCustomBackBarButtonItemWithTarget:self action:@selector(testCustomBackBarButtonItemAction)];
+}
+
+- (void)testCustomBackBarButtonItemAction {
+    NSLog(@"testCustomBackBarButtonItemAction");
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 - (IBAction)keepBounds:(UIButton *)button {

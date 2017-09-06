@@ -104,6 +104,9 @@
 		78AF3F641F5FDA5E00660373 /* MyCountDownTimeManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 78AF3F631F5FDA5E00660373 /* MyCountDownTimeManager.m */; };
 		78AF3F691F5FDB7E00660373 /* CountDownTimeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78AF3F671F5FDB7E00660373 /* CountDownTimeViewController.m */; };
 		78AF3F6A1F5FDB7E00660373 /* CountDownTimeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 78AF3F681F5FDB7E00660373 /* CountDownTimeViewController.xib */; };
+		78AF3F761F6012F400660373 /* UIViewController+CJBackButtonHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 78AF3F751F6012F400660373 /* UIViewController+CJBackButtonHandler.m */; };
+		78AF3F7A1F60341000660373 /* cjBackBarButtonItem@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 78AF3F781F60341000660373 /* cjBackBarButtonItem@2x.png */; };
+		78AF3F7B1F60341000660373 /* cjBackBarButtonItem@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 78AF3F791F60341000660373 /* cjBackBarButtonItem@3x.png */; };
 		78B6761B1EB192EA006F4612 /* ModuleModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 78B6761A1EB192EA006F4612 /* ModuleModel.m */; };
 		78DC6E681F0E90A500DC025C /* icon_ddlb_hd@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 78DC6E661F0E90A500DC025C /* icon_ddlb_hd@2x.png */; };
 		78DC6E691F0E90A500DC025C /* icon_ddlb_jd@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 78DC6E671F0E90A500DC025C /* icon_ddlb_jd@2x.png */; };
@@ -325,6 +328,10 @@
 		78AF3F661F5FDB7E00660373 /* CountDownTimeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CountDownTimeViewController.h; sourceTree = "<group>"; };
 		78AF3F671F5FDB7E00660373 /* CountDownTimeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CountDownTimeViewController.m; sourceTree = "<group>"; };
 		78AF3F681F5FDB7E00660373 /* CountDownTimeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CountDownTimeViewController.xib; sourceTree = "<group>"; };
+		78AF3F741F6012F400660373 /* UIViewController+CJBackButtonHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+CJBackButtonHandler.h"; sourceTree = "<group>"; };
+		78AF3F751F6012F400660373 /* UIViewController+CJBackButtonHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+CJBackButtonHandler.m"; sourceTree = "<group>"; };
+		78AF3F781F60341000660373 /* cjBackBarButtonItem@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cjBackBarButtonItem@2x.png"; sourceTree = "<group>"; };
+		78AF3F791F60341000660373 /* cjBackBarButtonItem@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cjBackBarButtonItem@3x.png"; sourceTree = "<group>"; };
 		78B676191EB192EA006F4612 /* ModuleModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModuleModel.h; sourceTree = "<group>"; };
 		78B6761A1EB192EA006F4612 /* ModuleModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModuleModel.m; sourceTree = "<group>"; };
 		78DC6E661F0E90A500DC025C /* icon_ddlb_hd@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_ddlb_hd@2x.png"; sourceTree = "<group>"; };
@@ -944,6 +951,25 @@
 			path = CountDownTimeDemo;
 			sourceTree = "<group>";
 		};
+		78AF3F731F60118F00660373 /* UIViewController */ = {
+			isa = PBXGroup;
+			children = (
+				78AF3F741F6012F400660373 /* UIViewController+CJBackButtonHandler.h */,
+				78AF3F751F6012F400660373 /* UIViewController+CJBackButtonHandler.m */,
+				78AF3F771F60341000660373 /* Resources */,
+			);
+			path = UIViewController;
+			sourceTree = "<group>";
+		};
+		78AF3F771F60341000660373 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				78AF3F781F60341000660373 /* cjBackBarButtonItem@2x.png */,
+				78AF3F791F60341000660373 /* cjBackBarButtonItem@3x.png */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		78DC6E6A1F0E90B000DC025C /* CJSwitchSlider */ = {
 			isa = PBXGroup;
 			children = (
@@ -979,6 +1005,7 @@
 			isa = PBXGroup;
 			children = (
 				78E61ECD1E79AA20009B1627 /* CJUIKit.h */,
+				78AF3F731F60118F00660373 /* UIViewController */,
 				78AF3F611F5FDA5E00660373 /* CJManager */,
 				785088041F14668D00B38F38 /* CJSwitchView */,
 				787E10151F0E228200034A5C /* UITableView */,
@@ -1284,6 +1311,7 @@
 				78A355351EB32D62005C5A9A /* CJMJRefreshViewController.xib in Resources */,
 				789312601F00A8F300A91C29 /* SwitchSliderViewController.xib in Resources */,
 				783658FB1ECFB4F100AF7591 /* FloatingWindowViewController.xib in Resources */,
+				78AF3F7B1F60341000660373 /* cjBackBarButtonItem@3x.png in Resources */,
 				7840FB081EB09C4500B553F7 /* slider_double_thumbImage_a@3x.png in Resources */,
 				7840FB281EB09E0700B553F7 /* bg@2x.jpg in Resources */,
 				78E269CE1ECCFB1E007D3686 /* PullScaleTopImageViewController.xib in Resources */,
@@ -1327,6 +1355,7 @@
 				787E101B1F0E22A500034A5C /* TableViewController.xib in Resources */,
 				7840FB0F1EB09C4600B553F7 /* slider_thumbImage@2x.png in Resources */,
 				7840FB1D1EB09C4600B553F7 /* imageOriginColor@2x.png in Resources */,
+				78AF3F7A1F60341000660373 /* cjBackBarButtonItem@2x.png in Resources */,
 				78AF3F6A1F5FDB7E00660373 /* CountDownTimeViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1512,6 +1541,7 @@
 				78DC6E771F0E90ED00DC025C /* CJAdsorbModel.m in Sources */,
 				783281041F4198BC008267E0 /* CustomTripProgressView.m in Sources */,
 				782709051E867EFA00E21433 /* CJSliderPopover.m in Sources */,
+				78AF3F761F6012F400660373 /* UIViewController+CJBackButtonHandler.m in Sources */,
 				787E101A1F0E22A500034A5C /* TableViewController.m in Sources */,
 				78AF3F691F5FDB7E00660373 /* CountDownTimeViewController.m in Sources */,
 				782709E21E8715A600E21433 /* UIImage+CJBase64.m in Sources */,
