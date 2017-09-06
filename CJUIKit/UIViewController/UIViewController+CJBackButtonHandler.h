@@ -11,7 +11,10 @@
 /**
  *  设置自定义的返回按钮
  */
-@interface UIViewController (CJBackButtonHandler)
+@interface UIViewController (CJBackButtonHandler) {
+    
+}
+@property (nonatomic, strong) UIButton *cjCustomNavigationBackButton; /**< 自定义的返回Item上的按钮(只有设置了自定义的返回按钮，这个才会bushi不是nil) */
 
 
 /**

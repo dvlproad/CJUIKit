@@ -7,6 +7,7 @@
 //
 
 #import "ViewCategoryViewController.h"
+#import "UIColor+CJHex.h"
 
 #import "UIView+CJDragAction.h"
 #import "UIView+CJKeepBounds.h"
@@ -31,12 +32,26 @@
     
     
     
+    //测试自定义的返回按钮
     [self cj_setCustomBackBarButtonItemWithTarget:self action:@selector(testCustomBackBarButtonItemAction)];
+    
+    UIButton *backButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    [backButton setBackgroundColor:[UIColor redColor]];
+    [backButton setFrame:CGRectMake(100, 100, 80, 40)];
+    [backButton setTitle:@"点击返回" forState:UIControlStateNormal];
+    [backButton addTarget:self action:@selector(goBack) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:backButton];
+}
+
+- (void)goBack {
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 - (void)testCustomBackBarButtonItemAction {
     NSLog(@"testCustomBackBarButtonItemAction");
-    [self.navigationController popViewControllerAnimated:YES];
+//    [self.navigationController popViewControllerAnimated:YES];
+    
+    [self.cjCustomNavigationBackButton setBackgroundColor:CJRandomColor];
 }
 
 - (IBAction)keepBounds:(UIButton *)button {

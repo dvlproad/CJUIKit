@@ -7,8 +7,20 @@
 //
 
 #import "UIViewController+CJBackButtonHandler.h"
+#import <objc/runtime.h>
 
 @implementation UIViewController (CJBackButtonHandler)
+
+#pragma mark - runtime
+static NSString *kcjCustomNavigationBackButtonKey = @"kcjCustomNavigationBackButtonKey";
+
+- (UIButton *)cjCustomNavigationBackButton {
+    return objc_getAssociatedObject(self, (__bridge const void *)(kcjCustomNavigationBackButtonKey));
+}
+
+- (void)setCjCustomNavigationBackButton:(UIButton *)cjCustomNavigationBackButton {
+    objc_setAssociatedObject(self, (__bridge const void *)(kcjCustomNavigationBackButtonKey), cjCustomNavigationBackButton, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+}
 
 /* 完整的描述请参见文件头部 */
 - (void)cj_setCustomBackBarButtonItemWithTarget:(id)target action:(SEL)action
@@ -62,7 +74,7 @@
     
     self.navigationItem.leftBarButtonItems = @[fixedSpaceBarButtonItem,
                                                customBackBarButtonItem];
-    //self.cjCustomNavigationBackButton = leftButton;
+    self.cjCustomNavigationBackButton = leftButton;
 }
 
 //- (void)cjCustomBackBarButtonItemAction:(id)sender {
