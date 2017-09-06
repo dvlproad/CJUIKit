@@ -10,8 +10,41 @@
 
 @implementation CJToast
 
-#pragma mark - MBProgressHUD
+#pragma mark - Totast
++ (void)showError:(NSString *)error toView:(UIView *)view
+{
+    //NSString *imageName = @"CJToast.bundle/error";
+    NSString *imageName = @"CJToast_error.png";
+    UIImage *image = [UIImage imageNamed:imageName];
+    [self showMessage:error image:image view:view];
+}
 
++ (void)showSuccess:(NSString *)success toView:(UIView *)view
+{
+    //NSString *imageName = @"CJToast.bundle/success";
+    NSString *imageName = @"CJToast_success.png";
+    UIImage *image = [UIImage imageNamed:imageName];
+    [self showMessage:success image:image view:view];
+}
+
+/* 完整的描述请参见文件头部 */
++ (void)showMessage:(NSString *)message image:(UIImage *)image view:(UIView *)view
+{
+    if (view == nil) {
+        view = [UIApplication sharedApplication].keyWindow;
+    }
+    
+    // 快速显示一个提示信息
+    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:view animated:YES];
+    hud.label.text = message;
+    hud.customView = [[UIImageView alloc] initWithImage:image]; // 设置图片
+    hud.mode = MBProgressHUDModeCustomView; // 再设置模式
+    
+    hud.removeFromSuperViewOnHide = YES;    // 隐藏时候从父控件中移除
+    [hud hideAnimated:YES afterDelay:0.7];  // 0.7秒之后再消失
+}
+
+/* 完整的描述请参见文件头部 */
 + (void)showMessage:(NSString *)message
 {
     UIView *view = [[UIApplication sharedApplication].delegate window];
@@ -19,6 +52,7 @@
     [CJToast showMessage:message inView:view];
 }
 
+/* 完整的描述请参见文件头部 */
 + (void)showMessage:(NSString *)message inView:(UIView *)view
 {
     MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:view animated:YES];
@@ -117,5 +151,16 @@
 }
 
 
+
+
+#pragma mark - HUD
++ (void)showHUDAddedTo:(UIView *)view animated:(BOOL)animated {
+    [MBProgressHUD showHUDAddedTo:view animated:animated];
+    //TODO:UIActivityIndicatorView
+}
+
++ (BOOL)hideHUDForView:(UIView *)view animated:(BOOL)animated {
+    return [MBProgressHUD hideHUDForView:view animated:animated];
+}
 
 @end

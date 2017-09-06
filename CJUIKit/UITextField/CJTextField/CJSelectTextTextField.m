@@ -43,8 +43,8 @@
 }
 
 
-- (void)setTextOnlyFromInputView:(UIView *)inputView {
-    self.inputView = inputView;
+- (void)setTextOnlyFromPickerView:(UIView *)pickerView {
+    self.inputView = pickerView;
     
     self.textOnlyFromSelected = YES;
 }

@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "CJBaseUIKit"
-  s.version      = "0.0.15"
+  s.version      = "0.0.16"
   s.summary      = "自定义的基础UI"
   s.homepage     = "https://github.com/dvlproad/CJUIKit"
 
@@ -35,7 +35,7 @@ Pod::Spec.new do |s|
 
   s.platform     = :ios, "7.0"
  
-  s.source       = { :git => "https://github.com/dvlproad/CJUIKit.git", :tag => "CJSlider_0.0.15" }
+  s.source       = { :git => "https://github.com/dvlproad/CJUIKit.git", :tag => "CJBaseUIKit_0.0.16" }
   s.source_files  = "CJUIKit/*.{h,m}"
 
   s.frameworks = "UIKit"
@@ -53,6 +53,26 @@ Pod::Spec.new do |s|
   s.subspec 'UIImage+CJCategory' do |ss|
     ss.source_files = "CJUIKit/UIImage+CJCategory/**/*.{h,m}"
   end
+
+
+
+
+
+
+  s.subspec 'UIViewController' do |ss|
+    ss.source_files = "CJUIKit/UIViewController/**/*.{h,m}"
+    ss.resources = "CJUIKit/UIViewController/**/*.{png,xib}"
+  end
+
+  s.subspec 'UINavigationBar+CJCategory' do |ss|
+    ss.source_files = "CJUIKit/UINavigationBar+CJCategory/**/*.{h,m}"
+  end
+
+
+
+
+
+  
 
   s.subspec 'UIView+CJCategory' do |ss|
     ss.source_files = "CJUIKit/UIView+CJCategory/**/*.{h,m}"
@@ -88,6 +108,9 @@ Pod::Spec.new do |s|
   end
   
 
+
+
+
   s.subspec 'CJRefreshView' do |ss|
     ss.source_files = "CJUIKit/CJRefreshView/**/*.{h,m}"
     # ss.resources = "CJUIKit/CJRefreshView/**/*.{png,xib}"
@@ -96,7 +119,31 @@ Pod::Spec.new do |s|
   s.subspec 'CJMJRefreshComponent' do |ss|
     ss.source_files = "CJUIKit/CJMJRefreshComponent/**/*.{h,m}"
     ss.resources = "CJUIKit/CJMJRefreshComponent/**/*.{png,xib}"
-    ss.dependency 'MJRefresh', '~> 3.1.12'
+
+    #多个依赖就写多行
+    #ss.dependency 'Masonry', '~> 1.0.2'
+    ss.dependency 'MJRefresh'
   end
+
+
+
+
+
+  s.subspec 'CJToast' do |ss|
+    ss.source_files = "CJUIKit/CJToast/**/*.{h,m}"
+    ss.resources = "CJUIKit/CJToast/**/*.{png,xib}"
+
+    #多个依赖就写多行
+    ss.dependency 'MBProgressHUD'
+  end
+
+
+  s.subspec 'CJManager' do |ss|
+    ss.source_files = "CJUIKit/CJManager/**/*.{h,m}"
+    #ss.resources = "CJUIKit/CJManager/**/*.{png,xib}"
+  end
+
+
+
 
 end

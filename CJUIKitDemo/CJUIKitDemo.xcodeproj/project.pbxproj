@@ -89,6 +89,7 @@
 		784D550A1F4E81EF00C21003 /* QRCodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 784D55081F4E81EF00C21003 /* QRCodeViewController.m */; };
 		784D550B1F4E81EF00C21003 /* QRCodeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 784D55091F4E81EF00C21003 /* QRCodeViewController.xib */; };
 		785088071F1466AA00B38F38 /* CJSwitchView.m in Sources */ = {isa = PBXBuildFile; fileRef = 785088061F1466AA00B38F38 /* CJSwitchView.m */; };
+		786798241F5C22800093283D /* UIView+CJExclusiveTouch.m in Sources */ = {isa = PBXBuildFile; fileRef = 786798231F5C22800093283D /* UIView+CJExclusiveTouch.m */; };
 		787E101A1F0E22A500034A5C /* TableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 787E10181F0E22A500034A5C /* TableViewController.m */; };
 		787E101B1F0E22A500034A5C /* TableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 787E10191F0E22A500034A5C /* TableViewController.xib */; };
 		787E101E1F0E28A500034A5C /* UITableView+CJEmptyView.m in Sources */ = {isa = PBXBuildFile; fileRef = 787E101D1F0E28A500034A5C /* UITableView+CJEmptyView.m */; };
@@ -304,6 +305,8 @@
 		784D55091F4E81EF00C21003 /* QRCodeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QRCodeViewController.xib; sourceTree = "<group>"; };
 		785088051F1466AA00B38F38 /* CJSwitchView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJSwitchView.h; sourceTree = "<group>"; };
 		785088061F1466AA00B38F38 /* CJSwitchView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJSwitchView.m; sourceTree = "<group>"; };
+		786798221F5C22800093283D /* UIView+CJExclusiveTouch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+CJExclusiveTouch.h"; sourceTree = "<group>"; };
+		786798231F5C22800093283D /* UIView+CJExclusiveTouch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+CJExclusiveTouch.m"; sourceTree = "<group>"; };
 		787E10171F0E22A500034A5C /* TableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewController.h; sourceTree = "<group>"; };
 		787E10181F0E22A500034A5C /* TableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewController.m; sourceTree = "<group>"; };
 		787E10191F0E22A500034A5C /* TableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TableViewController.xib; sourceTree = "<group>"; };
@@ -630,6 +633,8 @@
 				783287F81ED2214100A01A8A /* UIView+CJKeepBounds.m */,
 				783287F91ED2214100A01A8A /* UIView+CJShake.h */,
 				783287FA1ED2214100A01A8A /* UIView+CJShake.m */,
+				786798221F5C22800093283D /* UIView+CJExclusiveTouch.h */,
+				786798231F5C22800093283D /* UIView+CJExclusiveTouch.m */,
 			);
 			path = "UIView+CJCategory";
 			sourceTree = "<group>";
@@ -1520,6 +1525,7 @@
 				78E269A41ECA92B9007D3686 /* NavigationBarChangeBGViewController.m in Sources */,
 				78F3AA001E963197005D3DA4 /* UIImage+CJFixOrientation.m in Sources */,
 				7840FB031EB09C4500B553F7 /* ImageViewController.m in Sources */,
+				786798241F5C22800093283D /* UIView+CJExclusiveTouch.m in Sources */,
 				7840FB1B1EB09C4600B553F7 /* ImageChangeColorViewController.m in Sources */,
 				78E269B31ECB0588007D3686 /* MyScaleHeadView.m in Sources */,
 				78E61ECF1E79AA20009B1627 /* CJImageView.m in Sources */,

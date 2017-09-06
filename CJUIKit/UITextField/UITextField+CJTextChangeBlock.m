@@ -12,14 +12,14 @@
 @implementation UITextField (CJTextChangeBlock)
 
 #pragma mark - runtime
-static NSString *cjTextChangeBlockKey = @"cjTextChangeBlockKey";
+static NSString *cjTextDidChangeBlockKey = @"cjTextDidChangeBlockKey";
 
-- (void (^)(UITextField *))cjTextChangeBlock {
-    return objc_getAssociatedObject(self, (__bridge const void *)(cjTextChangeBlockKey));
+- (void (^)(UITextField *))cjTextDidChangeBlock {
+    return objc_getAssociatedObject(self, (__bridge const void *)(cjTextDidChangeBlockKey));
 }
 
-- (void)setCjTextChangeBlock:(void (^)(UITextField *))cjTextChangeBlock {
-    objc_setAssociatedObject(self, (__bridge const void *)(cjTextChangeBlockKey), cjTextChangeBlock, OBJC_ASSOCIATION_COPY_NONATOMIC);
+- (void)setCjTextDidChangeBlock:(void (^)(UITextField *))cjTextDidChangeBlock {
+    objc_setAssociatedObject(self, (__bridge const void *)(cjTextDidChangeBlockKey), cjTextDidChangeBlock, OBJC_ASSOCIATION_COPY_NONATOMIC);
     
     //①KVO方式：为了检测通过代码textField.text = newValue赋值时，文本内容的变化
     [self addObserver:self forKeyPath:@"text" options:NSKeyValueObservingOptionNew | NSKeyValueObservingOptionOld context:nil];
@@ -27,7 +27,7 @@ static NSString *cjTextChangeBlockKey = @"cjTextChangeBlockKey";
     //②直接添加监视
     [self addTarget:self action:@selector(textFieldDidChange:) forControlEvents:UIControlEventEditingChanged];
     //③注册消息通知
-    //[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(textFieldDidChange:) name:UITextFieldTextDidChangeNotification object:self];
+    //[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(textFieldDidChange:) name:UITextFieldTextDidChangeNotification object:self]; //addObserver:self 监听者对象;object 监听的对象 全部监听用nil, 单个监听填_textField自己即self
 }
 
 - (void)dealloc {
@@ -39,8 +39,8 @@ static NSString *cjTextChangeBlockKey = @"cjTextChangeBlockKey";
  *  文本内容改变的事件
  */
 - (void)textFieldDidChange:(UITextField *)textField {
-    if (self.cjTextChangeBlock) {
-        self.cjTextChangeBlock(textField);
+    if (self.cjTextDidChangeBlock) {
+        self.cjTextDidChangeBlock(textField);
     }
 }
 
@@ -49,8 +49,8 @@ static NSString *cjTextChangeBlockKey = @"cjTextChangeBlockKey";
         if ([object isKindOfClass:[UITextField class]]) {
             UITextField *textField = (UITextField *)object;
             
-            if (self.cjTextChangeBlock) {
-                self.cjTextChangeBlock(textField);
+            if (self.cjTextDidChangeBlock) {
+                self.cjTextDidChangeBlock(textField);
             }
         }
     }

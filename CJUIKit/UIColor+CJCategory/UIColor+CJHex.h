@@ -13,20 +13,25 @@
  */
 #define CJRGBA(r, g, b, a) [UIColor colorWithRed:r/255.0f green:g/255.0f blue:b/255.0f alpha:a]
 
+
 /**
  *  2.返回一个RGB格式的UIColor对象
  */
 #define CJRGB(r, g, b) CJRGBA(r, g, b, 1.0f)
 
 /**
- *  随机颜色
+ *  一个随机颜色
  */
 #define CJRandomColor   CJRGBA(arc4random_uniform(256), arc4random_uniform(256), arc4random_uniform(256), arc4random_uniform(256))
+
 
 /**
  *  3.支持使用16进制来选取颜色
  */
 #define CJColorFromHex(s)  [UIColor colorWithRed:(((s & 0xFF0000) >> 16))/255.0 green:(((s &0xFF00) >>8))/255.0 blue:((s &0xFF))/255.0 alpha:1.0]
+
+
+
 
 @interface UIColor (CJHex)
 

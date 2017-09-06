@@ -65,145 +65,145 @@
     
     //ViewCategoryViewController
     {
-        NSMutableArray *array = [[NSMutableArray alloc] init];
+        NSMutableArray *moduleModels = [[NSMutableArray alloc] init];
         
         ModuleModel *ViewCategoryModule = [[ModuleModel alloc] init];
         ViewCategoryModule.title = @"Drag And KeepBounds 1 (视图的拖曳和吸附)";
         ViewCategoryModule.classEntry = [ViewCategoryViewController class];
-        [array addObject:ViewCategoryModule];
+        [moduleModels addObject:ViewCategoryModule];
         
         ModuleModel *ViewDragCategoryModule = [[ModuleModel alloc] init];
         ViewDragCategoryModule.title = @"Drag And KeepBounds 2 (视图的拖曳和吸附)";
         ViewDragCategoryModule.classEntry = [DragViewController class];
-        [array addObject:ViewDragCategoryModule];
+        [moduleModels addObject:ViewDragCategoryModule];
         
-        [self.datas addObject:array];
+        [self.datas addObject:moduleModels];
         [self.indexTitles addObject:@"UIView相关"];
     }
     
     
     {
-        NSMutableArray *array = [[NSMutableArray alloc] init];
+        NSMutableArray *moduleModels = [[NSMutableArray alloc] init];
         
         //CJImageView
         ModuleModel *cjImageViewModuleModel = [[ModuleModel alloc] init];
         cjImageViewModuleModel.title = @"CJImageView";
         cjImageViewModuleModel.classEntry = [ImageViewController class];
-        [array addObject:cjImageViewModuleModel];
+        [moduleModels addObject:cjImageViewModuleModel];
         
         ModuleModel *buttonModule = [[ModuleModel alloc] init];
         buttonModule.title = @"UIButton";
         buttonModule.classEntry = [ButtonViewController class];
-        [array addObject:buttonModule];
+        [moduleModels addObject:buttonModule];
         
         //CJSelectTextTextField
         ModuleModel *CJSelectTextTextFieldModuleModel = [[ModuleModel alloc] init];
         CJSelectTextTextFieldModuleModel.title = @"CJSelectTextTextField";
         CJSelectTextTextFieldModuleModel.classEntry = [TextFieldViewController class];
-        [array addObject:CJSelectTextTextFieldModuleModel];
+        [moduleModels addObject:CJSelectTextTextFieldModuleModel];
         
         //CJTextView
         ModuleModel *cjTextViewModuleModel = [[ModuleModel alloc] init];
         cjTextViewModuleModel.title = @"CJTextView";
         cjTextViewModuleModel.classEntry = [TextViewController class];
-        [array addObject:cjTextViewModuleModel];
+        [moduleModels addObject:cjTextViewModuleModel];
         
         ModuleModel *cjScrollViewModuleModel = [[ModuleModel alloc] init];
         cjScrollViewModuleModel.title = @"用代码创建的CJScrollView";
         cjScrollViewModuleModel.classEntry = [ScrollViewController class];
-        [array addObject:cjScrollViewModuleModel];
+        [moduleModels addObject:cjScrollViewModuleModel];
         
         ModuleModel *TableViewModule = [[ModuleModel alloc] init];
         TableViewModule.title = @"TableView";
         TableViewModule.classEntry = [TableViewController class];
-        [array addObject:TableViewModule];
+        [moduleModels addObject:TableViewModule];
         
         //CJSlider
         ModuleModel *cjSliderModuleModel = [[ModuleModel alloc] init];
         cjSliderModuleModel.title = @"CJSliderControl";
         cjSliderModuleModel.classEntry = [SliderViewController class];
-        [array addObject:cjSliderModuleModel];
+        [moduleModels addObject:cjSliderModuleModel];
         
         //CJSearchBar
         ModuleModel *cjSearchBarModuleModel = [[ModuleModel alloc] init];
         cjSearchBarModuleModel.title = @"CJSearchBar";
         cjSearchBarModuleModel.classEntry = [SearchBarViewController class];
-        [array addObject:cjSearchBarModuleModel];
+        [moduleModels addObject:cjSearchBarModuleModel];
         
         //UIImage
         ModuleModel *UIImageModuleModel = [[ModuleModel alloc] init];
         UIImageModuleModel.title = @"UIImage";
         UIImageModuleModel.classEntry = [ImageChangeColorViewController class];
-        [array addObject:UIImageModuleModel];
+        [moduleModels addObject:UIImageModuleModel];
         
         ModuleModel *QRCodeModule = [[ModuleModel alloc] init];
         QRCodeModule.title = @"QRCode";
         QRCodeModule.classEntry = [QRCodeViewController class];
-        [array addObject:QRCodeModule];
+        [moduleModels addObject:QRCodeModule];
         
         
         //UINavigationBar
         ModuleModel *UINavigationBarModuleModel1 = [[ModuleModel alloc] init];
         UINavigationBarModuleModel1.title = @"UINavigationBar(常见的导航栏背景色改变隐藏)";
         UINavigationBarModuleModel1.classEntry = [NavigationBarChangeBGViewController class];
-        [array addObject:UINavigationBarModuleModel1];
+        [moduleModels addObject:UINavigationBarModuleModel1];
         
         ModuleModel *UINavigationBarModuleModel2 = [[ModuleModel alloc] init];
         UINavigationBarModuleModel2.title = @"UINavigationBar(类似斗鱼的导航栏移动隐藏)";
         UINavigationBarModuleModel2.classEntry = [NavigationBarChangePositonViewController class];
-        [array addObject:UINavigationBarModuleModel2];
+        [moduleModels addObject:UINavigationBarModuleModel2];
         
-        [self.datas addObject:array];
+        [self.datas addObject:moduleModels];
         [self.indexTitles addObject:@"UIView的子类相关"];
     }
     
     {
-        NSMutableArray *array = [[NSMutableArray alloc] init];
+        NSMutableArray *moduleModels = [[NSMutableArray alloc] init];
         
         ModuleModel *keyboardAvoidingModuleModel = [[ModuleModel alloc] init];
         keyboardAvoidingModuleModel.title = @"KeyboardAvoiding";
         keyboardAvoidingModuleModel.classEntry = [KeyboardAvoidingViewController class];
-        [array addObject:keyboardAvoidingModuleModel];
+        [moduleModels addObject:keyboardAvoidingModuleModel];
         
         ModuleModel *cjMJRefreshComponentModuleModel = [[ModuleModel alloc] init];
         cjMJRefreshComponentModuleModel.title = @"CJMJRefreshComponent";
         cjMJRefreshComponentModuleModel.classEntry = [CJMJRefreshViewController class];
-        [array addObject:cjMJRefreshComponentModuleModel];
+        [moduleModels addObject:cjMJRefreshComponentModuleModel];
         
-        [self.datas addObject:array];
+        [self.datas addObject:moduleModels];
         [self.indexTitles addObject:@"其他"];
     }
     
     {
-        NSMutableArray *array = [[NSMutableArray alloc] init];
+        NSMutableArray *moduleModels = [[NSMutableArray alloc] init];
         
         //FloatingWindow
         ModuleModel *FloatingWindowModule = [[ModuleModel alloc] init];
         FloatingWindowModule.title = @"FloatingWindow（悬浮视图）";
         FloatingWindowModule.classEntry = [FloatingWindowViewController class];
-        [array addObject:FloatingWindowModule];
+        [moduleModels addObject:FloatingWindowModule];
         
         //PullScaleTopImageViewController
         ModuleModel *pullScaleTopImageModuleModel = [[ModuleModel alloc] init];
         pullScaleTopImageModuleModel.title = @"顶部图片下拉放大，上拉缩小";
         pullScaleTopImageModuleModel.classEntry = [PullScaleTopImageViewController class];
-        [array addObject:pullScaleTopImageModuleModel];
+        [moduleModels addObject:pullScaleTopImageModuleModel];
         
-        [self.datas addObject:array];
+        [self.datas addObject:moduleModels];
         [self.indexTitles addObject:@"其他"];
     }
     
     //QuartzCore
     {
-        NSMutableArray *array = [[NSMutableArray alloc] init];
+        NSMutableArray *moduleModels = [[NSMutableArray alloc] init];
         
         //ProcessLineViewController
         ModuleModel *processLineViewModule = [[ModuleModel alloc] init];
         processLineViewModule.title = @"流程线";
         processLineViewModule.classEntry = [ProcessLineViewController class];
-        [array addObject:processLineViewModule];
+        [moduleModels addObject:processLineViewModule];
         
-        [self.datas addObject:array];
+        [self.datas addObject:moduleModels];
         [self.indexTitles addObject:@"QuartzCore相关(如画线)"];
     }
     
@@ -252,9 +252,9 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     NSLog(@"didSelectRowAtIndexPath = %ld %ld", indexPath.section, indexPath.row);
     
-    NSArray *array = [self.datas objectAtIndex:indexPath.section];
+    NSArray *moduleModels = [self.datas objectAtIndex:indexPath.section];
     
-    ModuleModel *moduleModel = [array objectAtIndex:indexPath.row];
+    ModuleModel *moduleModel = [moduleModels objectAtIndex:indexPath.row];
     Class classEntry = moduleModel.classEntry;
     NSString *nibName = NSStringFromClass(moduleModel.classEntry);
     

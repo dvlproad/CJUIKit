@@ -10,10 +10,10 @@
 #import <UIKit/UIKit.h>
 
 /**
- *  可监听文本框文本变化的block（包括在代码中setText以及在文本框视图中输入）
+ *  可监听文本框文本发生变化了的block（包括在代码中setText以及在文本框视图中输入）
  */
 @interface UITextField (CJTextChangeBlock)
 
-@property (nonatomic, copy) void (^cjTextChangeBlock)(UITextField *textField);  /**< 文本改变的通知事件 */
+@property (nonatomic, copy) void (^cjTextDidChangeBlock)(UITextField *textField);   /**< 文本已经改变的通知事件 */
 
 @end
