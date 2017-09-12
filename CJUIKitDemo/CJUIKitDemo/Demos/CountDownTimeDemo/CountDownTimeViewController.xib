@@ -11,7 +11,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CountDownTimeViewController">
             <connections>
-                <outlet property="countDownTimeButton" destination="boA-y6-zIr" id="wQb-9R-9Iz"/>
+                <outlet property="countDownTimeButton1" destination="boA-y6-zIr" id="Ji3-pl-2bD"/>
+                <outlet property="countDownTimeButton2" destination="5bB-ED-ykE" id="XbJ-pw-voZ"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -21,10 +22,17 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="boA-y6-zIr">
-                    <rect key="frame" x="92" y="215" width="160" height="30"/>
+                    <rect key="frame" x="75" y="215" width="194" height="30"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <state key="normal" title="倒计时(60s) 使用全局计时器">
+                        <color key="titleColor" red="0.0" green="0.66666666666666663" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5bB-ED-ykE">
+                    <rect key="frame" x="92" y="270" width="160" height="30"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <state key="normal" title="倒计时(60s)">
-                        <color key="titleColor" red="0.0" green="0.66666666666666663" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="titleColor" red="0.0" green="0.66666666669999997" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </state>
                 </button>
             </subviews>

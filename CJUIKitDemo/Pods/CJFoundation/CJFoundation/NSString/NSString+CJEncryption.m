@@ -3,7 +3,7 @@
 //  CJFoundationDemo
 //
 //  Created by dvlproad on 14-12-16.
-//  Copyright (c) 2014年 ciyouzen. All rights reserved.
+//  Copyright (c) 2014年 dvlproad. All rights reserved.
 //
 
 #import "NSString+CJEncryption.h"

@@ -11,6 +11,7 @@
 
 @interface CountDownTimeViewController : UIViewController
 
-@property (nonatomic, strong) IBOutlet UIButton *countDownTimeButton;   /**< 倒计时按钮 */
+@property (nonatomic, strong) IBOutlet UIButton *countDownTimeButton1;  /**< 倒计时按钮 */
+@property (nonatomic, strong) IBOutlet UIButton *countDownTimeButton2;  /**< 倒计时按钮 */
 
 @end

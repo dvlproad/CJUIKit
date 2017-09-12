@@ -3,7 +3,7 @@
 //  CJFoundationDemo
 //
 //  Created by lichq on 7/9/15.
-//  Copyright (c) 2015 ciyouzen. All rights reserved.
+//  Copyright (c) 2015 dvlproad. All rights reserved.
 //
 
 #import "NSString+CJTextSize.h"
