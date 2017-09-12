@@ -199,7 +199,7 @@
         
         //ProcessLineViewController
         ModuleModel *processLineViewModule = [[ModuleModel alloc] init];
-        processLineViewModule.title = @"流程线";
+        processLineViewModule.title = @"流程线(ProcessLineView)";
         processLineViewModule.classEntry = [ProcessLineViewController class];
         [moduleModels addObject:processLineViewModule];
         

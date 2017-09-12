@@ -8,22 +8,31 @@
 
 #import <UIKit/UIKit.h>
 
-typedef NS_ENUM(NSUInteger, ProcessLineViewType) {
-    ProcessLineViewTypeDone,    /**< 已完成的 */
-    ProcessLineViewTypeDoing,   /**< 正进行的 */
-    ProcessLineViewTypeToDo,    /**< 还未进行的 */
+/**
+ *  流程线视图中的圆类型
+ */
+typedef NS_ENUM(NSUInteger, PLVCircleType) {
+    PLVCircleTypeToDo,      /**< 还未进行的 */
+    PLVCircleTypeDoing,     /**< 正进行的 */
+    PLVCircleTypeDone,      /**< 已完成的 */
 };
 
-typedef NS_ENUM(NSUInteger, ProcessLineViewIndexType) {
-    ProcessLineViewIndexTypeOther,  /**< 其他 */
-    ProcessLineViewIndexTypeStart,  /**< 头(只绘制圆圈的下部分) */
-    ProcessLineViewIndexTypeLast,   /**< 尾(只绘制圆圈的上部分) */
+/**
+ *  流程线视图中的圆上下的线要有哪些
+ */
+typedef NS_OPTIONS(NSUInteger, PLVCircleLinesOption) {
+    PLVCircleLinesOptionNone = 1 << 0,      /**< 圆圈的上下不画线条 */
+    PLVCircleLinesOptionTop = 1 << 1,       /**< 只绘制圆圈的上部分线条 */
+    PLVCircleLinesOptionBottom = 1 << 2,    /**< 只绘制圆圈的下部分线条 */
 };
 
+/**
+ *  流程线视图
+ */
 @interface ProcessLineView : UIView
 
-@property (nonatomic, assign) ProcessLineViewType processLineViewType;
-@property (nonatomic, assign) ProcessLineViewIndexType processLineViewIndexType;
+@property (nonatomic, assign) PLVCircleType circleType;     /**< 流程线视图中的圆类型 */
+@property (nonatomic, assign) PLVCircleLinesOption circleLinesOption;/**< 流程线视图中的圆上下的线要有哪些 */
 
 
 @end

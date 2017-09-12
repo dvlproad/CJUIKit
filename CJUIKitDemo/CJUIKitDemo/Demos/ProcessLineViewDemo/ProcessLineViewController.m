@@ -37,20 +37,20 @@
     
     
     
-    self.processLineView1.processLineViewType = ProcessLineViewTypeDone;
-    self.processLineView1.processLineViewIndexType = ProcessLineViewIndexTypeStart;
+    self.processLineView1.circleType = PLVCircleTypeDone;
+    self.processLineView1.circleLinesOption = PLVCircleLinesOptionBottom;
     
-    self.processLineView2.processLineViewType = ProcessLineViewTypeDone;
-//    self.processLineView2.processLineViewIndexType = ProcessLineViewIndexTypeOther;
+    self.processLineView2.circleType = PLVCircleTypeDone;
+    self.processLineView2.circleLinesOption = PLVCircleLinesOptionTop | PLVCircleLinesOptionBottom;
     
-    self.processLineView3.processLineViewType = ProcessLineViewTypeDoing;
-//    self.processLineView3.processLineViewIndexType = ProcessLineViewIndexTypeOther;
+    self.processLineView3.circleType = PLVCircleTypeDoing;
+    self.processLineView3.circleLinesOption = PLVCircleLinesOptionTop | PLVCircleLinesOptionBottom;
     
-    self.processLineView4.processLineViewType = ProcessLineViewTypeToDo;
-//    self.processLineView4.processLineViewIndexType = ProcessLineViewIndexTypeOther;
+    self.processLineView4.circleType = PLVCircleTypeToDo;
+    self.processLineView4.circleLinesOption = PLVCircleLinesOptionTop | PLVCircleLinesOptionBottom;
     
-    self.processLineView5.processLineViewType = ProcessLineViewTypeToDo;
-    self.processLineView5.processLineViewIndexType = ProcessLineViewIndexTypeLast;
+    self.processLineView5.circleType = PLVCircleTypeToDo;
+    self.processLineView5.circleLinesOption = PLVCircleLinesOptionTop;
 }
 
 - (void)didReceiveMemoryWarning {
