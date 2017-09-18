@@ -31,12 +31,12 @@
  *  创建计时器
  *
  *  @param periodDuration   倒计时的周期
- *  @param timeZeroBlock    倒计时到0的时候执行的操作(block返回结束那个时刻，当前的秒数(如果返回0，应主动让计时器停止))
- *  @param timeNoZeroBlock  倒计时数字不为0的时候执行的操作
+ *  @param timeZeroBlock    倒计时到0的时候执行的操作(block返回结束那个时刻，本周期剩余的时间(如果返回0，应主动让计时器停止))
+ *  @param timeNoZeroBlock  倒计时数字不为0的时候执行的操作(remainSecond:本周期剩余的时间)
  */
 - (void)createCountDownWithPeriodDuration:(NSTimeInterval)periodDuration
                             timeZeroBlock:(NSInteger (^)(void))timeZeroBlock
-                          timeNoZeroBlock:(void (^)(NSInteger currentSecond))timeNoZeroBlock;
+                          timeNoZeroBlock:(void (^)(NSInteger remainSecond))timeNoZeroBlock;
 
 /**
  *  启动计时器
@@ -44,9 +44,9 @@
 - (void)beginCountDown;
 
 /**
- *  更新当前定时器定位到的时间
+ *  更新倒计时定时器剩余的时间
  */
-- (void)updateCurrentSecond:(NSInteger)currentSecond;
+- (void)updateRemainSecond:(NSInteger)remainSecond;
 
 /**
  *  销毁/结束定时器（下次使用，需重新create）

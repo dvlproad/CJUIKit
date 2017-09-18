@@ -2,7 +2,7 @@
 //  UITextField+CJTextChangeBlock.h
 //  CJUIKitDemo
 //
-//  Created by dvlproad on 2015/12/23.
+//  Created by ciyouzen on 2015/12/23.
 //  Copyright © 2015年 dvlproad. All rights reserved.
 //
 //其他可参考：如何实现UITextField值变化的实时监视http://www.cocoachina.com/bbs/read.php?tid=233583

@@ -2,7 +2,7 @@
 //  CJSliderControl.h
 //  CJUIKitDemo
 //
-//  Created by dvlproad on 16/4/20.
+//  Created by ciyouzen on 16/4/20.
 //  Copyright © 2016年 dvlproad. All rights reserved.
 //
 //  注意：CJSliderControl可滑动的区域就是滑到的区域，并且是以滑块的中心来判断是否超出滑道区域的(而不是滑块的originX)

@@ -12,10 +12,10 @@
     
 }
 @property (nonatomic, assign) NSInteger periodDuration; /**< 周期时长 */
-@property (nonatomic, assign) NSInteger currentSecond;  /**< 当前显示的时间数值 */
+@property (nonatomic, assign) NSInteger remainSecond;  /**< 当前显示的时间数值(本周期剩余的时间) */
 
 @property (nonatomic, copy) NSInteger (^timeZeroBlock)(void);
-@property (nonatomic, copy) void (^timeNoZeroBlock)(NSInteger currentSecond);
+@property (nonatomic, copy) void (^timeNoZeroBlock)(NSInteger remainSecond);
 
 @end
 
@@ -33,7 +33,7 @@
 /* 完整的描述请参见文件头部 */
 - (void)createCountDownWithPeriodDuration:(NSTimeInterval)periodDuration
                            timeZeroBlock:(NSInteger (^)(void))timeZeroBlock
-                         timeNoZeroBlock:(void (^)(NSInteger currentSecond))timeNoZeroBlock
+                         timeNoZeroBlock:(void (^)(NSInteger remainSecond))timeNoZeroBlock
 {
     [self invalidateCountDownWithCompleteBlock:nil]; //防止没取消的时候，一直调用begin,导致开辟很多timer
     
@@ -41,7 +41,7 @@
     self.timeNoZeroBlock = timeNoZeroBlock;
     
     self.periodDuration = periodDuration;
-    self.currentSecond = periodDuration;
+    self.remainSecond = periodDuration;
     
     _timer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(timerEvent) userInfo:nil repeats:YES];
     
@@ -56,21 +56,21 @@
 
 - (void)timerEvent
 {
-    NSInteger currentSecond = --self.currentSecond;
-    [self updateCurrentSecond:currentSecond];
+    NSInteger remainSecond = --self.remainSecond;
+    [self updateRemainSecond:remainSecond];
 }
 
 /* 完整的描述请参见文件头部 */
-- (void)updateCurrentSecond:(NSInteger)currentSecond {
-    self.currentSecond = currentSecond;
+- (void)updateRemainSecond:(NSInteger)remainSecond {
+    self.remainSecond = remainSecond;
     
-    if(self.currentSecond == 0) { //变为0一个周期结束
+    if(self.remainSecond == 0) { //变为0一个周期结束
         if(self.timeZeroBlock) {
-            self.currentSecond = self.timeZeroBlock();
+            self.remainSecond = self.timeZeroBlock();
         }
     } else {
         if(self.timeNoZeroBlock) {
-            self.timeNoZeroBlock(self.currentSecond);
+            self.timeNoZeroBlock(self.remainSecond);
         }
     }
 }
@@ -82,7 +82,7 @@
         return;
     }
     
-    self.currentSecond = 0;
+    self.remainSecond = 0;
     [self.timer invalidate];
     self.timer = nil;
     
