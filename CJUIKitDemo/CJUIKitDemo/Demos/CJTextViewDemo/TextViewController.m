@@ -32,6 +32,11 @@
         // 为什么添加10 ？（10 = 底部View距离上（5）底部View距离下（5）间距总和）
         _bottomViewHeightConstraint.constant = currentTextViewHeight + 10;
     }];
+    
+    //方法②：
+//    [self.textView setMaxTextViewHeight:200 textHeightChangeBlock:^(NSString *text, CGFloat currentTextViewHeight) {
+//        _bottomViewHeightConstraint.constant = currentTextViewHeight + 10;
+//    }];
 }
 
 - (IBAction)resetTextView:(UIButton *)button {
@@ -42,13 +47,15 @@
 
 
 // 键盘弹出会调用
-- (void)keyboardWillChangeFrame:(NSNotification *)note
+- (void)keyboardWillChangeFrame:(NSNotification *)notification
 {
+    NSDictionary *userInfo = notification.userInfo;
+    
     // 获取键盘frame
-    CGRect endFrame = [note.userInfo[UIKeyboardFrameEndUserInfoKey] CGRectValue];
+    CGRect endFrame = [userInfo[UIKeyboardFrameEndUserInfoKey] CGRectValue];
     
     // 获取键盘弹出时长
-    CGFloat duration = [note.userInfo[UIKeyboardAnimationDurationUserInfoKey] floatValue];
+    CGFloat duration = [userInfo[UIKeyboardAnimationDurationUserInfoKey] floatValue];
     CGFloat screenH = [UIScreen mainScreen].bounds.size.height;
     
     // 修改底部视图距离底部的间距
