@@ -23,22 +23,24 @@
 }
 
 - (void)setupScrollView {
-    self.scrollView = [[UIScrollView alloc] init];
-    self.scrollView.backgroundColor = [UIColor redColor];
-    [self.view addSubview:self.scrollView];
-    [self.scrollView mas_makeConstraints:^(MASConstraintMaker *make) {
+    UIScrollView *scrollView = [[UIScrollView alloc] init];
+    scrollView.backgroundColor = [UIColor redColor];
+    [self.view addSubview:scrollView];
+    [scrollView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.right.top.bottom.mas_equalTo(self.view);
     }];
+    self.scrollView = scrollView;
     
-    self.containerView = [[UIView alloc] init];
-    self.containerView.backgroundColor = [UIColor greenColor];
-    [self.scrollView addSubview:self.containerView];
-    [self.containerView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.right.mas_equalTo(self.scrollView);
-        make.top.bottom.mas_equalTo(self.scrollView);
-        make.width.mas_equalTo(self.scrollView.mas_width);
-        make.height.mas_equalTo(self.scrollView.mas_height).mas_offset(1);
+    UIView *containerView = [[UIView alloc] init];
+    containerView.backgroundColor = [UIColor greenColor];
+    [scrollView addSubview:containerView];
+    [containerView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.right.mas_equalTo(scrollView);
+        make.top.bottom.mas_equalTo(scrollView);
+        make.width.mas_equalTo(scrollView.mas_width);
+        make.height.mas_equalTo(scrollView.mas_height).mas_offset(1);
     }];
+    self.containerView = containerView;
 }
 
 - (void)didReceiveMemoryWarning {
