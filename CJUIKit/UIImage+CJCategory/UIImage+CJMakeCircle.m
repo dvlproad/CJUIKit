@@ -1,14 +1,14 @@
 //
-//  UIImage+MakeCircle.m
+//  UIImage+CJMakeCircle.m
 //  CJUIKitDemo
 //
 //  Created by ciyouzen on 15-1-30.
 //  Copyright (c) 2015年 dvlproad. All rights reserved.
 //
 
-#import "UIImage+MakeCircle.h"
+#import "UIImage+CJMakeCircle.h"
 
-@implementation UIImage (MakeCircle)
+@implementation UIImage (CJMakeCircle)
 
 #pragma mark - Image裁剪成圆形的方法
 /*
@@ -24,7 +24,7 @@ imageView.layer.cornerRadius = 50;//cornerradus的确定问题
 方法3、能过代码对画布裁剪成圆形–》然后再将原始图像画出来–》代码如下：
 */
 
-- (UIImage *)makeCircleWithParam:(CGFloat)inset{
+- (UIImage *)cj_makeCircleWithParam:(CGFloat)inset {
     UIGraphicsBeginImageContext(self.size);
     CGContextRef context = UIGraphicsGetCurrentContext();
     CGContextSetLineWidth(context, 0);//这里设置为0，本来的代码是设置为2，那样会有一些边界

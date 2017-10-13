@@ -19,4 +19,16 @@
     return nil;
 }
 
+////通过view找到拥有这个View的Controller
+//- (UIViewController *)belongViewController
+//{
+//    for (UIView *next = [self superview]; next; next = next.superview) {
+//        UIResponder *nextResponder = [next nextResponder];
+//        if ([nextResponder isKindOfClass:[UIViewController class]]) {
+//            return (UIViewController *)nextResponder;
+//        }
+//    }
+//    return nil;
+//}
+
 @end

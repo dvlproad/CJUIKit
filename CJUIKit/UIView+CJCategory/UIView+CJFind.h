@@ -11,7 +11,7 @@
 @interface UIView (CJFind)
 
 /**
- *  获取view所属的viewController
+ *  获取view所属的viewController(通过view找到拥有这个View的Controller)
  */
 - (nullable UIViewController *)belongViewController;
 

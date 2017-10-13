@@ -1,5 +1,5 @@
 //
-//  UIImage+MakeCircle.h
+//  UIImage+CJMakeCircle.h
 //  CJUIKitDemo
 //
 //  Created by ciyouzen on 15-1-30.
@@ -8,8 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface UIImage (MakeCircle)
+@interface UIImage (CJMakeCircle)
 
-- (UIImage *)makeCircleWithParam:(CGFloat)inset;
+- (UIImage *)cj_makeCircleWithParam:(CGFloat)inset;
 
 @end

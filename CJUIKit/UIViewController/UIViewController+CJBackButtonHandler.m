@@ -47,7 +47,7 @@ static NSString *kcjCustomNavigationBackButtonKey = @"kcjCustomNavigationBackBut
     if (!normalImage) {
         normalImage = [UIImage imageNamed:@"cjBackBarButtonItem"];
     }
-    if (highlightedImage) {
+    if (!highlightedImage) {
         highlightedImage = [UIImage imageNamed:@"cjBackBarButtonItem"];
     }
     UIButton *leftButton = [UIButton buttonWithType:UIButtonTypeCustom];

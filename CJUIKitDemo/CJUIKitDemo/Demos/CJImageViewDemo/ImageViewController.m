@@ -31,7 +31,7 @@
     }];
     
     //以下三种设置颜色一样
-    self.view.backgroundColor = CJColorFromHex(0x43FBFE);
+    self.view.backgroundColor = CJColorFromHexValue(0x43FBFE);
     self.view.backgroundColor = [UIColor cjColorWithHexString:@"0x43FBFE"];
     self.view.backgroundColor = [UIColor cjColorWithHexString:@"#43FBFE"];
 }

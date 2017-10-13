@@ -2,7 +2,7 @@
 //  UIColor+CJHex.h
 //  CJUIKitDemo
 //
-//  Created by ciyouzen on 2015/12/23.
+//  Created by dvlproad on 2015/12/23.
 //  Copyright © 2015年 dvlproad. All rights reserved.
 //
 
@@ -26,9 +26,10 @@
 
 
 /**
- *  3.支持使用16进制来选取颜色
+ *  3.支持使用16进制数值/字符串来选取颜色
  */
-#define CJColorFromHex(s)  [UIColor colorWithRed:(((s & 0xFF0000) >> 16))/255.0 green:(((s &0xFF00) >>8))/255.0 blue:((s &0xFF))/255.0 alpha:1.0]
+#define CJColorFromHexValue(s)      [UIColor colorWithRed:(((s & 0xFF0000) >> 16))/255.0 green:(((s &0xFF00) >>8))/255.0 blue:((s &0xFF))/255.0 alpha:1.0]
+#define CJColorFromHexString(color) [UIColor cjColorWithHexString:color]
 
 
 

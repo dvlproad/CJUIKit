@@ -7,11 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
 @interface ModuleModel : NSObject
 
 @property (nonatomic, copy) NSString *title;
-//@property (nonatomic, copy) NSString *imageName;
+@property (nonatomic, strong) UIImage *image;
 @property (nonatomic, assign) Class classEntry;
 
 //@property (nonatomic, assign) NSInteger unReadNumber;   /**< 未读消息数 */
