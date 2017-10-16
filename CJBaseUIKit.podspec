@@ -95,6 +95,11 @@ Pod::Spec.new do |s|
     ss.source_files = "CJUIKit/CJTextView/**/*.{h,m}"
     # ss.resources = "CJUIKit/CJTextView/**/*.{png,xib}"
   end
+  
+  s.subspec 'UIToolbar' do |ss|
+    ss.source_files = "CJUIKit/UIToolbar/**/*.{h,m}"
+    # ss.resources = "CJUIKit/UIToolbar/**/*.{png,xib}"
+  end
 
   s.subspec 'CJScrollView' do |ss|
     ss.source_files = "CJUIKit/CJScrollView/**/*.{h,m}"

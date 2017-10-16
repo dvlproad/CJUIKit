@@ -15,6 +15,9 @@
 #import "CJToast.h"
 #import <CJFoundation/NSString+CJValidate.h>
 
+#import "CJDefaultToolbar.h"
+#import "UITextField+CJAddInputAccessoryView.h"
+
 @interface TextFieldViewController () <UITextFieldDelegate>
 
 @end
@@ -26,20 +29,20 @@
     // Do any additional setup after loading the view from its nib.
     
     
-    self.textFiled.delegate = self;
-    [self.textFiled setCjTextDidChangeBlock:^(UITextField *textField) {
+    self.textField.delegate = self;
+    [self.textField setCjTextDidChangeBlock:^(UITextField *textField) {
         NSLog(@"textField内容改变了:%@", textField.text);
         if (![textField.text cj_validateEmail]) {
             [CJToast showMessage:@"不满足邮件格式"];
             [textField cjShake];
         }
     }];
-    [self.textFiled cj_limitTextLength:30 withLimitCompleteBlock:^{
+    [self.textField cj_limitTextLength:30 withLimitCompleteBlock:^{
         [CJToast showMessage:@"文本过长，超过最大的30个字符了"];
-        [self.textFiled cjShake];
+        [self.textField cjShake];
     }];
     
-    self.textFiled.text = @"validateEmail@163.com";
+    self.textField.text = @"validateEmail@163.com";
     
     
     //UITextField
@@ -71,6 +74,21 @@
     
     
     [self.canInputSwitch addTarget:self action:@selector(canInputSwitchAction:) forControlEvents:UIControlEventValueChanged];
+    
+    
+    /* inputAccessoryView的例子 */
+    //方法1：
+//    CGFloat screenWidth = [[UIScreen mainScreen] bounds].size.width;
+//    CJDefaultToolbar *inputToolBar = [[CJDefaultToolbar alloc] initWithFrame:CGRectMake(0,0, screenWidth, 44)];
+//    inputToolBar.confirmHandle = ^{
+//        [self.textField resignFirstResponder];
+//    };
+//    self.textField.inputAccessoryView = inputToolBar;
+    
+    //方法2：
+    [self.textField addDefaultInputAccessoryViewWithDoneButtonClickBlock:^(UITextField *textField) {
+        [textField resignFirstResponder];
+    }];
 }
 
 - (void)canInputSwitchAction:(UISwitch *)canInputSwitch {
@@ -102,7 +120,7 @@
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-    [self.textFiled resignFirstResponder];
+    [self.textField resignFirstResponder];
 }
 
 - (void)didReceiveMemoryWarning {
