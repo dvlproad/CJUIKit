@@ -51,7 +51,7 @@
     NSLog(@"testCustomBackBarButtonItemAction");
 //    [self.navigationController popViewControllerAnimated:YES];
     
-    [self.cjCustomNavigationBackButton setBackgroundColor:CJRandomColor];
+    [self.cjCustomNavigationBackButton setBackgroundColor:CJColorRandom];
 }
 
 - (IBAction)keepBounds:(UIButton *)button {
