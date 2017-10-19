@@ -33,12 +33,12 @@
     [self.textField setCjTextDidChangeBlock:^(UITextField *textField) {
         NSLog(@"textField内容改变了:%@", textField.text);
         if (![textField.text cj_validateEmail]) {
-            [CJToast showMessage:@"不满足邮件格式"];
+            [CJToast shortShowMessage:@"不满足邮件格式"];
             [textField cjShake];
         }
     }];
     [self.textField cj_limitTextLength:30 withLimitCompleteBlock:^{
-        [CJToast showMessage:@"文本过长，超过最大的30个字符了"];
+        [CJToast shortShowMessage:@"文本过长，超过最大的30个字符了"];
         [self.textField cjShake];
     }];
     
@@ -111,7 +111,7 @@
     NSString *oldText = textField.text;
     NSString *newText = [oldText stringByReplacingCharactersInRange:range withString:string];//若允许改变，则会改变成的新文本
     if ([newText length] > 40) {
-        [CJToast showMessage:@"输入内容太长"];
+        [CJToast shortShowMessage:@"输入内容太长"];
         [textField cjShake];
         return NO;
     }
