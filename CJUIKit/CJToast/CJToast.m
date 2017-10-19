@@ -27,12 +27,12 @@
 
 /* 完整的描述请参见文件头部 */
 + (void)shortShowMessage:(NSString *)message inView:(UIView *)view {
-    [self shortShowMessage:message inView:view withLabelTextColor:nil bezelViewColor:nil];
+    [self shortShowMessage:message inView:view withLabelTextColor:nil bezelViewColor:nil hideAfterDelay:2.f];
 }
 
 /* 完整的描述请参见文件头部 */
 + (void)shortShowWhiteMessage:(NSString *)message inView:(UIView *)view {
-    [self shortShowMessage:message inView:view withLabelTextColor:[UIColor whiteColor] bezelViewColor:[UIColor blackColor]];
+    [self shortShowMessage:message inView:view withLabelTextColor:[UIColor whiteColor] bezelViewColor:[UIColor blackColor] hideAfterDelay:2.f];
 }
 
 /* 完整的描述请参见文件头部 */
@@ -40,6 +40,7 @@
                   inView:(UIView *)view
       withLabelTextColor:(UIColor *)labelTextColor
           bezelViewColor:(UIColor *)bezelViewColor
+          hideAfterDelay:(NSTimeInterval)delay
 {
     MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:view animated:YES];
     
@@ -55,8 +56,13 @@
     
     if (textWidth < labelMaxWidth) {
         hud.mode = MBProgressHUDModeText;
-        hud.label.textColor = labelTextColor;
-        hud.bezelView.color = bezelViewColor;
+        if (labelTextColor) {
+            hud.label.textColor = labelTextColor;
+        }
+        if (bezelViewColor) {
+            hud.bezelView.color = bezelViewColor;
+        }
+        
         
         hud.minSize = CGSizeMake(200, 30);
         
@@ -64,8 +70,12 @@
         
     } else {
         hud.mode = MBProgressHUDModeCustomView;
-        hud.label.textColor = labelTextColor;
-        hud.bezelView.color = bezelViewColor;
+        if (labelTextColor) {
+            hud.label.textColor = labelTextColor;
+        }
+        if (bezelViewColor) {
+            hud.bezelView.color = bezelViewColor;
+        }
         
         CGFloat labelWidth = labelMaxWidth;
         CGSize maxSize = CGSizeMake(labelWidth, CGFLOAT_MAX);
@@ -87,7 +97,7 @@
         
         hud.customView = label;
     }
-    [hud hideAnimated:YES afterDelay:2.f];
+    [hud hideAnimated:YES afterDelay:delay];
 }
 
 

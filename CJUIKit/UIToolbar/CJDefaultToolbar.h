@@ -1,6 +1,6 @@
 //
 //  CJDefaultToolbar.h
-//  CJPickerDemo
+//  CJUIKitDemo
 //
 //  Created by ciyouzen on 2017/3/19.
 //  Copyright © 2017年 dvlproad. All rights reserved.

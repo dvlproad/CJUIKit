@@ -118,6 +118,8 @@
 		78DC6E711F0E90B000DC025C /* CJSwitchSliderStatusModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 78DC6E6C1F0E90B000DC025C /* CJSwitchSliderStatusModel.m */; };
 		78DC6E721F0E90B000DC025C /* CJSwitchSlider.m in Sources */ = {isa = PBXBuildFile; fileRef = 78DC6E6E1F0E90B000DC025C /* CJSwitchSlider.m */; };
 		78DC6E771F0E90ED00DC025C /* CJAdsorbModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 78DC6E761F0E90ED00DC025C /* CJAdsorbModel.m */; };
+		78DE2D121F9927E60081D93F /* UITextField+CJAddInputAccessoryView.m in Sources */ = {isa = PBXBuildFile; fileRef = 78DE2D101F9927E50081D93F /* UITextField+CJAddInputAccessoryView.m */; };
+		78DE2D151F9929510081D93F /* UISearchBar+CJAddInputAccessoryView.m in Sources */ = {isa = PBXBuildFile; fileRef = 78DE2D141F9929510081D93F /* UISearchBar+CJAddInputAccessoryView.m */; };
 		78E269A41ECA92B9007D3686 /* NavigationBarChangeBGViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78E269A31ECA92B9007D3686 /* NavigationBarChangeBGViewController.m */; };
 		78E269A71ECA92E4007D3686 /* NavigationBarChangePositonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78E269A61ECA92E4007D3686 /* NavigationBarChangePositonViewController.m */; };
 		78E269AE1ECAF105007D3686 /* CJScaleHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = 78E269AD1ECAF105007D3686 /* CJScaleHeadView.m */; };
@@ -152,7 +154,6 @@
 		78FC3BC61ED541850049F22D /* UITextField+CJLimitTextLength.m in Sources */ = {isa = PBXBuildFile; fileRef = 78FC3BC11ED541850049F22D /* UITextField+CJLimitTextLength.m */; };
 		78FC3BC71ED541850049F22D /* UITextField+CJTextChangeBlock.m in Sources */ = {isa = PBXBuildFile; fileRef = 78FC3BC31ED541850049F22D /* UITextField+CJTextChangeBlock.m */; };
 		801B5B0C1F949BD400705FDC /* CJDefaultToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = 801B5B0B1F949BD300705FDC /* CJDefaultToolbar.m */; };
-		801B5B0F1F949D9100705FDC /* UITextField+CJAddInputAccessoryView.m in Sources */ = {isa = PBXBuildFile; fileRef = 801B5B0E1F949D9100705FDC /* UITextField+CJAddInputAccessoryView.m */; };
 		E2649F5BE7F7FEF404688168 /* libPods-CJUIKitDemoTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 935109AAB855F6CC8B84B9A5 /* libPods-CJUIKitDemoTests.a */; };
 /* End PBXBuildFile section */
 
@@ -360,6 +361,10 @@
 		78DC6E6E1F0E90B000DC025C /* CJSwitchSlider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJSwitchSlider.m; sourceTree = "<group>"; };
 		78DC6E751F0E90ED00DC025C /* CJAdsorbModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJAdsorbModel.h; sourceTree = "<group>"; };
 		78DC6E761F0E90ED00DC025C /* CJAdsorbModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJAdsorbModel.m; sourceTree = "<group>"; };
+		78DE2D101F9927E50081D93F /* UITextField+CJAddInputAccessoryView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextField+CJAddInputAccessoryView.m"; sourceTree = "<group>"; };
+		78DE2D111F9927E50081D93F /* UITextField+CJAddInputAccessoryView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextField+CJAddInputAccessoryView.h"; sourceTree = "<group>"; };
+		78DE2D131F9929510081D93F /* UISearchBar+CJAddInputAccessoryView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UISearchBar+CJAddInputAccessoryView.h"; sourceTree = "<group>"; };
+		78DE2D141F9929510081D93F /* UISearchBar+CJAddInputAccessoryView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UISearchBar+CJAddInputAccessoryView.m"; sourceTree = "<group>"; };
 		78E269A21ECA92B9007D3686 /* NavigationBarChangeBGViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NavigationBarChangeBGViewController.h; sourceTree = "<group>"; };
 		78E269A31ECA92B9007D3686 /* NavigationBarChangeBGViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NavigationBarChangeBGViewController.m; sourceTree = "<group>"; };
 		78E269A51ECA92E4007D3686 /* NavigationBarChangePositonViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NavigationBarChangePositonViewController.h; sourceTree = "<group>"; };
@@ -423,8 +428,6 @@
 		78FC3BC31ED541850049F22D /* UITextField+CJTextChangeBlock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextField+CJTextChangeBlock.m"; sourceTree = "<group>"; };
 		801B5B0A1F949BD300705FDC /* CJDefaultToolbar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJDefaultToolbar.h; sourceTree = "<group>"; };
 		801B5B0B1F949BD300705FDC /* CJDefaultToolbar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJDefaultToolbar.m; sourceTree = "<group>"; };
-		801B5B0D1F949D9100705FDC /* UITextField+CJAddInputAccessoryView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UITextField+CJAddInputAccessoryView.h"; sourceTree = "<group>"; };
-		801B5B0E1F949D9100705FDC /* UITextField+CJAddInputAccessoryView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UITextField+CJAddInputAccessoryView.m"; sourceTree = "<group>"; };
 		935109AAB855F6CC8B84B9A5 /* libPods-CJUIKitDemoTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CJUIKitDemoTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9AC0A78AFE86FE250B370A06 /* Pods-CJUIKitDemoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CJUIKitDemoTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CJUIKitDemoTests/Pods-CJUIKitDemoTests.debug.xcconfig"; sourceTree = "<group>"; };
 		A078401C0E781545EB72B64D /* libPods-CJUIKitDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CJUIKitDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -1203,8 +1206,6 @@
 				78FC3BC11ED541850049F22D /* UITextField+CJLimitTextLength.m */,
 				78FC3BC21ED541850049F22D /* UITextField+CJTextChangeBlock.h */,
 				78FC3BC31ED541850049F22D /* UITextField+CJTextChangeBlock.m */,
-				801B5B0D1F949D9100705FDC /* UITextField+CJAddInputAccessoryView.h */,
-				801B5B0E1F949D9100705FDC /* UITextField+CJAddInputAccessoryView.m */,
 			);
 			path = UITextField;
 			sourceTree = "<group>";
@@ -1223,6 +1224,10 @@
 			children = (
 				801B5B0A1F949BD300705FDC /* CJDefaultToolbar.h */,
 				801B5B0B1F949BD300705FDC /* CJDefaultToolbar.m */,
+				78DE2D111F9927E50081D93F /* UITextField+CJAddInputAccessoryView.h */,
+				78DE2D101F9927E50081D93F /* UITextField+CJAddInputAccessoryView.m */,
+				78DE2D131F9929510081D93F /* UISearchBar+CJAddInputAccessoryView.h */,
+				78DE2D141F9929510081D93F /* UISearchBar+CJAddInputAccessoryView.m */,
 			);
 			path = UIToolbar;
 			sourceTree = "<group>";
@@ -1550,6 +1555,7 @@
 				78E269CD1ECCFB1E007D3686 /* PullScaleTopImageViewController.m in Sources */,
 				78FC3BC41ED541850049F22D /* CJSelectTextTextField.m in Sources */,
 				783287FF1ED2214100A01A8A /* UIView+CJShake.m in Sources */,
+				78DE2D151F9929510081D93F /* UISearchBar+CJAddInputAccessoryView.m in Sources */,
 				78FC3BC51ED541850049F22D /* UITextField+CJAddLeftRightView.m in Sources */,
 				783658E41ECF99CF00AF7591 /* ViewCategoryViewController.m in Sources */,
 				78E61F081E79AF41009B1627 /* CJRefreshBaseView.m in Sources */,
@@ -1561,7 +1567,7 @@
 				780E460B1E5DF87B00980127 /* ViewController.m in Sources */,
 				78E61ED81E79AA20009B1627 /* CJKeyboardAvoidingScrollView.m in Sources */,
 				782709E31E8715A600E21433 /* UIImage+CJLaunchImage.m in Sources */,
-				801B5B0F1F949D9100705FDC /* UITextField+CJAddInputAccessoryView.m in Sources */,
+				78DE2D121F9927E60081D93F /* UITextField+CJAddInputAccessoryView.m in Sources */,
 				7840FB211EB09C6E00B553F7 /* UINavigationBar+CJChangeBG.m in Sources */,
 				7847389C1F0F1F4F00EF4C40 /* ShimmeringSwitchSlider.m in Sources */,
 				783287FC1ED2214100A01A8A /* UIView+CJFind.m in Sources */,

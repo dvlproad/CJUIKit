@@ -52,11 +52,13 @@
  *  @param view             信息要显示的位置
  *  @param labelTextColor   文字的颜色
  *  @param bezelViewColor   文字所在背景框的颜色
+ *  @param delay            多少秒后自动消失
  */
 + (void)shortShowMessage:(NSString *)message
                   inView:(UIView *)view
       withLabelTextColor:(UIColor *)labelTextColor
-          bezelViewColor:(UIColor *)bezelViewColor;
+          bezelViewColor:(UIColor *)bezelViewColor
+          hideAfterDelay:(NSTimeInterval)delay;
 
 
 
