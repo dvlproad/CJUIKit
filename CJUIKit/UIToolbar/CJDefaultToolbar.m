@@ -8,6 +8,12 @@
 
 #import "CJDefaultToolbar.h"
 
+@interface CJDefaultToolbar ()
+
+@property (nonatomic, strong) UIBarButtonItem *bbItem_value;
+
+@end
+
 @implementation CJDefaultToolbar
 
 - (void)awakeFromNib
@@ -84,19 +90,44 @@
     //知识点(iOS11):[iOS11 UIToolBar Contentview](https://stackoverflow.com/questions/46107640/ios11-uitoolbar-contentview)
     NSMutableArray *toolbarItems = [[NSMutableArray alloc] init];
     if (option & CJDefaultToolbarOptionCancel) {
-        UIBarButtonItem *bbitem_cancel = [[UIBarButtonItem alloc]initWithTitle:@"取消" style:UIBarButtonItemStylePlain target:self action:@selector(cancelAction:)];
+        UIBarButtonItem *bbitem_cancel = [[UIBarButtonItem alloc] initWithTitle:@"取消" style:UIBarButtonItemStylePlain target:self action:@selector(cancelAction:)];
         [toolbarItems addObject:bbitem_cancel];
+    } else {
+        UIBarButtonItem *bbitem_fix = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace target:nil action:nil];
+        bbitem_fix.width = 40;
+        [toolbarItems addObject:bbitem_fix];
     }
     
-    if (option && CJDefaultToolbarOptionConfirm) {
-        UIBarButtonItem *bbitem_flex = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil];
+    UIBarButtonItem *bbitem_flex = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil];
+    [toolbarItems addObject:bbitem_flex];
+    
+    if (option & CJDefaultToolbarOptionValue) {
+        UIBarButtonItem *bbItem_value = [[UIBarButtonItem alloc] initWithTitle:@"这是一个值的显示位置,其长度会自适应" style:UIBarButtonItemStylePlain target:self action:nil];
+        [toolbarItems addObject:bbItem_value];
         
-        UIBarButtonItem *bbitem_confirm = [[UIBarButtonItem alloc]initWithTitle:@"确定" style:UIBarButtonItemStylePlain target:self action:@selector(confirmAction:)];
+        self.bbItem_value = bbItem_value;
+    } else {
+        UIBarButtonItem *bbitem_fix = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace target:nil action:nil];
+        bbitem_fix.width = 40;
+        [toolbarItems addObject:bbitem_fix];
+        
+        self.bbItem_value = nil;
+    }
+    
+    //UIBarButtonItem *bbitem_flex = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil];
+    [toolbarItems addObject:bbitem_flex];
+    
+    if (option & CJDefaultToolbarOptionConfirm) {
+        UIBarButtonItem *bbitem_confirm = [[UIBarButtonItem alloc] initWithTitle:@"确定" style:UIBarButtonItemStylePlain target:self action:@selector(confirmAction:)];
         UIColor *color = [UIColor colorWithRed:43/255.0 green:76/255.0 blue:171/255.0 alpha:1];
         NSDictionary *attributes = @{NSForegroundColorAttributeName:color};
         [bbitem_confirm setTitleTextAttributes:attributes forState:UIControlStateNormal];
         
-        [toolbarItems addObjectsFromArray:@[bbitem_flex, bbitem_confirm]];
+        [toolbarItems addObject:bbitem_confirm];
+    } else {
+        UIBarButtonItem *bbitem_fix = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace target:nil action:nil];
+        bbitem_fix.width = 40;
+        [toolbarItems addObject:bbitem_fix];
     }
     
     [self setItems:toolbarItems];
@@ -112,6 +143,11 @@
     if (self.cancelHandle) {
         self.cancelHandle();
     }
+}
+
+/** 完整的描述请参见文件头部 */
+- (void)updateShowingValue:(NSString *)value {
+    self.bbItem_value.title = value;
 }
 
 @end

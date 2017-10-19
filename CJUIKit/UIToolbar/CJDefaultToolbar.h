@@ -9,8 +9,9 @@
 #import <UIKit/UIKit.h>
 
 typedef NS_OPTIONS(NSUInteger, CJDefaultToolbarOption) {
-    CJDefaultToolbarOptionConfirm = 1 << 0,
-    CJDefaultToolbarOptionCancel = 1 << 1,
+    CJDefaultToolbarOptionConfirm = 1 << 0, /**< 是否有确定按钮 */
+    CJDefaultToolbarOptionCancel = 1 << 1,  /**< 是否有取消按钮 */
+    CJDefaultToolbarOptionValue = 1 << 2,   /**< 是否有值显示 */
 };
 
 //CJPicker中经常会用到
@@ -20,5 +21,12 @@ typedef NS_OPTIONS(NSUInteger, CJDefaultToolbarOption) {
 @property (nonatomic, copy) void (^cancelHandle)(void);     /**< 点击取消执行的操作 */
 
 @property (nonatomic, assign) CJDefaultToolbarOption option;
+
+/**
+ *  更新toolbar上显示的值
+ *
+ *  @param value    toolbar上要显示的值
+ */
+- (void)updateShowingValue:(NSString *)value;
 
 @end
