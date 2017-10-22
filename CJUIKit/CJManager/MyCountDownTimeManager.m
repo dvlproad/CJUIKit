@@ -76,7 +76,7 @@
 }
 
 /* 完整的描述请参见文件头部 */
-- (void)invalidateCountDownWithCompleteBlock:(void(^)())completeBlock
+- (void)invalidateCountDownWithCompleteBlock:(void(^)(void))completeBlock
 {
     if(!_timer) {
         return;

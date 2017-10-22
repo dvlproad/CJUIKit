@@ -51,6 +51,6 @@
 /**
  *  销毁/结束定时器（下次使用，需重新create）
  */
-- (void)invalidateCountDownWithCompleteBlock:(void(^)())completeBlock;
+- (void)invalidateCountDownWithCompleteBlock:(void(^)(void))completeBlock;
 
 @end

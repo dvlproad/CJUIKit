@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "UINavigationBar+CJChangeBG.h"
 
-#import "SmallScaleHeadView.h"
+#import "MyUserInfoScaleHeadView.h"
 
 @interface NavigationBarBaseViewController : UIViewController <UIScrollViewDelegate>
 

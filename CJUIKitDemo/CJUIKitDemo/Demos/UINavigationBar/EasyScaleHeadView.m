@@ -1,14 +1,14 @@
 //
-//  MyScaleHeadView.m
+//  EasyScaleHeadView.m
 //  CJUIKitDemo
 //
 //  Created by ciyouzen on 2017/5/16.
 //  Copyright © 2017年 dvlproad. All rights reserved.
 //
 
-#import "MyScaleHeadView.h"
+#import "EasyScaleHeadView.h"
 
-@implementation MyScaleHeadView
+@implementation EasyScaleHeadView
 
 - (void)awakeFromNib {
     [super awakeFromNib];

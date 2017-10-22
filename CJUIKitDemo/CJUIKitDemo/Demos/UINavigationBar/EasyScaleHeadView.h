@@ -1,5 +1,5 @@
 //
-//  MyScaleHeadView.h
+//  EasyScaleHeadView.h
 //  CJUIKitDemo
 //
 //  Created by ciyouzen on 2017/5/16.
@@ -8,7 +8,7 @@
 
 #import "CJScaleHeadView.h"
 
-@interface MyScaleHeadView : CJScaleHeadView
+@interface EasyScaleHeadView : CJScaleHeadView
 
 @property (nonatomic, strong) IBOutlet UIImageView *imageView;
 @property (nonatomic, strong) IBOutlet UIButton *button;

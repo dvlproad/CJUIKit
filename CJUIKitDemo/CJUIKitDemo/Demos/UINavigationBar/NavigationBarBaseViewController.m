@@ -8,9 +8,9 @@
 
 #import "NavigationBarBaseViewController.h"
 
-#import "MyScaleHeadView.h"
+#import "EasyScaleHeadView.h"
 
-@interface NavigationBarBaseViewController ()<UITableViewDataSource,UITableViewDelegate> {
+@interface NavigationBarBaseViewController () <UITableViewDataSource, UITableViewDelegate> {
     
 }
 
@@ -26,7 +26,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
-    [self addTableHeaderView]; //warning：需要先设置完tableHeaderView后，再进行协议设置，否则协议走不进去
+    [self addTableHeaderView]; //仅用于测试添加tableHeaderView，是否会对待会addSubview的TableScaleHeader有影响。warning：需要先设置完tableHeaderView后，再进行协议设置，否则协议走不进去
     
     [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"cell"];
     self.tableView.delegate = self;
@@ -50,17 +50,29 @@
 - (void)addTableScaleHeaderViewWithAttachNavigationBar:(BOOL)attachNavigationBar supportPullSmall:(BOOL)canPullSmall  {
     CJScaleHeadView *scaleHeadView = nil;
     if (!canPullSmall) {
-        NSArray *views = [[NSBundle mainBundle] loadNibNamed:@"MyScaleHeadView" owner:self options:nil];
-        scaleHeadView = (MyScaleHeadView *)[views objectAtIndex:0];
+        NSArray *views = [[NSBundle mainBundle] loadNibNamed:@"EasyScaleHeadView" owner:self options:nil];
+        EasyScaleHeadView *easyScaleHeadView = (EasyScaleHeadView *)[views objectAtIndex:0];
+        scaleHeadView = easyScaleHeadView;
+        
+        /* 改变scaleHeadView的高度 */
+        CGRect scaleHeadViewFrame = scaleHeadView.frame;
+        scaleHeadViewFrame.size.height = 200;
+        scaleHeadView.frame = scaleHeadViewFrame;
+        
     } else {
-        scaleHeadView = [[SmallScaleHeadView alloc] initWithFrame:CGRectMake(0, 0, 200, 200)];
+        MyUserInfoScaleHeadView *userInfoScaleHeadView = [[MyUserInfoScaleHeadView alloc] initWithFrame:CGRectZero];
+        userInfoScaleHeadView.backgroundImageView.image = [UIImage imageNamed:@"bg.jpg"];
+        [userInfoScaleHeadView.portraitButton setImage:[UIImage imageNamed:@"header.jpg"] forState:UIControlStateNormal];
+        [userInfoScaleHeadView.nameLabel setText:@"昵称"];
+        userInfoScaleHeadView.originHeight = 200;
+        
+        scaleHeadView = userInfoScaleHeadView;
+        
+        /* 改变scaleHeadView的高度 */
+        CGRect scaleHeadViewFrame = scaleHeadView.frame;
+        scaleHeadViewFrame.size.height = 200;
+        scaleHeadView.frame = scaleHeadViewFrame;
     }
-    
-    /* 改变scaleHeadView的高度 */
-    CGRect scaleHeadViewFrame = scaleHeadView.frame;
-    scaleHeadViewFrame.size.height = 200;
-    scaleHeadView.frame = scaleHeadViewFrame;
-    
     
     [self.tableView addSubview:scaleHeadView];
     [scaleHeadView pullScaleByScrollView:self.tableView withAttachNavigationBar:attachNavigationBar];

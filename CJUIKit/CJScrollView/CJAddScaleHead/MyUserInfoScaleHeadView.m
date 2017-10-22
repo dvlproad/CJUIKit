@@ -1,14 +1,14 @@
 //
-//  SmallScaleHeadView.m
+//  MyUserInfoScaleHeadView.m
 //  CJUIKitDemo
 //
 //  Created by ciyouzen on 2017/5/18.
 //  Copyright © 2017年 dvlproad. All rights reserved.
 //
 
-#import "SmallScaleHeadView.h"
+#import "MyUserInfoScaleHeadView.h"
 
-@implementation SmallScaleHeadView
+@implementation MyUserInfoScaleHeadView
 
 - (void)commonInit {
     [super commonInit]; //记得super
@@ -18,13 +18,6 @@
     [self addSubview:self.backgroundImageView];
     [self addSubview:self.portraitButton];
     [self addSubview:self.nameLabel];
-    
-    self.backgroundImageView.image = [UIImage imageNamed:@"bg.jpg"];
-    [self.portraitButton setImage:[UIImage imageNamed:@"header.jpg"] forState:UIControlStateNormal];
-    [self.nameLabel setText:@"昵称"];
-    
-    
-    self.originHeight = 200;
 }
 
 - (void)setFrame:(CGRect)frame {
@@ -153,6 +146,9 @@
 #pragma mark - 点击方法
 - (void)portraitAction {
     NSLog(@"点击了头像");
+    if (self.clickPortraitBlock) {
+        self.clickPortraitBlock();
+    }
 }
 
 

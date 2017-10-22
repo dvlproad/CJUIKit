@@ -13,7 +13,7 @@
 #endif
 
 typedef void(^ReachtopBlock) (BOOL reachtop);
-typedef void(^PressHeaderBlock) ();
+typedef void(^PressHeaderBlock) (void);
 
 @interface LEOHeaderView : UIView
 
