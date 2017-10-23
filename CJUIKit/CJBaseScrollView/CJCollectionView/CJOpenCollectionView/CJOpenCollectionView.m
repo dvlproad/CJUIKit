@@ -301,17 +301,19 @@ static NSString *const HeaderIdentifierDefault = @"HeaderDefault";
         NSInteger section = [numVisibleSection integerValue];
         NSInteger itemCount = [self numberOfItemsInSection:section];
         if (itemCount > 0) { //if itemCount > 0, mean this section is unfold
-            CJCollectionViewHeaderFooterView *header = (CJCollectionViewHeaderFooterView *)[self supplementaryViewForElementKind:UICollectionElementKindSectionHeader atIndexPath:[NSIndexPath indexPathForItem:0 inSection:section]];
-            
-            
-            CJLineCell *lineCell = (CJLineCell *)[self cellForItemAtIndexPath:[NSIndexPath indexPathForItem:itemCount-1 inSection:section]];
-            if (self.contentOffset.x > header.center.x) {
-                lineCell.label.hidden = NO;
-                lineCell.line.hidden = NO;
-            }else{
-                lineCell.label.hidden = YES;
-                lineCell.line.hidden = YES;
-            }
+            if (@available(iOS 9.0, *)) {   // iOS 9 及其以上系统运行
+                CJCollectionViewHeaderFooterView *header = (CJCollectionViewHeaderFooterView *)[self supplementaryViewForElementKind:UICollectionElementKindSectionHeader atIndexPath:[NSIndexPath indexPathForItem:0 inSection:section]];
+                
+                
+                CJLineCell *lineCell = (CJLineCell *)[self cellForItemAtIndexPath:[NSIndexPath indexPathForItem:itemCount-1 inSection:section]];
+                if (self.contentOffset.x > header.center.x) {
+                    lineCell.label.hidden = NO;
+                    lineCell.line.hidden = NO;
+                }else{
+                    lineCell.label.hidden = YES;
+                    lineCell.line.hidden = YES;
+                }
+            };
         }
     }
     

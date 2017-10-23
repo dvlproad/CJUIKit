@@ -73,6 +73,7 @@
     };
     
     //TODO:定时器的处理，滑动的时候定时器要停止且位置要更新到滑动的位置等,请参考SDCycleScrollView
+    //TODO:这个定时器方法是iOS10方法，在8.4模拟器上就会出现崩溃问题
     NSTimer *timer = [NSTimer scheduledTimerWithTimeInterval:3 repeats:YES block:^(NSTimer * _Nonnull timer) {
         [self goShowNextAD];
     }];
