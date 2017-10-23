@@ -14,8 +14,7 @@ PODS:
   - AFNetworking/Serialization (3.1.0)
   - AFNetworking/UIKit (3.1.0):
     - AFNetworking/NSURLSession
-  - CJBaseUtil/CJSortedAndSearchUtil (0.0.3):
-    - PinYin4Objc (~> 1.1.1)
+  - CJBaseUtil/CJDataUtil (0.1.1)
   - CJFoundation/NSString (0.0.4)
   - CJNetwork/AFHTTPSessionManager+CJUploadFile (0.0.7):
     - CJNetwork/CJNetworkMonitor
@@ -36,7 +35,7 @@ PODS:
   - Shimmer (1.0.2)
 
 DEPENDENCIES:
-  - CJBaseUtil/CJSortedAndSearchUtil (~> 0.0.1)
+  - CJBaseUtil/CJDataUtil (~> 0.1.1)
   - CJFoundation/NSString (~> 0.0.4)
   - CJNetwork/AFHTTPSessionManager+CJUploadFile (~> 0.0.6)
   - Masonry (~> 1.0.2)
@@ -44,13 +43,14 @@ DEPENDENCIES:
   - MJPopupViewController (~> 0.4)
   - MJRefresh (~> 3.1.12)
   - NSOperationQueueUtil (~> 0.0.1)
+  - PinYin4Objc (~> 1.1.1)
   - PureLayout (~> 3.0.2)
   - SDCycleScrollView (~> 1.73)
   - Shimmer (~> 1.0.2)
 
 SPEC CHECKSUMS:
   AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
-  CJBaseUtil: cbce4a2bf93bdee37f9f31f337dd060bfcdebedc
+  CJBaseUtil: c1681e39a06c2c50b00b9a2e0523f4bfb723667b
   CJFoundation: 0a4d15d9320cda8b861df3b7492bb289be588ae9
   CJNetwork: 9f80e09448e1cc61252f66d2cd2adf336c8821b3
   Masonry: 7c429b56da9d4ee0bbb3ed77a5ea710d6a5df39e
@@ -64,6 +64,6 @@ SPEC CHECKSUMS:
   SDWebImage: 76a6348bdc74eb5a55dd08a091ef298e56b55e41
   Shimmer: c5374be1c2b0c9e292fb05b339a513cf291cac86
 
-PODFILE CHECKSUM: b7e81ffea4077dc75d638730822723f19377902f
+PODFILE CHECKSUM: f0f42fd0d5dfc1e80b8eb2f6ae0b2f023b27e8af
 
 COCOAPODS: 1.4.0.beta.1

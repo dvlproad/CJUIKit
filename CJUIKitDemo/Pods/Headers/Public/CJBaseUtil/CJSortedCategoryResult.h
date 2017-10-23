@@ -1,1 +1,1 @@
-../../../CJBaseUtil/CJBaseUtil/CJSortedAndSearchUtil/Models/Sorted/CJSortedCategoryResult.h
+../../../CJBaseUtil/CJBaseUtil/CJDataUtil/Models/Sorted/CJSortedCategoryResult.h

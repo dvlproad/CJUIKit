@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "CJBaseUIKit"
-  s.version      = "0.1.0"
+  s.version      = "0.1.2"
   s.summary      = "自定义的基础UI"
   s.homepage     = "https://github.com/dvlproad/CJUIKit"
 
@@ -18,6 +18,7 @@ Pod::Spec.new do |s|
                   2、CJBaseCollectionViewCell：基础的CollectionViewCell;
                   3、MyEqualCellSizeCollectionView：一个只有一个分区且分区中的每个cell大小相等的集合视图(cell的大小可通过方法①设置cell的固定大小和方法②通过设置每行最大显示的cell个数获得)
                   4、CJOpenCollectionView：可展开的集合视图
+                  5、CJDataScrollView：带数据的列表视图或集合视图(常用于搜索)
 
                    A longer description of CJPopupAction in Markdown format.
 
@@ -40,7 +41,7 @@ Pod::Spec.new do |s|
 
   s.platform     = :ios, "7.0"
  
-  s.source       = { :git => "https://github.com/dvlproad/CJUIKit.git", :tag => "CJBaseUIKit_0.1.0" }
+  s.source       = { :git => "https://github.com/dvlproad/CJUIKit.git", :tag => "CJBaseUIKit_0.1.2" }
   s.source_files  = "CJUIKit/*.{h,m}"
 
   s.frameworks = "UIKit"
@@ -123,7 +124,7 @@ Pod::Spec.new do |s|
     ss.subspec 'CJBaseTableViewCell' do |sss|
       sss.source_files = "CJUIKit/CJBaseScrollView/CJTableView/CJBaseTableViewCell/**/*.{h,m}"
       sss.resources = "CJUIKit/CJBaseScrollView/CJTableView/CJBaseTableViewCell/**/*.{png}"
-      sss.dependency "CJBaseUIKit/CJImageView", "~> 0.0.14"
+      sss.dependency "CJBaseUIKit/CJImageView"
     end
 
     ss.subspec 'CJBaseTableViewHeaderFooterView' do |sss|
@@ -145,16 +146,24 @@ Pod::Spec.new do |s|
     # 一个只有一个分区且分区中的每个cell大小相等的集合视图(cell的大小可通过方法①设置cell的固定大小和方法②通过设置每行最大显示的cell个数获得)
     ss.subspec 'MyEqualCellSizeCollectionView' do |sss|
       sss.source_files = "CJUIKit/CJBaseScrollView/CJCollectionView/MyEqualCellSizeCollectionView/**/*.{h,m}"
-
-      # MySearchEqualCellSizeCollectionView需要额外依赖的库
-      sss.dependency 'CJBaseUtil/CJSortedAndSearchUtil', '~> 0.0.1'
-      sss.dependency 'NSOperationQueueUtil', '~> 0.0.1'
     end
 
     # 可展开的集合视图
     ss.subspec 'CJOpenCollectionView' do |sss|
       sss.source_files = "CJUIKit/CJBaseScrollView/CJCollectionView/CJOpenCollectionView/**/*.{h,m}"
     end
+
+    # 带数据的列表视图或集合视图(常用于搜索)
+    ss.subspec 'CJDataScrollView' do |sss|
+      sss.source_files = "CJUIKit/CJBaseScrollView/CJDataScrollView/**/*.{h,m}"
+
+      sss.dependency 'CJBaseUIKit/CJCollectionView/MyEqualCellSizeCollectionView'
+
+      # MySearchEqualCellSizeCollectionView需要额外依赖的库
+      sss.dependency 'CJBaseUtil/CJDataUtil', '~> 0.1.1'
+      sss.dependency 'NSOperationQueueUtil', '~> 0.0.1'
+    end
+
   end
 
 

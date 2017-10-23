@@ -1,6 +1,6 @@
 //
 //  MyEqualCellSizeView.m
-//  AllScrollViewDemo
+//  CJUIKitDemo
 //
 //  Created by lichaoqian on 2017/9/11.
 //  Copyright © 2017年 dvlproad. All rights reserved.

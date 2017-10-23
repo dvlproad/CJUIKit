@@ -1,6 +1,6 @@
 //
 //  MyOpenTableView.m
-//  AllScrollViewDemo
+//  CJUIKitDemo
 //
 //  Created by ciyouzen on 2017/4/21.
 //  Copyright © 2017年 dvlproad. All rights reserved.

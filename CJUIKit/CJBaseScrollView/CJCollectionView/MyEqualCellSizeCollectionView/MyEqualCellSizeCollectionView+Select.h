@@ -1,6 +1,6 @@
 //
 //  MyEqualCellSizeCollectionView+Select.h
-//  AllScrollViewDemo
+//  CJUIKitDemo
 //
 //  Created by 李超前 on 2017/9/15.
 //  Copyright © 2017年 dvlproad. All rights reserved.

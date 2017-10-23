@@ -1,6 +1,6 @@
 //
 //  MyCycleADView.h
-//  AllScrollViewDemo
+//  CJUIKitDemo
 //
 //  Created by 李超前 on 2017/10/15.
 //  Copyright © 2017年 dvlproad. All rights reserved.

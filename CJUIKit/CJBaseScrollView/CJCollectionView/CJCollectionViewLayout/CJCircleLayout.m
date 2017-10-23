@@ -1,6 +1,6 @@
 //
 //  CJCircleLayout.m
-//  AllScrollViewDemo
+//  CJUIKitDemo
 //
 //  Created by ciyouzen on 13-5-30.
 //  Copyright (c) 2013年 dvlproad. All rights reserved.

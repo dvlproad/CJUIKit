@@ -23,8 +23,10 @@ target 'CJUIKitDemo' do
   pod 'MJPopupViewController', '~> 0.4'
   
   # 搜索功能需要依赖的库
-  pod 'CJBaseUtil/CJSortedAndSearchUtil', '~> 0.0.1'
+  pod 'CJBaseUtil/CJDataUtil', '~> 0.1.1'
   pod 'NSOperationQueueUtil', '~> 0.0.1'
+  # 搜索功能需要使用的库
+  pod 'PinYin4Objc', '~> 1.1.1'
   
 end
 

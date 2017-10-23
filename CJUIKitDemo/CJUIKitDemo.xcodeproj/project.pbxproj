@@ -114,6 +114,8 @@
 		78AF3F761F6012F400660373 /* UIViewController+CJBackButtonHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 78AF3F751F6012F400660373 /* UIViewController+CJBackButtonHandler.m */; };
 		78AF3F7A1F60341000660373 /* cjBackBarButtonItem@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 78AF3F781F60341000660373 /* cjBackBarButtonItem@2x.png */; };
 		78B6761B1EB192EA006F4612 /* ModuleModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 78B6761A1EB192EA006F4612 /* ModuleModel.m */; };
+		78C0984E1F9E5D62004154CC /* MySearchEqualCellSizeCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 78C0984D1F9E5D61004154CC /* MySearchEqualCellSizeCollectionView.m */; };
+		78C098521F9E608F004154CC /* CJPinyinHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 78C098511F9E608F004154CC /* CJPinyinHelper.m */; };
 		78C35B161F9E3B4700C7080B /* CvDemo_Complex+Event.m in Sources */ = {isa = PBXBuildFile; fileRef = 78C35A9A1F9E3B4700C7080B /* CvDemo_Complex+Event.m */; };
 		78C35B171F9E3B4800C7080B /* CvDemo_Complex.m in Sources */ = {isa = PBXBuildFile; fileRef = 78C35A9C1F9E3B4700C7080B /* CvDemo_Complex.m */; };
 		78C35B181F9E3B4800C7080B /* CvDemo_Complex.xib in Resources */ = {isa = PBXBuildFile; fileRef = 78C35A9D1F9E3B4700C7080B /* CvDemo_Complex.xib */; };
@@ -205,7 +207,6 @@
 		78C35BB41F9E3C3000C7080B /* MyEqualCellSizeCollectionView+Select.m in Sources */ = {isa = PBXBuildFile; fileRef = 78C35B7E1F9E3C2F00C7080B /* MyEqualCellSizeCollectionView+Select.m */; };
 		78C35BB51F9E3C3000C7080B /* MyEqualCellSizeCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 78C35B801F9E3C2F00C7080B /* MyEqualCellSizeCollectionView.m */; };
 		78C35BB61F9E3C3000C7080B /* MyEqualCellSizeSetting.m in Sources */ = {isa = PBXBuildFile; fileRef = 78C35B821F9E3C2F00C7080B /* MyEqualCellSizeSetting.m */; };
-		78C35BB71F9E3C3000C7080B /* MySearchEqualCellSizeCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 78C35B841F9E3C2F00C7080B /* MySearchEqualCellSizeCollectionView.m */; };
 		78C35BB81F9E3C3000C7080B /* CJBaseChooseCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 78C35B891F9E3C2F00C7080B /* CJBaseChooseCollectionView.m */; };
 		78C35BB91F9E3C3000C7080B /* cjCollectionViewCellAdd@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 78C35B8B1F9E3C2F00C7080B /* cjCollectionViewCellAdd@2x.png */; };
 		78C35BBA1F9E3C3000C7080B /* cjCollectionViewCellDelete@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 78C35B8C1F9E3C2F00C7080B /* cjCollectionViewCellDelete@2x.png */; };
@@ -474,6 +475,10 @@
 		78AF3F781F60341000660373 /* cjBackBarButtonItem@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cjBackBarButtonItem@2x.png"; sourceTree = "<group>"; };
 		78B676191EB192EA006F4612 /* ModuleModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModuleModel.h; sourceTree = "<group>"; };
 		78B6761A1EB192EA006F4612 /* ModuleModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModuleModel.m; sourceTree = "<group>"; };
+		78C0984C1F9E5D61004154CC /* MySearchEqualCellSizeCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MySearchEqualCellSizeCollectionView.h; sourceTree = "<group>"; };
+		78C0984D1F9E5D61004154CC /* MySearchEqualCellSizeCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MySearchEqualCellSizeCollectionView.m; sourceTree = "<group>"; };
+		78C098501F9E608F004154CC /* CJPinyinHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJPinyinHelper.h; sourceTree = "<group>"; };
+		78C098511F9E608F004154CC /* CJPinyinHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJPinyinHelper.m; sourceTree = "<group>"; };
 		78C35A991F9E3B4700C7080B /* CvDemo_Complex+Event.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CvDemo_Complex+Event.h"; sourceTree = "<group>"; };
 		78C35A9A1F9E3B4700C7080B /* CvDemo_Complex+Event.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CvDemo_Complex+Event.m"; sourceTree = "<group>"; };
 		78C35A9B1F9E3B4700C7080B /* CvDemo_Complex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CvDemo_Complex.h; sourceTree = "<group>"; };
@@ -609,8 +614,6 @@
 		78C35B801F9E3C2F00C7080B /* MyEqualCellSizeCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyEqualCellSizeCollectionView.m; sourceTree = "<group>"; };
 		78C35B811F9E3C2F00C7080B /* MyEqualCellSizeSetting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyEqualCellSizeSetting.h; sourceTree = "<group>"; };
 		78C35B821F9E3C2F00C7080B /* MyEqualCellSizeSetting.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyEqualCellSizeSetting.m; sourceTree = "<group>"; };
-		78C35B831F9E3C2F00C7080B /* MySearchEqualCellSizeCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MySearchEqualCellSizeCollectionView.h; sourceTree = "<group>"; };
-		78C35B841F9E3C2F00C7080B /* MySearchEqualCellSizeCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MySearchEqualCellSizeCollectionView.m; sourceTree = "<group>"; };
 		78C35B881F9E3C2F00C7080B /* CJBaseChooseCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJBaseChooseCollectionView.h; sourceTree = "<group>"; };
 		78C35B891F9E3C2F00C7080B /* CJBaseChooseCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJBaseChooseCollectionView.m; sourceTree = "<group>"; };
 		78C35B8B1F9E3C2F00C7080B /* cjCollectionViewCellAdd@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cjCollectionViewCellAdd@2x.png"; sourceTree = "<group>"; };
@@ -1309,12 +1312,31 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
+		78C0984B1F9E5D61004154CC /* CJDataScrollView */ = {
+			isa = PBXGroup;
+			children = (
+				78C0984C1F9E5D61004154CC /* MySearchEqualCellSizeCollectionView.h */,
+				78C0984D1F9E5D61004154CC /* MySearchEqualCellSizeCollectionView.m */,
+			);
+			path = CJDataScrollView;
+			sourceTree = "<group>";
+		};
+		78C0984F1F9E608F004154CC /* DataScrollViewDemo */ = {
+			isa = PBXGroup;
+			children = (
+				78C098501F9E608F004154CC /* CJPinyinHelper.h */,
+				78C098511F9E608F004154CC /* CJPinyinHelper.m */,
+			);
+			path = DataScrollViewDemo;
+			sourceTree = "<group>";
+		};
 		78C35A961F9E3B4700C7080B /* ScrollViewDemo */ = {
 			isa = PBXGroup;
 			children = (
 				78C35AE51F9E3B4700C7080B /* ScrollViewHomeViewController.h */,
 				78C35AE61F9E3B4700C7080B /* ScrollViewHomeViewController.m */,
 				78C35BE21F9E40E800C7080B /* ScrollViewHomeViewController.xib */,
+				78C0984F1F9E608F004154CC /* DataScrollViewDemo */,
 				78C35BCA1F9E3D6C00C7080B /* Resources */,
 				78C35BCF1F9E3D6C00C7080B /* TestDataUtil */,
 				78C35A971F9E3B4700C7080B /* CJCollectionViewDemo */,
@@ -1569,6 +1591,7 @@
 			isa = PBXGroup;
 			children = (
 				78C35B651F9E3C2F00C7080B /* ChangeLog.md */,
+				78C0984B1F9E5D61004154CC /* CJDataScrollView */,
 				78C35B661F9E3C2F00C7080B /* CJCollectionView */,
 				78C35B861F9E3C2F00C7080B /* CJFileChooseView */,
 				78C35B8F1F9E3C2F00C7080B /* CJSingleTableViewCellDataSource */,
@@ -1638,8 +1661,6 @@
 				78C35B801F9E3C2F00C7080B /* MyEqualCellSizeCollectionView.m */,
 				78C35B811F9E3C2F00C7080B /* MyEqualCellSizeSetting.h */,
 				78C35B821F9E3C2F00C7080B /* MyEqualCellSizeSetting.m */,
-				78C35B831F9E3C2F00C7080B /* MySearchEqualCellSizeCollectionView.h */,
-				78C35B841F9E3C2F00C7080B /* MySearchEqualCellSizeCollectionView.m */,
 			);
 			path = MyEqualCellSizeCollectionView;
 			sourceTree = "<group>";
@@ -2462,7 +2483,7 @@
 				78E269AE1ECAF105007D3686 /* CJScaleHeadView.m in Sources */,
 				78C35BDF1F9E3D6C00C7080B /* DemoInfo.m in Sources */,
 				78E61F041E79AF0A009B1627 /* UIView+CJExtension.m in Sources */,
-				78C35BB71F9E3C3000C7080B /* MySearchEqualCellSizeCollectionView.m in Sources */,
+				78C098521F9E608F004154CC /* CJPinyinHelper.m in Sources */,
 				7898C92E1F12795900F06820 /* RangeSliderViewController.m in Sources */,
 				784D550A1F4E81EF00C21003 /* QRCodeViewController.m in Sources */,
 				781592E81EC40C8F00DE1976 /* SearchBarViewController.m in Sources */,
@@ -2506,6 +2527,7 @@
 				78B6761B1EB192EA006F4612 /* ModuleModel.m in Sources */,
 				78C35BAD1F9E3C3000C7080B /* CJFullCenterCollectionViewCell.m in Sources */,
 				78C35B5B1F9E3B4800C7080B /* CJRightDetailTableViewCell+ConfigureForDataModel.m in Sources */,
+				78C0984E1F9E5D62004154CC /* MySearchEqualCellSizeCollectionView.m in Sources */,
 				78375DA31F7EBA5C00EDCF8F /* UIImage+CJBlur.m in Sources */,
 				78E61F011E79AF0A009B1627 /* CJRefreshFooter.m in Sources */,
 				78C35B3C1F9E3B4800C7080B /* MyADModel.m in Sources */,

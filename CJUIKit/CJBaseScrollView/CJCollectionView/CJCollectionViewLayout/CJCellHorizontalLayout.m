@@ -1,6 +1,6 @@
 //
 //  CJCellHorizontalLayout.m
-//  AllScrollViewDemo
+//  CJUIKitDemo
 //
 //  Created by ciyouzen on 16-5-30.
 //  Copyright (c) 2016年 dvlproad. All rights reserved.
