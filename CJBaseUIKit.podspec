@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "CJBaseUIKit"
-  s.version      = "0.0.21"
+  s.version      = "0.1.0"
   s.summary      = "自定义的基础UI"
   s.homepage     = "https://github.com/dvlproad/CJUIKit"
 
@@ -13,6 +13,11 @@ Pod::Spec.new do |s|
                   *、UIColor+CJHex：用来通过十六进制来设置颜色。 支持@“#123456”、 @“0X123456”、 @“123456”三种格式
                   *、UIImage+CJCategory：
                   *、CJSlider
+                  #、CJBaseScrollView：自定义的基础滚动视图
+                  1、CJBaseTableViewCell：基础的TableViewCell;
+                  2、CJBaseCollectionViewCell：基础的CollectionViewCell;
+                  3、MyEqualCellSizeCollectionView：一个只有一个分区且分区中的每个cell大小相等的集合视图(cell的大小可通过方法①设置cell的固定大小和方法②通过设置每行最大显示的cell个数获得)
+                  4、CJOpenCollectionView：可展开的集合视图
 
                    A longer description of CJPopupAction in Markdown format.
 
@@ -35,7 +40,7 @@ Pod::Spec.new do |s|
 
   s.platform     = :ios, "7.0"
  
-  s.source       = { :git => "https://github.com/dvlproad/CJUIKit.git", :tag => "CJBaseUIKit_0.0.21" }
+  s.source       = { :git => "https://github.com/dvlproad/CJUIKit.git", :tag => "CJBaseUIKit_0.1.0" }
   s.source_files  = "CJUIKit/*.{h,m}"
 
   s.frameworks = "UIKit"
@@ -109,6 +114,55 @@ Pod::Spec.new do |s|
     ss.source_files = "CJUIKit/CJScrollView/**/*.{h,m}"
     # ss.resources = "CJUIKit/CJScrollView/**/*.{png,xib}"
   end
+
+
+
+
+
+  s.subspec 'CJTableView' do |ss|
+    ss.subspec 'CJBaseTableViewCell' do |sss|
+      sss.source_files = "CJUIKit/CJBaseScrollView/CJTableView/CJBaseTableViewCell/**/*.{h,m}"
+      sss.resources = "CJUIKit/CJBaseScrollView/CJTableView/CJBaseTableViewCell/**/*.{png}"
+      sss.dependency "CJBaseUIKit/CJImageView", "~> 0.0.14"
+    end
+
+    ss.subspec 'CJBaseTableViewHeaderFooterView' do |sss|
+      sss.source_files = "CJUIKit/CJBaseScrollView/CJTableView/CJBaseTableViewHeaderFooterView/**/*.{h,m}"
+    end
+
+  end
+
+  s.subspec 'CJCollectionView' do |ss|
+    ss.subspec 'CJBaseCollectionViewCell' do |sss|
+      sss.source_files = "CJUIKit/CJBaseScrollView/CJCollectionView/CJBaseCollectionViewCell/**/*.{h,m}"
+    end
+
+    ss.subspec 'CJCollectionViewLayout' do |sss|
+      sss.source_files = "CJUIKit/CJBaseScrollView/CJCollectionView/CJCollectionViewLayout/**/*.{h,m}"
+    end
+
+    # 各种集合视图
+    # 一个只有一个分区且分区中的每个cell大小相等的集合视图(cell的大小可通过方法①设置cell的固定大小和方法②通过设置每行最大显示的cell个数获得)
+    ss.subspec 'MyEqualCellSizeCollectionView' do |sss|
+      sss.source_files = "CJUIKit/CJBaseScrollView/CJCollectionView/MyEqualCellSizeCollectionView/**/*.{h,m}"
+
+      # MySearchEqualCellSizeCollectionView需要额外依赖的库
+      sss.dependency 'CJBaseUtil/CJSortedAndSearchUtil', '~> 0.0.1'
+      sss.dependency 'NSOperationQueueUtil', '~> 0.0.1'
+    end
+
+    # 可展开的集合视图
+    ss.subspec 'CJOpenCollectionView' do |sss|
+      sss.source_files = "CJUIKit/CJBaseScrollView/CJCollectionView/CJOpenCollectionView/**/*.{h,m}"
+    end
+  end
+
+
+
+
+
+
+
 
 
   s.subspec 'CJSlider' do |ss|

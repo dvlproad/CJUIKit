@@ -1,27 +1,69 @@
 PODS:
+  - AFNetworking (3.1.0):
+    - AFNetworking/NSURLSession (= 3.1.0)
+    - AFNetworking/Reachability (= 3.1.0)
+    - AFNetworking/Security (= 3.1.0)
+    - AFNetworking/Serialization (= 3.1.0)
+    - AFNetworking/UIKit (= 3.1.0)
+  - AFNetworking/NSURLSession (3.1.0):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/Reachability (3.1.0)
+  - AFNetworking/Security (3.1.0)
+  - AFNetworking/Serialization (3.1.0)
+  - AFNetworking/UIKit (3.1.0):
+    - AFNetworking/NSURLSession
+  - CJBaseUtil/CJSortedAndSearchUtil (0.0.3):
+    - PinYin4Objc (~> 1.1.1)
   - CJFoundation/NSString (0.0.4)
+  - CJNetwork/AFHTTPSessionManager+CJUploadFile (0.0.7):
+    - CJNetwork/CJNetworkMonitor
+  - CJNetwork/CJNetworkMonitor (0.0.7):
+    - AFNetworking (~> 3.1.0)
   - Masonry (1.0.2)
   - MBProgressHUD (1.0.0)
+  - MJPopupViewController (0.4)
   - MJRefresh (3.1.12)
+  - NSOperationQueueUtil (0.0.1)
+  - PinYin4Objc (1.1.1)
   - PureLayout (3.0.2)
+  - SDCycleScrollView (1.73):
+    - SDWebImage (~> 4.0.0)
+  - SDWebImage (4.0.0):
+    - SDWebImage/Core (= 4.0.0)
+  - SDWebImage/Core (4.0.0)
   - Shimmer (1.0.2)
 
 DEPENDENCIES:
+  - CJBaseUtil/CJSortedAndSearchUtil (~> 0.0.1)
   - CJFoundation/NSString (~> 0.0.4)
+  - CJNetwork/AFHTTPSessionManager+CJUploadFile (~> 0.0.6)
   - Masonry (~> 1.0.2)
   - MBProgressHUD (~> 1.0.0)
+  - MJPopupViewController (~> 0.4)
   - MJRefresh (~> 3.1.12)
+  - NSOperationQueueUtil (~> 0.0.1)
   - PureLayout (~> 3.0.2)
+  - SDCycleScrollView (~> 1.73)
   - Shimmer (~> 1.0.2)
 
 SPEC CHECKSUMS:
+  AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
+  CJBaseUtil: cbce4a2bf93bdee37f9f31f337dd060bfcdebedc
   CJFoundation: 0a4d15d9320cda8b861df3b7492bb289be588ae9
+  CJNetwork: 9f80e09448e1cc61252f66d2cd2adf336c8821b3
   Masonry: 7c429b56da9d4ee0bbb3ed77a5ea710d6a5df39e
   MBProgressHUD: 4890f671c94e8a0f3cf959aa731e9de2f036d71a
+  MJPopupViewController: e9ad553a3145eb8126ba2748e872ae7fb25cc605
   MJRefresh: b96cdb21c4aa75a7b07654311ab2f315c497e806
+  NSOperationQueueUtil: 5fc4a680df594ec543130708b54a478d037cb933
+  PinYin4Objc: 3fa9673610368330e2dfb688b1d19a35c3930a78
   PureLayout: 4d550abe49a94f24c2808b9b95db9131685fe4cd
+  SDCycleScrollView: d0fd5fe40a80918371fd8939214eb3be81033d83
+  SDWebImage: 76a6348bdc74eb5a55dd08a091ef298e56b55e41
   Shimmer: c5374be1c2b0c9e292fb05b339a513cf291cac86
 
-PODFILE CHECKSUM: a3a16f62fb3daaba5be86e980730d21ab582efef
+PODFILE CHECKSUM: b7e81ffea4077dc75d638730822723f19377902f
 
-COCOAPODS: 1.0.1
+COCOAPODS: 1.4.0.beta.1

@@ -24,6 +24,7 @@
 #import "TextFieldViewController.h"
 #import "TextViewController.h"
 #import "ScrollViewController.h"
+#import "ScrollViewHomeViewController.h"
 #import "TableViewController.h"
 #import "KeyboardAvoidingViewController.h"
 #import "SliderViewController.h"
@@ -112,6 +113,11 @@
         cjScrollViewModuleModel.title = @"用代码创建的CJScrollView";
         cjScrollViewModuleModel.classEntry = [ScrollViewController class];
         [moduleModels addObject:cjScrollViewModuleModel];
+        
+        ModuleModel *scrollViewHomeModule = [[ModuleModel alloc] init];
+        scrollViewHomeModule.title = @"ScrollViewHomeViewController";
+        scrollViewHomeModule.classEntry = [ScrollViewHomeViewController class];
+        [moduleModels addObject:scrollViewHomeModule];
         
         ModuleModel *TableViewModule = [[ModuleModel alloc] init];
         TableViewModule.title = @"TableView";

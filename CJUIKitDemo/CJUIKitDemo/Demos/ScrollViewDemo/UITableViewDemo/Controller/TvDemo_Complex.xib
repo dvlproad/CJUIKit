@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TvDemo_Complex">
+            <connections>
+                <outlet property="tv" destination="Who-Wp-B92" id="MAk-gj-bbj"/>
+                <outlet property="view" destination="iN0-l3-epB" id="Q8P-9X-vaU"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ss6-5e-0NJ">
+                    <rect key="frame" x="27" y="83" width="320" height="100"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8ss-Wl-0cq">
+                            <rect key="frame" x="218" y="35" width="82" height="30"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <state key="normal" title="编辑">
+                                <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </state>
+                            <connections>
+                                <action selector="didEditTableView:" destination="-1" eventType="touchUpInside" id="POh-bg-Kea"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" red="0.66666666669999997" green="0.66666666669999997" blue="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="100" id="wx1-Cg-8fT"/>
+                    </constraints>
+                </view>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="Who-Wp-B92">
+                    <rect key="frame" x="0.0" y="183" width="375" height="484"/>
+                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                </tableView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="ss6-5e-0NJ" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="83" id="6XJ-Lj-esT"/>
+                <constraint firstAttribute="bottom" secondItem="Who-Wp-B92" secondAttribute="bottom" id="S1W-XN-F91"/>
+                <constraint firstItem="ss6-5e-0NJ" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="27" id="XDg-Lc-5yk"/>
+                <constraint firstItem="Who-Wp-B92" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="fAc-Rf-fqK"/>
+                <constraint firstItem="Who-Wp-B92" firstAttribute="top" secondItem="ss6-5e-0NJ" secondAttribute="bottom" id="hq0-mD-vfc"/>
+                <constraint firstAttribute="trailing" secondItem="ss6-5e-0NJ" secondAttribute="trailing" constant="28" id="ryW-ne-fSg"/>
+                <constraint firstAttribute="trailing" secondItem="Who-Wp-B92" secondAttribute="trailing" id="zin-gX-pxe"/>
+            </constraints>
+            <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+        </view>
+    </objects>
+</document>

@@ -1,4 +1,4 @@
-platform :ios, '7.0'
+platform :ios, '8.0'
 #use_frameworks!
 
 target 'CJUIKitDemo' do  
@@ -11,6 +11,20 @@ target 'CJUIKitDemo' do
   pod 'CJFoundation/NSString', '~> 0.0.4'
   
   pod 'Shimmer', '~> 1.0.2' #fackBook的闪光动画
+  
+  
+  
+
+  pod 'CJNetwork/AFHTTPSessionManager+CJUploadFile', '~> 0.0.6' #需要8.0以上
+  
+  pod 'SDCycleScrollView', '~> 1.73' #(已包括SDWebImage)原理其实就是扩大dataSource的count
+  #    pod 'SDWebImage', '~> 4.0.0'
+  
+  pod 'MJPopupViewController', '~> 0.4'
+  
+  # 搜索功能需要依赖的库
+  pod 'CJBaseUtil/CJSortedAndSearchUtil', '~> 0.0.1'
+  pod 'NSOperationQueueUtil', '~> 0.0.1'
   
 end
 
