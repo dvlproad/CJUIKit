@@ -233,7 +233,6 @@
 		78C35BDF1F9E3D6C00C7080B /* DemoInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 78C35BD51F9E3D6C00C7080B /* DemoInfo.m */; };
 		78C35BE01F9E3D6C00C7080B /* TestDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 78C35BD71F9E3D6C00C7080B /* TestDataModel.m */; };
 		78C35BE11F9E3D6C00C7080B /* TestDataUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 78C35BD91F9E3D6C00C7080B /* TestDataUtil.m */; };
-		78C35BE31F9E40E800C7080B /* ScrollViewHomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 78C35BE21F9E40E800C7080B /* ScrollViewHomeViewController.xib */; };
 		78DC6E681F0E90A500DC025C /* icon_ddlb_hd@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 78DC6E661F0E90A500DC025C /* icon_ddlb_hd@2x.png */; };
 		78DC6E691F0E90A500DC025C /* icon_ddlb_jd@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 78DC6E671F0E90A500DC025C /* icon_ddlb_jd@2x.png */; };
 		78DC6E711F0E90B000DC025C /* CJSwitchSliderStatusModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 78DC6E6C1F0E90B000DC025C /* CJSwitchSliderStatusModel.m */; };
@@ -274,6 +273,7 @@
 		78FC3BC61ED541850049F22D /* UITextField+CJLimitTextLength.m in Sources */ = {isa = PBXBuildFile; fileRef = 78FC3BC11ED541850049F22D /* UITextField+CJLimitTextLength.m */; };
 		78FC3BC71ED541850049F22D /* UITextField+CJTextChangeBlock.m in Sources */ = {isa = PBXBuildFile; fileRef = 78FC3BC31ED541850049F22D /* UITextField+CJTextChangeBlock.m */; };
 		801B5B0C1F949BD400705FDC /* CJDefaultToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = 801B5B0B1F949BD300705FDC /* CJDefaultToolbar.m */; };
+		80818AD61F9F121B00F00DC1 /* ScrollViewHomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 80818AD51F9F121B00F00DC1 /* ScrollViewHomeViewController.xib */; };
 		E2649F5BE7F7FEF404688168 /* libPods-CJUIKitDemoTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 935109AAB855F6CC8B84B9A5 /* libPods-CJUIKitDemoTests.a */; };
 /* End PBXBuildFile section */
 
@@ -654,7 +654,6 @@
 		78C35BD71F9E3D6C00C7080B /* TestDataModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestDataModel.m; sourceTree = "<group>"; };
 		78C35BD81F9E3D6C00C7080B /* TestDataUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestDataUtil.h; sourceTree = "<group>"; };
 		78C35BD91F9E3D6C00C7080B /* TestDataUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestDataUtil.m; sourceTree = "<group>"; };
-		78C35BE21F9E40E800C7080B /* ScrollViewHomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ScrollViewHomeViewController.xib; sourceTree = "<group>"; };
 		78DC6E661F0E90A500DC025C /* icon_ddlb_hd@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_ddlb_hd@2x.png"; sourceTree = "<group>"; };
 		78DC6E671F0E90A500DC025C /* icon_ddlb_jd@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_ddlb_jd@2x.png"; sourceTree = "<group>"; };
 		78DC6E6B1F0E90B000DC025C /* CJSwitchSliderStatusModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJSwitchSliderStatusModel.h; sourceTree = "<group>"; };
@@ -728,6 +727,7 @@
 		78FC3BC31ED541850049F22D /* UITextField+CJTextChangeBlock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextField+CJTextChangeBlock.m"; sourceTree = "<group>"; };
 		801B5B0A1F949BD300705FDC /* CJDefaultToolbar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJDefaultToolbar.h; sourceTree = "<group>"; };
 		801B5B0B1F949BD300705FDC /* CJDefaultToolbar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJDefaultToolbar.m; sourceTree = "<group>"; };
+		80818AD51F9F121B00F00DC1 /* ScrollViewHomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ScrollViewHomeViewController.xib; sourceTree = "<group>"; };
 		935109AAB855F6CC8B84B9A5 /* libPods-CJUIKitDemoTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CJUIKitDemoTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9AC0A78AFE86FE250B370A06 /* Pods-CJUIKitDemoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CJUIKitDemoTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CJUIKitDemoTests/Pods-CJUIKitDemoTests.debug.xcconfig"; sourceTree = "<group>"; };
 		A078401C0E781545EB72B64D /* libPods-CJUIKitDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CJUIKitDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -1335,7 +1335,7 @@
 			children = (
 				78C35AE51F9E3B4700C7080B /* ScrollViewHomeViewController.h */,
 				78C35AE61F9E3B4700C7080B /* ScrollViewHomeViewController.m */,
-				78C35BE21F9E40E800C7080B /* ScrollViewHomeViewController.xib */,
+				80818AD51F9F121B00F00DC1 /* ScrollViewHomeViewController.xib */,
 				78C0984F1F9E608F004154CC /* DataScrollViewDemo */,
 				78C35BCA1F9E3D6C00C7080B /* Resources */,
 				78C35BCF1F9E3D6C00C7080B /* TestDataUtil */,
@@ -2112,7 +2112,7 @@
 		780E45F81E5DF87B00980127 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0820;
+				LastUpgradeCheck = 0900;
 				ORGANIZATIONNAME = dvlproad;
 				TargetAttributes = {
 					780E45FF1E5DF87B00980127 = {
@@ -2211,7 +2211,7 @@
 				7840FB041EB09C4500B553F7 /* ImageViewController.xib in Resources */,
 				78C35B281F9E3B4800C7080B /* MemoryAD32.jpg in Resources */,
 				7840FB061EB09C4500B553F7 /* KeyboardAvoidingViewController.xib in Resources */,
-				78C35BE31F9E40E800C7080B /* ScrollViewHomeViewController.xib in Resources */,
+				80818AD61F9F121B00F00DC1 /* ScrollViewHomeViewController.xib in Resources */,
 				78C35B321F9E3B4800C7080B /* MemoryADKnowledge04.jpg in Resources */,
 				7840FB101EB09C4600B553F7 /* slider_thumbImage@3x.png in Resources */,
 				7840FB261EB09CE900B553F7 /* NavigationBarBaseViewController.xib in Resources */,
@@ -2611,7 +2611,9 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -2619,7 +2621,11 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
@@ -2643,7 +2649,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -2660,7 +2666,9 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -2668,7 +2676,11 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
@@ -2686,7 +2698,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
