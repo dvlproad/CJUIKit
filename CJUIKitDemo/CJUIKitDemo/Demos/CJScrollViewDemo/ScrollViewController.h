@@ -8,10 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ScrollViewController : UIViewController
-
-@property (nonatomic, strong) UIScrollView *scrollView;
-@property (nonatomic, strong) UIView *containerView;
+@interface ScrollViewController : UIViewController {
+    
+}
+@property (nonatomic, weak) IBOutlet UIView *view1;
+@property (nonatomic, weak) IBOutlet UIView *view2;
 
 
 @end

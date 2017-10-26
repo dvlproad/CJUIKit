@@ -272,6 +272,7 @@
 		78FC3BC51ED541850049F22D /* UITextField+CJAddLeftRightView.m in Sources */ = {isa = PBXBuildFile; fileRef = 78FC3BBF1ED541850049F22D /* UITextField+CJAddLeftRightView.m */; };
 		78FC3BC61ED541850049F22D /* UITextField+CJLimitTextLength.m in Sources */ = {isa = PBXBuildFile; fileRef = 78FC3BC11ED541850049F22D /* UITextField+CJLimitTextLength.m */; };
 		78FC3BC71ED541850049F22D /* UITextField+CJTextChangeBlock.m in Sources */ = {isa = PBXBuildFile; fileRef = 78FC3BC31ED541850049F22D /* UITextField+CJTextChangeBlock.m */; };
+		78FE4B591FA267D30091BDF6 /* ScrollViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 78FE4B581FA267D30091BDF6 /* ScrollViewController.xib */; };
 		801B5B0C1F949BD400705FDC /* CJDefaultToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = 801B5B0B1F949BD300705FDC /* CJDefaultToolbar.m */; };
 		80818AD61F9F121B00F00DC1 /* ScrollViewHomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 80818AD51F9F121B00F00DC1 /* ScrollViewHomeViewController.xib */; };
 		E2649F5BE7F7FEF404688168 /* libPods-CJUIKitDemoTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 935109AAB855F6CC8B84B9A5 /* libPods-CJUIKitDemoTests.a */; };
@@ -725,6 +726,7 @@
 		78FC3BC11ED541850049F22D /* UITextField+CJLimitTextLength.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextField+CJLimitTextLength.m"; sourceTree = "<group>"; };
 		78FC3BC21ED541850049F22D /* UITextField+CJTextChangeBlock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextField+CJTextChangeBlock.h"; sourceTree = "<group>"; };
 		78FC3BC31ED541850049F22D /* UITextField+CJTextChangeBlock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextField+CJTextChangeBlock.m"; sourceTree = "<group>"; };
+		78FE4B581FA267D30091BDF6 /* ScrollViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ScrollViewController.xib; sourceTree = "<group>"; };
 		801B5B0A1F949BD300705FDC /* CJDefaultToolbar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJDefaultToolbar.h; sourceTree = "<group>"; };
 		801B5B0B1F949BD300705FDC /* CJDefaultToolbar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJDefaultToolbar.m; sourceTree = "<group>"; };
 		80818AD51F9F121B00F00DC1 /* ScrollViewHomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ScrollViewHomeViewController.xib; sourceTree = "<group>"; };
@@ -1068,6 +1070,7 @@
 				7840FADF1EB09C4500B553F7 /* KeyboardAvoidingViewController.xib */,
 				789CDB231EC0847E00D537D1 /* ScrollViewController.h */,
 				789CDB241EC0847E00D537D1 /* ScrollViewController.m */,
+				78FE4B581FA267D30091BDF6 /* ScrollViewController.xib */,
 			);
 			path = CJScrollViewDemo;
 			sourceTree = "<group>";
@@ -2236,6 +2239,7 @@
 				78C35B4D1F9E3B4800C7080B /* SvDemo_Refresh.xib in Resources */,
 				78C35B3B1F9E3B4800C7080B /* MemoryADTime02.jpg in Resources */,
 				78C35B211F9E3B4800C7080B /* NibCell.xib in Resources */,
+				78FE4B591FA267D30091BDF6 /* ScrollViewController.xib in Resources */,
 				78C35B271F9E3B4800C7080B /* MemoryAD29.jpg in Resources */,
 				78C35B251F9E3B4800C7080B /* MemoryAD08.jpg in Resources */,
 				78C35BBA1F9E3C3000C7080B /* cjCollectionViewCellDelete@2x.png in Resources */,
