@@ -60,8 +60,6 @@
 		78375DA31F7EBA5C00EDCF8F /* UIImage+CJBlur.m in Sources */ = {isa = PBXBuildFile; fileRef = 78375DA21F7EBA5C00EDCF8F /* UIImage+CJBlur.m */; };
 		7840FB031EB09C4500B553F7 /* ImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7840FADA1EB09C4500B553F7 /* ImageViewController.m */; };
 		7840FB041EB09C4500B553F7 /* ImageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7840FADB1EB09C4500B553F7 /* ImageViewController.xib */; };
-		7840FB051EB09C4500B553F7 /* KeyboardAvoidingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7840FADE1EB09C4500B553F7 /* KeyboardAvoidingViewController.m */; };
-		7840FB061EB09C4500B553F7 /* KeyboardAvoidingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7840FADF1EB09C4500B553F7 /* KeyboardAvoidingViewController.xib */; };
 		7840FB071EB09C4500B553F7 /* slider_double_thumbImage_a@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7840FAE21EB09C4500B553F7 /* slider_double_thumbImage_a@2x.png */; };
 		7840FB081EB09C4500B553F7 /* slider_double_thumbImage_a@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7840FAE31EB09C4500B553F7 /* slider_double_thumbImage_a@3x.png */; };
 		7840FB091EB09C4500B553F7 /* slider_double_thumbImage_b@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7840FAE41EB09C4500B553F7 /* slider_double_thumbImage_b@2x.png */; };
@@ -96,8 +94,6 @@
 		784D550B1F4E81EF00C21003 /* QRCodeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 784D55091F4E81EF00C21003 /* QRCodeViewController.xib */; };
 		785088071F1466AA00B38F38 /* CJSwitchView.m in Sources */ = {isa = PBXBuildFile; fileRef = 785088061F1466AA00B38F38 /* CJSwitchView.m */; };
 		786798241F5C22800093283D /* UIView+CJExclusiveTouch.m in Sources */ = {isa = PBXBuildFile; fileRef = 786798231F5C22800093283D /* UIView+CJExclusiveTouch.m */; };
-		787E101A1F0E22A500034A5C /* TableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 787E10181F0E22A500034A5C /* TableViewController.m */; };
-		787E101B1F0E22A500034A5C /* TableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 787E10191F0E22A500034A5C /* TableViewController.xib */; };
 		787E101E1F0E28A500034A5C /* UITableView+CJEmptyView.m in Sources */ = {isa = PBXBuildFile; fileRef = 787E101D1F0E28A500034A5C /* UITableView+CJEmptyView.m */; };
 		7893125A1F00A8C500A91C29 /* btn_hd@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 789312581F00A8C500A91C29 /* btn_hd@2x.png */; };
 		7893125B1F00A8C500A91C29 /* btn_hd@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 789312591F00A8C500A91C29 /* btn_hd@3x.png */; };
@@ -105,7 +101,6 @@
 		789312601F00A8F300A91C29 /* SwitchSliderViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7893125E1F00A8F300A91C29 /* SwitchSliderViewController.xib */; };
 		7898C92E1F12795900F06820 /* RangeSliderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7898C92C1F12795900F06820 /* RangeSliderViewController.m */; };
 		7898C92F1F12795900F06820 /* RangeSliderViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7898C92D1F12795900F06820 /* RangeSliderViewController.xib */; };
-		789CDB251EC0847E00D537D1 /* ScrollViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 789CDB241EC0847E00D537D1 /* ScrollViewController.m */; };
 		78A355341EB32D62005C5A9A /* CJMJRefreshViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78A355321EB32D62005C5A9A /* CJMJRefreshViewController.m */; };
 		78A355351EB32D62005C5A9A /* CJMJRefreshViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 78A355331EB32D62005C5A9A /* CJMJRefreshViewController.xib */; };
 		78AF3F641F5FDA5E00660373 /* MyCountDownTimeManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 78AF3F631F5FDA5E00660373 /* MyCountDownTimeManager.m */; };
@@ -170,8 +165,6 @@
 		78C35B491F9E3B4800C7080B /* OpenCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78C35AE21F9E3B4700C7080B /* OpenCollectionViewController.m */; };
 		78C35B4A1F9E3B4800C7080B /* OpenCollectionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 78C35AE31F9E3B4700C7080B /* OpenCollectionViewController.xib */; };
 		78C35B4B1F9E3B4800C7080B /* ScrollViewHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78C35AE61F9E3B4700C7080B /* ScrollViewHomeViewController.m */; };
-		78C35B4C1F9E3B4800C7080B /* SvDemo_Refresh.m in Sources */ = {isa = PBXBuildFile; fileRef = 78C35AEA1F9E3B4700C7080B /* SvDemo_Refresh.m */; };
-		78C35B4D1F9E3B4800C7080B /* SvDemo_Refresh.xib in Resources */ = {isa = PBXBuildFile; fileRef = 78C35AEB1F9E3B4700C7080B /* SvDemo_Refresh.xib */; };
 		78C35B4E1F9E3B4800C7080B /* ChooseColor01.m in Sources */ = {isa = PBXBuildFile; fileRef = 78C35AF11F9E3B4700C7080B /* ChooseColor01.m */; };
 		78C35B4F1F9E3B4800C7080B /* crayons.txt in Resources */ = {isa = PBXBuildFile; fileRef = 78C35AF21F9E3B4700C7080B /* crayons.txt */; };
 		78C35B501F9E3B4800C7080B /* DemoTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78C35AF41F9E3B4700C7080B /* DemoTableViewController.m */; };
@@ -272,7 +265,21 @@
 		78FC3BC51ED541850049F22D /* UITextField+CJAddLeftRightView.m in Sources */ = {isa = PBXBuildFile; fileRef = 78FC3BBF1ED541850049F22D /* UITextField+CJAddLeftRightView.m */; };
 		78FC3BC61ED541850049F22D /* UITextField+CJLimitTextLength.m in Sources */ = {isa = PBXBuildFile; fileRef = 78FC3BC11ED541850049F22D /* UITextField+CJLimitTextLength.m */; };
 		78FC3BC71ED541850049F22D /* UITextField+CJTextChangeBlock.m in Sources */ = {isa = PBXBuildFile; fileRef = 78FC3BC31ED541850049F22D /* UITextField+CJTextChangeBlock.m */; };
-		78FE4B591FA267D30091BDF6 /* ScrollViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 78FE4B581FA267D30091BDF6 /* ScrollViewController.xib */; };
+		8014A2801FA2C2E500DDDB5A /* AppDelegate+WindowRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8014A27F1FA2C2E500DDDB5A /* AppDelegate+WindowRootViewController.m */; };
+		8014A2821FA2C42D00DDDB5A /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8014A2811FA2C42D00DDDB5A /* HomeViewController.xib */; };
+		8014A2881FA2C81A00DDDB5A /* icons8-menu.png in Resources */ = {isa = PBXBuildFile; fileRef = 8014A2831FA2C81900DDDB5A /* icons8-menu.png */; };
+		8014A2891FA2C81A00DDDB5A /* icons8-settings.png in Resources */ = {isa = PBXBuildFile; fileRef = 8014A2841FA2C81900DDDB5A /* icons8-settings.png */; };
+		8014A28A1FA2C81A00DDDB5A /* icons8-calendar.png in Resources */ = {isa = PBXBuildFile; fileRef = 8014A2851FA2C81A00DDDB5A /* icons8-calendar.png */; };
+		8014A28B1FA2C81A00DDDB5A /* icons8-folder.png in Resources */ = {isa = PBXBuildFile; fileRef = 8014A2861FA2C81A00DDDB5A /* icons8-folder.png */; };
+		8014A28C1FA2C81A00DDDB5A /* icons8-home.png in Resources */ = {isa = PBXBuildFile; fileRef = 8014A2871FA2C81A00DDDB5A /* icons8-home.png */; };
+		8014A2901FA2D3BA00DDDB5A /* TableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8014A28D1FA2D3BA00DDDB5A /* TableViewController.xib */; };
+		8014A2911FA2D3BA00DDDB5A /* TableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8014A28E1FA2D3BA00DDDB5A /* TableViewController.m */; };
+		8014A29B1FA2D49100DDDB5A /* ScrollViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8014A2921FA2D49000DDDB5A /* ScrollViewController.xib */; };
+		8014A29C1FA2D49100DDDB5A /* SvDemo_Refresh.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8014A2931FA2D49000DDDB5A /* SvDemo_Refresh.xib */; };
+		8014A29D1FA2D49100DDDB5A /* KeyboardAvoidingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8014A2961FA2D49100DDDB5A /* KeyboardAvoidingViewController.m */; };
+		8014A29E1FA2D49100DDDB5A /* ScrollViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8014A2971FA2D49100DDDB5A /* ScrollViewController.m */; };
+		8014A29F1FA2D49100DDDB5A /* KeyboardAvoidingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8014A2991FA2D49100DDDB5A /* KeyboardAvoidingViewController.xib */; };
+		8014A2A01FA2D49100DDDB5A /* SvDemo_Refresh.m in Sources */ = {isa = PBXBuildFile; fileRef = 8014A29A1FA2D49100DDDB5A /* SvDemo_Refresh.m */; };
 		801B5B0C1F949BD400705FDC /* CJDefaultToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = 801B5B0B1F949BD300705FDC /* CJDefaultToolbar.m */; };
 		80818AD61F9F121B00F00DC1 /* ScrollViewHomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 80818AD51F9F121B00F00DC1 /* ScrollViewHomeViewController.xib */; };
 		E2649F5BE7F7FEF404688168 /* libPods-CJUIKitDemoTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 935109AAB855F6CC8B84B9A5 /* libPods-CJUIKitDemoTests.a */; };
@@ -396,9 +403,6 @@
 		7840FAD91EB09C4500B553F7 /* ImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageViewController.h; sourceTree = "<group>"; };
 		7840FADA1EB09C4500B553F7 /* ImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageViewController.m; sourceTree = "<group>"; };
 		7840FADB1EB09C4500B553F7 /* ImageViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ImageViewController.xib; sourceTree = "<group>"; };
-		7840FADD1EB09C4500B553F7 /* KeyboardAvoidingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeyboardAvoidingViewController.h; sourceTree = "<group>"; };
-		7840FADE1EB09C4500B553F7 /* KeyboardAvoidingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeyboardAvoidingViewController.m; sourceTree = "<group>"; };
-		7840FADF1EB09C4500B553F7 /* KeyboardAvoidingViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KeyboardAvoidingViewController.xib; sourceTree = "<group>"; };
 		7840FAE21EB09C4500B553F7 /* slider_double_thumbImage_a@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "slider_double_thumbImage_a@2x.png"; sourceTree = "<group>"; };
 		7840FAE31EB09C4500B553F7 /* slider_double_thumbImage_a@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "slider_double_thumbImage_a@3x.png"; sourceTree = "<group>"; };
 		7840FAE41EB09C4500B553F7 /* slider_double_thumbImage_b@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "slider_double_thumbImage_b@2x.png"; sourceTree = "<group>"; };
@@ -447,9 +451,6 @@
 		785088061F1466AA00B38F38 /* CJSwitchView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJSwitchView.m; sourceTree = "<group>"; };
 		786798221F5C22800093283D /* UIView+CJExclusiveTouch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+CJExclusiveTouch.h"; sourceTree = "<group>"; };
 		786798231F5C22800093283D /* UIView+CJExclusiveTouch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+CJExclusiveTouch.m"; sourceTree = "<group>"; };
-		787E10171F0E22A500034A5C /* TableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewController.h; sourceTree = "<group>"; };
-		787E10181F0E22A500034A5C /* TableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewController.m; sourceTree = "<group>"; };
-		787E10191F0E22A500034A5C /* TableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TableViewController.xib; sourceTree = "<group>"; };
 		787E101C1F0E28A500034A5C /* UITableView+CJEmptyView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableView+CJEmptyView.h"; sourceTree = "<group>"; };
 		787E101D1F0E28A500034A5C /* UITableView+CJEmptyView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableView+CJEmptyView.m"; sourceTree = "<group>"; };
 		789312581F00A8C500A91C29 /* btn_hd@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn_hd@2x.png"; sourceTree = "<group>"; };
@@ -461,8 +462,6 @@
 		7898C92C1F12795900F06820 /* RangeSliderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RangeSliderViewController.m; sourceTree = "<group>"; };
 		7898C92D1F12795900F06820 /* RangeSliderViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RangeSliderViewController.xib; sourceTree = "<group>"; };
 		789CAB597AD073D5F637D193 /* Pods-CJUIKitDemoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CJUIKitDemoTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-CJUIKitDemoTests/Pods-CJUIKitDemoTests.release.xcconfig"; sourceTree = "<group>"; };
-		789CDB231EC0847E00D537D1 /* ScrollViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScrollViewController.h; sourceTree = "<group>"; };
-		789CDB241EC0847E00D537D1 /* ScrollViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScrollViewController.m; sourceTree = "<group>"; };
 		78A355311EB32D62005C5A9A /* CJMJRefreshViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJMJRefreshViewController.h; sourceTree = "<group>"; };
 		78A355321EB32D62005C5A9A /* CJMJRefreshViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJMJRefreshViewController.m; sourceTree = "<group>"; };
 		78A355331EB32D62005C5A9A /* CJMJRefreshViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CJMJRefreshViewController.xib; sourceTree = "<group>"; };
@@ -551,9 +550,6 @@
 		78C35AE31F9E3B4700C7080B /* OpenCollectionViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OpenCollectionViewController.xib; sourceTree = "<group>"; };
 		78C35AE51F9E3B4700C7080B /* ScrollViewHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScrollViewHomeViewController.h; sourceTree = "<group>"; };
 		78C35AE61F9E3B4700C7080B /* ScrollViewHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScrollViewHomeViewController.m; sourceTree = "<group>"; };
-		78C35AE91F9E3B4700C7080B /* SvDemo_Refresh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SvDemo_Refresh.h; sourceTree = "<group>"; };
-		78C35AEA1F9E3B4700C7080B /* SvDemo_Refresh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SvDemo_Refresh.m; sourceTree = "<group>"; };
-		78C35AEB1F9E3B4700C7080B /* SvDemo_Refresh.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SvDemo_Refresh.xib; sourceTree = "<group>"; };
 		78C35AF01F9E3B4700C7080B /* ChooseColor01.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChooseColor01.h; sourceTree = "<group>"; };
 		78C35AF11F9E3B4700C7080B /* ChooseColor01.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChooseColor01.m; sourceTree = "<group>"; };
 		78C35AF21F9E3B4700C7080B /* crayons.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = crayons.txt; sourceTree = "<group>"; };
@@ -726,7 +722,26 @@
 		78FC3BC11ED541850049F22D /* UITextField+CJLimitTextLength.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextField+CJLimitTextLength.m"; sourceTree = "<group>"; };
 		78FC3BC21ED541850049F22D /* UITextField+CJTextChangeBlock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextField+CJTextChangeBlock.h"; sourceTree = "<group>"; };
 		78FC3BC31ED541850049F22D /* UITextField+CJTextChangeBlock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextField+CJTextChangeBlock.m"; sourceTree = "<group>"; };
-		78FE4B581FA267D30091BDF6 /* ScrollViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ScrollViewController.xib; sourceTree = "<group>"; };
+		8014A27E1FA2C2E500DDDB5A /* AppDelegate+WindowRootViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AppDelegate+WindowRootViewController.h"; sourceTree = "<group>"; };
+		8014A27F1FA2C2E500DDDB5A /* AppDelegate+WindowRootViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "AppDelegate+WindowRootViewController.m"; sourceTree = "<group>"; };
+		8014A2811FA2C42D00DDDB5A /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
+		8014A2831FA2C81900DDDB5A /* icons8-menu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icons8-menu.png"; sourceTree = "<group>"; };
+		8014A2841FA2C81900DDDB5A /* icons8-settings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icons8-settings.png"; sourceTree = "<group>"; };
+		8014A2851FA2C81A00DDDB5A /* icons8-calendar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icons8-calendar.png"; sourceTree = "<group>"; };
+		8014A2861FA2C81A00DDDB5A /* icons8-folder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icons8-folder.png"; sourceTree = "<group>"; };
+		8014A2871FA2C81A00DDDB5A /* icons8-home.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icons8-home.png"; sourceTree = "<group>"; };
+		8014A28D1FA2D3BA00DDDB5A /* TableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TableViewController.xib; sourceTree = "<group>"; };
+		8014A28E1FA2D3BA00DDDB5A /* TableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewController.m; sourceTree = "<group>"; };
+		8014A28F1FA2D3BA00DDDB5A /* TableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewController.h; sourceTree = "<group>"; };
+		8014A2921FA2D49000DDDB5A /* ScrollViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ScrollViewController.xib; sourceTree = "<group>"; };
+		8014A2931FA2D49000DDDB5A /* SvDemo_Refresh.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SvDemo_Refresh.xib; sourceTree = "<group>"; };
+		8014A2941FA2D49000DDDB5A /* KeyboardAvoidingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeyboardAvoidingViewController.h; sourceTree = "<group>"; };
+		8014A2951FA2D49100DDDB5A /* ScrollViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScrollViewController.h; sourceTree = "<group>"; };
+		8014A2961FA2D49100DDDB5A /* KeyboardAvoidingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeyboardAvoidingViewController.m; sourceTree = "<group>"; };
+		8014A2971FA2D49100DDDB5A /* ScrollViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScrollViewController.m; sourceTree = "<group>"; };
+		8014A2981FA2D49100DDDB5A /* SvDemo_Refresh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SvDemo_Refresh.h; sourceTree = "<group>"; };
+		8014A2991FA2D49100DDDB5A /* KeyboardAvoidingViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KeyboardAvoidingViewController.xib; sourceTree = "<group>"; };
+		8014A29A1FA2D49100DDDB5A /* SvDemo_Refresh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SvDemo_Refresh.m; sourceTree = "<group>"; };
 		801B5B0A1F949BD300705FDC /* CJDefaultToolbar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJDefaultToolbar.h; sourceTree = "<group>"; };
 		801B5B0B1F949BD300705FDC /* CJDefaultToolbar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJDefaultToolbar.m; sourceTree = "<group>"; };
 		80818AD51F9F121B00F00DC1 /* ScrollViewHomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ScrollViewHomeViewController.xib; sourceTree = "<group>"; };
@@ -791,6 +806,8 @@
 				780E46071E5DF87B00980127 /* AppDelegate.m */,
 				780E46091E5DF87B00980127 /* ViewController.h */,
 				780E460A1E5DF87B00980127 /* ViewController.m */,
+				8014A27E1FA2C2E500DDDB5A /* AppDelegate+WindowRootViewController.h */,
+				8014A27F1FA2C2E500DDDB5A /* AppDelegate+WindowRootViewController.m */,
 				783281011F4198BC008267E0 /* CJSmallCustomView */,
 				78E61EA71E79AA20009B1627 /* CJUIKit */,
 				780E460C1E5DF87B00980127 /* Main.storyboard */,
@@ -1031,10 +1048,10 @@
 			children = (
 				7840FAFB1EB09C4500B553F7 /* HomeViewController.h */,
 				7840FAFC1EB09C4500B553F7 /* HomeViewController.m */,
+				8014A2811FA2C42D00DDDB5A /* HomeViewController.xib */,
 				78C35A961F9E3B4700C7080B /* ScrollViewDemo */,
 				78AF3F651F5FDB6700660373 /* CountDownTimeDemo */,
 				783281051F41A094008267E0 /* ProcessLineViewDemo */,
-				787E10161F0E229000034A5C /* TableViewDemo */,
 				7832B2FF1F0A878D0042B5D9 /* UIButtonDemo */,
 				78FC3BB41ED53E700049F22D /* TextFieldDemo */,
 				783658F61ECFB4D800AF7591 /* CJFloatingWindowDemo */,
@@ -1043,7 +1060,6 @@
 				781592E41EC40C2C00DE1976 /* CJSearchBarDemo */,
 				78A355301EB32D47005C5A9A /* RefreshDemo */,
 				7840FAD81EB09C4500B553F7 /* CJImageViewDemo */,
-				7840FADC1EB09C4500B553F7 /* CJScrollViewDemo */,
 				7840FAE01EB09C4500B553F7 /* CJSliderDemo */,
 				7840FAF31EB09C4500B553F7 /* CJTextViewDemo */,
 				7840FAFD1EB09C4500B553F7 /* UIImageDemo */,
@@ -1060,19 +1076,6 @@
 				7840FADB1EB09C4500B553F7 /* ImageViewController.xib */,
 			);
 			path = CJImageViewDemo;
-			sourceTree = "<group>";
-		};
-		7840FADC1EB09C4500B553F7 /* CJScrollViewDemo */ = {
-			isa = PBXGroup;
-			children = (
-				7840FADD1EB09C4500B553F7 /* KeyboardAvoidingViewController.h */,
-				7840FADE1EB09C4500B553F7 /* KeyboardAvoidingViewController.m */,
-				7840FADF1EB09C4500B553F7 /* KeyboardAvoidingViewController.xib */,
-				789CDB231EC0847E00D537D1 /* ScrollViewController.h */,
-				789CDB241EC0847E00D537D1 /* ScrollViewController.m */,
-				78FE4B581FA267D30091BDF6 /* ScrollViewController.xib */,
-			);
-			path = CJScrollViewDemo;
 			sourceTree = "<group>";
 		};
 		7840FAE01EB09C4500B553F7 /* CJSliderDemo */ = {
@@ -1228,16 +1231,6 @@
 			path = UITableView;
 			sourceTree = "<group>";
 		};
-		787E10161F0E229000034A5C /* TableViewDemo */ = {
-			isa = PBXGroup;
-			children = (
-				787E10171F0E22A500034A5C /* TableViewController.h */,
-				787E10181F0E22A500034A5C /* TableViewController.m */,
-				787E10191F0E22A500034A5C /* TableViewController.xib */,
-			);
-			path = TableViewDemo;
-			sourceTree = "<group>";
-		};
 		789A19671E61B87D008081E3 /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -1251,6 +1244,11 @@
 			isa = PBXGroup;
 			children = (
 				7840FB271EB09E0700B553F7 /* bg@2x.jpg */,
+				8014A2851FA2C81A00DDDB5A /* icons8-calendar.png */,
+				8014A2861FA2C81A00DDDB5A /* icons8-folder.png */,
+				8014A2871FA2C81A00DDDB5A /* icons8-home.png */,
+				8014A2831FA2C81900DDDB5A /* icons8-menu.png */,
+				8014A2841FA2C81900DDDB5A /* icons8-settings.png */,
 				78E269BB1ECC5E1A007D3686 /* bgCar@2x.jpg */,
 				78E269BC1ECC5E1A007D3686 /* bgSky@2x.jpg */,
 				78E269BD1ECC5E1A007D3686 /* header@2x.jpg */,
@@ -1492,42 +1490,23 @@
 		78C35AE71F9E3B4700C7080B /* UIScrollViewDemo */ = {
 			isa = PBXGroup;
 			children = (
-				78C35AE81F9E3B4700C7080B /* Controller */,
-				78C35AEC1F9E3B4700C7080B /* Resource */,
-				78C35AED1F9E3B4700C7080B /* View */,
+				8014A2941FA2D49000DDDB5A /* KeyboardAvoidingViewController.h */,
+				8014A2961FA2D49100DDDB5A /* KeyboardAvoidingViewController.m */,
+				8014A2991FA2D49100DDDB5A /* KeyboardAvoidingViewController.xib */,
+				8014A2951FA2D49100DDDB5A /* ScrollViewController.h */,
+				8014A2971FA2D49100DDDB5A /* ScrollViewController.m */,
+				8014A2921FA2D49000DDDB5A /* ScrollViewController.xib */,
+				8014A2981FA2D49100DDDB5A /* SvDemo_Refresh.h */,
+				8014A29A1FA2D49100DDDB5A /* SvDemo_Refresh.m */,
+				8014A2931FA2D49000DDDB5A /* SvDemo_Refresh.xib */,
 			);
 			path = UIScrollViewDemo;
-			sourceTree = "<group>";
-		};
-		78C35AE81F9E3B4700C7080B /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-				78C35AE91F9E3B4700C7080B /* SvDemo_Refresh.h */,
-				78C35AEA1F9E3B4700C7080B /* SvDemo_Refresh.m */,
-				78C35AEB1F9E3B4700C7080B /* SvDemo_Refresh.xib */,
-			);
-			path = Controller;
-			sourceTree = "<group>";
-		};
-		78C35AEC1F9E3B4700C7080B /* Resource */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Resource;
-			sourceTree = "<group>";
-		};
-		78C35AED1F9E3B4700C7080B /* View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = View;
 			sourceTree = "<group>";
 		};
 		78C35AEE1F9E3B4700C7080B /* UITableViewDemo */ = {
 			isa = PBXGroup;
 			children = (
 				78C35AEF1F9E3B4700C7080B /* Controller */,
-				78C35B011F9E3B4700C7080B /* Resource */,
 				78C35B021F9E3B4700C7080B /* View */,
 			);
 			path = UITableViewDemo;
@@ -1536,6 +1515,9 @@
 		78C35AEF1F9E3B4700C7080B /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				8014A28F1FA2D3BA00DDDB5A /* TableViewController.h */,
+				8014A28E1FA2D3BA00DDDB5A /* TableViewController.m */,
+				8014A28D1FA2D3BA00DDDB5A /* TableViewController.xib */,
 				78C35AF01F9E3B4700C7080B /* ChooseColor01.h */,
 				78C35AF11F9E3B4700C7080B /* ChooseColor01.m */,
 				78C35AF21F9E3B4700C7080B /* crayons.txt */,
@@ -1555,13 +1537,6 @@
 				78C35B001F9E3B4700C7080B /* TvDemo_Complex.xib */,
 			);
 			path = Controller;
-			sourceTree = "<group>";
-		};
-		78C35B011F9E3B4700C7080B /* Resource */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Resource;
 			sourceTree = "<group>";
 		};
 		78C35B021F9E3B4700C7080B /* View */ = {
@@ -2165,11 +2140,14 @@
 				78C35B291F9E3B4800C7080B /* MemoryADExample01.jpg in Resources */,
 				781592E91EC40C8F00DE1976 /* SearchBarViewController.xib in Resources */,
 				78C35BC31F9E3C3000C7080B /* cjCheckBoxGreen2NO.png in Resources */,
+				8014A29B1FA2D49100DDDB5A /* ScrollViewController.xib in Resources */,
 				781DE9431F9158B200FB072D /* cjBackBarButtonItemGray@3x.png in Resources */,
+				8014A28A1FA2C81A00DDDB5A /* icons8-calendar.png in Resources */,
 				781DE94A1F915DFD00FB072D /* cjBackBarButtonItem@3x.png in Resources */,
 				78C35B481F9E3B4800C7080B /* Header.xib in Resources */,
 				78A355351EB32D62005C5A9A /* CJMJRefreshViewController.xib in Resources */,
 				78C35B611F9E3B4800C7080B /* SHeaderHome2.xib in Resources */,
+				8014A2881FA2C81A00DDDB5A /* icons8-menu.png in Resources */,
 				78C35B351F9E3B4800C7080B /* MemoryADKnowledge07.jpg in Resources */,
 				789312601F00A8F300A91C29 /* SwitchSliderViewController.xib in Resources */,
 				78C35B301F9E3B4800C7080B /* MemoryADKnowledge02.jpg in Resources */,
@@ -2202,6 +2180,7 @@
 				783658E51ECF99CF00AF7591 /* ViewCategoryViewController.xib in Resources */,
 				7893125A1F00A8C500A91C29 /* btn_hd@2x.png in Resources */,
 				78C35B331F9E3B4800C7080B /* MemoryADKnowledge05.jpg in Resources */,
+				8014A29F1FA2D49100DDDB5A /* KeyboardAvoidingViewController.xib in Resources */,
 				78FC3BB91ED53E700049F22D /* TextFieldViewController.xib in Resources */,
 				78E61ED21E79AA20009B1627 /* cjRefreshArrowDown@2x.png in Resources */,
 				78C35B261F9E3B4800C7080B /* MemoryAD09.jpg in Resources */,
@@ -2213,12 +2192,12 @@
 				78C35B461F9E3B4800C7080B /* DetailCell.xib in Resources */,
 				7840FB041EB09C4500B553F7 /* ImageViewController.xib in Resources */,
 				78C35B281F9E3B4800C7080B /* MemoryAD32.jpg in Resources */,
-				7840FB061EB09C4500B553F7 /* KeyboardAvoidingViewController.xib in Resources */,
 				80818AD61F9F121B00F00DC1 /* ScrollViewHomeViewController.xib in Resources */,
 				78C35B321F9E3B4800C7080B /* MemoryADKnowledge04.jpg in Resources */,
 				7840FB101EB09C4600B553F7 /* slider_thumbImage@3x.png in Resources */,
 				7840FB261EB09CE900B553F7 /* NavigationBarBaseViewController.xib in Resources */,
 				78C35BB91F9E3C3000C7080B /* cjCollectionViewCellAdd@2x.png in Resources */,
+				8014A28B1FA2C81A00DDDB5A /* icons8-folder.png in Resources */,
 				78C35BC51F9E3C3000C7080B /* cjCheckBoxGreenNO@2x.png in Resources */,
 				7893125B1F00A8C500A91C29 /* btn_hd@3x.png in Resources */,
 				78C35B3A1F9E3B4800C7080B /* MemoryADTime01.jpg in Resources */,
@@ -2236,13 +2215,12 @@
 				783658F01ECFA6C700AF7591 /* DragViewController.xib in Resources */,
 				7840FB171EB09C4600B553F7 /* sound@2x.png in Resources */,
 				78C35B2B1F9E3B4800C7080B /* MemoryADExample03.jpg in Resources */,
-				78C35B4D1F9E3B4800C7080B /* SvDemo_Refresh.xib in Resources */,
 				78C35B3B1F9E3B4800C7080B /* MemoryADTime02.jpg in Resources */,
 				78C35B211F9E3B4800C7080B /* NibCell.xib in Resources */,
-				78FE4B591FA267D30091BDF6 /* ScrollViewController.xib in Resources */,
 				78C35B271F9E3B4800C7080B /* MemoryAD29.jpg in Resources */,
 				78C35B251F9E3B4800C7080B /* MemoryAD08.jpg in Resources */,
 				78C35BBA1F9E3C3000C7080B /* cjCollectionViewCellDelete@2x.png in Resources */,
+				8014A2891FA2C81A00DDDB5A /* icons8-settings.png in Resources */,
 				7840FB121EB09C4600B553F7 /* SliderViewController.xib in Resources */,
 				7832B3041F0A87A50042B5D9 /* ButtonViewController.xib in Resources */,
 				78C35B631F9E3B4800C7080B /* TableViewHeader.xib in Resources */,
@@ -2254,9 +2232,10 @@
 				78E269BF1ECC5E1A007D3686 /* bgSky@2x.jpg in Resources */,
 				784D550B1F4E81EF00C21003 /* QRCodeViewController.xib in Resources */,
 				7840FB151EB09C4600B553F7 /* plus@2x.png in Resources */,
+				8014A28C1FA2C81A00DDDB5A /* icons8-home.png in Resources */,
 				78C35B2D1F9E3B4800C7080B /* MemoryADExample05.jpg in Resources */,
 				78C35B551F9E3B4800C7080B /* ReuseDataSourceTableViewController.xib in Resources */,
-				787E101B1F0E22A500034A5C /* TableViewController.xib in Resources */,
+				8014A29C1FA2D49100DDDB5A /* SvDemo_Refresh.xib in Resources */,
 				781DE9421F9158B200FB072D /* cjBackBarButtonItemGray@2x.png in Resources */,
 				78C35B381F9E3B4800C7080B /* MemoryADResult01.gif in Resources */,
 				7840FB0F1EB09C4600B553F7 /* slider_thumbImage@2x.png in Resources */,
@@ -2267,12 +2246,14 @@
 				78C35B1C1F9E3B4800C7080B /* CustomCollectionViewCell.xib in Resources */,
 				78AF3F6A1F5FDB7E00660373 /* CountDownTimeViewController.xib in Resources */,
 				78C35BDD1F9E3D6C00C7080B /* icon.png in Resources */,
+				8014A2821FA2C42D00DDDB5A /* HomeViewController.xib in Resources */,
 				78C35B2C1F9E3B4800C7080B /* MemoryADExample04.jpg in Resources */,
 				78C35B2E1F9E3B4800C7080B /* MemoryADExplain01.jpg in Resources */,
 				78C35B341F9E3B4800C7080B /* MemoryADKnowledge06.jpg in Resources */,
 				78C35BDA1F9E3D6C00C7080B /* add_red.png in Resources */,
 				78C35B231F9E3B4800C7080B /* CustomLayoutCollectionViewController.xib in Resources */,
 				78C35B391F9E3B4800C7080B /* MemoryADResult02.jpg in Resources */,
+				8014A2901FA2D3BA00DDDB5A /* TableViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2421,6 +2402,7 @@
 				78DC6E721F0E90B000DC025C /* CJSwitchSlider.m in Sources */,
 				78C35B521F9E3B4800C7080B /* OpenTableViewController.m in Sources */,
 				783287FE1ED2214100A01A8A /* UIView+CJKeepBounds.m in Sources */,
+				8014A29D1FA2D49100DDDB5A /* KeyboardAvoidingViewController.m in Sources */,
 				7840FB111EB09C4600B553F7 /* SliderViewController.m in Sources */,
 				78C35B171F9E3B4800C7080B /* CvDemo_Complex.m in Sources */,
 				78C35BB21F9E3C3000C7080B /* CJLineCell.m in Sources */,
@@ -2439,7 +2421,6 @@
 				78C35BAB1F9E3C3000C7080B /* CJBaseCollectionViewCell.m in Sources */,
 				78C35BC21F9E3C3000C7080B /* CJSubTitleTabelViewCell.m in Sources */,
 				78E61F081E79AF41009B1627 /* CJRefreshBaseView.m in Sources */,
-				789CDB251EC0847E00D537D1 /* ScrollViewController.m in Sources */,
 				78C35BE01F9E3D6C00C7080B /* TestDataModel.m in Sources */,
 				78C35BC81F9E3C3000C7080B /* CJTableViewHeaderFooterView.m in Sources */,
 				78C35BB61F9E3C3000C7080B /* MyEqualCellSizeSetting.m in Sources */,
@@ -2447,6 +2428,7 @@
 				781592E31EC40C1700DE1976 /* CJSearchBar.m in Sources */,
 				785088071F1466AA00B38F38 /* CJSwitchView.m in Sources */,
 				78C35B491F9E3B4800C7080B /* OpenCollectionViewController.m in Sources */,
+				8014A29E1FA2D49100DDDB5A /* ScrollViewController.m in Sources */,
 				78E61ED91E79AA20009B1627 /* CJKeyboardAvoidingTableView.m in Sources */,
 				78C35B501F9E3B4800C7080B /* DemoTableViewController.m in Sources */,
 				78C35B1F1F9E3B4800C7080B /* cvSupplementaryHead.m in Sources */,
@@ -2501,7 +2483,6 @@
 				78C35B3E1F9E3B4800C7080B /* MyCycleADViewController.m in Sources */,
 				801B5B0C1F949BD400705FDC /* CJDefaultToolbar.m in Sources */,
 				78E61ED01E79AA20009B1627 /* CJMJRefreshNormalFooter.m in Sources */,
-				78C35B4C1F9E3B4800C7080B /* SvDemo_Refresh.m in Sources */,
 				7832B3031F0A87A50042B5D9 /* ButtonViewController.m in Sources */,
 				78FC3BC71ED541850049F22D /* UITextField+CJTextChangeBlock.m in Sources */,
 				780E46051E5DF87B00980127 /* main.m in Sources */,
@@ -2513,15 +2494,16 @@
 				78DC6E771F0E90ED00DC025C /* CJAdsorbModel.m in Sources */,
 				783281041F4198BC008267E0 /* CustomTripProgressView.m in Sources */,
 				782709051E867EFA00E21433 /* CJSliderPopover.m in Sources */,
+				8014A2A01FA2D49100DDDB5A /* SvDemo_Refresh.m in Sources */,
 				78C35B621F9E3B4800C7080B /* TableViewHeader.m in Sources */,
 				780F49751F9CCFB20040D145 /* MyUserInfoScaleHeadView.m in Sources */,
 				78AF3F761F6012F400660373 /* UIViewController+CJBackButtonHandler.m in Sources */,
-				787E101A1F0E22A500034A5C /* TableViewController.m in Sources */,
 				78C35B571F9E3B4800C7080B /* TvDemo_Complex.m in Sources */,
 				78C35B191F9E3B4800C7080B /* Detail.m in Sources */,
 				78AF3F691F5FDB7E00660373 /* CountDownTimeViewController.m in Sources */,
 				782709E21E8715A600E21433 /* UIImage+CJBase64.m in Sources */,
 				781592ED1EC4391400DE1976 /* CJToast.m in Sources */,
+				8014A2911FA2D3BA00DDDB5A /* TableViewController.m in Sources */,
 				784D55061F4E7F9D00C21003 /* UIImage+CJQRCode.m in Sources */,
 				78C35BB41F9E3C3000C7080B /* MyEqualCellSizeCollectionView+Select.m in Sources */,
 				78C35BAE1F9E3C3000C7080B /* CJCellHorizontalLayout.m in Sources */,
@@ -2541,13 +2523,13 @@
 				78C35B421F9E3B4800C7080B /* MyEqualCellSizeView.m in Sources */,
 				784B7D4A1E7F7DE300299457 /* UIColor+CJHex.m in Sources */,
 				78C35B1B1F9E3B4800C7080B /* CustomCollectionViewCell.m in Sources */,
+				8014A2801FA2C2E500DDDB5A /* AppDelegate+WindowRootViewController.m in Sources */,
 				78C35B221F9E3B4800C7080B /* CustomLayoutCollectionViewController.m in Sources */,
 				78C35B4B1F9E3B4800C7080B /* ScrollViewHomeViewController.m in Sources */,
 				784C15E21E8E719A0019D652 /* UIImage+CJTransformSize.m in Sources */,
 				78E61F021E79AF0A009B1627 /* CJRefreshHeader.m in Sources */,
 				78E61ED11E79AA20009B1627 /* CJMJRefreshNormalHeader.m in Sources */,
 				78C35B471F9E3B4800C7080B /* Header.m in Sources */,
-				7840FB051EB09C4500B553F7 /* KeyboardAvoidingViewController.m in Sources */,
 				78E269C31ECC5E29007D3686 /* LEOHeaderView.m in Sources */,
 				78FC3BC61ED541850049F22D /* UITextField+CJLimitTextLength.m in Sources */,
 				78E269A71ECA92E4007D3686 /* NavigationBarChangePositonViewController.m in Sources */,

@@ -23,9 +23,6 @@
 
 #import "TextFieldViewController.h"
 #import "TextViewController.h"
-#import "ScrollViewController.h"
-#import "ScrollViewHomeViewController.h"
-#import "TableViewController.h"
 #import "KeyboardAvoidingViewController.h"
 #import "SliderViewController.h"
 #import "SearchBarViewController.h"
@@ -55,7 +52,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    self.title = NSLocalizedString(@"Home首页", nil);
+    self.navigationItem.title = NSLocalizedString(@"Home首页", nil); //知识点:使得tabBar中的title可以和显示在顶部的title保持各自
     
     [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"cell"];
     self.tableView.dataSource = self;
@@ -63,6 +60,19 @@
     
     self.datas = [[NSMutableArray alloc] init];
     self.indexTitles = [[NSMutableArray alloc] init];
+    
+    //Interface
+    {
+        NSMutableArray *moduleModels = [[NSMutableArray alloc] init];
+        
+        ModuleModel *xibModule = [[ModuleModel alloc] init];
+        xibModule.title = @"xib(待补充)";
+        xibModule.classEntry = [UIViewController class];
+        [moduleModels addObject:xibModule];
+        
+        [self.datas addObject:moduleModels];
+        [self.indexTitles addObject:@"Interface相关(xib/storyboard)"];
+    }
     
     //ViewCategoryViewController
     {
@@ -108,21 +118,6 @@
         cjTextViewModuleModel.title = @"CJTextView";
         cjTextViewModuleModel.classEntry = [TextViewController class];
         [moduleModels addObject:cjTextViewModuleModel];
-        
-        ModuleModel *cjScrollViewModuleModel = [[ModuleModel alloc] init];
-        cjScrollViewModuleModel.title = @"用代码创建的CJScrollView";
-        cjScrollViewModuleModel.classEntry = [ScrollViewController class];
-        [moduleModels addObject:cjScrollViewModuleModel];
-        
-        ModuleModel *scrollViewHomeModule = [[ModuleModel alloc] init];
-        scrollViewHomeModule.title = @"ScrollViewHomeViewController";
-        scrollViewHomeModule.classEntry = [ScrollViewHomeViewController class];
-        [moduleModels addObject:scrollViewHomeModule];
-        
-        ModuleModel *TableViewModule = [[ModuleModel alloc] init];
-        TableViewModule.title = @"TableView";
-        TableViewModule.classEntry = [TableViewController class];
-        [moduleModels addObject:TableViewModule];
         
         //CJSlider
         ModuleModel *cjSliderModuleModel = [[ModuleModel alloc] init];
@@ -268,8 +263,7 @@
     UIViewController *viewController = nil;
     
     NSString *clsString = NSStringFromClass(moduleModel.classEntry);
-    if ([clsString isEqualToString:NSStringFromClass([UIViewController class])] ||
-        [clsString isEqualToString:NSStringFromClass([ScrollViewController class])])
+    if ([clsString isEqualToString:NSStringFromClass([UIViewController class])])
     {
         viewController = [[classEntry alloc] init];
         viewController.view.backgroundColor = [UIColor whiteColor];

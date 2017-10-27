@@ -12,8 +12,10 @@
 
 //UIScrollView
 #import "SvDemo_Refresh.h"
+#import "ScrollViewController.h"
 
 //UITableView
+#import "TableViewController.h"
 #import "DemoTableViewController.h"
 #import "ReuseDataSourceTableViewController.h"
 #import "TvDemo_Complex.h"
@@ -42,7 +44,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    self.title = NSLocalizedString(@"ScrollViewHome首页", nil);
+    self.navigationItem.title = NSLocalizedString(@"ScrollViewHome首页", nil); //知识点:使得tabBar中的title可以和显示在顶部的title保持各自
     
     [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"cell"];
     self.tableView.dataSource = self;
@@ -65,6 +67,11 @@
         refreshScrollViewModule.classEntry = [SvDemo_Refresh class];
         [moduleModels addObject:refreshScrollViewModule];
         
+        ModuleModel *cjScrollViewModuleModel = [[ModuleModel alloc] init];
+        cjScrollViewModuleModel.title = @"ScrollView(纯代码创建)";
+        cjScrollViewModuleModel.classEntry = [ScrollViewController class];
+        [moduleModels addObject:cjScrollViewModuleModel];
+        
         [self.datas addObject:moduleModels];
         [self.indexTitles addObject:@"UIScrollView相关"];
     }
@@ -73,6 +80,11 @@
     //UITableView
     {
         NSMutableArray *moduleModels = [[NSMutableArray alloc] init];
+        
+        ModuleModel *TableViewModule = [[ModuleModel alloc] init];
+        TableViewModule.title = @"TableView(最原始的使用)";
+        TableViewModule.classEntry = [TableViewController class];
+        [moduleModels addObject:TableViewModule];
         
         ModuleModel *baseDemoModule = [[ModuleModel alloc] init];
         baseDemoModule.title = @"BaseDemo";
