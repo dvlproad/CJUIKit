@@ -280,6 +280,7 @@
 		8014A29E1FA2D49100DDDB5A /* ScrollViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8014A2971FA2D49100DDDB5A /* ScrollViewController.m */; };
 		8014A29F1FA2D49100DDDB5A /* KeyboardAvoidingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8014A2991FA2D49100DDDB5A /* KeyboardAvoidingViewController.xib */; };
 		8014A2A01FA2D49100DDDB5A /* SvDemo_Refresh.m in Sources */ = {isa = PBXBuildFile; fileRef = 8014A29A1FA2D49100DDDB5A /* SvDemo_Refresh.m */; };
+		8014A2A21FA3137D00DDDB5A /* ThirdPartIcon.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8014A2A11FA3137D00DDDB5A /* ThirdPartIcon.xcassets */; };
 		801B5B0C1F949BD400705FDC /* CJDefaultToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = 801B5B0B1F949BD300705FDC /* CJDefaultToolbar.m */; };
 		80818AD61F9F121B00F00DC1 /* ScrollViewHomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 80818AD51F9F121B00F00DC1 /* ScrollViewHomeViewController.xib */; };
 		E2649F5BE7F7FEF404688168 /* libPods-CJUIKitDemoTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 935109AAB855F6CC8B84B9A5 /* libPods-CJUIKitDemoTests.a */; };
@@ -742,6 +743,7 @@
 		8014A2981FA2D49100DDDB5A /* SvDemo_Refresh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SvDemo_Refresh.h; sourceTree = "<group>"; };
 		8014A2991FA2D49100DDDB5A /* KeyboardAvoidingViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KeyboardAvoidingViewController.xib; sourceTree = "<group>"; };
 		8014A29A1FA2D49100DDDB5A /* SvDemo_Refresh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SvDemo_Refresh.m; sourceTree = "<group>"; };
+		8014A2A11FA3137D00DDDB5A /* ThirdPartIcon.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = ThirdPartIcon.xcassets; sourceTree = "<group>"; };
 		801B5B0A1F949BD300705FDC /* CJDefaultToolbar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJDefaultToolbar.h; sourceTree = "<group>"; };
 		801B5B0B1F949BD300705FDC /* CJDefaultToolbar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJDefaultToolbar.m; sourceTree = "<group>"; };
 		80818AD51F9F121B00F00DC1 /* ScrollViewHomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ScrollViewHomeViewController.xib; sourceTree = "<group>"; };
@@ -808,6 +810,7 @@
 				780E460A1E5DF87B00980127 /* ViewController.m */,
 				8014A27E1FA2C2E500DDDB5A /* AppDelegate+WindowRootViewController.h */,
 				8014A27F1FA2C2E500DDDB5A /* AppDelegate+WindowRootViewController.m */,
+				8014A2A11FA3137D00DDDB5A /* ThirdPartIcon.xcassets */,
 				783281011F4198BC008267E0 /* CJSmallCustomView */,
 				78E61EA71E79AA20009B1627 /* CJUIKit */,
 				780E460C1E5DF87B00980127 /* Main.storyboard */,
@@ -2188,6 +2191,7 @@
 				7840FB071EB09C4500B553F7 /* slider_double_thumbImage_a@2x.png in Resources */,
 				7898C92F1F12795900F06820 /* RangeSliderViewController.xib in Resources */,
 				78C35B4F1F9E3B4800C7080B /* crayons.txt in Resources */,
+				8014A2A21FA3137D00DDDB5A /* ThirdPartIcon.xcassets in Resources */,
 				78C35B361F9E3B4800C7080B /* MemoryADPose01.jpg in Resources */,
 				78C35B461F9E3B4800C7080B /* DetailCell.xib in Resources */,
 				7840FB041EB09C4500B553F7 /* ImageViewController.xib in Resources */,
