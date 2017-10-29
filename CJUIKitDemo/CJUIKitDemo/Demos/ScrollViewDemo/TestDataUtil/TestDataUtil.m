@@ -32,8 +32,8 @@
 }
 
 /** 完整的描述请参见文件头部 */
-+ (NSMutableArray<MySectionModel *> *)getTestSectionDataModels {
-    MySectionModel *secctionModel1 = [[MySectionModel alloc] init];
++ (NSMutableArray<CJSectionDataModel *> *)getTestSectionDataModels {
+    CJSectionDataModel *secctionModel1 = [[CJSectionDataModel alloc] init];
     secctionModel1.theme = @"A区";
     secctionModel1.values = [[NSMutableArray alloc]init];
     for (NSInteger i = 0; i < 5; i++) {
@@ -44,7 +44,7 @@
     secctionModel1.selected = YES;
     
     
-    MySectionModel *secctionModel2 = [[MySectionModel alloc]init];
+    CJSectionDataModel *secctionModel2 = [[CJSectionDataModel alloc]init];
     secctionModel2.theme = @"B区";
     secctionModel2.values = [[NSMutableArray alloc]init];
     for (NSInteger i = 0; i < 3; i++) {
@@ -54,7 +54,7 @@
     }
     secctionModel2.selected = YES;
     
-    MySectionModel *secctionModel3 = [[MySectionModel alloc]init];
+    CJSectionDataModel *secctionModel3 = [[CJSectionDataModel alloc]init];
     secctionModel3.theme = @"C区";
     secctionModel3.values = [[NSMutableArray alloc]init];
     for (NSInteger i = 0; i < 4; i++) {
@@ -69,9 +69,9 @@
 }
 
 /** 完整的描述请参见文件头部 */
-+ (NSMutableArray<MySectionModel *> *)testDataForDemoTableViewController {
++ (NSMutableArray<CJSectionDataModel *> *)testDataForDemoTableViewController {
     //secctionModel1
-    MySectionModel *secctionModel1 = [[MySectionModel alloc] init];
+    CJSectionDataModel *secctionModel1 = [[CJSectionDataModel alloc] init];
     secctionModel1.theme = @"A：CJDefaultTableViewCell";
     secctionModel1.values = [[NSMutableArray alloc]init];
     {
@@ -103,7 +103,7 @@
     }
     
     //secctionModel2
-    MySectionModel *secctionModel2 = [[MySectionModel alloc] init];
+    CJSectionDataModel *secctionModel2 = [[CJSectionDataModel alloc] init];
     secctionModel2.theme = @"B：CJSubTitleTabelViewCell";
     secctionModel2.values = [[NSMutableArray alloc]init];
     {
@@ -135,7 +135,7 @@
     }
     
     //secctionModel3
-    MySectionModel *secctionModel3 = [[MySectionModel alloc] init];
+    CJSectionDataModel *secctionModel3 = [[CJSectionDataModel alloc] init];
     secctionModel3.theme = @"C：CJRightDetailTableViewCell";
     secctionModel3.values = [[NSMutableArray alloc]init];
     {
@@ -167,7 +167,7 @@
     }
     
     //secctionModel4
-    MySectionModel *secctionModel4 = [[MySectionModel alloc] init];
+    CJSectionDataModel *secctionModel4 = [[CJSectionDataModel alloc] init];
     secctionModel4.theme = @"D：CJLeftDetailTableViewCell";
     secctionModel4.values = [[NSMutableArray alloc]init];
     {
@@ -199,7 +199,7 @@
     }
     
     //secctionModel5
-    MySectionModel *secctionModel5 = [[MySectionModel alloc] init];
+    CJSectionDataModel *secctionModel5 = [[CJSectionDataModel alloc] init];
     secctionModel5.theme = @"E：CustomTableViewCell";
     secctionModel5.values = [[NSMutableArray alloc]init];
     {
@@ -232,7 +232,7 @@
     
     
     //secctionModel6
-    MySectionModel *secctionModel6 = [[MySectionModel alloc] init];
+    CJSectionDataModel *secctionModel6 = [[CJSectionDataModel alloc] init];
     secctionModel6.theme = @"F：SystemTableViewCell";
     secctionModel6.values = [[NSMutableArray alloc]init];
     {

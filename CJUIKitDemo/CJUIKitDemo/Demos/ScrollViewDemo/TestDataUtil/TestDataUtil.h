@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-#import "MySectionModel.h"
+#import "CJSectionDataModel.h"
 #import "TestDataModel.h"
 
 @interface TestDataUtil : NSObject
@@ -16,9 +16,9 @@
 + (NSMutableArray<TestDataModel *> *)getTestDataModels;
 
 /** 提供测试数据给OpenCollectionViewController */
-+ (NSMutableArray<MySectionModel *> *)getTestSectionDataModels;
++ (NSMutableArray<CJSectionDataModel *> *)getTestSectionDataModels;
 
 /** 提供测试数据给DemoTableViewController */
-+ (NSMutableArray<MySectionModel *> *)testDataForDemoTableViewController;
++ (NSMutableArray<CJSectionDataModel *> *)testDataForDemoTableViewController;
 
 @end

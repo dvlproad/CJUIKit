@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "CJSingleTableViewCellDataSource.h"
-#import "MySectionModel.h"
+#import "CJSectionDataModel.h"
 
 /**
  *  tableView只有一种Cell，且tableView有分区时候的dataSoure

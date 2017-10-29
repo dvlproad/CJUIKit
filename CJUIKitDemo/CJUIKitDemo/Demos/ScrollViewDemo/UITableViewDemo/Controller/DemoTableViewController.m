@@ -25,7 +25,7 @@ static NSString * const CJLeftDetailTableViewCellIdentifier = @"CJLeftDetailTabl
     BOOL isAllSelected;
 }
 @property (nonatomic, weak) IBOutlet UITableView *tableView;
-@property (nonatomic, strong) NSMutableArray<MySectionModel *> *datas;
+@property (nonatomic, strong) NSMutableArray<CJSectionDataModel *> *datas;
 
 @property (nonatomic, strong) UIBarButtonItem *editBarButtonItem;
 @property (nonatomic, strong) UIBarButtonItem *selectAllBarButtonItem;
@@ -68,7 +68,7 @@ static NSString * const CJLeftDetailTableViewCellIdentifier = @"CJLeftDetailTabl
     
     NSUInteger sectionCount = [self.datas count];
     for (NSInteger section = 0; section < sectionCount; section++) {
-        MySectionModel *sectionDataModel = [self.datas objectAtIndex:section];
+        CJSectionDataModel *sectionDataModel = [self.datas objectAtIndex:section];
         NSUInteger rowCount = sectionDataModel.values.count;
         for (NSInteger row = 0; row < rowCount; row++) {
             NSIndexPath *indexPath = [NSIndexPath indexPathForRow:row inSection:section];
@@ -115,12 +115,12 @@ static NSString * const CJLeftDetailTableViewCellIdentifier = @"CJLeftDetailTabl
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    MySectionModel *sectionDataModel = [self.datas objectAtIndex:section];
+    CJSectionDataModel *sectionDataModel = [self.datas objectAtIndex:section];
     return sectionDataModel.values.count;
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
-    MySectionModel *sectionDataModel = [self.datas objectAtIndex:section];
+    CJSectionDataModel *sectionDataModel = [self.datas objectAtIndex:section];
     
     return sectionDataModel.theme;
 }
@@ -130,7 +130,7 @@ static NSString * const CJLeftDetailTableViewCellIdentifier = @"CJLeftDetailTabl
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    MySectionModel *sectionDataModel = [self.datas objectAtIndex:indexPath.section];
+    CJSectionDataModel *sectionDataModel = [self.datas objectAtIndex:indexPath.section];
     TestDataModel *dataModel = [sectionDataModel.values objectAtIndex:indexPath.row];
     
     if (indexPath.section == 0) {

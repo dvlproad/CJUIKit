@@ -56,19 +56,19 @@
     
     /** 设置对应indexPaht上Cell、Line、Header的属性值 */
     [_collectionView configureCellBlock:^(id cell, NSIndexPath *indexPath) {
-        MySectionModel *secctionModel = [_datas objectAtIndex:indexPath.section];
+        CJSectionDataModel *secctionModel = [_datas objectAtIndex:indexPath.section];
         TestDataModel *cellModel = (TestDataModel *)[secctionModel.values objectAtIndex:indexPath.item];
         
         DetailCell *m_cell = (DetailCell *)cell;
         m_cell.labDetail.text = cellModel.name;
         
     } configureLineBlock:^(CJLineCell *lineCell, NSIndexPath *indexPath) {
-        MySectionModel *secctionModel = [_datas objectAtIndex:indexPath.section];
+        CJSectionDataModel *secctionModel = [_datas objectAtIndex:indexPath.section];
         lineCell.label.text = secctionModel.theme;
         lineCell.label.font = [UIFont systemFontOfSize:28];
         
     } configureHeaderBlock:^(CJCollectionViewHeaderFooterView *header, NSIndexPath *indexPath) {
-        MySectionModel *secctionModel = [_datas objectAtIndex:indexPath.section];
+        CJSectionDataModel *secctionModel = [_datas objectAtIndex:indexPath.section];
         
         Header *m_header = (Header *)header;
         m_header.labTheme.text = secctionModel.theme;
@@ -84,7 +84,7 @@
 }
 
 - (NSInteger)cjOpenCollectionView:(CJOpenCollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    MySectionModel *secctionModel = [_datas objectAtIndex:section];
+    CJSectionDataModel *secctionModel = [_datas objectAtIndex:section];
     if (secctionModel.isSelected) {
         return secctionModel.values.count;
     }
@@ -95,7 +95,7 @@
 #pragma mark - CJOpenCollectionViewDelegate
 - (void)cjOpenCollectionView:(CJOpenCollectionView *)collectionView didSelectHeaderInSection:(NSInteger)section {
     NSLog(@"Header %ld", section);
-    MySectionModel *secctionModel = [_datas objectAtIndex:section];
+    CJSectionDataModel *secctionModel = [_datas objectAtIndex:section];
     secctionModel.selected = !secctionModel.isSelected;
 }
 

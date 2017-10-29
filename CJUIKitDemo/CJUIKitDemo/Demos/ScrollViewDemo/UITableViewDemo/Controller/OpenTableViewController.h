@@ -9,18 +9,18 @@
 #import <UIKit/UIKit.h>
 
 #import "TableViewHeader.h"
-#import "MySectionModel.h"
+#import <CJBaseUtil/CJSectionDataModel.h>
 
 #import "MyOpenTableView.h"
 
 
-//实际只需采用CJTableViewHeaderFooterView和MySectionModel即可实现
+//实际只需采用CJTableViewHeaderFooterView和CJSectionDataModel即可实现
 @interface OpenTableViewController : UIViewController <UITableViewDataSource, UITableViewDelegate> {
     NSInteger section_old;
     
 }
 @property (nonatomic, strong) IBOutlet UITableView *tableView;
-@property (nonatomic, strong) NSMutableArray<MySectionModel *> *sectionModels;
+@property (nonatomic, strong) NSMutableArray<CJSectionDataModel *> *sectionModels;
 
 @property (nonatomic, strong) IBOutlet MyOpenTableView *openTableView;
 

@@ -45,13 +45,13 @@
     [self.openTableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"cell"];
     self.openTableView.sectionModels = self.sectionModels;
     [self.openTableView configureHeaderBlock:^(TableViewHeader *header, NSInteger section) {
-        MySectionModel *sectionDataModel = [self.sectionModels objectAtIndex:section];
+        CJSectionDataModel *sectionDataModel = [self.sectionModels objectAtIndex:section];
         
         header.tilteLabel.backgroundColor = [UIColor cyanColor];
         header.tilteLabel.text = sectionDataModel.theme;
         
     } configureCellBlock:^(UITableViewCell *cell, NSIndexPath *indexPath) {
-        MySectionModel *sectionDataModel = [self.sectionModels objectAtIndex:indexPath.section];
+        CJSectionDataModel *sectionDataModel = [self.sectionModels objectAtIndex:indexPath.section];
         TestDataModel *dataModel = [sectionDataModel.values objectAtIndex:indexPath.row];
         
         cell.textLabel.text = dataModel.name;
@@ -67,7 +67,7 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    MySectionModel *sectionDataModel = [self.sectionModels objectAtIndex:section];
+    CJSectionDataModel *sectionDataModel = [self.sectionModels objectAtIndex:section];
     NSInteger rowCount = [sectionDataModel.values count];
     
     return sectionDataModel.isSelected ? rowCount : 0;
@@ -78,7 +78,7 @@
 }
 
 - (UIView*)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
-    MySectionModel *sectionDataModel = [self.sectionModels objectAtIndex:section];
+    CJSectionDataModel *sectionDataModel = [self.sectionModels objectAtIndex:section];
     
     TableViewHeader *header = (TableViewHeader *)[tableView dequeueReusableHeaderFooterViewWithIdentifier:@"TableViewHeader"];
     header.belongToSection = section;
@@ -98,7 +98,7 @@
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    MySectionModel *sectionDataModel = [self.sectionModels objectAtIndex:indexPath.section];
+    CJSectionDataModel *sectionDataModel = [self.sectionModels objectAtIndex:indexPath.section];
     TestDataModel *dataModel = [sectionDataModel.values objectAtIndex:indexPath.row];
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
@@ -114,7 +114,7 @@
  *  @param section section
  */
 - (void)tapHeaderAtSection:(NSInteger)section {
-    MySectionModel *secctionModel = [self.sectionModels objectAtIndex:section];
+    CJSectionDataModel *secctionModel = [self.sectionModels objectAtIndex:section];
     secctionModel.selected = !secctionModel.isSelected;
     
     [self.tableView reloadData];

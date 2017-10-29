@@ -222,7 +222,6 @@
 		78C35BDB1F9E3D6C00C7080B /* add_red@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 78C35BCC1F9E3D6C00C7080B /* add_red@2x.png */; };
 		78C35BDC1F9E3D6C00C7080B /* add_red_Big.png in Resources */ = {isa = PBXBuildFile; fileRef = 78C35BCD1F9E3D6C00C7080B /* add_red_Big.png */; };
 		78C35BDD1F9E3D6C00C7080B /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 78C35BCE1F9E3D6C00C7080B /* icon.png */; };
-		78C35BDE1F9E3D6C00C7080B /* MySectionModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 78C35BD21F9E3D6C00C7080B /* MySectionModel.m */; };
 		78C35BDF1F9E3D6C00C7080B /* DemoInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 78C35BD51F9E3D6C00C7080B /* DemoInfo.m */; };
 		78C35BE01F9E3D6C00C7080B /* TestDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 78C35BD71F9E3D6C00C7080B /* TestDataModel.m */; };
 		78C35BE11F9E3D6C00C7080B /* TestDataUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 78C35BD91F9E3D6C00C7080B /* TestDataUtil.m */; };
@@ -644,8 +643,6 @@
 		78C35BCC1F9E3D6C00C7080B /* add_red@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "add_red@2x.png"; sourceTree = "<group>"; };
 		78C35BCD1F9E3D6C00C7080B /* add_red_Big.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = add_red_Big.png; sourceTree = "<group>"; };
 		78C35BCE1F9E3D6C00C7080B /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
-		78C35BD11F9E3D6C00C7080B /* MySectionModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MySectionModel.h; sourceTree = "<group>"; };
-		78C35BD21F9E3D6C00C7080B /* MySectionModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MySectionModel.m; sourceTree = "<group>"; };
 		78C35BD41F9E3D6C00C7080B /* DemoInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DemoInfo.h; sourceTree = "<group>"; };
 		78C35BD51F9E3D6C00C7080B /* DemoInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DemoInfo.m; sourceTree = "<group>"; };
 		78C35BD61F9E3D6C00C7080B /* TestDataModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestDataModel.h; sourceTree = "<group>"; };
@@ -1755,21 +1752,11 @@
 		78C35BCF1F9E3D6C00C7080B /* TestDataUtil */ = {
 			isa = PBXGroup;
 			children = (
-				78C35BD01F9E3D6C00C7080B /* MySectionModel */,
 				78C35BD31F9E3D6C00C7080B /* TestDataModel */,
 				78C35BD81F9E3D6C00C7080B /* TestDataUtil.h */,
 				78C35BD91F9E3D6C00C7080B /* TestDataUtil.m */,
 			);
 			path = TestDataUtil;
-			sourceTree = "<group>";
-		};
-		78C35BD01F9E3D6C00C7080B /* MySectionModel */ = {
-			isa = PBXGroup;
-			children = (
-				78C35BD11F9E3D6C00C7080B /* MySectionModel.h */,
-				78C35BD21F9E3D6C00C7080B /* MySectionModel.m */,
-			);
-			path = MySectionModel;
 			sourceTree = "<group>";
 		};
 		78C35BD31F9E3D6C00C7080B /* TestDataModel */ = {
@@ -2521,7 +2508,6 @@
 				78375DA31F7EBA5C00EDCF8F /* UIImage+CJBlur.m in Sources */,
 				78E61F011E79AF0A009B1627 /* CJRefreshFooter.m in Sources */,
 				78C35B3C1F9E3B4800C7080B /* MyADModel.m in Sources */,
-				78C35BDE1F9E3D6C00C7080B /* MySectionModel.m in Sources */,
 				78DC6E711F0E90B000DC025C /* CJSwitchSliderStatusModel.m in Sources */,
 				78375D7C1F7E9F2C00EDCF8F /* CJFloatingWindow.m in Sources */,
 				78C35B421F9E3B4800C7080B /* MyEqualCellSizeView.m in Sources */,

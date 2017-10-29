@@ -22,7 +22,7 @@
 @implementation CJSingleTableViewCellDataSource2
 
 - (id)dataModelAtIndexPath:(NSIndexPath *)indexPath {
-    MySectionModel *sectionDataModel = [self.datas objectAtIndex:indexPath.section];
+    CJSectionDataModel *sectionDataModel = [self.datas objectAtIndex:indexPath.section];
     id dataModel = [sectionDataModel.values objectAtIndex:indexPath.row];
     
     return dataModel;
@@ -34,7 +34,7 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    MySectionModel *sectionDataModel = [self.datas objectAtIndex:section];
+    CJSectionDataModel *sectionDataModel = [self.datas objectAtIndex:section];
     return sectionDataModel.values.count;
 }
 
