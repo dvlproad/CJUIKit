@@ -50,131 +50,147 @@
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
     
-    self.datas = [[NSMutableArray alloc] init];
-    self.indexTitles = [[NSMutableArray alloc] init];
     
+    NSMutableArray *sectionDataModels = [[NSMutableArray alloc] init];
     //UIScrollView
     {
-        NSMutableArray *moduleModels = [[NSMutableArray alloc] init];
+        CJSectionDataModel *sectionDataModel = [[CJSectionDataModel alloc] init];
+        sectionDataModel.theme = @"UIScrollView相关";
+        {
+            ModuleModel *baseScrollViewModule = [[ModuleModel alloc] init];
+            baseScrollViewModule.title = @"ScrollView的最基本约束";
+            baseScrollViewModule.classEntry = [UIViewController class];
+            [sectionDataModel.values addObject:baseScrollViewModule];
+        }
+        {
+            ModuleModel *refreshScrollViewModule = [[ModuleModel alloc] init];
+            refreshScrollViewModule.title = @"ScrollView的刷新(MJRefresh)";
+            refreshScrollViewModule.classEntry = [SvDemo_Refresh class];
+            [sectionDataModel.values addObject:refreshScrollViewModule];
+        }
+        {
+            ModuleModel *cjScrollViewModuleModel = [[ModuleModel alloc] init];
+            cjScrollViewModuleModel.title = @"ScrollView(纯代码创建)";
+            cjScrollViewModuleModel.classEntry = [ScrollViewController class];
+            [sectionDataModel.values addObject:cjScrollViewModuleModel];
+        }
         
-        ModuleModel *baseScrollViewModule = [[ModuleModel alloc] init];
-        baseScrollViewModule.title = @"ScrollView的最基本约束";
-        baseScrollViewModule.classEntry = [UIViewController class];
-        [moduleModels addObject:baseScrollViewModule];
-        
-        ModuleModel *refreshScrollViewModule = [[ModuleModel alloc] init];
-        refreshScrollViewModule.title = @"ScrollView的刷新(MJRefresh)";
-        refreshScrollViewModule.classEntry = [SvDemo_Refresh class];
-        [moduleModels addObject:refreshScrollViewModule];
-        
-        ModuleModel *cjScrollViewModuleModel = [[ModuleModel alloc] init];
-        cjScrollViewModuleModel.title = @"ScrollView(纯代码创建)";
-        cjScrollViewModuleModel.classEntry = [ScrollViewController class];
-        [moduleModels addObject:cjScrollViewModuleModel];
-        
-        [self.datas addObject:moduleModels];
-        [self.indexTitles addObject:@"UIScrollView相关"];
+        [sectionDataModels addObject:sectionDataModel];
     }
     
     
     //UITableView
     {
-        NSMutableArray *moduleModels = [[NSMutableArray alloc] init];
-        
-        ModuleModel *TableViewModule = [[ModuleModel alloc] init];
-        TableViewModule.title = @"TableView(最原始的使用)";
-        TableViewModule.classEntry = [TableViewController class];
-        [moduleModels addObject:TableViewModule];
-        
-        ModuleModel *baseDemoModule = [[ModuleModel alloc] init];
-        baseDemoModule.title = @"BaseDemo";
-        baseDemoModule.classEntry = [DemoTableViewController class];
-        [moduleModels addObject:baseDemoModule];
-        
-        ModuleModel *reuseDataSourceTableModule = [[ModuleModel alloc] init];
-        reuseDataSourceTableModule.title = @"ReuseDataSourceTable";
-        reuseDataSourceTableModule.classEntry = [ReuseDataSourceTableViewController class];
-        [moduleModels addObject:reuseDataSourceTableModule];
-        
-        ModuleModel *complexDemoModule = [[ModuleModel alloc] init];
-        complexDemoModule.title = @"ComplexDemo";
-        complexDemoModule.classEntry = [TvDemo_Complex class];
-        [moduleModels addObject:complexDemoModule];
-        
-        ModuleModel *openTableModule = [[ModuleModel alloc] init];
-        openTableModule.title = @"OpenTable";
-        openTableModule.classEntry = [OpenTableViewController class];
-        [moduleModels addObject:openTableModule];
-        
-        ModuleModel *chooseColorModule = [[ModuleModel alloc] init];
-        chooseColorModule.title = @"ChooseColor01";
-        chooseColorModule.classEntry = [ChooseColor01 class];
-        [moduleModels addObject:chooseColorModule];
-        
-        [self.datas addObject:moduleModels];
-        [self.indexTitles addObject:@"UITableView相关"];
+        CJSectionDataModel *sectionDataModel = [[CJSectionDataModel alloc] init];
+        sectionDataModel.theme = @"UITableView相关";
+        {
+            ModuleModel *TableViewModule = [[ModuleModel alloc] init];
+            TableViewModule.title = @"TableView(最原始的使用)";
+            TableViewModule.classEntry = [TableViewController class];
+            [sectionDataModel.values addObject:TableViewModule];
+        }
+        {
+            ModuleModel *baseDemoModule = [[ModuleModel alloc] init];
+            baseDemoModule.title = @"BaseDemo";
+            baseDemoModule.classEntry = [DemoTableViewController class];
+            [sectionDataModel.values addObject:baseDemoModule];
+        }
+        {
+            ModuleModel *reuseDataSourceTableModule = [[ModuleModel alloc] init];
+            reuseDataSourceTableModule.title = @"ReuseDataSourceTable";
+            reuseDataSourceTableModule.classEntry = [ReuseDataSourceTableViewController class];
+            [sectionDataModel.values addObject:reuseDataSourceTableModule];
+        }
+        {
+            ModuleModel *complexDemoModule = [[ModuleModel alloc] init];
+            complexDemoModule.title = @"ComplexDemo";
+            complexDemoModule.classEntry = [TvDemo_Complex class];
+            [sectionDataModel.values addObject:complexDemoModule];
+        }
+        {
+            ModuleModel *openTableModule = [[ModuleModel alloc] init];
+            openTableModule.title = @"OpenTable";
+            openTableModule.classEntry = [OpenTableViewController class];
+            [sectionDataModel.values addObject:openTableModule];
+        }
+        {
+            ModuleModel *chooseColorModule = [[ModuleModel alloc] init];
+            chooseColorModule.title = @"ChooseColor01";
+            chooseColorModule.classEntry = [ChooseColor01 class];
+            [sectionDataModel.values addObject:chooseColorModule];
+        }
+        [sectionDataModels addObject:sectionDataModel];
     }
     
     
     //UICollectionView
     {
-        NSMutableArray *moduleModels = [[NSMutableArray alloc] init];
-        
-        ModuleModel *complexDemoModule = [[ModuleModel alloc] init];
-        complexDemoModule.title = @"ComplexDemo";
-        complexDemoModule.classEntry = [CvDemo_Complex class];
-        [moduleModels addObject:complexDemoModule];
-        
-        ModuleModel *MyEqualCellSizeCollectionViewModule = [[ModuleModel alloc] init];
-        MyEqualCellSizeCollectionViewModule.title = @"MyEqualCellSizeCollectionView(等cell大小)";
-        MyEqualCellSizeCollectionViewModule.classEntry = [MyEqualCellSizeCollectionViewController class];
-        [moduleModels addObject:MyEqualCellSizeCollectionViewModule];
-        
-        ModuleModel *MyEqualCellSizeViewModule = [[ModuleModel alloc] init];
-        MyEqualCellSizeViewModule.title = @"MyEqualCellSizeView(嵌套的等cell大小)";
-        MyEqualCellSizeViewModule.classEntry = [MyEqualCellSizeViewController class];
-        [moduleModels addObject:MyEqualCellSizeViewModule];
-        
-        
-        ModuleModel *cycleScrollViewModule = [[ModuleModel alloc] init];
-        cycleScrollViewModule.title = @"MyCycleADView(无限循环的视图)";
-        cycleScrollViewModule.classEntry = [MyCycleADViewController class];
-        [moduleModels addObject:cycleScrollViewModule];
-        
-        ModuleModel *openCollectionViewModule = [[ModuleModel alloc] init];
-        openCollectionViewModule.title = @"OpenCollectionView(可展开)";
-        openCollectionViewModule.classEntry = [OpenCollectionViewController class];
-        [moduleModels addObject:openCollectionViewModule];
-        
-        ModuleModel *customLayoutModule = [[ModuleModel alloc] init];
-        customLayoutModule.title = @"CustomLayout(自定义布局)";
-        customLayoutModule.classEntry = [CustomLayoutCollectionViewController class];
-        [moduleModels addObject:customLayoutModule];
-        
-        [self.datas addObject:moduleModels];
-        [self.indexTitles addObject:@"UICollectionView相关"];
+        CJSectionDataModel *sectionDataModel = [[CJSectionDataModel alloc] init];
+        sectionDataModel.theme = @"UICollectionView相关";
+        {
+            ModuleModel *complexDemoModule = [[ModuleModel alloc] init];
+            complexDemoModule.title = @"ComplexDemo";
+            complexDemoModule.classEntry = [CvDemo_Complex class];
+            [sectionDataModel.values addObject:complexDemoModule];
+        }
+        {
+            ModuleModel *MyEqualCellSizeCollectionViewModule = [[ModuleModel alloc] init];
+            MyEqualCellSizeCollectionViewModule.title = @"MyEqualCellSizeCollectionView(等cell大小)";
+            MyEqualCellSizeCollectionViewModule.classEntry = [MyEqualCellSizeCollectionViewController class];
+            [sectionDataModel.values addObject:MyEqualCellSizeCollectionViewModule];
+        }
+        {
+            ModuleModel *MyEqualCellSizeViewModule = [[ModuleModel alloc] init];
+            MyEqualCellSizeViewModule.title = @"MyEqualCellSizeView(嵌套的等cell大小)";
+            MyEqualCellSizeViewModule.classEntry = [MyEqualCellSizeViewController class];
+            [sectionDataModel.values addObject:MyEqualCellSizeViewModule];
+        }
+        {
+            ModuleModel *cycleScrollViewModule = [[ModuleModel alloc] init];
+            cycleScrollViewModule.title = @"MyCycleADView(无限循环的视图)";
+            cycleScrollViewModule.classEntry = [MyCycleADViewController class];
+            [sectionDataModel.values addObject:cycleScrollViewModule];
+        }
+        {
+            ModuleModel *openCollectionViewModule = [[ModuleModel alloc] init];
+            openCollectionViewModule.title = @"OpenCollectionView(可展开)";
+            openCollectionViewModule.classEntry = [OpenCollectionViewController class];
+            [sectionDataModel.values addObject:openCollectionViewModule];
+        }
+        {
+            ModuleModel *customLayoutModule = [[ModuleModel alloc] init];
+            customLayoutModule.title = @"CustomLayout(自定义布局)";
+            customLayoutModule.classEntry = [CustomLayoutCollectionViewController class];
+            [sectionDataModel.values addObject:customLayoutModule];
+        }
+        [sectionDataModels addObject:sectionDataModel];
     }
+    self.sectionDataModels = sectionDataModels;
 }
 
 #pragma mark - UITableViewDataSource & UITableViewDelegate
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return [self.datas count];
+    return self.sectionDataModels.count;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    NSArray *array = [self.datas objectAtIndex:section];
-    return [array count];
+    CJSectionDataModel *sectionDataModel = [self.sectionDataModels objectAtIndex:section];
+    NSArray *dataModels = sectionDataModel.values;
+    
+    return dataModels.count;
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
-    NSString *indexTitle = [self.indexTitles objectAtIndex:section];
+    CJSectionDataModel *sectionDataModel = [self.sectionDataModels objectAtIndex:section];
+    
+    NSString *indexTitle = sectionDataModel.theme;
     return indexTitle;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    NSArray *array = [self.datas objectAtIndex:indexPath.section];
-    
-    ModuleModel *moduleModel = [array objectAtIndex:indexPath.row];
+    CJSectionDataModel *sectionDataModel = [self.sectionDataModels objectAtIndex:indexPath.section];
+    NSArray *dataModels = sectionDataModel.values;
+    ModuleModel *moduleModel = [dataModels objectAtIndex:indexPath.row];
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
     cell.textLabel.text = moduleModel.title;
@@ -185,9 +201,11 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     NSLog(@"didSelectRowAtIndexPath = %ld %ld", indexPath.section, indexPath.row);
     
-    NSArray *moduleModels = [self.datas objectAtIndex:indexPath.section];
+    CJSectionDataModel *sectionDataModel = [self.sectionDataModels objectAtIndex:indexPath.section];
+    NSArray *dataModels = sectionDataModel.values;
+    ModuleModel *moduleModel = [dataModels objectAtIndex:indexPath.row];
     
-    ModuleModel *moduleModel = [moduleModels objectAtIndex:indexPath.row];
+    
     Class classEntry = moduleModel.classEntry;
     NSString *nibName = NSStringFromClass(moduleModel.classEntry);
     
@@ -216,13 +234,13 @@
 }
 
 /*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
+ #pragma mark - Navigation
+ 
+ // In a storyboard-based application, you will often want to do a little preparation before navigation
+ - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+ // Get the new view controller using [segue destinationViewController].
+ // Pass the selected object to the new view controller.
+ }
+ */
 
 @end

@@ -7,12 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <CJBaseUtil/CJSectionDataModel.h>
 
 @interface ScrollViewHomeViewController : UIViewController {
     
 }
 @property (nonatomic, weak) IBOutlet UITableView *tableView;
-@property (nonatomic, strong) NSMutableArray<NSArray *> *datas;
-@property (nonatomic, strong) NSMutableArray<NSString *> *indexTitles;
+@property (nonatomic, strong) NSMutableArray<CJSectionDataModel *> *sectionDataModels;
 
 @end
