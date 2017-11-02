@@ -282,6 +282,10 @@
 		8014A2A21FA3137D00DDDB5A /* ThirdPartIcon.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8014A2A11FA3137D00DDDB5A /* ThirdPartIcon.xcassets */; };
 		801B5B0C1F949BD400705FDC /* CJDefaultToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = 801B5B0B1F949BD300705FDC /* CJDefaultToolbar.m */; };
 		80818AD61F9F121B00F00DC1 /* ScrollViewHomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 80818AD51F9F121B00F00DC1 /* ScrollViewHomeViewController.xib */; };
+		80EFADD21FAABE6400536BE2 /* ThirdPartyHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80EFADCF1FAABE6400536BE2 /* ThirdPartyHomeViewController.m */; };
+		80EFADD31FAABE6400536BE2 /* ThirdPartyHomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 80EFADD11FAABE6400536BE2 /* ThirdPartyHomeViewController.xib */; };
+		80EFADD91FAAC07600536BE2 /* MJExtensionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80EFADD71FAAC07600536BE2 /* MJExtensionViewController.m */; };
+		80EFADDA1FAAC07600536BE2 /* MJExtensionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 80EFADD81FAAC07600536BE2 /* MJExtensionViewController.xib */; };
 		E2649F5BE7F7FEF404688168 /* libPods-CJUIKitDemoTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 935109AAB855F6CC8B84B9A5 /* libPods-CJUIKitDemoTests.a */; };
 /* End PBXBuildFile section */
 
@@ -744,6 +748,12 @@
 		801B5B0A1F949BD300705FDC /* CJDefaultToolbar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJDefaultToolbar.h; sourceTree = "<group>"; };
 		801B5B0B1F949BD300705FDC /* CJDefaultToolbar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJDefaultToolbar.m; sourceTree = "<group>"; };
 		80818AD51F9F121B00F00DC1 /* ScrollViewHomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ScrollViewHomeViewController.xib; sourceTree = "<group>"; };
+		80EFADCF1FAABE6400536BE2 /* ThirdPartyHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThirdPartyHomeViewController.m; sourceTree = "<group>"; };
+		80EFADD01FAABE6400536BE2 /* ThirdPartyHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThirdPartyHomeViewController.h; sourceTree = "<group>"; };
+		80EFADD11FAABE6400536BE2 /* ThirdPartyHomeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ThirdPartyHomeViewController.xib; sourceTree = "<group>"; };
+		80EFADD61FAAC07600536BE2 /* MJExtensionViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MJExtensionViewController.h; sourceTree = "<group>"; };
+		80EFADD71FAAC07600536BE2 /* MJExtensionViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MJExtensionViewController.m; sourceTree = "<group>"; };
+		80EFADD81FAAC07600536BE2 /* MJExtensionViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MJExtensionViewController.xib; sourceTree = "<group>"; };
 		935109AAB855F6CC8B84B9A5 /* libPods-CJUIKitDemoTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CJUIKitDemoTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9AC0A78AFE86FE250B370A06 /* Pods-CJUIKitDemoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CJUIKitDemoTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CJUIKitDemoTests/Pods-CJUIKitDemoTests.debug.xcconfig"; sourceTree = "<group>"; };
 		A078401C0E781545EB72B64D /* libPods-CJUIKitDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CJUIKitDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -811,6 +821,7 @@
 				783281011F4198BC008267E0 /* CJSmallCustomView */,
 				78E61EA71E79AA20009B1627 /* CJUIKit */,
 				780E460C1E5DF87B00980127 /* Main.storyboard */,
+				80EFADCE1FAABE3100536BE2 /* DemosThirdParty */,
 				7840FAD71EB09C4500B553F7 /* Demos */,
 				789A19671E61B87D008081E3 /* Models */,
 				789A19681E61B87D008081E3 /* Resources */,
@@ -1992,6 +2003,35 @@
 			path = UIToolbar;
 			sourceTree = "<group>";
 		};
+		80EFADCE1FAABE3100536BE2 /* DemosThirdParty */ = {
+			isa = PBXGroup;
+			children = (
+				80EFADD01FAABE6400536BE2 /* ThirdPartyHomeViewController.h */,
+				80EFADCF1FAABE6400536BE2 /* ThirdPartyHomeViewController.m */,
+				80EFADD11FAABE6400536BE2 /* ThirdPartyHomeViewController.xib */,
+				80EFADD41FAAC04F00536BE2 /* MantleDemo */,
+				80EFADD51FAAC04F00536BE2 /* MJExtensionDemo */,
+			);
+			path = DemosThirdParty;
+			sourceTree = "<group>";
+		};
+		80EFADD41FAAC04F00536BE2 /* MantleDemo */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = MantleDemo;
+			sourceTree = "<group>";
+		};
+		80EFADD51FAAC04F00536BE2 /* MJExtensionDemo */ = {
+			isa = PBXGroup;
+			children = (
+				80EFADD61FAAC07600536BE2 /* MJExtensionViewController.h */,
+				80EFADD71FAAC07600536BE2 /* MJExtensionViewController.m */,
+				80EFADD81FAAC07600536BE2 /* MJExtensionViewController.xib */,
+			);
+			path = MJExtensionDemo;
+			sourceTree = "<group>";
+		};
 		E75FB8B4AF71C8FE7F95B93C /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -2151,6 +2191,7 @@
 				78C35BC91F9E3C3000C7080B /* README.md in Resources */,
 				7840FB091EB09C4500B553F7 /* slider_double_thumbImage_b@2x.png in Resources */,
 				78E61F031E79AF0A009B1627 /* sdRefeshView_arrow@2x.png in Resources */,
+				80EFADD31FAABE6400536BE2 /* ThirdPartyHomeViewController.xib in Resources */,
 				78C35B2A1F9E3B4800C7080B /* MemoryADExample02.jpg in Resources */,
 				7840FB1C1EB09C4600B553F7 /* ImageChangeColorViewController.xib in Resources */,
 				78C35BC41F9E3C3000C7080B /* cjCheckBoxGreen2YES.png in Resources */,
@@ -2225,6 +2266,7 @@
 				7840FB151EB09C4600B553F7 /* plus@2x.png in Resources */,
 				8014A28C1FA2C81A00DDDB5A /* icons8-home.png in Resources */,
 				78C35B2D1F9E3B4800C7080B /* MemoryADExample05.jpg in Resources */,
+				80EFADDA1FAAC07600536BE2 /* MJExtensionViewController.xib in Resources */,
 				78C35B551F9E3B4800C7080B /* ReuseDataSourceTableViewController.xib in Resources */,
 				8014A29C1FA2D49100DDDB5A /* SvDemo_Refresh.xib in Resources */,
 				781DE9421F9158B200FB072D /* cjBackBarButtonItemGray@2x.png in Resources */,
@@ -2389,6 +2431,7 @@
 				782709041E867EFA00E21433 /* CJSliderControl.m in Sources */,
 				78C35B541F9E3B4800C7080B /* ReuseDataSourceTableViewController.m in Sources */,
 				7840FB251EB09CE900B553F7 /* NavigationBarBaseViewController.m in Sources */,
+				80EFADD91FAAC07600536BE2 /* MJExtensionViewController.m in Sources */,
 				782709E51E8715A600E21433 /* UIImage+Save.m in Sources */,
 				78DC6E721F0E90B000DC025C /* CJSwitchSlider.m in Sources */,
 				78C35B521F9E3B4800C7080B /* OpenTableViewController.m in Sources */,
@@ -2403,6 +2446,7 @@
 				78FC3BC41ED541850049F22D /* CJSelectTextTextField.m in Sources */,
 				78C35BB81F9E3C3000C7080B /* CJBaseChooseCollectionView.m in Sources */,
 				783287FF1ED2214100A01A8A /* UIView+CJShake.m in Sources */,
+				80EFADD21FAABE6400536BE2 /* ThirdPartyHomeViewController.m in Sources */,
 				78C35B601F9E3B4800C7080B /* SHeaderHome2.m in Sources */,
 				78DE2D151F9929510081D93F /* UISearchBar+CJAddInputAccessoryView.m in Sources */,
 				78FC3BC51ED541850049F22D /* UITextField+CJAddLeftRightView.m in Sources */,

@@ -28,6 +28,11 @@ target 'CJUIKitDemo' do
   # 搜索功能需要使用的库
   pod 'PinYin4Objc', '~> 1.1.1'
   
+  
+  # 基本的第三方库
+  pod 'MJExtension', '~> 3.0.13'
+  pod 'Mantle', '~> 2.1.0'
+  
 end
 
 target 'CJUIKitDemoTests' do
