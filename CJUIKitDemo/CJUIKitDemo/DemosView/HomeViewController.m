@@ -10,6 +10,9 @@
 
 #import "ModuleModel.h"
 
+
+#import "NestedXibViewController.h"
+
 #import "ViewCategoryViewController.h"
 #import "DragViewController.h"
 
@@ -66,8 +69,8 @@
         sectionDataModel.theme = @"Interface相关(xib/storyboard)";
         {
             ModuleModel *xibModule = [[ModuleModel alloc] init];
-            xibModule.title = @"xib(待补充)";
-            xibModule.classEntry = [UIViewController class];
+            xibModule.title = @"xib";
+            xibModule.classEntry = [NestedXibViewController class];
             
             [sectionDataModel.values addObject:xibModule];
         }

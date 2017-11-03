@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13196"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="NestedXibViewController">
+            <connections>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vQf-Ak-xJe" customClass="NestedXibView">
+                    <rect key="frame" x="10" y="84" width="355" height="200"/>
+                    <color key="backgroundColor" red="0.80784313730000001" green="0.89019607840000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="200" id="ce0-12-iuq"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PWn-b4-BuH" customClass="NestedXibSubViewA">
+                    <rect key="frame" x="10" y="304" width="355" height="128"/>
+                    <color key="backgroundColor" red="0.80784313730000001" green="0.89019607840000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="128" id="8BV-Ye-wkY"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="0.95686274510000002" green="0.95686274510000002" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+            <constraints>
+                <constraint firstItem="PWn-b4-BuH" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="10" id="M3Y-eX-RsX"/>
+                <constraint firstItem="vQf-Ak-xJe" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="10" id="TLu-Fh-GVX"/>
+                <constraint firstItem="vQf-Ak-xJe" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="84" id="WHN-Zw-KnV"/>
+                <constraint firstAttribute="trailing" secondItem="vQf-Ak-xJe" secondAttribute="trailing" constant="10" id="ahq-qZ-Tw1"/>
+                <constraint firstItem="PWn-b4-BuH" firstAttribute="top" secondItem="vQf-Ak-xJe" secondAttribute="bottom" constant="20" id="jg5-E8-FpW"/>
+                <constraint firstAttribute="trailing" secondItem="PWn-b4-BuH" secondAttribute="trailing" constant="10" id="nUz-YK-RHy"/>
+            </constraints>
+        </view>
+    </objects>
+</document>
