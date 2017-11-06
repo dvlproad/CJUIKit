@@ -288,6 +288,7 @@
 		80270D5F1FAC04CB001429F0 /* PullScaleTopImageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 80270CBD1FAC04CB001429F0 /* PullScaleTopImageViewController.xib */; };
 		80270D601FAC04CB001429F0 /* ViewCategoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80270CC01FAC04CB001429F0 /* ViewCategoryViewController.m */; };
 		80270D611FAC04CB001429F0 /* ViewCategoryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 80270CC11FAC04CB001429F0 /* ViewCategoryViewController.xib */; };
+		80577EBE1FB067CF0068938E /* UIButton+CJTouchEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 80577EBD1FB067CF0068938E /* UIButton+CJTouchEvent.m */; };
 		80EFADD21FAABE6400536BE2 /* ThirdPartyHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80EFADCF1FAABE6400536BE2 /* ThirdPartyHomeViewController.m */; };
 		80EFADD31FAABE6400536BE2 /* ThirdPartyHomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 80EFADD11FAABE6400536BE2 /* ThirdPartyHomeViewController.xib */; };
 		80EFADD91FAAC07600536BE2 /* MJExtensionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80EFADD71FAAC07600536BE2 /* MJExtensionViewController.m */; };
@@ -764,6 +765,9 @@
 		80270CBF1FAC04CB001429F0 /* ViewCategoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewCategoryViewController.h; sourceTree = "<group>"; };
 		80270CC01FAC04CB001429F0 /* ViewCategoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewCategoryViewController.m; sourceTree = "<group>"; };
 		80270CC11FAC04CB001429F0 /* ViewCategoryViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ViewCategoryViewController.xib; sourceTree = "<group>"; };
+		80577EBB1FB067560068938E /* UIButtonCJCategory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UIButtonCJCategory.h; sourceTree = "<group>"; };
+		80577EBC1FB067CF0068938E /* UIButton+CJTouchEvent.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIButton+CJTouchEvent.h"; sourceTree = "<group>"; };
+		80577EBD1FB067CF0068938E /* UIButton+CJTouchEvent.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIButton+CJTouchEvent.m"; sourceTree = "<group>"; };
 		80EFADCF1FAABE6400536BE2 /* ThirdPartyHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThirdPartyHomeViewController.m; sourceTree = "<group>"; };
 		80EFADD01FAABE6400536BE2 /* ThirdPartyHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThirdPartyHomeViewController.h; sourceTree = "<group>"; };
 		80EFADD11FAABE6400536BE2 /* ThirdPartyHomeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ThirdPartyHomeViewController.xib; sourceTree = "<group>"; };
@@ -953,6 +957,9 @@
 		782709E71E8715BB00E21433 /* UIButton+CJCategory */ = {
 			isa = PBXGroup;
 			children = (
+				80577EBB1FB067560068938E /* UIButtonCJCategory.h */,
+				80577EBC1FB067CF0068938E /* UIButton+CJTouchEvent.h */,
+				80577EBD1FB067CF0068938E /* UIButton+CJTouchEvent.m */,
 				782709E81E8715BB00E21433 /* UIButton+CJMoreProperty.h */,
 				782709E91E8715BB00E21433 /* UIButton+CJMoreProperty.m */,
 				7832B2FC1F0A83AE0042B5D9 /* UIButton+CJUpDownStructure.h */,
@@ -2464,6 +2471,7 @@
 				80270CF71FAC04CB001429F0 /* CJPinyinHelper.m in Sources */,
 				80270D071FAC04CB001429F0 /* ChooseColor01.m in Sources */,
 				782709041E867EFA00E21433 /* CJSliderControl.m in Sources */,
+				80577EBE1FB067CF0068938E /* UIButton+CJTouchEvent.m in Sources */,
 				80270D161FAC04CB001429F0 /* CJRightDetailTableViewCell+ConfigureForDataModel.m in Sources */,
 				80EFADD91FAAC07600536BE2 /* MJExtensionViewController.m in Sources */,
 				80270D1A1FAC04CB001429F0 /* MyOpenTableView.m in Sources */,
