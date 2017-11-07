@@ -18,7 +18,8 @@
 @property (nonatomic, strong) UIButton *navigationBarPortraitButton;
 @property (nonatomic, strong) UILabel *nameLabel;
 
-@property (nonatomic, copy) void (^clickPortraitBlock)(void);   /**< 点击了头像后的事件 */
-@property (nonatomic, copy) void (^tapNameBlock)(void);         /**< 点击名字的回调 */
+//@property (nonatomic, copy) void (^clickPortraitBlock)(void);   /**< 点击了头像后的事件 */
+//@property (nonatomic, copy) void (^tapNameBlock)(void);         /**< 点击名字的回调 */
+@property (nonatomic, copy) void (^tapViewBlock)(void);         /**< 点击视图的回调 */
 
 @end

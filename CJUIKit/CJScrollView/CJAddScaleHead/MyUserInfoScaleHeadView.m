@@ -18,6 +18,12 @@
     [self addSubview:self.backgroundImageView];
     [self addSubview:self.portraitButton];
     [self addSubview:self.nameLabel];
+    
+    
+    self.userInteractionEnabled = YES;
+    UITapGestureRecognizer *tapGR = [[UITapGestureRecognizer alloc] init];
+    [tapGR addTarget:self action:@selector(tapViewAction:)];
+    [self addGestureRecognizer:tapGR];
 }
 
 - (void)setFrame:(CGRect)frame {
@@ -33,7 +39,7 @@
     
     self.nameLabel.frame = CGRectMake(10, height/2+100/2+10, width-20, 40);
     
-    NSLog(@"self.pullUpMinHeight = %.1f", self.pullUpMinHeight);
+    //NSLog(@"self.pullUpMinHeight = %.1f", self.pullUpMinHeight);
     if (height >= self.originHeight) {
         
     } else if (height > self.pullUpMinHeight && height <= self.originHeight) {
@@ -111,7 +117,7 @@
 - (UIButton *)portraitButton {
     if (!_portraitButton) {
         _portraitButton = [UIButton buttonWithType:UIButtonTypeCustom];
-        [_portraitButton addTarget:self action:@selector(portraitAction) forControlEvents:UIControlEventTouchUpInside];
+//        [_portraitButton addTarget:self action:@selector(portraitAction) forControlEvents:UIControlEventTouchUpInside];
         _portraitButton.clipsToBounds = YES;
     }
     
@@ -121,7 +127,7 @@
 - (UIButton *)navigationBarPortraitButton {
     if (!_navigationBarPortraitButton) {
         _navigationBarPortraitButton = [UIButton buttonWithType:UIButtonTypeCustom];
-        [_navigationBarPortraitButton addTarget:self action:@selector(portraitAction) forControlEvents:UIControlEventTouchUpInside];
+//        [_navigationBarPortraitButton addTarget:self action:@selector(portraitAction) forControlEvents:UIControlEventTouchUpInside];
         _navigationBarPortraitButton.clipsToBounds = YES;
         
         UIImage *image = [_portraitButton.imageView.image copy];
@@ -141,28 +147,35 @@
         _nameLabel.font = [UIFont systemFontOfSize:14];
         _nameLabel.textAlignment = NSTextAlignmentCenter;
         
-        _nameLabel.userInteractionEnabled = YES;
-        UITapGestureRecognizer *tapGR = [[UITapGestureRecognizer alloc] init];
-        [tapGR addTarget:self action:@selector(tapNameLabelAction:)];
-        [_nameLabel addGestureRecognizer:tapGR];
+//        _nameLabel.userInteractionEnabled = YES;
+//        UITapGestureRecognizer *tapGR = [[UITapGestureRecognizer alloc] init];
+//        [tapGR addTarget:self action:@selector(tapNameLabelAction:)];
+//        [_nameLabel addGestureRecognizer:tapGR];
     }
     
     return _nameLabel;
 }
 
-- (void)tapNameLabelAction:(UITapGestureRecognizer *)tapGR {
-    if (self.tapNameBlock) {
-        self.tapNameBlock();
+#pragma mark - 点击方法
+- (void)tapViewAction:(UITapGestureRecognizer *)tapGR {
+    if (self.tapViewBlock) {
+        self.tapViewBlock();
     }
 }
 
-#pragma mark - 点击方法
-- (void)portraitAction {
-    //NSLog(@"点击了头像");
-    if (self.clickPortraitBlock) {
-        self.clickPortraitBlock();
-    }
-}
+//- (void)tapNameLabelAction:(UITapGestureRecognizer *)tapGR {
+//    if (self.tapNameBlock) {
+//        self.tapNameBlock();
+//    }
+//}
+//
+//
+//- (void)portraitAction {
+//    NSLog(@"点击了头像");
+//    if (self.clickPortraitBlock) {
+//        self.clickPortraitBlock();
+//    }
+//}
 
 
 /*
