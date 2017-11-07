@@ -31,6 +31,8 @@
     self.portraitButton.center = CGPointMake(width/2, height/2);
     self.portraitButton.layer.cornerRadius = CGRectGetHeight(self.portraitButton.frame)/2;
     
+    self.nameLabel.frame = CGRectMake(10, height/2+100/2+10, width-20, 40);
+    
     NSLog(@"self.pullUpMinHeight = %.1f", self.pullUpMinHeight);
     if (height >= self.originHeight) {
         
@@ -138,14 +140,25 @@
         _nameLabel.textColor = [UIColor whiteColor];
         _nameLabel.font = [UIFont systemFontOfSize:14];
         _nameLabel.textAlignment = NSTextAlignmentCenter;
+        
+        _nameLabel.userInteractionEnabled = YES;
+        UITapGestureRecognizer *tapGR = [[UITapGestureRecognizer alloc] init];
+        [tapGR addTarget:self action:@selector(tapNameLabelAction:)];
+        [_nameLabel addGestureRecognizer:tapGR];
     }
     
     return _nameLabel;
 }
 
+- (void)tapNameLabelAction:(UITapGestureRecognizer *)tapGR {
+    if (self.tapNameBlock) {
+        self.tapNameBlock();
+    }
+}
+
 #pragma mark - 点击方法
 - (void)portraitAction {
-    NSLog(@"点击了头像");
+    //NSLog(@"点击了头像");
     if (self.clickPortraitBlock) {
         self.clickPortraitBlock();
     }
