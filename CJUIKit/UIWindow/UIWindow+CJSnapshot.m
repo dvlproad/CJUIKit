@@ -1,14 +1,14 @@
 //
-//  UIWindow+CJCategroy.m
+//  UIWindow+CJSnapshot.m
 //  CJUIKitDemo
 //
 //  Created by ciyouzen on 2017/9/29.
 //  Copyright © 2017年 dvlproad. All rights reserved.
 //
 
-#import "UIWindow+CJCategroy.h"
+#import "UIWindow+CJSnapshot.h"
 
-@implementation UIWindow (CJCategroy)
+@implementation UIWindow (CJSnapshot)
 
 /* 完整的描述请参见文件头部 */
 - (UIImage *)cj_snapshot

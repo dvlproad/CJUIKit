@@ -28,6 +28,15 @@
     self.searchController = searchController;
     UISearchBar *searchBar = searchController.searchBar;
     */
+    
+    UISearchBar *searchBar = self.searchBar;
+    searchBar.delegate = self;
+//    [searchBar sizeToFit];
+    
+    self.dataSource = self;
+}
+
+- (UISearchBar *)searchBar {
     UISearchBar *searchBar = [[UISearchBar alloc] init];
     searchBar.searchBarStyle = UISearchBarStyleMinimal;
     searchBar.tintColor = [UIColor colorWithRed:105/255.0 green:193/255.0 blue:243/255.0 alpha:1]; //#69c1f3
@@ -36,11 +45,8 @@
     //searchBar.showsScopeBar = YES;
     //searchBar.scopeButtonTitles = @[@"全部", @"数字", @"扑克牌", @"字母", @"地点桩"];
     //searchBar.selectedScopeButtonIndex = 0;
-    searchBar.delegate = self;
-//    [searchBar sizeToFit];
-    self.searchBar = searchBar;
     
-    self.dataSource = self;
+    return searchBar;
 }
 
 

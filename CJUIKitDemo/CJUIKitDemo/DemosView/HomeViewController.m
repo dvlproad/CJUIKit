@@ -13,7 +13,7 @@
 
 #import "NestedXibViewController.h"
 
-#import "ViewCategoryViewController.h"
+#import "SampleViewController.h"
 #import "DragViewController.h"
 
 #import "FloatingWindowViewController.h"
@@ -78,19 +78,26 @@
         [sectionDataModels addObject:sectionDataModel];
     }
     
-    //ViewCategoryViewController
+    //UIViewController
+    {
+        CJSectionDataModel *sectionDataModel = [[CJSectionDataModel alloc] init];
+        sectionDataModel.theme = @"UIViewController相关";
+        {
+            ModuleModel *ViewCategoryModule = [[ModuleModel alloc] init];
+            ViewCategoryModule.title = @"BackBarButtonItem (返回按钮事件)";
+            ViewCategoryModule.classEntry = [SampleViewController class];
+            [sectionDataModel.values addObject:ViewCategoryModule];
+        }
+        [sectionDataModels addObject:sectionDataModel];
+    }
+    
+    //UIView
     {
         CJSectionDataModel *sectionDataModel = [[CJSectionDataModel alloc] init];
         sectionDataModel.theme = @"UIView相关";
         {
-            ModuleModel *ViewCategoryModule = [[ModuleModel alloc] init];
-            ViewCategoryModule.title = @"Drag And KeepBounds 1 (视图的拖曳和吸附)";
-            ViewCategoryModule.classEntry = [ViewCategoryViewController class];
-            [sectionDataModel.values addObject:ViewCategoryModule];
-        }
-        {
             ModuleModel *ViewDragCategoryModule = [[ModuleModel alloc] init];
-            ViewDragCategoryModule.title = @"Drag And KeepBounds 2 (视图的拖曳和吸附)";
+            ViewDragCategoryModule.title = @"Drag And KeepBounds (视图的拖曳和吸附)";
             ViewDragCategoryModule.classEntry = [DragViewController class];
             [sectionDataModel.values addObject:ViewDragCategoryModule];
         }
@@ -274,7 +281,7 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    NSLog(@"didSelectRowAtIndexPath = %ld %ld", indexPath.section, indexPath.row);
+    //NSLog(@"didSelectRowAtIndexPath = %ld %ld", indexPath.section, indexPath.row);
     
     CJSectionDataModel *sectionDataModel = [self.sectionDataModels objectAtIndex:indexPath.section];
     NSArray *dataModels = sectionDataModel.values;

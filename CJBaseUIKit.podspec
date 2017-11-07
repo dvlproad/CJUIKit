@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "CJBaseUIKit"
-  s.version      = "0.1.3"
+  s.version      = "0.1.4"
   s.summary      = "自定义的基础UI"
   s.homepage     = "https://github.com/dvlproad/CJUIKit"
 
@@ -41,7 +41,7 @@ Pod::Spec.new do |s|
 
   s.platform     = :ios, "7.0"
  
-  s.source       = { :git => "https://github.com/dvlproad/CJUIKit.git", :tag => "CJBaseUIKit_0.1.3" }
+  s.source       = { :git => "https://github.com/dvlproad/CJUIKit.git", :tag => "CJBaseUIKit_0.1.4" }
   s.source_files  = "CJUIKit/*.{h,m}"
 
   s.frameworks = "UIKit"
@@ -161,7 +161,7 @@ Pod::Spec.new do |s|
 
     ss.dependency 'CJBaseUIKit/CJCollectionView/MyEqualCellSizeCollectionView'
 
-    # MySearchEqualCellSizeCollectionView需要额外依赖的库
+    # 搜索功能需要依赖的库
     ss.dependency 'CJBaseUtil/CJDataUtil', '~> 0.1.1'
     ss.dependency 'NSOperationQueueUtil', '~> 0.0.1'
   end

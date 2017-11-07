@@ -21,6 +21,7 @@ static NSString *cjTouchEventBlockKey = @"cjTouchEventBlockKey";
 - (void)setCjTouchEventBlock:(void (^)(UIButton *))cjTouchEventBlock {
     objc_setAssociatedObject(self, (__bridge const void *)(cjTouchEventBlockKey), cjTouchEventBlock, OBJC_ASSOCIATION_COPY_NONATOMIC);
     
+    //设置的时候，就给他添加方法，省得再多个接口处理
     [self addTarget:self action:@selector(cjTouchEventAction:) forControlEvents:UIControlEventTouchUpInside];
 }
 

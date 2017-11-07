@@ -32,6 +32,9 @@
 #import "OpenCollectionViewController.h"
 #import "CustomLayoutCollectionViewController.h"
 
+//DataScrollView
+#import "SearchTableViewController.h"
+
 @interface ScrollViewHomeViewController () <UITableViewDataSource, UITableViewDelegate> {
     
 }
@@ -165,6 +168,21 @@
         }
         [sectionDataModels addObject:sectionDataModel];
     }
+    
+    //DataScrollView
+    {
+        CJSectionDataModel *sectionDataModel = [[CJSectionDataModel alloc] init];
+        sectionDataModel.theme = @"DataScrollView(带数据源的滚动视图(包含搜索工鞥呢))";
+        {
+            ModuleModel *searchTableViewModule = [[ModuleModel alloc] init];
+            searchTableViewModule.title = @"带搜索功能的列表";
+            searchTableViewModule.classEntry = [SearchTableViewController class];
+            [sectionDataModel.values addObject:searchTableViewModule];
+        }
+        
+        [sectionDataModels addObject:sectionDataModel];
+    }
+    
     self.sectionDataModels = sectionDataModels;
 }
 

@@ -44,7 +44,7 @@
 		783287FF1ED2214100A01A8A /* UIView+CJShake.m in Sources */ = {isa = PBXBuildFile; fileRef = 783287FA1ED2214100A01A8A /* UIView+CJShake.m */; };
 		7832B2FE1F0A83AE0042B5D9 /* UIButton+CJUpDownStructure.m in Sources */ = {isa = PBXBuildFile; fileRef = 7832B2FD1F0A83AE0042B5D9 /* UIButton+CJUpDownStructure.m */; };
 		78375D7C1F7E9F2C00EDCF8F /* CJFloatingWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 78375D7B1F7E9F2C00EDCF8F /* CJFloatingWindow.m */; };
-		78375D7F1F7E9F8900EDCF8F /* UIWindow+CJCategroy.m in Sources */ = {isa = PBXBuildFile; fileRef = 78375D7E1F7E9F8900EDCF8F /* UIWindow+CJCategroy.m */; };
+		78375D7F1F7E9F8900EDCF8F /* UIWindow+CJSnapshot.m in Sources */ = {isa = PBXBuildFile; fileRef = 78375D7E1F7E9F8900EDCF8F /* UIWindow+CJSnapshot.m */; };
 		78375DA31F7EBA5C00EDCF8F /* UIImage+CJBlur.m in Sources */ = {isa = PBXBuildFile; fileRef = 78375DA21F7EBA5C00EDCF8F /* UIImage+CJBlur.m */; };
 		7840FB211EB09C6E00B553F7 /* UINavigationBar+CJChangeBG.m in Sources */ = {isa = PBXBuildFile; fileRef = 7840FB201EB09C6E00B553F7 /* UINavigationBar+CJChangeBG.m */; };
 		7840FB281EB09E0700B553F7 /* bg@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7840FB271EB09E0700B553F7 /* bg@2x.jpg */; };
@@ -56,7 +56,7 @@
 		786798241F5C22800093283D /* UIView+CJExclusiveTouch.m in Sources */ = {isa = PBXBuildFile; fileRef = 786798231F5C22800093283D /* UIView+CJExclusiveTouch.m */; };
 		787E101E1F0E28A500034A5C /* UITableView+CJEmptyView.m in Sources */ = {isa = PBXBuildFile; fileRef = 787E101D1F0E28A500034A5C /* UITableView+CJEmptyView.m */; };
 		78AF3F641F5FDA5E00660373 /* MyCountDownTimeManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 78AF3F631F5FDA5E00660373 /* MyCountDownTimeManager.m */; };
-		78AF3F761F6012F400660373 /* UIViewController+CJBackButtonHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 78AF3F751F6012F400660373 /* UIViewController+CJBackButtonHandler.m */; };
+		78AF3F761F6012F400660373 /* UIViewController+CJCustomBackBarButtonItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 78AF3F751F6012F400660373 /* UIViewController+CJCustomBackBarButtonItem.m */; };
 		78AF3F7A1F60341000660373 /* cjBackBarButtonItem@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 78AF3F781F60341000660373 /* cjBackBarButtonItem@2x.png */; };
 		78B6761B1EB192EA006F4612 /* ModuleModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 78B6761A1EB192EA006F4612 /* ModuleModel.m */; };
 		78C0984E1F9E5D62004154CC /* MySearchEqualCellSizeCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 78C0984D1F9E5D61004154CC /* MySearchEqualCellSizeCollectionView.m */; };
@@ -286,9 +286,13 @@
 		80270D5D1FAC04CB001429F0 /* NavigationBarChangePositonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80270CBA1FAC04CB001429F0 /* NavigationBarChangePositonViewController.m */; };
 		80270D5E1FAC04CB001429F0 /* PullScaleTopImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80270CBC1FAC04CB001429F0 /* PullScaleTopImageViewController.m */; };
 		80270D5F1FAC04CB001429F0 /* PullScaleTopImageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 80270CBD1FAC04CB001429F0 /* PullScaleTopImageViewController.xib */; };
-		80270D601FAC04CB001429F0 /* ViewCategoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80270CC01FAC04CB001429F0 /* ViewCategoryViewController.m */; };
-		80270D611FAC04CB001429F0 /* ViewCategoryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 80270CC11FAC04CB001429F0 /* ViewCategoryViewController.xib */; };
 		80577EBE1FB067CF0068938E /* UIButton+CJTouchEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 80577EBD1FB067CF0068938E /* UIButton+CJTouchEvent.m */; };
+		80577EC11FB15CE60068938E /* UIViewController+CJSystemBackButtonHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 80577EC01FB15CE60068938E /* UIViewController+CJSystemBackButtonHandler.m */; };
+		80577ED61FB163740068938E /* SampleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80577ED41FB163740068938E /* SampleViewController.m */; };
+		80577ED71FB163740068938E /* SampleViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 80577ED51FB163740068938E /* SampleViewController.xib */; };
+		80577EDA1FB18B0D0068938E /* CJSearchTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 80577ED91FB18B0D0068938E /* CJSearchTableView.m */; };
+		80577EDE1FB197890068938E /* SearchTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80577EDC1FB197890068938E /* SearchTableViewController.m */; };
+		80577EDF1FB197890068938E /* SearchTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 80577EDD1FB197890068938E /* SearchTableViewController.xib */; };
 		80EFADD21FAABE6400536BE2 /* ThirdPartyHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80EFADCF1FAABE6400536BE2 /* ThirdPartyHomeViewController.m */; };
 		80EFADD31FAABE6400536BE2 /* ThirdPartyHomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 80EFADD11FAABE6400536BE2 /* ThirdPartyHomeViewController.xib */; };
 		80EFADD91FAAC07600536BE2 /* MJExtensionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80EFADD71FAAC07600536BE2 /* MJExtensionViewController.m */; };
@@ -389,8 +393,8 @@
 		7832B2FD1F0A83AE0042B5D9 /* UIButton+CJUpDownStructure.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+CJUpDownStructure.m"; sourceTree = "<group>"; };
 		78375D7A1F7E9F2C00EDCF8F /* CJFloatingWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJFloatingWindow.h; sourceTree = "<group>"; };
 		78375D7B1F7E9F2C00EDCF8F /* CJFloatingWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJFloatingWindow.m; sourceTree = "<group>"; };
-		78375D7D1F7E9F8900EDCF8F /* UIWindow+CJCategroy.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIWindow+CJCategroy.h"; sourceTree = "<group>"; };
-		78375D7E1F7E9F8900EDCF8F /* UIWindow+CJCategroy.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIWindow+CJCategroy.m"; sourceTree = "<group>"; };
+		78375D7D1F7E9F8900EDCF8F /* UIWindow+CJSnapshot.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIWindow+CJSnapshot.h"; sourceTree = "<group>"; };
+		78375D7E1F7E9F8900EDCF8F /* UIWindow+CJSnapshot.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIWindow+CJSnapshot.m"; sourceTree = "<group>"; };
 		78375DA11F7EBA5C00EDCF8F /* UIImage+CJBlur.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImage+CJBlur.h"; sourceTree = "<group>"; };
 		78375DA21F7EBA5C00EDCF8F /* UIImage+CJBlur.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImage+CJBlur.m"; sourceTree = "<group>"; };
 		7840FB1F1EB09C6E00B553F7 /* UINavigationBar+CJChangeBG.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationBar+CJChangeBG.h"; sourceTree = "<group>"; };
@@ -413,8 +417,8 @@
 		789CAB597AD073D5F637D193 /* Pods-CJUIKitDemoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CJUIKitDemoTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-CJUIKitDemoTests/Pods-CJUIKitDemoTests.release.xcconfig"; sourceTree = "<group>"; };
 		78AF3F621F5FDA5E00660373 /* MyCountDownTimeManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyCountDownTimeManager.h; sourceTree = "<group>"; };
 		78AF3F631F5FDA5E00660373 /* MyCountDownTimeManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyCountDownTimeManager.m; sourceTree = "<group>"; };
-		78AF3F741F6012F400660373 /* UIViewController+CJBackButtonHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+CJBackButtonHandler.h"; sourceTree = "<group>"; };
-		78AF3F751F6012F400660373 /* UIViewController+CJBackButtonHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+CJBackButtonHandler.m"; sourceTree = "<group>"; };
+		78AF3F741F6012F400660373 /* UIViewController+CJCustomBackBarButtonItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+CJCustomBackBarButtonItem.h"; sourceTree = "<group>"; };
+		78AF3F751F6012F400660373 /* UIViewController+CJCustomBackBarButtonItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+CJCustomBackBarButtonItem.m"; sourceTree = "<group>"; };
 		78AF3F781F60341000660373 /* cjBackBarButtonItem@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cjBackBarButtonItem@2x.png"; sourceTree = "<group>"; };
 		78B676191EB192EA006F4612 /* ModuleModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModuleModel.h; sourceTree = "<group>"; };
 		78B6761A1EB192EA006F4612 /* ModuleModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModuleModel.m; sourceTree = "<group>"; };
@@ -762,12 +766,19 @@
 		80270CBB1FAC04CB001429F0 /* PullScaleTopImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PullScaleTopImageViewController.h; sourceTree = "<group>"; };
 		80270CBC1FAC04CB001429F0 /* PullScaleTopImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PullScaleTopImageViewController.m; sourceTree = "<group>"; };
 		80270CBD1FAC04CB001429F0 /* PullScaleTopImageViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PullScaleTopImageViewController.xib; sourceTree = "<group>"; };
-		80270CBF1FAC04CB001429F0 /* ViewCategoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewCategoryViewController.h; sourceTree = "<group>"; };
-		80270CC01FAC04CB001429F0 /* ViewCategoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewCategoryViewController.m; sourceTree = "<group>"; };
-		80270CC11FAC04CB001429F0 /* ViewCategoryViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ViewCategoryViewController.xib; sourceTree = "<group>"; };
 		80577EBB1FB067560068938E /* UIButtonCJCategory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UIButtonCJCategory.h; sourceTree = "<group>"; };
 		80577EBC1FB067CF0068938E /* UIButton+CJTouchEvent.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIButton+CJTouchEvent.h"; sourceTree = "<group>"; };
 		80577EBD1FB067CF0068938E /* UIButton+CJTouchEvent.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIButton+CJTouchEvent.m"; sourceTree = "<group>"; };
+		80577EBF1FB15CE50068938E /* UIViewController+CJSystemBackButtonHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+CJSystemBackButtonHandler.h"; sourceTree = "<group>"; };
+		80577EC01FB15CE60068938E /* UIViewController+CJSystemBackButtonHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+CJSystemBackButtonHandler.m"; sourceTree = "<group>"; };
+		80577ED31FB163740068938E /* SampleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SampleViewController.h; sourceTree = "<group>"; };
+		80577ED41FB163740068938E /* SampleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SampleViewController.m; sourceTree = "<group>"; };
+		80577ED51FB163740068938E /* SampleViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SampleViewController.xib; sourceTree = "<group>"; };
+		80577ED81FB18B0D0068938E /* CJSearchTableView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CJSearchTableView.h; sourceTree = "<group>"; };
+		80577ED91FB18B0D0068938E /* CJSearchTableView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CJSearchTableView.m; sourceTree = "<group>"; };
+		80577EDB1FB197890068938E /* SearchTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SearchTableViewController.h; sourceTree = "<group>"; };
+		80577EDC1FB197890068938E /* SearchTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SearchTableViewController.m; sourceTree = "<group>"; };
+		80577EDD1FB197890068938E /* SearchTableViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchTableViewController.xib; sourceTree = "<group>"; };
 		80EFADCF1FAABE6400536BE2 /* ThirdPartyHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThirdPartyHomeViewController.m; sourceTree = "<group>"; };
 		80EFADD01FAABE6400536BE2 /* ThirdPartyHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThirdPartyHomeViewController.h; sourceTree = "<group>"; };
 		80EFADD11FAABE6400536BE2 /* ThirdPartyHomeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ThirdPartyHomeViewController.xib; sourceTree = "<group>"; };
@@ -1004,8 +1015,8 @@
 			isa = PBXGroup;
 			children = (
 				78375D791F7E9F2C00EDCF8F /* CJFloatingWindow */,
-				78375D7D1F7E9F8900EDCF8F /* UIWindow+CJCategroy.h */,
-				78375D7E1F7E9F8900EDCF8F /* UIWindow+CJCategroy.m */,
+				78375D7D1F7E9F8900EDCF8F /* UIWindow+CJSnapshot.h */,
+				78375D7E1F7E9F8900EDCF8F /* UIWindow+CJSnapshot.m */,
 			);
 			path = UIWindow;
 			sourceTree = "<group>";
@@ -1113,8 +1124,10 @@
 		78AF3F731F60118F00660373 /* UIViewController */ = {
 			isa = PBXGroup;
 			children = (
-				78AF3F741F6012F400660373 /* UIViewController+CJBackButtonHandler.h */,
-				78AF3F751F6012F400660373 /* UIViewController+CJBackButtonHandler.m */,
+				78AF3F741F6012F400660373 /* UIViewController+CJCustomBackBarButtonItem.h */,
+				78AF3F751F6012F400660373 /* UIViewController+CJCustomBackBarButtonItem.m */,
+				80577EBF1FB15CE50068938E /* UIViewController+CJSystemBackButtonHandler.h */,
+				80577EC01FB15CE60068938E /* UIViewController+CJSystemBackButtonHandler.m */,
 				78AF3F771F60341000660373 /* Resources */,
 			);
 			path = UIViewController;
@@ -1136,6 +1149,8 @@
 			children = (
 				78C0984C1F9E5D61004154CC /* MySearchEqualCellSizeCollectionView.h */,
 				78C0984D1F9E5D61004154CC /* MySearchEqualCellSizeCollectionView.m */,
+				80577ED81FB18B0D0068938E /* CJSearchTableView.h */,
+				80577ED91FB18B0D0068938E /* CJSearchTableView.m */,
 			);
 			path = CJDataScrollView;
 			sourceTree = "<group>";
@@ -1678,6 +1693,9 @@
 			children = (
 				80270C0C1FAC04CA001429F0 /* CJPinyinHelper.h */,
 				80270C0D1FAC04CA001429F0 /* CJPinyinHelper.m */,
+				80577EDB1FB197890068938E /* SearchTableViewController.h */,
+				80577EDC1FB197890068938E /* SearchTableViewController.m */,
+				80577EDD1FB197890068938E /* SearchTableViewController.xib */,
 			);
 			path = DataScrollViewDemo;
 			sourceTree = "<group>";
@@ -1798,6 +1816,7 @@
 				80270C8B1FAC04CA001429F0 /* HomeViewController.h */,
 				80270C8C1FAC04CA001429F0 /* HomeViewController.m */,
 				80270C8D1FAC04CA001429F0 /* HomeViewController.xib */,
+				80577ED21FB163740068938E /* UIViewControllerDemo */,
 				80270C531FAC04CA001429F0 /* CJFloatingWindowDemo */,
 				80270C571FAC04CA001429F0 /* CJImageViewDemo */,
 				80270C5B1FAC04CA001429F0 /* CJSearchBarDemo */,
@@ -1812,7 +1831,6 @@
 				80270CA41FAC04CA001429F0 /* UIButtonDemo */,
 				80270CA81FAC04CA001429F0 /* UIImageDemo */,
 				80270CB01FAC04CA001429F0 /* UINavigationBar */,
-				80270CBE1FAC04CB001429F0 /* UIViewDemo */,
 			);
 			path = DemosView;
 			sourceTree = "<group>";
@@ -2026,14 +2044,14 @@
 			path = UINavigationBar;
 			sourceTree = "<group>";
 		};
-		80270CBE1FAC04CB001429F0 /* UIViewDemo */ = {
+		80577ED21FB163740068938E /* UIViewControllerDemo */ = {
 			isa = PBXGroup;
 			children = (
-				80270CBF1FAC04CB001429F0 /* ViewCategoryViewController.h */,
-				80270CC01FAC04CB001429F0 /* ViewCategoryViewController.m */,
-				80270CC11FAC04CB001429F0 /* ViewCategoryViewController.xib */,
+				80577ED31FB163740068938E /* SampleViewController.h */,
+				80577ED41FB163740068938E /* SampleViewController.m */,
+				80577ED51FB163740068938E /* SampleViewController.xib */,
 			);
-			path = UIViewDemo;
+			path = UIViewControllerDemo;
 			sourceTree = "<group>";
 		};
 		80EFADCE1FAABE3100536BE2 /* DemosThirdParty */ = {
@@ -2205,10 +2223,11 @@
 				78C35BC71F9E3C3000C7080B /* cjCheckBoxOrangeYES@2x.png in Resources */,
 				80270CEB1FAC04CB001429F0 /* MyCycleADViewController.xib in Resources */,
 				78C35BC31F9E3C3000C7080B /* cjCheckBoxGreen2NO.png in Resources */,
+				80577EDF1FB197890068938E /* SearchTableViewController.xib in Resources */,
 				80270CF41FAC04CB001429F0 /* Header.xib in Resources */,
 				80270D521FAC04CB001429F0 /* ButtonViewController.xib in Resources */,
 				80270CD91FAC04CB001429F0 /* MemoryADExample05.jpg in Resources */,
-				80270D611FAC04CB001429F0 /* ViewCategoryViewController.xib in Resources */,
+				80577ED71FB163740068938E /* SampleViewController.xib in Resources */,
 				781DE9431F9158B200FB072D /* cjBackBarButtonItemGray@3x.png in Resources */,
 				80270CDE1FAC04CB001429F0 /* MemoryADKnowledge04.jpg in Resources */,
 				80270CDA1FAC04CB001429F0 /* MemoryADExplain01.jpg in Resources */,
@@ -2470,6 +2489,7 @@
 				78C35BBE1F9E3C3000C7080B /* CJBaseTableViewCell.m in Sources */,
 				80270CF71FAC04CB001429F0 /* CJPinyinHelper.m in Sources */,
 				80270D071FAC04CB001429F0 /* ChooseColor01.m in Sources */,
+				80577EDA1FB18B0D0068938E /* CJSearchTableView.m in Sources */,
 				782709041E867EFA00E21433 /* CJSliderControl.m in Sources */,
 				80577EBE1FB067CF0068938E /* UIButton+CJTouchEvent.m in Sources */,
 				80270D161FAC04CB001429F0 /* CJRightDetailTableViewCell+ConfigureForDataModel.m in Sources */,
@@ -2477,6 +2497,7 @@
 				80270D1A1FAC04CB001429F0 /* MyOpenTableView.m in Sources */,
 				782709E51E8715A600E21433 /* UIImage+Save.m in Sources */,
 				78DC6E721F0E90B000DC025C /* CJSwitchSlider.m in Sources */,
+				80577EDE1FB197890068938E /* SearchTableViewController.m in Sources */,
 				783287FE1ED2214100A01A8A /* UIView+CJKeepBounds.m in Sources */,
 				80270D0B1FAC04CB001429F0 /* OpenTableViewController.m in Sources */,
 				80270CC31FAC04CB001429F0 /* CvDemo_Complex.m in Sources */,
@@ -2526,7 +2547,7 @@
 				80270CC91FAC04CB001429F0 /* cvSupplementaryFoot.m in Sources */,
 				783287FC1ED2214100A01A8A /* UIView+CJFind.m in Sources */,
 				78AF3F641F5FDA5E00660373 /* MyCountDownTimeManager.m in Sources */,
-				78375D7F1F7E9F8900EDCF8F /* UIWindow+CJCategroy.m in Sources */,
+				78375D7F1F7E9F8900EDCF8F /* UIWindow+CJSnapshot.m in Sources */,
 				80270D111FAC04CB001429F0 /* TvDemo_Complex+Event.m in Sources */,
 				78C35BB11F9E3C3000C7080B /* CJHeadAndCellHorizontalLayout.m in Sources */,
 				780E46081E5DF87B00980127 /* AppDelegate.m in Sources */,
@@ -2538,7 +2559,7 @@
 				78C35BBD1F9E3C3000C7080B /* CJSingleTableViewCellDataSource2.m in Sources */,
 				782709ED1E8715BB00E21433 /* UIButton+CJMoreProperty.m in Sources */,
 				7832810D1F41AA96008267E0 /* ProcessLineView.m in Sources */,
-				80270D601FAC04CB001429F0 /* ViewCategoryViewController.m in Sources */,
+				80577EC11FB15CE60068938E /* UIViewController+CJSystemBackButtonHandler.m in Sources */,
 				78F3AA001E963197005D3DA4 /* UIImage+CJFixOrientation.m in Sources */,
 				786798241F5C22800093283D /* UIView+CJExclusiveTouch.m in Sources */,
 				78E61ECF1E79AA20009B1627 /* CJImageView.m in Sources */,
@@ -2562,7 +2583,7 @@
 				783281041F4198BC008267E0 /* CustomTripProgressView.m in Sources */,
 				782709051E867EFA00E21433 /* CJSliderPopover.m in Sources */,
 				780F49751F9CCFB20040D145 /* MyUserInfoScaleHeadView.m in Sources */,
-				78AF3F761F6012F400660373 /* UIViewController+CJBackButtonHandler.m in Sources */,
+				78AF3F761F6012F400660373 /* UIViewController+CJCustomBackBarButtonItem.m in Sources */,
 				80270D121FAC04CB001429F0 /* TvDemo_Complex.m in Sources */,
 				80270D491FAC04CB001429F0 /* NestedXibViewController.m in Sources */,
 				782709E21E8715A600E21433 /* UIImage+CJBase64.m in Sources */,
@@ -2604,6 +2625,7 @@
 				784C15E21E8E719A0019D652 /* UIImage+CJTransformSize.m in Sources */,
 				80270CF31FAC04CB001429F0 /* Header.m in Sources */,
 				78E61F021E79AF0A009B1627 /* CJRefreshHeader.m in Sources */,
+				80577ED61FB163740068938E /* SampleViewController.m in Sources */,
 				78E61ED11E79AA20009B1627 /* CJMJRefreshNormalHeader.m in Sources */,
 				78E269C31ECC5E29007D3686 /* LEOHeaderView.m in Sources */,
 				78FC3BC61ED541850049F22D /* UITextField+CJLimitTextLength.m in Sources */,

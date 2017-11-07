@@ -8,21 +8,38 @@
 
 #import "KeyboardAvoidingViewController.h"
 
-@interface KeyboardAvoidingViewController ()
+@interface KeyboardAvoidingViewController () <UITextFieldDelegate>
 
 @end
 
 @implementation KeyboardAvoidingViewController
 
+- (void)dealloc {
+    [self.scrollView cj_unRegisterKeyboardNotifications];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    self.textField.delegate = self;
     
     [self.scrollView cj_registerKeyboardNotifications];
+    
+    UITapGestureRecognizer *tapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(keyboardHide:)];
+    tapGestureRecognizer.cancelsTouchesInView = NO;//设置成NO表示当前控件响应后会传播到其他控件上，默认为YES。
+    [self.view addGestureRecognizer:tapGestureRecognizer];
 }
 
-- (void)dealloc {
-    [self.scrollView cj_unRegisterKeyboardNotifications];
+- (void)keyboardHide:(UITapGestureRecognizer *)tap {
+    [self.view endEditing:YES];
+}
+
+- (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string {
+    if ([string isEqualToString:@"\n"]) {
+        [textField resignFirstResponder];
+        return NO;
+    }
+    return YES;
 }
 
 - (void)didReceiveMemoryWarning {

@@ -1,15 +1,15 @@
 //
-//  UIViewController+CJBackButtonHandler.m
+//  UIViewController+CJCustomBackBarButtonItem.m
 //  CJUIKitDemo
 //
 //  Created by ciyouzen on 2017/9/6.
 //  Copyright © 2017年 dvlproad. All rights reserved.
 //
 
-#import "UIViewController+CJBackButtonHandler.h"
+#import "UIViewController+CJCustomBackBarButtonItem.h"
 #import <objc/runtime.h>
 
-@implementation UIViewController (CJBackButtonHandler)
+@implementation UIViewController (CJCustomBackBarButtonItem)
 
 #pragma mark - runtime
 static NSString *kcjCustomNavigationBackButtonKey = @"kcjCustomNavigationBackButtonKey";

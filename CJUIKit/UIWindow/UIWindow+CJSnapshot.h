@@ -1,5 +1,5 @@
 //
-//  UIWindow+CJCategroy.h
+//  UIWindow+CJSnapshot.h
 //  CJUIKitDemo
 //
 //  Created by ciyouzen on 2017/9/29.
@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface UIWindow (CJCategroy)
+@interface UIWindow (CJSnapshot)
 
 /**
  *  对window(包括view)进行截图
