@@ -37,16 +37,20 @@
 }
 
 - (UISearchBar *)searchBar {
-    UISearchBar *searchBar = [[UISearchBar alloc] init];
-    searchBar.searchBarStyle = UISearchBarStyleMinimal;
-    searchBar.tintColor = [UIColor colorWithRed:105/255.0 green:193/255.0 blue:243/255.0 alpha:1]; //#69c1f3
-    searchBar.placeholder = NSLocalizedString(@"搜索", nil);
-    searchBar.returnKeyType = UIReturnKeyDone;
-    //searchBar.showsScopeBar = YES;
-    //searchBar.scopeButtonTitles = @[@"全部", @"数字", @"扑克牌", @"字母", @"地点桩"];
-    //searchBar.selectedScopeButtonIndex = 0;
+    if (_searchBar == nil) {
+        UISearchBar *searchBar = [[UISearchBar alloc] init];
+        searchBar.searchBarStyle = UISearchBarStyleMinimal;
+        searchBar.tintColor = [UIColor colorWithRed:105/255.0 green:193/255.0 blue:243/255.0 alpha:1]; //#69c1f3
+        searchBar.placeholder = NSLocalizedString(@"搜索", nil);
+        searchBar.returnKeyType = UIReturnKeyDone;
+        //searchBar.showsScopeBar = YES;
+        //searchBar.scopeButtonTitles = @[@"全部", @"数字", @"扑克牌", @"字母", @"地点桩"];
+        //searchBar.selectedScopeButtonIndex = 0;
+        
+        _searchBar = searchBar;
+    }
     
-    return searchBar;
+    return _searchBar;
 }
 
 
