@@ -33,14 +33,11 @@
 
 #import "ImageChangeColorViewController.h"
 
+#import "NavigationBarViewController.h"
 #import "NavigationBarChangeBGViewController.h"
 #import "NavigationBarChangePositonViewController.h"
-#import "PullScaleTopImageViewController.h"
 
 #import "CJMJRefreshViewController.h"
-
-#import "ProcessLineViewController.h"
-#import "CountDownTimeViewController.h"
 
 
 @interface HomeViewController () <UITableViewDataSource, UITableViewDelegate> {
@@ -162,8 +159,15 @@
             QRCodeModule.classEntry = [QRCodeViewController class];
             [sectionDataModel.values addObject:QRCodeModule];
         }
+        
+        //UINavigationBar
         {
-            //UINavigationBar
+            ModuleModel *UINavigationBarModuleModel1 = [[ModuleModel alloc] init];
+            UINavigationBarModuleModel1.title = @"UINavigationBar(导航栏的设置)";
+            UINavigationBarModuleModel1.classEntry = [NavigationBarViewController class];
+            [sectionDataModel.values addObject:UINavigationBarModuleModel1];
+        }
+        {
             ModuleModel *UINavigationBarModuleModel1 = [[ModuleModel alloc] init];
             UINavigationBarModuleModel1.title = @"UINavigationBar(常见的导航栏背景色改变隐藏)";
             UINavigationBarModuleModel1.classEntry = [NavigationBarChangeBGViewController class];
@@ -206,42 +210,6 @@
             FloatingWindowModule.title = @"FloatingWindow（悬浮视图）";
             FloatingWindowModule.classEntry = [FloatingWindowViewController class];
             [sectionDataModel.values addObject:FloatingWindowModule];
-        }
-        {
-            //PullScaleTopImageViewController
-            ModuleModel *pullScaleTopImageModuleModel = [[ModuleModel alloc] init];
-            pullScaleTopImageModuleModel.title = @"顶部图片下拉放大，上拉缩小";
-            pullScaleTopImageModuleModel.classEntry = [PullScaleTopImageViewController class];
-            [sectionDataModel.values addObject:pullScaleTopImageModuleModel];
-        }
-        
-        [sectionDataModels addObject:sectionDataModel];
-    }
-    
-    //QuartzCore
-    {
-        CJSectionDataModel *sectionDataModel = [[CJSectionDataModel alloc] init];
-        sectionDataModel.theme = @"QuartzCore相关(如画线)";
-        {
-            //ProcessLineViewController
-            ModuleModel *processLineViewModule = [[ModuleModel alloc] init];
-            processLineViewModule.title = @"流程线(ProcessLineView)";
-            processLineViewModule.classEntry = [ProcessLineViewController class];
-            [sectionDataModel.values addObject:processLineViewModule];
-        }
-        [sectionDataModels addObject:sectionDataModel];
-    }
-    
-    //其他
-    {
-        CJSectionDataModel *sectionDataModel = [[CJSectionDataModel alloc] init];
-        sectionDataModel.theme = @"其他";
-        {
-            //CountDownTimeViewController
-            ModuleModel *countDownTimeModule = [[ModuleModel alloc] init];
-            countDownTimeModule.title = @"倒计时 CountDownTime";
-            countDownTimeModule.classEntry = [CountDownTimeViewController class];
-            [sectionDataModel.values addObject:countDownTimeModule];
         }
         
         [sectionDataModels addObject:sectionDataModel];

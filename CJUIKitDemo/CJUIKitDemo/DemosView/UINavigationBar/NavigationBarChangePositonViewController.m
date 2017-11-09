@@ -36,12 +36,6 @@
     [self addTableScaleHeaderViewWithAttachNavigationBar:NO supportPullSmall:NO];
 }
 
-- (void)setNavigationBarTransformProgress:(CGFloat)progress
-{
-    [self.navigationController.navigationBar cj_setTranslationY:(-44 * progress)];
-    [self.navigationController.navigationBar cj_setElementsAlpha:(1-progress)];
-}
-
 ///停止拖拽的时候开始执行
 - (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate {
     NSLog(@"拖动结束后是否会有减速动作decelerate = %@", decelerate ? @"YES" : @"NO");
@@ -61,7 +55,7 @@
         self.navigationController.navigationBar.backIndicatorImage = [UIImage new];
         
     } else {
-        [UIView animateWithDuration:0.35 animations:^{
+        [UIView animateWithDuration:0 animations:^{
             if (currentOffsetY > self.oldOffsetY) {
                 [self setNavigationBarTransformProgress:1];
             } else {
@@ -76,6 +70,13 @@
     
     self.oldOffsetY = scrollView.contentOffset.y;
 }
+
+- (void)setNavigationBarTransformProgress:(CGFloat)progress
+{
+    [self.navigationController.navigationBar cj_setTranslationY:(-44 * progress)];
+    [self.navigationController.navigationBar cj_setElementsAlpha:(1-progress)];
+}
+
 
 
 - (void)didReceiveMemoryWarning {

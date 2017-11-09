@@ -74,6 +74,7 @@
         scaleHeadView.frame = scaleHeadViewFrame;
     }
     
+    self.scaleHeadView = scaleHeadView;
     [self.tableView addSubview:scaleHeadView];
     [scaleHeadView pullScaleByScrollView:self.tableView withAttachNavigationBar:attachNavigationBar];
 }

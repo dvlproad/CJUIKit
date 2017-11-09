@@ -32,12 +32,18 @@
  */
 #define CJColorRandom       CJRGBA(arc4random_uniform(256), arc4random_uniform(256), arc4random_uniform(256), arc4random_uniform(256))
 
+#define CJColorRed          CJColorFromHexString(@"#ff4343")
+
+#define CJColorGreenDark1   CJColorFromHexString(@"#149B8A")
+#define CJColorGreenDark2   CJColorFromHexString(@"#149B17")
+
 #define CJColorBlue         CJColorFromHexString(@"#00aaff")
 #define CJColorBlueLight    CJColorFromHexString(@"#aaebff")
-#define CJColorBlueDark1    CJColorFromHexString(@"#2481ff")    //深蓝色由1开始越来越深
-#define CJColorBlueDark2    CJColorFromHexString(@"#0a6fa2")
+#define CJColorBlueDark1    CJColorFromHexString(@"#149BD5")    //深蓝色由1开始越来越深
+#define CJColorBlueDark2    CJColorFromHexString(@"#2481ff")
+#define CJColorBlueDark3    CJColorFromHexString(@"#0a6fa2")
 
-#define CJColorRed          CJColorFromHexString(@"#ff4343")
+
 
 //Gray从1开始越来越浅
 #define CJColorGray1        CJColorFromHexString(@"#606060")

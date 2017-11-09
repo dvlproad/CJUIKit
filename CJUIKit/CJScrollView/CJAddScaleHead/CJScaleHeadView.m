@@ -49,11 +49,18 @@ static NSString *const CorePullScaleContentOffset = @"contentOffset";
     self.clipsToBounds = YES;   //剪切多余部分
     
     //事件监听
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(screenRotate) name:UIDeviceOrientationDidChangeNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(screenRotateNotificationAction:)
+                                                 name:UIDeviceOrientationDidChangeNotification
+                                               object:nil];
 }
 
 - (void)dealloc {
      [_scrollView removeObserver:self forKeyPath:@"contentOffset" context:nil];
+    
+    [[NSNotificationCenter defaultCenter] removeObserver:self
+                                                    name:UIDeviceOrientationDidChangeNotification
+                                                  object:nil];
 }
 
 - (void)pullScaleByScrollView:(UIScrollView *)scrollView withAttachNavigationBar:(BOOL)attachNavigationBar {
@@ -82,7 +89,7 @@ static NSString *const CorePullScaleContentOffset = @"contentOffset";
     
     self.originHeight = scaleHeadViewHeight;
     self.originY = -self.originHeight;
-    NSLog(@"originHeight = %1.f, originY = %.1f", self.originHeight, self.originY);
+    //NSLog(@"originHeight = %1.f, originY = %.1f", self.originHeight, self.originY);
     
     
     //②attachNavigationBar
@@ -126,7 +133,13 @@ static NSString *const CorePullScaleContentOffset = @"contentOffset";
 /**
  *  屏幕旋转
  */
-- (void)screenRotate {
+- (void)screenRotateNotificationAction:(NSNotification *)notification {
+    UIApplicationState state = [UIApplication sharedApplication].applicationState;
+    if (state == UIApplicationStateBackground) {
+        //NSLog(@"退到后台的时候也会调用这个方法，如果这边不区分，会导致resetNavigationBarHeight方法中viewController为nil");
+        return;
+    }
+    
     [self resetNavigationBarHeight];
 }
 
@@ -138,7 +151,11 @@ static NSString *const CorePullScaleContentOffset = @"contentOffset";
     }
     
     UIViewController *viewController = [self getBelongViewControllerForView:self];
-    NSAssert(viewController != nil, @"请确保视图已经被添加到某个视图上");
+    if (viewController == nil) {
+        NSLog(@"请确保视图已经被添加到某个视图上");
+        return;
+    }
+    //NSAssert(viewController != nil, @"请确保视图已经被添加到某个视图上");
     
     CGFloat navigationBarHeight = viewController.navigationController.navigationBar.bounds.size.height;
     CGRect statusBarFrame = [[UIApplication sharedApplication] statusBarFrame];

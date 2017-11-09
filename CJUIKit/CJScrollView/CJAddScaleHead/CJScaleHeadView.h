@@ -15,7 +15,7 @@
 @interface CJScaleHeadView : UIView {
     
 }
-@property (nonatomic, assign, readonly) CGFloat pullUpMinHeight;  /**< 在上推缩小的过程中能推到的最小高度(默认0) */
+@property (nonatomic, assign, readonly) CGFloat pullUpMinHeight;  /**< 在上推缩小的过程中能推到的最小高度(默认0，如果滚动视图是否会依附在导航栏上(即如果依附属性attachNavigationBar为YES的话，则pullUpMinHeight为navigationBarHeight + statusBarHeight，否则为0) */
 
 @property (nonatomic, assign) CGFloat originHeight;  /**< 初始高度 */
 
@@ -25,7 +25,7 @@
  *  设置视图下拉、上推所根据的滚动视图和该滚动视图是否是依附在导航栏上的BOOL值
  *
  *  @param scrollView           下拉、上推所根据的滚动视图和该滚动视图
- *  @param attachNavigationBar  滚动视图是否会依附在导航栏上(如果依附的话，则view的最小大小为navigationBarHeight + statusBarHeight，否则为0)
+ *  @param attachNavigationBar  滚动视图是否会依附在导航栏上(如果依附的话，则view的最小大小pullUpMinHeight为navigationBarHeight + statusBarHeight，否则为0)
  */
 - (void)pullScaleByScrollView:(UIScrollView *)scrollView withAttachNavigationBar:(BOOL)attachNavigationBar;
 
@@ -33,5 +33,11 @@
  *  重新获取NavigationBar的高度（在屏幕旋转的时候必须用到）
  */
 - (void)resetNavigationBarHeight;
+
+/**
+ *  获取某个view属于哪个视图控制器
+ *
+ */
+- (nullable UIViewController *)getBelongViewControllerForView:(UIView *)view;
 
 @end

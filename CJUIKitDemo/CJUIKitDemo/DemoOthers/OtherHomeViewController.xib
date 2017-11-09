@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="OtherHomeViewController">
+            <connections>
+                <outlet property="tableView" destination="YRI-rP-VWq" id="QHg-XS-2Fb"/>
+                <outlet property="view" destination="iN0-l3-epB" id="FEW-mh-dxN"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="YRI-rP-VWq">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                    <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                </tableView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="YRI-rP-VWq" secondAttribute="bottom" id="79b-tB-VRq"/>
+                <constraint firstItem="YRI-rP-VWq" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="ZrP-Ef-sEb"/>
+                <constraint firstItem="YRI-rP-VWq" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="m4N-Hq-TGy"/>
+                <constraint firstAttribute="trailing" secondItem="YRI-rP-VWq" secondAttribute="trailing" id="qIe-Re-zAG"/>
+            </constraints>
+        </view>
+    </objects>
+</document>

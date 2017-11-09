@@ -10,6 +10,7 @@
 
 #import "HomeViewController.h"
 #import "ScrollViewHomeViewController.h"
+#import "OtherHomeViewController.h"
 #import "ThirdPartyHomeViewController.h"
 
 @implementation AppDelegate (WindowRootViewController)
@@ -48,10 +49,10 @@
     [tabBarController addChildViewController:secondNavigationController];
     
     
-    UIViewController *viewController4 = [[UIViewController alloc] init];
+    UIViewController *viewController4 = [[OtherHomeViewController alloc] initWithNibName:@"OtherHomeViewController" bundle:nil];
     viewController4.view.backgroundColor = [UIColor whiteColor];
-    viewController4.navigationItem.title = NSLocalizedString(@"待添加2", nil);
-    viewController4.tabBarItem.title = NSLocalizedString(@"待添加2", nil);
+    viewController4.navigationItem.title = NSLocalizedString(@"基础小视图首页", nil);
+    viewController4.tabBarItem.title = NSLocalizedString(@"基础小视图", nil);
     viewController4.tabBarItem.image = [[UIImage imageNamed:@"icons8-settings"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     UINavigationController *navigationController4 = [[UINavigationController alloc] initWithRootViewController:viewController4];
     [tabBarController addChildViewController:navigationController4];

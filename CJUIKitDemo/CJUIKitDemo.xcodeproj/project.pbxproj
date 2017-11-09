@@ -253,8 +253,6 @@
 		80270D3C1FAC04CB001429F0 /* sound@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 80270C7F1FAC04CA001429F0 /* sound@2x.png */; };
 		80270D3D1FAC04CB001429F0 /* TextViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80270C811FAC04CA001429F0 /* TextViewController.m */; };
 		80270D3E1FAC04CB001429F0 /* TextViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 80270C821FAC04CA001429F0 /* TextViewController.xib */; };
-		80270D3F1FAC04CB001429F0 /* CountDownTimeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80270C851FAC04CA001429F0 /* CountDownTimeViewController.m */; };
-		80270D401FAC04CB001429F0 /* CountDownTimeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 80270C861FAC04CA001429F0 /* CountDownTimeViewController.xib */; };
 		80270D411FAC04CB001429F0 /* DragViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80270C891FAC04CA001429F0 /* DragViewController.m */; };
 		80270D421FAC04CB001429F0 /* DragViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 80270C8A1FAC04CA001429F0 /* DragViewController.xib */; };
 		80270D431FAC04CB001429F0 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80270C8C1FAC04CA001429F0 /* HomeViewController.m */; };
@@ -265,8 +263,6 @@
 		80270D481FAC04CB001429F0 /* NestedXibView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 80270C941FAC04CA001429F0 /* NestedXibView.xib */; };
 		80270D491FAC04CB001429F0 /* NestedXibViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80270C961FAC04CA001429F0 /* NestedXibViewController.m */; };
 		80270D4A1FAC04CB001429F0 /* NestedXibViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 80270C971FAC04CA001429F0 /* NestedXibViewController.xib */; };
-		80270D4B1FAC04CB001429F0 /* ProcessLineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80270C9A1FAC04CA001429F0 /* ProcessLineViewController.m */; };
-		80270D4C1FAC04CB001429F0 /* ProcessLineViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 80270C9B1FAC04CA001429F0 /* ProcessLineViewController.xib */; };
 		80270D4D1FAC04CB001429F0 /* CJMJRefreshViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80270C9E1FAC04CA001429F0 /* CJMJRefreshViewController.m */; };
 		80270D4E1FAC04CB001429F0 /* CJMJRefreshViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 80270C9F1FAC04CA001429F0 /* CJMJRefreshViewController.xib */; };
 		80270D4F1FAC04CB001429F0 /* TextFieldViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80270CA21FAC04CA001429F0 /* TextFieldViewController.m */; };
@@ -284,8 +280,6 @@
 		80270D5B1FAC04CB001429F0 /* NavigationBarBaseViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 80270CB61FAC04CB001429F0 /* NavigationBarBaseViewController.xib */; };
 		80270D5C1FAC04CB001429F0 /* NavigationBarChangeBGViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80270CB81FAC04CB001429F0 /* NavigationBarChangeBGViewController.m */; };
 		80270D5D1FAC04CB001429F0 /* NavigationBarChangePositonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80270CBA1FAC04CB001429F0 /* NavigationBarChangePositonViewController.m */; };
-		80270D5E1FAC04CB001429F0 /* PullScaleTopImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80270CBC1FAC04CB001429F0 /* PullScaleTopImageViewController.m */; };
-		80270D5F1FAC04CB001429F0 /* PullScaleTopImageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 80270CBD1FAC04CB001429F0 /* PullScaleTopImageViewController.xib */; };
 		80577EBE1FB067CF0068938E /* UIButton+CJTouchEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 80577EBD1FB067CF0068938E /* UIButton+CJTouchEvent.m */; };
 		80577EC11FB15CE60068938E /* UIViewController+CJSystemBackButtonHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 80577EC01FB15CE60068938E /* UIViewController+CJSystemBackButtonHandler.m */; };
 		80577ED61FB163740068938E /* SampleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80577ED41FB163740068938E /* SampleViewController.m */; };
@@ -293,6 +287,25 @@
 		80577EDA1FB18B0D0068938E /* CJSearchTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 80577ED91FB18B0D0068938E /* CJSearchTableView.m */; };
 		80577EDE1FB197890068938E /* SearchTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80577EDC1FB197890068938E /* SearchTableViewController.m */; };
 		80577EDF1FB197890068938E /* SearchTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 80577EDD1FB197890068938E /* SearchTableViewController.xib */; };
+		807903101FB413D60082F05C /* arrow_back_red@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 807903071FB413D60082F05C /* arrow_back_red@2x.png */; };
+		807903111FB413D60082F05C /* arrow_balland_red@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 807903081FB413D60082F05C /* arrow_balland_red@2x.png */; };
+		807903121FB413D60082F05C /* arrow_down.png in Resources */ = {isa = PBXBuildFile; fileRef = 807903091FB413D60082F05C /* arrow_down.png */; };
+		807903131FB413D60082F05C /* arrow_L_blue.png in Resources */ = {isa = PBXBuildFile; fileRef = 8079030A1FB413D60082F05C /* arrow_L_blue.png */; };
+		807903141FB413D60082F05C /* arrow_L_white@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8079030B1FB413D60082F05C /* arrow_L_white@2x.png */; };
+		807903151FB413D60082F05C /* arrow_R_blue.png in Resources */ = {isa = PBXBuildFile; fileRef = 8079030C1FB413D60082F05C /* arrow_R_blue.png */; };
+		807903161FB413D60082F05C /* arrow_R_gray@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8079030D1FB413D60082F05C /* arrow_R_gray@2x.png */; };
+		807903171FB413D60082F05C /* arrow_R_white@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8079030E1FB413D60082F05C /* arrow_R_white@2x.png */; };
+		807903181FB413D60082F05C /* arrow_up.png in Resources */ = {isa = PBXBuildFile; fileRef = 8079030F1FB413D60082F05C /* arrow_up.png */; };
+		8079031B1FB428EA0082F05C /* NavigationBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8079031A1FB428EA0082F05C /* NavigationBarViewController.m */; };
+		8079031D1FB429B60082F05C /* NavigationBarViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8079031C1FB429B60082F05C /* NavigationBarViewController.xib */; };
+		8079032E1FB43F1F0082F05C /* CountDownTimeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 807903211FB43F1F0082F05C /* CountDownTimeViewController.m */; };
+		8079032F1FB43F1F0082F05C /* CountDownTimeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 807903221FB43F1F0082F05C /* CountDownTimeViewController.xib */; };
+		807903301FB43F1F0082F05C /* OtherHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 807903241FB43F1F0082F05C /* OtherHomeViewController.m */; };
+		807903311FB43F1F0082F05C /* OtherHomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 807903251FB43F1F0082F05C /* OtherHomeViewController.xib */; };
+		807903321FB43F1F0082F05C /* ProcessLineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 807903281FB43F1F0082F05C /* ProcessLineViewController.m */; };
+		807903331FB43F1F0082F05C /* ProcessLineViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 807903291FB43F1F0082F05C /* ProcessLineViewController.xib */; };
+		807903341FB43F1F0082F05C /* PullScaleTopImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8079032C1FB43F1F0082F05C /* PullScaleTopImageViewController.m */; };
+		807903351FB43F1F0082F05C /* PullScaleTopImageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8079032D1FB43F1F0082F05C /* PullScaleTopImageViewController.xib */; };
 		80EFADD21FAABE6400536BE2 /* ThirdPartyHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80EFADCF1FAABE6400536BE2 /* ThirdPartyHomeViewController.m */; };
 		80EFADD31FAABE6400536BE2 /* ThirdPartyHomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 80EFADD11FAABE6400536BE2 /* ThirdPartyHomeViewController.xib */; };
 		80EFADD91FAAC07600536BE2 /* MJExtensionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80EFADD71FAAC07600536BE2 /* MJExtensionViewController.m */; };
@@ -716,9 +729,6 @@
 		80270C801FAC04CA001429F0 /* TextViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextViewController.h; sourceTree = "<group>"; };
 		80270C811FAC04CA001429F0 /* TextViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextViewController.m; sourceTree = "<group>"; };
 		80270C821FAC04CA001429F0 /* TextViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TextViewController.xib; sourceTree = "<group>"; };
-		80270C841FAC04CA001429F0 /* CountDownTimeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CountDownTimeViewController.h; sourceTree = "<group>"; };
-		80270C851FAC04CA001429F0 /* CountDownTimeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CountDownTimeViewController.m; sourceTree = "<group>"; };
-		80270C861FAC04CA001429F0 /* CountDownTimeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CountDownTimeViewController.xib; sourceTree = "<group>"; };
 		80270C881FAC04CA001429F0 /* DragViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DragViewController.h; sourceTree = "<group>"; };
 		80270C891FAC04CA001429F0 /* DragViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DragViewController.m; sourceTree = "<group>"; };
 		80270C8A1FAC04CA001429F0 /* DragViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DragViewController.xib; sourceTree = "<group>"; };
@@ -734,9 +744,6 @@
 		80270C951FAC04CA001429F0 /* NestedXibViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NestedXibViewController.h; sourceTree = "<group>"; };
 		80270C961FAC04CA001429F0 /* NestedXibViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NestedXibViewController.m; sourceTree = "<group>"; };
 		80270C971FAC04CA001429F0 /* NestedXibViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NestedXibViewController.xib; sourceTree = "<group>"; };
-		80270C991FAC04CA001429F0 /* ProcessLineViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProcessLineViewController.h; sourceTree = "<group>"; };
-		80270C9A1FAC04CA001429F0 /* ProcessLineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProcessLineViewController.m; sourceTree = "<group>"; };
-		80270C9B1FAC04CA001429F0 /* ProcessLineViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProcessLineViewController.xib; sourceTree = "<group>"; };
 		80270C9D1FAC04CA001429F0 /* CJMJRefreshViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJMJRefreshViewController.h; sourceTree = "<group>"; };
 		80270C9E1FAC04CA001429F0 /* CJMJRefreshViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJMJRefreshViewController.m; sourceTree = "<group>"; };
 		80270C9F1FAC04CA001429F0 /* CJMJRefreshViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CJMJRefreshViewController.xib; sourceTree = "<group>"; };
@@ -763,9 +770,6 @@
 		80270CB81FAC04CB001429F0 /* NavigationBarChangeBGViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NavigationBarChangeBGViewController.m; sourceTree = "<group>"; };
 		80270CB91FAC04CB001429F0 /* NavigationBarChangePositonViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NavigationBarChangePositonViewController.h; sourceTree = "<group>"; };
 		80270CBA1FAC04CB001429F0 /* NavigationBarChangePositonViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NavigationBarChangePositonViewController.m; sourceTree = "<group>"; };
-		80270CBB1FAC04CB001429F0 /* PullScaleTopImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PullScaleTopImageViewController.h; sourceTree = "<group>"; };
-		80270CBC1FAC04CB001429F0 /* PullScaleTopImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PullScaleTopImageViewController.m; sourceTree = "<group>"; };
-		80270CBD1FAC04CB001429F0 /* PullScaleTopImageViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PullScaleTopImageViewController.xib; sourceTree = "<group>"; };
 		80577EBB1FB067560068938E /* UIButtonCJCategory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UIButtonCJCategory.h; sourceTree = "<group>"; };
 		80577EBC1FB067CF0068938E /* UIButton+CJTouchEvent.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIButton+CJTouchEvent.h"; sourceTree = "<group>"; };
 		80577EBD1FB067CF0068938E /* UIButton+CJTouchEvent.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIButton+CJTouchEvent.m"; sourceTree = "<group>"; };
@@ -779,6 +783,30 @@
 		80577EDB1FB197890068938E /* SearchTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SearchTableViewController.h; sourceTree = "<group>"; };
 		80577EDC1FB197890068938E /* SearchTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SearchTableViewController.m; sourceTree = "<group>"; };
 		80577EDD1FB197890068938E /* SearchTableViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchTableViewController.xib; sourceTree = "<group>"; };
+		807903071FB413D60082F05C /* arrow_back_red@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrow_back_red@2x.png"; sourceTree = "<group>"; };
+		807903081FB413D60082F05C /* arrow_balland_red@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrow_balland_red@2x.png"; sourceTree = "<group>"; };
+		807903091FB413D60082F05C /* arrow_down.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = arrow_down.png; sourceTree = "<group>"; };
+		8079030A1FB413D60082F05C /* arrow_L_blue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = arrow_L_blue.png; sourceTree = "<group>"; };
+		8079030B1FB413D60082F05C /* arrow_L_white@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrow_L_white@2x.png"; sourceTree = "<group>"; };
+		8079030C1FB413D60082F05C /* arrow_R_blue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = arrow_R_blue.png; sourceTree = "<group>"; };
+		8079030D1FB413D60082F05C /* arrow_R_gray@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrow_R_gray@2x.png"; sourceTree = "<group>"; };
+		8079030E1FB413D60082F05C /* arrow_R_white@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrow_R_white@2x.png"; sourceTree = "<group>"; };
+		8079030F1FB413D60082F05C /* arrow_up.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = arrow_up.png; sourceTree = "<group>"; };
+		807903191FB428EA0082F05C /* NavigationBarViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NavigationBarViewController.h; sourceTree = "<group>"; };
+		8079031A1FB428EA0082F05C /* NavigationBarViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NavigationBarViewController.m; sourceTree = "<group>"; };
+		8079031C1FB429B60082F05C /* NavigationBarViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NavigationBarViewController.xib; sourceTree = "<group>"; };
+		807903201FB43F1F0082F05C /* CountDownTimeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CountDownTimeViewController.h; sourceTree = "<group>"; };
+		807903211FB43F1F0082F05C /* CountDownTimeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CountDownTimeViewController.m; sourceTree = "<group>"; };
+		807903221FB43F1F0082F05C /* CountDownTimeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CountDownTimeViewController.xib; sourceTree = "<group>"; };
+		807903231FB43F1F0082F05C /* OtherHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OtherHomeViewController.h; sourceTree = "<group>"; };
+		807903241FB43F1F0082F05C /* OtherHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OtherHomeViewController.m; sourceTree = "<group>"; };
+		807903251FB43F1F0082F05C /* OtherHomeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OtherHomeViewController.xib; sourceTree = "<group>"; };
+		807903271FB43F1F0082F05C /* ProcessLineViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProcessLineViewController.h; sourceTree = "<group>"; };
+		807903281FB43F1F0082F05C /* ProcessLineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProcessLineViewController.m; sourceTree = "<group>"; };
+		807903291FB43F1F0082F05C /* ProcessLineViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProcessLineViewController.xib; sourceTree = "<group>"; };
+		8079032B1FB43F1F0082F05C /* PullScaleTopImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PullScaleTopImageViewController.h; sourceTree = "<group>"; };
+		8079032C1FB43F1F0082F05C /* PullScaleTopImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PullScaleTopImageViewController.m; sourceTree = "<group>"; };
+		8079032D1FB43F1F0082F05C /* PullScaleTopImageViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PullScaleTopImageViewController.xib; sourceTree = "<group>"; };
 		80EFADCF1FAABE6400536BE2 /* ThirdPartyHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThirdPartyHomeViewController.m; sourceTree = "<group>"; };
 		80EFADD01FAABE6400536BE2 /* ThirdPartyHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThirdPartyHomeViewController.h; sourceTree = "<group>"; };
 		80EFADD11FAABE6400536BE2 /* ThirdPartyHomeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ThirdPartyHomeViewController.xib; sourceTree = "<group>"; };
@@ -852,6 +880,7 @@
 				783281011F4198BC008267E0 /* CJSmallCustomView */,
 				78E61EA71E79AA20009B1627 /* CJUIKit */,
 				780E460C1E5DF87B00980127 /* Main.storyboard */,
+				8079031E1FB43F1F0082F05C /* DemoOthers */,
 				80270C521FAC04CA001429F0 /* DemosView */,
 				80270BBD1FAC04CA001429F0 /* DemosScrollView */,
 				80EFADCE1FAABE3100536BE2 /* DemosThirdParty */,
@@ -1092,6 +1121,7 @@
 		789A19681E61B87D008081E3 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				807903061FB413D60082F05C /* arrow */,
 				7840FB271EB09E0700B553F7 /* bg@2x.jpg */,
 				8014A2851FA2C81A00DDDB5A /* icons8-calendar.png */,
 				8014A2861FA2C81A00DDDB5A /* icons8-folder.png */,
@@ -1822,10 +1852,8 @@
 				80270C5B1FAC04CA001429F0 /* CJSearchBarDemo */,
 				80270C5F1FAC04CA001429F0 /* CJSliderDemo */,
 				80270C7B1FAC04CA001429F0 /* CJTextViewDemo */,
-				80270C831FAC04CA001429F0 /* CountDownTimeDemo */,
 				80270C871FAC04CA001429F0 /* DragViewDemo */,
 				80270C8E1FAC04CA001429F0 /* InterfaceDemo */,
-				80270C981FAC04CA001429F0 /* ProcessLineViewDemo */,
 				80270C9C1FAC04CA001429F0 /* RefreshDemo */,
 				80270CA01FAC04CA001429F0 /* TextFieldDemo */,
 				80270CA41FAC04CA001429F0 /* UIButtonDemo */,
@@ -1934,16 +1962,6 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
-		80270C831FAC04CA001429F0 /* CountDownTimeDemo */ = {
-			isa = PBXGroup;
-			children = (
-				80270C841FAC04CA001429F0 /* CountDownTimeViewController.h */,
-				80270C851FAC04CA001429F0 /* CountDownTimeViewController.m */,
-				80270C861FAC04CA001429F0 /* CountDownTimeViewController.xib */,
-			);
-			path = CountDownTimeDemo;
-			sourceTree = "<group>";
-		};
 		80270C871FAC04CA001429F0 /* DragViewDemo */ = {
 			isa = PBXGroup;
 			children = (
@@ -1968,16 +1986,6 @@
 				80270C971FAC04CA001429F0 /* NestedXibViewController.xib */,
 			);
 			path = InterfaceDemo;
-			sourceTree = "<group>";
-		};
-		80270C981FAC04CA001429F0 /* ProcessLineViewDemo */ = {
-			isa = PBXGroup;
-			children = (
-				80270C991FAC04CA001429F0 /* ProcessLineViewController.h */,
-				80270C9A1FAC04CA001429F0 /* ProcessLineViewController.m */,
-				80270C9B1FAC04CA001429F0 /* ProcessLineViewController.xib */,
-			);
-			path = ProcessLineViewDemo;
 			sourceTree = "<group>";
 		};
 		80270C9C1FAC04CA001429F0 /* RefreshDemo */ = {
@@ -2030,6 +2038,9 @@
 				80270CB11FAC04CA001429F0 /* EasyScaleHeadView.h */,
 				80270CB21FAC04CA001429F0 /* EasyScaleHeadView.m */,
 				80270CB31FAC04CB001429F0 /* EasyScaleHeadView.xib */,
+				807903191FB428EA0082F05C /* NavigationBarViewController.h */,
+				8079031A1FB428EA0082F05C /* NavigationBarViewController.m */,
+				8079031C1FB429B60082F05C /* NavigationBarViewController.xib */,
 				80270CB41FAC04CB001429F0 /* NavigationBarBaseViewController.h */,
 				80270CB51FAC04CB001429F0 /* NavigationBarBaseViewController.m */,
 				80270CB61FAC04CB001429F0 /* NavigationBarBaseViewController.xib */,
@@ -2037,9 +2048,6 @@
 				80270CB81FAC04CB001429F0 /* NavigationBarChangeBGViewController.m */,
 				80270CB91FAC04CB001429F0 /* NavigationBarChangePositonViewController.h */,
 				80270CBA1FAC04CB001429F0 /* NavigationBarChangePositonViewController.m */,
-				80270CBB1FAC04CB001429F0 /* PullScaleTopImageViewController.h */,
-				80270CBC1FAC04CB001429F0 /* PullScaleTopImageViewController.m */,
-				80270CBD1FAC04CB001429F0 /* PullScaleTopImageViewController.xib */,
 			);
 			path = UINavigationBar;
 			sourceTree = "<group>";
@@ -2052,6 +2060,65 @@
 				80577ED51FB163740068938E /* SampleViewController.xib */,
 			);
 			path = UIViewControllerDemo;
+			sourceTree = "<group>";
+		};
+		807903061FB413D60082F05C /* arrow */ = {
+			isa = PBXGroup;
+			children = (
+				807903071FB413D60082F05C /* arrow_back_red@2x.png */,
+				807903081FB413D60082F05C /* arrow_balland_red@2x.png */,
+				807903091FB413D60082F05C /* arrow_down.png */,
+				8079030A1FB413D60082F05C /* arrow_L_blue.png */,
+				8079030B1FB413D60082F05C /* arrow_L_white@2x.png */,
+				8079030C1FB413D60082F05C /* arrow_R_blue.png */,
+				8079030D1FB413D60082F05C /* arrow_R_gray@2x.png */,
+				8079030E1FB413D60082F05C /* arrow_R_white@2x.png */,
+				8079030F1FB413D60082F05C /* arrow_up.png */,
+			);
+			path = arrow;
+			sourceTree = "<group>";
+		};
+		8079031E1FB43F1F0082F05C /* DemoOthers */ = {
+			isa = PBXGroup;
+			children = (
+				8079031F1FB43F1F0082F05C /* CountDownTimeDemo */,
+				807903231FB43F1F0082F05C /* OtherHomeViewController.h */,
+				807903241FB43F1F0082F05C /* OtherHomeViewController.m */,
+				807903251FB43F1F0082F05C /* OtherHomeViewController.xib */,
+				807903261FB43F1F0082F05C /* ProcessLineViewDemo */,
+				8079032A1FB43F1F0082F05C /* ScaleHeadViewDemo */,
+			);
+			path = DemoOthers;
+			sourceTree = "<group>";
+		};
+		8079031F1FB43F1F0082F05C /* CountDownTimeDemo */ = {
+			isa = PBXGroup;
+			children = (
+				807903201FB43F1F0082F05C /* CountDownTimeViewController.h */,
+				807903211FB43F1F0082F05C /* CountDownTimeViewController.m */,
+				807903221FB43F1F0082F05C /* CountDownTimeViewController.xib */,
+			);
+			path = CountDownTimeDemo;
+			sourceTree = "<group>";
+		};
+		807903261FB43F1F0082F05C /* ProcessLineViewDemo */ = {
+			isa = PBXGroup;
+			children = (
+				807903271FB43F1F0082F05C /* ProcessLineViewController.h */,
+				807903281FB43F1F0082F05C /* ProcessLineViewController.m */,
+				807903291FB43F1F0082F05C /* ProcessLineViewController.xib */,
+			);
+			path = ProcessLineViewDemo;
+			sourceTree = "<group>";
+		};
+		8079032A1FB43F1F0082F05C /* ScaleHeadViewDemo */ = {
+			isa = PBXGroup;
+			children = (
+				8079032B1FB43F1F0082F05C /* PullScaleTopImageViewController.h */,
+				8079032C1FB43F1F0082F05C /* PullScaleTopImageViewController.m */,
+				8079032D1FB43F1F0082F05C /* PullScaleTopImageViewController.xib */,
+			);
+			path = ScaleHeadViewDemo;
 			sourceTree = "<group>";
 		};
 		80EFADCE1FAABE3100536BE2 /* DemosThirdParty */ = {
@@ -2176,7 +2243,7 @@
 				TargetAttributes = {
 					780E45FF1E5DF87B00980127 = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = K236FB7WP6;
+						DevelopmentTeam = FZ5YDHE5JZ;
 						ProvisioningStyle = Automatic;
 					};
 					780E46181E5DF87B00980127 = {
@@ -2221,6 +2288,7 @@
 				80270CE31FAC04CB001429F0 /* MemoryADPose02.jpg in Resources */,
 				80270D061FAC04CB001429F0 /* SvDemo_Refresh.xib in Resources */,
 				78C35BC71F9E3C3000C7080B /* cjCheckBoxOrangeYES@2x.png in Resources */,
+				807903141FB413D60082F05C /* arrow_L_white@2x.png in Resources */,
 				80270CEB1FAC04CB001429F0 /* MyCycleADViewController.xib in Resources */,
 				78C35BC31F9E3C3000C7080B /* cjCheckBoxGreen2NO.png in Resources */,
 				80577EDF1FB197890068938E /* SearchTableViewController.xib in Resources */,
@@ -2233,14 +2301,18 @@
 				80270CDA1FAC04CB001429F0 /* MemoryADExplain01.jpg in Resources */,
 				8014A28A1FA2C81A00DDDB5A /* icons8-calendar.png in Resources */,
 				80270D551FAC04CB001429F0 /* imageOriginColor@2x.png in Resources */,
+				807903351FB43F1F0082F05C /* PullScaleTopImageViewController.xib in Resources */,
 				781DE94A1F915DFD00FB072D /* cjBackBarButtonItem@3x.png in Resources */,
+				807903131FB413D60082F05C /* arrow_L_blue.png in Resources */,
 				8014A2881FA2C81A00DDDB5A /* icons8-menu.png in Resources */,
 				80270CDB1FAC04CB001429F0 /* MemoryADKnowledge01.jpg in Resources */,
-				80270D5F1FAC04CB001429F0 /* PullScaleTopImageViewController.xib in Resources */,
+				807903151FB413D60082F05C /* arrow_R_blue.png in Resources */,
+				8079032F1FB43F1F0082F05C /* CountDownTimeViewController.xib in Resources */,
 				80270D041FAC04CB001429F0 /* ScrollViewController.xib in Resources */,
 				80270D481FAC04CB001429F0 /* NestedXibView.xib in Resources */,
 				80270D271FAC04CB001429F0 /* btn_hd@2x.png in Resources */,
 				80270D291FAC04CB001429F0 /* icon_ddlb_hd@2x.png in Resources */,
+				807903121FB413D60082F05C /* arrow_down.png in Resources */,
 				80270CE51FAC04CB001429F0 /* MemoryADResult02.jpg in Resources */,
 				80270D301FAC04CB001429F0 /* slider_maximum_trackimage@3x.png in Resources */,
 				7840FB281EB09E0700B553F7 /* bg@2x.jpg in Resources */,
@@ -2249,12 +2321,14 @@
 				80270D2C1FAC04CB001429F0 /* slider_double_thumbImage_a@3x.png in Resources */,
 				80270D571FAC04CB001429F0 /* QRCodeViewController.xib in Resources */,
 				78C35BC91F9E3C3000C7080B /* README.md in Resources */,
+				807903171FB413D60082F05C /* arrow_R_white@2x.png in Resources */,
 				78E61F031E79AF0A009B1627 /* sdRefeshView_arrow@2x.png in Resources */,
 				80270D261FAC04CB001429F0 /* RangeSliderViewController.xib in Resources */,
 				80EFADD31FAABE6400536BE2 /* ThirdPartyHomeViewController.xib in Resources */,
 				80270CD71FAC04CB001429F0 /* MemoryADExample03.jpg in Resources */,
 				80270CF21FAC04CB001429F0 /* DetailCell.xib in Resources */,
 				78C35BC41F9E3C3000C7080B /* cjCheckBoxGreen2YES.png in Resources */,
+				807903331FB43F1F0082F05C /* ProcessLineViewController.xib in Resources */,
 				80270D131FAC04CB001429F0 /* TvDemo_Complex.xib in Resources */,
 				80270CD41FAC04CB001429F0 /* MemoryAD32.jpg in Resources */,
 				78C35BAA1F9E3C3000C7080B /* ChangeLog.md in Resources */,
@@ -2262,14 +2336,15 @@
 				80270CCD1FAC04CB001429F0 /* NibCell.xib in Resources */,
 				80270D0C1FAC04CB001429F0 /* OpenTableViewController.xib in Resources */,
 				80270D1C1FAC04CB001429F0 /* SHeaderHome2.xib in Resources */,
-				80270D4C1FAC04CB001429F0 /* ProcessLineViewController.xib in Resources */,
 				80270D421FAC04CB001429F0 /* DragViewController.xib in Resources */,
 				780E46131E5DF87B00980127 /* LaunchScreen.storyboard in Resources */,
 				80270CC61FAC04CB001429F0 /* Detail.xib in Resources */,
+				807903181FB413D60082F05C /* arrow_up.png in Resources */,
 				80270CCF1FAC04CB001429F0 /* CustomLayoutCollectionViewController.xib in Resources */,
 				78C35BC61F9E3C3000C7080B /* cjCheckBoxGreenYES@2x.png in Resources */,
 				80270D2A1FAC04CB001429F0 /* icon_ddlb_jd@2x.png in Resources */,
 				80270CF81FAC04CB001429F0 /* add_red.png in Resources */,
+				8079031D1FB429B60082F05C /* NavigationBarViewController.xib in Resources */,
 				80270CFA1FAC04CB001429F0 /* add_red_Big.png in Resources */,
 				80270CED1FAC04CB001429F0 /* MyEqualCellSizeCollectionViewController.xib in Resources */,
 				80270D2F1FAC04CB001429F0 /* slider_maximum_trackimage@2x.png in Resources */,
@@ -2281,6 +2356,7 @@
 				80270D0A1FAC04CB001429F0 /* DemoTableViewController.xib in Resources */,
 				8014A2A21FA3137D00DDDB5A /* ThirdPartIcon.xcassets in Resources */,
 				78C35BB91F9E3C3000C7080B /* cjCollectionViewCellAdd@2x.png in Resources */,
+				807903161FB413D60082F05C /* arrow_R_gray@2x.png in Resources */,
 				80270D191FAC04CB001429F0 /* CustomTableViewCell.xib in Resources */,
 				80270D221FAC04CB001429F0 /* ImageViewController.xib in Resources */,
 				80270CDC1FAC04CB001429F0 /* MemoryADKnowledge02.jpg in Resources */,
@@ -2309,7 +2385,6 @@
 				80270D341FAC04CB001429F0 /* slider_thumbImage@3x.png in Resources */,
 				80270D331FAC04CB001429F0 /* slider_thumbImage@2x.png in Resources */,
 				780E460E1E5DF87B00980127 /* Main.storyboard in Resources */,
-				80270D401FAC04CB001429F0 /* CountDownTimeViewController.xib in Resources */,
 				80270CF91FAC04CB001429F0 /* add_red@2x.png in Resources */,
 				80270D361FAC04CB001429F0 /* SliderViewController.xib in Resources */,
 				78E269BF1ECC5E1A007D3686 /* bgSky@2x.jpg in Resources */,
@@ -2317,7 +2392,9 @@
 				8014A28C1FA2C81A00DDDB5A /* icons8-home.png in Resources */,
 				80270CD61FAC04CB001429F0 /* MemoryADExample02.jpg in Resources */,
 				80270CF61FAC04CB001429F0 /* OpenCollectionViewController.xib in Resources */,
+				807903101FB413D60082F05C /* arrow_back_red@2x.png in Resources */,
 				80270D101FAC04CB001429F0 /* TableViewController.xib in Resources */,
+				807903111FB413D60082F05C /* arrow_balland_red@2x.png in Resources */,
 				80EFADDA1FAAC07600536BE2 /* MJExtensionViewController.xib in Resources */,
 				80270CE21FAC04CB001429F0 /* MemoryADPose01.jpg in Resources */,
 				80270D4A1FAC04CB001429F0 /* NestedXibViewController.xib in Resources */,
@@ -2336,6 +2413,7 @@
 				78AF3F7A1F60341000660373 /* cjBackBarButtonItem@2x.png in Resources */,
 				80270CF01FAC04CB001429F0 /* MyEqualCellSizeViewController.xib in Resources */,
 				80270D541FAC04CB001429F0 /* ImageChangeColorViewController.xib in Resources */,
+				807903311FB43F1F0082F05C /* OtherHomeViewController.xib in Resources */,
 				80270D381FAC04CB001429F0 /* SwitchSliderViewController.xib in Resources */,
 				80270CFD1FAC04CB001429F0 /* ScrollViewHomeViewController.xib in Resources */,
 				80270D3A1FAC04CB001429F0 /* plus@2x.png in Resources */,
@@ -2472,12 +2550,10 @@
 				80270D0F1FAC04CB001429F0 /* TableViewController.m in Sources */,
 				78C35BAC1F9E3C3000C7080B /* CJFullBottomCollectionViewCell.m in Sources */,
 				7847521E1E8F862F00B24507 /* UIImage+CJChangeColor.m in Sources */,
-				80270D3F1FAC04CB001429F0 /* CountDownTimeViewController.m in Sources */,
 				782709061E867EFA00E21433 /* CJSliderThumb.m in Sources */,
 				78C35BC01F9E3C3000C7080B /* CJLeftDetailTableViewCell.m in Sources */,
 				782709021E867EFA00E21433 /* CJPlayerSlider.m in Sources */,
 				78E61EDA1E79AA20009B1627 /* UIScrollView+CJKeyboardAvoiding.m in Sources */,
-				80270D4B1FAC04CB001429F0 /* ProcessLineViewController.m in Sources */,
 				782708E81E867C4700E21433 /* UIImage+CJCreate.m in Sources */,
 				80270D1F1FAC04CB001429F0 /* FloatingWindowViewController.m in Sources */,
 				783287FB1ED2214100A01A8A /* UIView+CJDragAction.m in Sources */,
@@ -2496,8 +2572,10 @@
 				80EFADD91FAAC07600536BE2 /* MJExtensionViewController.m in Sources */,
 				80270D1A1FAC04CB001429F0 /* MyOpenTableView.m in Sources */,
 				782709E51E8715A600E21433 /* UIImage+Save.m in Sources */,
+				807903301FB43F1F0082F05C /* OtherHomeViewController.m in Sources */,
 				78DC6E721F0E90B000DC025C /* CJSwitchSlider.m in Sources */,
 				80577EDE1FB197890068938E /* SearchTableViewController.m in Sources */,
+				807903321FB43F1F0082F05C /* ProcessLineViewController.m in Sources */,
 				783287FE1ED2214100A01A8A /* UIView+CJKeepBounds.m in Sources */,
 				80270D0B1FAC04CB001429F0 /* OpenTableViewController.m in Sources */,
 				80270CC31FAC04CB001429F0 /* CvDemo_Complex.m in Sources */,
@@ -2523,6 +2601,7 @@
 				80270D5A1FAC04CB001429F0 /* NavigationBarBaseViewController.m in Sources */,
 				80270D171FAC04CB001429F0 /* CJSubTitleTabelViewCell+ConfigureForDataModel.m in Sources */,
 				78C35BB61F9E3C3000C7080B /* MyEqualCellSizeSetting.m in Sources */,
+				8079031B1FB428EA0082F05C /* NavigationBarViewController.m in Sources */,
 				80270D411FAC04CB001429F0 /* DragViewController.m in Sources */,
 				80270CCB1FAC04CB001429F0 /* cvSupplementaryHead.m in Sources */,
 				80270D5D1FAC04CB001429F0 /* NavigationBarChangePositonViewController.m in Sources */,
@@ -2536,6 +2615,7 @@
 				80270CEC1FAC04CB001429F0 /* MyEqualCellSizeCollectionViewController.m in Sources */,
 				80270CE91FAC04CB001429F0 /* MyCycleADView.m in Sources */,
 				80270D351FAC04CB001429F0 /* SliderViewController.m in Sources */,
+				807903341FB43F1F0082F05C /* PullScaleTopImageViewController.m in Sources */,
 				78C35BB01F9E3C3000C7080B /* CJCollectionViewHeaderFooterView.m in Sources */,
 				80270CC21FAC04CB001429F0 /* CvDemo_Complex+Event.m in Sources */,
 				780E460B1E5DF87B00980127 /* ViewController.m in Sources */,
@@ -2579,7 +2659,6 @@
 				78C35BB31F9E3C3000C7080B /* CJOpenCollectionView.m in Sources */,
 				78C35BBC1F9E3C3000C7080B /* CJSingleTableViewCellDataSource.m in Sources */,
 				78DC6E771F0E90ED00DC025C /* CJAdsorbModel.m in Sources */,
-				80270D5E1FAC04CB001429F0 /* PullScaleTopImageViewController.m in Sources */,
 				783281041F4198BC008267E0 /* CustomTripProgressView.m in Sources */,
 				782709051E867EFA00E21433 /* CJSliderPopover.m in Sources */,
 				780F49751F9CCFB20040D145 /* MyUserInfoScaleHeadView.m in Sources */,
@@ -2590,6 +2669,7 @@
 				80270D431FAC04CB001429F0 /* HomeViewController.m in Sources */,
 				781592ED1EC4391400DE1976 /* CJToast.m in Sources */,
 				784D55061F4E7F9D00C21003 /* UIImage+CJQRCode.m in Sources */,
+				8079032E1FB43F1F0082F05C /* CountDownTimeViewController.m in Sources */,
 				80270CC51FAC04CB001429F0 /* Detail.m in Sources */,
 				78C35BB41F9E3C3000C7080B /* MyEqualCellSizeCollectionView+Select.m in Sources */,
 				78C35BAE1F9E3C3000C7080B /* CJCellHorizontalLayout.m in Sources */,
@@ -2793,7 +2873,7 @@
 			baseConfigurationReference = 68D73B38201AA01727123963 /* Pods-CJUIKitDemo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = K236FB7WP6;
+				DEVELOPMENT_TEAM = FZ5YDHE5JZ;
 				GCC_PREFIX_HEADER = CJUIKitDemo/PrefixHeader.pch;
 				INFOPLIST_FILE = CJUIKitDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -2808,7 +2888,7 @@
 			baseConfigurationReference = 3132573BFCFBEA8B4F3BB86F /* Pods-CJUIKitDemo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = K236FB7WP6;
+				DEVELOPMENT_TEAM = FZ5YDHE5JZ;
 				GCC_PREFIX_HEADER = CJUIKitDemo/PrefixHeader.pch;
 				INFOPLIST_FILE = CJUIKitDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;

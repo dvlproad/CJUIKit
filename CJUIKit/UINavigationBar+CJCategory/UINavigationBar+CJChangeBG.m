@@ -47,7 +47,7 @@ static NSString *overlayKey = @"overlayKey";
 
 - (void)cj_setElementsAlpha:(CGFloat)alpha
 {
-    //iOS11有bug,因为多了一个叫_UINavigationBarContentView的类。参考:[IOS11导航栏隐藏失效的问题   ](http://www.cocoachina.com/bbs/read.php?tid=1726064)
+    //iOS11有bug,因为多了一个叫_UINavigationBarContentView的类。参考:[IOS11导航栏隐藏失效的问题](http://www.cocoachina.com/bbs/read.php?tid=1726064)
 //    <__NSArrayM 0x600000449390>(
 //                                <_UIBarBackground: 0x7ff541e0a4c0; frame = (0 -20; 414 64); userInteractionEnabled = NO; layer = <CALayer: 0x600000036fe0>>,
 //                                <_UINavigationBarLargeTitleView: 0x7ff541d04f20; frame = (0 0; 0 44); clipsToBounds = YES; alpha = 0; hidden = YES; layer = <CALayer: 0x604000234100>>,
@@ -56,7 +56,7 @@ static NSString *overlayKey = @"overlayKey";
 //                                )
     
     if (@available(iOS 11.0, *)) {
-        NSLog(@"iOS11有bug,因为多了一个叫_UINavigationBarContentView的类。参考:[IOS11导航栏隐藏失效的问题   ](http://www.cocoachina.com/bbs/read.php?tid=1726064)");
+        NSLog(@"iOS11有bug,因为多了一个叫_UINavigationBarContentView的类。参考:[IOS11导航栏隐藏失效的问题](http://www.cocoachina.com/bbs/read.php?tid=1726064)");
     } else {
         [[self valueForKey:@"_leftViews"] enumerateObjectsUsingBlock:^(UIView *view, NSUInteger i, BOOL *stop) {
             view.alpha = alpha;

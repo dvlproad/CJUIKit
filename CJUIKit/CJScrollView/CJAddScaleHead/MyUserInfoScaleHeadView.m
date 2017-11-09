@@ -94,15 +94,6 @@
     }
 }
 
-- (nullable UIViewController *)getBelongViewControllerForView:(UIView *)view {
-    UIResponder *responder = view;
-    while ((responder = [responder nextResponder]))
-        if ([responder isKindOfClass: [UIViewController class]]) {
-            return (UIViewController *)responder;
-        }
-    return nil;
-}
-
 #pragma mark - getter methods
 - (UIImageView *)backgroundImageView {
     if (!_backgroundImageView) {
