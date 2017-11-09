@@ -1,0 +1,1 @@
+../../../CJNetwork/CJNetwork/AFNetworkingUploadComponent/AFNetworkingUploadAPI/Models/CJUploadInfo.h

@@ -1,9 +1,9 @@
 //
 //  CJNetworkMonitor.m
-//  CommonAFNUtilDemo
+//  CJNetworkDemo
 //
-//  Created by dvlproad on 2016/12/19.
-//  Copyright © 2016年 ciyouzen. All rights reserved.
+//  Created by ciyouzen on 2016/12/19.
+//  Copyright © 2016年 dvlproad. All rights reserved.
 //
 
 #import "CJNetworkMonitor.h"

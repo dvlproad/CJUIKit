@@ -2,8 +2,8 @@
 //  NSString+CJEncoding.h
 //  CJFoundationDemo
 //
-//  Created by lichq on 15/3/25.
-//  Copyright (c) 2015年 lichq. All rights reserved.
+//  Created by ciyouzen on 15/3/25.
+//  Copyright (c) 2015年 dvlproad. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>

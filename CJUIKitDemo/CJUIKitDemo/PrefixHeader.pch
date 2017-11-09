@@ -9,6 +9,8 @@
 #ifndef PrefixHeader_pch
 #define PrefixHeader_pch
 
+#define CJTESTPOD
+
 #import <Masonry/Masonry.h>
 
 #import "CJToast.h"

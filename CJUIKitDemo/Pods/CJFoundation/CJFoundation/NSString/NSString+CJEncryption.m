@@ -2,8 +2,8 @@
 //  NSString+CJEncryption.m
 //  CJFoundationDemo
 //
-//  Created by ciyouzen on 14-12-16.
-//  Copyright (c) 2014年 dvlproad. All rights reserved.
+//  Created by dvlproad on 16/12/14.
+//  Copyright (c) 2014年 ciyouzen. All rights reserved.
 //
 
 #import "NSString+CJEncryption.h"
@@ -24,7 +24,7 @@
     return output;
 }
 
-/* 完整的描述请参见文件头部 */
+/** 完整的描述请参见文件头部 */
 + (NSString *)cj_base64StringFromText:(NSString *)text {
     NSData *data = [text dataUsingEncoding:NSUTF8StringEncoding];
     NSString *base64String = [data base64EncodedStringWithOptions:0];

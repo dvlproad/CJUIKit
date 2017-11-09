@@ -2,7 +2,7 @@
 //  NSString+CJEncryption.h
 //  CJFoundationDemo
 //
-//  Created by dvlproad on 14-12-16.
+//  Created by dvlproad on 16/12/14.
 //  Copyright (c) 2014年 ciyouzen. All rights reserved.
 //
 

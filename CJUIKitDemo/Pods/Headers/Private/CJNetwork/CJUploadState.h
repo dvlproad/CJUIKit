@@ -1,1 +1,1 @@
-../../../CJNetwork/CJNetwork/AFHTTPSessionManager+CJUploadFile/CJUploadModels/CJUploadState.h
+../../../CJNetwork/CJNetwork/AFNetworkingUploadComponent/AFNetworkingUploadAPI/Models/CJUploadState.h

@@ -2,7 +2,7 @@
 //  MyCycleADViewController.h
 //  CJUIKitDemo
 //
-//  Created by 李超前 on 2017/9/12.
+//  Created by ciyouzen on 2017/9/12.
 //  Copyright © 2017年 dvlproad. All rights reserved.
 //
 

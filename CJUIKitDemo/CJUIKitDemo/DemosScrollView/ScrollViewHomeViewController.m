@@ -34,6 +34,7 @@
 
 //DataScrollView
 #import "SearchTableViewController.h"
+#import "ImagePickerViewController.h"
 
 @interface ScrollViewHomeViewController () <UITableViewDataSource, UITableViewDelegate> {
     
@@ -172,12 +173,18 @@
     //DataScrollView
     {
         CJSectionDataModel *sectionDataModel = [[CJSectionDataModel alloc] init];
-        sectionDataModel.theme = @"DataScrollView(带数据源的滚动视图(包含搜索工鞥呢))";
+        sectionDataModel.theme = @"DataScrollView(带数据源的滚动视图)";
         {
             ModuleModel *searchTableViewModule = [[ModuleModel alloc] init];
             searchTableViewModule.title = @"带搜索功能的列表";
             searchTableViewModule.classEntry = [SearchTableViewController class];
             [sectionDataModel.values addObject:searchTableViewModule];
+        }
+        {
+            ModuleModel *imagePickerCollectionViewModule = [[ModuleModel alloc] init];
+            imagePickerCollectionViewModule.title = @"图片选择的集合视图";
+            imagePickerCollectionViewModule.classEntry = [ImagePickerViewController class];
+            [sectionDataModel.values addObject:imagePickerCollectionViewModule];
         }
         
         [sectionDataModels addObject:sectionDataModel];

@@ -1,1 +1,0 @@
-../../../CJNetwork/CJNetwork/AFHTTPSessionManager+CJUploadFile/CJUploadModels/CJUploadResponseModel.h

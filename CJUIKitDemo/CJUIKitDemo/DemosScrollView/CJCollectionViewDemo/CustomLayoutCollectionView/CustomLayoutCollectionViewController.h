@@ -2,7 +2,7 @@
 //  CustomLayoutCollectionViewController.h
 //  CJUIKitDemo
 //
-//  Created by 李超前 on 2017/4/24.
+//  Created by ciyouzen on 2017/4/24.
 //  Copyright © 2017年 dvlproad. All rights reserved.
 //
 

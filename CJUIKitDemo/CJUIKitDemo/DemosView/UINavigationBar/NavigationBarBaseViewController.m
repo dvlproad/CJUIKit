@@ -48,6 +48,7 @@
 
 /* 完整的描述请参见文件头部 */
 - (void)addTableScaleHeaderViewWithAttachNavigationBar:(BOOL)attachNavigationBar supportPullSmall:(BOOL)canPullSmall  {
+    /* ②、添加scaleHeadView */
     CJScaleHeadView *scaleHeadView = nil;
     if (!canPullSmall) {
         NSArray *views = [[NSBundle mainBundle] loadNibNamed:@"EasyScaleHeadView" owner:self options:nil];

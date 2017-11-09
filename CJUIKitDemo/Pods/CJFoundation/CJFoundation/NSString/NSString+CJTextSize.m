@@ -2,22 +2,22 @@
 //  NSString+CJTextSize.m
 //  CJFoundationDemo
 //
-//  Created by lichq on 7/9/15.
-//  Copyright (c) 2015 dvlproad. All rights reserved.
+//  Created by ciyouzen on 7/9/15.
+//  Copyright (c) 2015 ciyouzen. All rights reserved.
 //
 
 #import "NSString+CJTextSize.h"
 
 @implementation NSString (CJCalculateSize)
 
-/* 完整的描述请参见文件头部 */
+/** 完整的描述请参见文件头部 */
 - (CGFloat)cjTextHeightWithFont:(UIFont *)textFont maxTextWidth:(CGFloat)maxTextWidth {
     return [self cjTextSizeWithFont:textFont
                             maxSize:CGSizeMake(maxTextWidth, MAXFLOAT)
                                mode:NSLineBreakByWordWrapping].height;
 }
 
-/* 完整的描述请参见文件头部 */
+/** 完整的描述请参见文件头部 */
 - (CGFloat)cjTextWidthWithFont:(UIFont *)textFont maxTextHeight:(CGFloat)maxTextHeight {
     return [self cjTextSizeWithFont:textFont
                             maxSize:CGSizeMake(MAXFLOAT, maxTextHeight)
@@ -55,12 +55,12 @@
     }
 }
 
-/* 完整的描述请参见文件头部 */
+/** 完整的描述请参见文件头部 */
 - (CGFloat)cjTextHeightWithFont:(UIFont *)textFont {
     return [self cjTextSizeWithFont:textFont].height;
 }
 
-/* 完整的描述请参见文件头部 */
+/** 完整的描述请参见文件头部 */
 - (CGFloat)cjTextWidthWithFont:(UIFont *)textFont {
     return [self cjTextSizeWithFont:textFont].width;
 }

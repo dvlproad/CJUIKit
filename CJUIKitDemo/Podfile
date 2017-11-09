@@ -13,10 +13,6 @@ target 'CJUIKitDemo' do
   pod 'Shimmer', '~> 1.0.2' #fackBook的闪光动画
   
   
-  
-
-  pod 'CJNetwork/AFHTTPSessionManager+CJUploadFile', '~> 0.0.6' #需要8.0以上
-  
   pod 'SDCycleScrollView', '~> 1.73' #(已包括SDWebImage)原理其实就是扩大dataSource的count
   #    pod 'SDWebImage', '~> 4.0.0'
   
@@ -27,6 +23,14 @@ target 'CJUIKitDemo' do
   pod 'NSOperationQueueUtil', '~> 0.0.1'
   # 搜索功能需要使用的库
   pod 'PinYin4Objc', '~> 1.1.1'
+  
+  
+  # 图片选择需要依赖的库
+  pod 'JGActionSheet', '~> 1.0.5'
+  pod 'CJMedia/UIImagePickerControllerUtil', '~> 0.0.2'
+  pod 'CJMedia/CJPhotoBrowser', '~> 0.0.2'
+  pod 'CJFile/CJFileManager', '~> 0.0.2'
+  pod 'CJNetwork/AFNetworkingUploadComponent', '~> 0.1.2' #需要8.0以上
   
   
   # 基本的第三方库
