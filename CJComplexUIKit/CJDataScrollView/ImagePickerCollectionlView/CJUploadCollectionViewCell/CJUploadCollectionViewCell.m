@@ -243,5 +243,11 @@
                                    constant:edgeInsets.bottom]];
 }
 
+- (void)deleteButtonAction:(UIButton *)sender {
+    if (self.deleteHandle) {
+        self.deleteHandle(self);
+    }
+}
+
 
 @end

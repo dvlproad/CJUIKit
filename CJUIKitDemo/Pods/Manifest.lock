@@ -50,7 +50,7 @@ PODS:
 
 DEPENDENCIES:
   - CJBaseUtil/CJDataUtil (~> 0.1.1)
-  - CJFile/CJFileManager (~> 0.0.2)
+  - CJFile/CJFileManager (= 0.0.2)
   - CJFoundation/NSString (~> 0.0.4)
   - CJMedia/CJPhotoBrowser (~> 0.0.4)
   - CJMedia/CJValidateAuthorizationUtil (~> 0.0.4)
@@ -90,6 +90,6 @@ SPEC CHECKSUMS:
   SDWebImage: 89a9d32cd520bbb46eb14e541d5109b3564af198
   Shimmer: c5374be1c2b0c9e292fb05b339a513cf291cac86
 
-PODFILE CHECKSUM: 325e1356044368837bbc22246baeac010aec74c2
+PODFILE CHECKSUM: 654e7760376b3afd6b0569c2e706c7788420e7e1
 
 COCOAPODS: 1.4.0.beta.1
