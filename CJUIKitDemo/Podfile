@@ -30,7 +30,7 @@ target 'CJUIKitDemo' do
   pod 'CJMedia/CJValidateAuthorizationUtil', '~> 0.0.4'
   pod 'CJMedia/MySingleImagePickerController', '~> 0.0.4'
   pod 'CJMedia/CJPhotoBrowser', '~> 0.0.4'
-  pod 'CJFile/CJFileManager', '0.0.2'
+  pod 'CJFile/CJFileManager', '~> 0.0.6'
   pod 'CJNetwork/AFNetworkingUploadComponent', '~> 0.1.3' #需要8.0以上
   
   

@@ -15,7 +15,7 @@ PODS:
   - AFNetworking/UIKit (3.1.0):
     - AFNetworking/NSURLSession
   - CJBaseUtil/CJDataUtil (0.1.1)
-  - CJFile/CJFileManager (0.0.2)
+  - CJFile/CJFileManager (0.0.6)
   - CJFoundation/NSString (0.0.5)
   - CJMedia/CJPhotoBrowser (0.0.4):
     - CJMedia/CJValidateAuthorizationUtil
@@ -50,7 +50,7 @@ PODS:
 
 DEPENDENCIES:
   - CJBaseUtil/CJDataUtil (~> 0.1.1)
-  - CJFile/CJFileManager (= 0.0.2)
+  - CJFile/CJFileManager (~> 0.0.6)
   - CJFoundation/NSString (~> 0.0.4)
   - CJMedia/CJPhotoBrowser (~> 0.0.4)
   - CJMedia/CJValidateAuthorizationUtil (~> 0.0.4)
@@ -72,7 +72,7 @@ DEPENDENCIES:
 SPEC CHECKSUMS:
   AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
   CJBaseUtil: c1681e39a06c2c50b00b9a2e0523f4bfb723667b
-  CJFile: 0b7c5e328318a7443638cf564b5f3d5d530c7df3
+  CJFile: 12d45ae82d3978a7bc9507eee471d307abe6f316
   CJFoundation: 0fa159680ecba5b0425dae6a633b75afb08eb62c
   CJMedia: be8bbac12f0d84b0a953de7f4e08a422f48678f1
   CJNetwork: 7e510d8951e95bc919054a9c536dbf5a3e491561
@@ -90,6 +90,6 @@ SPEC CHECKSUMS:
   SDWebImage: 89a9d32cd520bbb46eb14e541d5109b3564af198
   Shimmer: c5374be1c2b0c9e292fb05b339a513cf291cac86
 
-PODFILE CHECKSUM: 654e7760376b3afd6b0569c2e706c7788420e7e1
+PODFILE CHECKSUM: a0b98e4dd492f3b87232df0ed527081c2f47ed51
 
 COCOAPODS: 1.4.0.beta.1

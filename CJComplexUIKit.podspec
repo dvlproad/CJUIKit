@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "CJComplexUIKit"
-  s.version      = "0.0.1"
+  s.version      = "0.0.2"
   s.summary      = "自定义的稍微复杂的UI"
   s.homepage     = "https://github.com/dvlproad/CJUIKit"
 
@@ -29,7 +29,7 @@ Pod::Spec.new do |s|
 
   s.platform     = :ios, "7.0"
  
-  s.source       = { :git => "https://github.com/dvlproad/CJUIKit.git", :tag => "CJComplexUIKit_0.0.1_1" }
+  s.source       = { :git => "https://github.com/dvlproad/CJUIKit.git", :tag => "CJComplexUIKit_0.0.2" }
   s.source_files  = "CJComplexUIKit/*.{h,m}"
 
   s.frameworks = "UIKit"
@@ -70,7 +70,7 @@ Pod::Spec.new do |s|
       sss.dependency 'CJMedia/MySingleImagePickerController', "~> 0.0.4"
       sss.dependency 'CJMedia/CJPhotoBrowser', "~> 0.0.4"
 
-      sss.dependency 'CJFile/CJFileManager', "0.0.2"
+      sss.dependency 'CJFile/CJFileManager', "~> 0.0.6"
       sss.dependency 'CJNetwork/AFNetworkingUploadComponent', "~> 0.1.3"
       
     end
