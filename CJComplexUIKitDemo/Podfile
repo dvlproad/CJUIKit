@@ -1,0 +1,35 @@
+platform :ios, '8.0'
+#use_frameworks!
+
+target 'CJComplexUIKitDemo' do  
+# 基本的第三方库
+  pod 'PureLayout', '~> 3.0.2'
+  pod 'Masonry', '~> 1.0.2'
+  pod 'MJExtension', '~> 3.0.13'
+  pod 'Mantle', '~> 2.1.0'
+
+  
+  # 搜索功能需要依赖的库
+  pod 'CJBaseUIKit/CJCollectionView/MyEqualCellSizeCollectionView', '~> 0.1.6'
+  pod 'CJBaseUtil/CJDataUtil', '~> 0.1.1'
+  pod 'NSOperationQueueUtil', '~> 0.0.1'
+  # 搜索功能需要使用的库
+  pod 'PinYin4Objc', '~> 1.1.1'
+  
+  
+  # 图片选择需要依赖的库
+  pod 'JGActionSheet', '~> 1.0.5'
+  pod 'CJMedia/CJValidateAuthorizationUtil', '~> 0.0.4'
+  pod 'CJMedia/MySingleImagePickerController', '~> 0.0.4'
+  pod 'CJMedia/CJPhotoBrowser', '~> 0.0.4'
+  pod 'CJFile/CJFileManager', '~> 0.0.2'
+  pod 'CJNetwork/AFNetworkingUploadComponent', '~> 0.1.3' #需要8.0以上
+  
+  
+  
+  
+end
+
+target 'CJComplexUIKitDemoTests' do
+   
+end

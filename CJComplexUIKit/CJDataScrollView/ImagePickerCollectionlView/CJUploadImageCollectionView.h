@@ -1,6 +1,6 @@
 //
 //  CJUploadImageCollectionView.h
-//  FileChooseViewDemo
+//  CJComplexUIKitDemo
 //
 //  Created by ciyouzen on 2017/1/19.
 //  Copyright © 2017年 dvlproad. All rights reserved.
@@ -36,7 +36,7 @@ typedef NS_ENUM(NSUInteger, CJUploadActionType) {
 //创建上传文件到服务器的方法的代码块要实现的效果为：给item设置上传请求，并将上传请求的各个时刻信息uploadInfo①保存到该item上，②同时利用这些uploadInfo设置uploadProgressView。所以如下
 
 @property (nonatomic, assign) CJUploadActionType uploadActionType;  /**< 上传操作 TODO: */
-@property (nonatomic, copy) NSURLSessionDataTask * (^createDetailedUploadRequestBlock)(NSArray<CJUploadItemModel *> *uploadItems, CJBaseUploadItem *itemThatSaveUploadInfo, void(^uploadInfoChangeBlock)(CJBaseUploadItem *item));    /**< 用来执行生成上传请求的代码块：其是一个用"要上传的数据uploadItems"、"上传时刻信息的保存位置itemThatSaveUploadInfo"、"上传时刻信息变化的触发方法uploadInfoChangeBlock"这些参数来创建得到上传请求的代码块，结果返回创建的请求任务DataTask */
+@property (nonatomic, copy) NSURLSessionDataTask * (^createDetailedUploadRequestBlock)(NSArray<CJUploadFileModel *> *uploadFileModels, CJBaseUploadItem *itemThatSaveUploadInfo, void(^uploadInfoChangeBlock)(CJBaseUploadItem *item));    /**< 用来执行生成上传请求的代码块：其是一个用"要上传的数据uploadFileModels"、"上传时刻信息的保存位置itemThatSaveUploadInfo"、"上传时刻信息变化的触发方法uploadInfoChangeBlock"这些参数来创建得到上传请求的代码块，结果返回创建的请求任务DataTask */
 
 
 @property (nonatomic, assign) CJMediaType mediaType;

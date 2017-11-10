@@ -6,13 +6,22 @@
 //  Copyright © 2016年 dvlproad. All rights reserved.
 //
 
-//#import "CJBaseCollectionViewCell.h"
-#import "CJFullBottomCollectionViewCell.h"
+#import <UIKit/UIKit.h>
 #import <CJNetwork/CJUploadProgressView.h>
 
-@interface CJUploadCollectionViewCell : CJFullBottomCollectionViewCell {
+@interface CJUploadCollectionViewCell : UICollectionViewCell {
     
 }
+@property (nonatomic, copy) void(^deleteHandle)(CJUploadCollectionViewCell * cell);
+
+@property (nonatomic, strong) UILabel *cjTextLabel;
+@property (nonatomic, assign) NSLayoutConstraint *cjTextLabelHeightConstraint;
+
+@property (nonatomic, strong) UIImageView *cjImageView;
+@property (nonatomic, strong) UIButton *cjDeleteButton;
+
+
+
 @property (nonatomic, strong) CJUploadProgressView *uploadProgressView;
 
 @end

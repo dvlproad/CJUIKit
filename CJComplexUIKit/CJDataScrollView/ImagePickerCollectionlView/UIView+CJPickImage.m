@@ -35,21 +35,21 @@
                                   createIfNoExist:YES];
          [CJFileManager saveFileData:imageData withFileName:imageName toRelativeDirectoryPath:imageRelativePath];
          
-         NSMutableArray<CJUploadItemModel *> *uploadItems = [[NSMutableArray alloc] init];
+         NSMutableArray<CJUploadFileModel *> *uploadFileModels = [[NSMutableArray alloc] init];
          //NSString *identifier = [[NSProcessInfo processInfo] globallyUniqueString];
          //图片
          //NSData *imageData = UIImageJPEGRepresentation(image, 1.0);
          //NSString *imageName = [identifier stringByAppendingPathExtension:@"jpg"];
-         CJUploadItemModel *imageUploadItem = [[CJUploadItemModel alloc] init];
+         CJUploadFileModel *imageUploadItem = [[CJUploadFileModel alloc] init];
          imageUploadItem.uploadItemType = CJUploadItemTypeImage;
          imageUploadItem.uploadItemData = imageData;
          imageUploadItem.uploadItemName = imageName;
-         [uploadItems addObject:imageUploadItem];
+         [uploadFileModels addObject:imageUploadItem];
          
          CJImageUploadItem *imageItem =
          [[CJImageUploadItem alloc] initWithShowImage:image
                                imageLocalRelativePath:imageRelativePath
-                                          uploadItems:uploadItems];
+                                          uploadFileModels:uploadFileModels];
          
          if (pickImageCompleteBlock) {
              pickImageCompleteBlock(@[imageItem]);
@@ -75,12 +75,12 @@
      {
      NSString *imageRelativePath = [self saveImageToLocal:image];
      
-     NSMutableArray<CJUploadItemModel *> *uploadModels = [[NSMutableArray alloc] init];
+     NSMutableArray<CJUploadFileModel *> *uploadModels = [[NSMutableArray alloc] init];
      NSString *identifier = [[NSProcessInfo processInfo] globallyUniqueString];
      //图片
      NSData *imageData = UIImageJPEGRepresentation(image, 1.0);
      NSString *imageName = [identifier stringByAppendingPathExtension:@"jpg"];
-     CJUploadItemModel *imageUploadModel = [[CJUploadItemModel alloc] init];
+     CJUploadFileModel *imageUploadModel = [[CJUploadFileModel alloc] init];
      imageUploadModel.uploadItemType = CJUploadItemTypeImage;
      imageUploadModel.uploadItemData = imageData;
      imageUploadModel.uploadItemName = imageName;
@@ -89,7 +89,7 @@
      CJImageUploadItem *imageItem =
      [[CJImageUploadItem alloc] initWithShowImage:image
      imageLocalRelativePath:imageRelativePath
-     uploadItems:uploadModels];
+     uploadFileModels:uploadModels];
      
      [self.dataModels addObject:imageItem];
      
@@ -114,12 +114,12 @@
             
             NSString *imageRelativePath = [self saveImageToLocal:image];
             
-            NSMutableArray<CJUploadItemModel *> *uploadModels = [[NSMutableArray alloc] init];
+            NSMutableArray<CJUploadFileModel *> *uploadModels = [[NSMutableArray alloc] init];
             NSString *identifier = [[NSProcessInfo processInfo] globallyUniqueString];
             //图片
             NSData *imageData = UIImageJPEGRepresentation(image, 1.0);
             NSString *imageName = [identifier stringByAppendingPathExtension:@"jpg"];
-            CJUploadItemModel *imageUploadModel = [[CJUploadItemModel alloc] init];
+            CJUploadFileModel *imageUploadModel = [[CJUploadFileModel alloc] init];
             imageUploadModel.uploadItemType = CJUploadItemTypeImage;
             imageUploadModel.uploadItemData = imageData;
             imageUploadModel.uploadItemName = imageName;
@@ -128,7 +128,7 @@
             CJImageUploadItem *imageItem =
             [[CJImageUploadItem alloc] initWithShowImage:image
                                   imageLocalRelativePath:imageRelativePath
-                                             uploadItems:uploadModels];
+                                             uploadFileModels:uploadModels];
             
             [pickerImageModels addObject:imageItem];
         }

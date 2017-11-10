@@ -205,7 +205,7 @@ static NSString *CJUploadCollectionViewCellAddID = @"CJUploadCollectionViewCellA
     };
     
     CJImageUploadItem *baseUploadItem = [self.equalCellSizeSetting getDataModelAtIndexPath:indexPath dataModels:self.dataModels];
-    NSArray<CJUploadItemModel *> *uploadModels = baseUploadItem.uploadItems;
+    NSArray<CJUploadFileModel *> *uploadModels = baseUploadItem.uploadFileModels;
 
     
     CJBaseUploadItem *saveUploadInfoToItem = baseUploadItem;
@@ -257,7 +257,7 @@ static NSString *CJUploadCollectionViewCellAddID = @"CJUploadCollectionViewCellA
     __weak typeof(self)weakSelf = self;
     
     CJImageUploadItem *baseUploadItem = [self.equalCellSizeSetting getDataModelAtIndexPath:indexPath dataModels:self.dataModels];
-    [cell setDeleteHandle:^(CJBaseCollectionViewCell *baseCell) {
+    [cell setDeleteHandle:^(CJUploadCollectionViewCell *baseCell) {
         if (baseUploadItem.operation) { //如果有请求任务，则还应该取消掉该任务
             [baseUploadItem.operation cancel];
         }

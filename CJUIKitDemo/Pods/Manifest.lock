@@ -17,17 +17,17 @@ PODS:
   - CJBaseUtil/CJDataUtil (0.1.1)
   - CJFile/CJFileManager (0.0.2)
   - CJFoundation/NSString (0.0.5)
-  - CJMedia/CJPhotoBrowser (0.0.3):
+  - CJMedia/CJPhotoBrowser (0.0.4):
     - CJMedia/CJValidateAuthorizationUtil
     - Masonry
     - MBProgressHUD
     - SDWebImage
-  - CJMedia/CJValidateAuthorizationUtil (0.0.3)
-  - CJMedia/MySingleImagePickerController (0.0.3):
+  - CJMedia/CJValidateAuthorizationUtil (0.0.4)
+  - CJMedia/MySingleImagePickerController (0.0.4):
     - CJMedia/CJValidateAuthorizationUtil
-  - CJNetwork/AFNetworkingUploadComponent (0.1.2):
+  - CJNetwork/AFNetworkingUploadComponent (0.1.3):
     - CJNetwork/CJNetworkMonitor
-  - CJNetwork/CJNetworkMonitor (0.1.2):
+  - CJNetwork/CJNetworkMonitor (0.1.3):
     - AFNetworking (~> 3.1.0)
   - JGActionSheet (1.0.5)
   - Mantle (2.1.0):
@@ -52,10 +52,10 @@ DEPENDENCIES:
   - CJBaseUtil/CJDataUtil (~> 0.1.1)
   - CJFile/CJFileManager (~> 0.0.2)
   - CJFoundation/NSString (~> 0.0.4)
-  - CJMedia/CJPhotoBrowser (~> 0.0.3)
-  - CJMedia/CJValidateAuthorizationUtil (~> 0.0.3)
-  - CJMedia/MySingleImagePickerController (~> 0.0.3)
-  - CJNetwork/AFNetworkingUploadComponent (~> 0.1.2)
+  - CJMedia/CJPhotoBrowser (~> 0.0.4)
+  - CJMedia/CJValidateAuthorizationUtil (~> 0.0.4)
+  - CJMedia/MySingleImagePickerController (~> 0.0.4)
+  - CJNetwork/AFNetworkingUploadComponent (~> 0.1.3)
   - JGActionSheet (~> 1.0.5)
   - Mantle (~> 2.1.0)
   - Masonry (~> 1.0.2)
@@ -74,8 +74,8 @@ SPEC CHECKSUMS:
   CJBaseUtil: c1681e39a06c2c50b00b9a2e0523f4bfb723667b
   CJFile: 0b7c5e328318a7443638cf564b5f3d5d530c7df3
   CJFoundation: 0fa159680ecba5b0425dae6a633b75afb08eb62c
-  CJMedia: 0a1bde23678dec4b3fc93ff6d530992fe2b33c5f
-  CJNetwork: b806691372fe233a5998e3d2494e9c9a1c11ce59
+  CJMedia: be8bbac12f0d84b0a953de7f4e08a422f48678f1
+  CJNetwork: 7e510d8951e95bc919054a9c536dbf5a3e491561
   JGActionSheet: 2cfca820b57a11ec4b4a5655d45ee599fbeddc05
   Mantle: 2fa750afa478cd625a94230fbf1c13462f29395b
   Masonry: 7c429b56da9d4ee0bbb3ed77a5ea710d6a5df39e
@@ -90,6 +90,6 @@ SPEC CHECKSUMS:
   SDWebImage: 89a9d32cd520bbb46eb14e541d5109b3564af198
   Shimmer: c5374be1c2b0c9e292fb05b339a513cf291cac86
 
-PODFILE CHECKSUM: d7f6a9094c6001484f12b7e603f6d682fd7f42eb
+PODFILE CHECKSUM: 325e1356044368837bbc22246baeac010aec74c2
 
 COCOAPODS: 1.4.0.beta.1

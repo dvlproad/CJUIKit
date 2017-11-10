@@ -29,7 +29,7 @@ Pod::Spec.new do |s|
 
   s.platform     = :ios, "7.0"
  
-  s.source       = { :git => "https://github.com/dvlproad/CJUIKit.git", :tag => "CJBaseUIKit_0.1.6" }
+  s.source       = { :git => "https://github.com/dvlproad/CJUIKit.git", :tag => "CJComplexUIKit_0.0.1" }
   s.source_files  = "CJComplexUIKit/*.{h,m}"
 
   s.frameworks = "UIKit"
@@ -49,9 +49,8 @@ Pod::Spec.new do |s|
     ss.subspec 'SearchScrollView' do |sss|
       sss.source_files = "CJComplexUIKit/CJDataScrollView/SearchScrollView/**/*.{h,m}"
 
-      sss.dependency 'CJBaseUIKit/CJCollectionView/MyEqualCellSizeCollectionView'
-
       # 搜索功能需要依赖的库
+      sss.dependency 'CJBaseUIKit/CJCollectionView/MyEqualCellSizeCollectionView'
       sss.dependency 'CJBaseUtil/CJDataUtil', '~> 0.1.1'
       sss.dependency 'NSOperationQueueUtil', '~> 0.0.1'
     end
@@ -67,12 +66,12 @@ Pod::Spec.new do |s|
       sss.dependency 'CJBaseUIKit/CJCollectionView/MyEqualCellSizeCollectionView'
       sss.dependency 'CJBaseUIKit/CJCollectionView/CJBaseCollectionViewCell'
 
-      sss.dependency 'CJMedia/CJValidateAuthorizationUtil', "~> 0.0.3"
-      sss.dependency 'CJMedia/MySingleImagePickerController', "~> 0.0.3"
-      sss.dependency 'CJMedia/CJPhotoBrowser', "~> 0.0.3"
+      sss.dependency 'CJMedia/CJValidateAuthorizationUtil', "~> 0.0.4"
+      sss.dependency 'CJMedia/MySingleImagePickerController', "~> 0.0.4"
+      sss.dependency 'CJMedia/CJPhotoBrowser', "~> 0.0.4"
 
       sss.dependency 'CJFile/CJFileManager', "~> 0.0.2"
-      sss.dependency 'CJNetwork/AFNetworkingUploadComponent', "~> 0.1.0"
+      sss.dependency 'CJNetwork/AFNetworkingUploadComponent', "~> 0.1.3"
       
     end
 

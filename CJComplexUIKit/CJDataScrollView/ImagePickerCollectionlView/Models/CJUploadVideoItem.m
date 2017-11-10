@@ -2,17 +2,12 @@
 //  CJUploadVideoItem.m
 //  CommonAFNUtilDemo
 //
-//  Created by dvlproad on 2017/2/23.
+//  Created by ciyouzen on 2017/2/23.
 //  Copyright © 2017年 dvlproad. All rights reserved.
 //
 
 #import "CJUploadVideoItem.h"
-
-#ifdef CJTESTPOD
-#import "UIImage+CJTransformSize.h"
-#else
-#import <CJBaseUIKit/UIImage+CJTransformSize.h>
-#endif
+#import <CJMedia/CJAlumbImageUtil.h>
 
 @implementation CJUploadVideoItem
 
@@ -20,7 +15,7 @@
 - (instancetype)initWithShowImage:(UIImage *)showImage
            imageLocalRelativePath:(NSString *)imageLocalRelativePath
            videoLocalRelativePath:(NSString *)videoLocalRelativePath
-                      uploadItems:(NSArray<CJUploadItemModel *> *)uploadItems
+                 uploadFileModels:(NSArray<CJUploadFileModel *> *)uploadFileModels
 {
     self = [super init];
     if (self) {
@@ -28,7 +23,7 @@
         
         self.imageLocalRelativePath = imageLocalRelativePath;
         self.videoLocalRelativePath = videoLocalRelativePath;
-        self.uploadItems = [NSMutableArray arrayWithArray:uploadItems];
+        self.uploadFileModels = [NSMutableArray arrayWithArray:uploadFileModels];
     }
     
     return self;
@@ -43,7 +38,7 @@
         imageData = UIImageJPEGRepresentation(image, 0.8);
         if ([imageData length] > 0.5 * 1024 * 1024) {
             UIImage *tempImage = [UIImage imageWithData:imageData];
-            image = [tempImage cj_transformImageToSize:CGSizeMake(1920, 1920) withScaleType:CJScaleTypeMinification];
+            image = [CJAlumbImageUtil cj_transformImage:tempImage toMinificationSize:CGSizeMake(1920, 1920)];
         }
         
         imageData = UIImageJPEGRepresentation(image,0.8);
