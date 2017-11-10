@@ -8,6 +8,9 @@
 
 #import "CJImagePickerViewController.h"
 #import "CJImagePickerViewController+UpdateGroupArray.h"
+
+#import "CJValidateAuthorizationUtil.h"
+
 #import "CJMultiColumnPhotoTableViewCell.h"
 
 #import <AVFoundation/AVFoundation.h>
@@ -102,8 +105,8 @@
 
     __weak typeof(self)weakSelf = self;
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        BOOL isAuthorization = [CJImagePickerViewController checkPhotoLibraryAuthorizationStatus];
-        if(isAuthorization == NO){
+        BOOL isAlbumEnable = [CJValidateAuthorizationUtil checkEnableForDeviceComponentType:CJDeviceComponentTypeAlbum inViewController:self];
+        if(isAlbumEnable == NO){
             return;
         }
         [NSThread detachNewThreadSelector:@selector(reloadPhotoLibrary) toTarget:weakSelf withObject:nil];
@@ -585,46 +588,6 @@
     return cell;
 }
 
-
-///检查“相册PhotoLibrary”授权问题
-+ (BOOL)checkPhotoLibraryAuthorizationStatus {
-    BOOL isAuthorization = NO;
-    
-    AVAuthorizationStatus authStatus = [ALAssetsLibrary authorizationStatus];
-    switch (authStatus) {
-        case AVAuthorizationStatusAuthorized:   //已授权，可使用
-        {
-            isAuthorization = YES;
-            break;
-        }
-        case AVAuthorizationStatusNotDetermined://未进行授权选择
-        {
-            isAuthorization = YES;
-            break;
-        }
-        case AVAuthorizationStatusRestricted:   //未授权，且用户无法更新，如家长控制情况下
-        case AVAuthorizationStatusDenied:       //用户拒绝App使用
-        {
-            isAuthorization = NO;
-            break;
-        }
-        default:
-        {
-            isAuthorization = NO;
-            break;
-        }
-    }
-    
-    if(isAuthorization == NO) {
-        [[[UIAlertView alloc] initWithTitle:@"无法访问相册"
-                                    message:@"请在设备的\"设置-隐私-照片\"中允许访问照片。"
-                                   delegate:nil
-                          cancelButtonTitle:@"确定"
-                          otherButtonTitles:nil] show];
-    }
-    
-    return isAuthorization;
-}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

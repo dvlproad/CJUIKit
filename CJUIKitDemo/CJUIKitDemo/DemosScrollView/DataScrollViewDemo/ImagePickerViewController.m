@@ -7,16 +7,6 @@
 //
 
 #import "ImagePickerViewController.h"
-#import "UIImagePickerControllerUtil.h"
-
-#import <JGActionSheet/JGActionSheet.h>
-#import <CJFile/CJFileManager+SaveFileData.h>
-
-#import "CJUploadItemModel.h"
-#import "CJImageUploadItem.h"
-#import "CJImagePickerViewController.h"
-
-//#import "IjinbuNetworkClient+Login.h"
 
 @interface ImagePickerViewController ()
 

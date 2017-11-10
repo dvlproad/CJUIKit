@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "CJBaseUIKit"
-  s.version      = "0.1.5"
+  s.version      = "0.1.6"
   s.summary      = "自定义的基础UI"
   s.homepage     = "https://github.com/dvlproad/CJUIKit"
 
@@ -18,7 +18,6 @@ Pod::Spec.new do |s|
                   2、CJBaseCollectionViewCell：基础的CollectionViewCell;
                   3、MyEqualCellSizeCollectionView：一个只有一个分区且分区中的每个cell大小相等的集合视图(cell的大小可通过方法①设置cell的固定大小和方法②通过设置每行最大显示的cell个数获得)
                   4、CJOpenCollectionView：可展开的集合视图
-                  5、CJDataScrollView：带数据的列表视图或集合视图(常用于搜索、图片选择)
 
                    A longer description of CJPopupAction in Markdown format.
 
@@ -37,12 +36,12 @@ Pod::Spec.new do |s|
   #}
   s.license      = "MIT"
 
-  s.author   = { "lichq" => "" }
+  s.author   = { "dvlproad" => "" }
 
   s.platform     = :ios, "7.0"
  
-  s.source       = { :git => "https://github.com/dvlproad/CJUIKit.git", :tag => "CJBaseUIKit_0.1.5" }
-  s.source_files  = "CJUIKit/*.{h,m}"
+  s.source       = { :git => "https://github.com/dvlproad/CJUIKit.git", :tag => "CJBaseUIKit_0.1.6" }
+  s.source_files  = "CJBaseUIKit/*.{h,m}"
 
   s.frameworks = "UIKit"
 
@@ -53,11 +52,11 @@ Pod::Spec.new do |s|
 
 
   s.subspec 'UIColor+CJCategory' do |ss|
-    ss.source_files = "CJUIKit/UIColor+CJCategory/**/*.{h,m}"
+    ss.source_files = "CJBaseUIKit/UIColor+CJCategory/**/*.{h,m}"
   end
 
   s.subspec 'UIImage+CJCategory' do |ss|
-    ss.source_files = "CJUIKit/UIImage+CJCategory/**/*.{h,m}"
+    ss.source_files = "CJBaseUIKit/UIImage+CJCategory/**/*.{h,m}"
   end
 
 
@@ -66,12 +65,12 @@ Pod::Spec.new do |s|
 
 
   s.subspec 'UIViewController' do |ss|
-    ss.source_files = "CJUIKit/UIViewController/**/*.{h,m}"
-    ss.resources = "CJUIKit/UIViewController/**/*.{png,xib}"
+    ss.source_files = "CJBaseUIKit/UIViewController/**/*.{h,m}"
+    ss.resources = "CJBaseUIKit/UIViewController/**/*.{png,xib}"
   end
 
   s.subspec 'UINavigationBar+CJCategory' do |ss|
-    ss.source_files = "CJUIKit/UINavigationBar+CJCategory/**/*.{h,m}"
+    ss.source_files = "CJBaseUIKit/UINavigationBar+CJCategory/**/*.{h,m}"
   end
 
 
@@ -81,39 +80,39 @@ Pod::Spec.new do |s|
   
 
   s.subspec 'UIView+CJCategory' do |ss|
-    ss.source_files = "CJUIKit/UIView+CJCategory/**/*.{h,m}"
+    ss.source_files = "CJBaseUIKit/UIView+CJCategory/**/*.{h,m}"
   end
 
   s.subspec 'UIWindow' do |ss|
-    ss.source_files = "CJUIKit/UIWindow/**/*.{h,m}"
+    ss.source_files = "CJBaseUIKit/UIWindow/**/*.{h,m}"
   end
 
   s.subspec 'UIButton+CJCategory' do |ss|
-    ss.source_files = "CJUIKit/UIButton+CJCategory/**/*.{h,m}"
+    ss.source_files = "CJBaseUIKit/UIButton+CJCategory/**/*.{h,m}"
   end
 
   s.subspec 'CJImageView' do |ss|
-    ss.source_files = "CJUIKit/CJImageView/**/*.{h,m}"
-    # ss.resources = "CJUIKit/CJImageView/**/*.{png,xib}"
+    ss.source_files = "CJBaseUIKit/CJImageView/**/*.{h,m}"
+    # ss.resources = "CJBaseUIKit/CJImageView/**/*.{png,xib}"
   end
 
   s.subspec 'UITextField' do |ss|
-    ss.source_files = "CJUIKit/UITextField/**/*.{h,m}"
+    ss.source_files = "CJBaseUIKit/UITextField/**/*.{h,m}"
   end
 
   s.subspec 'CJTextView' do |ss|
-    ss.source_files = "CJUIKit/CJTextView/**/*.{h,m}"
-    # ss.resources = "CJUIKit/CJTextView/**/*.{png,xib}"
+    ss.source_files = "CJBaseUIKit/CJTextView/**/*.{h,m}"
+    # ss.resources = "CJBaseUIKit/CJTextView/**/*.{png,xib}"
   end
   
   s.subspec 'UIToolbar' do |ss|
-    ss.source_files = "CJUIKit/UIToolbar/**/*.{h,m}"
-    # ss.resources = "CJUIKit/UIToolbar/**/*.{png,xib}"
+    ss.source_files = "CJBaseUIKit/UIToolbar/**/*.{h,m}"
+    # ss.resources = "CJBaseUIKit/UIToolbar/**/*.{png,xib}"
   end
 
   s.subspec 'CJScrollView' do |ss|
-    ss.source_files = "CJUIKit/CJScrollView/**/*.{h,m}"
-    # ss.resources = "CJUIKit/CJScrollView/**/*.{png,xib}"
+    ss.source_files = "CJBaseUIKit/CJScrollView/**/*.{h,m}"
+    # ss.resources = "CJBaseUIKit/CJScrollView/**/*.{png,xib}"
   end
 
 
@@ -122,82 +121,46 @@ Pod::Spec.new do |s|
 
   s.subspec 'CJTableView' do |ss|
     ss.subspec 'CJBaseTableViewCell' do |sss|
-      sss.source_files = "CJUIKit/CJBaseScrollView/CJTableView/CJBaseTableViewCell/**/*.{h,m}"
-      sss.resources = "CJUIKit/CJBaseScrollView/CJTableView/CJBaseTableViewCell/**/*.{png}"
+      sss.source_files = "CJBaseUIKit/CJBaseScrollView/CJTableView/CJBaseTableViewCell/**/*.{h,m}"
+      sss.resources = "CJBaseUIKit/CJBaseScrollView/CJTableView/CJBaseTableViewCell/**/*.{png}"
       sss.dependency "CJBaseUIKit/CJImageView"
     end
 
     ss.subspec 'CJBaseTableViewHeaderFooterView' do |sss|
-      sss.source_files = "CJUIKit/CJBaseScrollView/CJTableView/CJBaseTableViewHeaderFooterView/**/*.{h,m}"
+      sss.source_files = "CJBaseUIKit/CJBaseScrollView/CJTableView/CJBaseTableViewHeaderFooterView/**/*.{h,m}"
     end
 
   end
 
   s.subspec 'CJCollectionView' do |ss|
     ss.subspec 'CJBaseCollectionViewCell' do |sss|
-      sss.source_files = "CJUIKit/CJBaseScrollView/CJCollectionView/CJBaseCollectionViewCell/**/*.{h,m}"
+      sss.source_files = "CJBaseUIKit/CJBaseScrollView/CJCollectionView/CJBaseCollectionViewCell/**/*.{h,m}"
     end
 
     ss.subspec 'CJCollectionViewLayout' do |sss|
-      sss.source_files = "CJUIKit/CJBaseScrollView/CJCollectionView/CJCollectionViewLayout/**/*.{h,m}"
+      sss.source_files = "CJBaseUIKit/CJBaseScrollView/CJCollectionView/CJCollectionViewLayout/**/*.{h,m}"
     end
 
     # 各种集合视图
     # 一个只有一个分区且分区中的每个cell大小相等的集合视图(cell的大小可通过方法①设置cell的固定大小和方法②通过设置每行最大显示的cell个数获得)
     ss.subspec 'MyEqualCellSizeCollectionView' do |sss|
-      sss.source_files = "CJUIKit/CJBaseScrollView/CJCollectionView/MyEqualCellSizeCollectionView/**/*.{h,m}"
+      sss.source_files = "CJBaseUIKit/CJBaseScrollView/CJCollectionView/MyEqualCellSizeCollectionView/**/*.{h,m}"
     end
 
     # 可展开的集合视图
     ss.subspec 'CJOpenCollectionView' do |sss|
-      sss.source_files = "CJUIKit/CJBaseScrollView/CJCollectionView/CJOpenCollectionView/**/*.{h,m}"
+      sss.source_files = "CJBaseUIKit/CJBaseScrollView/CJCollectionView/CJOpenCollectionView/**/*.{h,m}"
     end
 
   end
-
-  # 带数据的列表视图或集合视图(常用于搜索、图片选择)
-  s.subspec 'CJDataScrollView' do |ss|
-    ss.subspec 'SearchScrollView' do |sss|
-      sss.source_files = "CJUIKit/CJBaseScrollView/CJDataScrollView/SearchScrollView/**/*.{h,m}"
-
-      sss.dependency 'CJBaseUIKit/CJCollectionView/MyEqualCellSizeCollectionView'
-
-      # 搜索功能需要依赖的库
-      sss.dependency 'CJBaseUtil/CJDataUtil', '~> 0.1.1'
-      sss.dependency 'NSOperationQueueUtil', '~> 0.0.1'
-    end
-
-    ss.subspec 'ImagePickerCollectionlView' do |sss|
-      sss.source_files = "CJUIKit/CJBaseScrollView/CJDataScrollView/ImagePickerCollectionlView/**/*.{h,m}"
-      sss.resources = "CJUIKit/CJBaseScrollView/CJDataScrollView/ImagePickerCollectionlView/**/*.{png,xib,bundle}"
-      sss.frameworks = "MediaPlayer"
-
-      # 图片选择功能需要依赖的库
-      sss.dependency 'JGActionSheet'
-      sss.dependency 'CJBaseUIKit/UIImage+CJCategory'
-      sss.dependency 'CJBaseUIKit/CJCollectionView/MyEqualCellSizeCollectionView'
-      sss.dependency 'CJBaseUIKit/CJCollectionView/CJBaseCollectionViewCell'
-      sss.dependency 'CJMedia/UIImagePickerControllerUtil', "~> 0.0.2"
-      sss.dependency 'CJMedia/CJPhotoBrowser', "~> 0.0.2"
-      sss.dependency 'CJFile/CJFileManager', "~> 0.0.2"
-      sss.dependency 'CJNetwork/AFNetworkingUploadComponent', "~> 0.1.0"
-      
-    end
-
-    
-  end
-
-
-
-
 
 
 
 
 
   s.subspec 'CJSlider' do |ss|
-    # ss.source_files = "CJUIKit/CJSlider/*.{h,m}", "CJUIKit/CJSlider/CJAdsorbModel/**/*.{h,m}"
-    ss.source_files = "CJUIKit/CJSlider/**/*.{h,m}"
+    # ss.source_files = "CJBaseUIKit/CJSlider/*.{h,m}", "CJBaseUIKit/CJSlider/CJAdsorbModel/**/*.{h,m}"
+    ss.source_files = "CJBaseUIKit/CJSlider/**/*.{h,m}"
   end
   
 
@@ -205,16 +168,16 @@ Pod::Spec.new do |s|
 
 
   s.subspec 'CJRefreshView' do |ss|
-    ss.source_files = "CJUIKit/CJRefreshView/**/*.{h,m}"
-    # ss.resources = "CJUIKit/CJRefreshView/**/*.{png,xib}"
+    ss.source_files = "CJBaseUIKit/CJRefreshView/**/*.{h,m}"
+    # ss.resources = "CJBaseUIKit/CJRefreshView/**/*.{png,xib}"
   end
 
   s.subspec 'CJMJRefreshComponent' do |ss|
-    ss.source_files = "CJUIKit/CJMJRefreshComponent/**/*.{h,m}"
-    ss.resources = "CJUIKit/CJMJRefreshComponent/**/*.{png,xib}"
+    ss.source_files = "CJBaseUIKit/CJMJRefreshComponent/**/*.{h,m}"
+    ss.resources = "CJBaseUIKit/CJMJRefreshComponent/**/*.{png,xib}"
 
     #多个依赖就写多行
-    #ss.dependency 'Masonry', '~> 1.0.2'
+    #ss.dependency 'Masonry'
     ss.dependency 'MJRefresh'
   end
 
@@ -223,8 +186,8 @@ Pod::Spec.new do |s|
 
 
   s.subspec 'CJToast' do |ss|
-    ss.source_files = "CJUIKit/CJToast/**/*.{h,m}"
-    ss.resources = "CJUIKit/CJToast/**/*.{png,xib}"
+    ss.source_files = "CJBaseUIKit/CJToast/**/*.{h,m}"
+    ss.resources = "CJBaseUIKit/CJToast/**/*.{png,xib}"
 
     #多个依赖就写多行
     ss.dependency 'MBProgressHUD'
@@ -232,8 +195,8 @@ Pod::Spec.new do |s|
 
 
   s.subspec 'CJManager' do |ss|
-    ss.source_files = "CJUIKit/CJManager/**/*.{h,m}"
-    #ss.resources = "CJUIKit/CJManager/**/*.{png,xib}"
+    ss.source_files = "CJBaseUIKit/CJManager/**/*.{h,m}"
+    #ss.resources = "CJBaseUIKit/CJManager/**/*.{png,xib}"
   end
 
 

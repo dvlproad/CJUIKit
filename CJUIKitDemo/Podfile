@@ -27,8 +27,9 @@ target 'CJUIKitDemo' do
   
   # 图片选择需要依赖的库
   pod 'JGActionSheet', '~> 1.0.5'
-  pod 'CJMedia/UIImagePickerControllerUtil', '~> 0.0.2'
-  pod 'CJMedia/CJPhotoBrowser', '~> 0.0.2'
+  pod 'CJMedia/CJValidateAuthorizationUtil', '~> 0.0.3'
+  pod 'CJMedia/MySingleImagePickerController', '~> 0.0.3'
+  pod 'CJMedia/CJPhotoBrowser', '~> 0.0.3'
   pod 'CJFile/CJFileManager', '~> 0.0.2'
   pod 'CJNetwork/AFNetworkingUploadComponent', '~> 0.1.2' #需要8.0以上
   

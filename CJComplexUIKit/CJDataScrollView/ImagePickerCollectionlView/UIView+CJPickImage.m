@@ -7,7 +7,7 @@
 //
 
 #import "UIView+CJPickImage.h"
-#import "UIImagePickerControllerUtil.h"
+#import <CJMedia/MySingleImagePickerController.h>
 
 #import <AVFoundation/AVFoundation.h>
 #import <CJFile/CJFileManager+SaveFileData.h>
@@ -15,15 +15,12 @@
 @implementation UIView (CJPickImage)
 
 /* 完整的描述请参见文件头部 */
-- (UIImagePickerController *)takePhotoPickerWithPickCompleteBlock:(void (^)(NSArray<CJImageUploadItem *> *pickedImageItems))pickImageCompleteBlock {
-    UIImagePickerControllerSourceType sourceType = UIImagePickerControllerSourceTypeCamera;
-    //NSArray<NSString *> *mediaTypes = @[(NSString *)kUTTypeImage,(NSString *)kUTTypeMovie];
-    
-    UIImagePickerControllerUtil *imagePickerControllerUtil = [UIImagePickerControllerUtil sharedInstance];
-    imagePickerControllerUtil.saveLocation = CJSaveLocationNone;
-    
-    UIImagePickerController *imagePickerController =
-    [imagePickerControllerUtil createWithSourceType:sourceType isVideo:NO pickImageFinishBlock:^(UIImage *image)
+- (UIImagePickerController *)takePhotoPickerWithPickCompleteBlock:(void (^)(NSArray<CJImageUploadItem *> *pickedImageItems))pickImageCompleteBlock
+{
+    MySingleImagePickerController *singleImagePickerController = [[MySingleImagePickerController alloc] init];
+    [singleImagePickerController setSingleMediaTypeForVideo:NO];
+    singleImagePickerController.saveLocation = CJSaveLocationNone;
+    [singleImagePickerController pickImageFinishBlock:^(UIImage *image)
      {
          NSData *imageData = UIImageJPEGRepresentation(image, 1.0);
          
@@ -62,7 +59,7 @@
          
      }];
     
-    return imagePickerController;
+    return singleImagePickerController;
 }
 
 
