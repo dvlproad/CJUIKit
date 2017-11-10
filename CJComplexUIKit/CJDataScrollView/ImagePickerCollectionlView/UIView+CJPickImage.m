@@ -10,6 +10,7 @@
 #import <CJMedia/MySingleImagePickerController.h>
 
 #import <AVFoundation/AVFoundation.h>
+#import <CJFile/CJFileManager+GetCreatePath.h>
 #import <CJFile/CJFileManager+SaveFileData.h>
 
 @implementation UIView (CJPickImage)
