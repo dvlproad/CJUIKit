@@ -15,7 +15,7 @@ PODS:
   - AFNetworking/UIKit (3.1.0):
     - AFNetworking/NSURLSession
   - CJBaseUtil/CJDataUtil (0.1.1)
-  - CJFile/CJFileManager (0.0.6)
+  - CJFile/CJFileManager (0.0.7)
   - CJFoundation/NSString (0.0.5)
   - CJMedia/CJPhotoBrowser (0.0.4):
     - CJMedia/CJValidateAuthorizationUtil
@@ -25,8 +25,12 @@ PODS:
   - CJMedia/CJValidateAuthorizationUtil (0.0.4)
   - CJMedia/MySingleImagePickerController (0.0.4):
     - CJMedia/CJValidateAuthorizationUtil
+  - CJNetwork/AFNetworkingBaseComponent (0.1.3):
+    - CJNetwork/CJCacheManager
+    - CJNetwork/CJNetworkMonitor
   - CJNetwork/AFNetworkingUploadComponent (0.1.3):
     - CJNetwork/CJNetworkMonitor
+  - CJNetwork/CJCacheManager (0.1.3)
   - CJNetwork/CJNetworkMonitor (0.1.3):
     - AFNetworking (~> 3.1.0)
   - JGActionSheet (1.0.5)
@@ -39,6 +43,7 @@ PODS:
   - MJPopupViewController (0.4)
   - MJRefresh (3.1.15)
   - NSOperationQueueUtil (0.0.1)
+  - OpenUDID (1.0.0)
   - PinYin4Objc (1.1.1)
   - PureLayout (3.0.2)
   - SDCycleScrollView (1.74):
@@ -47,14 +52,16 @@ PODS:
     - SDWebImage/Core (= 4.2.2)
   - SDWebImage/Core (4.2.2)
   - Shimmer (1.0.2)
+  - SVProgressHUD (2.2.2)
 
 DEPENDENCIES:
   - CJBaseUtil/CJDataUtil (~> 0.1.1)
-  - CJFile/CJFileManager (~> 0.0.6)
+  - CJFile/CJFileManager (~> 0.0.7)
   - CJFoundation/NSString (~> 0.0.4)
   - CJMedia/CJPhotoBrowser (~> 0.0.4)
   - CJMedia/CJValidateAuthorizationUtil (~> 0.0.4)
   - CJMedia/MySingleImagePickerController (~> 0.0.4)
+  - CJNetwork/AFNetworkingBaseComponent (~> 0.1.3)
   - CJNetwork/AFNetworkingUploadComponent (~> 0.1.3)
   - JGActionSheet (~> 1.0.5)
   - Mantle (~> 2.1.0)
@@ -64,15 +71,17 @@ DEPENDENCIES:
   - MJPopupViewController (~> 0.4)
   - MJRefresh (~> 3.1.12)
   - NSOperationQueueUtil (~> 0.0.1)
+  - OpenUDID (~> 1.0.0)
   - PinYin4Objc (~> 1.1.1)
   - PureLayout (~> 3.0.2)
   - SDCycleScrollView (~> 1.73)
   - Shimmer (~> 1.0.2)
+  - SVProgressHUD (~> 2.2.2)
 
 SPEC CHECKSUMS:
   AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
   CJBaseUtil: c1681e39a06c2c50b00b9a2e0523f4bfb723667b
-  CJFile: 12d45ae82d3978a7bc9507eee471d307abe6f316
+  CJFile: d20aa52613403a52d8fd29d217058fbf47177fd9
   CJFoundation: 0fa159680ecba5b0425dae6a633b75afb08eb62c
   CJMedia: be8bbac12f0d84b0a953de7f4e08a422f48678f1
   CJNetwork: 7e510d8951e95bc919054a9c536dbf5a3e491561
@@ -84,12 +93,14 @@ SPEC CHECKSUMS:
   MJPopupViewController: e9ad553a3145eb8126ba2748e872ae7fb25cc605
   MJRefresh: 9af70f5f9327a2cf87f0fb5929f35fcc2fa638ea
   NSOperationQueueUtil: 5fc4a680df594ec543130708b54a478d037cb933
+  OpenUDID: e7cb6984c7304906ad20f3a36bf087b025896b6b
   PinYin4Objc: 3fa9673610368330e2dfb688b1d19a35c3930a78
   PureLayout: 4d550abe49a94f24c2808b9b95db9131685fe4cd
   SDCycleScrollView: f821215226f6146a35470721a9d6e83ec5cfb04b
   SDWebImage: 89a9d32cd520bbb46eb14e541d5109b3564af198
   Shimmer: c5374be1c2b0c9e292fb05b339a513cf291cac86
+  SVProgressHUD: 59b2d3dabacbd051576d21d32293ca7228dc18b0
 
-PODFILE CHECKSUM: a0b98e4dd492f3b87232df0ed527081c2f47ed51
+PODFILE CHECKSUM: 9dbd4a38b35ef4243b2d0e0579870c9b10f7caad
 
 COCOAPODS: 1.4.0.beta.1

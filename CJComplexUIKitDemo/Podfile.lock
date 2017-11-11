@@ -16,7 +16,7 @@ PODS:
     - AFNetworking/NSURLSession
   - CJBaseUIKit/CJCollectionView/MyEqualCellSizeCollectionView (0.1.6)
   - CJBaseUtil/CJDataUtil (0.1.1)
-  - CJFile/CJFileManager (0.0.2)
+  - CJFile/CJFileManager (0.0.7)
   - CJMedia/CJPhotoBrowser (0.0.4):
     - CJMedia/CJValidateAuthorizationUtil
     - Masonry
@@ -46,11 +46,11 @@ PODS:
 DEPENDENCIES:
   - CJBaseUIKit/CJCollectionView/MyEqualCellSizeCollectionView (~> 0.1.6)
   - CJBaseUtil/CJDataUtil (~> 0.1.1)
-  - CJFile/CJFileManager (~> 0.0.2)
-  - CJMedia/CJPhotoBrowser (~> 0.0.3)
-  - CJMedia/CJValidateAuthorizationUtil (~> 0.0.3)
-  - CJMedia/MySingleImagePickerController (~> 0.0.3)
-  - CJNetwork/AFNetworkingUploadComponent (~> 0.1.2)
+  - CJFile/CJFileManager (~> 0.0.7)
+  - CJMedia/CJPhotoBrowser (~> 0.0.4)
+  - CJMedia/CJValidateAuthorizationUtil (~> 0.0.4)
+  - CJMedia/MySingleImagePickerController (~> 0.0.4)
+  - CJNetwork/AFNetworkingUploadComponent (~> 0.1.3)
   - JGActionSheet (~> 1.0.5)
   - Mantle (~> 2.1.0)
   - Masonry (~> 1.0.2)
@@ -63,7 +63,7 @@ SPEC CHECKSUMS:
   AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
   CJBaseUIKit: 08392c3d50d4fd73a8734f715655b41ce46f968d
   CJBaseUtil: c1681e39a06c2c50b00b9a2e0523f4bfb723667b
-  CJFile: 0b7c5e328318a7443638cf564b5f3d5d530c7df3
+  CJFile: d20aa52613403a52d8fd29d217058fbf47177fd9
   CJMedia: be8bbac12f0d84b0a953de7f4e08a422f48678f1
   CJNetwork: 7e510d8951e95bc919054a9c536dbf5a3e491561
   JGActionSheet: 2cfca820b57a11ec4b4a5655d45ee599fbeddc05
@@ -76,6 +76,6 @@ SPEC CHECKSUMS:
   PureLayout: 4d550abe49a94f24c2808b9b95db9131685fe4cd
   SDWebImage: 89a9d32cd520bbb46eb14e541d5109b3564af198
 
-PODFILE CHECKSUM: c76c102819025afcb5d1b6f54ff9db11419755f9
+PODFILE CHECKSUM: 2ad8fac538363eaf11dab7d10f75f4ffbfd52fca
 
 COCOAPODS: 1.4.0.beta.1

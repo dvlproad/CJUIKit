@@ -9,6 +9,8 @@
 #import "AppDelegate.h"
 #import "AppDelegate+WindowRootViewController.h"
 
+#import <CJNetwork/CJNetworkMonitor.h>
+
 @interface AppDelegate ()
 
 @end
@@ -17,6 +19,10 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        //默认的设置，如网络监听等
+        [[CJNetworkMonitor sharedInstance] startNetworkMonitoring];
+    });
     
     
     // 设置主窗口,并设置根控制器

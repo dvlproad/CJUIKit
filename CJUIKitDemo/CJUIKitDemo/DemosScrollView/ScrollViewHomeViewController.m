@@ -34,7 +34,8 @@
 
 //DataScrollView
 #import "SearchTableViewController.h"
-#import "ImagePickerViewController.h"
+#import "UploadNoneImagePickerViewController.h"
+#import "UploadDirectlyImagePickerViewController.h"
 
 @interface ScrollViewHomeViewController () <UITableViewDataSource, UITableViewDelegate> {
     
@@ -182,8 +183,14 @@
         }
         {
             ModuleModel *imagePickerCollectionViewModule = [[ModuleModel alloc] init];
-            imagePickerCollectionViewModule.title = @"图片选择的集合视图";
-            imagePickerCollectionViewModule.classEntry = [ImagePickerViewController class];
+            imagePickerCollectionViewModule.title = @"图片选择的集合视图(没上传操作)";
+            imagePickerCollectionViewModule.classEntry = [UploadNoneImagePickerViewController class];
+            [sectionDataModel.values addObject:imagePickerCollectionViewModule];
+        }
+        {
+            ModuleModel *imagePickerCollectionViewModule = [[ModuleModel alloc] init];
+            imagePickerCollectionViewModule.title = @"图片选择的集合视图(有上传操作)";
+            imagePickerCollectionViewModule.classEntry = [UploadDirectlyImagePickerViewController class];
             [sectionDataModel.values addObject:imagePickerCollectionViewModule];
         }
         

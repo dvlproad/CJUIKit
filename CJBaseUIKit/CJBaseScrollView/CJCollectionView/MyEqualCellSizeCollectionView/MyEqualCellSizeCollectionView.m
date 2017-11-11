@@ -57,10 +57,8 @@
 - (void)commonInit {
 //    self.allowsMultipleSelection = YES;
     
-    [self setupCollectionView];
-}
-
-- (void)setupCollectionView {
+    //self.backgroundColor = [UIColor clearColor];
+    
     self.delegate = self;//UICollectionViewDelegateFlowLayout需实现UICollectionViewDelegate
     
     //为了解决MyEqualCellSizeCollectionView在某个自定义类里面使用，而不是在viewController中使用，而导致的无法实时准确的获取到CGRectGetWidth(self.frame)，从而来计算出准确的宽，所以我们应该采用实现协议的方法，而不是下面的这一行代码
