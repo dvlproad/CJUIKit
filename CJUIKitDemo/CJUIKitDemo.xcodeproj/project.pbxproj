@@ -97,7 +97,6 @@
 		789CAF611FB612B700AF8CD4 /* UIImage+CJMakeCircle.m in Sources */ = {isa = PBXBuildFile; fileRef = 789CAEBE1FB612B600AF8CD4 /* UIImage+CJMakeCircle.m */; };
 		789CAF621FB612B700AF8CD4 /* UIImage+CJQRCode.m in Sources */ = {isa = PBXBuildFile; fileRef = 789CAEC01FB612B600AF8CD4 /* UIImage+CJQRCode.m */; };
 		789CAF631FB612B700AF8CD4 /* UIImage+CJTransformSize.m in Sources */ = {isa = PBXBuildFile; fileRef = 789CAEC21FB612B600AF8CD4 /* UIImage+CJTransformSize.m */; };
-		789CAF641FB612B700AF8CD4 /* UIImage+Save.m in Sources */ = {isa = PBXBuildFile; fileRef = 789CAEC41FB612B600AF8CD4 /* UIImage+Save.m */; };
 		789CAF651FB612B700AF8CD4 /* UIImage+SplitImageIntoTwoParts.m in Sources */ = {isa = PBXBuildFile; fileRef = 789CAEC61FB612B600AF8CD4 /* UIImage+SplitImageIntoTwoParts.m */; };
 		789CAF661FB612B700AF8CD4 /* UINavigationBar+CJChangeBG.m in Sources */ = {isa = PBXBuildFile; fileRef = 789CAECA1FB612B600AF8CD4 /* UINavigationBar+CJChangeBG.m */; };
 		789CAF671FB612B700AF8CD4 /* UITableView+CJEmptyView.m in Sources */ = {isa = PBXBuildFile; fileRef = 789CAECD1FB612B600AF8CD4 /* UITableView+CJEmptyView.m */; };
@@ -525,8 +524,6 @@
 		789CAEC01FB612B600AF8CD4 /* UIImage+CJQRCode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+CJQRCode.m"; sourceTree = "<group>"; };
 		789CAEC11FB612B600AF8CD4 /* UIImage+CJTransformSize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+CJTransformSize.h"; sourceTree = "<group>"; };
 		789CAEC21FB612B600AF8CD4 /* UIImage+CJTransformSize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+CJTransformSize.m"; sourceTree = "<group>"; };
-		789CAEC31FB612B600AF8CD4 /* UIImage+Save.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Save.h"; sourceTree = "<group>"; };
-		789CAEC41FB612B600AF8CD4 /* UIImage+Save.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Save.m"; sourceTree = "<group>"; };
 		789CAEC51FB612B600AF8CD4 /* UIImage+SplitImageIntoTwoParts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+SplitImageIntoTwoParts.h"; sourceTree = "<group>"; };
 		789CAEC61FB612B600AF8CD4 /* UIImage+SplitImageIntoTwoParts.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+SplitImageIntoTwoParts.m"; sourceTree = "<group>"; };
 		789CAEC71FB612B600AF8CD4 /* UIImageCJCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIImageCJCategory.h; sourceTree = "<group>"; };
@@ -1486,8 +1483,6 @@
 				789CAEC01FB612B600AF8CD4 /* UIImage+CJQRCode.m */,
 				789CAEC11FB612B600AF8CD4 /* UIImage+CJTransformSize.h */,
 				789CAEC21FB612B600AF8CD4 /* UIImage+CJTransformSize.m */,
-				789CAEC31FB612B600AF8CD4 /* UIImage+Save.h */,
-				789CAEC41FB612B600AF8CD4 /* UIImage+Save.m */,
 				789CAEC51FB612B600AF8CD4 /* UIImage+SplitImageIntoTwoParts.h */,
 				789CAEC61FB612B600AF8CD4 /* UIImage+SplitImageIntoTwoParts.m */,
 				789CAEC71FB612B600AF8CD4 /* UIImageCJCategory.h */,
@@ -2899,7 +2894,6 @@
 				789CAF621FB612B700AF8CD4 /* UIImage+CJQRCode.m in Sources */,
 				80270D3D1FAC04CB001429F0 /* TextViewController.m in Sources */,
 				789CAF5D1FB612B700AF8CD4 /* UIImage+CJChangeColor.m in Sources */,
-				789CAF641FB612B700AF8CD4 /* UIImage+Save.m in Sources */,
 				789CAF651FB612B700AF8CD4 /* UIImage+SplitImageIntoTwoParts.m in Sources */,
 				78B740311FB6C04600443D87 /* IjinbuUploadItemResult.m in Sources */,
 				80270D251FAC04CB001429F0 /* RangeSliderViewController.m in Sources */,

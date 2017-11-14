@@ -27,7 +27,6 @@
 
 #import "UIImage+CJQRCode.h"
 
-#import "UIImage+Save.h"
 
 
 #endif /* UIImageCJCategory_h */
