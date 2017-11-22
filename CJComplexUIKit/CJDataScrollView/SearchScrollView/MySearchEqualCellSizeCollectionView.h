@@ -10,11 +10,11 @@
 
 #ifdef CJTESTPOD
 #import "MyEqualCellSizeCollectionView.h"
+#import "CJSectionDataModel.h"
 #else
 #import <CJBaseUIKit/MyEqualCellSizeCollectionView.h>
-#endif
-
 #import <CJBaseUtil/CJSectionDataModel.h> //在CJDataUtil中
+#endif
 
 
 typedef UICollectionViewCell* (^CJConfigureCollectionViewCellBlock)(UICollectionView *collectionView, NSIndexPath *indexPath);

@@ -7,7 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+
+#ifdef CJTESTPOD
+#import "CJSectionDataModel.h"
+#else
 #import <CJBaseUtil/CJSectionDataModel.h> //在CJDataUtil中
+#endif
+
 
 /**
  *  一个集成了搜索功能的UITableView

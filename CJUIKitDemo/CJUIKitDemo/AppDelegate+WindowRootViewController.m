@@ -12,6 +12,8 @@
 #import "ScrollViewHomeViewController.h"
 #import "OtherHomeViewController.h"
 #import "ThirdPartyHomeViewController.h"
+#import "FoundatioHomeViewController.h"
+#import "UtilHomeViewController.h"
 
 @implementation AppDelegate (WindowRootViewController)
 
@@ -40,15 +42,6 @@
     [tabBarController addChildViewController:scrollViewHomeNavigationController];
     
     
-    UIViewController *secondViewController = [[ThirdPartyHomeViewController alloc] initWithNibName:@"ThirdPartyHomeViewController" bundle:nil];
-    secondViewController.view.backgroundColor = [UIColor whiteColor];
-    secondViewController.navigationItem.title = NSLocalizedString(@"第三方库", nil);
-    secondViewController.tabBarItem.title = NSLocalizedString(@"第三方库", nil);
-    secondViewController.tabBarItem.image = [[UIImage imageNamed:@"icons8-calendar"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
-    UINavigationController *secondNavigationController = [[UINavigationController alloc] initWithRootViewController:secondViewController];
-    [tabBarController addChildViewController:secondNavigationController];
-    
-    
     UIViewController *viewController4 = [[OtherHomeViewController alloc] initWithNibName:@"OtherHomeViewController" bundle:nil];
     viewController4.view.backgroundColor = [UIColor whiteColor];
     viewController4.navigationItem.title = NSLocalizedString(@"基础小视图首页", nil);
@@ -56,6 +49,31 @@
     viewController4.tabBarItem.image = [[UIImage imageNamed:@"icons8-settings"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     UINavigationController *navigationController4 = [[UINavigationController alloc] initWithRootViewController:viewController4];
     [tabBarController addChildViewController:navigationController4];
+    
+    UIViewController *viewController5 = [[FoundatioHomeViewController alloc] initWithNibName:@"FoundatioHomeViewController" bundle:nil];
+    viewController5.view.backgroundColor = [UIColor whiteColor];
+    viewController5.navigationItem.title = NSLocalizedString(@"Foundation首页", nil);
+    viewController5.tabBarItem.title = NSLocalizedString(@"CJFoundataion", nil);
+    viewController5.tabBarItem.image = [[UIImage imageNamed:@"icons8-settings"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    UINavigationController *navigationController5 = [[UINavigationController alloc] initWithRootViewController:viewController5];
+    [tabBarController addChildViewController:navigationController5];
+    
+    UIViewController *viewController6 = [[UtilHomeViewController alloc] initWithNibName:@"UtilHomeViewController" bundle:nil];
+    viewController6.view.backgroundColor = [UIColor whiteColor];
+    viewController6.navigationItem.title = NSLocalizedString(@"Util首页", nil);
+    viewController6.tabBarItem.title = NSLocalizedString(@"CJUtil", nil);
+    viewController6.tabBarItem.image = [[UIImage imageNamed:@"icons8-settings"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    UINavigationController *navigationController6 = [[UINavigationController alloc] initWithRootViewController:viewController6];
+    [tabBarController addChildViewController:navigationController6];
+    
+    
+    UIViewController *secondViewController = [[ThirdPartyHomeViewController alloc] initWithNibName:@"ThirdPartyHomeViewController" bundle:nil];
+    secondViewController.view.backgroundColor = [UIColor whiteColor];
+    secondViewController.navigationItem.title = NSLocalizedString(@"第三方库", nil);
+    secondViewController.tabBarItem.title = NSLocalizedString(@"第三方库", nil);
+    secondViewController.tabBarItem.image = [[UIImage imageNamed:@"icons8-calendar"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    UINavigationController *secondNavigationController = [[UINavigationController alloc] initWithRootViewController:secondViewController];
+    [tabBarController addChildViewController:secondNavigationController];
     
 //    [tabBarController setViewControllers:@[firstNavigationController, secondNavigationController, navigationController3, navigationController4] animated:YES];
     

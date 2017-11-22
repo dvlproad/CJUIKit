@@ -15,7 +15,6 @@
  Denied:       //用户拒绝App使用
  //*/
 //相册权限判断
-#import <AssetsLibrary/AssetsLibrary.h> //(iOS8之前)
 #import <Photos/Photos.h>               //(iOS8之后)
 
 //相机权限判断
@@ -39,29 +38,29 @@
 {
     if (deviceComponentType == CJDeviceComponentTypeCamera) {
         if (![CJValidateAuthorizationUtil checkDeviceSupportCamera]) {
-            [self showAlertForDeviceComponentType:deviceComponentType withSpecificJurisdiction:NO inViewController:viewController];
+            [self showAlertForDeviceComponentType:deviceComponentType andIsForWholeDevice:YES inViewController:viewController];
             return NO;
         }
         
         if (![CJValidateAuthorizationUtil checkUserAuthorizationStatusForCamera]) {
-            [self showAlertForDeviceComponentType:deviceComponentType withSpecificJurisdiction:NO inViewController:viewController];
+            [self showAlertForDeviceComponentType:deviceComponentType andIsForWholeDevice:NO inViewController:viewController];
             return NO;
         }
         
     } else if (deviceComponentType == CJDeviceComponentTypeAlbum) {
         if (![CJValidateAuthorizationUtil checkUserAuthorizationStatusForAlbum]) {
-            [self showAlertForDeviceComponentType:deviceComponentType withSpecificJurisdiction:NO inViewController:viewController];
+            [self showAlertForDeviceComponentType:deviceComponentType andIsForWholeDevice:NO inViewController:viewController];
             return NO;
         }
         
     } else if (deviceComponentType == CJDeviceComponentTypeLocation) {
         if (![CJValidateAuthorizationUtil checkDeviceSupportLocation]) {
-            [self showAlertForDeviceComponentType:deviceComponentType withSpecificJurisdiction:NO inViewController:viewController];
+            [self showAlertForDeviceComponentType:deviceComponentType andIsForWholeDevice:YES inViewController:viewController];
             return NO;
         }
         
         if (![CJValidateAuthorizationUtil checkUserAuthorizationStatusForLocation]) {
-            [self showAlertForDeviceComponentType:deviceComponentType withSpecificJurisdiction:YES inViewController:viewController];
+            [self showAlertForDeviceComponentType:deviceComponentType andIsForWholeDevice:NO inViewController:viewController];
             return NO;
         }
         
@@ -114,23 +113,13 @@
 + (BOOL)checkUserAuthorizationStatusForAlbum {
     BOOL isAuthorization = NO;
     
-    if ([[[UIDevice currentDevice] systemVersion] floatValue] < 8.0) {
-        ALAuthorizationStatus authStatus = [ALAssetsLibrary authorizationStatus];
-        if (authStatus == ALAuthorizationStatusRestricted ||
-            authStatus == ALAuthorizationStatusDenied) {
-            isAuthorization = NO;
-        } else {
-            isAuthorization = YES;
-        }
-         
-     } else { //iOS 8 之后推荐用 #import <Photos/Photos.h> 中的判断
-         PHAuthorizationStatus authStatus = [PHPhotoLibrary authorizationStatus];
-         if (authStatus == PHAuthorizationStatusRestricted ||
-             authStatus == PHAuthorizationStatusDenied) {
-             isAuthorization = NO;
-         } else {
-             isAuthorization = YES;
-         }
+    //iOS 8 之后推荐用 #import <Photos/Photos.h> 中的判断
+     PHAuthorizationStatus authStatus = [PHPhotoLibrary authorizationStatus];
+     if (authStatus == PHAuthorizationStatusRestricted ||
+         authStatus == PHAuthorizationStatusDenied) {
+         isAuthorization = NO;
+     } else {
+         isAuthorization = YES;
      }
          
 
@@ -188,19 +177,13 @@
  *  没有权限，弹出权限弹窗
  *
  *  @param deviceComponentType  这个弹窗是要给谁的
- *  @param specificJurisdiction 这个弹窗是否针对具体的权限(还是通用的)
+ *  @param isForWholeDevice     这个弹窗是否是针对整个设备权限
  *  @param viewController       在哪个视图控制器中弹窗
  */
 + (void)showAlertForDeviceComponentType:(CJDeviceComponentType)deviceComponentType
-               withSpecificJurisdiction:(BOOL)specificJurisdiction
+                    andIsForWholeDevice:(BOOL)isForWholeDevice
                                    inViewController:(UIViewController *)viewController
 {
-//    [[[UIAlertView alloc]initWithTitle:NSLocalizedString(@"友情提示", nil)
-//                               message:NSLocalizedString(@"对不起，您的手机不支持拍照功能", nil)
-//                              delegate:nil
-//                     cancelButtonTitle:NSLocalizedString(@"好的，我知道了", nil)
-//                     otherButtonTitles:nil] show];
-    
     NSString *title = @"";
     NSString *message = @"";
     if (deviceComponentType == CJDeviceComponentTypeAlbum) {
@@ -220,17 +203,17 @@
     }];
     UIAlertAction *ok = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDestructive handler:^(UIAlertAction *action) {
         //无权限 引导去开启
-        if (specificJurisdiction) {
-            if (deviceComponentType == CJDeviceComponentTypeAlbum) {
-                [self openJurisdiction];
-            } else if (deviceComponentType == CJDeviceComponentTypeCamera) {
-                [self openJurisdiction];
-            } else if (deviceComponentType == CJDeviceComponentTypeLocation) {
-                [self openJurisdictionForLocation];
-            }
+        if (isForWholeDevice) {
+            [self openJurisdictionForWholeDevice:deviceComponentType];
             
         } else {
-            [self openJurisdiction];
+            if (deviceComponentType == CJDeviceComponentTypeAlbum) {
+                [self openJurisdictionForApp];
+            } else if (deviceComponentType == CJDeviceComponentTypeCamera) {
+                [self openJurisdictionForApp];
+            } else if (deviceComponentType == CJDeviceComponentTypeLocation) {
+                [self openJurisdictionForApp];
+            }
         }
         
         
@@ -241,20 +224,28 @@
     [viewController presentViewController:alertController animated:YES completion:nil];
 }
 
-///去设置界面开启权限
-+ (void)openJurisdiction {
-    //跳转至 系统的权限设置界面
+///跳转到"app的各个设置"页面，去设置权限
++ (void)openJurisdictionForApp {
     NSURL *url = [NSURL URLWithString:UIApplicationOpenSettingsURLString];
     if ([[UIApplication sharedApplication] canOpenURL:url]) {
         [[UIApplication sharedApplication] openURL:url];
     }
 }
 
-+ (void)openJurisdictionForLocation {
-    //跳转到  整个手机系统的“定位”设置界面
-    NSURL *url = [NSURL URLWithString:@"prefs:root=LOCATION_SERVICES"];
-    if ([[UIApplication sharedApplication] canOpenURL:url]) {
-        [[UIApplication sharedApplication] openURL:url];
+///跳转到"整个设备的对应隐私设置"页面
++ (void)openJurisdictionForWholeDevice:(CJDeviceComponentType)deviceComponentType {
+//    NSURL *URL = nil;
+//    if (deviceComponentType == CJDeviceComponentTypeLocation) {
+//        URL = [NSURL URLWithString:@"prefs:root=LOCATION_SERVICES"];
+//    }
+    NSURL *URL = [NSURL URLWithString:UIApplicationOpenSettingsURLString];
+    
+    if ([[UIApplication sharedApplication] canOpenURL:URL]) {
+        if ([[[UIDevice currentDevice] systemVersion] floatValue] < 10.0) {
+            [[UIApplication sharedApplication] openURL:URL];
+        } else {
+            [[UIApplication sharedApplication] openURL:URL options:@{} completionHandler:nil];
+        }
     }
 }
 

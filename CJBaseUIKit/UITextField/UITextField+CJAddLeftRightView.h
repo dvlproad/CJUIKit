@@ -14,8 +14,8 @@
  */
 @interface UITextField (CJAddLeftRightView)
 
-- (UIButton *)addLeftButtonWithNormalImage:(UIImage *)leftNormalImage leftHandel:(void (^)(UITextField *textField))leftHandle;
+- (UIButton *)cj_addLeftButtonWithNormalImage:(UIImage *)leftNormalImage leftHandel:(void (^)(UITextField *textField))leftHandle;
 
-- (UIButton *)addRightButtonWithNormalImage:(UIImage *)rightNormalImage rightHandel:(void (^)(UITextField *textField))rightHandle;
+- (UIButton *)cj_addRightButtonWithNormalImage:(UIImage *)rightNormalImage rightHandel:(void (^)(UITextField *textField))rightHandle;
 
 @end

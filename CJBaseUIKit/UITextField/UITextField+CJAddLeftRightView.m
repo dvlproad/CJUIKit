@@ -39,7 +39,7 @@ static NSString *kCJRightViewHandleKey = @"kCJRightViewHandleKey";
 }
 
 
-- (UIButton *)addLeftButtonWithNormalImage:(UIImage *)leftNormalImage leftHandel:(void (^)(UITextField *textField))leftHandle {
+- (UIButton *)cj_addLeftButtonWithNormalImage:(UIImage *)leftNormalImage leftHandel:(void (^)(UITextField *textField))leftHandle {
     UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
     [button setFrame:CGRectMake(0, 0, 30, 30)];
     [button setImageEdgeInsets:UIEdgeInsetsMake(0, 0, 3, 0)];
@@ -52,7 +52,7 @@ static NSString *kCJRightViewHandleKey = @"kCJRightViewHandleKey";
     return button;
 }
 
-- (UIButton *)addRightButtonWithNormalImage:(UIImage *)rightNormalImage rightHandel:(void (^)(UITextField *textField))rightHandle {
+- (UIButton *)cj_addRightButtonWithNormalImage:(UIImage *)rightNormalImage rightHandel:(void (^)(UITextField *textField))rightHandle {
     UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
     [button setFrame:CGRectMake(0, 0, 30, 30)];
     [button setImageEdgeInsets:UIEdgeInsetsMake(0, -3, 0, 0)];
