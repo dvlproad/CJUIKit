@@ -1,13 +1,14 @@
 Pod::Spec.new do |s|
   s.name         = "CJBaseUtil"
-  s.version      = "0.1.2"
+  s.version      = "0.2.0"
   s.summary      = "自定义的基础工具类"
-  s.homepage     = "https://github.com/dvlproad/CJFoundation"
+  s.homepage     = "https://github.com/dvlproad/CJUIKit"
   s.license      = "MIT"
   s.author       = "dvlproad"
 
   s.description  = <<-DESC
                   1、CJDataUtil：包含搜索、排序等数据处理工具类
+                  2、CJDateUtil：日期工具
 
                    A longer description of CJBaseUtil in Markdown format.
 
@@ -21,9 +22,9 @@ Pod::Spec.new do |s|
 
   s.platform     = :ios, "7.0"
 
-  s.source       = { :git => "https://github.com/dvlproad/CJFoundation.git", :tag => "CJBaseUtil_0.1.2" }
-  # s.source_files  = "CJFoundation/*.{h,m}"
-  # s.resources = "CJFoundation/**/*.{png}"
+  s.source       = { :git => "https://github.com/dvlproad/CJUIKit.git", :tag => "CJBaseUtil_0.2.0" }
+  # s.source_files  = "CJUIKit/*.{h,m}"
+  # s.resources = "CJUIKit/**/*.{png}"
   s.frameworks = 'UIKit'
 
   # s.library   = "iconv"
@@ -49,6 +50,11 @@ Pod::Spec.new do |s|
   # 包含搜索、排序等数据处理工具类
   s.subspec 'CJDataUtil' do |ss|
    ss.source_files = "CJBaseUtil/CJDataUtil/**/*.{h,m}"
+  end
+
+  # 日期工具
+  s.subspec 'CJDateUtil' do |ss|
+    ss.source_files = "CJBaseUtil/CJDateUtil/**/*.{h,m}"
   end
 
   s.subspec 'UIUtil' do |ss|

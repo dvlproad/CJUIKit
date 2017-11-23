@@ -16,7 +16,7 @@
 
 #import "CJDefaultToolbar.h"
 
-#import "NSDate+CJCategory.h"
+#import "CJCalendarUtil.h"
 
 @interface DateViewController () {
     
@@ -48,8 +48,9 @@
     self.dateTextField.text = [dateFormatter stringFromDate:self.currentDate];
     
     NSDate *birthdayDate = [dateFormatter dateFromString:@"1989-12-27 01:10:22"];
-    NSInteger yearInterval = [NSDate cj_dateIntervalFromDate:birthdayDate toDate:[NSDate date] inCalculateUnit:NSCalendarUnitYear];
-    NSInteger age = [NSDate cj_ageIntervalFromDate:birthdayDate toDate:[NSDate date]];
+    
+    NSInteger yearInterval = [CJCalendarUtil year_unitIntervalFromDate:birthdayDate toDate:[NSDate date]];
+    NSInteger age = [CJCalendarUtil age_unitIntervalFromDate:birthdayDate toDate:[NSDate date]];
     NSLog(@"今年周岁为：%ld, %ld", yearInterval, age);
     
 }
@@ -98,7 +99,8 @@
     [self.dateTextField cj_addLeftButtonWithNormalImage:[UIImage imageNamed:@"plus"] leftHandel:^(UITextField *textField) {
         [weakSelf hideDateChoosePicker];
         
-        NSDate *date = [weakSelf.currentDate cj_yesterday];
+        
+        NSDate *date = [CJCalendarUtil yesterday_dateFromSinceDate:weakSelf.currentDate];
         textField.text = [dateFormatter stringFromDate:date];
         
         weakSelf.currentDate = date;
@@ -106,7 +108,7 @@
     [self.dateTextField cj_addRightButtonWithNormalImage:[UIImage imageNamed:@"plus"] rightHandel:^(UITextField *textField) {
         [weakSelf hideDateChoosePicker];
         
-        NSDate *date = [weakSelf.currentDate cj_tomorrow];
+        NSDate *date = [CJCalendarUtil tomorrow_dateFromSinceDate:weakSelf.currentDate];
         textField.text = [dateFormatter stringFromDate:date];
         
         weakSelf.currentDate = date;

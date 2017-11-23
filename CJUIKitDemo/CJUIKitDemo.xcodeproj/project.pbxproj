@@ -334,14 +334,7 @@
 		80FF91391FC5668700E437CF /* NSString+CJTextSize.m in Sources */ = {isa = PBXBuildFile; fileRef = 80FF90E91FC5668600E437CF /* NSString+CJTextSize.m */; };
 		80FF913A1FC5668700E437CF /* NSString+CJEncoding.m in Sources */ = {isa = PBXBuildFile; fileRef = 80FF90EB1FC5668600E437CF /* NSString+CJEncoding.m */; };
 		80FF913B1FC5668700E437CF /* NSString+CJEncryption.m in Sources */ = {isa = PBXBuildFile; fileRef = 80FF90EC1FC5668600E437CF /* NSString+CJEncryption.m */; };
-		80FF913C1FC5668700E437CF /* CJDateUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 80FF90ED1FC5668600E437CF /* CJDateUtil.m */; };
 		80FF913D1FC5668700E437CF /* NSString+CJAttributedString.m in Sources */ = {isa = PBXBuildFile; fileRef = 80FF90EF1FC5668600E437CF /* NSString+CJAttributedString.m */; };
-		80FF913E1FC5668700E437CF /* CJDateModelUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 80FF90F71FC5668600E437CF /* CJDateModelUtil.m */; };
-		80FF913F1FC5668700E437CF /* CJDateModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 80FF90FA1FC5668600E437CF /* CJDateModel.m */; };
-		80FF91401FC5668700E437CF /* NSDate+CJDateInterval.m in Sources */ = {isa = PBXBuildFile; fileRef = 80FF90FD1FC5668600E437CF /* NSDate+CJDateInterval.m */; };
-		80FF91411FC5668700E437CF /* NSDate+CJJudge.m in Sources */ = {isa = PBXBuildFile; fileRef = 80FF90FE1FC5668600E437CF /* NSDate+CJJudge.m */; };
-		80FF91421FC5668700E437CF /* NSDate+CJExtendedDate.m in Sources */ = {isa = PBXBuildFile; fileRef = 80FF90FF1FC5668600E437CF /* NSDate+CJExtendedDate.m */; };
-		80FF91431FC5668700E437CF /* NSDate+CJDateValue.m in Sources */ = {isa = PBXBuildFile; fileRef = 80FF91011FC5668600E437CF /* NSDate+CJDateValue.m */; };
 		80FF91441FC5668700E437CF /* CJDeviceUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 80FF91041FC5668700E437CF /* CJDeviceUtil.m */; };
 		80FF91451FC5668700E437CF /* CJWebUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 80FF91071FC5668700E437CF /* CJWebUtil.m */; };
 		80FF91461FC5668700E437CF /* CJDataUtil+CJSectionDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 80FF910E1FC5668700E437CF /* CJDataUtil+CJSectionDataModel.m */; };
@@ -384,6 +377,12 @@
 		80FF91C41FC581DD00E437CF /* DeviceInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 80FF91BD1FC581DD00E437CF /* DeviceInfo.m */; };
 		80FF91C51FC581DD00E437CF /* UtilHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80FF91BF1FC581DD00E437CF /* UtilHomeViewController.m */; };
 		80FF91CD1FC582D200E437CF /* CJPinyinHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 80FF91CB1FC582D100E437CF /* CJPinyinHelper.m */; };
+		80FF91CF1FC586DA00E437CF /* plus@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 80FF91CE1FC586D900E437CF /* plus@2x.png */; };
+		80FF91E81FC6739D00E437CF /* CJDateModelUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 80FF91DE1FC6739C00E437CF /* CJDateModelUtil.m */; };
+		80FF91E91FC6739D00E437CF /* CJDateModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 80FF91E11FC6739C00E437CF /* CJDateModel.m */; };
+		80FF91EA1FC6739D00E437CF /* CJCalendarUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 80FF91E31FC6739C00E437CF /* CJCalendarUtil.m */; };
+		80FF91EB1FC6739D00E437CF /* CJDateFormatterUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 80FF91E41FC6739C00E437CF /* CJDateFormatterUtil.m */; };
+		80FF91EC1FC6739D00E437CF /* CJDateOtherUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 80FF91E51FC6739C00E437CF /* CJDateOtherUtil.m */; };
 		E2649F5BE7F7FEF404688168 /* libPods-CJUIKitDemoTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 935109AAB855F6CC8B84B9A5 /* libPods-CJUIKitDemoTests.a */; };
 /* End PBXBuildFile section */
 
@@ -925,31 +924,16 @@
 		80FF90E31FC5668600E437CF /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		80FF90E51FC5668600E437CF /* NSString+CJEncryption.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+CJEncryption.h"; sourceTree = "<group>"; };
 		80FF90E61FC5668600E437CF /* NSString+CJEncoding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+CJEncoding.h"; sourceTree = "<group>"; };
-		80FF90E71FC5668600E437CF /* CJDateUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJDateUtil.h; sourceTree = "<group>"; };
 		80FF90E81FC5668600E437CF /* NSString+CJValidate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+CJValidate.m"; sourceTree = "<group>"; };
 		80FF90E91FC5668600E437CF /* NSString+CJTextSize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+CJTextSize.m"; sourceTree = "<group>"; };
 		80FF90EA1FC5668600E437CF /* NSString+CJAttributedString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+CJAttributedString.h"; sourceTree = "<group>"; };
 		80FF90EB1FC5668600E437CF /* NSString+CJEncoding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+CJEncoding.m"; sourceTree = "<group>"; };
 		80FF90EC1FC5668600E437CF /* NSString+CJEncryption.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+CJEncryption.m"; sourceTree = "<group>"; };
-		80FF90ED1FC5668600E437CF /* CJDateUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJDateUtil.m; sourceTree = "<group>"; };
 		80FF90EE1FC5668600E437CF /* NSString+CJCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+CJCategory.h"; sourceTree = "<group>"; };
 		80FF90EF1FC5668600E437CF /* NSString+CJAttributedString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+CJAttributedString.m"; sourceTree = "<group>"; };
 		80FF90F01FC5668600E437CF /* NSString+CJTextSize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+CJTextSize.h"; sourceTree = "<group>"; };
 		80FF90F11FC5668600E437CF /* NSString+CJValidate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+CJValidate.h"; sourceTree = "<group>"; };
 		80FF90F21FC5668600E437CF /* CJFoundation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJFoundation.h; sourceTree = "<group>"; };
-		80FF90F41FC5668600E437CF /* NSDate+CJJudge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+CJJudge.h"; sourceTree = "<group>"; };
-		80FF90F51FC5668600E437CF /* NSDate+CJExtendedDate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+CJExtendedDate.h"; sourceTree = "<group>"; };
-		80FF90F71FC5668600E437CF /* CJDateModelUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJDateModelUtil.m; sourceTree = "<group>"; };
-		80FF90F81FC5668600E437CF /* CJDateModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJDateModel.h; sourceTree = "<group>"; };
-		80FF90F91FC5668600E437CF /* CJDateModelUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJDateModelUtil.h; sourceTree = "<group>"; };
-		80FF90FA1FC5668600E437CF /* CJDateModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJDateModel.m; sourceTree = "<group>"; };
-		80FF90FB1FC5668600E437CF /* NSDate+CJCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+CJCategory.h"; sourceTree = "<group>"; };
-		80FF90FC1FC5668600E437CF /* NSDate+CJDateValue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+CJDateValue.h"; sourceTree = "<group>"; };
-		80FF90FD1FC5668600E437CF /* NSDate+CJDateInterval.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+CJDateInterval.m"; sourceTree = "<group>"; };
-		80FF90FE1FC5668600E437CF /* NSDate+CJJudge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+CJJudge.m"; sourceTree = "<group>"; };
-		80FF90FF1FC5668600E437CF /* NSDate+CJExtendedDate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+CJExtendedDate.m"; sourceTree = "<group>"; };
-		80FF91001FC5668600E437CF /* NSDate+CJDateInterval.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+CJDateInterval.h"; sourceTree = "<group>"; };
-		80FF91011FC5668600E437CF /* NSDate+CJDateValue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+CJDateValue.m"; sourceTree = "<group>"; };
 		80FF91041FC5668700E437CF /* CJDeviceUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJDeviceUtil.m; sourceTree = "<group>"; };
 		80FF91051FC5668700E437CF /* CJDeviceUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJDeviceUtil.h; sourceTree = "<group>"; };
 		80FF91071FC5668700E437CF /* CJWebUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJWebUtil.m; sourceTree = "<group>"; };
@@ -1025,6 +1009,17 @@
 		80FF91BF1FC581DD00E437CF /* UtilHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UtilHomeViewController.m; sourceTree = "<group>"; };
 		80FF91CB1FC582D100E437CF /* CJPinyinHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJPinyinHelper.m; sourceTree = "<group>"; };
 		80FF91CC1FC582D100E437CF /* CJPinyinHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJPinyinHelper.h; sourceTree = "<group>"; };
+		80FF91CE1FC586D900E437CF /* plus@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "plus@2x.png"; sourceTree = "<group>"; };
+		80FF91DE1FC6739C00E437CF /* CJDateModelUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJDateModelUtil.m; sourceTree = "<group>"; };
+		80FF91DF1FC6739C00E437CF /* CJDateModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJDateModel.h; sourceTree = "<group>"; };
+		80FF91E01FC6739C00E437CF /* CJDateModelUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJDateModelUtil.h; sourceTree = "<group>"; };
+		80FF91E11FC6739C00E437CF /* CJDateModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJDateModel.m; sourceTree = "<group>"; };
+		80FF91E21FC6739C00E437CF /* CJDateOtherUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJDateOtherUtil.h; sourceTree = "<group>"; };
+		80FF91E31FC6739C00E437CF /* CJCalendarUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJCalendarUtil.m; sourceTree = "<group>"; };
+		80FF91E41FC6739C00E437CF /* CJDateFormatterUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJDateFormatterUtil.m; sourceTree = "<group>"; };
+		80FF91E51FC6739C00E437CF /* CJDateOtherUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJDateOtherUtil.m; sourceTree = "<group>"; };
+		80FF91E61FC6739C00E437CF /* CJCalendarUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJCalendarUtil.h; sourceTree = "<group>"; };
+		80FF91E71FC6739C00E437CF /* CJDateFormatterUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJDateFormatterUtil.h; sourceTree = "<group>"; };
 		935109AAB855F6CC8B84B9A5 /* libPods-CJUIKitDemoTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CJUIKitDemoTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9AC0A78AFE86FE250B370A06 /* Pods-CJUIKitDemoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CJUIKitDemoTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CJUIKitDemoTests/Pods-CJUIKitDemoTests.debug.xcconfig"; sourceTree = "<group>"; };
 		A078401C0E781545EB72B64D /* libPods-CJUIKitDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CJUIKitDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -1169,6 +1164,7 @@
 				78E269BB1ECC5E1A007D3686 /* bgCar@2x.jpg */,
 				78E269BC1ECC5E1A007D3686 /* bgSky@2x.jpg */,
 				78E269BD1ECC5E1A007D3686 /* header@2x.jpg */,
+				80FF91CE1FC586D900E437CF /* plus@2x.png */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -2444,7 +2440,6 @@
 				80FF90E31FC5668600E437CF /* README.md */,
 				80FF90E41FC5668600E437CF /* NSString */,
 				80FF90F21FC5668600E437CF /* CJFoundation.h */,
-				80FF90F31FC5668600E437CF /* NSDate */,
 			);
 			name = CJFoundation;
 			path = ../../CJFoundation;
@@ -2484,13 +2479,11 @@
 			children = (
 				80FF90E51FC5668600E437CF /* NSString+CJEncryption.h */,
 				80FF90E61FC5668600E437CF /* NSString+CJEncoding.h */,
-				80FF90E71FC5668600E437CF /* CJDateUtil.h */,
 				80FF90E81FC5668600E437CF /* NSString+CJValidate.m */,
 				80FF90E91FC5668600E437CF /* NSString+CJTextSize.m */,
 				80FF90EA1FC5668600E437CF /* NSString+CJAttributedString.h */,
 				80FF90EB1FC5668600E437CF /* NSString+CJEncoding.m */,
 				80FF90EC1FC5668600E437CF /* NSString+CJEncryption.m */,
-				80FF90ED1FC5668600E437CF /* CJDateUtil.m */,
 				80FF90EE1FC5668600E437CF /* NSString+CJCategory.h */,
 				80FF90EF1FC5668600E437CF /* NSString+CJAttributedString.m */,
 				80FF90F01FC5668600E437CF /* NSString+CJTextSize.h */,
@@ -2499,37 +2492,10 @@
 			path = NSString;
 			sourceTree = "<group>";
 		};
-		80FF90F31FC5668600E437CF /* NSDate */ = {
-			isa = PBXGroup;
-			children = (
-				80FF90F41FC5668600E437CF /* NSDate+CJJudge.h */,
-				80FF90F51FC5668600E437CF /* NSDate+CJExtendedDate.h */,
-				80FF90F61FC5668600E437CF /* CJDate */,
-				80FF90FB1FC5668600E437CF /* NSDate+CJCategory.h */,
-				80FF90FC1FC5668600E437CF /* NSDate+CJDateValue.h */,
-				80FF90FD1FC5668600E437CF /* NSDate+CJDateInterval.m */,
-				80FF90FE1FC5668600E437CF /* NSDate+CJJudge.m */,
-				80FF90FF1FC5668600E437CF /* NSDate+CJExtendedDate.m */,
-				80FF91001FC5668600E437CF /* NSDate+CJDateInterval.h */,
-				80FF91011FC5668600E437CF /* NSDate+CJDateValue.m */,
-			);
-			path = NSDate;
-			sourceTree = "<group>";
-		};
-		80FF90F61FC5668600E437CF /* CJDate */ = {
-			isa = PBXGroup;
-			children = (
-				80FF90F71FC5668600E437CF /* CJDateModelUtil.m */,
-				80FF90F81FC5668600E437CF /* CJDateModel.h */,
-				80FF90F91FC5668600E437CF /* CJDateModelUtil.h */,
-				80FF90FA1FC5668600E437CF /* CJDateModel.m */,
-			);
-			path = CJDate;
-			sourceTree = "<group>";
-		};
 		80FF91021FC5668700E437CF /* CJBaseUtil */ = {
 			isa = PBXGroup;
 			children = (
+				80FF91DC1FC6739C00E437CF /* CJDateUtil */,
 				80FF91031FC5668700E437CF /* CJDevice */,
 				80FF91061FC5668700E437CF /* CJWebUtil */,
 				80FF91091FC5668700E437CF /* CJDataUtil */,
@@ -2563,22 +2529,22 @@
 		80FF91091FC5668700E437CF /* CJDataUtil */ = {
 			isa = PBXGroup;
 			children = (
-				80FF910A1FC5668700E437CF /* CJDataUtil+SortOrder.h */,
-				80FF910B1FC5668700E437CF /* CJDataUtil.h */,
-				80FF910C1FC5668700E437CF /* CJDataUtil+NormalSearch.h */,
-				80FF910D1FC5668700E437CF /* CJDataUtil+Value.h */,
-				80FF910E1FC5668700E437CF /* CJDataUtil+CJSectionDataModel.m */,
-				80FF910F1FC5668700E437CF /* CJDataUtil+SortCategory.h */,
 				80FF91101FC5668700E437CF /* CJDataAllUtil.h */,
-				80FF91111FC5668700E437CF /* CJRealtimeSearchUtil.h */,
-				80FF91121FC5668700E437CF /* Models */,
-				80FF911D1FC5668700E437CF /* CJDataUtil+NormalSearch.m */,
+				80FF910B1FC5668700E437CF /* CJDataUtil.h */,
 				80FF911E1FC5668700E437CF /* CJDataUtil.m */,
-				80FF911F1FC5668700E437CF /* CJDataUtil+SortOrder.m */,
-				80FF91201FC5668700E437CF /* CJDataUtil+SortCategory.m */,
 				80FF91211FC5668700E437CF /* CJDataUtil+CJSectionDataModel.h */,
+				80FF910E1FC5668700E437CF /* CJDataUtil+CJSectionDataModel.m */,
+				80FF910C1FC5668700E437CF /* CJDataUtil+NormalSearch.h */,
+				80FF911D1FC5668700E437CF /* CJDataUtil+NormalSearch.m */,
+				80FF910F1FC5668700E437CF /* CJDataUtil+SortCategory.h */,
+				80FF91201FC5668700E437CF /* CJDataUtil+SortCategory.m */,
+				80FF910A1FC5668700E437CF /* CJDataUtil+SortOrder.h */,
+				80FF911F1FC5668700E437CF /* CJDataUtil+SortOrder.m */,
+				80FF910D1FC5668700E437CF /* CJDataUtil+Value.h */,
 				80FF91221FC5668700E437CF /* CJDataUtil+Value.m */,
+				80FF91111FC5668700E437CF /* CJRealtimeSearchUtil.h */,
 				80FF91231FC5668700E437CF /* CJRealtimeSearchUtil.m */,
+				80FF91121FC5668700E437CF /* Models */,
 			);
 			path = CJDataUtil;
 			sourceTree = "<group>";
@@ -2773,6 +2739,31 @@
 				80FF91CC1FC582D100E437CF /* CJPinyinHelper.h */,
 			);
 			path = Util;
+			sourceTree = "<group>";
+		};
+		80FF91DC1FC6739C00E437CF /* CJDateUtil */ = {
+			isa = PBXGroup;
+			children = (
+				80FF91E61FC6739C00E437CF /* CJCalendarUtil.h */,
+				80FF91E31FC6739C00E437CF /* CJCalendarUtil.m */,
+				80FF91DD1FC6739C00E437CF /* CJDate */,
+				80FF91E71FC6739C00E437CF /* CJDateFormatterUtil.h */,
+				80FF91E41FC6739C00E437CF /* CJDateFormatterUtil.m */,
+				80FF91E21FC6739C00E437CF /* CJDateOtherUtil.h */,
+				80FF91E51FC6739C00E437CF /* CJDateOtherUtil.m */,
+			);
+			path = CJDateUtil;
+			sourceTree = "<group>";
+		};
+		80FF91DD1FC6739C00E437CF /* CJDate */ = {
+			isa = PBXGroup;
+			children = (
+				80FF91DE1FC6739C00E437CF /* CJDateModelUtil.m */,
+				80FF91DF1FC6739C00E437CF /* CJDateModel.h */,
+				80FF91E01FC6739C00E437CF /* CJDateModelUtil.h */,
+				80FF91E11FC6739C00E437CF /* CJDateModel.m */,
+			);
+			path = CJDate;
 			sourceTree = "<group>";
 		};
 		E75FB8B4AF71C8FE7F95B93C /* Pods */ = {
@@ -3016,6 +3007,7 @@
 				789CAF321FB612B700AF8CD4 /* README.md in Resources */,
 				80FF90991FC5649F00E437CF /* SearchBarViewController.xib in Resources */,
 				80FF91B21FC580AF00E437CF /* FoundatioHomeViewController.xib in Resources */,
+				80FF91CF1FC586DA00E437CF /* plus@2x.png in Resources */,
 				80FF90BE1FC5649F00E437CF /* slider_maximum_trackimage@2x.png in Resources */,
 				78E269C01ECC5E1A007D3686 /* header@2x.jpg in Resources */,
 				80FF91931FC5682B00E437CF /* TypeConvertViewController.xib in Resources */,
@@ -3216,7 +3208,6 @@
 				80FF909C1FC5649F00E437CF /* NestedXibView.m in Sources */,
 				789CAF4D1FB612B700AF8CD4 /* CJSwitchSliderStatusModel.m in Sources */,
 				789CAF4C1FB612B700AF8CD4 /* CJSwitchSlider.m in Sources */,
-				80FF91431FC5668700E437CF /* NSDate+CJDateValue.m in Sources */,
 				80FF91381FC5668700E437CF /* NSString+CJValidate.m in Sources */,
 				80FF90981FC5649F00E437CF /* SearchBarViewController.m in Sources */,
 				789CAF631FB612B700AF8CD4 /* UIImage+CJTransformSize.m in Sources */,
@@ -3226,7 +3217,6 @@
 				789CAF281FB612B700AF8CD4 /* CJDefaultTableViewCell.m in Sources */,
 				78B740361FB6C04600443D87 /* IjinbuResponseModel.m in Sources */,
 				78B7402D1FB6C04600443D87 /* IjinbuNetworkClient+Login.m in Sources */,
-				80FF913C1FC5668700E437CF /* CJDateUtil.m in Sources */,
 				789CAF7C1FB612B700AF8CD4 /* UIWindow+CJSnapshot.m in Sources */,
 				80FF90391FC5649F00E437CF /* ScrollViewController.m in Sources */,
 				80FF91A21FC5682B00E437CF /* PullScaleTopImageViewController.m in Sources */,
@@ -3246,11 +3236,12 @@
 				80FF914B1FC5668700E437CF /* CJDataUtil+NormalSearch.m in Sources */,
 				789CAF6E1FB612B700AF8CD4 /* UITextField+CJAddInputAccessoryView.m in Sources */,
 				80FF907B1FC5649F00E437CF /* cvSupplementaryFoot.m in Sources */,
-				80FF91411FC5668700E437CF /* NSDate+CJJudge.m in Sources */,
 				80FF902A1FC5649E00E437CF /* ThirdPartyHomeViewController.m in Sources */,
 				80FF908A1FC5649F00E437CF /* ChooseColor01.m in Sources */,
 				78B7402E1FB6C04600443D87 /* IjinbuNetworkClient+UploadFile.m in Sources */,
+				80FF91E81FC6739D00E437CF /* CJDateModelUtil.m in Sources */,
 				80FF90901FC5649F00E437CF /* CustomTableViewCell.m in Sources */,
+				80FF91E91FC6739D00E437CF /* CJDateModel.m in Sources */,
 				789CAF401FB612B700AF8CD4 /* MyUserInfoScaleHeadView.m in Sources */,
 				789CAF801FB612B700AF8CD4 /* CJImageUploadItem.m in Sources */,
 				78B740301FB6C04600443D87 /* IjinbuUploadItemRequest.m in Sources */,
@@ -3260,7 +3251,6 @@
 				789CAF7A1FB612B700AF8CD4 /* UIViewController+CJSystemBackButtonHandler.m in Sources */,
 				789CAF701FB612B700AF8CD4 /* UIView+CJExclusiveTouch.m in Sources */,
 				80FF90A21FC5649F00E437CF /* SampleViewController.m in Sources */,
-				80FF913E1FC5668700E437CF /* CJDateModelUtil.m in Sources */,
 				80FF91521FC5668700E437CF /* CJLogUtil.m in Sources */,
 				789CAF3B1FB612B700AF8CD4 /* CJRefreshHeader.m in Sources */,
 				80FF90B11FC5649F00E437CF /* NavigationBarChangePositonViewController.m in Sources */,
@@ -3287,7 +3277,6 @@
 				789CAF311FB612B700AF8CD4 /* CJTableViewHeaderFooterView.m in Sources */,
 				789CAF5F1FB612B700AF8CD4 /* UIImage+CJFixOrientation.m in Sources */,
 				80FF90731FC5649F00E437CF /* CvDemo_Complex.m in Sources */,
-				80FF91401FC5668700E437CF /* NSDate+CJDateInterval.m in Sources */,
 				789CAF471FB612B700AF8CD4 /* CJPlayerSlider.m in Sources */,
 				80FF91331FC5668700E437CF /* NSDictionary+CJConvert.m in Sources */,
 				78B740331FB6C04600443D87 /* IjinbuUser.m in Sources */,
@@ -3325,6 +3314,7 @@
 				80FF909A1FC5649F00E437CF /* FloatingWindowViewController.m in Sources */,
 				789CAF681FB612B700AF8CD4 /* CJSelectTextTextField.m in Sources */,
 				80FF90B01FC5649F00E437CF /* NavigationBarChangeBGViewController.m in Sources */,
+				80FF91EB1FC6739D00E437CF /* CJDateFormatterUtil.m in Sources */,
 				80FF906B1FC5649F00E437CF /* Header.m in Sources */,
 				7832810D1F41AA96008267E0 /* ProcessLineView.m in Sources */,
 				80FF90B81FC5649F00E437CF /* DragViewController.m in Sources */,
@@ -3381,19 +3371,18 @@
 				80FF914E1FC5668700E437CF /* CJDataUtil+SortCategory.m in Sources */,
 				80FF906F1FC5649F00E437CF /* MyEqualCellSizeViewController.m in Sources */,
 				80FF91531FC5668700E437CF /* PrivateSetting.m in Sources */,
-				80FF913F1FC5668700E437CF /* CJDateModel.m in Sources */,
 				789CAF3E1FB612B700AF8CD4 /* CJScaleHeadView.m in Sources */,
 				78B6761B1EB192EA006F4612 /* ModuleModel.m in Sources */,
 				78B7402C1FB6C04600443D87 /* IjinbuHTTPSessionManager.m in Sources */,
 				789CAF691FB612B700AF8CD4 /* UITextField+CJAddLeftRightView.m in Sources */,
 				789CAF451FB612B700AF8CD4 /* CJAdsorbModel.m in Sources */,
-				80FF91421FC5668700E437CF /* NSDate+CJExtendedDate.m in Sources */,
 				789CAF621FB612B700AF8CD4 /* UIImage+CJQRCode.m in Sources */,
 				80FF903A1FC5649F00E437CF /* SvDemo_Refresh.m in Sources */,
 				789CAF5D1FB612B700AF8CD4 /* UIImage+CJChangeColor.m in Sources */,
 				80FF914C1FC5668700E437CF /* CJDataUtil.m in Sources */,
 				80FF90911FC5649F00E437CF /* CJLeftDetailTableViewCell+ConfigureForDataModel.m in Sources */,
 				789CAF651FB612B700AF8CD4 /* UIImage+SplitImageIntoTwoParts.m in Sources */,
+				80FF91EA1FC6739D00E437CF /* CJCalendarUtil.m in Sources */,
 				80FF914F1FC5668700E437CF /* CJDataUtil+Value.m in Sources */,
 				80FF90B41FC5649F00E437CF /* ButtonViewController.m in Sources */,
 				78B740311FB6C04600443D87 /* IjinbuUploadItemResult.m in Sources */,
@@ -3407,6 +3396,7 @@
 				789CAF4B1FB612B700AF8CD4 /* CJSliderThumb.m in Sources */,
 				789CAF3D1FB612B700AF8CD4 /* UIView+CJExtension.m in Sources */,
 				789CAF1D1FB612B700AF8CD4 /* CJCircleLayout.m in Sources */,
+				80FF91EC1FC6739D00E437CF /* CJDateOtherUtil.m in Sources */,
 				789CAF5E1FB612B700AF8CD4 /* UIImage+CJCreate.m in Sources */,
 				80FF903C1FC5649F00E437CF /* KeyboardAvoidingViewController.m in Sources */,
 				80FF90861FC5649F00E437CF /* TvDemo_Complex.m in Sources */,
