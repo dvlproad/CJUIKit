@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "CJComplexUIKit"
-  s.version      = "0.0.3"
+  s.version      = "0.0.4"
   s.summary      = "自定义的稍微复杂的UI"
   s.homepage     = "https://github.com/dvlproad/CJUIKit"
 
@@ -29,7 +29,7 @@ Pod::Spec.new do |s|
 
   s.platform     = :ios, "7.0"
  
-  s.source       = { :git => "https://github.com/dvlproad/CJUIKit.git", :tag => "CJComplexUIKit_0.0.3" }
+  s.source       = { :git => "https://github.com/dvlproad/CJUIKit.git", :tag => "CJComplexUIKit_0.0.4" }
   s.source_files  = "CJComplexUIKit/*.{h,m}"
 
   s.frameworks = "UIKit"
@@ -51,8 +51,8 @@ Pod::Spec.new do |s|
 
       # 搜索功能需要依赖的库
       sss.dependency 'CJBaseUIKit/CJCollectionView/MyEqualCellSizeCollectionView'
-      sss.dependency 'CJBaseUtil/CJDataUtil', '~> 0.1.1'
-      sss.dependency 'NSOperationQueueUtil', '~> 0.0.1'
+      sss.dependency 'CJBaseUtil/CJDataUtil'#, '~> 0.2.0'
+      sss.dependency 'NSOperationQueueUtil'#, '~> 0.0.1'
     end
 
     ss.subspec 'ImagePickerCollectionlView' do |sss|
