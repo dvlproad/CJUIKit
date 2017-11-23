@@ -11,8 +11,6 @@
 
 #import "NSString+CJCategory.h"
 
-#import "NSDate+CJCategory.h"
-
 #import "NSDictionary+CJConvert.h"
 
 #import "NSJSONSerialization+CJCategory.h"

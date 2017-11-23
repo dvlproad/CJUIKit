@@ -23,8 +23,8 @@ Pod::Spec.new do |s|
   s.platform     = :ios, "7.0"
 
   s.source       = { :git => "https://github.com/dvlproad/CJUIKit.git", :tag => "CJBaseUtil_0.2.0" }
-  # s.source_files  = "CJUIKit/*.{h,m}"
-  # s.resources = "CJUIKit/**/*.{png}"
+  # s.source_files  = "CJBaseUtil/*.{h,m}"
+  # s.resources = "CJBaseUtil/**/*.{png}"
   s.frameworks = 'UIKit'
 
   # s.library   = "iconv"
