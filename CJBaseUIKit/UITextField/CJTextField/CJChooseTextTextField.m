@@ -1,21 +1,21 @@
 //
-//  CJSelectTextTextField.m
+//  CJChooseTextTextField.m
 //  CJUIKitDemo
 //
 //  Created by ciyouzen on 2015/12/23.
 //  Copyright © 2015年 dvlproad. All rights reserved.
 //
 
-#import "CJSelectTextTextField.h"
+#import "CJChooseTextTextField.h"
 
-@interface CJSelectTextTextField ()
+@interface CJChooseTextTextField ()
 
 @property (nonatomic, assign) BOOL textOnlyFromSelected;          /**< 是否隐藏光标(默认NO),隐藏光标的时候最好同时禁止手动输入 */
 
 @end
 
 
-@implementation CJSelectTextTextField
+@implementation CJChooseTextTextField
 
 - (void)awakeFromNib {
     [super awakeFromNib];
@@ -42,7 +42,7 @@
     
 }
 
-
+/* 完整的描述请参见文件头部 */
 - (void)setTextOnlyFromPickerView:(UIView *)pickerView {
     self.inputView = pickerView;
     

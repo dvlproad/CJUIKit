@@ -9,7 +9,7 @@
 #import "DateViewController.h"
 
 #import "UITextField+CJAddLeftRightView.h"
-#import "CJSelectTextTextField.h"
+#import "CJChooseTextTextField.h"
 
 #import <CJPicker/CJDefaultDatePicker.h>
 #import <CJPopupAction/UIView+CJShowExtendView.h>
@@ -21,7 +21,7 @@
 @interface DateViewController () {
     
 }
-@property (nonatomic, strong) CJSelectTextTextField *dateTextField;
+@property (nonatomic, strong) CJChooseTextTextField *dateTextField;
 @property (nonatomic) NSDate *currentDate;
 
 @property (nonatomic, weak) IBOutlet UILabel *originCurrentTime1;
@@ -91,7 +91,7 @@
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     dateFormatter.dateFormat = @"yyyy-MM-dd HH:mm:ss";
     
-    self.dateTextField = [[CJSelectTextTextField alloc] initWithFrame:CGRectZero];
+    self.dateTextField = [[CJChooseTextTextField alloc] initWithFrame:CGRectZero];
 //    self.dateTextField.hideCursor = YES;
     self.dateTextField.hideMenuController = YES;
     

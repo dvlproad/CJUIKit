@@ -12,6 +12,6 @@
 #import "UITextField+CJTextChangeBlock.h"
 #import "UITextField+CJAddLeftRightView.h"
 #import "UITextField+CJLimitTextLength.h"
-
+#import "UITextField+CJSelectedTextRange.h"
 
 #endif /* UITextFieldCJCategory_h */

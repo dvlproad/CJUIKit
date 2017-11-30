@@ -137,9 +137,8 @@
 
 #pragma mark - Text And 菊花
 /* 完整的描述请参见文件头部 */
-+ (void)showChrysanthemumAndMessage:(NSString *)message
-                             toView:(UIView *)view
-          withShowingOperationBlock:(void(^)(MBProgressHUD *hud))showingOperationBlock
++ (MBProgressHUD *)createChrysanthemumHUDWithMessage:(NSString *)message
+                                              toView:(UIView *)view
 {
     if (view == nil) {
         view = [UIApplication sharedApplication].keyWindow;
@@ -154,11 +153,7 @@
         hud.label.text = message;
     }
     
-    if (showingOperationBlock) {
-        showingOperationBlock(hud);
-    } else {
-        [hud hideAnimated:YES afterDelay:2];
-    }
+    return hud;
 }
 
 

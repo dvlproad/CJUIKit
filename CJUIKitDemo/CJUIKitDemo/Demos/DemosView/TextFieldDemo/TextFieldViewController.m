@@ -10,6 +10,7 @@
 #import "UITextField+CJTextChangeBlock.h"
 #import "UITextField+CJAddLeftRightView.h"
 #import "UITextField+CJLimitTextLength.h"
+#import "UITextField+CJSelectedTextRange.h"
 #import "UIView+CJShake.h"
 
 #import "CJToast.h"
@@ -37,17 +38,11 @@
     self.textField.delegate = self;
     [self.textField setCjTextDidChangeBlock:^(UITextField *textField) {
         NSLog(@"textField内容改变了:%@", textField.text);
-        if (![textField.text cj_validateEmail]) {
-            [CJToast shortShowMessage:@"不满足邮件格式"];
-            [textField cjShake];
-        }
     }];
     [self.textField cj_limitTextLength:30 withLimitCompleteBlock:^{
         [CJToast shortShowMessage:@"文本过长，超过最大的30个字符了"];
         [self.textField cjShake];
     }];
-    
-    self.textField.text = @"validateEmail@163.com";
     
     
     //UITextField
@@ -94,6 +89,16 @@
     [self.textField addDefaultInputAccessoryViewWithDoneButtonClickBlock:^(UITextField *textField) {
         [textField resignFirstResponder];
     }];
+    
+    
+    
+    
+    self.extraTextTextField.beforeExtraString = @"+";
+    self.extraTextTextField.afterExtraString = @"元";
+    [self.extraTextTextField setCjTextDidChangeBlock:^(UITextField *textField) {
+        NSLog(@"textField内容改变了:%@", textField.text);
+        [(CJExtraTextTextField *)textField fixExtraString];
+    }];
 }
 
 - (void)canInputSwitchAction:(UISwitch *)canInputSwitch {
@@ -103,6 +108,7 @@
         self.canInputTextField.hideMenuController = YES;
     }
 }
+
 
 
 

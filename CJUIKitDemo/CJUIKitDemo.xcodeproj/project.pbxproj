@@ -98,7 +98,7 @@
 		789CAF651FB612B700AF8CD4 /* UIImage+SplitImageIntoTwoParts.m in Sources */ = {isa = PBXBuildFile; fileRef = 789CAEC61FB612B600AF8CD4 /* UIImage+SplitImageIntoTwoParts.m */; };
 		789CAF661FB612B700AF8CD4 /* UINavigationBar+CJChangeBG.m in Sources */ = {isa = PBXBuildFile; fileRef = 789CAECA1FB612B600AF8CD4 /* UINavigationBar+CJChangeBG.m */; };
 		789CAF671FB612B700AF8CD4 /* UITableView+CJEmptyView.m in Sources */ = {isa = PBXBuildFile; fileRef = 789CAECD1FB612B600AF8CD4 /* UITableView+CJEmptyView.m */; };
-		789CAF681FB612B700AF8CD4 /* CJSelectTextTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 789CAED11FB612B600AF8CD4 /* CJSelectTextTextField.m */; };
+		789CAF681FB612B700AF8CD4 /* CJChooseTextTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 789CAED11FB612B600AF8CD4 /* CJChooseTextTextField.m */; };
 		789CAF691FB612B700AF8CD4 /* UITextField+CJAddLeftRightView.m in Sources */ = {isa = PBXBuildFile; fileRef = 789CAED31FB612B600AF8CD4 /* UITextField+CJAddLeftRightView.m */; };
 		789CAF6A1FB612B700AF8CD4 /* UITextField+CJLimitTextLength.m in Sources */ = {isa = PBXBuildFile; fileRef = 789CAED51FB612B600AF8CD4 /* UITextField+CJLimitTextLength.m */; };
 		789CAF6B1FB612B700AF8CD4 /* UITextField+CJTextChangeBlock.m in Sources */ = {isa = PBXBuildFile; fileRef = 789CAED71FB612B600AF8CD4 /* UITextField+CJTextChangeBlock.m */; };
@@ -144,6 +144,8 @@
 		78E269BE1ECC5E1A007D3686 /* bgCar@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 78E269BB1ECC5E1A007D3686 /* bgCar@2x.jpg */; };
 		78E269BF1ECC5E1A007D3686 /* bgSky@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 78E269BC1ECC5E1A007D3686 /* bgSky@2x.jpg */; };
 		78E269C01ECC5E1A007D3686 /* header@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 78E269BD1ECC5E1A007D3686 /* header@2x.jpg */; };
+		8000B5C61FCFEE3A00AE3C78 /* UITextField+CJSelectedTextRange.m in Sources */ = {isa = PBXBuildFile; fileRef = 8000B5C51FCFEE3A00AE3C78 /* UITextField+CJSelectedTextRange.m */; };
+		8000B5C91FD0021D00AE3C78 /* CJExtraTextTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 8000B5C81FD0021D00AE3C78 /* CJExtraTextTextField.m */; };
 		8014A2801FA2C2E500DDDB5A /* AppDelegate+WindowRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8014A27F1FA2C2E500DDDB5A /* AppDelegate+WindowRootViewController.m */; };
 		8014A2881FA2C81A00DDDB5A /* icons8-menu.png in Resources */ = {isa = PBXBuildFile; fileRef = 8014A2831FA2C81900DDDB5A /* icons8-menu.png */; };
 		8014A2891FA2C81A00DDDB5A /* icons8-settings.png in Resources */ = {isa = PBXBuildFile; fileRef = 8014A2841FA2C81900DDDB5A /* icons8-settings.png */; };
@@ -577,8 +579,8 @@
 		789CAECA1FB612B600AF8CD4 /* UINavigationBar+CJChangeBG.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationBar+CJChangeBG.m"; sourceTree = "<group>"; };
 		789CAECC1FB612B600AF8CD4 /* UITableView+CJEmptyView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableView+CJEmptyView.h"; sourceTree = "<group>"; };
 		789CAECD1FB612B600AF8CD4 /* UITableView+CJEmptyView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableView+CJEmptyView.m"; sourceTree = "<group>"; };
-		789CAED01FB612B600AF8CD4 /* CJSelectTextTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJSelectTextTextField.h; sourceTree = "<group>"; };
-		789CAED11FB612B600AF8CD4 /* CJSelectTextTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJSelectTextTextField.m; sourceTree = "<group>"; };
+		789CAED01FB612B600AF8CD4 /* CJChooseTextTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJChooseTextTextField.h; sourceTree = "<group>"; };
+		789CAED11FB612B600AF8CD4 /* CJChooseTextTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJChooseTextTextField.m; sourceTree = "<group>"; };
 		789CAED21FB612B600AF8CD4 /* UITextField+CJAddLeftRightView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextField+CJAddLeftRightView.h"; sourceTree = "<group>"; };
 		789CAED31FB612B600AF8CD4 /* UITextField+CJAddLeftRightView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextField+CJAddLeftRightView.m"; sourceTree = "<group>"; };
 		789CAED41FB612B600AF8CD4 /* UITextField+CJLimitTextLength.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextField+CJLimitTextLength.h"; sourceTree = "<group>"; };
@@ -663,6 +665,10 @@
 		78E269BB1ECC5E1A007D3686 /* bgCar@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "bgCar@2x.jpg"; sourceTree = "<group>"; };
 		78E269BC1ECC5E1A007D3686 /* bgSky@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "bgSky@2x.jpg"; sourceTree = "<group>"; };
 		78E269BD1ECC5E1A007D3686 /* header@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "header@2x.jpg"; sourceTree = "<group>"; };
+		8000B5C41FCFEE3A00AE3C78 /* UITextField+CJSelectedTextRange.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UITextField+CJSelectedTextRange.h"; sourceTree = "<group>"; };
+		8000B5C51FCFEE3A00AE3C78 /* UITextField+CJSelectedTextRange.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UITextField+CJSelectedTextRange.m"; sourceTree = "<group>"; };
+		8000B5C71FD0021D00AE3C78 /* CJExtraTextTextField.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CJExtraTextTextField.h; sourceTree = "<group>"; };
+		8000B5C81FD0021D00AE3C78 /* CJExtraTextTextField.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CJExtraTextTextField.m; sourceTree = "<group>"; };
 		8014A27E1FA2C2E500DDDB5A /* AppDelegate+WindowRootViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AppDelegate+WindowRootViewController.h"; sourceTree = "<group>"; };
 		8014A27F1FA2C2E500DDDB5A /* AppDelegate+WindowRootViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "AppDelegate+WindowRootViewController.m"; sourceTree = "<group>"; };
 		8014A2831FA2C81900DDDB5A /* icons8-menu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icons8-menu.png"; sourceTree = "<group>"; };
@@ -1660,6 +1666,8 @@
 				789CAED51FB612B600AF8CD4 /* UITextField+CJLimitTextLength.m */,
 				789CAED61FB612B600AF8CD4 /* UITextField+CJTextChangeBlock.h */,
 				789CAED71FB612B600AF8CD4 /* UITextField+CJTextChangeBlock.m */,
+				8000B5C41FCFEE3A00AE3C78 /* UITextField+CJSelectedTextRange.h */,
+				8000B5C51FCFEE3A00AE3C78 /* UITextField+CJSelectedTextRange.m */,
 				789CAED81FB612B600AF8CD4 /* UITextFieldCJCategory.h */,
 			);
 			path = UITextField;
@@ -1668,8 +1676,10 @@
 		789CAECF1FB612B600AF8CD4 /* CJTextField */ = {
 			isa = PBXGroup;
 			children = (
-				789CAED01FB612B600AF8CD4 /* CJSelectTextTextField.h */,
-				789CAED11FB612B600AF8CD4 /* CJSelectTextTextField.m */,
+				789CAED01FB612B600AF8CD4 /* CJChooseTextTextField.h */,
+				789CAED11FB612B600AF8CD4 /* CJChooseTextTextField.m */,
+				8000B5C71FD0021D00AE3C78 /* CJExtraTextTextField.h */,
+				8000B5C81FD0021D00AE3C78 /* CJExtraTextTextField.m */,
 			);
 			path = CJTextField;
 			sourceTree = "<group>";
@@ -3219,6 +3229,7 @@
 				78B7402D1FB6C04600443D87 /* IjinbuNetworkClient+Login.m in Sources */,
 				789CAF7C1FB612B700AF8CD4 /* UIWindow+CJSnapshot.m in Sources */,
 				80FF90391FC5649F00E437CF /* ScrollViewController.m in Sources */,
+				8000B5C61FCFEE3A00AE3C78 /* UITextField+CJSelectedTextRange.m in Sources */,
 				80FF91A21FC5682B00E437CF /* PullScaleTopImageViewController.m in Sources */,
 				789CAF1B1FB612B700AF8CD4 /* CJFullCenterCollectionViewCell.m in Sources */,
 				789CAF251FB612B700AF8CD4 /* CJSingleTableViewCellDataSource.m in Sources */,
@@ -3312,7 +3323,7 @@
 				80FF919A1FC5682B00E437CF /* DateViewController.m in Sources */,
 				80FF90361FC5649E00E437CF /* DemoInfo.m in Sources */,
 				80FF909A1FC5649F00E437CF /* FloatingWindowViewController.m in Sources */,
-				789CAF681FB612B700AF8CD4 /* CJSelectTextTextField.m in Sources */,
+				789CAF681FB612B700AF8CD4 /* CJChooseTextTextField.m in Sources */,
 				80FF90B01FC5649F00E437CF /* NavigationBarChangeBGViewController.m in Sources */,
 				80FF91EB1FC6739D00E437CF /* CJDateFormatterUtil.m in Sources */,
 				80FF906B1FC5649F00E437CF /* Header.m in Sources */,
@@ -3412,6 +3423,7 @@
 				80FF90A81FC5649F00E437CF /* ImageChangeColorViewController.m in Sources */,
 				789CAF4A1FB612B700AF8CD4 /* CJSliderPopover.m in Sources */,
 				789CAF221FB612B700AF8CD4 /* MyEqualCellSizeCollectionView+Select.m in Sources */,
+				8000B5C91FD0021D00AE3C78 /* CJExtraTextTextField.m in Sources */,
 				80FF90CC1FC5649F00E437CF /* ShimmeringSwitchSlider.m in Sources */,
 				789CAF6B1FB612B700AF8CD4 /* UITextField+CJTextChangeBlock.m in Sources */,
 				789CAF431FB612B700AF8CD4 /* UIScrollView+CJKeyboardAvoiding.m in Sources */,

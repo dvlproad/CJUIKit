@@ -119,25 +119,25 @@
             [sectionDataModel.values addObject:buttonModule];
         }
         {
-            //CJSelectTextTextField
-            ModuleModel *CJSelectTextTextFieldModuleModel = [[ModuleModel alloc] init];
-            CJSelectTextTextFieldModuleModel.title = @"CJSelectTextTextField";
-            CJSelectTextTextFieldModuleModel.classEntry = [TextFieldViewController class];
-            [sectionDataModel.values addObject:CJSelectTextTextFieldModuleModel];
+            //TextField
+            ModuleModel *textFieldModule = [[ModuleModel alloc] init];
+            textFieldModule.title = @"TextField";
+            textFieldModule.classEntry = [TextFieldViewController class];
+            [sectionDataModel.values addObject:textFieldModule];
         }
         {
-            //CJTextView
-            ModuleModel *cjTextViewModuleModel = [[ModuleModel alloc] init];
-            cjTextViewModuleModel.title = @"CJTextView";
-            cjTextViewModuleModel.classEntry = [TextViewController class];
-            [sectionDataModel.values addObject:cjTextViewModuleModel];
+            //TextView
+            ModuleModel *textViewModule = [[ModuleModel alloc] init];
+            textViewModule.title = @"TextView";
+            textViewModule.classEntry = [TextViewController class];
+            [sectionDataModel.values addObject:textViewModule];
         }
         {
-            //CJSlider
-            ModuleModel *cjSliderModuleModel = [[ModuleModel alloc] init];
-            cjSliderModuleModel.title = @"CJSliderControl";
-            cjSliderModuleModel.classEntry = [SliderViewController class];
-            [sectionDataModel.values addObject:cjSliderModuleModel];
+            //Slider
+            ModuleModel *sliderModule = [[ModuleModel alloc] init];
+            sliderModule.title = @"CJSliderControl";
+            sliderModule.classEntry = [SliderViewController class];
+            [sectionDataModel.values addObject:sliderModule];
         }
         {
             //CJSearchBar
