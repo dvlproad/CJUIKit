@@ -95,6 +95,7 @@
     
     self.extraTextTextField.beforeExtraString = @"+";
     self.extraTextTextField.afterExtraString = @"元";
+    self.extraTextTextField.limitTextLength = 4 + 2;
     [self.extraTextTextField setCjTextDidChangeBlock:^(UITextField *textField) {
         NSLog(@"textField内容改变了:%@", textField.text);
         [(CJExtraTextTextField *)textField fixExtraString];

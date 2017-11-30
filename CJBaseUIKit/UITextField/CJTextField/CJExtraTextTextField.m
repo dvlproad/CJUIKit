@@ -36,6 +36,7 @@
 
 - (void)commonInit {
     self.delegate = self;
+    self.limitTextLength = NSIntegerMax;
 }
 
 //UITextField 没有change的事件
@@ -47,8 +48,8 @@
     
     NSString *oldText = textField.text;
     NSString *newText = [oldText stringByReplacingCharactersInRange:range withString:string];//若允许改变，则会改变成的新文本
-    if ([newText length] > 10) {
-        NSLog(@"输入内容太长");
+    if ([newText length] > self.limitTextLength) {
+        //NSLog(@"输入内容太长");
         return NO;
     }
     

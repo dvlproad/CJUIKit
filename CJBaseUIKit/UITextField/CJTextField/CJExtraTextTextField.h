@@ -14,8 +14,8 @@
 }
 @property (nonatomic, copy) NSString *beforeExtraString;    /**< 头部额外字段 */
 @property (nonatomic, copy) NSString *afterExtraString;     /**< 尾部额外字段 */
-@property (nonatomic, copy, readonly) NSString *middleString;         /**< 中间有效的字段 */
-
+@property (nonatomic, copy, readonly) NSString *middleString;   /**< 中间有效的字段 */
+@property (nonatomic, assign) NSInteger limitTextLength;    /**< 整个文本的限制长度(默认无限长) */
 
 
 /**
