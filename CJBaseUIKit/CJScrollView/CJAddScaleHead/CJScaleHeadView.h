@@ -38,6 +38,6 @@
  *  获取某个view属于哪个视图控制器
  *
  */
-- (nullable UIViewController *)getBelongViewControllerForView:(UIView *)view;
+- (UIViewController *)getBelongViewControllerForView:(UIView *)view;
 
 @end

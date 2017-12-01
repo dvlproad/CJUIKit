@@ -11,6 +11,7 @@
 #import "ModuleModel.h"
 
 #import "DeviceInfoViewController.h"
+#import "DataUtilViewController.h"
 
 
 @interface UtilHomeViewController () <UITableViewDataSource, UITableViewDelegate> {
@@ -37,6 +38,11 @@
     DeviceInfoModule.title = @"DeviceInfo";
     DeviceInfoModule.classEntry = [DeviceInfoViewController class];
     [self.datas addObject:DeviceInfoModule];
+    
+    ModuleModel *dataModule = [[ModuleModel alloc] init];
+    dataModule.title = @"DataUtil";
+    dataModule.classEntry = [DataUtilViewController class];
+    [self.datas addObject:dataModule];
 }
 
 #pragma mark - UITableViewDataSource & UITableViewDelegate

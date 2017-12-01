@@ -9,7 +9,6 @@
 #import "TextFieldViewController.h"
 #import "UITextField+CJTextChangeBlock.h"
 #import "UITextField+CJAddLeftRightView.h"
-#import "UITextField+CJLimitTextLength.h"
 #import "UITextField+CJSelectedTextRange.h"
 #import "UIView+CJShake.h"
 
@@ -38,10 +37,6 @@
     self.textField.delegate = self;
     [self.textField setCjTextDidChangeBlock:^(UITextField *textField) {
         NSLog(@"textField内容改变了:%@", textField.text);
-    }];
-    [self.textField cj_limitTextLength:30 withLimitCompleteBlock:^{
-        [CJToast shortShowMessage:@"文本过长，超过最大的30个字符了"];
-        [self.textField cjShake];
     }];
     
     
@@ -122,8 +117,8 @@
     
     NSString *oldText = textField.text;
     NSString *newText = [oldText stringByReplacingCharactersInRange:range withString:string];//若允许改变，则会改变成的新文本
-    if ([newText length] > 40) {
-        [CJToast shortShowMessage:@"输入内容太长"];
+    if ([newText length] > 10) {
+        [CJToast shortShowMessage:@"文本过长，超过最大的10个字符了"];
         [textField cjShake];
         return NO;
     }

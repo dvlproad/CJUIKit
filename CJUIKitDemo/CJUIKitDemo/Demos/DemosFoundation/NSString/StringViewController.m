@@ -20,10 +20,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
-    NSString *string = @"这是一串比较长的字符串，用来富文本化的文字";
-    
     self.attributedLabel.attributedText = nil;
-    
     
     NSString *encryptionString = @"得到";
     NSString *base64String = [NSString cj_base64StringFromText:encryptionString];

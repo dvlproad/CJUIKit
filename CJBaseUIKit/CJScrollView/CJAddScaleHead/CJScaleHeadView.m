@@ -165,7 +165,7 @@ static NSString *const CorePullScaleContentOffset = @"contentOffset";
     _pullUpMinHeight = navigationBarHeight + statusBarHeight;
 }
 
-- (nullable UIViewController *)getBelongViewControllerForView:(UIView *)view {
+- (UIViewController *)getBelongViewControllerForView:(UIView *)view {
     UIResponder *responder = view;
     while ((responder = [responder nextResponder]))
         if ([responder isKindOfClass: [UIViewController class]]) {

@@ -15,23 +15,33 @@
  */
 + (void)removeWebCache {
     if (@available(iOS 9.0, *)) {
-        NSSet *websiteDataTypes= [NSSet setWithArray:@[
-                                                       WKWebsiteDataTypeDiskCache,
-                                                       //WKWebsiteDataTypeOfflineWebApplication
-                                                       WKWebsiteDataTypeMemoryCache,
-                                                       //WKWebsiteDataTypeLocal
-                                                       WKWebsiteDataTypeCookies,
-                                                       //WKWebsiteDataTypeSessionStorage,
-                                                       //WKWebsiteDataTypeIndexedDBDatabases,
-                                                       //WKWebsiteDataTypeWebSQLDatabases
-                                                       ]];
+        NSArray *array = @[
+                           WKWebsiteDataTypeDiskCache,
+                           //WKWebsiteDataTypeOfflineWebApplication
+                           WKWebsiteDataTypeMemoryCache,
+                           //WKWebsiteDataTypeLocal
+                           WKWebsiteDataTypeCookies,
+                           //WKWebsiteDataTypeSessionStorage,
+                           //WKWebsiteDataTypeIndexedDBDatabases,
+                           //WKWebsiteDataTypeWebSQLDatabases
+                           ];
+        NSSet *websiteDataTypes= [NSSet setWithArray:array];
         
         // All kinds of data
         //NSSet *websiteDataTypes = [WKWebsiteDataStore allWebsiteDataTypes];
         NSDate *dateFrom = [NSDate dateWithTimeIntervalSince1970:0];
-        [[WKWebsiteDataStore defaultDataStore] removeDataOfTypes:websiteDataTypes modifiedSince:dateFrom completionHandler:^{
-            
-        }];
+        if ([NSThread isMainThread]) {
+            [[WKWebsiteDataStore defaultDataStore] removeDataOfTypes:websiteDataTypes modifiedSince:dateFrom completionHandler:^{
+                
+            }];
+        } else {
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [[WKWebsiteDataStore defaultDataStore] removeDataOfTypes:websiteDataTypes modifiedSince:dateFrom completionHandler:^{
+                    
+                }];
+            });
+        }
+        
         [[NSURLCache sharedURLCache] removeAllCachedResponses];
         
     } else {
