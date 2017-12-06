@@ -1228,7 +1228,6 @@
 				789CAE1A1FB612B600AF8CD4 /* CJCollectionViewLayout */,
 				789CAE1F1FB612B600AF8CD4 /* CJOpenCollectionView */,
 				789CAE281FB612B600AF8CD4 /* MyEqualCellSizeCollectionView */,
-				789CAE2F1FB612B600AF8CD4 /* MyEqualCellSizeScrollView */,
 			);
 			path = CJCollectionView;
 			sourceTree = "<group>";
@@ -1283,13 +1282,6 @@
 				789CAE2E1FB612B600AF8CD4 /* MyEqualCellSizeSetting.m */,
 			);
 			path = MyEqualCellSizeCollectionView;
-			sourceTree = "<group>";
-		};
-		789CAE2F1FB612B600AF8CD4 /* MyEqualCellSizeScrollView */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = MyEqualCellSizeScrollView;
 			sourceTree = "<group>";
 		};
 		789CAE301FB612B600AF8CD4 /* CJSingleTableViewCellDataSource */ = {
@@ -1953,15 +1945,15 @@
 		80FF8F231FC5649E00E437CF /* DemosScrollView */ = {
 			isa = PBXGroup;
 			children = (
+				80FF8F481FC5649E00E437CF /* CJCollectionViewDemo */,
+				80FF8F3C1FC5649E00E437CF /* DataScrollViewDemo */,
+				80FF8F371FC5649E00E437CF /* Resources */,
+				80FF8F951FC5649E00E437CF /* ScrollViewHomeViewController.h */,
+				80FF8FC01FC5649E00E437CF /* ScrollViewHomeViewController.m */,
+				80FF8F361FC5649E00E437CF /* ScrollViewHomeViewController.xib */,
 				80FF8F241FC5649E00E437CF /* TestDataUtil */,
 				80FF8F2C1FC5649E00E437CF /* UIScrollViewDemo */,
-				80FF8F361FC5649E00E437CF /* ScrollViewHomeViewController.xib */,
-				80FF8F371FC5649E00E437CF /* Resources */,
-				80FF8F3C1FC5649E00E437CF /* DataScrollViewDemo */,
-				80FF8F481FC5649E00E437CF /* CJCollectionViewDemo */,
-				80FF8F951FC5649E00E437CF /* ScrollViewHomeViewController.h */,
 				80FF8F961FC5649E00E437CF /* UITableViewDemo */,
-				80FF8FC01FC5649E00E437CF /* ScrollViewHomeViewController.m */,
 			);
 			path = DemosScrollView;
 			sourceTree = "<group>";
@@ -2017,15 +2009,15 @@
 		80FF8F3C1FC5649E00E437CF /* DataScrollViewDemo */ = {
 			isa = PBXGroup;
 			children = (
-				80FF8F3D1FC5649E00E437CF /* SearchTableViewController.xib */,
 				80FF8F3E1FC5649E00E437CF /* SearchTableViewController.h */,
-				80FF8F3F1FC5649E00E437CF /* UploadDirectlyImagePickerViewController.h */,
-				80FF8F401FC5649E00E437CF /* UploadNoneImagePickerViewController.m */,
-				80FF8F421FC5649E00E437CF /* UploadDirectlyImagePickerViewController.xib */,
 				80FF8F431FC5649E00E437CF /* SearchTableViewController.m */,
+				80FF8F3D1FC5649E00E437CF /* SearchTableViewController.xib */,
+				80FF8F3F1FC5649E00E437CF /* UploadDirectlyImagePickerViewController.h */,
 				80FF8F441FC5649E00E437CF /* UploadDirectlyImagePickerViewController.m */,
-				80FF8F451FC5649E00E437CF /* UploadNoneImagePickerViewController.xib */,
+				80FF8F421FC5649E00E437CF /* UploadDirectlyImagePickerViewController.xib */,
 				80FF8F461FC5649E00E437CF /* UploadNoneImagePickerViewController.h */,
+				80FF8F401FC5649E00E437CF /* UploadNoneImagePickerViewController.m */,
+				80FF8F451FC5649E00E437CF /* UploadNoneImagePickerViewController.xib */,
 			);
 			path = DataScrollViewDemo;
 			sourceTree = "<group>";
@@ -2091,8 +2083,8 @@
 		80FF8F6A1FC5649E00E437CF /* CustomLayoutCollectionView */ = {
 			isa = PBXGroup;
 			children = (
-				80FF8F6B1FC5649E00E437CF /* CustomLayoutCollectionViewController.m */,
 				80FF8F6C1FC5649E00E437CF /* CustomLayoutCollectionViewController.h */,
+				80FF8F6B1FC5649E00E437CF /* CustomLayoutCollectionViewController.m */,
 				80FF8F6D1FC5649E00E437CF /* CustomLayoutCollectionViewController.xib */,
 			);
 			path = CustomLayoutCollectionView;

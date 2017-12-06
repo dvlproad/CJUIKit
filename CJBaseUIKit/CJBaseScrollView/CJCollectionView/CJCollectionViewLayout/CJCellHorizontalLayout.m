@@ -73,6 +73,7 @@ static CGFloat lineSpacing = 10;
             itemSpacing = self.minimumInteritemSpacing;
         }
     }else{ //如果列数为一行
+        _line = 1;
         itemSpacing = 0;
     }
     
@@ -88,15 +89,16 @@ static CGFloat lineSpacing = 10;
             lineSpacing = self.minimumInteritemSpacing;
         }
     }else{ //如果行数数为一行
+        _row = 1;
         lineSpacing = 0;
     }
 
 
     int itemNumber = 0;
-
     itemNumber = itemNumber + (int)[self.collectionView numberOfItemsInSection:0];
-
-    pageNumber = (itemNumber - 1)/(_row*_line) + 1;
+    if (itemNumber >= 1) {
+        pageNumber = (itemNumber - 1)/(_row*_line) + 1;
+    }
 }
 
 //- (void)prepareForCollectionViewUpdates:(NSArray<UICollectionViewUpdateItem *> *)updateItems

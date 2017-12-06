@@ -44,7 +44,8 @@ static NSString *CJUploadCollectionViewCellAddID = @"CJUploadCollectionViewCellA
     //equalCellSizeSetting.cellWidthFromFixedWidth = 50;
     
     //以下值，可选设置
-    //equalCellSizeSetting.collectionViewCellHeight = 30;
+    //equalCellSizeSetting.cellHeightFromFixedHeight = 100;
+    //equalCellSizeSetting.cellHeightFromPerColumnMaxShowCount = 2;
     equalCellSizeSetting.maxDataModelShowCount = 5;
     equalCellSizeSetting.extralItemSetting = CJExtralItemSettingTailing;
     
