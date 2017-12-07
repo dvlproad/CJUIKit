@@ -2,7 +2,7 @@
 //  MJExtensionViewController.m
 //  CJUIKitDemo
 //
-//  Created by lichq on 2017/11/2.
+//  Created by ciyouzen on 2017/11/2.
 //  Copyright © 2017年 dvlproad. All rights reserved.
 //
 

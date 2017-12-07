@@ -59,7 +59,14 @@
 
 - (IBAction)setupCJCellHorizontalLayout:(id)sender {
     CJCellHorizontalLayout *cellHorizontalLayout = [[CJCellHorizontalLayout alloc] init];
-    cellHorizontalLayout.itemSize = CGSizeMake(70, 85);
+    //以下值必须二选一设置（默认cellWidthFromFixedWidth设置后，另外一个自动失效）
+    //cellHorizontalLayout.cellWidthFromPerRowMaxShowCount = 4;
+    cellHorizontalLayout.cellWidthFromFixedWidth = 70;
+    
+    //以下值，可选设置
+    cellHorizontalLayout.cellHeightFromFixedHeight = 85;
+    //cellHorizontalLayout.cellHeightFromPerColumnMaxShowCount = 4;
+    
     cellHorizontalLayout.sectionInset = UIEdgeInsetsMake(5, 10, 5, 10);
     cellHorizontalLayout.minimumLineSpacing = 1;
     cellHorizontalLayout.minimumInteritemSpacing = 1;

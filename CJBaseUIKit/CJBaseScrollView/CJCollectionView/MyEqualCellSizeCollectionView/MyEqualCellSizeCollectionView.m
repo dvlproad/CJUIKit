@@ -82,6 +82,8 @@
         
         //以下值，可选设置
         //equalCellSizeSetting.cellHeightFromFixedHeight = 30;
+        //equalCellSizeSetting.cellHeightFromPerColumnMaxShowCount = 1;
+        
         //equalCellSizeSetting.maxDataModelShowCount = 5;
         //equalCellSizeSetting.extralItemSetting = CJExtralItemSettingLeading;
         

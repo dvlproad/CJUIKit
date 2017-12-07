@@ -1085,24 +1085,24 @@
 				780E46071E5DF87B00980127 /* AppDelegate.m */,
 				8014A27E1FA2C2E500DDDB5A /* AppDelegate+WindowRootViewController.h */,
 				8014A27F1FA2C2E500DDDB5A /* AppDelegate+WindowRootViewController.m */,
-				80FF91021FC5668700E437CF /* CJBaseUtil */,
-				80FF90D71FC5668600E437CF /* CJFoundation */,
+				780E460F1E5DF87B00980127 /* Assets.xcassets */,
 				789CAE0F1FB612B600AF8CD4 /* CJBaseUIKit */,
+				80FF91021FC5668700E437CF /* CJBaseUtil */,
 				789CAEFE1FB612B600AF8CD4 /* CJComplexUIKit */,
+				80FF90D71FC5668600E437CF /* CJFoundation */,
 				783281011F4198BC008267E0 /* CJSmallCustomView */,
-				780E46091E5DF87B00980127 /* ViewController.h */,
-				780E460A1E5DF87B00980127 /* ViewController.m */,
 				80FF8F0A1FC5649E00E437CF /* Demos */,
-				8014A2A11FA3137D00DDDB5A /* ThirdPartIcon.xcassets */,
+				780E46141E5DF87B00980127 /* Info.plist */,
+				780E46111E5DF87B00980127 /* LaunchScreen.storyboard */,
 				780E460C1E5DF87B00980127 /* Main.storyboard */,
 				789A19671E61B87D008081E3 /* Models */,
-				789A19681E61B87D008081E3 /* Resources */,
-				789A19691E61B87D008081E3 /* Views */,
-				780E460F1E5DF87B00980127 /* Assets.xcassets */,
-				780E46111E5DF87B00980127 /* LaunchScreen.storyboard */,
 				78B740111FB6C04500443D87 /* Network */,
-				780E46141E5DF87B00980127 /* Info.plist */,
+				789A19681E61B87D008081E3 /* Resources */,
 				780E46031E5DF87B00980127 /* Supporting Files */,
+				8014A2A11FA3137D00DDDB5A /* ThirdPartIcon.xcassets */,
+				780E46091E5DF87B00980127 /* ViewController.h */,
+				780E460A1E5DF87B00980127 /* ViewController.m */,
+				789A19691E61B87D008081E3 /* Views */,
 			);
 			path = CJUIKitDemo;
 			sourceTree = "<group>";
@@ -1982,15 +1982,15 @@
 		80FF8F2C1FC5649E00E437CF /* UIScrollViewDemo */ = {
 			isa = PBXGroup;
 			children = (
-				80FF8F2D1FC5649E00E437CF /* SvDemo_Refresh.xib */,
-				80FF8F2E1FC5649E00E437CF /* ScrollViewController.m */,
-				80FF8F2F1FC5649E00E437CF /* SvDemo_Refresh.m */,
 				80FF8F301FC5649E00E437CF /* KeyboardAvoidingViewController.h */,
-				80FF8F311FC5649E00E437CF /* ScrollViewController.h */,
-				80FF8F321FC5649E00E437CF /* SvDemo_Refresh.h */,
-				80FF8F331FC5649E00E437CF /* KeyboardAvoidingViewController.xib */,
 				80FF8F341FC5649E00E437CF /* KeyboardAvoidingViewController.m */,
+				80FF8F331FC5649E00E437CF /* KeyboardAvoidingViewController.xib */,
+				80FF8F311FC5649E00E437CF /* ScrollViewController.h */,
+				80FF8F2E1FC5649E00E437CF /* ScrollViewController.m */,
 				80FF8F351FC5649E00E437CF /* ScrollViewController.xib */,
+				80FF8F321FC5649E00E437CF /* SvDemo_Refresh.h */,
+				80FF8F2F1FC5649E00E437CF /* SvDemo_Refresh.m */,
+				80FF8F2D1FC5649E00E437CF /* SvDemo_Refresh.xib */,
 			);
 			path = UIScrollViewDemo;
 			sourceTree = "<group>";
@@ -2501,14 +2501,14 @@
 		80FF91021FC5668700E437CF /* CJBaseUtil */ = {
 			isa = PBXGroup;
 			children = (
+				80FF912E1FC5668700E437CF /* CJApp */,
+				80FF91091FC5668700E437CF /* CJDataUtil */,
 				80FF91DC1FC6739C00E437CF /* CJDateUtil */,
 				80FF91031FC5668700E437CF /* CJDevice */,
-				80FF91061FC5668700E437CF /* CJWebUtil */,
-				80FF91091FC5668700E437CF /* CJDataUtil */,
-				80FF91241FC5668700E437CF /* CJUtil.h */,
 				80FF91251FC5668700E437CF /* CJLog */,
+				80FF91241FC5668700E437CF /* CJUtil.h */,
+				80FF91061FC5668700E437CF /* CJWebUtil */,
 				80FF912A1FC5668700E437CF /* UIUtil */,
-				80FF912E1FC5668700E437CF /* CJApp */,
 			);
 			name = CJBaseUtil;
 			path = ../../CJBaseUtil;

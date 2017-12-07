@@ -9,11 +9,6 @@
 #import "CJCellHorizontalLayout.h"
 
 
-static CGFloat itemSpacing = 10;
-static CGFloat lineSpacing = 10;
-
-
-
 @interface CJCellHorizontalLayout() {
     
 }
@@ -23,14 +18,18 @@ static CGFloat lineSpacing = 10;
 @property (nonatomic, strong) NSMutableArray<UICollectionViewLayoutAttributes *> *attributes;
 @property (nonatomic, strong) NSMutableArray *indexPathsToAnimate;
 
+@property (nonatomic, assign, readonly) CGSize itemSize;                  /**< item大小 */
+
 @end
 
 
 
 @implementation CJCellHorizontalLayout
 {
-    int _row;
-    int _line;
+    NSInteger _maxRowPerPage;     /**< 每页最多有多少列 */
+    NSInteger _maxColumnPerPage;  /**< 每页最多有多少列 */
+    CGFloat _actualInteritemSpacing;/**< item之间的实际间隔 */
+    CGFloat _actualLineSpacing;     /**< line之间的实际间隔 */
 }
 
 - (instancetype)init
@@ -48,58 +47,79 @@ static CGFloat lineSpacing = 10;
 {
     [super prepareLayout]; //需调用父类方法
     
-    
-//    self.itemSize = CGSizeMake(70, 85);
-//    self.sectionInset = UIEdgeInsetsMake(5, 10, 5, 10);
-//    self.minimumLineSpacing = 1;
-//    self.minimumInteritemSpacing = 1;
-    
-    
+    _itemSize = [self sizeForItem];
     CGFloat itemWidth = self.itemSize.width;
     CGFloat itemHeight = self.itemSize.height;
     
     CGFloat width = self.collectionView.frame.size.width;
     CGFloat height = self.collectionView.frame.size.height;
     
+    /* 计算最多列数column和item实际间隔actualInteritemSpacing */
     CGFloat contentWidth = (width - self.sectionInset.left - self.sectionInset.right);
-    if (contentWidth >= (2*itemWidth+self.minimumInteritemSpacing)) { //如果列数大于2行
-        int m = (contentWidth-itemWidth)/(itemWidth+self.minimumInteritemSpacing);
-        _line = m+1;
-        int n = (int)(contentWidth-itemWidth)%(int)(itemWidth+self.minimumInteritemSpacing);
-        if (n > 0) {
-            double offset = ((contentWidth-itemWidth) - m*(itemWidth+self.minimumInteritemSpacing))/m;
-            itemSpacing = self.minimumInteritemSpacing + offset;
-        }else if (n == 0){
-            itemSpacing = self.minimumInteritemSpacing;
-        }
-    }else{ //如果列数为一行
-        _line = 1;
-        itemSpacing = 0;
-    }
-    
+    //x*(itemWidth+minimumInteritemSpacing) + itemWidth = contentWidth; //x间隙个数
+    NSInteger gapCountPerRow = (contentWidth-itemWidth)/(itemWidth+self.minimumInteritemSpacing);
+    NSInteger maxColumnPerPage = gapCountPerRow+1;
+    CGFloat totalResidualIntervalPerRow = contentWidth - maxColumnPerPage*itemWidth;//每行剩余的总间隔
+    CGFloat actualInteritemSpacing = totalResidualIntervalPerRow/(maxColumnPerPage-1);
+    _maxColumnPerPage = maxColumnPerPage;
+    _actualInteritemSpacing = actualInteritemSpacing;
+
+    /* 计算最多行数和line实际间隔actualLineSpacing */
     CGFloat contentHeight = (height - self.sectionInset.top - self.sectionInset.bottom);
-    if (contentHeight >= (2*itemHeight+self.minimumLineSpacing)) { //如果行数大于2行
-        int m = (contentHeight-itemHeight)/(itemHeight+self.minimumLineSpacing);
-        _row = m+1;
-        int n = (int)(contentHeight-itemHeight)%(int)(itemHeight+self.minimumLineSpacing);
-        if (n > 0) {
-            double offset = ((contentHeight-itemHeight) - m*(itemHeight+self.minimumLineSpacing))/m;
-            lineSpacing = self.minimumLineSpacing + offset;
-        }else if (n == 0){
-            lineSpacing = self.minimumInteritemSpacing;
-        }
-    }else{ //如果行数数为一行
-        _row = 1;
-        lineSpacing = 0;
-    }
-
-
+    //x*(itemHeight+minimumLineSpacing) + itemHeight = contentHeight; //x间隙个数
+    NSInteger gapCountPerColumn = (contentHeight-itemHeight)/(itemHeight+self.minimumLineSpacing);
+    NSInteger maxRowPerPage = gapCountPerColumn+1;
+    CGFloat totalResidualIntervalPerColumn = contentHeight - maxRowPerPage*itemHeight;//每列剩余的总间隔
+    CGFloat actualLineSpacing = totalResidualIntervalPerColumn/(maxRowPerPage-1);
+    _maxRowPerPage = maxRowPerPage;
+    _actualLineSpacing = actualLineSpacing;
+    
     int itemNumber = 0;
     itemNumber = itemNumber + (int)[self.collectionView numberOfItemsInSection:0];
     if (itemNumber >= 1) {
-        pageNumber = (itemNumber - 1)/(_row*_line) + 1;
+        pageNumber = (itemNumber - 1)/(_maxRowPerPage*_maxColumnPerPage) + 1; //每页6个，则6个时候也只有一页(6-1)/6+1
+    } else {
+        pageNumber = 1;
     }
 }
+
+
+- (CGSize)sizeForItem
+{
+    CGFloat collectionViewCellWidth = 0;
+    if (self.cellWidthFromFixedWidth) {
+        collectionViewCellWidth = self.cellWidthFromFixedWidth;
+        
+    } else {
+        NSInteger cellWidthFromPerRowMaxShowCount = self.cellWidthFromPerRowMaxShowCount;
+        
+        UIEdgeInsets sectionInset = self.sectionInset;
+        CGFloat minimumInteritemSpacing = self.minimumInteritemSpacing;
+        
+        CGFloat width = CGRectGetWidth(self.collectionView.frame);
+        CGFloat validWith = width - sectionInset.left - sectionInset.right - minimumInteritemSpacing*(cellWidthFromPerRowMaxShowCount-1);
+        collectionViewCellWidth = floorf(validWith/cellWidthFromPerRowMaxShowCount);
+    }
+    
+    CGFloat collectionViewCellHeight = 0;
+    if (self.cellHeightFromFixedHeight) {
+        collectionViewCellHeight = self.cellHeightFromFixedHeight;
+    } else if (self.cellHeightFromPerColumnMaxShowCount) {
+        NSInteger cellHeightFromPerColumnMaxShowCount = self.cellHeightFromPerColumnMaxShowCount;
+        
+        UIEdgeInsets sectionInset = self.sectionInset;
+        CGFloat minimumLineSpacing = self.minimumLineSpacing;
+        
+        CGFloat height = CGRectGetHeight(self.collectionView.frame);
+        CGFloat validHeight = height - sectionInset.top - sectionInset.bottom - minimumLineSpacing*(cellHeightFromPerColumnMaxShowCount-1);
+        collectionViewCellHeight = floorf(validHeight/cellHeightFromPerColumnMaxShowCount);
+    } else {
+        collectionViewCellHeight = collectionViewCellWidth;
+    }
+    
+    return CGSizeMake(collectionViewCellWidth, collectionViewCellHeight);
+}
+
 
 //- (void)prepareForCollectionViewUpdates:(NSArray<UICollectionViewUpdateItem *> *)updateItems
 //{
@@ -179,31 +199,29 @@ static long  pageNumber = 1;
 {
     UICollectionViewLayoutAttributes *attribute = [UICollectionViewLayoutAttributes layoutAttributesForCellWithIndexPath:indexPath];
     
-
+    /* 计算每个cell的frame */
+    NSInteger maxItemCountRowPerPage = _maxRowPerPage * _maxColumnPerPage; //每页最多item个数
+    //先计算出item在第几页，及其在所在页中的行和列
+    long pageIndexForItem = indexPath.item/maxItemCountRowPerPage; //①当前item在第几页
+    
+    NSInteger indexForItemInCurrentPage = 0;//②当前item在本页中属于第几个
+    if (indexPath.item < maxItemCountRowPerPage) {
+        indexForItemInCurrentPage = indexPath.item;
+    } else {
+        indexForItemInCurrentPage = indexPath.item%maxItemCountRowPerPage;
+    }
+    long rowIndexForItem = indexForItemInCurrentPage/_maxColumnPerPage; //item在其所在页中所在的行
+    long columnIndexForItem = indexPath.item%_maxColumnPerPage;//③item在其所在页中所在的列
+    
+    
+    CGFloat itemX = columnIndexForItem*self.itemSize.width+(columnIndexForItem)*_actualInteritemSpacing+self.sectionInset.left+(indexPath.section+pageIndexForItem)*self.collectionView.frame.size.width;
+    CGFloat itemY = rowIndexForItem*self.itemSize.height + (rowIndexForItem)*_actualLineSpacing+self.sectionInset.top;
+    
+    //利用上面计算的所得值，得到frame
     CGRect frame;
     frame.size = self.itemSize;
-    //下面计算每个cell的frame   可以自己定义
-    long number = _row * _line;
-//    printf("%ld\n",number);
-    long m = 0;  //初始化 m p
-    long p = 0;
-    if (indexPath.item >= number) {
-//        NSLog(@"indexpath.item:%ld",indexPath.item);
-        p = indexPath.item/number;  //计算页数不同时的左间距
-//        if ((p+1) > pageNumber) { //计算显示的页数
-//            pageNumber = p+1;
-//            
-//        }
-//        NSLog(@"%ld",p);
-        m = (indexPath.item%number)/_line;
-    }else{
-        m = indexPath.item/_line;
-    }
+    frame.origin = CGPointMake(itemX, itemY);
     
-    long n = indexPath.item%_line;
-    frame.origin = CGPointMake(n*self.itemSize.width+(n)*itemSpacing+self.sectionInset.left+(indexPath.section+p)*self.collectionView.frame.size.width,m*self.itemSize.height + (m)*lineSpacing+self.sectionInset.top);
-    
-//    printf("%d(%f,%f)\n",indexPath.item,frame.origin.x,frame.origin.y);
     attribute.frame = frame;
     return attribute;
 }

@@ -2,7 +2,7 @@
 //  IjinbuNetworkClient+LoginViewController.m
 //  CommonAFNUtilDemo
 //
-//  Created by dvlproad on 2017/3/6.
+//  Created by ciyouzen on 2017/3/6.
 //  Copyright © 2017年 dvlproad. All rights reserved.
 //
 
