@@ -16,6 +16,9 @@
 
 @property (nonatomic, assign, readonly) NSInteger originTextViewHeight;   /**< 文本框的初始高度 */
 
+///通用设置，子类需要继承此方法
+- (void)commonInit;
+
 /**
  *  设置文本框的最大行数，在文本框文字高度改变变化的时候，利用block中返回的文本高度来更新textView的高度
  *

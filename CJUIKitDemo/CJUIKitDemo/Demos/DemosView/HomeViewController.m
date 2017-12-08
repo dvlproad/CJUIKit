@@ -274,6 +274,7 @@
         viewController = [[classEntry alloc] initWithNibName:nibName bundle:nil];
     }
     viewController.title = NSLocalizedString(moduleModel.title, nil);
+    viewController.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:viewController animated:YES];
 }
 

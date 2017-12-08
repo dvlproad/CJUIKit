@@ -2219,22 +2219,22 @@
 		80FF8FC11FC5649E00E437CF /* DemosView */ = {
 			isa = PBXGroup;
 			children = (
-				80FF8FC21FC5649E00E437CF /* CJSearchBarDemo */,
 				80FF8FC61FC5649E00E437CF /* CJFloatingWindowDemo */,
-				80FF8FCA1FC5649E00E437CF /* InterfaceDemo */,
-				80FF8FD41FC5649E00E437CF /* UIViewControllerDemo */,
-				80FF8FD81FC5649E00E437CF /* HomeViewController.m */,
-				80FF8FD91FC5649E00E437CF /* UIImageDemo */,
-				80FF8FE11FC5649E00E437CF /* HomeViewController.xib */,
-				80FF8FE21FC5649E00E437CF /* UINavigationBar */,
-				80FF8FF01FC5649E00E437CF /* UIButtonDemo */,
-				80FF8FF41FC5649E00E437CF /* RefreshDemo */,
-				80FF8FF81FC5649E00E437CF /* DragViewDemo */,
-				80FF8FFC1FC5649E00E437CF /* CJSliderDemo */,
-				80FF90181FC5649E00E437CF /* HomeViewController.h */,
-				80FF90191FC5649E00E437CF /* CJTextViewDemo */,
-				80FF90211FC5649E00E437CF /* TextFieldDemo */,
 				80FF90251FC5649E00E437CF /* CJImageViewDemo */,
+				80FF8FC21FC5649E00E437CF /* CJSearchBarDemo */,
+				80FF8FFC1FC5649E00E437CF /* CJSliderDemo */,
+				80FF90191FC5649E00E437CF /* CJTextViewDemo */,
+				80FF8FF81FC5649E00E437CF /* DragViewDemo */,
+				80FF90181FC5649E00E437CF /* HomeViewController.h */,
+				80FF8FD81FC5649E00E437CF /* HomeViewController.m */,
+				80FF8FE11FC5649E00E437CF /* HomeViewController.xib */,
+				80FF8FCA1FC5649E00E437CF /* InterfaceDemo */,
+				80FF8FF41FC5649E00E437CF /* RefreshDemo */,
+				80FF90211FC5649E00E437CF /* TextFieldDemo */,
+				80FF8FF01FC5649E00E437CF /* UIButtonDemo */,
+				80FF8FD91FC5649E00E437CF /* UIImageDemo */,
+				80FF8FE21FC5649E00E437CF /* UINavigationBar */,
+				80FF8FD41FC5649E00E437CF /* UIViewControllerDemo */,
 			);
 			path = DemosView;
 			sourceTree = "<group>";
@@ -2252,8 +2252,8 @@
 		80FF8FC61FC5649E00E437CF /* CJFloatingWindowDemo */ = {
 			isa = PBXGroup;
 			children = (
-				80FF8FC71FC5649E00E437CF /* FloatingWindowViewController.m */,
 				80FF8FC81FC5649E00E437CF /* FloatingWindowViewController.h */,
+				80FF8FC71FC5649E00E437CF /* FloatingWindowViewController.m */,
 				80FF8FC91FC5649E00E437CF /* FloatingWindowViewController.xib */,
 			);
 			path = CJFloatingWindowDemo;
@@ -2343,8 +2343,8 @@
 			isa = PBXGroup;
 			children = (
 				80FF8FF91FC5649E00E437CF /* DragViewController.h */,
-				80FF8FFA1FC5649E00E437CF /* DragViewController.xib */,
 				80FF8FFB1FC5649E00E437CF /* DragViewController.m */,
+				80FF8FFA1FC5649E00E437CF /* DragViewController.xib */,
 			);
 			path = DragViewDemo;
 			sourceTree = "<group>";
@@ -2352,17 +2352,17 @@
 		80FF8FFC1FC5649E00E437CF /* CJSliderDemo */ = {
 			isa = PBXGroup;
 			children = (
-				80FF8FFD1FC5649E00E437CF /* SwitchSliderViewController.m */,
-				80FF8FFE1FC5649E00E437CF /* SliderViewController.m */,
 				80FF8FFF1FC5649E00E437CF /* RangeSliderViewController.h */,
-				80FF90001FC5649E00E437CF /* Resources */,
-				80FF900F1FC5649E00E437CF /* SwitchSliderViewController.xib */,
-				80FF90101FC5649E00E437CF /* SliderViewController.h */,
-				80FF90111FC5649E00E437CF /* SwitchSliderViewController.h */,
-				80FF90121FC5649E00E437CF /* SliderViewController.xib */,
 				80FF90131FC5649E00E437CF /* RangeSliderViewController.m */,
-				80FF90141FC5649E00E437CF /* Views */,
 				80FF90171FC5649E00E437CF /* RangeSliderViewController.xib */,
+				80FF90001FC5649E00E437CF /* Resources */,
+				80FF90101FC5649E00E437CF /* SliderViewController.h */,
+				80FF8FFE1FC5649E00E437CF /* SliderViewController.m */,
+				80FF90121FC5649E00E437CF /* SliderViewController.xib */,
+				80FF90111FC5649E00E437CF /* SwitchSliderViewController.h */,
+				80FF8FFD1FC5649E00E437CF /* SwitchSliderViewController.m */,
+				80FF900F1FC5649E00E437CF /* SwitchSliderViewController.xib */,
+				80FF90141FC5649E00E437CF /* Views */,
 			);
 			path = CJSliderDemo;
 			sourceTree = "<group>";
@@ -2370,19 +2370,19 @@
 		80FF90001FC5649E00E437CF /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				80FF90011FC5649E00E437CF /* slider_maximum_trackimage@3x.png */,
+				80FF90061FC5649E00E437CF /* btn_hd@2x.png */,
+				80FF90051FC5649E00E437CF /* btn_hd@3x.png */,
+				80FF900A1FC5649E00E437CF /* icon_ddlb_hd@2x.png */,
+				80FF900D1FC5649E00E437CF /* icon_ddlb_jd@2x.png */,
 				80FF90021FC5649E00E437CF /* slider_double_thumbImage_a@2x.png */,
 				80FF90031FC5649E00E437CF /* slider_double_thumbImage_a@3x.png */,
-				80FF90041FC5649E00E437CF /* slider_maximum_trackimage@2x.png */,
-				80FF90051FC5649E00E437CF /* btn_hd@3x.png */,
-				80FF90061FC5649E00E437CF /* btn_hd@2x.png */,
+				80FF900B1FC5649E00E437CF /* slider_double_thumbImage_b@2x.png */,
 				80FF90071FC5649E00E437CF /* slider_double_thumbImage_b@3x.png */,
+				80FF90041FC5649E00E437CF /* slider_maximum_trackimage@2x.png */,
+				80FF90011FC5649E00E437CF /* slider_maximum_trackimage@3x.png */,
 				80FF90081FC5649E00E437CF /* slider_minimum_trackimage@2x.png */,
 				80FF90091FC5649E00E437CF /* slider_minimum_trackimage@3x.png */,
-				80FF900A1FC5649E00E437CF /* icon_ddlb_hd@2x.png */,
-				80FF900B1FC5649E00E437CF /* slider_double_thumbImage_b@2x.png */,
 				80FF900C1FC5649E00E437CF /* slider_thumbImage@2x.png */,
-				80FF900D1FC5649E00E437CF /* icon_ddlb_jd@2x.png */,
 				80FF900E1FC5649E00E437CF /* slider_thumbImage@3x.png */,
 			);
 			path = Resources;
@@ -2391,8 +2391,8 @@
 		80FF90141FC5649E00E437CF /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				80FF90151FC5649E00E437CF /* ShimmeringSwitchSlider.m */,
 				80FF90161FC5649E00E437CF /* ShimmeringSwitchSlider.h */,
+				80FF90151FC5649E00E437CF /* ShimmeringSwitchSlider.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -2400,9 +2400,9 @@
 		80FF90191FC5649E00E437CF /* CJTextViewDemo */ = {
 			isa = PBXGroup;
 			children = (
-				80FF901A1FC5649E00E437CF /* TextViewController.m */,
 				80FF901B1FC5649E00E437CF /* Resources */,
 				80FF901F1FC5649E00E437CF /* TextViewController.h */,
+				80FF901A1FC5649E00E437CF /* TextViewController.m */,
 				80FF90201FC5649E00E437CF /* TextViewController.xib */,
 			);
 			path = CJTextViewDemo;
@@ -2431,9 +2431,9 @@
 		80FF90251FC5649E00E437CF /* CJImageViewDemo */ = {
 			isa = PBXGroup;
 			children = (
+				80FF90281FC5649E00E437CF /* ImageViewController.h */,
 				80FF90261FC5649E00E437CF /* ImageViewController.m */,
 				80FF90271FC5649E00E437CF /* ImageViewController.xib */,
-				80FF90281FC5649E00E437CF /* ImageViewController.h */,
 			);
 			path = CJImageViewDemo;
 			sourceTree = "<group>";
