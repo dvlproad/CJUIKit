@@ -2037,13 +2037,13 @@
 		80FF8F491FC5649E00E437CF /* CycleADView */ = {
 			isa = PBXGroup;
 			children = (
-				80FF8F4A1FC5649E00E437CF /* MyADModel.h */,
-				80FF8F4B1FC5649E00E437CF /* MyCycleADView.m */,
-				80FF8F4C1FC5649E00E437CF /* MyCycleADViewController.m */,
-				80FF8F4D1FC5649E00E437CF /* MyADModel.m */,
 				80FF8F4E1FC5649E00E437CF /* MemoryAD */,
-				80FF8F671FC5649E00E437CF /* MyCycleADViewController.h */,
+				80FF8F4A1FC5649E00E437CF /* MyADModel.h */,
+				80FF8F4D1FC5649E00E437CF /* MyADModel.m */,
 				80FF8F681FC5649E00E437CF /* MyCycleADView.h */,
+				80FF8F4B1FC5649E00E437CF /* MyCycleADView.m */,
+				80FF8F671FC5649E00E437CF /* MyCycleADViewController.h */,
+				80FF8F4C1FC5649E00E437CF /* MyCycleADViewController.m */,
 				80FF8F691FC5649E00E437CF /* MyCycleADViewController.xib */,
 			);
 			path = CycleADView;
@@ -2109,13 +2109,13 @@
 		80FF8F781FC5649E00E437CF /* MyEqualCellSizeCollectionView */ = {
 			isa = PBXGroup;
 			children = (
-				80FF8F791FC5649E00E437CF /* MyEqualCellSizeView.m */,
-				80FF8F7A1FC5649E00E437CF /* MyEqualCellSizeViewController.m */,
+				80FF8F7F1FC5649E00E437CF /* MyEqualCellSizeCollectionViewController.h */,
 				80FF8F7B1FC5649E00E437CF /* MyEqualCellSizeCollectionViewController.m */,
 				80FF8F7C1FC5649E00E437CF /* MyEqualCellSizeCollectionViewController.xib */,
-				80FF8F7D1FC5649E00E437CF /* MyEqualCellSizeViewController.h */,
 				80FF8F7E1FC5649E00E437CF /* MyEqualCellSizeView.h */,
-				80FF8F7F1FC5649E00E437CF /* MyEqualCellSizeCollectionViewController.h */,
+				80FF8F791FC5649E00E437CF /* MyEqualCellSizeView.m */,
+				80FF8F7D1FC5649E00E437CF /* MyEqualCellSizeViewController.h */,
+				80FF8F7A1FC5649E00E437CF /* MyEqualCellSizeViewController.m */,
 				80FF8F801FC5649E00E437CF /* MyEqualCellSizeViewController.xib */,
 			);
 			path = MyEqualCellSizeCollectionView;
@@ -2558,10 +2558,10 @@
 		80FF91121FC5668700E437CF /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				80FF911C1FC5668700E437CF /* CJSectionDataModel.h */,
 				80FF91131FC5668700E437CF /* CJSectionDataModel.m */,
 				80FF91141FC5668700E437CF /* Search */,
 				80FF91191FC5668700E437CF /* Sorted */,
-				80FF911C1FC5668700E437CF /* CJSectionDataModel.h */,
 			);
 			path = Models;
 			sourceTree = "<group>";

@@ -233,30 +233,14 @@ minimumInteritemSpacingForSectionAtIndex:(NSInteger)section
     }
     
     
-    NSInteger dataModelCount = dataModels.count;
-
-    CGFloat height = 0;
-    NSInteger currentRowCount = 0;
-    NSInteger allCellCount = 0;
-    if (equalCellSizeSetting.extralItemSetting == CJExtralItemSettingLeading ||
-        equalCellSizeSetting.extralItemSetting == CJExtralItemSettingTailing) {
-        
-        NSInteger maxDataModelShowCount = equalCellSizeSetting.maxDataModelShowCount;
-        if (dataModelCount < maxDataModelShowCount) {
-            allCellCount = dataModelCount + 1;
-        } else {
-            allCellCount = dataModelCount;
-        }
-        
-    } else {
-        allCellCount = dataModelCount;
-    }
+    NSInteger allCellCount = [equalCellSizeSetting getCellCountByDataModels:dataModels];
     
+    CGFloat height = 0;
     if (allCellCount == 0) {
-        currentRowCount = 0;
+        NSInteger currentRowCount = 0;
         height += currentRowCount * collectionViewCellHeight;
     } else {
-        currentRowCount = (allCellCount-1)/perRowMaxShowCount + 1;
+        NSInteger currentRowCount = (allCellCount-1)/perRowMaxShowCount + 1;
         height += currentRowCount * collectionViewCellHeight + (currentRowCount - 1)*minimumLineSpacing;
     }
     height += sectionInset.top + sectionInset.bottom;

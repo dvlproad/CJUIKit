@@ -1,6 +1,6 @@
 //
 //  CJTextView.m
-//  CJTextView
+//  CJUIKitDemo
 //
 //  Created by ciyouzen on 2015/12/23.
 //  Copyright © 2015年 dvlproad. All rights reserved.
@@ -147,7 +147,6 @@
         if (currentTextViewHeight <= self.maxTextViewHeight) {
             if (self.textViewHeightChangeBlock) {
                 self.textViewHeightChangeBlock(self.text, currentTextViewHeight);
-                [self.superview layoutIfNeeded];
             }
         }
     }
