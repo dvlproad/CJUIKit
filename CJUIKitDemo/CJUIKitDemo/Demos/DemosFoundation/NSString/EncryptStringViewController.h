@@ -1,5 +1,5 @@
 //
-//  StringViewController.h
+//  EncryptStringViewController.h
 //  CJFoundationDemo
 //
 //  Created by ciyouzen on 2016/3/26.
@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface StringViewController : UIViewController
+@interface EncryptStringViewController : UIViewController
 
 @property (nonatomic, weak) IBOutlet UILabel *attributedLabel;
 @property (nonatomic, weak) IBOutlet UILabel *attributedLabel2;

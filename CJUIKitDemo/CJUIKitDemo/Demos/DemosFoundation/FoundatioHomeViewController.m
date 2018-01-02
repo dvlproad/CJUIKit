@@ -10,8 +10,9 @@
 
 #import "ModuleModel.h"
 
-#import "StringViewController.h"
+#import "EncryptStringViewController.h"
 #import "AttributedStringViewController.h"
+#import "ValidateStringViewController.h"
 
 #import "DateViewController.h"
 #import "TypeConvertViewController.h"
@@ -35,43 +36,90 @@
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
     
-    self.datas = [[NSMutableArray alloc] init];
     
-    ModuleModel *NSStringModule = [[ModuleModel alloc] init];
-    NSStringModule.title = @"NSString";
-    NSStringModule.classEntry = [StringViewController class];
-    [self.datas addObject:NSStringModule];
+    NSMutableArray *sectionDataModels = [[NSMutableArray alloc] init];
+    //NSString
+    {
+        CJSectionDataModel *sectionDataModel = [[CJSectionDataModel alloc] init];
+        sectionDataModel.theme = @"NSString相关";
+        {
+            ModuleModel *NSStringModule = [[ModuleModel alloc] init];
+            NSStringModule.title = @"EncryptString";
+            NSStringModule.classEntry = [EncryptStringViewController class];
+            [sectionDataModel.values addObject:NSStringModule];
+        }
+        {
+            ModuleModel *NSAttributedStringModule = [[ModuleModel alloc] init];
+            NSAttributedStringModule.title = @"NSAttributedString";
+            NSAttributedStringModule.classEntry = [AttributedStringViewController class];
+            [sectionDataModel.values addObject:NSAttributedStringModule];
+        }
+        {
+            ModuleModel *NSAttributedStringModule = [[ModuleModel alloc] init];
+            NSAttributedStringModule.title = @"ValidateString";
+            NSAttributedStringModule.classEntry = [ValidateStringViewController class];
+            [sectionDataModel.values addObject:NSAttributedStringModule];
+        }
+        
+        [sectionDataModels addObject:sectionDataModel];
+    }
     
     
-    ModuleModel *NSAttributedStringModule = [[ModuleModel alloc] init];
-    NSAttributedStringModule.title = @"NSAttributedString";
-    NSAttributedStringModule.classEntry = [AttributedStringViewController class];
-    [self.datas addObject:NSAttributedStringModule];
+    //NSDate
+    {
+        CJSectionDataModel *sectionDataModel = [[CJSectionDataModel alloc] init];
+        sectionDataModel.theme = @"NSDate相关";
+        {
+            ModuleModel *NSDateModule = [[ModuleModel alloc] init];
+            NSDateModule.title = @"NSDate";
+            NSDateModule.classEntry = [DateViewController class];
+            [sectionDataModel.values addObject:NSDateModule];
+        }
+        
+        [sectionDataModels addObject:sectionDataModel];
+    }
     
+    //Json-Model类型转换
+    {
+        CJSectionDataModel *sectionDataModel = [[CJSectionDataModel alloc] init];
+        sectionDataModel.theme = @"Json-Model类型转换相关";
+        {
+            //TypeConvert
+            ModuleModel *TypeConvertModule = [[ModuleModel alloc] init];
+            TypeConvertModule.title = @"TypeConvertModule（类型转换）";
+            TypeConvertModule.classEntry = [TypeConvertViewController class];
+            [sectionDataModel.values addObject:TypeConvertModule];
+        }
+        
+        [sectionDataModels addObject:sectionDataModel];
+    }
     
-    ModuleModel *NSDateModule = [[ModuleModel alloc] init];
-    NSDateModule.title = @"NSDate";
-    NSDateModule.classEntry = [DateViewController class];
-    [self.datas addObject:NSDateModule];
-    
-    //TypeConvert
-    ModuleModel *TypeConvertModule = [[ModuleModel alloc] init];
-    TypeConvertModule.title = @"TypeConvertModule（类型转换）";
-    TypeConvertModule.classEntry = [TypeConvertViewController class];
-    [self.datas addObject:TypeConvertModule];
+    self.sectionDataModels = sectionDataModels;
 }
 
 #pragma mark - UITableViewDataSource & UITableViewDelegate
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 1;
+    return self.sectionDataModels.count;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return [self.datas count];
+    CJSectionDataModel *sectionDataModel = [self.sectionDataModels objectAtIndex:section];
+    NSArray *dataModels = sectionDataModel.values;
+    
+    return dataModels.count;
+}
+
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+    CJSectionDataModel *sectionDataModel = [self.sectionDataModels objectAtIndex:section];
+    
+    NSString *indexTitle = sectionDataModel.theme;
+    return indexTitle;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    ModuleModel *moduleModel = [self.datas objectAtIndex:indexPath.row];
+    CJSectionDataModel *sectionDataModel = [self.sectionDataModels objectAtIndex:indexPath.section];
+    NSArray *dataModels = sectionDataModel.values;
+    ModuleModel *moduleModel = [dataModels objectAtIndex:indexPath.row];
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
     cell.textLabel.text = moduleModel.title;
@@ -80,9 +128,12 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    NSLog(@"didSelectRowAtIndexPath = %ld %ld", indexPath.section, indexPath.row);
+    //NSLog(@"didSelectRowAtIndexPath = %ld %ld", indexPath.section, indexPath.row);
     
-    ModuleModel *moduleModel = [self.datas objectAtIndex:indexPath.row];
+    CJSectionDataModel *sectionDataModel = [self.sectionDataModels objectAtIndex:indexPath.section];
+    NSArray *dataModels = sectionDataModel.values;
+    ModuleModel *moduleModel = [dataModels objectAtIndex:indexPath.row];
+    
     Class classEntry = moduleModel.classEntry;
     NSString *nibName = NSStringFromClass(moduleModel.classEntry);
     
@@ -99,8 +150,10 @@
         viewController = [[classEntry alloc] initWithNibName:nibName bundle:nil];
     }
     viewController.title = NSLocalizedString(moduleModel.title, nil);
+    viewController.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:viewController animated:YES];
 }
+
 
 
 - (void)didReceiveMemoryWarning {

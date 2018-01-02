@@ -13,6 +13,9 @@
 
 #import <Masonry/Masonry.h>
 
+#define CJDEBUG
+#import "CJLogUtil.h"
+
 #import "CJToast.h"
 
 // Include any system framework and library headers here that should be included in all compilation units.

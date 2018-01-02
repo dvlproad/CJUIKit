@@ -1,20 +1,20 @@
 //
-//  StringViewController.m
+//  EncryptStringViewController.m
 //  CJFoundationDemo
 //
 //  Created by ciyouzen on 2016/3/26.
 //  Copyright © 2016年 dvlproad. All rights reserved.
 //
 
-#import "StringViewController.h"
+#import "EncryptStringViewController.h"
 
 #import "NSString+CJEncryption.h"
 
-@interface StringViewController ()
+@interface EncryptStringViewController ()
 
 @end
 
-@implementation StringViewController
+@implementation EncryptStringViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];

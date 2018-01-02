@@ -153,6 +153,10 @@
 		8014A28B1FA2C81A00DDDB5A /* icons8-folder.png in Resources */ = {isa = PBXBuildFile; fileRef = 8014A2861FA2C81A00DDDB5A /* icons8-folder.png */; };
 		8014A28C1FA2C81A00DDDB5A /* icons8-home.png in Resources */ = {isa = PBXBuildFile; fileRef = 8014A2871FA2C81A00DDDB5A /* icons8-home.png */; };
 		8014A2A21FA3137D00DDDB5A /* ThirdPartIcon.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8014A2A11FA3137D00DDDB5A /* ThirdPartIcon.xcassets */; };
+		805598B51FF5D612009DC61C /* ValidateStringViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 805598B31FF5D612009DC61C /* ValidateStringViewController.m */; };
+		805598B61FF5D612009DC61C /* ValidateStringViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 805598B41FF5D612009DC61C /* ValidateStringViewController.xib */; };
+		805598BA1FF5DB0F009DC61C /* ValidateStringTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 805598B81FF5DB0F009DC61C /* ValidateStringTableViewCell.m */; };
+		805598BB1FF5DB0F009DC61C /* ValidateStringTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 805598B91FF5DB0F009DC61C /* ValidateStringTableViewCell.xib */; };
 		807903101FB413D60082F05C /* arrow_back_red@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 807903071FB413D60082F05C /* arrow_back_red@2x.png */; };
 		807903111FB413D60082F05C /* arrow_balland_red@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 807903081FB413D60082F05C /* arrow_balland_red@2x.png */; };
 		807903121FB413D60082F05C /* arrow_down.png in Resources */ = {isa = PBXBuildFile; fileRef = 807903091FB413D60082F05C /* arrow_down.png */; };
@@ -349,7 +353,6 @@
 		80FF914E1FC5668700E437CF /* CJDataUtil+SortCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 80FF91201FC5668700E437CF /* CJDataUtil+SortCategory.m */; };
 		80FF914F1FC5668700E437CF /* CJDataUtil+Value.m in Sources */ = {isa = PBXBuildFile; fileRef = 80FF91221FC5668700E437CF /* CJDataUtil+Value.m */; };
 		80FF91501FC5668700E437CF /* CJRealtimeSearchUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 80FF91231FC5668700E437CF /* CJRealtimeSearchUtil.m */; };
-		80FF91511FC5668700E437CF /* CJAppLog.m in Sources */ = {isa = PBXBuildFile; fileRef = 80FF91271FC5668700E437CF /* CJAppLog.m */; };
 		80FF91521FC5668700E437CF /* CJLogUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 80FF91281FC5668700E437CF /* CJLogUtil.m */; };
 		80FF91531FC5668700E437CF /* PrivateSetting.m in Sources */ = {isa = PBXBuildFile; fileRef = 80FF912C1FC5668700E437CF /* PrivateSetting.m */; };
 		80FF91541FC5668700E437CF /* CJAppHaveLaunchUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 80FF912F1FC5668700E437CF /* CJAppHaveLaunchUtil.m */; };
@@ -358,9 +361,9 @@
 		80FF91941FC5682B00E437CF /* TypeConvertViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80FF91751FC5682A00E437CF /* TypeConvertViewController.m */; };
 		80FF91951FC5682B00E437CF /* FoundatioHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80FF91771FC5682A00E437CF /* FoundatioHomeViewController.m */; };
 		80FF91961FC5682B00E437CF /* AttributedStringViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 80FF917A1FC5682A00E437CF /* AttributedStringViewController.xib */; };
-		80FF91971FC5682B00E437CF /* StringViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80FF917B1FC5682A00E437CF /* StringViewController.m */; };
+		80FF91971FC5682B00E437CF /* EncryptStringViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80FF917B1FC5682A00E437CF /* EncryptStringViewController.m */; };
 		80FF91981FC5682B00E437CF /* AttributedStringViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80FF917C1FC5682A00E437CF /* AttributedStringViewController.m */; };
-		80FF91991FC5682B00E437CF /* StringViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 80FF917D1FC5682A00E437CF /* StringViewController.xib */; };
+		80FF91991FC5682B00E437CF /* EncryptStringViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 80FF917D1FC5682A00E437CF /* EncryptStringViewController.xib */; };
 		80FF919A1FC5682B00E437CF /* DateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80FF91811FC5682A00E437CF /* DateViewController.m */; };
 		80FF919B1FC5682B00E437CF /* DateViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 80FF91821FC5682A00E437CF /* DateViewController.xib */; };
 		80FF919C1FC5682B00E437CF /* CountDownTimeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80FF91851FC5682A00E437CF /* CountDownTimeViewController.m */; };
@@ -677,6 +680,12 @@
 		8014A2871FA2C81A00DDDB5A /* icons8-home.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icons8-home.png"; sourceTree = "<group>"; };
 		8014A2A11FA3137D00DDDB5A /* ThirdPartIcon.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = ThirdPartIcon.xcassets; sourceTree = "<group>"; };
 		80270BBC1FABFE57001429F0 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		805598B21FF5D612009DC61C /* ValidateStringViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ValidateStringViewController.h; sourceTree = "<group>"; };
+		805598B31FF5D612009DC61C /* ValidateStringViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ValidateStringViewController.m; sourceTree = "<group>"; };
+		805598B41FF5D612009DC61C /* ValidateStringViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ValidateStringViewController.xib; sourceTree = "<group>"; };
+		805598B71FF5DB0F009DC61C /* ValidateStringTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ValidateStringTableViewCell.h; sourceTree = "<group>"; };
+		805598B81FF5DB0F009DC61C /* ValidateStringTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ValidateStringTableViewCell.m; sourceTree = "<group>"; };
+		805598B91FF5DB0F009DC61C /* ValidateStringTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ValidateStringTableViewCell.xib; sourceTree = "<group>"; };
 		807903071FB413D60082F05C /* arrow_back_red@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrow_back_red@2x.png"; sourceTree = "<group>"; };
 		807903081FB413D60082F05C /* arrow_balland_red@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrow_balland_red@2x.png"; sourceTree = "<group>"; };
 		807903091FB413D60082F05C /* arrow_down.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = arrow_down.png; sourceTree = "<group>"; };
@@ -967,9 +976,7 @@
 		80FF91231FC5668700E437CF /* CJRealtimeSearchUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJRealtimeSearchUtil.m; sourceTree = "<group>"; };
 		80FF91241FC5668700E437CF /* CJUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJUtil.h; sourceTree = "<group>"; };
 		80FF91261FC5668700E437CF /* CJLogUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJLogUtil.h; sourceTree = "<group>"; };
-		80FF91271FC5668700E437CF /* CJAppLog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJAppLog.m; sourceTree = "<group>"; };
 		80FF91281FC5668700E437CF /* CJLogUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJLogUtil.m; sourceTree = "<group>"; };
-		80FF91291FC5668700E437CF /* CJAppLog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJAppLog.h; sourceTree = "<group>"; };
 		80FF912C1FC5668700E437CF /* PrivateSetting.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PrivateSetting.m; sourceTree = "<group>"; };
 		80FF912D1FC5668700E437CF /* PrivateSetting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrivateSetting.h; sourceTree = "<group>"; };
 		80FF912F1FC5668700E437CF /* CJAppHaveLaunchUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJAppHaveLaunchUtil.m; sourceTree = "<group>"; };
@@ -983,10 +990,10 @@
 		80FF91771FC5682A00E437CF /* FoundatioHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FoundatioHomeViewController.m; sourceTree = "<group>"; };
 		80FF91791FC5682A00E437CF /* AttributedStringViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AttributedStringViewController.h; sourceTree = "<group>"; };
 		80FF917A1FC5682A00E437CF /* AttributedStringViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AttributedStringViewController.xib; sourceTree = "<group>"; };
-		80FF917B1FC5682A00E437CF /* StringViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StringViewController.m; sourceTree = "<group>"; };
+		80FF917B1FC5682A00E437CF /* EncryptStringViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EncryptStringViewController.m; sourceTree = "<group>"; };
 		80FF917C1FC5682A00E437CF /* AttributedStringViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AttributedStringViewController.m; sourceTree = "<group>"; };
-		80FF917D1FC5682A00E437CF /* StringViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StringViewController.xib; sourceTree = "<group>"; };
-		80FF917E1FC5682A00E437CF /* StringViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StringViewController.h; sourceTree = "<group>"; };
+		80FF917D1FC5682A00E437CF /* EncryptStringViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EncryptStringViewController.xib; sourceTree = "<group>"; };
+		80FF917E1FC5682A00E437CF /* EncryptStringViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EncryptStringViewController.h; sourceTree = "<group>"; };
 		80FF91801FC5682A00E437CF /* DateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DateViewController.h; sourceTree = "<group>"; };
 		80FF91811FC5682A00E437CF /* DateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DateViewController.m; sourceTree = "<group>"; };
 		80FF91821FC5682A00E437CF /* DateViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DateViewController.xib; sourceTree = "<group>"; };
@@ -2483,17 +2490,17 @@
 		80FF90E41FC5668600E437CF /* NSString */ = {
 			isa = PBXGroup;
 			children = (
-				80FF90E51FC5668600E437CF /* NSString+CJEncryption.h */,
-				80FF90E61FC5668600E437CF /* NSString+CJEncoding.h */,
-				80FF90E81FC5668600E437CF /* NSString+CJValidate.m */,
-				80FF90E91FC5668600E437CF /* NSString+CJTextSize.m */,
 				80FF90EA1FC5668600E437CF /* NSString+CJAttributedString.h */,
-				80FF90EB1FC5668600E437CF /* NSString+CJEncoding.m */,
-				80FF90EC1FC5668600E437CF /* NSString+CJEncryption.m */,
-				80FF90EE1FC5668600E437CF /* NSString+CJCategory.h */,
 				80FF90EF1FC5668600E437CF /* NSString+CJAttributedString.m */,
+				80FF90EE1FC5668600E437CF /* NSString+CJCategory.h */,
+				80FF90E61FC5668600E437CF /* NSString+CJEncoding.h */,
+				80FF90EB1FC5668600E437CF /* NSString+CJEncoding.m */,
+				80FF90E51FC5668600E437CF /* NSString+CJEncryption.h */,
+				80FF90EC1FC5668600E437CF /* NSString+CJEncryption.m */,
 				80FF90F01FC5668600E437CF /* NSString+CJTextSize.h */,
+				80FF90E91FC5668600E437CF /* NSString+CJTextSize.m */,
 				80FF90F11FC5668600E437CF /* NSString+CJValidate.h */,
+				80FF90E81FC5668600E437CF /* NSString+CJValidate.m */,
 			);
 			path = NSString;
 			sourceTree = "<group>";
@@ -2590,9 +2597,7 @@
 			isa = PBXGroup;
 			children = (
 				80FF91261FC5668700E437CF /* CJLogUtil.h */,
-				80FF91271FC5668700E437CF /* CJAppLog.m */,
 				80FF91281FC5668700E437CF /* CJLogUtil.m */,
-				80FF91291FC5668700E437CF /* CJAppLog.h */,
 			);
 			path = CJLog;
 			sourceTree = "<group>";
@@ -2617,9 +2622,9 @@
 		80FF912E1FC5668700E437CF /* CJApp */ = {
 			isa = PBXGroup;
 			children = (
+				80FF91311FC5668700E437CF /* CJAppHaveLaunchUtil.h */,
 				80FF912F1FC5668700E437CF /* CJAppHaveLaunchUtil.m */,
 				80FF91301FC5668700E437CF /* CJAppVersionUtil.h */,
-				80FF91311FC5668700E437CF /* CJAppHaveLaunchUtil.h */,
 				80FF91321FC5668700E437CF /* CJAppVersionUtil.m */,
 			);
 			path = CJApp;
@@ -2652,11 +2657,17 @@
 			isa = PBXGroup;
 			children = (
 				80FF91791FC5682A00E437CF /* AttributedStringViewController.h */,
-				80FF917A1FC5682A00E437CF /* AttributedStringViewController.xib */,
-				80FF917B1FC5682A00E437CF /* StringViewController.m */,
 				80FF917C1FC5682A00E437CF /* AttributedStringViewController.m */,
-				80FF917D1FC5682A00E437CF /* StringViewController.xib */,
-				80FF917E1FC5682A00E437CF /* StringViewController.h */,
+				80FF917A1FC5682A00E437CF /* AttributedStringViewController.xib */,
+				80FF917E1FC5682A00E437CF /* EncryptStringViewController.h */,
+				80FF917B1FC5682A00E437CF /* EncryptStringViewController.m */,
+				80FF917D1FC5682A00E437CF /* EncryptStringViewController.xib */,
+				805598B21FF5D612009DC61C /* ValidateStringViewController.h */,
+				805598B31FF5D612009DC61C /* ValidateStringViewController.m */,
+				805598B41FF5D612009DC61C /* ValidateStringViewController.xib */,
+				805598B71FF5DB0F009DC61C /* ValidateStringTableViewCell.h */,
+				805598B81FF5DB0F009DC61C /* ValidateStringTableViewCell.m */,
+				805598B91FF5DB0F009DC61C /* ValidateStringTableViewCell.xib */,
 			);
 			path = NSString;
 			sourceTree = "<group>";
@@ -2675,11 +2686,11 @@
 			isa = PBXGroup;
 			children = (
 				80FF91841FC5682A00E437CF /* CountDownTimeDemo */,
-				80FF91881FC5682A00E437CF /* OtherHomeViewController.m */,
 				80FF91891FC5682A00E437CF /* OtherHomeViewController.h */,
+				80FF91881FC5682A00E437CF /* OtherHomeViewController.m */,
+				80FF91921FC5682A00E437CF /* OtherHomeViewController.xib */,
 				80FF918A1FC5682A00E437CF /* ProcessLineViewDemo */,
 				80FF918E1FC5682A00E437CF /* ScaleHeadViewDemo */,
-				80FF91921FC5682A00E437CF /* OtherHomeViewController.xib */,
 			);
 			path = DemosOther;
 			sourceTree = "<group>";
@@ -2973,7 +2984,7 @@
 				80FF905D1FC5649F00E437CF /* MemoryADResult01.gif in Resources */,
 				8014A2A21FA3137D00DDDB5A /* ThirdPartIcon.xcassets in Resources */,
 				80FF90CA1FC5649F00E437CF /* SliderViewController.xib in Resources */,
-				80FF91991FC5682B00E437CF /* StringViewController.xib in Resources */,
+				80FF91991FC5682B00E437CF /* EncryptStringViewController.xib in Resources */,
 				80FF90D21FC5649F00E437CF /* TextViewController.xib in Resources */,
 				80FF90461FC5649F00E437CF /* UploadDirectlyImagePickerViewController.xib in Resources */,
 				80FF90C21FC5649F00E437CF /* slider_minimum_trackimage@2x.png in Resources */,
@@ -3000,6 +3011,8 @@
 				80FF90541FC5649F00E437CF /* MemoryADExample02.jpg in Resources */,
 				789CAF2E1FB612B700AF8CD4 /* cjCheckBoxGreenNO@2x.png in Resources */,
 				80FF90D41FC5649F00E437CF /* TextFieldViewController.xib in Resources */,
+				805598B61FF5D612009DC61C /* ValidateStringViewController.xib in Resources */,
+				805598BB1FF5DB0F009DC61C /* ValidateStringTableViewCell.xib in Resources */,
 				80FF90B71FC5649F00E437CF /* DragViewController.xib in Resources */,
 				80FF90721FC5649F00E437CF /* MyEqualCellSizeViewController.xib in Resources */,
 				80FF919F1FC5682B00E437CF /* ProcessLineViewController.xib in Resources */,
@@ -3287,7 +3300,6 @@
 				789CAF471FB612B700AF8CD4 /* CJPlayerSlider.m in Sources */,
 				80FF91331FC5668700E437CF /* NSDictionary+CJConvert.m in Sources */,
 				78B740331FB6C04600443D87 /* IjinbuUser.m in Sources */,
-				80FF91511FC5668700E437CF /* CJAppLog.m in Sources */,
 				80FF90B61FC5649F00E437CF /* CJMJRefreshViewController.m in Sources */,
 				80FF90701FC5649F00E437CF /* MyEqualCellSizeCollectionViewController.m in Sources */,
 				80FF90D51FC5649F00E437CF /* ImageViewController.m in Sources */,
@@ -3324,13 +3336,14 @@
 				80FF91EB1FC6739D00E437CF /* CJDateFormatterUtil.m in Sources */,
 				80FF906B1FC5649F00E437CF /* Header.m in Sources */,
 				7832810D1F41AA96008267E0 /* ProcessLineView.m in Sources */,
+				805598B51FF5D612009DC61C /* ValidateStringViewController.m in Sources */,
 				80FF90B81FC5649F00E437CF /* DragViewController.m in Sources */,
 				80FF90481FC5649F00E437CF /* UploadDirectlyImagePickerViewController.m in Sources */,
 				80FF91C31FC581DD00E437CF /* DeviceInfoViewController.m in Sources */,
 				78B740351FB6C04600443D87 /* CJResponseModel.m in Sources */,
 				80FF91541FC5668700E437CF /* CJAppHaveLaunchUtil.m in Sources */,
 				789CAF1F1FB612B700AF8CD4 /* CJHeadAndCellHorizontalLayout.m in Sources */,
-				80FF91971FC5682B00E437CF /* StringViewController.m in Sources */,
+				80FF91971FC5682B00E437CF /* EncryptStringViewController.m in Sources */,
 				789CAF331FB612B700AF8CD4 /* CJBadgeImageView.m in Sources */,
 				789CAF7D1FB612B700AF8CD4 /* CJUploadCollectionViewCell.m in Sources */,
 				80FF90B91FC5649F00E437CF /* SwitchSliderViewController.m in Sources */,
@@ -3349,6 +3362,7 @@
 				80FF90801FC5649F00E437CF /* ReuseDataSourceTableViewController.m in Sources */,
 				80FF90CE1FC5649F00E437CF /* TextViewController.m in Sources */,
 				80FF91CD1FC582D200E437CF /* CJPinyinHelper.m in Sources */,
+				805598BA1FF5DB0F009DC61C /* ValidateStringTableViewCell.m in Sources */,
 				789CAF441FB612B700AF8CD4 /* CJSearchBar.m in Sources */,
 				789CAF421FB612B700AF8CD4 /* CJKeyboardAvoidingTableView.m in Sources */,
 				80FF909F1FC5649F00E437CF /* NestedXibViewController.m in Sources */,

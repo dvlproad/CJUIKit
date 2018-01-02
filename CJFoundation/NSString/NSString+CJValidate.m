@@ -144,4 +144,43 @@
     return [identityCardPredicate evaluateWithObject:self];
 }
 
+
+
+#pragma mark - Append(在字符串后追加字符的判断)
+/**
+ *  判断数字字符串后面是否可以添加字符串(比如①是否允许出现小数点，②是否允许出现类似0005)
+ *
+ *  @param appendString 要添加的字符串
+ *  @param allowDecimals 是否允许小数点
+ *
+ *  @return 是否允许追加
+ */
+- (BOOL)canAppendString:(NSString *)appendString allowDecimals:(BOOL)allowDecimals {
+    BOOL isDelete = [appendString isEqualToString:@""]; //如果输入的是删除键
+    if (isDelete) {
+        return YES;
+    }
+    
+    /* 小数点的检查 */
+    if ([appendString isEqualToString:@"."]) {  //如果输入的是小数点
+        if (!allowDecimals) { //不能添加小数点
+            return NO;
+        }
+    }
+    
+    /* 0开头的检查 */
+    NSString *numberString = self;
+    if (!allowDecimals) { //不允许小数
+        if ([numberString hasPrefix:@"0"]) {
+            return NO;
+        }
+    } else {
+        if ([numberString hasPrefix:@"00"]) {
+            return NO;
+        }
+    }
+    
+    return YES;
+}
+
 @end

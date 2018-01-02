@@ -50,4 +50,18 @@
 ///身份证号
 - (BOOL)cj_validateIdentityCard;
 
+
+
+
+#pragma mark - Append(在字符串后追加字符的判断)
+/**
+ *  判断数字字符串后面是否可以添加字符串(比如①是否允许出现小数点，②是否允许出现类似0005)
+ *
+ *  @param appendString 要添加的字符串
+ *  @param allowDecimals 是否允许小数点
+ *
+ *  @return 是否允许追加
+ */
+- (BOOL)canAppendString:(NSString *)appendString allowDecimals:(BOOL)allowDecimals;
+
 @end
