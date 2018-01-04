@@ -166,6 +166,7 @@
 		807903161FB413D60082F05C /* arrow_R_gray@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8079030D1FB413D60082F05C /* arrow_R_gray@2x.png */; };
 		807903171FB413D60082F05C /* arrow_R_white@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8079030E1FB413D60082F05C /* arrow_R_white@2x.png */; };
 		807903181FB413D60082F05C /* arrow_up.png in Resources */ = {isa = PBXBuildFile; fileRef = 8079030F1FB413D60082F05C /* arrow_up.png */; };
+		80EDF9611FFE29560057B5E9 /* UIButton+CJFixMultiClick.m in Sources */ = {isa = PBXBuildFile; fileRef = 80EDF9601FFE29560057B5E9 /* UIButton+CJFixMultiClick.m */; };
 		80FF90291FC5649E00E437CF /* ThirdPartyHomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 80FF8F0C1FC5649E00E437CF /* ThirdPartyHomeViewController.xib */; };
 		80FF902A1FC5649E00E437CF /* ThirdPartyHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80FF8F0E1FC5649E00E437CF /* ThirdPartyHomeViewController.m */; };
 		80FF902B1FC5649E00E437CF /* MJExtensionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80FF8F101FC5649E00E437CF /* MJExtensionViewController.m */; };
@@ -695,6 +696,8 @@
 		8079030D1FB413D60082F05C /* arrow_R_gray@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrow_R_gray@2x.png"; sourceTree = "<group>"; };
 		8079030E1FB413D60082F05C /* arrow_R_white@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrow_R_white@2x.png"; sourceTree = "<group>"; };
 		8079030F1FB413D60082F05C /* arrow_up.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = arrow_up.png; sourceTree = "<group>"; };
+		80EDF95F1FFE29560057B5E9 /* UIButton+CJFixMultiClick.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIButton+CJFixMultiClick.h"; sourceTree = "<group>"; };
+		80EDF9601FFE29560057B5E9 /* UIButton+CJFixMultiClick.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIButton+CJFixMultiClick.m"; sourceTree = "<group>"; };
 		80FF8F0C1FC5649E00E437CF /* ThirdPartyHomeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ThirdPartyHomeViewController.xib; sourceTree = "<group>"; };
 		80FF8F0D1FC5649E00E437CF /* ThirdPartyHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThirdPartyHomeViewController.h; sourceTree = "<group>"; };
 		80FF8F0E1FC5649E00E437CF /* ThirdPartyHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThirdPartyHomeViewController.m; sourceTree = "<group>"; };
@@ -1592,6 +1595,8 @@
 				789CAEA91FB612B600AF8CD4 /* UIButton+CJTouchEvent.m */,
 				789CAEAA1FB612B600AF8CD4 /* UIButton+CJUpDownStructure.h */,
 				789CAEAB1FB612B600AF8CD4 /* UIButton+CJUpDownStructure.m */,
+				80EDF95F1FFE29560057B5E9 /* UIButton+CJFixMultiClick.h */,
+				80EDF9601FFE29560057B5E9 /* UIButton+CJFixMultiClick.m */,
 				789CAEAC1FB612B600AF8CD4 /* UIButtonCJCategory.h */,
 			);
 			path = "UIButton+CJCategory";
@@ -2329,9 +2334,9 @@
 		80FF8FF01FC5649E00E437CF /* UIButtonDemo */ = {
 			isa = PBXGroup;
 			children = (
-				80FF8FF11FC5649E00E437CF /* ButtonViewController.xib */,
-				80FF8FF21FC5649E00E437CF /* ButtonViewController.m */,
 				80FF8FF31FC5649E00E437CF /* ButtonViewController.h */,
+				80FF8FF21FC5649E00E437CF /* ButtonViewController.m */,
+				80FF8FF11FC5649E00E437CF /* ButtonViewController.xib */,
 			);
 			path = UIButtonDemo;
 			sourceTree = "<group>";
@@ -3325,6 +3330,7 @@
 				80FF91951FC5682B00E437CF /* FoundatioHomeViewController.m in Sources */,
 				80FF90851FC5649F00E437CF /* TvDemo_Complex+Event.m in Sources */,
 				80FF902B1FC5649E00E437CF /* MJExtensionViewController.m in Sources */,
+				80EDF9611FFE29560057B5E9 /* UIButton+CJFixMultiClick.m in Sources */,
 				78B7402F1FB6C04600443D87 /* IjinbuNetworkClient.m in Sources */,
 				789CAF361FB612B700AF8CD4 /* CJMJRefreshNormalFooter.m in Sources */,
 				780E46081E5DF87B00980127 /* AppDelegate.m in Sources */,

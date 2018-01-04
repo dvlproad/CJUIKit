@@ -8,6 +8,7 @@
 
 #import "ButtonViewController.h"
 #import "UIButton+CJUpDownStructure.h"
+#import "UIButton+CJFixMultiClick.h"
 
 @interface ButtonViewController ()
 
@@ -19,10 +20,18 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
-    [self.button setBackgroundColor:[UIColor greenColor]];
-    [self.button setImage:[UIImage imageNamed:@"smail.png"] forState:UIControlStateNormal];
-    [self.button setTitle:@"测试上下结构的文字" forState:UIControlStateNormal];
-    [self.button cjVerticalImageAndTitle:10];
+    [self.upDownStructureButton setBackgroundColor:[UIColor greenColor]];
+    [self.upDownStructureButton setImage:[UIImage imageNamed:@"smail.png"] forState:UIControlStateNormal];
+    [self.upDownStructureButton setTitle:@"测试上下结构的文字" forState:UIControlStateNormal];
+    [self.upDownStructureButton cjVerticalImageAndTitle:10];
+    
+    
+    self.multiClikcButton.cjMinClickInterval = 2;
+}
+
+
+- (IBAction)multiClickAction:(id)sender {
+    NSLog(@"重复点击了");
 }
 
 - (void)didReceiveMemoryWarning {
