@@ -41,4 +41,7 @@
 - (void)setMaxTextViewHeight:(NSUInteger)maxTextViewHeight
        textHeightChangeBlock:(void (^)(NSString *text, CGFloat currentTextViewHeight))textViewHeightChangeBlock;
 
+///如果是attributedText，需要手动调用textDidChange，因为不是改变text的不会调用，所以这个方法目前只用在了输入表情时候
+- (void)textDidChange;
+
 @end
