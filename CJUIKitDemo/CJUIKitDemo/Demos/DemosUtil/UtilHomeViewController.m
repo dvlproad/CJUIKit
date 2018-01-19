@@ -12,6 +12,7 @@
 
 #import "DeviceInfoViewController.h"
 #import "DataUtilViewController.h"
+#import "ToastViewController.h"
 
 
 @interface UtilHomeViewController () <UITableViewDataSource, UITableViewDelegate> {
@@ -26,36 +27,66 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    self.title = NSLocalizedString(@"Home首页", nil);
+    self.navigationItem.title = NSLocalizedString(@"Util首页", nil); //知识点:使得tabBar中的title可以和显示在顶部的title保持各自
     
     [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"cell"];
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
     
-    self.datas = [[NSMutableArray alloc] init];
     
-    ModuleModel *DeviceInfoModule = [[ModuleModel alloc] init];
-    DeviceInfoModule.title = @"DeviceInfo";
-    DeviceInfoModule.classEntry = [DeviceInfoViewController class];
-    [self.datas addObject:DeviceInfoModule];
+    NSMutableArray *sectionDataModels = [[NSMutableArray alloc] init];
+    //Util
+    {
+        CJSectionDataModel *sectionDataModel = [[CJSectionDataModel alloc] init];
+        sectionDataModel.theme = @"Util相关";
+        {
+            ModuleModel *deviceInfoModule = [[ModuleModel alloc] init];
+            deviceInfoModule.title = @"DeviceInfo";
+            deviceInfoModule.classEntry = [DeviceInfoViewController class];
+            [sectionDataModel.values addObject:deviceInfoModule];
+        }
+        {
+            ModuleModel *dataUtilModule = [[ModuleModel alloc] init];
+            dataUtilModule.title = @"DataUtil";
+            dataUtilModule.classEntry = [DataUtilViewController class];
+            [sectionDataModel.values addObject:dataUtilModule];
+        }
+        {
+            ModuleModel *toastUtilModule = [[ModuleModel alloc] init];
+            toastUtilModule.title = @"Toast";
+            toastUtilModule.classEntry = [ToastViewController class];
+            [sectionDataModel.values addObject:toastUtilModule];
+        }
+        
+        [sectionDataModels addObject:sectionDataModel];
+    }
     
-    ModuleModel *dataModule = [[ModuleModel alloc] init];
-    dataModule.title = @"DataUtil";
-    dataModule.classEntry = [DataUtilViewController class];
-    [self.datas addObject:dataModule];
+    self.sectionDataModels = sectionDataModels;
 }
 
 #pragma mark - UITableViewDataSource & UITableViewDelegate
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 1;
+    return self.sectionDataModels.count;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return [self.datas count];
+    CJSectionDataModel *sectionDataModel = [self.sectionDataModels objectAtIndex:section];
+    NSArray *dataModels = sectionDataModel.values;
+    
+    return dataModels.count;
+}
+
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+    CJSectionDataModel *sectionDataModel = [self.sectionDataModels objectAtIndex:section];
+    
+    NSString *indexTitle = sectionDataModel.theme;
+    return indexTitle;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    ModuleModel *moduleModel = [self.datas objectAtIndex:indexPath.row];
+    CJSectionDataModel *sectionDataModel = [self.sectionDataModels objectAtIndex:indexPath.section];
+    NSArray *dataModels = sectionDataModel.values;
+    ModuleModel *moduleModel = [dataModels objectAtIndex:indexPath.row];
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
     cell.textLabel.text = moduleModel.title;
@@ -65,8 +96,13 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     NSLog(@"didSelectRowAtIndexPath = %ld %ld", indexPath.section, indexPath.row);
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
-    ModuleModel *moduleModel = [self.datas objectAtIndex:indexPath.row];
+    CJSectionDataModel *sectionDataModel = [self.sectionDataModels objectAtIndex:indexPath.section];
+    NSArray *dataModels = sectionDataModel.values;
+    ModuleModel *moduleModel = [dataModels objectAtIndex:indexPath.row];
+    
+    
     Class classEntry = moduleModel.classEntry;
     NSString *nibName = NSStringFromClass(moduleModel.classEntry);
     
@@ -78,7 +114,6 @@
     {
         viewController = [[classEntry alloc] init];
         viewController.view.backgroundColor = [UIColor whiteColor];
-        
     } else {
         viewController = [[classEntry alloc] initWithNibName:nibName bundle:nil];
     }
@@ -86,7 +121,6 @@
     viewController.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:viewController animated:YES];
 }
-
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

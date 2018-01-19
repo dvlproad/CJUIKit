@@ -146,6 +146,8 @@
 		8000B5C91FD0021D00AE3C78 /* CJExtraTextTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 8000B5C81FD0021D00AE3C78 /* CJExtraTextTextField.m */; };
 		8000B6421FD15A9100AE3C78 /* DataUtilViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8000B6401FD15A9100AE3C78 /* DataUtilViewController.m */; };
 		8000B6431FD15A9100AE3C78 /* DataUtilViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8000B6411FD15A9100AE3C78 /* DataUtilViewController.xib */; };
+		800F3B652011899400A5C326 /* ToastViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 800F3B632011899400A5C326 /* ToastViewController.m */; };
+		800F3B662011899400A5C326 /* ToastViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 800F3B642011899400A5C326 /* ToastViewController.xib */; };
 		8014A2801FA2C2E500DDDB5A /* AppDelegate+WindowRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8014A27F1FA2C2E500DDDB5A /* AppDelegate+WindowRootViewController.m */; };
 		8014A2881FA2C81A00DDDB5A /* icons8-menu.png in Resources */ = {isa = PBXBuildFile; fileRef = 8014A2831FA2C81900DDDB5A /* icons8-menu.png */; };
 		8014A2891FA2C81A00DDDB5A /* icons8-settings.png in Resources */ = {isa = PBXBuildFile; fileRef = 8014A2841FA2C81900DDDB5A /* icons8-settings.png */; };
@@ -166,6 +168,8 @@
 		807903161FB413D60082F05C /* arrow_R_gray@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8079030D1FB413D60082F05C /* arrow_R_gray@2x.png */; };
 		807903171FB413D60082F05C /* arrow_R_white@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8079030E1FB413D60082F05C /* arrow_R_white@2x.png */; };
 		807903181FB413D60082F05C /* arrow_up.png in Resources */ = {isa = PBXBuildFile; fileRef = 8079030F1FB413D60082F05C /* arrow_up.png */; };
+		80CC7F8D200F7EBE0017878A /* OpenTableViewController2.m in Sources */ = {isa = PBXBuildFile; fileRef = 80CC7F8B200F7EBD0017878A /* OpenTableViewController2.m */; };
+		80CC7F8E200F7EBE0017878A /* OpenTableViewController2.xib in Resources */ = {isa = PBXBuildFile; fileRef = 80CC7F8C200F7EBE0017878A /* OpenTableViewController2.xib */; };
 		80EDF9611FFE29560057B5E9 /* UIButton+CJFixMultiClick.m in Sources */ = {isa = PBXBuildFile; fileRef = 80EDF9601FFE29560057B5E9 /* UIButton+CJFixMultiClick.m */; };
 		80FF90291FC5649E00E437CF /* ThirdPartyHomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 80FF8F0C1FC5649E00E437CF /* ThirdPartyHomeViewController.xib */; };
 		80FF902A1FC5649E00E437CF /* ThirdPartyHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80FF8F0E1FC5649E00E437CF /* ThirdPartyHomeViewController.m */; };
@@ -247,13 +251,13 @@
 		80FF907F1FC5649F00E437CF /* DemoTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80FF8F981FC5649E00E437CF /* DemoTableViewController.m */; };
 		80FF90801FC5649F00E437CF /* ReuseDataSourceTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80FF8F9A1FC5649E00E437CF /* ReuseDataSourceTableViewController.m */; };
 		80FF90811FC5649F00E437CF /* TvDemo_Complex.xib in Resources */ = {isa = PBXBuildFile; fileRef = 80FF8F9F1FC5649E00E437CF /* TvDemo_Complex.xib */; };
-		80FF90821FC5649F00E437CF /* OpenTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 80FF8FA01FC5649E00E437CF /* OpenTableViewController.xib */; };
+		80FF90821FC5649F00E437CF /* OpenTableViewController1.xib in Resources */ = {isa = PBXBuildFile; fileRef = 80FF8FA01FC5649E00E437CF /* OpenTableViewController1.xib */; };
 		80FF90831FC5649F00E437CF /* crayons.txt in Resources */ = {isa = PBXBuildFile; fileRef = 80FF8FA11FC5649E00E437CF /* crayons.txt */; };
 		80FF90841FC5649F00E437CF /* ReuseDataSourceTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 80FF8FA21FC5649E00E437CF /* ReuseDataSourceTableViewController.xib */; };
 		80FF90851FC5649F00E437CF /* TvDemo_Complex+Event.m in Sources */ = {isa = PBXBuildFile; fileRef = 80FF8FA41FC5649E00E437CF /* TvDemo_Complex+Event.m */; };
 		80FF90861FC5649F00E437CF /* TvDemo_Complex.m in Sources */ = {isa = PBXBuildFile; fileRef = 80FF8FA61FC5649E00E437CF /* TvDemo_Complex.m */; };
 		80FF90871FC5649F00E437CF /* TableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 80FF8FA71FC5649E00E437CF /* TableViewController.xib */; };
-		80FF90881FC5649F00E437CF /* OpenTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80FF8FA81FC5649E00E437CF /* OpenTableViewController.m */; };
+		80FF90881FC5649F00E437CF /* OpenTableViewController1.m in Sources */ = {isa = PBXBuildFile; fileRef = 80FF8FA81FC5649E00E437CF /* OpenTableViewController1.m */; };
 		80FF90891FC5649F00E437CF /* DemoTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 80FF8FA91FC5649E00E437CF /* DemoTableViewController.xib */; };
 		80FF908A1FC5649F00E437CF /* ChooseColor01.m in Sources */ = {isa = PBXBuildFile; fileRef = 80FF8FAA1FC5649E00E437CF /* ChooseColor01.m */; };
 		80FF908B1FC5649F00E437CF /* TableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80FF8FAB1FC5649E00E437CF /* TableViewController.m */; };
@@ -672,6 +676,9 @@
 		8000B63F1FD15A9100AE3C78 /* DataUtilViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DataUtilViewController.h; sourceTree = "<group>"; };
 		8000B6401FD15A9100AE3C78 /* DataUtilViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DataUtilViewController.m; sourceTree = "<group>"; };
 		8000B6411FD15A9100AE3C78 /* DataUtilViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DataUtilViewController.xib; sourceTree = "<group>"; };
+		800F3B622011899400A5C326 /* ToastViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ToastViewController.h; sourceTree = "<group>"; };
+		800F3B632011899400A5C326 /* ToastViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ToastViewController.m; sourceTree = "<group>"; };
+		800F3B642011899400A5C326 /* ToastViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ToastViewController.xib; sourceTree = "<group>"; };
 		8014A27E1FA2C2E500DDDB5A /* AppDelegate+WindowRootViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AppDelegate+WindowRootViewController.h"; sourceTree = "<group>"; };
 		8014A27F1FA2C2E500DDDB5A /* AppDelegate+WindowRootViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "AppDelegate+WindowRootViewController.m"; sourceTree = "<group>"; };
 		8014A2831FA2C81900DDDB5A /* icons8-menu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icons8-menu.png"; sourceTree = "<group>"; };
@@ -696,6 +703,9 @@
 		8079030D1FB413D60082F05C /* arrow_R_gray@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrow_R_gray@2x.png"; sourceTree = "<group>"; };
 		8079030E1FB413D60082F05C /* arrow_R_white@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrow_R_white@2x.png"; sourceTree = "<group>"; };
 		8079030F1FB413D60082F05C /* arrow_up.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = arrow_up.png; sourceTree = "<group>"; };
+		80CC7F8A200F7EBD0017878A /* OpenTableViewController2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpenTableViewController2.h; sourceTree = "<group>"; };
+		80CC7F8B200F7EBD0017878A /* OpenTableViewController2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OpenTableViewController2.m; sourceTree = "<group>"; };
+		80CC7F8C200F7EBE0017878A /* OpenTableViewController2.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OpenTableViewController2.xib; sourceTree = "<group>"; };
 		80EDF95F1FFE29560057B5E9 /* UIButton+CJFixMultiClick.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIButton+CJFixMultiClick.h"; sourceTree = "<group>"; };
 		80EDF9601FFE29560057B5E9 /* UIButton+CJFixMultiClick.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIButton+CJFixMultiClick.m"; sourceTree = "<group>"; };
 		80FF8F0C1FC5649E00E437CF /* ThirdPartyHomeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ThirdPartyHomeViewController.xib; sourceTree = "<group>"; };
@@ -807,11 +817,11 @@
 		80FF8F991FC5649E00E437CF /* TvDemo_Complex+Event.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TvDemo_Complex+Event.h"; sourceTree = "<group>"; };
 		80FF8F9A1FC5649E00E437CF /* ReuseDataSourceTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReuseDataSourceTableViewController.m; sourceTree = "<group>"; };
 		80FF8F9B1FC5649E00E437CF /* ChooseColor01.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChooseColor01.h; sourceTree = "<group>"; };
-		80FF8F9C1FC5649E00E437CF /* OpenTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpenTableViewController.h; sourceTree = "<group>"; };
+		80FF8F9C1FC5649E00E437CF /* OpenTableViewController1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpenTableViewController1.h; sourceTree = "<group>"; };
 		80FF8F9D1FC5649E00E437CF /* TvDemo_Complex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TvDemo_Complex.h; sourceTree = "<group>"; };
 		80FF8F9E1FC5649E00E437CF /* TableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewController.h; sourceTree = "<group>"; };
 		80FF8F9F1FC5649E00E437CF /* TvDemo_Complex.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TvDemo_Complex.xib; sourceTree = "<group>"; };
-		80FF8FA01FC5649E00E437CF /* OpenTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OpenTableViewController.xib; sourceTree = "<group>"; };
+		80FF8FA01FC5649E00E437CF /* OpenTableViewController1.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OpenTableViewController1.xib; sourceTree = "<group>"; };
 		80FF8FA11FC5649E00E437CF /* crayons.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = crayons.txt; sourceTree = "<group>"; };
 		80FF8FA21FC5649E00E437CF /* ReuseDataSourceTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ReuseDataSourceTableViewController.xib; sourceTree = "<group>"; };
 		80FF8FA31FC5649E00E437CF /* ReuseDataSourceTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReuseDataSourceTableViewController.h; sourceTree = "<group>"; };
@@ -819,7 +829,7 @@
 		80FF8FA51FC5649E00E437CF /* DemoTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DemoTableViewController.h; sourceTree = "<group>"; };
 		80FF8FA61FC5649E00E437CF /* TvDemo_Complex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TvDemo_Complex.m; sourceTree = "<group>"; };
 		80FF8FA71FC5649E00E437CF /* TableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TableViewController.xib; sourceTree = "<group>"; };
-		80FF8FA81FC5649E00E437CF /* OpenTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OpenTableViewController.m; sourceTree = "<group>"; };
+		80FF8FA81FC5649E00E437CF /* OpenTableViewController1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OpenTableViewController1.m; sourceTree = "<group>"; };
 		80FF8FA91FC5649E00E437CF /* DemoTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DemoTableViewController.xib; sourceTree = "<group>"; };
 		80FF8FAA1FC5649E00E437CF /* ChooseColor01.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChooseColor01.m; sourceTree = "<group>"; };
 		80FF8FAB1FC5649E00E437CF /* TableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewController.m; sourceTree = "<group>"; };
@@ -1904,6 +1914,16 @@
 			path = DataUtilViewController;
 			sourceTree = "<group>";
 		};
+		800F3B612011897400A5C326 /* CJToastDemo */ = {
+			isa = PBXGroup;
+			children = (
+				800F3B622011899400A5C326 /* ToastViewController.h */,
+				800F3B632011899400A5C326 /* ToastViewController.m */,
+				800F3B642011899400A5C326 /* ToastViewController.xib */,
+			);
+			path = CJToastDemo;
+			sourceTree = "<group>";
+		};
 		807903061FB413D60082F05C /* arrow */ = {
 			isa = PBXGroup;
 			children = (
@@ -2105,15 +2125,15 @@
 		80FF8F6E1FC5649E00E437CF /* OpenCollectionView */ = {
 			isa = PBXGroup;
 			children = (
-				80FF8F6F1FC5649E00E437CF /* OpenCollectionViewController.xib */,
-				80FF8F701FC5649E00E437CF /* DetailCell.m */,
-				80FF8F711FC5649E00E437CF /* Header.h */,
-				80FF8F721FC5649E00E437CF /* DetailCell.xib */,
-				80FF8F731FC5649E00E437CF /* OpenCollectionViewController.h */,
-				80FF8F741FC5649E00E437CF /* Header.m */,
 				80FF8F751FC5649E00E437CF /* DetailCell.h */,
-				80FF8F761FC5649E00E437CF /* OpenCollectionViewController.m */,
+				80FF8F701FC5649E00E437CF /* DetailCell.m */,
+				80FF8F721FC5649E00E437CF /* DetailCell.xib */,
+				80FF8F711FC5649E00E437CF /* Header.h */,
+				80FF8F741FC5649E00E437CF /* Header.m */,
 				80FF8F771FC5649E00E437CF /* Header.xib */,
+				80FF8F731FC5649E00E437CF /* OpenCollectionViewController.h */,
+				80FF8F761FC5649E00E437CF /* OpenCollectionViewController.m */,
+				80FF8F6F1FC5649E00E437CF /* OpenCollectionViewController.xib */,
 			);
 			path = OpenCollectionView;
 			sourceTree = "<group>";
@@ -2178,26 +2198,29 @@
 		80FF8F971FC5649E00E437CF /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				80FF8F981FC5649E00E437CF /* DemoTableViewController.m */,
-				80FF8F991FC5649E00E437CF /* TvDemo_Complex+Event.h */,
-				80FF8F9A1FC5649E00E437CF /* ReuseDataSourceTableViewController.m */,
 				80FF8F9B1FC5649E00E437CF /* ChooseColor01.h */,
-				80FF8F9C1FC5649E00E437CF /* OpenTableViewController.h */,
-				80FF8F9D1FC5649E00E437CF /* TvDemo_Complex.h */,
-				80FF8F9E1FC5649E00E437CF /* TableViewController.h */,
-				80FF8F9F1FC5649E00E437CF /* TvDemo_Complex.xib */,
-				80FF8FA01FC5649E00E437CF /* OpenTableViewController.xib */,
-				80FF8FA11FC5649E00E437CF /* crayons.txt */,
-				80FF8FA21FC5649E00E437CF /* ReuseDataSourceTableViewController.xib */,
-				80FF8FA31FC5649E00E437CF /* ReuseDataSourceTableViewController.h */,
-				80FF8FA41FC5649E00E437CF /* TvDemo_Complex+Event.m */,
-				80FF8FA51FC5649E00E437CF /* DemoTableViewController.h */,
-				80FF8FA61FC5649E00E437CF /* TvDemo_Complex.m */,
-				80FF8FA71FC5649E00E437CF /* TableViewController.xib */,
-				80FF8FA81FC5649E00E437CF /* OpenTableViewController.m */,
-				80FF8FA91FC5649E00E437CF /* DemoTableViewController.xib */,
 				80FF8FAA1FC5649E00E437CF /* ChooseColor01.m */,
+				80FF8FA11FC5649E00E437CF /* crayons.txt */,
+				80FF8FA51FC5649E00E437CF /* DemoTableViewController.h */,
+				80FF8F981FC5649E00E437CF /* DemoTableViewController.m */,
+				80FF8FA91FC5649E00E437CF /* DemoTableViewController.xib */,
+				80FF8F9C1FC5649E00E437CF /* OpenTableViewController1.h */,
+				80FF8FA81FC5649E00E437CF /* OpenTableViewController1.m */,
+				80FF8FA01FC5649E00E437CF /* OpenTableViewController1.xib */,
+				80CC7F8A200F7EBD0017878A /* OpenTableViewController2.h */,
+				80CC7F8B200F7EBD0017878A /* OpenTableViewController2.m */,
+				80CC7F8C200F7EBE0017878A /* OpenTableViewController2.xib */,
+				80FF8FA31FC5649E00E437CF /* ReuseDataSourceTableViewController.h */,
+				80FF8F9A1FC5649E00E437CF /* ReuseDataSourceTableViewController.m */,
+				80FF8FA21FC5649E00E437CF /* ReuseDataSourceTableViewController.xib */,
+				80FF8F9E1FC5649E00E437CF /* TableViewController.h */,
 				80FF8FAB1FC5649E00E437CF /* TableViewController.m */,
+				80FF8FA71FC5649E00E437CF /* TableViewController.xib */,
+				80FF8F9D1FC5649E00E437CF /* TvDemo_Complex.h */,
+				80FF8FA61FC5649E00E437CF /* TvDemo_Complex.m */,
+				80FF8F9F1FC5649E00E437CF /* TvDemo_Complex.xib */,
+				80FF8F991FC5649E00E437CF /* TvDemo_Complex+Event.h */,
+				80FF8FA41FC5649E00E437CF /* TvDemo_Complex+Event.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -2205,25 +2228,25 @@
 		80FF8FAC1FC5649E00E437CF /* View */ = {
 			isa = PBXGroup;
 			children = (
-				80FF8FAD1FC5649E00E437CF /* SHeaderHome2.m */,
-				80FF8FAE1FC5649E00E437CF /* CJRightDetailTableViewCell+ConfigureForDataModel.m */,
-				80FF8FAF1FC5649E00E437CF /* MyOpenTableView.m */,
-				80FF8FB01FC5649E00E437CF /* CustomTableViewCell.xib */,
-				80FF8FB11FC5649E00E437CF /* CustomTableViewCell.m */,
-				80FF8FB21FC5649E00E437CF /* CJLeftDetailTableViewCell+ConfigureForDataModel.m */,
-				80FF8FB31FC5649E00E437CF /* CJSubTitleTabelViewCell+ConfigureForDataModel.m */,
-				80FF8FB41FC5649E00E437CF /* TableViewHeader.h */,
-				80FF8FB51FC5649E00E437CF /* CJDefaultTableViewCell+ConfigureForDataModel.m */,
-				80FF8FB61FC5649E00E437CF /* TableViewHeader.xib */,
-				80FF8FB71FC5649E00E437CF /* SHeaderHome2.h */,
-				80FF8FB81FC5649E00E437CF /* SHeaderHome2.xib */,
-				80FF8FB91FC5649E00E437CF /* CJLeftDetailTableViewCell+ConfigureForDataModel.h */,
-				80FF8FBA1FC5649E00E437CF /* CustomTableViewCell.h */,
-				80FF8FBB1FC5649E00E437CF /* MyOpenTableView.h */,
-				80FF8FBC1FC5649E00E437CF /* CJRightDetailTableViewCell+ConfigureForDataModel.h */,
-				80FF8FBD1FC5649E00E437CF /* TableViewHeader.m */,
-				80FF8FBE1FC5649E00E437CF /* CJSubTitleTabelViewCell+ConfigureForDataModel.h */,
 				80FF8FBF1FC5649E00E437CF /* CJDefaultTableViewCell+ConfigureForDataModel.h */,
+				80FF8FB51FC5649E00E437CF /* CJDefaultTableViewCell+ConfigureForDataModel.m */,
+				80FF8FB91FC5649E00E437CF /* CJLeftDetailTableViewCell+ConfigureForDataModel.h */,
+				80FF8FB21FC5649E00E437CF /* CJLeftDetailTableViewCell+ConfigureForDataModel.m */,
+				80FF8FBC1FC5649E00E437CF /* CJRightDetailTableViewCell+ConfigureForDataModel.h */,
+				80FF8FAE1FC5649E00E437CF /* CJRightDetailTableViewCell+ConfigureForDataModel.m */,
+				80FF8FBE1FC5649E00E437CF /* CJSubTitleTabelViewCell+ConfigureForDataModel.h */,
+				80FF8FB31FC5649E00E437CF /* CJSubTitleTabelViewCell+ConfigureForDataModel.m */,
+				80FF8FBA1FC5649E00E437CF /* CustomTableViewCell.h */,
+				80FF8FB11FC5649E00E437CF /* CustomTableViewCell.m */,
+				80FF8FB01FC5649E00E437CF /* CustomTableViewCell.xib */,
+				80FF8FBB1FC5649E00E437CF /* MyOpenTableView.h */,
+				80FF8FAF1FC5649E00E437CF /* MyOpenTableView.m */,
+				80FF8FB71FC5649E00E437CF /* SHeaderHome2.h */,
+				80FF8FAD1FC5649E00E437CF /* SHeaderHome2.m */,
+				80FF8FB81FC5649E00E437CF /* SHeaderHome2.xib */,
+				80FF8FB41FC5649E00E437CF /* TableViewHeader.h */,
+				80FF8FBD1FC5649E00E437CF /* TableViewHeader.m */,
+				80FF8FB61FC5649E00E437CF /* TableViewHeader.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -2231,6 +2254,7 @@
 		80FF8FC11FC5649E00E437CF /* DemosView */ = {
 			isa = PBXGroup;
 			children = (
+				800F3B612011897400A5C326 /* CJToastDemo */,
 				80FF8FC61FC5649E00E437CF /* CJFloatingWindowDemo */,
 				80FF90251FC5649E00E437CF /* CJImageViewDemo */,
 				80FF8FC21FC5649E00E437CF /* CJSearchBarDemo */,
@@ -2734,11 +2758,11 @@
 			isa = PBXGroup;
 			children = (
 				8000B63E1FD15A7E00AE3C78 /* DataUtilViewController */,
-				80FF91CA1FC582D100E437CF /* Util */,
-				80FF91B41FC581DD00E437CF /* UtilHomeViewController.xib */,
 				80FF91B81FC581DD00E437CF /* DeviceInfo */,
+				80FF91CA1FC582D100E437CF /* Util */,
 				80FF91BE1FC581DD00E437CF /* UtilHomeViewController.h */,
 				80FF91BF1FC581DD00E437CF /* UtilHomeViewController.m */,
+				80FF91B41FC581DD00E437CF /* UtilHomeViewController.xib */,
 			);
 			path = DemosUtil;
 			sourceTree = "<group>";
@@ -2933,7 +2957,7 @@
 				80FF90A31FC5649F00E437CF /* SampleViewController.xib in Resources */,
 				80FF90531FC5649F00E437CF /* MemoryADExample03.jpg in Resources */,
 				80FF90D11FC5649F00E437CF /* smail@2x.png in Resources */,
-				80FF90821FC5649F00E437CF /* OpenTableViewController.xib in Resources */,
+				80FF90821FC5649F00E437CF /* OpenTableViewController1.xib in Resources */,
 				8014A28A1FA2C81A00DDDB5A /* icons8-calendar.png in Resources */,
 				807903131FB413D60082F05C /* arrow_L_blue.png in Resources */,
 				80FF90A01FC5649F00E437CF /* NestedXibView.xib in Resources */,
@@ -3013,6 +3037,7 @@
 				8000B6431FD15A9100AE3C78 /* DataUtilViewController.xib in Resources */,
 				80FF90651FC5649F00E437CF /* MyCycleADViewController.xib in Resources */,
 				80FF90A61FC5649F00E437CF /* QRCodeViewController.xib in Resources */,
+				80CC7F8E200F7EBE0017878A /* OpenTableViewController2.xib in Resources */,
 				80FF90541FC5649F00E437CF /* MemoryADExample02.jpg in Resources */,
 				789CAF2E1FB612B700AF8CD4 /* cjCheckBoxGreenNO@2x.png in Resources */,
 				80FF90D41FC5649F00E437CF /* TextFieldViewController.xib in Resources */,
@@ -3069,6 +3094,7 @@
 				807903101FB413D60082F05C /* arrow_back_red@2x.png in Resources */,
 				80FF90781FC5649F00E437CF /* cvSupplementaryFoot.xib in Resources */,
 				80FF90891FC5649F00E437CF /* DemoTableViewController.xib in Resources */,
+				800F3B662011899400A5C326 /* ToastViewController.xib in Resources */,
 				80FF905B1FC5649F00E437CF /* MemoryADExample04.jpg in Resources */,
 				80FF919D1FC5682B00E437CF /* CountDownTimeViewController.xib in Resources */,
 				807903111FB413D60082F05C /* arrow_balland_red@2x.png in Resources */,
@@ -3268,6 +3294,7 @@
 				80FF91E81FC6739D00E437CF /* CJDateModelUtil.m in Sources */,
 				80FF90901FC5649F00E437CF /* CustomTableViewCell.m in Sources */,
 				80FF91E91FC6739D00E437CF /* CJDateModel.m in Sources */,
+				80CC7F8D200F7EBE0017878A /* OpenTableViewController2.m in Sources */,
 				789CAF401FB612B700AF8CD4 /* MyUserInfoScaleHeadView.m in Sources */,
 				789CAF801FB612B700AF8CD4 /* CJImageUploadItem.m in Sources */,
 				78B740301FB6C04600443D87 /* IjinbuUploadItemRequest.m in Sources */,
@@ -3323,6 +3350,7 @@
 				80FF909E1FC5649F00E437CF /* NestedXibSubViewA.m in Sources */,
 				789CAF371FB612B700AF8CD4 /* CJMJRefreshNormalHeader.m in Sources */,
 				80FF91C41FC581DD00E437CF /* DeviceInfo.m in Sources */,
+				800F3B652011899400A5C326 /* ToastViewController.m in Sources */,
 				80FF913B1FC5668700E437CF /* NSString+CJEncryption.m in Sources */,
 				789CAF661FB612B700AF8CD4 /* UINavigationBar+CJChangeBG.m in Sources */,
 				80FF90351FC5649E00E437CF /* TestDataUtil.m in Sources */,
@@ -3428,7 +3456,7 @@
 				80FF903C1FC5649F00E437CF /* KeyboardAvoidingViewController.m in Sources */,
 				80FF90861FC5649F00E437CF /* TvDemo_Complex.m in Sources */,
 				789CAF3A1FB612B700AF8CD4 /* CJRefreshFooter.m in Sources */,
-				80FF90881FC5649F00E437CF /* OpenTableViewController.m in Sources */,
+				80FF90881FC5649F00E437CF /* OpenTableViewController1.m in Sources */,
 				789CAF6D1FB612B700AF8CD4 /* UISearchBar+CJAddInputAccessoryView.m in Sources */,
 				80FF91481FC5668700E437CF /* CJSearchResult.m in Sources */,
 				80FF91501FC5668700E437CF /* CJRealtimeSearchUtil.m in Sources */,

@@ -1,5 +1,5 @@
 //
-//  OpenTableViewController.h
+//  OpenTableViewController2.h
 //  CJUIKitDemo
 //
 //  Created by ciyouzen on 8/26/15.
@@ -19,13 +19,10 @@
 
 
 //实际只需采用CJTableViewHeaderFooterView和CJSectionDataModel即可实现
-@interface OpenTableViewController : UIViewController <UITableViewDataSource, UITableViewDelegate> {
-    NSInteger section_old;
+@interface OpenTableViewController2 : UIViewController {
     
 }
-@property (nonatomic, strong) IBOutlet UITableView *tableView;
-@property (nonatomic, strong) NSMutableArray<CJSectionDataModel *> *sectionModels;
-
 @property (nonatomic, strong) IBOutlet MyOpenTableView *openTableView;
+@property (nonatomic, strong) NSMutableArray<CJSectionDataModel *> *sectionModels;
 
 @end

@@ -2,8 +2,8 @@
 //  UIView+CJPopupInView.h
 //  CJPopupViewDemo
 //
-//  Created by lichq on 15/11/12.
-//  Copyright (c) 2015年 ciyouzen. All rights reserved.
+//  Created by ciyouzen on 15/11/12.
+//  Copyright (c) 2015年 dvlproad. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
@@ -41,31 +41,45 @@ typedef NS_ENUM(NSUInteger, CJAnimationType) {
 /**
  *  将本View以size大小弹出到showInView视图中location位置
  *
- *  @param showInView                 弹出视图的父view
- *  @param location                   弹出视图的位置
- *  @param size                       弹出视图的大小
- *  @param showPopupViewCompleteBlock 显示弹出视图后的操作
- *  @param tapBlankViewCompleteBlock  点击空白区域后的操作
+ *  @param popupSuperview               弹出视图的父视图view
+ *  @param popupViewOrigin              弹出视图的左上角origin坐标
+ *  @param popupViewSize                弹出视图的size大小
+ *  @param showPopupViewCompleteBlock   显示弹出视图后的操作
+ *  @param tapBlankViewCompleteBlock    点击空白区域后的操作(要自己执行cj_hidePopupView...来隐藏，因为有时候点击背景是不执行隐藏的)
  */
-- (void)cj_popupInView:(UIView *)showInView
-            atLocation:(CGPoint)location
-              withSize:(CGSize)size
+- (void)cj_popupInView:(UIView *)popupSuperview
+            withOrigin:(CGPoint)popupViewOrigin
+                  size:(CGSize)popupViewSize
           showComplete:(CJShowPopupViewCompleteBlock)showPopupViewCompleteBlock
       tapBlankComplete:(CJTapBlankViewCompleteBlock)tapBlankViewCompleteBlock;
 
 
 /**
- *  将当前视图弹出到window中
+ *  将当前视图弹出到window中央
  *
- *  @param windowPosition             当前视图在window中的位置
  *  @param animationType              弹出时候的动画采用的类型
+ *  @param popupViewSize              弹出视图的大小
  *  @param showPopupViewCompleteBlock 显示弹出视图后的操作
- *  @param tapBlankViewCompleteBlock  点击空白区域后的操作
+ *  @param tapBlankViewCompleteBlock  点击空白区域后的操作(要自己执行cj_hidePopupView...来隐藏，因为有时候点击背景是不执行隐藏的)
  */
-- (void)cj_popupInWindowAtPosition:(CJWindowPosition)windowPosition
-                     animationType:(CJAnimationType)animationType
-                      showComplete:(CJShowPopupViewCompleteBlock)showPopupViewCompleteBlock
-                  tapBlankComplete:(CJTapBlankViewCompleteBlock)tapBlankViewCompleteBlock;
+- (void)cj_popupInCenterWindow:(CJAnimationType)animationType
+                      withSize:(CGSize)popupViewSize
+                  showComplete:(CJShowPopupViewCompleteBlock)showPopupViewCompleteBlock
+              tapBlankComplete:(CJTapBlankViewCompleteBlock)tapBlankViewCompleteBlock;
+
+
+/**
+ *  将当前视图弹出到window底部
+ *
+ *  @param animationType              弹出时候的动画采用的类型
+ *  @param popupViewHeight            弹出视图的高度
+ *  @param showPopupViewCompleteBlock 显示弹出视图后的操作
+ *  @param tapBlankViewCompleteBlock  点击空白区域后的操作(要自己执行cj_hidePopupView...来隐藏，因为有时候点击背景是不执行隐藏的)
+ */
+- (void)cj_popupInBottomWindow:(CJAnimationType)animationType
+                    withHeight:(CGFloat)popupViewHeight
+                  showComplete:(CJShowPopupViewCompleteBlock)showPopupViewCompleteBlock
+              tapBlankComplete:(CJTapBlankViewCompleteBlock)tapBlankViewCompleteBlock;
 
 /**
  *  隐藏弹出视图

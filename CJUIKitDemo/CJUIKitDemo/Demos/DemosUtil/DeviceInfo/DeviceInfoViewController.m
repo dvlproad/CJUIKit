@@ -177,6 +177,7 @@ typedef NS_ENUM(NSUInteger, CJFileSizeUnitType) {
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     NSLog(@"didSelectRowAtIndexPath = %ld %ld", indexPath.section, indexPath.row);
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
 

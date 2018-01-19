@@ -206,6 +206,7 @@ static NSString * const CJLeftDetailTableViewCellIdentifier = @"CJLeftDetailTabl
 #pragma mark - UITableViewDelegate
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     NSLog(@"点击了%ld-%ld", indexPath.section, indexPath.row);
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
     if (self.tableView.isEditing) {
         //附：在这里对左边选择的圆圈按钮进行定制，系统默认的为蓝色，这里有时候可能层级会发生过变化，因此做了判断。

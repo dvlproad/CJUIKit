@@ -16,6 +16,7 @@
     
 }
 @property (nonatomic, strong) UIPickerView *pickerView; //UIPickerView默认216的高
+@property (nonatomic, strong, readonly) UIToolbar *toolbar;
 
 @property (nonatomic, strong) NSArray *datas;
 @property (nonatomic, strong) NSMutableArray *selecteds;

@@ -27,7 +27,21 @@
  */
 - (CGFloat)cjTextWidthWithFont:(UIFont *)textFont maxTextHeight:(CGFloat)maxTextHeight;
 
+/**
+ *  当宽或高不固定（比如地图应用的中心点地址信息）
+ *
+ *  @param font     字符串的字体大小font
+ *  @param maxSize  字符串允许占用的最大maxSize
+ *  @param mode     mode
+ *
+ *  @return 字符串实际占用的size
+ */
+- (CGSize)cjTextSizeWithFont:(UIFont *)font maxSize:(CGSize)maxSize mode:(NSLineBreakMode)mode;
 
+
+
+
+#pragma mark - <#Section#>
 /**
  *  获取字符串高度
  *

@@ -1,9 +1,9 @@
 //
-//  UtilHomeViewController.h
-//  CJFoundationDemo
+//  ToastViewController.h
+//  CJUIKitDemo
 //
-//  Created by ciyouzen on 2016/3/26.
-//  Copyright © 2016年 dvlproad. All rights reserved.
+//  Created by ciyouzen on 2018/1/19.
+//  Copyright © 2018年 dvlproad. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
@@ -13,7 +13,7 @@
 #import <CJBaseUtil/CJSectionDataModel.h> //在CJDataUtil中
 #endif
 
-@interface UtilHomeViewController : UIViewController {
+@interface ToastViewController : UIViewController {
     
 }
 @property (nonatomic, weak) IBOutlet UITableView *tableView;

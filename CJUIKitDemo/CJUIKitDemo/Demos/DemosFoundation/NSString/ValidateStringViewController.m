@@ -2,7 +2,7 @@
 //  ValidateStringViewController.m
 //  CJUIKitDemo
 //
-//  Created by lichq on 2017/12/29.
+//  Created by ciyouzen on 2017/12/29.
 //  Copyright © 2017年 dvlproad. All rights reserved.
 //
 
@@ -73,6 +73,7 @@ typedef NS_ENUM(NSUInteger, ValidateStringType) {
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     NSLog(@"didSelectRowAtIndexPath = %ld %ld", indexPath.section, indexPath.row);
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
 

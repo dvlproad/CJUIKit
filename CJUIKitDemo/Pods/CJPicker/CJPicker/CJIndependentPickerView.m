@@ -83,6 +83,8 @@
 }
 
 - (void)addToolbar:(UIToolbar *)toolbar {
+    _toolbar = toolbar;
+    
     [self addSubview:toolbar];
     toolbar.translatesAutoresizingMaskIntoConstraints = NO;
     [self addConstraint:

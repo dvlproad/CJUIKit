@@ -1,17 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="OpenTableViewController">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="OpenTableViewController1">
             <connections>
-                <outlet property="openTableView" destination="muL-By-ruM" id="cDG-v8-geq"/>
                 <outlet property="tableView" destination="3oU-Hj-Tqm" id="gCj-bK-bsq"/>
                 <outlet property="view" destination="iN0-l3-epB" id="aDL-vZ-REw"/>
             </connections>
@@ -22,11 +21,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="3oU-Hj-Tqm">
-                    <rect key="frame" x="0.0" y="0.0" width="173" height="667"/>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                </tableView>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="muL-By-ruM" customClass="MyOpenTableView">
-                    <rect key="frame" x="203" y="64" width="172" height="603"/>
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                 </tableView>
             </subviews>
@@ -35,11 +30,7 @@
                 <constraint firstItem="3oU-Hj-Tqm" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="5oH-OC-dzV"/>
                 <constraint firstAttribute="bottom" secondItem="3oU-Hj-Tqm" secondAttribute="bottom" id="B4k-fb-Czp"/>
                 <constraint firstItem="3oU-Hj-Tqm" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="NwX-ea-eLE"/>
-                <constraint firstItem="muL-By-ruM" firstAttribute="leading" secondItem="3oU-Hj-Tqm" secondAttribute="trailing" constant="30" id="RuG-V2-FLS"/>
-                <constraint firstItem="muL-By-ruM" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="64" id="VTD-s7-NfM"/>
-                <constraint firstAttribute="trailing" secondItem="muL-By-ruM" secondAttribute="trailing" id="bh5-B0-pu6"/>
-                <constraint firstAttribute="bottom" secondItem="muL-By-ruM" secondAttribute="bottom" id="dg2-aW-5S6"/>
-                <constraint firstItem="3oU-Hj-Tqm" firstAttribute="width" secondItem="muL-By-ruM" secondAttribute="width" id="yy2-jg-QLT"/>
+                <constraint firstAttribute="trailing" secondItem="3oU-Hj-Tqm" secondAttribute="trailing" id="sZf-oT-cwE"/>
             </constraints>
             <point key="canvasLocation" x="73.5" y="54.5"/>
         </view>

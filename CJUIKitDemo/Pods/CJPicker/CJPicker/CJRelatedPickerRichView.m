@@ -52,24 +52,16 @@
     componentCount = listNum;
 
     
-    //修改tableview的frame
-    CGFloat width = self.frame.size.width;
-    if(width <= 0){
-        NSLog(@"检查下是否忘记设置frame，而导致width为0");
-    }
-    int componentWidth = width/componentCount;
-    
-    //UIView *lastView = nil;
+    UIView *lastView = nil;
     for(int i = 0; i < componentCount; i++) {
-        CGRect rect = CGRectMake(componentWidth*i, 0, componentWidth, self.frame.size.height);
-        UITableView *tableView = [[UITableView alloc] initWithFrame:rect style:UITableViewStylePlain];
+        UITableView *tableView = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStylePlain];
         tableView.delegate = self;
         tableView.dataSource = self;
         tableView.tag = kTableViewTagBegin+i;
         tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
         [self addSubview:tableView];
         
-        /*
+        //*
         tableView.translatesAutoresizingMaskIntoConstraints = NO;
         [self addConstraint:
          [NSLayoutConstraint constraintWithItem:tableView
@@ -107,8 +99,40 @@
                                          multiplier:1
                                            constant:0]];
         }
-        */
         
+        
+//        [NSLayoutConstraint constraintWithItem:tableView
+//                                     attribute:NSLayoutAttributeWidth
+//                                     relatedBy:NSLayoutRelationEqual
+//                                        toItem:self
+//                                     attribute:NSLayoutAttributeWidth   //width
+//                                    multiplier:1/componentCount
+//                                      constant:50]  //设置成几分之一的是无效的
+        if (lastView) {
+            if (i == componentCount-1) {
+                [self addConstraint:
+                 [NSLayoutConstraint constraintWithItem:tableView
+                                              attribute:NSLayoutAttributeRight
+                                              relatedBy:NSLayoutRelationEqual
+                                                 toItem:self
+                                              attribute:NSLayoutAttributeRight   //right
+                                             multiplier:1
+                                               constant:0]];
+            }
+            
+            [self addConstraint:
+             [NSLayoutConstraint constraintWithItem:tableView
+                                          attribute:NSLayoutAttributeWidth
+                                          relatedBy:NSLayoutRelationEqual
+                                             toItem:lastView
+                                          attribute:NSLayoutAttributeWidth   //width
+                                         multiplier:1
+                                           constant:0]];
+        }
+        
+        
+        lastView = tableView;
+        //*/
     }
     
     [self updateTableViewsFromComponentIndex:0];

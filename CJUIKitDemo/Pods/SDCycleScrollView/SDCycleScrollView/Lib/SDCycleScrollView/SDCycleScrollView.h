@@ -70,6 +70,9 @@ typedef enum {
 /** 如果你需要自定义cell样式，请在实现此代理方法返回你的自定义cell的class。 */
 - (Class)customCollectionViewCellClassForCycleScrollView:(SDCycleScrollView *)view;
 
+/** 如果你需要自定义cell样式，请在实现此代理方法返回你的自定义cell的Nib。 */
+- (UINib *)customCollectionViewCellNibForCycleScrollView:(SDCycleScrollView *)view;
+
 /** 如果你自定义了cell样式，请在实现此代理方法为你的cell填充数据以及其它一系列设置 */
 - (void)setupCustomCell:(UICollectionViewCell *)cell forIndex:(NSInteger)index cycleScrollView:(SDCycleScrollView *)view;
 
@@ -127,6 +130,9 @@ typedef enum {
 
 /** block方式监听滚动 */
 @property (nonatomic, copy) void (^itemDidScrollOperationBlock)(NSInteger currentIndex);
+
+/** 可以调用此方法手动控制滚动到哪一个index */
+- (void)makeScrollViewScrollToIndex:(NSInteger)index;
 
 /** 解决viewWillAppear时出现时轮播图卡在一半的问题，在控制器viewWillAppear时调用此方法 */
 - (void)adjustWhenControllerViewWillAppera;

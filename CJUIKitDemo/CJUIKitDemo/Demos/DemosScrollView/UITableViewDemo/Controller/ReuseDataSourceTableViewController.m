@@ -62,6 +62,8 @@ static NSString * const CJDefaultTableViewCellIdentifier = @"CJDefaultTableViewC
 #pragma mark UITableViewDelegate
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     NSLog(@"点击了 %ld-%ld", indexPath.section, indexPath.row);
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
     TestDataModel *dataModel = [self.tableViewDataSource dataModelAtIndexPath:indexPath];
     
     UIViewController *viewController = [[UIViewController alloc] init];

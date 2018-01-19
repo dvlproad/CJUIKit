@@ -34,6 +34,11 @@
 }
 
 - (void)commonInit {
+    if (!_dateFormatter) {
+        _dateFormatter = [[NSDateFormatter alloc] init];//NSDateFormatter的优化
+        [_dateFormatter setDateFormat:@"yyyy-MM-dd"];
+    }
+    
     self.backgroundColor = [UIColor whiteColor];
     [self setFrame:CGRectMake(0, 0, 0, 260)];
     
@@ -82,6 +87,8 @@
 }
 
 - (void)addToolbar:(UIToolbar *)toolbar {
+    _toolbar = toolbar;
+    
     [self addSubview:toolbar];
     toolbar.translatesAutoresizingMaskIntoConstraints = NO;
     [self addConstraint:

@@ -16,6 +16,8 @@
     
 }
 @property (nonatomic, strong) UIDatePicker *datePicker; //UIDatePicker默认216的高
+@property (nonatomic, strong, readonly) UIToolbar *toolbar;
+@property (nonatomic, strong, readonly) NSDateFormatter *dateFormatter;
 
 @property (nonatomic, copy) void(^valueChangedHandel)(UIDatePicker *datePicker);
 

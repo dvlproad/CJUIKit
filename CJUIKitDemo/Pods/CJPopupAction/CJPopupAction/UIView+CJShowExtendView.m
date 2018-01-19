@@ -2,8 +2,8 @@
 //  UIView+CJShowExtendView.m
 //  CJPopupViewDemo
 //
-//  Created by lichq on 15/11/12.
-//  Copyright (c) 2015年 ciyouzen. All rights reserved.
+//  Created by ciyouzen on 15/11/12.
+//  Copyright (c) 2015年 dvlproad. All rights reserved.
 //
 
 #import "UIView+CJShowExtendView.h"
@@ -41,8 +41,8 @@ static NSString *cjExtendViewKey = @"cjExtendView";
     self.cjExtendView = popupView;
     
     [popupView cj_popupInView:popupSuperview
-                   atLocation:popupViewLocation
-                     withSize:popupViewSize
+                   withOrigin:popupViewLocation
+                         size:popupViewSize
                  showComplete:showPopupViewCompleteBlock
              tapBlankComplete:tapBlankViewCompleteBlock];
 }
@@ -64,7 +64,7 @@ static NSString *cjExtendViewKey = @"cjExtendView";
     //NSLog(@"accordingViewFrameInHisSuperview = %@", NSStringFromCGRect(accordingViewFrameInHisSuperview));
     CGPoint popupViewLocation = CGPointZero;
     CGSize popupViewSize = CGSizeZero;
-    if (popupViewPosition == CJPopupViewPositionUnder) {
+    if (popupViewPosition == CJPopupViewPositionBelow) {
         CGFloat popupViewX = CGRectGetMinX(accordingViewFrameInHisSuperview);
         CGFloat popupViewY = CGRectGetMinY(accordingViewFrameInHisSuperview) + CGRectGetHeight(accordingView.frame);
         popupViewLocation = CGPointMake(popupViewX, popupViewY);
@@ -77,8 +77,8 @@ static NSString *cjExtendViewKey = @"cjExtendView";
     }
     
     [popupView cj_popupInView:popupSuperview
-                   atLocation:popupViewLocation
-                     withSize:popupViewSize
+                   withOrigin:popupViewLocation
+                         size:popupViewSize
                  showComplete:showPopupViewCompleteBlock
              tapBlankComplete:tapBlankViewCompleteBlock];
 }

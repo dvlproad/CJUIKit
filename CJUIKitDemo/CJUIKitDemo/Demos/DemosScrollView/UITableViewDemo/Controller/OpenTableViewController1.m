@@ -1,33 +1,26 @@
 //
-//  OpenTableViewController.m
+//  OpenTableViewController1.m
 //  CJUIKitDemo
 //
 //  Created by ciyouzen on 8/26/15.
 //  Copyright (c) 2015 dvlproad. All rights reserved.
 //
 
-#import "OpenTableViewController.h"
+#import "OpenTableViewController1.h"
 #import "TestDataUtil.h"
 
-#define kHeadTableViewCount 5
-#define kSubTableViewCount  6
-#define kHeadTableViewHeight 50
-#define kSubTableViewHeight 50
-
-@interface OpenTableViewController ()
+@interface OpenTableViewController1 ()
 
 @end
 
-@implementation OpenTableViewController
+@implementation OpenTableViewController1
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.title = NSLocalizedString(@"OpenTableViewController", nil);
+    self.title = NSLocalizedString(@"OpenTableViewController1", nil);
     
     self.sectionModels = [TestDataUtil getTestSectionDataModels];
-    
-    section_old = -1;
     
     [self.tableView registerNib:[UINib nibWithNibName:@"TableViewHeader" bundle:nil] forHeaderFooterViewReuseIdentifier:@"TableViewHeader"];
     [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"cell"];
@@ -37,29 +30,6 @@
     UIView *view = [[UIView alloc]init];
     view.backgroundColor = [UIColor clearColor];
     [self.tableView setTableFooterView:view];
-    
-    
-    
-    //封装的openTableView
-    [self.openTableView registerNib:[UINib nibWithNibName:@"TableViewHeader" bundle:nil] forHeaderFooterViewReuseIdentifier:@"TableViewHeader"];
-    [self.openTableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"cell"];
-    self.openTableView.sectionModels = self.sectionModels;
-    [self.openTableView configureHeaderBlock:^(TableViewHeader *header, NSInteger section) {
-        CJSectionDataModel *sectionDataModel = [self.sectionModels objectAtIndex:section];
-        
-        header.tilteLabel.backgroundColor = [UIColor cyanColor];
-        header.tilteLabel.text = sectionDataModel.theme;
-        
-    } configureCellBlock:^(UITableViewCell *cell, NSIndexPath *indexPath) {
-        CJSectionDataModel *sectionDataModel = [self.sectionModels objectAtIndex:indexPath.section];
-        TestDataModel *dataModel = [sectionDataModel.values objectAtIndex:indexPath.row];
-        
-        cell.textLabel.text = dataModel.name;
-        
-    } didSelectRowBlock:^(UITableView *tableView, NSIndexPath *indexPath) {
-        [tableView deselectRowAtIndexPath:indexPath animated:YES];
-        NSLog(@"点击%ld-%ld", indexPath.section, indexPath.row);
-    }];
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {

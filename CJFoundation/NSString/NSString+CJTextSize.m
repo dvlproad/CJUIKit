@@ -24,6 +24,15 @@
                                mode:NSLineBreakByWordWrapping].width;
 }
 
+/**
+ *  当宽或高不固定
+ *
+ *  @param font     字符串的字体大小font
+ *  @param maxSize  字符串允许占用的最大maxSize
+ *  @param mode     mode
+ *
+ *  @return 字符串实际占用的size
+ */
 - (CGSize)cjTextSizeWithFont:(UIFont *)font maxSize:(CGSize)maxSize mode:(NSLineBreakMode)mode
 {
     if (self.length == 0) {
@@ -55,6 +64,8 @@
     }
 }
 
+
+#pragma mark - <#Section#>
 /** 完整的描述请参见文件头部 */
 - (CGFloat)cjTextHeightWithFont:(UIFont *)textFont {
     return [self cjTextSizeWithFont:textFont].height;

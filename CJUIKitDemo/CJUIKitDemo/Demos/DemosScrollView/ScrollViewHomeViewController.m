@@ -19,7 +19,8 @@
 #import "DemoTableViewController.h"
 #import "ReuseDataSourceTableViewController.h"
 #import "TvDemo_Complex.h"
-#import "OpenTableViewController.h"
+#import "OpenTableViewController1.h"
+#import "OpenTableViewController2.h"
 #import "ChooseColor01.h"
 
 //UICollectionView
@@ -114,8 +115,14 @@
         }
         {
             ModuleModel *openTableModule = [[ModuleModel alloc] init];
-            openTableModule.title = @"OpenTable";
-            openTableModule.classEntry = [OpenTableViewController class];
+            openTableModule.title = @"OpenTable(不使用控件)";
+            openTableModule.classEntry = [OpenTableViewController1 class];
+            [sectionDataModel.values addObject:openTableModule];
+        }
+        {
+            ModuleModel *openTableModule = [[ModuleModel alloc] init];
+            openTableModule.title = @"OpenTable(使用控件)";
+            openTableModule.classEntry = [OpenTableViewController2 class];
             [sectionDataModel.values addObject:openTableModule];
         }
         {
@@ -232,6 +239,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     NSLog(@"didSelectRowAtIndexPath = %ld %ld", indexPath.section, indexPath.row);
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
     CJSectionDataModel *sectionDataModel = [self.sectionDataModels objectAtIndex:indexPath.section];
     NSArray *dataModels = sectionDataModel.values;

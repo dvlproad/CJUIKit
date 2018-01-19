@@ -2,8 +2,8 @@
 //  UIView+CJPopupInView.m
 //  CJPopupViewDemo
 //
-//  Created by lichq on 15/11/12.
-//  Copyright (c) 2015年 ciyouzen. All rights reserved.
+//  Created by ciyouzen on 15/11/12.
+//  Copyright (c) 2015年 dvlproad. All rights reserved.
 //
 
 #import "UIView+CJPopupInView.h"
@@ -31,7 +31,7 @@ static NSString *cjMustHideFromPopupViewKey = @"cjMustHideFromPopupView";
 //@property (nonatomic, assign) CATransform3D cjPopupViewHideTransform;/**< 弹出视图隐藏时候的transform */
 
 @property (nonatomic, strong) UIView *cjShowInView; /**< 弹出视图被add到的view */
-@property (nonatomic, strong) UIView *cjTapView;    /**< 空白区域 */
+@property (nonatomic, strong) UIView *cjTapView;    /**< 空白区域（指radioButtons组合下的点击区域（不包括radioButtons区域），用来点击之后隐藏列表） */
 
 @property (nonatomic, copy) CJTapBlankViewCompleteBlock cjTapBlankViewCompleteBlock;    /**< 点击空白区域执行的操作 */
 @property (nonatomic, copy) CJShowPopupViewCompleteBlock cjShowPopupViewCompleteBlock;    /**< 显示弹出视图后的操作 */
@@ -118,44 +118,39 @@ static NSString *cjMustHideFromPopupViewKey = @"cjMustHideFromPopupView";
 #pragma mark - 底层接口
 /** 完整的描述请参见文件头部 */
 - (void)cj_popupInView:(UIView *)popupSuperview
-            atLocation:(CGPoint)location
-              withSize:(CGSize)size
+            withOrigin:(CGPoint)popupViewOrigin
+                  size:(CGSize)popupViewSize
           showComplete:(CJShowPopupViewCompleteBlock)showPopupViewCompleteBlock
       tapBlankComplete:(CJTapBlankViewCompleteBlock)tapBlankViewCompleteBlock
 {
-    
-    self.cjPopupAnimationType = CJAnimationTypeNormal;
-    
     UIView *popupView = self;
     
-    
+    BOOL canAdd = [self letPopupSuperview:popupSuperview addPopupView:popupView];
+    if (!canAdd) {
+        return;
+    }
     UIView *blankView = self.cjTapView;
-    if (blankView) {
-        [blankView removeFromSuperview];
-        [popupView removeFromSuperview];
-    }
-    if (blankView == nil) { //tapV是指radioButtons组合下的点击区域（不包括radioButtons区域），用来点击之后隐藏列表
-        blankView = [[UIView alloc] initWithFrame:CGRectZero];
-        blankView.backgroundColor = [UIColor colorWithWhite:0.0f alpha:0.5];
-        UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(cj_TapBlankViewAction:)];
-        [blankView addGestureRecognizer:tapGesture];
-    }
-    [popupSuperview addSubview:blankView];
-    [popupSuperview addSubview:popupView];
+    CGFloat blankViewX = popupViewOrigin.x;
+    CGFloat blankViewY = popupViewOrigin.y;
+    CGFloat blankViewWidth = popupViewSize.width;
+    CGFloat blankViewHeight = CGRectGetHeight(popupSuperview.frame) - popupViewOrigin.y;
+    CGRect blankViewFrame = CGRectMake(blankViewX,
+                                       blankViewY,
+                                       blankViewWidth,
+                                       blankViewHeight);
+    [blankView setFrame:blankViewFrame];
     
-    self.cjShowInView = popupSuperview;
-    self.cjTapView = blankView;
-    self.cjPopupViewShowing = YES;
+
+    self.cjPopupAnimationType = CJAnimationTypeNormal;
     self.cjShowPopupViewCompleteBlock = showPopupViewCompleteBlock;
     self.cjTapBlankViewCompleteBlock = tapBlankViewCompleteBlock;
     
     
     
-    
-    CGFloat popupViewX = location.x;
-    CGFloat popupViewY = location.y;
-    CGFloat popupViewWidth = size.width;
-    CGFloat popupViewShowHeight = size.height;
+    CGFloat popupViewX = popupViewOrigin.x;
+    CGFloat popupViewY = popupViewOrigin.y;
+    CGFloat popupViewWidth = popupViewSize.width;
+    CGFloat popupViewShowHeight = popupViewSize.height;
     CGFloat popupViewHideHeight = 0;
     CGRect popupViewShowFrame = CGRectMake(popupViewX,
                                            popupViewY,
@@ -167,15 +162,7 @@ static NSString *cjMustHideFromPopupViewKey = @"cjMustHideFromPopupView";
                                            popupViewHideHeight);
     self.cjPopupViewHideFrameString = NSStringFromCGRect(popupViewHideFrame);
     
-    CGFloat blankViewX = location.x;
-    CGFloat blankViewY = location.y;
-    CGFloat blankViewWidth = size.width;
-    CGFloat blankViewHeight = CGRectGetHeight(popupSuperview.frame) - CGRectGetMinY(popupViewShowFrame);
-    CGRect blankViewFrame = CGRectMake(blankViewX,
-                                       blankViewY,
-                                       blankViewWidth,
-                                       blankViewHeight);
-    [blankView setFrame:blankViewFrame];
+    
     
     
     //动画设置位置
@@ -194,167 +181,231 @@ static NSString *cjMustHideFromPopupViewKey = @"cjMustHideFromPopupView";
     }
 }
 
-
-/** 完整的描述请参见文件头部 */
-- (void)cj_popupInWindowAtPosition:(CJWindowPosition)windowPosition
-                     animationType:(CJAnimationType)animationType
-                      showComplete:(CJShowPopupViewCompleteBlock)showPopupViewCompleteBlock
-                  tapBlankComplete:(CJTapBlankViewCompleteBlock)tapBlankViewCompleteBlock
+/* 完整的描述请参见文件头部 */
+- (void)cj_popupInCenterWindow:(CJAnimationType)animationType
+                      withSize:(CGSize)popupViewSize
+                  showComplete:(CJShowPopupViewCompleteBlock)showPopupViewCompleteBlock
+              tapBlankComplete:(CJTapBlankViewCompleteBlock)tapBlankViewCompleteBlock
 {
-    
-    self.cjPopupAnimationType = animationType;
-    
-    
-    UIWindow *keywindow = [[UIApplication sharedApplication] keyWindow];
+    UIWindow *keyWindow = [[UIApplication sharedApplication] keyWindow];
     
     UIView *popupView = self;
-    UIView *popupSuperview = keywindow;
-    if ([popupSuperview.subviews containsObject:popupView]) {
+    UIView *popupSuperview = keyWindow;
+    
+    NSAssert(popupViewSize.width != 0 && popupViewSize.height != 0, @"弹出视图的宽高都不能为0");
+    CGRect frame = popupView.frame;
+    frame.size.width = popupViewSize.width;
+    frame.size.height = popupViewSize.height;
+    popupView.frame = frame;
+    
+    BOOL canAdd = [self letkeyWindowAddPopupView:popupView];
+    if (!canAdd) {
         return;
     }
     
     
-    UIView *blankView = self.cjTapView;
-    if (blankView) {
-        [blankView removeFromSuperview];
-        [popupView removeFromSuperview];
-    }
-    if (blankView == nil) { //tapV是指radioButtons组合下的点击区域（不包括radioButtons区域），用来点击之后隐藏列表
-        blankView = [[UIView alloc] initWithFrame:CGRectZero];
-        blankView.backgroundColor = [UIColor colorWithRed:.16 green:.17 blue:.21 alpha:.6];
-        UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(cj_TapBlankViewAction:)];
-        [blankView addGestureRecognizer:tapGesture];
-    }
-    [popupSuperview addSubview:blankView];
-    [popupSuperview addSubview:popupView];
-    
-    self.cjShowInView = popupSuperview;
-    self.cjTapView = blankView;
-    self.cjPopupViewShowing = YES;
+    self.cjPopupAnimationType = animationType;
     self.cjShowPopupViewCompleteBlock = showPopupViewCompleteBlock;
     self.cjTapBlankViewCompleteBlock = tapBlankViewCompleteBlock;
     
-    /* popupView的一些设置 */
-    popupView.layer.shadowColor = [[UIColor blackColor] CGColor];
-    popupView.layer.shadowOffset = CGSizeMake(0, -2);
-    popupView.layer.shadowRadius = 5.0;
-    popupView.layer.shadowOpacity = 0.8;
+    if (animationType == CJAnimationTypeNone) {
+        popupView.center = popupSuperview.center;
+        
+    } else if (animationType == CJAnimationTypeNormal) {
+        popupView.center = popupSuperview.center;
+        
+    } else if (animationType == CJAnimationTypeCATransform3D) {
+        popupView.center = popupSuperview.center;
+        
+        CATransform3D popupViewShowTransform = CATransform3DIdentity;
+        
+        CATransform3D rotate = CATransform3DMakeRotation(70.0*M_PI/180.0, 0.0, 0.0, 1.0);
+        CATransform3D translate = CATransform3DMakeTranslation(20.0, -500.0, 0.0);
+        CATransform3D popupViewHideTransform = CATransform3DConcat(rotate, translate);
+        
+        self.layer.transform = popupViewHideTransform;
+        [UIView animateWithDuration:kPopupAnimationDuration
+                              delay:0.0
+                            options:UIViewAnimationOptionCurveEaseOut
+                         animations:^{
+                             self.layer.transform = popupViewShowTransform;
+                         } completion:^(BOOL finished) {
+                             
+                         }];
+        
+    }
+    
+    if(showPopupViewCompleteBlock){
+        showPopupViewCompleteBlock();
+    }
+    
+}
+/** 完整的描述请参见文件头部 */
+- (void)cj_popupInBottomWindow:(CJAnimationType)animationType
+                    withHeight:(CGFloat)popupViewHeight
+                  showComplete:(CJShowPopupViewCompleteBlock)showPopupViewCompleteBlock
+              tapBlankComplete:(CJTapBlankViewCompleteBlock)tapBlankViewCompleteBlock
+{
+    NSAssert(popupViewHeight != 0, @"弹出视图的高都不能为0");
+    
+    UIView *popupView = self;
+    
+    BOOL canAdd = [self letkeyWindowAddPopupView:popupView];
+    if (!canAdd) {
+        return;
+    }
+    
+    
+    
+    self.cjPopupAnimationType = animationType;
+    self.cjShowPopupViewCompleteBlock = showPopupViewCompleteBlock;
+    self.cjTapBlankViewCompleteBlock = tapBlankViewCompleteBlock;
+
+    
+    //popupViewShowFrame
+    UIWindow *keyWindow = [[UIApplication sharedApplication] keyWindow];
+    CGFloat popupViewX = 0;
+    CGFloat popupViewShowY = CGRectGetHeight(keyWindow.frame) - CGRectGetHeight(popupView.frame);
+    CGFloat popupViewWidth = CGRectGetWidth(keyWindow.frame);
+    
+    CGRect popupViewShowFrame = CGRectZero;
+    popupViewShowFrame = CGRectMake(popupViewX,
+                                    popupViewShowY,
+                                    popupViewWidth,
+                                    popupViewHeight);
     
     
     
     
+    
+    if (animationType == CJAnimationTypeNone) {
+        popupView.frame = popupViewShowFrame;
+        
+    } else if (animationType == CJAnimationTypeNormal) {
+        //popupViewHideFrame
+        CGRect popupViewHideFrame = popupViewShowFrame;
+        popupViewHideFrame.origin.y = CGRectGetMaxY(keyWindow.frame);
+        self.cjPopupViewHideFrameString = NSStringFromCGRect(popupViewHideFrame);
+        
+        //动画设置位置
+        UIView *blankView = self.cjTapView;
+        blankView.alpha = 0.2;
+        popupView.alpha = 0.2;
+        popupView.frame = popupViewHideFrame;
+        [UIView animateWithDuration:kPopupAnimationDuration
+                         animations:^{
+                             blankView.alpha = 1.0;
+                             popupView.alpha = 1.0;
+                             popupView.frame = popupViewShowFrame;
+                         }];
+        
+    } else if (animationType == CJAnimationTypeCATransform3D) {
+        popupView.frame = popupViewShowFrame;
+        
+        CATransform3D popupViewShowTransform = CATransform3DIdentity;
+        
+        CATransform3D rotate = CATransform3DMakeRotation(70.0*M_PI/180.0, 0.0, 0.0, 1.0);
+        CATransform3D translate = CATransform3DMakeTranslation(20.0, -500.0, 0.0);
+        CATransform3D popupViewHideTransform = CATransform3DConcat(rotate, translate);
+        
+        self.layer.transform = popupViewHideTransform;
+        [UIView animateWithDuration:kPopupAnimationDuration
+                              delay:0.0
+                            options:UIViewAnimationOptionCurveEaseOut
+                         animations:^{
+                             self.layer.transform = popupViewShowTransform;
+                         } completion:^(BOOL finished) {
+                             
+                         }];
+        
+    }
+    
+    if(showPopupViewCompleteBlock){
+        showPopupViewCompleteBlock();
+    }
+}
+
+
+/**
+ *  将popupView添加进keyWindow中(会默认添加进blankView及对popupView做一些默认设置)
+ *
+ *  @param popupView 要被添加的视图
+ *
+ *  @return 是否可以被添加成功
+ */
+- (BOOL)letkeyWindowAddPopupView:(UIView *)popupView {
+    UIWindow *keyWindow = [[UIApplication sharedApplication] keyWindow];
+    
+    BOOL canAdd = [self letPopupSuperview:keyWindow addPopupView:popupView];
+    if (!canAdd) {
+        return NO;
+    }
+    
+    /* 设置blankView的位置 */
+    UIView *blankView = self.cjTapView;
     CGFloat blankViewX = 0;
     CGFloat blankViewY = 0;
-    CGFloat blankViewWidth = CGRectGetWidth(keywindow.frame);
-    CGFloat blankViewHeight = CGRectGetHeight(keywindow.frame);;
+    CGFloat blankViewWidth = CGRectGetWidth(keyWindow.frame);
+    CGFloat blankViewHeight = CGRectGetHeight(keyWindow.frame);;
     CGRect blankViewFrame = CGRectMake(blankViewX,
                                        blankViewY,
                                        blankViewWidth,
                                        blankViewHeight);
     [blankView setFrame:blankViewFrame];
     
-    switch (windowPosition) {
-        case CJWindowPositionBottom:
-        {
-            //popupViewShowFrame
-            CGFloat popupViewX = 0;
-            CGFloat popupViewShowY = CGRectGetHeight(keywindow.frame) - CGRectGetHeight(popupView.frame);
-            CGFloat popupViewWidth = CGRectGetWidth(keywindow.frame);
-            CGFloat popupViewHeight = CGRectGetHeight(popupView.frame);
-            
-            CGRect popupViewShowFrame = CGRectZero;
-            popupViewShowFrame = CGRectMake(popupViewX,
-                                            popupViewShowY,
-                                            popupViewWidth,
-                                            popupViewHeight);
-            
-            
-            
-            
-            
-            if (animationType == CJAnimationTypeNone) {
-                popupView.frame = popupViewShowFrame;
-                
-            } else if (animationType == CJAnimationTypeNormal) {
-                //popupViewHideFrame
-                CGRect popupViewHideFrame = popupViewShowFrame;
-                popupViewHideFrame.origin.y = CGRectGetMaxY(keywindow.frame);
-                self.cjPopupViewHideFrameString = NSStringFromCGRect(popupViewHideFrame);
-                
-                //动画设置位置
-                blankView.alpha = 0.2;
-                popupView.alpha = 0.2;
-                popupView.frame = popupViewHideFrame;
-                [UIView animateWithDuration:kPopupAnimationDuration
-                                 animations:^{
-                                     blankView.alpha = 1.0;
-                                     popupView.alpha = 1.0;
-                                     popupView.frame = popupViewShowFrame;
-                                 }];
-                
-            } else if (animationType == CJAnimationTypeCATransform3D) {
-                popupView.frame = popupViewShowFrame;
-                
-                CATransform3D popupViewShowTransform = CATransform3DIdentity;
-                
-                CATransform3D rotate = CATransform3DMakeRotation(70.0*M_PI/180.0, 0.0, 0.0, 1.0);
-                CATransform3D translate = CATransform3DMakeTranslation(20.0, -500.0, 0.0);
-                CATransform3D popupViewHideTransform = CATransform3DConcat(rotate, translate);
-                
-                self.layer.transform = popupViewHideTransform;
-                [UIView animateWithDuration:kPopupAnimationDuration
-                                      delay:0.0
-                                    options:UIViewAnimationOptionCurveEaseOut
-                                 animations:^{
-                                     self.layer.transform = popupViewShowTransform;
-                                 } completion:^(BOOL finished) {
-                                     
-                                 }];
-                
-            }
-            
-            break;
-        }
-        case CJWindowPositionCenter:
-        {
-            if (animationType == CJAnimationTypeNone) {
-                popupView.center = popupSuperview.center;
-                
-            } else if (animationType == CJAnimationTypeNormal) {
-                popupView.center = popupSuperview.center;
-                
-            } else if (animationType == CJAnimationTypeCATransform3D) {
-                popupView.center = popupSuperview.center;
-                
-                CATransform3D popupViewShowTransform = CATransform3DIdentity;
-                
-                CATransform3D rotate = CATransform3DMakeRotation(70.0*M_PI/180.0, 0.0, 0.0, 1.0);
-                CATransform3D translate = CATransform3DMakeTranslation(20.0, -500.0, 0.0);
-                CATransform3D popupViewHideTransform = CATransform3DConcat(rotate, translate);
-                
-                self.layer.transform = popupViewHideTransform;
-                [UIView animateWithDuration:kPopupAnimationDuration
-                                      delay:0.0
-                                    options:UIViewAnimationOptionCurveEaseOut
-                                 animations:^{
-                                     self.layer.transform = popupViewShowTransform;
-                                 } completion:^(BOOL finished) {
-                                     
-                                 }];
-                
-            }
-            break;
-        }
-        default:
-        {
-            break;
-        }
+    /* 对popupView做一些默认设置 */
+    popupView.layer.shadowColor = [[UIColor blackColor] CGColor];
+    popupView.layer.shadowOffset = CGSizeMake(0, -2);
+    popupView.layer.shadowRadius = 5.0;
+    popupView.layer.shadowOpacity = 0.8;
+    
+    return YES;
+}
+
+/**
+ *  将popupView添加进popupSuperview中(会默认添加进blankView及对popupView做一些默认设置)
+ *
+ *  @param popupSuperview 被添加到的地方
+ *  @param popupView 要被添加的视图
+ *
+ *  @return 是否可以被添加成功
+ */
+- (BOOL)letPopupSuperview:(UIView *)popupSuperview addPopupView:(UIView *)popupView
+{
+    if ([popupSuperview.subviews containsObject:popupView]) {
+        return NO;
     }
     
-    
-    if(showPopupViewCompleteBlock){
-        showPopupViewCompleteBlock();
+    /* 添加进空白的点击区域blankView */
+    UIView *blankView = self.cjTapView;
+    if (blankView == nil) {
+        blankView = [[UIView alloc] initWithFrame:CGRectZero];
+        blankView.backgroundColor = [UIColor colorWithRed:.16 green:.17 blue:.21 alpha:.6];
+        UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(cj_TapBlankViewAction:)];
+        [blankView addGestureRecognizer:tapGesture];
+        
+        self.cjTapView = blankView;
     }
+    
+    if (self.cjPopupViewShowing) { //如果存在，先清除
+        [blankView removeFromSuperview];
+    }
+    [popupSuperview addSubview:blankView];
+    
+    
+    
+    
+    
+    /* 添加进popupView，并做一些默认设置 */
+    if (self.cjPopupViewShowing) { //如果存在，先清除
+        [popupView removeFromSuperview];
+    }
+    [popupSuperview addSubview:popupView];
+    
+    self.cjShowInView = popupSuperview;
+    self.cjPopupViewShowing = YES;
+    
+    return YES;
 }
 
 
