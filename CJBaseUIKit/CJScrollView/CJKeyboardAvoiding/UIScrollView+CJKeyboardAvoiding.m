@@ -8,7 +8,7 @@
 
 #import "UIScrollView+CJKeyboardAvoiding.h"
 
-static NSString *cjKeyboardAvoidingOffsetKey = @"cjKeyboardAvoidingOffsetKey";
+static NSString * const cjKeyboardAvoidingOffsetKey = @"cjKeyboardAvoidingOffsetKey";
 
 @interface UIScrollView () {
     

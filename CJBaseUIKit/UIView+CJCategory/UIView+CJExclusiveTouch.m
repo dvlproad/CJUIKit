@@ -11,7 +11,7 @@
 
 @implementation UIView (CJExclusiveTouch)
 
-static NSString *cjExclusiveTouchKey = @"cjExclusiveTouchKey";
+static NSString * const cjExclusiveTouchKey = @"cjExclusiveTouchKey";
 
 #pragma mark - runtime
 //cjExclusiveTouch

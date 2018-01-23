@@ -21,7 +21,7 @@
 @implementation UISearchBar (CJAddInputAccessoryView)
 
 #pragma mark - runtime
-static NSString *doneButtonClickBlockKey = @"doneButtonClickBlockKey";
+static NSString * const doneButtonClickBlockKey = @"doneButtonClickBlockKey";
 
 - (void (^)(UISearchBar *))doneButtonClickBlock {
     return objc_getAssociatedObject(self, (__bridge const void *)(doneButtonClickBlockKey));

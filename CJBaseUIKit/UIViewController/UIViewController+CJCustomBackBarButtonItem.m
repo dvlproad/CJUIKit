@@ -12,7 +12,7 @@
 @implementation UIViewController (CJCustomBackBarButtonItem)
 
 #pragma mark - runtime
-static NSString *kcjCustomNavigationBackButtonKey = @"kcjCustomNavigationBackButtonKey";
+static NSString * const kcjCustomNavigationBackButtonKey = @"kcjCustomNavigationBackButtonKey";
 
 - (UIButton *)cjCustomNavigationBackButton {
     return objc_getAssociatedObject(self, (__bridge const void *)(kcjCustomNavigationBackButtonKey));

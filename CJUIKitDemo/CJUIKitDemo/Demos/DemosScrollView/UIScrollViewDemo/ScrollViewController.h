@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
+//ScrollView(纯代码创建)
 @interface ScrollViewController : UIViewController {
     
 }

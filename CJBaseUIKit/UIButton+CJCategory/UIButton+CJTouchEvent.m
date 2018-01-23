@@ -12,7 +12,7 @@
 @implementation UIButton (CJTouchEvent)
 
 #pragma mark - runtime
-static NSString *cjTouchEventBlockKey = @"cjTouchEventBlockKey";
+static NSString * const cjTouchEventBlockKey = @"cjTouchEventBlockKey";
 
 - (void (^)(UIButton *))cjTouchEventBlock {
     return objc_getAssociatedObject(self, (__bridge const void *)(cjTouchEventBlockKey));

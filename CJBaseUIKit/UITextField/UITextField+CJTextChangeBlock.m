@@ -12,7 +12,7 @@
 @implementation UITextField (CJTextChangeBlock)
 
 #pragma mark - runtime
-static NSString *cjTextDidChangeBlockKey = @"cjTextDidChangeBlockKey";
+static NSString * const cjTextDidChangeBlockKey = @"cjTextDidChangeBlockKey";
 
 - (void (^)(UITextField *))cjTextDidChangeBlock {
     return objc_getAssociatedObject(self, (__bridge const void *)(cjTextDidChangeBlockKey));

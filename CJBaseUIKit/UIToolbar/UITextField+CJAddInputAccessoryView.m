@@ -21,7 +21,7 @@
 @implementation UITextField (CJAddInputAccessoryView)
 
 #pragma mark - runtime
-static NSString *doneButtonClickBlockKey = @"doneButtonClickBlockKey";
+static NSString * const doneButtonClickBlockKey = @"doneButtonClickBlockKey";
 
 - (void (^)(UITextField *))doneButtonClickBlock {
     return objc_getAssociatedObject(self, (__bridge const void *)(doneButtonClickBlockKey));

@@ -8,8 +8,8 @@
 
 #import "CJAppHaveLaunchUtil.h"
 
-static NSString *kAPPHaveLaunchKey = @"APPHaveLaunchKey";
-static NSString *kAPPVersionKey = @"APPVersionKey";
+static NSString * const kAPPHaveLaunchKey = @"APPHaveLaunchKey";
+static NSString * const kAPPVersionKey = @"APPVersionKey";
 
 @implementation CJAppHaveLaunchUtil
 

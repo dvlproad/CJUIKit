@@ -8,10 +8,10 @@
 
 #import "NSObject+SearchProperty.h"
 
-static NSString *isSearchResultKey = @"isSearchResultKey";
-static NSString *isContainInSelfKey = @"isContainInSelfKey";
-static NSString *isContainInMembersKey = @"isContainInMembersKey";
-static NSString *containMembersKey = @"containMembersKey";
+static NSString * const isSearchResultKey = @"isSearchResultKey";
+static NSString * const isContainInSelfKey = @"isContainInSelfKey";
+static NSString * const isContainInMembersKey = @"isContainInMembersKey";
+static NSString * const containMembersKey = @"containMembersKey";
 
 @implementation NSObject (Search)
 

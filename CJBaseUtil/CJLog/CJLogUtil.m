@@ -10,7 +10,7 @@
 
 #include <stdarg.h>
 
-static NSString *logType[4]={@"DEBUG", @"TRACE", @"INFO", @"ERROR"};
+static NSString * const logType[4]={@"DEBUG", @"TRACE", @"INFO", @"ERROR"};
 
 void CJAppLog(CJAppLogType appLogType, NSString *tag, NSString *format, ...) //tag即CJAPPLOG_FL
 {

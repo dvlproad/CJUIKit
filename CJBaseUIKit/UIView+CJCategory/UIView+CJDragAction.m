@@ -17,12 +17,12 @@
 
 @implementation UIView (CJDragAction)
 
-static NSString *cjDragEnableKey = @"cjDragEnableKey";
-static NSString *cjDragBeginBlockKey = @"cjDragBeginBlockKey";
-static NSString *cjDragDuringBlockKey = @"cjDragDuringBlockKey";
-static NSString *cjDragEndBlockKey = @"cjDragEndBlockKey";
+static NSString * const cjDragEnableKey = @"cjDragEnableKey";
+static NSString * const cjDragBeginBlockKey = @"cjDragBeginBlockKey";
+static NSString * const cjDragDuringBlockKey = @"cjDragDuringBlockKey";
+static NSString * const cjDragEndBlockKey = @"cjDragEndBlockKey";
 
-static NSString *cjPanGestureRecognizerKey = @"cjPanGestureRecognizerKey";
+static NSString * const cjPanGestureRecognizerKey = @"cjPanGestureRecognizerKey";
 
 #pragma mark - runtime
 //cjDragEnable

@@ -11,9 +11,12 @@
 #import "ModuleModel.h"
 
 #import "DeviceInfoViewController.h"
+
 #import "DataUtilViewController.h"
+
 #import "ToastViewController.h"
 
+#import "KeyboardUtilViewController.h"
 
 @interface UtilHomeViewController () <UITableViewDataSource, UITableViewDelegate> {
     
@@ -57,10 +60,15 @@
             toastUtilModule.classEntry = [ToastViewController class];
             [sectionDataModel.values addObject:toastUtilModule];
         }
+        {
+            ModuleModel *keyboardUtilModule = [[ModuleModel alloc] init];
+            keyboardUtilModule.title = @"KeyboardUtil(键盘高度)";
+            keyboardUtilModule.classEntry = [KeyboardUtilViewController class];
+            [sectionDataModel.values addObject:keyboardUtilModule];
+        }
         
         [sectionDataModels addObject:sectionDataModel];
     }
-    
     self.sectionDataModels = sectionDataModels;
 }
 

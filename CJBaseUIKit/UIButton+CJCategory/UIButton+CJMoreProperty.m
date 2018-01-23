@@ -8,7 +8,7 @@
 
 #import "UIButton+CJMoreProperty.h"
 
-static NSString *cjModelKey = @"cjModelKey";
+static NSString * const cjModelKey = @"cjModelKey";
 
 @implementation UIButton (CJMoreProperty)
 

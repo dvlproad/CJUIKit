@@ -9,6 +9,11 @@ Pod::Spec.new do |s|
   s.description  = <<-DESC
                   1、CJDataUtil：包含搜索、排序等数据处理工具类
                   2、CJDateUtil：日期工具
+                  3、CJKeyboardUtil：键盘工具
+                  4、CJLog：日志工具
+                  5、CJWebUtil：Web工具
+                  6、CJDevice：设备信息工具
+                  7、CJApp：App信息工具
 
                    A longer description of CJBaseUtil in Markdown format.
 
@@ -55,6 +60,11 @@ Pod::Spec.new do |s|
   # 日期工具
   s.subspec 'CJDateUtil' do |ss|
     ss.source_files = "CJBaseUtil/CJDateUtil/**/*.{h,m}"
+  end
+
+  # 键盘工具
+  s.subspec 'CJKeyboardUtil' do |ss|
+    ss.source_files = "CJBaseUtil/CJKeyboardUtil/**/*.{h,m}"
   end
 
   s.subspec 'UIUtil' do |ss|

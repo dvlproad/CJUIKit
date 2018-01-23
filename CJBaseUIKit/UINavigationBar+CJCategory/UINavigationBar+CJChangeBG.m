@@ -11,7 +11,7 @@
 
 @implementation UINavigationBar (CJChangeBG)
 
-static NSString *overlayKey = @"overlayKey";
+static NSString * const overlayKey = @"overlayKey";
 
 #pragma mark - runtime
 - (UIView *)overlay {

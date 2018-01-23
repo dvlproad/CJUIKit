@@ -19,8 +19,8 @@
 @implementation UITextField (CJAddLeftRightView)
 
 #pragma mark - runtime
-static NSString *kCJLeftViewHandleKey = @"kCJLeftViewHandleKey";
-static NSString *kCJRightViewHandleKey = @"kCJRightViewHandleKey";
+static NSString * const kCJLeftViewHandleKey = @"kCJLeftViewHandleKey";
+static NSString * const kCJRightViewHandleKey = @"kCJRightViewHandleKey";
 
 - (void (^)(UITextField *))cjLeftViewHandle {
     return objc_getAssociatedObject(self, (__bridge const void *)(kCJLeftViewHandleKey));

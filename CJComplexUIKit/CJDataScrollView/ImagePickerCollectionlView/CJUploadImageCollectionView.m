@@ -10,8 +10,8 @@
 #import "CJUploadImageCollectionView+Tap.h"
 #import "CJUploadCollectionViewCell.h"
 
-static NSString *CJUploadCollectionViewCellID = @"CJUploadCollectionViewCell";
-static NSString *CJUploadCollectionViewCellAddID = @"CJUploadCollectionViewCellAdd";
+static NSString * const CJUploadCollectionViewCellID = @"CJUploadCollectionViewCell";
+static NSString * const CJUploadCollectionViewCellAddID = @"CJUploadCollectionViewCellAdd";
 
 @interface CJUploadImageCollectionView () <UICollectionViewDataSource> {
     
