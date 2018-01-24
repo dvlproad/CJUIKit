@@ -8,7 +8,7 @@
 
 #import "HomeViewController.h"
 
-#import "ModuleModel.h"
+#import "CJModuleModel.h"
 
 
 #import "NestedXibViewController.h"
@@ -65,7 +65,7 @@
         CJSectionDataModel *sectionDataModel = [[CJSectionDataModel alloc] init];
         sectionDataModel.theme = @"Interface相关(xib/storyboard)";
         {
-            ModuleModel *xibModule = [[ModuleModel alloc] init];
+            CJModuleModel *xibModule = [[CJModuleModel alloc] init];
             xibModule.title = @"xib";
             xibModule.classEntry = [NestedXibViewController class];
             
@@ -80,7 +80,7 @@
         CJSectionDataModel *sectionDataModel = [[CJSectionDataModel alloc] init];
         sectionDataModel.theme = @"UIViewController相关";
         {
-            ModuleModel *ViewCategoryModule = [[ModuleModel alloc] init];
+            CJModuleModel *ViewCategoryModule = [[CJModuleModel alloc] init];
             ViewCategoryModule.title = @"BackBarButtonItem (返回按钮事件)";
             ViewCategoryModule.classEntry = [SampleViewController class];
             [sectionDataModel.values addObject:ViewCategoryModule];
@@ -93,7 +93,7 @@
         CJSectionDataModel *sectionDataModel = [[CJSectionDataModel alloc] init];
         sectionDataModel.theme = @"UIView相关";
         {
-            ModuleModel *ViewDragCategoryModule = [[ModuleModel alloc] init];
+            CJModuleModel *ViewDragCategoryModule = [[CJModuleModel alloc] init];
             ViewDragCategoryModule.title = @"Drag And KeepBounds (视图的拖曳和吸附)";
             ViewDragCategoryModule.classEntry = [DragViewController class];
             [sectionDataModel.values addObject:ViewDragCategoryModule];
@@ -107,54 +107,54 @@
         sectionDataModel.theme = @"UIView的子类相关";
         {
             //CJImageView
-            ModuleModel *cjImageViewModuleModel = [[ModuleModel alloc] init];
+            CJModuleModel *cjImageViewModuleModel = [[CJModuleModel alloc] init];
             cjImageViewModuleModel.title = @"CJImageView";
             cjImageViewModuleModel.classEntry = [ImageViewController class];
             [sectionDataModel.values addObject:cjImageViewModuleModel];
         }
         {
-            ModuleModel *buttonModule = [[ModuleModel alloc] init];
+            CJModuleModel *buttonModule = [[CJModuleModel alloc] init];
             buttonModule.title = @"UIButton";
             buttonModule.classEntry = [ButtonViewController class];
             [sectionDataModel.values addObject:buttonModule];
         }
         {
             //TextField
-            ModuleModel *textFieldModule = [[ModuleModel alloc] init];
+            CJModuleModel *textFieldModule = [[CJModuleModel alloc] init];
             textFieldModule.title = @"TextField";
             textFieldModule.classEntry = [TextFieldViewController class];
             [sectionDataModel.values addObject:textFieldModule];
         }
         {
             //TextView
-            ModuleModel *textViewModule = [[ModuleModel alloc] init];
+            CJModuleModel *textViewModule = [[CJModuleModel alloc] init];
             textViewModule.title = @"TextView";
             textViewModule.classEntry = [TextViewController class];
             [sectionDataModel.values addObject:textViewModule];
         }
         {
             //Slider
-            ModuleModel *sliderModule = [[ModuleModel alloc] init];
+            CJModuleModel *sliderModule = [[CJModuleModel alloc] init];
             sliderModule.title = @"CJSliderControl";
             sliderModule.classEntry = [SliderViewController class];
             [sectionDataModel.values addObject:sliderModule];
         }
         {
             //CJSearchBar
-            ModuleModel *cjSearchBarModuleModel = [[ModuleModel alloc] init];
+            CJModuleModel *cjSearchBarModuleModel = [[CJModuleModel alloc] init];
             cjSearchBarModuleModel.title = @"CJSearchBar";
             cjSearchBarModuleModel.classEntry = [SearchBarViewController class];
             [sectionDataModel.values addObject:cjSearchBarModuleModel];
         }
         {
             //UIImage
-            ModuleModel *UIImageModuleModel = [[ModuleModel alloc] init];
+            CJModuleModel *UIImageModuleModel = [[CJModuleModel alloc] init];
             UIImageModuleModel.title = @"UIImage";
             UIImageModuleModel.classEntry = [ImageChangeColorViewController class];
             [sectionDataModel.values addObject:UIImageModuleModel];
         }
         {
-            ModuleModel *QRCodeModule = [[ModuleModel alloc] init];
+            CJModuleModel *QRCodeModule = [[CJModuleModel alloc] init];
             QRCodeModule.title = @"QRCode";
             QRCodeModule.classEntry = [QRCodeViewController class];
             [sectionDataModel.values addObject:QRCodeModule];
@@ -162,19 +162,19 @@
         
         //UINavigationBar
         {
-            ModuleModel *UINavigationBarModuleModel1 = [[ModuleModel alloc] init];
+            CJModuleModel *UINavigationBarModuleModel1 = [[CJModuleModel alloc] init];
             UINavigationBarModuleModel1.title = @"UINavigationBar(导航栏的设置)";
             UINavigationBarModuleModel1.classEntry = [NavigationBarViewController class];
             [sectionDataModel.values addObject:UINavigationBarModuleModel1];
         }
         {
-            ModuleModel *UINavigationBarModuleModel1 = [[ModuleModel alloc] init];
+            CJModuleModel *UINavigationBarModuleModel1 = [[CJModuleModel alloc] init];
             UINavigationBarModuleModel1.title = @"UINavigationBar(常见的导航栏背景色改变隐藏)";
             UINavigationBarModuleModel1.classEntry = [NavigationBarChangeBGViewController class];
             [sectionDataModel.values addObject:UINavigationBarModuleModel1];
         }
         {
-            ModuleModel *UINavigationBarModuleModel2 = [[ModuleModel alloc] init];
+            CJModuleModel *UINavigationBarModuleModel2 = [[CJModuleModel alloc] init];
             UINavigationBarModuleModel2.title = @"UINavigationBar(类似斗鱼的导航栏移动隐藏)";
             UINavigationBarModuleModel2.classEntry = [NavigationBarChangePositonViewController class];
             [sectionDataModel.values addObject:UINavigationBarModuleModel2];
@@ -186,13 +186,13 @@
         CJSectionDataModel *sectionDataModel = [[CJSectionDataModel alloc] init];
         sectionDataModel.theme = @"其他";
         {
-            ModuleModel *keyboardAvoidingModuleModel = [[ModuleModel alloc] init];
+            CJModuleModel *keyboardAvoidingModuleModel = [[CJModuleModel alloc] init];
             keyboardAvoidingModuleModel.title = @"KeyboardAvoiding";
             keyboardAvoidingModuleModel.classEntry = [KeyboardAvoidingViewController class];
             [sectionDataModel.values addObject:keyboardAvoidingModuleModel];
         }
         {
-            ModuleModel *cjMJRefreshComponentModuleModel = [[ModuleModel alloc] init];
+            CJModuleModel *cjMJRefreshComponentModuleModel = [[CJModuleModel alloc] init];
             cjMJRefreshComponentModuleModel.title = @"CJMJRefreshComponent";
             cjMJRefreshComponentModuleModel.classEntry = [CJMJRefreshViewController class];
             [sectionDataModel.values addObject:cjMJRefreshComponentModuleModel];
@@ -206,7 +206,7 @@
         sectionDataModel.theme = @"其他";
         {
             //FloatingWindow
-            ModuleModel *FloatingWindowModule = [[ModuleModel alloc] init];
+            CJModuleModel *FloatingWindowModule = [[CJModuleModel alloc] init];
             FloatingWindowModule.title = @"FloatingWindow（悬浮视图）";
             FloatingWindowModule.classEntry = [FloatingWindowViewController class];
             [sectionDataModel.values addObject:FloatingWindowModule];
@@ -240,7 +240,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     CJSectionDataModel *sectionDataModel = [self.sectionDataModels objectAtIndex:indexPath.section];
     NSArray *dataModels = sectionDataModel.values;
-    ModuleModel *moduleModel = [dataModels objectAtIndex:indexPath.row];
+    CJModuleModel *moduleModel = [dataModels objectAtIndex:indexPath.row];
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
     cell.textLabel.text = moduleModel.title;
@@ -254,7 +254,7 @@
     
     CJSectionDataModel *sectionDataModel = [self.sectionDataModels objectAtIndex:indexPath.section];
     NSArray *dataModels = sectionDataModel.values;
-    ModuleModel *moduleModel = [dataModels objectAtIndex:indexPath.row];
+    CJModuleModel *moduleModel = [dataModels objectAtIndex:indexPath.row];
     
     Class classEntry = moduleModel.classEntry;
     NSString *nibName = NSStringFromClass(moduleModel.classEntry);

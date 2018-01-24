@@ -7,7 +7,7 @@
 //
 
 #import "ToastViewController.h"
-#import "ModuleModel.h"
+#import "CJModuleModel.h"
 
 #import "CJToast.h"
 
@@ -37,19 +37,19 @@
         CJSectionDataModel *sectionDataModel = [[CJSectionDataModel alloc] init];
         sectionDataModel.theme = @"Toast相关";
         {
-            ModuleModel *toastModule = [[ModuleModel alloc] init];
+            CJModuleModel *toastModule = [[CJModuleModel alloc] init];
             toastModule.title = @"直接显示";
             //toastModule.classEntry = [UIViewController class];
             [sectionDataModel.values addObject:toastModule];
         }
         {
-            ModuleModel *toastModule = [[ModuleModel alloc] init];
+            CJModuleModel *toastModule = [[CJModuleModel alloc] init];
             toastModule.title = @"菊花显示（系统）";
             //toastModule.classEntry = [UIViewController class];
             [sectionDataModel.values addObject:toastModule];
         }
         {
-            ModuleModel *toastModule = [[ModuleModel alloc] init];
+            CJModuleModel *toastModule = [[CJModuleModel alloc] init];
             toastModule.title = @"菊花显示（MBProgressHUD）";
             //toastModule.classEntry = [UIViewController class];
             [sectionDataModel.values addObject:toastModule];
@@ -95,7 +95,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     CJSectionDataModel *sectionDataModel = [self.sectionDataModels objectAtIndex:indexPath.section];
     NSArray *dataModels = sectionDataModel.values;
-    ModuleModel *moduleModel = [dataModels objectAtIndex:indexPath.row];
+    CJModuleModel *moduleModel = [dataModels objectAtIndex:indexPath.row];
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
     cell.textLabel.text = moduleModel.title;

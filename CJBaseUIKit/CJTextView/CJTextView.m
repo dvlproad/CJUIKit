@@ -20,7 +20,7 @@
  *  block参数(text) → 文字内容
  *  block参数(textHeight) → 文字高度
  */
-@property (nonatomic, copy) void(^textViewHeightChangeBlock)(NSString *text,CGFloat currentTexViewHeight);
+@property (nonatomic, copy) void(^textViewHeightChangeBlock)(NSString *text, CGFloat currentTexViewHeight);
 
 @end
 
@@ -192,6 +192,100 @@
                                   attribute:NSLayoutAttributeBottom
                                  multiplier:1
                                    constant:edgeInsets.bottom]];
+}
+
+
+
+
+
+
+
+
+
+
+
+#pragma mark - 字符插入或者删除操作
+/**
+ *  插入系统表情字符
+ *
+ *  @param emotionString 要插入的系统表情字符
+ */
+- (void)insertEmotionString:(NSString *)emotionString {
+    //NSLog(@"emotionString = %@", emotionString);
+    if (emotionString.length == 0) {
+        return;
+    }
+    
+    NSInteger systemVersion = [[[UIDevice currentDevice] systemVersion] floatValue];
+    if (systemVersion >= 7.0) {
+        UIFont *emotionFont = self.font;
+        NSAttributedString *emotionAttributedString = [self getAttributedStringFromText:emotionString withTextFont:emotionFont];
+        
+        NSRange range = [self selectedRange];
+        NSMutableAttributedString *attr = [[NSMutableAttributedString alloc] initWithAttributedString:self.attributedText];
+        [attr insertAttributedString:emotionAttributedString atIndex:range.location];
+        self.attributedText = attr;
+        [self textDidChange]; //注意：如果是修改TextView的attributedText，不会自动调用textDidChange
+        
+    } else {
+        NSString *chatText = self.text;
+        
+        self.text = @"";
+        self.text = [NSString stringWithFormat:@"%@%@", chatText, emotionString];
+    }
+}
+
+
+- (NSAttributedString *)getAttributedStringFromText:(NSString *)string withTextFont:(UIFont *)font {
+    NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc] initWithString:string attributes:nil];
+    
+    NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle alloc] init];
+    paragraphStyle.lineSpacing = 0.0;
+    
+    
+    if (font == nil) {
+        NSDictionary *attributes = @{NSParagraphStyleAttributeName: paragraphStyle};
+        [attributedString addAttributes:attributes range:NSMakeRange(0, string.length)];
+    } else {
+        NSDictionary *attributes = @{NSParagraphStyleAttributeName: paragraphStyle,
+                                     NSFontAttributeName:           font,
+                                     };
+        [attributedString addAttributes:attributes range:NSMakeRange(0, string.length)];
+    }
+    
+    return attributedString;
+}
+
+
+/**
+ *  删除倒数的几个字符(因为一个删除操作，有时候是删除一个字符，但有时候是删除最后一个表情)
+ */
+- (void)deleteCharactersLength:(NSInteger)shouldDeleteCharactersLength {
+    if (shouldDeleteCharactersLength <= 0) {
+        return;
+    }
+    
+    NSInteger systemVersion = [[[UIDevice currentDevice] systemVersion] floatValue];
+    if (systemVersion >= 7.0) {
+        NSMutableAttributedString *attr = [[NSMutableAttributedString alloc] initWithAttributedString:self.attributedText];
+        self.attributedText = [self backspaceText:attr length:shouldDeleteCharactersLength];
+        
+        [self textDidChange]; //注意：如果是修改TextView的attributedText，不会自动调用textDidChange
+        
+    } else {
+        NSString *chatText = self.text;
+        self.text = [chatText substringToIndex:chatText.length-shouldDeleteCharactersLength];
+    }
+}
+
+- (NSMutableAttributedString *)backspaceText:(NSMutableAttributedString *)attr length:(NSInteger)length
+{
+    NSRange range = [self selectedRange];
+    if (range.location == 0) {
+        return attr;
+    }
+    [attr deleteCharactersInRange:NSMakeRange(range.location - length, length)];
+    return attr;
 }
 
 @end

@@ -8,7 +8,7 @@
 
 #import "FoundatioHomeViewController.h"
 
-#import "ModuleModel.h"
+#import "CJModuleModel.h"
 
 #import "EncryptStringViewController.h"
 #import "AttributedStringViewController.h"
@@ -43,19 +43,19 @@
         CJSectionDataModel *sectionDataModel = [[CJSectionDataModel alloc] init];
         sectionDataModel.theme = @"NSString相关";
         {
-            ModuleModel *NSStringModule = [[ModuleModel alloc] init];
+            CJModuleModel *NSStringModule = [[CJModuleModel alloc] init];
             NSStringModule.title = @"EncryptString";
             NSStringModule.classEntry = [EncryptStringViewController class];
             [sectionDataModel.values addObject:NSStringModule];
         }
         {
-            ModuleModel *NSAttributedStringModule = [[ModuleModel alloc] init];
+            CJModuleModel *NSAttributedStringModule = [[CJModuleModel alloc] init];
             NSAttributedStringModule.title = @"NSAttributedString";
             NSAttributedStringModule.classEntry = [AttributedStringViewController class];
             [sectionDataModel.values addObject:NSAttributedStringModule];
         }
         {
-            ModuleModel *NSAttributedStringModule = [[ModuleModel alloc] init];
+            CJModuleModel *NSAttributedStringModule = [[CJModuleModel alloc] init];
             NSAttributedStringModule.title = @"ValidateString";
             NSAttributedStringModule.classEntry = [ValidateStringViewController class];
             [sectionDataModel.values addObject:NSAttributedStringModule];
@@ -70,7 +70,7 @@
         CJSectionDataModel *sectionDataModel = [[CJSectionDataModel alloc] init];
         sectionDataModel.theme = @"NSDate相关";
         {
-            ModuleModel *NSDateModule = [[ModuleModel alloc] init];
+            CJModuleModel *NSDateModule = [[CJModuleModel alloc] init];
             NSDateModule.title = @"NSDate";
             NSDateModule.classEntry = [DateViewController class];
             [sectionDataModel.values addObject:NSDateModule];
@@ -85,7 +85,7 @@
         sectionDataModel.theme = @"Json-Model类型转换相关";
         {
             //TypeConvert
-            ModuleModel *TypeConvertModule = [[ModuleModel alloc] init];
+            CJModuleModel *TypeConvertModule = [[CJModuleModel alloc] init];
             TypeConvertModule.title = @"TypeConvertModule（类型转换）";
             TypeConvertModule.classEntry = [TypeConvertViewController class];
             [sectionDataModel.values addObject:TypeConvertModule];
@@ -119,7 +119,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     CJSectionDataModel *sectionDataModel = [self.sectionDataModels objectAtIndex:indexPath.section];
     NSArray *dataModels = sectionDataModel.values;
-    ModuleModel *moduleModel = [dataModels objectAtIndex:indexPath.row];
+    CJModuleModel *moduleModel = [dataModels objectAtIndex:indexPath.row];
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
     cell.textLabel.text = moduleModel.title;
@@ -133,7 +133,7 @@
     
     CJSectionDataModel *sectionDataModel = [self.sectionDataModels objectAtIndex:indexPath.section];
     NSArray *dataModels = sectionDataModel.values;
-    ModuleModel *moduleModel = [dataModels objectAtIndex:indexPath.row];
+    CJModuleModel *moduleModel = [dataModels objectAtIndex:indexPath.row];
     
     Class classEntry = moduleModel.classEntry;
     NSString *nibName = NSStringFromClass(moduleModel.classEntry);

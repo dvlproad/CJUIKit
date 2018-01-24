@@ -8,7 +8,7 @@
 
 #import "ThirdPartyHomeViewController.h"
 
-#import "ModuleModel.h"
+#import "CJModuleModel.h"
 
 //模型转换
 #import "MJExtensionViewController.h"
@@ -39,7 +39,7 @@
         CJSectionDataModel *sectionDataModel = [[CJSectionDataModel alloc] init];
         sectionDataModel.theme = @"模型转换相关";
         {
-            ModuleModel *baseScrollViewModule = [[ModuleModel alloc] init];
+            CJModuleModel *baseScrollViewModule = [[CJModuleModel alloc] init];
             baseScrollViewModule.title = @"MJExtension的基本使用(待完善)";
             baseScrollViewModule.classEntry = [MJExtensionViewController class];
             [sectionDataModel.values addObject:baseScrollViewModule];
@@ -74,7 +74,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     CJSectionDataModel *sectionDataModel = [self.sectionDataModels objectAtIndex:indexPath.section];
     NSArray *dataModels = sectionDataModel.values;
-    ModuleModel *moduleModel = [dataModels objectAtIndex:indexPath.row];
+    CJModuleModel *moduleModel = [dataModels objectAtIndex:indexPath.row];
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
     cell.textLabel.text = moduleModel.title;
@@ -88,7 +88,7 @@
     
     CJSectionDataModel *sectionDataModel = [self.sectionDataModels objectAtIndex:indexPath.section];
     NSArray *dataModels = sectionDataModel.values;
-    ModuleModel *moduleModel = [dataModels objectAtIndex:indexPath.row];
+    CJModuleModel *moduleModel = [dataModels objectAtIndex:indexPath.row];
     
     
     Class classEntry = moduleModel.classEntry;

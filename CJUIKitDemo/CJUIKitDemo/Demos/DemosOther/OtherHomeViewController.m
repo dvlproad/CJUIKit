@@ -8,7 +8,7 @@
 
 #import "OtherHomeViewController.h"
 
-#import "ModuleModel.h"
+#import "CJModuleModel.h"
 
 #import "PullScaleTopImageViewController.h"
 #import "ProcessLineViewController.h"
@@ -40,7 +40,7 @@
         sectionDataModel.theme = @"其他";
         {
             //PullScaleTopImageViewController
-            ModuleModel *pullScaleTopImageModuleModel = [[ModuleModel alloc] init];
+            CJModuleModel *pullScaleTopImageModuleModel = [[CJModuleModel alloc] init];
             pullScaleTopImageModuleModel.title = @"顶部图片下拉放大，上拉缩小";
             pullScaleTopImageModuleModel.classEntry = [PullScaleTopImageViewController class];
             [sectionDataModel.values addObject:pullScaleTopImageModuleModel];
@@ -55,7 +55,7 @@
         sectionDataModel.theme = @"QuartzCore相关(如画线)";
         {
             //ProcessLineViewController
-            ModuleModel *processLineViewModule = [[ModuleModel alloc] init];
+            CJModuleModel *processLineViewModule = [[CJModuleModel alloc] init];
             processLineViewModule.title = @"流程线(ProcessLineView)";
             processLineViewModule.classEntry = [ProcessLineViewController class];
             [sectionDataModel.values addObject:processLineViewModule];
@@ -69,7 +69,7 @@
         sectionDataModel.theme = @"其他";
         {
             //CountDownTimeViewController
-            ModuleModel *countDownTimeModule = [[ModuleModel alloc] init];
+            CJModuleModel *countDownTimeModule = [[CJModuleModel alloc] init];
             countDownTimeModule.title = @"倒计时 CountDownTime";
             countDownTimeModule.classEntry = [CountDownTimeViewController class];
             [sectionDataModel.values addObject:countDownTimeModule];
@@ -103,7 +103,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     CJSectionDataModel *sectionDataModel = [self.sectionDataModels objectAtIndex:indexPath.section];
     NSArray *dataModels = sectionDataModel.values;
-    ModuleModel *moduleModel = [dataModels objectAtIndex:indexPath.row];
+    CJModuleModel *moduleModel = [dataModels objectAtIndex:indexPath.row];
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
     cell.textLabel.text = moduleModel.title;
@@ -117,7 +117,7 @@
     
     CJSectionDataModel *sectionDataModel = [self.sectionDataModels objectAtIndex:indexPath.section];
     NSArray *dataModels = sectionDataModel.values;
-    ModuleModel *moduleModel = [dataModels objectAtIndex:indexPath.row];
+    CJModuleModel *moduleModel = [dataModels objectAtIndex:indexPath.row];
     
     Class classEntry = moduleModel.classEntry;
     NSString *nibName = NSStringFromClass(moduleModel.classEntry);

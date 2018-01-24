@@ -8,7 +8,7 @@
 
 #import "UtilHomeViewController.h"
 
-#import "ModuleModel.h"
+#import "CJModuleModel.h"
 
 #import "DeviceInfoViewController.h"
 
@@ -43,25 +43,25 @@
         CJSectionDataModel *sectionDataModel = [[CJSectionDataModel alloc] init];
         sectionDataModel.theme = @"Util相关";
         {
-            ModuleModel *deviceInfoModule = [[ModuleModel alloc] init];
+            CJModuleModel *deviceInfoModule = [[CJModuleModel alloc] init];
             deviceInfoModule.title = @"DeviceInfo";
             deviceInfoModule.classEntry = [DeviceInfoViewController class];
             [sectionDataModel.values addObject:deviceInfoModule];
         }
         {
-            ModuleModel *dataUtilModule = [[ModuleModel alloc] init];
+            CJModuleModel *dataUtilModule = [[CJModuleModel alloc] init];
             dataUtilModule.title = @"DataUtil";
             dataUtilModule.classEntry = [DataUtilViewController class];
             [sectionDataModel.values addObject:dataUtilModule];
         }
         {
-            ModuleModel *toastUtilModule = [[ModuleModel alloc] init];
+            CJModuleModel *toastUtilModule = [[CJModuleModel alloc] init];
             toastUtilModule.title = @"Toast";
             toastUtilModule.classEntry = [ToastViewController class];
             [sectionDataModel.values addObject:toastUtilModule];
         }
         {
-            ModuleModel *keyboardUtilModule = [[ModuleModel alloc] init];
+            CJModuleModel *keyboardUtilModule = [[CJModuleModel alloc] init];
             keyboardUtilModule.title = @"KeyboardUtil(键盘高度)";
             keyboardUtilModule.classEntry = [KeyboardUtilViewController class];
             [sectionDataModel.values addObject:keyboardUtilModule];
@@ -94,7 +94,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     CJSectionDataModel *sectionDataModel = [self.sectionDataModels objectAtIndex:indexPath.section];
     NSArray *dataModels = sectionDataModel.values;
-    ModuleModel *moduleModel = [dataModels objectAtIndex:indexPath.row];
+    CJModuleModel *moduleModel = [dataModels objectAtIndex:indexPath.row];
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
     cell.textLabel.text = moduleModel.title;
@@ -108,7 +108,7 @@
     
     CJSectionDataModel *sectionDataModel = [self.sectionDataModels objectAtIndex:indexPath.section];
     NSArray *dataModels = sectionDataModel.values;
-    ModuleModel *moduleModel = [dataModels objectAtIndex:indexPath.row];
+    CJModuleModel *moduleModel = [dataModels objectAtIndex:indexPath.row];
     
     
     Class classEntry = moduleModel.classEntry;

@@ -127,7 +127,6 @@
 		789CAF841FB612B700AF8CD4 /* UIView+CJPickImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 789CAF121FB612B600AF8CD4 /* UIView+CJPickImage.m */; };
 		789CAF851FB612B700AF8CD4 /* CJSearchTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 789CAF151FB612B600AF8CD4 /* CJSearchTableView.m */; };
 		789CAF861FB612B700AF8CD4 /* MySearchEqualCellSizeCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 789CAF171FB612B600AF8CD4 /* MySearchEqualCellSizeCollectionView.m */; };
-		78B6761B1EB192EA006F4612 /* ModuleModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 78B6761A1EB192EA006F4612 /* ModuleModel.m */; };
 		78B7402C1FB6C04600443D87 /* IjinbuHTTPSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 78B740141FB6C04600443D87 /* IjinbuHTTPSessionManager.m */; };
 		78B7402D1FB6C04600443D87 /* IjinbuNetworkClient+Login.m in Sources */ = {isa = PBXBuildFile; fileRef = 78B740161FB6C04600443D87 /* IjinbuNetworkClient+Login.m */; };
 		78B7402E1FB6C04600443D87 /* IjinbuNetworkClient+UploadFile.m in Sources */ = {isa = PBXBuildFile; fileRef = 78B740181FB6C04600443D87 /* IjinbuNetworkClient+UploadFile.m */; };
@@ -165,6 +164,7 @@
 		805598B61FF5D612009DC61C /* ValidateStringViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 805598B41FF5D612009DC61C /* ValidateStringViewController.xib */; };
 		805598BA1FF5DB0F009DC61C /* ValidateStringTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 805598B81FF5DB0F009DC61C /* ValidateStringTableViewCell.m */; };
 		805598BB1FF5DB0F009DC61C /* ValidateStringTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 805598B91FF5DB0F009DC61C /* ValidateStringTableViewCell.xib */; };
+		8073D9BD201877920031CE72 /* CJModuleModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8073D9BB201877910031CE72 /* CJModuleModel.m */; };
 		807903101FB413D60082F05C /* arrow_back_red@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 807903071FB413D60082F05C /* arrow_back_red@2x.png */; };
 		807903111FB413D60082F05C /* arrow_balland_red@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 807903081FB413D60082F05C /* arrow_balland_red@2x.png */; };
 		807903121FB413D60082F05C /* arrow_down.png in Resources */ = {isa = PBXBuildFile; fileRef = 807903091FB413D60082F05C /* arrow_down.png */; };
@@ -645,8 +645,6 @@
 		789CAF151FB612B600AF8CD4 /* CJSearchTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJSearchTableView.m; sourceTree = "<group>"; };
 		789CAF161FB612B600AF8CD4 /* MySearchEqualCellSizeCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MySearchEqualCellSizeCollectionView.h; sourceTree = "<group>"; };
 		789CAF171FB612B600AF8CD4 /* MySearchEqualCellSizeCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MySearchEqualCellSizeCollectionView.m; sourceTree = "<group>"; };
-		78B676191EB192EA006F4612 /* ModuleModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModuleModel.h; sourceTree = "<group>"; };
-		78B6761A1EB192EA006F4612 /* ModuleModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModuleModel.m; sourceTree = "<group>"; };
 		78B740131FB6C04600443D87 /* IjinbuHTTPSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IjinbuHTTPSessionManager.h; sourceTree = "<group>"; };
 		78B740141FB6C04600443D87 /* IjinbuHTTPSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IjinbuHTTPSessionManager.m; sourceTree = "<group>"; };
 		78B740151FB6C04600443D87 /* IjinbuNetworkClient+Login.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "IjinbuNetworkClient+Login.h"; sourceTree = "<group>"; };
@@ -707,6 +705,8 @@
 		805598B71FF5DB0F009DC61C /* ValidateStringTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ValidateStringTableViewCell.h; sourceTree = "<group>"; };
 		805598B81FF5DB0F009DC61C /* ValidateStringTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ValidateStringTableViewCell.m; sourceTree = "<group>"; };
 		805598B91FF5DB0F009DC61C /* ValidateStringTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ValidateStringTableViewCell.xib; sourceTree = "<group>"; };
+		8073D9BB201877910031CE72 /* CJModuleModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJModuleModel.m; sourceTree = "<group>"; };
+		8073D9BC201877910031CE72 /* CJModuleModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJModuleModel.h; sourceTree = "<group>"; };
 		807903071FB413D60082F05C /* arrow_back_red@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrow_back_red@2x.png"; sourceTree = "<group>"; };
 		807903081FB413D60082F05C /* arrow_balland_red@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrow_balland_red@2x.png"; sourceTree = "<group>"; };
 		807903091FB413D60082F05C /* arrow_down.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = arrow_down.png; sourceTree = "<group>"; };
@@ -1177,8 +1177,6 @@
 		789A19671E61B87D008081E3 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				78B676191EB192EA006F4612 /* ModuleModel.h */,
-				78B6761A1EB192EA006F4612 /* ModuleModel.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -2636,6 +2634,8 @@
 			children = (
 				80FF911C1FC5668700E437CF /* CJSectionDataModel.h */,
 				80FF91131FC5668700E437CF /* CJSectionDataModel.m */,
+				8073D9BC201877910031CE72 /* CJModuleModel.h */,
+				8073D9BB201877910031CE72 /* CJModuleModel.m */,
 				80FF91141FC5668700E437CF /* Search */,
 				80FF91191FC5668700E437CF /* Sorted */,
 			);
@@ -3327,6 +3327,7 @@
 				80FF91E91FC6739D00E437CF /* CJDateModel.m in Sources */,
 				80CC7F8D200F7EBE0017878A /* OpenTableViewController2.m in Sources */,
 				789CAF401FB612B700AF8CD4 /* MyUserInfoScaleHeadView.m in Sources */,
+				8073D9BD201877920031CE72 /* CJModuleModel.m in Sources */,
 				789CAF801FB612B700AF8CD4 /* CJImageUploadItem.m in Sources */,
 				78B740301FB6C04600443D87 /* IjinbuUploadItemRequest.m in Sources */,
 				789CAF231FB612B700AF8CD4 /* MyEqualCellSizeCollectionView.m in Sources */,
@@ -3458,7 +3459,6 @@
 				80FF906F1FC5649F00E437CF /* MyEqualCellSizeViewController.m in Sources */,
 				80FF91531FC5668700E437CF /* PrivateSetting.m in Sources */,
 				789CAF3E1FB612B700AF8CD4 /* CJScaleHeadView.m in Sources */,
-				78B6761B1EB192EA006F4612 /* ModuleModel.m in Sources */,
 				78B7402C1FB6C04600443D87 /* IjinbuHTTPSessionManager.m in Sources */,
 				789CAF691FB612B700AF8CD4 /* UITextField+CJAddLeftRightView.m in Sources */,
 				789CAF451FB612B700AF8CD4 /* CJAdsorbModel.m in Sources */,
