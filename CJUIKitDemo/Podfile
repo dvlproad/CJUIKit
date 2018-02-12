@@ -38,6 +38,8 @@ target 'CJUIKitDemo' do
   pod 'CJNetwork/AFNetworkingBaseComponent', '~> 0.1.3' #用于登录
   pod 'CJNetwork/AFNetworkingUploadComponent', '~> 0.1.3' #需要8.0以上
   
+  # 网页
+  pod 'WebViewJavascriptBridge', '~> 6.0.2'
   
   # 基本的第三方库
   pod 'MJExtension', '~> 3.0.13'

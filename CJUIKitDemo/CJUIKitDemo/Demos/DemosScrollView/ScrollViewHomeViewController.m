@@ -33,6 +33,13 @@
 #import "OpenCollectionViewController.h"
 #import "CustomLayoutCollectionViewController.h"
 
+
+//WebView
+#import "LocalWebViewController.h"
+#import "BeyondWebViewController.h"
+#import "BBXAppAboutViewController.h"
+#import "BBXAppViewController.h"
+
 //DataScrollView
 #import "SearchTableViewController.h"
 #import "UploadNoneImagePickerViewController.h"
@@ -178,6 +185,39 @@
         [sectionDataModels addObject:sectionDataModel];
     }
     
+    //WebView
+    {
+        CJSectionDataModel *sectionDataModel = [[CJSectionDataModel alloc] init];
+        sectionDataModel.theme = @"WebView相关";
+        
+        
+        {
+            CJModuleModel *localWebViewModule = [[CJModuleModel alloc] init];
+            localWebViewModule.title = @"LocalWeb";
+            localWebViewModule.classEntry = [LocalWebViewController class];
+            [sectionDataModel.values addObject:localWebViewModule];
+        }
+        {
+            CJModuleModel *webViewModule = [[CJModuleModel alloc] init];
+            webViewModule.title = @"BeyondApp";
+            webViewModule.classEntry = [BeyondWebViewController class];
+            [sectionDataModel.values addObject:webViewModule];
+        }
+        {
+            CJModuleModel *webViewModule = [[CJModuleModel alloc] init];
+            webViewModule.title = @"BBXAppAbout";
+            webViewModule.classEntry = [BBXAppAboutViewController class];
+            [sectionDataModel.values addObject:webViewModule];
+        }
+        {
+            CJModuleModel *webViewModule = [[CJModuleModel alloc] init];
+            webViewModule.title = @"BBXApp";
+            webViewModule.classEntry = [BBXAppViewController class];
+            [sectionDataModel.values addObject:webViewModule];
+        }
+        [sectionDataModels addObject:sectionDataModel];
+    }
+    
     //DataScrollView
     {
         CJSectionDataModel *sectionDataModel = [[CJSectionDataModel alloc] init];
@@ -253,7 +293,10 @@
     UIViewController *viewController = nil;
     
     NSString *clsString = NSStringFromClass(moduleModel.classEntry);
-    if ([clsString isEqualToString:NSStringFromClass([UIViewController class])])
+    if ([clsString isEqualToString:NSStringFromClass([UIViewController class])] ||
+        [clsString isEqualToString:NSStringFromClass([BeyondWebViewController class])] ||
+        [clsString isEqualToString:NSStringFromClass([BBXAppViewController class])] ||
+        [clsString isEqualToString:NSStringFromClass([BBXAppAboutViewController class])])
     {
         viewController = [[classEntry alloc] init];
         viewController.view.backgroundColor = [UIColor whiteColor];
