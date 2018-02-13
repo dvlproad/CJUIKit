@@ -54,6 +54,7 @@
         [CJDataUtil searchText:searchText
            inSectionDataModels:searchInSectionDataModels
        dataModelSearchSelector:dataModelSearchSelector
+                withSearchType:CJSearchTypeFull
                  supportPinyin:YES
          pinyinFromStringBlock:^NSString *(NSString *string) {
              return [CJPinyinHelper pinyinFromChineseString:string];

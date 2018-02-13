@@ -2895,8 +2895,8 @@
 		80FF91CA1FC582D100E437CF /* Util */ = {
 			isa = PBXGroup;
 			children = (
-				80FF91CB1FC582D100E437CF /* CJPinyinHelper.m */,
 				80FF91CC1FC582D100E437CF /* CJPinyinHelper.h */,
+				80FF91CB1FC582D100E437CF /* CJPinyinHelper.m */,
 			);
 			path = Util;
 			sourceTree = "<group>";

@@ -11,6 +11,11 @@
 #import "CJSectionDataModel.h"
 #import "NSObject+SearchProperty.h"
 
+typedef NS_ENUM(NSUInteger, CJSearchType) {
+    CJSearchTypeFull,                           /**< 检查整个字符串 */
+    CJSearchTypeFirstLetterIsFirstCharacter,    /**< 检查整个字符串,但必须保证字符串的首字符为搜索的搜字符 */
+};
+
 @interface CJDataUtil (NormalSearch)
 
 #pragma mark - 在sectionDataModels中搜索(每个sectionDataModel中的values属性值为dataModels数组)
@@ -20,6 +25,7 @@
  *  @param searchText               要搜索的字串
  *  @param sectionDataModels        要搜索的数据源
  *  @param dataModelSearchSelector  获取元素中要比较的字段的方法
+ *  @param searchType               按什么搜索方式搜索
  *  @param supportPinyin            是否支持拼音搜索
  *  @param pinyinFromStringBlock    字符串转换成拼音的方法/代码块
  *
@@ -28,6 +34,7 @@
 + (NSMutableArray *)searchText:(NSString *)searchText
            inSectionDataModels:(NSArray<CJSectionDataModel *> *)sectionDataModels
        dataModelSearchSelector:(SEL)dataModelSearchSelector
+                withSearchType:(CJSearchType)searchType
                  supportPinyin:(BOOL)supportPinyin
          pinyinFromStringBlock:(NSString *(^)(NSString *string))pinyinFromStringBlock;
 
@@ -39,6 +46,7 @@
  *  @param dataModelSearchSelector          获取元素中要比较的字段的方法
  *  @param dataModelMemberSelector          成员所对应的属性
  *  @param dataModelMemberSearchSelector    获取元素中member中的元素要比较的字段的方法
+ *  @param searchType                       按什么搜索方式搜索
  *  @param supportPinyin                    是否支持拼音搜索
  *  @param pinyinFromStringBlock            字符串转换成拼音的方法/代码块
  *
@@ -49,6 +57,7 @@
        dataModelSearchSelector:(SEL)dataModelSearchSelector
 andSearchInEveryDataModelMember:(SEL)dataModelMemberSelector
  dataModelMemberSearchSelector:(SEL)dataModelMemberSearchSelector
+                withSearchType:(CJSearchType)searchType
                  supportPinyin:(BOOL)supportPinyin
          pinyinFromStringBlock:(NSString *(^)(NSString *string))pinyinFromStringBlock;
 
@@ -62,6 +71,7 @@ andSearchInEveryDataModelMember:(SEL)dataModelMemberSelector
  *  @param searchText               要搜索的字串
  *  @param dataModels               要搜索的数据源
  *  @param dataModelSearchSelector  获取元素中要比较的字段的方法
+ *  @param searchType               按什么搜索方式搜索
  *  @param supportPinyin            是否支持拼音搜索
  *  @param pinyinFromStringBlock    字符串转换成拼音的方法/代码块
  *
@@ -70,6 +80,7 @@ andSearchInEveryDataModelMember:(SEL)dataModelMemberSelector
 + (NSMutableArray *)searchText:(NSString *)searchText
                   inDataModels:(NSArray *)dataModels
        dataModelSearchSelector:(SEL)dataModelSearchSelector
+                withSearchType:(CJSearchType)searchType
                  supportPinyin:(BOOL)supportPinyin
          pinyinFromStringBlock:(NSString *(^)(NSString *string))pinyinFromStringBlock;
 
@@ -81,8 +92,9 @@ andSearchInEveryDataModelMember:(SEL)dataModelMemberSelector
  *  @param dataModelSearchSelector          获取元素中要比较的字段的方法
  *  @param dataModelMemberSelector          成员所对应的属性
  *  @param dataModelMemberSearchSelector    获取元素中member中的元素要比较的字段的方法
+ *  @param searchType                       按什么搜索方式搜索
  *  @param supportPinyin                    是否支持拼音搜索
- *  @param pinyinFromStringBlock    字符串转换成拼音的方法/代码块
+ *  @param pinyinFromStringBlock            字符串转换成拼音的方法/代码块
  *
  *  @return 搜索结果(结果中的每个元素是 CJSectionDataModel
  */
@@ -91,6 +103,7 @@ andSearchInEveryDataModelMember:(SEL)dataModelMemberSelector
                    dataModelSearchSelector:(SEL)dataModelSearchSelector
            andSearchInEveryDataModelMember:(SEL)dataModelMemberSelector
              dataModelMemberSearchSelector:(SEL)dataModelMemberSearchSelector
+                            withSearchType:(CJSearchType)searchType
                              supportPinyin:(BOOL)supportPinyin
                      pinyinFromStringBlock:(NSString *(^)(NSString *string))pinyinFromStringBlock;
 
@@ -104,6 +117,7 @@ andSearchInEveryDataModelMember:(SEL)dataModelMemberSelector
  *  @param searchText               要搜索的字串
  *  @param dataModel                要搜索的数据源
  *  @param dataModelSearchSelector  获取元素中要比较的字段的方法
+ *  @param searchType               按什么搜索方式搜索
  *  @param supportPinyin            是否支持拼音搜索
  *  @param pinyinFromStringBlock    字符串转换成拼音的方法/代码块
  *
@@ -112,6 +126,7 @@ andSearchInEveryDataModelMember:(SEL)dataModelMemberSelector
 + (BOOL)isContainSearchText:(NSString *)searchText
                 inDataModel:(id)dataModel
     dataModelSearchSelector:(SEL)dataModelSearchSelector
+             withSearchType:(CJSearchType)searchType
               supportPinyin:(BOOL)supportPinyin
       pinyinFromStringBlock:(NSString *(^)(NSString *string))pinyinFromStringBlock;
 
@@ -123,6 +138,7 @@ andSearchInEveryDataModelMember:(SEL)dataModelMemberSelector
  *  @param dataModelSearchSelector          获取元素中要比较的字段的方法
  *  @param dataModelMemberSelector          成员所对应的属性
  *  @param dataModelMemberSearchSelector    获取元素中member中的元素要比较的字段的方法
+ *  @param searchType                       按什么搜索方式搜索
  *  @param supportPinyin                    是否支持拼音搜索
  *  @param pinyinFromStringBlock            字符串转换成拼音的方法/代码块
  *
@@ -133,6 +149,7 @@ andSearchInEveryDataModelMember:(SEL)dataModelMemberSelector
  dataModelSearchSelector:(SEL)dataModelSearchSelector
 andSearchInEveryDataModelMember:(SEL)dataModelMemberSelector
 dataModelMemberSearchSelector:(SEL)dataModelMemberSearchSelector
+          withSearchType:(CJSearchType)searchType
            supportPinyin:(BOOL)supportPinyin
    pinyinFromStringBlock:(NSString *(^)(NSString *string))pinyinFromStringBlock;
 
@@ -141,6 +158,7 @@ dataModelMemberSearchSelector:(SEL)dataModelMemberSearchSelector
  *
  *  @param searchText               要搜索的字串
  *  @param fromString               从哪个字符串搜索
+ *  @param searchType               按什么搜索方式搜索
  *  @param supportPinyin            是否支持拼音搜索
  *  @param pinyinFromStringBlock    字符串转换成拼音的方法/代码块
  *
@@ -148,6 +166,7 @@ dataModelMemberSearchSelector:(SEL)dataModelMemberSearchSelector
  */
 + (BOOL)isContainSearchText:(NSString *)searchText
                  fromString:(NSString *)fromString
+             withSearchType:(CJSearchType)searchType
               supportPinyin:(BOOL)supportPinyin
       pinyinFromStringBlock:(NSString *(^)(NSString *string))pinyinFromStringBlock;
 

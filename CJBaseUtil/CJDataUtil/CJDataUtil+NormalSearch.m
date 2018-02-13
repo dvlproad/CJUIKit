@@ -19,6 +19,7 @@
 + (NSMutableArray *)searchText:(NSString *)searchText
            inSectionDataModels:(NSArray<CJSectionDataModel *> *)sectionDataModels
        dataModelSearchSelector:(SEL)dataModelSearchSelector
+                withSearchType:(CJSearchType)searchType
                  supportPinyin:(BOOL)supportPinyin
          pinyinFromStringBlock:(NSString *(^)(NSString *string))pinyinFromStringBlock
 {
@@ -30,6 +31,7 @@
         NSMutableArray *resultDataModels = [CJDataUtil searchText:searchText
                                                      inDataModels:dataModels
                                           dataModelSearchSelector:dataModelSearchSelector
+                                                   withSearchType:searchType
                                                     supportPinyin:supportPinyin
                                             pinyinFromStringBlock:pinyinFromStringBlock];
         if (resultDataModels.count > 0) {
@@ -51,6 +53,7 @@
        dataModelSearchSelector:(SEL)dataModelSearchSelector
 andSearchInEveryDataModelMember:(SEL)dataModelMemberSelector
  dataModelMemberSearchSelector:(SEL)dataModelMemberSearchSelector
+                withSearchType:(CJSearchType)searchType
                  supportPinyin:(BOOL)supportPinyin
          pinyinFromStringBlock:(NSString *(^)(NSString *string))pinyinFromStringBlock
 {
@@ -64,6 +67,7 @@ andSearchInEveryDataModelMember:(SEL)dataModelMemberSelector
                                           dataModelSearchSelector:dataModelSearchSelector
                                   andSearchInEveryDataModelMember:dataModelMemberSelector
                                     dataModelMemberSearchSelector:dataModelMemberSearchSelector
+                                                   withSearchType:searchType
                                                     supportPinyin:supportPinyin
                                             pinyinFromStringBlock:pinyinFromStringBlock];
         if (resultDataModels.count > 0) {
@@ -85,6 +89,7 @@ andSearchInEveryDataModelMember:(SEL)dataModelMemberSelector
 + (NSMutableArray *)searchText:(NSString *)searchText
                   inDataModels:(NSArray *)dataModels
        dataModelSearchSelector:(SEL)dataModelSearchSelector
+                withSearchType:(CJSearchType)searchType
                  supportPinyin:(BOOL)supportPinyin
          pinyinFromStringBlock:(NSString *(^)(NSString *string))pinyinFromStringBlock
 {
@@ -97,9 +102,10 @@ andSearchInEveryDataModelMember:(SEL)dataModelMemberSelector
         for (id dataModel in dataModels) {
             BOOL isContainSearchText =
             [CJDataUtil isContainSearchText:searchText
-                                  inDataModel:dataModel
-                      dataModelSearchSelector:dataModelSearchSelector
-                                supportPinyin:supportPinyin
+                                inDataModel:dataModel
+                    dataModelSearchSelector:dataModelSearchSelector
+                             withSearchType:searchType
+                              supportPinyin:supportPinyin
                       pinyinFromStringBlock:pinyinFromStringBlock];
             if (isContainSearchText) {
                 [searchResults addObject:dataModel];
@@ -116,6 +122,7 @@ andSearchInEveryDataModelMember:(SEL)dataModelMemberSelector
                    dataModelSearchSelector:(SEL)dataModelSearchSelector
            andSearchInEveryDataModelMember:(SEL)dataModelMemberSelector
              dataModelMemberSearchSelector:(SEL)dataModelMemberSearchSelector
+                            withSearchType:(CJSearchType)searchType
                              supportPinyin:(BOOL)supportPinyin
                      pinyinFromStringBlock:(NSString *(^)(NSString *string))pinyinFromStringBlock
 {
@@ -123,11 +130,12 @@ andSearchInEveryDataModelMember:(SEL)dataModelMemberSelector
     for (NSObject *dataModel in dataModels) {
         
         NSObject *resultDataModel = [CJDataUtil searchText:searchText
-                                                 inDataModel:dataModel
-                                     dataModelSearchSelector:dataModelSearchSelector
-                             andSearchInEveryDataModelMember:dataModelMemberSelector
-                               dataModelMemberSearchSelector:dataModelMemberSearchSelector
-                                               supportPinyin:supportPinyin
+                                               inDataModel:dataModel
+                                   dataModelSearchSelector:dataModelSearchSelector
+                           andSearchInEveryDataModelMember:dataModelMemberSelector
+                             dataModelMemberSearchSelector:dataModelMemberSearchSelector
+                                            withSearchType:searchType
+                                             supportPinyin:supportPinyin
                                      pinyinFromStringBlock:pinyinFromStringBlock];
         if (resultDataModel) {
             [resultDataModels addObject:resultDataModel];
@@ -142,6 +150,7 @@ andSearchInEveryDataModelMember:(SEL)dataModelMemberSelector
 + (BOOL)isContainSearchText:(NSString *)searchText
                 inDataModel:(id)dataModel
     dataModelSearchSelector:(SEL)dataModelSearchSelector
+             withSearchType:(CJSearchType)searchType
               supportPinyin:(BOOL)supportPinyin
       pinyinFromStringBlock:(NSString *(^)(NSString *string))pinyinFromStringBlock
 {
@@ -150,6 +159,7 @@ andSearchInEveryDataModelMember:(SEL)dataModelMemberSelector
     //搜索判断
     BOOL isContainSearchText = [self isContainSearchText:searchText
                                               fromString:dataModelSearchSelectorString
+                                          withSearchType:searchType
                                            supportPinyin:supportPinyin
                                    pinyinFromStringBlock:pinyinFromStringBlock];
     
@@ -162,6 +172,7 @@ andSearchInEveryDataModelMember:(SEL)dataModelMemberSelector
  dataModelSearchSelector:(SEL)dataModelSearchSelector
 andSearchInEveryDataModelMember:(SEL)dataModelMemberSelector
 dataModelMemberSearchSelector:(SEL)dataModelMemberSearchSelector
+          withSearchType:(CJSearchType)searchType
            supportPinyin:(BOOL)supportPinyin
    pinyinFromStringBlock:(NSString *(^)(NSString *string))pinyinFromStringBlock
 {
@@ -176,6 +187,7 @@ dataModelMemberSearchSelector:(SEL)dataModelMemberSearchSelector
     //搜索判断
     BOOL isContainInSelf = [self isContainSearchText:searchText
                                           fromString:dataModelSearchSelectorString
+                                      withSearchType:searchType
                                        supportPinyin:supportPinyin pinyinFromStringBlock:pinyinFromStringBlock];
     dataModel.isContainInSelf = isContainInSelf;
     
@@ -184,6 +196,7 @@ dataModelMemberSearchSelector:(SEL)dataModelMemberSearchSelector
     NSMutableArray *resultMembers = [CJDataUtil searchText:searchText
                                               inDataModels:members
                                    dataModelSearchSelector:dataModelMemberSearchSelector
+                                            withSearchType:searchType
                                              supportPinyin:supportPinyin
                                      pinyinFromStringBlock:pinyinFromStringBlock];
     dataModel.containMembers = resultMembers;
@@ -201,6 +214,7 @@ dataModelMemberSearchSelector:(SEL)dataModelMemberSearchSelector
 /** 完整的描述请参见文件头部 */
 + (BOOL)isContainSearchText:(NSString *)searchText
                  fromString:(NSString *)fromString
+             withSearchType:(CJSearchType)searchType
               supportPinyin:(BOOL)supportPinyin
       pinyinFromStringBlock:(NSString *(^)(NSString *string))pinyinFromStringBlock
 {
@@ -212,37 +226,40 @@ dataModelMemberSearchSelector:(SEL)dataModelMemberSearchSelector
         return YES;
     }
     
-//    if (!searchText || !fromString || (fromString.length == 0 && searchText.length != 0)) {
+//    if ((fromString.length == 0 && searchText.length != 0)) {
 //        return NO;
 //    }
     
-    NSString *searchSourceString = [fromString lowercaseString];
-    NSString *searchTextString = [searchText lowercaseString];
-    NSUInteger location = [searchSourceString rangeOfString:searchTextString].location;
+    NSMutableArray *searchSourceStrings = [NSMutableArray arrayWithArray:@[fromString]];
+    if (supportPinyin) {
+        NSString *searchSourceStringPinyin = pinyinFromStringBlock(fromString);
+        [searchSourceStrings addObject:searchSourceStringPinyin];
+    }
     
     //搜索判断
     BOOL isContainSearchText = NO;
-    if (location != NSNotFound) {
-        isContainSearchText = YES;
-    } else {
-        if (supportPinyin) {
-            NSString *searchSourceStringPinyin = pinyinFromStringBlock(searchSourceString);
-            searchSourceStringPinyin = [searchSourceStringPinyin lowercaseString];//保证大小写一致
-            //NSLog(@"pinyin = %@, searchText = %@", searchSourceStringPinyin, searchTextString);
-            
-            location = [searchSourceStringPinyin rangeOfString:searchTextString].location;
-            if(location != NSNotFound) {
-                isContainSearchText = YES;
+    NSString *searchTextString = [searchText lowercaseString]; //下面比较时候要保证大小写一致
+    for (NSString *searchSourceString in searchSourceStrings) {
+        NSString *lowerSearchSourceString = [searchSourceString lowercaseString];
+        
+        if (CJSearchTypeFirstLetterIsFirstCharacter == searchType) {
+            NSString *searchTextFirstcharacter = [searchTextString substringToIndex:1];
+            NSString *lowerSearchTextFirstcharacter = [searchTextFirstcharacter lowercaseString];
+            if (![lowerSearchSourceString hasPrefix:lowerSearchTextFirstcharacter]) {
+                isContainSearchText = NO;
+                continue;
             }
+        }
+        
+        NSUInteger location = [searchSourceString rangeOfString:searchTextString].location;
+        if (location != NSNotFound) {
+            isContainSearchText = YES;
+            break;
         }
     }
     
     return isContainSearchText;
 }
-
-
-
-
 
 
 

@@ -91,9 +91,10 @@ static CJRealtimeSearchUtil *defaultUtil = nil;
     __weak typeof(self) weakSelf = self;
     dispatch_async(self.searchQueue, ^{
         NSMutableArray *searchResults = [CJDataUtil searchText:string
-                                                    inDataModels:weakSelf.source
-                                         dataModelSearchSelector:weakSelf.selector
-                                                   supportPinyin:YES
+                                                  inDataModels:weakSelf.source
+                                       dataModelSearchSelector:weakSelf.selector
+                                                withSearchType:CJSearchTypeFull
+                                                 supportPinyin:YES
                                          pinyinFromStringBlock:self.pinyinFromStringBlock];
         
         weakSelf.resultBlock(searchResults);
