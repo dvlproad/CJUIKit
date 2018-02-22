@@ -7,7 +7,12 @@
 //
 
 #import "MySearchEqualCellSizeCollectionView.h"
-#import <NSOperationQueueUtil/NSOperationQueueUtil.h>
+
+#ifdef CJTESTPOD
+    #import "NSOperationQueueUtil.h"
+#else
+    #import <CJBaseUtil/NSOperationQueueUtil.h>
+#endif
 
 @interface MySearchEqualCellSizeCollectionView () <UICollectionViewDataSource, UISearchBarDelegate> {
     

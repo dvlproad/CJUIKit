@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "CJBaseUtil"
-  s.version      = "0.2.1"
+  s.version      = "0.2.2"
   s.summary      = "自定义的基础工具类"
   s.homepage     = "https://github.com/dvlproad/CJUIKit"
   s.license      = "MIT"
@@ -27,7 +27,7 @@ Pod::Spec.new do |s|
 
   s.platform     = :ios, "7.0"
 
-  s.source       = { :git => "https://github.com/dvlproad/CJUIKit.git", :tag => "CJBaseUtil_0.2.1" }
+  s.source       = { :git => "https://github.com/dvlproad/CJUIKit.git", :tag => "CJBaseUtil_0.2.2" }
   # s.source_files  = "CJBaseUtil/*.{h,m}"
   # s.resources = "CJBaseUtil/**/*.{png}"
   s.frameworks = 'UIKit'
@@ -55,6 +55,11 @@ Pod::Spec.new do |s|
   # 包含搜索、排序等数据处理工具类
   s.subspec 'CJDataUtil' do |ss|
    ss.source_files = "CJBaseUtil/CJDataUtil/**/*.{h,m}"
+  end
+
+  # 搜索功能常常需要的多线程处理工具类
+  s.subspec 'NSOperationQueueUtil' do |ss|
+   ss.source_files = "CJBaseUtil/NSOperationQueueUtil/**/*.{h,m}"
   end
 
   # 日期工具

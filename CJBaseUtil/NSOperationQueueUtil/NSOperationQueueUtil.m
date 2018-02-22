@@ -2,7 +2,7 @@
 //  NSOperationQueueUtil.m
 //  MultithreadingDemo
 //
-//  Created by lichq on 2016/11/23.
+//  Created by ciyouzen on 2016/11/23.
 //  Copyright © 2016年 dvlproad. All rights reserved.
 //
 
