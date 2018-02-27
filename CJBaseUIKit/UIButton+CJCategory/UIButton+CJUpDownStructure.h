@@ -18,4 +18,13 @@
  */
 - (void)cjVerticalImageAndTitle:(CGFloat)spacing;
 
+
+/**
+ *  左图片、右文字时候
+ *
+ *  @param spacing          图片与文字的间隔
+ *  @param leftOffset       视图与左边缘的距离
+ */
+- (void)cjLeftImageOffset:(CGFloat)leftOffset imageAndTitleSpacing:(CGFloat)spacing;
+
 @end

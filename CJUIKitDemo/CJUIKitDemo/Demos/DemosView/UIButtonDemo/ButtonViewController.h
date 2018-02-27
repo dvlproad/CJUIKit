@@ -11,6 +11,7 @@
 @interface ButtonViewController : UIViewController
 
 @property (nonatomic, weak) IBOutlet UIButton *upDownStructureButton;
+@property (nonatomic, weak) IBOutlet UIButton *button2;
 @property (nonatomic, weak) IBOutlet UIButton *multiClikcButton;
 
 @end
