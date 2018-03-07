@@ -96,16 +96,18 @@
     self.dateTextField.hideMenuController = YES;
     
     __weak typeof(self)weakSelf = self;
-    [self.dateTextField cj_addLeftButtonWithNormalImage:[UIImage imageNamed:@"plus"] leftHandel:^(UITextField *textField) {
+    UIImage *leftNormalImage = [UIImage imageNamed:@"plus"];
+    [self.dateTextField cj_addLeftButtonWithSize:CGSizeMake(30, 30) leftOffset:0 rightOffset:0 leftNormalImage:leftNormalImage leftHandel:^(UITextField *textField) {
         [weakSelf hideDateChoosePicker];
-        
         
         NSDate *date = [CJCalendarUtil yesterday_dateFromSinceDate:weakSelf.currentDate];
         textField.text = [dateFormatter stringFromDate:date];
         
         weakSelf.currentDate = date;
     }];
-    [self.dateTextField cj_addRightButtonWithNormalImage:[UIImage imageNamed:@"plus"] rightHandel:^(UITextField *textField) {
+    
+    UIImage *rightNormalImage = [UIImage imageNamed:@"plus"];
+    [self.dateTextField cj_addRightButtonWithSize:CGSizeMake(30, 30) rightOffset:0 leftOffset:0 rightNormalImage:rightNormalImage rightHandle:^(UITextField *textField) {
         [weakSelf hideDateChoosePicker];
         
         NSDate *date = [CJCalendarUtil tomorrow_dateFromSinceDate:weakSelf.currentDate];

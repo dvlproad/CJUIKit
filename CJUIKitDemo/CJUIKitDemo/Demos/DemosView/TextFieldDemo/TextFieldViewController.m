@@ -23,6 +23,9 @@
 #import "CJDefaultToolbar.h"
 #import "UITextField+CJAddInputAccessoryView.h"
 
+
+#import "UIImage+CJCreate.h"
+
 @interface TextFieldViewController () <UITextFieldDelegate>
 
 @end
@@ -33,10 +36,36 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
+    UITextField *textField = [[UITextField alloc] initWithFrame:CGRectZero];
+    //[textField setBorderStyle:UITextBorderStyleLine];
+    [self.view addSubview:textField];
+    [textField mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.mas_equalTo(self.view).mas_offset(20);
+        make.right.mas_equalTo(self.view).mas_offset(-20);
+        make.top.mas_equalTo(self.view).mas_offset(140);
+        make.height.mas_equalTo(100);    //系统默认高度30
+    }];
+    self.textField = textField;
     
-    self.textField.delegate = self;
-    [self.textField setCjTextDidChangeBlock:^(UITextField *textField) {
+    textField.delegate = self;
+    [textField setCjTextDidChangeBlock:^(UITextField *textField) {
         NSLog(@"textField内容改变了:%@", textField.text);
+    }];
+    
+    textField.backgroundColor = [UIColor greenColor];
+    
+    UIImage *leftNormalImage = [UIImage cj_imageWithColor:[UIColor redColor] size:CGSizeMake(40, 40)];
+    [textField cj_addLeftButtonWithSize:CGSizeMake(30, 30) leftOffset:10 rightOffset:10 leftNormalImage:leftNormalImage leftHandel:^(UITextField *textField) {
+        NSLog(@"左边按钮点击");
+        NSInteger value = [textField.text integerValue] - 1;
+        textField.text = [@(value) stringValue];
+    }];
+    
+    UIImage *rightNormalImage = [UIImage cj_imageWithColor:[UIColor redColor] size:CGSizeMake(40, 40)];
+    [textField cj_addRightButtonWithSize:CGSizeMake(30, 30) rightOffset:20 leftOffset:20 rightNormalImage:rightNormalImage rightHandle:^(UITextField *textField) {
+        NSLog(@"右边按钮点击");
+        NSInteger value = [textField.text integerValue] + 1;
+        textField.text = [@(value) stringValue];
     }];
     
     
@@ -44,13 +73,15 @@
     self.canInputTextField.text = @"20";
     self.canInputTextField.delegate = self;
     self.canInputTextField.textAlignment = NSTextAlignmentCenter;
-    [self.canInputTextField cj_addLeftButtonWithNormalImage:[UIImage imageNamed:@"plus"] leftHandel:^(UITextField *textField) {
+    
+    UIImage *image = [UIImage imageNamed:@"plus"];
+    [self.canInputTextField cj_addLeftButtonWithSize:CGSizeMake(30, 30) leftOffset:0 rightOffset:0 leftNormalImage:image leftHandel:^(UITextField *textField) {
         NSLog(@"左边按钮点击");
         NSInteger value = [textField.text integerValue] - 1;
         textField.text = [@(value) stringValue];
     }];
     
-    [self.canInputTextField cj_addRightButtonWithNormalImage:[UIImage imageNamed:@"plus"] rightHandel:^(UITextField *textField) {
+    [self.canInputTextField cj_addRightButtonWithSize:CGSizeMake(30, 30) rightOffset:0 leftOffset:0 rightNormalImage:image rightHandle:^(UITextField *textField) {
         NSLog(@"右边按钮点击");
         NSInteger value = [textField.text integerValue] + 1;
         textField.text = [@(value) stringValue];
