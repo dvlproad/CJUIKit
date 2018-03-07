@@ -50,46 +50,46 @@ static NSString * const kCJRightViewHandleKey = @"kCJRightViewHandleKey";
     self.rightViewMode = UITextFieldViewModeAlways;
 }
 
-- (UIButton *)cj_addLeftButtonWithSize:(CGSize)buttonSize
-                            leftOffset:(CGFloat)leftOffset
-                           rightOffset:(CGFloat)rightOffset
-                       leftNormalImage:(UIImage *)leftNormalImage
-                            leftHandel:(void (^)(UITextField *textField))leftHandle
+/* 完整的描述请参见文件头部 */
+- (void)cj_addLeftButton:(UIButton *)button
+                withSize:(CGSize)buttonSize
+              leftOffset:(CGFloat)leftOffset
+             rightOffset:(CGFloat)rightOffset
+              leftHandel:(void (^)(UITextField *textField))leftHandle
 {    
     CGFloat leftViewWidth = leftOffset + buttonSize.width + rightOffset;
     CGFloat leftViewHeight = buttonSize.height;
     
-    UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
     [button setFrame:CGRectMake(0, 0, leftViewWidth, leftViewHeight)];
     [button setImageEdgeInsets:UIEdgeInsetsMake(0, leftOffset, 0, rightOffset)];
-    [button setImage:leftNormalImage forState:UIControlStateNormal];
+    [button setTitleEdgeInsets:UIEdgeInsetsMake(0, leftOffset, 0, rightOffset)];
+    
     [button addTarget:self action:@selector(leftButtonClick) forControlEvents:UIControlEventTouchUpInside];
     self.cjLeftViewHandle = leftHandle;
+    
     self.leftView = button;
     self.leftViewMode = UITextFieldViewModeAlways;
-    
-    return button;
 }
 
-- (UIButton *)cj_addRightButtonWithSize:(CGSize)buttonSize
-                            rightOffset:(CGFloat)rightOffset
-                            leftOffset:(CGFloat)leftOffset
-                       rightNormalImage:(UIImage *)rightNormalImage
-                            rightHandle:(void (^)(UITextField *textField))rightHandle
+/* 完整的描述请参见文件头部 */
+- (void)cj_addRightButton:(UIButton *)button
+                 withSize:(CGSize)buttonSize
+              rightOffset:(CGFloat)rightOffset
+               leftOffset:(CGFloat)leftOffset
+              rightHandle:(void (^)(UITextField *textField))rightHandle
 {
     CGFloat rightViewWidth = rightOffset + buttonSize.width + leftOffset;
     CGFloat rightViewHeight = buttonSize.height;
     
-    UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
     [button setFrame:CGRectMake(0, 0, rightViewWidth, rightViewHeight)];
     [button setImageEdgeInsets:UIEdgeInsetsMake(0, leftOffset, 0, rightOffset)];
-    [button setImage:rightNormalImage forState:UIControlStateNormal];
+    [button setTitleEdgeInsets:UIEdgeInsetsMake(0, leftOffset, 0, rightOffset)];
+    
     [button addTarget:self action:@selector(rightButtonClick) forControlEvents:UIControlEventTouchUpInside];
     self.cjRightViewHandle = rightHandle;
+    
     self.rightView = button;
     self.rightViewMode = UITextFieldViewModeAlways;
-    
-    return button;
 }
 
 - (void)leftButtonClick {

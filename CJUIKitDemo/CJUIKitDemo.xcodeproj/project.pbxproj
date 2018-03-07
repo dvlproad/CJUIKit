@@ -51,6 +51,7 @@
 		787FDB9720500B5C008A46E3 /* RangeSliderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 787FDB8020500B5B008A46E3 /* RangeSliderViewController.m */; };
 		787FDB9820500B5C008A46E3 /* ShimmeringSwitchSlider.m in Sources */ = {isa = PBXBuildFile; fileRef = 787FDB8220500B5B008A46E3 /* ShimmeringSwitchSlider.m */; };
 		787FDB9920500B5C008A46E3 /* RangeSliderViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 787FDB8420500B5B008A46E3 /* RangeSliderViewController.xib */; };
+		787FDB9C20502A1C008A46E3 /* CJTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 787FDB9B20502A1C008A46E3 /* CJTextField.m */; };
 		789CAF181FB612B700AF8CD4 /* ChangeLog.md in Resources */ = {isa = PBXBuildFile; fileRef = 789CAE111FB612B600AF8CD4 /* ChangeLog.md */; };
 		789CAF191FB612B700AF8CD4 /* CJBaseCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 789CAE151FB612B600AF8CD4 /* CJBaseCollectionViewCell.m */; };
 		789CAF1A1FB612B700AF8CD4 /* CJFullBottomCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 789CAE171FB612B600AF8CD4 /* CJFullBottomCollectionViewCell.m */; };
@@ -492,6 +493,8 @@
 		787FDB8220500B5B008A46E3 /* ShimmeringSwitchSlider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShimmeringSwitchSlider.m; sourceTree = "<group>"; };
 		787FDB8320500B5B008A46E3 /* ShimmeringSwitchSlider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShimmeringSwitchSlider.h; sourceTree = "<group>"; };
 		787FDB8420500B5B008A46E3 /* RangeSliderViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RangeSliderViewController.xib; sourceTree = "<group>"; };
+		787FDB9A20502A1C008A46E3 /* CJTextField.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CJTextField.h; sourceTree = "<group>"; };
+		787FDB9B20502A1C008A46E3 /* CJTextField.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CJTextField.m; sourceTree = "<group>"; };
 		789CAB597AD073D5F637D193 /* Pods-CJUIKitDemoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CJUIKitDemoTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-CJUIKitDemoTests/Pods-CJUIKitDemoTests.release.xcconfig"; sourceTree = "<group>"; };
 		789CAE111FB612B600AF8CD4 /* ChangeLog.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = ChangeLog.md; sourceTree = "<group>"; };
 		789CAE141FB612B600AF8CD4 /* CJBaseCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJBaseCollectionViewCell.h; sourceTree = "<group>"; };
@@ -1832,6 +1835,8 @@
 				789CAED11FB612B600AF8CD4 /* CJChooseTextTextField.m */,
 				8000B5C71FD0021D00AE3C78 /* CJExtraTextTextField.h */,
 				8000B5C81FD0021D00AE3C78 /* CJExtraTextTextField.m */,
+				787FDB9A20502A1C008A46E3 /* CJTextField.h */,
+				787FDB9B20502A1C008A46E3 /* CJTextField.m */,
 			);
 			path = CJTextField;
 			sourceTree = "<group>";
@@ -3589,6 +3594,7 @@
 				789CAF4B1FB612B700AF8CD4 /* CJSliderThumb.m in Sources */,
 				789CAF3D1FB612B700AF8CD4 /* UIView+CJExtension.m in Sources */,
 				789CAF1D1FB612B700AF8CD4 /* CJCircleLayout.m in Sources */,
+				787FDB9C20502A1C008A46E3 /* CJTextField.m in Sources */,
 				800E07E12016CCF500799B78 /* DataUtilViewController.m in Sources */,
 				80FF91EC1FC6739D00E437CF /* CJDateOtherUtil.m in Sources */,
 				789CAF5E1FB612B700AF8CD4 /* UIImage+CJCreate.m in Sources */,

@@ -12,6 +12,8 @@
 #import "UITextField+CJSelectedTextRange.h"
 #import "UIView+CJShake.h"
 
+#import "CJTextField.h"
+
 #import "CJToast.h"
 
 #ifdef CJTESTPOD
@@ -43,7 +45,7 @@
         make.left.mas_equalTo(self.view).mas_offset(20);
         make.right.mas_equalTo(self.view).mas_offset(-20);
         make.top.mas_equalTo(self.view).mas_offset(140);
-        make.height.mas_equalTo(100);    //系统默认高度30
+        make.height.mas_equalTo(30);    //系统默认高度30
     }];
     self.textField = textField;
     
@@ -51,37 +53,61 @@
     [textField setCjTextDidChangeBlock:^(UITextField *textField) {
         NSLog(@"textField内容改变了:%@", textField.text);
     }];
+
     
-    textField.backgroundColor = [UIColor greenColor];
     
-    UIImage *leftNormalImage = [UIImage cj_imageWithColor:[UIColor redColor] size:CGSizeMake(40, 40)];
-    [textField cj_addLeftButtonWithSize:CGSizeMake(30, 30) leftOffset:10 rightOffset:10 leftNormalImage:leftNormalImage leftHandel:^(UITextField *textField) {
-        NSLog(@"左边按钮点击");
-        NSInteger value = [textField.text integerValue] - 1;
-        textField.text = [@(value) stringValue];
+    
+    CJTextField *textField2 = [[CJTextField alloc] initWithFrame:CGRectZero];
+    textField2.backgroundColor = [UIColor lightGrayColor];
+    textField2.placeholder = @"测试placeholder位置";
+    [self.view addSubview:textField2];
+    [textField2 mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.centerX.mas_equalTo(self.view);
+        make.width.mas_equalTo(200);
+        make.top.mas_equalTo(self.view).mas_offset(250);
+        make.height.mas_equalTo(40);    //系统默认高度30
     }];
     
-    UIImage *rightNormalImage = [UIImage cj_imageWithColor:[UIColor redColor] size:CGSizeMake(40, 40)];
-    [textField cj_addRightButtonWithSize:CGSizeMake(30, 30) rightOffset:20 leftOffset:20 rightNormalImage:rightNormalImage rightHandle:^(UITextField *textField) {
-        NSLog(@"右边按钮点击");
-        NSInteger value = [textField.text integerValue] + 1;
-        textField.text = [@(value) stringValue];
-    }];
+    UIView *leftView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 20, 20)];
+    leftView.backgroundColor = [UIColor greenColor];
+    textField2.leftView = leftView;
+    textField2.leftViewMode = UITextFieldViewModeAlways;
+    textField2.leftViewLeftOffset = 10;
+    textField2.leftViewRightOffset = 10;
+    
+    UIView *rightView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 20, 20)];
+    rightView.backgroundColor = [UIColor orangeColor];
+    textField2.rightView = rightView;
+    textField2.rightViewMode = UITextFieldViewModeAlways;
+    textField2.rightViewRightOffset = 10;
+    textField2.rightViewLeftOffset = 10;
+    
+    
     
     
     //UITextField
     self.canInputTextField.text = @"20";
     self.canInputTextField.delegate = self;
     self.canInputTextField.textAlignment = NSTextAlignmentCenter;
+    self.canInputTextField.backgroundColor = [UIColor greenColor];
     
-    UIImage *image = [UIImage imageNamed:@"plus"];
-    [self.canInputTextField cj_addLeftButtonWithSize:CGSizeMake(30, 30) leftOffset:0 rightOffset:0 leftNormalImage:image leftHandel:^(UITextField *textField) {
+    
+    UIButton *leftButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    //UIImage *leftNormalImage = [UIImage cj_imageWithColor:[UIColor redColor] size:CGSizeMake(40, 40)];
+    //[leftButton setImage:leftNormalImage forState:UIControlStateNormal];
+    [leftButton setTitle:@"+" forState:UIControlStateNormal];
+    [leftButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    [leftButton.titleLabel setBackgroundColor:[UIColor redColor]];
+    [self.canInputTextField cj_addLeftButton:leftButton withSize:CGSizeMake(50, 30) leftOffset:10 rightOffset:10 leftHandel:^(UITextField *textField) {
         NSLog(@"左边按钮点击");
         NSInteger value = [textField.text integerValue] - 1;
         textField.text = [@(value) stringValue];
     }];
     
-    [self.canInputTextField cj_addRightButtonWithSize:CGSizeMake(30, 30) rightOffset:0 leftOffset:0 rightNormalImage:image rightHandle:^(UITextField *textField) {
+    UIImage *rightNormalImage = [UIImage cj_imageWithColor:[UIColor redColor] size:CGSizeMake(40, 40)];
+    UIButton *rightButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    [rightButton setImage:rightNormalImage forState:UIControlStateNormal];
+    [self.canInputTextField cj_addRightButton:rightButton withSize:CGSizeMake(30, 30) rightOffset:20 leftOffset:20 rightHandle:^(UITextField *textField) {
         NSLog(@"右边按钮点击");
         NSInteger value = [textField.text integerValue] + 1;
         textField.text = [@(value) stringValue];

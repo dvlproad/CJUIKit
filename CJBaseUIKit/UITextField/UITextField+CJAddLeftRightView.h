@@ -30,37 +30,31 @@
 
 
 /**
- *  添加左视图，并左视图距离左边框与文字的距离
+ *  添加按钮作为左视图，并设置其与左边框和文字的距离
  *
  *  @param buttonSize       左视图的大小
  *  @param leftOffset       左视图距左边框的距离
- *  @param rightOffset      左视图距的距离
- *  @param leftNormalImage  左视图的图片
+ *  @param rightOffset      左视图距文字的距离
  *  @param leftHandle       左视图的点击动作
- *
- *  @return 左视图
  */
-- (UIButton *)cj_addLeftButtonWithSize:(CGSize)buttonSize
-                            leftOffset:(CGFloat)leftOffset
-                           rightOffset:(CGFloat)rightOffset
-                       leftNormalImage:(UIImage *)leftNormalImage
-                            leftHandel:(void (^)(UITextField *textField))leftHandle;
+- (void)cj_addLeftButton:(UIButton *)button
+                withSize:(CGSize)buttonSize
+              leftOffset:(CGFloat)leftOffset
+             rightOffset:(CGFloat)rightOffset
+              leftHandel:(void (^)(UITextField *textField))leftHandle;
 
 /**
- *  添加由视图，并右视图距离右边框与文字的距离
+ *  添加按钮作为右视图，并设置其与右边框和文字的距离
  *
  *  @param buttonSize       右视图的大小
- *  @param rightOffset      右视图距的距离
+ *  @param rightOffset      右视图距文字的距离
  *  @param leftOffset       右视图距左边框的距离
- *  @param rightNormalImage 右视图的图片
  *  @param rightHandle      右视图的点击动作
- *
- *  @return 右视图
  */
-- (UIButton *)cj_addRightButtonWithSize:(CGSize)buttonSize
-                            rightOffset:(CGFloat)rightOffset
-                             leftOffset:(CGFloat)leftOffset
-                       rightNormalImage:(UIImage *)rightNormalImage
-                            rightHandle:(void (^)(UITextField *textField))rightHandle;
+- (void)cj_addRightButton:(UIButton *)button
+                 withSize:(CGSize)buttonSize
+              rightOffset:(CGFloat)rightOffset
+               leftOffset:(CGFloat)leftOffset
+              rightHandle:(void (^)(UITextField *textField))rightHandle;
 
 @end

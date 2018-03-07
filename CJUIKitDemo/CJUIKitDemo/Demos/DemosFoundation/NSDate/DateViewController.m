@@ -97,7 +97,10 @@
     
     __weak typeof(self)weakSelf = self;
     UIImage *leftNormalImage = [UIImage imageNamed:@"plus"];
-    [self.dateTextField cj_addLeftButtonWithSize:CGSizeMake(30, 30) leftOffset:0 rightOffset:0 leftNormalImage:leftNormalImage leftHandel:^(UITextField *textField) {
+    UIButton *leftButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    [leftButton setImage:leftNormalImage forState:UIControlStateNormal];
+    
+    [self.dateTextField cj_addLeftButton:leftButton withSize:CGSizeMake(30, 30) leftOffset:0 rightOffset:0 leftHandel:^(UITextField *textField) {
         [weakSelf hideDateChoosePicker];
         
         NSDate *date = [CJCalendarUtil yesterday_dateFromSinceDate:weakSelf.currentDate];
@@ -107,7 +110,10 @@
     }];
     
     UIImage *rightNormalImage = [UIImage imageNamed:@"plus"];
-    [self.dateTextField cj_addRightButtonWithSize:CGSizeMake(30, 30) rightOffset:0 leftOffset:0 rightNormalImage:rightNormalImage rightHandle:^(UITextField *textField) {
+    UIButton *rightButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    [rightButton setImage:rightNormalImage forState:UIControlStateNormal];
+    
+    [self.dateTextField cj_addRightButton:rightButton withSize:CGSizeMake(30, 30) rightOffset:0 leftOffset:0 rightHandle:^(UITextField *textField) {
         [weakSelf hideDateChoosePicker];
         
         NSDate *date = [CJCalendarUtil tomorrow_dateFromSinceDate:weakSelf.currentDate];
