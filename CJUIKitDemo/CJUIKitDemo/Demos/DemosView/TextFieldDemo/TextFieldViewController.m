@@ -7,11 +7,12 @@
 //
 
 #import "TextFieldViewController.h"
+
 #import "UITextField+CJTextChangeBlock.h"
-#import "UITextField+CJAddLeftRightView.h"
 #import "UITextField+CJSelectedTextRange.h"
 #import "UIView+CJShake.h"
 
+#import "UITextField+CJPadding.h"
 #import "CJTextField.h"
 
 #import "CJToast.h"
@@ -98,20 +99,23 @@
     [leftButton setTitle:@"+" forState:UIControlStateNormal];
     [leftButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     [leftButton.titleLabel setBackgroundColor:[UIColor redColor]];
-    [self.canInputTextField cj_addLeftButton:leftButton withSize:CGSizeMake(50, 30) leftOffset:10 rightOffset:10 leftHandel:^(UITextField *textField) {
-        NSLog(@"左边按钮点击");
-        NSInteger value = [textField.text integerValue] - 1;
-        textField.text = [@(value) stringValue];
-    }];
+    [leftButton addTarget:self action:@selector(leftButtonAction:) forControlEvents:UIControlEventTouchUpInside];
+    [leftButton setFrame:CGRectMake(0, 0, 50, 30)];
+    self.canInputTextField.leftView = leftButton;
+    self.canInputTextField.leftViewMode = UITextFieldViewModeAlways;
+    self.canInputTextField.leftViewLeftOffset = 10;
+    self.canInputTextField.leftViewRightOffset = 10;
+    
     
     UIImage *rightNormalImage = [UIImage cj_imageWithColor:[UIColor redColor] size:CGSizeMake(40, 40)];
     UIButton *rightButton = [UIButton buttonWithType:UIButtonTypeCustom];
     [rightButton setImage:rightNormalImage forState:UIControlStateNormal];
-    [self.canInputTextField cj_addRightButton:rightButton withSize:CGSizeMake(30, 30) rightOffset:20 leftOffset:20 rightHandle:^(UITextField *textField) {
-        NSLog(@"右边按钮点击");
-        NSInteger value = [textField.text integerValue] + 1;
-        textField.text = [@(value) stringValue];
-    }];
+    [rightButton addTarget:self action:@selector(rightButtonAction:) forControlEvents:UIControlEventTouchUpInside];
+    [rightButton setFrame:CGRectMake(0, 0, 30, 30)];
+    self.canInputTextField.rightView = rightButton;
+    self.canInputTextField.rightViewMode = UITextFieldViewModeAlways;
+    self.canInputTextField.rightViewLeftOffset = 20;
+    self.canInputTextField.rightViewRightOffset = 20;
     
     
     UILabel *pickerView = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 0, 300)];
@@ -152,6 +156,18 @@
         NSLog(@"textField内容改变了:%@", textField.text);
         [(CJExtraTextTextField *)textField fixExtraString];
     }];
+}
+
+- (void)leftButtonAction:(UIButton *)button {
+    NSLog(@"左边按钮点击");
+    NSInteger value = [self.canInputTextField.text integerValue] - 1;
+    self.canInputTextField.text = [@(value) stringValue];
+}
+
+- (void)rightButtonAction:(UIButton *)button {
+    NSLog(@"右边按钮点击");
+    NSInteger value = [self.canInputTextField.text integerValue] + 1;
+    self.canInputTextField.text = [@(value) stringValue];
 }
 
 - (void)canInputSwitchAction:(UISwitch *)canInputSwitch {

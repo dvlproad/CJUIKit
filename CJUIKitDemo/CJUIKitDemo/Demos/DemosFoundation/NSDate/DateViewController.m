@@ -8,7 +8,8 @@
 
 #import "DateViewController.h"
 
-#import "UITextField+CJAddLeftRightView.h"
+#import "CJDateFormatterUtil.h"
+
 #import "CJChooseTextTextField.h"
 
 #import <CJPicker/CJDefaultDatePicker.h>
@@ -43,11 +44,11 @@
     [self setupChooseDatePicker];
     
     self.currentDate = [NSDate date];
-    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-    dateFormatter.dateFormat = @"yyyy-MM-dd HH:mm:ss";
-    self.dateTextField.text = [dateFormatter stringFromDate:self.currentDate];
+
+    NSString *currentDateString = [[CJDateFormatterUtil sharedInstance] yyyyMMddHHmmss_stringFromDate:self.currentDate];
+    self.dateTextField.text = currentDateString;
     
-    NSDate *birthdayDate = [dateFormatter dateFromString:@"1989-12-27 01:10:22"];
+    NSDate *birthdayDate = [[CJDateFormatterUtil sharedInstance] yyyyMMddHHmmss_dateFromString:@"1989-12-27 01:10:22"];
     
     NSInteger yearInterval = [CJCalendarUtil year_unitIntervalFromDate:birthdayDate toDate:[NSDate date]];
     NSInteger age = [CJCalendarUtil age_unitIntervalFromDate:birthdayDate toDate:[NSDate date]];
@@ -99,28 +100,22 @@
     UIImage *leftNormalImage = [UIImage imageNamed:@"plus"];
     UIButton *leftButton = [UIButton buttonWithType:UIButtonTypeCustom];
     [leftButton setImage:leftNormalImage forState:UIControlStateNormal];
-    
-    [self.dateTextField cj_addLeftButton:leftButton withSize:CGSizeMake(30, 30) leftOffset:0 rightOffset:0 leftHandel:^(UITextField *textField) {
-        [weakSelf hideDateChoosePicker];
-        
-        NSDate *date = [CJCalendarUtil yesterday_dateFromSinceDate:weakSelf.currentDate];
-        textField.text = [dateFormatter stringFromDate:date];
-        
-        weakSelf.currentDate = date;
-    }];
+    [leftButton addTarget:self action:@selector(leftButtonAction:) forControlEvents:UIControlEventTouchUpInside];
+    [leftButton setFrame:CGRectMake(0, 0, 30, 30)];
+    self.dateTextField.leftView = leftButton;
+    self.dateTextField.leftViewMode = UITextFieldViewModeAlways;
+    self.dateTextField.leftViewLeftOffset = 0;
+    self.dateTextField.leftViewRightOffset = 0;
     
     UIImage *rightNormalImage = [UIImage imageNamed:@"plus"];
     UIButton *rightButton = [UIButton buttonWithType:UIButtonTypeCustom];
     [rightButton setImage:rightNormalImage forState:UIControlStateNormal];
-    
-    [self.dateTextField cj_addRightButton:rightButton withSize:CGSizeMake(30, 30) rightOffset:0 leftOffset:0 rightHandle:^(UITextField *textField) {
-        [weakSelf hideDateChoosePicker];
-        
-        NSDate *date = [CJCalendarUtil tomorrow_dateFromSinceDate:weakSelf.currentDate];
-        textField.text = [dateFormatter stringFromDate:date];
-        
-        weakSelf.currentDate = date;
-    }];
+    [rightButton addTarget:self action:@selector(rightButtonAction:) forControlEvents:UIControlEventTouchUpInside];
+    [rightButton setFrame:CGRectMake(0, 0, 30, 30)];
+    self.dateTextField.rightView = rightButton;
+    self.dateTextField.rightViewMode = UITextFieldViewModeAlways;
+    self.dateTextField.rightViewLeftOffset = 0;
+    self.dateTextField.rightViewRightOffset = 0;
     
     
     CJDefaultDatePicker *datePicker = [[CJDefaultDatePicker alloc] init];
@@ -151,6 +146,29 @@
     [self.dateTextField setFrame:CGRectMake(20, 100, 280, 30)];
     [self.view addSubview:self.dateTextField];
 }
+
+- (void)leftButtonAction:(UIButton *)button {
+    NSLog(@"左边按钮点击");
+    [self hideDateChoosePicker];
+    
+    NSDate *date = [CJCalendarUtil yesterday_dateFromSinceDate:self.currentDate];
+    NSString *dateString = [[CJDateFormatterUtil sharedInstance] yyyyMMddHHmmss_stringFromDate:date];
+    self.dateTextField.text = dateString;
+    
+    self.currentDate = date;
+}
+
+- (void)rightButtonAction:(UIButton *)button {
+    NSLog(@"右边按钮点击");
+    [self hideDateChoosePicker];
+    
+    NSDate *date = [CJCalendarUtil tomorrow_dateFromSinceDate:self.currentDate];
+    NSString *dateString = [[CJDateFormatterUtil sharedInstance] yyyyMMddHHmmss_stringFromDate:date];
+    self.dateTextField.text = dateString;
+    
+    self.currentDate = date;
+}
+
 
 - (void)hideDateChoosePicker {
     [self.dateTextField endEditing:YES];

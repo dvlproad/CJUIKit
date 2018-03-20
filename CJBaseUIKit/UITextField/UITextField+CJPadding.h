@@ -13,6 +13,22 @@
  */
 @interface UITextField (CJPadding)
 
+/**
+ *  设置文字距左边框的距离
+ *
+ *  @param leftOffset 文字距左边框的距离
+ */
+- (void)cj_addLeftOffset:(CGFloat)leftOffset;
+
+/**
+ *  设置文字距右边框的距离
+ *
+ *  @param rightOffset 设置文字距右边框的距离
+ */
+- (void)cj_addRightOffset:(CGFloat)rightOffset;
+
+
+
 ///设置 UITextField 的上内边距
 - (void)cj_setPaddingTop:(CGFloat)paddingTop;
 

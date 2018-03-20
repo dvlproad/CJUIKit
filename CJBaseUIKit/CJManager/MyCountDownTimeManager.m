@@ -12,6 +12,7 @@
     
 }
 @property (nonatomic, assign) NSInteger periodDuration; /**< 周期时长 */
+@property (nonatomic, assign) BOOL periodRepeat;        /**< 倒计时一周期结束后是否重复或继续 */
 @property (nonatomic, assign) NSInteger remainSecond;  /**< 当前显示的时间数值(本周期剩余的时间) */
 
 @property (nonatomic, copy) NSInteger (^timeZeroBlock)(void);
@@ -32,6 +33,7 @@
 
 /* 完整的描述请参见文件头部 */
 - (void)createCountDownWithPeriodDuration:(NSTimeInterval)periodDuration
+                             periodRepeat:(BOOL)periodRepeat
                            timeZeroBlock:(NSInteger (^)(void))timeZeroBlock
                          timeNoZeroBlock:(void (^)(NSInteger remainSecond))timeNoZeroBlock
 {
@@ -41,6 +43,7 @@
     self.timeNoZeroBlock = timeNoZeroBlock;
     
     self.periodDuration = periodDuration;
+    self.periodRepeat = periodRepeat;
     self.remainSecond = periodDuration;
     
     _timer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(timerEvent) userInfo:nil repeats:YES];
@@ -68,6 +71,12 @@
         if(self.timeZeroBlock) {
             self.remainSecond = self.timeZeroBlock();
         }
+        
+        if (!self.periodRepeat) {
+            [self.timer invalidate];
+            self.timer = nil;
+        }
+        
     } else {
         if(self.timeNoZeroBlock) {
             self.timeNoZeroBlock(self.remainSecond);

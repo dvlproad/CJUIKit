@@ -10,6 +10,18 @@
 
 @implementation CJTextField
 
+- (void)cj_addLeftOffset:(CGFloat)leftOffset {
+    UIView *leftView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, leftOffset, 10)];
+    self.leftView = leftView;
+    self.leftViewMode = UITextFieldViewModeAlways;
+}
+
+- (void)cj_addRightOffset:(CGFloat)rightOffset {
+    UIView *rightView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, rightOffset, 10)];
+    self.rightView = rightView;
+    self.rightViewMode = UITextFieldViewModeAlways;
+}
+
 - (CGRect)leftViewRectForBounds:(CGRect)bounds {
     CGRect rect = [super leftViewRectForBounds:bounds];
     rect.origin.x += self.leftViewLeftOffset;

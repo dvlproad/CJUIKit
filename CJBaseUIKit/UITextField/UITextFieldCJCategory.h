@@ -9,8 +9,8 @@
 #ifndef UITextFieldCJCategory_h
 #define UITextFieldCJCategory_h
 
+#import "UITextField+CJPadding.h"
 #import "UITextField+CJTextChangeBlock.h"
-#import "UITextField+CJAddLeftRightView.h"
 #import "UITextField+CJSelectedTextRange.h"
 
 #endif /* UITextFieldCJCategory_h */

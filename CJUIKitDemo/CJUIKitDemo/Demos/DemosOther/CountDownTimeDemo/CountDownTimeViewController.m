@@ -60,7 +60,7 @@ static CGFloat kPeriodDuration = 5.0f;
 - (IBAction)countDownTimeButtonAction1:(id)sender {
     if ([MyCountDownTimeManager sharedInstance].timer == nil) {
         NSLog(@"这里将会创建定时器");
-        [[MyCountDownTimeManager sharedInstance] createCountDownWithPeriodDuration:kPeriodDuration timeZeroBlock:^NSInteger(void) {
+        [[MyCountDownTimeManager sharedInstance] createCountDownWithPeriodDuration:kPeriodDuration periodRepeat:NO timeZeroBlock:^NSInteger(void) {
             
             NSInteger remainSecond = kPeriodDuration; //本周期剩余的时间
             [self.countDownTimeButton1 setTitle:@"发送验证码(5s)" forState:UIControlStateNormal];

@@ -200,7 +200,7 @@ CGFloat const SDTimeIndicatorMargin = 10.0f;
 - (void)endRefreshing
 {
     [UIView animateWithDuration:0.6 animations:^{
-        _scrollView.contentInset = _originalEdgeInsets;
+        self.scrollView.contentInset = self.originalEdgeInsets;
     } completion:^(BOOL finished) {
         [self setRefreshState:CJRefreshBaseViewStateNormal];
         if (self.isManuallyRefreshing) {
