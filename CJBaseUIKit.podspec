@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "CJBaseUIKit"
-  s.version      = "0.1.13"
+  s.version      = "0.1.14"
   s.summary      = "自定义的基础UI"
   s.homepage     = "https://github.com/dvlproad/CJUIKit"
 
@@ -40,7 +40,7 @@ Pod::Spec.new do |s|
 
   s.platform     = :ios, "7.0"
  
-  s.source       = { :git => "https://github.com/dvlproad/CJUIKit.git", :tag => "CJBaseUIKit_0.1.13" }
+  s.source       = { :git => "https://github.com/dvlproad/CJUIKit.git", :tag => "CJBaseUIKit_0.1.14" }
   s.source_files  = "CJBaseUIKit/*.{h,m}"
 
   s.frameworks = "UIKit"
@@ -181,8 +181,14 @@ Pod::Spec.new do |s|
     ss.dependency 'MJRefresh'
   end
 
+  
+  s.subspec 'WebView' do |ss|
+    ss.source_files = "CJBaseUIKit/WebView/**/*.{h,m}"
+    # ss.resources = "CJBaseUIKit/WebView/**/*.{png,xib}"
 
-
+    ss.dependency 'NJKWebViewProgress'
+    ss.dependency 'SVProgressHUD'
+  end
 
 
   s.subspec 'CJToast' do |ss|

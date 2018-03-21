@@ -257,6 +257,7 @@
 		804478262061F328007185EF /* MyCountDownTimeManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 804478202061F328007185EF /* MyCountDownTimeManager.m */; };
 		804478272061F328007185EF /* CJLocationChangeManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 804478222061F328007185EF /* CJLocationChangeManager.m */; };
 		804478282061F328007185EF /* CJLocationChangeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 804478232061F328007185EF /* CJLocationChangeModel.m */; };
+		8044787C20622E6A007185EF /* ProgressWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8044787A20622E6A007185EF /* ProgressWebViewController.m */; };
 		805598B51FF5D612009DC61C /* ValidateStringViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 805598B31FF5D612009DC61C /* ValidateStringViewController.m */; };
 		805598B61FF5D612009DC61C /* ValidateStringViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 805598B41FF5D612009DC61C /* ValidateStringViewController.xib */; };
 		805598BA1FF5DB0F009DC61C /* ValidateStringTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 805598B81FF5DB0F009DC61C /* ValidateStringTableViewCell.m */; };
@@ -843,6 +844,8 @@
 		804478232061F328007185EF /* CJLocationChangeModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJLocationChangeModel.m; sourceTree = "<group>"; };
 		804478242061F328007185EF /* CJLocationChangeManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJLocationChangeManager.h; sourceTree = "<group>"; };
 		804478252061F328007185EF /* CJLocationChangeModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJLocationChangeModel.h; sourceTree = "<group>"; };
+		8044787A20622E6A007185EF /* ProgressWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProgressWebViewController.m; sourceTree = "<group>"; };
+		8044787B20622E6A007185EF /* ProgressWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProgressWebViewController.h; sourceTree = "<group>"; };
 		805598B21FF5D612009DC61C /* ValidateStringViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ValidateStringViewController.h; sourceTree = "<group>"; };
 		805598B31FF5D612009DC61C /* ValidateStringViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ValidateStringViewController.m; sourceTree = "<group>"; };
 		805598B41FF5D612009DC61C /* ValidateStringViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ValidateStringViewController.xib; sourceTree = "<group>"; };
@@ -1350,6 +1353,7 @@
 		789CAE0F1FB612B600AF8CD4 /* CJBaseUIKit */ = {
 			isa = PBXGroup;
 			children = (
+				8044787820622E6A007185EF /* WebView */,
 				789CAE101FB612B600AF8CD4 /* CJBaseScrollView */,
 				789CAE4B1FB612B600AF8CD4 /* CJImageView */,
 				789CAE531FB612B600AF8CD4 /* CJMJRefreshComponent */,
@@ -2292,6 +2296,23 @@
 				804478232061F328007185EF /* CJLocationChangeModel.m */,
 			);
 			path = CJLocationChangeManager;
+			sourceTree = "<group>";
+		};
+		8044787820622E6A007185EF /* WebView */ = {
+			isa = PBXGroup;
+			children = (
+				8044787920622E6A007185EF /* WebViewController */,
+			);
+			path = WebView;
+			sourceTree = "<group>";
+		};
+		8044787920622E6A007185EF /* WebViewController */ = {
+			isa = PBXGroup;
+			children = (
+				8044787B20622E6A007185EF /* ProgressWebViewController.h */,
+				8044787A20622E6A007185EF /* ProgressWebViewController.m */,
+			);
+			path = WebViewController;
 			sourceTree = "<group>";
 		};
 		8056F5A9203E6FA30074D90F /* NSOperationQueueUtil */ = {
@@ -3375,7 +3396,25 @@
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/cjAlbumCheckedNormal@2x.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/cjAlbumCheckedSelect@2x.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/error.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/error@2x.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/error@3x.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/info.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/info@2x.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/info@3x.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/success.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/success@2x.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/success@3x.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/CJPhotoBrowser.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/area.plist",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/city.plist",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/line_gray_pickerToolbar.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/line_gray_pickerToolbar@2x.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MJRefresh.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/unicode_to_hanyu_pinyin.txt",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/SVProgressHUD.bundle",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -3611,6 +3650,7 @@
 				80FF90371FC5649E00E437CF /* TestDataModel.m in Sources */,
 				80FF90AF1FC5649F00E437CF /* NavigationBarBaseViewController.m in Sources */,
 				80FF908E1FC5649F00E437CF /* MyOpenTableView.m in Sources */,
+				8044787C20622E6A007185EF /* ProgressWebViewController.m in Sources */,
 				80FF914A1FC5668700E437CF /* CJSortedCategoryResult.m in Sources */,
 				80FF91441FC5668700E437CF /* CJDeviceUtil.m in Sources */,
 				789CAF4B1FB612B700AF8CD4 /* CJSliderThumb.m in Sources */,
