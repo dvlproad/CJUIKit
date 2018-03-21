@@ -80,7 +80,6 @@
 		789CAF311FB612B700AF8CD4 /* CJTableViewHeaderFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 789CAE491FB612B600AF8CD4 /* CJTableViewHeaderFooterView.m */; };
 		789CAF331FB612B700AF8CD4 /* CJBadgeImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 789CAE4D1FB612B600AF8CD4 /* CJBadgeImageView.m */; };
 		789CAF341FB612B700AF8CD4 /* CJImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 789CAE4F1FB612B600AF8CD4 /* CJImageView.m */; };
-		789CAF351FB612B700AF8CD4 /* MyCountDownTimeManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 789CAE521FB612B600AF8CD4 /* MyCountDownTimeManager.m */; };
 		789CAF361FB612B700AF8CD4 /* CJMJRefreshNormalFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = 789CAE571FB612B600AF8CD4 /* CJMJRefreshNormalFooter.m */; };
 		789CAF371FB612B700AF8CD4 /* CJMJRefreshNormalHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 789CAE591FB612B600AF8CD4 /* CJMJRefreshNormalHeader.m */; };
 		789CAF381FB612B700AF8CD4 /* cjRefreshArrowDown@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 789CAE5B1FB612B600AF8CD4 /* cjRefreshArrowDown@2x.png */; };
@@ -255,6 +254,9 @@
 		8033240E202C54F8001DACF1 /* LocalWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8033240C202C54F8001DACF1 /* LocalWebViewController.m */; };
 		8033240F202C54F8001DACF1 /* LocalWebViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8033240D202C54F8001DACF1 /* LocalWebViewController.xib */; };
 		80332411202C5540001DACF1 /* index.html in Resources */ = {isa = PBXBuildFile; fileRef = 80332410202C5540001DACF1 /* index.html */; };
+		804478262061F328007185EF /* MyCountDownTimeManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 804478202061F328007185EF /* MyCountDownTimeManager.m */; };
+		804478272061F328007185EF /* CJLocationChangeManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 804478222061F328007185EF /* CJLocationChangeManager.m */; };
+		804478282061F328007185EF /* CJLocationChangeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 804478232061F328007185EF /* CJLocationChangeModel.m */; };
 		805598B51FF5D612009DC61C /* ValidateStringViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 805598B31FF5D612009DC61C /* ValidateStringViewController.m */; };
 		805598B61FF5D612009DC61C /* ValidateStringViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 805598B41FF5D612009DC61C /* ValidateStringViewController.xib */; };
 		805598BA1FF5DB0F009DC61C /* ValidateStringTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 805598B81FF5DB0F009DC61C /* ValidateStringTableViewCell.m */; };
@@ -545,8 +547,6 @@
 		789CAE4D1FB612B600AF8CD4 /* CJBadgeImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJBadgeImageView.m; sourceTree = "<group>"; };
 		789CAE4E1FB612B600AF8CD4 /* CJImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJImageView.h; sourceTree = "<group>"; };
 		789CAE4F1FB612B600AF8CD4 /* CJImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJImageView.m; sourceTree = "<group>"; };
-		789CAE511FB612B600AF8CD4 /* MyCountDownTimeManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyCountDownTimeManager.h; sourceTree = "<group>"; };
-		789CAE521FB612B600AF8CD4 /* MyCountDownTimeManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyCountDownTimeManager.m; sourceTree = "<group>"; };
 		789CAE541FB612B600AF8CD4 /* CJMJRefreshComponent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJMJRefreshComponent.h; sourceTree = "<group>"; };
 		789CAE561FB612B600AF8CD4 /* CJMJRefreshNormalFooter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJMJRefreshNormalFooter.h; sourceTree = "<group>"; };
 		789CAE571FB612B600AF8CD4 /* CJMJRefreshNormalFooter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJMJRefreshNormalFooter.m; sourceTree = "<group>"; };
@@ -837,6 +837,12 @@
 		8033240C202C54F8001DACF1 /* LocalWebViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LocalWebViewController.m; sourceTree = "<group>"; };
 		8033240D202C54F8001DACF1 /* LocalWebViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LocalWebViewController.xib; sourceTree = "<group>"; };
 		80332410202C5540001DACF1 /* index.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = index.html; sourceTree = "<group>"; };
+		8044781F2061F328007185EF /* MyCountDownTimeManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyCountDownTimeManager.h; sourceTree = "<group>"; };
+		804478202061F328007185EF /* MyCountDownTimeManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyCountDownTimeManager.m; sourceTree = "<group>"; };
+		804478222061F328007185EF /* CJLocationChangeManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJLocationChangeManager.m; sourceTree = "<group>"; };
+		804478232061F328007185EF /* CJLocationChangeModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJLocationChangeModel.m; sourceTree = "<group>"; };
+		804478242061F328007185EF /* CJLocationChangeManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJLocationChangeManager.h; sourceTree = "<group>"; };
+		804478252061F328007185EF /* CJLocationChangeModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJLocationChangeModel.h; sourceTree = "<group>"; };
 		805598B21FF5D612009DC61C /* ValidateStringViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ValidateStringViewController.h; sourceTree = "<group>"; };
 		805598B31FF5D612009DC61C /* ValidateStringViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ValidateStringViewController.m; sourceTree = "<group>"; };
 		805598B41FF5D612009DC61C /* ValidateStringViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ValidateStringViewController.xib; sourceTree = "<group>"; };
@@ -1346,7 +1352,6 @@
 			children = (
 				789CAE101FB612B600AF8CD4 /* CJBaseScrollView */,
 				789CAE4B1FB612B600AF8CD4 /* CJImageView */,
-				789CAE501FB612B600AF8CD4 /* CJManager */,
 				789CAE531FB612B600AF8CD4 /* CJMJRefreshComponent */,
 				789CAE5C1FB612B600AF8CD4 /* CJRefreshView */,
 				789CAE6A1FB612B600AF8CD4 /* CJScrollView */,
@@ -1513,15 +1518,6 @@
 				789CAE4F1FB612B600AF8CD4 /* CJImageView.m */,
 			);
 			path = CJImageView;
-			sourceTree = "<group>";
-		};
-		789CAE501FB612B600AF8CD4 /* CJManager */ = {
-			isa = PBXGroup;
-			children = (
-				789CAE511FB612B600AF8CD4 /* MyCountDownTimeManager.h */,
-				789CAE521FB612B600AF8CD4 /* MyCountDownTimeManager.m */,
-			);
-			path = CJManager;
 			sourceTree = "<group>";
 		};
 		789CAE531FB612B600AF8CD4 /* CJMJRefreshComponent */ = {
@@ -2269,6 +2265,35 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
+		8044781D2061F328007185EF /* CJManager */ = {
+			isa = PBXGroup;
+			children = (
+				8044781E2061F328007185EF /* MyCountDownTimeManager */,
+				804478212061F328007185EF /* CJLocationChangeManager */,
+			);
+			path = CJManager;
+			sourceTree = "<group>";
+		};
+		8044781E2061F328007185EF /* MyCountDownTimeManager */ = {
+			isa = PBXGroup;
+			children = (
+				8044781F2061F328007185EF /* MyCountDownTimeManager.h */,
+				804478202061F328007185EF /* MyCountDownTimeManager.m */,
+			);
+			path = MyCountDownTimeManager;
+			sourceTree = "<group>";
+		};
+		804478212061F328007185EF /* CJLocationChangeManager */ = {
+			isa = PBXGroup;
+			children = (
+				804478242061F328007185EF /* CJLocationChangeManager.h */,
+				804478222061F328007185EF /* CJLocationChangeManager.m */,
+				804478252061F328007185EF /* CJLocationChangeModel.h */,
+				804478232061F328007185EF /* CJLocationChangeModel.m */,
+			);
+			path = CJLocationChangeManager;
+			sourceTree = "<group>";
+		};
 		8056F5A9203E6FA30074D90F /* NSOperationQueueUtil */ = {
 			isa = PBXGroup;
 			children = (
@@ -2670,6 +2695,7 @@
 		80FF91021FC5668700E437CF /* CJBaseUtil */ = {
 			isa = PBXGroup;
 			children = (
+				8044781D2061F328007185EF /* CJManager */,
 				8056F5A9203E6FA30074D90F /* NSOperationQueueUtil */,
 				800E07D22016CC2E00799B78 /* CJKeyboardUtil */,
 				80FF912E1FC5668700E437CF /* CJApp */,
@@ -3385,6 +3411,7 @@
 				789CAF1E1FB612B700AF8CD4 /* CJCollectionViewHeaderFooterView.m in Sources */,
 				789CAF7E1FB612B700AF8CD4 /* CJUploadImageCollectionView+Tap.m in Sources */,
 				789CAF6C1FB612B700AF8CD4 /* CJDefaultToolbar.m in Sources */,
+				804478272061F328007185EF /* CJLocationChangeManager.m in Sources */,
 				80FF91491FC5668700E437CF /* NSObject+SearchProperty.m in Sources */,
 				80FF909C1FC5649F00E437CF /* NestedXibView.m in Sources */,
 				789CAF4D1FB612B700AF8CD4 /* CJSwitchSliderStatusModel.m in Sources */,
@@ -3412,13 +3439,13 @@
 				80FF91361FC5668700E437CF /* NSJSONSerialization+CJCategory.m in Sources */,
 				789CAF261FB612B700AF8CD4 /* CJSingleTableViewCellDataSource2.m in Sources */,
 				800E07E42016CCF500799B78 /* DeviceInfoViewController.m in Sources */,
+				804478282061F328007185EF /* CJLocationChangeModel.m in Sources */,
 				789CAF461FB612B700AF8CD4 /* CJBaseUISlider.m in Sources */,
 				789CAF201FB612B700AF8CD4 /* CJLineCell.m in Sources */,
 				80FF91341FC5668700E437CF /* NSDictionary+CJConsoleLog.m in Sources */,
 				789CAF211FB612B700AF8CD4 /* CJOpenCollectionView.m in Sources */,
 				789CAF721FB612B700AF8CD4 /* UIView+CJGestureRecognizer.m in Sources */,
 				789CAF1A1FB612B700AF8CD4 /* CJFullBottomCollectionViewCell.m in Sources */,
-				789CAF351FB612B700AF8CD4 /* MyCountDownTimeManager.m in Sources */,
 				787FDB5820500B01008A46E3 /* TextFieldViewController.m in Sources */,
 				80FF914B1FC5668700E437CF /* CJDataUtil+NormalSearch.m in Sources */,
 				787FDB9820500B5C008A46E3 /* ShimmeringSwitchSlider.m in Sources */,
@@ -3455,6 +3482,7 @@
 				789CAF2B1FB612B700AF8CD4 /* CJSubTitleTabelViewCell.m in Sources */,
 				789CAF6F1FB612B700AF8CD4 /* UIView+CJDragAction.m in Sources */,
 				789CAF341FB612B700AF8CD4 /* CJImageView.m in Sources */,
+				804478262061F328007185EF /* MyCountDownTimeManager.m in Sources */,
 				80FF90961FC5649F00E437CF /* TableViewHeader.m in Sources */,
 				80FF908B1FC5649F00E437CF /* TableViewController.m in Sources */,
 				80FF91A01FC5682B00E437CF /* ProcessLineViewController.m in Sources */,

@@ -194,12 +194,5 @@ Pod::Spec.new do |s|
   end
 
 
-  s.subspec 'CJManager' do |ss|
-    ss.source_files = "CJBaseUIKit/CJManager/**/*.{h,m}"
-    #ss.resources = "CJBaseUIKit/CJManager/**/*.{png,xib}"
-  end
-
-
-
 
 end

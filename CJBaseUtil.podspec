@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "CJBaseUtil"
-  s.version      = "0.2.2"
+  s.version      = "0.2.3"
   s.summary      = "自定义的基础工具类"
   s.homepage     = "https://github.com/dvlproad/CJUIKit"
   s.license      = "MIT"
@@ -14,6 +14,7 @@ Pod::Spec.new do |s|
                   5、CJWebUtil：Web工具
                   6、CJDevice：设备信息工具
                   7、CJApp：App信息工具
+                  8、CJManager：其他各种工具类
 
                    A longer description of CJBaseUtil in Markdown format.
 
@@ -27,7 +28,7 @@ Pod::Spec.new do |s|
 
   s.platform     = :ios, "7.0"
 
-  s.source       = { :git => "https://github.com/dvlproad/CJUIKit.git", :tag => "CJBaseUtil_0.2.2" }
+  s.source       = { :git => "https://github.com/dvlproad/CJUIKit.git", :tag => "CJBaseUtil_0.2.3" }
   # s.source_files  = "CJBaseUtil/*.{h,m}"
   # s.resources = "CJBaseUtil/**/*.{png}"
   s.frameworks = 'UIKit'
@@ -79,6 +80,22 @@ Pod::Spec.new do |s|
   s.subspec 'CJWebUtil' do |ss|
     ss.source_files = "CJBaseUtil/CJWebUtil/**/*.{h,m}"
     ss.frameworks = 'WebKit'
+  end
+
+
+  s.subspec 'CJManager' do |ss|
+    # 位置变化
+    ss.subspec 'CJLocationChangeManager' do |sss|
+      sss.source_files = "CJBaseUtil/CJManager/CJLocationChangeManager/**/*.{h,m}"
+      sss.dependency "CJBaseUtil/CJDateUtil"
+    end
+
+    # 倒计时
+    ss.subspec 'MyCountDownTimeManager' do |sss|
+      sss.source_files = "CJBaseUtil/CJManager/MyCountDownTimeManager/**/*.{h,m}"
+      #sss.resources = "CJBaseUtil/CJManager/**/*.{png,xib}"
+    end
+
   end
 
 end
