@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "CJBaseUtil"
-  s.version      = "0.2.3"
+  s.version      = "0.2.4"
   s.summary      = "自定义的基础工具类"
   s.homepage     = "https://github.com/dvlproad/CJUIKit"
   s.license      = "MIT"
@@ -28,7 +28,7 @@ Pod::Spec.new do |s|
 
   s.platform     = :ios, "7.0"
 
-  s.source       = { :git => "https://github.com/dvlproad/CJUIKit.git", :tag => "CJBaseUtil_0.2.3" }
+  s.source       = { :git => "https://github.com/dvlproad/CJUIKit.git", :tag => "CJBaseUtil_0.2.4" }
   # s.source_files  = "CJBaseUtil/*.{h,m}"
   # s.resources = "CJBaseUtil/**/*.{png}"
   s.frameworks = 'UIKit'
@@ -84,6 +84,12 @@ Pod::Spec.new do |s|
 
 
   s.subspec 'CJManager' do |ss|
+  	# AppDelegate瘦身
+    ss.subspec 'CJModuleManager' do |sss|
+      sss.source_files = "CJBaseUtil/CJManager/CJModuleManager/**/*.{h,m}"
+      #sss.resources = "CJBaseUtil/CJManager/**/*.{png,xib}"
+    end
+
     # 位置变化
     ss.subspec 'CJLocationChangeManager' do |sss|
       sss.source_files = "CJBaseUtil/CJManager/CJLocationChangeManager/**/*.{h,m}"

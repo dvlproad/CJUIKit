@@ -172,6 +172,7 @@
 		78E269BE1ECC5E1A007D3686 /* bgCar@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 78E269BB1ECC5E1A007D3686 /* bgCar@2x.jpg */; };
 		78E269BF1ECC5E1A007D3686 /* bgSky@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 78E269BC1ECC5E1A007D3686 /* bgSky@2x.jpg */; };
 		78E269C01ECC5E1A007D3686 /* header@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 78E269BD1ECC5E1A007D3686 /* header@2x.jpg */; };
+		7EA576B620691B5A00726CCF /* CJModuleManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EA576B520691B5A00726CCF /* CJModuleManager.m */; };
 		8000B5C61FCFEE3A00AE3C78 /* UITextField+CJSelectedTextRange.m in Sources */ = {isa = PBXBuildFile; fileRef = 8000B5C51FCFEE3A00AE3C78 /* UITextField+CJSelectedTextRange.m */; };
 		8000B5C91FD0021D00AE3C78 /* CJExtraTextTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 8000B5C81FD0021D00AE3C78 /* CJExtraTextTextField.m */; };
 		800E07D52016CC2F00799B78 /* CJKeyboardUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 800E07D32016CC2E00799B78 /* CJKeyboardUtil.m */; };
@@ -724,6 +725,8 @@
 		78E269BB1ECC5E1A007D3686 /* bgCar@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "bgCar@2x.jpg"; sourceTree = "<group>"; };
 		78E269BC1ECC5E1A007D3686 /* bgSky@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "bgSky@2x.jpg"; sourceTree = "<group>"; };
 		78E269BD1ECC5E1A007D3686 /* header@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "header@2x.jpg"; sourceTree = "<group>"; };
+		7EA576B420691B5A00726CCF /* CJModuleManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJModuleManager.h; sourceTree = "<group>"; };
+		7EA576B520691B5A00726CCF /* CJModuleManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJModuleManager.m; sourceTree = "<group>"; };
 		8000B5C41FCFEE3A00AE3C78 /* UITextField+CJSelectedTextRange.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UITextField+CJSelectedTextRange.h"; sourceTree = "<group>"; };
 		8000B5C51FCFEE3A00AE3C78 /* UITextField+CJSelectedTextRange.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UITextField+CJSelectedTextRange.m"; sourceTree = "<group>"; };
 		8000B5C71FD0021D00AE3C78 /* CJExtraTextTextField.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CJExtraTextTextField.h; sourceTree = "<group>"; };
@@ -2047,6 +2050,15 @@
 			path = ResponseModels;
 			sourceTree = "<group>";
 		};
+		7EA576B320691B5A00726CCF /* CJModuleManager */ = {
+			isa = PBXGroup;
+			children = (
+				7EA576B420691B5A00726CCF /* CJModuleManager.h */,
+				7EA576B520691B5A00726CCF /* CJModuleManager.m */,
+			);
+			path = CJModuleManager;
+			sourceTree = "<group>";
+		};
 		800E07D22016CC2E00799B78 /* CJKeyboardUtil */ = {
 			isa = PBXGroup;
 			children = (
@@ -2272,6 +2284,7 @@
 		8044781D2061F328007185EF /* CJManager */ = {
 			isa = PBXGroup;
 			children = (
+				7EA576B320691B5A00726CCF /* CJModuleManager */,
 				8044781E2061F328007185EF /* MyCountDownTimeManager */,
 				804478212061F328007185EF /* CJLocationChangeManager */,
 			);
@@ -3453,6 +3466,7 @@
 				804478272061F328007185EF /* CJLocationChangeManager.m in Sources */,
 				80FF91491FC5668700E437CF /* NSObject+SearchProperty.m in Sources */,
 				80FF909C1FC5649F00E437CF /* NestedXibView.m in Sources */,
+				7EA576B620691B5A00726CCF /* CJModuleManager.m in Sources */,
 				789CAF4D1FB612B700AF8CD4 /* CJSwitchSliderStatusModel.m in Sources */,
 				789CAF4C1FB612B700AF8CD4 /* CJSwitchSlider.m in Sources */,
 				80FF91381FC5668700E437CF /* NSString+CJValidate.m in Sources */,
