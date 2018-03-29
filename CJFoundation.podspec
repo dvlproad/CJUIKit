@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "CJFoundation"
-  s.version      = "0.1.0"
+  s.version      = "0.1.1"
   s.summary      = "系统Foundation的扩展"
   s.homepage     = "https://github.com/dvlproad/CJUIKit"
   s.license      = "MIT"
@@ -9,7 +9,7 @@ Pod::Spec.new do |s|
 
   s.platform     = :ios, "7.0"
 
-  s.source       = { :git => "https://github.com/dvlproad/CJUIKit.git", :tag => "CJFoundation_0.1.0" }
+  s.source       = { :git => "https://github.com/dvlproad/CJUIKit.git", :tag => "CJFoundation_0.1.1" }
   # s.source_files  = "CJFoundation/**/*.{h,m}"
   # s.resources     = "CJFoundation/**/*.{png,xib}"
   s.frameworks = 'UIKit'
