@@ -279,6 +279,9 @@
 		80CC7F8D200F7EBE0017878A /* OpenTableViewController2.m in Sources */ = {isa = PBXBuildFile; fileRef = 80CC7F8B200F7EBD0017878A /* OpenTableViewController2.m */; };
 		80CC7F8E200F7EBE0017878A /* OpenTableViewController2.xib in Resources */ = {isa = PBXBuildFile; fileRef = 80CC7F8C200F7EBE0017878A /* OpenTableViewController2.xib */; };
 		80EDF9611FFE29560057B5E9 /* UIButton+CJFixMultiClick.m in Sources */ = {isa = PBXBuildFile; fileRef = 80EDF9601FFE29560057B5E9 /* UIButton+CJFixMultiClick.m */; };
+		80F9CFD6206C8287003B41D4 /* NSString+CJAccuracy.m in Sources */ = {isa = PBXBuildFile; fileRef = 80F9CFD5206C8287003B41D4 /* NSString+CJAccuracy.m */; };
+		80F9CFDB206CF84D003B41D4 /* AccuracyStringViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80F9CFD9206CF84D003B41D4 /* AccuracyStringViewController.m */; };
+		80F9CFDC206CF84D003B41D4 /* AccuracyStringViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 80F9CFDA206CF84D003B41D4 /* AccuracyStringViewController.xib */; };
 		80FF90291FC5649E00E437CF /* ThirdPartyHomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 80FF8F0C1FC5649E00E437CF /* ThirdPartyHomeViewController.xib */; };
 		80FF902A1FC5649E00E437CF /* ThirdPartyHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80FF8F0E1FC5649E00E437CF /* ThirdPartyHomeViewController.m */; };
 		80FF902B1FC5649E00E437CF /* MJExtensionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80FF8F101FC5649E00E437CF /* MJExtensionViewController.m */; };
@@ -877,6 +880,11 @@
 		80CC7F8C200F7EBE0017878A /* OpenTableViewController2.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OpenTableViewController2.xib; sourceTree = "<group>"; };
 		80EDF95F1FFE29560057B5E9 /* UIButton+CJFixMultiClick.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIButton+CJFixMultiClick.h"; sourceTree = "<group>"; };
 		80EDF9601FFE29560057B5E9 /* UIButton+CJFixMultiClick.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIButton+CJFixMultiClick.m"; sourceTree = "<group>"; };
+		80F9CFD4206C8287003B41D4 /* NSString+CJAccuracy.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+CJAccuracy.h"; sourceTree = "<group>"; };
+		80F9CFD5206C8287003B41D4 /* NSString+CJAccuracy.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+CJAccuracy.m"; sourceTree = "<group>"; };
+		80F9CFD8206CF84D003B41D4 /* AccuracyStringViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AccuracyStringViewController.h; sourceTree = "<group>"; };
+		80F9CFD9206CF84D003B41D4 /* AccuracyStringViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AccuracyStringViewController.m; sourceTree = "<group>"; };
+		80F9CFDA206CF84D003B41D4 /* AccuracyStringViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AccuracyStringViewController.xib; sourceTree = "<group>"; };
 		80FF8F0C1FC5649E00E437CF /* ThirdPartyHomeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ThirdPartyHomeViewController.xib; sourceTree = "<group>"; };
 		80FF8F0D1FC5649E00E437CF /* ThirdPartyHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThirdPartyHomeViewController.h; sourceTree = "<group>"; };
 		80FF8F0E1FC5649E00E437CF /* ThirdPartyHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThirdPartyHomeViewController.m; sourceTree = "<group>"; };
@@ -2722,6 +2730,8 @@
 				80FF90E91FC5668600E437CF /* NSString+CJTextSize.m */,
 				80FF90F11FC5668600E437CF /* NSString+CJValidate.h */,
 				80FF90E81FC5668600E437CF /* NSString+CJValidate.m */,
+				80F9CFD4206C8287003B41D4 /* NSString+CJAccuracy.h */,
+				80F9CFD5206C8287003B41D4 /* NSString+CJAccuracy.m */,
 			);
 			path = NSString;
 			sourceTree = "<group>";
@@ -2894,6 +2904,9 @@
 				805598B71FF5DB0F009DC61C /* ValidateStringTableViewCell.h */,
 				805598B81FF5DB0F009DC61C /* ValidateStringTableViewCell.m */,
 				805598B91FF5DB0F009DC61C /* ValidateStringTableViewCell.xib */,
+				80F9CFD8206CF84D003B41D4 /* AccuracyStringViewController.h */,
+				80F9CFD9206CF84D003B41D4 /* AccuracyStringViewController.m */,
+				80F9CFDA206CF84D003B41D4 /* AccuracyStringViewController.xib */,
 			);
 			path = NSString;
 			sourceTree = "<group>";
@@ -3163,6 +3176,7 @@
 				8033239D20299AD7001DACF1 /* MemoryADResult02.jpg in Resources */,
 				7840FB281EB09E0700B553F7 /* bg@2x.jpg in Resources */,
 				80FF90951FC5649F00E437CF /* SHeaderHome2.xib in Resources */,
+				80F9CFDC206CF84D003B41D4 /* AccuracyStringViewController.xib in Resources */,
 				78E269BE1ECC5E1A007D3686 /* bgCar@2x.jpg in Resources */,
 				807903171FB413D60082F05C /* arrow_R_white@2x.png in Resources */,
 				789CAF521FB612B700AF8CD4 /* CJToast_error@2x.png in Resources */,
@@ -3631,6 +3645,7 @@
 				80FF90921FC5649F00E437CF /* CJSubTitleTabelViewCell+ConfigureForDataModel.m in Sources */,
 				803323B620299AD7001DACF1 /* MyEqualCellSizeCollectionViewController.m in Sources */,
 				800E07D52016CC2F00799B78 /* CJKeyboardUtil.m in Sources */,
+				80F9CFD6206C8287003B41D4 /* NSString+CJAccuracy.m in Sources */,
 				80FF91C51FC581DD00E437CF /* UtilHomeViewController.m in Sources */,
 				787FDB5A20500B01008A46E3 /* ImageViewController.m in Sources */,
 				80FF91351FC5668700E437CF /* NSArray+CJConsoleLog.m in Sources */,
@@ -3645,6 +3660,7 @@
 				789CAF391FB612B700AF8CD4 /* CJRefreshBaseView.m in Sources */,
 				80FF914E1FC5668700E437CF /* CJDataUtil+SortCategory.m in Sources */,
 				80FF91531FC5668700E437CF /* PrivateSetting.m in Sources */,
+				80F9CFDB206CF84D003B41D4 /* AccuracyStringViewController.m in Sources */,
 				789CAF3E1FB612B700AF8CD4 /* CJScaleHeadView.m in Sources */,
 				78B7402C1FB6C04600443D87 /* IjinbuHTTPSessionManager.m in Sources */,
 				789CAF451FB612B700AF8CD4 /* CJAdsorbModel.m in Sources */,

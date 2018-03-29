@@ -14,5 +14,6 @@
 #import "NSString+CJEncoding.h"
 #import "NSString+CJEncryption.h"
 #import "NSString+CJValidate.h"
+#import "NSString+CJAccuracy.h"
 
 #endif /* NSString_CJCategory_h */

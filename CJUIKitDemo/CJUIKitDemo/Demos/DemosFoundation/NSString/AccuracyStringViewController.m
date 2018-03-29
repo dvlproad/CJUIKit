@@ -1,14 +1,15 @@
 //
-//  ValidateStringViewController.m
+//  AccuracyStringViewController.m
 //  CJUIKitDemo
 //
 //  Created by ciyouzen on 2017/12/29.
 //  Copyright © 2017年 dvlproad. All rights reserved.
 //
 
-#import "ValidateStringViewController.h"
+#import "AccuracyStringViewController.h"
+
 #import "ValidateStringTableViewCell.h"
-#import "NSString+CJValidate.h"
+#import "NSString+CJAccuracy.h"
 
 typedef NS_ENUM(NSUInteger, ValidateStringType) {
     ValidateStringTypeNone = 0,     /**< 不验证 */
@@ -22,11 +23,11 @@ typedef NS_ENUM(NSUInteger, ValidateStringType) {
     ValidateStringTypeIdentityCard, /**< 身份证号 */
 };
 
-@interface ValidateStringViewController () <UITableViewDataSource, UITableViewDelegate>
+@interface AccuracyStringViewController () <UITableViewDataSource, UITableViewDelegate>
 
 @end
 
-@implementation ValidateStringViewController
+@implementation AccuracyStringViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -36,8 +37,11 @@ typedef NS_ENUM(NSUInteger, ValidateStringType) {
     [self.tableView registerNib:[UINib nibWithNibName:@"ValidateStringTableViewCell" bundle:nil] forCellReuseIdentifier:@"ValidateStringTableViewCell"];
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
-
-    self.dataModels = @[@"验证手机号"];
+    
+    self.dataModels = @[@"0.090222120000",
+                        @"0.0900",
+                        @"10.00",
+                        ];
     
     self.tableView.keyboardDismissMode = UIScrollViewKeyboardDismissModeOnDrag;
 }
@@ -59,6 +63,7 @@ typedef NS_ENUM(NSUInteger, ValidateStringType) {
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
         
         cell.textField.placeholder = @"请输入要验证的字符串";
+        cell.textField.text = [self.dataModels objectAtIndex:indexPath.row];
         cell.button.tag = 1000 + indexPath.row;
         [cell.button addTarget:self action:@selector(validateStringEvent:) forControlEvents:UIControlEventTouchUpInside];
         
@@ -82,12 +87,12 @@ typedef NS_ENUM(NSUInteger, ValidateStringType) {
 
 #pragma mark - Event
 - (void)validateStringEvent:(UIButton *)button {
-    //NSInteger index = button.tag - 1000;
-    //NSIndexPath *indexPath = [NSIndexPath indexPathForRow:index inSection:0];
-    //NSString *originNumberString = [self.dataModels objectAtIndex:index];
-    NSLog(@"validateStringEvent");
+    NSInteger index = button.tag - 1000;
+    NSString *originNumberString = [self.dataModels objectAtIndex:index];
+    NSString *lastNumberString = [originNumberString removeEndZero];
+    
+    NSLog(@"lastNumberString = %@", lastNumberString);
 }
-
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
