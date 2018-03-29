@@ -282,6 +282,7 @@
 		80F9CFD6206C8287003B41D4 /* NSString+CJAccuracy.m in Sources */ = {isa = PBXBuildFile; fileRef = 80F9CFD5206C8287003B41D4 /* NSString+CJAccuracy.m */; };
 		80F9CFDB206CF84D003B41D4 /* AccuracyStringViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80F9CFD9206CF84D003B41D4 /* AccuracyStringViewController.m */; };
 		80F9CFDC206CF84D003B41D4 /* AccuracyStringViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 80F9CFDA206CF84D003B41D4 /* AccuracyStringViewController.xib */; };
+		80F9CFE0206CFDFB003B41D4 /* CJPinyinHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 80F9CFDE206CFDFB003B41D4 /* CJPinyinHelper.m */; };
 		80FF90291FC5649E00E437CF /* ThirdPartyHomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 80FF8F0C1FC5649E00E437CF /* ThirdPartyHomeViewController.xib */; };
 		80FF902A1FC5649E00E437CF /* ThirdPartyHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80FF8F0E1FC5649E00E437CF /* ThirdPartyHomeViewController.m */; };
 		80FF902B1FC5649E00E437CF /* MJExtensionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80FF8F101FC5649E00E437CF /* MJExtensionViewController.m */; };
@@ -408,7 +409,6 @@
 		80FF91B21FC580AF00E437CF /* FoundatioHomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 80FF91B11FC580AE00E437CF /* FoundatioHomeViewController.xib */; };
 		80FF91C01FC581DD00E437CF /* UtilHomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 80FF91B41FC581DD00E437CF /* UtilHomeViewController.xib */; };
 		80FF91C51FC581DD00E437CF /* UtilHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80FF91BF1FC581DD00E437CF /* UtilHomeViewController.m */; };
-		80FF91CD1FC582D200E437CF /* CJPinyinHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 80FF91CB1FC582D100E437CF /* CJPinyinHelper.m */; };
 		80FF91CF1FC586DA00E437CF /* plus@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 80FF91CE1FC586D900E437CF /* plus@2x.png */; };
 		80FF91E81FC6739D00E437CF /* CJDateModelUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 80FF91DE1FC6739C00E437CF /* CJDateModelUtil.m */; };
 		80FF91E91FC6739D00E437CF /* CJDateModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 80FF91E11FC6739C00E437CF /* CJDateModel.m */; };
@@ -885,6 +885,8 @@
 		80F9CFD8206CF84D003B41D4 /* AccuracyStringViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AccuracyStringViewController.h; sourceTree = "<group>"; };
 		80F9CFD9206CF84D003B41D4 /* AccuracyStringViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AccuracyStringViewController.m; sourceTree = "<group>"; };
 		80F9CFDA206CF84D003B41D4 /* AccuracyStringViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AccuracyStringViewController.xib; sourceTree = "<group>"; };
+		80F9CFDE206CFDFB003B41D4 /* CJPinyinHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJPinyinHelper.m; sourceTree = "<group>"; };
+		80F9CFDF206CFDFB003B41D4 /* CJPinyinHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJPinyinHelper.h; sourceTree = "<group>"; };
 		80FF8F0C1FC5649E00E437CF /* ThirdPartyHomeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ThirdPartyHomeViewController.xib; sourceTree = "<group>"; };
 		80FF8F0D1FC5649E00E437CF /* ThirdPartyHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThirdPartyHomeViewController.h; sourceTree = "<group>"; };
 		80FF8F0E1FC5649E00E437CF /* ThirdPartyHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThirdPartyHomeViewController.m; sourceTree = "<group>"; };
@@ -1094,8 +1096,6 @@
 		80FF91B41FC581DD00E437CF /* UtilHomeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UtilHomeViewController.xib; sourceTree = "<group>"; };
 		80FF91BE1FC581DD00E437CF /* UtilHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UtilHomeViewController.h; sourceTree = "<group>"; };
 		80FF91BF1FC581DD00E437CF /* UtilHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UtilHomeViewController.m; sourceTree = "<group>"; };
-		80FF91CB1FC582D100E437CF /* CJPinyinHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJPinyinHelper.m; sourceTree = "<group>"; };
-		80FF91CC1FC582D100E437CF /* CJPinyinHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJPinyinHelper.h; sourceTree = "<group>"; };
 		80FF91CE1FC586D900E437CF /* plus@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "plus@2x.png"; sourceTree = "<group>"; };
 		80FF91DE1FC6739C00E437CF /* CJDateModelUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJDateModelUtil.m; sourceTree = "<group>"; };
 		80FF91DF1FC6739C00E437CF /* CJDateModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJDateModel.h; sourceTree = "<group>"; };
@@ -2370,6 +2370,15 @@
 			path = Utils;
 			sourceTree = "<group>";
 		};
+		80F9CFDD206CFDFB003B41D4 /* CJPinyinHelper */ = {
+			isa = PBXGroup;
+			children = (
+				80F9CFDF206CFDFB003B41D4 /* CJPinyinHelper.h */,
+				80F9CFDE206CFDFB003B41D4 /* CJPinyinHelper.m */,
+			);
+			path = CJPinyinHelper;
+			sourceTree = "<group>";
+		};
 		80FF8F0A1FC5649E00E437CF /* Demos */ = {
 			isa = PBXGroup;
 			children = (
@@ -2739,6 +2748,7 @@
 		80FF91021FC5668700E437CF /* CJBaseUtil */ = {
 			isa = PBXGroup;
 			children = (
+				80F9CFDD206CFDFB003B41D4 /* CJPinyinHelper */,
 				8044781D2061F328007185EF /* CJManager */,
 				8056F5A9203E6FA30074D90F /* NSOperationQueueUtil */,
 				800E07D22016CC2E00799B78 /* CJKeyboardUtil */,
@@ -2970,21 +2980,11 @@
 				800E07D72016CCF500799B78 /* DataUtilDemo */,
 				800E07DB2016CCF500799B78 /* DeviceInfoDemo */,
 				800E07D62016CCF500799B78 /* KeyboardUtilDemo */,
-				80FF91CA1FC582D100E437CF /* Util */,
 				80FF91BE1FC581DD00E437CF /* UtilHomeViewController.h */,
 				80FF91BF1FC581DD00E437CF /* UtilHomeViewController.m */,
 				80FF91B41FC581DD00E437CF /* UtilHomeViewController.xib */,
 			);
 			path = DemosUtil;
-			sourceTree = "<group>";
-		};
-		80FF91CA1FC582D100E437CF /* Util */ = {
-			isa = PBXGroup;
-			children = (
-				80FF91CC1FC582D100E437CF /* CJPinyinHelper.h */,
-				80FF91CB1FC582D100E437CF /* CJPinyinHelper.m */,
-			);
-			path = Util;
 			sourceTree = "<group>";
 		};
 		80FF91DC1FC6739C00E437CF /* CJDateUtil */ = {
@@ -3479,6 +3479,7 @@
 				789CAF6C1FB612B700AF8CD4 /* CJDefaultToolbar.m in Sources */,
 				804478272061F328007185EF /* CJLocationChangeManager.m in Sources */,
 				80FF91491FC5668700E437CF /* NSObject+SearchProperty.m in Sources */,
+				80F9CFE0206CFDFB003B41D4 /* CJPinyinHelper.m in Sources */,
 				80FF909C1FC5649F00E437CF /* NestedXibView.m in Sources */,
 				7EA576B620691B5A00726CCF /* CJModuleManager.m in Sources */,
 				789CAF4D1FB612B700AF8CD4 /* CJSwitchSliderStatusModel.m in Sources */,
@@ -3625,7 +3626,6 @@
 				789CAF3F1FB612B700AF8CD4 /* LEOHeaderView.m in Sources */,
 				80FF90801FC5649F00E437CF /* ReuseDataSourceTableViewController.m in Sources */,
 				808BF3242019C3E900511F7C /* YunUncaughtExceptionHandler.m in Sources */,
-				80FF91CD1FC582D200E437CF /* CJPinyinHelper.m in Sources */,
 				805598BA1FF5DB0F009DC61C /* ValidateStringTableViewCell.m in Sources */,
 				787FDB8520500B5C008A46E3 /* SwitchSliderViewController.m in Sources */,
 				789CAF441FB612B700AF8CD4 /* CJSearchBar.m in Sources */,
