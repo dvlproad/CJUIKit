@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "CJBaseUtil"
-  s.version      = "0.2.5"
+  s.version      = "0.2.6"
   s.summary      = "自定义的基础工具类"
   s.homepage     = "https://github.com/dvlproad/CJUIKit"
   s.license      = "MIT"
@@ -29,7 +29,7 @@ Pod::Spec.new do |s|
 
   s.platform     = :ios, "7.0"
 
-  s.source       = { :git => "https://github.com/dvlproad/CJUIKit.git", :tag => "CJBaseUtil_0.2.5" }
+  s.source       = { :git => "https://github.com/dvlproad/CJUIKit.git", :tag => "CJBaseUtil_0.2.6" }
   # s.source_files  = "CJBaseUtil/*.{h,m}"
   # s.resources = "CJBaseUtil/**/*.{png}"
   s.frameworks = 'UIKit'
@@ -98,8 +98,8 @@ Pod::Spec.new do |s|
     end
 
     # 倒计时
-    ss.subspec 'MyCountDownTimeManager' do |sss|
-      sss.source_files = "CJBaseUtil/CJManager/MyCountDownTimeManager/**/*.{h,m}"
+    ss.subspec 'CJTimeManager' do |sss|
+      sss.source_files = "CJBaseUtil/CJManager/CJTimeManager/**/*.{h,m}"
       #sss.resources = "CJBaseUtil/CJManager/**/*.{png,xib}"
     end
 

@@ -255,7 +255,6 @@
 		8033240E202C54F8001DACF1 /* LocalWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8033240C202C54F8001DACF1 /* LocalWebViewController.m */; };
 		8033240F202C54F8001DACF1 /* LocalWebViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8033240D202C54F8001DACF1 /* LocalWebViewController.xib */; };
 		80332411202C5540001DACF1 /* index.html in Resources */ = {isa = PBXBuildFile; fileRef = 80332410202C5540001DACF1 /* index.html */; };
-		804478262061F328007185EF /* MyCountDownTimeManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 804478202061F328007185EF /* MyCountDownTimeManager.m */; };
 		804478272061F328007185EF /* CJLocationChangeManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 804478222061F328007185EF /* CJLocationChangeManager.m */; };
 		804478282061F328007185EF /* CJLocationChangeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 804478232061F328007185EF /* CJLocationChangeModel.m */; };
 		8044787C20622E6A007185EF /* ProgressWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8044787A20622E6A007185EF /* ProgressWebViewController.m */; };
@@ -276,6 +275,8 @@
 		807903181FB413D60082F05C /* arrow_up.png in Resources */ = {isa = PBXBuildFile; fileRef = 8079030F1FB413D60082F05C /* arrow_up.png */; };
 		808BF3242019C3E900511F7C /* YunUncaughtExceptionHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 808BF3222019C3E900511F7C /* YunUncaughtExceptionHandler.m */; };
 		808BF327201A011400511F7C /* UITextField+CJPadding.m in Sources */ = {isa = PBXBuildFile; fileRef = 808BF326201A011400511F7C /* UITextField+CJPadding.m */; };
+		80C199262073981F003EDF4C /* CJTimeManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 80C199242073981F003EDF4C /* CJTimeManager.m */; };
+		80C199272073981F003EDF4C /* CJCountDownTimerModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 80C199252073981F003EDF4C /* CJCountDownTimerModel.m */; };
 		80CC7F8D200F7EBE0017878A /* OpenTableViewController2.m in Sources */ = {isa = PBXBuildFile; fileRef = 80CC7F8B200F7EBD0017878A /* OpenTableViewController2.m */; };
 		80CC7F8E200F7EBE0017878A /* OpenTableViewController2.xib in Resources */ = {isa = PBXBuildFile; fileRef = 80CC7F8C200F7EBE0017878A /* OpenTableViewController2.xib */; };
 		80EDF9611FFE29560057B5E9 /* UIButton+CJFixMultiClick.m in Sources */ = {isa = PBXBuildFile; fileRef = 80EDF9601FFE29560057B5E9 /* UIButton+CJFixMultiClick.m */; };
@@ -844,8 +845,6 @@
 		8033240C202C54F8001DACF1 /* LocalWebViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LocalWebViewController.m; sourceTree = "<group>"; };
 		8033240D202C54F8001DACF1 /* LocalWebViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LocalWebViewController.xib; sourceTree = "<group>"; };
 		80332410202C5540001DACF1 /* index.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = index.html; sourceTree = "<group>"; };
-		8044781F2061F328007185EF /* MyCountDownTimeManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyCountDownTimeManager.h; sourceTree = "<group>"; };
-		804478202061F328007185EF /* MyCountDownTimeManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyCountDownTimeManager.m; sourceTree = "<group>"; };
 		804478222061F328007185EF /* CJLocationChangeManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJLocationChangeManager.m; sourceTree = "<group>"; };
 		804478232061F328007185EF /* CJLocationChangeModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJLocationChangeModel.m; sourceTree = "<group>"; };
 		804478242061F328007185EF /* CJLocationChangeManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJLocationChangeManager.h; sourceTree = "<group>"; };
@@ -875,6 +874,10 @@
 		808BF3232019C3E900511F7C /* YunUncaughtExceptionHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YunUncaughtExceptionHandler.h; sourceTree = "<group>"; };
 		808BF325201A011400511F7C /* UITextField+CJPadding.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UITextField+CJPadding.h"; sourceTree = "<group>"; };
 		808BF326201A011400511F7C /* UITextField+CJPadding.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UITextField+CJPadding.m"; sourceTree = "<group>"; };
+		80C199222073981E003EDF4C /* CJCountDownTimerModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJCountDownTimerModel.h; sourceTree = "<group>"; };
+		80C199232073981E003EDF4C /* CJTimeManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJTimeManager.h; sourceTree = "<group>"; };
+		80C199242073981F003EDF4C /* CJTimeManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJTimeManager.m; sourceTree = "<group>"; };
+		80C199252073981F003EDF4C /* CJCountDownTimerModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJCountDownTimerModel.m; sourceTree = "<group>"; };
 		80CC7F8A200F7EBD0017878A /* OpenTableViewController2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpenTableViewController2.h; sourceTree = "<group>"; };
 		80CC7F8B200F7EBD0017878A /* OpenTableViewController2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OpenTableViewController2.m; sourceTree = "<group>"; };
 		80CC7F8C200F7EBE0017878A /* OpenTableViewController2.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OpenTableViewController2.xib; sourceTree = "<group>"; };
@@ -2292,20 +2295,11 @@
 		8044781D2061F328007185EF /* CJManager */ = {
 			isa = PBXGroup;
 			children = (
+				80C199212073981E003EDF4C /* CJTimeManager */,
 				7EA576B320691B5A00726CCF /* CJModuleManager */,
-				8044781E2061F328007185EF /* MyCountDownTimeManager */,
 				804478212061F328007185EF /* CJLocationChangeManager */,
 			);
 			path = CJManager;
-			sourceTree = "<group>";
-		};
-		8044781E2061F328007185EF /* MyCountDownTimeManager */ = {
-			isa = PBXGroup;
-			children = (
-				8044781F2061F328007185EF /* MyCountDownTimeManager.h */,
-				804478202061F328007185EF /* MyCountDownTimeManager.m */,
-			);
-			path = MyCountDownTimeManager;
 			sourceTree = "<group>";
 		};
 		804478212061F328007185EF /* CJLocationChangeManager */ = {
@@ -2368,6 +2362,17 @@
 				808BF3232019C3E900511F7C /* YunUncaughtExceptionHandler.h */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		80C199212073981E003EDF4C /* CJTimeManager */ = {
+			isa = PBXGroup;
+			children = (
+				80C199232073981E003EDF4C /* CJTimeManager.h */,
+				80C199242073981F003EDF4C /* CJTimeManager.m */,
+				80C199222073981E003EDF4C /* CJCountDownTimerModel.h */,
+				80C199252073981F003EDF4C /* CJCountDownTimerModel.m */,
+			);
+			path = CJTimeManager;
 			sourceTree = "<group>";
 		};
 		80F9CFDD206CFDFB003B41D4 /* CJPinyinHelper */ = {
@@ -3499,6 +3504,7 @@
 				789CAF7C1FB612B700AF8CD4 /* UIWindow+CJSnapshot.m in Sources */,
 				80FF90391FC5649F00E437CF /* ScrollViewController.m in Sources */,
 				8000B5C61FCFEE3A00AE3C78 /* UITextField+CJSelectedTextRange.m in Sources */,
+				80C199262073981F003EDF4C /* CJTimeManager.m in Sources */,
 				80FF91A21FC5682B00E437CF /* PullScaleTopImageViewController.m in Sources */,
 				789CAF1B1FB612B700AF8CD4 /* CJFullCenterCollectionViewCell.m in Sources */,
 				789CAF251FB612B700AF8CD4 /* CJSingleTableViewCellDataSource.m in Sources */,
@@ -3550,7 +3556,6 @@
 				789CAF2B1FB612B700AF8CD4 /* CJSubTitleTabelViewCell.m in Sources */,
 				789CAF6F1FB612B700AF8CD4 /* UIView+CJDragAction.m in Sources */,
 				789CAF341FB612B700AF8CD4 /* CJImageView.m in Sources */,
-				804478262061F328007185EF /* MyCountDownTimeManager.m in Sources */,
 				80FF90961FC5649F00E437CF /* TableViewHeader.m in Sources */,
 				80FF908B1FC5649F00E437CF /* TableViewController.m in Sources */,
 				80FF91A01FC5682B00E437CF /* ProcessLineViewController.m in Sources */,
@@ -3601,6 +3606,7 @@
 				80FF90B01FC5649F00E437CF /* NavigationBarChangeBGViewController.m in Sources */,
 				80FF91EB1FC6739D00E437CF /* CJDateFormatterUtil.m in Sources */,
 				7832810D1F41AA96008267E0 /* ProcessLineView.m in Sources */,
+				80C199272073981F003EDF4C /* CJCountDownTimerModel.m in Sources */,
 				805598B51FF5D612009DC61C /* ValidateStringViewController.m in Sources */,
 				80FF90B81FC5649F00E437CF /* DragViewController.m in Sources */,
 				80FF90481FC5649F00E437CF /* UploadDirectlyImagePickerViewController.m in Sources */,

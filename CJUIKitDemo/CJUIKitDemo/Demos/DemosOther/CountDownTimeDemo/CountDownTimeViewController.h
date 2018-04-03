@@ -7,11 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "MyCountDownTimeManager.h"
+#import "CJTimeManager.h"
 
 @interface CountDownTimeViewController : UIViewController
 
 @property (nonatomic, strong) IBOutlet UIButton *countDownTimeButton1;  /**< 倒计时按钮 */
+
+@property (nonatomic, strong) IBOutlet UILabel *countDownTimeLabel1;  /**< 倒计时按钮 */
+@property (nonatomic, strong) IBOutlet UILabel *countDownTimeLabel2;  /**< 倒计时按钮 */
+
 @property (nonatomic, strong) IBOutlet UIButton *countDownTimeButton2;  /**< 倒计时按钮 */
 
 @end
