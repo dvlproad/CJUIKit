@@ -117,17 +117,7 @@ static CGFloat kPeriodDuration = 5.0f;
         
         NSArray<CJCountDownTimerModel *> *timerModels = @[timerModel1, timerModel2, timerModel3];
         
-//        [[CJTimeManager sharedInstance] createCountDownWithPeriodDuration:kPeriodDuration periodRepeat:NO timeZeroBlock:^NSInteger(void) {
-//            NSInteger remainSecond = timerModel.timeZeroBlock();
-//            return remainSecond;
-//
-//        } timeNoZeroBlock:^(NSInteger remainSecond) {
-//            timerModel.timeNoZeroBlock(remainSecond);
-//        }];
-        
         [[CJTimeManager sharedInstance] createCountDownWithTimerModels:timerModels timeInterval:1];
-        
-        
     }
     
     [[CJTimeManager sharedInstance] beginCountDown];

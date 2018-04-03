@@ -38,7 +38,6 @@
     self.timeInterval = timeInterval;
     
     _timer = [NSTimer scheduledTimerWithTimeInterval:timeInterval target:self selector:@selector(timerEvent) userInfo:nil repeats:YES];
-    
 }
 
 /* 完整的描述请参见文件头部 */

@@ -137,6 +137,7 @@ CGFloat const SDTimeIndicatorMargin = 10.0f;
 {
     _refreshState = refreshState;
     
+    __weak typeof(self)weakSelf = self;
     switch (refreshState) {
             // 进入刷新状态
         case CJRefreshBaseViewStateRefreshing:
@@ -172,7 +173,7 @@ CGFloat const SDTimeIndicatorMargin = 10.0f;
         {
             _textIndicator.text = CJRefreshBaseViewWillRefreshStateText;
             [UIView animateWithDuration:0.5 animations:^{
-                _stateIndicatorView.transform = CGAffineTransformMakeRotation(self.stateIndicatorViewWillRefreshStateTransformAngle);
+                _stateIndicatorView.transform = CGAffineTransformMakeRotation(weakSelf.stateIndicatorViewWillRefreshStateTransformAngle);
             }];
         }
             break;
@@ -180,7 +181,7 @@ CGFloat const SDTimeIndicatorMargin = 10.0f;
         case CJRefreshBaseViewStateNormal:
         {
             [UIView animateWithDuration:0.5 animations:^{
-                _stateIndicatorView.transform = CGAffineTransformMakeRotation(self.stateIndicatorViewNormalTransformAngle);
+                _stateIndicatorView.transform = CGAffineTransformMakeRotation(weakSelf.stateIndicatorViewNormalTransformAngle);
             }];
             _textIndicator.text = self.textForNormalState;
             

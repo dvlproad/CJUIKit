@@ -2952,9 +2952,9 @@
 		80FF91841FC5682A00E437CF /* CountDownTimeDemo */ = {
 			isa = PBXGroup;
 			children = (
+				80FF91871FC5682A00E437CF /* CountDownTimeViewController.h */,
 				80FF91851FC5682A00E437CF /* CountDownTimeViewController.m */,
 				80FF91861FC5682A00E437CF /* CountDownTimeViewController.xib */,
-				80FF91871FC5682A00E437CF /* CountDownTimeViewController.h */,
 			);
 			path = CountDownTimeDemo;
 			sourceTree = "<group>";

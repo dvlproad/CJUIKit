@@ -26,7 +26,7 @@
 
 + (CJTimeManager *)sharedInstance;
 
-@property (nonatomic, strong) NSTimer *timer;
+@property (nonatomic, weak) NSTimer *timer;
 
 
 /**
