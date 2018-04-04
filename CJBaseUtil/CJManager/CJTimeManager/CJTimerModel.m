@@ -1,20 +1,20 @@
 //
-//  CJCountDownTimerModel.m
+//  CJTimerModel.m
 //  CJUIKitDemo
 //
 //  Created by ciyouzen on 2015/09/06.
 //  Copyright © 2015年 dvlproad. All rights reserved.
 //
 
-#import "CJCountDownTimerModel.h"
+#import "CJTimerModel.h"
 
-@interface CJCountDownTimerModel ()
+@interface CJTimerModel ()
 
 @end
 
 
 
-@implementation CJCountDownTimerModel
+@implementation CJTimerModel
 
 - (instancetype)init {
     self = [super init];
@@ -34,8 +34,8 @@
 // */
 //- (instancetype)initWithMaxRepeatCount:(NSInteger)maxRepeatCount
 //                        minResetSecond:(NSInteger)minResetSecond
-//                      resetSecondBlock:(void (^)(CJCountDownTimerModel *timer))resetSecondBlock
-//                     addingSecondBlock:(void (^)(CJCountDownTimerModel *timer))addingSecondBlock
+//                      resetSecondBlock:(void (^)(CJTimerModel *timer))resetSecondBlock
+//                     addingSecondBlock:(void (^)(CJTimerModel *timer))addingSecondBlock
 //{
 //    self = [super init];
 //    if (self) {

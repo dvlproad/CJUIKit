@@ -1,5 +1,5 @@
 //
-//  CJCountDownTimerModel.h
+//  CJTimerModel.h
 //  CJUIKitDemo
 //
 //  Created by ciyouzen on 2015/09/06.
@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface CJCountDownTimerModel : NSObject
+@interface CJTimerModel : NSObject
 
 @property (nonatomic, copy) NSString *timerid;
 
@@ -22,9 +22,9 @@
 @property (nonatomic, assign) NSInteger minResetSecond;
 
 /**< 累积达到秒数的重置操纵条件时，执行的方法 */
-@property (nonatomic, copy) void (^resetSecondBlock)(CJCountDownTimerModel *timer);
+@property (nonatomic, copy) void (^resetSecondBlock)(CJTimerModel *timer);
 
 /**< 累积达到秒数的重置操纵条件时，即秒数在增加时候，执行的方法 */
-@property (nonatomic, copy) void (^addingSecondBlock)(CJCountDownTimerModel *timer);
+@property (nonatomic, copy) void (^addingSecondBlock)(CJTimerModel *timer);
 
 @end

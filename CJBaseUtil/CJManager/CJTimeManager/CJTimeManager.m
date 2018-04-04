@@ -12,7 +12,7 @@
     
 }
 
-@property (nonatomic, strong) NSMutableArray<CJCountDownTimerModel *> *timerModels;
+@property (nonatomic, strong) NSMutableArray<CJTimerModel *> *timerModels;
 @property (nonatomic, assign) NSTimeInterval timeInterval;
 
 @end
@@ -29,7 +29,7 @@
 }
 
 /* 完整的描述请参见文件头部 */
-- (void)createCountDownWithTimerModels:(NSArray<CJCountDownTimerModel *> *)timerModels timeInterval:(NSTimeInterval)timeInterval
+- (void)createCountDownWithTimerModels:(NSArray<CJTimerModel *> *)timerModels timeInterval:(NSTimeInterval)timeInterval
 {
     [self invalidateCountDownWithCompleteBlock:nil]; //防止没取消的时候，一直调用begin,导致开辟很多timer
     
@@ -46,8 +46,8 @@
 }
 
 - (void)timerEvent {
-    NSArray<CJCountDownTimerModel *> *timerModels = self.timerModels;
-    for (CJCountDownTimerModel *timerModel in timerModels) {
+    NSArray<CJTimerModel *> *timerModels = self.timerModels;
+    for (CJTimerModel *timerModel in timerModels) {
         if (timerModel.currentRepeatCount >= timerModel.maxRepeatCount) {
             continue;
         }

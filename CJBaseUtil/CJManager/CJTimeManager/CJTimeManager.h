@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "CJCountDownTimerModel.h"
+#import "CJTimerModel.h"
 
 //typedef NS_ENUM(NSUInteger, MyCountDownTimeZeroAction) {
 //    MyCountDownTimeZeroActionInvalidate,    /**< 销毁(结束定时器) */
@@ -35,7 +35,7 @@
  *  @param timerModels  计时器数组
  *  @param timeInterval 计时器间隔
  */
-- (void)createCountDownWithTimerModels:(NSArray<CJCountDownTimerModel *> *)timerModels timeInterval:(NSTimeInterval)timeInterval;
+- (void)createCountDownWithTimerModels:(NSArray<CJTimerModel *> *)timerModels timeInterval:(NSTimeInterval)timeInterval;
 
 /**
  *  启动计时器
