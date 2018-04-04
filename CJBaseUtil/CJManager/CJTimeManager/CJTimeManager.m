@@ -11,8 +11,7 @@
 @interface CJTimeManager() {
     
 }
-
-@property (nonatomic, strong) NSMutableArray<CJTimerModel *> *timerModels;
+@property (nonatomic, weak) NSTimer *timer;
 @property (nonatomic, assign) NSTimeInterval timeInterval;
 
 @end
@@ -29,19 +28,24 @@
 }
 
 /* 完整的描述请参见文件头部 */
-- (void)createCountDownWithTimerModels:(NSArray<CJTimerModel *> *)timerModels timeInterval:(NSTimeInterval)timeInterval
+- (void)createTimerWithTimeInterval:(NSTimeInterval)timeInterval
 {
-    [self invalidateCountDownWithCompleteBlock:nil]; //防止没取消的时候，一直调用begin,导致开辟很多timer
+    [self invalidateTimerWithCompleteBlock:nil]; //防止没取消的时候，一直调用begin,导致开辟很多timer
     
-    
-    self.timerModels = [NSMutableArray arrayWithArray:timerModels];
     self.timeInterval = timeInterval;
     
-    _timer = [NSTimer scheduledTimerWithTimeInterval:timeInterval target:self selector:@selector(timerEvent) userInfo:nil repeats:YES];
+    NSTimer *timer = [NSTimer timerWithTimeInterval:timeInterval target:self selector:@selector(timerEvent) userInfo:nil repeats:YES];
+    [[NSRunLoop mainRunLoop] addTimer:timer forMode:NSDefaultRunLoopMode];
+    _timer = timer;
 }
 
 /* 完整的描述请参见文件头部 */
-- (void)beginCountDown {
+- (BOOL)isTimerValid {
+    return [_timer isValid];
+}
+
+/* 完整的描述请参见文件头部 */
+- (void)fireTimer {
     [_timer fire];
 }
 
@@ -71,7 +75,7 @@
 }
 
 /* 完整的描述请参见文件头部 */
-- (void)invalidateCountDownWithCompleteBlock:(void(^)(void))completeBlock
+- (void)invalidateTimerWithCompleteBlock:(void(^)(void))completeBlock
 {
     if(!_timer) {
         return;

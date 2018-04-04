@@ -26,25 +26,30 @@
 
 + (CJTimeManager *)sharedInstance;
 
-@property (nonatomic, weak) NSTimer *timer;
-
+@property (nonatomic, strong) NSMutableArray<CJTimerModel *> *timerModels;
 
 /**
  *  创建计时器
  *
- *  @param timerModels  计时器数组
  *  @param timeInterval 计时器间隔
  */
-- (void)createCountDownWithTimerModels:(NSArray<CJTimerModel *> *)timerModels timeInterval:(NSTimeInterval)timeInterval;
+- (void)createTimerWithTimeInterval:(NSTimeInterval)timeInterval;
+
+/**
+ *  计时器是否有效
+ *
+ *  @return 是否有效
+ */
+- (BOOL)isTimerValid;
 
 /**
  *  启动计时器
  */
-- (void)beginCountDown;
+- (void)fireTimer;
 
 /**
  *  销毁/结束定时器（下次使用，需重新create）
  */
-- (void)invalidateCountDownWithCompleteBlock:(void(^)(void))completeBlock;
+- (void)invalidateTimerWithCompleteBlock:(void(^)(void))completeBlock;
 
 @end

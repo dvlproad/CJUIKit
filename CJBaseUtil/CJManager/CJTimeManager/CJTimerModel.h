@@ -10,7 +10,7 @@
 
 @interface CJTimerModel : NSObject
 
-@property (nonatomic, copy) NSString *timerid;
+@property (nonatomic, copy) NSString *timerid;  /**< 备用的属性：用来区分timer */
 
 
 @property (nonatomic, assign) NSInteger currentRepeatCount; /**< 当前已循环的次数 */

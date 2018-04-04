@@ -14,8 +14,9 @@ static CGFloat kPeriodDuration = 5.0f;
     
 }
 @property (nonatomic, strong) NSTimer *timer;
-//@property (nonatomic, assign) NSInteger periodDuration;
 @property (nonatomic, assign) NSInteger remainSecond; /**< 本周期剩余的时间 */
+
+@property (nonatomic, strong) NSMutableArray<CJTimerModel *> *timerModels;
 
 
 @end
@@ -27,9 +28,7 @@ static CGFloat kPeriodDuration = 5.0f;
     [super viewDidDisappear:animated];
     
     //全局定时器的时候才用，要不然就自己创建定时器好了
-    if ([CJTimeManager sharedInstance].timer) {
-        [[CJTimeManager sharedInstance] invalidateCountDownWithCompleteBlock:nil];
-    }
+    [[CJTimeManager sharedInstance] invalidateTimerWithCompleteBlock:nil];
     
 //    if (self.timer) {
 //        [self.timer invalidate];
@@ -58,69 +57,85 @@ static CGFloat kPeriodDuration = 5.0f;
 }
 
 - (IBAction)countDownTimeButtonAction1:(id)sender {
-    if ([CJTimeManager sharedInstance].timer == nil) {
+    if (self.timerModels == nil) {
+        NSArray<CJTimerModel *> *timerModels = [self getAllTimerModels];
+        self.timerModels = [NSMutableArray arrayWithArray:timerModels];
+        
+        [CJTimeManager sharedInstance].timerModels = [NSMutableArray arrayWithArray:timerModels];
+        
         NSLog(@"这里将会创建定时器");
-        
-        CJTimerModel *timerModel1 = [[CJTimerModel alloc] init];
-        timerModel1.minResetSecond = kPeriodDuration;
-        timerModel1.maxRepeatCount = 2;
-        timerModel1.resetSecondBlock = ^(CJTimerModel *timer) {
-            NSInteger minResetSecond = timer.minResetSecond; //本周期剩余的时间
-            NSString *title = [NSString stringWithFormat:@"发送验证码(%zds)", minResetSecond];
-            [self.countDownTimeButton1 setTitle:title forState:UIControlStateNormal];
-            [self.countDownTimeButton1 setEnabled:YES];
-            
-//            //是否要结束计时器
-//            [[CJTimeManager sharedInstance].timer invalidate];
-//            [CJTimeManager sharedInstance].timer = nil;
-//            //或[[CJTimeManager sharedInstance] invalidateCountDownWithCompleteBlock:nil];
-        };
-        timerModel1.addingSecondBlock = ^(CJTimerModel *timer) {
-            NSInteger cumulativeSecond = timer.cumulativeSecond;
-            NSInteger remainSecond = timer.minResetSecond - cumulativeSecond;
-            NSString *title = [NSString stringWithFormat:@"倒计时(%lds)", remainSecond];
-            [self.countDownTimeButton1 setTitle:title forState:UIControlStateNormal];
-            [self.countDownTimeButton1 setEnabled:NO];
-        };
-        
-        //timerModel2
-        CJTimerModel *timerModel2 = [[CJTimerModel alloc] init];
-        timerModel2.minResetSecond = 7;
-        timerModel2.maxRepeatCount = 1;
-        timerModel2.resetSecondBlock = ^(CJTimerModel *timer) {
-            NSInteger minResetSecond = timer.minResetSecond;
-            NSString *title = [NSString stringWithFormat:@"发送验证码(%zds)", minResetSecond];
-            self.countDownTimeLabel1.text = title;
-        };
-        timerModel2.addingSecondBlock = ^(CJTimerModel *timer) {
-            NSInteger cumulativeSecond = timer.cumulativeSecond;
-            NSInteger remainSecond = timer.minResetSecond - cumulativeSecond;
-            NSString *title = [NSString stringWithFormat:@"倒计时(%lds)", remainSecond];
-            self.countDownTimeLabel1.text = title;
-        };
-        
-        //timerModel3
-        CJTimerModel *timerModel3 = [[CJTimerModel alloc] init];
-        timerModel3.minResetSecond = 10;
-        timerModel3.maxRepeatCount = 1;
-        timerModel3.resetSecondBlock = ^(CJTimerModel *timer) {
-            NSInteger minResetSecond = timer.minResetSecond; //本周期剩余的时间
-            NSString *title = [NSString stringWithFormat:@"发送验证码(%zds)", minResetSecond];
-            self.countDownTimeLabel2.text = title;
-        };
-        timerModel3.addingSecondBlock = ^(CJTimerModel *timer) {
-            NSInteger cumulativeSecond = timer.cumulativeSecond;
-            NSInteger remainSecond = timer.minResetSecond - cumulativeSecond;
-            NSString *title = [NSString stringWithFormat:@"倒计时(%lds)", remainSecond];
-            self.countDownTimeLabel2.text = title;
-        };
-        
-        NSArray<CJTimerModel *> *timerModels = @[timerModel1, timerModel2, timerModel3];
-        
-        [[CJTimeManager sharedInstance] createCountDownWithTimerModels:timerModels timeInterval:1];
+        [[CJTimeManager sharedInstance] createTimerWithTimeInterval:1];
     }
     
-    [[CJTimeManager sharedInstance] beginCountDown];
+//    if ([[CJTimeManager sharedInstance] isTimerValid] == NO) {
+//        [[CJTimeManager sharedInstance] fireTimer];
+//    }
+}
+
+- (NSArray<CJTimerModel *> *)getAllTimerModels {
+    CJTimerModel *timerModel1 = [[CJTimerModel alloc] init];
+    timerModel1.timerid = @"timerModel1";
+    timerModel1.minResetSecond = kPeriodDuration;
+    timerModel1.maxRepeatCount = 2;
+    timerModel1.currentRepeatCount = 0;
+    timerModel1.resetSecondBlock = ^(CJTimerModel *timer) {
+        NSInteger minResetSecond = timer.minResetSecond; //本周期剩余的时间
+        NSString *title = [NSString stringWithFormat:@"发送验证码(%zds)", minResetSecond];
+        [self.countDownTimeButton1 setTitle:title forState:UIControlStateNormal];
+        [self.countDownTimeButton1 setEnabled:YES];
+        
+        //            //是否要结束计时器
+        //            [[CJTimeManager sharedInstance].timer invalidate];
+        //            [CJTimeManager sharedInstance].timer = nil;
+        //            //或[[CJTimeManager sharedInstance] invalidateCountDownWithCompleteBlock:nil];
+    };
+    timerModel1.addingSecondBlock = ^(CJTimerModel *timer) {
+        NSInteger cumulativeSecond = timer.cumulativeSecond;
+        NSInteger remainSecond = timer.minResetSecond - cumulativeSecond;
+        NSString *title = [NSString stringWithFormat:@"倒计时(%lds)", remainSecond];
+        [self.countDownTimeButton1 setTitle:title forState:UIControlStateNormal];
+        [self.countDownTimeButton1 setEnabled:NO];
+    };
+    
+    //timerModel2
+    CJTimerModel *timerModel2 = [[CJTimerModel alloc] init];
+    timerModel2.timerid = @"timerModel2";
+    timerModel2.minResetSecond = 7;
+    timerModel2.maxRepeatCount = 1;
+    timerModel2.currentRepeatCount = 0;
+    timerModel2.resetSecondBlock = ^(CJTimerModel *timer) {
+        NSInteger minResetSecond = timer.minResetSecond;
+        NSString *title = [NSString stringWithFormat:@"发送验证码(%zds)", minResetSecond];
+        self.countDownTimeLabel1.text = title;
+    };
+    timerModel2.addingSecondBlock = ^(CJTimerModel *timer) {
+        NSInteger cumulativeSecond = timer.cumulativeSecond;
+        NSInteger remainSecond = timer.minResetSecond - cumulativeSecond;
+        NSString *title = [NSString stringWithFormat:@"倒计时(%lds)", remainSecond];
+        self.countDownTimeLabel1.text = title;
+    };
+    
+    //timerModel3
+    CJTimerModel *timerModel3 = [[CJTimerModel alloc] init];
+    timerModel3.timerid = @"timerModel3";
+    timerModel3.minResetSecond = 10;
+    timerModel3.maxRepeatCount = 1;
+    timerModel3.currentRepeatCount = 0;
+    timerModel3.resetSecondBlock = ^(CJTimerModel *timer) {
+        NSInteger minResetSecond = timer.minResetSecond;
+        NSString *title = [NSString stringWithFormat:@"发送验证码(%zds)", minResetSecond];
+        self.countDownTimeLabel2.text = title;
+    };
+    timerModel3.addingSecondBlock = ^(CJTimerModel *timer) {
+        NSInteger cumulativeSecond = timer.cumulativeSecond;
+        NSInteger remainSecond = timer.minResetSecond - cumulativeSecond;
+        NSString *title = [NSString stringWithFormat:@"倒计时(%lds)", remainSecond];
+        self.countDownTimeLabel2.text = title;
+    };
+    
+    NSArray<CJTimerModel *> *timerModels = @[timerModel1, timerModel2, timerModel3];
+    
+    return timerModels;
 }
 
 
