@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "CJTimeManager.h"
+#import "CJTimerManager.h"
 
 @interface CountDownTimeViewController : UIViewController
 

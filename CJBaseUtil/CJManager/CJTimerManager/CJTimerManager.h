@@ -1,5 +1,5 @@
 //
-//  CJTimeManager.h
+//  CJTimerManager.h
 //  CJUIKitDemo
 //
 //  Created by ciyouzen on 2015/09/06.
@@ -19,12 +19,12 @@
  *  一个全局倒计时管理器(全局定时器的时候才用，其他的自己创建定时器就好了)
  *  eg:(因为计时器有可能属于ViewController，但也有可能属于一个全局的，比如全局监控一个数组，如果数组未空，则启动计时器，直到数组为空，才取消计时器，下次数组有值加入，又变成未空时候，再启动计时器)
  */
-@interface CJTimeManager : NSObject
+@interface CJTimerManager : NSObject
 {
     
 }
 
-+ (CJTimeManager *)sharedInstance;
++ (CJTimerManager *)sharedInstance;
 
 @property (nonatomic, strong) NSMutableArray<CJTimerModel *> *timerModels;
 

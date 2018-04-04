@@ -28,7 +28,7 @@ static CGFloat kPeriodDuration = 5.0f;
     [super viewDidDisappear:animated];
     
     //全局定时器的时候才用，要不然就自己创建定时器好了
-    [[CJTimeManager sharedInstance] invalidateTimerWithCompleteBlock:nil];
+    [[CJTimerManager sharedInstance] invalidateTimerWithCompleteBlock:nil];
     
 //    if (self.timer) {
 //        [self.timer invalidate];
@@ -61,14 +61,14 @@ static CGFloat kPeriodDuration = 5.0f;
         NSArray<CJTimerModel *> *timerModels = [self getAllTimerModels];
         self.timerModels = [NSMutableArray arrayWithArray:timerModels];
         
-        [CJTimeManager sharedInstance].timerModels = [NSMutableArray arrayWithArray:timerModels];
+        [CJTimerManager sharedInstance].timerModels = [NSMutableArray arrayWithArray:timerModels];
         
         NSLog(@"这里将会创建定时器");
-        [[CJTimeManager sharedInstance] createTimerWithTimeInterval:1];
+        [[CJTimerManager sharedInstance] createTimerWithTimeInterval:1];
     }
     
-//    if ([[CJTimeManager sharedInstance] isTimerValid] == NO) {
-//        [[CJTimeManager sharedInstance] fireTimer];
+//    if ([[CJTimerManager sharedInstance] isTimerValid] == NO) {
+//        [[CJTimerManager sharedInstance] fireTimer];
 //    }
 }
 
@@ -85,9 +85,9 @@ static CGFloat kPeriodDuration = 5.0f;
         [self.countDownTimeButton1 setEnabled:YES];
         
         //            //是否要结束计时器
-        //            [[CJTimeManager sharedInstance].timer invalidate];
-        //            [CJTimeManager sharedInstance].timer = nil;
-        //            //或[[CJTimeManager sharedInstance] invalidateCountDownWithCompleteBlock:nil];
+        //            [[CJTimerManager sharedInstance].timer invalidate];
+        //            [CJTimerManager sharedInstance].timer = nil;
+        //            //或[[CJTimerManager sharedInstance] invalidateCountDownWithCompleteBlock:nil];
     };
     timerModel1.addingSecondBlock = ^(CJTimerModel *timer) {
         NSInteger cumulativeSecond = timer.cumulativeSecond;

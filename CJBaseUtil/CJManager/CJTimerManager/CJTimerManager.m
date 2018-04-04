@@ -1,14 +1,14 @@
 //
-//  CJTimeManager.m
+//  CJTimerManager.m
 //  CJUIKitDemo
 //
 //  Created by ciyouzen on 2015/09/06.
 //  Copyright © 2015年 dvlproad. All rights reserved.
 //
 
-#import "CJTimeManager.h"
+#import "CJTimerManager.h"
 
-@interface CJTimeManager() {
+@interface CJTimerManager() {
     
 }
 @property (nonatomic, weak) NSTimer *timer;
@@ -16,10 +16,10 @@
 
 @end
 
-@implementation CJTimeManager
+@implementation CJTimerManager
 
-+ (CJTimeManager *)sharedInstance {
-    static CJTimeManager *_sharedInstance = nil;
++ (CJTimerManager *)sharedInstance {
+    static CJTimerManager *_sharedInstance = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         _sharedInstance = [[self alloc] init];
