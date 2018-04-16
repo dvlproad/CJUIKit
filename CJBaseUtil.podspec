@@ -83,6 +83,10 @@ Pod::Spec.new do |s|
     ss.frameworks = 'WebKit'
   end
 
+  s.subspec 'CJCallUtil' do |ss|
+    ss.source_files = "CJBaseUtil/CJCallUtil/**/*.{h,m}"
+  end
+
 
   s.subspec 'CJManager' do |ss|
   	# AppDelegate瘦身

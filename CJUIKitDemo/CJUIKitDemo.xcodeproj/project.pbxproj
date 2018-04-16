@@ -175,6 +175,7 @@
 		7EA576B620691B5A00726CCF /* CJModuleManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EA576B520691B5A00726CCF /* CJModuleManager.m */; };
 		8000B5C61FCFEE3A00AE3C78 /* UITextField+CJSelectedTextRange.m in Sources */ = {isa = PBXBuildFile; fileRef = 8000B5C51FCFEE3A00AE3C78 /* UITextField+CJSelectedTextRange.m */; };
 		8000B5C91FD0021D00AE3C78 /* CJExtraTextTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 8000B5C81FD0021D00AE3C78 /* CJExtraTextTextField.m */; };
+		800A15FD208480C000ECF9AF /* CJCallUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 800A15FB208480BF00ECF9AF /* CJCallUtil.m */; };
 		800E07D52016CC2F00799B78 /* CJKeyboardUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 800E07D32016CC2E00799B78 /* CJKeyboardUtil.m */; };
 		800E07E12016CCF500799B78 /* DataUtilViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 800E07D82016CCF500799B78 /* DataUtilViewController.m */; };
 		800E07E22016CCF500799B78 /* DataUtilViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 800E07DA2016CCF500799B78 /* DataUtilViewController.xib */; };
@@ -735,6 +736,8 @@
 		8000B5C51FCFEE3A00AE3C78 /* UITextField+CJSelectedTextRange.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UITextField+CJSelectedTextRange.m"; sourceTree = "<group>"; };
 		8000B5C71FD0021D00AE3C78 /* CJExtraTextTextField.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CJExtraTextTextField.h; sourceTree = "<group>"; };
 		8000B5C81FD0021D00AE3C78 /* CJExtraTextTextField.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CJExtraTextTextField.m; sourceTree = "<group>"; };
+		800A15FB208480BF00ECF9AF /* CJCallUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJCallUtil.m; sourceTree = "<group>"; };
+		800A15FC208480BF00ECF9AF /* CJCallUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJCallUtil.h; sourceTree = "<group>"; };
 		800E07D32016CC2E00799B78 /* CJKeyboardUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJKeyboardUtil.m; sourceTree = "<group>"; };
 		800E07D42016CC2E00799B78 /* CJKeyboardUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJKeyboardUtil.h; sourceTree = "<group>"; };
 		800E07D82016CCF500799B78 /* DataUtilViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataUtilViewController.m; sourceTree = "<group>"; };
@@ -2070,6 +2073,15 @@
 			path = CJModuleManager;
 			sourceTree = "<group>";
 		};
+		800A15FA208480BF00ECF9AF /* CJCallUtil */ = {
+			isa = PBXGroup;
+			children = (
+				800A15FC208480BF00ECF9AF /* CJCallUtil.h */,
+				800A15FB208480BF00ECF9AF /* CJCallUtil.m */,
+			);
+			path = CJCallUtil;
+			sourceTree = "<group>";
+		};
 		800E07D22016CC2E00799B78 /* CJKeyboardUtil */ = {
 			isa = PBXGroup;
 			children = (
@@ -2753,6 +2765,7 @@
 		80FF91021FC5668700E437CF /* CJBaseUtil */ = {
 			isa = PBXGroup;
 			children = (
+				800A15FA208480BF00ECF9AF /* CJCallUtil */,
 				80F9CFDD206CFDFB003B41D4 /* CJPinyinHelper */,
 				8044781D2061F328007185EF /* CJManager */,
 				8056F5A9203E6FA30074D90F /* NSOperationQueueUtil */,
@@ -3605,6 +3618,7 @@
 				80FF90B01FC5649F00E437CF /* NavigationBarChangeBGViewController.m in Sources */,
 				80FF91EB1FC6739D00E437CF /* CJDateFormatterUtil.m in Sources */,
 				7832810D1F41AA96008267E0 /* ProcessLineView.m in Sources */,
+				800A15FD208480C000ECF9AF /* CJCallUtil.m in Sources */,
 				805598B51FF5D612009DC61C /* ValidateStringViewController.m in Sources */,
 				80FF90B81FC5649F00E437CF /* DragViewController.m in Sources */,
 				80FF90481FC5649F00E437CF /* UploadDirectlyImagePickerViewController.m in Sources */,
