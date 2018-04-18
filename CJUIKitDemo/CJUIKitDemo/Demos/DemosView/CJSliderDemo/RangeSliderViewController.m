@@ -19,10 +19,12 @@
     // Do any additional setup after loading the view from its nib.
     self.title = NSLocalizedString(@"RangeSliderViewController", nil);
     
-    
-    [self.sliderControl2.trackImageView setBackgroundColor:[UIColor redColor]];
-    [self.sliderControl2.minimumTrackImageView setBackgroundColor:[UIColor yellowColor]];
-    [self.sliderControl2.maximumTrackImageView setBackgroundColor:[UIColor redColor]];
+    [self.sliderControl2 setupViewWithCreateTrackViewBlock:nil
+                               createMinimumTrackViewBlock:nil
+                               createMaximumTrackViewBlock:nil];
+    [self.sliderControl2.trackView setBackgroundColor:[UIColor redColor]];
+    [self.sliderControl2.minimumTrackView setBackgroundColor:[UIColor yellowColor]];
+    [self.sliderControl2.maximumTrackView setBackgroundColor:[UIColor redColor]];
     self.sliderControl2.baseValue = 40; // 设置基准值
     self.sliderControl2.minValue = 0.0f;
     self.sliderControl2.maxValue = 100.0f;

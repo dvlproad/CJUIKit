@@ -27,7 +27,11 @@
 #import "TextFieldViewController.h"
 #import "TextViewController.h"
 #import "KeyboardAvoidingViewController.h"
+
 #import "SliderViewController.h"
+#import "RangeSliderViewController.h"
+#import "SwitchSliderViewController.h"
+
 #import "SearchBarViewController.h"
 
 
@@ -135,8 +139,22 @@
         {
             //Slider
             CJModuleModel *sliderModule = [[CJModuleModel alloc] init];
-            sliderModule.title = @"CJSliderControl";
+            sliderModule.title = @"Slider--CJSliderControl";
             sliderModule.classEntry = [SliderViewController class];
+            [sectionDataModel.values addObject:sliderModule];
+        }
+        {
+            //RangeSlider
+            CJModuleModel *sliderModule = [[CJModuleModel alloc] init];
+            sliderModule.title = @"Slider--RangeSlider";
+            sliderModule.classEntry = [RangeSliderViewController class];
+            [sectionDataModel.values addObject:sliderModule];
+        }
+        {
+            //SwitchSlider
+            CJModuleModel *sliderModule = [[CJModuleModel alloc] init];
+            sliderModule.title = @"Slider--SwitchSlider";
+            sliderModule.classEntry = [SwitchSliderViewController class];
             [sectionDataModel.values addObject:sliderModule];
         }
         {

@@ -1290,16 +1290,16 @@
 		787FDB6920500B5B008A46E3 /* CJSliderDemo */ = {
 			isa = PBXGroup;
 			children = (
-				787FDB6C20500B5B008A46E3 /* RangeSliderViewController.h */,
-				787FDB8020500B5B008A46E3 /* RangeSliderViewController.m */,
-				787FDB8420500B5B008A46E3 /* RangeSliderViewController.xib */,
-				787FDB6D20500B5B008A46E3 /* Resources */,
 				787FDB7D20500B5B008A46E3 /* SliderViewController.h */,
 				787FDB6B20500B5B008A46E3 /* SliderViewController.m */,
 				787FDB7F20500B5B008A46E3 /* SliderViewController.xib */,
+				787FDB6C20500B5B008A46E3 /* RangeSliderViewController.h */,
+				787FDB8020500B5B008A46E3 /* RangeSliderViewController.m */,
+				787FDB8420500B5B008A46E3 /* RangeSliderViewController.xib */,
 				787FDB7E20500B5B008A46E3 /* SwitchSliderViewController.h */,
 				787FDB6A20500B5B008A46E3 /* SwitchSliderViewController.m */,
 				787FDB7C20500B5B008A46E3 /* SwitchSliderViewController.xib */,
+				787FDB6D20500B5B008A46E3 /* Resources */,
 				787FDB8120500B5B008A46E3 /* Views */,
 			);
 			path = CJSliderDemo;

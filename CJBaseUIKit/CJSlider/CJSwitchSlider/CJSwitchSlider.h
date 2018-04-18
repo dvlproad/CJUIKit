@@ -25,6 +25,10 @@ typedef NS_ENUM(NSUInteger, CJSwitchAnimatedType) {
     
 }
 
+@property (nonatomic, copy) void(^configureTrackViewBlock)(UIView *trackView, CJSwitchSliderStatusModel *statusModel, BOOL isDragingStauts);
+@property (nonatomic, copy) void(^configureMinimumTrackViewBlock)(UIView *minimumTrackView, CJSwitchSliderStatusModel *statusModel, BOOL isDragingStauts);
+@property (nonatomic, copy) void(^configureMaximumTrackViewBlock)(UIView *maximumTrackView, CJSwitchSliderStatusModel *statusModel, BOOL isDragingStauts);
+
 @property (nonatomic, assign) CJSwitchAnimatedType switchAnimatedType;
 @property (nonatomic, strong) NSMutableArray<CJSwitchSliderStatusModel *> *statusModels;  /**< 所有状态的模型 */
 @property (nonatomic, assign, readonly) NSInteger currentStep;/**< 当前显示的步骤索引 */

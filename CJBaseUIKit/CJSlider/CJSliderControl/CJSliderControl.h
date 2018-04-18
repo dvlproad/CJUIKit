@@ -23,6 +23,13 @@ typedef NS_ENUM(NSUInteger, CJSliderRangeType) {
     CJSliderRangeTypeMinToMin,
 };
 
+
+///移动变化类型
+typedef NS_ENUM(NSUInteger, CJSliderMoveType) {
+    CJSliderMoveTypeMaximumTrackImageViewWidthAspectFit = 0,/**< 宽度自适应，即会缩放 */
+    CJSliderMoveTypeMaximumTrackImageViewWidthNoChange,     /**< 宽度不变，即会自动移动 */
+};
+
 /**
  *   弹出框显示内容的枚举类型
  */
@@ -76,12 +83,12 @@ typedef NS_ENUM(NSUInteger, CJSliderPopoverDispalyType) {
 @property (nonatomic, assign) CGFloat maxValue;     /**< 最大值(默认1) */
 
 //滑道视图
-@property (nonatomic, strong) UIImageView *trackImageView;  /**< 滑道视图 */
+@property (nonatomic, strong) UIView *trackView;    /**< 滑道视图 */
 @property (nonatomic, assign) CGFloat trackHeight;  /**< 滑道高度 */
 @property (nonatomic, assign) CGSize thumbSize;     /**< 滑块大小 */
 
-@property (nonatomic, strong) UIImageView *minimumTrackImageView; /**< 主滑块左侧的视图 */
-@property (nonatomic, strong) UIImageView *maximumTrackImageView; /**< 主滑块右侧的视图 */
+@property (nonatomic, strong) UIView *minimumTrackView; /**< 主滑块左侧的视图 */
+@property (nonatomic, strong) UIView *maximumTrackView; /**< 主滑块右侧的视图 */
 
 @property (nonatomic, assign) CGFloat value;            /**< 当前值 */
 
@@ -100,7 +107,20 @@ typedef NS_ENUM(NSUInteger, CJSliderPopoverDispalyType) {
 @property (nonatomic, strong) NSArray<CJAdsorbModel *> *adsorbInfos; /** 设置吸附信息(含吸附区间及该区间要吸附到什么值)，上面的值是具体的滑块值，不是百分比 */
 
 
+@property (nonatomic, assign) CJSliderMoveType moveType;    /**< 移动变化类型 */
+
 - (void)commonInit;
+
+/**
+ *  设置自定义的view，调用此方法可设置slider各部分为自己的视图（必须设置，各参数可为空）
+ *
+ *  @param createTrackViewBlock         创建自定义的滑道视图
+ *  @param createMinimumTrackViewBlock  创建自定义的主滑块左侧的视图
+ *  @param createMaximumTrackViewBlock  创建自定义的主滑块右侧的视图
+ */
+- (void)setupViewWithCreateTrackViewBlock:(UIView * (^)(void))createTrackViewBlock
+              createMinimumTrackViewBlock:(UIView * (^)(void))createMinimumTrackViewBlock
+              createMaximumTrackViewBlock:(UIView * (^)(void))createMaximumTrackViewBlock;
 
 ///更新slider(可用于视图已经生成之后，有更改trackHeight或thumbSize的时候调用,一般很少用到)
 - (void)reloadSlider;

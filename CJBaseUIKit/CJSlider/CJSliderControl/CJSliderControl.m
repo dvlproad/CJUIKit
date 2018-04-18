@@ -45,7 +45,7 @@ static NSTimeInterval const kCJSliderControlDidTapSlidAnimationDuration  = 0.3f;
 
 //- (void)awakeFromNib {
 //    [super awakeFromNib];
-//    
+//
 //    [self commonInit];
 //}
 
@@ -75,7 +75,8 @@ static NSTimeInterval const kCJSliderControlDidTapSlidAnimationDuration  = 0.3f;
     }
 }
 
-- (void)commonInit {
+- (void)commonInit
+{
     self.backgroundColor = [UIColor clearColor];
     
     //注册通知：self.mainThumb.frame更新的时候需要去更新选中区域 以及 value
@@ -88,28 +89,46 @@ static NSTimeInterval const kCJSliderControlDidTapSlidAnimationDuration  = 0.3f;
     _maxValue = 1;
     _thumbSize = CGSizeMake(30, 30);
     _popoverSize = CGSizeMake(30, 32);
-    
-    if (!_trackImageView) {
-        _trackImageView = [[UIImageView alloc] initWithFrame:CGRectZero];
-        _trackImageView.backgroundColor = [UIColor clearColor];
-        _trackImageView.layer.masksToBounds = YES;
-        [self addSubview:_trackImageView];
+}
+
+- (void)setupViewWithCreateTrackViewBlock:(UIView * (^)(void))createTrackViewBlock
+              createMinimumTrackViewBlock:(UIView * (^)(void))createMinimumTrackViewBlock
+              createMaximumTrackViewBlock:(UIView * (^)(void))createMaximumTrackViewBlock
+{
+    if (!_trackView) {
+        if (createTrackViewBlock) {
+            _trackView = createTrackViewBlock();
+        } else {
+            _trackView = [[UIView alloc] initWithFrame:CGRectZero];
+            _trackView.backgroundColor = [UIColor clearColor];
+            _trackView.layer.masksToBounds = YES;
+        }
+        
+        [self addSubview:_trackView];
     }
     
     
-    if (!_minimumTrackImageView) {
-        _minimumTrackImageView = [[UIImageView alloc] initWithFrame:CGRectZero];
-        _minimumTrackImageView.backgroundColor = [UIColor clearColor];
-        _minimumTrackImageView.layer.masksToBounds = YES;
-        [self addSubview:_minimumTrackImageView];
+    if (!_minimumTrackView) {
+        if (createMinimumTrackViewBlock) {
+            _minimumTrackView = createMinimumTrackViewBlock();
+        } else {
+            _minimumTrackView = [[UIView alloc] initWithFrame:CGRectZero];
+            _minimumTrackView.backgroundColor = [UIColor clearColor];
+            _minimumTrackView.layer.masksToBounds = YES;
+        }
+        [self addSubview:_minimumTrackView];
     }
     
     
-    if (!_maximumTrackImageView) {
-        _maximumTrackImageView = [[UIImageView alloc] initWithFrame:CGRectZero];
-        _maximumTrackImageView.backgroundColor = [UIColor clearColor];
-        _maximumTrackImageView.layer.masksToBounds = YES;
-        [self addSubview:_maximumTrackImageView];
+    if (!_maximumTrackView) {
+        if (createMaximumTrackViewBlock) {
+            _maximumTrackView = createMaximumTrackViewBlock();
+        } else {
+            _maximumTrackView = [[UIView alloc] initWithFrame:CGRectZero];
+            _maximumTrackView.backgroundColor = [UIColor clearColor];
+            _maximumTrackView.layer.masksToBounds = YES;
+        }
+        [self addSubview:_maximumTrackView];
     }
     
     [self addSubview:self.mainThumb];
@@ -139,7 +158,7 @@ static NSTimeInterval const kCJSliderControlDidTapSlidAnimationDuration  = 0.3f;
 /* 完整的描述请参见文件头部 */
 - (void)reloadSlider {
     CGRect trackRect = [self trackRectForBounds:self.bounds];
-    self.trackImageView.frame = trackRect;
+    self.trackView.frame = trackRect;
     
     CGRect thumbRect = [self thumbRectForBounds:self.bounds trackRect:trackRect value:self.value thumbSize:self.thumbSize];
     self.mainThumb.frame = thumbRect;
@@ -168,16 +187,16 @@ static NSTimeInterval const kCJSliderControlDidTapSlidAnimationDuration  = 0.3f;
         //NSLog(@"修正trackHeight的高度");
         self.trackHeight = CGRectGetHeight(bounds);
     }
-    CGFloat trackImageViewHeight = self.trackHeight;
-    CGFloat trackImageViewOriginY = CGRectGetHeight(bounds)/2 - trackImageViewHeight/2;
+    CGFloat trackViewHeight = self.trackHeight;
+    CGFloat trackViewOriginY = CGRectGetHeight(bounds)/2 - trackViewHeight/2;
     
-    CGFloat trackImageViewOriginX = self.trackViewMinX;
+    CGFloat trackViewOriginX = self.trackViewMinX;
     
     _trackViewMinX = 0 + self.trackViewMinXMargin;
     _trackViewMaxX = CGRectGetWidth(bounds) - self.trackViewMaxXMargin;
-    CGFloat trackImageViewWidth = self.trackViewMaxX - self.trackViewMinX;
+    CGFloat trackViewWidth = self.trackViewMaxX - self.trackViewMinX;
     
-    return CGRectMake(trackImageViewOriginX, trackImageViewOriginY, trackImageViewWidth,trackImageViewHeight);
+    return CGRectMake(trackViewOriginX, trackViewOriginY, trackViewWidth, trackViewHeight);
 }
 
 /**
@@ -270,7 +289,7 @@ static NSTimeInterval const kCJSliderControlDidTapSlidAnimationDuration  = 0.3f;
  *  更新对应thumb指示的值(每当滑块thumb的位置移动后都要执行此更新，并记得同时得当前选中的区域)
  */
 - (void)updateIndicateValueForThumb:(UIButton *)thumb {
-    CGRect trackRect = self.trackImageView.frame;
+    CGRect trackRect = self.trackView.frame;
     CGRect thumbRect = thumb.frame;
     
     //value
@@ -289,7 +308,7 @@ static NSTimeInterval const kCJSliderControlDidTapSlidAnimationDuration  = 0.3f;
     }
     
     
-    //minimumTrackImageView.frame
+    //minimumTrackView.frame
     CGFloat basePointX = [self pointXForBounds:self.bounds trackRect:trackRect value:self.baseValue];
     
     
@@ -314,8 +333,14 @@ static NSTimeInterval const kCJSliderControlDidTapSlidAnimationDuration  = 0.3f;
     CGFloat rangeOriginY = CGRectGetMinY(trackRect);
     
     CGFloat rangeMaxX = rangeMinX+rangeWidth;
-    self.minimumTrackImageView.frame = CGRectMake(rangeMinX, rangeOriginY, rangeWidth, rangeHeight);
-    self.maximumTrackImageView.frame = CGRectMake(rangeMaxX, rangeOriginY, CGRectGetMaxX(trackRect)-rangeMaxX, rangeHeight);
+    self.minimumTrackView.frame = CGRectMake(rangeMinX, rangeOriginY, rangeWidth, rangeHeight);
+    
+    //根据移动变化类型，设置 maximumTrackView 的宽度
+    CGFloat maximumTrackViewWidth = CGRectGetMaxX(trackRect)-rangeMaxX;
+    if (self.moveType == CJSliderMoveTypeMaximumTrackImageViewWidthNoChange) {
+        maximumTrackViewWidth = CGRectGetMaxX(trackRect);
+    }
+    self.maximumTrackView.frame = CGRectMake(rangeMaxX, rangeOriginY, maximumTrackViewWidth, rangeHeight);
     
     //popover
     if (self.popoverType != CJSliderPopoverDispalyTypeNone) {
@@ -426,8 +451,8 @@ static NSTimeInterval const kCJSliderControlDidTapSlidAnimationDuration  = 0.3f;
     
     UITouch *touch = [touches anyObject];
     CGPoint point = [touch locationInView:self];
-    if (point.x < CGRectGetMinX(self.trackImageView.frame) ||
-        point.x > CGRectGetMaxX(self.trackImageView.frame))
+    if (point.x < CGRectGetMinX(self.trackView.frame) ||
+        point.x > CGRectGetMaxX(self.trackView.frame))
     {
         return;
     }
@@ -435,11 +460,11 @@ static NSTimeInterval const kCJSliderControlDidTapSlidAnimationDuration  = 0.3f;
     [UIView animateWithDuration:kCJSliderControlDidTapSlidAnimationDuration animations:^{
         CGRect thumbFrame = self.mainThumb.frame;
         thumbFrame.origin.x = point.x - CGRectGetWidth(thumbFrame)/2;
-        if (thumbFrame.origin.x < CGRectGetMinX(self.trackImageView.frame)) {
-            thumbFrame.origin.x = CGRectGetMinX(self.trackImageView.frame);
+        if (thumbFrame.origin.x < CGRectGetMinX(self.trackView.frame)) {
+            thumbFrame.origin.x = CGRectGetMinX(self.trackView.frame);
         }
-        if (thumbFrame.origin.x > CGRectGetMaxX(self.trackImageView.frame) - CGRectGetWidth(thumbFrame)) {
-            thumbFrame.origin.x = CGRectGetMaxX(self.trackImageView.frame) - CGRectGetWidth(thumbFrame);
+        if (thumbFrame.origin.x > CGRectGetMaxX(self.trackView.frame) - CGRectGetWidth(thumbFrame)) {
+            thumbFrame.origin.x = CGRectGetMaxX(self.trackView.frame) - CGRectGetWidth(thumbFrame);
         }
         self.mainThumb.frame = thumbFrame;
         
@@ -559,7 +584,7 @@ static NSTimeInterval const kCJSliderControlDidTapSlidAnimationDuration  = 0.3f;
     } else if (sliderType == CJSliderTypeRange) {
         if (!_leftThumb) {
             _leftThumb = [self createThumb];
-            [self insertSubview:_leftThumb aboveSubview:self.minimumTrackImageView];
+            [self insertSubview:_leftThumb aboveSubview:self.minimumTrackView];
             
             //注册通知：self.leftThumb.frame更新的时候需要去更新选中区域 以及 value
             //这里采用监听机制来优化,这样就不用每次self.leftThumb.frame\self.value改变的时候再去调用要执行的方法

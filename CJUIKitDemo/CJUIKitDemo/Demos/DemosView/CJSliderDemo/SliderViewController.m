@@ -10,9 +10,6 @@
 #import "UIImage+CJCreate.h"
 #import "UIImage+CJTransformSize.h"
 
-#import "RangeSliderViewController.h"
-#import "SwitchSliderViewController.h"
-
 @interface SliderViewController ()
 
 @end
@@ -88,10 +85,20 @@
     /* 基于UIControl封装的CJSliderControl */
     UIImage *trackImage = [UIImage imageNamed:@"slider_maximum_trackimage"];
     trackImage = [trackImage resizableImageWithCapInsets:UIEdgeInsetsMake(3, 7, 3, 7) resizingMode:UIImageResizingModeStretch];
-    [self.sliderControl1.trackImageView setImage:trackImage];
-    //[self.sliderControl1.trackImageView setBackgroundColor:[UIColor redColor]];
-    [self.sliderControl1.minimumTrackImageView setBackgroundColor:[UIColor magentaColor]];
-    [self.sliderControl1.maximumTrackImageView setBackgroundColor:[UIColor clearColor]];
+    
+    
+    [self.sliderControl1 setupViewWithCreateTrackViewBlock:^UIView *{
+        UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectZero];
+        imageView.backgroundColor = [UIColor clearColor];
+        imageView.layer.masksToBounds = YES;
+        return imageView;
+        
+    } createMinimumTrackViewBlock:nil createMaximumTrackViewBlock:nil];
+    UIImageView *trackView = (UIImageView *)self.sliderControl1.trackView;
+    [trackView setImage:trackImage];
+//    [self.sliderControl1.trackView setBackgroundColor:[UIColor redColor]];
+    [self.sliderControl1.minimumTrackView setBackgroundColor:[UIColor magentaColor]];
+    [self.sliderControl1.maximumTrackView setBackgroundColor:[UIColor clearColor]];
     
     self.sliderControl1.minValue = 0.0f;        //设置滑竿的最小值
     self.sliderControl1.maxValue = 100.0f;      //设置滑竿的最大值
@@ -105,17 +112,6 @@
     
     self.sliderControlValueLabel1.text = [NSString stringWithFormat:@"选取的值是: %.1f",self.sliderControl1.value];
 }
-
-- (IBAction)goRangeSliderViewController:(id)sender {
-    RangeSliderViewController *viewController = [[RangeSliderViewController alloc] initWithNibName:@"RangeSliderViewController" bundle:nil];
-    [self.navigationController pushViewController:viewController animated:YES];
-}
-
-- (IBAction)goSwitchSliderViewController:(id)sender {
-    SwitchSliderViewController *viewController = [[SwitchSliderViewController alloc] initWithNibName:@"SwitchSliderViewController" bundle:nil];
-    [self.navigationController pushViewController:viewController animated:YES];
-}
-
 
 #pragma mark - CJSliderControlDelegate
 - (void)slider:(CJSliderControl *)slider didDargToValue:(CGFloat)value {

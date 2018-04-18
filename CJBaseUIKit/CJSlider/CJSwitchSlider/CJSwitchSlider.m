@@ -13,7 +13,7 @@
 }
 @property (nonatomic, strong) UIView *beforeBackgroundView;
 
-@property (nonatomic, strong, readonly) UIImageView *currentStepImageView;
+@property (nonatomic, strong, readonly) UIView *currentStepImageView;
 
 @end
 
@@ -47,25 +47,30 @@
     
     
     CJSwitchSliderStatusModel *currentStepStatusModel = [self.statusModels objectAtIndex:self.currentStep];
+    
+    BOOL useDragingStauts = YES;    //注：移动时候，又移动回初始0的时候这个位置算为不是移动状态
     if (value == self.minValue) {
-        if (currentStepStatusModel.dragingColor) {
-            [self.currentStepImageView setImage:currentStepStatusModel.image];
-            [self.currentStepImageView setBackgroundColor:[UIColor clearColor]];
-        }
+        useDragingStauts = NO;
     } else {
-        if (currentStepStatusModel.dragingColor) {
-            [self.currentStepImageView setImage:nil];
-            [self.currentStepImageView setBackgroundColor:currentStepStatusModel.dragingColor];
-        }
+        useDragingStauts = YES;
+    }
+    
+    if (self.currentStepImageView == self.maximumTrackView) {
+        self.configureMaximumTrackViewBlock(self.maximumTrackView, currentStepStatusModel, useDragingStauts);
+    } else {
+        self.configureMinimumTrackViewBlock(self.minimumTrackView, currentStepStatusModel, useDragingStauts);
     }
 }
 
 - (void)slider:(CJSliderControl *)slider adsorbToValue:(CGFloat)value animatedDuration:(CGFloat)animatedDuration {
     NSLog(@"slider adsorbToValue %1.2f", value);
     CJSwitchSliderStatusModel *currentStepStatusModel = [self.statusModels objectAtIndex:self.currentStep];
-    if (currentStepStatusModel.dragingColor) {
-        [self.currentStepImageView setImage:currentStepStatusModel.image];
-        [self.currentStepImageView setBackgroundColor:[UIColor clearColor]];
+    
+    BOOL useDragingStauts = NO;
+    if (self.currentStepImageView == self.maximumTrackView) {
+        self.configureMaximumTrackViewBlock(self.maximumTrackView, currentStepStatusModel, useDragingStauts);
+    } else {
+        self.configureMinimumTrackViewBlock(self.minimumTrackView, currentStepStatusModel, useDragingStauts);
     }
     
     if (value >= 1.0) {
@@ -112,38 +117,44 @@
     CJSwitchSliderStatusModel *currentStepStatusModel = [self.statusModels objectAtIndex:self.currentStep];
     CJSwitchSliderStatusModel *nextStepStatusModel = [self.statusModels objectAtIndex:self.currentStep+1];
     
+    BOOL useDragingStauts = NO;
     switch (self.switchAnimatedType) {
         case CJSwitchAnimatedTypeCurrentStepInMaximumTrackImageView:
         {
-            _currentStepImageView = self.maximumTrackImageView;
+            _currentStepImageView = self.maximumTrackView;
             
-            [self.maximumTrackImageView setImage:currentStepStatusModel.image];
-            [self.trackImageView setImage:nextStepStatusModel.image];
+            NSAssert(self.configureMaximumTrackViewBlock != nil, @"主滑块右侧的视图maximumTrackView对statusModel的设置不能为空");
+            self.configureMaximumTrackViewBlock(self.maximumTrackView, currentStepStatusModel, useDragingStauts);
+            
+            NSAssert(self.configureTrackViewBlock != nil, @"滑道trackView对statusModel的设置不能为空");
+            self.configureTrackViewBlock(self.trackView, nextStepStatusModel, useDragingStauts);
             
             /* //此种方法占用太大内存
             UIColor *nextStepColor = [UIColor colorWithPatternImage:nextStepStatusModel.image];
             UIColor *currentStepColor = [UIColor colorWithPatternImage:currentStepStatusModel.image];
-            self.trackImageView.backgroundColor = nextStepColor;
-            self.maximumTrackImageView.backgroundColor = currentStepColor;
+            self.trackView.backgroundColor = nextStepColor;
+            self.maximumTrackView.backgroundColor = currentStepColor;
             */
-//            self.trackImageView.layer.contents = (__bridge id _Nullable)(nextStepStatusModel.image.CGImage);
-//            self.maximumTrackImageView.layer.contents = (__bridge id _Nullable)(currentStepStatusModel.image.CGImage);
+//            self.trackView.layer.contents = (__bridge id _Nullable)(nextStepStatusModel.image.CGImage);
+//            self.maximumTrackView.layer.contents = (__bridge id _Nullable)(currentStepStatusModel.image.CGImage);
             
             break;
         }
+        /*
         case CJSwitchAnimatedTypeCurrentStepInTrackImageView:
         {
-            _currentStepImageView = self.trackImageView;
+            _currentStepImageView = self.trackView;
             
-            [self.trackImageView setImage:currentStepStatusModel.image];
+            [self.trackView setImage:currentStepStatusModel.image];
             
-//            [self.minimumTrackImageView setImage:nextStepStatusModel.image];
-//            self.minimumTrackImageView.layer.contents = (__bridge id _Nullable)(nextStepStatusModel.image.CGImage);
+//            [self.minimumTrackView setImage:nextStepStatusModel.image];
+//            self.minimumTrackView.layer.contents = (__bridge id _Nullable)(nextStepStatusModel.image.CGImage);
             UIColor *nextStepColor = [UIColor colorWithPatternImage:nextStepStatusModel.image];
-            self.minimumTrackImageView.backgroundColor = nextStepColor;
+            self.minimumTrackView.backgroundColor = nextStepColor;
             
             break;
         }
+        */
         default:
         {
             break;

@@ -25,31 +25,27 @@
     // Do any additional setup after loading the view from its nib.
     self.title = NSLocalizedString(@"SwitchSliderViewController", nil);
     
-    self.switchSlider.switchAnimatedType = CJSwitchAnimatedTypeCurrentStepInMaximumTrackImageView;
-    [self commonSetupToSwitchSlider:self.switchSlider];
-    
-//    self.shimmeringSwitchSlider1.switchSlider.switchAnimatedType = CJSwitchAnimatedTypeNextStepInBackgroundColorViewCurrentInTrackImageView;
-//    [self commonSetupToSwitchSlider:self.shimmeringSwitchSlider1.switchSlider];
-//    [self.shimmeringSwitchSlider1.switchSlider reloadSlider];
-    
-    self.shimmeringSwitchSlider2.switchSlider.switchAnimatedType = CJSwitchAnimatedTypeCurrentStepInMaximumTrackImageView;
-    [self commonSetupToSwitchSlider:self.shimmeringSwitchSlider2.switchSlider];
-    [self.shimmeringSwitchSlider2.switchSlider reloadSlider];
-    
-    self.shimmeringSwitchSlider3.switchSlider.switchAnimatedType = CJSwitchAnimatedTypeCurrentStepInTrackImageView;
-    [self commonSetupToSwitchSlider:self.shimmeringSwitchSlider3.switchSlider];
-    [self.shimmeringSwitchSlider3.switchSlider reloadSlider];
-    
-    
+    /* ①、sliderControl3 */
     /*
-     CGRect baseSliderFrame = self.sliderControl3.frame;
-     baseSliderFrame.size.height = 40;
-     self.sliderControl3.frame = baseSliderFrame;
-     self.sliderControl3.backgroundColor = [UIColor greenColor];
-     */
+    CGRect baseSliderFrame = self.sliderControl3.frame;
+    baseSliderFrame.size.height = 40;
+    self.sliderControl3.frame = baseSliderFrame;
+    self.sliderControl3.backgroundColor = [UIColor greenColor];
+    */
     UIImage *trackImage = [UIImage imageNamed:@"slider_maximum_trackimage"];
     trackImage = [trackImage resizableImageWithCapInsets:UIEdgeInsetsMake(3, 7, 3, 7) resizingMode:UIImageResizingModeStretch];
-    [self.sliderControl3.trackImageView setImage:trackImage];
+    
+    [self.sliderControl3 setupViewWithCreateTrackViewBlock:^UIView *{
+        UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectZero];
+        imageView.backgroundColor = [UIColor clearColor];
+        imageView.layer.masksToBounds = YES;
+        
+        return imageView;
+        
+    } createMinimumTrackViewBlock:nil createMaximumTrackViewBlock:nil];
+    
+    UIImageView *trackView = (UIImageView *)self.sliderControl3.trackView;
+    [trackView setImage:trackImage];
     
     self.sliderControl3.mainThumb.alpha = 0.3;
     self.sliderControl3.trackHeight = 30;
@@ -61,15 +57,164 @@
     self.sliderControl3.adsorbInfos = @[[[CJAdsorbModel alloc] initWithMin:0 max:0.70 toValue:0],
                                         [[CJAdsorbModel alloc] initWithMin:0.7 max:1 toValue:1]];
     self.sliderControl3.delegate = self;
+    
+    
+    
+    
+    /* ②、switchSlider */
+    self.switchSlider.switchAnimatedType = CJSwitchAnimatedTypeCurrentStepInMaximumTrackImageView;
+    [self commonSetupToSwitchSlider:self.switchSlider];
+    
+    
+    
+    
+    /* ③、shimmeringSwitchSlider1、shimmeringSwitchSlider2、shimmeringSwitchSlider3 */
+    CJSwitchSlider *s_switchSlider1 = self.shimmeringSwitchSlider1.switchSlider;
+    
+    s_switchSlider1.moveType = CJSliderMoveTypeMaximumTrackImageViewWidthAspectFit;
+    s_switchSlider1.switchAnimatedType = CJSwitchAnimatedTypeCurrentStepInMaximumTrackImageView;
+    [self commonSetupToSwitchSlider:s_switchSlider1];
+    [s_switchSlider1 reloadSlider];
+    
+    
+    
+    
+    
+    
+    CJSwitchSlider *s_switchSlider2 = self.shimmeringSwitchSlider2.switchSlider;
+    
+    s_switchSlider2.moveType = CJSliderMoveTypeMaximumTrackImageViewWidthNoChange;
+    s_switchSlider2.switchAnimatedType = CJSwitchAnimatedTypeCurrentStepInMaximumTrackImageView;
+    [self commonSetupToSwitchSlider:s_switchSlider2];
+    [s_switchSlider2 reloadSlider];
+    
+    
+    
+    
+    
+    
+    CJSwitchSlider *s_switchSlider3 = self.shimmeringSwitchSlider3.switchSlider;
+    
+    s_switchSlider3.moveType = CJSliderMoveTypeMaximumTrackImageViewWidthAspectFit;
+    s_switchSlider3.switchAnimatedType = CJSwitchAnimatedTypeCurrentStepInTrackImageView;
+    [self commonSetupToSwitchSlider:s_switchSlider3];
+    [s_switchSlider3 reloadSlider];
+    
+    
+    
+    ShimmeringSwitchSlider *shimmeringSwitchSlider = [[ShimmeringSwitchSlider alloc] init];
+    [self commonSetupToSwitchSlider:shimmeringSwitchSlider.switchSlider];
+    [self.view addSubview:shimmeringSwitchSlider];
+    [shimmeringSwitchSlider mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.mas_equalTo(self.view).mas_offset(20);
+        make.right.mas_equalTo(self.view).mas_offset(-20);
+        make.bottom.mas_equalTo(self.view).mas_offset(-20);
+        make.height.mas_equalTo(40);
+    }];
 }
 
 
 - (void)commonSetupToSwitchSlider:(CJSwitchSlider *)switchSlider {
+    [self commonSetupUIToSwitchSlider:switchSlider];
+    [self commonSetupDataToSwitchSlider:switchSlider];
+}
+
+- (void)commonSetupUIToSwitchSlider:(CJSwitchSlider *)switchSlider {
+    UIView * (^createTrackViewBlock)(void) = ^(void) {
+        UILabel *label = [[UILabel alloc] initWithFrame:CGRectZero];
+        //label.backgroundColor = [UIColor clearColor];
+        label.layer.masksToBounds = YES;
+        label.layer.cornerRadius = 5;
+        label.font = [UIFont systemFontOfSize:19];
+        label.textColor = [UIColor whiteColor];
+        label.textAlignment = NSTextAlignmentCenter;
+        
+        return label;
+    };
+    
+    UIView * (^createMinimumTrackViewBlock)(void) = ^(void) {
+        UILabel *label = [[UILabel alloc] initWithFrame:CGRectZero];
+        //label.backgroundColor = [UIColor clearColor];
+        label.layer.masksToBounds = YES;
+        label.layer.cornerRadius = 5;
+        label.font = [UIFont systemFontOfSize:19];
+        label.textColor = [UIColor whiteColor];
+        label.textAlignment = NSTextAlignmentCenter;
+        
+        return label;
+    };
+    
+    UIView * (^createMaximumTrackViewBlock)(void) = ^(void) {
+        UILabel *label = [[UILabel alloc] initWithFrame:CGRectZero];
+        //label.backgroundColor = [UIColor clearColor];
+        label.layer.masksToBounds = YES;
+        label.layer.cornerRadius = 5;
+        label.font = [UIFont systemFontOfSize:19];
+        label.textColor = [UIColor whiteColor];
+        label.textAlignment = NSTextAlignmentCenter;
+        
+        return label;
+    };
+    
+    void(^configureMaximumTrackViewBlock)(UIView *maximumTrackView, CJSwitchSliderStatusModel *statusModel, BOOL useDragingStauts) = ^ (UIView *maximumTrackView, CJSwitchSliderStatusModel *statusModel, BOOL isDragingStauts) {
+        if (!isDragingStauts) {
+            //UIImageView *c_maximumTrackView = (UIImageView *)maximumTrackView;
+            //[c_maximumTrackView setImage:statusModel.normalImage];
+            
+            UILabel *c_maximumTrackView = (UILabel *)maximumTrackView;
+            [c_maximumTrackView setText:statusModel.normalText];
+            [c_maximumTrackView setBackgroundColor:statusModel.normalColor];
+            
+        } else {
+//            //UIImageView *c_maximumTrackView = (UIImageView *)maximumTrackView;
+//            //[c_maximumTrackView setImage:statusModel.dragingImage];
+//
+//            UILabel *c_maximumTrackView = (UILabel *)maximumTrackView;
+//            [c_maximumTrackView setText:statusModel.dragingText];
+//            [c_maximumTrackView setBackgroundColor:statusModel.dragingColor];
+        }
+    };
+    
+    void(^configureTrackViewBlock)(UIView *maximumTrackView, CJSwitchSliderStatusModel *statusModel, BOOL useDragingStauts) = ^ (UIView *maximumTrackView, CJSwitchSliderStatusModel *statusModel, BOOL isDragingStauts) {
+        if (!isDragingStauts) {
+            //UIImageView *c_maximumTrackView = (UIImageView *)maximumTrackView;
+            //[c_maximumTrackView setImage:statusModel.normalImage];
+            
+            UILabel *c_maximumTrackView = (UILabel *)maximumTrackView;
+            [c_maximumTrackView setText:statusModel.normalText];
+            [c_maximumTrackView setBackgroundColor:statusModel.normalColor];
+            
+        } else {
+            //UIImageView *c_maximumTrackView = (UIImageView *)maximumTrackView;
+            //[c_maximumTrackView setImage:statusModel.dragingImage];
+            
+            UILabel *c_maximumTrackView = (UILabel *)maximumTrackView;
+            [c_maximumTrackView setText:statusModel.dragingText];
+            [c_maximumTrackView setBackgroundColor:statusModel.dragingColor];
+        }
+    };
+    [switchSlider setupViewWithCreateTrackViewBlock:createTrackViewBlock
+                        createMinimumTrackViewBlock:createMinimumTrackViewBlock
+                        createMaximumTrackViewBlock:createMaximumTrackViewBlock];
+    switchSlider.configureMaximumTrackViewBlock = configureMaximumTrackViewBlock;
+    switchSlider.configureTrackViewBlock = configureTrackViewBlock;
+    
+    switchSlider.criticalValue = 0.5;
+    switchSlider.thumbSize = CGSizeMake(58, 31);
+}
+
+
+- (void)commonSetupDataToSwitchSlider:(CJSwitchSlider *)switchSlider {
     NSMutableArray *sliderStatusModels = [[NSMutableArray alloc] init];
     
     {
         CJSwitchSliderStatusModel *statusModel = [[CJSwitchSliderStatusModel alloc] init];
-        statusModel.image = [UIImage imageNamed:@"icon_ddlb_jd.png"];
+        //statusModel.normalImage = [UIImage imageNamed:@"icon_ddlb_jd.png"];
+        statusModel.normalText = @"接到乘客";
+        statusModel.normalColor = [UIColor cjColorWithHexString:@"#00aaff"];
+        
+        //statusModel.dragingImage = nil;
+        statusModel.dragingText = @"";
         statusModel.dragingColor = [UIColor cjColorWithHexString:@"#0a6fa2"];
         statusModel.goNextStepWhenSwitchEventOccur = YES;
         [sliderStatusModels addObject:statusModel];
@@ -77,7 +222,12 @@
     
     {
         CJSwitchSliderStatusModel *statusModel = [[CJSwitchSliderStatusModel alloc] init];
-        statusModel.image = [UIImage imageNamed:@"icon_ddlb_hd.png"];
+        //statusModel.normalImage = [UIImage imageNamed:@"icon_ddlb_hd.png"];
+        statusModel.normalText = @"送完乘客";
+        statusModel.normalColor = [UIColor cjColorWithHexString:@"#ff4343"];
+        
+        statusModel.dragingImage = nil;
+        statusModel.dragingText = @"";
         statusModel.dragingColor = [UIColor cjColorWithHexString:@"#cd3737"];
         statusModel.goNextStepWhenSwitchEventOccur = YES;
         [sliderStatusModels addObject:statusModel];
@@ -85,14 +235,14 @@
     
     {
         CJSwitchSliderStatusModel *statusModel = [[CJSwitchSliderStatusModel alloc] init];
-        statusModel.image = [UIImage cj_imageWithColor:[UIColor lightGrayColor] size:CGSizeMake(30, 30)];
+//        statusModel.image = [UIImage cj_imageWithColor:[UIColor lightGrayColor] size:CGSizeMake(30, 30)];
         [sliderStatusModels addObject:statusModel];
     }
-    
-    switchSlider.criticalValue = 0.5;
-    switchSlider.thumbSize = CGSizeMake(58, 31);
     switchSlider.statusModels = sliderStatusModels;
-    [switchSlider.mainThumb setImage:[UIImage imageNamed:@"btn_hd.png"] forState:UIControlStateNormal];
+    
+    UIImage *mainThumbImage = [UIImage imageNamed:@"btn_hd.png"];
+    [switchSlider.mainThumb setImage:mainThumbImage forState:UIControlStateNormal];
+    
     [switchSlider showStep:0];
     
     [switchSlider setSwitchEventOccuBlock:^(NSInteger execStep){
