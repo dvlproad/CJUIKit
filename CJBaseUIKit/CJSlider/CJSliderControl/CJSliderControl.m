@@ -338,7 +338,7 @@ static NSTimeInterval const kCJSliderControlDidTapSlidAnimationDuration  = 0.3f;
     //根据移动变化类型，设置 maximumTrackView 的宽度
     CGFloat maximumTrackViewWidth = CGRectGetMaxX(trackRect)-rangeMaxX;
     if (self.moveType == CJSliderMoveTypeMaximumTrackImageViewWidthNoChange) {
-        maximumTrackViewWidth = CGRectGetMaxX(trackRect);
+        maximumTrackViewWidth = CGRectGetMaxX(trackRect) - _thumbMoveMinX;
     }
     self.maximumTrackView.frame = CGRectMake(rangeMaxX, rangeOriginY, maximumTrackViewWidth, rangeHeight);
     
