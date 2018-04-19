@@ -86,23 +86,22 @@
     UIImage *trackImage = [UIImage imageNamed:@"slider_maximum_trackimage"];
     trackImage = [trackImage resizableImageWithCapInsets:UIEdgeInsetsMake(3, 7, 3, 7) resizingMode:UIImageResizingModeStretch];
     
-    
+    self.sliderControl1.thumbMoveMinXMargin = 30;
     [self.sliderControl1 setupViewWithCreateTrackViewBlock:^UIView *{
         UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectZero];
-        imageView.backgroundColor = [UIColor clearColor];
+        imageView.backgroundColor = [UIColor cyanColor];
         imageView.layer.masksToBounds = YES;
+        [imageView setImage:trackImage];
         return imageView;
         
     } createMinimumTrackViewBlock:nil createMaximumTrackViewBlock:nil];
-    UIImageView *trackView = (UIImageView *)self.sliderControl1.trackView;
-    [trackView setImage:trackImage];
 //    [self.sliderControl1.trackView setBackgroundColor:[UIColor redColor]];
     [self.sliderControl1.minimumTrackView setBackgroundColor:[UIColor magentaColor]];
     [self.sliderControl1.maximumTrackView setBackgroundColor:[UIColor clearColor]];
     
     self.sliderControl1.minValue = 0.0f;        //设置滑竿的最小值
     self.sliderControl1.maxValue = 100.0f;      //设置滑竿的最大值
-    self.sliderControl1.value = 52;
+    self.sliderControl1.value = 10;
     
     self.sliderControl1.delegate = self;                             //设置代理对象，用于接收滑竿滑动后值得改变
     [self.sliderControl1.mainThumb setImage:mainThumbImage forState:UIControlStateNormal];

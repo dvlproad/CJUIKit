@@ -199,6 +199,7 @@
     switchSlider.configureMaximumTrackViewBlock = configureMaximumTrackViewBlock;
     switchSlider.configureTrackViewBlock = configureTrackViewBlock;
     
+    switchSlider.thumbMoveMinXMargin = 20;
     switchSlider.criticalValue = 0.5;
     switchSlider.thumbSize = CGSizeMake(58, 31);
 }

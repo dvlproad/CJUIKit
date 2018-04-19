@@ -100,7 +100,7 @@ static NSTimeInterval const kCJSliderControlDidTapSlidAnimationDuration  = 0.3f;
             _trackView = createTrackViewBlock();
         } else {
             _trackView = [[UIView alloc] initWithFrame:CGRectZero];
-            _trackView.backgroundColor = [UIColor clearColor];
+            _trackView.backgroundColor = [UIColor lightGrayColor];
             _trackView.layer.masksToBounds = YES;
         }
         
@@ -113,7 +113,7 @@ static NSTimeInterval const kCJSliderControlDidTapSlidAnimationDuration  = 0.3f;
             _minimumTrackView = createMinimumTrackViewBlock();
         } else {
             _minimumTrackView = [[UIView alloc] initWithFrame:CGRectZero];
-            _minimumTrackView.backgroundColor = [UIColor clearColor];
+            _minimumTrackView.backgroundColor = [UIColor redColor];
             _minimumTrackView.layer.masksToBounds = YES;
         }
         [self addSubview:_minimumTrackView];
@@ -125,7 +125,7 @@ static NSTimeInterval const kCJSliderControlDidTapSlidAnimationDuration  = 0.3f;
             _maximumTrackView = createMaximumTrackViewBlock();
         } else {
             _maximumTrackView = [[UIView alloc] initWithFrame:CGRectZero];
-            _maximumTrackView.backgroundColor = [UIColor clearColor];
+            _maximumTrackView.backgroundColor = [UIColor greenColor];
             _maximumTrackView.layer.masksToBounds = YES;
         }
         [self addSubview:_maximumTrackView];
@@ -219,7 +219,7 @@ static NSTimeInterval const kCJSliderControlDidTapSlidAnimationDuration  = 0.3f;
     _thumbMoveMinX = 0 + self.thumbMoveMinXMargin;
     _thumbMoveMaxX = CGRectGetWidth(bounds) - self.thumbMoveMaxXMargin;
     _thumbCanMoveWidth = (self.thumbMoveMaxX-thumbImageViewWidth) - self.thumbMoveMinX; //滑块可滑动的实际大小
-    CGFloat thumbImageViewOriginX = CGRectGetMinX(rect) + percent*self.thumbCanMoveWidth;
+    CGFloat thumbImageViewOriginX = CGRectGetMinX(rect) + _thumbMoveMinX + percent*self.thumbCanMoveWidth;
     
     CGRect thumbRect = CGRectMake(thumbImageViewOriginX, thumbImageViewOriginY, thumbImageViewWidth, thumbImageViewHeight);
     return thumbRect;
