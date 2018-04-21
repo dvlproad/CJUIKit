@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "CJBaseUtil"
-  s.version      = "0.2.7"
+  s.version      = "0.2.8"
   s.summary      = "自定义的基础工具类"
   s.homepage     = "https://github.com/dvlproad/CJUIKit"
   s.license      = "MIT"
@@ -14,8 +14,10 @@ Pod::Spec.new do |s|
                   5、CJWebUtil：Web工具
                   6、CJDevice：设备信息工具
                   7、CJApp：App信息工具
-                  8、CJManager：其他各种工具类
-                  9、CJPinyinHelper：拼音相关工具
+                  8、CJAccountPasswordUtil：账号安全工具
+                  9、CJManager：其他各种工具类
+                  10、CJPinyinHelper：拼音相关工具
+                  11、CJCallUtil：拨打电话工具
 
                    A longer description of CJBaseUtil in Markdown format.
 
@@ -29,7 +31,7 @@ Pod::Spec.new do |s|
 
   s.platform     = :ios, "7.0"
 
-  s.source       = { :git => "https://github.com/dvlproad/CJUIKit.git", :tag => "CJBaseUtil_0.2.7" }
+  s.source       = { :git => "https://github.com/dvlproad/CJUIKit.git", :tag => "CJBaseUtil_0.2.8" }
   # s.source_files  = "CJBaseUtil/*.{h,m}"
   # s.resources = "CJBaseUtil/**/*.{png}"
   s.frameworks = 'UIKit'
@@ -52,6 +54,12 @@ Pod::Spec.new do |s|
 
   s.subspec 'CJLog' do |ss|
     ss.source_files = "CJBaseUtil/CJLog/**/*.{h,m}"
+  end
+
+  # 账号安全
+  s.subspec 'CJAccountPasswordUtil' do |ss|
+    ss.source_files = "CJBaseUtil/CJAccountPasswordUtil/**/*.{h,m}"
+    ss.dependency "SAMKeychain"
   end
 
   # 包含搜索、排序等数据处理工具类
@@ -83,6 +91,7 @@ Pod::Spec.new do |s|
     ss.frameworks = 'WebKit'
   end
 
+  # 拨打电话
   s.subspec 'CJCallUtil' do |ss|
     ss.source_files = "CJBaseUtil/CJCallUtil/**/*.{h,m}"
   end

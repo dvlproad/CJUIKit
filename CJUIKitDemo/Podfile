@@ -26,6 +26,8 @@ target 'CJUIKitDemo' do
   # 搜索功能需要使用的库
   pod 'PinYin4Objc', '~> 1.1.1'
   
+  # 账号安全需要依赖的库
+  pod 'SAMKeychain'
   
   # 图片选择需要依赖的库
   pod 'JGActionSheet', '~> 1.0.5'

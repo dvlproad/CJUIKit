@@ -50,6 +50,7 @@ PODS:
   - OpenUDID (1.0.0)
   - PinYin4Objc (1.1.1)
   - PureLayout (3.0.2)
+  - SAMKeychain (1.5.3)
   - SDCycleScrollView (1.75):
     - SDWebImage (>= 4.0.0)
   - SDWebImage (4.2.3):
@@ -80,11 +81,39 @@ DEPENDENCIES:
   - OpenUDID (~> 1.0.0)
   - PinYin4Objc (~> 1.1.1)
   - PureLayout (~> 3.0.2)
+  - SAMKeychain
   - SDCycleScrollView (~> 1.73)
   - Shimmer (~> 1.0.2)
   - SVProgressHUD (~> 2.2.2)
   - WebViewJavascriptBridge (~> 6.0.2)
   - YYText (~> 1.0.7)
+
+SPEC REPOS:
+  https://github.com/CocoaPods/Specs.git:
+    - AFNetworking
+    - CJFile
+    - CJMedia
+    - CJNetwork
+    - CJPicker
+    - CJPopupAction
+    - JGActionSheet
+    - Mantle
+    - Masonry
+    - MBProgressHUD
+    - MJExtension
+    - MJPopupViewController
+    - MJRefresh
+    - NJKWebViewProgress
+    - OpenUDID
+    - PinYin4Objc
+    - PureLayout
+    - SAMKeychain
+    - SDCycleScrollView
+    - SDWebImage
+    - Shimmer
+    - SVProgressHUD
+    - WebViewJavascriptBridge
+    - YYText
 
 SPEC CHECKSUMS:
   AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
@@ -104,6 +133,7 @@ SPEC CHECKSUMS:
   OpenUDID: e7cb6984c7304906ad20f3a36bf087b025896b6b
   PinYin4Objc: 3fa9673610368330e2dfb688b1d19a35c3930a78
   PureLayout: 4d550abe49a94f24c2808b9b95db9131685fe4cd
+  SAMKeychain: 483e1c9f32984d50ca961e26818a534283b4cd5c
   SDCycleScrollView: 884b88f0266dd4708a0e1934975c69cb971707b1
   SDWebImage: 791bb72962b3492327ddcac4b1880bd1b5458431
   Shimmer: c5374be1c2b0c9e292fb05b339a513cf291cac86
@@ -111,6 +141,6 @@ SPEC CHECKSUMS:
   WebViewJavascriptBridge: 7f5bc4d3581e672e8f32bd0f812d54bc69bb8e29
   YYText: 5c461d709e24d55a182d1441c41dc639a18a4849
 
-PODFILE CHECKSUM: d3404af7b000daa938b1dee327e5315676faa54d
+PODFILE CHECKSUM: a662f667cd2969e73fc3f2c5709f995e745e2164
 
-COCOAPODS: 1.4.0
+COCOAPODS: 1.5.0

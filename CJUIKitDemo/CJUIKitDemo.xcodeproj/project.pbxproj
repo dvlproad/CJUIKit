@@ -169,6 +169,8 @@
 		78B740341FB6C04600443D87 /* NSString+MD5.m in Sources */ = {isa = PBXBuildFile; fileRef = 78B740261FB6C04600443D87 /* NSString+MD5.m */; };
 		78B740351FB6C04600443D87 /* CJResponseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 78B740291FB6C04600443D87 /* CJResponseModel.m */; };
 		78B740361FB6C04600443D87 /* IjinbuResponseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 78B7402B1FB6C04600443D87 /* IjinbuResponseModel.m */; };
+		78C60077208BE6AF00474F98 /* CJAccountPasswordUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 78C60075208BE6AF00474F98 /* CJAccountPasswordUtil.m */; };
+		78C6007A208BE6D000474F98 /* CJAppLaunchUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 78C60079208BE6D000474F98 /* CJAppLaunchUtil.m */; };
 		78E269BE1ECC5E1A007D3686 /* bgCar@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 78E269BB1ECC5E1A007D3686 /* bgCar@2x.jpg */; };
 		78E269BF1ECC5E1A007D3686 /* bgSky@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 78E269BC1ECC5E1A007D3686 /* bgSky@2x.jpg */; };
 		78E269C01ECC5E1A007D3686 /* header@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 78E269BD1ECC5E1A007D3686 /* header@2x.jpg */; };
@@ -389,7 +391,6 @@
 		80FF91501FC5668700E437CF /* CJRealtimeSearchUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 80FF91231FC5668700E437CF /* CJRealtimeSearchUtil.m */; };
 		80FF91521FC5668700E437CF /* CJLogUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 80FF91281FC5668700E437CF /* CJLogUtil.m */; };
 		80FF91531FC5668700E437CF /* PrivateSetting.m in Sources */ = {isa = PBXBuildFile; fileRef = 80FF912C1FC5668700E437CF /* PrivateSetting.m */; };
-		80FF91541FC5668700E437CF /* CJAppHaveLaunchUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 80FF912F1FC5668700E437CF /* CJAppHaveLaunchUtil.m */; };
 		80FF91551FC5668800E437CF /* CJAppVersionUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 80FF91321FC5668700E437CF /* CJAppVersionUtil.m */; };
 		80FF91931FC5682B00E437CF /* TypeConvertViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 80FF91741FC5682A00E437CF /* TypeConvertViewController.xib */; };
 		80FF91941FC5682B00E437CF /* TypeConvertViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80FF91751FC5682A00E437CF /* TypeConvertViewController.m */; };
@@ -727,6 +728,10 @@
 		78B740291FB6C04600443D87 /* CJResponseModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJResponseModel.m; sourceTree = "<group>"; };
 		78B7402A1FB6C04600443D87 /* IjinbuResponseModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IjinbuResponseModel.h; sourceTree = "<group>"; };
 		78B7402B1FB6C04600443D87 /* IjinbuResponseModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IjinbuResponseModel.m; sourceTree = "<group>"; };
+		78C60075208BE6AF00474F98 /* CJAccountPasswordUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJAccountPasswordUtil.m; sourceTree = "<group>"; };
+		78C60076208BE6AF00474F98 /* CJAccountPasswordUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJAccountPasswordUtil.h; sourceTree = "<group>"; };
+		78C60078208BE6D000474F98 /* CJAppLaunchUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJAppLaunchUtil.h; sourceTree = "<group>"; };
+		78C60079208BE6D000474F98 /* CJAppLaunchUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJAppLaunchUtil.m; sourceTree = "<group>"; };
 		78E269BB1ECC5E1A007D3686 /* bgCar@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "bgCar@2x.jpg"; sourceTree = "<group>"; };
 		78E269BC1ECC5E1A007D3686 /* bgSky@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "bgSky@2x.jpg"; sourceTree = "<group>"; };
 		78E269BD1ECC5E1A007D3686 /* header@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "header@2x.jpg"; sourceTree = "<group>"; };
@@ -1068,9 +1073,7 @@
 		80FF91281FC5668700E437CF /* CJLogUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJLogUtil.m; sourceTree = "<group>"; };
 		80FF912C1FC5668700E437CF /* PrivateSetting.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PrivateSetting.m; sourceTree = "<group>"; };
 		80FF912D1FC5668700E437CF /* PrivateSetting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrivateSetting.h; sourceTree = "<group>"; };
-		80FF912F1FC5668700E437CF /* CJAppHaveLaunchUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJAppHaveLaunchUtil.m; sourceTree = "<group>"; };
 		80FF91301FC5668700E437CF /* CJAppVersionUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJAppVersionUtil.h; sourceTree = "<group>"; };
-		80FF91311FC5668700E437CF /* CJAppHaveLaunchUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJAppHaveLaunchUtil.h; sourceTree = "<group>"; };
 		80FF91321FC5668700E437CF /* CJAppVersionUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJAppVersionUtil.m; sourceTree = "<group>"; };
 		80FF91721FC5682A00E437CF /* FoundatioHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FoundatioHomeViewController.h; sourceTree = "<group>"; };
 		80FF91741FC5682A00E437CF /* TypeConvertViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TypeConvertViewController.xib; sourceTree = "<group>"; };
@@ -2064,6 +2067,15 @@
 			path = ResponseModels;
 			sourceTree = "<group>";
 		};
+		78C60074208BE6AF00474F98 /* CJAccountPasswordUtil */ = {
+			isa = PBXGroup;
+			children = (
+				78C60076208BE6AF00474F98 /* CJAccountPasswordUtil.h */,
+				78C60075208BE6AF00474F98 /* CJAccountPasswordUtil.m */,
+			);
+			path = CJAccountPasswordUtil;
+			sourceTree = "<group>";
+		};
 		7EA576B320691B5A00726CCF /* CJModuleManager */ = {
 			isa = PBXGroup;
 			children = (
@@ -2765,6 +2777,7 @@
 		80FF91021FC5668700E437CF /* CJBaseUtil */ = {
 			isa = PBXGroup;
 			children = (
+				78C60074208BE6AF00474F98 /* CJAccountPasswordUtil */,
 				800A15FA208480BF00ECF9AF /* CJCallUtil */,
 				80F9CFDD206CFDFB003B41D4 /* CJPinyinHelper */,
 				8044781D2061F328007185EF /* CJManager */,
@@ -2886,8 +2899,8 @@
 		80FF912E1FC5668700E437CF /* CJApp */ = {
 			isa = PBXGroup;
 			children = (
-				80FF91311FC5668700E437CF /* CJAppHaveLaunchUtil.h */,
-				80FF912F1FC5668700E437CF /* CJAppHaveLaunchUtil.m */,
+				78C60078208BE6D000474F98 /* CJAppLaunchUtil.h */,
+				78C60079208BE6D000474F98 /* CJAppLaunchUtil.m */,
 				80FF91301FC5668700E437CF /* CJAppVersionUtil.h */,
 				80FF91321FC5668700E437CF /* CJAppVersionUtil.m */,
 			);
@@ -3061,7 +3074,6 @@
 				780E45FC1E5DF87B00980127 /* Sources */,
 				780E45FD1E5DF87B00980127 /* Frameworks */,
 				780E45FE1E5DF87B00980127 /* Resources */,
-				8B470B36EC1B428F19AD6C71 /* [CP] Embed Pods Frameworks */,
 				693C2CD1129E8BD75F6C10A0 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
@@ -3081,8 +3093,6 @@
 				780E46151E5DF87B00980127 /* Sources */,
 				780E46161E5DF87B00980127 /* Frameworks */,
 				780E46171E5DF87B00980127 /* Resources */,
-				5B1AC43C6A8549772AAC7453 /* [CP] Embed Pods Frameworks */,
-				18AD025421F8AEC7A0D4F8B2 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -3364,21 +3374,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		18AD025421F8AEC7A0D4F8B2 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CJUIKitDemoTests/Pods-CJUIKitDemoTests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		2CCE0E39F4FA24C72079A7C0 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -3395,21 +3390,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		5B1AC43C6A8549772AAC7453 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CJUIKitDemoTests/Pods-CJUIKitDemoTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		693C2CD1129E8BD75F6C10A0 /* [CP] Copy Pods Resources */ = {
@@ -3437,6 +3417,7 @@
 				"${PODS_ROOT}/CJPicker/CJPicker/Resources/line_gray_pickerToolbar@2x.png",
 				"${PODS_ROOT}/MJRefresh/MJRefresh/MJRefresh.bundle",
 				"${PODS_ROOT}/PinYin4Objc/PinYin4Objc/Resources/unicode_to_hanyu_pinyin.txt",
+				"${PODS_ROOT}/SAMKeychain/Support/SAMKeychain.bundle",
 				"${PODS_ROOT}/SVProgressHUD/SVProgressHUD/SVProgressHUD.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
@@ -3459,26 +3440,12 @@
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/line_gray_pickerToolbar@2x.png",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MJRefresh.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/unicode_to_hanyu_pinyin.txt",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/SAMKeychain.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/SVProgressHUD.bundle",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CJUIKitDemo/Pods-CJUIKitDemo-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		8B470B36EC1B428F19AD6C71 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CJUIKitDemo/Pods-CJUIKitDemo-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -3623,7 +3590,6 @@
 				80FF90B81FC5649F00E437CF /* DragViewController.m in Sources */,
 				80FF90481FC5649F00E437CF /* UploadDirectlyImagePickerViewController.m in Sources */,
 				78B740351FB6C04600443D87 /* CJResponseModel.m in Sources */,
-				80FF91541FC5668700E437CF /* CJAppHaveLaunchUtil.m in Sources */,
 				789CAF1F1FB612B700AF8CD4 /* CJHeadAndCellHorizontalLayout.m in Sources */,
 				80FF91971FC5682B00E437CF /* EncryptStringViewController.m in Sources */,
 				789CAF331FB612B700AF8CD4 /* CJBadgeImageView.m in Sources */,
@@ -3668,6 +3634,7 @@
 				80FF91C51FC581DD00E437CF /* UtilHomeViewController.m in Sources */,
 				787FDB5A20500B01008A46E3 /* ImageViewController.m in Sources */,
 				80FF91351FC5668700E437CF /* NSArray+CJConsoleLog.m in Sources */,
+				78C60077208BE6AF00474F98 /* CJAccountPasswordUtil.m in Sources */,
 				803323AC20299AD7001DACF1 /* CustomLayoutCollectionViewController.m in Sources */,
 				789CAF291FB612B700AF8CD4 /* CJLeftDetailTableViewCell.m in Sources */,
 				789CAF7F1FB612B700AF8CD4 /* CJUploadImageCollectionView.m in Sources */,
@@ -3732,6 +3699,7 @@
 				789CAF431FB612B700AF8CD4 /* UIScrollView+CJKeyboardAvoiding.m in Sources */,
 				8014A2801FA2C2E500DDDB5A /* AppDelegate+WindowRootViewController.m in Sources */,
 				787FDB9720500B5C008A46E3 /* RangeSliderViewController.m in Sources */,
+				78C6007A208BE6D000474F98 /* CJAppLaunchUtil.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
