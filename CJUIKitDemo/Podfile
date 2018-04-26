@@ -49,6 +49,7 @@ target 'CJUIKitDemo' do
   
   pod 'NJKWebViewProgress'
   
+  pod 'DZNEmptyDataSet'
 end
 
 target 'CJUIKitDemoTests' do

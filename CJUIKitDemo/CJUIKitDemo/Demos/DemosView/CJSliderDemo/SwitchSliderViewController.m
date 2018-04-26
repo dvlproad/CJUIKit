@@ -70,7 +70,8 @@
     
     /* ③、shimmeringSwitchSlider1、shimmeringSwitchSlider2、shimmeringSwitchSlider3 */
     CJSwitchSlider *s_switchSlider1 = self.shimmeringSwitchSlider1.switchSlider;
-    
+    self.shimmeringSwitchSlider1.layer.masksToBounds = YES; //收边
+    self.shimmeringSwitchSlider1.layer.cornerRadius = 15;
     s_switchSlider1.moveType = CJSliderMoveTypeMaximumTrackImageViewWidthAspectFit;
     s_switchSlider1.switchAnimatedType = CJSwitchAnimatedTypeCurrentStepInMaximumTrackImageView;
     [self commonSetupToSwitchSlider:s_switchSlider1];
@@ -124,7 +125,7 @@
         UILabel *label = [[UILabel alloc] initWithFrame:CGRectZero];
         //label.backgroundColor = [UIColor clearColor];
         label.layer.masksToBounds = YES;
-        label.layer.cornerRadius = 5;
+        label.layer.cornerRadius = 15;
         label.font = [UIFont systemFontOfSize:19];
         label.textColor = [UIColor whiteColor];
         label.textAlignment = NSTextAlignmentCenter;
@@ -136,7 +137,7 @@
         UILabel *label = [[UILabel alloc] initWithFrame:CGRectZero];
         //label.backgroundColor = [UIColor clearColor];
         label.layer.masksToBounds = YES;
-        label.layer.cornerRadius = 5;
+        label.layer.cornerRadius = 15;
         label.font = [UIFont systemFontOfSize:19];
         label.textColor = [UIColor whiteColor];
         label.textAlignment = NSTextAlignmentCenter;
@@ -148,7 +149,7 @@
         UILabel *label = [[UILabel alloc] initWithFrame:CGRectZero];
         //label.backgroundColor = [UIColor clearColor];
         label.layer.masksToBounds = YES;
-        label.layer.cornerRadius = 5;
+        label.layer.cornerRadius = 15;
         label.font = [UIFont systemFontOfSize:19];
         label.textColor = [UIColor whiteColor];
         label.textAlignment = NSTextAlignmentCenter;

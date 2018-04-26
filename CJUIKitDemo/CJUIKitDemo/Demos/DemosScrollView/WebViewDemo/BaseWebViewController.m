@@ -19,14 +19,14 @@
 
 #import <SVProgressHUD/SVProgressHUD.h>
 
-#import "EmptyView.h"
+#import "DemoEmptyView.h"
 
 @interface BaseWebViewController () <WKNavigationDelegate>
 
 @property (nonatomic, strong) WKWebView *webView;
 @property (nonatomic, strong) UIProgressView *progressView;
 
-@property (nonatomic, strong) EmptyView *emptyView;
+@property (nonatomic, strong) DemoEmptyView *emptyView;
 
 @property (nonatomic, assign, readonly) BOOL isNetworkWeb;   /**< 是否是网络网页，否则是本地网页 */
 
@@ -253,7 +253,7 @@
 
 - (void)showEmptyViewWithFailureMessage:(NSString *)failureMessage {
     if (self.emptyView == nil) {
-        self.emptyView = [[EmptyView alloc] initWithFrame:CGRectZero];
+        self.emptyView = [[DemoEmptyView alloc] initWithFrame:CGRectZero];
         [self.view addSubview:self.emptyView];
         [self.emptyView mas_makeConstraints:^(MASConstraintMaker *make) {
             make.left.right.mas_equalTo(self.emptyView);
@@ -270,7 +270,7 @@
         };
     }
     
-    [self.emptyView showEmptyViewWithFailureMessage:failureMessage];
+    self.emptyView.message = failureMessage;
     self.emptyView.hidden = NO;
 }
 

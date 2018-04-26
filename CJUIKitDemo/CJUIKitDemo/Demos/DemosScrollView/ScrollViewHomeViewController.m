@@ -14,6 +14,9 @@
 #import "SvDemo_Refresh.h"
 #import "ScrollViewController.h"
 
+//EmptyView
+#import "BBXPassengerEmptyViewController.h"
+
 //UITableView
 #import "TableViewController.h"
 #import "DemoTableViewController.h"
@@ -91,6 +94,19 @@
         [sectionDataModels addObject:sectionDataModel];
     }
     
+    //EmptyView
+    {
+        CJSectionDataModel *sectionDataModel = [[CJSectionDataModel alloc] init];
+        sectionDataModel.theme = @"EmptyView相关";
+        {
+            CJModuleModel *baseScrollViewModule = [[CJModuleModel alloc] init];
+            baseScrollViewModule.title = @"DemoEmptyView";
+            baseScrollViewModule.classEntry = [BBXPassengerEmptyViewController class];
+            [sectionDataModel.values addObject:baseScrollViewModule];
+        }
+        
+        [sectionDataModels addObject:sectionDataModel];
+    }
     
     //UITableView
     {

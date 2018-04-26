@@ -15,6 +15,7 @@
 #import "DataUtilViewController.h"
 
 #import "ToastViewController.h"
+#import "AlertViewController.h"
 
 #import "KeyboardUtilViewController.h"
 
@@ -59,6 +60,12 @@
             toastUtilModule.title = @"Toast";
             toastUtilModule.classEntry = [ToastViewController class];
             [sectionDataModel.values addObject:toastUtilModule];
+        }
+        {
+            CJModuleModel *alertUtilModule = [[CJModuleModel alloc] init];
+            alertUtilModule.title = @"Alert";
+            alertUtilModule.classEntry = [AlertViewController class];
+            [sectionDataModel.values addObject:alertUtilModule];
         }
         {
             CJModuleModel *keyboardUtilModule = [[CJModuleModel alloc] init];
