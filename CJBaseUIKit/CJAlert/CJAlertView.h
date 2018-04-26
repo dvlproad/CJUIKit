@@ -21,11 +21,13 @@
 */
 
 /**
- *  仿系统 UIAlertView
+ *  仿系统 UIAlertView(使用类方法只能创建默认样式的alertView,若要创建更加自定义的alertView,请使用实例方法)
  */
 @interface CJAlertView : UIView {
     
 }
+
+///创建alertView(使用类方法只能创建默认样式的alertView,若要创建更加自定义的alertView,请使用实例方法)
 + (instancetype)alertViewWithSize:(CGSize)size
                         flagImage:(UIImage *)flagImage
                             title:(NSString *)title
@@ -36,7 +38,21 @@
                          okHandle:(void(^)(void))okHandle;
 
 
-- (instancetype)initWithSize:(CGSize)size;
+/**
+ *  创建alertView
+ *  @brief  这里所说的三个视图范围为：flagImageView(有的话，一定是第一个)、titleLabel(有的话，有可能一或二)、messageLabel(有的话，有可能一或二或三)
+ *
+ *  @param size                     alertView的大小
+ *  @param firstVerticalInterval    第一个视图(一般为flagImageView，如果flagImageView不存在，则为下一个即titleLabel，以此类推)与顶部的间隔
+ *  @param secondVerticalInterval   第二个视图与第一个视图的间隔(如果少于两个视图，这个值设为0即可)
+ *  @param thirdVerticalInterval    第三个视图与第二个视图的间隔(如果少于三个视图，这个值设为0即可)
+ *
+ *  @return alertView
+ */
+- (instancetype)initWithSize:(CGSize)size
+       firstVerticalInterval:(CGFloat)firstVerticalInterval
+      secondVerticalInterval:(CGFloat)secondVerticalInterval
+       thirdVerticalInterval:(CGFloat)thirdVerticalInterval;
 
 ///添加指示图标
 - (void)addFlagImage:(UIImage *)flagImage size:(CGSize)imageViewSize;

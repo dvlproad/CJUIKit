@@ -14,6 +14,15 @@
 }
 @property (nonatomic, readonly) CGSize size;
 
+//第一个视图(一般为flagImageView，如果flagImageView不存在，则为下一个即titleLabel，以此类推)与顶部的间隔
+@property (nonatomic, readonly) CGFloat firstVerticalInterval;
+
+//第二个视图与第一个视图的间隔
+@property (nonatomic, readonly) CGFloat secondVerticalInterval;
+
+//第三个视图与第二个视图的间隔
+@property (nonatomic, readonly) CGFloat thirdVerticalInterval;
+
 @property (nonatomic, strong) UIImageView *flagImageView;
 @property (nonatomic, strong) UILabel *titleLabel;
 @property (nonatomic, strong) UILabel *messageLabel;
@@ -39,7 +48,7 @@
                          okHandle:(void(^)(void))okHandle
 {
     //①创建
-    CJAlertView *alertView = [[CJAlertView alloc] initWithSize:size];
+    CJAlertView *alertView = [[CJAlertView alloc] initWithSize:size firstVerticalInterval:25 secondVerticalInterval:10 thirdVerticalInterval:10];
     
     //②添加 flagImage、titleLabel、messageLabel
     //[alertView setupFlagImage:flagImage title:title message:message configure:configure]; //已拆解成以下几个方法
@@ -61,13 +70,31 @@
     return alertView;
 }
 
-- (instancetype)initWithSize:(CGSize)size {
+/**
+ *  创建alertView
+ *  @brief  这里所说的三个视图范围为：flagImageView(有的话，一定是第一个)、titleLabel(有的话，有可能一或二)、messageLabel(有的话，有可能一或二或三)
+ *
+ *  @param size                     alertView的大小
+ *  @param firstVerticalInterval    第一个视图(一般为flagImageView，如果flagImageView不存在，则为下一个即titleLabel，以此类推)与顶部的间隔
+ *  @param secondVerticalInterval   第二个视图与第一个视图的间隔(如果少于两个视图，这个值设为0即可)
+ *  @param thirdVerticalInterval    第三个视图与第二个视图的间隔(如果少于三个视图，这个值设为0即可)
+ *
+ *  @return alertView
+ */
+- (instancetype)initWithSize:(CGSize)size
+       firstVerticalInterval:(CGFloat)firstVerticalInterval
+      secondVerticalInterval:(CGFloat)secondVerticalInterval
+       thirdVerticalInterval:(CGFloat)thirdVerticalInterval
+{
     self = [super init];
     if (self) {
         self.backgroundColor = [UIColor whiteColor];
         self.layer.cornerRadius = 3;
         
         _size = size;
+        _firstVerticalInterval = firstVerticalInterval;
+        _secondVerticalInterval = secondVerticalInterval;
+        _thirdVerticalInterval = thirdVerticalInterval;
     }
     return self;
 }
@@ -161,7 +188,7 @@
         [flagImageView mas_makeConstraints:^(MASConstraintMaker *make) {
             make.centerX.mas_equalTo(self);
             make.width.mas_equalTo(imageViewSize.width);
-            make.top.mas_equalTo(self).mas_offset(25);
+            make.top.mas_equalTo(self).mas_offset(self.firstVerticalInterval);
             make.height.mas_equalTo(imageViewSize.height);
         }];
         _flagImageView = flagImageView;
@@ -170,16 +197,16 @@
     
     if (self.titleLabel) {
         [self.titleLabel mas_updateConstraints:^(MASConstraintMaker *make) {
-            make.top.mas_equalTo(self.flagImageView.mas_bottom).mas_offset(10);
+            make.top.mas_equalTo(self.flagImageView.mas_bottom).mas_offset(self.secondVerticalInterval);
         }];
     }
     
     if (self.messageLabel) {
         [self.messageLabel mas_updateConstraints:^(MASConstraintMaker *make) {
             if (self.titleLabel) {
-                make.top.mas_equalTo(self.flagImageView.mas_bottom).mas_offset(10);
+                make.top.mas_equalTo(self.flagImageView.mas_bottom).mas_offset(self.thirdVerticalInterval);
             } else {
-                make.top.mas_equalTo(self.titleLabel.mas_bottom).mas_offset(10);
+                make.top.mas_equalTo(self.titleLabel.mas_bottom).mas_offset(self.secondVerticalInterval);
             }
         }];
     }
@@ -214,16 +241,20 @@
         make.centerX.mas_equalTo(self);
         make.left.mas_equalTo(self).mas_offset(titleLabelLeftOffset);
         if (self.flagImageView) {
-            make.top.mas_equalTo(self.flagImageView.mas_bottom).mas_offset(10);
+            make.top.mas_equalTo(self.flagImageView.mas_bottom).mas_offset(self.secondVerticalInterval);
         } else {
-            make.top.mas_equalTo(self).mas_offset(25);
+            make.top.mas_equalTo(self).mas_offset(self.firstVerticalInterval);
         }
         make.height.mas_equalTo(titleTextHeight);
     }];
     
     if (self.messageLabel) {
         [self.messageLabel mas_updateConstraints:^(MASConstraintMaker *make) {
-            make.top.mas_equalTo(self.titleLabel.mas_bottom).mas_offset(10);
+            if (self.flagImageView) {
+                make.top.mas_equalTo(self.titleLabel.mas_bottom).mas_offset(self.thirdVerticalInterval);
+            } else {
+                make.top.mas_equalTo(self.titleLabel.mas_bottom).mas_offset(self.secondVerticalInterval);
+            }
         }];
     }
 }
@@ -260,11 +291,15 @@
         make.centerX.mas_equalTo(self);
         make.left.mas_equalTo(self).mas_offset(messageLabelLeftOffset);
         if (self.titleLabel) {
-            make.top.mas_equalTo(self.titleLabel.mas_bottom).mas_offset(10);
+            if (self.flagImageView) {
+                make.top.mas_equalTo(self.titleLabel.mas_bottom).mas_offset(self.thirdVerticalInterval);
+            } else {
+                make.top.mas_equalTo(self.titleLabel.mas_bottom).mas_offset(self.secondVerticalInterval);
+            }
         } else if (self.flagImageView) {
-            make.top.mas_equalTo(self.flagImageView.mas_bottom).mas_offset(10);
+            make.top.mas_equalTo(self.flagImageView.mas_bottom).mas_offset(self.secondVerticalInterval);
         } else {
-            make.top.mas_equalTo(self).mas_offset(10);
+            make.top.mas_equalTo(self).mas_offset(self.firstVerticalInterval);
         }
         
         make.height.mas_equalTo(messageTextHeight);
@@ -317,11 +352,15 @@
         make.centerX.mas_equalTo(self);
         make.left.mas_equalTo(self).mas_offset(messageLabelLeftOffset);
         if (self.titleLabel) {
-            make.top.mas_equalTo(self.titleLabel.mas_bottom).mas_offset(10);
+            if (self.flagImageView) {
+                make.top.mas_equalTo(self.titleLabel.mas_bottom).mas_offset(self.thirdVerticalInterval);
+            } else {
+                make.top.mas_equalTo(self.titleLabel.mas_bottom).mas_offset(self.secondVerticalInterval);
+            }
         } else if (self.flagImageView) {
-            make.top.mas_equalTo(self.flagImageView.mas_bottom).mas_offset(10);
+            make.top.mas_equalTo(self.flagImageView.mas_bottom).mas_offset(self.secondVerticalInterval);
         } else {
-            make.top.mas_equalTo(self).mas_offset(10);
+            make.top.mas_equalTo(self).mas_offset(self.firstVerticalInterval);
         }
         
         make.height.mas_equalTo(messageTextHeight);

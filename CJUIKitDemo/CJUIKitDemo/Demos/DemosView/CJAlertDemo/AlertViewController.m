@@ -354,7 +354,7 @@ typedef NS_ENUM(NSUInteger, BBXBusQRCodeStatus) {
             NSString *cancelButtonTitle = NSLocalizedString(@"我知道了", nil);
             NSString *okButtonTitle = NSLocalizedString(@"允许上车", nil);
             
-            CJAlertView *alertView = [[CJAlertView alloc] initWithSize:popupViewSize];
+            CJAlertView *alertView = [[CJAlertView alloc] initWithSize:popupViewSize firstVerticalInterval:25 secondVerticalInterval:10 thirdVerticalInterval:10];
             [alertView addFlagImage:flagImage size:CGSizeMake(38, 38)];
             [alertView addTitleWithText:title font:[UIFont systemFontOfSize:18.0] textAlignment:NSTextAlignmentCenter margin:20];
             [alertView addMessageTextWithText:message font:[UIFont systemFontOfSize:15.0] textAlignment:NSTextAlignmentCenter margin:20];
@@ -385,7 +385,7 @@ typedef NS_ENUM(NSUInteger, BBXBusQRCodeStatus) {
             NSString *cancelButtonTitle = nil;
             NSString *okButtonTitle = NSLocalizedString(@"我知道了", nil);
             
-            CJAlertView *alertView = [[CJAlertView alloc] initWithSize:popupViewSize];
+            CJAlertView *alertView = [[CJAlertView alloc] initWithSize:popupViewSize firstVerticalInterval:25 secondVerticalInterval:10 thirdVerticalInterval:10];
             [alertView addTitleWithText:title font:[UIFont systemFontOfSize:18.0] textAlignment:NSTextAlignmentCenter margin:20];
             [alertView addMessageTextWithText:message font:[UIFont systemFontOfSize:15.0] textAlignment:NSTextAlignmentCenter margin:20];
             [alertView addBottomButtonWithHeight:50 cancelButtonTitle:cancelButtonTitle okButtonTitle:okButtonTitle cancelHandle:nil okHandle:^{
@@ -406,7 +406,7 @@ typedef NS_ENUM(NSUInteger, BBXBusQRCodeStatus) {
             NSString *cancelButtonTitle = NSLocalizedString(@"取消", nil);
             NSString *okButtonTitle = NSLocalizedString(@"结束行程", nil);
             
-            CJAlertView *alertView = [[CJAlertView alloc] initWithSize:popupViewSize];
+            CJAlertView *alertView = [[CJAlertView alloc] initWithSize:popupViewSize firstVerticalInterval:25 secondVerticalInterval:20 thirdVerticalInterval:0];
             [alertView addTitleWithText:title font:[UIFont systemFontOfSize:15.0] textAlignment:NSTextAlignmentCenter margin:20];
             
             
