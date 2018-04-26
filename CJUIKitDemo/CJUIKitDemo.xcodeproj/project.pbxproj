@@ -290,7 +290,6 @@
 		80D71EA92090277700D2DB68 /* AlertViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80D71EA72090277700D2DB68 /* AlertViewController.m */; };
 		80D71EAA2090277700D2DB68 /* AlertViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 80D71EA82090277700D2DB68 /* AlertViewController.xib */; };
 		80D71EAD20902C2F00D2DB68 /* CJAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 80D71EAC20902C2F00D2DB68 /* CJAlertView.m */; };
-		80D71EB020902E8200D2DB68 /* CJAlertActionModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 80D71EAF20902E8200D2DB68 /* CJAlertActionModel.m */; };
 		80D71EB22090522F00D2DB68 /* scan_icon_notice@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 80D71EB12090522E00D2DB68 /* scan_icon_notice@2x.png */; };
 		80EDF9611FFE29560057B5E9 /* UIButton+CJFixMultiClick.m in Sources */ = {isa = PBXBuildFile; fileRef = 80EDF9601FFE29560057B5E9 /* UIButton+CJFixMultiClick.m */; };
 		80F9CFD6206C8287003B41D4 /* NSString+CJAccuracy.m in Sources */ = {isa = PBXBuildFile; fileRef = 80F9CFD5206C8287003B41D4 /* NSString+CJAccuracy.m */; };
@@ -911,8 +910,6 @@
 		80D71EA82090277700D2DB68 /* AlertViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AlertViewController.xib; sourceTree = "<group>"; };
 		80D71EAB20902C2F00D2DB68 /* CJAlertView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CJAlertView.h; sourceTree = "<group>"; };
 		80D71EAC20902C2F00D2DB68 /* CJAlertView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CJAlertView.m; sourceTree = "<group>"; };
-		80D71EAE20902E8200D2DB68 /* CJAlertActionModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CJAlertActionModel.h; sourceTree = "<group>"; };
-		80D71EAF20902E8200D2DB68 /* CJAlertActionModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CJAlertActionModel.m; sourceTree = "<group>"; };
 		80D71EB12090522E00D2DB68 /* scan_icon_notice@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "scan_icon_notice@2x.png"; sourceTree = "<group>"; };
 		80EDF95F1FFE29560057B5E9 /* UIButton+CJFixMultiClick.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIButton+CJFixMultiClick.h"; sourceTree = "<group>"; };
 		80EDF9601FFE29560057B5E9 /* UIButton+CJFixMultiClick.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIButton+CJFixMultiClick.m"; sourceTree = "<group>"; };
@@ -2452,8 +2449,6 @@
 				80D71EA3209021FA00D2DB68 /* CJAlert.m */,
 				80D71EAB20902C2F00D2DB68 /* CJAlertView.h */,
 				80D71EAC20902C2F00D2DB68 /* CJAlertView.m */,
-				80D71EAE20902E8200D2DB68 /* CJAlertActionModel.h */,
-				80D71EAF20902E8200D2DB68 /* CJAlertActionModel.m */,
 			);
 			path = CJAlert;
 			sourceTree = "<group>";
@@ -3827,7 +3822,6 @@
 				789CAF6B1FB612B700AF8CD4 /* UITextField+CJTextChangeBlock.m in Sources */,
 				789CAF431FB612B700AF8CD4 /* UIScrollView+CJKeyboardAvoiding.m in Sources */,
 				8014A2801FA2C2E500DDDB5A /* AppDelegate+WindowRootViewController.m in Sources */,
-				80D71EB020902E8200D2DB68 /* CJAlertActionModel.m in Sources */,
 				787FDB9720500B5C008A46E3 /* RangeSliderViewController.m in Sources */,
 				78C6007A208BE6D000474F98 /* CJAppLaunchUtil.m in Sources */,
 			);

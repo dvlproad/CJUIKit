@@ -7,7 +7,6 @@
 //
 
 #import "CJAlert.h"
-
 #import "CJAlertView.h"
 
 @implementation CJAlert
@@ -16,48 +15,38 @@
 /* 完整的描述请参见文件头部 */
 + (void)showAlertTypeAlertControllerWithTitle:(NSString *)title
                                       message:(NSString *)message
-                            alertActionModels:(NSArray<CJAlertActionModel *> *)alertActionModels
+                                 alertActions:(NSArray<UIAlertAction *> *)alertActions
                              inViewController:(UIViewController *)viewController
 {
     [self showAlertControllerWithTitle:title
                                message:message
                         preferredStyle:UIAlertControllerStyleAlert
-                     alertActionModels:alertActionModels
+                          alertActions:(NSArray<UIAlertAction *> *)alertActions
                       inViewController:viewController];
 }
 
 /* 完整的描述请参见文件头部 */
 + (void)showSheetTypeAlertControllerWithTitle:(NSString *)title
                                       message:(NSString *)message
-                            alertActionModels:(NSArray<CJAlertActionModel *> *)alertActionModels
+                                 alertActions:(NSArray<UIAlertAction *> *)alertActions
                              inViewController:(UIViewController *)viewController
 {
     [self showAlertControllerWithTitle:title
                                message:message
                         preferredStyle:UIAlertControllerStyleActionSheet
-                     alertActionModels:alertActionModels
+                          alertActions:(NSArray<UIAlertAction *> *)alertActions
                       inViewController:viewController];
 }
 
 + (void)showAlertControllerWithTitle:(NSString *)title
                              message:(NSString *)message
                       preferredStyle:(UIAlertControllerStyle)preferredStyle
-                   alertActionModels:(NSArray<CJAlertActionModel *> *)alertActionModels
+                        alertActions:(NSArray<UIAlertAction *> *)alertActions
                     inViewController:(UIViewController *)viewController
 {
-    UIAlertController *alertController =
-    [UIAlertController alertControllerWithTitle:title
-                                        message:message
-                                 preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:title message:message preferredStyle:preferredStyle];
 
-    for (CJAlertActionModel *alertActionModel in alertActionModels) {
-        NSString *alertActionTitle = alertActionModel.title;
-        UIAlertActionStyle alertActionStyle = alertActionModel.style;
-        void (^alertActionHandler)(UIAlertAction *action) = alertActionModel.handler;
-        
-        UIAlertAction *alertAction = [UIAlertAction actionWithTitle:alertActionTitle
-                                                              style:alertActionStyle
-                                                            handler:alertActionHandler];
+    for (UIAlertAction *alertAction in alertActions) {
         [alertController addAction:alertAction];
     }
     

@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "CJBaseUIKit"
-  s.version      = "0.1.16"
+  s.version      = "0.2.0"
   s.summary      = "自定义的基础UI"
   s.homepage     = "https://github.com/dvlproad/CJUIKit"
 
@@ -40,7 +40,7 @@ Pod::Spec.new do |s|
 
   s.platform     = :ios, "7.0"
  
-  s.source       = { :git => "https://github.com/dvlproad/CJUIKit.git", :tag => "CJBaseUIKit_0.1.16" }
+  s.source       = { :git => "https://github.com/dvlproad/CJUIKit.git", :tag => "CJBaseUIKit_0.2.0" }
   s.source_files  = "CJBaseUIKit/*.{h,m}"
 
   s.frameworks = "UIKit"
@@ -197,6 +197,14 @@ Pod::Spec.new do |s|
 
     #多个依赖就写多行
     ss.dependency 'MBProgressHUD'
+  end
+
+  s.subspec 'CJAlert' do |ss|
+    ss.source_files = "CJBaseUIKit/CJAlert/**/*.{h,m}"
+
+    #多个依赖就写多行
+    ss.dependency 'Masonry'
+    ss.dependency 'CJPopupAction'
   end
 
 

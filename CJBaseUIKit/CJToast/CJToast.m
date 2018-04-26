@@ -79,7 +79,7 @@
         
         CGFloat labelWidth = labelMaxWidth;
         CGSize maxSize = CGSizeMake(labelWidth, CGFLOAT_MAX);
-        CGSize textSize = [self getTextSizeFromString:message withFont:hudLabelFont maxSize:maxSize mode:NSLineBreakByCharWrapping];
+        CGSize textSize = [self getTextSizeFromString:message withFont:hudLabelFont maxSize:maxSize lineBreakMode:NSLineBreakByCharWrapping paragraphStyle:nil];
         
         UILabel *label = [[UILabel alloc] init];
         label.textAlignment = NSTextAlignmentLeft;
@@ -190,18 +190,26 @@
     }
 }
 
-+ (CGSize)getTextSizeFromString:(NSString *)string withFont:(UIFont *)font maxSize:(CGSize)maxSize mode:(NSLineBreakMode)mode
++ (CGSize)getTextSizeFromString:(NSString *)string withFont:(UIFont *)font
+                        maxSize:(CGSize)maxSize
+                  lineBreakMode:(NSLineBreakMode)lineBreakMode
+                 paragraphStyle:(NSMutableParagraphStyle *)paragraphStyle
 {
     if (string.length == 0) {
         return CGSizeZero;
     }
     
-    if ([string respondsToSelector:@selector(boundingRectWithSize:options:attributes:context:)]) {
+    if ([self respondsToSelector:@selector(boundingRectWithSize:options:attributes:context:)]) {
+        if (paragraphStyle == nil) {
+            paragraphStyle = [[NSParagraphStyle defaultParagraphStyle] mutableCopy];
+            paragraphStyle.lineBreakMode = lineBreakMode;
+        }
         
-        NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle alloc] init];
-        paragraphStyle.lineBreakMode = mode;
-        NSDictionary *attributes = @{NSFontAttributeName:           font,
-                                     NSParagraphStyleAttributeName: paragraphStyle};
+        NSDictionary *attributes = @{NSParagraphStyleAttributeName: paragraphStyle,
+                                     NSFontAttributeName:           font,
+                                     //NSForegroundColorAttributeName:textColor
+                                     //NSKernAttributeName:           @1.5f       //字体间距
+                                     };
         
         NSStringDrawingOptions options = NSStringDrawingUsesLineFragmentOrigin;
         
@@ -216,7 +224,7 @@
     {
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wdeprecated-declarations"
-        return [string sizeWithFont:font constrainedToSize:maxSize lineBreakMode:mode];
+        return [string sizeWithFont:font constrainedToSize:maxSize lineBreakMode:lineBreakMode];
 #pragma clang diagnostic push
     }
 }

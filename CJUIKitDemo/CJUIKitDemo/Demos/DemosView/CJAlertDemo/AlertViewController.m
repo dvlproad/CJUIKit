@@ -53,6 +53,12 @@ typedef NS_ENUM(NSUInteger, BBXBusQRCodeStatus) {
             //toastModule.classEntry = [UIViewController class];
             [sectionDataModel.values addObject:toastModule];
         }
+        {
+            CJModuleModel *toastModule = [[CJModuleModel alloc] init];
+            toastModule.title = @"Title & Message (系统UIAlertController)";
+            //toastModule.classEntry = [UIViewController class];
+            [sectionDataModel.values addObject:toastModule];
+        }
         [sectionDataModels addObject:sectionDataModel];
     }
     
@@ -185,26 +191,44 @@ typedef NS_ENUM(NSUInteger, BBXBusQRCodeStatus) {
     [button cj_hidePopupView];
 }
 
+- (void)showUIAlertController:(UIAlertControllerStyle)preferredStyle {
+    NSString *title = NSLocalizedString(@"提示", nil);
+    NSString *message = NSLocalizedString(@"您确认退出吗？", nil);
+    
+    UIAlertAction *cancelAlertAction =
+    [UIAlertAction actionWithTitle:NSLocalizedString(@"取消", nil)
+                             style:UIAlertActionStyleCancel
+                           handler:^(UIAlertAction * _Nonnull action) {
+                               NSLog(@"取消");
+                           }];
+    
+    UIAlertAction *okAlertAction =
+    [UIAlertAction actionWithTitle:NSLocalizedString(@"确认", nil)
+                             style:UIAlertActionStyleDefault
+                           handler:^(UIAlertAction * _Nonnull action) {
+                               NSLog(@"确认");
+                           }];
+    
+    NSArray *alertActions = @[cancelAlertAction, okAlertAction];
+    
+    if (preferredStyle == UIAlertControllerStyleActionSheet) {
+        [CJAlert showSheetTypeAlertControllerWithTitle:title
+                                               message:message
+                                          alertActions:alertActions
+                                      inViewController:self];
+    } else {
+        [CJAlert showAlertTypeAlertControllerWithTitle:title
+                                               message:message
+                                          alertActions:alertActions
+                                      inViewController:self];
+    }
+    
+}
+
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
     CGFloat screenWidth = CGRectGetWidth([[UIScreen mainScreen] bounds]);
-    
-    //alertActionModel
-    CJAlertActionModel *cancelAlertActionModel = [[CJAlertActionModel alloc] init];
-    cancelAlertActionModel.title = NSLocalizedString(@"取消", nil);
-    cancelAlertActionModel.style = UIAlertActionStyleCancel;
-    cancelAlertActionModel.handler = ^(UIAlertAction *action) {
-        NSLog(@"取消");
-    };
-    
-    CJAlertActionModel *okAlertActionModel = [[CJAlertActionModel alloc] init];
-    okAlertActionModel.title = NSLocalizedString(@"确认", nil);
-    okAlertActionModel.style = UIAlertActionStyleDefault;
-    okAlertActionModel.handler = ^(UIAlertAction *action) {
-        NSLog(@"确认");
-    };
-    
     
     UIButton *cancelButton = [UIButton buttonWithType:UIButtonTypeCustom];
     [cancelButton setBackgroundColor:[UIColor clearColor]];
@@ -222,14 +246,9 @@ typedef NS_ENUM(NSUInteger, BBXBusQRCodeStatus) {
     
     if (indexPath.section == 0) {
         if (indexPath.row == 0) {
-            NSString *title = NSLocalizedString(@"提示", nil);
-            NSString *message = NSLocalizedString(@"您确认退出吗？", nil);
-            NSArray *alertActionModels = @[cancelAlertActionModel, okAlertActionModel];
-            [CJAlert showAlertTypeAlertControllerWithTitle:title
-                                message:message
-                      alertActionModels:alertActionModels
-                       inViewController:self];
-            
+            [self showUIAlertController:UIAlertControllerStyleAlert];
+        } else if (indexPath.row == 1) {
+            [self showUIAlertController:UIAlertControllerStyleActionSheet];
         }
         
     } else if (indexPath.section == 1) {
@@ -337,8 +356,8 @@ typedef NS_ENUM(NSUInteger, BBXBusQRCodeStatus) {
             
             CJAlertView *alertView = [[CJAlertView alloc] initWithSize:popupViewSize];
             [alertView addFlagImage:flagImage size:CGSizeMake(38, 38)];
-            [alertView addTitle:title font:[UIFont systemFontOfSize:18.0] textAlignment:NSTextAlignmentCenter margin:20];
-            [alertView addMessage:message font:[UIFont systemFontOfSize:15.0] textAlignment:NSTextAlignmentCenter margin:20];
+            [alertView addTitleWithText:title font:[UIFont systemFontOfSize:18.0] textAlignment:NSTextAlignmentCenter margin:20];
+            [alertView addMessageTextWithText:message font:[UIFont systemFontOfSize:15.0] textAlignment:NSTextAlignmentCenter margin:20];
             [alertView addBottomButtonWithHeight:50 cancelButtonTitle:cancelButtonTitle okButtonTitle:okButtonTitle cancelHandle:^{
                 NSLog(@"点击了取消按钮");
             } okHandle:^{
@@ -367,8 +386,8 @@ typedef NS_ENUM(NSUInteger, BBXBusQRCodeStatus) {
             NSString *okButtonTitle = NSLocalizedString(@"我知道了", nil);
             
             CJAlertView *alertView = [[CJAlertView alloc] initWithSize:popupViewSize];
-            [alertView addTitle:title font:[UIFont systemFontOfSize:18.0] textAlignment:NSTextAlignmentCenter margin:20];
-            [alertView addMessage:message font:[UIFont systemFontOfSize:15.0] textAlignment:NSTextAlignmentCenter margin:20];
+            [alertView addTitleWithText:title font:[UIFont systemFontOfSize:18.0] textAlignment:NSTextAlignmentCenter margin:20];
+            [alertView addMessageTextWithText:message font:[UIFont systemFontOfSize:15.0] textAlignment:NSTextAlignmentCenter margin:20];
             [alertView addBottomButtonWithHeight:50 cancelButtonTitle:cancelButtonTitle okButtonTitle:okButtonTitle cancelHandle:nil okHandle:^{
                 NSLog(@"点击了确认按钮");
             }];
@@ -388,9 +407,15 @@ typedef NS_ENUM(NSUInteger, BBXBusQRCodeStatus) {
             NSString *okButtonTitle = NSLocalizedString(@"结束行程", nil);
             
             CJAlertView *alertView = [[CJAlertView alloc] initWithSize:popupViewSize];
-            [alertView addTitle:title font:[UIFont systemFontOfSize:15.0] textAlignment:NSTextAlignmentCenter margin:20];
-            [alertView addMessage:message font:[UIFont systemFontOfSize:15.0] textAlignment:NSTextAlignmentLeft margin:20];
-            [alertView addMessageLabelBoderWithWidth:0.5];
+            [alertView addTitleWithText:title font:[UIFont systemFontOfSize:15.0] textAlignment:NSTextAlignmentCenter margin:20];
+            
+            
+            NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle defaultParagraphStyle] mutableCopy];
+            paragraphStyle.lineBreakMode = NSLineBreakByCharWrapping;
+            paragraphStyle.lineSpacing = 3;
+            paragraphStyle.firstLineHeadIndent = 10;
+            [alertView addMessageAttributedTextWithText:message font:[UIFont systemFontOfSize:15.0] textAlignment:NSTextAlignmentLeft margin:20 paragraphStyle:paragraphStyle];
+            [alertView addMessageLayerWithBorderWidth:0.5 borderColor:nil cornerRadius:3];
             [alertView addBottomButtonWithHeight:50 cancelButtonTitle:cancelButtonTitle okButtonTitle:okButtonTitle  cancelHandle:^{
                 NSLog(@"点击了取消按钮");
             } okHandle:^{

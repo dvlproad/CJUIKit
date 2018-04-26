@@ -9,19 +9,19 @@
 #import <UIKit/UIKit.h>
 #import <CJPopupAction/UIView+CJPopupInView.h>
 
-#import "CJAlertActionModel.h"
-
 @interface CJAlert : NSObject
 
 #pragma mark - UIAlertController
+/* 完整的描述请参见文件头部 */
 + (void)showAlertTypeAlertControllerWithTitle:(NSString *)title
                                       message:(NSString *)message
-                            alertActionModels:(NSArray<CJAlertActionModel *> *)alertActionModels
+                                 alertActions:(NSArray<UIAlertAction *> *)alertActions
                              inViewController:(UIViewController *)viewController;
 
+/* 完整的描述请参见文件头部 */
 + (void)showSheetTypeAlertControllerWithTitle:(NSString *)title
                                       message:(NSString *)message
-                            alertActionModels:(NSArray<CJAlertActionModel *> *)alertActionModels
+                                 alertActions:(NSArray<UIAlertAction *> *)alertActions
                              inViewController:(UIViewController *)viewController;
 
 
