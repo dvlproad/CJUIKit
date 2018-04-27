@@ -21,7 +21,6 @@ target 'CJUIKitDemo' do
   
   # 自己的库
   pod 'CJPicker', '~> 1.3.2'
-  pod 'CJPopupAction', '~> 1.4.5'
   
   # 搜索功能需要使用的库
   pod 'PinYin4Objc', '~> 1.1.1'

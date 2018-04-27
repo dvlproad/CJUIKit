@@ -14,7 +14,13 @@
 #import "NestedXibViewController.h"
 
 #import "SampleViewController.h"
+//ViewDrag
 #import "DragViewController.h"
+//ViewPopup
+#import "PopupInWindowVC.h"
+#import "PopupInViewVC.h"
+#import "ShowExtendViewVC.h"
+#import "ShowDropDownViewController.h"
 
 #import "FloatingWindowViewController.h"
 
@@ -97,10 +103,34 @@
         CJSectionDataModel *sectionDataModel = [[CJSectionDataModel alloc] init];
         sectionDataModel.theme = @"UIView相关";
         {
-            CJModuleModel *ViewDragCategoryModule = [[CJModuleModel alloc] init];
-            ViewDragCategoryModule.title = @"Drag And KeepBounds (视图的拖曳和吸附)";
-            ViewDragCategoryModule.classEntry = [DragViewController class];
-            [sectionDataModel.values addObject:ViewDragCategoryModule];
+            CJModuleModel *dragViewModule = [[CJModuleModel alloc] init];
+            dragViewModule.title = @"Drag And KeepBounds (视图的拖曳和吸附)";
+            dragViewModule.classEntry = [DragViewController class];
+            [sectionDataModel.values addObject:dragViewModule];
+        }
+        {
+            CJModuleModel *popupInWindowModule = [[CJModuleModel alloc] init];
+            popupInWindowModule.title = @"PopupInWindow (弹出到Window)";
+            popupInWindowModule.classEntry = [PopupInWindowVC class];
+            [sectionDataModel.values addObject:popupInWindowModule];
+        }
+        {
+            CJModuleModel *popupInViewModule = [[CJModuleModel alloc] init];
+            popupInViewModule.title = @"PopupInView (弹出到任意View)";
+            popupInViewModule.classEntry = [PopupInViewVC class];
+            [sectionDataModel.values addObject:popupInViewModule];
+        }
+        {
+            CJModuleModel *showExtendViewModule = [[CJModuleModel alloc] init];
+            showExtendViewModule.title = @"ShowExtendView (弹出任意视图)";
+            showExtendViewModule.classEntry = [ShowExtendViewVC class];
+            [sectionDataModel.values addObject:showExtendViewModule];
+        }
+        {
+            CJModuleModel *showDropDownViewModule = [[CJModuleModel alloc] init];
+            showDropDownViewModule.title = @"ShowDropDownView (弹出下拉视图)";
+            showDropDownViewModule.classEntry = [ShowDropDownViewController class];
+            [sectionDataModel.values addObject:showDropDownViewModule];
         }
         [sectionDataModels addObject:sectionDataModel];
     }

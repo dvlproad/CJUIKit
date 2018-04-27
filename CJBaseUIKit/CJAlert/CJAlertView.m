@@ -7,7 +7,7 @@
 //
 
 #import "CJAlertView.h"
-#import <CJPopupAction/UIView+CJPopupInView.h>
+#import "UIView+CJPopupInView.h"
 
 @interface CJAlertView () {
     CGFloat _flagImageViewHeight, _titleLabelHeight, _messageLabelHeight, _bottomButtonHeight;

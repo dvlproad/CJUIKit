@@ -18,4 +18,7 @@
 #import "UIView+CJExclusiveTouch.h"
 #import "UIView+CJGestureRecognizer.h"
 
+#import "UIView+CJPopupInView.h"
+#import "UIView+CJShowExtendView.h"
+
 #endif /* UIViewCJCategory_h */

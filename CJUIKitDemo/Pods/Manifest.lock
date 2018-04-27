@@ -32,7 +32,6 @@ PODS:
   - CJNetwork/CJNetworkMonitor (0.1.3):
     - AFNetworking (~> 3.1.0)
   - CJPicker (1.3.2)
-  - CJPopupAction (1.4.5)
   - DZNEmptyDataSet (1.8.1)
   - JGActionSheet (1.0.5)
   - Mantle (2.1.0):
@@ -70,7 +69,6 @@ DEPENDENCIES:
   - CJNetwork/AFNetworkingBaseComponent (~> 0.1.3)
   - CJNetwork/AFNetworkingUploadComponent (~> 0.1.3)
   - CJPicker (~> 1.3.2)
-  - CJPopupAction (~> 1.4.5)
   - DZNEmptyDataSet
   - JGActionSheet (~> 1.0.5)
   - Mantle (~> 2.1.0)
@@ -90,13 +88,39 @@ DEPENDENCIES:
   - WebViewJavascriptBridge (~> 6.0.2)
   - YYText (~> 1.0.7)
 
+SPEC REPOS:
+  https://github.com/CocoaPods/Specs.git:
+    - AFNetworking
+    - CJFile
+    - CJMedia
+    - CJNetwork
+    - CJPicker
+    - DZNEmptyDataSet
+    - JGActionSheet
+    - Mantle
+    - Masonry
+    - MBProgressHUD
+    - MJExtension
+    - MJPopupViewController
+    - MJRefresh
+    - NJKWebViewProgress
+    - OpenUDID
+    - PinYin4Objc
+    - PureLayout
+    - SAMKeychain
+    - SDCycleScrollView
+    - SDWebImage
+    - Shimmer
+    - SVProgressHUD
+    - WebViewJavascriptBridge
+    - YYText
+
 SPEC CHECKSUMS:
   AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
   CJFile: 18e461ec96ee07ba501b1e19f2ddde4a38bec8aa
   CJMedia: 8b1fd8886d4311ed71f07b3870b9d3822a91bb58
   CJNetwork: 7e510d8951e95bc919054a9c536dbf5a3e491561
   CJPicker: c33099d47323271b91c2ce112976d1bee19a70ce
-  CJPopupAction: 8429a2915f5f1de8215473f8923515bb2b13bc27
   DZNEmptyDataSet: 9525833b9e68ac21c30253e1d3d7076cc828eaa7
   JGActionSheet: 2cfca820b57a11ec4b4a5655d45ee599fbeddc05
   Mantle: 2fa750afa478cd625a94230fbf1c13462f29395b
@@ -117,6 +141,6 @@ SPEC CHECKSUMS:
   WebViewJavascriptBridge: 7f5bc4d3581e672e8f32bd0f812d54bc69bb8e29
   YYText: 5c461d709e24d55a182d1441c41dc639a18a4849
 
-PODFILE CHECKSUM: 0ccf8ace19717ffbd25cd6c4bd891fcf488f24ec
+PODFILE CHECKSUM: 2537286c9667777c583f59db2dc5bfee43af55a8
 
-COCOAPODS: 1.4.0
+COCOAPODS: 1.5.0

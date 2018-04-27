@@ -1,11 +1,12 @@
 Pod::Spec.new do |s|
-
+#验证方法：pod lib lint CJBaseUIKit.podspec --allow-warnings --use-libraries --verbose
   s.name         = "CJBaseUIKit"
   s.version      = "0.2.0"
   s.summary      = "自定义的基础UI"
   s.homepage     = "https://github.com/dvlproad/CJUIKit"
 
   s.description  = <<-DESC
+                  *、UIView 之CJPopupAction： UIView的类别，用来实现UIView弹出popupView的一个Uiew的类别
                   *、CJImageView(包含CJBadgeImageView),用于设置imageView的title和badge;
                   *、UITextField：包含文本框类别及新的自定义文本框
                   *、CJTextView：类似微信文本输入框实现
@@ -79,8 +80,25 @@ Pod::Spec.new do |s|
 
   
 
-  s.subspec 'UIView+CJCategory' do |ss|
-    ss.source_files = "CJBaseUIKit/UIView+CJCategory/**/*.{h,m}"
+  s.subspec 'UIView' do |ss|
+    ss.source_files = "CJBaseUIKit/UIView/*.{h,m}"
+
+    ss.subspec 'CJDragAction' do |sss|
+      sss.source_files = "CJBaseUIKit/UIView/CJDragAction/**/*.{h,m}"
+  	end
+
+  	ss.subspec 'CJShakeAction' do |sss|
+      sss.source_files = "CJBaseUIKit/UIView/CJShakeAction/**/*.{h,m}"
+  	end
+
+  	ss.subspec 'CJPopupAction' do |sss|
+      sss.source_files = "CJBaseUIKit/UIView/CJPopupAction/**/*.{h,m}"
+  	end
+
+  	ss.subspec 'CJGestureRecognizer' do |sss|
+      sss.source_files = "CJBaseUIKit/UIView/CJGestureRecognizer/**/*.{h,m}"
+  	end
+
   end
 
   s.subspec 'UIWindow' do |ss|
@@ -204,7 +222,7 @@ Pod::Spec.new do |s|
 
     #多个依赖就写多行
     ss.dependency 'Masonry'
-    ss.dependency 'CJPopupAction'
+    ss.dependency 'CJBaseUIKit/UIView/CJPopupAction'
   end
 
 
