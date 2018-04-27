@@ -29,7 +29,7 @@
 /**
  *  开启网络监听
  */
-- (void)startNetworkMonitoring;
+- (void)startNetworkMonitoringWithReachabilityStatusChangeBlock:(void (^)(AFNetworkReachabilityStatus status))block;
 
 
 /**

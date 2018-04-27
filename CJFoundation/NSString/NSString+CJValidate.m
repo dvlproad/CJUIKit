@@ -10,6 +10,12 @@
 
 @implementation NSString (CJValidate)
 
+///是否为空字符串
+- (BOOL)cj_isEmpty {
+    BOOL isEmpty = !self || [self isEqual:[NSNull null]] || [self isEqualToString:@""];
+    return isEmpty;
+}
+
 #pragma mark - 数字、字母、整型、浮点型的判断
 ///判断是否为整型(即是否为纯数字)
 - (BOOL)cj_validateInt {
@@ -82,14 +88,16 @@
 
 
 ///手机号码验证
-- (BOOL)cj_validateMobile {
-    //手机号以13， 15，18开头，八个 \d 数字字符
-//    NSString *phoneRegex = @"^((13[0-9])|(15[^4,\\D])|(18[0,0-9]))\\d{8}$";
-    
-    //现在只有13、15和18开头的11位手机号码。以1开头，第2位数字为3或5或8，后面接9位数字
-//    NSString *phoneRegex = @"^[1][34578][0-9]{9}$";
-    
+- (BOOL)cj_validateMobile:(CJAreaType)areaType {
+    //①大陆 +86+11位数字（正则表达式校验），1+10位数字
+    //②香港 +852+8位数字（正则表达式校验），5/6/8/9+7位数字
+    //③澳门 +853+8位数字（正则表达式校验），6+7位数字
     NSString *phoneRegex = @"^[1][0-9]{10}$";
+    if (areaType == CJAreaTypeHongKong) {
+        phoneRegex = @"^[5678][0-9]{7}$";
+    } else if (areaType == CJAreaTypeMacao) {
+        phoneRegex = @"^[6][0-9]{7}$";
+    }
     
     NSPredicate *phonePredicate = [NSPredicate predicateWithFormat:@"SELF MATCHES %@",phoneRegex];
     return [phonePredicate evaluateWithObject:self];
@@ -97,7 +105,7 @@
 
 
 ///车牌号验证
-- (BOOL)cj_validateCarNo {
+- (BOOL)cj_validateCarNo:(CJAreaType)areaType {
     NSString *carRegex = @"^[\u4e00-\u9fa5]{1}[a-zA-Z]{1}[a-zA-Z_0-9]{4}[a-zA-Z_0-9_\u4e00-\u9fa5]$";
     NSPredicate *carPredicate = [NSPredicate predicateWithFormat:@"SELF MATCHES %@",carRegex];
     NSLog(@"carPredicate is %@",carPredicate);

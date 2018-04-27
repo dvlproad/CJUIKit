@@ -8,7 +8,17 @@
 
 #import <Foundation/Foundation.h>
 
+typedef NS_ENUM(NSUInteger, CJAreaType) {
+    CJAreaTypeMainland,     /**< 大陆地区 */
+    CJAreaTypeHongKong,     /**< 香港地区 */
+    CJAreaTypeMacao,        /**< 澳门地区 */
+};
+
 @interface NSString (CJValidate)
+
+
+///是否为空字符串
+- (BOOL)cj_isEmpt;
 
 //源自：iOS - 正则表达式判断邮箱、身份证..是否正确：http://www.2cto.com/kf/201311/256494.html
 
@@ -30,10 +40,10 @@
 - (BOOL)cj_validateEmail;
 
 ///手机号码验证
-- (BOOL)cj_validateMobile;
+- (BOOL)cj_validateMobile:(CJAreaType)areaType;
 
 ///车牌号验证
-- (BOOL)cj_validateCarNo;
+- (BOOL)cj_validateCarNo:(CJAreaType)areaType;
 
 ///车型
 - (BOOL)cj_validateCarType;

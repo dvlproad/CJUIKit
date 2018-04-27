@@ -22,7 +22,7 @@
 
 
 /** 完整的描述请参见文件头部 */
-- (void)startNetworkMonitoring {
+- (void)startNetworkMonitoringWithReachabilityStatusChangeBlock:(void (^)(AFNetworkReachabilityStatus status))block {
     //AFNetworkReachabilityManager *reachabilityManager = [AFNetworkReachabilityManager manager];//错误
     AFNetworkReachabilityManager *reachabilityManager = [AFNetworkReachabilityManager sharedManager];
     
@@ -59,6 +59,8 @@
                 break;
             }
         }
+        
+        block(status);
     }];
     
     [reachabilityManager startMonitoring];
