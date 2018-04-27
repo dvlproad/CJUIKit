@@ -63,7 +63,7 @@
     }
     if (message.length > 0) {
         UIFont *messageLabelFont = [UIFont systemFontOfSize:15.0];
-        [alertView addMessageTextWithText:message font:messageLabelFont textAlignment:NSTextAlignmentCenter margin:20];
+        [alertView addMessageWithText:message font:messageLabelFont textAlignment:NSTextAlignmentCenter margin:20 paragraphStyle:nil];
     }
     
     //③添加 cancelButton、okButton
@@ -261,55 +261,8 @@
     }
 }
 
-///添加message的方法①
-- (void)addMessageTextWithText:(NSString *)text font:(UIFont *)font textAlignment:(NSTextAlignment)textAlignment margin:(CGFloat)messageLabelLeftOffset
-{
-    if (CGSizeEqualToSize(self.size, CGSizeZero)) {
-        return;
-    }
-    
-    if (_messageLabel == nil) {
-        UIColor *messageTextColor = [UIColor colorWithRed:136/255.0 green:136/255.0 blue:136/255.0 alpha:1]; //#888888
-        
-        UILabel *messageLabel = [[UILabel alloc] initWithFrame:CGRectZero];
-        //messageLabel.backgroundColor = [UIColor clearColor];
-        messageLabel.numberOfLines = 0;
-        messageLabel.textAlignment = NSTextAlignmentCenter;
-        messageLabel.textColor = messageTextColor;
-        [self addSubview:messageLabel];
-        
-        _messageLabel = messageLabel;
-    }
-    CGFloat messageLabelMaxWidth = self.size.width - 2*messageLabelLeftOffset;
-    CGSize messageLabelMaxSize = CGSizeMake(messageLabelMaxWidth, CGFLOAT_MAX);
-    CGSize messageTextSize = [CJAlertView getTextSizeFromString:text withFont:font maxSize:messageLabelMaxSize lineBreakMode:NSLineBreakByCharWrapping paragraphStyle:nil];
-    
-    CGFloat messageTextHeight = messageTextSize.height;
-    
-    self.messageLabel.text = text;
-    self.messageLabel.font = font;
-    self.messageLabel.textAlignment = textAlignment;
-    [self.messageLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.centerX.mas_equalTo(self);
-        make.left.mas_equalTo(self).mas_offset(messageLabelLeftOffset);
-        if (self.titleLabel) {
-            if (self.flagImageView) {
-                make.top.mas_equalTo(self.titleLabel.mas_bottom).mas_offset(self.thirdVerticalInterval);
-            } else {
-                make.top.mas_equalTo(self.titleLabel.mas_bottom).mas_offset(self.secondVerticalInterval);
-            }
-        } else if (self.flagImageView) {
-            make.top.mas_equalTo(self.flagImageView.mas_bottom).mas_offset(self.secondVerticalInterval);
-        } else {
-            make.top.mas_equalTo(self).mas_offset(self.firstVerticalInterval);
-        }
-        
-        make.height.mas_equalTo(messageTextHeight);
-    }];
-}
-
-///添加message的方法②(常用于处理message多行需要设置行距的时候)
-- (void)addMessageAttributedTextWithText:(NSString *)text font:(UIFont *)font textAlignment:(NSTextAlignment)textAlignment margin:(CGFloat)messageLabelLeftOffset paragraphStyle:(NSMutableParagraphStyle *)paragraphStyle {
+///添加message的方法(paragraphStyle:当需要设置message行距、缩进等的时候才需要设置，其他设为nil即可)
+- (void)addMessageWithText:(NSString *)text font:(UIFont *)font textAlignment:(NSTextAlignment)textAlignment margin:(CGFloat)messageLabelLeftOffset paragraphStyle:(NSMutableParagraphStyle *)paragraphStyle {
     //NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle defaultParagraphStyle] mutableCopy];
     //paragraphStyle.lineBreakMode = NSLineBreakByCharWrapping;
     //paragraphStyle.lineSpacing = lineSpacing;
@@ -333,21 +286,23 @@
     }
     CGFloat messageLabelMaxWidth = self.size.width - 2*messageLabelLeftOffset;
     CGSize messageLabelMaxSize = CGSizeMake(messageLabelMaxWidth, CGFLOAT_MAX);
-    
-    NSDictionary *attributes = @{NSParagraphStyleAttributeName: paragraphStyle,
-                                 NSFontAttributeName:           font,
-                                 //NSForegroundColorAttributeName:textColor
-                                 //NSKernAttributeName:           @1.5f       //字体间距
-                                 };
-    NSMutableAttributedString *attributedText = [[NSMutableAttributedString alloc] initWithString:text];
-    [attributedText addAttributes:attributes range:NSMakeRange(0, text.length)];
-    
     CGSize messageTextSize = [CJAlertView getTextSizeFromString:text withFont:font maxSize:messageLabelMaxSize lineBreakMode:NSLineBreakByCharWrapping paragraphStyle:paragraphStyle];
-    
-    
     CGFloat messageTextHeight = messageTextSize.height;
     
-    self.messageLabel.attributedText = attributedText;
+    if (paragraphStyle == nil) {
+        self.messageLabel.text = text;
+    } else {
+        NSDictionary *attributes = @{NSParagraphStyleAttributeName: paragraphStyle,
+                                     NSFontAttributeName:           font,
+                                     //NSForegroundColorAttributeName:textColor
+                                     //NSKernAttributeName:           @1.5f       //字体间距
+                                     };
+        NSMutableAttributedString *attributedText = [[NSMutableAttributedString alloc] initWithString:text];
+        [attributedText addAttributes:attributes range:NSMakeRange(0, text.length)];
+        
+        self.messageLabel.attributedText = attributedText;
+    }
+    
     self.messageLabel.font = font;
     self.messageLabel.textAlignment = textAlignment;
     [self.messageLabel mas_makeConstraints:^(MASConstraintMaker *make) {

@@ -357,7 +357,7 @@ typedef NS_ENUM(NSUInteger, BBXBusQRCodeStatus) {
             CJAlertView *alertView = [[CJAlertView alloc] initWithSize:popupViewSize firstVerticalInterval:25 secondVerticalInterval:10 thirdVerticalInterval:10];
             [alertView addFlagImage:flagImage size:CGSizeMake(38, 38)];
             [alertView addTitleWithText:title font:[UIFont systemFontOfSize:18.0] textAlignment:NSTextAlignmentCenter margin:20];
-            [alertView addMessageTextWithText:message font:[UIFont systemFontOfSize:15.0] textAlignment:NSTextAlignmentCenter margin:20];
+            [alertView addMessageWithText:message font:[UIFont systemFontOfSize:15.0] textAlignment:NSTextAlignmentCenter margin:20 paragraphStyle:nil];
             [alertView addBottomButtonWithHeight:50 cancelButtonTitle:cancelButtonTitle okButtonTitle:okButtonTitle cancelHandle:^{
                 NSLog(@"点击了取消按钮");
             } okHandle:^{
@@ -387,7 +387,7 @@ typedef NS_ENUM(NSUInteger, BBXBusQRCodeStatus) {
             
             CJAlertView *alertView = [[CJAlertView alloc] initWithSize:popupViewSize firstVerticalInterval:25 secondVerticalInterval:10 thirdVerticalInterval:10];
             [alertView addTitleWithText:title font:[UIFont systemFontOfSize:18.0] textAlignment:NSTextAlignmentCenter margin:20];
-            [alertView addMessageTextWithText:message font:[UIFont systemFontOfSize:15.0] textAlignment:NSTextAlignmentCenter margin:20];
+            [alertView addMessageWithText:message font:[UIFont systemFontOfSize:15.0] textAlignment:NSTextAlignmentCenter margin:20 paragraphStyle:nil];
             [alertView addBottomButtonWithHeight:50 cancelButtonTitle:cancelButtonTitle okButtonTitle:okButtonTitle cancelHandle:nil okHandle:^{
                 NSLog(@"点击了确认按钮");
             }];
@@ -414,7 +414,7 @@ typedef NS_ENUM(NSUInteger, BBXBusQRCodeStatus) {
             paragraphStyle.lineBreakMode = NSLineBreakByCharWrapping;
             paragraphStyle.lineSpacing = 3;
             paragraphStyle.firstLineHeadIndent = 10;
-            [alertView addMessageAttributedTextWithText:message font:[UIFont systemFontOfSize:15.0] textAlignment:NSTextAlignmentLeft margin:20 paragraphStyle:paragraphStyle];
+            [alertView addMessageWithText:message font:[UIFont systemFontOfSize:15.0] textAlignment:NSTextAlignmentLeft margin:20 paragraphStyle:paragraphStyle];
             [alertView addMessageLayerWithBorderWidth:0.5 borderColor:nil cornerRadius:3];
             [alertView addBottomButtonWithHeight:50 cancelButtonTitle:cancelButtonTitle okButtonTitle:okButtonTitle  cancelHandle:^{
                 NSLog(@"点击了取消按钮");
