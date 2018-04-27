@@ -76,6 +76,12 @@
                      cancelHandle:(void(^)(void))cancelHandle
                          okHandle:(void(^)(void))okHandle;
 
+///更改底部 Cancel 按钮的文字颜色
+- (void)updateCancelButtonNormalTitleColor:(UIColor *)normalTitleColor highlightedTitleColor:(UIColor *)highlightedTitleColor;
+
+///更改底部 OK 按钮的文字颜色
+- (void)updateOKButtonNormalTitleColor:(UIColor *)normalTitleColor highlightedTitleColor:(UIColor *)highlightedTitleColor;
+
 ///显示 alert（如系统 UIAlertView）
 - (void)show;
 

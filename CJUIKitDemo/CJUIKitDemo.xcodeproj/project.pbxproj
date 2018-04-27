@@ -1396,7 +1396,6 @@
 			isa = PBXGroup;
 			children = (
 				80D71EA1209021E400D2DB68 /* CJAlert */,
-				8044787820622E6A007185EF /* WebView */,
 				789CAE101FB612B600AF8CD4 /* CJBaseScrollView */,
 				789CAE4B1FB612B600AF8CD4 /* CJImageView */,
 				789CAE531FB612B600AF8CD4 /* CJMJRefreshComponent */,
@@ -1418,6 +1417,7 @@
 				789CAEE01FB612B600AF8CD4 /* UIView+CJCategory */,
 				789CAEEE1FB612B600AF8CD4 /* UIViewController */,
 				789CAEF81FB612B600AF8CD4 /* UIWindow */,
+				8044787820622E6A007185EF /* WebView */,
 			);
 			name = CJBaseUIKit;
 			path = ../../CJBaseUIKit;

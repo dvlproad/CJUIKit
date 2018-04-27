@@ -26,6 +26,8 @@
 @property (nonatomic, strong) UIImageView *flagImageView;
 @property (nonatomic, strong) UILabel *titleLabel;
 @property (nonatomic, strong) UILabel *messageLabel;
+@property (nonatomic, strong) UIButton *cancelButton;
+@property (nonatomic, strong) UIButton *okButton;
 
 @property (nonatomic, copy) void(^cancelHandle)(void);
 @property (nonatomic, copy) void(^okHandle)(void);
@@ -409,6 +411,7 @@
         [cancelButton setTitleColor:cancelTitleColor forState:UIControlStateNormal];
         [cancelButton.titleLabel setFont:[UIFont systemFontOfSize:14]];
         [cancelButton addTarget:self action:@selector(cancelButtonAction:) forControlEvents:UIControlEventTouchUpInside];
+        _cancelButton = cancelButton;
     }
     
     UIButton *okButton = nil;
@@ -419,6 +422,7 @@
         [okButton setTitleColor:okTitleColor forState:UIControlStateNormal];
         [okButton.titleLabel setFont:[UIFont systemFontOfSize:14]];
         [okButton addTarget:self action:@selector(okButtonAction:) forControlEvents:UIControlEventTouchUpInside];
+        _okButton = okButton;
     }
     
     UIView *lineView = [[UIView alloc] init];
@@ -475,11 +479,16 @@
     }
 }
 
-/* 完整的描述请参见文件头部 */
-- (void)show {
-    [self cj_popupInCenterWindow:CJAnimationTypeNormal
-                        withSize:self.size
-                    showComplete:nil tapBlankComplete:nil];
+///更改底部 Cancel 按钮的文字颜色
+- (void)updateCancelButtonNormalTitleColor:(UIColor *)normalTitleColor highlightedTitleColor:(UIColor *)highlightedTitleColor {
+    [self.cancelButton setTitleColor:normalTitleColor forState:UIControlStateNormal];
+    [self.cancelButton setTitleColor:highlightedTitleColor forState:UIControlStateHighlighted];
+}
+
+///更改底部 OK 按钮的文字颜色
+- (void)updateOKButtonNormalTitleColor:(UIColor *)normalTitleColor highlightedTitleColor:(UIColor *)highlightedTitleColor {
+    [self.okButton setTitleColor:normalTitleColor forState:UIControlStateNormal];
+    [self.okButton setTitleColor:highlightedTitleColor forState:UIControlStateHighlighted];
 }
 
 - (void)cancelButtonAction:(UIButton *)button {
@@ -496,6 +505,13 @@
     if (self.okHandle) {
         self.okHandle();
     }
+}
+
+/* 完整的描述请参见文件头部 */
+- (void)show {
+    [self cj_popupInCenterWindow:CJAnimationTypeNormal
+                        withSize:self.size
+                    showComplete:nil tapBlankComplete:nil];
 }
 
 #pragma mark - Private
