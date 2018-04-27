@@ -73,6 +73,12 @@
                      cancelHandle:(void(^)(void))cancelHandle
                          okHandle:(void(^)(void))okHandle;
 
+///更改 Title 文字颜色
+- (void)updateTitleTextColor:(UIColor *)textColor;
+
+///更改 Message 文字颜色
+- (void)updateMessageTextColor:(UIColor *)textColor;
+
 ///更改底部 Cancel 按钮的文字颜色
 - (void)updateCancelButtonNormalTitleColor:(UIColor *)normalTitleColor highlightedTitleColor:(UIColor *)highlightedTitleColor;
 

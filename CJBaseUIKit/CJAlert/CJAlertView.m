@@ -10,7 +10,7 @@
 #import <CJPopupAction/UIView+CJPopupInView.h>
 
 @interface CJAlertView () {
-    
+    CGFloat _flagImageViewHeight, _titleLabelHeight, _messageLabelHeight, _bottomButtonHeight;
 }
 @property (nonatomic, readonly) CGSize size;
 
@@ -187,15 +187,18 @@
     if (_flagImageView == nil) {
         UIImageView *flagImageView = [[UIImageView alloc] init];
         [self addSubview:flagImageView];
-        [flagImageView mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.centerX.mas_equalTo(self);
-            make.width.mas_equalTo(imageViewSize.width);
-            make.top.mas_equalTo(self).mas_offset(self.firstVerticalInterval);
-            make.height.mas_equalTo(imageViewSize.height);
-        }];
+        
         _flagImageView = flagImageView;
     }
     _flagImageView.image = flagImage;
+    
+    [self.flagImageView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.centerX.mas_equalTo(self);
+        make.width.mas_equalTo(imageViewSize.width);
+        make.top.mas_equalTo(self).mas_offset(self.firstVerticalInterval);
+        make.height.mas_equalTo(imageViewSize.height);
+    }];
+    _flagImageViewHeight = imageViewSize.height;
     
     if (self.titleLabel) {
         [self.titleLabel mas_updateConstraints:^(MASConstraintMaker *make) {
@@ -249,6 +252,7 @@
         }
         make.height.mas_equalTo(titleTextHeight);
     }];
+    _titleLabelHeight = titleTextHeight;
     
     if (self.messageLabel) {
         [self.messageLabel mas_updateConstraints:^(MASConstraintMaker *make) {
@@ -299,6 +303,7 @@
                                      };
         NSMutableAttributedString *attributedText = [[NSMutableAttributedString alloc] initWithString:text];
         [attributedText addAttributes:attributes range:NSMakeRange(0, text.length)];
+        //[attributedText addAttribute:NSParagraphStyleAttributeName value:paragraphStyle range:NSMakeRange(0, text.length)];
         
         self.messageLabel.attributedText = attributedText;
     }
@@ -322,6 +327,7 @@
         
         make.height.mas_equalTo(messageTextHeight);
     }];
+    _messageLabelHeight = messageTextHeight;
 }
 
 ///添加 message 的边框等(几乎不会用到)
@@ -388,6 +394,7 @@
         make.bottom.mas_equalTo(self).mas_offset(-actionButtonHeight-1);
         make.height.mas_equalTo(1);
     }];
+    _bottomButtonHeight = actionButtonHeight+1;
     
     if (existCancelButton && existOKButton) {
         [self addSubview:cancelButton];
@@ -434,6 +441,16 @@
     }
 }
 
+///更改 Title 文字颜色
+- (void)updateTitleTextColor:(UIColor *)textColor {
+    self.titleLabel.textColor = textColor;
+}
+
+///更改 Message 文字颜色
+- (void)updateMessageTextColor:(UIColor *)textColor {
+    self.messageLabel.textColor = textColor;
+}
+
 ///更改底部 Cancel 按钮的文字颜色
 - (void)updateCancelButtonNormalTitleColor:(UIColor *)normalTitleColor highlightedTitleColor:(UIColor *)highlightedTitleColor {
     [self.cancelButton setTitleColor:normalTitleColor forState:UIControlStateNormal];
@@ -464,6 +481,11 @@
 
 /* 完整的描述请参见文件头部 */
 - (void)show {
+    CGFloat minHeight = _firstVerticalInterval + _flagImageViewHeight + _secondVerticalInterval + _titleLabelHeight + _thirdVerticalInterval + _messageLabelHeight + _bottomButtonHeight;
+    if (self.size.height < minHeight) {
+        NSString *warningString = [NSString stringWithFormat:@"CJ警告：您设置的size高度小于视图本身的最小高度%.2lf，会导致视图显示不全，请检查", minHeight];
+        NSLog(@"%@", warningString);
+    }
     [self cj_popupInCenterWindow:CJAnimationTypeNormal
                         withSize:self.size
                     showComplete:nil tapBlankComplete:nil];

@@ -379,15 +379,20 @@ typedef NS_ENUM(NSUInteger, BBXBusQRCodeStatus) {
             [alertView show];
             
         } else if (indexPath.row == 2) {
-            CGSize popupViewSize = CGSizeMake(screenWidth * 0.7, 150);
+            CGSize popupViewSize = CGSizeMake(screenWidth * 0.7, 180);
             NSString *title = NSLocalizedString(@"友情提示", nil);
             NSString *message = NSLocalizedString(@"您当前处于离线状态，请检查您的网络", nil);
             NSString *cancelButtonTitle = nil;
             NSString *okButtonTitle = NSLocalizedString(@"我知道了", nil);
             
-            CJAlertView *alertView = [[CJAlertView alloc] initWithSize:popupViewSize firstVerticalInterval:25 secondVerticalInterval:10 thirdVerticalInterval:10];
+            CJAlertView *alertView = [[CJAlertView alloc] initWithSize:popupViewSize firstVerticalInterval:15 secondVerticalInterval:10 thirdVerticalInterval:0];
             [alertView addTitleWithText:title font:[UIFont systemFontOfSize:18.0] textAlignment:NSTextAlignmentCenter margin:20];
-            [alertView addMessageWithText:message font:[UIFont systemFontOfSize:15.0] textAlignment:NSTextAlignmentCenter margin:20 paragraphStyle:nil];
+            
+            NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle defaultParagraphStyle] mutableCopy];
+            paragraphStyle.lineBreakMode = NSLineBreakByCharWrapping;
+            paragraphStyle.lineSpacing = 4;
+            //TODO:设置paragraphStyle后，信息显示不全了。。。。为什么
+            [alertView addMessageWithText:message font:[UIFont systemFontOfSize:14.0] textAlignment:NSTextAlignmentCenter margin:20 paragraphStyle:paragraphStyle];
             [alertView addBottomButtonWithHeight:50 cancelButtonTitle:cancelButtonTitle okButtonTitle:okButtonTitle cancelHandle:nil okHandle:^{
                 NSLog(@"点击了确认按钮");
             }];

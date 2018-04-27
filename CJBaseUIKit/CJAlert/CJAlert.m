@@ -71,10 +71,7 @@
                                               okButtonTitle:okButtonTitle
                                                cancelHandle:cancelHandle
                                                    okHandle:okHandle];
-    
-    [alertView cj_popupInCenterWindow:CJAnimationTypeNormal
-                             withSize:size
-                         showComplete:nil tapBlankComplete:nil];
+    [alertView show];
 }
 
 @end
