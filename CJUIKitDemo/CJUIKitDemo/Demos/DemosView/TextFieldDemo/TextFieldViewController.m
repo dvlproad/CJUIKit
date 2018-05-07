@@ -15,6 +15,8 @@
 #import "UITextField+CJPadding.h"
 #import "CJTextField.h"
 
+#import "BBXDAreaCodeTextField.h"
+
 #import "CJToast.h"
 
 #ifdef CJTESTPOD
@@ -29,7 +31,12 @@
 
 #import "UIImage+CJCreate.h"
 
-@interface TextFieldViewController () <UITextFieldDelegate>
+@interface TextFieldViewController () <UITextFieldDelegate> {
+
+}
+@property (nonatomic, strong) BBXDAreaCodeTextField *areaCodeTextField;
+@property (nonatomic, strong) UIAlertController *regionAlertController;
+@property (nonatomic, strong) NSArray<NSString *> *regions;
 
 @end
 
@@ -56,7 +63,22 @@
     }];
 
     
+    self.regions = @[@"中国 +86", @"香港 +852"];
     
+    BBXDAreaCodeTextField *areaCodeTextField = [[BBXDAreaCodeTextField alloc] initWithFrame:CGRectZero];
+    areaCodeTextField.text = self.regions[0];
+    __weak typeof(self)weakSelf = self;
+    areaCodeTextField.chooseAreaCodeBlock = ^(BBXDAreaCodeTextField *textField) {
+        [weakSelf presentViewController:self.regionAlertController animated:YES completion:nil];
+    };
+    [self.view addSubview:areaCodeTextField];
+    [areaCodeTextField mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.centerX.mas_equalTo(self.view);
+        make.left.mas_equalTo(30);
+        make.top.mas_equalTo(self.view).mas_offset(190);
+        make.height.mas_equalTo(38);
+    }];
+    self.areaCodeTextField = areaCodeTextField;
     
     CJTextField *textField2 = [[CJTextField alloc] initWithFrame:CGRectZero];
     textField2.backgroundColor = [UIColor lightGrayColor];
@@ -66,7 +88,7 @@
         make.centerX.mas_equalTo(self.view);
         make.width.mas_equalTo(200);
         make.top.mas_equalTo(self.view).mas_offset(250);
-        make.height.mas_equalTo(40);    //系统默认高度30
+        make.height.mas_equalTo(40);
     }];
     
     UIView *leftView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 20, 20)];
@@ -201,6 +223,26 @@
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
     [self.textField resignFirstResponder];
+}
+
+
+#pragma mark - Lazyload
+- (UIAlertController *)regionAlertController {
+    if (_regionAlertController) return _regionAlertController;
+    
+    _regionAlertController = [UIAlertController alertControllerWithTitle:nil message:nil preferredStyle:UIAlertControllerStyleActionSheet];
+    UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil];
+    [_regionAlertController addAction:cancelAction];
+    
+    __weak typeof(self)weakSelf = self;
+    for (NSString *regionString in self.regions) {
+        UIAlertAction *regionction = [UIAlertAction actionWithTitle:regionString style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+            weakSelf.areaCodeTextField.text = action.title;
+        }];
+        [_regionAlertController addAction:regionction];
+    }
+    
+    return _regionAlertController;
 }
 
 - (void)didReceiveMemoryWarning {

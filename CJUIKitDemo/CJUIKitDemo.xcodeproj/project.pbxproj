@@ -211,6 +211,11 @@
 		8014A28B1FA2C81A00DDDB5A /* icons8-folder.png in Resources */ = {isa = PBXBuildFile; fileRef = 8014A2861FA2C81A00DDDB5A /* icons8-folder.png */; };
 		8014A28C1FA2C81A00DDDB5A /* icons8-home.png in Resources */ = {isa = PBXBuildFile; fileRef = 8014A2871FA2C81A00DDDB5A /* icons8-home.png */; };
 		8014A2A21FA3137D00DDDB5A /* ThirdPartIcon.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8014A2A11FA3137D00DDDB5A /* ThirdPartIcon.xcassets */; };
+		801F75D820A040D800A2E027 /* BBXDAreaCodeTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 801F75D020A040D800A2E027 /* BBXDAreaCodeTextField.m */; };
+		801F75D920A040D800A2E027 /* BBXDPasswordTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 801F75D120A040D800A2E027 /* BBXDPasswordTextField.m */; };
+		801F75DA20A040D800A2E027 /* signin_icon_open@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 801F75D520A040D800A2E027 /* signin_icon_open@3x.png */; };
+		801F75DB20A040D800A2E027 /* signin_icon_open@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 801F75D620A040D800A2E027 /* signin_icon_open@2x.png */; };
+		801F75DC20A040D800A2E027 /* BBXDUserNameTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 801F75D720A040D800A2E027 /* BBXDUserNameTextField.m */; };
 		8033239020299AD7001DACF1 /* MyCycleADView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8033234520299AD7001DACF1 /* MyCycleADView.m */; };
 		8033239120299AD7001DACF1 /* MyCycleADViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8033234620299AD7001DACF1 /* MyCycleADViewController.m */; };
 		8033239220299AD7001DACF1 /* MyADModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8033234720299AD7001DACF1 /* MyADModel.m */; };
@@ -816,6 +821,14 @@
 		8014A2861FA2C81A00DDDB5A /* icons8-folder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icons8-folder.png"; sourceTree = "<group>"; };
 		8014A2871FA2C81A00DDDB5A /* icons8-home.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icons8-home.png"; sourceTree = "<group>"; };
 		8014A2A11FA3137D00DDDB5A /* ThirdPartIcon.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = ThirdPartIcon.xcassets; sourceTree = "<group>"; };
+		801F75D020A040D800A2E027 /* BBXDAreaCodeTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBXDAreaCodeTextField.m; sourceTree = "<group>"; };
+		801F75D120A040D800A2E027 /* BBXDPasswordTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBXDPasswordTextField.m; sourceTree = "<group>"; };
+		801F75D220A040D800A2E027 /* BBXDUserNameTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBXDUserNameTextField.h; sourceTree = "<group>"; };
+		801F75D320A040D800A2E027 /* BBXDAreaCodeTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBXDAreaCodeTextField.h; sourceTree = "<group>"; };
+		801F75D420A040D800A2E027 /* BBXDPasswordTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBXDPasswordTextField.h; sourceTree = "<group>"; };
+		801F75D520A040D800A2E027 /* signin_icon_open@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "signin_icon_open@3x.png"; sourceTree = "<group>"; };
+		801F75D620A040D800A2E027 /* signin_icon_open@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "signin_icon_open@2x.png"; sourceTree = "<group>"; };
+		801F75D720A040D800A2E027 /* BBXDUserNameTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBXDUserNameTextField.m; sourceTree = "<group>"; };
 		80270BBC1FABFE57001429F0 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		8033234420299AD7001DACF1 /* MyADModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyADModel.h; sourceTree = "<group>"; };
 		8033234520299AD7001DACF1 /* MyCycleADView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyCycleADView.m; sourceTree = "<group>"; };
@@ -1414,6 +1427,7 @@
 				787FDB4F20500B00008A46E3 /* TextFieldViewController.h */,
 				787FDB5020500B00008A46E3 /* TextFieldViewController.m */,
 				787FDB5120500B00008A46E3 /* TextFieldViewController.xib */,
+				801F75CF20A040D800A2E027 /* Views */,
 			);
 			path = TextFieldDemo;
 			sourceTree = "<group>";
@@ -2283,6 +2297,21 @@
 				800F3B642011899400A5C326 /* ToastViewController.xib */,
 			);
 			path = CJToastDemo;
+			sourceTree = "<group>";
+		};
+		801F75CF20A040D800A2E027 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				801F75D320A040D800A2E027 /* BBXDAreaCodeTextField.h */,
+				801F75D020A040D800A2E027 /* BBXDAreaCodeTextField.m */,
+				801F75D220A040D800A2E027 /* BBXDUserNameTextField.h */,
+				801F75D720A040D800A2E027 /* BBXDUserNameTextField.m */,
+				801F75D420A040D800A2E027 /* BBXDPasswordTextField.h */,
+				801F75D120A040D800A2E027 /* BBXDPasswordTextField.m */,
+				801F75D620A040D800A2E027 /* signin_icon_open@2x.png */,
+				801F75D520A040D800A2E027 /* signin_icon_open@3x.png */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		8033234220299AD7001DACF1 /* UICollectionViewDemo */ = {
@@ -3367,6 +3396,7 @@
 				80FF90411FC5649F00E437CF /* add_red.png in Resources */,
 				807903151FB413D60082F05C /* arrow_R_blue.png in Resources */,
 				807903121FB413D60082F05C /* arrow_down.png in Resources */,
+				801F75DA20A040D800A2E027 /* signin_icon_open@3x.png in Resources */,
 				787FDB9620500B5C008A46E3 /* SliderViewController.xib in Resources */,
 				803323A420299AD7001DACF1 /* MemoryADPose02.jpg in Resources */,
 				80FF91A11FC5682B00E437CF /* PullScaleTopImageViewController.xib in Resources */,
@@ -3496,6 +3526,7 @@
 				787FDB9220500B5C008A46E3 /* slider_thumbImage@2x.png in Resources */,
 				803323A320299AD7001DACF1 /* MemoryADResult01.gif in Resources */,
 				803323AA20299AD7001DACF1 /* MemoryAD09.jpg in Resources */,
+				801F75DB20A040D800A2E027 /* signin_icon_open@2x.png in Resources */,
 				803323A720299AD7001DACF1 /* MemoryADTime02.jpg in Resources */,
 				78E269BF1ECC5E1A007D3686 /* bgSky@2x.jpg in Resources */,
 				80FF90A91FC5649F00E437CF /* ImageChangeColorViewController.xib in Resources */,
@@ -3658,6 +3689,7 @@
 				789CAF4D1FB612B700AF8CD4 /* CJSwitchSliderStatusModel.m in Sources */,
 				789CAF4C1FB612B700AF8CD4 /* CJSwitchSlider.m in Sources */,
 				80FF91381FC5668700E437CF /* NSString+CJValidate.m in Sources */,
+				801F75D820A040D800A2E027 /* BBXDAreaCodeTextField.m in Sources */,
 				789CAF631FB612B700AF8CD4 /* UIImage+CJTransformSize.m in Sources */,
 				78B740341FB6C04600443D87 /* NSString+MD5.m in Sources */,
 				789CAF851FB612B700AF8CD4 /* CJSearchTableView.m in Sources */,
@@ -3671,6 +3703,7 @@
 				800E07E92016CD1500799B78 /* KeyboardUtilViewController.m in Sources */,
 				789CAF7C1FB612B700AF8CD4 /* UIWindow+CJSnapshot.m in Sources */,
 				80FF90391FC5649F00E437CF /* ScrollViewController.m in Sources */,
+				801F75D920A040D800A2E027 /* BBXDPasswordTextField.m in Sources */,
 				8000B5C61FCFEE3A00AE3C78 /* UITextField+CJSelectedTextRange.m in Sources */,
 				80FF91A21FC5682B00E437CF /* PullScaleTopImageViewController.m in Sources */,
 				789CAF1B1FB612B700AF8CD4 /* CJFullCenterCollectionViewCell.m in Sources */,
@@ -3698,6 +3731,7 @@
 				80FF90901FC5649F00E437CF /* CustomTableViewCell.m in Sources */,
 				80FF91E91FC6739D00E437CF /* CJDateModel.m in Sources */,
 				80CC7F8D200F7EBE0017878A /* OpenTableViewController2.m in Sources */,
+				801F75DC20A040D800A2E027 /* BBXDUserNameTextField.m in Sources */,
 				789CAF401FB612B700AF8CD4 /* MyUserInfoScaleHeadView.m in Sources */,
 				8073D9BD201877920031CE72 /* CJModuleModel.m in Sources */,
 				789CAF801FB612B700AF8CD4 /* CJImageUploadItem.m in Sources */,

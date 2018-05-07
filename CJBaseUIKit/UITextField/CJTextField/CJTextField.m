@@ -52,12 +52,21 @@
     return rect;
 }
 
+#pragma mark - 添加 View 的下划线
 /*
 // Only override drawRect: if you perform custom drawing.
 // An empty implementation adversely affects performance during animation.
 - (void)drawRect:(CGRect)rect {
-    // Drawing code
+    CGFloat bottomLineHeight = 0.5;
+    CGRect bottomLineRect = CGRectMake(0, CGRectGetHeight(self.frame) - bottomLineHeight, CGRectGetWidth(self.frame), bottomLineHeight);
+    
+    UIColor *bottomLineColor = [UIColor colorWithRed:196/255.0 green:196/255.0 blue:196/255.0 alpha:1];  //#ebebeb
+    
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    CGContextSetFillColorWithColor(context, bottomLineColor.CGColor);
+    CGContextFillRect(context, bottomLineRect);
 }
 */
+
 
 @end
