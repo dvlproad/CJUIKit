@@ -27,8 +27,6 @@ void CJAppLog(CJAppLogType appLogType, NSString *tag, NSString *format, ...);
 
 
 
-
-
 #import <Foundation/Foundation.h>
 
 /**
@@ -37,11 +35,17 @@ void CJAppLog(CJAppLogType appLogType, NSString *tag, NSString *format, ...);
 @interface CJLogUtil : NSObject
 
 /**
- *  将newFileContent追加写入指定文件末尾(log文件统一存放在NSDocumentDirectory下的CJLog文件夹中)
+ *  将appendObject追加写入指定文件末尾(log文件统一存放在NSDocumentDirectory下的CJLog文件夹中)
  *
- *  @param newFileContent   要追加写入的内容
+ *  @param appendObject     要追加写入的数据（NSData、NSString、NSDictrionary、NSArray）
  *  @param logFileName      追加的内容要写入的指定log文件的文件名
  */
-+ (void)cj_writeFileContent:(NSString *)newFileContent toLogFileName:(NSString *)logFileName;
++ (void)cj_appendObject:(id)appendObject toLogFileName:(NSString *)logFileName;
 
 @end
+
+
+
+
+
+
