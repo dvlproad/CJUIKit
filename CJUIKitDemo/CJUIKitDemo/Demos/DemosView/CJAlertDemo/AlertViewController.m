@@ -12,15 +12,6 @@
 #import "CJAlert.h"
 #import "CJAlertView.h"
 
-typedef NS_ENUM(NSUInteger, BBXBusQRCodeStatus) {
-    BBXBusQRCodeStatusUnkonwn,
-    BBXBusQRCodeStatusNoFound,          /**< 无效：系统找不到该车票 */
-    BBXBusQRCodeStatusInvalidFlight,    /**< 无效：班次不符 */
-    BBXBusQRCodeStatusInvalidStation,   /**< 无效：站点不符 */
-    BBXBusQRCodeStatusUsed,             /**< 无效：已检票 */
-    BBXBusQRCodeStatusValid,            /**< 检票有效，提示是否确认上车 */
-};
-
 @interface AlertViewController () <UITableViewDataSource, UITableViewDelegate> {
     
 }
@@ -68,18 +59,6 @@ typedef NS_ENUM(NSUInteger, BBXBusQRCodeStatus) {
         sectionDataModel.theme = @"自定义的View";
         {
             CJModuleModel *toastModule = [[CJModuleModel alloc] init];
-            toastModule.title = @"FlagImage & Title & Message & OK";
-            //toastModule.classEntry = [UIViewController class];
-            [sectionDataModel.values addObject:toastModule];
-        }
-        {
-            CJModuleModel *toastModule = [[CJModuleModel alloc] init];
-            toastModule.title = @"FlagImage & Title & Message & OK";
-            //toastModule.classEntry = [UIViewController class];
-            [sectionDataModel.values addObject:toastModule];
-        }
-        {
-            CJModuleModel *toastModule = [[CJModuleModel alloc] init];
             toastModule.title = @"FlagImage & Title & Message & OK & Cancel";
             //toastModule.classEntry = [UIViewController class];
             [sectionDataModel.values addObject:toastModule];
@@ -93,30 +72,6 @@ typedef NS_ENUM(NSUInteger, BBXBusQRCodeStatus) {
         {
             CJModuleModel *toastModule = [[CJModuleModel alloc] init];
             toastModule.title = @"Title & OK & Cancel";
-            //toastModule.classEntry = [UIViewController class];
-            [sectionDataModel.values addObject:toastModule];
-        }
-        {
-            CJModuleModel *toastModule = [[CJModuleModel alloc] init];
-            toastModule.title = @"Title & Message & OK & Cancel";
-            //toastModule.classEntry = [UIViewController class];
-            [sectionDataModel.values addObject:toastModule];
-        }
-        [sectionDataModels addObject:sectionDataModel];
-    }
-    //以下几个为自定义的View
-    {
-        CJSectionDataModel *sectionDataModel = [[CJSectionDataModel alloc] init];
-        sectionDataModel.theme = @"自定义的View";
-        {
-            CJModuleModel *toastModule = [[CJModuleModel alloc] init];
-            toastModule.title = @"FlagImage & Title & Message & OK & Cancel";
-            //toastModule.classEntry = [UIViewController class];
-            [sectionDataModel.values addObject:toastModule];
-        }
-        {
-            CJModuleModel *toastModule = [[CJModuleModel alloc] init];
-            toastModule.title = @"FlagImage & Title & Message & OK";
             //toastModule.classEntry = [UIViewController class];
             [sectionDataModel.values addObject:toastModule];
         }
@@ -252,133 +207,18 @@ typedef NS_ENUM(NSUInteger, BBXBusQRCodeStatus) {
         }
         
     } else if (indexPath.section == 1) {
-        BBXBusQRCodeStatus qrCodeStatus = indexPath.row + 1;
-        
-        if (qrCodeStatus == BBXBusQRCodeStatusValid) {
-            CGSize popupViewSize = CGSizeMake(screenWidth * 0.7, 160);
-            UIImage *flagImage = nil;
-            NSString *title = NSLocalizedString(@"乘客上车站为\n【厦门市软件园二期】\n是否本站上车？", nil);
-            NSString *message = nil;
-            NSString *cancelButtonTitle = NSLocalizedString(@"取消", nil);
-            NSString *okButtonTitle = NSLocalizedString(@"确认", nil);
-            
-            CJAlertView *alertView = [CJAlertView alertViewWithSize:popupViewSize flagImage:flagImage title:title message:message cancelButtonTitle:cancelButtonTitle okButtonTitle:okButtonTitle cancelHandle:^{
-                NSLog(@"点击了取消按钮");
-            } okHandle:^{
-                NSLog(@"点击了确认按钮");
-            }];
-            [alertView show];
-            
-        } else if (qrCodeStatus == BBXBusQRCodeStatusNoFound) {
-            CGSize popupViewSize = CGSizeMake(screenWidth * 0.7, 200);
-            UIImage *flagImage = [UIImage imageNamed:@"scan_icon_notice"];
-            NSString *title = NSLocalizedString(@"未通过", nil);
-            NSString *message = NSLocalizedString(@"无效二维码，系统找不到该车票", nil);
-            NSString *cancelButtonTitle = nil;
-            NSString *okButtonTitle = NSLocalizedString(@"我知道了", nil);
-            
-            CJAlertView *alertView = [CJAlertView alertViewWithSize:popupViewSize flagImage:flagImage title:title message:message cancelButtonTitle:cancelButtonTitle okButtonTitle:okButtonTitle cancelHandle:nil okHandle:^{
-                NSLog(@"点击了确认按钮");
-            }];
-            [alertView show];
-            
-        } else if (qrCodeStatus == BBXBusQRCodeStatusInvalidFlight) {
-            CGSize popupViewSize = CGSizeMake(screenWidth * 0.7, 200);
-            UIImage *flagImage = [UIImage imageNamed:@"scan_icon_notice"];
-            NSString *title = NSLocalizedString(@"未通过", nil);
-            NSString *message = NSLocalizedString(@"班次不符，请核对车票信息", nil);
-            NSString *cancelButtonTitle = nil;
-            NSString *okButtonTitle = NSLocalizedString(@"我知道了", nil);
-            
-            CJAlertView *alertView = [CJAlertView alertViewWithSize:popupViewSize flagImage:flagImage title:title message:message cancelButtonTitle:cancelButtonTitle okButtonTitle:okButtonTitle cancelHandle:nil okHandle:^{
-                NSLog(@"点击了确认按钮");
-            }];
-            [alertView show];
-            
-        } else if (qrCodeStatus == BBXBusQRCodeStatusInvalidStation) {
-            CGSize popupViewSize = CGSizeMake(screenWidth * 0.7, 200);
-            UIImage *flagImage = [UIImage imageNamed:@"scan_icon_notice"];
-            NSString *title = NSLocalizedString(@"未通过", nil);
-            NSString *message = NSLocalizedString(@"上车站点不符，应上车站点：\n【厦门软件园二期观日路站】", nil);
-            NSString *cancelButtonTitle = NSLocalizedString(@"我知道了", nil);
-            NSString *okButtonTitle = NSLocalizedString(@"允许上车", nil);
-            
-            CJAlertView *alertView = [CJAlertView alertViewWithSize:popupViewSize flagImage:flagImage title:title message:message cancelButtonTitle:cancelButtonTitle okButtonTitle:okButtonTitle cancelHandle:^{
-                NSLog(@"点击了取消按钮");
-            } okHandle:^{
-                NSLog(@"点击了确认按钮");
-            }];
-            [alertView show];
-            
-        } else if (qrCodeStatus == BBXBusQRCodeStatusUsed) {
-            CGSize popupViewSize = CGSizeMake(screenWidth * 0.7, 200);
-            UIImage *flagImage = [UIImage imageNamed:@"scan_icon_notice"];
-            NSString *title = NSLocalizedString(@"未通过", nil);
-            NSString *message = NSLocalizedString(@"已检票", nil);
-            NSString *cancelButtonTitle = nil;
-            NSString *okButtonTitle = NSLocalizedString(@"我知道了", nil);
-            
-            CJAlertView *alertView = [CJAlertView alertViewWithSize:popupViewSize flagImage:flagImage title:title message:message cancelButtonTitle:cancelButtonTitle okButtonTitle:okButtonTitle cancelHandle:nil okHandle:^{
-                NSLog(@"点击了确认按钮");
-            }];
-            [alertView show];
-        }
-        
-        if (indexPath.row == 5) {
-            CGSize popupViewSize = CGSizeMake(screenWidth * 0.7, 230);
-            UIImage *flagImage = nil;
-            NSString *title = NSLocalizedString(@"请先结束未完成行程才能发车", nil);
-            
-            NSString *flightNo = @"班次：BCD 12345";
-            NSString *disptachTime = @"出发时间：2018-04-20 11:00";
-            NSString *startStation = @"厦门市软件园二期";
-            NSString *endStation = @"漳州市万达广场";
-            NSString *message = [NSString stringWithFormat:@"%@\n%@\n%@\n%@", flightNo, disptachTime, startStation, endStation];
-            NSString *cancelButtonTitle = NSLocalizedString(@"取消", nil);
-            NSString *okButtonTitle = NSLocalizedString(@"结束行程", nil);
-            
-            CJAlertView *alertView = [CJAlertView alertViewWithSize:popupViewSize flagImage:flagImage title:title message:message cancelButtonTitle:cancelButtonTitle okButtonTitle:okButtonTitle  cancelHandle:^{
-                NSLog(@"点击了取消按钮");
-            } okHandle:^{
-                NSLog(@"点击了确认按钮");
-            }];
-            [alertView show];
-        }
-        
-    } else if (indexPath.section == 2) {
         if (indexPath.row == 0) {
-            CGSize popupViewSize = CGSizeMake(screenWidth * 0.7, 230);
-            UIImage *flagImage = [UIImage imageNamed:@"scan_icon_notice"];
-            NSString *title = NSLocalizedString(@"未通过", nil);
-            NSString *message = NSLocalizedString(@"上车站点不符，应上车站点：\n【厦门软件园二期观日路站】", nil);
-            NSString *cancelButtonTitle = NSLocalizedString(@"我知道了", nil);
-            NSString *okButtonTitle = NSLocalizedString(@"允许上车", nil);
-            
-            CJAlertView *alertView = [[CJAlertView alloc] initWithSize:popupViewSize firstVerticalInterval:25 secondVerticalInterval:10 thirdVerticalInterval:10];
-            [alertView addFlagImage:flagImage size:CGSizeMake(38, 38)];
-            [alertView addTitleWithText:title font:[UIFont systemFontOfSize:18.0] textAlignment:NSTextAlignmentCenter margin:20];
-            [alertView addMessageWithText:message font:[UIFont systemFontOfSize:15.0] textAlignment:NSTextAlignmentCenter margin:20 paragraphStyle:nil];
-            [alertView addBottomButtonWithHeight:50 cancelButtonTitle:cancelButtonTitle okButtonTitle:okButtonTitle cancelHandle:^{
-                NSLog(@"点击了取消按钮");
-            } okHandle:^{
-                NSLog(@"点击了确认按钮");
-            }];
-            [alertView show];
+            NSString *stationName = @"厦门市软件园二期";
+            [self showInvalidStationAlertForStationName:stationName];
             
         } else if (indexPath.row == 1) {
-            CGSize popupViewSize = CGSizeMake(screenWidth * 0.7, 200);
-            UIImage *flagImage = [UIImage imageNamed:@"scan_icon_notice"];
-            NSString *title = NSLocalizedString(@"未通过", nil);
-            NSString *message = NSLocalizedString(@"班次不符，请核对车票信息", nil);
-            NSString *cancelButtonTitle = nil;
-            NSString *okButtonTitle = NSLocalizedString(@"我知道了", nil);
-            
-            CJAlertView *alertView = [CJAlertView alertViewWithSize:popupViewSize flagImage:flagImage title:title message:message cancelButtonTitle:cancelButtonTitle okButtonTitle:okButtonTitle cancelHandle:nil okHandle:^{
-                NSLog(@"点击了确认按钮");
-            }];
-            [alertView show];
+            [self showInvalidFlightAlert];
             
         } else if (indexPath.row == 2) {
+            NSString *stationName = @"厦门市软件园二期";
+            [self checkAllowGetOnAtStationName:stationName];
+            
+        } else if (indexPath.row == 3) {
             CGSize popupViewSize = CGSizeMake(screenWidth * 0.7, 180);
             NSString *title = NSLocalizedString(@"友情提示", nil);
             NSString *message = NSLocalizedString(@"您当前处于离线状态，请检查您的网络", nil);
@@ -386,20 +226,19 @@ typedef NS_ENUM(NSUInteger, BBXBusQRCodeStatus) {
             NSString *okButtonTitle = NSLocalizedString(@"我知道了", nil);
             
             CJAlertView *alertView = [[CJAlertView alloc] initWithSize:popupViewSize firstVerticalInterval:15 secondVerticalInterval:10 thirdVerticalInterval:0];
-            [alertView addTitleWithText:title font:[UIFont systemFontOfSize:18.0] textAlignment:NSTextAlignmentCenter margin:20];
+            [alertView addTitleWithText:title font:[UIFont systemFontOfSize:18.0] textAlignment:NSTextAlignmentCenter margin:20 paragraphStyle:nil];
             
             NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle defaultParagraphStyle] mutableCopy];
             paragraphStyle.lineBreakMode = NSLineBreakByCharWrapping;
             paragraphStyle.lineSpacing = 4;
-            //TODO:设置paragraphStyle后，信息显示不全了。。。。为什么
             [alertView addMessageWithText:message font:[UIFont systemFontOfSize:14.0] textAlignment:NSTextAlignmentCenter margin:20 paragraphStyle:paragraphStyle];
             [alertView addBottomButtonWithHeight:50 cancelButtonTitle:cancelButtonTitle okButtonTitle:okButtonTitle cancelHandle:nil okHandle:^{
                 NSLog(@"点击了确认按钮");
             }];
-            [alertView show];
+            [alertView showWithShouldFitHeight:NO];
         }
         
-        if (indexPath.row == 3) {
+        if (indexPath.row == 4) {
             CGSize popupViewSize = CGSizeMake(screenWidth * 0.7, 200);
             NSString *title = NSLocalizedString(@"请先结束未完成行程才能发车", nil);
             
@@ -412,7 +251,7 @@ typedef NS_ENUM(NSUInteger, BBXBusQRCodeStatus) {
             NSString *okButtonTitle = NSLocalizedString(@"结束行程", nil);
             
             CJAlertView *alertView = [[CJAlertView alloc] initWithSize:popupViewSize firstVerticalInterval:25 secondVerticalInterval:20 thirdVerticalInterval:0];
-            [alertView addTitleWithText:title font:[UIFont systemFontOfSize:15.0] textAlignment:NSTextAlignmentCenter margin:20];
+            [alertView addTitleWithText:title font:[UIFont systemFontOfSize:15.0] textAlignment:NSTextAlignmentCenter margin:20 paragraphStyle:nil];
             
             
             NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle defaultParagraphStyle] mutableCopy];
@@ -426,10 +265,121 @@ typedef NS_ENUM(NSUInteger, BBXBusQRCodeStatus) {
             } okHandle:^{
                 NSLog(@"点击了确认按钮");
             }];
-            [alertView show];
+            [alertView showWithShouldFitHeight:NO];
         }
     }
 }
+
+
+- (void)showNoFoundAlert {
+    CGFloat screenWidth = CGRectGetWidth([[UIScreen mainScreen] bounds]);
+    CGSize popupViewSize = CGSizeMake(screenWidth * 0.7, 200);
+    UIImage *flagImage = [UIImage imageNamed:@"scan_icon_notice"];
+    NSString *title = NSLocalizedString(@"未通过", nil);
+    NSString *message = NSLocalizedString(@"无效二维码，系统找不到该车票", nil);
+    NSString *cancelButtonTitle = nil;
+    NSString *okButtonTitle = NSLocalizedString(@"我知道了", nil);
+    
+    __weak typeof(self)weakSelf = self;
+    [CJAlert showCJAlertViewWithSize:popupViewSize flagImage:flagImage title:title message:message cancelButtonTitle:cancelButtonTitle okButtonTitle:okButtonTitle cancelHandle:nil okHandle:^{
+        NSLog(@"点击了确认按钮");
+        [weakSelf continueScanning];
+    }];
+}
+
+- (void)showHasCheckedAlert {
+    CGFloat screenWidth = CGRectGetWidth([[UIScreen mainScreen] bounds]);
+    CGSize popupViewSize = CGSizeMake(screenWidth * 0.7, 200);
+    UIImage *flagImage = [UIImage imageNamed:@"scan_icon_notice"];
+    NSString *title = NSLocalizedString(@"未通过", nil);
+    NSString *message = NSLocalizedString(@"已检票", nil);
+    NSString *cancelButtonTitle = nil;
+    NSString *okButtonTitle = NSLocalizedString(@"我知道了", nil);
+    
+    __weak typeof(self)weakSelf = self;
+    [CJAlert showCJAlertViewWithSize:popupViewSize flagImage:flagImage title:title message:message cancelButtonTitle:cancelButtonTitle okButtonTitle:okButtonTitle cancelHandle:nil okHandle:^{
+        NSLog(@"点击了确认按钮");
+        [weakSelf continueScanning];
+    }];
+}
+
+- (void)showInvalidFlightAlert {
+    CGFloat screenWidth = CGRectGetWidth([[UIScreen mainScreen] bounds]);
+    CGSize popupViewSize = CGSizeMake(screenWidth * 0.7, 200);
+    UIImage *flagImage = [UIImage imageNamed:@"scan_icon_notice"];
+    NSString *title = NSLocalizedString(@"未通过", nil);
+    NSString *message = NSLocalizedString(@"班次不符，请核对车票信息", nil);
+    NSString *cancelButtonTitle = nil;
+    NSString *okButtonTitle = NSLocalizedString(@"我知道了", nil);
+    
+    __weak typeof(self)weakSelf = self;
+    [CJAlert showCJAlertViewWithSize:popupViewSize flagImage:flagImage title:title message:message cancelButtonTitle:cancelButtonTitle okButtonTitle:okButtonTitle cancelHandle:nil okHandle:^{
+        NSLog(@"点击了确认按钮");
+        [weakSelf continueScanning];
+    }];
+}
+
+- (void)showInvalidStationAlertForStationName:(NSString *)stationName {
+    CGFloat screenWidth = CGRectGetWidth([[UIScreen mainScreen] bounds]);
+    CGSize popupViewSize = CGSizeMake(screenWidth * 0.7, 200);
+    UIImage *flagImage = [UIImage imageNamed:@"scan_icon_notice"];
+    NSString *title = NSLocalizedString(@"未通过", nil);
+    NSString *message = [NSString stringWithFormat:@"上车站点不符，应上车站点：\n【%@】", stationName];
+    NSString *cancelButtonTitle = NSLocalizedString(@"我知道了", nil);
+    NSString *okButtonTitle = NSLocalizedString(@"允许上车", nil);
+    
+    __weak typeof(self)weakSelf = self;
+    [CJAlert showCJAlertViewWithSize:popupViewSize flagImage:flagImage title:title message:message cancelButtonTitle:cancelButtonTitle okButtonTitle:okButtonTitle cancelHandle:^{
+        NSLog(@"点击了取消按钮");
+    } okHandle:^{
+        NSLog(@"点击了确认按钮");
+        [weakSelf checkAllowGetOnAtStationName:stationName];
+    }];
+}
+
+- (void)checkAllowGetOnAtStationName:(NSString *)stationName {
+    CGFloat screenWidth = CGRectGetWidth([[UIScreen mainScreen] bounds]);
+    CGSize popupViewSize = CGSizeMake(screenWidth * 0.7, 230);
+    UIImage *flagImage = nil;
+    //乘客上车站为\n【厦门市软件园二期】\n是否本站上车？
+    NSString *preTitle = NSLocalizedString(@"乘客上车站为", nil);
+    NSString *midTitle = [NSString stringWithFormat:@"【%@】", stationName];
+    NSString *sufTitle = NSLocalizedString(@"是否本站上车？", nil);
+    NSString *title = [NSString stringWithFormat:@"%@\n%@\n%@", preTitle, midTitle, sufTitle];
+    NSString *message = nil;
+    NSString *cancelButtonTitle = NSLocalizedString(@"取消", nil);
+    NSString *okButtonTitle = NSLocalizedString(@"确认", nil);
+    
+    /*
+    [CJAlert showCJAlertViewWithSize:popupViewSize flagImage:flagImage title:title message:message cancelButtonTitle:cancelButtonTitle okButtonTitle:okButtonTitle cancelHandle:^{
+        NSLog(@"点击了取消按钮");
+    } okHandle:^{
+        NSLog(@"点击了确认按钮");
+        [self continueScanning];
+    }];
+    //*/
+    //*
+    CJAlertView *alertView = [[CJAlertView alloc] initWithSize:popupViewSize firstVerticalInterval:25 secondVerticalInterval:10 thirdVerticalInterval:10];
+    
+    NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle defaultParagraphStyle] mutableCopy];
+    paragraphStyle.lineBreakMode = NSLineBreakByCharWrapping;
+    paragraphStyle.lineSpacing = 3;
+    [alertView addTitleWithText:title font:[UIFont systemFontOfSize:18.0] textAlignment:NSTextAlignmentCenter margin:20 paragraphStyle:paragraphStyle];
+    
+    [alertView addBottomButtonWithHeight:50 cancelButtonTitle:cancelButtonTitle okButtonTitle:okButtonTitle cancelHandle:^{
+        NSLog(@"点击了取消按钮");
+    } okHandle:^{
+        NSLog(@"点击了确认按钮");
+        [self continueScanning];
+    }];
+    [alertView showWithShouldFitHeight:YES];
+    //*/
+}
+
+- (void)continueScanning {
+    
+}
+
 
 - (IBAction)showToast:(id)sender {
     

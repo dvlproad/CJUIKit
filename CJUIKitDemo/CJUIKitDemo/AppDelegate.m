@@ -37,12 +37,12 @@
                     CGFloat screenWidth = CGRectGetWidth([[UIScreen mainScreen] bounds]);
                     CGSize popupViewSize = CGSizeMake(screenWidth * 0.7, 120);
                     CJAlertView *alertView = [[CJAlertView alloc] initWithSize:popupViewSize firstVerticalInterval:15 secondVerticalInterval:10 thirdVerticalInterval:0];
-                    [alertView addTitleWithText:NSLocalizedString(@"未连接网络", nil) font:[UIFont systemFontOfSize:15.0] textAlignment:NSTextAlignmentCenter margin:20];
+                    [alertView addTitleWithText:NSLocalizedString(@"未连接网络", nil) font:[UIFont systemFontOfSize:15.0] textAlignment:NSTextAlignmentCenter margin:20 paragraphStyle:nil];
                     [alertView addMessageWithText:NSLocalizedString(@"请检查WIFI或者数据是否开启", nil) font:[UIFont systemFontOfSize:14.0] textAlignment:NSTextAlignmentCenter margin:20 paragraphStyle:nil];
                     [alertView addBottomButtonWithHeight:40 cancelButtonTitle:nil okButtonTitle:NSLocalizedString(@"我知道了", nil) cancelHandle:nil okHandle:^{
                         NSLog(@"点击了断网确认按钮");
                     }];
-                    [alertView show];
+                    [alertView showWithShouldFitHeight:YES];
                     break;
                 }
                 default:

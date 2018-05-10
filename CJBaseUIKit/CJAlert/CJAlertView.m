@@ -59,7 +59,7 @@
     }
     if (title.length > 0) {
         UIFont *titleLabelFont = [UIFont systemFontOfSize:18.0];
-        [alertView addTitleWithText:title font:titleLabelFont textAlignment:NSTextAlignmentCenter margin:20];
+        [alertView addTitleWithText:title font:titleLabelFont textAlignment:NSTextAlignmentCenter margin:20 paragraphStyle:nil];
     }
     if (message.length > 0) {
         UIFont *messageLabelFont = [UIFont systemFontOfSize:15.0];
@@ -218,7 +218,7 @@
 }
 
 ///添加title
-- (void)addTitleWithText:(NSString *)text font:(UIFont *)font textAlignment:(NSTextAlignment)textAlignment margin:(CGFloat)titleLabelLeftOffset {
+- (void)addTitleWithText:(NSString *)text font:(UIFont *)font textAlignment:(NSTextAlignment)textAlignment margin:(CGFloat)titleLabelLeftOffset paragraphStyle:(NSMutableParagraphStyle *)paragraphStyle {
     if (CGSizeEqualToSize(self.size, CGSizeZero)) {
         return;
     }
@@ -236,8 +236,17 @@
     
     CGFloat titleLabelMaxWidth = self.size.width - 2*titleLabelLeftOffset;
     CGSize titleLabelMaxSize = CGSizeMake(titleLabelMaxWidth, CGFLOAT_MAX);
-    CGSize titleTextSize = [CJAlertView getTextSizeFromString:text withFont:font maxSize:titleLabelMaxSize lineBreakMode:NSLineBreakByCharWrapping paragraphStyle:nil];
+    
+
+    CGSize titleTextSize = [CJAlertView getTextSizeFromString:text withFont:font maxSize:titleLabelMaxSize lineBreakMode:NSLineBreakByCharWrapping paragraphStyle:paragraphStyle];
     CGFloat titleTextHeight = titleTextSize.height;
+    
+    CGFloat lineCount = 1;
+    CGFloat lineSpacing = paragraphStyle.lineSpacing;
+    if (lineSpacing == 0) {
+        lineSpacing = 2;
+    }
+    titleTextHeight += lineCount * lineSpacing;
     
     self.titleLabel.text = text;
     self.titleLabel.font = font;
@@ -292,6 +301,10 @@
     CGSize messageLabelMaxSize = CGSizeMake(messageLabelMaxWidth, CGFLOAT_MAX);
     CGSize messageTextSize = [CJAlertView getTextSizeFromString:text withFont:font maxSize:messageLabelMaxSize lineBreakMode:NSLineBreakByCharWrapping paragraphStyle:paragraphStyle];
     CGFloat messageTextHeight = messageTextSize.height;
+    
+    CGFloat lineCount = 1;
+    CGFloat lineSpacing = paragraphStyle.lineSpacing;
+    messageTextHeight += lineCount * lineSpacing;
     
     if (paragraphStyle == nil) {
         self.messageLabel.text = text;
@@ -480,15 +493,43 @@
 }
 
 /* 完整的描述请参见文件头部 */
-- (void)show {
-    CGFloat minHeight = _firstVerticalInterval + _flagImageViewHeight + _secondVerticalInterval + _titleLabelHeight + _thirdVerticalInterval + _messageLabelHeight + _bottomButtonHeight;
-    if (self.size.height < minHeight) {
+- (void)showWithShouldFitHeight:(BOOL)shouldFitHeight {
+    CGFloat fixHeight = 0;
+    if (shouldFitHeight) {
+        CGFloat minHeight = [self getMinHeight];
+        fixHeight = minHeight;
+    } else {
+        fixHeight = self.size.height;
+    }
+
+    [self showWithFixHeight:fixHeight];
+}
+
+/**
+ *  显示弹窗并且是以指定高度显示的
+ *
+ *  @param fixHeight 高度
+ */
+- (void)showWithFixHeight:(CGFloat)fixHeight {
+    CGFloat minHeight = [self getMinHeight];
+    if (fixHeight < minHeight) {
         NSString *warningString = [NSString stringWithFormat:@"CJ警告：您设置的size高度小于视图本身的最小高度%.2lf，会导致视图显示不全，请检查", minHeight];
         NSLog(@"%@", warningString);
     }
+    
+    CGSize popupViewSize = CGSizeMake(self.size.width, fixHeight);
+    
     [self cj_popupInCenterWindow:CJAnimationTypeNormal
-                        withSize:self.size
+                        withSize:popupViewSize
                     showComplete:nil tapBlankComplete:nil];
+}
+
+///获取最小应有的高度值
+- (CGFloat)getMinHeight {
+    CGFloat minHeight = _firstVerticalInterval + _flagImageViewHeight + _secondVerticalInterval + _titleLabelHeight + _thirdVerticalInterval + _messageLabelHeight + _bottomButtonHeight;
+    minHeight = ceil(minHeight);
+    
+    return minHeight;
 }
 
 #pragma mark - Private

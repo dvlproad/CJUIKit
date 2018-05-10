@@ -71,7 +71,7 @@
                                               okButtonTitle:okButtonTitle
                                                cancelHandle:cancelHandle
                                                    okHandle:okHandle];
-    [alertView show];
+    [alertView showWithShouldFitHeight:NO];
 }
 
 @end

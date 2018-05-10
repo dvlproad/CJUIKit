@@ -42,7 +42,7 @@
  *  创建alertView
  *  @brief  这里所说的三个视图范围为：flagImageView(有的话，一定是第一个)、titleLabel(有的话，有可能一或二)、messageLabel(有的话，有可能一或二或三)
  *
- *  @param size                     alertView的大小
+ *  @param size                     alertView的大小(其中size的高度不一定有用，因为在show的时候有自适应和指定高度两种)
  *  @param firstVerticalInterval    第一个视图(一般为flagImageView，如果flagImageView不存在，则为下一个即titleLabel，以此类推)与顶部的间隔
  *  @param secondVerticalInterval   第二个视图与第一个视图的间隔(如果少于两个视图，这个值设为0即可)
  *  @param thirdVerticalInterval    第三个视图与第二个视图的间隔(如果少于三个视图，这个值设为0即可)
@@ -57,8 +57,8 @@
 ///添加指示图标
 - (void)addFlagImage:(UIImage *)flagImage size:(CGSize)imageViewSize;
 
-///添加title
-- (void)addTitleWithText:(NSString *)text font:(UIFont *)font textAlignment:(NSTextAlignment)textAlignment margin:(CGFloat)titleLabelLeftOffset;
+///添加title(paragraphStyle:当需要设置title行距、缩进等的时候才需要设置，其他设为nil即可)
+- (void)addTitleWithText:(NSString *)text font:(UIFont *)font textAlignment:(NSTextAlignment)textAlignment margin:(CGFloat)titleLabelLeftOffset paragraphStyle:(NSMutableParagraphStyle *)paragraphStyle;
 
 ///添加message的方法(paragraphStyle:当需要设置message行距、缩进等的时候才需要设置，其他设为nil即可)
 - (void)addMessageWithText:(NSString *)text font:(UIFont *)font textAlignment:(NSTextAlignment)textAlignment margin:(CGFloat)messageLabelLeftOffset paragraphStyle:(NSMutableParagraphStyle *)paragraphStyle;
@@ -85,7 +85,12 @@
 ///更改底部 OK 按钮的文字颜色
 - (void)updateOKButtonNormalTitleColor:(UIColor *)normalTitleColor highlightedTitleColor:(UIColor *)highlightedTitleColor;
 
-///显示 alert（如系统 UIAlertView）
-- (void)show;
+/**
+ *  显示 alert 弹窗
+ *
+ *  @param shouldFitHeight 是否需要自动适应高度(否:会以之前指定的size的height来显示)
+ */
+- (void)showWithShouldFitHeight:(BOOL)shouldFitHeight;
+
 
 @end
