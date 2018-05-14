@@ -20,14 +20,16 @@
 //#import <JavaScriptCore/JavaScriptCore.h>                   //系统JS与OC交互
 //#import <WebViewJavascriptBridge/WebViewJavascriptBridge.h> //第三方JS与OC交互
 
-@interface BaseWebViewController : UIViewController
+#import "CJEmptyViewProtocol.h"
 
-@property (nonatomic, copy) NSString *requestUrl;
-
+@interface BaseWebViewController : UIViewController <CJEmptyViewProtocol> {
+    
+}
+///页面加载完成之后执行的方法
 @property (nonatomic, copy) void (^webViewDidFinishNavigationBlcok)(WKWebView *webView);
 
+- (void)reloadNetworkWebWithUrl:(NSString *)requestUrl networkEnable:(BOOL)networkEnable;
 
-- (void)reloadNetworkWeb;
-- (void)reloadLocalWeb;
+- (void)reloadLocalWebWithUrl:(NSString *)requestUrl;
 
 @end

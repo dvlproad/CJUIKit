@@ -41,7 +41,14 @@ Pod::Spec.new do |s|
 
 
   
+  # UIViewController
+  s.subspec 'UIViewController' do |ss|
+    ss.source_files = "CJComplexUIKit/UIViewController/**/*.{h,m}"
 
+      # 搜索功能需要依赖的库
+      sss.dependency 'CJBaseUtil/CJWebUtil'
+      sss.dependency 'SVProgressHUD'
+  end
 
 
   # 带数据的列表视图或集合视图(常用于搜索、图片选择)

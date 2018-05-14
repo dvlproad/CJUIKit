@@ -7,7 +7,6 @@
 //
 
 #import "CJRefreshBaseView.h"
-#import "UIView+CJExtension.h"
 
 CGFloat const CJRefreshBaseViewDefaultHeight = 70.0f;
 CGFloat const SDActivityIndicatorViewMargin = 50.0f;
@@ -87,11 +86,11 @@ CGFloat const SDTimeIndicatorMargin = 10.0f;
 {
     [super layoutSubviews];
     
-    _activityIndicatorView.center = CGPointMake(SDActivityIndicatorViewMargin, self.sd_height * 0.5);
+    _activityIndicatorView.center = CGPointMake(SDActivityIndicatorViewMargin, CGRectGetHeight(self.frame) * 0.5);
     _stateIndicatorView.center = _activityIndicatorView.center;
     
-    _textIndicator.center = CGPointMake(self.sd_width * 0.5, _activityIndicatorView.sd_height * 0.5 + SDTextIndicatorMargin);
-    _timeIndicator.center = CGPointMake(self.sd_width * 0.5, self.sd_height - _timeIndicator.sd_height * 0.5 - SDTimeIndicatorMargin);
+    _textIndicator.center = CGPointMake(CGRectGetWidth(self.frame) * 0.5, CGRectGetHeight(_activityIndicatorView.frame) * 0.5 + SDTextIndicatorMargin);
+    _timeIndicator.center = CGPointMake(CGRectGetWidth(self.frame) * 0.5, CGRectGetHeight(self.frame) - CGRectGetHeight(_timeIndicator.frame) * 0.5 - SDTimeIndicatorMargin);
 }
 
 - (NSString *)lastRefreshingTimeString

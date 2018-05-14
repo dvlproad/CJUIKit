@@ -7,7 +7,6 @@
 //
 
 #import "CJRefreshFooter.h"
-#import "UIView+CJExtension.h"
 
 @implementation CJRefreshFooter
 {
@@ -32,7 +31,7 @@
     
     self.activityIndicatorView.hidden = YES;
     _originalScrollViewContentHeight = self.scrollView.contentSize.height;
-    self.center = CGPointMake(self.scrollView.sd_width * 0.5, self.scrollView.contentSize.height + self.sd_height * 0.5); // + self.scrollView.contentInset.bottom
+    self.center = CGPointMake(CGRectGetWidth(self.scrollView.frame) * 0.5, self.scrollView.contentSize.height + CGRectGetHeight(self.frame) * 0.5); // + self.scrollView.contentInset.bottom
     
     self.hidden = [self shouldHide];
 }
@@ -40,15 +39,17 @@
 - (void)didMoveToSuperview
 {
     [super didMoveToSuperview];
-    self.scrollViewEdgeInsets = UIEdgeInsetsMake(0, 0, self.sd_height, 0);
+    self.scrollViewEdgeInsets = UIEdgeInsetsMake(0, 0, CGRectGetHeight(self.frame), 0);
 }
 
 - (BOOL)shouldHide
 {
+    CGFloat scrollViewHeight = CGRectGetHeight(self.scrollView.bounds);
+    CGFloat selfMinY = CGRectGetMinY(self.frame);
     if (self.isEffectedByNavigationController) {
-        return (self.scrollView.bounds.size.height - SDKNavigationBarHeight > self.sd_y); //  + self.scrollView.contentInset.bottom
+        return (scrollViewHeight - SDKNavigationBarHeight > selfMinY); //  + self.scrollView.contentInset.bottom
     }
-    return (self.scrollView.bounds.size.height> self.sd_y); // + self.scrollView.contentInset.bottom
+    return (scrollViewHeight> selfMinY); // + self.scrollView.contentInset.bottom
 }
 
 
@@ -57,7 +58,8 @@
     if (![keyPath isEqualToString:CJRefreshBaseViewObservingkeyPath] || self.refreshState == CJRefreshBaseViewStateRefreshing) return;
     
     CGFloat y = [change[@"new"] CGPointValue].y;
-    CGFloat criticalY = self.scrollView.contentSize.height - self.scrollView.sd_height + self.sd_height + self.scrollView.contentInset.bottom;
+    
+    CGFloat criticalY = self.scrollView.contentSize.height - CGRectGetHeight(self.scrollView.frame) + CGRectGetHeight(self.frame) + self.scrollView.contentInset.bottom;
     
     // 如果scrollView内容有增减，重新调整refreshFooter位置
     if (self.scrollView.contentSize.height != _originalScrollViewContentHeight) {

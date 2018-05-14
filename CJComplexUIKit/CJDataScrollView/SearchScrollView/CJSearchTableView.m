@@ -74,8 +74,8 @@
         
         UISearchBar *searchBar = _searchController.searchBar;
         //searchBar.delegate = self;
-        searchBar.searchBarStyle = UISearchBarStyleMinimal;
-        searchBar.tintColor = [UIColor colorWithRed:105/255.0 green:193/255.0 blue:243/255.0 alpha:1]; //#69c1f3
+        //searchBar.searchBarStyle = UISearchBarStyleMinimal;
+        //searchBar.tintColor = [UIColor colorWithRed:105/255.0 green:193/255.0 blue:243/255.0 alpha:1]; //Cancel文字的颜色 #69c1f3
         searchBar.placeholder = NSLocalizedString(@"搜索", nil);
         searchBar.returnKeyType = UIReturnKeyDone;
         //searchBar.showsScopeBar = YES;

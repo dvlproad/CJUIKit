@@ -32,6 +32,9 @@
     
 //    self.searchController.hidesNavigationBarDuringPresentation = NO;//搜索的时候是否遮挡导航栏
     
+    UISearchBar *searchBar = self.tableView.searchController.searchBar;
+    searchBar.searchBarStyle = UISearchBarStyleMinimal;
+    searchBar.tintColor = [UIColor colorWithRed:105/255.0 green:193/255.0 blue:243/255.0 alpha:1]; //Cancel文字的颜色 #69c1f3
     
     self.tableView.cellForRowAtIndexPathBlock = ^UITableViewCell *(UITableView *tableView, NSIndexPath *indexPath) {
         TestDataModel *dataModel = (TestDataModel *)[(CJSearchTableView *)tableView getDataModelAtIndexPath:indexPath];

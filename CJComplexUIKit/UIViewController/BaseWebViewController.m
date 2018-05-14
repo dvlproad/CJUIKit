@@ -10,25 +10,25 @@
 
 #ifdef CJTESTPOD
     #import "CJWebUtil.h"
-    #import "CJNetworkMonitor.h"
 #else
     #import <CJBaseUtil/CJWebUtil.h>
-    #import <CJNetwork/CJNetworkMonitor.h>
 #endif
 
 
 #import <SVProgressHUD/SVProgressHUD.h>
 
-#import "DemoEmptyView.h"
+@interface BaseWebViewController ()
+
+@property (nonatomic, copy) void (^showEmptyViewBlock)(NSString *message);//显示空白页的方法
+@property (nonatomic, copy) void (^hideEmptyViewBlock)(void);//隐藏空白页的方法
+
+@end
+
 
 @interface BaseWebViewController () <WKNavigationDelegate>
 
 @property (nonatomic, strong) WKWebView *webView;
 @property (nonatomic, strong) UIProgressView *progressView;
-
-@property (nonatomic, strong) DemoEmptyView *emptyView;
-
-@property (nonatomic, assign, readonly) BOOL isNetworkWeb;   /**< 是否是网络网页，否则是本地网页 */
 
 @end
 
@@ -48,6 +48,14 @@
     // Do any additional setup after loading the view.
     
     [self setupViews];
+    
+    /*
+    请在子类中调用
+    BOOL networkEnable = [CJNetworkMonitor sharedInstance].isNetworkSuccess;
+    [self reloadNetworkWebWithUrl:<#(NSString *)#> networkEnable:<#(BOOL)#>];
+    或
+    [self reloadLocalWebWithUrl:<#(NSString *)#>];
+    */
 }
 
 - (void)setupViews {
@@ -78,11 +86,9 @@
 
 
 
-- (void)reloadNetworkWeb {
-    _isNetworkWeb = YES;
-    
-    BOOL isNetworkSuccess = [CJNetworkMonitor sharedInstance].isNetworkSuccess;
-    if (!isNetworkSuccess) {
+- (void)reloadNetworkWebWithUrl:(NSString *)requestUrl networkEnable:(BOOL)networkEnable
+{
+    if (!networkEnable) {
         [SVProgressHUD show];
         
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
@@ -97,16 +103,14 @@
     }
     
     //通过URL，创建Request并加载
-    NSURL *URL = [NSURL URLWithString:self.requestUrl];;
+    NSURL *URL = [NSURL URLWithString:requestUrl];;
     NSURLRequest *request = [NSURLRequest requestWithURL:URL];
     [self.webView loadRequest:request];
 }
 
-- (void)reloadLocalWeb {
-    _isNetworkWeb = NO;
-    
+- (void)reloadLocalWebWithUrl:(NSString *)requestUrl {
     //NSString *localHtmlUrl = [[NSBundle mainBundle] pathForResource:@"index.html" ofType:nil];
-    NSString *localHtmlUrl = self.requestUrl;
+    NSString *localHtmlUrl = requestUrl;
     NSURL *localHtmlURL = [NSURL fileURLWithPath:localHtmlUrl];
     
     NSString *localHtmlString = [NSString stringWithContentsOfFile:localHtmlUrl encoding:NSUTF8StringEncoding error:nil];
@@ -222,7 +226,10 @@
 - (void)webView:(WKWebView *)webView didFinishNavigation:(WKNavigation *)navigation {
     [SVProgressHUD dismiss];
     self.progressView.hidden = YES;
-    self.emptyView.hidden = YES;
+    
+    if (self.hideEmptyViewBlock) {
+        self.hideEmptyViewBlock();
+    }
     
     if (self.webViewDidFinishNavigationBlcok) {
         self.webViewDidFinishNavigationBlcok(webView);
@@ -252,26 +259,16 @@
 
 
 - (void)showEmptyViewWithFailureMessage:(NSString *)failureMessage {
-    if (self.emptyView == nil) {
-        self.emptyView = [[DemoEmptyView alloc] initWithFrame:CGRectZero];
-        [self.view addSubview:self.emptyView];
-        [self.emptyView mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.left.right.mas_equalTo(self.emptyView);
-            make.top.bottom.mas_equalTo(self.emptyView);
-        }];
-        
-        __weak typeof(self)weakSelf = self;
-        self.emptyView.reloadBlock = ^{
-            if (weakSelf.isNetworkWeb) {
-                [weakSelf reloadNetworkWeb];
-            } else {
-                [weakSelf reloadLocalWeb];
-            }
-        };
-    }
-    
-    self.emptyView.message = failureMessage;
-    self.emptyView.hidden = NO;
+    if (self.showEmptyViewBlock) {
+        self.showEmptyViewBlock(failureMessage);
+    }    
+}
+
+- (void)setupShowEmptyViewBlock:(void (^)(NSString *))showEmptyViewBlock
+             hideEmptyViewBlock:(void (^)(void))hideEmptyViewBlock
+{
+    self.showEmptyViewBlock = showEmptyViewBlock;
+    self.hideEmptyViewBlock = hideEmptyViewBlock;
 }
 
 
