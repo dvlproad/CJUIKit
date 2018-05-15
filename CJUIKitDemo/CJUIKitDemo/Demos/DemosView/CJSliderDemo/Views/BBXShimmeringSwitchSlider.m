@@ -41,6 +41,12 @@
     [self.switchSlider showStep:0];
 }
 
+- (void)setSwitchEventOccuBlock:(void (^)(NSInteger))switchEventOccuBlock {
+    _switchEventOccuBlock = switchEventOccuBlock;
+    
+    self.switchSlider.switchEventOccuBlock = switchEventOccuBlock;
+}
+
 - (void)commonInit {
     self.layer.masksToBounds = YES;
     self.layer.cornerRadius = 15;

@@ -42,6 +42,12 @@
     [self.switchSlider showStep:0];
 }
 
+- (void)setSwitchEventOccuBlock:(void (^)(NSInteger))switchEventOccuBlock {
+    _switchEventOccuBlock = switchEventOccuBlock;
+    
+    self.switchSlider.switchEventOccuBlock = switchEventOccuBlock;
+}
+
 - (void)commonInit {
     self.layer.masksToBounds = YES;
     self.layer.cornerRadius = 30;
@@ -134,8 +140,6 @@
     switchSlider.moveType = CJSliderMoveTypeMaximumTrackImageViewWidthNoChange;
     switchSlider.switchAnimatedType = CJSwitchAnimatedTypeCurrentStepInMaximumTrackImageView;
     switchSlider.thumbMoveMaxXMargin = -switchSlider.thumbSize.width;
-    
-    [switchSlider showStep:0];
 }
 
 #pragma mark - addSubView

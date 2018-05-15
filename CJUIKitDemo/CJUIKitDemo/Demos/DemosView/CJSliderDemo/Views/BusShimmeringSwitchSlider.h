@@ -12,17 +12,17 @@
 #import <Shimmer/FBShimmeringView.h>
 #import <Shimmer/FBShimmeringLayer.h>
 
-//@class BusShimmeringSwitchSlider;
-//@protocol BusShimmeringSwitchSliderDelegate <NSObject>
-//
-//- (void)switchOKOnBusShimmeringSwitchSlider:(BusShimmeringSwitchSlider *)switchSlider;
-//
-//@end
-
 
 @interface BusShimmeringSwitchSlider : FBShimmeringView
 
 @property (nonatomic, strong) NSMutableArray<CJSwitchSliderStatusModel *> *statusModels;  /**< 所有状态的模型 */
+
+/**
+ *  达到可以switch的值的回调
+ *
+ *  参数execStep 被执行的步骤
+ */
+@property (nonatomic, copy) void(^switchEventOccuBlock)(NSInteger execStep);
 
 @property (nonatomic, assign) NSInteger stautsValue;
 
