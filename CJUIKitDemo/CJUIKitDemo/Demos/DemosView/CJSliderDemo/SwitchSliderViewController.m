@@ -11,6 +11,8 @@
 #import "UIImage+CJTransformSize.h"
 #import "UIColor+CJHex.h"
 
+#import "BBXShimmeringSwitchSlider.h"
+#import "BusShimmeringSwitchSlider.h"
 
 @interface SwitchSliderViewController () {
     
@@ -91,9 +93,6 @@
     
     
     
-    
-    
-    
     CJSwitchSlider *s_switchSlider3 = self.shimmeringSwitchSlider3.switchSlider;
     
     s_switchSlider3.moveType = CJSliderMoveTypeMaximumTrackImageViewWidthAspectFit;
@@ -103,16 +102,30 @@
     
     
     
-    ShimmeringSwitchSlider *shimmeringSwitchSlider = [[ShimmeringSwitchSlider alloc] init];
-    [self commonSetupToSwitchSlider:shimmeringSwitchSlider.switchSlider];
-    [self.view addSubview:shimmeringSwitchSlider];
-    [shimmeringSwitchSlider mas_makeConstraints:^(MASConstraintMaker *make) {
+    NSMutableArray *busSliderStatusModels = [self getBusSliderStatusModels];
+    BusShimmeringSwitchSlider *busShimmeringSwitchSlider = [[BusShimmeringSwitchSlider alloc] init];
+    busShimmeringSwitchSlider.statusModels = busSliderStatusModels;
+    [self.view addSubview:busShimmeringSwitchSlider];
+    [busShimmeringSwitchSlider mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.mas_equalTo(15);
+        make.right.mas_equalTo(-15);
+        make.bottom.mas_equalTo(-110);
+        make.height.mas_equalTo(60);
+    }];
+    
+    NSMutableArray *bbxSliderStatusModels = [self getBBXSliderStatusModels];
+    BBXShimmeringSwitchSlider *bbxShimmeringSwitchSlider = [[BBXShimmeringSwitchSlider alloc] init];
+    bbxShimmeringSwitchSlider.statusModels = bbxSliderStatusModels;
+    [self.view addSubview:bbxShimmeringSwitchSlider];
+    [bbxShimmeringSwitchSlider mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.mas_equalTo(self.view).mas_offset(20);
         make.right.mas_equalTo(self.view).mas_offset(-20);
         make.bottom.mas_equalTo(self.view).mas_offset(-20);
         make.height.mas_equalTo(40);
     }];
 }
+
+
 
 
 - (void)commonSetupToSwitchSlider:(CJSwitchSlider *)switchSlider {
@@ -206,7 +219,27 @@
 }
 
 
-- (void)commonSetupDataToSwitchSlider:(CJSwitchSlider *)switchSlider {
+- (NSMutableArray *)getBusSliderStatusModels {
+    NSMutableArray *sliderStatusModels = [[NSMutableArray alloc] init];
+    
+    {
+        CJSwitchSliderStatusModel *statusModel = [[CJSwitchSliderStatusModel alloc] init];
+        statusModel.normalText = NSLocalizedString(@"开始发车、2这里会自适应字体大小", nil);
+        statusModel.normalColor = [UIColor cjColorWithHexString:@"#4288ff"];
+        statusModel.goNextStepWhenSwitchEventOccur = NO;
+        [sliderStatusModels addObject:statusModel];
+    }
+    {
+        CJSwitchSliderStatusModel *statusModel = [[CJSwitchSliderStatusModel alloc] init];
+        statusModel.normalText = @"";
+        statusModel.normalColor = [UIColor cjColorWithHexString:@"#1D4A98"];
+        [sliderStatusModels addObject:statusModel];
+    }
+    
+    return sliderStatusModels;
+}
+
+- (NSMutableArray *)getBBXSliderStatusModels {
     NSMutableArray *sliderStatusModels = [[NSMutableArray alloc] init];
     
     {
@@ -237,9 +270,15 @@
     
     {
         CJSwitchSliderStatusModel *statusModel = [[CJSwitchSliderStatusModel alloc] init];
-//        statusModel.image = [UIImage cj_imageWithColor:[UIColor lightGrayColor] size:CGSizeMake(30, 30)];
+        //        statusModel.image = [UIImage cj_imageWithColor:[UIColor lightGrayColor] size:CGSizeMake(30, 30)];
         [sliderStatusModels addObject:statusModel];
     }
+    
+    return sliderStatusModels;
+}
+
+- (void)commonSetupDataToSwitchSlider:(CJSwitchSlider *)switchSlider {
+    NSMutableArray *sliderStatusModels = [self getBBXSliderStatusModels];
     switchSlider.statusModels = sliderStatusModels;
     
     UIImage *mainThumbImage = [UIImage imageNamed:@"btn_hd.png"];

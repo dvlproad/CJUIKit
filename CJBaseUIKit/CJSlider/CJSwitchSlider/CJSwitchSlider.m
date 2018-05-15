@@ -57,7 +57,7 @@
     
     if (self.currentStepImageView == self.maximumTrackView) {
         self.configureMaximumTrackViewBlock(self.maximumTrackView, currentStepStatusModel, useDragingStauts);
-    } else {
+    } else if (self.currentStepImageView == self.minimumTrackView) {
         self.configureMinimumTrackViewBlock(self.minimumTrackView, currentStepStatusModel, useDragingStauts);
     }
 }
@@ -69,7 +69,7 @@
     BOOL useDragingStauts = NO;
     if (self.currentStepImageView == self.maximumTrackView) {
         self.configureMaximumTrackViewBlock(self.maximumTrackView, currentStepStatusModel, useDragingStauts);
-    } else {
+    } else if (self.currentStepImageView == self.minimumTrackView) {
         self.configureMinimumTrackViewBlock(self.minimumTrackView, currentStepStatusModel, useDragingStauts);
     }
     

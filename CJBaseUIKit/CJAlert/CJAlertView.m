@@ -304,6 +304,9 @@
     
     CGFloat lineCount = 1;
     CGFloat lineSpacing = paragraphStyle.lineSpacing;
+    if (lineSpacing == 0) {
+        lineSpacing = 2;
+    }
     messageTextHeight += lineCount * lineSpacing;
     
     if (paragraphStyle == nil) {

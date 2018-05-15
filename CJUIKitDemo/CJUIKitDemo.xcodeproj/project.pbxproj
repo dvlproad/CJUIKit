@@ -273,6 +273,11 @@
 		804478272061F328007185EF /* CJLocationChangeManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 804478222061F328007185EF /* CJLocationChangeManager.m */; };
 		804478282061F328007185EF /* CJLocationChangeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 804478232061F328007185EF /* CJLocationChangeModel.m */; };
 		8044787C20622E6A007185EF /* ProgressWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8044787A20622E6A007185EF /* ProgressWebViewController.m */; };
+		8051E5CA20AAAFD2003370AA /* BusShimmeringSwitchSlider.m in Sources */ = {isa = PBXBuildFile; fileRef = 8051E5C920AAAFD2003370AA /* BusShimmeringSwitchSlider.m */; };
+		8051E5CD20AAB34E003370AA /* details_icon_huadong@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8051E5CB20AAB34E003370AA /* details_icon_huadong@2x.png */; };
+		8051E5CE20AAB34E003370AA /* details_icon_huadong@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8051E5CC20AAB34E003370AA /* details_icon_huadong@3x.png */; };
+		8051E5D120AAC172003370AA /* BBXShimmeringSwitchSlider.m in Sources */ = {isa = PBXBuildFile; fileRef = 8051E5D020AAC172003370AA /* BBXShimmeringSwitchSlider.m */; };
+		8051E5D520AACA33003370AA /* CJLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8051E5D420AACA33003370AA /* CJLabel.m */; };
 		8054818F2074C97200CDE5A1 /* CJTimerManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8054818C2074C97200CDE5A1 /* CJTimerManager.m */; };
 		805481902074C97200CDE5A1 /* CJTimerModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8054818E2074C97200CDE5A1 /* CJTimerModel.m */; };
 		805598B51FF5D612009DC61C /* ValidateStringViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 805598B31FF5D612009DC61C /* ValidateStringViewController.m */; };
@@ -901,6 +906,14 @@
 		804478252061F328007185EF /* CJLocationChangeModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJLocationChangeModel.h; sourceTree = "<group>"; };
 		8044787A20622E6A007185EF /* ProgressWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProgressWebViewController.m; sourceTree = "<group>"; };
 		8044787B20622E6A007185EF /* ProgressWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProgressWebViewController.h; sourceTree = "<group>"; };
+		8051E5C820AAAFD1003370AA /* BusShimmeringSwitchSlider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BusShimmeringSwitchSlider.h; sourceTree = "<group>"; };
+		8051E5C920AAAFD2003370AA /* BusShimmeringSwitchSlider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BusShimmeringSwitchSlider.m; sourceTree = "<group>"; };
+		8051E5CB20AAB34E003370AA /* details_icon_huadong@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "details_icon_huadong@2x.png"; sourceTree = "<group>"; };
+		8051E5CC20AAB34E003370AA /* details_icon_huadong@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "details_icon_huadong@3x.png"; sourceTree = "<group>"; };
+		8051E5CF20AAC171003370AA /* BBXShimmeringSwitchSlider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBXShimmeringSwitchSlider.h; sourceTree = "<group>"; };
+		8051E5D020AAC172003370AA /* BBXShimmeringSwitchSlider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBXShimmeringSwitchSlider.m; sourceTree = "<group>"; };
+		8051E5D320AACA33003370AA /* CJLabel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CJLabel.h; sourceTree = "<group>"; };
+		8051E5D420AACA33003370AA /* CJLabel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CJLabel.m; sourceTree = "<group>"; };
 		8054818B2074C97200CDE5A1 /* CJTimerModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJTimerModel.h; sourceTree = "<group>"; };
 		8054818C2074C97200CDE5A1 /* CJTimerManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJTimerManager.m; sourceTree = "<group>"; };
 		8054818D2074C97200CDE5A1 /* CJTimerManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJTimerManager.h; sourceTree = "<group>"; };
@@ -1471,6 +1484,8 @@
 		787FDB6D20500B5B008A46E3 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				8051E5CB20AAB34E003370AA /* details_icon_huadong@2x.png */,
+				8051E5CC20AAB34E003370AA /* details_icon_huadong@3x.png */,
 				787FDB6E20500B5B008A46E3 /* slider_maximum_trackimage@3x.png */,
 				787FDB6F20500B5B008A46E3 /* slider_double_thumbImage_a@2x.png */,
 				787FDB7020500B5B008A46E3 /* slider_double_thumbImage_a@3x.png */,
@@ -1492,8 +1507,12 @@
 		787FDB8120500B5B008A46E3 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				787FDB8220500B5B008A46E3 /* ShimmeringSwitchSlider.m */,
+				8051E5C820AAAFD1003370AA /* BusShimmeringSwitchSlider.h */,
+				8051E5C920AAAFD2003370AA /* BusShimmeringSwitchSlider.m */,
+				8051E5CF20AAC171003370AA /* BBXShimmeringSwitchSlider.h */,
+				8051E5D020AAC172003370AA /* BBXShimmeringSwitchSlider.m */,
 				787FDB8320500B5B008A46E3 /* ShimmeringSwitchSlider.h */,
+				787FDB8220500B5B008A46E3 /* ShimmeringSwitchSlider.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1533,6 +1552,7 @@
 		789CAE0F1FB612B600AF8CD4 /* CJBaseUIKit */ = {
 			isa = PBXGroup;
 			children = (
+				8051E5D220AACA0E003370AA /* UILabel */,
 				7850B7152093809F008F4A21 /* UIView */,
 				80D71EA1209021E400D2DB68 /* CJAlert */,
 				789CAE101FB612B600AF8CD4 /* CJBaseScrollView */,
@@ -2075,6 +2095,7 @@
 			children = (
 				789CAEFF1FB612B600AF8CD4 /* CJComplexUIKit.h */,
 				8081E1A620A9626500F5F04F /* UIViewController */,
+				8051E31020A99A61003370AA /* CJCycleADView */,
 				789CAF001FB612B600AF8CD4 /* CJDataScrollView */,
 			);
 			name = CJComplexUIKit;
@@ -2315,13 +2336,13 @@
 		8033234320299AD7001DACF1 /* CycleADView */ = {
 			isa = PBXGroup;
 			children = (
-				8033234420299AD7001DACF1 /* MyADModel.h */,
-				8033234520299AD7001DACF1 /* MyCycleADView.m */,
-				8033234620299AD7001DACF1 /* MyCycleADViewController.m */,
-				8033234720299AD7001DACF1 /* MyADModel.m */,
 				8033234820299AD7001DACF1 /* MemoryAD */,
-				8033236120299AD7001DACF1 /* MyCycleADViewController.h */,
+				8033234420299AD7001DACF1 /* MyADModel.h */,
+				8033234720299AD7001DACF1 /* MyADModel.m */,
 				8033236220299AD7001DACF1 /* MyCycleADView.h */,
+				8033234520299AD7001DACF1 /* MyCycleADView.m */,
+				8033236120299AD7001DACF1 /* MyCycleADViewController.h */,
+				8033234620299AD7001DACF1 /* MyCycleADViewController.m */,
 				8033236320299AD7001DACF1 /* MyCycleADViewController.xib */,
 			);
 			path = CycleADView;
@@ -2486,6 +2507,22 @@
 				8044787A20622E6A007185EF /* ProgressWebViewController.m */,
 			);
 			path = WebViewController;
+			sourceTree = "<group>";
+		};
+		8051E31020A99A61003370AA /* CJCycleADView */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = CJCycleADView;
+			sourceTree = "<group>";
+		};
+		8051E5D220AACA0E003370AA /* UILabel */ = {
+			isa = PBXGroup;
+			children = (
+				8051E5D320AACA33003370AA /* CJLabel.h */,
+				8051E5D420AACA33003370AA /* CJLabel.m */,
+			);
+			path = UILabel;
 			sourceTree = "<group>";
 		};
 		8054818A2074C97200CDE5A1 /* CJTimerManager */ = {
@@ -3439,6 +3476,7 @@
 				80FF90461FC5649F00E437CF /* UploadDirectlyImagePickerViewController.xib in Resources */,
 				80FF91961FC5682B00E437CF /* AttributedStringViewController.xib in Resources */,
 				80FF91C01FC581DD00E437CF /* UtilHomeViewController.xib in Resources */,
+				8051E5CD20AAB34E003370AA /* details_icon_huadong@2x.png in Resources */,
 				80FF90431FC5649F00E437CF /* SearchTableViewController.xib in Resources */,
 				80FF91A31FC5682B00E437CF /* OtherHomeViewController.xib in Resources */,
 				789CAF381FB612B700AF8CD4 /* cjRefreshArrowDown@2x.png in Resources */,
@@ -3471,6 +3509,7 @@
 				80FF919F1FC5682B00E437CF /* ProcessLineViewController.xib in Resources */,
 				8033239620299AD7001DACF1 /* MemoryAD05.jpg in Resources */,
 				7850B71220937E85008F4A21 /* WelcomePopupView.xib in Resources */,
+				8051E5CE20AAB34E003370AA /* details_icon_huadong@3x.png in Resources */,
 				803323BB20299AD7001DACF1 /* CvDemo_Complex.xib in Resources */,
 				80FF90B21FC5649F00E437CF /* NavigationBarBaseViewController.xib in Resources */,
 				787FDB9520500B5C008A46E3 /* SwitchSliderViewController.xib in Resources */,
@@ -3658,6 +3697,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8051E5D120AAC172003370AA /* BBXShimmeringSwitchSlider.m in Sources */,
+				8051E5CA20AAAFD2003370AA /* BusShimmeringSwitchSlider.m in Sources */,
 				80FF907F1FC5649F00E437CF /* DemoTableViewController.m in Sources */,
 				789CAF491FB612B700AF8CD4 /* CJSliderControl.m in Sources */,
 				7850B70120937C5A008F4A21 /* PopupInWindowVC.m in Sources */,
@@ -3765,6 +3806,7 @@
 				803323B420299AD7001DACF1 /* MyEqualCellSizeView.m in Sources */,
 				80FF91551FC5668800E437CF /* CJAppVersionUtil.m in Sources */,
 				789CAF601FB612B700AF8CD4 /* UIImage+CJLaunchImage.m in Sources */,
+				8051E5D520AACA33003370AA /* CJLabel.m in Sources */,
 				789CAF841FB612B700AF8CD4 /* UIView+CJPickImage.m in Sources */,
 				80C2E18F20916BD3007D7119 /* BBXPassengerEmptyViewController.m in Sources */,
 				803323B920299AD7001DACF1 /* CvDemo_Complex.m in Sources */,
