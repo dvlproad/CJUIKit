@@ -24,7 +24,7 @@
     
 }
 @property (nonatomic, assign) NSInteger canMaxChooseImageCount;     /**< 可一次性选取的最大数目 */
-@property (nonatomic, copy) void (^pickCompleteBlock)(NSArray *images);    /**< 照片选取完毕后 */
+@property (nonatomic, copy) void (^pickCompleteBlock)(NSArray<AlumbImageModel *> *imageModels);    /**< 照片选取完毕后 */
 
 
 

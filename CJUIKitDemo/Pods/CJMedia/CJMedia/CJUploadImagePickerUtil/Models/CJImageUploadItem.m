@@ -1,33 +1,32 @@
 //
-//  CJUploadVideoItem.m
-//  CommonAFNUtilDemo
+//  CJImageUploadItem.m
+//  CJPickerDemo
 //
-//  Created by ciyouzen on 2017/2/23.
+//  Created by ciyouzen on 2017/1/19.
 //  Copyright © 2017年 dvlproad. All rights reserved.
 //
 
-#import "CJUploadVideoItem.h"
-#import <CJMedia/CJAlumbImageUtil.h>
+#import "CJImageUploadItem.h"
+#import "CJAlumbImageUtil.h"
 
-@implementation CJUploadVideoItem
+@implementation CJImageUploadItem
 
 /** 完整的描述请参见文件头部 */
 - (instancetype)initWithShowImage:(UIImage *)showImage
            imageLocalRelativePath:(NSString *)imageLocalRelativePath
-           videoLocalRelativePath:(NSString *)videoLocalRelativePath
                  uploadFileModels:(NSArray<CJUploadFileModel *> *)uploadFileModels
 {
     self = [super init];
     if (self) {
         self.image = [self adjustImageWithImage:showImage];
         
-        self.imageLocalRelativePath = imageLocalRelativePath;
-        self.videoLocalRelativePath = videoLocalRelativePath;
+        self.localRelativePath = imageLocalRelativePath;
         self.uploadFileModels = [NSMutableArray arrayWithArray:uploadFileModels];
     }
     
     return self;
 }
+
 
 - (UIImage *)adjustImageWithImage:(UIImage *)image
 {

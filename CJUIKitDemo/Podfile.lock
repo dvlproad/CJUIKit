@@ -15,13 +15,19 @@ PODS:
   - AFNetworking/UIKit (3.2.1):
     - AFNetworking/NSURLSession
   - CJFile/CJFileManager (0.0.8)
-  - CJMedia/CJPhotoBrowser (0.0.5):
+  - CJMedia/CJPhotoBrowser (0.0.6):
     - CJMedia/CJValidateAuthorizationUtil
     - Masonry
     - MBProgressHUD
     - SDWebImage
-  - CJMedia/CJValidateAuthorizationUtil (0.0.5)
-  - CJMedia/MySingleImagePickerController (0.0.5):
+  - CJMedia/CJUploadImagePickerUtil (0.0.6):
+    - CJFile/CJFileManager
+    - CJMedia/CJPhotoBrowser
+    - CJMedia/CJValidateAuthorizationUtil
+    - CJMedia/MySingleImagePickerController
+    - CJNetwork/AFNetworkingUploadComponent
+  - CJMedia/CJValidateAuthorizationUtil (0.0.6)
+  - CJMedia/MySingleImagePickerController (0.0.6):
     - CJMedia/CJValidateAuthorizationUtil
   - CJNetwork/AFNetworkingBaseComponent (0.2.1):
     - AFNetworking
@@ -60,12 +66,8 @@ PODS:
   - YYText (1.0.7)
 
 DEPENDENCIES:
-  - CJFile/CJFileManager (~> 0.0.8)
-  - CJMedia/CJPhotoBrowser (~> 0.0.5)
-  - CJMedia/CJValidateAuthorizationUtil (~> 0.0.5)
-  - CJMedia/MySingleImagePickerController (~> 0.0.5)
+  - CJMedia/CJUploadImagePickerUtil (~> 0.0.6)
   - CJNetwork/AFNetworkingBaseComponent
-  - CJNetwork/AFNetworkingUploadComponent
   - CJPicker (~> 1.3.2)
   - DZNEmptyDataSet
   - JGActionSheet (~> 1.0.5)
@@ -86,10 +88,37 @@ DEPENDENCIES:
   - WebViewJavascriptBridge (~> 6.0.2)
   - YYText (~> 1.0.7)
 
+SPEC REPOS:
+  https://github.com/CocoaPods/Specs.git:
+    - AFNetworking
+    - CJFile
+    - CJMedia
+    - CJNetwork
+    - CJPicker
+    - DZNEmptyDataSet
+    - JGActionSheet
+    - Mantle
+    - Masonry
+    - MBProgressHUD
+    - MJExtension
+    - MJPopupViewController
+    - MJRefresh
+    - NJKWebViewProgress
+    - OpenUDID
+    - PinYin4Objc
+    - PureLayout
+    - SAMKeychain
+    - SDCycleScrollView
+    - SDWebImage
+    - Shimmer
+    - SVProgressHUD
+    - WebViewJavascriptBridge
+    - YYText
+
 SPEC CHECKSUMS:
   AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
   CJFile: 18e461ec96ee07ba501b1e19f2ddde4a38bec8aa
-  CJMedia: 8b1fd8886d4311ed71f07b3870b9d3822a91bb58
+  CJMedia: 24da3e62523dd5269cdf80930c6a1ec6672222b5
   CJNetwork: f6536df5e2afd43a7d716ade67a6dd55bd5daf8b
   CJPicker: c33099d47323271b91c2ce112976d1bee19a70ce
   DZNEmptyDataSet: 9525833b9e68ac21c30253e1d3d7076cc828eaa7
@@ -112,6 +141,6 @@ SPEC CHECKSUMS:
   WebViewJavascriptBridge: 7f5bc4d3581e672e8f32bd0f812d54bc69bb8e29
   YYText: 5c461d709e24d55a182d1441c41dc639a18a4849
 
-PODFILE CHECKSUM: 0177829f67e0365d8bf236e97893bb9d196ac542
+PODFILE CHECKSUM: 14c9ad88dd6b237c9a00e2fc2d77f5e7c743a098
 
-COCOAPODS: 1.4.0
+COCOAPODS: 1.5.0

@@ -23,7 +23,7 @@ typedef NS_OPTIONS(NSUInteger, CJSaveLocation) {
 }
 @property (nonatomic, assign) CJSaveLocation saveLocation;
 
-- (void)setSingleMediaTypeForVideo:(BOOL)isVideo;
+- (void)setSingleMediaTypeForVideo:(BOOL)isVideo; //是否是选择视频，否则为默认的图像
 
 - (void)pickImageFinishBlock:(void(^)(UIImage *image))pickImageFinishBlock
         pickVideoFinishBlock:(void(^)(UIImage *firstImage))pickVideoFinishBlock

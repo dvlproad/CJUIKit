@@ -11,7 +11,7 @@
 
 #import <MediaPlayer/MediaPlayer.h>
 
-#import "UIView+CJPickImage.h"
+#import <CJMedia/CJUploadImagePickerUtil.h>
 
 @implementation CJUploadImageCollectionView (Tap)
 
@@ -78,27 +78,27 @@
         if (indexPath.section == 0)
         {
             if (indexPath.row == 0) {   //拍照
-                UIImagePickerController *imagePickerController = [weakSelf takePhotoPickerWithPickCompleteBlock:^(NSArray<CJImageUploadItem *> *pickedImageItems) {
-                    [self.dataModels addObjectsFromArray:pickedImageItems];
-                    [self reloadData];
-                    if (self.pickImageCompleteBlock) {
-                        self.pickImageCompleteBlock();
+                UIImagePickerController *imagePickerController = [CJUploadImagePickerUtil takePhotoPickerWithPickCompleteBlock:^(NSArray<CJImageUploadItem *> *pickedImageItems) {
+                    [weakSelf.dataModels addObjectsFromArray:pickedImageItems];
+                    [weakSelf reloadData];
+                    if (weakSelf.pickImageCompleteBlock) {
+                        weakSelf.pickImageCompleteBlock();
                     }
                 }];
                 
                 if (imagePickerController) {
-                    [self.belongToViewController presentViewController:imagePickerController animated:YES completion:nil];
+                    [weakSelf.belongToViewController presentViewController:imagePickerController animated:YES completion:nil];
                 }
                 
             } else {
-                NSInteger canMaxChooseImageCount = self.equalCellSizeSetting.maxDataModelShowCount - self.dataModels.count;
+                NSInteger canMaxChooseImageCount = weakSelf.equalCellSizeSetting.maxDataModelShowCount - weakSelf.dataModels.count;
                 
                 CJImagePickerViewController *imagePickerController =
-                [weakSelf choosePhotoPickerWithCanMaxChooseImageCount:canMaxChooseImageCount pickCompleteBlock:^(NSArray<CJImageUploadItem *> *pickedImageItems) {
-                    [self.dataModels addObjectsFromArray:pickedImageItems];
-                    [self reloadData];
-                    if (self.pickImageCompleteBlock) {
-                        self.pickImageCompleteBlock();
+                [CJUploadImagePickerUtil choosePhotoPickerWithCanMaxChooseImageCount:canMaxChooseImageCount pickCompleteBlock:^(NSArray<CJImageUploadItem *> *pickedImageItems) {
+                    [weakSelf.dataModels addObjectsFromArray:pickedImageItems];
+                    [weakSelf reloadData];
+                    if (weakSelf.pickImageCompleteBlock) {
+                        weakSelf.pickImageCompleteBlock();
                     }
                 }];
                 
@@ -109,7 +109,7 @@
                 [nav.navigationBar setTitleTextAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize:19],NSForegroundColorAttributeName:blueTextColor}];
                 nav.navigationBar.tintColor = blueTextColor;
                 
-                [self.belongToViewController presentViewController:nav animated:YES completion:NULL];
+                [weakSelf.belongToViewController presentViewController:nav animated:YES completion:NULL];
             }
         }
         [sheet dismissAnimated:YES];

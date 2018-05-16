@@ -1,20 +1,22 @@
 //
-//  UIView+CJPickImage.h
-//  CJUIKitDemo
+//  CJUploadImagePickerUtil.h
+//  CJPickerDemo
 //
 //  Created by ciyouzen on 2017/8/30.
 //  Copyright © 2017年 dvlproad. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
-
-#import <CJMedia/CJImagePickerViewController.h>
+#import "MySingleImagePickerController.h"
+#import "CJImagePickerViewController.h"
 
 #import "CJImageUploadItem.h"
 #import "CJUploadVideoItem.h"
 
-
-@interface UIView (CJPickImage)
+/**
+ *  获取图片选择器，所选择/拍摄的图片会被保存到沙盒中
+ */
+@interface CJUploadImagePickerUtil : NSObject
 
 /**
  *  拍照：创建拍照的picker视图控制器
@@ -23,7 +25,7 @@
  *
  *  @return 拍照的picker视图控制器
  */
-- (UIImagePickerController *)takePhotoPickerWithPickCompleteBlock:(void (^)(NSArray<CJImageUploadItem *> *pickedImageItems))pickImageCompleteBlock;
++ (MySingleImagePickerController *)takePhotoPickerWithPickCompleteBlock:(void (^)(NSArray<CJImageUploadItem *> *pickedImageItems))pickImageCompleteBlock;
 
 
 /**
@@ -34,6 +36,6 @@
  *
  *  @return 从相册中选择照片的picker视图控制器
  */
-- (CJImagePickerViewController *)choosePhotoPickerWithCanMaxChooseImageCount:(NSInteger)canMaxChooseImageCount pickCompleteBlock:(void (^)(NSArray<CJImageUploadItem *> *pickedImageItems))pickImageCompleteBlock;
++ (CJImagePickerViewController *)choosePhotoPickerWithCanMaxChooseImageCount:(NSInteger)canMaxChooseImageCount pickCompleteBlock:(void (^)(NSArray<CJImageUploadItem *> *pickedImageItems))pickImageCompleteBlock;
 
 @end

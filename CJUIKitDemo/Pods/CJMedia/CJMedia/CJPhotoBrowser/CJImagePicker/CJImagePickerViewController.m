@@ -293,7 +293,7 @@
     }
     
     [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-    NSMutableArray * array = [[NSMutableArray alloc] init];
+    NSMutableArray<AlumbImageModel *> *array = [[NSMutableArray alloc] init];
     for (AlumbImageModel * item in _selectedArray) {
         if ([item.url hasPrefix:@"assets"]) {
 

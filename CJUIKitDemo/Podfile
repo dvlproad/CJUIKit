@@ -33,12 +33,8 @@ target 'CJUIKitDemo' do
   
   # 图片选择需要依赖的库
   pod 'JGActionSheet', '~> 1.0.5'
-  pod 'CJMedia/CJValidateAuthorizationUtil', '~> 0.0.5'
-  pod 'CJMedia/MySingleImagePickerController', '~> 0.0.5'
-  pod 'CJMedia/CJPhotoBrowser', '~> 0.0.5'
-  pod 'CJFile/CJFileManager', '~> 0.0.8'
+  pod 'CJMedia/CJUploadImagePickerUtil', '~> 0.0.6'
   pod 'CJNetwork/AFNetworkingBaseComponent'
-  pod 'CJNetwork/AFNetworkingUploadComponent'
 #  pod 'IjinbuNetwork', '~> 0.0.3' #IjinbuNetwork中有依赖CJBaseUtil的CJDevice和CJBaseUIKit的UIImage,所以这里不能使用pod，否则link错误
 
   # 网页
