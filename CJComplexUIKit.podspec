@@ -1,14 +1,14 @@
 Pod::Spec.new do |s|
 
   s.name         = "CJComplexUIKit"
-  s.version      = "0.0.5"
+  s.version      = "0.0.6"
   s.summary      = "自定义的稍微复杂的UI"
   s.homepage     = "https://github.com/dvlproad/CJUIKit"
 
   s.description  = <<-DESC
                   *、CJDataScrollView：带数据的列表视图或集合视图(常用于搜索、图片选择)
 
-                   A longer description of CJPopupAction in Markdown format.
+                   A longer description of CJComplexUIKit in Markdown format.
 
                    * Think: Why did you write this? What is the focus? What does it do?
                    * CocoaPods will be using this to generate tags, and improve search results.
@@ -29,7 +29,7 @@ Pod::Spec.new do |s|
 
   s.platform     = :ios, "7.0"
  
-  s.source       = { :git => "https://github.com/dvlproad/CJUIKit.git", :tag => "CJComplexUIKit_0.0.5" }
+  s.source       = { :git => "https://github.com/dvlproad/CJUIKit.git", :tag => "CJComplexUIKit_0.0.6" }
   s.source_files  = "CJComplexUIKit/*.{h,m}"
 
   s.frameworks = "UIKit"
@@ -73,12 +73,12 @@ Pod::Spec.new do |s|
       sss.dependency 'CJBaseUIKit/CJCollectionView/MyEqualCellSizeCollectionView'
       sss.dependency 'CJBaseUIKit/CJCollectionView/CJBaseCollectionViewCell'
 
-      sss.dependency 'CJMedia/CJValidateAuthorizationUtil', "~> 0.0.4"
-      sss.dependency 'CJMedia/MySingleImagePickerController', "~> 0.0.4"
-      sss.dependency 'CJMedia/CJPhotoBrowser', "~> 0.0.4"
+      sss.dependency 'CJMedia/CJValidateAuthorizationUtil'
+      sss.dependency 'CJMedia/MySingleImagePickerController'
+      sss.dependency 'CJMedia/CJPhotoBrowser'
 
-      sss.dependency 'CJFile/CJFileManager', "~> 0.0.7"
-      sss.dependency 'CJNetwork/AFNetworkingUploadComponent', "~> 0.1.3"
+      sss.dependency 'CJFile/CJFileManager'
+      sss.dependency 'CJNetwork/AFNetworkingUploadComponent'
       
     end
 

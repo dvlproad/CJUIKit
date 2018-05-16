@@ -50,7 +50,11 @@
 ///获取手机IP地址
 + (NSString *)getIPAddress;
 
-///获取当前手机连接的WIFI名称(SSID)
+/**
+ *  获取当前手机连接的WIFI名称(即SSID)(SSID全称Service Set IDentifier, 即Wifi网络的公开名称)
+ *  @brief  模拟器测试无效，始终为空，真机有效
+ *
+ */
 + (NSString *)getWifiName;
 
 @end

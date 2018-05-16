@@ -9,7 +9,6 @@
 #ifndef CJDataAllUtil_h
 #define CJDataAllUtil_h
 
-//一般需要  pod 'PinYin4Objc', '~> 1.1.1'
 #import "CJDataUtil+Value.h"
 
 #import "CJDataUtil+SortCategory.h"
