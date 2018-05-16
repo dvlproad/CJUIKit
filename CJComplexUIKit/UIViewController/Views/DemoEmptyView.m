@@ -7,7 +7,6 @@
 //
 
 #import "DemoEmptyView.h"
-#import <Masonry/Masonry.h>
 
 @interface DemoEmptyView ()
 
