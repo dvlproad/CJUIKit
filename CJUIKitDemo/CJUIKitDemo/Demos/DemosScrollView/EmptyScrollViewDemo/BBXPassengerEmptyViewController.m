@@ -10,7 +10,7 @@
 #import "DemoEmptyView.h"
 
 #import <SVProgressHUD/SVProgressHUD.h>
-#import <CJNetwork/CJNetworkMonitor.h>
+#import "AppInfoManager.h"
 
 #import <DZNEmptyDataSet/UIScrollView+EmptyDataSet.h>
 
@@ -75,9 +75,9 @@
 - (void)reloadNetworkWeb {
     _isNetworkWeb = YES;
     
-//    BOOL isNetworkSuccess = [CJNetworkMonitor sharedInstance].isNetworkSuccess;
-    BOOL isNetworkSuccess = NO;
-    if (!isNetworkSuccess) {
+    //BOOL networkEnable = [AppInfoManager sharedInstance].networkEnable;
+    BOOL networkEnable = NO;
+    if (!networkEnable) {
         [SVProgressHUD show];
         
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{

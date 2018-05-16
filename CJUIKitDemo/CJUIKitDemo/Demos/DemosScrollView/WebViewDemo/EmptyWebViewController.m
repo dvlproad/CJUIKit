@@ -7,7 +7,7 @@
 //
 
 #import "EmptyWebViewController.h"
-#import <CJNetwork/CJNetworkMonitor.h>
+#import "AppInfoManager.h"
 
 static NSString *const BeyondAPPRquestUrl = @"https://fir.im/9u12";
 static NSString *const BBXAPPAboutRquestUrl = @"http://www.bbxpc.com/app_html/about_us/about.html";
@@ -30,7 +30,7 @@ static NSString *const BBXAPPAboutRquestUrl = @"http://www.bbxpc.com/app_html/ab
     //NSString *requestUrl = @"https://fir.im/9u12";  //BeyondApp
     NSString *requestUrl = @"http://www.bbxpc.com/app_html/about_us/about.html";  //BBXAPPAbout
     
-    BOOL networkEnable = [CJNetworkMonitor sharedInstance].isNetworkSuccess;
+    BOOL networkEnable = [AppInfoManager sharedInstance].networkEnable;
     networkEnable = NO;
     [self reloadNetworkWebWithUrl:requestUrl networkEnable:networkEnable];
     [self setupBlockWithRequestUrl:requestUrl networkEnable:networkEnable];

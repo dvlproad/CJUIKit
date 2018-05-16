@@ -1,6 +1,9 @@
 platform :ios, '8.0'
 #use_frameworks!
 
+source 'https://github.com/CocoaPods/Specs.git'
+source 'https://gitee.com/dvlproad/dvlproadSpecs'  #这里要增加的是这条私有仓库的地址，而不是那些私有仓库里的库的地址，即如果你是增加'https://gitee.com/dvlproad/CJCustomView.git'那就错了。（之前自己犯过一次错）
+
 target 'CJUIKitDemo' do  
   pod 'PureLayout', '~> 3.0.2'
   pod 'Masonry', '~> 1.0.2'
@@ -34,9 +37,10 @@ target 'CJUIKitDemo' do
   pod 'CJMedia/MySingleImagePickerController', '~> 0.0.5'
   pod 'CJMedia/CJPhotoBrowser', '~> 0.0.5'
   pod 'CJFile/CJFileManager', '~> 0.0.8'
-  pod 'CJNetwork/AFNetworkingBaseComponent', '~> 0.1.3' #用于登录
-  pod 'CJNetwork/AFNetworkingUploadComponent', '~> 0.1.3' #需要8.0以上
-  
+  pod 'CJNetwork/AFNetworkingBaseComponent'
+  pod 'CJNetwork/AFNetworkingUploadComponent'
+#  pod 'IjinbuNetwork', '~> 0.0.3' #IjinbuNetwork中有依赖CJBaseUtil的CJDevice和CJBaseUIKit的UIImage,所以这里不能使用pod，否则link错误
+
   # 网页
   pod 'WebViewJavascriptBridge', '~> 6.0.2'
   

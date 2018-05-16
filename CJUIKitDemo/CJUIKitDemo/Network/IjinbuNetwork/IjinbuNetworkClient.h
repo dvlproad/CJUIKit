@@ -1,32 +1,34 @@
 //
 //  IjinbuNetworkClient.h
-//  CommonAFNUtilDemo
+//  CJNetworkDemo
 //
 //  Created by ciyouzen on 2017/3/6.
 //  Copyright © 2017年 dvlproad. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
-#import <SVProgressHUD/SVProgressHUD.h>
 
 #import "IjinbuResponseModel.h"
 
 #import "IjinbuSession.h"
 #import "IjinbuUser.h"
 
-typedef  void ((^HPSuccess)(IjinbuResponseModel *responseModel));
-typedef  void ((^HPFailure)(NSError *error));
+#import "IjinbuUploadItemRequest.h"
+
+//API路径--ijinbu
+#define API_BASE_Url_ijinbu(_Url_) [[@"http://www.ijinbu.com/" stringByAppendingString:_Url_] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]
 
 @interface IjinbuNetworkClient : NSObject
 
-+ (IjinbuNetworkClient *)sharedInstance;
++ (nullable IjinbuNetworkClient *)sharedInstance;
 
-- (NSURLSessionDataTask *)postWithRelativeUrl:(NSString *)RelativeUrl
-                                       params:(NSDictionary *)params
-                                      success:(HPSuccess)success
-                                      failure:(HPFailure)failure;
+- (nullable NSURLSessionDataTask *)ijinbu_postUrl:(nullable NSString *)Url
+                                           params:(nullable id)params
+                                            cache:(BOOL)cache
+                                    completeBlock:(nullable void (^)(IjinbuResponseModel * _Nullable responseModel))completeBlock;
 
-
-- (NSString *)signWithParams:(NSDictionary *)params path:(NSString*)path;
+- (nullable NSURLSessionDataTask *)ijinbu_uploadFile:(nullable IjinbuUploadItemRequest *)request
+                                            progress:(nullable void (^)(NSProgress * _Nonnull))uploadProgress
+                                       completeBlock:(nullable void (^)(IjinbuResponseModel * _Nullable responseModel))completeBlock;
 
 @end

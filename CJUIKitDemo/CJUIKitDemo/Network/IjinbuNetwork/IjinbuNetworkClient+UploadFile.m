@@ -1,6 +1,6 @@
 //
 //  IjinbuNetworkClient+UploadFile.m
-//  CommonAFNUtilDemo
+//  CJNetworkDemo
 //
 //  Created by ciyouzen on 2017/4/5.
 //  Copyright © 2017年 dvlproad. All rights reserved.
@@ -8,9 +8,13 @@
 
 #import "IjinbuNetworkClient+UploadFile.h"
 #import "IjinbuHTTPSessionManager.h"
-//#import "CJImageUploadItem.h"
 
+#ifdef CJTESTPOD
+#import "AFNetworkingUploadUtil.h"
+#else
 #import <CJNetwork/AFNetworkingUploadUtil.h>
+#endif
+
 #import "IjinbuUploadItemResult.h"
 
 @implementation IjinbuNetworkClient (UploadFile)
@@ -19,15 +23,14 @@
 - (NSURLSessionDataTask *)requestUploadItems:(NSArray<CJUploadFileModel *> *)uploadFileModels
                                      toWhere:(NSInteger)uploadItemToWhere
                                     progress:(nullable void (^)(NSProgress * _Nonnull))uploadProgress
-                                     success:(HPSuccess)success
-                                     failure:(HPFailure)failure
+                                     completeBlock:(void (^)(IjinbuResponseModel *responseModel))completeBlock
 {
     IjinbuUploadItemRequest *uploadItemRequest = [[IjinbuUploadItemRequest alloc] init];
     uploadItemRequest.uploadItemToWhere = uploadItemToWhere;
     uploadItemRequest.uploadFileModels = uploadFileModels;
     
     NSURLSessionDataTask *requestOperation =
-    [self requestUploadFile:uploadItemRequest progress:uploadProgress success:success failure:failure];
+    [self requestUploadFile:uploadItemRequest progress:uploadProgress completeBlock:completeBlock];
     
     return requestOperation;
 }
@@ -36,8 +39,7 @@
 - (NSURLSessionDataTask *)requestUploadLocalItem:(NSString *)localRelativePath
                                         itemType:(CJUploadItemType)uploadItemType
                                          toWhere:(NSInteger)uploadItemToWhere
-                                         success:(HPSuccess)success
-                                         failure:(HPFailure)failure {
+                                         completeBlock:(void (^)(IjinbuResponseModel *responseModel))completeBlock {
     NSAssert(localRelativePath != nil, @"本地相对路径错误");
     
     NSString *localAbsolutePath = [[NSHomeDirectory() stringByAppendingPathComponent:localRelativePath] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
@@ -54,7 +56,7 @@
     NSString *fileName = localAbsolutePath.lastPathComponent;
     
     NSURLSessionDataTask *requestOperation =
-    [self requestUploadItemData:data itemName:fileName itemType:uploadItemType toWhere:uploadItemToWhere success:success failure:failure];
+    [self requestUploadItemData:data itemName:fileName itemType:uploadItemType toWhere:uploadItemToWhere completeBlock:completeBlock];
     
     return requestOperation;
 }
@@ -64,33 +66,32 @@
                                        itemName:(NSString *)fileName
                                        itemType:(CJUploadItemType)uploadItemType
                                         toWhere:(NSInteger)uploadItemToWhere
-                                        success:(HPSuccess)success
-                                        failure:(HPFailure)failure
+                                        completeBlock:(void (^)(IjinbuResponseModel *responseModel))completeBlock
 {
     NSAssert(data != nil, @"Error：路径存在，但是获取数据为空");
     
-    CJUploadFileModel *uploadItemModel = [[CJUploadFileModel alloc] init];
-    uploadItemModel.uploadItemType = uploadItemType;
-    uploadItemModel.uploadItemData = data;
-    uploadItemModel.uploadItemName = fileName;
-    NSArray<CJUploadFileModel *> *uploadFileModels = @[uploadItemModel];
+    CJUploadFileModel *uploadFileModel = [[CJUploadFileModel alloc] init];
+    uploadFileModel.uploadItemType = uploadItemType;
+    uploadFileModel.uploadItemData = data;
+    uploadFileModel.uploadItemName = fileName;
+    NSArray<CJUploadFileModel *> *uploadFileModels = @[uploadFileModel];
     
     IjinbuUploadItemRequest *uploadItemRequest = [[IjinbuUploadItemRequest alloc] init];
     uploadItemRequest.uploadItemToWhere = uploadItemToWhere;
     uploadItemRequest.uploadFileModels = uploadFileModels;
     
     NSURLSessionDataTask *requestOperation =
-    [self requestUploadFile:uploadItemRequest progress:nil success:success failure:failure];
+    [self ijinbu_uploadFile:uploadItemRequest progress:nil completeBlock:completeBlock];
     
     return requestOperation;
     
 }
 
+
 /** 上传文件 */
 - (NSURLSessionDataTask *)requestUploadFile:(IjinbuUploadItemRequest *)request
                                    progress:(nullable void (^)(NSProgress * _Nonnull))uploadProgress
-                                    success:(HPSuccess)success
-                                    failure:(HPFailure)failure
+                              completeBlock:(void (^)(IjinbuResponseModel *responseModel))completeBlock
 {
     AFHTTPSessionManager *manager = [IjinbuHTTPSessionManager sharedInstance];
     
@@ -101,74 +102,25 @@
     NSLog(@"params = %@", parameters);
     
     return [manager cj_postUploadUrl:Url parameters:parameters uploadFileModels:uploadFileModels progress:uploadProgress success:^(NSURLSessionDataTask * _Nonnull task, id _Nonnull responseObject) {
-        IjinbuResponseModel *responseModel = [MTLJSONAdapter modelOfClass:[IjinbuResponseModel class] fromJSONDictionary:responseObject error:nil];
-        if (success) {
-            success(responseModel);
+        IjinbuResponseModel *responseModel = [[IjinbuResponseModel alloc] init];
+        responseModel.status = [responseObject[@"status"] integerValue];
+        responseModel.message = responseObject[@"msg"];
+        responseModel.result = responseObject[@"result"];
+        if (completeBlock) {
+            completeBlock(responseModel);
         }
         
     } failure:^(NSURLSessionDataTask * _Nonnull task, NSError * _Nonnull error) {
-        if (failure) {
-            failure(error);
+        IjinbuResponseModel *responseModel = [[IjinbuResponseModel alloc] init];
+        responseModel.status = -1;
+        responseModel.message = NSLocalizedString(@"网络请求失败", nil);
+        responseModel.result = nil;
+        if (completeBlock) {
+            completeBlock(responseModel);
         }
     }];
 }
 
-
-
-/*
-- (CJImageUploadItem *)cjUploadImage:(UIImage *)image
-                             toWhere:(NSInteger)uploadItemToWhere
-                      andSaveToLocal:(BOOL)saveToLocal
-                             success:(void(^)(CJImageUploadItem *uploadItem))success
-                             failure:(void(^)(void))failure
-{
-    NSLog(@"dealWithPickPhotoCompleteImage");
-    CJImageUploadItem *imageUploadItem = [[CJImageUploadItem alloc] init];
-    imageUploadItem.image = [UIImage adjustImageWithImage:image];
-    NSData *imageData = UIImageJPEGRepresentation(imageUploadItem.image, 0.8);
-    
-    //文件名
-    NSString *identifier = [[NSProcessInfo processInfo] globallyUniqueString];
-    NSString *fileName = [identifier stringByAppendingPathExtension:@"jpg"];
-    
-    if (saveToLocal) {
-        NSString *localRelativePath = [CJFileManager saveFileData:imageData
-                                                     withFileName:fileName
-                                               inSubDirectoryPath:@"UploadImage"
-                                              searchPathDirectory:NSCachesDirectory];
-        
-        //上传图片
-        imageUploadItem.localRelativePath = localRelativePath;
-    }
-    
-    imageUploadItem.operation =
-    [self requestUploadItemData:imageData itemName:fileName itemType:CJUploadItemTypeImage toWhere:uploadItemToWhere success:^(NSURLSessionDataTask * _Nullable task, id  _Nullable responseObject) {
-        CJResponseModel *responseModel = nil;
-        
-        imageUploadItem.responseModel = responseModel;
-        
-        if (!responseModel.result && [responseModel.result isKindOfClass:[NSArray class]])
-        {
-            NSArray *array = responseModel.result;
-            if (array.count > 0) {
-                if (success) {
-                    success(imageUploadItem);
-                }
-            }
-        }
-        
-    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nullable error) {
-        //        [UIGlobal showMessage:error.localizedDescription];
-        
-        if (failure) {
-            failure();
-        }
-    }];
-    
-    
-    return imageUploadItem;
-}
-*/
 
 /* 完整的描述请参见文件头部 */
 + (NSURLSessionDataTask *)detailedRequestUploadItems:(NSArray<CJUploadFileModel *> *)uploadFileModels
@@ -186,11 +138,14 @@
     /* 从请求结果response中获取uploadInfo的代码块 */
     CJUploadInfo *(^dealResopnseForUploadInfoBlock)(id responseObject) = ^CJUploadInfo *(id responseObject)
     {
-        IjinbuResponseModel *responseModel = [MTLJSONAdapter modelOfClass:[IjinbuResponseModel class] fromJSONDictionary:responseObject error:nil];
+        IjinbuResponseModel *responseModel = [[IjinbuResponseModel alloc] init];
+        responseModel.status = [responseObject[@"status"] integerValue];
+        responseModel.message = responseObject[@"msg"];
+        responseModel.result = responseObject[@"result"];
         
         CJUploadInfo *uploadInfo = [[CJUploadInfo alloc] init];
         uploadInfo.responseModel = responseModel;
-        if ([responseModel.status integerValue] == 1) {
+        if (responseModel.status == 1) {
             NSArray *operationUploadResult = [MTLJSONAdapter modelsOfClass:[IjinbuUploadItemResult class] fromJSONArray:responseModel.result error:nil];
             
             if (operationUploadResult == nil || operationUploadResult.count == 0) {
@@ -218,7 +173,7 @@
                 }
             }
             
-        } else if ([responseModel.status integerValue] == 2) {
+        } else if (responseModel.status == 2) {
             uploadInfo.uploadState = CJUploadStateFailure;
             uploadInfo.uploadStatePromptText = responseModel.message;
             
@@ -235,13 +190,12 @@
     [AFNetworkingUploadUtil cj_UseManager:manager
                             postUploadUrl:Url
                                parameters:parameters
-                        uploadFileModels:uploadFileModels
+                         uploadFileModels:uploadFileModels
                      uploadInfoSaveInItem:saveUploadInfoToItem
                     uploadInfoChangeBlock:uploadInfoChangeBlock
            dealResopnseForUploadInfoBlock:dealResopnseForUploadInfoBlock];
     
     return operation;
 }
-
 
 @end

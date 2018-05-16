@@ -68,7 +68,7 @@
     NSAssert(cacheData && cacheKey, @"要缓存到内存的数据和缓存地址都不能为空");
     
     if (cacheData.length > self.cacheMaxSize){
-        NSLog(@"当前该条数据过大，超过缓存最大值，无法保存:%zd > %zd", cacheData.length, self.cacheMaxSize);
+        NSLog(@"当前该条数据过大，超过缓存最大值，无法保存:%zd > %llu", cacheData.length, self.cacheMaxSize);
         return;
     }
     

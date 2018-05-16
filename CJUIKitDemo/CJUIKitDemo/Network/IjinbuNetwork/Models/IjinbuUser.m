@@ -1,6 +1,6 @@
 //
 //  IjinbuUser.m
-//  CommonAFNUtilDemo
+//  CJNetworkDemo
 //
 //  Created by ciyouzen on 2017/4/6.
 //  Copyright © 2017年 dvlproad. All rights reserved.

@@ -2,7 +2,7 @@
 //  UIView+AFNetworkingUpload.h
 //  CJNetworkDemo
 //
-//  Created by 李超前 on 2017/8/27.
+//  Created by ciyouzen on 2017/8/27.
 //  Copyright © 2017年 dvlproad. All rights reserved.
 //
 

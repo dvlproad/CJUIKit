@@ -45,10 +45,11 @@ Pod::Spec.new do |s|
   s.subspec 'UIViewController' do |ss|
     ss.source_files = "CJComplexUIKit/UIViewController/**/*.{h,m}"
 
-      # 搜索功能需要依赖的库
-      ss.dependency 'CJBaseUtil/CJWebUtil'
-      ss.dependency 'SVProgressHUD'
-      ss.dependency 'NJKWebViewProgress'
+    ss.dependency 'Masonry'
+    # 搜索功能需要依赖的库
+    ss.dependency 'CJBaseUtil/CJWebUtil'
+    ss.dependency 'SVProgressHUD'
+    ss.dependency 'NJKWebViewProgress'
   end
 
 

@@ -1,1 +1,0 @@
-../../../PinYin4Objc/PinYin4Objc/Classes/HanyuPinyinOutputFormat.h

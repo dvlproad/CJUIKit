@@ -1,13 +1,17 @@
 //
 //  IjinbuResponseModel.h
-//  CommonAFNUtilDemo
+//  CJNetworkDemo
 //
 //  Created by ciyouzen on 2016/12/20.
 //  Copyright © 2016年 dvlproad. All rights reserved.
 //
 
-#import "CJResponseModel.h"
+#import <Foundation/Foundation.h>
 
-@interface IjinbuResponseModel : CJResponseModel
+@interface IjinbuResponseModel : NSObject
+
+@property(nonatomic, assign) NSInteger status;
+@property(nonatomic, copy) NSString *message;
+@property(nonatomic, strong) id result;
 
 @end

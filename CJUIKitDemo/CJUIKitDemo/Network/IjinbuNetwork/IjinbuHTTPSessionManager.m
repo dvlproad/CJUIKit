@@ -1,6 +1,6 @@
 //
 //  IjinbuHTTPSessionManager.m
-//  CommonAFNUtilDemo
+//  CJNetworkDemo
 //
 //  Created by ciyouzen on 2016/12/20.
 //  Copyright © 2016年 dvlproad. All rights reserved.
@@ -11,6 +11,8 @@
 #import "CJJSONResponseSerializer.h"
 
 #import "IjinbuSession.h"
+
+#import <CommonCrypto/CommonDigest.h> //MD5需要
 
 static NSString *const HPServerAPIVer = @"2.5.1207";
 NSString * ijinbuBaseUrl = @"http://www.ijinbu.com";
@@ -49,7 +51,10 @@ NSString * ijinbuBaseUrl = @"http://www.ijinbu.com";
     [requestSerializer setValue:@"2" forHTTPHeaderField:@"appType"];
     //NSString *ver = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"] ?: [[[NSBundle mainBundle] infoDictionary] objectForKey:(__bridge NSString *)kCFBundleVersionKey];
     [requestSerializer setValue:HPServerAPIVer forHTTPHeaderField:@"ver"];
-    [requestSerializer setValue:[[NSString stringWithFormat:@"%@123456", deviceId] MD5] forHTTPHeaderField:@"sign"];
+    
+    NSString *sign = [NSString stringWithFormat:@"%@123456", deviceId];
+    NSString *md5Sign = [IjinbuHTTPSessionManager MD5String:sign];
+    [requestSerializer setValue:md5Sign forHTTPHeaderField:@"sign"];
     [requestSerializer setValue:[NSBundle mainBundle].bundleIdentifier forHTTPHeaderField:@"bundleId"];
     manager.requestSerializer  = requestSerializer;
     
@@ -67,6 +72,19 @@ NSString * ijinbuBaseUrl = @"http://www.ijinbu.com";
     [manager.requestSerializer didChangeValueForKey:@"timeoutInterval"];
     
     return manager;
+}
+
++ (NSString*)MD5String:(NSString *)string
+{
+    const char *ptr = [string UTF8String];
+    unsigned char md5Buffer[CC_MD5_DIGEST_LENGTH];
+    CC_MD5(ptr, (CC_LONG)strlen(ptr), md5Buffer);
+    
+    NSMutableString *output = [NSMutableString stringWithCapacity:CC_MD5_DIGEST_LENGTH * 2];
+    for(int i = 0; i < CC_MD5_DIGEST_LENGTH; i++)
+    [output appendFormat:@"%02x",md5Buffer[i]];
+    
+    return output;
 }
 
 @end

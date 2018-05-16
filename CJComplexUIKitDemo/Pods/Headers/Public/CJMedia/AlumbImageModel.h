@@ -1,1 +1,0 @@
-../../../CJMedia/CJMedia/CJPhotoBrowser/CJImagePicker/Models/AlumbImageModel.h

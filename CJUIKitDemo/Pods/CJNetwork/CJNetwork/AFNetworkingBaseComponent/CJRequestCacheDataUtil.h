@@ -8,9 +8,10 @@
 
 #import <Foundation/Foundation.h>
 
-/**< 注意在缓存机制中，success与failuer指的都是是获取数据成功的与否，而不是请求成功的与否 */
-typedef void(^CJRequestCacheSuccess)(NSURLSessionDataTask *_Nullable task, id _Nullable responseObject, BOOL isCacheData);
-typedef void(^CJRequestCacheFailure)(NSURLSessionDataTask *_Nullable task, NSError * _Nonnull error, BOOL isCacheData);
+typedef NS_ENUM(NSUInteger, CJRequestCacheFailureType) {
+    CJRequestCacheFailureTypeCacheKeyNil,            /**< cacheKey == nil */
+    CJRequestCacheFailureTypeCacheDataNil,           /**< 未读到缓存数据,如第一次就是无网请求,提示网络不给力 */
+};
 
 
 @interface CJRequestCacheDataUtil : NSObject
@@ -29,16 +30,14 @@ typedef void(^CJRequestCacheFailure)(NSURLSessionDataTask *_Nullable task, NSErr
 /**
  *  获取请求的缓存数据（此方法，只有网络不给力的时候才会调用到）
  *
- *  @param fromRequestCacheData 是否获取请求的缓存数据
- *  @param Url                  Url
- *  @param parameters           parameters
- *  @param success              success
- *  @param failure              failure
+ *  @param Url          Url
+ *  @param params       params
+ *  @param success      请求成功的回调success
+ *  @param failure      请求失败的回调failure
  */
-+ (BOOL)requestNetworkDataFromCache:(BOOL)fromRequestCacheData
-                       byRequestUrl:(nullable NSString *)Url
-                         parameters:(nullable NSDictionary *)parameters
-                            success:(nullable CJRequestCacheSuccess)success
-                            failure:(nullable CJRequestCacheFailure)failure;
++ (void)requestCacheDataByUrl:(nullable NSString *)Url
+                       params:(nullable id)params
+                      success:(nullable void (^)(NSDictionary *_Nullable responseObject))success
+                      failure:(nullable void (^)(CJRequestCacheFailureType failureType))failure;
 
 @end

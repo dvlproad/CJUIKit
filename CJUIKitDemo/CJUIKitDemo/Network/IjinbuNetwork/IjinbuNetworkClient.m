@@ -1,6 +1,6 @@
 //
 //  IjinbuNetworkClient.m
-//  CommonAFNUtilDemo
+//  CJNetworkDemo
 //
 //  Created by ciyouzen on 2017/3/6.
 //  Copyright © 2017年 dvlproad. All rights reserved.
@@ -8,7 +8,9 @@
 
 #import "IjinbuNetworkClient.h"
 #import "IjinbuHTTPSessionManager.h"
-#import <CJNetwork/AFHTTPSessionManager+CJCacheRequest.h>
+
+#import "AFHTTPSessionManager+CJCacheRequest.h"
+#import "AFHTTPSessionManager+CJUploadFile.h"
 
 @implementation IjinbuNetworkClient
 
@@ -21,50 +23,72 @@
     return _sharedInstance;
 }
 
-- (NSURLSessionDataTask *)postWithRelativeUrl:(NSString *)RelativeUrl
-                                       params:(NSDictionary *)params
-                                      success:(HPSuccess)success
-                                      failure:(HPFailure)failure
+- (nullable NSURLSessionDataTask *)ijinbu_postUrl:(nullable NSString *)Url
+                                           params:(nullable id)params
+                                            cache:(BOOL)cache
+                                    completeBlock:(void (^)(IjinbuResponseModel *responseModel))completeBlock
 {
-    NSString *Url = API_BASE_Url_ijinbu(RelativeUrl);
-    
-    NSLog(@"Url = %@", Url);
-    NSLog(@"params = %@", params);
-    
     AFHTTPSessionManager *manager = [IjinbuHTTPSessionManager sharedInstance];
     
     NSString *sign = [self signWithParams:params path:nil];
     NSLog(@"sign = %@", sign);
     [manager.requestSerializer setValue:sign forHTTPHeaderField:@"sign"];
     
-    NSURLSessionDataTask *dataTask =
-    [manager cj_postRequestUrl:Url parameters:params progress:nil success:^(NSURLSessionDataTask * _Nullable task, id  _Nullable responseObject) {
-        NSLog(@"请求ijinbu成功");
-        NSLog(@"responseObject = %@", responseObject);
-        IjinbuResponseModel *responseModel = [MTLJSONAdapter modelOfClass:[IjinbuResponseModel class] fromJSONDictionary:responseObject error:nil];
-        if ([responseModel.status integerValue] == 1) {
-            if (success) {
-                success(responseModel);
-            }
-            
-        } else {
-            if (failure) {
-                failure(nil);
-            }
-            
+    NSURLSessionDataTask *URLSessionDataTask =
+    [manager cj_postUrl:Url params:params shouldCache:cache progress:nil success:^(NSDictionary * _Nullable responseObject, BOOL isCacheData) {
+        IjinbuResponseModel *responseModel = [[IjinbuResponseModel alloc] init];
+        responseModel.status = [responseObject[@"status"] integerValue];
+        responseModel.message = responseObject[@"msg"];
+        responseModel.result = responseObject[@"result"];
+        if (completeBlock) {
+            completeBlock(responseModel);
         }
         
-    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-        NSString *errorMessage = [error localizedDescription];
-        NSLog(@"Failure:请求ijinbu失败:%@", errorMessage);
-        if (failure) {
-            failure(nil);
+    } failure:^(NSError * _Nullable error) {
+        IjinbuResponseModel *responseModel = [[IjinbuResponseModel alloc] init];
+        responseModel.status = -1;
+        responseModel.message = NSLocalizedString(@"网络请求失败", nil);
+        responseModel.result = nil;
+        if (completeBlock) {
+            completeBlock(responseModel);
         }
     }];
-    
-    return dataTask;
+    return URLSessionDataTask;
 }
 
+
+/** 上传文件 */
+- (NSURLSessionDataTask *)ijinbu_uploadFile:(IjinbuUploadItemRequest *)request
+                                   progress:(nullable void (^)(NSProgress * _Nonnull))uploadProgress
+                              completeBlock:(void (^)(IjinbuResponseModel *responseModel))completeBlock
+{
+    AFHTTPSessionManager *manager = [IjinbuHTTPSessionManager sharedInstance];
+    
+    NSString *Url = API_BASE_Url_ijinbu(@"ijinbu/app/public/batchUpload");
+    NSDictionary *parameters = @{@"uploadType": @(request.uploadItemToWhere)};
+    NSArray<CJUploadFileModel *> *uploadFileModels = request.uploadFileModels;
+    NSLog(@"Url = %@", Url);
+    NSLog(@"params = %@", parameters);
+    
+    return [manager cj_postUploadUrl:Url parameters:parameters uploadFileModels:uploadFileModels progress:uploadProgress success:^(NSURLSessionDataTask * _Nonnull task, id _Nonnull responseObject) {
+        IjinbuResponseModel *responseModel = [[IjinbuResponseModel alloc] init];
+        responseModel.status = [responseObject[@"status"] integerValue];
+        responseModel.message = responseObject[@"msg"];
+        responseModel.result = responseObject[@"result"];
+        if (completeBlock) {
+            completeBlock(responseModel);
+        }
+        
+    } failure:^(NSURLSessionDataTask * _Nonnull task, NSError * _Nonnull error) {
+        IjinbuResponseModel *responseModel = [[IjinbuResponseModel alloc] init];
+        responseModel.status = -1;
+        responseModel.message = NSLocalizedString(@"网络请求失败", nil);
+        responseModel.result = nil;
+        if (completeBlock) {
+            completeBlock(responseModel);
+        }
+    }];
+}
 
 - (NSString *)signWithParams:(NSDictionary *)params path:(NSString*)path
 {
@@ -95,7 +119,10 @@
     {
         //        [string appendString:@"appKey=9a628966c0f3ff45cf3c68a92ea0ec2a"];
     }
-    return [string MD5];
+    
+    NSString *md5Sign = [IjinbuHTTPSessionManager MD5String:string];
+    
+    return md5Sign;
 #endif
 }
 

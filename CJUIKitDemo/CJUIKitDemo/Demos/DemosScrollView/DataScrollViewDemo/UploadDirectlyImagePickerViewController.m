@@ -11,6 +11,8 @@
 #import "IjinbuNetworkClient+Login.h"
 #import "IjinbuNetworkClient+UploadFile.h"
 
+#import <SVProgressHUD/SVProgressHUD.h>
+
 @interface UploadDirectlyImagePickerViewController ()
 
 @end
@@ -23,11 +25,13 @@
     self.title = NSLocalizedString(@"图片选择", nil);
     
     //执行上传之前，确保登录了
-    [[IjinbuNetworkClient sharedInstance] requestijinbuLogin_name:@"15800000007" pasd:@"123456" success:^(IjinbuResponseModel *responseModel) {
-        NSLog(@"登录成功");
-    } failure:^(NSError *error) {
-        NSLog(@"登录失败");
-        [SVProgressHUD showErrorWithStatus:@"登录失败"];
+    [[IjinbuNetworkClient sharedInstance] requestijinbuLogin_name:@"15800000007" pasd:@"123456" completeBlock:^(IjinbuResponseModel *responseModel) {
+        if (responseModel.status == 1) {
+            NSLog(@"登录成功");
+        } else {
+            NSLog(@"登录失败");
+            [SVProgressHUD showErrorWithStatus:@"登录失败"];
+        }
     }];
     
     

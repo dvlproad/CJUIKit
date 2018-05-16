@@ -1,1 +1,0 @@
-../../../CJMedia/CJMedia/CJPhotoBrowser/CJPhotoBrowser/Models/CJPhotoModel.h

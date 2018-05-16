@@ -51,7 +51,7 @@
     
     /*
     请在子类中调用
-    BOOL networkEnable = [CJNetworkMonitor sharedInstance].isNetworkSuccess;
+    BOOL networkEnable = [AppInfoManager sharedInstance].networkEnable;
     [self reloadNetworkWebWithUrl:<#(NSString *)#> networkEnable:<#(BOOL)#>];
     或
     [self reloadLocalWebWithUrl:<#(NSString *)#>];

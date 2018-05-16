@@ -1,6 +1,6 @@
 //
 //  IjinbuUploadItemRequest.h
-//  CommonAFNUtilDemo
+//  CJNetworkDemo
 //
 //  Created by ciyouzen on 2017/1/20.
 //  Copyright © 2017年 dvlproad. All rights reserved.
@@ -9,8 +9,13 @@
 #import <UIKit/UIKit.h>
 #import <Mantle/Mantle.h>
 
+#ifdef CJTESTPOD
 #import "CJBaseUploadItem.h"
+#import "CJUploadFileModel.h"
+#else
+#import <CJNetwork/CJBaseUploadItem.h>
 #import <CJNetwork/CJUploadFileModel.h>
+#endif
 
 @interface IjinbuUploadItemRequest : MTLModel
 
