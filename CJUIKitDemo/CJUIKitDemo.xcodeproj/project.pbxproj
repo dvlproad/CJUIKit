@@ -272,7 +272,6 @@
 		80332411202C5540001DACF1 /* index.html in Resources */ = {isa = PBXBuildFile; fileRef = 80332410202C5540001DACF1 /* index.html */; };
 		804478272061F328007185EF /* CJLocationChangeManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 804478222061F328007185EF /* CJLocationChangeManager.m */; };
 		804478282061F328007185EF /* CJLocationChangeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 804478232061F328007185EF /* CJLocationChangeModel.m */; };
-		8044787C20622E6A007185EF /* ProgressWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8044787A20622E6A007185EF /* ProgressWebViewController.m */; };
 		8051E5CA20AAAFD2003370AA /* BusShimmeringSwitchSlider.m in Sources */ = {isa = PBXBuildFile; fileRef = 8051E5C920AAAFD2003370AA /* BusShimmeringSwitchSlider.m */; };
 		8051E5CD20AAB34E003370AA /* details_icon_huadong@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8051E5CB20AAB34E003370AA /* details_icon_huadong@2x.png */; };
 		8051E5CE20AAB34E003370AA /* details_icon_huadong@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8051E5CC20AAB34E003370AA /* details_icon_huadong@3x.png */; };
@@ -905,8 +904,6 @@
 		804478232061F328007185EF /* CJLocationChangeModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJLocationChangeModel.m; sourceTree = "<group>"; };
 		804478242061F328007185EF /* CJLocationChangeManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJLocationChangeManager.h; sourceTree = "<group>"; };
 		804478252061F328007185EF /* CJLocationChangeModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJLocationChangeModel.h; sourceTree = "<group>"; };
-		8044787A20622E6A007185EF /* ProgressWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProgressWebViewController.m; sourceTree = "<group>"; };
-		8044787B20622E6A007185EF /* ProgressWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProgressWebViewController.h; sourceTree = "<group>"; };
 		8051E5C820AAAFD1003370AA /* BusShimmeringSwitchSlider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BusShimmeringSwitchSlider.h; sourceTree = "<group>"; };
 		8051E5C920AAAFD2003370AA /* BusShimmeringSwitchSlider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BusShimmeringSwitchSlider.m; sourceTree = "<group>"; };
 		8051E5CB20AAB34E003370AA /* details_icon_huadong@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "details_icon_huadong@2x.png"; sourceTree = "<group>"; };
@@ -1579,7 +1576,6 @@
 				789CAED91FB612B600AF8CD4 /* UIToolbar */,
 				789CAEEE1FB612B600AF8CD4 /* UIViewController */,
 				789CAEF81FB612B600AF8CD4 /* UIWindow */,
-				8044787820622E6A007185EF /* WebView */,
 			);
 			name = CJBaseUIKit;
 			path = ../../CJBaseUIKit;
@@ -2494,23 +2490,6 @@
 				804478232061F328007185EF /* CJLocationChangeModel.m */,
 			);
 			path = CJLocationChangeManager;
-			sourceTree = "<group>";
-		};
-		8044787820622E6A007185EF /* WebView */ = {
-			isa = PBXGroup;
-			children = (
-				8044787920622E6A007185EF /* WebViewController */,
-			);
-			path = WebView;
-			sourceTree = "<group>";
-		};
-		8044787920622E6A007185EF /* WebViewController */ = {
-			isa = PBXGroup;
-			children = (
-				8044787B20622E6A007185EF /* ProgressWebViewController.h */,
-				8044787A20622E6A007185EF /* ProgressWebViewController.m */,
-			);
-			path = WebViewController;
 			sourceTree = "<group>";
 		};
 		8051E31020A99A61003370AA /* CJCycleADView */ = {
@@ -3937,7 +3916,6 @@
 				80FF90371FC5649E00E437CF /* TestDataModel.m in Sources */,
 				80FF90AF1FC5649F00E437CF /* NavigationBarBaseViewController.m in Sources */,
 				80FF908E1FC5649F00E437CF /* MyOpenTableView.m in Sources */,
-				8044787C20622E6A007185EF /* ProgressWebViewController.m in Sources */,
 				80FF914A1FC5668700E437CF /* CJSortedCategoryResult.m in Sources */,
 				80FF91441FC5668700E437CF /* CJDeviceUtil.m in Sources */,
 				789CAF4B1FB612B700AF8CD4 /* CJSliderThumb.m in Sources */,

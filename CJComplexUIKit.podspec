@@ -46,8 +46,9 @@ Pod::Spec.new do |s|
     ss.source_files = "CJComplexUIKit/UIViewController/**/*.{h,m}"
 
       # 搜索功能需要依赖的库
-      sss.dependency 'CJBaseUtil/CJWebUtil'
-      sss.dependency 'SVProgressHUD'
+      ss.dependency 'CJBaseUtil/CJWebUtil'
+      ss.dependency 'SVProgressHUD'
+      ss.dependency 'NJKWebViewProgress'
   end
 
 

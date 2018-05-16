@@ -116,7 +116,7 @@
                 collectionViewContentSizeWidth += itemWidth + minimumInteritemSpacing;
             }
             [m_attributes addObject:cellAttributes];
-            NSString *indexPathString = [NSString stringWithFormat:@"%zd-%zd",indexPath.section, indexPath.item];
+            NSString *indexPathString = [NSString stringWithFormat:@"%ld-%ld",indexPath.section, indexPath.item];
             [dic_attributes_cell setValue:NSStringFromCGRect(cellAttributes.frame) forKey:indexPathString];
         }
     }

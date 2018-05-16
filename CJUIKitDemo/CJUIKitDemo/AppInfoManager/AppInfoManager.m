@@ -9,7 +9,7 @@
 #import "AppInfoManager.h"
 #import <SystemConfiguration/CaptiveNetwork.h>
 
-#import "LoginViewController.h"
+//#import "LoginViewController.h"
 
 
 @interface AppInfoManager ()
@@ -112,12 +112,12 @@
     
     NSNotificationCenter *defaultCenter = [NSNotificationCenter defaultCenter];
     if (!currentNetworkEnable) {
-        UIViewController *topViewController = [self getTopViewController];
-        if (![topViewController isKindOfClass:[LoginViewController class]]) {
+//        UIViewController *topViewController = [self getTopViewController];
+//        if (![topViewController isKindOfClass:[LoginViewController class]]) {
             [self showNoNetworkAlert];
-        } else {
-            [defaultCenter postNotificationName:@"NetworkEnableChange" object:nil];
-        }
+//        } else {
+//            [defaultCenter postNotificationName:@"NetworkEnableChange" object:nil];
+//        }
     } else {
         [defaultCenter postNotificationName:@"NetworkEnableChange" object:nil];
     }
