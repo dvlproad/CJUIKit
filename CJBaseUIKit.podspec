@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 #验证方法：pod lib lint CJBaseUIKit.podspec --allow-warnings --use-libraries --verbose
   s.name         = "CJBaseUIKit"
-  s.version      = "0.2.0"
+  s.version      = "0.2.1"
   s.summary      = "自定义的基础UI"
   s.homepage     = "https://github.com/dvlproad/CJUIKit"
 
@@ -12,7 +12,7 @@ Pod::Spec.new do |s|
                   *、CJTextView：类似微信文本输入框实现
                   *、已在CJMJRefreshComponent中包含pod 'MJRefresh', '~> 3.1.12'
                   *、UIColor+CJHex：用来通过十六进制来设置颜色。 支持@“#123456”、 @“0X123456”、 @“123456”三种格式
-                  *、UIImage+CJCategory：
+                  *、UIImage：
                   *、CJSlider
                   #、CJBaseScrollView：自定义的基础滚动视图
                   1、CJBaseTableViewCell：基础的TableViewCell;
@@ -41,7 +41,7 @@ Pod::Spec.new do |s|
 
   s.platform     = :ios, "7.0"
  
-  s.source       = { :git => "https://github.com/dvlproad/CJUIKit.git", :tag => "CJBaseUIKit_0.2.0" }
+  s.source       = { :git => "https://github.com/dvlproad/CJUIKit.git", :tag => "CJBaseUIKit_0.2.1" }
   s.source_files  = "CJBaseUIKit/*.{h,m}"
 
   s.frameworks = "UIKit"
@@ -52,24 +52,23 @@ Pod::Spec.new do |s|
   # s.dependency "JSONKit", "~> 1.4"
 
 
-  s.subspec 'UIColor+CJCategory' do |ss|
-    ss.source_files = "CJBaseUIKit/UIColor+CJCategory/**/*.{h,m}"
+  s.subspec 'UIColor' do |ss|
+    ss.source_files = "CJBaseUIKit/UIColor/**/*.{h,m}"
   end
 
-  s.subspec 'UIImage+CJCategory' do |ss|
-    ss.source_files = "CJBaseUIKit/UIImage+CJCategory/**/*.{h,m}"
-  end
-
-
-  s.subspec 'UINavigationBar+CJCategory' do |ss|
-    ss.source_files = "CJBaseUIKit/UINavigationBar+CJCategory/**/*.{h,m}"
+  s.subspec 'UIImage' do |ss|
+    ss.source_files = "CJBaseUIKit/UIImage/**/*.{h,m}"
   end
 
 
+  s.subspec 'UINavigationBar' do |ss|
+    ss.source_files = "CJBaseUIKit/UINavigationBar/**/*.{h,m}"
+  end
 
 
 
-  
+
+
 
   s.subspec 'UIView' do |ss|
     ss.source_files = "CJBaseUIKit/UIView/*.{h,m}"
@@ -96,8 +95,8 @@ Pod::Spec.new do |s|
     ss.source_files = "CJBaseUIKit/UIWindow/**/*.{h,m}"
   end
 
-  s.subspec 'UIButton+CJCategory' do |ss|
-    ss.source_files = "CJBaseUIKit/UIButton+CJCategory/**/*.{h,m}"
+  s.subspec 'UIButton' do |ss|
+    ss.source_files = "CJBaseUIKit/UIButton/**/*.{h,m}"
   end
 
   s.subspec 'CJImageView' do |ss|

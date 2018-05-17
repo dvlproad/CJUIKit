@@ -1,16 +1,16 @@
 //
-//  UIImage+CJLaunchImage.m
+//  CJLaunchImageUtil.m
 //  CJUIKitDemo
 //
 //  Created by ciyouzen on 2016/12/14.
 //  Copyright © 2016年 dvlproad. All rights reserved.
 //
 
-#import "UIImage+CJLaunchImage.h"
+#import "CJLaunchImageUtil.h"
 
 NSString * const CJDefaultLaunchImageName = @"LaunchImage";
 
-@implementation UIImage (CJLaunchImage)
+@implementation CJLaunchImageUtil
 
 + (UIImage *)cj_LaunchImageDefault {
     return [self cj_LaunchImageNamed:CJDefaultLaunchImageName];

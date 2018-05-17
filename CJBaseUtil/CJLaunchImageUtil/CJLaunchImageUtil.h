@@ -1,5 +1,5 @@
 //
-//  UIImage+CJLaunchImage.h
+//  CJLaunchImageUtil.h
 //  CJUIKitDemo
 //
 //  Created by ciyouzen on 2016/12/14.
@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface UIImage (CJLaunchImage)
+@interface CJLaunchImageUtil : NSObject
 
 + (UIImage *)cj_LaunchImageDefault;
 

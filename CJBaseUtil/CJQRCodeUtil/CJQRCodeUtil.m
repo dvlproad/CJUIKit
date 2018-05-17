@@ -1,19 +1,19 @@
 //
-//  UIImage+CJQRCode.m
+//  CJQRCodeUtil.m
 //  CJUIKitDemo
 //
 //  Created by ciyouzen on 2017/8/24.
 //  Copyright © 2017年 dvlproad. All rights reserved.
 //
 
-#import "UIImage+CJQRCode.h"
+#import "CJQRCodeUtil.h"
 
-@implementation UIImage (CJQRCode)
+@implementation CJQRCodeUtil
 
 #pragma mark - 创建二维码
 /* 完整的描述请参见文件头部 */
-+ (UIImage *)cj_QRUIImageForQRString:(NSString *)qrString
-                                size:(CGFloat)width
++ (UIImage *)createQRCodeImageWithQRString:(NSString *)qrString
+                                      size:(CGFloat)width
 {
     CIImage *ciImage = [self cj_QRCIImageForQRString:qrString];
     if (ciImage) {
@@ -84,10 +84,10 @@ void ProviderReleaseData (void *info, const void *data, size_t size){
     free((void*)data);
 }
 /* 完整的描述请参见文件头部 */
-- (UIImage *)cj_QRImageWithColor:(UIColor *)color
++ (UIImage *)changeQRCodeImage:(UIImage *)qrCodeImage withColor:(UIColor *)color
 {
-    const int imageWidth    = self.size.width;
-    const int imageHeight   = self.size.height;
+    const int imageWidth    = qrCodeImage.size.width;
+    const int imageHeight   = qrCodeImage.size.height;
     size_t      bytesPerRow = imageWidth * 4;
     uint32_t* rgbImageBuf   = (uint32_t*)malloc(bytesPerRow * imageHeight);
     
@@ -100,7 +100,7 @@ void ProviderReleaseData (void *info, const void *data, size_t size){
                                                  bytesPerRow,
                                                  colorSpace,
                                                  kCGBitmapByteOrder32Little | kCGImageAlphaNoneSkipLast);
-    CGContextDrawImage(context, CGRectMake(0, 0, imageWidth, imageHeight), self.CGImage);
+    CGContextDrawImage(context, CGRectMake(0, 0, imageWidth, imageHeight), qrCodeImage.CGImage);
     
     // 2.遍历像素，改变像素点颜色
     CGFloat r = 0, g = 0, b = 0, a;
@@ -156,18 +156,18 @@ void ProviderReleaseData (void *info, const void *data, size_t size){
 
 #pragma mark - 图片添加水印
 /* 完整的描述请参见文件头部 */
-- (UIImage *)cj_addWaterImage:(UIImage *)waterImage
-                     withSize:(CGSize)waterImageSize
++ (UIImage *)changeQRCodeImage:(UIImage *)qrCodeImage
+             withAddWaterImage:(UIImage *)waterImage
+                waterImageSize:(CGSize)waterImageSize
 {
     //原图
-    UIImage *image = self;
-    UIGraphicsBeginImageContextWithOptions(image.size, NO, [[UIScreen mainScreen] scale]);
-    //UIGraphicsBeginImageContext(image.size);
-    [image drawInRect:CGRectMake(0,0 , image.size.width, image.size.height)];
+    UIGraphicsBeginImageContextWithOptions(qrCodeImage.size, NO, [[UIScreen mainScreen] scale]);
+    //UIGraphicsBeginImageContext(qrCodeImage.size);
+    [qrCodeImage drawInRect:CGRectMake(0,0 , qrCodeImage.size.width, qrCodeImage.size.height)];
     
     //在图片中心添加水印图
-    CGFloat waterImageMinX = (image.size.width - waterImageSize.width)/2;
-    CGFloat waterImageMinY = (image.size.height - waterImageSize.height)/2;
+    CGFloat waterImageMinX = (qrCodeImage.size.width - waterImageSize.width)/2;
+    CGFloat waterImageMinY = (qrCodeImage.size.height - waterImageSize.height)/2;
     [waterImage drawInRect:CGRectMake(waterImageMinX,
                                       waterImageMinY,
                                       waterImageSize.width,

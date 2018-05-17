@@ -9,8 +9,6 @@
 #ifndef UIImageCJCategory_h
 #define UIImageCJCategory_h
 
-#import "UIImage+CJLaunchImage.h"
-
 #import "UIImage+CJCreate.h"
 
 #import "UIImage+CJBase64.h"
@@ -23,9 +21,6 @@
 
 #import "UIImage+CJMakeCircle.h"
 #import "UIImage+SplitImageIntoTwoParts.h"
-
-
-#import "UIImage+CJQRCode.h"
 
 
 

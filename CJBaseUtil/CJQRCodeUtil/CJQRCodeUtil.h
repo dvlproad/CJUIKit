@@ -1,5 +1,5 @@
 //
-//  UIImage+CJQRCode.h
+//  CJQRCodeUtil.h
 //  CJUIKitDemo
 //
 //  Created by ciyouzen on 2017/8/24.
@@ -14,7 +14,7 @@
  *  (附：iOS7之后，可以使用原生的CIFilter创建二维码。关于二维码生成，网上也是有很多，三方库也是有的如zxing，也是挺好用，这里介绍的是通过CIFilter创建二维码。)
  *
  */
-@interface UIImage (CJQRCode)
+@interface CJQRCodeUtil : NSObject
 
 
 #pragma mark - 创建二维码
@@ -26,19 +26,20 @@
  *
  *  @retrun 二维码图片
  */
-+ (UIImage *)cj_QRUIImageForQRString:(NSString *)qrString
-                                size:(CGFloat)width;
++ (UIImage *)createQRCodeImageWithQRString:(NSString *)qrString
+                                      size:(CGFloat)width;
 
 
 #pragma mark - 改变二维码颜色
 /**
  *  遍历像素点，改变图片的颜色(本方法一般只用于改变二维码的颜色)
  *
- *  @param color 图片要改变成的颜色
+ *  @param qrCodeImage  要改变颜色的二维码
+ *  @param color        图片要改变成的颜色
  *
  *  @return 处理完后的图片
  */
-- (UIImage *)cj_QRImageWithColor:(UIColor *)color;
++ (UIImage *)changeQRCodeImage:(UIImage *)qrCodeImage withColor:(UIColor *)color;
 
 
 
@@ -46,12 +47,14 @@
 /**
  *  在图片中心添加水印(常用于在二维码中间添加一张icon图片)
  *
+ *  @param qrCodeImage      要添加水印的二维码
  *  @param waterImage       原图上要添加的水印图片
  *  @param waterImageSize   原图上要添加的水印图片的大小
  *
  *  @retrun 添加了水印图片的图片
  */
-- (UIImage *)cj_addWaterImage:(UIImage *)waterImage
-                     withSize:(CGSize)waterImageSize;
++ (UIImage *)changeQRCodeImage:(UIImage *)qrCodeImage
+             withAddWaterImage:(UIImage *)waterImage
+                waterImageSize:(CGSize)waterImageSize;
 
 @end

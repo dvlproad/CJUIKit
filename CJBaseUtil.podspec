@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "CJBaseUtil"
-  s.version      = "0.2.8"
+  s.version      = "0.2.9"
   s.summary      = "自定义的基础工具类"
   s.homepage     = "https://github.com/dvlproad/CJUIKit"
   s.license      = "MIT"
@@ -18,6 +18,8 @@ Pod::Spec.new do |s|
                   9、CJManager：其他各种工具类
                   10、CJPinyinHelper：拼音相关工具
                   11、CJCallUtil：拨打电话工具
+                  *、CJQRCodeUtil：二维码
+                  *、CJLaunchImageUtil：启动图
 
                    A longer description of CJBaseUtil in Markdown format.
 
@@ -31,7 +33,7 @@ Pod::Spec.new do |s|
 
   s.platform     = :ios, "7.0"
 
-  s.source       = { :git => "https://github.com/dvlproad/CJUIKit.git", :tag => "CJBaseUtil_0.2.8" }
+  s.source       = { :git => "https://github.com/dvlproad/CJUIKit.git", :tag => "CJBaseUtil_0.2.9" }
   # s.source_files  = "CJBaseUtil/*.{h,m}"
   # s.resources = "CJBaseUtil/**/*.{png}"
   s.frameworks = 'UIKit'
@@ -94,6 +96,16 @@ Pod::Spec.new do |s|
   # 拨打电话
   s.subspec 'CJCallUtil' do |ss|
     ss.source_files = "CJBaseUtil/CJCallUtil/**/*.{h,m}"
+  end
+
+  # 二维码
+  s.subspec 'CJQRCodeUtil' do |ss|
+    ss.source_files = "CJBaseUtil/CJQRCodeUtil/**/*.{h,m}"
+  end
+
+  # 启动图
+  s.subspec 'CJLaunchImageUtil' do |ss|
+    ss.source_files = "CJBaseUtil/CJLaunchImageUtil/**/*.{h,m}"
   end
 
 

@@ -7,7 +7,7 @@
 //
 
 #import "QRCodeViewController.h"
-#import "UIImage+CJQRCode.h"
+#import "CJQRCodeUtil.h"
 
 @interface QRCodeViewController () {
     
@@ -26,9 +26,9 @@
 }
 
 - (void)createQRCodeImage {
-    UIImage *qrCodeImage = [UIImage cj_QRUIImageForQRString:@"http://weixin.qq.com/r/0UxTS0nEJBRbrQ0o9xnD" size:100]; //创建二维码
-    qrCodeImage = [qrCodeImage cj_QRImageWithColor:[UIColor redColor]]; //改变二维码颜色
-    qrCodeImage = [qrCodeImage cj_addWaterImage:[UIImage imageNamed:@"bg.jpg"] withSize:CGSizeMake(40, 40)]; //添加二维码水印
+    UIImage *qrCodeImage = [CJQRCodeUtil createQRCodeImageWithQRString:@"http://weixin.qq.com/r/0UxTS0nEJBRbrQ0o9xnD" size:100]; //创建二维码
+    qrCodeImage = [CJQRCodeUtil changeQRCodeImage:qrCodeImage withColor:[UIColor redColor]];    //改变二维码颜色
+    [CJQRCodeUtil changeQRCodeImage:qrCodeImage withAddWaterImage:[UIImage imageNamed:@"bg.jpg"]  waterImageSize:CGSizeMake(40, 40)];  //添加二维码水印
     
     self.qrCodeImageView.image = qrCodeImage;
 }

@@ -8,7 +8,7 @@
 
 #import "ImageChangeColorViewController.h"
 #import "UIImage+CJChangeColor.h"
-#import "UIImage+CJQRCode.h"
+#import "CJQRCodeUtil.h"
 
 @interface ImageChangeColorViewController ()
 
@@ -35,7 +35,7 @@
     //kCGBlendModeOverlay
     self.imageView2.image = [originImage cj_imageWithGradientTintColor:[UIColor orangeColor]];
     
-    self.imageView3.image = [originImage cj_QRImageWithColor:[UIColor orangeColor]];
+    self.imageView3.image = [CJQRCodeUtil changeQRCodeImage:originImage withColor:[UIColor orangeColor]];
 }
 
 - (void)didReceiveMemoryWarning {
