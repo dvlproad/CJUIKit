@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "CJComplexUIKit"
-  s.version      = "0.0.8"
+  s.version      = "0.0.9"
   s.summary      = "自定义的稍微复杂的UI"
   s.homepage     = "https://github.com/dvlproad/CJUIKit"
 
@@ -29,7 +29,7 @@ Pod::Spec.new do |s|
 
   s.platform     = :ios, "7.0"
  
-  s.source       = { :git => "https://github.com/dvlproad/CJUIKit.git", :tag => "CJComplexUIKit_0.0.8" }
+  s.source       = { :git => "https://github.com/dvlproad/CJUIKit.git", :tag => "CJComplexUIKit_0.0.9" }
   s.source_files  = "CJComplexUIKit/*.{h,m}"
 
   s.frameworks = "UIKit"
@@ -83,7 +83,6 @@ Pod::Spec.new do |s|
 
       # 图片选择功能需要依赖的库
       sss.dependency 'JGActionSheet'
-      sss.dependency 'CJBaseUIKit/UIImage+CJCategory'
       sss.dependency 'CJBaseUIKit/CJCollectionView/MyEqualCellSizeCollectionView'
       sss.dependency 'CJBaseUIKit/CJCollectionView/CJBaseCollectionViewCell'
 
