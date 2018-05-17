@@ -61,15 +61,6 @@ Pod::Spec.new do |s|
   end
 
 
-
-
-
-
-  s.subspec 'UIViewController' do |ss|
-    ss.source_files = "CJBaseUIKit/UIViewController/**/*.{h,m}"
-    ss.resources = "CJBaseUIKit/UIViewController/**/*.{png,xib}"
-  end
-
   s.subspec 'UINavigationBar+CJCategory' do |ss|
     ss.source_files = "CJBaseUIKit/UINavigationBar+CJCategory/**/*.{h,m}"
   end

@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "CJComplexUIKit"
-  s.version      = "0.0.7"
+  s.version      = "0.0.8"
   s.summary      = "自定义的稍微复杂的UI"
   s.homepage     = "https://github.com/dvlproad/CJUIKit"
 
@@ -29,7 +29,7 @@ Pod::Spec.new do |s|
 
   s.platform     = :ios, "7.0"
  
-  s.source       = { :git => "https://github.com/dvlproad/CJUIKit.git", :tag => "CJComplexUIKit_0.0.7" }
+  s.source       = { :git => "https://github.com/dvlproad/CJUIKit.git", :tag => "CJComplexUIKit_0.0.8" }
   s.source_files  = "CJComplexUIKit/*.{h,m}"
 
   s.frameworks = "UIKit"
@@ -43,13 +43,25 @@ Pod::Spec.new do |s|
   
   # UIViewController
   s.subspec 'UIViewController' do |ss|
-    ss.source_files = "CJComplexUIKit/UIViewController/**/*.{h,m}"
+    ss.subspec 'Category' do |sss|
+      sss.source_files = "CJComplexUIKit/UIViewController/Category/**/*.{h,m}"
+    end
 
-    ss.dependency 'Masonry'
-    # 搜索功能需要依赖的库
-    ss.dependency 'CJBaseUtil/CJWebUtil'
-    ss.dependency 'SVProgressHUD'
-    ss.dependency 'NJKWebViewProgress'
+    ss.subspec 'ProgressWebViewController' do |sss|
+      sss.source_files = "CJComplexUIKit/UIViewController/ProgressWebViewController/**/*.{h,m}"
+
+      sss.dependency 'Masonry'
+      sss.dependency 'SVProgressHUD'
+      sss.dependency 'NJKWebViewProgress'
+    end
+
+    ss.subspec 'BaseWebViewController' do |sss|
+      sss.source_files = "CJComplexUIKit/UIViewController/BaseWebViewController/**/*.{h,m}"
+
+      sss.dependency 'Masonry'
+      sss.dependency 'SVProgressHUD'
+      sss.dependency 'CJBaseUtil/CJWebUtil'
+    end
   end
 
 
