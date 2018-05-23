@@ -259,6 +259,11 @@
 		807903161FB413D60082F05C /* arrow_R_gray@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8079030D1FB413D60082F05C /* arrow_R_gray@2x.png */; };
 		807903171FB413D60082F05C /* arrow_R_white@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8079030E1FB413D60082F05C /* arrow_R_white@2x.png */; };
 		807903181FB413D60082F05C /* arrow_up.png in Resources */ = {isa = PBXBuildFile; fileRef = 8079030F1FB413D60082F05C /* arrow_up.png */; };
+		807F125A20B4F70E0008B748 /* UIView+CJAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 807F125920B4F70E0008B748 /* UIView+CJAnimation.m */; };
+		807F125F20B507A30008B748 /* ViewAnimateViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 807F125D20B507A20008B748 /* ViewAnimateViewController.xib */; };
+		807F126020B507A30008B748 /* ViewAnimateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 807F125E20B507A30008B748 /* ViewAnimateViewController.m */; };
+		807F126C20B5123A0008B748 /* animationBg02.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 807F126A20B512390008B748 /* animationBg02.jpg */; };
+		807F127020B51C390008B748 /* animationBg01.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 807F126F20B51C390008B748 /* animationBg01.jpg */; };
 		808BF3242019C3E900511F7C /* YunUncaughtExceptionHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 808BF3222019C3E900511F7C /* YunUncaughtExceptionHandler.m */; };
 		808BF327201A011400511F7C /* UITextField+CJPadding.m in Sources */ = {isa = PBXBuildFile; fileRef = 808BF326201A011400511F7C /* UITextField+CJPadding.m */; };
 		80C2E18F20916BD3007D7119 /* BBXPassengerEmptyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80C2E18D20916BD3007D7119 /* BBXPassengerEmptyViewController.m */; };
@@ -863,6 +868,13 @@
 		8079030D1FB413D60082F05C /* arrow_R_gray@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrow_R_gray@2x.png"; sourceTree = "<group>"; };
 		8079030E1FB413D60082F05C /* arrow_R_white@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrow_R_white@2x.png"; sourceTree = "<group>"; };
 		8079030F1FB413D60082F05C /* arrow_up.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = arrow_up.png; sourceTree = "<group>"; };
+		807F125820B4F70E0008B748 /* UIView+CJAnimation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+CJAnimation.h"; sourceTree = "<group>"; };
+		807F125920B4F70E0008B748 /* UIView+CJAnimation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+CJAnimation.m"; sourceTree = "<group>"; };
+		807F125C20B507A20008B748 /* ViewAnimateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewAnimateViewController.h; sourceTree = "<group>"; };
+		807F125D20B507A20008B748 /* ViewAnimateViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ViewAnimateViewController.xib; sourceTree = "<group>"; };
+		807F125E20B507A30008B748 /* ViewAnimateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewAnimateViewController.m; sourceTree = "<group>"; };
+		807F126A20B512390008B748 /* animationBg02.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = animationBg02.jpg; sourceTree = "<group>"; };
+		807F126F20B51C390008B748 /* animationBg01.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = animationBg01.jpg; sourceTree = "<group>"; };
 		808BF3222019C3E900511F7C /* YunUncaughtExceptionHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YunUncaughtExceptionHandler.m; sourceTree = "<group>"; };
 		808BF3232019C3E900511F7C /* YunUncaughtExceptionHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YunUncaughtExceptionHandler.h; sourceTree = "<group>"; };
 		808BF325201A011400511F7C /* UITextField+CJPadding.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UITextField+CJPadding.h"; sourceTree = "<group>"; };
@@ -1347,6 +1359,7 @@
 		7850B7152093809F008F4A21 /* UIView */ = {
 			isa = PBXGroup;
 			children = (
+				807F125720B4F6E30008B748 /* CJAnimation */,
 				7850B73520938518008F4A21 /* CJGestureRecognizer */,
 				7850B71D2093809F008F4A21 /* CJDragAction */,
 				7850B7162093809F008F4A21 /* CJPopupAction */,
@@ -2381,6 +2394,27 @@
 			path = arrow;
 			sourceTree = "<group>";
 		};
+		807F125720B4F6E30008B748 /* CJAnimation */ = {
+			isa = PBXGroup;
+			children = (
+				807F125820B4F70E0008B748 /* UIView+CJAnimation.h */,
+				807F125920B4F70E0008B748 /* UIView+CJAnimation.m */,
+			);
+			path = CJAnimation;
+			sourceTree = "<group>";
+		};
+		807F125B20B507340008B748 /* ViewAnimateDemo */ = {
+			isa = PBXGroup;
+			children = (
+				807F125C20B507A20008B748 /* ViewAnimateViewController.h */,
+				807F125E20B507A30008B748 /* ViewAnimateViewController.m */,
+				807F125D20B507A20008B748 /* ViewAnimateViewController.xib */,
+				807F126F20B51C390008B748 /* animationBg01.jpg */,
+				807F126A20B512390008B748 /* animationBg02.jpg */,
+			);
+			path = ViewAnimateDemo;
+			sourceTree = "<group>";
+		};
 		808BF3212019C3E900511F7C /* Utils */ = {
 			isa = PBXGroup;
 			children = (
@@ -2845,6 +2879,7 @@
 		80FF8FC11FC5649E00E437CF /* DemosView */ = {
 			isa = PBXGroup;
 			children = (
+				807F125B20B507340008B748 /* ViewAnimateDemo */,
 				7850B6EE20937C59008F4A21 /* ViewDragDemo */,
 				7850B6F220937C59008F4A21 /* ViewPopupDemo */,
 				80D71EA52090274200D2DB68 /* CJAlertDemo */,
@@ -3511,6 +3546,7 @@
 				80FF90B51FC5649F00E437CF /* CJMJRefreshViewController.xib in Resources */,
 				8014A28B1FA2C81A00DDDB5A /* icons8-folder.png in Resources */,
 				80FF903E1FC5649F00E437CF /* ScrollViewHomeViewController.xib in Resources */,
+				807F125F20B507A30008B748 /* ViewAnimateViewController.xib in Resources */,
 				803323C020299AD7001DACF1 /* cvSupplementaryHead.xib in Resources */,
 				789CAF2C1FB612B700AF8CD4 /* cjCheckBoxGreen2NO.png in Resources */,
 				789CAF531FB612B700AF8CD4 /* CJToast_error@3x.png in Resources */,
@@ -3582,6 +3618,7 @@
 				803323BD20299AD7001DACF1 /* NibCell.xib in Resources */,
 				8033239720299AD7001DACF1 /* MemoryADKnowledge04.jpg in Resources */,
 				800E07E32016CCF500799B78 /* DeviceInfoViewController.xib in Resources */,
+				807F126C20B5123A0008B748 /* animationBg02.jpg in Resources */,
 				789CAF301FB612B700AF8CD4 /* cjCheckBoxOrangeYES@2x.png in Resources */,
 				8014A28C1FA2C81A00DDDB5A /* icons8-home.png in Resources */,
 				803323A820299AD7001DACF1 /* MemoryAD08.jpg in Resources */,
@@ -3590,6 +3627,7 @@
 				80FF908F1FC5649F00E437CF /* CustomTableViewCell.xib in Resources */,
 				807903101FB413D60082F05C /* arrow_back_red@2x.png in Resources */,
 				803323B820299AD7001DACF1 /* MyEqualCellSizeViewController.xib in Resources */,
+				807F127020B51C390008B748 /* animationBg01.jpg in Resources */,
 				80FF90891FC5649F00E437CF /* DemoTableViewController.xib in Resources */,
 				800F3B662011899400A5C326 /* ToastViewController.xib in Resources */,
 				80FF919D1FC5682B00E437CF /* CountDownTimeViewController.xib in Resources */,
@@ -3725,6 +3763,7 @@
 				789CAF1E1FB612B700AF8CD4 /* CJCollectionViewHeaderFooterView.m in Sources */,
 				7850B71320937E85008F4A21 /* WelcomeViewToPop.m in Sources */,
 				789CAF7E1FB612B700AF8CD4 /* CJUploadImageCollectionView+Tap.m in Sources */,
+				807F126020B507A30008B748 /* ViewAnimateViewController.m in Sources */,
 				789CAF6C1FB612B700AF8CD4 /* CJDefaultToolbar.m in Sources */,
 				804478272061F328007185EF /* CJLocationChangeManager.m in Sources */,
 				80FF91491FC5668700E437CF /* NSObject+SearchProperty.m in Sources */,
@@ -3781,6 +3820,7 @@
 				80FF90AE1FC5649F00E437CF /* EasyScaleHeadView.m in Sources */,
 				80E7E6F520AD2627000F762D /* UIViewController+CJCustomBackBarButtonItem.m in Sources */,
 				80FF90A21FC5649F00E437CF /* SampleViewController.m in Sources */,
+				807F125A20B4F70E0008B748 /* UIView+CJAnimation.m in Sources */,
 				80E7E75520AD2C8B000F762D /* UIImage+CJChangeColor.m in Sources */,
 				80FF91521FC5668700E437CF /* CJLogUtil.m in Sources */,
 				80E7E6F420AD2627000F762D /* DemoEmptyView.m in Sources */,

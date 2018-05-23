@@ -21,6 +21,8 @@
 #import "PopupInViewVC.h"
 #import "ShowExtendViewVC.h"
 #import "ShowDropDownViewController.h"
+//ViewAnimate
+#import "ViewAnimateViewController.h"
 
 #import "FloatingWindowViewController.h"
 
@@ -114,6 +116,13 @@
             popupInWindowModule.classEntry = [PopupInWindowVC class];
             [sectionDataModel.values addObject:popupInWindowModule];
         }
+        {
+            CJModuleModel *animateViewModule = [[CJModuleModel alloc] init];
+            animateViewModule.title = @"ViewAnimate (View动画)";
+            animateViewModule.classEntry = [ViewAnimateViewController class];
+            [sectionDataModel.values addObject:animateViewModule];
+        }
+        
         {
             CJModuleModel *popupInViewModule = [[CJModuleModel alloc] init];
             popupInViewModule.title = @"PopupInView (弹出到任意View)";
