@@ -11,7 +11,7 @@
 
 static NSString * const kCJKeychainServiceName = @"cj_keychainServiceName";
 //账号相关
-static NSString * const kCJAPPLastLoginAccount = @"cj_lastLoginAccount";
+static NSString * const kCJLastLoginAccount = @"cj_lastLoginAccount";
 
 
 @implementation CJAppLastUtil
@@ -24,14 +24,14 @@ static NSString * const kCJAPPLastLoginAccount = @"cj_lastLoginAccount";
  */
 + (void)saveLastLoginAccount:(NSString *)account {
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
-    [userDefaults setValue:account forKey:kCJAPPLastLoginAccount];
+    [userDefaults setValue:account forKey:kCJLastLoginAccount];
     [userDefaults synchronize];
 }
 
 /* 完整的描述请参见文件头部 */
 + (NSString *)getLastLoginAccount {
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
-    NSString *account = [userDefaults valueForKey:kCJAPPLastLoginAccount];
+    NSString *account = [userDefaults valueForKey:kCJLastLoginAccount];
     
     return account;
 }

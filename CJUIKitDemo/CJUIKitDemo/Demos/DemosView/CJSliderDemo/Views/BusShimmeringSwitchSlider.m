@@ -110,13 +110,13 @@
         return label;
     };
     
-    void(^configureMaximumTrackViewBlock)(UIView *maximumTrackView, CJSwitchSliderStatusModel *statusModel, BOOL useDragingStauts) = ^ (UIView *maximumTrackView, CJSwitchSliderStatusModel *statusModel, BOOL isDragingStauts) {
+    void(^updateMaximumTrackViewBlock)(UIView *maximumTrackView, CJSwitchSliderStatusModel *statusModel, BOOL useDragingStauts) = ^ (UIView *maximumTrackView, CJSwitchSliderStatusModel *statusModel, BOOL isDragingStauts) {
         UILabel *c_maximumTrackView = (UILabel *)maximumTrackView;
         [c_maximumTrackView setText:statusModel.normalText];
         [c_maximumTrackView setBackgroundColor:statusModel.normalColor];
     };
     
-    void(^configureTrackViewBlock)(UIView *maximumTrackView, CJSwitchSliderStatusModel *statusModel, BOOL useDragingStauts) = ^ (UIView *maximumTrackView, CJSwitchSliderStatusModel *statusModel, BOOL isDragingStauts) {
+    void(^updateTrackViewBlock)(UIView *maximumTrackView, CJSwitchSliderStatusModel *statusModel, BOOL useDragingStauts) = ^ (UIView *maximumTrackView, CJSwitchSliderStatusModel *statusModel, BOOL isDragingStauts) {
         UILabel *c_maximumTrackView = (UILabel *)maximumTrackView;
         [c_maximumTrackView setText:statusModel.normalText];
         [c_maximumTrackView setBackgroundColor:statusModel.normalColor];
@@ -124,8 +124,9 @@
     [switchSlider setupViewWithCreateTrackViewBlock:createTrackViewBlock
                         createMinimumTrackViewBlock:createMinimumTrackViewBlock
                         createMaximumTrackViewBlock:createMaximumTrackViewBlock];
-    switchSlider.configureMaximumTrackViewBlock = configureMaximumTrackViewBlock;
-    switchSlider.configureTrackViewBlock = configureTrackViewBlock;
+    [switchSlider setupUpdateTrackViewBlock:updateTrackViewBlock
+                updateMinimumTrackViewBlock:nil
+                updateMaximumTrackViewBlock:updateMaximumTrackViewBlock];
     
     
     UIImage *mainThumbImage = [UIImage imageNamed:@"details_icon_huadong"];

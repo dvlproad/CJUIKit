@@ -13,6 +13,9 @@
 
 #import "NestedXibViewController.h"
 
+//image
+#import "ImageViewController.h"
+
 #import "SampleViewController.h"
 //ViewDrag
 #import "DragViewController.h"
@@ -27,10 +30,6 @@
 #import "FloatingWindowViewController.h"
 
 #import "ButtonViewController.h"
-
-//image
-#import "ImageViewController.h"
-#import "QRCodeViewController.h"
 
 #import "TextFieldViewController.h"
 #import "TextViewController.h"
@@ -87,6 +86,20 @@
         [sectionDataModels addObject:sectionDataModel];
     }
     
+    //UIImage
+    {
+        CJSectionDataModel *sectionDataModel = [[CJSectionDataModel alloc] init];
+        sectionDataModel.theme = @"UIImage相关";
+        {
+            CJModuleModel *UIImageModuleModel = [[CJModuleModel alloc] init];
+            UIImageModuleModel.title = @"UIImage(改变颜色)";
+            UIImageModuleModel.classEntry = [ImageChangeColorViewController class];
+            [sectionDataModel.values addObject:UIImageModuleModel];
+        }
+        
+        [sectionDataModels addObject:sectionDataModel];
+    }
+    
     //UIViewController
     {
         CJSectionDataModel *sectionDataModel = [[CJSectionDataModel alloc] init];
@@ -97,6 +110,32 @@
             ViewCategoryModule.classEntry = [SampleViewController class];
             [sectionDataModel.values addObject:ViewCategoryModule];
         }
+        [sectionDataModels addObject:sectionDataModel];
+    }
+    
+    //UINavigationBar
+    {
+        CJSectionDataModel *sectionDataModel = [[CJSectionDataModel alloc] init];
+        sectionDataModel.theme = @"UINavigationBar相关";
+        {
+            CJModuleModel *UINavigationBarModuleModel1 = [[CJModuleModel alloc] init];
+            UINavigationBarModuleModel1.title = @"UINavigationBar(导航栏的设置)";
+            UINavigationBarModuleModel1.classEntry = [NavigationBarViewController class];
+            [sectionDataModel.values addObject:UINavigationBarModuleModel1];
+        }
+        {
+            CJModuleModel *UINavigationBarModuleModel1 = [[CJModuleModel alloc] init];
+            UINavigationBarModuleModel1.title = @"UINavigationBar(常见的导航栏背景色改变隐藏)";
+            UINavigationBarModuleModel1.classEntry = [NavigationBarChangeBGViewController class];
+            [sectionDataModel.values addObject:UINavigationBarModuleModel1];
+        }
+        {
+            CJModuleModel *UINavigationBarModuleModel2 = [[CJModuleModel alloc] init];
+            UINavigationBarModuleModel2.title = @"UINavigationBar(类似斗鱼的导航栏移动隐藏)";
+            UINavigationBarModuleModel2.classEntry = [NavigationBarChangePositonViewController class];
+            [sectionDataModel.values addObject:UINavigationBarModuleModel2];
+        }
+        
         [sectionDataModels addObject:sectionDataModel];
     }
     
@@ -149,13 +188,7 @@
         CJSectionDataModel *sectionDataModel = [[CJSectionDataModel alloc] init];
         sectionDataModel.theme = @"UIView的子类相关";
         {
-            //CJImageView
-            CJModuleModel *cjImageViewModuleModel = [[CJModuleModel alloc] init];
-            cjImageViewModuleModel.title = @"CJImageView";
-            cjImageViewModuleModel.classEntry = [ImageViewController class];
-            [sectionDataModel.values addObject:cjImageViewModuleModel];
-        }
-        {
+            //UIButton
             CJModuleModel *buttonModule = [[CJModuleModel alloc] init];
             buttonModule.title = @"UIButton";
             buttonModule.classEntry = [ButtonViewController class];
@@ -176,25 +209,11 @@
             [sectionDataModel.values addObject:textViewModule];
         }
         {
-            //Slider
-            CJModuleModel *sliderModule = [[CJModuleModel alloc] init];
-            sliderModule.title = @"Slider--CJSliderControl";
-            sliderModule.classEntry = [SliderViewController class];
-            [sectionDataModel.values addObject:sliderModule];
-        }
-        {
-            //RangeSlider
-            CJModuleModel *sliderModule = [[CJModuleModel alloc] init];
-            sliderModule.title = @"Slider--RangeSlider";
-            sliderModule.classEntry = [RangeSliderViewController class];
-            [sectionDataModel.values addObject:sliderModule];
-        }
-        {
-            //SwitchSlider
-            CJModuleModel *sliderModule = [[CJModuleModel alloc] init];
-            sliderModule.title = @"Slider--SwitchSlider";
-            sliderModule.classEntry = [SwitchSliderViewController class];
-            [sectionDataModel.values addObject:sliderModule];
+            //CJImageView
+            CJModuleModel *cjImageViewModuleModel = [[CJModuleModel alloc] init];
+            cjImageViewModuleModel.title = @"CJImageView";
+            cjImageViewModuleModel.classEntry = [ImageViewController class];
+            [sectionDataModel.values addObject:cjImageViewModuleModel];
         }
         {
             //CJSearchBar
@@ -203,38 +222,35 @@
             cjSearchBarModuleModel.classEntry = [SearchBarViewController class];
             [sectionDataModel.values addObject:cjSearchBarModuleModel];
         }
-        {
-            //UIImage
-            CJModuleModel *UIImageModuleModel = [[CJModuleModel alloc] init];
-            UIImageModuleModel.title = @"UIImage";
-            UIImageModuleModel.classEntry = [ImageChangeColorViewController class];
-            [sectionDataModel.values addObject:UIImageModuleModel];
-        }
-        {
-            CJModuleModel *QRCodeModule = [[CJModuleModel alloc] init];
-            QRCodeModule.title = @"QRCode";
-            QRCodeModule.classEntry = [QRCodeViewController class];
-            [sectionDataModel.values addObject:QRCodeModule];
-        }
         
-        //UINavigationBar
+        
+        [sectionDataModels addObject:sectionDataModel];
+    }
+    
+    //Slider(滑块)
+    {
+        CJSectionDataModel *sectionDataModel = [[CJSectionDataModel alloc] init];
+        sectionDataModel.theme = @"Slider(滑块)";
         {
-            CJModuleModel *UINavigationBarModuleModel1 = [[CJModuleModel alloc] init];
-            UINavigationBarModuleModel1.title = @"UINavigationBar(导航栏的设置)";
-            UINavigationBarModuleModel1.classEntry = [NavigationBarViewController class];
-            [sectionDataModel.values addObject:UINavigationBarModuleModel1];
+            //Slider
+            CJModuleModel *sliderModule = [[CJModuleModel alloc] init];
+            sliderModule.title = @"CJSliderControl";
+            sliderModule.classEntry = [SliderViewController class];
+            [sectionDataModel.values addObject:sliderModule];
         }
         {
-            CJModuleModel *UINavigationBarModuleModel1 = [[CJModuleModel alloc] init];
-            UINavigationBarModuleModel1.title = @"UINavigationBar(常见的导航栏背景色改变隐藏)";
-            UINavigationBarModuleModel1.classEntry = [NavigationBarChangeBGViewController class];
-            [sectionDataModel.values addObject:UINavigationBarModuleModel1];
+            //RangeSlider
+            CJModuleModel *sliderModule = [[CJModuleModel alloc] init];
+            sliderModule.title = @"RangeSlider";
+            sliderModule.classEntry = [RangeSliderViewController class];
+            [sectionDataModel.values addObject:sliderModule];
         }
         {
-            CJModuleModel *UINavigationBarModuleModel2 = [[CJModuleModel alloc] init];
-            UINavigationBarModuleModel2.title = @"UINavigationBar(类似斗鱼的导航栏移动隐藏)";
-            UINavigationBarModuleModel2.classEntry = [NavigationBarChangePositonViewController class];
-            [sectionDataModel.values addObject:UINavigationBarModuleModel2];
+            //SwitchSlider
+            CJModuleModel *sliderModule = [[CJModuleModel alloc] init];
+            sliderModule.title = @"SwitchSlider";
+            sliderModule.classEntry = [SwitchSliderViewController class];
+            [sectionDataModel.values addObject:sliderModule];
         }
         [sectionDataModels addObject:sectionDataModel];
     }

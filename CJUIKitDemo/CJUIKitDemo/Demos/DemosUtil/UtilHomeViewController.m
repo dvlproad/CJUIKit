@@ -10,12 +10,21 @@
 
 #import "CJModuleModel.h"
 
+//弹窗
+#import "ToastViewController.h"
+#import "AlertViewController.h"
+
+//Log
+#import "LogViewController.h"
+
+//image
+#import "QRCodeViewController.h"
+
 #import "DeviceInfoViewController.h"
 
 #import "DataUtilViewController.h"
 
-#import "ToastViewController.h"
-#import "AlertViewController.h"
+
 
 #import "KeyboardUtilViewController.h"
 
@@ -39,7 +48,56 @@
     
     
     NSMutableArray *sectionDataModels = [[NSMutableArray alloc] init];
-    //Util
+    //弹窗
+    {
+        CJSectionDataModel *sectionDataModel = [[CJSectionDataModel alloc] init];
+        sectionDataModel.theme = @"弹窗相关";
+        {
+            CJModuleModel *toastUtilModule = [[CJModuleModel alloc] init];
+            toastUtilModule.title = @"Toast";
+            toastUtilModule.classEntry = [ToastViewController class];
+            [sectionDataModel.values addObject:toastUtilModule];
+        }
+        {
+            CJModuleModel *alertUtilModule = [[CJModuleModel alloc] init];
+            alertUtilModule.title = @"Alert";
+            alertUtilModule.classEntry = [AlertViewController class];
+            [sectionDataModel.values addObject:alertUtilModule];
+        }
+        
+        [sectionDataModels addObject:sectionDataModel];
+    }
+    
+    //Log
+    {
+        CJSectionDataModel *sectionDataModel = [[CJSectionDataModel alloc] init];
+        sectionDataModel.theme = @"日志(Log)相关";
+        {
+            CJModuleModel *toastUtilModule = [[CJModuleModel alloc] init];
+            toastUtilModule.title = @"Log(输入、输出)";
+            toastUtilModule.classEntry = [LogViewController class];
+            [sectionDataModel.values addObject:toastUtilModule];
+        }
+        
+        [sectionDataModels addObject:sectionDataModel];
+    }
+    
+    //image
+    {
+        CJSectionDataModel *sectionDataModel = [[CJSectionDataModel alloc] init];
+        sectionDataModel.theme = @"image相关";
+        
+        {
+            CJModuleModel *QRCodeModule = [[CJModuleModel alloc] init];
+            QRCodeModule.title = @"QRCode(二维码)";
+            QRCodeModule.classEntry = [QRCodeViewController class];
+            [sectionDataModel.values addObject:QRCodeModule];
+        }
+        
+        [sectionDataModels addObject:sectionDataModel];
+    }
+    
+    //其他
     {
         CJSectionDataModel *sectionDataModel = [[CJSectionDataModel alloc] init];
         sectionDataModel.theme = @"Util相关";
@@ -55,18 +113,7 @@
             dataUtilModule.classEntry = [DataUtilViewController class];
             [sectionDataModel.values addObject:dataUtilModule];
         }
-        {
-            CJModuleModel *toastUtilModule = [[CJModuleModel alloc] init];
-            toastUtilModule.title = @"Toast";
-            toastUtilModule.classEntry = [ToastViewController class];
-            [sectionDataModel.values addObject:toastUtilModule];
-        }
-        {
-            CJModuleModel *alertUtilModule = [[CJModuleModel alloc] init];
-            alertUtilModule.title = @"Alert";
-            alertUtilModule.classEntry = [AlertViewController class];
-            [sectionDataModel.values addObject:alertUtilModule];
-        }
+        
         {
             CJModuleModel *keyboardUtilModule = [[CJModuleModel alloc] init];
             keyboardUtilModule.title = @"KeyboardUtil(键盘高度)";
@@ -76,6 +123,8 @@
         
         [sectionDataModels addObject:sectionDataModel];
     }
+    
+    
     self.sectionDataModels = sectionDataModels;
 }
 

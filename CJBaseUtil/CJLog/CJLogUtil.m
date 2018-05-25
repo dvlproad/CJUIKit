@@ -74,12 +74,12 @@ void CJAppLog(CJAppLogType appLogType, NSString *tag, NSString *format, ...) //t
     NSString *cjLogDirectoryPath = [documentPath stringByAppendingPathComponent:@"CJLog"];
     
     NSFileManager *fileManager = [NSFileManager defaultManager];
-    if(![fileManager fileExistsAtPath:cjLogDirectoryPath]){//如果不存在，则建立这个文件夹
+    if(![fileManager fileExistsAtPath:cjLogDirectoryPath]) {//如果不存在，则建立这个文件夹
         [fileManager createDirectoryAtPath:cjLogDirectoryPath withIntermediateDirectories:YES attributes:nil error:nil];
     }
     
     NSString *logFilePath = [cjLogDirectoryPath stringByAppendingPathComponent:logFileName];
-    if(![fileManager fileExistsAtPath:logFilePath]){//如果不存在，则建立这个文件夹
+    if(![fileManager fileExistsAtPath:logFilePath]) {//如果不存在，则建立这个文件夹
         [fileManager createFileAtPath:logFilePath contents:nil attributes:nil];
     }
     
@@ -105,6 +105,46 @@ void CJAppLog(CJAppLogType appLogType, NSString *tag, NSString *format, ...) //t
     
     //关闭读写文件
     [fileHandle closeFile];
+}
+
+/* 完整的描述请参见文件头部 */
++ (BOOL)cj_removeLogFileName:(NSString *)logFileName {
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory,NSUserDomainMask, YES);
+    NSString *documentPath = [paths objectAtIndex:0];
+    
+    NSString *cjLogDirectoryPath = [documentPath stringByAppendingPathComponent:@"CJLog"];
+    
+    NSFileManager *fileManager = [NSFileManager defaultManager];
+    if(![fileManager fileExistsAtPath:cjLogDirectoryPath]) {
+        //NSLog(@"Document下不存在CJLog目录，则默认删除成功");
+        return YES;
+    }
+    
+    NSString *logFilePath = [cjLogDirectoryPath stringByAppendingPathComponent:logFileName];
+    if(![fileManager fileExistsAtPath:logFilePath]) {
+        //NSLog(@"CJLog下不存在该文件，则默认删除成功");
+        return YES;
+    }
+    
+    BOOL removeSuccess = [[NSFileManager defaultManager] removeItemAtPath:logFilePath error:nil];
+    return removeSuccess;
+}
+
+/* 完整的描述请参见文件头部 */
++ (BOOL)cj_removeLogDirectory {
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory,NSUserDomainMask, YES);
+    NSString *documentPath = [paths objectAtIndex:0];
+    
+    NSString *cjLogDirectoryPath = [documentPath stringByAppendingPathComponent:@"CJLog"];
+    
+    NSFileManager *fileManager = [NSFileManager defaultManager];
+    if(![fileManager fileExistsAtPath:cjLogDirectoryPath]) {
+        //NSLog(@"Document下不存在CJLog目录，则默认删除成功");
+        return YES;
+    }
+    
+    BOOL removeSuccess = [[NSFileManager defaultManager] removeItemAtPath:cjLogDirectoryPath error:nil];
+    return removeSuccess;
 }
 
 @end

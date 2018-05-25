@@ -25,10 +25,6 @@ typedef NS_ENUM(NSUInteger, CJSwitchAnimatedType) {
     
 }
 
-@property (nonatomic, copy) void(^configureTrackViewBlock)(UIView *trackView, CJSwitchSliderStatusModel *statusModel, BOOL isDragingStauts);
-@property (nonatomic, copy) void(^configureMinimumTrackViewBlock)(UIView *minimumTrackView, CJSwitchSliderStatusModel *statusModel, BOOL isDragingStauts);
-@property (nonatomic, copy) void(^configureMaximumTrackViewBlock)(UIView *maximumTrackView, CJSwitchSliderStatusModel *statusModel, BOOL isDragingStauts);
-
 @property (nonatomic, assign) CJSwitchAnimatedType switchAnimatedType;
 @property (nonatomic, strong) NSMutableArray<CJSwitchSliderStatusModel *> *statusModels;  /**< 所有状态的模型 */
 @property (nonatomic, assign, readonly) NSInteger currentStep;/**< 当前显示的步骤索引 */
@@ -41,6 +37,17 @@ typedef NS_ENUM(NSUInteger, CJSwitchAnimatedType) {
  */
 @property (nonatomic, copy) void(^switchEventOccuBlock)(NSInteger execStep);
 
+
+/**
+ *  设置更新视图的方法
+ *
+ *  @param updateTrackViewBlock         更新自定义的滑道视图
+ *  @param updateMinimumTrackViewBlock  更新自定义的主滑块左侧的视图
+ *  @param updateMaximumTrackViewBlock  更新自定义的主滑块右侧的视图
+ */
+- (void)setupUpdateTrackViewBlock:(void (^)(UIView *trackView, CJSwitchSliderStatusModel *statusModel, BOOL isDragingStauts))updateTrackViewBlock
+      updateMinimumTrackViewBlock:(void (^)(UIView *trackView, CJSwitchSliderStatusModel *statusModel, BOOL isDragingStauts))updateMinimumTrackViewBlock
+      updateMaximumTrackViewBlock:(void (^)(UIView *trackView, CJSwitchSliderStatusModel *statusModel, BOOL isDragingStauts))updateMaximumTrackViewBlock;
 
 /**
  *  显示指定步骤的视图

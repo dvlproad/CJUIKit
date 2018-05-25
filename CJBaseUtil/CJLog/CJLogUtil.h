@@ -42,6 +42,22 @@ void CJAppLog(CJAppLogType appLogType, NSString *tag, NSString *format, ...);
  */
 + (void)cj_appendObject:(id)appendObject toLogFileName:(NSString *)logFileName;
 
+/**
+ *  删除指定的log文件
+ *
+ *  @param logFileName  指定的log文件
+ *
+ *  @return 是否删除成功
+ */
++ (BOOL)cj_removeLogFileName:(NSString *)logFileName;
+
+/**
+ *  删除所有的log文件
+ *
+ *  @return 是否删除成功
+ */
++ (BOOL)cj_removeLogDirectory;
+
 @end
 
 

@@ -264,6 +264,8 @@
 		807F127020B51C390008B748 /* animationBg01.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 807F126F20B51C390008B748 /* animationBg01.jpg */; };
 		808B977020B7B33200910E45 /* CJAppLastUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 808B976E20B7B33200910E45 /* CJAppLastUtil.m */; };
 		808B977420B7B54600910E45 /* CJAppVersionUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 808B977320B7B54500910E45 /* CJAppVersionUtil.m */; };
+		808B983320B7F73300910E45 /* LogViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 808B983120B7F73300910E45 /* LogViewController.m */; };
+		808B983420B7F73300910E45 /* LogViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 808B983220B7F73300910E45 /* LogViewController.xib */; };
 		808BF3242019C3E900511F7C /* YunUncaughtExceptionHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 808BF3222019C3E900511F7C /* YunUncaughtExceptionHandler.m */; };
 		808BF327201A011400511F7C /* UITextField+CJPadding.m in Sources */ = {isa = PBXBuildFile; fileRef = 808BF326201A011400511F7C /* UITextField+CJPadding.m */; };
 		80C2E18F20916BD3007D7119 /* BBXPassengerEmptyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80C2E18D20916BD3007D7119 /* BBXPassengerEmptyViewController.m */; };
@@ -874,6 +876,9 @@
 		808B976F20B7B33200910E45 /* CJAppLastUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJAppLastUtil.h; sourceTree = "<group>"; };
 		808B977220B7B54500910E45 /* CJAppVersionUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJAppVersionUtil.h; sourceTree = "<group>"; };
 		808B977320B7B54500910E45 /* CJAppVersionUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJAppVersionUtil.m; sourceTree = "<group>"; };
+		808B983020B7F73300910E45 /* LogViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LogViewController.h; sourceTree = "<group>"; };
+		808B983120B7F73300910E45 /* LogViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LogViewController.m; sourceTree = "<group>"; };
+		808B983220B7F73300910E45 /* LogViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LogViewController.xib; sourceTree = "<group>"; };
 		808BF3222019C3E900511F7C /* YunUncaughtExceptionHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YunUncaughtExceptionHandler.m; sourceTree = "<group>"; };
 		808BF3232019C3E900511F7C /* YunUncaughtExceptionHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YunUncaughtExceptionHandler.h; sourceTree = "<group>"; };
 		808BF325201A011400511F7C /* UITextField+CJPadding.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UITextField+CJPadding.h"; sourceTree = "<group>"; };
@@ -2422,6 +2427,16 @@
 			path = TempPart;
 			sourceTree = "<group>";
 		};
+		808B982F20B7F71B00910E45 /* LogDemo */ = {
+			isa = PBXGroup;
+			children = (
+				808B983020B7F73300910E45 /* LogViewController.h */,
+				808B983120B7F73300910E45 /* LogViewController.m */,
+				808B983220B7F73300910E45 /* LogViewController.xib */,
+			);
+			path = LogDemo;
+			sourceTree = "<group>";
+		};
 		808BF3212019C3E900511F7C /* Utils */ = {
 			isa = PBXGroup;
 			children = (
@@ -3286,6 +3301,7 @@
 		80FF91B31FC581DD00E437CF /* DemosUtil */ = {
 			isa = PBXGroup;
 			children = (
+				808B982F20B7F71B00910E45 /* LogDemo */,
 				800E07D72016CCF500799B78 /* DataUtilDemo */,
 				800E07DB2016CCF500799B78 /* DeviceInfoDemo */,
 				800E07D62016CCF500799B78 /* KeyboardUtilDemo */,
@@ -3483,6 +3499,7 @@
 				80E7E6F820AD2627000F762D /* cjBackBarButtonItemGray@3x.png in Resources */,
 				7840FB281EB09E0700B553F7 /* bg@2x.jpg in Resources */,
 				80FF90951FC5649F00E437CF /* SHeaderHome2.xib in Resources */,
+				808B983420B7F73300910E45 /* LogViewController.xib in Resources */,
 				80F9CFDC206CF84D003B41D4 /* AccuracyStringViewController.xib in Resources */,
 				78E269BE1ECC5E1A007D3686 /* bgCar@2x.jpg in Resources */,
 				807903171FB413D60082F05C /* arrow_R_white@2x.png in Resources */,
@@ -3808,6 +3825,7 @@
 				80FF91E91FC6739D00E437CF /* CJDateModel.m in Sources */,
 				80CC7F8D200F7EBE0017878A /* OpenTableViewController2.m in Sources */,
 				801F75DC20A040D800A2E027 /* BBXDUserNameTextField.m in Sources */,
+				808B983320B7F73300910E45 /* LogViewController.m in Sources */,
 				808B977020B7B33200910E45 /* CJAppLastUtil.m in Sources */,
 				789CAF401FB612B700AF8CD4 /* MyUserInfoScaleHeadView.m in Sources */,
 				8073D9BD201877920031CE72 /* CJModuleModel.m in Sources */,

@@ -47,6 +47,7 @@
     logoButton.center = self.view.center;
     logoButton.layer.cornerRadius = 14;
     [logoButton setBackgroundImage:[UIImage imageNamed:@"bg.jpg"] forState:UIControlStateNormal];
+    [logoButton addTarget:self action:@selector(closeLogoButton:) forControlEvents:UIControlEventTouchUpInside];
     logoButton.cjDragEnable = YES;
     [logoButton setCjDragEndBlock:^(UIView *view) {
         [view cjKeepBoundsWithBoundEdgeInsets:UIEdgeInsetsMake(64, 20, 0, 20)
@@ -54,6 +55,10 @@
              isKeepBoundsXWhenContaintInBound:NO];
     }];
     [[UIApplication sharedApplication].keyWindow addSubview:logoButton]; //添加到window上了
+}
+
+- (void)closeLogoButton:(UIButton *)logoButton {
+    [logoButton removeFromSuperview];
 }
 
 - (IBAction)orangeButtonAction:(UIButton *)button {

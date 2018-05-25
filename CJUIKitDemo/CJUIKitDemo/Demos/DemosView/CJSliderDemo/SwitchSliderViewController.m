@@ -170,7 +170,7 @@
         return label;
     };
     
-    void(^configureMaximumTrackViewBlock)(UIView *maximumTrackView, CJSwitchSliderStatusModel *statusModel, BOOL useDragingStauts) = ^ (UIView *maximumTrackView, CJSwitchSliderStatusModel *statusModel, BOOL isDragingStauts) {
+    void(^updateMaximumTrackViewBlock)(UIView *maximumTrackView, CJSwitchSliderStatusModel *statusModel, BOOL useDragingStauts) = ^ (UIView *maximumTrackView, CJSwitchSliderStatusModel *statusModel, BOOL isDragingStauts) {
         if (!isDragingStauts) {
             //UIImageView *c_maximumTrackView = (UIImageView *)maximumTrackView;
             //[c_maximumTrackView setImage:statusModel.normalImage];
@@ -189,7 +189,7 @@
         }
     };
     
-    void(^configureTrackViewBlock)(UIView *maximumTrackView, CJSwitchSliderStatusModel *statusModel, BOOL useDragingStauts) = ^ (UIView *maximumTrackView, CJSwitchSliderStatusModel *statusModel, BOOL isDragingStauts) {
+    void(^updateTrackViewBlock)(UIView *maximumTrackView, CJSwitchSliderStatusModel *statusModel, BOOL useDragingStauts) = ^ (UIView *maximumTrackView, CJSwitchSliderStatusModel *statusModel, BOOL isDragingStauts) {
         if (!isDragingStauts) {
             //UIImageView *c_maximumTrackView = (UIImageView *)maximumTrackView;
             //[c_maximumTrackView setImage:statusModel.normalImage];
@@ -210,8 +210,9 @@
     [switchSlider setupViewWithCreateTrackViewBlock:createTrackViewBlock
                         createMinimumTrackViewBlock:createMinimumTrackViewBlock
                         createMaximumTrackViewBlock:createMaximumTrackViewBlock];
-    switchSlider.configureMaximumTrackViewBlock = configureMaximumTrackViewBlock;
-    switchSlider.configureTrackViewBlock = configureTrackViewBlock;
+    [switchSlider setupUpdateTrackViewBlock:updateTrackViewBlock
+                updateMinimumTrackViewBlock:nil
+                updateMaximumTrackViewBlock:updateMaximumTrackViewBlock];
     
     switchSlider.thumbMoveMinXMargin = 20;
     switchSlider.criticalValue = 0.5;

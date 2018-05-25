@@ -11,6 +11,10 @@
 @interface CJSwitchSlider () <CJSliderControlDelegate> {
     
 }
+@property (nonatomic, copy) void(^updateTrackViewBlock)(UIView *trackView, CJSwitchSliderStatusModel *statusModel, BOOL isDragingStauts);
+@property (nonatomic, copy) void(^updateMinimumTrackViewBlock)(UIView *minimumTrackView, CJSwitchSliderStatusModel *statusModel, BOOL isDragingStauts);
+@property (nonatomic, copy) void(^updateMaximumTrackViewBlock)(UIView *maximumTrackView, CJSwitchSliderStatusModel *statusModel, BOOL isDragingStauts);
+
 @property (nonatomic, strong) UIView *beforeBackgroundView;
 
 @property (nonatomic, strong, readonly) UIView *currentStepImageView;
@@ -32,6 +36,16 @@
     self.criticalValue = 0.7;
     
     self.delegate = self;
+}
+
+/* 完整的描述请参见文件头部 */
+- (void)setupUpdateTrackViewBlock:(void (^)(UIView *, CJSwitchSliderStatusModel *, BOOL))updateTrackViewBlock
+      updateMinimumTrackViewBlock:(void (^)(UIView *, CJSwitchSliderStatusModel *, BOOL))updateMinimumTrackViewBlock
+      updateMaximumTrackViewBlock:(void (^)(UIView *, CJSwitchSliderStatusModel *, BOOL))updateMaximumTrackViewBlock
+{
+    self.updateTrackViewBlock = updateTrackViewBlock;
+    self.updateMinimumTrackViewBlock = updateMinimumTrackViewBlock;
+    self.updateMaximumTrackViewBlock = updateMaximumTrackViewBlock;
 }
 
 - (void)setCriticalValue:(CGFloat)criticalValue {
@@ -56,9 +70,9 @@
     }
     
     if (self.currentStepImageView == self.maximumTrackView) {
-        self.configureMaximumTrackViewBlock(self.maximumTrackView, currentStepStatusModel, useDragingStauts);
+        self.updateMaximumTrackViewBlock(self.maximumTrackView, currentStepStatusModel, useDragingStauts);
     } else if (self.currentStepImageView == self.minimumTrackView) {
-        self.configureMinimumTrackViewBlock(self.minimumTrackView, currentStepStatusModel, useDragingStauts);
+        self.updateMinimumTrackViewBlock(self.minimumTrackView, currentStepStatusModel, useDragingStauts);
     }
 }
 
@@ -68,9 +82,9 @@
     
     BOOL useDragingStauts = NO;
     if (self.currentStepImageView == self.maximumTrackView) {
-        self.configureMaximumTrackViewBlock(self.maximumTrackView, currentStepStatusModel, useDragingStauts);
+        self.updateMaximumTrackViewBlock(self.maximumTrackView, currentStepStatusModel, useDragingStauts);
     } else if (self.currentStepImageView == self.minimumTrackView) {
-        self.configureMinimumTrackViewBlock(self.minimumTrackView, currentStepStatusModel, useDragingStauts);
+        self.updateMinimumTrackViewBlock(self.minimumTrackView, currentStepStatusModel, useDragingStauts);
     }
     
     if (value >= 1.0) {
@@ -123,11 +137,11 @@
         {
             _currentStepImageView = self.maximumTrackView;
             
-            NSAssert(self.configureMaximumTrackViewBlock != nil, @"主滑块右侧的视图maximumTrackView对statusModel的设置不能为空");
-            self.configureMaximumTrackViewBlock(self.maximumTrackView, currentStepStatusModel, useDragingStauts);
+            NSAssert(self.updateMaximumTrackViewBlock != nil, @"主滑块右侧的视图maximumTrackView对statusModel的设置不能为空");
+            self.updateMaximumTrackViewBlock(self.maximumTrackView, currentStepStatusModel, useDragingStauts);
             
-            NSAssert(self.configureTrackViewBlock != nil, @"滑道trackView对statusModel的设置不能为空");
-            self.configureTrackViewBlock(self.trackView, nextStepStatusModel, useDragingStauts);
+            NSAssert(self.updateTrackViewBlock != nil, @"滑道trackView对statusModel的设置不能为空");
+            self.updateTrackViewBlock(self.trackView, nextStepStatusModel, useDragingStauts);
             
             /* //此种方法占用太大内存
             UIColor *nextStepColor = [UIColor colorWithPatternImage:nextStepStatusModel.image];
