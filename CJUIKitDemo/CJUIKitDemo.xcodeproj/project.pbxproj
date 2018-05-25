@@ -149,8 +149,6 @@
 		789CAF831FB612B700AF8CD4 /* cjCollectionViewCellDelete@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 789CAF101FB612B600AF8CD4 /* cjCollectionViewCellDelete@2x.png */; };
 		789CAF851FB612B700AF8CD4 /* CJSearchTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 789CAF151FB612B600AF8CD4 /* CJSearchTableView.m */; };
 		789CAF861FB612B700AF8CD4 /* MySearchEqualCellSizeCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 789CAF171FB612B600AF8CD4 /* MySearchEqualCellSizeCollectionView.m */; };
-		78C60077208BE6AF00474F98 /* CJAccountPasswordUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 78C60075208BE6AF00474F98 /* CJAccountPasswordUtil.m */; };
-		78C6007A208BE6D000474F98 /* CJAppLaunchUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 78C60079208BE6D000474F98 /* CJAppLaunchUtil.m */; };
 		78E269BE1ECC5E1A007D3686 /* bgCar@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 78E269BB1ECC5E1A007D3686 /* bgCar@2x.jpg */; };
 		78E269BF1ECC5E1A007D3686 /* bgSky@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 78E269BC1ECC5E1A007D3686 /* bgSky@2x.jpg */; };
 		78E269C01ECC5E1A007D3686 /* header@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 78E269BD1ECC5E1A007D3686 /* header@2x.jpg */; };
@@ -264,6 +262,8 @@
 		807F126020B507A30008B748 /* ViewAnimateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 807F125E20B507A30008B748 /* ViewAnimateViewController.m */; };
 		807F126C20B5123A0008B748 /* animationBg02.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 807F126A20B512390008B748 /* animationBg02.jpg */; };
 		807F127020B51C390008B748 /* animationBg01.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 807F126F20B51C390008B748 /* animationBg01.jpg */; };
+		808B977020B7B33200910E45 /* CJAppLastUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 808B976E20B7B33200910E45 /* CJAppLastUtil.m */; };
+		808B977420B7B54600910E45 /* CJAppVersionUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 808B977320B7B54500910E45 /* CJAppVersionUtil.m */; };
 		808BF3242019C3E900511F7C /* YunUncaughtExceptionHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 808BF3222019C3E900511F7C /* YunUncaughtExceptionHandler.m */; };
 		808BF327201A011400511F7C /* UITextField+CJPadding.m in Sources */ = {isa = PBXBuildFile; fileRef = 808BF326201A011400511F7C /* UITextField+CJPadding.m */; };
 		80C2E18F20916BD3007D7119 /* BBXPassengerEmptyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80C2E18D20916BD3007D7119 /* BBXPassengerEmptyViewController.m */; };
@@ -420,7 +420,6 @@
 		80FF91501FC5668700E437CF /* CJRealtimeSearchUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 80FF91231FC5668700E437CF /* CJRealtimeSearchUtil.m */; };
 		80FF91521FC5668700E437CF /* CJLogUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 80FF91281FC5668700E437CF /* CJLogUtil.m */; };
 		80FF91531FC5668700E437CF /* PrivateSetting.m in Sources */ = {isa = PBXBuildFile; fileRef = 80FF912C1FC5668700E437CF /* PrivateSetting.m */; };
-		80FF91551FC5668800E437CF /* CJAppVersionUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 80FF91321FC5668700E437CF /* CJAppVersionUtil.m */; };
 		80FF91931FC5682B00E437CF /* TypeConvertViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 80FF91741FC5682A00E437CF /* TypeConvertViewController.xib */; };
 		80FF91941FC5682B00E437CF /* TypeConvertViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80FF91751FC5682A00E437CF /* TypeConvertViewController.m */; };
 		80FF91951FC5682B00E437CF /* FoundatioHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80FF91771FC5682A00E437CF /* FoundatioHomeViewController.m */; };
@@ -713,10 +712,6 @@
 		789CAF151FB612B600AF8CD4 /* CJSearchTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJSearchTableView.m; sourceTree = "<group>"; };
 		789CAF161FB612B600AF8CD4 /* MySearchEqualCellSizeCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MySearchEqualCellSizeCollectionView.h; sourceTree = "<group>"; };
 		789CAF171FB612B600AF8CD4 /* MySearchEqualCellSizeCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MySearchEqualCellSizeCollectionView.m; sourceTree = "<group>"; };
-		78C60075208BE6AF00474F98 /* CJAccountPasswordUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJAccountPasswordUtil.m; sourceTree = "<group>"; };
-		78C60076208BE6AF00474F98 /* CJAccountPasswordUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJAccountPasswordUtil.h; sourceTree = "<group>"; };
-		78C60078208BE6D000474F98 /* CJAppLaunchUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJAppLaunchUtil.h; sourceTree = "<group>"; };
-		78C60079208BE6D000474F98 /* CJAppLaunchUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJAppLaunchUtil.m; sourceTree = "<group>"; };
 		78E269BB1ECC5E1A007D3686 /* bgCar@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "bgCar@2x.jpg"; sourceTree = "<group>"; };
 		78E269BC1ECC5E1A007D3686 /* bgSky@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "bgSky@2x.jpg"; sourceTree = "<group>"; };
 		78E269BD1ECC5E1A007D3686 /* header@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "header@2x.jpg"; sourceTree = "<group>"; };
@@ -875,6 +870,10 @@
 		807F125E20B507A30008B748 /* ViewAnimateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewAnimateViewController.m; sourceTree = "<group>"; };
 		807F126A20B512390008B748 /* animationBg02.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = animationBg02.jpg; sourceTree = "<group>"; };
 		807F126F20B51C390008B748 /* animationBg01.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = animationBg01.jpg; sourceTree = "<group>"; };
+		808B976E20B7B33200910E45 /* CJAppLastUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJAppLastUtil.m; sourceTree = "<group>"; };
+		808B976F20B7B33200910E45 /* CJAppLastUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJAppLastUtil.h; sourceTree = "<group>"; };
+		808B977220B7B54500910E45 /* CJAppVersionUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJAppVersionUtil.h; sourceTree = "<group>"; };
+		808B977320B7B54500910E45 /* CJAppVersionUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJAppVersionUtil.m; sourceTree = "<group>"; };
 		808BF3222019C3E900511F7C /* YunUncaughtExceptionHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YunUncaughtExceptionHandler.m; sourceTree = "<group>"; };
 		808BF3232019C3E900511F7C /* YunUncaughtExceptionHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YunUncaughtExceptionHandler.h; sourceTree = "<group>"; };
 		808BF325201A011400511F7C /* UITextField+CJPadding.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UITextField+CJPadding.h"; sourceTree = "<group>"; };
@@ -1145,8 +1144,6 @@
 		80FF91281FC5668700E437CF /* CJLogUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJLogUtil.m; sourceTree = "<group>"; };
 		80FF912C1FC5668700E437CF /* PrivateSetting.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PrivateSetting.m; sourceTree = "<group>"; };
 		80FF912D1FC5668700E437CF /* PrivateSetting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrivateSetting.h; sourceTree = "<group>"; };
-		80FF91301FC5668700E437CF /* CJAppVersionUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJAppVersionUtil.h; sourceTree = "<group>"; };
-		80FF91321FC5668700E437CF /* CJAppVersionUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJAppVersionUtil.m; sourceTree = "<group>"; };
 		80FF91721FC5682A00E437CF /* FoundatioHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FoundatioHomeViewController.h; sourceTree = "<group>"; };
 		80FF91741FC5682A00E437CF /* TypeConvertViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TypeConvertViewController.xib; sourceTree = "<group>"; };
 		80FF91751FC5682A00E437CF /* TypeConvertViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TypeConvertViewController.m; sourceTree = "<group>"; };
@@ -1249,6 +1246,7 @@
 				780E46071E5DF87B00980127 /* AppDelegate.m */,
 				8014A27E1FA2C2E500DDDB5A /* AppDelegate+WindowRootViewController.h */,
 				8014A27F1FA2C2E500DDDB5A /* AppDelegate+WindowRootViewController.m */,
+				808B977120B7B54500910E45 /* TempPart */,
 				80E7E63220AC227A000F762D /* AppInfoManager */,
 				780E460F1E5DF87B00980127 /* Assets.xcassets */,
 				789CAE0F1FB612B600AF8CD4 /* CJBaseUIKit */,
@@ -2078,15 +2076,6 @@
 			path = Network;
 			sourceTree = "<group>";
 		};
-		78C60074208BE6AF00474F98 /* CJAccountPasswordUtil */ = {
-			isa = PBXGroup;
-			children = (
-				78C60076208BE6AF00474F98 /* CJAccountPasswordUtil.h */,
-				78C60075208BE6AF00474F98 /* CJAccountPasswordUtil.m */,
-			);
-			path = CJAccountPasswordUtil;
-			sourceTree = "<group>";
-		};
 		7EA576B320691B5A00726CCF /* CJModuleManager */ = {
 			isa = PBXGroup;
 			children = (
@@ -2413,6 +2402,24 @@
 				807F126A20B512390008B748 /* animationBg02.jpg */,
 			);
 			path = ViewAnimateDemo;
+			sourceTree = "<group>";
+		};
+		808B976D20B7B33200910E45 /* CJAppLastUtil */ = {
+			isa = PBXGroup;
+			children = (
+				808B976F20B7B33200910E45 /* CJAppLastUtil.h */,
+				808B976E20B7B33200910E45 /* CJAppLastUtil.m */,
+			);
+			path = CJAppLastUtil;
+			sourceTree = "<group>";
+		};
+		808B977120B7B54500910E45 /* TempPart */ = {
+			isa = PBXGroup;
+			children = (
+				808B977220B7B54500910E45 /* CJAppVersionUtil.h */,
+				808B977320B7B54500910E45 /* CJAppVersionUtil.m */,
+			);
+			path = TempPart;
 			sourceTree = "<group>";
 		};
 		808BF3212019C3E900511F7C /* Utils */ = {
@@ -3058,15 +3065,14 @@
 		80FF91021FC5668700E437CF /* CJBaseUtil */ = {
 			isa = PBXGroup;
 			children = (
+				808B976D20B7B33200910E45 /* CJAppLastUtil */,
 				80E7E75D20AD31A2000F762D /* CJLaunchImageUtil */,
 				80E7E75920AD2D4D000F762D /* CJQRCodeUtil */,
-				78C60074208BE6AF00474F98 /* CJAccountPasswordUtil */,
 				800A15FA208480BF00ECF9AF /* CJCallUtil */,
 				80F9CFDD206CFDFB003B41D4 /* CJPinyinHelper */,
 				8044781D2061F328007185EF /* CJManager */,
 				8056F5A9203E6FA30074D90F /* NSOperationQueueUtil */,
 				800E07D22016CC2E00799B78 /* CJKeyboardUtil */,
-				80FF912E1FC5668700E437CF /* CJApp */,
 				80FF91091FC5668700E437CF /* CJDataUtil */,
 				80FF91DC1FC6739C00E437CF /* CJDateUtil */,
 				80FF91031FC5668700E437CF /* CJDevice */,
@@ -3177,17 +3183,6 @@
 				80FF912C1FC5668700E437CF /* PrivateSetting.m */,
 			);
 			path = PrivateSetting;
-			sourceTree = "<group>";
-		};
-		80FF912E1FC5668700E437CF /* CJApp */ = {
-			isa = PBXGroup;
-			children = (
-				78C60078208BE6D000474F98 /* CJAppLaunchUtil.h */,
-				78C60079208BE6D000474F98 /* CJAppLaunchUtil.m */,
-				80FF91301FC5668700E437CF /* CJAppVersionUtil.h */,
-				80FF91321FC5668700E437CF /* CJAppVersionUtil.m */,
-			);
-			path = CJApp;
 			sourceTree = "<group>";
 		};
 		80FF91711FC5682A00E437CF /* DemosFoundation */ = {
@@ -3813,6 +3808,7 @@
 				80FF91E91FC6739D00E437CF /* CJDateModel.m in Sources */,
 				80CC7F8D200F7EBE0017878A /* OpenTableViewController2.m in Sources */,
 				801F75DC20A040D800A2E027 /* BBXDUserNameTextField.m in Sources */,
+				808B977020B7B33200910E45 /* CJAppLastUtil.m in Sources */,
 				789CAF401FB612B700AF8CD4 /* MyUserInfoScaleHeadView.m in Sources */,
 				8073D9BD201877920031CE72 /* CJModuleModel.m in Sources */,
 				789CAF231FB612B700AF8CD4 /* MyEqualCellSizeCollectionView.m in Sources */,
@@ -3864,7 +3860,6 @@
 				80FF90931FC5649F00E437CF /* CJDefaultTableViewCell+ConfigureForDataModel.m in Sources */,
 				780E460B1E5DF87B00980127 /* ViewController.m in Sources */,
 				803323B420299AD7001DACF1 /* MyEqualCellSizeView.m in Sources */,
-				80FF91551FC5668800E437CF /* CJAppVersionUtil.m in Sources */,
 				8051E5D520AACA33003370AA /* CJLabel.m in Sources */,
 				80C2E18F20916BD3007D7119 /* BBXPassengerEmptyViewController.m in Sources */,
 				803323B920299AD7001DACF1 /* CvDemo_Complex.m in Sources */,
@@ -3944,7 +3939,6 @@
 				80FF91C51FC581DD00E437CF /* UtilHomeViewController.m in Sources */,
 				787FDB5A20500B01008A46E3 /* ImageViewController.m in Sources */,
 				80FF91351FC5668700E437CF /* NSArray+CJConsoleLog.m in Sources */,
-				78C60077208BE6AF00474F98 /* CJAccountPasswordUtil.m in Sources */,
 				803323AC20299AD7001DACF1 /* CustomLayoutCollectionViewController.m in Sources */,
 				789CAF291FB612B700AF8CD4 /* CJLeftDetailTableViewCell.m in Sources */,
 				789CAF7F1FB612B700AF8CD4 /* CJUploadImageCollectionView.m in Sources */,
@@ -3979,6 +3973,7 @@
 				789CAF4B1FB612B700AF8CD4 /* CJSliderThumb.m in Sources */,
 				80E7E6FA20AD2627000F762D /* UIViewController+CJSystemBackButtonHandler.m in Sources */,
 				789CAF1D1FB612B700AF8CD4 /* CJCircleLayout.m in Sources */,
+				808B977420B7B54600910E45 /* CJAppVersionUtil.m in Sources */,
 				787FDB9C20502A1C008A46E3 /* CJTextField.m in Sources */,
 				80E7E73120AD2AEA000F762D /* UINavigationBar+CJChangeBG.m in Sources */,
 				800E07E12016CCF500799B78 /* DataUtilViewController.m in Sources */,
@@ -4011,7 +4006,6 @@
 				8014A2801FA2C2E500DDDB5A /* AppDelegate+WindowRootViewController.m in Sources */,
 				787FDB9720500B5C008A46E3 /* RangeSliderViewController.m in Sources */,
 				80E7E73420AD2AEA000F762D /* UIButton+CJMoreProperty.m in Sources */,
-				78C6007A208BE6D000474F98 /* CJAppLaunchUtil.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

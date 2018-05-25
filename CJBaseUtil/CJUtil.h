@@ -13,9 +13,7 @@
 #import "CJLogUtil.h"
 #import "CJAppLog.h"
 
-#import "CJAppHaveLaunchUtil.h"
-
-#import "CJAppVersionUtil.h"
+#import "CJAppLastUtil.h"
 
 #import "CJWebUtil.h"
 
