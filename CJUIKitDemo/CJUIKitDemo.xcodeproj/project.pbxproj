@@ -442,7 +442,6 @@
 		80FF91B21FC580AF00E437CF /* FoundatioHomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 80FF91B11FC580AE00E437CF /* FoundatioHomeViewController.xib */; };
 		80FF91C01FC581DD00E437CF /* UtilHomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 80FF91B41FC581DD00E437CF /* UtilHomeViewController.xib */; };
 		80FF91C51FC581DD00E437CF /* UtilHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80FF91BF1FC581DD00E437CF /* UtilHomeViewController.m */; };
-		80FF91CF1FC586DA00E437CF /* plus@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 80FF91CE1FC586D900E437CF /* plus@2x.png */; };
 		80FF91E81FC6739D00E437CF /* CJDateModelUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 80FF91DE1FC6739C00E437CF /* CJDateModelUtil.m */; };
 		80FF91E91FC6739D00E437CF /* CJDateModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 80FF91E11FC6739C00E437CF /* CJDateModel.m */; };
 		80FF91EA1FC6739D00E437CF /* CJCalendarUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 80FF91E31FC6739C00E437CF /* CJCalendarUtil.m */; };
@@ -1179,7 +1178,6 @@
 		80FF91B41FC581DD00E437CF /* UtilHomeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UtilHomeViewController.xib; sourceTree = "<group>"; };
 		80FF91BE1FC581DD00E437CF /* UtilHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UtilHomeViewController.h; sourceTree = "<group>"; };
 		80FF91BF1FC581DD00E437CF /* UtilHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UtilHomeViewController.m; sourceTree = "<group>"; };
-		80FF91CE1FC586D900E437CF /* plus@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "plus@2x.png"; sourceTree = "<group>"; };
 		80FF91DE1FC6739C00E437CF /* CJDateModelUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJDateModelUtil.m; sourceTree = "<group>"; };
 		80FF91DF1FC6739C00E437CF /* CJDateModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJDateModel.h; sourceTree = "<group>"; };
 		80FF91E01FC6739C00E437CF /* CJDateModelUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJDateModelUtil.h; sourceTree = "<group>"; };
@@ -1542,7 +1540,6 @@
 				78E269BB1ECC5E1A007D3686 /* bgCar@2x.jpg */,
 				78E269BC1ECC5E1A007D3686 /* bgSky@2x.jpg */,
 				78E269BD1ECC5E1A007D3686 /* header@2x.jpg */,
-				80FF91CE1FC586D900E437CF /* plus@2x.png */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -3590,7 +3587,6 @@
 				80FF90871FC5649F00E437CF /* TableViewController.xib in Resources */,
 				80FF91B21FC580AF00E437CF /* FoundatioHomeViewController.xib in Resources */,
 				803323A520299AD7001DACF1 /* MemoryAD32.jpg in Resources */,
-				80FF91CF1FC586DA00E437CF /* plus@2x.png in Resources */,
 				80C2E19B209171B8007D7119 /* currency_icon_network@2x.png in Resources */,
 				803323AD20299AD7001DACF1 /* CustomLayoutCollectionViewController.xib in Resources */,
 				787FDB8F20500B5C008A46E3 /* slider_minimum_trackimage@3x.png in Resources */,

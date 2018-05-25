@@ -5,6 +5,7 @@
 //  Created by ciyouzen on 2017/4/12.
 //  Copyright © 2017年 dvlproad. All rights reserved.
 //
+//  其他:[iOS 画面切换的各种动画效果附私有API](https://yq.aliyun.com/ziliao/66035)
 
 #import <UIKit/UIKit.h>
 
