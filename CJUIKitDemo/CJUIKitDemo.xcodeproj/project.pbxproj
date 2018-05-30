@@ -178,9 +178,7 @@
 		801F75DA20A040D800A2E027 /* signin_icon_open@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 801F75D520A040D800A2E027 /* signin_icon_open@3x.png */; };
 		801F75DB20A040D800A2E027 /* signin_icon_open@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 801F75D620A040D800A2E027 /* signin_icon_open@2x.png */; };
 		801F75DC20A040D800A2E027 /* BBXDUserNameTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 801F75D720A040D800A2E027 /* BBXDUserNameTextField.m */; };
-		8033239020299AD7001DACF1 /* MyCycleADView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8033234520299AD7001DACF1 /* MyCycleADView.m */; };
 		8033239120299AD7001DACF1 /* MyCycleADViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8033234620299AD7001DACF1 /* MyCycleADViewController.m */; };
-		8033239220299AD7001DACF1 /* MyADModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8033234720299AD7001DACF1 /* MyADModel.m */; };
 		8033239320299AD7001DACF1 /* MemoryADKnowledge07.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8033234920299AD7001DACF1 /* MemoryADKnowledge07.jpg */; };
 		8033239420299AD7001DACF1 /* MemoryADExample01.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8033234A20299AD7001DACF1 /* MemoryADExample01.jpg */; };
 		8033239520299AD7001DACF1 /* MemoryADKnowledge06.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8033234B20299AD7001DACF1 /* MemoryADKnowledge06.jpg */; };
@@ -276,6 +274,8 @@
 		80C2E19C209171B8007D7119 /* currency_icon_network@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 80C2E19A209171B8007D7119 /* currency_icon_network@3x.png */; };
 		80CC7F8D200F7EBE0017878A /* OpenTableViewController2.m in Sources */ = {isa = PBXBuildFile; fileRef = 80CC7F8B200F7EBD0017878A /* OpenTableViewController2.m */; };
 		80CC7F8E200F7EBE0017878A /* OpenTableViewController2.xib in Resources */ = {isa = PBXBuildFile; fileRef = 80CC7F8C200F7EBE0017878A /* OpenTableViewController2.xib */; };
+		80D49F8320BE56D2003F642C /* MyADModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 80D49F8220BE56D2003F642C /* MyADModel.m */; };
+		80D49F8620BE71BA003F642C /* MemoryADCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 80D49F8520BE71B9003F642C /* MemoryADCollectionViewCell.m */; };
 		80D71EA4209021FA00D2DB68 /* CJAlert.m in Sources */ = {isa = PBXBuildFile; fileRef = 80D71EA3209021FA00D2DB68 /* CJAlert.m */; };
 		80D71EA92090277700D2DB68 /* AlertViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80D71EA72090277700D2DB68 /* AlertViewController.m */; };
 		80D71EAA2090277700D2DB68 /* AlertViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 80D71EA82090277700D2DB68 /* AlertViewController.xib */; };
@@ -757,10 +757,7 @@
 		801F75D620A040D800A2E027 /* signin_icon_open@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "signin_icon_open@2x.png"; sourceTree = "<group>"; };
 		801F75D720A040D800A2E027 /* BBXDUserNameTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBXDUserNameTextField.m; sourceTree = "<group>"; };
 		80270BBC1FABFE57001429F0 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
-		8033234420299AD7001DACF1 /* MyADModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyADModel.h; sourceTree = "<group>"; };
-		8033234520299AD7001DACF1 /* MyCycleADView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyCycleADView.m; sourceTree = "<group>"; };
 		8033234620299AD7001DACF1 /* MyCycleADViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyCycleADViewController.m; sourceTree = "<group>"; };
-		8033234720299AD7001DACF1 /* MyADModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyADModel.m; sourceTree = "<group>"; };
 		8033234920299AD7001DACF1 /* MemoryADKnowledge07.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = MemoryADKnowledge07.jpg; sourceTree = "<group>"; };
 		8033234A20299AD7001DACF1 /* MemoryADExample01.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = MemoryADExample01.jpg; sourceTree = "<group>"; };
 		8033234B20299AD7001DACF1 /* MemoryADKnowledge06.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = MemoryADKnowledge06.jpg; sourceTree = "<group>"; };
@@ -786,7 +783,6 @@
 		8033235F20299AD7001DACF1 /* MemoryADTime01.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = MemoryADTime01.jpg; sourceTree = "<group>"; };
 		8033236020299AD7001DACF1 /* MemoryAD09.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = MemoryAD09.jpg; sourceTree = "<group>"; };
 		8033236120299AD7001DACF1 /* MyCycleADViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyCycleADViewController.h; sourceTree = "<group>"; };
-		8033236220299AD7001DACF1 /* MyCycleADView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyCycleADView.h; sourceTree = "<group>"; };
 		8033236320299AD7001DACF1 /* MyCycleADViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyCycleADViewController.xib; sourceTree = "<group>"; };
 		8033236520299AD7001DACF1 /* CustomLayoutCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomLayoutCollectionViewController.m; sourceTree = "<group>"; };
 		8033236620299AD7001DACF1 /* CustomLayoutCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomLayoutCollectionViewController.h; sourceTree = "<group>"; };
@@ -892,6 +888,10 @@
 		80CC7F8A200F7EBD0017878A /* OpenTableViewController2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpenTableViewController2.h; sourceTree = "<group>"; };
 		80CC7F8B200F7EBD0017878A /* OpenTableViewController2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OpenTableViewController2.m; sourceTree = "<group>"; };
 		80CC7F8C200F7EBE0017878A /* OpenTableViewController2.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OpenTableViewController2.xib; sourceTree = "<group>"; };
+		80D49F8120BE56D2003F642C /* MyADModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyADModel.h; sourceTree = "<group>"; };
+		80D49F8220BE56D2003F642C /* MyADModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyADModel.m; sourceTree = "<group>"; };
+		80D49F8420BE71B9003F642C /* MemoryADCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MemoryADCollectionViewCell.h; sourceTree = "<group>"; };
+		80D49F8520BE71B9003F642C /* MemoryADCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MemoryADCollectionViewCell.m; sourceTree = "<group>"; };
 		80D71EA2209021FA00D2DB68 /* CJAlert.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CJAlert.h; sourceTree = "<group>"; };
 		80D71EA3209021FA00D2DB68 /* CJAlert.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CJAlert.m; sourceTree = "<group>"; };
 		80D71EA62090277700D2DB68 /* AlertViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AlertViewController.h; sourceTree = "<group>"; };
@@ -2178,13 +2178,13 @@
 			isa = PBXGroup;
 			children = (
 				8033234820299AD7001DACF1 /* MemoryAD */,
-				8033234420299AD7001DACF1 /* MyADModel.h */,
-				8033234720299AD7001DACF1 /* MyADModel.m */,
-				8033236220299AD7001DACF1 /* MyCycleADView.h */,
-				8033234520299AD7001DACF1 /* MyCycleADView.m */,
 				8033236120299AD7001DACF1 /* MyCycleADViewController.h */,
 				8033234620299AD7001DACF1 /* MyCycleADViewController.m */,
 				8033236320299AD7001DACF1 /* MyCycleADViewController.xib */,
+				80D49F8420BE71B9003F642C /* MemoryADCollectionViewCell.h */,
+				80D49F8520BE71B9003F642C /* MemoryADCollectionViewCell.m */,
+				80D49F8120BE56D2003F642C /* MyADModel.h */,
+				80D49F8220BE56D2003F642C /* MyADModel.m */,
 			);
 			path = CycleADView;
 			sourceTree = "<group>";
@@ -2192,30 +2192,30 @@
 		8033234820299AD7001DACF1 /* MemoryAD */ = {
 			isa = PBXGroup;
 			children = (
-				8033234920299AD7001DACF1 /* MemoryADKnowledge07.jpg */,
-				8033234A20299AD7001DACF1 /* MemoryADExample01.jpg */,
-				8033234B20299AD7001DACF1 /* MemoryADKnowledge06.jpg */,
 				8033234C20299AD7001DACF1 /* MemoryAD05.jpg */,
-				8033234D20299AD7001DACF1 /* MemoryADKnowledge04.jpg */,
-				8033234E20299AD7001DACF1 /* MemoryADExplain01.jpg */,
-				8033234F20299AD7001DACF1 /* MemoryADExample03.jpg */,
-				8033235020299AD7001DACF1 /* MemoryADExample02.jpg */,
-				8033235120299AD7001DACF1 /* MemoryADKnowledge05.jpg */,
-				8033235220299AD7001DACF1 /* MemoryADKnowledge01.jpg */,
-				8033235320299AD7001DACF1 /* MemoryADResult02.jpg */,
-				8033235420299AD7001DACF1 /* MemoryAD29.jpg */,
-				8033235520299AD7001DACF1 /* MemoryADKnowledge02.jpg */,
-				8033235620299AD7001DACF1 /* MemoryADExample05.jpg */,
-				8033235720299AD7001DACF1 /* MemoryADExample04.jpg */,
-				8033235820299AD7001DACF1 /* MemoryADKnowledge03.jpg */,
-				8033235920299AD7001DACF1 /* MemoryADResult01.gif */,
-				8033235A20299AD7001DACF1 /* MemoryADPose02.jpg */,
-				8033235B20299AD7001DACF1 /* MemoryAD32.jpg */,
-				8033235C20299AD7001DACF1 /* MemoryADPose01.jpg */,
-				8033235D20299AD7001DACF1 /* MemoryADTime02.jpg */,
 				8033235E20299AD7001DACF1 /* MemoryAD08.jpg */,
-				8033235F20299AD7001DACF1 /* MemoryADTime01.jpg */,
 				8033236020299AD7001DACF1 /* MemoryAD09.jpg */,
+				8033235420299AD7001DACF1 /* MemoryAD29.jpg */,
+				8033235B20299AD7001DACF1 /* MemoryAD32.jpg */,
+				8033234A20299AD7001DACF1 /* MemoryADExample01.jpg */,
+				8033235020299AD7001DACF1 /* MemoryADExample02.jpg */,
+				8033234F20299AD7001DACF1 /* MemoryADExample03.jpg */,
+				8033235720299AD7001DACF1 /* MemoryADExample04.jpg */,
+				8033235620299AD7001DACF1 /* MemoryADExample05.jpg */,
+				8033234E20299AD7001DACF1 /* MemoryADExplain01.jpg */,
+				8033235220299AD7001DACF1 /* MemoryADKnowledge01.jpg */,
+				8033235520299AD7001DACF1 /* MemoryADKnowledge02.jpg */,
+				8033235820299AD7001DACF1 /* MemoryADKnowledge03.jpg */,
+				8033234D20299AD7001DACF1 /* MemoryADKnowledge04.jpg */,
+				8033235120299AD7001DACF1 /* MemoryADKnowledge05.jpg */,
+				8033234B20299AD7001DACF1 /* MemoryADKnowledge06.jpg */,
+				8033234920299AD7001DACF1 /* MemoryADKnowledge07.jpg */,
+				8033235C20299AD7001DACF1 /* MemoryADPose01.jpg */,
+				8033235A20299AD7001DACF1 /* MemoryADPose02.jpg */,
+				8033235920299AD7001DACF1 /* MemoryADResult01.gif */,
+				8033235320299AD7001DACF1 /* MemoryADResult02.jpg */,
+				8033235F20299AD7001DACF1 /* MemoryADTime01.jpg */,
+				8033235D20299AD7001DACF1 /* MemoryADTime02.jpg */,
 			);
 			path = MemoryAD;
 			sourceTree = "<group>";
@@ -2249,13 +2249,13 @@
 		8033237220299AD7001DACF1 /* MyEqualCellSizeCollectionView */ = {
 			isa = PBXGroup;
 			children = (
-				8033237320299AD7001DACF1 /* MyEqualCellSizeView.m */,
-				8033237420299AD7001DACF1 /* MyEqualCellSizeViewController.m */,
+				8033237920299AD7001DACF1 /* MyEqualCellSizeCollectionViewController.h */,
 				8033237520299AD7001DACF1 /* MyEqualCellSizeCollectionViewController.m */,
 				8033237620299AD7001DACF1 /* MyEqualCellSizeCollectionViewController.xib */,
-				8033237720299AD7001DACF1 /* MyEqualCellSizeViewController.h */,
 				8033237820299AD7001DACF1 /* MyEqualCellSizeView.h */,
-				8033237920299AD7001DACF1 /* MyEqualCellSizeCollectionViewController.h */,
+				8033237320299AD7001DACF1 /* MyEqualCellSizeView.m */,
+				8033237720299AD7001DACF1 /* MyEqualCellSizeViewController.h */,
+				8033237420299AD7001DACF1 /* MyEqualCellSizeViewController.m */,
 				8033237A20299AD7001DACF1 /* MyEqualCellSizeViewController.xib */,
 			);
 			path = MyEqualCellSizeCollectionView;
@@ -3915,7 +3915,6 @@
 				80FF91981FC5682B00E437CF /* AttributedStringViewController.m in Sources */,
 				789CAF861FB612B700AF8CD4 /* MySearchEqualCellSizeCollectionView.m in Sources */,
 				8054818F2074C97200CDE5A1 /* CJTimerManager.m in Sources */,
-				8033239020299AD7001DACF1 /* MyCycleADView.m in Sources */,
 				787FDB6420500B1F008A46E3 /* TextViewController.m in Sources */,
 				80FF908D1FC5649F00E437CF /* CJRightDetailTableViewCell+ConfigureForDataModel.m in Sources */,
 				780E46051E5DF87B00980127 /* main.m in Sources */,
@@ -3956,7 +3955,6 @@
 				803323AC20299AD7001DACF1 /* CustomLayoutCollectionViewController.m in Sources */,
 				789CAF291FB612B700AF8CD4 /* CJLeftDetailTableViewCell.m in Sources */,
 				789CAF7F1FB612B700AF8CD4 /* CJUploadImageCollectionView.m in Sources */,
-				8033239220299AD7001DACF1 /* MyADModel.m in Sources */,
 				789CAF4E1FB612B700AF8CD4 /* CJSwitchView.m in Sources */,
 				808BF327201A011400511F7C /* UITextField+CJPadding.m in Sources */,
 				7850B70720937C5A008F4A21 /* ShowExtendViewVC.m in Sources */,
@@ -3971,6 +3969,7 @@
 				80E7E6CB20AC5DFF000F762D /* IjinbuUploadItemRequest.m in Sources */,
 				80FF903A1FC5649F00E437CF /* SvDemo_Refresh.m in Sources */,
 				803323B520299AD7001DACF1 /* MyEqualCellSizeViewController.m in Sources */,
+				80D49F8620BE71BA003F642C /* MemoryADCollectionViewCell.m in Sources */,
 				7850B72A2093809F008F4A21 /* UIView+CJPopupInView.m in Sources */,
 				80FF914C1FC5668700E437CF /* CJDataUtil.m in Sources */,
 				80FF90911FC5649F00E437CF /* CJLeftDetailTableViewCell+ConfigureForDataModel.m in Sources */,
@@ -3991,6 +3990,7 @@
 				787FDB9C20502A1C008A46E3 /* CJTextField.m in Sources */,
 				80E7E73120AD2AEA000F762D /* UINavigationBar+CJChangeBG.m in Sources */,
 				800E07E12016CCF500799B78 /* DataUtilViewController.m in Sources */,
+				80D49F8320BE56D2003F642C /* MyADModel.m in Sources */,
 				80FF91EC1FC6739D00E437CF /* CJDateOtherUtil.m in Sources */,
 				80FF903C1FC5649F00E437CF /* KeyboardAvoidingViewController.m in Sources */,
 				80FF90861FC5649F00E437CF /* TvDemo_Complex.m in Sources */,

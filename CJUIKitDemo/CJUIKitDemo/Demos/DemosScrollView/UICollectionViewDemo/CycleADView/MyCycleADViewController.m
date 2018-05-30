@@ -7,6 +7,8 @@
 //
 
 #import "MyCycleADViewController.h"
+#import "MemoryADCollectionViewCell.h"
+#import "MyADModel.h"
 
 @interface MyCycleADViewController ()
 
@@ -22,19 +24,32 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
-    MyCycleADView *cycleADView = [[MyCycleADView alloc] initWithFrame:CGRectZero];
-    cycleADView.backgroundColor = [UIColor redColor];
-    [self.view addSubview:cycleADView];
-    [cycleADView mas_makeConstraints:^(MASConstraintMaker *make) {
+    SDCycleScrollView *adScrollView = [SDCycleScrollView cycleScrollViewWithFrame:CGRectZero delegate:self placeholderImage:nil];
+    adScrollView.backgroundColor = [UIColor redColor];
+    [self.view addSubview:adScrollView];
+    [adScrollView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.mas_equalTo(self.view).mas_equalTo(74);
         make.left.mas_equalTo(self.view).mas_equalTo(10);
         make.right.mas_equalTo(self.view).mas_equalTo(-10);
         make.height.mas_equalTo(500);
     }];
-    self.cycleADView = cycleADView;
+    self.adScrollView = adScrollView;
     
     NSMutableArray *memoryADModels = [self getMemoryADModels];
-    self.cycleADView.dataModels = memoryADModels;
+    self.adDataModels = memoryADModels;
+    
+    NSMutableArray *titles = [[NSMutableArray alloc] init];
+    NSMutableArray *imagesURLStrings = [[NSMutableArray alloc] init];
+    for (MyADModel *adModel in memoryADModels) {
+        [titles addObject:adModel.text];
+        [imagesURLStrings addObject:adModel.imageName];
+    }
+    
+    self.adScrollView.titlesGroup = titles;
+    //         --- 模拟加载延迟
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        self.adScrollView.imageURLStringsGroup = imagesURLStrings;
+    });
 }
 
 
@@ -181,6 +196,29 @@
     }
     
     return adModels;
+}
+
+// 不需要自定义轮播cell的请忽略下面的代理方法
+// 如果要实现自定义cell的轮播图，必须先实现customCollectionViewCellClassForCycleScrollView:和setupCustomCell:forIndex:代理方法
+
+- (Class)customCollectionViewCellClassForCycleScrollView:(SDCycleScrollView *)view
+{
+    if (view != self.adScrollView) {
+        return nil;
+    }
+    return [MemoryADCollectionViewCell class];
+}
+
+- (void)setupCustomCell:(UICollectionViewCell *)cell forIndex:(NSInteger)index cycleScrollView:(SDCycleScrollView *)view
+{
+    MemoryADCollectionViewCell *myCell = (MemoryADCollectionViewCell *)cell;
+    //    [myCell.imageView sd_setImageWithURL:];
+    
+    MyADModel *adModel = self.adDataModels[index];
+    NSString *imageName = adModel.imageName;
+    UIImage *image = [UIImage imageNamed:imageName];
+    myCell.imageView.image = image;
+    
 }
 
 - (void)didReceiveMemoryWarning {

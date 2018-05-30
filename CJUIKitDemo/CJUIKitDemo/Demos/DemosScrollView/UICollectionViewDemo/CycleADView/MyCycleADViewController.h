@@ -8,12 +8,12 @@
 
 #import <UIKit/UIKit.h>
 #import <Masonry/Masonry.h>
-#import "MyCycleADView.h"
+#import <SDCycleScrollView/SDCycleScrollView.h>
 
-@interface MyCycleADViewController : UIViewController {
+@interface MyCycleADViewController : UIViewController <SDCycleScrollViewDelegate> {
     
 }
-@property (nonatomic, strong) NSMutableArray *dataModels;
-@property (nonatomic, strong) MyCycleADView *cycleADView;
+@property (nonatomic, strong) NSMutableArray *adDataModels;
+@property (nonatomic, strong) SDCycleScrollView *adScrollView;
 
 @end
