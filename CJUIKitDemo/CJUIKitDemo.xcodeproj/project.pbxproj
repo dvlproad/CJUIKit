@@ -276,6 +276,8 @@
 		80CC7F8E200F7EBE0017878A /* OpenTableViewController2.xib in Resources */ = {isa = PBXBuildFile; fileRef = 80CC7F8C200F7EBE0017878A /* OpenTableViewController2.xib */; };
 		80D49F8320BE56D2003F642C /* MyADModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 80D49F8220BE56D2003F642C /* MyADModel.m */; };
 		80D49F8620BE71BA003F642C /* MemoryADCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 80D49F8520BE71B9003F642C /* MemoryADCollectionViewCell.m */; };
+		80D49F8B20BE7EE0003F642C /* CJDataUtilTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 80D49F8A20BE7EE0003F642C /* CJDataUtilTest.m */; };
+		80D49F8F20BE8574003F642C /* TestCityModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 80D49F8E20BE8574003F642C /* TestCityModel.m */; };
 		80D71EA4209021FA00D2DB68 /* CJAlert.m in Sources */ = {isa = PBXBuildFile; fileRef = 80D71EA3209021FA00D2DB68 /* CJAlert.m */; };
 		80D71EA92090277700D2DB68 /* AlertViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80D71EA72090277700D2DB68 /* AlertViewController.m */; };
 		80D71EAA2090277700D2DB68 /* AlertViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 80D71EA82090277700D2DB68 /* AlertViewController.xib */; };
@@ -892,6 +894,9 @@
 		80D49F8220BE56D2003F642C /* MyADModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyADModel.m; sourceTree = "<group>"; };
 		80D49F8420BE71B9003F642C /* MemoryADCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MemoryADCollectionViewCell.h; sourceTree = "<group>"; };
 		80D49F8520BE71B9003F642C /* MemoryADCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MemoryADCollectionViewCell.m; sourceTree = "<group>"; };
+		80D49F8A20BE7EE0003F642C /* CJDataUtilTest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CJDataUtilTest.m; sourceTree = "<group>"; };
+		80D49F8D20BE8574003F642C /* TestCityModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestCityModel.h; sourceTree = "<group>"; };
+		80D49F8E20BE8574003F642C /* TestCityModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestCityModel.m; sourceTree = "<group>"; };
 		80D71EA2209021FA00D2DB68 /* CJAlert.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CJAlert.h; sourceTree = "<group>"; };
 		80D71EA3209021FA00D2DB68 /* CJAlert.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CJAlert.m; sourceTree = "<group>"; };
 		80D71EA62090277700D2DB68 /* AlertViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AlertViewController.h; sourceTree = "<group>"; };
@@ -1287,6 +1292,8 @@
 			isa = PBXGroup;
 			children = (
 				780E461D1E5DF87B00980127 /* CJUIKitDemoTests.m */,
+				80D49F8A20BE7EE0003F642C /* CJDataUtilTest.m */,
+				80D49F8C20BE852A003F642C /* Models */,
 				780E461F1E5DF87B00980127 /* Info.plist */,
 			);
 			path = CJUIKitDemoTests;
@@ -2463,6 +2470,15 @@
 				80C2E19A209171B8007D7119 /* currency_icon_network@3x.png */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		80D49F8C20BE852A003F642C /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				80D49F8D20BE8574003F642C /* TestCityModel.h */,
+				80D49F8E20BE8574003F642C /* TestCityModel.m */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		80D71EA1209021E400D2DB68 /* CJAlert */ = {
@@ -4027,6 +4043,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				80D49F8F20BE8574003F642C /* TestCityModel.m in Sources */,
+				80D49F8B20BE7EE0003F642C /* CJDataUtilTest.m in Sources */,
 				780E461E1E5DF87B00980127 /* CJUIKitDemoTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -14,7 +14,7 @@
  *  对数组进行排序
  *
  *  @param sortedDataSource         要排序的数据
- *  @param dataSelector             根据数据的哪个字段排序
+ *  @param dataSelector             根据数据的哪个字段排序(dataSelector为空的时候取自身)
  *  @param pinyinFromStringBlock    字符串转换成拼音的方法/代码块
  *
  *  return 排序结果

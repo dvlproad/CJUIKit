@@ -52,5 +52,6 @@ target 'CJUIKitDemo' do
 end
 
 target 'CJUIKitDemoTests' do
-   
+    pod 'OCMock', '~> 3.4.1'
+    
 end

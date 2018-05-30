@@ -94,7 +94,7 @@
     [outputFormat setCaseType:CaseTypeLowercase];
     
     NSString *pinyinString = [PinyinHelper toHanyuPinyinStringWithNSString:chineseString withHanyuPinyinOutputFormat:outputFormat withNSString:@""];//@""表示不分隔
-    NSLog(@"pinyinString = %@", pinyinString);
+    //NSLog(@"pinyinString = %@", pinyinString);
     
     return pinyinString;
 }
