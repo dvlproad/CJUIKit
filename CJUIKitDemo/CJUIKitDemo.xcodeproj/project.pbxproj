@@ -245,6 +245,10 @@
 		805598BA1FF5DB0F009DC61C /* ValidateStringTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 805598B81FF5DB0F009DC61C /* ValidateStringTableViewCell.m */; };
 		805598BB1FF5DB0F009DC61C /* ValidateStringTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 805598B91FF5DB0F009DC61C /* ValidateStringTableViewCell.xib */; };
 		8056F5AC203E6FA30074D90F /* NSOperationQueueUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 8056F5AA203E6FA30074D90F /* NSOperationQueueUtil.m */; };
+		80582FA120C121B500C01225 /* ImageRotateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80582F9F20C121B500C01225 /* ImageRotateViewController.m */; };
+		80582FA220C121B500C01225 /* ImageRotateViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 80582FA020C121B500C01225 /* ImageRotateViewController.xib */; };
+		80582FA520C129A200C01225 /* UIImage+CJRotateAngle.m in Sources */ = {isa = PBXBuildFile; fileRef = 80582FA320C129A200C01225 /* UIImage+CJRotateAngle.m */; };
+		80582FA720C12B1300C01225 /* taixi_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 80582FA620C12B1300C01225 /* taixi_icon@2x.png */; };
 		8073D9BD201877920031CE72 /* CJModuleModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8073D9BB201877910031CE72 /* CJModuleModel.m */; };
 		807903101FB413D60082F05C /* arrow_back_red@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 807903071FB413D60082F05C /* arrow_back_red@2x.png */; };
 		807903111FB413D60082F05C /* arrow_balland_red@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 807903081FB413D60082F05C /* arrow_balland_red@2x.png */; };
@@ -851,6 +855,12 @@
 		805598B91FF5DB0F009DC61C /* ValidateStringTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ValidateStringTableViewCell.xib; sourceTree = "<group>"; };
 		8056F5AA203E6FA30074D90F /* NSOperationQueueUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSOperationQueueUtil.m; sourceTree = "<group>"; };
 		8056F5AB203E6FA30074D90F /* NSOperationQueueUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSOperationQueueUtil.h; sourceTree = "<group>"; };
+		80582F9E20C121B500C01225 /* ImageRotateViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ImageRotateViewController.h; sourceTree = "<group>"; };
+		80582F9F20C121B500C01225 /* ImageRotateViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ImageRotateViewController.m; sourceTree = "<group>"; };
+		80582FA020C121B500C01225 /* ImageRotateViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ImageRotateViewController.xib; sourceTree = "<group>"; };
+		80582FA320C129A200C01225 /* UIImage+CJRotateAngle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+CJRotateAngle.m"; sourceTree = "<group>"; };
+		80582FA420C129A200C01225 /* UIImage+CJRotateAngle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+CJRotateAngle.h"; sourceTree = "<group>"; };
+		80582FA620C12B1300C01225 /* taixi_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "taixi_icon@2x.png"; sourceTree = "<group>"; };
 		8073D9BB201877910031CE72 /* CJModuleModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJModuleModel.m; sourceTree = "<group>"; };
 		8073D9BC201877910031CE72 /* CJModuleModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJModuleModel.h; sourceTree = "<group>"; };
 		807903071FB413D60082F05C /* arrow_back_red@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrow_back_red@2x.png"; sourceTree = "<group>"; };
@@ -1445,9 +1455,9 @@
 		787FDB5220500B01008A46E3 /* ImageViewDemo */ = {
 			isa = PBXGroup;
 			children = (
+				787FDB5520500B01008A46E3 /* ImageViewController.h */,
 				787FDB5320500B01008A46E3 /* ImageViewController.m */,
 				787FDB5420500B01008A46E3 /* ImageViewController.xib */,
-				787FDB5520500B01008A46E3 /* ImageViewController.h */,
 			);
 			path = ImageViewDemo;
 			sourceTree = "<group>";
@@ -2699,6 +2709,8 @@
 				80E7E74E20AD2C8B000F762D /* UIImage+CJMakeCircle.m */,
 				80E7E74D20AD2C8B000F762D /* UIImage+SplitImageIntoTwoParts.h */,
 				80E7E74A20AD2C8B000F762D /* UIImage+SplitImageIntoTwoParts.m */,
+				80582FA420C129A200C01225 /* UIImage+CJRotateAngle.h */,
+				80582FA320C129A200C01225 /* UIImage+CJRotateAngle.m */,
 			);
 			path = Edit;
 			sourceTree = "<group>";
@@ -2977,13 +2989,17 @@
 		80FF8FD91FC5649E00E437CF /* UIImageDemo */ = {
 			isa = PBXGroup;
 			children = (
-				80FF8FDA1FC5649E00E437CF /* imageOriginColor@2x.png */,
-				80FF8FDB1FC5649E00E437CF /* QRCodeViewController.xib */,
 				80FF8FDC1FC5649E00E437CF /* ImageChangeColorViewController.h */,
-				80FF8FDD1FC5649E00E437CF /* QRCodeViewController.m */,
 				80FF8FDE1FC5649E00E437CF /* ImageChangeColorViewController.m */,
 				80FF8FDF1FC5649E00E437CF /* ImageChangeColorViewController.xib */,
+				80FF8FDA1FC5649E00E437CF /* imageOriginColor@2x.png */,
+				80582F9E20C121B500C01225 /* ImageRotateViewController.h */,
+				80582F9F20C121B500C01225 /* ImageRotateViewController.m */,
+				80582FA020C121B500C01225 /* ImageRotateViewController.xib */,
+				80582FA620C12B1300C01225 /* taixi_icon@2x.png */,
 				80FF8FE01FC5649E00E437CF /* QRCodeViewController.h */,
+				80FF8FDD1FC5649E00E437CF /* QRCodeViewController.m */,
+				80FF8FDB1FC5649E00E437CF /* QRCodeViewController.xib */,
 			);
 			path = UIImageDemo;
 			sourceTree = "<group>";
@@ -3503,6 +3519,7 @@
 				803323A420299AD7001DACF1 /* MemoryADPose02.jpg in Resources */,
 				80FF91A11FC5682B00E437CF /* PullScaleTopImageViewController.xib in Resources */,
 				789CAF181FB612B700AF8CD4 /* ChangeLog.md in Resources */,
+				80582FA720C12B1300C01225 /* taixi_icon@2x.png in Resources */,
 				80FF90831FC5649F00E437CF /* crayons.txt in Resources */,
 				8033239A20299AD7001DACF1 /* MemoryADExample02.jpg in Resources */,
 				787FDB8E20500B5C008A46E3 /* slider_minimum_trackimage@2x.png in Resources */,
@@ -3631,6 +3648,7 @@
 				80E7E6F620AD2627000F762D /* cjBackBarButtonItem@3x.png in Resources */,
 				780E460E1E5DF87B00980127 /* Main.storyboard in Resources */,
 				787FDB9220500B5C008A46E3 /* slider_thumbImage@2x.png in Resources */,
+				80582FA220C121B500C01225 /* ImageRotateViewController.xib in Resources */,
 				803323A320299AD7001DACF1 /* MemoryADResult01.gif in Resources */,
 				803323AA20299AD7001DACF1 /* MemoryAD09.jpg in Resources */,
 				801F75DB20A040D800A2E027 /* signin_icon_open@2x.png in Resources */,
@@ -3868,6 +3886,7 @@
 				789CAF2B1FB612B700AF8CD4 /* CJSubTitleTabelViewCell.m in Sources */,
 				80E7E6FB20AD2627000F762D /* ProgressWebViewController.m in Sources */,
 				789CAF341FB612B700AF8CD4 /* CJImageView.m in Sources */,
+				80582FA520C129A200C01225 /* UIImage+CJRotateAngle.m in Sources */,
 				80E7E6CC20AC5DFF000F762D /* IjinbuResponseModel.m in Sources */,
 				7850B731209380A0008F4A21 /* UIView+CJShake.m in Sources */,
 				80FF90961FC5649F00E437CF /* TableViewHeader.m in Sources */,
@@ -3940,6 +3959,7 @@
 				80FF913D1FC5668700E437CF /* NSString+CJAttributedString.m in Sources */,
 				789CAF3F1FB612B700AF8CD4 /* LEOHeaderView.m in Sources */,
 				80FF90801FC5649F00E437CF /* ReuseDataSourceTableViewController.m in Sources */,
+				80582FA120C121B500C01225 /* ImageRotateViewController.m in Sources */,
 				7850B734209381B4008F4A21 /* UIView+CJKeepBounds.m in Sources */,
 				808BF3242019C3E900511F7C /* YunUncaughtExceptionHandler.m in Sources */,
 				805598BA1FF5DB0F009DC61C /* ValidateStringTableViewCell.m in Sources */,

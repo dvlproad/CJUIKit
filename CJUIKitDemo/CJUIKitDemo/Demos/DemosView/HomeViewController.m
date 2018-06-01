@@ -43,6 +43,7 @@
 
 
 #import "ImageChangeColorViewController.h"
+#import "ImageRotateViewController.h"
 
 #import "NavigationBarViewController.h"
 #import "NavigationBarChangeBGViewController.h"
@@ -91,10 +92,16 @@
         CJSectionDataModel *sectionDataModel = [[CJSectionDataModel alloc] init];
         sectionDataModel.theme = @"UIImage相关";
         {
-            CJModuleModel *UIImageModuleModel = [[CJModuleModel alloc] init];
-            UIImageModuleModel.title = @"UIImage(改变颜色)";
-            UIImageModuleModel.classEntry = [ImageChangeColorViewController class];
-            [sectionDataModel.values addObject:UIImageModuleModel];
+            CJModuleModel *imageChangeColorModule = [[CJModuleModel alloc] init];
+            imageChangeColorModule.title = @"UIImage(改变颜色)";
+            imageChangeColorModule.classEntry = [ImageChangeColorViewController class];
+            [sectionDataModel.values addObject:imageChangeColorModule];
+        }
+        {
+            CJModuleModel *imageRotateModule = [[CJModuleModel alloc] init];
+            imageRotateModule.title = @"UIImage(旋转任意角度)";
+            imageRotateModule.classEntry = [ImageRotateViewController class];
+            [sectionDataModel.values addObject:imageRotateModule];
         }
         
         [sectionDataModels addObject:sectionDataModel];
