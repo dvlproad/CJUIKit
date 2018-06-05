@@ -259,6 +259,7 @@
 		807903161FB413D60082F05C /* arrow_R_gray@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8079030D1FB413D60082F05C /* arrow_R_gray@2x.png */; };
 		807903171FB413D60082F05C /* arrow_R_white@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8079030E1FB413D60082F05C /* arrow_R_white@2x.png */; };
 		807903181FB413D60082F05C /* arrow_up.png in Resources */ = {isa = PBXBuildFile; fileRef = 8079030F1FB413D60082F05C /* arrow_up.png */; };
+		807C4F8620C65DA5002EAC12 /* CJConvertUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 807C4F8420C65DA4002EAC12 /* CJConvertUtil.m */; };
 		807F125A20B4F70E0008B748 /* UIView+CJAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 807F125920B4F70E0008B748 /* UIView+CJAnimation.m */; };
 		807F125F20B507A30008B748 /* ViewAnimateViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 807F125D20B507A20008B748 /* ViewAnimateViewController.xib */; };
 		807F126020B507A30008B748 /* ViewAnimateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 807F125E20B507A30008B748 /* ViewAnimateViewController.m */; };
@@ -872,6 +873,8 @@
 		8079030D1FB413D60082F05C /* arrow_R_gray@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrow_R_gray@2x.png"; sourceTree = "<group>"; };
 		8079030E1FB413D60082F05C /* arrow_R_white@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrow_R_white@2x.png"; sourceTree = "<group>"; };
 		8079030F1FB413D60082F05C /* arrow_up.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = arrow_up.png; sourceTree = "<group>"; };
+		807C4F8420C65DA4002EAC12 /* CJConvertUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJConvertUtil.m; sourceTree = "<group>"; };
+		807C4F8520C65DA4002EAC12 /* CJConvertUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJConvertUtil.h; sourceTree = "<group>"; };
 		807F125820B4F70E0008B748 /* UIView+CJAnimation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+CJAnimation.h"; sourceTree = "<group>"; };
 		807F125920B4F70E0008B748 /* UIView+CJAnimation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+CJAnimation.m"; sourceTree = "<group>"; };
 		807F125C20B507A20008B748 /* ViewAnimateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewAnimateViewController.h; sourceTree = "<group>"; };
@@ -2402,6 +2405,15 @@
 			path = arrow;
 			sourceTree = "<group>";
 		};
+		807C4F8320C65DA4002EAC12 /* CJConvertUtil */ = {
+			isa = PBXGroup;
+			children = (
+				807C4F8520C65DA4002EAC12 /* CJConvertUtil.h */,
+				807C4F8420C65DA4002EAC12 /* CJConvertUtil.m */,
+			);
+			path = CJConvertUtil;
+			sourceTree = "<group>";
+		};
 		807F125720B4F6E30008B748 /* CJAnimation */ = {
 			isa = PBXGroup;
 			children = (
@@ -3109,6 +3121,7 @@
 		80FF91021FC5668700E437CF /* CJBaseUtil */ = {
 			isa = PBXGroup;
 			children = (
+				807C4F8320C65DA4002EAC12 /* CJConvertUtil */,
 				808B976D20B7B33200910E45 /* CJAppLastUtil */,
 				80E7E75D20AD31A2000F762D /* CJLaunchImageUtil */,
 				80E7E75920AD2D4D000F762D /* CJQRCodeUtil */,
@@ -3245,9 +3258,9 @@
 		80FF91731FC5682A00E437CF /* TypeConvert */ = {
 			isa = PBXGroup;
 			children = (
-				80FF91741FC5682A00E437CF /* TypeConvertViewController.xib */,
-				80FF91751FC5682A00E437CF /* TypeConvertViewController.m */,
 				80FF91761FC5682A00E437CF /* TypeConvertViewController.h */,
+				80FF91751FC5682A00E437CF /* TypeConvertViewController.m */,
+				80FF91741FC5682A00E437CF /* TypeConvertViewController.xib */,
 			);
 			path = TypeConvert;
 			sourceTree = "<group>";
@@ -3875,6 +3888,7 @@
 				80FF91461FC5668700E437CF /* CJDataUtil+CJSectionDataModel.m in Sources */,
 				7850B71420937E85008F4A21 /* WelcomePopupView.m in Sources */,
 				80FF908C1FC5649F00E437CF /* SHeaderHome2.m in Sources */,
+				807C4F8620C65DA5002EAC12 /* CJConvertUtil.m in Sources */,
 				80E7E75020AD2C8B000F762D /* UIImage+CJBase64.m in Sources */,
 				80E7E75C20AD2D4D000F762D /* CJQRCodeUtil.m in Sources */,
 				789CAF411FB612B700AF8CD4 /* CJKeyboardAvoidingScrollView.m in Sources */,

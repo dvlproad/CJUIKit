@@ -12,7 +12,7 @@
 
 
 ///添加单击手势
-- (void)cj_addSingleTapWithTarget:(id)target mSEL:(SEL)sel {
+- (UITapGestureRecognizer *)cj_addSingleTapWithTarget:(id)target mSEL:(SEL)sel {
     [self setUserInteractionEnabled:YES];
     
     UITapGestureRecognizer *singleTapGR = [[UITapGestureRecognizer alloc] initWithTarget:target action:sel];
@@ -21,10 +21,12 @@
     [singleTapGR setCancelsTouchesInView:NO];
     
     [self addGestureRecognizer:singleTapGR];
+    
+    return singleTapGR;
 }
 
 ///添加双击手势(只有当doubleTapGR识别失败的时候(即识别出这不是双击操作)，singleTapGesture才能开始识别)
-- (void)cj_addDoubleTapWithTarget:(id)target mSEL:(SEL)sel ignoreSingleTapGR:(UITapGestureRecognizer *)singleTapGR {
+- (UITapGestureRecognizer *)cj_addDoubleTapWithTarget:(id)target mSEL:(SEL)sel ignoreSingleTapGR:(UITapGestureRecognizer *)singleTapGR {
     [self setUserInteractionEnabled:YES];
     
     UITapGestureRecognizer *doubleTapGR = [[UITapGestureRecognizer alloc] initWithTarget:target action:sel];
@@ -33,6 +35,8 @@
     [self addGestureRecognizer:doubleTapGR];
     
     [singleTapGR requireGestureRecognizerToFail:doubleTapGR];
+    
+    return doubleTapGR;
 }
 
 

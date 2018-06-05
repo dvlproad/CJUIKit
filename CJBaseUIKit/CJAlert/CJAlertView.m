@@ -9,6 +9,8 @@
 #import "CJAlertView.h"
 #import "UIView+CJPopupInView.h"
 
+#import <CoreText/CoreText.h>
+
 @interface CJAlertView () {
     CGFloat _flagImageViewHeight, _titleLabelHeight, _messageLabelHeight, _bottomButtonHeight;
 }
@@ -241,7 +243,8 @@
     CGSize titleTextSize = [CJAlertView getTextSizeFromString:text withFont:font maxSize:titleLabelMaxSize lineBreakMode:NSLineBreakByCharWrapping paragraphStyle:paragraphStyle];
     CGFloat titleTextHeight = titleTextSize.height;
     
-    CGFloat lineCount = 1;
+    NSMutableArray *lineStringArray = [CJAlertView getLineStringArrayForText:text withFont:font maxTextWidth:titleLabelMaxWidth];
+    CGFloat lineCount = lineStringArray.count;
     CGFloat lineSpacing = paragraphStyle.lineSpacing;
     if (lineSpacing == 0) {
         lineSpacing = 2;
@@ -302,7 +305,8 @@
     CGSize messageTextSize = [CJAlertView getTextSizeFromString:text withFont:font maxSize:messageLabelMaxSize lineBreakMode:NSLineBreakByCharWrapping paragraphStyle:paragraphStyle];
     CGFloat messageTextHeight = messageTextSize.height;
     
-    CGFloat lineCount = 1;
+    NSMutableArray *lineStringArray = [CJAlertView getLineStringArrayForText:text withFont:font maxTextWidth:messageLabelMaxWidth];
+    CGFloat lineCount = lineStringArray.count;
     CGFloat lineSpacing = paragraphStyle.lineSpacing;
     if (lineSpacing == 0) {
         lineSpacing = 2;
@@ -520,6 +524,11 @@
         NSLog(@"%@", warningString);
     }
     
+    CGFloat maxHeight = CGRectGetHeight([UIScreen mainScreen].bounds) - 20;
+    if (fixHeight > maxHeight) {
+        fixHeight = maxHeight;
+    }
+    
     CGSize popupViewSize = CGSizeMake(self.size.width, fixHeight);
     
     [self cj_popupInCenterWindow:CJAnimationTypeNormal
@@ -593,6 +602,41 @@
         return [string sizeWithFont:font constrainedToSize:maxSize lineBreakMode:lineBreakMode];
 #pragma clang diagnostic push
     }
+}
+
+
+
+///获取每行的字符串组成的数组
++ (NSMutableArray<NSString *> *)getLineStringArrayForText:(NSString *)labelText
+                                                 withFont:(UIFont *)font
+                                             maxTextWidth:(CGFloat)maxTextWidth
+{
+    CTFontRef myFont = CTFontCreateWithName((__bridge CFStringRef)([font fontName]), [font pointSize], NULL);
+    
+    NSMutableAttributedString *attStr = [[NSMutableAttributedString alloc] initWithString:labelText];
+    
+    [attStr addAttribute:(NSString *)kCTFontAttributeName value:(__bridge id)myFont range:NSMakeRange(0, attStr.length)];
+    
+    
+    CTFramesetterRef frameSetter = CTFramesetterCreateWithAttributedString((__bridge CFAttributedStringRef)attStr);
+    CGMutablePathRef path = CGPathCreateMutable();
+    CGPathAddRect(path, NULL, CGRectMake(0, 0, maxTextWidth, 100000));
+    CTFrameRef frame = CTFramesetterCreateFrame(frameSetter, CFRangeMake(0, 0), path, NULL);
+    NSArray *lines = (__bridge NSArray *)CTFrameGetLines(frame);
+    
+    NSMutableArray *lineStringArray = [[NSMutableArray alloc] init];
+    for (id line in lines)
+    {
+        CTLineRef lineRef = (__bridge CTLineRef )line;
+        CFRange lineRange = CTLineGetStringRange(lineRef);
+        NSRange range = NSMakeRange(lineRange.location, lineRange.length);
+        NSString *lineString = [labelText substringWithRange:range];
+        
+        [lineStringArray addObject:lineString];
+        
+    }
+    
+    return lineStringArray;
 }
 
 @end

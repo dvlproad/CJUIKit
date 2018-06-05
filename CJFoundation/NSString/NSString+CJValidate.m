@@ -16,6 +16,25 @@
     return isEmpty;
 }
 
+///判断自己是否为空
+- (BOOL)cj_isBlank {
+    if (!self.length ||
+        self == nil ||
+        self == NULL ||
+        (NSNull *)self == [NSNull null] ||
+        [self isKindOfClass:[NSNull class]] ||
+        [self isEqualToString:@"(null)"] ||
+        [self isEqualToString:@"<null>"] ||
+        [self isEqualToString:@"null"] ||
+        [self isEqualToString:@"NULL"]
+        ) {
+        return YES;
+    }else {
+        return NO;
+    }
+}
+
+
 #pragma mark - 数字、字母、整型、浮点型的判断
 ///判断是否为整型(即是否为纯数字)
 - (BOOL)cj_validateInt {

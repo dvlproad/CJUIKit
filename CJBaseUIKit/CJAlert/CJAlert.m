@@ -57,6 +57,7 @@
 
 
 #pragma mark - CJAlertView
+/* 完整的描述请参见文件头部 */
 + (void)showCJAlertViewWithSize:(CGSize)size
                       flagImage:(UIImage *)flagImage
                           title:(NSString *)title
@@ -72,6 +73,40 @@
                                                cancelHandle:cancelHandle
                                                    okHandle:okHandle];
     [alertView showWithShouldFitHeight:NO];
+}
+
+#pragma mark - DebugView
+/* 完整的描述请参见文件头部 */
++ (void)showDebugViewWithTitle:(NSString *)title message:(NSString *)message
+{    
+    CGFloat screenWidth = CGRectGetWidth([[UIScreen mainScreen] bounds]);
+    CGSize popupViewSize = CGSizeMake(screenWidth * 0.9, 200);
+    CJAlertView *alertView = [[CJAlertView alloc] initWithSize:popupViewSize firstVerticalInterval:25 secondVerticalInterval:20 thirdVerticalInterval:10];
+    
+    if (title.length > 0) {
+        [alertView addTitleWithText:title font:[UIFont systemFontOfSize:15.0] textAlignment:NSTextAlignmentCenter margin:20 paragraphStyle:nil];
+    }
+    
+    if (message.length > 0) {
+        NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle defaultParagraphStyle] mutableCopy];
+        paragraphStyle.lineBreakMode = NSLineBreakByCharWrapping;
+        paragraphStyle.lineSpacing = 3;
+        paragraphStyle.firstLineHeadIndent = 10;
+        [alertView addMessageWithText:message font:[UIFont systemFontOfSize:15.0] textAlignment:NSTextAlignmentLeft margin:20 paragraphStyle:paragraphStyle];
+        [alertView addMessageLayerWithBorderWidth:0.5 borderColor:nil cornerRadius:3];
+    }
+    
+    NSString *cancelButtonTitle = NSLocalizedString(@"取消", nil);
+    NSString *okButtonTitle = NSLocalizedString(@"复制到粘贴板", nil);
+    [alertView addBottomButtonWithHeight:50 cancelButtonTitle:cancelButtonTitle okButtonTitle:okButtonTitle  cancelHandle:^{
+        //NSLog(@"调试面板:点击了取消按钮");
+    } okHandle:^{
+        //NSLog(@"调试面板:调试信息已复制到粘贴板");
+        UIPasteboard *pasteboard = [UIPasteboard generalPasteboard];
+        pasteboard.string = message;
+    }];
+    
+    [alertView showWithShouldFitHeight:YES];
 }
 
 @end

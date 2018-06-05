@@ -18,7 +18,10 @@ typedef NS_ENUM(NSUInteger, CJAreaType) {
 
 
 ///是否为空字符串
-- (BOOL)cj_isEmpt;
+- (BOOL)cj_isEmpty;
+
+///判断自己是否为空
+- (BOOL)cj_isBlank;
 
 //源自：iOS - 正则表达式判断邮箱、身份证..是否正确：http://www.2cto.com/kf/201311/256494.html
 

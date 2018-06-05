@@ -12,6 +12,10 @@
 #import "CJAlert.h"
 #import "CJAlertView.h"
 
+#import "TestDataUtil.h"
+#import "CJConvertUtil.h"
+#import "NSDictionary+CJConvert.h"
+
 @interface AlertViewController () <UITableViewDataSource, UITableViewDelegate> {
     
 }
@@ -86,6 +90,31 @@
             toastModule.title = @"Title & Message & OK & Cancel";
             //toastModule.classEntry = [UIViewController class];
             [sectionDataModel.values addObject:toastModule];
+        }
+        [sectionDataModels addObject:sectionDataModel];
+    }
+    
+    //DebugView
+    {
+        CJSectionDataModel *sectionDataModel = [[CJSectionDataModel alloc] init];
+        sectionDataModel.theme = @"DebugView";
+        {
+            CJModuleModel *debugViewModule = [[CJModuleModel alloc] init];
+            debugViewModule.title = @"Debug appInfo";
+            //toastModule.classEntry = [UIViewController class];
+            [sectionDataModel.values addObject:debugViewModule];
+        }
+        {
+            CJModuleModel *debugViewModule = [[CJModuleModel alloc] init];
+            debugViewModule.title = @"Debug Model";
+            //toastModule.classEntry = [UIViewController class];
+            [sectionDataModel.values addObject:debugViewModule];
+        }
+        {
+            CJModuleModel *debugViewModule = [[CJModuleModel alloc] init];
+            debugViewModule.title = @"Debug Request";
+            //toastModule.classEntry = [UIViewController class];
+            [sectionDataModel.values addObject:debugViewModule];
         }
         [sectionDataModels addObject:sectionDataModel];
     }
@@ -225,7 +254,7 @@
             NSString *cancelButtonTitle = nil;
             NSString *okButtonTitle = NSLocalizedString(@"我知道了", nil);
             
-            CJAlertView *alertView = [[CJAlertView alloc] initWithSize:popupViewSize firstVerticalInterval:15 secondVerticalInterval:10 thirdVerticalInterval:0];
+            CJAlertView *alertView = [[CJAlertView alloc] initWithSize:popupViewSize firstVerticalInterval:15 secondVerticalInterval:10 thirdVerticalInterval:10];
             [alertView addTitleWithText:title font:[UIFont systemFontOfSize:18.0] textAlignment:NSTextAlignmentCenter margin:20 paragraphStyle:nil];
             
             NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle defaultParagraphStyle] mutableCopy];
@@ -250,7 +279,7 @@
             NSString *cancelButtonTitle = NSLocalizedString(@"取消", nil);
             NSString *okButtonTitle = NSLocalizedString(@"结束行程", nil);
             
-            CJAlertView *alertView = [[CJAlertView alloc] initWithSize:popupViewSize firstVerticalInterval:25 secondVerticalInterval:20 thirdVerticalInterval:0];
+            CJAlertView *alertView = [[CJAlertView alloc] initWithSize:popupViewSize firstVerticalInterval:25 secondVerticalInterval:20 thirdVerticalInterval:10];
             [alertView addTitleWithText:title font:[UIFont systemFontOfSize:15.0] textAlignment:NSTextAlignmentCenter margin:20 paragraphStyle:nil];
             
             
@@ -266,6 +295,31 @@
                 NSLog(@"点击了确认按钮");
             }];
             [alertView showWithShouldFitHeight:NO];
+        }
+    } else if (indexPath.section == 2) {
+        if (indexPath.row == 0) {
+            NSString *title = @"app信息";
+            
+            NSString *flightNo = @"班次：BCD 12345";
+            NSString *disptachTime = @"出发时间：2018-04-20 11:00";
+            NSString *startStation = @"厦门市软件园二期";
+            NSString *endStation = @"漳州市万达广场";
+            NSString *message = [NSString stringWithFormat:@"%@\n%@\n%@\n%@", flightNo, disptachTime, startStation, endStation];
+            
+            [CJAlert showDebugViewWithTitle:title message:message];
+            
+        } else if (indexPath.row == 1) {
+            NSString *title = @"对象信息";
+            
+            NSMutableArray<TestDataModel *> *dataModels = [TestDataUtil getTestDataModels];
+            TestDataModel *dataModel = dataModels[0];
+            
+            NSString *message = [CJConvertUtil stringFromObject:dataModel];
+            
+            [CJAlert showDebugViewWithTitle:title message:message];
+            
+        } else if (indexPath.row == 3) {
+            
         }
     }
 }

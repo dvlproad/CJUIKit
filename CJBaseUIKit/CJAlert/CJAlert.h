@@ -12,13 +12,13 @@
 @interface CJAlert : NSObject
 
 #pragma mark - UIAlertController
-/* 完整的描述请参见文件头部 */
+///显示系统AlertType弹框
 + (void)showAlertTypeAlertControllerWithTitle:(NSString *)title
                                       message:(NSString *)message
                                  alertActions:(NSArray<UIAlertAction *> *)alertActions
                              inViewController:(UIViewController *)viewController;
 
-/* 完整的描述请参见文件头部 */
+///显示系统SheetType弹框
 + (void)showSheetTypeAlertControllerWithTitle:(NSString *)title
                                       message:(NSString *)message
                                  alertActions:(NSArray<UIAlertAction *> *)alertActions
@@ -26,6 +26,7 @@
 
 
 #pragma mark - CJAlertView
+///显示自定义的Alert弹框
 + (void)showCJAlertViewWithSize:(CGSize)size
                       flagImage:(UIImage *)flagImage
                           title:(NSString *)title
@@ -34,5 +35,9 @@
                   okButtonTitle:(NSString *)okButtonTitle
                    cancelHandle:(void(^)(void))cancelHandle
                        okHandle:(void(^)(void))okHandle;
+
+#pragma mark - DebugView
+///显示调试面板
++ (void)showDebugViewWithTitle:(NSString *)title message:(NSString *)message;
 
 @end

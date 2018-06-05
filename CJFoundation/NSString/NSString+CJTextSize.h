@@ -52,4 +52,18 @@
  */
 - (CGFloat)cjTextWidthWithFont:(UIFont *)textFont;
 
+
+#pragma mark - 跟Line相关的
+/**
+ *  获取每行的字符串组成的数组(假设最大高可以MAXFLOAT)
+ *  @brief  常用于获取行数
+ *
+ *  @param font             字符串的字体大小font
+ *  @param maxTextWidth     字符串允许占用的最大宽度
+ *
+ *  @return 每行的字符串组成的数组
+ */
+- (NSMutableArray<NSString *> *)getLineStringArrayWithFont:(UIFont *)font
+                                              maxTextWidth:(CGFloat)maxTextWidth;
+
 @end

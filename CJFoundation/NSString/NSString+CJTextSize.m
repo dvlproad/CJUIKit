@@ -7,6 +7,7 @@
 //
 
 #import "NSString+CJTextSize.h"
+#import <CoreText/CoreText.h>
 
 @implementation NSString (CJCalculateSize)
 
@@ -117,5 +118,43 @@
 #pragma clang diagnostic pop
     }
 }
+
+
+
+#pragma mark - 跟Line相关的
+/* 完整的描述请参见文件头部 */
+- (NSMutableArray<NSString *> *)getLineStringArrayWithFont:(UIFont *)font
+                                              maxTextWidth:(CGFloat)maxTextWidth
+{
+    NSString *labelText = self;
+    
+    CTFontRef myFont = CTFontCreateWithName((__bridge CFStringRef)([font fontName]), [font pointSize], NULL);
+    
+    NSMutableAttributedString *attStr = [[NSMutableAttributedString alloc] initWithString:labelText];
+    
+    [attStr addAttribute:(NSString *)kCTFontAttributeName value:(__bridge id)myFont range:NSMakeRange(0, attStr.length)];
+    
+    
+    CTFramesetterRef frameSetter = CTFramesetterCreateWithAttributedString((__bridge CFAttributedStringRef)attStr);
+    CGMutablePathRef path = CGPathCreateMutable();
+    CGPathAddRect(path, NULL, CGRectMake(0, 0, maxTextWidth, 100000));
+    CTFrameRef frame = CTFramesetterCreateFrame(frameSetter, CFRangeMake(0, 0), path, NULL);
+    NSArray *lines = (__bridge NSArray *)CTFrameGetLines(frame);
+    
+    NSMutableArray *lineStringArray = [[NSMutableArray alloc] init];
+    for (id line in lines)
+    {
+        CTLineRef lineRef = (__bridge CTLineRef )line;
+        CFRange lineRange = CTLineGetStringRange(lineRef);
+        NSRange range = NSMakeRange(lineRange.location, lineRange.length);
+        NSString *lineString = [labelText substringWithRange:range];
+        
+        [lineStringArray addObject:lineString];
+        
+    }
+    
+    return lineStringArray;
+}
+
 
 @end

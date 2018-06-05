@@ -11,9 +11,9 @@
 @interface UIView (GestureRecognizer)
 
 ///添加单击手势
-- (void)cj_addSingleTapWithTarget:(id)target mSEL:(SEL)sel;
+- (UITapGestureRecognizer *)cj_addSingleTapWithTarget:(id)target mSEL:(SEL)sel;
 
 ///添加双击手势(只有当doubleTapGR识别失败的时候(即识别出这不是双击操作)，singleTapGesture才能开始识别)
-- (void)cj_addDoubleTapWithTarget:(id)target mSEL:(SEL)sel ignoreSingleTapGR:(UITapGestureRecognizer *)singleTapGR;
+- (UITapGestureRecognizer *)cj_addDoubleTapWithTarget:(id)target mSEL:(SEL)sel ignoreSingleTapGR:(UITapGestureRecognizer *)singleTapGR;
 
 @end
