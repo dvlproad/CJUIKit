@@ -7,109 +7,13 @@
 //
 
 #import "CJConvertUtil.h"
+#import "CJFormatPrintUtil.h"
 
 #import <CommonCrypto/CommonDigest.h> //md5方法要用的
 
 #import <objc/runtime.h>
 
 @implementation CJConvertUtil
-
-
-/* 完整的描述请参见文件头部 */
-+ (NSData *)cj_JSONDataFromJsonObject:(id)jsonObject
-{
-    if (![NSJSONSerialization isValidJSONObject:jsonObject]) {
-        return nil;
-    }
-    
-    //方法②：options设为0，来不设置(http://www.jianshu.com/p/8451fd494294)
-    NSError *error = nil;
-    NSData *jsonData = [NSJSONSerialization dataWithJSONObject:jsonObject options:0 error:&error];
-    
-    return jsonData;
-}
-
-/* 完整的描述请参见文件头部 */
-+ (NSString *)stringFromObject2:(id)convertObject
-{
-    if (![NSJSONSerialization isValidJSONObject:convertObject]) {
-        return nil;
-    }
-    
-    /*
-    //方法①：options设为NSJSONWritingPrettyPrinted选项
-    NSError *error = nil;
-    NSData *jsonData = [NSJSONSerialization dataWithJSONObject:convertObject options:NSJSONWritingPrettyPrinted error:&error];//使用NSJSONWritingPrettyPrinted选项后会在生成的JSON中可能包含空格、换行符等格式控制字符，但是在网络传输中很明显这是不需要的，需去掉
-    NSString *jsonString = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
-    
-    //第一反应，去掉结果中数不胜数的空格和回车的方法。但很快就无疾而终，因为我们的参数中会同时存在空格，这是一个大问题。
-    //jsonString = [jsonString stringByReplacingOccurrencesOfString:@"\n" withString:@""];
-    //jsonString = [jsonString stringByReplacingOccurrencesOfString:@" " withString:@""];
-    //*/
-    
-    ///*
-    //方法②：options设为0，来不设置(http://www.jianshu.com/p/8451fd494294)
-    NSError *error = nil;
-    NSData *jsonData = [NSJSONSerialization dataWithJSONObject:convertObject options:0 error:&error];
-    NSString *jsonString = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
-    //*/
-    
-    //NSLog(@"jsonString = %@", jsonString);
-    
-    return jsonString;
-}
-
-/* 完整的描述请参见文件头部 */
-+ (id)cj_JSONObjectFromData:(NSData *)jsonData {
-    NSError *error = nil;
-    id JSONObject = [NSJSONSerialization JSONObjectWithData:jsonData options:NSJSONReadingAllowFragments error:&error];
-    if (error) {
-        NSLog(@"Error:json解析失败：%@", error);
-        return nil;
-    }
-    
-    return JSONObject;
-}
-
-/* 完整的描述请参见文件头部 */
-+ (id)cj_JSONObjectFromString:(NSString *)jsonString {
-    NSData *jsonData = [jsonString dataUsingEncoding:NSUTF8StringEncoding];
-    
-    return [NSJSONSerialization cj_JSONObjectFromData:jsonData];
-}
-
-+ (NSData *)dataFromDictionary:(NSDictionary *)dictionary {
-    NSData *data = nil;
-    if ([NSJSONSerialization isValidJSONObject:dictionary]) {
-        NSError *error;
-        data = [NSJSONSerialization dataWithJSONObject:dictionary options:NSJSONWritingPrettyPrinted error:&error];
-    }
-    return data;
-}
-
-+ (NSString *)stringFromDictionary:(NSDictionary *)dictionary {
-    NSString *resultString = nil;
-    if ([NSJSONSerialization isValidJSONObject:dictionary]) {
-        NSError *error;
-        NSData *data = [NSJSONSerialization dataWithJSONObject:dictionary options:NSJSONWritingPrettyPrinted error:&error];
-        NSString *string = [[NSString alloc]initWithData:data encoding:NSUTF8StringEncoding];
-        resultString = [string stringByAppendingString:string];
-    }
-    return resultString;
-}
-
-
-+ (NSDictionary *)dictionaryFromData:(NSData *)data {
-    NSError *error;
-    id object = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:&error];
-    NSDictionary *dic = [NSDictionary dictionaryWithDictionary:object];
-    if (error) {
-        return nil;
-    }
-    return dic;
-}
-
-
 
 + (NSString *)MD5StringFromString:(NSString *)string
 {
@@ -122,6 +26,41 @@
         [output appendFormat:@"%02x",md5Buffer[i]];
     
     return output;
+}
+
+/* 完整的描述请参见文件头部 */
++ (id)JSONObjectFromObject:(id)convertObject {
+    if ([convertObject isKindOfClass:[NSDictionary class]] || [convertObject isKindOfClass:[NSArray class]]) { //NSDictionary、NSArray
+        return convertObject;
+        
+    } else {
+        NSData *objectData = nil;
+        if ([convertObject isKindOfClass:[NSString class]]) {    //NSString
+            NSString *jsonString = (NSString *)convertObject;
+            objectData = [jsonString dataUsingEncoding:NSUTF8StringEncoding];
+            
+            NSError *error = nil;
+            id JSONObject = [NSJSONSerialization JSONObjectWithData:objectData options:NSJSONReadingAllowFragments error:&error];
+            if (error) {
+                NSLog(@"Error:json解析失败：%@", error);
+                return nil;
+            }
+            return JSONObject;
+            
+        } else if ([convertObject isKindOfClass:[NSData class]]) {      //NSData
+            objectData = (NSData *)convertObject;
+            
+            NSError *error = nil;
+            id JSONObject = [NSJSONSerialization JSONObjectWithData:objectData options:NSJSONReadingAllowFragments error:&error];
+            if (error) {
+                NSLog(@"Error:json解析失败：%@", error);
+                return nil;
+            }
+            return JSONObject;
+            
+        } else
+            return nil;
+    }
 }
 
 
@@ -143,75 +82,82 @@
             JSONObject = [self dictionaryFromModel:convertObject];
         }
         
-        if ([NSJSONSerialization isValidJSONObject:JSONObject]) {//NSDictionary、NSArray
-            if ([JSONObject isKindOfClass:[NSDictionary class]]) {
-                lastString = [self printDictionary:JSONObject];
-            } else if ([JSONObject isKindOfClass:[NSArray class]]) {
-                lastString = [self printArray:JSONObject];
-            } else {
-                NSError *error;
-                NSData *objectData = [NSJSONSerialization dataWithJSONObject:JSONObject options:0 error:&error];
-                lastString = [[NSString alloc] initWithData:objectData encoding:NSUTF8StringEncoding];
-            }
+        if ([NSJSONSerialization isValidJSONObject:convertObject]) {    //NSDictionary、NSArray
+            /*
+             //方法①：options设为NSJSONWritingPrettyPrinted选项
+             NSError *error = nil;
+             NSData *jsonData = [NSJSONSerialization dataWithJSONObject:convertObject options:NSJSONWritingPrettyPrinted error:&error];//使用NSJSONWritingPrettyPrinted选项后会在生成的JSON中可能包含空格、换行符等格式控制字符，但是在网络传输中很明显这是不需要的，需去掉
+             NSString *jsonString = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
+             
+             //第一反应，去掉结果中数不胜数的空格和回车的方法。但很快就无疾而终，因为我们的参数中会同时存在空格，这是一个大问题。
+             //jsonString = [jsonString stringByReplacingOccurrencesOfString:@"\n" withString:@""];
+             //jsonString = [jsonString stringByReplacingOccurrencesOfString:@" " withString:@""];
+             //*/
+            
+            ///*
+            //方法②：options设为0，来不设置(http://www.jianshu.com/p/8451fd494294)
+            NSError *error = nil;
+            NSData *jsonData = [NSJSONSerialization dataWithJSONObject:convertObject options:0 error:&error];
+            lastString = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
+            //*/
+            
             
         } else {
-            lastString = [NSString stringWithFormat:@"The Analyze failed class is %@", NSStringFromClass([convertObject class])];
+            NSString *errorMessage = [NSString stringWithFormat:@"The Analyze failed class is %@", NSStringFromClass([convertObject class])];
+            lastString = errorMessage;
         }
+        
     }
     
     return lastString;
 }
 
 
-+ (NSString *)printDictionary:(NSDictionary *)dictionary {
-    NSMutableString *string = [NSMutableString string];
+
+#pragma mark - Formatted
++ (NSString *)formattedStringFromObject:(id)convertObject {
+    NSString *lastString = nil;
     
-    // 开头有个{
-    [string appendString:@"{\n"];
+    if ([convertObject isKindOfClass:[NSString class]]) {    //NSString
+        lastString = (NSString *)convertObject;
+        
+    } else if ([convertObject isKindOfClass:[NSData class]]) {      //NSData
+        NSData *objectData = (NSData *)convertObject;
+        lastString = [[NSString alloc] initWithData:objectData encoding:NSUTF8StringEncoding];
+        
+    } else { //其他：包括NSDictionary、NSArray、Model等
+        id JSONObject = nil;
+        if ([NSJSONSerialization isValidJSONObject:convertObject]) {
+            JSONObject = convertObject;
+        } else {
+            JSONObject = [self dictionaryFromModel:convertObject];
+        }
+        
+        if ([NSJSONSerialization isValidJSONObject:convertObject]) {
+            if ([convertObject isKindOfClass:[NSDictionary class]]) {    //NSDictionary
+                NSDictionary *dictionary = (NSDictionary *)convertObject;
+                lastString = [CJFormatPrintUtil formattedStringFromDictionary:dictionary];
+                
+            } else if ([convertObject isKindOfClass:[NSArray class]]) { //NSArray
+                NSArray *array = (NSArray *)convertObject;
+                lastString = [CJFormatPrintUtil formattedStringFromArray:array];
+                
+            } else {
+                NSError *error;
+                NSData *objectData = [NSJSONSerialization dataWithJSONObject:JSONObject options:0 error:&error];
+                lastString = [[NSString alloc] initWithData:objectData encoding:NSUTF8StringEncoding];
+            }
+        } else {
+            lastString = [NSString stringWithFormat:@"The Analyze failed class is %@", NSStringFromClass([convertObject class])];
+        }
+        
+    }
     
-    // 遍历所有的键值对
-    [dictionary enumerateKeysAndObjectsUsingBlock:^(id  _Nonnull key, id  _Nonnull obj, BOOL * _Nonnull stop) {
-        [string appendFormat:@"\t%@", key];
-        [string appendString:@" : "];
-        [string appendFormat:@"%@,\n", obj];
-    }];
-    
-    // 结尾有个}
-    [string appendString:@"}"];
-    
-    // 查找最后一个逗号
-    NSRange range = [string rangeOfString:@"," options:NSBackwardsSearch];
-    if (range.location != NSNotFound)
-        [string deleteCharactersInRange:range];
-    
-    return string;
+    return lastString;
 }
 
 
-+ (NSString *)printArray:(NSArray *)array
-{
-    NSMutableString *string = [NSMutableString string];
-    
-    // 开头有个[
-    [string appendString:@"[\n"];
-    
-    // 遍历所有的元素
-    [array enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-        [string appendFormat:@"\t%@,\n", obj];
-    }];
-    
-    // 结尾有个]
-    [string appendString:@"]"];
-    
-    // 查找最后一个逗号
-    NSRange range = [string rangeOfString:@"," options:NSBackwardsSearch];
-    if (range.location != NSNotFound)
-        [string deleteCharactersInRange:range];
-    
-    return string;
-}  //性能呢
-
-
+#pragma mark - Convert Model
 /**
  *  对象转换为字典
  *
@@ -227,7 +173,6 @@
     objc_property_t *props = class_copyPropertyList([obj class], &propsCount);
     
     for(int i = 0;i < propsCount; i++) {
-        
         objc_property_t prop = props[i];
         NSString *propName = [NSString stringWithUTF8String:property_getName(prop)];
         id value = [obj valueForKey:propName];
@@ -268,10 +213,7 @@
         return dic;
     }
     return [self dictionaryFromModel:obj];
-    
 }
-
-
 
 
 @end

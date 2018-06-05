@@ -14,6 +14,7 @@
 
 #import "TestDataUtil.h"
 #import "CJConvertUtil.h"
+#import "CJFormatPrintUtil.h"
 #import "NSDictionary+CJConvert.h"
 
 @interface AlertViewController () <UITableViewDataSource, UITableViewDelegate> {
@@ -106,16 +107,17 @@
         }
         {
             CJModuleModel *debugViewModule = [[CJModuleModel alloc] init];
-            debugViewModule.title = @"Debug Model";
+            debugViewModule.title = @"Debug Request(NSDictionary)";
             //toastModule.classEntry = [UIViewController class];
             [sectionDataModel.values addObject:debugViewModule];
         }
         {
             CJModuleModel *debugViewModule = [[CJModuleModel alloc] init];
-            debugViewModule.title = @"Debug Request";
+            debugViewModule.title = @"Debug Model";
             //toastModule.classEntry = [UIViewController class];
             [sectionDataModel.values addObject:debugViewModule];
         }
+        
         [sectionDataModels addObject:sectionDataModel];
     }
     
@@ -309,12 +311,43 @@
             [CJAlert showDebugViewWithTitle:title message:message];
             
         } else if (indexPath.row == 1) {
+            NSString *title = @"NSDictionary信息";
+            
+            NSDictionary *dictionary = @{@"text1": @"Agree!Nice weather!",
+                                         @"text2": @"Agree!Nice weather!",
+                                         @"user": @{@"name": @"Jack",
+                                                    @"icon": @"lufy.png",
+                                                    @"icom": @{@"name": @"Rose",
+                                                               @"icon": @"nami.png",
+                                                               },
+                                                    },
+                                         @"users": @[@{@"name": @"Zhangsan",
+                                                       @"icon": @"nami.png"
+                                                       },
+                                                     @{@"name": @"Lisi",
+                                                       @"icon": @"nami.png"
+                                                       },
+                                                     ],
+                                         @"retweetedStatus": @{@"text": @"Nice weather!",
+                                                               @"user": @{@"name": @"Rose",
+                                                                          @"icon": @"nami.png",
+                                                                          }
+                                                               }
+                                         };
+            
+            //NSString *message = [CJConvertUtil formattedStringFromObject:dictionary];
+            NSString *message = [CJFormatPrintUtil formattedStringFromDictionary2:dictionary];
+            
+            [CJAlert showDebugViewWithTitle:title message:message];
+            
+        } else if (indexPath.row == 2) {
             NSString *title = @"对象信息";
             
             NSMutableArray<TestDataModel *> *dataModels = [TestDataUtil getTestDataModels];
             TestDataModel *dataModel = dataModels[0];
             
-            NSString *message = [CJConvertUtil stringFromObject:dataModel];
+            NSDictionary *dictionary = [CJConvertUtil dictionaryFromModel:dataModel];
+            NSString *message = [CJConvertUtil formattedStringFromObject:dictionary];
             
             [CJAlert showDebugViewWithTitle:title message:message];
             

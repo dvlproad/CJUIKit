@@ -12,18 +12,19 @@
 
 @interface CJConvertUtil : NSObject
 
-+ (NSData *)dataFromDictionary:(NSDictionary *)dictionary;
-
-+ (NSString *)stringFromDictionary:(NSDictionary *)dictionary;
-
-+ (NSDictionary *)dictionaryFromData:(NSData *)data;
-
 /* Source : http://iphonedevelopertips.com/core-services/create-md5-hash-from-nsstring-nsdata-or-file.html */
 + (NSString*)MD5StringFromString:(NSString *)string;
 
-
++ (id)JSONObjectFromObject:(id)convertObject;
 
 + (NSString *)stringFromObject:(id)convertObject;
+
+
++ (NSString *)formattedStringFromObject:(id)convertObject;
+
+
+
+
 /**
  *  对象转换为字典
  *
@@ -32,5 +33,6 @@
  *  @return 转换后的字典
  */
 + (NSDictionary *)dictionaryFromModel:(id)obj;
+
 
 @end

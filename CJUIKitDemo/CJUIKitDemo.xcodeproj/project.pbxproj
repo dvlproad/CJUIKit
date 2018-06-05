@@ -149,6 +149,7 @@
 		789CAF831FB612B700AF8CD4 /* cjCollectionViewCellDelete@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 789CAF101FB612B600AF8CD4 /* cjCollectionViewCellDelete@2x.png */; };
 		789CAF851FB612B700AF8CD4 /* CJSearchTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 789CAF151FB612B600AF8CD4 /* CJSearchTableView.m */; };
 		789CAF861FB612B700AF8CD4 /* MySearchEqualCellSizeCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 789CAF171FB612B600AF8CD4 /* MySearchEqualCellSizeCollectionView.m */; };
+		789F812D20C6E08800C77439 /* CJFormatPrintUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 789F812C20C6E08800C77439 /* CJFormatPrintUtil.m */; };
 		78E269BE1ECC5E1A007D3686 /* bgCar@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 78E269BB1ECC5E1A007D3686 /* bgCar@2x.jpg */; };
 		78E269BF1ECC5E1A007D3686 /* bgSky@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 78E269BC1ECC5E1A007D3686 /* bgSky@2x.jpg */; };
 		78E269C01ECC5E1A007D3686 /* header@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 78E269BD1ECC5E1A007D3686 /* header@2x.jpg */; };
@@ -720,6 +721,8 @@
 		789CAF151FB612B600AF8CD4 /* CJSearchTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJSearchTableView.m; sourceTree = "<group>"; };
 		789CAF161FB612B600AF8CD4 /* MySearchEqualCellSizeCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MySearchEqualCellSizeCollectionView.h; sourceTree = "<group>"; };
 		789CAF171FB612B600AF8CD4 /* MySearchEqualCellSizeCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MySearchEqualCellSizeCollectionView.m; sourceTree = "<group>"; };
+		789F812B20C6E08800C77439 /* CJFormatPrintUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJFormatPrintUtil.h; sourceTree = "<group>"; };
+		789F812C20C6E08800C77439 /* CJFormatPrintUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJFormatPrintUtil.m; sourceTree = "<group>"; };
 		78E269BB1ECC5E1A007D3686 /* bgCar@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "bgCar@2x.jpg"; sourceTree = "<group>"; };
 		78E269BC1ECC5E1A007D3686 /* bgSky@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "bgSky@2x.jpg"; sourceTree = "<group>"; };
 		78E269BD1ECC5E1A007D3686 /* header@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "header@2x.jpg"; sourceTree = "<group>"; };
@@ -2410,6 +2413,8 @@
 			children = (
 				807C4F8520C65DA4002EAC12 /* CJConvertUtil.h */,
 				807C4F8420C65DA4002EAC12 /* CJConvertUtil.m */,
+				789F812B20C6E08800C77439 /* CJFormatPrintUtil.h */,
+				789F812C20C6E08800C77439 /* CJFormatPrintUtil.m */,
 			);
 			path = CJConvertUtil;
 			sourceTree = "<group>";
@@ -2770,10 +2775,10 @@
 		80FF8F0B1FC5649E00E437CF /* DemosThirdParty */ = {
 			isa = PBXGroup;
 			children = (
-				80FF8F0C1FC5649E00E437CF /* ThirdPartyHomeViewController.xib */,
+				80FF8F0F1FC5649E00E437CF /* MJExtensionDemo */,
 				80FF8F0D1FC5649E00E437CF /* ThirdPartyHomeViewController.h */,
 				80FF8F0E1FC5649E00E437CF /* ThirdPartyHomeViewController.m */,
-				80FF8F0F1FC5649E00E437CF /* MJExtensionDemo */,
+				80FF8F0C1FC5649E00E437CF /* ThirdPartyHomeViewController.xib */,
 			);
 			path = DemosThirdParty;
 			sourceTree = "<group>";
@@ -2781,9 +2786,9 @@
 		80FF8F0F1FC5649E00E437CF /* MJExtensionDemo */ = {
 			isa = PBXGroup;
 			children = (
+				80FF8F121FC5649E00E437CF /* MJExtensionViewController.h */,
 				80FF8F101FC5649E00E437CF /* MJExtensionViewController.m */,
 				80FF8F111FC5649E00E437CF /* MJExtensionViewController.xib */,
-				80FF8F121FC5649E00E437CF /* MJExtensionViewController.h */,
 			);
 			path = MJExtensionDemo;
 			sourceTree = "<group>";
@@ -3991,6 +3996,7 @@
 				789CAF271FB612B700AF8CD4 /* CJBaseTableViewCell.m in Sources */,
 				789CAF7B1FB612B700AF8CD4 /* CJFloatingWindow.m in Sources */,
 				80D71EAD20902C2F00D2DB68 /* CJAlertView.m in Sources */,
+				789F812D20C6E08800C77439 /* CJFormatPrintUtil.m in Sources */,
 				80E7E63520AC227B000F762D /* AppInfoManager.m in Sources */,
 				80FF91451FC5668700E437CF /* CJWebUtil.m in Sources */,
 				80FF90A71FC5649F00E437CF /* QRCodeViewController.m in Sources */,
