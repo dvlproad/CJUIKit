@@ -69,14 +69,25 @@
 - (void)testAlert {
     XCUIApplication *app = [[XCUIApplication alloc] init];
     [app.tabBars.buttons[@"CJUtil"] tap];
-    
+
     XCUIElementQuery *tablesQuery = app.tables;
     [tablesQuery/*@START_MENU_TOKEN@*/.staticTexts[@"Alert"]/*[[".cells.staticTexts[@\"Alert\"]",".staticTexts[@\"Alert\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/ tap];
     [tablesQuery/*@START_MENU_TOKEN@*/.staticTexts[@"FlagImage & Title & Message & OK & Cancel"]/*[[".cells.staticTexts[@\"FlagImage & Title & Message & OK & Cancel\"]",".staticTexts[@\"FlagImage & Title & Message & OK & Cancel\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/ tap];
     [app.buttons[@"允许上车"] tap];
-    
+
     sleep(2);
     [app.buttons[@"确认"] tap];
+}
+
+///测试DebugView
+- (void)testDebugView {
+    XCUIApplication *app = [[XCUIApplication alloc] init];
+    [app.tabBars.buttons[@"CJUtil"] tap];
+    
+    XCUIElementQuery *tablesQuery = app.tables;
+    [tablesQuery/*@START_MENU_TOKEN@*/.staticTexts[@"Alert"]/*[[".cells.staticTexts[@\"Alert\"]",".staticTexts[@\"Alert\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/ tap];
+    [tablesQuery/*@START_MENU_TOKEN@*/.staticTexts[@"Debug Request(NSDictionary)"]/*[[".cells.staticTexts[@\"Debug Request(NSDictionary)\"]",".staticTexts[@\"Debug Request(NSDictionary)\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/ tap];
+    sleep(5);
 }
 
 @end

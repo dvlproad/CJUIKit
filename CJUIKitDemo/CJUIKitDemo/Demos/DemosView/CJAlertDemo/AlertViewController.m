@@ -266,7 +266,7 @@
             [alertView addBottomButtonWithHeight:50 cancelButtonTitle:cancelButtonTitle okButtonTitle:okButtonTitle cancelHandle:nil okHandle:^{
                 NSLog(@"点击了确认按钮");
             }];
-            [alertView showWithShouldFitHeight:NO];
+            [alertView showWithShouldFitHeight:YES];
         }
         
         if (indexPath.row == 4) {
@@ -296,7 +296,7 @@
             } okHandle:^{
                 NSLog(@"点击了确认按钮");
             }];
-            [alertView showWithShouldFitHeight:NO];
+            [alertView showWithShouldFitHeight:YES];
         }
     } else if (indexPath.section == 2) {
         if (indexPath.row == 0) {
@@ -315,7 +315,7 @@
             
             NSDictionary *dictionary = @{@"text1": @"Agree!Nice weather!",
                                          @"text2": @"Agree!Nice weather!",
-                                         @"user": @{@"name": @"Jack",
+                                         @"mine": @{@"name": @"Jack",
                                                     @"icon": @"lufy.png",
                                                     @"icom": @{@"name": @"Rose",
                                                                @"icon": @"nami.png",
@@ -328,7 +328,7 @@
                                                        @"icon": @"nami.png"
                                                        },
                                                      ],
-                                         @"retweetedStatus": @{@"text": @"Nice weather!",
+                                         @"retweetedStatus": @{@"text": @"This is a very long message! beyond the view's width!",
                                                                @"user": @{@"name": @"Rose",
                                                                           @"icon": @"nami.png",
                                                                           }

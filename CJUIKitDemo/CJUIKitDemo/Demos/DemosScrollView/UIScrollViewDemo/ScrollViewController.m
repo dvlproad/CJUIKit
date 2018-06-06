@@ -30,6 +30,14 @@
 - (void)setupScrollView {
     [self setupView1];
     [self setupView2];
+    
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        // 2秒后异步执行这里的代码...
+        [self.scrollView mas_updateConstraints:^(MASConstraintMaker *make) {
+            make.top.mas_equalTo(self.view1).mas_offset(20);
+            make.bottom.mas_equalTo(self.view1).mas_offset(-20);
+        }];
+    });
 }
 
 - (void)setupView1 {

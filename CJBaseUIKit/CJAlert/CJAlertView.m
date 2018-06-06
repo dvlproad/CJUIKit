@@ -27,7 +27,11 @@
 
 @property (nonatomic, strong) UIImageView *flagImageView;
 @property (nonatomic, strong) UILabel *titleLabel;
+
+@property (nonatomic, strong) UIScrollView *messageScrollView;
+@property (nonatomic, strong) UIView *messageContainerView;
 @property (nonatomic, strong) UILabel *messageLabel;
+
 @property (nonatomic, strong) UIButton *cancelButton;
 @property (nonatomic, strong) UIButton *okButton;
 
@@ -203,13 +207,14 @@
     _flagImageViewHeight = imageViewSize.height;
     
     if (self.titleLabel) {
+        //由于约束部分不一样，使用update会增加一个新约束，又没设置优先级，从而导致约束冲突。而如果用remake的话，又需要重新设置之前已经设置过的，否则容易缺失。所以使用masnory时候，使用优先级比较合适
         [self.titleLabel mas_updateConstraints:^(MASConstraintMaker *make) {
             make.top.mas_equalTo(self.flagImageView.mas_bottom).mas_offset(self.secondVerticalInterval);
         }];
     }
     
-    if (self.messageLabel) {
-        [self.messageLabel mas_updateConstraints:^(MASConstraintMaker *make) {
+    if (self.messageScrollView) {
+        [self.messageScrollView mas_updateConstraints:^(MASConstraintMaker *make) {
             if (self.titleLabel) {
                 make.top.mas_equalTo(self.flagImageView.mas_bottom).mas_offset(self.thirdVerticalInterval);
             } else {
@@ -227,7 +232,7 @@
     
     if (_titleLabel == nil) {
         UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectZero];
-        //titleLabel.backgroundColor = [UIColor clearColor];
+        //titleLabel.backgroundColor = [UIColor purpleColor];
         titleLabel.numberOfLines = 0;
         titleLabel.textAlignment = NSTextAlignmentCenter;
         titleLabel.textColor = [UIColor blackColor];
@@ -266,8 +271,8 @@
     }];
     _titleLabelHeight = titleTextHeight;
     
-    if (self.messageLabel) {
-        [self.messageLabel mas_updateConstraints:^(MASConstraintMaker *make) {
+    if (self.messageScrollView) {
+        [self.messageScrollView mas_updateConstraints:^(MASConstraintMaker *make) {
             if (self.flagImageView) {
                 make.top.mas_equalTo(self.titleLabel.mas_bottom).mas_offset(self.thirdVerticalInterval);
             } else {
@@ -288,15 +293,27 @@
         return;
     }
     
-    if (_messageLabel == nil) {
+    if (_messageScrollView == nil) {
+        UIScrollView *scrollView = [[UIScrollView alloc] init];
+        //scrollView.backgroundColor = [UIColor redColor];
+        [self addSubview:scrollView];
+        self.messageScrollView = scrollView;
+        
+        UIView *containerView = [[UIView alloc] init];
+        //containerView.backgroundColor = [UIColor greenColor];
+        [scrollView addSubview:containerView];
+        self.messageContainerView = containerView;
+        
         UIColor *messageTextColor = [UIColor colorWithRed:136/255.0 green:136/255.0 blue:136/255.0 alpha:1]; //#888888
         
         UILabel *messageLabel = [[UILabel alloc] initWithFrame:CGRectZero];
-        //messageLabel.backgroundColor = [UIColor clearColor];
         messageLabel.numberOfLines = 0;
+        //UITextView *messageLabel = [[UITextView alloc] initWithFrame:CGRectZero];
+        //messageLabel.editable = NO;
+        
         messageLabel.textAlignment = NSTextAlignmentCenter;
         messageLabel.textColor = messageTextColor;
-        [self addSubview:messageLabel];
+        [containerView addSubview:messageLabel];
         
         _messageLabel = messageLabel;
     }
@@ -330,7 +347,7 @@
     
     self.messageLabel.font = font;
     self.messageLabel.textAlignment = textAlignment;
-    [self.messageLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+    [self.messageScrollView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerX.mas_equalTo(self);
         make.left.mas_equalTo(self).mas_offset(messageLabelLeftOffset);
         if (self.titleLabel) {
@@ -347,20 +364,33 @@
         
         make.height.mas_equalTo(messageTextHeight);
     }];
+    
+    [self.messageContainerView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.right.mas_equalTo(self.messageScrollView);
+        make.top.bottom.mas_equalTo(self.messageScrollView);
+        make.width.mas_equalTo(self.messageScrollView.mas_width);
+        make.height.mas_equalTo(messageTextHeight);
+    }];
+    
+    [self.messageLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.right.mas_equalTo(self.messageContainerView);
+        make.top.mas_equalTo(self.messageContainerView);
+        make.height.mas_equalTo(messageTextHeight);
+    }];
     _messageLabelHeight = messageTextHeight;
 }
 
 ///添加 message 的边框等(几乎不会用到)
 - (void)addMessageLayerWithBorderWidth:(CGFloat)borderWidth borderColor:(CGColorRef)borderColor cornerRadius:(CGFloat)cornerRadius {
-    NSAssert(self.messageLabel, @"请先添加messageLabel");
+    NSAssert(self.messageScrollView, @"请先添加messageScrollView");
     
-    self.messageLabel.layer.borderWidth = borderWidth;
+    self.messageScrollView.layer.borderWidth = borderWidth;
     
     if (borderColor) {
-        self.messageLabel.layer.borderColor = borderColor;
+        self.messageScrollView.layer.borderColor = borderColor;
     }
     
-    self.messageLabel.layer.cornerRadius = cornerRadius;
+    self.messageScrollView.layer.cornerRadius = cornerRadius;
 }
 
 ///添加底部按钮
@@ -524,9 +554,21 @@
         NSLog(@"%@", warningString);
     }
     
-    CGFloat maxHeight = CGRectGetHeight([UIScreen mainScreen].bounds) - 20;
+    CGFloat maxHeight = CGRectGetHeight([UIScreen mainScreen].bounds) - 40;
     if (fixHeight > maxHeight) {
         fixHeight = maxHeight;
+        
+        NSString *warningString = [NSString stringWithFormat:@"CJ警告：您设置的size高度超过视图本身的最大高度%.2lf，会导致视图显示不全，已自动缩小", maxHeight];
+        NSLog(@"%@", warningString);
+        if (self.messageScrollView) {
+            CGFloat minHeightWithoutMessageLabel = _firstVerticalInterval + _flagImageViewHeight + _secondVerticalInterval + _titleLabelHeight + _thirdVerticalInterval + _bottomButtonHeight;
+            
+            _messageLabelHeight = fixHeight - minHeightWithoutMessageLabel;
+            [self.messageScrollView mas_updateConstraints:^(MASConstraintMaker *make) {
+                make.height.mas_equalTo(_messageLabelHeight);
+            }];
+        }
+        
     }
     
     CGSize popupViewSize = CGSizeMake(self.size.width, fixHeight);

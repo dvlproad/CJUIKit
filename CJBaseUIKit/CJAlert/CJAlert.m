@@ -81,7 +81,10 @@
 {    
     CGFloat screenWidth = CGRectGetWidth([[UIScreen mainScreen] bounds]);
     CGSize popupViewSize = CGSizeMake(screenWidth * 0.9, 200);
-    CJAlertView *alertView = [[CJAlertView alloc] initWithSize:popupViewSize firstVerticalInterval:25 secondVerticalInterval:20 thirdVerticalInterval:10];
+    CJAlertView *alertView = [[CJAlertView alloc] initWithSize:popupViewSize firstVerticalInterval:10 secondVerticalInterval:10 thirdVerticalInterval:10];
+    
+//    UIImage *flagImage = [UIImage imageNamed:@"scan_icon_notice"];
+//    [alertView addFlagImage:flagImage size:CGSizeMake(38, 38)];
     
     if (title.length > 0) {
         [alertView addTitleWithText:title font:[UIFont systemFontOfSize:15.0] textAlignment:NSTextAlignmentCenter margin:20 paragraphStyle:nil];
@@ -95,6 +98,8 @@
         [alertView addMessageWithText:message font:[UIFont systemFontOfSize:15.0] textAlignment:NSTextAlignmentLeft margin:20 paragraphStyle:paragraphStyle];
         [alertView addMessageLayerWithBorderWidth:0.5 borderColor:nil cornerRadius:3];
     }
+    
+    
     
     NSString *cancelButtonTitle = NSLocalizedString(@"取消", nil);
     NSString *okButtonTitle = NSLocalizedString(@"复制到粘贴板", nil);

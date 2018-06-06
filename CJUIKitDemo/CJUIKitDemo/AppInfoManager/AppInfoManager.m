@@ -133,7 +133,7 @@
     [alertView addBottomButtonWithHeight:40 cancelButtonTitle:nil okButtonTitle:NSLocalizedString(@"我知道了", nil) cancelHandle:nil okHandle:^{
         NSLog(@"点击了断网确认按钮");
     }];
-    [alertView showWithShouldFitHeight:NO];
+    [alertView showWithShouldFitHeight:YES];
     //*/
 }
 
