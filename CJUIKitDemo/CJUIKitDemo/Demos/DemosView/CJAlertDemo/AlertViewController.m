@@ -328,6 +328,9 @@
                                                        @"icon": @"nami.png"
                                                        },
                                                      ],
+                                         @"names": @[@"dvlproad",
+                                                     @"Beyond",
+                                                     ],
                                          @"retweetedStatus": @{@"text": @"This is a very long message! beyond the view's width!",
                                                                @"user": @{@"name": @"Rose",
                                                                           @"icon": @"nami.png",

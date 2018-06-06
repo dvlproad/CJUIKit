@@ -74,8 +74,16 @@
             NSString *newFlagPrefix = [NSString stringWithFormat:@"%@%@", textPrefix, appendKonggeString];
             NSString *newTextPrefix = [NSString stringWithFormat:@"%@\t", newFlagPrefix];
             for (id obj in currentObject) {
-                NSString *formattedString = [CJFormatPrintUtil formattedStringFromDictionary2:obj flagPrefix:newFlagPrefix textPrefix:newTextPrefix];
-                [string appendFormat:@"%@\n", formattedString];
+                if ([obj isKindOfClass:[NSDictionary class]]) {
+                    NSString *formattedString = [CJFormatPrintUtil formattedStringFromDictionary2:obj flagPrefix:newFlagPrefix textPrefix:newTextPrefix];
+                    [string appendFormat:@"%@\n", formattedString];
+                } else {
+                    [string appendFormat:@"%@", newTextPrefix];
+                    
+                    NSString *formattedString = obj;
+                    [string appendFormat:@"%@,\n", formattedString];
+                }
+                
             }
             
             [string appendFormat:@"%@]\n", textPrefix];   // 结尾有个]
