@@ -42,17 +42,19 @@
  *  创建alertView
  *  @brief  这里所说的三个视图范围为：flagImageView(有的话，一定是第一个)、titleLabel(有的话，有可能一或二)、messageLabel(有的话，有可能一或二或三)
  *
- *  @param size                     alertView的大小(其中size的高度不一定有用，因为在show的时候有自适应和指定高度两种)
+ *  @param size                     alertView的大小
  *  @param firstVerticalInterval    第一个视图(一般为flagImageView，如果flagImageView不存在，则为下一个即titleLabel，以此类推)与顶部的间隔
  *  @param secondVerticalInterval   第二个视图与第一个视图的间隔(如果少于两个视图，这个值设为0即可)
  *  @param thirdVerticalInterval    第三个视图与第二个视图的间隔(如果少于三个视图，这个值设为0即可)
+ *  @param bottomVerticalInterval   底部buttons视图与其上面的视图的间隔(上面的视图一般为message；如果不存在message,则是title；如果再不存在，则是flagImage)
  *
  *  @return alertView
  */
 - (instancetype)initWithSize:(CGSize)size
        firstVerticalInterval:(CGFloat)firstVerticalInterval
       secondVerticalInterval:(CGFloat)secondVerticalInterval
-       thirdVerticalInterval:(CGFloat)thirdVerticalInterval;
+       thirdVerticalInterval:(CGFloat)thirdVerticalInterval
+      bottomVerticalInterval:(CGFloat)bottomVerticalInterval;
 
 ///添加指示图标
 - (void)addFlagImage:(UIImage *)flagImage size:(CGSize)imageViewSize;

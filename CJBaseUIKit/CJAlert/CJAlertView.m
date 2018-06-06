@@ -25,6 +25,9 @@
 //第三个视图与第二个视图的间隔
 @property (nonatomic, readonly) CGFloat thirdVerticalInterval;
 
+//底部buttons视图与其上面的视图的间隔(上面的视图一般为message；如果不存在message,则是title；如果再不存在，则是flagImage)
+@property (nonatomic, readonly) CGFloat bottomVerticalInterval;
+
 @property (nonatomic, strong) UIImageView *flagImageView;
 @property (nonatomic, strong) UILabel *titleLabel;
 
@@ -56,7 +59,7 @@
                          okHandle:(void(^)(void))okHandle
 {
     //①创建
-    CJAlertView *alertView = [[CJAlertView alloc] initWithSize:size firstVerticalInterval:25 secondVerticalInterval:10 thirdVerticalInterval:10];
+    CJAlertView *alertView = [[CJAlertView alloc] initWithSize:size firstVerticalInterval:25 secondVerticalInterval:10 thirdVerticalInterval:10 bottomVerticalInterval:10];
     
     //②添加 flagImage、titleLabel、messageLabel
     //[alertView setupFlagImage:flagImage title:title message:message configure:configure]; //已拆解成以下几个方法
@@ -86,6 +89,7 @@
  *  @param firstVerticalInterval    第一个视图(一般为flagImageView，如果flagImageView不存在，则为下一个即titleLabel，以此类推)与顶部的间隔
  *  @param secondVerticalInterval   第二个视图与第一个视图的间隔(如果少于两个视图，这个值设为0即可)
  *  @param thirdVerticalInterval    第三个视图与第二个视图的间隔(如果少于三个视图，这个值设为0即可)
+ *  @param bottomVerticalInterval   底部buttons视图与其上面的视图的间隔(上面的视图一般为message；如果不存在message,则是title；如果再不存在，则是flagImage)
  *
  *  @return alertView
  */
@@ -93,6 +97,7 @@
        firstVerticalInterval:(CGFloat)firstVerticalInterval
       secondVerticalInterval:(CGFloat)secondVerticalInterval
        thirdVerticalInterval:(CGFloat)thirdVerticalInterval
+      bottomVerticalInterval:(CGFloat)bottomVerticalInterval
 {
     self = [super init];
     if (self) {
@@ -103,6 +108,7 @@
         _firstVerticalInterval = firstVerticalInterval;
         _secondVerticalInterval = secondVerticalInterval;
         _thirdVerticalInterval = thirdVerticalInterval;
+        _bottomVerticalInterval = bottomVerticalInterval;
     }
     return self;
 }
@@ -265,7 +271,7 @@
         if (self.flagImageView) {
             make.top.mas_equalTo(self.flagImageView.mas_bottom).mas_offset(self.secondVerticalInterval);
         } else {
-            make.top.mas_equalTo(self).mas_offset(self.firstVerticalInterval);
+            make.top.mas_greaterThanOrEqualTo(self).mas_offset(self.firstVerticalInterval);//优先级
         }
         make.height.mas_equalTo(titleTextHeight);
     }];
@@ -357,9 +363,9 @@
                 make.top.mas_equalTo(self.titleLabel.mas_bottom).mas_offset(self.secondVerticalInterval);
             }
         } else if (self.flagImageView) {
-            make.top.mas_equalTo(self.flagImageView.mas_bottom).mas_offset(self.secondVerticalInterval);
+            make.top.mas_greaterThanOrEqualTo(self.flagImageView.mas_bottom).mas_offset(self.secondVerticalInterval);//优先级
         } else {
-            make.top.mas_equalTo(self).mas_offset(self.firstVerticalInterval);
+            make.top.mas_greaterThanOrEqualTo(self).mas_offset(self.firstVerticalInterval);//优先级
         }
         
         make.height.mas_equalTo(messageTextHeight);
@@ -561,7 +567,7 @@
         NSString *warningString = [NSString stringWithFormat:@"CJ警告：您设置的size高度超过视图本身的最大高度%.2lf，会导致视图显示不全，已自动缩小", maxHeight];
         NSLog(@"%@", warningString);
         if (self.messageScrollView) {
-            CGFloat minHeightWithoutMessageLabel = _firstVerticalInterval + _flagImageViewHeight + _secondVerticalInterval + _titleLabelHeight + _thirdVerticalInterval + _bottomButtonHeight;
+            CGFloat minHeightWithoutMessageLabel = _firstVerticalInterval + _flagImageViewHeight + _secondVerticalInterval + _titleLabelHeight + _thirdVerticalInterval + _bottomVerticalInterval + _bottomButtonHeight;
             
             _messageLabelHeight = fixHeight - minHeightWithoutMessageLabel;
             [self.messageScrollView mas_updateConstraints:^(MASConstraintMaker *make) {
@@ -578,9 +584,9 @@
                     showComplete:nil tapBlankComplete:nil];
 }
 
-///获取最小应有的高度值
+///获取当前alertView最小应有的高度值
 - (CGFloat)getMinHeight {
-    CGFloat minHeight = _firstVerticalInterval + _flagImageViewHeight + _secondVerticalInterval + _titleLabelHeight + _thirdVerticalInterval + _messageLabelHeight + _bottomButtonHeight;
+    CGFloat minHeight = _firstVerticalInterval + _flagImageViewHeight + _secondVerticalInterval + _titleLabelHeight + _thirdVerticalInterval + _messageLabelHeight + _bottomVerticalInterval + _bottomButtonHeight;
     minHeight = ceil(minHeight);
     
     return minHeight;
