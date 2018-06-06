@@ -222,9 +222,10 @@
     if (self.messageScrollView) {
         [self.messageScrollView mas_updateConstraints:^(MASConstraintMaker *make) {
             if (self.titleLabel) {
-                make.top.mas_equalTo(self.flagImageView.mas_bottom).mas_offset(self.thirdVerticalInterval);
-            } else {
                 make.top.mas_equalTo(self.titleLabel.mas_bottom).mas_offset(self.secondVerticalInterval);
+                
+            } else {
+                make.top.mas_equalTo(self.flagImageView.mas_bottom).mas_offset(self.thirdVerticalInterval);
             }
         }];
     }
