@@ -87,8 +87,8 @@
  *
  *  @param size                     alertView的大小
  *  @param firstVerticalInterval    第一个视图(一般为flagImageView，如果flagImageView不存在，则为下一个即titleLabel，以此类推)与顶部的间隔
- *  @param secondVerticalInterval   第二个视图与第一个视图的间隔(如果少于两个视图，这个值设为0即可)
- *  @param thirdVerticalInterval    第三个视图与第二个视图的间隔(如果少于三个视图，这个值设为0即可)
+ *  @param secondVerticalInterval   第二个视图与第一个视图的间隔(如果少于两个视图,这个值设为0即可)
+ *  @param thirdVerticalInterval    第三个视图与第二个视图的间隔(如果少于三个视图,这个值设为0即可)
  *  @param bottomVerticalInterval   底部buttons视图与其上面的视图的间隔(上面的视图一般为message；如果不存在message,则是title；如果再不存在，则是flagImage)
  *
  *  @return alertView
@@ -536,8 +536,32 @@
     }
 }
 
+/**
+ *  通过检查位于bottomButtons上view的个数来判断并修正之前设置的VerticalInterval(防止比如有时候只设置两个view，thirdVerticalInterval却不为0)
+ *  @brief 问题来源：比如少于三个视图,thirdVerticalInterval却没设为0,此时如果不通过此方法检查并修正，则容易出现高度计算错误的问题
+ */
+- (void)checkAndUpdateVerticalInterval {
+    NSInteger upViewCount = 0;
+    if (self.flagImageView) {
+        upViewCount++;
+    }
+    if (self.titleLabel) {
+        upViewCount++;
+    }
+    if (self.messageScrollView) {
+        upViewCount++;
+    }
+    if (upViewCount == 2) {
+        _thirdVerticalInterval = 0;
+    } else if (upViewCount == 1) {
+        _secondVerticalInterval = 0;
+    }
+}
+
 /* 完整的描述请参见文件头部 */
 - (void)showWithShouldFitHeight:(BOOL)shouldFitHeight {
+    [self checkAndUpdateVerticalInterval];
+    
     CGFloat fixHeight = 0;
     if (shouldFitHeight) {
         CGFloat minHeight = [self getMinHeight];
@@ -555,6 +579,8 @@
  *  @param fixHeight 高度
  */
 - (void)showWithFixHeight:(CGFloat)fixHeight {
+    [self checkAndUpdateVerticalInterval];
+    
     CGFloat minHeight = [self getMinHeight];
     if (fixHeight < minHeight) {
         NSString *warningString = [NSString stringWithFormat:@"CJ警告：您设置的size高度小于视图本身的最小高度%.2lf，会导致视图显示不全，请检查", minHeight];
