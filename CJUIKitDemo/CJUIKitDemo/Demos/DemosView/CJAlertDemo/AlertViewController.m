@@ -291,7 +291,7 @@
             paragraphStyle.firstLineHeadIndent = 10;
             [alertView addMessageWithText:message font:[UIFont systemFontOfSize:15.0] textAlignment:NSTextAlignmentLeft margin:20 paragraphStyle:paragraphStyle];
             [alertView addMessageLayerWithBorderWidth:0.5 borderColor:nil cornerRadius:3];
-            [alertView addBottomButtonWithHeight:50 cancelButtonTitle:cancelButtonTitle okButtonTitle:okButtonTitle  cancelHandle:^{
+            [alertView addBottomButtonWithHeight:50 cancelButtonTitle:cancelButtonTitle okButtonTitle:okButtonTitle cancelHandle:^{
                 NSLog(@"点击了取消按钮");
             } okHandle:^{
                 NSLog(@"点击了确认按钮");
@@ -302,11 +302,14 @@
         if (indexPath.row == 0) {
             NSString *title = @"app信息";
             
-            NSString *flightNo = @"班次：BCD 12345";
-            NSString *disptachTime = @"出发时间：2018-04-20 11:00";
-            NSString *startStation = @"厦门市软件园二期";
-            NSString *endStation = @"漳州市万达广场";
-            NSString *message = [NSString stringWithFormat:@"%@\n%@\n%@\n%@", flightNo, disptachTime, startStation, endStation];
+            NSDictionary *infoDictionary = [[NSBundle mainBundle] infoDictionary];
+            NSString *appVersion = [infoDictionary objectForKey:@"CFBundleShortVersionString"];
+            NSString *appBuild = [infoDictionary objectForKey:@"CFBundleVersion"];
+            
+            NSMutableString *message = [NSMutableString string];
+            [message appendFormat:@"appVersion:%@\n", appVersion];
+            [message appendFormat:@"appBuild:  %@", appBuild];
+
             
             [CJAlert showDebugViewWithTitle:title message:message];
             
@@ -430,13 +433,13 @@
 - (void)checkAllowGetOnAtStationName:(NSString *)stationName {
     CGFloat screenWidth = CGRectGetWidth([[UIScreen mainScreen] bounds]);
     CGSize popupViewSize = CGSizeMake(screenWidth * 0.7, 230);
-    UIImage *flagImage = nil;
+
     //乘客上车站为\n【厦门市软件园二期】\n是否本站上车？
     NSString *preTitle = NSLocalizedString(@"乘客上车站为", nil);
     NSString *midTitle = [NSString stringWithFormat:@"【%@】", stationName];
     NSString *sufTitle = NSLocalizedString(@"是否本站上车？", nil);
     NSString *title = [NSString stringWithFormat:@"%@\n%@\n%@", preTitle, midTitle, sufTitle];
-    NSString *message = nil;
+    
     NSString *cancelButtonTitle = NSLocalizedString(@"取消", nil);
     NSString *okButtonTitle = NSLocalizedString(@"确认", nil);
     

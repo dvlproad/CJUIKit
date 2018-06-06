@@ -29,7 +29,7 @@
         CGFloat width = CGRectGetWidth(button.frame);
         CGFloat height = 200;
         
-        CGFloat popupViewX = CGRectGetMinX(button.frame);
+        //CGFloat popupViewX = CGRectGetMinX(button.frame);
         
         UIView *popupView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, 0, height)];
         popupView.clipsToBounds = YES;

@@ -222,10 +222,10 @@
     if (self.messageScrollView) {
         [self.messageScrollView mas_updateConstraints:^(MASConstraintMaker *make) {
             if (self.titleLabel) {
-                make.top.mas_equalTo(self.titleLabel.mas_bottom).mas_offset(self.secondVerticalInterval);
+                make.top.mas_equalTo(self.titleLabel.mas_bottom).mas_offset(self.thirdVerticalInterval);
                 
             } else {
-                make.top.mas_equalTo(self.flagImageView.mas_bottom).mas_offset(self.thirdVerticalInterval);
+                make.top.mas_greaterThanOrEqualTo(self.flagImageView.mas_bottom).mas_offset(self.secondVerticalInterval);
             }
         }];
     }
@@ -561,7 +561,7 @@
         NSLog(@"%@", warningString);
     }
     
-    CGFloat maxHeight = CGRectGetHeight([UIScreen mainScreen].bounds) - 40;
+    CGFloat maxHeight = CGRectGetHeight([UIScreen mainScreen].bounds) - 60;
     if (fixHeight > maxHeight) {
         fixHeight = maxHeight;
         
