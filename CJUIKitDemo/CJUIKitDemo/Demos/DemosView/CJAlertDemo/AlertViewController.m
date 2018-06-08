@@ -303,12 +303,14 @@
             NSString *title = @"app信息";
             
             NSDictionary *infoDictionary = [[NSBundle mainBundle] infoDictionary];
-            NSString *appVersion = [infoDictionary objectForKey:@"CFBundleShortVersionString"];
-            NSString *appBuild = [infoDictionary objectForKey:@"CFBundleVersion"];
+            NSString *appVersion = [infoDictionary objectForKey:@"CFBundleShortVersionString"];//版本号
+            NSString *appBuild = [infoDictionary objectForKey:@"CFBundleVersion"];//buidId
+            NSString *appDomain = @"https://zhengshi.com:80"; //域名
             
             NSMutableString *message = [NSMutableString string];
             [message appendFormat:@"appVersion:%@\n", appVersion];
-            [message appendFormat:@"appBuild:  %@", appBuild];
+            [message appendFormat:@"appBuild:  %@\n", appBuild];
+            [message appendFormat:@"appDomain: %@", appDomain];
 
             
             [CJAlert showDebugViewWithTitle:title message:message];
