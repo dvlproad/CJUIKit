@@ -90,17 +90,17 @@
             
         } else {
             id vaule = currentObject;
-            [string appendFormat:@"%@", textPrefix];
-            [string appendFormat:@"%@", key];
-            [string appendString:@": "];
-            [string appendFormat:@"%@,\n", vaule];
+            [indentedString appendFormat:@"%@", textPrefix];
+            [indentedString appendFormat:@"%@", key];
+            [indentedString appendString:@": "];
+            [indentedString appendFormat:@"%@,\n", vaule];
         }
     }
     
     
-    [string appendFormat:@"%@}", flagPrefix];   // 结尾有个}
+    [indentedString appendFormat:@"%@}", flagPrefix];   // 结尾有个}
     
-    return string;
+    return indentedString;
 }
 
 /* 完整的描述请参见文件头部 */
@@ -109,22 +109,22 @@
     NSMutableString *indentedString = [NSMutableString string];
     
     // 开头有个[
-    [string appendString:@"[\n"];
+    [indentedString appendString:@"[\n"];
     
     // 遍历所有的元素
     [array enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-        [string appendFormat:@"\t%@,\n", obj];
+        [indentedString appendFormat:@"\t%@,\n", obj];
     }];
     
     // 结尾有个]
-    [string appendString:@"]"];
+    [indentedString appendString:@"]"];
     
     // 查找最后一个逗号
-    NSRange range = [string rangeOfString:@"," options:NSBackwardsSearch];
+    NSRange range = [indentedString rangeOfString:@"," options:NSBackwardsSearch];
     if (range.location != NSNotFound)
-        [string deleteCharactersInRange:range];
+        [indentedString deleteCharactersInRange:range];
     
-    return string;
+    return indentedString;
 }
 
 @end
