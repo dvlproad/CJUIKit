@@ -7,7 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#ifdef CJTESTPOD
 #import "UIView+CJPopupInView.h"
+#else
+#import <CJBaseUIKit/UIView+CJPopupInView.h>
+#endif
 
 @interface CJAlert : NSObject
 

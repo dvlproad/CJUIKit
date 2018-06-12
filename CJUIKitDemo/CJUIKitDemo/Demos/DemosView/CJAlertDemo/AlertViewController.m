@@ -14,7 +14,7 @@
 
 #import "TestDataUtil.h"
 #import "CJConvertUtil.h"
-#import "CJFormatPrintUtil.h"
+#import "CJIndentedStringUtil.h"
 #import "NSDictionary+CJConvert.h"
 
 @interface AlertViewController () <UITableViewDataSource, UITableViewDelegate> {
@@ -344,7 +344,7 @@
                                          };
             
             //NSString *message = [CJConvertUtil formattedStringFromObject:dictionary];
-            NSString *message = [CJFormatPrintUtil formattedStringFromDictionary2:dictionary];
+            NSString *message = [CJIndentedStringUtil fullFormattedStringFromDictionary:dictionary];
             
             [CJAlert showDebugViewWithTitle:title message:message];
             

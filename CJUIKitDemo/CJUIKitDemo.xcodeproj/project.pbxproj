@@ -149,7 +149,6 @@
 		789CAF831FB612B700AF8CD4 /* cjCollectionViewCellDelete@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 789CAF101FB612B600AF8CD4 /* cjCollectionViewCellDelete@2x.png */; };
 		789CAF851FB612B700AF8CD4 /* CJSearchTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 789CAF151FB612B600AF8CD4 /* CJSearchTableView.m */; };
 		789CAF861FB612B700AF8CD4 /* MySearchEqualCellSizeCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 789CAF171FB612B600AF8CD4 /* MySearchEqualCellSizeCollectionView.m */; };
-		789F812D20C6E08800C77439 /* CJFormatPrintUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 789F812C20C6E08800C77439 /* CJFormatPrintUtil.m */; };
 		78E269BE1ECC5E1A007D3686 /* bgCar@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 78E269BB1ECC5E1A007D3686 /* bgCar@2x.jpg */; };
 		78E269BF1ECC5E1A007D3686 /* bgSky@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 78E269BC1ECC5E1A007D3686 /* bgSky@2x.jpg */; };
 		78E269C01ECC5E1A007D3686 /* header@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 78E269BD1ECC5E1A007D3686 /* header@2x.jpg */; };
@@ -179,6 +178,7 @@
 		801F75DA20A040D800A2E027 /* signin_icon_open@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 801F75D520A040D800A2E027 /* signin_icon_open@3x.png */; };
 		801F75DB20A040D800A2E027 /* signin_icon_open@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 801F75D620A040D800A2E027 /* signin_icon_open@2x.png */; };
 		801F75DC20A040D800A2E027 /* BBXDUserNameTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 801F75D720A040D800A2E027 /* BBXDUserNameTextField.m */; };
+		802D1D6920CF5F48003EAFE0 /* CJIndentedStringUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 802D1D6820CF5F48003EAFE0 /* CJIndentedStringUtil.m */; };
 		8033239120299AD7001DACF1 /* MyCycleADViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8033234620299AD7001DACF1 /* MyCycleADViewController.m */; };
 		8033239320299AD7001DACF1 /* MemoryADKnowledge07.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8033234920299AD7001DACF1 /* MemoryADKnowledge07.jpg */; };
 		8033239420299AD7001DACF1 /* MemoryADExample01.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8033234A20299AD7001DACF1 /* MemoryADExample01.jpg */; };
@@ -721,8 +721,6 @@
 		789CAF151FB612B600AF8CD4 /* CJSearchTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJSearchTableView.m; sourceTree = "<group>"; };
 		789CAF161FB612B600AF8CD4 /* MySearchEqualCellSizeCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MySearchEqualCellSizeCollectionView.h; sourceTree = "<group>"; };
 		789CAF171FB612B600AF8CD4 /* MySearchEqualCellSizeCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MySearchEqualCellSizeCollectionView.m; sourceTree = "<group>"; };
-		789F812B20C6E08800C77439 /* CJFormatPrintUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJFormatPrintUtil.h; sourceTree = "<group>"; };
-		789F812C20C6E08800C77439 /* CJFormatPrintUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJFormatPrintUtil.m; sourceTree = "<group>"; };
 		78E269BB1ECC5E1A007D3686 /* bgCar@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "bgCar@2x.jpg"; sourceTree = "<group>"; };
 		78E269BC1ECC5E1A007D3686 /* bgSky@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "bgSky@2x.jpg"; sourceTree = "<group>"; };
 		78E269BD1ECC5E1A007D3686 /* header@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "header@2x.jpg"; sourceTree = "<group>"; };
@@ -767,6 +765,8 @@
 		801F75D620A040D800A2E027 /* signin_icon_open@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "signin_icon_open@2x.png"; sourceTree = "<group>"; };
 		801F75D720A040D800A2E027 /* BBXDUserNameTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBXDUserNameTextField.m; sourceTree = "<group>"; };
 		80270BBC1FABFE57001429F0 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		802D1D6720CF5F48003EAFE0 /* CJIndentedStringUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJIndentedStringUtil.h; sourceTree = "<group>"; };
+		802D1D6820CF5F48003EAFE0 /* CJIndentedStringUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJIndentedStringUtil.m; sourceTree = "<group>"; };
 		8033234620299AD7001DACF1 /* MyCycleADViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyCycleADViewController.m; sourceTree = "<group>"; };
 		8033234920299AD7001DACF1 /* MemoryADKnowledge07.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = MemoryADKnowledge07.jpg; sourceTree = "<group>"; };
 		8033234A20299AD7001DACF1 /* MemoryADExample01.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = MemoryADExample01.jpg; sourceTree = "<group>"; };
@@ -2185,6 +2185,15 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		802D1D6620CF5F48003EAFE0 /* CJIndentedStringUtil */ = {
+			isa = PBXGroup;
+			children = (
+				802D1D6720CF5F48003EAFE0 /* CJIndentedStringUtil.h */,
+				802D1D6820CF5F48003EAFE0 /* CJIndentedStringUtil.m */,
+			);
+			path = CJIndentedStringUtil;
+			sourceTree = "<group>";
+		};
 		8033234220299AD7001DACF1 /* UICollectionViewDemo */ = {
 			isa = PBXGroup;
 			children = (
@@ -2413,8 +2422,6 @@
 			children = (
 				807C4F8520C65DA4002EAC12 /* CJConvertUtil.h */,
 				807C4F8420C65DA4002EAC12 /* CJConvertUtil.m */,
-				789F812B20C6E08800C77439 /* CJFormatPrintUtil.h */,
-				789F812C20C6E08800C77439 /* CJFormatPrintUtil.m */,
 			);
 			path = CJConvertUtil;
 			sourceTree = "<group>";
@@ -3126,6 +3133,7 @@
 		80FF91021FC5668700E437CF /* CJBaseUtil */ = {
 			isa = PBXGroup;
 			children = (
+				802D1D6620CF5F48003EAFE0 /* CJIndentedStringUtil */,
 				807C4F8320C65DA4002EAC12 /* CJConvertUtil */,
 				808B976D20B7B33200910E45 /* CJAppLastUtil */,
 				80E7E75D20AD31A2000F762D /* CJLaunchImageUtil */,
@@ -3996,7 +4004,6 @@
 				789CAF271FB612B700AF8CD4 /* CJBaseTableViewCell.m in Sources */,
 				789CAF7B1FB612B700AF8CD4 /* CJFloatingWindow.m in Sources */,
 				80D71EAD20902C2F00D2DB68 /* CJAlertView.m in Sources */,
-				789F812D20C6E08800C77439 /* CJFormatPrintUtil.m in Sources */,
 				80E7E63520AC227B000F762D /* AppInfoManager.m in Sources */,
 				80FF91451FC5668700E437CF /* CJWebUtil.m in Sources */,
 				80FF90A71FC5649F00E437CF /* QRCodeViewController.m in Sources */,
@@ -4004,6 +4011,7 @@
 				80FF90921FC5649F00E437CF /* CJSubTitleTabelViewCell+ConfigureForDataModel.m in Sources */,
 				803323B620299AD7001DACF1 /* MyEqualCellSizeCollectionViewController.m in Sources */,
 				800E07D52016CC2F00799B78 /* CJKeyboardUtil.m in Sources */,
+				802D1D6920CF5F48003EAFE0 /* CJIndentedStringUtil.m in Sources */,
 				80F9CFD6206C8287003B41D4 /* NSString+CJAccuracy.m in Sources */,
 				80FF91C51FC581DD00E437CF /* UtilHomeViewController.m in Sources */,
 				787FDB5A20500B01008A46E3 /* ImageViewController.m in Sources */,

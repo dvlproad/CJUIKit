@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "CJBaseUtil"
-  s.version      = "0.2.10"
+  s.version      = "0.3.0"
   s.summary      = "自定义的基础工具类"
   s.homepage     = "https://github.com/dvlproad/CJUIKit"
   s.license      = "MIT"
@@ -11,6 +11,7 @@ Pod::Spec.new do |s|
                   2、CJDateUtil：日期工具
                   3、CJKeyboardUtil：键盘工具
                   4、CJLog：日志工具
+                  *、CJIndentedStringUtil：将 字符串/字典/数组转成含缩进字符串的字符串 的工具
                   5、CJWebUtil：Web工具
                   6、CJDevice：设备信息工具
                   7、CJAppLastUtil：APP上次信息+账号安全工具
@@ -32,7 +33,7 @@ Pod::Spec.new do |s|
 
   s.platform     = :ios, "7.0"
 
-  s.source       = { :git => "https://github.com/dvlproad/CJUIKit.git", :tag => "CJBaseUtil_0.2.10" }
+  s.source       = { :git => "https://github.com/dvlproad/CJUIKit.git", :tag => "CJBaseUtil_0.3.0" }
   # s.source_files  = "CJBaseUtil/*.{h,m}"
   # s.resources = "CJBaseUtil/**/*.{png}"
   s.frameworks = 'UIKit'
@@ -51,6 +52,11 @@ Pod::Spec.new do |s|
 
   s.subspec 'CJLog' do |ss|
     ss.source_files = "CJBaseUtil/CJLog/**/*.{h,m}"
+  end
+
+  # 将 字符串/字典/数组转成含缩进字符串的字符串 的工具
+  s.subspec 'CJIndentedStringUtil' do |ss|
+    ss.source_files = "CJBaseUtil/CJIndentedStringUtil/**/*.{h,m}"
   end
 
   # 上次信息(账号安全)

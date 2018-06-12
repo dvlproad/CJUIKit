@@ -7,7 +7,7 @@
 //
 
 #import "CJConvertUtil.h"
-#import "CJFormatPrintUtil.h"
+#import "CJIndentedStringUtil.h"
 
 #import <CommonCrypto/CommonDigest.h> //md5方法要用的
 
@@ -136,11 +136,11 @@
         if ([NSJSONSerialization isValidJSONObject:convertObject]) {
             if ([convertObject isKindOfClass:[NSDictionary class]]) {    //NSDictionary
                 NSDictionary *dictionary = (NSDictionary *)convertObject;
-                lastString = [CJFormatPrintUtil formattedStringFromDictionary:dictionary];
+                lastString = [CJIndentedStringUtil easyFormattedStringFromDictionary:dictionary];
                 
             } else if ([convertObject isKindOfClass:[NSArray class]]) { //NSArray
                 NSArray *array = (NSArray *)convertObject;
-                lastString = [CJFormatPrintUtil formattedStringFromArray:array];
+                lastString = [CJIndentedStringUtil easyFormattedStringFromArray:array];
                 
             } else {
                 NSError *error;
