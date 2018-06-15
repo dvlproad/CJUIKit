@@ -12,11 +12,11 @@
 @interface CJIndentedStringUtil : NSObject
 
 ///含缩进格式的转化 dictionary
-+ (NSString *)easyFormattedStringFromDictionary:(NSDictionary *)dictionary;
++ (NSMutableString *)easyFormattedStringFromDictionary:(NSDictionary *)dictionary;
 
-+ (NSString *)fullFormattedStringFromDictionary:(NSDictionary *)dictionary;
++ (NSMutableString *)fullFormattedStringFromDictionary:(NSDictionary *)dictionary;
 
 ///含缩进格式的转化 array
-+ (NSString *)easyFormattedStringFromArray:(NSArray *)array;
++ (NSMutableString *)easyFormattedStringFromArray:(NSArray *)array;
 
 @end

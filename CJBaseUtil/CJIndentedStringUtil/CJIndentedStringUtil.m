@@ -11,7 +11,7 @@
 @implementation CJIndentedStringUtil
 
 /* 完整的描述请参见文件头部 */
-+ (NSString *)easyFormattedStringFromDictionary:(NSDictionary *)dictionary {
++ (NSMutableString *)easyFormattedStringFromDictionary:(NSDictionary *)dictionary {
     NSMutableString *indentedString = [NSMutableString string];
     
     // 开头有个{
@@ -36,12 +36,12 @@
 }
 
 ///从服务器得到的JSON数据解析成NSDictionary后，通过递归遍历多维的NSDictionary可以方便的把字典中的所有键值输出出来方便测试检查。
-+ (NSString *)fullFormattedStringFromDictionary:(NSDictionary *)dictionary {
-    NSString *indentedString = [CJIndentedStringUtil fullFormattedStringFromDictionary:dictionary flagPrefix:@"" textPrefix:@"\t"];
++ (NSMutableString *)fullFormattedStringFromDictionary:(NSDictionary *)dictionary {
+    NSMutableString *indentedString = [CJIndentedStringUtil fullFormattedStringFromDictionary:dictionary flagPrefix:@"" textPrefix:@"\t"];
     return indentedString;
 }
 
-+ (NSString *)fullFormattedStringFromDictionary:(NSDictionary *)dictionary flagPrefix:(NSString *)flagPrefix textPrefix:(NSString *)textPrefix {
++ (NSMutableString *)fullFormattedStringFromDictionary:(NSDictionary *)dictionary flagPrefix:(NSString *)flagPrefix textPrefix:(NSString *)textPrefix {
     NSMutableString *indentedString = [NSMutableString string];
     
     
@@ -104,7 +104,7 @@
 }
 
 /* 完整的描述请参见文件头部 */
-+ (NSString *)easyFormattedStringFromArray:(NSArray *)array
++ (NSMutableString *)easyFormattedStringFromArray:(NSArray *)array
 {
     NSMutableString *indentedString = [NSMutableString string];
     
