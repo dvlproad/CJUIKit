@@ -41,8 +41,8 @@ PODS:
   - Mantle (2.1.0):
     - Mantle/extobjc (= 2.1.0)
   - Mantle/extobjc (2.1.0)
-  - Masonry (1.0.2)
-  - MBProgressHUD (1.0.0)
+  - Masonry (1.1.0)
+  - MBProgressHUD (1.1.0)
   - MJExtension (3.0.13)
   - MJPopupViewController (0.4)
   - MJRefresh (3.1.15.3)
@@ -72,8 +72,8 @@ DEPENDENCIES:
   - DZNEmptyDataSet
   - JGActionSheet (~> 1.0.5)
   - Mantle (~> 2.1.0)
-  - Masonry (~> 1.0.2)
-  - MBProgressHUD (~> 1.0.0)
+  - Masonry
+  - MBProgressHUD
   - MJExtension (~> 3.0.13)
   - MJPopupViewController (~> 0.4)
   - MJRefresh (~> 3.1.12)
@@ -124,8 +124,8 @@ SPEC CHECKSUMS:
   DZNEmptyDataSet: 9525833b9e68ac21c30253e1d3d7076cc828eaa7
   JGActionSheet: 2cfca820b57a11ec4b4a5655d45ee599fbeddc05
   Mantle: 2fa750afa478cd625a94230fbf1c13462f29395b
-  Masonry: 7c429b56da9d4ee0bbb3ed77a5ea710d6a5df39e
-  MBProgressHUD: 4890f671c94e8a0f3cf959aa731e9de2f036d71a
+  Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
+  MBProgressHUD: e7baa36a220447d8aeb12769bf0585582f3866d9
   MJExtension: 5932755f451458eefa24239358817f8d291240c7
   MJPopupViewController: e9ad553a3145eb8126ba2748e872ae7fb25cc605
   MJRefresh: b48380ae2b927b46c4ef000de9adb8dc748e1df7
@@ -141,6 +141,6 @@ SPEC CHECKSUMS:
   WebViewJavascriptBridge: 7f5bc4d3581e672e8f32bd0f812d54bc69bb8e29
   YYText: 5c461d709e24d55a182d1441c41dc639a18a4849
 
-PODFILE CHECKSUM: 14c9ad88dd6b237c9a00e2fc2d77f5e7c743a098
+PODFILE CHECKSUM: 2e9e2bd4b0220c360b590792945f95f7410c8eee
 
 COCOAPODS: 1.5.0

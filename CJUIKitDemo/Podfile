@@ -6,10 +6,10 @@ source 'https://gitee.com/dvlproad/dvlproadSpecs'  #这里要增加的是这条�
 
 target 'CJUIKitDemo' do  
   pod 'PureLayout', '~> 3.0.2'
-  pod 'Masonry', '~> 1.0.2'
+  pod 'Masonry'
   
   pod 'MJRefresh', '~> 3.1.12'
-  pod 'MBProgressHUD', '~> 1.0.0' #CJToast需要使用
+  pod 'MBProgressHUD' #CJToast需要使用
   pod 'SVProgressHUD', '~> 2.2.2'
   pod 'OpenUDID', '~> 1.0.0'
   
