@@ -70,7 +70,7 @@ DEPENDENCIES:
   - CJNetwork/AFNetworkingBaseComponent
   - CJPicker (~> 1.3.2)
   - DZNEmptyDataSet
-  - JGActionSheet (~> 1.0.5)
+  - JGActionSheet
   - Mantle (~> 2.1.0)
   - Masonry
   - MBProgressHUD
@@ -141,6 +141,6 @@ SPEC CHECKSUMS:
   WebViewJavascriptBridge: 7f5bc4d3581e672e8f32bd0f812d54bc69bb8e29
   YYText: 5c461d709e24d55a182d1441c41dc639a18a4849
 
-PODFILE CHECKSUM: 2e9e2bd4b0220c360b590792945f95f7410c8eee
+PODFILE CHECKSUM: 2f4413719a5104f954957bf143b075bb85e72cf3
 
 COCOAPODS: 1.5.0

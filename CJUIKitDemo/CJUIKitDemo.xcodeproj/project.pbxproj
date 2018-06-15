@@ -4277,7 +4277,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.dvlproad.CJUIKitDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "fee3508c-c6cf-44ca-aeb4-cb1063bf6f61";
+				PROVISIONING_PROFILE = "3ed81579-228b-49b7-b440-13d8241c7eef";
 				PROVISIONING_PROFILE_SPECIFIER = com.dvlproad.CJUIKitDemo_adhoc;
 			};
 			name = Release;
