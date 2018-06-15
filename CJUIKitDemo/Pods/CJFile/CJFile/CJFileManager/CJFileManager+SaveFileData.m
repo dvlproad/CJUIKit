@@ -28,14 +28,14 @@ toRelativeDirectoryPath:(NSString *)relativeDirectoryPath
                                                         error:NULL];
     }
     
-    clock_t saveStartClock = clock(); //开始保存的时刻
+    //clock_t saveStartClock = clock(); //开始保存的时刻
     
     NSString *absoluteFilePath = [absoluteFileDirectory stringByAppendingPathComponent:fileName];
     BOOL saveSuccess = [fileData writeToFile:absoluteFilePath atomically:YES]; //方法①
     //BOOL saveSuccess = [[NSFileManager defaultManager] createFileAtPath:absoluteFilePath contents:fileData attributes:nil];//方法②
     
-    clock_t saveFinishClock = clock();  //结束保存的时刻
-    double saveDuration = (double)(saveFinishClock - saveStartClock)/CLOCKS_PER_SEC;
+    //clock_t saveFinishClock = clock();  //结束保存的时刻
+    //double saveDuration = (double)(saveFinishClock - saveStartClock)/CLOCKS_PER_SEC;
     //NSLog(@"%@文件写进磁盘的耗时为%f", fileName, saveDuration);
     
     return saveSuccess;

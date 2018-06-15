@@ -14,7 +14,7 @@ PODS:
   - AFNetworking/Serialization (3.2.1)
   - AFNetworking/UIKit (3.2.1):
     - AFNetworking/NSURLSession
-  - CJFile/CJFileManager (0.0.8)
+  - CJFile/CJFileManager (0.0.9)
   - CJMedia/CJPhotoBrowser (0.0.6):
     - CJMedia/CJValidateAuthorizationUtil
     - Masonry
@@ -117,7 +117,7 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
-  CJFile: 18e461ec96ee07ba501b1e19f2ddde4a38bec8aa
+  CJFile: 6c1e6d55b3b94e8afbaa9f413f131301d15fdc48
   CJMedia: 24da3e62523dd5269cdf80930c6a1ec6672222b5
   CJNetwork: f6536df5e2afd43a7d716ade67a6dd55bd5daf8b
   CJPicker: c33099d47323271b91c2ce112976d1bee19a70ce
