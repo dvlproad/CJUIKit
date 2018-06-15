@@ -3483,7 +3483,7 @@
 					780E45FF1E5DF87B00980127 = {
 						CreatedOnToolsVersion = 8.0;
 						DevelopmentTeam = FZ5YDHE5JZ;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 					};
 					780E46181E5DF87B00980127 = {
 						CreatedOnToolsVersion = 8.0;
@@ -4249,6 +4249,8 @@
 			baseConfigurationReference = 68D73B38201AA01727123963 /* Pods-CJUIKitDemo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = FZ5YDHE5JZ;
 				GCC_PREFIX_HEADER = CJUIKitDemo/PrefixHeader.pch;
 				INFOPLIST_FILE = CJUIKitDemo/Info.plist;
@@ -4256,6 +4258,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.dvlproad.CJUIKitDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "b541bd6c-f291-4ce9-b2e6-fa55b3929512";
+				PROVISIONING_PROFILE_SPECIFIER = com.dvlproad.CJUIKitDemo_development;
 			};
 			name = Debug;
 		};
@@ -4264,6 +4268,8 @@
 			baseConfigurationReference = 3132573BFCFBEA8B4F3BB86F /* Pods-CJUIKitDemo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = FZ5YDHE5JZ;
 				GCC_PREFIX_HEADER = CJUIKitDemo/PrefixHeader.pch;
 				INFOPLIST_FILE = CJUIKitDemo/Info.plist;
@@ -4271,6 +4277,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.dvlproad.CJUIKitDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "fee3508c-c6cf-44ca-aeb4-cb1063bf6f61";
+				PROVISIONING_PROFILE_SPECIFIER = com.dvlproad.CJUIKitDemo_adhoc;
 			};
 			name = Release;
 		};
