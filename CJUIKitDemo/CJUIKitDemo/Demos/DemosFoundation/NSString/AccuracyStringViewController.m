@@ -10,6 +10,7 @@
 
 #import "ValidateStringTableViewCell.h"
 #import "NSString+CJAccuracy.h"
+#import "CJDecimalUtil.h"
 
 typedef NS_ENUM(NSUInteger, ValidateStringType) {
     ValidateStringTypeNone = 0,     /**< 不验证 */

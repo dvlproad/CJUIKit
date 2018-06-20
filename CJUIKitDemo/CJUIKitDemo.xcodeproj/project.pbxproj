@@ -272,6 +272,7 @@
 		808B983420B7F73300910E45 /* LogViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 808B983220B7F73300910E45 /* LogViewController.xib */; };
 		808BF3242019C3E900511F7C /* YunUncaughtExceptionHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 808BF3222019C3E900511F7C /* YunUncaughtExceptionHandler.m */; };
 		808BF327201A011400511F7C /* UITextField+CJPadding.m in Sources */ = {isa = PBXBuildFile; fileRef = 808BF326201A011400511F7C /* UITextField+CJPadding.m */; };
+		808DE5E720DA0586003E08F1 /* CJDecimalUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 808DE5E520DA0586003E08F1 /* CJDecimalUtil.m */; };
 		80C2E18F20916BD3007D7119 /* BBXPassengerEmptyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80C2E18D20916BD3007D7119 /* BBXPassengerEmptyViewController.m */; };
 		80C2E19020916BD3007D7119 /* BBXPassengerEmptyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 80C2E18E20916BD3007D7119 /* BBXPassengerEmptyViewController.xib */; };
 		80C2E19720917048007D7119 /* jiazhaishibai_bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 80C2E19520917048007D7119 /* jiazhaishibai_bg@2x.png */; };
@@ -896,6 +897,8 @@
 		808BF3232019C3E900511F7C /* YunUncaughtExceptionHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YunUncaughtExceptionHandler.h; sourceTree = "<group>"; };
 		808BF325201A011400511F7C /* UITextField+CJPadding.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UITextField+CJPadding.h"; sourceTree = "<group>"; };
 		808BF326201A011400511F7C /* UITextField+CJPadding.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UITextField+CJPadding.m"; sourceTree = "<group>"; };
+		808DE5E520DA0586003E08F1 /* CJDecimalUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJDecimalUtil.m; sourceTree = "<group>"; };
+		808DE5E620DA0586003E08F1 /* CJDecimalUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJDecimalUtil.h; sourceTree = "<group>"; };
 		80C2E18C20916BD3007D7119 /* BBXPassengerEmptyViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BBXPassengerEmptyViewController.h; sourceTree = "<group>"; };
 		80C2E18D20916BD3007D7119 /* BBXPassengerEmptyViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BBXPassengerEmptyViewController.m; sourceTree = "<group>"; };
 		80C2E18E20916BD3007D7119 /* BBXPassengerEmptyViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BBXPassengerEmptyViewController.xib; sourceTree = "<group>"; };
@@ -2484,6 +2487,15 @@
 			path = Utils;
 			sourceTree = "<group>";
 		};
+		808DE5E420DA0586003E08F1 /* CJDecimalUtil */ = {
+			isa = PBXGroup;
+			children = (
+				808DE5E620DA0586003E08F1 /* CJDecimalUtil.h */,
+				808DE5E520DA0586003E08F1 /* CJDecimalUtil.m */,
+			);
+			path = CJDecimalUtil;
+			sourceTree = "<group>";
+		};
 		80C2E1822091683B007D7119 /* EmptyScrollViewDemo */ = {
 			isa = PBXGroup;
 			children = (
@@ -3133,6 +3145,7 @@
 		80FF91021FC5668700E437CF /* CJBaseUtil */ = {
 			isa = PBXGroup;
 			children = (
+				808DE5E420DA0586003E08F1 /* CJDecimalUtil */,
 				802D1D6620CF5F48003EAFE0 /* CJIndentedStringUtil */,
 				807C4F8320C65DA4002EAC12 /* CJConvertUtil */,
 				808B976D20B7B33200910E45 /* CJAppLastUtil */,
@@ -3963,6 +3976,7 @@
 				80FF909A1FC5649F00E437CF /* FloatingWindowViewController.m in Sources */,
 				80332404202C4E55001DACF1 /* EmptyWebViewController.m in Sources */,
 				789CAF681FB612B700AF8CD4 /* CJChooseTextTextField.m in Sources */,
+				808DE5E720DA0586003E08F1 /* CJDecimalUtil.m in Sources */,
 				80FF90B01FC5649F00E437CF /* NavigationBarChangeBGViewController.m in Sources */,
 				80FF91EB1FC6739D00E437CF /* CJDateFormatterUtil.m in Sources */,
 				7832810D1F41AA96008267E0 /* ProcessLineView.m in Sources */,
