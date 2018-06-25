@@ -18,17 +18,19 @@ typedef NS_ENUM(NSUInteger, CJDecimalDealType) {
 
 @interface CJDecimalUtil : NSObject
 
-#pragma mark - "分" 转 "元"(向上取整)
-///将分以保留0位小数的方式转为元
-+ (NSString *)zeroDecimalPriceYuanStringFromPriceFen:(NSInteger)priceFen;
 
-///将分以保留1位小数的方式转为元(向上取整)
-+ (NSString *)oneUpDecimalPriceYuanStringFromPriceFen:(NSInteger)priceFen;
-///将分以保留1位小数的方式转为元(向下取整)
-+ (NSString *)oneDownDecimalPriceYuanStringFromPriceFen:(NSInteger)priceFen;
+///删除尾部多余的零
++ (NSString *)removeEndZeroForNumberString:(NSString *)originNumberString;
 
-#pragma mark - "米" 转 "公里"(向上取整)
-///将米以保留1位小数的方式转为公里
-+ (NSString *)oneDecimalKMStringFromMiles:(NSInteger)miles;
+/**
+ *  将整数的后几位按什么样的方式归零处理(注:传入值可为浮点型，但返回值的类型只能是整型)
+ *
+ *  @param value            要处理的数(注:含浮点型，如1000.006，尾部归零处理的位数为0位时候，向上取整后是1001)
+ *  @param lastDigitCount   要归零处理的是该整数的后几位
+ *  @param decimalDealType  处理的方式
+ *
+ *  @return 归零处理后的整型(注:返回值是整型)
+ */
++ (NSInteger)processingZeroWithIntValue:(CGFloat)value lastDigitCount:(NSInteger)lastDigitCount decimalDealType:(CJDecimalDealType)decimalDealType;
 
 @end

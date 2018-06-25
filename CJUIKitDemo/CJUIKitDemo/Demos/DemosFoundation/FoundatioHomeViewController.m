@@ -13,7 +13,6 @@
 #import "EncryptStringViewController.h"
 #import "AttributedStringViewController.h"
 #import "ValidateStringViewController.h"
-#import "AccuracyStringViewController.h"
 
 #import "DateViewController.h"
 #import "TypeConvertViewController.h"
@@ -59,12 +58,6 @@
             CJModuleModel *NSAttributedStringModule = [[CJModuleModel alloc] init];
             NSAttributedStringModule.title = @"ValidateString";
             NSAttributedStringModule.classEntry = [ValidateStringViewController class];
-            [sectionDataModel.values addObject:NSAttributedStringModule];
-        }
-        {
-            CJModuleModel *NSAttributedStringModule = [[CJModuleModel alloc] init];
-            NSAttributedStringModule.title = @"AccuracyString";
-            NSAttributedStringModule.classEntry = [AccuracyStringViewController class];
             [sectionDataModel.values addObject:NSAttributedStringModule];
         }
         

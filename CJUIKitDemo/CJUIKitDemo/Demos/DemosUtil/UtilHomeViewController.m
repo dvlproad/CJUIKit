@@ -23,7 +23,7 @@
 #import "DeviceInfoViewController.h"
 
 #import "DataUtilViewController.h"
-
+#import "AccuracyStringViewController.h"
 
 
 #import "KeyboardUtilViewController.h"
@@ -112,6 +112,12 @@
             dataUtilModule.title = @"DataUtil";
             dataUtilModule.classEntry = [DataUtilViewController class];
             [sectionDataModel.values addObject:dataUtilModule];
+        }
+        {
+            CJModuleModel *NSAttributedStringModule = [[CJModuleModel alloc] init];
+            NSAttributedStringModule.title = @"数值处理(取整、去尾0等)";
+            NSAttributedStringModule.classEntry = [AccuracyStringViewController class];
+            [sectionDataModel.values addObject:NSAttributedStringModule];
         }
         
         {

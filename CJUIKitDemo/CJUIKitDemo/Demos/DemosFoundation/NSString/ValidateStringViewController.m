@@ -33,7 +33,7 @@ typedef NS_ENUM(NSUInteger, ValidateStringType) {
     // Do any additional setup after loading the view from its nib.
     
     [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"cell"];
-    [self.tableView registerNib:[UINib nibWithNibName:@"ValidateStringTableViewCell" bundle:nil] forCellReuseIdentifier:@"ValidateStringTableViewCell"];
+    [self.tableView registerClass:[ValidateStringTableViewCell class] forCellReuseIdentifier:@"ValidateStringTableViewCell"];
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
 
@@ -58,9 +58,15 @@ typedef NS_ENUM(NSUInteger, ValidateStringType) {
         ValidateStringTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ValidateStringTableViewCell" forIndexPath:indexPath];
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
         
-        cell.textField.placeholder = @"请输入要验证的字符串";
-        cell.button.tag = 1000 + indexPath.row;
-        [cell.button addTarget:self action:@selector(validateStringEvent:) forControlEvents:UIControlEventTouchUpInside];
+        cell.textField.placeholder = @"请输入要验证的值";
+        
+        [cell.validateButton setTitle:@"验证" forState:UIControlStateNormal];
+        [cell setValidateHandle:^(ValidateStringTableViewCell *mcell) {
+            //NSInteger index = button.tag - 1000;
+            //NSIndexPath *indexPath = [NSIndexPath indexPathForRow:index inSection:0];
+            //NSString *originNumberString = [self.dataModels objectAtIndex:index];
+            NSLog(@"validateStringEvent");
+        }];
         
         return cell;
         
@@ -77,15 +83,6 @@ typedef NS_ENUM(NSUInteger, ValidateStringType) {
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     NSLog(@"didSelectRowAtIndexPath = %ld %ld", indexPath.section, indexPath.row);
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-}
-
-
-#pragma mark - Event
-- (void)validateStringEvent:(UIButton *)button {
-    //NSInteger index = button.tag - 1000;
-    //NSIndexPath *indexPath = [NSIndexPath indexPathForRow:index inSection:0];
-    //NSString *originNumberString = [self.dataModels objectAtIndex:index];
-    NSLog(@"validateStringEvent");
 }
 
 

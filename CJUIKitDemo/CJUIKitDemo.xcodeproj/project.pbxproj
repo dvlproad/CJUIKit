@@ -243,13 +243,16 @@
 		805481902074C97200CDE5A1 /* CJTimerModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8054818E2074C97200CDE5A1 /* CJTimerModel.m */; };
 		805598B51FF5D612009DC61C /* ValidateStringViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 805598B31FF5D612009DC61C /* ValidateStringViewController.m */; };
 		805598B61FF5D612009DC61C /* ValidateStringViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 805598B41FF5D612009DC61C /* ValidateStringViewController.xib */; };
-		805598BA1FF5DB0F009DC61C /* ValidateStringTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 805598B81FF5DB0F009DC61C /* ValidateStringTableViewCell.m */; };
-		805598BB1FF5DB0F009DC61C /* ValidateStringTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 805598B91FF5DB0F009DC61C /* ValidateStringTableViewCell.xib */; };
 		8056F5AC203E6FA30074D90F /* NSOperationQueueUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 8056F5AA203E6FA30074D90F /* NSOperationQueueUtil.m */; };
 		80582FA120C121B500C01225 /* ImageRotateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80582F9F20C121B500C01225 /* ImageRotateViewController.m */; };
 		80582FA220C121B500C01225 /* ImageRotateViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 80582FA020C121B500C01225 /* ImageRotateViewController.xib */; };
 		80582FA520C129A200C01225 /* UIImage+CJRotateAngle.m in Sources */ = {isa = PBXBuildFile; fileRef = 80582FA320C129A200C01225 /* UIImage+CJRotateAngle.m */; };
 		80582FA720C12B1300C01225 /* taixi_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 80582FA620C12B1300C01225 /* taixi_icon@2x.png */; };
+		8060C48020E0D0630093B14E /* CJMoneyUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 8060C47F20E0D0630093B14E /* CJMoneyUtil.m */; };
+		8060C48320E0D0B30093B14E /* CJDistanceUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 8060C48220E0D0B30093B14E /* CJDistanceUtil.m */; };
+		8060C48A20E0D5EF0093B14E /* ValidateStringTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8060C48520E0D5EF0093B14E /* ValidateStringTableViewCell.m */; };
+		8060C48B20E0D5EF0093B14E /* AccuracyStringViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8060C48720E0D5EF0093B14E /* AccuracyStringViewController.xib */; };
+		8060C48C20E0D5EF0093B14E /* AccuracyStringViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8060C48920E0D5EF0093B14E /* AccuracyStringViewController.m */; };
 		8073D9BD201877920031CE72 /* CJModuleModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8073D9BB201877910031CE72 /* CJModuleModel.m */; };
 		807903101FB413D60082F05C /* arrow_back_red@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 807903071FB413D60082F05C /* arrow_back_red@2x.png */; };
 		807903111FB413D60082F05C /* arrow_balland_red@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 807903081FB413D60082F05C /* arrow_balland_red@2x.png */; };
@@ -325,9 +328,6 @@
 		80E7E75820AD2C8B000F762D /* UIImage+CJMakeCircle.m in Sources */ = {isa = PBXBuildFile; fileRef = 80E7E74E20AD2C8B000F762D /* UIImage+CJMakeCircle.m */; };
 		80E7E75C20AD2D4D000F762D /* CJQRCodeUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 80E7E75A20AD2D4D000F762D /* CJQRCodeUtil.m */; };
 		80E7E76020AD31A2000F762D /* CJLaunchImageUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 80E7E75E20AD31A2000F762D /* CJLaunchImageUtil.m */; };
-		80F9CFD6206C8287003B41D4 /* NSString+CJAccuracy.m in Sources */ = {isa = PBXBuildFile; fileRef = 80F9CFD5206C8287003B41D4 /* NSString+CJAccuracy.m */; };
-		80F9CFDB206CF84D003B41D4 /* AccuracyStringViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80F9CFD9206CF84D003B41D4 /* AccuracyStringViewController.m */; };
-		80F9CFDC206CF84D003B41D4 /* AccuracyStringViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 80F9CFDA206CF84D003B41D4 /* AccuracyStringViewController.xib */; };
 		80F9CFE0206CFDFB003B41D4 /* CJPinyinHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 80F9CFDE206CFDFB003B41D4 /* CJPinyinHelper.m */; };
 		80FF90291FC5649E00E437CF /* ThirdPartyHomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 80FF8F0C1FC5649E00E437CF /* ThirdPartyHomeViewController.xib */; };
 		80FF902A1FC5649E00E437CF /* ThirdPartyHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80FF8F0E1FC5649E00E437CF /* ThirdPartyHomeViewController.m */; };
@@ -855,9 +855,6 @@
 		805598B21FF5D612009DC61C /* ValidateStringViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ValidateStringViewController.h; sourceTree = "<group>"; };
 		805598B31FF5D612009DC61C /* ValidateStringViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ValidateStringViewController.m; sourceTree = "<group>"; };
 		805598B41FF5D612009DC61C /* ValidateStringViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ValidateStringViewController.xib; sourceTree = "<group>"; };
-		805598B71FF5DB0F009DC61C /* ValidateStringTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ValidateStringTableViewCell.h; sourceTree = "<group>"; };
-		805598B81FF5DB0F009DC61C /* ValidateStringTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ValidateStringTableViewCell.m; sourceTree = "<group>"; };
-		805598B91FF5DB0F009DC61C /* ValidateStringTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ValidateStringTableViewCell.xib; sourceTree = "<group>"; };
 		8056F5AA203E6FA30074D90F /* NSOperationQueueUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSOperationQueueUtil.m; sourceTree = "<group>"; };
 		8056F5AB203E6FA30074D90F /* NSOperationQueueUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSOperationQueueUtil.h; sourceTree = "<group>"; };
 		80582F9E20C121B500C01225 /* ImageRotateViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ImageRotateViewController.h; sourceTree = "<group>"; };
@@ -866,6 +863,15 @@
 		80582FA320C129A200C01225 /* UIImage+CJRotateAngle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+CJRotateAngle.m"; sourceTree = "<group>"; };
 		80582FA420C129A200C01225 /* UIImage+CJRotateAngle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+CJRotateAngle.h"; sourceTree = "<group>"; };
 		80582FA620C12B1300C01225 /* taixi_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "taixi_icon@2x.png"; sourceTree = "<group>"; };
+		8060C47E20E0D0630093B14E /* CJMoneyUtil.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CJMoneyUtil.h; sourceTree = "<group>"; };
+		8060C47F20E0D0630093B14E /* CJMoneyUtil.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CJMoneyUtil.m; sourceTree = "<group>"; };
+		8060C48120E0D0B30093B14E /* CJDistanceUtil.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CJDistanceUtil.h; sourceTree = "<group>"; };
+		8060C48220E0D0B30093B14E /* CJDistanceUtil.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CJDistanceUtil.m; sourceTree = "<group>"; };
+		8060C48520E0D5EF0093B14E /* ValidateStringTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ValidateStringTableViewCell.m; sourceTree = "<group>"; };
+		8060C48620E0D5EF0093B14E /* AccuracyStringViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccuracyStringViewController.h; sourceTree = "<group>"; };
+		8060C48720E0D5EF0093B14E /* AccuracyStringViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AccuracyStringViewController.xib; sourceTree = "<group>"; };
+		8060C48820E0D5EF0093B14E /* ValidateStringTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ValidateStringTableViewCell.h; sourceTree = "<group>"; };
+		8060C48920E0D5EF0093B14E /* AccuracyStringViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccuracyStringViewController.m; sourceTree = "<group>"; };
 		8073D9BB201877910031CE72 /* CJModuleModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJModuleModel.m; sourceTree = "<group>"; };
 		8073D9BC201877910031CE72 /* CJModuleModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJModuleModel.h; sourceTree = "<group>"; };
 		807903071FB413D60082F05C /* arrow_back_red@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrow_back_red@2x.png"; sourceTree = "<group>"; };
@@ -993,11 +999,6 @@
 		80E7E75B20AD2D4D000F762D /* CJQRCodeUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJQRCodeUtil.h; sourceTree = "<group>"; };
 		80E7E75E20AD31A2000F762D /* CJLaunchImageUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJLaunchImageUtil.m; sourceTree = "<group>"; };
 		80E7E75F20AD31A2000F762D /* CJLaunchImageUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJLaunchImageUtil.h; sourceTree = "<group>"; };
-		80F9CFD4206C8287003B41D4 /* NSString+CJAccuracy.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+CJAccuracy.h"; sourceTree = "<group>"; };
-		80F9CFD5206C8287003B41D4 /* NSString+CJAccuracy.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+CJAccuracy.m"; sourceTree = "<group>"; };
-		80F9CFD8206CF84D003B41D4 /* AccuracyStringViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AccuracyStringViewController.h; sourceTree = "<group>"; };
-		80F9CFD9206CF84D003B41D4 /* AccuracyStringViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AccuracyStringViewController.m; sourceTree = "<group>"; };
-		80F9CFDA206CF84D003B41D4 /* AccuracyStringViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AccuracyStringViewController.xib; sourceTree = "<group>"; };
 		80F9CFDE206CFDFB003B41D4 /* CJPinyinHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJPinyinHelper.m; sourceTree = "<group>"; };
 		80F9CFDF206CFDFB003B41D4 /* CJPinyinHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJPinyinHelper.h; sourceTree = "<group>"; };
 		80FF8F0C1FC5649E00E437CF /* ThirdPartyHomeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ThirdPartyHomeViewController.xib; sourceTree = "<group>"; };
@@ -2404,6 +2405,18 @@
 			path = NSOperationQueueUtil;
 			sourceTree = "<group>";
 		};
+		8060C48420E0D5EF0093B14E /* ValueUtilDemo */ = {
+			isa = PBXGroup;
+			children = (
+				8060C48620E0D5EF0093B14E /* AccuracyStringViewController.h */,
+				8060C48920E0D5EF0093B14E /* AccuracyStringViewController.m */,
+				8060C48720E0D5EF0093B14E /* AccuracyStringViewController.xib */,
+				8060C48820E0D5EF0093B14E /* ValidateStringTableViewCell.h */,
+				8060C48520E0D5EF0093B14E /* ValidateStringTableViewCell.m */,
+			);
+			path = ValueUtilDemo;
+			sourceTree = "<group>";
+		};
 		807903061FB413D60082F05C /* arrow */ = {
 			isa = PBXGroup;
 			children = (
@@ -2492,6 +2505,10 @@
 			children = (
 				808DE5E620DA0586003E08F1 /* CJDecimalUtil.h */,
 				808DE5E520DA0586003E08F1 /* CJDecimalUtil.m */,
+				8060C47E20E0D0630093B14E /* CJMoneyUtil.h */,
+				8060C47F20E0D0630093B14E /* CJMoneyUtil.m */,
+				8060C48120E0D0B30093B14E /* CJDistanceUtil.h */,
+				8060C48220E0D0B30093B14E /* CJDistanceUtil.m */,
 			);
 			path = CJDecimalUtil;
 			sourceTree = "<group>";
@@ -3136,8 +3153,6 @@
 				80FF90E91FC5668600E437CF /* NSString+CJTextSize.m */,
 				80FF90F11FC5668600E437CF /* NSString+CJValidate.h */,
 				80FF90E81FC5668600E437CF /* NSString+CJValidate.m */,
-				80F9CFD4206C8287003B41D4 /* NSString+CJAccuracy.h */,
-				80F9CFD5206C8287003B41D4 /* NSString+CJAccuracy.m */,
 			);
 			path = NSString;
 			sourceTree = "<group>";
@@ -3303,12 +3318,6 @@
 				805598B21FF5D612009DC61C /* ValidateStringViewController.h */,
 				805598B31FF5D612009DC61C /* ValidateStringViewController.m */,
 				805598B41FF5D612009DC61C /* ValidateStringViewController.xib */,
-				805598B71FF5DB0F009DC61C /* ValidateStringTableViewCell.h */,
-				805598B81FF5DB0F009DC61C /* ValidateStringTableViewCell.m */,
-				805598B91FF5DB0F009DC61C /* ValidateStringTableViewCell.xib */,
-				80F9CFD8206CF84D003B41D4 /* AccuracyStringViewController.h */,
-				80F9CFD9206CF84D003B41D4 /* AccuracyStringViewController.m */,
-				80F9CFDA206CF84D003B41D4 /* AccuracyStringViewController.xib */,
 			);
 			path = NSString;
 			sourceTree = "<group>";
@@ -3369,6 +3378,7 @@
 		80FF91B31FC581DD00E437CF /* DemosUtil */ = {
 			isa = PBXGroup;
 			children = (
+				8060C48420E0D5EF0093B14E /* ValueUtilDemo */,
 				808B982F20B7F71B00910E45 /* LogDemo */,
 				800E07D72016CCF500799B78 /* DataUtilDemo */,
 				800E07DB2016CCF500799B78 /* DeviceInfoDemo */,
@@ -3569,7 +3579,7 @@
 				7840FB281EB09E0700B553F7 /* bg@2x.jpg in Resources */,
 				80FF90951FC5649F00E437CF /* SHeaderHome2.xib in Resources */,
 				808B983420B7F73300910E45 /* LogViewController.xib in Resources */,
-				80F9CFDC206CF84D003B41D4 /* AccuracyStringViewController.xib in Resources */,
+				8060C48B20E0D5EF0093B14E /* AccuracyStringViewController.xib in Resources */,
 				78E269BE1ECC5E1A007D3686 /* bgCar@2x.jpg in Resources */,
 				807903171FB413D60082F05C /* arrow_R_white@2x.png in Resources */,
 				789CAF521FB612B700AF8CD4 /* CJToast_error@2x.png in Resources */,
@@ -3641,7 +3651,6 @@
 				8033239520299AD7001DACF1 /* MemoryADKnowledge06.jpg in Resources */,
 				805598B61FF5D612009DC61C /* ValidateStringViewController.xib in Resources */,
 				803323B720299AD7001DACF1 /* MyEqualCellSizeCollectionViewController.xib in Resources */,
-				805598BB1FF5DB0F009DC61C /* ValidateStringTableViewCell.xib in Resources */,
 				80C2E19820917048007D7119 /* jiazhaishibai_bg@3x.png in Resources */,
 				787FDB9420500B5C008A46E3 /* slider_thumbImage@3x.png in Resources */,
 				80E7E6F920AD2627000F762D /* cjBackBarButtonItemGray@2x.png in Resources */,
@@ -3870,6 +3879,7 @@
 				789CAF251FB612B700AF8CD4 /* CJSingleTableViewCellDataSource.m in Sources */,
 				803323AF20299AD7001DACF1 /* DetailCell.m in Sources */,
 				80FF91361FC5668700E437CF /* NSJSONSerialization+CJCategory.m in Sources */,
+				8060C48A20E0D5EF0093B14E /* ValidateStringTableViewCell.m in Sources */,
 				789CAF261FB612B700AF8CD4 /* CJSingleTableViewCellDataSource2.m in Sources */,
 				80E7E75820AD2C8B000F762D /* UIImage+CJMakeCircle.m in Sources */,
 				800E07E42016CCF500799B78 /* DeviceInfoViewController.m in Sources */,
@@ -3881,6 +3891,7 @@
 				789CAF211FB612B700AF8CD4 /* CJOpenCollectionView.m in Sources */,
 				789CAF1A1FB612B700AF8CD4 /* CJFullBottomCollectionViewCell.m in Sources */,
 				787FDB5820500B01008A46E3 /* TextFieldViewController.m in Sources */,
+				8060C48C20E0D5EF0093B14E /* AccuracyStringViewController.m in Sources */,
 				80FF914B1FC5668700E437CF /* CJDataUtil+NormalSearch.m in Sources */,
 				787FDB9820500B5C008A46E3 /* ShimmeringSwitchSlider.m in Sources */,
 				789CAF6E1FB612B700AF8CD4 /* UITextField+CJAddInputAccessoryView.m in Sources */,
@@ -3949,6 +3960,7 @@
 				80FF90931FC5649F00E437CF /* CJDefaultTableViewCell+ConfigureForDataModel.m in Sources */,
 				780E460B1E5DF87B00980127 /* ViewController.m in Sources */,
 				803323B420299AD7001DACF1 /* MyEqualCellSizeView.m in Sources */,
+				8060C48320E0D0B30093B14E /* CJDistanceUtil.m in Sources */,
 				8051E5D520AACA33003370AA /* CJLabel.m in Sources */,
 				80C2E18F20916BD3007D7119 /* BBXPassengerEmptyViewController.m in Sources */,
 				803323B920299AD7001DACF1 /* CvDemo_Complex.m in Sources */,
@@ -3997,13 +4009,13 @@
 				789CAF1C1FB612B700AF8CD4 /* CJCellHorizontalLayout.m in Sources */,
 				803323B120299AD7001DACF1 /* Header.m in Sources */,
 				783281041F4198BC008267E0 /* CustomTripProgressView.m in Sources */,
+				8060C48020E0D0630093B14E /* CJMoneyUtil.m in Sources */,
 				80FF913D1FC5668700E437CF /* NSString+CJAttributedString.m in Sources */,
 				789CAF3F1FB612B700AF8CD4 /* LEOHeaderView.m in Sources */,
 				80FF90801FC5649F00E437CF /* ReuseDataSourceTableViewController.m in Sources */,
 				80582FA120C121B500C01225 /* ImageRotateViewController.m in Sources */,
 				7850B734209381B4008F4A21 /* UIView+CJKeepBounds.m in Sources */,
 				808BF3242019C3E900511F7C /* YunUncaughtExceptionHandler.m in Sources */,
-				805598BA1FF5DB0F009DC61C /* ValidateStringTableViewCell.m in Sources */,
 				787FDB8520500B5C008A46E3 /* SwitchSliderViewController.m in Sources */,
 				7850B70220937C5A008F4A21 /* PopupInViewVC.m in Sources */,
 				789CAF441FB612B700AF8CD4 /* CJSearchBar.m in Sources */,
@@ -4026,7 +4038,6 @@
 				803323B620299AD7001DACF1 /* MyEqualCellSizeCollectionViewController.m in Sources */,
 				800E07D52016CC2F00799B78 /* CJKeyboardUtil.m in Sources */,
 				802D1D6920CF5F48003EAFE0 /* CJIndentedStringUtil.m in Sources */,
-				80F9CFD6206C8287003B41D4 /* NSString+CJAccuracy.m in Sources */,
 				80FF91C51FC581DD00E437CF /* UtilHomeViewController.m in Sources */,
 				787FDB5A20500B01008A46E3 /* ImageViewController.m in Sources */,
 				80FF91351FC5668700E437CF /* NSArray+CJConsoleLog.m in Sources */,
@@ -4041,7 +4052,6 @@
 				805481902074C97200CDE5A1 /* CJTimerModel.m in Sources */,
 				80FF914E1FC5668700E437CF /* CJDataUtil+SortCategory.m in Sources */,
 				80FF91531FC5668700E437CF /* PrivateSetting.m in Sources */,
-				80F9CFDB206CF84D003B41D4 /* AccuracyStringViewController.m in Sources */,
 				789CAF3E1FB612B700AF8CD4 /* CJScaleHeadView.m in Sources */,
 				789CAF451FB612B700AF8CD4 /* CJAdsorbModel.m in Sources */,
 				80E7E6CB20AC5DFF000F762D /* IjinbuUploadItemRequest.m in Sources */,

@@ -8,9 +8,15 @@
 
 #import <UIKit/UIKit.h>
 
+#ifdef CJTESTPOD
+#import "CJSectionDataModel.h"
+#else
+#import <CJBaseUtil/CJSectionDataModel.h> //在CJDataUtil中
+#endif
+
 @interface AccuracyStringViewController : UIViewController
 
 @property (nonatomic, weak) IBOutlet UITableView *tableView;
-@property (nonatomic, strong) NSArray *dataModels;
+@property (nonatomic, strong) NSMutableArray *sectionDataModels;
 
 @end
