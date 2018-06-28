@@ -9,46 +9,26 @@
 #import "EmptyWebViewController.h"
 #import "AppInfoManager.h"
 
-static NSString *const BeyondAPPRquestUrl = @"https://fir.im/9u12";
-static NSString *const BBXAPPAboutRquestUrl = @"http://www.bbxpc.com/app_html/about_us/about.html";
-
 @interface EmptyWebViewController ()
 
 @end
 
 @implementation EmptyWebViewController
 
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    
+    NSString *requestUrl = self.networkUrl;
+    
+    BOOL networkEnable = [AppInfoManager sharedInstance].networkEnable;
+    [self reloadNetworkWebWithUrl:requestUrl networkEnable:networkEnable];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    
-    
-//    NSString *localHtmlUrl = [[NSBundle mainBundle] pathForResource:@"index.html" ofType:nil];
-//    [self reloadLocalWebWithUrl:localHtmlUrl];
-    
-    
-    //NSString *requestUrl = @"https://fir.im/9u12";  //BeyondApp
-    NSString *requestUrl = @"http://www.bbxpc.com/app_html/about_us/about.html";  //BBXAPPAbout
-    
-    BOOL networkEnable = [AppInfoManager sharedInstance].networkEnable;
-    networkEnable = NO;
-    [self reloadNetworkWebWithUrl:requestUrl networkEnable:networkEnable];
-    [self setupBlockWithRequestUrl:requestUrl networkEnable:networkEnable];
-    
-    self.webViewDidFinishNavigationBlcok = ^(WKWebView *webView) {
-        if ([webView.URL.absoluteString isEqualToString:requestUrl]) {
-            //http://www.cnblogs.com/gchlcc/p/6154844.html
-            NSString *appVersion = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"];
-            NSString *jsString = [NSString stringWithFormat:@"setEdition('V%@')", appVersion];
-            [webView evaluateJavaScript:jsString completionHandler:^(id _Nullable object, NSError * _Nullable error) {
-                NSLog(@"执行完成");
-            }];
-        }
-    };
-}
 
-- (void)setupBlockWithRequestUrl:(NSString *)requestUrl networkEnable:(BOOL)networkEnable
-{
+    /* 设置空白页相关方法 */
     //显示空白页的方法
     void (^showEmptyViewBlock)(NSString *message) = ^ (NSString *message) {
         if (self.emptyView == nil) {
@@ -64,9 +44,10 @@ static NSString *const BBXAPPAboutRquestUrl = @"http://www.bbxpc.com/app_html/ab
             
             __weak typeof(self)weakSelf = self;
             emptyView.reloadBlock = ^{
+                NSString *requestUrl = self.networkUrl;
+                BOOL networkEnable = [AppInfoManager sharedInstance].networkEnable;
                 [weakSelf reloadNetworkWebWithUrl:requestUrl
                                     networkEnable:networkEnable];
-                //[weakSelf reloadLocalWebWithUrl:requestUrl];
             };
             
             self.emptyView = emptyView;

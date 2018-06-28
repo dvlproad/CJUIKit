@@ -24,27 +24,19 @@
     return self;
 }
 
-///**
-// *  初始化
-// *
-// *  @param maxRepeatCount 最多循环的次数(默认1)，超过最大次数时候，该model将不再执行
-// *  @param minResetSecond 要累积达到至少多少秒才能执行秒数的重置操纵
-// *  @param resetSecondBlock 累积达到秒数的重置操纵条件时，执行的方法
-// *  @param addingSecondBlock 累积达到秒数的重置操纵条件时，即秒数在增加时候，执行的方法
-// */
-//- (instancetype)initWithMaxRepeatCount:(NSInteger)maxRepeatCount
-//                        minResetSecond:(NSInteger)minResetSecond
-//                      resetSecondBlock:(void (^)(CJTimerModel *timer))resetSecondBlock
-//                     addingSecondBlock:(void (^)(CJTimerModel *timer))addingSecondBlock
-//{
-//    self = [super init];
-//    if (self) {
-//        self.maxRepeatCount = maxRepeatCount;
-//        self.minResetSecond = minResetSecond;
-//        self.resetSecondBlock = resetSecondBlock;
-//        self.addingSecondBlock = addingSecondBlock;
-//    }
-//    return self;
-//}
+/* 完整的描述请参见文件头部 */
++ (instancetype)timerModelWithMinResetSecond:(NSInteger)minResetSecond
+                           addingSecondBlock:(void(^)(CJTimerModel *timer))addingSecondBlock
+                            resetSecondBlock:(void(^)(CJTimerModel *timer))resetSecondBlock
+{
+    CJTimerModel *timerModel = [[CJTimerModel alloc] init];
+    timerModel.minResetSecond = minResetSecond;
+    timerModel.addingSecondBlock = addingSecondBlock;
+    timerModel.resetSecondBlock = resetSecondBlock;
+    timerModel.maxRepeatCount = 1;
+    timerModel.currentRepeatCount = 0;
+    
+    return timerModel;
+}
 
 @end

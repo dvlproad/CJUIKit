@@ -17,6 +17,9 @@
 //EmptyView
 #import "BBXPassengerEmptyViewController.h"
 
+//WebView
+#import "EmptyWebViewController.h"
+
 //UITableView
 #import "TableViewController.h"
 #import "DemoTableViewController.h"
@@ -35,10 +38,6 @@
 
 #import "OpenCollectionViewController.h"
 #import "CustomLayoutCollectionViewController.h"
-
-
-//WebView
-#import "EmptyWebViewController.h"
 
 //DataScrollView
 #import "SearchTableViewController.h"
@@ -102,6 +101,26 @@
             [sectionDataModel.values addObject:baseScrollViewModule];
         }
         
+        [sectionDataModels addObject:sectionDataModel];
+    }
+    
+    //WebView
+    {
+        CJSectionDataModel *sectionDataModel = [[CJSectionDataModel alloc] init];
+        sectionDataModel.theme = @"WebView相关";
+        
+        {
+            CJModuleModel *webViewModule = [[CJModuleModel alloc] init];
+            webViewModule.title = @"Web（Network & Empty）";
+            webViewModule.classEntry = [EmptyWebViewController class];
+            [sectionDataModel.values addObject:webViewModule];
+        }
+        {
+            CJModuleModel *webViewModule = [[CJModuleModel alloc] init];
+            webViewModule.title = @"Web（Local & No Need Empty）";
+            webViewModule.classEntry = [BaseWebViewController class];
+            [sectionDataModel.values addObject:webViewModule];
+        }
         [sectionDataModels addObject:sectionDataModel];
     }
     
@@ -198,20 +217,6 @@
         [sectionDataModels addObject:sectionDataModel];
     }
     
-    //WebView
-    {
-        CJSectionDataModel *sectionDataModel = [[CJSectionDataModel alloc] init];
-        sectionDataModel.theme = @"WebView相关";
-        
-        {
-            CJModuleModel *webViewModule = [[CJModuleModel alloc] init];
-            webViewModule.title = @"Web（Network & Local & Empty）";
-            webViewModule.classEntry = [EmptyWebViewController class];
-            [sectionDataModel.values addObject:webViewModule];
-        }
-        [sectionDataModels addObject:sectionDataModel];
-    }
-    
     //DataScrollView
     {
         CJSectionDataModel *sectionDataModel = [[CJSectionDataModel alloc] init];
@@ -287,11 +292,46 @@
     UIViewController *viewController = nil;
     
     NSString *clsString = NSStringFromClass(moduleModel.classEntry);
-    if ([clsString isEqualToString:NSStringFromClass([UIViewController class])] ||
-        [clsString isEqualToString:NSStringFromClass([EmptyWebViewController class])])
+    if ([clsString isEqualToString:NSStringFromClass([UIViewController class])])
     {
         viewController = [[classEntry alloc] init];
         viewController.view.backgroundColor = [UIColor whiteColor];
+    } else if ([clsString isEqualToString:NSStringFromClass([EmptyWebViewController class])]) {
+        //NSString *networkUrl = @"https://fir.im/9u12";  //BeyondApp
+        NSString *networkUrl = @"http://www.bbxpc.com/app_html/about_us/about.html";  //BBXAPPAbout
+        
+        EmptyWebViewController *webViewController = [[EmptyWebViewController alloc] init];
+        webViewController.view.backgroundColor = [UIColor whiteColor];
+        webViewController.title = NSLocalizedString(moduleModel.title, nil);
+        webViewController.hidesBottomBarWhenPushed = YES;
+        
+        webViewController.networkUrl = networkUrl;
+        webViewController.webViewDidFinishNavigationBlcok = ^(WKWebView *webView) {
+            if ([webView.URL.absoluteString isEqualToString:networkUrl]) {
+                //http://www.cnblogs.com/gchlcc/p/6154844.html
+                NSString *appVersion = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"];
+                NSString *jsString = [NSString stringWithFormat:@"setEdition('V%@')", appVersion];
+                [webView evaluateJavaScript:jsString completionHandler:^(id _Nullable object, NSError * _Nullable error) {
+                    NSLog(@"执行完成");
+                }];
+            }
+        };
+        
+        [self.navigationController pushViewController:webViewController animated:YES];
+        return;
+        
+    } else if ([clsString isEqualToString:NSStringFromClass([BaseWebViewController class])]) {
+        BaseWebViewController *webViewController = [[BaseWebViewController alloc] init];
+        webViewController.view.backgroundColor = [UIColor whiteColor];
+        webViewController.title = NSLocalizedString(moduleModel.title, nil);
+        webViewController.hidesBottomBarWhenPushed = YES;
+        [self.navigationController pushViewController:webViewController animated:YES];
+        
+        NSString *localHtmlUrl = [[NSBundle mainBundle] pathForResource:@"index.html" ofType:nil];
+        [webViewController reloadLocalWebWithUrl:localHtmlUrl]; //加载本地网页
+        
+        return;
+        
     } else if ([clsString isEqualToString:NSStringFromClass([ChooseColor01 class])]) {
         viewController = [[ChooseColor01 alloc] initWithStyle:UITableViewStyleGrouped];
         

@@ -52,20 +52,21 @@ static CGFloat kPeriodDuration = 5.0f;
     [self.countDownTimeButton1 setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     [self.countDownTimeButton1 setTitleColor:[UIColor lightGrayColor] forState:UIControlStateDisabled];
     [self.countDownTimeButton1 addTarget:self action:@selector(countDownTimeButtonAction1:) forControlEvents:UIControlEventTouchUpInside];
-    [self.countDownTimeButton1 setTitle:@"发送验证码(5s)" forState:UIControlStateNormal];
+    [self.countDownTimeButton1 setTitle:@"发送验证码(5s)--组件的使用" forState:UIControlStateNormal];
     [self.countDownTimeButton1 setEnabled:YES];
 }
 
 - (IBAction)countDownTimeButtonAction1:(id)sender {
+    self.timerModels = nil;
     if (self.timerModels == nil) {
         NSArray<CJTimerModel *> *timerModels = [self getAllTimerModels];
         self.timerModels = [NSMutableArray arrayWithArray:timerModels];
         
         [CJTimerManager sharedInstance].timerModels = [NSMutableArray arrayWithArray:timerModels];
-        
-        NSLog(@"这里将会创建定时器");
-        [[CJTimerManager sharedInstance] createTimerWithTimeInterval:1];
     }
+    
+    NSLog(@"这里将会创建定时器");
+    [[CJTimerManager sharedInstance] createTimerWithTimeInterval:1];
     
 //    if ([[CJTimerManager sharedInstance] isTimerValid] == NO) {
 //        [[CJTimerManager sharedInstance] fireTimer];
@@ -98,40 +99,31 @@ static CGFloat kPeriodDuration = 5.0f;
     };
     
     //timerModel2
-    CJTimerModel *timerModel2 = [[CJTimerModel alloc] init];
-    timerModel2.timerid = @"timerModel2";
-    timerModel2.minResetSecond = 7;
-    timerModel2.maxRepeatCount = 1;
-    timerModel2.currentRepeatCount = 0;
-    timerModel2.resetSecondBlock = ^(CJTimerModel *timer) {
-        NSInteger minResetSecond = timer.minResetSecond;
-        NSString *title = [NSString stringWithFormat:@"发送验证码(%zds)", minResetSecond];
-        self.countDownTimeLabel1.text = title;
-    };
-    timerModel2.addingSecondBlock = ^(CJTimerModel *timer) {
+    CJTimerModel *timerModel2 = [CJTimerModel timerModelWithMinResetSecond:7 addingSecondBlock:^(CJTimerModel *timer) {
         NSInteger cumulativeSecond = timer.cumulativeSecond;
         NSInteger remainSecond = timer.minResetSecond - cumulativeSecond;
         NSString *title = [NSString stringWithFormat:@"倒计时(%lds)", remainSecond];
         self.countDownTimeLabel1.text = title;
-    };
+    } resetSecondBlock:^(CJTimerModel *timer) {
+        NSInteger minResetSecond = timer.minResetSecond;
+        NSString *title = [NSString stringWithFormat:@"发送验证码(%zds)", minResetSecond];
+        self.countDownTimeLabel1.text = title;
+    }];
+    timerModel2.timerid = @"timerModel2";
     
     //timerModel3
-    CJTimerModel *timerModel3 = [[CJTimerModel alloc] init];
-    timerModel3.timerid = @"timerModel3";
-    timerModel3.minResetSecond = 10;
-    timerModel3.maxRepeatCount = 1;
-    timerModel3.currentRepeatCount = 0;
-    timerModel3.resetSecondBlock = ^(CJTimerModel *timer) {
-        NSInteger minResetSecond = timer.minResetSecond;
-        NSString *title = [NSString stringWithFormat:@"发送验证码(%zds)", minResetSecond];
-        self.countDownTimeLabel2.text = title;
-    };
-    timerModel3.addingSecondBlock = ^(CJTimerModel *timer) {
+    CJTimerModel *timerModel3 = [CJTimerModel timerModelWithMinResetSecond:10 addingSecondBlock:^(CJTimerModel *timer) {
         NSInteger cumulativeSecond = timer.cumulativeSecond;
         NSInteger remainSecond = timer.minResetSecond - cumulativeSecond;
         NSString *title = [NSString stringWithFormat:@"倒计时(%lds)", remainSecond];
         self.countDownTimeLabel2.text = title;
-    };
+    } resetSecondBlock:^(CJTimerModel *timer) {
+        NSInteger minResetSecond = timer.minResetSecond;
+        NSString *title = [NSString stringWithFormat:@"发送验证码(%zds)", minResetSecond];
+        self.countDownTimeLabel2.text = title;
+    }];
+    timerModel3.timerid = @"timerModel3";
+    timerModel3.maxRepeatCount = 1;
     
     NSArray<CJTimerModel *> *timerModels = @[timerModel1, timerModel2, timerModel3];
     
@@ -145,7 +137,7 @@ static CGFloat kPeriodDuration = 5.0f;
     [self.countDownTimeButton2 setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     [self.countDownTimeButton2 setTitleColor:[UIColor lightGrayColor] forState:UIControlStateDisabled];
     [self.countDownTimeButton2 addTarget:self action:@selector(countDownTimeButtonAction2:) forControlEvents:UIControlEventTouchUpInside];
-    [self.countDownTimeButton2 setTitle:@"发送验证码(5s)" forState:UIControlStateNormal];
+    [self.countDownTimeButton2 setTitle:@"发送验证码(5s)--非组件" forState:UIControlStateNormal];
     [self.countDownTimeButton2 setEnabled:YES];
 }
 

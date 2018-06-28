@@ -43,11 +43,8 @@
     [self.webView removeObserver:self forKeyPath:@"title"];
 }
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    // Do any additional setup after loading the view.
-    
-    [self setupViews];
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
     
     /*
     请在子类中调用
@@ -56,6 +53,13 @@
     或
     [self reloadLocalWebWithUrl:<#(NSString *)#>];
     */
+}
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    // Do any additional setup after loading the view.
+    
+    [self setupViews];
 }
 
 - (void)setupViews {
@@ -85,29 +89,33 @@
 }
 
 
-
-- (void)reloadNetworkWebWithUrl:(NSString *)requestUrl networkEnable:(BOOL)networkEnable
-{
-    if (!networkEnable) {
+/**
+ *  加载网络网页
+ *
+ *  @param requestUrl       网页地址
+ *  @param networkEnable    是否有网
+ */
+- (void)reloadNetworkWebWithUrl:(NSString *)requestUrl networkEnable:(BOOL)networkEnable {
+    if (networkEnable == NO) {
         [SVProgressHUD show];
-        
-        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-            sleep(1);
-            
-            dispatch_async(dispatch_get_main_queue(), ^{
-                [SVProgressHUD dismiss];
-                [self showEmptyViewWithFailureMessage:NSLocalizedString(@"请检查您的手机是否联网", nil)];
-            });
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            [SVProgressHUD dismiss];
+            [self showEmptyViewWithFailureMessage:NSLocalizedString(@"请检查您的手机是否联网", nil)];
         });
-        return;
+        
+    } else {
+        //通过URL，创建Request并加载
+        NSURL *URL = [NSURL URLWithString:requestUrl];;
+        NSURLRequest *request = [NSURLRequest requestWithURL:URL];
+        [self.webView loadRequest:request];
     }
-    
-    //通过URL，创建Request并加载
-    NSURL *URL = [NSURL URLWithString:requestUrl];;
-    NSURLRequest *request = [NSURLRequest requestWithURL:URL];
-    [self.webView loadRequest:request];
 }
 
+/**
+ *  加载本地网页
+ *
+ *  @param requestUrl   网页地址
+ */
 - (void)reloadLocalWebWithUrl:(NSString *)requestUrl {
     //NSString *localHtmlUrl = [[NSBundle mainBundle] pathForResource:@"index.html" ofType:nil];
     NSString *localHtmlUrl = requestUrl;

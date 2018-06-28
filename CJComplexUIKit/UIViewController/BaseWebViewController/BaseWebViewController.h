@@ -23,14 +23,27 @@
 
 #import "CJEmptyViewProtocol.h"
 
+///只有实现CJEmptyViewProtocol中的方法才能显示空白时候的页面
 @interface BaseWebViewController : UIViewController <CJEmptyViewProtocol> {
     
 }
-///页面加载完成之后执行的方法
+//非必选：页面加载完成之后执行的方法
 @property (nonatomic, copy) void (^webViewDidFinishNavigationBlcok)(WKWebView *webView);
 
+
+/**
+ *  加载网络网页
+ *
+ *  @param requestUrl       网页地址
+ *  @param networkEnable    是否有网
+ */
 - (void)reloadNetworkWebWithUrl:(NSString *)requestUrl networkEnable:(BOOL)networkEnable;
 
+/**
+ *  加载本地网页
+ *
+ *  @param requestUrl   网页地址
+ */
 - (void)reloadLocalWebWithUrl:(NSString *)requestUrl;
 
 @end
