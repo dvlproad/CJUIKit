@@ -155,6 +155,8 @@
 		7EA576B620691B5A00726CCF /* CJModuleManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EA576B520691B5A00726CCF /* CJModuleManager.m */; };
 		8000B5C61FCFEE3A00AE3C78 /* UITextField+CJSelectedTextRange.m in Sources */ = {isa = PBXBuildFile; fileRef = 8000B5C51FCFEE3A00AE3C78 /* UITextField+CJSelectedTextRange.m */; };
 		8000B5C91FD0021D00AE3C78 /* CJExtraTextTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 8000B5C81FD0021D00AE3C78 /* CJExtraTextTextField.m */; };
+		8008D7D120E5CF5700F98EF6 /* CallSystemViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8008D7CE20E5CF5700F98EF6 /* CallSystemViewController.xib */; };
+		8008D7D220E5CF5700F98EF6 /* CallSystemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8008D7D020E5CF5700F98EF6 /* CallSystemViewController.m */; };
 		800A15FD208480C000ECF9AF /* CJCallUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 800A15FB208480BF00ECF9AF /* CJCallUtil.m */; };
 		800E07D52016CC2F00799B78 /* CJKeyboardUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 800E07D32016CC2E00799B78 /* CJKeyboardUtil.m */; };
 		800E07E12016CCF500799B78 /* DataUtilViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 800E07D82016CCF500799B78 /* DataUtilViewController.m */; };
@@ -731,6 +733,9 @@
 		8000B5C51FCFEE3A00AE3C78 /* UITextField+CJSelectedTextRange.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UITextField+CJSelectedTextRange.m"; sourceTree = "<group>"; };
 		8000B5C71FD0021D00AE3C78 /* CJExtraTextTextField.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CJExtraTextTextField.h; sourceTree = "<group>"; };
 		8000B5C81FD0021D00AE3C78 /* CJExtraTextTextField.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CJExtraTextTextField.m; sourceTree = "<group>"; };
+		8008D7CE20E5CF5700F98EF6 /* CallSystemViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CallSystemViewController.xib; sourceTree = "<group>"; };
+		8008D7CF20E5CF5700F98EF6 /* CallSystemViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CallSystemViewController.h; sourceTree = "<group>"; };
+		8008D7D020E5CF5700F98EF6 /* CallSystemViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CallSystemViewController.m; sourceTree = "<group>"; };
 		800A15FB208480BF00ECF9AF /* CJCallUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJCallUtil.m; sourceTree = "<group>"; };
 		800A15FC208480BF00ECF9AF /* CJCallUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJCallUtil.h; sourceTree = "<group>"; };
 		800E07D32016CC2E00799B78 /* CJKeyboardUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJKeyboardUtil.m; sourceTree = "<group>"; };
@@ -2114,6 +2119,16 @@
 			path = CJModuleManager;
 			sourceTree = "<group>";
 		};
+		8008D7CD20E5CF5700F98EF6 /* CallSystemUtilDemo */ = {
+			isa = PBXGroup;
+			children = (
+				8008D7CF20E5CF5700F98EF6 /* CallSystemViewController.h */,
+				8008D7D020E5CF5700F98EF6 /* CallSystemViewController.m */,
+				8008D7CE20E5CF5700F98EF6 /* CallSystemViewController.xib */,
+			);
+			path = CallSystemUtilDemo;
+			sourceTree = "<group>";
+		};
 		800A15FA208480BF00ECF9AF /* CJCallUtil */ = {
 			isa = PBXGroup;
 			children = (
@@ -3378,6 +3393,7 @@
 		80FF91B31FC581DD00E437CF /* DemosUtil */ = {
 			isa = PBXGroup;
 			children = (
+				8008D7CD20E5CF5700F98EF6 /* CallSystemUtilDemo */,
 				8060C48420E0D5EF0093B14E /* ValueUtilDemo */,
 				808B982F20B7F71B00910E45 /* LogDemo */,
 				800E07D72016CCF500799B78 /* DataUtilDemo */,
@@ -3682,6 +3698,7 @@
 				789CAF2D1FB612B700AF8CD4 /* cjCheckBoxGreen2YES.png in Resources */,
 				80FF90AB1FC5649F00E437CF /* EasyScaleHeadView.xib in Resources */,
 				80D71EAA2090277700D2DB68 /* AlertViewController.xib in Resources */,
+				8008D7D120E5CF5700F98EF6 /* CallSystemViewController.xib in Resources */,
 				803323A920299AD7001DACF1 /* MemoryADTime01.jpg in Resources */,
 				787FDB5720500B01008A46E3 /* SearchBarViewController.xib in Resources */,
 				787FDB8820500B5C008A46E3 /* slider_double_thumbImage_a@2x.png in Resources */,
@@ -4070,6 +4087,7 @@
 				80FF90AF1FC5649F00E437CF /* NavigationBarBaseViewController.m in Sources */,
 				80FF908E1FC5649F00E437CF /* MyOpenTableView.m in Sources */,
 				80FF914A1FC5668700E437CF /* CJSortedCategoryResult.m in Sources */,
+				8008D7D220E5CF5700F98EF6 /* CallSystemViewController.m in Sources */,
 				80FF91441FC5668700E437CF /* CJDeviceUtil.m in Sources */,
 				789CAF4B1FB612B700AF8CD4 /* CJSliderThumb.m in Sources */,
 				80E7E6FA20AD2627000F762D /* UIViewController+CJSystemBackButtonHandler.m in Sources */,

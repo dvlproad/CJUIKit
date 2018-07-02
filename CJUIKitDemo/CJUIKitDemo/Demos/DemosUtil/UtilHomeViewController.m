@@ -20,12 +20,12 @@
 //image
 #import "QRCodeViewController.h"
 
-#import "DeviceInfoViewController.h"
 
+//其他Util
+#import "CallSystemViewController.h"
+#import "DeviceInfoViewController.h"
 #import "DataUtilViewController.h"
 #import "AccuracyStringViewController.h"
-
-
 #import "KeyboardUtilViewController.h"
 
 @interface UtilHomeViewController () <UITableViewDataSource, UITableViewDelegate> {
@@ -99,8 +99,15 @@
     
     //其他
     {
+        
         CJSectionDataModel *sectionDataModel = [[CJSectionDataModel alloc] init];
         sectionDataModel.theme = @"Util相关";
+        {
+            CJModuleModel *deviceInfoModule = [[CJModuleModel alloc] init];
+            deviceInfoModule.title = @"CallSystem(拨打电话等)";
+            deviceInfoModule.classEntry = [CallSystemViewController class];
+            [sectionDataModel.values addObject:deviceInfoModule];
+        }
         {
             CJModuleModel *deviceInfoModule = [[CJModuleModel alloc] init];
             deviceInfoModule.title = @"DeviceInfo";
