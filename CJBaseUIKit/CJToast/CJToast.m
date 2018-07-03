@@ -54,6 +54,7 @@
     UIFont *hudLabelFont = hud.label.font;
     CGFloat textWidth = [self getTextSizeFromString:message withFont:hudLabelFont].width;
     
+    //由于 MBProgressHUD 无法自动换行，所以超过部分改用自定义
     if (textWidth < labelMaxWidth) {
         hud.mode = MBProgressHUDModeText;
         if (labelTextColor) {
@@ -102,6 +103,7 @@
 
 
 #pragma mark - Text And Image
+/*
 + (void)shortShowError:(NSString *)error toView:(UIView *)view
 {
     //NSString *imageName = @"CJToast.bundle/error";
@@ -117,6 +119,7 @@
     UIImage *image = [UIImage imageNamed:imageName];
     [self shortShowMessage:success image:image toView:view];
 }
+*/
 
 /* 完整的描述请参见文件头部 */
 + (void)shortShowMessage:(NSString *)message image:(UIImage *)image toView:(UIView *)view
@@ -147,11 +150,47 @@
     MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:view animated:YES];
     hud.backgroundView.style = MBProgressHUDBackgroundStyleSolidColor;
     hud.backgroundView.color = [UIColor colorWithWhite:0.f alpha:0.1f];
-    hud.contentColor = [UIColor colorWithRed:0.f green:0.6f blue:0.7f alpha:1.f];
+    hud.contentColor = [UIColor whiteColor]; //等待框文字颜色
+    hud.bezelView.backgroundColor = [UIColor colorWithWhite:0 alpha:0.76]; //等待框背景色
     
     if (message) {
         hud.label.text = message;
     }
+    
+    return hud;
+}
+
+/* 完整的描述请参见文件头部 */
++ (MBProgressHUD *)createChrysanthemumHUDWithRightMessage:(NSString *)message toView:(UIView *)view
+{
+    if (view == nil) {
+        view = [UIApplication sharedApplication].keyWindow;
+    }
+    
+    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:view animated:YES];
+    
+    // Set the custom view mode to show any view.
+    hud.mode = MBProgressHUDModeCustomView;
+    // Set an image view with a checkmark.
+    
+    
+    UIView *customView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 400, 200)];
+    customView.backgroundColor = [UIColor redColor];
+    
+    UIImage *image = [[UIImage imageNamed:@"CJToast_success"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+    UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 100-40/2, 40, 40)];
+    imageView.image = image;
+    [customView addSubview:imageView];
+    
+    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(40, 100-30/2, 140, 30)];
+    label.backgroundColor = [UIColor orangeColor];
+    label.text = message;
+    label.textAlignment = NSTextAlignmentCenter;
+    [customView addSubview:label];
+   
+    hud.customView = customView;
+    hud.square = YES;
+    hud.label.text = message;
     
     return hud;
 }

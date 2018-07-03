@@ -44,13 +44,43 @@
         }
         {
             CJModuleModel *toastModule = [[CJModuleModel alloc] init];
+            toastModule.title = @"灰底黑字，2秒后自动消失";
+            //toastModule.classEntry = [UIViewController class];
+            [sectionDataModel.values addObject:toastModule];
+        }
+        {
+            CJModuleModel *toastModule = [[CJModuleModel alloc] init];
+            toastModule.title = @"黑底白字，2秒后自动消失";
+            //toastModule.classEntry = [UIViewController class];
+            [sectionDataModel.values addObject:toastModule];
+        }
+        {
+            CJModuleModel *toastModule = [[CJModuleModel alloc] init];
+            toastModule.title = @"自定义视图";
+            //toastModule.classEntry = [UIViewController class];
+            [sectionDataModel.values addObject:toastModule];
+        }
+        [sectionDataModels addObject:sectionDataModel];
+    }
+    //Toast
+    {
+        CJSectionDataModel *sectionDataModel = [[CJSectionDataModel alloc] init];
+        sectionDataModel.theme = @"Toast相关-菊花";
+        {
+            CJModuleModel *toastModule = [[CJModuleModel alloc] init];
             toastModule.title = @"菊花显示（系统）";
             //toastModule.classEntry = [UIViewController class];
             [sectionDataModel.values addObject:toastModule];
         }
         {
             CJModuleModel *toastModule = [[CJModuleModel alloc] init];
-            toastModule.title = @"菊花显示（MBProgressHUD）";
+            toastModule.title = @"菊花显示1（MBProgressHUD）--上下";
+            //toastModule.classEntry = [UIViewController class];
+            [sectionDataModel.values addObject:toastModule];
+        }
+        {
+            CJModuleModel *toastModule = [[CJModuleModel alloc] init];
+            toastModule.title = @"菊花显示2（MBProgressHUD）--左右";
             //toastModule.classEntry = [UIViewController class];
             [sectionDataModel.values addObject:toastModule];
         }
@@ -109,38 +139,56 @@
     if (indexPath.section == 0) {
         if (indexPath.row == 0) {
             [CJToast shortShowMessage:@"测试" image:[UIImage imageNamed:@"icon.png"] toView:self.view];
+        } else if (indexPath.row == 1) {
+            [CJToast shortShowMessage:@"灰底黑字，2秒后自动消失"];
+             
+        } else if (indexPath.row == 2) {
+            [CJToast shortShowWhiteMessage:@"黑底白字，2秒后自动消失"];
+            
+        } else if (indexPath.row == 3) {
+            [CJToast shortShowMessage:@"在指定的view上显示文字，并在delay秒后自动消失"
+                               inView:self.view
+                   withLabelTextColor:[UIColor redColor]
+                       bezelViewColor:[UIColor greenColor]
+                       hideAfterDelay:2];
+        }
+        
+    } else if (indexPath.section == 1) {
+        if (indexPath.row == 0) {
+            [self.activityIndicator startAnimating];
+            
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                [self.activityIndicator stopAnimating];
+            });
             
         } else if (indexPath.row == 1) {
-            [self.activityIndicator startAnimating];
-            dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-                //耗时的操作
-                sleep(2);
-                
-                dispatch_async(dispatch_get_main_queue(), ^{
-                    //更新界面
-                    [self.activityIndicator stopAnimating];
-                });
+            NSString *registeringText = NSLocalizedString(@"正在注册中，请稍等...", nil);
+            MBProgressHUD *registerStateHUD = [CJToast createChrysanthemumHUDWithMessage:registeringText toView:nil];
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                BOOL isSuccess  = rand()%3;
+                if (isSuccess) {
+                    [registerStateHUD hideAnimated:YES afterDelay:0];
+                } else {
+                    NSString *registerFailureMessage = NSLocalizedString(@"注册成功", nil);
+                    registerStateHUD.label.text = registerFailureMessage;
+                    registerStateHUD.mode = MBProgressHUDModeText;
+                    [registerStateHUD hideAnimated:YES afterDelay:1];
+                }
             });
             
         } else if (indexPath.row == 2) {
-            NSString *registeringText = NSLocalizedString(@"正在注册", nil);
-            MBProgressHUD *registerStateHUD = [CJToast createChrysanthemumHUDWithMessage:registeringText toView:nil];
-            dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-                //耗时的操作
-                sleep(2);
-                
-                dispatch_async(dispatch_get_main_queue(), ^{
-                    //更新界面
-                    BOOL isSuccess  = rand()%3;
-                    if (isSuccess) {
-                        [registerStateHUD hideAnimated:YES afterDelay:0];
-                    } else {
-                        NSString *registerFailureMessage = NSLocalizedString(@"注册失败", nil);
-                        registerStateHUD.label.text = registerFailureMessage;
-                        registerStateHUD.mode = MBProgressHUDModeText;
-                        [registerStateHUD hideAnimated:YES afterDelay:1];
-                    }
-                });
+            NSString *registeringText = NSLocalizedString(@"照片识别中，请稍等...", nil);
+            MBProgressHUD *registerStateHUD = [CJToast createChrysanthemumHUDWithRightMessage:registeringText toView:nil];
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                BOOL isSuccess  = rand()%3;
+                if (isSuccess) {
+                    [registerStateHUD hideAnimated:YES afterDelay:0];
+                } else {
+                    NSString *registerFailureMessage = NSLocalizedString(@"识别成功", nil);
+                    registerStateHUD.label.text = registerFailureMessage;
+                    registerStateHUD.mode = MBProgressHUDModeText;
+                    [registerStateHUD hideAnimated:YES afterDelay:1];
+                }
             });
         }
     }

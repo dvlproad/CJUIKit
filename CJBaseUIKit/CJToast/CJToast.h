@@ -46,7 +46,7 @@
 
 
 /**
- *  在指定的view上短暂的显示文字(2秒后自动消失)
+ *  在指定的view上显示文字，并在delay秒后自动消失
  *
  *  @param message          要显示的信息
  *  @param view             信息要显示的位置
@@ -80,9 +80,8 @@
  *  @param message                  要显示的文字(可以为nil)
  *  @param view                     要显示在的视图
  */
-+ (MBProgressHUD *)createChrysanthemumHUDWithMessage:(NSString *)message
-                                              toView:(UIView *)view;
-
++ (MBProgressHUD *)createChrysanthemumHUDWithMessage:(NSString *)message toView:(UIView *)view;
++ (MBProgressHUD *)createChrysanthemumHUDWithRightMessage:(NSString *)message toView:(UIView *)view;
 
 #pragma mark - HUD
 + (void)showHUDAddedTo:(UIView *)view animated:(BOOL)animated;
