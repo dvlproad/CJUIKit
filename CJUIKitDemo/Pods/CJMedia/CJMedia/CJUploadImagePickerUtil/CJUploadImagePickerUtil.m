@@ -15,14 +15,14 @@
 @implementation CJUploadImagePickerUtil
 
 /* 完整的描述请参见文件头部 */
-+ (MySingleImagePickerController *)takePhotoPickerWithPickCompleteBlock:(void (^)(NSArray<CJImageUploadItem *> *pickedImageItems))pickImageCompleteBlock
++ (MySingleImagePickerController *)takePhotoPickerWithPickCompleteBlock:(void (^)(NSArray<CJImageUploadFileModelsOwner *> *pickedImageItems))pickImageCompleteBlock
 {
     MySingleImagePickerController *singleImagePickerController = [[MySingleImagePickerController alloc] init];
     [singleImagePickerController setSingleMediaTypeForVideo:NO];
     singleImagePickerController.saveLocation = CJSaveLocationNone;
     [singleImagePickerController pickImageFinishBlock:^(UIImage *image)
      {
-         CJImageUploadItem *imageItem = [self saveImageToSandbox:image];  //保存图片到APP沙盒中
+         CJImageUploadFileModelsOwner *imageItem = [self saveImageToSandbox:image];  //保存图片到APP沙盒中
          if (pickImageCompleteBlock) {
              pickImageCompleteBlock(@[imageItem]);
          }
@@ -36,7 +36,7 @@
 
 
 /* 完整的描述请参见文件头部 */
-+ (CJImagePickerViewController *)choosePhotoPickerWithCanMaxChooseImageCount:(NSInteger)canMaxChooseImageCount pickCompleteBlock:(void (^)(NSArray<CJImageUploadItem *> *pickedImageItems))pickImageCompleteBlock
++ (CJImagePickerViewController *)choosePhotoPickerWithCanMaxChooseImageCount:(NSInteger)canMaxChooseImageCount pickCompleteBlock:(void (^)(NSArray<CJImageUploadFileModelsOwner *> *pickedImageItems))pickImageCompleteBlock
 {
     /*
     UIImagePickerControllerSourceType sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
@@ -46,7 +46,7 @@
     imagePickerControllerUtil.saveLocation = CJSaveLocationNone;
     [imagePickerControllerUtil openImagePickerControllerWithSourceType:sourceType isVideo:NO inViewController:self.belongToViewController pickImageFinishBlock:^(UIImage *image)
      {
-         CJImageUploadItem *imageItem = [self saveImageToSandbox:image];  //保存图片到APP沙盒中
+         CJImageUploadFileModelsOwner *imageItem = [self saveImageToSandbox:image];  //保存图片到APP沙盒中
          
          [self.dataModels addObject:imageItem];
          
@@ -69,7 +69,7 @@
             AlumbImageModel *item = imageModels[i];
             UIImage *image = item.image;
             
-            CJImageUploadItem *imageItem = [self saveImageToSandbox:image];   //保存图片到APP沙盒中
+            CJImageUploadFileModelsOwner *imageItem = [self saveImageToSandbox:image];   //保存图片到APP沙盒中
             [pickerImageModels addObject:imageItem];
         }
         //选择结束
@@ -83,7 +83,7 @@
 
 
 /**< 保存图片到APP沙盒中 */
-+ (CJImageUploadItem *)saveImageToSandbox:(UIImage *)image {
++ (CJImageUploadFileModelsOwner *)saveImageToSandbox:(UIImage *)image {
     NSData *imageData = UIImageJPEGRepresentation(image, 1.0);
     
     //文件名
@@ -99,14 +99,11 @@
     
     
     //图片
-    CJUploadFileModel *imageUploadModel = [[CJUploadFileModel alloc] init];
-    imageUploadModel.uploadItemType = CJUploadItemTypeImage;
-    imageUploadModel.uploadItemData = imageData;
-    imageUploadModel.uploadItemName = imageName;
+    CJUploadFileModel *imageUploadModel = [[CJUploadFileModel alloc] initWithItemType:CJUploadItemTypeImage itemName:imageName itemData:imageData];
     
     
-    CJImageUploadItem *imageItem =
-    [[CJImageUploadItem alloc] initWithShowImage:image
+    CJImageUploadFileModelsOwner *imageItem =
+    [[CJImageUploadFileModelsOwner alloc] initWithShowImage:image
                           imageLocalRelativePath:fileRelativePath
                                 uploadFileModels:@[imageUploadModel]];
     

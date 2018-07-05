@@ -11,53 +11,51 @@
 @implementation UIView (AFNetworkingUpload)
 
 /* 完整的描述请参见文件头部 */
-- (void)configureUploadRequestForItem:(CJBaseUploadItem *)saveUploadInfoToItem
-        andUseUploadInfoConfigureView:(CJUploadProgressView *)uploadProgressView
-      uploadRequestConfigureByManager:(AFHTTPSessionManager *)manager
+- (void)cjConfigureUploadProgressView:(CJUploadProgressView *)uploadProgressView
+           withUploadRequestByManager:(AFHTTPSessionManager *)manager
                                   Url:(NSString *)Url
-                           parameters:(id)parameters
-                          uploadFileModels:(NSArray<CJUploadFileModel *> *)uploadFileModels
-                uploadInfoChangeBlock:(void(^)(CJBaseUploadItem *saveUploadInfoToItem))uploadInfoChangeBlock
-       dealResopnseForUploadInfoBlock:(CJUploadInfo * (^)(id responseObject))dealResopnseForUploadInfoBlock
+                               params:(id)params
+                              fileKey:(NSString *)fileKey
+                       fileValueOwner:(CJUploadFileModelsOwner *)fileValueOwner
+          uploadMomentInfoChangeBlock:(void(^)(CJUploadFileModelsOwner *momentInfoOwner))uploadMomentInfoChangeBlock
+ getUploadMomentInfoFromResopnseBlock:(CJUploadMomentInfo * (^)(id responseObject))getUploadMomentInfoFromResopnseBlock
 {
     
-    NSURLSessionDataTask *operation = saveUploadInfoToItem.operation;
+    NSURLSessionDataTask *operation = fileValueOwner.operation;
     if (operation == nil) {
         operation =
-        [AFNetworkingUploadUtil cj_UseManager:manager
-                                postUploadUrl:Url
-                                   parameters:parameters
-                                  uploadFileModels:uploadFileModels
-                         uploadInfoSaveInItem:saveUploadInfoToItem
-                        uploadInfoChangeBlock:uploadInfoChangeBlock
-               dealResopnseForUploadInfoBlock:dealResopnseForUploadInfoBlock];
+        [manager cj_postUploadUrl:Url
+                           params:params
+                          fileKey:fileKey
+                   fileValueOwner:fileValueOwner
+      uploadMomentInfoChangeBlock:uploadMomentInfoChangeBlock
+getUploadMomentInfoFromResopnseBlock:getUploadMomentInfoFromResopnseBlock];
         
-        saveUploadInfoToItem.operation = operation;
+        fileValueOwner.operation = operation;
     }
     
     
     //cjReUploadHandle
-    __weak typeof(saveUploadInfoToItem)weakItem = saveUploadInfoToItem;
+    __weak typeof(fileValueOwner)weakFileValueOwner = fileValueOwner;
     [uploadProgressView setCjReUploadHandle:^(UIView *uploadProgressView) {
-        __strong __typeof(weakItem)strongItem = weakItem;
+        __strong __typeof(weakFileValueOwner)strongFileValueOwner = weakFileValueOwner;
         
-        [strongItem.operation cancel];
+        [strongFileValueOwner.operation cancel];
         
         NSURLSessionDataTask *newOperation =
-        [AFNetworkingUploadUtil cj_UseManager:manager
-                                postUploadUrl:Url
-                                   parameters:parameters
-                                  uploadFileModels:uploadFileModels
-                         uploadInfoSaveInItem:saveUploadInfoToItem
-                        uploadInfoChangeBlock:uploadInfoChangeBlock
-               dealResopnseForUploadInfoBlock:dealResopnseForUploadInfoBlock];
+        [manager cj_postUploadUrl:Url
+                           params:params
+                          fileKey:fileKey
+                   fileValueOwner:fileValueOwner
+      uploadMomentInfoChangeBlock:uploadMomentInfoChangeBlock
+getUploadMomentInfoFromResopnseBlock:getUploadMomentInfoFromResopnseBlock];
         
-        strongItem.operation = newOperation;
+        strongFileValueOwner.operation = newOperation;
     }];
     
     
-    CJUploadInfo *uploadInfo = saveUploadInfoToItem.uploadInfo;
-    [uploadProgressView updateProgressText:uploadInfo.uploadStatePromptText progressVaule:uploadInfo.progressValue];//调用此方法避免reload时候显示错误
+    CJUploadMomentInfo *momentInfo = fileValueOwner.momentInfo;
+    [uploadProgressView updateProgressText:momentInfo.uploadStatePromptText progressVaule:momentInfo.progressValue];//调用此方法避免reload时候显示错误
 }
 
 @end

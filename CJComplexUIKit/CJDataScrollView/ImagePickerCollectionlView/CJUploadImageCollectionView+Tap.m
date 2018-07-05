@@ -17,7 +17,7 @@
 
 - (void)didSelectMediaUploadItemAtIndexPath:(NSIndexPath *)indexPath {
     if (self.mediaType == CJMediaTypeVideo) {
-        CJImageUploadItem *imageUploadItem = [self.dataModels objectAtIndex:indexPath.row];
+        CJImageUploadFileModelsOwner *imageUploadItem = [self.dataModels objectAtIndex:indexPath.row];
         NSString *localPath = [NSHomeDirectory() stringByAppendingPathComponent:imageUploadItem.localRelativePath];
         NSURL *videoURL = [NSURL fileURLWithPath:localPath];
         MPMoviePlayerViewController *moviePlayerController = [[MPMoviePlayerViewController alloc] initWithContentURL:videoURL];
@@ -26,7 +26,7 @@
         [self.belongToViewController presentMoviePlayerViewControllerAnimated:moviePlayerController];
         
     } else {
-        for (CJImageUploadItem *imageUploadItem in self.dataModels) {
+        for (CJImageUploadFileModelsOwner *imageUploadItem in self.dataModels) {
             UIImage *image = imageUploadItem.image;
             if (image == nil) {
                 image = nil;    //试着从本地种查找
@@ -78,7 +78,7 @@
         if (indexPath.section == 0)
         {
             if (indexPath.row == 0) {   //拍照
-                UIImagePickerController *imagePickerController = [CJUploadImagePickerUtil takePhotoPickerWithPickCompleteBlock:^(NSArray<CJImageUploadItem *> *pickedImageItems) {
+                UIImagePickerController *imagePickerController = [CJUploadImagePickerUtil takePhotoPickerWithPickCompleteBlock:^(NSArray<CJImageUploadFileModelsOwner *> *pickedImageItems) {
                     [weakSelf.dataModels addObjectsFromArray:pickedImageItems];
                     [weakSelf reloadData];
                     if (weakSelf.pickImageCompleteBlock) {
@@ -94,7 +94,7 @@
                 NSInteger canMaxChooseImageCount = weakSelf.equalCellSizeSetting.maxDataModelShowCount - weakSelf.dataModels.count;
                 
                 CJImagePickerViewController *imagePickerController =
-                [CJUploadImagePickerUtil choosePhotoPickerWithCanMaxChooseImageCount:canMaxChooseImageCount pickCompleteBlock:^(NSArray<CJImageUploadItem *> *pickedImageItems) {
+                [CJUploadImagePickerUtil choosePhotoPickerWithCanMaxChooseImageCount:canMaxChooseImageCount pickCompleteBlock:^(NSArray<CJImageUploadFileModelsOwner *> *pickedImageItems) {
                     [weakSelf.dataModels addObjectsFromArray:pickedImageItems];
                     [weakSelf reloadData];
                     if (weakSelf.pickImageCompleteBlock) {

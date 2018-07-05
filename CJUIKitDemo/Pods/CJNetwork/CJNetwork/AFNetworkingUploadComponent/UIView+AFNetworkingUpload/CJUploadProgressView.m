@@ -114,12 +114,12 @@
 // *
 // *  @param upload 传请求的时刻信息
 // */
-//- (void)updateProgressViewByUploadInfo:(CJUploadInfo *)upload {
+//- (void)updateProgressViewByUploadInfo:(CJUploadMomentInfo *)upload {
 //    self.cjUploadProgressLabel.text = upload.uploadStatePromptText;
 //    [self updateUploadProgressMaskViewWithProgressVaule:upload.progressValue];
 //    
-//    if (upload.uploadState == CJUploadStateSuccess ||
-//        upload.uploadState == CJUploadStateUploading) {
+//    if (upload.uploadState == CJUploadMomentStateSuccess ||
+//        upload.uploadState == CJUploadMomentStateUploading) {
 //        self.cjUploadProgressMaskView.userInteractionEnabled = NO;
 //    } else {
 //        self.cjUploadProgressMaskView.userInteractionEnabled = YES;

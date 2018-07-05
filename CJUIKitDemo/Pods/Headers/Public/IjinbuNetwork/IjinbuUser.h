@@ -1,0 +1,1 @@
+../../../IjinbuNetwork/IjinbuNetwork/Models/IjinbuUser.h

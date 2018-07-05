@@ -28,7 +28,7 @@ static NSString * const CJUploadCollectionViewCellAddID = @"CJUploadCollectionVi
     
     /*
     {
-        CJImageUploadItem *item = [[CJImageUploadItem alloc] init];
+        CJImageUploadFileModelsOwner *item = [[CJImageUploadFileModelsOwner alloc] init];
         item.image = [UIImage imageNamed:@"CJAvatar.png"];
         [self.dataModels addObject:item];
     }
@@ -99,10 +99,10 @@ static NSString * const CJUploadCollectionViewCellAddID = @"CJUploadCollectionVi
              [self operateCell:cell withDataModelIndexPath:indexPath isSettingOperate:NO];
              */
             
-            CJBaseUploadItem *baseUploadItem = [weakSelf.dataModels objectAtIndex:indexPath.row];
+            CJUploadFileModelsOwner *baseUploadItem = [weakSelf.dataModels objectAtIndex:indexPath.row];
             
-            CJUploadInfo *uploadInfo = baseUploadItem.uploadInfo;
-            if (uploadInfo.uploadState == CJUploadStateFailure) {
+            CJUploadMomentInfo *momentInfo = baseUploadItem.momentInfo;
+            if (momentInfo.uploadState == CJUploadMomentStateFailure) {
                 return;
             }
             
@@ -170,7 +170,7 @@ static NSString * const CJUploadCollectionViewCellAddID = @"CJUploadCollectionVi
  */
 - (void)operateCell:(CJUploadCollectionViewCell *)cell withDataModelIndexPath:(NSIndexPath *)indexPath isSettingOperate:(BOOL)isSettingOperate {
     
-    CJImageUploadItem *dataModel = [self.equalCellSizeSetting getDataModelAtIndexPath:indexPath dataModels:self.dataModels];
+    CJImageUploadFileModelsOwner *dataModel = [self.equalCellSizeSetting getDataModelAtIndexPath:indexPath dataModels:self.dataModels];
     if (isSettingOperate) {
         dataModel.indexPath = indexPath;
     }
@@ -198,18 +198,18 @@ static NSString * const CJUploadCollectionViewCellAddID = @"CJUploadCollectionVi
     }
     
     __weak typeof(self)weakSelf = self;
-    void (^uploadInfoChangeBlock)(CJBaseUploadItem *itemThatSaveUploadInfo) = ^(CJBaseUploadItem *itemThatSaveUploadInfo) {
-        CJImageUploadItem *imageItem = (CJImageUploadItem *)itemThatSaveUploadInfo;
+    void (^uploadInfoChangeBlock)(CJUploadFileModelsOwner *itemThatSaveUploadInfo) = ^(CJUploadFileModelsOwner *itemThatSaveUploadInfo) {
+        CJImageUploadFileModelsOwner *imageItem = (CJImageUploadFileModelsOwner *)itemThatSaveUploadInfo;
         CJUploadCollectionViewCell *myCell = (CJUploadCollectionViewCell *)[weakSelf cellForItemAtIndexPath:imageItem.indexPath];
-        CJUploadInfo *uploadInfo = itemThatSaveUploadInfo.uploadInfo;
-        [myCell.uploadProgressView updateProgressText:uploadInfo.uploadStatePromptText progressVaule:uploadInfo.progressValue];
+        CJUploadMomentInfo *momentInfo = itemThatSaveUploadInfo.momentInfo;
+        [myCell.uploadProgressView updateProgressText:momentInfo.uploadStatePromptText progressVaule:momentInfo.progressValue];
     };
     
-    CJImageUploadItem *baseUploadItem = [self.equalCellSizeSetting getDataModelAtIndexPath:indexPath dataModels:self.dataModels];
+    CJImageUploadFileModelsOwner *baseUploadItem = [self.equalCellSizeSetting getDataModelAtIndexPath:indexPath dataModels:self.dataModels];
     NSArray<CJUploadFileModel *> *uploadModels = baseUploadItem.uploadFileModels;
 
     
-    CJBaseUploadItem *saveUploadInfoToItem = baseUploadItem;
+    CJUploadFileModelsOwner *saveUploadInfoToItem = baseUploadItem;
     
     
     
@@ -249,15 +249,15 @@ static NSString * const CJUploadCollectionViewCellAddID = @"CJUploadCollectionVi
     }];
     
     
-    CJUploadInfo *uploadInfo = saveUploadInfoToItem.uploadInfo;
-    [cell.uploadProgressView updateProgressText:uploadInfo.uploadStatePromptText progressVaule:uploadInfo.progressValue];//调用此方法避免reload时候显示错误
+    CJUploadMomentInfo *momentInfo = saveUploadInfoToItem.momentInfo;
+    [cell.uploadProgressView updateProgressText:momentInfo.uploadStatePromptText progressVaule:momentInfo.progressValue];//调用此方法避免reload时候显示错误
 }
 
 ///完善cell的deleteButton的操作
 - (void)deleteCell:(CJUploadCollectionViewCell *)cell inCollectionView:(UICollectionView *)collectionView withDataModelIndexPath:(NSIndexPath *)indexPath {
     __weak typeof(self)weakSelf = self;
     
-    CJImageUploadItem *baseUploadItem = [self.equalCellSizeSetting getDataModelAtIndexPath:indexPath dataModels:self.dataModels];
+    CJImageUploadFileModelsOwner *baseUploadItem = [self.equalCellSizeSetting getDataModelAtIndexPath:indexPath dataModels:self.dataModels];
     [cell setDeleteHandle:^(CJUploadCollectionViewCell *baseCell) {
         if (baseUploadItem.operation) { //如果有请求任务，则还应该取消掉该任务
             [baseUploadItem.operation cancel];
@@ -289,9 +289,9 @@ static NSString * const CJUploadCollectionViewCellAddID = @"CJUploadCollectionVi
 
 
 - (BOOL)isAllUploadFinish {
-    for (CJBaseUploadItem *uploadItem in self.dataModels) {
-        CJUploadInfo *uploadInfo = uploadItem.uploadInfo;
-        if (uploadInfo.uploadState == CJUploadStateFailure) {
+    for (CJUploadFileModelsOwner *uploadItem in self.dataModels) {
+        CJUploadMomentInfo *momentInfo = uploadItem.momentInfo;
+        if (momentInfo.uploadState == CJUploadMomentStateFailure) {
             NSLog(@"Failure:请等待所有附件上传完成");
             return NO;
         }

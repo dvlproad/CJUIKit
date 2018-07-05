@@ -1,1 +1,1 @@
-../../../CJNetwork/CJNetwork/AFNetworkingUploadComponent/AFNetworkingUploadAPI/Models/CJUploadFileModel.h
+../../../CJNetwork/CJNetwork/AFNetworkingUploadComponent/AFNetworkingUploadAPI/CJUploadFileModelsOwner/CJUploadFileModel.h

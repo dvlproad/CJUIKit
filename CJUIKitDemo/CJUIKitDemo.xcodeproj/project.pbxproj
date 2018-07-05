@@ -297,14 +297,6 @@
 		80D71EB22090522F00D2DB68 /* scan_icon_notice@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 80D71EB12090522E00D2DB68 /* scan_icon_notice@2x.png */; };
 		80E7E63520AC227B000F762D /* AppInfoManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 80E7E63420AC227A000F762D /* AppInfoManager.m */; };
 		80E7E68920AC37CA000F762D /* IjinbuNetworkClient+Login.m in Sources */ = {isa = PBXBuildFile; fileRef = 80E7E68720AC37CA000F762D /* IjinbuNetworkClient+Login.m */; };
-		80E7E6C720AC5DFF000F762D /* IjinbuNetworkClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 80E7E6B520AC5DFF000F762D /* IjinbuNetworkClient.m */; };
-		80E7E6C820AC5DFF000F762D /* IjinbuSession.m in Sources */ = {isa = PBXBuildFile; fileRef = 80E7E6B920AC5DFF000F762D /* IjinbuSession.m */; };
-		80E7E6C920AC5DFF000F762D /* IjinbuUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 80E7E6BB20AC5DFF000F762D /* IjinbuUser.m */; };
-		80E7E6CA20AC5DFF000F762D /* IjinbuUploadItemResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 80E7E6BD20AC5DFF000F762D /* IjinbuUploadItemResult.m */; };
-		80E7E6CB20AC5DFF000F762D /* IjinbuUploadItemRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 80E7E6BE20AC5DFF000F762D /* IjinbuUploadItemRequest.m */; };
-		80E7E6CC20AC5DFF000F762D /* IjinbuResponseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 80E7E6C320AC5DFF000F762D /* IjinbuResponseModel.m */; };
-		80E7E6CD20AC5DFF000F762D /* IjinbuHTTPSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 80E7E6C420AC5DFF000F762D /* IjinbuHTTPSessionManager.m */; };
-		80E7E6CE20AC5DFF000F762D /* IjinbuNetworkClient+UploadFile.m in Sources */ = {isa = PBXBuildFile; fileRef = 80E7E6C620AC5DFF000F762D /* IjinbuNetworkClient+UploadFile.m */; };
 		80E7E6F320AD2627000F762D /* BaseWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80E7E6E020AD2626000F762D /* BaseWebViewController.m */; };
 		80E7E6F420AD2627000F762D /* DemoEmptyView.m in Sources */ = {isa = PBXBuildFile; fileRef = 80E7E6E520AD2626000F762D /* DemoEmptyView.m */; };
 		80E7E6F520AD2627000F762D /* UIViewController+CJCustomBackBarButtonItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 80E7E6E720AD2626000F762D /* UIViewController+CJCustomBackBarButtonItem.m */; };
@@ -939,22 +931,6 @@
 		80E7E63420AC227A000F762D /* AppInfoManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppInfoManager.m; sourceTree = "<group>"; };
 		80E7E68720AC37CA000F762D /* IjinbuNetworkClient+Login.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "IjinbuNetworkClient+Login.m"; sourceTree = "<group>"; };
 		80E7E68820AC37CA000F762D /* IjinbuNetworkClient+Login.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "IjinbuNetworkClient+Login.h"; sourceTree = "<group>"; };
-		80E7E6B420AC5DFF000F762D /* IjinbuHTTPSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IjinbuHTTPSessionManager.h; sourceTree = "<group>"; };
-		80E7E6B520AC5DFF000F762D /* IjinbuNetworkClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IjinbuNetworkClient.m; sourceTree = "<group>"; };
-		80E7E6B620AC5DFF000F762D /* IjinbuNetworkClient+UploadFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "IjinbuNetworkClient+UploadFile.h"; sourceTree = "<group>"; };
-		80E7E6B820AC5DFF000F762D /* IjinbuUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IjinbuUser.h; sourceTree = "<group>"; };
-		80E7E6B920AC5DFF000F762D /* IjinbuSession.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IjinbuSession.m; sourceTree = "<group>"; };
-		80E7E6BA20AC5DFF000F762D /* IjinbuSession.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IjinbuSession.h; sourceTree = "<group>"; };
-		80E7E6BB20AC5DFF000F762D /* IjinbuUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IjinbuUser.m; sourceTree = "<group>"; };
-		80E7E6BD20AC5DFF000F762D /* IjinbuUploadItemResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IjinbuUploadItemResult.m; sourceTree = "<group>"; };
-		80E7E6BE20AC5DFF000F762D /* IjinbuUploadItemRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IjinbuUploadItemRequest.m; sourceTree = "<group>"; };
-		80E7E6BF20AC5DFF000F762D /* IjinbuUploadItemResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IjinbuUploadItemResult.h; sourceTree = "<group>"; };
-		80E7E6C020AC5DFF000F762D /* IjinbuUploadItemRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IjinbuUploadItemRequest.h; sourceTree = "<group>"; };
-		80E7E6C220AC5DFF000F762D /* IjinbuResponseModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IjinbuResponseModel.h; sourceTree = "<group>"; };
-		80E7E6C320AC5DFF000F762D /* IjinbuResponseModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IjinbuResponseModel.m; sourceTree = "<group>"; };
-		80E7E6C420AC5DFF000F762D /* IjinbuHTTPSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IjinbuHTTPSessionManager.m; sourceTree = "<group>"; };
-		80E7E6C520AC5DFF000F762D /* IjinbuNetworkClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IjinbuNetworkClient.h; sourceTree = "<group>"; };
-		80E7E6C620AC5DFF000F762D /* IjinbuNetworkClient+UploadFile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "IjinbuNetworkClient+UploadFile.m"; sourceTree = "<group>"; };
 		80E7E6E020AD2626000F762D /* BaseWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseWebViewController.m; sourceTree = "<group>"; };
 		80E7E6E120AD2626000F762D /* CJEmptyViewProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJEmptyViewProtocol.h; sourceTree = "<group>"; };
 		80E7E6E220AD2626000F762D /* BaseWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseWebViewController.h; sourceTree = "<group>"; };
@@ -2105,7 +2081,6 @@
 			children = (
 				80E7E68820AC37CA000F762D /* IjinbuNetworkClient+Login.h */,
 				80E7E68720AC37CA000F762D /* IjinbuNetworkClient+Login.m */,
-				80E7E6B320AC5DFF000F762D /* IjinbuNetwork */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -2588,53 +2563,6 @@
 				80E7E63420AC227A000F762D /* AppInfoManager.m */,
 			);
 			path = AppInfoManager;
-			sourceTree = "<group>";
-		};
-		80E7E6B320AC5DFF000F762D /* IjinbuNetwork */ = {
-			isa = PBXGroup;
-			children = (
-				80E7E6B420AC5DFF000F762D /* IjinbuHTTPSessionManager.h */,
-				80E7E6B520AC5DFF000F762D /* IjinbuNetworkClient.m */,
-				80E7E6B620AC5DFF000F762D /* IjinbuNetworkClient+UploadFile.h */,
-				80E7E6B720AC5DFF000F762D /* Models */,
-				80E7E6BC20AC5DFF000F762D /* IjinbuUploadModels */,
-				80E7E6C120AC5DFF000F762D /* ResponseModels */,
-				80E7E6C420AC5DFF000F762D /* IjinbuHTTPSessionManager.m */,
-				80E7E6C520AC5DFF000F762D /* IjinbuNetworkClient.h */,
-				80E7E6C620AC5DFF000F762D /* IjinbuNetworkClient+UploadFile.m */,
-			);
-			path = IjinbuNetwork;
-			sourceTree = "<group>";
-		};
-		80E7E6B720AC5DFF000F762D /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				80E7E6B820AC5DFF000F762D /* IjinbuUser.h */,
-				80E7E6B920AC5DFF000F762D /* IjinbuSession.m */,
-				80E7E6BA20AC5DFF000F762D /* IjinbuSession.h */,
-				80E7E6BB20AC5DFF000F762D /* IjinbuUser.m */,
-			);
-			path = Models;
-			sourceTree = "<group>";
-		};
-		80E7E6BC20AC5DFF000F762D /* IjinbuUploadModels */ = {
-			isa = PBXGroup;
-			children = (
-				80E7E6BD20AC5DFF000F762D /* IjinbuUploadItemResult.m */,
-				80E7E6BE20AC5DFF000F762D /* IjinbuUploadItemRequest.m */,
-				80E7E6BF20AC5DFF000F762D /* IjinbuUploadItemResult.h */,
-				80E7E6C020AC5DFF000F762D /* IjinbuUploadItemRequest.h */,
-			);
-			path = IjinbuUploadModels;
-			sourceTree = "<group>";
-		};
-		80E7E6C120AC5DFF000F762D /* ResponseModels */ = {
-			isa = PBXGroup;
-			children = (
-				80E7E6C220AC5DFF000F762D /* IjinbuResponseModel.h */,
-				80E7E6C320AC5DFF000F762D /* IjinbuResponseModel.m */,
-			);
-			path = ResponseModels;
 			sourceTree = "<group>";
 		};
 		80E7E6DE20AD2626000F762D /* UIViewController */ = {
@@ -3900,7 +3828,6 @@
 				789CAF261FB612B700AF8CD4 /* CJSingleTableViewCellDataSource2.m in Sources */,
 				80E7E75820AD2C8B000F762D /* UIImage+CJMakeCircle.m in Sources */,
 				800E07E42016CCF500799B78 /* DeviceInfoViewController.m in Sources */,
-				80E7E6CE20AC5DFF000F762D /* IjinbuNetworkClient+UploadFile.m in Sources */,
 				804478282061F328007185EF /* CJLocationChangeModel.m in Sources */,
 				789CAF461FB612B700AF8CD4 /* CJBaseUISlider.m in Sources */,
 				789CAF201FB612B700AF8CD4 /* CJLineCell.m in Sources */,
@@ -3917,7 +3844,6 @@
 				7850B72E2093809F008F4A21 /* UIView+CJFind.m in Sources */,
 				80FF908A1FC5649F00E437CF /* ChooseColor01.m in Sources */,
 				80FF91E81FC6739D00E437CF /* CJDateModelUtil.m in Sources */,
-				80E7E6CD20AC5DFF000F762D /* IjinbuHTTPSessionManager.m in Sources */,
 				80FF90901FC5649F00E437CF /* CustomTableViewCell.m in Sources */,
 				80FF91E91FC6739D00E437CF /* CJDateModel.m in Sources */,
 				80CC7F8D200F7EBE0017878A /* OpenTableViewController2.m in Sources */,
@@ -3936,7 +3862,6 @@
 				80FF91521FC5668700E437CF /* CJLogUtil.m in Sources */,
 				80E7E6F420AD2627000F762D /* DemoEmptyView.m in Sources */,
 				789CAF3B1FB612B700AF8CD4 /* CJRefreshHeader.m in Sources */,
-				80E7E6CA20AC5DFF000F762D /* IjinbuUploadItemResult.m in Sources */,
 				80FF90B11FC5649F00E437CF /* NavigationBarChangePositonViewController.m in Sources */,
 				803323B220299AD7001DACF1 /* OpenCollectionViewController.m in Sources */,
 				80FF91461FC5668700E437CF /* CJDataUtil+CJSectionDataModel.m in Sources */,
@@ -3955,12 +3880,10 @@
 				80E7E6FB20AD2627000F762D /* ProgressWebViewController.m in Sources */,
 				789CAF341FB612B700AF8CD4 /* CJImageView.m in Sources */,
 				80582FA520C129A200C01225 /* UIImage+CJRotateAngle.m in Sources */,
-				80E7E6CC20AC5DFF000F762D /* IjinbuResponseModel.m in Sources */,
 				7850B731209380A0008F4A21 /* UIView+CJShake.m in Sources */,
 				80FF90961FC5649F00E437CF /* TableViewHeader.m in Sources */,
 				80FF908B1FC5649F00E437CF /* TableViewController.m in Sources */,
 				80FF91A01FC5682B00E437CF /* ProcessLineViewController.m in Sources */,
-				80E7E6C920AC5DFF000F762D /* IjinbuUser.m in Sources */,
 				787FDB8620500B5C008A46E3 /* SliderViewController.m in Sources */,
 				7850B70020937C5A008F4A21 /* DragViewController.m in Sources */,
 				80FF91391FC5668700E437CF /* NSString+CJTextSize.m in Sources */,
@@ -3982,7 +3905,6 @@
 				80C2E18F20916BD3007D7119 /* BBXPassengerEmptyViewController.m in Sources */,
 				803323B920299AD7001DACF1 /* CvDemo_Complex.m in Sources */,
 				80E7E75220AD2C8B000F762D /* UIImage+CJTransformSize.m in Sources */,
-				80E7E6C820AC5DFF000F762D /* IjinbuSession.m in Sources */,
 				789CAF4F1FB612B700AF8CD4 /* CJTextView.m in Sources */,
 				80FF90441FC5649F00E437CF /* UploadNoneImagePickerViewController.m in Sources */,
 				80FF914D1FC5668700E437CF /* CJDataUtil+SortOrder.m in Sources */,
@@ -4013,7 +3935,6 @@
 				805598B51FF5D612009DC61C /* ValidateStringViewController.m in Sources */,
 				80FF90481FC5649F00E437CF /* UploadDirectlyImagePickerViewController.m in Sources */,
 				789CAF1F1FB612B700AF8CD4 /* CJHeadAndCellHorizontalLayout.m in Sources */,
-				80E7E6C720AC5DFF000F762D /* IjinbuNetworkClient.m in Sources */,
 				80FF91971FC5682B00E437CF /* EncryptStringViewController.m in Sources */,
 				789CAF331FB612B700AF8CD4 /* CJBadgeImageView.m in Sources */,
 				789CAF7D1FB612B700AF8CD4 /* CJUploadCollectionViewCell.m in Sources */,
@@ -4071,7 +3992,6 @@
 				80FF91531FC5668700E437CF /* PrivateSetting.m in Sources */,
 				789CAF3E1FB612B700AF8CD4 /* CJScaleHeadView.m in Sources */,
 				789CAF451FB612B700AF8CD4 /* CJAdsorbModel.m in Sources */,
-				80E7E6CB20AC5DFF000F762D /* IjinbuUploadItemRequest.m in Sources */,
 				80FF903A1FC5649F00E437CF /* SvDemo_Refresh.m in Sources */,
 				803323B520299AD7001DACF1 /* MyEqualCellSizeViewController.m in Sources */,
 				80D49F8620BE71BA003F642C /* MemoryADCollectionViewCell.m in Sources */,

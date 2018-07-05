@@ -33,9 +33,9 @@ target 'CJUIKitDemo' do
   
   # 图片选择需要依赖的库
   pod 'JGActionSheet'
-  pod 'CJMedia/CJUploadImagePickerUtil', '~> 0.0.6' #其中包含了对CJFile中的部分依赖
+  pod 'CJMedia/CJUploadImagePickerUtil', '~> 0.0.7' #其中包含了对CJFile中的部分依赖
   pod 'CJNetwork/AFNetworkingBaseComponent'
-#  pod 'IjinbuNetwork', '~> 0.0.3' #IjinbuNetwork中有依赖CJBaseUtil的CJDevice和CJBaseUIKit的UIImage,所以这里不能使用pod，否则link错误
+  pod 'IjinbuNetwork', '~> 0.0.5' #之前有过IjinbuNetwork中有依赖CJBaseUtil的CJDevice和CJBaseUIKit的UIImage,所以这里不能使用pod，否则link错误
 
   # 网页
   pod 'WebViewJavascriptBridge', '~> 6.0.2'

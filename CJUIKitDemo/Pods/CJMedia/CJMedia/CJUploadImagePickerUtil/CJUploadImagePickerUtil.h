@@ -10,8 +10,8 @@
 #import "MySingleImagePickerController.h"
 #import "CJImagePickerViewController.h"
 
-#import "CJImageUploadItem.h"
-#import "CJUploadVideoItem.h"
+#import "CJImageUploadFileModelsOwner.h"
+#import "CJVideoUploadFileModelsOwner.h"
 
 /**
  *  获取图片选择器，所选择/拍摄的图片会被保存到沙盒中
@@ -25,7 +25,7 @@
  *
  *  @return 拍照的picker视图控制器
  */
-+ (MySingleImagePickerController *)takePhotoPickerWithPickCompleteBlock:(void (^)(NSArray<CJImageUploadItem *> *pickedImageItems))pickImageCompleteBlock;
++ (MySingleImagePickerController *)takePhotoPickerWithPickCompleteBlock:(void (^)(NSArray<CJImageUploadFileModelsOwner *> *pickedImageItems))pickImageCompleteBlock;
 
 
 /**
@@ -36,6 +36,6 @@
  *
  *  @return 从相册中选择照片的picker视图控制器
  */
-+ (CJImagePickerViewController *)choosePhotoPickerWithCanMaxChooseImageCount:(NSInteger)canMaxChooseImageCount pickCompleteBlock:(void (^)(NSArray<CJImageUploadItem *> *pickedImageItems))pickImageCompleteBlock;
++ (CJImagePickerViewController *)choosePhotoPickerWithCanMaxChooseImageCount:(NSInteger)canMaxChooseImageCount pickCompleteBlock:(void (^)(NSArray<CJImageUploadFileModelsOwner *> *pickedImageItems))pickImageCompleteBlock;
 
 @end

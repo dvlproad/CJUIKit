@@ -49,7 +49,7 @@
     /* 设置上传 */
     NSInteger uploadItemToWhere = 0; /** 可选：上传到哪里(一个项目中可能有好几个地方都要上传) */
     self.uploadImageCollectionView.uploadActionType = CJUploadActionTypeDirectly;
-    self.uploadImageCollectionView.createDetailedUploadRequestBlock = ^NSURLSessionDataTask *(NSArray<CJUploadFileModel *> *uploadFileModels, CJBaseUploadItem *itemThatSaveUploadInfo, void (^uploadInfoChangeBlock)(CJBaseUploadItem *item)) {
+    self.uploadImageCollectionView.createDetailedUploadRequestBlock = ^NSURLSessionDataTask *(NSArray<CJUploadFileModel *> *uploadFileModels, CJUploadFileModelsOwner *itemThatSaveUploadInfo, void (^uploadInfoChangeBlock)(CJUploadFileModelsOwner *item)) {
         NSURLSessionDataTask *dataTask =
         [IjinbuNetworkClient detailedRequestUploadItems:uploadFileModels
                                                 toWhere:uploadItemToWhere
