@@ -2565,6 +2565,56 @@
 			path = AppInfoManager;
 			sourceTree = "<group>";
 		};
+<<<<<<< Updated upstream
+=======
+		80E7E6B320AC5DFF000F762D /* IjinbuNetwork */ = {
+			isa = PBXGroup;
+			children = (
+				80E7E6B420AC5DFF000F762D /* IjinbuHTTPSessionManager.h */,
+				80E7E6C420AC5DFF000F762D /* IjinbuHTTPSessionManager.m */,
+				80E7E6C520AC5DFF000F762D /* IjinbuNetworkClient.h */,
+				80E7E6B520AC5DFF000F762D /* IjinbuNetworkClient.m */,
+				80E7E6B620AC5DFF000F762D /* IjinbuNetworkClient+UploadFile.h */,
+				80E7E6C620AC5DFF000F762D /* IjinbuNetworkClient+UploadFile.m */,
+				80E7E6BC20AC5DFF000F762D /* IjinbuUploadModels */,
+				80E7E6B720AC5DFF000F762D /* Models */,
+				80E7E6C120AC5DFF000F762D /* ResponseModels */,
+			);
+			path = IjinbuNetwork;
+			sourceTree = "<group>";
+		};
+		80E7E6B720AC5DFF000F762D /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				80E7E6B820AC5DFF000F762D /* IjinbuUser.h */,
+				80E7E6B920AC5DFF000F762D /* IjinbuSession.m */,
+				80E7E6BA20AC5DFF000F762D /* IjinbuSession.h */,
+				80E7E6BB20AC5DFF000F762D /* IjinbuUser.m */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		80E7E6BC20AC5DFF000F762D /* IjinbuUploadModels */ = {
+			isa = PBXGroup;
+			children = (
+				80E7E6BD20AC5DFF000F762D /* IjinbuUploadItemResult.m */,
+				80E7E6BE20AC5DFF000F762D /* IjinbuUploadItemRequest.m */,
+				80E7E6BF20AC5DFF000F762D /* IjinbuUploadItemResult.h */,
+				80E7E6C020AC5DFF000F762D /* IjinbuUploadItemRequest.h */,
+			);
+			path = IjinbuUploadModels;
+			sourceTree = "<group>";
+		};
+		80E7E6C120AC5DFF000F762D /* ResponseModels */ = {
+			isa = PBXGroup;
+			children = (
+				80E7E6C220AC5DFF000F762D /* IjinbuResponseModel.h */,
+				80E7E6C320AC5DFF000F762D /* IjinbuResponseModel.m */,
+			);
+			path = ResponseModels;
+			sourceTree = "<group>";
+		};
+>>>>>>> Stashed changes
 		80E7E6DE20AD2626000F762D /* UIViewController */ = {
 			isa = PBXGroup;
 			children = (

@@ -267,6 +267,9 @@ static NSString *cjMustHideFromPopupViewKey = @"cjMustHideFromPopupView";
     CGFloat popupViewX = 0;
     CGFloat popupViewShowY = CGRectGetHeight(keyWindow.frame) - CGRectGetHeight(popupView.frame);
     CGFloat popupViewWidth = CGRectGetWidth(keyWindow.frame);
+    if (CGRectGetWidth(self.frame) != popupViewWidth) {
+        NSLog(@"Error:popupView视图宽度未等于屏幕宽度");
+    }
     
     CGRect popupViewShowFrame = CGRectZero;
     popupViewShowFrame = CGRectMake(popupViewX,
