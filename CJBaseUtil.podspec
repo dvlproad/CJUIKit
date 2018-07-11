@@ -1,4 +1,5 @@
 Pod::Spec.new do |s|
+  #验证方法：pod lib lint CJBaseUtil.podspec --allow-warnings --use-libraries --verbose
   s.name         = "CJBaseUtil"
   s.version      = "0.3.0"
   s.summary      = "自定义的基础工具类"

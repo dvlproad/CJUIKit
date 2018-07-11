@@ -75,12 +75,19 @@
 
 #pragma mark - Text And 菊花
 /**
- *  创建一个显示菊花和信息的HUD(实际一般不用此方法,而直接写如CJTotalDemo中 AppDelegate+DefaultSetting.h 的数据库初始化)
+ *  创建一个显示菊花和信息的上下结构HUD(实际一般不用此方法,而是直接写如CJTotalDemo中 AppDelegate+DefaultSetting.h 的数据库初始化)
  *
  *  @param message                  要显示的文字(可以为nil)
  *  @param view                     要显示在的视图
  */
 + (MBProgressHUD *)createChrysanthemumHUDWithMessage:(NSString *)message toView:(UIView *)view;
+
+/**
+ *  TODO:创建一个显示菊花和信息的左右结构HUD(实际一般不用此方法,而是直接写如CJTotalDemo中 AppDelegate+DefaultSetting.h 的数据库初始化)
+ *
+ *  @param message                  要显示的文字(可以为nil)
+ *  @param view                     要显示在的视图
+ */
 + (MBProgressHUD *)createChrysanthemumHUDWithRightMessage:(NSString *)message toView:(UIView *)view;
 
 #pragma mark - HUD

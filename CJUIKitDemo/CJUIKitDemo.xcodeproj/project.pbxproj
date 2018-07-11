@@ -2565,8 +2565,6 @@
 			path = AppInfoManager;
 			sourceTree = "<group>";
 		};
-<<<<<<< Updated upstream
-=======
 		80E7E6B320AC5DFF000F762D /* IjinbuNetwork */ = {
 			isa = PBXGroup;
 			children = (
@@ -2614,7 +2612,6 @@
 			path = ResponseModels;
 			sourceTree = "<group>";
 		};
->>>>>>> Stashed changes
 		80E7E6DE20AD2626000F762D /* UIViewController */ = {
 			isa = PBXGroup;
 			children = (

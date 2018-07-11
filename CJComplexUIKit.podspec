@@ -1,5 +1,5 @@
 Pod::Spec.new do |s|
-
+  #验证方法：pod lib lint CJComplexUIKit.podspec --allow-warnings --use-libraries --verbose
   s.name         = "CJComplexUIKit"
   s.version      = "0.0.10"
   s.summary      = "自定义的稍微复杂的UI"

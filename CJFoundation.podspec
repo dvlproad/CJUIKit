@@ -1,4 +1,5 @@
 Pod::Spec.new do |s|
+  #验证方法：pod lib lint CJFoundation.podspec --allow-warnings --use-libraries --verbose
   s.name         = "CJFoundation"
   s.version      = "0.1.1"
   s.summary      = "系统Foundation的扩展"
