@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
   #验证方法：pod lib lint CJFoundation.podspec --allow-warnings --use-libraries --verbose
   s.name         = "CJFoundation"
-  s.version      = "0.1.1"
+  s.version      = "0.1.2"
   s.summary      = "系统Foundation的扩展"
   s.homepage     = "https://github.com/dvlproad/CJUIKit"
   s.license      = "MIT"
@@ -10,7 +10,7 @@ Pod::Spec.new do |s|
 
   s.platform     = :ios, "7.0"
 
-  s.source       = { :git => "https://github.com/dvlproad/CJUIKit.git", :tag => "CJFoundation_0.1.1" }
+  s.source       = { :git => "https://github.com/dvlproad/CJUIKit.git", :tag => "CJFoundation_0.1.2" }
   # s.source_files  = "CJFoundation/**/*.{h,m}"
   # s.resources     = "CJFoundation/**/*.{png,xib}"
   s.frameworks = 'UIKit'
