@@ -10,7 +10,7 @@ Pod::Spec.new do |s|
 
   s.platform     = :ios, "7.0"
 
-  s.source       = { :git => "https://github.com/dvlproad/CJUIKit.git", :tag => "CJFoundation_0.1.2" }
+  s.source       = { :git => "https://github.com/dvlproad/CJUIKit.git", :tag => "CJFoundation_0.1.2_1" }
   # s.source_files  = "CJFoundation/**/*.{h,m}"
   # s.resources     = "CJFoundation/**/*.{png,xib}"
   s.frameworks = 'UIKit'
