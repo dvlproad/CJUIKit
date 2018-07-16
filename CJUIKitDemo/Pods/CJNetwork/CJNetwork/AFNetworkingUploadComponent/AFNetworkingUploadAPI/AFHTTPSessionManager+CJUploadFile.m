@@ -95,24 +95,27 @@
                 {
                     if (!data) {
                         NSLog(@"Error：上传的图片数据不能为空");
+                    } else {
+                        [formData appendPartWithFileData:data name:fileKey fileName:fileName mimeType:@"image/jpeg"];
                     }
-                    [formData appendPartWithFileData:data name:fileKey fileName:fileName mimeType:@"image/jpeg"];
                     break;
                 }
                 case CJUploadItemTypeSound:
                 {
                     if (!data) {
                         NSLog(@"Error：上传的语音数据不能为空");
+                    } else {
+                        [formData appendPartWithFileData:data name:fileKey fileName:fileName mimeType:@"audio/mpeg3"];
                     }
-                    [formData appendPartWithFileData:data name:fileKey fileName:fileName mimeType:@"audio/mpeg3"];
                     break;
                 }
                 case CJUploadItemTypeAttach:
                 {
                     if (!data) {
                         NSLog(@"Error：上传的附件数据不能为空");
+                    } else {
+                        [formData appendPartWithFileData:data name:fileKey fileName:fileName mimeType:@"application/octet-stream"];
                     }
-                    [formData appendPartWithFileData:data name:fileKey fileName:fileName mimeType:@"application/octet-stream"];
                     break;
                 }
                 default:

@@ -692,18 +692,24 @@
                                                  withFont:(UIFont *)font
                                              maxTextWidth:(CGFloat)maxTextWidth
 {
-    CTFontRef myFont = CTFontCreateWithName((__bridge CFStringRef)([font fontName]), [font pointSize], NULL);
+    //convert UIFont to a CTFont
+    CFStringRef fontName = (__bridge CFStringRef)font.fontName;
+    CGFloat fontSize = font.pointSize;
+    CTFontRef fontRef = CTFontCreateWithName(fontName, fontSize, NULL);
+    NSMutableAttributedString *attString = [[NSMutableAttributedString alloc] initWithString:labelText];
+    [attString addAttribute:(NSString *)kCTFontAttributeName value:(__bridge id)fontRef range:NSMakeRange(0, attString.length)];
+    //release the CTFont we created earlier
+    CFRelease(fontRef);
     
-    NSMutableAttributedString *attStr = [[NSMutableAttributedString alloc] initWithString:labelText];
+    CTFramesetterRef framesetter = CTFramesetterCreateWithAttributedString((CFAttributedStringRef)attString);
     
-    [attStr addAttribute:(NSString *)kCTFontAttributeName value:(__bridge id)myFont range:NSMakeRange(0, attStr.length)];
-    
-    
-    CTFramesetterRef frameSetter = CTFramesetterCreateWithAttributedString((__bridge CFAttributedStringRef)attStr);
     CGMutablePathRef path = CGPathCreateMutable();
     CGPathAddRect(path, NULL, CGRectMake(0, 0, maxTextWidth, 100000));
-    CTFrameRef frame = CTFramesetterCreateFrame(frameSetter, CFRangeMake(0, 0), path, NULL);
+    CTFrameRef frame = CTFramesetterCreateFrame(framesetter, CFRangeMake(0, 0), path, NULL);
     NSArray *lines = (__bridge NSArray *)CTFrameGetLines(frame);
+    CFRelease(frame);
+    CFRelease(path);
+    CFRelease(framesetter);
     
     NSMutableArray *lineStringArray = [[NSMutableArray alloc] init];
     for (id line in lines)
