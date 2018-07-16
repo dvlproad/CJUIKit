@@ -71,6 +71,8 @@
     
     //原图
     UIImage *outputImage = [UIImage imageWithCGImage:scaledImage];
+    CGImageRelease(scaledImage);
+    
     UIGraphicsBeginImageContextWithOptions(outputImage.size, NO, [[UIScreen mainScreen] scale]);
     [outputImage drawInRect:CGRectMake(0,0 , size, size)];
     
