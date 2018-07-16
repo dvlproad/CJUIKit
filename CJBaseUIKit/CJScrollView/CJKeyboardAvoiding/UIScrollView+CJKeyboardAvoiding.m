@@ -64,7 +64,7 @@ static NSString * const cjKeyboardAvoidingOffsetKey = @"cjKeyboardAvoidingOffset
     CGRect endFrame = [userInfo[UIKeyboardFrameEndUserInfoKey] CGRectValue];
     //CGRect beginFrame = [userInfo[UIKeyboardFrameBeginUserInfoKey] CGRectValue];
     CGFloat duration = [userInfo[UIKeyboardAnimationDurationUserInfoKey] doubleValue];
-    UIViewAnimationCurve curve = [userInfo[UIKeyboardAnimationCurveUserInfoKey] integerValue];
+    UIViewAnimationCurve curve = (UIViewAnimationCurve)[userInfo[UIKeyboardAnimationCurveUserInfoKey] integerValue];
     
     [UIView beginAnimations:nil context:NULL];
     [UIView setAnimationCurve:curve];
@@ -89,7 +89,7 @@ static NSString * const cjKeyboardAvoidingOffsetKey = @"cjKeyboardAvoidingOffset
     //CGRect endFrame = [userInfo[UIKeyboardFrameEndUserInfoKey] CGRectValue];
     //CGRect beginFrame = [userInfo[UIKeyboardFrameBeginUserInfoKey] CGRectValue];
     CGFloat duration = [userInfo[UIKeyboardAnimationDurationUserInfoKey] doubleValue];
-    UIViewAnimationCurve curve = [userInfo[UIKeyboardAnimationCurveUserInfoKey] integerValue];
+    UIViewAnimationCurve curve = (UIViewAnimationCurve)[userInfo[UIKeyboardAnimationCurveUserInfoKey] integerValue];
     
     [UIView beginAnimations:nil context:NULL];
     [UIView setAnimationCurve:curve];
