@@ -23,11 +23,12 @@ static NSString * const cjKeyboardAvoidingOffsetKey = @"cjKeyboardAvoidingOffset
 #pragma mark - runtime
 //cjExtraOffset
 - (CGFloat)cjKeyboardAvoidingOffset {
-    return [objc_getAssociatedObject(self, &cjKeyboardAvoidingOffsetKey) floatValue];
+    NSNumber *number = objc_getAssociatedObject(self, &cjKeyboardAvoidingOffsetKey);
+    return [number floatValue];
 }
 
 - (void)setCjKeyboardAvoidingOffset:(CGFloat)cjKeyboardAvoidingOffset {
-    objc_setAssociatedObject(self, &cjKeyboardAvoidingOffsetKey, @(cjKeyboardAvoidingOffset), OBJC_ASSOCIATION_ASSIGN);
+    objc_setAssociatedObject(self, &cjKeyboardAvoidingOffsetKey, @(cjKeyboardAvoidingOffset), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
 
