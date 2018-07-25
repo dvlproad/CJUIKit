@@ -12,6 +12,7 @@
 
 
 #import "NestedXibViewController.h"
+#import "BeChangeViewController.h"
 
 //image
 #import "ImageViewController.h"
@@ -80,6 +81,13 @@
             CJModuleModel *xibModule = [[CJModuleModel alloc] init];
             xibModule.title = @"xib";
             xibModule.classEntry = [NestedXibViewController class];
+            
+            [sectionDataModel.values addObject:xibModule];
+        }
+        {
+            CJModuleModel *xibModule = [[CJModuleModel alloc] init];
+            xibModule.title = @"后视图改变前视图的值的实现事例";
+            xibModule.classEntry = [BeChangeViewController class];
             
             [sectionDataModel.values addObject:xibModule];
         }

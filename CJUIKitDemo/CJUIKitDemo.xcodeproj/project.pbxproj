@@ -286,6 +286,10 @@
 		80C2E19C209171B8007D7119 /* currency_icon_network@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 80C2E19A209171B8007D7119 /* currency_icon_network@3x.png */; };
 		80CC7F8D200F7EBE0017878A /* OpenTableViewController2.m in Sources */ = {isa = PBXBuildFile; fileRef = 80CC7F8B200F7EBD0017878A /* OpenTableViewController2.m */; };
 		80CC7F8E200F7EBE0017878A /* OpenTableViewController2.xib in Resources */ = {isa = PBXBuildFile; fileRef = 80CC7F8C200F7EBE0017878A /* OpenTableViewController2.xib */; };
+		80D0120A210336B900D1EDF0 /* BeChangeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80D01208210336B900D1EDF0 /* BeChangeViewController.m */; };
+		80D0120B210336B900D1EDF0 /* BeChangeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 80D01209210336B900D1EDF0 /* BeChangeViewController.xib */; };
+		80D0120F210336E100D1EDF0 /* ChangeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80D0120D210336E100D1EDF0 /* ChangeViewController.m */; };
+		80D01210210336E100D1EDF0 /* ChangeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 80D0120E210336E100D1EDF0 /* ChangeViewController.xib */; };
 		80D49F8320BE56D2003F642C /* MyADModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 80D49F8220BE56D2003F642C /* MyADModel.m */; };
 		80D49F8620BE71BA003F642C /* MemoryADCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 80D49F8520BE71B9003F642C /* MemoryADCollectionViewCell.m */; };
 		80D49F8B20BE7EE0003F642C /* CJDataUtilTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 80D49F8A20BE7EE0003F642C /* CJDataUtilTest.m */; };
@@ -912,6 +916,12 @@
 		80CC7F8A200F7EBD0017878A /* OpenTableViewController2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpenTableViewController2.h; sourceTree = "<group>"; };
 		80CC7F8B200F7EBD0017878A /* OpenTableViewController2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OpenTableViewController2.m; sourceTree = "<group>"; };
 		80CC7F8C200F7EBE0017878A /* OpenTableViewController2.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OpenTableViewController2.xib; sourceTree = "<group>"; };
+		80D01207210336B900D1EDF0 /* BeChangeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BeChangeViewController.h; sourceTree = "<group>"; };
+		80D01208210336B900D1EDF0 /* BeChangeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BeChangeViewController.m; sourceTree = "<group>"; };
+		80D01209210336B900D1EDF0 /* BeChangeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BeChangeViewController.xib; sourceTree = "<group>"; };
+		80D0120C210336E100D1EDF0 /* ChangeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ChangeViewController.h; sourceTree = "<group>"; };
+		80D0120D210336E100D1EDF0 /* ChangeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChangeViewController.m; sourceTree = "<group>"; };
+		80D0120E210336E100D1EDF0 /* ChangeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChangeViewController.xib; sourceTree = "<group>"; };
 		80D49F8120BE56D2003F642C /* MyADModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyADModel.h; sourceTree = "<group>"; };
 		80D49F8220BE56D2003F642C /* MyADModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyADModel.m; sourceTree = "<group>"; };
 		80D49F8420BE71B9003F642C /* MemoryADCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MemoryADCollectionViewCell.h; sourceTree = "<group>"; };
@@ -2565,53 +2575,6 @@
 			path = AppInfoManager;
 			sourceTree = "<group>";
 		};
-		80E7E6B320AC5DFF000F762D /* IjinbuNetwork */ = {
-			isa = PBXGroup;
-			children = (
-				80E7E6B420AC5DFF000F762D /* IjinbuHTTPSessionManager.h */,
-				80E7E6C420AC5DFF000F762D /* IjinbuHTTPSessionManager.m */,
-				80E7E6C520AC5DFF000F762D /* IjinbuNetworkClient.h */,
-				80E7E6B520AC5DFF000F762D /* IjinbuNetworkClient.m */,
-				80E7E6B620AC5DFF000F762D /* IjinbuNetworkClient+UploadFile.h */,
-				80E7E6C620AC5DFF000F762D /* IjinbuNetworkClient+UploadFile.m */,
-				80E7E6BC20AC5DFF000F762D /* IjinbuUploadModels */,
-				80E7E6B720AC5DFF000F762D /* Models */,
-				80E7E6C120AC5DFF000F762D /* ResponseModels */,
-			);
-			path = IjinbuNetwork;
-			sourceTree = "<group>";
-		};
-		80E7E6B720AC5DFF000F762D /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				80E7E6B820AC5DFF000F762D /* IjinbuUser.h */,
-				80E7E6B920AC5DFF000F762D /* IjinbuSession.m */,
-				80E7E6BA20AC5DFF000F762D /* IjinbuSession.h */,
-				80E7E6BB20AC5DFF000F762D /* IjinbuUser.m */,
-			);
-			path = Models;
-			sourceTree = "<group>";
-		};
-		80E7E6BC20AC5DFF000F762D /* IjinbuUploadModels */ = {
-			isa = PBXGroup;
-			children = (
-				80E7E6BD20AC5DFF000F762D /* IjinbuUploadItemResult.m */,
-				80E7E6BE20AC5DFF000F762D /* IjinbuUploadItemRequest.m */,
-				80E7E6BF20AC5DFF000F762D /* IjinbuUploadItemResult.h */,
-				80E7E6C020AC5DFF000F762D /* IjinbuUploadItemRequest.h */,
-			);
-			path = IjinbuUploadModels;
-			sourceTree = "<group>";
-		};
-		80E7E6C120AC5DFF000F762D /* ResponseModels */ = {
-			isa = PBXGroup;
-			children = (
-				80E7E6C220AC5DFF000F762D /* IjinbuResponseModel.h */,
-				80E7E6C320AC5DFF000F762D /* IjinbuResponseModel.m */,
-			);
-			path = ResponseModels;
-			sourceTree = "<group>";
-		};
 		80E7E6DE20AD2626000F762D /* UIViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -3006,15 +2969,21 @@
 		80FF8FCA1FC5649E00E437CF /* InterfaceDemo */ = {
 			isa = PBXGroup;
 			children = (
-				80FF8FCB1FC5649E00E437CF /* NestedXibView.m */,
-				80FF8FCC1FC5649E00E437CF /* NestedXibViewController.xib */,
-				80FF8FCD1FC5649E00E437CF /* NestedXibSubViewA.m */,
-				80FF8FCE1FC5649E00E437CF /* NestedXibViewController.m */,
-				80FF8FCF1FC5649E00E437CF /* NestedXibView.xib */,
-				80FF8FD01FC5649E00E437CF /* NestedXibView.h */,
-				80FF8FD11FC5649E00E437CF /* NestedXibViewController.h */,
 				80FF8FD21FC5649E00E437CF /* NestedXibSubViewA.h */,
+				80FF8FCD1FC5649E00E437CF /* NestedXibSubViewA.m */,
 				80FF8FD31FC5649E00E437CF /* NestedXibSubViewA.xib */,
+				80FF8FD01FC5649E00E437CF /* NestedXibView.h */,
+				80FF8FCB1FC5649E00E437CF /* NestedXibView.m */,
+				80FF8FCF1FC5649E00E437CF /* NestedXibView.xib */,
+				80FF8FD11FC5649E00E437CF /* NestedXibViewController.h */,
+				80FF8FCE1FC5649E00E437CF /* NestedXibViewController.m */,
+				80FF8FCC1FC5649E00E437CF /* NestedXibViewController.xib */,
+				80D01207210336B900D1EDF0 /* BeChangeViewController.h */,
+				80D01208210336B900D1EDF0 /* BeChangeViewController.m */,
+				80D01209210336B900D1EDF0 /* BeChangeViewController.xib */,
+				80D0120C210336E100D1EDF0 /* ChangeViewController.h */,
+				80D0120D210336E100D1EDF0 /* ChangeViewController.m */,
+				80D0120E210336E100D1EDF0 /* ChangeViewController.xib */,
 			);
 			path = InterfaceDemo;
 			sourceTree = "<group>";
@@ -3050,19 +3019,19 @@
 		80FF8FE21FC5649E00E437CF /* UINavigationBar */ = {
 			isa = PBXGroup;
 			children = (
-				80FF8FE31FC5649E00E437CF /* NavigationBarBaseViewController.h */,
-				80FF8FE41FC5649E00E437CF /* EasyScaleHeadView.xib */,
-				80FF8FE51FC5649E00E437CF /* NavigationBarViewController.xib */,
-				80FF8FE61FC5649E00E437CF /* NavigationBarViewController.m */,
-				80FF8FE71FC5649E00E437CF /* NavigationBarChangeBGViewController.h */,
-				80FF8FE81FC5649E00E437CF /* EasyScaleHeadView.m */,
-				80FF8FE91FC5649E00E437CF /* NavigationBarChangePositonViewController.h */,
-				80FF8FEA1FC5649E00E437CF /* NavigationBarBaseViewController.m */,
-				80FF8FEB1FC5649E00E437CF /* NavigationBarChangeBGViewController.m */,
-				80FF8FEC1FC5649E00E437CF /* NavigationBarViewController.h */,
-				80FF8FED1FC5649E00E437CF /* NavigationBarChangePositonViewController.m */,
 				80FF8FEE1FC5649E00E437CF /* EasyScaleHeadView.h */,
+				80FF8FE81FC5649E00E437CF /* EasyScaleHeadView.m */,
+				80FF8FE41FC5649E00E437CF /* EasyScaleHeadView.xib */,
+				80FF8FE31FC5649E00E437CF /* NavigationBarBaseViewController.h */,
+				80FF8FEA1FC5649E00E437CF /* NavigationBarBaseViewController.m */,
 				80FF8FEF1FC5649E00E437CF /* NavigationBarBaseViewController.xib */,
+				80FF8FE71FC5649E00E437CF /* NavigationBarChangeBGViewController.h */,
+				80FF8FEB1FC5649E00E437CF /* NavigationBarChangeBGViewController.m */,
+				80FF8FE91FC5649E00E437CF /* NavigationBarChangePositonViewController.h */,
+				80FF8FED1FC5649E00E437CF /* NavigationBarChangePositonViewController.m */,
+				80FF8FEC1FC5649E00E437CF /* NavigationBarViewController.h */,
+				80FF8FE61FC5649E00E437CF /* NavigationBarViewController.m */,
+				80FF8FE51FC5649E00E437CF /* NavigationBarViewController.xib */,
 			);
 			path = UINavigationBar;
 			sourceTree = "<group>";
@@ -3568,6 +3537,7 @@
 				8033239D20299AD7001DACF1 /* MemoryADResult02.jpg in Resources */,
 				80E7E6F820AD2627000F762D /* cjBackBarButtonItemGray@3x.png in Resources */,
 				7840FB281EB09E0700B553F7 /* bg@2x.jpg in Resources */,
+				80D0120B210336B900D1EDF0 /* BeChangeViewController.xib in Resources */,
 				80FF90951FC5649F00E437CF /* SHeaderHome2.xib in Resources */,
 				808B983420B7F73300910E45 /* LogViewController.xib in Resources */,
 				8060C48B20E0D5EF0093B14E /* AccuracyStringViewController.xib in Resources */,
@@ -3605,6 +3575,7 @@
 				8014A2A21FA3137D00DDDB5A /* ThirdPartIcon.xcassets in Resources */,
 				803323AB20299AD7001DACF1 /* MyCycleADViewController.xib in Resources */,
 				800E07E22016CCF500799B78 /* DataUtilViewController.xib in Resources */,
+				80D01210210336E100D1EDF0 /* ChangeViewController.xib in Resources */,
 				800E07EA2016CD1500799B78 /* KeyboardUtilViewController.xib in Resources */,
 				8033239920299AD7001DACF1 /* MemoryADExample03.jpg in Resources */,
 				787FDB8C20500B5C008A46E3 /* btn_hd@2x.png in Resources */,
@@ -3929,6 +3900,7 @@
 				80582FA520C129A200C01225 /* UIImage+CJRotateAngle.m in Sources */,
 				7850B731209380A0008F4A21 /* UIView+CJShake.m in Sources */,
 				80FF90961FC5649F00E437CF /* TableViewHeader.m in Sources */,
+				80D0120F210336E100D1EDF0 /* ChangeViewController.m in Sources */,
 				80FF908B1FC5649F00E437CF /* TableViewController.m in Sources */,
 				80FF91A01FC5682B00E437CF /* ProcessLineViewController.m in Sources */,
 				787FDB8620500B5C008A46E3 /* SliderViewController.m in Sources */,
@@ -4005,6 +3977,7 @@
 				7850B70220937C5A008F4A21 /* PopupInViewVC.m in Sources */,
 				789CAF441FB612B700AF8CD4 /* CJSearchBar.m in Sources */,
 				7850B70420937C5A008F4A21 /* ShowDropDownViewController.m in Sources */,
+				80D0120A210336B900D1EDF0 /* BeChangeViewController.m in Sources */,
 				789CAF421FB612B700AF8CD4 /* CJKeyboardAvoidingTableView.m in Sources */,
 				80FF909F1FC5649F00E437CF /* NestedXibViewController.m in Sources */,
 				787FDB5620500B01008A46E3 /* SearchBarViewController.m in Sources */,
