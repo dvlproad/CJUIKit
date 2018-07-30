@@ -10,30 +10,42 @@
 
 @implementation NSString (CJValidate)
 
+/*
+//实例方法是通过对象调用的，当这个对象为空时调用方法的时候就不会执行。所以以下两个方法，当string = nil的时候，如果调用这两个方法，会返回NO，无法返回正确的YES值。
 ///是否为空字符串
 - (BOOL)cj_isEmpty {
-    BOOL isEmpty = !self || [self isEqual:[NSNull null]] || [self isEqualToString:@""];
-    return isEmpty;
+    return [NSString cj_validateEmptyForString:self];
 }
 
 ///判断自己是否为空
 - (BOOL)cj_isBlank {
-    if (!self.length ||
-        self == nil ||
-        self == NULL ||
+    return [NSString cj_validateBlankForString:self];
+}
+*/
+
+///是否为空字符串
++ (BOOL)cj_validateEmptyForString:(NSString *)string {
+    BOOL isEmpty = !string || [string isEqual:[NSNull null]] || [string isEqualToString:@""];
+    return isEmpty;
+}
+
+///判断自己是否为空
++ (BOOL)cj_validateBlankForString:(NSString *)string {
+    if (!string ||
+        string == nil ||
+        string == NULL ||
         (NSNull *)self == [NSNull null] ||
-        [self isKindOfClass:[NSNull class]] ||
-        [self isEqualToString:@"(null)"] ||
-        [self isEqualToString:@"<null>"] ||
-        [self isEqualToString:@"null"] ||
-        [self isEqualToString:@"NULL"]
+        [string isKindOfClass:[NSNull class]] ||
+        [string isEqualToString:@"(null)"] ||
+        [string isEqualToString:@"<null>"] ||
+        [string isEqualToString:@"null"] ||
+        [string isEqualToString:@"NULL"]
         ) {
         return YES;
     }else {
         return NO;
     }
 }
-
 
 #pragma mark - 数字、字母、整型、浮点型的判断
 ///判断是否为整型(即是否为纯数字)

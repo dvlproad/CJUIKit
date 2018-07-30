@@ -8,6 +8,9 @@
 
 #import <Foundation/Foundation.h>
 
+//判断是否空字符串
+//#define isNullString(s)     (!s || [s isEqual:[NSNull null]] || [s isEqualToString:@""])
+
 typedef NS_ENUM(NSUInteger, CJAreaType) {
     CJAreaTypeMainland,     /**< 大陆地区 */
     CJAreaTypeHongKong,     /**< 香港地区 */
@@ -16,12 +19,20 @@ typedef NS_ENUM(NSUInteger, CJAreaType) {
 
 @interface NSString (CJValidate)
 
-
+/*
+//实例方法是通过对象调用的，当这个对象为空时调用方法的时候就不会执行。所以以下两个方法，当string = nil的时候，如果调用这两个方法，会返回NO，无法返回正确的YES值。
 ///是否为空字符串
 - (BOOL)cj_isEmpty;
 
 ///判断自己是否为空
 - (BOOL)cj_isBlank;
+*/
+///是否为空字符串
++ (BOOL)cj_validateEmptyForString:(NSString *)string;
+
+///判断自己是否为空
++ (BOOL)cj_validateBlankForString:(NSString *)string;
+
 
 //源自：iOS - 正则表达式判断邮箱、身份证..是否正确：http://www.2cto.com/kf/201311/256494.html
 

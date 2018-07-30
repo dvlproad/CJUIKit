@@ -278,6 +278,7 @@
 		808BF3242019C3E900511F7C /* YunUncaughtExceptionHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 808BF3222019C3E900511F7C /* YunUncaughtExceptionHandler.m */; };
 		808BF327201A011400511F7C /* UITextField+CJPadding.m in Sources */ = {isa = PBXBuildFile; fileRef = 808BF326201A011400511F7C /* UITextField+CJPadding.m */; };
 		808DE5E720DA0586003E08F1 /* CJDecimalUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 808DE5E520DA0586003E08F1 /* CJDecimalUtil.m */; };
+		808E3C472109C5B0009E3924 /* StringEventViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 808E3C452109C5B0009E3924 /* StringEventViewController.m */; };
 		80C2E18F20916BD3007D7119 /* BBXPassengerEmptyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80C2E18D20916BD3007D7119 /* BBXPassengerEmptyViewController.m */; };
 		80C2E19020916BD3007D7119 /* BBXPassengerEmptyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 80C2E18E20916BD3007D7119 /* BBXPassengerEmptyViewController.xib */; };
 		80C2E19720917048007D7119 /* jiazhaishibai_bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 80C2E19520917048007D7119 /* jiazhaishibai_bg@2x.png */; };
@@ -327,7 +328,6 @@
 		80E7E75C20AD2D4D000F762D /* CJQRCodeUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 80E7E75A20AD2D4D000F762D /* CJQRCodeUtil.m */; };
 		80E7E76020AD31A2000F762D /* CJLaunchImageUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 80E7E75E20AD31A2000F762D /* CJLaunchImageUtil.m */; };
 		80F9CFE0206CFDFB003B41D4 /* CJPinyinHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 80F9CFDE206CFDFB003B41D4 /* CJPinyinHelper.m */; };
-		80FF90291FC5649E00E437CF /* ThirdPartyHomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 80FF8F0C1FC5649E00E437CF /* ThirdPartyHomeViewController.xib */; };
 		80FF902A1FC5649E00E437CF /* ThirdPartyHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80FF8F0E1FC5649E00E437CF /* ThirdPartyHomeViewController.m */; };
 		80FF902B1FC5649E00E437CF /* MJExtensionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80FF8F101FC5649E00E437CF /* MJExtensionViewController.m */; };
 		80FF902C1FC5649E00E437CF /* MJExtensionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 80FF8F111FC5649E00E437CF /* MJExtensionViewController.xib */; };
@@ -340,7 +340,6 @@
 		80FF903B1FC5649F00E437CF /* KeyboardAvoidingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 80FF8F331FC5649E00E437CF /* KeyboardAvoidingViewController.xib */; };
 		80FF903C1FC5649F00E437CF /* KeyboardAvoidingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80FF8F341FC5649E00E437CF /* KeyboardAvoidingViewController.m */; };
 		80FF903D1FC5649F00E437CF /* ScrollViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 80FF8F351FC5649E00E437CF /* ScrollViewController.xib */; };
-		80FF903E1FC5649F00E437CF /* ScrollViewHomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 80FF8F361FC5649E00E437CF /* ScrollViewHomeViewController.xib */; };
 		80FF903F1FC5649F00E437CF /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 80FF8F381FC5649E00E437CF /* icon.png */; };
 		80FF90401FC5649F00E437CF /* add_red_Big.png in Resources */ = {isa = PBXBuildFile; fileRef = 80FF8F391FC5649E00E437CF /* add_red_Big.png */; };
 		80FF90411FC5649F00E437CF /* add_red.png in Resources */ = {isa = PBXBuildFile; fileRef = 80FF8F3A1FC5649E00E437CF /* add_red.png */; };
@@ -392,7 +391,6 @@
 		80FF90A71FC5649F00E437CF /* QRCodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80FF8FDD1FC5649E00E437CF /* QRCodeViewController.m */; };
 		80FF90A81FC5649F00E437CF /* ImageChangeColorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80FF8FDE1FC5649E00E437CF /* ImageChangeColorViewController.m */; };
 		80FF90A91FC5649F00E437CF /* ImageChangeColorViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 80FF8FDF1FC5649E00E437CF /* ImageChangeColorViewController.xib */; };
-		80FF90AA1FC5649F00E437CF /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 80FF8FE11FC5649E00E437CF /* HomeViewController.xib */; };
 		80FF90AB1FC5649F00E437CF /* EasyScaleHeadView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 80FF8FE41FC5649E00E437CF /* EasyScaleHeadView.xib */; };
 		80FF90AC1FC5649F00E437CF /* NavigationBarViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 80FF8FE51FC5649E00E437CF /* NavigationBarViewController.xib */; };
 		80FF90AD1FC5649F00E437CF /* NavigationBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80FF8FE61FC5649E00E437CF /* NavigationBarViewController.m */; };
@@ -445,9 +443,6 @@
 		80FF91A01FC5682B00E437CF /* ProcessLineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80FF918D1FC5682A00E437CF /* ProcessLineViewController.m */; };
 		80FF91A11FC5682B00E437CF /* PullScaleTopImageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 80FF91901FC5682A00E437CF /* PullScaleTopImageViewController.xib */; };
 		80FF91A21FC5682B00E437CF /* PullScaleTopImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80FF91911FC5682A00E437CF /* PullScaleTopImageViewController.m */; };
-		80FF91A31FC5682B00E437CF /* OtherHomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 80FF91921FC5682A00E437CF /* OtherHomeViewController.xib */; };
-		80FF91B21FC580AF00E437CF /* FoundatioHomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 80FF91B11FC580AE00E437CF /* FoundatioHomeViewController.xib */; };
-		80FF91C01FC581DD00E437CF /* UtilHomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 80FF91B41FC581DD00E437CF /* UtilHomeViewController.xib */; };
 		80FF91C51FC581DD00E437CF /* UtilHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80FF91BF1FC581DD00E437CF /* UtilHomeViewController.m */; };
 		80FF91E81FC6739D00E437CF /* CJDateModelUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 80FF91DE1FC6739C00E437CF /* CJDateModelUtil.m */; };
 		80FF91E91FC6739D00E437CF /* CJDateModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 80FF91E11FC6739C00E437CF /* CJDateModel.m */; };
@@ -906,6 +901,8 @@
 		808BF326201A011400511F7C /* UITextField+CJPadding.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UITextField+CJPadding.m"; sourceTree = "<group>"; };
 		808DE5E520DA0586003E08F1 /* CJDecimalUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJDecimalUtil.m; sourceTree = "<group>"; };
 		808DE5E620DA0586003E08F1 /* CJDecimalUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJDecimalUtil.h; sourceTree = "<group>"; };
+		808E3C452109C5B0009E3924 /* StringEventViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StringEventViewController.m; sourceTree = "<group>"; };
+		808E3C462109C5B0009E3924 /* StringEventViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StringEventViewController.h; sourceTree = "<group>"; };
 		80C2E18C20916BD3007D7119 /* BBXPassengerEmptyViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BBXPassengerEmptyViewController.h; sourceTree = "<group>"; };
 		80C2E18D20916BD3007D7119 /* BBXPassengerEmptyViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BBXPassengerEmptyViewController.m; sourceTree = "<group>"; };
 		80C2E18E20916BD3007D7119 /* BBXPassengerEmptyViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BBXPassengerEmptyViewController.xib; sourceTree = "<group>"; };
@@ -992,7 +989,6 @@
 		80E7E75F20AD31A2000F762D /* CJLaunchImageUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJLaunchImageUtil.h; sourceTree = "<group>"; };
 		80F9CFDE206CFDFB003B41D4 /* CJPinyinHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJPinyinHelper.m; sourceTree = "<group>"; };
 		80F9CFDF206CFDFB003B41D4 /* CJPinyinHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJPinyinHelper.h; sourceTree = "<group>"; };
-		80FF8F0C1FC5649E00E437CF /* ThirdPartyHomeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ThirdPartyHomeViewController.xib; sourceTree = "<group>"; };
 		80FF8F0D1FC5649E00E437CF /* ThirdPartyHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThirdPartyHomeViewController.h; sourceTree = "<group>"; };
 		80FF8F0E1FC5649E00E437CF /* ThirdPartyHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThirdPartyHomeViewController.m; sourceTree = "<group>"; };
 		80FF8F101FC5649E00E437CF /* MJExtensionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJExtensionViewController.m; sourceTree = "<group>"; };
@@ -1013,7 +1009,6 @@
 		80FF8F331FC5649E00E437CF /* KeyboardAvoidingViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KeyboardAvoidingViewController.xib; sourceTree = "<group>"; };
 		80FF8F341FC5649E00E437CF /* KeyboardAvoidingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeyboardAvoidingViewController.m; sourceTree = "<group>"; };
 		80FF8F351FC5649E00E437CF /* ScrollViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ScrollViewController.xib; sourceTree = "<group>"; };
-		80FF8F361FC5649E00E437CF /* ScrollViewHomeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ScrollViewHomeViewController.xib; sourceTree = "<group>"; };
 		80FF8F381FC5649E00E437CF /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
 		80FF8F391FC5649E00E437CF /* add_red_Big.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = add_red_Big.png; sourceTree = "<group>"; };
 		80FF8F3A1FC5649E00E437CF /* add_red.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = add_red.png; sourceTree = "<group>"; };
@@ -1091,7 +1086,6 @@
 		80FF8FDE1FC5649E00E437CF /* ImageChangeColorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageChangeColorViewController.m; sourceTree = "<group>"; };
 		80FF8FDF1FC5649E00E437CF /* ImageChangeColorViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ImageChangeColorViewController.xib; sourceTree = "<group>"; };
 		80FF8FE01FC5649E00E437CF /* QRCodeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QRCodeViewController.h; sourceTree = "<group>"; };
-		80FF8FE11FC5649E00E437CF /* HomeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
 		80FF8FE31FC5649E00E437CF /* NavigationBarBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NavigationBarBaseViewController.h; sourceTree = "<group>"; };
 		80FF8FE41FC5649E00E437CF /* EasyScaleHeadView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EasyScaleHeadView.xib; sourceTree = "<group>"; };
 		80FF8FE51FC5649E00E437CF /* NavigationBarViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NavigationBarViewController.xib; sourceTree = "<group>"; };
@@ -1189,9 +1183,6 @@
 		80FF918F1FC5682A00E437CF /* PullScaleTopImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PullScaleTopImageViewController.h; sourceTree = "<group>"; };
 		80FF91901FC5682A00E437CF /* PullScaleTopImageViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PullScaleTopImageViewController.xib; sourceTree = "<group>"; };
 		80FF91911FC5682A00E437CF /* PullScaleTopImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PullScaleTopImageViewController.m; sourceTree = "<group>"; };
-		80FF91921FC5682A00E437CF /* OtherHomeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OtherHomeViewController.xib; sourceTree = "<group>"; };
-		80FF91B11FC580AE00E437CF /* FoundatioHomeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FoundatioHomeViewController.xib; sourceTree = "<group>"; };
-		80FF91B41FC581DD00E437CF /* UtilHomeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UtilHomeViewController.xib; sourceTree = "<group>"; };
 		80FF91BE1FC581DD00E437CF /* UtilHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UtilHomeViewController.h; sourceTree = "<group>"; };
 		80FF91BF1FC581DD00E437CF /* UtilHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UtilHomeViewController.m; sourceTree = "<group>"; };
 		80FF91DE1FC6739C00E437CF /* CJDateModelUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJDateModelUtil.m; sourceTree = "<group>"; };
@@ -2513,6 +2504,15 @@
 			path = CJDecimalUtil;
 			sourceTree = "<group>";
 		};
+		808E3C442109C5B0009E3924 /* StringUtilDemo */ = {
+			isa = PBXGroup;
+			children = (
+				808E3C462109C5B0009E3924 /* StringEventViewController.h */,
+				808E3C452109C5B0009E3924 /* StringEventViewController.m */,
+			);
+			path = StringUtilDemo;
+			sourceTree = "<group>";
+		};
 		80C2E1822091683B007D7119 /* EmptyScrollViewDemo */ = {
 			isa = PBXGroup;
 			children = (
@@ -2767,7 +2767,6 @@
 				80FF8F0F1FC5649E00E437CF /* MJExtensionDemo */,
 				80FF8F0D1FC5649E00E437CF /* ThirdPartyHomeViewController.h */,
 				80FF8F0E1FC5649E00E437CF /* ThirdPartyHomeViewController.m */,
-				80FF8F0C1FC5649E00E437CF /* ThirdPartyHomeViewController.xib */,
 			);
 			path = DemosThirdParty;
 			sourceTree = "<group>";
@@ -2792,7 +2791,6 @@
 				80FF8F371FC5649E00E437CF /* Resources */,
 				80FF8F951FC5649E00E437CF /* ScrollViewHomeViewController.h */,
 				80FF8FC01FC5649E00E437CF /* ScrollViewHomeViewController.m */,
-				80FF8F361FC5649E00E437CF /* ScrollViewHomeViewController.xib */,
 				80FF8F241FC5649E00E437CF /* TestDataUtil */,
 				80FF8F2C1FC5649E00E437CF /* UIScrollViewDemo */,
 				80FF8F961FC5649E00E437CF /* UITableViewDemo */,
@@ -2941,7 +2939,6 @@
 				800F3B612011897400A5C326 /* CJToastDemo */,
 				80FF90181FC5649E00E437CF /* HomeViewController.h */,
 				80FF8FD81FC5649E00E437CF /* HomeViewController.m */,
-				80FF8FE11FC5649E00E437CF /* HomeViewController.xib */,
 				787FDB5220500B01008A46E3 /* ImageViewDemo */,
 				80FF8FCA1FC5649E00E437CF /* InterfaceDemo */,
 				80FF8FF41FC5649E00E437CF /* RefreshDemo */,
@@ -3247,7 +3244,6 @@
 			children = (
 				80FF91721FC5682A00E437CF /* FoundatioHomeViewController.h */,
 				80FF91771FC5682A00E437CF /* FoundatioHomeViewController.m */,
-				80FF91B11FC580AE00E437CF /* FoundatioHomeViewController.xib */,
 				80FF917F1FC5682A00E437CF /* NSDate */,
 				80FF91781FC5682A00E437CF /* NSString */,
 				80FF91731FC5682A00E437CF /* TypeConvert */,
@@ -3297,7 +3293,6 @@
 				80FF91841FC5682A00E437CF /* CountDownTimeDemo */,
 				80FF91891FC5682A00E437CF /* OtherHomeViewController.h */,
 				80FF91881FC5682A00E437CF /* OtherHomeViewController.m */,
-				80FF91921FC5682A00E437CF /* OtherHomeViewController.xib */,
 				80FF918A1FC5682A00E437CF /* ProcessLineViewDemo */,
 				80FF918E1FC5682A00E437CF /* ScaleHeadViewDemo */,
 			);
@@ -3337,6 +3332,7 @@
 		80FF91B31FC581DD00E437CF /* DemosUtil */ = {
 			isa = PBXGroup;
 			children = (
+				808E3C442109C5B0009E3924 /* StringUtilDemo */,
 				8008D7CD20E5CF5700F98EF6 /* CallSystemUtilDemo */,
 				8060C48420E0D5EF0093B14E /* ValueUtilDemo */,
 				808B982F20B7F71B00910E45 /* LogDemo */,
@@ -3345,7 +3341,6 @@
 				800E07D62016CCF500799B78 /* KeyboardUtilDemo */,
 				80FF91BE1FC581DD00E437CF /* UtilHomeViewController.h */,
 				80FF91BF1FC581DD00E437CF /* UtilHomeViewController.m */,
-				80FF91B41FC581DD00E437CF /* UtilHomeViewController.xib */,
 			);
 			path = DemosUtil;
 			sourceTree = "<group>";
@@ -3569,7 +3564,6 @@
 				787FDB5B20500B01008A46E3 /* ImageViewController.xib in Resources */,
 				7850B70520937C5A008F4A21 /* ShowDropDownViewController.xib in Resources */,
 				8033239E20299AD7001DACF1 /* MemoryAD29.jpg in Resources */,
-				80FF90291FC5649E00E437CF /* ThirdPartyHomeViewController.xib in Resources */,
 				787FDB9020500B5C008A46E3 /* icon_ddlb_hd@2x.png in Resources */,
 				7850B70620937C5A008F4A21 /* PopupInViewVC.xib in Resources */,
 				8014A2A21FA3137D00DDDB5A /* ThirdPartIcon.xcassets in Resources */,
@@ -3584,10 +3578,8 @@
 				80FF91991FC5682B00E437CF /* EncryptStringViewController.xib in Resources */,
 				80FF90461FC5649F00E437CF /* UploadDirectlyImagePickerViewController.xib in Resources */,
 				80FF91961FC5682B00E437CF /* AttributedStringViewController.xib in Resources */,
-				80FF91C01FC581DD00E437CF /* UtilHomeViewController.xib in Resources */,
 				8051E5CD20AAB34E003370AA /* details_icon_huadong@2x.png in Resources */,
 				80FF90431FC5649F00E437CF /* SearchTableViewController.xib in Resources */,
-				80FF91A31FC5682B00E437CF /* OtherHomeViewController.xib in Resources */,
 				789CAF381FB612B700AF8CD4 /* cjRefreshArrowDown@2x.png in Resources */,
 				803323A120299AD7001DACF1 /* MemoryADExample04.jpg in Resources */,
 				7850B6FF20937C5A008F4A21 /* DragViewController.xib in Resources */,
@@ -3598,7 +3590,6 @@
 				8033239320299AD7001DACF1 /* MemoryADKnowledge07.jpg in Resources */,
 				80FF90B51FC5649F00E437CF /* CJMJRefreshViewController.xib in Resources */,
 				8014A28B1FA2C81A00DDDB5A /* icons8-folder.png in Resources */,
-				80FF903E1FC5649F00E437CF /* ScrollViewHomeViewController.xib in Resources */,
 				807F125F20B507A30008B748 /* ViewAnimateViewController.xib in Resources */,
 				803323C020299AD7001DACF1 /* cvSupplementaryHead.xib in Resources */,
 				789CAF2C1FB612B700AF8CD4 /* cjCheckBoxGreen2NO.png in Resources */,
@@ -3624,11 +3615,9 @@
 				80FF90B21FC5649F00E437CF /* NavigationBarBaseViewController.xib in Resources */,
 				787FDB9520500B5C008A46E3 /* SwitchSliderViewController.xib in Resources */,
 				787FDB8720500B5C008A46E3 /* slider_maximum_trackimage@3x.png in Resources */,
-				80FF90AA1FC5649F00E437CF /* HomeViewController.xib in Resources */,
 				80FF90811FC5649F00E437CF /* TvDemo_Complex.xib in Resources */,
 				803323B020299AD7001DACF1 /* DetailCell.xib in Resources */,
 				80FF90871FC5649F00E437CF /* TableViewController.xib in Resources */,
-				80FF91B21FC580AF00E437CF /* FoundatioHomeViewController.xib in Resources */,
 				803323A520299AD7001DACF1 /* MemoryAD32.jpg in Resources */,
 				80C2E19B209171B8007D7119 /* currency_icon_network@2x.png in Resources */,
 				803323AD20299AD7001DACF1 /* CustomLayoutCollectionViewController.xib in Resources */,
@@ -3865,6 +3854,7 @@
 				80FF90901FC5649F00E437CF /* CustomTableViewCell.m in Sources */,
 				80FF91E91FC6739D00E437CF /* CJDateModel.m in Sources */,
 				80CC7F8D200F7EBE0017878A /* OpenTableViewController2.m in Sources */,
+				808E3C472109C5B0009E3924 /* StringEventViewController.m in Sources */,
 				801F75DC20A040D800A2E027 /* BBXDUserNameTextField.m in Sources */,
 				808B983320B7F73300910E45 /* LogViewController.m in Sources */,
 				808B977020B7B33200910E45 /* CJAppLastUtil.m in Sources */,
