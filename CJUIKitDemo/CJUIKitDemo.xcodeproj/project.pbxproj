@@ -180,6 +180,7 @@
 		801F75DA20A040D800A2E027 /* signin_icon_open@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 801F75D520A040D800A2E027 /* signin_icon_open@3x.png */; };
 		801F75DB20A040D800A2E027 /* signin_icon_open@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 801F75D620A040D800A2E027 /* signin_icon_open@2x.png */; };
 		801F75DC20A040D800A2E027 /* BBXDUserNameTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 801F75D720A040D800A2E027 /* BBXDUserNameTextField.m */; };
+		80238A602111966B008EB1D5 /* NavigationBarRemoveUnderlineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80238A5F2111966B008EB1D5 /* NavigationBarRemoveUnderlineViewController.m */; };
 		802D1D6920CF5F48003EAFE0 /* CJIndentedStringUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 802D1D6820CF5F48003EAFE0 /* CJIndentedStringUtil.m */; };
 		8033239120299AD7001DACF1 /* MyCycleADViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8033234620299AD7001DACF1 /* MyCycleADViewController.m */; };
 		8033239320299AD7001DACF1 /* MemoryADKnowledge07.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8033234920299AD7001DACF1 /* MemoryADKnowledge07.jpg */; };
@@ -761,6 +762,8 @@
 		801F75D520A040D800A2E027 /* signin_icon_open@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "signin_icon_open@3x.png"; sourceTree = "<group>"; };
 		801F75D620A040D800A2E027 /* signin_icon_open@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "signin_icon_open@2x.png"; sourceTree = "<group>"; };
 		801F75D720A040D800A2E027 /* BBXDUserNameTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBXDUserNameTextField.m; sourceTree = "<group>"; };
+		80238A5E2111966B008EB1D5 /* NavigationBarRemoveUnderlineViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NavigationBarRemoveUnderlineViewController.h; sourceTree = "<group>"; };
+		80238A5F2111966B008EB1D5 /* NavigationBarRemoveUnderlineViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NavigationBarRemoveUnderlineViewController.m; sourceTree = "<group>"; };
 		80270BBC1FABFE57001429F0 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		802D1D6720CF5F48003EAFE0 /* CJIndentedStringUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJIndentedStringUtil.h; sourceTree = "<group>"; };
 		802D1D6820CF5F48003EAFE0 /* CJIndentedStringUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJIndentedStringUtil.m; sourceTree = "<group>"; };
@@ -3026,6 +3029,8 @@
 				80FF8FEB1FC5649E00E437CF /* NavigationBarChangeBGViewController.m */,
 				80FF8FE91FC5649E00E437CF /* NavigationBarChangePositonViewController.h */,
 				80FF8FED1FC5649E00E437CF /* NavigationBarChangePositonViewController.m */,
+				80238A5E2111966B008EB1D5 /* NavigationBarRemoveUnderlineViewController.h */,
+				80238A5F2111966B008EB1D5 /* NavigationBarRemoveUnderlineViewController.m */,
 				80FF8FEC1FC5649E00E437CF /* NavigationBarViewController.h */,
 				80FF8FE61FC5649E00E437CF /* NavigationBarViewController.m */,
 				80FF8FE51FC5649E00E437CF /* NavigationBarViewController.xib */,
@@ -3904,6 +3909,7 @@
 				789CAF471FB612B700AF8CD4 /* CJPlayerSlider.m in Sources */,
 				80FF91331FC5668700E437CF /* NSDictionary+CJConvert.m in Sources */,
 				80FF90B61FC5649F00E437CF /* CJMJRefreshViewController.m in Sources */,
+				80238A602111966B008EB1D5 /* NavigationBarRemoveUnderlineViewController.m in Sources */,
 				7850B730209380A0008F4A21 /* UIView+CJExclusiveTouch.m in Sources */,
 				803323BF20299AD7001DACF1 /* CustomCollectionViewCell.m in Sources */,
 				80FF90931FC5649F00E437CF /* CJDefaultTableViewCell+ConfigureForDataModel.m in Sources */,

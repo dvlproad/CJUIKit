@@ -34,7 +34,7 @@
 - (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
     
-    [self.navigationController.navigationBar cj_reset];
+    [self.navigationController.navigationBar cj_resetBackgroundColor];
 }
 
 

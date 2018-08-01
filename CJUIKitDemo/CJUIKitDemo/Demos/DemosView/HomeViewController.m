@@ -47,6 +47,7 @@
 #import "ImageRotateViewController.h"
 
 #import "NavigationBarViewController.h"
+#import "NavigationBarRemoveUnderlineViewController.h"
 #import "NavigationBarChangeBGViewController.h"
 #import "NavigationBarChangePositonViewController.h"
 
@@ -142,6 +143,12 @@
             CJModuleModel *UINavigationBarModuleModel1 = [[CJModuleModel alloc] init];
             UINavigationBarModuleModel1.title = @"UINavigationBar(导航栏的设置)";
             UINavigationBarModuleModel1.classEntry = [NavigationBarViewController class];
+            [sectionDataModel.values addObject:UINavigationBarModuleModel1];
+        }
+        {
+            CJModuleModel *UINavigationBarModuleModel1 = [[CJModuleModel alloc] init];
+            UINavigationBarModuleModel1.title = @"UINavigationBar(去除导航条最下面的横线)";
+            UINavigationBarModuleModel1.classEntry = [NavigationBarRemoveUnderlineViewController class];
             [sectionDataModel.values addObject:UINavigationBarModuleModel1];
         }
         {
@@ -357,13 +364,17 @@
     UIViewController *viewController = nil;
     
     NSArray *noxibViewControllers = @[NSStringFromClass([UIViewController class]),
+                                      NSStringFromClass([NavigationBarRemoveUnderlineViewController class])
                                       ];
     
     NSString *clsString = NSStringFromClass(moduleModel.classEntry);
     if ([noxibViewControllers containsObject:clsString])
     {
         viewController = [[classEntry alloc] init];
-        viewController.view.backgroundColor = [UIColor whiteColor];
+        if ([clsString isEqualToString:NSStringFromClass([UIViewController class])]) {
+            viewController.view.backgroundColor = [UIColor whiteColor];
+        }
+        
         
     } else if ([classEntry isSubclassOfClass:[NavigationBarBaseViewController class]]) {
         viewController = [[classEntry alloc] initWithNibName:@"NavigationBarBaseViewController" bundle:nil];

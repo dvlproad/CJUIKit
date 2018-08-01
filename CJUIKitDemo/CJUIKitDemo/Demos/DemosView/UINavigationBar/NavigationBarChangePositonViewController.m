@@ -22,7 +22,7 @@
 - (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
     
-    [self.navigationController.navigationBar cj_reset];
+    [self.navigationController.navigationBar cj_resetBackgroundColor];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -73,6 +73,16 @@
 
 - (void)setNavigationBarTransformProgress:(CGFloat)progress
 {
+    self.automaticallyAdjustsScrollViewInsets = NO;
+    self.extendedLayoutIncludesOpaqueBars = YES;
+    self.edgesForExtendedLayout = UIRectEdgeTop;
+    
+    if (@available(iOS 11.0, *)) {
+        self.tableView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
+    } else {
+        self.automaticallyAdjustsScrollViewInsets = NO;
+    }
+    
     [self.navigationController.navigationBar cj_setTranslationY:(-44 * progress)];
     [self.navigationController.navigationBar cj_setElementsAlpha:(1-progress)];
 }

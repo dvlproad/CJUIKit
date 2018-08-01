@@ -9,37 +9,62 @@
 #import "UINavigationBar+CJChangeBG.h"
 #import <objc/runtime.h>
 
+@interface UINavigationBar ()
+
+@property (nonatomic, strong) UIView *cjBackgroundColorOverlayView;
+
+@end
+
 @implementation UINavigationBar (CJChangeBG)
 
-static NSString * const overlayKey = @"overlayKey";
-
 #pragma mark - runtime
-- (UIView *)overlay {
-    return objc_getAssociatedObject(self, &overlayKey);
+- (UIView *)cjBackgroundColorOverlayView {
+    return objc_getAssociatedObject(self, @selector(cjBackgroundColorOverlayView));
 }
 
-- (void)setOverlay:(UIView *)overlay {
-    objc_setAssociatedObject(self, &overlayKey, overlay, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+- (void)setCjBackgroundColorOverlayView:(UIView *)cjBackgroundColorOverlayView {
+    objc_setAssociatedObject(self, @selector(cjBackgroundColorOverlayView), cjBackgroundColorOverlayView, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
-/* 完整的描述请参见文件头部 */
-- (void)cj_removeUnderline {
-    [self setShadowImage:[[UIImage alloc] init]];
-}
 
+#pragma mark - 背景色
 /* 完整的描述请参见文件头部 */
 - (void)cj_setBackgroundColor:(UIColor *)backgroundColor
 {
-    if (!self.overlay) {
+    if (!self.cjBackgroundColorOverlayView) {
         [self setBackgroundImage:[UIImage new] forBarMetrics:UIBarMetricsDefault];
-        self.overlay = [[UIView alloc] initWithFrame:CGRectMake(0, -20, [UIScreen mainScreen].bounds.size.width, CGRectGetHeight(self.bounds) + 20)];
-        self.overlay.userInteractionEnabled = NO;
-        self.overlay.autoresizingMask = UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleHeight;
-        [self insertSubview:self.overlay atIndex:0];
+        
+        CGRect overlayViewFrame = CGRectMake(0, -20, [UIScreen mainScreen].bounds.size.width, CGRectGetHeight(self.bounds) + 20);
+        UIView *cjBackgroundColorOverlayView = [[UIView alloc] initWithFrame:overlayViewFrame];
+        cjBackgroundColorOverlayView.userInteractionEnabled = NO;
+        cjBackgroundColorOverlayView.autoresizingMask = UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleHeight;
+        [self insertSubview:cjBackgroundColorOverlayView atIndex:0];
+        
+        self.cjBackgroundColorOverlayView = cjBackgroundColorOverlayView;
     }
-    self.overlay.backgroundColor = backgroundColor;
+    self.cjBackgroundColorOverlayView.backgroundColor = backgroundColor;
 }
 
+/* 完整的描述请参见文件头部 */
+- (void)cj_resetBackgroundColor
+{
+    [self setBackgroundImage:nil forBarMetrics:UIBarMetricsDefault];
+    [self.cjBackgroundColorOverlayView removeFromSuperview];
+    self.cjBackgroundColorOverlayView = nil;
+}
+
+
+#pragma mark - 导航栏最下面的横线
+/* 完整的描述请参见文件头部 */
+- (void)cj_hideUnderline:(BOOL)hide {
+    if (hide) {
+        [self setShadowImage:[[UIImage alloc] init]];
+    } else {
+        [self setShadowImage:nil];
+    }
+}
+
+#pragma mark - 导航栏的位置
 - (void)cj_setTranslationY:(CGFloat)translationY
 {
     self.transform = CGAffineTransformMakeTranslation(0, translationY);
@@ -47,7 +72,7 @@ static NSString * const overlayKey = @"overlayKey";
 
 - (void)cj_setElementsAlpha:(CGFloat)alpha
 {
-    //iOS11有bug,因为多了一个叫_UINavigationBarContentView的类。参考:[IOS11导航栏隐藏失效的问题](http://www.cocoachina.com/bbs/read.php?tid=1726064)
+    //iOS11有bug,因为多了一个叫_UINavigationBarContentView的类。参考:[iOS11导航栏隐藏失效的问题](http://www.cocoachina.com/bbs/read.php?tid=1726064)
 //    <__NSArrayM 0x600000449390>(
 //                                <_UIBarBackground: 0x7ff541e0a4c0; frame = (0 -20; 414 64); userInteractionEnabled = NO; layer = <CALayer: 0x600000036fe0>>,
 //                                <_UINavigationBarLargeTitleView: 0x7ff541d04f20; frame = (0 0; 0 44); clipsToBounds = YES; alpha = 0; hidden = YES; layer = <CALayer: 0x604000234100>>,
@@ -71,12 +96,6 @@ static NSString * const overlayKey = @"overlayKey";
     }
 }
 
-/* 完整的描述请参见文件头部 */
-- (void)cj_reset
-{
-    [self setBackgroundImage:nil forBarMetrics:UIBarMetricsDefault];
-    [self.overlay removeFromSuperview];
-    self.overlay = nil;
-}
+
 
 @end

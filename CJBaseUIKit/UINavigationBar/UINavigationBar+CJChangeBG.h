@@ -11,17 +11,37 @@
 
 @interface UINavigationBar (CJChangeBG)
 
-/**
- *  删除导航栏的下划线
- */
-- (void)cj_removeUnderline;
 
-/**
- *  设置导航栏的背景色
- *
- *  @param backgroundColor  backgroundColor
- */
+#pragma mark - 导航栏的背景色
+///设置导航栏的背景色为指定背景色backgroundColor
 - (void)cj_setBackgroundColor:(UIColor *)backgroundColor;
+
+///还原导航栏的背景色为之前的设置
+- (void)cj_resetBackgroundColor;
+
+
+
+#pragma mark - 导航栏最下面的横线
+/**
+ *  是否隐藏导航栏最下面的横线
+ *
+ *  @param hide 是否隐藏
+ */
+- (void)cj_hideUnderline:(BOOL)hide;
+
+
+
+
+#pragma mark - 导航栏的位置
+/**
+ *  设置导航栏的位置
+ *
+ *  @param translationY    translationY
+ */
+- (void)cj_setTranslationY:(CGFloat)translationY;
+
+
+
 
 /**
  *  改变导航栏上左、右及titleView的alpha值
@@ -30,16 +50,8 @@
  */
 - (void)cj_setElementsAlpha:(CGFloat)alpha;
 
-/**
- *  设置导航栏的位置
- *
- *  @param translationY    translationY
- */
-- (void)cj_setTranslationY:(CGFloat)translationY;
 
-/**
- *  还原导航栏之前的设置
- */
-- (void)cj_reset;
+
+
 
 @end

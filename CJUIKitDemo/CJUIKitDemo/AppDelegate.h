@@ -15,5 +15,10 @@
 @property (strong, nonatomic) UIWindow *cjFloatingWindow; /**< 创建的window必须强制持有，且要想window一直不被释放，除了strong，还必须放在AppDelegate上 */
 
 
+///配置导航栏
+- (void)configureDefaultNavigationBarAppearance;
+- (void)configureDefaultBarButtonItemAppearance;
+
+
 @end
 

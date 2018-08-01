@@ -40,6 +40,13 @@
     [self.window makeKeyAndVisible];
     
     // Override point for customization after application launch.
+    [self configureDefaultNavigationBarAppearance];
+    
+    return YES;
+}
+
+///配置导航栏
+- (void)configureDefaultNavigationBarAppearance {
     [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
     
     //改变导航栏背景色
@@ -48,8 +55,11 @@
     //改变导航栏的字体
     [[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor whiteColor],
                                                            NSFontAttributeName:[UIFont systemFontOfSize:21]}];
-    
-    return YES;
+}
+
+- (void)configureDefaultBarButtonItemAppearance {
+    [[UIBarButtonItem appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor whiteColor]} forState:UIControlStateNormal];
+    [[UIBarButtonItem appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor whiteColor]} forState:UIControlStateHighlighted];
 }
 
 

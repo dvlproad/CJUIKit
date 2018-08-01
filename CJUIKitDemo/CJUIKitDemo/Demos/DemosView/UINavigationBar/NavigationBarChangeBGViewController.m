@@ -47,7 +47,7 @@
 #pragma mark - 导航栏的设置
 ///导航栏的重置
 - (void)navigationBarReset {
-    [self.navigationController.navigationBar cj_reset];
+    [self.navigationController.navigationBar cj_resetBackgroundColor];
     
     [[UIBarButtonItem appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor whiteColor]} forState:UIControlStateNormal];
     [[UIBarButtonItem appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor whiteColor]} forState:UIControlStateHighlighted];
@@ -56,7 +56,7 @@
 ///导航栏在当前页面的自定义
 - (void)navigationBarCustomSet {
     /* 改变导航栏 */
-    [self.navigationController.navigationBar cj_removeUnderline];//删除导航栏的下划线
+    [self.navigationController.navigationBar cj_hideUnderline:YES];//删除导航栏的下划线
     [self.navigationController.navigationBar cj_setBackgroundColor:[UIColor clearColor]];//改变导航栏背景色
     //[self.navigationController.navigationBar cj_setElementsAlpha:0];
     
