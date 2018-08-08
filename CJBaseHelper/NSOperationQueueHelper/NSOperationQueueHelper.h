@@ -1,5 +1,5 @@
 //
-//  NSOperationQueueUtil.h
+//  NSOperationQueueHelper.h
 //  MultithreadingDemo
 //
 //  Created by ciyouzen on 2016/11/23.
@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 
 ///搜索功能常常需要依赖的库
-@interface NSOperationQueueUtil : NSObject
+@interface NSOperationQueueHelper : NSObject
 
 /**
  *  创建队列

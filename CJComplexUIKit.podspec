@@ -73,7 +73,7 @@ Pod::Spec.new do |s|
       # 搜索功能需要依赖的库
       sss.dependency 'CJBaseUIKit/CJCollectionView/MyEqualCellSizeCollectionView'
       sss.dependency 'CJBaseUtil/CJDataUtil'
-      sss.dependency 'CJBaseUtil/NSOperationQueueUtil'
+      sss.dependency 'CJBaseHelper/NSOperationQueueHelper'
     end
 
     ss.subspec 'ImagePickerCollectionlView' do |sss|

@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		51F701ECBBD48CC565F3FB87 /* libPods-CJUIKitDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A078401C0E781545EB72B64D /* libPods-CJUIKitDemo.a */; };
+		780078F9211B35CA00D810B5 /* NSOperationQueueHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 780078F7211B35CA00D810B5 /* NSOperationQueueHelper.m */; };
+		780078FC211B360300D810B5 /* UIViewControllerHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 780078FB211B360300D810B5 /* UIViewControllerHelper.m */; };
 		780E46051E5DF87B00980127 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 780E46041E5DF87B00980127 /* main.m */; };
 		780E46081E5DF87B00980127 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 780E46071E5DF87B00980127 /* AppDelegate.m */; };
 		780E460B1E5DF87B00980127 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 780E460A1E5DF87B00980127 /* ViewController.m */; };
@@ -36,7 +38,6 @@
 		7850B72A2093809F008F4A21 /* UIView+CJPopupInView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7850B7182093809F008F4A21 /* UIView+CJPopupInView.m */; };
 		7850B72B2093809F008F4A21 /* UIView+CJShowExtendView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7850B7192093809F008F4A21 /* UIView+CJShowExtendView.m */; };
 		7850B72D2093809F008F4A21 /* UIView+CJDragAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 7850B71F2093809F008F4A21 /* UIView+CJDragAction.m */; };
-		7850B72E2093809F008F4A21 /* UIView+CJFind.m in Sources */ = {isa = PBXBuildFile; fileRef = 7850B7202093809F008F4A21 /* UIView+CJFind.m */; };
 		7850B730209380A0008F4A21 /* UIView+CJExclusiveTouch.m in Sources */ = {isa = PBXBuildFile; fileRef = 7850B7262093809F008F4A21 /* UIView+CJExclusiveTouch.m */; };
 		7850B731209380A0008F4A21 /* UIView+CJShake.m in Sources */ = {isa = PBXBuildFile; fileRef = 7850B7282093809F008F4A21 /* UIView+CJShake.m */; };
 		7850B734209381B4008F4A21 /* UIView+CJKeepBounds.m in Sources */ = {isa = PBXBuildFile; fileRef = 7850B733209381B4008F4A21 /* UIView+CJKeepBounds.m */; };
@@ -246,7 +247,6 @@
 		805481902074C97200CDE5A1 /* CJTimerModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8054818E2074C97200CDE5A1 /* CJTimerModel.m */; };
 		805598B51FF5D612009DC61C /* ValidateStringViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 805598B31FF5D612009DC61C /* ValidateStringViewController.m */; };
 		805598B61FF5D612009DC61C /* ValidateStringViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 805598B41FF5D612009DC61C /* ValidateStringViewController.xib */; };
-		8056F5AC203E6FA30074D90F /* NSOperationQueueUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 8056F5AA203E6FA30074D90F /* NSOperationQueueUtil.m */; };
 		80582FA120C121B500C01225 /* ImageRotateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80582F9F20C121B500C01225 /* ImageRotateViewController.m */; };
 		80582FA220C121B500C01225 /* ImageRotateViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 80582FA020C121B500C01225 /* ImageRotateViewController.xib */; };
 		80582FA520C129A200C01225 /* UIImage+CJRotateAngle.m in Sources */ = {isa = PBXBuildFile; fileRef = 80582FA320C129A200C01225 /* UIImage+CJRotateAngle.m */; };
@@ -473,6 +473,10 @@
 /* Begin PBXFileReference section */
 		3132573BFCFBEA8B4F3BB86F /* Pods-CJUIKitDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CJUIKitDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-CJUIKitDemo/Pods-CJUIKitDemo.release.xcconfig"; sourceTree = "<group>"; };
 		68D73B38201AA01727123963 /* Pods-CJUIKitDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CJUIKitDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CJUIKitDemo/Pods-CJUIKitDemo.debug.xcconfig"; sourceTree = "<group>"; };
+		780078F7211B35CA00D810B5 /* NSOperationQueueHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSOperationQueueHelper.m; sourceTree = "<group>"; };
+		780078F8211B35CA00D810B5 /* NSOperationQueueHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSOperationQueueHelper.h; sourceTree = "<group>"; };
+		780078FA211B360300D810B5 /* UIViewControllerHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UIViewControllerHelper.h; sourceTree = "<group>"; };
+		780078FB211B360300D810B5 /* UIViewControllerHelper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UIViewControllerHelper.m; sourceTree = "<group>"; };
 		780E46001E5DF87B00980127 /* CJUIKitDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CJUIKitDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		780E46041E5DF87B00980127 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		780E46061E5DF87B00980127 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -522,10 +526,8 @@
 		7850B71A2093809F008F4A21 /* UIView+CJPopupInView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+CJPopupInView.h"; sourceTree = "<group>"; };
 		7850B71E2093809F008F4A21 /* UIView+CJDragAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+CJDragAction.h"; sourceTree = "<group>"; };
 		7850B71F2093809F008F4A21 /* UIView+CJDragAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+CJDragAction.m"; sourceTree = "<group>"; };
-		7850B7202093809F008F4A21 /* UIView+CJFind.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+CJFind.m"; sourceTree = "<group>"; };
 		7850B7212093809F008F4A21 /* UIView+CJExclusiveTouch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+CJExclusiveTouch.h"; sourceTree = "<group>"; };
 		7850B7222093809F008F4A21 /* UIViewCJCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIViewCJCategory.h; sourceTree = "<group>"; };
-		7850B7252093809F008F4A21 /* UIView+CJFind.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+CJFind.h"; sourceTree = "<group>"; };
 		7850B7262093809F008F4A21 /* UIView+CJExclusiveTouch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+CJExclusiveTouch.m"; sourceTree = "<group>"; };
 		7850B7282093809F008F4A21 /* UIView+CJShake.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+CJShake.m"; sourceTree = "<group>"; };
 		7850B7292093809F008F4A21 /* UIView+CJShake.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+CJShake.h"; sourceTree = "<group>"; };
@@ -854,8 +856,6 @@
 		805598B21FF5D612009DC61C /* ValidateStringViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ValidateStringViewController.h; sourceTree = "<group>"; };
 		805598B31FF5D612009DC61C /* ValidateStringViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ValidateStringViewController.m; sourceTree = "<group>"; };
 		805598B41FF5D612009DC61C /* ValidateStringViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ValidateStringViewController.xib; sourceTree = "<group>"; };
-		8056F5AA203E6FA30074D90F /* NSOperationQueueUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSOperationQueueUtil.m; sourceTree = "<group>"; };
-		8056F5AB203E6FA30074D90F /* NSOperationQueueUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSOperationQueueUtil.h; sourceTree = "<group>"; };
 		80582F9E20C121B500C01225 /* ImageRotateViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ImageRotateViewController.h; sourceTree = "<group>"; };
 		80582F9F20C121B500C01225 /* ImageRotateViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ImageRotateViewController.m; sourceTree = "<group>"; };
 		80582FA020C121B500C01225 /* ImageRotateViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ImageRotateViewController.xib; sourceTree = "<group>"; };
@@ -1230,6 +1230,34 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		780078F4211B35CA00D810B5 /* CJBaseHelper */ = {
+			isa = PBXGroup;
+			children = (
+				780078F5211B35CA00D810B5 /* UIViewControllerHelper */,
+				780078F6211B35CA00D810B5 /* NSOperationQueueHelper */,
+			);
+			name = CJBaseHelper;
+			path = ../../CJBaseHelper;
+			sourceTree = "<group>";
+		};
+		780078F5211B35CA00D810B5 /* UIViewControllerHelper */ = {
+			isa = PBXGroup;
+			children = (
+				780078FA211B360300D810B5 /* UIViewControllerHelper.h */,
+				780078FB211B360300D810B5 /* UIViewControllerHelper.m */,
+			);
+			path = UIViewControllerHelper;
+			sourceTree = "<group>";
+		};
+		780078F6211B35CA00D810B5 /* NSOperationQueueHelper */ = {
+			isa = PBXGroup;
+			children = (
+				780078F8211B35CA00D810B5 /* NSOperationQueueHelper.h */,
+				780078F7211B35CA00D810B5 /* NSOperationQueueHelper.m */,
+			);
+			path = NSOperationQueueHelper;
+			sourceTree = "<group>";
+		};
 		780E45F71E5DF87B00980127 = {
 			isa = PBXGroup;
 			children = (
@@ -1259,9 +1287,9 @@
 				780E46071E5DF87B00980127 /* AppDelegate.m */,
 				8014A27E1FA2C2E500DDDB5A /* AppDelegate+WindowRootViewController.h */,
 				8014A27F1FA2C2E500DDDB5A /* AppDelegate+WindowRootViewController.m */,
-				808B977120B7B54500910E45 /* TempPart */,
 				80E7E63220AC227A000F762D /* AppInfoManager */,
 				780E460F1E5DF87B00980127 /* Assets.xcassets */,
+				780078F4211B35CA00D810B5 /* CJBaseHelper */,
 				789CAE0F1FB612B600AF8CD4 /* CJBaseUIKit */,
 				80FF91021FC5668700E437CF /* CJBaseUtil */,
 				789CAEFE1FB612B600AF8CD4 /* CJComplexUIKit */,
@@ -1271,12 +1299,13 @@
 				780E46141E5DF87B00980127 /* Info.plist */,
 				780E46111E5DF87B00980127 /* LaunchScreen.storyboard */,
 				780E460C1E5DF87B00980127 /* Main.storyboard */,
-				808BF3212019C3E900511F7C /* Utils */,
 				789A19671E61B87D008081E3 /* Models */,
 				78B740111FB6C04500443D87 /* Network */,
 				789A19681E61B87D008081E3 /* Resources */,
 				780E46031E5DF87B00980127 /* Supporting Files */,
+				808B977120B7B54500910E45 /* TempPart */,
 				8014A2A11FA3137D00DDDB5A /* ThirdPartIcon.xcassets */,
+				808BF3212019C3E900511F7C /* Utils */,
 				780E46091E5DF87B00980127 /* ViewController.h */,
 				780E460A1E5DF87B00980127 /* ViewController.m */,
 				789A19691E61B87D008081E3 /* Views */,
@@ -1379,8 +1408,6 @@
 				7850B7272093809F008F4A21 /* CJShakeAction */,
 				7850B7212093809F008F4A21 /* UIView+CJExclusiveTouch.h */,
 				7850B7262093809F008F4A21 /* UIView+CJExclusiveTouch.m */,
-				7850B7252093809F008F4A21 /* UIView+CJFind.h */,
-				7850B7202093809F008F4A21 /* UIView+CJFind.m */,
 				7850B7222093809F008F4A21 /* UIViewCJCategory.h */,
 			);
 			path = UIView;
@@ -2390,15 +2417,6 @@
 			path = CJTimerManager;
 			sourceTree = "<group>";
 		};
-		8056F5A9203E6FA30074D90F /* NSOperationQueueUtil */ = {
-			isa = PBXGroup;
-			children = (
-				8056F5AB203E6FA30074D90F /* NSOperationQueueUtil.h */,
-				8056F5AA203E6FA30074D90F /* NSOperationQueueUtil.m */,
-			);
-			path = NSOperationQueueUtil;
-			sourceTree = "<group>";
-		};
 		8060C48420E0D5EF0093B14E /* ValueUtilDemo */ = {
 			isa = PBXGroup;
 			children = (
@@ -2611,11 +2629,11 @@
 		80E7E6E620AD2626000F762D /* Category */ = {
 			isa = PBXGroup;
 			children = (
-				80E7E6E720AD2626000F762D /* UIViewController+CJCustomBackBarButtonItem.m */,
 				80E7E6E820AD2626000F762D /* Resources */,
-				80E7E6ED20AD2626000F762D /* UIViewController+CJSystemBackButtonHandler.m */,
 				80E7E6EE20AD2626000F762D /* UIViewController+CJCustomBackBarButtonItem.h */,
+				80E7E6E720AD2626000F762D /* UIViewController+CJCustomBackBarButtonItem.m */,
 				80E7E6EF20AD2626000F762D /* UIViewController+CJSystemBackButtonHandler.h */,
+				80E7E6ED20AD2626000F762D /* UIViewController+CJSystemBackButtonHandler.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -3130,7 +3148,6 @@
 				800A15FA208480BF00ECF9AF /* CJCallUtil */,
 				80F9CFDD206CFDFB003B41D4 /* CJPinyinHelper */,
 				8044781D2061F328007185EF /* CJManager */,
-				8056F5A9203E6FA30074D90F /* NSOperationQueueUtil */,
 				800E07D22016CC2E00799B78 /* CJKeyboardUtil */,
 				80FF91091FC5668700E437CF /* CJDataUtil */,
 				80FF91DC1FC6739C00E437CF /* CJDateUtil */,
@@ -3853,7 +3870,6 @@
 				789CAF6E1FB612B700AF8CD4 /* UITextField+CJAddInputAccessoryView.m in Sources */,
 				8033239120299AD7001DACF1 /* MyCycleADViewController.m in Sources */,
 				80FF902A1FC5649E00E437CF /* ThirdPartyHomeViewController.m in Sources */,
-				7850B72E2093809F008F4A21 /* UIView+CJFind.m in Sources */,
 				80FF908A1FC5649F00E437CF /* ChooseColor01.m in Sources */,
 				80FF91E81FC6739D00E437CF /* CJDateModelUtil.m in Sources */,
 				80FF90901FC5649F00E437CF /* CustomTableViewCell.m in Sources */,
@@ -3869,6 +3885,7 @@
 				789CAF241FB612B700AF8CD4 /* MyEqualCellSizeSetting.m in Sources */,
 				80FF90AE1FC5649F00E437CF /* EasyScaleHeadView.m in Sources */,
 				80E7E6F520AD2627000F762D /* UIViewController+CJCustomBackBarButtonItem.m in Sources */,
+				780078F9211B35CA00D810B5 /* NSOperationQueueHelper.m in Sources */,
 				80FF90A21FC5649F00E437CF /* SampleViewController.m in Sources */,
 				807F125A20B4F70E0008B748 /* UIView+CJAnimation.m in Sources */,
 				80E7E75520AD2C8B000F762D /* UIImage+CJChangeColor.m in Sources */,
@@ -3979,7 +3996,6 @@
 				787FDB5620500B01008A46E3 /* SearchBarViewController.m in Sources */,
 				789CAF191FB612B700AF8CD4 /* CJBaseCollectionViewCell.m in Sources */,
 				80FF90471FC5649F00E437CF /* SearchTableViewController.m in Sources */,
-				8056F5AC203E6FA30074D90F /* NSOperationQueueUtil.m in Sources */,
 				80FF91941FC5682B00E437CF /* TypeConvertViewController.m in Sources */,
 				789CAF271FB612B700AF8CD4 /* CJBaseTableViewCell.m in Sources */,
 				789CAF7B1FB612B700AF8CD4 /* CJFloatingWindow.m in Sources */,
@@ -4032,6 +4048,7 @@
 				787FDB9C20502A1C008A46E3 /* CJTextField.m in Sources */,
 				80E7E73120AD2AEA000F762D /* UINavigationBar+CJChangeBG.m in Sources */,
 				800E07E12016CCF500799B78 /* DataUtilViewController.m in Sources */,
+				780078FC211B360300D810B5 /* UIViewControllerHelper.m in Sources */,
 				80D49F8320BE56D2003F642C /* MyADModel.m in Sources */,
 				80FF91EC1FC6739D00E437CF /* CJDateOtherUtil.m in Sources */,
 				80FF903C1FC5649F00E437CF /* KeyboardAvoidingViewController.m in Sources */,

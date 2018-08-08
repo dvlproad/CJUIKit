@@ -9,9 +9,9 @@
 #import "CJSearchTableView.h"
 
 #ifdef CJTESTPOD
-    #import "NSOperationQueueUtil.h"
+    #import "NSOperationQueueHelper.h"
 #else
-    #import <CJBaseUtil/NSOperationQueueUtil.h>
+    #import <CJBaseHelper/NSOperationQueueHelper.h>
 #endif
 
 @interface CJSearchTableView () <UITableViewDataSource, UISearchResultsUpdating, UISearchBarDelegate>  {
@@ -226,7 +226,7 @@
         });
     }];
     
-    self.searchOperationQueue = [NSOperationQueueUtil createOperationQueueWithOperations:operations lastOperation:operationLast];
+    self.searchOperationQueue = [NSOperationQueueHelper createOperationQueueWithOperations:operations lastOperation:operationLast];
 }
 
 

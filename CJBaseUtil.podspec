@@ -71,11 +71,6 @@ Pod::Spec.new do |s|
    ss.source_files = "CJBaseUtil/CJDataUtil/**/*.{h,m}"
   end
 
-  # 搜索功能常常需要的多线程处理工具类
-  s.subspec 'NSOperationQueueUtil' do |ss|
-   ss.source_files = "CJBaseUtil/NSOperationQueueUtil/**/*.{h,m}"
-  end
-
   # 日期工具
   s.subspec 'CJDateUtil' do |ss|
     ss.source_files = "CJBaseUtil/CJDateUtil/**/*.{h,m}"

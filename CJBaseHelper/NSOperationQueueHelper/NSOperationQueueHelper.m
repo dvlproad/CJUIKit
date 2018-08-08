@@ -1,19 +1,19 @@
 //
-//  NSOperationQueueUtil.m
+//  NSOperationQueueHelper.m
 //  MultithreadingDemo
 //
 //  Created by ciyouzen on 2016/11/23.
 //  Copyright © 2016年 dvlproad. All rights reserved.
 //
 
-#import "NSOperationQueueUtil.h"
+#import "NSOperationQueueHelper.h"
 
-@interface NSOperationQueueUtil ()
+@interface NSOperationQueueHelper ()
 
 @end
 
 
-@implementation NSOperationQueueUtil
+@implementation NSOperationQueueHelper
 
 /** 完整的描述请参见文件头部 */
 + (NSOperationQueue *)createOperationQueueWithOperations:(NSArray<NSOperation *> *)operations lastOperation:(NSOperation *)lastOperation {
