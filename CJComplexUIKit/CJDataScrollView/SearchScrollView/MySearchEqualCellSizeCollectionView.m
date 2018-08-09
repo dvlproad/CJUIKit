@@ -8,12 +8,6 @@
 
 #import "MySearchEqualCellSizeCollectionView.h"
 
-#ifdef CJTESTPOD
-    #import "NSOperationQueueHelper.h"
-#else
-    #import <CJBaseHelper/NSOperationQueueHelper.h>
-#endif
-
 @interface MySearchEqualCellSizeCollectionView () <UICollectionViewDataSource, UISearchBarDelegate> {
     
 }
@@ -181,7 +175,7 @@
     }];
     NSArray *operations = @[operation1];
 
-    NSOperation *operationLast = [NSBlockOperation blockOperationWithBlock:^{
+    NSOperation *lastOperation = [NSBlockOperation blockOperationWithBlock:^{
     //NSLog(@"搜索结果 %@", weakSelf.resultSectionDataModels);
 
         dispatch_async(dispatch_get_main_queue(), ^{
@@ -192,7 +186,15 @@
         });
     }];
 
-    self.searchOperationQueue = [NSOperationQueueHelper createOperationQueueWithOperations:operations lastOperation:operationLast];
+    NSOperationQueue *searchOperationQueue = [[NSOperationQueue alloc] init];
+    searchOperationQueue.name = @"this is a searchOperationQueue";
+    for (NSBlockOperation *operation in operations) {
+        [searchOperationQueue addOperation:operation];
+        [lastOperation addDependency:operation];
+    }
+    [searchOperationQueue addOperation:lastOperation];
+    
+    self.searchOperationQueue = searchOperationQueue;
 }
 
 

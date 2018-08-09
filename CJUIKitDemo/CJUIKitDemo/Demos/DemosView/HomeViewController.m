@@ -10,6 +10,8 @@
 
 #import "CJModuleModel.h"
 
+#import "HelperHomeViewController.h"
+
 
 #import "NestedXibViewController.h"
 #import "BeChangeViewController.h"
@@ -80,6 +82,21 @@
     
     
     NSMutableArray *sectionDataModels = [[NSMutableArray alloc] init];
+    
+    //Helper
+    {
+        CJSectionDataModel *sectionDataModel = [[CJSectionDataModel alloc] init];
+        sectionDataModel.theme = @"Helper";
+        {
+            CJModuleModel *xibModule = [[CJModuleModel alloc] init];
+            xibModule.title = @"HelperHome";
+            xibModule.classEntry = [HelperHomeViewController class];
+            
+            [sectionDataModel.values addObject:xibModule];
+        }
+        
+        [sectionDataModels addObject:sectionDataModel];
+    }
     //Interface
     {
         CJSectionDataModel *sectionDataModel = [[CJSectionDataModel alloc] init];
@@ -364,10 +381,12 @@
     UIViewController *viewController = nil;
     
     NSArray *noxibViewControllers = @[NSStringFromClass([UIViewController class]),
-                                      NSStringFromClass([NavigationBarRemoveUnderlineViewController class])
-                                      ];
+                                      NSStringFromClass([NavigationBarRemoveUnderlineViewController class]),
+                                      NSStringFromClass([HelperHomeViewController class]),
+                                    ];
     
     NSString *clsString = NSStringFromClass(moduleModel.classEntry);
+    
     if ([noxibViewControllers containsObject:clsString])
     {
         viewController = [[classEntry alloc] init];

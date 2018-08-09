@@ -1,22 +1,23 @@
 //
-//  StringEventViewController.m
+//  StringHelperViewController.m
 //  CJFoundationDemo
 //
 //  Created by ciyouzen on 2016/3/26.
 //  Copyright © 2016年 dvlproad. All rights reserved.
 //
 
-#import "StringEventViewController.h"
+#import "StringHelperViewController.h"
 
+#import "NSStringHelper.h"
 
-@interface StringEventViewController () <UITableViewDataSource, UITableViewDelegate> {
+@interface StringHelperViewController () <UITableViewDataSource, UITableViewDelegate> {
     
 }
 @property (nonatomic, weak) UIActivityIndicatorView *activityIndicator;
 
 @end
 
-@implementation StringEventViewController
+@implementation StringHelperViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -40,7 +41,18 @@
     {
         CJSectionDataModel *sectionDataModel = [[CJSectionDataModel alloc] init];
         sectionDataModel.theme = @"字符串相关";
-        
+        {
+            CJModuleModel *toastModule = [[CJModuleModel alloc] init];
+            toastModule.title = @"字符串判空，调用实例，无法正确判断";
+            //toastModule.classEntry = [UIViewController class];
+            [sectionDataModel.values addObject:toastModule];
+        }
+        {
+            CJModuleModel *toastModule = [[CJModuleModel alloc] init];
+            toastModule.title = @"字符串判空，调用类方法，可以正确判断";
+            //toastModule.classEntry = [UIViewController class];
+            [sectionDataModel.values addObject:toastModule];
+        }
         [sectionDataModels addObject:sectionDataModel];
     }
     
@@ -83,8 +95,15 @@
     
     if (indexPath.section == 0) {
         if (indexPath.row == 0) {
+            NSString *string;
+//            NSLog(@"%@ isEmpty == %@", string, [string cj_isEmpty] ? @"YES" : @"NO");
             
         } else if (indexPath.row == 1) {
+            NSString *string;
+            NSLog(@"%@ isEmpty == %@", string, [NSStringHelper isEmptyForString:string] ? @"YES" : @"NO");
+            
+//            NSString *string = @"";
+//            NSLog(@"%@ isEmpty == %@", string, [string cj_isEmpty] ? @"YES" : @"NO");
             
         } else if (indexPath.row == 2) {
             

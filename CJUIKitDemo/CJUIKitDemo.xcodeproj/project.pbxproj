@@ -238,6 +238,10 @@
 		80332411202C5540001DACF1 /* index.html in Resources */ = {isa = PBXBuildFile; fileRef = 80332410202C5540001DACF1 /* index.html */; };
 		804478272061F328007185EF /* CJLocationChangeManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 804478222061F328007185EF /* CJLocationChangeManager.m */; };
 		804478282061F328007185EF /* CJLocationChangeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 804478232061F328007185EF /* CJLocationChangeModel.m */; };
+		8050037E211C0B60002A2306 /* NSStringHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 8050037D211C0B60002A2306 /* NSStringHelper.m */; };
+		80500388211C3A29002A2306 /* TestPresentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80500382211C3A29002A2306 /* TestPresentViewController.m */; };
+		80500389211C3A29002A2306 /* HelperHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80500383211C3A29002A2306 /* HelperHomeViewController.m */; };
+		8050038A211C3A29002A2306 /* StringHelperViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80500385211C3A29002A2306 /* StringHelperViewController.m */; };
 		8051E5CA20AAAFD2003370AA /* BusShimmeringSwitchSlider.m in Sources */ = {isa = PBXBuildFile; fileRef = 8051E5C920AAAFD2003370AA /* BusShimmeringSwitchSlider.m */; };
 		8051E5CD20AAB34E003370AA /* details_icon_huadong@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8051E5CB20AAB34E003370AA /* details_icon_huadong@2x.png */; };
 		8051E5CE20AAB34E003370AA /* details_icon_huadong@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8051E5CC20AAB34E003370AA /* details_icon_huadong@3x.png */; };
@@ -841,6 +845,14 @@
 		804478232061F328007185EF /* CJLocationChangeModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJLocationChangeModel.m; sourceTree = "<group>"; };
 		804478242061F328007185EF /* CJLocationChangeManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJLocationChangeManager.h; sourceTree = "<group>"; };
 		804478252061F328007185EF /* CJLocationChangeModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJLocationChangeModel.h; sourceTree = "<group>"; };
+		8050037C211C0B60002A2306 /* NSStringHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NSStringHelper.h; sourceTree = "<group>"; };
+		8050037D211C0B60002A2306 /* NSStringHelper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NSStringHelper.m; sourceTree = "<group>"; };
+		80500381211C3A29002A2306 /* TestPresentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestPresentViewController.h; sourceTree = "<group>"; };
+		80500382211C3A29002A2306 /* TestPresentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestPresentViewController.m; sourceTree = "<group>"; };
+		80500383211C3A29002A2306 /* HelperHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HelperHomeViewController.m; sourceTree = "<group>"; };
+		80500385211C3A29002A2306 /* StringHelperViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StringHelperViewController.m; sourceTree = "<group>"; };
+		80500386211C3A29002A2306 /* StringHelperViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StringHelperViewController.h; sourceTree = "<group>"; };
+		80500387211C3A29002A2306 /* HelperHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HelperHomeViewController.h; sourceTree = "<group>"; };
 		8051E5C820AAAFD1003370AA /* BusShimmeringSwitchSlider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BusShimmeringSwitchSlider.h; sourceTree = "<group>"; };
 		8051E5C920AAAFD2003370AA /* BusShimmeringSwitchSlider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BusShimmeringSwitchSlider.m; sourceTree = "<group>"; };
 		8051E5CB20AAB34E003370AA /* details_icon_huadong@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "details_icon_huadong@2x.png"; sourceTree = "<group>"; };
@@ -1233,6 +1245,7 @@
 		780078F4211B35CA00D810B5 /* CJBaseHelper */ = {
 			isa = PBXGroup;
 			children = (
+				8050037B211C0B29002A2306 /* NSStringHelper */,
 				780078F5211B35CA00D810B5 /* UIViewControllerHelper */,
 				780078F6211B35CA00D810B5 /* NSOperationQueueHelper */,
 			);
@@ -2390,6 +2403,44 @@
 			path = CJLocationChangeManager;
 			sourceTree = "<group>";
 		};
+		8050037B211C0B29002A2306 /* NSStringHelper */ = {
+			isa = PBXGroup;
+			children = (
+				8050037C211C0B60002A2306 /* NSStringHelper.h */,
+				8050037D211C0B60002A2306 /* NSStringHelper.m */,
+			);
+			path = NSStringHelper;
+			sourceTree = "<group>";
+		};
+		8050037F211C3A29002A2306 /* DemosHelper */ = {
+			isa = PBXGroup;
+			children = (
+				80500387211C3A29002A2306 /* HelperHomeViewController.h */,
+				80500383211C3A29002A2306 /* HelperHomeViewController.m */,
+				80500384211C3A29002A2306 /* NSStringHelper */,
+				80500380211C3A29002A2306 /* UIViewControllerHelper */,
+			);
+			path = DemosHelper;
+			sourceTree = "<group>";
+		};
+		80500380211C3A29002A2306 /* UIViewControllerHelper */ = {
+			isa = PBXGroup;
+			children = (
+				80500381211C3A29002A2306 /* TestPresentViewController.h */,
+				80500382211C3A29002A2306 /* TestPresentViewController.m */,
+			);
+			path = UIViewControllerHelper;
+			sourceTree = "<group>";
+		};
+		80500384211C3A29002A2306 /* NSStringHelper */ = {
+			isa = PBXGroup;
+			children = (
+				80500386211C3A29002A2306 /* StringHelperViewController.h */,
+				80500385211C3A29002A2306 /* StringHelperViewController.m */,
+			);
+			path = NSStringHelper;
+			sourceTree = "<group>";
+		};
 		8051E31020A99A61003370AA /* CJCycleADView */ = {
 			isa = PBXGroup;
 			children = (
@@ -2772,6 +2823,7 @@
 		80FF8F0A1FC5649E00E437CF /* Demos */ = {
 			isa = PBXGroup;
 			children = (
+				8050037F211C3A29002A2306 /* DemosHelper */,
 				80FF91711FC5682A00E437CF /* DemosFoundation */,
 				80FF91831FC5682A00E437CF /* DemosOther */,
 				80FF8F231FC5649E00E437CF /* DemosScrollView */,
@@ -3872,6 +3924,8 @@
 				80FF902A1FC5649E00E437CF /* ThirdPartyHomeViewController.m in Sources */,
 				80FF908A1FC5649F00E437CF /* ChooseColor01.m in Sources */,
 				80FF91E81FC6739D00E437CF /* CJDateModelUtil.m in Sources */,
+				8050038A211C3A29002A2306 /* StringHelperViewController.m in Sources */,
+				80500389211C3A29002A2306 /* HelperHomeViewController.m in Sources */,
 				80FF90901FC5649F00E437CF /* CustomTableViewCell.m in Sources */,
 				80FF91E91FC6739D00E437CF /* CJDateModel.m in Sources */,
 				80CC7F8D200F7EBE0017878A /* OpenTableViewController2.m in Sources */,
@@ -3989,6 +4043,7 @@
 				787FDB8520500B5C008A46E3 /* SwitchSliderViewController.m in Sources */,
 				7850B70220937C5A008F4A21 /* PopupInViewVC.m in Sources */,
 				789CAF441FB612B700AF8CD4 /* CJSearchBar.m in Sources */,
+				80500388211C3A29002A2306 /* TestPresentViewController.m in Sources */,
 				7850B70420937C5A008F4A21 /* ShowDropDownViewController.m in Sources */,
 				80D0120A210336B900D1EDF0 /* BeChangeViewController.m in Sources */,
 				789CAF421FB612B700AF8CD4 /* CJKeyboardAvoidingTableView.m in Sources */,
@@ -4033,6 +4088,7 @@
 				80D71EA4209021FA00D2DB68 /* CJAlert.m in Sources */,
 				80FF91EA1FC6739D00E437CF /* CJCalendarUtil.m in Sources */,
 				80FF914F1FC5668700E437CF /* CJDataUtil+Value.m in Sources */,
+				8050037E211C0B60002A2306 /* NSStringHelper.m in Sources */,
 				80FF90B41FC5649F00E437CF /* ButtonViewController.m in Sources */,
 				789CAF501FB612B700AF8CD4 /* CJToast.m in Sources */,
 				80FF90371FC5649E00E437CF /* TestDataModel.m in Sources */,

@@ -34,7 +34,9 @@
     if (!self.cjBackgroundColorOverlayView) {
         [self setBackgroundImage:[UIImage new] forBarMetrics:UIBarMetricsDefault];
         
-        CGRect overlayViewFrame = CGRectMake(0, -20, [UIScreen mainScreen].bounds.size.width, CGRectGetHeight(self.bounds) + 20);
+        CGRect statusBarFrame = [[UIApplication sharedApplication] statusBarFrame];
+        CGFloat statusBarHeight = CGRectGetHeight(statusBarFrame);
+        CGRect overlayViewFrame = CGRectMake(0, -statusBarHeight, [UIScreen mainScreen].bounds.size.width, CGRectGetHeight(self.bounds) + statusBarHeight);
         UIView *cjBackgroundColorOverlayView = [[UIView alloc] initWithFrame:overlayViewFrame];
         cjBackgroundColorOverlayView.userInteractionEnabled = NO;
         cjBackgroundColorOverlayView.autoresizingMask = UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleHeight;

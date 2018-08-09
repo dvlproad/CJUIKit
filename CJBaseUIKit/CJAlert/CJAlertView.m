@@ -597,8 +597,8 @@
     if (fixHeight > maxHeight) {
         fixHeight = maxHeight;
         
-        NSString *warningString = [NSString stringWithFormat:@"CJ警告：您设置的size高度超过视图本身的最大高度%.2lf，会导致视图显示不全，已自动缩小", maxHeight];
-        NSLog(@"%@", warningString);
+        //NSString *warningString = [NSString stringWithFormat:@"CJ警告：您设置的size高度超过视图本身的最大高度%.2lf，会导致视图显示不全，已自动缩小", maxHeight];
+        //NSLog(@"%@", warningString);
         if (self.messageScrollView) {
             CGFloat minHeightWithoutMessageLabel = _firstVerticalInterval + _flagImageViewHeight + _secondVerticalInterval + _titleLabelHeight + _thirdVerticalInterval + _bottomVerticalInterval + _bottomButtonHeight;
             

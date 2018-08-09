@@ -8,9 +8,6 @@
 
 #import <Foundation/Foundation.h>
 
-//判断是否空字符串
-//#define isNullString(s)     (!s || [s isEqual:[NSNull null]] || [s isEqualToString:@""])
-
 typedef NS_ENUM(NSUInteger, CJAreaType) {
     CJAreaTypeMainland,     /**< 大陆地区 */
     CJAreaTypeHongKong,     /**< 香港地区 */
@@ -27,11 +24,6 @@ typedef NS_ENUM(NSUInteger, CJAreaType) {
 ///判断自己是否为空
 - (BOOL)cj_isBlank;
 */
-///是否为空字符串
-+ (BOOL)cj_validateEmptyForString:(NSString *)string;
-
-///判断自己是否为空
-+ (BOOL)cj_validateBlankForString:(NSString *)string;
 
 
 //源自：iOS - 正则表达式判断邮箱、身份证..是否正确：http://www.2cto.com/kf/201311/256494.html

@@ -11,12 +11,14 @@
 ///将 字符串/字典/数组转成含缩进字符串的字符串 的工具
 @interface CJIndentedStringUtil : NSObject
 
+#pragma mark - Easy
 ///含缩进格式的转化 dictionary
 + (NSMutableString *)easyFormattedStringFromDictionary:(NSDictionary *)dictionary;
-
-+ (NSMutableString *)fullFormattedStringFromDictionary:(NSDictionary *)dictionary;
-
 ///含缩进格式的转化 array
 + (NSMutableString *)easyFormattedStringFromArray:(NSArray *)array;
+
+#pragma mark - Full
++ (NSMutableString *)fullFormattedStringFromDictionary:(NSDictionary *)dictionary;
+
 
 @end
