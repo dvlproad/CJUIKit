@@ -1,9 +1,11 @@
 //
 //  NSOperationQueueHelper.h
-//  MultithreadingDemo
+//  CJUIKitDemo
 //
 //  Created by ciyouzen on 2016/11/23.
 //  Copyright © 2016年 dvlproad. All rights reserved.
+//
+//  源码地址:https://github.com/dvlproad/CJUIKit.git
 //
 
 #import <Foundation/Foundation.h>
