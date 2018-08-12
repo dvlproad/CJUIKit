@@ -4,6 +4,8 @@ platform :ios, '8.0'
 source 'https://github.com/CocoaPods/Specs.git'
 source 'https://gitee.com/dvlproad/dvlproadSpecs'  #这里要增加的是这条私有仓库的地址，而不是那些私有仓库里的库的地址，即如果你是增加'https://gitee.com/dvlproad/CJCustomView.git'那就错了。（之前自己犯过一次错）
 
+inhibit_all_warnings! #inhibit_warnings参数能够有效的抑制CocoaPods引入的第三方代码库产生的warning。
+
 target 'CJUIKitDemo' do  
   pod 'PureLayout', '~> 3.0.2'
   pod 'Masonry'

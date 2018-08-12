@@ -1,15 +1,16 @@
 Pod::Spec.new do |s|
   #验证方法：pod lib lint CJBaseHelper.podspec --allow-warnings --use-libraries --verbose
   s.name         = "CJBaseHelper"
-  s.version      = "0.0.1"
+  s.version      = "0.0.2"
   s.summary      = "自定义的基础帮助类"
   s.homepage     = "https://github.com/dvlproad/CJUIKit"
   s.license      = "MIT"
   s.author       = "dvlproad"
 
   s.description  = <<-DESC
-                  1、UIViewControllerHelper：视图控制器帮助类
-                  2、NSOperationQueueHelper：任务队列帮助类
+  				  *、NSStringHelper：字符串判空等帮助类
+                  *、UIViewControllerHelper：视图控制器帮助类
+                  *、NSOperationQueueHelper：任务队列帮助类
                   
 
                    A longer description of CJBaseHelper in Markdown format.
@@ -24,7 +25,7 @@ Pod::Spec.new do |s|
 
   s.platform     = :ios, "7.0"
 
-  s.source       = { :git => "https://github.com/dvlproad/CJUIKit.git", :tag => "CJBaseHelper_0.0.1" }
+  s.source       = { :git => "https://github.com/dvlproad/CJUIKit.git", :tag => "CJBaseHelper_0.0.2" }
   # s.source_files  = "CJBaseUtil/*.{h,m}"
   # s.resources = "CJBaseUtil/**/*.{png}"
   s.frameworks = 'UIKit'

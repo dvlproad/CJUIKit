@@ -96,7 +96,7 @@ DEPENDENCIES:
 SPEC REPOS:
   https://gitee.com/dvlproad/dvlproadSpecs:
     - IjinbuNetwork
-  https://github.com/CocoaPods/Specs.git:
+  https://github.com/cocoapods/specs.git:
     - AFNetworking
     - CJFile
     - CJMedia
@@ -149,6 +149,6 @@ SPEC CHECKSUMS:
   WebViewJavascriptBridge: 7f5bc4d3581e672e8f32bd0f812d54bc69bb8e29
   YYText: 5c461d709e24d55a182d1441c41dc639a18a4849
 
-PODFILE CHECKSUM: a8f471b02b8357350d0518d6dc4128edfad43bc4
+PODFILE CHECKSUM: 2803ace92b5b2290d4452cc7e2b126126eeb6813
 
-COCOAPODS: 1.5.0
+COCOAPODS: 1.5.3
