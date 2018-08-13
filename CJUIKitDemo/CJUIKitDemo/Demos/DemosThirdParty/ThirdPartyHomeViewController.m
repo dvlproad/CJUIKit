@@ -8,8 +8,6 @@
 
 #import "ThirdPartyHomeViewController.h"
 
-#import "CJModuleModel.h"
-
 //模型转换
 #import "MJExtensionViewController.h"
 

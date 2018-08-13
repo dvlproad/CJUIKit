@@ -8,8 +8,6 @@
 
 #import "ScrollViewHomeViewController.h"
 
-#import "CJModuleModel.h"
-
 //UIScrollView
 #import "SvDemo_Refresh.h"
 #import "ScrollViewController.h"

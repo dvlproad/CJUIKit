@@ -8,8 +8,6 @@
 
 #import "FoundatioHomeViewController.h"
 
-#import "CJModuleModel.h"
-
 #import "EncryptStringViewController.h"
 #import "AttributedStringViewController.h"
 #import "ValidateStringViewController.h"

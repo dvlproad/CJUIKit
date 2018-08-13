@@ -8,8 +8,6 @@
 
 #import "UtilHomeViewController.h"
 
-#import "CJModuleModel.h"
-
 //弹窗
 #import "ToastViewController.h"
 #import "AlertViewController.h"

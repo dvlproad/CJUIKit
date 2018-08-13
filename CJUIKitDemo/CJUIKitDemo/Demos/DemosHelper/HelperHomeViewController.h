@@ -7,10 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+
 #ifdef CJTESTPOD
 #import "CJSectionDataModel.h"
+#import "CJModuleModel.h"
 #else
 #import <CJBaseUtil/CJSectionDataModel.h> //在CJDataUtil中
+#import <CJBaseUtil/CJModuleModel.h> //在CJDataUtil中
 #endif
 
 @interface HelperHomeViewController : UIViewController {

@@ -8,8 +8,6 @@
 
 #import "HomeViewController.h"
 
-#import "CJModuleModel.h"
-
 #import "HelperHomeViewController.h"
 
 
