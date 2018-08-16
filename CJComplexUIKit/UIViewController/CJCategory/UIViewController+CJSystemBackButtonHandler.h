@@ -7,7 +7,7 @@
 //
 //  可参考:
 //  ①[获取导航栏返回按钮的点击事件](http://www.jianshu.com/p/90a104ac6633)
-//  ②:[导航栏返回按钮事件](http://www.jianshu.com/p/25fd027916fa)
+//  ②[导航栏返回按钮事件](http://www.jianshu.com/p/25fd027916fa)
 
 #import <UIKit/UIKit.h>
 

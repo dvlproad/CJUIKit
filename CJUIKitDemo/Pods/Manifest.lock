@@ -93,35 +93,6 @@ DEPENDENCIES:
   - WebViewJavascriptBridge (~> 6.0.2)
   - YYText (~> 1.0.7)
 
-SPEC REPOS:
-  https://gitee.com/dvlproad/dvlproadSpecs:
-    - IjinbuNetwork
-  https://github.com/cocoapods/specs.git:
-    - AFNetworking
-    - CJFile
-    - CJMedia
-    - CJNetwork
-    - CJPicker
-    - DZNEmptyDataSet
-    - JGActionSheet
-    - Mantle
-    - Masonry
-    - MBProgressHUD
-    - MJExtension
-    - MJPopupViewController
-    - MJRefresh
-    - NJKWebViewProgress
-    - OpenUDID
-    - PinYin4Objc
-    - PureLayout
-    - SAMKeychain
-    - SDCycleScrollView
-    - SDWebImage
-    - Shimmer
-    - SVProgressHUD
-    - WebViewJavascriptBridge
-    - YYText
-
 SPEC CHECKSUMS:
   AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
   CJFile: 6c1e6d55b3b94e8afbaa9f413f131301d15fdc48
@@ -151,4 +122,4 @@ SPEC CHECKSUMS:
 
 PODFILE CHECKSUM: 2803ace92b5b2290d4452cc7e2b126126eeb6813
 
-COCOAPODS: 1.5.3
+COCOAPODS: 1.4.0

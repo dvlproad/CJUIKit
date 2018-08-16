@@ -75,10 +75,11 @@
 #pragma mark - FindBelongViewControllerForView
 + (nullable UIViewController *)findBelongViewControllerForView:(UIView *)view {
     UIResponder *responder = view;
-    while ((responder = [responder nextResponder]))
+    while ((responder = [responder nextResponder])) {
         if ([responder isKindOfClass: [UIViewController class]]) {
             return (UIViewController *)responder;
         }
+    }
     return nil;
 }
 

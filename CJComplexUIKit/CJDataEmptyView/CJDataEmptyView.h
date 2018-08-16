@@ -1,5 +1,5 @@
 //
-//  DemoEmptyView.h
+//  CJDataEmptyView.h
 //  CJUIKitDemo
 //
 //  Created by ciyouzen on 2016/2/6.
@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <Masonry/Masonry.h>
 
-@interface DemoEmptyView : UIView {
+@interface CJDataEmptyView : UIView {
     
 }
 @property (nonatomic, strong) UIImage *image;

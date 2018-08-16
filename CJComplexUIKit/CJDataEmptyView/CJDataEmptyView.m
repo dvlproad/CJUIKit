@@ -1,14 +1,14 @@
 //
-//  DemoEmptyView.m
+//  CJDataEmptyView.m
 //  CJUIKitDemo
 //
 //  Created by ciyouzen on 2016/2/6.
 //  Copyright © 2016年 dvlproad. All rights reserved.
 //
 
-#import "DemoEmptyView.h"
+#import "CJDataEmptyView.h"
 
-@interface DemoEmptyView ()
+@interface CJDataEmptyView ()
 
 @property (nonatomic, weak) UIImageView *imageView;
 @property (nonatomic, weak) UILabel *titleLabel;
@@ -19,7 +19,7 @@
 
 
 
-@implementation DemoEmptyView
+@implementation CJDataEmptyView
 
 - (instancetype)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
@@ -31,7 +31,7 @@
 
 - (void)setupViews {
     UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectZero];
-    imageView.image = [UIImage imageNamed:@"jiazhaishibai_bg.png"];
+    imageView.image = [UIImage imageNamed:@"cjNetworkDisable.png"];
     [self addSubview:imageView];
     [imageView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerX.mas_equalTo(self).mas_offset(0);
@@ -103,11 +103,11 @@
     
     if (message.length > 0) {
         [self.button mas_updateConstraints:^(MASConstraintMaker *make) {
-            make.top.mas_equalTo(self.messageLabel.mas_bottom).mas_offset(31);
+            make.top.mas_equalTo(self.titleLabel.mas_bottom).mas_offset(31);
         }];
     } else {
         [self.button mas_updateConstraints:^(MASConstraintMaker *make) {
-            make.top.mas_equalTo(self.titleLabel.mas_bottom).mas_offset(31);
+            make.top.mas_equalTo(self.titleLabel.mas_bottom).mas_offset(8);
         }];
     }
 }

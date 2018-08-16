@@ -7,7 +7,7 @@
 //
 
 #import "BBXPassengerEmptyViewController.h"
-#import "DemoEmptyView.h"
+#import "CJDataEmptyView.h"
 
 #import <SVProgressHUD/SVProgressHUD.h>
 #import "AppInfoManager.h"
@@ -20,7 +20,7 @@
 @property (nonatomic, strong) UIScrollView *scrollView;
 @property (nonatomic, strong) UIView *containerView;
 
-@property (nonatomic, strong) DemoEmptyView *emptyView;
+@property (nonatomic, strong) CJDataEmptyView *emptyView;
 
 @property (nonatomic, assign, readonly) BOOL isNetworkWeb;   /**< 是否是网络网页，否则是本地网页 */
 
@@ -101,9 +101,9 @@
 }
 
 #pragma mark - LazyLoad
-- (DemoEmptyView *)emptyView {
+- (CJDataEmptyView *)emptyView {
     if (_emptyView == nil) {
-        DemoEmptyView *emptyView = [[DemoEmptyView alloc] init];
+        CJDataEmptyView *emptyView = [[CJDataEmptyView alloc] init];
         emptyView.image = [UIImage imageNamed:@"currency_icon_network"];
         emptyView.title = NSLocalizedString(@"数据加载失败，请重新加载...", nil);
         emptyView.buttonTitle = NSLocalizedString(@"刷新", nil);

@@ -1,5 +1,5 @@
 //
-//  BaseWebViewController.h
+//  CJBaseWebViewController.h
 //  CJUIKitDemo
 //
 //  Created by ciyouzen on 2018/2/6.
@@ -9,10 +9,10 @@
 //  参考：[WKWebView详解](https://www.cnblogs.com/Mr-Ygs/p/6061869.html)
 //       [关于UIWebView的总结](http://blog.devtang.com/2012/03/24/talk-about-uiwebview-and-phonegap/)
 //  常见问题：
+//  注：如果发现地址等都正常，但是页面还是显示无数据页，请检查info.plist中的App Transport Security Settings
 //  ①网页无法定位：解决方法info.plist添加Privacy - Microphone Usage Description等权限即可
 //  ②电话无法拨打：解决方法URL拦截, scheme等于tel，app来拨打
-//  ③软件无法拨打：解决方法URL拦截, scheme等于itms-services，[UIApplication sharedApplication] openURL
-//  ④微信无法被调起：解决方法URL拦截, scheme等于weixin，[UIApplication sharedApplication] openURL
+//  ③微信等无法被调起：解决方法URL拦截, scheme等于weixin，[UIApplication sharedApplication] openURL
 
 #import <UIKit/UIKit.h>
 #import <Masonry/Masonry.h>
@@ -24,7 +24,7 @@
 #import "CJEmptyViewProtocol.h"
 
 ///只有实现CJEmptyViewProtocol中的方法才能显示空白时候的页面
-@interface BaseWebViewController : UIViewController <CJEmptyViewProtocol> {
+@interface CJBaseWebViewController : UIViewController <CJEmptyViewProtocol> {
     
 }
 //非必选：页面加载完成之后执行的方法

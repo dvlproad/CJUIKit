@@ -100,7 +100,7 @@
         sectionDataModel.theme = @"EmptyView相关";
         {
             CJModuleModel *baseScrollViewModule = [[CJModuleModel alloc] init];
-            baseScrollViewModule.title = @"DemoEmptyView";
+            baseScrollViewModule.title = @"CJDataEmptyView";
             baseScrollViewModule.classEntry = [BBXPassengerEmptyViewController class];
             [sectionDataModel.values addObject:baseScrollViewModule];
         }
@@ -122,7 +122,7 @@
         {
             CJModuleModel *webViewModule = [[CJModuleModel alloc] init];
             webViewModule.title = @"Web（Local & No Need Empty）";
-            webViewModule.classEntry = [BaseWebViewController class];
+            webViewModule.classEntry = [CJBaseWebViewController class];
             [sectionDataModel.values addObject:webViewModule];
         }
         [sectionDataModels addObject:sectionDataModel];
@@ -281,7 +281,7 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    NSLog(@"didSelectRowAtIndexPath = %ld %ld", indexPath.section, indexPath.row);
+    //NSLog(@"didSelectRowAtIndexPath = %ld %ld", indexPath.section, indexPath.row);
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
     CJSectionDataModel *sectionDataModel = [self.sectionDataModels objectAtIndex:indexPath.section];
@@ -319,7 +319,7 @@
                 NSString *appVersion = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"];
                 NSString *jsString = [NSString stringWithFormat:@"setEdition('V%@')", appVersion];
                 [webView evaluateJavaScript:jsString completionHandler:^(id _Nullable object, NSError * _Nullable error) {
-                    NSLog(@"执行完成");
+                    NSLog(@"OC执行JS完成");
                 }];
             }
         };
@@ -327,8 +327,8 @@
         [self.navigationController pushViewController:webViewController animated:YES];
         return;
         
-    } else if ([clsString isEqualToString:NSStringFromClass([BaseWebViewController class])]) {
-        BaseWebViewController *webViewController = [[BaseWebViewController alloc] init];
+    } else if ([clsString isEqualToString:NSStringFromClass([CJBaseWebViewController class])]) {
+        CJBaseWebViewController *webViewController = [[CJBaseWebViewController alloc] init];
         webViewController.view.backgroundColor = [UIColor whiteColor];
         webViewController.title = NSLocalizedString(moduleModel.title, nil);
         webViewController.hidesBottomBarWhenPushed = YES;

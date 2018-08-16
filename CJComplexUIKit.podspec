@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
   #验证方法：pod lib lint CJComplexUIKit.podspec --allow-warnings --use-libraries --verbose
   s.name         = "CJComplexUIKit"
-  s.version      = "0.0.10"
+  s.version      = "0.1.0"
   s.summary      = "自定义的稍微复杂的UI"
   s.homepage     = "https://github.com/dvlproad/CJUIKit"
 
@@ -27,9 +27,9 @@ Pod::Spec.new do |s|
 
   s.author   = { "dvlproad" => "" }
 
-  s.platform     = :ios, "7.0"
+  s.platform     = :ios, "8.0"
  
-  s.source       = { :git => "https://github.com/dvlproad/CJUIKit.git", :tag => "CJComplexUIKit_0.0.10" }
+  s.source       = { :git => "https://github.com/dvlproad/CJUIKit.git", :tag => "CJComplexUIKit_0.1.0" }
   s.source_files  = "CJComplexUIKit/*.{h,m}"
 
   s.frameworks = "UIKit"
@@ -43,25 +43,33 @@ Pod::Spec.new do |s|
   
   # UIViewController
   s.subspec 'UIViewController' do |ss|
-    ss.subspec 'Category' do |sss|
-      sss.source_files = "CJComplexUIKit/UIViewController/Category/**/*.{h,m}"
+    ss.subspec 'CJCategory' do |sss|
+      sss.source_files = "CJComplexUIKit/UIViewController/CJCategory/**/*.{h,m}"
     end
 
-    ss.subspec 'ProgressWebViewController' do |sss|
-      sss.source_files = "CJComplexUIKit/UIViewController/ProgressWebViewController/**/*.{h,m}"
+    # ss.subspec 'ProgressWebViewController' do |sss|
+    #   sss.source_files = "CJComplexUIKit/UIViewController/ProgressWebViewController/**/*.{h,m}"
 
-      sss.dependency 'Masonry'
-      sss.dependency 'SVProgressHUD'
-      sss.dependency 'NJKWebViewProgress'
-    end
+    #   sss.dependency 'Masonry'
+    #   sss.dependency 'SVProgressHUD'
+    #   sss.dependency 'NJKWebViewProgress'
+    # end
 
-    ss.subspec 'BaseWebViewController' do |sss|
-      sss.source_files = "CJComplexUIKit/UIViewController/BaseWebViewController/**/*.{h,m}"
+    ss.subspec 'CJBaseWebViewController' do |sss|
+      sss.source_files = "CJComplexUIKit/UIViewController/CJBaseWebViewController/**/*.{h,m}"
 
       sss.dependency 'Masonry'
       sss.dependency 'SVProgressHUD'
       sss.dependency 'CJBaseUtil/CJWebUtil'
     end
+  end
+
+  s.subspec 'CJDataEmptyView' do |ss|
+    ss.source_files = "CJComplexUIKit/CJDataEmptyView/**/*.{h,m}"
+    ss.resources = "CJComplexUIKit/CJDataEmptyView/**/*.{png}"
+
+    #多个依赖就写多行
+    ss.dependency 'Masonry'
   end
 
 

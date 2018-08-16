@@ -1,12 +1,12 @@
 //
-//  BaseWebViewController.m
+//  CJBaseWebViewController.m
 //  CJUIKitDemo
 //
 //  Created by ciyouzen on 2018/2/6.
 //  Copyright © 2018年 dvlproad. All rights reserved.
 //
 
-#import "BaseWebViewController.h"
+#import "CJBaseWebViewController.h"
 
 #ifdef CJTESTPOD
     #import "CJWebUtil.h"
@@ -17,7 +17,7 @@
 
 #import <SVProgressHUD/SVProgressHUD.h>
 
-@interface BaseWebViewController ()
+@interface CJBaseWebViewController ()
 
 @property (nonatomic, copy) void (^showEmptyViewBlock)(NSString *message);//显示空白页的方法
 @property (nonatomic, copy) void (^hideEmptyViewBlock)(void);//隐藏空白页的方法
@@ -25,14 +25,14 @@
 @end
 
 
-@interface BaseWebViewController () <WKNavigationDelegate>
+@interface CJBaseWebViewController () <WKNavigationDelegate>
 
 @property (nonatomic, strong) WKWebView *webView;
 @property (nonatomic, strong) UIProgressView *progressView;
 
 @end
 
-@implementation BaseWebViewController
+@implementation CJBaseWebViewController
 
 - (void)dealloc
 {
@@ -45,6 +45,19 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
+    
+    CGFloat progressViewMinX = 0;
+    CGRect statusBarFrame = [[UIApplication sharedApplication] statusBarFrame];
+    CGFloat statusBarHeight = CGRectGetHeight(statusBarFrame);
+    progressViewMinX += statusBarHeight;
+    if (self.navigationController) {
+        CGRect navigationBarFrame = self.navigationController.navigationBar.frame;
+        CGFloat navigationBarHeight = CGRectGetHeight(navigationBarFrame);
+        progressViewMinX += navigationBarHeight;
+    }
+    [self.progressView mas_updateConstraints:^(MASConstraintMaker *make) {
+        make.top.mas_equalTo(self.view).mas_offset(progressViewMinX);
+    }];
     
     /*
     请在子类中调用
@@ -65,7 +78,7 @@
 - (void)setupViews {
     self.view.backgroundColor = [UIColor whiteColor];
     
-    self.automaticallyAdjustsScrollViewInsets = NO; //若无导航栏的情况下，webview默认距离顶部20；所以要加这一行
+//    self.automaticallyAdjustsScrollViewInsets = NO; //若无导航栏的情况下，webview默认距离顶部20；所以要加这一行
     
     [self.view addSubview:self.webView];
     [self.webView mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -77,13 +90,13 @@
     /* progressView */
     UIProgressView *progressView = [[UIProgressView alloc] initWithFrame:CGRectZero];
     progressView.backgroundColor = [UIColor whiteColor];
-    progressView.progressTintColor= [UIColor redColor];//设置已过进度部分的颜色
+    progressView.progressTintColor= [UIColor greenColor];//设置已过进度部分的颜色
     progressView.trackTintColor= [UIColor lightGrayColor];//设置未过进度部分的颜色
     [self.view addSubview:progressView];
     [progressView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.right.mas_equalTo(self.view);
-        make.top.mas_equalTo(self.view).mas_offset(20);
-        make.height.mas_equalTo(0.5);
+        make.top.mas_equalTo(self.view).mas_offset(0);
+        make.height.mas_equalTo(2);
     }];
     self.progressView = progressView;
 }
@@ -96,6 +109,7 @@
  *  @param networkEnable    是否有网
  */
 - (void)reloadNetworkWebWithUrl:(NSString *)requestUrl networkEnable:(BOOL)networkEnable {
+    //注：如果发现地址等都正常，但是页面还是显示无数据页，请检查info.plist中的App Transport Security Settings
     if (networkEnable == NO) {
         [SVProgressHUD show];
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
@@ -135,9 +149,9 @@
             [self.progressView setProgress:self.webView.estimatedProgress animated:YES];
             if(self.webView.estimatedProgress >= 1.0f) {
                 [UIView animateWithDuration:0.5f delay:0.3f options:UIViewAnimationOptionCurveEaseOut animations:^{
-                    [self.progressView setAlpha:0.0f];
+//                    [self.progressView setAlpha:0.0f];
                 } completion:^(BOOL finished) {
-                    [self.progressView setProgress:0.0f animated:NO];
+//                    [self.progressView setProgress:0.0f animated:NO];
                 }];
             }
         } else if ([keyPath isEqualToString:@"title"]) { //网页title
@@ -164,7 +178,7 @@
 
 //拦截URL:URL请求被WKNavigationDelegate中的代理方法拦截。也就是JS调用了OC。JS 调用OC 方法后，有的操作可能需要将结果返回给JS。这时候就是OC 调用JS 方法的场景。OC调用JS的方法为evaluateJavaScript:completionHandler:
 - (void)webView:(WKWebView *)webView decidePolicyForNavigationAction:(WKNavigationAction *)navigationAction decisionHandler:(void (^)(WKNavigationActionPolicy))decisionHandler {
-    NSLog(@"页面跳转的代理方法--在发送请求之前，决定是否跳转");
+    //NSLog(@"页面跳转的代理方法--在发送请求之前，决定是否跳转");
     
     NSURL *URL = navigationAction.request.URL;
     NSString *scheme = [URL scheme];
@@ -179,7 +193,7 @@
         
         decisionHandler(WKNavigationActionPolicyCancel);
         
-    } else if ([scheme isEqualToString:@"weixin"] || [scheme isEqualToString:@"itms-services"]) {
+    } else if ([scheme isEqualToString:@"weixin"]) {
         if ([[UIApplication sharedApplication] canOpenURL:navigationAction.request.URL])
         {
             if ([[UIApplication sharedApplication] respondsToSelector:@selector(openURL:options:completionHandler:)]) {

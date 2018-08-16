@@ -28,7 +28,7 @@ static CGFloat kPeriodDuration = 5.0f;
     [super viewDidDisappear:animated];
     
     //全局定时器的时候才用，要不然就自己创建定时器好了
-    [[CJTimerManager sharedInstance] invalidateTimerWithCompleteBlock:nil];
+//    [[CJTimerManager sharedInstance] invalidateTimerWithCompleteBlock:nil];
     
 //    if (self.timer) {
 //        [self.timer invalidate];

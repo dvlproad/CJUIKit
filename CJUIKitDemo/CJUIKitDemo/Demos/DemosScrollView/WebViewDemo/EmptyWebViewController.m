@@ -32,7 +32,7 @@
     //显示空白页的方法
     void (^showEmptyViewBlock)(NSString *message) = ^ (NSString *message) {
         if (self.emptyView == nil) {
-            DemoEmptyView *emptyView = [[DemoEmptyView alloc] initWithFrame:CGRectZero];
+            CJDataEmptyView *emptyView = [[CJDataEmptyView alloc] initWithFrame:CGRectZero];
             emptyView.image = [UIImage imageNamed:@"currency_icon_network"];
             emptyView.title = NSLocalizedString(@"数据加载失败，请重新加载...", nil);
             emptyView.buttonTitle = NSLocalizedString(@"刷新", nil);

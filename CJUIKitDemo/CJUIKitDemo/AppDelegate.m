@@ -41,9 +41,27 @@
     
     // Override point for customization after application launch.
     [self configureDefaultNavigationBarAppearance];
+    [self adjustDevice];
     
     return YES;
 }
+
+- (void)adjustDevice
+{
+//    if (@available(iOS 11.0, *)) {
+//        [UIScrollView appearance].contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
+//        [UITableView appearance].contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
+//        [UICollectionView appearance].contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
+//        [UIWebView appearance].scrollView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
+//        
+//        [UITableView appearance].estimatedRowHeight = 0;
+//        [UITableView appearance].estimatedSectionHeaderHeight = 0;
+//        [UITableView appearance].estimatedSectionFooterHeight = 0;
+//    } else {
+//        // Fallback on earlier versions
+//    }
+}
+
 
 ///配置导航栏
 - (void)configureDefaultNavigationBarAppearance {
