@@ -177,20 +177,20 @@
             });
             
         } else if (indexPath.row == 2) {
-            //TODO:
-            NSString *registeringText = NSLocalizedString(@"照片识别中，请稍等...", nil);
-            MBProgressHUD *registerStateHUD = [CJToast createChrysanthemumHUDWithRightMessage:registeringText toView:nil];
-            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-                BOOL isSuccess  = rand()%3;
-                if (isSuccess) {
-                    [registerStateHUD hideAnimated:YES afterDelay:0];
-                } else {
-                    NSString *registerFailureMessage = NSLocalizedString(@"识别成功", nil);
-                    registerStateHUD.label.text = registerFailureMessage;
-                    registerStateHUD.mode = MBProgressHUDModeText;
-                    [registerStateHUD hideAnimated:YES afterDelay:1];
-                }
-            });
+//            TODO:
+//            NSString *registeringText = NSLocalizedString(@"照片识别中，请稍等...", nil);
+//            MBProgressHUD *registerStateHUD = [CJToast createChrysanthemumHUDWithRightMessage:registeringText toView:nil];
+//            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+//                BOOL isSuccess  = rand()%3;
+//                if (isSuccess) {
+//                    [registerStateHUD hideAnimated:YES afterDelay:0];
+//                } else {
+//                    NSString *registerFailureMessage = NSLocalizedString(@"识别成功", nil);
+//                    registerStateHUD.label.text = registerFailureMessage;
+//                    registerStateHUD.mode = MBProgressHUDModeText;
+//                    [registerStateHUD hideAnimated:YES afterDelay:1];
+//                }
+//            });
         }
     }
 }

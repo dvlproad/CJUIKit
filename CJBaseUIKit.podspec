@@ -1,24 +1,39 @@
 Pod::Spec.new do |s|
   #验证方法：pod lib lint CJBaseUIKit.podspec --allow-warnings --use-libraries --verbose
   s.name         = "CJBaseUIKit"
-  s.version      = "0.2.2"
+  s.version      = "0.2.3"
   s.summary      = "自定义的基础UI"
   s.homepage     = "https://github.com/dvlproad/CJUIKit"
 
   s.description  = <<-DESC
-                  *、UIView 之CJPopupAction： UIView的类别，用来实现UIView弹出popupView的一个Uiew的类别
-                  *、CJImageView(包含CJBadgeImageView),用于设置imageView的title和badge;
-                  *、UITextField：包含文本框类别及新的自定义文本框
-                  *、CJTextView：类似微信文本输入框实现
-                  *、已在CJMJRefreshComponent中包含pod 'MJRefresh', '~> 3.1.12'
-                  *、UIColor+CJHex：用来通过十六进制来设置颜色。 支持@“#123456”、 @“0X123456”、 @“123456”三种格式
-                  *、UIImage：
-                  *、CJSlider
-                  #、CJBaseScrollView：自定义的基础滚动视图
-                  1、CJBaseTableViewCell：基础的TableViewCell;
-                  2、CJBaseCollectionViewCell：基础的CollectionViewCell;
-                  3、MyEqualCellSizeCollectionView：一个只有一个分区且分区中的每个cell大小相等的集合视图(cell的大小可通过方法①设置cell的固定大小和方法②通过设置每行最大显示的cell个数获得)
-                  4、CJOpenCollectionView：可展开的集合视图
+                 - CJBaseUIKit/UIColor：颜色：用来通过十六进制来设置颜色。 支持@“#123456”、 @“0X123456”、 @“123456”三种格式
+                 - CJBaseUIKit/UIImage：图片
+                 - CJBaseUIKit/UINavigationBar：导航栏
+                 - CJBaseUIKit/UIView：视图
+                 - CJBaseUIKit/UIView/CJDragAction：视图拖动
+                 - CJBaseUIKit/UIView/CJShakeAction：视图抖动
+                 - CJBaseUIKit/UIView/CJPopupAction：视图弹窗：UIView的类别，用来实现UIView弹出popupView的一个Uiew的类别
+                 - CJBaseUIKit/UIView/CJGestureRecognizer：视图手势
+                 - CJBaseUIKit/UIWindow：窗口
+                 - CJBaseUIKit/UIButton：按钮
+                 - CJBaseUIKit/CJImageView：图片视图(包含CJBadgeImageView),用于设置imageView的title和badge
+                 - CJBaseUIKit/UITextField：文本视图：包含文本框类别及新的自定义文本框
+                 - CJBaseUIKit/CJTextView：文本视图：类似微信文本输入框实现
+                 - CJBaseUIKit/UIToolbar：工具栏
+                 - CJBaseUIKit/CJScrollView：滚动视图：自定义的基础滚动视图
+                 - CJBaseUIKit/CJTableView：列表视图
+                 - CJBaseUIKit/CJTableView/CJBaseTableViewCell：基础的TableViewCell
+                 - CJBaseUIKit/CJTableView/CJBaseTableViewHeaderFooterView
+                 - CJBaseUIKit/CJCollectionView：集合视图
+                 - CJBaseUIKit/CJCollectionView/CJBaseCollectionViewCell：基础的CollectionViewCell
+                 - CJBaseUIKit/CJCollectionView/CJCollectionViewLayout
+                 - CJBaseUIKit/CJCollectionView/MyEqualCellSizeCollectionView：一个只有一个分区且分区中的每个cell大小相等的集合视图(cell的大小可通过方法①设置cell的固定大小和方法②通过设置每行最大显示的cell个数获得)
+                 - CJBaseUIKit/CJCollectionView/CJOpenCollectionView：可展开的集合视图
+                 - CJBaseUIKit/CJSlider：滑块
+                 - CJBaseUIKit/CJRefreshView：刷新
+                 - CJBaseUIKit/CJMJRefreshComponent：已包含pod 'MJRefresh'
+                 - CJBaseUIKit/CJToast：Toast
+                 - CJBaseUIKit/CJAlert：Alert
 
                    A longer description of CJPopupAction in Markdown format.
 
@@ -39,9 +54,9 @@ Pod::Spec.new do |s|
 
   s.author   = { "dvlproad" => "" }
 
-  s.platform     = :ios, "7.0"
+  s.platform     = :ios, "8.0"
  
-  s.source       = { :git => "https://github.com/dvlproad/CJUIKit.git", :tag => "CJBaseUIKit_0.2.2" }
+  s.source       = { :git => "https://github.com/dvlproad/CJUIKit.git", :tag => "CJBaseUIKit_0.2.3" }
   s.source_files  = "CJBaseUIKit/*.{h,m}"
 
   s.frameworks = "UIKit"

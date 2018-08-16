@@ -160,40 +160,40 @@
     return hud;
 }
 
-/* 完整的描述请参见文件头部 */
-+ (MBProgressHUD *)createChrysanthemumHUDWithRightMessage:(NSString *)message toView:(UIView *)view
-{
-    if (view == nil) {
-        view = [UIApplication sharedApplication].keyWindow;
-    }
-    
-    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:view animated:YES];
-    
-    // Set the custom view mode to show any view.
-    hud.mode = MBProgressHUDModeCustomView;
-    // Set an image view with a checkmark.
-    
-    
-    UIView *customView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 400, 200)];
-    customView.backgroundColor = [UIColor redColor];
-    
-    UIImage *image = [[UIImage imageNamed:@"CJToast_success"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
-    UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 100-40/2, 40, 40)];
-    imageView.image = image;
-    [customView addSubview:imageView];
-    
-    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(40, 100-30/2, 140, 30)];
-    label.backgroundColor = [UIColor orangeColor];
-    label.text = message;
-    label.textAlignment = NSTextAlignmentCenter;
-    [customView addSubview:label];
-   
-    hud.customView = customView;
-    hud.square = YES;
-    hud.label.text = message;
-    
-    return hud;
-}
+///* 完整的描述请参见文件头部 */
+//+ (MBProgressHUD *)createChrysanthemumHUDWithRightMessage:(NSString *)message toView:(UIView *)view
+//{
+//    if (view == nil) {
+//        view = [UIApplication sharedApplication].keyWindow;
+//    }
+//    
+//    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:view animated:YES];
+//    
+//    // Set the custom view mode to show any view.
+//    hud.mode = MBProgressHUDModeCustomView;
+//    // Set an image view with a checkmark.
+//    
+//    
+//    UIView *customView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 400, 200)];
+//    customView.backgroundColor = [UIColor redColor];
+//    
+//    UIImage *image = [[UIImage imageNamed:@"CJToast_success"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+//    UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 100-40/2, 40, 40)];
+//    imageView.image = image;
+//    [customView addSubview:imageView];
+//    
+//    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(40, 100-30/2, 140, 30)];
+//    label.backgroundColor = [UIColor orangeColor];
+//    label.text = message;
+//    label.textAlignment = NSTextAlignmentCenter;
+//    [customView addSubview:label];
+//   
+//    hud.customView = customView;
+//    hud.square = YES;
+//    hud.label.text = message;
+//    
+//    return hud;
+//}
 
 
 #pragma mark - HUD
