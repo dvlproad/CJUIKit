@@ -78,12 +78,10 @@
 - (void)setupViews {
     self.view.backgroundColor = [UIColor whiteColor];
     
-//    self.automaticallyAdjustsScrollViewInsets = NO; //若无导航栏的情况下，webview默认距离顶部20；所以要加这一行
-    
     [self.view addSubview:self.webView];
     [self.webView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.right.mas_equalTo(self.view);
-        make.top.mas_equalTo(self.view).mas_offset(20);
+        make.top.mas_equalTo(self.view).mas_offset(0);
         make.bottom.mas_equalTo(self.view);
     }];
     

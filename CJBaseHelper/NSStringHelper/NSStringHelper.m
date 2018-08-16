@@ -22,7 +22,7 @@
     if (!string ||
         string == nil ||
         string == NULL ||
-        (NSNull *)self == [NSNull null] ||
+        (NSNull *)string == [NSNull null] ||
         [string isKindOfClass:[NSNull class]] ||
         [string isEqualToString:@"(null)"] ||
         [string isEqualToString:@"<null>"] ||
