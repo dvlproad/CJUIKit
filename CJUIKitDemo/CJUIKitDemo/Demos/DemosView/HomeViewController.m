@@ -17,6 +17,7 @@
 //image
 #import "ImageViewController.h"
 
+//UIView
 #import "SampleViewController.h"
 //ViewDrag
 #import "DragViewController.h"
@@ -28,7 +29,9 @@
 //ViewAnimate
 #import "ViewAnimateViewController.h"
 
+//UIWindow
 #import "FloatingWindowViewController.h"
+#import "ViewController1.h"
 
 #import "ButtonViewController.h"
 
@@ -137,47 +140,25 @@
         [sectionDataModels addObject:sectionDataModel];
     }
     
-    //UIViewController
-    {
-        CJSectionDataModel *sectionDataModel = [[CJSectionDataModel alloc] init];
-        sectionDataModel.theme = @"UIViewController相关";
-        {
-            CJModuleModel *ViewCategoryModule = [[CJModuleModel alloc] init];
-            ViewCategoryModule.title = @"BackBarButtonItem (返回按钮事件)";
-            ViewCategoryModule.classEntry = [SampleViewController class];
-            [sectionDataModel.values addObject:ViewCategoryModule];
-        }
-        [sectionDataModels addObject:sectionDataModel];
-    }
     
-    //UINavigationBar
+    //UIWindow
     {
         CJSectionDataModel *sectionDataModel = [[CJSectionDataModel alloc] init];
-        sectionDataModel.theme = @"UINavigationBar相关";
+        sectionDataModel.theme = @"UIWindow";
         {
-            CJModuleModel *UINavigationBarModuleModel1 = [[CJModuleModel alloc] init];
-            UINavigationBarModuleModel1.title = @"UINavigationBar(导航栏的设置)";
-            UINavigationBarModuleModel1.classEntry = [NavigationBarViewController class];
-            [sectionDataModel.values addObject:UINavigationBarModuleModel1];
+            CJModuleModel *FloatingWindowModule = [[CJModuleModel alloc] init];
+            FloatingWindowModule.title = @"FloatingWindow（悬浮视图）";
+            FloatingWindowModule.classEntry = [FloatingWindowViewController class];
+            [sectionDataModel.values addObject:FloatingWindowModule];
         }
+        
         {
-            CJModuleModel *UINavigationBarModuleModel1 = [[CJModuleModel alloc] init];
-            UINavigationBarModuleModel1.title = @"UINavigationBar(去除导航条最下面的横线)";
-            UINavigationBarModuleModel1.classEntry = [NavigationBarRemoveUnderlineViewController class];
-            [sectionDataModel.values addObject:UINavigationBarModuleModel1];
+            CJModuleModel *FloatingWindowModule = [[CJModuleModel alloc] init];
+            FloatingWindowModule.title = @"FloatingWindow（悬浮视图）";
+            FloatingWindowModule.classEntry = [ViewController1 class];
+            [sectionDataModel.values addObject:FloatingWindowModule];
         }
-        {
-            CJModuleModel *UINavigationBarModuleModel1 = [[CJModuleModel alloc] init];
-            UINavigationBarModuleModel1.title = @"UINavigationBar(常见的导航栏背景色改变隐藏)";
-            UINavigationBarModuleModel1.classEntry = [NavigationBarChangeBGViewController class];
-            [sectionDataModel.values addObject:UINavigationBarModuleModel1];
-        }
-        {
-            CJModuleModel *UINavigationBarModuleModel2 = [[CJModuleModel alloc] init];
-            UINavigationBarModuleModel2.title = @"UINavigationBar(类似斗鱼的导航栏移动隐藏)";
-            UINavigationBarModuleModel2.classEntry = [NavigationBarChangePositonViewController class];
-            [sectionDataModel.values addObject:UINavigationBarModuleModel2];
-        }
+        
         
         [sectionDataModels addObject:sectionDataModel];
     }
@@ -223,6 +204,52 @@
             showDropDownViewModule.classEntry = [ShowDropDownViewController class];
             [sectionDataModel.values addObject:showDropDownViewModule];
         }
+        [sectionDataModels addObject:sectionDataModel];
+    }
+    
+    
+    //UIViewController
+    {
+        CJSectionDataModel *sectionDataModel = [[CJSectionDataModel alloc] init];
+        sectionDataModel.theme = @"UIViewController相关";
+        {
+            CJModuleModel *ViewCategoryModule = [[CJModuleModel alloc] init];
+            ViewCategoryModule.title = @"BackBarButtonItem (返回按钮事件)";
+            ViewCategoryModule.classEntry = [SampleViewController class];
+            [sectionDataModel.values addObject:ViewCategoryModule];
+        }
+        [sectionDataModels addObject:sectionDataModel];
+    }
+    
+    //UINavigationBar
+    {
+        CJSectionDataModel *sectionDataModel = [[CJSectionDataModel alloc] init];
+        sectionDataModel.theme = @"UINavigationBar相关";
+        {
+            CJModuleModel *UINavigationBarModuleModel1 = [[CJModuleModel alloc] init];
+            UINavigationBarModuleModel1.title = @"UINavigationBar(导航栏的设置)";
+            UINavigationBarModuleModel1.classEntry = [NavigationBarViewController class];
+            [sectionDataModel.values addObject:UINavigationBarModuleModel1];
+        }
+        {
+            CJModuleModel *UINavigationBarModuleModel1 = [[CJModuleModel alloc] init];
+            UINavigationBarModuleModel1.title = @"UINavigationBar(去除导航条最下面的横线)";
+            UINavigationBarModuleModel1.classEntry = [NavigationBarRemoveUnderlineViewController class];
+            [sectionDataModel.values addObject:UINavigationBarModuleModel1];
+        }
+        {
+            CJModuleModel *UINavigationBarModuleModel1 = [[CJModuleModel alloc] init];
+            UINavigationBarModuleModel1.title = @"UINavigationBar(常见的导航栏背景色改变隐藏)";
+            UINavigationBarModuleModel1.classEntry = [NavigationBarChangeBGViewController class];
+            [sectionDataModel.values addObject:UINavigationBarModuleModel1];
+        }
+        {
+            CJModuleModel *UINavigationBarModuleModel2 = [[CJModuleModel alloc] init];
+            UINavigationBarModuleModel2.title = @"UINavigationBar(类似斗鱼的导航栏移动隐藏)";
+            UINavigationBarModuleModel2.classEntry = [NavigationBarChangePositonViewController class];
+            [sectionDataModel.values addObject:UINavigationBarModuleModel2];
+        }
+        
         [sectionDataModels addObject:sectionDataModel];
     }
     
@@ -317,20 +344,6 @@
         [sectionDataModels addObject:sectionDataModel];
     }
     
-    {
-        CJSectionDataModel *sectionDataModel = [[CJSectionDataModel alloc] init];
-        sectionDataModel.theme = @"其他";
-        {
-            //FloatingWindow
-            CJModuleModel *FloatingWindowModule = [[CJModuleModel alloc] init];
-            FloatingWindowModule.title = @"FloatingWindow（悬浮视图）";
-            FloatingWindowModule.classEntry = [FloatingWindowViewController class];
-            [sectionDataModel.values addObject:FloatingWindowModule];
-        }
-        
-        [sectionDataModels addObject:sectionDataModel];
-    }
-    
     self.sectionDataModels = sectionDataModels;
 }
 
@@ -381,6 +394,7 @@
     NSArray *noxibViewControllers = @[NSStringFromClass([UIViewController class]),
                                       NSStringFromClass([NavigationBarRemoveUnderlineViewController class]),
                                       NSStringFromClass([HelperHomeViewController class]),
+                                      NSStringFromClass([ViewController1 class]),
                                     ];
     
     NSString *clsString = NSStringFromClass(moduleModel.classEntry);
