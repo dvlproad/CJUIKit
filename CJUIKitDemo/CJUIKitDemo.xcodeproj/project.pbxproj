@@ -150,12 +150,12 @@
 		789CAF831FB612B700AF8CD4 /* cjCollectionViewCellDelete@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 789CAF101FB612B600AF8CD4 /* cjCollectionViewCellDelete@2x.png */; };
 		789CAF851FB612B700AF8CD4 /* CJSearchTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 789CAF151FB612B600AF8CD4 /* CJSearchTableView.m */; };
 		789CAF861FB612B700AF8CD4 /* MySearchEqualCellSizeCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 789CAF171FB612B600AF8CD4 /* MySearchEqualCellSizeCollectionView.m */; };
-		78A621A421319655004DA046 /* ZYSuspensionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 78A6219E21319654004DA046 /* ZYSuspensionManager.m */; };
-		78A621A521319655004DA046 /* ZYSuspensionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 78A621A121319654004DA046 /* ZYSuspensionView.m */; };
-		78A621A621319655004DA046 /* NSObject+ZYSuspensionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 78A621A321319654004DA046 /* NSObject+ZYSuspensionView.m */; };
-		78A621A921319723004DA046 /* ViewController1.m in Sources */ = {isa = PBXBuildFile; fileRef = 78A621A821319723004DA046 /* ViewController1.m */; };
+		78A621A421319655004DA046 /* CJSuspendWindowManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 78A6219E21319654004DA046 /* CJSuspendWindowManager.m */; };
+		78A621A921319723004DA046 /* SuspendWindowViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78A621A821319723004DA046 /* SuspendWindowViewController.m */; };
 		78A621AC2131AFBB004DA046 /* CJSuspendWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 78A621AB2131AFBB004DA046 /* CJSuspendWindow.m */; };
 		78A621AF2131B67B004DA046 /* CJSuspendRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78A621AE2131B67B004DA046 /* CJSuspendRootViewController.m */; };
+		78A621B221325BDF004DA046 /* DemoSuspendWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 78A621B121325BDF004DA046 /* DemoSuspendWindow.m */; };
+		78A621B5213277BA004DA046 /* CJSuspendWindowManager+DemoSuspendWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 78A621B4213277BA004DA046 /* CJSuspendWindowManager+DemoSuspendWindow.m */; };
 		78E00C8E212F21C5006BFD19 /* CJLogWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 78E00C8D212F21C5006BFD19 /* CJLogWindow.m */; };
 		78E00C91212F28A2006BFD19 /* CJLogModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 78E00C90212F28A2006BFD19 /* CJLogModel.m */; };
 		78E269BE1ECC5E1A007D3686 /* bgCar@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 78E269BB1ECC5E1A007D3686 /* bgCar@2x.jpg */; };
@@ -393,7 +393,6 @@
 		80FF90961FC5649F00E437CF /* TableViewHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 80FF8FBD1FC5649E00E437CF /* TableViewHeader.m */; };
 		80FF90971FC5649F00E437CF /* ScrollViewHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80FF8FC01FC5649E00E437CF /* ScrollViewHomeViewController.m */; };
 		80FF909A1FC5649F00E437CF /* FloatingWindowViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80FF8FC71FC5649E00E437CF /* FloatingWindowViewController.m */; };
-		80FF909B1FC5649F00E437CF /* FloatingWindowViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 80FF8FC91FC5649E00E437CF /* FloatingWindowViewController.xib */; };
 		80FF909C1FC5649F00E437CF /* NestedXibView.m in Sources */ = {isa = PBXBuildFile; fileRef = 80FF8FCB1FC5649E00E437CF /* NestedXibView.m */; };
 		80FF909D1FC5649F00E437CF /* NestedXibViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 80FF8FCC1FC5649E00E437CF /* NestedXibViewController.xib */; };
 		80FF909E1FC5649F00E437CF /* NestedXibSubViewA.m in Sources */ = {isa = PBXBuildFile; fileRef = 80FF8FCD1FC5649E00E437CF /* NestedXibSubViewA.m */; };
@@ -734,18 +733,18 @@
 		789CAF151FB612B600AF8CD4 /* CJSearchTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJSearchTableView.m; sourceTree = "<group>"; };
 		789CAF161FB612B600AF8CD4 /* MySearchEqualCellSizeCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MySearchEqualCellSizeCollectionView.h; sourceTree = "<group>"; };
 		789CAF171FB612B600AF8CD4 /* MySearchEqualCellSizeCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MySearchEqualCellSizeCollectionView.m; sourceTree = "<group>"; };
-		78A6219E21319654004DA046 /* ZYSuspensionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZYSuspensionManager.m; sourceTree = "<group>"; };
-		78A6219F21319654004DA046 /* ZYSuspensionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZYSuspensionView.h; sourceTree = "<group>"; };
-		78A621A021319654004DA046 /* NSObject+ZYSuspensionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+ZYSuspensionView.h"; sourceTree = "<group>"; };
-		78A621A121319654004DA046 /* ZYSuspensionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZYSuspensionView.m; sourceTree = "<group>"; };
-		78A621A221319654004DA046 /* ZYSuspensionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZYSuspensionManager.h; sourceTree = "<group>"; };
-		78A621A321319654004DA046 /* NSObject+ZYSuspensionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+ZYSuspensionView.m"; sourceTree = "<group>"; };
-		78A621A721319723004DA046 /* ViewController1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController1.h; sourceTree = "<group>"; };
-		78A621A821319723004DA046 /* ViewController1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController1.m; sourceTree = "<group>"; };
+		78A6219E21319654004DA046 /* CJSuspendWindowManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJSuspendWindowManager.m; sourceTree = "<group>"; };
+		78A621A221319654004DA046 /* CJSuspendWindowManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJSuspendWindowManager.h; sourceTree = "<group>"; };
+		78A621A721319723004DA046 /* SuspendWindowViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SuspendWindowViewController.h; sourceTree = "<group>"; };
+		78A621A821319723004DA046 /* SuspendWindowViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SuspendWindowViewController.m; sourceTree = "<group>"; };
 		78A621AA2131AFBB004DA046 /* CJSuspendWindow.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CJSuspendWindow.h; sourceTree = "<group>"; };
 		78A621AB2131AFBB004DA046 /* CJSuspendWindow.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CJSuspendWindow.m; sourceTree = "<group>"; };
 		78A621AD2131B67B004DA046 /* CJSuspendRootViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CJSuspendRootViewController.h; sourceTree = "<group>"; };
 		78A621AE2131B67B004DA046 /* CJSuspendRootViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CJSuspendRootViewController.m; sourceTree = "<group>"; };
+		78A621B021325BDF004DA046 /* DemoSuspendWindow.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DemoSuspendWindow.h; sourceTree = "<group>"; };
+		78A621B121325BDF004DA046 /* DemoSuspendWindow.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DemoSuspendWindow.m; sourceTree = "<group>"; };
+		78A621B3213277BA004DA046 /* CJSuspendWindowManager+DemoSuspendWindow.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CJSuspendWindowManager+DemoSuspendWindow.h"; sourceTree = "<group>"; };
+		78A621B4213277BA004DA046 /* CJSuspendWindowManager+DemoSuspendWindow.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "CJSuspendWindowManager+DemoSuspendWindow.m"; sourceTree = "<group>"; };
 		78E00C8C212F21C5006BFD19 /* CJLogWindow.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CJLogWindow.h; sourceTree = "<group>"; };
 		78E00C8D212F21C5006BFD19 /* CJLogWindow.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CJLogWindow.m; sourceTree = "<group>"; };
 		78E00C8F212F28A2006BFD19 /* CJLogModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CJLogModel.h; sourceTree = "<group>"; };
@@ -1112,7 +1111,6 @@
 		80FF8FC01FC5649E00E437CF /* ScrollViewHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScrollViewHomeViewController.m; sourceTree = "<group>"; };
 		80FF8FC71FC5649E00E437CF /* FloatingWindowViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FloatingWindowViewController.m; sourceTree = "<group>"; };
 		80FF8FC81FC5649E00E437CF /* FloatingWindowViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FloatingWindowViewController.h; sourceTree = "<group>"; };
-		80FF8FC91FC5649E00E437CF /* FloatingWindowViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FloatingWindowViewController.xib; sourceTree = "<group>"; };
 		80FF8FCB1FC5649E00E437CF /* NestedXibView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NestedXibView.m; sourceTree = "<group>"; };
 		80FF8FCC1FC5649E00E437CF /* NestedXibViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NestedXibViewController.xib; sourceTree = "<group>"; };
 		80FF8FCD1FC5649E00E437CF /* NestedXibSubViewA.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NestedXibSubViewA.m; sourceTree = "<group>"; };
@@ -2157,14 +2155,14 @@
 		78A6219D21319654004DA046 /* ZYSuspensionView */ = {
 			isa = PBXGroup;
 			children = (
-				78A621A021319654004DA046 /* NSObject+ZYSuspensionView.h */,
-				78A621A321319654004DA046 /* NSObject+ZYSuspensionView.m */,
-				78A621A221319654004DA046 /* ZYSuspensionManager.h */,
-				78A6219E21319654004DA046 /* ZYSuspensionManager.m */,
-				78A6219F21319654004DA046 /* ZYSuspensionView.h */,
-				78A621A121319654004DA046 /* ZYSuspensionView.m */,
+				78A621A221319654004DA046 /* CJSuspendWindowManager.h */,
+				78A6219E21319654004DA046 /* CJSuspendWindowManager.m */,
+				78A621B3213277BA004DA046 /* CJSuspendWindowManager+DemoSuspendWindow.h */,
+				78A621B4213277BA004DA046 /* CJSuspendWindowManager+DemoSuspendWindow.m */,
 				78A621AA2131AFBB004DA046 /* CJSuspendWindow.h */,
 				78A621AB2131AFBB004DA046 /* CJSuspendWindow.m */,
+				78A621B021325BDF004DA046 /* DemoSuspendWindow.h */,
+				78A621B121325BDF004DA046 /* DemoSuspendWindow.m */,
 				78A621AD2131B67B004DA046 /* CJSuspendRootViewController.h */,
 				78A621AE2131B67B004DA046 /* CJSuspendRootViewController.m */,
 			);
@@ -3093,9 +3091,8 @@
 			children = (
 				80FF8FC81FC5649E00E437CF /* FloatingWindowViewController.h */,
 				80FF8FC71FC5649E00E437CF /* FloatingWindowViewController.m */,
-				80FF8FC91FC5649E00E437CF /* FloatingWindowViewController.xib */,
-				78A621A721319723004DA046 /* ViewController1.h */,
-				78A621A821319723004DA046 /* ViewController1.m */,
+				78A621A721319723004DA046 /* SuspendWindowViewController.h */,
+				78A621A821319723004DA046 /* SuspendWindowViewController.m */,
 			);
 			path = CJFloatingWindowDemo;
 			sourceTree = "<group>";
@@ -3685,7 +3682,6 @@
 				807903171FB413D60082F05C /* arrow_R_white@2x.png in Resources */,
 				789CAF521FB612B700AF8CD4 /* CJToast_error@2x.png in Resources */,
 				80332411202C5540001DACF1 /* index.html in Resources */,
-				80FF909B1FC5649F00E437CF /* FloatingWindowViewController.xib in Resources */,
 				789CAF2F1FB612B700AF8CD4 /* cjCheckBoxGreenYES@2x.png in Resources */,
 				80FF90381FC5649E00E437CF /* SvDemo_Refresh.xib in Resources */,
 				780E46131E5DF87B00980127 /* LaunchScreen.storyboard in Resources */,
@@ -4003,7 +3999,6 @@
 				789CAF6C1FB612B700AF8CD4 /* CJDefaultToolbar.m in Sources */,
 				804478272061F328007185EF /* CJLocationChangeManager.m in Sources */,
 				80FF91491FC5668700E437CF /* NSObject+SearchProperty.m in Sources */,
-				78A621A621319655004DA046 /* NSObject+ZYSuspensionView.m in Sources */,
 				80F9CFE0206CFDFB003B41D4 /* CJPinyinHelper.m in Sources */,
 				80FF909C1FC5649F00E437CF /* NestedXibView.m in Sources */,
 				7EA576B620691B5A00726CCF /* CJModuleManager.m in Sources */,
@@ -4056,6 +4051,7 @@
 				801F75DC20A040D800A2E027 /* BBXDUserNameTextField.m in Sources */,
 				808B983320B7F73300910E45 /* LogViewController.m in Sources */,
 				808B977020B7B33200910E45 /* CJAppLastUtil.m in Sources */,
+				78A621B5213277BA004DA046 /* CJSuspendWindowManager+DemoSuspendWindow.m in Sources */,
 				789CAF401FB612B700AF8CD4 /* MyUserInfoScaleHeadView.m in Sources */,
 				8073D9BD201877920031CE72 /* CJModuleModel.m in Sources */,
 				789CAF231FB612B700AF8CD4 /* MyEqualCellSizeCollectionView.m in Sources */,
@@ -4079,7 +4075,6 @@
 				789CAF411FB612B700AF8CD4 /* CJKeyboardAvoidingScrollView.m in Sources */,
 				80E7E73320AD2AEA000F762D /* UIButton+CJFixMultiClick.m in Sources */,
 				789CAF671FB612B700AF8CD4 /* UITableView+CJEmptyView.m in Sources */,
-				78A621A521319655004DA046 /* ZYSuspensionView.m in Sources */,
 				80FF91471FC5668700E437CF /* CJSectionDataModel.m in Sources */,
 				7850B73820938518008F4A21 /* UIView+CJGestureRecognizer.m in Sources */,
 				80FF90971FC5649F00E437CF /* ScrollViewHomeViewController.m in Sources */,
@@ -4192,6 +4187,7 @@
 				80FF91C51FC581DD00E437CF /* UtilHomeViewController.m in Sources */,
 				80EABC46212546E800A2EA34 /* CJBaseWebViewController.m in Sources */,
 				787FDB5A20500B01008A46E3 /* ImageViewController.m in Sources */,
+				78A621B221325BDF004DA046 /* DemoSuspendWindow.m in Sources */,
 				80FF91351FC5668700E437CF /* NSArray+CJConsoleLog.m in Sources */,
 				803323AC20299AD7001DACF1 /* CustomLayoutCollectionViewController.m in Sources */,
 				789CAF291FB612B700AF8CD4 /* CJLeftDetailTableViewCell.m in Sources */,
@@ -4217,7 +4213,7 @@
 				80FF914F1FC5668700E437CF /* CJDataUtil+Value.m in Sources */,
 				8050037E211C0B60002A2306 /* NSStringHelper.m in Sources */,
 				80FF90B41FC5649F00E437CF /* ButtonViewController.m in Sources */,
-				78A621A421319655004DA046 /* ZYSuspensionManager.m in Sources */,
+				78A621A421319655004DA046 /* CJSuspendWindowManager.m in Sources */,
 				789CAF501FB612B700AF8CD4 /* CJToast.m in Sources */,
 				80FF90371FC5649E00E437CF /* TestDataModel.m in Sources */,
 				80FF90AF1FC5649F00E437CF /* NavigationBarBaseViewController.m in Sources */,
@@ -4253,7 +4249,7 @@
 				80E7E68920AC37CA000F762D /* IjinbuNetworkClient+Login.m in Sources */,
 				803323BC20299AD7001DACF1 /* Detail.m in Sources */,
 				80FF90A81FC5649F00E437CF /* ImageChangeColorViewController.m in Sources */,
-				78A621A921319723004DA046 /* ViewController1.m in Sources */,
+				78A621A921319723004DA046 /* SuspendWindowViewController.m in Sources */,
 				789CAF4A1FB612B700AF8CD4 /* CJSliderPopover.m in Sources */,
 				789CAF221FB612B700AF8CD4 /* MyEqualCellSizeCollectionView+Select.m in Sources */,
 				8000B5C91FD0021D00AE3C78 /* CJExtraTextTextField.m in Sources */,

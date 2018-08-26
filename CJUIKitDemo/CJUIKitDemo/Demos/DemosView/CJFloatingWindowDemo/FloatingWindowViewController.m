@@ -19,9 +19,15 @@
 
 @implementation FloatingWindowViewController
 
+- (void)dealloc {
+    NSLog(@"%@ dealloc", NSStringFromClass([self class]));
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    
+    self.view.backgroundColor = [UIColor whiteColor];
     
     AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
     if (appDelegate.cjFloatingWindow == nil) {
@@ -37,7 +43,7 @@
         button.layer.cornerRadius = 40;
         button.layer.masksToBounds = YES;
         [button setTitle:@"悬浮按钮" forState:UIControlStateNormal];
-        [button addTarget:appDelegate action:@selector(closeFloatingWindow:) forControlEvents:UIControlEventTouchUpInside];
+        [button addTarget:self action:@selector(closeFloatingWindow:) forControlEvents:UIControlEventTouchUpInside];//若target谢伟self,会由于返回时候self被释放而无法执行按钮操作，所以按钮的target应该定为一个不会被释放的。这里我们把button的添加写到window里。
         [button setBackgroundColor:[UIColor orangeColor]];
         [window addSubview:button];
         
@@ -47,11 +53,12 @@
     appDelegate.cjFloatingWindow.cjDragEnable = YES;
 }
 
-- (void)closeFloatingWindow:(AppDelegate *)appDelegate {
+- (void)closeFloatingWindow:(UIButton *)button {
     //TODO:[UIWindow无法释放的问题。求助大神](http://www.cocoachina.com/bbs/read.php?tid-1702416.html)
     //知识点：直接makeKeyAndVisible的UIWindow是没有superView的，所以不能removeFromSuperView
-//    appDelegate.cjFloatingWindow.hidden = YES;
-//    appDelegate.cjFloatingWindow = nil;
+    AppDelegate *appDelegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
+    appDelegate.cjFloatingWindow.hidden = YES;
+    appDelegate.cjFloatingWindow = nil;
 }
 
 - (void)didReceiveMemoryWarning {

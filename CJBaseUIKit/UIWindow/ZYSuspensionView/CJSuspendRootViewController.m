@@ -2,8 +2,8 @@
 //  CJSuspendRootViewController.m
 //  CJUIKitDemo
 //
-//  Created by 李超前 on 2018/8/26.
-//  Copyright © 2018年 dvlproad. All rights reserved.
+//  Created by ciyouzen on 2017/5/20.
+//  Copyright © 2017年 dvlproad. All rights reserved.
 //
 
 #import "CJSuspendRootViewController.h"

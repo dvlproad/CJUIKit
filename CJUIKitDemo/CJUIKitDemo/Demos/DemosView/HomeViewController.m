@@ -31,7 +31,7 @@
 
 //UIWindow
 #import "FloatingWindowViewController.h"
-#import "ViewController1.h"
+#import "SuspendWindowViewController.h"
 
 #import "ButtonViewController.h"
 
@@ -154,8 +154,8 @@
         
         {
             CJModuleModel *FloatingWindowModule = [[CJModuleModel alloc] init];
-            FloatingWindowModule.title = @"FloatingWindow（悬浮视图）";
-            FloatingWindowModule.classEntry = [ViewController1 class];
+            FloatingWindowModule.title = @"SuspendWindow（悬浮球）";
+            FloatingWindowModule.classEntry = [SuspendWindowViewController class];
             [sectionDataModel.values addObject:FloatingWindowModule];
         }
         
@@ -394,7 +394,8 @@
     NSArray *noxibViewControllers = @[NSStringFromClass([UIViewController class]),
                                       NSStringFromClass([NavigationBarRemoveUnderlineViewController class]),
                                       NSStringFromClass([HelperHomeViewController class]),
-                                      NSStringFromClass([ViewController1 class]),
+                                      NSStringFromClass([FloatingWindowViewController class]),
+                                      NSStringFromClass([SuspendWindowViewController class]),
                                     ];
     
     NSString *clsString = NSStringFromClass(moduleModel.classEntry);

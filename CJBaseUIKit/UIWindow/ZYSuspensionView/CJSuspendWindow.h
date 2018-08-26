@@ -10,4 +10,6 @@
 
 @interface CJSuspendWindow : UIWindow
 
+@property(nonatomic, copy) NSString *windowIdentifier;
+
 @end

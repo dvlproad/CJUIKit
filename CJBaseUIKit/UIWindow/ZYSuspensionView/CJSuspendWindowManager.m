@@ -1,24 +1,23 @@
 //
-//  ZYSuspensionManager.m
-//  ZYSuspensionView
+//  CJSuspendWindowManager.m
+//  CJUIKitDemo
 //
-//  GitHub https://github.com/ripperhe
-//  Created by ripper on 16/7/19.
-//  Copyright © 2016年 ripper. All rights reserved.
+//  Created by ciyouzen on 2017/5/20.
+//  Copyright © 2017年 dvlproad. All rights reserved.
 //
 
-#import "ZYSuspensionManager.h"
+#import "CJSuspendWindowManager.h"
 
-@interface ZYSuspensionManager ()
+@interface CJSuspendWindowManager ()
 
 /** save windows dictionary */
 @property (nonatomic, strong) NSMutableDictionary *windowDic;
 
 @end
 
-@implementation ZYSuspensionManager
+@implementation CJSuspendWindowManager
 
-static ZYSuspensionManager *_instance;
+static CJSuspendWindowManager *_instance;
 
 + (instancetype)shared
 {
@@ -54,32 +53,32 @@ static ZYSuspensionManager *_instance;
 
 + (UIWindow *)windowForKey:(NSString *)key
 {
-    return [[ZYSuspensionManager shared].windowDic objectForKey:key];
+    return [[CJSuspendWindowManager shared].windowDic objectForKey:key];
 }
 
 + (void)saveWindow:(UIWindow *)window forKey:(NSString *)key
 {
-    [[ZYSuspensionManager shared].windowDic setObject:window forKey:key];
+    [[CJSuspendWindowManager shared].windowDic setObject:window forKey:key];
 }
 
 + (void)destroyWindowForKey:(NSString *)key
 {
-    UIWindow *window = [[ZYSuspensionManager shared].windowDic objectForKey:key];
+    UIWindow *window = [[CJSuspendWindowManager shared].windowDic objectForKey:key];
     window.hidden = YES;
     if (window.rootViewController.presentedViewController) {
         [window.rootViewController.presentedViewController dismissViewControllerAnimated:NO completion:nil];
     }
     window.rootViewController = nil;
-    [[ZYSuspensionManager shared].windowDic removeObjectForKey:key];
+    [[CJSuspendWindowManager shared].windowDic removeObjectForKey:key];
 }
 
 + (void)destroyAllWindow
 {
-    for (UIWindow *window in [ZYSuspensionManager shared].windowDic.allValues) {
+    for (UIWindow *window in [CJSuspendWindowManager shared].windowDic.allValues) {
         window.hidden = YES;
         window.rootViewController = nil;
     }
-    [[ZYSuspensionManager shared].windowDic removeAllObjects];
+    [[CJSuspendWindowManager shared].windowDic removeAllObjects];
     [[UIApplication sharedApplication].delegate.window makeKeyAndVisible];
 }
 

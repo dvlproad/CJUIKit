@@ -1,16 +1,15 @@
 //
-//  ZYSuspensionManager.h
-//  ZYSuspensionView
+//  CJSuspendWindowManager.h
+//  CJUIKitDemo
 //
-//  GitHub https://github.com/ripperhe
-//  Created by ripper on 16/7/19.
-//  Copyright © 2016年 ripper. All rights reserved.
+//  Created by ciyouzen on 2017/5/20.
+//  Copyright © 2017年 dvlproad. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
-@interface ZYSuspensionManager : NSObject
+@interface CJSuspendWindowManager : NSObject
 
 + (instancetype)shared;
 
