@@ -156,6 +156,8 @@
 		78A621AF2131B67B004DA046 /* CJSuspendRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78A621AE2131B67B004DA046 /* CJSuspendRootViewController.m */; };
 		78A621B221325BDF004DA046 /* DemoSuspendWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 78A621B121325BDF004DA046 /* DemoSuspendWindow.m */; };
 		78A621B5213277BA004DA046 /* CJSuspendWindowManager+DemoSuspendWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 78A621B4213277BA004DA046 /* CJSuspendWindowManager+DemoSuspendWindow.m */; };
+		78A621B8213314B6004DA046 /* UIView+CJPopupInSuspendWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 78A621B7213314B6004DA046 /* UIView+CJPopupInSuspendWindow.m */; };
+		78A621BB21331B3C004DA046 /* CJLogView.m in Sources */ = {isa = PBXBuildFile; fileRef = 78A621B921331B3B004DA046 /* CJLogView.m */; };
 		78E00C8E212F21C5006BFD19 /* CJLogWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 78E00C8D212F21C5006BFD19 /* CJLogWindow.m */; };
 		78E00C91212F28A2006BFD19 /* CJLogModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 78E00C90212F28A2006BFD19 /* CJLogModel.m */; };
 		78E269BE1ECC5E1A007D3686 /* bgCar@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 78E269BB1ECC5E1A007D3686 /* bgCar@2x.jpg */; };
@@ -745,6 +747,10 @@
 		78A621B121325BDF004DA046 /* DemoSuspendWindow.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DemoSuspendWindow.m; sourceTree = "<group>"; };
 		78A621B3213277BA004DA046 /* CJSuspendWindowManager+DemoSuspendWindow.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CJSuspendWindowManager+DemoSuspendWindow.h"; sourceTree = "<group>"; };
 		78A621B4213277BA004DA046 /* CJSuspendWindowManager+DemoSuspendWindow.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "CJSuspendWindowManager+DemoSuspendWindow.m"; sourceTree = "<group>"; };
+		78A621B6213314B6004DA046 /* UIView+CJPopupInSuspendWindow.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+CJPopupInSuspendWindow.h"; sourceTree = "<group>"; };
+		78A621B7213314B6004DA046 /* UIView+CJPopupInSuspendWindow.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+CJPopupInSuspendWindow.m"; sourceTree = "<group>"; };
+		78A621B921331B3B004DA046 /* CJLogView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJLogView.m; sourceTree = "<group>"; };
+		78A621BA21331B3B004DA046 /* CJLogView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJLogView.h; sourceTree = "<group>"; };
 		78E00C8C212F21C5006BFD19 /* CJLogWindow.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CJLogWindow.h; sourceTree = "<group>"; };
 		78E00C8D212F21C5006BFD19 /* CJLogWindow.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CJLogWindow.m; sourceTree = "<group>"; };
 		78E00C8F212F28A2006BFD19 /* CJLogModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CJLogModel.h; sourceTree = "<group>"; };
@@ -1461,6 +1467,8 @@
 			children = (
 				7850B71A2093809F008F4A21 /* UIView+CJPopupInView.h */,
 				7850B7182093809F008F4A21 /* UIView+CJPopupInView.m */,
+				78A621B6213314B6004DA046 /* UIView+CJPopupInSuspendWindow.h */,
+				78A621B7213314B6004DA046 /* UIView+CJPopupInSuspendWindow.m */,
 				7850B7172093809F008F4A21 /* UIView+CJShowExtendView.h */,
 				7850B7192093809F008F4A21 /* UIView+CJShowExtendView.m */,
 			);
@@ -3355,6 +3363,8 @@
 				80FF91281FC5668700E437CF /* CJLogUtil.m */,
 				78E00C8C212F21C5006BFD19 /* CJLogWindow.h */,
 				78E00C8D212F21C5006BFD19 /* CJLogWindow.m */,
+				78A621BA21331B3B004DA046 /* CJLogView.h */,
+				78A621B921331B3B004DA046 /* CJLogView.m */,
 				78E00C8F212F28A2006BFD19 /* CJLogModel.h */,
 				78E00C90212F28A2006BFD19 /* CJLogModel.m */,
 			);
@@ -4000,6 +4010,7 @@
 				804478272061F328007185EF /* CJLocationChangeManager.m in Sources */,
 				80FF91491FC5668700E437CF /* NSObject+SearchProperty.m in Sources */,
 				80F9CFE0206CFDFB003B41D4 /* CJPinyinHelper.m in Sources */,
+				78A621B8213314B6004DA046 /* UIView+CJPopupInSuspendWindow.m in Sources */,
 				80FF909C1FC5649F00E437CF /* NestedXibView.m in Sources */,
 				7EA576B620691B5A00726CCF /* CJModuleManager.m in Sources */,
 				789CAF4D1FB612B700AF8CD4 /* CJSwitchSliderStatusModel.m in Sources */,
@@ -4197,6 +4208,7 @@
 				7850B70720937C5A008F4A21 /* ShowExtendViewVC.m in Sources */,
 				80FF913A1FC5668700E437CF /* NSString+CJEncoding.m in Sources */,
 				789CAF391FB612B700AF8CD4 /* CJRefreshBaseView.m in Sources */,
+				78A621BB21331B3C004DA046 /* CJLogView.m in Sources */,
 				805481902074C97200CDE5A1 /* CJTimerModel.m in Sources */,
 				80FF914E1FC5668700E437CF /* CJDataUtil+SortCategory.m in Sources */,
 				80FF91531FC5668700E437CF /* PrivateSetting.m in Sources */,

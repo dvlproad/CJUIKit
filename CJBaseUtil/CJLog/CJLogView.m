@@ -6,10 +6,10 @@
 //  Copyright © 2016年 dvlproad. All rights reserved.
 //
 
-#import "CJLogWindow.h"
+#import "CJLogView.h"
 #import "CJLogModel.h"
 
-@interface CJLogWindow () {
+@interface CJLogView () {
     
 }
 @property (nonatomic, weak) UITextView *textView;
@@ -17,16 +17,14 @@
 
 @end
 
-@implementation CJLogWindow
+@implementation CJLogView
 
-//static CJLogWindow *_sharedInstance = nil;
-static CJLogWindow __strong *_sharedInstance = nil;
+static CJLogView __strong *_sharedInstance = nil;
 
-+ (CJLogWindow *)sharedInstance {
++ (CJLogView *)sharedInstance {
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         _sharedInstance = [[self alloc] init];
-        _sharedInstance.hidden = NO; //显示窗口
     });
     return _sharedInstance;
 }
@@ -36,43 +34,43 @@ static CJLogWindow __strong *_sharedInstance = nil;
 }
 
 #pragma mark - Init
-
-- (instancetype)init {
-    self = [super initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, 400)];
+- (instancetype)initWithFrame:(CGRect)frame {
+    self = [super initWithFrame:frame];
     if (self) {
-        // self
-        self.rootViewController = [UIViewController new]; // suppress warning
-        self.windowLevel = UIWindowLevelAlert; //是窗口保持在最前
-        [self setBackgroundColor:[UIColor colorWithWhite:0 alpha:0.3]];
-        self.userInteractionEnabled = NO; //设为NO，使屏幕触摸事件会传递到下层的实际 view 上去，不会挡住测试的操作
-        
-        // text view
-        UITextView *textView = [[UITextView alloc] initWithFrame:self.bounds];
-        textView.font = [UIFont systemFontOfSize:12.0f];
-        textView.backgroundColor = [UIColor clearColor];
-        textView.scrollsToTop = NO; //设为NO，避免多个scrollView响应返回顶部的事件，系统就不知道到底要将那个scrollView返回顶部了，导致系统就不做任何操作。
-        [self addSubview:textView];
-        self.textView = textView;
-        
-        // string
+        [self setupViews];
         self.logs = [NSMutableArray array];
     }
     return self;
 }
 
+
+- (void)setupViews {
+    // text view
+    UITextView *textView = [[UITextView alloc] initWithFrame:CGRectZero];
+    textView.font = [UIFont systemFontOfSize:12.0f];
+    textView.backgroundColor = [UIColor clearColor];
+    textView.scrollsToTop = NO; //设为NO，避免多个scrollView响应返回顶部的事件，系统就不知道到底要将那个scrollView返回顶部了，导致系统就不做任何操作。
+    [self addSubview:textView];
+    [textView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.edges.mas_equalTo(self);
+    }];
+    
+    self.textView = textView;
+}
+
 #pragma mark - Print & Clear
 /* 完整的描述请参见文件头部 */
-+ (void)cj_appendObject:(id)appendObject toLogWindowName:(NSString *)logWindowName {
+- (void)cj_appendObject:(id)appendObject toLogWindowName:(NSString *)logWindowName {
     NSString *appendingString = [self formattedStringFromObject:appendObject];
     
     dispatch_async(dispatch_get_main_queue(),^{
-        [[CJLogWindow sharedInstance] cj_appendString:appendingString toLogWindowName:logWindowName];
+        [self cj_appendString:appendingString toLogWindowName:logWindowName];
     });
     
 }
 
 //CJNetwork库中的CJNetworkLogUtil也有用到以下方法
-+ (NSString *)formattedStringFromObject:(id)object
+- (NSString *)formattedStringFromObject:(id)object
 {
     if ([object isKindOfClass:[NSString class]]) {
         return object;
@@ -175,11 +173,11 @@ static CJLogWindow __strong *_sharedInstance = nil;
 }
 
 
-+ (void)clear {
-    dispatch_async(dispatch_get_main_queue(),^{
-        [[self sharedInstance] clear];
-    });
-}
+//+ (void)clear {
+//    dispatch_async(dispatch_get_main_queue(),^{
+//        [[self sharedInstance] clear];
+//    });
+//}
 
 - (void)clear {
     self.textView.text = @"";

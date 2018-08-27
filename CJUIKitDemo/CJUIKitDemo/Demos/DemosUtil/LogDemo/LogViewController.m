@@ -10,9 +10,18 @@
 #import "CJLogUtil.h"
 #import "CJLogWindow.h"
 
-@interface LogViewController ()
+
+#import "CJLogView.h"
+#import "UIView+CJPopupInSuspendWindow.h"
+
+@interface LogViewController () {
+    
+}
+//@property (nonatomic, strong) CJLogView *logView;
 
 @end
+
+
 
 @implementation LogViewController
 
@@ -53,6 +62,18 @@
         make.top.mas_equalTo(self.view).mas_offset(100);
         make.height.mas_equalTo(44);
     }];
+    
+    
+    
+//    CJLogView *logView = [[CJLogView alloc] initWithFrame:CGRectZero];
+    CJLogView *logView = [CJLogView sharedInstance];
+    logView.backgroundColor = [UIColor lightGrayColor];
+    
+    CGFloat width = CGRectGetWidth([UIScreen mainScreen].bounds);
+    CGFloat height = CGRectGetHeight([UIScreen mainScreen].bounds);
+    CGRect windowFrame = CGRectMake(0, height-200, width, 200);
+    [logView cj_popupInSuspendWindowWithIdentifier:@"test" windowFrame:windowFrame];
+//    self.logView = logView;
 }
 
 - (void)showPopupView {
@@ -62,11 +83,13 @@
 - (IBAction)appendLog:(id)sender {
     [CJLogUtil cj_appendObject:@"this is a test log" toLogFileName:@"testLog.txt"];
     [CJLogWindow cj_appendObject:@"this is a test log" toLogWindowName:@"testLog.txt"];
+    [[CJLogView sharedInstance] cj_appendObject:@"this is a test log" toLogWindowName:@"testLog.txt"];
 }
 
 - (IBAction)removeLogFile:(id)sender {
     [CJLogUtil cj_removeLogFileName:@"testLog.txt"];
     [CJLogWindow clear];
+    [[CJLogView sharedInstance] clear];
 }
 
 - (IBAction)removeLogDirectory:(id)sender {
