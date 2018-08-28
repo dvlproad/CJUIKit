@@ -54,6 +54,7 @@ Pod::Spec.new do |s|
   s.subspec 'CJLog' do |ss|
     ss.source_files = "CJBaseUtil/CJLog/**/*.{h,m}"
     ss.dependency 'Masonry'
+    ss.dependency 'CJBaseUIKit/UIView/CJDragAction' #CJLogSuspendWindow用于控制log视图的弹出与隐藏的悬浮球需要依赖到
   end
 
   # 将 字符串/字典/数组转成含缩进字符串的字符串 的工具
