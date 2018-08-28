@@ -8,11 +8,7 @@
 
 #import "SuspendWindowViewController.h"
 
-#import "UIView+CJDragAction.h"
-#import "UIView+CJKeepBounds.h"
-
-#import "DemoSuspendWindow.h"
-#import "CJSuspendWindowManager.h"
+#import "DemoSuspendWindow+CJSuspendWindowManager.h"
 
 @interface SuspendWindowViewController ()
 
@@ -32,34 +28,17 @@
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     
-    DemoSuspendWindow *suspendWindow = (DemoSuspendWindow *)[CJSuspendWindowManager windowForKey:@"testWindow"];
-    if (suspendWindow == nil) {
-        suspendWindow = [[DemoSuspendWindow alloc] initWithFrame:CGRectZero];
-        suspendWindow.windowIdentifier = @"testWindow";
-        suspendWindow.backgroundColor = [UIColor lightGrayColor];
-        suspendWindow.cjDragEnable = YES;
-        [suspendWindow setCjDragBeginBlock:^(UIView *view) {
-            NSLog(@"开始拖曳Window");
-        }];
-        [suspendWindow setCjDragEndBlock:^(UIView *view) {
-            NSLog(@"结束拖曳Window");
-            [view cjKeepBounds];
-        }];
-        
-        __weak typeof(suspendWindow)weakSuspendWindow = suspendWindow;
-        [suspendWindow setCloseWindowBlock:^{
-            //[weakSuspendWindow removeFromScreen];
-            [CJSuspendWindowManager destroyWindowForKey:weakSuspendWindow.windowIdentifier];
-        }];
-        [suspendWindow setClickWindowBlock:^(UIButton *clickButton) {
-            NSLog(@"click %@", clickButton.titleLabel.text);
-        }];
-        
-        self.suspendWindow = suspendWindow;
-        
-        [CJSuspendWindowManager saveWindow:suspendWindow forKey:suspendWindow.windowIdentifier];
-    }
+    DemoSuspendWindow *suspendWindow = [DemoSuspendWindow windowWithIdentifier:@"testWindow"];
     [suspendWindow setFrame:CGRectMake(10, 200, 100, 100)];
+    
+    __weak typeof(suspendWindow)weakSuspendWindow = suspendWindow;
+    [suspendWindow setCloseWindowBlock:^{
+        //[weakSuspendWindow removeFromScreen];
+        [CJSuspendWindowManager destroyWindowForKey:weakSuspendWindow.windowIdentifier];
+    }];
+    [suspendWindow setClickWindowBlock:^(UIButton *clickButton) {
+        NSLog(@"click %@", clickButton.titleLabel.text);
+    }];
 }
 
 - (void)viewDidLoad {

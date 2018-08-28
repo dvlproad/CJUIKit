@@ -1,17 +1,14 @@
 //
-//  DemoSuspendWindow.m
+//  CJLogSuspendWindow.m
 //  CJUIKitDemo
 //
 //  Created by ciyouzen on 2017/5/20.
 //  Copyright © 2017年 dvlproad. All rights reserved.
 //
 
-#import "DemoSuspendWindow.h"
-#import "CJSuspendRootViewController.h"
-#import "CJSuspendWindowManager.h"
+#import "CJLogSuspendWindow.h"
 
-
-@interface DemoSuspendWindow () {
+@interface CJLogSuspendWindow () {
     
 }
 @property (nonatomic, strong) UIButton *closeButton;
@@ -22,21 +19,62 @@
 
 
 
-@implementation DemoSuspendWindow
+@implementation CJLogSuspendWindow
+
+static CJLogSuspendWindow __strong *_sharedInstance = nil;
+static dispatch_once_t onceToken;
+
++ (CJLogSuspendWindow *)sharedInstance {
+    dispatch_once(&onceToken, ^{
+        _sharedInstance = [[CJLogSuspendWindow alloc] initWithFrame:CGRectZero];
+    });
+    return _sharedInstance;
+}
+
+///显示
++ (void)showWithFrame:(CGRect)frame {
+    [[CJLogSuspendWindow sharedInstance] setFrame:frame];
+}
+
+///移除
++ (void)removeFromScreen {
+    _sharedInstance.hidden = YES;
+    _sharedInstance.rootViewController = nil;
+    
+    onceToken = 0;
+    _sharedInstance = nil;
+}
 
 - (instancetype)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
     if (self) {
-        [self setupViews];
+        [self commonInit];
     }
     return self;
+}
+
+- (void)commonInit {
+    self.windowLevel = 1000000;
+    self.clipsToBounds = YES;
+    self.rootViewController = [[UIViewController alloc] init];
+    self.backgroundColor = [UIColor lightGrayColor];
+    
+    self.cjDragEnable = YES;
+    [self setCjDragBeginBlock:^(UIView *view) {
+        NSLog(@"开始拖曳CJLogSuspendWindow");
+    }];
+    [self setCjDragEndBlock:^(UIView *view) {
+        NSLog(@"结束拖曳CJLogSuspendWindow");
+        [view cjKeepBounds];
+    }];
+    
+    [self setupViews];
 }
 
 - (void)setupViews {
     UIWindow *currentKeyWindow = [UIApplication sharedApplication].keyWindow;
     
-    self.rootViewController = [[CJSuspendRootViewController alloc] init];
-    [self makeKeyAndVisible];
+    [self makeKeyAndVisible]; //显示
     
     UIButton *clickButton = [[UIButton alloc] initWithFrame:CGRectZero];
     clickButton.userInteractionEnabled = YES;
@@ -46,7 +84,8 @@
     clickButton.layer.borderColor = [UIColor whiteColor].CGColor;
     clickButton.layer.borderWidth = 1.0;
     clickButton.clipsToBounds = YES;
-    [clickButton setTitle:@"悬浮球" forState:UIControlStateNormal];
+    [clickButton setTitle:NSLocalizedString(@"显示Log", nil) forState:UIControlStateNormal];
+     [clickButton setTitle:NSLocalizedString(@"隐藏Log", nil) forState:UIControlStateSelected];
     [clickButton addTarget:self action:@selector(clickWindow:) forControlEvents:UIControlEventTouchUpInside];
     [self addSubview:clickButton];
     self.clickButton = clickButton;
@@ -84,23 +123,30 @@
     self.closeButton.frame = CGRectMake(width-44, 0, 44, 44);
 }
 
-- (void)removeFromScreen {
-    self.hidden = YES;
-    self.rootViewController = nil;
-}
-
 
 #pragma mark - Event
 - (void)clickWindow:(UIButton *)clickButton {
+    clickButton.selected = !clickButton.isSelected;
+    
+    BOOL shouldHideLog = clickButton.selected;
+    if (shouldHideLog) {
+        [CJLogViewWindow show:YES];
+    } else {
+        [CJLogViewWindow show:NO];
+    }
+    
     if (self.clickWindowBlock) {
         self.clickWindowBlock(clickButton);
     }
 }
 
 - (void)closeWindow:(UIButton *)closeButton {
+    [CJLogViewWindow show:NO];
     if (self.closeWindowBlock) {
         self.closeWindowBlock();
     }
+    
+    [CJLogSuspendWindow removeFromScreen];
 }
 
 @end

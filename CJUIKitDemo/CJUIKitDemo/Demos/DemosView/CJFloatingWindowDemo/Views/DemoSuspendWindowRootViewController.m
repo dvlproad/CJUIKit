@@ -1,18 +1,18 @@
 //
-//  CJSuspendRootViewController.m
+//  DemoSuspendWindowRootViewController.m
 //  CJUIKitDemo
 //
 //  Created by ciyouzen on 2017/5/20.
 //  Copyright © 2017年 dvlproad. All rights reserved.
 //
 
-#import "CJSuspendRootViewController.h"
+#import "DemoSuspendWindowRootViewController.h"
 
-@interface CJSuspendRootViewController ()
+@interface DemoSuspendWindowRootViewController ()
 
 @end
 
-@implementation CJSuspendRootViewController
+@implementation DemoSuspendWindowRootViewController
 
 - (BOOL)prefersStatusBarHidden
 {

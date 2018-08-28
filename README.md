@@ -187,6 +187,12 @@ CJImageView，可为ImageView设置title；而CJBadgeImageView则还可以设置
 ## 版本介绍/更新记录
 后续完善
 
+#### CJBaseUtil
+* 2018-08-29 V0.3.1
+
+> 1. 在`CJLog`里增加`CJLogViewWindow`一个在 iOS 设备屏幕上实时打印 Log 的小工具；
+> 1. 在`CJManager`下增加管理悬浮窗的`CJSuspendWindowManager`，用来处理防止重复生成等。
+
 
 ## Author Or Contact
 * [邮箱：studyroad@qq.com](studyroad@qq.com)

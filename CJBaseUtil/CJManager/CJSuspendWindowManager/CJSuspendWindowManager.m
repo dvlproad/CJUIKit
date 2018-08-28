@@ -63,6 +63,10 @@ static CJSuspendWindowManager *_instance;
 
 + (void)destroyWindowForKey:(NSString *)key
 {
+    if (key == nil) {
+        return;
+    }
+    
     UIWindow *window = [[CJSuspendWindowManager shared].windowDic objectForKey:key];
     window.hidden = YES;
     if (window.rootViewController.presentedViewController) {

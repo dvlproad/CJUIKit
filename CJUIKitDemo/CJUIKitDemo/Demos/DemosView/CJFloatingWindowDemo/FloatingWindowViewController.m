@@ -8,6 +8,7 @@
 
 #import "FloatingWindowViewController.h"
 
+#import "DemoFloatingWindow.h"
 #import "AppDelegate.h"
 #import "UIView+CJDragAction.h"
 
@@ -43,7 +44,7 @@
         button.layer.cornerRadius = 40;
         button.layer.masksToBounds = YES;
         [button setTitle:@"悬浮按钮" forState:UIControlStateNormal];
-        [button addTarget:self action:@selector(closeFloatingWindow:) forControlEvents:UIControlEventTouchUpInside];//若target谢伟self,会由于返回时候self被释放而无法执行按钮操作，所以按钮的target应该定为一个不会被释放的。这里我们把button的添加写到window里。
+        [button addTarget:self action:@selector(closeFloatingWindow:) forControlEvents:UIControlEventTouchUpInside];//若target写为self,会由于返回时候self被释放而无法执行按钮操作，所以按钮的target应该定为一个不会被释放的。这里我们把button的添加写到window里。
         [button setBackgroundColor:[UIColor orangeColor]];
         [window addSubview:button];
         

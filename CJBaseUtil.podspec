@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
   #验证方法：pod lib lint CJBaseUtil.podspec --allow-warnings --use-libraries --verbose
   s.name         = "CJBaseUtil"
-  s.version      = "0.3.0"
+  s.version      = "0.3.1"
   s.summary      = "自定义的基础工具类"
   s.homepage     = "https://github.com/dvlproad/CJUIKit"
   s.license      = "MIT"
@@ -32,9 +32,9 @@ Pod::Spec.new do |s|
 
   # s.social_media_url   = "http://twitter.com/dvlproad"
 
-  s.platform     = :ios, "7.0"
+  s.platform     = :ios, "8.0"
 
-  s.source       = { :git => "https://github.com/dvlproad/CJUIKit.git", :tag => "CJBaseUtil_0.3.0_1" }
+  s.source       = { :git => "https://github.com/dvlproad/CJUIKit.git", :tag => "CJBaseUtil_0.3.1" }
   # s.source_files  = "CJBaseUtil/*.{h,m}"
   # s.resources = "CJBaseUtil/**/*.{png}"
   s.frameworks = 'UIKit'
@@ -53,6 +53,7 @@ Pod::Spec.new do |s|
 
   s.subspec 'CJLog' do |ss|
     ss.source_files = "CJBaseUtil/CJLog/**/*.{h,m}"
+    ss.dependency 'Masonry'
   end
 
   # 将 字符串/字典/数组转成含缩进字符串的字符串 的工具
@@ -121,6 +122,12 @@ Pod::Spec.new do |s|
 
     # 倒计时
     ss.subspec 'CJTimerManager' do |sss|
+      sss.source_files = "CJBaseUtil/CJManager/CJTimerManager/**/*.{h,m}"
+      #sss.resources = "CJBaseUtil/CJManager/**/*.{png,xib}"
+    end
+
+    ## 悬浮框管理器
+    ss.subspec 'CJSuspendWindowManager' do |sss|
       sss.source_files = "CJBaseUtil/CJManager/CJTimerManager/**/*.{h,m}"
       #sss.resources = "CJBaseUtil/CJManager/**/*.{png,xib}"
     end

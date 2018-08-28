@@ -1,5 +1,5 @@
 //
-//  CJFloatingWindow.h
+//  DemoSuspendWindowRootViewController.h
 //  CJUIKitDemo
 //
 //  Created by ciyouzen on 2017/5/20.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface CJFloatingWindow : UIWindow
+@interface DemoSuspendWindowRootViewController : UIViewController
 
 @end

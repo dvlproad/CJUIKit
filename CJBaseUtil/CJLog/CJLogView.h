@@ -1,45 +1,27 @@
 //
-//  CJLogWindow.h
+//  CJLogViewWindow.h
 //  CJUIKitDemo
 //
 //  Created by ciyouzen on 2016/3/11.
 //  Copyright © 2016年 dvlproad. All rights reserved.
 //
-//  在以下文章中做的优化：[一个在 iOS 设备屏幕上实时打印 Log 的小工具](https://www.jianshu.com/p/4ebb1f3973bf)
-//  TODO:设置为类似微信小程序，有个悬浮入口，也可关闭
 
 #import <UIKit/UIKit.h>
 #import <Masonry/Masonry.h>
 
 /**
- *  一个在 iOS 设备屏幕上实时打印 Log 的小工具(使用单例，保证LogView被持续强制持有，而不会因某个时刻被释放，而导致切换到其他页面后，之前的log被清空)
+ *  一个在 iOS 设备屏幕上实时打印 Log 的小工具
  */
 @interface CJLogView : UIView {
     
 }
-@property (nonatomic, strong) UIWindow *belongWindow;
-
-+ (CJLogView *)sharedInstance;
 
 /**
- *  将appendObject追加写入指定文件末尾(log文件统一存放在NSDocumentDirectory下的CJLog文件夹中)
+ *  将appendObject追加写入视图
  *
- *  @param appendObject     要追加写入的数据（NSData、NSString、NSDictrionary、NSArray）
- *  @param logWindowName    追加的内容要写入的指定log窗口的标志名
+ *  @param appendObject     要追加写入视图的数据（NSData、NSString、NSDictrionary、NSArray）
  */
-- (void)cj_appendObject:(id)appendObject toLogWindowName:(NSString *)logWindowName;
-
-///**
-// *  关闭指定的log窗口
-// *
-// *  @param logWindowName  指定的log窗口
-// *
-// *  @return 是否删除成功
-// */
-//+ (BOOL)closeLogWindowName:(NSString *)logWindowName;
-//
-/////关闭所有log窗口
-//+ (BOOL)closeAllLogWindow;
+- (void)appendObject:(id)appendObject;
 
 ///清空测试窗口
 - (void)clear;

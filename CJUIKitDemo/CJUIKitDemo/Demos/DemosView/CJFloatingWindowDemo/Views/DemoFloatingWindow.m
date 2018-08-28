@@ -1,29 +1,14 @@
 //
-//  CJFloatingWindow.m
+//  DemoFloatingWindow.m
 //  CJUIKitDemo
 //
 //  Created by ciyouzen on 2017/5/20.
 //  Copyright © 2017年 dvlproad. All rights reserved.
 //
 
-#import "CJFloatingWindow.h"
+#import "DemoFloatingWindow.h"
 
-@implementation CJFloatingWindow
-
-- (void)awakeFromNib {
-    [super awakeFromNib];
-    
-    [self commonInit];
-}
-
-- (instancetype)init {
-    self = [super init];
-    if (self) {
-        [self commonInit];
-    }
-    
-    return self;
-}
+@implementation DemoFloatingWindow
 
 - (instancetype)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
@@ -34,8 +19,7 @@
 }
 
 - (void)commonInit {
-    self.windowLevel = UIWindowLevelAlert + 1;  //如果想在 alert 之上，则改成 + 2
-    [self makeKeyAndVisible];
+    
 }
 
 /*

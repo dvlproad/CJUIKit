@@ -1,5 +1,5 @@
 //
-//  CJLogWindow.m
+//  CJLogViewWindow.m
 //  CJUIKitDemo
 //
 //  Created by ciyouzen on 2016/3/11.
@@ -18,20 +18,6 @@
 @end
 
 @implementation CJLogView
-
-static CJLogView __strong *_sharedInstance = nil;
-
-+ (CJLogView *)sharedInstance {
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
-        _sharedInstance = [[self alloc] init];
-    });
-    return _sharedInstance;
-}
-
-+ (void)cleanUp {
-    _sharedInstance = nil;
-}
 
 #pragma mark - Init
 - (instancetype)initWithFrame:(CGRect)frame {
@@ -60,13 +46,9 @@ static CJLogView __strong *_sharedInstance = nil;
 
 #pragma mark - Print & Clear
 /* 完整的描述请参见文件头部 */
-- (void)cj_appendObject:(id)appendObject toLogWindowName:(NSString *)logWindowName {
+- (void)appendObject:(id)appendObject {
     NSString *appendingString = [self formattedStringFromObject:appendObject];
-    
-    dispatch_async(dispatch_get_main_queue(),^{
-        [self cj_appendString:appendingString toLogWindowName:logWindowName];
-    });
-    
+    [self appendString:appendingString];
 }
 
 //CJNetwork库中的CJNetworkLogUtil也有用到以下方法
@@ -106,51 +88,11 @@ static CJLogView __strong *_sharedInstance = nil;
 
 
 /**
- *  将appendingData追加写入指定文件末尾(log文件统一存放在NSDocumentDirectory下的CJLog文件夹中)
+ *  将appendingData追加写入视图
  *
- *  @param appendingString  要追加写入的字符串
- *  @param logWindowName    追加的内容要写入的指定log窗口的标志名
+ *  @param appendingString  要追加写入视图的字符串
  */
-- (void)cj_appendString:(NSString *)appendingString toLogWindowName:(NSString *)logWindowName
-{
-//    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory,NSUserDomainMask, YES);
-//    NSString *documentPath = [paths objectAtIndex:0];
-//
-//    NSString *cjLogDirectoryPath = [documentPath stringByAppendingPathComponent:@"CJLog"];
-//
-//    NSFileManager *fileManager = [NSFileManager defaultManager];
-//    if(![fileManager fileExistsAtPath:cjLogDirectoryPath]) {//如果不存在，则建立这个文件夹
-//        [fileManager createDirectoryAtPath:cjLogDirectoryPath withIntermediateDirectories:YES attributes:nil error:nil];
-//    }
-//
-//    NSString *logFilePath = [cjLogDirectoryPath stringByAppendingPathComponent:logFileName];
-//    if(![fileManager fileExistsAtPath:logFilePath]) {//如果不存在，则建立这个文件夹
-//        [fileManager createFileAtPath:logFilePath contents:nil attributes:nil];
-//    }
-//
-//    NSFileHandle *fileHandle = [NSFileHandle fileHandleForWritingAtPath:logFilePath];
-//    if(fileHandle == nil)
-//    {
-//        NSLog(@"Error: Open of file for writing failed");
-//    }
-//
-//    //找到并定位到outFile的末尾位置(在此后追加文件)
-//    [fileHandle seekToEndOfFile];
-//
-//    //读取inFile并且将其内容写到outFile中
-//    NSMutableData *mutableData = [[NSMutableData alloc] init];
-//
-//    NSString *separateString = @"\n----------------------------------\n";
-//    NSData *separateData = [separateString dataUsingEncoding:NSUTF8StringEncoding];
-//    [mutableData appendData:separateData];
-//
-//    [mutableData appendData:appendingData];
-//
-//    [fileHandle writeData:mutableData];
-//
-//    //关闭读写文件
-//    [fileHandle closeFile];
-
+- (void)appendString:(NSString *)appendingString {
     if (appendingString.length == 0) {
         return;
     }
@@ -172,20 +114,13 @@ static CJLogView __strong *_sharedInstance = nil;
     }
 }
 
-
-//+ (void)clear {
-//    dispatch_async(dispatch_get_main_queue(),^{
-//        [[self sharedInstance] clear];
-//    });
-//}
-
+/* 完整的描述请参见文件头部 */
 - (void)clear {
     self.textView.text = @"";
     self.logs = [NSMutableArray array];
 }
 
 #pragma mark - Display
-
 - (void)refreshLogDisplay {
     // attributed text
     NSMutableAttributedString *attributedString = [NSMutableAttributedString new];

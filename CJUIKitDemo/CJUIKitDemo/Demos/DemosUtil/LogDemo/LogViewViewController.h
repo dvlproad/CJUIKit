@@ -1,5 +1,5 @@
 //
-//  LogViewController.h
+//  LogViewViewController.h
 //  CJUIKitDemo
 //
 //  Created by ciyouzen on 2018/5/25.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface LogViewController : UIViewController
+@interface LogViewViewController : UIViewController
 
 @end

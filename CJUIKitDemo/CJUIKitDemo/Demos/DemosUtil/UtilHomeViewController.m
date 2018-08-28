@@ -13,7 +13,9 @@
 #import "AlertViewController.h"
 
 //Log
-#import "LogViewController.h"
+#import "LogUtilViewController.h"
+#import "LogViewViewController.h"
+#import "LogSuspendWindowViewController.h"
 
 //string
 #import "StringEventViewController.h"
@@ -81,11 +83,22 @@
         sectionDataModel.theme = @"日志(Log)相关";
         {
             CJModuleModel *toastUtilModule = [[CJModuleModel alloc] init];
-            toastUtilModule.title = @"Log(输入、输出)";
-            toastUtilModule.classEntry = [LogViewController class];
+            toastUtilModule.title = @"LogUtil(输入、输出)";
+            toastUtilModule.classEntry = [LogUtilViewController class];
             [sectionDataModel.values addObject:toastUtilModule];
         }
-        
+        {
+            CJModuleModel *toastUtilModule = [[CJModuleModel alloc] init];
+            toastUtilModule.title = @"LogView(Log视图)";
+            toastUtilModule.classEntry = [LogViewViewController class];
+            [sectionDataModel.values addObject:toastUtilModule];
+        }
+        {
+            CJModuleModel *toastUtilModule = [[CJModuleModel alloc] init];
+            toastUtilModule.title = @"LogSuspendWindow(Log悬浮球)";
+            toastUtilModule.classEntry = [LogSuspendWindowViewController class];
+            [sectionDataModel.values addObject:toastUtilModule];
+        }
         [sectionDataModels addObject:sectionDataModel];
     }
     
@@ -209,7 +222,8 @@
     UIViewController *viewController = nil;
     
     NSArray *noxibViewControllers = @[NSStringFromClass([UIViewController class]),
-                                      NSStringFromClass([StringEventViewController class])
+                                      NSStringFromClass([StringEventViewController class]),
+                                      NSStringFromClass([LogSuspendWindowViewController class]),
                                       ];
     
     NSString *clsString = NSStringFromClass(moduleModel.classEntry);
