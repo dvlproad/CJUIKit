@@ -1,5 +1,5 @@
 //
-//  NSObjectHelper.h
+//  NSObjectCJHelper.h
 //  CJUIKitDemo
 //
 //  Created by ciyouzen on 6/25/15.
@@ -14,10 +14,10 @@
 
 //判断是否空字符串
 //#define cjIsNullString(s)   (!s || [s isEqual:[NSNull null]] || [s isEqualToString:@""])
-#define cjIsNullString(s)   ([NSObjectHelper isEmptyForObject:s])
+#define cjIsNullString(s)   ([NSObjectCJHelper isEmptyForObject:s])
 
 
-@interface NSObjectHelper : NSObject
+@interface NSObjectCJHelper : NSObject
 
 ///判断对象是否为NULL或nil
 + (BOOL)isNullForObject:(id)object;

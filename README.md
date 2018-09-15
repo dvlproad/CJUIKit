@@ -173,7 +173,6 @@ CJImageView，可为ImageView设置title；而CJBadgeImageView则还可以设置
 > [< 返回目录](#目录)
 
 >
-- CJBaseUtil/CJDevice：获取设备信息
 - CJBaseUtil/CJLog：日志输出工具
 - CJBaseUtil/CJIndentedStringUtil：将类转成字符串，并缩进的工具
 - CJBaseUtil/CJAppLastUtil：获取APP上次退出时候的信息工具
@@ -181,7 +180,6 @@ CJImageView，可为ImageView设置title；而CJBadgeImageView则还可以设置
 - CJBaseUtil/CJDateUtil：日期工具
 - CJBaseUtil/CJKeyboardUtil：键盘工具
 - CJBaseUtil/UIUtil：UI工具
-- CJBaseUtil/CJWebUtil：Web工具，包含清除缓存
 - CJBaseUtil/CJCallUtil：调用系统功能的工具，如拨打电话
 - CJBaseUtil/CJQRCodeUtil：二维码工具，如使用字符串生成二维码
 - CJBaseUtil/CJLaunchImageUtil：启动页工具
@@ -201,9 +199,11 @@ CJImageView，可为ImageView设置title；而CJBadgeImageView则还可以设置
 ## 五、CJBaseHelper：自定义的基础帮助类
 > [< 返回目录](#目录)
 
-- CJBaseHelper/NSObjectHelper：对象判断帮助类
-- CJBaseHelper/UIViewControllerHelper：视图控制器帮助类：包含获取当前显示的视图控制器和通过视图找到它所在的视图控制器等
-- CJBaseHelper/NSOperationQueueHelper：多任务处理
+- CJBaseUtil/DeviceCJHelper：获取设备信息
+- CJBaseHelper/NSObjectCJHelper：对象判断帮助类
+- CJBaseHelper/UIViewControllerCJHelper：视图控制器帮助类：包含获取当前显示的视图控制器和通过视图找到它所在的视图控制器等
+- CJBaseHelper/NSOperationQueueCJHelper：多任务处理
+- CJBaseHelper/WebCJHelper：Web工具，包含清除缓存
 
 
 
@@ -244,9 +244,11 @@ CJImageView，可为ImageView设置title；而CJBadgeImageView则还可以设置
 
 
 #### CJBaseHelper
-* 2018-09-15 V0.0.3
+* 2018-09-15 V0.0.5
 
-> 1. 更改对象判空的类名为`NSObjectHelper`
+> 1. 更改对象判空的类名为`NSObjectCJHelper`
+> 
+> 2. DeviceCJHelper增加`getIPAddressByHostName:`根据域名host获取ip的方法
 
 ## Author Or Contact
 * [邮箱：studyroad@qq.com](studyroad@qq.com)

@@ -8,7 +8,7 @@
 
 #import "DeviceInfoViewController.h"
 
-#import "CJDeviceUtil.h"
+#import "DeviceCJHelper.h"
 #import "DeviceInfo.h"
 
 
@@ -38,7 +38,7 @@ typedef NS_ENUM(NSUInteger, CJFileSizeUnitType) {
         DeviceInfo *info = [[DeviceInfo alloc] init];
         info.title = @"电池电量";
         
-        CGFloat batteryQuantity = [CJDeviceUtil getBatteryQuantity];
+        CGFloat batteryQuantity = [DeviceCJHelper getBatteryQuantity];
         info.value = [NSString stringWithFormat:@"%.2f%%", -batteryQuantity*100];
         
         [array addObject:info];
@@ -48,7 +48,7 @@ typedef NS_ENUM(NSUInteger, CJFileSizeUnitType) {
         DeviceInfo *info = [[DeviceInfo alloc] init];
         info.title = @"电池状态";
         
-        UIDeviceBatteryState batteryStauts = [CJDeviceUtil getBatteryStauts];
+        UIDeviceBatteryState batteryStauts = [DeviceCJHelper getBatteryStauts];
         NSArray *batteryStautsArray = @[@"UIDeviceBatteryStateUnknown",
                                         @"UIDeviceBatteryStateUnplugged",   // on battery, discharging
                                         @"UIDeviceBatteryStateCharging",    // plugged in, less than 100%
@@ -64,7 +64,7 @@ typedef NS_ENUM(NSUInteger, CJFileSizeUnitType) {
         DeviceInfo *info = [[DeviceInfo alloc] init];
         info.title = @"总内存大小";
         
-        CGFloat totalMemorySize = [CJDeviceUtil getTotalMemorySize];
+        CGFloat totalMemorySize = [DeviceCJHelper getTotalMemorySize];
         info.value = [DeviceInfoViewController showFileSize:totalMemorySize unitType:CJFileSizeUnitTypeMB];
         
         [array addObject:info];
@@ -74,7 +74,7 @@ typedef NS_ENUM(NSUInteger, CJFileSizeUnitType) {
         DeviceInfo *info = [[DeviceInfo alloc] init];
         info.title = @"未使用的内存";
         
-        CGFloat availableMemorySize = [CJDeviceUtil getAvailableMemorySize];
+        CGFloat availableMemorySize = [DeviceCJHelper getAvailableMemorySize];
         info.value = [DeviceInfoViewController showFileSize:availableMemorySize unitType:CJFileSizeUnitTypeMB];
         
         [array addObject:info];
@@ -85,7 +85,7 @@ typedef NS_ENUM(NSUInteger, CJFileSizeUnitType) {
         DeviceInfo *info = [[DeviceInfo alloc] init];
         info.title = @"已使用的内存";
         
-        CGFloat usedMemory = [CJDeviceUtil getUsedMemory];
+        CGFloat usedMemory = [DeviceCJHelper getUsedMemory];
         info.value = [DeviceInfoViewController showFileSize:usedMemory unitType:CJFileSizeUnitTypeMB];
         
         [array addObject:info];
@@ -95,7 +95,7 @@ typedef NS_ENUM(NSUInteger, CJFileSizeUnitType) {
         DeviceInfo *info = [[DeviceInfo alloc] init];
         info.title = @"总磁盘容量";
         
-        CGFloat totalDiskSize = [CJDeviceUtil getTotalDiskSize];
+        CGFloat totalDiskSize = [DeviceCJHelper getTotalDiskSize];
         info.value = [DeviceInfoViewController showFileSize:totalDiskSize unitType:CJFileSizeUnitTypeMB];
         
         [array addObject:info];
@@ -105,7 +105,7 @@ typedef NS_ENUM(NSUInteger, CJFileSizeUnitType) {
         DeviceInfo *info = [[DeviceInfo alloc] init];
         info.title = @"未使用的磁盘容量";
         
-        CGFloat availableDiskSize = [CJDeviceUtil getAvailableDiskSize];
+        CGFloat availableDiskSize = [DeviceCJHelper getAvailableDiskSize];
         info.value = [DeviceInfoViewController showFileSize:availableDiskSize unitType:CJFileSizeUnitTypeMB];
         
         [array addObject:info];
@@ -116,7 +116,7 @@ typedef NS_ENUM(NSUInteger, CJFileSizeUnitType) {
         DeviceInfo *info = [[DeviceInfo alloc] init];
         info.title = @"设备型号";
         
-        NSString *deviceType = [CJDeviceUtil getCurrentDeviceName];
+        NSString *deviceType = [DeviceCJHelper getCurrentDeviceName];
         info.value = [NSString stringWithFormat:@"%@", deviceType];
         
         [array addObject:info];
@@ -127,7 +127,7 @@ typedef NS_ENUM(NSUInteger, CJFileSizeUnitType) {
         DeviceInfo *info = [[DeviceInfo alloc] init];
         info.title = @"IP地址";
         
-        NSString *IPAddress = [CJDeviceUtil getIPAddress];
+        NSString *IPAddress = [DeviceCJHelper getIPAddress];
         info.value = [NSString stringWithFormat:@"%@", IPAddress];
         
         [array addObject:info];
@@ -137,7 +137,7 @@ typedef NS_ENUM(NSUInteger, CJFileSizeUnitType) {
         DeviceInfo *info = [[DeviceInfo alloc] init];
         info.title = @"WIFI名称";
         
-        NSString *WifiName = [CJDeviceUtil getWifiName];
+        NSString *WifiName = [DeviceCJHelper getWifiName];
         info.value = [NSString stringWithFormat:@"%@", WifiName];
         
         [array addObject:info];

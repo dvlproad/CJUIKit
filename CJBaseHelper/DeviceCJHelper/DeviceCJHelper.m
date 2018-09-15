@@ -1,12 +1,12 @@
 //
-//  CJDeviceUtil.m
+//  DeviceCJHelper.m
 //  CJBaseUtilDemo
 //
 //  Created by ciyouzen on 2017/7/5.
 //  Copyright © 2017年 dvlproad. All rights reserved.
 //
 
-#import "CJDeviceUtil.h"
+#import "DeviceCJHelper.h"
 
 //为了获取设备型号引入下面头文件
 #import <sys/utsname.h>
@@ -25,7 +25,11 @@
 //为了获取WIFI引入下面头文件
 #import <SystemConfiguration/CaptiveNetwork.h>
 
-@implementation CJDeviceUtil
+//为了根据域名host获取ip引入下面的头文件
+#include <netdb.h>
+#include <sys/socket.h>
+
+@implementation DeviceCJHelper
 
 #pragma mark - 电池Battery
 ///获取电池电量(一般用百分数表示,大家自行处理就好)
@@ -186,6 +190,33 @@
 }
 
 #pragma mark - IP & WIFI
+///根据域名host获取ip引入下面的头文件
++ (NSString *)getIPAddressByHostName:(NSString *)hostName {
+    //需要的头文件 #include <netdb.h> 和 #include <sys/socket.h>
+    const char *hostN= [hostName UTF8String];
+    struct hostent* phot;
+    @try {
+        phot = gethostbyname(hostN);
+        if (phot == NULL) {
+            NSLog(@"DNS解析 失败");
+            return nil;
+        }
+        
+    } @catch (NSException *exception) {
+        return nil;
+    }
+    
+    struct in_addr ip_addr;
+    memcpy(&ip_addr, phot->h_addr_list[0], 4);
+    //h_addr_list[0]里4个字节,每个字节8位，此处为一个数组，一个域名对应多个ip地址或者本地时一个机器有多个网卡
+    
+    char ip[20] = {0};
+    inet_ntop(AF_INET, &ip_addr, ip, sizeof(ip));
+    
+    NSString *ipAddressString = [NSString stringWithUTF8String:ip];
+    return ipAddressString;
+}
+
 ///获取手机IP地址
 + (NSString *)getIPAddress {
     /*

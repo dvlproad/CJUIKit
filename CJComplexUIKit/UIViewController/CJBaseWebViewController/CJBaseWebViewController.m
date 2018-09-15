@@ -9,9 +9,9 @@
 #import "CJBaseWebViewController.h"
 
 #ifdef CJTESTPOD
-    #import "CJWebUtil.h"
+    #import "WebCJHelper.h"
 #else
-    #import <CJBaseUtil/CJWebUtil.h>
+    #import <CJBaseUtil/WebCJHelper.h>
 #endif
 
 
@@ -36,7 +36,7 @@
 
 - (void)dealloc
 {
-    [CJWebUtil removeWebCache];
+    [WebCJHelper removeWebCache];
     
     //移除监听者
     [self.webView removeObserver:self forKeyPath:@"estimatedProgress"];

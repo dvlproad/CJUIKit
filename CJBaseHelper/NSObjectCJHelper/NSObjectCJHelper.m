@@ -1,14 +1,14 @@
 //
-//  NSObjectHelper.m
+//  NSObjectCJHelper.m
 //  CJUIKitDemo
 //
 //  Created by ciyouzen on 6/25/15.
 //  Copyright (c) 2015 dvlproad. All rights reserved.
 //
 
-#import "NSObjectHelper.h"
+#import "NSObjectCJHelper.h"
 
-@implementation NSObjectHelper
+@implementation NSObjectCJHelper
 
 ///判断对象是否为NULL或nil
 + (BOOL)isNullForObject:(id)object {
@@ -35,7 +35,7 @@
 
 ///判断对象是否为空
 + (BOOL)isEmptyForObject:(id)object {
-    if ([NSObjectHelper isNullForObject:object]) {
+    if ([NSObjectCJHelper isNullForObject:object]) {
         return YES;
     }
 

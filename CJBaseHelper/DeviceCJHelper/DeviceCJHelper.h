@@ -1,5 +1,5 @@
 //
-//  CJDeviceUtil.h
+//  DeviceCJHelper.h
 //  CJBaseUtilDemo
 //
 //  Created by ciyouzen on 2017/7/5.
@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
-@interface CJDeviceUtil : NSObject
+@interface DeviceCJHelper : NSObject
 
 #pragma mark - 电池Battery
 ///获取电池电量(一般用百分数表示,大家自行处理就好)
@@ -47,6 +47,9 @@
 
 
 #pragma mark - IP & WIFI
+///根据域名host获取ip引入下面的头文件
++ (NSString *)getIPAddressByHostName:(NSString *)hostName;
+
 ///获取手机IP地址
 + (NSString *)getIPAddress;
 

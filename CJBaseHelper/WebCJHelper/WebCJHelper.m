@@ -1,14 +1,14 @@
 //
-//  CJWebUtil.m
+//  WebCJHelper.m
 //  CJBaseUtilDemo
 //
 //  Created by ciyouzen on 2016/3/26.
 //  Copyright © 2016年 dvlproad. All rights reserved.
 //
 
-#import "CJWebUtil.h"
+#import "WebCJHelper.h"
 
-@implementation CJWebUtil
+@implementation WebCJHelper
 
 /**
  *  删除Web的缓存(兼容iOS8)

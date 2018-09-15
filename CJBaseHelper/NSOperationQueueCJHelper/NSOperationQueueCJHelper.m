@@ -1,19 +1,19 @@
 //
-//  NSOperationQueueHelper.m
+//  NSOperationQueueCJHelper.m
 //  CJUIKitDemo
 //
 //  Created by ciyouzen on 2016/11/23.
 //  Copyright © 2016年 dvlproad. All rights reserved.
 //
 
-#import "NSOperationQueueHelper.h"
+#import "NSOperationQueueCJHelper.h"
 
-@interface NSOperationQueueHelper ()
+@interface NSOperationQueueCJHelper ()
 
 @end
 
 
-@implementation NSOperationQueueHelper
+@implementation NSOperationQueueCJHelper
 
 /** 完整的描述请参见文件头部 */
 + (NSOperationQueue *)createOperationQueueWithOperations:(NSArray<NSOperation *> *)operations lastOperation:(NSOperation *)lastOperation {

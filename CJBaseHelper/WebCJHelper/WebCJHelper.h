@@ -1,5 +1,5 @@
 //
-//  CJWebUtil.h
+//  WebCJHelper.h
 //  CJBaseUtilDemo
 //
 //  Created by ciyouzen on 2016/3/26.
@@ -12,7 +12,7 @@
 
 #import <WebKit/WebKit.h>
 
-@interface CJWebUtil : NSObject
+@interface WebCJHelper : NSObject
 
 /**
  *  删除Web的缓存(兼容iOS8)

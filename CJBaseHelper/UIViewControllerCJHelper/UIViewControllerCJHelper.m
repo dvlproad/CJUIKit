@@ -1,14 +1,14 @@
 //
-//  UIViewControllerHelper.m
+//  UIViewControllerCJHelper.m
 //  CJUIKitDemo
 //
 //  Created by ciyouzen on 2016/11/23.
 //  Copyright © 2016年 dvlproad. All rights reserved.
 //
 
-#import "UIViewControllerHelper.h"
+#import "UIViewControllerCJHelper.h"
 
-@implementation UIViewControllerHelper
+@implementation UIViewControllerCJHelper
 
 #pragma mark - FindCurrentShowingViewController
 /* 完整的描述请参见文件头部 */

@@ -7,7 +7,7 @@
 //
 
 #import "TestPresentViewController.h"
-#import "UIViewControllerHelper.h"
+#import "UIViewControllerCJHelper.h"
 
 @interface TestPresentViewController ()
 
@@ -50,13 +50,13 @@
 }
 
 - (void)printCurrentShowingViewController {
-    UIViewController *currentShowViewController1 = [UIViewControllerHelper findCurrentShowingViewController];
+    UIViewController *currentShowViewController1 = [UIViewControllerCJHelper findCurrentShowingViewController];
     NSLog(@"currentShowViewController1 = %@", NSStringFromClass([currentShowViewController1 class]));
     
-    UIViewController *currentShowViewController2 = [UIViewControllerHelper findCurrentShowingViewControllerFrom:self];
+    UIViewController *currentShowViewController2 = [UIViewControllerCJHelper findCurrentShowingViewControllerFrom:self];
     NSLog(@"currentShowViewController2 = %@", NSStringFromClass([currentShowViewController2 class]));
     
-    UIViewController *belongViewController = [UIViewControllerHelper findBelongViewControllerForView:self.view];
+    UIViewController *belongViewController = [UIViewControllerCJHelper findBelongViewControllerForView:self.view];
     NSLog(@"belongViewController = %@", NSStringFromClass([belongViewController class]));
 }
 
@@ -69,7 +69,7 @@
 //        [self.navigationController popViewControllerAnimated:YES];
 //    }
     
-    UIViewController *currentShowViewController = [UIViewControllerHelper findCurrentShowingViewControllerFrom:self];
+    UIViewController *currentShowViewController = [UIViewControllerCJHelper findCurrentShowingViewControllerFrom:self];
     if ([currentShowViewController isKindOfClass:[TestPresentViewController class]]) {
         [currentShowViewController dismissViewControllerAnimated:YES completion:nil];
     }

@@ -1,5 +1,5 @@
 //
-//  UIViewControllerHelper.h
+//  UIViewControllerCJHelper.h
 //  CJUIKitDemo
 //
 //  Created by ciyouzen on 2016/11/23.
@@ -14,7 +14,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface UIViewControllerHelper : NSObject
+@interface UIViewControllerCJHelper : NSObject
 
 #pragma mark - FindCurrentShowingViewController
 ///获取Window当前显示的视图控制器ViewController

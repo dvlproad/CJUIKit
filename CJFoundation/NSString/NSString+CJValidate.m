@@ -14,12 +14,12 @@
 //实例方法是通过对象调用的，当这个对象为空时调用方法的时候就不会执行。所以以下两个方法，当string = nil的时候，如果调用这两个方法，会返回NO，无法返回正确的YES值。
 ///是否为空字符串
 - (BOOL)cj_isEmpty {
-    return [NSObjectHelper isEmptyForString:self];
+    return [NSObjectCJHelper isEmptyForString:self];
 }
 
 ///判断自己是否为空
 - (BOOL)cj_isBlank {
-    return [NSObjectHelper isBlankForString:self];
+    return [NSObjectCJHelper isBlankForString:self];
 }
 */
 

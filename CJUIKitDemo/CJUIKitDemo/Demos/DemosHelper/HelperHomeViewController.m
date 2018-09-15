@@ -44,14 +44,14 @@
         sectionDataModel.theme = @"Helper";
         {
             CJModuleModel *xibModule = [[CJModuleModel alloc] init];
-            xibModule.title = @"NSObjectHelper";
+            xibModule.title = @"NSObjectCJHelper";
             xibModule.classEntry = [StringHelperViewController class];
             
             [sectionDataModel.values addObject:xibModule];
         }
         {
             CJModuleModel *xibModule = [[CJModuleModel alloc] init];
-            xibModule.title = @"获取present前的视图(UIViewControllerHelper)";
+            xibModule.title = @"获取present前的视图(UIViewControllerCJHelper)";
             xibModule.classEntry = [TestPresentViewController class];
             
             [sectionDataModel.values addObject:xibModule];
