@@ -1,31 +1,34 @@
 //
-//  OtherHomeViewController.m
-//  CJUIKitDemo
+//  FoundationHomeViewController.m
+//  CJFoundationDemo
 //
-//  Created by ciyouzen on 2017/2/25.
-//  Copyright © 2017年 dvlproad. All rights reserved.
+//  Created by ciyouzen on 2016/3/26.
+//  Copyright © 2016年 dvlproad. All rights reserved.
 //
 
-#import "OtherHomeViewController.h"
+#import "FoundationHomeViewController.h"
 
-#import "PullScaleTopImageViewController.h"
-#import "ProcessLineViewController.h"
-#import "CountDownTimeViewController.h"
+#import "EncryptStringViewController.h"
+#import "AttributedStringViewController.h"
+#import "ValidateStringViewController.h"
+
+#import "DateViewController.h"
+#import "TypeConvertViewController.h"
 
 
-@interface OtherHomeViewController () <UITableViewDataSource, UITableViewDelegate> {
+@interface FoundationHomeViewController () <UITableViewDataSource, UITableViewDelegate> {
     
 }
 
 @end
 
-@implementation OtherHomeViewController
+@implementation FoundationHomeViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    self.navigationItem.title = NSLocalizedString(@"基础小视图首页", nil); //知识点:使得tabBar中的title可以和显示在顶部的title保持各自
+    self.title = NSLocalizedString(@"Home首页", nil);
     
     UITableView *tableView = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStyleGrouped];
     [tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"cell"];
@@ -39,44 +42,57 @@
     
     
     NSMutableArray *sectionDataModels = [[NSMutableArray alloc] init];
+    //NSString
     {
         CJSectionDataModel *sectionDataModel = [[CJSectionDataModel alloc] init];
-        sectionDataModel.theme = @"其他";
+        sectionDataModel.theme = @"NSString相关";
         {
-            //PullScaleTopImageViewController
-            CJModuleModel *pullScaleTopImageModuleModel = [[CJModuleModel alloc] init];
-            pullScaleTopImageModuleModel.title = @"顶部图片下拉放大，上拉缩小";
-            pullScaleTopImageModuleModel.classEntry = [PullScaleTopImageViewController class];
-            [sectionDataModel.values addObject:pullScaleTopImageModuleModel];
+            CJModuleModel *NSStringModule = [[CJModuleModel alloc] init];
+            NSStringModule.title = @"EncryptString";
+            NSStringModule.classEntry = [EncryptStringViewController class];
+            [sectionDataModel.values addObject:NSStringModule];
+        }
+        {
+            CJModuleModel *NSAttributedStringModule = [[CJModuleModel alloc] init];
+            NSAttributedStringModule.title = @"NSAttributedString";
+            NSAttributedStringModule.classEntry = [AttributedStringViewController class];
+            [sectionDataModel.values addObject:NSAttributedStringModule];
+        }
+        {
+            CJModuleModel *NSAttributedStringModule = [[CJModuleModel alloc] init];
+            NSAttributedStringModule.title = @"ValidateString";
+            NSAttributedStringModule.classEntry = [ValidateStringViewController class];
+            [sectionDataModel.values addObject:NSAttributedStringModule];
         }
         
         [sectionDataModels addObject:sectionDataModel];
     }
     
-    //QuartzCore
+    
+    //NSDate
     {
         CJSectionDataModel *sectionDataModel = [[CJSectionDataModel alloc] init];
-        sectionDataModel.theme = @"QuartzCore相关(如画线)";
+        sectionDataModel.theme = @"NSDate相关";
         {
-            //ProcessLineViewController
-            CJModuleModel *processLineViewModule = [[CJModuleModel alloc] init];
-            processLineViewModule.title = @"流程线(ProcessLineView)";
-            processLineViewModule.classEntry = [ProcessLineViewController class];
-            [sectionDataModel.values addObject:processLineViewModule];
+            CJModuleModel *NSDateModule = [[CJModuleModel alloc] init];
+            NSDateModule.title = @"NSDate";
+            NSDateModule.classEntry = [DateViewController class];
+            [sectionDataModel.values addObject:NSDateModule];
         }
+        
         [sectionDataModels addObject:sectionDataModel];
     }
     
-    //其他
+    //Json-Model类型转换
     {
         CJSectionDataModel *sectionDataModel = [[CJSectionDataModel alloc] init];
-        sectionDataModel.theme = @"其他";
+        sectionDataModel.theme = @"Json-Model类型转换相关";
         {
-            //CountDownTimeViewController
-            CJModuleModel *countDownTimeModule = [[CJModuleModel alloc] init];
-            countDownTimeModule.title = @"倒计时 CountDownTime";
-            countDownTimeModule.classEntry = [CountDownTimeViewController class];
-            [sectionDataModel.values addObject:countDownTimeModule];
+            //TypeConvert
+            CJModuleModel *TypeConvertModule = [[CJModuleModel alloc] init];
+            TypeConvertModule.title = @"TypeConvertModule（类型转换）";
+            TypeConvertModule.classEntry = [TypeConvertViewController class];
+            [sectionDataModel.values addObject:TypeConvertModule];
         }
         
         [sectionDataModels addObject:sectionDataModel];
@@ -147,19 +163,20 @@
 }
 
 
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
 /*
- #pragma mark - Navigation
- 
- // In a storyboard-based application, you will often want to do a little preparation before navigation
- - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
- // Get the new view controller using [segue destinationViewController].
- // Pass the selected object to the new view controller.
- }
- */
+#pragma mark - Navigation
+
+// In a storyboard-based application, you will often want to do a little preparation before navigation
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    // Get the new view controller using [segue destinationViewController].
+    // Pass the selected object to the new view controller.
+}
+*/
 
 @end

@@ -31,6 +31,9 @@
 #import "AccuracyStringViewController.h"
 #import "KeyboardUtilViewController.h"
 
+//混淆名生成器
+#import "CJRandomNameUtil.h"
+
 @interface UtilHomeViewController () <UITableViewDataSource, UITableViewDelegate> {
     
 }
@@ -173,6 +176,21 @@
     }
     
     
+    //CodeObfuscation
+    {
+        CJSectionDataModel *sectionDataModel = [[CJSectionDataModel alloc] init];
+        sectionDataModel.theme = @"代码混淆相关";
+        
+        {
+            CJModuleModel *QRCodeModule = [[CJModuleModel alloc] init];
+            QRCodeModule.title = @"CJRandomNameUtil(混淆名生成器)";
+            QRCodeModule.classEntry = [CJRandomNameUtil class];
+            [sectionDataModel.values addObject:QRCodeModule];
+        }
+        
+        [sectionDataModels addObject:sectionDataModel];
+    }
+    
     self.sectionDataModels = sectionDataModels;
 }
 
@@ -207,8 +225,17 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    NSLog(@"didSelectRowAtIndexPath = %ld %ld", indexPath.section, indexPath.row);
+    //NSLog(@"didSelectRowAtIndexPath = %ld %ld", indexPath.section, indexPath.row);
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
+    if (indexPath.section == 5) {
+        if (indexPath.row == 0) {
+            NSString *aaa = [CJRandomNameUtil randomMethodName];
+            NSString *bbb = [CJRandomNameUtil randomClassName];
+            NSLog(@"aaa = %@, bbb = %@", aaa, bbb);
+            return;
+        }
+    }
     
     CJSectionDataModel *sectionDataModel = [self.sectionDataModels objectAtIndex:indexPath.section];
     NSArray *dataModels = sectionDataModel.values;

@@ -10,6 +10,7 @@
 		51F701ECBBD48CC565F3FB87 /* libPods-CJUIKitDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A078401C0E781545EB72B64D /* libPods-CJUIKitDemo.a */; };
 		780078F9211B35CA00D810B5 /* NSOperationQueueHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 780078F7211B35CA00D810B5 /* NSOperationQueueHelper.m */; };
 		780078FC211B360300D810B5 /* UIViewControllerHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 780078FB211B360300D810B5 /* UIViewControllerHelper.m */; };
+		7809C9E32147EB1A00FAFD93 /* DemoUsePermissionModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7809C9E12147EB1900FAFD93 /* DemoUsePermissionModel.m */; };
 		780E46051E5DF87B00980127 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 780E46041E5DF87B00980127 /* main.m */; };
 		780E46081E5DF87B00980127 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 780E46071E5DF87B00980127 /* AppDelegate.m */; };
 		780E460B1E5DF87B00980127 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 780E460A1E5DF87B00980127 /* ViewController.m */; };
@@ -18,9 +19,13 @@
 		780E46131E5DF87B00980127 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 780E46111E5DF87B00980127 /* LaunchScreen.storyboard */; };
 		780E461E1E5DF87B00980127 /* CJUIKitDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 780E461D1E5DF87B00980127 /* CJUIKitDemoTests.m */; };
 		780E46291E5DF87B00980127 /* CJUIKitDemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 780E46281E5DF87B00980127 /* CJUIKitDemoUITests.m */; };
+		781495A62140D80700D0F2BC /* DemoUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 781495A52140D80700D0F2BC /* DemoUser.m */; };
+		781495A92140D82600D0F2BC /* MantleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 781495A82140D82600D0F2BC /* MantleViewController.m */; };
 		783281041F4198BC008267E0 /* CustomTripProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 783281031F4198BC008267E0 /* CustomTripProgressView.m */; };
 		7832810D1F41AA96008267E0 /* ProcessLineView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7832810C1F41AA96008267E0 /* ProcessLineView.m */; };
 		7840FB281EB09E0700B553F7 /* bg@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7840FB271EB09E0700B553F7 /* bg@2x.jpg */; };
+		784A7216214C9DF000F8D144 /* MoreHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 784A7215214C9DF000F8D144 /* MoreHomeViewController.m */; };
+		784A721A214CB09100F8D144 /* CJValidateEmptyUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 784A7218214CB09100F8D144 /* CJValidateEmptyUtil.m */; };
 		7850B6FF20937C5A008F4A21 /* DragViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7850B6F020937C59008F4A21 /* DragViewController.xib */; };
 		7850B70020937C5A008F4A21 /* DragViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7850B6F120937C59008F4A21 /* DragViewController.m */; };
 		7850B70120937C5A008F4A21 /* PopupInWindowVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 7850B6F320937C59008F4A21 /* PopupInWindowVC.m */; };
@@ -75,6 +80,8 @@
 		787FDB9820500B5C008A46E3 /* ShimmeringSwitchSlider.m in Sources */ = {isa = PBXBuildFile; fileRef = 787FDB8220500B5B008A46E3 /* ShimmeringSwitchSlider.m */; };
 		787FDB9920500B5C008A46E3 /* RangeSliderViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 787FDB8420500B5B008A46E3 /* RangeSliderViewController.xib */; };
 		787FDB9C20502A1C008A46E3 /* CJTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 787FDB9B20502A1C008A46E3 /* CJTextField.m */; };
+		7880E6F5213A9E84009C9BCF /* CJRandomNameUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 7880E6F4213A9E84009C9BCF /* CJRandomNameUtil.m */; };
+		7880E6F7213C2C4C009C9BCF /* CJRandomNameUtil.txt in Resources */ = {isa = PBXBuildFile; fileRef = 7880E6F6213C2C4C009C9BCF /* CJRandomNameUtil.txt */; };
 		789CAF181FB612B700AF8CD4 /* ChangeLog.md in Resources */ = {isa = PBXBuildFile; fileRef = 789CAE111FB612B600AF8CD4 /* ChangeLog.md */; };
 		789CAF191FB612B700AF8CD4 /* CJBaseCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 789CAE151FB612B600AF8CD4 /* CJBaseCollectionViewCell.m */; };
 		789CAF1A1FB612B700AF8CD4 /* CJFullBottomCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 789CAE171FB612B600AF8CD4 /* CJFullBottomCollectionViewCell.m */; };
@@ -251,7 +258,6 @@
 		80332411202C5540001DACF1 /* index.html in Resources */ = {isa = PBXBuildFile; fileRef = 80332410202C5540001DACF1 /* index.html */; };
 		804478272061F328007185EF /* CJLocationChangeManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 804478222061F328007185EF /* CJLocationChangeManager.m */; };
 		804478282061F328007185EF /* CJLocationChangeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 804478232061F328007185EF /* CJLocationChangeModel.m */; };
-		8050037E211C0B60002A2306 /* NSStringHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 8050037D211C0B60002A2306 /* NSStringHelper.m */; };
 		80500388211C3A29002A2306 /* TestPresentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80500382211C3A29002A2306 /* TestPresentViewController.m */; };
 		80500389211C3A29002A2306 /* HelperHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80500383211C3A29002A2306 /* HelperHomeViewController.m */; };
 		8050038A211C3A29002A2306 /* StringHelperViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80500385211C3A29002A2306 /* StringHelperViewController.m */; };
@@ -450,7 +456,7 @@
 		80FF91531FC5668700E437CF /* PrivateSetting.m in Sources */ = {isa = PBXBuildFile; fileRef = 80FF912C1FC5668700E437CF /* PrivateSetting.m */; };
 		80FF91931FC5682B00E437CF /* TypeConvertViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 80FF91741FC5682A00E437CF /* TypeConvertViewController.xib */; };
 		80FF91941FC5682B00E437CF /* TypeConvertViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80FF91751FC5682A00E437CF /* TypeConvertViewController.m */; };
-		80FF91951FC5682B00E437CF /* FoundatioHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80FF91771FC5682A00E437CF /* FoundatioHomeViewController.m */; };
+		80FF91951FC5682B00E437CF /* FoundationHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80FF91771FC5682A00E437CF /* FoundationHomeViewController.m */; };
 		80FF91961FC5682B00E437CF /* AttributedStringViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 80FF917A1FC5682A00E437CF /* AttributedStringViewController.xib */; };
 		80FF91971FC5682B00E437CF /* EncryptStringViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80FF917B1FC5682A00E437CF /* EncryptStringViewController.m */; };
 		80FF91981FC5682B00E437CF /* AttributedStringViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80FF917C1FC5682A00E437CF /* AttributedStringViewController.m */; };
@@ -497,6 +503,8 @@
 		780078F8211B35CA00D810B5 /* NSOperationQueueHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSOperationQueueHelper.h; sourceTree = "<group>"; };
 		780078FA211B360300D810B5 /* UIViewControllerHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UIViewControllerHelper.h; sourceTree = "<group>"; };
 		780078FB211B360300D810B5 /* UIViewControllerHelper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UIViewControllerHelper.m; sourceTree = "<group>"; };
+		7809C9E12147EB1900FAFD93 /* DemoUsePermissionModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DemoUsePermissionModel.m; sourceTree = "<group>"; };
+		7809C9E22147EB1900FAFD93 /* DemoUsePermissionModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DemoUsePermissionModel.h; sourceTree = "<group>"; };
 		780E46001E5DF87B00980127 /* CJUIKitDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CJUIKitDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		780E46041E5DF87B00980127 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		780E46061E5DF87B00980127 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -513,11 +521,19 @@
 		780E46241E5DF87B00980127 /* CJUIKitDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CJUIKitDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		780E46281E5DF87B00980127 /* CJUIKitDemoUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CJUIKitDemoUITests.m; sourceTree = "<group>"; };
 		780E462A1E5DF87B00980127 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		781495A42140D80700D0F2BC /* DemoUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DemoUser.h; sourceTree = "<group>"; };
+		781495A52140D80700D0F2BC /* DemoUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DemoUser.m; sourceTree = "<group>"; };
+		781495A72140D82600D0F2BC /* MantleViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MantleViewController.h; sourceTree = "<group>"; };
+		781495A82140D82600D0F2BC /* MantleViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MantleViewController.m; sourceTree = "<group>"; };
 		783281021F4198BC008267E0 /* CustomTripProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomTripProgressView.h; sourceTree = "<group>"; };
 		783281031F4198BC008267E0 /* CustomTripProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomTripProgressView.m; sourceTree = "<group>"; };
 		7832810B1F41AA96008267E0 /* ProcessLineView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProcessLineView.h; sourceTree = "<group>"; };
 		7832810C1F41AA96008267E0 /* ProcessLineView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProcessLineView.m; sourceTree = "<group>"; };
 		7840FB271EB09E0700B553F7 /* bg@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "bg@2x.jpg"; sourceTree = "<group>"; };
+		784A7214214C9DF000F8D144 /* MoreHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoreHomeViewController.h; sourceTree = "<group>"; };
+		784A7215214C9DF000F8D144 /* MoreHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoreHomeViewController.m; sourceTree = "<group>"; };
+		784A7218214CB09100F8D144 /* CJValidateEmptyUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJValidateEmptyUtil.m; sourceTree = "<group>"; };
+		784A7219214CB09100F8D144 /* CJValidateEmptyUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJValidateEmptyUtil.h; sourceTree = "<group>"; };
 		7850B6EF20937C59008F4A21 /* DragViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DragViewController.h; sourceTree = "<group>"; };
 		7850B6F020937C59008F4A21 /* DragViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DragViewController.xib; sourceTree = "<group>"; };
 		7850B6F120937C59008F4A21 /* DragViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DragViewController.m; sourceTree = "<group>"; };
@@ -597,6 +613,9 @@
 		787FDB8420500B5B008A46E3 /* RangeSliderViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RangeSliderViewController.xib; sourceTree = "<group>"; };
 		787FDB9A20502A1C008A46E3 /* CJTextField.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CJTextField.h; sourceTree = "<group>"; };
 		787FDB9B20502A1C008A46E3 /* CJTextField.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CJTextField.m; sourceTree = "<group>"; };
+		7880E6F3213A9E84009C9BCF /* CJRandomNameUtil.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CJRandomNameUtil.h; sourceTree = "<group>"; };
+		7880E6F4213A9E84009C9BCF /* CJRandomNameUtil.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CJRandomNameUtil.m; sourceTree = "<group>"; };
+		7880E6F6213C2C4C009C9BCF /* CJRandomNameUtil.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CJRandomNameUtil.txt; sourceTree = "<group>"; };
 		789CAB597AD073D5F637D193 /* Pods-CJUIKitDemoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CJUIKitDemoTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-CJUIKitDemoTests/Pods-CJUIKitDemoTests.release.xcconfig"; sourceTree = "<group>"; };
 		789CAE111FB612B600AF8CD4 /* ChangeLog.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = ChangeLog.md; sourceTree = "<group>"; };
 		789CAE141FB612B600AF8CD4 /* CJBaseCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJBaseCollectionViewCell.h; sourceTree = "<group>"; };
@@ -886,8 +905,6 @@
 		804478232061F328007185EF /* CJLocationChangeModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJLocationChangeModel.m; sourceTree = "<group>"; };
 		804478242061F328007185EF /* CJLocationChangeManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJLocationChangeManager.h; sourceTree = "<group>"; };
 		804478252061F328007185EF /* CJLocationChangeModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJLocationChangeModel.h; sourceTree = "<group>"; };
-		8050037C211C0B60002A2306 /* NSStringHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NSStringHelper.h; sourceTree = "<group>"; };
-		8050037D211C0B60002A2306 /* NSStringHelper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NSStringHelper.m; sourceTree = "<group>"; };
 		80500381211C3A29002A2306 /* TestPresentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestPresentViewController.h; sourceTree = "<group>"; };
 		80500382211C3A29002A2306 /* TestPresentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestPresentViewController.m; sourceTree = "<group>"; };
 		80500383211C3A29002A2306 /* HelperHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HelperHomeViewController.m; sourceTree = "<group>"; };
@@ -1217,11 +1234,11 @@
 		80FF91281FC5668700E437CF /* CJLogUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJLogUtil.m; sourceTree = "<group>"; };
 		80FF912C1FC5668700E437CF /* PrivateSetting.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PrivateSetting.m; sourceTree = "<group>"; };
 		80FF912D1FC5668700E437CF /* PrivateSetting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrivateSetting.h; sourceTree = "<group>"; };
-		80FF91721FC5682A00E437CF /* FoundatioHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FoundatioHomeViewController.h; sourceTree = "<group>"; };
+		80FF91721FC5682A00E437CF /* FoundationHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FoundationHomeViewController.h; sourceTree = "<group>"; };
 		80FF91741FC5682A00E437CF /* TypeConvertViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TypeConvertViewController.xib; sourceTree = "<group>"; };
 		80FF91751FC5682A00E437CF /* TypeConvertViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TypeConvertViewController.m; sourceTree = "<group>"; };
 		80FF91761FC5682A00E437CF /* TypeConvertViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TypeConvertViewController.h; sourceTree = "<group>"; };
-		80FF91771FC5682A00E437CF /* FoundatioHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FoundatioHomeViewController.m; sourceTree = "<group>"; };
+		80FF91771FC5682A00E437CF /* FoundationHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FoundationHomeViewController.m; sourceTree = "<group>"; };
 		80FF91791FC5682A00E437CF /* AttributedStringViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AttributedStringViewController.h; sourceTree = "<group>"; };
 		80FF917A1FC5682A00E437CF /* AttributedStringViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AttributedStringViewController.xib; sourceTree = "<group>"; };
 		80FF917B1FC5682A00E437CF /* EncryptStringViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EncryptStringViewController.m; sourceTree = "<group>"; };
@@ -1289,7 +1306,7 @@
 		780078F4211B35CA00D810B5 /* CJBaseHelper */ = {
 			isa = PBXGroup;
 			children = (
-				8050037B211C0B29002A2306 /* NSStringHelper */,
+				784A7217214CB09100F8D144 /* CJValidateEmptyHelper */,
 				780078F5211B35CA00D810B5 /* UIViewControllerHelper */,
 				780078F6211B35CA00D810B5 /* NSOperationQueueHelper */,
 			);
@@ -1399,6 +1416,19 @@
 			path = CJUIKitDemoUITests;
 			sourceTree = "<group>";
 		};
+		781495A32140D80700D0F2BC /* MantleDemo */ = {
+			isa = PBXGroup;
+			children = (
+				781495A42140D80700D0F2BC /* DemoUser.h */,
+				781495A52140D80700D0F2BC /* DemoUser.m */,
+				7809C9E22147EB1900FAFD93 /* DemoUsePermissionModel.h */,
+				7809C9E12147EB1900FAFD93 /* DemoUsePermissionModel.m */,
+				781495A72140D82600D0F2BC /* MantleViewController.h */,
+				781495A82140D82600D0F2BC /* MantleViewController.m */,
+			);
+			path = MantleDemo;
+			sourceTree = "<group>";
+		};
 		783281011F4198BC008267E0 /* CJSmallCustomView */ = {
 			isa = PBXGroup;
 			children = (
@@ -1409,6 +1439,24 @@
 			);
 			name = CJSmallCustomView;
 			path = ../../CJSmallCustomView;
+			sourceTree = "<group>";
+		};
+		784A7213214C9DF000F8D144 /* DemoMore */ = {
+			isa = PBXGroup;
+			children = (
+				784A7214214C9DF000F8D144 /* MoreHomeViewController.h */,
+				784A7215214C9DF000F8D144 /* MoreHomeViewController.m */,
+			);
+			path = DemoMore;
+			sourceTree = "<group>";
+		};
+		784A7217214CB09100F8D144 /* CJValidateEmptyHelper */ = {
+			isa = PBXGroup;
+			children = (
+				784A7219214CB09100F8D144 /* CJValidateEmptyUtil.h */,
+				784A7218214CB09100F8D144 /* CJValidateEmptyUtil.m */,
+			);
+			path = CJValidateEmptyHelper;
 			sourceTree = "<group>";
 		};
 		7850B6EE20937C59008F4A21 /* ViewDragDemo */ = {
@@ -2465,15 +2513,6 @@
 			path = CJLocationChangeManager;
 			sourceTree = "<group>";
 		};
-		8050037B211C0B29002A2306 /* NSStringHelper */ = {
-			isa = PBXGroup;
-			children = (
-				8050037C211C0B60002A2306 /* NSStringHelper.h */,
-				8050037D211C0B60002A2306 /* NSStringHelper.m */,
-			);
-			path = NSStringHelper;
-			sourceTree = "<group>";
-		};
 		8050037F211C3A29002A2306 /* DemosHelper */ = {
 			isa = PBXGroup;
 			children = (
@@ -2901,6 +2940,7 @@
 		80FF8F0A1FC5649E00E437CF /* Demos */ = {
 			isa = PBXGroup;
 			children = (
+				784A7213214C9DF000F8D144 /* DemoMore */,
 				8050037F211C3A29002A2306 /* DemosHelper */,
 				80FF91711FC5682A00E437CF /* DemosFoundation */,
 				80FF91831FC5682A00E437CF /* DemosOther */,
@@ -2915,6 +2955,7 @@
 		80FF8F0B1FC5649E00E437CF /* DemosThirdParty */ = {
 			isa = PBXGroup;
 			children = (
+				781495A32140D80700D0F2BC /* MantleDemo */,
 				80FF8F0F1FC5649E00E437CF /* MJExtensionDemo */,
 				80FF8F0D1FC5649E00E437CF /* ThirdPartyHomeViewController.h */,
 				80FF8F0E1FC5649E00E437CF /* ThirdPartyHomeViewController.m */,
@@ -3288,6 +3329,9 @@
 				80FF91241FC5668700E437CF /* CJUtil.h */,
 				80FF91061FC5668700E437CF /* CJWebUtil */,
 				80FF912A1FC5668700E437CF /* UIUtil */,
+				7880E6F3213A9E84009C9BCF /* CJRandomNameUtil.h */,
+				7880E6F4213A9E84009C9BCF /* CJRandomNameUtil.m */,
+				7880E6F6213C2C4C009C9BCF /* CJRandomNameUtil.txt */,
 			);
 			name = CJBaseUtil;
 			path = ../../CJBaseUtil;
@@ -3404,8 +3448,8 @@
 		80FF91711FC5682A00E437CF /* DemosFoundation */ = {
 			isa = PBXGroup;
 			children = (
-				80FF91721FC5682A00E437CF /* FoundatioHomeViewController.h */,
-				80FF91771FC5682A00E437CF /* FoundatioHomeViewController.m */,
+				80FF91721FC5682A00E437CF /* FoundationHomeViewController.h */,
+				80FF91771FC5682A00E437CF /* FoundationHomeViewController.m */,
 				80FF917F1FC5682A00E437CF /* NSDate */,
 				80FF91781FC5682A00E437CF /* NSString */,
 				80FF91731FC5682A00E437CF /* TypeConvert */,
@@ -3564,7 +3608,6 @@
 				780E45FD1E5DF87B00980127 /* Frameworks */,
 				780E45FE1E5DF87B00980127 /* Resources */,
 				693C2CD1129E8BD75F6C10A0 /* [CP] Copy Pods Resources */,
-				DFD41AC50D6439C0D548456B /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -3583,8 +3626,6 @@
 				780E46151E5DF87B00980127 /* Sources */,
 				780E46161E5DF87B00980127 /* Frameworks */,
 				780E46171E5DF87B00980127 /* Resources */,
-				5E4949F0FB501ABA3E60EDA5 /* [CP] Embed Pods Frameworks */,
-				142AD0A45476DF04AE122A27 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -3695,6 +3736,7 @@
 				80FF90401FC5649F00E437CF /* add_red_Big.png in Resources */,
 				8033239F20299AD7001DACF1 /* MemoryADKnowledge02.jpg in Resources */,
 				8033239D20299AD7001DACF1 /* MemoryADResult02.jpg in Resources */,
+				7880E6F7213C2C4C009C9BCF /* CJRandomNameUtil.txt in Resources */,
 				7840FB281EB09E0700B553F7 /* bg@2x.jpg in Resources */,
 				80D0120B210336B900D1EDF0 /* BeChangeViewController.xib in Resources */,
 				80FF90951FC5649F00E437CF /* SHeaderHome2.xib in Resources */,
@@ -3867,21 +3909,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		142AD0A45476DF04AE122A27 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CJUIKitDemoTests/Pods-CJUIKitDemoTests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		16923FCFE087A4DBE468460F /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -3916,21 +3943,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		5E4949F0FB501ABA3E60EDA5 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CJUIKitDemoTests/Pods-CJUIKitDemoTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		693C2CD1129E8BD75F6C10A0 /* [CP] Copy Pods Resources */ = {
@@ -3989,21 +4001,6 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CJUIKitDemo/Pods-CJUIKitDemo-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		DFD41AC50D6439C0D548456B /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CJUIKitDemo/Pods-CJUIKitDemo-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -4021,6 +4018,7 @@
 				789CAF7E1FB612B700AF8CD4 /* CJUploadImageCollectionView+Tap.m in Sources */,
 				78A621ED2135CA50004DA046 /* DemoFloatingWindow.m in Sources */,
 				807F126020B507A30008B748 /* ViewAnimateViewController.m in Sources */,
+				784A7216214C9DF000F8D144 /* MoreHomeViewController.m in Sources */,
 				789CAF6C1FB612B700AF8CD4 /* CJDefaultToolbar.m in Sources */,
 				804478272061F328007185EF /* CJLocationChangeManager.m in Sources */,
 				80FF91491FC5668700E437CF /* NSObject+SearchProperty.m in Sources */,
@@ -4048,6 +4046,7 @@
 				789CAF251FB612B700AF8CD4 /* CJSingleTableViewCellDataSource.m in Sources */,
 				803323AF20299AD7001DACF1 /* DetailCell.m in Sources */,
 				80FF91361FC5668700E437CF /* NSJSONSerialization+CJCategory.m in Sources */,
+				781495A92140D82600D0F2BC /* MantleViewController.m in Sources */,
 				8060C48A20E0D5EF0093B14E /* ValidateStringTableViewCell.m in Sources */,
 				789CAF261FB612B700AF8CD4 /* CJSingleTableViewCellDataSource2.m in Sources */,
 				80E7E75820AD2C8B000F762D /* UIImage+CJMakeCircle.m in Sources */,
@@ -4148,7 +4147,7 @@
 				80E7E73020AD2AEA000F762D /* UIColor+CJHex.m in Sources */,
 				80FF913B1FC5668700E437CF /* NSString+CJEncryption.m in Sources */,
 				80FF90351FC5649E00E437CF /* TestDataUtil.m in Sources */,
-				80FF91951FC5682B00E437CF /* FoundatioHomeViewController.m in Sources */,
+				80FF91951FC5682B00E437CF /* FoundationHomeViewController.m in Sources */,
 				80E7E75620AD2C8B000F762D /* UIImage+SplitImageIntoTwoParts.m in Sources */,
 				80FF90851FC5649F00E437CF /* TvDemo_Complex+Event.m in Sources */,
 				80FF902B1FC5649E00E437CF /* MJExtensionViewController.m in Sources */,
@@ -4161,6 +4160,7 @@
 				80FF90361FC5649E00E437CF /* DemoInfo.m in Sources */,
 				80FF909A1FC5649F00E437CF /* FloatingWindowViewController.m in Sources */,
 				80332404202C4E55001DACF1 /* EmptyWebViewController.m in Sources */,
+				7809C9E32147EB1A00FAFD93 /* DemoUsePermissionModel.m in Sources */,
 				789CAF681FB612B700AF8CD4 /* CJChooseTextTextField.m in Sources */,
 				808DE5E720DA0586003E08F1 /* CJDecimalUtil.m in Sources */,
 				80FF90B01FC5649F00E437CF /* NavigationBarChangeBGViewController.m in Sources */,
@@ -4202,6 +4202,7 @@
 				787FDB5620500B01008A46E3 /* SearchBarViewController.m in Sources */,
 				789CAF191FB612B700AF8CD4 /* CJBaseCollectionViewCell.m in Sources */,
 				80FF90471FC5649F00E437CF /* SearchTableViewController.m in Sources */,
+				784A721A214CB09100F8D144 /* CJValidateEmptyUtil.m in Sources */,
 				80FF91941FC5682B00E437CF /* TypeConvertViewController.m in Sources */,
 				789CAF271FB612B700AF8CD4 /* CJBaseTableViewCell.m in Sources */,
 				80D71EAD20902C2F00D2DB68 /* CJAlertView.m in Sources */,
@@ -4217,6 +4218,7 @@
 				80EABC46212546E800A2EA34 /* CJBaseWebViewController.m in Sources */,
 				787FDB5A20500B01008A46E3 /* ImageViewController.m in Sources */,
 				80FF91351FC5668700E437CF /* NSArray+CJConsoleLog.m in Sources */,
+				7880E6F5213A9E84009C9BCF /* CJRandomNameUtil.m in Sources */,
 				803323AC20299AD7001DACF1 /* CustomLayoutCollectionViewController.m in Sources */,
 				789CAF291FB612B700AF8CD4 /* CJLeftDetailTableViewCell.m in Sources */,
 				789CAF7F1FB612B700AF8CD4 /* CJUploadImageCollectionView.m in Sources */,
@@ -4240,7 +4242,6 @@
 				80D71EA4209021FA00D2DB68 /* CJAlert.m in Sources */,
 				80FF91EA1FC6739D00E437CF /* CJCalendarUtil.m in Sources */,
 				80FF914F1FC5668700E437CF /* CJDataUtil+Value.m in Sources */,
-				8050037E211C0B60002A2306 /* NSStringHelper.m in Sources */,
 				80FF90B41FC5649F00E437CF /* ButtonViewController.m in Sources */,
 				789CAF501FB612B700AF8CD4 /* CJToast.m in Sources */,
 				80FF90371FC5649E00E437CF /* TestDataModel.m in Sources */,
@@ -4271,6 +4272,7 @@
 				80E7E76020AD31A2000F762D /* CJLaunchImageUtil.m in Sources */,
 				80D71EA92090277700D2DB68 /* AlertViewController.m in Sources */,
 				80E7E75320AD2C8B000F762D /* UIImage+CJCreate.m in Sources */,
+				781495A62140D80700D0F2BC /* DemoUser.m in Sources */,
 				789CAF2A1FB612B700AF8CD4 /* CJRightDetailTableViewCell.m in Sources */,
 				80E7E73520AD2AEA000F762D /* UIButton+CJUpDownStructure.m in Sources */,
 				80FF90AD1FC5649F00E437CF /* NavigationBarViewController.m in Sources */,

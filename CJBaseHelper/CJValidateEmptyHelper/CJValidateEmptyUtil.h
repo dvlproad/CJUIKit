@@ -1,5 +1,5 @@
 //
-//  NSStringHelper.h
+//  CJValidateEmptyUtil.h
 //  CJUIKitDemo
 //
 //  Created by ciyouzen on 6/25/15.
@@ -13,15 +13,16 @@
 #import <Foundation/Foundation.h>
 
 //判断是否空字符串
-#define cjIsNullString(s)   (!s || [s isEqual:[NSNull null]] || [s isEqualToString:@""])
+//#define cjIsNullString(s)   (!s || [s isEqual:[NSNull null]] || [s isEqualToString:@""])
+#define cjIsNullString(s)   ([CJValidateEmptyUtil isEmptyForObject:s])
 
-@interface NSStringHelper : NSObject
 
-#pragma mark - 判断是否为空字符串
-///是否为空字符串
-+ (BOOL)isEmptyForString:(NSString *)string;
+@interface CJValidateEmptyUtil : NSObject
 
-///判断自己是否为空
-+ (BOOL)isBlankForString:(NSString *)string;
+///判断对象是否为NULL或nil
++ (BOOL)isNullForObject:(id)object;
+
+///判断对象是否为空
++ (BOOL)isEmptyForObject:(id)object;
 
 @end

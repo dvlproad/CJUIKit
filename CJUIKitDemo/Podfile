@@ -1,5 +1,6 @@
 platform :ios, '8.0'
 #use_frameworks!
+inhibit_all_warnings!
 
 source 'https://github.com/CocoaPods/Specs.git'
 source 'https://gitee.com/dvlproad/dvlproadSpecs'  #这里要增加的是这条私有仓库的地址，而不是那些私有仓库里的库的地址，即如果你是增加'https://gitee.com/dvlproad/CJCustomView.git'那就错了。（之前自己犯过一次错）
@@ -51,6 +52,11 @@ target 'CJUIKitDemo' do
   pod 'NJKWebViewProgress'
   
   pod 'DZNEmptyDataSet'
+  
+#  pod 'CJBaseUIKit', :subspecs => ['UIColor', 'UIButton', 'UITextField', 'CJToast', 'CJAlert']
+#  pod 'CJBaseUtil', :subspecs => ['CJLog']
+#  pod 'CJFoundation', :subspecs => ['NSString']
+    pod 'CJFile', :subspecs => ['CJFileModel', 'CJFileManager']
 end
 
 target 'CJUIKitDemoTests' do

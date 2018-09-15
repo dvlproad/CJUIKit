@@ -8,7 +8,7 @@
 
 #import "StringHelperViewController.h"
 
-#import "NSStringHelper.h"
+#import "CJValidateEmptyUtil.h"
 
 @interface StringHelperViewController () <UITableViewDataSource, UITableViewDelegate> {
     
@@ -41,6 +41,12 @@
     {
         CJSectionDataModel *sectionDataModel = [[CJSectionDataModel alloc] init];
         sectionDataModel.theme = @"字符串相关";
+        {
+            CJModuleModel *toastModule = [[CJModuleModel alloc] init];
+            toastModule.title = @"控制台输出 [NSNull null] 的值";
+            //toastModule.classEntry = [UIViewController class];
+            [sectionDataModel.values addObject:toastModule];
+        }
         {
             CJModuleModel *toastModule = [[CJModuleModel alloc] init];
             toastModule.title = @"字符串判空，调用实例，无法正确判断";
@@ -95,20 +101,27 @@
     
     if (indexPath.section == 0) {
         if (indexPath.row == 0) {
-            NSString *string;
-//            NSLog(@"%@ isEmpty == %@", string, [string cj_isEmpty] ? @"YES" : @"NO");
+            NSNull *string1 = [NSNull null];
+            NSLog(@"[NSNull null] = %@", string1);
+            
+            NSString *string2 = NSStringFromClass([NSNull class]);
+            NSLog(@"NSStringFromClass([NSNull class] = %@", string2);
             
         } else if (indexPath.row == 1) {
             NSString *string;
-            NSLog(@"%@ isEmpty == %@", string, [NSStringHelper isEmptyForString:string] ? @"YES" : @"NO");
+//            NSLog(@"%@ isEmpty == %@", string, [string cj_isEmpty] ? @"YES" : @"NO");
+            
+        } else if (indexPath.row == 2) {
+            NSString *string;
+            NSLog(@"%@ isEmpty == %@", string, [CJValidateEmptyUtil isEmptyForObject:string] ? @"YES" : @"NO");
             
 //            NSString *string = @"";
 //            NSLog(@"%@ isEmpty == %@", string, [string cj_isEmpty] ? @"YES" : @"NO");
             
-        } else if (indexPath.row == 2) {
-            
-            
         } else if (indexPath.row == 3) {
+            
+            
+        } else if (indexPath.row == 4) {
             
         }
         

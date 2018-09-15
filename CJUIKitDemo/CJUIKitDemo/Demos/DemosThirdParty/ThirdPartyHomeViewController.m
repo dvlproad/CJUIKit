@@ -10,6 +10,7 @@
 
 //模型转换
 #import "MJExtensionViewController.h"
+#import "MantleViewController.h"
 
 
 @interface ThirdPartyHomeViewController () <UITableViewDataSource, UITableViewDelegate> {
@@ -45,6 +46,12 @@
         {
             CJModuleModel *baseScrollViewModule = [[CJModuleModel alloc] init];
             baseScrollViewModule.title = @"MJExtension的基本使用(待完善)";
+            baseScrollViewModule.classEntry = [MJExtensionViewController class];
+            [sectionDataModel.values addObject:baseScrollViewModule];
+        }
+        {
+            CJModuleModel *baseScrollViewModule = [[CJModuleModel alloc] init];
+            baseScrollViewModule.title = @"Mantle的基本使用(待完善)";
             baseScrollViewModule.classEntry = [MJExtensionViewController class];
             [sectionDataModel.values addObject:baseScrollViewModule];
         }
@@ -87,7 +94,7 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    NSLog(@"didSelectRowAtIndexPath = %ld %ld", indexPath.section, indexPath.row);
+    //NSLog(@"didSelectRowAtIndexPath = %ld %ld", indexPath.section, indexPath.row);
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
     CJSectionDataModel *sectionDataModel = [self.sectionDataModels objectAtIndex:indexPath.section];
@@ -102,6 +109,7 @@
     UIViewController *viewController = nil;
     
     NSArray *noxibViewControllers = @[NSStringFromClass([UIViewController class]),
+                                      NSStringFromClass([MantleViewController class]),
                                       ];
     
     NSString *clsString = NSStringFromClass(moduleModel.classEntry);

@@ -1,15 +1,19 @@
+<p id="目录"></p>
 ## 目录
-本项目包含的开源库有
+* [一、CJBaseUIKit：自定义的基础UI控件](#CJBaseUIKit)
+* [二、CJComplexUIKit：自定义的稍微复杂的UI](#CJComplexUIKit)
+* [三、CJFoundation：系统Foundation的扩展](#CJFoundation)
+* [四、CJBaseUtil：自定义的基础工具类](#CJBaseUtil)
+* [五、CJBaseHelper：自定义的基础帮助类](#CJBaseHelper)
+* [其他](#其他)
+* [版本介绍/更新记录](#版本介绍/更新记录)
 
 
-> 
-* 1、CJBaseUIKit：自定义的基础UI控件
-* 2、CJComplexUIKit：自定义的稍微复杂的UI
-* 3、CJFoundation：系统Foundation的扩展
-* 4、CJBaseUtil：自定义的基础工具类
-* 5、CJBaseHelper：自定义的基础帮助类
 
+<p id="CJBaseUIKit"></p>
 ## 一、CJBaseUIKit：自定义的基础UI控件
+> [< 返回目录](#目录)
+
 自定义的基础UI控件
 
 内容如下：
@@ -121,7 +125,18 @@ CJImageView，可为ImageView设置title；而CJBadgeImageView则还可以设置
 
 待完善
 
+
+
+
+
+
+
+
+
+<p id="CJComplexUIKit"></p>
 ## 二、CJComplexUIKit：自定义的稍微复杂的UI
+> [< 返回目录](#目录)
+
 > 
 - CJComplexUIKit/UIViewController：视图控制器相关
 - CJComplexUIKit/UIViewController/CJCategory：控制器的分类：包含对视图控制器返回按钮的操作自定义等
@@ -134,13 +149,29 @@ CJImageView，可为ImageView设置title；而CJBadgeImageView则还可以设置
 - CJComplexUIKit/CJDataScrollView/ImagePickerCollectionlView
 
 
+
+
+
+
+
+<p id="CJFoundation"></p>
 ## 三、CJFoundation：系统Foundation的扩展
+> [< 返回目录](#目录)
+
 >
 - CJFoundation/NSString：包含字符串的各种相关操作(获取长度、判断是否手机号码等等等)
 - CJFoundation/NSDictionary：包含字典的各种相关操作
 - CJFoundation/NSJSONSerialization：模型转换
 
+
+
+
+
+
+<p id="CJBaseUtil"></p>
 ## 四、CJBaseUtil：自定义的基础工具类
+> [< 返回目录](#目录)
+
 >
 - CJBaseUtil/CJDevice：获取设备信息
 - CJBaseUtil/CJLog：日志输出工具
@@ -161,14 +192,29 @@ CJImageView，可为ImageView设置title；而CJBadgeImageView则还可以设置
 - CJBaseUtil/CJManager/CJTimerManager：定时器管理器，如一个登录页需要短信验证码和语音验证码，但只使用一个定时器。
 - CJBaseUtil/CJPinyinHelper：字符串转拼音工具
 
+
+
+
+
+
+<p id="CJBaseHelper"></p>
 ## 五、CJBaseHelper：自定义的基础帮助类
-- CJBaseHelper/NSStringHelper：字符串判断帮助类
+> [< 返回目录](#目录)
+
+- CJBaseHelper/CJValidateEmptyHelper：对象判断帮助类
 - CJBaseHelper/UIViewControllerHelper：视图控制器帮助类：包含获取当前显示的视图控制器和通过视图找到它所在的视图控制器等
 - CJBaseHelper/NSOperationQueueHelper：多任务处理
 
 
 
+
+
+
+
+<p id="其他"></p>
 ## 其他
+> [< 返回目录](#目录)
+
 #### 1、顶部图片下拉放大、上推缩小
 下拉放大原理：其实就是利用下拉的时候，根据contentOffset来对应跟新顶部视图的frame。
 需求①：由于我们的顶部视图必须满足能够拖动，所以我们的顶部视图肯定是依赖于UIScrollView移动的。①如果我们的顶部视图是被添加到scrollView上，我们可以利用ScrollView的contentInset来将滚动视图的顶部留给顶部视图。随后，在滚动过程中如果发现是下拉滚动，则将顶部视图的frame根据滚动的contentOffset来减小它的y及增大它的height即可了。 ②如果我们的顶部视图是被添加到与scrollView同层级的view上，由于我们要满足在顶部上可以触发滚动，所以我们的顶部视图肯定还是得依赖于UIScrollView的滚动的。那么也就代表着我们的顶部视图其实还是应该看起来像是占据着ScrollView的contentInset的顶部的，也就是说我们得利用ScrollView的contentInset来将滚动视图的顶部留给顶部视图。且我们的view必须在ScrollView之下，而为了
@@ -183,9 +229,12 @@ CJImageView，可为ImageView设置title；而CJBadgeImageView则还可以设置
 
 
 
-
+<p id="版本介绍/更新记录"></p>
 ## 版本介绍/更新记录
-后续完善
+#### 总
+* 2018-09-15
+
+> 1. 调整项目结构
 
 #### CJBaseUtil
 * 2018-08-29 V0.3.1
@@ -193,6 +242,11 @@ CJImageView，可为ImageView设置title；而CJBadgeImageView则还可以设置
 > 1. 在`CJLog`里增加`CJLogViewWindow`一个在 iOS 设备屏幕上实时打印 Log 的小工具；
 > 1. 在`CJManager`下增加管理悬浮窗的`CJSuspendWindowManager`，用来处理防止重复生成等。
 
+
+#### CJBaseHelper
+* 2018-09-15 V0.0.3
+
+> 1. 更改对象判空的类名为`CJValidateEmptyHelper`
 
 ## Author Or Contact
 * [邮箱：studyroad@qq.com](studyroad@qq.com)

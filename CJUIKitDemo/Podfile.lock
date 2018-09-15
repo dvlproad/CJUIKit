@@ -15,6 +15,7 @@ PODS:
   - AFNetworking/UIKit (3.2.1):
     - AFNetworking/NSURLSession
   - CJFile/CJFileManager (0.0.9)
+  - CJFile/CJFileModel (0.0.9)
   - CJMedia/CJPhotoBrowser (0.0.7):
     - CJMedia/CJValidateAuthorizationUtil
     - Masonry
@@ -70,6 +71,8 @@ PODS:
   - YYText (1.0.7)
 
 DEPENDENCIES:
+  - CJFile/CJFileManager
+  - CJFile/CJFileModel
   - CJMedia/CJUploadImagePickerUtil (~> 0.0.7)
   - CJNetwork/AFNetworkingBaseComponent
   - CJPicker (~> 1.3.2)
@@ -92,6 +95,35 @@ DEPENDENCIES:
   - SVProgressHUD (~> 2.2.2)
   - WebViewJavascriptBridge (~> 6.0.2)
   - YYText (~> 1.0.7)
+
+SPEC REPOS:
+  https://gitee.com/dvlproad/dvlproadSpecs:
+    - IjinbuNetwork
+  https://github.com/cocoapods/specs.git:
+    - AFNetworking
+    - CJFile
+    - CJMedia
+    - CJNetwork
+    - CJPicker
+    - DZNEmptyDataSet
+    - JGActionSheet
+    - Mantle
+    - Masonry
+    - MBProgressHUD
+    - MJExtension
+    - MJPopupViewController
+    - MJRefresh
+    - NJKWebViewProgress
+    - OpenUDID
+    - PinYin4Objc
+    - PureLayout
+    - SAMKeychain
+    - SDCycleScrollView
+    - SDWebImage
+    - Shimmer
+    - SVProgressHUD
+    - WebViewJavascriptBridge
+    - YYText
 
 SPEC CHECKSUMS:
   AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
@@ -120,6 +152,6 @@ SPEC CHECKSUMS:
   WebViewJavascriptBridge: 7f5bc4d3581e672e8f32bd0f812d54bc69bb8e29
   YYText: 5c461d709e24d55a182d1441c41dc639a18a4849
 
-PODFILE CHECKSUM: 2803ace92b5b2290d4452cc7e2b126126eeb6813
+PODFILE CHECKSUM: ee9cdb70fc9ea474f52baa4b27ada2ed5d0985bb
 
-COCOAPODS: 1.4.0
+COCOAPODS: 1.5.3

@@ -1,5 +1,5 @@
 //
-//  FoundatioHomeViewController.h
+//  FoundationHomeViewController.h
 //  CJFoundationDemo
 //
 //  Created by ciyouzen on 2016/3/26.
@@ -16,7 +16,7 @@
 #import <CJBaseUtil/CJModuleModel.h> //在CJDataUtil中
 #endif
 
-@interface FoundatioHomeViewController : UIViewController {
+@interface FoundationHomeViewController : UIViewController {
     
 }
 @property (nonatomic, weak) IBOutlet UITableView *tableView;

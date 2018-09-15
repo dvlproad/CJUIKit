@@ -1,34 +1,35 @@
 //
-//  FoundatioHomeViewController.m
+//  MoreHomeViewController.m
 //  CJFoundationDemo
 //
 //  Created by ciyouzen on 2016/3/26.
 //  Copyright © 2016年 dvlproad. All rights reserved.
 //
 
-#import "FoundatioHomeViewController.h"
+#import "MoreHomeViewController.h"
 
-#import "EncryptStringViewController.h"
-#import "AttributedStringViewController.h"
-#import "ValidateStringViewController.h"
+//帮助工具
+#import "HelperHomeViewController.h"
 
-#import "DateViewController.h"
-#import "TypeConvertViewController.h"
+//第三方库
+#import "ThirdPartyHomeViewController.h"
 
+//其他
+#import "OtherHomeViewController.h"
 
-@interface FoundatioHomeViewController () <UITableViewDataSource, UITableViewDelegate> {
+@interface MoreHomeViewController () <UITableViewDataSource, UITableViewDelegate> {
     
 }
 
 @end
 
-@implementation FoundatioHomeViewController
+@implementation MoreHomeViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    self.title = NSLocalizedString(@"Home首页", nil);
+    self.navigationItem.title = NSLocalizedString(@"Util首页", nil); //知识点:使得tabBar中的title可以和显示在顶部的title保持各自
     
     UITableView *tableView = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStyleGrouped];
     [tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"cell"];
@@ -42,57 +43,47 @@
     
     
     NSMutableArray *sectionDataModels = [[NSMutableArray alloc] init];
-    //NSString
+    
+    //Helper
     {
         CJSectionDataModel *sectionDataModel = [[CJSectionDataModel alloc] init];
-        sectionDataModel.theme = @"NSString相关";
+        sectionDataModel.theme = @"Helper";
         {
-            CJModuleModel *NSStringModule = [[CJModuleModel alloc] init];
-            NSStringModule.title = @"EncryptString";
-            NSStringModule.classEntry = [EncryptStringViewController class];
-            [sectionDataModel.values addObject:NSStringModule];
-        }
-        {
-            CJModuleModel *NSAttributedStringModule = [[CJModuleModel alloc] init];
-            NSAttributedStringModule.title = @"NSAttributedString";
-            NSAttributedStringModule.classEntry = [AttributedStringViewController class];
-            [sectionDataModel.values addObject:NSAttributedStringModule];
-        }
-        {
-            CJModuleModel *NSAttributedStringModule = [[CJModuleModel alloc] init];
-            NSAttributedStringModule.title = @"ValidateString";
-            NSAttributedStringModule.classEntry = [ValidateStringViewController class];
-            [sectionDataModel.values addObject:NSAttributedStringModule];
+            CJModuleModel *xibModule = [[CJModuleModel alloc] init];
+            xibModule.title = @"HelperHome(帮助工具类入口)";
+            xibModule.classEntry = [HelperHomeViewController class];
+            
+            [sectionDataModel.values addObject:xibModule];
         }
         
         [sectionDataModels addObject:sectionDataModel];
     }
     
-    
-    //NSDate
+    //Helper
     {
         CJSectionDataModel *sectionDataModel = [[CJSectionDataModel alloc] init];
-        sectionDataModel.theme = @"NSDate相关";
+        sectionDataModel.theme = @"ThirdParty";
         {
-            CJModuleModel *NSDateModule = [[CJModuleModel alloc] init];
-            NSDateModule.title = @"NSDate";
-            NSDateModule.classEntry = [DateViewController class];
-            [sectionDataModel.values addObject:NSDateModule];
+            CJModuleModel *xibModule = [[CJModuleModel alloc] init];
+            xibModule.title = @"ThirdPartyHome(第三方库入口)";
+            xibModule.classEntry = [ThirdPartyHomeViewController class];
+            
+            [sectionDataModel.values addObject:xibModule];
         }
         
         [sectionDataModels addObject:sectionDataModel];
     }
     
-    //Json-Model类型转换
+    //Other
     {
         CJSectionDataModel *sectionDataModel = [[CJSectionDataModel alloc] init];
-        sectionDataModel.theme = @"Json-Model类型转换相关";
+        sectionDataModel.theme = @"Other";
         {
-            //TypeConvert
-            CJModuleModel *TypeConvertModule = [[CJModuleModel alloc] init];
-            TypeConvertModule.title = @"TypeConvertModule（类型转换）";
-            TypeConvertModule.classEntry = [TypeConvertViewController class];
-            [sectionDataModel.values addObject:TypeConvertModule];
+            CJModuleModel *xibModule = [[CJModuleModel alloc] init];
+            xibModule.title = @"OtherHome(其他基础小视图入口)";
+            xibModule.classEntry = [OtherHomeViewController class];
+            
+            [sectionDataModel.values addObject:xibModule];
         }
         
         [sectionDataModels addObject:sectionDataModel];
@@ -139,30 +130,27 @@
     NSArray *dataModels = sectionDataModel.values;
     CJModuleModel *moduleModel = [dataModels objectAtIndex:indexPath.row];
     
+    
     Class classEntry = moduleModel.classEntry;
     NSString *nibName = NSStringFromClass(moduleModel.classEntry);
     
     
     UIViewController *viewController = nil;
     
-    NSArray *noxibViewControllers = @[NSStringFromClass([UIViewController class]),
-                                      ];
+    NSArray *xibViewControllers = @[];
     
     NSString *clsString = NSStringFromClass(moduleModel.classEntry);
-    if ([noxibViewControllers containsObject:clsString])
+    if ([xibViewControllers containsObject:clsString])
     {
+        viewController = [[classEntry alloc] initWithNibName:nibName bundle:nil];
+    } else {
         viewController = [[classEntry alloc] init];
         viewController.view.backgroundColor = [UIColor whiteColor];
-        
-    } else {
-        viewController = [[classEntry alloc] initWithNibName:nibName bundle:nil];
     }
     viewController.title = NSLocalizedString(moduleModel.title, nil);
     viewController.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:viewController animated:YES];
 }
-
-
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
