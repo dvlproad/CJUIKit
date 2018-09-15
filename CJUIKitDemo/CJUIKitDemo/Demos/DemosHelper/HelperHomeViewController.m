@@ -44,7 +44,7 @@
         sectionDataModel.theme = @"Helper";
         {
             CJModuleModel *xibModule = [[CJModuleModel alloc] init];
-            xibModule.title = @"CJValidateEmptyUtil";
+            xibModule.title = @"NSObjectHelper";
             xibModule.classEntry = [StringHelperViewController class];
             
             [sectionDataModel.values addObject:xibModule];

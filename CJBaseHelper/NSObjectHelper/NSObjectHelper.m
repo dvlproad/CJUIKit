@@ -1,14 +1,14 @@
 //
-//  CJValidateEmptyUtil.m
+//  NSObjectHelper.m
 //  CJUIKitDemo
 //
 //  Created by ciyouzen on 6/25/15.
 //  Copyright (c) 2015 dvlproad. All rights reserved.
 //
 
-#import "CJValidateEmptyUtil.h"
+#import "NSObjectHelper.h"
 
-@implementation CJValidateEmptyUtil
+@implementation NSObjectHelper
 
 ///判断对象是否为NULL或nil
 + (BOOL)isNullForObject:(id)object {
@@ -35,7 +35,7 @@
 
 ///判断对象是否为空
 + (BOOL)isEmptyForObject:(id)object {
-    if ([CJValidateEmptyUtil isNullForObject:object]) {
+    if ([NSObjectHelper isNullForObject:object]) {
         return YES;
     }
 

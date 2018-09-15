@@ -25,7 +25,7 @@
 		7832810D1F41AA96008267E0 /* ProcessLineView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7832810C1F41AA96008267E0 /* ProcessLineView.m */; };
 		7840FB281EB09E0700B553F7 /* bg@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7840FB271EB09E0700B553F7 /* bg@2x.jpg */; };
 		784A7216214C9DF000F8D144 /* MoreHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 784A7215214C9DF000F8D144 /* MoreHomeViewController.m */; };
-		784A721A214CB09100F8D144 /* CJValidateEmptyUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 784A7218214CB09100F8D144 /* CJValidateEmptyUtil.m */; };
+		784A7221214CB5BF00F8D144 /* NSObjectHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 784A721F214CB5BF00F8D144 /* NSObjectHelper.m */; };
 		7850B6FF20937C5A008F4A21 /* DragViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7850B6F020937C59008F4A21 /* DragViewController.xib */; };
 		7850B70020937C5A008F4A21 /* DragViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7850B6F120937C59008F4A21 /* DragViewController.m */; };
 		7850B70120937C5A008F4A21 /* PopupInWindowVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 7850B6F320937C59008F4A21 /* PopupInWindowVC.m */; };
@@ -532,8 +532,8 @@
 		7840FB271EB09E0700B553F7 /* bg@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "bg@2x.jpg"; sourceTree = "<group>"; };
 		784A7214214C9DF000F8D144 /* MoreHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoreHomeViewController.h; sourceTree = "<group>"; };
 		784A7215214C9DF000F8D144 /* MoreHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoreHomeViewController.m; sourceTree = "<group>"; };
-		784A7218214CB09100F8D144 /* CJValidateEmptyUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJValidateEmptyUtil.m; sourceTree = "<group>"; };
-		784A7219214CB09100F8D144 /* CJValidateEmptyUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJValidateEmptyUtil.h; sourceTree = "<group>"; };
+		784A721F214CB5BF00F8D144 /* NSObjectHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSObjectHelper.m; sourceTree = "<group>"; };
+		784A7220214CB5BF00F8D144 /* NSObjectHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSObjectHelper.h; sourceTree = "<group>"; };
 		7850B6EF20937C59008F4A21 /* DragViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DragViewController.h; sourceTree = "<group>"; };
 		7850B6F020937C59008F4A21 /* DragViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DragViewController.xib; sourceTree = "<group>"; };
 		7850B6F120937C59008F4A21 /* DragViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DragViewController.m; sourceTree = "<group>"; };
@@ -1306,7 +1306,7 @@
 		780078F4211B35CA00D810B5 /* CJBaseHelper */ = {
 			isa = PBXGroup;
 			children = (
-				784A7217214CB09100F8D144 /* CJValidateEmptyHelper */,
+				784A721E214CB5BF00F8D144 /* NSObjectHelper */,
 				780078F5211B35CA00D810B5 /* UIViewControllerHelper */,
 				780078F6211B35CA00D810B5 /* NSOperationQueueHelper */,
 			);
@@ -1450,13 +1450,13 @@
 			path = DemoMore;
 			sourceTree = "<group>";
 		};
-		784A7217214CB09100F8D144 /* CJValidateEmptyHelper */ = {
+		784A721E214CB5BF00F8D144 /* NSObjectHelper */ = {
 			isa = PBXGroup;
 			children = (
-				784A7219214CB09100F8D144 /* CJValidateEmptyUtil.h */,
-				784A7218214CB09100F8D144 /* CJValidateEmptyUtil.m */,
+				784A7220214CB5BF00F8D144 /* NSObjectHelper.h */,
+				784A721F214CB5BF00F8D144 /* NSObjectHelper.m */,
 			);
-			path = CJValidateEmptyHelper;
+			path = NSObjectHelper;
 			sourceTree = "<group>";
 		};
 		7850B6EE20937C59008F4A21 /* ViewDragDemo */ = {
@@ -4202,7 +4202,7 @@
 				787FDB5620500B01008A46E3 /* SearchBarViewController.m in Sources */,
 				789CAF191FB612B700AF8CD4 /* CJBaseCollectionViewCell.m in Sources */,
 				80FF90471FC5649F00E437CF /* SearchTableViewController.m in Sources */,
-				784A721A214CB09100F8D144 /* CJValidateEmptyUtil.m in Sources */,
+				784A7221214CB5BF00F8D144 /* NSObjectHelper.m in Sources */,
 				80FF91941FC5682B00E437CF /* TypeConvertViewController.m in Sources */,
 				789CAF271FB612B700AF8CD4 /* CJBaseTableViewCell.m in Sources */,
 				80D71EAD20902C2F00D2DB68 /* CJAlertView.m in Sources */,

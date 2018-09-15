@@ -201,7 +201,7 @@ CJImageView，可为ImageView设置title；而CJBadgeImageView则还可以设置
 ## 五、CJBaseHelper：自定义的基础帮助类
 > [< 返回目录](#目录)
 
-- CJBaseHelper/CJValidateEmptyHelper：对象判断帮助类
+- CJBaseHelper/NSObjectHelper：对象判断帮助类
 - CJBaseHelper/UIViewControllerHelper：视图控制器帮助类：包含获取当前显示的视图控制器和通过视图找到它所在的视图控制器等
 - CJBaseHelper/NSOperationQueueHelper：多任务处理
 
@@ -246,7 +246,7 @@ CJImageView，可为ImageView设置title；而CJBadgeImageView则还可以设置
 #### CJBaseHelper
 * 2018-09-15 V0.0.3
 
-> 1. 更改对象判空的类名为`CJValidateEmptyHelper`
+> 1. 更改对象判空的类名为`NSObjectHelper`
 
 ## Author Or Contact
 * [邮箱：studyroad@qq.com](studyroad@qq.com)

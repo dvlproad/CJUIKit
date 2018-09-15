@@ -8,7 +8,7 @@
 
 #import "StringHelperViewController.h"
 
-#import "CJValidateEmptyUtil.h"
+#import "NSObjectHelper.h"
 
 @interface StringHelperViewController () <UITableViewDataSource, UITableViewDelegate> {
     
@@ -113,7 +113,7 @@
             
         } else if (indexPath.row == 2) {
             NSString *string;
-            NSLog(@"%@ isEmpty == %@", string, [CJValidateEmptyUtil isEmptyForObject:string] ? @"YES" : @"NO");
+            NSLog(@"%@ isEmpty == %@", string, [NSObjectHelper isEmptyForObject:string] ? @"YES" : @"NO");
             
 //            NSString *string = @"";
 //            NSLog(@"%@ isEmpty == %@", string, [string cj_isEmpty] ? @"YES" : @"NO");

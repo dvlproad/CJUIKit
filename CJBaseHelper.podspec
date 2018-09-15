@@ -1,14 +1,14 @@
 Pod::Spec.new do |s|
   #验证方法：pod lib lint CJBaseHelper.podspec --allow-warnings --use-libraries --verbose
   s.name         = "CJBaseHelper"
-  s.version      = "0.0.3"
+  s.version      = "0.0.4"
   s.summary      = "自定义的基础帮助类"
   s.homepage     = "https://github.com/dvlproad/CJUIKit"
   s.license      = "MIT"
   s.author       = "dvlproad"
 
   s.description  = <<-DESC
-  				  *、CJValidateEmptyHelper：对象判空等帮助类
+  				        *、NSObjectHelper：对象判空等帮助类
                   *、UIViewControllerHelper：视图控制器帮助类
                   *、NSOperationQueueHelper：任务队列帮助类
                   
@@ -25,7 +25,7 @@ Pod::Spec.new do |s|
 
   s.platform     = :ios, "7.0"
 
-  s.source       = { :git => "https://github.com/dvlproad/CJUIKit.git", :tag => "CJBaseHelper_0.0.3" }
+  s.source       = { :git => "https://github.com/dvlproad/CJUIKit.git", :tag => "CJBaseHelper_0.0.4" }
   # s.source_files  = "CJBaseUtil/*.{h,m}"
   # s.resources = "CJBaseUtil/**/*.{png}"
   s.frameworks = 'UIKit'
@@ -38,8 +38,8 @@ Pod::Spec.new do |s|
   # s.xcconfig = { "HEADER_SEARCH_PATHS" => "$(SDKROOT)/usr/include/libxml2" }
   # s.dependency "JSONKit", "~> 1.4"
 
-  s.subspec 'CJValidateEmptyHelper' do |ss|
-    ss.source_files = "CJBaseHelper/CJValidateEmptyHelper/**/*.{h,m}"
+  s.subspec 'NSObjectHelper' do |ss|
+    ss.source_files = "CJBaseHelper/NSObjectHelper/**/*.{h,m}"
   end
 
   s.subspec 'UIViewControllerHelper' do |ss|
