@@ -125,6 +125,12 @@
     self.placeholderView.text = placeholder;
 }
 
+- (void)setFont:(UIFont *)font {
+    [super setFont:font];
+    
+    self.placeholderView.font = font;
+}
+
 - (void)textDidChange
 {
     self.placeholderView.hidden = self.text.length > 0; //占位文字是否显示

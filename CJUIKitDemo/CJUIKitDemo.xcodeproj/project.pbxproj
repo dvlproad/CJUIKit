@@ -2975,10 +2975,10 @@
 		80FF8F0B1FC5649E00E437CF /* DemosThirdParty */ = {
 			isa = PBXGroup;
 			children = (
-				781495A32140D80700D0F2BC /* MantleDemo */,
-				80FF8F0F1FC5649E00E437CF /* MJExtensionDemo */,
 				80FF8F0D1FC5649E00E437CF /* ThirdPartyHomeViewController.h */,
 				80FF8F0E1FC5649E00E437CF /* ThirdPartyHomeViewController.m */,
+				781495A32140D80700D0F2BC /* MantleDemo */,
+				80FF8F0F1FC5649E00E437CF /* MJExtensionDemo */,
 			);
 			path = DemosThirdParty;
 			sourceTree = "<group>";
@@ -2996,13 +2996,13 @@
 		80FF8F231FC5649E00E437CF /* DemosScrollView */ = {
 			isa = PBXGroup;
 			children = (
+				80FF8F951FC5649E00E437CF /* ScrollViewHomeViewController.h */,
+				80FF8FC01FC5649E00E437CF /* ScrollViewHomeViewController.m */,
 				80C2E1822091683B007D7119 /* EmptyScrollViewDemo */,
 				8033234220299AD7001DACF1 /* UICollectionViewDemo */,
 				8033238F20299AD7001DACF1 /* WebViewDemo */,
 				80FF8F3C1FC5649E00E437CF /* DataScrollViewDemo */,
 				80FF8F371FC5649E00E437CF /* Resources */,
-				80FF8F951FC5649E00E437CF /* ScrollViewHomeViewController.h */,
-				80FF8FC01FC5649E00E437CF /* ScrollViewHomeViewController.m */,
 				80FF8F241FC5649E00E437CF /* TestDataUtil */,
 				80FF8F2C1FC5649E00E437CF /* UIScrollViewDemo */,
 				80FF8F961FC5649E00E437CF /* UITableViewDemo */,
@@ -3496,9 +3496,9 @@
 		80FF91831FC5682A00E437CF /* DemosOther */ = {
 			isa = PBXGroup;
 			children = (
-				80FF91841FC5682A00E437CF /* CountDownTimeDemo */,
 				80FF91891FC5682A00E437CF /* OtherHomeViewController.h */,
 				80FF91881FC5682A00E437CF /* OtherHomeViewController.m */,
+				80FF91841FC5682A00E437CF /* CountDownTimeDemo */,
 				80FF918A1FC5682A00E437CF /* ProcessLineViewDemo */,
 				80FF918E1FC5682A00E437CF /* ScaleHeadViewDemo */,
 			);

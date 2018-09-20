@@ -13,8 +13,6 @@ Pod::Spec.new do |s|
                   3、CJKeyboardUtil：键盘工具
                   4、CJLog：日志工具
                   *、CJIndentedStringUtil：将 字符串/字典/数组转成含缩进字符串的字符串 的工具
-                  5、CJWebUtil：Web工具
-                  6、CJDevice：设备信息工具
                   7、CJAppLastUtil：APP上次信息+账号安全工具
                   8、CJManager：其他各种工具类
                   9、CJPinyinHelper：拼音相关工具
@@ -46,10 +44,6 @@ Pod::Spec.new do |s|
 
   # s.xcconfig = { "HEADER_SEARCH_PATHS" => "$(SDKROOT)/usr/include/libxml2" }
   # s.dependency "JSONKit", "~> 1.4"
-
-  s.subspec 'CJDevice' do |ss|
-    ss.source_files = "CJBaseUtil/CJDevice/**/*.{h,m}"
-  end
 
   s.subspec 'CJLog' do |ss|
     ss.source_files = "CJBaseUtil/CJLog/**/*.{h,m}"
@@ -85,11 +79,6 @@ Pod::Spec.new do |s|
 
   s.subspec 'UIUtil' do |ss|
     ss.source_files = "CJBaseUtil/UIUtil/**/*.{h,m}"
-  end
-
-  s.subspec 'CJWebUtil' do |ss|
-    ss.source_files = "CJBaseUtil/CJWebUtil/**/*.{h,m}"
-    ss.frameworks = 'WebKit'
   end
 
   # 拨打电话
