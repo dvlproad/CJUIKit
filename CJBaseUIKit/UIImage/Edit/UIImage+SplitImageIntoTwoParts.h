@@ -10,6 +10,6 @@
 
 @interface UIImage (SplitImageIntoTwoParts)
 
-+ (NSArray*)splitImageIntoTwoParts:(UIImage*)image;
++ (NSArray *)cj_splitImageIntoTwoParts:(UIImage*)image;
 
 @end

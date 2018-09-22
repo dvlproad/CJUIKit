@@ -7,10 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <objc/runtime.h>
 
 @interface UIButton (CJMoreProperty)
 
-@property (nonatomic, strong) id cjModel;
+@property (nonatomic, strong) UIColor *cjNormalBGColor;     /**< 设置按钮默认时候的背景颜色 */
+@property (nonatomic, strong) UIColor *cjHighlightedBGColor;/**< 设置按钮高亮时候的背景颜色 */
+
+@property (nonatomic, strong) id cjDataModel;               /**< 设置按钮持有的数据对象 */
+
+@property (nonatomic, copy) void (^cjTouchUpInsideBlock)(UIButton *button);   /**< 设置按钮操作的事件 */
 
 @end

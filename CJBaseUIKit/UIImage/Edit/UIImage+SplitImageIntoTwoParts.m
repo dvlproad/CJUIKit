@@ -11,7 +11,7 @@
 
 @implementation UIImage (SplitImageIntoTwoParts)
 
-+ (NSArray *)splitImageIntoTwoParts:(UIImage *)image
++ (NSArray *)cj_splitImageIntoTwoParts:(UIImage *)image
 {    
     CGFloat scale = [[UIScreen mainScreen] scale]; 
     NSMutableArray *array = [NSMutableArray arrayWithCapacity:2];

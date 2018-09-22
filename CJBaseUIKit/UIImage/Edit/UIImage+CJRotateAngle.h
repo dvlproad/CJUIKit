@@ -18,6 +18,6 @@
  *
  *  @return 旋转后的图片
  */
-- (UIImage *)rotateImageWithAngle:(CGFloat)angle isExpand:(BOOL)isExpand;
+- (UIImage *)cj_rotateImageWithAngle:(CGFloat)angle isExpand:(BOOL)isExpand;
 
 @end

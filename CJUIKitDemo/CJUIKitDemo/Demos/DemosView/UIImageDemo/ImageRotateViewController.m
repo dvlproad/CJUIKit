@@ -41,10 +41,10 @@
     
     UIImage *image = [UIImage imageNamed:@"taixi_icon"];
     
-    UIImage *image1 = [image rotateImageWithAngle:angle isExpand:YES];
+    UIImage *image1 = [image cj_rotateImageWithAngle:angle isExpand:YES];
     self.imageView1.image = image1;
     
-    UIImage *image2 = [image rotateImageWithAngle:angle isExpand:NO];
+    UIImage *image2 = [image cj_rotateImageWithAngle:angle isExpand:NO];
     self.imageView2.image = image2;
     
     CGAffineTransform transform= CGAffineTransformMakeRotation(angle);

@@ -11,7 +11,7 @@
 @implementation UIImage (CJRotateAngle)
 
 /* 完整的描述请参见文件头部 */
-- (UIImage *)rotateImageWithAngle:(CGFloat)angle isExpand:(BOOL)isExpand
+- (UIImage *)cj_rotateImageWithAngle:(CGFloat)angle isExpand:(BOOL)isExpand
 {
     CGSize imageSize = CGSizeMake(self.size.width * self.scale, self.size.height * self.scale);
     CGSize outputSize = imageSize;

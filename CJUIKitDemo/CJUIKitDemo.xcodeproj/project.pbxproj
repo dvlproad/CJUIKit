@@ -86,6 +86,7 @@
 		7880E6F7213C2C4C009C9BCF /* CJRandomNameUtil.txt in Resources */ = {isa = PBXBuildFile; fileRef = 7880E6F6213C2C4C009C9BCF /* CJRandomNameUtil.txt */; };
 		7885FC2B2156279000B97DAA /* NSDateFormatterCJHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 7885FC292156279000B97DAA /* NSDateFormatterCJHelper.m */; };
 		7885FC2F21562F9C00B97DAA /* NSCalendarCJHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 7885FC2D21562F9C00B97DAA /* NSCalendarCJHelper.m */; };
+		7885FC4A2156681F00B97DAA /* UIView+CJPopupInSuspendWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 7885FC482156681F00B97DAA /* UIView+CJPopupInSuspendWindow.m */; };
 		789CAF181FB612B700AF8CD4 /* ChangeLog.md in Resources */ = {isa = PBXBuildFile; fileRef = 789CAE111FB612B600AF8CD4 /* ChangeLog.md */; };
 		789CAF191FB612B700AF8CD4 /* CJBaseCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 789CAE151FB612B600AF8CD4 /* CJBaseCollectionViewCell.m */; };
 		789CAF1A1FB612B700AF8CD4 /* CJFullBottomCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 789CAE171FB612B600AF8CD4 /* CJFullBottomCollectionViewCell.m */; };
@@ -161,7 +162,6 @@
 		789CAF851FB612B700AF8CD4 /* CJSearchTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 789CAF151FB612B600AF8CD4 /* CJSearchTableView.m */; };
 		789CAF861FB612B700AF8CD4 /* MySearchEqualCellSizeCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 789CAF171FB612B600AF8CD4 /* MySearchEqualCellSizeCollectionView.m */; };
 		78A621A921319723004DA046 /* SuspendWindowViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78A621A821319723004DA046 /* SuspendWindowViewController.m */; };
-		78A621B8213314B6004DA046 /* UIView+CJPopupInSuspendWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 78A621B7213314B6004DA046 /* UIView+CJPopupInSuspendWindow.m */; };
 		78A621BB21331B3C004DA046 /* CJLogView.m in Sources */ = {isa = PBXBuildFile; fileRef = 78A621B921331B3B004DA046 /* CJLogView.m */; };
 		78A621BE2135A198004DA046 /* CJLogSuspendWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 78A621BD2135A198004DA046 /* CJLogSuspendWindow.m */; };
 		78A621D12135BC82004DA046 /* LogSuspendWindowViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78A621D02135BC82004DA046 /* LogSuspendWindowViewController.m */; };
@@ -333,7 +333,6 @@
 		80E7E6FB20AD2627000F762D /* ProgressWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80E7E6F120AD2626000F762D /* ProgressWebViewController.m */; };
 		80E7E73020AD2AEA000F762D /* UIColor+CJHex.m in Sources */ = {isa = PBXBuildFile; fileRef = 80E7E71820AD2AE9000F762D /* UIColor+CJHex.m */; };
 		80E7E73120AD2AEA000F762D /* UINavigationBar+CJChangeBG.m in Sources */ = {isa = PBXBuildFile; fileRef = 80E7E71B20AD2AEA000F762D /* UINavigationBar+CJChangeBG.m */; };
-		80E7E73220AD2AEA000F762D /* UIButton+CJTouchEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 80E7E71F20AD2AEA000F762D /* UIButton+CJTouchEvent.m */; };
 		80E7E73320AD2AEA000F762D /* UIButton+CJFixMultiClick.m in Sources */ = {isa = PBXBuildFile; fileRef = 80E7E72220AD2AEA000F762D /* UIButton+CJFixMultiClick.m */; };
 		80E7E73420AD2AEA000F762D /* UIButton+CJMoreProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = 80E7E72320AD2AEA000F762D /* UIButton+CJMoreProperty.m */; };
 		80E7E73520AD2AEA000F762D /* UIButton+CJUpDownStructure.m in Sources */ = {isa = PBXBuildFile; fileRef = 80E7E72420AD2AEA000F762D /* UIButton+CJUpDownStructure.m */; };
@@ -624,6 +623,8 @@
 		7885FC2A2156279000B97DAA /* NSDateFormatterCJHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSDateFormatterCJHelper.h; sourceTree = "<group>"; };
 		7885FC2D21562F9C00B97DAA /* NSCalendarCJHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSCalendarCJHelper.m; sourceTree = "<group>"; };
 		7885FC2E21562F9C00B97DAA /* NSCalendarCJHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSCalendarCJHelper.h; sourceTree = "<group>"; };
+		7885FC482156681F00B97DAA /* UIView+CJPopupInSuspendWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+CJPopupInSuspendWindow.m"; sourceTree = "<group>"; };
+		7885FC492156681F00B97DAA /* UIView+CJPopupInSuspendWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+CJPopupInSuspendWindow.h"; sourceTree = "<group>"; };
 		789CAB597AD073D5F637D193 /* Pods-CJUIKitDemoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CJUIKitDemoTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-CJUIKitDemoTests/Pods-CJUIKitDemoTests.release.xcconfig"; sourceTree = "<group>"; };
 		789CAE111FB612B600AF8CD4 /* ChangeLog.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = ChangeLog.md; sourceTree = "<group>"; };
 		789CAE141FB612B600AF8CD4 /* CJBaseCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJBaseCollectionViewCell.h; sourceTree = "<group>"; };
@@ -765,8 +766,6 @@
 		789CAF171FB612B600AF8CD4 /* MySearchEqualCellSizeCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MySearchEqualCellSizeCollectionView.m; sourceTree = "<group>"; };
 		78A621A721319723004DA046 /* SuspendWindowViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SuspendWindowViewController.h; sourceTree = "<group>"; };
 		78A621A821319723004DA046 /* SuspendWindowViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SuspendWindowViewController.m; sourceTree = "<group>"; };
-		78A621B6213314B6004DA046 /* UIView+CJPopupInSuspendWindow.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+CJPopupInSuspendWindow.h"; sourceTree = "<group>"; };
-		78A621B7213314B6004DA046 /* UIView+CJPopupInSuspendWindow.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+CJPopupInSuspendWindow.m"; sourceTree = "<group>"; };
 		78A621B921331B3B004DA046 /* CJLogView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJLogView.m; sourceTree = "<group>"; };
 		78A621BA21331B3B004DA046 /* CJLogView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJLogView.h; sourceTree = "<group>"; };
 		78A621BC2135A197004DA046 /* CJLogSuspendWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJLogSuspendWindow.h; sourceTree = "<group>"; };
@@ -1028,13 +1027,10 @@
 		80E7E71B20AD2AEA000F762D /* UINavigationBar+CJChangeBG.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationBar+CJChangeBG.m"; sourceTree = "<group>"; };
 		80E7E71D20AD2AEA000F762D /* UIButton+CJMoreProperty.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+CJMoreProperty.h"; sourceTree = "<group>"; };
 		80E7E71E20AD2AEA000F762D /* UIButton+CJFixMultiClick.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+CJFixMultiClick.h"; sourceTree = "<group>"; };
-		80E7E71F20AD2AEA000F762D /* UIButton+CJTouchEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+CJTouchEvent.m"; sourceTree = "<group>"; };
 		80E7E72020AD2AEA000F762D /* UIButton+CJUpDownStructure.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+CJUpDownStructure.h"; sourceTree = "<group>"; };
-		80E7E72120AD2AEA000F762D /* UIButtonCJCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIButtonCJCategory.h; sourceTree = "<group>"; };
 		80E7E72220AD2AEA000F762D /* UIButton+CJFixMultiClick.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+CJFixMultiClick.m"; sourceTree = "<group>"; };
 		80E7E72320AD2AEA000F762D /* UIButton+CJMoreProperty.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+CJMoreProperty.m"; sourceTree = "<group>"; };
 		80E7E72420AD2AEA000F762D /* UIButton+CJUpDownStructure.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+CJUpDownStructure.m"; sourceTree = "<group>"; };
-		80E7E72520AD2AEA000F762D /* UIButton+CJTouchEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+CJTouchEvent.h"; sourceTree = "<group>"; };
 		80E7E73A20AD2C8A000F762D /* UIImage+CJBase64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+CJBase64.m"; sourceTree = "<group>"; };
 		80E7E73B20AD2C8A000F762D /* UIImage+CJBase64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+CJBase64.h"; sourceTree = "<group>"; };
 		80E7E74020AD2C8B000F762D /* UIImage+CJTransformSize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+CJTransformSize.h"; sourceTree = "<group>"; };
@@ -1545,8 +1541,6 @@
 			children = (
 				7850B71A2093809F008F4A21 /* UIView+CJPopupInView.h */,
 				7850B7182093809F008F4A21 /* UIView+CJPopupInView.m */,
-				78A621B6213314B6004DA046 /* UIView+CJPopupInSuspendWindow.h */,
-				78A621B7213314B6004DA046 /* UIView+CJPopupInSuspendWindow.m */,
 				7850B7172093809F008F4A21 /* UIView+CJShowExtendView.h */,
 				7850B7192093809F008F4A21 /* UIView+CJShowExtendView.m */,
 			);
@@ -2256,6 +2250,8 @@
 				78A621DF2135C78B004DA046 /* DemoSuspendWindow+CJSuspendWindowManager.m */,
 				78A621E62135C925004DA046 /* DemoSuspendWindowRootViewController.h */,
 				78A621E52135C924004DA046 /* DemoSuspendWindowRootViewController.m */,
+				7885FC492156681F00B97DAA /* UIView+CJPopupInSuspendWindow.h */,
+				7885FC482156681F00B97DAA /* UIView+CJPopupInSuspendWindow.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -2848,11 +2844,8 @@
 				80E7E72220AD2AEA000F762D /* UIButton+CJFixMultiClick.m */,
 				80E7E71D20AD2AEA000F762D /* UIButton+CJMoreProperty.h */,
 				80E7E72320AD2AEA000F762D /* UIButton+CJMoreProperty.m */,
-				80E7E72520AD2AEA000F762D /* UIButton+CJTouchEvent.h */,
-				80E7E71F20AD2AEA000F762D /* UIButton+CJTouchEvent.m */,
 				80E7E72020AD2AEA000F762D /* UIButton+CJUpDownStructure.h */,
 				80E7E72420AD2AEA000F762D /* UIButton+CJUpDownStructure.m */,
-				80E7E72120AD2AEA000F762D /* UIButtonCJCategory.h */,
 			);
 			path = UIButton;
 			sourceTree = "<group>";
@@ -4039,7 +4032,6 @@
 				804478272061F328007185EF /* CJLocationChangeManager.m in Sources */,
 				80FF91491FC5668700E437CF /* NSObject+SearchProperty.m in Sources */,
 				80F9CFE0206CFDFB003B41D4 /* CJPinyinHelper.m in Sources */,
-				78A621B8213314B6004DA046 /* UIView+CJPopupInSuspendWindow.m in Sources */,
 				80FF909C1FC5649F00E437CF /* NestedXibView.m in Sources */,
 				7EA576B620691B5A00726CCF /* CJModuleManager.m in Sources */,
 				789CAF4D1FB612B700AF8CD4 /* CJSwitchSliderStatusModel.m in Sources */,
@@ -4138,7 +4130,6 @@
 				80E7E75420AD2C8B000F762D /* UIImage+CJFixOrientation.m in Sources */,
 				80FF90A41FC5649F00E437CF /* HomeViewController.m in Sources */,
 				800E07E52016CCF500799B78 /* DeviceInfo.m in Sources */,
-				80E7E73220AD2AEA000F762D /* UIButton+CJTouchEvent.m in Sources */,
 				789CAF311FB612B700AF8CD4 /* CJTableViewHeaderFooterView.m in Sources */,
 				789CAF471FB612B700AF8CD4 /* CJPlayerSlider.m in Sources */,
 				80FF91331FC5668700E437CF /* NSDictionary+CJConvert.m in Sources */,
@@ -4272,6 +4263,7 @@
 				808B977420B7B54600910E45 /* CJAppVersionUtil.m in Sources */,
 				787FDB9C20502A1C008A46E3 /* CJTextField.m in Sources */,
 				80E7E73120AD2AEA000F762D /* UINavigationBar+CJChangeBG.m in Sources */,
+				7885FC4A2156681F00B97DAA /* UIView+CJPopupInSuspendWindow.m in Sources */,
 				800E07E12016CCF500799B78 /* DataUtilViewController.m in Sources */,
 				80EABC5121255C5000A2EA34 /* UIViewController+CJCustomBackBarButtonItem.m in Sources */,
 				80D49F8320BE56D2003F642C /* MyADModel.m in Sources */,
