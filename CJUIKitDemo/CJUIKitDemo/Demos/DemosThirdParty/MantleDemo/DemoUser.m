@@ -172,7 +172,7 @@ NSString *const DemoGeneralPassword = @"123456";    //为测试而增加的通�
 #pragma mark - Other
 + (NSDateFormatter *)birthdayDateFormatter {
     NSDateFormatter *birthdayDateFormatter = [[NSDateFormatter alloc] init];
-    //NSDateFormatter *birthdayDateFormatter = [CJDateFormatterUtil sharedInstance].dateFormatter;
+    //NSDateFormatter *birthdayDateFormatter = [NSDateFormatterCJHelper sharedInstance].dateFormatter;
     birthdayDateFormatter.dateFormat = @"yyyy-MM-dd";
     
     return birthdayDateFormatter;

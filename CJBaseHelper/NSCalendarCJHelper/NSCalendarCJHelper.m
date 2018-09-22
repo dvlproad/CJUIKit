@@ -1,17 +1,28 @@
 //
-//  CJCalendarUtil.m
+//  NSCalendarCJHelper.m
 //  CJFoundationDemo
 //
 //  Created by ciyouzen on 16/12/14.
 //  Copyright (c) 2014年 dvlproad. All rights reserved.
 //
 
-#import "CJCalendarUtil.h"
+#import "NSCalendarCJHelper.h"
 
-@implementation CJCalendarUtil
+@implementation NSCalendarCJHelper
+
+#pragma mark - DateJudge
+/* 完整的描述请参见文件头部 */
++ (BOOL)isSameDay:(NSDate *)date1 date2:(NSDate *)date2
+{
+    NSCalendar *calendar = [NSCalendar currentCalendar];
+    unsigned unitFlags = NSCalendarUnitYear | NSCalendarUnitMonth |  NSCalendarUnitDay;
+    NSDateComponents* comp1 = [calendar components:unitFlags fromDate:date1];
+    NSDateComponents* comp2 = [calendar components:unitFlags fromDate:date2];
+    return [comp1 day] == [comp2 day] && [comp1 month] == [comp2 month] && [comp1 year]  == [comp2 year];
+}
+
 
 #pragma mark - DateValue
-
 /** 完整的描述请参见文件头部 */
 + (NSString *)weekday_stringFromDate:(NSDate *)date {
     NSCalendar *calendar = [[NSCalendar alloc]initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
@@ -97,8 +108,8 @@
 /** 完整的描述请参见文件头部 */
 + (NSInteger)age_unitIntervalFromDate:(NSDate *)fromDate toDate:(NSDate *)toDate {
     ///*方法①：
-    NSInteger iAge2 = [CJCalendarUtil year_unitIntervalFromDate:fromDate toDate:toDate];
-    NSLog(@"方法①计算出的年纪为%zd", iAge2);
+    //NSInteger iAge2 = [NSCalendarCJHelper year_unitIntervalFromDate:fromDate toDate:toDate];
+    //NSLog(@"方法①计算出的年纪为%zd", iAge2);
     //*/
     
     //方法②：
@@ -119,7 +130,7 @@
     if ((currentDateMonth > brithDateMonth) || (currentDateMonth == brithDateMonth && currentDateDay >= brithDateDay)) {
         iAge++;
     }
-    NSLog(@"方法②计算出的年纪为%zd", iAge);
+    //NSLog(@"方法②计算出的年纪为%zd", iAge);
     
     return iAge;
 }
@@ -130,11 +141,11 @@
 #pragma mark - dateFromUnitInterval:计算与指定日期间隔多少单位的日期
 
 + (NSDate *)yesterday_dateFromSinceDate:(NSDate *)sinceDate {
-    return [CJCalendarUtil dateFromDayUnitInterval:-1 sinceDate:sinceDate];
+    return [NSCalendarCJHelper dateFromDayUnitInterval:-1 sinceDate:sinceDate];
 }
 
 + (NSDate *)tomorrow_dateFromSinceDate:(NSDate *)sinceDate {
-    return [CJCalendarUtil dateFromDayUnitInterval:1 sinceDate:sinceDate];
+    return [NSCalendarCJHelper dateFromDayUnitInterval:1 sinceDate:sinceDate];
 }
 
 /* 完整的描述请参见文件头部 */

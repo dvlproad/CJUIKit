@@ -1,5 +1,5 @@
 //
-//  CJCalendarUtil.h
+//  NSCalendarCJHelper.h
 //  CJFoundationDemo
 //
 //  Created by ciyouzen on 16/12/14.
@@ -8,20 +8,27 @@
 
 #import <Foundation/Foundation.h>
 
-@interface CJCalendarUtil : NSObject
+@interface NSCalendarCJHelper : NSObject
 
-/**
- *  该日期是星期几
- */
+#pragma mark - DateJudge
+///是否为同一天
++ (BOOL)isSameDay:(NSDate *)date1 date2:(NSDate *)date2;
+
+
+#pragma mark - DateValue
+///该日期是星期几
 + (NSString *)weekday_stringFromDate:(NSDate *)date;
 
 
 
 #pragma mark - unitIntervalFromDate
+///计算两个时间，相差的年数
 + (NSInteger)year_unitIntervalFromDate:(NSDate *)fromDate toDate:(NSDate *)toDate;
 
+///计算两个时间，相差的月数
 + (NSInteger)month_unitIntervalFromDate:(NSDate *)fromDate toDate:(NSDate *)toDate;
 
+///计算两个时间，相差的天数
 + (NSInteger)day_unitIntervalFromDate:(NSDate *)fromDate toDate:(NSDate *)toDate;
 
 /**

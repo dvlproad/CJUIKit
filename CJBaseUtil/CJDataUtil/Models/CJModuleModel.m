@@ -10,4 +10,5 @@
 
 @implementation CJModuleModel
 
+
 @end

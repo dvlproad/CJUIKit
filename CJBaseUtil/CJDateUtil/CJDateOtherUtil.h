@@ -20,10 +20,6 @@
 ///传入 秒  得到  xx分钟xx秒
 + (NSString *)getmmssFromTimeInterval:(NSInteger)timeInterval;
 
-#pragma mark - Judge
-///是否为同一天
-+ (BOOL)isSameDay:(NSDate*)date1 date2:(NSDate*)date2;
-
 ///将NSDate类型的时间转换为时间戳,从1970/1/1开始
 + (long long)millisecondsFromDate:(NSDate *)date;
 

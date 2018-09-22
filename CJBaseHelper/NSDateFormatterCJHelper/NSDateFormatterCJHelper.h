@@ -1,5 +1,5 @@
 //
-//  CJDateFormatterUtil.h
+//  NSDateFormatterCJHelper.h
 //  CJFoundationDemo
 //
 //  Created by ciyouzen on 2017/9/27.
@@ -9,34 +9,55 @@
 
 #import <Foundation/Foundation.h>
 
-@interface CJDateFormatterUtil : NSObject {
+@interface NSDateFormatterCJHelper : NSObject {
     
 }
 @property (nonatomic, strong) NSDateFormatter *dateFormatter;
 
 
-+ (CJDateFormatterUtil *)sharedInstance;
++ (NSDateFormatterCJHelper *)sharedInstance;
 
 #pragma mark - stringFromDate
+///yyyy-MM-dd HH:mm:ss.SSS
 - (NSString *)yyyyMMddHHmmssSSS_stringFromDate:(NSDate *)date;
 
+///yyyy-MM-dd HH:mm:ss
 - (NSString *)yyyyMMddHHmmss_stringFromDate:(NSDate *)date;
 
+///yyyy-MM-dd HH:mm
 - (NSString *)yyyyMMddHHmm_stringFromDate:(NSDate *)date;
 
+///yyyy-MM-dd
 - (NSString *)yyyyMMdd_stringFromDate:(NSDate *)date;
 
+///yyyy年MM月
+- (NSString *)yyyyMM_stringFromDate:(NSDate *)date;
+
+///MM月dd日
 - (NSString *)MMdd_stringFromDate:(NSDate *)date;
 
+///HH:mm
 - (NSString *)HHmm_stringFromDate:(NSDate *)date;
 
 
 
 #pragma mark - dateFromString
+///dateString 格式必须为 yyyy-MM-dd HH:mm:ss
 - (NSDate *)yyyyMMddHHmmss_dateFromString:(NSString *)dateString;
 
+///dateString 格式必须为 yyyy-MM-dd HH:mm
 - (NSDate *)yyyyMMddHHmm_dateFromString:(NSString *)dateString;
 
+///dateString 格式必须为 yyyy-MM-dd
 - (NSDate *)yyyyMMdd_dateFromString:(NSString *)dateString;
+
+///dateString 格式必须为 yyyy年MM月
+- (NSDate *)yyyyMM_dateFromString:(NSString *)dateString;
+
+///dateString 格式必须为 MM月dd日
+- (NSDate *)MMdd_dateFromString:(NSString *)dateString;
+
+///dateString 格式必须为 HH:mm
+- (NSDate *)HHmm_dateFromString:(NSString *)dateString;
 
 @end

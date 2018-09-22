@@ -14,7 +14,8 @@
 
 //判断是否空字符串
 //#define cjIsNullString(s)   (!s || [s isEqual:[NSNull null]] || [s isEqualToString:@""])
-#define cjIsNullString(s)   ([NSObjectCJHelper isEmptyForObject:s])
+#define cjIsNullString(s)   ([NSObjectCJHelper isNullForObject:s])
+#define cjIsEmptyString(s)  ([NSObjectCJHelper isEmptyForObject:s])
 
 
 @interface NSObjectCJHelper : NSObject

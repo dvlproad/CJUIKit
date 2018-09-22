@@ -8,11 +8,11 @@
 
 #import "CJLocationChangeManager.h"
 
-#ifdef CJTESTPOD
-#import "CJCalendarUtil.h"
-#else
-#import <CJBaseUtil/CJCalendarUtil.h>
-#endif
+//#ifdef CJTESTPOD
+//#import "NSCalendarCJHelper.h"
+//#else
+//#import <CJBaseHelper/NSCalendarCJHelper.h>
+//#endif
 
 @interface CJLocationChangeManager () {
     
@@ -91,7 +91,8 @@
     /* 计算从A点到B点增加的时长 */
     NSDate *lastCalcucateDate = oldLocation.timestamp;
     NSDate *currentCalcucateDate = newLocation.timestamp;
-    NSInteger secondInterval = [CJCalendarUtil unitIntervalFromDate:lastCalcucateDate toDate:currentCalcucateDate inCalculateUnit:NSCalendarUnitSecond];
+    NSInteger secondInterval = [lastCalcucateDate timeIntervalSinceDate:currentCalcucateDate];
+    //NSInteger secondInterval = [NSCalendarCJHelper unitIntervalFromDate:lastCalcucateDate toDate:currentCalcucateDate inCalculateUnit:NSCalendarUnitSecond];
     
     
     /* 计算从A点到B点时速是否小于指定值 */

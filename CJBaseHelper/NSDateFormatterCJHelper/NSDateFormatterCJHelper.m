@@ -1,22 +1,22 @@
 //
-//  CJDateFormatterUtil.m
+//  NSDateFormatterCJHelper.m
 //  CJFoundationDemo
 //
 //  Created by ciyouzen on 2017/9/27.
 //  Copyright © 2017年 dvlproad. All rights reserved.
 //
 
-#import "CJDateFormatterUtil.h"
+#import "NSDateFormatterCJHelper.h"
 
-@implementation CJDateFormatterUtil
+@implementation NSDateFormatterCJHelper
 
 /**
  *  创建单例
  *
  *  @return 单例
  */
-+ (CJDateFormatterUtil *)sharedInstance {
-    static CJDateFormatterUtil *_sharedInstance = nil;
++ (NSDateFormatterCJHelper *)sharedInstance {
+    static NSDateFormatterCJHelper *_sharedInstance = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         _sharedInstance = [[self alloc] init];
@@ -58,6 +58,12 @@
     return dateString;
 }
 
+- (NSString *)yyyyMM_stringFromDate:(NSDate *)date {
+    [self.dateFormatter setDateFormat:@"yyyy年MM月"];
+    NSString *dateString = [self.dateFormatter stringFromDate:date];
+    return dateString;
+}
+
 - (NSString *)MMdd_stringFromDate:(NSDate *)date {
     [self.dateFormatter setDateFormat:@"MM月dd日"];
     NSString *dateString = [self.dateFormatter stringFromDate:date];
@@ -86,6 +92,24 @@
 
 - (NSDate *)yyyyMMdd_dateFromString:(NSString *)dateString {
     [self.dateFormatter setDateFormat:@"yyyy-MM-dd"];
+    NSDate *date = [self.dateFormatter dateFromString:dateString];
+    return date;
+}
+
+- (NSDate *)yyyyMM_dateFromString:(NSString *)dateString {
+    [self.dateFormatter setDateFormat:@"yyyy年MM月"];
+    NSDate *date = [self.dateFormatter dateFromString:dateString];
+    return date;
+}
+
+- (NSDate *)MMdd_dateFromString:(NSString *)dateString {
+    [self.dateFormatter setDateFormat:@"MM月dd日"];
+    NSDate *date = [self.dateFormatter dateFromString:dateString];
+    return date;
+}
+
+- (NSDate *)HHmm_dateFromString:(NSString *)dateString {
+    [self.dateFormatter setDateFormat:@"HH:mm"];
     NSDate *date = [self.dateFormatter dateFromString:dateString];
     return date;
 }

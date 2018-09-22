@@ -84,6 +84,8 @@
 		787FDB9C20502A1C008A46E3 /* CJTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 787FDB9B20502A1C008A46E3 /* CJTextField.m */; };
 		7880E6F5213A9E84009C9BCF /* CJRandomNameUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 7880E6F4213A9E84009C9BCF /* CJRandomNameUtil.m */; };
 		7880E6F7213C2C4C009C9BCF /* CJRandomNameUtil.txt in Resources */ = {isa = PBXBuildFile; fileRef = 7880E6F6213C2C4C009C9BCF /* CJRandomNameUtil.txt */; };
+		7885FC2B2156279000B97DAA /* NSDateFormatterCJHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 7885FC292156279000B97DAA /* NSDateFormatterCJHelper.m */; };
+		7885FC2F21562F9C00B97DAA /* NSCalendarCJHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 7885FC2D21562F9C00B97DAA /* NSCalendarCJHelper.m */; };
 		789CAF181FB612B700AF8CD4 /* ChangeLog.md in Resources */ = {isa = PBXBuildFile; fileRef = 789CAE111FB612B600AF8CD4 /* ChangeLog.md */; };
 		789CAF191FB612B700AF8CD4 /* CJBaseCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 789CAE151FB612B600AF8CD4 /* CJBaseCollectionViewCell.m */; };
 		789CAF1A1FB612B700AF8CD4 /* CJFullBottomCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 789CAE171FB612B600AF8CD4 /* CJFullBottomCollectionViewCell.m */; };
@@ -473,8 +475,6 @@
 		80FF91C51FC581DD00E437CF /* UtilHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80FF91BF1FC581DD00E437CF /* UtilHomeViewController.m */; };
 		80FF91E81FC6739D00E437CF /* CJDateModelUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 80FF91DE1FC6739C00E437CF /* CJDateModelUtil.m */; };
 		80FF91E91FC6739D00E437CF /* CJDateModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 80FF91E11FC6739C00E437CF /* CJDateModel.m */; };
-		80FF91EA1FC6739D00E437CF /* CJCalendarUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 80FF91E31FC6739C00E437CF /* CJCalendarUtil.m */; };
-		80FF91EB1FC6739D00E437CF /* CJDateFormatterUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 80FF91E41FC6739C00E437CF /* CJDateFormatterUtil.m */; };
 		80FF91EC1FC6739D00E437CF /* CJDateOtherUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 80FF91E51FC6739C00E437CF /* CJDateOtherUtil.m */; };
 		E2649F5BE7F7FEF404688168 /* libPods-CJUIKitDemoTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 935109AAB855F6CC8B84B9A5 /* libPods-CJUIKitDemoTests.a */; };
 /* End PBXBuildFile section */
@@ -620,6 +620,10 @@
 		7880E6F3213A9E84009C9BCF /* CJRandomNameUtil.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CJRandomNameUtil.h; sourceTree = "<group>"; };
 		7880E6F4213A9E84009C9BCF /* CJRandomNameUtil.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CJRandomNameUtil.m; sourceTree = "<group>"; };
 		7880E6F6213C2C4C009C9BCF /* CJRandomNameUtil.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CJRandomNameUtil.txt; sourceTree = "<group>"; };
+		7885FC292156279000B97DAA /* NSDateFormatterCJHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSDateFormatterCJHelper.m; sourceTree = "<group>"; };
+		7885FC2A2156279000B97DAA /* NSDateFormatterCJHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSDateFormatterCJHelper.h; sourceTree = "<group>"; };
+		7885FC2D21562F9C00B97DAA /* NSCalendarCJHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSCalendarCJHelper.m; sourceTree = "<group>"; };
+		7885FC2E21562F9C00B97DAA /* NSCalendarCJHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSCalendarCJHelper.h; sourceTree = "<group>"; };
 		789CAB597AD073D5F637D193 /* Pods-CJUIKitDemoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CJUIKitDemoTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-CJUIKitDemoTests/Pods-CJUIKitDemoTests.release.xcconfig"; sourceTree = "<group>"; };
 		789CAE111FB612B600AF8CD4 /* ChangeLog.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = ChangeLog.md; sourceTree = "<group>"; };
 		789CAE141FB612B600AF8CD4 /* CJBaseCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJBaseCollectionViewCell.h; sourceTree = "<group>"; };
@@ -1266,11 +1270,7 @@
 		80FF91E01FC6739C00E437CF /* CJDateModelUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJDateModelUtil.h; sourceTree = "<group>"; };
 		80FF91E11FC6739C00E437CF /* CJDateModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJDateModel.m; sourceTree = "<group>"; };
 		80FF91E21FC6739C00E437CF /* CJDateOtherUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJDateOtherUtil.h; sourceTree = "<group>"; };
-		80FF91E31FC6739C00E437CF /* CJCalendarUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJCalendarUtil.m; sourceTree = "<group>"; };
-		80FF91E41FC6739C00E437CF /* CJDateFormatterUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJDateFormatterUtil.m; sourceTree = "<group>"; };
 		80FF91E51FC6739C00E437CF /* CJDateOtherUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJDateOtherUtil.m; sourceTree = "<group>"; };
-		80FF91E61FC6739C00E437CF /* CJCalendarUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJCalendarUtil.h; sourceTree = "<group>"; };
-		80FF91E71FC6739C00E437CF /* CJDateFormatterUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJDateFormatterUtil.h; sourceTree = "<group>"; };
 		935109AAB855F6CC8B84B9A5 /* libPods-CJUIKitDemoTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CJUIKitDemoTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9AC0A78AFE86FE250B370A06 /* Pods-CJUIKitDemoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CJUIKitDemoTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CJUIKitDemoTests/Pods-CJUIKitDemoTests.debug.xcconfig"; sourceTree = "<group>"; };
 		A078401C0E781545EB72B64D /* libPods-CJUIKitDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CJUIKitDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -1307,6 +1307,8 @@
 			isa = PBXGroup;
 			children = (
 				784A7243214CD34300F8D144 /* DeviceCJHelper */,
+				7885FC2C21562F9C00B97DAA /* NSCalendarCJHelper */,
+				7885FC282156279000B97DAA /* NSDateFormatterCJHelper */,
 				784A723D214CD34300F8D144 /* NSObjectCJHelper */,
 				784A7240214CD34300F8D144 /* NSOperationQueueCJHelper */,
 				784A7237214CD34300F8D144 /* UIViewControllerCJHelper */,
@@ -1684,6 +1686,24 @@
 				787FDB8220500B5B008A46E3 /* ShimmeringSwitchSlider.m */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		7885FC282156279000B97DAA /* NSDateFormatterCJHelper */ = {
+			isa = PBXGroup;
+			children = (
+				7885FC2A2156279000B97DAA /* NSDateFormatterCJHelper.h */,
+				7885FC292156279000B97DAA /* NSDateFormatterCJHelper.m */,
+			);
+			path = NSDateFormatterCJHelper;
+			sourceTree = "<group>";
+		};
+		7885FC2C21562F9C00B97DAA /* NSCalendarCJHelper */ = {
+			isa = PBXGroup;
+			children = (
+				7885FC2E21562F9C00B97DAA /* NSCalendarCJHelper.h */,
+				7885FC2D21562F9C00B97DAA /* NSCalendarCJHelper.m */,
+			);
+			path = NSCalendarCJHelper;
 			sourceTree = "<group>";
 		};
 		789A19671E61B87D008081E3 /* Models */ = {
@@ -3554,11 +3574,7 @@
 		80FF91DC1FC6739C00E437CF /* CJDateUtil */ = {
 			isa = PBXGroup;
 			children = (
-				80FF91E61FC6739C00E437CF /* CJCalendarUtil.h */,
-				80FF91E31FC6739C00E437CF /* CJCalendarUtil.m */,
 				80FF91DD1FC6739C00E437CF /* CJDate */,
-				80FF91E71FC6739C00E437CF /* CJDateFormatterUtil.h */,
-				80FF91E41FC6739C00E437CF /* CJDateFormatterUtil.m */,
 				80FF91E21FC6739C00E437CF /* CJDateOtherUtil.h */,
 				80FF91E51FC6739C00E437CF /* CJDateOtherUtil.m */,
 			);
@@ -4154,6 +4170,7 @@
 				80FF90851FC5649F00E437CF /* TvDemo_Complex+Event.m in Sources */,
 				80FF902B1FC5649E00E437CF /* MJExtensionViewController.m in Sources */,
 				78E00C8E212F21C5006BFD19 /* CJLogViewWindow.m in Sources */,
+				7885FC2B2156279000B97DAA /* NSDateFormatterCJHelper.m in Sources */,
 				78A621DC2135C713004DA046 /* DemoSuspendWindow.m in Sources */,
 				78A621BE2135A198004DA046 /* CJLogSuspendWindow.m in Sources */,
 				789CAF361FB612B700AF8CD4 /* CJMJRefreshNormalFooter.m in Sources */,
@@ -4167,7 +4184,6 @@
 				789CAF681FB612B700AF8CD4 /* CJChooseTextTextField.m in Sources */,
 				808DE5E720DA0586003E08F1 /* CJDecimalUtil.m in Sources */,
 				80FF90B01FC5649F00E437CF /* NavigationBarChangeBGViewController.m in Sources */,
-				80FF91EB1FC6739D00E437CF /* CJDateFormatterUtil.m in Sources */,
 				7832810D1F41AA96008267E0 /* ProcessLineView.m in Sources */,
 				800A15FD208480C000ECF9AF /* CJCallUtil.m in Sources */,
 				805598B51FF5D612009DC61C /* ValidateStringViewController.m in Sources */,
@@ -4213,6 +4229,7 @@
 				80FF919C1FC5682B00E437CF /* CountDownTimeViewController.m in Sources */,
 				80FF90921FC5649F00E437CF /* CJSubTitleTabelViewCell+ConfigureForDataModel.m in Sources */,
 				803323B620299AD7001DACF1 /* MyEqualCellSizeCollectionViewController.m in Sources */,
+				7885FC2F21562F9C00B97DAA /* NSCalendarCJHelper.m in Sources */,
 				800E07D52016CC2F00799B78 /* CJKeyboardUtil.m in Sources */,
 				802D1D6920CF5F48003EAFE0 /* CJIndentedStringUtil.m in Sources */,
 				80FF91C51FC581DD00E437CF /* UtilHomeViewController.m in Sources */,
@@ -4241,7 +4258,6 @@
 				80FF914C1FC5668700E437CF /* CJDataUtil.m in Sources */,
 				80FF90911FC5649F00E437CF /* CJLeftDetailTableViewCell+ConfigureForDataModel.m in Sources */,
 				80D71EA4209021FA00D2DB68 /* CJAlert.m in Sources */,
-				80FF91EA1FC6739D00E437CF /* CJCalendarUtil.m in Sources */,
 				80FF914F1FC5668700E437CF /* CJDataUtil+Value.m in Sources */,
 				80FF90B41FC5649F00E437CF /* ButtonViewController.m in Sources */,
 				789CAF501FB612B700AF8CD4 /* CJToast.m in Sources */,

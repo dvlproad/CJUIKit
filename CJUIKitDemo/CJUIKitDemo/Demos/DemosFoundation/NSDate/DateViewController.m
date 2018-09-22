@@ -8,7 +8,7 @@
 
 #import "DateViewController.h"
 
-#import "CJDateFormatterUtil.h"
+#import "NSDateFormatterCJHelper.h"
 
 #import "CJChooseTextTextField.h"
 
@@ -17,7 +17,7 @@
 
 #import "CJDefaultToolbar.h"
 
-#import "CJCalendarUtil.h"
+#import "NSCalendarCJHelper.h"
 
 @interface DateViewController () {
     
@@ -45,13 +45,13 @@
     
     self.currentDate = [NSDate date];
 
-    NSString *currentDateString = [[CJDateFormatterUtil sharedInstance] yyyyMMddHHmmss_stringFromDate:self.currentDate];
+    NSString *currentDateString = [[NSDateFormatterCJHelper sharedInstance] yyyyMMddHHmmss_stringFromDate:self.currentDate];
     self.dateTextField.text = currentDateString;
     
-    NSDate *birthdayDate = [[CJDateFormatterUtil sharedInstance] yyyyMMddHHmmss_dateFromString:@"1989-12-27 01:10:22"];
+    NSDate *birthdayDate = [[NSDateFormatterCJHelper sharedInstance] yyyyMMddHHmmss_dateFromString:@"1989-12-27 01:10:22"];
     
-    NSInteger yearInterval = [CJCalendarUtil year_unitIntervalFromDate:birthdayDate toDate:[NSDate date]];
-    NSInteger age = [CJCalendarUtil age_unitIntervalFromDate:birthdayDate toDate:[NSDate date]];
+    NSInteger yearInterval = [NSCalendarCJHelper year_unitIntervalFromDate:birthdayDate toDate:[NSDate date]];
+    NSInteger age = [NSCalendarCJHelper age_unitIntervalFromDate:birthdayDate toDate:[NSDate date]];
     NSLog(@"今年周岁为：%ld, %ld", yearInterval, age);
     
 }
@@ -151,8 +151,8 @@
     NSLog(@"左边按钮点击");
     [self hideDateChoosePicker];
     
-    NSDate *date = [CJCalendarUtil yesterday_dateFromSinceDate:self.currentDate];
-    NSString *dateString = [[CJDateFormatterUtil sharedInstance] yyyyMMddHHmmss_stringFromDate:date];
+    NSDate *date = [NSCalendarCJHelper yesterday_dateFromSinceDate:self.currentDate];
+    NSString *dateString = [[NSDateFormatterCJHelper sharedInstance] yyyyMMddHHmmss_stringFromDate:date];
     self.dateTextField.text = dateString;
     
     self.currentDate = date;
@@ -162,8 +162,8 @@
     NSLog(@"右边按钮点击");
     [self hideDateChoosePicker];
     
-    NSDate *date = [CJCalendarUtil tomorrow_dateFromSinceDate:self.currentDate];
-    NSString *dateString = [[CJDateFormatterUtil sharedInstance] yyyyMMddHHmmss_stringFromDate:date];
+    NSDate *date = [NSCalendarCJHelper tomorrow_dateFromSinceDate:self.currentDate];
+    NSString *dateString = [[NSDateFormatterCJHelper sharedInstance] yyyyMMddHHmmss_stringFromDate:date];
     self.dateTextField.text = dateString;
     
     self.currentDate = date;

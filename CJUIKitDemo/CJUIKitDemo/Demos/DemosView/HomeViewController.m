@@ -69,7 +69,7 @@
     self.navigationItem.title = NSLocalizedString(@"CJBaseUIKit首页", nil); //知识点:使得tabBar中的title可以和显示在顶部的title保持各自
     
     UITableView *tableView = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStyleGrouped];
-    [tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"cell"];
+//    [tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"cell"];
     tableView.dataSource = self;
     tableView.delegate = self;
     [self.view addSubview:tableView];
@@ -354,8 +354,12 @@
     NSArray *dataModels = sectionDataModel.values;
     CJModuleModel *moduleModel = [dataModels objectAtIndex:indexPath.row];
     
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
+    if (cell == nil) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:@"cell"];
+    }
     cell.textLabel.text = moduleModel.title;
+    cell.detailTextLabel.text = moduleModel.content;
     
     return cell;
 }

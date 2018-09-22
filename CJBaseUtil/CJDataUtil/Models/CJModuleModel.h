@@ -12,6 +12,7 @@
 @interface CJModuleModel : NSObject
 
 @property (nonatomic, copy) NSString *title;
+@property (nonatomic, copy) NSString *content;
 @property (nonatomic, strong) UIImage *normalImage;
 @property (nonatomic, strong) UIImage *selectedImage;
 
