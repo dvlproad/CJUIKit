@@ -8,6 +8,8 @@
 
 #import "UIView+CJPopupInView.h"
 
+#define CJPopupMainThreadAssert() NSAssert([NSThread isMainThread], @"UIView+CJPopupInView needs to be accessed on the main thread.");
+
 static CGFloat kPopupAnimationDuration = 0.3;
 
 static NSString *cjPopupAnimationTypeKey = @"cjPopupAnimationType";
@@ -123,6 +125,8 @@ static NSString *cjMustHideFromPopupViewKey = @"cjMustHideFromPopupView";
           showComplete:(CJShowPopupViewCompleteBlock)showPopupViewCompleteBlock
       tapBlankComplete:(CJTapBlankViewCompleteBlock)tapBlankViewCompleteBlock
 {
+    CJPopupMainThreadAssert();
+    
     UIView *popupView = self;
     
     BOOL canAdd = [self letPopupSuperview:popupSuperview addPopupView:popupView];
@@ -187,6 +191,8 @@ static NSString *cjMustHideFromPopupViewKey = @"cjMustHideFromPopupView";
                   showComplete:(CJShowPopupViewCompleteBlock)showPopupViewCompleteBlock
               tapBlankComplete:(CJTapBlankViewCompleteBlock)tapBlankViewCompleteBlock
 {
+    CJPopupMainThreadAssert();
+    
     UIWindow *keyWindow = [[UIApplication sharedApplication] keyWindow];
     
     UIView *popupView = self;
@@ -246,6 +252,7 @@ static NSString *cjMustHideFromPopupViewKey = @"cjMustHideFromPopupView";
                   showComplete:(CJShowPopupViewCompleteBlock)showPopupViewCompleteBlock
               tapBlankComplete:(CJTapBlankViewCompleteBlock)tapBlankViewCompleteBlock
 {
+    CJPopupMainThreadAssert();
     NSAssert(popupViewHeight != 0, @"弹出视图的高都不能为0");
     
     UIView *popupView = self;
@@ -428,6 +435,8 @@ static NSString *cjMustHideFromPopupViewKey = @"cjMustHideFromPopupView";
 
 /** 完整的描述请参见文件头部 */
 - (void)cj_hidePopupViewWithAnimationType:(CJAnimationType)animationType {
+    CJPopupMainThreadAssert();
+    
     self.cjPopupViewShowing = NO;  //设置成NO表示当前未显示任何弹出视图
     [self endEditing:YES];
     

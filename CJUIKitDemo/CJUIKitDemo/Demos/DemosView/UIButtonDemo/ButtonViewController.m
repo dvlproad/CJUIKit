@@ -7,13 +7,14 @@
 //
 
 #import "ButtonViewController.h"
+#import "ButtonFactory.h"
+#import "UIButton+CJMoreProperty.h"
+#import "UIColor+CJHex.h"
+
 #import "UIButton+CJUpDownStructure.h"
 #import "UIButton+CJFixMultiClick.h"
 
 #import "UIImage+CJCreate.h"
-
-#import "UIButton+CJMoreProperty.h"
-#import "UIColor+CJHex.h"
 
 @interface ButtonViewController ()
 
@@ -42,9 +43,37 @@
     }];
     cjTestButton.cjNormalBGColor = CJColorFromHexString(@"#01adfe");
     cjTestButton.cjHighlightedBGColor = CJColorFromHexString(@"#1393d7");
+    cjTestButton.cjDisabledBGColor = CJColorFromHexString(@"#d3d3d5");
     cjTestButton.cjTouchUpInsideBlock = ^(UIButton *button) {
-        [CJToast shortShowMessage:@"测试为按钮动态增加的属性"];
+        [CJToast shortShowMessage:@"测试为按钮动态增加的属性\n改变蓝色背景enable"];
     };
+    
+    UIButton *blueButton = [ButtonFactory blueButton];
+    [blueButton setTitle:@"蓝色背景按钮" forState:UIControlStateNormal];
+    [self.view addSubview:blueButton];
+    [blueButton mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.right.mas_equalTo(self.view).mas_offset(-20);
+        make.top.mas_equalTo(self.view).mas_offset(150);
+        make.width.mas_equalTo(120);
+        make.height.mas_equalTo(44);
+    }];
+    
+    UIButton *whiteButton = [ButtonFactory whiteButton];
+    [whiteButton setTitle:@"白色背景按钮" forState:UIControlStateNormal];
+    [self.view addSubview:whiteButton];
+    [whiteButton mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.right.mas_equalTo(self.view).mas_offset(-20);
+        make.top.mas_equalTo(self.view).mas_offset(200);
+        make.width.mas_equalTo(120);
+        make.height.mas_equalTo(44);
+    }];
+    
+    __weak typeof(blueButton)weakBlueButton = blueButton;
+    cjTestButton.cjTouchUpInsideBlock = ^(UIButton *button) {
+        [CJToast shortShowMessage:@"测试为按钮动态增加的属性\n改变蓝色背景enable"];
+        weakBlueButton.enabled = !weakBlueButton.enabled;
+    };
+    
     
     [self.upDownStructureButton setImage:[UIImage imageNamed:@"smail.png"] forState:UIControlStateNormal];
     [self.upDownStructureButton setTitle:@"测试上下结构的文字" forState:UIControlStateNormal];

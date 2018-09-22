@@ -60,6 +60,12 @@
             //toastModule.classEntry = [UIViewController class];
             [sectionDataModel.values addObject:toastModule];
         }
+        {
+            CJModuleModel *toastModule = [[CJModuleModel alloc] init];
+            toastModule.title = @"测试使用\n换行是否有效";
+            //toastModule.classEntry = [UIViewController class];
+            [sectionDataModel.values addObject:toastModule];
+        }
         [sectionDataModels addObject:sectionDataModel];
     }
     //Toast
@@ -146,7 +152,14 @@
             [CJToast shortShowWhiteMessage:@"黑底白字，2秒后自动消失"];
             
         } else if (indexPath.row == 3) {
-            [CJToast shortShowMessage:@"在指定的view上显示文字，并在delay秒后自动消失"
+            [CJToast shortShowMessage:@"在指定的view上显示文字，并在delay秒后自动消失\n换行是否有效"
+                               inView:self.view
+                   withLabelTextColor:[UIColor redColor]
+                       bezelViewColor:[UIColor greenColor]
+                       hideAfterDelay:2];
+            
+        } else if (indexPath.row == 4) {
+            [CJToast shortShowMessage:@"第一行\n换行是否有效"
                                inView:self.view
                    withLabelTextColor:[UIColor redColor]
                        bezelViewColor:[UIColor greenColor]

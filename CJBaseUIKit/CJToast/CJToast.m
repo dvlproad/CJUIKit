@@ -52,24 +52,33 @@
     
     CGFloat labelMaxWidth = CGRectGetWidth(view.frame) - 4*margin;
     UIFont *hudLabelFont = hud.label.font;
-    CGFloat textWidth = [self getTextSizeFromString:message withFont:hudLabelFont].width;
+    CGFloat labelWidth = labelMaxWidth;
+    CGSize maxSize = CGSizeMake(labelWidth, CGFLOAT_MAX);
+    CGSize textSize = [self getTextSizeFromString:message withFont:hudLabelFont maxSize:maxSize lineBreakMode:NSLineBreakByCharWrapping paragraphStyle:nil];
     
-    //由于 MBProgressHUD 无法自动换行，所以超过部分改用自定义
-    if (textWidth < labelMaxWidth) {
-        hud.mode = MBProgressHUDModeText;
-        if (labelTextColor) {
-            hud.label.textColor = labelTextColor;
-        }
-        if (bezelViewColor) {
-            hud.bezelView.color = bezelViewColor;
-        }
-        
-        
-        hud.minSize = CGSizeMake(200, 30);
-        
-        hud.label.text = message;
-        
-    } else {
+    //由于 MBProgressHUD 的label的numberOfLines为1，所以label只支持单行显示。(附detailsLabel支持多行)
+    //情况①当文本太长时候，需要多行显示，所以如果要显示的字符串超过单行最大长度，我们则改为用自定义的label显示；
+    //情况②当使用\n时候，一样的道理，也无法显示多行，所以干脆直接放弃到原本的label
+//    if (textSize.width < labelMaxWidth) {
+//        hud.mode = MBProgressHUDModeText;
+//        //hud.label.numberOfLines = 0;
+//        if (labelTextColor) {
+//            hud.label.textColor = labelTextColor;
+//            //hud.detailsLabel.textColor = labelTextColor;
+//        }
+//        if (bezelViewColor) {
+//            hud.bezelView.color = bezelViewColor;
+//        }
+//
+//
+//        hud.minSize = CGSizeMake(200, 80);
+//
+//        hud.label.text = message;
+//        //hud.detailsLabel.text = message;
+//
+//    }
+//    else
+    {
         hud.mode = MBProgressHUDModeCustomView;
         if (labelTextColor) {
             hud.label.textColor = labelTextColor;
@@ -78,12 +87,8 @@
             hud.bezelView.color = bezelViewColor;
         }
         
-        CGFloat labelWidth = labelMaxWidth;
-        CGSize maxSize = CGSizeMake(labelWidth, CGFLOAT_MAX);
-        CGSize textSize = [self getTextSizeFromString:message withFont:hudLabelFont maxSize:maxSize lineBreakMode:NSLineBreakByCharWrapping paragraphStyle:nil];
-        
         UILabel *label = [[UILabel alloc] init];
-        label.textAlignment = NSTextAlignmentLeft;
+        label.textAlignment = NSTextAlignmentCenter;
         label.font = hudLabelFont;
         label.textColor = hud.label.textColor;
         label.numberOfLines = 0;
@@ -210,25 +215,7 @@
 
 
 #pragma mark - Private
-//以下两个获取textSize取自NSString+CJTextSize
-+ (CGSize)getTextSizeFromString:(NSString *)string withFont:(UIFont *)font
-{
-    if (string.length == 0)
-    return CGSizeZero;
-    if ([string respondsToSelector:@selector(sizeWithAttributes:)])
-    {
-        CGSize size = [string sizeWithAttributes:@{NSFontAttributeName:font}];
-        return CGSizeMake(ceil(size.width), ceil(size.height));
-    }
-    else
-    {
-#pragma clang diagnostic push
-#pragma clang diagnostic ignored "-Wdeprecated-declarations"
-        return [string sizeWithFont:font];
-#pragma clang diagnostic pop
-    }
-}
-
+//以下获取textSize方法取自NSString+CJTextSize
 + (CGSize)getTextSizeFromString:(NSString *)string withFont:(UIFont *)font
                         maxSize:(CGSize)maxSize
                   lineBreakMode:(NSLineBreakMode)lineBreakMode

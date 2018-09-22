@@ -87,6 +87,7 @@
 		7885FC2B2156279000B97DAA /* NSDateFormatterCJHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 7885FC292156279000B97DAA /* NSDateFormatterCJHelper.m */; };
 		7885FC2F21562F9C00B97DAA /* NSCalendarCJHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 7885FC2D21562F9C00B97DAA /* NSCalendarCJHelper.m */; };
 		7885FC4A2156681F00B97DAA /* UIView+CJPopupInSuspendWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 7885FC482156681F00B97DAA /* UIView+CJPopupInSuspendWindow.m */; };
+		7885FC9321567BE000B97DAA /* ButtonFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 7885FC9221567BE000B97DAA /* ButtonFactory.m */; };
 		789CAF181FB612B700AF8CD4 /* ChangeLog.md in Resources */ = {isa = PBXBuildFile; fileRef = 789CAE111FB612B600AF8CD4 /* ChangeLog.md */; };
 		789CAF191FB612B700AF8CD4 /* CJBaseCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 789CAE151FB612B600AF8CD4 /* CJBaseCollectionViewCell.m */; };
 		789CAF1A1FB612B700AF8CD4 /* CJFullBottomCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 789CAE171FB612B600AF8CD4 /* CJFullBottomCollectionViewCell.m */; };
@@ -625,6 +626,8 @@
 		7885FC2E21562F9C00B97DAA /* NSCalendarCJHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSCalendarCJHelper.h; sourceTree = "<group>"; };
 		7885FC482156681F00B97DAA /* UIView+CJPopupInSuspendWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+CJPopupInSuspendWindow.m"; sourceTree = "<group>"; };
 		7885FC492156681F00B97DAA /* UIView+CJPopupInSuspendWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+CJPopupInSuspendWindow.h"; sourceTree = "<group>"; };
+		7885FC9121567BE000B97DAA /* ButtonFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ButtonFactory.h; sourceTree = "<group>"; };
+		7885FC9221567BE000B97DAA /* ButtonFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ButtonFactory.m; sourceTree = "<group>"; };
 		789CAB597AD073D5F637D193 /* Pods-CJUIKitDemoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CJUIKitDemoTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-CJUIKitDemoTests/Pods-CJUIKitDemoTests.release.xcconfig"; sourceTree = "<group>"; };
 		789CAE111FB612B600AF8CD4 /* ChangeLog.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = ChangeLog.md; sourceTree = "<group>"; };
 		789CAE141FB612B600AF8CD4 /* CJBaseCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJBaseCollectionViewCell.h; sourceTree = "<group>"; };
@@ -1698,6 +1701,15 @@
 				7885FC2D21562F9C00B97DAA /* NSCalendarCJHelper.m */,
 			);
 			path = NSCalendarCJHelper;
+			sourceTree = "<group>";
+		};
+		7885FC9021567BE000B97DAA /* ButtonFactory */ = {
+			isa = PBXGroup;
+			children = (
+				7885FC9121567BE000B97DAA /* ButtonFactory.h */,
+				7885FC9221567BE000B97DAA /* ButtonFactory.m */,
+			);
+			path = ButtonFactory;
 			sourceTree = "<group>";
 		};
 		789A19671E61B87D008081E3 /* Models */ = {
@@ -3268,6 +3280,7 @@
 				80FF8FF31FC5649E00E437CF /* ButtonViewController.h */,
 				80FF8FF21FC5649E00E437CF /* ButtonViewController.m */,
 				80FF8FF11FC5649E00E437CF /* ButtonViewController.xib */,
+				7885FC9021567BE000B97DAA /* ButtonFactory */,
 			);
 			path = UIButtonDemo;
 			sourceTree = "<group>";
@@ -4128,6 +4141,7 @@
 				7850B70020937C5A008F4A21 /* DragViewController.m in Sources */,
 				80FF91391FC5668700E437CF /* NSString+CJTextSize.m in Sources */,
 				80E7E75420AD2C8B000F762D /* UIImage+CJFixOrientation.m in Sources */,
+				7885FC9321567BE000B97DAA /* ButtonFactory.m in Sources */,
 				80FF90A41FC5649F00E437CF /* HomeViewController.m in Sources */,
 				800E07E52016CCF500799B78 /* DeviceInfo.m in Sources */,
 				789CAF311FB612B700AF8CD4 /* CJTableViewHeaderFooterView.m in Sources */,
