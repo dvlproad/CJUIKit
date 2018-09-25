@@ -7,6 +7,7 @@
 //
 
 #import "MJExtensionViewController.h"
+#import "DemoBusFlightModel.h"
 
 @interface MJExtensionViewController ()
 
@@ -17,6 +18,28 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    
+    
+    //DemoBusFlightStationModel
+    NSDictionary *busFlightStationDictionary1 = @{@"id": @"1001",
+                                                  @"sequence": @"101",
+                                                 };
+    NSDictionary *busFlightStationDictionary2 = @{@"id": @"1001",
+                                                  @"sequence": @"102",
+                                                  };
+    NSDictionary *busFlightStationDictionary3 = @{@"id": @"1001",
+                                                  @"sequence": @"103",
+                                                  };
+    
+    //DemoBusFlightModel
+    NSDictionary *busFlightDictionary = @{@"id": @"1001",
+                                          @"station_infos": @[busFlightStationDictionary1,
+                                                              busFlightStationDictionary2,
+                                                              busFlightStationDictionary3]
+                                          };
+    
+    DemoBusFlightModel *busFlightModel = [DemoBusFlightModel mj_objectWithKeyValues:busFlightDictionary];
+    NSLog(@"busFlightModel = %@", busFlightModel);
 }
 
 - (void)didReceiveMemoryWarning {

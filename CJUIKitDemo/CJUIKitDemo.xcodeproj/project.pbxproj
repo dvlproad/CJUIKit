@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		51F701ECBBD48CC565F3FB87 /* libPods-CJUIKitDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A078401C0E781545EB72B64D /* libPods-CJUIKitDemo.a */; };
-		7809C9E32147EB1A00FAFD93 /* DemoUsePermissionModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7809C9E12147EB1900FAFD93 /* DemoUsePermissionModel.m */; };
 		780E46051E5DF87B00980127 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 780E46041E5DF87B00980127 /* main.m */; };
 		780E46081E5DF87B00980127 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 780E46071E5DF87B00980127 /* AppDelegate.m */; };
 		780E460B1E5DF87B00980127 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 780E460A1E5DF87B00980127 /* ViewController.m */; };
@@ -17,7 +16,6 @@
 		780E46131E5DF87B00980127 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 780E46111E5DF87B00980127 /* LaunchScreen.storyboard */; };
 		780E461E1E5DF87B00980127 /* CJUIKitDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 780E461D1E5DF87B00980127 /* CJUIKitDemoTests.m */; };
 		780E46291E5DF87B00980127 /* CJUIKitDemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 780E46281E5DF87B00980127 /* CJUIKitDemoUITests.m */; };
-		781495A62140D80700D0F2BC /* DemoUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 781495A52140D80700D0F2BC /* DemoUser.m */; };
 		781495A92140D82600D0F2BC /* MantleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 781495A82140D82600D0F2BC /* MantleViewController.m */; };
 		783281041F4198BC008267E0 /* CustomTripProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 783281031F4198BC008267E0 /* CustomTripProgressView.m */; };
 		7832810D1F41AA96008267E0 /* ProcessLineView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7832810C1F41AA96008267E0 /* ProcessLineView.m */; };
@@ -173,6 +171,15 @@
 		78A621E72135C925004DA046 /* DemoSuspendWindowRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78A621E52135C924004DA046 /* DemoSuspendWindowRootViewController.m */; };
 		78A621ED2135CA50004DA046 /* DemoFloatingWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 78A621EC2135CA50004DA046 /* DemoFloatingWindow.m */; };
 		78A621F12135CC20004DA046 /* CJSuspendWindowManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 78A621F02135CC20004DA046 /* CJSuspendWindowManager.m */; };
+		78B6C2D82159D1F100D5864E /* DemoBusFlightStationModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 78B6C2D42159D1F100D5864E /* DemoBusFlightStationModel.m */; };
+		78B6C2D92159D1F100D5864E /* DemoBusFlightModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 78B6C2D72159D1F100D5864E /* DemoBusFlightModel.m */; };
+		78B6C2DF2159D20000D5864E /* DemoUsePermissionModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 78B6C2DD2159D20000D5864E /* DemoUsePermissionModel.m */; };
+		78B6C2E02159D20000D5864E /* DemoUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 78B6C2DE2159D20000D5864E /* DemoUser.m */; };
+		78B6C2E32159D6BC00D5864E /* DemoBusStationModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 78B6C2E12159D6BB00D5864E /* DemoBusStationModel.m */; };
+		78B6C2E62159D6E900D5864E /* DemoBusStationLocationModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 78B6C2E42159D6E900D5864E /* DemoBusStationLocationModel.m */; };
+		78B6C2E92159D84800D5864E /* DemoBusFlightStationOnOffDetailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 78B6C2E72159D84700D5864E /* DemoBusFlightStationOnOffDetailModel.m */; };
+		78B6C2EE2159D8AF00D5864E /* DemoBusPassengerOrderModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 78B6C2EC2159D8AF00D5864E /* DemoBusPassengerOrderModel.m */; };
+		78B6C2EF2159D8AF00D5864E /* DemoBusPassengerModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 78B6C2ED2159D8AF00D5864E /* DemoBusPassengerModel.m */; };
 		78E00C8E212F21C5006BFD19 /* CJLogViewWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 78E00C8D212F21C5006BFD19 /* CJLogViewWindow.m */; };
 		78E00C91212F28A2006BFD19 /* CJLogModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 78E00C90212F28A2006BFD19 /* CJLogModel.m */; };
 		78E269BE1ECC5E1A007D3686 /* bgCar@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 78E269BB1ECC5E1A007D3686 /* bgCar@2x.jpg */; };
@@ -499,8 +506,6 @@
 /* Begin PBXFileReference section */
 		3132573BFCFBEA8B4F3BB86F /* Pods-CJUIKitDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CJUIKitDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-CJUIKitDemo/Pods-CJUIKitDemo.release.xcconfig"; sourceTree = "<group>"; };
 		68D73B38201AA01727123963 /* Pods-CJUIKitDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CJUIKitDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CJUIKitDemo/Pods-CJUIKitDemo.debug.xcconfig"; sourceTree = "<group>"; };
-		7809C9E12147EB1900FAFD93 /* DemoUsePermissionModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DemoUsePermissionModel.m; sourceTree = "<group>"; };
-		7809C9E22147EB1900FAFD93 /* DemoUsePermissionModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DemoUsePermissionModel.h; sourceTree = "<group>"; };
 		780E46001E5DF87B00980127 /* CJUIKitDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CJUIKitDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		780E46041E5DF87B00980127 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		780E46061E5DF87B00980127 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -517,8 +522,6 @@
 		780E46241E5DF87B00980127 /* CJUIKitDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CJUIKitDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		780E46281E5DF87B00980127 /* CJUIKitDemoUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CJUIKitDemoUITests.m; sourceTree = "<group>"; };
 		780E462A1E5DF87B00980127 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		781495A42140D80700D0F2BC /* DemoUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DemoUser.h; sourceTree = "<group>"; };
-		781495A52140D80700D0F2BC /* DemoUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DemoUser.m; sourceTree = "<group>"; };
 		781495A72140D82600D0F2BC /* MantleViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MantleViewController.h; sourceTree = "<group>"; };
 		781495A82140D82600D0F2BC /* MantleViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MantleViewController.m; sourceTree = "<group>"; };
 		783281021F4198BC008267E0 /* CustomTripProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomTripProgressView.h; sourceTree = "<group>"; };
@@ -788,6 +791,24 @@
 		78A621EC2135CA50004DA046 /* DemoFloatingWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DemoFloatingWindow.m; sourceTree = "<group>"; };
 		78A621EF2135CC20004DA046 /* CJSuspendWindowManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJSuspendWindowManager.h; sourceTree = "<group>"; };
 		78A621F02135CC20004DA046 /* CJSuspendWindowManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJSuspendWindowManager.m; sourceTree = "<group>"; };
+		78B6C2D42159D1F100D5864E /* DemoBusFlightStationModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DemoBusFlightStationModel.m; sourceTree = "<group>"; };
+		78B6C2D52159D1F100D5864E /* DemoBusFlightModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DemoBusFlightModel.h; sourceTree = "<group>"; };
+		78B6C2D62159D1F100D5864E /* DemoBusFlightStationModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DemoBusFlightStationModel.h; sourceTree = "<group>"; };
+		78B6C2D72159D1F100D5864E /* DemoBusFlightModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DemoBusFlightModel.m; sourceTree = "<group>"; };
+		78B6C2DB2159D20000D5864E /* DemoUsePermissionModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DemoUsePermissionModel.h; sourceTree = "<group>"; };
+		78B6C2DC2159D20000D5864E /* DemoUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DemoUser.h; sourceTree = "<group>"; };
+		78B6C2DD2159D20000D5864E /* DemoUsePermissionModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DemoUsePermissionModel.m; sourceTree = "<group>"; };
+		78B6C2DE2159D20000D5864E /* DemoUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DemoUser.m; sourceTree = "<group>"; };
+		78B6C2E12159D6BB00D5864E /* DemoBusStationModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DemoBusStationModel.m; sourceTree = "<group>"; };
+		78B6C2E22159D6BC00D5864E /* DemoBusStationModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DemoBusStationModel.h; sourceTree = "<group>"; };
+		78B6C2E42159D6E900D5864E /* DemoBusStationLocationModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DemoBusStationLocationModel.m; sourceTree = "<group>"; };
+		78B6C2E52159D6E900D5864E /* DemoBusStationLocationModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DemoBusStationLocationModel.h; sourceTree = "<group>"; };
+		78B6C2E72159D84700D5864E /* DemoBusFlightStationOnOffDetailModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DemoBusFlightStationOnOffDetailModel.m; sourceTree = "<group>"; };
+		78B6C2E82159D84800D5864E /* DemoBusFlightStationOnOffDetailModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DemoBusFlightStationOnOffDetailModel.h; sourceTree = "<group>"; };
+		78B6C2EA2159D8AF00D5864E /* DemoBusPassengerModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DemoBusPassengerModel.h; sourceTree = "<group>"; };
+		78B6C2EB2159D8AF00D5864E /* DemoBusPassengerOrderModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DemoBusPassengerOrderModel.h; sourceTree = "<group>"; };
+		78B6C2EC2159D8AF00D5864E /* DemoBusPassengerOrderModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DemoBusPassengerOrderModel.m; sourceTree = "<group>"; };
+		78B6C2ED2159D8AF00D5864E /* DemoBusPassengerModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DemoBusPassengerModel.m; sourceTree = "<group>"; };
 		78E00C8C212F21C5006BFD19 /* CJLogViewWindow.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CJLogViewWindow.h; sourceTree = "<group>"; };
 		78E00C8D212F21C5006BFD19 /* CJLogViewWindow.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CJLogViewWindow.m; sourceTree = "<group>"; };
 		78E00C8F212F28A2006BFD19 /* CJLogModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CJLogModel.h; sourceTree = "<group>"; };
@@ -1404,12 +1425,9 @@
 		781495A32140D80700D0F2BC /* MantleDemo */ = {
 			isa = PBXGroup;
 			children = (
-				781495A42140D80700D0F2BC /* DemoUser.h */,
-				781495A52140D80700D0F2BC /* DemoUser.m */,
-				7809C9E22147EB1900FAFD93 /* DemoUsePermissionModel.h */,
-				7809C9E12147EB1900FAFD93 /* DemoUsePermissionModel.m */,
 				781495A72140D82600D0F2BC /* MantleViewController.h */,
 				781495A82140D82600D0F2BC /* MantleViewController.m */,
+				78B6C2DA2159D20000D5864E /* Models */,
 			);
 			path = MantleDemo;
 			sourceTree = "<group>";
@@ -2277,6 +2295,38 @@
 			path = CJSuspendWindowManager;
 			sourceTree = "<group>";
 		};
+		78B6C2D32159D1F100D5864E /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				78B6C2D52159D1F100D5864E /* DemoBusFlightModel.h */,
+				78B6C2D72159D1F100D5864E /* DemoBusFlightModel.m */,
+				78B6C2D62159D1F100D5864E /* DemoBusFlightStationModel.h */,
+				78B6C2D42159D1F100D5864E /* DemoBusFlightStationModel.m */,
+				78B6C2E22159D6BC00D5864E /* DemoBusStationModel.h */,
+				78B6C2E12159D6BB00D5864E /* DemoBusStationModel.m */,
+				78B6C2E52159D6E900D5864E /* DemoBusStationLocationModel.h */,
+				78B6C2E42159D6E900D5864E /* DemoBusStationLocationModel.m */,
+				78B6C2E82159D84800D5864E /* DemoBusFlightStationOnOffDetailModel.h */,
+				78B6C2E72159D84700D5864E /* DemoBusFlightStationOnOffDetailModel.m */,
+				78B6C2EA2159D8AF00D5864E /* DemoBusPassengerModel.h */,
+				78B6C2ED2159D8AF00D5864E /* DemoBusPassengerModel.m */,
+				78B6C2EB2159D8AF00D5864E /* DemoBusPassengerOrderModel.h */,
+				78B6C2EC2159D8AF00D5864E /* DemoBusPassengerOrderModel.m */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		78B6C2DA2159D20000D5864E /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				78B6C2DB2159D20000D5864E /* DemoUsePermissionModel.h */,
+				78B6C2DC2159D20000D5864E /* DemoUser.h */,
+				78B6C2DD2159D20000D5864E /* DemoUsePermissionModel.m */,
+				78B6C2DE2159D20000D5864E /* DemoUser.m */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		78B740111FB6C04500443D87 /* Network */ = {
 			isa = PBXGroup;
 			children = (
@@ -3011,6 +3061,7 @@
 		80FF8F0F1FC5649E00E437CF /* MJExtensionDemo */ = {
 			isa = PBXGroup;
 			children = (
+				78B6C2D32159D1F100D5864E /* Models */,
 				80FF8F121FC5649E00E437CF /* MJExtensionViewController.h */,
 				80FF8F101FC5649E00E437CF /* MJExtensionViewController.m */,
 				80FF8F111FC5649E00E437CF /* MJExtensionViewController.xib */,
@@ -4056,6 +4107,7 @@
 				803323C120299AD7001DACF1 /* cvSupplementaryFoot.m in Sources */,
 				803323C220299AD7001DACF1 /* cvSupplementaryHead.m in Sources */,
 				78A621D12135BC82004DA046 /* LogSuspendWindowViewController.m in Sources */,
+				78B6C2EE2159D8AF00D5864E /* DemoBusPassengerOrderModel.m in Sources */,
 				7850B72D2093809F008F4A21 /* UIView+CJDragAction.m in Sources */,
 				800E07E92016CD1500799B78 /* KeyboardUtilViewController.m in Sources */,
 				784A7247214CD34400F8D144 /* WebCJHelper.m in Sources */,
@@ -4090,8 +4142,11 @@
 				787FDB9820500B5C008A46E3 /* ShimmeringSwitchSlider.m in Sources */,
 				789CAF6E1FB612B700AF8CD4 /* UITextField+CJAddInputAccessoryView.m in Sources */,
 				8033239120299AD7001DACF1 /* MyCycleADViewController.m in Sources */,
+				78B6C2D92159D1F100D5864E /* DemoBusFlightModel.m in Sources */,
 				80FF902A1FC5649E00E437CF /* ThirdPartyHomeViewController.m in Sources */,
 				80FF908A1FC5649F00E437CF /* ChooseColor01.m in Sources */,
+				78B6C2DF2159D20000D5864E /* DemoUsePermissionModel.m in Sources */,
+				78B6C2E32159D6BC00D5864E /* DemoBusStationModel.m in Sources */,
 				80FF91E81FC6739D00E437CF /* CJDateModelUtil.m in Sources */,
 				8050038A211C3A29002A2306 /* StringHelperViewController.m in Sources */,
 				80500389211C3A29002A2306 /* HelperHomeViewController.m in Sources */,
@@ -4119,6 +4174,7 @@
 				80FF91461FC5668700E437CF /* CJDataUtil+CJSectionDataModel.m in Sources */,
 				7850B71420937E85008F4A21 /* WelcomePopupView.m in Sources */,
 				80FF908C1FC5649F00E437CF /* SHeaderHome2.m in Sources */,
+				78B6C2E02159D20000D5864E /* DemoUser.m in Sources */,
 				807C4F8620C65DA5002EAC12 /* CJConvertUtil.m in Sources */,
 				80E7E75020AD2C8B000F762D /* UIImage+CJBase64.m in Sources */,
 				80E7E75C20AD2D4D000F762D /* CJQRCodeUtil.m in Sources */,
@@ -4162,6 +4218,7 @@
 				789CAF4F1FB612B700AF8CD4 /* CJTextView.m in Sources */,
 				80FF90441FC5649F00E437CF /* UploadNoneImagePickerViewController.m in Sources */,
 				80FF914D1FC5668700E437CF /* CJDataUtil+SortOrder.m in Sources */,
+				78B6C2D82159D1F100D5864E /* DemoBusFlightStationModel.m in Sources */,
 				789CAF481FB612B700AF8CD4 /* CJRangeSliderControl.m in Sources */,
 				80E7E75720AD2C8B000F762D /* UIImage+CJBlur.m in Sources */,
 				80FF909E1FC5649F00E437CF /* NestedXibSubViewA.m in Sources */,
@@ -4169,6 +4226,7 @@
 				800F3B652011899400A5C326 /* ToastViewController.m in Sources */,
 				80E7E73020AD2AEA000F762D /* UIColor+CJHex.m in Sources */,
 				80FF913B1FC5668700E437CF /* NSString+CJEncryption.m in Sources */,
+				78B6C2E62159D6E900D5864E /* DemoBusStationLocationModel.m in Sources */,
 				80FF90351FC5649E00E437CF /* TestDataUtil.m in Sources */,
 				80FF91951FC5682B00E437CF /* FoundationHomeViewController.m in Sources */,
 				80E7E75620AD2C8B000F762D /* UIImage+SplitImageIntoTwoParts.m in Sources */,
@@ -4185,7 +4243,6 @@
 				80FF90361FC5649E00E437CF /* DemoInfo.m in Sources */,
 				80FF909A1FC5649F00E437CF /* FloatingWindowViewController.m in Sources */,
 				80332404202C4E55001DACF1 /* EmptyWebViewController.m in Sources */,
-				7809C9E32147EB1A00FAFD93 /* DemoUsePermissionModel.m in Sources */,
 				789CAF681FB612B700AF8CD4 /* CJChooseTextTextField.m in Sources */,
 				808DE5E720DA0586003E08F1 /* CJDecimalUtil.m in Sources */,
 				80FF90B01FC5649F00E437CF /* NavigationBarChangeBGViewController.m in Sources */,
@@ -4197,6 +4254,7 @@
 				78E00C91212F28A2006BFD19 /* CJLogModel.m in Sources */,
 				80FF91971FC5682B00E437CF /* EncryptStringViewController.m in Sources */,
 				789CAF331FB612B700AF8CD4 /* CJBadgeImageView.m in Sources */,
+				78B6C2E92159D84800D5864E /* DemoBusFlightStationOnOffDetailModel.m in Sources */,
 				789CAF7D1FB612B700AF8CD4 /* CJUploadCollectionViewCell.m in Sources */,
 				80FF91981FC5682B00E437CF /* AttributedStringViewController.m in Sources */,
 				789CAF861FB612B700AF8CD4 /* MySearchEqualCellSizeCollectionView.m in Sources */,
@@ -4231,6 +4289,7 @@
 				80D71EAD20902C2F00D2DB68 /* CJAlertView.m in Sources */,
 				80E7E63520AC227B000F762D /* AppInfoManager.m in Sources */,
 				80FF90A71FC5649F00E437CF /* QRCodeViewController.m in Sources */,
+				78B6C2EF2159D8AF00D5864E /* DemoBusPassengerModel.m in Sources */,
 				80FF919C1FC5682B00E437CF /* CountDownTimeViewController.m in Sources */,
 				80FF90921FC5649F00E437CF /* CJSubTitleTabelViewCell+ConfigureForDataModel.m in Sources */,
 				803323B620299AD7001DACF1 /* MyEqualCellSizeCollectionViewController.m in Sources */,
@@ -4294,7 +4353,6 @@
 				80E7E76020AD31A2000F762D /* CJLaunchImageUtil.m in Sources */,
 				80D71EA92090277700D2DB68 /* AlertViewController.m in Sources */,
 				80E7E75320AD2C8B000F762D /* UIImage+CJCreate.m in Sources */,
-				781495A62140D80700D0F2BC /* DemoUser.m in Sources */,
 				789CAF2A1FB612B700AF8CD4 /* CJRightDetailTableViewCell.m in Sources */,
 				80E7E73520AD2AEA000F762D /* UIButton+CJUpDownStructure.m in Sources */,
 				80FF90AD1FC5649F00E437CF /* NavigationBarViewController.m in Sources */,
