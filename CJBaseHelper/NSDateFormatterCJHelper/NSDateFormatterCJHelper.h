@@ -30,11 +30,15 @@
 ///yyyy-MM-dd
 - (NSString *)yyyyMMdd_stringFromDate:(NSDate *)date;
 
-///yyyy年MM月
+///yyyy-MM
 - (NSString *)yyyyMM_stringFromDate:(NSDate *)date;
+///yyyy年MM月
+- (NSString *)yyyyMM_CN_stringFromDate:(NSDate *)date;
 
-///MM月dd日
+///MM-dd
 - (NSString *)MMdd_stringFromDate:(NSDate *)date;
+///MM月dd日
+- (NSString *)MMdd_CN_stringFromDate:(NSDate *)date;
 
 ///HH:mm
 - (NSString *)HHmm_stringFromDate:(NSDate *)date;
@@ -51,11 +55,15 @@
 ///dateString 格式必须为 yyyy-MM-dd
 - (NSDate *)yyyyMMdd_dateFromString:(NSString *)dateString;
 
-///dateString 格式必须为 yyyy年MM月
+///dateString 格式必须为 yyyy-MM
 - (NSDate *)yyyyMM_dateFromString:(NSString *)dateString;
+///dateString 格式必须为 yyyy年MM月
+- (NSDate *)yyyyMM_CN_dateFromString:(NSString *)dateString;
 
-///dateString 格式必须为 MM月dd日
+///dateString 格式必须为 MM-dd
 - (NSDate *)MMdd_dateFromString:(NSString *)dateString;
+///dateString 格式必须为 MM月dd日
+- (NSDate *)MMdd_CN_dateFromString:(NSString *)dateString;
 
 ///dateString 格式必须为 HH:mm
 - (NSDate *)HHmm_dateFromString:(NSString *)dateString;

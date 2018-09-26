@@ -12,11 +12,21 @@
 @interface CJDataEmptyView : UIView {
     
 }
-@property (nonatomic, strong) UIImage *image;
-@property (nonatomic, copy) NSString *title;
-@property (nonatomic, copy) NSString *message;
-@property (nonatomic, copy) NSString *buttonTitle;
+@property (nonatomic, assign) CGFloat distancBetweenTitleAndImage; /**< title和图片距离 */
+@property (nonatomic, assign) CGFloat distancBetweenButtonAndImage; /**< 按钮和图片距离 */
 
+@property (nonatomic, strong) UIImage *image;
+@property (nonatomic) CGSize imageSize;
+
+@property (nonatomic, copy) NSString *title;
+@property (nonatomic) UIColor *titleColor;
+
+@property (nonatomic, copy) NSString *message;
+
+@property (nonatomic, strong) UIButton *button;
+@property (nonatomic) CGSize buttonSize;
+@property (nonatomic, assign) BOOL showReloadButton;
+@property (nonatomic, copy) NSString *buttonTitle;
 @property (nonatomic, copy) void(^reloadBlock)(void);
 
 @end

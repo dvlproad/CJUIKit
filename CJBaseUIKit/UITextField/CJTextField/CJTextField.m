@@ -52,6 +52,28 @@
     return rect;
 }
 
+
+/* 完整的描述请参见文件头部 */
+- (void)addLeftImageWithNormalImage:(UIImage *)normalImage
+                      selectedImage:(UIImage *)selectedImage
+                          imageSize:(CGSize)imageSize
+{
+    UIButton *leftView = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, imageSize.width, imageSize.height)];
+    [leftView setImage:normalImage forState:UIControlStateNormal];
+    [leftView setImage:selectedImage forState:UIControlStateSelected];
+    self.leftView = leftView;
+    self.leftViewMode = UITextFieldViewModeAlways;
+}
+
+- (void)setLeftButtonSelected:(BOOL)leftButtonSelected {
+    _leftButtonSelected = leftButtonSelected;
+    
+    UIButton *leftButton = (UIButton *)self.leftView;
+    if ([leftButton isKindOfClass:[UIButton class]]) {
+        [leftButton setSelected:leftButtonSelected];
+    }
+}
+
 #pragma mark - 添加 View 的下划线
 /*
 // Only override drawRect: if you perform custom drawing.
@@ -66,7 +88,53 @@
     CGContextSetFillColorWithColor(context, bottomLineColor.CGColor);
     CGContextFillRect(context, bottomLineRect);
 }
-*/
+//*/
+- (void)addUnderLineWithHeight:(CGFloat)lineHeight color:(UIColor *)lineColor {
+    UIView *underline = [[UIView alloc] initWithFrame:CGRectZero];
+    underline.backgroundColor = lineColor;
+    [self cj_makeView:self addBottomSubView:underline withHeight:lineHeight];
+}
+
+- (void)cj_makeView:(UIView *)superView addBottomSubView:(UIView *)subView withHeight:(CGFloat)height {
+    [superView addSubview:subView];
+    subView.translatesAutoresizingMaskIntoConstraints = NO;
+    
+    [superView addConstraint:
+     [NSLayoutConstraint constraintWithItem:subView
+                                  attribute:NSLayoutAttributeLeft   //left
+                                  relatedBy:NSLayoutRelationEqual
+                                     toItem:superView
+                                  attribute:NSLayoutAttributeLeft
+                                 multiplier:1
+                                   constant:0]];
+    
+    [superView addConstraint:
+     [NSLayoutConstraint constraintWithItem:subView
+                                  attribute:NSLayoutAttributeRight  //right
+                                  relatedBy:NSLayoutRelationEqual
+                                     toItem:superView
+                                  attribute:NSLayoutAttributeRight
+                                 multiplier:1
+                                   constant:0]];
+    
+    [superView addConstraint:
+     [NSLayoutConstraint constraintWithItem:subView
+                                  attribute:NSLayoutAttributeHeight //height
+                                  relatedBy:NSLayoutRelationEqual
+                                     toItem:nil
+                                  attribute:NSLayoutAttributeNotAnAttribute
+                                 multiplier:1
+                                   constant:height]];
+    
+    [superView addConstraint:
+     [NSLayoutConstraint constraintWithItem:subView
+                                  attribute:NSLayoutAttributeBottom //bottom
+                                  relatedBy:NSLayoutRelationEqual
+                                     toItem:superView
+                                  attribute:NSLayoutAttributeBottom
+                                 multiplier:1
+                                   constant:0]];
+}
 
 
 @end

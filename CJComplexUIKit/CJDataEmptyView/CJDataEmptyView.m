@@ -10,10 +10,9 @@
 
 @interface CJDataEmptyView ()
 
-@property (nonatomic, weak) UIImageView *imageView;
-@property (nonatomic, weak) UILabel *titleLabel;
-@property (nonatomic, weak) UILabel *messageLabel;
-@property (nonatomic, weak) UIButton *button;
+@property (nonatomic, strong) UIImageView *imageView;
+@property (nonatomic, strong) UILabel *titleLabel;
+@property (nonatomic, strong) UILabel *messageLabel;
 
 @end
 
@@ -30,14 +29,15 @@
 }
 
 - (void)setupViews {
+    self.imageSize = CGSizeMake(85, 73);
     UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectZero];
     imageView.image = [UIImage imageNamed:@"cjNetworkDisable.png"];
     [self addSubview:imageView];
     [imageView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerX.mas_equalTo(self).mas_offset(0);
         make.centerY.mas_equalTo(self).mas_offset(-100);
-        make.width.mas_equalTo(85);
-        make.height.mas_equalTo(73);
+        make.width.mas_equalTo(self.imageSize.width);
+        make.height.mas_equalTo(self.imageSize.height);
     }];
     self.imageView = imageView;
     
@@ -67,6 +67,7 @@
     }];
     self.messageLabel = messageLabel;
     
+    self.buttonSize = CGSizeMake(156, 47);
     UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
     [button setTitle:NSLocalizedString(@"重新加载", nil) forState:UIControlStateNormal];
     button.layer.cornerRadius = 3;
@@ -78,24 +79,63 @@
     [button mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerX.mas_equalTo(self).mas_offset(0);
         make.top.mas_equalTo(self.titleLabel.mas_bottom).mas_offset(31);
-        make.width.mas_equalTo(156);
-        make.height.mas_equalTo(47);
+        make.width.mas_equalTo(self.buttonSize.width);
+        make.height.mas_equalTo(self.buttonSize.height);
     }];
     self.button = button;
 }
 
+#pragma mark - Distance
+- (void)setDistancBetweenButtonAndImage:(CGFloat)distancBetweenButtonAndImage {
+    _distancBetweenButtonAndImage = distancBetweenButtonAndImage;
+    
+    [self.button mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.centerX.mas_equalTo(self).mas_offset(0);
+        make.top.mas_equalTo(self.imageView.mas_bottom).mas_offset(distancBetweenButtonAndImage);
+        make.width.mas_equalTo(self.buttonSize.width);
+        make.height.mas_equalTo(self.buttonSize.height);
+    }];
+}
+
+- (void)setDistancBetweenTitleAndImage:(CGFloat)distancBetweenTitleAndImage {
+    _distancBetweenTitleAndImage = distancBetweenTitleAndImage;
+    
+    [self.titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.mas_equalTo(self.imageView.mas_bottom).mas_offset(distancBetweenTitleAndImage);
+        make.left.right.mas_equalTo(self).mas_offset(10);
+    }];
+}
+
+#pragma mark image
 - (void)setImage:(UIImage *)image {
     _image = image;
     
     self.imageView.image = image;
 }
 
+- (void)setImageSize:(CGSize)imageSize {
+    _imageSize = imageSize;
+    
+    [self.imageView mas_updateConstraints:^(MASConstraintMaker *make) {
+        make.width.mas_equalTo(imageSize.width);
+        make.height.mas_equalTo(imageSize.height);
+    }];
+}
+
+#pragma mark title
 - (void)setTitle:(NSString *)title {
     _title = title;
     
     self.titleLabel.text = title;
 }
 
+- (void)setTitleColor:(UIColor *)titleColor {
+    _titleColor = titleColor;
+    
+    self.titleLabel.textColor = titleColor;
+}
+
+#pragma mark message
 - (void)setMessage:(NSString *)message {
     _message = message;
     
@@ -112,12 +152,26 @@
     }
 }
 
+#pragma mark reloadButton
+- (void)setShowReloadButton:(BOOL)showReloadButton {
+    _showReloadButton = showReloadButton;
+    self.button.hidden = !showReloadButton;
+}
+
 - (void)setButtonTitle:(NSString *)buttonTitle {
     _buttonTitle = buttonTitle;
     
     [self.button setTitle:buttonTitle forState:UIControlStateNormal];
 }
 
+- (void)setButtonSize:(CGSize)buttonSize {
+    _buttonSize = buttonSize;
+    
+    [self.button mas_updateConstraints:^(MASConstraintMaker *make) {
+        make.width.mas_equalTo(buttonSize.width);
+        make.height.mas_equalTo(buttonSize.height);
+    }];
+}
 
 - (void)realoadAction {
     if (self.reloadBlock) {

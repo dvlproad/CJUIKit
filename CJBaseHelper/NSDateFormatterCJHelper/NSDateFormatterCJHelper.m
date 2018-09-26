@@ -59,12 +59,24 @@
 }
 
 - (NSString *)yyyyMM_stringFromDate:(NSDate *)date {
+    [self.dateFormatter setDateFormat:@"yyyy-MM"];
+    NSString *dateString = [self.dateFormatter stringFromDate:date];
+    return dateString;
+}
+
+- (NSString *)yyyyMM_CN_stringFromDate:(NSDate *)date {
     [self.dateFormatter setDateFormat:@"yyyy年MM月"];
     NSString *dateString = [self.dateFormatter stringFromDate:date];
     return dateString;
 }
 
 - (NSString *)MMdd_stringFromDate:(NSDate *)date {
+    [self.dateFormatter setDateFormat:@"MM-dd"];
+    NSString *dateString = [self.dateFormatter stringFromDate:date];
+    return dateString;
+}
+
+- (NSString *)MMdd_CN_stringFromDate:(NSDate *)date {
     [self.dateFormatter setDateFormat:@"MM月dd日"];
     NSString *dateString = [self.dateFormatter stringFromDate:date];
     return dateString;
@@ -97,12 +109,24 @@
 }
 
 - (NSDate *)yyyyMM_dateFromString:(NSString *)dateString {
+    [self.dateFormatter setDateFormat:@"yyyy-MM"];
+    NSDate *date = [self.dateFormatter dateFromString:dateString];
+    return date;
+}
+
+- (NSDate *)yyyyMM_CN_dateFromString:(NSString *)dateString {
     [self.dateFormatter setDateFormat:@"yyyy年MM月"];
     NSDate *date = [self.dateFormatter dateFromString:dateString];
     return date;
 }
 
 - (NSDate *)MMdd_dateFromString:(NSString *)dateString {
+    [self.dateFormatter setDateFormat:@"MM-dd"];
+    NSDate *date = [self.dateFormatter dateFromString:dateString];
+    return date;
+}
+
+- (NSDate *)MMdd_CN_dateFromString:(NSString *)dateString {
     [self.dateFormatter setDateFormat:@"MM月dd日"];
     NSDate *date = [self.dateFormatter dateFromString:dateString];
     return date;

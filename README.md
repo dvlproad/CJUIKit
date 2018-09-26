@@ -237,11 +237,14 @@ CJImageView，可为ImageView设置title；而CJBadgeImageView则还可以设置
 > 1. 调整项目结构
 
 #### CJBaseUIKit
+* 2018-09-27 V0.2.6
+
+> 1. CJTextField增加添加下划线和设置支持selected的左侧图片
+
 * 2018-09-22 V0.2.4
 
 > 1. 修复CJTextView自定义的placeholder无法改变字体大小的问题；
 > 2. 增加UIButton设置高亮时候的背景色方法。
-
 
 #### CJBaseUtil
 * 2018-08-29 V0.3.1
@@ -251,17 +254,17 @@ CJImageView，可为ImageView设置title；而CJBadgeImageView则还可以设置
 
 
 #### CJBaseHelper
-* 2018-09-15 V0.0.5
-
-> 1. 更改对象判空的类名为`NSObjectCJHelper`
-> 
-> 2. DeviceCJHelper增加`getIPAddressByHostName:`根据域名host获取ip的方法
-
 * 2018-09-22 V0.0.6
 
 > 1. 转移CJBaseUtil中的CJDateFormatterUtil为`NSDateFormatterCJHelper`
 > 
 > 2. 转移CJBaseUtil中的CJCalendarUtil为`NSCalendarCJHelper `
+
+* 2018-09-15 V0.0.5
+
+> 1. 更改对象判空的类名为`NSObjectCJHelper`
+> 
+> 2. DeviceCJHelper增加`getIPAddressByHostName:`根据域名host获取ip的方法
 
 
 ## Author Or Contact
