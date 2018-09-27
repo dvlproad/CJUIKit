@@ -60,7 +60,7 @@ Pod::Spec.new do |s|
 
       sss.dependency 'Masonry'
       sss.dependency 'SVProgressHUD'
-      sss.dependency 'CJBaseUtil/CJWebUtil'
+      sss.dependency 'CJBaseHelper/WebCJHelper'
     end
   end
 

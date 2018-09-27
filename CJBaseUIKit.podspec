@@ -35,6 +35,7 @@ Pod::Spec.new do |s|
                  - CJBaseUIKit/CJToast：Toast
                  - CJBaseUIKit/CJAlert：Alert
                  - CJBaseUIKit/CJDataEmptyView：空视图(处理数据为空、网络加载失败等情况)
+                 - CJBaseUIKit/UIViewController：自定义返回按钮
 
                    A longer description of CJPopupAction in Markdown format.
 
@@ -109,6 +110,10 @@ Pod::Spec.new do |s|
 
   s.subspec 'UIWindow' do |ss|
     ss.source_files = "CJBaseUIKit/UIWindow/**/*.{h,m}"
+  end
+
+  s.subspec 'UIViewController' do |ss|
+    ss.source_files = "CJBaseUIKit/UIViewController/**/*.{h,m}"
   end
 
   s.subspec 'UIButton' do |ss|

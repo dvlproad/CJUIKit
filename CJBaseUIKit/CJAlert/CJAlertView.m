@@ -18,7 +18,10 @@
 #import <CoreText/CoreText.h>
 
 @interface CJAlertView () {
-    CGFloat _flagImageViewHeight, _titleLabelHeight, _messageLabelHeight, _bottomButtonHeight;
+    CGFloat _flagImageViewHeight;
+    CGFloat _titleLabelHeight;
+    CGFloat _messageLabelHeight;
+    CGFloat _bottomPartHeight;  /**< 底部区域高度(包含底部按钮及可能的按钮上部的分隔线及按钮下部与边缘的距离) */
 }
 @property (nonatomic, readonly) CGSize size;
 
@@ -31,8 +34,8 @@
 //第三个视图与第二个视图的间隔
 @property (nonatomic, readonly) CGFloat thirdVerticalInterval;
 
-//底部buttons视图与其上面的视图的间隔(上面的视图一般为message；如果不存在message,则是title；如果再不存在，则是flagImage)
-@property (nonatomic, readonly) CGFloat bottomVerticalInterval;
+//底部buttons视图与其上面的视图的最小间隔(上面的视图一般为message；如果不存在message,则是title；如果再不存在，则是flagImage)
+@property (nonatomic, readonly) CGFloat bottomMinVerticalInterval;
 
 @property (nonatomic, strong) UIImageView *flagImageView;
 @property (nonatomic, strong) UILabel *titleLabel;
@@ -65,7 +68,7 @@
                          okHandle:(void(^)(void))okHandle
 {
     //①创建
-    CJAlertView *alertView = [[CJAlertView alloc] initWithSize:size firstVerticalInterval:25 secondVerticalInterval:10 thirdVerticalInterval:10 bottomVerticalInterval:10];
+    CJAlertView *alertView = [[CJAlertView alloc] initWithSize:size firstVerticalInterval:25 secondVerticalInterval:10 thirdVerticalInterval:10 bottomMinVerticalInterval:10];
     
     //②添加 flagImage、titleLabel、messageLabel
     //[alertView setupFlagImage:flagImage title:title message:message configure:configure]; //已拆解成以下几个方法
@@ -95,7 +98,7 @@
  *  @param firstVerticalInterval    第一个视图(一般为flagImageView，如果flagImageView不存在，则为下一个即titleLabel，以此类推)与顶部的间隔
  *  @param secondVerticalInterval   第二个视图与第一个视图的间隔(如果少于两个视图,这个值设为0即可)
  *  @param thirdVerticalInterval    第三个视图与第二个视图的间隔(如果少于三个视图,这个值设为0即可)
- *  @param bottomVerticalInterval   底部buttons视图与其上面的视图的间隔(上面的视图一般为message；如果不存在message,则是title；如果再不存在，则是flagImage)
+ *  @param bottomMinVerticalInterval 底部buttons区域视图与其上面的视图的最小间隔(上面的视图一般为message；如果不存在message,则是title；如果再不存在，则是flagImage)
  *
  *  @return alertView
  */
@@ -103,7 +106,7 @@
        firstVerticalInterval:(CGFloat)firstVerticalInterval
       secondVerticalInterval:(CGFloat)secondVerticalInterval
        thirdVerticalInterval:(CGFloat)thirdVerticalInterval
-      bottomVerticalInterval:(CGFloat)bottomVerticalInterval
+   bottomMinVerticalInterval:(CGFloat)bottomMinVerticalInterval
 {
     self = [super init];
     if (self) {
@@ -114,7 +117,7 @@
         _firstVerticalInterval = firstVerticalInterval;
         _secondVerticalInterval = secondVerticalInterval;
         _thirdVerticalInterval = thirdVerticalInterval;
-        _bottomVerticalInterval = bottomVerticalInterval;
+        _bottomMinVerticalInterval = bottomMinVerticalInterval;
     }
     return self;
 }
@@ -407,6 +410,72 @@
 }
 
 ///添加底部按钮
+/**
+ *  添加底部按钮方法①：按指定布局添加底部按钮
+ *
+ *  @param bottomButtons        要添加的按钮组合(得在外部额外实现点击后的关闭alert操作)
+ *  @param actionButtonHeight   按钮高度
+ *  @param bottomInterval       按钮与底部的距离
+ *  @param axisType             横排还是竖排
+ *  @param fixedSpacing         两个控件间隔
+ *  @param leadSpacing          第一个控件与边缘的间隔
+ *  @param tailSpacing          最后一个控件与边缘的间隔
+ */
+- (void)addBottomButtons:(NSArray<UIButton *> *)bottomButtons
+              withHeight:(CGFloat)actionButtonHeight
+          bottomInterval:(CGFloat)bottomInterval
+               alongAxis:(MASAxisType)axisType
+            fixedSpacing:(CGFloat)fixedSpacing
+             leadSpacing:(CGFloat)leadSpacing
+             tailSpacing:(CGFloat)tailSpacing
+{
+    NSInteger buttonCount = bottomButtons.count;
+    if (axisType == MASAxisTypeHorizontal) {
+        _bottomPartHeight = 0 + actionButtonHeight + bottomInterval;
+    } else {
+        _bottomPartHeight = leadSpacing + buttonCount*(actionButtonHeight+fixedSpacing)-fixedSpacing + tailSpacing;
+    }
+    
+    for (UIButton *bottomButton in bottomButtons) {
+        [self addSubview:bottomButton];
+    }
+    
+    if (buttonCount > 1) {
+        [bottomButtons mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.bottom.mas_equalTo(-bottomInterval);
+            make.height.mas_equalTo(actionButtonHeight);
+        }];
+        [bottomButtons mas_distributeViewsAlongAxis:axisType withFixedSpacing:fixedSpacing leadSpacing:leadSpacing tailSpacing:tailSpacing];
+    } else {
+        [bottomButtons mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.bottom.mas_equalTo(-bottomInterval);
+            make.height.mas_equalTo(actionButtonHeight);
+            make.left.mas_equalTo(self).mas_offset(leadSpacing);
+            make.right.mas_equalTo(self).mas_offset(-tailSpacing);
+        }];
+    }
+}
+
+///只添加一个按钮
+- (void)addOnlyOneBottomButton:(UIButton *)bottomButton
+                    withHeight:(CGFloat)actionButtonHeight
+                bottomInterval:(CGFloat)bottomInterval
+                    leftOffset:(CGFloat)leftOffset
+                   rightOffset:(CGFloat)rightOffset
+{
+    _bottomPartHeight = 0 + actionButtonHeight + bottomInterval;
+    
+    [self addSubview:bottomButton];
+    
+    [bottomButton mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.bottom.mas_equalTo(-bottomInterval);
+        make.height.mas_equalTo(actionButtonHeight);
+        make.left.mas_equalTo(self).mas_offset(leftOffset);
+        make.right.mas_equalTo(self).mas_offset(-rightOffset);
+    }];
+}
+
+
 - (void)addBottomButtonWithHeight:(CGFloat)actionButtonHeight
                 cancelButtonTitle:(NSString *)cancelButtonTitle
                     okButtonTitle:(NSString *)okButtonTitle
@@ -457,7 +526,7 @@
         make.bottom.mas_equalTo(self).mas_offset(-actionButtonHeight-1);
         make.height.mas_equalTo(1);
     }];
-    _bottomButtonHeight = actionButtonHeight+1;
+    _bottomPartHeight = actionButtonHeight+1;
     
     if (existCancelButton && existOKButton) {
         [self addSubview:cancelButton];
@@ -527,7 +596,7 @@
 }
 
 - (void)cancelButtonAction:(UIButton *)button {
-    [self cj_hidePopupViewWithAnimationType:CJAnimationTypeNone];
+    [self dismiss];
     
     if (self.cancelHandle) {
         self.cancelHandle();
@@ -535,7 +604,7 @@
 }
 
 - (void)okButtonAction:(UIButton *)button {
-    [self cj_hidePopupViewWithAnimationType:CJAnimationTypeNone];
+    [self dismiss];
     
     if (self.okHandle) {
         self.okHandle();
@@ -600,7 +669,7 @@
         //NSString *warningString = [NSString stringWithFormat:@"CJ警告：您设置的size高度超过视图本身的最大高度%.2lf，会导致视图显示不全，已自动缩小", maxHeight];
         //NSLog(@"%@", warningString);
         if (self.messageScrollView) {
-            CGFloat minHeightWithoutMessageLabel = _firstVerticalInterval + _flagImageViewHeight + _secondVerticalInterval + _titleLabelHeight + _thirdVerticalInterval + _bottomVerticalInterval + _bottomButtonHeight;
+            CGFloat minHeightWithoutMessageLabel = _firstVerticalInterval + _flagImageViewHeight + _secondVerticalInterval + _titleLabelHeight + _thirdVerticalInterval + _bottomMinVerticalInterval + _bottomPartHeight;
             
             _messageLabelHeight = fixHeight - minHeightWithoutMessageLabel;
             [self.messageScrollView mas_updateConstraints:^(MASConstraintMaker *make) {
@@ -617,12 +686,16 @@
                     showComplete:nil tapBlankComplete:nil];
 }
 
+- (void)dismiss {
+    [self cj_hidePopupViewWithAnimationType:CJAnimationTypeNone];
+}
+
 ///获取当前alertView最小应有的高度值
 - (CGFloat)getMinHeight {
-    CGFloat minHeight = _firstVerticalInterval + _flagImageViewHeight + _secondVerticalInterval + _titleLabelHeight + _thirdVerticalInterval + _messageLabelHeight + _bottomVerticalInterval + _bottomButtonHeight;
-    minHeight = ceil(minHeight);
+    CGFloat minHeightWithMessageLabel = _firstVerticalInterval + _flagImageViewHeight + _secondVerticalInterval + _titleLabelHeight + _thirdVerticalInterval + _messageLabelHeight + _bottomMinVerticalInterval + _bottomPartHeight;
+    minHeightWithMessageLabel = ceil(minHeightWithMessageLabel);
     
-    return minHeight;
+    return minHeightWithMessageLabel;
 }
 
 #pragma mark - Private
