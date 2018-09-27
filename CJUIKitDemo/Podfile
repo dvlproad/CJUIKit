@@ -34,11 +34,7 @@ target 'CJUIKitDemo' do
   # 账号安全需要依赖的库
   pod 'SAMKeychain'
   
-  # 图片选择需要依赖的库
-  pod 'JGActionSheet'
-  pod 'CJMedia/CJUploadImagePickerUtil', '~> 0.0.7' #其中包含了对CJFile中的部分依赖
-  pod 'CJNetwork/AFNetworkingBaseComponent'
-  pod 'IjinbuNetwork', '~> 0.0.5' #之前有过IjinbuNetwork中有依赖CJBaseUtil的CJDevice和CJBaseUIKit的UIImage,所以这里不能使用pod，否则link错误
+  pod 'AFNetworking/Reachability'
 
   # 网页
   pod 'WebViewJavascriptBridge', '~> 6.0.2'
@@ -48,8 +44,6 @@ target 'CJUIKitDemo' do
   pod 'Mantle', '~> 2.1.0'
   
   pod 'YYText', '~> 1.0.7'
-  
-  pod 'NJKWebViewProgress'
   
   pod 'DZNEmptyDataSet'
   

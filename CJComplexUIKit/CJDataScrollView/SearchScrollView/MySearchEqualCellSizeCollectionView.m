@@ -1,6 +1,6 @@
 //
 //  MySearchEqualCellSizeCollectionView.m
-//  CJUIKitDemo
+//  CJComplexUIKitDemo
 //
 //  Created by ciyouzen on 2016/4/10.
 //  Copyright © 2016年 dvlproad. All rights reserved.

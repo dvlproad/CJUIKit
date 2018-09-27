@@ -1,6 +1,6 @@
 //
 //  MySearchEqualCellSizeCollectionView.h
-//  CJUIKitDemo
+//  CJComplexUIKitDemo
 //
 //  Created by ciyouzen on 2016/4/10.
 //  Copyright © 2016年 dvlproad. All rights reserved.
@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-#ifdef CJTESTPOD
+#ifdef CJTESTComplexUIKitPOD
 #import "MyEqualCellSizeCollectionView.h"
 #import "CJSectionDataModel.h"
 #else

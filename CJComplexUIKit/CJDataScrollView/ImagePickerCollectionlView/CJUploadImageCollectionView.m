@@ -1,6 +1,6 @@
 //
 //  CJUploadImageCollectionView.m
-//  CJUIKitDemo
+//  CJComplexUIKitDemo
 //
 //  Created by ciyouzen on 2017/1/19.
 //  Copyright © 2017年 dvlproad. All rights reserved.

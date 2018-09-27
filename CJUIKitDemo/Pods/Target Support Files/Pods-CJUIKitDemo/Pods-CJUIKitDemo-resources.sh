@@ -92,18 +92,6 @@ EOM
   esac
 }
 if [[ "$CONFIGURATION" == "Debug" ]]; then
-  install_resource "${PODS_ROOT}/CJMedia/CJMedia/CJPhotoBrowser/CJImagePicker/Resources/cjAlbumCheckedNormal@2x.png"
-  install_resource "${PODS_ROOT}/CJMedia/CJMedia/CJPhotoBrowser/CJImagePicker/Resources/cjAlbumCheckedSelect@2x.png"
-  install_resource "${PODS_ROOT}/CJMedia/CJMedia/CJPhotoBrowser/CJPhotoBrowser/CJPhotoBrowser.bundle/error.png"
-  install_resource "${PODS_ROOT}/CJMedia/CJMedia/CJPhotoBrowser/CJPhotoBrowser/CJPhotoBrowser.bundle/error@2x.png"
-  install_resource "${PODS_ROOT}/CJMedia/CJMedia/CJPhotoBrowser/CJPhotoBrowser/CJPhotoBrowser.bundle/error@3x.png"
-  install_resource "${PODS_ROOT}/CJMedia/CJMedia/CJPhotoBrowser/CJPhotoBrowser/CJPhotoBrowser.bundle/info.png"
-  install_resource "${PODS_ROOT}/CJMedia/CJMedia/CJPhotoBrowser/CJPhotoBrowser/CJPhotoBrowser.bundle/info@2x.png"
-  install_resource "${PODS_ROOT}/CJMedia/CJMedia/CJPhotoBrowser/CJPhotoBrowser/CJPhotoBrowser.bundle/info@3x.png"
-  install_resource "${PODS_ROOT}/CJMedia/CJMedia/CJPhotoBrowser/CJPhotoBrowser/CJPhotoBrowser.bundle/success.png"
-  install_resource "${PODS_ROOT}/CJMedia/CJMedia/CJPhotoBrowser/CJPhotoBrowser/CJPhotoBrowser.bundle/success@2x.png"
-  install_resource "${PODS_ROOT}/CJMedia/CJMedia/CJPhotoBrowser/CJPhotoBrowser/CJPhotoBrowser.bundle/success@3x.png"
-  install_resource "${PODS_ROOT}/CJMedia/CJMedia/CJPhotoBrowser/CJPhotoBrowser/CJPhotoBrowser.bundle"
   install_resource "${PODS_ROOT}/CJPicker/CJPicker/Resources/area.plist"
   install_resource "${PODS_ROOT}/CJPicker/CJPicker/Resources/city.plist"
   install_resource "${PODS_ROOT}/CJPicker/CJPicker/Resources/line_gray_pickerToolbar.png"
@@ -114,18 +102,6 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_resource "${PODS_ROOT}/SVProgressHUD/SVProgressHUD/SVProgressHUD.bundle"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
-  install_resource "${PODS_ROOT}/CJMedia/CJMedia/CJPhotoBrowser/CJImagePicker/Resources/cjAlbumCheckedNormal@2x.png"
-  install_resource "${PODS_ROOT}/CJMedia/CJMedia/CJPhotoBrowser/CJImagePicker/Resources/cjAlbumCheckedSelect@2x.png"
-  install_resource "${PODS_ROOT}/CJMedia/CJMedia/CJPhotoBrowser/CJPhotoBrowser/CJPhotoBrowser.bundle/error.png"
-  install_resource "${PODS_ROOT}/CJMedia/CJMedia/CJPhotoBrowser/CJPhotoBrowser/CJPhotoBrowser.bundle/error@2x.png"
-  install_resource "${PODS_ROOT}/CJMedia/CJMedia/CJPhotoBrowser/CJPhotoBrowser/CJPhotoBrowser.bundle/error@3x.png"
-  install_resource "${PODS_ROOT}/CJMedia/CJMedia/CJPhotoBrowser/CJPhotoBrowser/CJPhotoBrowser.bundle/info.png"
-  install_resource "${PODS_ROOT}/CJMedia/CJMedia/CJPhotoBrowser/CJPhotoBrowser/CJPhotoBrowser.bundle/info@2x.png"
-  install_resource "${PODS_ROOT}/CJMedia/CJMedia/CJPhotoBrowser/CJPhotoBrowser/CJPhotoBrowser.bundle/info@3x.png"
-  install_resource "${PODS_ROOT}/CJMedia/CJMedia/CJPhotoBrowser/CJPhotoBrowser/CJPhotoBrowser.bundle/success.png"
-  install_resource "${PODS_ROOT}/CJMedia/CJMedia/CJPhotoBrowser/CJPhotoBrowser/CJPhotoBrowser.bundle/success@2x.png"
-  install_resource "${PODS_ROOT}/CJMedia/CJMedia/CJPhotoBrowser/CJPhotoBrowser/CJPhotoBrowser.bundle/success@3x.png"
-  install_resource "${PODS_ROOT}/CJMedia/CJMedia/CJPhotoBrowser/CJPhotoBrowser/CJPhotoBrowser.bundle"
   install_resource "${PODS_ROOT}/CJPicker/CJPicker/Resources/area.plist"
   install_resource "${PODS_ROOT}/CJPicker/CJPicker/Resources/city.plist"
   install_resource "${PODS_ROOT}/CJPicker/CJPicker/Resources/line_gray_pickerToolbar.png"

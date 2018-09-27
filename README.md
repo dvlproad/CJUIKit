@@ -51,6 +51,8 @@
 - CJBaseUIKit/CJRefreshView：刷新
 - CJBaseUIKit/CJMJRefreshComponent：已包含pod 'MJRefresh'
 - CJBaseUIKit/CJToast：Toast
+- CJBaseUIKit/CJDataEmptyView：空视图(处理数据为空、网络加载失败等情况)
+待完善
 
 
 如果只想加载某个类，可以用形如`pod 'CJBaseUIKit/CJTextView', '~> 0.0.1'`来加载
@@ -122,6 +124,7 @@ CJImageView，可为ImageView设置title；而CJBadgeImageView则还可以设置
 
 #### 18、CJBaseUIKit/CJAlert：Alert
 
+#### 19、 CJBaseUIKit/CJDataEmptyView：空视图(处理数据为空、网络加载失败等情况)
 
 待完善
 
@@ -141,8 +144,6 @@ CJImageView，可为ImageView设置title；而CJBadgeImageView则还可以设置
 - CJComplexUIKit/UIViewController：视图控制器相关
 - CJComplexUIKit/UIViewController/CJCategory：控制器的分类：包含对视图控制器返回按钮的操作自定义等
 - CJComplexUIKit/UIViewController/CJBaseWebViewController：基本的网页浏览器，包含了加载进度和空网页操作
->
-- CJComplexUIKit/CJDataEmptyView：数据空时候的视图
 >
 - CJComplexUIKit/CJDataScrollView：含数据
 - CJComplexUIKit/CJDataScrollView/SearchScrollView
@@ -245,6 +246,13 @@ CJImageView，可为ImageView设置title；而CJBadgeImageView则还可以设置
 
 > 1. 修复CJTextView自定义的placeholder无法改变字体大小的问题；
 > 2. 增加UIButton设置高亮时候的背景色方法。
+
+
+
+#### CJComplexUIKit
+* 2018-09-27 V0.2.0
+
+> 1. 转移CJDataEmptyView到CJBaseUIKit上
 
 #### CJBaseUtil
 * 2018-08-29 V0.3.1

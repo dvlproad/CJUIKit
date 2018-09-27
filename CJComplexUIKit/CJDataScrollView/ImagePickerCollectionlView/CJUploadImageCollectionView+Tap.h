@@ -1,6 +1,6 @@
 //
 //  CJUploadImageCollectionView+Tap.h
-//  CJUIKitDemo
+//  CJComplexUIKitDemo
 //
 //  Created by ciyouzen on 2017/8/30.
 //  Copyright © 2017年 dvlproad. All rights reserved.

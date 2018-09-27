@@ -15,9 +15,6 @@
 //EmptyView
 #import "BBXPassengerEmptyViewController.h"
 
-//WebView
-#import "EmptyWebViewController.h"
-
 //UITableView
 #import "TableViewController.h"
 #import "DemoTableViewController.h"
@@ -36,11 +33,6 @@
 
 #import "OpenCollectionViewController.h"
 #import "CustomLayoutCollectionViewController.h"
-
-//DataScrollView
-#import "SearchTableViewController.h"
-#import "UploadNoneImagePickerViewController.h"
-#import "UploadDirectlyImagePickerViewController.h"
 
 @interface ScrollViewHomeViewController () <UITableViewDataSource, UITableViewDelegate> {
     
@@ -105,26 +97,6 @@
             [sectionDataModel.values addObject:baseScrollViewModule];
         }
         
-        [sectionDataModels addObject:sectionDataModel];
-    }
-    
-    //WebView
-    {
-        CJSectionDataModel *sectionDataModel = [[CJSectionDataModel alloc] init];
-        sectionDataModel.theme = @"WebView相关";
-        
-        {
-            CJModuleModel *webViewModule = [[CJModuleModel alloc] init];
-            webViewModule.title = @"Web（Network & Empty）";
-            webViewModule.classEntry = [EmptyWebViewController class];
-            [sectionDataModel.values addObject:webViewModule];
-        }
-        {
-            CJModuleModel *webViewModule = [[CJModuleModel alloc] init];
-            webViewModule.title = @"Web（Local & No Need Empty）";
-            webViewModule.classEntry = [CJBaseWebViewController class];
-            [sectionDataModel.values addObject:webViewModule];
-        }
         [sectionDataModels addObject:sectionDataModel];
     }
     
@@ -221,32 +193,6 @@
         [sectionDataModels addObject:sectionDataModel];
     }
     
-    //DataScrollView
-    {
-        CJSectionDataModel *sectionDataModel = [[CJSectionDataModel alloc] init];
-        sectionDataModel.theme = @"DataScrollView(带数据源的滚动视图)";
-        {
-            CJModuleModel *searchTableViewModule = [[CJModuleModel alloc] init];
-            searchTableViewModule.title = @"带搜索功能的列表";
-            searchTableViewModule.classEntry = [SearchTableViewController class];
-            [sectionDataModel.values addObject:searchTableViewModule];
-        }
-        {
-            CJModuleModel *imagePickerCollectionViewModule = [[CJModuleModel alloc] init];
-            imagePickerCollectionViewModule.title = @"图片选择的集合视图(没上传操作)";
-            imagePickerCollectionViewModule.classEntry = [UploadNoneImagePickerViewController class];
-            [sectionDataModel.values addObject:imagePickerCollectionViewModule];
-        }
-        {
-            CJModuleModel *imagePickerCollectionViewModule = [[CJModuleModel alloc] init];
-            imagePickerCollectionViewModule.title = @"图片选择的集合视图(有上传操作)";
-            imagePickerCollectionViewModule.classEntry = [UploadDirectlyImagePickerViewController class];
-            [sectionDataModel.values addObject:imagePickerCollectionViewModule];
-        }
-        
-        [sectionDataModels addObject:sectionDataModel];
-    }
-    
     self.sectionDataModels = sectionDataModels;
 }
 
@@ -303,41 +249,6 @@
     {
         viewController = [[classEntry alloc] init];
         viewController.view.backgroundColor = [UIColor whiteColor];
-    } else if ([clsString isEqualToString:NSStringFromClass([EmptyWebViewController class])]) {
-        //NSString *networkUrl = @"https://fir.im/9u12";  //BeyondApp
-        NSString *networkUrl = @"http://www.bbxpc.com/app_html/about_us/about.html";  //BBXAPPAbout
-        
-        EmptyWebViewController *webViewController = [[EmptyWebViewController alloc] init];
-        webViewController.view.backgroundColor = [UIColor whiteColor];
-        webViewController.title = NSLocalizedString(moduleModel.title, nil);
-        webViewController.hidesBottomBarWhenPushed = YES;
-        
-        webViewController.networkUrl = networkUrl;
-        webViewController.webViewDidFinishNavigationBlcok = ^(WKWebView *webView) {
-            if ([webView.URL.absoluteString isEqualToString:networkUrl]) {
-                //http://www.cnblogs.com/gchlcc/p/6154844.html
-                NSString *appVersion = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"];
-                NSString *jsString = [NSString stringWithFormat:@"setEdition('V%@')", appVersion];
-                [webView evaluateJavaScript:jsString completionHandler:^(id _Nullable object, NSError * _Nullable error) {
-                    NSLog(@"OC执行JS完成");
-                }];
-            }
-        };
-        
-        [self.navigationController pushViewController:webViewController animated:YES];
-        return;
-        
-    } else if ([clsString isEqualToString:NSStringFromClass([CJBaseWebViewController class])]) {
-        CJBaseWebViewController *webViewController = [[CJBaseWebViewController alloc] init];
-        webViewController.view.backgroundColor = [UIColor whiteColor];
-        webViewController.title = NSLocalizedString(moduleModel.title, nil);
-        webViewController.hidesBottomBarWhenPushed = YES;
-        [self.navigationController pushViewController:webViewController animated:YES];
-        
-        NSString *localHtmlUrl = [[NSBundle mainBundle] pathForResource:@"index.html" ofType:nil];
-        [webViewController reloadLocalWebWithUrl:localHtmlUrl]; //加载本地网页
-        
-        return;
         
     } else if ([clsString isEqualToString:NSStringFromClass([ChooseColor01 class])]) {
         viewController = [[ChooseColor01 alloc] initWithStyle:UITableViewStyleGrouped];

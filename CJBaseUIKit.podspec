@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
   #验证方法：pod lib lint CJBaseUIKit.podspec --allow-warnings --use-libraries --verbose
   s.name         = "CJBaseUIKit"
-  s.version      = "0.2.6"
+  s.version      = "0.2.7"
   s.summary      = "自定义的基础UI"
   s.homepage     = "https://github.com/dvlproad/CJUIKit"
 
@@ -34,6 +34,7 @@ Pod::Spec.new do |s|
                  - CJBaseUIKit/CJMJRefreshComponent：已包含pod 'MJRefresh'
                  - CJBaseUIKit/CJToast：Toast
                  - CJBaseUIKit/CJAlert：Alert
+                 - CJBaseUIKit/CJDataEmptyView：空视图(处理数据为空、网络加载失败等情况)
 
                    A longer description of CJPopupAction in Markdown format.
 
@@ -56,7 +57,7 @@ Pod::Spec.new do |s|
 
   s.platform     = :ios, "8.0"
  
-  s.source       = { :git => "https://github.com/dvlproad/CJUIKit.git", :tag => "CJBaseUIKit_0.2.6" }
+  s.source       = { :git => "https://github.com/dvlproad/CJUIKit.git", :tag => "CJBaseUIKit_0.2.7" }
   s.source_files  = "CJBaseUIKit/*.{h,m}"
 
   s.frameworks = "UIKit"
@@ -221,6 +222,14 @@ Pod::Spec.new do |s|
     ss.dependency 'CJBaseUIKit/UIView/CJPopupAction'
   end
 
+
+  s.subspec 'CJDataEmptyView' do |ss|
+    ss.source_files = "CJBaseUIKit/CJDataEmptyView/**/*.{h,m}"
+    ss.resources = "CJBaseUIKit/CJDataEmptyView/**/*.{png}"
+
+    #多个依赖就写多行
+    ss.dependency 'Masonry'
+  end
 
 
 end
