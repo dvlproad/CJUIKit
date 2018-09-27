@@ -29,7 +29,7 @@ Pod::Spec.new do |s|
 
   s.platform     = :ios, "8.0"
  
-  s.source       = { :git => "https://github.com/dvlproad/CJUIKit.git", :tag => "CJComplexUIKit_0.2.0" }
+  s.source       = { :git => "https://github.com/dvlproad/CJUIKit.git", :tag => "CJComplexUIKit_0.2.0_1" }
   s.source_files  = "CJComplexUIKit/*.{h,m}"
 
   s.frameworks = "UIKit"
@@ -43,10 +43,6 @@ Pod::Spec.new do |s|
   
   # UIViewController
   s.subspec 'UIViewController' do |ss|
-    ss.subspec 'CJCategory' do |sss|
-      sss.source_files = "CJComplexUIKit/UIViewController/CJCategory/**/*.{h,m}"
-    end
-
     # ss.subspec 'ProgressWebViewController' do |sss|
     #   sss.source_files = "CJComplexUIKit/UIViewController/ProgressWebViewController/**/*.{h,m}"
 
