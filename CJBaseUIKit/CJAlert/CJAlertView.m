@@ -272,7 +272,21 @@
     }
     titleTextHeight += lineCount * lineSpacing;
     
-    self.titleLabel.text = text;
+    if (paragraphStyle == nil) {
+        self.titleLabel.text = text;
+    } else {
+        NSDictionary *attributes = @{NSParagraphStyleAttributeName: paragraphStyle,
+                                     NSFontAttributeName:           font,
+                                     //NSForegroundColorAttributeName:textColor
+                                     //NSKernAttributeName:           @1.5f       //字体间距
+                                     };
+        NSMutableAttributedString *attributedText = [[NSMutableAttributedString alloc] initWithString:text];
+        [attributedText addAttributes:attributes range:NSMakeRange(0, text.length)];
+        //[attributedText addAttribute:NSParagraphStyleAttributeName value:paragraphStyle range:NSMakeRange(0, text.length)];
+        
+        self.titleLabel.attributedText = attributedText;
+    }
+    
     self.titleLabel.font = font;
     self.titleLabel.textAlignment = textAlignment;
     [self.titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
