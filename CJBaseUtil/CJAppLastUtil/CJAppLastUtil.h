@@ -7,14 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-
-typedef NS_ENUM(NSUInteger, CJRootViewControllerType) {
-    CJRootViewControllerTypeNoneEverLaunch = 0, /**< 未曾启动 */
-    CJRootViewControllerTypeGuide,
-    CJRootViewControllerTypeLogin,
-    CJRootViewControllerTypeMain,               /**< 登录成功以及游客直接跳过登录进入主页的 */
-};
-
+#import "CJAppInfo.h"
 
 /**
  *  上一次退出前的APP信息
@@ -62,11 +55,11 @@ typedef NS_ENUM(NSUInteger, CJRootViewControllerType) {
 
 
 ///保存App信息（已默认保存了 appVersion 和 appBuild）
-+ (void)saveLastAppInfoWithRootViewControllerType:(CJRootViewControllerType)rootViewControllerType
-                                      otherParams:(NSDictionary *)params;
++ (void)updateLastAppInfoWithRootViewControllerType:(CJRootViewControllerType)rootViewControllerType
+                                      otherUserInfo:(NSDictionary *)otherUserInfo;
 
 ///获取App信息（之前已默认保存了 appVersion 和 appBuild）
-+ (NSDictionary *)getLastAppInfo;
++ (CJAppInfo *)getLastAppInfo;
 
 /**
  *  获取上一次退出前的页面(区分版本的时候，如果是新版本则返回未启动)

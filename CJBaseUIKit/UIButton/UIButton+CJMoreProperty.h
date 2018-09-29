@@ -20,4 +20,7 @@
 
 @property (nonatomic, copy) void (^cjTouchUpInsideBlock)(UIButton *button);   /**< 设置按钮操作的事件 */
 
+//@property (nonatomic, copy) void (^cjSelectedChangeBlock)(UIButton *button);    /**< 设置按钮selected改变的事件 */
+
+
 @end

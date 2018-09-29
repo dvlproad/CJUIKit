@@ -74,50 +74,66 @@ static NSString * const kCJLastLoginAccount = @"cj_lastLoginAccount";
 
 
 /* 完整的描述请参见文件头部 */
-+ (void)saveLastAppInfoWithRootViewControllerType:(CJRootViewControllerType)rootViewControllerType
-                                      otherParams:(NSDictionary *)params
++ (void)updateLastAppInfoWithRootViewControllerType:(CJRootViewControllerType)rootViewControllerType
+                                      otherUserInfo:(NSDictionary *)otherUserInfo;
 {
     NSDictionary *infoDictionary = [[NSBundle mainBundle] infoDictionary];
     NSString *appVersion = [infoDictionary objectForKey:@"CFBundleShortVersionString"];
     NSString *appBuild = [infoDictionary objectForKey:@"CFBundleVersion"];
     
-    NSMutableDictionary *mutableDictionary = [[NSMutableDictionary alloc] init];
-    [mutableDictionary setObject:appVersion forKey:@"cj_lastAppVersion"];
-    [mutableDictionary setObject:appBuild forKey:@"cj_lastAppBuild"];
-    [mutableDictionary setObject:@(rootViewControllerType) forKey:@"cj_lastAppRootViewControllerType"];
-    if (params) {
-        [mutableDictionary addEntriesFromDictionary:params];
-    }
+    CJAppInfo *lastAppInfo = [[CJAppInfo alloc] init];
+    lastAppInfo.lastAppVersion = appVersion;
+    lastAppInfo.lastAppBuild = appBuild;
+    lastAppInfo.lastAppRootViewControllerType = rootViewControllerType;
+    lastAppInfo.otherUserInfo = otherUserInfo;
     
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
-    [userDefaults setObject:mutableDictionary forKey:@"cj_lastAppInfo"];
+    NSData *data  = [NSKeyedArchiver archivedDataWithRootObject:lastAppInfo];
+    [userDefaults setObject:data forKey:@"cj_lastAppInfo"];
+    [userDefaults synchronize];
 }
 
 /* 完整的描述请参见文件头部 */
-+ (NSDictionary *)getLastAppInfo {
++ (CJAppInfo *)getLastAppInfo {
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
-    NSDictionary *lastAppInfo = [userDefaults objectForKey:@"cj_lastAppInfo"];
+    NSData *data = [userDefaults objectForKey:@"cj_lastAppInfo"];
+    CJAppInfo *appInfo = [NSKeyedUnarchiver unarchiveObjectWithData:data];
+    if (appInfo == nil) { //第一次安装
+        appInfo = [[CJAppInfo alloc] init];
+        appInfo.lastAppVersion = nil;
+        appInfo.lastAppBuild = nil;
+        appInfo.lastAppRootViewControllerType = CJRootViewControllerTypeNoneEverLaunch;
+        appInfo.otherUserInfo = nil;
+    }
+    [self updateLastAppInfoWithRootViewControllerType:appInfo.lastAppRootViewControllerType
+                                        otherUserInfo:appInfo.otherUserInfo];
     
-    return lastAppInfo;
+    return appInfo;
 }
 
+///是否是第一次安装app
++ (BOOL)isFirstInstallApp {
+    CJAppInfo *lastAppInfo = [self getLastAppInfo];
+    return lastAppInfo.isFirstInstallApp;
+}
+
+///是否是第一次安装这个版本
++ (BOOL)isFirstInstallThisVersion {
+    CJAppInfo *lastAppInfo = [self getLastAppInfo];
+    return lastAppInfo.isFirstInstallThisVersion;
+}
 
 /* 完整的描述请参见文件头部 */
 + (CJRootViewControllerType)getLastRootViewControllerTypeWithDistinctAppVersion:(BOOL)distinctAppVersion {
-    NSDictionary *lastAppInfo = [self getLastAppInfo];
+    CJAppInfo *lastAppInfo = [self getLastAppInfo];
     
     if (distinctAppVersion) {
-        NSString *lastAppVersion = [lastAppInfo objectForKey:@"cj_lastAppVersion"];
-        
-        NSDictionary *infoDictionary = [[NSBundle mainBundle] infoDictionary];
-        NSString *currentAppVersion = [infoDictionary objectForKey:@"CFBundleShortVersionString"];
-        
-        if ([currentAppVersion compare:lastAppVersion options:NSNumericSearch] == NSOrderedDescending) { //当前版本高于上次版本
+        if (lastAppInfo.isFirstInstallThisVersion) {
             return CJRootViewControllerTypeNoneEverLaunch;
         }
     }
     
-    CJRootViewControllerType rootViewControllerType = [[lastAppInfo objectForKey:@"cj_lastAppRootViewControllerType"] integerValue];
+    CJRootViewControllerType rootViewControllerType = lastAppInfo.lastAppRootViewControllerType;
     return rootViewControllerType;
 }
 

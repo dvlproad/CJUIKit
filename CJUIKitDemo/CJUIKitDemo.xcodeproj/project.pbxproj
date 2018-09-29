@@ -58,6 +58,7 @@
 		78590D7F215CA4A300F45AD5 /* cjBackBarButtonItemGray@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 78590D77215CA4A300F45AD5 /* cjBackBarButtonItemGray@3x.png */; };
 		78590D80215CA4A300F45AD5 /* cjBackBarButtonItemGray@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 78590D78215CA4A300F45AD5 /* cjBackBarButtonItemGray@2x.png */; };
 		78590D81215CA4A300F45AD5 /* UIViewController+CJSystemBackButtonHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 78590D79215CA4A300F45AD5 /* UIViewController+CJSystemBackButtonHandler.m */; };
+		786C5170215F6E8200C3F6BE /* CJAppInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 786C516F215F6E8200C3F6BE /* CJAppInfo.m */; };
 		787FDB5620500B01008A46E3 /* SearchBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 787FDB4C20500B00008A46E3 /* SearchBarViewController.m */; };
 		787FDB5720500B01008A46E3 /* SearchBarViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 787FDB4D20500B00008A46E3 /* SearchBarViewController.xib */; };
 		787FDB5820500B01008A46E3 /* TextFieldViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 787FDB5020500B00008A46E3 /* TextFieldViewController.m */; };
@@ -574,6 +575,8 @@
 		78590D79215CA4A300F45AD5 /* UIViewController+CJSystemBackButtonHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+CJSystemBackButtonHandler.m"; sourceTree = "<group>"; };
 		78590D7A215CA4A300F45AD5 /* UIViewController+CJCustomBackBarButtonItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+CJCustomBackBarButtonItem.h"; sourceTree = "<group>"; };
 		78590D7B215CA4A300F45AD5 /* UIViewController+CJSystemBackButtonHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+CJSystemBackButtonHandler.h"; sourceTree = "<group>"; };
+		786C516E215F6E8200C3F6BE /* CJAppInfo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CJAppInfo.h; sourceTree = "<group>"; };
+		786C516F215F6E8200C3F6BE /* CJAppInfo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CJAppInfo.m; sourceTree = "<group>"; };
 		787FDB4B20500B00008A46E3 /* SearchBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchBarViewController.h; sourceTree = "<group>"; };
 		787FDB4C20500B00008A46E3 /* SearchBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchBarViewController.m; sourceTree = "<group>"; };
 		787FDB4D20500B00008A46E3 /* SearchBarViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SearchBarViewController.xib; sourceTree = "<group>"; };
@@ -2626,6 +2629,8 @@
 			children = (
 				808B976F20B7B33200910E45 /* CJAppLastUtil.h */,
 				808B976E20B7B33200910E45 /* CJAppLastUtil.m */,
+				786C516E215F6E8200C3F6BE /* CJAppInfo.h */,
+				786C516F215F6E8200C3F6BE /* CJAppInfo.m */,
 			);
 			path = CJAppLastUtil;
 			sourceTree = "<group>";
@@ -3545,7 +3550,7 @@
 					780E45FF1E5DF87B00980127 = {
 						CreatedOnToolsVersion = 8.0;
 						DevelopmentTeam = FZ5YDHE5JZ;
-						ProvisioningStyle = Manual;
+						ProvisioningStyle = Automatic;
 					};
 					780E46181E5DF87B00980127 = {
 						CreatedOnToolsVersion = 8.0;
@@ -3949,6 +3954,7 @@
 				807C4F8620C65DA5002EAC12 /* CJConvertUtil.m in Sources */,
 				80E7E75020AD2C8B000F762D /* UIImage+CJBase64.m in Sources */,
 				80E7E75C20AD2D4D000F762D /* CJQRCodeUtil.m in Sources */,
+				786C5170215F6E8200C3F6BE /* CJAppInfo.m in Sources */,
 				789CAF411FB612B700AF8CD4 /* CJKeyboardAvoidingScrollView.m in Sources */,
 				80E7E73320AD2AEA000F762D /* UIButton+CJFixMultiClick.m in Sources */,
 				789CAF671FB612B700AF8CD4 /* UITableView+CJEmptyView.m in Sources */,
@@ -4298,16 +4304,16 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = FZ5YDHE5JZ;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
 				GCC_PREFIX_HEADER = CJUIKitDemo/PrefixHeader.pch;
 				INFOPLIST_FILE = CJUIKitDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.dvlproad.CJUIKitDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "b541bd6c-f291-4ce9-b2e6-fa55b3929512";
-				PROVISIONING_PROFILE_SPECIFIER = com.dvlproad.CJUIKitDemo_development;
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
 			name = Debug;
 		};
@@ -4316,17 +4322,17 @@
 			baseConfigurationReference = 3132573BFCFBEA8B4F3BB86F /* Pods-CJUIKitDemo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
-				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = FZ5YDHE5JZ;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
 				GCC_PREFIX_HEADER = CJUIKitDemo/PrefixHeader.pch;
 				INFOPLIST_FILE = CJUIKitDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.dvlproad.CJUIKitDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "3ed81579-228b-49b7-b440-13d8241c7eef";
-				PROVISIONING_PROFILE_SPECIFIER = com.dvlproad.CJUIKitDemo_adhoc;
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
 			name = Release;
 		};

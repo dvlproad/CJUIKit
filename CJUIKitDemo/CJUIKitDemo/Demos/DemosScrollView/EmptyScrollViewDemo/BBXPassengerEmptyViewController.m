@@ -48,7 +48,7 @@
 
 - (void)addScrollView {
     UIScrollView *scrollView = [[UIScrollView alloc] init];
-    scrollView.backgroundColor = [UIColor redColor];
+    //scrollView.backgroundColor = [UIColor redColor];
     [self.view addSubview:scrollView];
     [scrollView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.mas_equalTo(self.view);
@@ -56,7 +56,7 @@
     self.scrollView = scrollView;
     
     UIView *containerView = [[UIView alloc] init];
-    containerView.backgroundColor = [UIColor greenColor];
+    //containerView.backgroundColor = [UIColor greenColor];
     [scrollView addSubview:containerView];
     [containerView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.right.mas_equalTo(scrollView);

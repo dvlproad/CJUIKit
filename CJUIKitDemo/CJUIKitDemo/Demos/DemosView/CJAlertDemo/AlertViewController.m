@@ -256,7 +256,7 @@
             NSString *cancelButtonTitle = nil;
             NSString *okButtonTitle = NSLocalizedString(@"我知道了", nil);
             
-            CJAlertView *alertView = [[CJAlertView alloc] initWithSize:popupViewSize firstVerticalInterval:15 secondVerticalInterval:10 thirdVerticalInterval:10 bottomVerticalInterval:10];
+            CJAlertView *alertView = [[CJAlertView alloc] initWithSize:popupViewSize firstVerticalInterval:15 secondVerticalInterval:10 thirdVerticalInterval:10 bottomMinVerticalInterval:10];
             [alertView addTitleWithText:title font:[UIFont systemFontOfSize:18.0] textAlignment:NSTextAlignmentCenter margin:20 paragraphStyle:nil];
             
             NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle defaultParagraphStyle] mutableCopy];
@@ -281,7 +281,7 @@
             NSString *cancelButtonTitle = NSLocalizedString(@"取消", nil);
             NSString *okButtonTitle = NSLocalizedString(@"结束行程", nil);
             
-            CJAlertView *alertView = [[CJAlertView alloc] initWithSize:popupViewSize firstVerticalInterval:25 secondVerticalInterval:20 thirdVerticalInterval:10 bottomVerticalInterval:10];
+            CJAlertView *alertView = [[CJAlertView alloc] initWithSize:popupViewSize firstVerticalInterval:25 secondVerticalInterval:20 thirdVerticalInterval:10 bottomMinVerticalInterval:10];
             [alertView addTitleWithText:title font:[UIFont systemFontOfSize:15.0] textAlignment:NSTextAlignmentCenter margin:20 paragraphStyle:nil];
             
             
@@ -456,7 +456,7 @@
     }];
     //*/
     //*
-    CJAlertView *alertView = [[CJAlertView alloc] initWithSize:popupViewSize firstVerticalInterval:25 secondVerticalInterval:10 thirdVerticalInterval:10 bottomVerticalInterval:10];
+    CJAlertView *alertView = [[CJAlertView alloc] initWithSize:popupViewSize firstVerticalInterval:25 secondVerticalInterval:10 thirdVerticalInterval:10 bottomMinVerticalInterval:10];
     
     NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle defaultParagraphStyle] mutableCopy];
     paragraphStyle.lineBreakMode = NSLineBreakByCharWrapping;

@@ -14,6 +14,8 @@
 #import "YunUncaughtExceptionHandler.h"
 #import "CJAlertView.h"
 
+#import "CJAppLastUtil.h"
+
 @interface AppDelegate ()
 
 @end
@@ -42,6 +44,19 @@
     // Override point for customization after application launch.
     [self configureDefaultNavigationBarAppearance];
     [self adjustDevice];
+    
+    CJAppInfo *appInfo = [CJAppLastUtil getLastAppInfo];
+    NSString *isFirstInstallAppString = [NSString stringWithFormat:@"是否是第一次安装app:%@", appInfo.isFirstInstallApp ? @"是" : @"否"];
+    NSString *isFirstInstallThisVersionString = [NSString stringWithFormat:@"是否是第一次安装这个版本:%@", appInfo.isFirstInstallThisVersion ? @"是" : @"否"];
+    NSString *firstJudgeString = [NSString stringWithFormat:@"%@\n%@", isFirstInstallAppString, isFirstInstallThisVersionString];
+    NSLog(@"%@", isFirstInstallAppString);
+    NSLog(@"%@", isFirstInstallThisVersionString);
+    [CJToast shortShowMessage:firstJudgeString];
+    
+    
+    
+    [CJToast shortShowMessage:isFirstInstallThisVersionString];
+    
     
     return YES;
 }
