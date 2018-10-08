@@ -14,7 +14,7 @@
 #import "YunUncaughtExceptionHandler.h"
 #import "CJAlertView.h"
 
-#import "DemoAppLastUtil.h"
+#import "CJAppLastUtil.h"
 
 @interface AppDelegate ()
 
@@ -45,21 +45,16 @@
     [self configureDefaultNavigationBarAppearance];
     [self adjustDevice];
     
-    BOOL isFirstInstallApp = [DemoAppLastUtil isFirstInstallApp];
-    NSString *isFirstInstallAppString = [NSString stringWithFormat:@"是否是第一次安装app:%@", isFirstInstallApp ? @"是" : @"否"];
+    BOOL isFirstLaunchApp = [CJAppLastUtil isFirstLaunchApp];
+    NSString *isFirstLaunchAppString = [NSString stringWithFormat:@"是否是第一次安装app:%@", isFirstLaunchApp ? @"是" : @"否"];
     
-    BOOL isFirstInstallThisVersion = [DemoAppLastUtil isFirstInstallThisVersion];
-    NSString *isFirstInstallThisVersionString = [NSString stringWithFormat:@"是否是第一次安装这个版本:%@", isFirstInstallThisVersion ? @"是" : @"否"];
+    BOOL isFirstLaunchThisVersion = [CJAppLastUtil isFirstLaunchThisVersion];
+    NSString *isFirstLaunchThisVersionString = [NSString stringWithFormat:@"是否是第一次安装这个版本:%@", isFirstLaunchThisVersion ? @"是" : @"否"];
     
-    NSString *firstJudgeString = [NSString stringWithFormat:@"%@\n%@", isFirstInstallAppString, isFirstInstallThisVersionString];
-    NSLog(@"%@", isFirstInstallAppString);
-    NSLog(@"%@", isFirstInstallThisVersionString);
+    NSString *firstJudgeString = [NSString stringWithFormat:@"%@\n%@", isFirstLaunchAppString, isFirstLaunchThisVersionString];
+    NSLog(@"%@", isFirstLaunchAppString);
+    NSLog(@"%@", isFirstLaunchThisVersionString);
     [CJToast shortShowMessage:firstJudgeString];
-    
-    
-    
-    [CJToast shortShowMessage:isFirstInstallThisVersionString];
-    
     
     return YES;
 }

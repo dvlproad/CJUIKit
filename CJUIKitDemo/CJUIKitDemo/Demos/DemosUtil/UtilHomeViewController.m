@@ -9,7 +9,7 @@
 #import "UtilHomeViewController.h"
 
 //AppLast
-#import "DemoAppLastUtil.h"
+#import "CJAppLastUtil.h"
 
 //弹窗
 #import "ToastViewController.h"
@@ -280,7 +280,7 @@
 }
 
 - (void)readOverGuide {
-    [DemoAppLastUtil readOverGuide];
+    [CJAppLastUtil readOverGuide];
 }
 
 - (void)randomName {
