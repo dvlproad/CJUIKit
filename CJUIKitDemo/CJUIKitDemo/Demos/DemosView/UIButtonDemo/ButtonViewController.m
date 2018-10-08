@@ -7,7 +7,7 @@
 //
 
 #import "ButtonViewController.h"
-#import "ButtonFactory.h"
+#import "DemoButtonFactory.h"
 #import "UIButton+CJMoreProperty.h"
 #import "UIColor+CJHex.h"
 
@@ -50,7 +50,7 @@
         [CJToast shortShowMessage:@"测试为按钮动态增加的属性\n改变蓝色背景enable"];
     };
     
-    UIButton *blueButton = [ButtonFactory blueButton];
+    UIButton *blueButton = [DemoButtonFactory blueButton];
     [blueButton setTitle:@"蓝色背景按钮" forState:UIControlStateNormal];
     [self.view addSubview:blueButton];
     [blueButton mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -60,7 +60,7 @@
         make.height.mas_equalTo(44);
     }];
     
-    UIButton *whiteButton = [ButtonFactory whiteButton];
+    UIButton *whiteButton = [DemoButtonFactory whiteButton];
     [whiteButton setTitle:@"白色背景按钮" forState:UIControlStateNormal];
     [self.view addSubview:whiteButton];
     [whiteButton mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -98,7 +98,7 @@
     
     
     
-    UIButton *testButton = [ButtonFactory blueButton];
+    UIButton *testButton = [DemoButtonFactory blueButton];
     [testButton setTitle:@"进入测试BadgeButton" forState:UIControlStateNormal];
     [self.view addSubview:testButton];
     [testButton mas_makeConstraints:^(MASConstraintMaker *make) {

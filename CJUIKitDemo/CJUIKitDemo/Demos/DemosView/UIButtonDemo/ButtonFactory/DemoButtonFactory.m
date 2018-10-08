@@ -1,17 +1,17 @@
 //
-//  ButtonFactory.m
+//  DemoButtonFactory.m
 //  CJUIKitDemo
 //
 //  Created by ciyouzen on 2018/9/3.
 //  Copyright © 2017年 dvlproad. All rights reserved.
 //
 
-#import "ButtonFactory.h"
+#import "DemoButtonFactory.h"
 
-@implementation ButtonFactory
+@implementation DemoButtonFactory
 
-+ (ButtonFactory *)sharedInstance {
-    static ButtonFactory *_sharedInstance = nil;
++ (DemoButtonFactory *)sharedInstance {
+    static DemoButtonFactory *_sharedInstance = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         _sharedInstance = [[self alloc] init];
@@ -27,7 +27,7 @@
     /*
     button.tag = 6666;
     [button setBackgroundColor:CJColorFromHexString(@"#01adfe")];
-    NSObject *observer = [ButtonFactory sharedInstance];
+    NSObject *observer = [DemoButtonFactory sharedInstance];
     [button addObserver:observer forKeyPath:@"highlighted" options:NSKeyValueObservingOptionNew context:nil];
     //*/
     button.cjNormalBGColor = CJColorFromHexString(@"#01adfe");
@@ -48,7 +48,7 @@
     /*
     button.tag = 7777;
     [button setBackgroundColor:[UIColor whiteColor]];
-    NSObject *observer = [ButtonFactory sharedInstance];
+    NSObject *observer = [DemoButtonFactory sharedInstance];
     [button addObserver:observer forKeyPath:@"highlighted" options:NSKeyValueObservingOptionNew context:nil];
     //*/
     button.cjNormalBGColor = CJColorFromHexString(@"#ffffff");
@@ -75,11 +75,28 @@
 
 + (CJBadgeButton *)defaultBadgeButton {
     CJBadgeButton *badgeButton = [CJBadgeButton buttonWithType:UIButtonTypeCustom];
-    badgeButton.badgeBackgroudColor = [UIColor redColor];
-    badgeButton.badgeTextColor = [UIColor whiteColor];
-    badgeButton.badgeFont = [UIFont boldSystemFontOfSize:11];
-    badgeButton.layer.cornerRadius = 0;
-    badgeButton.badgeSize = 20;
+    badgeButton.badgeLabel.backgroundColor = [UIColor redColor];
+    badgeButton.badgeLabel.textColor = [UIColor whiteColor];
+    badgeButton.layer.cornerRadius = 10;
+    
+    return badgeButton;
+}
+
++ (CJBadgeButton *)goDeliverBadgeButton {
+    CJBadgeButton *badgeButton = [CJBadgeButton buttonWithType:UIButtonTypeCustom];
+    badgeButton.backgroundColor = [UIColor cyanColor];
+    badgeButton.badgeLabel.backgroundColor = [UIColor redColor];
+    badgeButton.badgeLabel.textColor = [UIColor whiteColor];
+    badgeButton.badgeLabel.font = [UIFont boldSystemFontOfSize:17];
+    badgeButton.badgeLabel.layer.cornerRadius = 3;
+    badgeButton.badgeLabelTop = 5;
+    badgeButton.badgeLabelRight = 0;
+    badgeButton.badgeLabelWidth = 40;
+    badgeButton.badgeLabelHeight = 23;
+    [badgeButton setImage:[UIImage imageNamed:@"badgeButton_normal"] forState:UIControlStateNormal];
+    [badgeButton setImage:[UIImage imageNamed:@"badgeButton_highlighted"] forState:UIControlStateHighlighted];
+    badgeButton.titleLabel.font = [UIFont systemFontOfSize:18];
+    [badgeButton setTitleEdgeInsets:UIEdgeInsetsMake(44, -104, 0, 0)];
     
     return badgeButton;
 }
@@ -111,7 +128,7 @@
 
 
 + (void)removeObserveForButton:(UIButton *)button {
-    [button removeObserver:[ButtonFactory sharedInstance] forKeyPath:@"highlighted"];
+    [button removeObserver:[DemoButtonFactory sharedInstance] forKeyPath:@"highlighted"];
 }
 
 @end

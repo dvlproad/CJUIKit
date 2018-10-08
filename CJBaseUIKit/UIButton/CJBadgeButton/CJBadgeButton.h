@@ -12,11 +12,12 @@
 
     
 }
+@property (nonatomic, strong) UILabel *badgeLabel;
+@property (nonatomic, assign) CGFloat badgeLabelTop;
+@property (nonatomic, assign) CGFloat badgeLabelRight;
+@property (nonatomic, assign) CGFloat badgeLabelWidth;
+@property (nonatomic, assign) CGFloat badgeLabelHeight;
+
 @property (nonatomic, assign) NSInteger badge;
-@property (nonatomic, assign) BOOL showBadge;
-@property (nonatomic, assign) CGFloat badgeSize UI_APPEARANCE_SELECTOR;
-@property (nonatomic, assign) UIFont *badgeFont UI_APPEARANCE_SELECTOR;
-@property (nonatomic, assign) UIColor *badgeTextColor UI_APPEARANCE_SELECTOR;
-@property (nonatomic, assign) UIColor *badgeBackgroudColor UI_APPEARANCE_SELECTOR;
 
 @end

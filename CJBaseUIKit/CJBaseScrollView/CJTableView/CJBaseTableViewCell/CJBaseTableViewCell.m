@@ -461,7 +461,7 @@ static CGFloat kDefaultCJDetailTextLabelHeight = 15;
     [super setSelected:selected animated:animated];
     
     if (self.cjBadgeButton.badge) {
-        self.cjBadgeButton.badgeBackgroudColor = [UIColor redColor];
+        self.cjBadgeButton.badgeLabel.backgroundColor = [UIColor redColor];
     }
 }
 
@@ -469,7 +469,7 @@ static CGFloat kDefaultCJDetailTextLabelHeight = 15;
     [super setHighlighted:highlighted animated:animated];
     
     if (self.cjBadgeButton.badge) {
-        self.cjBadgeButton.badgeBackgroudColor = [UIColor redColor];
+        self.cjBadgeButton.badgeLabel.backgroundColor = [UIColor redColor];
     }
 }
 

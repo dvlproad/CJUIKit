@@ -13,7 +13,7 @@
 - (void)configureForDataModel:(TestDataModel *)dataModel {
     self.showCJImageView = YES;
     [self.cjBadgeButton setBackgroundImage:[UIImage imageNamed:@"icon.png"] forState:UIControlStateNormal];
-    [self.cjBadgeButton setTitle:@"年" forState:UIControlStateNormal];
+    [self.cjBadgeButton setTitle:@"年年年年" forState:UIControlStateNormal];
     [self.cjBadgeButton setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
     self.cjBadgeButton.layer.cornerRadius = 10;
     self.cjBadgeButton.badge = 100;

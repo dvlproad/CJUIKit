@@ -96,7 +96,7 @@
 		7885FC2B2156279000B97DAA /* NSDateFormatterCJHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 7885FC292156279000B97DAA /* NSDateFormatterCJHelper.m */; };
 		7885FC2F21562F9C00B97DAA /* NSCalendarCJHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 7885FC2D21562F9C00B97DAA /* NSCalendarCJHelper.m */; };
 		7885FC4A2156681F00B97DAA /* UIView+CJPopupInSuspendWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 7885FC482156681F00B97DAA /* UIView+CJPopupInSuspendWindow.m */; };
-		7885FC9321567BE000B97DAA /* ButtonFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 7885FC9221567BE000B97DAA /* ButtonFactory.m */; };
+		7885FC9321567BE000B97DAA /* DemoButtonFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 7885FC9221567BE000B97DAA /* DemoButtonFactory.m */; };
 		789CAF181FB612B700AF8CD4 /* ChangeLog.md in Resources */ = {isa = PBXBuildFile; fileRef = 789CAE111FB612B600AF8CD4 /* ChangeLog.md */; };
 		789CAF191FB612B700AF8CD4 /* CJBaseCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 789CAE151FB612B600AF8CD4 /* CJBaseCollectionViewCell.m */; };
 		789CAF1A1FB612B700AF8CD4 /* CJFullBottomCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 789CAE171FB612B600AF8CD4 /* CJFullBottomCollectionViewCell.m */; };
@@ -167,6 +167,10 @@
 		78A0D04C216B5B0F00EFAD67 /* CJAppLastUserManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 78A0D048216B5B0E00EFAD67 /* CJAppLastUserManager.m */; };
 		78A0D04D216B5B0F00EFAD67 /* CJAppLastUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 78A0D049216B5B0F00EFAD67 /* CJAppLastUser.m */; };
 		78A0D051216B5CF600EFAD67 /* DemoAppLastUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 78A0D050216B5CF600EFAD67 /* DemoAppLastUtil.m */; };
+		78A0D057216BB19800EFAD67 /* badgeButton_normal@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 78A0D053216BB19700EFAD67 /* badgeButton_normal@2x.png */; };
+		78A0D058216BB19800EFAD67 /* badgeButton_highlighted@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 78A0D054216BB19700EFAD67 /* badgeButton_highlighted@3x.png */; };
+		78A0D059216BB19800EFAD67 /* badgeButton_highlighted@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 78A0D055216BB19800EFAD67 /* badgeButton_highlighted@2x.png */; };
+		78A0D05A216BB19800EFAD67 /* badgeButton_normal@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 78A0D056216BB19800EFAD67 /* badgeButton_normal@3x.png */; };
 		78A621A921319723004DA046 /* SuspendWindowViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78A621A821319723004DA046 /* SuspendWindowViewController.m */; };
 		78A621BB21331B3C004DA046 /* CJLogView.m in Sources */ = {isa = PBXBuildFile; fileRef = 78A621B921331B3B004DA046 /* CJLogView.m */; };
 		78A621BE2135A198004DA046 /* CJLogSuspendWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 78A621BD2135A198004DA046 /* CJLogSuspendWindow.m */; };
@@ -629,8 +633,8 @@
 		7885FC2E21562F9C00B97DAA /* NSCalendarCJHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSCalendarCJHelper.h; sourceTree = "<group>"; };
 		7885FC482156681F00B97DAA /* UIView+CJPopupInSuspendWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+CJPopupInSuspendWindow.m"; sourceTree = "<group>"; };
 		7885FC492156681F00B97DAA /* UIView+CJPopupInSuspendWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+CJPopupInSuspendWindow.h"; sourceTree = "<group>"; };
-		7885FC9121567BE000B97DAA /* ButtonFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ButtonFactory.h; sourceTree = "<group>"; };
-		7885FC9221567BE000B97DAA /* ButtonFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ButtonFactory.m; sourceTree = "<group>"; };
+		7885FC9121567BE000B97DAA /* DemoButtonFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DemoButtonFactory.h; sourceTree = "<group>"; };
+		7885FC9221567BE000B97DAA /* DemoButtonFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DemoButtonFactory.m; sourceTree = "<group>"; };
 		789CAB597AD073D5F637D193 /* Pods-CJUIKitDemoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CJUIKitDemoTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-CJUIKitDemoTests/Pods-CJUIKitDemoTests.release.xcconfig"; sourceTree = "<group>"; };
 		789CAE111FB612B600AF8CD4 /* ChangeLog.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = ChangeLog.md; sourceTree = "<group>"; };
 		789CAE141FB612B600AF8CD4 /* CJBaseCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJBaseCollectionViewCell.h; sourceTree = "<group>"; };
@@ -763,6 +767,10 @@
 		78A0D04B216B5B0F00EFAD67 /* CJAppLastUserManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJAppLastUserManager.h; sourceTree = "<group>"; };
 		78A0D04F216B5CF600EFAD67 /* DemoAppLastUtil.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DemoAppLastUtil.h; sourceTree = "<group>"; };
 		78A0D050216B5CF600EFAD67 /* DemoAppLastUtil.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DemoAppLastUtil.m; sourceTree = "<group>"; };
+		78A0D053216BB19700EFAD67 /* badgeButton_normal@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "badgeButton_normal@2x.png"; sourceTree = "<group>"; };
+		78A0D054216BB19700EFAD67 /* badgeButton_highlighted@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "badgeButton_highlighted@3x.png"; sourceTree = "<group>"; };
+		78A0D055216BB19800EFAD67 /* badgeButton_highlighted@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "badgeButton_highlighted@2x.png"; sourceTree = "<group>"; };
+		78A0D056216BB19800EFAD67 /* badgeButton_normal@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "badgeButton_normal@3x.png"; sourceTree = "<group>"; };
 		78A621A721319723004DA046 /* SuspendWindowViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SuspendWindowViewController.h; sourceTree = "<group>"; };
 		78A621A821319723004DA046 /* SuspendWindowViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SuspendWindowViewController.m; sourceTree = "<group>"; };
 		78A621B921331B3B004DA046 /* CJLogView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJLogView.m; sourceTree = "<group>"; };
@@ -1725,8 +1733,12 @@
 		7885FC9021567BE000B97DAA /* ButtonFactory */ = {
 			isa = PBXGroup;
 			children = (
-				7885FC9121567BE000B97DAA /* ButtonFactory.h */,
-				7885FC9221567BE000B97DAA /* ButtonFactory.m */,
+				7885FC9121567BE000B97DAA /* DemoButtonFactory.h */,
+				7885FC9221567BE000B97DAA /* DemoButtonFactory.m */,
+				78A0D055216BB19800EFAD67 /* badgeButton_highlighted@2x.png */,
+				78A0D054216BB19700EFAD67 /* badgeButton_highlighted@3x.png */,
+				78A0D053216BB19700EFAD67 /* badgeButton_normal@2x.png */,
+				78A0D056216BB19800EFAD67 /* badgeButton_normal@3x.png */,
 			);
 			path = ButtonFactory;
 			sourceTree = "<group>";
@@ -3617,6 +3629,7 @@
 				80FF90A31FC5649F00E437CF /* SampleViewController.xib in Resources */,
 				8033239820299AD7001DACF1 /* MemoryADExplain01.jpg in Resources */,
 				80FF90821FC5649F00E437CF /* OpenTableViewController1.xib in Resources */,
+				78A0D059216BB19800EFAD67 /* badgeButton_highlighted@2x.png in Resources */,
 				787FDB9320500B5C008A46E3 /* icon_ddlb_jd@2x.png in Resources */,
 				8014A28A1FA2C81A00DDDB5A /* icons8-calendar.png in Resources */,
 				807903131FB413D60082F05C /* arrow_L_blue.png in Resources */,
@@ -3714,6 +3727,7 @@
 				787FDB9420500B5C008A46E3 /* slider_thumbImage@3x.png in Resources */,
 				80FF919F1FC5682B00E437CF /* ProcessLineViewController.xib in Resources */,
 				8033239620299AD7001DACF1 /* MemoryAD05.jpg in Resources */,
+				78A0D05A216BB19800EFAD67 /* badgeButton_normal@3x.png in Resources */,
 				78590D80215CA4A300F45AD5 /* cjBackBarButtonItemGray@2x.png in Resources */,
 				7850B71220937E85008F4A21 /* WelcomePopupView.xib in Resources */,
 				8051E5CE20AAB34E003370AA /* details_icon_huadong@3x.png in Resources */,
@@ -3755,6 +3769,7 @@
 				787FDB9220500B5C008A46E3 /* slider_thumbImage@2x.png in Resources */,
 				80582FA220C121B500C01225 /* ImageRotateViewController.xib in Resources */,
 				803323A320299AD7001DACF1 /* MemoryADResult01.gif in Resources */,
+				78A0D058216BB19800EFAD67 /* badgeButton_highlighted@3x.png in Resources */,
 				78590D7D215CA4A300F45AD5 /* cjBackBarButtonItem@3x.png in Resources */,
 				803323AA20299AD7001DACF1 /* MemoryAD09.jpg in Resources */,
 				801F75DB20A040D800A2E027 /* signin_icon_open@2x.png in Resources */,
@@ -3766,6 +3781,7 @@
 				787FDB8920500B5C008A46E3 /* slider_double_thumbImage_a@3x.png in Resources */,
 				803323BD20299AD7001DACF1 /* NibCell.xib in Resources */,
 				8033239720299AD7001DACF1 /* MemoryADKnowledge04.jpg in Resources */,
+				78A0D057216BB19800EFAD67 /* badgeButton_normal@2x.png in Resources */,
 				800E07E32016CCF500799B78 /* DeviceInfoViewController.xib in Resources */,
 				807F126C20B5123A0008B748 /* animationBg02.jpg in Resources */,
 				789CAF301FB612B700AF8CD4 /* cjCheckBoxOrangeYES@2x.png in Resources */,
@@ -3992,7 +4008,7 @@
 				7850B70020937C5A008F4A21 /* DragViewController.m in Sources */,
 				80FF91391FC5668700E437CF /* NSString+CJTextSize.m in Sources */,
 				80E7E75420AD2C8B000F762D /* UIImage+CJFixOrientation.m in Sources */,
-				7885FC9321567BE000B97DAA /* ButtonFactory.m in Sources */,
+				7885FC9321567BE000B97DAA /* DemoButtonFactory.m in Sources */,
 				80FF90A41FC5649F00E437CF /* HomeViewController.m in Sources */,
 				800E07E52016CCF500799B78 /* DeviceInfo.m in Sources */,
 				789CAF311FB612B700AF8CD4 /* CJTableViewHeaderFooterView.m in Sources */,

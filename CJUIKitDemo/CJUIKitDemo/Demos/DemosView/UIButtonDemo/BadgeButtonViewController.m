@@ -21,19 +21,30 @@
     self.title = NSLocalizedString(@"CJBadgeButton", nil);
     self.view.backgroundColor = [UIColor whiteColor];
     
-    CJBadgeButton *badgeButton = [ButtonFactory defaultBadgeButton];
+    CJBadgeButton *badgeButton = [DemoButtonFactory defaultBadgeButton];
     [self.view addSubview:badgeButton];
     [badgeButton mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.right.mas_equalTo(self.view);
         make.top.mas_equalTo(self.view).mas_offset(100);
         make.height.mas_equalTo(60);
     }];
-    [badgeButton setImage:[UIImage imageNamed:@"icon.png"] forState:UIControlStateNormal];
-    badgeButton.badge = 100;
+    [badgeButton setBackgroundImage:[UIImage imageNamed:@"icon.png"] forState:UIControlStateNormal];
     [badgeButton setTitle:@"年年年年" forState:UIControlStateNormal];
     [badgeButton setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
-    badgeButton.layer.cornerRadius = 10;
     [badgeButton addTarget:self action:@selector(buttonAction) forControlEvents:UIControlEventTouchUpInside];
+    badgeButton.badge = 100;
+    
+    CJBadgeButton *badgeButton2 = [DemoButtonFactory goDeliverBadgeButton];
+    [self.view addSubview:badgeButton2];
+    [badgeButton2 mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.mas_equalTo(badgeButton.mas_bottom).mas_offset(40);
+        make.centerX.mas_equalTo(self.view);
+        make.width.mas_equalTo(104+5);
+        make.height.mas_equalTo(104);
+    }];
+    [badgeButton2 setTitle:NSLocalizedString(@"去配送", nil) forState:UIControlStateNormal];
+    [badgeButton2 addTarget:self action:@selector(buttonAction) forControlEvents:UIControlEventTouchUpInside];
+    badgeButton2.badge = 6;
 }
 
 - (void)buttonAction {

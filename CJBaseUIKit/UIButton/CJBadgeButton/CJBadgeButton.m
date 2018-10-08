@@ -8,13 +8,13 @@
 
 #import "CJBadgeButton.h"
 
-static CGFloat kDefaultCJBadgeSize = 20.0f;    /**< 默认badge的大小 */
-
 @interface CJBadgeButton () {
 
 }
-@property (nonatomic, strong) UILabel *badgeLabel;
+@property (nonatomic) NSLayoutConstraint *badgeLabelTopConstraint;
+@property (nonatomic) NSLayoutConstraint *badgeLabelRightConstraint;
 @property (nonatomic) NSLayoutConstraint *badgeLabelWidthConstraint;
+@property (nonatomic) NSLayoutConstraint *badgeLabelHeightConstraint;
 
 @end
 
@@ -36,17 +36,22 @@ static CGFloat kDefaultCJBadgeSize = 20.0f;    /**< 默认badge的大小 */
 }
 
 - (void)cjImageView_CommonInit {
+    self.backgroundColor = [UIColor clearColor];
     self.layer.masksToBounds = YES;
     self.clipsToBounds = YES;
-    self.backgroundColor = [UIColor purpleColor];
+    
+    self.badgeLabelTop = 0;
+    self.badgeLabelRight = 0;
+    self.badgeLabelWidth = 20;
+    self.badgeLabelHeight = 20;
     
     _badgeLabel = [[UILabel alloc] init];
     _badgeLabel.textAlignment = NSTextAlignmentCenter;
     _badgeLabel.textColor = [UIColor whiteColor];
-    _badgeLabel.backgroundColor = _badgeBackgroudColor;
-    _badgeLabel.font = _badgeFont;
+    _badgeLabel.backgroundColor = [UIColor redColor];
+    _badgeLabel.font = [UIFont boldSystemFontOfSize:11];
     _badgeLabel.hidden = YES;
-    _badgeLabel.layer.cornerRadius = kDefaultCJBadgeSize / 2;
+    _badgeLabel.layer.cornerRadius = self.badgeLabelHeight / 2;
     _badgeLabel.clipsToBounds = YES;
     [self addSubview:_badgeLabel];
     [self setupBadgeLabelConstraints];
@@ -56,6 +61,29 @@ static CGFloat kDefaultCJBadgeSize = 20.0f;    /**< 默认badge的大小 */
 - (void)setupBadgeLabelConstraints {
     self.badgeLabel.translatesAutoresizingMaskIntoConstraints = NO;
     
+    //top
+    self.badgeLabelTopConstraint =
+     [NSLayoutConstraint constraintWithItem:self.badgeLabel
+                                  attribute:NSLayoutAttributeTop
+                                  relatedBy:NSLayoutRelationEqual
+                                     toItem:self
+                                  attribute:NSLayoutAttributeTop
+                                 multiplier:1.0
+                                   constant:self.badgeLabelTop];
+    [self addConstraint:self.badgeLabelTopConstraint];
+    
+    //right
+    self.badgeLabelRightConstraint =
+     [NSLayoutConstraint constraintWithItem:self.badgeLabel
+                                  attribute:NSLayoutAttributeRight
+                                  relatedBy:NSLayoutRelationEqual
+                                     toItem:self
+                                  attribute:NSLayoutAttributeRight
+                                 multiplier:1.0
+                                   constant:self.badgeLabelRight];
+    [self addConstraint:self.badgeLabelRightConstraint];
+    
+    //width
     self.badgeLabelWidthConstraint =
     [NSLayoutConstraint constraintWithItem:self.badgeLabel
                                  attribute:NSLayoutAttributeWidth
@@ -63,61 +91,52 @@ static CGFloat kDefaultCJBadgeSize = 20.0f;    /**< 默认badge的大小 */
                                     toItem:nil
                                  attribute:NSLayoutAttributeNotAnAttribute
                                 multiplier:0
-                                  constant:kDefaultCJBadgeSize];
+                                  constant:self.badgeLabelWidth];
     [self addConstraint:self.badgeLabelWidthConstraint];
     
-    [self addConstraint:
+    //height
+    self.badgeLabelHeightConstraint =
      [NSLayoutConstraint constraintWithItem:self.badgeLabel
                                   attribute:NSLayoutAttributeHeight
                                   relatedBy:NSLayoutRelationEqual
-                                     toItem:self.badgeLabel
-                                  attribute:NSLayoutAttributeWidth
-                                 multiplier:1.0
-                                   constant:0]];
-    
-    [self addConstraint:
-     [NSLayoutConstraint constraintWithItem:self.badgeLabel
-                                  attribute:NSLayoutAttributeRight
-                                  relatedBy:NSLayoutRelationEqual
-                                     toItem:self
-                                  attribute:NSLayoutAttributeRight
-                                 multiplier:1.0
-                                   constant:-self.layer.cornerRadius + 3]];
-    [self addConstraint:
-     [NSLayoutConstraint constraintWithItem:self.badgeLabel
-                                  attribute:NSLayoutAttributeTop
-                                  relatedBy:NSLayoutRelationEqual
-                                     toItem:self
-                                  attribute:NSLayoutAttributeTop
-                                 multiplier:1.0
-                                   constant:-3]];
+                                     toItem:nil
+                                  attribute:NSLayoutAttributeNotAnAttribute
+                                 multiplier:0
+                                   constant:self.badgeLabelHeight];
+    [self addConstraint:self.badgeLabelHeightConstraint];
 }
 
-- (void)updateBadgeLabelWidthConstraint {
-    [self removeConstraint:self.badgeLabelWidthConstraint];
-    
-    self.badgeLabelWidthConstraint =
-    [NSLayoutConstraint constraintWithItem:self.badgeLabel
-                                 attribute:NSLayoutAttributeWidth
-                                 relatedBy:NSLayoutRelationEqual
-                                    toItem:nil
-                                 attribute:NSLayoutAttributeNotAnAttribute
-                                multiplier:0
-                                  constant:self.badgeSize];
-    [self addConstraint:self.badgeLabelWidthConstraint];
-}
-
-/* badge的设置 */
-- (void)setShowBadge:(BOOL)showBadge {
-    if (_showBadge != showBadge) {
-        _showBadge = showBadge;
-        self.badgeLabel.hidden = !_showBadge;
+- (void)setBadgeLabelTop:(CGFloat)badgeLabelTop {
+    if (_badgeLabelTop != badgeLabelTop) {
+        _badgeLabelTop = badgeLabelTop;
+        self.badgeLabelTopConstraint.constant = badgeLabelTop;
+//        [self removeConstraint:self.badgeLabelWidthConstraint];
+//
+//        self.badgeLabelWidthConstraint =
+//        [NSLayoutConstraint constraintWithItem:self.badgeLabel
+//                                     attribute:NSLayoutAttributeWidth
+//                                     relatedBy:NSLayoutRelationEqual
+//                                        toItem:nil
+//                                     attribute:NSLayoutAttributeNotAnAttribute
+//                                    multiplier:0
+//                                      constant:self.badgeLabelWidth];
+//        [self addConstraint:self.badgeLabelWidthConstraint];
     }
 }
 
-- (void)setBadgeBackgroudColor:(UIColor *)badgeBackgroudColor {
-    _badgeBackgroudColor = badgeBackgroudColor;
-    self.badgeLabel.backgroundColor = badgeBackgroudColor;
+- (void)setBadgeLabelRight:(CGFloat)badgeLabelRight {
+    _badgeLabelRight = badgeLabelRight;
+    self.badgeLabelRightConstraint.constant = badgeLabelRight;
+}
+
+- (void)setBadgeLabelWidth:(CGFloat)badgeLabelWidth {
+    _badgeLabelWidth = badgeLabelWidth;
+    self.badgeLabelWidthConstraint.constant = badgeLabelWidth;
+}
+
+- (void)setBadgeLabelHeight:(CGFloat)badgeLabelHeight {
+    _badgeLabelHeight = badgeLabelHeight;
+    self.badgeLabelHeightConstraint.constant = badgeLabelHeight;
 }
 
 - (void)setBadge:(NSInteger)badge {
@@ -130,30 +149,11 @@ static CGFloat kDefaultCJBadgeSize = 20.0f;    /**< 默认badge的大小 */
     
     if (badge > 99) {
         self.badgeLabel.text = @"99+";
-        self.badgeFont = [UIFont boldSystemFontOfSize:9];
+        self.badgeLabel.font = [UIFont boldSystemFontOfSize:9];
                           
     } else {
         self.badgeLabel.text = [NSString stringWithFormat:@"%ld", (long)_badge];
     }
-}
-
-- (void)setBadgeSize:(CGFloat)badgeSize {
-    if (_badgeSize != badgeSize) {
-        _badgeSize = badgeSize;
-        _badgeLabel.layer.cornerRadius = _badgeSize / 2;
-        
-        [self updateBadgeLabelWidthConstraint];
-    }
-}
-
-- (void)setBadgeFont:(UIFont *)badgeFont {
-    _badgeFont = badgeFont;
-    self.badgeLabel.font = badgeFont;
-}
-
-- (void)setBadgeTextColor:(UIColor *)badgeTextColor {
-    _badgeTextColor = badgeTextColor;
-    self.badgeLabel.textColor = badgeTextColor;
 }
 
 

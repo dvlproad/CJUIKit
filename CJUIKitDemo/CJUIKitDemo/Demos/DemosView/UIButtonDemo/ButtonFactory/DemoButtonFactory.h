@@ -1,5 +1,5 @@
 //
-//  ButtonFactory.h
+//  DemoButtonFactory.h
 //  CJUIKitDemo
 //
 //  Created by ciyouzen on 2018/9/3.
@@ -19,7 +19,7 @@
 #import <CJBaseUIKit/CJBadgeButton.h>
 #endif
 
-@interface ButtonFactory : NSObject
+@interface DemoButtonFactory : NSObject
 
 ///蓝色背景按钮
 + (UIButton *)blueButton;
@@ -30,6 +30,8 @@
 + (UIButton *)disableButton;
 
 + (CJBadgeButton *)defaultBadgeButton;
+
++ (CJBadgeButton *)goDeliverBadgeButton;
 
 + (void)removeObserveForButton:(UIButton *)button;
 

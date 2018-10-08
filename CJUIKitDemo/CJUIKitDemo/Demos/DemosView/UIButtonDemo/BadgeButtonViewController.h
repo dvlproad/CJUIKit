@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import <Masonry/Masonry.h>
-#import "ButtonFactory.h"
+#import "DemoButtonFactory.h"
 
 @interface BadgeButtonViewController : UIViewController
 
