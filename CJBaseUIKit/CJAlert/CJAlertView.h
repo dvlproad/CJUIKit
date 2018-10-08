@@ -9,17 +9,6 @@
 #import <UIKit/UIKit.h>
 #import <Masonry/Masonry.h>
 
-/*
-@class CJAlertView;
-@protocol CJAlertViewDelegate <NSObject>
-
-@optional
-- (void)cjAlertView_OK:(CJAlertView *)alertView;
-- (void)cjAlertView_Cancel:(CJAlertView *)alertView;
-
-@end
-*/
-
 /**
  *  仿系统 UIAlertView(使用类方法只能创建默认样式的alertView,若要创建更加自定义的alertView,请使用实例方法)
  */

@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
   #验证方法：pod lib lint CJBaseUIKit.podspec --allow-warnings --use-libraries --verbose
   s.name         = "CJBaseUIKit"
-  s.version      = "0.2.8"
+  s.version      = "0.2.9"
   s.summary      = "自定义的基础UI"
   s.homepage     = "https://github.com/dvlproad/CJUIKit"
 
@@ -15,8 +15,7 @@ Pod::Spec.new do |s|
                  - CJBaseUIKit/UIView/CJPopupAction：视图弹窗：UIView的类别，用来实现UIView弹出popupView的一个Uiew的类别
                  - CJBaseUIKit/UIView/CJGestureRecognizer：视图手势
                  - CJBaseUIKit/UIWindow：窗口
-                 - CJBaseUIKit/UIButton：按钮
-                 - CJBaseUIKit/CJImageView：图片视图(包含CJBadgeImageView),用于设置imageView的title和badge
+                 - CJBaseUIKit/UIButton：按钮 及 CJBadgeButton
                  - CJBaseUIKit/UITextField：文本视图：包含文本框类别及新的自定义文本框
                  - CJBaseUIKit/CJTextView：文本视图：类似微信文本输入框实现
                  - CJBaseUIKit/UIToolbar：工具栏
@@ -58,7 +57,7 @@ Pod::Spec.new do |s|
 
   s.platform     = :ios, "8.0"
  
-  s.source       = { :git => "https://github.com/dvlproad/CJUIKit.git", :tag => "CJBaseUIKit_0.2.8" }
+  s.source       = { :git => "https://github.com/dvlproad/CJUIKit.git", :tag => "CJBaseUIKit_0.2.9" }
   s.source_files  = "CJBaseUIKit/*.{h,m}"
 
   s.frameworks = "UIKit"
@@ -67,7 +66,9 @@ Pod::Spec.new do |s|
 
   # s.xcconfig = { "HEADER_SEARCH_PATHS" => "$(SDKROOT)/usr/include/libxml2" }
   # s.dependency "JSONKit", "~> 1.4"
-
+  # s.resources = "CJBaseUIKit/**/*.{png,xib}"
+  # s.frameworks = "MediaPlayer"
+  # s.dependency 'Masonry'
 
   s.subspec 'UIColor' do |ss|
     ss.source_files = "CJBaseUIKit/UIColor/**/*.{h,m}"

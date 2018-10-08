@@ -30,8 +30,7 @@
 - CJBaseUIKit/UIView/CJGestureRecognizer：视图手势
 >
 - CJBaseUIKit/UIWindow：窗口
-- CJBaseUIKit/UIButton：按钮
-- CJBaseUIKit/CJImageView：图片视图(包含CJBadgeImageView),用于设置imageView的title和badge
+- CJBaseUIKit/UIButton：按钮 及 CJBadgeButton
 - CJBaseUIKit/UITextField：文本视图：包含文本框类别及新的自定义文本框
 - CJBaseUIKit/CJTextView：文本视图：类似微信文本输入框实现
 - CJBaseUIKit/UIToolbar：工具栏
@@ -82,15 +81,11 @@ UIColor+CJHex用来通过十六进制来设置颜色。 支持@“#123456”、 
 #### 5、CJBaseUIKit/UIWindow：窗口
 
 #### 6、CJBaseUIKit/UIButton：按钮
+CJBaseUIKit/UIButton：按钮 及 CJBadgeButton
 
-#### 7、CJBaseUIKit/CJImageView：图片视图(包含CJBadgeImageView),用于设置imageView的title和badge
-包含CJBadgeImageView
+#### 7、CJBaseUIKit/UITextField：文本视图：包含文本框类别及新的自定义文本框
 
-CJImageView，可为ImageView设置title；而CJBadgeImageView则还可以设置badge;
-
-#### 8、CJBaseUIKit/UITextField：文本视图：包含文本框类别及新的自定义文本框
-
-#### 9、CJBaseUIKit/CJTextView：文本视图：类似微信文本输入框实现
+#### 8、CJBaseUIKit/CJTextView：文本视图：类似微信文本输入框实现
 类似微信文本输入框实现
 
 功能：
@@ -100,31 +95,31 @@ CJImageView，可为ImageView设置title；而CJBadgeImageView则还可以设置
 
 
 
-#### 10、CJBaseUIKit/UIToolbar：工具栏
+#### 9、CJBaseUIKit/UIToolbar：工具栏
 
-#### 11、CJBaseUIKit/CJScrollView：滚动视图：自定义的基础滚动视图
+#### 10、CJBaseUIKit/CJScrollView：滚动视图：自定义的基础滚动视图
 
-#### 12、CJBaseUIKit/CJTableView：列表视图
+#### 11、CJBaseUIKit/CJTableView：列表视图
 ###### (1)、CJBaseUIKit/CJTableView/CJBaseTableViewCell：基础的TableViewCell
 ###### (2)、CJBaseUIKit/CJTableView/CJBaseTableViewHeaderFooterView
 
-#### 13、CJBaseUIKit/CJCollectionView：集合视图
+#### 12、CJBaseUIKit/CJCollectionView：集合视图
 ###### (1)、CJBaseUIKit/CJCollectionView/CJBaseCollectionViewCell：基础的CollectionViewCell
 ###### (2)、CJBaseUIKit/CJCollectionView/CJCollectionViewLayout
 ###### (3)、CJBaseUIKit/CJCollectionView/MyEqualCellSizeCollectionView：一个只有一个分区且分区中的每个cell大小相等的集合视图(cell的大小可通过方法①设置cell的固定大小和方法②通过设置每行最大显示的cell个数获得)
 ###### (4)、CJBaseUIKit/CJCollectionView/CJOpenCollectionView：可展开的集合视图
 
-#### 14、CJBaseUIKit/CJSlider：滑块
+#### 13、CJBaseUIKit/CJSlider：滑块
 
-#### 15、CJBaseUIKit/CJRefreshView：刷新
+#### 14、CJBaseUIKit/CJRefreshView：刷新
 
-#### 16、CJBaseUIKit/CJMJRefreshComponent：已包含pod 'MJRefresh'
+#### 15、CJBaseUIKit/CJMJRefreshComponent：已包含pod 'MJRefresh'
 
-#### 17、CJBaseUIKit/CJToast：Toast
+#### 16、CJBaseUIKit/CJToast：Toast
 
-#### 18、CJBaseUIKit/CJAlert：Alert
+#### 17、CJBaseUIKit/CJAlert：Alert
 
-#### 19、 CJBaseUIKit/CJDataEmptyView：空视图(处理数据为空、网络加载失败等情况)
+#### 18、 CJBaseUIKit/CJDataEmptyView：空视图(处理数据为空、网络加载失败等情况)
 
 待完善
 
@@ -238,6 +233,10 @@ CJImageView，可为ImageView设置title；而CJBadgeImageView则还可以设置
 > 1. 调整项目结构
 
 #### CJBaseUIKit
+* 2018-10-08 V0.2.9
+
+> 1. 去除CJBadgeImageView，改为CJBadgeButton
+
 * 2018-09-27 V0.2.6
 
 > 1. CJTextField增加添加下划线和设置支持selected的左侧图片

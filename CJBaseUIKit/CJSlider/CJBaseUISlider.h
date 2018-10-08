@@ -29,8 +29,8 @@ typedef NS_ENUM(NSUInteger, CJUISliderType) {
 
 //以下值，只当sliderType为CJSliderTypeRange时，才有用
 @property (nonatomic, assign) CGFloat basePercentValue; /** 基准值(默认50%，即为滑竿正中间) */
-@property (nonatomic, strong) UIColor *blankColor;  /** 空白区域颜色(默认lightGrayColor) */
-@property (nonatomic, strong) UIColor *rangeColor;  /** 非空白区域的颜色(默认blueColor) */
+@property (nonatomic, strong) UIColor *blankColor;      /** 空白区域颜色(默认lightGrayColor) */
+@property (nonatomic, strong) UIColor *rangeColor;      /** 非空白区域的颜色(默认blueColor) */
 
 
 @end

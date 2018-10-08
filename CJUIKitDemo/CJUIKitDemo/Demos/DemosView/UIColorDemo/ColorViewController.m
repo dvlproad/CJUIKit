@@ -1,34 +1,25 @@
 //
-//  ImageViewController.m
+//  ColorViewController.m
 //  CJUIKitDemo
 //
 //  Created by ciyouzen on 2017/2/25.
 //  Copyright © 2017年 dvlproad. All rights reserved.
 //
 
-#import "ImageViewController.h"
+#import "ColorViewController.h"
 #import "UIColor+CJHex.h"
 
-@interface ImageViewController ()
+@interface ColorViewController ()
 
 @end
 
-@implementation ImageViewController
+@implementation ColorViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
-    self.title = NSLocalizedString(@"CJImageView", nil);
-    
-    self.badgeImageView.image = [UIImage imageNamed:@"icon.png"];
-    self.badgeImageView.badge = 100;
-    self.badgeImageView.title = @"年年年年";
-    self.badgeImageView.titleColor = [UIColor redColor];
-    self.badgeImageView.imageCornerRadius = 10;
-    [self.badgeImageView setTapCompleteBlock:^(CJImageView *imageView) {
-        NSLog(@"点击照片");
-    }];
+    self.title = NSLocalizedString(@"CJBadgeButton", nil);
     
     //以下三种设置颜色一样
     self.view.backgroundColor = CJColorFromHexValue(0x43FBFE);

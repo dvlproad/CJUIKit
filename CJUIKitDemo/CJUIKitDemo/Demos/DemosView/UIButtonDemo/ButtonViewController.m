@@ -16,6 +16,8 @@
 
 #import "UIImage+CJCreate.h"
 
+#import "BadgeButtonViewController.h"
+
 @interface ButtonViewController ()
 
 @end
@@ -95,11 +97,31 @@
     self.multiClikcButton.cjMinClickInterval = 2;
     
     
+    
+    UIButton *testButton = [ButtonFactory blueButton];
+    [testButton setTitle:@"进入测试BadgeButton" forState:UIControlStateNormal];
+    [self.view addSubview:testButton];
+    [testButton mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.mas_equalTo(self.view).mas_offset(20);
+        make.centerX.mas_equalTo(self.view);
+        make.bottom.mas_equalTo(self.view).mas_offset(-80);
+        make.height.mas_equalTo(44);
+    }];
+    __weak typeof(self)weakSelf = self;
+    [testButton setCjTouchUpInsideBlock:^(UIButton *button) {
+        [weakSelf goBadgeButtonViewController];
+    }];
+    
 }
 
 
 - (IBAction)multiClickAction:(id)sender {
     NSLog(@"重复点击了");
+}
+
+- (void)goBadgeButtonViewController {
+    BadgeButtonViewController *viewController = [[BadgeButtonViewController alloc] init];
+    [self.navigationController pushViewController:viewController animated:YES];
 }
 
 - (void)didReceiveMemoryWarning {

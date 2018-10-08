@@ -12,7 +12,7 @@
 #import "BeChangeViewController.h"
 
 //image
-#import "ImageViewController.h"
+#import "ColorViewController.h"
 
 //UIView
 #import "SampleViewController.h"
@@ -262,10 +262,10 @@
             [sectionDataModel.values addObject:textViewModule];
         }
         {
-            //CJImageView
+            //CJBadgeButton
             CJModuleModel *cjImageViewModuleModel = [[CJModuleModel alloc] init];
-            cjImageViewModuleModel.title = @"CJImageView";
-            cjImageViewModuleModel.classEntry = [ImageViewController class];
+            cjImageViewModuleModel.title = @"CJBadgeButton";
+            cjImageViewModuleModel.classEntry = [ColorViewController class];
             [sectionDataModel.values addObject:cjImageViewModuleModel];
         }
         {
@@ -382,6 +382,7 @@
                                       NSStringFromClass([NavigationBarRemoveUnderlineViewController class]),
                                       NSStringFromClass([FloatingWindowViewController class]),
                                       NSStringFromClass([SuspendWindowViewController class]),
+                                      NSStringFromClass([ColorViewController class])
                                     ];
     
     NSString *clsString = NSStringFromClass(moduleModel.classEntry);

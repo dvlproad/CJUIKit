@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "CJImageView.h"
+#import "CJBadgeButton.h"
 
 @class CJBaseTableViewCell;
 
@@ -32,7 +32,7 @@
 //@property (nonatomic, strong) id model;
 @property (nonatomic, strong) NSIndexPath *indexPath;
 
-@property (nonatomic, strong) CJImageView *cjImageView;
+@property (nonatomic, strong) CJBadgeButton *cjBadgeButton;
 @property (nonatomic, strong) UILabel *cjTextLabel;
 @property (nonatomic, strong) UILabel *cjDetailTextLabel;
 
@@ -52,7 +52,7 @@
 - (void)cjBaseTableViewCell_commonInit;
 
 /**
- *  添加cjImageView
+ *  添加cjBadgeButton
  *
  */
 - (void)addCJImageView;

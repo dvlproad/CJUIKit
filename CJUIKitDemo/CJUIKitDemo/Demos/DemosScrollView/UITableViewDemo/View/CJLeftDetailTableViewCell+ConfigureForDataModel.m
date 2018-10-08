@@ -11,7 +11,7 @@
 @implementation CJLeftDetailTableViewCell (ConfigureForDataModel)
 
 - (void)configureForDataModel:(TestDataModel *)dataModel {
-    self.cjImageView.image = [UIImage imageNamed:@"icon.png"];
+    [self.cjBadgeButton setBackgroundImage:[UIImage imageNamed:@"icon.png"] forState:UIControlStateNormal];
     
     self.cjTextLabel.text = dataModel.name;
     self.cjDetailTextLabel.text = dataModel.nickname;

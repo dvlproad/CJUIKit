@@ -8,7 +8,7 @@
 
 #import "CJBaseTableViewCell.h"
 
-#define kDefaultCJImageViewSize CGSizeMake(40, 40)  //默认cjImageView的大小
+#define kDefaultCJImageViewSize CGSizeMake(40, 40)  //默认cjBadgeButton的大小
 
 static CGFloat kDefaultCJTableViewCellPadding = 10;
 static CGFloat kDefaultCJTableViewCellTailingPadding = -40;
@@ -18,7 +18,7 @@ static CGFloat kDefaultCJDetailTextLabelHeight = 15;
 @interface CJBaseTableViewCell () {
     
 }
-//cjImageView
+//cjBadgeButton
 @property (nonatomic, strong) NSLayoutConstraint *cjImageViewLeftConstraint;
 @property (nonatomic, strong) NSLayoutConstraint *cjImageViewWidthConstraint;
 @property (nonatomic, strong) NSLayoutConstraint *cjImageViewHeightConstraint;
@@ -112,16 +112,13 @@ static CGFloat kDefaultCJDetailTextLabelHeight = 15;
 - (void)addCJImageView {
     UIView *parentView = self.contentView;
     
-    self.cjImageView = [[CJImageView alloc] initWithFrame:CGRectZero];
-    [self.cjImageView setTapCompleteBlock:^(UIImageView *imageView) {
-        NSLog(@"图片的点击,实际直接在外面调用就好");
-    }];
-    [parentView addSubview:self.cjImageView];
+    self.cjBadgeButton = [[CJBadgeButton alloc] initWithFrame:CGRectZero];
+    [parentView addSubview:self.cjBadgeButton];
     
     self.cjImageViewSize = kDefaultCJImageViewSize;
-    self.cjImageView.translatesAutoresizingMaskIntoConstraints = NO;
+    self.cjBadgeButton.translatesAutoresizingMaskIntoConstraints = NO;
     [parentView addConstraint:
-     [NSLayoutConstraint constraintWithItem:self.cjImageView
+     [NSLayoutConstraint constraintWithItem:self.cjBadgeButton
                                   attribute:NSLayoutAttributeCenterY//centerY
                                   relatedBy:NSLayoutRelationEqual
                                      toItem:parentView
@@ -131,7 +128,7 @@ static CGFloat kDefaultCJDetailTextLabelHeight = 15;
     
     
     self.cjImageViewHeightConstraint =
-    [NSLayoutConstraint constraintWithItem:self.cjImageView
+    [NSLayoutConstraint constraintWithItem:self.cjBadgeButton
                                  attribute:NSLayoutAttributeHeight //height
                                  relatedBy:NSLayoutRelationEqual
                                     toItem:nil
@@ -141,7 +138,7 @@ static CGFloat kDefaultCJDetailTextLabelHeight = 15;
     [parentView addConstraint:self.cjImageViewHeightConstraint];
     
     self.cjImageViewLeftConstraint =
-    [NSLayoutConstraint constraintWithItem:self.cjImageView
+    [NSLayoutConstraint constraintWithItem:self.cjBadgeButton
                                  attribute:NSLayoutAttributeLeft   //left
                                  relatedBy:NSLayoutRelationEqual
                                     toItem:parentView
@@ -152,7 +149,7 @@ static CGFloat kDefaultCJDetailTextLabelHeight = 15;
     
     
     self.cjImageViewWidthConstraint =
-    [NSLayoutConstraint constraintWithItem:self.cjImageView
+    [NSLayoutConstraint constraintWithItem:self.cjBadgeButton
                                  attribute:NSLayoutAttributeWidth //width
                                  relatedBy:NSLayoutRelationEqual
                                     toItem:nil
@@ -173,7 +170,7 @@ static CGFloat kDefaultCJDetailTextLabelHeight = 15;
     [parentView addConstraint:[NSLayoutConstraint constraintWithItem:self.cjTextLabel
                                                            attribute:NSLayoutAttributeLeft
                                                            relatedBy:NSLayoutRelationEqual
-                                                              toItem:self.cjImageView
+                                                              toItem:self.cjBadgeButton
                                                            attribute:NSLayoutAttributeRight
                                                           multiplier:1
                                                             constant:kDefaultCJTableViewCellPadding]];
@@ -435,12 +432,12 @@ static CGFloat kDefaultCJDetailTextLabelHeight = 15;
         _showCJImageView = showCJImageView;
         
         if (showCJImageView) {
-            self.cjImageView.hidden = NO;
+            self.cjBadgeButton.hidden = NO;
             self.cjImageViewLeftConstraint.constant = kDefaultCJTableViewCellPadding;
             self.cjImageViewWidthConstraint.constant = self.cjImageViewSize.width;
             
         } else {
-            self.cjImageView.hidden = YES;
+            self.cjBadgeButton.hidden = YES;
             self.cjImageViewLeftConstraint.constant = 0;
             self.cjImageViewWidthConstraint.constant = 0;
         }
@@ -463,16 +460,16 @@ static CGFloat kDefaultCJDetailTextLabelHeight = 15;
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
     
-    if (_cjImageView.badge) {
-        _cjImageView.badgeBackgroudColor = [UIColor redColor];
+    if (self.cjBadgeButton.badge) {
+        self.cjBadgeButton.badgeBackgroudColor = [UIColor redColor];
     }
 }
 
 -(void)setHighlighted:(BOOL)highlighted animated:(BOOL)animated{
     [super setHighlighted:highlighted animated:animated];
     
-    if (_cjImageView.badge) {
-        _cjImageView.badgeBackgroudColor = [UIColor redColor];
+    if (self.cjBadgeButton.badge) {
+        self.cjBadgeButton.badgeBackgroudColor = [UIColor redColor];
     }
 }
 

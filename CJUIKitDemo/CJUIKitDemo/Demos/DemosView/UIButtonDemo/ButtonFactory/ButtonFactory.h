@@ -9,6 +9,16 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
+#ifdef CJTESTPOD
+#import "UIButton+CJMoreProperty.h"
+#import "UIColor+CJHex.h"
+#import "CJBadgeButton.h"
+#else
+#import <CJBaseUIKit/UIButton+CJMoreProperty.h>
+#import <CJBaseUIKit/UIColor+CJHex.h>
+#import <CJBaseUIKit/CJBadgeButton.h>
+#endif
+
 @interface ButtonFactory : NSObject
 
 ///蓝色背景按钮
@@ -16,6 +26,10 @@
 
 ///白色背景按钮
 + (UIButton *)whiteButton;
+
++ (UIButton *)disableButton;
+
++ (CJBadgeButton *)defaultBadgeButton;
 
 + (void)removeObserveForButton:(UIButton *)button;
 

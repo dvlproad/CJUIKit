@@ -1,42 +1,30 @@
 //
-//  CJImageView.m
+//  CJBadgeButton.m
 //  CJUIKitDemo
 //
 //  Created by ciyouzen on 2016/06/18.
 //  Copyright © 2016年 dvlproad. All rights reserved.
 //
 
-#import "CJImageView.h"
+#import "CJBadgeButton.h"
 
 static CGFloat kDefaultCJBadgeSize = 20.0f;    /**< 默认badge的大小 */
 
-@interface CJImageView () {
+@interface CJBadgeButton () {
 
 }
-@property (nonatomic, strong) UILabel *titleLabel;
 @property (nonatomic, strong) UILabel *badgeLabel;
 @property (nonatomic) NSLayoutConstraint *badgeLabelWidthConstraint;
-
-@property (nonatomic, weak) void(^tapCompleteBlock)(CJImageView *imageView);
 
 @end
 
 
-@implementation CJImageView
+@implementation CJBadgeButton
 
 - (void)awakeFromNib {
     [super awakeFromNib];
     
     [self cjImageView_CommonInit];
-}
-
-- (instancetype)init {
-    self = [super init];
-    if (self) {
-        [self cjImageView_CommonInit];
-    }
-    
-    return self;
 }
 
 - (instancetype)initWithFrame:(CGRect)frame {
@@ -52,13 +40,6 @@ static CGFloat kDefaultCJBadgeSize = 20.0f;    /**< 默认badge的大小 */
     self.clipsToBounds = YES;
     self.backgroundColor = [UIColor purpleColor];
     
-    _titleLabel = [[UILabel alloc] initWithFrame:CGRectZero];
-    _titleLabel.textAlignment = NSTextAlignmentCenter;
-    _titleLabel.textColor = [UIColor whiteColor];
-    _titleLabel.font = [UIFont systemFontOfSize:15];
-    _titleLabel.backgroundColor = [UIColor clearColor];
-    [self cj_makeView:self addSubView:_titleLabel withEdgeInsets:UIEdgeInsetsZero];
-    
     _badgeLabel = [[UILabel alloc] init];
     _badgeLabel.textAlignment = NSTextAlignmentCenter;
     _badgeLabel.textColor = [UIColor whiteColor];
@@ -69,22 +50,6 @@ static CGFloat kDefaultCJBadgeSize = 20.0f;    /**< 默认badge的大小 */
     _badgeLabel.clipsToBounds = YES;
     [self addSubview:_badgeLabel];
     [self setupBadgeLabelConstraints];
-    
-    self.userInteractionEnabled = YES;
-    UITapGestureRecognizer *tapGR = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapSelf)];
-    [self addGestureRecognizer:tapGR];
-}
-
-
-/* 完整的描述请参见文件头部 */
-- (void)setTapCompleteBlock:(void(^)(CJImageView *imageView))tapCompleteBlock {
-    _tapCompleteBlock = tapCompleteBlock;
-}
-
-- (void)tapSelf {
-    if (self.tapCompleteBlock) {
-        self.tapCompleteBlock(self);
-    }
 }
 
 #pragma mark - SetupConstraint
@@ -117,7 +82,7 @@ static CGFloat kDefaultCJBadgeSize = 20.0f;    /**< 默认badge的大小 */
                                      toItem:self
                                   attribute:NSLayoutAttributeRight
                                  multiplier:1.0
-                                   constant:-self.imageCornerRadius + 3]];
+                                   constant:-self.layer.cornerRadius + 3]];
     [self addConstraint:
      [NSLayoutConstraint constraintWithItem:self.badgeLabel
                                   attribute:NSLayoutAttributeTop
@@ -141,42 +106,6 @@ static CGFloat kDefaultCJBadgeSize = 20.0f;    /**< 默认badge的大小 */
                                   constant:self.badgeSize];
     [self addConstraint:self.badgeLabelWidthConstraint];
 }
-
-
-- (void)setImageCornerRadius:(CGFloat)imageCornerRadius {
-    if (_imageCornerRadius != imageCornerRadius) {
-        _imageCornerRadius = imageCornerRadius;
-        self.layer.cornerRadius = _imageCornerRadius;
-    }
-}
-
-/* titleLabel的设置 */
-- (void)setTitle:(NSString *)title {
-    if (![_title isEqualToString:title]) {
-        _title = title;
-        
-        NSString *imageTitleShow = @"";
-        if (title.length > 2) {
-            imageTitleShow = [title substringFromIndex:title.length-2];
-        } else {
-            imageTitleShow = title;
-        }
-
-        self.titleLabel.text = imageTitleShow;
-    }
-}
-
-- (void)setTitleFont:(UIFont *)titleFont {
-    _titleFont = titleFont;
-    self.titleLabel.font = titleFont;
-}
-
-- (void)setTitleColor:(UIColor *)titleColor {
-    _titleColor = titleColor;
-    self.titleLabel.textColor = titleColor;
-}
-
-
 
 /* badge的设置 */
 - (void)setShowBadge:(BOOL)showBadge {

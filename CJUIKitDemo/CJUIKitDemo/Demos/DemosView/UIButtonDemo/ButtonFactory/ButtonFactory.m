@@ -8,14 +8,6 @@
 
 #import "ButtonFactory.h"
 
-#ifdef CJTESTPOD
-#import "UIButton+CJMoreProperty.h"
-#import "UIColor+CJHex.h"
-#else
-#import <CJBaseUIKit/UIButton+CJMoreProperty.h>
-#import <CJBaseUIKit/UIColor+CJHex.h>
-#endif
-
 @implementation ButtonFactory
 
 + (ButtonFactory *)sharedInstance {
@@ -78,6 +70,18 @@
     button.cjHighlightedBGColor = CJColorFromHexString(@"#e5e5e5");
     
     return button;
+}
+
+
++ (CJBadgeButton *)defaultBadgeButton {
+    CJBadgeButton *badgeButton = [CJBadgeButton buttonWithType:UIButtonTypeCustom];
+    badgeButton.badgeBackgroudColor = [UIColor redColor];
+    badgeButton.badgeTextColor = [UIColor whiteColor];
+    badgeButton.badgeFont = [UIFont boldSystemFontOfSize:11];
+    badgeButton.layer.cornerRadius = 0;
+    badgeButton.badgeSize = 20;
+    
+    return badgeButton;
 }
 
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSKeyValueChangeKey,id> *)change context:(void *)context {
