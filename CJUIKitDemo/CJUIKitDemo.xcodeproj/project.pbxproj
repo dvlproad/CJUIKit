@@ -58,7 +58,7 @@
 		78590D7F215CA4A300F45AD5 /* cjBackBarButtonItemGray@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 78590D77215CA4A300F45AD5 /* cjBackBarButtonItemGray@3x.png */; };
 		78590D80215CA4A300F45AD5 /* cjBackBarButtonItemGray@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 78590D78215CA4A300F45AD5 /* cjBackBarButtonItemGray@2x.png */; };
 		78590D81215CA4A300F45AD5 /* UIViewController+CJSystemBackButtonHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 78590D79215CA4A300F45AD5 /* UIViewController+CJSystemBackButtonHandler.m */; };
-		786C5170215F6E8200C3F6BE /* CJAppInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 786C516F215F6E8200C3F6BE /* CJAppInfo.m */; };
+		786C5170215F6E8200C3F6BE /* CJAppLastInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 786C516F215F6E8200C3F6BE /* CJAppLastInfo.m */; };
 		787FDB5620500B01008A46E3 /* SearchBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 787FDB4C20500B00008A46E3 /* SearchBarViewController.m */; };
 		787FDB5720500B01008A46E3 /* SearchBarViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 787FDB4D20500B00008A46E3 /* SearchBarViewController.xib */; };
 		787FDB5820500B01008A46E3 /* TextFieldViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 787FDB5020500B00008A46E3 /* TextFieldViewController.m */; };
@@ -164,6 +164,9 @@
 		789CAF7C1FB612B700AF8CD4 /* UIWindow+CJSnapshot.m in Sources */ = {isa = PBXBuildFile; fileRef = 789CAEFD1FB612B600AF8CD4 /* UIWindow+CJSnapshot.m */; };
 		78A0D040216B319700EFAD67 /* CJBadgeButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 78A0D03D216B319700EFAD67 /* CJBadgeButton.m */; };
 		78A0D043216B32D100EFAD67 /* BadgeButtonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78A0D042216B32D100EFAD67 /* BadgeButtonViewController.m */; };
+		78A0D04C216B5B0F00EFAD67 /* CJAppLastUserManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 78A0D048216B5B0E00EFAD67 /* CJAppLastUserManager.m */; };
+		78A0D04D216B5B0F00EFAD67 /* CJAppLastUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 78A0D049216B5B0F00EFAD67 /* CJAppLastUser.m */; };
+		78A0D051216B5CF600EFAD67 /* DemoAppLastUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 78A0D050216B5CF600EFAD67 /* DemoAppLastUtil.m */; };
 		78A621A921319723004DA046 /* SuspendWindowViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78A621A821319723004DA046 /* SuspendWindowViewController.m */; };
 		78A621BB21331B3C004DA046 /* CJLogView.m in Sources */ = {isa = PBXBuildFile; fileRef = 78A621B921331B3B004DA046 /* CJLogView.m */; };
 		78A621BE2135A198004DA046 /* CJLogSuspendWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 78A621BD2135A198004DA046 /* CJLogSuspendWindow.m */; };
@@ -309,7 +312,7 @@
 		807F126020B507A30008B748 /* ViewAnimateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 807F125E20B507A30008B748 /* ViewAnimateViewController.m */; };
 		807F126C20B5123A0008B748 /* animationBg02.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 807F126A20B512390008B748 /* animationBg02.jpg */; };
 		807F127020B51C390008B748 /* animationBg01.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 807F126F20B51C390008B748 /* animationBg01.jpg */; };
-		808B977020B7B33200910E45 /* CJAppLastUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 808B976E20B7B33200910E45 /* CJAppLastUtil.m */; };
+		808B977020B7B33200910E45 /* CJAppLastInfoManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 808B976E20B7B33200910E45 /* CJAppLastInfoManager.m */; };
 		808B977420B7B54600910E45 /* CJAppVersionUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 808B977320B7B54500910E45 /* CJAppVersionUtil.m */; };
 		808B983320B7F73300910E45 /* LogUtilViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 808B983120B7F73300910E45 /* LogUtilViewController.m */; };
 		808B983420B7F73300910E45 /* LogUtilViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 808B983220B7F73300910E45 /* LogUtilViewController.xib */; };
@@ -574,8 +577,8 @@
 		78590D79215CA4A300F45AD5 /* UIViewController+CJSystemBackButtonHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+CJSystemBackButtonHandler.m"; sourceTree = "<group>"; };
 		78590D7A215CA4A300F45AD5 /* UIViewController+CJCustomBackBarButtonItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+CJCustomBackBarButtonItem.h"; sourceTree = "<group>"; };
 		78590D7B215CA4A300F45AD5 /* UIViewController+CJSystemBackButtonHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+CJSystemBackButtonHandler.h"; sourceTree = "<group>"; };
-		786C516E215F6E8200C3F6BE /* CJAppInfo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CJAppInfo.h; sourceTree = "<group>"; };
-		786C516F215F6E8200C3F6BE /* CJAppInfo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CJAppInfo.m; sourceTree = "<group>"; };
+		786C516E215F6E8200C3F6BE /* CJAppLastInfo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CJAppLastInfo.h; sourceTree = "<group>"; };
+		786C516F215F6E8200C3F6BE /* CJAppLastInfo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CJAppLastInfo.m; sourceTree = "<group>"; };
 		787FDB4B20500B00008A46E3 /* SearchBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchBarViewController.h; sourceTree = "<group>"; };
 		787FDB4C20500B00008A46E3 /* SearchBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchBarViewController.m; sourceTree = "<group>"; };
 		787FDB4D20500B00008A46E3 /* SearchBarViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SearchBarViewController.xib; sourceTree = "<group>"; };
@@ -754,6 +757,12 @@
 		78A0D03D216B319700EFAD67 /* CJBadgeButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJBadgeButton.m; sourceTree = "<group>"; };
 		78A0D041216B32D000EFAD67 /* BadgeButtonViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BadgeButtonViewController.h; sourceTree = "<group>"; };
 		78A0D042216B32D100EFAD67 /* BadgeButtonViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BadgeButtonViewController.m; sourceTree = "<group>"; };
+		78A0D048216B5B0E00EFAD67 /* CJAppLastUserManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJAppLastUserManager.m; sourceTree = "<group>"; };
+		78A0D049216B5B0F00EFAD67 /* CJAppLastUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJAppLastUser.m; sourceTree = "<group>"; };
+		78A0D04A216B5B0F00EFAD67 /* CJAppLastUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJAppLastUser.h; sourceTree = "<group>"; };
+		78A0D04B216B5B0F00EFAD67 /* CJAppLastUserManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJAppLastUserManager.h; sourceTree = "<group>"; };
+		78A0D04F216B5CF600EFAD67 /* DemoAppLastUtil.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DemoAppLastUtil.h; sourceTree = "<group>"; };
+		78A0D050216B5CF600EFAD67 /* DemoAppLastUtil.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DemoAppLastUtil.m; sourceTree = "<group>"; };
 		78A621A721319723004DA046 /* SuspendWindowViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SuspendWindowViewController.h; sourceTree = "<group>"; };
 		78A621A821319723004DA046 /* SuspendWindowViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SuspendWindowViewController.m; sourceTree = "<group>"; };
 		78A621B921331B3B004DA046 /* CJLogView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJLogView.m; sourceTree = "<group>"; };
@@ -973,8 +982,8 @@
 		807F125E20B507A30008B748 /* ViewAnimateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewAnimateViewController.m; sourceTree = "<group>"; };
 		807F126A20B512390008B748 /* animationBg02.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = animationBg02.jpg; sourceTree = "<group>"; };
 		807F126F20B51C390008B748 /* animationBg01.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = animationBg01.jpg; sourceTree = "<group>"; };
-		808B976E20B7B33200910E45 /* CJAppLastUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJAppLastUtil.m; sourceTree = "<group>"; };
-		808B976F20B7B33200910E45 /* CJAppLastUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJAppLastUtil.h; sourceTree = "<group>"; };
+		808B976E20B7B33200910E45 /* CJAppLastInfoManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJAppLastInfoManager.m; sourceTree = "<group>"; };
+		808B976F20B7B33200910E45 /* CJAppLastInfoManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJAppLastInfoManager.h; sourceTree = "<group>"; };
 		808B977220B7B54500910E45 /* CJAppVersionUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJAppVersionUtil.h; sourceTree = "<group>"; };
 		808B977320B7B54500910E45 /* CJAppVersionUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJAppVersionUtil.m; sourceTree = "<group>"; };
 		808B983020B7F73300910E45 /* LogUtilViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LogUtilViewController.h; sourceTree = "<group>"; };
@@ -2196,6 +2205,15 @@
 			path = CJBadgeButton;
 			sourceTree = "<group>";
 		};
+		78A0D052216B975700EFAD67 /* AppLastUtil */ = {
+			isa = PBXGroup;
+			children = (
+				78A0D04F216B5CF600EFAD67 /* DemoAppLastUtil.h */,
+				78A0D050216B5CF600EFAD67 /* DemoAppLastUtil.m */,
+			);
+			path = AppLastUtil;
+			sourceTree = "<group>";
+		};
 		78A621D72135C713004DA046 /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -2621,10 +2639,14 @@
 		808B976D20B7B33200910E45 /* CJAppLastUtil */ = {
 			isa = PBXGroup;
 			children = (
-				808B976F20B7B33200910E45 /* CJAppLastUtil.h */,
-				808B976E20B7B33200910E45 /* CJAppLastUtil.m */,
-				786C516E215F6E8200C3F6BE /* CJAppInfo.h */,
-				786C516F215F6E8200C3F6BE /* CJAppInfo.m */,
+				786C516E215F6E8200C3F6BE /* CJAppLastInfo.h */,
+				786C516F215F6E8200C3F6BE /* CJAppLastInfo.m */,
+				808B976F20B7B33200910E45 /* CJAppLastInfoManager.h */,
+				808B976E20B7B33200910E45 /* CJAppLastInfoManager.m */,
+				78A0D04A216B5B0F00EFAD67 /* CJAppLastUser.h */,
+				78A0D049216B5B0F00EFAD67 /* CJAppLastUser.m */,
+				78A0D04B216B5B0F00EFAD67 /* CJAppLastUserManager.h */,
+				78A0D048216B5B0E00EFAD67 /* CJAppLastUserManager.m */,
 			);
 			path = CJAppLastUtil;
 			sourceTree = "<group>";
@@ -3424,6 +3446,7 @@
 			children = (
 				80FF91BE1FC581DD00E437CF /* UtilHomeViewController.h */,
 				80FF91BF1FC581DD00E437CF /* UtilHomeViewController.m */,
+				78A0D052216B975700EFAD67 /* AppLastUtil */,
 				808E3C442109C5B0009E3924 /* StringUtilDemo */,
 				8008D7CD20E5CF5700F98EF6 /* CallSystemUtilDemo */,
 				8060C48420E0D5EF0093B14E /* ValueUtilDemo */,
@@ -3880,6 +3903,7 @@
 				789CAF281FB612B700AF8CD4 /* CJDefaultTableViewCell.m in Sources */,
 				803323C120299AD7001DACF1 /* cvSupplementaryFoot.m in Sources */,
 				803323C220299AD7001DACF1 /* cvSupplementaryHead.m in Sources */,
+				78A0D04C216B5B0F00EFAD67 /* CJAppLastUserManager.m in Sources */,
 				78A621D12135BC82004DA046 /* LogSuspendWindowViewController.m in Sources */,
 				78B6C2EE2159D8AF00D5864E /* DemoBusPassengerOrderModel.m in Sources */,
 				7850B72D2093809F008F4A21 /* UIView+CJDragAction.m in Sources */,
@@ -3929,7 +3953,7 @@
 				801F75DC20A040D800A2E027 /* BBXDUserNameTextField.m in Sources */,
 				808B983320B7F73300910E45 /* LogUtilViewController.m in Sources */,
 				784A724A214CD34400F8D144 /* DeviceCJHelper.m in Sources */,
-				808B977020B7B33200910E45 /* CJAppLastUtil.m in Sources */,
+				808B977020B7B33200910E45 /* CJAppLastInfoManager.m in Sources */,
 				789CAF401FB612B700AF8CD4 /* MyUserInfoScaleHeadView.m in Sources */,
 				8073D9BD201877920031CE72 /* CJModuleModel.m in Sources */,
 				789CAF231FB612B700AF8CD4 /* MyEqualCellSizeCollectionView.m in Sources */,
@@ -3950,7 +3974,7 @@
 				807C4F8620C65DA5002EAC12 /* CJConvertUtil.m in Sources */,
 				80E7E75020AD2C8B000F762D /* UIImage+CJBase64.m in Sources */,
 				80E7E75C20AD2D4D000F762D /* CJQRCodeUtil.m in Sources */,
-				786C5170215F6E8200C3F6BE /* CJAppInfo.m in Sources */,
+				786C5170215F6E8200C3F6BE /* CJAppLastInfo.m in Sources */,
 				789CAF411FB612B700AF8CD4 /* CJKeyboardAvoidingScrollView.m in Sources */,
 				80E7E73320AD2AEA000F762D /* UIButton+CJFixMultiClick.m in Sources */,
 				789CAF671FB612B700AF8CD4 /* UITableView+CJEmptyView.m in Sources */,
@@ -4108,6 +4132,7 @@
 				80D49F8320BE56D2003F642C /* MyADModel.m in Sources */,
 				80FF91EC1FC6739D00E437CF /* CJDateOtherUtil.m in Sources */,
 				80FF903C1FC5649F00E437CF /* KeyboardAvoidingViewController.m in Sources */,
+				78A0D051216B5CF600EFAD67 /* DemoAppLastUtil.m in Sources */,
 				80FF90861FC5649F00E437CF /* TvDemo_Complex.m in Sources */,
 				789CAF3A1FB612B700AF8CD4 /* CJRefreshFooter.m in Sources */,
 				80FF90881FC5649F00E437CF /* OpenTableViewController1.m in Sources */,
@@ -4121,6 +4146,7 @@
 				80E7E75320AD2C8B000F762D /* UIImage+CJCreate.m in Sources */,
 				789CAF2A1FB612B700AF8CD4 /* CJRightDetailTableViewCell.m in Sources */,
 				80E7E73520AD2AEA000F762D /* UIButton+CJUpDownStructure.m in Sources */,
+				78A0D04D216B5B0F00EFAD67 /* CJAppLastUser.m in Sources */,
 				80FF90AD1FC5649F00E437CF /* NavigationBarViewController.m in Sources */,
 				803323BC20299AD7001DACF1 /* Detail.m in Sources */,
 				80FF90A81FC5649F00E437CF /* ImageChangeColorViewController.m in Sources */,

@@ -1,21 +1,20 @@
 //
-//  CJAppInfo.m
+//  CJAppLastInfo.m
 //  CJUIKitDemo
 //
 //  Created by ciyouzen on 2018/9/29.
 //  Copyright © 2018年 dvlproad. All rights reserved.
 //
 
-#import "CJAppInfo.h"
+#import "CJAppLastInfo.h"
 
-@implementation CJAppInfo
+@implementation CJAppLastInfo
 
 - (instancetype)initWithCoder:(NSCoder *)aDecoder {
     self = [super init];
     if (self) {
         self.lastAppVersion = [aDecoder decodeObjectForKey:@"lastAppVersion"];
         self.lastAppBuild = [aDecoder decodeObjectForKey:@"lastAppBuild"];
-        self.lastAppRootViewControllerType = (CJRootViewControllerType)[[aDecoder decodeObjectForKey:@"lastAppRootViewControllerType"] integerValue];
         self.otherUserInfo = [aDecoder decodeObjectForKey:@"otherUserInfo"];
     }
     return self;
@@ -24,7 +23,6 @@
 - (void)encodeWithCoder:(NSCoder *)aCoder {
     [aCoder encodeObject:self.lastAppVersion forKey:@"lastAppVersion"];
     [aCoder encodeObject:self.lastAppBuild forKey:@"lastAppBuild"];
-    [aCoder encodeObject:@(self.lastAppRootViewControllerType) forKey:@"lastAppRootViewControllerType"];
     [aCoder encodeObject:self.otherUserInfo forKey:@"otherUserInfo"];
 }
 

@@ -13,7 +13,8 @@
 #import "CJLogUtil.h"
 #import "CJAppLog.h"
 
-#import "CJAppLastUtil.h"
+#import "CJAppLastInfoManager.h"
+#import "CJAppLastUserManager.h"
 
 #import "CJCallUtil.h"
 

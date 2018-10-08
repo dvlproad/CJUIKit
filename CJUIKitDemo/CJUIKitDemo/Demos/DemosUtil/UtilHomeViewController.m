@@ -8,6 +8,9 @@
 
 #import "UtilHomeViewController.h"
 
+//AppLast
+#import "DemoAppLastUtil.h"
+
 //弹窗
 #import "ToastViewController.h"
 #import "AlertViewController.h"
@@ -60,6 +63,20 @@
     
     
     NSMutableArray *sectionDataModels = [[NSMutableArray alloc] init];
+    //AppLast
+    {
+        CJSectionDataModel *sectionDataModel = [[CJSectionDataModel alloc] init];
+        sectionDataModel.theme = @"AppLast相关";
+        {
+            CJModuleModel *toastUtilModule = [[CJModuleModel alloc] init];
+            toastUtilModule.title = @"AppLast(点击使得引导页)";
+            toastUtilModule.selector = @selector(readOverGuide);
+            [sectionDataModel.values addObject:toastUtilModule];
+        }
+        
+        [sectionDataModels addObject:sectionDataModel];
+    }
+    
     //弹窗
     {
         CJSectionDataModel *sectionDataModel = [[CJSectionDataModel alloc] init];
@@ -184,7 +201,7 @@
         {
             CJModuleModel *QRCodeModule = [[CJModuleModel alloc] init];
             QRCodeModule.title = @"CJRandomNameUtil(混淆名生成器)";
-            QRCodeModule.classEntry = [CJRandomNameUtil class];
+            QRCodeModule.selector = @selector(readOverGuide);
             [sectionDataModel.values addObject:QRCodeModule];
         }
         
@@ -228,18 +245,14 @@
     //NSLog(@"didSelectRowAtIndexPath = %ld %ld", indexPath.section, indexPath.row);
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
-    if (indexPath.section == 5) {
-        if (indexPath.row == 0) {
-            NSString *aaa = [CJRandomNameUtil randomMethodName];
-            NSString *bbb = [CJRandomNameUtil randomClassName];
-            NSLog(@"aaa = %@, bbb = %@", aaa, bbb);
-            return;
-        }
-    }
-    
     CJSectionDataModel *sectionDataModel = [self.sectionDataModels objectAtIndex:indexPath.section];
     NSArray *dataModels = sectionDataModel.values;
     CJModuleModel *moduleModel = [dataModels objectAtIndex:indexPath.row];
+    
+    if (moduleModel.selector) {
+        [self performSelectorOnMainThread:moduleModel.selector withObject:nil waitUntilDone:NO];
+        return;
+    }
     
     
     Class classEntry = moduleModel.classEntry;
@@ -264,6 +277,16 @@
     viewController.title = NSLocalizedString(moduleModel.title, nil);
     viewController.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:viewController animated:YES];
+}
+
+- (void)readOverGuide {
+    [DemoAppLastUtil readOverGuide];
+}
+
+- (void)randomName {
+    NSString *aaa = [CJRandomNameUtil randomMethodName];
+    NSString *bbb = [CJRandomNameUtil randomClassName];
+    NSLog(@"aaa = %@, bbb = %@", aaa, bbb);
 }
 
 - (void)didReceiveMemoryWarning {

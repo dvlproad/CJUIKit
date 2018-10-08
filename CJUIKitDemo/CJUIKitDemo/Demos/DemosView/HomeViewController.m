@@ -372,6 +372,11 @@
     NSArray *dataModels = sectionDataModel.values;
     CJModuleModel *moduleModel = [dataModels objectAtIndex:indexPath.row];
     
+    if (moduleModel.selector) {
+        [self performSelectorOnMainThread:moduleModel.selector withObject:nil waitUntilDone:NO];
+        return;
+    }
+    
     Class classEntry = moduleModel.classEntry;
     NSString *nibName = NSStringFromClass(moduleModel.classEntry);
     
@@ -393,7 +398,6 @@
         if ([clsString isEqualToString:NSStringFromClass([UIViewController class])]) {
             viewController.view.backgroundColor = [UIColor whiteColor];
         }
-        
         
     } else if ([classEntry isSubclassOfClass:[NavigationBarBaseViewController class]]) {
         viewController = [[classEntry alloc] initWithNibName:@"NavigationBarBaseViewController" bundle:nil];
