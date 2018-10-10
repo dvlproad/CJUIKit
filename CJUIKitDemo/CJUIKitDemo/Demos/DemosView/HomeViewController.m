@@ -30,6 +30,9 @@
 #import "FloatingWindowViewController.h"
 #import "SuspendWindowViewController.h"
 
+//UIViewController
+#import "SystemComposeViewController.h"
+
 #import "ButtonViewController.h"
 
 #import "TextFieldViewController.h"
@@ -199,6 +202,12 @@
             CJModuleModel *ViewCategoryModule = [[CJModuleModel alloc] init];
             ViewCategoryModule.title = @"BackBarButtonItem (返回按钮事件)";
             ViewCategoryModule.classEntry = [SampleViewController class];
+            [sectionDataModel.values addObject:ViewCategoryModule];
+        }
+        {
+            CJModuleModel *ViewCategoryModule = [[CJModuleModel alloc] init];
+            ViewCategoryModule.title = @"SystemComposeViewController";
+            ViewCategoryModule.classEntry = [SystemComposeViewController class];
             [sectionDataModel.values addObject:ViewCategoryModule];
         }
         [sectionDataModels addObject:sectionDataModel];
@@ -387,7 +396,8 @@
                                       NSStringFromClass([NavigationBarRemoveUnderlineViewController class]),
                                       NSStringFromClass([FloatingWindowViewController class]),
                                       NSStringFromClass([SuspendWindowViewController class]),
-                                      NSStringFromClass([ColorViewController class])
+                                      NSStringFromClass([ColorViewController class]),
+                                      NSStringFromClass([SystemComposeViewController class])
                                     ];
     
     NSString *clsString = NSStringFromClass(moduleModel.classEntry);

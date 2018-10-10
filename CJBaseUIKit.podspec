@@ -121,11 +121,6 @@ Pod::Spec.new do |s|
     ss.source_files = "CJBaseUIKit/UIButton/**/*.{h,m}"
   end
 
-  s.subspec 'CJImageView' do |ss|
-    ss.source_files = "CJBaseUIKit/CJImageView/**/*.{h,m}"
-    # ss.resources = "CJBaseUIKit/CJImageView/**/*.{png,xib}"
-  end
-
   s.subspec 'UITextField' do |ss|
     ss.source_files = "CJBaseUIKit/UITextField/**/*.{h,m}"
   end
@@ -153,7 +148,7 @@ Pod::Spec.new do |s|
     ss.subspec 'CJBaseTableViewCell' do |sss|
       sss.source_files = "CJBaseUIKit/CJBaseScrollView/CJTableView/CJBaseTableViewCell/**/*.{h,m}"
       sss.resources = "CJBaseUIKit/CJBaseScrollView/CJTableView/CJBaseTableViewCell/**/*.{png}"
-      sss.dependency "CJBaseUIKit/CJImageView"
+      sss.dependency "CJBaseUIKit/UIButton"
     end
 
     ss.subspec 'CJBaseTableViewHeaderFooterView' do |sss|

@@ -10,7 +10,6 @@
 
 @implementation CJCallUtil
 
-
 + (void)callPhoneWithNum:(NSString *)phoneNum atView:(UIView *)atView
 {
     //去掉特殊字符
@@ -23,7 +22,9 @@
     
     phoneNum = [regular stringByReplacingMatchesInString:phoneNum options:0 range:NSMakeRange(0, [phoneNum length]) withTemplate:@""];
     
-    
+#if TARGET_IPHONE_SIMULATOR
+    NSLog(@"Warning:模拟器无法拨打电话,请使用真机测试(附电话：%@)", phoneNum);
+#else
     NSMutableString *telString = [[NSMutableString alloc] initWithFormat:@"tel:%@", phoneNum];
     UIWebView *callWebview = [[UIWebView alloc] init];
     
@@ -31,6 +32,7 @@
     NSURLRequest *URLRequest = [NSURLRequest requestWithURL:URL];
     [callWebview loadRequest:URLRequest];
     [atView addSubview:callWebview];
+#endif
 }
 
 @end

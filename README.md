@@ -233,9 +233,11 @@ CJBaseUIKit/UIButton：按钮 及 CJBadgeButton
 > 1. 调整项目结构
 
 #### CJBaseUIKit
-* 2018-10-08 V0.2.9
+
+* 2018-10-10 V0.2.9
 
 > 1. 去除CJBadgeImageView，改为CJBadgeButton
+> 2. 添加UIViewController+CJSystemComposeView，处理添加childViewController以及转换的方法；
 
 * 2018-09-27 V0.2.6
 

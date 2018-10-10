@@ -36,6 +36,9 @@
 
 
 #pragma mark - User
+///保存用户名和密码
++ (void)saveAccount:(NSString *)account withPassword:(NSString *)password;
+
 ///获取最后登录的账号信息
 + (CJAppLastUser *)getLastLoginUser;
 
