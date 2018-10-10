@@ -12,12 +12,6 @@
 //UIColor
 #import "UIColor+CJHex.h"
 
-//UIImageView
-#import "CJBadgeImageView.h"
-
-//CJChooseTextTextField
-#import "CJChooseTextTextField.h"
-
 //UITextView
 #import "CJTextView.h"
 
