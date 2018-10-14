@@ -16,12 +16,12 @@
     
 }
 /**
- *  在Service和UserDefault中保存账号account以及其对应的密码password
+ *  在Service和UserDefault中保存账号account以及其对应的accessToken
  *
- *  @param account  要保存的账号
- *  @param password 要保存的账号的密码
+ *  @param account      account
+ *  @param accessToken  accessToken
  */
-+ (void)saveAccount:(NSString *)account withPassword:(NSString *)password;
++ (void)saveAccount:(NSString *)account withAccessToken:(NSString *)accessToken;
 
 
 /**

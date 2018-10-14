@@ -28,6 +28,9 @@
 ///白色背景按钮
 + (UIButton *)whiteButton;
 
+///倒计时按钮
++ (UIButton *)timerButton;
+
 + (UIButton *)disableButton;
 
 + (CJBadgeButton *)defaultBadgeButton;

@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "CJMJRefreshComponent.h"
 
-@interface CJMJRefreshViewController : UIViewController<UITableViewDataSource, UITableViewDelegate> {
+@interface CJMJRefreshViewController : UIViewController <UITableViewDataSource, UITableViewDelegate> {
     
 }
 

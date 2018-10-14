@@ -66,7 +66,7 @@
     NSInteger viewControllerCount = [self.cjComponentViewControllers count];
     NSInteger newIndex = rand()%viewControllerCount;
     [self cjReplaceChildViewControllerIndex:self.cjCurrentSelectedIndex newChildViewControllerIndex:newIndex completeBlock:^(NSInteger index_cur) {
-        //        [self doSomethingToCon_whereIndex:index_cur];
+//        [self doSomethingToCon_whereIndex:index_cur];
     }];
 }
 

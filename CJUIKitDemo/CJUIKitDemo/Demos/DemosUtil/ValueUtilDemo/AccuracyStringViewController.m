@@ -36,11 +36,19 @@ typedef NS_ENUM(NSUInteger, ValidateStringType) {
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    self.navigationItem.title = NSLocalizedString(@"数值处理(取整、去尾0等)", nil);
+    self.view.backgroundColor = [UIColor whiteColor];
     
-    [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"cell"];
-    [self.tableView registerClass:[ValidateStringTableViewCell class] forCellReuseIdentifier:@"ValidateStringTableViewCell"];
-    self.tableView.dataSource = self;
-    self.tableView.delegate = self;
+    UITableView *tableView = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStyleGrouped];
+    [tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"cell"];
+    [tableView registerClass:[ValidateStringTableViewCell class] forCellReuseIdentifier:@"ValidateStringTableViewCell"];
+    tableView.dataSource = self;
+    tableView.delegate = self;
+    [self.view addSubview:tableView];
+    [tableView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.edges.mas_equalTo(self.view);
+    }];
+    self.tableView = tableView;
     
     NSMutableArray *sectionDataModels = [[NSMutableArray alloc] init];
     {

@@ -17,8 +17,8 @@ static NSString * const kCJLastLoginAccount = @"cj_lastLoginAccount";
 @implementation CJAppLastUserManager
 
 /* 完整的描述请参见文件头部 */
-+ (void)saveAccount:(NSString *)account withPassword:(NSString *)password {
-    [SAMKeychain setPassword:password forService:kCJKeychainServiceName account:account];
++ (void)saveAccount:(NSString *)account withAccessToken:(NSString *)accessToken {
+    [SAMKeychain setPassword:accessToken forService:kCJKeychainServiceName account:account];
     
     //在UserDefaults中保存最后一次登录的账号（默认显示或者自动登录的时候有用）
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
@@ -31,17 +31,17 @@ static NSString * const kCJLastLoginAccount = @"cj_lastLoginAccount";
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
     NSString *userName = [userDefaults valueForKey:kCJLastLoginAccount];
     
-    NSString *password = [self getKeychainPasswordForAccount:userName];
+    NSString *accessToken = [self getKeychainAccessTokenForAccount:userName];
     
     CJAppLastUser *user = [[CJAppLastUser alloc] init];
     user.lastLoginUserName = userName;
-    user.lastLoginPassword = password;
+    user.lastLoginAccessToken = accessToken;
     
     return user;
 }
 
 ///从钥匙串中获取指定账号的密码（如果该账号的密码有被保存，则返回该账号密码，如果该账号密码在钥匙串中被删了，或者钥匙串被删了，则返回空。）
-+ (NSString *)getKeychainPasswordForAccount:(NSString *)queryAccount {
++ (NSString *)getKeychainAccessTokenForAccount:(NSString *)queryAccount {
     BOOL isContain = [self isKeychainContainAccount:queryAccount];
     if (!isContain) {
         return nil;

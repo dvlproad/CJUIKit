@@ -19,6 +19,7 @@
     return _sharedInstance;
 }
 
+///蓝色背景按钮
 + (UIButton *)blueButton {
     UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
     button.layer.masksToBounds = YES;
@@ -37,6 +38,7 @@
     return button;
 }
 
+///白色背景按钮
 + (UIButton *)whiteButton {
     UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
     button.layer.masksToBounds = YES;
@@ -54,6 +56,21 @@
     button.cjNormalBGColor = CJColorFromHexString(@"#ffffff");
     button.cjHighlightedBGColor = CJColorFromHexString(@"#e5e5e5");
     button.cjDisabledBGColor = CJColorFromHexString(@"#d3d3d5");
+    
+    return button;
+}
+
+///倒计时按钮
++ (UIButton *)timerButton {
+    UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
+    button.layer.masksToBounds = YES;
+    button.layer.cornerRadius = 5;
+    [button setTitleColor:CJColorFromHexString(@"#ffffff") forState:UIControlStateNormal];
+    [button setTitleColor:CJColorFromHexString(@"#01adfe") forState:UIControlStateDisabled];
+    
+    button.cjNormalBGColor = CJColorFromHexString(@"#01adfe");
+    button.cjHighlightedBGColor = CJColorFromHexString(@"#1393d7");
+    button.cjDisabledBGColor = CJColorFromHexString(@"#ffffff");
     
     return button;
 }

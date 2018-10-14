@@ -3,6 +3,7 @@ PODS:
   - CJFile/CJFileManager (0.0.9)
   - CJFile/CJFileModel (0.0.9)
   - CJPicker (1.3.2)
+  - CJPopupView/CJPopoverView (2.1.0)
   - DZNEmptyDataSet (1.8.1)
   - Mantle (2.1.0):
     - Mantle/extobjc (= 2.1.0)
@@ -31,6 +32,7 @@ DEPENDENCIES:
   - CJFile/CJFileManager
   - CJFile/CJFileModel
   - CJPicker (~> 1.3.2)
+  - CJPopupView/CJPopoverView
   - DZNEmptyDataSet
   - Mantle (~> 2.1.0)
   - Masonry
@@ -53,6 +55,7 @@ SPEC REPOS:
     - AFNetworking
     - CJFile
     - CJPicker
+    - CJPopupView
     - DZNEmptyDataSet
     - Mantle
     - Masonry
@@ -75,6 +78,7 @@ SPEC CHECKSUMS:
   AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
   CJFile: 6c1e6d55b3b94e8afbaa9f413f131301d15fdc48
   CJPicker: c33099d47323271b91c2ce112976d1bee19a70ce
+  CJPopupView: c7685f6a0225a89c72d97ea946f2816b5442abaf
   DZNEmptyDataSet: 9525833b9e68ac21c30253e1d3d7076cc828eaa7
   Mantle: 2fa750afa478cd625a94230fbf1c13462f29395b
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
@@ -93,6 +97,6 @@ SPEC CHECKSUMS:
   WebViewJavascriptBridge: 7f5bc4d3581e672e8f32bd0f812d54bc69bb8e29
   YYText: 5c461d709e24d55a182d1441c41dc639a18a4849
 
-PODFILE CHECKSUM: 2cee84fc4cbf0e0e0dff36548d5d61d8d34d49be
+PODFILE CHECKSUM: 791196a54b59000986f4e9cce64e10f1221e6773
 
 COCOAPODS: 1.5.3

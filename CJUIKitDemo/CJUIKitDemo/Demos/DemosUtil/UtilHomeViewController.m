@@ -37,6 +37,10 @@
 //混淆名生成器
 #import "CJRandomNameUtil.h"
 
+//Knowledge
+#import "SemaphoreGateKeeperViewController.h"
+#import "LockGateKeeperViewController.h"
+
 @interface UtilHomeViewController () <UITableViewDataSource, UITableViewDelegate> {
     
 }
@@ -48,8 +52,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    
     self.navigationItem.title = NSLocalizedString(@"Util首页", nil); //知识点:使得tabBar中的title可以和显示在顶部的title保持各自
+    self.view.backgroundColor = [UIColor whiteColor];
     
     UITableView *tableView = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStyleGrouped];
     [tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"cell"];
@@ -72,6 +76,26 @@
             toastUtilModule.title = @"AppLast(点击使得引导页)";
             toastUtilModule.selector = @selector(readOverGuide);
             [sectionDataModel.values addObject:toastUtilModule];
+        }
+        
+        [sectionDataModels addObject:sectionDataModel];
+    }
+    
+    //Knowledge
+    {
+        CJSectionDataModel *sectionDataModel = [[CJSectionDataModel alloc] init];
+        sectionDataModel.theme = @"Knowledge相关";
+        {
+            CJModuleModel *QRCodeModule = [[CJModuleModel alloc] init];
+            QRCodeModule.title = @"SemaphoreGateKeeper";
+            QRCodeModule.classEntry = [SemaphoreGateKeeperViewController class];
+            [sectionDataModel.values addObject:QRCodeModule];
+        }
+        {
+            CJModuleModel *QRCodeModule = [[CJModuleModel alloc] init];
+            QRCodeModule.title = @"LockGateKeeper";
+            QRCodeModule.classEntry = [LockGateKeeperViewController class];
+            [sectionDataModel.values addObject:QRCodeModule];
         }
         
         [sectionDataModels addObject:sectionDataModel];
@@ -261,18 +285,19 @@
     
     UIViewController *viewController = nil;
     
-    NSArray *noxibViewControllers = @[NSStringFromClass([UIViewController class]),
-                                      NSStringFromClass([StringEventViewController class]),
-                                      NSStringFromClass([LogSuspendWindowViewController class]),
-                                      ];
+    NSArray *xibViewControllers = @[NSStringFromClass([LogUtilViewController class]),
+                                    NSStringFromClass([LogViewViewController class]),
+                                    NSStringFromClass([DataUtilViewController class]),
+                                    NSStringFromClass([KeyboardUtilViewController class]),
+                                    ];
     
     NSString *clsString = NSStringFromClass(moduleModel.classEntry);
-    if ([noxibViewControllers containsObject:clsString])
+    if ([xibViewControllers containsObject:clsString])
     {
+        viewController = [[classEntry alloc] initWithNibName:nibName bundle:nil];
+    } else {
         viewController = [[classEntry alloc] init];
         viewController.view.backgroundColor = [UIColor whiteColor];
-    } else {
-        viewController = [[classEntry alloc] initWithNibName:nibName bundle:nil];
     }
     viewController.title = NSLocalizedString(moduleModel.title, nil);
     viewController.hidesBottomBarWhenPushed = YES;

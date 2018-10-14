@@ -30,6 +30,18 @@ typedef NS_ENUM(NSUInteger, CJFileSizeUnitType) {
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    self.navigationItem.title = NSLocalizedString(@"DeviceInfo", nil);
+    self.view.backgroundColor = [UIColor whiteColor];
+    
+    UITableView *tableView = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStyleGrouped];
+    [tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"cell"];
+    tableView.dataSource = self;
+    tableView.delegate = self;
+    [self.view addSubview:tableView];
+    [tableView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.edges.mas_equalTo(self.view);
+    }];
+    self.tableView = tableView;
     
     NSMutableArray *array = [[NSMutableArray alloc] init];
     
@@ -144,13 +156,6 @@ typedef NS_ENUM(NSUInteger, CJFileSizeUnitType) {
     }
     
     self.array = array;
-    
-    self.tableView.dataSource = self;
-    self.tableView.delegate = self;
-    
-//    UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue2 reuseIdentifier:@"cell"];
-//    [self.tableView registerClass:[cell class] forCellReuseIdentifier:@"cell"];
-    
 }
 
 #pragma mark - UITableViewDataSource & UITableViewDelegate

@@ -68,12 +68,16 @@
 
 
 #pragma mark - User
-+ (void)saveAccount:(NSString *)account withPassword:(NSString *)password {
-    [CJAppLastUserManager saveAccount:account withPassword:password];
++ (void)saveAccount:(NSString *)account withAccessToken:(NSString *)accessToken {
+    [CJAppLastUserManager saveAccount:account withAccessToken:accessToken];
 }
 
 + (CJAppLastUser *)getLastLoginUser {
     return [CJAppLastUserManager getLastLoginUser];
+}
+
++ (void)deleteAccountFromKeychain:(NSString *)account {
+    [CJAppLastUserManager deleteAccountFromKeychain:account];
 }
 
 @end
