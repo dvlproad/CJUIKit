@@ -266,7 +266,9 @@
             [alertView addBottomButtonWithHeight:50 cancelButtonTitle:cancelButtonTitle okButtonTitle:okButtonTitle cancelHandle:nil okHandle:^{
                 NSLog(@"点击了确认按钮");
             }];
-            [alertView showWithShouldFitHeight:YES];
+            
+            UIColor *blankBGColor = [UIColor colorWithRed:.16 green:.17 blue:.21 alpha:.6];
+            [alertView showWithShouldFitHeight:YES blankBGColor:blankBGColor];
         }
         
         if (indexPath.row == 4) {
@@ -296,7 +298,9 @@
             } okHandle:^{
                 NSLog(@"点击了确认按钮");
             }];
-            [alertView showWithShouldFitHeight:YES];
+            
+            UIColor *blankBGColor = [UIColor colorWithRed:.16 green:.17 blue:.21 alpha:.6];
+            [alertView showWithShouldFitHeight:YES blankBGColor:blankBGColor];
         }
     } else if (indexPath.section == 2) {
         if (indexPath.row == 0) {
@@ -378,7 +382,9 @@
     NSString *okButtonTitle = NSLocalizedString(@"我知道了", nil);
     
     __weak typeof(self)weakSelf = self;
-    [CJAlert showCJAlertViewWithSize:popupViewSize flagImage:flagImage title:title message:message cancelButtonTitle:cancelButtonTitle okButtonTitle:okButtonTitle cancelHandle:nil okHandle:^{
+    
+    UIColor *blankBGColor = [UIColor colorWithRed:.16 green:.17 blue:.21 alpha:.6];
+    [CJAlert showCJAlertViewWithSize:popupViewSize flagImage:flagImage title:title message:message blankBGColor:blankBGColor cancelButtonTitle:cancelButtonTitle okButtonTitle:okButtonTitle cancelHandle:nil okHandle:^{
         NSLog(@"点击了确认按钮");
         [weakSelf continueScanning];
     }];
@@ -394,7 +400,8 @@
     NSString *okButtonTitle = NSLocalizedString(@"我知道了", nil);
     
     __weak typeof(self)weakSelf = self;
-    [CJAlert showCJAlertViewWithSize:popupViewSize flagImage:flagImage title:title message:message cancelButtonTitle:cancelButtonTitle okButtonTitle:okButtonTitle cancelHandle:nil okHandle:^{
+    UIColor *blankBGColor = [UIColor colorWithRed:.16 green:.17 blue:.21 alpha:.6];
+    [CJAlert showCJAlertViewWithSize:popupViewSize flagImage:flagImage title:title message:message blankBGColor:blankBGColor cancelButtonTitle:cancelButtonTitle okButtonTitle:okButtonTitle cancelHandle:nil okHandle:^{
         NSLog(@"点击了确认按钮");
         [weakSelf continueScanning];
     }];
@@ -410,7 +417,8 @@
     NSString *okButtonTitle = NSLocalizedString(@"我知道了", nil);
     
     __weak typeof(self)weakSelf = self;
-    [CJAlert showCJAlertViewWithSize:popupViewSize flagImage:flagImage title:title message:message cancelButtonTitle:cancelButtonTitle okButtonTitle:okButtonTitle cancelHandle:nil okHandle:^{
+    UIColor *blankBGColor = [UIColor colorWithRed:.16 green:.17 blue:.21 alpha:.6];
+    [CJAlert showCJAlertViewWithSize:popupViewSize flagImage:flagImage title:title message:message blankBGColor:blankBGColor cancelButtonTitle:cancelButtonTitle okButtonTitle:okButtonTitle cancelHandle:nil okHandle:^{
         NSLog(@"点击了确认按钮");
         [weakSelf continueScanning];
     }];
@@ -426,7 +434,8 @@
     NSString *okButtonTitle = NSLocalizedString(@"允许上车", nil);
     
     __weak typeof(self)weakSelf = self;
-    [CJAlert showCJAlertViewWithSize:popupViewSize flagImage:flagImage title:title message:message cancelButtonTitle:cancelButtonTitle okButtonTitle:okButtonTitle cancelHandle:^{
+    UIColor *blankBGColor = [UIColor colorWithRed:.16 green:.17 blue:.21 alpha:.6];
+    [CJAlert showCJAlertViewWithSize:popupViewSize flagImage:flagImage title:title message:message blankBGColor:blankBGColor cancelButtonTitle:cancelButtonTitle okButtonTitle:okButtonTitle cancelHandle:^{
         NSLog(@"点击了取消按钮");
     } okHandle:^{
         NSLog(@"点击了确认按钮");
@@ -469,7 +478,9 @@
         NSLog(@"点击了确认按钮");
         [self continueScanning];
     }];
-    [alertView showWithShouldFitHeight:YES];
+    
+    UIColor *blankBGColor = [UIColor colorWithRed:.16 green:.17 blue:.21 alpha:.6];
+    [alertView showWithShouldFitHeight:YES blankBGColor:blankBGColor];
     //*/
 }
 

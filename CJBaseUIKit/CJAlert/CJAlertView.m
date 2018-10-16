@@ -610,7 +610,7 @@
 }
 
 - (void)cancelButtonAction:(UIButton *)button {
-    [self dismiss];
+    [self dismissWithDelay:0];
     
     if (self.cancelHandle) {
         self.cancelHandle();
@@ -618,7 +618,7 @@
 }
 
 - (void)okButtonAction:(UIButton *)button {
-    [self dismiss];
+    [self dismissWithDelay:0];
     
     if (self.okHandle) {
         self.okHandle();
@@ -648,7 +648,8 @@
 }
 
 /* 完整的描述请参见文件头部 */
-- (void)showWithShouldFitHeight:(BOOL)shouldFitHeight {
+- (void)showWithShouldFitHeight:(BOOL)shouldFitHeight blankBGColor:(UIColor *)blankBGColor
+{
     [self checkAndUpdateVerticalInterval];
     
     CGFloat fixHeight = 0;
@@ -659,15 +660,16 @@
         fixHeight = self.size.height;
     }
 
-    [self showWithFixHeight:fixHeight];
+    [self showWithFixHeight:fixHeight blankBGColor:blankBGColor];
 }
 
 /**
  *  显示弹窗并且是以指定高度显示的
  *
- *  @param fixHeight 高度
+ *  @param fixHeight        高度
+ *  @param blankBGColor     空白区域的背景颜色
  */
-- (void)showWithFixHeight:(CGFloat)fixHeight {
+- (void)showWithFixHeight:(CGFloat)fixHeight blankBGColor:(UIColor *)blankBGColor {
     [self checkAndUpdateVerticalInterval];
     
     CGFloat minHeight = [self getMinHeight];
@@ -697,11 +699,14 @@
     
     [self cj_popupInCenterWindow:CJAnimationTypeNormal
                         withSize:popupViewSize
+                    blankBGColor:blankBGColor
                     showComplete:nil tapBlankComplete:nil];
 }
 
-- (void)dismiss {
-    [self cj_hidePopupViewWithAnimationType:CJAnimationTypeNone];
+- (void)dismissWithDelay:(CGFloat)delay {
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delay * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [self cj_hidePopupViewWithAnimationType:CJAnimationTypeNone];
+    });
 }
 
 ///获取当前alertView最小应有的高度值

@@ -44,12 +44,14 @@ typedef NS_ENUM(NSUInteger, CJAnimationType) {
  *  @param popupSuperview               弹出视图的父视图view
  *  @param popupViewOrigin              弹出视图的左上角origin坐标
  *  @param popupViewSize                弹出视图的size大小
+ *  @param blankBGColor                 空白区域的背景颜色
  *  @param showPopupViewCompleteBlock   显示弹出视图后的操作
  *  @param tapBlankViewCompleteBlock    点击空白区域后的操作(要自己执行cj_hidePopupView...来隐藏，因为有时候点击背景是不执行隐藏的)
  */
 - (void)cj_popupInView:(UIView *)popupSuperview
             withOrigin:(CGPoint)popupViewOrigin
                   size:(CGSize)popupViewSize
+          blankBGColor:(UIColor *)blankBGColor
           showComplete:(CJShowPopupViewCompleteBlock)showPopupViewCompleteBlock
       tapBlankComplete:(CJTapBlankViewCompleteBlock)tapBlankViewCompleteBlock;
 
@@ -57,13 +59,15 @@ typedef NS_ENUM(NSUInteger, CJAnimationType) {
 /**
  *  将当前视图弹出到window中央
  *
- *  @param animationType              弹出时候的动画采用的类型
- *  @param popupViewSize              弹出视图的大小
- *  @param showPopupViewCompleteBlock 显示弹出视图后的操作
- *  @param tapBlankViewCompleteBlock  点击空白区域后的操作(要自己执行cj_hidePopupView...来隐藏，因为有时候点击背景是不执行隐藏的)
+ *  @param animationType                弹出时候的动画采用的类型
+ *  @param popupViewSize                弹出视图的大小
+ *  @param blankBGColor                 空白区域的背景颜色
+ *  @param showPopupViewCompleteBlock   显示弹出视图后的操作
+ *  @param tapBlankViewCompleteBlock    点击空白区域后的操作(要自己执行cj_hidePopupView...来隐藏，因为有时候点击背景是不执行隐藏的)
  */
 - (void)cj_popupInCenterWindow:(CJAnimationType)animationType
                       withSize:(CGSize)popupViewSize
+                  blankBGColor:(UIColor *)blankBGColor
                   showComplete:(CJShowPopupViewCompleteBlock)showPopupViewCompleteBlock
               tapBlankComplete:(CJTapBlankViewCompleteBlock)tapBlankViewCompleteBlock;
 
@@ -71,13 +75,15 @@ typedef NS_ENUM(NSUInteger, CJAnimationType) {
 /**
  *  将当前视图弹出到window底部
  *
- *  @param animationType              弹出时候的动画采用的类型
- *  @param popupViewHeight            弹出视图的高度
- *  @param showPopupViewCompleteBlock 显示弹出视图后的操作
- *  @param tapBlankViewCompleteBlock  点击空白区域后的操作(要自己执行cj_hidePopupView...来隐藏，因为有时候点击背景是不执行隐藏的)
+ *  @param animationType                弹出时候的动画采用的类型
+ *  @param popupViewHeight              弹出视图的高度
+ *  @param blankBGColor                 空白区域的背景颜色
+ *  @param showPopupViewCompleteBlock   显示弹出视图后的操作
+ *  @param tapBlankViewCompleteBlock    点击空白区域后的操作(要自己执行cj_hidePopupView...来隐藏，因为有时候点击背景是不执行隐藏的)
  */
 - (void)cj_popupInBottomWindow:(CJAnimationType)animationType
                     withHeight:(CGFloat)popupViewHeight
+                  blankBGColor:(UIColor *)blankBGColor
                   showComplete:(CJShowPopupViewCompleteBlock)showPopupViewCompleteBlock
               tapBlankComplete:(CJTapBlankViewCompleteBlock)tapBlankViewCompleteBlock;
 

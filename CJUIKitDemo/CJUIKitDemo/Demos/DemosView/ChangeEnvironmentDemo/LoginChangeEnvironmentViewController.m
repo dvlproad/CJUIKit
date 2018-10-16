@@ -131,7 +131,8 @@
         [weakSelf updateCurrentEnvironment:currentEnvironment];
     };
     
-    [button cj_showExtendView:pop inView:self.view locationAccordingView:button relativePosition:CJPopupViewPositionBelow showComplete:^{
+    UIColor *blankBGColor = [UIColor colorWithRed:.16 green:.17 blue:.21 alpha:.6];
+    [button cj_showExtendView:pop inView:self.view locationAccordingView:button relativePosition:CJPopupViewPositionBelow blankBGColor:blankBGColor showComplete:^{
         
     } tapBlankComplete:^{
         [pop dismissPopoverView:YES];

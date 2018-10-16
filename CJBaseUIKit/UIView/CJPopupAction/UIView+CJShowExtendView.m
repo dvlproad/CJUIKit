@@ -35,6 +35,7 @@ static NSString *cjExtendViewKey = @"cjExtendView";
                    inView:(UIView *)popupSuperview
                atLocation:(CGPoint)popupViewLocation
                  withSize:(CGSize)popupViewSize
+             blankBGColor:(UIColor *)blankBGColor
              showComplete:(CJShowPopupViewCompleteBlock)showPopupViewCompleteBlock
          tapBlankComplete:(CJTapBlankViewCompleteBlock)tapBlankViewCompleteBlock
 {
@@ -43,6 +44,7 @@ static NSString *cjExtendViewKey = @"cjExtendView";
     [popupView cj_popupInView:popupSuperview
                    withOrigin:popupViewLocation
                          size:popupViewSize
+                 blankBGColor:blankBGColor
                  showComplete:showPopupViewCompleteBlock
              tapBlankComplete:tapBlankViewCompleteBlock];
 }
@@ -52,6 +54,7 @@ static NSString *cjExtendViewKey = @"cjExtendView";
                    inView:(UIView *)popupSuperview
     locationAccordingView:(UIView *)accordingView
          relativePosition:(CJPopupViewPosition)popupViewPosition
+             blankBGColor:(UIColor *)blankBGColor
              showComplete:(CJShowPopupViewCompleteBlock)showPopupViewCompleteBlock
          tapBlankComplete:(CJTapBlankViewCompleteBlock)tapBlankViewCompleteBlock
 {
@@ -79,6 +82,7 @@ static NSString *cjExtendViewKey = @"cjExtendView";
     [popupView cj_popupInView:popupSuperview
                    withOrigin:popupViewLocation
                          size:popupViewSize
+                 blankBGColor:blankBGColor
                  showComplete:showPopupViewCompleteBlock
              tapBlankComplete:tapBlankViewCompleteBlock];
 }
