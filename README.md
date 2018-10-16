@@ -234,6 +234,10 @@ CJBaseUIKit/UIButton：按钮 及 CJBadgeButton
 
 #### CJBaseUIKit
 
+* 2018-10-16 V0.3.0
+
+> 1. UIView+CJPopupInView 增加设置空白区域的背景颜色blankBGColor；
+
 * 2018-10-10 V0.2.9
 
 > 1. 去除CJBadgeImageView，改为CJBadgeButton

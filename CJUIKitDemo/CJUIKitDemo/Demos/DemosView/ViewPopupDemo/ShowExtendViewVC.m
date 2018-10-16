@@ -35,8 +35,9 @@
         CGPoint pointBtnConvert = [sender.superview convertPoint:sender.frame.origin toView:popupSuperview];
         CGPoint pointLocation = CGPointMake(pointBtnConvert.x, pointBtnConvert.y + CGRectGetHeight(sender.frame));
         CGSize size_popupView = CGSizeMake(CGRectGetWidth(sender.frame), h_popupView);
-    
-        [sender cj_showExtendView:popupView inView:popupSuperview atLocation:pointLocation withSize:size_popupView showComplete:^{
+        
+        UIColor *blankBGColor = [UIColor colorWithRed:.16 green:.17 blue:.21 alpha:.6];
+        [sender cj_showExtendView:popupView inView:popupSuperview atLocation:pointLocation withSize:size_popupView blankBGColor:blankBGColor showComplete:^{
             NSLog(@"显示完成");
             
         } tapBlankComplete:^{
@@ -68,7 +69,8 @@
         CGPoint pointLocation = CGPointMake(pointBtnConvert.x, pointBtnConvert.y + CGRectGetHeight(sender.frame));
         CGSize size_popupView = CGSizeMake(CGRectGetWidth(sender.frame), h_popupView);
         
-        [sender cj_showExtendView:popupView inView:popupSuperview atLocation:pointLocation withSize:size_popupView showComplete:^{
+        UIColor *blankBGColor = [UIColor colorWithRed:.16 green:.17 blue:.21 alpha:.6];
+        [sender cj_showExtendView:popupView inView:popupSuperview atLocation:pointLocation withSize:size_popupView blankBGColor:blankBGColor showComplete:^{
             NSLog(@"显示完成");
             
         } tapBlankComplete:^{
@@ -98,7 +100,8 @@
         CGPoint pointLocation = CGPointMake(pointBtnConvert.x, pointBtnConvert.y + CGRectGetHeight(sender.frame));
         CGSize size_popupView = CGSizeMake(CGRectGetWidth(sender.frame), h_popupView);
         
-        [sender cj_showExtendView:popupView inView:popupSuperview atLocation:pointLocation withSize:size_popupView showComplete:^{
+        UIColor *blankBGColor = [UIColor colorWithRed:.16 green:.17 blue:.21 alpha:.6];
+        [sender cj_showExtendView:popupView inView:popupSuperview atLocation:pointLocation withSize:size_popupView blankBGColor:blankBGColor showComplete:^{
             NSLog(@"显示完成");
             
         } tapBlankComplete:^{

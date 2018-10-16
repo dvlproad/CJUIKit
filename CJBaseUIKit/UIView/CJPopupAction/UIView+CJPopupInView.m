@@ -122,6 +122,7 @@ static NSString *cjMustHideFromPopupViewKey = @"cjMustHideFromPopupView";
 - (void)cj_popupInView:(UIView *)popupSuperview
             withOrigin:(CGPoint)popupViewOrigin
                   size:(CGSize)popupViewSize
+          blankBGColor:(UIColor *)blankBGColor
           showComplete:(CJShowPopupViewCompleteBlock)showPopupViewCompleteBlock
       tapBlankComplete:(CJTapBlankViewCompleteBlock)tapBlankViewCompleteBlock
 {
@@ -129,7 +130,7 @@ static NSString *cjMustHideFromPopupViewKey = @"cjMustHideFromPopupView";
     
     UIView *popupView = self;
     
-    BOOL canAdd = [self letPopupSuperview:popupSuperview addPopupView:popupView];
+    BOOL canAdd = [self letPopupSuperview:popupSuperview addPopupView:popupView withBlankBGColor:blankBGColor];
     if (!canAdd) {
         return;
     }
@@ -188,6 +189,7 @@ static NSString *cjMustHideFromPopupViewKey = @"cjMustHideFromPopupView";
 /* 完整的描述请参见文件头部 */
 - (void)cj_popupInCenterWindow:(CJAnimationType)animationType
                       withSize:(CGSize)popupViewSize
+                  blankBGColor:(UIColor *)blankBGColor
                   showComplete:(CJShowPopupViewCompleteBlock)showPopupViewCompleteBlock
               tapBlankComplete:(CJTapBlankViewCompleteBlock)tapBlankViewCompleteBlock
 {
@@ -204,7 +206,7 @@ static NSString *cjMustHideFromPopupViewKey = @"cjMustHideFromPopupView";
     frame.size.height = popupViewSize.height;
     popupView.frame = frame;
     
-    BOOL canAdd = [self letkeyWindowAddPopupView:popupView];
+    BOOL canAdd = [self letkeyWindowAddPopupView:popupView withBlankBGColor:blankBGColor];
     if (!canAdd) {
         return;
     }
@@ -249,6 +251,7 @@ static NSString *cjMustHideFromPopupViewKey = @"cjMustHideFromPopupView";
 /** 完整的描述请参见文件头部 */
 - (void)cj_popupInBottomWindow:(CJAnimationType)animationType
                     withHeight:(CGFloat)popupViewHeight
+                  blankBGColor:(UIColor *)blankBGColor
                   showComplete:(CJShowPopupViewCompleteBlock)showPopupViewCompleteBlock
               tapBlankComplete:(CJTapBlankViewCompleteBlock)tapBlankViewCompleteBlock
 {
@@ -257,7 +260,7 @@ static NSString *cjMustHideFromPopupViewKey = @"cjMustHideFromPopupView";
     
     UIView *popupView = self;
     
-    BOOL canAdd = [self letkeyWindowAddPopupView:popupView];
+    BOOL canAdd = [self letkeyWindowAddPopupView:popupView withBlankBGColor:blankBGColor];
     if (!canAdd) {
         return;
     }
@@ -339,14 +342,16 @@ static NSString *cjMustHideFromPopupViewKey = @"cjMustHideFromPopupView";
 /**
  *  将popupView添加进keyWindow中(会默认添加进blankView及对popupView做一些默认设置)
  *
- *  @param popupView 要被添加的视图
+ *  @param popupView                要被添加的视图
+ *  @param blankBGColor             空白区域的背景颜色
  *
  *  @return 是否可以被添加成功
  */
-- (BOOL)letkeyWindowAddPopupView:(UIView *)popupView {
+- (BOOL)letkeyWindowAddPopupView:(UIView *)popupView withBlankBGColor:(UIColor *)blankBGColor
+{
     UIWindow *keyWindow = [[UIApplication sharedApplication] keyWindow];
     
-    BOOL canAdd = [self letPopupSuperview:keyWindow addPopupView:popupView];
+    BOOL canAdd = [self letPopupSuperview:keyWindow addPopupView:popupView withBlankBGColor:blankBGColor];
     if (!canAdd) {
         return NO;
     }
@@ -375,12 +380,15 @@ static NSString *cjMustHideFromPopupViewKey = @"cjMustHideFromPopupView";
 /**
  *  将popupView添加进popupSuperview中(会默认添加进blankView及对popupView做一些默认设置)
  *
- *  @param popupSuperview 被添加到的地方
- *  @param popupView 要被添加的视图
+ *  @param popupSuperview           被添加到的地方
+ *  @param popupView                要被添加的视图
+ *  @param blankBGColor             空白区域的背景颜色
  *
  *  @return 是否可以被添加成功
  */
-- (BOOL)letPopupSuperview:(UIView *)popupSuperview addPopupView:(UIView *)popupView
+- (BOOL)letPopupSuperview:(UIView *)popupSuperview
+             addPopupView:(UIView *)popupView
+         withBlankBGColor:(UIColor *)blankBGColor
 {
     if ([popupSuperview.subviews containsObject:popupView]) {
         return NO;
@@ -390,7 +398,12 @@ static NSString *cjMustHideFromPopupViewKey = @"cjMustHideFromPopupView";
     UIView *blankView = self.cjTapView;
     if (blankView == nil) {
         blankView = [[UIView alloc] initWithFrame:CGRectZero];
-        blankView.backgroundColor = [UIColor colorWithRed:.16 green:.17 blue:.21 alpha:.6];
+        if (!blankBGColor) {
+            blankView.backgroundColor = [UIColor colorWithRed:.16 green:.17 blue:.21 alpha:.6];
+        } else {
+            blankView.backgroundColor = blankBGColor;
+        }
+        
         UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(cj_TapBlankViewAction:)];
         [blankView addGestureRecognizer:tapGesture];
         

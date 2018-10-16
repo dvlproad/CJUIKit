@@ -16,7 +16,7 @@
 
 @interface AccuracyStringViewController : UIViewController
 
-@property (nonatomic, weak) IBOutlet UITableView *tableView;
+@property (nonatomic, strong) UITableView *tableView;
 @property (nonatomic, strong) NSMutableArray *sectionDataModels;
 
 @end

@@ -22,17 +22,19 @@ typedef NS_ENUM(NSUInteger, CJPopupViewPosition) {
 /**
  *  显示当前视图的弹出视图方法1（弹出视图popupView的位置及大小根据设置的location和size来确定)
  *
- *  @param popupView                  弹出视图popupView
- *  @param popupSuperview             弹出视图popupView的superview
- *  @param popupViewLocation          弹出视图popupView的位置location
- *  @param popupViewSize              弹出视图popupView的大小size
- *  @param showPopupViewCompleteBlock 显示弹出视图后的操作
- *  @param tapBlankViewCompleteBlock  点击空白区域后的操作
+ *  @param popupView                    弹出视图popupView
+ *  @param popupSuperview               弹出视图popupView的superview
+ *  @param popupViewLocation            弹出视图popupView的位置location
+ *  @param popupViewSize                弹出视图popupView的大小size
+ *  @param blankBGColor                 空白区域的背景颜色
+ *  @param showPopupViewCompleteBlock   显示弹出视图后的操作
+ *  @param tapBlankViewCompleteBlock    点击空白区域后的操作
  */
 - (void)cj_showExtendView:(UIView *)popupView
                    inView:(UIView *)popupSuperview
                atLocation:(CGPoint)popupViewLocation
                  withSize:(CGSize)popupViewSize
+             blankBGColor:(UIColor *)blankBGColor
              showComplete:(CJShowPopupViewCompleteBlock)showPopupViewCompleteBlock
          tapBlankComplete:(CJTapBlankViewCompleteBlock)tapBlankViewCompleteBlock;
 
@@ -40,17 +42,19 @@ typedef NS_ENUM(NSUInteger, CJPopupViewPosition) {
 /**
  *  显示当前视图的弹出视图方法2（弹出视图popupView的位置根据其与参照视图accordingView的位置及关系来确定)
  *
- *  @param popupView                  弹出视图popupView
- *  @param popupSuperview             弹出视图popupView的superview
- *  @param accordingView              根据accordingView来取得弹出视图的应该的位置
- *  @param popupViewPosition          弹出视图popupView相对accordingView的位置
- *  @param showPopupViewCompleteBlock 显示弹出视图后的操作
- *  @param tapBlankViewCompleteBlock  点击空白区域后的操作
+ *  @param popupView                    弹出视图popupView
+ *  @param popupSuperview               弹出视图popupView的superview
+ *  @param accordingView                根据accordingView来取得弹出视图的应该的位置
+ *  @param popupViewPosition            弹出视图popupView相对accordingView的位置
+ *  @param blankBGColor                 空白区域的背景颜色
+ *  @param showPopupViewCompleteBlock   显示弹出视图后的操作
+ *  @param tapBlankViewCompleteBlock    点击空白区域后的操作
  */
 - (void)cj_showExtendView:(UIView *)popupView
                    inView:(UIView *)popupSuperview
     locationAccordingView:(UIView *)accordingView
          relativePosition:(CJPopupViewPosition)popupViewPosition
+             blankBGColor:(UIColor *)blankBGColor
              showComplete:(CJShowPopupViewCompleteBlock)showPopupViewCompleteBlock
          tapBlankComplete:(CJTapBlankViewCompleteBlock)tapBlankViewCompleteBlock;
 

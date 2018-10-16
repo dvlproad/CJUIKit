@@ -51,11 +51,15 @@
 
 #import "NavigationBarViewController.h"
 #import "NavigationBarRemoveUnderlineViewController.h"
-#import "NavigationBarChangeBGViewController.h"
+#import "NavigationBarNormalChangeBGViewController.h"
+#import "NavigationBarScrollChangeBGViewController.h"
 #import "NavigationBarChangePositonViewController.h"
 
 #import "CJMJRefreshViewController.h"
 
+//ChangeEnvironment
+#import "ChangeEnvironmentViewController.h"
+#import "LoginChangeEnvironmentViewController.h"
 
 @interface HomeViewController () <UITableViewDataSource, UITableViewDelegate> {
     
@@ -68,8 +72,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    
     self.navigationItem.title = NSLocalizedString(@"CJBaseUIKit首页", nil); //知识点:使得tabBar中的title可以和显示在顶部的title保持各自
+    self.view.backgroundColor = [UIColor whiteColor];
     
     UITableView *tableView = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStyleGrouped];
 //    [tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"cell"];
@@ -99,6 +103,29 @@
             CJModuleModel *xibModule = [[CJModuleModel alloc] init];
             xibModule.title = @"后视图改变前视图的值的实现事例";
             xibModule.classEntry = [BeChangeViewController class];
+            
+            [sectionDataModel.values addObject:xibModule];
+        }
+        
+        [sectionDataModels addObject:sectionDataModel];
+    }
+    
+    //ChangeEnvironment
+    {
+        CJSectionDataModel *sectionDataModel = [[CJSectionDataModel alloc] init];
+        sectionDataModel.theme = @"ChangeEnvironment相关";
+        {
+            CJModuleModel *xibModule = [[CJModuleModel alloc] init];
+            xibModule.title = @"ChangeEnvironment(改变网络环境)";
+            xibModule.classEntry = [ChangeEnvironmentViewController class];
+            
+            [sectionDataModel.values addObject:xibModule];
+        }
+        
+        {
+            CJModuleModel *xibModule = [[CJModuleModel alloc] init];
+            xibModule.title = @"ChangeEnvironment(在登录的时候改变网络环境)";
+            xibModule.classEntry = [LoginChangeEnvironmentViewController class];
             
             [sectionDataModel.values addObject:xibModule];
         }
@@ -231,8 +258,14 @@
         }
         {
             CJModuleModel *UINavigationBarModuleModel1 = [[CJModuleModel alloc] init];
+            UINavigationBarModuleModel1.title = @"UINavigationBar(改变背景色以隐藏导航栏)";
+            UINavigationBarModuleModel1.classEntry = [NavigationBarNormalChangeBGViewController class];
+            [sectionDataModel.values addObject:UINavigationBarModuleModel1];
+        }
+        {
+            CJModuleModel *UINavigationBarModuleModel1 = [[CJModuleModel alloc] init];
             UINavigationBarModuleModel1.title = @"UINavigationBar(常见的导航栏背景色改变隐藏)";
-            UINavigationBarModuleModel1.classEntry = [NavigationBarChangeBGViewController class];
+            UINavigationBarModuleModel1.classEntry = [NavigationBarScrollChangeBGViewController class];
             [sectionDataModel.values addObject:UINavigationBarModuleModel1];
         }
         {
@@ -397,7 +430,10 @@
                                       NSStringFromClass([FloatingWindowViewController class]),
                                       NSStringFromClass([SuspendWindowViewController class]),
                                       NSStringFromClass([ColorViewController class]),
-                                      NSStringFromClass([SystemComposeViewController class])
+                                      NSStringFromClass([SystemComposeViewController class]),
+                                      NSStringFromClass([ChangeEnvironmentViewController class]),
+                                      NSStringFromClass([LoginChangeEnvironmentViewController class]),
+                                      NSStringFromClass([NavigationBarNormalChangeBGViewController class])
                                     ];
     
     NSString *clsString = NSStringFromClass(moduleModel.classEntry);

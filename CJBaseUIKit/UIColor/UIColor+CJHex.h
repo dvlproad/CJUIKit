@@ -22,42 +22,15 @@
 /**
  *  3.支持使用16进制数值/字符串来选取颜色
  */
-#define CJColorFromHexString(color) [UIColor cjColorWithHexString:color] //方法①
+#define CJColorFromHexString(color)     [UIColor cjColorWithHexString:color]
+#define CJColorFromHexValue(s)          [UIColor colorWithRed:(((s & 0xFF0000) >> 16))/255.0 green:(((s &0xFF00) >>8))/255.0 blue:((s &0xFF))/255.0 alpha:1.0]
 
-#define CJColorFromHexValue(s)      [UIColor colorWithRed:(((s & 0xFF0000) >> 16))/255.0 green:(((s &0xFF00) >>8))/255.0 blue:((s &0xFF))/255.0 alpha:1.0]          //方法②
-
+#define CJColorFromHexStringAndAlpha(color, a)  [UIColor cjColorWithHexString:color alpha:a]
 
 /**
  *  一个随机颜色
  */
 #define CJColorRandom       CJRGBA(arc4random_uniform(256), arc4random_uniform(256), arc4random_uniform(256), arc4random_uniform(256))
-
-#define CJColorRed          CJColorFromHexString(@"#ff4343")
-
-#define CJColorGreenDark1   CJColorFromHexString(@"#149B8A")
-#define CJColorGreenDark2   CJColorFromHexString(@"#149B17")
-
-#define CJColorBlue         CJColorFromHexString(@"#00aaff")
-#define CJColorBlueLight    CJColorFromHexString(@"#aaebff")
-#define CJColorBlueDark1    CJColorFromHexString(@"#149BD5")    //深蓝色由1开始越来越深
-#define CJColorBlueDark2    CJColorFromHexString(@"#2481ff")
-#define CJColorBlueDark3    CJColorFromHexString(@"#0a6fa2")
-
-
-
-//Gray从1开始越来越浅
-#define CJColorGray1        CJColorFromHexString(@"#606060")
-#define CJColorGray2        CJColorFromHexString(@"#888888")
-#define CJColorGray3        CJColorFromHexString(@"#999999")
-#define CJColorGray4        CJColorFromHexString(@"#aaaaaa")
-#define CJColorGray5        CJColorFromHexString(@"#dddddd")
-#define CJColorGray6        CJColorFromHexString(@"#f4f4f4")    //可做灰色背景
-
-#define CJColorBlack        CJColorFromHexString(@"#1a1a1a")
-#define CJColorBlackLight   CJColorFromHexString(@"#ff4343")
-
-#define CJColorPurpleLight  CJColorFromHexString(@"#ff00ff")
-
 
 
 @interface UIColor (CJHex)

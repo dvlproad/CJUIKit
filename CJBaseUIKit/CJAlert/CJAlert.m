@@ -62,6 +62,7 @@
                       flagImage:(UIImage *)flagImage
                           title:(NSString *)title
                         message:(NSString *)message
+                   blankBGColor:(UIColor *)blankBGColor
               cancelButtonTitle:(NSString *)cancelButtonTitle
                   okButtonTitle:(NSString *)okButtonTitle
                    cancelHandle:(void(^)(void))cancelHandle
@@ -72,7 +73,7 @@
                                               okButtonTitle:okButtonTitle
                                                cancelHandle:cancelHandle
                                                    okHandle:okHandle];
-    [alertView showWithShouldFitHeight:NO];
+    [alertView showWithShouldFitHeight:NO blankBGColor:blankBGColor];
 }
 
 #pragma mark - DebugView
@@ -109,7 +110,8 @@
         pasteboard.string = message;
     }];
     
-    [alertView showWithShouldFitHeight:YES];
+    UIColor *blankBGColor = [UIColor colorWithRed:.16 green:.17 blue:.21 alpha:.6];
+    [alertView showWithShouldFitHeight:YES blankBGColor:blankBGColor];
 }
 
 @end

@@ -35,6 +35,7 @@
                       flagImage:(UIImage *)flagImage
                           title:(NSString *)title
                         message:(NSString *)message
+                   blankBGColor:(UIColor *)blankBGColor
               cancelButtonTitle:(NSString *)cancelButtonTitle
                   okButtonTitle:(NSString *)okButtonTitle
                    cancelHandle:(void(^)(void))cancelHandle

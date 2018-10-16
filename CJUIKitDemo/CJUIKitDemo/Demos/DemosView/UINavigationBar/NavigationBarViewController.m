@@ -30,9 +30,11 @@
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:YES];
     
-    [self.navigationController.navigationBar setBarTintColor:CJColorBlueDark1];//导航栏背景色
+    //UIColor *color1 = CJColorFromHexString(@"#000000");
+    //UIColor *color2 = CJColorFromHexStringAndAlpha(@"#000000", 0.76);
+    [self.navigationController.navigationBar setBarTintColor:CJColorFromHexString(@"#149BD5")];//导航栏背景色
     [self.navigationController.navigationBar setTintColor:[UIColor greenColor]];//导航栏返回按钮颜色
-    [self.navigationController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName:CJColorGreenDark1}];//导航栏标题颜色
+    [self.navigationController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName:CJColorFromHexString(@"#149B8A")}];//导航栏标题颜色
     
     //将导航栏返回按钮上的文字去掉的方法①:通过将文字的颜色设成透明即可
     [[UIBarButtonItem appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor clearColor]} forState:UIControlStateNormal];

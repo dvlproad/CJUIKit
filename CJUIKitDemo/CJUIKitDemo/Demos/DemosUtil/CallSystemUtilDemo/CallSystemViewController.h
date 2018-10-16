@@ -11,6 +11,6 @@
 @interface CallSystemViewController : UIViewController {
     
 }
-@property (nonatomic, weak) IBOutlet UITableView *tableView;
+@property (nonatomic, strong) UITableView *tableView;
 
 @end

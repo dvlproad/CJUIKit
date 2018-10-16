@@ -36,10 +36,13 @@
 
 
 #pragma mark - User
-///保存用户名和密码
-+ (void)saveAccount:(NSString *)account withPassword:(NSString *)password;
+///保存account和accessToken
++ (void)saveAccount:(NSString *)account withAccessToken:(NSString *)accessToken;
 
 ///获取最后登录的账号信息
 + (CJAppLastUser *)getLastLoginUser;
+
+///删除钥匙串中的指定账号的用户信息
++ (void)deleteAccountFromKeychain:(NSString *)account;
 
 @end

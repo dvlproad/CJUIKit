@@ -1,18 +1,18 @@
 //
-//  NavigationBarChangeBGViewController.m
+//  NavigationBarScrollChangeBGViewController.m
 //  CJUIKitDemo
 //
 //  Created by ciyouzen on 2017/5/16.
 //  Copyright © 2017年 dvlproad. All rights reserved.
 //
 
-#import "NavigationBarChangeBGViewController.h"
+#import "NavigationBarScrollChangeBGViewController.h"
 
-@interface NavigationBarChangeBGViewController ()
+@interface NavigationBarScrollChangeBGViewController ()
 
 @end
 
-@implementation NavigationBarChangeBGViewController
+@implementation NavigationBarScrollChangeBGViewController
 
 - (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];

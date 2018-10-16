@@ -42,6 +42,10 @@
           bezelViewColor:(UIColor *)bezelViewColor
           hideAfterDelay:(NSTimeInterval)delay
 {
+    if (message.length == 0) {
+        NSLog(@"toast message length == 0");
+        return;
+    }
     MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:view animated:YES];
     
     CGFloat margin = 10;
