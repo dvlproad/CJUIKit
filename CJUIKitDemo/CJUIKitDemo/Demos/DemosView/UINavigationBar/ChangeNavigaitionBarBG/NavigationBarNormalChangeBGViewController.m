@@ -9,7 +9,10 @@
 #import "NavigationBarNormalChangeBGViewController.h"
 #import "UINavigationBar+CJChangeBG.h"
 
-@interface NavigationBarNormalChangeBGViewController ()
+@interface NavigationBarNormalChangeBGViewController () {
+    
+}
+@property (nonatomic, assign, readonly) BOOL oldTranslucent;
 
 @end
 
@@ -18,12 +21,17 @@
 - (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
     
+    self.navigationController.navigationBar.translucent = self.oldTranslucent;
     [self.navigationController.navigationBar cj_resetBackgroundColor];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:YES];
     
+    _oldTranslucent = self.navigationController.navigationBar.translucent;
+    if (_oldTranslucent == NO) { //translucent若为YES，则设置背景无效
+        self.navigationController.navigationBar.translucent = YES;
+    }
     [self.navigationController.navigationBar cj_hideUnderline:YES];
     [self.navigationController.navigationBar cj_setBackgroundColor:[UIColor clearColor]];
     self.navigationItem.title = @"";

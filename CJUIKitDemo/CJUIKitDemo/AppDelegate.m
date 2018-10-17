@@ -24,6 +24,10 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    NSInteger i = -1000;
+    NSString *iString = [[NSString alloc] initWithFormat:@"%zd", i];
+    NSLog(@"iString = %@", iString);
+    
     CJLog(@"测试环境写过log");
     CJAppLog(CJAppLogTypeDEBUG, @"0", @"测试环境写过log");
     

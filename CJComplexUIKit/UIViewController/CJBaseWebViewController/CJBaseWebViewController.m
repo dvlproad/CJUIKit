@@ -25,10 +25,12 @@
 @end
 
 
-@interface CJBaseWebViewController () <WKNavigationDelegate>
-
+@interface CJBaseWebViewController () <WKNavigationDelegate> {
+    
+}
 @property (nonatomic, strong) WKWebView *webView;
 @property (nonatomic, strong) UIProgressView *progressView;
+@property (nonatomic, assign, readonly) BOOL oldTranslucent;
 
 @end
 
@@ -43,19 +45,34 @@
     [self.webView removeObserver:self forKeyPath:@"title"];
 }
 
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    
+    self.navigationController.navigationBar.translucent = self.oldTranslucent;
+}
+
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
+    
+    _oldTranslucent = self.navigationController.navigationBar.translucent;
+    if (_oldTranslucent == NO) { //外部将translucent设为了NO，会导致原本视图布局有问题
+        self.navigationController.navigationBar.translucent = YES;
+    }
     
     CGFloat progressViewMinX = 0;
     CGRect statusBarFrame = [[UIApplication sharedApplication] statusBarFrame];
     CGFloat statusBarHeight = CGRectGetHeight(statusBarFrame);
-    progressViewMinX += statusBarHeight;
     if (self.navigationController) {
         CGRect navigationBarFrame = self.navigationController.navigationBar.frame;
         CGFloat navigationBarHeight = CGRectGetHeight(navigationBarFrame);
-        progressViewMinX += navigationBarHeight;
+        progressViewMinX = statusBarHeight + navigationBarHeight;
+    } else {
+        progressViewMinX = statusBarHeight;
     }
     [self.progressView mas_updateConstraints:^(MASConstraintMaker *make) {
+        make.top.mas_equalTo(self.view).mas_offset(progressViewMinX);
+    }];
+    [self.webView mas_updateConstraints:^(MASConstraintMaker *make) {
         make.top.mas_equalTo(self.view).mas_offset(progressViewMinX);
     }];
     
@@ -90,6 +107,7 @@
     progressView.backgroundColor = [UIColor whiteColor];
     progressView.progressTintColor= [UIColor greenColor];//设置已过进度部分的颜色
     progressView.trackTintColor= [UIColor lightGrayColor];//设置未过进度部分的颜色
+    progressView.hidden = YES;
     [self.view addSubview:progressView];
     [progressView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.right.mas_equalTo(self.view);
@@ -228,7 +246,6 @@
         decisionHandler(WKNavigationActionPolicyCancel);
         
     } else {
-        
         decisionHandler(WKNavigationActionPolicyAllow);
     }
 }
