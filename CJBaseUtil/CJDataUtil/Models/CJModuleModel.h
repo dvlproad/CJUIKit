@@ -17,8 +17,12 @@
 @property (nonatomic, strong) UIImage *selectedImage;
 
 @property (nonatomic, strong) NSIndexPath *indexPath;   /**< 该模块所在的位置 */
-@property (nonatomic, assign) Class classEntry; /**< 点击后进入的控制器 */
-@property (nonatomic, assign) SEL   selector;   /**< 点击后执行的方法（一般此值为空，所以检查时候优先检查这个） */
+
+//①控制器
+@property (nonatomic, assign) Class classEntry;     /**< 点击后进入的控制器 */
+@property (nonatomic, assign) BOOL isCreateByXib;   /**< 控制器是否要由interface来生成 */
+//②事件
+@property (nonatomic, assign) SEL selector;   /**< 点击后执行的方法（一般此值为空，所以检查时候优先检查这个） */
 
 @property (nonatomic, assign) NSDictionary *userInfo;   /**< 该模块的其他信息 */
 @property (nonatomic, assign) NSInteger unReadNumber;   /**< 未读消息数 */

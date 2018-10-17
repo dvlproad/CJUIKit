@@ -45,8 +45,6 @@
     self.window.rootViewController = [self getMainRootViewController];
     [self.window makeKeyAndVisible];
     
-    [[UINavigationBar appearance] setTranslucent:NO];
-    
     // Override point for customization after application launch.
     [self configureDefaultNavigationBarAppearance];
     [self adjustDevice];

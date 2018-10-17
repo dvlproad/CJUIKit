@@ -6,9 +6,18 @@
 //  Copyright © 2016年 dvlproad. All rights reserved.
 //
 
-#import "CJUIKitBaseViewController.h"
+#import <UIKit/UIKit.h>
+#import <Masonry/Masonry.h>
 
-@interface UtilHomeViewController : CJUIKitBaseViewController {
+#ifdef CJTESTPOD
+#import "CJSectionDataModel.h"
+#import "CJModuleModel.h"
+#else
+#import <CJBaseUtil/CJSectionDataModel.h> //在CJDataUtil中
+#import <CJBaseUtil/CJModuleModel.h> //在CJDataUtil中
+#endif
+
+@interface UtilHomeViewController : UIViewController {
     
 }
 @property (nonatomic, weak) IBOutlet UITableView *tableView;

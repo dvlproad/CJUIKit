@@ -15,55 +15,34 @@
 #import "ColorViewController.h"
 
 //UIView
-#import "SampleViewController.h"
-//ViewDrag
-#import "DragViewController.h"
-//ViewPopup
-#import "PopupInWindowVC.h"
-#import "PopupInViewVC.h"
-#import "ShowExtendViewVC.h"
-#import "ShowDropDownViewController.h"
-//ViewAnimate
-#import "ViewAnimateViewController.h"
+#import "ViewHomeViewController.h"
+
+#import "ButtonViewController.h"
+#import "TextFieldViewController.h"
+#import "TextViewController.h"
+#import "SliderHomeViewController.h"
+#import "SearchBarViewController.h"
 
 //UIWindow
 #import "FloatingWindowViewController.h"
 #import "SuspendWindowViewController.h"
 
-//UIViewController
-#import "SystemComposeViewController.h"
-
-#import "ButtonViewController.h"
-
-#import "TextFieldViewController.h"
-#import "TextViewController.h"
-#import "KeyboardAvoidingViewController.h"
-
-#import "SliderViewController.h"
-#import "RangeSliderViewController.h"
-#import "SwitchSliderViewController.h"
-
-#import "SearchBarViewController.h"
-
-
+#import "NavigationBarHomeViewController.h"
 #import "ImageChangeColorViewController.h"
 #import "ImageRotateViewController.h"
 
-#import "NavigationBarViewController.h"
-#import "NavigationBarRemoveUnderlineViewController.h"
-#import "NavigationBarNormalChangeBGViewController.h"
-#import "NavigationBarScrollChangeBGViewController.h"
-#import "NavigationBarChangePositonViewController.h"
+//UIViewController
+#import "SampleViewController.h"
+#import "SystemComposeViewController.h"
 
 #import "CJMJRefreshViewController.h"
+#import "KeyboardAvoidingViewController.h"
 
 //ChangeEnvironment
 #import "ChangeEnvironmentViewController.h"
 #import "LoginChangeEnvironmentViewController.h"
 
-@interface HomeViewController () <UITableViewDataSource, UITableViewDelegate> {
-    
-}
+@interface HomeViewController ()
 
 @end
 
@@ -75,15 +54,6 @@
     self.navigationItem.title = NSLocalizedString(@"CJBaseUIKit首页", nil); //知识点:使得tabBar中的title可以和显示在顶部的title保持各自
     self.view.backgroundColor = [UIColor whiteColor];
     
-    UITableView *tableView = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStyleGrouped];
-//    [tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"cell"];
-    tableView.dataSource = self;
-    tableView.delegate = self;
-    [self.view addSubview:tableView];
-    [tableView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.edges.mas_equalTo(self.view);
-    }];
-    self.tableView = tableView;
     
     
     NSMutableArray *sectionDataModels = [[NSMutableArray alloc] init];
@@ -96,6 +66,7 @@
             CJModuleModel *xibModule = [[CJModuleModel alloc] init];
             xibModule.title = @"xib";
             xibModule.classEntry = [NestedXibViewController class];
+            xibModule.isCreateByXib = YES;
             
             [sectionDataModel.values addObject:xibModule];
         }
@@ -103,29 +74,7 @@
             CJModuleModel *xibModule = [[CJModuleModel alloc] init];
             xibModule.title = @"后视图改变前视图的值的实现事例";
             xibModule.classEntry = [BeChangeViewController class];
-            
-            [sectionDataModel.values addObject:xibModule];
-        }
-        
-        [sectionDataModels addObject:sectionDataModel];
-    }
-    
-    //ChangeEnvironment
-    {
-        CJSectionDataModel *sectionDataModel = [[CJSectionDataModel alloc] init];
-        sectionDataModel.theme = @"ChangeEnvironment相关";
-        {
-            CJModuleModel *xibModule = [[CJModuleModel alloc] init];
-            xibModule.title = @"ChangeEnvironment(改变网络环境)";
-            xibModule.classEntry = [ChangeEnvironmentViewController class];
-            
-            [sectionDataModel.values addObject:xibModule];
-        }
-        
-        {
-            CJModuleModel *xibModule = [[CJModuleModel alloc] init];
-            xibModule.title = @"ChangeEnvironment(在登录的时候改变网络环境)";
-            xibModule.classEntry = [LoginChangeEnvironmentViewController class];
+            xibModule.isCreateByXib = NO;
             
             [sectionDataModel.values addObject:xibModule];
         }
@@ -141,12 +90,14 @@
             CJModuleModel *imageChangeColorModule = [[CJModuleModel alloc] init];
             imageChangeColorModule.title = @"UIImage(改变颜色)";
             imageChangeColorModule.classEntry = [ImageChangeColorViewController class];
+            imageChangeColorModule.isCreateByXib = NO;
             [sectionDataModel.values addObject:imageChangeColorModule];
         }
         {
             CJModuleModel *imageRotateModule = [[CJModuleModel alloc] init];
             imageRotateModule.title = @"UIImage(旋转任意角度)";
             imageRotateModule.classEntry = [ImageRotateViewController class];
+            imageRotateModule.isCreateByXib = NO;
             [sectionDataModel.values addObject:imageRotateModule];
         }
         
@@ -159,17 +110,19 @@
         CJSectionDataModel *sectionDataModel = [[CJSectionDataModel alloc] init];
         sectionDataModel.theme = @"UIWindow";
         {
-            CJModuleModel *FloatingWindowModule = [[CJModuleModel alloc] init];
-            FloatingWindowModule.title = @"FloatingWindow（悬浮视图）";
-            FloatingWindowModule.classEntry = [FloatingWindowViewController class];
-            [sectionDataModel.values addObject:FloatingWindowModule];
+            CJModuleModel *floatingWindowModule = [[CJModuleModel alloc] init];
+            floatingWindowModule.title = @"FloatingWindow（悬浮视图）";
+            floatingWindowModule.classEntry = [FloatingWindowViewController class];
+            floatingWindowModule.isCreateByXib = NO;
+            [sectionDataModel.values addObject:floatingWindowModule];
         }
         
         {
-            CJModuleModel *FloatingWindowModule = [[CJModuleModel alloc] init];
-            FloatingWindowModule.title = @"SuspendWindow（悬浮球）";
-            FloatingWindowModule.classEntry = [SuspendWindowViewController class];
-            [sectionDataModel.values addObject:FloatingWindowModule];
+            CJModuleModel *floatingWindowModule = [[CJModuleModel alloc] init];
+            floatingWindowModule.title = @"SuspendWindow（悬浮球）";
+            floatingWindowModule.classEntry = [SuspendWindowViewController class];
+            floatingWindowModule.isCreateByXib = NO;
+            [sectionDataModel.values addObject:floatingWindowModule];
         }
         
         
@@ -182,60 +135,11 @@
         sectionDataModel.theme = @"UIView相关";
         {
             CJModuleModel *dragViewModule = [[CJModuleModel alloc] init];
-            dragViewModule.title = @"Drag And KeepBounds (视图的拖曳和吸附)";
-            dragViewModule.classEntry = [DragViewController class];
+            dragViewModule.title = @"UIView首页(Drag+Popup+Animate)";
+            dragViewModule.content = @"(Drag+Popup+Animate)";
+            dragViewModule.classEntry = [ViewHomeViewController class];
+            dragViewModule.isCreateByXib = NO;
             [sectionDataModel.values addObject:dragViewModule];
-        }
-        {
-            CJModuleModel *popupInWindowModule = [[CJModuleModel alloc] init];
-            popupInWindowModule.title = @"PopupInWindow (弹出到Window)";
-            popupInWindowModule.classEntry = [PopupInWindowVC class];
-            [sectionDataModel.values addObject:popupInWindowModule];
-        }
-        {
-            CJModuleModel *animateViewModule = [[CJModuleModel alloc] init];
-            animateViewModule.title = @"ViewAnimate (View动画)";
-            animateViewModule.classEntry = [ViewAnimateViewController class];
-            [sectionDataModel.values addObject:animateViewModule];
-        }
-        
-        {
-            CJModuleModel *popupInViewModule = [[CJModuleModel alloc] init];
-            popupInViewModule.title = @"PopupInView (弹出到任意View)";
-            popupInViewModule.classEntry = [PopupInViewVC class];
-            [sectionDataModel.values addObject:popupInViewModule];
-        }
-        {
-            CJModuleModel *showExtendViewModule = [[CJModuleModel alloc] init];
-            showExtendViewModule.title = @"ShowExtendView (弹出任意视图)";
-            showExtendViewModule.classEntry = [ShowExtendViewVC class];
-            [sectionDataModel.values addObject:showExtendViewModule];
-        }
-        {
-            CJModuleModel *showDropDownViewModule = [[CJModuleModel alloc] init];
-            showDropDownViewModule.title = @"ShowDropDownView (弹出下拉视图)";
-            showDropDownViewModule.classEntry = [ShowDropDownViewController class];
-            [sectionDataModel.values addObject:showDropDownViewModule];
-        }
-        [sectionDataModels addObject:sectionDataModel];
-    }
-    
-    
-    //UIViewController
-    {
-        CJSectionDataModel *sectionDataModel = [[CJSectionDataModel alloc] init];
-        sectionDataModel.theme = @"UIViewController相关";
-        {
-            CJModuleModel *ViewCategoryModule = [[CJModuleModel alloc] init];
-            ViewCategoryModule.title = @"BackBarButtonItem (返回按钮事件)";
-            ViewCategoryModule.classEntry = [SampleViewController class];
-            [sectionDataModel.values addObject:ViewCategoryModule];
-        }
-        {
-            CJModuleModel *ViewCategoryModule = [[CJModuleModel alloc] init];
-            ViewCategoryModule.title = @"SystemComposeViewController";
-            ViewCategoryModule.classEntry = [SystemComposeViewController class];
-            [sectionDataModel.values addObject:ViewCategoryModule];
         }
         [sectionDataModels addObject:sectionDataModel];
     }
@@ -245,34 +149,11 @@
         CJSectionDataModel *sectionDataModel = [[CJSectionDataModel alloc] init];
         sectionDataModel.theme = @"UINavigationBar相关";
         {
-            CJModuleModel *UINavigationBarModuleModel1 = [[CJModuleModel alloc] init];
-            UINavigationBarModuleModel1.title = @"UINavigationBar(导航栏的设置)";
-            UINavigationBarModuleModel1.classEntry = [NavigationBarViewController class];
-            [sectionDataModel.values addObject:UINavigationBarModuleModel1];
-        }
-        {
-            CJModuleModel *UINavigationBarModuleModel1 = [[CJModuleModel alloc] init];
-            UINavigationBarModuleModel1.title = @"UINavigationBar(去除导航条最下面的横线)";
-            UINavigationBarModuleModel1.classEntry = [NavigationBarRemoveUnderlineViewController class];
-            [sectionDataModel.values addObject:UINavigationBarModuleModel1];
-        }
-        {
-            CJModuleModel *UINavigationBarModuleModel1 = [[CJModuleModel alloc] init];
-            UINavigationBarModuleModel1.title = @"UINavigationBar(改变背景色以隐藏导航栏)";
-            UINavigationBarModuleModel1.classEntry = [NavigationBarNormalChangeBGViewController class];
-            [sectionDataModel.values addObject:UINavigationBarModuleModel1];
-        }
-        {
-            CJModuleModel *UINavigationBarModuleModel1 = [[CJModuleModel alloc] init];
-            UINavigationBarModuleModel1.title = @"UINavigationBar(常见的导航栏背景色改变隐藏)";
-            UINavigationBarModuleModel1.classEntry = [NavigationBarScrollChangeBGViewController class];
-            [sectionDataModel.values addObject:UINavigationBarModuleModel1];
-        }
-        {
-            CJModuleModel *UINavigationBarModuleModel2 = [[CJModuleModel alloc] init];
-            UINavigationBarModuleModel2.title = @"UINavigationBar(类似斗鱼的导航栏移动隐藏)";
-            UINavigationBarModuleModel2.classEntry = [NavigationBarChangePositonViewController class];
-            [sectionDataModel.values addObject:UINavigationBarModuleModel2];
+            CJModuleModel *navigationBarModule = [[CJModuleModel alloc] init];
+            navigationBarModule.title = @"UINavigationBar(导航栏的设置)";
+            navigationBarModule.classEntry = [NavigationBarHomeViewController class];
+            navigationBarModule.isCreateByXib = NO;
+            [sectionDataModel.values addObject:navigationBarModule];
         }
         
         [sectionDataModels addObject:sectionDataModel];
@@ -287,6 +168,7 @@
             CJModuleModel *buttonModule = [[CJModuleModel alloc] init];
             buttonModule.title = @"UIButton";
             buttonModule.classEntry = [ButtonViewController class];
+            buttonModule.isCreateByXib = NO;
             [sectionDataModel.values addObject:buttonModule];
         }
         {
@@ -294,6 +176,7 @@
             CJModuleModel *textFieldModule = [[CJModuleModel alloc] init];
             textFieldModule.title = @"TextField";
             textFieldModule.classEntry = [TextFieldViewController class];
+            textFieldModule.isCreateByXib = NO;
             [sectionDataModel.values addObject:textFieldModule];
         }
         {
@@ -301,20 +184,32 @@
             CJModuleModel *textViewModule = [[CJModuleModel alloc] init];
             textViewModule.title = @"TextView";
             textViewModule.classEntry = [TextViewController class];
+            textViewModule.isCreateByXib = NO;
             [sectionDataModel.values addObject:textViewModule];
         }
         {
             //CJBadgeButton
-            CJModuleModel *cjImageViewModuleModel = [[CJModuleModel alloc] init];
-            cjImageViewModuleModel.title = @"CJBadgeButton";
-            cjImageViewModuleModel.classEntry = [ColorViewController class];
-            [sectionDataModel.values addObject:cjImageViewModuleModel];
+            CJModuleModel *badgeButtonModule = [[CJModuleModel alloc] init];
+            badgeButtonModule.title = @"CJBadgeButton";
+            badgeButtonModule.classEntry = [ColorViewController class];
+            badgeButtonModule.isCreateByXib = NO;
+            [sectionDataModel.values addObject:badgeButtonModule];
         }
         {
             //CJSearchBar
             CJModuleModel *cjSearchBarModuleModel = [[CJModuleModel alloc] init];
             cjSearchBarModuleModel.title = @"CJSearchBar";
             cjSearchBarModuleModel.classEntry = [SearchBarViewController class];
+            cjSearchBarModuleModel.isCreateByXib = NO;
+            [sectionDataModel.values addObject:cjSearchBarModuleModel];
+        }
+        
+        {
+            //UISlider
+            CJModuleModel *cjSearchBarModuleModel = [[CJModuleModel alloc] init];
+            cjSearchBarModuleModel.title = @"UISlider";
+            cjSearchBarModuleModel.classEntry = [SliderHomeViewController class];
+            cjSearchBarModuleModel.isCreateByXib = NO;
             [sectionDataModel.values addObject:cjSearchBarModuleModel];
         }
         
@@ -322,31 +217,47 @@
         [sectionDataModels addObject:sectionDataModel];
     }
     
-    //Slider(滑块)
+    //UIViewController
     {
         CJSectionDataModel *sectionDataModel = [[CJSectionDataModel alloc] init];
-        sectionDataModel.theme = @"Slider(滑块)";
+        sectionDataModel.theme = @"UIViewController相关";
         {
-            //Slider
-            CJModuleModel *sliderModule = [[CJModuleModel alloc] init];
-            sliderModule.title = @"CJSliderControl";
-            sliderModule.classEntry = [SliderViewController class];
-            [sectionDataModel.values addObject:sliderModule];
+            CJModuleModel *ViewCategoryModule = [[CJModuleModel alloc] init];
+            ViewCategoryModule.title = @"BackBarButtonItem (返回按钮事件)";
+            ViewCategoryModule.classEntry = [SampleViewController class];
+            ViewCategoryModule.isCreateByXib = NO;
+            [sectionDataModel.values addObject:ViewCategoryModule];
         }
         {
-            //RangeSlider
-            CJModuleModel *sliderModule = [[CJModuleModel alloc] init];
-            sliderModule.title = @"RangeSlider";
-            sliderModule.classEntry = [RangeSliderViewController class];
-            [sectionDataModel.values addObject:sliderModule];
+            CJModuleModel *systemComposeViewModule = [[CJModuleModel alloc] init];
+            systemComposeViewModule.title = @"SystemComposeViewController";
+            systemComposeViewModule.classEntry = [SystemComposeViewController class];
+            systemComposeViewModule.isCreateByXib = NO;
+            [sectionDataModel.values addObject:systemComposeViewModule];
         }
+        [sectionDataModels addObject:sectionDataModel];
+    }
+    
+    //ChangeEnvironment
+    {
+        CJSectionDataModel *sectionDataModel = [[CJSectionDataModel alloc] init];
+        sectionDataModel.theme = @"ChangeEnvironment相关";
         {
-            //SwitchSlider
-            CJModuleModel *sliderModule = [[CJModuleModel alloc] init];
-            sliderModule.title = @"SwitchSlider";
-            sliderModule.classEntry = [SwitchSliderViewController class];
-            [sectionDataModel.values addObject:sliderModule];
+            CJModuleModel *xibModule = [[CJModuleModel alloc] init];
+            xibModule.title = @"ChangeEnvironment(改变网络环境)";
+            xibModule.classEntry = [ChangeEnvironmentViewController class];
+            xibModule.isCreateByXib = NO;
+            [sectionDataModel.values addObject:xibModule];
         }
+        
+        {
+            CJModuleModel *xibModule = [[CJModuleModel alloc] init];
+            xibModule.title = @"ChangeEnvironment(在登录的时候改变网络环境)";
+            xibModule.classEntry = [LoginChangeEnvironmentViewController class];
+            xibModule.isCreateByXib = NO;
+            [sectionDataModel.values addObject:xibModule];
+        }
+        
         [sectionDataModels addObject:sectionDataModel];
     }
     
@@ -357,12 +268,14 @@
             CJModuleModel *keyboardAvoidingModuleModel = [[CJModuleModel alloc] init];
             keyboardAvoidingModuleModel.title = @"KeyboardAvoiding";
             keyboardAvoidingModuleModel.classEntry = [KeyboardAvoidingViewController class];
+            keyboardAvoidingModuleModel.isCreateByXib = NO;
             [sectionDataModel.values addObject:keyboardAvoidingModuleModel];
         }
         {
             CJModuleModel *cjMJRefreshComponentModuleModel = [[CJModuleModel alloc] init];
             cjMJRefreshComponentModuleModel.title = @"CJMJRefreshComponent";
             cjMJRefreshComponentModuleModel.classEntry = [CJMJRefreshViewController class];
+            cjMJRefreshComponentModuleModel.isCreateByXib = NO;
             [sectionDataModel.values addObject:cjMJRefreshComponentModuleModel];
         }
         
@@ -370,90 +283,6 @@
     }
     
     self.sectionDataModels = sectionDataModels;
-}
-
-#pragma mark - UITableViewDataSource & UITableViewDelegate
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return self.sectionDataModels.count;
-}
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    CJSectionDataModel *sectionDataModel = [self.sectionDataModels objectAtIndex:section];
-    NSArray *dataModels = sectionDataModel.values;
-    
-    return dataModels.count;
-}
-
-- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
-    CJSectionDataModel *sectionDataModel = [self.sectionDataModels objectAtIndex:section];
-    
-    NSString *indexTitle = sectionDataModel.theme;
-    return indexTitle;
-}
-
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    CJSectionDataModel *sectionDataModel = [self.sectionDataModels objectAtIndex:indexPath.section];
-    NSArray *dataModels = sectionDataModel.values;
-    CJModuleModel *moduleModel = [dataModels objectAtIndex:indexPath.row];
-    
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
-    if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:@"cell"];
-    }
-    cell.textLabel.text = moduleModel.title;
-    cell.detailTextLabel.text = moduleModel.content;
-    
-    return cell;
-}
-
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    //NSLog(@"didSelectRowAtIndexPath = %ld %ld", indexPath.section, indexPath.row);
-    [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    
-    CJSectionDataModel *sectionDataModel = [self.sectionDataModels objectAtIndex:indexPath.section];
-    NSArray *dataModels = sectionDataModel.values;
-    CJModuleModel *moduleModel = [dataModels objectAtIndex:indexPath.row];
-    
-    if (moduleModel.selector) {
-        [self performSelectorOnMainThread:moduleModel.selector withObject:nil waitUntilDone:NO];
-        return;
-    }
-    
-    Class classEntry = moduleModel.classEntry;
-    NSString *nibName = NSStringFromClass(moduleModel.classEntry);
-    
-    
-    UIViewController *viewController = nil;
-    
-    NSArray *noxibViewControllers = @[NSStringFromClass([UIViewController class]),
-                                      NSStringFromClass([NavigationBarRemoveUnderlineViewController class]),
-                                      NSStringFromClass([FloatingWindowViewController class]),
-                                      NSStringFromClass([SuspendWindowViewController class]),
-                                      NSStringFromClass([ColorViewController class]),
-                                      NSStringFromClass([SystemComposeViewController class]),
-                                      NSStringFromClass([ChangeEnvironmentViewController class]),
-                                      NSStringFromClass([LoginChangeEnvironmentViewController class]),
-                                      NSStringFromClass([NavigationBarNormalChangeBGViewController class])
-                                    ];
-    
-    NSString *clsString = NSStringFromClass(moduleModel.classEntry);
-    
-    if ([noxibViewControllers containsObject:clsString])
-    {
-        viewController = [[classEntry alloc] init];
-        if ([clsString isEqualToString:NSStringFromClass([UIViewController class])]) {
-            viewController.view.backgroundColor = [UIColor whiteColor];
-        }
-        
-    } else if ([classEntry isSubclassOfClass:[NavigationBarBaseViewController class]]) {
-        viewController = [[classEntry alloc] initWithNibName:@"NavigationBarBaseViewController" bundle:nil];
-        
-    } else {
-        viewController = [[classEntry alloc] initWithNibName:nibName bundle:nil];
-    }
-    viewController.title = NSLocalizedString(moduleModel.title, nil);
-    viewController.hidesBottomBarWhenPushed = YES;
-    [self.navigationController pushViewController:viewController animated:YES];
 }
 
 

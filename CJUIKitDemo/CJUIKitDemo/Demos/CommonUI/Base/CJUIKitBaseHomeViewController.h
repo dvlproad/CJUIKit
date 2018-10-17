@@ -1,5 +1,5 @@
 //
-//  FoundationHomeViewController.h
+//  CJUIKitBaseHomeViewController.h
 //  CJFoundationDemo
 //
 //  Created by ciyouzen on 2016/3/26.
@@ -8,10 +8,10 @@
 
 #import "CJUIKitBaseViewController.h"
 
-@interface FoundationHomeViewController : CJUIKitBaseViewController {
+@interface CJUIKitBaseHomeViewController : CJUIKitBaseViewController {
     
 }
-@property (nonatomic, weak) IBOutlet UITableView *tableView;
+@property (nonatomic, strong) UITableView *tableView;
 @property (nonatomic, strong) NSMutableArray<CJSectionDataModel *> *sectionDataModels;
 
 @end
