@@ -42,13 +42,17 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 2;
+    return 4;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
     if (indexPath.row == 0) {
         cell.textLabel.text = @"CJCallUtil";
+    } else if (indexPath.row == 1) {
+        cell.textLabel.text = @"测试是否会有多个拨打电话视图弹出";
+    } else if (indexPath.row == 2) {
+        cell.textLabel.text = @"移除拨打电话视图弹出";
     } else {
         cell.textLabel.text = @"None";
     }
@@ -61,7 +65,15 @@
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
     if (indexPath.row == 0) {
-        [CJCallUtil callPhoneWithNum:@"18012345678" atView:self.view];
+        [CJCallUtil showCallViewWithPhone:@"18012345678" atView:self.view];
+        
+    } else if (indexPath.row == 1) {
+        [CJCallUtil showCallViewWithPhone:@"18000000001" atView:self.view];
+        [CJCallUtil showCallViewWithPhone:@"18000000002" atView:self.view];
+        [CJCallUtil showCallViewWithPhone:@"18000000003" atView:self.view];
+        [CJCallUtil showCallViewWithPhone:@"18000000004" atView:self.view];
+    } else if (indexPath.row == 2) {
+        [CJCallUtil hideCallView];
     }
 }
 

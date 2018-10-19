@@ -3,7 +3,7 @@
 //  CJUIKitDemo
 //
 //  Created by ciyouzen on 2017/2/23.
-//  Copyright © 2018年 dvlproad. All rights reserved.
+//  Copyright © 2017年 dvlproad. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
@@ -12,6 +12,10 @@
 ///调用系统服务的类(包括拨打电话等)
 @interface CJCallUtil : NSObject
 
-+ (void)callPhoneWithNum:(NSString *)phoneNum atView:(UIView *)atView;
+///显示拨打电话视图
++ (void)showCallViewWithPhone:(NSString *)phoneNum atView:(UIView *)atView;
+
+///隐藏拨打电话视图
++ (void)hideCallView;
 
 @end
