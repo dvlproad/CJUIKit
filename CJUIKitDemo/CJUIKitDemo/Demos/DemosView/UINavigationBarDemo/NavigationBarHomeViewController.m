@@ -14,9 +14,7 @@
 #import "NavigationBarScrollChangeBGViewController.h"
 #import "NavigationBarChangePositonViewController.h"
 
-@interface NavigationBarHomeViewController () <UITableViewDataSource, UITableViewDelegate> {
-    
-}
+@interface NavigationBarHomeViewController ()
 
 @end
 

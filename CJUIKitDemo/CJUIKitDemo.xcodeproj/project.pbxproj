@@ -216,6 +216,11 @@
 		78E1895921777DC600B8781A /* CJUIKitBaseHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78E1895721777DC600B8781A /* CJUIKitBaseHomeViewController.m */; };
 		78E1895D2177835700B8781A /* ViewHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78E1895B2177835600B8781A /* ViewHomeViewController.m */; };
 		78E1899E2177874B00B8781A /* SliderHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78E1899C2177874B00B8781A /* SliderHomeViewController.m */; };
+		78E189A221778A4000B8781A /* AutoLayoutHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78E189A021778A4000B8781A /* AutoLayoutHomeViewController.m */; };
+		78E189A5217791D200B8781A /* TranslucentLayoutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78E189A4217791D200B8781A /* TranslucentLayoutViewController.m */; };
+		78E189A8217796DF00B8781A /* EdgeLayoutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78E189A7217796DF00B8781A /* EdgeLayoutViewController.m */; };
+		78E189AB21781BD000B8781A /* TranslucentLayoutTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78E189AA21781BD000B8781A /* TranslucentLayoutTableViewController.m */; };
+		78E189AE21781BE200B8781A /* EdgeLayoutTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78E189AD21781BE200B8781A /* EdgeLayoutTableViewController.m */; };
 		78E269BE1ECC5E1A007D3686 /* bgCar@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 78E269BB1ECC5E1A007D3686 /* bgCar@2x.jpg */; };
 		78E269BF1ECC5E1A007D3686 /* bgSky@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 78E269BC1ECC5E1A007D3686 /* bgSky@2x.jpg */; };
 		78E269C01ECC5E1A007D3686 /* header@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 78E269BD1ECC5E1A007D3686 /* header@2x.jpg */; };
@@ -878,6 +883,16 @@
 		78E1895C2177835600B8781A /* ViewHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewHomeViewController.h; sourceTree = "<group>"; };
 		78E1899C2177874B00B8781A /* SliderHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SliderHomeViewController.m; sourceTree = "<group>"; };
 		78E1899D2177874B00B8781A /* SliderHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SliderHomeViewController.h; sourceTree = "<group>"; };
+		78E189A021778A4000B8781A /* AutoLayoutHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AutoLayoutHomeViewController.m; sourceTree = "<group>"; };
+		78E189A121778A4000B8781A /* AutoLayoutHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AutoLayoutHomeViewController.h; sourceTree = "<group>"; };
+		78E189A3217791D200B8781A /* TranslucentLayoutViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TranslucentLayoutViewController.h; sourceTree = "<group>"; };
+		78E189A4217791D200B8781A /* TranslucentLayoutViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TranslucentLayoutViewController.m; sourceTree = "<group>"; };
+		78E189A6217796DF00B8781A /* EdgeLayoutViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EdgeLayoutViewController.h; sourceTree = "<group>"; };
+		78E189A7217796DF00B8781A /* EdgeLayoutViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EdgeLayoutViewController.m; sourceTree = "<group>"; };
+		78E189A921781BD000B8781A /* TranslucentLayoutTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TranslucentLayoutTableViewController.h; sourceTree = "<group>"; };
+		78E189AA21781BD000B8781A /* TranslucentLayoutTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TranslucentLayoutTableViewController.m; sourceTree = "<group>"; };
+		78E189AC21781BE200B8781A /* EdgeLayoutTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EdgeLayoutTableViewController.h; sourceTree = "<group>"; };
+		78E189AD21781BE200B8781A /* EdgeLayoutTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EdgeLayoutTableViewController.m; sourceTree = "<group>"; };
 		78E269BB1ECC5E1A007D3686 /* bgCar@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "bgCar@2x.jpg"; sourceTree = "<group>"; };
 		78E269BC1ECC5E1A007D3686 /* bgSky@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "bgSky@2x.jpg"; sourceTree = "<group>"; };
 		78E269BD1ECC5E1A007D3686 /* header@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "header@2x.jpg"; sourceTree = "<group>"; };
@@ -2454,6 +2469,23 @@
 			path = UIViewDemo;
 			sourceTree = "<group>";
 		};
+		78E1899F21778A0F00B8781A /* AutoLayoutDemo */ = {
+			isa = PBXGroup;
+			children = (
+				78E189A121778A4000B8781A /* AutoLayoutHomeViewController.h */,
+				78E189A021778A4000B8781A /* AutoLayoutHomeViewController.m */,
+				78E189A6217796DF00B8781A /* EdgeLayoutViewController.h */,
+				78E189A7217796DF00B8781A /* EdgeLayoutViewController.m */,
+				78E189AC21781BE200B8781A /* EdgeLayoutTableViewController.h */,
+				78E189AD21781BE200B8781A /* EdgeLayoutTableViewController.m */,
+				78E189A3217791D200B8781A /* TranslucentLayoutViewController.h */,
+				78E189A4217791D200B8781A /* TranslucentLayoutViewController.m */,
+				78E189A921781BD000B8781A /* TranslucentLayoutTableViewController.h */,
+				78E189AA21781BD000B8781A /* TranslucentLayoutTableViewController.m */,
+			);
+			path = AutoLayoutDemo;
+			sourceTree = "<group>";
+		};
 		7EA576B320691B5A00726CCF /* CJModuleManager */ = {
 			isa = PBXGroup;
 			children = (
@@ -3212,6 +3244,7 @@
 			children = (
 				80FF90181FC5649E00E437CF /* HomeViewController.h */,
 				80FF8FD81FC5649E00E437CF /* HomeViewController.m */,
+				78E1899F21778A0F00B8781A /* AutoLayoutDemo */,
 				78E1895A217782FF00B8781A /* UIViewDemo */,
 				7808D59021703C18007FC851 /* ChangeEnvironmentDemo */,
 				80D71EA52090274200D2DB68 /* CJAlertDemo */,
@@ -4220,6 +4253,7 @@
 				78A4E1B42173A0D9005FEADD /* DemoChangeEnvironmentViewModel.m in Sources */,
 				80FF909A1FC5649F00E437CF /* FloatingWindowViewController.m in Sources */,
 				789CAF681FB612B700AF8CD4 /* CJChooseTextTextField.m in Sources */,
+				78E189AE21781BE200B8781A /* EdgeLayoutTableViewController.m in Sources */,
 				808DE5E720DA0586003E08F1 /* CJDecimalUtil.m in Sources */,
 				80FF90B01FC5649F00E437CF /* NavigationBarScrollChangeBGViewController.m in Sources */,
 				7832810D1F41AA96008267E0 /* ProcessLineView.m in Sources */,
@@ -4283,12 +4317,14 @@
 				784C880E216F58B100AFEE7D /* CJAppLastUser.m in Sources */,
 				808BF327201A011400511F7C /* UITextField+CJPadding.m in Sources */,
 				7850B70720937C5A008F4A21 /* ShowExtendViewVC.m in Sources */,
+				78E189A221778A4000B8781A /* AutoLayoutHomeViewController.m in Sources */,
 				80FF913A1FC5668700E437CF /* NSString+CJEncoding.m in Sources */,
 				789CAF391FB612B700AF8CD4 /* CJRefreshBaseView.m in Sources */,
 				78A621BB21331B3C004DA046 /* CJLogView.m in Sources */,
 				805481902074C97200CDE5A1 /* CJTimerModel.m in Sources */,
 				80FF914E1FC5668700E437CF /* CJDataUtil+SortCategory.m in Sources */,
 				80FF91531FC5668700E437CF /* PrivateSetting.m in Sources */,
+				78E189A5217791D200B8781A /* TranslucentLayoutViewController.m in Sources */,
 				789CAF3E1FB612B700AF8CD4 /* CJScaleHeadView.m in Sources */,
 				789CAF451FB612B700AF8CD4 /* CJAdsorbModel.m in Sources */,
 				80FF903A1FC5649F00E437CF /* SvDemo_Refresh.m in Sources */,
@@ -4311,9 +4347,11 @@
 				789CAF4B1FB612B700AF8CD4 /* CJSliderThumb.m in Sources */,
 				789CAF1D1FB612B700AF8CD4 /* CJCircleLayout.m in Sources */,
 				784A7248214CD34400F8D144 /* NSObjectCJHelper.m in Sources */,
+				78E189A8217796DF00B8781A /* EdgeLayoutViewController.m in Sources */,
 				808B977420B7B54600910E45 /* CJAppVersionUtil.m in Sources */,
 				787FDB9C20502A1C008A46E3 /* CJTextField.m in Sources */,
 				78C8148E216E11AF00A6B190 /* Home1.m in Sources */,
+				78E189AB21781BD000B8781A /* TranslucentLayoutTableViewController.m in Sources */,
 				80E7E73120AD2AEA000F762D /* UINavigationBar+CJChangeBG.m in Sources */,
 				7885FC4A2156681F00B97DAA /* UIView+CJPopupInSuspendWindow.m in Sources */,
 				800E07E12016CCF500799B78 /* DataUtilViewController.m in Sources */,

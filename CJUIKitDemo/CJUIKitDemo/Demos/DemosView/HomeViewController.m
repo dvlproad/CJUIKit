@@ -8,6 +8,7 @@
 
 #import "HomeViewController.h"
 
+#import "AutoLayoutHomeViewController.h"
 #import "NestedXibViewController.h"
 #import "BeChangeViewController.h"
 
@@ -57,6 +58,22 @@
     
     
     NSMutableArray *sectionDataModels = [[NSMutableArray alloc] init];
+    
+    //AutoLayout
+    {
+        CJSectionDataModel *sectionDataModel = [[CJSectionDataModel alloc] init];
+        sectionDataModel.theme = @"AutoLayout";
+        {
+            CJModuleModel *autoLayoutModule = [[CJModuleModel alloc] init];
+            autoLayoutModule.title = @"AutoLayout";
+            autoLayoutModule.classEntry = [AutoLayoutHomeViewController class];
+            autoLayoutModule.isCreateByXib = NO;
+            
+            [sectionDataModel.values addObject:autoLayoutModule];
+        }
+        
+        [sectionDataModels addObject:sectionDataModel];
+    }
     
     //Interface
     {
