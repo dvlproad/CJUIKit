@@ -105,8 +105,8 @@
     /* progressView */
     UIProgressView *progressView = [[UIProgressView alloc] initWithFrame:CGRectZero];
     progressView.backgroundColor = [UIColor whiteColor];
-    progressView.progressTintColor= [UIColor greenColor];//设置已过进度部分的颜色
-    progressView.trackTintColor= [UIColor lightGrayColor];//设置未过进度部分的颜色
+    progressView.progressTintColor = [UIColor greenColor];//设置已过进度部分的颜色
+    progressView.trackTintColor = [UIColor lightGrayColor];//设置未过进度部分的颜色
     progressView.hidden = YES;
     [self.view addSubview:progressView];
     [progressView mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -115,6 +115,23 @@
         make.height.mas_equalTo(2);
     }];
     self.progressView = progressView;
+}
+
+- (void)setTodoProgressColor:(UIColor *)todoProgressColor {
+    _todoProgressColor = todoProgressColor;
+    self.progressView.trackTintColor = self.todoProgressColor;//设置未过进度部分的颜色
+}
+
+- (void)setDoneProgressColor:(UIColor *)doneProgressColor {
+    _doneProgressColor = doneProgressColor;
+    self.progressView.progressTintColor = self.doneProgressColor;//设置已过进度部分的颜色
+}
+
+- (void)setProgressHeight:(CGFloat)progressHeight {
+    _progressHeight = progressHeight;
+    [self.progressView mas_updateConstraints:^(MASConstraintMaker *make) {
+        make.height.mas_equalTo(progressHeight);
+    }];
 }
 
 

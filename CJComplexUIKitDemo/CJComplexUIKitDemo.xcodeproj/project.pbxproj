@@ -680,7 +680,7 @@
 					780E45FF1E5DF87B00980127 = {
 						CreatedOnToolsVersion = 8.0;
 						DevelopmentTeam = FZ5YDHE5JZ;
-						ProvisioningStyle = Manual;
+						ProvisioningStyle = Automatic;
 					};
 					780E46181E5DF87B00980127 = {
 						CreatedOnToolsVersion = 8.0;
@@ -1085,8 +1085,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = FZ5YDHE5JZ;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
 				GCC_PREFIX_HEADER = CJComplexUIKitDemo/PrefixHeader.pch;
 				INFOPLIST_FILE = "$(SRCROOT)/CJComplexUIKitDemo/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -1103,9 +1103,9 @@
 			baseConfigurationReference = 18C1A083041B9B42AD45248F /* Pods-CJComplexUIKitDemo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
-				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = FZ5YDHE5JZ;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
 				GCC_PREFIX_HEADER = CJComplexUIKitDemo/PrefixHeader.pch;
 				INFOPLIST_FILE = "$(SRCROOT)/CJComplexUIKitDemo/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;

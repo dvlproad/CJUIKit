@@ -156,6 +156,9 @@
         webViewController.title = NSLocalizedString(moduleModel.title, nil);
         webViewController.hidesBottomBarWhenPushed = YES;
         
+        webViewController.todoProgressColor = [UIColor yellowColor];
+        webViewController.doneProgressColor = [UIColor blueColor];
+        webViewController.progressHeight = 10;
         webViewController.networkUrl = networkUrl;
         webViewController.webViewDidFinishNavigationBlcok = ^(WKWebView *webView) {
             if ([webView.URL.absoluteString isEqualToString:networkUrl]) {
