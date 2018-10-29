@@ -28,7 +28,6 @@
 @interface CJBaseWebViewController () <WKNavigationDelegate> {
     
 }
-@property (nonatomic, strong) WKWebView *webView;
 @property (nonatomic, strong) UIProgressView *progressView;
 @property (nonatomic, assign, readonly) BOOL oldTranslucent;
 
@@ -88,6 +87,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    self.useWebTitle = YES; //默认使用 web title
     
     [self setupViews];
 }
@@ -188,7 +189,9 @@
                 }];
             }
         } else if ([keyPath isEqualToString:@"title"]) { //网页title
-            self.navigationItem.title = self.webView.title;
+            if (self.useWebTitle) {
+                self.navigationItem.title = self.webView.title;
+            }
             
         } else {
             [super observeValueForKeyPath:keyPath ofObject:object change:change context:context];
