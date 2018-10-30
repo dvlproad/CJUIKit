@@ -19,7 +19,7 @@
 
 + (instancetype)sharedInstance;
 
-- (void)loadModulesWithPlistFile:(NSString *)plistFile;
+- (void)addModuleNames:(NSArray<NSString *> *)moduleNames;
 
 - (NSArray<id<CJModule>> *)allModules;
 

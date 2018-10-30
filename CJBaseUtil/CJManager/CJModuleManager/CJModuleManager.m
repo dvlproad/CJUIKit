@@ -28,28 +28,26 @@
     return instance;
 }
 
-
-- (NSMutableArray<id<CJModule>> *)modules
-{
-    if (!_modules) {
+- (instancetype)init {
+    self = [super init];
+    if (self) {
         _modules = [NSMutableArray array];
     }
-    return _modules;
+    return self;
+}
+
+- (void)addModuleNames:(NSArray<NSString *> *)moduleNames
+{
+    for (NSString *moduleName in moduleNames) {
+        id<CJModule> module = [[NSClassFromString(moduleName) alloc] init];
+        [self addModule:module];
+    }
 }
 
 - (void)addModule:(id<CJModule>) module
 {
     if (![self.modules containsObject:module]) {
         [self.modules addObject:module];
-    }
-}
-
-- (void)loadModulesWithPlistFile:(NSString *)plistFile
-{
-    NSArray<NSString *> *moduleNames = [NSArray arrayWithContentsOfFile:plistFile];
-    for (NSString *moduleName in moduleNames) {
-        id<CJModule> module = [[NSClassFromString(moduleName) alloc] init];
-        [self addModule:module];
     }
 }
 
