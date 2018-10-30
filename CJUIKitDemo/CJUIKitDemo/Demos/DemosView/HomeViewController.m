@@ -75,6 +75,23 @@
         [sectionDataModels addObject:sectionDataModel];
     }
     
+    
+    // 测试push UINavigationController
+    {
+        CJSectionDataModel *sectionDataModel = [[CJSectionDataModel alloc] init];
+        sectionDataModel.theme = @"Push";
+        {
+            CJModuleModel *autoLayoutModule = [[CJModuleModel alloc] init];
+            autoLayoutModule.title = @"testPushNavigationController";
+            autoLayoutModule.selector = @selector(testPushNavigationController);
+            autoLayoutModule.isCreateByXib = NO;
+            
+            [sectionDataModel.values addObject:autoLayoutModule];
+        }
+        
+        [sectionDataModels addObject:sectionDataModel];
+    }
+    
     //Interface
     {
         CJSectionDataModel *sectionDataModel = [[CJSectionDataModel alloc] init];
@@ -302,6 +319,17 @@
     self.sectionDataModels = sectionDataModels;
 }
 
+
+- (void)testPushNavigationController {
+    UIViewController *viewController = [[UIViewController alloc] init];
+    viewController.title = @"测试";
+    viewController.view.backgroundColor = [UIColor yellowColor];
+//    UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:viewController];
+    if (self.navigationController) {
+        //不能push navigationController
+//        [self.navigationController pushViewController:navigationController animated:YES];
+    }
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

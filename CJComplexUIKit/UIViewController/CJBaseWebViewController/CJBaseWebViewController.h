@@ -27,7 +27,7 @@
 @interface CJBaseWebViewController : UIViewController <CJEmptyViewProtocol> {
     
 }
-@property (nonatomic, strong) WKWebView *webView;
+@property (nonatomic, strong) WKWebView *webView;       /**< 浏览器(用于goBack等) */
 @property (nonatomic, assign) BOOL useWebTitle;         /**< 使用 web title(默认YES) */
 @property (nonatomic, strong) UIColor *doneProgressColor;   /**< 设置已过进度部分的颜色 */
 @property (nonatomic, strong) UIColor *todoProgressColor;   /**< 设置未过进度部分的颜色 */

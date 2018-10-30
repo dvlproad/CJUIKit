@@ -48,6 +48,8 @@
     [super viewWillDisappear:animated];
     
     self.navigationController.navigationBar.translucent = self.oldTranslucent;
+    
+    [SVProgressHUD dismiss];//容错处理:避免有时候加载未完成时候需要返回
 }
 
 - (void)viewWillAppear:(BOOL)animated {
