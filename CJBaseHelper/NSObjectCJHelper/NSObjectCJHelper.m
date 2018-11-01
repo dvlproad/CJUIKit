@@ -10,7 +10,7 @@
 
 @implementation NSObjectCJHelper
 
-///判断对象是否为NULL或nil
+/// 判断对象是否为NULL或nil(OC方法)
 + (BOOL)isNullForObject:(id)object {
     if (object == nil || object == NULL || [object isKindOfClass:[NSNull class]]) {
         return YES;
@@ -33,7 +33,7 @@
     }
 }
 
-///判断对象是否为空
+/// 判断对象是否为空(OC方法)
 + (BOOL)isEmptyForObject:(id)object {
     if ([NSObjectCJHelper isNullForObject:object]) {
         return YES;
@@ -74,6 +74,15 @@
     return NO;
 }
 
+#pragma mark - C函数
+/// 判断对象是否为NULL或nil(C函数)
+bool isNullObjectCJHelper(id object) {
+    return [NSObjectCJHelper isNullForObject:object];
+}
 
+/// 判断对象是否为空(C函数)
+bool isEmptyObjectCJHelper(id object) {
+    return [NSObjectCJHelper isEmptyForObject:object];
+}
 
 @end

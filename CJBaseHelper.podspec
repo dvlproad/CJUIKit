@@ -15,6 +15,7 @@ Pod::Spec.new do |s|
                   - CJBaseHelper/NSCalendarCJHelper：NSCalendar帮助类
                   - CJBaseHelper/NSOperationQueueHelper：多任务处理
                   - CJBaseHelper/WebCJHelper：Web帮助类，包含清除缓存问题等
+                  - CJBaseHelper/AuthorizationCJHelper：权限判断及系统设置打开
                   
 
                    A longer description of CJBaseHelper in Markdown format.
@@ -27,7 +28,7 @@ Pod::Spec.new do |s|
 
   # s.social_media_url   = "http://twitter.com/dvlproad"
 
-  s.platform     = :ios, "7.0"
+  s.platform     = :ios, "8.0"
 
   s.source       = { :git => "https://github.com/dvlproad/CJUIKit.git", :tag => "CJBaseHelper_0.0.7" }
   # s.source_files  = "CJBaseUtil/*.{h,m}"
@@ -76,6 +77,12 @@ Pod::Spec.new do |s|
   # NSOperationQueue 搜索功能常常需要的多线程处理工具类
   s.subspec 'NSOperationQueueCJHelper' do |ss|
     ss.source_files = "CJBaseHelper/NSOperationQueueCJHelper/**/*.{h,m}"
+  end
+
+  # 权限判断
+  s.subspec 'AuthorizationCJHelper' do |ss|
+    ss.source_files = "CJBaseHelper/AuthorizationCJHelper/**/*.{h,m}"
+    ss.frameworks = 'AVFoundation', 'Photos', 'CoreLocation'
   end
 
   

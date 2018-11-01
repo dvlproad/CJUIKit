@@ -200,6 +200,7 @@
 		78B6C2E92159D84800D5864E /* DemoBusFlightStationOnOffDetailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 78B6C2E72159D84700D5864E /* DemoBusFlightStationOnOffDetailModel.m */; };
 		78B6C2EE2159D8AF00D5864E /* DemoBusPassengerOrderModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 78B6C2EC2159D8AF00D5864E /* DemoBusPassengerOrderModel.m */; };
 		78B6C2EF2159D8AF00D5864E /* DemoBusPassengerModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 78B6C2ED2159D8AF00D5864E /* DemoBusPassengerModel.m */; };
+		78B90E65218B06BF00776584 /* AuthorizationCJHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 78B90E64218B06BE00776584 /* AuthorizationCJHelper.m */; };
 		78C81476216E0B4400A6B190 /* UIViewController+CJSystemComposeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 78C81474216E0B4300A6B190 /* UIViewController+CJSystemComposeView.m */; };
 		78C81479216E0DEC00A6B190 /* SystemComposeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78C81478216E0DEC00A6B190 /* SystemComposeViewController.m */; };
 		78C81489216E11AF00A6B190 /* CChildViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78C8147B216E11AF00A6B190 /* CChildViewController.m */; };
@@ -851,6 +852,8 @@
 		78B6C2EB2159D8AF00D5864E /* DemoBusPassengerOrderModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DemoBusPassengerOrderModel.h; sourceTree = "<group>"; };
 		78B6C2EC2159D8AF00D5864E /* DemoBusPassengerOrderModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DemoBusPassengerOrderModel.m; sourceTree = "<group>"; };
 		78B6C2ED2159D8AF00D5864E /* DemoBusPassengerModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DemoBusPassengerModel.m; sourceTree = "<group>"; };
+		78B90E63218B06BE00776584 /* AuthorizationCJHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AuthorizationCJHelper.h; sourceTree = "<group>"; };
+		78B90E64218B06BE00776584 /* AuthorizationCJHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AuthorizationCJHelper.m; sourceTree = "<group>"; };
 		78C81474216E0B4300A6B190 /* UIViewController+CJSystemComposeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+CJSystemComposeView.m"; sourceTree = "<group>"; };
 		78C81475216E0B4400A6B190 /* UIViewController+CJSystemComposeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+CJSystemComposeView.h"; sourceTree = "<group>"; };
 		78C81477216E0DEC00A6B190 /* SystemComposeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SystemComposeViewController.h; sourceTree = "<group>"; };
@@ -1367,6 +1370,7 @@
 		780078F4211B35CA00D810B5 /* CJBaseHelper */ = {
 			isa = PBXGroup;
 			children = (
+				78B90E62218B06BE00776584 /* AuthorizationCJHelper */,
 				784A7243214CD34300F8D144 /* DeviceCJHelper */,
 				7885FC2C21562F9C00B97DAA /* NSCalendarCJHelper */,
 				7885FC282156279000B97DAA /* NSDateFormatterCJHelper */,
@@ -2423,6 +2427,15 @@
 				78B6C2DE2159D20000D5864E /* DemoUser.m */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		78B90E62218B06BE00776584 /* AuthorizationCJHelper */ = {
+			isa = PBXGroup;
+			children = (
+				78B90E63218B06BE00776584 /* AuthorizationCJHelper.h */,
+				78B90E64218B06BE00776584 /* AuthorizationCJHelper.m */,
+			);
+			path = AuthorizationCJHelper;
 			sourceTree = "<group>";
 		};
 		78C8147A216E11AF00A6B190 /* ChildViewController */ = {
@@ -4201,6 +4214,7 @@
 				80E7E75420AD2C8B000F762D /* UIImage+CJFixOrientation.m in Sources */,
 				7885FC9321567BE000B97DAA /* DemoButtonFactory.m in Sources */,
 				80FF90A41FC5649F00E437CF /* HomeViewController.m in Sources */,
+				78B90E65218B06BF00776584 /* AuthorizationCJHelper.m in Sources */,
 				800E07E52016CCF500799B78 /* DeviceInfo.m in Sources */,
 				789CAF311FB612B700AF8CD4 /* CJTableViewHeaderFooterView.m in Sources */,
 				789CAF471FB612B700AF8CD4 /* CJPlayerSlider.m in Sources */,
@@ -4557,7 +4571,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = FZ5YDHE5JZ;
 				GCC_PREFIX_HEADER = CJUIKitDemo/PrefixHeader.pch;
 				INFOPLIST_FILE = CJUIKitDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -4576,7 +4590,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = FZ5YDHE5JZ;
 				GCC_PREFIX_HEADER = CJUIKitDemo/PrefixHeader.pch;
 				INFOPLIST_FILE = CJUIKitDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;

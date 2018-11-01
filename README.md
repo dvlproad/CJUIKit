@@ -1,5 +1,6 @@
 <p id="目录"></p>
 ## 目录
+
 * [一、CJBaseUIKit：自定义的基础UI控件](#CJBaseUIKit)
 * [二、CJComplexUIKit：自定义的稍微复杂的UI](#CJComplexUIKit)
 * [三、CJFoundation：系统Foundation的扩展](#CJFoundation)
@@ -200,6 +201,7 @@ CJBaseUIKit/UIButton：按钮 及 CJBadgeButton
 - CJBaseHelper/UIViewControllerCJHelper：视图控制器帮助类：包含获取当前显示的视图控制器和通过视图找到它所在的视图控制器等
 - CJBaseHelper/NSOperationQueueCJHelper：多任务处理
 - CJBaseHelper/WebCJHelper：Web工具，包含清除缓存
+- CJBaseHelper/AuthorizationCJHelper：权限判断及系统设置打开
 
 
 
@@ -267,6 +269,10 @@ CJBaseUIKit/UIButton：按钮 及 CJBadgeButton
 
 
 #### CJBaseHelper
+* 2018-11-01 V0.0.7
+
+> 1. 转移CJMedia中的CJValidateAuthorizationUtil到CJBaseHelper/AuthorizationCJHelper：权限判断及系统设置打开
+
 * 2018-09-22 V0.0.6
 
 > 1. 转移CJBaseUtil中的CJDateFormatterUtil为`NSDateFormatterCJHelper`

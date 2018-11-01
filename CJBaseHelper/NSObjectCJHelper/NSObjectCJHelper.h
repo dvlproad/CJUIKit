@@ -20,10 +20,17 @@
 
 @interface NSObjectCJHelper : NSObject
 
-///判断对象是否为NULL或nil
+#pragma mark - C函数
+/// 判断对象是否为NULL或nil(C函数)
+UIKIT_EXTERN bool isNullObjectCJHelper(id object);
+/// 判断对象是否为空(C函数)
+UIKIT_EXTERN bool isEmptyObjectCJHelper(id object);
+
+#pragma mark - OC方法
+/// 判断对象是否为NULL或nil(OC方法)
 + (BOOL)isNullForObject:(id)object;
 
-///判断对象是否为空
+/// 判断对象是否为空(OC方法)
 + (BOOL)isEmptyForObject:(id)object;
 
 @end

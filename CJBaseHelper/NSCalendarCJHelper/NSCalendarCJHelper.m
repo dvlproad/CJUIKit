@@ -39,17 +39,22 @@
 #pragma mark - unitIntervalFromDate
 /** 完整的描述请参见文件头部 */
 + (NSInteger)year_unitIntervalFromDate:(NSDate *)fromDate toDate:(NSDate *)toDate {
-    return [self unitIntervalFromDate:fromDate toDate:toDate inCalculateUnit:NSCalendarUnitYear];
+    return dateIntervalNSCalendarCJHelper(fromDate, toDate, NSCalendarUnitYear);
 }
 
 /** 完整的描述请参见文件头部 */
 + (NSInteger)month_unitIntervalFromDate:(NSDate *)fromDate toDate:(NSDate *)toDate {
-    return [self unitIntervalFromDate:fromDate toDate:toDate inCalculateUnit:NSCalendarUnitMonth];
+    return dateIntervalNSCalendarCJHelper(fromDate, toDate, NSCalendarUnitMonth);
 }
 
 /** 完整的描述请参见文件头部 */
 + (NSInteger)day_unitIntervalFromDate:(NSDate *)fromDate toDate:(NSDate *)toDate {
-    return [self unitIntervalFromDate:fromDate toDate:toDate inCalculateUnit:NSCalendarUnitDay];
+    return dateIntervalNSCalendarCJHelper(fromDate, toDate, NSCalendarUnitDay);
+}
+
+/* 完整的描述请参见文件头部 */
+NSInteger dateIntervalNSCalendarCJHelper(NSDate *fromDate, NSDate *toDate, NSCalendarUnit calculateUnit) {
+    return [NSCalendarCJHelper unitIntervalFromDate:fromDate toDate:toDate inCalculateUnit:calculateUnit];
 }
 
 /** 完整的描述请参见文件头部 */
@@ -62,36 +67,31 @@
     
     ///*方法②：
     NSCalendar *calendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
+    NSDateComponents *components = [calendar components:calculateUnit fromDate:fromDate toDate:toDate options:0];
     
     NSInteger count = 0;
     switch (calculateUnit) {
         case NSCalendarUnitDay: {
-            NSDateComponents *components = [calendar components:NSCalendarUnitDay fromDate:fromDate toDate:toDate options:0];
             count = [components day];
             break;
         }
         case NSCalendarUnitMonth: {
-            NSDateComponents *components = [calendar components:NSCalendarUnitMonth fromDate:fromDate toDate:toDate options:0];
             count = [components month];
             break;
         }
         case NSCalendarUnitYear: {
-            NSDateComponents *components = [calendar components:NSCalendarUnitYear fromDate:fromDate toDate:toDate options:0];
             count = [components year];
             break;
         }
         case NSCalendarUnitHour: {
-            NSDateComponents *components = [calendar components:NSCalendarUnitHour fromDate:fromDate toDate:toDate options:0];
             count = [components hour];
             break;
         }
         case NSCalendarUnitMinute: {
-            NSDateComponents *components = [calendar components:NSCalendarUnitMinute fromDate:fromDate toDate:toDate options:0];
             count = [components minute];
             break;
         }
         case NSCalendarUnitSecond: {
-            NSDateComponents *components = [calendar components:NSCalendarUnitSecond fromDate:fromDate toDate:toDate options:0];
             count = [components second];
             break;
         }
@@ -139,22 +139,55 @@
 
 
 #pragma mark - dateFromUnitInterval:计算与指定日期间隔多少单位的日期
-
+/// 指定日期的昨天
 + (NSDate *)yesterday_dateFromSinceDate:(NSDate *)sinceDate {
-    return [NSCalendarCJHelper dateFromDayUnitInterval:-1 sinceDate:sinceDate];
+    return dateNSCalendarCJHelper(sinceDate, -1, NSCalendarUnitDay);
 }
 
+/// 指定日期的明天
 + (NSDate *)tomorrow_dateFromSinceDate:(NSDate *)sinceDate {
-    return [NSCalendarCJHelper dateFromDayUnitInterval:1 sinceDate:sinceDate];
+    return dateNSCalendarCJHelper(sinceDate, 1, NSCalendarUnitDay);
 }
 
-/* 完整的描述请参见文件头部 */
-+ (NSDate *)dateFromDayUnitInterval:(NSInteger )unitInterval sinceDate:(NSDate *)sinceDate {
-    return [self dateFromUnitInterval:unitInterval calculateUnit:NSCalendarUnitDay sinceDate:sinceDate];
+/// 指定日期的上个月
++ (NSDate *)lastMonth_dateFromSinceDate:(NSDate *)sinceDate {
+    return dateNSCalendarCJHelper(sinceDate, -1, NSCalendarUnitMonth);
 }
 
-/** 完整的描述请参见文件头部 */
-+ (NSDate *)dateFromUnitInterval:(NSInteger )unitInterval calculateUnit:(NSCalendarUnit)calculateUnit sinceDate:(NSDate *)sinceDate {
+/// 指定日期的下个月
++ (NSDate *)nextMonth_dateFromSinceDate:(NSDate *)sinceDate {
+    return dateNSCalendarCJHelper(sinceDate, 1, NSCalendarUnitMonth);
+}
+
+/// 指定日期的去年
++ (NSDate *)lastYear_dateFromSinceDate:(NSDate *)sinceDate {
+    return dateNSCalendarCJHelper(sinceDate, -1, NSCalendarUnitYear);
+}
+
+/// 指定日期的明年
++ (NSDate *)nextYear_dateFromSinceDate:(NSDate *)sinceDate {
+    return dateNSCalendarCJHelper(sinceDate, 1, NSCalendarUnitYear);
+}
+
+
+/// 获取距离本日期多少个单位("天"、"月"、"年"等)的日期(C函数)
+NSDate *dateNSCalendarCJHelper(NSDate *sinceDate, NSInteger unitInterval, NSCalendarUnit calculateUnit) {
+    return [NSCalendarCJHelper dateFromUnitInterval:unitInterval calculateUnit:calculateUnit sinceDate:sinceDate];
+}
+
+/**
+ *  获取距离本日期多少个单位("天"、"月"、"年"等)的日期(OC方法)
+ *
+ *  @param unitInterval     多少个单位
+ *  @param calculateUnit    计算的单位
+ *  @param sinceDate        从什么日期开始算
+ *
+ *  @return 计算得出的日期
+ */
++ (NSDate *)dateFromUnitInterval:(NSInteger )unitInterval
+                   calculateUnit:(NSCalendarUnit)calculateUnit
+                       sinceDate:(NSDate *)sinceDate
+{
     //日期转换 年月日
     NSCalendar *calendar = [[NSCalendar alloc]initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
     //NSCalendar *calendar = [NSCalendar currentCalendar];
