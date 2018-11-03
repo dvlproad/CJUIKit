@@ -78,24 +78,26 @@
     NSArray *dataModels = sectionDataModel.values;
     CJModuleModel *moduleModel = [dataModels objectAtIndex:indexPath.row];
     
-    if (moduleModel.selector) {
+    if (moduleModel.actionBlock) {
+        moduleModel.actionBlock();
+        
+    } else if (moduleModel.selector) {
         [self performSelectorOnMainThread:moduleModel.selector withObject:nil waitUntilDone:NO];
-        return;
-    }
-    
-    
-    UIViewController *viewController = nil;
-    Class classEntry = moduleModel.classEntry;
-    NSString *clsString = NSStringFromClass(moduleModel.classEntry);
-    if (moduleModel.isCreateByXib) {
-        viewController = [[classEntry alloc] initWithNibName:clsString bundle:nil];
+        
     } else {
-        viewController = [[classEntry alloc] init];
-        viewController.view.backgroundColor = [UIColor whiteColor];
+        UIViewController *viewController = nil;
+        Class classEntry = moduleModel.classEntry;
+        NSString *clsString = NSStringFromClass(moduleModel.classEntry);
+        if (moduleModel.isCreateByXib) {
+            viewController = [[classEntry alloc] initWithNibName:clsString bundle:nil];
+        } else {
+            viewController = [[classEntry alloc] init];
+            viewController.view.backgroundColor = [UIColor whiteColor];
+        }
+        viewController.title = NSLocalizedString(moduleModel.title, nil);
+        viewController.hidesBottomBarWhenPushed = YES;
+        [self.navigationController pushViewController:viewController animated:YES];
     }
-    viewController.title = NSLocalizedString(moduleModel.title, nil);
-    viewController.hidesBottomBarWhenPushed = YES;
-    [self.navigationController pushViewController:viewController animated:YES];
 }
 
 - (void)didReceiveMemoryWarning {
