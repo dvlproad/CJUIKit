@@ -10,8 +10,13 @@
 
 @implementation DemoBarButtonItemFactory
 
-+ (UIBarButtonItem *)demoDoneBarButtonItemWithSEL:(SEL)sel {
-    UIBarButtonItem *doneBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"完成", nil) style:UIBarButtonItemStylePlain target:self action:sel];
+UIBarButtonItem *demoDoneBarButtonItem(id target, SEL action) {
+    UIBarButtonItem *doneBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"完成", nil) style:UIBarButtonItemStylePlain target:target action:action];
+    return doneBarButtonItem;
+}
+
+UIBarButtonItem *cjBarButtonItem(id target, NSString *title, SEL action) {
+    UIBarButtonItem *doneBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:title style:UIBarButtonItemStylePlain target:target action:action];
     return doneBarButtonItem;
 }
 

@@ -1,5 +1,7 @@
 PODS:
   - AFNetworking/Reachability (3.2.1)
+  - CJBaseTest/Test (0.0.1)
+  - CJBaseTest/UITest (0.0.1)
   - CJFile/CJFileManager (0.0.9)
   - CJFile/CJFileModel (0.0.9)
   - CJPicker (1.3.2)
@@ -29,6 +31,8 @@ PODS:
 
 DEPENDENCIES:
   - AFNetworking/Reachability
+  - CJBaseTest/Test (from `~/Project/Github/CJUIKit`)
+  - CJBaseTest/UITest (from `~/Project/Github/CJUIKit`)
   - CJFile/CJFileManager
   - CJFile/CJFileModel
   - CJPicker (~> 1.3.2)
@@ -74,8 +78,13 @@ SPEC REPOS:
     - WebViewJavascriptBridge
     - YYText
 
+EXTERNAL SOURCES:
+  CJBaseTest:
+    :path: "~/Project/Github/CJUIKit"
+
 SPEC CHECKSUMS:
   AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
+  CJBaseTest: ca422ad95d56d24d8c01f340800282d0c88e06e5
   CJFile: 6c1e6d55b3b94e8afbaa9f413f131301d15fdc48
   CJPicker: c33099d47323271b91c2ce112976d1bee19a70ce
   CJPopupView: c7685f6a0225a89c72d97ea946f2816b5442abaf
@@ -97,6 +106,6 @@ SPEC CHECKSUMS:
   WebViewJavascriptBridge: 7f5bc4d3581e672e8f32bd0f812d54bc69bb8e29
   YYText: 5c461d709e24d55a182d1441c41dc639a18a4849
 
-PODFILE CHECKSUM: 791196a54b59000986f4e9cce64e10f1221e6773
+PODFILE CHECKSUM: 780beffcdb2f58683297b64f1aa689f6285f626c
 
 COCOAPODS: 1.5.3

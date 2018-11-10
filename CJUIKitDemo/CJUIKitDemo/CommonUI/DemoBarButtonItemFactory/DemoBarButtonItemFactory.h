@@ -10,6 +10,8 @@
 
 @interface DemoBarButtonItemFactory : NSObject
 
-+ (UIBarButtonItem *)demoDoneBarButtonItemWithSEL:(SEL)sel;
+UIBarButtonItem *demoDoneBarButtonItem(id target, SEL action);
+
+UIBarButtonItem *cjBarButtonItem(id target, NSString *title, SEL action);
 
 @end

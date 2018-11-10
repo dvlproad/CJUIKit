@@ -6,6 +6,7 @@
 * [三、CJFoundation：系统Foundation的扩展](#CJFoundation)
 * [四、CJBaseUtil：自定义的基础工具类](#CJBaseUtil)
 * [五、CJBaseHelper：自定义的基础帮助类](#CJBaseHelper)
+* [六、CJBaseTest：自定义的基础测试类](#CJBaseTest)
 * [其他](#其他)
 * [版本介绍/更新记录](#版本介绍/更新记录)
 
@@ -204,8 +205,12 @@ CJBaseUIKit/UIButton：按钮 及 CJBadgeButton
 - CJBaseHelper/AuthorizationCJHelper：权限判断及系统设置打开
 
 
+<p id="CJBaseTest"></p>
+## 六、CJBaseTest：自定义的基础测试类
+> [< 返回目录](#目录)
 
-
+- CJBaseTest/Test：单元测试类
+- CJBaseTest/UITest：自动化测试类
 
 
 
@@ -284,6 +289,9 @@ CJBaseUIKit/UIButton：按钮 及 CJBadgeButton
 > 1. 更改对象判空的类名为`NSObjectCJHelper`
 > 
 > 2. DeviceCJHelper增加`getIPAddressByHostName:`根据域名host获取ip的方法
+
+
+#### CJBaseTest
 
 
 ## Author Or Contact

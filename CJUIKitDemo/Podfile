@@ -56,5 +56,9 @@ end
 
 target 'CJUIKitDemoTests' do
     #pod 'OCMock', '~> 3.4.1'
+    pod 'CJBaseTest/Test',      :path => '~/Project/Github/CJUIKit’
+end
 
+target 'CJUIKitDemoUITests' do
+    pod 'CJBaseTest/UITest',    :path => '~/Project/Github/CJUIKit’
 end

@@ -6,9 +6,9 @@
 //  Copyright © 2015年 dvlproad. All rights reserved.
 //
 
-#import <XCTest/XCTest.h>
+#import <CJBaseTest/CJUITestCase.h>
 
-@interface CJUIKitDemoUITests : XCTestCase
+@interface CJUIKitDemoUITests : CJUITestCase
 
 @end
 
