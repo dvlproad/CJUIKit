@@ -1831,6 +1831,13 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		788113BC2199500100D1630D /* SharedInstanceDemo */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = SharedInstanceDemo;
+			sourceTree = "<group>";
+		};
 		7885FC282156279000B97DAA /* NSDateFormatterCJHelper */ = {
 			isa = PBXGroup;
 			children = (
@@ -3591,6 +3598,7 @@
 			children = (
 				80FF91BE1FC581DD00E437CF /* UtilHomeViewController.h */,
 				80FF91BF1FC581DD00E437CF /* UtilHomeViewController.m */,
+				788113BC2199500100D1630D /* SharedInstanceDemo */,
 				7852D9D7216EFF9800E50A39 /* KnowledgeDemo */,
 				808E3C442109C5B0009E3924 /* StringUtilDemo */,
 				8008D7CD20E5CF5700F98EF6 /* CallSystemUtilDemo */,

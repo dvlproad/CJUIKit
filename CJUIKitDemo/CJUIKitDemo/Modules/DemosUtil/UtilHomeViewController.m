@@ -41,9 +41,7 @@
 #import "SemaphoreGateKeeperViewController.h"
 #import "LockGateKeeperViewController.h"
 
-@interface UtilHomeViewController () <UITableViewDataSource, UITableViewDelegate> {
-    
-}
+@interface UtilHomeViewController ()
 
 @end
 
@@ -54,16 +52,6 @@
     // Do any additional setup after loading the view.
     self.navigationItem.title = NSLocalizedString(@"Util首页", nil); //知识点:使得tabBar中的title可以和显示在顶部的title保持各自
     self.view.backgroundColor = [UIColor whiteColor];
-    
-    UITableView *tableView = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStyleGrouped];
-    [tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"cell"];
-    tableView.dataSource = self;
-    tableView.delegate = self;
-    [self.view addSubview:tableView];
-    [tableView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.edges.mas_equalTo(self.view);
-    }];
-    self.tableView = tableView;
     
     
     NSMutableArray *sectionDataModels = [[NSMutableArray alloc] init];
@@ -89,12 +77,14 @@
             CJModuleModel *QRCodeModule = [[CJModuleModel alloc] init];
             QRCodeModule.title = @"SemaphoreGateKeeper";
             QRCodeModule.classEntry = [SemaphoreGateKeeperViewController class];
+            QRCodeModule.isCreateByXib = NO;
             [sectionDataModel.values addObject:QRCodeModule];
         }
         {
             CJModuleModel *QRCodeModule = [[CJModuleModel alloc] init];
             QRCodeModule.title = @"LockGateKeeper";
             QRCodeModule.classEntry = [LockGateKeeperViewController class];
+            QRCodeModule.isCreateByXib = NO;
             [sectionDataModel.values addObject:QRCodeModule];
         }
         
@@ -109,12 +99,14 @@
             CJModuleModel *toastUtilModule = [[CJModuleModel alloc] init];
             toastUtilModule.title = @"Toast";
             toastUtilModule.classEntry = [ToastViewController class];
+            toastUtilModule.isCreateByXib = NO;
             [sectionDataModel.values addObject:toastUtilModule];
         }
         {
             CJModuleModel *alertUtilModule = [[CJModuleModel alloc] init];
             alertUtilModule.title = @"Alert";
             alertUtilModule.classEntry = [AlertViewController class];
+            alertUtilModule.isCreateByXib = NO;
             [sectionDataModel.values addObject:alertUtilModule];
         }
         
@@ -129,18 +121,21 @@
             CJModuleModel *toastUtilModule = [[CJModuleModel alloc] init];
             toastUtilModule.title = @"LogUtil(输入、输出)";
             toastUtilModule.classEntry = [LogUtilViewController class];
+            toastUtilModule.isCreateByXib = YES;
             [sectionDataModel.values addObject:toastUtilModule];
         }
         {
             CJModuleModel *toastUtilModule = [[CJModuleModel alloc] init];
             toastUtilModule.title = @"LogView(Log视图)";
             toastUtilModule.classEntry = [LogViewViewController class];
+            toastUtilModule.isCreateByXib = YES;
             [sectionDataModel.values addObject:toastUtilModule];
         }
         {
             CJModuleModel *toastUtilModule = [[CJModuleModel alloc] init];
             toastUtilModule.title = @"LogSuspendWindow(Log悬浮球)";
             toastUtilModule.classEntry = [LogSuspendWindowViewController class];
+            toastUtilModule.isCreateByXib = NO;
             [sectionDataModel.values addObject:toastUtilModule];
         }
         [sectionDataModels addObject:sectionDataModel];
@@ -170,6 +165,7 @@
             CJModuleModel *QRCodeModule = [[CJModuleModel alloc] init];
             QRCodeModule.title = @"QRCode(二维码)";
             QRCodeModule.classEntry = [QRCodeViewController class];
+            QRCodeModule.isCreateByXib = NO;
             [sectionDataModel.values addObject:QRCodeModule];
         }
         
@@ -185,24 +181,28 @@
             CJModuleModel *deviceInfoModule = [[CJModuleModel alloc] init];
             deviceInfoModule.title = @"CallSystem(拨打电话等)";
             deviceInfoModule.classEntry = [CallSystemViewController class];
+            deviceInfoModule.isCreateByXib = NO;
             [sectionDataModel.values addObject:deviceInfoModule];
         }
         {
             CJModuleModel *deviceInfoModule = [[CJModuleModel alloc] init];
             deviceInfoModule.title = @"DeviceInfo";
             deviceInfoModule.classEntry = [DeviceInfoViewController class];
+            deviceInfoModule.isCreateByXib = NO;
             [sectionDataModel.values addObject:deviceInfoModule];
         }
         {
             CJModuleModel *dataUtilModule = [[CJModuleModel alloc] init];
             dataUtilModule.title = @"DataUtil";
             dataUtilModule.classEntry = [DataUtilViewController class];
+            dataUtilModule.isCreateByXib = YES;
             [sectionDataModel.values addObject:dataUtilModule];
         }
         {
             CJModuleModel *NSAttributedStringModule = [[CJModuleModel alloc] init];
             NSAttributedStringModule.title = @"数值处理(取整、去尾0等)";
             NSAttributedStringModule.classEntry = [AccuracyStringViewController class];
+            NSAttributedStringModule.isCreateByXib = NO;
             [sectionDataModel.values addObject:NSAttributedStringModule];
         }
         
@@ -210,6 +210,7 @@
             CJModuleModel *keyboardUtilModule = [[CJModuleModel alloc] init];
             keyboardUtilModule.title = @"KeyboardUtil(键盘高度)";
             keyboardUtilModule.classEntry = [KeyboardUtilViewController class];
+            keyboardUtilModule.isCreateByXib = YES;
             [sectionDataModel.values addObject:keyboardUtilModule];
         }
         
@@ -235,74 +236,6 @@
     self.sectionDataModels = sectionDataModels;
 }
 
-#pragma mark - UITableViewDataSource & UITableViewDelegate
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return self.sectionDataModels.count;
-}
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    CJSectionDataModel *sectionDataModel = [self.sectionDataModels objectAtIndex:section];
-    NSArray *dataModels = sectionDataModel.values;
-    
-    return dataModels.count;
-}
-
-- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
-    CJSectionDataModel *sectionDataModel = [self.sectionDataModels objectAtIndex:section];
-    
-    NSString *indexTitle = sectionDataModel.theme;
-    return indexTitle;
-}
-
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    CJSectionDataModel *sectionDataModel = [self.sectionDataModels objectAtIndex:indexPath.section];
-    NSArray *dataModels = sectionDataModel.values;
-    CJModuleModel *moduleModel = [dataModels objectAtIndex:indexPath.row];
-    
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
-    cell.textLabel.text = moduleModel.title;
-    
-    return cell;
-}
-
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    //NSLog(@"didSelectRowAtIndexPath = %ld %ld", indexPath.section, indexPath.row);
-    [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    
-    CJSectionDataModel *sectionDataModel = [self.sectionDataModels objectAtIndex:indexPath.section];
-    NSArray *dataModels = sectionDataModel.values;
-    CJModuleModel *moduleModel = [dataModels objectAtIndex:indexPath.row];
-    
-    if (moduleModel.selector) {
-        [self performSelectorOnMainThread:moduleModel.selector withObject:nil waitUntilDone:NO];
-        return;
-    }
-    
-    
-    Class classEntry = moduleModel.classEntry;
-    NSString *nibName = NSStringFromClass(moduleModel.classEntry);
-    
-    
-    UIViewController *viewController = nil;
-    
-    NSArray *xibViewControllers = @[NSStringFromClass([LogUtilViewController class]),
-                                    NSStringFromClass([LogViewViewController class]),
-                                    NSStringFromClass([DataUtilViewController class]),
-                                    NSStringFromClass([KeyboardUtilViewController class]),
-                                    ];
-    
-    NSString *clsString = NSStringFromClass(moduleModel.classEntry);
-    if ([xibViewControllers containsObject:clsString])
-    {
-        viewController = [[classEntry alloc] initWithNibName:nibName bundle:nil];
-    } else {
-        viewController = [[classEntry alloc] init];
-        viewController.view.backgroundColor = [UIColor whiteColor];
-    }
-    viewController.title = NSLocalizedString(moduleModel.title, nil);
-    viewController.hidesBottomBarWhenPushed = YES;
-    [self.navigationController pushViewController:viewController animated:YES];
-}
 
 - (void)readOverGuide {
     [CJAppLastUtil readOverGuide];

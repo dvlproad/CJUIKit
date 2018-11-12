@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ChooseColor01 : UITableViewController{
+@interface ChooseColor01 : UITableViewController {
 	NSMutableArray *sectionArray;
 	int fullCount;
 }

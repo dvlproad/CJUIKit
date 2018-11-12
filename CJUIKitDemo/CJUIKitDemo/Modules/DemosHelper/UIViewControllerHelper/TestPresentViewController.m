@@ -18,7 +18,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.view.backgroundColor = [UIColor whiteColor];
+    self.title = NSLocalizedString(@"获取present前的视图(UIViewControllerCJHelper)", nil);
     
     UIButton *closeButton = [UIButton buttonWithType:UIButtonTypeCustom];
     [closeButton setImage:[UIImage imageNamed:@"cjBackBarButtonItem"] forState:UIControlStateNormal];

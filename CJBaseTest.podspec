@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
   #验证方法：pod lib lint CJBaseTest.podspec --allow-warnings --use-libraries --verbose
   s.name         = "CJBaseTest"
-  s.version      = "0.0.1"
+  s.version      = "0.0.2"
   s.summary      = "自定义的基础帮助类"
   s.homepage     = "https://github.com/dvlproad/CJUIKit"
   s.license      = "MIT"
@@ -22,9 +22,9 @@ Pod::Spec.new do |s|
 
   # s.social_media_url   = "http://twitter.com/dvlproad"
 
-  s.platform     = :ios, "8.0"
+  s.platform     = :ios, "9.0"
 
-  s.source       = { :git => "https://github.com/dvlproad/CJUIKit.git", :tag => "CJBaseTest_0.0.1" }
+  s.source       = { :git => "https://github.com/dvlproad/CJUIKit.git", :tag => "CJBaseTest_0.0.2" }
   # s.source_files  = "CJBaseUtil/*.{h,m}"
   # s.resources = "CJBaseUtil/**/*.{png}"
   s.frameworks = 'XCTest'

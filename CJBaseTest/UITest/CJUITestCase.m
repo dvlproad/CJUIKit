@@ -10,6 +10,33 @@
 
 @implementation CJUITestCase
 
+- (bool)canOperateElement:(XCUIElement *)element {
+    if (element && element.exists) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+- (XCUIElement *)getFieldWithLabel:(NSString *)label fromApp:(XCUIApplication *)app {
+    return [self getElementWithType:XCUIElementTypeTextField label:label fromApp:app];
+}
+
+- (XCUIElement *)getElementWithType:(XCUIElementType)type label:(NSString *)label fromApp:(XCUIApplication *)app {
+    XCUIElementQuery *elementQuery = [app descendantsMatchingType:type];
+    XCUIElement *result = nil;
+    
+    for (NSUInteger i = 0; i < elementQuery.count; i++) {
+        XCUIElement *element = [elementQuery elementAtIndex:i];
+        NSString *elementLabel = element.label;
+        if (elementLabel && [elementLabel isEqualToString:label]) {
+            result = element;
+        }
+    }
+    
+    return result;
+}
+
 - (void)waitElementChangeVisible:(XCUIElement *)element {
     [self waitElement:element untilVisible:!element.exists];
 }

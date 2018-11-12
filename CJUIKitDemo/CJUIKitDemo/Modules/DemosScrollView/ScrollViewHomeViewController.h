@@ -6,12 +6,10 @@
 //  Copyright © 2017年 dvlproad. All rights reserved.
 //
 
-#import "CJUIKitBaseViewController.h"
+#import "CJUIKitBaseHomeViewController.h"
 
-@interface ScrollViewHomeViewController : CJUIKitBaseViewController {
+@interface ScrollViewHomeViewController : CJUIKitBaseHomeViewController {
     
 }
-@property (nonatomic, weak) IBOutlet UITableView *tableView;
-@property (nonatomic, strong) NSMutableArray<CJSectionDataModel *> *sectionDataModels;
 
 @end

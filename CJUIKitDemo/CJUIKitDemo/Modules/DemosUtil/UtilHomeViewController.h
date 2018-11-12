@@ -6,12 +6,10 @@
 //  Copyright © 2016年 dvlproad. All rights reserved.
 //
 
-#import "CJUIKitBaseViewController.h"
+#import "CJUIKitBaseHomeViewController.h"
 
-@interface UtilHomeViewController : CJUIKitBaseViewController {
+@interface UtilHomeViewController : CJUIKitBaseHomeViewController {
     
 }
-@property (nonatomic, weak) IBOutlet UITableView *tableView;
-@property (nonatomic, strong) NSMutableArray<CJSectionDataModel *> *sectionDataModels;
 
 @end

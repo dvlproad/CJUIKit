@@ -10,6 +10,11 @@
 
 @interface CJUITestCase : XCTestCase
 
+- (bool)canOperateElement:(XCUIElement *)element;
+
+- (XCUIElement *)getFieldWithLabel:(NSString *)label fromApp:(XCUIApplication *)app;
+- (XCUIElement *)getElementWithType:(XCUIElementType)type label:(NSString *)label fromApp:(XCUIApplication *)app;
+
 - (void)waitElementChangeVisible:(XCUIElement *)element;
 - (void)waitElementChangeEnable:(XCUIElement *)element;
 - (void)waitElementChangeValue:(XCUIElement *)element;

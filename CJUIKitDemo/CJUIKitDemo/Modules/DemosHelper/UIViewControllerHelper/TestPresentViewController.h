@@ -7,8 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <Masonry/Masonry.h>
+#import "CJUIKitBaseViewController.h"
 
-@interface TestPresentViewController : UIViewController
+@interface TestPresentViewController : CJUIKitBaseViewController
 
 @end
