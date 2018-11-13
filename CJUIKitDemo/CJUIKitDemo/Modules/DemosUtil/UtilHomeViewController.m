@@ -33,6 +33,7 @@
 #import "DataUtilViewController.h"
 #import "AccuracyStringViewController.h"
 #import "KeyboardUtilViewController.h"
+#import "SharedInstanceViewController.h"
 
 //混淆名生成器
 #import "CJRandomNameUtil.h"
@@ -51,7 +52,6 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.navigationItem.title = NSLocalizedString(@"Util首页", nil); //知识点:使得tabBar中的title可以和显示在顶部的title保持各自
-    self.view.backgroundColor = [UIColor whiteColor];
     
     
     NSMutableArray *sectionDataModels = [[NSMutableArray alloc] init];
@@ -212,6 +212,14 @@
             keyboardUtilModule.classEntry = [KeyboardUtilViewController class];
             keyboardUtilModule.isCreateByXib = YES;
             [sectionDataModel.values addObject:keyboardUtilModule];
+        }
+        
+        {
+            CJModuleModel *sharedInstanceModule = [[CJModuleModel alloc] init];
+            sharedInstanceModule.title = @"SharedInstance(单例)";
+            sharedInstanceModule.classEntry = [SharedInstanceViewController class];
+            sharedInstanceModule.isCreateByXib = NO;
+            [sectionDataModel.values addObject:sharedInstanceModule];
         }
         
         [sectionDataModels addObject:sectionDataModel];

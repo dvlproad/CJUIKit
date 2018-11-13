@@ -102,6 +102,12 @@
 		787FDB9C20502A1C008A46E3 /* CJTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 787FDB9B20502A1C008A46E3 /* CJTextField.m */; };
 		7880E6F5213A9E84009C9BCF /* CJRandomNameUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 7880E6F4213A9E84009C9BCF /* CJRandomNameUtil.m */; };
 		7880E6F7213C2C4C009C9BCF /* CJRandomNameUtil.txt in Resources */ = {isa = PBXBuildFile; fileRef = 7880E6F6213C2C4C009C9BCF /* CJRandomNameUtil.txt */; };
+		788113BF2199574900D1630D /* SharedInstanceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 788113BE2199574900D1630D /* SharedInstanceViewController.m */; };
+		788113C22199583000D1630D /* NormalSharedInstanceClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 788113C12199583000D1630D /* NormalSharedInstanceClass.m */; };
+		788113C5219958FF00D1630D /* InheritableSharedInstanceClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 788113C4219958FF00D1630D /* InheritableSharedInstanceClass.m */; };
+		788113C82199631A00D1630D /* PerfectSharedInstanceClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 788113C72199631A00D1630D /* PerfectSharedInstanceClass.m */; };
+		788113CB21996A2600D1630D /* SubNormalSharedInstanceClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 788113CA21996A2600D1630D /* SubNormalSharedInstanceClass.m */; };
+		788113CE21996A3A00D1630D /* SubInheritableSharedInstanceClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 788113CD21996A3A00D1630D /* SubInheritableSharedInstanceClass.m */; };
 		7885FC2B2156279000B97DAA /* NSDateFormatterCJHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 7885FC292156279000B97DAA /* NSDateFormatterCJHelper.m */; };
 		7885FC2F21562F9C00B97DAA /* NSCalendarCJHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 7885FC2D21562F9C00B97DAA /* NSCalendarCJHelper.m */; };
 		7885FC4A2156681F00B97DAA /* UIView+CJPopupInSuspendWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 7885FC482156681F00B97DAA /* UIView+CJPopupInSuspendWindow.m */; };
@@ -652,6 +658,18 @@
 		7880E6F3213A9E84009C9BCF /* CJRandomNameUtil.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CJRandomNameUtil.h; sourceTree = "<group>"; };
 		7880E6F4213A9E84009C9BCF /* CJRandomNameUtil.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CJRandomNameUtil.m; sourceTree = "<group>"; };
 		7880E6F6213C2C4C009C9BCF /* CJRandomNameUtil.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CJRandomNameUtil.txt; sourceTree = "<group>"; };
+		788113BD2199574900D1630D /* SharedInstanceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SharedInstanceViewController.h; sourceTree = "<group>"; };
+		788113BE2199574900D1630D /* SharedInstanceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SharedInstanceViewController.m; sourceTree = "<group>"; };
+		788113C02199583000D1630D /* NormalSharedInstanceClass.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NormalSharedInstanceClass.h; sourceTree = "<group>"; };
+		788113C12199583000D1630D /* NormalSharedInstanceClass.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NormalSharedInstanceClass.m; sourceTree = "<group>"; };
+		788113C3219958FF00D1630D /* InheritableSharedInstanceClass.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InheritableSharedInstanceClass.h; sourceTree = "<group>"; };
+		788113C4219958FF00D1630D /* InheritableSharedInstanceClass.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InheritableSharedInstanceClass.m; sourceTree = "<group>"; };
+		788113C62199631A00D1630D /* PerfectSharedInstanceClass.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PerfectSharedInstanceClass.h; sourceTree = "<group>"; };
+		788113C72199631A00D1630D /* PerfectSharedInstanceClass.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PerfectSharedInstanceClass.m; sourceTree = "<group>"; };
+		788113C921996A2600D1630D /* SubNormalSharedInstanceClass.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SubNormalSharedInstanceClass.h; sourceTree = "<group>"; };
+		788113CA21996A2600D1630D /* SubNormalSharedInstanceClass.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SubNormalSharedInstanceClass.m; sourceTree = "<group>"; };
+		788113CC21996A3A00D1630D /* SubInheritableSharedInstanceClass.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SubInheritableSharedInstanceClass.h; sourceTree = "<group>"; };
+		788113CD21996A3A00D1630D /* SubInheritableSharedInstanceClass.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SubInheritableSharedInstanceClass.m; sourceTree = "<group>"; };
 		7885FC292156279000B97DAA /* NSDateFormatterCJHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSDateFormatterCJHelper.m; sourceTree = "<group>"; };
 		7885FC2A2156279000B97DAA /* NSDateFormatterCJHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSDateFormatterCJHelper.h; sourceTree = "<group>"; };
 		7885FC2D21562F9C00B97DAA /* NSCalendarCJHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSCalendarCJHelper.m; sourceTree = "<group>"; };
@@ -1834,8 +1852,28 @@
 		788113BC2199500100D1630D /* SharedInstanceDemo */ = {
 			isa = PBXGroup;
 			children = (
+				788113BD2199574900D1630D /* SharedInstanceViewController.h */,
+				788113BE2199574900D1630D /* SharedInstanceViewController.m */,
+				788113C02199583000D1630D /* NormalSharedInstanceClass.h */,
+				788113C12199583000D1630D /* NormalSharedInstanceClass.m */,
+				788113C62199631A00D1630D /* PerfectSharedInstanceClass.h */,
+				788113C72199631A00D1630D /* PerfectSharedInstanceClass.m */,
+				788113CF21996CC400D1630D /* Inherit */,
 			);
 			path = SharedInstanceDemo;
+			sourceTree = "<group>";
+		};
+		788113CF21996CC400D1630D /* Inherit */ = {
+			isa = PBXGroup;
+			children = (
+				788113C3219958FF00D1630D /* InheritableSharedInstanceClass.h */,
+				788113C4219958FF00D1630D /* InheritableSharedInstanceClass.m */,
+				788113CC21996A3A00D1630D /* SubInheritableSharedInstanceClass.h */,
+				788113CD21996A3A00D1630D /* SubInheritableSharedInstanceClass.m */,
+				788113C921996A2600D1630D /* SubNormalSharedInstanceClass.h */,
+				788113CA21996A2600D1630D /* SubNormalSharedInstanceClass.m */,
+			);
+			path = Inherit;
 			sourceTree = "<group>";
 		};
 		7885FC282156279000B97DAA /* NSDateFormatterCJHelper */ = {
@@ -4050,6 +4088,7 @@
 				784A7216214C9DF000F8D144 /* MoreHomeViewController.m in Sources */,
 				789CAF6C1FB612B700AF8CD4 /* CJDefaultToolbar.m in Sources */,
 				804478272061F328007185EF /* CJLocationChangeManager.m in Sources */,
+				788113BF2199574900D1630D /* SharedInstanceViewController.m in Sources */,
 				80FF91491FC5668700E437CF /* NSObject+SearchProperty.m in Sources */,
 				80F9CFE0206CFDFB003B41D4 /* CJPinyinHelper.m in Sources */,
 				80FF909C1FC5649F00E437CF /* NestedXibView.m in Sources */,
@@ -4076,6 +4115,7 @@
 				789CAF1B1FB612B700AF8CD4 /* CJFullCenterCollectionViewCell.m in Sources */,
 				78C8148C216E11AF00A6B190 /* DChildViewController.m in Sources */,
 				789CAF251FB612B700AF8CD4 /* CJSingleTableViewCellDataSource.m in Sources */,
+				788113CE21996A3A00D1630D /* SubInheritableSharedInstanceClass.m in Sources */,
 				803323AF20299AD7001DACF1 /* DetailCell.m in Sources */,
 				80FF91361FC5668700E437CF /* NSJSONSerialization+CJCategory.m in Sources */,
 				781495A92140D82600D0F2BC /* MantleViewController.m in Sources */,
@@ -4091,6 +4131,7 @@
 				80FF91341FC5668700E437CF /* NSDictionary+CJConsoleLog.m in Sources */,
 				78A621D62135C040004DA046 /* LogViewViewController.m in Sources */,
 				789CAF211FB612B700AF8CD4 /* CJOpenCollectionView.m in Sources */,
+				788113C5219958FF00D1630D /* InheritableSharedInstanceClass.m in Sources */,
 				789CAF1A1FB612B700AF8CD4 /* CJFullBottomCollectionViewCell.m in Sources */,
 				787FDB5820500B01008A46E3 /* TextFieldViewController.m in Sources */,
 				78A621E72135C925004DA046 /* DemoSuspendWindowRootViewController.m in Sources */,
@@ -4194,11 +4235,13 @@
 				80FF913B1FC5668700E437CF /* NSString+CJEncryption.m in Sources */,
 				78B6C2E62159D6E900D5864E /* DemoBusStationLocationModel.m in Sources */,
 				80FF90351FC5649E00E437CF /* TestDataUtil.m in Sources */,
+				788113CB21996A2600D1630D /* SubNormalSharedInstanceClass.m in Sources */,
 				80FF91951FC5682B00E437CF /* FoundationHomeViewController.m in Sources */,
 				80E7E75620AD2C8B000F762D /* UIImage+SplitImageIntoTwoParts.m in Sources */,
 				80FF90851FC5649F00E437CF /* TvDemo_Complex+Event.m in Sources */,
 				80FF902B1FC5649E00E437CF /* MJExtensionViewController.m in Sources */,
 				78E00C8E212F21C5006BFD19 /* CJLogViewWindow.m in Sources */,
+				788113C22199583000D1630D /* NormalSharedInstanceClass.m in Sources */,
 				7885FC2B2156279000B97DAA /* NSDateFormatterCJHelper.m in Sources */,
 				78A621DC2135C713004DA046 /* DemoSuspendWindow.m in Sources */,
 				78A621BE2135A198004DA046 /* CJLogSuspendWindow.m in Sources */,
@@ -4271,6 +4314,7 @@
 				80FF91351FC5668700E437CF /* NSArray+CJConsoleLog.m in Sources */,
 				7880E6F5213A9E84009C9BCF /* CJRandomNameUtil.m in Sources */,
 				803323AC20299AD7001DACF1 /* CustomLayoutCollectionViewController.m in Sources */,
+				788113C82199631A00D1630D /* PerfectSharedInstanceClass.m in Sources */,
 				789CAF291FB612B700AF8CD4 /* CJLeftDetailTableViewCell.m in Sources */,
 				789CAF4E1FB612B700AF8CD4 /* CJSwitchView.m in Sources */,
 				784C880E216F58B100AFEE7D /* CJAppLastUser.m in Sources */,
