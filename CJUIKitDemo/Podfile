@@ -48,6 +48,10 @@ target 'CJUIKitDemo' do
   
   pod 'DZNEmptyDataSet'
   
+  pod 'CJBaseUIKit',        :path => '~/Project/Github/CJUIKit’
+  pod 'CJBaseUtil',         :path => '~/Project/Github/CJUIKit’
+  pod 'CJFoundation',       :path => '~/Project/Github/CJUIKit’
+  pod 'CJBaseHelper',       :path => '~/Project/Github/CJUIKit’
 #  pod 'CJBaseUIKit', :subspecs => ['UIColor', 'UIButton', 'UITextField', 'CJToast', 'CJAlert']
 #  pod 'CJBaseUtil', :subspecs => ['CJLog']
 #  pod 'CJFoundation', :subspecs => ['NSString']
@@ -55,10 +59,12 @@ target 'CJUIKitDemo' do
 end
 
 target 'CJUIKitDemoTests' do
+    platform :ios, '9.0'
     #pod 'OCMock', '~> 3.4.1'
     pod 'CJBaseTest/Test',      :path => '~/Project/Github/CJUIKit’
 end
 
 target 'CJUIKitDemoUITests' do
+    platform :ios, '9.0'
     pod 'CJBaseTest/UITest',    :path => '~/Project/Github/CJUIKit’
 end

@@ -8,17 +8,17 @@ Pod::Spec.new do |s|
   s.author       = "dvlproad"
 
   s.description  = <<-DESC
-                  1、CJDataUtil：包含搜索、排序等数据处理工具类
-                  2、CJDateUtil：日期工具
-                  3、CJKeyboardUtil：键盘工具
-                  4、CJLog：日志工具
-                  *、CJIndentedStringUtil：将 字符串/字典/数组转成含缩进字符串的字符串 的工具
-                  7、CJAppLastUtil：APP上次信息+账号安全工具
-                  8、CJManager：其他各种工具类
-                  9、CJPinyinHelper：拼音相关工具
-                  10、CJCallUtil：拨打电话工具
-                  *、CJQRCodeUtil：二维码
-                  *、CJLaunchImageUtil：启动图
+                  - CJBaseUtil/CJDataUtil：包含搜索、排序等数据处理工具类
+                  - CJBaseUtil/CJDateUtil：日期工具
+                  - CJBaseUtil/CJKeyboardUtil：键盘工具
+                  - CJBaseUtil/CJLog：日志工具
+                  - CJBaseUtil/CJIndentedStringUtil：将 字符串/字典/数组转成含缩进字符串的字符串 的工具
+                  - CJBaseUtil/CJAppLastUtil：APP上次信息+账号安全工具
+                  - CJBaseUtil/CJManager：其他各种工具类
+                  - CJBaseUtil/CJPinyinHelper：拼音相关工具
+                  - CJBaseUtil/CJCallUtil：拨打电话工具
+                  - CJBaseUtil/CJQRCodeUtil：二维码
+                  - CJBaseUtil/CJLaunchImageUtil：启动图
 
                    A longer description of CJBaseUtil in Markdown format.
 
@@ -77,9 +77,9 @@ Pod::Spec.new do |s|
     ss.source_files = "CJBaseUtil/CJKeyboardUtil/**/*.{h,m}"
   end
 
-  s.subspec 'UIUtil' do |ss|
-    ss.source_files = "CJBaseUtil/UIUtil/**/*.{h,m}"
-  end
+  # s.subspec 'UIUtil' do |ss|
+  #   ss.source_files = "CJBaseUtil/UIUtil/**/*.{h,m}"
+  # end
 
   # 拨打电话
   s.subspec 'CJCallUtil' do |ss|
@@ -118,7 +118,7 @@ Pod::Spec.new do |s|
 
     ## 悬浮框管理器
     ss.subspec 'CJSuspendWindowManager' do |sss|
-      sss.source_files = "CJBaseUtil/CJManager/CJTimerManager/**/*.{h,m}"
+      sss.source_files = "CJBaseUtil/CJManager/CJSuspendWindowManager/**/*.{h,m}"
       #sss.resources = "CJBaseUtil/CJManager/**/*.{png,xib}"
     end
 

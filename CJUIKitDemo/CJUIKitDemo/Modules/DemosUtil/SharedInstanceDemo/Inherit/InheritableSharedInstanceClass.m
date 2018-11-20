@@ -12,10 +12,10 @@
 @implementation InheritableSharedInstanceClass
 
 + (instancetype)sharedInstance {
-    id sharedInstance = objc_getAssociatedObject(self, @"cjSharedInstance");
+    id sharedInstance = objc_getAssociatedObject(self, @"InheritableSharedInstance");
     if (!sharedInstance) {
         sharedInstance = [[super allocWithZone:NULL] init];
-        objc_setAssociatedObject(self, @"cjSharedInstance", sharedInstance, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+        objc_setAssociatedObject(self, @"InheritableSharedInstance", sharedInstance, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     }
     return sharedInstance;
 }

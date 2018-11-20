@@ -41,6 +41,12 @@
             toastUtilModule.selector = @selector(printPerfectSharedInstance);
             [sectionDataModel.values addObject:toastUtilModule];
         }
+        {
+            CJModuleModel *toastUtilModule = [[CJModuleModel alloc] init];
+            toastUtilModule.title = @"InheritableSharedInstanceClass(可继承单例的并发测试)";
+            toastUtilModule.selector = @selector(printInheritableSharedInstance_inConcurrence);
+            [sectionDataModel.values addObject:toastUtilModule];
+        }
         [sectionDataModels addObject:sectionDataModel];
     }
     
@@ -100,6 +106,25 @@
     PerfectSharedInstanceClass *single4 = [single3 copy];
     NSString *singleMessage4 = [NSString stringWithFormat:@"[4]copy = %@", single4];
     NSLog(@"%@", singleMessage4);
+}
+
+/// 测试 InheritableSharedInstanceClass 在并发时候的问题
+- (void)printInheritableSharedInstance_inConcurrence {
+    InheritableSharedInstanceClass *single1_thread0 = [InheritableSharedInstanceClass sharedInstance];
+    NSString *singleMessage1_thread0 = [NSString stringWithFormat:@"[1.0]sharedInstance = %@", single1_thread0];
+    NSLog(@"%@", singleMessage1_thread0);
+    
+    [NSThread detachNewThreadWithBlock:^{
+        InheritableSharedInstanceClass *single1_thread1 = [InheritableSharedInstanceClass sharedInstance];
+        NSString *singleMessage1_thread1 = [NSString stringWithFormat:@"[1.1]sharedInstance = %@", single1_thread1];
+        NSLog(@"%@", singleMessage1_thread1);
+    }];
+    
+    [NSThread detachNewThreadWithBlock:^{
+        InheritableSharedInstanceClass *single1_thread2 = [InheritableSharedInstanceClass sharedInstance];
+        NSString *singleMessage1_thread2 = [NSString stringWithFormat:@"[1.2]sharedInstance = %@", single1_thread2];
+        NSLog(@"%@", singleMessage1_thread2);
+    }];
 }
 
 - (void)printSubNormalSharedInstance {
