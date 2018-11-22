@@ -55,20 +55,21 @@
     _collectionView.shouldHideLineCellAccordingToHeader = YES;
     
     /** 设置对应indexPaht上Cell、Line、Header的属性值 */
+    __weak typeof(self)weakSelf = self;
     [_collectionView configureCellBlock:^(id cell, NSIndexPath *indexPath) {
-        CJSectionDataModel *secctionModel = [_datas objectAtIndex:indexPath.section];
+        CJSectionDataModel *secctionModel = [weakSelf.datas objectAtIndex:indexPath.section];
         TestDataModel *cellModel = (TestDataModel *)[secctionModel.values objectAtIndex:indexPath.item];
         
         DetailCell *m_cell = (DetailCell *)cell;
         m_cell.labDetail.text = cellModel.name;
         
     } configureLineBlock:^(CJLineCell *lineCell, NSIndexPath *indexPath) {
-        CJSectionDataModel *secctionModel = [_datas objectAtIndex:indexPath.section];
+        CJSectionDataModel *secctionModel = [weakSelf.datas objectAtIndex:indexPath.section];
         lineCell.label.text = secctionModel.theme;
         lineCell.label.font = [UIFont systemFontOfSize:28];
         
     } configureHeaderBlock:^(CJCollectionViewHeaderFooterView *header, NSIndexPath *indexPath) {
-        CJSectionDataModel *secctionModel = [_datas objectAtIndex:indexPath.section];
+        CJSectionDataModel *secctionModel = [weakSelf.datas objectAtIndex:indexPath.section];
         
         Header *m_header = (Header *)header;
         m_header.labTheme.text = secctionModel.theme;
@@ -94,13 +95,13 @@
 
 #pragma mark - CJOpenCollectionViewDelegate
 - (void)cjOpenCollectionView:(CJOpenCollectionView *)collectionView didSelectHeaderInSection:(NSInteger)section {
-    NSLog(@"Header %ld", section);
+    NSLog(@"Header %zd", section);
     CJSectionDataModel *secctionModel = [_datas objectAtIndex:section];
     secctionModel.selected = !secctionModel.isSelected;
 }
 
 - (void)cjOpenCollectionView:(CJOpenCollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
-    NSLog(@"Cell:%ld, %ld", indexPath.section, indexPath.row);
+    NSLog(@"Cell:%zd, %zd", indexPath.section, indexPath.row);
 }
 
 

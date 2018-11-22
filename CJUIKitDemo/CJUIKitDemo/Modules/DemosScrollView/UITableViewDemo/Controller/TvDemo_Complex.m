@@ -54,7 +54,7 @@
     CustomTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"CustomTableViewCell" forIndexPath:indexPath];
     cell.imageV.image = [UIImage imageNamed:@"icon.png"];
     cell.lab1.text = [datas objectAtIndex:indexPath.row];
-    cell.lab2.text = [NSString stringWithFormat:@"%ld-%ld", indexPath.section, indexPath.row];
+    cell.lab2.text = [NSString stringWithFormat:@"%zd-%zd", indexPath.section, indexPath.row];
     
     return cell;
 }
@@ -82,12 +82,12 @@
 
 //每section的header显示的内容
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{
-    return [NSString stringWithFormat:@"header%ld", section];
+    return [NSString stringWithFormat:@"header%zd", section];
 }
 
 //每section的footer显示的内容
 - (NSString *)tableView:(UITableView *)tableView titleForFooterInSection:(NSInteger)section{
-    return [NSString stringWithFormat:@"footer%ld", section];
+    return [NSString stringWithFormat:@"footer%zd", section];
 }
 
 //通知委托将要显示分区header的视图
@@ -101,7 +101,7 @@
 //设置分区的header的视图，可以为它添加图片或者其他控件（UIView的子类）
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
     SHeaderHome2 *sHeader = [[[NSBundle mainBundle] loadNibNamed:@"SHeaderHome2" owner:nil options:nil] lastObject];
-    sHeader.lab.text = [NSString stringWithFormat:@"sectionHeader%ld", section];
+    sHeader.lab.text = [NSString stringWithFormat:@"sectionHeader%zd", section];
     [sHeader.btn addTarget:self action:@selector(addInfo:) forControlEvents:UIControlEventTouchUpInside];
     
     return sHeader;

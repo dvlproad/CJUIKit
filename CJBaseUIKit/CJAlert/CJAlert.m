@@ -57,26 +57,62 @@
 
 
 #pragma mark - CJAlertView
-/* 完整的描述请参见文件头部 */
-+ (void)showCJAlertViewWithSize:(CGSize)size
-                      flagImage:(UIImage *)flagImage
-                          title:(NSString *)title
-                        message:(NSString *)message
-                   blankBGColor:(UIColor *)blankBGColor
-              cancelButtonTitle:(NSString *)cancelButtonTitle
-                  okButtonTitle:(NSString *)okButtonTitle
-                   cancelHandle:(void(^)(void))cancelHandle
-                       okHandle:(void(^)(void))okHandle
-{
-    CJAlertView *alertView = [CJAlertView alertViewWithSize:size flagImage:flagImage title:title message:message
-                                          cancelButtonTitle:cancelButtonTitle
-                                              okButtonTitle:okButtonTitle
-                                               cancelHandle:cancelHandle
-                                                   okHandle:okHandle];
-    [alertView showWithShouldFitHeight:NO blankBGColor:blankBGColor];
++ (void)showIKnowWithTitle:(NSString *)title message:(NSString *)message okHandle:(void(^)(void))okHandle {
+    NSString *okButtonTitle = NSLocalizedString(@"我知道了", nil);
+    
+    [self showAlertViewWithFlagImage:nil title:title message:message cancelButtonTitle:nil okButtonTitle:okButtonTitle cancelHandle:nil okHandle:okHandle];
 }
 
++ (void)showIKnowAlertWithFlagImage:(UIImage *)flagImage title:(NSString *)title message:(NSString *)message okHandle:(void(^)(void))okHandle {
+    NSString *okButtonTitle = NSLocalizedString(@"我知道了", nil);
+    
+    [self showAlertViewWithFlagImage:flagImage title:title message:message cancelButtonTitle:nil okButtonTitle:okButtonTitle cancelHandle:nil okHandle:okHandle];
+}
+
++ (void)showCancelOKAlertWithTitle:(NSString *)title okHandle:(void(^)(void))okHandle {
+    NSString *cancelButtonTitle = NSLocalizedString(@"取消", nil);
+    NSString *okButtonTitle = NSLocalizedString(@"确定", nil);
+    
+    [self showAlertViewWithFlagImage:nil title:title message:nil cancelButtonTitle:cancelButtonTitle okButtonTitle:okButtonTitle cancelHandle:nil okHandle:okHandle];
+}
+
++ (void)showAlertViewWithFlagImage:(UIImage *)flagImage
+                             title:(NSString *)title
+                           message:(NSString *)message
+                 cancelButtonTitle:(NSString *)cancelButtonTitle
+                     okButtonTitle:(NSString *)okButtonTitle
+                      cancelHandle:(void(^)(void))cancelHandle
+                          okHandle:(void(^)(void))okHandle
+{
+    CGFloat screenWidth = CGRectGetWidth([[UIScreen mainScreen] bounds]);
+    CGSize popupViewSize = CGSizeMake(screenWidth * 0.7, 200);
+    
+    CJAlertView *alertView = [CJAlertView alertViewWithSize:popupViewSize flagImage:flagImage title:title message:message cancelButtonTitle:cancelButtonTitle okButtonTitle:okButtonTitle cancelHandle:cancelHandle okHandle:okHandle];
+    
+    UIColor *blankBGColor = [UIColor colorWithRed:.16 green:.17 blue:.21 alpha:.6];
+    [alertView showWithShouldFitHeight:YES blankBGColor:blankBGColor];
+}
+
+
 #pragma mark - DebugView
+/* 完整的描述请参见文件头部 */
++ (void)showDebugViewWithAppExtraInfo:(NSString *)extraInfo {
+    NSString *title = @"app信息";
+    
+    NSDictionary *infoDictionary = [[NSBundle mainBundle] infoDictionary];
+    NSString *appName = [infoDictionary objectForKey:@"CFBundleDisplayName"]; //app名
+    NSString *appVersion = [infoDictionary objectForKey:@"CFBundleShortVersionString"];//版本号
+    NSString *appBuild = [infoDictionary objectForKey:@"CFBundleVersion"];//buidId
+    
+    NSMutableString *message = [NSMutableString string];
+    [message appendFormat:@"appName:%@\n", appName];
+    [message appendFormat:@"appVersion:%@\n", appVersion];
+    [message appendFormat:@"appBuild:  %@\n", appBuild];
+    [message appendFormat:extraInfo];
+    
+    [CJAlert showDebugViewWithTitle:title message:message];
+}
+
 /* 完整的描述请参见文件头部 */
 + (void)showDebugViewWithTitle:(NSString *)title message:(NSString *)message
 {    

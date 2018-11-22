@@ -288,7 +288,7 @@
     [switchSlider showStep:0];
     
     [switchSlider setSwitchEventOccuBlock:^(NSInteger execStep){
-        NSLog(@"第%ld个步骤执行", execStep);
+        NSLog(@"第%zd个步骤执行", execStep);
     }];
 }
 

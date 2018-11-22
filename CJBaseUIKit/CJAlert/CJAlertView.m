@@ -68,7 +68,7 @@
                          okHandle:(void(^)(void))okHandle
 {
     //①创建
-    CJAlertView *alertView = [[CJAlertView alloc] initWithSize:size firstVerticalInterval:25 secondVerticalInterval:10 thirdVerticalInterval:10 bottomMinVerticalInterval:10];
+    CJAlertView *alertView = [[CJAlertView alloc] initWithSize:size firstVerticalInterval:15 secondVerticalInterval:10 thirdVerticalInterval:10 bottomMinVerticalInterval:10];
     
     //②添加 flagImage、titleLabel、messageLabel
     //[alertView setupFlagImage:flagImage title:title message:message configure:configure]; //已拆解成以下几个方法
@@ -76,12 +76,13 @@
         [alertView addFlagImage:flagImage size:CGSizeMake(38, 38)];
     }
     if (title.length > 0) {
-        UIFont *titleLabelFont = [UIFont systemFontOfSize:18.0];
-        [alertView addTitleWithText:title font:titleLabelFont textAlignment:NSTextAlignmentCenter margin:20 paragraphStyle:nil];
+        [alertView addTitleWithText:title font:[UIFont systemFontOfSize:18.0] textAlignment:NSTextAlignmentCenter margin:20 paragraphStyle:nil];
     }
     if (message.length > 0) {
-        UIFont *messageLabelFont = [UIFont systemFontOfSize:15.0];
-        [alertView addMessageWithText:message font:messageLabelFont textAlignment:NSTextAlignmentCenter margin:20 paragraphStyle:nil];
+        NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle defaultParagraphStyle] mutableCopy];
+        paragraphStyle.lineBreakMode = NSLineBreakByCharWrapping;
+        paragraphStyle.lineSpacing = 4;
+        [alertView addMessageWithText:message font:[UIFont systemFontOfSize:14.0] textAlignment:NSTextAlignmentCenter margin:20 paragraphStyle:paragraphStyle];
     }
     
     //③添加 cancelButton、okButton

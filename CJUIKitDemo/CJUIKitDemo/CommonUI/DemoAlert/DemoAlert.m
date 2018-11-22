@@ -76,7 +76,7 @@
         if ([DemoAlert sharedInstance].networkNoOpenAlert) {
             return;
         }
-        [DemoAlert sharedInstance].networkNoOpenAlert = [self luckinAlertViewWithTitle:NSLocalizedString(@"网络链接失败，请检查您的网络链接", nil) okButtonTitle:NSLocalizedString(@"查看设置", nil) okHandle:^{
+        [DemoAlert sharedInstance].networkNoOpenAlert = [self alertViewWithTitle:NSLocalizedString(@"网络链接失败，请检查您的网络链接", nil) okButtonTitle:NSLocalizedString(@"查看设置", nil) okHandle:^{
             [DemoAlert sharedInstance].networkNoOpenAlert = nil;
             [AuthorizationCJHelper openSettingWithCompletionHandler:nil];
         }];
@@ -97,7 +97,7 @@
         if ([DemoAlert sharedInstance].locationNoOpenAlert) {
             return;
         }
-        [DemoAlert sharedInstance].locationNoOpenAlert = [self luckinAlertViewWithTitle:NSLocalizedString(@"您没开启GPS，无法接单", nil) okButtonTitle:NSLocalizedString(@"去开启", nil) okHandle:^{
+        [DemoAlert sharedInstance].locationNoOpenAlert = [self alertViewWithTitle:NSLocalizedString(@"您没开启GPS，无法接单", nil) okButtonTitle:NSLocalizedString(@"去开启", nil) okHandle:^{
             [DemoAlert sharedInstance].locationNoOpenAlert = nil;
             [AuthorizationCJHelper openSettingWithCompletionHandler:nil];
         }];
@@ -118,7 +118,7 @@
         if ([DemoAlert sharedInstance].locationAbnormalAlert) {
             return;
         }
-        [DemoAlert sharedInstance].locationAbnormalAlert = [self luckinAlertViewWithTitle:NSLocalizedString(@"获取定位权限异常，请手动授权APP定位权限", nil) okButtonTitle:NSLocalizedString(@"我知道了", nil) okHandle:^{
+        [DemoAlert sharedInstance].locationAbnormalAlert = [self alertViewWithTitle:NSLocalizedString(@"获取定位权限异常，请手动授权APP定位权限", nil) okButtonTitle:NSLocalizedString(@"我知道了", nil) okHandle:^{
             [DemoAlert sharedInstance].locationAbnormalAlert = nil;
             [AuthorizationCJHelper openSettingWithCompletionHandler:nil];
         }];
@@ -134,15 +134,15 @@
                  okButtonTitle:(NSString *)okButtonTitle
                       okHandle:(void(^)(void))okHandle
 {
-    CJAlertView *alertView = [self luckinAlertViewWithTitle:title okButtonTitle:okButtonTitle okHandle:okHandle];
+    CJAlertView *alertView = [self alertViewWithTitle:title okButtonTitle:okButtonTitle okHandle:okHandle];
     
     UIColor *blankBGColor = [UIColor colorWithRed:.16 green:.17 blue:.21 alpha:.6];
     [alertView showWithShouldFitHeight:YES blankBGColor:blankBGColor];
 }
 
-+ (CJAlertView *)luckinAlertViewWithTitle:(NSString *)title
-                            okButtonTitle:(NSString *)okButtonTitle
-                                 okHandle:(void(^)(void))okHandle
++ (CJAlertView *)alertViewWithTitle:(NSString *)title
+                      okButtonTitle:(NSString *)okButtonTitle
+                           okHandle:(void(^)(void))okHandle
 {
     CGSize popupViewSize = CGSizeMake(290, 150);
     CJAlertView *alertView = [[CJAlertView alloc] initWithSize:popupViewSize firstVerticalInterval:40 secondVerticalInterval:0 thirdVerticalInterval:0 bottomMinVerticalInterval:40];
@@ -227,7 +227,7 @@
     alertView.backgroundColor = CJColorFromHexStringAndAlpha(@"#000000", 0.76);
     
     //image
-    UIImage *errorImage = [UIImage imageNamed:@"luckin_toast_error"];
+    UIImage *errorImage = [UIImage imageNamed:@"cjdemo_toast_error"];
     [alertView addFlagImage:errorImage size:CGSizeMake(27, 27)];
     
     //title

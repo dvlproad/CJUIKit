@@ -96,7 +96,7 @@
     
     __weak typeof(self)weakSelf = self;
     pop.selectRowAtIndex = ^(NSInteger index){
-        NSLog(@"select index:%ld", index);
+        NSLog(@"select index:%zd", index);
         
         NSString *currentEnvironment = titles[index];
         [button setTitle:currentEnvironment forState:UIControlStateNormal];
@@ -117,7 +117,7 @@
     __weak typeof(self)weakSelf = self;
     __weak typeof(pop)weakPopoverView = pop;
     pop.selectRowAtIndex = ^(NSInteger index){
-        NSLog(@"select index:%ld", index);
+        NSLog(@"select index:%zd", index);
         
         NSString *currentEnvironment = titles[index];
         [button setTitle:currentEnvironment forState:UIControlStateNormal];

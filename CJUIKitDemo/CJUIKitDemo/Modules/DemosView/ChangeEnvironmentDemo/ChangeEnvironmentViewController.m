@@ -152,7 +152,7 @@ typedef NS_ENUM(NSUInteger, EnvironmentType) {
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    //NSLog(@"didSelectRowAtIndexPath = %ld %ld", indexPath.section, indexPath.row);
+    //NSLog(@"didSelectRowAtIndexPath = %zd %zd", indexPath.section, indexPath.row);
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
     UITableViewCell *oldCell = [tableView cellForRowAtIndexPath:self.selectedIndexPath];

@@ -5,7 +5,7 @@
   "homepage": "https://github.com/dvlproad/CJUIKit",
   "license": "MIT",
   "authors": "dvlproad",
-  "description": "1、CJDataUtil：包含搜索、排序等数据处理工具类\n2、CJDateUtil：日期工具\n3、CJKeyboardUtil：键盘工具\n4、CJLog：日志工具\n*、CJIndentedStringUtil：将 字符串/字典/数组转成含缩进字符串的字符串 的工具\n7、CJAppLastUtil：APP上次信息+账号安全工具\n8、CJManager：其他各种工具类\n9、CJPinyinHelper：拼音相关工具\n10、CJCallUtil：拨打电话工具\n*、CJQRCodeUtil：二维码\n*、CJLaunchImageUtil：启动图\n\n A longer description of CJBaseUtil in Markdown format.\n\n * Think: Why did you write this? What is the focus? What does it do?\n * CocoaPods will be using this to generate tags, and improve search results.\n * Try to keep it short, snappy and to the point.\n * Finally, don't worry about the indent, CocoaPods strips it!",
+  "description": "- CJBaseUtil/CJDataUtil：包含搜索、排序等数据处理工具类\n- CJBaseUtil/CJDateUtil：日期工具\n- CJBaseUtil/CJKeyboardUtil：键盘工具\n- CJBaseUtil/CJLog：日志工具\n- CJBaseUtil/CJIndentedStringUtil：将 字符串/字典/数组转成含缩进字符串的字符串 的工具\n- CJBaseUtil/CJAppLastUtil：APP上次信息+账号安全工具\n- CJBaseUtil/CJManager：其他各种工具类\n- CJBaseUtil/CJPinyinHelper：拼音相关工具\n- CJBaseUtil/CJCallUtil：拨打电话工具\n- CJBaseUtil/CJQRCodeUtil：二维码\n- CJBaseUtil/CJLaunchImageUtil：启动图\n\n A longer description of CJBaseUtil in Markdown format.\n\n * Think: Why did you write this? What is the focus? What does it do?\n * CocoaPods will be using this to generate tags, and improve search results.\n * Try to keep it short, snappy and to the point.\n * Finally, don't worry about the indent, CocoaPods strips it!",
   "platforms": {
     "ios": "8.0"
   },

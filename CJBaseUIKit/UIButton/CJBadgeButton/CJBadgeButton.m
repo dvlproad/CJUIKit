@@ -152,7 +152,7 @@
         self.badgeLabel.font = [UIFont boldSystemFontOfSize:9];
                           
     } else {
-        self.badgeLabel.text = [NSString stringWithFormat:@"%ld", (long)_badge];
+        self.badgeLabel.text = [NSString stringWithFormat:@"%zd", (long)_badge];
     }
 }
 

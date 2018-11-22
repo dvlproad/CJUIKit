@@ -245,7 +245,7 @@
 		80D49F8B20BE7EE0003F642C /* CJDataUtilTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 80D49F8A20BE7EE0003F642C /* CJDataUtilTest.m */; };
 		80D49F8F20BE8574003F642C /* TestCityModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 80D49F8E20BE8574003F642C /* TestCityModel.m */; };
 		80D71EA92090277700D2DB68 /* AlertViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80D71EA72090277700D2DB68 /* AlertViewController.m */; };
-		80D71EAA2090277700D2DB68 /* AlertViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 80D71EA82090277700D2DB68 /* AlertViewController.xib */; };
+		80D71EAA2090277700D2DB68 /* CJUIKitBaseHomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 80D71EA82090277700D2DB68 /* CJUIKitBaseHomeViewController.xib */; };
 		80D71EB22090522F00D2DB68 /* scan_icon_notice@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 80D71EB12090522E00D2DB68 /* scan_icon_notice@2x.png */; };
 		80E7E63520AC227B000F762D /* AppInfoManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 80E7E63420AC227A000F762D /* AppInfoManager.m */; };
 		80FF902A1FC5649E00E437CF /* ThirdPartyHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80FF8F0E1FC5649E00E437CF /* ThirdPartyHomeViewController.m */; };
@@ -737,7 +737,7 @@
 		80D49F8E20BE8574003F642C /* TestCityModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestCityModel.m; sourceTree = "<group>"; };
 		80D71EA62090277700D2DB68 /* AlertViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AlertViewController.h; sourceTree = "<group>"; };
 		80D71EA72090277700D2DB68 /* AlertViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AlertViewController.m; sourceTree = "<group>"; };
-		80D71EA82090277700D2DB68 /* AlertViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AlertViewController.xib; sourceTree = "<group>"; };
+		80D71EA82090277700D2DB68 /* CJUIKitBaseHomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CJUIKitBaseHomeViewController.xib; sourceTree = "<group>"; };
 		80D71EB12090522E00D2DB68 /* scan_icon_notice@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "scan_icon_notice@2x.png"; sourceTree = "<group>"; };
 		80E7E63320AC227A000F762D /* AppInfoManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppInfoManager.h; sourceTree = "<group>"; };
 		80E7E63420AC227A000F762D /* AppInfoManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppInfoManager.m; sourceTree = "<group>"; };
@@ -1472,6 +1472,7 @@
 				78E1895521777CB900B8781A /* CJUIKitBaseViewController.m */,
 				78E1895821777DC600B8781A /* CJUIKitBaseHomeViewController.h */,
 				78E1895721777DC600B8781A /* CJUIKitBaseHomeViewController.m */,
+				80D71EA82090277700D2DB68 /* CJUIKitBaseHomeViewController.xib */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -1854,7 +1855,6 @@
 			children = (
 				80D71EA62090277700D2DB68 /* AlertViewController.h */,
 				80D71EA72090277700D2DB68 /* AlertViewController.m */,
-				80D71EA82090277700D2DB68 /* AlertViewController.xib */,
 				80D71EB12090522E00D2DB68 /* scan_icon_notice@2x.png */,
 			);
 			path = CJAlertDemo;
@@ -2566,7 +2566,7 @@
 				780E46101E5DF87B00980127 /* Assets.xcassets in Resources */,
 				8033239420299AD7001DACF1 /* MemoryADExample01.jpg in Resources */,
 				80FF90AB1FC5649F00E437CF /* EasyScaleHeadView.xib in Resources */,
-				80D71EAA2090277700D2DB68 /* AlertViewController.xib in Resources */,
+				80D71EAA2090277700D2DB68 /* CJUIKitBaseHomeViewController.xib in Resources */,
 				78A621D52135C040004DA046 /* LogViewViewController.xib in Resources */,
 				803323A920299AD7001DACF1 /* MemoryADTime01.jpg in Resources */,
 				787FDB5720500B01008A46E3 /* SearchBarViewController.xib in Resources */,

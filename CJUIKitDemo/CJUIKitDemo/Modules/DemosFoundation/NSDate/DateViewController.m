@@ -53,7 +53,7 @@
     
     NSInteger yearInterval = [NSCalendarCJHelper year_unitIntervalFromDate:birthdayDate toDate:[NSDate date]];
     NSInteger age = [NSCalendarCJHelper age_unitIntervalFromDate:birthdayDate toDate:[NSDate date]];
-    NSLog(@"今年周岁为：%ld, %ld", yearInterval, age);
+    NSLog(@"今年周岁为：%zd, %zd", yearInterval, age);
     
 }
 

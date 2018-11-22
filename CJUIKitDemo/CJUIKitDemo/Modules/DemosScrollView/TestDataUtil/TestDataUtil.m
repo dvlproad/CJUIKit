@@ -23,7 +23,7 @@
     NSMutableArray *values = [[NSMutableArray alloc] init];
     for (NSInteger i = 0; i < 34; i++) {
         TestDataModel *cellModel = [[TestDataModel alloc]init];
-        cellModel.name = [NSString stringWithFormat:@"%02ld", i];
+        cellModel.name = [NSString stringWithFormat:@"%02zd", i];
         cellModel.imagePath = [imageNames objectAtIndex:i];
         [values addObject:cellModel];
     }

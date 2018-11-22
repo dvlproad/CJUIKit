@@ -10,6 +10,6 @@
 
 @interface NormalSharedInstanceClass : NSObject
 
-+ (NormalSharedInstanceClass *)sharedInstance;
++ (instancetype)sharedInstance;
 
 @end

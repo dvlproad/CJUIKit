@@ -71,7 +71,7 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    //NSLog(@"didSelectRowAtIndexPath = %ld %ld", indexPath.section, indexPath.row);
+    //NSLog(@"didSelectRowAtIndexPath = %zd %zd", indexPath.section, indexPath.row);
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
     CJSectionDataModel *sectionDataModel = [self.sectionDataModels objectAtIndex:indexPath.section];

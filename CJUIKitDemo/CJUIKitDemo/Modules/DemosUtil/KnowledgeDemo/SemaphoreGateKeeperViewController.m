@@ -90,9 +90,9 @@
     dispatch_queue_t quene = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
     dispatch_semaphore_wait(self.semaphore, timeout);
     dispatch_async(quene, ^{
-        NSLog(@"task %ld run", taskIndex);
+        NSLog(@"task %zd run", taskIndex);
         sleep(3);
-        NSLog(@"task %ld complete", taskIndex);
+        NSLog(@"task %zd complete", taskIndex);
         dispatch_semaphore_signal(self.semaphore);
     });
 }

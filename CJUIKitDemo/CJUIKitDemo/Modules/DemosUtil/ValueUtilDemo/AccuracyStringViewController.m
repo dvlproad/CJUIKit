@@ -54,10 +54,10 @@ typedef NS_ENUM(NSUInteger, ValidateStringType) {
     {
         CJSectionDataModel *sectionDataModel = [[CJSectionDataModel alloc] init];
         sectionDataModel.theme = @"去除尾部的0";
-        sectionDataModel.values = @[@"0.090222120000",
-                                    @"0.0900",
-                                    @"10.00",
-                                    ];
+        sectionDataModel.values = [NSMutableArray arrayWithArray:@[@"0.090222120000",
+                                                                   @"0.0900",
+                                                                   @"10.00",
+                                                                   ]];
         
         [sectionDataModels addObject:sectionDataModel];
     }
@@ -65,10 +65,10 @@ typedef NS_ENUM(NSUInteger, ValidateStringType) {
     {
         CJSectionDataModel *sectionDataModel = [[CJSectionDataModel alloc] init];
         sectionDataModel.theme = @"尾部归0";
-        sectionDataModel.values = @[@"1121",
-                                    @"1125",
-                                    @"1126",
-                                    ];
+        sectionDataModel.values = [NSMutableArray arrayWithArray:@[@"1121",
+                                                                   @"1125",
+                                                                   @"1126",
+                                                                   ]];
         
         [sectionDataModels addObject:sectionDataModel];
     }
@@ -159,7 +159,7 @@ typedef NS_ENUM(NSUInteger, ValidateStringType) {
                 CGFloat originNumber = [originNumberString floatValue];
                 NSInteger lastNumber = [CJDecimalUtil processingZeroWithIntValue:originNumber lastDigitCount:2 decimalDealType:CJDecimalDealTypeCeil];
                 
-                NSString *lastNumberString = [NSString stringWithFormat:@"%ld", lastNumber];
+                NSString *lastNumberString = [NSString stringWithFormat:@"%zd", lastNumber];
                 
                 mcell.resultLabel.text = lastNumberString;
             }];
@@ -172,7 +172,7 @@ typedef NS_ENUM(NSUInteger, ValidateStringType) {
                 CGFloat originNumber = [originNumberString floatValue];
                 NSInteger lastNumber = [CJDecimalUtil processingZeroWithIntValue:originNumber lastDigitCount:2 decimalDealType:CJDecimalDealTypeFloor];
                 
-                NSString *lastNumberString = [NSString stringWithFormat:@"%ld", lastNumber];
+                NSString *lastNumberString = [NSString stringWithFormat:@"%zd", lastNumber];
                 
                 mcell.resultLabel.text = lastNumberString;
             }];
@@ -185,7 +185,7 @@ typedef NS_ENUM(NSUInteger, ValidateStringType) {
                 CGFloat originNumber = [originNumberString floatValue];
                 NSInteger lastNumber = [CJDecimalUtil processingZeroWithIntValue:originNumber lastDigitCount:2 decimalDealType:CJDecimalDealTypeRound];
                 
-                NSString *lastNumberString = [NSString stringWithFormat:@"%ld", lastNumber];
+                NSString *lastNumberString = [NSString stringWithFormat:@"%zd", lastNumber];
                 
                 mcell.resultLabel.text = lastNumberString;
             }];
@@ -234,7 +234,7 @@ typedef NS_ENUM(NSUInteger, ValidateStringType) {
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    NSLog(@"didSelectRowAtIndexPath = %ld %ld", indexPath.section, indexPath.row);
+    NSLog(@"didSelectRowAtIndexPath = %zd %zd", indexPath.section, indexPath.row);
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 

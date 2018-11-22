@@ -13,15 +13,15 @@
 
 @implementation PrivateSetting
 
-+ (void)customStatusBar{
++ (void)customStatusBar {
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleDefault];
 }
 
-+ (void)customNavigationBarAppearance{
++ (void)customNavigationBarAppearance {
     UIColor *barTintColor = [UIColor colorWithRed:0xf0/255.0f green:0xf0/255.0f blue:0xf0/255.0f alpha:1];
     if ([[UIDevice currentDevice].systemVersion floatValue] >= 7.0) {
         [[UINavigationBar appearance] setBarTintColor:barTintColor];
-    }else{
+    } else {
         [[UINavigationBar appearance] setTintColor:barTintColor];
     }
 //    [[UINavigationBar appearance] setTintColor:Color_Red];
@@ -36,7 +36,7 @@
     */
 }
 
-+ (void)customizeAppearanceForMenuBar:(UINavigationBar *)navBar{
++ (void)customizeAppearanceForMenuBar:(UINavigationBar *)navBar {
     
 //    if (SYSTEM_VERSION >= 7){
 //        [navBar setBackgroundImage:[UIImage imageNamed:@"menuNav_BG64"] forBarMetrics:UIBarMetricsDefault];
@@ -53,8 +53,7 @@
 }
 
 
-+ (void)hideStatusBar:(BOOL)isHide{
-
++ (void)hideStatusBar:(BOOL)isHide {
     [[UIApplication sharedApplication] setStatusBarHidden:isHide];
     
 //    [self prefersStatusBarHidden];
@@ -63,13 +62,13 @@
 }
 
 
-+ (void)startAnimating{
++ (void)startAnimating {
     UIWindow *keywindow = [[UIApplication sharedApplication] keyWindow];
     UIView *overlay = [[UIView alloc]initWithFrame:keywindow.bounds];
     overlay.backgroundColor = [UIColor colorWithRed:.16 green:.17 blue:.21 alpha:.6];
     [keywindow addSubview:overlay];
     
-    UIActivityIndicatorView *activityIndicatorV = [[UIActivityIndicatorView alloc]initWithFrame:CGRectMake(100, 250, 110, 110)];
+    UIActivityIndicatorView *activityIndicatorV = [[UIActivityIndicatorView alloc] initWithFrame:CGRectMake(100, 250, 110, 110)];
     [activityIndicatorV setActivityIndicatorViewStyle:UIActivityIndicatorViewStyleWhiteLarge];
     [overlay addSubview:activityIndicatorV];
     
@@ -79,7 +78,7 @@
 + (void)finishAnimating{
 //    [activityIndicatorV stopAnimating];
     
-    UIWindow * keywindow = [[UIApplication sharedApplication] keyWindow];
+    UIWindow *keywindow = [[UIApplication sharedApplication] keyWindow];
     if (keywindow.subviews.count > 1) {
         UIView * overlay = [keywindow.subviews objectAtIndex:keywindow.subviews.count-1];
         [overlay removeFromSuperview];

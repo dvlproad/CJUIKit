@@ -46,7 +46,7 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    NSLog(@"didSelectRowAtIndexPath = %ld %ld", indexPath.section, indexPath.row);
+    NSLog(@"didSelectRowAtIndexPath = %zd %zd", indexPath.section, indexPath.row);
 }
 
 - (UITableViewCellEditingStyle)tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath {

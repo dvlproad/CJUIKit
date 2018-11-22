@@ -93,7 +93,7 @@ static CGFloat kPeriodDuration = 5.0f;
     timerModel1.addingSecondBlock = ^(CJTimerModel *timer) {
         NSInteger cumulativeSecond = timer.cumulativeSecond;
         NSInteger remainSecond = timer.minResetSecond - cumulativeSecond;
-        NSString *title = [NSString stringWithFormat:@"倒计时(%lds)", remainSecond];
+        NSString *title = [NSString stringWithFormat:@"倒计时(%zds)", remainSecond];
         [self.countDownTimeButton1 setTitle:title forState:UIControlStateNormal];
         [self.countDownTimeButton1 setEnabled:NO];
     };
@@ -102,7 +102,7 @@ static CGFloat kPeriodDuration = 5.0f;
     CJTimerModel *timerModel2 = [CJTimerModel timerModelWithMinResetSecond:7 addingSecondBlock:^(CJTimerModel *timer) {
         NSInteger cumulativeSecond = timer.cumulativeSecond;
         NSInteger remainSecond = timer.minResetSecond - cumulativeSecond;
-        NSString *title = [NSString stringWithFormat:@"倒计时(%lds)", remainSecond];
+        NSString *title = [NSString stringWithFormat:@"倒计时(%zds)", remainSecond];
         self.countDownTimeLabel1.text = title;
     } resetSecondBlock:^(CJTimerModel *timer) {
         NSInteger minResetSecond = timer.minResetSecond;
@@ -115,7 +115,7 @@ static CGFloat kPeriodDuration = 5.0f;
     CJTimerModel *timerModel3 = [CJTimerModel timerModelWithMinResetSecond:10 addingSecondBlock:^(CJTimerModel *timer) {
         NSInteger cumulativeSecond = timer.cumulativeSecond;
         NSInteger remainSecond = timer.minResetSecond - cumulativeSecond;
-        NSString *title = [NSString stringWithFormat:@"倒计时(%lds)", remainSecond];
+        NSString *title = [NSString stringWithFormat:@"倒计时(%zds)", remainSecond];
         self.countDownTimeLabel2.text = title;
     } resetSecondBlock:^(CJTimerModel *timer) {
         NSInteger minResetSecond = timer.minResetSecond;
@@ -145,11 +145,11 @@ static CGFloat kPeriodDuration = 5.0f;
     if (self.timer == nil) {
         self.remainSecond = kPeriodDuration;
         self.timer = [NSTimer scheduledTimerWithTimeInterval:1 repeats:YES block:^(NSTimer * _Nonnull timer) {
-            NSLog(@"self.remainSecond = %ld", self.remainSecond);
+            NSLog(@"self.remainSecond = %zd", self.remainSecond);
             --self.remainSecond;
             if (self.remainSecond > 0) {
                 dispatch_async(dispatch_get_main_queue(), ^{
-                    NSString *title = [NSString stringWithFormat:@"倒计时(%lds)", self.remainSecond];
+                    NSString *title = [NSString stringWithFormat:@"倒计时(%zds)", self.remainSecond];
                     [self.countDownTimeButton2 setTitle:title forState:UIControlStateNormal];
                     [self.countDownTimeButton2 setEnabled:NO];
                 });

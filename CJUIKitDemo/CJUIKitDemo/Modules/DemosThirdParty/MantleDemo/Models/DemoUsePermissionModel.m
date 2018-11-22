@@ -14,7 +14,7 @@
 - (instancetype)initWithPermissionDictionary:(NSDictionary *)permissionDictionary {
     self = [super init];
     if (self) {
-        self.checked = permissionDictionary[@"checked"];
+        self.checked = [permissionDictionary[@"checked"] boolValue];
         self.menuId = [permissionDictionary[@"menuId"] integerValue];
         self.menuName = permissionDictionary[@"menuName"];
         self.menuParent = [permissionDictionary[@"menuParent"] integerValue];

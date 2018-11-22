@@ -52,13 +52,14 @@
     }];
     self.cjComposeView = composeView;
     
-    self.cjComponentViewControllers = @[[[AChildViewController alloc] init],
-                                        [[BChildViewController alloc] init],
-                                        [[CChildViewController alloc] init],
-                                        [[DChildViewController alloc] init],
-                                        [[EChildViewController alloc] init],
-                                        [[FChildViewController alloc] init]
-                                        ];
+    NSArray *vcs = @[[[AChildViewController alloc] init],
+                     [[BChildViewController alloc] init],
+                     [[CChildViewController alloc] init],
+                     [[DChildViewController alloc] init],
+                     [[EChildViewController alloc] init],
+                     [[FChildViewController alloc] init]
+                     ];
+    self.cjComponentViewControllers = [NSMutableArray arrayWithArray:vcs];
 }
 
 - (IBAction)changeShowViewIndex:(id)sender {

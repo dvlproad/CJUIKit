@@ -177,7 +177,7 @@ static NSString *const HeaderIdentifierDefault = @"HeaderDefault";
         [self.openDelegate cjOpenCollectionView:self didSelectHeaderInSection:section];
     }
     NSInteger afterActionCellCount = [self.openDataSource cjOpenCollectionView:self numberOfItemsInSection:section];
-    //NSLog(@"before_after: %ld change to %ld", beforeActionCellCount, afterActionCellCount);
+    //NSLog(@"before_after: %zd change to %zd", beforeActionCellCount, afterActionCellCount);
     
     //注意：下面的展开和收缩，使用的方法是插入和删除方法，而不是reload方法的目的是？
     /* 2、如果①点击前是0、点击后不是0，则代表展开，即应该新增插入那些cell，

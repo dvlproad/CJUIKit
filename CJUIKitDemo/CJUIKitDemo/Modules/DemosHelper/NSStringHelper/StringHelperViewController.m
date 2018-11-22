@@ -108,7 +108,7 @@
             NSLog(@"NSStringFromClass([NSNull class] = %@", string2);
             
         } else if (indexPath.row == 1) {
-            NSString *string;
+//            NSString *string;
 //            NSLog(@"%@ isEmpty == %@", string, [string cj_isEmpty] ? @"YES" : @"NO");
             
         } else if (indexPath.row == 2) {

@@ -15,7 +15,7 @@
     if (self) {
         self.extralItemSetting = CJExtralItemSettingNone;
         self.maxDataModelShowCount = NSIntegerMax;
-        //NSLog(@"maxDataModelShowCount = %ld", self.maxDataModelShowCount);
+        //NSLog(@"maxDataModelShowCount = %zd", self.maxDataModelShowCount);
     }
     return self;
 }

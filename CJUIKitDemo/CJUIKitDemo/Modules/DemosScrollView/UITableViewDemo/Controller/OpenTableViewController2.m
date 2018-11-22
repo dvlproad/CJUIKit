@@ -41,7 +41,7 @@
         
     } didSelectRowBlock:^(UITableView *tableView, NSIndexPath *indexPath) {
         [tableView deselectRowAtIndexPath:indexPath animated:YES];
-        NSLog(@"点击%ld-%ld", indexPath.section, indexPath.row);
+        NSLog(@"点击%zd-%zd", indexPath.section, indexPath.row);
     }];
 }
 

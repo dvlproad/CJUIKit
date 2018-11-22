@@ -30,18 +30,19 @@
 
 
 #pragma mark - CJAlertView
-///显示自定义的Alert弹框
-+ (void)showCJAlertViewWithSize:(CGSize)size
-                      flagImage:(UIImage *)flagImage
-                          title:(NSString *)title
-                        message:(NSString *)message
-                   blankBGColor:(UIColor *)blankBGColor
-              cancelButtonTitle:(NSString *)cancelButtonTitle
-                  okButtonTitle:(NSString *)okButtonTitle
-                   cancelHandle:(void(^)(void))cancelHandle
-                       okHandle:(void(^)(void))okHandle;
+/// 显示 title + message + 我知道了
++ (void)showIKnowWithTitle:(NSString *)title message:(NSString *)message okHandle:(void(^)(void))okHandle;
+
+/// 显示 flagImage + title + message + 我知道了
++ (void)showIKnowAlertWithFlagImage:(UIImage *)flagImage title:(NSString *)title message:(NSString *)message okHandle:(void(^)(void))okHandle;
+
+/// 显示 title + 取消 + 确定
++ (void)showCancelOKAlertWithTitle:(NSString *)title okHandle:(void(^)(void))okHandle;
 
 #pragma mark - DebugView
+/// 显示app信息
++ (void)showDebugViewWithAppExtraInfo:(NSString *)extraInfo;
+
 ///显示调试面板
 + (void)showDebugViewWithTitle:(NSString *)title message:(NSString *)message;
 

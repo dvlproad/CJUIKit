@@ -11,10 +11,11 @@
 #import "CJOpenCollectionView.h"
 #import "CJHeadAndCellHorizontalLayout.h"
 
-@interface OpenCollectionViewController : UIViewController{
-    NSMutableArray *_datas;
+@interface OpenCollectionViewController : UIViewController {
+    
 }
 
-@property(nonatomic, strong) IBOutlet CJOpenCollectionView *collectionView;
+@property (nonatomic, strong) IBOutlet CJOpenCollectionView *collectionView;
+@property (nonatomic, strong) NSMutableArray *datas;
 
 @end

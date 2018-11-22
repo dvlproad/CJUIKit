@@ -2,6 +2,25 @@ platform :ios, '8.0'
 #use_frameworks!
 inhibit_all_warnings!
 
+post_install do |installer|
+    
+    puts 'Determining pod project minimal deployment target'
+    
+    pods_project = installer.pods_project
+    deployment_target_key = 'IPHONEOS_DEPLOYMENT_TARGET'
+    deployment_targets = pods_project.build_configurations.map{ |config| config.build_settings[deployment_target_key] }
+    minimal_deployment_target = deployment_targets.min_by{ |version| Gem::Version.new(version) }
+    
+    puts 'Minimal deployment target is ' + minimal_deployment_target
+    puts 'Setting each pod deployment target to ' + minimal_deployment_target
+    
+    installer.pods_project.targets.each do |target|
+        target.build_configurations.each do |config|
+            config.build_settings[deployment_target_key] = minimal_deployment_target
+        end
+    end
+end
+
 source 'https://github.com/CocoaPods/Specs.git'
 source 'https://gitee.com/dvlproad/dvlproadSpecs'  #这里要增加的是这条私有仓库的地址，而不是那些私有仓库里的库的地址，即如果你是增加'https://gitee.com/dvlproad/CJCustomView.git'那就错了。（之前自己犯过一次错）
 

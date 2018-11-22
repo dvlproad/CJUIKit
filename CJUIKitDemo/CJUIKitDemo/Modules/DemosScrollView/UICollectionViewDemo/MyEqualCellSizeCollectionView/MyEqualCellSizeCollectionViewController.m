@@ -79,7 +79,7 @@
             NSLog(@"点击额外的item");
             
         } else {
-            NSLog(@"当前点击的Item为数据源中的第%ld个", indexPath.item);
+            NSLog(@"当前点击的Item为数据源中的第%zd个", indexPath.item);
             
             /* 测试“我与其他不共存功能” */
             if ([indexPath isEqual:self.alwaysAloneIndexPath]) {
