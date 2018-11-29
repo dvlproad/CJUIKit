@@ -30,11 +30,7 @@
     self.title = NSLocalizedString(@"Home5你是礼物", nil);
     self.view.backgroundColor = [UIColor yellowColor];
     
-    UILabel *label = [[UILabel alloc] initWithFrame:CGRectZero];
-    label.backgroundColor = [UIColor cyanColor];
-    label.textAlignment = NSTextAlignmentCenter;
-    label.font = [UIFont systemFontOfSize:20];
-    label.text = NSLocalizedString(@"EChildViewController", nil);
+    UILabel *label = [DemoLabelFactory cyanLabelWithText:NSLocalizedString(@"EChildViewController", nil)];
     [self.view addSubview:label];
     [label mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.mas_equalTo(self.view).mas_offset(10);

@@ -17,10 +17,7 @@
 #import "UIView+CJAnimation.h"
 
 
-@interface ViewAnimateViewController () <UITableViewDataSource, UITableViewDelegate> {
-    
-}
-
+@interface ViewAnimateViewController ()
 @end
 
 @implementation ViewAnimateViewController
@@ -31,9 +28,8 @@
     
     self.navigationItem.title = NSLocalizedString(@"View动画", nil);
     
-    [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"cell"];
-    self.tableView.dataSource = self;
-    self.tableView.delegate = self;
+    UIImage *backgroundImage = [UIImage imageNamed:@"animationBg02.jpg"];
+    self.tableView.backgroundColor = [UIColor colorWithPatternImage:backgroundImage];
     
     NSMutableArray *sectionDataModels = [[NSMutableArray alloc] init];
     
@@ -43,27 +39,47 @@
         sectionDataModel.theme = @"UIViewAnimationTransition";
         {
             CJModuleModel *animationModule = [[CJModuleModel alloc] init];
-            animationModule.title = @"None(生硬效果)";
+            animationModule.title = @"0.None(生硬效果)";
+            animationModule.actionBlock = ^{
+                [self.tableView cj_animationWithAnimationTransition:UIViewAnimationTransitionNone];
+                [self changeBackgroundImage];
+            };
             [sectionDataModel.values addObject:animationModule];
         }
         {
             CJModuleModel *animationModule = [[CJModuleModel alloc] init];
-            animationModule.title = @"FlipFromLeft(左翻转效果)";
+            animationModule.title = @"1.FlipFromLeft(左翻转效果)";
+            animationModule.actionBlock = ^{
+                [self.tableView cj_animationWithAnimationTransition:UIViewAnimationTransitionFlipFromLeft];
+                [self changeBackgroundImage];
+            };
             [sectionDataModel.values addObject:animationModule];
         }
         {
             CJModuleModel *animationModule = [[CJModuleModel alloc] init];
-            animationModule.title = @"FlipFromRight(右翻转效果)";
+            animationModule.title = @"2.FlipFromRight(右翻转效果)";
+            animationModule.actionBlock = ^{
+                [self.tableView cj_animationWithAnimationTransition:UIViewAnimationTransitionFlipFromRight];
+                [self changeBackgroundImage];
+            };
             [sectionDataModel.values addObject:animationModule];
         }
         {
             CJModuleModel *animationModule = [[CJModuleModel alloc] init];
-            animationModule.title = @"CurlUp(上翻页效果)";
+            animationModule.title = @"3.CurlUp(上翻页效果)";
+            animationModule.actionBlock = ^{
+                [self.tableView cj_animationWithAnimationTransition:UIViewAnimationTransitionCurlUp];
+                [self changeBackgroundImage];
+            };
             [sectionDataModel.values addObject:animationModule];
         }
         {
             CJModuleModel *animationModule = [[CJModuleModel alloc] init];
-            animationModule.title = @"CurlDown(下翻页效果)";
+            animationModule.title = @"4.CurlDown(下翻页效果)";
+            animationModule.actionBlock = ^{
+                [self.tableView cj_animationWithAnimationTransition:UIViewAnimationTransitionCurlDown];
+                [self changeBackgroundImage];
+            };
             [sectionDataModel.values addObject:animationModule];
         }
         
@@ -77,21 +93,45 @@
         {
             CJModuleModel *animationModule = [[CJModuleModel alloc] init];
             animationModule.title = @"Fade(淡化效果)";
+            animationModule.actionBlock = ^{
+                CJTransitionDirection transitionDirection = CJTransitionDirectionFromRight;
+                [self.tableView cj_commonTransitionFrom:transitionDirection
+                                      withAnimationType:CJAnimateCommonTypeFade];
+                [self changeBackgroundImage];
+            };
             [sectionDataModel.values addObject:animationModule];
         }
         {
             CJModuleModel *animationModule = [[CJModuleModel alloc] init];
             animationModule.title = @"MoveIn(覆盖效果)";
+            animationModule.actionBlock = ^{
+                CJTransitionDirection transitionDirection = CJTransitionDirectionFromRight;
+                [self.tableView cj_commonTransitionFrom:transitionDirection
+                                      withAnimationType:CJAnimateCommonTypeMoveIn];
+                [self changeBackgroundImage];
+            };
             [sectionDataModel.values addObject:animationModule];
         }
         {
             CJModuleModel *animationModule = [[CJModuleModel alloc] init];
             animationModule.title = @"Push(推挤效果)";
+            animationModule.actionBlock = ^{
+                CJTransitionDirection transitionDirection = CJTransitionDirectionFromRight;
+                [self.tableView cj_commonTransitionFrom:transitionDirection
+                                      withAnimationType:CJAnimateCommonTypePush];
+                [self changeBackgroundImage];
+            };
             [sectionDataModel.values addObject:animationModule];
         }
         {
             CJModuleModel *animationModule = [[CJModuleModel alloc] init];
             animationModule.title = @"Reveal(揭开效果)";
+            animationModule.actionBlock = ^{
+                CJTransitionDirection transitionDirection = CJTransitionDirectionFromRight;
+                [self.tableView cj_commonTransitionFrom:transitionDirection
+                                      withAnimationType:CJAnimateCommonTypeReveal];
+                [self changeBackgroundImage];
+            };
             [sectionDataModel.values addObject:animationModule];
         }
         [sectionDataModels addObject:sectionDataModel];
@@ -104,40 +144,90 @@
         {
             CJModuleModel *animationModule = [[CJModuleModel alloc] init];
             animationModule.title = @"Cube(3D立方效果)";
+            animationModule.actionBlock = ^{
+                CJTransitionDirection transitionDirection = CJTransitionDirectionFromRight;
+                [self.tableView cj_customTransitionFrom:transitionDirection
+                                      withAnimationType:CJAnimateCustomTypeCube];
+                [self changeBackgroundImage];
+            };
             [sectionDataModel.values addObject:animationModule];
         }
         {
             CJModuleModel *animationModule = [[CJModuleModel alloc] init];
             animationModule.title = @"SuckEffect(吮吸效果)";
+            animationModule.actionBlock = ^{
+                CJTransitionDirection transitionDirection = CJTransitionDirectionFromRight;
+                [self.tableView cj_customTransitionFrom:transitionDirection
+                                      withAnimationType:CJAnimateCustomTypeSuckEffect];
+                [self changeBackgroundImage];
+            };
             [sectionDataModel.values addObject:animationModule];
         }
         {
             CJModuleModel *animationModule = [[CJModuleModel alloc] init];
             animationModule.title = @"OglFlip(翻转效果)";
+            animationModule.actionBlock = ^{
+                CJTransitionDirection transitionDirection = CJTransitionDirectionFromRight;
+                [self.tableView cj_customTransitionFrom:transitionDirection
+                                      withAnimationType:CJAnimateCustomTypeOglFlip];
+                [self changeBackgroundImage];
+            };
             [sectionDataModel.values addObject:animationModule];
-        }{
+        }
+        
+        {
             CJModuleModel *animationModule = [[CJModuleModel alloc] init];
             animationModule.title = @"RippleEffect(波纹效果)";
+            animationModule.actionBlock = ^{
+                CJTransitionDirection transitionDirection = CJTransitionDirectionFromRight;
+                [self.tableView cj_customTransitionFrom:transitionDirection
+                                      withAnimationType:CJAnimateCustomTypeRippleEffect];
+                [self changeBackgroundImage];
+            };
             [sectionDataModel.values addObject:animationModule];
         }
         {
             CJModuleModel *animationModule = [[CJModuleModel alloc] init];
             animationModule.title = @"PageCurl(翻页效果)";
+            animationModule.actionBlock = ^{
+                CJTransitionDirection transitionDirection = CJTransitionDirectionFromRight;
+                [self.tableView cj_customTransitionFrom:transitionDirection
+                                      withAnimationType:CJAnimateCustomTypePageCurl];
+                [self changeBackgroundImage];
+            };
             [sectionDataModel.values addObject:animationModule];
         }
         {
             CJModuleModel *animationModule = [[CJModuleModel alloc] init];
             animationModule.title = @"PageUnCurl(反翻页效果)";
+            animationModule.actionBlock = ^{
+                CJTransitionDirection transitionDirection = CJTransitionDirectionFromRight;
+                [self.tableView cj_customTransitionFrom:transitionDirection
+                                      withAnimationType:CJAnimateCustomTypePageUnCurl];
+                [self changeBackgroundImage];
+            };
             [sectionDataModel.values addObject:animationModule];
         }
         {
             CJModuleModel *animationModule = [[CJModuleModel alloc] init];
             animationModule.title = @"CameraIrisHollowOpen(开镜头效果)";
+            animationModule.actionBlock = ^{
+                CJTransitionDirection transitionDirection = CJTransitionDirectionFromRight;
+                [self.tableView cj_customTransitionFrom:transitionDirection
+                                      withAnimationType:CJAnimateCustomTypeCameraIrisHollowOpen];
+                [self changeBackgroundImage];
+            };
             [sectionDataModel.values addObject:animationModule];
         }
         {
             CJModuleModel *animationModule = [[CJModuleModel alloc] init];
             animationModule.title = @"CameraIrisHollowClose(关镜头效果)";
+            animationModule.actionBlock = ^{
+                CJTransitionDirection transitionDirection = CJTransitionDirectionFromRight;
+                [self.tableView cj_customTransitionFrom:transitionDirection
+                                      withAnimationType:CJAnimateCustomTypeCameraIrisHollowClose];
+                [self changeBackgroundImage];
+            };
             [sectionDataModel.values addObject:animationModule];
         }
         
@@ -145,33 +235,7 @@
     }
     
     
-    
-    
-    
     self.sectionDataModels = sectionDataModels;
-    
-    
-    UIImage *backgroundImage = [UIImage imageNamed:@"animationBg02.jpg"];
-    self.tableView.backgroundColor = [UIColor colorWithPatternImage:backgroundImage];
-}
-
-#pragma mark - UITableViewDataSource & UITableViewDelegate
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return self.sectionDataModels.count;
-}
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    CJSectionDataModel *sectionDataModel = [self.sectionDataModels objectAtIndex:section];
-    NSArray *dataModels = sectionDataModel.values;
-    
-    return dataModels.count;
-}
-
-- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
-    CJSectionDataModel *sectionDataModel = [self.sectionDataModels objectAtIndex:section];
-    
-    NSString *indexTitle = sectionDataModel.theme;
-    return indexTitle;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -179,49 +243,19 @@
     NSArray *dataModels = sectionDataModel.values;
     CJModuleModel *moduleModel = [dataModels objectAtIndex:indexPath.row];
     
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
+    if (cell == nil) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"cell"];
+    }
     cell.textLabel.text = moduleModel.title;
-    cell.backgroundColor = [UIColor clearColor];
+    cell.detailTextLabel.text = moduleModel.content;
+    cell.backgroundColor = [UIColor clearColor]; //确保背景正确
     
     return cell;
 }
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    //NSLog(@"didSelectRowAtIndexPath = %zd %zd", indexPath.section, indexPath.row);
-    [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    
-    /*
-    CJSectionDataModel *sectionDataModel = [self.sectionDataModels objectAtIndex:indexPath.section];
-    NSArray *dataModels = sectionDataModel.values;
-    CJModuleModel *moduleModel = [dataModels objectAtIndex:indexPath.row];
-    */
-    
-    //transitionDirection
-//    CJTransitionDirection transitionDirection = moduleModel.unReadNumber;
-//    moduleModel.unReadNumber++;
-//    if (moduleModel.unReadNumber > 3) {
-//        moduleModel.unReadNumber = 0;
-//    }
-    
-    if (indexPath.section == 0) {
-        UIViewAnimationTransition transition = (UIViewAnimationTransition)indexPath.row;
-        [self.tableView cj_animationWithAnimationTransition:transition];
-        
-    } else if (indexPath.section == 1) {
-        CJAnimateCommonType animationType = (CJAnimateCommonType)indexPath.row;
-        
-        CJTransitionDirection transitionDirection = CJTransitionDirectionFromRight;
-        [self.tableView cj_commonTransitionFrom:transitionDirection
-                              withAnimationType:animationType];
-    } else if (indexPath.section == 2) {
-        CJAnimateCustomType animationType = (CJAnimateCustomType)indexPath.row;
-        
-        CJTransitionDirection transitionDirection = CJTransitionDirectionFromRight;
-        [self.tableView cj_customTransitionFrom:transitionDirection
-                              withAnimationType:animationType];
-    }
-    
-    
+
+- (void)changeBackgroundImage {
     static int i = 0;
     if (i == 0) {
         UIImage *backgroundImage = [UIImage imageNamed:@"animationBg01.jpg"];
@@ -233,7 +267,6 @@
         i = 0;
     }
 }
-
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

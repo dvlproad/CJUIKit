@@ -16,8 +16,6 @@
 		780E46051E5DF87B00980127 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 780E46041E5DF87B00980127 /* main.m */; };
 		780E46081E5DF87B00980127 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 780E46071E5DF87B00980127 /* AppDelegate.m */; };
 		780E460E1E5DF87B00980127 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 780E460C1E5DF87B00980127 /* Main.storyboard */; };
-		780E46101E5DF87B00980127 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 780E460F1E5DF87B00980127 /* Assets.xcassets */; };
-		780E46131E5DF87B00980127 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 780E46111E5DF87B00980127 /* LaunchScreen.storyboard */; };
 		780E461E1E5DF87B00980127 /* CJUIKitDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 780E461D1E5DF87B00980127 /* CJUIKitDemoTests.m */; };
 		780E46291E5DF87B00980127 /* CJUIKitDemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 780E46281E5DF87B00980127 /* CJUIKitDemoUITests.m */; };
 		781495A92140D82600D0F2BC /* MantleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 781495A82140D82600D0F2BC /* MantleViewController.m */; };
@@ -44,6 +42,11 @@
 		7850B71320937E85008F4A21 /* WelcomeViewToPop.m in Sources */ = {isa = PBXBuildFile; fileRef = 7850B70C20937E85008F4A21 /* WelcomeViewToPop.m */; };
 		7850B71420937E85008F4A21 /* WelcomePopupView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7850B71020937E85008F4A21 /* WelcomePopupView.m */; };
 		7852D9DA216EFFBE00E50A39 /* LockGateKeeperViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7852D9D9216EFFBE00E50A39 /* LockGateKeeperViewController.m */; };
+		7868276021AE926700FCCDE5 /* AppAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7868275F21AE926700FCCDE5 /* AppAssets.xcassets */; };
+		7868277B21AF01BA00FCCDE5 /* bgCar@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7868277A21AF01B800FCCDE5 /* bgCar@2x.jpg */; };
+		7868277E21AF027200FCCDE5 /* header@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7868277C21AF027100FCCDE5 /* header@2x.jpg */; };
+		7868277F21AF027200FCCDE5 /* bgSky@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7868277D21AF027200FCCDE5 /* bgSky@2x.jpg */; };
+		7868278121AF02E000FCCDE5 /* bg@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7868278021AF02E000FCCDE5 /* bg@2x.jpg */; };
 		787FDB5620500B01008A46E3 /* SearchBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 787FDB4C20500B00008A46E3 /* SearchBarViewController.m */; };
 		787FDB5720500B01008A46E3 /* SearchBarViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 787FDB4D20500B00008A46E3 /* SearchBarViewController.xib */; };
 		787FDB5820500B01008A46E3 /* TextFieldViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 787FDB5020500B00008A46E3 /* TextFieldViewController.m */; };
@@ -85,6 +88,7 @@
 		788113CE21996A3A00D1630D /* SubInheritableSharedInstanceClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 788113CD21996A3A00D1630D /* SubInheritableSharedInstanceClass.m */; };
 		7885FC4A2156681F00B97DAA /* UIView+CJPopupInSuspendWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 7885FC482156681F00B97DAA /* UIView+CJPopupInSuspendWindow.m */; };
 		7885FC9321567BE000B97DAA /* DemoButtonFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 7885FC9221567BE000B97DAA /* DemoButtonFactory.m */; };
+		788A55FA21AFCE540011F993 /* DemoLabelFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 788A55F921AFCE540011F993 /* DemoLabelFactory.m */; };
 		789CAF181FB612B700AF8CD4 /* ChangeLog.md in Resources */ = {isa = PBXBuildFile; fileRef = 789CAE111FB612B600AF8CD4 /* ChangeLog.md */; };
 		789CAF251FB612B700AF8CD4 /* CJSingleTableViewCellDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 789CAE321FB612B600AF8CD4 /* CJSingleTableViewCellDataSource.m */; };
 		789CAF261FB612B700AF8CD4 /* CJSingleTableViewCellDataSource2.m in Sources */ = {isa = PBXBuildFile; fileRef = 789CAE341FB612B600AF8CD4 /* CJSingleTableViewCellDataSource2.m */; };
@@ -115,7 +119,7 @@
 		78B6C2E92159D84800D5864E /* DemoBusFlightStationOnOffDetailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 78B6C2E72159D84700D5864E /* DemoBusFlightStationOnOffDetailModel.m */; };
 		78B6C2EE2159D8AF00D5864E /* DemoBusPassengerOrderModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 78B6C2EC2159D8AF00D5864E /* DemoBusPassengerOrderModel.m */; };
 		78B6C2EF2159D8AF00D5864E /* DemoBusPassengerModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 78B6C2ED2159D8AF00D5864E /* DemoBusPassengerModel.m */; };
-		78B90E67218B49D000776584 /* CJCommonAsset.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 78B90E66218B49CF00776584 /* CJCommonAsset.xcassets */; };
+		78B90E67218B49D000776584 /* MainAsset.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 78B90E66218B49CF00776584 /* MainAsset.xcassets */; };
 		78C81479216E0DEC00A6B190 /* SystemComposeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78C81478216E0DEC00A6B190 /* SystemComposeViewController.m */; };
 		78C81489216E11AF00A6B190 /* CChildViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78C8147B216E11AF00A6B190 /* CChildViewController.m */; };
 		78C8148A216E11AF00A6B190 /* FChildViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78C8147C216E11AF00A6B190 /* FChildViewController.m */; };
@@ -142,7 +146,6 @@
 		800E07E92016CD1500799B78 /* KeyboardUtilViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 800E07E72016CD1500799B78 /* KeyboardUtilViewController.m */; };
 		800E07EA2016CD1500799B78 /* KeyboardUtilViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 800E07E82016CD1500799B78 /* KeyboardUtilViewController.xib */; };
 		800F3B652011899400A5C326 /* ToastViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 800F3B632011899400A5C326 /* ToastViewController.m */; };
-		800F3B662011899400A5C326 /* ToastViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 800F3B642011899400A5C326 /* ToastViewController.xib */; };
 		8014A2801FA2C2E500DDDB5A /* AppDelegate+WindowRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8014A27F1FA2C2E500DDDB5A /* AppDelegate+WindowRootViewController.m */; };
 		8014A2A21FA3137D00DDDB5A /* ThirdPartIcon.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8014A2A11FA3137D00DDDB5A /* ThirdPartIcon.xcassets */; };
 		801F75D820A040D800A2E027 /* BBXDAreaCodeTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 801F75D020A040D800A2E027 /* BBXDAreaCodeTextField.m */; };
@@ -219,7 +222,6 @@
 		8060C48320E0D0B30093B14E /* CJDistanceUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 8060C48220E0D0B30093B14E /* CJDistanceUtil.m */; };
 		8060C48A20E0D5EF0093B14E /* ValidateStringTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8060C48520E0D5EF0093B14E /* ValidateStringTableViewCell.m */; };
 		8060C48C20E0D5EF0093B14E /* AccuracyStringViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8060C48920E0D5EF0093B14E /* AccuracyStringViewController.m */; };
-		807F125F20B507A30008B748 /* ViewAnimateViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 807F125D20B507A20008B748 /* ViewAnimateViewController.xib */; };
 		807F126020B507A30008B748 /* ViewAnimateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 807F125E20B507A30008B748 /* ViewAnimateViewController.m */; };
 		807F126C20B5123A0008B748 /* animationBg02.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 807F126A20B512390008B748 /* animationBg02.jpg */; };
 		807F127020B51C390008B748 /* animationBg01.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 807F126F20B51C390008B748 /* animationBg01.jpg */; };
@@ -311,7 +313,7 @@
 		80FF90AF1FC5649F00E437CF /* NavigationBarBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80FF8FEA1FC5649E00E437CF /* NavigationBarBaseViewController.m */; };
 		80FF90B01FC5649F00E437CF /* NavigationBarScrollChangeBGViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80FF8FEB1FC5649E00E437CF /* NavigationBarScrollChangeBGViewController.m */; };
 		80FF90B11FC5649F00E437CF /* NavigationBarChangePositonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80FF8FED1FC5649E00E437CF /* NavigationBarChangePositonViewController.m */; };
-		80FF90B21FC5649F00E437CF /* NavigationBarBaseViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 80FF8FEF1FC5649E00E437CF /* NavigationBarBaseViewController.xib */; };
+		80FF90B21FC5649F00E437CF /* TableHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 80FF8FEF1FC5649E00E437CF /* TableHeaderView.xib */; };
 		80FF90B31FC5649F00E437CF /* ButtonViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 80FF8FF11FC5649E00E437CF /* ButtonViewController.xib */; };
 		80FF90B41FC5649F00E437CF /* ButtonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80FF8FF21FC5649E00E437CF /* ButtonViewController.m */; };
 		80FF90B51FC5649F00E437CF /* CJMJRefreshViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 80FF8FF61FC5649E00E437CF /* CJMJRefreshViewController.xib */; };
@@ -373,8 +375,6 @@
 		780E46061E5DF87B00980127 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		780E46071E5DF87B00980127 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		780E460D1E5DF87B00980127 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		780E460F1E5DF87B00980127 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		780E46121E5DF87B00980127 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		780E46141E5DF87B00980127 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		780E46191E5DF87B00980127 /* CJUIKitDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CJUIKitDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		780E461D1E5DF87B00980127 /* CJUIKitDemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CJUIKitDemoTests.m; sourceTree = "<group>"; };
@@ -424,6 +424,11 @@
 		7850B71020937E85008F4A21 /* WelcomePopupView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WelcomePopupView.m; sourceTree = "<group>"; };
 		7852D9D8216EFFBE00E50A39 /* LockGateKeeperViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LockGateKeeperViewController.h; sourceTree = "<group>"; };
 		7852D9D9216EFFBE00E50A39 /* LockGateKeeperViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LockGateKeeperViewController.m; sourceTree = "<group>"; };
+		7868275F21AE926700FCCDE5 /* AppAssets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = AppAssets.xcassets; sourceTree = "<group>"; };
+		7868277A21AF01B800FCCDE5 /* bgCar@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "bgCar@2x.jpg"; sourceTree = "<group>"; };
+		7868277C21AF027100FCCDE5 /* header@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "header@2x.jpg"; sourceTree = "<group>"; };
+		7868277D21AF027200FCCDE5 /* bgSky@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "bgSky@2x.jpg"; sourceTree = "<group>"; };
+		7868278021AF02E000FCCDE5 /* bg@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "bg@2x.jpg"; sourceTree = "<group>"; };
 		787FDB4B20500B00008A46E3 /* SearchBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchBarViewController.h; sourceTree = "<group>"; };
 		787FDB4C20500B00008A46E3 /* SearchBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchBarViewController.m; sourceTree = "<group>"; };
 		787FDB4D20500B00008A46E3 /* SearchBarViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SearchBarViewController.xib; sourceTree = "<group>"; };
@@ -482,6 +487,8 @@
 		7885FC492156681F00B97DAA /* UIView+CJPopupInSuspendWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+CJPopupInSuspendWindow.h"; sourceTree = "<group>"; };
 		7885FC9121567BE000B97DAA /* DemoButtonFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DemoButtonFactory.h; sourceTree = "<group>"; };
 		7885FC9221567BE000B97DAA /* DemoButtonFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DemoButtonFactory.m; sourceTree = "<group>"; };
+		788A55F821AFCE540011F993 /* DemoLabelFactory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DemoLabelFactory.h; sourceTree = "<group>"; };
+		788A55F921AFCE540011F993 /* DemoLabelFactory.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DemoLabelFactory.m; sourceTree = "<group>"; };
 		789CAB597AD073D5F637D193 /* Pods-CJUIKitDemoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CJUIKitDemoTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-CJUIKitDemoTests/Pods-CJUIKitDemoTests.release.xcconfig"; sourceTree = "<group>"; };
 		789CAE111FB612B600AF8CD4 /* ChangeLog.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = ChangeLog.md; sourceTree = "<group>"; };
 		789CAE311FB612B600AF8CD4 /* CJSingleTableViewCellDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJSingleTableViewCellDataSource.h; sourceTree = "<group>"; };
@@ -537,7 +544,7 @@
 		78B6C2EB2159D8AF00D5864E /* DemoBusPassengerOrderModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DemoBusPassengerOrderModel.h; sourceTree = "<group>"; };
 		78B6C2EC2159D8AF00D5864E /* DemoBusPassengerOrderModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DemoBusPassengerOrderModel.m; sourceTree = "<group>"; };
 		78B6C2ED2159D8AF00D5864E /* DemoBusPassengerModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DemoBusPassengerModel.m; sourceTree = "<group>"; };
-		78B90E66218B49CF00776584 /* CJCommonAsset.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = CJCommonAsset.xcassets; sourceTree = "<group>"; };
+		78B90E66218B49CF00776584 /* MainAsset.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = MainAsset.xcassets; sourceTree = "<group>"; };
 		78C81477216E0DEC00A6B190 /* SystemComposeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SystemComposeViewController.h; sourceTree = "<group>"; };
 		78C81478216E0DEC00A6B190 /* SystemComposeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SystemComposeViewController.m; sourceTree = "<group>"; };
 		78C8147B216E11AF00A6B190 /* CChildViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CChildViewController.m; sourceTree = "<group>"; };
@@ -588,7 +595,6 @@
 		800E07E82016CD1500799B78 /* KeyboardUtilViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = KeyboardUtilViewController.xib; sourceTree = "<group>"; };
 		800F3B622011899400A5C326 /* ToastViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ToastViewController.h; sourceTree = "<group>"; };
 		800F3B632011899400A5C326 /* ToastViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ToastViewController.m; sourceTree = "<group>"; };
-		800F3B642011899400A5C326 /* ToastViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ToastViewController.xib; sourceTree = "<group>"; };
 		8014A27E1FA2C2E500DDDB5A /* AppDelegate+WindowRootViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AppDelegate+WindowRootViewController.h"; sourceTree = "<group>"; };
 		8014A27F1FA2C2E500DDDB5A /* AppDelegate+WindowRootViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "AppDelegate+WindowRootViewController.m"; sourceTree = "<group>"; };
 		8014A2A11FA3137D00DDDB5A /* ThirdPartIcon.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = ThirdPartIcon.xcassets; sourceTree = "<group>"; };
@@ -698,7 +704,6 @@
 		8060C48820E0D5EF0093B14E /* ValidateStringTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ValidateStringTableViewCell.h; sourceTree = "<group>"; };
 		8060C48920E0D5EF0093B14E /* AccuracyStringViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccuracyStringViewController.m; sourceTree = "<group>"; };
 		807F125C20B507A20008B748 /* ViewAnimateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewAnimateViewController.h; sourceTree = "<group>"; };
-		807F125D20B507A20008B748 /* ViewAnimateViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ViewAnimateViewController.xib; sourceTree = "<group>"; };
 		807F125E20B507A30008B748 /* ViewAnimateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewAnimateViewController.m; sourceTree = "<group>"; };
 		807F126A20B512390008B748 /* animationBg02.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = animationBg02.jpg; sourceTree = "<group>"; };
 		807F126F20B51C390008B748 /* animationBg01.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = animationBg01.jpg; sourceTree = "<group>"; };
@@ -840,7 +845,7 @@
 		80FF8FEC1FC5649E00E437CF /* NavigationBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NavigationBarViewController.h; sourceTree = "<group>"; };
 		80FF8FED1FC5649E00E437CF /* NavigationBarChangePositonViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NavigationBarChangePositonViewController.m; sourceTree = "<group>"; };
 		80FF8FEE1FC5649E00E437CF /* EasyScaleHeadView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EasyScaleHeadView.h; sourceTree = "<group>"; };
-		80FF8FEF1FC5649E00E437CF /* NavigationBarBaseViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NavigationBarBaseViewController.xib; sourceTree = "<group>"; };
+		80FF8FEF1FC5649E00E437CF /* TableHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TableHeaderView.xib; sourceTree = "<group>"; };
 		80FF8FF11FC5649E00E437CF /* ButtonViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ButtonViewController.xib; sourceTree = "<group>"; };
 		80FF8FF21FC5649E00E437CF /* ButtonViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ButtonViewController.m; sourceTree = "<group>"; };
 		80FF8FF31FC5649E00E437CF /* ButtonViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ButtonViewController.h; sourceTree = "<group>"; };
@@ -978,7 +983,6 @@
 				80FF90D71FC5668600E437CF /* CJFoundation */,
 				783281011F4198BC008267E0 /* CJSmallCustomView */,
 				780E46141E5DF87B00980127 /* Info.plist */,
-				780E46111E5DF87B00980127 /* LaunchScreen.storyboard */,
 				780E460C1E5DF87B00980127 /* Main.storyboard */,
 				789A19681E61B87D008081E3 /* Resources */,
 				780E46031E5DF87B00980127 /* Supporting Files */,
@@ -1163,6 +1167,7 @@
 		7852D9DF216F16B000E50A39 /* CommonUI */ = {
 			isa = PBXGroup;
 			children = (
+				788A55F721AFCE3C0011F993 /* DemoLabel */,
 				78E1895321777C9700B8781A /* Base */,
 				78226A6A21A4012B002167F2 /* DemoAlert */,
 				7808D5B0217079E5007FC851 /* DemoBarButtonItemFactory */,
@@ -1305,11 +1310,21 @@
 			path = Inherit;
 			sourceTree = "<group>";
 		};
+		788A55F721AFCE3C0011F993 /* DemoLabel */ = {
+			isa = PBXGroup;
+			children = (
+				788A55F821AFCE540011F993 /* DemoLabelFactory.h */,
+				788A55F921AFCE540011F993 /* DemoLabelFactory.m */,
+			);
+			path = DemoLabel;
+			sourceTree = "<group>";
+		};
 		789A19681E61B87D008081E3 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				780E460F1E5DF87B00980127 /* Assets.xcassets */,
-				78B90E66218B49CF00776584 /* CJCommonAsset.xcassets */,
+				7868278021AF02E000FCCDE5 /* bg@2x.jpg */,
+				7868275F21AE926700FCCDE5 /* AppAssets.xcassets */,
+				78B90E66218B49CF00776584 /* MainAsset.xcassets */,
 				8014A2A11FA3137D00DDDB5A /* ThirdPartIcon.xcassets */,
 			);
 			path = Resources;
@@ -1551,7 +1566,6 @@
 			children = (
 				800F3B622011899400A5C326 /* ToastViewController.h */,
 				800F3B632011899400A5C326 /* ToastViewController.m */,
-				800F3B642011899400A5C326 /* ToastViewController.xib */,
 			);
 			path = CJToastDemo;
 			sourceTree = "<group>";
@@ -1757,7 +1771,6 @@
 			children = (
 				807F125C20B507A20008B748 /* ViewAnimateViewController.h */,
 				807F125E20B507A30008B748 /* ViewAnimateViewController.m */,
-				807F125D20B507A20008B748 /* ViewAnimateViewController.xib */,
 				807F126F20B51C390008B748 /* animationBg01.jpg */,
 				807F126A20B512390008B748 /* animationBg02.jpg */,
 			);
@@ -2134,7 +2147,8 @@
 				80FF8FE41FC5649E00E437CF /* EasyScaleHeadView.xib */,
 				80FF8FE31FC5649E00E437CF /* NavigationBarBaseViewController.h */,
 				80FF8FEA1FC5649E00E437CF /* NavigationBarBaseViewController.m */,
-				80FF8FEF1FC5649E00E437CF /* NavigationBarBaseViewController.xib */,
+				80FF8FEF1FC5649E00E437CF /* TableHeaderView.xib */,
+				7868277A21AF01B800FCCDE5 /* bgCar@2x.jpg */,
 				78A4E1D22175EB7A005FEADD /* ChangeNavigaitionBarBG */,
 				80FF8FE91FC5649E00E437CF /* NavigationBarChangePositonViewController.h */,
 				80FF8FED1FC5649E00E437CF /* NavigationBarChangePositonViewController.m */,
@@ -2308,6 +2322,8 @@
 				80FF918F1FC5682A00E437CF /* PullScaleTopImageViewController.h */,
 				80FF91901FC5682A00E437CF /* PullScaleTopImageViewController.xib */,
 				80FF91911FC5682A00E437CF /* PullScaleTopImageViewController.m */,
+				7868277D21AF027200FCCDE5 /* bgSky@2x.jpg */,
+				7868277C21AF027100FCCDE5 /* header@2x.jpg */,
 			);
 			path = ScaleHeadViewDemo;
 			sourceTree = "<group>";
@@ -2490,10 +2506,10 @@
 				8033239F20299AD7001DACF1 /* MemoryADKnowledge02.jpg in Resources */,
 				8033239D20299AD7001DACF1 /* MemoryADResult02.jpg in Resources */,
 				7880E6F7213C2C4C009C9BCF /* CJRandomNameUtil.txt in Resources */,
+				7868277F21AF027200FCCDE5 /* bgSky@2x.jpg in Resources */,
 				80FF90951FC5649F00E437CF /* SHeaderHome2.xib in Resources */,
 				808B983420B7F73300910E45 /* LogUtilViewController.xib in Resources */,
 				80FF90381FC5649E00E437CF /* SvDemo_Refresh.xib in Resources */,
-				780E46131E5DF87B00980127 /* LaunchScreen.storyboard in Resources */,
 				7850B70820937C5A008F4A21 /* PopupInWindowVC.xib in Resources */,
 				787FDB6520500B1F008A46E3 /* plus@2x.png in Resources */,
 				787FDB8D20500B5C008A46E3 /* slider_double_thumbImage_b@3x.png in Resources */,
@@ -2512,6 +2528,7 @@
 				787FDB9020500B5C008A46E3 /* icon_ddlb_hd@2x.png in Resources */,
 				7850B70620937C5A008F4A21 /* PopupInViewVC.xib in Resources */,
 				8014A2A21FA3137D00DDDB5A /* ThirdPartIcon.xcassets in Resources */,
+				7868276021AE926700FCCDE5 /* AppAssets.xcassets in Resources */,
 				803323AB20299AD7001DACF1 /* MyCycleADViewController.xib in Resources */,
 				800E07E22016CCF500799B78 /* DataUtilViewController.xib in Resources */,
 				80D01210210336E100D1EDF0 /* ChangeViewController.xib in Resources */,
@@ -2529,8 +2546,8 @@
 				8033239C20299AD7001DACF1 /* MemoryADKnowledge01.jpg in Resources */,
 				8033239320299AD7001DACF1 /* MemoryADKnowledge07.jpg in Resources */,
 				80FF90B51FC5649F00E437CF /* CJMJRefreshViewController.xib in Resources */,
-				807F125F20B507A30008B748 /* ViewAnimateViewController.xib in Resources */,
 				803323C020299AD7001DACF1 /* cvSupplementaryHead.xib in Resources */,
+				7868277E21AF027200FCCDE5 /* header@2x.jpg in Resources */,
 				787FDB9120500B5C008A46E3 /* slider_double_thumbImage_b@2x.png in Resources */,
 				80FF90A61FC5649F00E437CF /* QRCodeViewController.xib in Resources */,
 				787FDB5920500B01008A46E3 /* TextFieldViewController.xib in Resources */,
@@ -2543,13 +2560,13 @@
 				80C2E19820917048007D7119 /* jiazhaishibai_bg@3x.png in Resources */,
 				787FDB9420500B5C008A46E3 /* slider_thumbImage@3x.png in Resources */,
 				80FF919F1FC5682B00E437CF /* ProcessLineViewController.xib in Resources */,
-				78B90E67218B49D000776584 /* CJCommonAsset.xcassets in Resources */,
+				78B90E67218B49D000776584 /* MainAsset.xcassets in Resources */,
 				8033239620299AD7001DACF1 /* MemoryAD05.jpg in Resources */,
 				78A0D05A216BB19800EFAD67 /* badgeButton_normal@3x.png in Resources */,
 				7850B71220937E85008F4A21 /* WelcomePopupView.xib in Resources */,
 				8051E5CE20AAB34E003370AA /* details_icon_huadong@3x.png in Resources */,
 				803323BB20299AD7001DACF1 /* CvDemo_Complex.xib in Resources */,
-				80FF90B21FC5649F00E437CF /* NavigationBarBaseViewController.xib in Resources */,
+				80FF90B21FC5649F00E437CF /* TableHeaderView.xib in Resources */,
 				787FDB9520500B5C008A46E3 /* SwitchSliderViewController.xib in Resources */,
 				787FDB8720500B5C008A46E3 /* slider_maximum_trackimage@3x.png in Resources */,
 				80FF90811FC5649F00E437CF /* TvDemo_Complex.xib in Resources */,
@@ -2563,11 +2580,11 @@
 				80FF903F1FC5649F00E437CF /* icon.png in Resources */,
 				7850B71120937E85008F4A21 /* WelcomeViewToPop.xib in Resources */,
 				80FF90AC1FC5649F00E437CF /* NavigationBarViewController.xib in Resources */,
-				780E46101E5DF87B00980127 /* Assets.xcassets in Resources */,
 				8033239420299AD7001DACF1 /* MemoryADExample01.jpg in Resources */,
 				80FF90AB1FC5649F00E437CF /* EasyScaleHeadView.xib in Resources */,
 				80D71EAA2090277700D2DB68 /* CJUIKitBaseHomeViewController.xib in Resources */,
 				78A621D52135C040004DA046 /* LogViewViewController.xib in Resources */,
+				7868278121AF02E000FCCDE5 /* bg@2x.jpg in Resources */,
 				803323A920299AD7001DACF1 /* MemoryADTime01.jpg in Resources */,
 				787FDB5720500B01008A46E3 /* SearchBarViewController.xib in Resources */,
 				787FDB8820500B5C008A46E3 /* slider_double_thumbImage_a@2x.png in Resources */,
@@ -2590,6 +2607,7 @@
 				803323BD20299AD7001DACF1 /* NibCell.xib in Resources */,
 				8033239720299AD7001DACF1 /* MemoryADKnowledge04.jpg in Resources */,
 				78A0D057216BB19800EFAD67 /* badgeButton_normal@2x.png in Resources */,
+				7868277B21AF01BA00FCCDE5 /* bgCar@2x.jpg in Resources */,
 				807F126C20B5123A0008B748 /* animationBg02.jpg in Resources */,
 				803323A820299AD7001DACF1 /* MemoryAD08.jpg in Resources */,
 				803323BE20299AD7001DACF1 /* cvSupplementaryFoot.xib in Resources */,
@@ -2597,7 +2615,6 @@
 				803323B820299AD7001DACF1 /* MyEqualCellSizeViewController.xib in Resources */,
 				807F127020B51C390008B748 /* animationBg01.jpg in Resources */,
 				80FF90891FC5649F00E437CF /* DemoTableViewController.xib in Resources */,
-				800F3B662011899400A5C326 /* ToastViewController.xib in Resources */,
 				80FF919D1FC5682B00E437CF /* CountDownTimeViewController.xib in Resources */,
 				80FF902C1FC5649E00E437CF /* MJExtensionViewController.xib in Resources */,
 				787FDB6620500B1F008A46E3 /* sound@2x.png in Resources */,
@@ -2749,6 +2766,7 @@
 			files = (
 				8051E5D120AAC172003370AA /* BBXShimmeringSwitchSlider.m in Sources */,
 				8051E5CA20AAAFD2003370AA /* BusShimmeringSwitchSlider.m in Sources */,
+				788A55FA21AFCE540011F993 /* DemoLabelFactory.m in Sources */,
 				80FF907F1FC5649F00E437CF /* DemoTableViewController.m in Sources */,
 				7850B70120937C5A008F4A21 /* PopupInWindowVC.m in Sources */,
 				7850B71320937E85008F4A21 /* WelcomeViewToPop.m in Sources */,
@@ -2977,14 +2995,6 @@
 			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
-		780E46111E5DF87B00980127 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				780E46121E5DF87B00980127 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
@@ -3101,6 +3111,7 @@
 			baseConfigurationReference = 68D73B38201AA01727123963 /* Pods-CJUIKitDemo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = D225N2EYEE;
@@ -3120,6 +3131,7 @@
 			baseConfigurationReference = 3132573BFCFBEA8B4F3BB86F /* Pods-CJUIKitDemo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = D225N2EYEE;

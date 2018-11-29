@@ -6,17 +6,10 @@
 //  Copyright © 2018年 dvlproad. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
-#ifdef CJTESTPOD
-#import "CJSectionDataModel.h"
-#else
-#import <CJBaseUtil/CJSectionDataModel.h> //在CJDataUtil中
-#endif
+#import "CJUIKitBaseHomeViewController.h"
 
-@interface ToastViewController : UIViewController {
+@interface ToastViewController : CJUIKitBaseHomeViewController {
     
 }
-@property (nonatomic, weak) IBOutlet UITableView *tableView;
-@property (nonatomic, strong) NSMutableArray<CJSectionDataModel *> *sectionDataModels;
 
 @end

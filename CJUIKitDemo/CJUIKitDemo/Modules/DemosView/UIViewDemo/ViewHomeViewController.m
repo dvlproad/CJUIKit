@@ -57,7 +57,6 @@
             CJModuleModel *animateViewModule = [[CJModuleModel alloc] init];
             animateViewModule.title = @"ViewAnimate (View动画)";
             animateViewModule.classEntry = [ViewAnimateViewController class];
-            animateViewModule.isCreateByXib = YES;
             [sectionDataModel.values addObject:animateViewModule];
         }
         

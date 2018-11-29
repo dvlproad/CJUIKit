@@ -18,6 +18,7 @@
 
 #import "CJToast.h"
 
+#import "DemoLabelFactory.h"
 #import "DemoButtonFactory.h"
 #import "DemoBarButtonItemFactory.h"
 

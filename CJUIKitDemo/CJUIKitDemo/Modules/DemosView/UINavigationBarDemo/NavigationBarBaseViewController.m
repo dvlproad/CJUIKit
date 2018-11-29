@@ -28,15 +28,20 @@
     
     [self addTableHeaderView]; //仅用于测试添加tableHeaderView，是否会对待会addSubview的TableScaleHeader有影响。warning：需要先设置完tableHeaderView后，再进行协议设置，否则协议走不进去
     
-    [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"cell"];
-    self.tableView.delegate = self;
-    self.tableView.dataSource = self;
-    [self.view addSubview:self.tableView];
+    UITableView *tableView = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStyleGrouped];
+    [tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"cell"];
+    tableView.dataSource = self;
+    tableView.delegate = self;
+    [self.view addSubview:tableView];
+    [tableView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.edges.mas_equalTo(self.view);
+    }];
+    self.tableView = tableView;
 }
 
 - (void)addTableHeaderView {
-    NSArray *views = [[NSBundle mainBundle] loadNibNamed:@"NavigationBarBaseViewController" owner:self options:nil];
-    UIView *tableHeaderView = [views objectAtIndex:1];
+    NSArray *views = [[NSBundle mainBundle] loadNibNamed:@"TableHeaderView" owner:self options:nil];
+    UIView *tableHeaderView = [views objectAtIndex:0]; //根据xib里view，这里取索引为0的那个
     
     /* 改变tableHeaderView的高度 */
     CGRect tableHeaderViewFrame = tableHeaderView.frame;

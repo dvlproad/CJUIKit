@@ -7,14 +7,7 @@
 //
 
 #import "CJAlertView.h"
-
-#ifdef CJTESTPOD
-#import "UIView+CJPopupInView.h"
-#else
 #import <CJBaseUIKit/UIView+CJPopupInView.h>
-#endif
-
-
 #import <CoreText/CoreText.h>
 
 @interface CJAlertView () {

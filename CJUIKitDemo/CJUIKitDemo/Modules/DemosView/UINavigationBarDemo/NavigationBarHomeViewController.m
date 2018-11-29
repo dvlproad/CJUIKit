@@ -55,7 +55,6 @@
             CJModuleModel *UINavigationBarModuleModel1 = [[CJModuleModel alloc] init];
             UINavigationBarModuleModel1.title = @"UINavigationBar(常见的导航栏背景色改变隐藏)";
             UINavigationBarModuleModel1.classEntry = [NavigationBarScrollChangeBGViewController class];
-            UINavigationBarModuleModel1.isCreateByXib = YES;
             [sectionDataModel.values addObject:UINavigationBarModuleModel1];
         }
         {

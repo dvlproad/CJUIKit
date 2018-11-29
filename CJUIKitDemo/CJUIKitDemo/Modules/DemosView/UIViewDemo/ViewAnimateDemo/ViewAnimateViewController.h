@@ -8,16 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-#ifdef CJTESTPOD
-#import "CJSectionDataModel.h"
-#else
-#import <CJBaseUtil/CJSectionDataModel.h> //在CJDataUtil中
-#endif
+#import "CJUIKitBaseHomeViewController.h"
 
-@interface ViewAnimateViewController : UIViewController {
+@interface ViewAnimateViewController : CJUIKitBaseHomeViewController {
     
 }
-@property (nonatomic, weak) IBOutlet UITableView *tableView;
-@property (nonatomic, strong) NSMutableArray<CJSectionDataModel *> *sectionDataModels;
 
 @end

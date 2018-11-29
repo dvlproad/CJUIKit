@@ -69,39 +69,18 @@
 
 - (void)commonSetupToSwitchSlider:(CJSwitchSlider *)switchSlider {
     UIView * (^createTrackViewBlock)(void) = ^(void) {
-        UILabel *label = [[UILabel alloc] initWithFrame:CGRectZero];
-        //label.backgroundColor = [UIColor clearColor];
-        //label.layer.masksToBounds = YES;
-        label.layer.cornerRadius = 5;
-        label.font = [UIFont systemFontOfSize:19];
-        label.textColor = [UIColor whiteColor];
-        label.textAlignment = NSTextAlignmentCenter;
-        
+        UILabel *label = [DemoLabelFactory whiteLabelWithCornerRadius:15];
         return label;
     };
     
     UIView * (^createMinimumTrackViewBlock)(void) = ^(void) {
-        UILabel *label = [[UILabel alloc] initWithFrame:CGRectZero];
-        //label.backgroundColor = [UIColor clearColor];
-        //label.layer.masksToBounds = YES;
-        label.layer.cornerRadius = 5;
-        label.font = [UIFont systemFontOfSize:19];
-        label.textColor = [UIColor whiteColor];
-        label.textAlignment = NSTextAlignmentCenter;
-        
+        UILabel *label = [DemoLabelFactory whiteLabelWithCornerRadius:15];
         return label;
     };
     
     
     UIView * (^createMaximumTrackViewBlock)(void) = ^(void) {
-        UILabel *label = [[UILabel alloc] initWithFrame:CGRectZero];
-        //label.backgroundColor = [UIColor clearColor];
-        //label.layer.masksToBounds = YES;
-        label.layer.cornerRadius = 5;
-        label.font = [UIFont systemFontOfSize:19];
-        label.textColor = [UIColor whiteColor];
-        label.textAlignment = NSTextAlignmentCenter;
-        
+        UILabel *label = [DemoLabelFactory whiteLabelWithCornerRadius:15];
         return label;
     };
     

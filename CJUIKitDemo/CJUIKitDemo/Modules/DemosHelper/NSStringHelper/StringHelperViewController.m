@@ -10,7 +10,7 @@
 
 #import "NSObjectCJHelper.h"
 
-@interface StringHelperViewController () <UITableViewDataSource, UITableViewDelegate> {
+@interface StringHelperViewController () {
     
 }
 @property (nonatomic, weak) UIActivityIndicatorView *activityIndicator;
@@ -23,18 +23,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    self.navigationItem.title = NSLocalizedString(@"StringEvent首页", nil); //知识点:使得tabBar中的title可以和显示在顶部的title保持各自
-    
-    UITableView *tableView = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStyleGrouped];
-    [tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"cell"];
-    tableView.dataSource = self;
-    tableView.delegate = self;
-    [self.view addSubview:tableView];
-    [tableView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.edges.mas_equalTo(self.view);
-    }];
-    self.tableView = tableView;
-    
+    self.navigationItem.title = NSLocalizedString(@"StringEvent首页", nil);
     
     NSMutableArray *sectionDataModels = [[NSMutableArray alloc] init];
     //Toast
@@ -44,19 +33,34 @@
         {
             CJModuleModel *toastModule = [[CJModuleModel alloc] init];
             toastModule.title = @"控制台输出 [NSNull null] 的值";
-            //toastModule.classEntry = [UIViewController class];
+            toastModule.actionBlock = ^{
+                NSNull *string1 = [NSNull null];
+                NSLog(@"[NSNull null] = %@", string1);
+                
+                NSString *string2 = NSStringFromClass([NSNull class]);
+                NSLog(@"NSStringFromClass([NSNull class] = %@", string2);
+            };
             [sectionDataModel.values addObject:toastModule];
         }
         {
             CJModuleModel *toastModule = [[CJModuleModel alloc] init];
             toastModule.title = @"字符串判空，调用实例，无法正确判断";
-            //toastModule.classEntry = [UIViewController class];
+            toastModule.actionBlock = ^{
+//                NSString *string;
+//                NSLog(@"%@ isEmpty == %@", string, [string cj_isEmpty] ? @"YES" : @"NO");
+            };
             [sectionDataModel.values addObject:toastModule];
         }
         {
             CJModuleModel *toastModule = [[CJModuleModel alloc] init];
             toastModule.title = @"字符串判空，调用类方法，可以正确判断";
-            //toastModule.classEntry = [UIViewController class];
+            toastModule.actionBlock = ^{
+                NSString *string;
+                NSLog(@"%@ isEmpty == %@", string, [NSObjectCJHelper isEmptyForObject:string] ? @"YES" : @"NO");
+                
+//                NSString *string = @"";
+//                NSLog(@"%@ isEmpty == %@", string, [string cj_isEmpty] ? @"YES" : @"NO");
+            };
             [sectionDataModel.values addObject:toastModule];
         }
         [sectionDataModels addObject:sectionDataModel];
@@ -64,70 +68,6 @@
     
     
     self.sectionDataModels = sectionDataModels;
-}
-
-#pragma mark - UITableViewDataSource & UITableViewDelegate
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return self.sectionDataModels.count;
-}
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    CJSectionDataModel *sectionDataModel = [self.sectionDataModels objectAtIndex:section];
-    NSArray *dataModels = sectionDataModel.values;
-    
-    return dataModels.count;
-}
-
-- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
-    CJSectionDataModel *sectionDataModel = [self.sectionDataModels objectAtIndex:section];
-    
-    NSString *indexTitle = sectionDataModel.theme;
-    return indexTitle;
-}
-
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    CJSectionDataModel *sectionDataModel = [self.sectionDataModels objectAtIndex:indexPath.section];
-    NSArray *dataModels = sectionDataModel.values;
-    CJModuleModel *moduleModel = [dataModels objectAtIndex:indexPath.row];
-    
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
-    cell.textLabel.text = moduleModel.title;
-    
-    return cell;
-}
-
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    
-    if (indexPath.section == 0) {
-        if (indexPath.row == 0) {
-            NSNull *string1 = [NSNull null];
-            NSLog(@"[NSNull null] = %@", string1);
-            
-            NSString *string2 = NSStringFromClass([NSNull class]);
-            NSLog(@"NSStringFromClass([NSNull class] = %@", string2);
-            
-        } else if (indexPath.row == 1) {
-//            NSString *string;
-//            NSLog(@"%@ isEmpty == %@", string, [string cj_isEmpty] ? @"YES" : @"NO");
-            
-        } else if (indexPath.row == 2) {
-            NSString *string;
-            NSLog(@"%@ isEmpty == %@", string, [NSObjectCJHelper isEmptyForObject:string] ? @"YES" : @"NO");
-            
-//            NSString *string = @"";
-//            NSLog(@"%@ isEmpty == %@", string, [string cj_isEmpty] ? @"YES" : @"NO");
-            
-        } else if (indexPath.row == 3) {
-            
-            
-        } else if (indexPath.row == 4) {
-            
-        }
-        
-    } else if (indexPath.section == 1) {
-        
-    }
 }
 
 

@@ -99,7 +99,6 @@
             CJModuleModel *toastUtilModule = [[CJModuleModel alloc] init];
             toastUtilModule.title = @"Toast";
             toastUtilModule.classEntry = [ToastViewController class];
-            toastUtilModule.isCreateByXib = NO;
             [sectionDataModel.values addObject:toastUtilModule];
         }
         {
