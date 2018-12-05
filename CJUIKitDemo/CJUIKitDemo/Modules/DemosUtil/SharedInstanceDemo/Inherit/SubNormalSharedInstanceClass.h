@@ -2,7 +2,7 @@
 //  SubNormalSharedInstanceClass.h
 //  CJUIKitDemo
 //
-//  Created by 李超前 on 11/12/18.
+//  Created by ciyouzen on 11/12/18.
 //  Copyright © 2018 dvlproad. All rights reserved.
 //
 

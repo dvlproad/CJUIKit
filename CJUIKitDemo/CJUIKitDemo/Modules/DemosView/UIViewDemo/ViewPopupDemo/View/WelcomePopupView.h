@@ -2,7 +2,7 @@
 //  WelcomePopupView.h
 //  CJPopupViewDemo
 //
-//  Created by 李超前 on 16/9/12.
+//  Created by ciyouzen on 16/9/12.
 //  Copyright © 2016年 dvlproad. All rights reserved.
 //
 

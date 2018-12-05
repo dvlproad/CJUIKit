@@ -1,16 +1,18 @@
 <p id="目录"></p>
 ## 目录
 
-* [一、CJBaseUIKit：自定义的基础UI控件](#CJBaseUIKit)
-* [二、CJComplexUIKit：自定义的稍微复杂的UI](#CJComplexUIKit)
-* [三、CJFoundation：系统Foundation的扩展](#CJFoundation)
-* [四、CJBaseUtil：自定义的基础工具类](#CJBaseUtil)
-* [五、CJBaseHelper：自定义的基础帮助类](#CJBaseHelper)
-* [六、CJBaseTest：自定义的基础测试类](#CJBaseTest)
-* [其他](#其他)
-* [版本介绍/更新记录](#版本介绍/更新记录)
+* 一、CJBaseUIKit：自定义的基础UI控件
+* 二、CJComplexUIKit：自定义的稍微复杂的UI
+* 三、CJFoundation：系统Foundation的扩展
+* 四、CJBaseUtil：自定义的基础工具类
+* 五、CJBaseHelper：自定义的基础帮助类
+* 六、CJBaseTest：自定义的基础测试类
+* 其他
+* 版本介绍/更新记录
 
 
+
+[TOC]
 
 <p id="CJBaseUIKit"></p>
 ## 一、CJBaseUIKit：自定义的基础UI控件
@@ -20,65 +22,64 @@
 
 内容如下：
 
+> - CJBaseUIKit/UIColor：颜色：用来通过十六进制来设置颜色。 支持@“#123456”、 @“0X123456”、 @“123456”三种格式
+> - CJBaseUIKit/UIImage：图片
+> - CJBaseUIKit/UINavigationBar：导航栏
 >
-- CJBaseUIKit/UIColor：颜色：用来通过十六进制来设置颜色。 支持@“#123456”、 @“0X123456”、 @“123456”三种格式
-- CJBaseUIKit/UIImage：图片
-- CJBaseUIKit/UINavigationBar：导航栏
+> - CJBaseUIKit/UIView：视图
+> - CJBaseUIKit/UIView/CJDragAction：视图拖动
+> - CJBaseUIKit/UIView/CJShakeAction：视图抖动
+> - CJBaseUIKit/UIView/CJPopupAction：视图弹窗：UIView的类别，用来实现UIView弹出popupView的一个Uiew的类别
+> - CJBaseUIKit/UIView/CJGestureRecognizer：视图手势
 >
-- CJBaseUIKit/UIView：视图
-- CJBaseUIKit/UIView/CJDragAction：视图拖动
-- CJBaseUIKit/UIView/CJShakeAction：视图抖动
-- CJBaseUIKit/UIView/CJPopupAction：视图弹窗：UIView的类别，用来实现UIView弹出popupView的一个Uiew的类别
-- CJBaseUIKit/UIView/CJGestureRecognizer：视图手势
+> - CJBaseUIKit/UIWindow：窗口
+> - CJBaseUIKit/UIButton：按钮 及 CJBadgeButton
+> - CJBaseUIKit/UITextField：文本视图：包含文本框类别及新的自定义文本框
+> - CJBaseUIKit/CJTextView：文本视图：类似微信文本输入框实现
+> - CJBaseUIKit/UIToolbar：工具栏
+> - CJBaseUIKit/CJScrollView：滚动视图：自定义的基础滚动视图
 >
-- CJBaseUIKit/UIWindow：窗口
-- CJBaseUIKit/UIButton：按钮 及 CJBadgeButton
-- CJBaseUIKit/UITextField：文本视图：包含文本框类别及新的自定义文本框
-- CJBaseUIKit/CJTextView：文本视图：类似微信文本输入框实现
-- CJBaseUIKit/UIToolbar：工具栏
-- CJBaseUIKit/CJScrollView：滚动视图：自定义的基础滚动视图
+> - CJBaseUIKit/CJTableView：列表视图
+> - CJBaseUIKit/CJTableView/CJBaseTableViewCell：基础的TableViewCell
+> - CJBaseUIKit/CJTableView/CJBaseTableViewHeaderFooterView
 >
-- CJBaseUIKit/CJTableView：列表视图
-- CJBaseUIKit/CJTableView/CJBaseTableViewCell：基础的TableViewCell
-- CJBaseUIKit/CJTableView/CJBaseTableViewHeaderFooterView
+> - CJBaseUIKit/CJCollectionView：集合视图
+> - CJBaseUIKit/CJCollectionView/CJBaseCollectionViewCell：基础的CollectionViewCell
+> - CJBaseUIKit/CJCollectionView/CJCollectionViewLayout
+> - CJBaseUIKit/CJCollectionView/MyEqualCellSizeCollectionView：一个只有一个分区且分区中的每个cell大小相等的集合视图(cell的大小可通过方法①设置cell的固定大小和方法②通过设置每行最大显示的cell个数获得)
+> - CJBaseUIKit/CJCollectionView/CJOpenCollectionView：可展开的集合视图
 >
-- CJBaseUIKit/CJCollectionView：集合视图
-- CJBaseUIKit/CJCollectionView/CJBaseCollectionViewCell：基础的CollectionViewCell
-- CJBaseUIKit/CJCollectionView/CJCollectionViewLayout
-- CJBaseUIKit/CJCollectionView/MyEqualCellSizeCollectionView：一个只有一个分区且分区中的每个cell大小相等的集合视图(cell的大小可通过方法①设置cell的固定大小和方法②通过设置每行最大显示的cell个数获得)
-- CJBaseUIKit/CJCollectionView/CJOpenCollectionView：可展开的集合视图
->
-- CJBaseUIKit/CJSlider：滑块
-- CJBaseUIKit/CJRefreshView：刷新
-- CJBaseUIKit/CJMJRefreshComponent：已包含pod 'MJRefresh'
-- CJBaseUIKit/CJToast：Toast
-- CJBaseUIKit/CJDataEmptyView：空视图(处理数据为空、网络加载失败等情况)
+> - CJBaseUIKit/CJSlider：滑块
+> - CJBaseUIKit/CJRefreshView：刷新
+> - CJBaseUIKit/CJMJRefreshComponent：已包含pod 'MJRefresh'
+> - CJBaseUIKit/CJToast：Toast
+> - CJBaseUIKit/CJDataEmptyView：空视图(处理数据为空、网络加载失败等情况)
 待完善
 
 
 如果只想加载某个类，可以用形如`pod 'CJBaseUIKit/CJTextView', '~> 0.0.1'`来加载
 
+
+
 #### 1、CJBaseUIKit/UIColor：颜色
+
 UIColor+CJHex用来通过十六进制来设置颜色。 支持@“#123456”、 @“0X123456”、 @“123456”三种格式
 
 #### 2、CJBaseUIKit/UIImage：图片
-###### (1)、UIImage+CJChangeColor
+
+###### (1)、UIImage+CJChangeColor：修改图片颜色
 参考：[iOS中使用blend改变图片颜色](https://onevcat.com/2013/04/using-blending-in-ios/)
 
 问题来源：在应用里一个很常见的需求是主题变换：同样的图标，同样的素材，但是需要按照用户喜爱变为不同的颜色。
 
 #### 3、CJBaseUIKit/UINavigationBar：导航栏
 
-
 #### 4、CJBaseUIKit/UIView：视图
+
 ###### (1)、CJBaseUIKit/UIView/CJDragAction：视图拖动
 ###### (2)、CJBaseUIKit/UIView/CJShakeAction：视图抖动
 ###### (3)、CJBaseUIKit/UIView/CJPopupAction：视图弹窗：UIView的类别，用来实现UIView弹出popupView的一个Uiew的类别
 ###### (4)、CJBaseUIKit/UIView/CJGestureRecognizer：视图手势
-
-
-
-
 
 #### 5、CJBaseUIKit/UIWindow：窗口
 
@@ -88,6 +89,7 @@ CJBaseUIKit/UIButton：按钮 及 CJBadgeButton
 #### 7、CJBaseUIKit/UITextField：文本视图：包含文本框类别及新的自定义文本框
 
 #### 8、CJBaseUIKit/CJTextView：文本视图：类似微信文本输入框实现
+
 类似微信文本输入框实现
 
 功能：
@@ -95,17 +97,17 @@ CJBaseUIKit/UIButton：按钮 及 CJBadgeButton
 1. 有占位符placeholderView
 2. 可设置最大行数maxNumberOfLines，当超过最大行文本框不在自增长长度
 
-
-
 #### 9、CJBaseUIKit/UIToolbar：工具栏
 
 #### 10、CJBaseUIKit/CJScrollView：滚动视图：自定义的基础滚动视图
 
 #### 11、CJBaseUIKit/CJTableView：列表视图
+
 ###### (1)、CJBaseUIKit/CJTableView/CJBaseTableViewCell：基础的TableViewCell
 ###### (2)、CJBaseUIKit/CJTableView/CJBaseTableViewHeaderFooterView
 
 #### 12、CJBaseUIKit/CJCollectionView：集合视图
+
 ###### (1)、CJBaseUIKit/CJCollectionView/CJBaseCollectionViewCell：基础的CollectionViewCell
 ###### (2)、CJBaseUIKit/CJCollectionView/CJCollectionViewLayout
 ###### (3)、CJBaseUIKit/CJCollectionView/MyEqualCellSizeCollectionView：一个只有一个分区且分区中的每个cell大小相等的集合视图(cell的大小可通过方法①设置cell的固定大小和方法②通过设置每行最大显示的cell个数获得)
