@@ -17,13 +17,8 @@
 
 #import "BBXDAreaCodeTextField.h"
 
-#import "CJToast.h"
-
-#ifdef CJTESTPOD
-#import "NSString+CJValidate.h"
-#else
+#import <CJBaseUIKit/CJToast.h>
 #import <CJFoundation/NSString+CJValidate.h>
-#endif
 
 #import "CJDefaultToolbar.h"
 #import "UITextField+CJAddInputAccessoryView.h"
@@ -45,114 +40,43 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    self.view.backgroundColor = CJColorFromHexString(@"#f2f2f2");
     
-    UITextField *textField = [[UITextField alloc] initWithFrame:CGRectZero];
-    //[textField setBorderStyle:UITextBorderStyleLine];
-    [self.view addSubview:textField];
-    [textField mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.mas_equalTo(self.view).mas_offset(20);
-        make.right.mas_equalTo(self.view).mas_offset(-20);
-        make.top.mas_equalTo(self.view).mas_offset(140);
+    UIView *parentView = self.containerView;
+    
+    /* 1、测试系统UITextField的文本改变 */
+    UILabel *testNoteLabel = [DemoLabelFactory testLeftCyanLabel];
+    testNoteLabel.text = @"测试系统UITextField的runtime方法\n①测试系统UITextField的文本改变\n②测试系统UITextField的inputAccessoryView\n③测试系统UITextField的摇动Shake";
+    [parentView addSubview:testNoteLabel];
+    [testNoteLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.mas_equalTo(parentView).mas_offset(20);
+        make.right.mas_equalTo(parentView).mas_offset(-20);
+        if (parentView == self.view) {
+            make.top.mas_equalTo(parentView).mas_offset(120);
+        } else { //scrollView的containerView
+            make.top.mas_equalTo(parentView).mas_offset(20);
+        }
+        
+        make.height.mas_equalTo(80);
+    }];
+    
+    UITextField *textDidChangeTextField = [[UITextField alloc] initWithFrame:CGRectZero];
+    textDidChangeTextField.backgroundColor = CJColorFromHexString(@"#ffffff");
+    //[textDidChangeTextField setBorderStyle:UITextBorderStyleLine];
+    textDidChangeTextField.placeholder = @"测试系统UITextField的runtime方法";
+    [parentView addSubview:textDidChangeTextField];
+    [textDidChangeTextField mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.mas_equalTo(testNoteLabel);
+        make.right.mas_equalTo(testNoteLabel);
+        make.top.mas_equalTo(testNoteLabel.mas_bottom).mas_offset(0);
         make.height.mas_equalTo(30);    //系统默认高度30
     }];
-    self.textField = textField;
+    self.textDidChangeTextField = textDidChangeTextField;
     
-    textField.delegate = self;
-    [textField setCjTextDidChangeBlock:^(UITextField *textField) {
+    textDidChangeTextField.delegate = self;
+    [textDidChangeTextField setCjTextDidChangeBlock:^(UITextField *textField) {
         NSLog(@"textField内容改变了:%@", textField.text);
     }];
-
-    
-    self.regions = @[@"中国 +86", @"香港 +852"];
-    
-    BBXDAreaCodeTextField *areaCodeTextField = [[BBXDAreaCodeTextField alloc] initWithFrame:CGRectZero];
-    areaCodeTextField.text = self.regions[0];
-    __weak typeof(self)weakSelf = self;
-    areaCodeTextField.chooseAreaCodeBlock = ^(BBXDAreaCodeTextField *textField) {
-        [weakSelf presentViewController:self.regionAlertController animated:YES completion:nil];
-    };
-    [self.view addSubview:areaCodeTextField];
-    [areaCodeTextField mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.centerX.mas_equalTo(self.view);
-        make.left.mas_equalTo(30);
-        make.top.mas_equalTo(self.view).mas_offset(190);
-        make.height.mas_equalTo(38);
-    }];
-    self.areaCodeTextField = areaCodeTextField;
-    
-    CJTextField *textField2 = [[CJTextField alloc] initWithFrame:CGRectZero];
-    textField2.backgroundColor = [UIColor lightGrayColor];
-    textField2.placeholder = @"测试placeholder位置";
-    [self.view addSubview:textField2];
-    [textField2 mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.centerX.mas_equalTo(self.view);
-        make.width.mas_equalTo(200);
-        make.top.mas_equalTo(self.view).mas_offset(250);
-        make.height.mas_equalTo(40);
-    }];
-    
-    UIView *leftView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 20, 20)];
-    leftView.backgroundColor = [UIColor greenColor];
-    textField2.leftView = leftView;
-    textField2.leftViewMode = UITextFieldViewModeAlways;
-    textField2.leftViewLeftOffset = 10;
-    textField2.leftViewRightOffset = 10;
-    
-    UIView *rightView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 20, 20)];
-    rightView.backgroundColor = [UIColor orangeColor];
-    textField2.rightView = rightView;
-    textField2.rightViewMode = UITextFieldViewModeAlways;
-    textField2.rightViewRightOffset = 10;
-    textField2.rightViewLeftOffset = 10;
-    
-    
-    
-    
-    //UITextField
-    self.canInputTextField.text = @"20";
-    self.canInputTextField.delegate = self;
-    self.canInputTextField.textAlignment = NSTextAlignmentCenter;
-    self.canInputTextField.backgroundColor = [UIColor greenColor];
-    
-    
-    UIButton *leftButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    //UIImage *leftNormalImage = [UIImage cj_imageWithColor:[UIColor redColor] size:CGSizeMake(40, 40)];
-    //[leftButton setImage:leftNormalImage forState:UIControlStateNormal];
-    [leftButton setTitle:@"+" forState:UIControlStateNormal];
-    [leftButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-    [leftButton.titleLabel setBackgroundColor:[UIColor redColor]];
-    [leftButton addTarget:self action:@selector(leftButtonAction:) forControlEvents:UIControlEventTouchUpInside];
-    [leftButton setFrame:CGRectMake(0, 0, 50, 30)];
-    self.canInputTextField.leftView = leftButton;
-    self.canInputTextField.leftViewMode = UITextFieldViewModeAlways;
-    self.canInputTextField.leftViewLeftOffset = 10;
-    self.canInputTextField.leftViewRightOffset = 10;
-    
-    
-    UIImage *rightNormalImage = [UIImage cj_imageWithColor:[UIColor redColor] size:CGSizeMake(40, 40)];
-    UIButton *rightButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    [rightButton setImage:rightNormalImage forState:UIControlStateNormal];
-    [rightButton addTarget:self action:@selector(rightButtonAction:) forControlEvents:UIControlEventTouchUpInside];
-    [rightButton setFrame:CGRectMake(0, 0, 30, 30)];
-    self.canInputTextField.rightView = rightButton;
-    self.canInputTextField.rightViewMode = UITextFieldViewModeAlways;
-    self.canInputTextField.rightViewLeftOffset = 20;
-    self.canInputTextField.rightViewRightOffset = 20;
-    
-    
-    UILabel *pickerView = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 0, 300)];
-    pickerView.backgroundColor = [UIColor redColor];
-    pickerView.text = @"一个文本框中的文本只能来源于选择的时候:\n因为这是一个pickerView,而不是系统或自定义的输入键盘等,所以\n首先肯定需要①隐藏光标，\n其次一般②最多允许弹出选择、复制操作";
-    pickerView.textAlignment = NSTextAlignmentLeft;
-    pickerView.textColor = [UIColor greenColor];
-    pickerView.font = [UIFont systemFontOfSize:19];
-    pickerView.numberOfLines = 0;
-    [self.canInputTextField setTextOnlyFromPickerView:pickerView];
-    
-    
-    
-    [self.canInputSwitch addTarget:self action:@selector(canInputSwitchAction:) forControlEvents:UIControlEventValueChanged];
-    
     
     /* inputAccessoryView的例子 */
     //方法1：
@@ -161,16 +85,112 @@
 //    inputToolBar.confirmHandle = ^{
 //        [self.textField resignFirstResponder];
 //    };
-//    self.textField.inputAccessoryView = inputToolBar;
+//    self.textDidChangeTextField.inputAccessoryView = inputToolBar;
     
     //方法2：
-    [self.textField addDefaultInputAccessoryViewWithDoneButtonClickBlock:^(UITextField *textField) {
+    [textDidChangeTextField addDefaultInputAccessoryViewWithDoneButtonClickBlock:^(UITextField *textField) {
         [textField resignFirstResponder];
+    }];
+
+    
+    /* 测试区域选择 */
+    self.regions = @[@"中国 +86", @"香港 +852"];
+    
+    BBXDAreaCodeTextField *areaCodeTextField = [[BBXDAreaCodeTextField alloc] initWithFrame:CGRectZero];
+    areaCodeTextField.backgroundColor = CJColorFromHexString(@"#ffffff");
+    areaCodeTextField.text = self.regions[0];
+    __weak typeof(self)weakSelf = self;
+    areaCodeTextField.chooseAreaCodeBlock = ^(BBXDAreaCodeTextField *textField) {
+        [weakSelf presentViewController:self.regionAlertController animated:YES completion:nil];
+    };
+    [parentView addSubview:areaCodeTextField];
+    [areaCodeTextField mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.centerX.mas_equalTo(parentView);
+        make.left.mas_equalTo(20);
+        make.top.mas_equalTo(textDidChangeTextField.mas_bottom).mas_offset(40);
+        make.height.mas_equalTo(38);
+    }];
+    self.areaCodeTextField = areaCodeTextField;
+    
+    CJTextField *placeholderTextField = [[CJTextField alloc] initWithFrame:CGRectZero];
+    placeholderTextField.backgroundColor = CJColorFromHexString(@"#ffffff");
+    placeholderTextField.placeholder = @"测试添加左视图后placeholder的位置";
+    [parentView addSubview:placeholderTextField];
+    [placeholderTextField mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.centerX.mas_equalTo(parentView);
+        make.left.mas_equalTo(parentView).mas_offset(20);
+        make.top.mas_equalTo(areaCodeTextField.mas_bottom).mas_offset(40);
+        make.height.mas_equalTo(40);
+    }];
+    [self completeTextField:placeholderTextField withLeftButtonTitle:@"-" leftButtonAction:nil rightButtonTitle:@"+" rightButtonAction:nil];
+    
+    
+    
+    
+    /* 测试不可以输入,只能用选择的文本框 CJChooseTextTextField */
+    UILabel *testCanInputNoteLabel = [DemoLabelFactory testLeftCyanLabel];
+    testCanInputNoteLabel.text = @"测试不可以输入,只能用选择的文本框 CJChooseTextTextField\n①测试文本框点击后是弹出视图而不是弹出键盘\n②测试";
+    [parentView addSubview:testCanInputNoteLabel];
+    [testCanInputNoteLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.mas_equalTo(parentView).mas_offset(20);
+        make.right.mas_equalTo(parentView).mas_offset(-20);
+        make.top.mas_equalTo(placeholderTextField.mas_bottom).mas_offset(40);
+        make.height.mas_equalTo(80);
+    }];
+    
+    [parentView addSubview:self.canInputTextField];
+    [self.canInputTextField mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.centerX.mas_equalTo(testCanInputNoteLabel);
+        make.left.mas_equalTo(testCanInputNoteLabel);
+        make.top.mas_equalTo(testCanInputNoteLabel.mas_bottom);
+        make.height.mas_equalTo(38);
+    }];
+    self.canInputTextField.text = @"20";
+    
+    //控制是否允许文本框输入的开关
+    UISwitch *canInputSwitch = [[UISwitch alloc] initWithFrame:CGRectZero];
+    canInputSwitch.on = YES;
+    [canInputSwitch addTarget:self action:@selector(canInputSwitchAction:) forControlEvents:UIControlEventValueChanged];
+    [parentView addSubview:canInputSwitch];
+    [canInputSwitch mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.mas_equalTo(self.canInputTextField.mas_bottom);
+        make.right.mas_equalTo(parentView).mas_offset(-20);
+        make.height.mas_equalTo(31);
+        make.width.mas_equalTo(51);
+    }];
+    self.canInputSwitch = canInputSwitch;
+    
+    UILabel *switchLabel = [DemoLabelFactory testLeftCyanLabel];
+    switchLabel.text = @"是否可以输入，不能输入时候，需要隐藏TextField的光标";
+    [parentView addSubview:switchLabel];
+    [switchLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.mas_equalTo(parentView).mas_offset(20);
+        make.right.mas_equalTo(canInputSwitch.mas_left);
+        make.top.mas_equalTo(self.canInputTextField.mas_bottom);
+        make.height.mas_equalTo(50);
     }];
     
     
-    
-    
+    /* 测试一个可以在自己输入的字符串前后添加其他额外字符串的文本框 CJExtraTextTextField */
+    UILabel *testExtraTextNoteLabel = [DemoLabelFactory testLeftCyanLabel];
+    testExtraTextNoteLabel.text = @"测试一个可以在自己输入的字符串前后添加其他额外字符串的文本框 CJExtraTextTextField\n①测试文本框输入的时候，有值则在前后加上预定义值\n②测试";
+    [parentView addSubview:testExtraTextNoteLabel];
+    [testExtraTextNoteLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.mas_equalTo(parentView).mas_offset(20);
+        make.right.mas_equalTo(parentView).mas_offset(-20);
+        make.top.mas_equalTo(switchLabel.mas_bottom).mas_offset(40);
+        make.height.mas_equalTo(80);
+    }];
+    self.extraTextTextField = [[CJExtraTextTextField alloc] initWithFrame:CGRectZero];
+    self.extraTextTextField.backgroundColor = CJColorFromHexString(@"#ffffff");
+    [parentView addSubview:self.extraTextTextField];
+    [self.extraTextTextField mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.centerX.mas_equalTo(testExtraTextNoteLabel);
+        make.left.mas_equalTo(testExtraTextNoteLabel);
+        make.top.mas_equalTo(testExtraTextNoteLabel.mas_bottom);
+        make.height.mas_equalTo(38);
+    }];
+    self.extraTextTextField.placeholder = @"CJExtraTextTextField";
     self.extraTextTextField.beforeExtraString = @"+";
     self.extraTextTextField.afterExtraString = @"元";
     self.extraTextTextField.limitTextLength = 4 + 2;
@@ -178,6 +198,8 @@
         NSLog(@"textField内容改变了:%@", textField.text);
         [(CJExtraTextTextField *)textField fixExtraString];
     }];
+    
+    [self updateScrollHeightWithLastBottomView:self.extraTextTextField bottom:40];
 }
 
 - (void)leftButtonAction:(UIButton *)button {
@@ -202,6 +224,15 @@
 
 
 
+#pragma mark - UITextFieldDelegate
+- (BOOL)textFieldShouldBeginEditing:(UITextField *)textField {
+    if (textField == self.textDidChangeTextField) {
+        textField.secureTextEntry = YES;
+    } else {
+        textField.secureTextEntry = NO;
+    }
+    return YES;
+}
 
 //UITextField 没有change的事件
 - (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string {
@@ -222,11 +253,74 @@
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-    [self.textField resignFirstResponder];
+    [super touchesBegan:touches withEvent:event];
+    [self.view endEditing:YES];
+    [self.containerView endEditing:YES];
 }
 
 
 #pragma mark - Lazyload
+- (CJChooseTextTextField *)canInputTextField {
+    if (_canInputTextField == nil) {
+        _canInputTextField = [[CJChooseTextTextField alloc] initWithFrame:CGRectZero];
+        _canInputTextField.delegate = self;
+        _canInputTextField.textAlignment = NSTextAlignmentCenter;
+        _canInputTextField.backgroundColor = CJColorFromHexString(@"#ffffff");
+        
+        [self completeTextField:_canInputTextField withLeftButtonTitle:@"-" leftButtonAction:@selector(leftButtonAction:) rightButtonTitle:@"+" rightButtonAction:@selector(rightButtonAction:)];
+        
+        UILabel *pickerView = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 0, 300)];
+        pickerView.backgroundColor = [UIColor redColor];
+        pickerView.text = @"一个文本框中的文本只能来源于选择的时候:\n因为这是一个pickerView,而不是系统或自定义的输入键盘等,所以\n首先肯定需要①隐藏光标，\n其次一般②最多允许弹出选择、复制操作";
+        pickerView.textAlignment = NSTextAlignmentLeft;
+        pickerView.textColor = [UIColor greenColor];
+        pickerView.font = [UIFont systemFontOfSize:19];
+        pickerView.numberOfLines = 0;
+        [_canInputTextField setTextOnlyFromPickerView:pickerView];
+    }
+    return _canInputTextField;
+}
+
+- (void)completeTextField:(CJTextField *)textField
+      withLeftButtonTitle:(NSString *)leftTitle
+         leftButtonAction:(SEL)leftButtonAction
+         rightButtonTitle:(NSString *)rightTitle
+        rightButtonAction:(SEL)rightButtonAction
+{
+    UIButton *leftButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    leftButton.backgroundColor = [UIColor orangeColor];
+    //UIImage *leftNormalImage = [UIImage cj_imageWithColor:[UIColor redColor] size:CGSizeMake(40, 40)];
+    //[leftButton setImage:leftNormalImage forState:UIControlStateNormal];
+    [leftButton setTitle:leftTitle forState:UIControlStateNormal];
+    [leftButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    [leftButton.titleLabel setBackgroundColor:[UIColor redColor]];
+    [leftButton addTarget:self action:leftButtonAction forControlEvents:UIControlEventTouchUpInside];
+    [leftButton setFrame:CGRectMake(0, 0, 20, 20)];
+    
+    textField.leftView = leftButton;
+    textField.leftViewMode = UITextFieldViewModeAlways;
+    textField.leftViewLeftOffset = 10;
+    textField.leftViewRightOffset = 10;
+    
+    
+    
+    UIButton *rightButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    rightButton.backgroundColor = [UIColor orangeColor];
+    //UIImage *rightNormalImage = [UIImage cj_imageWithColor:[UIColor redColor] size:CGSizeMake(40, 40)];
+    //[rightButton setImage:rightNormalImage forState:UIControlStateNormal];
+    [rightButton setTitle:rightTitle forState:UIControlStateNormal];
+    [rightButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    [rightButton.titleLabel setBackgroundColor:[UIColor redColor]];
+    [rightButton addTarget:self action:rightButtonAction forControlEvents:UIControlEventTouchUpInside];
+    [rightButton setFrame:CGRectMake(0, 0, 20, 20)];
+    
+    textField.rightView = rightButton;
+    textField.rightViewMode = UITextFieldViewModeAlways;
+    textField.rightViewLeftOffset = 10;
+    textField.rightViewRightOffset = 10;
+}
+
+
 - (UIAlertController *)regionAlertController {
     if (_regionAlertController) return _regionAlertController;
     

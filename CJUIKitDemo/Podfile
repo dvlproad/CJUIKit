@@ -75,6 +75,8 @@ target 'CJUIKitDemo' do
 #  pod 'CJBaseUtil', :subspecs => ['CJLog']
 #  pod 'CJFoundation', :subspecs => ['NSString']
     pod 'CJFile', :subspecs => ['CJFileModel', 'CJFileManager']
+    
+    pod 'IQKeyboardManager'
 end
 
 target 'CJUIKitDemoTests' do

@@ -30,7 +30,7 @@ static NSString * const cjTextDidChangeBlockKey = @"cjTextDidChangeBlockKey";
     //[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(textFieldDidChange:) name:UITextFieldTextDidChangeNotification object:self]; //addObserver:self 监听者对象;object 监听的对象 全部监听用nil, 单个监听填_textField自己即self
 }
 
-//终点注意(这个问题当初排查了将近三天)：即使dealloc里面是空的，也不能在这边重写该方法，否则容易引起iOS8上的UITextField textInputView message sent to deallocated instance问题，即使你发现你根本没引用到这个类。[UITextField textInputView message sent to deallocated instance](https://stackoverflow.com/questions/35715601/uitextfield-textinputview-message-sent-to-deallocated-instance)
+//重点注意(这个问题当初排查了将近三天)：即使dealloc里面是空的，也不能在这边重写该方法，否则容易引起iOS8上的UITextField textInputView message sent to deallocated instance问题，即使你发现你根本没引用到这个类。[UITextField textInputView message sent to deallocated instance](https://stackoverflow.com/questions/35715601/uitextfield-textinputview-message-sent-to-deallocated-instance)
 //- (void)dealloc {
 //    [[NSNotificationCenter defaultCenter] removeObserver:self name:UITextFieldTextDidChangeNotification object:self];
 //}

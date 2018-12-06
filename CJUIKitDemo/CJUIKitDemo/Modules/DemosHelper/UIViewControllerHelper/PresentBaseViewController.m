@@ -1,19 +1,41 @@
 //
-//  TestPresentViewController.m
+//  PresentBaseViewController.m
 //  CJUIKitDemo
 //
 //  Created by ciyouzen on 2018/8/8.
 //  Copyright © 2018年 dvlproad. All rights reserved.
 //
 
-#import "TestPresentViewController.h"
+#import "PresentBaseViewController.h"
 #import "UIViewControllerCJHelper.h"
 
-@interface TestPresentViewController ()
+@interface PresentBaseViewController () {
+    
+}
 
 @end
 
-@implementation TestPresentViewController
+@implementation PresentBaseViewController
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    NSLog(@"%@ viewWillAppear", NSStringFromClass([self class]));
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    NSLog(@"%@ viewDidAppear", NSStringFromClass([self class]));
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    NSLog(@"%@ viewWillDisappear", NSStringFromClass([self class]));
+}
+
+- (void)viewDidDisappear:(BOOL)animated {
+    [super viewDidDisappear:animated];
+    NSLog(@"%@ viewDidDisappear", NSStringFromClass([self class]));
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -21,7 +43,7 @@
     self.title = NSLocalizedString(@"获取present前的视图(UIViewControllerCJHelper)", nil);
     
     UIButton *closeButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    [closeButton setImage:[UIImage imageNamed:@"cjBackBarButtonItem"] forState:UIControlStateNormal];
+    [closeButton setImage:[UIImage imageNamed:@"closePresentVC"] forState:UIControlStateNormal];
     [closeButton addTarget:self action:@selector(goBack) forControlEvents:UIControlEventTouchUpInside];
 //    [self.view addSubview:closeButton];
 //    [closeButton mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -34,6 +56,17 @@
     self.navigationItem.leftBarButtonItems = @[leftBarButtonItem];
     
     
+    NSString *className = NSStringFromClass([self class]);
+    UILabel *currentClassNameLabel = [DemoLabelFactory cyanLabelWithText:className];
+    [self.view addSubview:currentClassNameLabel];
+    [currentClassNameLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.mas_equalTo(self.view).mas_offset(20);
+        make.right.mas_equalTo(self.view).mas_offset(-20);
+        make.top.mas_equalTo(self.view).mas_offset(100);
+        make.height.mas_equalTo(44);
+    }];
+    
+    
     UIButton *cjTestButton = [UIButton buttonWithType:UIButtonTypeCustom];
     [cjTestButton setBackgroundColor:[UIColor colorWithRed:0.4 green:0.3 blue:0.4 alpha:0.5]];
     [cjTestButton setTitle:@"获取当前显示的视图控制器" forState:UIControlStateNormal];
@@ -44,20 +77,46 @@
     [cjTestButton mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.mas_equalTo(self.view).mas_offset(20);
         make.right.mas_equalTo(self.view).mas_offset(-20);
-        make.top.mas_equalTo(self.view).mas_offset(100);
+        make.top.mas_equalTo(currentClassNameLabel.mas_bottom).mas_offset(20);
         make.height.mas_equalTo(44);
     }];
+    
+    UILabel *resultClassNameLabel = [DemoLabelFactory testLeftCyanLabel];
+    resultClassNameLabel.text = @"点击'获取当前显示的视图控制器'按钮后所得的结果的显示位置";
+    [self.view addSubview:resultClassNameLabel];
+    [resultClassNameLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.mas_equalTo(self.view).mas_offset(20);
+        make.right.mas_equalTo(self.view).mas_offset(-20);
+        make.top.mas_equalTo(cjTestButton.mas_bottom).mas_offset(20);
+        make.height.mas_equalTo(200);
+    }];
+    self.resultClassNameLabel = resultClassNameLabel;
 }
+
 
 - (void)printCurrentShowingViewController {
     UIViewController *currentShowViewController1 = [UIViewControllerCJHelper findCurrentShowingViewController];
-    NSLog(@"currentShowViewController1 = %@", NSStringFromClass([currentShowViewController1 class]));
+    NSString *codeMessage1 = [NSString stringWithFormat:@"[UIViewControllerCJHelper findCurrentShowingViewController]"];
+    NSString *resultClassName1 = NSStringFromClass([currentShowViewController1 class]);
+    NSString *message1 = [NSString stringWithFormat:@"%@\n返回的结果%@", codeMessage1, resultClassName1];
+    NSAssert([resultClassName1 isEqualToString:NSStringFromClass([self class])], @"Error:获取到的控制器与实际结果不符合，请检查");
     
     UIViewController *currentShowViewController2 = [UIViewControllerCJHelper findCurrentShowingViewControllerFrom:self];
-    NSLog(@"currentShowViewController2 = %@", NSStringFromClass([currentShowViewController2 class]));
+    NSString *codeMessage2 = [NSString stringWithFormat:@"[UIViewControllerCJHelper findCurrentShowingViewControllerFrom:self]"];
+    NSString *resultClassName2 = NSStringFromClass([currentShowViewController2 class]);
+    NSString *message2 = [NSString stringWithFormat:@"%@\n返回的结果%@", codeMessage2, resultClassName2];
+    NSAssert([resultClassName2 isEqualToString:NSStringFromClass([self class])], @"Error:获取到的控制器与实际结果不符合，请检查");
     
     UIViewController *belongViewController = [UIViewControllerCJHelper findBelongViewControllerForView:self.view];
-    NSLog(@"belongViewController = %@", NSStringFromClass([belongViewController class]));
+    NSString *codeMessage3 = [NSString stringWithFormat:@"[UIViewControllerCJHelper findBelongViewControllerForView:self.view]"];
+    NSString *resultClassName3 = NSStringFromClass([belongViewController class]);
+    NSString *message3 = [NSString stringWithFormat:@"%@\n返回的结果%@", codeMessage3, resultClassName3];
+    NSAssert([resultClassName3 isEqualToString:NSStringFromClass([self class])], @"Error:获取到的控制器与实际结果不符合，请检查");
+    
+    
+    NSString *message = [NSString stringWithFormat:@"\n%@\n---------------\n%@\n---------------\n%@", message1, message2, message3];
+    NSLog(@"%@", message);
+    self.resultClassNameLabel.text = message;
 }
 
 - (void)goBack {
@@ -70,7 +129,7 @@
 //    }
     
     UIViewController *currentShowViewController = [UIViewControllerCJHelper findCurrentShowingViewControllerFrom:self];
-    if ([currentShowViewController isKindOfClass:[TestPresentViewController class]]) {
+    if ([currentShowViewController isKindOfClass:[PresentBaseViewController class]]) {
         [currentShowViewController dismissViewControllerAnimated:YES completion:nil];
     }
 }

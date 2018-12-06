@@ -9,8 +9,8 @@
 #import "HelperHomeViewController.h"
 
 #import "StringHelperViewController.h"
-#import "TestPresentViewController.h"
-
+#import "PresentAViewController.h"
+#import "PresentBViewController.h"
 
 @interface HelperHomeViewController ()
 
@@ -52,7 +52,7 @@
 
 
 - (void)testPresentViewController {
-    TestPresentViewController *viewController = [[TestPresentViewController alloc] init];
+    PresentAViewController *viewController = [[PresentAViewController alloc] init];
     UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:viewController];
     [self presentViewController:navigationController animated:YES completion:nil];
 }

@@ -45,7 +45,7 @@ typedef NS_ENUM(NSUInteger, CJExtralItemSetting) {
 @property (nonatomic, assign) NSUInteger maxDataModelShowCount; /**< 集合视图最大显示的dataModel数目(默认NSIntegerMax即无限制) */
 
 
-- (BOOL)isExtraItemIndexPath:(NSIndexPath *)indexPath dataModels:(NSMutableArray *)dataModels;
+- (BOOL)isExtraItemIndexPath:(NSIndexPath *)indexPath dataModels:(NSArray *)dataModels;
 
 /**
  *  获取在数据是dataModels的时候，整个cellCount的个数(因为有可能有extralItem)
@@ -64,7 +64,7 @@ typedef NS_ENUM(NSUInteger, CJExtralItemSetting) {
  *
  *  @return indexPath位置的dataModel
  */
-- (id)getDataModelAtIndexPath:(NSIndexPath *)indexPath dataModels:(NSMutableArray *)dataModels;
+- (id)getDataModelAtIndexPath:(NSIndexPath *)indexPath dataModels:(NSArray *)dataModels;
 
 
 @end

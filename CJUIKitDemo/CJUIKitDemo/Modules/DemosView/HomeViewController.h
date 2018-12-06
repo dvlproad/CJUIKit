@@ -7,6 +7,7 @@
 //
 
 #import "CJUIKitBaseHomeViewController.h"
+#import "CJUIKitBaseCollectionHomeViewController.h"
 
 @interface HomeViewController : CJUIKitBaseHomeViewController
 

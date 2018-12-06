@@ -15,5 +15,6 @@
 //+ (CJLabel *)trackLabel;
 
 + (UILabel *)cyanLabelWithText:(NSString *)text;
++ (UILabel *)testLeftCyanLabel;
 
 @end

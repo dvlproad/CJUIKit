@@ -6,17 +6,18 @@
 //  Copyright © 2015年 dvlproad. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "CJUIKitBaseScrollViewController.h"
 #import "CJChooseTextTextField.h"
 #import "CJExtraTextTextField.h"
 
-@interface TextFieldViewController : UIViewController
+@interface TextFieldViewController : CJUIKitBaseScrollViewController
 
-@property (nonatomic, strong) IBOutlet UITextField *textField;
+@property (nonatomic, strong) UITextField *textDidChangeTextField;
 
-@property (nonatomic, weak) IBOutlet UISwitch *canInputSwitch;  //控制是否允许文本框输入的开关
-@property (nonatomic, weak) IBOutlet CJChooseTextTextField *canInputTextField;
-@property (nonatomic, weak) IBOutlet CJExtraTextTextField *extraTextTextField;
+@property (nonatomic, strong) CJChooseTextTextField *canInputTextField;
+@property (nonatomic, strong) UISwitch *canInputSwitch;
+
+@property (nonatomic, strong) CJExtraTextTextField *extraTextTextField;
 
 
 @end

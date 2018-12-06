@@ -78,6 +78,11 @@
     NSArray *dataModels = sectionDataModel.values;
     CJModuleModel *moduleModel = [dataModels objectAtIndex:indexPath.row];
     
+    [self execModuleModel:moduleModel];
+}
+
+
+- (void)execModuleModel:(CJModuleModel *)moduleModel {
     if (moduleModel.actionBlock) {
         moduleModel.actionBlock();
         
@@ -88,17 +93,24 @@
         UIViewController *viewController = nil;
         Class classEntry = moduleModel.classEntry;
         NSString *clsString = NSStringFromClass(moduleModel.classEntry);
-        if (moduleModel.isCreateByXib) {
-            viewController = [[classEntry alloc] initWithNibName:clsString bundle:nil];
-        } else {
+        if ([clsString isEqualToString:NSStringFromClass([UIViewController class])]) {
             viewController = [[classEntry alloc] init];
             viewController.view.backgroundColor = [UIColor whiteColor];
+            
+        } else {
+            if (moduleModel.isCreateByXib) {
+                viewController = [[classEntry alloc] initWithNibName:clsString bundle:nil];
+            } else {
+                viewController = [[classEntry alloc] init];
+            }
         }
+        
         viewController.title = NSLocalizedString(moduleModel.title, nil);
         viewController.hidesBottomBarWhenPushed = YES;
         [self.navigationController pushViewController:viewController animated:YES];
     }
 }
+    
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

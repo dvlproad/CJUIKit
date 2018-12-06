@@ -58,6 +58,7 @@
     CGRect bottomLineRect = CGRectMake(0, CGRectGetHeight(self.frame) - bottomLineHeight, CGRectGetWidth(self.frame), bottomLineHeight);
     
     UIColor *bottomLineColor = [UIColor colorWithRed:196/255.0 green:196/255.0 blue:196/255.0 alpha:1];  //#ebebeb
+    bottomLineColor = [UIColor redColor];
     
     CGContextRef context = UIGraphicsGetCurrentContext();
     CGContextSetFillColorWithColor(context, bottomLineColor.CGColor);

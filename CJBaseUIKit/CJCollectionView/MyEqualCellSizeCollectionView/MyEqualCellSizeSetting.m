@@ -21,7 +21,7 @@
 }
 
 
-- (BOOL)isExtraItemIndexPath:(NSIndexPath *)indexPath dataModels:(NSMutableArray *)dataModels {
+- (BOOL)isExtraItemIndexPath:(NSIndexPath *)indexPath dataModels:(NSArray *)dataModels {
     BOOL isExtraItem = NO;
     
     CJExtralItemSetting extralItemSetting = self.extralItemSetting;
@@ -80,7 +80,7 @@
     }
 }
 
-- (id)getDataModelAtIndexPath:(NSIndexPath *)indexPath dataModels:(NSMutableArray *)dataModels {
+- (id)getDataModelAtIndexPath:(NSIndexPath *)indexPath dataModels:(NSArray *)dataModels {
     id dataModle = nil;
     
     CJExtralItemSetting extralItemSetting = self.extralItemSetting;

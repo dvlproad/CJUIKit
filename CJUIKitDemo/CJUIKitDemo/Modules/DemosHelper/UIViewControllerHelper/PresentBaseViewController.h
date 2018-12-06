@@ -1,5 +1,5 @@
 //
-//  TestPresentViewController.h
+//  PresentBaseViewController.h
 //  CJUIKitDemo
 //
 //  Created by ciyouzen on 2018/8/8.
@@ -9,6 +9,9 @@
 #import <UIKit/UIKit.h>
 #import "CJUIKitBaseViewController.h"
 
-@interface TestPresentViewController : CJUIKitBaseViewController
+@interface PresentBaseViewController : CJUIKitBaseViewController {
+    
+}
+@property (nonatomic, strong) UILabel *resultClassNameLabel;
 
 @end

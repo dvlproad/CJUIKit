@@ -36,4 +36,14 @@
     return label;
 }
 
++ (UILabel *)testLeftCyanLabel {
+    UILabel *label = [[UILabel alloc] initWithFrame:CGRectZero];
+    label.backgroundColor = [UIColor cyanColor];
+    label.textAlignment = NSTextAlignmentLeft;
+    label.font = [UIFont systemFontOfSize:14];
+    label.numberOfLines = 0;
+    
+    return label;
+}
+
 @end
