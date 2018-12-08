@@ -69,11 +69,11 @@
             TestValueChangeModel *valueChangeModel = [self calendarValueChangeModel];
             [valueChangeModel setupChangeExplain:@"测试<日期Year>的加减" minusHandle:^id(id oldValue) {
                 NSDate *oldDate = (NSDate *)oldValue;
-                NSDate *newDate = [NSCalendarCJHelper dateFromUnitInterval:-1 calculateUnit:NSCalendarUnitYear sinceDate:oldDate];
+                NSDate *newDate = NSCalendarCJHelper_addYears(-1, oldDate);
                 return newDate;
             } addHandle:^id(id oldValue) {
                 NSDate *oldDate = (NSDate *)oldValue;
-                NSDate *newDate = [NSCalendarCJHelper dateFromUnitInterval:1 calculateUnit:NSCalendarUnitYear sinceDate:oldDate];
+                NSDate *newDate = NSCalendarCJHelper_addYears(1, oldDate);
                 return newDate;
             }];
             [sectionDataModel.values addObject:valueChangeModel];
@@ -81,18 +81,18 @@
         {
             TestValueChangeModel *valueChangeModel = [self calendarValueChangeModel];
             [valueChangeModel setupChangeExplain:@"测试<日期Month>的加减" minusHandle:^id(id oldValue) {
-                return [NSCalendarCJHelper dateFromUnitInterval:-1 calculateUnit:NSCalendarUnitMonth sinceDate:(NSDate *)oldValue];
+                return NSCalendarCJHelper_addMonths(-1, (NSDate *)oldValue);
             } addHandle:^id(id oldValue) {
-                return [NSCalendarCJHelper dateFromUnitInterval:1 calculateUnit:NSCalendarUnitMonth sinceDate:(NSDate *)oldValue];
+                return NSCalendarCJHelper_addMonths(1, (NSDate *)oldValue);
             }];
             [sectionDataModel.values addObject:valueChangeModel];
         }
         {
             TestValueChangeModel *valueChangeModel = [self calendarValueChangeModel];
             [valueChangeModel setupChangeExplain:@"测试<日期Day>的加减" minusHandle:^id(id oldValue) {
-                return [NSCalendarCJHelper dateFromUnitInterval:-1 calculateUnit:NSCalendarUnitDay sinceDate:(NSDate *)oldValue];
+                return NSCalendarCJHelper_addDays(-1, (NSDate *)oldValue);
             } addHandle:^id(id oldValue) {
-                return [NSCalendarCJHelper dateFromUnitInterval:1 calculateUnit:NSCalendarUnitDay sinceDate:(NSDate *)oldValue];
+                return NSCalendarCJHelper_addDays(1, (NSDate *)oldValue);
             }];
             [sectionDataModel.values addObject:valueChangeModel];
         }
@@ -128,27 +128,34 @@
     }
     
     
-//    {
-//        CJSectionDataModel *sectionDataModel = [[CJSectionDataModel alloc] init];
-//        sectionDataModel.theme = @"测试季度";
-//        {
-//            TestValueChangeModel *valueChangeModel = [[TestValueChangeModel alloc] initWithValue:[NSDate date] stringFromValueBlock:^NSString *(id value) {
-//                NSString *string = [[NSDateFormatterCJHelper sharedInstance] yyyyMMddHHmmss_stringFromDate:value];
-//                return string;
-//            } valueFromStringBlock:^id(NSString *string) {
-//                NSDate *date = [[NSDateFormatterCJHelper sharedInstance] yyyyMMddHHmmss_dateFromString:string];
-//                return date;
-//            }];
-//            [valueChangeModel setupChangeExplain:@"测试<日期Quarter>的加减" minusHandle:^id(id oldValue) {
-//                return [NSCalendarCJHelper dateFromUnitInterval:-1 calculateUnit:NSCalendarUnitQuarter sinceDate:(NSDate *)oldValue];
-//            } addHandle:^id(id oldValue) {
-//                return [NSCalendarCJHelper dateFromUnitInterval:1 calculateUnit:NSCalendarUnitQuarter sinceDate:(NSDate *)oldValue];
-//            }];
-//            [sectionDataModel.values addObject:valueChangeModel];
-//        }
-//
-//        [sectionDataModels addObject:sectionDataModel];
-//    }
+    {
+        CJSectionDataModel *sectionDataModel = [[CJSectionDataModel alloc] init];
+        sectionDataModel.theme = @"测试获取第一天和最后一天";
+        {
+            TestValueChangeModel *valueChangeModel = [self calendarValueChangeModel];
+            [valueChangeModel setupChangeExplain:@"测试<日期Day>的加减" minusHandle:^id(id oldValue) {
+                return NSCalendarCJHelper_addDays(-1, (NSDate *)oldValue);
+            } addHandle:^id(id oldValue) {
+                return NSCalendarCJHelper_addDays(1, (NSDate *)oldValue);
+            }];
+            [valueChangeModel setupShowExtraResultBlock:^NSString *(id value) {
+                NSDate *weekBeginDate = NSCalendarCJHelper_weekBeginDate((NSDate *)value);
+                NSString *weekBeginDateString = [[NSDateFormatterCJHelper sharedInstance] yyyyMMddHHmmss_stringFromDate:weekBeginDate];
+                
+                NSDate *weekLastDate = NSCalendarCJHelper_weekLastDate((NSDate *)value);
+                NSString *weekLastDateString = [[NSDateFormatterCJHelper sharedInstance] yyyyMMddHHmmss_stringFromDate:weekLastDate];
+                
+                NSMutableString *string = [NSMutableString string];
+                [string appendFormat:@"当前指定日期所在周的第一天(周日为第一天)为\n%@\n", weekBeginDateString];
+                [string appendFormat:@"获取指定日期所在周的最后一天(周六为最后一天)为\n%@", weekLastDateString];
+                
+                return string;
+            }];
+            [sectionDataModel.values addObject:valueChangeModel];
+        }
+
+        [sectionDataModels addObject:sectionDataModel];
+    }
     
     self.sectionDataModels = sectionDataModels;
 }

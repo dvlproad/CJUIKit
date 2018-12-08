@@ -7,12 +7,14 @@
 //
 
 #import "TestValueChangeTableViewCell.h"
+#import <CJFoundation/NSString+CJTextSize.h>
 
 @interface TestValueChangeTableViewCell () {
     
 }
 @property (nonatomic, strong) UILabel *changeExplainLabel;
 @property (nonatomic, strong) CJChooseTextTextField *chooseTextTextField;
+@property (nonatomic, strong) UILabel *extraResultLabel;
 
 @end
 
@@ -75,6 +77,16 @@
         make.height.mas_equalTo(44);
     }];
     self.chooseTextTextField = chooseTextTextField;
+    
+    UILabel *extraResultLabel = [DemoLabelFactory testExplainLabel];
+    [parentView addSubview:extraResultLabel];
+    [extraResultLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.mas_equalTo(chooseTextTextField);
+        make.right.mas_equalTo(chooseTextTextField);
+        make.top.mas_equalTo(chooseTextTextField.mas_bottom);
+        make.height.mas_equalTo(0);
+    }];
+    self.extraResultLabel = extraResultLabel;
 }
 
 - (void)completeTextField:(CJTextField *)textField
@@ -109,19 +121,36 @@
 - (void)setValueChangeModel:(TestValueChangeModel *)valueChangeModel {
     _valueChangeModel = valueChangeModel;
     
+    self.changeExplainLabel.text = valueChangeModel.changeExplain;
+    
     NSString *text = valueChangeModel.valueString;
     self.chooseTextTextField.text = text;
-    self.changeExplainLabel.text = valueChangeModel.changeExplain;
+    [self showExtraResult];
 }
 
 - (void)minusAction:(UIButton *)button {
     NSString *newText = [self.valueChangeModel didMinusAction];
     self.chooseTextTextField.text = newText;
+    [self showExtraResult];
 }
 
 - (void)addAction:(UIButton *)button {
     NSString *newText = [self.valueChangeModel didAddAction];
     self.chooseTextTextField.text = newText;
+    [self showExtraResult];
+}
+
+- (void)showExtraResult {
+    NSString *extraResultMessage = self.valueChangeModel.extarResultString;
+    if (extraResultMessage.length > 0) {
+        self.extraResultLabel.text = extraResultMessage;
+        
+        CGFloat maxWidth = CGRectGetWidth(self.frame) - 10 - 10;
+        CGFloat textHeight =  [extraResultMessage cjTextHeightWithFont:[UIFont systemFontOfSize:14] infiniteHeightAndMaxWidth:maxWidth];
+        [self.extraResultLabel mas_updateConstraints:^(MASConstraintMaker *make) {
+            make.height.mas_equalTo(textHeight);
+        }];
+    }
 }
 
 

@@ -15,9 +15,6 @@
 /// 计算从fromDate到toDate，两个时间的单位差（附：如果是计算总共有多少单位则还需要加1）(C函数)
 NSInteger dateIntervalNSCalendarCJHelper(NSDate *fromDate, NSDate *toDate, NSCalendarUnit calculateUnit);
 
-/// 获取距离本日期多少个单位("天"、"月"、"年"等)的日期(C函数)
-NSDate *dateNSCalendarCJHelper(NSDate *sinceDate, NSInteger unitInterval, NSCalendarUnit calculateUnit);
-
 
 #pragma mark - DateJudge
 ///是否为同一天
@@ -66,30 +63,54 @@ NSDate *dateNSCalendarCJHelper(NSDate *sinceDate, NSInteger unitInterval, NSCale
 + (NSInteger)age_unitIntervalFromDate:(NSDate *)fromDate toDate:(NSDate *)toDate;
 
 
+#pragma mark - 获取第一天和最后一天
+
+/// 获取指定日期所在周的第一天(周日为第一天)
+FOUNDATION_EXTERN NSDate *NSCalendarCJHelper_weekBeginDate(NSDate *date);
+
+/// 获取指定日期所在周的最后一天(周六为最后一天)
+FOUNDATION_EXTERN NSDate *NSCalendarCJHelper_weekLastDate(NSDate *date);
+
+
+
 #pragma mark - 获取与指定日期间隔多少单位的日期(dateFromUnitInterval)
 
-/// 指定日期的昨天
-+ (NSDate *)yesterday_dateFromSinceDate:(NSDate *)sinceDate;
-/// 指定日期的明天
-+ (NSDate *)tomorrow_dateFromSinceDate:(NSDate *)sinceDate;
+/// 指定日期的前一天那天(昨天)
+FOUNDATION_EXTERN NSDate *NSCalendarCJHelper_yesterday(NSDate *sinceDate);
+/// 指定日期的后一天那天(明天)
+FOUNDATION_EXTERN NSDate *NSCalendarCJHelper_tomorrow(NSDate *sinceDate);
 
-/// 指定日期的上个月
-+ (NSDate *)lastMonth_dateFromSinceDate:(NSDate *)sinceDate;
-/// 指定日期的下个月
-+ (NSDate *)nextMonth_dateFromSinceDate:(NSDate *)sinceDate;
+/// 指定日期的上周那天
+FOUNDATION_EXTERN NSDate *NSCalendarCJHelper_lastWeek(NSDate *sinceDate);
+/// 指定日期的下周那天
+FOUNDATION_EXTERN NSDate *NSCalendarCJHelper_nextWeek(NSDate *sinceDate);
 
-/// 指定日期的去年
-+ (NSDate *)lastYear_dateFromSinceDate:(NSDate *)sinceDate;
-/// 指定日期的明年
-+ (NSDate *)nextYear_dateFromSinceDate:(NSDate *)sinceDate;
+/// 指定日期的上个月那天
+FOUNDATION_EXTERN NSDate *NSCalendarCJHelper_lastMonth(NSDate *sinceDate);
+/// 指定日期的下个月那天
+FOUNDATION_EXTERN NSDate *NSCalendarCJHelper_nextMonth(NSDate *sinceDate);
+
+/// 指定日期的上个季度那天
+FOUNDATION_EXTERN NSDate *NSCalendarCJHelper_lastQuarter(NSDate *sinceDate);
+/// 指定日期的下个季度那天
+FOUNDATION_EXTERN NSDate *NSCalendarCJHelper_nextQuarter(NSDate *sinceDate);
+
+/// 指定日期的去年那天
+FOUNDATION_EXTERN NSDate *NSCalendarCJHelper_lastYear(NSDate *sinceDate);
+/// 指定日期的明年那天
+FOUNDATION_EXTERN NSDate *NSCalendarCJHelper_nextYear(NSDate *sinceDate);
+
 
 //指定日期的加上 xxxsToBeAdded 后所得的新日期
 /// 指定日期的加上 daysToBeAdded 后的天
-+ (instancetype)dateWithDayInterval:(NSTimeInterval)daysToBeAdded sinceDate:(NSDate *)sinceDate;
+FOUNDATION_EXTERN NSDate *NSCalendarCJHelper_addDays(NSTimeInterval daysToBeAdded, NSDate *sinceDate);
 /// 指定日期的加上 monthsToBeAdded 后的月
-+ (instancetype)dateWithMonthInterval:(NSTimeInterval)monthsToBeAdded sinceDate:(NSDate *)sinceDate;
+FOUNDATION_EXTERN NSDate *NSCalendarCJHelper_addMonths(NSTimeInterval monthsToBeAdded, NSDate *sinceDate);
 /// 指定日期的加上 yearsToBeAdded 后的年
-+ (instancetype)dateWithYearInterval:(NSTimeInterval)yearsToBeAdded sinceDate:(NSDate *)sinceDate;
+FOUNDATION_EXTERN NSDate *NSCalendarCJHelper_addYears(NSTimeInterval yearsToBeAdded, NSDate *sinceDate);
+
+/// 获取距离本日期多少个单位("天"、"月"、"年"等)的日期(C函数)
+FOUNDATION_EXTERN NSDate *NSCalendarCJHelper_addUnits(NSDate *sinceDate, NSInteger unitInterval, NSCalendarUnit calculateUnit);
 
 /**
  *  获取距离本日期多少个单位("天"、"月"、"年"等)的日期(OC方法)

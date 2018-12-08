@@ -18,6 +18,8 @@
 @property (nonatomic, copy, readonly) id (^minusHandle)(id oldValue);
 @property (nonatomic, copy, readonly) id (^addHandle)(id oldValue);
 
+@property (nonatomic, copy) NSString* (^showExtraResultBlock)(id value);   /**< 展示额外的结果信息(用于在textField改变后在其下面多显示一个信息)，默认为nil,如果有值时候才会显示 */
+
 @end
 
 
@@ -54,6 +56,22 @@
 - (NSString *)didAddAction {
     _value = self.addHandle(self.value);
     return self.valueString;
+}
+
+#pragma mark - 额外结果信息
+- (void)setupShowExtraResultBlock:(NSString *(^)(id))showExtraResultBlock {
+    _showExtraResultBlock = showExtraResultBlock;
+}
+
+- (NSString *)extarResultString {
+    if (self.showExtraResultBlock) {
+        NSString *extarResultString = self.showExtraResultBlock(self.value);
+        return extarResultString;
+        
+    } else {
+        return nil;
+    }
+    
 }
 
 @end

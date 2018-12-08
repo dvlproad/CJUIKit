@@ -16,8 +16,8 @@
 {
     NSCalendar *calendar = [NSCalendar currentCalendar];
     unsigned unitFlags = NSCalendarUnitYear | NSCalendarUnitMonth |  NSCalendarUnitDay;
-    NSDateComponents* comp1 = [calendar components:unitFlags fromDate:date1];
-    NSDateComponents* comp2 = [calendar components:unitFlags fromDate:date2];
+    NSDateComponents *comp1 = [calendar components:unitFlags fromDate:date1];
+    NSDateComponents *comp2 = [calendar components:unitFlags fromDate:date2];
     return [comp1 day] == [comp2 day] && [comp1 month] == [comp2 month] && [comp1 year]  == [comp2 year];
 }
 
@@ -135,58 +135,98 @@ NSInteger dateIntervalNSCalendarCJHelper(NSDate *fromDate, NSDate *toDate, NSCal
     return iAge;
 }
 
+#pragma mark - 获取第一天和最后一天
+
+/// 获取指定日期所在周的第一天(周日为第一天)
+NSDate *NSCalendarCJHelper_weekBeginDate(NSDate *date) {
+    NSCalendar *calendar = [[NSCalendar alloc]initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
+    
+    NSDate *weekBeginDate = nil;
+    NSTimeInterval timeInterval = 0;
+    [calendar rangeOfUnit:NSCalendarUnitWeekOfYear startDate:&weekBeginDate interval:&timeInterval forDate:date];
+    
+    return weekBeginDate;
+}
+
+/// 获取指定日期所在周的最后一天(周六为最后一天)
+NSDate *NSCalendarCJHelper_weekLastDate(NSDate *date) {
+    NSCalendar *calendar = [[NSCalendar alloc]initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
+    
+    NSDate *weekBeginDate = nil;
+    NSTimeInterval timeInterval = 0;
+    [calendar rangeOfUnit:NSCalendarUnitWeekOfYear startDate:&weekBeginDate interval:&timeInterval forDate:date];
+    
+    NSDate *weekEndDate = [weekBeginDate dateByAddingTimeInterval:timeInterval-1];
+    
+    return weekEndDate;
+}
 
 
 
 #pragma mark - dateFromUnitInterval:计算与指定日期间隔多少单位的日期
-/// 指定日期的昨天
-+ (NSDate *)yesterday_dateFromSinceDate:(NSDate *)sinceDate {
-    return dateNSCalendarCJHelper(sinceDate, -1, NSCalendarUnitDay);
+/// 指定日期的前一天那天(昨天)
+NSDate *NSCalendarCJHelper_yesterday(NSDate *sinceDate) {
+    return NSCalendarCJHelper_addUnits(sinceDate, -1, NSCalendarUnitDay);
+}
+/// 指定日期的后一天那天(明天)
+NSDate *NSCalendarCJHelper_tomorrow(NSDate *sinceDate) {
+    return NSCalendarCJHelper_addUnits(sinceDate, 1, NSCalendarUnitDay);
 }
 
-/// 指定日期的明天
-+ (NSDate *)tomorrow_dateFromSinceDate:(NSDate *)sinceDate {
-    return dateNSCalendarCJHelper(sinceDate, 1, NSCalendarUnitDay);
+/// 指定日期的上周那天
+NSDate *NSCalendarCJHelper_lastWeek(NSDate *sinceDate) {
+    return NSCalendarCJHelper_addUnits(sinceDate, -7, NSCalendarUnitDay);
+}
+/// 指定日期的下周那天
+NSDate *NSCalendarCJHelper_nextWeek(NSDate *sinceDate) {
+    return NSCalendarCJHelper_addUnits(sinceDate, 7, NSCalendarUnitDay);
 }
 
-/// 指定日期的上个月
-+ (NSDate *)lastMonth_dateFromSinceDate:(NSDate *)sinceDate {
-    return dateNSCalendarCJHelper(sinceDate, -1, NSCalendarUnitMonth);
+/// 指定日期的上个月那天
+NSDate *NSCalendarCJHelper_lastMonth(NSDate *sinceDate) {
+    return NSCalendarCJHelper_addUnits(sinceDate, -1, NSCalendarUnitMonth);
+}
+/// 指定日期的下个月那天
+NSDate *NSCalendarCJHelper_nextMonth(NSDate *sinceDate) {
+    return NSCalendarCJHelper_addUnits(sinceDate, 1, NSCalendarUnitMonth);
 }
 
-/// 指定日期的下个月
-+ (NSDate *)nextMonth_dateFromSinceDate:(NSDate *)sinceDate {
-    return dateNSCalendarCJHelper(sinceDate, 1, NSCalendarUnitMonth);
+/// 指定日期的上个季度那天
+NSDate *NSCalendarCJHelper_lastQuarter(NSDate *sinceDate) {
+    return NSCalendarCJHelper_addUnits(sinceDate, -3, NSCalendarUnitMonth);
+}
+/// 指定日期的下个季度那天
+NSDate *NSCalendarCJHelper_nextQuarter(NSDate *sinceDate) {
+    return NSCalendarCJHelper_addUnits(sinceDate, 3, NSCalendarUnitMonth);
 }
 
-/// 指定日期的去年
-+ (NSDate *)lastYear_dateFromSinceDate:(NSDate *)sinceDate {
-    return dateNSCalendarCJHelper(sinceDate, -1, NSCalendarUnitYear);
+/// 指定日期的去年那天
+NSDate *NSCalendarCJHelper_lastYear(NSDate *sinceDate) {
+    return NSCalendarCJHelper_addUnits(sinceDate, -1, NSCalendarUnitYear);
 }
-
-/// 指定日期的明年
-+ (NSDate *)nextYear_dateFromSinceDate:(NSDate *)sinceDate {
-    return dateNSCalendarCJHelper(sinceDate, 1, NSCalendarUnitYear);
+/// 指定日期的明年那天
+NSDate *NSCalendarCJHelper_nextYear(NSDate *sinceDate) {
+    return NSCalendarCJHelper_addUnits(sinceDate, 1, NSCalendarUnitYear);
 }
 
 //指定日期的加上 xxxsToBeAdded 后所得的新日期
 /// 指定日期的加上 daysToBeAdded 后的天
-+ (instancetype)dateWithDayInterval:(NSTimeInterval)daysToBeAdded sinceDate:(NSDate *)sinceDate {
-    return dateNSCalendarCJHelper(sinceDate, daysToBeAdded, NSCalendarUnitDay);
+NSDate *NSCalendarCJHelper_addDays(NSTimeInterval daysToBeAdded, NSDate *sinceDate) {
+    return NSCalendarCJHelper_addUnits(sinceDate, daysToBeAdded, NSCalendarUnitDay);
 }
 
 /// 指定日期的加上 monthsToBeAdded 后的月
-+ (instancetype)dateWithMonthInterval:(NSTimeInterval)monthsToBeAdded sinceDate:(NSDate *)sinceDate {
-    return dateNSCalendarCJHelper(sinceDate, monthsToBeAdded, NSCalendarUnitMonth);
+ NSDate *NSCalendarCJHelper_addMonths(NSTimeInterval monthsToBeAdded, NSDate *sinceDate) {
+    return NSCalendarCJHelper_addUnits(sinceDate, monthsToBeAdded, NSCalendarUnitMonth);
 }
 
 /// 指定日期的加上 yearsToBeAdded 后的年
-+ (instancetype)dateWithYearInterval:(NSTimeInterval)yearsToBeAdded sinceDate:(NSDate *)sinceDate {
-    return dateNSCalendarCJHelper(sinceDate, yearsToBeAdded, NSCalendarUnitYear);
+NSDate *NSCalendarCJHelper_addYears(NSTimeInterval yearsToBeAdded, NSDate *sinceDate) {
+    return NSCalendarCJHelper_addUnits(sinceDate, yearsToBeAdded, NSCalendarUnitYear);
 }
 
 /// 获取距离本日期多少个单位("天"、"月"、"年"等)的日期(C函数)
-NSDate *dateNSCalendarCJHelper(NSDate *sinceDate, NSInteger unitInterval, NSCalendarUnit calculateUnit) {
+NSDate *NSCalendarCJHelper_addUnits(NSDate *sinceDate, NSInteger unitInterval, NSCalendarUnit calculateUnit) {
     return [NSCalendarCJHelper dateFromUnitInterval:unitInterval calculateUnit:calculateUnit sinceDate:sinceDate];
 }
 
