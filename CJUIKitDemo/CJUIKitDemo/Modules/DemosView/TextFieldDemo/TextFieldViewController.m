@@ -45,7 +45,7 @@
     UIView *parentView = self.containerView;
     
     /* 1、测试系统UITextField的文本改变 */
-    UILabel *testNoteLabel = [DemoLabelFactory testLeftCyanLabel];
+    UILabel *testNoteLabel = [DemoLabelFactory testExplainLabel];
     testNoteLabel.text = @"测试系统UITextField的runtime方法\n①测试系统UITextField的文本改变\n②测试系统UITextField的inputAccessoryView\n③测试系统UITextField的摇动Shake";
     [parentView addSubview:testNoteLabel];
     [testNoteLabel mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -60,21 +60,22 @@
         make.height.mas_equalTo(80);
     }];
     
-    UITextField *textDidChangeTextField = [[UITextField alloc] initWithFrame:CGRectZero];
-    textDidChangeTextField.backgroundColor = CJColorFromHexString(@"#ffffff");
-    //[textDidChangeTextField setBorderStyle:UITextBorderStyleLine];
-    textDidChangeTextField.placeholder = @"测试系统UITextField的runtime方法";
-    [parentView addSubview:textDidChangeTextField];
-    [textDidChangeTextField mas_makeConstraints:^(MASConstraintMaker *make) {
+    UITextField *uiTextField = [[UITextField alloc] initWithFrame:CGRectZero];
+    uiTextField.backgroundColor = CJColorFromHexString(@"#ffffff");
+    //[uiTextField setBorderStyle:UITextBorderStyleLine];
+    uiTextField.placeholder = @"测试系统UITextField的runtime方法";
+    uiTextField.delegate = self;
+    [parentView addSubview:uiTextField];
+    [uiTextField mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.mas_equalTo(testNoteLabel);
         make.right.mas_equalTo(testNoteLabel);
         make.top.mas_equalTo(testNoteLabel.mas_bottom).mas_offset(0);
         make.height.mas_equalTo(30);    //系统默认高度30
     }];
-    self.textDidChangeTextField = textDidChangeTextField;
+    self.uiTextField = uiTextField;
     
-    textDidChangeTextField.delegate = self;
-    [textDidChangeTextField setCjTextDidChangeBlock:^(UITextField *textField) {
+    uiTextField.delegate = self;
+    [uiTextField setCjTextDidChangeBlock:^(UITextField *textField) {
         NSLog(@"textField内容改变了:%@", textField.text);
     }];
     
@@ -85,10 +86,10 @@
 //    inputToolBar.confirmHandle = ^{
 //        [self.textField resignFirstResponder];
 //    };
-//    self.textDidChangeTextField.inputAccessoryView = inputToolBar;
+//    self.uiTextField.inputAccessoryView = inputToolBar;
     
     //方法2：
-    [textDidChangeTextField addDefaultInputAccessoryViewWithDoneButtonClickBlock:^(UITextField *textField) {
+    [uiTextField addDefaultInputAccessoryViewWithDoneButtonClickBlock:^(UITextField *textField) {
         [textField resignFirstResponder];
     }];
 
@@ -99,6 +100,7 @@
     BBXDAreaCodeTextField *areaCodeTextField = [[BBXDAreaCodeTextField alloc] initWithFrame:CGRectZero];
     areaCodeTextField.backgroundColor = CJColorFromHexString(@"#ffffff");
     areaCodeTextField.text = self.regions[0];
+    areaCodeTextField.delegate = self;
     __weak typeof(self)weakSelf = self;
     areaCodeTextField.chooseAreaCodeBlock = ^(BBXDAreaCodeTextField *textField) {
         [weakSelf presentViewController:self.regionAlertController animated:YES completion:nil];
@@ -107,34 +109,58 @@
     [areaCodeTextField mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerX.mas_equalTo(parentView);
         make.left.mas_equalTo(20);
-        make.top.mas_equalTo(textDidChangeTextField.mas_bottom).mas_offset(40);
+        make.top.mas_equalTo(uiTextField.mas_bottom).mas_offset(40);
         make.height.mas_equalTo(38);
     }];
     self.areaCodeTextField = areaCodeTextField;
     
-    CJTextField *placeholderTextField = [[CJTextField alloc] initWithFrame:CGRectZero];
-    placeholderTextField.backgroundColor = CJColorFromHexString(@"#ffffff");
-    placeholderTextField.placeholder = @"测试添加左视图后placeholder的位置";
-    [parentView addSubview:placeholderTextField];
-    [placeholderTextField mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.centerX.mas_equalTo(parentView);
+    /* 测试添加左视图后placeholder的位置 */
+    UILabel *testCJTextFieldLabel = [DemoLabelFactory testExplainLabel];
+    testCJTextFieldLabel.text = @"测试继承类CJTextField的方法\n①测试CJTextField添加左视图后placeholder的位置\n②测试CJTextField的明文密文切换(请在有第三方键盘的真机上测试)";
+    [parentView addSubview:testCJTextFieldLabel];
+    [testCJTextFieldLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.mas_equalTo(parentView).mas_offset(20);
+        make.right.mas_equalTo(parentView).mas_offset(-20);
         make.top.mas_equalTo(areaCodeTextField.mas_bottom).mas_offset(40);
+        make.height.mas_equalTo(80);
+    }];
+    UIButton *changeTFSecureButton = [DemoButtonFactory blueButton];
+    [changeTFSecureButton setTitle:@"明文" forState:UIControlStateNormal];
+    [changeTFSecureButton setTitle:@"密文" forState:UIControlStateSelected];
+    [changeTFSecureButton addTarget:self action:@selector(changeSecureTextEntry:) forControlEvents:UIControlEventTouchUpInside];
+    self.changeTFSecureButton = changeTFSecureButton;
+    CJTextField *cjTextField = [DemoTextFieldFactory textFieldWithLeftLabelText:@"密码:" rightButton:changeTFSecureButton];
+    cjTextField.placeholder = @"测试添加左视图后placeholder的位置";
+    cjTextField.delegate = self;
+    [parentView addSubview:cjTextField];
+    [cjTextField mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.centerX.mas_equalTo(testCJTextFieldLabel);
+        make.left.mas_equalTo(testCJTextFieldLabel);
+        make.top.mas_equalTo(testCJTextFieldLabel.mas_bottom);
         make.height.mas_equalTo(40);
     }];
-    [self completeTextField:placeholderTextField withLeftButtonTitle:@"-" leftButtonAction:nil rightButtonTitle:@"+" rightButtonAction:nil];
-    
-    
-    
+    self.cjTextField = cjTextField;
+    self.changeTFSecureButton.selected = YES;
+    self.cjTextField.secureTextEntry = YES;
+    CJTextField *noSecureTextField = [DemoTextFieldFactory textFieldWithLeftLabelText:@"用于测试密文框切换"];
+    noSecureTextField.placeholder = @"用于测试密文框切换";
+    noSecureTextField.delegate = self;
+    [parentView addSubview:noSecureTextField];
+    [noSecureTextField mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.centerX.mas_equalTo(cjTextField);
+        make.left.mas_equalTo(cjTextField);
+        make.top.mas_equalTo(cjTextField.mas_bottom);
+        make.height.mas_equalTo(40);
+    }];
     
     /* 测试不可以输入,只能用选择的文本框 CJChooseTextTextField */
-    UILabel *testCanInputNoteLabel = [DemoLabelFactory testLeftCyanLabel];
+    UILabel *testCanInputNoteLabel = [DemoLabelFactory testExplainLabel];
     testCanInputNoteLabel.text = @"测试不可以输入,只能用选择的文本框 CJChooseTextTextField\n①测试文本框点击后是弹出视图而不是弹出键盘\n②测试";
     [parentView addSubview:testCanInputNoteLabel];
     [testCanInputNoteLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.mas_equalTo(parentView).mas_offset(20);
         make.right.mas_equalTo(parentView).mas_offset(-20);
-        make.top.mas_equalTo(placeholderTextField.mas_bottom).mas_offset(40);
+        make.top.mas_equalTo(noSecureTextField.mas_bottom).mas_offset(40);
         make.height.mas_equalTo(80);
     }];
     
@@ -160,7 +186,7 @@
     }];
     self.canInputSwitch = canInputSwitch;
     
-    UILabel *switchLabel = [DemoLabelFactory testLeftCyanLabel];
+    UILabel *switchLabel = [DemoLabelFactory testExplainLabel];
     switchLabel.text = @"是否可以输入，不能输入时候，需要隐藏TextField的光标";
     [parentView addSubview:switchLabel];
     [switchLabel mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -172,7 +198,7 @@
     
     
     /* 测试一个可以在自己输入的字符串前后添加其他额外字符串的文本框 CJExtraTextTextField */
-    UILabel *testExtraTextNoteLabel = [DemoLabelFactory testLeftCyanLabel];
+    UILabel *testExtraTextNoteLabel = [DemoLabelFactory testExplainLabel];
     testExtraTextNoteLabel.text = @"测试一个可以在自己输入的字符串前后添加其他额外字符串的文本框 CJExtraTextTextField\n①测试文本框输入的时候，有值则在前后加上预定义值\n②测试";
     [parentView addSubview:testExtraTextNoteLabel];
     [testExtraTextNoteLabel mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -183,6 +209,7 @@
     }];
     self.extraTextTextField = [[CJExtraTextTextField alloc] initWithFrame:CGRectZero];
     self.extraTextTextField.backgroundColor = CJColorFromHexString(@"#ffffff");
+    self.extraTextTextField.delegate = self;
     [parentView addSubview:self.extraTextTextField];
     [self.extraTextTextField mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerX.mas_equalTo(testExtraTextNoteLabel);
@@ -214,6 +241,11 @@
     self.canInputTextField.text = [@(value) stringValue];
 }
 
+- (void)changeSecureTextEntry:(UIButton *)button {
+    button.selected = !button.selected;
+    self.cjTextField.secureTextEntry = button.selected;
+}
+
 - (void)canInputSwitchAction:(UISwitch *)canInputSwitch {
     if (canInputSwitch.isOn) {
         self.canInputTextField.hideMenuController = NO;
@@ -226,8 +258,9 @@
 
 #pragma mark - UITextFieldDelegate
 - (BOOL)textFieldShouldBeginEditing:(UITextField *)textField {
-    if (textField == self.textDidChangeTextField) {
+    if (textField == self.cjTextField) {
         textField.secureTextEntry = YES;
+        self.changeTFSecureButton.selected = YES;
     } else {
         textField.secureTextEntry = NO;
     }
@@ -241,12 +274,14 @@
         return NO;
     }
     
-    NSString *oldText = textField.text;
-    NSString *newText = [oldText stringByReplacingCharactersInRange:range withString:string];//若允许改变，则会改变成的新文本
-    if ([newText length] > 10) {
-        [CJToast shortShowMessage:@"文本过长，超过最大的10个字符了"];
-        [textField cjShake];
-        return NO;
+    if (textField == self.uiTextField) {
+        NSString *oldText = textField.text;
+        NSString *newText = [oldText stringByReplacingCharactersInRange:range withString:string];//若允许改变，则会改变成的新文本
+        if ([newText length] > 10) {
+            [CJToast shortShowMessage:@"文本过长，超过最大的10个字符了"];
+            [textField cjShake];
+            return NO;
+        }
     }
     
     return YES;

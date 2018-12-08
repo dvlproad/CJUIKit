@@ -1,5 +1,5 @@
 //
-//  StringHelperViewController.h
+//  NSObjectCJHelperViewController.h
 //  CJFoundationDemo
 //
 //  Created by ciyouzen on 2016/3/26.
@@ -7,8 +7,9 @@
 //
 
 #import "CJUIKitBaseHomeViewController.h"
+#import <CJBaseHelper/NSObjectCJHelper.h>
 
-@interface StringHelperViewController : CJUIKitBaseHomeViewController {
+@interface NSObjectCJHelperViewController : CJUIKitBaseHomeViewController {
     
 }
 

@@ -10,6 +10,7 @@
 
 @interface CJChooseTextTextField ()
 
+///FIXME:需要完善未设置pickerView的时候，第三方可能会自动补充键盘的ToolBar
 @property (nonatomic, assign) BOOL textOnlyFromSelected;          /**< 是否隐藏光标(默认NO),隐藏光标的时候最好同时禁止手动输入 */
 
 @end

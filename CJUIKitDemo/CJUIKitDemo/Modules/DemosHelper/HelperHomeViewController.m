@@ -8,9 +8,10 @@
 
 #import "HelperHomeViewController.h"
 
-#import "StringHelperViewController.h"
+#import "NSObjectCJHelperViewController.h"
+#import "NSCalendarCJHelperViewController.h"
+
 #import "PresentAViewController.h"
-#import "PresentBViewController.h"
 
 @interface HelperHomeViewController ()
 
@@ -25,15 +26,20 @@
     self.navigationItem.title = NSLocalizedString(@"Helper首页", nil); //知识点:使得tabBar中的title可以和显示在顶部的title保持各自
     
     NSMutableArray *sectionDataModels = [[NSMutableArray alloc] init];
-    //Interface
+    //Helper
     {
         CJSectionDataModel *sectionDataModel = [[CJSectionDataModel alloc] init];
         sectionDataModel.theme = @"Helper";
         {
             CJModuleModel *xibModule = [[CJModuleModel alloc] init];
             xibModule.title = @"NSObjectCJHelper";
-            xibModule.classEntry = [StringHelperViewController class];
-            xibModule.isCreateByXib = NO;
+            xibModule.classEntry = [NSObjectCJHelperViewController class];
+            [sectionDataModel.values addObject:xibModule];
+        }
+        {
+            CJModuleModel *xibModule = [[CJModuleModel alloc] init];
+            xibModule.title = @"NSCalendarCJHelper";
+            xibModule.classEntry = [NSCalendarCJHelperViewController class];
             [sectionDataModel.values addObject:xibModule];
         }
         {

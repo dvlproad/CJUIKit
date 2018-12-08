@@ -18,6 +18,10 @@
 ///获取电池状态(UIDeviceBatteryState为枚举类型)
 + (UIDeviceBatteryState)getBatteryStauts;
 
+#pragma mark - 屏幕亮度
+///获取屏幕亮度(这个值介于0和1之间,且屏幕的亮度调节只能在真机上看到效果 在模拟器上看不到效果)
++ (CGFloat)getScreenBrightness;
+
 #pragma mark - 内存Memory & 磁盘容量
 ///获取总内存大小
 + (long long)getTotalMemorySize;

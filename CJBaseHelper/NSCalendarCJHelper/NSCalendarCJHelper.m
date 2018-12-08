@@ -169,6 +169,21 @@ NSInteger dateIntervalNSCalendarCJHelper(NSDate *fromDate, NSDate *toDate, NSCal
     return dateNSCalendarCJHelper(sinceDate, 1, NSCalendarUnitYear);
 }
 
+//指定日期的加上 xxxsToBeAdded 后所得的新日期
+/// 指定日期的加上 daysToBeAdded 后的天
++ (instancetype)dateWithDayInterval:(NSTimeInterval)daysToBeAdded sinceDate:(NSDate *)sinceDate {
+    return dateNSCalendarCJHelper(sinceDate, daysToBeAdded, NSCalendarUnitDay);
+}
+
+/// 指定日期的加上 monthsToBeAdded 后的月
++ (instancetype)dateWithMonthInterval:(NSTimeInterval)monthsToBeAdded sinceDate:(NSDate *)sinceDate {
+    return dateNSCalendarCJHelper(sinceDate, monthsToBeAdded, NSCalendarUnitMonth);
+}
+
+/// 指定日期的加上 yearsToBeAdded 后的年
++ (instancetype)dateWithYearInterval:(NSTimeInterval)yearsToBeAdded sinceDate:(NSDate *)sinceDate {
+    return dateNSCalendarCJHelper(sinceDate, yearsToBeAdded, NSCalendarUnitYear);
+}
 
 /// 获取距离本日期多少个单位("天"、"月"、"年"等)的日期(C函数)
 NSDate *dateNSCalendarCJHelper(NSDate *sinceDate, NSInteger unitInterval, NSCalendarUnit calculateUnit) {
@@ -192,6 +207,8 @@ NSDate *dateNSCalendarCJHelper(NSDate *sinceDate, NSInteger unitInterval, NSCale
     NSCalendar *calendar = [[NSCalendar alloc]initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
     //NSCalendar *calendar = [NSCalendar currentCalendar];
     NSCalendarUnit calendarUnit = NSCalendarUnitYear | NSCalendarUnitMonth | NSCalendarUnitDay | NSCalendarUnitHour | NSCalendarUnitMinute | NSCalendarUnitSecond;
+    NSAssert(calculateUnit & calendarUnit, @"sorry current doesn't allowThisUnit, please check");
+    
     NSDateComponents *dateComponents = [calendar components:calendarUnit fromDate:sinceDate];
     NSInteger year = [dateComponents year];
     NSInteger month = [dateComponents month];

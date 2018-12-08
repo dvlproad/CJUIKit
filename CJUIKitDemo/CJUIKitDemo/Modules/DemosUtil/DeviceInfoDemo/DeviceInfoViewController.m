@@ -34,7 +34,6 @@ typedef NS_ENUM(NSUInteger, CJFileSizeUnitType) {
     self.view.backgroundColor = [UIColor whiteColor];
     
     UITableView *tableView = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStyleGrouped];
-    [tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"cell"];
     tableView.dataSource = self;
     tableView.delegate = self;
     [self.view addSubview:tableView];
@@ -67,6 +66,18 @@ typedef NS_ENUM(NSUInteger, CJFileSizeUnitType) {
                                         @"UIDeviceBatteryStateFull",        // plugged in, at 100%
                                         ];
         info.value = [NSString stringWithFormat:@"%@", batteryStautsArray[batteryStauts]];
+        
+        [array addObject:info];
+    }
+    
+    //当前屏幕亮度
+    {
+        DeviceInfo *info = [[DeviceInfo alloc] init];
+        info.title = @"屏幕亮度";
+        // [iOS(OC)—仿支付宝我的二维码页面系统亮度调整](https://blog.csdn.net/Boyqicheng/article/details/78330250)
+        
+        CGFloat currentScreenBrightness = [DeviceCJHelper getScreenBrightness];
+        info.value = [NSString stringWithFormat:@"%.2f%%", currentScreenBrightness*100];
         
         [array addObject:info];
     }

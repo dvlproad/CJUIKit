@@ -7,7 +7,6 @@
 //
 
 #import "PresentBaseViewController.h"
-#import "UIViewControllerCJHelper.h"
 
 @interface PresentBaseViewController () {
     
@@ -81,7 +80,7 @@
         make.height.mas_equalTo(44);
     }];
     
-    UILabel *resultClassNameLabel = [DemoLabelFactory testLeftCyanLabel];
+    UILabel *resultClassNameLabel = [DemoLabelFactory testExplainLabel];
     resultClassNameLabel.text = @"点击'获取当前显示的视图控制器'按钮后所得的结果的显示位置";
     [self.view addSubview:resultClassNameLabel];
     [resultClassNameLabel mas_makeConstraints:^(MASConstraintMaker *make) {

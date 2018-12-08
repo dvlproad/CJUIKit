@@ -75,11 +75,11 @@
                                      @"xxxtest.xxx.com",
                                      @"xxxtest02.xxx.com"
                                      ];
-    //LuckinNetworkEnvironmentModel *environmentModel = [[LuckinNetworkEnvironmentModel alloc] init];
+    //DemoNetworkEnvironmentModel *environmentModel = [[DemoNetworkEnvironmentModel alloc] init];
     //environmentModel.schema = kSchema;
     //environmentModel.ip = KDefaultIP;
     //environmentModel.domain = kDefaultDomain;
-    //[LuckinNetworkClient sharedInstance].environmentModel = environmentModel;
+    //[DemoNetworkClient sharedInstance].environmentModel = environmentModel;
     if (currentEnvironmentIndex < 0 || currentEnvironmentIndex >= networkEnvironments.count) {
         currentEnvironmentIndex = 0;
     }

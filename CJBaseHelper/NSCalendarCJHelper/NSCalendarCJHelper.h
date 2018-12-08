@@ -83,6 +83,14 @@ NSDate *dateNSCalendarCJHelper(NSDate *sinceDate, NSInteger unitInterval, NSCale
 /// 指定日期的明年
 + (NSDate *)nextYear_dateFromSinceDate:(NSDate *)sinceDate;
 
+//指定日期的加上 xxxsToBeAdded 后所得的新日期
+/// 指定日期的加上 daysToBeAdded 后的天
++ (instancetype)dateWithDayInterval:(NSTimeInterval)daysToBeAdded sinceDate:(NSDate *)sinceDate;
+/// 指定日期的加上 monthsToBeAdded 后的月
++ (instancetype)dateWithMonthInterval:(NSTimeInterval)monthsToBeAdded sinceDate:(NSDate *)sinceDate;
+/// 指定日期的加上 yearsToBeAdded 后的年
++ (instancetype)dateWithYearInterval:(NSTimeInterval)yearsToBeAdded sinceDate:(NSDate *)sinceDate;
+
 /**
  *  获取距离本日期多少个单位("天"、"月"、"年"等)的日期(OC方法)
  *

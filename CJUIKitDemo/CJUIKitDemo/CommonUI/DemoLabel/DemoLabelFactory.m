@@ -36,7 +36,7 @@
     return label;
 }
 
-+ (UILabel *)testLeftCyanLabel {
++ (UILabel *)testExplainLabel {
     UILabel *label = [[UILabel alloc] initWithFrame:CGRectZero];
     label.backgroundColor = [UIColor cyanColor];
     label.textAlignment = NSTextAlignmentLeft;

@@ -12,7 +12,10 @@
 
 @interface TextFieldViewController : CJUIKitBaseScrollViewController
 
-@property (nonatomic, strong) UITextField *textDidChangeTextField;
+@property (nonatomic, strong) UITextField *uiTextField;
+
+@property (nonatomic, strong) CJTextField *cjTextField;
+@property (nonatomic, strong) UIButton *changeTFSecureButton;
 
 @property (nonatomic, strong) CJChooseTextTextField *canInputTextField;
 @property (nonatomic, strong) UISwitch *canInputSwitch;

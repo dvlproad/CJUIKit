@@ -1,23 +1,21 @@
 //
-//  StringHelperViewController.m
+//  NSObjectCJHelperViewController.m
 //  CJFoundationDemo
 //
 //  Created by ciyouzen on 2016/3/26.
 //  Copyright © 2016年 dvlproad. All rights reserved.
 //
 
-#import "StringHelperViewController.h"
+#import "NSObjectCJHelperViewController.h"
 
-#import "NSObjectCJHelper.h"
-
-@interface StringHelperViewController () {
+@interface NSObjectCJHelperViewController () {
     
 }
 @property (nonatomic, weak) UIActivityIndicatorView *activityIndicator;
 
 @end
 
-@implementation StringHelperViewController
+@implementation NSObjectCJHelperViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
