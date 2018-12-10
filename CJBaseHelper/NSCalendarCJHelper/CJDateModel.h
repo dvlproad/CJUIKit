@@ -14,6 +14,12 @@
 
 @property (nonatomic, assign) NSInteger index;  /**< 该天的索引 */
 
+@property (nonatomic, copy) NSString *dateString;
+@property (nonatomic, strong) NSDate *date;
+
+@property (nonatomic, copy) NSString *weekdayString;
+@property (nonatomic, assign) NSInteger weekday;
+
 @property (nonatomic, assign) NSInteger year;
 @property (nonatomic, assign) NSInteger month;
 @property (nonatomic, assign) NSInteger day;

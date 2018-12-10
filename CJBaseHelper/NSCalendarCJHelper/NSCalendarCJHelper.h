@@ -7,13 +7,10 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "CJDateModel.h"
 
 @interface NSCalendarCJHelper : NSObject
 
-#pragma mark - C函数
-
-/// 计算从fromDate到toDate，两个时间的单位差（附：如果是计算总共有多少单位则还需要加1）(C函数)
-NSInteger dateIntervalNSCalendarCJHelper(NSDate *fromDate, NSDate *toDate, NSCalendarUnit calculateUnit);
 
 
 #pragma mark - DateJudge
@@ -22,58 +19,41 @@ NSInteger dateIntervalNSCalendarCJHelper(NSDate *fromDate, NSDate *toDate, NSCal
 
 
 #pragma mark - DateValue
-///该日期是星期几
-+ (NSString *)weekday_stringFromDate:(NSDate *)date;
+/// 获取该日期是星期几
+FOUNDATION_EXTERN NSInteger NSCalendarCJHelper_weekdayString(NSDate *date);
 
 
 
-#pragma mark - 计算两个日期的时间差(unitIntervalFromDate)
-///计算两个时间，相差的年数
-+ (NSInteger)year_unitIntervalFromDate:(NSDate *)fromDate toDate:(NSDate *)toDate;
+#pragma mark - 计算两个日期的时间差(返回值 NSInteger)
+/// 计算从fromDate到toDate，两个时间的单位差（附：如果是计算总共有多少单位则还需要加1）(C函数)
+FOUNDATION_EXTERN NSInteger NSCalendarCJHelper_unitInterval(NSDate *fromDate, NSDate *toDate, NSCalendarUnit calculateUnit);
 
-///计算两个时间，相差的月数
-+ (NSInteger)month_unitIntervalFromDate:(NSDate *)fromDate toDate:(NSDate *)toDate;
+/// 计算两个时间，相差的年数
+FOUNDATION_EXTERN NSInteger NSCalendarCJHelper_yearInterval(NSDate *fromDate, NSDate *toDate);
+/// 计算两个时间，相差的月数
+FOUNDATION_EXTERN NSInteger NSCalendarCJHelper_monthInterval(NSDate *fromDate, NSDate *toDate);
+/// 计算两个时间，相差的天数
+FOUNDATION_EXTERN NSInteger NSCalendarCJHelper_dayInterval(NSDate *fromDate, NSDate *toDate);
 
-///计算两个时间，相差的天数
-+ (NSInteger)day_unitIntervalFromDate:(NSDate *)fromDate toDate:(NSDate *)toDate;
-
-/**
- *  计算从fromDate到toDate，两个时间的单位差（附：如果是计算总共有多少单位则还需要加1）(OC方法)
- *
- *  @param fromDate         计算的开始时间
- *  @param toDate           计算的结束时间
- *  @param calculateUnit    计算的单位
- *
- *  return 返回相差有多少单位
- */
-+ (NSInteger)unitIntervalFromDate:(NSDate *)fromDate
-                           toDate:(NSDate *)toDate
-                  inCalculateUnit:(NSCalendarUnit)calculateUnit;
-//附系统的是实例方法 - (NSTimeInterval)timeIntervalSinceDate:(NSDate *)anotherDate;
+/// 计算从birthdayDate到现在的年龄
+FOUNDATION_EXTERN NSInteger NSCalendarCJHelper_age(NSDate *birthdayDate, BOOL nominalAge);
 
 
-/**
- *  计算从fromDate到toDate，两个时间的年龄差
- *
- *  @param fromDate         计算的开始时间
- *  @param toDate           计算的结束时间
- *
- *  return 返回相差有多少年龄(年)
- */
-+ (NSInteger)age_unitIntervalFromDate:(NSDate *)fromDate toDate:(NSDate *)toDate;
+#pragma mark - 获取指定日期所在周/月的第一天和最后一天(返回值NSDate)
 
+/// 获取指定日期所在周的第一天(isChinese为NO时,周日为第一天)
+FOUNDATION_EXTERN NSDate *NSCalendarCJHelper_weekBeginDate(NSDate *date, BOOL isChinese);
+/// 获取指定日期所在周的最后一天(isChinese为NO时,周六为最后一天)
+FOUNDATION_EXTERN NSDate *NSCalendarCJHelper_weekLastDate(NSDate *date, BOOL isChinese);
 
-#pragma mark - 获取第一天和最后一天
-
-/// 获取指定日期所在周的第一天(周日为第一天)
-FOUNDATION_EXTERN NSDate *NSCalendarCJHelper_weekBeginDate(NSDate *date);
-
-/// 获取指定日期所在周的最后一天(周六为最后一天)
-FOUNDATION_EXTERN NSDate *NSCalendarCJHelper_weekLastDate(NSDate *date);
+/// 获取指定日期所在月的第一天
+FOUNDATION_EXTERN NSDate *NSCalendarCJHelper_monthBeginDate(NSDate *date);
+/// 获取指定日期所在月的最后一天
+FOUNDATION_EXTERN NSDate *NSCalendarCJHelper_monthLastDate(NSDate *date);
 
 
 
-#pragma mark - 获取与指定日期间隔多少单位的日期(dateFromUnitInterval)
+#pragma mark - 获取与指定日期间隔多少单位的日期(返回值NSDate)
 
 /// 指定日期的前一天那天(昨天)
 FOUNDATION_EXTERN NSDate *NSCalendarCJHelper_yesterday(NSDate *sinceDate);
@@ -112,18 +92,14 @@ FOUNDATION_EXTERN NSDate *NSCalendarCJHelper_addYears(NSTimeInterval yearsToBeAd
 /// 获取距离本日期多少个单位("天"、"月"、"年"等)的日期(C函数)
 FOUNDATION_EXTERN NSDate *NSCalendarCJHelper_addUnits(NSDate *sinceDate, NSInteger unitInterval, NSCalendarUnit calculateUnit);
 
+
+#pragma mark - 获取从指定开始日期到指定结束日期之间所有日期模型(返回值NSMutableArray<CJDateModel *> *)
 /**
- *  获取距离本日期多少个单位("天"、"月"、"年"等)的日期(OC方法)
+ *  获取从指定开始日期到指定结束日期之间所有日期模型CJDateModel
  *
- *  @param unitInterval     多少个单位
- *  @param calculateUnit    计算的单位
- *  @param sinceDate        从什么日期开始算
- *
- *  @return 计算得出的日期
+ *  @param fromDate     开始日期
+ *  @param toDate       结束日期
  */
-+ (NSDate *)dateFromUnitInterval:(NSInteger )unitInterval
-                   calculateUnit:(NSCalendarUnit)calculateUnit
-                       sinceDate:(NSDate *)sinceDate;
-//附：系统为+ (instancetype)dateWithTimeInterval:(NSTimeInterval)secsToBeAdded sinceDate:(NSDate *)date;
+FOUNDATION_EXTERN NSMutableArray<CJDateModel *> *NSCalendarCJHelper_allCJDateModels(NSDate *dateBegin, NSDate *dateEnd);
 
 @end

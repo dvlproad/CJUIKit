@@ -12,26 +12,27 @@
     
 }
 @property (nonatomic, copy, readonly) id value;
-@property (nonatomic, copy, readonly) id (^valueFromStringBlock)(NSString *string);
-@property (nonatomic, copy, readonly) NSString* (^stringFromValueBlock)(id value);
+@property (nonatomic, copy, readonly) id (^valueFromTextBlock)(NSString *string);
+@property (nonatomic, copy, readonly) NSString* (^textFromValueBlock)(id value);    /**< 将value转给textField用 */
+@property (nonatomic, copy, readonly) NSString* (^resultFromValueBlock)(id value);   /**< 将value转为resultLabel(一般只用textField就可以展示,所以该值一般为nil), */
 
 @property (nonatomic, copy, readonly) id (^minusHandle)(id oldValue);
 @property (nonatomic, copy, readonly) id (^addHandle)(id oldValue);
-
-@property (nonatomic, copy) NSString* (^showExtraResultBlock)(id value);   /**< 展示额外的结果信息(用于在textField改变后在其下面多显示一个信息)，默认为nil,如果有值时候才会显示 */
 
 @end
 
 
 @implementation TestValueChangeModel
 
-- (instancetype)initWithValue:(id)value stringFromValueBlock:(NSString* (^)(id value))stringFromValueBlock valueFromStringBlock:(id (^)(NSString *string))valueFromStringBlock
+- (instancetype)initWithValue:(id)value
+           textFromValueBlock:(NSString* (^)(id value))textFromValueBlock
+           valueFromTextBlock:(id (^)(NSString *string))valueFromTextBlock
 {
     self = [super init];
     if (self) {
         _value = value;
-        _stringFromValueBlock = stringFromValueBlock;
-        _valueFromStringBlock = valueFromStringBlock;
+        _textFromValueBlock = textFromValueBlock;
+        _valueFromTextBlock = valueFromTextBlock;
     }
     return self;
 }
@@ -44,7 +45,7 @@
 }
 
 - (NSString *)valueString {
-    NSString *valueString = self.stringFromValueBlock(self.value);
+    NSString *valueString = self.textFromValueBlock(self.value);
     return valueString;
 }
 
@@ -59,13 +60,13 @@
 }
 
 #pragma mark - 额外结果信息
-- (void)setupShowExtraResultBlock:(NSString *(^)(id))showExtraResultBlock {
-    _showExtraResultBlock = showExtraResultBlock;
+- (void)setupResultFromValueBlock:(NSString* (^)(id value))resultFromValueBlock {
+    _resultFromValueBlock = resultFromValueBlock;
 }
 
 - (NSString *)extarResultString {
-    if (self.showExtraResultBlock) {
-        NSString *extarResultString = self.showExtraResultBlock(self.value);
+    if (self.resultFromValueBlock) {
+        NSString *extarResultString = self.resultFromValueBlock(self.value);
         return extarResultString;
         
     } else {

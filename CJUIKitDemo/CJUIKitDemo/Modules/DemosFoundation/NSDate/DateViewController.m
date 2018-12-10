@@ -51,8 +51,8 @@
     
     NSDate *birthdayDate = [[NSDateFormatterCJHelper sharedInstance] yyyyMMddHHmmss_dateFromString:@"1989-12-27 01:10:22"];
     
-    NSInteger yearInterval = [NSCalendarCJHelper year_unitIntervalFromDate:birthdayDate toDate:[NSDate date]];
-    NSInteger age = [NSCalendarCJHelper age_unitIntervalFromDate:birthdayDate toDate:[NSDate date]];
+    NSInteger yearInterval = NSCalendarCJHelper_yearInterval(birthdayDate, [NSDate date]);
+    NSInteger age = NSCalendarCJHelper_age(birthdayDate);
     NSLog(@"今年周岁为：%zd, %zd", yearInterval, age);
     
 }
@@ -152,7 +152,7 @@
     NSLog(@"左边按钮点击");
     [self hideDateChoosePicker];
     
-    NSDate *date = [NSCalendarCJHelper yesterday_dateFromSinceDate:self.currentDate];
+    NSDate *date = NSCalendarCJHelper_yesterday(self.currentDate);
     NSString *dateString = [[NSDateFormatterCJHelper sharedInstance] yyyyMMddHHmmss_stringFromDate:date];
     self.dateTextField.text = dateString;
     
@@ -163,7 +163,7 @@
     NSLog(@"右边按钮点击");
     [self hideDateChoosePicker];
     
-    NSDate *date = [NSCalendarCJHelper tomorrow_dateFromSinceDate:self.currentDate];
+    NSDate *date = NSCalendarCJHelper_tomorrow(self.currentDate);
     NSString *dateString = [[NSDateFormatterCJHelper sharedInstance] yyyyMMddHHmmss_stringFromDate:date];
     self.dateTextField.text = dateString;
     

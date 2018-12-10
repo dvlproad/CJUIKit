@@ -73,8 +73,7 @@
         make.left.mas_equalTo(changeExplainLabel);
         make.right.mas_equalTo(changeExplainLabel);
         make.top.mas_equalTo(changeExplainLabel.mas_bottom);
-        make.bottom.mas_equalTo(parentView).mas_offset(-0);
-        make.height.mas_equalTo(44);
+        //make.height.mas_equalTo(44); //TOSURE:为什么这边加高度设置会有问题
     }];
     self.chooseTextTextField = chooseTextTextField;
     
@@ -84,7 +83,8 @@
         make.left.mas_equalTo(chooseTextTextField);
         make.right.mas_equalTo(chooseTextTextField);
         make.top.mas_equalTo(chooseTextTextField.mas_bottom);
-        make.height.mas_equalTo(0);
+        make.height.mas_equalTo(1);
+        make.bottom.mas_equalTo(parentView).mas_offset(-0);//使得cell自适应
     }];
     self.extraResultLabel = extraResultLabel;
 }
@@ -141,16 +141,19 @@
 }
 
 - (void)showExtraResult {
+    CGFloat textHeight = 0;
+
     NSString *extraResultMessage = self.valueChangeModel.extarResultString;
     if (extraResultMessage.length > 0) {
         self.extraResultLabel.text = extraResultMessage;
-        
+
         CGFloat maxWidth = CGRectGetWidth(self.frame) - 10 - 10;
-        CGFloat textHeight =  [extraResultMessage cjTextHeightWithFont:[UIFont systemFontOfSize:14] infiniteHeightAndMaxWidth:maxWidth];
-        [self.extraResultLabel mas_updateConstraints:^(MASConstraintMaker *make) {
-            make.height.mas_equalTo(textHeight);
-        }];
+        textHeight =  [extraResultMessage cjTextHeightWithFont:[UIFont systemFontOfSize:14] infiniteHeightAndMaxWidth:maxWidth];
     }
+
+    [self.extraResultLabel mas_updateConstraints:^(MASConstraintMaker *make) {
+        make.height.mas_equalTo(textHeight);
+    }];
 }
 
 

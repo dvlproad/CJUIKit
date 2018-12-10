@@ -276,6 +276,11 @@ CJBaseUIKit/UIButton：按钮 及 CJBadgeButton
 
 
 #### CJBaseHelper
+* 2018-12-10 V0.1.0
+
+> 1. 将NSCalendarCJHelper中的方法改为C函数来提供
+
+
 * 2018-11-01 V0.0.7
 
 > 1. 转移CJMedia中的CJValidateAuthorizationUtil到CJBaseHelper/AuthorizationCJHelper：权限判断及系统设置打开
