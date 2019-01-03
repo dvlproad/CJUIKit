@@ -7,7 +7,7 @@
 //
 
 #import "ToastViewController.h"
-#import "CJToast.h"
+#import <CJBaseUIKit/CJToast.h>
 
 @interface ToastViewController ()  {
     

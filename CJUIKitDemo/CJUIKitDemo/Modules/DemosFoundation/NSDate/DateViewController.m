@@ -52,7 +52,7 @@
     NSDate *birthdayDate = [[NSDateFormatterCJHelper sharedInstance] yyyyMMddHHmmss_dateFromString:@"1989-12-27 01:10:22"];
     
     NSInteger yearInterval = NSCalendarCJHelper_yearInterval(birthdayDate, [NSDate date]);
-    NSInteger age = NSCalendarCJHelper_age(birthdayDate);
+    NSInteger age = NSCalendarCJHelper_age(birthdayDate, NO);
     NSLog(@"今年周岁为：%zd, %zd", yearInterval, age);
     
 }

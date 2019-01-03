@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import <Masonry/Masonry.h>
+#import <CJBaseUIKit/UIColor+CJHex.h>
+#import <CJBaseUIKit/CJToast.h>
 
 @interface CJUIKitBaseViewController : UIViewController
 

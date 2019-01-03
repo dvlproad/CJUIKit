@@ -14,10 +14,7 @@
 #import <Masonry/Masonry.h>
 
 #define CJDEBUG
-#import "CJLogUtil.h"
-
-#import "CJToast.h"
-
+#import <CJBaseUIKit/CJToast.h>
 #import "DemoLabelFactory.h"
 #import "DemoButtonFactory.h"
 #import "DemoTextFieldFactory.h"

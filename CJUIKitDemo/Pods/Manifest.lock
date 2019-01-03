@@ -1,22 +1,22 @@
 PODS:
   - AFNetworking/Reachability (3.2.1)
-  - CJBaseHelper (0.0.9):
-    - CJBaseHelper/AuthorizationCJHelper (= 0.0.9)
-    - CJBaseHelper/DeviceCJHelper (= 0.0.9)
-    - CJBaseHelper/NSCalendarCJHelper (= 0.0.9)
-    - CJBaseHelper/NSDateFormatterCJHelper (= 0.0.9)
-    - CJBaseHelper/NSObjectCJHelper (= 0.0.9)
-    - CJBaseHelper/NSOperationQueueCJHelper (= 0.0.9)
-    - CJBaseHelper/UIViewControllerCJHelper (= 0.0.9)
-    - CJBaseHelper/WebCJHelper (= 0.0.9)
-  - CJBaseHelper/AuthorizationCJHelper (0.0.9)
-  - CJBaseHelper/DeviceCJHelper (0.0.9)
-  - CJBaseHelper/NSCalendarCJHelper (0.0.9)
-  - CJBaseHelper/NSDateFormatterCJHelper (0.0.9)
-  - CJBaseHelper/NSObjectCJHelper (0.0.9)
-  - CJBaseHelper/NSOperationQueueCJHelper (0.0.9)
-  - CJBaseHelper/UIViewControllerCJHelper (0.0.9)
-  - CJBaseHelper/WebCJHelper (0.0.9)
+  - CJBaseHelper (0.1.0):
+    - CJBaseHelper/AuthorizationCJHelper (= 0.1.0)
+    - CJBaseHelper/DeviceCJHelper (= 0.1.0)
+    - CJBaseHelper/NSCalendarCJHelper (= 0.1.0)
+    - CJBaseHelper/NSDateFormatterCJHelper (= 0.1.0)
+    - CJBaseHelper/NSObjectCJHelper (= 0.1.0)
+    - CJBaseHelper/NSOperationQueueCJHelper (= 0.1.0)
+    - CJBaseHelper/UIViewControllerCJHelper (= 0.1.0)
+    - CJBaseHelper/WebCJHelper (= 0.1.0)
+  - CJBaseHelper/AuthorizationCJHelper (0.1.0)
+  - CJBaseHelper/DeviceCJHelper (0.1.0)
+  - CJBaseHelper/NSCalendarCJHelper (0.1.0)
+  - CJBaseHelper/NSDateFormatterCJHelper (0.1.0)
+  - CJBaseHelper/NSObjectCJHelper (0.1.0)
+  - CJBaseHelper/NSOperationQueueCJHelper (0.1.0)
+  - CJBaseHelper/UIViewControllerCJHelper (0.1.0)
+  - CJBaseHelper/WebCJHelper (0.1.0)
   - CJBaseTest/Test (0.0.2)
   - CJBaseTest/UITest (0.0.2)
   - CJBaseUIKit (0.3.1):
@@ -84,42 +84,38 @@ PODS:
   - CJBaseUIKit/UIView/CJShakeAction (0.3.1)
   - CJBaseUIKit/UIViewController (0.3.1)
   - CJBaseUIKit/UIWindow (0.3.1)
-  - CJBaseUtil (0.4.5):
-    - CJBaseUtil/CJAppLastUtil (= 0.4.5)
-    - CJBaseUtil/CJCallUtil (= 0.4.5)
-    - CJBaseUtil/CJDataUtil (= 0.4.5)
-    - CJBaseUtil/CJDateUtil (= 0.4.5)
-    - CJBaseUtil/CJIndentedStringUtil (= 0.4.5)
-    - CJBaseUtil/CJKeyboardUtil (= 0.4.5)
-    - CJBaseUtil/CJLaunchImageUtil (= 0.4.5)
-    - CJBaseUtil/CJLog (= 0.4.5)
-    - CJBaseUtil/CJManager (= 0.4.5)
-    - CJBaseUtil/CJPinyinHelper (= 0.4.5)
-    - CJBaseUtil/CJQRCodeUtil (= 0.4.5)
-  - CJBaseUtil/CJAppLastUtil (0.4.5):
+  - CJBaseUtil (0.5.0):
+    - CJBaseUtil/CJAppLastUtil (= 0.5.0)
+    - CJBaseUtil/CJCallUtil (= 0.5.0)
+    - CJBaseUtil/CJDataUtil (= 0.5.0)
+    - CJBaseUtil/CJDateUtil (= 0.5.0)
+    - CJBaseUtil/CJIndentedStringUtil (= 0.5.0)
+    - CJBaseUtil/CJKeyboardUtil (= 0.5.0)
+    - CJBaseUtil/CJLaunchImageUtil (= 0.5.0)
+    - CJBaseUtil/CJManager (= 0.5.0)
+    - CJBaseUtil/CJPinyinHelper (= 0.5.0)
+    - CJBaseUtil/CJQRCodeUtil (= 0.5.0)
+  - CJBaseUtil/CJAppLastUtil (0.5.0):
     - SAMKeychain
-  - CJBaseUtil/CJCallUtil (0.4.5)
-  - CJBaseUtil/CJDataUtil (0.4.5)
-  - CJBaseUtil/CJDateUtil (0.4.5)
-  - CJBaseUtil/CJIndentedStringUtil (0.4.5)
-  - CJBaseUtil/CJKeyboardUtil (0.4.5)
-  - CJBaseUtil/CJLaunchImageUtil (0.4.5)
-  - CJBaseUtil/CJLog (0.4.5):
-    - CJBaseUIKit/UIView/CJDragAction
-    - Masonry
-  - CJBaseUtil/CJManager (0.4.5):
-    - CJBaseUtil/CJManager/CJLocationChangeManager (= 0.4.5)
-    - CJBaseUtil/CJManager/CJModuleManager (= 0.4.5)
-    - CJBaseUtil/CJManager/CJSuspendWindowManager (= 0.4.5)
-    - CJBaseUtil/CJManager/CJTimerManager (= 0.4.5)
-  - CJBaseUtil/CJManager/CJLocationChangeManager (0.4.5):
+  - CJBaseUtil/CJCallUtil (0.5.0)
+  - CJBaseUtil/CJDataUtil (0.5.0)
+  - CJBaseUtil/CJDateUtil (0.5.0)
+  - CJBaseUtil/CJIndentedStringUtil (0.5.0)
+  - CJBaseUtil/CJKeyboardUtil (0.5.0)
+  - CJBaseUtil/CJLaunchImageUtil (0.5.0)
+  - CJBaseUtil/CJManager (0.5.0):
+    - CJBaseUtil/CJManager/CJLocationChangeManager (= 0.5.0)
+    - CJBaseUtil/CJManager/CJModuleManager (= 0.5.0)
+    - CJBaseUtil/CJManager/CJSuspendWindowManager (= 0.5.0)
+    - CJBaseUtil/CJManager/CJTimerManager (= 0.5.0)
+  - CJBaseUtil/CJManager/CJLocationChangeManager (0.5.0):
     - CJBaseUtil/CJDateUtil
-  - CJBaseUtil/CJManager/CJModuleManager (0.4.5)
-  - CJBaseUtil/CJManager/CJSuspendWindowManager (0.4.5)
-  - CJBaseUtil/CJManager/CJTimerManager (0.4.5)
-  - CJBaseUtil/CJPinyinHelper (0.4.5):
+  - CJBaseUtil/CJManager/CJModuleManager (0.5.0)
+  - CJBaseUtil/CJManager/CJSuspendWindowManager (0.5.0)
+  - CJBaseUtil/CJManager/CJTimerManager (0.5.0)
+  - CJBaseUtil/CJPinyinHelper (0.5.0):
     - PinYin4Objc
-  - CJBaseUtil/CJQRCodeUtil (0.4.5)
+  - CJBaseUtil/CJQRCodeUtil (0.5.0)
   - CJFile/CJFileManager (0.0.9)
   - CJFile/CJFileModel (0.0.9)
   - CJFoundation (0.1.2):
@@ -224,10 +220,10 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
-  CJBaseHelper: 1fa083b804a5d80d6ff89b6aa042cd84966cddd8
+  CJBaseHelper: 4c113bd20eb170d717636ee84aa3f9ce8d7d229b
   CJBaseTest: a6b62dee02a75d1eb4b2a9d45e87a7eb13ce91cd
   CJBaseUIKit: afc0c59dce4e5007fe4a635392fdea0ef36a2b9d
-  CJBaseUtil: 13b3ec7316c6ce241bc84269aa73ce4cd576902c
+  CJBaseUtil: 010753c4b847cd04b4eee83fa7b5e196a4b1bfd8
   CJFile: 6c1e6d55b3b94e8afbaa9f413f131301d15fdc48
   CJFoundation: 3bc4a4783007891918f26c812be3fc7b10547c1e
   CJPicker: c33099d47323271b91c2ce112976d1bee19a70ce
@@ -251,6 +247,6 @@ SPEC CHECKSUMS:
   WebViewJavascriptBridge: 7f5bc4d3581e672e8f32bd0f812d54bc69bb8e29
   YYText: 5c461d709e24d55a182d1441c41dc639a18a4849
 
-PODFILE CHECKSUM: 1fa8c1a4405f8f5252b36999398c38b77a6eb785
+PODFILE CHECKSUM: ed1cfe655efdc6608d5c9d420715174b8fd5a4c3
 
-COCOAPODS: 1.5.3
+COCOAPODS: 1.5.2

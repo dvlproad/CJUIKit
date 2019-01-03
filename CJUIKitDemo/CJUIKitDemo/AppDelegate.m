@@ -28,9 +28,6 @@
     NSString *iString = [[NSString alloc] initWithFormat:@"%zd", i];
     NSLog(@"iString = %@", iString);
     
-    CJLog(@"测试环境写过log");
-    CJAppLog(CJAppLogTypeDEBUG, @"0", @"测试环境写过log");
-    
     YunInstallUncaughtExceptionHandler();
     
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
@@ -40,8 +37,7 @@
     
     
     // 设置主窗口,并设置根控制器
-    self.window = [[UIWindow alloc]init];
-    self.window.frame = [UIScreen mainScreen].bounds;
+    self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     self.window.rootViewController = [self getMainRootViewController];
     [self.window makeKeyAndVisible];
     

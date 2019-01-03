@@ -173,7 +173,6 @@ CJBaseUIKit/UIButton：按钮 及 CJBadgeButton
 > [< 返回目录](#目录)
 
 >
-- CJBaseUtil/CJLog：日志输出工具
 - CJBaseUtil/CJIndentedStringUtil：将类转成字符串，并缩进的工具
 - CJBaseUtil/CJAppLastUtil：获取APP上次退出时候的信息工具
 - CJBaseUtil/CJDataUtil：数据工具(包含分类、排序、搜索以及一些基本的数据模型等)
@@ -269,6 +268,10 @@ CJBaseUIKit/UIButton：按钮 及 CJBadgeButton
 > 1. 转移CJDataEmptyView到CJBaseUIKit上
 
 #### CJBaseUtil
+
+* 2019-01-03 V0.5.0
+> 1. 将 `CJLog`从CJBaseUtil中转移到CJMonitor中
+
 * 2018-08-29 V0.3.1
 
 > 1. 在`CJLog`里增加`CJLogViewWindow`一个在 iOS 设备屏幕上实时打印 Log 的小工具；

@@ -49,6 +49,7 @@
 		7850B71320937E85008F4A21 /* WelcomeViewToPop.m in Sources */ = {isa = PBXBuildFile; fileRef = 7850B70C20937E85008F4A21 /* WelcomeViewToPop.m */; };
 		7850B71420937E85008F4A21 /* WelcomePopupView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7850B71020937E85008F4A21 /* WelcomePopupView.m */; };
 		7852D9DA216EFFBE00E50A39 /* LockGateKeeperViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7852D9D9216EFFBE00E50A39 /* LockGateKeeperViewController.m */; };
+		7861852C21D3630B004B71FF /* AppCommon.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7861852B21D3630B004B71FF /* AppCommon.xcassets */; };
 		7868276021AE926700FCCDE5 /* AppAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7868275F21AE926700FCCDE5 /* AppAssets.xcassets */; };
 		7868277B21AF01BA00FCCDE5 /* bgCar@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7868277A21AF01B800FCCDE5 /* bgCar@2x.jpg */; };
 		7868277E21AF027200FCCDE5 /* header@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7868277C21AF027100FCCDE5 /* header@2x.jpg */; };
@@ -109,9 +110,6 @@
 		78A4E1B42173A0D9005FEADD /* DemoChangeEnvironmentViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 78A4E1B32173A0D8005FEADD /* DemoChangeEnvironmentViewModel.m */; };
 		78A4E1D52175EB93005FEADD /* NavigationBarNormalChangeBGViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78A4E1D42175EB93005FEADD /* NavigationBarNormalChangeBGViewController.m */; };
 		78A621A921319723004DA046 /* SuspendWindowViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78A621A821319723004DA046 /* SuspendWindowViewController.m */; };
-		78A621D12135BC82004DA046 /* LogSuspendWindowViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78A621D02135BC82004DA046 /* LogSuspendWindowViewController.m */; };
-		78A621D52135C040004DA046 /* LogViewViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 78A621D22135C03F004DA046 /* LogViewViewController.xib */; };
-		78A621D62135C040004DA046 /* LogViewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78A621D42135C040004DA046 /* LogViewViewController.m */; };
 		78A621DC2135C713004DA046 /* DemoSuspendWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 78A621D92135C713004DA046 /* DemoSuspendWindow.m */; };
 		78A621E02135C78B004DA046 /* DemoSuspendWindow+CJSuspendWindowManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 78A621DF2135C78B004DA046 /* DemoSuspendWindow+CJSuspendWindowManager.m */; };
 		78A621E72135C925004DA046 /* DemoSuspendWindowRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78A621E52135C924004DA046 /* DemoSuspendWindowRootViewController.m */; };
@@ -240,8 +238,6 @@
 		807F126C20B5123A0008B748 /* animationBg02.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 807F126A20B512390008B748 /* animationBg02.jpg */; };
 		807F127020B51C390008B748 /* animationBg01.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 807F126F20B51C390008B748 /* animationBg01.jpg */; };
 		808B977420B7B54600910E45 /* CJAppVersionUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 808B977320B7B54500910E45 /* CJAppVersionUtil.m */; };
-		808B983320B7F73300910E45 /* LogUtilViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 808B983120B7F73300910E45 /* LogUtilViewController.m */; };
-		808B983420B7F73300910E45 /* LogUtilViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 808B983220B7F73300910E45 /* LogUtilViewController.xib */; };
 		808BF3242019C3E900511F7C /* YunUncaughtExceptionHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 808BF3222019C3E900511F7C /* YunUncaughtExceptionHandler.m */; };
 		808DE5E720DA0586003E08F1 /* CJDecimalUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 808DE5E520DA0586003E08F1 /* CJDecimalUtil.m */; };
 		808E3C472109C5B0009E3924 /* StringEventViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 808E3C452109C5B0009E3924 /* StringEventViewController.m */; };
@@ -448,6 +444,7 @@
 		7850B71020937E85008F4A21 /* WelcomePopupView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WelcomePopupView.m; sourceTree = "<group>"; };
 		7852D9D8216EFFBE00E50A39 /* LockGateKeeperViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LockGateKeeperViewController.h; sourceTree = "<group>"; };
 		7852D9D9216EFFBE00E50A39 /* LockGateKeeperViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LockGateKeeperViewController.m; sourceTree = "<group>"; };
+		7861852B21D3630B004B71FF /* AppCommon.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = AppCommon.xcassets; sourceTree = "<group>"; };
 		7868275F21AE926700FCCDE5 /* AppAssets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = AppAssets.xcassets; sourceTree = "<group>"; };
 		7868277A21AF01B800FCCDE5 /* bgCar@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "bgCar@2x.jpg"; sourceTree = "<group>"; };
 		7868277C21AF027100FCCDE5 /* header@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "header@2x.jpg"; sourceTree = "<group>"; };
@@ -536,11 +533,6 @@
 		78A4E1D42175EB93005FEADD /* NavigationBarNormalChangeBGViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NavigationBarNormalChangeBGViewController.m; sourceTree = "<group>"; };
 		78A621A721319723004DA046 /* SuspendWindowViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SuspendWindowViewController.h; sourceTree = "<group>"; };
 		78A621A821319723004DA046 /* SuspendWindowViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SuspendWindowViewController.m; sourceTree = "<group>"; };
-		78A621CF2135BC81004DA046 /* LogSuspendWindowViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LogSuspendWindowViewController.h; sourceTree = "<group>"; };
-		78A621D02135BC82004DA046 /* LogSuspendWindowViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LogSuspendWindowViewController.m; sourceTree = "<group>"; };
-		78A621D22135C03F004DA046 /* LogViewViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LogViewViewController.xib; sourceTree = "<group>"; };
-		78A621D32135C03F004DA046 /* LogViewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LogViewViewController.h; sourceTree = "<group>"; };
-		78A621D42135C040004DA046 /* LogViewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LogViewViewController.m; sourceTree = "<group>"; };
 		78A621D92135C713004DA046 /* DemoSuspendWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DemoSuspendWindow.m; sourceTree = "<group>"; };
 		78A621DB2135C713004DA046 /* DemoSuspendWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DemoSuspendWindow.h; sourceTree = "<group>"; };
 		78A621DE2135C78B004DA046 /* DemoSuspendWindow+CJSuspendWindowManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DemoSuspendWindow+CJSuspendWindowManager.h"; sourceTree = "<group>"; };
@@ -746,9 +738,6 @@
 		807F126F20B51C390008B748 /* animationBg01.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = animationBg01.jpg; sourceTree = "<group>"; };
 		808B977220B7B54500910E45 /* CJAppVersionUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJAppVersionUtil.h; sourceTree = "<group>"; };
 		808B977320B7B54500910E45 /* CJAppVersionUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJAppVersionUtil.m; sourceTree = "<group>"; };
-		808B983020B7F73300910E45 /* LogUtilViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LogUtilViewController.h; sourceTree = "<group>"; };
-		808B983120B7F73300910E45 /* LogUtilViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LogUtilViewController.m; sourceTree = "<group>"; };
-		808B983220B7F73300910E45 /* LogUtilViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LogUtilViewController.xib; sourceTree = "<group>"; };
 		808BF3222019C3E900511F7C /* YunUncaughtExceptionHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YunUncaughtExceptionHandler.m; sourceTree = "<group>"; };
 		808BF3232019C3E900511F7C /* YunUncaughtExceptionHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YunUncaughtExceptionHandler.h; sourceTree = "<group>"; };
 		808DE5E520DA0586003E08F1 /* CJDecimalUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJDecimalUtil.m; sourceTree = "<group>"; };
@@ -1377,6 +1366,7 @@
 			isa = PBXGroup;
 			children = (
 				7868278021AF02E000FCCDE5 /* bg@2x.jpg */,
+				7861852B21D3630B004B71FF /* AppCommon.xcassets */,
 				7868275F21AE926700FCCDE5 /* AppAssets.xcassets */,
 				78B90E66218B49CF00776584 /* MainAsset.xcassets */,
 				8014A2A11FA3137D00DDDB5A /* ThirdPartIcon.xcassets */,
@@ -1860,21 +1850,6 @@
 				808B977320B7B54500910E45 /* CJAppVersionUtil.m */,
 			);
 			path = TempPart;
-			sourceTree = "<group>";
-		};
-		808B982F20B7F71B00910E45 /* LogDemo */ = {
-			isa = PBXGroup;
-			children = (
-				808B983020B7F73300910E45 /* LogUtilViewController.h */,
-				808B983120B7F73300910E45 /* LogUtilViewController.m */,
-				808B983220B7F73300910E45 /* LogUtilViewController.xib */,
-				78A621D32135C03F004DA046 /* LogViewViewController.h */,
-				78A621D42135C040004DA046 /* LogViewViewController.m */,
-				78A621D22135C03F004DA046 /* LogViewViewController.xib */,
-				78A621CF2135BC81004DA046 /* LogSuspendWindowViewController.h */,
-				78A621D02135BC82004DA046 /* LogSuspendWindowViewController.m */,
-			);
-			path = LogDemo;
 			sourceTree = "<group>";
 		};
 		808BF3212019C3E900511F7C /* Utils */ = {
@@ -2414,7 +2389,6 @@
 				808E3C442109C5B0009E3924 /* StringUtilDemo */,
 				8008D7CD20E5CF5700F98EF6 /* CallSystemUtilDemo */,
 				8060C48420E0D5EF0093B14E /* ValueUtilDemo */,
-				808B982F20B7F71B00910E45 /* LogDemo */,
 				800E07D72016CCF500799B78 /* DataUtilDemo */,
 				800E07DB2016CCF500799B78 /* DeviceInfoDemo */,
 				800E07D62016CCF500799B78 /* KeyboardUtilDemo */,
@@ -2587,7 +2561,6 @@
 				7880E6F7213C2C4C009C9BCF /* CJRandomNameUtil.txt in Resources */,
 				7868277F21AF027200FCCDE5 /* bgSky@2x.jpg in Resources */,
 				80FF90951FC5649F00E437CF /* SHeaderHome2.xib in Resources */,
-				808B983420B7F73300910E45 /* LogUtilViewController.xib in Resources */,
 				80FF90381FC5649E00E437CF /* SvDemo_Refresh.xib in Resources */,
 				7850B70820937C5A008F4A21 /* PopupInWindowVC.xib in Resources */,
 				787FDB6520500B1F008A46E3 /* plus@2x.png in Resources */,
@@ -2604,6 +2577,7 @@
 				803323A020299AD7001DACF1 /* MemoryADExample05.jpg in Resources */,
 				781C737321BA65C90090080C /* add_common_icon@2x.png in Resources */,
 				7850B70520937C5A008F4A21 /* ShowDropDownViewController.xib in Resources */,
+				7861852C21D3630B004B71FF /* AppCommon.xcassets in Resources */,
 				8033239E20299AD7001DACF1 /* MemoryAD29.jpg in Resources */,
 				787FDB9020500B5C008A46E3 /* icon_ddlb_hd@2x.png in Resources */,
 				7850B70620937C5A008F4A21 /* PopupInViewVC.xib in Resources */,
@@ -2662,7 +2636,6 @@
 				8033239420299AD7001DACF1 /* MemoryADExample01.jpg in Resources */,
 				80FF90AB1FC5649F00E437CF /* EasyScaleHeadView.xib in Resources */,
 				80D71EAA2090277700D2DB68 /* CJUIKitBaseHomeViewController.xib in Resources */,
-				78A621D52135C040004DA046 /* LogViewViewController.xib in Resources */,
 				7868278121AF02E000FCCDE5 /* bg@2x.jpg in Resources */,
 				781C737121BA65C90090080C /* minus_common_icon@3x.png in Resources */,
 				803323A920299AD7001DACF1 /* MemoryADTime01.jpg in Resources */,
@@ -2864,7 +2837,6 @@
 				801F75D820A040D800A2E027 /* BBXDAreaCodeTextField.m in Sources */,
 				803323C120299AD7001DACF1 /* cvSupplementaryFoot.m in Sources */,
 				803323C220299AD7001DACF1 /* cvSupplementaryHead.m in Sources */,
-				78A621D12135BC82004DA046 /* LogSuspendWindowViewController.m in Sources */,
 				78B6C2EE2159D8AF00D5864E /* DemoBusPassengerOrderModel.m in Sources */,
 				78C8148F216E11AF00A6B190 /* EChildViewController.m in Sources */,
 				800E07E92016CD1500799B78 /* KeyboardUtilViewController.m in Sources */,
@@ -2882,7 +2854,6 @@
 				783A4A19219BC73500CBF4FC /* NSObject+CJSharedInstance.m in Sources */,
 				800E07E42016CCF500799B78 /* DeviceInfoViewController.m in Sources */,
 				80FF91341FC5668700E437CF /* NSDictionary+CJConsoleLog.m in Sources */,
-				78A621D62135C040004DA046 /* LogViewViewController.m in Sources */,
 				788113C5219958FF00D1630D /* InheritableSharedInstanceClass.m in Sources */,
 				787FDB5820500B01008A46E3 /* TextFieldViewController.m in Sources */,
 				78A621E72135C925004DA046 /* DemoSuspendWindowRootViewController.m in Sources */,
@@ -2900,7 +2871,6 @@
 				80CC7F8D200F7EBE0017878A /* OpenTableViewController2.m in Sources */,
 				808E3C472109C5B0009E3924 /* StringEventViewController.m in Sources */,
 				801F75DC20A040D800A2E027 /* BBXDUserNameTextField.m in Sources */,
-				808B983320B7F73300910E45 /* LogUtilViewController.m in Sources */,
 				80FF90AE1FC5649F00E437CF /* EasyScaleHeadView.m in Sources */,
 				80FF90A21FC5649F00E437CF /* SampleViewController.m in Sources */,
 				78E1895D2177835700B8781A /* ViewHomeViewController.m in Sources */,

@@ -35,7 +35,7 @@ FOUNDATION_EXTERN NSInteger NSCalendarCJHelper_monthInterval(NSDate *fromDate, N
 /// 计算两个时间，相差的天数
 FOUNDATION_EXTERN NSInteger NSCalendarCJHelper_dayInterval(NSDate *fromDate, NSDate *toDate);
 
-/// 计算从birthdayDate到现在的年龄
+/// 计算从birthdayDate到现在的年龄(nominalAge是否虚岁)
 FOUNDATION_EXTERN NSInteger NSCalendarCJHelper_age(NSDate *birthdayDate, BOOL nominalAge);
 
 
