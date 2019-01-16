@@ -1,0 +1,68 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>JS交互</title>
+        
+        <style>
+            
+            body {
+                font-size:30px;
+                text-align:center;
+            }
+        
+        * {
+            margin: 30px;
+            padding: 0;
+        }
+        
+        h1{
+            color: red;
+        }
+        
+        button{
+            width: 300px;
+            height: 50px;
+            font-size: 30px;
+        }
+        
+            </style>
+        
+    </head>
+    
+    <body>
+        
+        <h1>WKWebview与原生交互</h1>
+        <h2></h2>
+        <button onclick="alertAction()">点击弹框</button>
+        <button onclick="buttonAction()">点击向iOS传数据</button>
+        
+        
+    </body>
+    
+    <script>
+        
+        
+        
+        function navButtonAction(name,age){
+            var dic = {name:name,age:age};
+            return dic;
+        }
+    
+    function alertAction(){
+        alert("哈哈哈");
+    }
+    
+    function buttonAction(){
+        try{
+            <!--js向ios传递数据-->
+            window.webkit.messageHandlers.show.postMessage("我是js传递过来的数据");
+        }catch (e){
+            
+        }
+    }
+    
+        </script>
+    
+</html>

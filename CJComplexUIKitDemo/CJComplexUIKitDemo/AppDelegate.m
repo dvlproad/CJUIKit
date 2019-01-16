@@ -22,9 +22,6 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    CJLog(@"测试环境写过log");
-    CJAppLog(CJAppLogTypeDEBUG, @"0", @"测试环境写过log");
-    
     YunInstallUncaughtExceptionHandler();
     
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{

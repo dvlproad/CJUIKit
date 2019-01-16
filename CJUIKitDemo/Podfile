@@ -79,6 +79,7 @@ target 'CJUIKitDemo' do
     pod 'CJFile', :subspecs => ['CJFileModel', 'CJFileManager']
     
     pod 'IQKeyboardManager'
+    pod 'WMPageController'  # 测试HUD在界面不显示时候的隐藏
 end
 
 target 'CJUIKitDemoTests' do

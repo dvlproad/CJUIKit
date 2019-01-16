@@ -1,1 +1,1 @@
-../../../../../CJBaseUIKit/CJBaseScrollView/CJCollectionView/CJOpenCollectionView/CJHeadAndCellHorizontalLayout.h
+../../../../../CJBaseUIKit/CJCollectionView/CJOpenCollectionView/CJHeadAndCellHorizontalLayout.h

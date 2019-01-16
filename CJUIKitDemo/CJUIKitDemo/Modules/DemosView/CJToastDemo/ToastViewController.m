@@ -9,6 +9,10 @@
 #import "ToastViewController.h"
 #import <CJBaseUIKit/CJToast.h>
 
+#import <CJBaseUIKit/CJMJRefreshNormalHeader.h>
+#import "TestProgressHUDViewController.h"
+#import "TestHUDHomeViewController.h"
+
 @interface ToastViewController ()  {
     
 }
@@ -18,11 +22,22 @@
 
 @implementation ToastViewController
 
+- (void)viewWillAppear:(BOOL)animated {
+    [self.tableView.mj_header beginRefreshing];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
     self.navigationItem.title = NSLocalizedString(@"Toast首页", nil);
+    
+    CJMJRefreshNormalHeader *header = [CJMJRefreshNormalHeader headerWithRefreshingBlock:^{
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            [self.tableView.mj_header endRefreshing];
+        });
+    }];
+    self.tableView.mj_header = header;
     
     NSMutableArray *sectionDataModels = [[NSMutableArray alloc] init];
     //Toast
@@ -106,6 +121,31 @@
         [sectionDataModels addObject:sectionDataModel];
     }
     
+    //ProgressHUD
+    {
+        CJSectionDataModel *sectionDataModel = [[CJSectionDataModel alloc] init];
+        sectionDataModel.theme = @"ProgressHUD";
+        {
+            CJModuleModel *toastModule = [[CJModuleModel alloc] init];
+            toastModule.title = @"测试2秒后自动消失";
+            toastModule.selector = @selector(testShowProgressHUD);
+            [sectionDataModel.values addObject:toastModule];
+        }
+        {
+            CJModuleModel *toastModule = [[CJModuleModel alloc] init];
+            toastModule.title = @"测试网路延迟时候，消失页面中的HUD是否消失";
+            toastModule.selector = @selector(testDoubleProgressHUD);
+            [sectionDataModel.values addObject:toastModule];
+        }
+        {
+            CJModuleModel *toastModule = [[CJModuleModel alloc] init];
+            toastModule.title = @"测试网路延迟时候，不显示页面中的HUD是否消失";
+            toastModule.classEntry = [TestHUDHomeViewController class];
+            [sectionDataModel.values addObject:toastModule];
+        }
+        [sectionDataModels addObject:sectionDataModel];
+    }
+    
     self.sectionDataModels = sectionDataModels;
     
     /* 添加系统菊花 */
@@ -118,6 +158,19 @@
     activityIndicator.center = self.tableView.center;
     self.activityIndicator = activityIndicator;
 }
+
+- (void)testShowProgressHUD {
+    [self showDemoProgressHUD];
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [self dismissDemoProgressHUD];
+    });
+}
+
+- (void)testDoubleProgressHUD {
+    TestProgressHUDViewController *viewController = [[TestProgressHUDViewController alloc] init];
+    [self.navigationController pushViewController:viewController animated:YES];
+}
+    
 
 - (void)showSystemActivityIndicator {
     [self.activityIndicator startAnimating];

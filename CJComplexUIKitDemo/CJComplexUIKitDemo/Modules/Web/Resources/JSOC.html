@@ -1,0 +1,59 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>JS交互</title>
+        
+        <style>
+            
+            body {
+                font-size:30px;
+                text-align:center;
+            }
+        
+        * {
+            margin: 30px;
+            padding: 0;
+        }
+        
+        h1{
+            color: red;
+        }
+        
+        button{
+            width: 300px;
+            height: 50px;
+            font-size: 30px;
+        }
+        
+            </style>
+        
+    </head>
+    
+    <body>
+        
+        <h1>WKWebview与原生交互</h1>
+        <h2></h2>
+        <button onclick="jsCallWebMethodAction()">JS调用自身的方法</button>
+        <div id="testParams" style = "center fontSize = 60">我等待被改</div>
+        
+        <button onclick="jsCallOCAction()">JS调用OC方法，并传递数据</button>
+    </body>
+    
+    <script>
+        function jsCallWebMethodAction(){
+            document.getElementById('testParams').innerHTML = "JS调用自身的方法--新";
+        }
+    
+    function jsCallOCAction(){
+        try{
+            <!--js向ios传递数据-->
+            window.webkit.messageHandlers.showWebText.postMessage("我是js传递过来的参数");
+        }catch (e){
+            
+        }
+    }
+        </script>
+    
+</html>

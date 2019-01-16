@@ -9,6 +9,7 @@
 #import "AppDelegate+WindowRootViewController.h"
 
 #import "ScrollViewHomeViewController.h"
+#import "WebHomeViewController.h"
 
 @implementation AppDelegate (WindowRootViewController)
 
@@ -23,15 +24,15 @@
     ③设置角标tabBarItem.badgeValue：如果没有设置图片，角标默认显示在左上角，设置了图片就会在图片的右上角显示
     */
     ScrollViewHomeViewController *homeViewController = [[ScrollViewHomeViewController alloc] init];
-    homeViewController.tabBarItem.title = NSLocalizedString(@"CJBaseUIKit", nil);
+    homeViewController.tabBarItem.title = NSLocalizedString(@"ScrollView", nil);
     homeViewController.tabBarItem.image = [[UIImage imageNamed:@"icons8-home"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     //homeViewController. = @"10";
     UINavigationController *homeNavigationController = [[UINavigationController alloc] initWithRootViewController:homeViewController];
     [tabBarController addChildViewController:homeNavigationController];
     
     
-    ScrollViewHomeViewController *scrollViewHomeViewController = [[ScrollViewHomeViewController alloc] init];
-    scrollViewHomeViewController.tabBarItem.title = NSLocalizedString(@"ScrollView", nil);
+    WebHomeViewController *scrollViewHomeViewController = [[WebHomeViewController alloc] init];
+    scrollViewHomeViewController.tabBarItem.title = NSLocalizedString(@"Web", nil);
     scrollViewHomeViewController.tabBarItem.image = [[UIImage imageNamed:@"icons8-calendar"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     UINavigationController *scrollViewHomeNavigationController = [[UINavigationController alloc] initWithRootViewController:scrollViewHomeViewController];
     [tabBarController addChildViewController:scrollViewHomeNavigationController];

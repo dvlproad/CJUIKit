@@ -33,6 +33,11 @@
 		7832810D1F41AA96008267E0 /* ProcessLineView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7832810C1F41AA96008267E0 /* ProcessLineView.m */; };
 		783A4A19219BC73500CBF4FC /* NSObject+CJSharedInstance.m in Sources */ = {isa = PBXBuildFile; fileRef = 783A4A18219BC73500CBF4FC /* NSObject+CJSharedInstance.m */; };
 		784A7216214C9DF000F8D144 /* MoreHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 784A7215214C9DF000F8D144 /* MoreHomeViewController.m */; };
+		784AB8D121E87E7900A3F51C /* TestProgressHUDViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 784AB8D021E87E7900A3F51C /* TestProgressHUDViewController.m */; };
+		784AB8E921E892FD00A3F51C /* TestHUDHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 784AB8E821E892FD00A3F51C /* TestHUDHomeViewController.m */; };
+		784AB8ED21E8960200A3F51C /* AHUDChildViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 784AB8EC21E8960200A3F51C /* AHUDChildViewController.m */; };
+		784AB8F021E8961100A3F51C /* BHUDChildViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 784AB8EF21E8961100A3F51C /* BHUDChildViewController.m */; };
+		784AB8F321E8962000A3F51C /* CHUDChildViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 784AB8F221E8962000A3F51C /* CHUDChildViewController.m */; };
 		784C87FF216F2B1D00AFEE7D /* SemaphoreGateKeeperViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 784C87FD216F2B1D00AFEE7D /* SemaphoreGateKeeperViewController.m */; };
 		7850B6FF20937C5A008F4A21 /* DragViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7850B6F020937C59008F4A21 /* DragViewController.xib */; };
 		7850B70020937C5A008F4A21 /* DragViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7850B6F120937C59008F4A21 /* DragViewController.m */; };
@@ -96,6 +101,8 @@
 		7885FC4A2156681F00B97DAA /* UIView+CJPopupInSuspendWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 7885FC482156681F00B97DAA /* UIView+CJPopupInSuspendWindow.m */; };
 		7885FC9321567BE000B97DAA /* DemoButtonFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 7885FC9221567BE000B97DAA /* DemoButtonFactory.m */; };
 		788A55FA21AFCE540011F993 /* DemoLabelFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 788A55F921AFCE540011F993 /* DemoLabelFactory.m */; };
+		789C443121EECB8B00181144 /* AppInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 789C443021EECB8B00181144 /* AppInfo.m */; };
+		789C443C21EECEE800181144 /* CJAppVersionUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 789C443A21EECEE700181144 /* CJAppVersionUtil.m */; };
 		789CAF181FB612B700AF8CD4 /* ChangeLog.md in Resources */ = {isa = PBXBuildFile; fileRef = 789CAE111FB612B600AF8CD4 /* ChangeLog.md */; };
 		789CAF251FB612B700AF8CD4 /* CJSingleTableViewCellDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 789CAE321FB612B600AF8CD4 /* CJSingleTableViewCellDataSource.m */; };
 		789CAF261FB612B700AF8CD4 /* CJSingleTableViewCellDataSource2.m in Sources */ = {isa = PBXBuildFile; fileRef = 789CAE341FB612B600AF8CD4 /* CJSingleTableViewCellDataSource2.m */; };
@@ -140,6 +147,8 @@
 		78C8148D216E11AF00A6B190 /* AChildViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78C81485216E11AF00A6B190 /* AChildViewController.m */; };
 		78C8148E216E11AF00A6B190 /* Home1.m in Sources */ = {isa = PBXBuildFile; fileRef = 78C81487216E11AF00A6B190 /* Home1.m */; };
 		78C8148F216E11AF00A6B190 /* EChildViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78C81488216E11AF00A6B190 /* EChildViewController.m */; };
+		78D33F0121E87AC200C04FC1 /* DemoProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 78D33EFC21E87AC200C04FC1 /* DemoProgressHUD.m */; };
+		78D33F0321E87AC200C04FC1 /* UIViewController+DemoProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 78D33F0021E87AC200C04FC1 /* UIViewController+DemoProgressHUD.m */; };
 		78E18952217778D900B8781A /* NavigationBarHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78E18951217778D900B8781A /* NavigationBarHomeViewController.m */; };
 		78E1895621777CB900B8781A /* CJUIKitBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78E1895521777CB900B8781A /* CJUIKitBaseViewController.m */; };
 		78E1895921777DC600B8781A /* CJUIKitBaseHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78E1895721777DC600B8781A /* CJUIKitBaseHomeViewController.m */; };
@@ -237,7 +246,6 @@
 		807F126020B507A30008B748 /* ViewAnimateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 807F125E20B507A30008B748 /* ViewAnimateViewController.m */; };
 		807F126C20B5123A0008B748 /* animationBg02.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 807F126A20B512390008B748 /* animationBg02.jpg */; };
 		807F127020B51C390008B748 /* animationBg01.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 807F126F20B51C390008B748 /* animationBg01.jpg */; };
-		808B977420B7B54600910E45 /* CJAppVersionUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 808B977320B7B54500910E45 /* CJAppVersionUtil.m */; };
 		808BF3242019C3E900511F7C /* YunUncaughtExceptionHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 808BF3222019C3E900511F7C /* YunUncaughtExceptionHandler.m */; };
 		808DE5E720DA0586003E08F1 /* CJDecimalUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 808DE5E520DA0586003E08F1 /* CJDecimalUtil.m */; };
 		808E3C472109C5B0009E3924 /* StringEventViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 808E3C452109C5B0009E3924 /* StringEventViewController.m */; };
@@ -418,6 +426,16 @@
 		783A4A18219BC73500CBF4FC /* NSObject+CJSharedInstance.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSObject+CJSharedInstance.m"; sourceTree = "<group>"; };
 		784A7214214C9DF000F8D144 /* MoreHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoreHomeViewController.h; sourceTree = "<group>"; };
 		784A7215214C9DF000F8D144 /* MoreHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoreHomeViewController.m; sourceTree = "<group>"; };
+		784AB8CF21E87E7900A3F51C /* TestProgressHUDViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestProgressHUDViewController.h; sourceTree = "<group>"; };
+		784AB8D021E87E7900A3F51C /* TestProgressHUDViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestProgressHUDViewController.m; sourceTree = "<group>"; };
+		784AB8E721E892FD00A3F51C /* TestHUDHomeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestHUDHomeViewController.h; sourceTree = "<group>"; };
+		784AB8E821E892FD00A3F51C /* TestHUDHomeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestHUDHomeViewController.m; sourceTree = "<group>"; };
+		784AB8EB21E8960200A3F51C /* AHUDChildViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AHUDChildViewController.h; sourceTree = "<group>"; };
+		784AB8EC21E8960200A3F51C /* AHUDChildViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AHUDChildViewController.m; sourceTree = "<group>"; };
+		784AB8EE21E8961100A3F51C /* BHUDChildViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BHUDChildViewController.h; sourceTree = "<group>"; };
+		784AB8EF21E8961100A3F51C /* BHUDChildViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BHUDChildViewController.m; sourceTree = "<group>"; };
+		784AB8F121E8962000A3F51C /* CHUDChildViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CHUDChildViewController.h; sourceTree = "<group>"; };
+		784AB8F221E8962000A3F51C /* CHUDChildViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CHUDChildViewController.m; sourceTree = "<group>"; };
 		784C87FD216F2B1D00AFEE7D /* SemaphoreGateKeeperViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SemaphoreGateKeeperViewController.m; sourceTree = "<group>"; };
 		784C87FE216F2B1D00AFEE7D /* SemaphoreGateKeeperViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SemaphoreGateKeeperViewController.h; sourceTree = "<group>"; };
 		7850B6EF20937C59008F4A21 /* DragViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DragViewController.h; sourceTree = "<group>"; };
@@ -509,6 +527,10 @@
 		7885FC9221567BE000B97DAA /* DemoButtonFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DemoButtonFactory.m; sourceTree = "<group>"; };
 		788A55F821AFCE540011F993 /* DemoLabelFactory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DemoLabelFactory.h; sourceTree = "<group>"; };
 		788A55F921AFCE540011F993 /* DemoLabelFactory.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DemoLabelFactory.m; sourceTree = "<group>"; };
+		789C442F21EECB8B00181144 /* AppInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppInfo.h; sourceTree = "<group>"; };
+		789C443021EECB8B00181144 /* AppInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppInfo.m; sourceTree = "<group>"; };
+		789C443A21EECEE700181144 /* CJAppVersionUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJAppVersionUtil.m; sourceTree = "<group>"; };
+		789C443B21EECEE800181144 /* CJAppVersionUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJAppVersionUtil.h; sourceTree = "<group>"; };
 		789CAB597AD073D5F637D193 /* Pods-CJUIKitDemoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CJUIKitDemoTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-CJUIKitDemoTests/Pods-CJUIKitDemoTests.release.xcconfig"; sourceTree = "<group>"; };
 		789CAE111FB612B600AF8CD4 /* ChangeLog.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = ChangeLog.md; sourceTree = "<group>"; };
 		789CAE311FB612B600AF8CD4 /* CJSingleTableViewCellDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJSingleTableViewCellDataSource.h; sourceTree = "<group>"; };
@@ -590,6 +612,10 @@
 		78C81486216E11AF00A6B190 /* BChildViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BChildViewController.h; sourceTree = "<group>"; };
 		78C81487216E11AF00A6B190 /* Home1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Home1.m; sourceTree = "<group>"; };
 		78C81488216E11AF00A6B190 /* EChildViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EChildViewController.m; sourceTree = "<group>"; };
+		78D33EFC21E87AC200C04FC1 /* DemoProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DemoProgressHUD.m; sourceTree = "<group>"; };
+		78D33EFD21E87AC200C04FC1 /* UIViewController+DemoProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+DemoProgressHUD.h"; sourceTree = "<group>"; };
+		78D33EFF21E87AC200C04FC1 /* DemoProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DemoProgressHUD.h; sourceTree = "<group>"; };
+		78D33F0021E87AC200C04FC1 /* UIViewController+DemoProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+DemoProgressHUD.m"; sourceTree = "<group>"; };
 		78E18950217778D900B8781A /* NavigationBarHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NavigationBarHomeViewController.h; sourceTree = "<group>"; };
 		78E18951217778D900B8781A /* NavigationBarHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NavigationBarHomeViewController.m; sourceTree = "<group>"; };
 		78E1895421777CB900B8781A /* CJUIKitBaseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CJUIKitBaseViewController.h; sourceTree = "<group>"; };
@@ -736,8 +762,6 @@
 		807F125E20B507A30008B748 /* ViewAnimateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewAnimateViewController.m; sourceTree = "<group>"; };
 		807F126A20B512390008B748 /* animationBg02.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = animationBg02.jpg; sourceTree = "<group>"; };
 		807F126F20B51C390008B748 /* animationBg01.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = animationBg01.jpg; sourceTree = "<group>"; };
-		808B977220B7B54500910E45 /* CJAppVersionUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJAppVersionUtil.h; sourceTree = "<group>"; };
-		808B977320B7B54500910E45 /* CJAppVersionUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJAppVersionUtil.m; sourceTree = "<group>"; };
 		808BF3222019C3E900511F7C /* YunUncaughtExceptionHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YunUncaughtExceptionHandler.m; sourceTree = "<group>"; };
 		808BF3232019C3E900511F7C /* YunUncaughtExceptionHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YunUncaughtExceptionHandler.h; sourceTree = "<group>"; };
 		808DE5E520DA0586003E08F1 /* CJDecimalUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJDecimalUtil.m; sourceTree = "<group>"; };
@@ -1012,7 +1036,6 @@
 				780E460C1E5DF87B00980127 /* Main.storyboard */,
 				789A19681E61B87D008081E3 /* Resources */,
 				780E46031E5DF87B00980127 /* Supporting Files */,
-				808B977120B7B54500910E45 /* TempPart */,
 				808BF3212019C3E900511F7C /* Utils */,
 			);
 			path = CJUIKitDemo;
@@ -1139,6 +1162,19 @@
 			path = DemoMore;
 			sourceTree = "<group>";
 		};
+		784AB8EA21E895B200A3F51C /* ChildViewController */ = {
+			isa = PBXGroup;
+			children = (
+				784AB8EB21E8960200A3F51C /* AHUDChildViewController.h */,
+				784AB8EC21E8960200A3F51C /* AHUDChildViewController.m */,
+				784AB8EE21E8961100A3F51C /* BHUDChildViewController.h */,
+				784AB8EF21E8961100A3F51C /* BHUDChildViewController.m */,
+				784AB8F121E8962000A3F51C /* CHUDChildViewController.h */,
+				784AB8F221E8962000A3F51C /* CHUDChildViewController.m */,
+			);
+			path = ChildViewController;
+			sourceTree = "<group>";
+		};
 		7850B6EE20937C59008F4A21 /* ViewDragDemo */ = {
 			isa = PBXGroup;
 			children = (
@@ -1215,6 +1251,7 @@
 				7808D5B0217079E5007FC851 /* DemoBarButtonItemFactory */,
 				7852D9DB216F104000E50A39 /* DemoButtonFactory */,
 				788A55F721AFCE3C0011F993 /* DemoLabel */,
+				78D33EFB21E87AC200C04FC1 /* DemoProgressHUD */,
 				78AB83BF21B96D7000853E21 /* DemoTextFieldFactory */,
 			);
 			path = CommonUI;
@@ -1507,7 +1544,7 @@
 		78B90E68218B4B5400776584 /* Service */ = {
 			isa = PBXGroup;
 			children = (
-				80E7E63220AC227A000F762D /* AppInfoManager */,
+				80E7E63220AC227A000F762D /* AppInfo */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -1531,6 +1568,17 @@
 				78C81487216E11AF00A6B190 /* Home1.m */,
 			);
 			path = ChildViewController;
+			sourceTree = "<group>";
+		};
+		78D33EFB21E87AC200C04FC1 /* DemoProgressHUD */ = {
+			isa = PBXGroup;
+			children = (
+				78D33EFF21E87AC200C04FC1 /* DemoProgressHUD.h */,
+				78D33EFC21E87AC200C04FC1 /* DemoProgressHUD.m */,
+				78D33EFD21E87AC200C04FC1 /* UIViewController+DemoProgressHUD.h */,
+				78D33F0021E87AC200C04FC1 /* UIViewController+DemoProgressHUD.m */,
+			);
+			path = DemoProgressHUD;
 			sourceTree = "<group>";
 		};
 		78E1895321777C9700B8781A /* Base */ = {
@@ -1625,6 +1673,11 @@
 			children = (
 				800F3B622011899400A5C326 /* ToastViewController.h */,
 				800F3B632011899400A5C326 /* ToastViewController.m */,
+				784AB8E721E892FD00A3F51C /* TestHUDHomeViewController.h */,
+				784AB8E821E892FD00A3F51C /* TestHUDHomeViewController.m */,
+				784AB8CF21E87E7900A3F51C /* TestProgressHUDViewController.h */,
+				784AB8D021E87E7900A3F51C /* TestProgressHUDViewController.m */,
+				784AB8EA21E895B200A3F51C /* ChildViewController */,
 			);
 			path = CJToastDemo;
 			sourceTree = "<group>";
@@ -1843,18 +1896,11 @@
 			path = ViewAnimateDemo;
 			sourceTree = "<group>";
 		};
-		808B977120B7B54500910E45 /* TempPart */ = {
-			isa = PBXGroup;
-			children = (
-				808B977220B7B54500910E45 /* CJAppVersionUtil.h */,
-				808B977320B7B54500910E45 /* CJAppVersionUtil.m */,
-			);
-			path = TempPart;
-			sourceTree = "<group>";
-		};
 		808BF3212019C3E900511F7C /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				789C443B21EECEE800181144 /* CJAppVersionUtil.h */,
+				789C443A21EECEE700181144 /* CJAppVersionUtil.m */,
 				808BF3222019C3E900511F7C /* YunUncaughtExceptionHandler.m */,
 				808BF3232019C3E900511F7C /* YunUncaughtExceptionHandler.h */,
 			);
@@ -1924,13 +1970,15 @@
 			path = CJAlertDemo;
 			sourceTree = "<group>";
 		};
-		80E7E63220AC227A000F762D /* AppInfoManager */ = {
+		80E7E63220AC227A000F762D /* AppInfo */ = {
 			isa = PBXGroup;
 			children = (
 				80E7E63320AC227A000F762D /* AppInfoManager.h */,
 				80E7E63420AC227A000F762D /* AppInfoManager.m */,
+				789C442F21EECB8B00181144 /* AppInfo.h */,
+				789C443021EECB8B00181144 /* AppInfo.m */,
 			);
-			path = AppInfoManager;
+			path = AppInfo;
 			sourceTree = "<group>";
 		};
 		80FF8F0A1FC5649E00E437CF /* Modules */ = {
@@ -2838,12 +2886,14 @@
 				803323C120299AD7001DACF1 /* cvSupplementaryFoot.m in Sources */,
 				803323C220299AD7001DACF1 /* cvSupplementaryHead.m in Sources */,
 				78B6C2EE2159D8AF00D5864E /* DemoBusPassengerOrderModel.m in Sources */,
+				784AB8D121E87E7900A3F51C /* TestProgressHUDViewController.m in Sources */,
 				78C8148F216E11AF00A6B190 /* EChildViewController.m in Sources */,
 				800E07E92016CD1500799B78 /* KeyboardUtilViewController.m in Sources */,
 				80FF90391FC5649F00E437CF /* ScrollViewController.m in Sources */,
 				801F75D920A040D800A2E027 /* BBXDPasswordTextField.m in Sources */,
 				80FF91A21FC5682B00E437CF /* PullScaleTopImageViewController.m in Sources */,
 				78C8148C216E11AF00A6B190 /* DChildViewController.m in Sources */,
+				784AB8ED21E8960200A3F51C /* AHUDChildViewController.m in Sources */,
 				789CAF251FB612B700AF8CD4 /* CJSingleTableViewCellDataSource.m in Sources */,
 				788113CE21996A3A00D1630D /* SubInheritableSharedInstanceClass.m in Sources */,
 				803323AF20299AD7001DACF1 /* DetailCell.m in Sources */,
@@ -2856,6 +2906,7 @@
 				80FF91341FC5668700E437CF /* NSDictionary+CJConsoleLog.m in Sources */,
 				788113C5219958FF00D1630D /* InheritableSharedInstanceClass.m in Sources */,
 				787FDB5820500B01008A46E3 /* TextFieldViewController.m in Sources */,
+				784AB8F021E8961100A3F51C /* BHUDChildViewController.m in Sources */,
 				78A621E72135C925004DA046 /* DemoSuspendWindowRootViewController.m in Sources */,
 				8060C48C20E0D5EF0093B14E /* AccuracyStringViewController.m in Sources */,
 				787FDB9820500B5C008A46E3 /* ShimmeringSwitchSlider.m in Sources */,
@@ -2878,6 +2929,7 @@
 				80FF90B11FC5649F00E437CF /* NavigationBarChangePositonViewController.m in Sources */,
 				803323B220299AD7001DACF1 /* OpenCollectionViewController.m in Sources */,
 				7850B71420937E85008F4A21 /* WelcomePopupView.m in Sources */,
+				789C443121EECB8B00181144 /* AppInfo.m in Sources */,
 				80FF908C1FC5649F00E437CF /* SHeaderHome2.m in Sources */,
 				78B6C2E02159D20000D5864E /* DemoUser.m in Sources */,
 				78E1899E2177874B00B8781A /* SliderHomeViewController.m in Sources */,
@@ -2889,6 +2941,8 @@
 				80FF908B1FC5649F00E437CF /* TableViewController.m in Sources */,
 				80FF91A01FC5682B00E437CF /* ProcessLineViewController.m in Sources */,
 				78E1895621777CB900B8781A /* CJUIKitBaseViewController.m in Sources */,
+				784AB8F321E8962000A3F51C /* CHUDChildViewController.m in Sources */,
+				78D33F0321E87AC200C04FC1 /* UIViewController+DemoProgressHUD.m in Sources */,
 				78226A6D21A4012B002167F2 /* DemoAlert.m in Sources */,
 				787FDB8620500B5C008A46E3 /* SliderViewController.m in Sources */,
 				7850B70020937C5A008F4A21 /* DragViewController.m in Sources */,
@@ -2917,6 +2971,7 @@
 				80FF90351FC5649E00E437CF /* TestDataUtil.m in Sources */,
 				788113CB21996A2600D1630D /* SubNormalSharedInstanceClass.m in Sources */,
 				80FF91951FC5682B00E437CF /* FoundationHomeViewController.m in Sources */,
+				789C443C21EECEE800181144 /* CJAppVersionUtil.m in Sources */,
 				80FF90851FC5649F00E437CF /* TvDemo_Complex+Event.m in Sources */,
 				80FF902B1FC5649E00E437CF /* MJExtensionViewController.m in Sources */,
 				788113C22199583000D1630D /* NormalSharedInstanceClass.m in Sources */,
@@ -2933,6 +2988,7 @@
 				80FF90B01FC5649F00E437CF /* NavigationBarScrollChangeBGViewController.m in Sources */,
 				7832810D1F41AA96008267E0 /* ProcessLineView.m in Sources */,
 				805598B51FF5D612009DC61C /* ValidateStringViewController.m in Sources */,
+				784AB8E921E892FD00A3F51C /* TestHUDHomeViewController.m in Sources */,
 				80FF91971FC5682B00E437CF /* EncryptStringViewController.m in Sources */,
 				78B6C2E92159D84800D5864E /* DemoBusFlightStationOnOffDetailModel.m in Sources */,
 				78A0D043216B32D100EFAD67 /* BadgeButtonViewController.m in Sources */,
@@ -2955,6 +3011,7 @@
 				80500388211C3A29002A2306 /* PresentBaseViewController.m in Sources */,
 				7850B70420937C5A008F4A21 /* ShowDropDownViewController.m in Sources */,
 				80D0120A210336B900D1EDF0 /* BeChangeViewController.m in Sources */,
+				78D33F0121E87AC200C04FC1 /* DemoProgressHUD.m in Sources */,
 				80FF909F1FC5649F00E437CF /* NestedXibViewController.m in Sources */,
 				787FDB5620500B01008A46E3 /* SearchBarViewController.m in Sources */,
 				80FF91941FC5682B00E437CF /* TypeConvertViewController.m in Sources */,
@@ -2990,7 +3047,6 @@
 				80FF908E1FC5649F00E437CF /* MyOpenTableView.m in Sources */,
 				8008D7D220E5CF5700F98EF6 /* CallSystemViewController.m in Sources */,
 				78E189A8217796DF00B8781A /* EdgeLayoutViewController.m in Sources */,
-				808B977420B7B54600910E45 /* CJAppVersionUtil.m in Sources */,
 				781C737721BA6A170090080C /* TestValueChangeModel.m in Sources */,
 				78C8148E216E11AF00A6B190 /* Home1.m in Sources */,
 				78E189AB21781BD000B8781A /* TranslucentLayoutTableViewController.m in Sources */,

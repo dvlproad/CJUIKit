@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<!-- saved from url=(0049)http://www.bbxpc.com/app_html/about_us/about.html -->
+<html>
+    <head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        
+        <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+            <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+                <meta name="apple-mobile-web-app-status-bar-style" content="black">
+                    <meta name="apple-mobile-web-app-capable" content="yes">
+                        <!-- 删除苹果默认的工具栏和菜单栏 -->
+                        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+                            <!-- 设置苹果工具栏颜色 -->
+                            <meta name="format-detection" content="telephone=no, email=no">
+                                <!-- 忽略页面中的数字识别为电话，忽略email识别 -->
+                                <meta name="robots" content="noarchive">
+                                    <title>关于我们</title>
+                                    <link rel="stylesheet" href="./关于我们_files/about.css">
+                                        </head>
+    
+    <body>
+        <div class="content">
+            <div class="contactWay">
+                <div class="contactWay-list f-boh f-box imgbg1">
+                    <span class="f-box">热线电话</span>
+                    <span class="f-box f-bf1"><a class="list-right" href="tel:12580">12580</a></span>
+                </div>
+                <div class="contactWay-list f-boh f-box imgbg2">
+                    <span class="f-box">官方微信</span>
+                    <span class="f-box f-bf1"><a class="list-right">ourwechat</a></span>
+                </div>
+                <div class="contactWay-list f-boh f-box imgbg3">
+                    <span class="f-box">意见反馈</span>
+                    <span class="f-box f-bf1"><a class="list-right">suggetst@our.com</a></span>
+                </div>
+            </div>
+            
+            <button type="button" onclick="secondClick()">点击Web上的按钮!</button>
+            <p>
+            <input type="text" id="text1" value="返回值"/>
+            </p>
+            
+            
+            <div id="hotLine" class="hotLine">
+                <div class="joinHotLine">加盟热线</div>
+                <div class="joinHotLine-list f-boh f-box">
+                    <span class="f-box f-bf1">
+                        <em>定制巴士</em>
+                        <i class="f-box f-bf1">孙经理:</i>
+                    </span>
+                    <span class="f-box">
+                        <a href="tel:18012345678" class="list-right">18012345678</a>
+                    </span>
+                </div>
+                
+                <div id="testParams" style = "center fontSize = 60">ADC</div>
+                
+                <footer class="footer">
+                    <p id="edition"></p>
+                    Copyright @2017 XX有限公司
+                </footer>
+            </div>
+            
+            <script>
+                function setEdition(x) {
+                    document.getElementById("edition").innerHTML=x;
+                }
+            </script>
+            
+            <script type="text/javascript">
+                function updateText(x){
+                    document.getElementById('testParams').innerHTML = x;
+                }
+            </script>
+            
+            <script type="text/javascript">
+                function showWebAlert(message){
+                    alert(message);
+                }
+            </script>
+            
+            <script type="text/javascript">
+                function secondClick(message) {
+                    alert(message);
+                }
+            </script>
+            
+            </body>
+</html>

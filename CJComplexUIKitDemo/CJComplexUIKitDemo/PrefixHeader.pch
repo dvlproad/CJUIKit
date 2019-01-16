@@ -12,7 +12,12 @@
 #define CJTESTComplexUIKitPOD
 #define CJDEBUG
 #import <Masonry/Masonry.h>
-#import <CJBaseUtil/CJLogUtil.h>
+#import <CJBaseUIKit/UIColor+CJHex.h>
+#import <CJBaseUIKit/CJToast.h>
+#import "UIViewController+DemoProgressHUD.h"
+#import "DemoButtonFactory.h"
+#import "DemoTextFieldFactory.h"
+#import "DemoBarButtonItemFactory.h"
 
 //#import "CJToast.h"
 

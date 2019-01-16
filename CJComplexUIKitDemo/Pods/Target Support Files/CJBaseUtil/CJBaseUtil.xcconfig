@@ -1,7 +1,7 @@
 CONFIGURATION_BUILD_DIR = ${PODS_CONFIGURATION_BUILD_DIR}/CJBaseUtil
 GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
-HEADER_SEARCH_PATHS = $(inherited) "${PODS_ROOT}/Headers/Private" "${PODS_ROOT}/Headers/Private/CJBaseUtil" "${PODS_ROOT}/Headers/Public" "${PODS_ROOT}/Headers/Public/CJBaseUIKit" "${PODS_ROOT}/Headers/Public/CJBaseUtil" "${PODS_ROOT}/Headers/Public/MBProgressHUD" "${PODS_ROOT}/Headers/Public/MJRefresh" "${PODS_ROOT}/Headers/Public/Masonry" "${PODS_ROOT}/Headers/Public/PinYin4Objc" "${PODS_ROOT}/Headers/Public/SAMKeychain"
-LIBRARY_SEARCH_PATHS = $(inherited) "${PODS_CONFIGURATION_BUILD_DIR}/CJBaseUIKit" "${PODS_CONFIGURATION_BUILD_DIR}/MBProgressHUD" "${PODS_CONFIGURATION_BUILD_DIR}/MJRefresh" "${PODS_CONFIGURATION_BUILD_DIR}/Masonry" "${PODS_CONFIGURATION_BUILD_DIR}/PinYin4Objc" "${PODS_CONFIGURATION_BUILD_DIR}/SAMKeychain"
+HEADER_SEARCH_PATHS = $(inherited) "${PODS_ROOT}/Headers/Private" "${PODS_ROOT}/Headers/Private/CJBaseUtil" "${PODS_ROOT}/Headers/Public" "${PODS_ROOT}/Headers/Public/CJBaseUtil" "${PODS_ROOT}/Headers/Public/PinYin4Objc" "${PODS_ROOT}/Headers/Public/SAMKeychain"
+LIBRARY_SEARCH_PATHS = $(inherited) "${PODS_CONFIGURATION_BUILD_DIR}/PinYin4Objc" "${PODS_CONFIGURATION_BUILD_DIR}/SAMKeychain"
 OTHER_LDFLAGS = -framework "UIKit"
 PODS_BUILD_DIR = ${BUILD_DIR}
 PODS_CONFIGURATION_BUILD_DIR = ${PODS_BUILD_DIR}/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)

@@ -17,8 +17,9 @@
 
 #import <SVProgressHUD/SVProgressHUD.h>
 
-@interface CJBaseWebViewController ()
-
+@interface CJBaseWebViewController () {
+    
+}
 @property (nonatomic, copy) void (^showEmptyViewBlock)(NSString *message);//显示空白页的方法
 @property (nonatomic, copy) void (^hideEmptyViewBlock)(void);//隐藏空白页的方法
 
@@ -167,12 +168,16 @@
  *  @param requestUrl   网页地址
  */
 - (void)reloadLocalWebWithUrl:(NSString *)requestUrl {
-    //NSString *localHtmlUrl = [[NSBundle mainBundle] pathForResource:@"index.html" ofType:nil];
+    //NSString *localHtmlUrl = [[NSBundle mainBundle] pathForResource:@"localWeb.html" ofType:nil];
     NSString *localHtmlUrl = requestUrl;
     NSURL *localHtmlURL = [NSURL fileURLWithPath:localHtmlUrl];
     
-    NSString *localHtmlString = [NSString stringWithContentsOfFile:localHtmlUrl encoding:NSUTF8StringEncoding error:nil];
-    [self.webView loadHTMLString:localHtmlString baseURL:localHtmlURL];
+    //NSString *localHtmlString = [NSString stringWithContentsOfFile:localHtmlUrl encoding:NSUTF8StringEncoding error:nil];
+    NSString *localHtmlString = [NSString stringWithContentsOfURL:localHtmlURL encoding:NSUTF8StringEncoding error:nil];
+    
+    //NSURL *baseURL = [NSURL fileURLWithPath:[[NSBundle mainBundle] resourcePath]];
+    NSURL *baseURL = localHtmlURL;
+    [self.webView loadHTMLString:localHtmlString baseURL:baseURL];
 }
 
 //添加KVO监听
@@ -346,6 +351,7 @@
         
         /* ③设置 WKWebViewConfiguration -- WKUserContentController */
         WKUserContentController *userContentController = [[WKUserContentController alloc] init];
+        self.userContentController = userContentController;
         configuration.userContentController = userContentController;
         
         

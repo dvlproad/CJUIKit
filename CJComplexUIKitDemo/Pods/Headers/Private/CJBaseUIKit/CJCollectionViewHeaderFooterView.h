@@ -1,1 +1,1 @@
-../../../../../CJBaseUIKit/CJBaseScrollView/CJCollectionView/CJOpenCollectionView/CJCollectionViewHeaderFooterView.h
+../../../../../CJBaseUIKit/CJCollectionView/CJOpenCollectionView/CJCollectionViewHeaderFooterView.h

@@ -33,6 +33,8 @@
 @property (nonatomic, strong) UIColor *todoProgressColor;   /**< 设置未过进度部分的颜色 */
 @property (nonatomic, assign) CGFloat progressHeight;       /**< 进度条高度 */
 
+@property (nonatomic, strong) WKUserContentController *userContentController; // 用于JS调用OC
+
 //非必选：页面加载完成之后执行的方法
 @property (nonatomic, copy) void (^webViewDidFinishNavigationBlcok)(WKWebView *webView);
 

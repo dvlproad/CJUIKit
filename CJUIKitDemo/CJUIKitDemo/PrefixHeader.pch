@@ -10,11 +10,11 @@
 #define PrefixHeader_pch
 
 #define CJTESTPOD
-
-#import <Masonry/Masonry.h>
-
 #define CJDEBUG
+#import <Masonry/Masonry.h>
+#import <CJBaseUIKit/UIColor+CJHex.h>
 #import <CJBaseUIKit/CJToast.h>
+#import "UIViewController+DemoProgressHUD.h"
 #import "DemoLabelFactory.h"
 #import "DemoButtonFactory.h"
 #import "DemoTextFieldFactory.h"

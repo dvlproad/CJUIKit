@@ -149,6 +149,7 @@ PODS:
   - Shimmer (1.0.2)
   - SVProgressHUD (2.2.5)
   - WebViewJavascriptBridge (6.0.3)
+  - WMPageController (2.5.2)
   - YYText (1.0.7)
 
 DEPENDENCIES:
@@ -179,6 +180,7 @@ DEPENDENCIES:
   - Shimmer (~> 1.0.2)
   - SVProgressHUD (~> 2.2.2)
   - WebViewJavascriptBridge (~> 6.0.2)
+  - WMPageController
   - YYText (~> 1.0.7)
 
 SPEC REPOS:
@@ -204,6 +206,7 @@ SPEC REPOS:
     - Shimmer
     - SVProgressHUD
     - WebViewJavascriptBridge
+    - WMPageController
     - YYText
 
 EXTERNAL SOURCES:
@@ -245,8 +248,9 @@ SPEC CHECKSUMS:
   Shimmer: c5374be1c2b0c9e292fb05b339a513cf291cac86
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
   WebViewJavascriptBridge: 7f5bc4d3581e672e8f32bd0f812d54bc69bb8e29
+  WMPageController: 0c7624d2b48e4f1ab92371688cf6744ed701575d
   YYText: 5c461d709e24d55a182d1441c41dc639a18a4849
 
-PODFILE CHECKSUM: ed1cfe655efdc6608d5c9d420715174b8fd5a4c3
+PODFILE CHECKSUM: c64231c458de733c8f952ee3ae8d39a04e67d479
 
 COCOAPODS: 1.5.2
