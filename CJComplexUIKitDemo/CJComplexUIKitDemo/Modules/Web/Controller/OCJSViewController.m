@@ -63,11 +63,23 @@
         make.height.mas_equalTo(44);
         make.bottom.mas_equalTo(blueButton.mas_top).mas_offset(-20);
     }];
+    
+    UIButton *blueButton3 = [DemoButtonFactory blueButton];
+    [blueButton3 setTitle:NSLocalizedString(@"OC调用JS(数据加工有返回值)", nil) forState:UIControlStateNormal];
+    [blueButton3 addTarget:self action:@selector(dataProcessing)
+          forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:blueButton3];
+    [blueButton3 mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.centerX.mas_equalTo(self.view);
+        make.left.mas_equalTo(self.view).mas_offset(30);
+        make.height.mas_equalTo(44);
+        make.bottom.mas_equalTo(blueButton2.mas_top).mas_offset(-20);
+    }];
 }
 
 - (void)updateWebText {
     NSString *jsString = [NSString stringWithFormat:@"updateText('这是OC调用JS来修改后的值:%ld')", random()%1000];
-    [self.webView evaluateJavaScript:jsString completionHandler:^(id _Nullable object, NSError * _Nullable error) {
+    [self.webView evaluateJavaScript:jsString completionHandler:^(id _Nullable response, NSError * _Nullable error) {
         NSLog(@"OC执行JS完成--改值");
     }];
 }
@@ -75,8 +87,15 @@
 - (void)showWebAlert {
     NSString *appVersion = [AppInfo systemAppVersion];
     NSString *jsString = [NSString stringWithFormat:@"showWebAlert('版本:%@')", appVersion];
-    [self.webView evaluateJavaScript:jsString completionHandler:^(id _Nullable object, NSError * _Nullable error) {
+    [self.webView evaluateJavaScript:jsString completionHandler:^(id _Nullable response, NSError * _Nullable error) {
         NSLog(@"OC执行JS完成--弹窗(需在WKUIDelegate中处理)");
+    }];
+}
+
+- (void)dataProcessing {
+    NSString *jsString = [NSString stringWithFormat:@"dataProcessing('dvlproad',28)"];
+    [self.webView evaluateJavaScript:jsString completionHandler:^(id _Nullable response, NSError * _Nullable error) {
+        NSLog(@"OC执行JS完成--数据加工(有返回值)\n response = %@\n error = %@", response, error);
     }];
 }
 

@@ -73,6 +73,14 @@
             </script>
             
             <script type="text/javascript">
+<!--                js提供给原生调用的数据加工方法-->
+                function dataProcessing(name,age){
+                    var dic = {name:name,age:age};
+                    return dic;
+                }
+            </script>
+            
+            <script type="text/javascript">
                 function showWebAlert(message){
                     alert(message);
                 }

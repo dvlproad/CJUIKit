@@ -39,6 +39,12 @@
         <div id="testParams" style = "center fontSize = 60">我等待被改</div>
         
         <button onclick="jsCallOCAction()">JS调用OC方法，并传递数据</button>
+        
+<!--        注:这里调用相机相册,一定要在plist文件里面做相关权限申请,要不然会崩溃-->
+<!--        该方法可以获取图片,txt,pdf等等各类文件-->
+        <input accept='file/*' type='file'>
+<!--        如果只获取图片文件的话中间的file换成image就可以了-->
+        <input accept='image/*' type='file'>
     </body>
     
     <script>

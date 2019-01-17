@@ -103,6 +103,11 @@
 		788A55FA21AFCE540011F993 /* DemoLabelFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 788A55F921AFCE540011F993 /* DemoLabelFactory.m */; };
 		789C443121EECB8B00181144 /* AppInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 789C443021EECB8B00181144 /* AppInfo.m */; };
 		789C443C21EECEE800181144 /* CJAppVersionUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 789C443A21EECEE700181144 /* CJAppVersionUtil.m */; };
+		789C447421F05D4B00181144 /* UIImageTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = 789C447321F05D4B00181144 /* UIImageTestCase.m */; };
+		789C447721F07BBC00181144 /* ImageHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 789C447521F07BBB00181144 /* ImageHomeViewController.m */; };
+		789C447A21F07DAC00181144 /* ChangeEnvHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 789C447921F07DAC00181144 /* ChangeEnvHomeViewController.m */; };
+		789C448121F07F6C00181144 /* ImageSizeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 789C447F21F07F6C00181144 /* ImageSizeViewController.m */; };
+		789C448221F07F6C00181144 /* ImageSizeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 789C448021F07F6C00181144 /* ImageSizeViewController.xib */; };
 		789CAF181FB612B700AF8CD4 /* ChangeLog.md in Resources */ = {isa = PBXBuildFile; fileRef = 789CAE111FB612B600AF8CD4 /* ChangeLog.md */; };
 		789CAF251FB612B700AF8CD4 /* CJSingleTableViewCellDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 789CAE321FB612B600AF8CD4 /* CJSingleTableViewCellDataSource.m */; };
 		789CAF261FB612B700AF8CD4 /* CJSingleTableViewCellDataSource2.m in Sources */ = {isa = PBXBuildFile; fileRef = 789CAE341FB612B600AF8CD4 /* CJSingleTableViewCellDataSource2.m */; };
@@ -531,6 +536,14 @@
 		789C443021EECB8B00181144 /* AppInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppInfo.m; sourceTree = "<group>"; };
 		789C443A21EECEE700181144 /* CJAppVersionUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJAppVersionUtil.m; sourceTree = "<group>"; };
 		789C443B21EECEE800181144 /* CJAppVersionUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJAppVersionUtil.h; sourceTree = "<group>"; };
+		789C447321F05D4B00181144 /* UIImageTestCase.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UIImageTestCase.m; sourceTree = "<group>"; };
+		789C447521F07BBB00181144 /* ImageHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageHomeViewController.m; sourceTree = "<group>"; };
+		789C447621F07BBB00181144 /* ImageHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageHomeViewController.h; sourceTree = "<group>"; };
+		789C447821F07DAC00181144 /* ChangeEnvHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChangeEnvHomeViewController.h; sourceTree = "<group>"; };
+		789C447921F07DAC00181144 /* ChangeEnvHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChangeEnvHomeViewController.m; sourceTree = "<group>"; };
+		789C447E21F07F6C00181144 /* ImageSizeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ImageSizeViewController.h; sourceTree = "<group>"; };
+		789C447F21F07F6C00181144 /* ImageSizeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ImageSizeViewController.m; sourceTree = "<group>"; };
+		789C448021F07F6C00181144 /* ImageSizeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ImageSizeViewController.xib; sourceTree = "<group>"; };
 		789CAB597AD073D5F637D193 /* Pods-CJUIKitDemoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CJUIKitDemoTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-CJUIKitDemoTests/Pods-CJUIKitDemoTests.release.xcconfig"; sourceTree = "<group>"; };
 		789CAE111FB612B600AF8CD4 /* ChangeLog.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = ChangeLog.md; sourceTree = "<group>"; };
 		789CAE311FB612B600AF8CD4 /* CJSingleTableViewCellDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJSingleTableViewCellDataSource.h; sourceTree = "<group>"; };
@@ -975,6 +988,8 @@
 		7808D59021703C18007FC851 /* ChangeEnvironmentDemo */ = {
 			isa = PBXGroup;
 			children = (
+				789C447821F07DAC00181144 /* ChangeEnvHomeViewController.h */,
+				789C447921F07DAC00181144 /* ChangeEnvHomeViewController.m */,
 				7808D59121703C33007FC851 /* ChangeEnvironmentViewController.h */,
 				7808D59221703C33007FC851 /* ChangeEnvironmentViewController.m */,
 				7808D5B421709199007FC851 /* LoginChangeEnvironmentViewController.h */,
@@ -1032,8 +1047,6 @@
 				80FF91021FC5668700E437CF /* CJBaseUtil */,
 				80FF90D71FC5668600E437CF /* CJFoundation */,
 				783281011F4198BC008267E0 /* CJSmallCustomView */,
-				780E46141E5DF87B00980127 /* Info.plist */,
-				780E460C1E5DF87B00980127 /* Main.storyboard */,
 				789A19681E61B87D008081E3 /* Resources */,
 				780E46031E5DF87B00980127 /* Supporting Files */,
 				808BF3212019C3E900511F7C /* Utils */,
@@ -1044,6 +1057,8 @@
 		780E46031E5DF87B00980127 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				780E46141E5DF87B00980127 /* Info.plist */,
+				780E460C1E5DF87B00980127 /* Main.storyboard */,
 				780E46041E5DF87B00980127 /* main.m */,
 				80270BBC1FABFE57001429F0 /* PrefixHeader.pch */,
 			);
@@ -1055,6 +1070,7 @@
 			children = (
 				780E461D1E5DF87B00980127 /* CJUIKitDemoTests.m */,
 				80D49F8A20BE7EE0003F642C /* CJDataUtilTest.m */,
+				789C447321F05D4B00181144 /* UIImageTestCase.m */,
 				80D49F8C20BE852A003F642C /* Models */,
 				780E461F1E5DF87B00980127 /* Info.plist */,
 			);
@@ -2221,9 +2237,14 @@
 		80FF8FD91FC5649E00E437CF /* UIImageDemo */ = {
 			isa = PBXGroup;
 			children = (
+				789C447621F07BBB00181144 /* ImageHomeViewController.h */,
+				789C447521F07BBB00181144 /* ImageHomeViewController.m */,
 				80FF8FDC1FC5649E00E437CF /* ImageChangeColorViewController.h */,
 				80FF8FDE1FC5649E00E437CF /* ImageChangeColorViewController.m */,
 				80FF8FDF1FC5649E00E437CF /* ImageChangeColorViewController.xib */,
+				789C447E21F07F6C00181144 /* ImageSizeViewController.h */,
+				789C447F21F07F6C00181144 /* ImageSizeViewController.m */,
+				789C448021F07F6C00181144 /* ImageSizeViewController.xib */,
 				80FF8FDA1FC5649E00E437CF /* imageOriginColor@2x.png */,
 				80582F9E20C121B500C01225 /* ImageRotateViewController.h */,
 				80582F9F20C121B500C01225 /* ImageRotateViewController.m */,
@@ -2699,6 +2720,7 @@
 				787FDB9220500B5C008A46E3 /* slider_thumbImage@2x.png in Resources */,
 				80582FA220C121B500C01225 /* ImageRotateViewController.xib in Resources */,
 				803323A320299AD7001DACF1 /* MemoryADResult01.gif in Resources */,
+				789C448221F07F6C00181144 /* ImageSizeViewController.xib in Resources */,
 				78A0D058216BB19800EFAD67 /* badgeButton_highlighted@3x.png in Resources */,
 				803323AA20299AD7001DACF1 /* MemoryAD09.jpg in Resources */,
 				801F75DB20A040D800A2E027 /* signin_icon_open@2x.png in Resources */,
@@ -2890,6 +2912,7 @@
 				78C8148F216E11AF00A6B190 /* EChildViewController.m in Sources */,
 				800E07E92016CD1500799B78 /* KeyboardUtilViewController.m in Sources */,
 				80FF90391FC5649F00E437CF /* ScrollViewController.m in Sources */,
+				789C447A21F07DAC00181144 /* ChangeEnvHomeViewController.m in Sources */,
 				801F75D920A040D800A2E027 /* BBXDPasswordTextField.m in Sources */,
 				80FF91A21FC5682B00E437CF /* PullScaleTopImageViewController.m in Sources */,
 				78C8148C216E11AF00A6B190 /* DChildViewController.m in Sources */,
@@ -2911,6 +2934,7 @@
 				8060C48C20E0D5EF0093B14E /* AccuracyStringViewController.m in Sources */,
 				787FDB9820500B5C008A46E3 /* ShimmeringSwitchSlider.m in Sources */,
 				8033239120299AD7001DACF1 /* MyCycleADViewController.m in Sources */,
+				789C448121F07F6C00181144 /* ImageSizeViewController.m in Sources */,
 				78B6C2D92159D1F100D5864E /* DemoBusFlightModel.m in Sources */,
 				80FF902A1FC5649E00E437CF /* ThirdPartyHomeViewController.m in Sources */,
 				80FF908A1FC5649F00E437CF /* ChooseColor01.m in Sources */,
@@ -2982,6 +3006,7 @@
 				80FF919A1FC5682B00E437CF /* DateViewController.m in Sources */,
 				80FF90361FC5649E00E437CF /* DemoInfo.m in Sources */,
 				78A4E1B42173A0D9005FEADD /* DemoChangeEnvironmentViewModel.m in Sources */,
+				789C447721F07BBC00181144 /* ImageHomeViewController.m in Sources */,
 				80FF909A1FC5649F00E437CF /* FloatingWindowViewController.m in Sources */,
 				78E189AE21781BE200B8781A /* EdgeLayoutTableViewController.m in Sources */,
 				808DE5E720DA0586003E08F1 /* CJDecimalUtil.m in Sources */,
@@ -3076,6 +3101,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				80D49F8F20BE8574003F642C /* TestCityModel.m in Sources */,
+				789C447421F05D4B00181144 /* UIImageTestCase.m in Sources */,
 				80D49F8B20BE7EE0003F642C /* CJDataUtilTest.m in Sources */,
 				780E461E1E5DF87B00980127 /* CJUIKitDemoTests.m in Sources */,
 			);

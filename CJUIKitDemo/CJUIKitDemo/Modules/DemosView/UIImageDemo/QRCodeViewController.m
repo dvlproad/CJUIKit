@@ -5,6 +5,7 @@
 //  Created by ciyouzen on 2017/8/24.
 //  Copyright © 2017年 dvlproad. All rights reserved.
 //
+//  二维码
 
 #import "QRCodeViewController.h"
 #import "CJQRCodeUtil.h"

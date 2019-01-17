@@ -29,8 +29,8 @@
 #import "SuspendWindowViewController.h"
 
 #import "NavigationBarHomeViewController.h"
-#import "ImageChangeColorViewController.h"
-#import "ImageRotateViewController.h"
+#import "ImageHomeViewController.h"
+
 
 //UIViewController
 #import "SampleViewController.h"
@@ -40,8 +40,7 @@
 #import "KeyboardAvoidingViewController.h"
 
 //ChangeEnvironment
-#import "ChangeEnvironmentViewController.h"
-#import "LoginChangeEnvironmentViewController.h"
+#import "ChangeEnvHomeViewController.h"
 
 @interface HomeViewController ()
 
@@ -122,17 +121,9 @@
         sectionDataModel.theme = @"UIImage相关";
         {
             CJModuleModel *imageChangeColorModule = [[CJModuleModel alloc] init];
-            imageChangeColorModule.title = @"UIImage(改变颜色)";
-            imageChangeColorModule.classEntry = [ImageChangeColorViewController class];
-            imageChangeColorModule.isCreateByXib = NO;
+            imageChangeColorModule.title = @"UIImage相关";
+            imageChangeColorModule.classEntry = [ImageHomeViewController class];
             [sectionDataModel.values addObject:imageChangeColorModule];
-        }
-        {
-            CJModuleModel *imageRotateModule = [[CJModuleModel alloc] init];
-            imageRotateModule.title = @"UIImage(旋转任意角度)";
-            imageRotateModule.classEntry = [ImageRotateViewController class];
-            imageRotateModule.isCreateByXib = NO;
-            [sectionDataModel.values addObject:imageRotateModule];
         }
         
         [sectionDataModels addObject:sectionDataModel];
@@ -279,16 +270,7 @@
         {
             CJModuleModel *xibModule = [[CJModuleModel alloc] init];
             xibModule.title = @"ChangeEnvironment(改变网络环境)";
-            xibModule.classEntry = [ChangeEnvironmentViewController class];
-            xibModule.isCreateByXib = NO;
-            [sectionDataModel.values addObject:xibModule];
-        }
-        
-        {
-            CJModuleModel *xibModule = [[CJModuleModel alloc] init];
-            xibModule.title = @"ChangeEnvironment(在登录的时候改变网络环境)";
-            xibModule.classEntry = [LoginChangeEnvironmentViewController class];
-            xibModule.isCreateByXib = NO;
+            xibModule.classEntry = [ChangeEnvHomeViewController class];
             [sectionDataModel.values addObject:xibModule];
         }
         
