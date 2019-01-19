@@ -8,6 +8,7 @@
 
 #import "ImageSizeViewController.h"
 #import <CJBaseUIKit/UIImage+CJTransformSize.h>
+#import "DemoCacheUtil.h"
 
 @interface ImageSizeViewController ()
 
@@ -22,8 +23,14 @@
     UIImage *oldImage = [UIImage imageNamed:@"bgCar.jpg"];
     self.imageView1_old.image = oldImage;
     NSData *compressImageData = [oldImage cj_compressWithMaxDataLength:40.0f * 1024.0f]; //40k
+    NSLog(@"压缩后数据大小:%.4f MB",(double)compressImageData.length/1024.0f/1024.0f);
+    [DemoCacheUtil saveImageData:compressImageData withImageName:@"bgCar.jpg" callback:nil];
     UIImage *compressImage = [UIImage imageWithData:compressImageData];
     self.imageView1_new.image = compressImage;
+    
+    self.pathLabel1.numberOfLines = 0;
+    self.pathLabel1.text = NSHomeDirectory();
+    NSLog(@"NSHomeDirectory() = %@", NSHomeDirectory());
 }
 
 /*

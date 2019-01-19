@@ -7,12 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
-#ifdef CJTESTComplexUIKitPOD
-#import "CJSectionDataModel.h"
-#else
-#import <CJBaseUtil/CJSectionDataModel.h> //在CJDataUtil中
-#endif
+#import <CJBaseUtil/CJSectionDataModel.h>   //在CJDataUtil中
 
 
 /**

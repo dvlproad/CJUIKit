@@ -31,6 +31,7 @@
 		78590D6F215C88DA00F45AD5 /* TestDataUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 78590D68215C88DA00F45AD5 /* TestDataUtil.m */; };
 		78590D70215C88DA00F45AD5 /* DemoInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 78590D6C215C88DA00F45AD5 /* DemoInfo.m */; };
 		78590D71215C88DA00F45AD5 /* TestDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 78590D6D215C88DA00F45AD5 /* TestDataModel.m */; };
+		786F60D621F1BAC400479DE7 /* JSCallCameraViewController2.m in Sources */ = {isa = PBXBuildFile; fileRef = 786F60D521F1BAC400479DE7 /* JSCallCameraViewController2.m */; };
 		789C441721EEC58600181144 /* DemoProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 789C43F621EEC58500181144 /* DemoProgressHUD.m */; };
 		789C441821EEC58600181144 /* UIViewController+DemoProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 789C43F721EEC58500181144 /* UIViewController+DemoProgressHUD.m */; };
 		789C441921EEC58600181144 /* DemoTextFieldFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 789C43FA21EEC58500181144 /* DemoTextFieldFactory.m */; };
@@ -51,8 +52,6 @@
 		789C442E21EECA9800181144 /* JSOCViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 789C442D21EECA9800181144 /* JSOCViewController.m */; };
 		789C443821EECE9100181144 /* AppInfoManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 789C443621EECE9100181144 /* AppInfoManager.m */; };
 		789C443921EECE9100181144 /* AppInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 789C443721EECE9100181144 /* AppInfo.m */; };
-		789C444921EECF6200181144 /* YunUncaughtExceptionHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 789C444521EECF6200181144 /* YunUncaughtExceptionHandler.m */; };
-		789C444A21EECF6200181144 /* CJAppVersionUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 789C444821EECF6200181144 /* CJAppVersionUtil.m */; };
 		789C445121EECFA100181144 /* AppCommon.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 789C444C21EECFA100181144 /* AppCommon.xcassets */; };
 		789C445221EECFA100181144 /* MainAsset.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 789C444D21EECFA100181144 /* MainAsset.xcassets */; };
 		789C445321EECFA100181144 /* AppAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 789C444E21EECFA100181144 /* AppAssets.xcassets */; };
@@ -65,6 +64,11 @@
 		789C446221EEFF1B00181144 /* LocalBaseWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 789C446121EEFF1B00181144 /* LocalBaseWebViewController.m */; };
 		789C446521EF019F00181144 /* LocalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 789C446421EF019F00181144 /* LocalViewController.m */; };
 		789C447221EF285B00181144 /* localWeb.html in Resources */ = {isa = PBXBuildFile; fileRef = 789C447121EF285B00181144 /* localWeb.html */; };
+		789C448D21F170CF00181144 /* YunUncaughtExceptionHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 789C448821F170CE00181144 /* YunUncaughtExceptionHandler.m */; };
+		789C448E21F170CF00181144 /* DemoCacheUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 789C448A21F170CE00181144 /* DemoCacheUtil.m */; };
+		789C448F21F170CF00181144 /* CJAppVersionUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 789C448C21F170CE00181144 /* CJAppVersionUtil.m */; };
+		789C449121F172A400181144 /* JSCallCamera.html in Resources */ = {isa = PBXBuildFile; fileRef = 789C449021F172A400181144 /* JSCallCamera.html */; };
+		789C449421F1739800181144 /* JSCallCameraViewController1.m in Sources */ = {isa = PBXBuildFile; fileRef = 789C449221F1739700181144 /* JSCallCameraViewController1.m */; };
 		789CAF7D1FB612B700AF8CD4 /* CJUploadCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 789CAF041FB612B600AF8CD4 /* CJUploadCollectionViewCell.m */; };
 		789CAF7E1FB612B700AF8CD4 /* CJUploadImageCollectionView+Tap.m in Sources */ = {isa = PBXBuildFile; fileRef = 789CAF061FB612B600AF8CD4 /* CJUploadImageCollectionView+Tap.m */; };
 		789CAF7F1FB612B700AF8CD4 /* CJUploadImageCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 789CAF081FB612B600AF8CD4 /* CJUploadImageCollectionView.m */; };
@@ -142,6 +146,8 @@
 		78590D6C215C88DA00F45AD5 /* DemoInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DemoInfo.m; sourceTree = "<group>"; };
 		78590D6D215C88DA00F45AD5 /* TestDataModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestDataModel.m; sourceTree = "<group>"; };
 		78590D6E215C88DA00F45AD5 /* TestDataUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestDataUtil.h; sourceTree = "<group>"; };
+		786F60D421F1BAC400479DE7 /* JSCallCameraViewController2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSCallCameraViewController2.h; sourceTree = "<group>"; };
+		786F60D521F1BAC400479DE7 /* JSCallCameraViewController2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSCallCameraViewController2.m; sourceTree = "<group>"; };
 		789C43F421EEC58500181144 /* DemoProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DemoProgressHUD.h; sourceTree = "<group>"; };
 		789C43F521EEC58500181144 /* UIViewController+DemoProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+DemoProgressHUD.h"; sourceTree = "<group>"; };
 		789C43F621EEC58500181144 /* DemoProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DemoProgressHUD.m; sourceTree = "<group>"; };
@@ -177,10 +183,6 @@
 		789C443521EECE9100181144 /* AppInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppInfo.h; sourceTree = "<group>"; };
 		789C443621EECE9100181144 /* AppInfoManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppInfoManager.m; sourceTree = "<group>"; };
 		789C443721EECE9100181144 /* AppInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppInfo.m; sourceTree = "<group>"; };
-		789C444521EECF6200181144 /* YunUncaughtExceptionHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YunUncaughtExceptionHandler.m; sourceTree = "<group>"; };
-		789C444621EECF6200181144 /* CJAppVersionUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJAppVersionUtil.h; sourceTree = "<group>"; };
-		789C444721EECF6200181144 /* YunUncaughtExceptionHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YunUncaughtExceptionHandler.h; sourceTree = "<group>"; };
-		789C444821EECF6200181144 /* CJAppVersionUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJAppVersionUtil.m; sourceTree = "<group>"; };
 		789C444C21EECFA100181144 /* AppCommon.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = AppCommon.xcassets; sourceTree = "<group>"; };
 		789C444D21EECFA100181144 /* MainAsset.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = MainAsset.xcassets; sourceTree = "<group>"; };
 		789C444E21EECFA100181144 /* AppAssets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = AppAssets.xcassets; sourceTree = "<group>"; };
@@ -197,6 +199,15 @@
 		789C446321EF019F00181144 /* LocalViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LocalViewController.h; sourceTree = "<group>"; };
 		789C446421EF019F00181144 /* LocalViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LocalViewController.m; sourceTree = "<group>"; };
 		789C447121EF285B00181144 /* localWeb.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = localWeb.html; sourceTree = "<group>"; };
+		789C448721F170CE00181144 /* DemoCacheUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DemoCacheUtil.h; sourceTree = "<group>"; };
+		789C448821F170CE00181144 /* YunUncaughtExceptionHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YunUncaughtExceptionHandler.m; sourceTree = "<group>"; };
+		789C448921F170CE00181144 /* CJAppVersionUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJAppVersionUtil.h; sourceTree = "<group>"; };
+		789C448A21F170CE00181144 /* DemoCacheUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DemoCacheUtil.m; sourceTree = "<group>"; };
+		789C448B21F170CE00181144 /* YunUncaughtExceptionHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YunUncaughtExceptionHandler.h; sourceTree = "<group>"; };
+		789C448C21F170CE00181144 /* CJAppVersionUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJAppVersionUtil.m; sourceTree = "<group>"; };
+		789C449021F172A400181144 /* JSCallCamera.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = JSCallCamera.html; sourceTree = "<group>"; };
+		789C449221F1739700181144 /* JSCallCameraViewController1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSCallCameraViewController1.m; sourceTree = "<group>"; };
+		789C449321F1739800181144 /* JSCallCameraViewController1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSCallCameraViewController1.h; sourceTree = "<group>"; };
 		789CAEFF1FB612B600AF8CD4 /* CJComplexUIKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJComplexUIKit.h; sourceTree = "<group>"; };
 		789CAF031FB612B600AF8CD4 /* CJUploadCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJUploadCollectionViewCell.h; sourceTree = "<group>"; };
 		789CAF041FB612B600AF8CD4 /* CJUploadCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJUploadCollectionViewCell.m; sourceTree = "<group>"; };
@@ -288,7 +299,7 @@
 				789C444B21EECFA100181144 /* Resources */,
 				789C443221EECE9100181144 /* Service */,
 				789C43F221EEC58500181144 /* CommonUI */,
-				789C444421EECF6200181144 /* Utils */,
+				789C448621F170CE00181144 /* CommonUtil */,
 				780E46031E5DF87B00980127 /* Supporting Files */,
 			);
 			path = CJComplexUIKitDemo;
@@ -371,6 +382,7 @@
 				789C447121EF285B00181144 /* localWeb.html */,
 				789C445921EED99600181144 /* OCJS.html */,
 				789C445E21EEFE3100181144 /* JSOC.html */,
+				789C449021F172A400181144 /* JSCallCamera.html */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -516,6 +528,10 @@
 				789C445721EED3AB00181144 /* OCJSViewController.m */,
 				789C442C21EECA9800181144 /* JSOCViewController.h */,
 				789C442D21EECA9800181144 /* JSOCViewController.m */,
+				789C449321F1739800181144 /* JSCallCameraViewController1.h */,
+				789C449221F1739700181144 /* JSCallCameraViewController1.m */,
+				786F60D421F1BAC400479DE7 /* JSCallCameraViewController2.h */,
+				786F60D521F1BAC400479DE7 /* JSCallCameraViewController2.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -540,18 +556,6 @@
 			path = AppInfo;
 			sourceTree = "<group>";
 		};
-		789C444421EECF6200181144 /* Utils */ = {
-			isa = PBXGroup;
-			children = (
-				789C444521EECF6200181144 /* YunUncaughtExceptionHandler.m */,
-				789C444621EECF6200181144 /* CJAppVersionUtil.h */,
-				789C444721EECF6200181144 /* YunUncaughtExceptionHandler.h */,
-				789C444821EECF6200181144 /* CJAppVersionUtil.m */,
-			);
-			name = Utils;
-			path = ../../CJUIKitDemo/CJUIKitDemo/Utils;
-			sourceTree = "<group>";
-		};
 		789C444B21EECFA100181144 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -563,6 +567,20 @@
 			);
 			name = Resources;
 			path = ../../CJUIKitDemo/CJUIKitDemo/Resources;
+			sourceTree = "<group>";
+		};
+		789C448621F170CE00181144 /* CommonUtil */ = {
+			isa = PBXGroup;
+			children = (
+				789C448921F170CE00181144 /* CJAppVersionUtil.h */,
+				789C448C21F170CE00181144 /* CJAppVersionUtil.m */,
+				789C448721F170CE00181144 /* DemoCacheUtil.h */,
+				789C448A21F170CE00181144 /* DemoCacheUtil.m */,
+				789C448B21F170CE00181144 /* YunUncaughtExceptionHandler.h */,
+				789C448821F170CE00181144 /* YunUncaughtExceptionHandler.m */,
+			);
+			name = CommonUtil;
+			path = ../../CJUIKitDemo/CJUIKitDemo/CommonUtil;
 			sourceTree = "<group>";
 		};
 		789CAEFE1FB612B600AF8CD4 /* CJComplexUIKit */ = {
@@ -827,6 +845,7 @@
 				789C445221EECFA100181144 /* MainAsset.xcassets in Resources */,
 				78590D0D215C79DD00F45AD5 /* UploadDirectlyImagePickerViewController.xib in Resources */,
 				789C445A21EED99600181144 /* OCJS.html in Resources */,
+				789C449121F172A400181144 /* JSCallCamera.html in Resources */,
 				789CAF821FB612B700AF8CD4 /* cjCollectionViewCellAdd@2x.png in Resources */,
 				780E460E1E5DF87B00980127 /* Main.storyboard in Resources */,
 				789C447221EF285B00181144 /* localWeb.html in Resources */,
@@ -991,7 +1010,6 @@
 				78590D0E215C79DD00F45AD5 /* SearchTableViewController.m in Sources */,
 				78590D70215C88DA00F45AD5 /* DemoInfo.m in Sources */,
 				780E46081E5DF87B00980127 /* AppDelegate.m in Sources */,
-				789C444921EECF6200181144 /* YunUncaughtExceptionHandler.m in Sources */,
 				7832810D1F41AA96008267E0 /* ProcessLineView.m in Sources */,
 				789C442321EEC58600181144 /* CJUIKitBaseCollectionHomeViewController.m in Sources */,
 				789CAF7D1FB612B700AF8CD4 /* CJUploadCollectionViewCell.m in Sources */,
@@ -1004,23 +1022,27 @@
 				783281041F4198BC008267E0 /* CustomTripProgressView.m in Sources */,
 				789C442221EEC58600181144 /* CJUIKitCollectionViewCell.m in Sources */,
 				789C442721EEC58600181144 /* CJUIKitBaseViewController.m in Sources */,
+				789C448E21F170CF00181144 /* DemoCacheUtil.m in Sources */,
 				78590D0C215C79DD00F45AD5 /* UploadNoneImagePickerViewController.m in Sources */,
 				80EABC46212546E800A2EA34 /* CJBaseWebViewController.m in Sources */,
 				789C445D21EEDBF500181144 /* AboutViewController.m in Sources */,
 				789CAF7F1FB612B700AF8CD4 /* CJUploadImageCollectionView.m in Sources */,
 				789C441921EEC58600181144 /* DemoTextFieldFactory.m in Sources */,
 				78590D6F215C88DA00F45AD5 /* TestDataUtil.m in Sources */,
+				786F60D621F1BAC400479DE7 /* JSCallCameraViewController2.m in Sources */,
 				789C441B21EEC58600181144 /* DemoAlert.m in Sources */,
-				789C444A21EECF6200181144 /* CJAppVersionUtil.m in Sources */,
 				789C441721EEC58600181144 /* DemoProgressHUD.m in Sources */,
 				789C442421EEC58600181144 /* CJUIKitBaseHomeViewController.m in Sources */,
 				78590D71215C88DA00F45AD5 /* TestDataModel.m in Sources */,
 				789C446521EF019F00181144 /* LocalViewController.m in Sources */,
+				789C449421F1739800181144 /* JSCallCameraViewController1.m in Sources */,
+				789C448F21F170CF00181144 /* CJAppVersionUtil.m in Sources */,
 				789C442A21EEC90000181144 /* WebHomeViewController.m in Sources */,
 				80E7E68920AC37CA000F762D /* IjinbuNetworkClient+Login.m in Sources */,
 				78590D00215C79DD00F45AD5 /* NetworkBaseWebViewController.m in Sources */,
 				8014A2801FA2C2E500DDDB5A /* AppDelegate+WindowRootViewController.m in Sources */,
 				78590D2B215C79DD00F45AD5 /* ScrollViewHomeViewController.m in Sources */,
+				789C448D21F170CF00181144 /* YunUncaughtExceptionHandler.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

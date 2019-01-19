@@ -20,7 +20,7 @@
 #import "UIImage+CJBlur.h"
 
 #import "UIImage+CJMakeCircle.h"
-#import "UIImage+SplitImageIntoTwoParts.h"
+#import "UIImage+CJSplitImageIntoTwoParts.h"
 
 
 

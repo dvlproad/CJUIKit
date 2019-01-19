@@ -210,19 +210,11 @@
 }
 
 
-//#pragma mark - WKNavigationDelegate 页面跳转的代理方法
-//- (void)webView:(WKWebView *)webView didReceiveServerRedirectForProvisionalNavigation:(WKNavigation *)navigation {
-//    NSLog(@"页面跳转的代理方法--接收到服务器跳转请求之后调用");
-//}
-//
-//- (void)webView:(WKWebView *)webView decidePolicyForNavigationResponse:(WKNavigationResponse *)navigationResponse decisionHandler:(void (^)(WKNavigationResponsePolicy))decisionHandler {
-//    NSLog(@"页面跳转的代理方法--在收到响应后，决定是否跳转");
-//}
-
-//拦截URL:URL请求被WKNavigationDelegate中的代理方法拦截。也就是JS调用了OC。JS 调用OC 方法后，有的操作可能需要将结果返回给JS。这时候就是OC 调用JS 方法的场景。OC调用JS的方法为evaluateJavaScript:completionHandler:
+#pragma mark - WKNavigationDelegate 页面跳转的代理方法
+//1.拦截URL:URL请求被WKNavigationDelegate中的代理方法拦截。也就是JS调用了OC。JS 调用OC 方法后，有的操作可能需要将结果返回给JS。这时候就是OC 调用JS 方法的场景。OC调用JS的方法为evaluateJavaScript:completionHandler:
 - (void)webView:(WKWebView *)webView decidePolicyForNavigationAction:(WKNavigationAction *)navigationAction decisionHandler:(void (^)(WKNavigationActionPolicy))decisionHandler {
-    //NSLog(@"页面跳转的代理方法--在发送请求之前，决定是否跳转");
-    
+    //NSLog(@"1.页面跳转的代理方法--在发送请求之前，决定是否跳转");
+    // 必须实现decisionHandler的回调，否则就会报错
     NSURL *URL = navigationAction.request.URL;
     NSString *scheme = [URL scheme];
     
@@ -278,7 +270,7 @@
 }
 
 
-// 页面开始加载时调用
+// 2.页面开始加载时调用
 - (void)webView:(WKWebView *)webView didStartProvisionalNavigation:(WKNavigation *)navigation
 {
     [SVProgressHUD show];
@@ -286,7 +278,34 @@
     [self.view bringSubviewToFront:self.progressView];
 }
 
-// 页面加载完成之后调用
+
+// 页面加载失败时调用
+- (void)webView:(WKWebView *)webView didFailProvisionalNavigation:(WKNavigation *)navigation withError:(NSError *)error {
+    [SVProgressHUD dismiss];
+    self.progressView.hidden = YES;
+    //    [self.webView removeFromSuperview];
+    
+    NSString *failureMessage = error.userInfo.description;
+    if (error.code == -1022) {
+        failureMessage = @"the App Transport Security policy requires the use of a secure connection.";
+    }
+    [self showEmptyViewWithFailureMessage:failureMessage];
+}
+
+- (void)webView:(WKWebView *)webView decidePolicyForNavigationResponse:(WKNavigationResponse *)navigationResponse decisionHandler:(void (^)(WKNavigationResponsePolicy))decisionHandler {
+    NSLog(@"3.页面跳转的代理方法--在收到响应后，决定是否跳转");
+    NSLog(@"navigationResponse = %@", navigationResponse);
+    NSLog(@"navigationResponse.response = %@", navigationResponse.response);
+    // 必须实现decisionHandler的回调，否则就会报错
+    decisionHandler(WKNavigationResponsePolicyAllow);
+}
+
+- (void)webView:(WKWebView *)webView didReceiveServerRedirectForProvisionalNavigation:(WKNavigation *)navigation {
+    NSLog(@"页面跳转的代理方法--接收到服务器跳转请求之后调用");
+}
+
+
+// 4.1页面加载完成之后调用
 - (void)webView:(WKWebView *)webView didFinishNavigation:(WKNavigation *)navigation {
     [SVProgressHUD dismiss];
     self.progressView.hidden = YES;
@@ -300,26 +319,13 @@
     }
 }
 
-// 页面加载失败时调用
-- (void)webView:(WKWebView *)webView didFailProvisionalNavigation:(WKNavigation *)navigation withError:(NSError *)error {
-    [SVProgressHUD dismiss];
-    self.progressView.hidden = YES;
-    //    [self.webView removeFromSuperview];
-    
-    NSString *failureMessage = error.userInfo.description;
-    if (error.code == -1022) {
-        failureMessage = @"the App Transport Security policy requires the use of a secure connection.";
-    }
-    [self showEmptyViewWithFailureMessage:failureMessage];
-    
-}
-
 - (void)webView:(WKWebView *)webView didFailNavigation:(WKNavigation *)navigation withError:(NSError *)error {
     [SVProgressHUD dismiss];
     
     NSString *failureMessage = error.userInfo.description;
     [self showEmptyViewWithFailureMessage:failureMessage];
 }
+
 
 
 - (void)showEmptyViewWithFailureMessage:(NSString *)failureMessage {

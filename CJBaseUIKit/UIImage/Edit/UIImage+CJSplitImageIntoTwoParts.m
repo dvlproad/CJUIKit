@@ -1,5 +1,5 @@
 //
-//  UIImage+SplitImageIntoTwoParts.m
+//  UIImage+CJSplitImageIntoTwoParts.m
 //  CJUIKitDemo
 //
 //  Created by ciyouzen on 14-11-5.
@@ -7,18 +7,18 @@
 //
 #define SAWTOOTH_COUNT 10
 #define SAWTOOTH_WIDTH_FACTOR 20 
-#import "UIImage+SplitImageIntoTwoParts.h"
+#import "UIImage+CJSplitImageIntoTwoParts.h"
 
-@implementation UIImage (SplitImageIntoTwoParts)
+@implementation UIImage (CJSplitImageIntoTwoParts)
 
-+ (NSArray *)cj_splitImageIntoTwoParts:(UIImage *)image
+- (NSArray<UIImage *> *)cj_splitImageIntoTwoParts;
 {    
     CGFloat scale = [[UIScreen mainScreen] scale]; 
     NSMutableArray *array = [NSMutableArray arrayWithCapacity:2];
     CGFloat width,height,widthgap,heightgap;
     int piceCount = SAWTOOTH_COUNT;
-    width = image.size.width;
-    height = image.size.height;
+    width = self.size.width;
+    height = self.size.height;
     
     CGFloat totalHeight = [[UIScreen mainScreen] bounds].size.height;//568
     if (width != 320 || height != totalHeight) {         // add by lichq
@@ -48,7 +48,7 @@
     CGContextAddLineToPoint(context, 0, height);
     CGContextClosePath(context);
     CGContextClip(context);
-    [image drawAtPoint:CGPointMake(0, 0)];
+    [self drawAtPoint:CGPointMake(0, 0)];
     imageMasked = CGBitmapContextCreateImage(context);
     leftImage = [UIImage imageWithCGImage:imageMasked scale:scale orientation:UIImageOrientationUp];
     [array addObject:leftImage];
@@ -67,12 +67,11 @@
     CGContextAddLineToPoint(context, width, height);
     CGContextClosePath(context);
     CGContextClip(context);
-    [image drawAtPoint:CGPointMake(0, 0)];
+    [self drawAtPoint:CGPointMake(0, 0)];
     imageMasked = CGBitmapContextCreateImage(context);
     rightImage = [UIImage imageWithCGImage:imageMasked scale:scale orientation:UIImageOrientationUp];
     [array addObject:rightImage];
     UIGraphicsEndImageContext();
-    
     
     return array;
 }

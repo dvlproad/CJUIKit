@@ -14,6 +14,9 @@
 #import "JSOCViewController.h"
 #import "OCJSViewController.h"
 
+#import "JSCallCameraViewController1.h"
+#import "JSCallCameraViewController2.h"
+
 @interface WebHomeViewController ()  {
     
 }
@@ -64,6 +67,25 @@
             CJModuleModel *webViewModule = [[CJModuleModel alloc] init];
             webViewModule.title = @"WebView JS->OC";
             webViewModule.classEntry = [JSOCViewController class];
+            [sectionDataModel.values addObject:webViewModule];
+        }
+        [sectionDataModels addObject:sectionDataModel];
+    }
+    
+    // WebView JS->Camera
+    {
+        CJSectionDataModel *sectionDataModel = [[CJSectionDataModel alloc] init];
+        sectionDataModel.theme = @"WebView JS->Camera";
+        {
+            CJModuleModel *webViewModule = [[CJModuleModel alloc] init];
+            webViewModule.title = @"WebView JS->Camera(本地版)";
+            webViewModule.classEntry = [JSCallCameraViewController1 class];
+            [sectionDataModel.values addObject:webViewModule];
+        }
+        {
+            CJModuleModel *webViewModule = [[CJModuleModel alloc] init];
+            webViewModule.title = @"WebView JS->Camera(网页版)";
+            webViewModule.classEntry = [JSCallCameraViewController2 class];
             [sectionDataModel.values addObject:webViewModule];
         }
         [sectionDataModels addObject:sectionDataModel];

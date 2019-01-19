@@ -11,6 +11,6 @@
 @interface UIImage (CJBase64)
 
 //1.UIImage转成base64
-- (NSString *)imageTobase64;
+- (NSString *)cj_imageTobase64;
 
 @end

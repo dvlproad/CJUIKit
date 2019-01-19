@@ -429,7 +429,7 @@
 		B0949CA5FD75BF44F0E4F7245125B0D0 /* CJPhotoLoadingView.h in Headers */ = {isa = PBXBuildFile; fileRef = 0B5A378116BA6FAC721255109FA1D14E /* CJPhotoLoadingView.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		B123C1165B1B662A95618208E51ED39E /* MyEqualCellSizeCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 043B868BA69DC9580E34A4A4D9D4A16C /* MyEqualCellSizeCollectionView.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		B15BBC7BF695E24AC17D1B1DB9C8D9E4 /* NJKWebViewProgress.m in Sources */ = {isa = PBXBuildFile; fileRef = 51F9A3F2514C55830BD28BD42EAFCC8E /* NJKWebViewProgress.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0 -w -Xanalyzer -analyzer-disable-all-checks"; }; };
-		B16191C4F16728FBAD78402DC647994B /* UIImage+SplitImageIntoTwoParts.h in Headers */ = {isa = PBXBuildFile; fileRef = 2BB92AC29B33EDDB2C2D1A14D8D1A151 /* UIImage+SplitImageIntoTwoParts.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		B16191C4F16728FBAD78402DC647994B /* UIImage+CJSplitImageIntoTwoParts.h in Headers */ = {isa = PBXBuildFile; fileRef = 2BB92AC29B33EDDB2C2D1A14D8D1A151 /* UIImage+CJSplitImageIntoTwoParts.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		B184A2477CA1D1FB80FFDD5F5ABCE4E6 /* PinyinHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = 9753581A18831B9AF6CF9BCE00EB57BF /* PinyinHelper.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		B1A360BB08BBB5891923144E665E24C9 /* CJBaseCollectionViewCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 07D52FE5286B1C897EC28F29B3D41E08 /* CJBaseCollectionViewCell.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		B1D9D3E469481FDAD1C6F01557D9FF73 /* UIImage+MultiFormat.h in Headers */ = {isa = PBXBuildFile; fileRef = BE25E1E7C21E8F70FC41291530FA24BA /* UIImage+MultiFormat.h */; settings = {ATTRIBUTES = (Project, ); }; };
@@ -558,7 +558,7 @@
 		E568503149CB483D0A7F23783559990C /* NSString+URLEncoding.h in Headers */ = {isa = PBXBuildFile; fileRef = D2F89ABAF4DCE719A46CCBB5E658F546 /* NSString+URLEncoding.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		E58E1C11F951C29B14173848106B5D20 /* MJRefresh.h in Headers */ = {isa = PBXBuildFile; fileRef = F8D05FAC567A63C695C8D7CD121A9C5D /* MJRefresh.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		E735E34BB08428B5A9CAE392EFC96B16 /* AuthorizationCJHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = AFC26CD6B74D2586316AFAF052467D3A /* AuthorizationCJHelper.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
-		E73C29F8851058079BD2C7B3A2440096 /* UIImage+SplitImageIntoTwoParts.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EFC758AD6FB7770B67C42AC0FC3320B /* UIImage+SplitImageIntoTwoParts.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		E73C29F8851058079BD2C7B3A2440096 /* UIImage+CJSplitImageIntoTwoParts.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EFC758AD6FB7770B67C42AC0FC3320B /* UIImage+CJSplitImageIntoTwoParts.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		E77AF5FCE6EB61DB205D4D6DF59A6410 /* CJKeyboardAvoidingScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = ED1512251F3A46BADC4D74004CF4DB19 /* CJKeyboardAvoidingScrollView.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		E818514B1A64D1C023849F6E46BCF266 /* CJPhotoGridCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CC105A1E74A605571C452A075732AF1 /* CJPhotoGridCell.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		E874BFE33E1C9DDDB15B4FC20EE394B5 /* Masonry-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 51E7BE08E3431F35C8224A27D744DA38 /* Masonry-dummy.m */; };
@@ -866,7 +866,7 @@
 		0578A28B7460B16538711787C014FA59 /* CJSliderThumb.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = CJSliderThumb.h; sourceTree = "<group>"; };
 		05B72E3CBBC434C3650F190A0E2B986A /* CJAppLastUser.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CJAppLastUser.m; path = CJBaseUtil/CJAppLastUtil/CJAppLastUser.m; sourceTree = "<group>"; };
 		05F87895D8FF1A3DE62CBFC5E7DB20C8 /* UIWebView+AFNetworking.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIWebView+AFNetworking.h"; path = "UIKit+AFNetworking/UIWebView+AFNetworking.h"; sourceTree = "<group>"; };
-		067340F8B0AF001844E80211F63EE566 /* libSAMKeychain.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = libSAMKeychain.a; path = libSAMKeychain.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		067340F8B0AF001844E80211F63EE566 /* libSAMKeychain.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libSAMKeychain.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		078DA675F0806FF4A1E566E2424437B8 /* MASCompositeConstraint.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MASCompositeConstraint.h; path = Masonry/MASCompositeConstraint.h; sourceTree = "<group>"; };
 		07D52FE5286B1C897EC28F29B3D41E08 /* CJBaseCollectionViewCell.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CJBaseCollectionViewCell.h; path = CJBaseUIKit/CJCollectionView/CJBaseCollectionViewCell/CJBaseCollectionViewCell.h; sourceTree = "<group>"; };
 		0882AAF3AC17C251ACB72126CC37B6B3 /* CJUploadProgressView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CJUploadProgressView.h; path = "CJNetwork/AFNetworkingUploadComponent/UIView+AFNetworkingUpload/CJUploadProgressView.h"; sourceTree = "<group>"; };
@@ -876,12 +876,12 @@
 		0B5A378116BA6FAC721255109FA1D14E /* CJPhotoLoadingView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CJPhotoLoadingView.h; path = CJMedia/CJPhotoBrowser/CJPhotoBrowser/Views/CJPhotoLoadingView.h; sourceTree = "<group>"; };
 		0C4A581E3BE1FE741233E8F2BCBB37E1 /* CJPhotoBrowser.bundle */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "wrapper.plug-in"; name = CJPhotoBrowser.bundle; path = CJMedia/CJPhotoBrowser/CJPhotoBrowser/CJPhotoBrowser.bundle; sourceTree = "<group>"; };
 		0D0C972742079950D575BBF6FE0AC1BD /* AFImageDownloader.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AFImageDownloader.m; path = "UIKit+AFNetworking/AFImageDownloader.m"; sourceTree = "<group>"; };
-		0D17DEF6CBC274CCFC2699C690493F65 /* libCJBaseHelper.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = libCJBaseHelper.a; path = libCJBaseHelper.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		0D17DEF6CBC274CCFC2699C690493F65 /* libCJBaseHelper.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libCJBaseHelper.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		0D86E4F3024C707629135BDDF79ABAD7 /* CJFileManager+CalculateFileSize.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "CJFileManager+CalculateFileSize.h"; path = "CJFile/CJFileManager/CJFileManager+CalculateFileSize.h"; sourceTree = "<group>"; };
 		0DC0D2B0931EDEB628698110919E8313 /* CJChooseTextTextField.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = CJChooseTextTextField.h; sourceTree = "<group>"; };
 		0DCFAF13B7617D1ACBAC06F59AB31632 /* SAMKeychain.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SAMKeychain.xcconfig; sourceTree = "<group>"; };
-		0E411943CAB9E361506494065BA4B04F /* libSVProgressHUD.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = libSVProgressHUD.a; path = libSVProgressHUD.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		0EFC758AD6FB7770B67C42AC0FC3320B /* UIImage+SplitImageIntoTwoParts.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UIImage+SplitImageIntoTwoParts.m"; sourceTree = "<group>"; };
+		0E411943CAB9E361506494065BA4B04F /* libSVProgressHUD.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libSVProgressHUD.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		0EFC758AD6FB7770B67C42AC0FC3320B /* UIImage+CJSplitImageIntoTwoParts.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UIImage+CJSplitImageIntoTwoParts.m"; sourceTree = "<group>"; };
 		1021C65BF47C87D7247E7725ACE86587 /* CJDefaultToolbar.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CJDefaultToolbar.m; path = CJBaseUIKit/UIToolbar/CJDefaultToolbar.m; sourceTree = "<group>"; };
 		103F7591BF234E1D00B2238C5ABFC087 /* NSString+PinYin4Cocoa.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSString+PinYin4Cocoa.h"; path = "PinYin4Objc/Classes/NSString+PinYin4Cocoa.h"; sourceTree = "<group>"; };
 		106524C0AF763D10DD001145C166864E /* MyEqualCellSizeSetting.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MyEqualCellSizeSetting.m; path = CJBaseUIKit/CJCollectionView/MyEqualCellSizeCollectionView/MyEqualCellSizeSetting.m; sourceTree = "<group>"; };
@@ -902,7 +902,7 @@
 		187FE54B1EE68A09D7630BC99768CE6C /* UINavigationBar+CJChangeBG.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UINavigationBar+CJChangeBG.m"; path = "CJBaseUIKit/UINavigationBar/UINavigationBar+CJChangeBG.m"; sourceTree = "<group>"; };
 		188233CE4E4D843F9AF60DAD5E0EC426 /* IjinbuNetworkClient+UploadFile.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "IjinbuNetworkClient+UploadFile.m"; path = "IjinbuNetwork/IjinbuNetworkClient+UploadFile.m"; sourceTree = "<group>"; };
 		195A4F524B9C48F95353D830DF9D4F8B /* CJNetwork-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "CJNetwork-dummy.m"; sourceTree = "<group>"; };
-		1A6D2AF85EED07092BEA785972C6C993 /* libIjinbuNetwork.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = libIjinbuNetwork.a; path = libIjinbuNetwork.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		1A6D2AF85EED07092BEA785972C6C993 /* libIjinbuNetwork.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libIjinbuNetwork.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		1AACA8F09B6513ECF35EE1EFA69E191A /* UIButton+CJMoreProperty.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIButton+CJMoreProperty.h"; path = "CJBaseUIKit/UIButton/UIButton+CJMoreProperty.h"; sourceTree = "<group>"; };
 		1AB819C96C15B5B5776DE4DCC1E35A9F /* IjinbuUploadItemResult.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = IjinbuUploadItemResult.m; path = IjinbuNetwork/IjinbuUploadModels/IjinbuUploadItemResult.m; sourceTree = "<group>"; };
 		1AD0E597C8B662571D99D0EDE2AF1DF9 /* CJCallUtil.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CJCallUtil.m; path = CJBaseUtil/CJCallUtil/CJCallUtil.m; sourceTree = "<group>"; };
@@ -917,7 +917,7 @@
 		1E119E335A68C8495C388B7629D4F8C6 /* NSButton+WebCache.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSButton+WebCache.m"; path = "SDWebImage/NSButton+WebCache.m"; sourceTree = "<group>"; };
 		1E35F8142823BBD24E4F3A92F3A1D5D1 /* NSCalendarCJHelper.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = NSCalendarCJHelper.h; path = CJBaseHelper/NSCalendarCJHelper/NSCalendarCJHelper.h; sourceTree = "<group>"; };
 		1EF4D61C91B91A8390E7A1F5D58B8524 /* AFNetworkActivityIndicatorManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFNetworkActivityIndicatorManager.h; path = "UIKit+AFNetworking/AFNetworkActivityIndicatorManager.h"; sourceTree = "<group>"; };
-		1F350E85317D7194D3F296C06B802BE5 /* CJBaseHelper.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; path = CJBaseHelper.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		1F350E85317D7194D3F296C06B802BE5 /* CJBaseHelper.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; path = CJBaseHelper.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		209E01F7FDD0920413EC612F807474F4 /* UITextFieldCJCategory.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = UITextFieldCJCategory.h; path = CJBaseUIKit/UITextField/UITextFieldCJCategory.h; sourceTree = "<group>"; };
 		214C1EC29B89ADADCCEF306A962F8682 /* CJFullBottomCollectionViewCell.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CJFullBottomCollectionViewCell.m; path = CJBaseUIKit/CJCollectionView/CJBaseCollectionViewCell/CJFullBottomCollectionViewCell.m; sourceTree = "<group>"; };
 		21D221AB81198C52E557C4B11D0C39A1 /* CJOpenCollectionView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CJOpenCollectionView.m; path = CJBaseUIKit/CJCollectionView/CJOpenCollectionView/CJOpenCollectionView.m; sourceTree = "<group>"; };
@@ -950,12 +950,12 @@
 		2B72B551BB2FCBE15B0F6AB4E56595C5 /* MJRefreshGifHeader.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MJRefreshGifHeader.h; path = MJRefresh/Custom/Header/MJRefreshGifHeader.h; sourceTree = "<group>"; };
 		2B83ACAE3C0CE5559F73C0ED5982E37D /* SVProgressAnimatedView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SVProgressAnimatedView.m; path = SVProgressHUD/SVProgressAnimatedView.m; sourceTree = "<group>"; };
 		2BA580D27741591AA3F9B22809828AD8 /* IjinbuNetwork-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "IjinbuNetwork-dummy.m"; sourceTree = "<group>"; };
-		2BB92AC29B33EDDB2C2D1A14D8D1A151 /* UIImage+SplitImageIntoTwoParts.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UIImage+SplitImageIntoTwoParts.h"; sourceTree = "<group>"; };
+		2BB92AC29B33EDDB2C2D1A14D8D1A151 /* UIImage+CJSplitImageIntoTwoParts.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UIImage+CJSplitImageIntoTwoParts.h"; sourceTree = "<group>"; };
 		2C3E668A42E9D467E26FD3ED2AECE583 /* Pods-CJComplexUIKitDemoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-CJComplexUIKitDemoTests.release.xcconfig"; sourceTree = "<group>"; };
 		2C42206CA91B2352049CF1582591CDF5 /* CJOpenCollectionView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CJOpenCollectionView.h; path = CJBaseUIKit/CJCollectionView/CJOpenCollectionView/CJOpenCollectionView.h; sourceTree = "<group>"; };
 		2C735FFC89F77CF24A390B383DCBDE36 /* CJFullCenterCollectionViewCell.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CJFullCenterCollectionViewCell.h; path = CJBaseUIKit/CJCollectionView/CJBaseCollectionViewCell/CJFullCenterCollectionViewCell.h; sourceTree = "<group>"; };
 		2CD6758BF071B7DE88C60304451EABE0 /* MJRefreshBackGifFooter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MJRefreshBackGifFooter.m; path = MJRefresh/Custom/Footer/Back/MJRefreshBackGifFooter.m; sourceTree = "<group>"; };
-		2DD1231BA4512BD3B9F14BEA37C64710 /* libMBProgressHUD.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = libMBProgressHUD.a; path = libMBProgressHUD.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		2DD1231BA4512BD3B9F14BEA37C64710 /* libMBProgressHUD.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libMBProgressHUD.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		2F8D1E7B9ADCCD2839CF43DC1C76173D /* LEOHeaderView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = LEOHeaderView.h; sourceTree = "<group>"; };
 		2FCF876045A6A2461F9E92CCAD8AD105 /* CJBaseHelper-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "CJBaseHelper-prefix.pch"; sourceTree = "<group>"; };
 		300791E73EA30951223696CD7B41153D /* NSString+CJEncoding.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSString+CJEncoding.h"; path = "CJFoundation/NSString/NSString+CJEncoding.h"; sourceTree = "<group>"; };
@@ -1028,7 +1028,7 @@
 		4719CD28CBA4946EE002B14BB4E0B1F7 /* CJKeyboardUtil.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CJKeyboardUtil.m; path = CJBaseUtil/CJKeyboardUtil/CJKeyboardUtil.m; sourceTree = "<group>"; };
 		47FAC9C42235F271D6B951C88816E51A /* CJNetwork.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CJNetwork.h; path = CJNetwork/CJNetwork.h; sourceTree = "<group>"; };
 		4848BFFC12FBCF7E0743D99C030654C6 /* SDWebImageImageIOCoder.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SDWebImageImageIOCoder.m; path = SDWebImage/SDWebImageImageIOCoder.m; sourceTree = "<group>"; };
-		4876C3C8F47F889720126F6C7734673E /* libOpenUDID.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = libOpenUDID.a; path = libOpenUDID.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		4876C3C8F47F889720126F6C7734673E /* libOpenUDID.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libOpenUDID.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		487E886677BC158885635082FD19D6A5 /* MJRefreshBackNormalFooter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MJRefreshBackNormalFooter.m; path = MJRefresh/Custom/Footer/Back/MJRefreshBackNormalFooter.m; sourceTree = "<group>"; };
 		494B3E83EAEAF97561E2D7C52FE6540C /* CJDataEmptyView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CJDataEmptyView.m; path = CJBaseUIKit/CJDataEmptyView/CJDataEmptyView.m; sourceTree = "<group>"; };
 		4962409116804E2AC6C06D650F0B9265 /* AFNetworkActivityIndicatorManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AFNetworkActivityIndicatorManager.m; path = "UIKit+AFNetworking/AFNetworkActivityIndicatorManager.m"; sourceTree = "<group>"; };
@@ -1052,7 +1052,7 @@
 		4E89BB91042A9EB2980AB9E7BB40C3D8 /* MASConstraint.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MASConstraint.m; path = Masonry/MASConstraint.m; sourceTree = "<group>"; };
 		4E98860D0981AFFA88BBDB80CE998E3C /* CJImageUploadFileModelsOwner.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CJImageUploadFileModelsOwner.h; path = CJMedia/CJUploadImagePickerUtil/Models/CJImageUploadFileModelsOwner.h; sourceTree = "<group>"; };
 		4EA6CEBEBEFEC1F5891FABCD8BC4A057 /* CJCollectionViewHeaderFooterView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CJCollectionViewHeaderFooterView.m; path = CJBaseUIKit/CJCollectionView/CJOpenCollectionView/CJCollectionViewHeaderFooterView.m; sourceTree = "<group>"; };
-		4EE4AB6E6C8DCF8B19FE8C9DBFE8E9EC /* CJFoundation.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; path = CJFoundation.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		4EE4AB6E6C8DCF8B19FE8C9DBFE8E9EC /* CJFoundation.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; path = CJFoundation.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		500EEE70E811FB94982EA7030675201B /* UIView+WebCacheOperation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIView+WebCacheOperation.h"; path = "SDWebImage/UIView+WebCacheOperation.h"; sourceTree = "<group>"; };
 		5016FD76CF9C786B410F14DFDFC14D1A /* MBProgressHUD-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "MBProgressHUD-dummy.m"; sourceTree = "<group>"; };
 		501A4CF36A6A149F169A78D07F76B296 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.3.sdk/System/Library/Frameworks/SystemConfiguration.framework; sourceTree = DEVELOPER_DIR; };
@@ -1071,7 +1071,7 @@
 		52C3C9CCAEC925B60AE2ED74B06DACC1 /* NSString+CJEncryption.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSString+CJEncryption.h"; path = "CJFoundation/NSString/NSString+CJEncryption.h"; sourceTree = "<group>"; };
 		536FFE00A2E7336D8C4F24542EA3A563 /* SDWebImageCodersManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SDWebImageCodersManager.m; path = SDWebImage/SDWebImageCodersManager.m; sourceTree = "<group>"; };
 		5397CCCAF6FA9A68A3429FD5D4C74A97 /* Masonry.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Masonry.xcconfig; sourceTree = "<group>"; };
-		53A2AFECDE2608ACC8936D81BF93FDFC /* libPods-CJComplexUIKitDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "libPods-CJComplexUIKitDemo.a"; path = "libPods-CJComplexUIKitDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		53A2AFECDE2608ACC8936D81BF93FDFC /* libPods-CJComplexUIKitDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CJComplexUIKitDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		53B5567A4CA9FDD700FFCC25E414DD0A /* UIImage+CJChangeColor.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UIImage+CJChangeColor.m"; sourceTree = "<group>"; };
 		540680FDF40DA7248FBFE9B532DDE576 /* cjCheckBoxGreenYES@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "cjCheckBoxGreenYES@2x.png"; path = "CJBaseUIKit/CJTableView/CJBaseTableViewCell/Resources/cjCheckBoxGreenYES@2x.png"; sourceTree = "<group>"; };
 		54980A64C67A43B8887107348B740922 /* NSString+CJEncoding.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSString+CJEncoding.m"; path = "CJFoundation/NSString/NSString+CJEncoding.m"; sourceTree = "<group>"; };
@@ -1080,9 +1080,9 @@
 		56DC4407ACCEADB9DE5910370D16342A /* AFURLResponseSerialization.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFURLResponseSerialization.h; path = AFNetworking/AFURLResponseSerialization.h; sourceTree = "<group>"; };
 		57860AACDE649263966C7E09EA7E215F /* CJSwitchSliderStatusModel.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = CJSwitchSliderStatusModel.m; sourceTree = "<group>"; };
 		579C5FC141759E7318D6AB480B6F5099 /* CJHeadAndCellHorizontalLayout.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CJHeadAndCellHorizontalLayout.m; path = CJBaseUIKit/CJCollectionView/CJOpenCollectionView/CJHeadAndCellHorizontalLayout.m; sourceTree = "<group>"; };
-		57CBB0E8119A8640528A593A6D95F125 /* libNJKWebViewProgress.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = libNJKWebViewProgress.a; path = libNJKWebViewProgress.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		57CBB0E8119A8640528A593A6D95F125 /* libNJKWebViewProgress.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libNJKWebViewProgress.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		57E51C05A34BB3F328B8DBEA1CD52C9E /* CJPhotoProgressView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CJPhotoProgressView.h; path = CJMedia/CJPhotoBrowser/CJPhotoBrowser/Views/CJPhotoProgressView.h; sourceTree = "<group>"; };
-		586C70C184C4E31E2FEB370D23500F91 /* libCJFoundation.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = libCJFoundation.a; path = libCJFoundation.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		586C70C184C4E31E2FEB370D23500F91 /* libCJFoundation.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libCJFoundation.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		58832B8EC47FF8112A8883CF872C9727 /* CJImageUploadFileModelsOwner.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CJImageUploadFileModelsOwner.m; path = CJMedia/CJUploadImagePickerUtil/Models/CJImageUploadFileModelsOwner.m; sourceTree = "<group>"; };
 		58CF7CE5F84D66DFA01C7133F71F77B5 /* error@3x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "error@3x.png"; path = "CJMedia/CJPhotoBrowser/CJPhotoBrowser/CJPhotoBrowser.bundle/error@3x.png"; sourceTree = "<group>"; };
 		594A7B2812BB09D4FB68176F3D56769C /* success@3x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "success@3x.png"; path = "CJMedia/CJPhotoBrowser/CJPhotoBrowser/CJPhotoBrowser.bundle/success@3x.png"; sourceTree = "<group>"; };
@@ -1126,7 +1126,7 @@
 		680E9E7A0ABF33A8368BA92869E254EE /* SVIndefiniteAnimatedView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SVIndefiniteAnimatedView.h; path = SVProgressHUD/SVIndefiniteAnimatedView.h; sourceTree = "<group>"; };
 		6969EEE8DDA238A40EB7EB3BBADACAE7 /* UIView+CJKeepBounds.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIView+CJKeepBounds.h"; path = "CJBaseUIKit/UIView/CJDragAction/UIView+CJKeepBounds.h"; sourceTree = "<group>"; };
 		6A02E54A1CEBFF09B377B2A90EBD43E4 /* UIView+MJExtension.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIView+MJExtension.m"; path = "MJRefresh/UIView+MJExtension.m"; sourceTree = "<group>"; };
-		6A6FE9A978F815421A70D664755F60D9 /* CJBaseUtil.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; path = CJBaseUtil.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		6A6FE9A978F815421A70D664755F60D9 /* CJBaseUtil.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; path = CJBaseUtil.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		6AD537F58AB34432A33D4B19C8ECF87C /* CJMultiColumnPhotoTableViewCell.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CJMultiColumnPhotoTableViewCell.m; path = CJMedia/CJPhotoBrowser/CJImagePicker/Views/CJMultiColumnPhotoTableViewCell.m; sourceTree = "<group>"; };
 		6ADDD3464FF99FDB2894BE2B59CC18AA /* CJRefreshHeader.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = CJRefreshHeader.h; sourceTree = "<group>"; };
 		6B07F985B397ABD4021401AB5E30FEEB /* CJBaseUtil-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "CJBaseUtil-prefix.pch"; sourceTree = "<group>"; };
@@ -1144,11 +1144,11 @@
 		6DBA4E896F356E8B10E7AACB86A8B6B9 /* info@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "info@2x.png"; path = "CJMedia/CJPhotoBrowser/CJPhotoBrowser/CJPhotoBrowser.bundle/info@2x.png"; sourceTree = "<group>"; };
 		6E2BDD66728FAC8DA3490362152B3C21 /* NSOperationQueueCJHelper.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = NSOperationQueueCJHelper.m; path = CJBaseHelper/NSOperationQueueCJHelper/NSOperationQueueCJHelper.m; sourceTree = "<group>"; };
 		6E2FD605EEE5E81C8591ED0A85F9DD82 /* AFURLSessionManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AFURLSessionManager.m; path = AFNetworking/AFURLSessionManager.m; sourceTree = "<group>"; };
-		6F15BF3AE0BDAB3228CB0538FCC7C305 /* CJBaseUIKit.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; path = CJBaseUIKit.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		6F15BF3AE0BDAB3228CB0538FCC7C305 /* CJBaseUIKit.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; path = CJBaseUIKit.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		6FDCF3B7AB842149CC1C7CD3CC69C4FB /* CJRefreshComponent.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CJRefreshComponent.h; path = CJBaseUIKit/CJRefreshView/CJRefreshComponent.h; sourceTree = "<group>"; };
 		7047D59E018BDCE92D0A24FA56D71A9D /* UIViewController+CJSystemBackButtonHandler.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIViewController+CJSystemBackButtonHandler.h"; path = "CJBaseUIKit/UIViewController/UIViewController+CJSystemBackButtonHandler.h"; sourceTree = "<group>"; };
 		71B155890B3AD3CF19D5AD8E470B3828 /* AFHTTPSessionManager+CJCacheRequest.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "AFHTTPSessionManager+CJCacheRequest.h"; path = "CJNetwork/AFNetworkingCacheComponent/AFHTTPSessionManager+CJCacheRequest.h"; sourceTree = "<group>"; };
-		71F5281F522350F42DF24E70E060FE55 /* libCJMedia.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = libCJMedia.a; path = libCJMedia.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		71F5281F522350F42DF24E70E060FE55 /* libCJMedia.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libCJMedia.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		722A1B4071509BCD8ED0A08BF241321A /* IjinbuNetworkClient.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = IjinbuNetworkClient.h; path = IjinbuNetwork/IjinbuNetworkClient.h; sourceTree = "<group>"; };
 		72E6CC4C4524407D76799A71C35C98AD /* CJSlider.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CJSlider.h; path = CJBaseUIKit/CJSlider/CJSlider.h; sourceTree = "<group>"; };
 		7308870A4FA6F66DD315E7A1350B58D2 /* CJUploadFileModelsOwner.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CJUploadFileModelsOwner.h; path = CJNetwork/AFNetworkingUploadComponent/AFNetworkingUploadAPI/CJUploadFileModelsOwner/CJUploadFileModelsOwner.h; sourceTree = "<group>"; };
@@ -1156,8 +1156,8 @@
 		7368D40AAD2FA53EAFAA09707362ACBC /* CJBaseUISlider.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CJBaseUISlider.m; path = CJBaseUIKit/CJSlider/CJBaseUISlider.m; sourceTree = "<group>"; };
 		73AB2D3E4BF8F810C809BCA42C7175B4 /* CJAppLastLaunchInfoManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CJAppLastLaunchInfoManager.h; path = CJBaseUtil/CJAppLastUtil/CJAppLastLaunchInfoManager.h; sourceTree = "<group>"; };
 		7403875ABE4A74BE5203C9BF64D04203 /* NSDateFormatterCJHelper.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = NSDateFormatterCJHelper.h; path = CJBaseHelper/NSDateFormatterCJHelper/NSDateFormatterCJHelper.h; sourceTree = "<group>"; };
-		745F8DAB1FAAE612695BDA2522628E22 /* libMJRefresh.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = libMJRefresh.a; path = libMJRefresh.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		74DCF60366BE02721E4F99E097525BDC /* libSDWebImage.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = libSDWebImage.a; path = libSDWebImage.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		745F8DAB1FAAE612695BDA2522628E22 /* libMJRefresh.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libMJRefresh.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		74DCF60366BE02721E4F99E097525BDC /* libSDWebImage.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libSDWebImage.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		7532D8F36C63B482A7A8C6354D06950A /* CJAlumbImageUtil.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CJAlumbImageUtil.m; path = CJMedia/CJPhotoBrowser/CJAlumbImageUtil/CJAlumbImageUtil.m; sourceTree = "<group>"; };
 		7590A0909452E8714357FBE88D276E71 /* MJRefresh.bundle */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "wrapper.plug-in"; name = MJRefresh.bundle; path = MJRefresh/MJRefresh.bundle; sourceTree = "<group>"; };
 		759BA4499FE1C28466484317F717834C /* CJToast_success@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "CJToast_success@2x.png"; path = "CJBaseUIKit/CJToast/Resources/CJToast_success@2x.png"; sourceTree = "<group>"; };
@@ -1242,7 +1242,7 @@
 		931F6E9EA1D461450E1EA0F7E551F9C3 /* NSString+CJAttributedString.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSString+CJAttributedString.h"; path = "CJFoundation/NSString/NSString+CJAttributedString.h"; sourceTree = "<group>"; };
 		93239EB295339496C35D2BA55B2CEFD5 /* info.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = info.png; path = CJMedia/CJPhotoBrowser/CJPhotoBrowser/CJPhotoBrowser.bundle/info.png; sourceTree = "<group>"; };
 		9331F6EFDACA2D207F79197358CCCF53 /* CJPhotoProgressView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CJPhotoProgressView.m; path = CJMedia/CJPhotoBrowser/CJPhotoBrowser/Views/CJPhotoProgressView.m; sourceTree = "<group>"; };
-		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		9459FECA170E2DD29501204828E54BA5 /* UIView+WebCache.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIView+WebCache.h"; path = "SDWebImage/UIView+WebCache.h"; sourceTree = "<group>"; };
 		94FD925D2210724703882F38BACD7147 /* CJDataMemoryDictionaryManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CJDataMemoryDictionaryManager.m; path = CJCacheManager/ReadWriteDataManager/CJDataMemoryDictionaryManager.m; sourceTree = "<group>"; };
 		95225E0423B7838677980819C703B939 /* NSObject+SearchProperty.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "NSObject+SearchProperty.m"; sourceTree = "<group>"; };
@@ -1254,7 +1254,7 @@
 		974040BF416148B5DA8BBCDC4D8BC14B /* UIViewController+CJCustomBackBarButtonItem.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIViewController+CJCustomBackBarButtonItem.h"; path = "CJBaseUIKit/UIViewController/UIViewController+CJCustomBackBarButtonItem.h"; sourceTree = "<group>"; };
 		9753581A18831B9AF6CF9BCE00EB57BF /* PinyinHelper.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PinyinHelper.h; path = PinYin4Objc/Classes/PinyinHelper.h; sourceTree = "<group>"; };
 		97B5E4CF30879F91D10AD1355C437B4F /* CJBaseHelper-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "CJBaseHelper-dummy.m"; sourceTree = "<group>"; };
-		97B6DA410F5F4D6E26D06AA49FEC8FCA /* libCJNetwork.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = libCJNetwork.a; path = libCJNetwork.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		97B6DA410F5F4D6E26D06AA49FEC8FCA /* libCJNetwork.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libCJNetwork.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		97CBBFCCA2EB791C5252457A092B465E /* MJRefreshAutoStateFooter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MJRefreshAutoStateFooter.m; path = MJRefresh/Custom/Footer/Auto/MJRefreshAutoStateFooter.m; sourceTree = "<group>"; };
 		97CBE4629E6D931A85579C5A8FB211E6 /* CJDataMemoryCacheManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CJDataMemoryCacheManager.m; path = CJCacheManager/ReadWriteDataManager/CJDataMemoryCacheManager.m; sourceTree = "<group>"; };
 		98433BDB0DA7BBD183F864D4BAA0E313 /* CJDataUtil.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CJDataUtil.m; path = CJBaseUtil/CJDataUtil/CJDataUtil.m; sourceTree = "<group>"; };
@@ -1275,7 +1275,7 @@
 		9DE16D38EA14AC3A45B8B83B54667350 /* CJPhotoGroupTableViewCell.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CJPhotoGroupTableViewCell.h; path = CJMedia/CJPhotoBrowser/CJAlumbViewController/Views/CJPhotoGroupTableViewCell.h; sourceTree = "<group>"; };
 		9DEFDED0E2DADB9008D29110687AD792 /* NSJSONSerialization+CJCategory.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSJSONSerialization+CJCategory.m"; path = "CJFoundation/NSJSONSerialization/NSJSONSerialization+CJCategory.m"; sourceTree = "<group>"; };
 		9E8E276D873647A625E70F75926CED81 /* NJKWebViewProgress-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "NJKWebViewProgress-dummy.m"; sourceTree = "<group>"; };
-		9E9BD864517973E8659A513014A892D0 /* libCJBaseUIKit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = libCJBaseUIKit.a; path = libCJBaseUIKit.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		9E9BD864517973E8659A513014A892D0 /* libCJBaseUIKit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libCJBaseUIKit.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F3156C8DD9D1B2DE028F8B4C403F3CB /* CJModuleModel.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = CJModuleModel.h; sourceTree = "<group>"; };
 		9F692695AFD47C8140CE822F63B915EC /* CJFileManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CJFileManager.m; path = CJFile/CJFileManager/CJFileManager.m; sourceTree = "<group>"; };
 		9FC30F856F134FBE1A7FB23B600CFE71 /* CJFileManager+GetCreatePath.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "CJFileManager+GetCreatePath.h"; path = "CJFile/CJFileManager/CJFileManager+GetCreatePath.h"; sourceTree = "<group>"; };
@@ -1311,7 +1311,7 @@
 		A933C8243AC2B7404651373A30939741 /* MASConstraint.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MASConstraint.h; path = Masonry/MASConstraint.h; sourceTree = "<group>"; };
 		A956CAC00519732A6C02380070E6066C /* AFHTTPSessionManager+CJEncrypt.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "AFHTTPSessionManager+CJEncrypt.m"; path = "CJNetwork/AFNetworkingBaseComponent/AFHTTPSessionManager+CJEncrypt.m"; sourceTree = "<group>"; };
 		A97CF58B78F60386B53897BFAF6432F1 /* CJAlertView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CJAlertView.h; path = CJBaseUIKit/CJAlert/CJAlertView.h; sourceTree = "<group>"; };
-		A99310943F3D0F9FBB7952B5C9775016 /* libJGActionSheet.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = libJGActionSheet.a; path = libJGActionSheet.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		A99310943F3D0F9FBB7952B5C9775016 /* libJGActionSheet.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libJGActionSheet.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9991560A0FD68FCCCE36D4CBC2E2CF9 /* CJAlumbViewController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CJAlumbViewController.m; path = CJMedia/CJPhotoBrowser/CJAlumbViewController/CJAlumbViewController.m; sourceTree = "<group>"; };
 		A9FFE1793AB646D9C11C684387CCAD5E /* CJRequestCacheDataUtil.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CJRequestCacheDataUtil.m; path = CJNetwork/AFNetworkingCacheComponent/CJRequestCacheDataUtil.m; sourceTree = "<group>"; };
 		AA0DD3B0D0731D9C5EA0B903E5692475 /* CJTextView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CJTextView.m; path = CJBaseUIKit/CJTextView/CJTextView.m; sourceTree = "<group>"; };
@@ -1332,7 +1332,7 @@
 		AFC26CD6B74D2586316AFAF052467D3A /* AuthorizationCJHelper.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AuthorizationCJHelper.m; path = CJBaseHelper/AuthorizationCJHelper/AuthorizationCJHelper.m; sourceTree = "<group>"; };
 		AFEC22E4C3211CC6904F921C6046ABF0 /* SDWebImageFrame.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDWebImageFrame.h; path = SDWebImage/SDWebImageFrame.h; sourceTree = "<group>"; };
 		B240F41731D99CA8A9B9C96A8FEF683E /* CJAdsorbModel.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = CJAdsorbModel.h; sourceTree = "<group>"; };
-		B25404B9C4DC6482AC44BC73D39C9FB3 /* libPods-CJComplexUIKitDemoTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "libPods-CJComplexUIKitDemoTests.a"; path = "libPods-CJComplexUIKitDemoTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B25404B9C4DC6482AC44BC73D39C9FB3 /* libPods-CJComplexUIKitDemoTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CJComplexUIKitDemoTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B2A8DF82F59FAE4B6CDEF48F499DFF24 /* CJDateModel.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CJDateModel.h; path = CJBaseHelper/NSCalendarCJHelper/CJDateModel.h; sourceTree = "<group>"; };
 		B30E98B8E758923BF6B6BDAE529E758E /* UITextField+CJPadding.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UITextField+CJPadding.h"; path = "CJBaseUIKit/UITextField/UITextField+CJPadding.h"; sourceTree = "<group>"; };
 		B3619D24A19B9439AE2D76FEE97895A8 /* CJBaseHelper.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = CJBaseHelper.xcconfig; sourceTree = "<group>"; };
@@ -1355,7 +1355,7 @@
 		B98A3CDBC1D9E978BA21264AF2A973F5 /* UIView+AFNetworkingUpload.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIView+AFNetworkingUpload.m"; path = "CJNetwork/AFNetworkingUploadComponent/UIView+AFNetworkingUpload/UIView+AFNetworkingUpload.m"; sourceTree = "<group>"; };
 		B9AD01A46A296740CF64030CB21B3696 /* CJNetworkInfoModel.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CJNetworkInfoModel.m; path = CJNetwork/CJNetworkBase/CJNetworkInfoModel/CJNetworkInfoModel.m; sourceTree = "<group>"; };
 		B9ADE6E4E0CCFC3BAA13AD59C5B4F1EB /* CJNetworkErrorUtil.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CJNetworkErrorUtil.m; path = CJNetwork/CJNetworkBase/CJNetworkErrorUtil.m; sourceTree = "<group>"; };
-		BAB119F55332211AEEE90D572801CB83 /* libCJBaseUtil.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = libCJBaseUtil.a; path = libCJBaseUtil.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		BAB119F55332211AEEE90D572801CB83 /* libCJBaseUtil.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libCJBaseUtil.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB4BABFFDDCEE5664E6088B9277CC32E /* Pods-CJComplexUIKitDemoTests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-CJComplexUIKitDemoTests-resources.sh"; sourceTree = "<group>"; };
 		BC227F3864A3857376E6E648294A3D77 /* CJCacheManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CJCacheManager.m; path = CJCacheManager/CJCacheManager.m; sourceTree = "<group>"; };
 		BCD5BB39C8FB6FBC3C930C73039AF75F /* CJToast_error@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "CJToast_error@2x.png"; path = "CJBaseUIKit/CJToast/Resources/CJToast_error@2x.png"; sourceTree = "<group>"; };
@@ -1424,11 +1424,11 @@
 		D2A89BDED0A71178463562EA4E18B340 /* cjNetworkError@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "cjNetworkError@2x.png"; path = "CJBaseUIKit/CJDataEmptyView/Resources/cjNetworkError@2x.png"; sourceTree = "<group>"; };
 		D2C264EF823CB47F927D03D6DDAE5E36 /* UIWebView+AFNetworking.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIWebView+AFNetworking.m"; path = "UIKit+AFNetworking/UIWebView+AFNetworking.m"; sourceTree = "<group>"; };
 		D2F89ABAF4DCE719A46CCBB5E658F546 /* NSString+URLEncoding.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSString+URLEncoding.h"; path = "CJNetwork/AFNetworkingBaseComponent/CJJSONResponseSerializer/NSString+URLEncoding.h"; sourceTree = "<group>"; };
-		D34B680F5AB32691D5D21EBD849EBF43 /* libMasonry.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = libMasonry.a; path = libMasonry.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		D34B680F5AB32691D5D21EBD849EBF43 /* libMasonry.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libMasonry.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3704F2E6A6DAB68477A34899E3475CF /* CJAlert.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CJAlert.h; path = CJBaseUIKit/CJAlert/CJAlert.h; sourceTree = "<group>"; };
 		D3A304EB25047E1331D7FAE0B7411950 /* cjRefreshArrowDown@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "cjRefreshArrowDown@2x.png"; path = "CJBaseUIKit/CJMJRefreshComponent/Resources/cjRefreshArrowDown@2x.png"; sourceTree = "<group>"; };
 		D407FDC716FDD5FA12390F27F7555EF1 /* CJNetwork.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = CJNetwork.xcconfig; sourceTree = "<group>"; };
-		D505BB6477F2C73BB478FBEBA6ED139C /* libAFNetworking.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = libAFNetworking.a; path = libAFNetworking.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		D505BB6477F2C73BB478FBEBA6ED139C /* libAFNetworking.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libAFNetworking.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		D57558C23F30BC96DB889B4DD823953F /* IjinbuNetwork.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = IjinbuNetwork.xcconfig; sourceTree = "<group>"; };
 		D58107DC27FC84FDA362A98B40BFF3AC /* HanyuPinyinOutputFormat.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = HanyuPinyinOutputFormat.m; path = PinYin4Objc/Classes/HanyuPinyinOutputFormat.m; sourceTree = "<group>"; };
 		D5C43D6AEC325A3EFA2E1D3FBD007655 /* SDWebImageOperation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDWebImageOperation.h; path = SDWebImage/SDWebImageOperation.h; sourceTree = "<group>"; };
@@ -1453,7 +1453,7 @@
 		DDDF94EFB7E03AB41B24B5861ED07595 /* CJSearchResult.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = CJSearchResult.m; sourceTree = "<group>"; };
 		DE101AF97FAA9198A74B49E5022865C1 /* CJQRCodeUtil.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CJQRCodeUtil.h; path = CJBaseUtil/CJQRCodeUtil/CJQRCodeUtil.h; sourceTree = "<group>"; };
 		DE159CDFE6A7E3D68B78599CE9C1A14F /* CJBaseCollectionViewCell.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CJBaseCollectionViewCell.m; path = CJBaseUIKit/CJCollectionView/CJBaseCollectionViewCell/CJBaseCollectionViewCell.m; sourceTree = "<group>"; };
-		DE695D17F4EFA4FEC86373680690122B /* libPinYin4Objc.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = libPinYin4Objc.a; path = libPinYin4Objc.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		DE695D17F4EFA4FEC86373680690122B /* libPinYin4Objc.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPinYin4Objc.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		DF03F0B327DD744B2E8235BB5A3608CD /* CJRefreshBaseView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = CJRefreshBaseView.h; sourceTree = "<group>"; };
 		DF1FB5ACD4DF9FD51193D911C90DEB8C /* CJDataUtil+NormalSearch.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "CJDataUtil+NormalSearch.m"; path = "CJBaseUtil/CJDataUtil/CJDataUtil+NormalSearch.m"; sourceTree = "<group>"; };
 		DF8D37B648842194A8E04F165C001D83 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.3.sdk/System/Library/Frameworks/CoreLocation.framework; sourceTree = DEVELOPER_DIR; };
@@ -1482,7 +1482,7 @@
 		E86D2AF42BF2FB700F3FB13E4444D906 /* CJFileManager+GetCreatePath.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "CJFileManager+GetCreatePath.m"; path = "CJFile/CJFileManager/CJFileManager+GetCreatePath.m"; sourceTree = "<group>"; };
 		E882B04363D0F4C12EB53BDDDCB138AC /* MJRefreshHeader.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MJRefreshHeader.m; path = MJRefresh/Base/MJRefreshHeader.m; sourceTree = "<group>"; };
 		E89B3F01384EC4FD0CB49899D0648948 /* CJJSONResponseSerializer.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CJJSONResponseSerializer.m; path = CJNetwork/AFNetworkingBaseComponent/CJJSONResponseSerializer/CJJSONResponseSerializer.m; sourceTree = "<group>"; };
-		E8CCCF9F57089A78135148E210D364FB /* unicode_to_hanyu_pinyin.txt */ = {isa = PBXFileReference; includeInIndex = 1; name = unicode_to_hanyu_pinyin.txt; path = PinYin4Objc/Resources/unicode_to_hanyu_pinyin.txt; sourceTree = "<group>"; };
+		E8CCCF9F57089A78135148E210D364FB /* unicode_to_hanyu_pinyin.txt */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = unicode_to_hanyu_pinyin.txt; path = PinYin4Objc/Resources/unicode_to_hanyu_pinyin.txt; sourceTree = "<group>"; };
 		E99B0676570A8B8FED9DFCCBDA79FE3B /* MJRefreshStateHeader.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MJRefreshStateHeader.m; path = MJRefresh/Custom/Header/MJRefreshStateHeader.m; sourceTree = "<group>"; };
 		E9A1F345E0CF5D83F388E01A64D10DC3 /* NSString+CJTextSize.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSString+CJTextSize.m"; path = "CJFoundation/NSString/NSString+CJTextSize.m"; sourceTree = "<group>"; };
 		E9C2F273255451D6CEBDAAA38367CA89 /* CJFullCenterCollectionViewCell.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CJFullCenterCollectionViewCell.m; path = CJBaseUIKit/CJCollectionView/CJBaseCollectionViewCell/CJFullCenterCollectionViewCell.m; sourceTree = "<group>"; };
@@ -1505,7 +1505,7 @@
 		EFC8511AFAA8A16C706A570B7BECA7A4 /* DeviceCJHelper.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DeviceCJHelper.h; path = CJBaseHelper/DeviceCJHelper/DeviceCJHelper.h; sourceTree = "<group>"; };
 		EFE08CFF20798F901D3DB6BDDBE0866A /* CJDataUtil+CJSectionDataModel.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "CJDataUtil+CJSectionDataModel.m"; path = "CJBaseUtil/CJDataUtil/CJDataUtil+CJSectionDataModel.m"; sourceTree = "<group>"; };
 		F03FCB64390A40649FFF6DE146C87A81 /* UIView+CJKeepBounds.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIView+CJKeepBounds.m"; path = "CJBaseUIKit/UIView/CJDragAction/UIView+CJKeepBounds.m"; sourceTree = "<group>"; };
-		F081B423709B0CB13F58D70DB237BEC7 /* libCJFile.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = libCJFile.a; path = libCJFile.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		F081B423709B0CB13F58D70DB237BEC7 /* libCJFile.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libCJFile.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		F0FCD0F9EEC5F94F67FE47DDDDF54D0D /* UIButton+AFNetworking.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIButton+AFNetworking.m"; path = "UIKit+AFNetworking/UIButton+AFNetworking.m"; sourceTree = "<group>"; };
 		F0FFB2F2BD42FC9FCAFAD21E3EA44FF7 /* SDWebImage.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SDWebImage.xcconfig; sourceTree = "<group>"; };
 		F164D5336E81888277477B9218ED88DC /* CJSliderPopover.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = CJSliderPopover.m; sourceTree = "<group>"; };
@@ -1857,7 +1857,6 @@
 				29262F85496B0E4D194292B3FE603A70 /* Support Files */,
 				69E2664E890489A4EBC54B5CBBE48F19 /* UIKit */,
 			);
-			name = AFNetworking;
 			path = AFNetworking;
 			sourceTree = "<group>";
 		};
@@ -1975,7 +1974,6 @@
 				BF2745363EA44F6C33D95A404C7CFE89 /* MBProgressHUD.m */,
 				61D9714989357FE4EF66A258ADB18D97 /* Support Files */,
 			);
-			name = MBProgressHUD;
 			path = MBProgressHUD;
 			sourceTree = "<group>";
 		};
@@ -2060,7 +2058,6 @@
 				5B3548754C0BB8198811AB6FA25EB296 /* ViewController+MASAdditions.m */,
 				5CE2E8E8C3EE283B2E8AD73B3DC6F280 /* Support Files */,
 			);
-			name = Masonry;
 			path = Masonry;
 			sourceTree = "<group>";
 		};
@@ -2409,7 +2406,6 @@
 				6C64B8C2398E66AB507D59FF63D50D20 /* JGActionSheet.m */,
 				533D962A1C378B6414C9E2069BE12321 /* Support Files */,
 			);
-			name = JGActionSheet;
 			path = JGActionSheet;
 			sourceTree = "<group>";
 		};
@@ -2441,7 +2437,6 @@
 				60C4A9F1DD95BE776313D15ECFCD7253 /* CJSortedCategoryResult.h */,
 				856BF98AC77C9238E861D5F8CFA587FC /* CJSortedCategoryResult.m */,
 			);
-			name = Sorted;
 			path = Sorted;
 			sourceTree = "<group>";
 		};
@@ -2702,7 +2697,6 @@
 				0361C7000232CF5CA4C642147DC3DD61 /* Resources */,
 				D71C09D76EBD898D854C840D7DA84A56 /* Support Files */,
 			);
-			name = SVProgressHUD;
 			path = SVProgressHUD;
 			sourceTree = "<group>";
 		};
@@ -2724,7 +2718,6 @@
 				53BD2ED82ACE5A354EABD7850BB58A72 /* MySingleImagePickerController */,
 				DE3F66175CBC302819487A96A5B65D60 /* Support Files */,
 			);
-			name = CJMedia;
 			path = CJMedia;
 			sourceTree = "<group>";
 		};
@@ -2828,7 +2821,6 @@
 				66B76D5FAD007E6D4A6F24E229D41D21 /* Core */,
 				F6ED406306F33D47F4F84B00C0C56DE1 /* Support Files */,
 			);
-			name = SDWebImage;
 			path = SDWebImage;
 			sourceTree = "<group>";
 		};
@@ -2924,7 +2916,6 @@
 				C95E772BFA3652FC5249925DB6EED99E /* Resources */,
 				7FAD153CBDD2749B4C4DA97A2D1748D1 /* Support Files */,
 			);
-			name = MJRefresh;
 			path = MJRefresh;
 			sourceTree = "<group>";
 		};
@@ -3028,7 +3019,6 @@
 				F38BD34F980B6B29AD95921DB4B0F8B7 /* ProgressView */,
 				03F514F408768326C129B1142AA29281 /* Support Files */,
 			);
-			name = NJKWebViewProgress;
 			path = NJKWebViewProgress;
 			sourceTree = "<group>";
 		};
@@ -3073,7 +3063,6 @@
 				3695C5F076A2BDA65E5F75ED759922FD /* NSObject+SearchProperty.h */,
 				95225E0423B7838677980819C703B939 /* NSObject+SearchProperty.m */,
 			);
-			name = Search;
 			path = Search;
 			sourceTree = "<group>";
 		};
@@ -3103,7 +3092,6 @@
 				632BBCD3862339F2BC06E26982E6F277 /* CJRequestUtil */,
 				D5A327FD3DE43FF87ACF6E40453ABA27 /* Support Files */,
 			);
-			name = CJNetwork;
 			path = CJNetwork;
 			sourceTree = "<group>";
 		};
@@ -3113,7 +3101,6 @@
 				CCD1084437581155899C26771D465DE9 /* CJFileManager */,
 				663DA27C7AEDEEA58157294F43AF9DAD /* Support Files */,
 			);
-			name = CJFile;
 			path = CJFile;
 			sourceTree = "<group>";
 		};
@@ -3166,7 +3153,6 @@
 				486DF7DA53A5921B99392387909376D5 /* Resources */,
 				20B50CDFC6F4B0D747252D421692FCF3 /* Support Files */,
 			);
-			name = SAMKeychain;
 			path = SAMKeychain;
 			sourceTree = "<group>";
 		};
@@ -3371,8 +3357,8 @@
 				B4D0C48A7ADD2AE221A702A3DF0CB161 /* UIImage+CJMakeCircle.m */,
 				5E57C302D78D98D16A8D255259052439 /* UIImage+CJRotateAngle.h */,
 				85DBB246F082B86DC8E7267B6D3CD27E /* UIImage+CJRotateAngle.m */,
-				2BB92AC29B33EDDB2C2D1A14D8D1A151 /* UIImage+SplitImageIntoTwoParts.h */,
-				0EFC758AD6FB7770B67C42AC0FC3320B /* UIImage+SplitImageIntoTwoParts.m */,
+				2BB92AC29B33EDDB2C2D1A14D8D1A151 /* UIImage+CJSplitImageIntoTwoParts.h */,
+				0EFC758AD6FB7770B67C42AC0FC3320B /* UIImage+CJSplitImageIntoTwoParts.m */,
 			);
 			name = Edit;
 			path = CJBaseUIKit/UIImage/Edit;
@@ -3432,7 +3418,6 @@
 				8081A18E2D3FE554EE8565DCBFBAD80B /* IjinbuUser.m */,
 				D33C4BF04AB2F6A79E8E50CD6FBA83FF /* Support Files */,
 			);
-			name = IjinbuNetwork;
 			path = IjinbuNetwork;
 			sourceTree = "<group>";
 		};
@@ -3547,7 +3532,6 @@
 				CB7BFCC7BBA3B35B2275C929EECD0D06 /* Resources */,
 				02F5F0A80BADA1857814B94348E87CD4 /* Support Files */,
 			);
-			name = PinYin4Objc;
 			path = PinYin4Objc;
 			sourceTree = "<group>";
 		};
@@ -3597,7 +3581,6 @@
 				CED80648C888D5A94C17D83816E50E47 /* OpenUDID.m */,
 				5A2EFD76124191D8B7C206BC549DBE90 /* Support Files */,
 			);
-			name = OpenUDID;
 			path = OpenUDID;
 			sourceTree = "<group>";
 		};
@@ -3788,7 +3771,7 @@
 				4557F7AE0169D6A71777D840755FF25D /* UIImage+CJMakeCircle.h in Headers */,
 				3791A6F0CCFA64EC60750947907B5107 /* UIImage+CJRotateAngle.h in Headers */,
 				2C8FCD1BDDE4689A3CD636AE71C90921 /* UIImage+CJTransformSize.h in Headers */,
-				B16191C4F16728FBAD78402DC647994B /* UIImage+SplitImageIntoTwoParts.h in Headers */,
+				B16191C4F16728FBAD78402DC647994B /* UIImage+CJSplitImageIntoTwoParts.h in Headers */,
 				C739469662CE5C865595136146CCEF8F /* UIImageCJCategory.h in Headers */,
 				5041387197B503C3F3C0CD6D26086E41 /* UINavigationBar+CJChangeBG.h in Headers */,
 				1D5245F5AA825A062239DCA7A6EE63EE /* UIScrollView+CJKeyboardAvoiding.h in Headers */,
@@ -4762,7 +4745,7 @@
 				7F1F8FA72A480320BA21EEF0D8468653 /* UIImage+CJMakeCircle.m in Sources */,
 				1A2EFBD02C2EF21723A51C70548F9E6A /* UIImage+CJRotateAngle.m in Sources */,
 				3F39CE12550B69A2B548709C045672E2 /* UIImage+CJTransformSize.m in Sources */,
-				E73C29F8851058079BD2C7B3A2440096 /* UIImage+SplitImageIntoTwoParts.m in Sources */,
+				E73C29F8851058079BD2C7B3A2440096 /* UIImage+CJSplitImageIntoTwoParts.m in Sources */,
 				868A8DA69BF1D1B90FF15CEEC579B97F /* UINavigationBar+CJChangeBG.m in Sources */,
 				3ED2FA3633F1EFFF5DFD3A316EC75F34 /* UIScrollView+CJKeyboardAvoiding.m in Sources */,
 				67CC009B2E54583C3566B09AC7ED7DC2 /* UISearchBar+CJAddInputAccessoryView.m in Sources */,

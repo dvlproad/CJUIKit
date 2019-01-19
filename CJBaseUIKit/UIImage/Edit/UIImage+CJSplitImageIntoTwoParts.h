@@ -1,5 +1,5 @@
 //
-//  UIImage+SplitImageIntoTwoParts.h
+//  UIImage+CJSplitImageIntoTwoParts.h
 //  CJUIKitDemo
 //
 //  Created by ciyouzen on 14-11-5.
@@ -8,8 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface UIImage (SplitImageIntoTwoParts)
+@interface UIImage (CJSplitImageIntoTwoParts)
 
-+ (NSArray *)cj_splitImageIntoTwoParts:(UIImage*)image;
+- (NSArray<UIImage *> *)cj_splitImageIntoTwoParts;
 
 @end

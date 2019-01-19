@@ -108,6 +108,7 @@
 		789C447A21F07DAC00181144 /* ChangeEnvHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 789C447921F07DAC00181144 /* ChangeEnvHomeViewController.m */; };
 		789C448121F07F6C00181144 /* ImageSizeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 789C447F21F07F6C00181144 /* ImageSizeViewController.m */; };
 		789C448221F07F6C00181144 /* ImageSizeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 789C448021F07F6C00181144 /* ImageSizeViewController.xib */; };
+		789C448521F166FC00181144 /* DemoCacheUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 789C448421F166FC00181144 /* DemoCacheUtil.m */; };
 		789CAF181FB612B700AF8CD4 /* ChangeLog.md in Resources */ = {isa = PBXBuildFile; fileRef = 789CAE111FB612B600AF8CD4 /* ChangeLog.md */; };
 		789CAF251FB612B700AF8CD4 /* CJSingleTableViewCellDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 789CAE321FB612B600AF8CD4 /* CJSingleTableViewCellDataSource.m */; };
 		789CAF261FB612B700AF8CD4 /* CJSingleTableViewCellDataSource2.m in Sources */ = {isa = PBXBuildFile; fileRef = 789CAE341FB612B600AF8CD4 /* CJSingleTableViewCellDataSource2.m */; };
@@ -544,6 +545,8 @@
 		789C447E21F07F6C00181144 /* ImageSizeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ImageSizeViewController.h; sourceTree = "<group>"; };
 		789C447F21F07F6C00181144 /* ImageSizeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ImageSizeViewController.m; sourceTree = "<group>"; };
 		789C448021F07F6C00181144 /* ImageSizeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ImageSizeViewController.xib; sourceTree = "<group>"; };
+		789C448321F166FC00181144 /* DemoCacheUtil.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DemoCacheUtil.h; sourceTree = "<group>"; };
+		789C448421F166FC00181144 /* DemoCacheUtil.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DemoCacheUtil.m; sourceTree = "<group>"; };
 		789CAB597AD073D5F637D193 /* Pods-CJUIKitDemoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CJUIKitDemoTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-CJUIKitDemoTests/Pods-CJUIKitDemoTests.release.xcconfig"; sourceTree = "<group>"; };
 		789CAE111FB612B600AF8CD4 /* ChangeLog.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = ChangeLog.md; sourceTree = "<group>"; };
 		789CAE311FB612B600AF8CD4 /* CJSingleTableViewCellDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJSingleTableViewCellDataSource.h; sourceTree = "<group>"; };
@@ -1049,7 +1052,7 @@
 				783281011F4198BC008267E0 /* CJSmallCustomView */,
 				789A19681E61B87D008081E3 /* Resources */,
 				780E46031E5DF87B00980127 /* Supporting Files */,
-				808BF3212019C3E900511F7C /* Utils */,
+				808BF3212019C3E900511F7C /* CommonUtil */,
 			);
 			path = CJUIKitDemo;
 			sourceTree = "<group>";
@@ -1912,15 +1915,17 @@
 			path = ViewAnimateDemo;
 			sourceTree = "<group>";
 		};
-		808BF3212019C3E900511F7C /* Utils */ = {
+		808BF3212019C3E900511F7C /* CommonUtil */ = {
 			isa = PBXGroup;
 			children = (
 				789C443B21EECEE800181144 /* CJAppVersionUtil.h */,
 				789C443A21EECEE700181144 /* CJAppVersionUtil.m */,
 				808BF3222019C3E900511F7C /* YunUncaughtExceptionHandler.m */,
 				808BF3232019C3E900511F7C /* YunUncaughtExceptionHandler.h */,
+				789C448321F166FC00181144 /* DemoCacheUtil.h */,
+				789C448421F166FC00181144 /* DemoCacheUtil.m */,
 			);
-			path = Utils;
+			path = CommonUtil;
 			sourceTree = "<group>";
 		};
 		808DE5E420DA0586003E08F1 /* CJDecimalUtil */ = {
@@ -3015,6 +3020,7 @@
 				805598B51FF5D612009DC61C /* ValidateStringViewController.m in Sources */,
 				784AB8E921E892FD00A3F51C /* TestHUDHomeViewController.m in Sources */,
 				80FF91971FC5682B00E437CF /* EncryptStringViewController.m in Sources */,
+				789C448521F166FC00181144 /* DemoCacheUtil.m in Sources */,
 				78B6C2E92159D84800D5864E /* DemoBusFlightStationOnOffDetailModel.m in Sources */,
 				78A0D043216B32D100EFAD67 /* BadgeButtonViewController.m in Sources */,
 				80FF91981FC5682B00E437CF /* AttributedStringViewController.m in Sources */,

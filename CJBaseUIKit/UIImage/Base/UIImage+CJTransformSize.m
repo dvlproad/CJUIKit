@@ -72,7 +72,6 @@
 
 /* 完整的描述请参见文件头部 */
 - (UIImage *)cj_resizableImageWithCapInsets:(UIEdgeInsets)insets {
-    
     return  [self resizableImageWithCapInsets:insets resizingMode:UIImageResizingModeStretch];
 }
 
@@ -82,11 +81,11 @@
 - (NSData *)cj_compressWithMaxDataLength:(NSInteger)maxDataLength {
     // Compress by quality
     NSData *data = [self cj_compressQualityWithMaxDataLength:maxDataLength];
-    
     //NSLog(@"After compressing quality, image size = %ld KB", data.length / 1024);
-    data = [self cj_compressSizeWithMaxDataLength:maxDataLength];
     
+    data = [self cj_compressSizeWithMaxDataLength:maxDataLength];
     //NSLog(@"After compressing size loop, image size = %ld KB", data.length / 1024);
+    
     return data;
 }
 

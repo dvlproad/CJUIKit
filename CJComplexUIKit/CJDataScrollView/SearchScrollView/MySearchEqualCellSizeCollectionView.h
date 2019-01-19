@@ -7,14 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-
-#ifdef CJTESTComplexUIKitPOD
-#import "MyEqualCellSizeCollectionView.h"
-#import "CJSectionDataModel.h"
-#else
 #import <CJBaseUIKit/MyEqualCellSizeCollectionView.h>
-#import <CJBaseUtil/CJSectionDataModel.h> //在CJDataUtil中
-#endif
+#import <CJBaseUtil/CJSectionDataModel.h>   //在CJDataUtil中
 
 
 typedef UICollectionViewCell* (^CJConfigureCollectionViewCellBlock)(UICollectionView *collectionView, NSIndexPath *indexPath);
