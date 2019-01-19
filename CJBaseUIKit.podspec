@@ -129,10 +129,32 @@ Pod::Spec.new do |s|
     ss.source_files = "CJBaseUIKit/CJTextView/**/*.{h,m}"
     # ss.resources = "CJBaseUIKit/CJTextView/**/*.{png,xib}"
   end
+
+  s.subspec 'CJSlider' do |ss|
+    # ss.source_files = "CJBaseUIKit/CJSlider/*.{h,m}", "CJBaseUIKit/CJSlider/CJAdsorbModel/**/*.{h,m}"
+    ss.source_files = "CJBaseUIKit/CJSlider/**/*.{h,m}"
+  end
   
   s.subspec 'UIToolbar' do |ss|
     ss.source_files = "CJBaseUIKit/UIToolbar/**/*.{h,m}"
     # ss.resources = "CJBaseUIKit/UIToolbar/**/*.{png,xib}"
+  end
+
+
+  s.subspec 'CJToast' do |ss|
+    ss.source_files = "CJBaseUIKit/CJToast/**/*.{h,m}"
+    ss.resources = "CJBaseUIKit/CJToast/**/*.{png,xib}"
+
+    #多个依赖就写多行
+    ss.dependency 'MBProgressHUD'
+  end
+
+  s.subspec 'CJAlert' do |ss|
+    ss.source_files = "CJBaseUIKit/CJAlert/**/*.{h,m}"
+
+    #多个依赖就写多行
+    ss.dependency 'Masonry'
+    ss.dependency 'CJBaseUIKit/UIView/CJPopupAction'
   end
 
   s.subspec 'CJScrollView' do |ss|
@@ -178,18 +200,7 @@ Pod::Spec.new do |s|
     end
 
   end
-
-
-
-
-
-  s.subspec 'CJSlider' do |ss|
-    # ss.source_files = "CJBaseUIKit/CJSlider/*.{h,m}", "CJBaseUIKit/CJSlider/CJAdsorbModel/**/*.{h,m}"
-    ss.source_files = "CJBaseUIKit/CJSlider/**/*.{h,m}"
-  end
   
-
-
 
 
   s.subspec 'CJRefreshView' do |ss|
@@ -204,23 +215,6 @@ Pod::Spec.new do |s|
     #多个依赖就写多行
     #ss.dependency 'Masonry'
     ss.dependency 'MJRefresh'
-  end
-
-
-  s.subspec 'CJToast' do |ss|
-    ss.source_files = "CJBaseUIKit/CJToast/**/*.{h,m}"
-    ss.resources = "CJBaseUIKit/CJToast/**/*.{png,xib}"
-
-    #多个依赖就写多行
-    ss.dependency 'MBProgressHUD'
-  end
-
-  s.subspec 'CJAlert' do |ss|
-    ss.source_files = "CJBaseUIKit/CJAlert/**/*.{h,m}"
-
-    #多个依赖就写多行
-    ss.dependency 'Masonry'
-    ss.dependency 'CJBaseUIKit/UIView/CJPopupAction'
   end
 
 

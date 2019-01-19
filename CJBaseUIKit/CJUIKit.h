@@ -15,12 +15,7 @@
 //UITextView
 #import "CJTextView.h"
 
-//UIScrollView
-#import "CJKeyboardAvoidingScrollView.h"
 
-//CJRefeshView
-#import "CJRefreshComponent.h"      //不依赖MJRefresh
-#import "CJMJRefreshComponent.h"    //依赖MJRefresh
 
 
 #endif /* CJUIKit_h */
