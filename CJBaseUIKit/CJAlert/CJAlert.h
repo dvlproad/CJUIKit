@@ -7,7 +7,6 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <CJBaseUIKit/UIView+CJPopupInView.h>
 
 @interface CJAlert : NSObject
 

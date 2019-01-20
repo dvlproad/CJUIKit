@@ -9,7 +9,6 @@
 #import "AppDelegate+WindowRootViewController.h"
 
 #import "HomeViewController.h"
-#import "ScrollViewHomeViewController.h"
 #import "FoundationHomeViewController.h"
 #import "UtilHomeViewController.h"
 //#import "HelperHomeViewController.h"
@@ -33,13 +32,6 @@
     //homeViewController. = @"10";
     UINavigationController *homeNavigationController = [[UINavigationController alloc] initWithRootViewController:homeViewController];
     [tabBarController addChildViewController:homeNavigationController];
-    
-    
-    ScrollViewHomeViewController *scrollViewHomeViewController = [[ScrollViewHomeViewController alloc] init];
-    scrollViewHomeViewController.tabBarItem.title = NSLocalizedString(@"ScrollView", nil);
-    scrollViewHomeViewController.tabBarItem.image = [[UIImage imageNamed:@"icons8-calendar"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
-    UINavigationController *scrollViewHomeNavigationController = [[UINavigationController alloc] initWithRootViewController:scrollViewHomeViewController];
-    [tabBarController addChildViewController:scrollViewHomeNavigationController];
     
     FoundationHomeViewController *foundationHomeViewController = [[FoundationHomeViewController alloc] init];
     foundationHomeViewController.view.backgroundColor = [UIColor whiteColor];

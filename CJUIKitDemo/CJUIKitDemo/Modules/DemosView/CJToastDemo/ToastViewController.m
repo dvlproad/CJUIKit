@@ -7,9 +7,7 @@
 //
 
 #import "ToastViewController.h"
-#import <CJBaseUIKit/CJToast.h>
-
-#import <CJBaseUIKit/CJMJRefreshNormalHeader.h>
+#import <CJBaseEffectKit/CJMJRefreshNormalHeader.h>
 #import "TestProgressHUDViewController.h"
 #import "TestHUDHomeViewController.h"
 

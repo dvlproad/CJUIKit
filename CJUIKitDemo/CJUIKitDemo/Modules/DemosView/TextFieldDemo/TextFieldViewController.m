@@ -16,8 +16,6 @@
 #import "CJTextField.h"
 
 #import "BBXDAreaCodeTextField.h"
-
-#import <CJBaseUIKit/CJToast.h>
 #import <CJFoundation/NSString+CJValidate.h>
 
 #import "CJDefaultToolbar.h"

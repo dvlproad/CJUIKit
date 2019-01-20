@@ -7,7 +7,13 @@ Pod::Spec.new do |s|
 
   s.description  = <<-DESC
                   *、CJDataScrollView：带数据的列表视图或集合视图(常用于搜索、图片选择)
-
+                 - CJBaseUIKit/CJScrollView：滚动视图：自定义的基础滚动视图
+                 - CJComplexUIKit/CJCollectionView：集合视图
+                 - CJComplexUIKit/CJCollectionView/CJBaseCollectionViewCell：基础的CollectionViewCell
+                 - CJComplexUIKit/CJCollectionView/CJCollectionViewLayout
+                 - CJComplexUIKit/CJCollectionView/MyEqualCellSizeCollectionView：一个只有一个分区且分区中的每个cell大小相等的集合视图(cell的大小可通过方法①设置cell的固定大小和方法②通过设置每行最大显示的cell个数获得)
+                 - CJComplexUIKit/CJCollectionView/CJOpenCollectionView：可展开的集合视图
+                 
                    A longer description of CJComplexUIKit in Markdown format.
 
                    * Think: Why did you write this? What is the focus? What does it do?
@@ -61,13 +67,43 @@ Pod::Spec.new do |s|
   end
 
 
+  # 与 UIScrollView 相关的基础类
+  s.subspec 'CJScrollView' do |ss|
+    ss.source_files = "CJComplexUIKit/CJScrollView/**/*.{h,m}"
+  end
+
+
+    # 与 UICollectionView 相关的基础类
+  s.subspec 'CJCollectionView' do |ss|
+    ss.subspec 'CJBaseCollectionViewCell' do |sss|
+      sss.source_files = "CJComplexUIKit/CJCollectionView/CJBaseCollectionViewCell/**/*.{h,m}"
+    end
+
+    ss.subspec 'CJCollectionViewLayout' do |sss|
+      sss.source_files = "CJComplexUIKit/CJCollectionView/CJCollectionViewLayout/**/*.{h,m}"
+    end
+
+    # 各种集合视图
+    # 一个只有一个分区且分区中的每个cell大小相等的集合视图(cell的大小可通过方法①设置cell的固定大小和方法②通过设置每行最大显示的cell个数获得)
+    ss.subspec 'MyEqualCellSizeCollectionView' do |sss|
+      sss.source_files = "CJComplexUIKit/CJCollectionView/MyEqualCellSizeCollectionView/**/*.{h,m}"
+    end
+
+    # 可展开的集合视图
+    ss.subspec 'CJOpenCollectionView' do |sss|
+      sss.source_files = "CJComplexUIKit/CJCollectionView/CJOpenCollectionView/**/*.{h,m}"
+    end
+
+  end
+
+
   # 带数据的列表视图或集合视图(常用于搜索、图片选择)
   s.subspec 'CJDataScrollView' do |ss|
     ss.subspec 'SearchScrollView' do |sss|
       sss.source_files = "CJComplexUIKit/CJDataScrollView/SearchScrollView/**/*.{h,m}"
 
       # 搜索功能需要依赖的库
-      sss.dependency 'CJBaseUIKit/CJCollectionView/MyEqualCellSizeCollectionView'
+      sss.dependency 'CJComplexUIKit/CJCollectionView/MyEqualCellSizeCollectionView'
       sss.dependency 'CJBaseUtil/CJDataUtil'
     end
 
@@ -78,8 +114,8 @@ Pod::Spec.new do |s|
 
       # 图片选择功能需要依赖的库
       sss.dependency 'JGActionSheet'
-      sss.dependency 'CJBaseUIKit/CJCollectionView/MyEqualCellSizeCollectionView'
-      sss.dependency 'CJBaseUIKit/CJCollectionView/CJBaseCollectionViewCell'
+      sss.dependency 'CJComplexUIKit/CJCollectionView/MyEqualCellSizeCollectionView'
+      sss.dependency 'CJComplexUIKit/CJCollectionView/CJBaseCollectionViewCell'
 
       sss.dependency 'CJMedia/CJUploadImagePickerUtil'
     end

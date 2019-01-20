@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <CJBaseUIKit/MyEqualCellSizeCollectionView.h>
+#import <CJComplexUIKit/MyEqualCellSizeCollectionView.h>
 #import <CJBaseUtil/CJSectionDataModel.h>   //在CJDataUtil中
 
 

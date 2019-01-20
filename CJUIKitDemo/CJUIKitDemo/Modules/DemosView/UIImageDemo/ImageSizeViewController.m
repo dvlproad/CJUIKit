@@ -7,7 +7,12 @@
 //
 
 #import "ImageSizeViewController.h"
+#ifdef CJTESTPOD
+#import "UIImage+CJTransformSize.h"
+#else
 #import <CJBaseUIKit/UIImage+CJTransformSize.h>
+#endif
+
 #import "DemoCacheUtil.h"
 
 @interface ImageSizeViewController ()

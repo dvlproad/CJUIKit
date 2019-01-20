@@ -12,10 +12,5 @@
 //UIColor
 #import "UIColor+CJHex.h"
 
-//UITextView
-#import "CJTextView.h"
-
-
-
 
 #endif /* CJUIKit_h */

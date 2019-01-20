@@ -108,7 +108,7 @@
     [message appendFormat:@"appName:%@\n", appName];
     [message appendFormat:@"appVersion:%@\n", appVersion];
     [message appendFormat:@"appBuild:  %@\n", appBuild];
-    [message appendFormat:extraInfo];
+    [message appendString:extraInfo];
     
     [CJAlert showDebugViewWithTitle:title message:message];
 }

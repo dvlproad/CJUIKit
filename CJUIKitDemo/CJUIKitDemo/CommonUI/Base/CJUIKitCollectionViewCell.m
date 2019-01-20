@@ -7,7 +7,6 @@
 //
 
 #import "CJUIKitCollectionViewCell.h"
-#import <CJBaseUIKit/UIColor+CJHex.h>
 
 @implementation CJUIKitCollectionViewCell
 

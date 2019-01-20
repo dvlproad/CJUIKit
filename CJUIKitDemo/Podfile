@@ -37,12 +37,6 @@ target 'CJUIKitDemo' do
 
     pod 'Shimmer', '~> 1.0.2' #fackBook的闪光动画
 
-
-    pod 'SDCycleScrollView', '~> 1.73' #(已包括SDWebImage)原理其实就是扩大dataSource的count
-    #    pod 'SDWebImage', '~> 4.0.0'
-
-    pod 'MJPopupViewController', '~> 0.4'
-
     pod 'CJPopupView/CJPopoverView'
 
     # 自己的库
@@ -65,18 +59,19 @@ target 'CJUIKitDemo' do
 
     pod 'YYText', '~> 1.0.7'
 
-    pod 'DZNEmptyDataSet'
-
-    pod 'CJBaseUIKit',        :path => '~/Project/Github/CJUIKit’
-    pod 'CJBaseUtil',         :path => '~/Project/Github/CJUIKit’
-    pod 'CJFoundation',       :path => '~/Project/Github/CJUIKit’
-    pod 'CJBaseHelper',       :path => '~/Project/Github/CJUIKit’
+#    pod 'CJBaseUIKit',          :path => '~/Project/Github/CJUIKit’
+    pod 'CJBaseUtil',           :path => '~/Project/Github/CJUIKit’
+    pod 'CJFoundation',         :path => '~/Project/Github/CJUIKit’
+    pod 'CJBaseHelper',         :path => '~/Project/Github/CJUIKit’
+    pod 'CJBaseEffectKit',      :path => '../’
+    pod 'CJComplexUIKit/CJCollectionView/MyEqualCellSizeCollectionView',      :path => '../’
+    pod 'CJComplexUIKit/CJScrollView',      :path => '../’
 #    pod 'CJBaseUIKit', :subspecs => ['UIColor', 'UIButton', 'UITextField', 'CJToast', 'CJAlert']
 #    pod 'CJBaseUtil', :subspecs => ['CJLog']
 #    pod 'CJFoundation', :subspecs => ['NSString']
 #    pod 'CJBaseHelper', :subspecs => ['NSObjectCJHelper', 'AuthorizationCJHelper']
 #    pod 'CJBaseUtil',   :subspecs => ['CJDataUtil']
-    pod 'CJFile', :subspecs => ['CJFileModel', 'CJFileManager']
+    pod 'CJFile',   :subspecs => ['CJFileModel', 'CJFileManager']
     
     pod 'IQKeyboardManager'
     pod 'WMPageController'  # 测试HUD在界面不显示时候的隐藏

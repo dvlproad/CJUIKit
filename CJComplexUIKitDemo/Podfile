@@ -30,13 +30,17 @@ target 'CJComplexUIKitDemo' do
     pod 'CJBaseUtil',               :path => '../’
     pod 'CJBaseHelper',             :path => '../’
     pod 'CJFoundation',             :path => '../’
+    pod 'CJBaseEffectKit',          :path => '../’
+    pod 'CJComplexUIKit/CJScrollView',      :path => '../’
+    pod 'CJComplexUIKit/CJCollectionView',  :path => '../’
     
-#    pod 'CJComplexUIKit',           :path => '../’
-
     pod 'AFNetworking/Reachability'
     pod 'NJKWebViewProgress'
     pod 'SVProgressHUD'
-    
+    pod 'SDCycleScrollView', '~> 1.75' #(已包括SDWebImage)原理其实就是扩大dataSource的count
+    #    pod 'SDWebImage', '~> 4.0.0'
+    pod 'DZNEmptyDataSet'
+    pod 'MJPopupViewController', '~> 0.4'
     
     
     # 图片选择需要依赖的库

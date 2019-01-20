@@ -11,7 +11,7 @@
 #import "CJDataEmptyView.h"
 #else
 #import <CJComplexUIKit/CJBaseWebViewController.h>
-#import <CJComplexUIKit/CJDataEmptyView.h>
+#import <CJBaseEffectKit/CJDataEmptyView.h>
 #endif
 
 

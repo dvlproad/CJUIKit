@@ -12,8 +12,15 @@
 #define CJTESTPOD
 #define CJDEBUG
 #import <Masonry/Masonry.h>
+
+#ifdef CJTESTPOD
+#import "UIColor+CJHex.h"
+#import "CJToast.h"
+#else
 #import <CJBaseUIKit/UIColor+CJHex.h>
 #import <CJBaseUIKit/CJToast.h>
+#endif
+
 #import "UIViewController+DemoProgressHUD.h"
 #import "DemoLabelFactory.h"
 #import "DemoButtonFactory.h"

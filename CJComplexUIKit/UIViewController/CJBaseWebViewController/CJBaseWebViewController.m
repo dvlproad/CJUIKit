@@ -326,6 +326,35 @@
     [self showEmptyViewWithFailureMessage:failureMessage];
 }
 
+- (void)webView:(WKWebView *)webView didCommitNavigation:(WKNavigation *)navigation {
+    NSLog(@"didCommitNavigation");
+}
+
+
+- (void)webView:(WKWebView *)webView didReceiveAuthenticationChallenge:(NSURLAuthenticationChallenge *)challenge completionHandler:(void (^)(NSURLSessionAuthChallengeDisposition disposition, NSURLCredential * _Nullable credential))completionHandler {
+    NSLog(@"didReceiveAuthenticationChallenge");
+    // 判断服务器采用的验证方法
+    if (challenge.protectionSpace.authenticationMethod == NSURLAuthenticationMethodServerTrust) {
+        // 如果没有错误的情况下 创建一个凭证，并使用证书
+        if (challenge.previousFailureCount == 0) {
+            NSURLCredential *credential = [NSURLCredential credentialForTrust:challenge.protectionSpace.serverTrust];
+            completionHandler(NSURLSessionAuthChallengeUseCredential, credential);
+        } else {
+            // 验证失败，取消本次验证
+            completionHandler(NSURLSessionAuthChallengeCancelAuthenticationChallenge, nil);
+        }
+    } else {
+        completionHandler(NSURLSessionAuthChallengeCancelAuthenticationChallenge, nil);
+        
+    }
+}
+
+/*! @abstract Invoked when the web view's web content process is terminated.
+ @param webView The web view whose underlying web content process was terminated.
+ */
+- (void)webViewWebContentProcessDidTerminate:(WKWebView *)webView {
+    NSLog(@"webViewWebContentProcessDidTerminate");
+}
 
 
 - (void)showEmptyViewWithFailureMessage:(NSString *)failureMessage {
@@ -339,6 +368,61 @@
 {
     self.showEmptyViewBlock = showEmptyViewBlock;
     self.hideEmptyViewBlock = hideEmptyViewBlock;
+}
+
+
+
+#pragma mark - WKUIDelegate
+- (nullable WKWebView *)webView:(WKWebView *)webView createWebViewWithConfiguration:(WKWebViewConfiguration *)configuration forNavigationAction:(WKNavigationAction *)navigationAction windowFeatures:(WKWindowFeatures *)windowFeatures {
+    NSLog(@"createWebViewWithConfiguration");
+    
+    WKFrameInfo *frameInfo = navigationAction.targetFrame;
+    if (![frameInfo isMainFrame]) {
+        [webView loadRequest:navigationAction.request];
+    }
+    return nil;
+}
+
+/// 通知您的应用程序DOM窗口成功关闭
+- (void)webViewDidClose:(WKWebView *)webView {
+    NSLog(@"webViewDidClose");
+}
+
+/// 显示一个 JavaScript 警告面板
+- (void)webView:(WKWebView *)webView runJavaScriptAlertPanelWithMessage:(NSString *)message initiatedByFrame:(WKFrameInfo *)frame completionHandler:(void (^)(void))completionHandler {
+    NSLog(@"runJavaScriptAlertPanelWithMessage");
+    [CJToast shortShowMessage:message];
+}
+
+/// 显示一个 JavaScript 确认面板
+- (void)webView:(WKWebView *)webView runJavaScriptConfirmPanelWithMessage:(NSString *)message initiatedByFrame:(WKFrameInfo *)frame completionHandler:(void (^)(BOOL result))completionHandler {
+    NSLog(@"runJavaScriptConfirmPanelWithMessage");
+    [CJToast shortShowMessage:message];
+}
+
+/// 显示一个 JavaScript 文本输入面板
+- (void)webView:(WKWebView *)webView runJavaScriptTextInputPanelWithPrompt:(NSString *)prompt defaultText:(nullable NSString *)defaultText initiatedByFrame:(WKFrameInfo *)frame completionHandler:(void (^)(NSString * _Nullable result))completionHandler {
+    NSLog(@"runJavaScriptTextInputPanelWithPrompt");
+    NSString *message = [NSString stringWithFormat:@"%@:%@", prompt, defaultText];
+    [CJToast shortShowMessage:message];
+}
+
+
+/// 确定给定元素是否应显示预览
+- (BOOL)webView:(WKWebView *)webView shouldPreviewElement:(WKPreviewElementInfo *)elementInfo {
+    NSLog(@"shouldPreviewElement");
+    return YES;
+}
+
+/// 当用户执行窥视操作时调用
+- (nullable UIViewController *)webView:(WKWebView *)webView previewingViewControllerForElement:(WKPreviewElementInfo *)elementInfo defaultActions:(NSArray<id <WKPreviewActionItem>> *)previewActions {
+    NSLog(@"previewingViewControllerForElement");
+    return nil;
+}
+
+/// 当用户在预览中执行弹出操作时调用
+- (void)webView:(WKWebView *)webView commitPreviewingViewController:(UIViewController *)previewingViewController {
+    NSLog(@"commitPreviewingViewController");
 }
 
 

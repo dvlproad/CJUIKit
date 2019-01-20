@@ -7,7 +7,7 @@
 //
 
 #import "CHUDChildViewController.h"
-#import <CJBaseUIKit/CJMJRefreshNormalHeader.h>
+#import <CJBaseEffectKit/CJMJRefreshNormalHeader.h>
 #import "TestProgressHUDViewController.h"
 
 @interface CHUDChildViewController ()

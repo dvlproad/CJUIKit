@@ -91,7 +91,7 @@
 //*/
 - (void)addUnderLineWithHeight:(CGFloat)lineHeight color:(UIColor *)lineColor {
     UIView *underline = [[UIView alloc] initWithFrame:CGRectZero];
-    underline.backgroundColor = lineColor;
+    underline.backgroundColor = lineColor;
     [self cj_makeView:self addBottomSubView:underline withHeight:lineHeight];
 }
 

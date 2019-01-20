@@ -9,7 +9,14 @@
 #import "DemoAlert.h"
 #import "DemoButtonFactory.h"
 #import <CJFoundation/NSString+CJTextSize.h>
+
+#ifdef CJTESTPOD
+#import "UIButton+CJMoreProperty.h"
+#else
 #import <CJBaseUIKit/UIButton+CJMoreProperty.h>
+#endif
+
+
 #import <CJBaseHelper/AuthorizationCJHelper.h>
 
 @interface DemoAlert () {

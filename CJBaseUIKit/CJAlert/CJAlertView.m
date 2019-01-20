@@ -7,7 +7,6 @@
 //
 
 #import "CJAlertView.h"
-#import <CJBaseUIKit/UIView+CJPopupInView.h>
 #import <CoreText/CoreText.h>
 
 @interface CJAlertView () {

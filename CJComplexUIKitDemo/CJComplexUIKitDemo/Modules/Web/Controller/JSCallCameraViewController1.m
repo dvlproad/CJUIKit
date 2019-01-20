@@ -62,13 +62,13 @@
     
     NSString *imageName = @"1.png";
     // 方法①:OC执行JS--设置图片(通过上传图片地址)
-//    [DemoCacheUtil saveImageData:compressImageData withImageName:imageName callback:^(NSString * _Nonnull absoluteImagePath) {
-//        [self use1UploadImagePath:absoluteImagePath imageName:imageName];
-//        //[self use2UploadImagePath:absoluteImagePath imageName:imageName];
-//    }];
+    [DemoCacheUtil saveImageData:compressImageData withImageName:imageName callback:^(NSString * _Nonnull absoluteImagePath) {
+        [self use1UploadImagePath:absoluteImagePath imageName:imageName];
+        //[self use2UploadImagePath:absoluteImagePath imageName:imageName];
+    }];
     
     // 方法②:OC执行JS--设置图片(通过上传图片数据)
-    [self useUploadImageData:compressImageData imageName:imageName];
+//    [self useUploadImageData:compressImageData imageName:imageName];
     
 }
 

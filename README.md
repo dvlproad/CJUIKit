@@ -139,6 +139,10 @@
 
 #### 1、CJBaseUIKit更新记录
 
+- 2019-01-21 V0.4.0
+
+> 1. 精简CJBaseUIKit库，转移不一定是Base的库到CJComplexUIKit中
+
 - 2018-10-16 V0.3.0
 
 > 1. UIView+CJPopupInView 增加设置空白区域的背景颜色blankBGColor；

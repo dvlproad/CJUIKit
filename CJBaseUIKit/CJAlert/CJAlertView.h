@@ -9,6 +9,12 @@
 #import <UIKit/UIKit.h>
 #import <Masonry/Masonry.h>
 
+#ifdef CJTESTPOD
+#import "UIView+CJPopupInView.h"
+#else
+#import <CJBaseUIKit/UIView+CJPopupInView.h>
+#endif
+
 /*
 @class CJAlertView;
 @protocol CJAlertViewDelegate <NSObject>

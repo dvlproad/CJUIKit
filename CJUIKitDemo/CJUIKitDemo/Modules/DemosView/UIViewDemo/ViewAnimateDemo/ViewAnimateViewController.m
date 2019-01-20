@@ -10,7 +10,6 @@
 
 #import "CJModuleModel.h"
 
-#import "PullScaleTopImageViewController.h"
 #import "ProcessLineViewController.h"
 #import "CountDownTimeViewController.h"
 

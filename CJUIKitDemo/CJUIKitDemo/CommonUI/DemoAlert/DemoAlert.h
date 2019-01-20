@@ -7,7 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
+#ifdef CJTESTPOD
+#import "CJAlertView.h"
+#else
 #import <CJBaseUIKit/CJAlertView.h>
+#endif
+
 
 @interface DemoAlert : NSObject
 

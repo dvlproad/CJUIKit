@@ -16,6 +16,7 @@
 
 #import "JSCallCameraViewController1.h"
 #import "JSCallCameraViewController2.h"
+#import "CameraH5ViewController.h"
 
 @interface WebHomeViewController ()  {
     
@@ -88,6 +89,13 @@
             webViewModule.classEntry = [JSCallCameraViewController2 class];
             [sectionDataModel.values addObject:webViewModule];
         }
+        {
+            CJModuleModel *webViewModule = [[CJModuleModel alloc] init];
+            webViewModule.title = @"WebView JS->Camera(网页版-拦截)";
+            webViewModule.classEntry = [CameraH5ViewController class];
+            [sectionDataModel.values addObject:webViewModule];
+        }
+        
         [sectionDataModels addObject:sectionDataModel];
     }
     

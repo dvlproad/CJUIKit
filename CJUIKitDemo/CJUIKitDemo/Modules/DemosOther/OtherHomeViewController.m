@@ -8,7 +8,6 @@
 
 #import "OtherHomeViewController.h"
 
-#import "PullScaleTopImageViewController.h"
 #import "ProcessLineViewController.h"
 #import "CountDownTimeViewController.h"
 
@@ -27,20 +26,6 @@
     
     
     NSMutableArray *sectionDataModels = [[NSMutableArray alloc] init];
-    {
-        CJSectionDataModel *sectionDataModel = [[CJSectionDataModel alloc] init];
-        sectionDataModel.theme = @"其他";
-        {
-            //PullScaleTopImageViewController
-            CJModuleModel *pullScaleTopImageModuleModel = [[CJModuleModel alloc] init];
-            pullScaleTopImageModuleModel.title = @"顶部图片下拉放大，上拉缩小";
-            pullScaleTopImageModuleModel.classEntry = [PullScaleTopImageViewController class];
-            [sectionDataModel.values addObject:pullScaleTopImageModuleModel];
-        }
-        
-        [sectionDataModels addObject:sectionDataModel];
-    }
-    
     //QuartzCore
     {
         CJSectionDataModel *sectionDataModel = [[CJSectionDataModel alloc] init];

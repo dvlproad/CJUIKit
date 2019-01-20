@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
   #验证方法：pod lib lint CJBaseUIKit.podspec --allow-warnings --use-libraries --verbose
   s.name         = "CJBaseUIKit"
-  s.version      = "0.3.1"
+  s.version      = "0.4.0"
   s.summary      = "自定义的基础UI"
   s.homepage     = "https://github.com/dvlproad/CJUIKit"
 
@@ -19,24 +19,15 @@ Pod::Spec.new do |s|
                  - CJBaseUIKit/UITextField：文本视图：包含文本框类别及新的自定义文本框
                  - CJBaseUIKit/CJTextView：文本视图：类似微信文本输入框实现
                  - CJBaseUIKit/UIToolbar：工具栏
-                 - CJBaseUIKit/CJScrollView：滚动视图：自定义的基础滚动视图
-                 - CJBaseUIKit/CJTableView：列表视图
-                 - CJBaseUIKit/CJTableView/CJBaseTableViewCell：基础的TableViewCell
-                 - CJBaseUIKit/CJTableView/CJBaseTableViewHeaderFooterView
-                 - CJBaseUIKit/CJCollectionView：集合视图
-                 - CJBaseUIKit/CJCollectionView/CJBaseCollectionViewCell：基础的CollectionViewCell
-                 - CJBaseUIKit/CJCollectionView/CJCollectionViewLayout
-                 - CJBaseUIKit/CJCollectionView/MyEqualCellSizeCollectionView：一个只有一个分区且分区中的每个cell大小相等的集合视图(cell的大小可通过方法①设置cell的固定大小和方法②通过设置每行最大显示的cell个数获得)
-                 - CJBaseUIKit/CJCollectionView/CJOpenCollectionView：可展开的集合视图
+                 - CJBaseUIKit/UIScrollView：滚动视图：含监听滚动视图的键盘
+                 - CJBaseUIKit/CJBaseTableViewCell：基础的TableViewCell
+                 - CJBaseUIKit/CJBaseTableViewHeaderFooterView：列表--HeaderFooterView
                  - CJBaseUIKit/CJSlider：滑块
-                 - CJBaseUIKit/CJRefreshView：刷新
-                 - CJBaseUIKit/CJMJRefreshComponent：已包含pod 'MJRefresh'
                  - CJBaseUIKit/CJToast：Toast
                  - CJBaseUIKit/CJAlert：Alert
-                 - CJBaseUIKit/CJDataEmptyView：空视图(处理数据为空、网络加载失败等情况)
                  - CJBaseUIKit/UIViewController：自定义返回按钮
 
-                   A longer description of CJPopupAction in Markdown format.
+                   A longer description of CJBaseUIKit in Markdown format.
 
                    * Think: Why did you write this? What is the focus? What does it do?
                    * CocoaPods will be using this to generate tags, and improve search results.
@@ -57,7 +48,7 @@ Pod::Spec.new do |s|
 
   s.platform     = :ios, "8.0"
  
-  s.source       = { :git => "https://github.com/dvlproad/CJUIKit.git", :tag => "CJBaseUIKit_0.3.1" }
+  s.source       = { :git => "https://github.com/dvlproad/CJUIKit.git", :tag => "CJBaseUIKit_0.4.0" }
   s.source_files  = "CJBaseUIKit/*.{h,m}"
 
   s.frameworks = "UIKit"
@@ -87,7 +78,7 @@ Pod::Spec.new do |s|
 
 
 
-
+  # UIView
   s.subspec 'UIView' do |ss|
     ss.source_files = "CJBaseUIKit/UIView/*.{h,m}"
 
@@ -109,6 +100,7 @@ Pod::Spec.new do |s|
 
   end
 
+  # UIWindow
   s.subspec 'UIWindow' do |ss|
     ss.source_files = "CJBaseUIKit/UIWindow/**/*.{h,m}"
   end
@@ -137,94 +129,42 @@ Pod::Spec.new do |s|
   
   s.subspec 'UIToolbar' do |ss|
     ss.source_files = "CJBaseUIKit/UIToolbar/**/*.{h,m}"
-    # ss.resources = "CJBaseUIKit/UIToolbar/**/*.{png,xib}"
   end
 
 
-  s.subspec 'CJToast' do |ss|
-    ss.source_files = "CJBaseUIKit/CJToast/**/*.{h,m}"
-    ss.resources = "CJBaseUIKit/CJToast/**/*.{png,xib}"
-
-    #多个依赖就写多行
-    ss.dependency 'MBProgressHUD'
+  # 与 UIScrollView 相关的基础类
+  s.subspec 'UIScrollView' do |ss|
+    ss.subspec 'CJKeyboardAvoiding' do |sss|
+      sss.source_files = "CJBaseUIKit/UIScrollView/CJKeyboardAvoiding/**/*.{h,m}"
+    end
   end
+
+  # 与 UITableView 相关的基础类
+  s.subspec 'CJBaseTableViewCell' do |ss|
+    ss.source_files = "CJBaseUIKit/CJBaseTableViewCell/**/*.{h,m}"
+    ss.resources = "CJBaseUIKit/CJBaseTableViewCell/**/*.{png}"
+    ss.dependency "CJBaseUIKit/UIButton"
+  end
+
+  s.subspec 'CJBaseTableViewHeaderFooterView' do |ss|
+    ss.source_files = "CJBaseUIKit/CJBaseTableViewHeaderFooterView/**/*.{h,m}"
+  end
+
 
   s.subspec 'CJAlert' do |ss|
     ss.source_files = "CJBaseUIKit/CJAlert/**/*.{h,m}"
-
     #多个依赖就写多行
     ss.dependency 'Masonry'
     ss.dependency 'CJBaseUIKit/UIView/CJPopupAction'
   end
 
-  s.subspec 'CJScrollView' do |ss|
-    ss.source_files = "CJBaseUIKit/CJScrollView/**/*.{h,m}"
-    # ss.resources = "CJBaseUIKit/CJScrollView/**/*.{png,xib}"
-  end
-
-
-
-
-
-  s.subspec 'CJTableView' do |ss|
-    ss.subspec 'CJBaseTableViewCell' do |sss|
-      sss.source_files = "CJBaseUIKit/CJTableView/CJBaseTableViewCell/**/*.{h,m}"
-      sss.resources = "CJBaseUIKit/CJTableView/CJBaseTableViewCell/**/*.{png}"
-      sss.dependency "CJBaseUIKit/UIButton"
-    end
-
-    ss.subspec 'CJBaseTableViewHeaderFooterView' do |sss|
-      sss.source_files = "CJBaseUIKit/CJTableView/CJBaseTableViewHeaderFooterView/**/*.{h,m}"
-    end
-
-  end
-
-  s.subspec 'CJCollectionView' do |ss|
-    ss.subspec 'CJBaseCollectionViewCell' do |sss|
-      sss.source_files = "CJBaseUIKit/CJCollectionView/CJBaseCollectionViewCell/**/*.{h,m}"
-    end
-
-    ss.subspec 'CJCollectionViewLayout' do |sss|
-      sss.source_files = "CJBaseUIKit/CJCollectionView/CJCollectionViewLayout/**/*.{h,m}"
-    end
-
-    # 各种集合视图
-    # 一个只有一个分区且分区中的每个cell大小相等的集合视图(cell的大小可通过方法①设置cell的固定大小和方法②通过设置每行最大显示的cell个数获得)
-    ss.subspec 'MyEqualCellSizeCollectionView' do |sss|
-      sss.source_files = "CJBaseUIKit/CJCollectionView/MyEqualCellSizeCollectionView/**/*.{h,m}"
-    end
-
-    # 可展开的集合视图
-    ss.subspec 'CJOpenCollectionView' do |sss|
-      sss.source_files = "CJBaseUIKit/CJCollectionView/CJOpenCollectionView/**/*.{h,m}"
-    end
-
-  end
-  
-
-
-  s.subspec 'CJRefreshView' do |ss|
-    ss.source_files = "CJBaseUIKit/CJRefreshView/**/*.{h,m}"
-    # ss.resources = "CJBaseUIKit/CJRefreshView/**/*.{png,xib}"
-  end
-
-  s.subspec 'CJMJRefreshComponent' do |ss|
-    ss.source_files = "CJBaseUIKit/CJMJRefreshComponent/**/*.{h,m}"
-    ss.resources = "CJBaseUIKit/CJMJRefreshComponent/**/*.{png,xib}"
-
+  s.subspec 'CJToast' do |ss|
+    ss.source_files = "CJBaseUIKit/CJToast/**/*.{h,m}"
+    ss.resources = "CJBaseUIKit/CJToast/**/*.{png,xib}"
     #多个依赖就写多行
-    #ss.dependency 'Masonry'
-    ss.dependency 'MJRefresh'
+    ss.dependency 'MBProgressHUD'
   end
 
-
-  s.subspec 'CJDataEmptyView' do |ss|
-    ss.source_files = "CJBaseUIKit/CJDataEmptyView/**/*.{h,m}"
-    ss.resources = "CJBaseUIKit/CJDataEmptyView/**/*.{png}"
-
-    #多个依赖就写多行
-    ss.dependency 'Masonry'
-  end
 
 
 end

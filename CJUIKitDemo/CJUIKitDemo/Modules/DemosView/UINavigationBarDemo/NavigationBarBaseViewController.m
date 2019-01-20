@@ -66,6 +66,7 @@
         scaleHeadView.frame = scaleHeadViewFrame;
         
     } else {
+        // TODO:
         MyUserInfoScaleHeadView *userInfoScaleHeadView = [[MyUserInfoScaleHeadView alloc] initWithFrame:CGRectZero];
         userInfoScaleHeadView.backgroundImageView.image = [UIImage imageNamed:@"bg.jpg"];
         [userInfoScaleHeadView.portraitButton setImage:[UIImage imageNamed:@"header.jpg"] forState:UIControlStateNormal];

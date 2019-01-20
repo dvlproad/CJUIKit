@@ -37,7 +37,6 @@
 #import "SystemComposeViewController.h"
 
 #import "CJMJRefreshViewController.h"
-#import "KeyboardAvoidingViewController.h"
 
 //ChangeEnvironment
 #import "ChangeEnvHomeViewController.h"
@@ -280,13 +279,6 @@
     {
         CJSectionDataModel *sectionDataModel = [[CJSectionDataModel alloc] init];
         sectionDataModel.theme = @"其他";
-        {
-            CJModuleModel *keyboardAvoidingModuleModel = [[CJModuleModel alloc] init];
-            keyboardAvoidingModuleModel.title = @"KeyboardAvoiding";
-            keyboardAvoidingModuleModel.classEntry = [KeyboardAvoidingViewController class];
-            keyboardAvoidingModuleModel.isCreateByXib = NO;
-            [sectionDataModel.values addObject:keyboardAvoidingModuleModel];
-        }
         {
             CJModuleModel *cjMJRefreshComponentModuleModel = [[CJModuleModel alloc] init];
             cjMJRefreshComponentModuleModel.title = @"CJMJRefreshComponent";

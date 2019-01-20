@@ -7,8 +7,14 @@
 //
 
 #import <Foundation/Foundation.h>
+
+#ifdef CJTESTPOD
+#import "CJTextField.h"
+#import "UIColor+CJHex.h"
+#else
 #import <CJBaseUIKit/CJTextField.h>
 #import <CJBaseUIKit/UIColor+CJHex.h>
+#endif
 
 @interface DemoTextFieldFactory : NSObject
 
