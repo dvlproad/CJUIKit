@@ -83,7 +83,12 @@
     },
     {
       "name": "UIScrollView",
-      "source_files": "CJBaseUIKit/UIScrollView/**/*.{h,m}"
+      "subspecs": [
+        {
+          "name": "CJKeyboardAvoiding",
+          "source_files": "CJBaseUIKit/UIScrollView/CJKeyboardAvoiding/**/*.{h,m}"
+        }
+      ]
     },
     {
       "name": "CJBaseTableViewCell",

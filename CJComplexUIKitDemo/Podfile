@@ -33,7 +33,7 @@ target 'CJComplexUIKitDemo' do
     pod 'CJBaseEffectKit',          :path => '../’
     pod 'CJComplexUIKit/CJScrollView',      :path => '../’
     pod 'CJComplexUIKit/CJCollectionView',  :path => '../’
-    
+
     pod 'AFNetworking/Reachability'
     pod 'NJKWebViewProgress'
     pod 'SVProgressHUD'

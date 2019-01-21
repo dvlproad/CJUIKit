@@ -71,7 +71,9 @@ PODS:
   - CJBaseUIKit/UIColor (0.4.0)
   - CJBaseUIKit/UIImage (0.4.0)
   - CJBaseUIKit/UINavigationBar (0.4.0)
-  - CJBaseUIKit/UIScrollView (0.4.0)
+  - CJBaseUIKit/UIScrollView (0.4.0):
+    - CJBaseUIKit/UIScrollView/CJKeyboardAvoiding (= 0.4.0)
+  - CJBaseUIKit/UIScrollView/CJKeyboardAvoiding (0.4.0)
   - CJBaseUIKit/UITextField (0.4.0)
   - CJBaseUIKit/UIToolbar (0.4.0)
   - CJBaseUIKit/UIView (0.4.0):
@@ -189,9 +191,9 @@ PODS:
   - SAMKeychain (1.5.3)
   - SDCycleScrollView (1.75):
     - SDWebImage (>= 4.0.0)
-  - SDWebImage (4.4.2):
-    - SDWebImage/Core (= 4.4.2)
-  - SDWebImage/Core (4.4.2)
+  - SDWebImage (4.4.3):
+    - SDWebImage/Core (= 4.4.3)
+  - SDWebImage/Core (4.4.3)
   - SVProgressHUD (2.2.5)
 
 DEPENDENCIES:
@@ -254,7 +256,7 @@ SPEC CHECKSUMS:
   AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
   CJBaseEffectKit: 5a31579fa84bedec908ad313bdfed459ec1eb216
   CJBaseHelper: 4c113bd20eb170d717636ee84aa3f9ce8d7d229b
-  CJBaseUIKit: 0f4fd1c0e22f1306290f7c8755f7d43b36b63513
+  CJBaseUIKit: 67893740c7b49868dcb761f7491cb2b01a654719
   CJBaseUtil: 010753c4b847cd04b4eee83fa7b5e196a4b1bfd8
   CJComplexUIKit: abfe0113aa0542e092e8ff03fcd3db2baecbfe2c
   CJFile: 6c1e6d55b3b94e8afbaa9f413f131301d15fdc48
@@ -273,9 +275,9 @@ SPEC CHECKSUMS:
   PinYin4Objc: 3fa9673610368330e2dfb688b1d19a35c3930a78
   SAMKeychain: 483e1c9f32984d50ca961e26818a534283b4cd5c
   SDCycleScrollView: 884b88f0266dd4708a0e1934975c69cb971707b1
-  SDWebImage: 624d6e296c69b244bcede364c72ae0430ac14681
+  SDWebImage: c5594f1a19c48d526d321e548902b56b479cd508
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
 
-PODFILE CHECKSUM: 8a0d82af9380ad831026d821d4b4e33f6974ad23
+PODFILE CHECKSUM: add73b4972d215827d1d1d948f44023df409fbb7
 
-COCOAPODS: 1.5.2
+COCOAPODS: 1.5.3

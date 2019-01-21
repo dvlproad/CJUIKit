@@ -10,7 +10,12 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface UIViewController (CJHookPresent)
+@interface UIViewController (CJHookPresent) {
+    
+}
+@property (nonatomic, assign) BOOL shouldHookFileUploadPanel;
+
+- (void)cjHook_onFileInputClicked;
 
 @end
 

@@ -23,6 +23,7 @@
     self.title = NSLocalizedString(@"JS调用系统相册(网页版-拦截)", nil);
     
     self.networkUrl = @"http://gif.55.la/";
+    self.shouldHookFileUploadPanel = YES;
 }
 
 

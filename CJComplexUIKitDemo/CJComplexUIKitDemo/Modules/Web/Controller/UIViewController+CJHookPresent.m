@@ -19,6 +19,14 @@
 @implementation UIViewController (CJHookPresent)
 
 // runtime
+- (BOOL)shouldHookFileUploadPanel {
+    return [objc_getAssociatedObject(self, @selector(shouldHookFileUploadPanel)) boolValue];
+}
+
+- (void)setShouldHookFileUploadPanel:(BOOL)shouldHookFileUploadPanel {
+    objc_setAssociatedObject(self, @selector(shouldHookFileUploadPanel), @(shouldHookFileUploadPanel), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+}
+
 - (BOOL)isFileInputIntercept {
     return [objc_getAssociatedObject(self, @selector(isFileInputIntercept)) boolValue];
 }
@@ -29,6 +37,11 @@
 
 
 - (void)cjHook_presentViewController:(UIViewController *)viewControllerToPresent animated:(BOOL)flag completion:(void (^)(void))completion {
+    UIViewController *viewController = [UIViewControllerCJHelper findCurrentShowingViewController];
+    if (viewController.shouldHookFileUploadPanel == NO) {
+        [self cjHook_presentViewController:viewControllerToPresent animated:flag completion:completion];
+        return;
+    }
     
     //如果present的viewcontroller是UIDocumentMenuViewController
     //类型，且代理是WKFileUploadPanel或UIWebFileUploadPanel
@@ -71,12 +84,15 @@
 
 - (void)cjHook_onFileInputIntercept {
     UIViewController *viewController = [UIViewControllerCJHelper findCurrentShowingViewController];
-    if ([viewController respondsToSelector:@selector(cjHook_onFileInputClicked)]) {
+    SEL selector = NSSelectorFromString(@"cjHook_onFileInputClicked");
+    if ([viewController respondsToSelector:selector]) {
         [viewController performSelector:@selector(cjHook_onFileInputClicked)];
     }
 }
 
-
+//- (void)cjHook_onFileInputClicked {
+//    NSLog(@"cjHook_onFileInputClicked");
+//}
 
 + (void)load {
     

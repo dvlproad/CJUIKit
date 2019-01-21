@@ -7,7 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+
+//#ifdef CJTESTComplexUIKitPOD
+//#import "MyEqualCellSizeCollectionView.h"
+//#else
 #import <CJComplexUIKit/MyEqualCellSizeCollectionView.h>
+//#endif
+
 #import <CJBaseUtil/CJSectionDataModel.h>   //在CJDataUtil中
 
 
