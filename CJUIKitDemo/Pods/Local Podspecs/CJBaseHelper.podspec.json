@@ -10,48 +10,48 @@
     "ios": "8.0"
   },
   "source": {
-    "git": "https://github.com/dvlproad/CJUIKit.git",
-    "tag": "CJBaseHelper_0.1.1"
+    "git": "https://github.com/dvlproad/CJUIKit",
+    "tag": "CJBaseHelper_0.1.1_1"
   },
   "frameworks": "UIKit",
   "requires_arc": true,
   "subspecs": [
     {
       "name": "DeviceCJHelper",
-      "source_files": "CJBaseHelper/DeviceCJHelper/**/*.{h,m}"
+      "source_files": "CJBaseHelper/CJBaseHelper/DeviceCJHelper/**/*.{h,m}"
     },
     {
       "name": "NSObjectCJHelper",
-      "source_files": "CJBaseHelper/NSObjectCJHelper/**/*.{h,m}"
+      "source_files": "CJBaseHelper/CJBaseHelper/NSObjectCJHelper/**/*.{h,m}"
     },
     {
       "name": "HookCJHelper",
-      "source_files": "CJBaseHelper/HookCJHelper/**/*.{h,m}"
+      "source_files": "CJBaseHelper/CJBaseHelper/HookCJHelper/**/*.{h,m}"
     },
     {
       "name": "UIViewControllerCJHelper",
-      "source_files": "CJBaseHelper/UIViewControllerCJHelper/**/*.{h,m}"
+      "source_files": "CJBaseHelper/CJBaseHelper/UIViewControllerCJHelper/**/*.{h,m}"
     },
     {
       "name": "NSDateFormatterCJHelper",
-      "source_files": "CJBaseHelper/NSDateFormatterCJHelper/**/*.{h,m}"
+      "source_files": "CJBaseHelper/CJBaseHelper/NSDateFormatterCJHelper/**/*.{h,m}"
     },
     {
       "name": "NSCalendarCJHelper",
-      "source_files": "CJBaseHelper/NSCalendarCJHelper/**/*.{h,m}"
+      "source_files": "CJBaseHelper/CJBaseHelper/NSCalendarCJHelper/**/*.{h,m}"
     },
     {
       "name": "WebCJHelper",
-      "source_files": "CJBaseHelper/WebCJHelper/**/*.{h,m}",
+      "source_files": "CJBaseHelper/CJBaseHelper/WebCJHelper/**/*.{h,m}",
       "frameworks": "WebKit"
     },
     {
       "name": "NSOperationQueueCJHelper",
-      "source_files": "CJBaseHelper/NSOperationQueueCJHelper/**/*.{h,m}"
+      "source_files": "CJBaseHelper/CJBaseHelper/NSOperationQueueCJHelper/**/*.{h,m}"
     },
     {
       "name": "AuthorizationCJHelper",
-      "source_files": "CJBaseHelper/AuthorizationCJHelper/**/*.{h,m}",
+      "source_files": "CJBaseHelper/CJBaseHelper/AuthorizationCJHelper/**/*.{h,m}",
       "frameworks": [
         "AVFoundation",
         "Photos",

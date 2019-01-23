@@ -59,10 +59,10 @@ target 'CJUIKitDemo' do
 
     pod 'YYText', '~> 1.0.7'
 
-#    pod 'CJBaseUIKit',          :path => '~/Project/Github/CJUIKit’
-    pod 'CJBaseUtil',           :path => '~/Project/Github/CJUIKit’
-    pod 'CJFoundation',         :path => '~/Project/Github/CJUIKit’
-    pod 'CJBaseHelper',         :path => '../CJBaseHelper’
+#    pod 'CJBaseUIKit',          :path => '../’
+    pod 'CJBaseUtil',           :path => '../’
+    pod 'CJFoundation',         :path => '../’
+    pod 'CJBaseHelper',         :path => '../’
     pod 'CJBaseEffectKit',      :path => '../’
     pod 'CJComplexUIKit/CJCollectionView/MyEqualCellSizeCollectionView',      :path => '../’
     pod 'CJComplexUIKit/CJScrollView',      :path => '../’

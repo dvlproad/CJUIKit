@@ -20,7 +20,7 @@
 
 #pragma mark - DateValue
 /// 获取该日期是星期几
-FOUNDATION_EXTERN NSInteger NSCalendarCJHelper_weekdayString(NSDate *date);
+FOUNDATION_EXTERN NSString *NSCalendarCJHelper_weekdayString(NSDate *date);
 
 
 
@@ -97,8 +97,8 @@ FOUNDATION_EXTERN NSDate *NSCalendarCJHelper_addUnits(NSDate *sinceDate, NSInteg
 /**
  *  获取从指定开始日期到指定结束日期之间所有日期模型CJDateModel
  *
- *  @param fromDate     开始日期
- *  @param toDate       结束日期
+ *  @param dateBegin    开始日期
+ *  @param dateEnd      结束日期
  */
 FOUNDATION_EXTERN NSMutableArray<CJDateModel *> *NSCalendarCJHelper_allCJDateModels(NSDate *dateBegin, NSDate *dateEnd);
 

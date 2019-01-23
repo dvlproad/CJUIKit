@@ -226,14 +226,13 @@ void openSettingCJHelper(void(^completionHandler)(BOOL success)) {
     NSURL *URL = [NSURL URLWithString:UIApplicationOpenSettingsURLString];
     
     if ([[UIApplication sharedApplication] canOpenURL:URL]) {
-        if ([[[UIDevice currentDevice] systemVersion] floatValue] < 10.0) {
+        if (@available(iOS 10.0, *)) {
+            [[UIApplication sharedApplication] openURL:URL options:@{} completionHandler:completionHandler];
+        } else {
             BOOL openSuccess = [[UIApplication sharedApplication] openURL:URL];
             if (completionHandler) {
                 completionHandler(openSuccess);
             }
-            
-        } else {
-            [[UIApplication sharedApplication] openURL:URL options:@{} completionHandler:completionHandler];
         }
     } else {
         if (completionHandler) {

@@ -24,7 +24,7 @@
 
 #pragma mark - DateValue
 /** 完整的描述请参见文件头部 */
-NSInteger NSCalendarCJHelper_weekdayString(NSDate *date)  {
+NSString *NSCalendarCJHelper_weekdayString(NSDate *date)  {
     NSCalendar *calendar = [[NSCalendar alloc]initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
     //NSCalendar *calendar = [NSCalendar currentCalendar];
     NSCalendarUnit calendarUnit = NSCalendarUnitWeekday;
@@ -441,7 +441,7 @@ NSMutableArray<CJDateModel *> *NSCalendarCJHelper_allCJDateModels(NSDate *dateBe
                 myDate.middleDayInMonth = isMiddleDayInMonth;
                 
                 // 生成日期
-                NSString *dateString = [NSString stringWithFormat:@"%04d-%02d-%02d", value_Y, value_M, value_D];
+                NSString *dateString = [NSString stringWithFormat:@"%04zd-%02zd-%02zd", value_Y, value_M, value_D];
                 NSDate *date = [dateFormatter dateFromString:dateString];
                 myDate.dateString = dateString;
                 myDate.date = date;

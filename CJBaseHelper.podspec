@@ -31,7 +31,7 @@ Pod::Spec.new do |s|
 
   s.platform     = :ios, "8.0"
 
-  s.source       = { :git => "https://github.com/dvlproad/CJUIKit.git", :tag => "CJBaseHelper_0.1.1" }
+  s.source       = { :git => "https://github.com/dvlproad/CJUIKit", :tag => "CJBaseHelper_0.1.1_1" }
   # s.source_files  = "CJBaseUtil/*.{h,m}"
   # s.resources = "CJBaseUtil/**/*.{png}"
   s.frameworks = 'UIKit'
@@ -46,48 +46,48 @@ Pod::Spec.new do |s|
 
   # Device 设备信息
   s.subspec 'DeviceCJHelper' do |ss|
-    ss.source_files = "CJBaseHelper/DeviceCJHelper/**/*.{h,m}"
+    ss.source_files = "CJBaseHelper/CJBaseHelper/DeviceCJHelper/**/*.{h,m}"
   end
 
   # NSObject
   s.subspec 'NSObjectCJHelper' do |ss|
-    ss.source_files = "CJBaseHelper/NSObjectCJHelper/**/*.{h,m}"
+    ss.source_files = "CJBaseHelper/CJBaseHelper/NSObjectCJHelper/**/*.{h,m}"
   end
 
   # Hook
   s.subspec 'HookCJHelper' do |ss|
-    ss.source_files = "CJBaseHelper/HookCJHelper/**/*.{h,m}"
+    ss.source_files = "CJBaseHelper/CJBaseHelper/HookCJHelper/**/*.{h,m}"
   end
 
   # UIViewController
   s.subspec 'UIViewControllerCJHelper' do |ss|
-    ss.source_files = "CJBaseHelper/UIViewControllerCJHelper/**/*.{h,m}"
+    ss.source_files = "CJBaseHelper/CJBaseHelper/UIViewControllerCJHelper/**/*.{h,m}"
   end
 
   # NSDateFormatter
   s.subspec 'NSDateFormatterCJHelper' do |ss|
-    ss.source_files = "CJBaseHelper/NSDateFormatterCJHelper/**/*.{h,m}"
+    ss.source_files = "CJBaseHelper/CJBaseHelper/NSDateFormatterCJHelper/**/*.{h,m}"
   end
 
   # NSCalendar
   s.subspec 'NSCalendarCJHelper' do |ss|
-    ss.source_files = "CJBaseHelper/NSCalendarCJHelper/**/*.{h,m}"
+    ss.source_files = "CJBaseHelper/CJBaseHelper/NSCalendarCJHelper/**/*.{h,m}"
   end
 
   # Web
   s.subspec 'WebCJHelper' do |ss|
-    ss.source_files = "CJBaseHelper/WebCJHelper/**/*.{h,m}"
+    ss.source_files = "CJBaseHelper/CJBaseHelper/WebCJHelper/**/*.{h,m}"
     ss.frameworks = 'WebKit'
   end
 
   # NSOperationQueue 搜索功能常常需要的多线程处理工具类
   s.subspec 'NSOperationQueueCJHelper' do |ss|
-    ss.source_files = "CJBaseHelper/NSOperationQueueCJHelper/**/*.{h,m}"
+    ss.source_files = "CJBaseHelper/CJBaseHelper/NSOperationQueueCJHelper/**/*.{h,m}"
   end
 
   # 权限判断
   s.subspec 'AuthorizationCJHelper' do |ss|
-    ss.source_files = "CJBaseHelper/AuthorizationCJHelper/**/*.{h,m}"
+    ss.source_files = "CJBaseHelper/CJBaseHelper/AuthorizationCJHelper/**/*.{h,m}"
     ss.frameworks = 'AVFoundation', 'Photos', 'CoreLocation'
   end
 
