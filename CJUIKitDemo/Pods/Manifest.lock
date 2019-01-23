@@ -9,23 +9,25 @@ PODS:
   - CJBaseEffectKit/CJMJRefreshComponent (0.0.1):
     - MJRefresh
   - CJBaseEffectKit/CJRefreshView (0.0.1)
-  - CJBaseHelper (0.1.0):
-    - CJBaseHelper/AuthorizationCJHelper (= 0.1.0)
-    - CJBaseHelper/DeviceCJHelper (= 0.1.0)
-    - CJBaseHelper/NSCalendarCJHelper (= 0.1.0)
-    - CJBaseHelper/NSDateFormatterCJHelper (= 0.1.0)
-    - CJBaseHelper/NSObjectCJHelper (= 0.1.0)
-    - CJBaseHelper/NSOperationQueueCJHelper (= 0.1.0)
-    - CJBaseHelper/UIViewControllerCJHelper (= 0.1.0)
-    - CJBaseHelper/WebCJHelper (= 0.1.0)
-  - CJBaseHelper/AuthorizationCJHelper (0.1.0)
-  - CJBaseHelper/DeviceCJHelper (0.1.0)
-  - CJBaseHelper/NSCalendarCJHelper (0.1.0)
-  - CJBaseHelper/NSDateFormatterCJHelper (0.1.0)
-  - CJBaseHelper/NSObjectCJHelper (0.1.0)
-  - CJBaseHelper/NSOperationQueueCJHelper (0.1.0)
-  - CJBaseHelper/UIViewControllerCJHelper (0.1.0)
-  - CJBaseHelper/WebCJHelper (0.1.0)
+  - CJBaseHelper (0.1.1):
+    - CJBaseHelper/AuthorizationCJHelper (= 0.1.1)
+    - CJBaseHelper/DeviceCJHelper (= 0.1.1)
+    - CJBaseHelper/HookCJHelper (= 0.1.1)
+    - CJBaseHelper/NSCalendarCJHelper (= 0.1.1)
+    - CJBaseHelper/NSDateFormatterCJHelper (= 0.1.1)
+    - CJBaseHelper/NSObjectCJHelper (= 0.1.1)
+    - CJBaseHelper/NSOperationQueueCJHelper (= 0.1.1)
+    - CJBaseHelper/UIViewControllerCJHelper (= 0.1.1)
+    - CJBaseHelper/WebCJHelper (= 0.1.1)
+  - CJBaseHelper/AuthorizationCJHelper (0.1.1)
+  - CJBaseHelper/DeviceCJHelper (0.1.1)
+  - CJBaseHelper/HookCJHelper (0.1.1)
+  - CJBaseHelper/NSCalendarCJHelper (0.1.1)
+  - CJBaseHelper/NSDateFormatterCJHelper (0.1.1)
+  - CJBaseHelper/NSObjectCJHelper (0.1.1)
+  - CJBaseHelper/NSOperationQueueCJHelper (0.1.1)
+  - CJBaseHelper/UIViewControllerCJHelper (0.1.1)
+  - CJBaseHelper/WebCJHelper (0.1.1)
   - CJBaseTest/Test (0.0.2)
   - CJBaseTest/UITest (0.0.2)
   - CJBaseUtil (0.5.0):
@@ -94,7 +96,7 @@ PODS:
 DEPENDENCIES:
   - AFNetworking/Reachability
   - CJBaseEffectKit (from `../`)
-  - CJBaseHelper (from `~/Project/Github/CJUIKit`)
+  - CJBaseHelper (from `../CJBaseHelper`)
   - CJBaseTest/Test (from `~/Project/Github/CJUIKit`)
   - CJBaseTest/UITest (from `~/Project/Github/CJUIKit`)
   - CJBaseUtil (from `~/Project/Github/CJUIKit`)
@@ -147,7 +149,7 @@ EXTERNAL SOURCES:
   CJBaseEffectKit:
     :path: "../"
   CJBaseHelper:
-    :path: "~/Project/Github/CJUIKit"
+    :path: "../CJBaseHelper"
   CJBaseTest:
     :path: "~/Project/Github/CJUIKit"
   CJBaseUtil:
@@ -160,7 +162,7 @@ EXTERNAL SOURCES:
 SPEC CHECKSUMS:
   AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
   CJBaseEffectKit: 5a31579fa84bedec908ad313bdfed459ec1eb216
-  CJBaseHelper: 4c113bd20eb170d717636ee84aa3f9ce8d7d229b
+  CJBaseHelper: 307a25b3d0dfe8efafe9bb7bec8723a78e04c537
   CJBaseTest: a6b62dee02a75d1eb4b2a9d45e87a7eb13ce91cd
   CJBaseUtil: 010753c4b847cd04b4eee83fa7b5e196a4b1bfd8
   CJComplexUIKit: abfe0113aa0542e092e8ff03fcd3db2baecbfe2c
@@ -184,6 +186,6 @@ SPEC CHECKSUMS:
   WMPageController: 0c7624d2b48e4f1ab92371688cf6744ed701575d
   YYText: 5c461d709e24d55a182d1441c41dc639a18a4849
 
-PODFILE CHECKSUM: ac7b014bfea28458ed2ac7d3ae623d1865c4dcbe
+PODFILE CHECKSUM: 50ead192b9909322ffcd11183686603ff91c9bd1
 
-COCOAPODS: 1.5.2
+COCOAPODS: 1.5.3

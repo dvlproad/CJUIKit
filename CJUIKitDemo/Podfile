@@ -62,7 +62,7 @@ target 'CJUIKitDemo' do
 #    pod 'CJBaseUIKit',          :path => '~/Project/Github/CJUIKit’
     pod 'CJBaseUtil',           :path => '~/Project/Github/CJUIKit’
     pod 'CJFoundation',         :path => '~/Project/Github/CJUIKit’
-    pod 'CJBaseHelper',         :path => '~/Project/Github/CJUIKit’
+    pod 'CJBaseHelper',         :path => '../CJBaseHelper’
     pod 'CJBaseEffectKit',      :path => '../’
     pod 'CJComplexUIKit/CJCollectionView/MyEqualCellSizeCollectionView',      :path => '../’
     pod 'CJComplexUIKit/CJScrollView',      :path => '../’

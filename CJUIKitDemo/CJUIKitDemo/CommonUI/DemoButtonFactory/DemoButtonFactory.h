@@ -10,7 +10,7 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
-#ifdef CJTESTPOD
+#ifdef TEST_CJBASEUIKIT_POD
 #import "UIButton+CJMoreProperty.h"
 #import "UIColor+CJHex.h"
 #import "CJBadgeButton.h"

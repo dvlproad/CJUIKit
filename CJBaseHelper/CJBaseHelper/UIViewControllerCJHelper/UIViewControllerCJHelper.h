@@ -12,6 +12,7 @@
 //  本文简书地址：[iOS 获取当前正在显示的ViewController(最全)](https://www.jianshu.com/p/5013d7bcddb5)
 //
 
+#import <UIKit/UIKit.h>
 #import <Foundation/Foundation.h>
 
 @interface UIViewControllerCJHelper : NSObject

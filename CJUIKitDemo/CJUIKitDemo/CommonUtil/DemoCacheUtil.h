@@ -8,12 +8,22 @@
 
 #import <Foundation/Foundation.h>
 
+typedef NS_ENUM(NSUInteger, ImageModuleType) {
+    ImageModuleTypeDefault = 0, /**< 默认图片路径 */
+    ImageModuleTypeContract,    /**< 电子合同 */
+    ImageModuleTypeAsset,       /**< 资产管理 */
+};
+
+
 NS_ASSUME_NONNULL_BEGIN
 
 @interface DemoCacheUtil : NSObject
 
 /// 保存图片到Document
-+ (BOOL)saveImageData:(NSData *)imageData withImageName:(NSString *)imageName callback:(void(^)(NSString *absoluteImagePath))callback;
++ (BOOL)saveImageData:(NSData *)imageData callback:(void(^)(NSString *absoluteImagePath))callback;
+
+/// 保存'电子合同'图片到Document
++ (BOOL)saveAssetImageData:(NSData *)imageData callback:(void(^)(NSString *absoluteImagePath))callback;
 
 @end
 

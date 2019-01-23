@@ -9,11 +9,12 @@
 #ifndef PrefixHeader_pch
 #define PrefixHeader_pch
 
-#define CJTESTPOD
+#define TEST_CJBASEUIKIT_POD
+//#define TEST_CJBASEHELPER_POD
 #define CJDEBUG
 #import <Masonry/Masonry.h>
 
-#ifdef CJTESTPOD
+#ifdef TEST_CJBASEUIKIT_POD
 #import "UIColor+CJHex.h"
 #import "CJToast.h"
 #else

@@ -686,7 +686,7 @@
             
             _messageLabelHeight = fixHeight - minHeightWithoutMessageLabel;
             [self.messageScrollView mas_updateConstraints:^(MASConstraintMaker *make) {
-                make.height.mas_equalTo(_messageLabelHeight);
+                make.height.mas_equalTo(self->_messageLabelHeight);
             }];
         }
         

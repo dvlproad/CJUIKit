@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import <Masonry/Masonry.h>
-#ifdef CJTESTPOD
+#ifdef TEST_CJBASEUIKIT_POD
 #import "UIColor+CJHex.h"
 #import "CJToast.h"
 #else

@@ -7,7 +7,13 @@
 //
 
 #import "CJUIKitBaseHomeViewController.h"
+
+#ifdef TEST_CJBASEHELPER_POD
+#import "NSObjectCJHelper.h"
+#else
 #import <CJBaseHelper/NSObjectCJHelper.h>
+#endif
+
 
 @interface NSObjectCJHelperViewController : CJUIKitBaseHomeViewController {
     

@@ -8,7 +8,13 @@
 
 #import "NSCalendarCJHelperViewController.h"
 #import "TestValueChangeTableViewCell.h"
+
+#ifdef TEST_CJBASEHELPER_POD
+#import "NSDateFormatterCJHelper.h"
+#else
 #import <CJBaseHelper/NSDateFormatterCJHelper.h>
+#endif
+
 
 @interface NSCalendarCJHelperViewController () 
 

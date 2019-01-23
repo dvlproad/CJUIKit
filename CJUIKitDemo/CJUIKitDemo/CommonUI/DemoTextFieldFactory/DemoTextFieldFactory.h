@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-#ifdef CJTESTPOD
+#ifdef TEST_CJBASEUIKIT_POD
 #import "CJTextField.h"
 #import "UIColor+CJHex.h"
 #else

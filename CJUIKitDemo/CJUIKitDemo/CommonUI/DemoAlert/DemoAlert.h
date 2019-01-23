@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#ifdef CJTESTPOD
+#ifdef TEST_CJBASEUIKIT_POD
 #import "CJAlertView.h"
 #else
 #import <CJBaseUIKit/CJAlertView.h>

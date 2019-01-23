@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#ifdef CJTESTPOD
+#ifdef TEST_CJBASEUIKIT_POD
 #import "CJChooseTextTextField.h"
 #else
 #import <CJBaseUIKit/CJChooseTextTextField.h>

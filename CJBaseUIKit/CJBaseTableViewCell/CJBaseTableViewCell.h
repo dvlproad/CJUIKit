@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-#ifdef CJTESTPOD
+
+#ifdef TEST_CJBASEUIKIT_POD
 #import "CJBadgeButton.h"
 #else
 #import <CJBaseUIKit/CJBadgeButton.h>

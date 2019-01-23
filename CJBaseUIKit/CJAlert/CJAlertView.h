@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <Masonry/Masonry.h>
 
-#ifdef CJTESTPOD
+#ifdef TEST_CJBASEUIKIT_POD
 #import "UIView+CJPopupInView.h"
 #else
 #import <CJBaseUIKit/UIView+CJPopupInView.h>

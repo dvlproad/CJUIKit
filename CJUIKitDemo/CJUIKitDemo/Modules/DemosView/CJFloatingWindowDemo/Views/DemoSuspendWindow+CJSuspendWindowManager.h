@@ -8,7 +8,7 @@
 
 #import "DemoSuspendWindow.h"
 
-#ifdef CJTESTPOD
+#ifdef TEST_CJBASEUIKIT_POD
 #import "CJSuspendWindowManager.h"
 #else
 #import <CJBaseUIKit/CJSuspendWindowManager.h>

@@ -8,7 +8,13 @@
 
 #import "CJUIKitBaseViewController.h"
 #import <CJBaseUtil/CJSectionDataModel.h>   //在CJDataUtil中
+
+#ifdef TEST_CJBASEHELPER_POD
+#import "NSCalendarCJHelper.h"
+#else
 #import <CJBaseHelper/NSCalendarCJHelper.h>
+#endif
+
 
 @interface NSCalendarCJHelperViewController : CJUIKitBaseViewController <UITableViewDataSource, UITableViewDelegate> {
     

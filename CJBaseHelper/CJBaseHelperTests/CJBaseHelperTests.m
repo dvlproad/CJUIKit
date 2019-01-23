@@ -1,18 +1,18 @@
 //
-//  CJBaseTestPodTests.m
-//  CJBaseTestPodTests
+//  CJBaseHelperTests.m
+//  CJBaseHelperTests
 //
-//  Created by 李超前 on 2019/1/20.
+//  Created by 李超前 on 2019/1/23.
 //  Copyright © 2019 dvlproad. All rights reserved.
 //
 
 #import <XCTest/XCTest.h>
 
-@interface CJBaseTestPodTests : XCTestCase
+@interface CJBaseHelperTests : XCTestCase
 
 @end
 
-@implementation CJBaseTestPodTests
+@implementation CJBaseHelperTests
 
 - (void)setUp {
     // Put setup code here. This method is called before the invocation of each test method in the class.

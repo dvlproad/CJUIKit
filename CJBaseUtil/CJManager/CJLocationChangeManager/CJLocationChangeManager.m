@@ -8,7 +8,7 @@
 
 #import "CJLocationChangeManager.h"
 
-//#ifdef CJTESTPOD
+//#ifdef TEST_CJBASEUIKIT_POD
 //#import "NSCalendarCJHelper.h"
 //#else
 //#import <CJBaseHelper/NSCalendarCJHelper.h>

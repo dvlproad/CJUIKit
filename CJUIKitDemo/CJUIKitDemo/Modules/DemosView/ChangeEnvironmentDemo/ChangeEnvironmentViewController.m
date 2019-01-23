@@ -8,7 +8,7 @@
 
 #import "ChangeEnvironmentViewController.h"
 
-#ifdef CJTESTPOD
+#ifdef TEST_CJBASEUIKIT_POD
 #import "CJSectionDataModel.h"
 #import "CJModuleModel.h"
 #else

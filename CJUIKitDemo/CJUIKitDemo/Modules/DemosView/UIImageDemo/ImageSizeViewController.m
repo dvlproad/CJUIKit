@@ -7,7 +7,7 @@
 //
 
 #import "ImageSizeViewController.h"
-#ifdef CJTESTPOD
+#ifdef TEST_CJBASEUIKIT_POD
 #import "UIImage+CJTransformSize.h"
 #else
 #import <CJBaseUIKit/UIImage+CJTransformSize.h>
@@ -29,7 +29,7 @@
     self.imageView1_old.image = oldImage;
     NSData *compressImageData = [oldImage cj_compressWithMaxDataLength:40.0f * 1024.0f]; //40k
     NSLog(@"压缩后数据大小:%.4f MB",(double)compressImageData.length/1024.0f/1024.0f);
-    [DemoCacheUtil saveImageData:compressImageData withImageName:@"bgCar.jpg" callback:nil];
+    [DemoCacheUtil saveImageData:compressImageData callback:nil];
     UIImage *compressImage = [UIImage imageWithData:compressImageData];
     self.imageView1_new.image = compressImage;
     
