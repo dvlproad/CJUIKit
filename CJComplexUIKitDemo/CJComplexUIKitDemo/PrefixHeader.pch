@@ -9,11 +9,19 @@
 #ifndef PrefixHeader_pch
 #define PrefixHeader_pch
 
-#define CJTESTComplexUIKitPOD
+
+#define TEST_CJCOMPLEXUIKIT_POD
 #define CJDEBUG
 #import <Masonry/Masonry.h>
 #import <CJBaseUIKit/UIColor+CJHex.h>
 #import <CJBaseUIKit/CJToast.h>
+
+#ifdef TEST_CJBASEUTIL_POD
+#import "CJSectionDataModel.h"
+#else
+#import <CJBaseUtil/CJSectionDataModel.h> //在CJDataUtil中
+#endif
+
 #import "UIViewController+DemoProgressHUD.h"
 #import "DemoButtonFactory.h"
 #import "DemoTextFieldFactory.h"

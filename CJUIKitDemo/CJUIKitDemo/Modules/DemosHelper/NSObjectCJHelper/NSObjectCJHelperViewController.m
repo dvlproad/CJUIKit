@@ -11,7 +11,6 @@
 @interface NSObjectCJHelperViewController () {
     
 }
-@property (nonatomic, weak) UIActivityIndicatorView *activityIndicator;
 
 @end
 
@@ -21,7 +20,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    self.navigationItem.title = NSLocalizedString(@"StringEvent首页", nil);
+    self.navigationItem.title = NSLocalizedString(@"NSObjectCJHelper首页", nil);
     
     NSMutableArray *sectionDataModels = [[NSMutableArray alloc] init];
     //Toast

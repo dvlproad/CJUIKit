@@ -39,6 +39,43 @@ static CGFloat kDefaultCJDetailTextLabelHeight = 15;
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
         [self cjBaseTableViewCell_commonInit];
+        
+        switch (style) {
+            case UITableViewCellStyleDefault: {
+                self.showCJImageView = YES;
+                [self addCJImageView];
+                [self addCJTextLabelWithType:UITableViewCellStyleDefault];
+                [self addCJSeparateLineView];
+                break;
+            }
+            case UITableViewCellStyleValue1: {
+                self.showCJImageView = YES;
+                [self addCJImageView];
+                [self addCJTextLabelWithType:UITableViewCellStyleValue1];
+                [self addCJDetailTextLabelWithType:UITableViewCellStyleValue1];
+                [self addCJSeparateLineView];
+                break;
+            }
+            case UITableViewCellStyleValue2: {
+                self.showCJImageView = YES;
+                [self addCJImageView];
+                [self addCJTextLabelWithType:UITableViewCellStyleValue2];
+                [self addCJDetailTextLabelWithType:UITableViewCellStyleValue2];
+                [self addCJSeparateLineView];
+                break;
+            }
+            case UITableViewCellStyleSubtitle: {
+                self.showCJImageView = YES;
+                [self addCJImageView];
+                [self addCJTextLabelWithType:UITableViewCellStyleSubtitle];
+                [self addCJDetailTextLabelWithType:UITableViewCellStyleSubtitle];
+                [self addCJSeparateLineView];
+                break;
+            }
+            default: {
+                break;
+            }
+        }
     }
     return self;
 }

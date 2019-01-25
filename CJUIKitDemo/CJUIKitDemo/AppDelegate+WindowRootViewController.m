@@ -11,7 +11,7 @@
 #import "HomeViewController.h"
 #import "FoundationHomeViewController.h"
 #import "UtilHomeViewController.h"
-//#import "HelperHomeViewController.h"
+#import "HelperHomeViewController.h"
 #import "MoreHomeViewController.h"
 
 @implementation AppDelegate (WindowRootViewController)
@@ -41,6 +41,14 @@
     UINavigationController *foundationHomeNavigationController = [[UINavigationController alloc] initWithRootViewController:foundationHomeViewController];
     [tabBarController addChildViewController:foundationHomeNavigationController];
     
+    HelperHomeViewController *helperHomeViewController = [[HelperHomeViewController alloc] init];
+    helperHomeViewController.view.backgroundColor = [UIColor whiteColor];
+    helperHomeViewController.navigationItem.title = NSLocalizedString(@"CJHelper首页", nil);
+    helperHomeViewController.tabBarItem.title = NSLocalizedString(@"CJHelper", nil);
+    helperHomeViewController.tabBarItem.image = [[UIImage imageNamed:@"icons8-settings"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    UINavigationController *helperHomeNavigationController = [[UINavigationController alloc] initWithRootViewController:helperHomeViewController];
+    [tabBarController addChildViewController:helperHomeNavigationController];
+    
     UtilHomeViewController *utilHomeViewController = [[UtilHomeViewController alloc] init];
     utilHomeViewController.view.backgroundColor = [UIColor whiteColor];
     utilHomeViewController.navigationItem.title = NSLocalizedString(@"Util首页", nil);
@@ -58,14 +66,6 @@
     [tabBarController addChildViewController:moreHomeNavigationController];
     
     /*
-    OtherHomeViewController *viewController4 = [[OtherHomeViewController alloc] init];
-    viewController4.view.backgroundColor = [UIColor whiteColor];
-    viewController4.navigationItem.title = NSLocalizedString(@"基础小视图首页", nil);
-    viewController4.tabBarItem.title = NSLocalizedString(@"基础小视图", nil);
-    viewController4.tabBarItem.image = [[UIImage imageNamed:@"icons8-settings"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
-    UINavigationController *navigationController4 = [[UINavigationController alloc] initWithRootViewController:viewController4];
-    [tabBarController addChildViewController:navigationController4];
-    
     UIViewController *secondViewController = [[ThirdPartyHomeViewController alloc] init];
     secondViewController.view.backgroundColor = [UIColor whiteColor];
     secondViewController.navigationItem.title = NSLocalizedString(@"第三方库", nil);

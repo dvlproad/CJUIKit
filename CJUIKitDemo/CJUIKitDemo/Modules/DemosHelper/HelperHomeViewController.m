@@ -10,7 +10,7 @@
 
 #import "NSObjectCJHelperViewController.h"
 #import "NSCalendarCJHelperViewController.h"
-
+#import "AuthorizationCJHelperViewController.h"
 #import "PresentAViewController.h"
 
 @interface HelperHomeViewController ()
@@ -31,22 +31,29 @@
         CJSectionDataModel *sectionDataModel = [[CJSectionDataModel alloc] init];
         sectionDataModel.theme = @"Helper";
         {
-            CJModuleModel *xibModule = [[CJModuleModel alloc] init];
-            xibModule.title = @"NSObjectCJHelper";
-            xibModule.classEntry = [NSObjectCJHelperViewController class];
-            [sectionDataModel.values addObject:xibModule];
+            CJModuleModel *helperModule = [[CJModuleModel alloc] init];
+            helperModule.title = @"NSObjectCJHelper";
+            helperModule.classEntry = [NSObjectCJHelperViewController class];
+            [sectionDataModel.values addObject:helperModule];
         }
         {
-            CJModuleModel *xibModule = [[CJModuleModel alloc] init];
-            xibModule.title = @"NSCalendarCJHelper";
-            xibModule.classEntry = [NSCalendarCJHelperViewController class];
-            [sectionDataModel.values addObject:xibModule];
+            CJModuleModel *helperModule = [[CJModuleModel alloc] init];
+            helperModule.title = @"NSCalendarCJHelper";
+            helperModule.classEntry = [NSCalendarCJHelperViewController class];
+            [sectionDataModel.values addObject:helperModule];
         }
         {
-            CJModuleModel *xibModule = [[CJModuleModel alloc] init];
-            xibModule.title = @"获取present前的视图(UIViewControllerCJHelper)";
-            xibModule.selector = @selector(testPresentViewController);
-            [sectionDataModel.values addObject:xibModule];
+            CJModuleModel *helperModule = [[CJModuleModel alloc] init];
+            helperModule.title = @"AuthorizationCJHelper";
+            helperModule.classEntry = [AuthorizationCJHelperViewController class];
+            [sectionDataModel.values addObject:helperModule];
+        }
+        {
+            CJModuleModel *helperModule = [[CJModuleModel alloc] init];
+            helperModule.title = @"UIViewControllerCJHelper";
+            helperModule.content = @"获取present前的视图";
+            helperModule.selector = @selector(testPresentViewController);
+            [sectionDataModel.values addObject:helperModule];
         }
         
         [sectionDataModels addObject:sectionDataModel];

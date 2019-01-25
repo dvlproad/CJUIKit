@@ -6,7 +6,7 @@
 //  Copyright © 2019 dvlproad. All rights reserved.
 //
 
-#ifdef CJTESTComplexUIKitPOD
+#ifdef TEST_CJCOMPLEXUIKIT_POD
 #import "CJBaseWebViewController.h"
 #else
 #import <CJComplexUIKit/CJBaseWebViewController.h>

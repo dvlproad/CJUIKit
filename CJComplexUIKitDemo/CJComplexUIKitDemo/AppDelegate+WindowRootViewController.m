@@ -8,6 +8,8 @@
 
 #import "AppDelegate+WindowRootViewController.h"
 
+#import "TableHomeViewController.h"
+#import "CollectionHomeViewController.h"
 #import "ScrollViewHomeViewController.h"
 #import "ScrollViewHomeViewController2.h"
 #import "WebHomeViewController.h"
@@ -31,6 +33,18 @@
     UINavigationController *homeNavigationController = [[UINavigationController alloc] initWithRootViewController:homeViewController];
     [tabBarController addChildViewController:homeNavigationController];
     
+    
+    TableHomeViewController *tableViewHomeViewController = [[TableHomeViewController alloc] init];
+    tableViewHomeViewController.tabBarItem.title = NSLocalizedString(@"Table", nil);
+    tableViewHomeViewController.tabBarItem.image = [[UIImage imageNamed:@"icons8-calendar"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    UINavigationController *tableViewHomeNavigationController = [[UINavigationController alloc] initWithRootViewController:tableViewHomeViewController];
+    [tabBarController addChildViewController:tableViewHomeNavigationController];
+    
+    CollectionHomeViewController *collectionViewHomeViewController = [[CollectionHomeViewController alloc] init];
+    collectionViewHomeViewController.tabBarItem.title = NSLocalizedString(@"Collection", nil);
+    collectionViewHomeViewController.tabBarItem.image = [[UIImage imageNamed:@"icons8-calendar"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    UINavigationController *collectionViewHomeNavigationController = [[UINavigationController alloc] initWithRootViewController:collectionViewHomeViewController];
+    [tabBarController addChildViewController:collectionViewHomeNavigationController];
     
     WebHomeViewController *scrollViewHomeViewController = [[WebHomeViewController alloc] init];
     scrollViewHomeViewController.tabBarItem.title = NSLocalizedString(@"Web", nil);

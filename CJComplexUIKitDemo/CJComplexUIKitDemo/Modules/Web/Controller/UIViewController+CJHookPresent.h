@@ -15,7 +15,6 @@ NS_ASSUME_NONNULL_BEGIN
 }
 @property (nonatomic, assign) BOOL shouldHookFileUploadPanel;
 
-- (void)cjHook_onFileInputClicked;
 
 @end
 

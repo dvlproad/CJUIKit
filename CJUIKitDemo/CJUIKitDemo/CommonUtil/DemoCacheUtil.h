@@ -7,24 +7,16 @@
 //
 
 #import <Foundation/Foundation.h>
-
-typedef NS_ENUM(NSUInteger, ImageModuleType) {
-    ImageModuleTypeDefault = 0, /**< 默认图片路径 */
-    ImageModuleTypeContract,    /**< 电子合同 */
-    ImageModuleTypeAsset,       /**< 资产管理 */
-};
-
-
-NS_ASSUME_NONNULL_BEGIN
+#import "DemoConstant.h"
 
 @interface DemoCacheUtil : NSObject
 
-/// 保存图片到Document
-+ (BOOL)saveImageData:(NSData *)imageData callback:(void(^)(NSString *absoluteImagePath))callback;
+#pragma mark - Save
+/// 保存图片到Document下的moduleType模块
++ (BOOL)saveImageData:(NSData *)imageData forModuleType:(DemoModuleType)moduleType callback:(void(^)(NSString *absoluteImagePath, NSString *imageName))callback;
 
-/// 保存'电子合同'图片到Document
-+ (BOOL)saveAssetImageData:(NSData *)imageData callback:(void(^)(NSString *absoluteImagePath))callback;
+#pragma mark - Clear
+/// 删除所有'资产管理'图片
++ (void)clearAssetImage;
 
 @end
-
-NS_ASSUME_NONNULL_END

@@ -8,9 +8,6 @@
 
 #import "MoreHomeViewController.h"
 
-//帮助工具
-#import "HelperHomeViewController.h"
-
 //第三方库
 #import "ThirdPartyHomeViewController.h"
 
@@ -31,22 +28,7 @@
     
     NSMutableArray *sectionDataModels = [[NSMutableArray alloc] init];
     
-    //Helper
-    {
-        CJSectionDataModel *sectionDataModel = [[CJSectionDataModel alloc] init];
-        sectionDataModel.theme = @"Helper";
-        {
-            CJModuleModel *xibModule = [[CJModuleModel alloc] init];
-            xibModule.title = @"HelperHome(帮助工具类入口)";
-            xibModule.classEntry = [HelperHomeViewController class];
-            
-            [sectionDataModel.values addObject:xibModule];
-        }
-        
-        [sectionDataModels addObject:sectionDataModel];
-    }
-    
-    //Helper
+    //ThirdParty
     {
         CJSectionDataModel *sectionDataModel = [[CJSectionDataModel alloc] init];
         sectionDataModel.theme = @"ThirdParty";

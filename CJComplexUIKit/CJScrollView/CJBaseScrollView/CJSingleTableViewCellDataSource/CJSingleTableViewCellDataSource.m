@@ -11,9 +11,9 @@
 @interface CJSingleTableViewCellDataSource () {
     
 }
-@property (nonatomic, strong) NSArray *datas;
+@property (nonatomic, strong) NSArray *dataModels;
 @property (nonatomic, copy) NSString *cellIdentifier;
-@property (nonatomic, copy) TableViewCellConfigureBlock cellConfigureBlock;
+@property (nonatomic, copy) void (^cellConfigureBlock)(id cell, id dataModel);
 
 @end
 
@@ -26,13 +26,13 @@
 }
 
 /** 完整的描述请参见文件头部 */
-- (id)initWithDatas:(NSArray<NSArray *> *)datas
-     cellIdentifier:(NSString *)cellIdentifier
-cellConfigureBlock:(TableViewCellConfigureBlock )cellConfigureCellBlock
+- (id)initWithDataModels:(NSArray<NSArray *> *)dataModels
+          cellIdentifier:(NSString *)cellIdentifier
+      cellConfigureBlock:(void (^)(id cell, id dataModel))cellConfigureCellBlock
 {
     self = [super init];
     if (self) {
-        self.datas = datas;
+        self.dataModels = dataModels;
         self.cellIdentifier = cellIdentifier;
         self.cellConfigureBlock = [cellConfigureCellBlock copy]; //block 要copy
     }
@@ -41,8 +41,8 @@ cellConfigureBlock:(TableViewCellConfigureBlock )cellConfigureCellBlock
 
 /** 完整的描述请参见文件头部 */
 - (id)dataModelAtIndexPath:(NSIndexPath *)indexPath {
-    NSArray *array = [self.datas objectAtIndex:indexPath.section];
-    return [array objectAtIndex:indexPath.row];
+    id dataModel = [self.dataModels objectAtIndex:indexPath.section];
+    return dataModel;
 }
 
 
@@ -52,7 +52,7 @@ cellConfigureBlock:(TableViewCellConfigureBlock )cellConfigureCellBlock
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return self.datas.count;
+    return self.dataModels.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -63,8 +63,5 @@ cellConfigureBlock:(TableViewCellConfigureBlock )cellConfigureCellBlock
     
     return cell;
 }
-
-#pragma mark UITableViewDelegate
-
 
 @end

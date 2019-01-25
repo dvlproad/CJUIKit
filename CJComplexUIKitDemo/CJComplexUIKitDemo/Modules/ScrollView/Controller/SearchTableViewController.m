@@ -9,7 +9,7 @@
 #import "SearchTableViewController.h"
 #import "TestDataUtil.h"
 
-#ifdef CJTESTComplexUIKitPOD
+#ifdef TEST_CJCOMPLEXUIKIT_POD
 #import "CJDataAllUtil.h"
 #else
 #import <CJBaseUtil/CJDataAllUtil.h>

@@ -9,24 +9,22 @@
 #import "DemoCacheUtil.h"
 #import <CJFile/CJFileManager+GetCreatePath.h>
 #import <CJFile/CJFileManager+SaveFileData.h>
+#import <CJFile/CJFileManager+DeleteCleanFile.h>
 
 @implementation DemoCacheUtil
 
-/// 保存图片到Document
-+ (BOOL)saveImageData:(NSData *)imageData callback:(void(^)(NSString *absoluteImagePath))callback {
+#pragma mark - Save
+/// 保存图片到Document下的moduleType模块
++ (BOOL)saveImageData:(NSData *)imageData forModuleType:(DemoModuleType)moduleType callback:(void(^)(NSString *absoluteImagePath, NSString *imageName))callback {
     NSString *imageName = [self dateImageName];
-    return [self saveImageData:imageData withImageName:imageName imageModuleType:ImageModuleTypeDefault callback:callback];
+    return [self saveImageData:imageData withImageName:imageName forModuleType:moduleType callback:^(NSString *absoluteImagePath) {
+        !callback ?: callback(absoluteImagePath, imageName);
+    }];
 }
 
-/// 保存'电子合同'图片到Document
-+ (BOOL)saveAssetImageData:(NSData *)imageData callback:(void(^)(NSString *absoluteImagePath))callback {
-    NSString *imageName = [self dateImageName];
-    return [self saveImageData:imageData withImageName:imageName imageModuleType:ImageModuleTypeAsset callback:callback];
-}
-
-/// 以imageName保存图片到Document下的imageModuleType模块
-+ (BOOL)saveImageData:(NSData *)imageData withImageName:(NSString *)imageName imageModuleType:(ImageModuleType)imageModuleType callback:(void(^)(NSString *absoluteImagePath))callback {
-    NSString *imageModuleString = [self imageModuleStringForImageModuleType:imageModuleType];
+/// 以imageName保存图片到Document下的moduleType模块
++ (BOOL)saveImageData:(NSData *)imageData withImageName:(NSString *)imageName forModuleType:(DemoModuleType)moduleType callback:(void(^)(NSString *absoluteImagePath))callback {
+    NSString *imageModuleString = [self imageModuleStringForModuleType:moduleType];
     NSString *relativeDirectoryPath = [CJFileManager getLocalDirectoryPathType:CJLocalPathTypeRelative bySubDirectoryPath:imageModuleString inSearchPathDirectory:NSDocumentDirectory createIfNoExist:YES];
     BOOL saveSuccess = [CJFileManager saveFileData:imageData withFileName:imageName toRelativeDirectoryPath:relativeDirectoryPath];
     if (saveSuccess) {
@@ -38,18 +36,22 @@
 }
 
 /// 获取图片所在的模块对应的模块名
-+ (NSString *)imageModuleStringForImageModuleType:(ImageModuleType)imageModuleType {
++ (NSString *)imageModuleStringForModuleType:(DemoModuleType)moduleType {
     NSString *imageModuleString = @"DefaultModule";
-    switch (imageModuleType) {
-        case ImageModuleTypeContract: {
+    switch (moduleType) {
+        case DemoModuleTypeIot: {
+            imageModuleString = @"IOTModule";
+            break;
+        }
+        case DemoModuleTypeContract: {
             imageModuleString = @"ContractModule";
             break;
         }
-        case ImageModuleTypeAsset: {
+        case DemoModuleTypeAsset: {
             imageModuleString = @"AssetModule";
             break;
         }
-        default: { //ImageModuleTypeDefault
+        default: {
             imageModuleString = @"DefaultModule";
             break;
         }
@@ -74,6 +76,21 @@
     return imageName;
 }
 
+#pragma mark - Clear
+/// 删除所有'资产管理'图片
++ (void)clearAssetImage {
+    [self clearFilesForModuleType:DemoModuleTypeAsset];
+}
 
-
+/**
+ *  清空imageModuleType模块中所有文件
+ *
+ *  @param moduleType   要清理的模块
+ */
++ (void)clearFilesForModuleType:(DemoModuleType)moduleType {
+    NSString *imageModuleString = [self imageModuleStringForModuleType:moduleType];
+    NSString *relativeDirectoryPath = imageModuleString;
+    [CJFileManager clearFilesInRelativeDirectoryPath:relativeDirectoryPath];
+}
+    
 @end

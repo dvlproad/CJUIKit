@@ -24,6 +24,9 @@
 #import "SliderHomeViewController.h"
 #import "SearchBarViewController.h"
 
+//Cell
+#import "BaseTableViewCellViewController.h"
+
 //UIWindow
 #import "FloatingWindowViewController.h"
 #import "SuspendWindowViewController.h"
@@ -241,6 +244,20 @@
         [sectionDataModels addObject:sectionDataModel];
     }
     
+    //Cell
+    {
+        CJSectionDataModel *sectionDataModel = [[CJSectionDataModel alloc] init];
+        sectionDataModel.theme = @"Cell相关";
+        {
+            CJModuleModel *cellModule = [[CJModuleModel alloc] init];
+            cellModule.title = @"BaseTableViewCell";
+            cellModule.classEntry = [BaseTableViewCellViewController class];
+            [sectionDataModel.values addObject:cellModule];
+        }
+        
+        [sectionDataModels addObject:sectionDataModel];
+    }
+    
     //UIViewController
     {
         CJSectionDataModel *sectionDataModel = [[CJSectionDataModel alloc] init];
@@ -261,6 +278,7 @@
         }
         [sectionDataModels addObject:sectionDataModel];
     }
+
     
     //ChangeEnvironment
     {

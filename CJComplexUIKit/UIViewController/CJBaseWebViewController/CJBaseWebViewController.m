@@ -8,7 +8,7 @@
 
 #import "CJBaseWebViewController.h"
 
-#ifdef CJTESTComplexUIKitPOD
+#ifdef TEST_CJCOMPLEXUIKIT_POD
     #import "WebCJHelper.h"
 #else
     #import <CJBaseHelper/WebCJHelper.h>

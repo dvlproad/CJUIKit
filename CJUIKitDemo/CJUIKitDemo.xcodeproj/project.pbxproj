@@ -89,15 +89,11 @@
 		7856F81621F4F4C3004AF751 /* CJTableViewHeaderFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7856F79421F4F4C2004AF751 /* CJTableViewHeaderFooterView.m */; };
 		7856F81721F4F4C3004AF751 /* CJAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7856F79821F4F4C2004AF751 /* CJAlertView.m */; };
 		7856F81821F4F4C3004AF751 /* CJAlert.m in Sources */ = {isa = PBXBuildFile; fileRef = 7856F79921F4F4C2004AF751 /* CJAlert.m */; };
-		7856F81921F4F4C3004AF751 /* CJSubTitleTabelViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7856F79D21F4F4C2004AF751 /* CJSubTitleTabelViewCell.m */; };
 		7856F81A21F4F4C3004AF751 /* cjCheckBoxGreenNO@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7856F7A021F4F4C2004AF751 /* cjCheckBoxGreenNO@2x.png */; };
 		7856F81B21F4F4C3004AF751 /* cjCheckBoxGreen2YES.png in Resources */ = {isa = PBXBuildFile; fileRef = 7856F7A121F4F4C2004AF751 /* cjCheckBoxGreen2YES.png */; };
 		7856F81C21F4F4C3004AF751 /* cjCheckBoxOrangeYES@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7856F7A221F4F4C2004AF751 /* cjCheckBoxOrangeYES@2x.png */; };
 		7856F81D21F4F4C3004AF751 /* cjCheckBoxGreenYES@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7856F7A321F4F4C2004AF751 /* cjCheckBoxGreenYES@2x.png */; };
 		7856F81E21F4F4C3004AF751 /* cjCheckBoxGreen2NO.png in Resources */ = {isa = PBXBuildFile; fileRef = 7856F7A421F4F4C2004AF751 /* cjCheckBoxGreen2NO.png */; };
-		7856F81F21F4F4C3004AF751 /* CJRightDetailTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7856F7A721F4F4C2004AF751 /* CJRightDetailTableViewCell.m */; };
-		7856F82021F4F4C3004AF751 /* CJLeftDetailTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7856F7A821F4F4C2004AF751 /* CJLeftDetailTableViewCell.m */; };
-		7856F82121F4F4C3004AF751 /* CJDefaultTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7856F7AA21F4F4C2004AF751 /* CJDefaultTableViewCell.m */; };
 		7856F82221F4F4C3004AF751 /* CJBaseTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7856F7AB21F4F4C2004AF751 /* CJBaseTableViewCell.m */; };
 		7856F82321F4F4C3004AF751 /* CJToast_success.png in Resources */ = {isa = PBXBuildFile; fileRef = 7856F7AE21F4F4C2004AF751 /* CJToast_success.png */; };
 		7856F82421F4F4C3004AF751 /* CJToast_success@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7856F7AF21F4F4C2004AF751 /* CJToast_success@3x.png */; };
@@ -133,6 +129,8 @@
 		7856F84221F4F4C3004AF751 /* CJChooseTextTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 7856F7F421F4F4C3004AF751 /* CJChooseTextTextField.m */; };
 		7856F84321F4F4C3004AF751 /* UITextField+CJPadding.m in Sources */ = {isa = PBXBuildFile; fileRef = 7856F7F521F4F4C3004AF751 /* UITextField+CJPadding.m */; };
 		7856F84421F4F4C3004AF751 /* UITextField+CJSelectedTextRange.m in Sources */ = {isa = PBXBuildFile; fileRef = 7856F7F621F4F4C3004AF751 /* UITextField+CJSelectedTextRange.m */; };
+		7856F96921F9B2DF004AF751 /* AuthorizationCJHelperViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7856F96821F9B2DF004AF751 /* AuthorizationCJHelperViewController.m */; };
+		7856F97021F9D2C5004AF751 /* BaseTableViewCellViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7856F96D21F9D2C4004AF751 /* BaseTableViewCellViewController.m */; };
 		7861852C21D3630B004B71FF /* AppCommon.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7861852B21D3630B004B71FF /* AppCommon.xcassets */; };
 		7868276021AE926700FCCDE5 /* AppAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7868275F21AE926700FCCDE5 /* AppAssets.xcassets */; };
 		7868277B21AF01BA00FCCDE5 /* bgCar@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7868277A21AF01B800FCCDE5 /* bgCar@2x.jpg */; };
@@ -178,6 +176,7 @@
 		7885FC4A2156681F00B97DAA /* UIView+CJPopupInSuspendWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 7885FC482156681F00B97DAA /* UIView+CJPopupInSuspendWindow.m */; };
 		7885FC9321567BE000B97DAA /* DemoButtonFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 7885FC9221567BE000B97DAA /* DemoButtonFactory.m */; };
 		788A55FA21AFCE540011F993 /* DemoLabelFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 788A55F921AFCE540011F993 /* DemoLabelFactory.m */; };
+		789A4EE021FAAC76001528B9 /* CJBaseTableViewCell+ConfigureForDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 789A4EDF21FAAC76001528B9 /* CJBaseTableViewCell+ConfigureForDataModel.m */; };
 		789C443121EECB8B00181144 /* AppInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 789C443021EECB8B00181144 /* AppInfo.m */; };
 		789C443C21EECEE800181144 /* CJAppVersionUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 789C443A21EECEE700181144 /* CJAppVersionUtil.m */; };
 		789C447421F05D4B00181144 /* UIImageTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = 789C447321F05D4B00181144 /* UIImageTestCase.m */; };
@@ -510,20 +509,12 @@
 		7856F79821F4F4C2004AF751 /* CJAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJAlertView.m; sourceTree = "<group>"; };
 		7856F79921F4F4C2004AF751 /* CJAlert.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJAlert.m; sourceTree = "<group>"; };
 		7856F79A21F4F4C2004AF751 /* CJUIKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJUIKit.h; sourceTree = "<group>"; };
-		7856F79C21F4F4C2004AF751 /* CJRightDetailTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJRightDetailTableViewCell.h; sourceTree = "<group>"; };
-		7856F79D21F4F4C2004AF751 /* CJSubTitleTabelViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJSubTitleTabelViewCell.m; sourceTree = "<group>"; };
-		7856F79E21F4F4C2004AF751 /* CJLeftDetailTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJLeftDetailTableViewCell.h; sourceTree = "<group>"; };
 		7856F7A021F4F4C2004AF751 /* cjCheckBoxGreenNO@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cjCheckBoxGreenNO@2x.png"; sourceTree = "<group>"; };
 		7856F7A121F4F4C2004AF751 /* cjCheckBoxGreen2YES.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cjCheckBoxGreen2YES.png; sourceTree = "<group>"; };
 		7856F7A221F4F4C2004AF751 /* cjCheckBoxOrangeYES@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cjCheckBoxOrangeYES@2x.png"; sourceTree = "<group>"; };
 		7856F7A321F4F4C2004AF751 /* cjCheckBoxGreenYES@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cjCheckBoxGreenYES@2x.png"; sourceTree = "<group>"; };
 		7856F7A421F4F4C2004AF751 /* cjCheckBoxGreen2NO.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cjCheckBoxGreen2NO.png; sourceTree = "<group>"; };
-		7856F7A521F4F4C2004AF751 /* CJDefaultTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJDefaultTableViewCell.h; sourceTree = "<group>"; };
 		7856F7A621F4F4C2004AF751 /* CJBaseTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJBaseTableViewCell.h; sourceTree = "<group>"; };
-		7856F7A721F4F4C2004AF751 /* CJRightDetailTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJRightDetailTableViewCell.m; sourceTree = "<group>"; };
-		7856F7A821F4F4C2004AF751 /* CJLeftDetailTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJLeftDetailTableViewCell.m; sourceTree = "<group>"; };
-		7856F7A921F4F4C2004AF751 /* CJSubTitleTabelViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJSubTitleTabelViewCell.h; sourceTree = "<group>"; };
-		7856F7AA21F4F4C2004AF751 /* CJDefaultTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJDefaultTableViewCell.m; sourceTree = "<group>"; };
 		7856F7AB21F4F4C2004AF751 /* CJBaseTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJBaseTableViewCell.m; sourceTree = "<group>"; };
 		7856F7AE21F4F4C2004AF751 /* CJToast_success.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CJToast_success.png; sourceTree = "<group>"; };
 		7856F7AF21F4F4C2004AF751 /* CJToast_success@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "CJToast_success@3x.png"; sourceTree = "<group>"; };
@@ -585,6 +576,11 @@
 		7856F7F521F4F4C3004AF751 /* UITextField+CJPadding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextField+CJPadding.m"; sourceTree = "<group>"; };
 		7856F7F621F4F4C3004AF751 /* UITextField+CJSelectedTextRange.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextField+CJSelectedTextRange.m"; sourceTree = "<group>"; };
 		7856F7F721F4F4C3004AF751 /* UITextField+CJTextChangeBlock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextField+CJTextChangeBlock.h"; sourceTree = "<group>"; };
+		7856F95E21F89A2D004AF751 /* DemoConstant.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DemoConstant.h; sourceTree = "<group>"; };
+		7856F96721F9B2DF004AF751 /* AuthorizationCJHelperViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AuthorizationCJHelperViewController.h; sourceTree = "<group>"; };
+		7856F96821F9B2DF004AF751 /* AuthorizationCJHelperViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AuthorizationCJHelperViewController.m; sourceTree = "<group>"; };
+		7856F96D21F9D2C4004AF751 /* BaseTableViewCellViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseTableViewCellViewController.m; sourceTree = "<group>"; };
+		7856F96F21F9D2C5004AF751 /* BaseTableViewCellViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseTableViewCellViewController.h; sourceTree = "<group>"; };
 		7861852B21D3630B004B71FF /* AppCommon.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = AppCommon.xcassets; sourceTree = "<group>"; };
 		7868275F21AE926700FCCDE5 /* AppAssets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = AppAssets.xcassets; sourceTree = "<group>"; };
 		7868277A21AF01B800FCCDE5 /* bgCar@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "bgCar@2x.jpg"; sourceTree = "<group>"; };
@@ -648,6 +644,8 @@
 		7885FC9221567BE000B97DAA /* DemoButtonFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DemoButtonFactory.m; sourceTree = "<group>"; };
 		788A55F821AFCE540011F993 /* DemoLabelFactory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DemoLabelFactory.h; sourceTree = "<group>"; };
 		788A55F921AFCE540011F993 /* DemoLabelFactory.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DemoLabelFactory.m; sourceTree = "<group>"; };
+		789A4EDE21FAAC76001528B9 /* CJBaseTableViewCell+ConfigureForDataModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CJBaseTableViewCell+ConfigureForDataModel.h"; sourceTree = "<group>"; };
+		789A4EDF21FAAC76001528B9 /* CJBaseTableViewCell+ConfigureForDataModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "CJBaseTableViewCell+ConfigureForDataModel.m"; sourceTree = "<group>"; };
 		789C442F21EECB8B00181144 /* AppInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppInfo.h; sourceTree = "<group>"; };
 		789C443021EECB8B00181144 /* AppInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppInfo.m; sourceTree = "<group>"; };
 		789C443A21EECEE700181144 /* CJAppVersionUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJAppVersionUtil.m; sourceTree = "<group>"; };
@@ -1490,17 +1488,9 @@
 		7856F79B21F4F4C2004AF751 /* CJBaseTableViewCell */ = {
 			isa = PBXGroup;
 			children = (
-				7856F79C21F4F4C2004AF751 /* CJRightDetailTableViewCell.h */,
-				7856F79D21F4F4C2004AF751 /* CJSubTitleTabelViewCell.m */,
-				7856F79E21F4F4C2004AF751 /* CJLeftDetailTableViewCell.h */,
-				7856F79F21F4F4C2004AF751 /* Resources */,
-				7856F7A521F4F4C2004AF751 /* CJDefaultTableViewCell.h */,
 				7856F7A621F4F4C2004AF751 /* CJBaseTableViewCell.h */,
-				7856F7A721F4F4C2004AF751 /* CJRightDetailTableViewCell.m */,
-				7856F7A821F4F4C2004AF751 /* CJLeftDetailTableViewCell.m */,
-				7856F7A921F4F4C2004AF751 /* CJSubTitleTabelViewCell.h */,
-				7856F7AA21F4F4C2004AF751 /* CJDefaultTableViewCell.m */,
 				7856F7AB21F4F4C2004AF751 /* CJBaseTableViewCell.m */,
+				7856F79F21F4F4C2004AF751 /* Resources */,
 			);
 			path = CJBaseTableViewCell;
 			sourceTree = "<group>";
@@ -1694,6 +1684,34 @@
 				7856F7F421F4F4C3004AF751 /* CJChooseTextTextField.m */,
 			);
 			path = CJTextField;
+			sourceTree = "<group>";
+		};
+		7856F96621F9B2C3004AF751 /* AuthorizationCJHelper */ = {
+			isa = PBXGroup;
+			children = (
+				7856F96721F9B2DF004AF751 /* AuthorizationCJHelperViewController.h */,
+				7856F96821F9B2DF004AF751 /* AuthorizationCJHelperViewController.m */,
+			);
+			path = AuthorizationCJHelper;
+			sourceTree = "<group>";
+		};
+		7856F96C21F9CB19004AF751 /* CJBaseTableViewCellDemo */ = {
+			isa = PBXGroup;
+			children = (
+				7856F96F21F9D2C5004AF751 /* BaseTableViewCellViewController.h */,
+				7856F96D21F9D2C4004AF751 /* BaseTableViewCellViewController.m */,
+				7856F97221F9D30D004AF751 /* View */,
+			);
+			path = CJBaseTableViewCellDemo;
+			sourceTree = "<group>";
+		};
+		7856F97221F9D30D004AF751 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				789A4EDE21FAAC76001528B9 /* CJBaseTableViewCell+ConfigureForDataModel.h */,
+				789A4EDF21FAAC76001528B9 /* CJBaseTableViewCell+ConfigureForDataModel.m */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		787FDB4A20500B00008A46E3 /* SearchBarDemo */ = {
@@ -1962,6 +1980,7 @@
 		78E1895321777C9700B8781A /* Base */ = {
 			isa = PBXGroup;
 			children = (
+				7856F95E21F89A2D004AF751 /* DemoConstant.h */,
 				78AB83B021B8C49900853E21 /* CJUIKitBaseCollectionHomeViewController.h */,
 				78AB83AE21B8C49900853E21 /* CJUIKitBaseCollectionHomeViewController.m */,
 				78AB83B321B8D2DA00853E21 /* CJUIKitCollectionViewCell.h */,
@@ -2080,6 +2099,7 @@
 			children = (
 				80500387211C3A29002A2306 /* HelperHomeViewController.h */,
 				80500383211C3A29002A2306 /* HelperHomeViewController.m */,
+				7856F96621F9B2C3004AF751 /* AuthorizationCJHelper */,
 				7819C65B21BA5B7D008A1E10 /* NSCalendarCJHelper */,
 				80500384211C3A29002A2306 /* NSObjectCJHelper */,
 				80500380211C3A29002A2306 /* UIViewControllerCJHelper */,
@@ -2240,6 +2260,7 @@
 			children = (
 				80FF90181FC5649E00E437CF /* HomeViewController.h */,
 				80FF8FD81FC5649E00E437CF /* HomeViewController.m */,
+				7856F96C21F9CB19004AF751 /* CJBaseTableViewCellDemo */,
 				78E1899F21778A0F00B8781A /* AutoLayoutDemo */,
 				78E1895A217782FF00B8781A /* UIViewDemo */,
 				7808D59021703C18007FC851 /* ChangeEnvironmentDemo */,
@@ -2918,7 +2939,6 @@
 				7856F82A21F4F4C3004AF751 /* UINavigationBar+CJChangeBG.m in Sources */,
 				788113CE21996A3A00D1630D /* SubInheritableSharedInstanceClass.m in Sources */,
 				781495A92140D82600D0F2BC /* MantleViewController.m in Sources */,
-				7856F81921F4F4C3004AF751 /* CJSubTitleTabelViewCell.m in Sources */,
 				8060C48A20E0D5EF0093B14E /* ValidateStringTableViewCell.m in Sources */,
 				7808D59321703C33007FC851 /* ChangeEnvironmentViewController.m in Sources */,
 				783A4A19219BC73500CBF4FC /* NSObject+CJSharedInstance.m in Sources */,
@@ -2928,10 +2948,12 @@
 				788113C5219958FF00D1630D /* InheritableSharedInstanceClass.m in Sources */,
 				787FDB5820500B01008A46E3 /* TextFieldViewController.m in Sources */,
 				784AB8F021E8961100A3F51C /* BHUDChildViewController.m in Sources */,
+				789A4EE021FAAC76001528B9 /* CJBaseTableViewCell+ConfigureForDataModel.m in Sources */,
 				7856F80421F4F4C3004AF751 /* UIWindow+CJSnapshot.m in Sources */,
 				78A621E72135C925004DA046 /* DemoSuspendWindowRootViewController.m in Sources */,
 				8060C48C20E0D5EF0093B14E /* AccuracyStringViewController.m in Sources */,
 				7856F81821F4F4C3004AF751 /* CJAlert.m in Sources */,
+				7856F97021F9D2C5004AF751 /* BaseTableViewCellViewController.m in Sources */,
 				7856F7FB21F4F4C3004AF751 /* UIImage+CJSplitImageIntoTwoParts.m in Sources */,
 				7856F84221F4F4C3004AF751 /* CJChooseTextTextField.m in Sources */,
 				787FDB9820500B5C008A46E3 /* ShimmeringSwitchSlider.m in Sources */,
@@ -2979,6 +3001,7 @@
 				80238A602111966B008EB1D5 /* NavigationBarRemoveUnderlineViewController.m in Sources */,
 				7856F7FC21F4F4C3004AF751 /* UIImage+CJMakeCircle.m in Sources */,
 				8060C48320E0D0B30093B14E /* CJDistanceUtil.m in Sources */,
+				7856F96921F9B2DF004AF751 /* AuthorizationCJHelperViewController.m in Sources */,
 				78AB83A621B7CE4500853E21 /* PresentAViewController.m in Sources */,
 				781C736C21BA61480090080C /* TestValueChangeTableViewCell.m in Sources */,
 				7856F72A21F4E790004AF751 /* DemoInfo.m in Sources */,
@@ -3063,11 +3086,8 @@
 				7856F80C21F4F4C3004AF751 /* CJDefaultToolbar.m in Sources */,
 				7856F80E21F4F4C3004AF751 /* UIView+CJPopupInView.m in Sources */,
 				788113C82199631A00D1630D /* PerfectSharedInstanceClass.m in Sources */,
-				7856F82121F4F4C3004AF751 /* CJDefaultTableViewCell.m in Sources */,
 				7850B70720937C5A008F4A21 /* ShowExtendViewVC.m in Sources */,
 				7856F81221F4F4C3004AF751 /* UIView+CJAnimation.m in Sources */,
-				7856F82021F4F4C3004AF751 /* CJLeftDetailTableViewCell.m in Sources */,
-				7856F81F21F4F4C3004AF751 /* CJRightDetailTableViewCell.m in Sources */,
 				78E189A221778A4000B8781A /* AutoLayoutHomeViewController.m in Sources */,
 				80FF91531FC5668700E437CF /* PrivateSetting.m in Sources */,
 				78E189A5217791D200B8781A /* TranslucentLayoutViewController.m in Sources */,

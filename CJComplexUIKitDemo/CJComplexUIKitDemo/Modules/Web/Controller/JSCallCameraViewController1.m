@@ -60,20 +60,20 @@
     NSData *compressImageData = [image cj_compressWithMaxDataLength:40.0f * 1024.0f]; //40k
     NSLog(@"压缩后数据大小:%.4f MB",(double)compressImageData.length/1024.0f/1024.0f);
     
-    NSString *imageName = @"1.png";
     // 方法①:OC执行JS--设置图片(通过上传图片地址)
-    [DemoCacheUtil saveImageData:compressImageData withImageName:imageName callback:^(NSString * _Nonnull absoluteImagePath) {
-        [self use1UploadImagePath:absoluteImagePath imageName:imageName];
-        //[self use2UploadImagePath:absoluteImagePath imageName:imageName];
-    }];
+//    [DemoCacheUtil saveImageData:compressImageData forModuleType:DemoModuleTypeIot callback:^(NSString *absoluteImagePath, NSString *imageName) {
+//        [self use1UploadImagePath:absoluteImagePath imageName:imageName];
+//        //[self use2UploadImagePath:absoluteImagePath imageName:imageName];
+//    }];
     
     // 方法②:OC执行JS--设置图片(通过上传图片数据)
-//    [self useUploadImageData:compressImageData imageName:imageName];
+    NSString *imageName = @"111.png";
+    [self useUploadImageData:compressImageData imageName:imageName];
     
 }
 
 - (void)use1UploadImagePath:(NSString *)imagePath imageName:(NSString *)imageName {
-    // 使用setImageWithPath1测试通过
+    // 使用setImageWithPath1测试通过(模拟器上OK，真机上好像有问题)
     NSString *jsString = [NSString stringWithFormat:@"setImageWithPath1('%@', '%@')", imagePath, imageName];
     [self.webView evaluateJavaScript:jsString completionHandler:^(id _Nullable response, NSError * _Nullable error) {
         NSLog(@"OC执行JS完成--设置图片(通过上传图片地址)");

@@ -14,6 +14,9 @@
 #import "JSOCViewController.h"
 #import "OCJSViewController.h"
 
+#import "H5ImgSettingPathViewController.h"
+#import "H5ImgSettingDataViewController.h"
+
 #import "JSCallCameraViewController1.h"
 #import "JSCallCameraViewController2.h"
 #import "CameraH5ViewController.h"
@@ -68,6 +71,25 @@
             CJModuleModel *webViewModule = [[CJModuleModel alloc] init];
             webViewModule.title = @"WebView JS->OC";
             webViewModule.classEntry = [JSOCViewController class];
+            [sectionDataModel.values addObject:webViewModule];
+        }
+        [sectionDataModels addObject:sectionDataModel];
+    }
+    
+    // WebView H5的img设置
+    {
+        CJSectionDataModel *sectionDataModel = [[CJSectionDataModel alloc] init];
+        sectionDataModel.theme = @"WebView H5的img设置";
+        {
+            CJModuleModel *webViewModule = [[CJModuleModel alloc] init];
+            webViewModule.title = @"WebView H5的img设置(传路径给H5)";
+            webViewModule.classEntry = [H5ImgSettingPathViewController class];
+            [sectionDataModel.values addObject:webViewModule];
+        }
+        {
+            CJModuleModel *webViewModule = [[CJModuleModel alloc] init];
+            webViewModule.title = @"WebView H5的img设置(传数据给H5)";
+            webViewModule.classEntry = [H5ImgSettingDataViewController class];
             [sectionDataModel.values addObject:webViewModule];
         }
         [sectionDataModels addObject:sectionDataModel];

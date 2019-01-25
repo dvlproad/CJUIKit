@@ -1,1 +1,1 @@
-../../../../../CJBaseHelper/AuthorizationCJHelper/AuthorizationCJHelper.h
+../../../../../CJBaseHelper/CJBaseHelper/AuthorizationCJHelper/AuthorizationCJHelper.h

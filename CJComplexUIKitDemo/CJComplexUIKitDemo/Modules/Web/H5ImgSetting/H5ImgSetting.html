@@ -1,0 +1,63 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+<!--        <title>H5的图片设置</title>-->
+        <style>
+            
+            body {
+                font-size:30px;
+                text-align:center;
+            }
+        
+        * {
+            margin: 30px;
+            padding: 0;
+        }
+        
+        h1{
+            color: red;
+        }
+        
+        button{
+            width: 300px;
+            height: 50px;
+            font-size: 30px;
+        }
+        
+            </style>
+        
+    </head>
+    
+    <body>
+        <h1>H5的图片设置</h1>
+        <h2></h2>
+        <h4>1、JS通过调用OC方法，获取系统照片</h4>
+        <button onclick="getiOSImage()">H5获取系统照片</button>
+        <div>
+            <img src="testImage.png" id="changeImageId" style="width: 30%; height: 30%;" onclick="getIOSImage()"><!--src="图片的相对路径" 如果把html文件导入工程中，图片路径和OC一样只写图片名字和后缀就可以，（记得要先把图片添加到工程） 图片也可以实现按钮的方法getIOSImage -->
+                </div>
+        <span id="imageNameId" style="width: 200px; height: 50%; color:orangered; font-size:45px" value="等待获取ios参数" >
+    </body>
+    
+    <script>
+        function getiOSImage(){
+            try{
+                <!--js向ios传递数据-->
+                window.webkit.messageHandlers.getAppPhoto.postMessage("1MB"); //压缩图片到<1MB
+            }catch (e){
+                
+            }
+        }
+    </script>
+    
+    <script>
+        // 这里是 iOS调用js的方法,来显示iOS想显示的图片
+        function js_updateH5ImgSrc(imagePath, imageName){
+            document.getElementById('changeImageId').src = imagePath;
+            document.getElementById('imageNameId').innerHTML = imageName;
+        }
+    </script>
+    
+</html>

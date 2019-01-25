@@ -11,9 +11,9 @@
 @interface CJSingleTableViewCellDataSource2 () {
     
 }
-@property (nonatomic, strong) NSArray *datas;
+@property (nonatomic, strong) NSArray *sectionDataModels;
 @property (nonatomic, copy) NSString *cellIdentifier;
-@property (nonatomic, copy) TableViewCellConfigureBlock cellConfigureBlock;
+@property (nonatomic, copy) void (^cellConfigureBlock)(id cell, id dataModel);
 
 @end
 
@@ -21,8 +21,22 @@
 
 @implementation CJSingleTableViewCellDataSource2
 
+/** 完整的描述请参见文件头部 */
+- (id)initWithSectionDataModels:(NSArray<NSArray *> *)sectionDataModels
+                 cellIdentifier:(NSString *)cellIdentifier
+             cellConfigureBlock:(void (^)(id cell, id dataModel))cellConfigureCellBlock
+{
+    self = [super init];
+    if (self) {
+        self.sectionDataModels = sectionDataModels;
+        self.cellIdentifier = cellIdentifier;
+        self.cellConfigureBlock = [cellConfigureCellBlock copy]; //block 要copy
+    }
+    return self;
+}
+
 - (id)dataModelAtIndexPath:(NSIndexPath *)indexPath {
-    CJSectionDataModel *sectionDataModel = [self.datas objectAtIndex:indexPath.section];
+    CJSectionDataModel *sectionDataModel = [self.sectionDataModels objectAtIndex:indexPath.section];
     id dataModel = [sectionDataModel.values objectAtIndex:indexPath.row];
     
     return dataModel;
@@ -30,11 +44,11 @@
 
 #pragma mark UITableViewDataSource
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return self.datas.count;
+    return self.sectionDataModels.count;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    CJSectionDataModel *sectionDataModel = [self.datas objectAtIndex:section];
+    CJSectionDataModel *sectionDataModel = [self.sectionDataModels objectAtIndex:section];
     return sectionDataModel.values.count;
 }
 

@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-//#ifdef CJTESTComplexUIKitPOD
+//#ifdef TEST_CJCOMPLEXUIKIT_POD
 //#import "MyEqualCellSizeCollectionView.h"
 //#else
 #import <CJComplexUIKit/MyEqualCellSizeCollectionView.h>

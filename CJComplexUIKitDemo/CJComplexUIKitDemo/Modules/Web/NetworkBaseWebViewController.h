@@ -6,7 +6,7 @@
 //  Copyright © 2018年 dvlproad. All rights reserved.
 //
 
-#ifdef CJTESTComplexUIKitPOD
+#ifdef TEST_CJCOMPLEXUIKIT_POD
 #import "CJBaseWebViewController.h"
 #import "CJDataEmptyView.h"
 #else

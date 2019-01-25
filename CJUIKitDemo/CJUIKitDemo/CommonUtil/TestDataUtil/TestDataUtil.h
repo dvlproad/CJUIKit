@@ -18,7 +18,7 @@
 /** 提供测试数据给OpenCollectionViewController */
 + (NSMutableArray<CJSectionDataModel *> *)getTestSectionDataModels;
 
-/** 提供测试数据给DemoTableViewController */
+/** 提供测试数据给BaseTableViewCellViewController */
 + (NSMutableArray<CJSectionDataModel *> *)testDataForDemoTableViewController;
 
 @end
