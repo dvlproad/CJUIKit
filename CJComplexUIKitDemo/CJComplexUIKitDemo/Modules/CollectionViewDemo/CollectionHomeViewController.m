@@ -18,6 +18,10 @@
 #import "OpenCollectionViewController.h"
 #import "CustomLayoutCollectionViewController.h"
 
+//图片选择的集合视图
+#import "UploadNoneImagePickerViewController.h"
+#import "UploadDirectlyImagePickerViewController.h"
+
 @interface CollectionHomeViewController ()  {
     
 }
@@ -80,6 +84,28 @@
             customLayoutModule.isCreateByXib = YES;
             [sectionDataModel.values addObject:customLayoutModule];
         }
+        [sectionDataModels addObject:sectionDataModel];
+    }
+    
+    //图片选择的集合视图DataScrollView
+    {
+        CJSectionDataModel *sectionDataModel = [[CJSectionDataModel alloc] init];
+        sectionDataModel.theme = @"DataScrollView(带数据源的滚动视图)";
+        {
+            CJModuleModel *imagePickerCollectionViewModule = [[CJModuleModel alloc] init];
+            imagePickerCollectionViewModule.title = @"图片选择的集合视图(没上传操作)";
+            imagePickerCollectionViewModule.classEntry = [UploadNoneImagePickerViewController class];
+            imagePickerCollectionViewModule.isCreateByXib = YES;
+            [sectionDataModel.values addObject:imagePickerCollectionViewModule];
+        }
+        {
+            CJModuleModel *imagePickerCollectionViewModule = [[CJModuleModel alloc] init];
+            imagePickerCollectionViewModule.title = @"图片选择的集合视图(有上传操作)";
+            imagePickerCollectionViewModule.classEntry = [UploadDirectlyImagePickerViewController class];
+            imagePickerCollectionViewModule.isCreateByXib = YES;
+            [sectionDataModel.values addObject:imagePickerCollectionViewModule];
+        }
+        
         [sectionDataModels addObject:sectionDataModel];
     }
     

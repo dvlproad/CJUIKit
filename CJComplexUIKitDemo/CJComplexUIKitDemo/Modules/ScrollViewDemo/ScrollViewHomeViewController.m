@@ -10,7 +10,6 @@
 
 //UIScrollView
 #import "SvDemo_Refresh.h"
-#import "ScrollViewController.h"
 
 //PullScale
 #import "PullScaleTopImageViewController.h"
@@ -38,24 +37,11 @@
         CJSectionDataModel *sectionDataModel = [[CJSectionDataModel alloc] init];
         sectionDataModel.theme = @"UIScrollView相关";
         {
-            CJModuleModel *baseScrollViewModule = [[CJModuleModel alloc] init];
-            baseScrollViewModule.title = @"ScrollView的最基本约束";
-            baseScrollViewModule.classEntry = [UIViewController class];
-            [sectionDataModel.values addObject:baseScrollViewModule];
-        }
-        {
             CJModuleModel *refreshScrollViewModule = [[CJModuleModel alloc] init];
             refreshScrollViewModule.title = @"ScrollView的刷新(MJRefresh)";
             refreshScrollViewModule.classEntry = [SvDemo_Refresh class];
             refreshScrollViewModule.isCreateByXib = YES;
             [sectionDataModel.values addObject:refreshScrollViewModule];
-        }
-        {
-            CJModuleModel *cjScrollViewModuleModel = [[CJModuleModel alloc] init];
-            cjScrollViewModuleModel.title = @"ScrollView(纯代码创建)";
-            cjScrollViewModuleModel.classEntry = [ScrollViewController class];
-            cjScrollViewModuleModel.isCreateByXib = YES;
-            [sectionDataModel.values addObject:cjScrollViewModuleModel];
         }
         
         [sectionDataModels addObject:sectionDataModel];

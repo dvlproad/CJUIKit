@@ -1,16 +1,14 @@
 //
-//  ScrollViewController.m
+//  CodeScrollViewController.m
 //  CJUIKitDemo
 //
 //  Created by ciyouzen on 2015/12/23.
 //  Copyright © 2015年 dvlproad. All rights reserved.
 //
 
-#import "ScrollViewController.h"
-#import <Masonry/Masonry.h>
-#import "UIColor+CJHex.h"
+#import "CodeScrollViewController.h"
 
-@interface ScrollViewController () {
+@interface CodeScrollViewController () {
     
 }
 @property (nonatomic, strong) UIScrollView *scrollView;
@@ -18,11 +16,34 @@
 
 @end
 
-@implementation ScrollViewController
+@implementation CodeScrollViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    self.navigationItem.title = NSLocalizedString(@"ScrollView(纯代码创建)", nil);
+    self.view.backgroundColor = CJColorFromHexString(@"#f2f2f2");
+    
+    UIView *scrollSuperView1 = [[UIView alloc] init];
+    [self.view addSubview:scrollSuperView1];
+    [scrollSuperView1 mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.mas_equalTo(self.view).mas_offset(20);
+        make.centerX.mas_equalTo(self.view);
+        make.top.mas_equalTo(self.view).mas_offset(140);
+        make.height.mas_equalTo(200);
+    }];
+    self.scrollSuperView1 = scrollSuperView1;
+    
+    
+    UIView *scrollSuperView2 = [[UIView alloc] init];
+    [self.view addSubview:scrollSuperView2];
+    [scrollSuperView2 mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.mas_equalTo(self.view).mas_offset(20);
+        make.centerX.mas_equalTo(self.view);
+        make.top.mas_equalTo(scrollSuperView1.mas_bottom).mas_offset(40);
+        make.height.mas_equalTo(200);
+    }];
+    self.scrollSuperView2 = scrollSuperView2;
     
     [self setupScrollView];
 }
@@ -34,8 +55,8 @@
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         // 2秒后异步执行这里的代码...
         [self.scrollView mas_updateConstraints:^(MASConstraintMaker *make) {
-            make.top.mas_equalTo(self.view1).mas_offset(20);
-            make.bottom.mas_equalTo(self.view1).mas_offset(-20);
+            make.top.mas_equalTo(self.scrollSuperView1).mas_offset(20);
+            make.bottom.mas_equalTo(self.scrollSuperView1).mas_offset(-20);
         }];
     });
 }
@@ -43,9 +64,9 @@
 - (void)setupView1 {
     UIScrollView *scrollView = [[UIScrollView alloc] init];
     scrollView.backgroundColor = [UIColor redColor];
-    [self.view1 addSubview:scrollView];
+    [self.scrollSuperView1 addSubview:scrollView];
     [scrollView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.right.top.bottom.mas_equalTo(self.view1);
+        make.left.right.top.bottom.mas_equalTo(self.scrollSuperView1);
     }];
     self.scrollView = scrollView;
     
@@ -66,9 +87,9 @@
     UIScrollView *pageScrollView = [[UIScrollView alloc] init];
     pageScrollView.pagingEnabled = YES;
     pageScrollView.backgroundColor = [UIColor redColor];
-    [self.view2 addSubview:pageScrollView];
+    [self.scrollSuperView2 addSubview:pageScrollView];
     [pageScrollView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.right.top.bottom.mas_equalTo(self.view2);
+        make.left.right.top.bottom.mas_equalTo(self.scrollSuperView2);
     }];
     
     

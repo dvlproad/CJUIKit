@@ -28,6 +28,8 @@
 		781C737721BA6A170090080C /* TestValueChangeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 781C737621BA6A170090080C /* TestValueChangeModel.m */; };
 		78226A6D21A4012B002167F2 /* DemoAlert.m in Sources */ = {isa = PBXBuildFile; fileRef = 78226A6C21A4012B002167F2 /* DemoAlert.m */; };
 		78226A9021A42103002167F2 /* CJConvertUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 78226A8E21A42103002167F2 /* CJConvertUtil.m */; };
+		78293F0A21FC2B9C00F70F43 /* CodeScrollViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78293F0121FC2B9C00F70F43 /* CodeScrollViewController.m */; };
+		78293F0D21FC2B9C00F70F43 /* KeyboardAvoidingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78293F0721FC2B9C00F70F43 /* KeyboardAvoidingViewController.m */; };
 		783281041F4198BC008267E0 /* CustomTripProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 783281031F4198BC008267E0 /* CustomTripProgressView.m */; };
 		7832810D1F41AA96008267E0 /* ProcessLineView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7832810C1F41AA96008267E0 /* ProcessLineView.m */; };
 		783A4A19219BC73500CBF4FC /* NSObject+CJSharedInstance.m in Sources */ = {isa = PBXBuildFile; fileRef = 783A4A18219BC73500CBF4FC /* NSObject+CJSharedInstance.m */; };
@@ -390,6 +392,10 @@
 		78226A6C21A4012B002167F2 /* DemoAlert.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DemoAlert.m; sourceTree = "<group>"; };
 		78226A8E21A42103002167F2 /* CJConvertUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJConvertUtil.m; sourceTree = "<group>"; };
 		78226A8F21A42103002167F2 /* CJConvertUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJConvertUtil.h; sourceTree = "<group>"; };
+		78293F0121FC2B9C00F70F43 /* CodeScrollViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CodeScrollViewController.m; sourceTree = "<group>"; };
+		78293F0321FC2B9C00F70F43 /* KeyboardAvoidingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeyboardAvoidingViewController.h; sourceTree = "<group>"; };
+		78293F0421FC2B9C00F70F43 /* CodeScrollViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CodeScrollViewController.h; sourceTree = "<group>"; };
+		78293F0721FC2B9C00F70F43 /* KeyboardAvoidingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeyboardAvoidingViewController.m; sourceTree = "<group>"; };
 		783281021F4198BC008267E0 /* CustomTripProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomTripProgressView.h; sourceTree = "<group>"; };
 		783281031F4198BC008267E0 /* CustomTripProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomTripProgressView.m; sourceTree = "<group>"; };
 		7832810B1F41AA96008267E0 /* ProcessLineView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProcessLineView.h; sourceTree = "<group>"; };
@@ -1092,6 +1098,17 @@
 			path = CJConvertUtil;
 			sourceTree = "<group>";
 		};
+		78293EFF21FC2B9C00F70F43 /* UIScrollViewDemo */ = {
+			isa = PBXGroup;
+			children = (
+				78293F0421FC2B9C00F70F43 /* CodeScrollViewController.h */,
+				78293F0121FC2B9C00F70F43 /* CodeScrollViewController.m */,
+				78293F0321FC2B9C00F70F43 /* KeyboardAvoidingViewController.h */,
+				78293F0721FC2B9C00F70F43 /* KeyboardAvoidingViewController.m */,
+			);
+			path = UIScrollViewDemo;
+			sourceTree = "<group>";
+		};
 		783281011F4198BC008267E0 /* CJSmallCustomView */ = {
 			isa = PBXGroup;
 			children = (
@@ -1328,11 +1345,11 @@
 		7856F75A21F4F4C2004AF751 /* CJKeyboardAvoiding */ = {
 			isa = PBXGroup;
 			children = (
-				7856F75B21F4F4C2004AF751 /* CJKeyboardAvoidingTableView.m */,
-				7856F75C21F4F4C2004AF751 /* UIScrollView+CJKeyboardAvoiding.h */,
+				7856F75F21F4F4C2004AF751 /* CJKeyboardAvoidingScrollView.h */,
 				7856F75D21F4F4C2004AF751 /* CJKeyboardAvoidingScrollView.m */,
 				7856F75E21F4F4C2004AF751 /* CJKeyboardAvoidingTableView.h */,
-				7856F75F21F4F4C2004AF751 /* CJKeyboardAvoidingScrollView.h */,
+				7856F75B21F4F4C2004AF751 /* CJKeyboardAvoidingTableView.m */,
+				7856F75C21F4F4C2004AF751 /* UIScrollView+CJKeyboardAvoiding.h */,
 				7856F76021F4F4C2004AF751 /* UIScrollView+CJKeyboardAvoiding.m */,
 			);
 			path = CJKeyboardAvoiding;
@@ -2260,6 +2277,7 @@
 			children = (
 				80FF90181FC5649E00E437CF /* HomeViewController.h */,
 				80FF8FD81FC5649E00E437CF /* HomeViewController.m */,
+				78293EFF21FC2B9C00F70F43 /* UIScrollViewDemo */,
 				7856F96C21F9CB19004AF751 /* CJBaseTableViewCellDemo */,
 				78E1899F21778A0F00B8781A /* AutoLayoutDemo */,
 				78E1895A217782FF00B8781A /* UIViewDemo */,
@@ -3019,6 +3037,7 @@
 				7856F81621F4F4C3004AF751 /* CJTableViewHeaderFooterView.m in Sources */,
 				80FF91951FC5682B00E437CF /* FoundationHomeViewController.m in Sources */,
 				7856F80621F4F4C3004AF751 /* CJBadgeButton.m in Sources */,
+				78293F0A21FC2B9C00F70F43 /* CodeScrollViewController.m in Sources */,
 				7856F80B21F4F4C3004AF751 /* UISearchBar+CJAddInputAccessoryView.m in Sources */,
 				7856F80F21F4F4C3004AF751 /* UIView+CJShowExtendView.m in Sources */,
 				789C443C21EECEE800181144 /* CJAppVersionUtil.m in Sources */,
@@ -3076,6 +3095,7 @@
 				80FF90A71FC5649F00E437CF /* QRCodeViewController.m in Sources */,
 				78B6C2EF2159D8AF00D5864E /* DemoBusPassengerModel.m in Sources */,
 				7856F80121F4F4C3004AF751 /* CJKeyboardAvoidingTableView.m in Sources */,
+				78293F0D21FC2B9C00F70F43 /* KeyboardAvoidingViewController.m in Sources */,
 				78C81479216E0DEC00A6B190 /* SystemComposeViewController.m in Sources */,
 				7856F80821F4F4C3004AF751 /* UIButton+CJMoreProperty.m in Sources */,
 				80FF919C1FC5682B00E437CF /* CountDownTimeViewController.m in Sources */,

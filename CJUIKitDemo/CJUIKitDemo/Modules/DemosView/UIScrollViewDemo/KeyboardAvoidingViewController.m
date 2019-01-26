@@ -21,7 +21,23 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    self.textField.delegate = self;
+    self.navigationItem.title = NSLocalizedString(@"键盘处理", nil);
+    
+    UIView *parentView = self.containerView;
+    
+    UITextField *textField = [[UITextField alloc] init];
+    textField.placeholder = NSLocalizedString(@"请输入内容", nil);
+    textField.backgroundColor = [UIColor whiteColor];
+    [parentView addSubview:textField];
+    [textField mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.mas_equalTo(parentView).mas_offset(20);
+        make.centerX.mas_equalTo(parentView);
+        make.bottom.mas_equalTo(parentView).mas_offset(-140);
+        make.height.mas_equalTo(30);
+    }];
+    textField.delegate = self;
+    self.textField = textField;
+    
     
     [self.scrollView cj_registerKeyboardNotifications];
     

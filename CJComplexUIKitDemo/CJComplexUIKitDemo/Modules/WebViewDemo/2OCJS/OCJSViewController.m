@@ -10,7 +10,7 @@
 #import "DemoButtonFactory.h"
 #import "AppInfo.h"
 
-@interface OCJSViewController () <WKUIDelegate, WKNavigationDelegate, WKScriptMessageHandler>
+@interface OCJSViewController () <WKUIDelegate, WKNavigationDelegate>
 
 @end
 

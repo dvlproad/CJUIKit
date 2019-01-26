@@ -17,9 +17,7 @@
 #import "H5ImgSettingPathViewController.h"
 #import "H5ImgSettingDataViewController.h"
 
-#import "JSCallCameraViewController1.h"
-#import "JSCallCameraViewController2.h"
-#import "CameraH5ViewController.h"
+#import "H5ImgInterceptViewController.h"
 
 @interface WebHomeViewController ()  {
     
@@ -98,23 +96,11 @@
     // WebView JS->Camera
     {
         CJSectionDataModel *sectionDataModel = [[CJSectionDataModel alloc] init];
-        sectionDataModel.theme = @"WebView JS->Camera";
+        sectionDataModel.theme = @"WebView H5的img拦截";
         {
             CJModuleModel *webViewModule = [[CJModuleModel alloc] init];
-            webViewModule.title = @"WebView JS->Camera(本地版)";
-            webViewModule.classEntry = [JSCallCameraViewController1 class];
-            [sectionDataModel.values addObject:webViewModule];
-        }
-        {
-            CJModuleModel *webViewModule = [[CJModuleModel alloc] init];
-            webViewModule.title = @"WebView JS->Camera(网页版)";
-            webViewModule.classEntry = [JSCallCameraViewController2 class];
-            [sectionDataModel.values addObject:webViewModule];
-        }
-        {
-            CJModuleModel *webViewModule = [[CJModuleModel alloc] init];
-            webViewModule.title = @"WebView JS->Camera(网页版-拦截)";
-            webViewModule.classEntry = [CameraH5ViewController class];
+            webViewModule.title = @"WebView H5的img拦截(拦截了present)";
+            webViewModule.classEntry = [H5ImgInterceptViewController class];
             [sectionDataModel.values addObject:webViewModule];
         }
         

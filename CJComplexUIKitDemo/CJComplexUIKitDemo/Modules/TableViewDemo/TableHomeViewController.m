@@ -14,7 +14,9 @@
 #import "TvDemo_Complex.h"
 #import "OpenTableViewController1.h"
 #import "OpenTableViewController2.h"
-#import "ChooseColor01.h"
+
+//Search--DataScrollView
+#import "SearchTableViewController.h"
 
 @interface TableHomeViewController ()  {
     
@@ -70,22 +72,24 @@
             openTableModule.isCreateByXib = YES;
             [sectionDataModel.values addObject:openTableModule];
         }
+        [sectionDataModels addObject:sectionDataModel];
+    }
+    
+    //DataScrollView
+    {
+        CJSectionDataModel *sectionDataModel = [[CJSectionDataModel alloc] init];
+        sectionDataModel.theme = @"DataScrollView(带数据源的滚动视图)";
         {
-            CJModuleModel *chooseColorModule = [[CJModuleModel alloc] init];
-            chooseColorModule.title = @"ChooseColor01";
-            chooseColorModule.selector = @selector(goTableViewController);
-            [sectionDataModel.values addObject:chooseColorModule];
+            CJModuleModel *searchTableViewModule = [[CJModuleModel alloc] init];
+            searchTableViewModule.title = @"带搜索功能的列表";
+            searchTableViewModule.classEntry = [SearchTableViewController class];
+            searchTableViewModule.isCreateByXib = YES;
+            [sectionDataModel.values addObject:searchTableViewModule];
         }
         [sectionDataModels addObject:sectionDataModel];
     }
     
     self.sectionDataModels = sectionDataModels;
-}
-
-- (void)goTableViewController {
-    ChooseColor01 *viewController = [[ChooseColor01 alloc] initWithStyle:UITableViewStyleGrouped];
-    viewController.hidesBottomBarWhenPushed = YES;
-    [self.navigationController pushViewController:viewController animated:YES];
 }
 
 - (void)didReceiveMemoryWarning {

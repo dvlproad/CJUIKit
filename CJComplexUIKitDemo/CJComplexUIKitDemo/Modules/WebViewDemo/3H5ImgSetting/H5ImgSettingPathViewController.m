@@ -31,6 +31,10 @@
     
     NSString *jsString = [NSString stringWithFormat:@"js_updateH5ImgSrc('%@', '%@')", imgSrc, imageName];
     [self.webView evaluateJavaScript:jsString completionHandler:^(id _Nullable response, NSError * _Nullable error) {
+        if (error) {
+            [CJToast shortShowMessage:@"Error:更新H5显示的图片的JS调用失败"];
+            return;
+        }
         NSLog(@"OC执行JS完成--设置图片(通过上传图片地址)");
     }];
 }

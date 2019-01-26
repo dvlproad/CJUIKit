@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface TvDemo_Complex : UIViewController<UITableViewDataSource, UITableViewDelegate>{
+@interface TvDemo_Complex : UIViewController <UITableViewDataSource, UITableViewDelegate> {
     NSArray *sectionArray;
     NSMutableArray *datas;
     

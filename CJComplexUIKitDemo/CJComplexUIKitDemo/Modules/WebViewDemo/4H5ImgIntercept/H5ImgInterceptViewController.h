@@ -1,5 +1,5 @@
 //
-//  CameraH5ViewController.h
+//  H5ImgInterceptViewController.h
 //  CJComplexUIKitDemo
 //
 //  Created by ciyouzen on 2019/1/16.
@@ -14,7 +14,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface CameraH5ViewController : NetworkBaseWebViewController
+@interface H5ImgInterceptViewController : NetworkBaseWebViewController
 
 @end
 
