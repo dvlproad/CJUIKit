@@ -1,5 +1,5 @@
 //
-//  H5ImgInterceptViewController.h
+//  H5ImgInterceptChooseViewController.h
 //  CJComplexUIKitDemo
 //
 //  Created by ciyouzen on 2019/1/16.
@@ -14,7 +14,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface H5ImgInterceptViewController : NetworkBaseWebViewController
+@interface H5ImgInterceptChooseViewController : NetworkBaseWebViewController
 
 @end
 

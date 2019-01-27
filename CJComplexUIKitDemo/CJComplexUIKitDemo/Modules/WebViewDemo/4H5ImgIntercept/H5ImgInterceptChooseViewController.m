@@ -1,26 +1,26 @@
 //
-//  H5ImgInterceptViewController.m
+//  H5ImgInterceptChooseViewController.m
 //  CJComplexUIKitDemo
 //
 //  Created by ciyouzen on 2019/1/16.
 //  Copyright © 2019 dvlproad. All rights reserved.
 //
 
-#import "H5ImgInterceptViewController.h"
+#import "H5ImgInterceptChooseViewController.h"
 #import "UIViewController+CJHookPresent.h"
 
-@interface H5ImgInterceptViewController () {
+@interface H5ImgInterceptChooseViewController () {
     
 }
 
 @end
 
-@implementation H5ImgInterceptViewController
+@implementation H5ImgInterceptChooseViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.title = NSLocalizedString(@"JS调用系统相册(网页版-拦截)", nil);
+    self.title = NSLocalizedString(@"H5选择的系统照片拦截--②拦截选择", nil);
     
     self.networkUrl = @"http://gif.55.la/";
     self.shouldHookFileUploadPanel = YES;

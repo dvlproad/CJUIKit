@@ -17,7 +17,9 @@
 #import "H5ImgSettingPathViewController.h"
 #import "H5ImgSettingDataViewController.h"
 
-#import "H5ImgInterceptViewController.h"
+#import "H5ImgInterceptChooseViewController.h"
+
+#import "H5ImgInterceptPickerViewController.h"
 
 @interface WebHomeViewController ()  {
     
@@ -93,14 +95,20 @@
         [sectionDataModels addObject:sectionDataModel];
     }
     
-    // WebView JS->Camera
+    // WebView H5的img拦截
     {
         CJSectionDataModel *sectionDataModel = [[CJSectionDataModel alloc] init];
         sectionDataModel.theme = @"WebView H5的img拦截";
         {
             CJModuleModel *webViewModule = [[CJModuleModel alloc] init];
             webViewModule.title = @"WebView H5的img拦截(拦截了present)";
-            webViewModule.classEntry = [H5ImgInterceptViewController class];
+            webViewModule.classEntry = [H5ImgInterceptChooseViewController class];
+            [sectionDataModel.values addObject:webViewModule];
+        }
+        {
+            CJModuleModel *webViewModule = [[CJModuleModel alloc] init];
+            webViewModule.title = @"WebView H5的img拦截(拦截了image)";
+            webViewModule.classEntry = [H5ImgInterceptPickerViewController class];
             [sectionDataModel.values addObject:webViewModule];
         }
         
