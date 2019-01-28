@@ -8,26 +8,20 @@
 
 #import "UIImagePickerController+CJHookFileUploadPanel.h"
 #import <objc/runtime.h>
+#import <CJBaseHelper/HookCJHelper.h>
 
 @implementation UIImagePickerController (CJHookFileUploadPanel)
 
 static BOOL isDelegateMethodHooked = false;
 
 + (void)hookDelegate {
-    SEL swizzledSEL = @selector(swizzled_imagePickerController:didFinishPickingMediaWithInfo:);
     SEL originSEL = @selector(imagePickerController:didFinishPickingMediaWithInfo:);
+    SEL swizzledSEL = @selector(swizzled_imagePickerController:didFinishPickingMediaWithInfo:);
     
-    if (swizzledSEL && originSEL) {
-        Class class = NSClassFromString(@"WKFileUploadPanel");
-        hook_delegateMethod(class, originSEL, [UIImagePickerController class], swizzledSEL, swizzledSEL);
-    }
-}
-
-+ (void)unHookDelegate {
-    SEL swizzledSEL = @selector(swizzled_imagePickerController:didFinishPickingMediaWithInfo:);
-    SEL originSEL = @selector(imagePickerController:didFinishPickingMediaWithInfo:);
     Class class = NSClassFromString(@"WKFileUploadPanel");
-    unHook_delegateMethod(class,swizzledSEL,originSEL);
+//    hook_delegateMethod(class, originSEL, [UIImagePickerController class], swizzledSEL, swizzledSEL);
+    HookCJHelper_swizzleMethodInDiffClass(class, originSEL, [UIImagePickerController class], swizzledSEL);
+    HookCJHelper_swizzleMethodInDiffClass(class, originSEL, [UIImagePickerController class], swizzledSEL);
 }
 
 /**
@@ -46,7 +40,7 @@ static void hook_delegateMethod(Class originalClass, SEL originalSel, Class repl
     }
     
     // 向实现 delegate 的类中添加新的方法
-    class_addMethod(originalClass, replacedSel, method_getImplementation(replacedMethod), method_getTypeEncoding(replacedMethod));
+    BOOL didAddMethod =class_addMethod(originalClass, replacedSel, method_getImplementation(replacedMethod), method_getTypeEncoding(replacedMethod));
     
     // 重新拿到添加被添加的 method, 因为替换的方法已经添加到原类中了, 应该交换原类中的两个方法
     Method newMethod = class_getInstanceMethod(originalClass, replacedSel);
@@ -54,6 +48,13 @@ static void hook_delegateMethod(Class originalClass, SEL originalSel, Class repl
         method_exchangeImplementations(originalMethod, newMethod);// 实现交换
         isDelegateMethodHooked = YES;
     }
+}
+
++ (void)unHookDelegate {
+    SEL swizzledSEL = @selector(swizzled_imagePickerController:didFinishPickingMediaWithInfo:);
+    SEL originSEL = @selector(imagePickerController:didFinishPickingMediaWithInfo:);
+    Class class = NSClassFromString(@"WKFileUploadPanel");
+    unHook_delegateMethod(class,swizzledSEL,originSEL);
 }
 
 /**
@@ -78,28 +79,36 @@ static void unHook_delegateMethod(Class originalClass, SEL originalSel, SEL repl
  @param picker picker
  @param info info
  */
-- (void)swizzled_imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info{
+- (void)swizzled_imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info {
     
-    NSString *imageURLKey = @"UIImagePickerControllerImageURL";
-    NSString *imageKey = @"UIImagePickerControllerOriginalImage";
-    NSMutableDictionary *dict = [[NSMutableDictionary alloc] initWithDictionary:info];
-    
+    NSMutableDictionary *new_info = [[NSMutableDictionary alloc] initWithDictionary:info];
     //UIImagePickerControllerReferenceURL设为空是关键一步。
     //相机是不会有asset URL,即referenceURL会为空，所以这里不需要传asset URL，直接传图片对象即可。
     //让WKFileUploadPanel以为从相册来的图片也是从相机来的
-    [dict setValue:nil forKey:@"UIImagePickerControllerReferenceURL"];
-    UIImage *originImage = [dict valueForKey:imageKey];;
+    [new_info setValue:nil forKey:@"UIImagePickerControllerReferenceURL"];
     
-    UIImage *targetImage = [UIImagePickerController compressImage:originImage];
+    
+    UIImage *originImage = [new_info valueForKey:@"UIImagePickerControllerOriginalImage"];;
+    
+    UIImage *newImage = [UIImagePickerController dealImage:originImage];
     
     NSString *imageFilePath = [UIImagePickerController imageFilePath];
-    [UIImagePickerController saveToSandBox:targetImage filePath:imageFilePath];
-    NSURL *targetImageURL = [NSURL fileURLWithPath:imageFilePath];
-    [dict setObject:targetImage forKey:imageKey];
-    [dict setObject:targetImageURL forKey:imageURLKey];
+    [UIImagePickerController saveToSandBox:newImage filePath:imageFilePath];
+    NSURL *newImageURL = [NSURL fileURLWithPath:imageFilePath];
+    [new_info setObject:newImage forKey:@"UIImagePickerControllerOriginalImage"];
+    [new_info setObject:newImageURL forKey:@"UIImagePickerControllerImageURL"];
     
     //方法的实现已经通过Method swizling交换了，所以这里调用的是原始实现
-    [self swizzled_imagePickerController:picker didFinishPickingMediaWithInfo:dict];
+    [self swizzled_imagePickerController:picker didFinishPickingMediaWithInfo:new_info];
+}
+
+- (void)hookImageWithNewImage:(UIImage *)newImage newAbsoluteImagePath:(NSString *)newAbsoluteImagePath {
+    
+}
+
++ (UIImage *)dealImage:(UIImage *)image {
+    UIImage *newImage = [UIImage imageNamed:@"饮品2.jpg"];
+    return newImage;
 }
 
 + (void)saveToSandBox:(UIImage *)image filePath:(NSString *)path {
@@ -121,15 +130,5 @@ static void unHook_delegateMethod(Class originalClass, SEL originalSel, SEL repl
     return [documentDirectory stringByAppendingPathComponent:fileName];
 }
 
-/**
- 压缩图片
- 
- @param image 原始图片
- @return 加工完成的图片
- */
-+ (UIImage *)compressImage:(UIImage *)image {
-    image = [UIImage imageNamed:@"饮品2.jpg"];
-    return image;
-}
 
 @end

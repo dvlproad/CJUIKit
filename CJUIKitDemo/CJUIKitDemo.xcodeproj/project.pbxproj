@@ -26,6 +26,10 @@
 		781C737321BA65C90090080C /* add_common_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 781C736F21BA65C90090080C /* add_common_icon@2x.png */; };
 		781C737421BA65C90090080C /* add_common_icon@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 781C737021BA65C90090080C /* add_common_icon@3x.png */; };
 		781C737721BA6A170090080C /* TestValueChangeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 781C737621BA6A170090080C /* TestValueChangeModel.m */; };
+		78218FD021FEE5FF00583578 /* TestHookModel1.m in Sources */ = {isa = PBXBuildFile; fileRef = 78218FCF21FEE5FF00583578 /* TestHookModel1.m */; };
+		78218FD321FEE60A00583578 /* TestHookModel2.m in Sources */ = {isa = PBXBuildFile; fileRef = 78218FD221FEE60A00583578 /* TestHookModel2.m */; };
+		78218FD621FEE69500583578 /* TestHookModel1+TestHook.m in Sources */ = {isa = PBXBuildFile; fileRef = 78218FD521FEE69500583578 /* TestHookModel1+TestHook.m */; };
+		78218FD921FEEDD900583578 /* HookCJHelperViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78218FD821FEEDD900583578 /* HookCJHelperViewController.m */; };
 		78226A6D21A4012B002167F2 /* DemoAlert.m in Sources */ = {isa = PBXBuildFile; fileRef = 78226A6C21A4012B002167F2 /* DemoAlert.m */; };
 		78226A9021A42103002167F2 /* CJConvertUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 78226A8E21A42103002167F2 /* CJConvertUtil.m */; };
 		78293F0A21FC2B9C00F70F43 /* CodeScrollViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78293F0121FC2B9C00F70F43 /* CodeScrollViewController.m */; };
@@ -388,6 +392,14 @@
 		781C737021BA65C90090080C /* add_common_icon@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "add_common_icon@3x.png"; sourceTree = "<group>"; };
 		781C737521BA6A170090080C /* TestValueChangeModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestValueChangeModel.h; sourceTree = "<group>"; };
 		781C737621BA6A170090080C /* TestValueChangeModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestValueChangeModel.m; sourceTree = "<group>"; };
+		78218FCE21FEE5FF00583578 /* TestHookModel1.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestHookModel1.h; sourceTree = "<group>"; };
+		78218FCF21FEE5FF00583578 /* TestHookModel1.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestHookModel1.m; sourceTree = "<group>"; };
+		78218FD121FEE60A00583578 /* TestHookModel2.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestHookModel2.h; sourceTree = "<group>"; };
+		78218FD221FEE60A00583578 /* TestHookModel2.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestHookModel2.m; sourceTree = "<group>"; };
+		78218FD421FEE69500583578 /* TestHookModel1+TestHook.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TestHookModel1+TestHook.h"; sourceTree = "<group>"; };
+		78218FD521FEE69500583578 /* TestHookModel1+TestHook.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "TestHookModel1+TestHook.m"; sourceTree = "<group>"; };
+		78218FD721FEEDD900583578 /* HookCJHelperViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HookCJHelperViewController.h; sourceTree = "<group>"; };
+		78218FD821FEEDD900583578 /* HookCJHelperViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HookCJHelperViewController.m; sourceTree = "<group>"; };
 		78226A6B21A4012B002167F2 /* DemoAlert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DemoAlert.h; sourceTree = "<group>"; };
 		78226A6C21A4012B002167F2 /* DemoAlert.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DemoAlert.m; sourceTree = "<group>"; };
 		78226A8E21A42103002167F2 /* CJConvertUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJConvertUtil.m; sourceTree = "<group>"; };
@@ -1078,6 +1090,21 @@
 				781C736D21BA65C90090080C /* minus_common_icon@3x.png */,
 			);
 			path = NSCalendarCJHelper;
+			sourceTree = "<group>";
+		};
+		78218FCD21FEE59E00583578 /* HookCJHelper */ = {
+			isa = PBXGroup;
+			children = (
+				78218FD721FEEDD900583578 /* HookCJHelperViewController.h */,
+				78218FD821FEEDD900583578 /* HookCJHelperViewController.m */,
+				78218FCE21FEE5FF00583578 /* TestHookModel1.h */,
+				78218FCF21FEE5FF00583578 /* TestHookModel1.m */,
+				78218FD421FEE69500583578 /* TestHookModel1+TestHook.h */,
+				78218FD521FEE69500583578 /* TestHookModel1+TestHook.m */,
+				78218FD121FEE60A00583578 /* TestHookModel2.h */,
+				78218FD221FEE60A00583578 /* TestHookModel2.m */,
+			);
+			path = HookCJHelper;
 			sourceTree = "<group>";
 		};
 		78226A6A21A4012B002167F2 /* DemoAlert */ = {
@@ -2116,6 +2143,7 @@
 			children = (
 				80500387211C3A29002A2306 /* HelperHomeViewController.h */,
 				80500383211C3A29002A2306 /* HelperHomeViewController.m */,
+				78218FCD21FEE59E00583578 /* HookCJHelper */,
 				7856F96621F9B2C3004AF751 /* AuthorizationCJHelper */,
 				7819C65B21BA5B7D008A1E10 /* NSCalendarCJHelper */,
 				80500384211C3A29002A2306 /* NSObjectCJHelper */,
@@ -2932,6 +2960,7 @@
 				807F126020B507A30008B748 /* ViewAnimateViewController.m in Sources */,
 				784A7216214C9DF000F8D144 /* MoreHomeViewController.m in Sources */,
 				788113BF2199574900D1630D /* SharedInstanceViewController.m in Sources */,
+				78218FD021FEE5FF00583578 /* TestHookModel1.m in Sources */,
 				80FF909C1FC5649F00E437CF /* NestedXibView.m in Sources */,
 				7856F82221F4F4C3004AF751 /* CJBaseTableViewCell.m in Sources */,
 				78226A9021A42103002167F2 /* CJConvertUtil.m in Sources */,
@@ -3045,6 +3074,7 @@
 				788113C22199583000D1630D /* NormalSharedInstanceClass.m in Sources */,
 				78A621DC2135C713004DA046 /* DemoSuspendWindow.m in Sources */,
 				78C8148B216E11AF00A6B190 /* BChildViewController.m in Sources */,
+				78218FD321FEE60A00583578 /* TestHookModel2.m in Sources */,
 				78E1895921777DC600B8781A /* CJUIKitBaseHomeViewController.m in Sources */,
 				7856F83D21F4F4C3004AF751 /* CJTextView.m in Sources */,
 				780E46081E5DF87B00980127 /* AppDelegate.m in Sources */,
@@ -3083,6 +3113,7 @@
 				808BF3242019C3E900511F7C /* YunUncaughtExceptionHandler.m in Sources */,
 				787FDB8520500B5C008A46E3 /* SwitchSliderViewController.m in Sources */,
 				7850B70220937C5A008F4A21 /* PopupInViewVC.m in Sources */,
+				78218FD921FEEDD900583578 /* HookCJHelperViewController.m in Sources */,
 				80500388211C3A29002A2306 /* PresentBaseViewController.m in Sources */,
 				7850B70420937C5A008F4A21 /* ShowDropDownViewController.m in Sources */,
 				80D0120A210336B900D1EDF0 /* BeChangeViewController.m in Sources */,
@@ -3134,6 +3165,7 @@
 				80FF919E1FC5682B00E437CF /* OtherHomeViewController.m in Sources */,
 				80D71EA92090277700D2DB68 /* AlertViewController.m in Sources */,
 				80FF90AD1FC5649F00E437CF /* NavigationBarViewController.m in Sources */,
+				78218FD621FEE69500583578 /* TestHookModel1+TestHook.m in Sources */,
 				80FF90A81FC5649F00E437CF /* ImageChangeColorViewController.m in Sources */,
 				7856F84121F4F4C3004AF751 /* CJExtraTextTextField.m in Sources */,
 				78A621A921319723004DA046 /* SuspendWindowViewController.m in Sources */,

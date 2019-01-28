@@ -23,6 +23,7 @@
 #endif
 
 #import "UIViewController+DemoProgressHUD.h"
+#import "DemoAlert.h"
 #import "DemoLabelFactory.h"
 #import "DemoButtonFactory.h"
 #import "DemoTextFieldFactory.h"
