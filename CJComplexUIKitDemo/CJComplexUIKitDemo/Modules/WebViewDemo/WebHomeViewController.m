@@ -21,7 +21,7 @@
 
 #import "H5ImgInterceptPickerViewController.h"
 
-@interface WebHomeViewController ()  {
+@interface WebHomeViewController () <UINavigationControllerDelegate, UIImagePickerControllerDelegate>  {
     
 }
 
@@ -108,7 +108,14 @@
         {
             CJModuleModel *webViewModule = [[CJModuleModel alloc] init];
             webViewModule.title = @"WebView H5的img拦截(拦截了image)";
+            webViewModule.content = @"注意：记得进入后要退出来试下unhook成功没";
             webViewModule.classEntry = [H5ImgInterceptPickerViewController class];
+            [sectionDataModel.values addObject:webViewModule];
+        }
+        {
+            CJModuleModel *webViewModule = [[CJModuleModel alloc] init];
+            webViewModule.title = @"UIImagePickerController本身的照片选择";
+            webViewModule.selector = @selector(testImagePicker);
             [sectionDataModel.values addObject:webViewModule];
         }
         
@@ -116,6 +123,18 @@
     }
     
     self.sectionDataModels = sectionDataModels;
+}
+
+- (void)testImagePicker {
+    UIImagePickerController *picker = [[UIImagePickerController alloc] init];
+    picker.delegate = self;
+    [self presentViewController:picker animated:YES completion:nil];
+}
+
+#pragma mark - UIImagePickerControllerDelegate
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<UIImagePickerControllerInfoKey,id> *)info {
+    [CJToast shortShowMessage:@"这是UIImagePickerController本身的方法"];
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 

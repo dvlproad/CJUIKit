@@ -15,61 +15,37 @@
 static BOOL isDelegateMethodHooked = false;
 
 + (void)hookDelegate {
-    SEL originSEL = @selector(imagePickerController:didFinishPickingMediaWithInfo:);
-    SEL swizzledSEL = @selector(swizzled_imagePickerController:didFinishPickingMediaWithInfo:);
-    
-    Class class = NSClassFromString(@"WKFileUploadPanel");
-    hook_delegateMethod(class, originSEL, [UIImagePickerController class], swizzledSEL, swizzledSEL);
-//    HookCJHelper_swizzleMethodInDiffClass(class, originSEL, [UIImagePickerController class], swizzledSEL);
-//    HookCJHelper_swizzleMethodInDiffClass(class, originSEL, [UIImagePickerController class], swizzledSEL);
-}
-
-/**
- 替换代理方法的实现
- */
-static void hook_delegateMethod(Class originalClass, SEL originalSel, Class replacedClass, SEL replacedSel, SEL noneSel)  {
-    //原实例方法
-    Method originalMethod = class_getInstanceMethod(originalClass, originalSel);
-    //替换的实例方法
-    Method replacedMethod = class_getInstanceMethod(replacedClass, replacedSel);
-    
-    if (!originalMethod) {// 如果没有实现 delegate 方法，则手动动态添加
-        Method noneMethod = class_getInstanceMethod(replacedClass, noneSel);
-        class_addMethod(originalClass, originalSel, method_getImplementation(noneMethod), method_getTypeEncoding(noneMethod));
-        return;
-    }
-    
-    // 向实现 delegate 的类中添加新的方法
-    BOOL didAddMethod =class_addMethod(originalClass, replacedSel, method_getImplementation(replacedMethod), method_getTypeEncoding(replacedMethod));
-    
-    // 重新拿到添加被添加的 method, 因为替换的方法已经添加到原类中了, 应该交换原类中的两个方法
-    Method newMethod = class_getInstanceMethod(originalClass, replacedSel);
-    if(!isDelegateMethodHooked && originalMethod && newMethod) {
-        method_exchangeImplementations(originalMethod, newMethod);// 实现交换
-        isDelegateMethodHooked = YES;
+    if(!isDelegateMethodHooked) {
+        SEL originalSelector = @selector(imagePickerController:didFinishPickingMediaWithInfo:);
+        SEL swizzledSelector = @selector(swizzled_imagePickerController:didFinishPickingMediaWithInfo:);
+        Class originalClass = NSClassFromString(@"WKFileUploadPanel");
+        Method originalMethod = class_getInstanceMethod(originalClass, originalSelector);
+        Method swizzledMethod = class_getInstanceMethod([UIImagePickerController class], swizzledSelector);
+        // add swizzledSelector to originalClass
+        class_addMethod(originalClass, swizzledSelector, method_getImplementation(swizzledMethod), method_getTypeEncoding(swizzledMethod));
+        
+        // 重新拿到添加被添加的 method, 因为替换的方法已经添加到原类中了, 应该交换原类中的两个方法
+        Method newMethod = class_getInstanceMethod(originalClass, swizzledSelector);
+        if(!isDelegateMethodHooked && originalMethod && newMethod) {
+            method_exchangeImplementations(originalMethod, newMethod);// 实现交换
+            isDelegateMethodHooked = YES;
+        }
     }
 }
 
 + (void)unHookDelegate {
-    SEL swizzledSEL = @selector(swizzled_imagePickerController:didFinishPickingMediaWithInfo:);
-    SEL originSEL = @selector(imagePickerController:didFinishPickingMediaWithInfo:);
-    Class class = NSClassFromString(@"WKFileUploadPanel");
-    unHook_delegateMethod(class,swizzledSEL,originSEL);
-}
-
-/**
- 恢复代理方法的实现
- */
-static void unHook_delegateMethod(Class originalClass, SEL originalSel, SEL replacedSel){
     if(isDelegateMethodHooked) {
-        Method originalMethod = class_getInstanceMethod(originalClass, originalSel);
-        Method replacedMethod = class_getInstanceMethod(originalClass, replacedSel);
-        if (originalMethod && replacedMethod){
-            // 重新拿到添加被添加的 method,这里是关键(注意这里 originalClass, 不 replacedClass), 因为替换的方法已经添加到原类中了, 应该交换原类中的两个方法
-            Method newMethod = class_getInstanceMethod(originalClass, replacedSel);
-            method_exchangeImplementations(originalMethod, newMethod);// 实现交换
-            isDelegateMethodHooked = NO;
+        SEL originalSelector = @selector(imagePickerController:didFinishPickingMediaWithInfo:);
+        SEL swizzledSelector = @selector(swizzled_imagePickerController:didFinishPickingMediaWithInfo:);
+        Class originalClass = NSClassFromString(@"WKFileUploadPanel");
+        Method originalMethod = class_getInstanceMethod(originalClass, originalSelector);
+        Method swizzledMethod = class_getInstanceMethod(originalClass, swizzledSelector);
+        
+        if (originalMethod && swizzledMethod){
+            method_exchangeImplementations(swizzledMethod, originalMethod);
         }
+        
+        isDelegateMethodHooked = NO;
     }
 }
 
@@ -102,9 +78,6 @@ static void unHook_delegateMethod(Class originalClass, SEL originalSel, SEL repl
     [self swizzled_imagePickerController:picker didFinishPickingMediaWithInfo:new_info];
 }
 
-- (void)hookImageWithNewImage:(UIImage *)newImage newAbsoluteImagePath:(NSString *)newAbsoluteImagePath {
-    
-}
 
 + (UIImage *)dealImage:(UIImage *)image {
     UIImage *newImage = [UIImage imageNamed:@"饮品2.jpg"];
