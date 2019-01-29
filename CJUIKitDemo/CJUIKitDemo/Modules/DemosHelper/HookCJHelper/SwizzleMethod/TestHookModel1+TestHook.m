@@ -8,12 +8,12 @@
 
 #import "TestHookModel1+TestHook.h"
 
-NSString *const hook_TestHookModel1 = @"swizzle_printLog in TestHookModel1";
+NSString *const TestHookModel1_sameMethod = @"TestHookModel1_sameMethod";
 
 @implementation TestHookModel1 (TestHook)
 
-- (NSString *)swizzle_printLog {
-    return hook_TestHookModel1;
+- (NSString *)common_swizzle_printLog {
+    return TestHookModel1_sameMethod;
 }
 
 @end

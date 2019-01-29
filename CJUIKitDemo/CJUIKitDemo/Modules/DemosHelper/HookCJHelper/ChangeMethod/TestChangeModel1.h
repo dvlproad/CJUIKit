@@ -1,5 +1,5 @@
 //
-//  TestHookModel2.h
+//  TestChangeModel1.h
 //  CJUIKitDemo
 //
 //  Created by ciyouzen on 2019/1/28.
@@ -8,10 +8,10 @@
 
 #import <Foundation/Foundation.h>
 
-UIKIT_EXTERN NSString *const hook_TestHookModel2;
+UIKIT_EXTERN NSString *const TestChangeModel1_originMethod;
 
-@interface TestHookModel2 : NSObject
+@interface TestChangeModel1 : NSObject
 
-- (NSString *)swizzle_printLog;
+- (NSString *)printLog;
 
 @end

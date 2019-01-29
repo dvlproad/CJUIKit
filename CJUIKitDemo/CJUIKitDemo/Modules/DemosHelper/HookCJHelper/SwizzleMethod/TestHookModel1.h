@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-UIKIT_EXTERN NSString *const unhook_TestHookModel1;
+UIKIT_EXTERN NSString *const TestHookModel1_originMethod;
 
 @interface TestHookModel1 : NSObject
 

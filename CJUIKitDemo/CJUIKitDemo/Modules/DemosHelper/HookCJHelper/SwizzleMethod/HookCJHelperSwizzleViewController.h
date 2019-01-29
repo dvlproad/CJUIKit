@@ -1,5 +1,5 @@
 //
-//  HookCJHelperViewController.h
+//  HookCJHelperSwizzleViewController.h
 //  CJUIKitDemo
 //
 //  Created by ciyouzen on 2019/1/28.
@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface HookCJHelperViewController : CJUIKitBaseHomeViewController
+@interface HookCJHelperSwizzleViewController : CJUIKitBaseHomeViewController
 
 @end
 

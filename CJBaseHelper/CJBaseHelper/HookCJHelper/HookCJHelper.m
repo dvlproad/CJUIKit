@@ -11,7 +11,7 @@
 @implementation HookCJHelper
 
 /// hook class的originalSelector为swizzledSelector
-void HookCJHelper_swizzleMethodInSameClass(Class class, SEL originalSelector, SEL swizzledSelector) {
+void HookCJHelper_swizzleMethod(Class class, SEL originalSelector, SEL swizzledSelector) {
     Method originalMethod = class_getInstanceMethod(class, originalSelector);
     Method swizzledMethod = class_getInstanceMethod(class, swizzledSelector);
     
@@ -32,41 +32,19 @@ void HookCJHelper_swizzleMethodInSameClass(Class class, SEL originalSelector, SE
         method_exchangeImplementations(originalMethod, swizzledMethod);
     }
 }
-
-/*
-/// unhook class的originalSelector为swizzledSelector
-void HookCJHelper_recoverMethodInSameClass(Class class, SEL originalSelector, SEL swizzledSelector) {
-    Method originalMethod = class_getInstanceMethod(class, originalSelector);
-    Method swizzledMethod = class_getInstanceMethod(class, swizzledSelector);
-    
-    //注：判断条件不能少,否则非常容易出现崩溃
-    BOOL didAddMethod =
-    class_addMethod(class,
-                    originalSelector,
-                    method_getImplementation(swizzledMethod),
-                    method_getTypeEncoding(swizzledMethod));
-    if (didAddMethod) {
-        //添加成功了,说明本类中不存在swizzledMethod所以此时必须将swizzledMethod的实现指针换成originalSelector的,否则swizzledMethod将没有实现。
-        class_replaceMethod(class,
-                            swizzledSelector,
-                            method_getImplementation(originalMethod),
-                            method_getTypeEncoding(originalMethod));
-    } else {
-        //添加失败了,说明本类中有swizzledMethod的实现,此时只需要将originalMethod和swizzledMethod的IMP互换一下即可。
-        method_exchangeImplementations(originalMethod, swizzledMethod);
-    }
-}
-//*/
 
 /**
- *  hook originalSelOwnerClass的originalSelector 为 swizzledSelOwnerClass的swizzledSelector
+ *  change originalSelOwnerClass的originalSelector 为 swizzledSelOwnerClass的swizzledSelector
+ *  @brief  注:
+    ①只会将originalSelOwnerClass的originalSelector实现 改为 swizzledSelOwnerClass的swizzledSelector的实现，不会将swizzledSelOwnerClass的swizzledSelector 改为 originalSelOwnerClass的originalSelector 的实现；
+    ②swizzledSelOwnerClass和originalSelOwnerClass可以为同一个类；
  *
  *  @param originalSelOwnerClass    要修改的类
  *  @param originalSelector         要修改的方法
  *  @param swizzledSelOwnerClass    要修改成的方法所在的类
  *  @param swizzledSelector         修改成那个类里面的方法
  */
-void HookCJHelper_swizzleMethodInDiffClass(Class originalSelOwnerClass, SEL originalSelector, Class swizzledSelOwnerClass, SEL swizzledSelector) {
+void HookCJHelper_changeMethod(Class originalSelOwnerClass, SEL originalSelector, Class swizzledSelOwnerClass, SEL swizzledSelector) {
     Method originalMethod = class_getInstanceMethod(originalSelOwnerClass, originalSelector);
     Method swizzledMethod = class_getInstanceMethod(swizzledSelOwnerClass, swizzledSelector);
     

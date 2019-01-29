@@ -8,12 +8,12 @@
 
 #import "TestHookModel1.h"
 
-NSString *const unhook_TestHookModel1 = @"printLog in TestHookModel1";
+NSString *const TestHookModel1_originMethod = @"TestHookModel1_originMethod";
 
 @implementation TestHookModel1
 
 - (NSString *)printLog {
-    return unhook_TestHookModel1;
+    return TestHookModel1_originMethod;
 }
 
 @end

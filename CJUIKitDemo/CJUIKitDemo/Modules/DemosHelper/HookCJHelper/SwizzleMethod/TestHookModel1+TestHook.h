@@ -8,10 +8,10 @@
 
 #import "TestHookModel1.h"
 
-UIKIT_EXTERN NSString *const hook_TestHookModel1;
+UIKIT_EXTERN NSString *const TestHookModel1_sameMethod;
 
 @interface TestHookModel1 (TestHook)
 
-//- (NSString *)swizzle_printLog;
+- (NSString *)common_swizzle_printLog;
 
 @end

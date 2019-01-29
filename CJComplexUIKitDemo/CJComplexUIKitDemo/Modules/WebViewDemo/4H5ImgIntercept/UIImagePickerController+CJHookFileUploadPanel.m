@@ -19,9 +19,9 @@ static BOOL isDelegateMethodHooked = false;
     SEL swizzledSEL = @selector(swizzled_imagePickerController:didFinishPickingMediaWithInfo:);
     
     Class class = NSClassFromString(@"WKFileUploadPanel");
-//    hook_delegateMethod(class, originSEL, [UIImagePickerController class], swizzledSEL, swizzledSEL);
-    HookCJHelper_swizzleMethodInDiffClass(class, originSEL, [UIImagePickerController class], swizzledSEL);
-    HookCJHelper_swizzleMethodInDiffClass(class, originSEL, [UIImagePickerController class], swizzledSEL);
+    hook_delegateMethod(class, originSEL, [UIImagePickerController class], swizzledSEL, swizzledSEL);
+//    HookCJHelper_swizzleMethodInDiffClass(class, originSEL, [UIImagePickerController class], swizzledSEL);
+//    HookCJHelper_swizzleMethodInDiffClass(class, originSEL, [UIImagePickerController class], swizzledSEL);
 }
 
 /**
