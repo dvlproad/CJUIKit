@@ -44,6 +44,20 @@
             hookModule.selector = @selector(swizzleMethodInSameClass);
             [sectionDataModel.values addObject:hookModule];
         }
+        {
+            CJModuleModel *hookModule = [[CJModuleModel alloc] init];
+            hookModule.title = @"swizzleMethod_fromOtherself_same";
+            hookModule.content = @"使用B类中的'A类已有的方法'来替换A类中的方法";
+            hookModule.selector = @selector(swizzleMethod_fromOtherself_same);
+            [sectionDataModel.values addObject:hookModule];
+        }
+        {
+            CJModuleModel *hookModule = [[CJModuleModel alloc] init];
+            hookModule.title = @"swizzleMethod_fromOtherself_diff";
+            hookModule.content = @"使用B类中的'A类没有的方法'来替换A类中的方法";
+            hookModule.selector = @selector(swizzleMethod_fromOtherself_diff);
+            [sectionDataModel.values addObject:hookModule];
+        }
         [sectionDataModels addObject:sectionDataModel];
     }
     
@@ -73,8 +87,58 @@
         [message appendFormat:@"\n%@", message2];
         [CJToast shortShowMessage:message];
         [CJToast shortShowMessage:message];
+        
     } else {
         [DemoAlert showErrorToastAlertViewTitle:@"hook失败"];
+    }
+}
+
+- (void)swizzleMethod_fromOtherself_same {
+    SEL originalSelector = @selector(printLog);
+    SEL swizzledSelector = @selector(common_swizzle_printLog);
+    
+    bool isAddAndExchangeSuccess =
+    HookCJHelper_addAndExchangeMethodFromDiffClass([TestHookModel1 class], originalSelector, [TestHookModel2 class], swizzledSelector);
+    if (!isAddAndExchangeSuccess) {
+        [CJToast shortShowMessage:@"Verificate Success\nbeacuse swizzledSelector isn't a new method for class1"];
+        return;
+    }
+}
+
+
+
+
+- (void)swizzleMethod_fromOtherself_diff {
+    SEL originalSelector = @selector(printLog);
+    SEL swizzledSelector = @selector(diff_swizzle_printLog);
+    
+    static BOOL isFirstAddAndExchange_fromOtherself_diff = YES;
+    bool isAddAndExchangeSuccess =
+    HookCJHelper_addAndExchangeMethodFromDiffClass([TestHookModel1 class], originalSelector, [TestHookModel2 class], swizzledSelector);
+    if (isFirstAddAndExchange_fromOtherself_diff && !isAddAndExchangeSuccess) {
+        [CJToast shortShowMessage:@"addAndExchangeMethodFromDiffClass Failure"];
+        return;
+    }
+    isFirstAddAndExchange_fromOtherself_diff = NO;
+    
+    NSString *message1 = [self.testHookModel1 printLog];
+    NSString *message2 = [self.testHookModel2 diff_swizzle_printLog];
+    if ([message1 isEqualToString:TestHookModel2_diffMethod] &&
+        [message2 isEqualToString:TestHookModel2_diffMethod]) {
+        NSMutableString *message = [NSMutableString stringWithFormat:@"diff class diff method change成功了:"];
+        [message appendFormat:@"\n%@", message1];
+        [message appendFormat:@"\n%@", message2];
+        [CJToast shortShowMessage:message];
+        
+    } else if ([message1 isEqualToString:TestHookModel1_originMethod] &&
+               [message2 isEqualToString:TestHookModel2_diffMethod]) {
+        NSMutableString *message = [NSMutableString stringWithFormat:@"diff class diff method recover成功了:"];
+        [message appendFormat:@"\n%@", message1];
+        [message appendFormat:@"\n%@", message2];
+        [CJToast shortShowMessage:message];
+        
+    } else {
+        [DemoAlert showErrorToastAlertViewTitle:@"diff class diff method change失败"];
     }
 }
 

@@ -26,7 +26,7 @@ static BOOL isDelegateMethodHooked = false;
         
         // 重新拿到添加被添加的 method, 因为替换的方法已经添加到原类中了, 应该交换原类中的两个方法
         Method newMethod = class_getInstanceMethod(originalClass, swizzledSelector);
-        if(!isDelegateMethodHooked && originalMethod && newMethod) {
+        if(originalMethod && newMethod) {
             method_exchangeImplementations(originalMethod, newMethod);// 实现交换
             isDelegateMethodHooked = YES;
         }

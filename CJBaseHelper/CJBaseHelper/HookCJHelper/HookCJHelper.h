@@ -11,20 +11,39 @@
 
 @interface HookCJHelper : NSObject
 
-/// hook class的originalSelector为swizzledSelector
+#pragma mark - the swizzle which Can recover originalMethod
+/// swizzle class's originalSelector to swizzledSelector
 void HookCJHelper_swizzleMethod(Class class, SEL originalSelector, SEL swizzledSelector);
 
+
 /**
- *  change originalSelOwnerClass的originalSelector 为 swizzledSelOwnerClass的swizzledSelector
- *  @brief  注:
- ①只会将originalSelOwnerClass的originalSelector实现 改为 swizzledSelOwnerClass的swizzledSelector的实现，不会将swizzledSelOwnerClass的swizzledSelector 改为 originalSelOwnerClass的originalSelector 的实现；
- ②swizzledSelOwnerClass和originalSelOwnerClass可以为同一个类；
+ *  exchange class1's method to class2's method (can recover originalMethod)
+ *  @brief      add swizzledSelOwnerClass's swizzledSelector method to originalSelOwnerClass, and make originalSelector method's imp is swizzledSelector's imp
+ *  @attention  swizzledSelOwnerClass and originalSelOwnerClass shouldn't same;
  *
- *  @param originalSelOwnerClass    要修改的类
- *  @param originalSelector         要修改的方法
- *  @param swizzledSelOwnerClass    要修改成的方法所在的类
- *  @param swizzledSelector         修改成那个类里面的方法
+ *  @param originalSelOwnerClass    the class which will add swizzledMethod, and exchangeImp between originalMethod and swizzledMethod
+ *  @param originalSelector         the method which will be exchange
+ *  @param swizzledSelOwnerClass    the new method owner class
+ *  @param swizzledSelector         the method which will be add for class1, which is in class2
+ *
+ *  @return is add and exchange Success
  */
-void HookCJHelper_changeMethod(Class originalSelOwnerClass, SEL originalSelector, Class swizzledSelOwnerClass, SEL swizzledSelector);
+bool HookCJHelper_addAndExchangeMethodFromDiffClass(Class originalSelOwnerClass, SEL originalSelector, Class swizzledSelOwnerClass, SEL swizzledSelector);
+
+
+#pragma mark - the swizzle which Can't recover originalMethod and will lose it
+/**
+ *  replace method (can't recover originalMethod, will lose it)
+ *  @brief replace originalSelector method's imp to swizzledSelector's imp
+ *  @attention swizzledSelOwnerClass and originalSelOwnerClass allow to be same;
+ *
+ *  @param originalSelOwnerClass    the class which will replace originalSelector method's imp to swizzledSelector's imp
+ *  @param originalSelector         the method which will be replace
+ *  @param swizzledSelOwnerClass    the replace method owner class
+ *  @param swizzledSelector         the replace method
+ *
+ *  @return is replaceMethod Success
+ */
+bool HookCJHelper_replaceMethod(Class originalSelOwnerClass, SEL originalSelector, Class swizzledSelOwnerClass, SEL swizzledSelector);
 
 @end

@@ -70,46 +70,75 @@
 #pragma mark - hook InDiffClass sameMethod
 - (void)changeMethod_fromHimself {
     SEL originalSelector = @selector(printLog);
-    SEL swizzledSelector = @selector(common_swizzle_printLog);
-    HookCJHelper_changeMethod([TestChangeModel1 class], originalSelector, [TestChangeModel1 class], swizzledSelector);
+    SEL swizzledSelector = @selector(common_change_printLog);
+    HookCJHelper_replaceMethod([TestChangeModel1 class], originalSelector, [TestChangeModel1 class], swizzledSelector);
     
     NSString *message1 = [self.testChangeModel1 printLog];
-    NSString *message2 = [self.testChangeModel1 common_swizzle_printLog];
+    NSString *message2 = [self.testChangeModel1 common_change_printLog];
     if ([message1 isEqualToString:TestChangeModel1_sameMethod] &&
         [message2 isEqualToString:TestChangeModel1_sameMethod]) {
-        [CJToast shortShowMessage:message1];
+        NSMutableString *message = [NSMutableString stringWithFormat:@"same class diff method change成功了:"];
+        [message appendFormat:@"\n%@", message1];
+        [message appendFormat:@"\n%@", message2];
+        [CJToast shortShowMessage:message];
+    } else if ([message1 isEqualToString:TestChangeModel1_originMethod] &&
+               [message2 isEqualToString:TestChangeModel1_sameMethod]) {
+        NSMutableString *message = [NSMutableString stringWithFormat:@"same class diff method recover成功了:"];
+        [message appendFormat:@"\n%@", message1];
+        [message appendFormat:@"\n%@", message2];
+        [CJToast shortShowMessage:message];
     } else {
-        [DemoAlert showErrorToastAlertViewTitle:@"hook same Method失败"];
+        [DemoAlert showErrorToastAlertViewTitle:@"same class diff method change失败"];
     }
 }
 
 - (void)changeMethod_fromOtherself_same {
     SEL originalSelector = @selector(printLog);
-    SEL swizzledSelector = @selector(common_swizzle_printLog);
-    HookCJHelper_changeMethod([TestChangeModel1 class], originalSelector, [TestChangeModel2 class], swizzledSelector);
+    SEL swizzledSelector = @selector(common_change_printLog);
+    HookCJHelper_replaceMethod([TestChangeModel1 class], originalSelector, [TestChangeModel2 class], swizzledSelector);
     
     NSString *message1 = [self.testChangeModel1 printLog];
-    NSString *message2 = [self.testChangeModel2 common_swizzle_printLog];
+    NSString *message2 = [self.testChangeModel2 common_change_printLog];
     if ([message1 isEqualToString:TestChangeModel2_sameMethod] &&
         [message2 isEqualToString:TestChangeModel2_sameMethod]) {
-        [CJToast shortShowMessage:message1];
+        NSMutableString *message = [NSMutableString stringWithFormat:@"diff class same method change成功了:"];
+        [message appendFormat:@"\n%@", message1];
+        [message appendFormat:@"\n%@", message2];
+        [CJToast shortShowMessage:message];
+    } else if ([message1 isEqualToString:TestChangeModel1_originMethod] &&
+               [message2 isEqualToString:TestChangeModel2_sameMethod]) {
+        NSMutableString *message = [NSMutableString stringWithFormat:@"diff class same method recover成功了:"];
+        [message appendFormat:@"\n%@", message1];
+        [message appendFormat:@"\n%@", message2];
+        [CJToast shortShowMessage:message];
     } else {
-        [DemoAlert showErrorToastAlertViewTitle:@"hook same Method失败"];
+        [DemoAlert showErrorToastAlertViewTitle:@"diff class same method change失败"];
     }
 }
 
 - (void)changeMethod_fromOtherself_diff {
     SEL originalSelector = @selector(printLog);
-    SEL swizzledSelector = @selector(model2_swizzle_printLog);
-    HookCJHelper_changeMethod([TestChangeModel1 class], originalSelector, [TestChangeModel2 class], swizzledSelector);
+    SEL swizzledSelector = @selector(diff_change_printLog);
+    HookCJHelper_replaceMethod([TestChangeModel1 class], originalSelector, [TestChangeModel2 class], swizzledSelector);
     
     NSString *message1 = [self.testChangeModel1 printLog];
-    NSString *message2 = [self.testChangeModel2 model2_swizzle_printLog];
+    NSString *message2 = [self.testChangeModel2 diff_change_printLog];
     if ([message1 isEqualToString:TestChangeModel2_diffMethod] &&
         [message2 isEqualToString:TestChangeModel2_diffMethod]) {
-        [CJToast shortShowMessage:message1];
+        NSMutableString *message = [NSMutableString stringWithFormat:@"diff class diff method change成功了:"];
+        [message appendFormat:@"\n%@", message1];
+        [message appendFormat:@"\n%@", message2];
+        [CJToast shortShowMessage:message];
+        
+    } else if ([message1 isEqualToString:TestChangeModel1_originMethod] &&
+               [message2 isEqualToString:TestChangeModel2_diffMethod]) {
+        NSMutableString *message = [NSMutableString stringWithFormat:@"diff class diff method recover成功了:"];
+        [message appendFormat:@"\n%@", message1];
+        [message appendFormat:@"\n%@", message2];
+        [CJToast shortShowMessage:message];
+        
     } else {
-        [DemoAlert showErrorToastAlertViewTitle:@"hook same Method失败"];
+        [DemoAlert showErrorToastAlertViewTitle:@"diff class diff method change失败"];
     }
 }
 

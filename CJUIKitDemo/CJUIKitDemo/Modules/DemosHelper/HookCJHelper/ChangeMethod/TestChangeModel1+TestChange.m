@@ -12,7 +12,7 @@ NSString *const TestChangeModel1_sameMethod = @"TestChangeModel1_sameMethod";
 
 @implementation TestChangeModel1 (TestChange)
 
-- (NSString *)common_swizzle_printLog {
+- (NSString *)common_change_printLog {
     return TestChangeModel1_sameMethod;
 }
 

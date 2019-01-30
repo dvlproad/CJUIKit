@@ -13,7 +13,7 @@ UIKIT_EXTERN NSString *const TestChangeModel2_diffMethod;
 
 @interface TestChangeModel2 : NSObject
 
-- (NSString *)common_swizzle_printLog;
-- (NSString *)model2_swizzle_printLog;
+- (NSString *)common_change_printLog;
+- (NSString *)diff_change_printLog;
 
 @end

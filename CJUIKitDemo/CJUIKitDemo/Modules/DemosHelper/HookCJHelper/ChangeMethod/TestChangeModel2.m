@@ -13,11 +13,11 @@
 NSString *const TestChangeModel2_sameMethod = @"TestChangeModel2_sameMethod";
 NSString *const TestChangeModel2_diffMethod = @"TestChangeModel2_diffMethod";
 
-- (NSString *)common_swizzle_printLog {
+- (NSString *)common_change_printLog {
     return TestChangeModel2_sameMethod;
 }
 
-- (NSString *)model2_swizzle_printLog {
+- (NSString *)diff_change_printLog {
     return TestChangeModel2_diffMethod;
 }
 

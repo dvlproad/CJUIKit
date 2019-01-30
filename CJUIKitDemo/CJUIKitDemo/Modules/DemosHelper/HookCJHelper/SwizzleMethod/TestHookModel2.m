@@ -17,7 +17,7 @@ NSString *const TestHookModel2_diffMethod = @"TestHookModel2_diffMethod";
     return TestHookModel2_sameMethod;
 }
 
-- (NSString *)model2_swizzle_printLog {
+- (NSString *)diff_swizzle_printLog {
     return TestHookModel2_diffMethod;
 }
 

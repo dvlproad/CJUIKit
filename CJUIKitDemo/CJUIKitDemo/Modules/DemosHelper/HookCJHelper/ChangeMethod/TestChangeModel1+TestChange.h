@@ -12,6 +12,6 @@ UIKIT_EXTERN NSString *const TestChangeModel1_sameMethod;
 
 @interface TestChangeModel1 (TestChange)
 
-- (NSString *)common_swizzle_printLog;
+- (NSString *)common_change_printLog;
 
 @end
