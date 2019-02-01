@@ -10,7 +10,6 @@
 
 @interface UIImagePickerController (CJHookFileUploadPanel)
 
-+ (void)hookDelegate;
-+ (void)unHookDelegate;
++ (void)cj_hookFileUploadPanel:(BOOL)hook;
 
 @end

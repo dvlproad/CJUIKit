@@ -9,26 +9,16 @@
 #import <Foundation/Foundation.h>
 #import <objc/runtime.h>
 
+enum TheMethodWhichFromDiffClassDealType{
+    addAndExchangeOriMethod = 0,
+    RecoverOriMethod
+};
+
 @interface HookCJHelper : NSObject
 
 #pragma mark - the swizzle which Can recover originalMethod
 /// swizzle class's originalSelector to swizzledSelector
 void HookCJHelper_swizzleMethod(Class class, SEL originalSelector, SEL swizzledSelector);
-
-
-/**
- *  exchange class1's method to class2's method (can recover originalMethod)
- *  @brief      add swizzledSelOwnerClass's swizzledSelector method to originalSelOwnerClass, and make originalSelector method's imp is swizzledSelector's imp
- *  @attention  swizzledSelOwnerClass and originalSelOwnerClass shouldn't same;
- *
- *  @param originalSelOwnerClass    the class which will add swizzledMethod, and exchangeImp between originalMethod and swizzledMethod
- *  @param originalSelector         the method which will be exchange
- *  @param swizzledSelOwnerClass    the new method owner class
- *  @param swizzledSelector         the method which will be add for class1, which is in class2
- *
- *  @return is add and exchange Success
- */
-bool HookCJHelper_addAndExchangeMethodFromDiffClass(Class originalSelOwnerClass, SEL originalSelector, Class swizzledSelOwnerClass, SEL swizzledSelector);
 
 
 #pragma mark - the swizzle which Can't recover originalMethod and will lose it
@@ -45,5 +35,25 @@ bool HookCJHelper_addAndExchangeMethodFromDiffClass(Class originalSelOwnerClass,
  *  @return is replaceMethod Success
  */
 bool HookCJHelper_replaceMethod(Class originalSelOwnerClass, SEL originalSelector, Class swizzledSelOwnerClass, SEL swizzledSelector);
+
+
+#pragma mark - Deal New Method Which From Diff Class
+/**
+ *  exchange class1's method to class2's method (can recover originalMethod)
+ *  @brief      add swizzledSelOwnerClass's swizzledSelector method to originalSelOwnerClass, and make originalSelector method's imp is swizzledSelector's imp
+ *  @attention  swizzledSelOwnerClass and originalSelOwnerClass shouldn't same;
+ *
+ *  @param originalSelOwnerClass    the class which will add swizzledMethod, and exchangeImp between originalMethod and swizzledMethod
+ *  @param originalSelector         the method which will be exchange
+ *  @param swizzledSelOwnerClass    the new method owner class
+ *  @param swizzledSelector         the method which will be add for class1, which is in class2
+ *
+ *  @return is add and exchange Success
+ */
+bool HookCJHelper_exchangeOriMethodToNewMethodWhichAddFromDiffClass(Class originalSelOwnerClass, SEL originalSelector, Class swizzledSelOwnerClass, SEL swizzledSelector);
+
+///recover class1's method to class2's method (can recover originalMethod)
+bool HookCJHelper_recoverOriMethodToNewMethodWhichAddFromDiffClass(Class originalSelOwnerClass, SEL originalSelector, Class swizzledSelOwnerClass, SEL swizzledSelector);
+
 
 @end

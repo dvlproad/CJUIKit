@@ -97,9 +97,10 @@
     SEL originalSelector = @selector(printLog);
     SEL swizzledSelector = @selector(common_swizzle_printLog);
     
-    bool isAddAndExchangeSuccess =
-    HookCJHelper_addAndExchangeMethodFromDiffClass([TestHookModel1 class], originalSelector, [TestHookModel2 class], swizzledSelector);
-    if (!isAddAndExchangeSuccess) {
+    bool success =
+    HookCJHelper_exchangeOriMethodToNewMethodWhichAddFromDiffClass([TestHookModel1 class], originalSelector, [TestHookModel2 class], swizzledSelector);
+    if (!success) {
+        NSLog(@"exchangeOriMethodToNewMethod:%@", success ? @"success": @"failure");
         [CJToast shortShowMessage:@"Verificate Success\nbeacuse swizzledSelector isn't a new method for class1"];
         return;
     }
@@ -114,7 +115,7 @@
     
     static BOOL isFirstAddAndExchange_fromOtherself_diff = YES;
     bool isAddAndExchangeSuccess =
-    HookCJHelper_addAndExchangeMethodFromDiffClass([TestHookModel1 class], originalSelector, [TestHookModel2 class], swizzledSelector);
+    HookCJHelper_exchangeOriMethodToNewMethodWhichAddFromDiffClass([TestHookModel1 class], originalSelector, [TestHookModel2 class], swizzledSelector);
     if (isFirstAddAndExchange_fromOtherself_diff && !isAddAndExchangeSuccess) {
         [CJToast shortShowMessage:@"addAndExchangeMethodFromDiffClass Failure"];
         return;

@@ -12,40 +12,16 @@
 
 @implementation UIImagePickerController (CJHookFileUploadPanel)
 
-static BOOL isDelegateMethodHooked = false;
-
-+ (void)hookDelegate {
-    if(!isDelegateMethodHooked) {
-        SEL originalSelector = @selector(imagePickerController:didFinishPickingMediaWithInfo:);
-        SEL swizzledSelector = @selector(swizzled_imagePickerController:didFinishPickingMediaWithInfo:);
-        Class originalClass = NSClassFromString(@"WKFileUploadPanel");
-        Method originalMethod = class_getInstanceMethod(originalClass, originalSelector);
-        Method swizzledMethod = class_getInstanceMethod([UIImagePickerController class], swizzledSelector);
-        // add swizzledSelector to originalClass
-        class_addMethod(originalClass, swizzledSelector, method_getImplementation(swizzledMethod), method_getTypeEncoding(swizzledMethod));
-        
-        // 重新拿到添加被添加的 method, 因为替换的方法已经添加到原类中了, 应该交换原类中的两个方法
-        Method newMethod = class_getInstanceMethod(originalClass, swizzledSelector);
-        if(originalMethod && newMethod) {
-            method_exchangeImplementations(originalMethod, newMethod);// 实现交换
-            isDelegateMethodHooked = YES;
-        }
-    }
-}
-
-+ (void)unHookDelegate {
-    if(isDelegateMethodHooked) {
-        SEL originalSelector = @selector(imagePickerController:didFinishPickingMediaWithInfo:);
-        SEL swizzledSelector = @selector(swizzled_imagePickerController:didFinishPickingMediaWithInfo:);
-        Class originalClass = NSClassFromString(@"WKFileUploadPanel");
-        Method originalMethod = class_getInstanceMethod(originalClass, originalSelector);
-        Method swizzledMethod = class_getInstanceMethod(originalClass, swizzledSelector);
-        
-        if (originalMethod && swizzledMethod){
-            method_exchangeImplementations(swizzledMethod, originalMethod);
-        }
-        
-        isDelegateMethodHooked = NO;
++ (void)cj_hookFileUploadPanel:(BOOL)hook {
+    SEL originalSelector = @selector(imagePickerController:didFinishPickingMediaWithInfo:);
+    SEL swizzledSelector = @selector(swizzled_imagePickerController:didFinishPickingMediaWithInfo:);
+    Class originalClass = NSClassFromString(@"WKFileUploadPanel");
+    if (hook) {
+        bool success = HookCJHelper_exchangeOriMethodToNewMethodWhichAddFromDiffClass(originalClass, originalSelector, [UIImagePickerController class], swizzledSelector);
+        NSLog(@"exchangeOriMethodToNewMethod:%@", success ? @"success": @"failure");
+    } else {
+        bool success = HookCJHelper_recoverOriMethodToNewMethodWhichAddFromDiffClass(originalClass, originalSelector, [UIImagePickerController class], swizzledSelector);
+        NSLog(@"recoverOriMethodToNewMethod:%@", success ? @"success": @"failure");
     }
 }
 

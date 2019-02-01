@@ -18,7 +18,7 @@
 @implementation H5ImgInterceptPickerViewController
 
 - (void)dealloc{
-    [UIImagePickerController unHookDelegate];
+    [UIImagePickerController cj_hookFileUploadPanel:NO];
 }
 
 //- (void)viewDidDisappear:(BOOL)animated {
@@ -37,11 +37,12 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.title = NSLocalizedString(@"H5选择的系统照片拦截--②拦截图片", nil);
+    self.useWebTitle = NO;
     
     NSString *localHtmlUrl = [[NSBundle mainBundle] pathForResource:@"H5ImgPickerIntercept.html" ofType:nil];
     [self reloadLocalWebWithUrl:localHtmlUrl]; //加载本地网页
     
-    [UIImagePickerController hookDelegate];
+    [UIImagePickerController cj_hookFileUploadPanel:YES];
 }
 
 
