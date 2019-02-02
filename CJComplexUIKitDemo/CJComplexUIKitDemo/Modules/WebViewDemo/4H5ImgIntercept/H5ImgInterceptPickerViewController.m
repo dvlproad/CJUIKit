@@ -42,9 +42,56 @@
     NSString *localHtmlUrl = [[NSBundle mainBundle] pathForResource:@"H5ImgPickerIntercept.html" ofType:nil];
     [self reloadLocalWebWithUrl:localHtmlUrl]; //加载本地网页
     
+    CJHookFileUploadPanel *sharedHookFileUploadPanel = [CJHookFileUploadPanel sharedInstance];
+    __weak typeof(self)weakSelf = self;
+    sharedHookFileUploadPanel.getNewImagePickerMediaModelFromOriginImageBlock = ^(UIImage *originImage) {
+        CJImagePickerMediaModel *newImagePickerMediaModel = [weakSelf getNewImagePickerMediaModelFromOriginImage:originImage];
+        return newImagePickerMediaModel;
+    };
+    
     [CJHookFileUploadPanel hookFileUploadPanel:YES];
 }
 
+
+- (CJImagePickerMediaModel *)getNewImagePickerMediaModelFromOriginImage:(UIImage *)originImage {
+    UIImage *newImage = [self dealImage:originImage];
+    
+    NSString *imageFilePath = [self imageFilePath];
+    [self saveToSandBox:newImage filePath:imageFilePath];
+    NSURL *newImageURL = [NSURL fileURLWithPath:imageFilePath];
+    
+    
+    CJImagePickerMediaModel *newImagePickerMediaModel = [[CJImagePickerMediaModel alloc] init];
+    newImagePickerMediaModel.originalImage = newImage;
+    newImagePickerMediaModel.imageURL = newImageURL;
+    
+    return newImagePickerMediaModel;
+}
+
+
+- (UIImage *)dealImage:(UIImage *)image {
+    UIImage *newImage = [UIImage imageNamed:@"饮品2.jpg"];
+    return newImage;
+}
+
+- (void)saveToSandBox:(UIImage *)image filePath:(NSString *)path {
+    NSData *data = UIImagePNGRepresentation(image);
+    [data writeToFile:path atomically:YES];
+}
+
+- (NSString *)imageFilePath {
+    NSArray *documentDirectories =
+    NSSearchPathForDirectoriesInDomains(NSDocumentDirectory,
+                                        NSUserDomainMask, YES);
+    
+    NSString *documentDirectory = [documentDirectories objectAtIndex:0];
+    NSDate *date = [NSDate date];
+    NSDateFormatter *dateFormater = [[NSDateFormatter alloc] init];
+    dateFormater.dateFormat = @"yyyyMMddHHmmss";
+    NSString *dateString = [dateFormater stringFromDate:date];
+    NSString *fileName = [dateString stringByAppendingString:@".png"];
+    return [documentDirectory stringByAppendingPathComponent:fileName];
+}
 
 /*
 #pragma mark - Navigation

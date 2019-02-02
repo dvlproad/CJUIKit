@@ -9,7 +9,22 @@
 #import "CJHookFileUploadPanel.h"
 #import <CJBaseHelper/HookCJHelper.h>
 
+@interface CJHookFileUploadPanel () {
+    
+}
+
+@end
+
 @implementation CJHookFileUploadPanel
+
++ (CJHookFileUploadPanel *)sharedInstance {
+    static CJHookFileUploadPanel *_sharedInstance = nil;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        _sharedInstance = [[self alloc] init];
+    });
+    return _sharedInstance;
+}
 
 + (void)hookFileUploadPanel:(BOOL)hook {
     SEL originalSelector = @selector(imagePickerController:didFinishPickingMediaWithInfo:);
@@ -25,50 +40,31 @@
     }
 }
 
-/// 替换后的代理方法
+/// the new method will repleace the `imagePickerController:didFinishPickingMediaWithInfo:` of `WKFileUploadPanel` class
 - (void)swizzled_imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info {
+    // attention: now the `self` is `WKFileUploadPanel`, not `CJHookFileUploadPanel`;
+    // attention: now the `self` is `WKFileUploadPanel`, not `CJHookFileUploadPanel`;
+    // attention: now the `self` is `WKFileUploadPanel`, not `CJHookFileUploadPanel`;
+    CJHookFileUploadPanel *sharedHookFileUploadPanel = [CJHookFileUploadPanel sharedInstance];
+    if (!sharedHookFileUploadPanel.getNewImagePickerMediaModelFromOriginImageBlock) {
+        NSLog(@"Reminder: You do nothing for originImage");
+        [self swizzled_imagePickerController:picker didFinishPickingMediaWithInfo:info];
+        return;
+    }
     
     NSMutableDictionary *new_info = [[NSMutableDictionary alloc] initWithDictionary:info];
-    // 因为相机是不会有asset URL的，即referenceURL会为空，所以我们设UIImagePickerControllerReferenceURL为空，以使得让WKFileUploadPanel以为从相册选取来的图片也是从相机来的。
+    // because of the image from camera does not have asset URL, meaning the ReferenceURL is nil. so below we make the ReferenceURL value always be nil to let the system believe all the image is from Camera, include those from PhotoLibrary.
     [new_info setValue:nil forKey:@"UIImagePickerControllerReferenceURL"];
     
-    UIImage *originImage = [new_info valueForKey:@"UIImagePickerControllerOriginalImage"];;
-    
-    UIImage *newImage = [CJHookFileUploadPanel dealImage:originImage];
-    
-    NSString *imageFilePath = [CJHookFileUploadPanel imageFilePath];
-    [CJHookFileUploadPanel saveToSandBox:newImage filePath:imageFilePath];
-    NSURL *newImageURL = [NSURL fileURLWithPath:imageFilePath];
+    UIImage *originImage = [new_info valueForKey:@"UIImagePickerControllerOriginalImage"];
+    CJImagePickerMediaModel *newImagePickerMediaModel = sharedHookFileUploadPanel.getNewImagePickerMediaModelFromOriginImageBlock(originImage);
+    UIImage *newImage = newImagePickerMediaModel.originalImage;
+    NSURL *newImageURL = newImagePickerMediaModel.imageURL;
     [new_info setObject:newImage forKey:@"UIImagePickerControllerOriginalImage"];
     [new_info setObject:newImageURL forKey:@"UIImagePickerControllerImageURL"];
     
-    // 方法的实现已经通过Method swizling交换了，所以这里调用的是原始实现
+    // because of has swizzled, so the below method is call `imagePickerController:didFinishPickingMediaWithInfo:` method in fact
     [self swizzled_imagePickerController:picker didFinishPickingMediaWithInfo:new_info];
-}
-
-
-+ (UIImage *)dealImage:(UIImage *)image {
-    UIImage *newImage = [UIImage imageNamed:@"饮品2.jpg"];
-    return newImage;
-}
-
-+ (void)saveToSandBox:(UIImage *)image filePath:(NSString *)path {
-    NSData *data = UIImagePNGRepresentation(image);
-    [data writeToFile:path atomically:YES];
-}
-
-+ (NSString *)imageFilePath {
-    NSArray *documentDirectories =
-    NSSearchPathForDirectoriesInDomains(NSDocumentDirectory,
-                                        NSUserDomainMask, YES);
-    
-    NSString *documentDirectory = [documentDirectories objectAtIndex:0];
-    NSDate *date = [NSDate date];
-    NSDateFormatter *dateFormater = [[NSDateFormatter alloc] init];
-    dateFormater.dateFormat = @"yyyyMMddHHmmss";
-    NSString *dateString = [dateFormater stringFromDate:date];
-    NSString *fileName = [dateString stringByAppendingString:@".png"];
-    return [documentDirectory stringByAppendingPathComponent:fileName];
 }
 
 @end
