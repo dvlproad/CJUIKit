@@ -7,7 +7,7 @@
 //
 
 #import "CJHookFileUploadPanel.h"
-#import <CJBaseHelper/HookCJHelper.h>
+#import "HookCJHelper.h"
 
 @interface CJHookFileUploadPanel () {
     

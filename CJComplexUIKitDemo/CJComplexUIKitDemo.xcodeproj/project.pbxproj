@@ -15,7 +15,6 @@
 		780E46131E5DF87B00980127 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 780E46111E5DF87B00980127 /* LaunchScreen.storyboard */; };
 		780E461E1E5DF87B00980127 /* CJComplexUIKitDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 780E461D1E5DF87B00980127 /* CJComplexUIKitDemoTests.m */; };
 		780E46291E5DF87B00980127 /* CJComplexUIKitDemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 780E46281E5DF87B00980127 /* CJComplexUIKitDemoUITests.m */; };
-		78233CB022053D5B00BFC988 /* CJImagePickerMediaModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 78233CAF22053D5B00BFC988 /* CJImagePickerMediaModel.m */; };
 		78293F1221FC2D0900F70F43 /* SvDemo_Refresh.xib in Resources */ = {isa = PBXBuildFile; fileRef = 78293F0F21FC2D0800F70F43 /* SvDemo_Refresh.xib */; };
 		78293F1321FC2D0900F70F43 /* SvDemo_Refresh.m in Sources */ = {isa = PBXBuildFile; fileRef = 78293F1121FC2D0900F70F43 /* SvDemo_Refresh.m */; };
 		783281041F4198BC008267E0 /* CustomTripProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 783281031F4198BC008267E0 /* CustomTripProgressView.m */; };
@@ -55,7 +54,6 @@
 		78590D0E215C79DD00F45AD5 /* SearchTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78590C73215C79DC00F45AD5 /* SearchTableViewController.m */; };
 		78590D0F215C79DD00F45AD5 /* UploadDirectlyImagePickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78590C74215C79DC00F45AD5 /* UploadDirectlyImagePickerViewController.m */; };
 		78590D10215C79DD00F45AD5 /* UploadNoneImagePickerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 78590C75215C79DC00F45AD5 /* UploadNoneImagePickerViewController.xib */; };
-		7899516122045795002C1622 /* CJHookFileUploadPanel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7899516022045795002C1622 /* CJHookFileUploadPanel.m */; };
 		789A4F3521FAF3A8001528B9 /* MemoryADCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 789A4EE921FAF3A8001528B9 /* MemoryADCollectionViewCell.m */; };
 		789A4F3621FAF3A8001528B9 /* MyCycleADViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 789A4EEA21FAF3A8001528B9 /* MyCycleADViewController.m */; };
 		789A4F3721FAF3A8001528B9 /* MyADModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 789A4EEC21FAF3A8001528B9 /* MyADModel.m */; };
@@ -213,8 +211,6 @@
 		780E46241E5DF87B00980127 /* CJComplexUIKitDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CJComplexUIKitDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		780E46281E5DF87B00980127 /* CJComplexUIKitDemoUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CJComplexUIKitDemoUITests.m; sourceTree = "<group>"; };
 		780E462A1E5DF87B00980127 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		78233CAE22053D5B00BFC988 /* CJImagePickerMediaModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CJImagePickerMediaModel.h; sourceTree = "<group>"; };
-		78233CAF22053D5B00BFC988 /* CJImagePickerMediaModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CJImagePickerMediaModel.m; sourceTree = "<group>"; };
 		78293F0F21FC2D0800F70F43 /* SvDemo_Refresh.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SvDemo_Refresh.xib; sourceTree = "<group>"; };
 		78293F1021FC2D0800F70F43 /* SvDemo_Refresh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SvDemo_Refresh.h; sourceTree = "<group>"; };
 		78293F1121FC2D0900F70F43 /* SvDemo_Refresh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SvDemo_Refresh.m; sourceTree = "<group>"; };
@@ -279,8 +275,6 @@
 		78590C74215C79DC00F45AD5 /* UploadDirectlyImagePickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UploadDirectlyImagePickerViewController.m; sourceTree = "<group>"; };
 		78590C75215C79DC00F45AD5 /* UploadNoneImagePickerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UploadNoneImagePickerViewController.xib; sourceTree = "<group>"; };
 		78590C76215C79DC00F45AD5 /* UploadNoneImagePickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UploadNoneImagePickerViewController.h; sourceTree = "<group>"; };
-		7899515F22045795002C1622 /* CJHookFileUploadPanel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CJHookFileUploadPanel.h; sourceTree = "<group>"; };
-		7899516022045795002C1622 /* CJHookFileUploadPanel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CJHookFileUploadPanel.m; sourceTree = "<group>"; };
 		789A4EE821FAF3A8001528B9 /* MyADModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyADModel.h; sourceTree = "<group>"; };
 		789A4EE921FAF3A8001528B9 /* MemoryADCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MemoryADCollectionViewCell.m; sourceTree = "<group>"; };
 		789A4EEA21FAF3A8001528B9 /* MyCycleADViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyCycleADViewController.m; sourceTree = "<group>"; };
@@ -1113,10 +1107,6 @@
 				78C335D521FCD3A500B98CF9 /* H5ImgInterceptPickerViewController.m */,
 				7856F57921F4B449004AF751 /* UIViewController+CJHookPresent.h */,
 				7856F57A21F4B449004AF751 /* UIViewController+CJHookPresent.m */,
-				7899515F22045795002C1622 /* CJHookFileUploadPanel.h */,
-				7899516022045795002C1622 /* CJHookFileUploadPanel.m */,
-				78233CAE22053D5B00BFC988 /* CJImagePickerMediaModel.h */,
-				78233CAF22053D5B00BFC988 /* CJImagePickerMediaModel.m */,
 				78C335DD21FDD3AE00B98CF9 /* H5ImgPickerIntercept.html */,
 				78C335D921FDD10E00B98CF9 /* 饮品2.jpg */,
 				78C335DA21FDD10E00B98CF9 /* 饮品3.jpg */,
@@ -1548,7 +1538,6 @@
 				789C442521EEC58600181144 /* CJUIKitBaseScrollViewController.m in Sources */,
 				78C335D621FCD3A500B98CF9 /* H5ImgInterceptPickerViewController.m in Sources */,
 				789A4F8E21FAF3FB001528B9 /* ReuseDataSourceTableViewController.m in Sources */,
-				78233CB022053D5B00BFC988 /* CJImagePickerMediaModel.m in Sources */,
 				789C441821EEC58600181144 /* UIViewController+DemoProgressHUD.m in Sources */,
 				789A4F5B21FAF3A8001528B9 /* MyEqualCellSizeViewController.m in Sources */,
 				789A4F9121FAF3FB001528B9 /* TvDemo_Complex+Event.m in Sources */,
@@ -1618,7 +1607,6 @@
 				78590D00215C79DD00F45AD5 /* NetworkBaseWebViewController.m in Sources */,
 				7856F8A621F5680F004AF751 /* CJUploadImageCollectionView.m in Sources */,
 				7856F89321F5680E004AF751 /* ProgressWebViewController.m in Sources */,
-				7899516122045795002C1622 /* CJHookFileUploadPanel.m in Sources */,
 				7856F6E521F4E706004AF751 /* ScrollViewHomeViewController.m in Sources */,
 				789A4F6721FAF3A8001528B9 /* cvSupplementaryFoot.m in Sources */,
 				789A4F3621FAF3A8001528B9 /* MyCycleADViewController.m in Sources */,

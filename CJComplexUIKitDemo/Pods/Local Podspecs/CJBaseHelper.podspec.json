@@ -26,7 +26,21 @@
     },
     {
       "name": "HookCJHelper",
-      "source_files": "CJBaseHelper/CJBaseHelper/HookCJHelper/**/*.{h,m}"
+      "subspecs": [
+        {
+          "name": "Base",
+          "source_files": "CJBaseHelper/CJBaseHelper/HookCJHelper/*.{h,m}"
+        },
+        {
+          "name": "CJHookFileUploadPanel",
+          "source_files": "CJBaseHelper/CJBaseHelper/HookCJHelper/CJHookFileUploadPanel/**/*.{h,m}",
+          "dependencies": {
+            "CJBaseHelper/HookCJHelper/Base": [
+
+            ]
+          }
+        }
+      ]
     },
     {
       "name": "UIViewControllerCJHelper",
