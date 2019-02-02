@@ -7,7 +7,7 @@
 //
 
 #import "H5ImgInterceptPickerViewController.h"
-#import "UIImagePickerController+CJHookFileUploadPanel.h"
+#import "CJHookFileUploadPanel.h"
 
 @interface H5ImgInterceptPickerViewController () {
     
@@ -18,19 +18,19 @@
 @implementation H5ImgInterceptPickerViewController
 
 - (void)dealloc{
-    [UIImagePickerController cj_hookFileUploadPanel:NO];
+    [CJHookFileUploadPanel hookFileUploadPanel:NO];
 }
 
 //- (void)viewDidDisappear:(BOOL)animated {
 //    [super viewDidDisappear:animated];
 //
-//    [UIImagePickerController unHookDelegate];
+//    [CJHookFileUploadPanel hookFileUploadPanel:NO];
 //}
 //
 //- (void)viewDidAppear:(BOOL)animated {
 //    [super viewDidAppear:animated];
 //
-//    [UIImagePickerController hookDelegate];
+//    [CJHookFileUploadPanel hookFileUploadPanel:YES];
 //}
 
 - (void)viewDidLoad {
@@ -42,7 +42,7 @@
     NSString *localHtmlUrl = [[NSBundle mainBundle] pathForResource:@"H5ImgPickerIntercept.html" ofType:nil];
     [self reloadLocalWebWithUrl:localHtmlUrl]; //加载本地网页
     
-    [UIImagePickerController cj_hookFileUploadPanel:YES];
+    [CJHookFileUploadPanel hookFileUploadPanel:YES];
 }
 
 
