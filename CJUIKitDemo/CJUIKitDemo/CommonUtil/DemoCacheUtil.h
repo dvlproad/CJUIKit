@@ -13,7 +13,7 @@
 
 #pragma mark - Save
 /// 保存图片到Document下的moduleType模块
-+ (BOOL)saveImageData:(NSData *)imageData forModuleType:(DemoModuleType)moduleType callback:(void(^)(NSString *absoluteImagePath, NSString *imageName))callback;
++ (NSString *)saveImageData:(NSData *)imageData forModuleType:(DemoModuleType)moduleType;
 
 #pragma mark - Clear
 /// 删除所有'资产管理'图片

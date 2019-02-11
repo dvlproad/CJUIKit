@@ -1,1 +1,1 @@
-../../../../../CJBaseHelper/CJBaseHelper/HookCJHelper/CJHookFileUploadPanel/CJImagePickerMediaModel.h
+../../../../../CJBaseHelper/CJBaseHelper/HookCJHelper/CJFileUploadPanel/CJImagePickerMediaModel.h

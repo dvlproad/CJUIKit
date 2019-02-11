@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
   #验证方法：pod lib lint CJBaseHelper.podspec --allow-warnings --use-libraries --verbose
   s.name         = "CJBaseHelper"
-  s.version      = "0.1.2"
+  s.version      = "0.1.3"
   s.summary      = "自定义的基础帮助类"
   s.homepage     = "https://github.com/dvlproad/CJUIKit"
   s.license      = "MIT"
@@ -31,7 +31,7 @@ Pod::Spec.new do |s|
 
   s.platform     = :ios, "8.0"
 
-  s.source       = { :git => "https://github.com/dvlproad/CJUIKit", :tag => "CJBaseHelper_0.1.2" }
+  s.source       = { :git => "https://github.com/dvlproad/CJUIKit", :tag => "CJBaseHelper_0.1.3" }
   # s.source_files  = "CJBaseUtil/*.{h,m}"
   # s.resources = "CJBaseUtil/**/*.{png}"
   s.frameworks = 'UIKit'
@@ -60,8 +60,8 @@ Pod::Spec.new do |s|
       sss.source_files = "CJBaseHelper/CJBaseHelper/HookCJHelper/*.{h,m}"
     end
 
-    ss.subspec 'CJHookFileUploadPanel' do |sss|
-      sss.source_files = "CJBaseHelper/CJBaseHelper/HookCJHelper/CJHookFileUploadPanel/**/*.{h,m}"
+    ss.subspec 'CJFileUploadPanel' do |sss|
+      sss.source_files = "CJBaseHelper/CJBaseHelper/HookCJHelper/CJFileUploadPanel/**/*.{h,m}"
       sss.dependency 'CJBaseHelper/HookCJHelper/Base'
     end
   end

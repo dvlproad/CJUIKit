@@ -15,24 +15,26 @@
 
 #pragma mark - Save
 /// 保存图片到Document下的moduleType模块
-+ (BOOL)saveImageData:(NSData *)imageData forModuleType:(DemoModuleType)moduleType callback:(void(^)(NSString *absoluteImagePath, NSString *imageName))callback {
++ (NSString *)saveImageData:(NSData *)imageData forModuleType:(DemoModuleType)moduleType {
     NSString *imageName = [self dateImageName];
-    return [self saveImageData:imageData withImageName:imageName forModuleType:moduleType callback:^(NSString *absoluteImagePath) {
-        !callback ?: callback(absoluteImagePath, imageName);
-    }];
+    return [self saveImageData:imageData withImageName:imageName forModuleType:moduleType callback:nil];
 }
 
 /// 以imageName保存图片到Document下的moduleType模块
-+ (BOOL)saveImageData:(NSData *)imageData withImageName:(NSString *)imageName forModuleType:(DemoModuleType)moduleType callback:(void(^)(NSString *absoluteImagePath))callback {
++ (NSString *)saveImageData:(NSData *)imageData withImageName:(NSString *)imageName forModuleType:(DemoModuleType)moduleType callback:(void(^)(BOOL success))callback {
     NSString *imageModuleString = [self imageModuleStringForModuleType:moduleType];
     NSString *relativeDirectoryPath = [CJFileManager getLocalDirectoryPathType:CJLocalPathTypeRelative bySubDirectoryPath:imageModuleString inSearchPathDirectory:NSDocumentDirectory createIfNoExist:YES];
     BOOL saveSuccess = [CJFileManager saveFileData:imageData withFileName:imageName toRelativeDirectoryPath:relativeDirectoryPath];
     if (saveSuccess) {
         NSString *absoluteFileDirectory = [NSHomeDirectory() stringByAppendingPathComponent:relativeDirectoryPath];
         NSString *absoluteFilePath = [absoluteFileDirectory stringByAppendingPathComponent:imageName];
-        !callback ?: callback(absoluteFilePath);
+        !callback ?: callback(YES);
+        return absoluteFilePath;
+        
+    } else {
+        !callback ?: callback(NO);
+        return nil;
     }
-    return saveSuccess;
 }
 
 /// 获取图片所在的模块对应的模块名

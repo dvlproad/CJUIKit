@@ -9,30 +9,30 @@ PODS:
   - CJBaseEffectKit/CJMJRefreshComponent (0.0.1):
     - MJRefresh
   - CJBaseEffectKit/CJRefreshView (0.0.1)
-  - CJBaseHelper (0.1.1):
-    - CJBaseHelper/AuthorizationCJHelper (= 0.1.1)
-    - CJBaseHelper/DeviceCJHelper (= 0.1.1)
-    - CJBaseHelper/HookCJHelper (= 0.1.1)
-    - CJBaseHelper/NSCalendarCJHelper (= 0.1.1)
-    - CJBaseHelper/NSDateFormatterCJHelper (= 0.1.1)
-    - CJBaseHelper/NSObjectCJHelper (= 0.1.1)
-    - CJBaseHelper/NSOperationQueueCJHelper (= 0.1.1)
-    - CJBaseHelper/UIViewControllerCJHelper (= 0.1.1)
-    - CJBaseHelper/WebCJHelper (= 0.1.1)
-  - CJBaseHelper/AuthorizationCJHelper (0.1.1)
-  - CJBaseHelper/DeviceCJHelper (0.1.1)
-  - CJBaseHelper/HookCJHelper (0.1.1):
-    - CJBaseHelper/HookCJHelper/Base (= 0.1.1)
-    - CJBaseHelper/HookCJHelper/CJHookFileUploadPanel (= 0.1.1)
-  - CJBaseHelper/HookCJHelper/Base (0.1.1)
-  - CJBaseHelper/HookCJHelper/CJHookFileUploadPanel (0.1.1):
+  - CJBaseHelper (0.1.2):
+    - CJBaseHelper/AuthorizationCJHelper (= 0.1.2)
+    - CJBaseHelper/DeviceCJHelper (= 0.1.2)
+    - CJBaseHelper/HookCJHelper (= 0.1.2)
+    - CJBaseHelper/NSCalendarCJHelper (= 0.1.2)
+    - CJBaseHelper/NSDateFormatterCJHelper (= 0.1.2)
+    - CJBaseHelper/NSObjectCJHelper (= 0.1.2)
+    - CJBaseHelper/NSOperationQueueCJHelper (= 0.1.2)
+    - CJBaseHelper/UIViewControllerCJHelper (= 0.1.2)
+    - CJBaseHelper/WebCJHelper (= 0.1.2)
+  - CJBaseHelper/AuthorizationCJHelper (0.1.2)
+  - CJBaseHelper/DeviceCJHelper (0.1.2)
+  - CJBaseHelper/HookCJHelper (0.1.2):
+    - CJBaseHelper/HookCJHelper/Base (= 0.1.2)
+    - CJBaseHelper/HookCJHelper/CJFileUploadPanel (= 0.1.2)
+  - CJBaseHelper/HookCJHelper/Base (0.1.2)
+  - CJBaseHelper/HookCJHelper/CJFileUploadPanel (0.1.2):
     - CJBaseHelper/HookCJHelper/Base
-  - CJBaseHelper/NSCalendarCJHelper (0.1.1)
-  - CJBaseHelper/NSDateFormatterCJHelper (0.1.1)
-  - CJBaseHelper/NSObjectCJHelper (0.1.1)
-  - CJBaseHelper/NSOperationQueueCJHelper (0.1.1)
-  - CJBaseHelper/UIViewControllerCJHelper (0.1.1)
-  - CJBaseHelper/WebCJHelper (0.1.1)
+  - CJBaseHelper/NSCalendarCJHelper (0.1.2)
+  - CJBaseHelper/NSDateFormatterCJHelper (0.1.2)
+  - CJBaseHelper/NSObjectCJHelper (0.1.2)
+  - CJBaseHelper/NSOperationQueueCJHelper (0.1.2)
+  - CJBaseHelper/UIViewControllerCJHelper (0.1.2)
+  - CJBaseHelper/WebCJHelper (0.1.2)
   - CJBaseTest/Test (0.0.2)
   - CJBaseTest/UITest (0.0.2)
   - CJBaseUtil (0.5.0):
@@ -167,7 +167,7 @@ EXTERNAL SOURCES:
 SPEC CHECKSUMS:
   AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
   CJBaseEffectKit: 5a31579fa84bedec908ad313bdfed459ec1eb216
-  CJBaseHelper: bde7b2bc98c20b47ea72c4c5caf1609f661ebb31
+  CJBaseHelper: 4cd112907580c0d308a9e0d5f9c24793093304ce
   CJBaseTest: a6b62dee02a75d1eb4b2a9d45e87a7eb13ce91cd
   CJBaseUtil: 010753c4b847cd04b4eee83fa7b5e196a4b1bfd8
   CJComplexUIKit: abfe0113aa0542e092e8ff03fcd3db2baecbfe2c

@@ -23,7 +23,7 @@
     self.title = NSLocalizedString(@"H5选择的系统照片拦截--②拦截选择", nil);
     
     self.networkUrl = @"http://gif.55.la/";
-    self.shouldHookFileUploadPanel = YES;
+    self.cjShouldHookFileUploadPanelPresent = YES;
 }
 
 - (void)cjHook_onFileInputClicked {

@@ -19,9 +19,9 @@
 
 - (void)updateH5Img:(NSData *)compressImageData {
     //方法①:OC执行JS--设置图片(通过上传图片地址)
-    [DemoCacheUtil saveImageData:compressImageData forModuleType:DemoModuleTypeIot callback:^(NSString *absoluteImagePath, NSString *imageName) {
-        [self updateH5ImgWithImagePath:absoluteImagePath imageName:imageName];
-    }];
+    NSString *absoluteImagePath = [DemoCacheUtil saveImageData:compressImageData forModuleType:DemoModuleTypeIot];
+    NSString *imageName = [absoluteImagePath lastPathComponent];
+    [self updateH5ImgWithImagePath:absoluteImagePath imageName:imageName];
 }
 
 - (void)updateH5ImgWithImagePath:(NSString *)absoluteImagePath imageName:(NSString *)imageName {

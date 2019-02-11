@@ -20,6 +20,7 @@
 #import "H5ImgInterceptChooseViewController.h"
 
 #import "H5ImgInterceptPickerViewController.h"
+#import "H5ImgInterceptPickerViewController1.h"
 
 @interface WebHomeViewController () <UINavigationControllerDelegate, UIImagePickerControllerDelegate>  {
     
@@ -103,6 +104,12 @@
             CJModuleModel *webViewModule = [[CJModuleModel alloc] init];
             webViewModule.title = @"WebView H5的img拦截(拦截了present)";
             webViewModule.classEntry = [H5ImgInterceptChooseViewController class];
+            [sectionDataModel.values addObject:webViewModule];
+        }
+        {
+            CJModuleModel *webViewModule = [[CJModuleModel alloc] init];
+            webViewModule.title = @"WebView H5的img拦截(拦截了didFinishPicking)";
+            webViewModule.classEntry = [H5ImgInterceptPickerViewController1 class];
             [sectionDataModel.values addObject:webViewModule];
         }
         {
