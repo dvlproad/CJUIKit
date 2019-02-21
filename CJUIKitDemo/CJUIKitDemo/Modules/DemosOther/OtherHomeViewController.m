@@ -22,8 +22,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    self.navigationItem.title = NSLocalizedString(@"基础小视图首页", nil); //知识点:使得tabBar中的title可以和显示在顶部的title保持各自
-    
+    self.navigationItem.title = NSLocalizedString(@"基础小视图首页", nil);
     
     NSMutableArray *sectionDataModels = [[NSMutableArray alloc] init];
     //QuartzCore

@@ -9,7 +9,6 @@
 #import <UIKit/UIKit.h>
 #import <CJBaseUtil/CJSectionDataModel.h>   //在CJDataUtil中
 
-
 /**
  *  一个集成了搜索功能的UITableView
  */

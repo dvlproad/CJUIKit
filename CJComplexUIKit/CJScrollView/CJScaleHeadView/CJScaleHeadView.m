@@ -22,14 +22,8 @@ static NSString *const CorePullScaleContentOffset = @"contentOffset";
 
 @implementation CJScaleHeadView
 
-- (void)awakeFromNib {
-    [super awakeFromNib];
-    
-    [self commonInit];
-}
-
-- (instancetype)init {
-    self = [super init];
+- (instancetype)initWithCoder:(NSCoder *)aDecoder {
+    self = [super initWithCoder:aDecoder];
     if (self) {
         [self commonInit];
     }

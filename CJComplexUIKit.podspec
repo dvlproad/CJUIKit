@@ -1,12 +1,12 @@
 Pod::Spec.new do |s|
   #验证方法：pod lib lint CJComplexUIKit.podspec --allow-warnings --use-libraries --verbose
   s.name         = "CJComplexUIKit"
-  s.version      = "0.2.2"
+  s.version      = "0.2.3"
   s.summary      = "自定义的稍微复杂的UI"
   s.homepage     = "https://github.com/dvlproad/CJUIKit"
 
   s.description  = <<-DESC
-                  *、CJDataScrollView：带数据的列表视图或集合视图(常用于搜索、图片选择)
+                 - CJDataScrollView：带数据的列表视图或集合视图(常用于搜索、图片选择)
                  - CJBaseUIKit/CJScrollView：滚动视图：自定义的基础滚动视图
                  - CJComplexUIKit/CJCollectionView：集合视图
                  - CJComplexUIKit/CJCollectionView/CJBaseCollectionViewCell：基础的CollectionViewCell
@@ -35,7 +35,7 @@ Pod::Spec.new do |s|
 
   s.platform     = :ios, "8.0"
  
-  s.source       = { :git => "https://github.com/dvlproad/CJUIKit.git", :tag => "CJComplexUIKit_0.2.2" }
+  s.source       = { :git => "https://github.com/dvlproad/CJUIKit.git", :tag => "CJComplexUIKit_0.2.3" }
   s.source_files  = "CJComplexUIKit/*.{h,m}"
 
   s.frameworks = "UIKit"
@@ -69,7 +69,7 @@ Pod::Spec.new do |s|
 
   # 与 UIScrollView 相关的基础类
   s.subspec 'CJScrollView' do |ss|
-    ss.source_files = "CJComplexUIKit/CJScrollView/**/*.{h,m}"
+    ss.source_files = "CJComplexUIKit/CJScrollView/CJScaleHeadView/**/*.{h,m}"
   end
 
 

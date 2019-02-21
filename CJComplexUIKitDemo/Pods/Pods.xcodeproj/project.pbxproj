@@ -2189,7 +2189,7 @@
 			name = AuthorizationCJHelper;
 			sourceTree = "<group>";
 		};
-		1F24F76996F1D362AD70D9AAC54E7DE9 /* CJAddScaleHead */ = {
+		1F24F76996F1D362AD70D9AAC54E7DE9 /* CJScaleHeadView */ = {
 			isa = PBXGroup;
 			children = (
 				C404DF150703939D85D6C29A6AEF5DA0 /* CJScaleHeadView.h */,
@@ -2199,8 +2199,8 @@
 				21EDE61313ACC5C2FE8EBD30CB9DFFC0 /* MyUserInfoScaleHeadView.h */,
 				2C5DE6D1B47400024161FF50BDE244D4 /* MyUserInfoScaleHeadView.m */,
 			);
-			name = CJAddScaleHead;
-			path = CJComplexUIKit/CJScrollView/CJAddScaleHead;
+			name = CJScaleHeadView;
+			path = CJComplexUIKit/CJScrollView/CJScaleHeadView;
 			sourceTree = "<group>";
 		};
 		1F5C3FEEF4B7EC65CBE504A434CE8EA8 /* Resources */ = {
@@ -3624,7 +3624,7 @@
 		CC08D8F3239224412F3C941B59AF0415 /* CJScrollView */ = {
 			isa = PBXGroup;
 			children = (
-				1F24F76996F1D362AD70D9AAC54E7DE9 /* CJAddScaleHead */,
+				1F24F76996F1D362AD70D9AAC54E7DE9 /* CJScaleHeadView */,
 				95A7263C2C522386E0E1039F87DD522B /* CJBaseScrollView */,
 			);
 			name = CJScrollView;

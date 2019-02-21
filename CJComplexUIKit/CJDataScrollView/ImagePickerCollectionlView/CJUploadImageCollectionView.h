@@ -10,7 +10,7 @@
 #ifdef TEST_CJCOMPLEXUIKIT_POD
 #import "MyEqualCellSizeCollectionView.h"
 #else
-#import <CJBaseUIKit/MyEqualCellSizeCollectionView.h>
+#import <CJComplexUIKit/MyEqualCellSizeCollectionView.h>
 #endif
 
 #import <CJMedia/CJImageUploadFileModelsOwner.h>

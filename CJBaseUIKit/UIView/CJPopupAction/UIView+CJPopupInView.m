@@ -10,7 +10,7 @@
 
 #define CJPopupMainThreadAssert() NSAssert([NSThread isMainThread], @"UIView+CJPopupInView needs to be accessed on the main thread.");
 
-static CGFloat kPopupAnimationDuration = 0.3;
+static CGFloat kCJPopupAnimationDuration = 0.3;
 
 static NSString *cjPopupAnimationTypeKey = @"cjPopupAnimationType";
 static NSString *cjPopupViewHideFrameStringKey = @"cjPopupViewHideFrameString";
@@ -174,7 +174,7 @@ static NSString *cjMustHideFromPopupViewKey = @"cjMustHideFromPopupView";
     blankView.alpha = 0.2;
     popupView.alpha = 0.2;
     popupView.frame = popupViewHideFrame;
-    [UIView animateWithDuration:kPopupAnimationDuration
+    [UIView animateWithDuration:kCJPopupAnimationDuration
                      animations:^{
                          blankView.alpha = 1.0;
                          popupView.alpha = 1.0;
@@ -216,15 +216,12 @@ static NSString *cjMustHideFromPopupViewKey = @"cjMustHideFromPopupView";
     self.cjShowPopupViewCompleteBlock = showPopupViewCompleteBlock;
     self.cjTapBlankViewCompleteBlock = tapBlankViewCompleteBlock;
     
+    popupView.center = popupSuperview.center;
     if (animationType == CJAnimationTypeNone) {
-        popupView.center = popupSuperview.center;
         
     } else if (animationType == CJAnimationTypeNormal) {
-        popupView.center = popupSuperview.center;
         
     } else if (animationType == CJAnimationTypeCATransform3D) {
-        popupView.center = popupSuperview.center;
-        
         CATransform3D popupViewShowTransform = CATransform3DIdentity;
         
         CATransform3D rotate = CATransform3DMakeRotation(70.0*M_PI/180.0, 0.0, 0.0, 1.0);
@@ -232,7 +229,7 @@ static NSString *cjMustHideFromPopupViewKey = @"cjMustHideFromPopupView";
         CATransform3D popupViewHideTransform = CATransform3DConcat(rotate, translate);
         
         self.layer.transform = popupViewHideTransform;
-        [UIView animateWithDuration:kPopupAnimationDuration
+        [UIView animateWithDuration:kCJPopupAnimationDuration
                               delay:0.0
                             options:UIViewAnimationOptionCurveEaseOut
                          animations:^{
@@ -305,7 +302,7 @@ static NSString *cjMustHideFromPopupViewKey = @"cjMustHideFromPopupView";
         blankView.alpha = 0.2;
         popupView.alpha = 0.2;
         popupView.frame = popupViewHideFrame;
-        [UIView animateWithDuration:kPopupAnimationDuration
+        [UIView animateWithDuration:kCJPopupAnimationDuration
                          animations:^{
                              blankView.alpha = 1.0;
                              popupView.alpha = 1.0;
@@ -322,7 +319,7 @@ static NSString *cjMustHideFromPopupViewKey = @"cjMustHideFromPopupView";
         CATransform3D popupViewHideTransform = CATransform3DConcat(rotate, translate);
         
         self.layer.transform = popupViewHideTransform;
-        [UIView animateWithDuration:kPopupAnimationDuration
+        [UIView animateWithDuration:kCJPopupAnimationDuration
                               delay:0.0
                             options:UIViewAnimationOptionCurveEaseOut
                          animations:^{
@@ -466,7 +463,11 @@ static NSString *cjMustHideFromPopupViewKey = @"cjMustHideFromPopupView";
         case CJAnimationTypeNormal:
         {
             CGRect popupViewHideFrame = CGRectFromString(self.cjPopupViewHideFrameString);
-            [UIView animateWithDuration:kPopupAnimationDuration
+            if (CGRectEqualToRect(popupViewHideFrame, CGRectZero)) {
+                popupViewHideFrame = self.frame;
+            }
+            
+            [UIView animateWithDuration:kCJPopupAnimationDuration
                              animations:^{
                                  //要设置成0，不设置非零值如0.2，是为了防止在显示出来的时候，在0.3秒内很快按两次按钮，仍有view存在
                                  tapView.alpha = 0.0f;
@@ -481,7 +482,7 @@ static NSString *cjMustHideFromPopupViewKey = @"cjMustHideFromPopupView";
         }
         case CJAnimationTypeCATransform3D:
         {
-            [UIView animateWithDuration:kPopupAnimationDuration
+            [UIView animateWithDuration:kCJPopupAnimationDuration
                                   delay:0.0
                                 options:UIViewAnimationOptionCurveEaseIn
                              animations:^{
