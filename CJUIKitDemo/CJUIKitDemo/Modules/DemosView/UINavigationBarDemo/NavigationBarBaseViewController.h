@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "UINavigationBar+CJChangeBG.h"
-#import <CJComplexUIKit/MyUserInfoScaleHeadView.h>
+#import <CJBaseEffectKit/MyUserInfoScaleHeadView.h>
 
 @interface NavigationBarBaseViewController : UIViewController <UIScrollViewDelegate>
 

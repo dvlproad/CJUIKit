@@ -4,35 +4,37 @@ PODS:
     - CJBaseEffectKit/CJDataEmptyView (= 0.0.1)
     - CJBaseEffectKit/CJMJRefreshComponent (= 0.0.1)
     - CJBaseEffectKit/CJRefreshView (= 0.0.1)
+    - CJBaseEffectKit/CJScaleHeadView (= 0.0.1)
   - CJBaseEffectKit/CJDataEmptyView (0.0.1):
     - Masonry
   - CJBaseEffectKit/CJMJRefreshComponent (0.0.1):
     - MJRefresh
   - CJBaseEffectKit/CJRefreshView (0.0.1)
-  - CJBaseHelper (0.1.2):
-    - CJBaseHelper/AuthorizationCJHelper (= 0.1.2)
-    - CJBaseHelper/DeviceCJHelper (= 0.1.2)
-    - CJBaseHelper/HookCJHelper (= 0.1.2)
-    - CJBaseHelper/NSCalendarCJHelper (= 0.1.2)
-    - CJBaseHelper/NSDateFormatterCJHelper (= 0.1.2)
-    - CJBaseHelper/NSObjectCJHelper (= 0.1.2)
-    - CJBaseHelper/NSOperationQueueCJHelper (= 0.1.2)
-    - CJBaseHelper/UIViewControllerCJHelper (= 0.1.2)
-    - CJBaseHelper/WebCJHelper (= 0.1.2)
-  - CJBaseHelper/AuthorizationCJHelper (0.1.2)
-  - CJBaseHelper/DeviceCJHelper (0.1.2)
-  - CJBaseHelper/HookCJHelper (0.1.2):
-    - CJBaseHelper/HookCJHelper/Base (= 0.1.2)
-    - CJBaseHelper/HookCJHelper/CJFileUploadPanel (= 0.1.2)
-  - CJBaseHelper/HookCJHelper/Base (0.1.2)
-  - CJBaseHelper/HookCJHelper/CJFileUploadPanel (0.1.2):
+  - CJBaseEffectKit/CJScaleHeadView (0.0.1)
+  - CJBaseHelper (0.1.3):
+    - CJBaseHelper/AuthorizationCJHelper (= 0.1.3)
+    - CJBaseHelper/DeviceCJHelper (= 0.1.3)
+    - CJBaseHelper/HookCJHelper (= 0.1.3)
+    - CJBaseHelper/NSCalendarCJHelper (= 0.1.3)
+    - CJBaseHelper/NSDateFormatterCJHelper (= 0.1.3)
+    - CJBaseHelper/NSObjectCJHelper (= 0.1.3)
+    - CJBaseHelper/NSOperationQueueCJHelper (= 0.1.3)
+    - CJBaseHelper/UIViewControllerCJHelper (= 0.1.3)
+    - CJBaseHelper/WebCJHelper (= 0.1.3)
+  - CJBaseHelper/AuthorizationCJHelper (0.1.3)
+  - CJBaseHelper/DeviceCJHelper (0.1.3)
+  - CJBaseHelper/HookCJHelper (0.1.3):
+    - CJBaseHelper/HookCJHelper/Base (= 0.1.3)
+    - CJBaseHelper/HookCJHelper/CJFileUploadPanel (= 0.1.3)
+  - CJBaseHelper/HookCJHelper/Base (0.1.3)
+  - CJBaseHelper/HookCJHelper/CJFileUploadPanel (0.1.3):
     - CJBaseHelper/HookCJHelper/Base
-  - CJBaseHelper/NSCalendarCJHelper (0.1.2)
-  - CJBaseHelper/NSDateFormatterCJHelper (0.1.2)
-  - CJBaseHelper/NSObjectCJHelper (0.1.2)
-  - CJBaseHelper/NSOperationQueueCJHelper (0.1.2)
-  - CJBaseHelper/UIViewControllerCJHelper (0.1.2)
-  - CJBaseHelper/WebCJHelper (0.1.2)
+  - CJBaseHelper/NSCalendarCJHelper (0.1.3)
+  - CJBaseHelper/NSDateFormatterCJHelper (0.1.3)
+  - CJBaseHelper/NSObjectCJHelper (0.1.3)
+  - CJBaseHelper/NSOperationQueueCJHelper (0.1.3)
+  - CJBaseHelper/UIViewControllerCJHelper (0.1.3)
+  - CJBaseHelper/WebCJHelper (0.1.3)
   - CJBaseTest/Test (0.0.2)
   - CJBaseTest/UITest (0.0.2)
   - CJBaseUtil (0.5.0):
@@ -67,8 +69,7 @@ PODS:
   - CJBaseUtil/CJPinyinHelper (0.5.0):
     - PinYin4Objc
   - CJBaseUtil/CJQRCodeUtil (0.5.0)
-  - CJComplexUIKit/CJCollectionView/MyEqualCellSizeCollectionView (0.2.2)
-  - CJComplexUIKit/CJScrollView (0.2.2)
+  - CJComplexUIKit/CJCollectionView/MyEqualCellSizeCollectionView (0.2.3)
   - CJFile/CJFileManager (0.0.9)
   - CJFile/CJFileModel (0.0.9)
   - CJFoundation (0.1.2):
@@ -106,7 +107,6 @@ DEPENDENCIES:
   - CJBaseTest/UITest (from `~/Project/Github/CJUIKit`)
   - CJBaseUtil (from `../`)
   - CJComplexUIKit/CJCollectionView/MyEqualCellSizeCollectionView (from `../`)
-  - CJComplexUIKit/CJScrollView (from `../`)
   - CJFile/CJFileManager
   - CJFile/CJFileModel
   - CJFoundation (from `../`)
@@ -166,13 +166,13 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
-  CJBaseEffectKit: 5a31579fa84bedec908ad313bdfed459ec1eb216
-  CJBaseHelper: 4cd112907580c0d308a9e0d5f9c24793093304ce
-  CJBaseTest: a6b62dee02a75d1eb4b2a9d45e87a7eb13ce91cd
-  CJBaseUtil: 010753c4b847cd04b4eee83fa7b5e196a4b1bfd8
-  CJComplexUIKit: abfe0113aa0542e092e8ff03fcd3db2baecbfe2c
+  CJBaseEffectKit: 480165473bdc3d10fe004240b241cbedc69b50b0
+  CJBaseHelper: 5c01e2bfb8e3a4d98bc02ea4f94df6c62068e1af
+  CJBaseTest: a7975369dd9cad3111ea8a8465ccdb1d50752499
+  CJBaseUtil: 4754fa329c92354a93807413572264a25f6192c8
+  CJComplexUIKit: 51c4a99d97c7ff32397b56fc63b80b655a5a7a5f
   CJFile: 6c1e6d55b3b94e8afbaa9f413f131301d15fdc48
-  CJFoundation: 3bc4a4783007891918f26c812be3fc7b10547c1e
+  CJFoundation: 2c27b7ad85ec0cc5ac24aa112867971e01ae3ea3
   CJPicker: c33099d47323271b91c2ce112976d1bee19a70ce
   CJPopupView: c7685f6a0225a89c72d97ea946f2816b5442abaf
   IQKeyboardManager: 6194101620b73af5e67900b8f89707a99de0b804
@@ -191,6 +191,6 @@ SPEC CHECKSUMS:
   WMPageController: 0c7624d2b48e4f1ab92371688cf6744ed701575d
   YYText: 5c461d709e24d55a182d1441c41dc639a18a4849
 
-PODFILE CHECKSUM: fa58d5d1bd3c53b772570fc045e8a1e44bdac023
+PODFILE CHECKSUM: 8bd78f15eccf4cb33d0d80548c0cfeec40ed6743
 
-COCOAPODS: 1.5.3
+COCOAPODS: 1.6.0

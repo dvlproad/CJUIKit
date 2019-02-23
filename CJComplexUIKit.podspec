@@ -69,7 +69,7 @@ Pod::Spec.new do |s|
 
   # 与 UIScrollView 相关的基础类
   s.subspec 'CJScrollView' do |ss|
-    ss.source_files = "CJComplexUIKit/CJScrollView/CJScaleHeadView/**/*.{h,m}"
+    ss.source_files = "CJComplexUIKit/CJScrollView/**/*.{h,m}"
   end
 
 

@@ -1478,7 +1478,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-CJComplexUIKitDemo/Pods-CJComplexUIKitDemo-resources.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-CJComplexUIKitDemo/Pods-CJComplexUIKitDemo-resources.sh",
 				"${PODS_ROOT}/../../CJBaseEffectKit/CJDataEmptyView/Resources/cjNetworkDisable@2x.png",
 				"${PODS_ROOT}/../../CJBaseEffectKit/CJDataEmptyView/Resources/cjNetworkDisable@3x.png",
 				"${PODS_ROOT}/../../CJBaseEffectKit/CJDataEmptyView/Resources/cjNetworkError@2x.png",
@@ -1549,7 +1549,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CJComplexUIKitDemo/Pods-CJComplexUIKitDemo-resources.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CJComplexUIKitDemo/Pods-CJComplexUIKitDemo-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */

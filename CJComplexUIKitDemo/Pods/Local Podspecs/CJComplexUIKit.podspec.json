@@ -1,9 +1,9 @@
 {
   "name": "CJComplexUIKit",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "summary": "自定义的稍微复杂的UI",
   "homepage": "https://github.com/dvlproad/CJUIKit",
-  "description": "*、CJDataScrollView：带数据的列表视图或集合视图(常用于搜索、图片选择)\n- CJBaseUIKit/CJScrollView：滚动视图：自定义的基础滚动视图\n- CJComplexUIKit/CJCollectionView：集合视图\n- CJComplexUIKit/CJCollectionView/CJBaseCollectionViewCell：基础的CollectionViewCell\n- CJComplexUIKit/CJCollectionView/CJCollectionViewLayout\n- CJComplexUIKit/CJCollectionView/MyEqualCellSizeCollectionView：一个只有一个分区且分区中的每个cell大小相等的集合视图(cell的大小可通过方法①设置cell的固定大小和方法②通过设置每行最大显示的cell个数获得)\n- CJComplexUIKit/CJCollectionView/CJOpenCollectionView：可展开的集合视图\n\n  A longer description of CJComplexUIKit in Markdown format.\n\n  * Think: Why did you write this? What is the focus? What does it do?\n  * CocoaPods will be using this to generate tags, and improve search results.\n  * Try to keep it short, snappy and to the point.\n  * Finally, don't worry about the indent, CocoaPods strips it!",
+  "description": "- CJDataScrollView：带数据的列表视图或集合视图(常用于搜索、图片选择)\n- CJBaseUIKit/CJScrollView：滚动视图：自定义的基础滚动视图\n- CJComplexUIKit/CJCollectionView：集合视图\n- CJComplexUIKit/CJCollectionView/CJBaseCollectionViewCell：基础的CollectionViewCell\n- CJComplexUIKit/CJCollectionView/CJCollectionViewLayout\n- CJComplexUIKit/CJCollectionView/MyEqualCellSizeCollectionView：一个只有一个分区且分区中的每个cell大小相等的集合视图(cell的大小可通过方法①设置cell的固定大小和方法②通过设置每行最大显示的cell个数获得)\n- CJComplexUIKit/CJCollectionView/CJOpenCollectionView：可展开的集合视图\n\n  A longer description of CJComplexUIKit in Markdown format.\n\n  * Think: Why did you write this? What is the focus? What does it do?\n  * CocoaPods will be using this to generate tags, and improve search results.\n  * Try to keep it short, snappy and to the point.\n  * Finally, don't worry about the indent, CocoaPods strips it!",
   "license": "MIT",
   "authors": {
     "dvlproad": ""
@@ -13,7 +13,7 @@
   },
   "source": {
     "git": "https://github.com/dvlproad/CJUIKit.git",
-    "tag": "CJComplexUIKit_0.2.2"
+    "tag": "CJComplexUIKit_0.2.3"
   },
   "source_files": "CJComplexUIKit/*.{h,m}",
   "frameworks": "UIKit",

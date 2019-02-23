@@ -65,7 +65,6 @@ target 'CJUIKitDemo' do
     pod 'CJBaseHelper',         :path => '../’
     pod 'CJBaseEffectKit',      :path => '../’
     pod 'CJComplexUIKit/CJCollectionView/MyEqualCellSizeCollectionView',      :path => '../’
-    pod 'CJComplexUIKit/CJScrollView',      :path => '../’
 #    pod 'CJBaseUIKit', :subspecs => ['UIColor', 'UIButton', 'UITextField', 'CJToast', 'CJAlert']
 #    pod 'CJBaseUtil', :subspecs => ['CJLog']
 #    pod 'CJFoundation', :subspecs => ['NSString']

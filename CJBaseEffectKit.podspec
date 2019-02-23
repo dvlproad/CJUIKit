@@ -9,6 +9,7 @@ Pod::Spec.new do |s|
                  - CJBaseUIKit/CJRefreshView：刷新
                  - CJBaseUIKit/CJMJRefreshComponent：已包含pod 'MJRefresh'
                  - CJBaseUIKit/CJDataEmptyView：空视图(处理数据为空、网络加载失败等情况)
+                 - CJBaseUIKit/CJScaleHeadView：个人中心头部的缩放视图
 
                    A longer description of CJBaseEffectKit in Markdown format.
 
@@ -66,6 +67,10 @@ Pod::Spec.new do |s|
 
     #多个依赖就写多行
     ss.dependency 'Masonry'
+  end
+
+  s.subspec 'CJScaleHeadView' do |ss|
+    ss.source_files = "CJBaseEffectKit/CJScaleHeadView/**/*.{h,m}"
   end
 
 
