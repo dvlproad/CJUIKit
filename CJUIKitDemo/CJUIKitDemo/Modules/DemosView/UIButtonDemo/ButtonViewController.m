@@ -12,7 +12,6 @@
 #import "UIColor+CJHex.h"
 
 #import "UIButton+CJUpDownStructure.h"
-#import "UIButton+CJFixMultiClick.h"
 
 #import "UIImage+CJCreate.h"
 
@@ -94,10 +93,6 @@
     
     
     
-    self.multiClikcButton.cjMinClickInterval = 2;
-    
-    
-    
     UIButton *testButton = [DemoButtonFactory blueButton];
     [testButton setTitle:@"进入测试BadgeButton" forState:UIControlStateNormal];
     [self.view addSubview:testButton];
@@ -114,10 +109,6 @@
     
 }
 
-
-- (IBAction)multiClickAction:(id)sender {
-    NSLog(@"重复点击了");
-}
 
 - (void)goBadgeButtonViewController {
     BadgeButtonViewController *viewController = [[BadgeButtonViewController alloc] init];

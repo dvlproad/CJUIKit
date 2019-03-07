@@ -82,7 +82,6 @@
 		7856F80421F4F4C3004AF751 /* UIWindow+CJSnapshot.m in Sources */ = {isa = PBXBuildFile; fileRef = 7856F76321F4F4C2004AF751 /* UIWindow+CJSnapshot.m */; };
 		7856F80521F4F4C3004AF751 /* CJLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7856F76521F4F4C2004AF751 /* CJLabel.m */; };
 		7856F80621F4F4C3004AF751 /* CJBadgeButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 7856F76A21F4F4C2004AF751 /* CJBadgeButton.m */; };
-		7856F80721F4F4C3004AF751 /* UIButton+CJFixMultiClick.m in Sources */ = {isa = PBXBuildFile; fileRef = 7856F76E21F4F4C2004AF751 /* UIButton+CJFixMultiClick.m */; };
 		7856F80821F4F4C3004AF751 /* UIButton+CJMoreProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = 7856F76F21F4F4C2004AF751 /* UIButton+CJMoreProperty.m */; };
 		7856F80921F4F4C3004AF751 /* UIButton+CJUpDownStructure.m in Sources */ = {isa = PBXBuildFile; fileRef = 7856F77021F4F4C2004AF751 /* UIButton+CJUpDownStructure.m */; };
 		7856F80A21F4F4C3004AF751 /* UIColor+CJHex.m in Sources */ = {isa = PBXBuildFile; fileRef = 7856F77321F4F4C2004AF751 /* UIColor+CJHex.m */; };
@@ -505,9 +504,7 @@
 		7856F76921F4F4C2004AF751 /* CJBadgeButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJBadgeButton.h; sourceTree = "<group>"; };
 		7856F76A21F4F4C2004AF751 /* CJBadgeButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJBadgeButton.m; sourceTree = "<group>"; };
 		7856F76B21F4F4C2004AF751 /* UIButton+CJMoreProperty.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+CJMoreProperty.h"; sourceTree = "<group>"; };
-		7856F76C21F4F4C2004AF751 /* UIButton+CJFixMultiClick.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+CJFixMultiClick.h"; sourceTree = "<group>"; };
 		7856F76D21F4F4C2004AF751 /* UIButton+CJUpDownStructure.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+CJUpDownStructure.h"; sourceTree = "<group>"; };
-		7856F76E21F4F4C2004AF751 /* UIButton+CJFixMultiClick.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+CJFixMultiClick.m"; sourceTree = "<group>"; };
 		7856F76F21F4F4C2004AF751 /* UIButton+CJMoreProperty.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+CJMoreProperty.m"; sourceTree = "<group>"; };
 		7856F77021F4F4C2004AF751 /* UIButton+CJUpDownStructure.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+CJUpDownStructure.m"; sourceTree = "<group>"; };
 		7856F77221F4F4C2004AF751 /* UIColor+CJHex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+CJHex.h"; sourceTree = "<group>"; };
@@ -1446,10 +1443,8 @@
 			children = (
 				7856F76821F4F4C2004AF751 /* CJBadgeButton */,
 				7856F76B21F4F4C2004AF751 /* UIButton+CJMoreProperty.h */,
-				7856F76C21F4F4C2004AF751 /* UIButton+CJFixMultiClick.h */,
-				7856F76D21F4F4C2004AF751 /* UIButton+CJUpDownStructure.h */,
-				7856F76E21F4F4C2004AF751 /* UIButton+CJFixMultiClick.m */,
 				7856F76F21F4F4C2004AF751 /* UIButton+CJMoreProperty.m */,
+				7856F76D21F4F4C2004AF751 /* UIButton+CJUpDownStructure.h */,
 				7856F77021F4F4C2004AF751 /* UIButton+CJUpDownStructure.m */,
 			);
 			path = UIButton;
@@ -1504,10 +1499,10 @@
 		7856F77C21F4F4C2004AF751 /* CJPopupAction */ = {
 			isa = PBXGroup;
 			children = (
-				7856F77D21F4F4C2004AF751 /* UIView+CJShowExtendView.h */,
-				7856F77E21F4F4C2004AF751 /* UIView+CJPopupInView.m */,
-				7856F77F21F4F4C2004AF751 /* UIView+CJShowExtendView.m */,
 				7856F78021F4F4C2004AF751 /* UIView+CJPopupInView.h */,
+				7856F77E21F4F4C2004AF751 /* UIView+CJPopupInView.m */,
+				7856F77D21F4F4C2004AF751 /* UIView+CJShowExtendView.h */,
+				7856F77F21F4F4C2004AF751 /* UIView+CJShowExtendView.m */,
 			);
 			path = CJPopupAction;
 			sourceTree = "<group>";
@@ -3020,7 +3015,6 @@
 				801F75D920A040D800A2E027 /* BBXDPasswordTextField.m in Sources */,
 				78C8148C216E11AF00A6B190 /* DChildViewController.m in Sources */,
 				784AB8ED21E8960200A3F51C /* AHUDChildViewController.m in Sources */,
-				7856F80721F4F4C3004AF751 /* UIButton+CJFixMultiClick.m in Sources */,
 				7856F83F21F4F4C3004AF751 /* UITextField+CJTextChangeBlock.m in Sources */,
 				7856F72B21F4E790004AF751 /* TestDataModel.m in Sources */,
 				7856F82A21F4F4C3004AF751 /* UINavigationBar+CJChangeBG.m in Sources */,

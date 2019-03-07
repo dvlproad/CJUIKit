@@ -17,12 +17,7 @@
 #import "H5ImgSettingPathViewController.h"
 #import "H5ImgSettingDataViewController.h"
 
-#import "H5ImgInterceptChooseViewController.h"
-
-#import "H5ImgInterceptPickerViewController.h"
-#import "H5ImgInterceptPickerViewController1.h"
-
-@interface WebHomeViewController () <UINavigationControllerDelegate, UIImagePickerControllerDelegate>  {
+@interface WebHomeViewController ()  {
     
 }
 
@@ -103,26 +98,26 @@
         {
             CJModuleModel *webViewModule = [[CJModuleModel alloc] init];
             webViewModule.title = @"WebView H5的img拦截(拦截了present)";
-            webViewModule.classEntry = [H5ImgInterceptChooseViewController class];
+            webViewModule.actionBlock = ^{
+                [DemoAlert showIKnowAlertViewWithTitle:@"请查看CJHookDemo中的H5ImgInterceptChooseViewController"];
+            };
             [sectionDataModel.values addObject:webViewModule];
         }
         {
             CJModuleModel *webViewModule = [[CJModuleModel alloc] init];
             webViewModule.title = @"WebView H5的img拦截(拦截了didFinishPicking)";
-            webViewModule.classEntry = [H5ImgInterceptPickerViewController1 class];
+            webViewModule.actionBlock = ^{
+                [DemoAlert showIKnowAlertViewWithTitle:@"请查看CJHookDemo中的H5ImgInterceptPickerViewController1"];
+            };
             [sectionDataModel.values addObject:webViewModule];
         }
         {
             CJModuleModel *webViewModule = [[CJModuleModel alloc] init];
             webViewModule.title = @"WebView H5的img拦截(拦截了image)";
             webViewModule.content = @"注意：记得进入后要退出来试下unhook成功没";
-            webViewModule.classEntry = [H5ImgInterceptPickerViewController class];
-            [sectionDataModel.values addObject:webViewModule];
-        }
-        {
-            CJModuleModel *webViewModule = [[CJModuleModel alloc] init];
-            webViewModule.title = @"UIImagePickerController本身的照片选择";
-            webViewModule.selector = @selector(testImagePicker);
+            webViewModule.actionBlock = ^{
+                [DemoAlert showIKnowAlertViewWithTitle:@"请查看CJHookDemo中的H5ImgInterceptPickerViewController"];
+            };
             [sectionDataModel.values addObject:webViewModule];
         }
         
@@ -130,18 +125,6 @@
     }
     
     self.sectionDataModels = sectionDataModels;
-}
-
-- (void)testImagePicker {
-    UIImagePickerController *picker = [[UIImagePickerController alloc] init];
-    picker.delegate = self;
-    [self presentViewController:picker animated:YES completion:nil];
-}
-
-#pragma mark - UIImagePickerControllerDelegate
-- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<UIImagePickerControllerInfoKey,id> *)info {
-    [CJToast shortShowMessage:@"这是UIImagePickerController本身的方法"];
-    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 

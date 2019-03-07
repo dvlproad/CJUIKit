@@ -1,6 +1,7 @@
 platform :ios, '8.0'
 #use_frameworks!
 inhibit_all_warnings!
+# pod的本地索引文件：~/Library/Caches/CocoaPods/search_index.json
 
 #post_install do |installer|
 #    
