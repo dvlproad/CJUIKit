@@ -8,7 +8,6 @@
 
 #import "HelperHomeViewController.h"
 
-#import "HookCJHelperHomeViewController.h"
 #import "NSObjectCJHelperViewController.h"
 #import "NSCalendarCJHelperViewController.h"
 #import "AuthorizationCJHelperViewController.h"
@@ -31,12 +30,6 @@
     {
         CJSectionDataModel *sectionDataModel = [[CJSectionDataModel alloc] init];
         sectionDataModel.theme = @"CJHelper";
-        {
-            CJModuleModel *helperModule = [[CJModuleModel alloc] init];
-            helperModule.title = @"HookCJHelper";
-            helperModule.classEntry = [HookCJHelperHomeViewController class];
-            [sectionDataModel.values addObject:helperModule];
-        }
         {
             CJModuleModel *helperModule = [[CJModuleModel alloc] init];
             helperModule.title = @"NSObjectCJHelper";

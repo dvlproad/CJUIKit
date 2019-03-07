@@ -1,15 +1,12 @@
 Pod::Spec.new do |s|
   #验证方法：pod lib lint CJHook.podspec --allow-warnings
   s.name         = "CJHook"
-  s.version      = "0.0.1"
+  s.version      = "0.0.2"
   s.summary      = "Hook"
   s.homepage     = "https://github.com/dvlproad/CJUIKit"
 
   s.description  = <<-DESC
-                 - CJBaseUIKit/UIColor：颜色：用来通过十六进制来设置颜色。 支持@“#123456”、 @“0X123456”、 @“123456”三种格式
-                 - CJBaseUIKit/UIImage：图片
-                 - CJBaseUIKit/UINavigationBar：导航栏
-                 - CJBaseUIKit/UIView：视图
+                 - CJHook/HookCJHelper：Hook帮助类
 
                    A longer description of CJHook in Markdown format.
 
@@ -32,7 +29,7 @@ Pod::Spec.new do |s|
 
   s.platform     = :ios, "8.0"
  
-  s.source       = { :git => "https://github.com/dvlproad/CJUIKit.git", :tag => "CJHook_0.0.1" }
+  s.source       = { :git => "https://github.com/dvlproad/CJUIKit.git", :tag => "CJHook_0.0.2" }
   # s.source_files  = "CJHook/*.{h,m}"
 
   s.frameworks = "UIKit"
@@ -46,6 +43,10 @@ Pod::Spec.new do |s|
   # s.dependency 'Masonry'
   s.dependency "CJBaseHelper/HookCJHelper"
 
+  s.subspec 'CJFileUploadPanel' do |ss|
+    ss.source_files = "CJHook/CJFileUploadPanel/**/*.{h,m}"
+  end
+
   s.subspec 'UIViewController' do |ss|
     ss.source_files = "CJHook/UIViewController/**/*.{h,m}"
     ss.dependency "CJBaseHelper/UIViewControllerCJHelper"
@@ -54,11 +55,6 @@ Pod::Spec.new do |s|
   s.subspec 'UIButton' do |ss|
     ss.source_files = "CJHook/UIButton/**/*.{h,m}"
   end
-
-
-  # s.subspec 'UINavigationBar' do |ss|
-  #   ss.source_files = "CJHook/UINavigationBar/**/*.{h,m}"
-  # end
 
 
 
