@@ -1,5 +1,5 @@
 Pod::Spec.new do |s|
-  #验证方法：pod lib lint CJHook.podspec --allow-warnings --use-libraries --verbose
+  #验证方法：pod lib lint CJHook.podspec --allow-warnings
   s.name         = "CJHook"
   s.version      = "0.0.1"
   s.summary      = "Hook"
@@ -33,7 +33,7 @@ Pod::Spec.new do |s|
   s.platform     = :ios, "8.0"
  
   s.source       = { :git => "https://github.com/dvlproad/CJUIKit.git", :tag => "CJHook_0.0.1" }
-  s.source_files  = "CJHook/*.{h,m}"
+  # s.source_files  = "CJHook/*.{h,m}"
 
   s.frameworks = "UIKit"
 
@@ -44,9 +44,11 @@ Pod::Spec.new do |s|
   # s.resources = "CJHook/**/*.{png,xib}"
   # s.frameworks = "MediaPlayer"
   # s.dependency 'Masonry'
+  s.dependency "CJBaseHelper/HookCJHelper"
 
   s.subspec 'UIViewController' do |ss|
     ss.source_files = "CJHook/UIViewController/**/*.{h,m}"
+    ss.dependency "CJBaseHelper/UIViewControllerCJHelper"
   end
 
   s.subspec 'UIButton' do |ss|
