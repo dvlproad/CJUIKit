@@ -48,7 +48,6 @@
 		78244A982230F6C4000D4CFA /* TestDataUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 78244A892230F6C3000D4CFA /* TestDataUtil.m */; };
 		78244A992230F6C4000D4CFA /* DemoInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 78244A8D2230F6C3000D4CFA /* DemoInfo.m */; };
 		78244A9A2230F6C4000D4CFA /* TestDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 78244A8E2230F6C3000D4CFA /* TestDataModel.m */; };
-		78244A9B2230F6C4000D4CFA /* DemoFileUploadPanel.m in Sources */ = {isa = PBXBuildFile; fileRef = 78244A912230F6C3000D4CFA /* DemoFileUploadPanel.m */; };
 		78244A9C2230F6C4000D4CFA /* YunUncaughtExceptionHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 78244A922230F6C3000D4CFA /* YunUncaughtExceptionHandler.m */; };
 		78244A9D2230F6C4000D4CFA /* DemoCacheUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 78244A942230F6C3000D4CFA /* DemoCacheUtil.m */; };
 		78244A9E2230F6C4000D4CFA /* CJAppVersionUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 78244A972230F6C3000D4CFA /* CJAppVersionUtil.m */; };
@@ -62,6 +61,7 @@
 		78244ABE22314DE8000D4CFA /* TestHookModel1.m in Sources */ = {isa = PBXBuildFile; fileRef = 78244AB122314DE8000D4CFA /* TestHookModel1.m */; };
 		78244ABF22314DE8000D4CFA /* TestHookModel2.m in Sources */ = {isa = PBXBuildFile; fileRef = 78244AB222314DE8000D4CFA /* TestHookModel2.m */; };
 		78244AC022314DE8000D4CFA /* TestHookModel1+TestHook.m in Sources */ = {isa = PBXBuildFile; fileRef = 78244AB322314DE8000D4CFA /* TestHookModel1+TestHook.m */; };
+		7894997A22320F830084ECEF /* DemoFileUploadPanel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7894997822320F830084ECEF /* DemoFileUploadPanel.m */; };
 		D0C4BD23F0579EC956509BF1 /* libPods-CJHookDemoTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A9C77A08C989618BAAF7F206 /* libPods-CJHookDemoTests.a */; };
 /* End PBXBuildFile section */
 
@@ -159,12 +159,10 @@
 		78244A8E2230F6C3000D4CFA /* TestDataModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestDataModel.m; sourceTree = "<group>"; };
 		78244A8F2230F6C3000D4CFA /* TestDataUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestDataUtil.h; sourceTree = "<group>"; };
 		78244A902230F6C3000D4CFA /* DemoCacheUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DemoCacheUtil.h; sourceTree = "<group>"; };
-		78244A912230F6C3000D4CFA /* DemoFileUploadPanel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DemoFileUploadPanel.m; sourceTree = "<group>"; };
 		78244A922230F6C3000D4CFA /* YunUncaughtExceptionHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YunUncaughtExceptionHandler.m; sourceTree = "<group>"; };
 		78244A932230F6C3000D4CFA /* CJAppVersionUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJAppVersionUtil.h; sourceTree = "<group>"; };
 		78244A942230F6C3000D4CFA /* DemoCacheUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DemoCacheUtil.m; sourceTree = "<group>"; };
 		78244A952230F6C3000D4CFA /* YunUncaughtExceptionHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YunUncaughtExceptionHandler.h; sourceTree = "<group>"; };
-		78244A962230F6C3000D4CFA /* DemoFileUploadPanel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DemoFileUploadPanel.h; sourceTree = "<group>"; };
 		78244A972230F6C3000D4CFA /* CJAppVersionUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJAppVersionUtil.m; sourceTree = "<group>"; };
 		78244AA02230F80A000D4CFA /* HookButtonViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HookButtonViewController.h; sourceTree = "<group>"; };
 		78244AA12230F80A000D4CFA /* HookButtonViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HookButtonViewController.m; sourceTree = "<group>"; };
@@ -186,6 +184,8 @@
 		78244AB522314DE8000D4CFA /* HookCJHelperSwizzleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HookCJHelperSwizzleViewController.h; sourceTree = "<group>"; };
 		78244AB622314DE8000D4CFA /* TestHookModel1+TestHook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TestHookModel1+TestHook.h"; sourceTree = "<group>"; };
 		78244AB722314DE8000D4CFA /* TestHookModel2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestHookModel2.h; sourceTree = "<group>"; };
+		7894997822320F830084ECEF /* DemoFileUploadPanel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DemoFileUploadPanel.m; sourceTree = "<group>"; };
+		7894997922320F830084ECEF /* DemoFileUploadPanel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DemoFileUploadPanel.h; sourceTree = "<group>"; };
 		8284AE8368E13D9CF7C0EF9B /* libPods-CJHookDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CJHookDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		98F565D64F59F2D31D40A215 /* Pods-CJHookDemoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CJHookDemoTests.release.xcconfig"; path = "Target Support Files/Pods-CJHookDemoTests/Pods-CJHookDemoTests.release.xcconfig"; sourceTree = "<group>"; };
 		A9C77A08C989618BAAF7F206 /* libPods-CJHookDemoTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CJHookDemoTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -248,6 +248,7 @@
 				782449E72230E9AB000D4CFA /* AppDelegate.m */,
 				78244A252230EABC000D4CFA /* AppDelegate+WindowRootViewController.h */,
 				78244A262230EABC000D4CFA /* AppDelegate+WindowRootViewController.m */,
+				7894997722320F830084ECEF /* HookCommonUtil */,
 				78244A872230F6C3000D4CFA /* CommonUtil */,
 				78244A7F2230F4F9000D4CFA /* Service */,
 				78244A2C2230ED85000D4CFA /* CommonUI */,
@@ -442,8 +443,6 @@
 				78244A972230F6C3000D4CFA /* CJAppVersionUtil.m */,
 				78244A902230F6C3000D4CFA /* DemoCacheUtil.h */,
 				78244A942230F6C3000D4CFA /* DemoCacheUtil.m */,
-				78244A962230F6C3000D4CFA /* DemoFileUploadPanel.h */,
-				78244A912230F6C3000D4CFA /* DemoFileUploadPanel.m */,
 				78244A882230F6C3000D4CFA /* TestDataUtil */,
 				78244A952230F6C3000D4CFA /* YunUncaughtExceptionHandler.h */,
 				78244A922230F6C3000D4CFA /* YunUncaughtExceptionHandler.m */,
@@ -521,6 +520,15 @@
 				78244AB722314DE8000D4CFA /* TestHookModel2.h */,
 			);
 			path = SwizzleMethod;
+			sourceTree = "<group>";
+		};
+		7894997722320F830084ECEF /* HookCommonUtil */ = {
+			isa = PBXGroup;
+			children = (
+				7894997922320F830084ECEF /* DemoFileUploadPanel.h */,
+				7894997822320F830084ECEF /* DemoFileUploadPanel.m */,
+			);
+			path = HookCommonUtil;
 			sourceTree = "<group>";
 		};
 		976E3FD54D5CE6AE32D755CA /* Frameworks */ = {
@@ -814,6 +822,7 @@
 				78244A272230EABC000D4CFA /* AppDelegate+WindowRootViewController.m in Sources */,
 				78244A5D2230ED85000D4CFA /* CJUIKitCollectionViewCell.m in Sources */,
 				78244AB922314DE8000D4CFA /* TestChangeModel1+TestChange.m in Sources */,
+				7894997A22320F830084ECEF /* DemoFileUploadPanel.m in Sources */,
 				78244A992230F6C4000D4CFA /* DemoInfo.m in Sources */,
 				78244AC022314DE8000D4CFA /* TestHookModel1+TestHook.m in Sources */,
 				78244A542230ED85000D4CFA /* DemoTextFieldFactory.m in Sources */,
@@ -826,7 +835,6 @@
 				78244A852230F4FA000D4CFA /* AppInfoManager.m in Sources */,
 				78244A5E2230ED85000D4CFA /* CJUIKitBaseCollectionHomeViewController.m in Sources */,
 				78244A5C2230ED85000D4CFA /* DemoButtonFactory.m in Sources */,
-				78244A9B2230F6C4000D4CFA /* DemoFileUploadPanel.m in Sources */,
 				78244A9A2230F6C4000D4CFA /* TestDataModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

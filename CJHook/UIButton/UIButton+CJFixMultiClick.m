@@ -1,6 +1,6 @@
 //
 //  UIButton+CJFixMultiClick.m
-//  CJUIKitDemo
+//  CJHookDemo
 //
 //  Created by ciyouzen on 2017/1/4.
 //  Copyright © 2017年 dvlproad. All rights reserved.

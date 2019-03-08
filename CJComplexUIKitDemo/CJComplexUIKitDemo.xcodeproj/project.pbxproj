@@ -17,7 +17,6 @@
 		780E46291E5DF87B00980127 /* CJComplexUIKitDemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 780E46281E5DF87B00980127 /* CJComplexUIKitDemoUITests.m */; };
 		78293F1221FC2D0900F70F43 /* SvDemo_Refresh.xib in Resources */ = {isa = PBXBuildFile; fileRef = 78293F0F21FC2D0800F70F43 /* SvDemo_Refresh.xib */; };
 		78293F1321FC2D0900F70F43 /* SvDemo_Refresh.m in Sources */ = {isa = PBXBuildFile; fileRef = 78293F1121FC2D0900F70F43 /* SvDemo_Refresh.m */; };
-		7830EA282207543500FCBD63 /* DemoFileUploadPanel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7830EA272207543500FCBD63 /* DemoFileUploadPanel.m */; };
 		783281041F4198BC008267E0 /* CustomTripProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 783281031F4198BC008267E0 /* CustomTripProgressView.m */; };
 		7832810D1F41AA96008267E0 /* ProcessLineView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7832810C1F41AA96008267E0 /* ProcessLineView.m */; };
 		7856F6E521F4E706004AF751 /* ScrollViewHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7856F66721F4E706004AF751 /* ScrollViewHomeViewController.m */; };
@@ -209,8 +208,6 @@
 		78293F0F21FC2D0800F70F43 /* SvDemo_Refresh.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SvDemo_Refresh.xib; sourceTree = "<group>"; };
 		78293F1021FC2D0800F70F43 /* SvDemo_Refresh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SvDemo_Refresh.h; sourceTree = "<group>"; };
 		78293F1121FC2D0900F70F43 /* SvDemo_Refresh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SvDemo_Refresh.m; sourceTree = "<group>"; };
-		7830EA262207543500FCBD63 /* DemoFileUploadPanel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DemoFileUploadPanel.h; sourceTree = "<group>"; };
-		7830EA272207543500FCBD63 /* DemoFileUploadPanel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DemoFileUploadPanel.m; sourceTree = "<group>"; };
 		783281021F4198BC008267E0 /* CustomTripProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomTripProgressView.h; sourceTree = "<group>"; };
 		783281031F4198BC008267E0 /* CustomTripProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomTripProgressView.m; sourceTree = "<group>"; };
 		7832810B1F41AA96008267E0 /* ProcessLineView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProcessLineView.h; sourceTree = "<group>"; };
@@ -1128,8 +1125,6 @@
 				789C448A21F170CE00181144 /* DemoCacheUtil.m */,
 				789C448B21F170CE00181144 /* YunUncaughtExceptionHandler.h */,
 				789C448821F170CE00181144 /* YunUncaughtExceptionHandler.m */,
-				7830EA262207543500FCBD63 /* DemoFileUploadPanel.h */,
-				7830EA272207543500FCBD63 /* DemoFileUploadPanel.m */,
 			);
 			name = CommonUtil;
 			path = ../../CJUIKitDemo/CJUIKitDemo/CommonUtil;
@@ -1527,7 +1522,6 @@
 				789A4F9A21FAF3FB001528B9 /* TableHomeViewController.m in Sources */,
 				789C442321EEC58600181144 /* CJUIKitBaseCollectionHomeViewController.m in Sources */,
 				789C446221EEFF1B00181144 /* LocalBaseWebViewController.m in Sources */,
-				7830EA282207543500FCBD63 /* DemoFileUploadPanel.m in Sources */,
 				789C443821EECE9100181144 /* AppInfoManager.m in Sources */,
 				78293F1321FC2D0900F70F43 /* SvDemo_Refresh.m in Sources */,
 				7856F89421F5680E004AF751 /* CJBaseWebViewController.m in Sources */,

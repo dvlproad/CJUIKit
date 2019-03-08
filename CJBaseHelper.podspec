@@ -3,7 +3,7 @@ Pod::Spec.new do |s|
   s.name         = "CJBaseHelper"
   s.version      = "0.1.4"
   s.summary      = "自定义的基础帮助类"
-  s.homepage     = "https://github.com/dvlproad/CJUIKit"
+  s.homepage     = "https://github.com/dvlproad/CJUIKit.git"
   s.license      = "MIT"
   s.author       = "dvlproad"
 
@@ -31,7 +31,7 @@ Pod::Spec.new do |s|
 
   s.platform     = :ios, "8.0"
 
-  s.source       = { :git => "https://github.com/dvlproad/CJUIKit", :tag => "CJBaseHelper_0.1.4" }
+  s.source       = { :git => "https://github.com/dvlproad/CJUIKit.git", :tag => "CJBaseHelper_0.1.4" }
   # s.source_files  = "CJBaseUtil/*.{h,m}"
   # s.resources = "CJBaseUtil/**/*.{png}"
   s.frameworks = 'UIKit'
