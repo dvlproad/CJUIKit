@@ -89,13 +89,27 @@
     CGContextFillRect(context, bottomLineRect);
 }
 //*/
-- (void)addUnderLineWithHeight:(CGFloat)lineHeight color:(UIColor *)lineColor {
+
+/**
+ *  在 textField 底部添加下划线
+ *
+ *  @param lineHeight   lineHeight
+ *  @param lineColor    lineColor
+ *  @param leftMargin   leftMargin
+ *  @param rightMargin  rightMargin
+ */
+- (void)addUnderLineWithHeight:(CGFloat)lineHeight
+                         color:(UIColor *)lineColor
+                    leftMargin:(CGFloat)leftMargin
+                   rightMargin:(CGFloat)rightMargin
+{
     UIView *underline = [[UIView alloc] initWithFrame:CGRectZero];
     underline.backgroundColor = lineColor;
-    [self cj_makeView:self addBottomSubView:underline withHeight:lineHeight];
+    [self cj_makeView:self addBottomSubView:underline withHeight:lineHeight leftMargin:leftMargin rightMargin:rightMargin];
 }
 
-- (void)cj_makeView:(UIView *)superView addBottomSubView:(UIView *)subView withHeight:(CGFloat)height {
+- (void)cj_makeView:(UIView *)superView addBottomSubView:(UIView *)subView withHeight:(CGFloat)height leftMargin:(CGFloat)leftMargin
+        rightMargin:(CGFloat)rightMargin {
     [superView addSubview:subView];
     subView.translatesAutoresizingMaskIntoConstraints = NO;
     
@@ -106,7 +120,7 @@
                                      toItem:superView
                                   attribute:NSLayoutAttributeLeft
                                  multiplier:1
-                                   constant:0]];
+                                   constant:leftMargin]];
     
     [superView addConstraint:
      [NSLayoutConstraint constraintWithItem:subView
@@ -115,7 +129,7 @@
                                      toItem:superView
                                   attribute:NSLayoutAttributeRight
                                  multiplier:1
-                                   constant:0]];
+                                   constant:-rightMargin]];
     
     [superView addConstraint:
      [NSLayoutConstraint constraintWithItem:subView

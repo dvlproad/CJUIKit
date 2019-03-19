@@ -1,5 +1,5 @@
 //
-//  CodeScrollViewController.h
+//  CodeScrollViewController2.h
 //  CJUIKitDemo
 //
 //  Created by ciyouzen on 2015/12/23.
@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 
 //ScrollView(纯代码创建)
-@interface CodeScrollViewController : UIViewController {
+@interface CodeScrollViewController2 : UIViewController {
     
 }
 @property (nonatomic, strong) UIView *scrollSuperView1;

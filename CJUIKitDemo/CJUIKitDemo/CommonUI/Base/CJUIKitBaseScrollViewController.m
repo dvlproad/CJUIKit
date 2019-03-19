@@ -38,16 +38,34 @@
     self.containerView = containerView;
 }
 
-/// 更新containerView与lastBottomView的底部间隔，未调用时containerView的高为比scrollView多1像素
-- (void)updateScrollHeightWithLastBottomView:(UIView *)lastBottomView bottom:(CGFloat)bottom {
-    NSAssert(bottom > 0, @"Error:scrollView与lastBottomView的底部间隔必须大于0");
+/**
+ *  更新ScrollView的高
+ *  @brief  ①如果没有lastBottomView来确认scrollView的高，那么高为根据父视图设置；
+            ②如果有lastBottomView，则通过设置scrollView的containerView与lastBottomView的底部间隔来更新ScrollView的高
+ *
+ *  @param bottomInterval bottomInterval
+ *  @param lastBottomView lastBottomView(可为nil)
+ */
+- (void)updateScrollHeightWithBottomInterval:(CGFloat)bottomInterval
+                   accordingToLastBottomView:(UIView *)lastBottomView
+{
+    NSAssert(bottomInterval >= 0, @"Error:scrollView与lastBottomView的底部间隔不能小于0");
     
-    [self.containerView mas_remakeConstraints:^(MASConstraintMaker *make) {
-        make.left.right.mas_equalTo(self.scrollView);
-        make.top.bottom.mas_equalTo(self.scrollView);
-        make.width.mas_equalTo(self.scrollView.mas_width);
-        make.bottom.mas_equalTo(lastBottomView.mas_bottom).mas_offset(bottom);
-    }];
+    if (lastBottomView == nil) {
+        [self.containerView mas_remakeConstraints:^(MASConstraintMaker *make) {
+            make.left.right.mas_equalTo(self.scrollView);
+            make.top.bottom.mas_equalTo(self.scrollView);
+            make.width.mas_equalTo(self.scrollView.mas_width);
+            make.height.mas_equalTo(self.scrollView.mas_height).mas_offset(bottomInterval);
+        }];
+    } else {
+        [self.containerView mas_remakeConstraints:^(MASConstraintMaker *make) {
+            make.left.right.mas_equalTo(self.scrollView);
+            make.top.bottom.mas_equalTo(self.scrollView);
+            make.width.mas_equalTo(self.scrollView.mas_width);
+            make.bottom.mas_equalTo(lastBottomView.mas_bottom).mas_offset(bottomInterval);
+        }];
+    }
 }
 
 /*

@@ -28,7 +28,8 @@
 #import "BaseTableViewCellViewController.h"
 
 //ScrollView
-#import "CodeScrollViewController.h"
+#import "CodeScrollViewController1.h"
+#import "CodeScrollViewController2.h"
 #import "KeyboardAvoidingViewController.h"
 
 //UIWindow
@@ -268,8 +269,14 @@
         sectionDataModel.theme = @"UIScrollView相关";
         {
             CJModuleModel *scrollViewModule = [[CJModuleModel alloc] init];
-            scrollViewModule.title = @"ScrollView(纯代码创建)";
-            scrollViewModule.classEntry = [CodeScrollViewController class];
+            scrollViewModule.title = @"ScrollView(纯代码创建1)";
+            scrollViewModule.classEntry = [CodeScrollViewController1 class];
+            [sectionDataModel.values addObject:scrollViewModule];
+        }
+        {
+            CJModuleModel *scrollViewModule = [[CJModuleModel alloc] init];
+            scrollViewModule.title = @"ScrollView(纯代码创建2)";
+            scrollViewModule.classEntry = [CodeScrollViewController2 class];
             [sectionDataModel.values addObject:scrollViewModule];
         }
         {

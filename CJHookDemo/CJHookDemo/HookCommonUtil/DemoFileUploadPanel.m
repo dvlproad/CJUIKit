@@ -7,7 +7,7 @@
 //
 
 #import "DemoFileUploadPanel.h"
-#import "CJFileUploadPanel.h"
+#import <CJHook/CJFileUploadPanel.h>
 #import "DemoCacheUtil.h"
 
 @implementation DemoFileUploadPanel

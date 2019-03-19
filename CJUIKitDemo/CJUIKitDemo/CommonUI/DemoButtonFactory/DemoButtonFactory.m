@@ -24,13 +24,7 @@
     UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
     button.layer.masksToBounds = YES;
     button.layer.cornerRadius = 15;
-    
-    /*
-    button.tag = 6666;
-    [button setBackgroundColor:CJColorFromHexString(@"#01adfe")];
-    NSObject *observer = [DemoButtonFactory sharedInstance];
-    [button addObserver:observer forKeyPath:@"highlighted" options:NSKeyValueObservingOptionNew context:nil];
-    //*/
+
     button.cjNormalBGColor = CJColorFromHexString(@"#01adfe");
     button.cjHighlightedBGColor = CJColorFromHexString(@"#1393d7");
     button.cjDisabledBGColor = CJColorFromHexString(@"#d3d3d5");
@@ -47,12 +41,6 @@
     button.layer.borderColor = CJColorFromHexString(@"#d2d2d2").CGColor;
     [button setTitleColor:CJColorFromHexString(@"#d2d2d2") forState:UIControlStateNormal];
     
-    /*
-    button.tag = 7777;
-    [button setBackgroundColor:[UIColor whiteColor]];
-    NSObject *observer = [DemoButtonFactory sharedInstance];
-    [button addObserver:observer forKeyPath:@"highlighted" options:NSKeyValueObservingOptionNew context:nil];
-    //*/
     button.cjNormalBGColor = CJColorFromHexString(@"#ffffff");
     button.cjHighlightedBGColor = CJColorFromHexString(@"#e5e5e5");
     button.cjDisabledBGColor = CJColorFromHexString(@"#d3d3d5");
@@ -116,36 +104,6 @@
     [badgeButton setTitleEdgeInsets:UIEdgeInsetsMake(44, -104, 0, 0)];
     
     return badgeButton;
-}
-
-- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSKeyValueChangeKey,id> *)change context:(void *)context {
-    if ([object isKindOfClass:[UIButton class]]) {
-        UIButton *button = (UIButton *)object;
-        if (button.tag == 6666) {
-            if ([keyPath isEqualToString:@"highlighted"]) {
-                if (button.highlighted) {
-                    [button setBackgroundColor:CJColorFromHexString(@"#1393d7")];
-                } else {
-                    [button setBackgroundColor:CJColorFromHexString(@"#01adfe")];
-                }
-            }
-            
-        } else if (button.tag == 7777) {
-            if ([keyPath isEqualToString:@"highlighted"]) {
-                if (button.highlighted) {
-                    [button setBackgroundColor:CJColorFromHexString(@"#e5e5e5")];
-                } else {
-                    [button setBackgroundColor:[UIColor whiteColor]];
-                }
-            }
-        }
-        
-    }
-}
-
-
-+ (void)removeObserveForButton:(UIButton *)button {
-    [button removeObserver:[DemoButtonFactory sharedInstance] forKeyPath:@"highlighted"];
 }
 
 @end

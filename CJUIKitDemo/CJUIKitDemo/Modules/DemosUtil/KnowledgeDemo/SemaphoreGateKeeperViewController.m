@@ -7,7 +7,6 @@
 //
 
 #import "SemaphoreGateKeeperViewController.h"
-#import "DemoButtonFactory.h"
 
 @interface SemaphoreGateKeeperViewController () {
     

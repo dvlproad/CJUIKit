@@ -224,7 +224,7 @@
         [(CJExtraTextTextField *)textField fixExtraString];
     }];
     
-    [self updateScrollHeightWithLastBottomView:self.extraTextTextField bottom:40];
+    [self updateScrollHeightWithBottomInterval:40 accordingToLastBottomView:self.extraTextTextField];
 }
 
 - (void)leftButtonAction:(UIButton *)button {

@@ -21,13 +21,23 @@
 @property (nonatomic, assign) CGFloat rightViewLeftOffset;  /**< 右视图距文字的距离 */
 
 
-///在 textField 左侧添加 图片(使用场景：登录等)
-@property (nonatomic, assign) BOOL leftButtonSelected;
+/// 在 textField 左侧添加 图片(使用场景：登录等)
+@property (nonatomic, assign) BOOL leftButtonSelected;  /**< 左侧图片是否选中 */
 - (void)addLeftImageWithNormalImage:(UIImage *)normalImage
                       selectedImage:(UIImage *)selectedImage
                           imageSize:(CGSize)imageSize;
 
-///在 textField 底部添加下划线
-- (void)addUnderLineWithHeight:(CGFloat)lineHeight color:(UIColor *)lineColor;
+/**
+ *  在 textField 底部添加下划线
+ *
+ *  @param lineHeight   lineHeight
+ *  @param lineColor    lineColor
+ *  @param leftMargin   leftMargin
+ *  @param rightMargin  rightMargin
+ */
+- (void)addUnderLineWithHeight:(CGFloat)lineHeight
+                         color:(UIColor *)lineColor
+                    leftMargin:(CGFloat)leftMargin
+                   rightMargin:(CGFloat)rightMargin;
 
 @end
