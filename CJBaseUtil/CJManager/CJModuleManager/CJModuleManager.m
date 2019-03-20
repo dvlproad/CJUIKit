@@ -36,16 +36,13 @@
     return self;
 }
 
-- (void)addModuleNames:(NSArray<NSString *> *)moduleNames
-{
-    for (NSString *moduleName in moduleNames) {
-        id<CJModule> module = [[NSClassFromString(moduleName) alloc] init];
+- (void)addModules:(NSArray<id<CJModule>> *)modules {
+    for (id<CJModule> module in modules) {
         [self addModule:module];
     }
 }
 
-- (void)addModule:(id<CJModule>) module
-{
+- (void)addModule:(id<CJModule>)module {
     if (![self.modules containsObject:module]) {
         [self.modules addObject:module];
     }

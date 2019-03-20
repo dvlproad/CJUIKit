@@ -19,7 +19,8 @@
 
 + (instancetype)sharedInstance;
 
-- (void)addModuleNames:(NSArray<NSString *> *)moduleNames;
+- (void)addModules:(NSArray<id<CJModule>> *)modules;
+- (void)addModule:(id<CJModule>)module;
 
 - (NSArray<id<CJModule>> *)allModules;
 
