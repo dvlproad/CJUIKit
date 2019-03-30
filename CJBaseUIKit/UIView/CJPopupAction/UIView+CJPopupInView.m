@@ -255,6 +255,16 @@ static NSString *cjMustHideFromPopupViewKey = @"cjMustHideFromPopupView";
     CJPopupMainThreadAssert();
     NSAssert(popupViewHeight != 0, @"弹出视图的高都不能为0");
     
+    UIWindow *keyWindow = [[UIApplication sharedApplication] keyWindow];
+    CGFloat popupViewWidth = CGRectGetWidth(keyWindow.frame);
+    CGSize popupViewSize = CGSizeMake(popupViewWidth, popupViewHeight);
+    if (CGSizeEqualToSize(self.frame.size, popupViewSize)) {
+        NSLog(@"Warning:popupView视图大小将自动调整为指定的弹出视图大小");
+        CGRect selfFrame = self.frame;
+        selfFrame.size = popupViewSize;
+        self.frame = selfFrame;
+    }
+    
     UIView *popupView = self;
     
     BOOL canAdd = [self letkeyWindowAddPopupView:popupView withBlankBGColor:blankBGColor];
@@ -270,23 +280,14 @@ static NSString *cjMustHideFromPopupViewKey = @"cjMustHideFromPopupView";
 
     
     //popupViewShowFrame
-    UIWindow *keyWindow = [[UIApplication sharedApplication] keyWindow];
-    CGFloat popupViewX = 0;
-    CGFloat popupViewShowY = CGRectGetHeight(keyWindow.frame) - CGRectGetHeight(popupView.frame);
-    CGFloat popupViewWidth = CGRectGetWidth(keyWindow.frame);
-    if (CGRectGetWidth(self.frame) != popupViewWidth) {
-        NSLog(@"Error:popupView视图宽度未等于屏幕宽度");
-    }
     
+    CGFloat popupViewX = 0;
+    CGFloat popupViewShowY = CGRectGetHeight(keyWindow.frame) - popupViewHeight;
     CGRect popupViewShowFrame = CGRectZero;
     popupViewShowFrame = CGRectMake(popupViewX,
                                     popupViewShowY,
                                     popupViewWidth,
                                     popupViewHeight);
-    
-    
-    
-    
     
     if (animationType == CJAnimationTypeNone) {
         popupView.frame = popupViewShowFrame;
