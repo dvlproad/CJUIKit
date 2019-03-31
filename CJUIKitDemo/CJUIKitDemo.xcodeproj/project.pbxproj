@@ -1499,10 +1499,10 @@
 		7856F79521F4F4C2004AF751 /* CJAlert */ = {
 			isa = PBXGroup;
 			children = (
-				7856F79621F4F4C2004AF751 /* CJAlertView.h */,
 				7856F79721F4F4C2004AF751 /* CJAlert.h */,
-				7856F79821F4F4C2004AF751 /* CJAlertView.m */,
 				7856F79921F4F4C2004AF751 /* CJAlert.m */,
+				7856F79621F4F4C2004AF751 /* CJAlertView.h */,
+				7856F79821F4F4C2004AF751 /* CJAlertView.m */,
 			);
 			path = CJAlert;
 			sourceTree = "<group>";
@@ -2683,6 +2683,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
