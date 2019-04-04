@@ -7,6 +7,7 @@
 //
 
 #import "TextFieldViewController.h"
+#import <IQKeyboardManager/IQKeyboardManager.h>
 
 #import "UITextField+CJTextChangeBlock.h"
 #import "UITextField+CJSelectedTextRange.h"
@@ -30,6 +31,8 @@
 @property (nonatomic, strong) BBXDAreaCodeTextField *areaCodeTextField;
 @property (nonatomic, strong) UIAlertController *regionAlertController;
 @property (nonatomic, strong) NSArray<NSString *> *regions;
+
+@property (nonatomic, strong) UILabel *textPicker;   /**< 文本框的inputView */
 
 @end
 
@@ -151,9 +154,9 @@
         make.height.mas_equalTo(40);
     }];
     
-    /* 测试不可以输入,只能用选择的文本框 CJChooseTextTextField */
+    /* 测试不可以输入,只能用选择的文本框 CJTextField */
     UILabel *testCanInputNoteLabel = [DemoLabelFactory testExplainLabel];
-    testCanInputNoteLabel.text = @"测试不可以输入,只能用选择的文本框 CJChooseTextTextField\n①测试文本框点击后是弹出视图而不是弹出键盘\n②测试";
+    testCanInputNoteLabel.text = @"测试不可以输入,只能用选择的文本框 CJTextField\n①测试文本框点击后是弹出视图而不是弹出键盘\n②测试";
     [parentView addSubview:testCanInputNoteLabel];
     [testCanInputNoteLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.mas_equalTo(parentView).mas_offset(20);
@@ -246,12 +249,11 @@
 
 - (void)canInputSwitchAction:(UISwitch *)canInputSwitch {
     if (canInputSwitch.isOn) {
-        self.canInputTextField.hideMenuController = NO;
+        self.canInputTextField.forbidMenuType = CJTextFieldForbidMenuTypeNone;
     } else {
-        self.canInputTextField.hideMenuController = YES;
+        self.canInputTextField.forbidMenuType = CJTextFieldForbidMenuTypeAll;
     }
 }
-
 
 
 #pragma mark - UITextFieldDelegate
@@ -293,64 +295,28 @@
 
 
 #pragma mark - Lazyload
-- (CJChooseTextTextField *)canInputTextField {
+- (CJTextField *)canInputTextField {
     if (_canInputTextField == nil) {
-        _canInputTextField = [[CJChooseTextTextField alloc] initWithFrame:CGRectZero];
-        _canInputTextField.delegate = self;
-        _canInputTextField.textAlignment = NSTextAlignmentCenter;
-        _canInputTextField.backgroundColor = CJColorFromHexString(@"#ffffff");
-        
-        [self completeTextField:_canInputTextField withLeftButtonTitle:@"-" leftButtonAction:@selector(leftButtonAction:) rightButtonTitle:@"+" rightButtonAction:@selector(rightButtonAction:)];
-        
-        UILabel *pickerView = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 0, 300)];
-        pickerView.backgroundColor = [UIColor redColor];
-        pickerView.text = @"一个文本框中的文本只能来源于选择的时候:\n因为这是一个pickerView,而不是系统或自定义的输入键盘等,所以\n首先肯定需要①隐藏光标，\n其次一般②最多允许弹出选择、复制操作";
-        pickerView.textAlignment = NSTextAlignmentLeft;
-        pickerView.textColor = [UIColor greenColor];
-        pickerView.font = [UIFont systemFontOfSize:19];
-        pickerView.numberOfLines = 0;
-        [_canInputTextField setTextOnlyFromPickerView:pickerView];
+        _canInputTextField = [DemoTextFieldFactory textFieldWhichTextOnlyFromPickerView:self.textPicker leftButtonHandle:^(UIButton *button) {
+            [self leftButtonAction:button];
+        } rightButtonHandle:^(UIButton *button) {
+            [self rightButtonAction:button];
+        }];
     }
     return _canInputTextField;
 }
 
-- (void)completeTextField:(CJTextField *)textField
-      withLeftButtonTitle:(NSString *)leftTitle
-         leftButtonAction:(SEL)leftButtonAction
-         rightButtonTitle:(NSString *)rightTitle
-        rightButtonAction:(SEL)rightButtonAction
-{
-    UIButton *leftButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    leftButton.backgroundColor = [UIColor orangeColor];
-    //UIImage *leftNormalImage = [UIImage cj_imageWithColor:[UIColor redColor] size:CGSizeMake(40, 40)];
-    //[leftButton setImage:leftNormalImage forState:UIControlStateNormal];
-    [leftButton setTitle:leftTitle forState:UIControlStateNormal];
-    [leftButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-    [leftButton.titleLabel setBackgroundColor:[UIColor redColor]];
-    [leftButton addTarget:self action:leftButtonAction forControlEvents:UIControlEventTouchUpInside];
-    [leftButton setFrame:CGRectMake(0, 0, 20, 20)];
-    
-    textField.leftView = leftButton;
-    textField.leftViewMode = UITextFieldViewModeAlways;
-    textField.leftViewLeftOffset = 10;
-    textField.leftViewRightOffset = 10;
-    
-    
-    
-    UIButton *rightButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    rightButton.backgroundColor = [UIColor orangeColor];
-    //UIImage *rightNormalImage = [UIImage cj_imageWithColor:[UIColor redColor] size:CGSizeMake(40, 40)];
-    //[rightButton setImage:rightNormalImage forState:UIControlStateNormal];
-    [rightButton setTitle:rightTitle forState:UIControlStateNormal];
-    [rightButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-    [rightButton.titleLabel setBackgroundColor:[UIColor redColor]];
-    [rightButton addTarget:self action:rightButtonAction forControlEvents:UIControlEventTouchUpInside];
-    [rightButton setFrame:CGRectMake(0, 0, 20, 20)];
-    
-    textField.rightView = rightButton;
-    textField.rightViewMode = UITextFieldViewModeAlways;
-    textField.rightViewLeftOffset = 10;
-    textField.rightViewRightOffset = 10;
+- (UILabel *)textPicker {
+    if (_textPicker == nil) {
+        _textPicker = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 0, 300)];
+        _textPicker.backgroundColor = [UIColor redColor];
+        _textPicker.text = @"一个文本框中的文本只能来源于选择的时候:\n因为这是一个pickerView,而不是系统或自定义的输入键盘等,所以\n首先肯定需要①隐藏光标，\n其次一般②最多允许弹出选择、复制操作";
+        _textPicker.textAlignment = NSTextAlignmentLeft;
+        _textPicker.textColor = [UIColor greenColor];
+        _textPicker.font = [UIFont systemFontOfSize:19];
+        _textPicker.numberOfLines = 0;
+    }
+    return _textPicker;
 }
 
 

@@ -27,6 +27,7 @@
     // Do any additional setup after loading the view.
     
     UITableView *tableView = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStyleGrouped];
+    tableView.keyboardDismissMode = UIScrollViewKeyboardDismissModeOnDrag;  //视图滚动时候自动收起键盘
     [tableView registerClass:[TestValueChangeTableViewCell class] forCellReuseIdentifier:@"TestValueChangeTableViewCell"];
     tableView.dataSource = self;
     tableView.delegate = self;

@@ -29,4 +29,18 @@
 ///含 左侧label 和 右侧button 的textField(使用场景：获取验证码等)
 + (CJTextField *)textFieldWithLeftLabelText:(NSString *)leftLabelText rightButton:(UIButton *)rightButton;
 
+/// 用来选择的文本框(文本框中的值只能来源于选择，不能来源于输入)
++ (CJTextField *)textFieldWhichTextOnlyFromPickerView:(UIView *)pickerView;
+
+/**
+ *  用来选择的文本框(文本框中的值只能来源于选择，不能来源于输入)
+ *
+ *  @param pickerView           pickerView
+ *  @param leftButtonHandle     leftButtonHandle
+ *  @param rightButtonHandle    rightButtonHandle
+ */
++ (CJTextField *)textFieldWhichTextOnlyFromPickerView:(UIView *)pickerView
+                                     leftButtonHandle:(void(^)(UIButton *button))leftButtonHandle
+                                    rightButtonHandle:(void(^)(UIButton *button))rightButtonHandle;
+
 @end

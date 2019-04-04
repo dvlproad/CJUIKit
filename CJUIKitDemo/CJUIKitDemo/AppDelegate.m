@@ -15,6 +15,7 @@
 #import "CJAlertView.h"
 
 #import "CJAppLastUtil.h"
+#import <IQKeyboardManager/IQKeyboardManager.h>
 
 @interface AppDelegate ()
 
@@ -35,6 +36,7 @@
         [[AppInfoManager sharedInstance] startNetworkMonitoring];
     });
     
+    //[[IQKeyboardManager sharedManager].disabledToolbarClasses addObject:NSClassFromString(@"DateViewController")]; //已写在对应的类里了
     
     // 设置主窗口,并设置根控制器
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];

@@ -7,23 +7,24 @@
 //
 
 #import "DateViewController.h"
+#import <IQKeyboardManager/IQKeyboardManager.h>
+#import "CJDemoDateTextField.h"
 
 #import "NSDateFormatterCJHelper.h"
 #import "NSCalendarCJHelper.h"
-
-#import "CJChooseTextTextField.h"
 
 #import <CJPicker/CJDefaultDatePicker.h>
 #import "UIView+CJShowExtendView.h"
 
 #import "CJDefaultToolbar.h"
+#import "CJDemoDatePickerView.h"
 
 
 
 @interface DateViewController () {
     
 }
-@property (nonatomic, strong) CJChooseTextTextField *dateTextField;
+@property (nonatomic, strong) CJDemoDateTextField *dateTextField;
 @property (nonatomic) NSDate *currentDate;
 
 @property (nonatomic, weak) IBOutlet UILabel *originCurrentTime1;
@@ -41,20 +42,19 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    self.navigationItem.title = NSLocalizedString(@"日期字符串", nil);
     
-    [self setupChooseDatePicker];
+    [[[IQKeyboardManager sharedManager] disabledToolbarClasses] addObject:[self class]];
     
-    self.currentDate = [NSDate date];
-
-    NSString *currentDateString = [[NSDateFormatterCJHelper sharedInstance] yyyyMMddHHmmss_stringFromDate:self.currentDate];
-    self.dateTextField.text = currentDateString;
+    NSDate *defaultDate = [[NSDateFormatterCJHelper sharedInstance] yyyyMMdd_dateFromString:@"2018-09-27"];
+    self.currentDate = defaultDate;
+    
+    [self setupViews];
     
     NSDate *birthdayDate = [[NSDateFormatterCJHelper sharedInstance] yyyyMMddHHmmss_dateFromString:@"1989-12-27 01:10:22"];
-    
     NSInteger yearInterval = NSCalendarCJHelper_yearInterval(birthdayDate, [NSDate date]);
     NSInteger age = NSCalendarCJHelper_age(birthdayDate, NO);
     NSLog(@"今年周岁为：%zd, %zd", yearInterval, age);
-    
 }
 
 //参考：http://blog.sina.com.cn/s/blog_708663ad0102wf1z.html
@@ -89,97 +89,28 @@
     
 }
 
-- (void)setupChooseDatePicker {
-    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-    dateFormatter.dateFormat = @"yyyy-MM-dd HH:mm:ss";
-    
-    self.dateTextField = [[CJChooseTextTextField alloc] initWithFrame:CGRectZero];
-//    self.dateTextField.hideCursor = YES;
-    self.dateTextField.hideMenuController = YES;
-    
-    __weak typeof(self)weakSelf = self;
-    UIImage *leftNormalImage = [UIImage imageNamed:@"plus"];
-    UIButton *leftButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    [leftButton setImage:leftNormalImage forState:UIControlStateNormal];
-    [leftButton addTarget:self action:@selector(leftButtonAction:) forControlEvents:UIControlEventTouchUpInside];
-    [leftButton setFrame:CGRectMake(0, 0, 30, 30)];
-    self.dateTextField.leftView = leftButton;
-    self.dateTextField.leftViewMode = UITextFieldViewModeAlways;
-    self.dateTextField.leftViewLeftOffset = 0;
-    self.dateTextField.leftViewRightOffset = 0;
-    
-    UIImage *rightNormalImage = [UIImage imageNamed:@"plus"];
-    UIButton *rightButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    [rightButton setImage:rightNormalImage forState:UIControlStateNormal];
-    [rightButton addTarget:self action:@selector(rightButtonAction:) forControlEvents:UIControlEventTouchUpInside];
-    [rightButton setFrame:CGRectMake(0, 0, 30, 30)];
-    self.dateTextField.rightView = rightButton;
-    self.dateTextField.rightViewMode = UITextFieldViewModeAlways;
-    self.dateTextField.rightViewLeftOffset = 0;
-    self.dateTextField.rightViewRightOffset = 0;
-    
-    
-    CJDefaultDatePicker *datePicker = [[CJDefaultDatePicker alloc] init];
-    CJDefaultToolbar *toolbar = [[CJDefaultToolbar alloc] initWithFrame:CGRectZero];
-    [datePicker addToolbar:toolbar];
-    
-    datePicker.datePicker.datePickerMode = UIDatePickerModeDate;
-    __weak typeof(datePicker)weakdatePicker = datePicker;
-    [toolbar setConfirmHandle:^{
-        [weakSelf hideDateChoosePicker];
-        
-        NSDate *date = weakdatePicker.datePicker.date ;
-        NSString *dateString = [dateFormatter stringFromDate:date];
-        
-        self.dateTextField.text = dateString;
-    }];
-    /*
-    [datePicker setValueChangedHandel:^(UIDatePicker *datePicker) {
-        [weakSelf hideDateChoosePicker];
-        NSDate *date = datePicker.date ;
-        NSString *dateString = [dateFormatter stringFromDate:date];
-        
-        self.dateTextField.text = dateString;
-    }];
-    */
-    self.dateTextField.inputView = datePicker;
-    
-    [self.dateTextField setFrame:CGRectMake(20, 100, 280, 30)];
-    [self.view addSubview:self.dateTextField];
-}
-
-- (void)leftButtonAction:(UIButton *)button {
-    NSLog(@"左边按钮点击");
-    [self hideDateChoosePicker];
-    
-    NSDate *date = NSCalendarCJHelper_yesterday(self.currentDate);
-    NSString *dateString = [[NSDateFormatterCJHelper sharedInstance] yyyyMMddHHmmss_stringFromDate:date];
-    self.dateTextField.text = dateString;
-    
-    self.currentDate = date;
-}
-
-- (void)rightButtonAction:(UIButton *)button {
-    NSLog(@"右边按钮点击");
-    [self hideDateChoosePicker];
-    
-    NSDate *date = NSCalendarCJHelper_tomorrow(self.currentDate);
-    NSString *dateString = [[NSDateFormatterCJHelper sharedInstance] yyyyMMddHHmmss_stringFromDate:date];
-    self.dateTextField.text = dateString;
-    
-    self.currentDate = date;
-}
-
-
-- (void)hideDateChoosePicker {
-    [self.dateTextField endEditing:YES];
-}
-
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
     [super touchesBegan:touches withEvent:event];
     
-    [self hideDateChoosePicker];
+    [self.dateTextField endEditing:YES];
 }
+
+#pragma mark - SetupViews & Lazy
+- (void)setupViews {
+    [self.view addSubview:self.dateTextField];
+    [self.dateTextField setFrame:CGRectMake(20, 100, 280, 30)];
+}
+
+- (CJDemoDateTextField *)dateTextField {
+    if (_dateTextField == nil) {
+        __weak typeof(self)weakSelf = self;
+        _dateTextField = [[CJDemoDateTextField alloc] initWithDefaultDate:self.currentDate confirmCompleteBlock:^(NSDate * _Nonnull seletedDate, NSString * _Nonnull seletedDateString) {
+            weakSelf.currentDate = seletedDate;
+        }];
+    }
+    return _dateTextField;
+}
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

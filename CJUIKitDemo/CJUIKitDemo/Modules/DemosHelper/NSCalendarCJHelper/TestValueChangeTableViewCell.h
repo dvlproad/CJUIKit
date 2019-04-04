@@ -7,12 +7,6 @@
 //
 
 #import <UIKit/UIKit.h>
-#ifdef TEST_CJBASEUIKIT_POD
-#import "CJChooseTextTextField.h"
-#else
-#import <CJBaseUIKit/CJChooseTextTextField.h>
-#endif
-
 #import "TestValueChangeModel.h"
 
 @interface TestValueChangeTableViewCell : UITableViewCell {

@@ -7,11 +7,22 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "UITextField+CJForbidKeyboard.h"
+
+/// 文本框菜单禁止的类型
+typedef NS_ENUM(NSUInteger, CJTextFieldForbidMenuType) {
+    CJTextFieldForbidMenuTypeNone = 0,      /**< 不禁止 */
+    CJTextFieldForbidMenuTypeAll,           /**< 禁止所有 */
+    CJTextFieldForbidMenuTypeSelectPaste,   /**< 禁止选择和粘贴 */
+};
 
 /**
  *  常用语处理，textField两边有如①数字加减、②日期加减、③登录文本框前的图片的情况
  */
-@interface CJTextField : UITextField
+@interface CJTextField : UITextField {
+    
+}
+@property (nonatomic, assign) CJTextFieldForbidMenuType forbidMenuType; /**< 文本框菜单禁止的类型 */
 
 //以下四个属性的设置的前提：是必须有 leftView 和 rightView 的存在。如果为了省去设置，可直接使用
 @property (nonatomic, assign) CGFloat leftViewLeftOffset;   /**< 左视图距左边框的距离 */

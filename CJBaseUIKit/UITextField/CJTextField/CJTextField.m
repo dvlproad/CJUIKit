@@ -151,4 +151,27 @@
 }
 
 
+#pragma mark - 禁止显示复制粘贴等菜单
+//通过实现UIResponse的- (BOOL)canPerformAction: withSender:方法来去除双击时的弹出框
+- (BOOL)canPerformAction:(SEL)action withSender:(id)sender {
+    if (self.forbidMenuType == CJTextFieldForbidMenuTypeAll) {
+        if ([UIMenuController sharedMenuController]) {
+            [UIMenuController sharedMenuController].menuVisible = NO;
+        }
+        return NO;
+        
+    } else if (self.forbidMenuType == CJTextFieldForbidMenuTypeSelectPaste) {
+        if (action == @selector(select:) || action == @selector(selectAll:) ||
+            action == @selector(paste:)) // 禁止选择、全选、粘贴
+        {
+            return YES;
+        }
+        return NO;
+        
+    } else {
+        return [super canPerformAction:action withSender:sender];
+    }
+}
+
+
 @end

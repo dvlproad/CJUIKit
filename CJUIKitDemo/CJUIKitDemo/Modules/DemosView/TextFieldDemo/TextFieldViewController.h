@@ -7,7 +7,6 @@
 //
 
 #import "CJUIKitBaseScrollViewController.h"
-#import "CJChooseTextTextField.h"
 #import "CJExtraTextTextField.h"
 
 @interface TextFieldViewController : CJUIKitBaseScrollViewController
@@ -17,7 +16,7 @@
 @property (nonatomic, strong) CJTextField *cjTextField;
 @property (nonatomic, strong) UIButton *changeTFSecureButton;
 
-@property (nonatomic, strong) CJChooseTextTextField *canInputTextField;
+@property (nonatomic, strong) CJTextField *canInputTextField;
 @property (nonatomic, strong) UISwitch *canInputSwitch;
 
 @property (nonatomic, strong) CJExtraTextTextField *extraTextTextField;
