@@ -7,10 +7,18 @@
 //
 
 #import "CJDemoDateTextField.h"
-#import "CJDemoDatePickerView.h"
+
+#ifdef TEST_CJBASEUIKIT_POD
+#import "UITextField+CJForbidKeyboard.h"
 #import "NSDateFormatterCJHelper.h"
 #import "NSCalendarCJHelper.h"
-#import "UITextField+CJForbidKeyboard.h"
+#else
+#import <CJBaseUIKit/UITextField+CJForbidKeyboard.h>
+#import <CJBaseHelper/NSDateFormatterCJHelper.h>
+#import <CJBaseHelper/NSCalendarCJHelper.h>
+#endif
+
+#import "CJDemoDatePickerView.h"
 
 @interface CJDemoDateTextField () <UITextFieldDelegate> {
     
