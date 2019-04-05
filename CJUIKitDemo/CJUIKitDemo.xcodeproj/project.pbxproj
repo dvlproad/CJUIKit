@@ -133,6 +133,8 @@
 		7856F84421F4F4C3004AF751 /* UITextField+CJSelectedTextRange.m in Sources */ = {isa = PBXBuildFile; fileRef = 7856F7F621F4F4C3004AF751 /* UITextField+CJSelectedTextRange.m */; };
 		7856F96921F9B2DF004AF751 /* AuthorizationCJHelperViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7856F96821F9B2DF004AF751 /* AuthorizationCJHelperViewController.m */; };
 		7856F97021F9D2C5004AF751 /* BaseTableViewCellViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7856F96D21F9D2C4004AF751 /* BaseTableViewCellViewController.m */; };
+		78575C872257237900925842 /* TestTextFieldOffsetTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 78575C852257237900925842 /* TestTextFieldOffsetTableViewCell.m */; };
+		78575C8A2257242100925842 /* TestTextFieldOffsetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78575C892257242100925842 /* TestTextFieldOffsetViewController.m */; };
 		7857ABB8225482D200B1569C /* CJDemoDatePickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7857ABB6225482D200B1569C /* CJDemoDatePickerView.m */; };
 		7857ABBC2254AA5000B1569C /* CJDemoDateTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 7857ABBB2254AA5000B1569C /* CJDemoDateTextField.m */; };
 		7857ABBF2255014F00B1569C /* UITextField+CJForbidKeyboard.m in Sources */ = {isa = PBXBuildFile; fileRef = 7857ABBE2255014F00B1569C /* UITextField+CJForbidKeyboard.m */; };
@@ -590,6 +592,10 @@
 		7856F96821F9B2DF004AF751 /* AuthorizationCJHelperViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AuthorizationCJHelperViewController.m; sourceTree = "<group>"; };
 		7856F96D21F9D2C4004AF751 /* BaseTableViewCellViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseTableViewCellViewController.m; sourceTree = "<group>"; };
 		7856F96F21F9D2C5004AF751 /* BaseTableViewCellViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseTableViewCellViewController.h; sourceTree = "<group>"; };
+		78575C852257237900925842 /* TestTextFieldOffsetTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestTextFieldOffsetTableViewCell.m; sourceTree = "<group>"; };
+		78575C862257237900925842 /* TestTextFieldOffsetTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestTextFieldOffsetTableViewCell.h; sourceTree = "<group>"; };
+		78575C882257242000925842 /* TestTextFieldOffsetViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestTextFieldOffsetViewController.h; sourceTree = "<group>"; };
+		78575C892257242100925842 /* TestTextFieldOffsetViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestTextFieldOffsetViewController.m; sourceTree = "<group>"; };
 		7857ABB6225482D200B1569C /* CJDemoDatePickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJDemoDatePickerView.m; sourceTree = "<group>"; };
 		7857ABB7225482D200B1569C /* CJDemoDatePickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJDemoDatePickerView.h; sourceTree = "<group>"; };
 		7857ABBA2254AA5000B1569C /* CJDemoDateTextField.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CJDemoDateTextField.h; sourceTree = "<group>"; };
@@ -1777,6 +1783,8 @@
 			children = (
 				787FDB4F20500B00008A46E3 /* TextFieldViewController.h */,
 				787FDB5020500B00008A46E3 /* TextFieldViewController.m */,
+				78575C882257242000925842 /* TestTextFieldOffsetViewController.h */,
+				78575C892257242100925842 /* TestTextFieldOffsetViewController.m */,
 				801F75CF20A040D800A2E027 /* Views */,
 			);
 			path = TextFieldDemo;
@@ -2130,6 +2138,8 @@
 		801F75CF20A040D800A2E027 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				78575C862257237900925842 /* TestTextFieldOffsetTableViewCell.h */,
+				78575C852257237900925842 /* TestTextFieldOffsetTableViewCell.m */,
 				801F75D320A040D800A2E027 /* BBXDAreaCodeTextField.h */,
 				801F75D020A040D800A2E027 /* BBXDAreaCodeTextField.m */,
 				801F75D220A040D800A2E027 /* BBXDUserNameTextField.h */,
@@ -3014,6 +3024,7 @@
 				78B6C2D92159D1F100D5864E /* DemoBusFlightModel.m in Sources */,
 				80FF902A1FC5649E00E437CF /* ThirdPartyHomeViewController.m in Sources */,
 				78B6C2DF2159D20000D5864E /* DemoUsePermissionModel.m in Sources */,
+				78575C8A2257242100925842 /* TestTextFieldOffsetViewController.m in Sources */,
 				7856F81521F4F4C3004AF751 /* UIView+CJShake.m in Sources */,
 				78B6C2E32159D6BC00D5864E /* DemoBusStationModel.m in Sources */,
 				8050038A211C3A29002A2306 /* NSObjectCJHelperViewController.m in Sources */,
@@ -3144,6 +3155,7 @@
 				7850B70720937C5A008F4A21 /* ShowExtendViewVC.m in Sources */,
 				7856F81221F4F4C3004AF751 /* UIView+CJAnimation.m in Sources */,
 				78E189A221778A4000B8781A /* AutoLayoutHomeViewController.m in Sources */,
+				78575C872257237900925842 /* TestTextFieldOffsetTableViewCell.m in Sources */,
 				80FF91531FC5668700E437CF /* PrivateSetting.m in Sources */,
 				78E189A5217791D200B8781A /* TranslucentLayoutViewController.m in Sources */,
 				7856F80A21F4F4C3004AF751 /* UIColor+CJHex.m in Sources */,

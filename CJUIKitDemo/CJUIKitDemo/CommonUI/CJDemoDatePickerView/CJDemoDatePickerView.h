@@ -8,10 +8,15 @@
 //  含toolbar的日期选择视图
 
 #import <UIKit/UIKit.h>
+
 #ifdef TEST_CJBASEUIKIT_POD
 #import "CJDefaultToolbar.h"
+#import "NSDateFormatterCJHelper.h"
+#import "NSCalendarCJHelper.h"
 #else
 #import <CJBaseUIKit/CJDefaultToolbar.h>
+#import <CJBaseHelper/NSDateFormatterCJHelper.h>
+#import <CJBaseHelper/NSCalendarCJHelper.h>
 #endif
 
 @interface CJDemoDatePickerView : UIView {

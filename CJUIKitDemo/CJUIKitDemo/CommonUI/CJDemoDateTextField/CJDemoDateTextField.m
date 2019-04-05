@@ -10,12 +10,8 @@
 
 #ifdef TEST_CJBASEUIKIT_POD
 #import "UITextField+CJForbidKeyboard.h"
-#import "NSDateFormatterCJHelper.h"
-#import "NSCalendarCJHelper.h"
 #else
 #import <CJBaseUIKit/UITextField+CJForbidKeyboard.h>
-#import <CJBaseHelper/NSDateFormatterCJHelper.h>
-#import <CJBaseHelper/NSCalendarCJHelper.h>
 #endif
 
 #import "CJDemoDatePickerView.h"
@@ -45,7 +41,7 @@
             defaultDate = [NSDate date];
         }
         
-        self.backgroundColor = CJColorFromHexString(@"#ffffff");
+        self.backgroundColor = [UIColor whiteColor];
         self.textAlignment = NSTextAlignmentCenter;
         self.delegate = self;
         
@@ -53,10 +49,7 @@
         leftButton.backgroundColor = [UIColor orangeColor];
         UIImage *leftNormalImage = [UIImage imageNamed:@"minus_common_icon"];
         [leftButton setImage:leftNormalImage forState:UIControlStateNormal];
-        [leftButton setCjTouchUpInsideBlock:^(UIButton *button) {
-            NSDate *newDate = NSCalendarCJHelper_yesterday(self.currentDate);
-            [self __updateCurrentDate:newDate isFromDatePicker:NO];
-        }];
+        [leftButton addTarget:self action:@selector(minusAction) forControlEvents:UIControlEventTouchUpInside];
         [leftButton setFrame:CGRectMake(0, 0, 20, 20)];
         self.leftView = leftButton;
         self.leftViewMode = UITextFieldViewModeAlways;
@@ -67,10 +60,7 @@
         rightButton.backgroundColor = [UIColor orangeColor];
         UIImage *rightNormalImage = [UIImage imageNamed:@"add_common_icon"];
         [rightButton setImage:rightNormalImage forState:UIControlStateNormal];
-        [rightButton setCjTouchUpInsideBlock:^(UIButton *button) {
-            NSDate *newDate = NSCalendarCJHelper_tomorrow(self.currentDate);
-            [self __updateCurrentDate:newDate isFromDatePicker:NO];
-        }];
+        [rightButton addTarget:self action:@selector(addAction) forControlEvents:UIControlEventTouchUpInside];
         [rightButton setFrame:CGRectMake(0, 0, 20, 20)];
         self.rightView = rightButton;
         self.rightViewMode = UITextFieldViewModeAlways;
@@ -99,6 +89,17 @@
 
 
 #pragma mark - Private
+- (void)minusAction {
+    NSDate *newDate = NSCalendarCJHelper_yesterday(self.currentDate);
+    [self __updateCurrentDate:newDate isFromDatePicker:NO];
+}
+
+- (void)addAction {
+    NSDate *newDate = NSCalendarCJHelper_tomorrow(self.currentDate);
+    [self __updateCurrentDate:newDate isFromDatePicker:NO];
+}
+
+
 - (void)__updateCurrentDate:(NSDate *)date isFromDatePicker:(BOOL)isFromDatePicker {
     NSString *dateString = [[NSDateFormatterCJHelper sharedInstance] yyyyMMdd_stringFromDate:date];
     self.text = dateString;

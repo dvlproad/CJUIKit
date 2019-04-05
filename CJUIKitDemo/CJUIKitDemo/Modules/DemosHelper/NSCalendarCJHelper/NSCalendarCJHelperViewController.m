@@ -11,10 +11,11 @@
 
 #ifdef TEST_CJBASEHELPER_POD
 #import "NSDateFormatterCJHelper.h"
+#import "NSCalendarCJHelper.h"
 #else
 #import <CJBaseHelper/NSDateFormatterCJHelper.h>
+#import <CJBaseHelper/NSCalendarCJHelper.h>
 #endif
-
 
 @interface NSCalendarCJHelperViewController () 
 

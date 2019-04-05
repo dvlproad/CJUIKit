@@ -98,7 +98,7 @@
 #pragma mark - SetupViews & Lazy
 - (void)setupViews {
     [self.view addSubview:self.dateTextField];
-    [self.dateTextField setFrame:CGRectMake(20, 100, 280, 30)];
+    [self.dateTextField setFrame:CGRectMake(20, 100, 180, 30)];
 }
 
 - (CJDemoDateTextField *)dateTextField {
@@ -107,6 +107,8 @@
         _dateTextField = [[CJDemoDateTextField alloc] initWithDefaultDate:self.currentDate confirmCompleteBlock:^(NSDate * _Nonnull seletedDate, NSString * _Nonnull seletedDateString) {
             weakSelf.currentDate = seletedDate;
         }];
+        _dateTextField.placeholder = NSLocalizedString(@"选择日期", nil);
+        _dateTextField.backgroundColor = [UIColor greenColor];
     }
     return _dateTextField;
 }

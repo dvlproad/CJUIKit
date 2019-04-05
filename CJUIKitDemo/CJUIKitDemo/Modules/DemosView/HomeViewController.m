@@ -20,6 +20,7 @@
 
 #import "ButtonViewController.h"
 #import "TextFieldViewController.h"
+#import "TestTextFieldOffsetViewController.h"
 #import "TextViewController.h"
 #import "SliderHomeViewController.h"
 #import "SearchBarViewController.h"
@@ -208,6 +209,14 @@
             CJModuleModel *textFieldModule = [[CJModuleModel alloc] init];
             textFieldModule.title = @"TextField";
             textFieldModule.classEntry = [TextFieldViewController class];
+            textFieldModule.isCreateByXib = NO;
+            [sectionDataModel.values addObject:textFieldModule];
+        }
+        {
+            //TextField
+            CJModuleModel *textFieldModule = [[CJModuleModel alloc] init];
+            textFieldModule.title = @"TextFieldOffset";
+            textFieldModule.classEntry = [TestTextFieldOffsetViewController class];
             textFieldModule.isCreateByXib = NO;
             [sectionDataModel.values addObject:textFieldModule];
         }
