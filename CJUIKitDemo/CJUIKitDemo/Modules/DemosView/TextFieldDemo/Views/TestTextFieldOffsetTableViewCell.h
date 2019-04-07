@@ -7,12 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "TestValueChangeModel.h"
 
 @interface TestTextFieldOffsetTableViewCell : UITableViewCell {
     
 }
-@property (nonatomic, strong) TestValueChangeModel *valueChangeModel;
+@property (nonatomic, strong) UILabel *changeExplainLabel;
+@property (nonatomic, strong) CJTextField *textField;
+@property (nonatomic, strong) UILabel *extraResultLabel;
 
 
 @end

@@ -72,7 +72,7 @@
         make.left.mas_equalTo(changeExplainLabel);
         make.right.mas_equalTo(changeExplainLabel);
         make.top.mas_equalTo(changeExplainLabel.mas_bottom);
-        //make.height.mas_equalTo(44); //TOSURE:为什么这边加高度设置会有问题
+        //make.height.mas_equalTo(44); ///FIXME:为什么这边加高度设置会有问题
     }];
     self.chooseTextTextField = chooseTextTextField;
     

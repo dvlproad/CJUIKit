@@ -1319,16 +1319,16 @@
 		7856F74421F4F4C2004AF751 /* Edit */ = {
 			isa = PBXGroup;
 			children = (
-				7856F74521F4F4C2004AF751 /* UIImage+CJRotateAngle.m */,
-				7856F74621F4F4C2004AF751 /* UIImage+CJChangeColor.m */,
 				7856F74721F4F4C2004AF751 /* UIImage+CJBlur.h */,
-				7856F74821F4F4C2004AF751 /* UIImage+CJMakeCircle.h */,
-				7856F74921F4F4C2004AF751 /* UIImage+CJSplitImageIntoTwoParts.h */,
 				7856F74A21F4F4C2004AF751 /* UIImage+CJBlur.m */,
 				7856F74B21F4F4C2004AF751 /* UIImage+CJChangeColor.h */,
-				7856F74C21F4F4C2004AF751 /* UIImage+CJRotateAngle.h */,
-				7856F74D21F4F4C2004AF751 /* UIImage+CJSplitImageIntoTwoParts.m */,
+				7856F74621F4F4C2004AF751 /* UIImage+CJChangeColor.m */,
+				7856F74821F4F4C2004AF751 /* UIImage+CJMakeCircle.h */,
 				7856F74E21F4F4C2004AF751 /* UIImage+CJMakeCircle.m */,
+				7856F74C21F4F4C2004AF751 /* UIImage+CJRotateAngle.h */,
+				7856F74521F4F4C2004AF751 /* UIImage+CJRotateAngle.m */,
+				7856F74921F4F4C2004AF751 /* UIImage+CJSplitImageIntoTwoParts.h */,
+				7856F74D21F4F4C2004AF751 /* UIImage+CJSplitImageIntoTwoParts.m */,
 			);
 			path = Edit;
 			sourceTree = "<group>";
@@ -1345,12 +1345,12 @@
 		7856F75221F4F4C2004AF751 /* Base */ = {
 			isa = PBXGroup;
 			children = (
-				7856F75321F4F4C2004AF751 /* UIImage+CJTransformSize.h */,
 				7856F75421F4F4C2004AF751 /* UIImage+CJCreate.h */,
-				7856F75521F4F4C2004AF751 /* UIImage+CJFixOrientation.h */,
-				7856F75621F4F4C2004AF751 /* UIImage+CJTransformSize.m */,
 				7856F75721F4F4C2004AF751 /* UIImage+CJCreate.m */,
+				7856F75521F4F4C2004AF751 /* UIImage+CJFixOrientation.h */,
 				7856F75821F4F4C2004AF751 /* UIImage+CJFixOrientation.m */,
+				7856F75321F4F4C2004AF751 /* UIImage+CJTransformSize.h */,
+				7856F75621F4F4C2004AF751 /* UIImage+CJTransformSize.m */,
 			);
 			path = Base;
 			sourceTree = "<group>";

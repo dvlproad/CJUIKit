@@ -36,32 +36,16 @@
         CJSectionDataModel *sectionDataModel = [[CJSectionDataModel alloc] init];
         sectionDataModel.theme = @"测试CJTextFieldOffset";
         {
-            TestValueChangeModel *valueChangeModel = [self textFieldOffsetValueChangeModel];
-            [valueChangeModel setupChangeExplain:@"测试<CJTextFieldOffset>的加减" minusHandle:^id(id oldValue) {
-                CGFloat newOffset = [(NSNumber *)oldValue floatValue] - 1;
-                return [NSNumber numberWithFloat:newOffset];
-            } addHandle:^id(id oldValue) {
-                CGFloat newOffset = [(NSNumber *)oldValue floatValue] + 1;
-                return [NSNumber numberWithFloat:newOffset];
-            }];
-            [sectionDataModel.values addObject:valueChangeModel];
+            CJModuleModel *tfModule = [[CJModuleModel alloc] init];
+            tfModule.title = @"测试<CJTextFieldOffset>的加减(请输入内容仔细观察文字头尾是否被遮盖)";
+            
+            [sectionDataModel.values addObject:tfModule];
         }
         
         [sectionDataModels addObject:sectionDataModel];
     }
     
     self.sectionDataModels = sectionDataModels;
-}
-
-- (TestValueChangeModel *)textFieldOffsetValueChangeModel {
-    TestValueChangeModel *valueChangeModel = [[TestValueChangeModel alloc] initWithValue:@(10.0f) textFromValueBlock:^NSString *(id value) {
-        NSString *string = [(NSNumber *)value stringValue];
-        return string;
-    } valueFromTextBlock:^id(NSString *string) {
-        CGFloat leftViewOffset = [string floatValue];
-        return [NSNumber numberWithFloat:leftViewOffset];
-    }];
-    return valueChangeModel;
 }
 
 #pragma mark - UITableViewDataSource & UITableViewDelegate
@@ -76,6 +60,10 @@
     return dataModels.count;
 }
 
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return 250;
+}
+
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
     CJSectionDataModel *sectionDataModel = [self.sectionDataModels objectAtIndex:section];
     
@@ -86,10 +74,10 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     CJSectionDataModel *sectionDataModel = [self.sectionDataModels objectAtIndex:indexPath.section];
     NSArray *dataModels = sectionDataModel.values;
-    TestValueChangeModel *valueChangeModel = [dataModels objectAtIndex:indexPath.row];
+    CJModuleModel *tfModule = [dataModels objectAtIndex:indexPath.row];
     
     TestTextFieldOffsetTableViewCell *cell = (TestTextFieldOffsetTableViewCell *)[tableView dequeueReusableCellWithIdentifier:@"TestTextFieldOffsetTableViewCell" forIndexPath:indexPath];
-    cell.valueChangeModel = valueChangeModel;
+    cell.changeExplainLabel.text = tfModule.title;
     
     return cell;
 }
