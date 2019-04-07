@@ -176,7 +176,6 @@
         textField.rightViewRightOffset = 0;
         
         textField.backgroundColor = [UIColor greenColor];
-        textField.texl
         textField.leftView.alpha = 0.8;
         textField.rightView.alpha = 0.8;
         

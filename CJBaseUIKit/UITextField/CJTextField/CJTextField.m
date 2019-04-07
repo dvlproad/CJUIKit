@@ -39,7 +39,7 @@
 - (CGRect)textRectForBounds:(CGRect)bounds {
     CGRect rect = [super textRectForBounds:bounds];
     rect.origin.x += self.leftViewRightOffset;
-    rect.size.width -= self.leftViewRightOffset + self.rightViewLeftOffset;
+    rect.size.width -= self.leftViewRightOffset + self.rightViewLeftOffset + self.rightViewRightOffset;
     
     return rect;
 }
@@ -47,7 +47,7 @@
 - (CGRect)editingRectForBounds:(CGRect)bounds {
     CGRect rect = [super editingRectForBounds:bounds];
     rect.origin.x += self.leftViewRightOffset;
-    rect.size.width -= self.leftViewRightOffset + self.rightViewLeftOffset;
+    rect.size.width -= self.leftViewRightOffset + self.rightViewLeftOffset + self.rightViewRightOffset;
     
     return rect;
 }
