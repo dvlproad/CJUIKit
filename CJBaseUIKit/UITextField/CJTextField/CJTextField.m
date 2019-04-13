@@ -52,6 +52,13 @@
     return rect;
 }
 
+//- (CGRect)clearButtonRectForBounds:(CGRect)bounds {
+//    CGRect rect = [super clearButtonRectForBounds:bounds];
+//    rect.origin.x -= self.rightViewRightOffset;
+//    
+//    return rect;
+//}
+
 
 /* 完整的描述请参见文件头部 */
 - (void)addLeftImageWithNormalImage:(UIImage *)normalImage

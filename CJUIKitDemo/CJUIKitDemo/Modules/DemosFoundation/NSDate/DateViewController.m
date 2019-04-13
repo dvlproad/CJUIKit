@@ -9,6 +9,7 @@
 #import "DateViewController.h"
 #import <IQKeyboardManager/IQKeyboardManager.h>
 #import "CJDemoDateTextField.h"
+#import "CJDemoDateLabel.h"
 
 #import "NSDateFormatterCJHelper.h"
 #import "NSCalendarCJHelper.h"
@@ -24,8 +25,12 @@
 @interface DateViewController () {
     
 }
-@property (nonatomic, strong) CJDemoDateTextField *dateTextField;
-@property (nonatomic) NSDate *currentDate;
+@property (nonatomic, strong) CJDemoDateTextField *shortDateTextField;
+@property (nonatomic, strong) CJDemoDateTextField *longDateTextField;
+@property (nonatomic) NSDate *currentTFDate;
+
+@property (nonatomic, strong) CJDemoDateLabel *dateLabel;
+@property (nonatomic) NSDate *currentLabelDate;
 
 @property (nonatomic, weak) IBOutlet UILabel *originCurrentTime1;
 @property (nonatomic, weak) IBOutlet UISwitch *correctConvertSwitch1;
@@ -47,7 +52,7 @@
     [[[IQKeyboardManager sharedManager] disabledToolbarClasses] addObject:[self class]];
     
     NSDate *defaultDate = [[NSDateFormatterCJHelper sharedInstance] yyyyMMdd_dateFromString:@"2018-09-27"];
-    self.currentDate = defaultDate;
+    self.currentTFDate = defaultDate;
     
     [self setupViews];
     
@@ -80,7 +85,7 @@
     NSDateFormatter *dateFormatter2 = [[NSDateFormatter alloc]init];
     [dateFormatter2 setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
     [dateFormatter2 setTimeZone:[NSTimeZone timeZoneWithAbbreviation:@"UTC"]];
-    NSString *dateString = [dateFormatter stringFromDate:self.currentDate];
+    NSString *dateString = [dateFormatter stringFromDate:self.currentTFDate];
 //    self.resultCurrentTime1.text = [dateFormatter stringFromDate:date];
     NSLog(@"date convert to string = %@", dateString);
 }
@@ -92,25 +97,61 @@
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
     [super touchesBegan:touches withEvent:event];
     
-    [self.dateTextField endEditing:YES];
+    [self.shortDateTextField endEditing:YES];
+    [self.longDateTextField endEditing:YES];
 }
 
 #pragma mark - SetupViews & Lazy
 - (void)setupViews {
-    [self.view addSubview:self.dateTextField];
-    [self.dateTextField setFrame:CGRectMake(20, 100, 180, 30)];
+    [self.view addSubview:self.shortDateTextField];
+    [self.shortDateTextField setFrame:CGRectMake(20, 100, 180, 30)];
+    
+    [self.view addSubview:self.longDateTextField];
+    [self.longDateTextField setFrame:CGRectMake(20, 150, 280, 30)];
+    
+    [self.view addSubview:self.dateLabel];
+    [self.dateLabel setFrame:CGRectMake(20, 200, 180, 30)];
 }
 
-- (CJDemoDateTextField *)dateTextField {
-    if (_dateTextField == nil) {
+- (CJDemoDateTextField *)shortDateTextField {
+    if (_shortDateTextField == nil) {
         __weak typeof(self)weakSelf = self;
-        _dateTextField = [[CJDemoDateTextField alloc] initWithDefaultDate:self.currentDate confirmCompleteBlock:^(NSDate * _Nonnull seletedDate, NSString * _Nonnull seletedDateString) {
-            weakSelf.currentDate = seletedDate;
+        _shortDateTextField = [[CJDemoDateTextField alloc] initWithConfirmCompleteBlock:^(NSDate * _Nonnull seletedDate, NSString * _Nonnull seletedDateString) {
+            weakSelf.currentTFDate = seletedDate;
         }];
-        _dateTextField.placeholder = NSLocalizedString(@"选择日期", nil);
-        _dateTextField.backgroundColor = [UIColor greenColor];
+        _shortDateTextField.placeholder = NSLocalizedString(@"选择日期", nil);
+        _shortDateTextField.backgroundColor = [UIColor greenColor];
+        _shortDateTextField.clearButtonMode = UITextFieldViewModeUnlessEditing;
+        
+        NSString *dateString = [[NSDateFormatterCJHelper sharedInstance] yyyyMMdd_stringFromDate:self.currentTFDate];
+        [_shortDateTextField updateTextFieldAndDatePickerWithDateString:dateString];
     }
-    return _dateTextField;
+    return _shortDateTextField;
+}
+
+- (CJDemoDateTextField *)longDateTextField {
+    if (_longDateTextField == nil) {
+        __weak typeof(self)weakSelf = self;
+        _longDateTextField = [[CJDemoDateTextField alloc] initWithConfirmCompleteBlock:^(NSDate * _Nonnull seletedDate, NSString * _Nonnull seletedDateString) {
+            weakSelf.currentTFDate = seletedDate;
+        }];
+        _longDateTextField.placeholder = NSLocalizedString(@"选择日期", nil);
+        _longDateTextField.backgroundColor = [UIColor greenColor];
+        _longDateTextField.clearButtonMode = UITextFieldViewModeUnlessEditing;
+    }
+    return _longDateTextField;
+}
+
+- (CJDemoDateLabel *)dateLabel {
+    if (_dateLabel == nil) {
+        __weak typeof(self)weakSelf = self;
+        _dateLabel = [[CJDemoDateLabel alloc] initWithDefaultDate:self.currentLabelDate confirmCompleteBlock:^(NSDate * _Nonnull seletedDate, NSString * _Nonnull seletedDateString) {
+            weakSelf.currentLabelDate = seletedDate;
+        }];
+        _dateLabel.placeholder = NSLocalizedString(@"选择日期", nil);
+        _dateLabel.backgroundColor = [UIColor greenColor];
+    }
+    return _dateLabel;
 }
 
 

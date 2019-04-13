@@ -1,6 +1,6 @@
 //
 //  CJDemoDatePickerView.m
-//  CJPickerDemo
+//  AppCommonUICollect
 //
 //  Created by ciyouzen on 6/20/15.
 //  Copyright (c) 2015 dvlproad. All rights reserved.
@@ -17,12 +17,10 @@
     
 }
 @property (nonatomic, strong) CJDefaultToolbar *toolbar;
-@property (nonatomic, strong, readonly) NSDate *defaultDate;/**< 初始化时候的默认现实的日期 */
+@property (nonatomic, strong) UIDatePicker *datePicker; //UIDatePicker默认216的高
 @property (nonatomic, copy) void (^cancelHandle)(void);     /**< 点击取消执行的操作 */
 @property (nonatomic, copy) void (^confirmHandle)(NSDate *seletedDate, NSString *seletedDateString);    /**< 点击确定执行的操作 */
 @property (nonatomic, copy) void(^valueChangedHandel)(UIDatePicker *datePicker);
-
-@property (nonatomic, strong, readonly) UIView *serviceView;    /**< 是否是作为inputView使用的,是的话是给哪个view,如作为textField的inputView */
 
 @end
 
@@ -32,18 +30,11 @@
 @implementation CJDemoDatePickerView
 
 #pragma mark - Init
-- (instancetype)initWithDefaultDate:(NSDate *)defaultDate
-                       cancelHandle:(void (^)(void))cancelHandle
-                      confirmHandle:(void (^)(NSDate *seletedDate, NSString *seletedDateString))confirmHandle
+- (instancetype)initWithCancelHandle:(void (^ _Nullable )(void))cancelHandle
+                       confirmHandle:(void (^)(NSDate *seletedDate, NSString *seletedDateString))confirmHandle
 {
     self = [super initWithFrame:CGRectMake(0, 0, 0, 260)];
     if (self) {
-        if (defaultDate == nil) {
-            _defaultDate = [NSDate date];
-        } else {
-            _defaultDate = defaultDate;
-        }
-        
         _cancelHandle = cancelHandle;
         _confirmHandle = confirmHandle;
         [self setupViews];
@@ -51,35 +42,42 @@
     return self;
 }
 
-/**
- *  设置日期选择是作为哪个视图的inputView(如textField的inputView)
- *
- *  @param serviceView 作为哪个视图的inputView
- */
-- (void)autoShowFromView:(UIView *)serviceView {
-    _serviceView = serviceView;
+#pragma mark - Setter
+- (void)setMaximumDate:(NSDate *)maximumDate {
+    _maximumDate = maximumDate;
+    self.datePicker.maximumDate = maximumDate;
 }
 
+- (void)setMinimumDate:(NSDate *)minimumDate {
+    _minimumDate = minimumDate;
+    self.datePicker.minimumDate = minimumDate;
+}
 
 #pragma mark - Event
 /**
- *  显示日期选择视图，并显示默认日期(默认日期可为nil)
+ *  设置datePicker弹出时候默认的显示日期
  *
  *  @param defaultDate  默认显示日期
  */
-- (void)showWithDefaultDate:(NSDate *)defaultDate {
+- (void)updateDefaultDate:(NSDate *)defaultDate {
     if (defaultDate) { //.date未设置时显示上次日期，未有上次日期显示今天日期
         self.datePicker.date = defaultDate;
     }
-    [self __valueChangedAction:self.datePicker];
-    
+    [self __updateToolbarSeletedDate:defaultDate]; //保证toolbar显示datePicker对应的值
+}
+
+/**
+ *  显示日期选择视图
+ */
+- (void)show {
+    if (self.toolbar.hasValue == NO) {
+        [self __updateToolbarSeletedDate:[NSDate date]];
+    }
+
     CGFloat popupViewHeight = CGRectGetHeight(self.frame);
     UIColor *blankBGColor = [UIColor colorWithRed:.16 green:.17 blue:.21 alpha:.6];
     __weak typeof(self)weakSelf = self;
-    [self cj_popupInBottomWindow:CJAnimationTypeNormal withHeight:popupViewHeight blankBGColor:blankBGColor showComplete:^{
-        NSLog(@"日期选择:显示完成");
-    } tapBlankComplete:^() {
-        NSLog(@"日期选择:点击背景完成");
+    [self cj_popupInBottomWindow:CJAnimationTypeNormal withHeight:popupViewHeight blankBGColor:blankBGColor showComplete:nil tapBlankComplete:^() {
         [weakSelf cj_hidePopupView];
     }];
 }
@@ -166,7 +164,6 @@
                                   attribute:NSLayoutAttributeNotAnAttribute
                                  multiplier:1
                                    constant:44]];
-    [self __valueChangedAction:self.datePicker]; //及时显示datePicker对应的值
 }
 
 
@@ -176,7 +173,6 @@
         //_datePicker.backgroundColor = [UIColor whiteColor];
         _datePicker.datePickerMode = UIDatePickerModeDate;
         [_datePicker addTarget:self action:@selector(__valueChangedAction:) forControlEvents:UIControlEventValueChanged];
-        _datePicker.date = self.defaultDate;
     }
     
     return _datePicker;
@@ -210,7 +206,7 @@
 #pragma mark - Private
 /// datePicker值改变触发
 - (void)__valueChangedAction:(UIDatePicker *)datePicker {
-    [self __updateSeletedDate:datePicker.date];
+    [self __updateToolbarSeletedDate:datePicker.date];
     
     if (self.valueChangedHandel) {
         self.valueChangedHandel(datePicker);
@@ -218,7 +214,7 @@
 }
 
 /// 更新当前选择的日期
-- (void)__updateSeletedDate:(NSDate *)seletedDate {
+- (void)__updateToolbarSeletedDate:(NSDate *)seletedDate {
     NSDate *maximumDate = self.datePicker.maximumDate;
     if (maximumDate && [seletedDate compare:maximumDate] == NSOrderedDescending) {
         NSLog(@"当前选择日期太大");
@@ -228,31 +224,21 @@
         NSLog(@"当前选择日期太小");
     }
     
-    NSTimeZone *zone =[NSTimeZone systemTimeZone];
-    NSInteger interval = [zone secondsFromGMTForDate:seletedDate];
-    NSDate *localDate =[seletedDate dateByAddingTimeInterval:interval];
-    NSString *localDateString = [self.dateFormatter stringFromDate:localDate];
-    NSLog(@"当前选择日期:%@\n%@", localDate, localDateString);
+    NSString *localDateString = [[NSDateFormatterCJHelper sharedInstance] yyyyMMddHHmmss_stringFromDate:seletedDate];
+    NSLog(@"当前选择日期:%@\n%@", seletedDate, localDateString);
     
-    [self.toolbar updateShowingValue:localDateString];
+    NSString *seletedDateString = [self.dateFormatter stringFromDate:seletedDate];
+    [self.toolbar updateShowingValue:seletedDateString];
 }
 
 - (void)__cancel {
-    if (self.serviceView) {
-        [self.serviceView endEditing:YES];
-    } else {
-        [self cj_hidePopupView];
-    }
+    [self cj_hidePopupView];
     
     !self.cancelHandle ?: self.cancelHandle();
 }
 
 - (void)__confirm {
-    if (self.serviceView) {
-        [self.serviceView endEditing:YES];
-    } else {
-        [self cj_hidePopupView];
-    }
+    [self cj_hidePopupView];
     
     NSDate *seletedDate = self.datePicker.date;
     NSTimeZone *zone =[NSTimeZone systemTimeZone];

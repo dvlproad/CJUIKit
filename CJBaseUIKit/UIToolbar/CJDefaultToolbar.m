@@ -147,6 +147,7 @@
 
 /** 完整的描述请参见文件头部 */
 - (void)updateShowingValue:(NSString *)value {
+    _hasValue = YES;
     self.bbItem_value.title = value;
 }
 

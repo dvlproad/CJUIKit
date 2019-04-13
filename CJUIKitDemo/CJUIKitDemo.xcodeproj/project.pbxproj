@@ -19,6 +19,7 @@
 		780E461E1E5DF87B00980127 /* CJUIKitDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 780E461D1E5DF87B00980127 /* CJUIKitDemoTests.m */; };
 		780E46291E5DF87B00980127 /* CJUIKitDemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 780E46281E5DF87B00980127 /* CJUIKitDemoUITests.m */; };
 		781495A92140D82600D0F2BC /* MantleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 781495A82140D82600D0F2BC /* MantleViewController.m */; };
+		781989A8225A34C000D01DBC /* CJDemoDateLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 781989A6225A34C000D01DBC /* CJDemoDateLabel.m */; };
 		781C736921BA5E140090080C /* NSCalendarCJHelperViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 781C736821BA5E140090080C /* NSCalendarCJHelperViewController.m */; };
 		781C736C21BA61480090080C /* TestValueChangeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 781C736B21BA61480090080C /* TestValueChangeTableViewCell.m */; };
 		781C737121BA65C90090080C /* minus_common_icon@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 781C736D21BA65C90090080C /* minus_common_icon@3x.png */; };
@@ -32,6 +33,8 @@
 		78293F0A21FC2B9C00F70F43 /* CodeScrollViewController2.m in Sources */ = {isa = PBXBuildFile; fileRef = 78293F0121FC2B9C00F70F43 /* CodeScrollViewController2.m */; };
 		78293F0D21FC2B9C00F70F43 /* KeyboardAvoidingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78293F0721FC2B9C00F70F43 /* KeyboardAvoidingViewController.m */; };
 		782ACC98223C0E220041B642 /* CodeScrollViewController1.m in Sources */ = {isa = PBXBuildFile; fileRef = 782ACC97223C0E220041B642 /* CodeScrollViewController1.m */; };
+		782F8770225AE80F001ACE76 /* cjTextField_clear@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 782F876E225AE80F001ACE76 /* cjTextField_clear@2x.png */; };
+		782F8771225AE80F001ACE76 /* cjTextField_clear@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 782F876F225AE80F001ACE76 /* cjTextField_clear@3x.png */; };
 		783281041F4198BC008267E0 /* CustomTripProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 783281031F4198BC008267E0 /* CustomTripProgressView.m */; };
 		7832810D1F41AA96008267E0 /* ProcessLineView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7832810C1F41AA96008267E0 /* ProcessLineView.m */; };
 		783A4A19219BC73500CBF4FC /* NSObject+CJSharedInstance.m in Sources */ = {isa = PBXBuildFile; fileRef = 783A4A18219BC73500CBF4FC /* NSObject+CJSharedInstance.m */; };
@@ -383,6 +386,8 @@
 		780E462A1E5DF87B00980127 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		781495A72140D82600D0F2BC /* MantleViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MantleViewController.h; sourceTree = "<group>"; };
 		781495A82140D82600D0F2BC /* MantleViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MantleViewController.m; sourceTree = "<group>"; };
+		781989A6225A34C000D01DBC /* CJDemoDateLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJDemoDateLabel.m; sourceTree = "<group>"; };
+		781989A7225A34C000D01DBC /* CJDemoDateLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJDemoDateLabel.h; sourceTree = "<group>"; };
 		781C736721BA5E140090080C /* NSCalendarCJHelperViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NSCalendarCJHelperViewController.h; sourceTree = "<group>"; };
 		781C736821BA5E140090080C /* NSCalendarCJHelperViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NSCalendarCJHelperViewController.m; sourceTree = "<group>"; };
 		781C736A21BA61480090080C /* TestValueChangeTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestValueChangeTableViewCell.h; sourceTree = "<group>"; };
@@ -405,6 +410,8 @@
 		78293F0721FC2B9C00F70F43 /* KeyboardAvoidingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeyboardAvoidingViewController.m; sourceTree = "<group>"; };
 		782ACC96223C0E220041B642 /* CodeScrollViewController1.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CodeScrollViewController1.h; sourceTree = "<group>"; };
 		782ACC97223C0E220041B642 /* CodeScrollViewController1.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CodeScrollViewController1.m; sourceTree = "<group>"; };
+		782F876E225AE80F001ACE76 /* cjTextField_clear@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cjTextField_clear@2x.png"; sourceTree = "<group>"; };
+		782F876F225AE80F001ACE76 /* cjTextField_clear@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cjTextField_clear@3x.png"; sourceTree = "<group>"; };
 		783281021F4198BC008267E0 /* CustomTripProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomTripProgressView.h; sourceTree = "<group>"; };
 		783281031F4198BC008267E0 /* CustomTripProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomTripProgressView.m; sourceTree = "<group>"; };
 		7832810B1F41AA96008267E0 /* ProcessLineView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProcessLineView.h; sourceTree = "<group>"; };
@@ -1764,6 +1771,10 @@
 			children = (
 				7857ABBA2254AA5000B1569C /* CJDemoDateTextField.h */,
 				7857ABBB2254AA5000B1569C /* CJDemoDateTextField.m */,
+				781989A7225A34C000D01DBC /* CJDemoDateLabel.h */,
+				781989A6225A34C000D01DBC /* CJDemoDateLabel.m */,
+				782F876E225AE80F001ACE76 /* cjTextField_clear@2x.png */,
+				782F876F225AE80F001ACE76 /* cjTextField_clear@3x.png */,
 			);
 			path = CJDemoDateTextField;
 			sourceTree = "<group>";
@@ -2774,6 +2785,7 @@
 				800E07EA2016CD1500799B78 /* KeyboardUtilViewController.xib in Resources */,
 				787FDB8C20500B5C008A46E3 /* btn_hd@2x.png in Resources */,
 				7856F82821F4F4C3004AF751 /* CJToast_error.png in Resources */,
+				782F8770225AE80F001ACE76 /* cjTextField_clear@2x.png in Resources */,
 				7856F81A21F4F4C3004AF751 /* cjCheckBoxGreenNO@2x.png in Resources */,
 				787FDB8A20500B5C008A46E3 /* slider_maximum_trackimage@2x.png in Resources */,
 				7856F82D21F4F4C3004AF751 /* cjBackBarButtonItem@3x.png in Resources */,
@@ -2801,6 +2813,7 @@
 				7850B71220937E85008F4A21 /* WelcomePopupView.xib in Resources */,
 				8051E5CE20AAB34E003370AA /* details_icon_huadong@3x.png in Resources */,
 				80FF90B21FC5649F00E437CF /* TableHeaderView.xib in Resources */,
+				782F8771225AE80F001ACE76 /* cjTextField_clear@3x.png in Resources */,
 				787FDB9520500B5C008A46E3 /* SwitchSliderViewController.xib in Resources */,
 				7856F81B21F4F4C3004AF751 /* cjCheckBoxGreen2YES.png in Resources */,
 				787FDB8720500B5C008A46E3 /* slider_maximum_trackimage@3x.png in Resources */,
@@ -3089,6 +3102,7 @@
 				788113C22199583000D1630D /* NormalSharedInstanceClass.m in Sources */,
 				78A621DC2135C713004DA046 /* DemoSuspendWindow.m in Sources */,
 				78C8148B216E11AF00A6B190 /* BChildViewController.m in Sources */,
+				781989A8225A34C000D01DBC /* CJDemoDateLabel.m in Sources */,
 				78E1895921777DC600B8781A /* CJUIKitBaseHomeViewController.m in Sources */,
 				7856F83D21F4F4C3004AF751 /* CJTextView.m in Sources */,
 				780E46081E5DF87B00980127 /* AppDelegate.m in Sources */,

@@ -9,12 +9,14 @@
 #import "CJDemoDateTextField.h"
 
 #ifdef TEST_CJBASEUIKIT_POD
-#import "UITextField+CJForbidKeyboard.h"
+#import "UIColor+CJHex.h"
+#import "UIView+CJPopupInView.h"
+#import "UITextField+CJTextChangeBlock.h"
 #else
-#import <CJBaseUIKit/UITextField+CJForbidKeyboard.h>
+#import <CJBaseUIKit/UIColor+CJHex.h>
+#import <CJBaseUIKit/UIView+CJPopupInView.h>
+#import <CJBaseUIKit/UITextField+CJTextChangeBlock.h>
 #endif
-
-#import "CJDemoDatePickerView.h"
 
 @interface CJDemoDateTextField () <UITextFieldDelegate> {
     
@@ -29,85 +31,99 @@
 /**
  *  用来选择日期的文本框(文本框中的值只能来源于选择，不能来源于输入)
  *
- *  @param defaultDate          defaultDate
  *  @param confirmCompleteBlock confirmCompleteBlock
  */
-- (instancetype)initWithDefaultDate:(NSDate *)defaultDate
-               confirmCompleteBlock:(void(^)(NSDate *seletedDate, NSString *seletedDateString))confirmCompleteBlock
+- (instancetype)initWithConfirmCompleteBlock:(void(^)(NSDate *seletedDate, NSString *seletedDateString))confirmCompleteBlock
 {
-    self = [super init];
+    self = [super initWithFrame:CGRectZero];
     if (self) {
-        if (defaultDate == nil) {
-            defaultDate = [NSDate date];
-        }
-        
         self.backgroundColor = [UIColor whiteColor];
         self.textAlignment = NSTextAlignmentCenter;
-        self.delegate = self;
         
-        UIButton *leftButton = [UIButton buttonWithType:UIButtonTypeCustom];
-        leftButton.backgroundColor = [UIColor orangeColor];
-        UIImage *leftNormalImage = [UIImage imageNamed:@"minus_common_icon"];
-        [leftButton setImage:leftNormalImage forState:UIControlStateNormal];
-        [leftButton addTarget:self action:@selector(minusAction) forControlEvents:UIControlEventTouchUpInside];
-        [leftButton setFrame:CGRectMake(0, 0, 20, 20)];
-        self.leftView = leftButton;
-        self.leftViewMode = UITextFieldViewModeAlways;
-        self.leftViewLeftOffset = 10;
-        self.leftViewRightOffset = 10;
+        self.backgroundColor = [UIColor whiteColor];
+        self.layer.masksToBounds = YES;
+        self.layer.cornerRadius = 4;
+        self.allowPickDate = NO;
         
-        UIButton *rightButton = [UIButton buttonWithType:UIButtonTypeCustom];
-        rightButton.backgroundColor = [UIColor orangeColor];
-        UIImage *rightNormalImage = [UIImage imageNamed:@"add_common_icon"];
-        [rightButton setImage:rightNormalImage forState:UIControlStateNormal];
-        [rightButton addTarget:self action:@selector(addAction) forControlEvents:UIControlEventTouchUpInside];
-        [rightButton setFrame:CGRectMake(0, 0, 20, 20)];
-        self.rightView = rightButton;
-        self.rightViewMode = UITextFieldViewModeAlways;
-        self.rightViewLeftOffset = 10;
-        self.rightViewRightOffset = 10;
+        // 防止会出现第三方库如IQKeyboardManager会自动为textField的弹出的inputView键盘添加Toolbar
+        UIView *overlayView = [[UIView alloc] init];
+        overlayView.backgroundColor = [UIColor clearColor];
+        [self addSubview:overlayView];
+        [overlayView mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.edges.mas_equalTo(self);
+        }];
+        overlayView.userInteractionEnabled = YES;
+        UITapGestureRecognizer *singleTapGesture = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(__handleSingleTap:)];
+        singleTapGesture.numberOfTapsRequired = 1;
+        singleTapGesture.numberOfTouchesRequired = 1;
+        [self addGestureRecognizer:singleTapGesture];
+        
         
         // datePickerView
-        CJDemoDatePickerView *datePickerView = [[CJDemoDatePickerView alloc] initWithDefaultDate:defaultDate cancelHandle:nil confirmHandle:^(NSDate *seletedDate, NSString *seletedDateString) {
-            [self __updateCurrentDate:seletedDate isFromDatePicker:YES];
+        CJDemoDatePickerView *datePickerView = [[CJDemoDatePickerView alloc] initWithCancelHandle:nil confirmHandle:^(NSDate *seletedDate, NSString *seletedDateString) {
+            [self __updateCurrentDate:seletedDate];
             if (confirmCompleteBlock) {
                 confirmCompleteBlock(seletedDate, seletedDateString);
             }
         }];
-        [datePickerView autoShowFromView:self];
-        datePickerView.datePicker.maximumDate = [NSDate date];
-        datePickerView.datePicker.minimumDate = [datePickerView.dateFormatter dateFromString:@"1900-01-01"];
         self.datePickerView = datePickerView;
-        [self cj_forbidKeyboardAndTextPicker:datePickerView];
-        self.forbidMenuType = CJTextFieldForbidMenuTypeAll;
-        
-        // 使用默认值
-        [self __updateCurrentDate:defaultDate isFromDatePicker:NO];
     }
     return self;
 }
 
+#pragma mark - Setter
+- (void)setAllowPickDate:(BOOL)allowPickDate {
+    _allowPickDate = allowPickDate;
+    if (allowPickDate) {
+        self.backgroundColor = [UIColor whiteColor];
+        self.layer.borderColor = CJColorFromHexString(@"#CCCCCC").CGColor;
+        self.layer.borderWidth = 1;
+    } else {
+        self.backgroundColor = CJColorFromHexString(@"#F9F9F9");
+        self.layer.borderWidth = 0;
+    }
+}
+
+- (void)setMaximumDate:(NSDate *)maximumDate {
+    _maximumDate = maximumDate;
+    self.datePickerView.maximumDate = maximumDate;
+    //self.datePickerView.maximumDate = [NSDate date];
+}
+
+- (void)setMinimumDate:(NSDate *)minimumDate {
+    _minimumDate = minimumDate;
+    self.datePickerView.minimumDate = minimumDate;
+    //self.datePickerView.minimumDate = [datePickerView.dateFormatter dateFromString:@"1900-01-01"];
+}
+
+
+#pragma mark - Event
+
+/**
+ *  同时更新 TextField 和 datePicker 弹出时候的默认选中日期
+ *
+ *  @param dateString datePicker弹出时候的默认选中日期,未设置时候是显示当前日期
+ */
+- (void)updateTextFieldAndDatePickerWithDateString:(NSString *)dateString {
+    self.text = dateString;
+    NSDate *date = [[NSDateFormatterCJHelper sharedInstance] yyyyMMdd_dateFromString:dateString];
+    if (date) {
+        [self.datePickerView updateDefaultDate:date];
+    }
+}
+
+- (void)__handleSingleTap:(UIGestureRecognizer *)gr {
+    if (self.allowPickDate) {
+        [self.datePickerView show];
+    }
+}
+
 
 #pragma mark - Private
-- (void)minusAction {
-    NSDate *newDate = NSCalendarCJHelper_yesterday(self.currentDate);
-    [self __updateCurrentDate:newDate isFromDatePicker:NO];
-}
-
-- (void)addAction {
-    NSDate *newDate = NSCalendarCJHelper_tomorrow(self.currentDate);
-    [self __updateCurrentDate:newDate isFromDatePicker:NO];
-}
-
-
-- (void)__updateCurrentDate:(NSDate *)date isFromDatePicker:(BOOL)isFromDatePicker {
+- (void)__updateCurrentDate:(NSDate *)date {
     NSString *dateString = [[NSDateFormatterCJHelper sharedInstance] yyyyMMdd_stringFromDate:date];
     self.text = dateString;
-    _currentDate = date;
-    
-    if (isFromDatePicker == NO) {
-        self.datePickerView.datePicker.date = date;
-    }
+    _date = date;
 }
 
 /*

@@ -9,11 +9,16 @@
 #import "UITextField+CJForbidKeyboard.h"
 #import <objc/runtime.h>
 
+#ifdef TEST_CJBASEUIKIT_POD
+#import "UIView+CJPopupInView.h"
+#else
+#import <CJBaseUIKit/UIView+CJPopupInView.h>
+#endif
+
 @interface UITextField () {
     
 }
 @property (nonatomic, strong) UIView *cjTextPicker;
-@property (nonatomic, assign, readonly) BOOL cjForbidKeyboard;/**< 是否禁止手动输入,如果是需要隐藏光标(默认NO) */
 
 @end
 
@@ -46,17 +51,28 @@
     self.cjForbidKeyboard = YES;
     self.tintColor = [UIColor clearColor];
     
+    // 防止会出现第三方库如IQKeyboardManager会自动为textField的弹出的inputView键盘添加Toolbar
+    UIView *overlayView = [[UIView alloc] init];
+    overlayView.backgroundColor = [UIColor clearColor];
+    [self cj_makeView:self addSubView:overlayView withEdgeInsets:UIEdgeInsetsMake(0, 0, 0, 0)];
+    self.cjTextPicker = textPicker;
+    
     if (textPicker) {
-        NSAssert(CGRectGetHeight(textPicker.frame) > 0, @"textPicker的高度不能为0");
-        self.inputView = textPicker;
-        self.cjTextPicker = textPicker;
-    } else {
-        // 防止会出现第三方库如IQKeyboardManager会自动为textField的弹出的inputView键盘添加Toolbar
-        UIView *view = [[UIView alloc] init];
-        view.backgroundColor = [UIColor greenColor];
-        [self cj_makeView:self addSubView:view withEdgeInsets:UIEdgeInsetsMake(0, 0, 0, 0)];
-        self.cjTextPicker = nil;
+        overlayView.userInteractionEnabled = YES;
+        UITapGestureRecognizer *singleTapGesture = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(__handleSingleTap:)];
+        singleTapGesture.numberOfTapsRequired = 1;
+        singleTapGesture.numberOfTouchesRequired = 1;
+        [self addGestureRecognizer:singleTapGesture];
     }
+}
+
+- (void)__handleSingleTap:(UIGestureRecognizer *)gr {
+    CGFloat popupViewHeight = CGRectGetHeight(self.cjTextPicker.frame);
+    UIColor *blankBGColor = [UIColor colorWithRed:.16 green:.17 blue:.21 alpha:.6];
+    __weak typeof(self)weakSelf = self;
+    [self.cjTextPicker cj_popupInBottomWindow:CJAnimationTypeNormal withHeight:popupViewHeight blankBGColor:blankBGColor showComplete:nil tapBlankComplete:^() {
+        [weakSelf.cjTextPicker cj_hidePopupView];
+    }];
 }
 
 #pragma mark - addSubView

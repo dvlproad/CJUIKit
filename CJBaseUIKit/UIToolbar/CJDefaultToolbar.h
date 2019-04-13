@@ -15,12 +15,14 @@ typedef NS_OPTIONS(NSUInteger, CJDefaultToolbarOption) {
 };
 
 //CJPicker中经常会用到
-@interface CJDefaultToolbar : UIToolbar
-
+@interface CJDefaultToolbar : UIToolbar {
+    
+}
 @property (nonatomic, copy) void (^confirmHandle)(void);    /**< 点击确定执行的操作 */
 @property (nonatomic, copy) void (^cancelHandle)(void);     /**< 点击取消执行的操作 */
 
 @property (nonatomic, assign) CJDefaultToolbarOption option;
+@property (nonatomic, assign, readonly) BOOL hasValue;      /**< 是否是设置值 */
 
 /**
  *  更新toolbar上显示的值
