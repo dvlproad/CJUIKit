@@ -117,6 +117,7 @@ Pod::Spec.new do |s|
 
   s.subspec 'UITextField' do |ss|
     ss.source_files = "CJBaseUIKit/UITextField/**/*.{h,m}"
+    ss.dependency "CJBaseUIKit/UIView/CJPopupAction"
   end
 
   s.subspec 'CJTextView' do |ss|
@@ -131,6 +132,7 @@ Pod::Spec.new do |s|
   
   s.subspec 'UIToolbar' do |ss|
     ss.source_files = "CJBaseUIKit/UIToolbar/**/*.{h,m}"
+    ss.dependency "CJBaseUIKit/UIImage"
   end
 
 

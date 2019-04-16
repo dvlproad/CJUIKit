@@ -7,6 +7,7 @@
 //
 
 #import "CJDefaultToolbar.h"
+#import "UIImage+CJCreate.h"
 
 @interface CJDefaultToolbar ()
 
@@ -43,8 +44,8 @@
     self.backgroundColor = [UIColor whiteColor];
     self.option = CJDefaultToolbarOptionConfirm;
     
-    UIImageView *seprateLineImageView = [[UIImageView alloc]initWithFrame:CGRectZero];
-    seprateLineImageView.backgroundColor = [UIColor lightGrayColor];
+    UIImageView *seprateLineImageView = [[UIImageView alloc] initWithFrame:CGRectZero];
+    seprateLineImageView.backgroundColor = [UIColor colorWithRed:229/255.0 green:229/255.0 blue:229/255.0 alpha:1]; //#E5E5E5
     [self addSubview:seprateLineImageView];
     seprateLineImageView.translatesAutoresizingMaskIntoConstraints = NO;
     [self addConstraint:
@@ -91,10 +92,11 @@
     NSMutableArray *toolbarItems = [[NSMutableArray alloc] init];
     if (option & CJDefaultToolbarOptionCancel) {
         UIBarButtonItem *bbitem_cancel = [[UIBarButtonItem alloc] initWithTitle:@"取消" style:UIBarButtonItemStylePlain target:self action:@selector(cancelAction:)];
+        bbitem_cancel.width = 80;
         [toolbarItems addObject:bbitem_cancel];
     } else {
         UIBarButtonItem *bbitem_fix = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace target:nil action:nil];
-        bbitem_fix.width = 40;
+        bbitem_fix.width = 80;
         [toolbarItems addObject:bbitem_fix];
     }
     
@@ -108,7 +110,7 @@
         self.bbItem_value = bbItem_value;
     } else {
         UIBarButtonItem *bbitem_fix = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace target:nil action:nil];
-        bbitem_fix.width = 40;
+        bbitem_fix.width = 80;
         [toolbarItems addObject:bbitem_fix];
         
         self.bbItem_value = nil;
@@ -119,14 +121,15 @@
     
     if (option & CJDefaultToolbarOptionConfirm) {
         UIBarButtonItem *bbitem_confirm = [[UIBarButtonItem alloc] initWithTitle:@"确定" style:UIBarButtonItemStylePlain target:self action:@selector(confirmAction:)];
-        UIColor *color = [UIColor colorWithRed:43/255.0 green:76/255.0 blue:171/255.0 alpha:1];
-        NSDictionary *attributes = @{NSForegroundColorAttributeName:color};
-        [bbitem_confirm setTitleTextAttributes:attributes forState:UIControlStateNormal];
+        //UIColor *color = [UIColor colorWithRed:43/255.0 green:76/255.0 blue:171/255.0 alpha:1];
+        //NSDictionary *attributes = @{NSForegroundColorAttributeName:color};
+        //[bbitem_confirm setTitleTextAttributes:attributes forState:UIControlStateNormal];
+        bbitem_confirm.width = 80;
         
         [toolbarItems addObject:bbitem_confirm];
     } else {
         UIBarButtonItem *bbitem_fix = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace target:nil action:nil];
-        bbitem_fix.width = 40;
+        bbitem_fix.width = 80;
         [toolbarItems addObject:bbitem_fix];
     }
     
@@ -149,6 +152,13 @@
 - (void)updateShowingValue:(NSString *)value {
     _hasValue = YES;
     self.bbItem_value.title = value;
+}
+
+- (void)drawRect:(CGRect)rect {
+    // 设置toolbar背景色
+    UIColor *bgColor = [UIColor colorWithRed:249/255.0 green:249/255.0 blue:249/255.0 alpha:1]; //#F9F9F9
+    UIImage *img  = [UIImage cj_imageWithColor:bgColor size:self.frame.size];
+    [img drawInRect:CGRectMake(0, 0, self.frame.size.width, self.frame.size.height)];
 }
 
 @end

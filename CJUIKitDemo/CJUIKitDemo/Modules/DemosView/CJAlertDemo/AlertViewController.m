@@ -20,7 +20,7 @@
 @interface AlertViewController () {
     
 }
-@property (nonatomic, weak) UIActivityIndicatorView *activityIndicator;
+@property (nonatomic, strong) UIActivityIndicatorView *activityIndicator;
 
 @end
 
@@ -151,14 +151,8 @@
     self.sectionDataModels = sectionDataModels;
     
     /* 添加系统菊花 */
-    UIActivityIndicatorView *activityIndicator = [[UIActivityIndicatorView alloc]initWithActivityIndicatorStyle:(UIActivityIndicatorViewStyleGray)];
-    //activityIndicator.color = [UIColor redColor];
-    //activityIndicator.backgroundColor = [UIColor cyanColor];
-    activityIndicator.hidesWhenStopped = YES;
-    [self.view addSubview:activityIndicator];
-    //activityIndicator.frame= CGRectMake(0, 0, 100, 100);
-    activityIndicator.center = self.tableView.center;
-    self.activityIndicator = activityIndicator;
+    [self.view addSubview:self.activityIndicator];
+    self.activityIndicator.center = self.tableView.center;
 }
 
 - (void)showUIAlertController:(UIAlertControllerStyle)preferredStyle {
@@ -321,6 +315,18 @@
     [CJAlert showDebugViewWithTitle:title message:message];
 }
 
+
+#pragma mark - Lazy
+/// 加载网络图片时候的进度显示器
+- (UIActivityIndicatorView *)activityIndicator {
+    if (_activityIndicator == nil) {
+        _activityIndicator = [[UIActivityIndicatorView alloc]initWithActivityIndicatorStyle:(UIActivityIndicatorViewStyleGray)];
+        _activityIndicator.color = CJColorFromHexString(@"#01ADFE");
+        _activityIndicator.backgroundColor = CJColorFromHexString(@"#F9F9F9");
+        _activityIndicator.hidesWhenStopped = YES;
+    }
+    return _activityIndicator;
+}
 
 
 - (void)didReceiveMemoryWarning {
