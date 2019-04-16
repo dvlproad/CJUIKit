@@ -170,6 +170,7 @@
 - (UIDatePicker *)datePicker {
     if (_datePicker == nil) {
         _datePicker = [[UIDatePicker alloc] initWithFrame:CGRectZero];
+        _datePicker.locale = [NSLocale localeWithLocaleIdentifier:@"zh"];//设置地区: zh-中国
         //_datePicker.backgroundColor = [UIColor whiteColor];
         _datePicker.datePickerMode = UIDatePickerModeDate;
         [_datePicker addTarget:self action:@selector(__valueChangedAction:) forControlEvents:UIControlEventValueChanged];
@@ -224,8 +225,8 @@
         NSLog(@"当前选择日期太小");
     }
     
-    NSString *localDateString = [[NSDateFormatterCJHelper sharedInstance] yyyyMMddHHmmss_stringFromDate:seletedDate];
-    NSLog(@"当前选择日期:%@\n%@", seletedDate, localDateString);
+    NSString *seletedDateFullString = [[NSDateFormatterCJHelper sharedInstance] yyyyMMddHHmmss_stringFromDate:seletedDate];
+    NSLog(@"当前选择日期:%@\n%@", seletedDate, seletedDateFullString);
     
     NSString *seletedDateString = [self.dateFormatter stringFromDate:seletedDate];
     [self.toolbar updateShowingValue:seletedDateString];
@@ -241,12 +242,12 @@
     [self cj_hidePopupView];
     
     NSDate *seletedDate = self.datePicker.date;
-    NSTimeZone *zone =[NSTimeZone systemTimeZone];
-    NSInteger interval = [zone secondsFromGMTForDate:seletedDate];
-    NSDate *localDate =[seletedDate dateByAddingTimeInterval:interval];
-    NSString *localDateString = [self.dateFormatter stringFromDate:localDate];
-    NSLog(@"当前选择日期:%@\n%@", localDate, localDateString);
-    !self.confirmHandle ?: self.confirmHandle(seletedDate, localDateString);
+    
+    NSString *seletedDateFullString = [[NSDateFormatterCJHelper sharedInstance] yyyyMMddHHmmss_stringFromDate:seletedDate];
+    NSLog(@"当前选择日期:%@\n%@", seletedDate, seletedDateFullString);
+    
+    NSString *seletedDateString = [self.dateFormatter stringFromDate:seletedDate];
+    !self.confirmHandle ?: self.confirmHandle(seletedDate, seletedDateString);
 }
 
 @end
