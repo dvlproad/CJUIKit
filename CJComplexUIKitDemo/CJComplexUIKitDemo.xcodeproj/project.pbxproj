@@ -163,6 +163,7 @@
 		789C448D21F170CF00181144 /* YunUncaughtExceptionHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 789C448821F170CE00181144 /* YunUncaughtExceptionHandler.m */; };
 		789C448E21F170CF00181144 /* DemoCacheUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 789C448A21F170CE00181144 /* DemoCacheUtil.m */; };
 		789C448F21F170CF00181144 /* CJAppVersionUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 789C448C21F170CE00181144 /* CJAppVersionUtil.m */; };
+		78A82A382266F1500013C515 /* CJDemoDatePickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 78A82A362266F1500013C515 /* CJDemoDatePickerView.m */; };
 		8014A2801FA2C2E500DDDB5A /* AppDelegate+WindowRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8014A27F1FA2C2E500DDDB5A /* AppDelegate+WindowRootViewController.m */; };
 		80D49F8B20BE7EE0003F642C /* CJDataUtilTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 80D49F8A20BE7EE0003F642C /* CJDataUtilTest.m */; };
 		80D49F8F20BE8574003F642C /* TestCityModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 80D49F8E20BE8574003F642C /* TestCityModel.m */; };
@@ -429,6 +430,8 @@
 		789C448A21F170CE00181144 /* DemoCacheUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DemoCacheUtil.m; sourceTree = "<group>"; };
 		789C448B21F170CE00181144 /* YunUncaughtExceptionHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YunUncaughtExceptionHandler.h; sourceTree = "<group>"; };
 		789C448C21F170CE00181144 /* CJAppVersionUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJAppVersionUtil.m; sourceTree = "<group>"; };
+		78A82A362266F1500013C515 /* CJDemoDatePickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJDemoDatePickerView.m; sourceTree = "<group>"; };
+		78A82A372266F1500013C515 /* CJDemoDatePickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJDemoDatePickerView.h; sourceTree = "<group>"; };
 		8014A27E1FA2C2E500DDDB5A /* AppDelegate+WindowRootViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AppDelegate+WindowRootViewController.h"; sourceTree = "<group>"; };
 		8014A27F1FA2C2E500DDDB5A /* AppDelegate+WindowRootViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "AppDelegate+WindowRootViewController.m"; sourceTree = "<group>"; };
 		80270BBC1FABFE57001429F0 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
@@ -1001,6 +1004,7 @@
 		789C43F221EEC58500181144 /* CommonUI */ = {
 			isa = PBXGroup;
 			children = (
+				78A82A352266F1500013C515 /* CJDemoDatePickerView */,
 				789C440B21EEC58500181144 /* Base */,
 				789C43FE21EEC58500181144 /* DemoAlert */,
 				789C43FB21EEC58500181144 /* DemoBarButtonItemFactory */,
@@ -1128,6 +1132,15 @@
 			);
 			name = CommonUtil;
 			path = ../../CJUIKitDemo/CJUIKitDemo/CommonUtil;
+			sourceTree = "<group>";
+		};
+		78A82A352266F1500013C515 /* CJDemoDatePickerView */ = {
+			isa = PBXGroup;
+			children = (
+				78A82A362266F1500013C515 /* CJDemoDatePickerView.m */,
+				78A82A372266F1500013C515 /* CJDemoDatePickerView.h */,
+			);
+			path = CJDemoDatePickerView;
 			sourceTree = "<group>";
 		};
 		80D49F8C20BE852A003F642C /* Models */ = {
@@ -1260,6 +1273,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -1436,6 +1450,10 @@
 				"${PODS_ROOT}/../../CJBaseUIKit/CJToast/Resources/CJToast_success.png",
 				"${PODS_ROOT}/../../CJBaseUIKit/CJToast/Resources/CJToast_success@2x.png",
 				"${PODS_ROOT}/../../CJBaseUIKit/CJToast/Resources/CJToast_success@3x.png",
+				"${PODS_ROOT}/../../CJBaseUIKit/UIViewController/Resources/cjBackBarButtonItem@2x.png",
+				"${PODS_ROOT}/../../CJBaseUIKit/UIViewController/Resources/cjBackBarButtonItem@3x.png",
+				"${PODS_ROOT}/../../CJBaseUIKit/UIViewController/Resources/cjBackBarButtonItemGray@2x.png",
+				"${PODS_ROOT}/../../CJBaseUIKit/UIViewController/Resources/cjBackBarButtonItemGray@3x.png",
 				"${PODS_ROOT}/CJMedia/CJMedia/CJPhotoBrowser/CJImagePicker/Resources/cjAlbumCheckedNormal@2x.png",
 				"${PODS_ROOT}/CJMedia/CJMedia/CJPhotoBrowser/CJImagePicker/Resources/cjAlbumCheckedSelect@2x.png",
 				"${PODS_ROOT}/CJMedia/CJMedia/CJPhotoBrowser/CJPhotoBrowser/CJPhotoBrowser.bundle/error.png",
@@ -1471,6 +1489,10 @@
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/CJToast_success.png",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/CJToast_success@2x.png",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/CJToast_success@3x.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/cjBackBarButtonItem@2x.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/cjBackBarButtonItem@3x.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/cjBackBarButtonItemGray@2x.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/cjBackBarButtonItemGray@3x.png",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/cjAlbumCheckedNormal@2x.png",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/cjAlbumCheckedSelect@2x.png",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/error.png",
@@ -1564,6 +1586,7 @@
 				789C448F21F170CF00181144 /* CJAppVersionUtil.m in Sources */,
 				789A4F5221FAF3A8001528B9 /* CustomLayoutCollectionViewController.m in Sources */,
 				789C442A21EEC90000181144 /* WebHomeViewController.m in Sources */,
+				78A82A382266F1500013C515 /* CJDemoDatePickerView.m in Sources */,
 				789A4FAD21FB053B001528B9 /* H5ImgSettingBaseViewController.m in Sources */,
 				80E7E68920AC37CA000F762D /* IjinbuNetworkClient+Login.m in Sources */,
 				78590D00215C79DD00F45AD5 /* NetworkBaseWebViewController.m in Sources */,

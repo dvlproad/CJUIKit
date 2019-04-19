@@ -14,6 +14,7 @@ PODS:
   - CJBaseHelper (0.1.4):
     - CJBaseHelper/AuthorizationCJHelper (= 0.1.4)
     - CJBaseHelper/DeviceCJHelper (= 0.1.4)
+    - CJBaseHelper/HookCJHelper (= 0.1.4)
     - CJBaseHelper/NSCalendarCJHelper (= 0.1.4)
     - CJBaseHelper/NSDateFormatterCJHelper (= 0.1.4)
     - CJBaseHelper/NSObjectCJHelper (= 0.1.4)
@@ -22,6 +23,7 @@ PODS:
     - CJBaseHelper/WebCJHelper (= 0.1.4)
   - CJBaseHelper/AuthorizationCJHelper (0.1.4)
   - CJBaseHelper/DeviceCJHelper (0.1.4)
+  - CJBaseHelper/HookCJHelper (0.1.4)
   - CJBaseHelper/NSCalendarCJHelper (0.1.4)
   - CJBaseHelper/NSDateFormatterCJHelper (0.1.4)
   - CJBaseHelper/NSObjectCJHelper (0.1.4)
@@ -30,38 +32,38 @@ PODS:
   - CJBaseHelper/WebCJHelper (0.1.4)
   - CJBaseTest/Test (0.0.2)
   - CJBaseTest/UITest (0.0.2)
-  - CJBaseUtil (0.5.0):
-    - CJBaseUtil/CJAppLastUtil (= 0.5.0)
-    - CJBaseUtil/CJCallUtil (= 0.5.0)
-    - CJBaseUtil/CJDataUtil (= 0.5.0)
-    - CJBaseUtil/CJDateUtil (= 0.5.0)
-    - CJBaseUtil/CJIndentedStringUtil (= 0.5.0)
-    - CJBaseUtil/CJKeyboardUtil (= 0.5.0)
-    - CJBaseUtil/CJLaunchImageUtil (= 0.5.0)
-    - CJBaseUtil/CJManager (= 0.5.0)
-    - CJBaseUtil/CJPinyinHelper (= 0.5.0)
-    - CJBaseUtil/CJQRCodeUtil (= 0.5.0)
-  - CJBaseUtil/CJAppLastUtil (0.5.0):
+  - CJBaseUtil (0.5.1):
+    - CJBaseUtil/CJAppLastUtil (= 0.5.1)
+    - CJBaseUtil/CJCallUtil (= 0.5.1)
+    - CJBaseUtil/CJDataUtil (= 0.5.1)
+    - CJBaseUtil/CJDateUtil (= 0.5.1)
+    - CJBaseUtil/CJIndentedStringUtil (= 0.5.1)
+    - CJBaseUtil/CJKeyboardUtil (= 0.5.1)
+    - CJBaseUtil/CJLaunchImageUtil (= 0.5.1)
+    - CJBaseUtil/CJManager (= 0.5.1)
+    - CJBaseUtil/CJPinyinHelper (= 0.5.1)
+    - CJBaseUtil/CJQRCodeUtil (= 0.5.1)
+  - CJBaseUtil/CJAppLastUtil (0.5.1):
     - SAMKeychain
-  - CJBaseUtil/CJCallUtil (0.5.0)
-  - CJBaseUtil/CJDataUtil (0.5.0)
-  - CJBaseUtil/CJDateUtil (0.5.0)
-  - CJBaseUtil/CJIndentedStringUtil (0.5.0)
-  - CJBaseUtil/CJKeyboardUtil (0.5.0)
-  - CJBaseUtil/CJLaunchImageUtil (0.5.0)
-  - CJBaseUtil/CJManager (0.5.0):
-    - CJBaseUtil/CJManager/CJLocationChangeManager (= 0.5.0)
-    - CJBaseUtil/CJManager/CJModuleManager (= 0.5.0)
-    - CJBaseUtil/CJManager/CJSuspendWindowManager (= 0.5.0)
-    - CJBaseUtil/CJManager/CJTimerManager (= 0.5.0)
-  - CJBaseUtil/CJManager/CJLocationChangeManager (0.5.0):
+  - CJBaseUtil/CJCallUtil (0.5.1)
+  - CJBaseUtil/CJDataUtil (0.5.1)
+  - CJBaseUtil/CJDateUtil (0.5.1)
+  - CJBaseUtil/CJIndentedStringUtil (0.5.1)
+  - CJBaseUtil/CJKeyboardUtil (0.5.1)
+  - CJBaseUtil/CJLaunchImageUtil (0.5.1)
+  - CJBaseUtil/CJManager (0.5.1):
+    - CJBaseUtil/CJManager/CJLocationChangeManager (= 0.5.1)
+    - CJBaseUtil/CJManager/CJModuleManager (= 0.5.1)
+    - CJBaseUtil/CJManager/CJSuspendWindowManager (= 0.5.1)
+    - CJBaseUtil/CJManager/CJTimerManager (= 0.5.1)
+  - CJBaseUtil/CJManager/CJLocationChangeManager (0.5.1):
     - CJBaseUtil/CJDateUtil
-  - CJBaseUtil/CJManager/CJModuleManager (0.5.0)
-  - CJBaseUtil/CJManager/CJSuspendWindowManager (0.5.0)
-  - CJBaseUtil/CJManager/CJTimerManager (0.5.0)
-  - CJBaseUtil/CJPinyinHelper (0.5.0):
+  - CJBaseUtil/CJManager/CJModuleManager (0.5.1)
+  - CJBaseUtil/CJManager/CJSuspendWindowManager (0.5.1)
+  - CJBaseUtil/CJManager/CJTimerManager (0.5.1)
+  - CJBaseUtil/CJPinyinHelper (0.5.1):
     - PinYin4Objc
-  - CJBaseUtil/CJQRCodeUtil (0.5.0)
+  - CJBaseUtil/CJQRCodeUtil (0.5.1)
   - CJComplexUIKit/CJCollectionView/MyEqualCellSizeCollectionView (0.2.3)
   - CJFile/CJFileManager (0.0.9)
   - CJFile/CJFileModel (0.0.9)
@@ -160,9 +162,9 @@ EXTERNAL SOURCES:
 SPEC CHECKSUMS:
   AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
   CJBaseEffectKit: 480165473bdc3d10fe004240b241cbedc69b50b0
-  CJBaseHelper: fb6bbcc7771d562d1efa99e70f665cf779187879
+  CJBaseHelper: dd715e18591da9df5d06364098300591220f0535
   CJBaseTest: a7975369dd9cad3111ea8a8465ccdb1d50752499
-  CJBaseUtil: 4754fa329c92354a93807413572264a25f6192c8
+  CJBaseUtil: 1bbf8d5f831dc12ae4bb06c8b5326bd39f3522e1
   CJComplexUIKit: 51c4a99d97c7ff32397b56fc63b80b655a5a7a5f
   CJFile: 6c1e6d55b3b94e8afbaa9f413f131301d15fdc48
   CJFoundation: 2c27b7ad85ec0cc5ac24aa112867971e01ae3ea3

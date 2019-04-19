@@ -8,6 +8,7 @@
 
 #import "ImageHomeViewController.h"
 
+#import "ImageGetterViewController.h"
 #import "ImageChangeColorViewController.h"
 #import "ImageRotateViewController.h"
 #import "ImageSizeViewController.h"
@@ -30,6 +31,12 @@
     {
         CJSectionDataModel *sectionDataModel = [[CJSectionDataModel alloc] init];
         sectionDataModel.theme = @"UIImage相关";
+        {
+            CJModuleModel *imageChangeColorModule = [[CJModuleModel alloc] init];
+            imageChangeColorModule.title = @"UIImage(图片获取)";
+            imageChangeColorModule.classEntry = [ImageGetterViewController class];
+            [sectionDataModel.values addObject:imageChangeColorModule];
+        }
         {
             CJModuleModel *imageChangeColorModule = [[CJModuleModel alloc] init];
             imageChangeColorModule.title = @"UIImage(改变颜色)";

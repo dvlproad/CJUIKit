@@ -59,6 +59,7 @@
 		7850B71220937E85008F4A21 /* WelcomePopupView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7850B70B20937E85008F4A21 /* WelcomePopupView.xib */; };
 		7850B71320937E85008F4A21 /* WelcomeViewToPop.m in Sources */ = {isa = PBXBuildFile; fileRef = 7850B70C20937E85008F4A21 /* WelcomeViewToPop.m */; };
 		7850B71420937E85008F4A21 /* WelcomePopupView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7850B71020937E85008F4A21 /* WelcomePopupView.m */; };
+		78514134226854CC0023F0C0 /* ImageGetterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78514133226854CC0023F0C0 /* ImageGetterViewController.m */; };
 		7852D9DA216EFFBE00E50A39 /* LockGateKeeperViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7852D9D9216EFFBE00E50A39 /* LockGateKeeperViewController.m */; };
 		7856F72921F4E790004AF751 /* TestDataUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 7856F72221F4E790004AF751 /* TestDataUtil.m */; };
 		7856F72A21F4E790004AF751 /* DemoInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 7856F72621F4E790004AF751 /* DemoInfo.m */; };
@@ -245,6 +246,7 @@
 		78E189A8217796DF00B8781A /* EdgeLayoutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78E189A7217796DF00B8781A /* EdgeLayoutViewController.m */; };
 		78E189AB21781BD000B8781A /* TranslucentLayoutTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78E189AA21781BD000B8781A /* TranslucentLayoutTableViewController.m */; };
 		78E189AE21781BE200B8781A /* EdgeLayoutTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78E189AD21781BE200B8781A /* EdgeLayoutTableViewController.m */; };
+		78E41D23226965B7000FAC1A /* UIViewController+CJToast.m in Sources */ = {isa = PBXBuildFile; fileRef = 78E41D22226965B7000FAC1A /* UIViewController+CJToast.m */; };
 		8008D7D220E5CF5700F98EF6 /* CallSystemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8008D7D020E5CF5700F98EF6 /* CallSystemViewController.m */; };
 		800E07E12016CCF500799B78 /* DataUtilViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 800E07D82016CCF500799B78 /* DataUtilViewController.m */; };
 		800E07E22016CCF500799B78 /* DataUtilViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 800E07DA2016CCF500799B78 /* DataUtilViewController.xib */; };
@@ -454,6 +456,8 @@
 		7850B70E20937E85008F4A21 /* CJPopupViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJPopupViewDelegate.h; sourceTree = "<group>"; };
 		7850B70F20937E85008F4A21 /* WelcomeViewToPop.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WelcomeViewToPop.h; sourceTree = "<group>"; };
 		7850B71020937E85008F4A21 /* WelcomePopupView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WelcomePopupView.m; sourceTree = "<group>"; };
+		78514132226854CC0023F0C0 /* ImageGetterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ImageGetterViewController.h; sourceTree = "<group>"; };
+		78514133226854CC0023F0C0 /* ImageGetterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ImageGetterViewController.m; sourceTree = "<group>"; };
 		7852D9D8216EFFBE00E50A39 /* LockGateKeeperViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LockGateKeeperViewController.h; sourceTree = "<group>"; };
 		7852D9D9216EFFBE00E50A39 /* LockGateKeeperViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LockGateKeeperViewController.m; sourceTree = "<group>"; };
 		7856F72221F4E790004AF751 /* TestDataUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestDataUtil.m; sourceTree = "<group>"; };
@@ -782,6 +786,8 @@
 		78E189AA21781BD000B8781A /* TranslucentLayoutTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TranslucentLayoutTableViewController.m; sourceTree = "<group>"; };
 		78E189AC21781BE200B8781A /* EdgeLayoutTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EdgeLayoutTableViewController.h; sourceTree = "<group>"; };
 		78E189AD21781BE200B8781A /* EdgeLayoutTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EdgeLayoutTableViewController.m; sourceTree = "<group>"; };
+		78E41D21226965B7000FAC1A /* UIViewController+CJToast.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIViewController+CJToast.h"; sourceTree = "<group>"; };
+		78E41D22226965B7000FAC1A /* UIViewController+CJToast.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+CJToast.m"; sourceTree = "<group>"; };
 		8008D7CF20E5CF5700F98EF6 /* CallSystemViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CallSystemViewController.h; sourceTree = "<group>"; };
 		8008D7D020E5CF5700F98EF6 /* CallSystemViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CallSystemViewController.m; sourceTree = "<group>"; };
 		800E07D82016CCF500799B78 /* DataUtilViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataUtilViewController.m; sourceTree = "<group>"; };
@@ -1556,6 +1562,8 @@
 				7856F7AD21F4F4C2004AF751 /* Resources */,
 				7856F7B421F4F4C2004AF751 /* CJToast.h */,
 				7856F7B521F4F4C2004AF751 /* CJToast.m */,
+				78E41D21226965B7000FAC1A /* UIViewController+CJToast.h */,
+				78E41D22226965B7000FAC1A /* UIViewController+CJToast.m */,
 			);
 			path = CJToast;
 			sourceTree = "<group>";
@@ -2403,6 +2411,8 @@
 			children = (
 				789C447621F07BBB00181144 /* ImageHomeViewController.h */,
 				789C447521F07BBB00181144 /* ImageHomeViewController.m */,
+				78514132226854CC0023F0C0 /* ImageGetterViewController.h */,
+				78514133226854CC0023F0C0 /* ImageGetterViewController.m */,
 				80FF8FDC1FC5649E00E437CF /* ImageChangeColorViewController.h */,
 				80FF8FDE1FC5649E00E437CF /* ImageChangeColorViewController.m */,
 				80FF8FDF1FC5649E00E437CF /* ImageChangeColorViewController.xib */,
@@ -3130,6 +3140,7 @@
 				78A0D043216B32D100EFAD67 /* BadgeButtonViewController.m in Sources */,
 				80FF91981FC5682B00E437CF /* AttributedStringViewController.m in Sources */,
 				78A4E1D52175EB93005FEADD /* NavigationBarNormalChangeBGViewController.m in Sources */,
+				78514134226854CC0023F0C0 /* ImageGetterViewController.m in Sources */,
 				787FDB6420500B1F008A46E3 /* TextViewController.m in Sources */,
 				780E46051E5DF87B00980127 /* main.m in Sources */,
 				7856F84421F4F4C3004AF751 /* UITextField+CJSelectedTextRange.m in Sources */,
@@ -3168,6 +3179,7 @@
 				788113C82199631A00D1630D /* PerfectSharedInstanceClass.m in Sources */,
 				7850B70720937C5A008F4A21 /* ShowExtendViewVC.m in Sources */,
 				7856F81221F4F4C3004AF751 /* UIView+CJAnimation.m in Sources */,
+				78E41D23226965B7000FAC1A /* UIViewController+CJToast.m in Sources */,
 				78E189A221778A4000B8781A /* AutoLayoutHomeViewController.m in Sources */,
 				78575C872257237900925842 /* TestTextFieldOffsetTableViewCell.m in Sources */,
 				80FF91531FC5668700E437CF /* PrivateSetting.m in Sources */,
