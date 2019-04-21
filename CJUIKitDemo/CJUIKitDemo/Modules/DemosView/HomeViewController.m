@@ -30,7 +30,7 @@
 
 //ScrollView
 #import "CodeScrollViewController1.h"
-#import "CodeScrollViewController2.h"
+#import "CodeScrollViewController3.h"
 #import "KeyboardAvoidingViewController.h"
 
 //UIWindow
@@ -284,8 +284,8 @@
         }
         {
             CJModuleModel *scrollViewModule = [[CJModuleModel alloc] init];
-            scrollViewModule.title = @"ScrollView(纯代码创建2)";
-            scrollViewModule.classEntry = [CodeScrollViewController2 class];
+            scrollViewModule.title = @"ScrollView(纯代码创建3)";
+            scrollViewModule.classEntry = [CodeScrollViewController3 class];
             [sectionDataModel.values addObject:scrollViewModule];
         }
         {

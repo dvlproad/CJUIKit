@@ -1,5 +1,5 @@
 //
-//  BBXPassengerEmptyViewController.h
+//  EmptyScrollViewController2.h
 //  CJUIKitDemo
 //
 //  Created by ciyouzen on 2018/4/26.
@@ -7,8 +7,8 @@
 //
 // 使用方法参考:[DZNEmptyDataSet（一个好用的空白页展示第三方）](https://blog.csdn.net/yst19910702/article/details/73547475)
 
-#import <UIKit/UIKit.h>
+#import "CJUIKitBaseScrollViewController.h"
 
-@interface BBXPassengerEmptyViewController : UIViewController
+@interface EmptyScrollViewController2 : CJUIKitBaseScrollViewController
 
 @end

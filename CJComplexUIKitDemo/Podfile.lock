@@ -44,55 +44,55 @@ PODS:
   - CJBaseHelper/NSOperationQueueCJHelper (0.1.4)
   - CJBaseHelper/UIViewControllerCJHelper (0.1.4)
   - CJBaseHelper/WebCJHelper (0.1.4)
-  - CJBaseUIKit (0.4.6):
-    - CJBaseUIKit/CJAlert (= 0.4.6)
-    - CJBaseUIKit/CJBaseTableViewCell (= 0.4.6)
-    - CJBaseUIKit/CJBaseTableViewHeaderFooterView (= 0.4.6)
-    - CJBaseUIKit/CJSlider (= 0.4.6)
-    - CJBaseUIKit/CJTextView (= 0.4.6)
-    - CJBaseUIKit/CJToast (= 0.4.6)
-    - CJBaseUIKit/UIButton (= 0.4.6)
-    - CJBaseUIKit/UIColor (= 0.4.6)
-    - CJBaseUIKit/UIImage (= 0.4.6)
-    - CJBaseUIKit/UINavigationBar (= 0.4.6)
-    - CJBaseUIKit/UIScrollView (= 0.4.6)
-    - CJBaseUIKit/UITextField (= 0.4.6)
-    - CJBaseUIKit/UIToolbar (= 0.4.6)
-    - CJBaseUIKit/UIView (= 0.4.6)
-    - CJBaseUIKit/UIViewController (= 0.4.6)
-    - CJBaseUIKit/UIWindow (= 0.4.6)
-  - CJBaseUIKit/CJAlert (0.4.6):
+  - CJBaseUIKit (0.4.7):
+    - CJBaseUIKit/CJAlert (= 0.4.7)
+    - CJBaseUIKit/CJBaseTableViewCell (= 0.4.7)
+    - CJBaseUIKit/CJBaseTableViewHeaderFooterView (= 0.4.7)
+    - CJBaseUIKit/CJSlider (= 0.4.7)
+    - CJBaseUIKit/CJTextView (= 0.4.7)
+    - CJBaseUIKit/CJToast (= 0.4.7)
+    - CJBaseUIKit/UIButton (= 0.4.7)
+    - CJBaseUIKit/UIColor (= 0.4.7)
+    - CJBaseUIKit/UIImage (= 0.4.7)
+    - CJBaseUIKit/UINavigationBar (= 0.4.7)
+    - CJBaseUIKit/UIScrollView (= 0.4.7)
+    - CJBaseUIKit/UITextField (= 0.4.7)
+    - CJBaseUIKit/UIToolbar (= 0.4.7)
+    - CJBaseUIKit/UIView (= 0.4.7)
+    - CJBaseUIKit/UIViewController (= 0.4.7)
+    - CJBaseUIKit/UIWindow (= 0.4.7)
+  - CJBaseUIKit/CJAlert (0.4.7):
     - CJBaseUIKit/UIView/CJPopupAction
     - Masonry
-  - CJBaseUIKit/CJBaseTableViewCell (0.4.6):
+  - CJBaseUIKit/CJBaseTableViewCell (0.4.7):
     - CJBaseUIKit/UIButton
-  - CJBaseUIKit/CJBaseTableViewHeaderFooterView (0.4.6)
-  - CJBaseUIKit/CJSlider (0.4.6)
-  - CJBaseUIKit/CJTextView (0.4.6)
-  - CJBaseUIKit/CJToast (0.4.6):
+  - CJBaseUIKit/CJBaseTableViewHeaderFooterView (0.4.7)
+  - CJBaseUIKit/CJSlider (0.4.7)
+  - CJBaseUIKit/CJTextView (0.4.7)
+  - CJBaseUIKit/CJToast (0.4.7):
     - MBProgressHUD
-  - CJBaseUIKit/UIButton (0.4.6)
-  - CJBaseUIKit/UIColor (0.4.6)
-  - CJBaseUIKit/UIImage (0.4.6)
-  - CJBaseUIKit/UINavigationBar (0.4.6)
-  - CJBaseUIKit/UIScrollView (0.4.6):
-    - CJBaseUIKit/UIScrollView/CJKeyboardAvoiding (= 0.4.6)
-  - CJBaseUIKit/UIScrollView/CJKeyboardAvoiding (0.4.6)
-  - CJBaseUIKit/UITextField (0.4.6):
+  - CJBaseUIKit/UIButton (0.4.7)
+  - CJBaseUIKit/UIColor (0.4.7)
+  - CJBaseUIKit/UIImage (0.4.7)
+  - CJBaseUIKit/UINavigationBar (0.4.7)
+  - CJBaseUIKit/UIScrollView (0.4.7):
+    - CJBaseUIKit/UIScrollView/CJKeyboardAvoiding (= 0.4.7)
+  - CJBaseUIKit/UIScrollView/CJKeyboardAvoiding (0.4.7)
+  - CJBaseUIKit/UITextField (0.4.7):
     - CJBaseUIKit/UIView/CJPopupAction
-  - CJBaseUIKit/UIToolbar (0.4.6):
+  - CJBaseUIKit/UIToolbar (0.4.7):
     - CJBaseUIKit/UIImage
-  - CJBaseUIKit/UIView (0.4.6):
-    - CJBaseUIKit/UIView/CJDragAction (= 0.4.6)
-    - CJBaseUIKit/UIView/CJGestureRecognizer (= 0.4.6)
-    - CJBaseUIKit/UIView/CJPopupAction (= 0.4.6)
-    - CJBaseUIKit/UIView/CJShakeAction (= 0.4.6)
-  - CJBaseUIKit/UIView/CJDragAction (0.4.6)
-  - CJBaseUIKit/UIView/CJGestureRecognizer (0.4.6)
-  - CJBaseUIKit/UIView/CJPopupAction (0.4.6)
-  - CJBaseUIKit/UIView/CJShakeAction (0.4.6)
-  - CJBaseUIKit/UIViewController (0.4.6)
-  - CJBaseUIKit/UIWindow (0.4.6)
+  - CJBaseUIKit/UIView (0.4.7):
+    - CJBaseUIKit/UIView/CJDragAction (= 0.4.7)
+    - CJBaseUIKit/UIView/CJGestureRecognizer (= 0.4.7)
+    - CJBaseUIKit/UIView/CJPopupAction (= 0.4.7)
+    - CJBaseUIKit/UIView/CJShakeAction (= 0.4.7)
+  - CJBaseUIKit/UIView/CJDragAction (0.4.7)
+  - CJBaseUIKit/UIView/CJGestureRecognizer (0.4.7)
+  - CJBaseUIKit/UIView/CJPopupAction (0.4.7)
+  - CJBaseUIKit/UIView/CJShakeAction (0.4.7)
+  - CJBaseUIKit/UIViewController (0.4.7)
+  - CJBaseUIKit/UIWindow (0.4.7)
   - CJBaseUtil (0.5.1):
     - CJBaseUtil/CJAppLastUtil (= 0.5.1)
     - CJBaseUtil/CJCallUtil (= 0.5.1)
@@ -262,7 +262,7 @@ SPEC CHECKSUMS:
   AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
   CJBaseEffectKit: 480165473bdc3d10fe004240b241cbedc69b50b0
   CJBaseHelper: dd715e18591da9df5d06364098300591220f0535
-  CJBaseUIKit: 91ac69f363c9346e083bce74d0ceadcd6a2c2f0a
+  CJBaseUIKit: f44c87745477410edddbfc0edfd3adc46352b0d6
   CJBaseUtil: 1bbf8d5f831dc12ae4bb06c8b5326bd39f3522e1
   CJComplexUIKit: 51c4a99d97c7ff32397b56fc63b80b655a5a7a5f
   CJFile: 6c1e6d55b3b94e8afbaa9f413f131301d15fdc48

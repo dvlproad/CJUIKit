@@ -67,6 +67,7 @@ Pod::Spec.new do |s|
 
     #多个依赖就写多行
     ss.dependency 'Masonry'
+    ss.dependency 'CJFoundation/NSString'
   end
 
   s.subspec 'CJScaleHeadView' do |ss|

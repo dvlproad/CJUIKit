@@ -143,23 +143,12 @@
  *  加载网络网页
  *
  *  @param requestUrl       网页地址
- *  @param networkEnable    是否有网
  */
-- (void)reloadNetworkWebWithUrl:(NSString *)requestUrl networkEnable:(BOOL)networkEnable {
-    //注：如果发现地址等都正常，但是页面还是显示无数据页，请检查info.plist中的App Transport Security Settings
-    if (networkEnable == NO) {
-        [SVProgressHUD show];
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-            [SVProgressHUD dismiss];
-            [self showEmptyViewWithFailureMessage:NSLocalizedString(@"请检查您的手机是否联网", nil)];
-        });
-        
-    } else {
-        //通过URL，创建Request并加载
-        NSURL *URL = [NSURL URLWithString:requestUrl];;
-        NSURLRequest *request = [NSURLRequest requestWithURL:URL];
-        [self.webView loadRequest:request];
-    }
+- (void)reloadNetworkWebWithUrl:(NSString *)requestUrl {
+    //通过URL，创建Request并加载
+    NSURL *URL = [NSURL URLWithString:requestUrl];;
+    NSURLRequest *request = [NSURLRequest requestWithURL:URL];
+    [self.webView loadRequest:request];
 }
 
 /**
@@ -186,13 +175,14 @@
     if (object == self.webView)
     {
         if ([keyPath isEqualToString:@"estimatedProgress"]) { //加载进度值
+            NSLog(@"estimatedProgress = %.2f", self.webView.estimatedProgress);
             [self.progressView setAlpha:1.0f];
             [self.progressView setProgress:self.webView.estimatedProgress animated:YES];
             if(self.webView.estimatedProgress >= 1.0f) {
                 [UIView animateWithDuration:0.5f delay:0.3f options:UIViewAnimationOptionCurveEaseOut animations:^{
-//                    [self.progressView setAlpha:0.0f];
+                    [self.progressView setAlpha:0.0f];
                 } completion:^(BOOL finished) {
-//                    [self.progressView setProgress:0.0f animated:NO];
+                    [self.progressView setProgress:0.0f animated:NO];
                 }];
             }
         } else if ([keyPath isEqualToString:@"title"]) { //网页title

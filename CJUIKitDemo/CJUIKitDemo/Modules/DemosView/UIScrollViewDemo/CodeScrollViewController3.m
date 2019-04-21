@@ -1,14 +1,14 @@
 //
-//  CodeScrollViewController2.m
+//  CodeScrollViewController3.m
 //  CJUIKitDemo
 //
 //  Created by ciyouzen on 2015/12/23.
 //  Copyright © 2015年 dvlproad. All rights reserved.
 //
 
-#import "CodeScrollViewController2.h"
+#import "CodeScrollViewController3.h"
 
-@interface CodeScrollViewController2 () {
+@interface CodeScrollViewController3 () {
     
 }
 @property (nonatomic, strong) UIScrollView *scrollView;
@@ -16,7 +16,7 @@
 
 @end
 
-@implementation CodeScrollViewController2
+@implementation CodeScrollViewController3
 
 - (void)viewDidLoad {
     [super viewDidLoad];

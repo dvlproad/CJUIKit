@@ -8,6 +8,8 @@
 
 #import "NetworkBaseWebViewController.h"
 #import "AppInfoManager.h"
+#import "DataEmptyViewFactory.h"
+#import "UIScrollView+CJAddFillView.h"
 
 @interface NetworkBaseWebViewController ()
 
@@ -18,10 +20,8 @@
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     
-    NSString *requestUrl = self.networkUrl;
-    
-    BOOL networkEnable = [AppInfoManager sharedInstance].networkEnable;
-    [self reloadNetworkWebWithUrl:requestUrl networkEnable:networkEnable];
+    [self reloadNetworkWebWithUrl:@"dd"];
+    //[self reloadNetworkWebWithUrl:self.networkUrl];
 }
 
 - (void)viewDidLoad {
@@ -33,40 +33,34 @@
     self.doneProgressColor = [UIColor blueColor];
     self.progressHeight = 10;
     
+    
     /* 设置空白页相关方法 */
-    // 显示空白页的方法
-    void (^showEmptyViewBlock)(NSString *message) = ^ (NSString *message) {
-        if (self.emptyView == nil) {
-            CJDataEmptyView *emptyView = [[CJDataEmptyView alloc] initWithFrame:CGRectZero];
-            emptyView.image = [UIImage imageNamed:@"currency_icon_network"];
-            emptyView.title = NSLocalizedString(@"数据加载失败，请重新加载...", nil);
-            emptyView.buttonTitle = NSLocalizedString(@"刷新", nil);
-            [self.view addSubview:emptyView];
-            [emptyView mas_makeConstraints:^(MASConstraintMaker *make) {
-                make.left.right.mas_equalTo(self.view);
-                make.top.bottom.mas_equalTo(self.view);
-            }];
-            
-            __weak typeof(self)weakSelf = self;
-            emptyView.reloadBlock = ^{
-                NSString *requestUrl = self.networkUrl;
-                BOOL networkEnable = [AppInfoManager sharedInstance].networkEnable;
-                [weakSelf reloadNetworkWebWithUrl:requestUrl
-                                    networkEnable:networkEnable];
-            };
-            
-            self.emptyView = emptyView;
-        }
-        
+    [self.view addSubview:self.emptyView];
+    [self.emptyView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.right.mas_equalTo(self.view);
+        make.top.bottom.mas_equalTo(self.view);
+    }];
+    
+    [self setupShowEmptyViewBlock:^(NSString *message) {
         self.emptyView.message = message;
         self.emptyView.hidden = NO;
-    };
-    
-    //隐藏空白页的方法
-    void (^hideEmptyViewBlock)(void) = ^ (void) {
+        
+    } hideEmptyViewBlock:^{
         self.emptyView.hidden = YES;
-    };
-    [self setupShowEmptyViewBlock:showEmptyViewBlock hideEmptyViewBlock:hideEmptyViewBlock];
+    }];
+}
+
+- (CJDataEmptyView *)emptyView {
+    if (_emptyView == nil) {
+        __weak typeof(self)weakSelf = self;
+        _emptyView = [DataEmptyViewFactory networkEmptyViewWithSuccess:^{
+            NSString *requestUrl = self.networkUrl;
+            [weakSelf reloadNetworkWebWithUrl:requestUrl];
+        }];
+        _emptyView.hidden = YES;
+    }
+    
+    return _emptyView;
 }
 
 - (void)didReceiveMemoryWarning {

@@ -30,7 +30,7 @@
 		78226A6D21A4012B002167F2 /* DemoAlert.m in Sources */ = {isa = PBXBuildFile; fileRef = 78226A6C21A4012B002167F2 /* DemoAlert.m */; };
 		78226A9021A42103002167F2 /* CJConvertUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 78226A8E21A42103002167F2 /* CJConvertUtil.m */; };
 		78293DED223D3615008FF82C /* DemoTagButtonFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 78293DEC223D3615008FF82C /* DemoTagButtonFactory.m */; };
-		78293F0A21FC2B9C00F70F43 /* CodeScrollViewController2.m in Sources */ = {isa = PBXBuildFile; fileRef = 78293F0121FC2B9C00F70F43 /* CodeScrollViewController2.m */; };
+		78293F0A21FC2B9C00F70F43 /* CodeScrollViewController3.m in Sources */ = {isa = PBXBuildFile; fileRef = 78293F0121FC2B9C00F70F43 /* CodeScrollViewController3.m */; };
 		78293F0D21FC2B9C00F70F43 /* KeyboardAvoidingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78293F0721FC2B9C00F70F43 /* KeyboardAvoidingViewController.m */; };
 		782ACC98223C0E220041B642 /* CodeScrollViewController1.m in Sources */ = {isa = PBXBuildFile; fileRef = 782ACC97223C0E220041B642 /* CodeScrollViewController1.m */; };
 		782F8770225AE80F001ACE76 /* cjTextField_clear@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 782F876E225AE80F001ACE76 /* cjTextField_clear@2x.png */; };
@@ -406,9 +406,9 @@
 		78226A8F21A42103002167F2 /* CJConvertUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJConvertUtil.h; sourceTree = "<group>"; };
 		78293DEB223D3615008FF82C /* DemoTagButtonFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DemoTagButtonFactory.h; sourceTree = "<group>"; };
 		78293DEC223D3615008FF82C /* DemoTagButtonFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DemoTagButtonFactory.m; sourceTree = "<group>"; };
-		78293F0121FC2B9C00F70F43 /* CodeScrollViewController2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CodeScrollViewController2.m; sourceTree = "<group>"; };
+		78293F0121FC2B9C00F70F43 /* CodeScrollViewController3.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CodeScrollViewController3.m; sourceTree = "<group>"; };
 		78293F0321FC2B9C00F70F43 /* KeyboardAvoidingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeyboardAvoidingViewController.h; sourceTree = "<group>"; };
-		78293F0421FC2B9C00F70F43 /* CodeScrollViewController2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CodeScrollViewController2.h; sourceTree = "<group>"; };
+		78293F0421FC2B9C00F70F43 /* CodeScrollViewController3.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CodeScrollViewController3.h; sourceTree = "<group>"; };
 		78293F0721FC2B9C00F70F43 /* KeyboardAvoidingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeyboardAvoidingViewController.m; sourceTree = "<group>"; };
 		782ACC96223C0E220041B642 /* CodeScrollViewController1.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CodeScrollViewController1.h; sourceTree = "<group>"; };
 		782ACC97223C0E220041B642 /* CodeScrollViewController1.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CodeScrollViewController1.m; sourceTree = "<group>"; };
@@ -1131,8 +1131,8 @@
 			children = (
 				782ACC96223C0E220041B642 /* CodeScrollViewController1.h */,
 				782ACC97223C0E220041B642 /* CodeScrollViewController1.m */,
-				78293F0421FC2B9C00F70F43 /* CodeScrollViewController2.h */,
-				78293F0121FC2B9C00F70F43 /* CodeScrollViewController2.m */,
+				78293F0421FC2B9C00F70F43 /* CodeScrollViewController3.h */,
+				78293F0121FC2B9C00F70F43 /* CodeScrollViewController3.m */,
 				78293F0321FC2B9C00F70F43 /* KeyboardAvoidingViewController.h */,
 				78293F0721FC2B9C00F70F43 /* KeyboardAvoidingViewController.m */,
 			);
@@ -3104,7 +3104,7 @@
 				7856F81621F4F4C3004AF751 /* CJTableViewHeaderFooterView.m in Sources */,
 				80FF91951FC5682B00E437CF /* FoundationHomeViewController.m in Sources */,
 				7856F80621F4F4C3004AF751 /* CJBadgeButton.m in Sources */,
-				78293F0A21FC2B9C00F70F43 /* CodeScrollViewController2.m in Sources */,
+				78293F0A21FC2B9C00F70F43 /* CodeScrollViewController3.m in Sources */,
 				7856F80B21F4F4C3004AF751 /* UISearchBar+CJAddInputAccessoryView.m in Sources */,
 				7856F80F21F4F4C3004AF751 /* UIView+CJShowExtendView.m in Sources */,
 				789C443C21EECEE800181144 /* CJAppVersionUtil.m in Sources */,

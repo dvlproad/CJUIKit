@@ -43,9 +43,8 @@
  *  加载网络网页
  *
  *  @param requestUrl       网页地址
- *  @param networkEnable    是否有网
  */
-- (void)reloadNetworkWebWithUrl:(NSString *)requestUrl networkEnable:(BOOL)networkEnable;
+- (void)reloadNetworkWebWithUrl:(NSString *)requestUrl;
 
 /**
  *  加载本地网页

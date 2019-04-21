@@ -15,7 +15,9 @@
 #import "PullScaleTopImageViewController.h"
 
 //EmptyView
-#import "BBXPassengerEmptyViewController.h"
+#import "EmptyScrollViewController1.h"
+#import "EmptyScrollViewController2.h"
+#import "ScrollContaintViewController.h"
 
 
 
@@ -53,9 +55,20 @@
         sectionDataModel.theme = @"EmptyView相关";
         {
             CJModuleModel *baseScrollViewModule = [[CJModuleModel alloc] init];
-            baseScrollViewModule.title = @"CJDataEmptyView";
-            baseScrollViewModule.classEntry = [BBXPassengerEmptyViewController class];
-            baseScrollViewModule.isCreateByXib = YES;
+            baseScrollViewModule.title = @"DataEmptyView";
+            baseScrollViewModule.classEntry = [ScrollContaintViewController class];
+            [sectionDataModel.values addObject:baseScrollViewModule];
+        }
+        {
+            CJModuleModel *baseScrollViewModule = [[CJModuleModel alloc] init];
+            baseScrollViewModule.title = @"CJDataEmptyView(DZNEmptyDataSet)";
+            baseScrollViewModule.classEntry = [EmptyScrollViewController1 class];
+            [sectionDataModel.values addObject:baseScrollViewModule];
+        }
+        {
+            CJModuleModel *baseScrollViewModule = [[CJModuleModel alloc] init];
+            baseScrollViewModule.title = @"CJDataEmptyView(UIScrollView+CJAddFillView)";
+            baseScrollViewModule.classEntry = [EmptyScrollViewController2 class];
             [sectionDataModel.values addObject:baseScrollViewModule];
         }
         

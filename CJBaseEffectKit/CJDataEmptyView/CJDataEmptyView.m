@@ -7,6 +7,7 @@
 //
 
 #import "CJDataEmptyView.h"
+#import <CJFoundation/NSString+CJTextSize.h>
 
 @interface CJDataEmptyView ()
 
@@ -35,7 +36,7 @@
     [self addSubview:imageView];
     [imageView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerX.mas_equalTo(self).mas_offset(0);
-        make.centerY.mas_equalTo(self).mas_offset(-100);
+        make.centerY.mas_equalTo(self).mas_offset(-150);
         make.width.mas_equalTo(self.imageSize.width);
         make.height.mas_equalTo(self.imageSize.height);
     }];
@@ -142,8 +143,10 @@
     self.messageLabel.text = message;
     
     if (message.length > 0) {
+        CGFloat maxWidth = CGRectGetWidth(self.frame)-20;
+        CGFloat textHeight = [message cjTextHeightWithFont:[UIFont systemFontOfSize:17] infiniteHeightAndMaxWidth:maxWidth];
         [self.button mas_updateConstraints:^(MASConstraintMaker *make) {
-            make.top.mas_equalTo(self.titleLabel.mas_bottom).mas_offset(31);
+            make.top.mas_equalTo(self.titleLabel.mas_bottom).mas_offset(textHeight);
         }];
     } else {
         [self.button mas_updateConstraints:^(MASConstraintMaker *make) {
@@ -175,7 +178,7 @@
 
 - (void)realoadAction {
     if (self.reloadBlock) {
-        self.reloadBlock();
+        self.reloadBlock(self);
     }
 }
 

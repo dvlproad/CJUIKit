@@ -27,6 +27,6 @@
 @property (nonatomic) CGSize buttonSize;
 @property (nonatomic, assign) BOOL showReloadButton;
 @property (nonatomic, copy) NSString *buttonTitle;
-@property (nonatomic, copy) void(^reloadBlock)(void);
+@property (nonatomic, copy) void(^reloadBlock)(CJDataEmptyView *m_emptyView);
 
 @end
