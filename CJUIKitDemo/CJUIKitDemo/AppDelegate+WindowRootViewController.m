@@ -27,6 +27,8 @@
     ③设置角标tabBarItem.badgeValue：如果没有设置图片，角标默认显示在左上角，设置了图片就会在图片的右上角显示
     */
     HomeViewController *homeViewController = [[HomeViewController alloc] init];
+    homeViewController.view.backgroundColor = [UIColor whiteColor];
+    homeViewController.navigationItem.title = NSLocalizedString(@"CJBaseUIKit首页", nil);
     homeViewController.tabBarItem.title = NSLocalizedString(@"CJBaseUIKit", nil);
     homeViewController.tabBarItem.image = [[UIImage imageNamed:@"icons8-home"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     //homeViewController. = @"10";
