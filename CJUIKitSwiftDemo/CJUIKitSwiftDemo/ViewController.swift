@@ -14,6 +14,8 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         self.view.backgroundColor = UIColor.white
+        
+        CJToast.shortShowMessage("么", in: self.view, withLabelTextColor: nil, bezelViewColor: nil, hideAfterDelay: 5)
     }
 
 

@@ -87,9 +87,9 @@ PODS:
   - MJRefresh (3.1.16)
   - OpenUDID (1.0.0)
   - PinYin4Objc (1.1.1)
-  - PureLayout (3.0.2)
   - SAMKeychain (1.5.3)
   - Shimmer (1.0.2)
+  - SnapKit (4.2.0)
   - SVProgressHUD (2.2.5)
   - WebViewJavascriptBridge (6.0.3)
   - WMPageController (2.5.2)
@@ -116,9 +116,9 @@ DEPENDENCIES:
   - MJRefresh (~> 3.1.12)
   - OpenUDID (~> 1.0.0)
   - PinYin4Objc (~> 1.1.1)
-  - PureLayout (~> 3.0.2)
   - SAMKeychain
   - Shimmer (~> 1.0.2)
+  - SnapKit
   - SVProgressHUD (~> 2.2.2)
   - WebViewJavascriptBridge (~> 6.0.2)
   - WMPageController
@@ -138,9 +138,9 @@ SPEC REPOS:
     - MJRefresh
     - OpenUDID
     - PinYin4Objc
-    - PureLayout
     - SAMKeychain
     - Shimmer
+    - SnapKit
     - SVProgressHUD
     - WebViewJavascriptBridge
     - WMPageController
@@ -179,14 +179,14 @@ SPEC CHECKSUMS:
   MJRefresh: 7798e16e53a5ef7f332dd05b27664db4e29530fd
   OpenUDID: e7cb6984c7304906ad20f3a36bf087b025896b6b
   PinYin4Objc: 3fa9673610368330e2dfb688b1d19a35c3930a78
-  PureLayout: 4d550abe49a94f24c2808b9b95db9131685fe4cd
   SAMKeychain: 483e1c9f32984d50ca961e26818a534283b4cd5c
   Shimmer: c5374be1c2b0c9e292fb05b339a513cf291cac86
+  SnapKit: fe8a619752f3f27075cc9a90244d75c6c3f27e2a
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
   WebViewJavascriptBridge: 7f5bc4d3581e672e8f32bd0f812d54bc69bb8e29
   WMPageController: 0c7624d2b48e4f1ab92371688cf6744ed701575d
   YYText: 5c461d709e24d55a182d1441c41dc639a18a4849
 
-PODFILE CHECKSUM: c73004cd19f74cb1f102b9dedb6c866a35c14fc1
+PODFILE CHECKSUM: 9e8f209578750d1e16471efc33cf08238947e621
 
 COCOAPODS: 1.6.1

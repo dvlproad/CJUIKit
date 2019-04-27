@@ -27,9 +27,9 @@ source 'https://gitee.com/dvlproad/dvlproadSpecs'  #这里要增加的是这条�
 
 inhibit_all_warnings! #inhibit_warnings参数能够有效的抑制CocoaPods引入的第三方代码库产生的warning。
 
-target 'CJUIKitSwiftDemo' do  
-    pod 'PureLayout', '~> 3.0.2'
+target 'CJUIKitSwiftDemo' do
     pod 'Masonry'
+    pod 'SnapKit'
 
     pod 'MJRefresh', '~> 3.1.12'
     pod 'MBProgressHUD' #CJToast需要使用

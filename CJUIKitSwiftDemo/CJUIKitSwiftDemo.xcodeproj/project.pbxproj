@@ -269,6 +269,7 @@
 		786BD04C22748B600085F619 /* ThirdPartIcon.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = ThirdPartIcon.xcassets; sourceTree = "<group>"; };
 		786BD05322748C9D0085F619 /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		786BD057227495FA0085F619 /* AppDelegate+WindowRootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppDelegate+WindowRootViewController.swift"; sourceTree = "<group>"; };
+		786BD05922749FAB0085F619 /* CJUIKit-Brdging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CJUIKit-Brdging-Header.h"; sourceTree = "<group>"; };
 		9B27ADF4089567F26A59BCB7 /* libPods-CJUIKitSwiftDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CJUIKitSwiftDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D6E567D7DEB0D75715E4299A /* Pods-CJUIKitSwiftDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CJUIKitSwiftDemo.release.xcconfig"; path = "Target Support Files/Pods-CJUIKitSwiftDemo/Pods-CJUIKitSwiftDemo.release.xcconfig"; sourceTree = "<group>"; };
 		E9F6A001CAE33435CA0C93F9 /* libPods-CJUIKitSwiftDemoTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CJUIKitSwiftDemoTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -636,11 +637,11 @@
 		786BCFAF22745B9C0085F619 /* CJToast */ = {
 			isa = PBXGroup;
 			children = (
-				786BCFB022745B9C0085F619 /* UIViewController+CJToast.m */,
-				786BCFB122745B9C0085F619 /* Resources */,
 				786BCFB822745B9C0085F619 /* CJToast.h */,
-				786BCFB922745B9C0085F619 /* UIViewController+CJToast.h */,
 				786BCFBA22745B9C0085F619 /* CJToast.m */,
+				786BCFB122745B9C0085F619 /* Resources */,
+				786BCFB922745B9C0085F619 /* UIViewController+CJToast.h */,
+				786BCFB022745B9C0085F619 /* UIViewController+CJToast.m */,
 			);
 			path = CJToast;
 			sourceTree = "<group>";
@@ -819,6 +820,7 @@
 			children = (
 				786BCF2C22745B060085F619 /* Info.plist */,
 				786BD05322748C9D0085F619 /* PrefixHeader.pch */,
+				786BD05922749FAB0085F619 /* CJUIKit-Brdging-Header.h */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -1345,6 +1347,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.dvlproad.CJUIKitSwiftDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "CJUIKitSwiftDemo/CJUIKit-Brdging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -1365,6 +1368,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.dvlproad.CJUIKitSwiftDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "CJUIKitSwiftDemo/CJUIKit-Brdging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
