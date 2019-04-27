@@ -38,8 +38,8 @@
 /* 完整的描述请参见文件头部 */
 + (void)shortShowMessage:(NSString *)message
                   inView:(UIView *)view
-      withLabelTextColor:(UIColor *)labelTextColor
-          bezelViewColor:(UIColor *)bezelViewColor
+      withLabelTextColor:(UIColor * _Nullable)labelTextColor
+          bezelViewColor:(UIColor * _Nullable)bezelViewColor
           hideAfterDelay:(NSTimeInterval)delay
 {
     if (message.length == 0) {
@@ -150,7 +150,7 @@
 #pragma mark - Text And 菊花
 /* 完整的描述请参见文件头部 */
 + (MBProgressHUD *)createChrysanthemumHUDWithMessage:(NSString *)message
-                                              toView:(UIView *)view
+                                              toView:(UIView * _Nullable)view
 {
     if (view == nil) {
         view = [UIApplication sharedApplication].keyWindow;
@@ -168,6 +168,35 @@
     
     return hud;
 }
+
+/**
+ *  exec operation With HUD
+ *
+ *  @param startProgressMessage startProgressMessage
+ *  @param endProgressMessage   endProgressMessage
+ *  @param operationHandle      operationHandle
+ */
++ (void)execOperationWithStartMessage:(NSString *)startProgressMessage
+                           endMessage:(NSString *)endProgressMessage
+                      operationHandle:(void (^ _Nullable)(void))operationHandle
+{
+    UIView *hudAddedToView = [UIApplication sharedApplication].keyWindow;
+    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:hudAddedToView animated:YES];
+    hud.backgroundView.style = MBProgressHUDBackgroundStyleSolidColor;
+    hud.backgroundView.color = [UIColor colorWithWhite:0.f alpha:0.1f];
+    hud.contentColor = [UIColor colorWithRed:0.f green:0.6f blue:0.7f alpha:1.f];
+    
+    hud.label.text = startProgressMessage;
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        !operationHandle ?: operationHandle();
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            hud.label.text = endProgressMessage;
+            [hud hideAnimated:YES afterDelay:0.7];
+        });
+    });
+}
+
 
 ///* 完整的描述请参见文件头部 */
 //+ (MBProgressHUD *)createChrysanthemumHUDWithRightMessage:(NSString *)message toView:(UIView *)view

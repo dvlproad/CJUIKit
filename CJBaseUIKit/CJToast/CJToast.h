@@ -9,6 +9,8 @@
 #import <Foundation/Foundation.h>
 #import <MBProgressHUD/MBProgressHUD.h>
 
+NS_ASSUME_NONNULL_BEGIN
+
 //提示语的实现是通过给MBProgressHUD写一个类目方法。
 
 @interface CJToast : NSObject
@@ -19,7 +21,7 @@
  *
  *  @param message  要显示的信息
  */
-+ (void)shortShowMessage:(NSString*)message;
++ (void)shortShowMessage:(NSString *)message;
 
 /**
  *  在window上短暂的显示文字(黑底白字，2秒后自动消失)
@@ -56,8 +58,8 @@
  */
 + (void)shortShowMessage:(NSString *)message
                   inView:(UIView *)view
-      withLabelTextColor:(UIColor *)labelTextColor
-          bezelViewColor:(UIColor *)bezelViewColor
+      withLabelTextColor:(UIColor * _Nullable)labelTextColor
+          bezelViewColor:(UIColor * _Nullable)bezelViewColor
           hideAfterDelay:(NSTimeInterval)delay;
 
 
@@ -80,7 +82,18 @@
  *  @param message                  要显示的文字(可以为nil)
  *  @param view                     要显示在的视图
  */
-+ (MBProgressHUD *)createChrysanthemumHUDWithMessage:(NSString *)message toView:(UIView *)view;
++ (MBProgressHUD *)createChrysanthemumHUDWithMessage:(NSString *)message toView:(UIView * _Nullable)view;
+
+/**
+ *  exec operation With HUD
+ *
+ *  @param startProgressMessage startProgressMessage
+ *  @param endProgressMessage   endProgressMessage
+ *  @param operationHandle      operationHandle
+ */
++ (void)execOperationWithStartMessage:(NSString *)startProgressMessage
+                           endMessage:(NSString *)endProgressMessage
+                      operationHandle:(void (^ _Nullable)(void))operationHandle;
 
 ///**
 // *  TODO:创建一个显示菊花和信息的左右结构HUD(实际一般不用此方法,而是直接写如CJTotalDemo中 AppDelegate+DefaultSetting.h 的数据库初始化)
@@ -96,3 +109,5 @@
 + (BOOL)hideHUDForView:(UIView *)view animated:(BOOL)animated;
 
 @end
+
+NS_ASSUME_NONNULL_END
