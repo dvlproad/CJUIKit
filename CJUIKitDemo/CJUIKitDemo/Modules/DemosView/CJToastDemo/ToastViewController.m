@@ -122,14 +122,14 @@
             toastModule.title = @"菊花显示3（MBProgressHUD）--封装好的";
             toastModule.actionBlock = ^{
                 [self cj_showChrysanthemumHUDWithMessage:nil animated:YES];
-//                dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-//                    [self cj_updateChrysanthemumHUDWithMessage:@"上传第一张照片成功"];
-//                    
-//                    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-//                        [self cj_updateChrysanthemumHUDWithMessage:@"恭喜，上传完成！"];
-//                        [self cj_hideChrysanthemumHUDWithAnimated:YES afterDelay:1];
-//                    });
-//                });
+                dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                    [self cj_updateChrysanthemumHUDWithMessage:@"上传第一张照片成功"];
+                    
+                    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                        [self cj_updateChrysanthemumHUDWithMessage:@"恭喜，上传完成！"];
+                        [self cj_hideChrysanthemumHUDWithAnimated:YES afterDelay:1];
+                    });
+                });
             };
             [sectionDataModel.values addObject:toastModule];
         }
