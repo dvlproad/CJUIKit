@@ -2434,23 +2434,23 @@
 		80FF8FE21FC5649E00E437CF /* UINavigationBarDemo */ = {
 			isa = PBXGroup;
 			children = (
-				78E18950217778D900B8781A /* NavigationBarHomeViewController.h */,
-				78E18951217778D900B8781A /* NavigationBarHomeViewController.m */,
+				7868277A21AF01B800FCCDE5 /* bgCar@2x.jpg */,
+				78A4E1D22175EB7A005FEADD /* ChangeNavigaitionBarBG */,
 				80FF8FEE1FC5649E00E437CF /* EasyScaleHeadView.h */,
 				80FF8FE81FC5649E00E437CF /* EasyScaleHeadView.m */,
 				80FF8FE41FC5649E00E437CF /* EasyScaleHeadView.xib */,
 				80FF8FE31FC5649E00E437CF /* NavigationBarBaseViewController.h */,
 				80FF8FEA1FC5649E00E437CF /* NavigationBarBaseViewController.m */,
-				80FF8FEF1FC5649E00E437CF /* TableHeaderView.xib */,
-				7868277A21AF01B800FCCDE5 /* bgCar@2x.jpg */,
-				78A4E1D22175EB7A005FEADD /* ChangeNavigaitionBarBG */,
 				80FF8FE91FC5649E00E437CF /* NavigationBarChangePositonViewController.h */,
 				80FF8FED1FC5649E00E437CF /* NavigationBarChangePositonViewController.m */,
+				78E18950217778D900B8781A /* NavigationBarHomeViewController.h */,
+				78E18951217778D900B8781A /* NavigationBarHomeViewController.m */,
 				80238A5E2111966B008EB1D5 /* NavigationBarRemoveUnderlineViewController.h */,
 				80238A5F2111966B008EB1D5 /* NavigationBarRemoveUnderlineViewController.m */,
 				80FF8FEC1FC5649E00E437CF /* NavigationBarViewController.h */,
 				80FF8FE61FC5649E00E437CF /* NavigationBarViewController.m */,
 				80FF8FE51FC5649E00E437CF /* NavigationBarViewController.xib */,
+				80FF8FEF1FC5649E00E437CF /* TableHeaderView.xib */,
 			);
 			path = UINavigationBarDemo;
 			sourceTree = "<group>";

@@ -9,9 +9,17 @@
 #ifndef PrefixHeader_pch
 #define PrefixHeader_pch
 
-#define CJDEBUG
 #define TEST_CJBASEUIKIT_POD
 //#define TEST_CJBASEHELPER_POD
+#define CJDEBUG
+#import <Masonry/Masonry.h>
+
+#ifdef TEST_CJBASEUIKIT_POD
+#import "UIColor+CJHex.h"
+#else
+#import <CJBaseUIKit/UIColor+CJHex.h>
+#endif
+
 
 // Include any system framework and library headers here that should be included in all compilation units.
 // You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
