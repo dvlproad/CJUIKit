@@ -92,6 +92,8 @@
 		786BD058227495FA0085F619 /* AppDelegate+WindowRootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 786BD057227495FA0085F619 /* AppDelegate+WindowRootViewController.swift */; };
 		78B315A9227EBFF300F97DA4 /* CJUIKitBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78B3158E227EBFF300F97DA4 /* CJUIKitBaseViewController.swift */; };
 		78B315AD227EC07500F97DA4 /* UIColor+CJHex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78B315AC227EC07500F97DA4 /* UIColor+CJHex.swift */; };
+		78B3164A227EDBE700F97DA4 /* CJUIKitBaseHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78B31649227EDBE700F97DA4 /* CJUIKitBaseHomeViewController.swift */; };
+		78B3164D227EF82300F97DA4 /* CJUIKitBaseScrollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78B3164B227EF82300F97DA4 /* CJUIKitBaseScrollViewController.swift */; };
 		78B85DDD227899B50074B843 /* CJToast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78B85DDC227899B40074B843 /* CJToast.swift */; };
 		FFAB06F460BA5C015026873A /* libPods-CJUIKitSwiftDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B27ADF4089567F26A59BCB7 /* libPods-CJUIKitSwiftDemo.a */; };
 /* End PBXBuildFile section */
@@ -269,6 +271,8 @@
 		78B3158E227EBFF300F97DA4 /* CJUIKitBaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CJUIKitBaseViewController.swift; sourceTree = "<group>"; };
 		78B31591227EBFF300F97DA4 /* DemoConstant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DemoConstant.h; sourceTree = "<group>"; };
 		78B315AC227EC07500F97DA4 /* UIColor+CJHex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+CJHex.swift"; sourceTree = "<group>"; };
+		78B31649227EDBE700F97DA4 /* CJUIKitBaseHomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CJUIKitBaseHomeViewController.swift; sourceTree = "<group>"; };
+		78B3164B227EF82300F97DA4 /* CJUIKitBaseScrollViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CJUIKitBaseScrollViewController.swift; sourceTree = "<group>"; };
 		78B85DDC227899B40074B843 /* CJToast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CJToast.swift; sourceTree = "<group>"; };
 		9B27ADF4089567F26A59BCB7 /* libPods-CJUIKitSwiftDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CJUIKitSwiftDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D6E567D7DEB0D75715E4299A /* Pods-CJUIKitSwiftDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CJUIKitSwiftDemo.release.xcconfig"; path = "Target Support Files/Pods-CJUIKitSwiftDemo/Pods-CJUIKitSwiftDemo.release.xcconfig"; sourceTree = "<group>"; };
@@ -518,12 +522,12 @@
 		786BCF7F22745B9B0085F619 /* UIToolbar */ = {
 			isa = PBXGroup;
 			children = (
-				786BCF8022745B9B0085F619 /* UITextField+CJAddInputAccessoryView.h */,
-				786BCF8122745B9B0085F619 /* UISearchBar+CJAddInputAccessoryView.m */,
-				786BCF8222745B9B0085F619 /* CJDefaultToolbar.m */,
-				786BCF8322745B9B0085F619 /* UITextField+CJAddInputAccessoryView.m */,
-				786BCF8422745B9B0085F619 /* UISearchBar+CJAddInputAccessoryView.h */,
 				786BCF8522745B9B0085F619 /* CJDefaultToolbar.h */,
+				786BCF8222745B9B0085F619 /* CJDefaultToolbar.m */,
+				786BCF8422745B9B0085F619 /* UISearchBar+CJAddInputAccessoryView.h */,
+				786BCF8122745B9B0085F619 /* UISearchBar+CJAddInputAccessoryView.m */,
+				786BCF8022745B9B0085F619 /* UITextField+CJAddInputAccessoryView.h */,
+				786BCF8322745B9B0085F619 /* UITextField+CJAddInputAccessoryView.m */,
 			);
 			path = UIToolbar;
 			sourceTree = "<group>";
@@ -531,14 +535,14 @@
 		786BCF8622745B9B0085F619 /* UIView */ = {
 			isa = PBXGroup;
 			children = (
-				786BCF8722745B9B0085F619 /* CJPopupAction */,
-				786BCF8C22745B9B0085F619 /* CJDragAction */,
-				786BCF9122745B9B0085F619 /* UIView+CJExclusiveTouch.h */,
 				786BCF9222745B9B0085F619 /* CJAnimation */,
-				786BCF9522745B9B0085F619 /* UIViewCJCategory.h */,
+				786BCF8C22745B9B0085F619 /* CJDragAction */,
 				786BCF9622745B9B0085F619 /* CJGestureRecognizer */,
-				786BCF9922745B9B0085F619 /* UIView+CJExclusiveTouch.m */,
+				786BCF8722745B9B0085F619 /* CJPopupAction */,
 				786BCF9A22745B9B0085F619 /* CJShakeAction */,
+				786BCF9122745B9B0085F619 /* UIView+CJExclusiveTouch.h */,
+				786BCF9922745B9B0085F619 /* UIView+CJExclusiveTouch.m */,
+				786BCF9522745B9B0085F619 /* UIViewCJCategory.h */,
 			);
 			path = UIView;
 			sourceTree = "<group>";
@@ -604,10 +608,10 @@
 		786BCFA022745B9B0085F619 /* CJAlert */ = {
 			isa = PBXGroup;
 			children = (
-				786BCFA122745B9B0085F619 /* CJAlertView.h */,
 				786BCFA222745B9B0085F619 /* CJAlert.h */,
-				786BCFA322745B9B0085F619 /* CJAlertView.m */,
 				786BCFA422745B9B0085F619 /* CJAlert.m */,
+				786BCFA122745B9B0085F619 /* CJAlertView.h */,
+				786BCFA322745B9B0085F619 /* CJAlertView.m */,
 			);
 			path = CJAlert;
 			sourceTree = "<group>";
@@ -847,7 +851,9 @@
 		78B3158A227EBFF300F97DA4 /* Base */ = {
 			isa = PBXGroup;
 			children = (
+				78B31649227EDBE700F97DA4 /* CJUIKitBaseHomeViewController.swift */,
 				78B3158E227EBFF300F97DA4 /* CJUIKitBaseViewController.swift */,
+				78B3164B227EF82300F97DA4 /* CJUIKitBaseScrollViewController.swift */,
 				78B31591227EBFF300F97DA4 /* DemoConstant.h */,
 			);
 			path = Base;
@@ -1165,6 +1171,7 @@
 				786BD00322745B9C0085F619 /* UIImage+CJTransformSize.m in Sources */,
 				786BD02222745B9C0085F619 /* CJBaseTableViewCell.m in Sources */,
 				786BD01722745B9C0085F619 /* UIView+CJGestureRecognizer.m in Sources */,
+				78B3164A227EDBE700F97DA4 /* CJUIKitBaseHomeViewController.swift in Sources */,
 				786BD03D22745B9C0085F619 /* CJSwitchView.m in Sources */,
 				786BD01422745B9C0085F619 /* UIView+CJKeepBounds.m in Sources */,
 				786BD04222745B9C0085F619 /* CJTextField.m in Sources */,
@@ -1174,6 +1181,7 @@
 				786BD01622745B9C0085F619 /* UIView+CJAnimation.m in Sources */,
 				786BD03C22745B9C0085F619 /* CJAdsorbModel.m in Sources */,
 				786BD00D22745B9C0085F619 /* UIButton+CJUpDownStructure.m in Sources */,
+				78B3164D227EF82300F97DA4 /* CJUIKitBaseScrollViewController.swift in Sources */,
 				786BD02D22745B9C0085F619 /* UIViewController+CJCustomBackBarButtonItem.m in Sources */,
 				786BD04322745B9C0085F619 /* CJExtraTextTextField.m in Sources */,
 				786BD04422745B9C0085F619 /* UITextField+CJPadding.m in Sources */,

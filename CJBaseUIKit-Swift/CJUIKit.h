@@ -9,8 +9,5 @@
 #ifndef CJUIKit_h
 #define CJUIKit_h
 
-//UIColor
-#import "UIColor+CJHex.h"
-
 
 #endif /* CJUIKit_h */
