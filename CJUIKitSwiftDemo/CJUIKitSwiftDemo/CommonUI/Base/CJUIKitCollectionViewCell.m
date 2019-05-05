@@ -7,11 +7,7 @@
 //
 
 #import "CJUIKitCollectionViewCell.h"
-#ifdef TEST_CJBASEUIKIT_POD
-#import "UIColor+CJHex.h"
-#else
-#import <CJBaseUIKit/UIColor+CJHex.h>
-#endif
+
 
 @implementation CJUIKitCollectionViewCell
 

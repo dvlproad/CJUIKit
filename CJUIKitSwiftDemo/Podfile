@@ -27,6 +27,7 @@ source 'https://gitee.com/dvlproad/dvlproadSpecs'  #这里要增加的是这条�
 
 inhibit_all_warnings! #inhibit_warnings参数能够有效的抑制CocoaPods引入的第三方代码库产生的warning。
 
+# OC第三方库需要在桥街文件中引入，swift第三方库需要import model方式引入！桥街文件不能引入swift第三方库
 target 'CJUIKitSwiftDemo' do
     pod 'Masonry'
     pod 'SnapKit'

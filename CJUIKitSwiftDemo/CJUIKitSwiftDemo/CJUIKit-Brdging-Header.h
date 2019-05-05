@@ -16,9 +16,9 @@
 #import <MBProgressHUD/MBProgressHUD.h>
 
 #ifdef TEST_CJBASEUIKIT_POD
-#import "UIColor+CJHex.h"
+
 #else
-#import <CJBaseUIKit/UIColor+CJHex.h>
+
 #endif
 
 //#import "UIViewController+DemoProgressHUD.h"
