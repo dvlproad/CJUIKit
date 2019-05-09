@@ -16,6 +16,9 @@ class ViewController: UIViewController {
         self.view.backgroundColor = UIColor.white
         
         ViewController.run()
+        
+        var btnArr: [UIButton] = []
+    
     }
     
     class func run() {

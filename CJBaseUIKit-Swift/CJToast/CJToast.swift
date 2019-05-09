@@ -16,7 +16,7 @@ class CJToast: NSObject {
      *
      *  @param message  要显示的信息
      */
-    class func shortShowMessage(_ message: NSString?) {
+    class func shortShowMessage(_ message: String?) {
 //        let appDelegate = UIApplication.shared.delegate as! AppDelegate
 //        let window: UIView = appDelegate.window!
         let keyWindow: UIView! = UIApplication.shared.keyWindow
@@ -30,7 +30,7 @@ class CJToast: NSObject {
      *  @param message  要显示的信息
      */
     
-    class func shortShowWhiteMessage(_ message: NSString?) {
+    class func shortShowWhiteMessage(_ message: String?) {
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         let window: UIView = appDelegate.window!
         CJToast.shortShowWhiteMessage(message, in: window)
@@ -42,7 +42,7 @@ class CJToast: NSObject {
      *  @param message  要显示的信息
      *  @param view     信息要显示的位置
      */
-    class func shortShowMessage(_ message: NSString?, in view: UIView?) {
+    class func shortShowMessage(_ message: String?, in view: UIView?) {
         self.shortShowMessage(message, in: view!, withLabelTextColor: nil, bezelViewColor: nil, hideAfterDelay: 2.0)
     }
     
@@ -52,7 +52,7 @@ class CJToast: NSObject {
      *  @param message  要显示的信息
      *  @param view     信息要显示的位置
      */
-    class func shortShowWhiteMessage(_ message: NSString?, in view: UIView?) {
+    class func shortShowWhiteMessage(_ message: String?, in view: UIView?) {
         self.shortShowMessage(message, in: view!, withLabelTextColor: UIColor.white, bezelViewColor: UIColor.black, hideAfterDelay: 2.0)
     }
     
@@ -66,8 +66,8 @@ class CJToast: NSObject {
      *  @param bezelViewColor   文字所在背景框的颜色
      *  @param delay            多少秒后自动消失
      */
-    class func shortShowMessage(_ message: NSString?, in view: UIView, withLabelTextColor labelTextColor: UIColor?, bezelViewColor: UIColor?, hideAfterDelay delay: TimeInterval) {
-        if (message?.length == 0) {
+    class func shortShowMessage(_ message: String?, in view: UIView, withLabelTextColor labelTextColor: UIColor?, bezelViewColor: UIColor?, hideAfterDelay delay: TimeInterval) {
+        if (message?.count == 0) {
             print("toast message length == 0")
             return
         }
@@ -234,13 +234,13 @@ class CJToast: NSObject {
     
     // MARK: - Private
     //以下获取textSize方法取自NSString+CJTextSize
-    class func getTextSize(from string: NSString, with font: UIFont, maxSize: CGSize, lineBreakMode: NSLineBreakMode, paragraphStyle: NSMutableParagraphStyle?) -> CGSize {
+    class func getTextSize(from string: String, with font: UIFont, maxSize: CGSize, lineBreakMode: NSLineBreakMode, paragraphStyle: NSMutableParagraphStyle?) -> CGSize {
         var paragraphStyle = paragraphStyle
-        if (string.length == 0) {
+        if (string.count == 0) {
             return CGSize.zero
         }
-
-    
+        
+        
         if paragraphStyle == nil {
             paragraphStyle = NSParagraphStyle.default as? NSMutableParagraphStyle
             paragraphStyle?.lineBreakMode = lineBreakMode

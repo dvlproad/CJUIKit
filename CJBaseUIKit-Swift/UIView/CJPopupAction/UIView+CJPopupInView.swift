@@ -283,8 +283,8 @@ extension UIView {
     func cj_popupInCenterWindow(animationType: CJAnimationType,
                                 popupViewSize: CGSize,
                                 blankBGColor: UIColor,
-                                showPopupViewCompleteBlock: @escaping CJShowPopupViewCompleteBlock,
-                                tapBlankViewCompleteBlock: @escaping CJTapBlankViewCompleteBlock)
+                                showPopupViewCompleteBlock: CJShowPopupViewCompleteBlock!,
+                                tapBlankViewCompleteBlock: CJTapBlankViewCompleteBlock!)
     {
         CJPopupMainThreadAssert()
         let keyWindow: UIWindow = UIApplication.shared.keyWindow!

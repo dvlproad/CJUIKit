@@ -97,6 +97,11 @@ extension UIView {
                                  tapBlankViewCompleteBlock: tapBlankViewCompleteBlock)
     }
     
+    /**
+     *  隐藏下拉视图
+     *
+     *  @param animated 是否动画
+     */
     func cj_hideExtendView(animated: Bool) {
         if animated == true {
             self.cjExtendView.cj_hidePopupView(.normal)
