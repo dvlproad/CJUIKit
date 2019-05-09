@@ -33,8 +33,8 @@
 		786BD00F22745B9C0085F619 /* UISearchBar+CJAddInputAccessoryView.m in Sources */ = {isa = PBXBuildFile; fileRef = 786BCF8122745B9B0085F619 /* UISearchBar+CJAddInputAccessoryView.m */; };
 		786BD01022745B9C0085F619 /* CJDefaultToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = 786BCF8222745B9B0085F619 /* CJDefaultToolbar.m */; };
 		786BD01122745B9C0085F619 /* UITextField+CJAddInputAccessoryView.m in Sources */ = {isa = PBXBuildFile; fileRef = 786BCF8322745B9B0085F619 /* UITextField+CJAddInputAccessoryView.m */; };
-		786BD01222745B9C0085F619 /* UIView+CJPopupInView.m in Sources */ = {isa = PBXBuildFile; fileRef = 786BCF8922745B9B0085F619 /* UIView+CJPopupInView.m */; };
-		786BD01322745B9C0085F619 /* UIView+CJShowExtendView.m in Sources */ = {isa = PBXBuildFile; fileRef = 786BCF8A22745B9B0085F619 /* UIView+CJShowExtendView.m */; };
+		786BD01222745B9C0085F619 /* UIView+CJPopupInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 786BCF8922745B9B0085F619 /* UIView+CJPopupInView.swift */; };
+		786BD01322745B9C0085F619 /* UIView+CJShowExtendView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 786BCF8A22745B9B0085F619 /* UIView+CJShowExtendView.swift */; };
 		786BD01422745B9C0085F619 /* UIView+CJKeepBounds.m in Sources */ = {isa = PBXBuildFile; fileRef = 786BCF8E22745B9B0085F619 /* UIView+CJKeepBounds.m */; };
 		786BD01522745B9C0085F619 /* UIView+CJDragAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 786BCF8F22745B9B0085F619 /* UIView+CJDragAction.m */; };
 		786BD01622745B9C0085F619 /* UIView+CJAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 786BCF9422745B9B0085F619 /* UIView+CJAnimation.m */; };
@@ -42,8 +42,6 @@
 		786BD01822745B9C0085F619 /* UIView+CJExclusiveTouch.m in Sources */ = {isa = PBXBuildFile; fileRef = 786BCF9922745B9B0085F619 /* UIView+CJExclusiveTouch.m */; };
 		786BD01922745B9C0085F619 /* UIView+CJShake.m in Sources */ = {isa = PBXBuildFile; fileRef = 786BCF9B22745B9B0085F619 /* UIView+CJShake.m */; };
 		786BD01A22745B9C0085F619 /* CJTableViewHeaderFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 786BCF9F22745B9B0085F619 /* CJTableViewHeaderFooterView.m */; };
-		786BD01B22745B9C0085F619 /* CJAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 786BCFA322745B9B0085F619 /* CJAlertView.m */; };
-		786BD01C22745B9C0085F619 /* CJAlert.m in Sources */ = {isa = PBXBuildFile; fileRef = 786BCFA422745B9B0085F619 /* CJAlert.m */; };
 		786BD01D22745B9C0085F619 /* cjCheckBoxGreenNO@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 786BCFA822745B9B0085F619 /* cjCheckBoxGreenNO@2x.png */; };
 		786BD01E22745B9C0085F619 /* cjCheckBoxGreen2YES.png in Resources */ = {isa = PBXBuildFile; fileRef = 786BCFA922745B9C0085F619 /* cjCheckBoxGreen2YES.png */; };
 		786BD01F22745B9C0085F619 /* cjCheckBoxOrangeYES@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 786BCFAA22745B9C0085F619 /* cjCheckBoxOrangeYES@2x.png */; };
@@ -77,12 +75,6 @@
 		786BD03C22745B9C0085F619 /* CJAdsorbModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 786BCFE322745B9C0085F619 /* CJAdsorbModel.m */; };
 		786BD03D22745B9C0085F619 /* CJSwitchView.m in Sources */ = {isa = PBXBuildFile; fileRef = 786BCFE722745B9C0085F619 /* CJSwitchView.m */; };
 		786BD03E22745B9C0085F619 /* CJTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 786BCFEA22745B9C0085F619 /* CJTextView.m */; };
-		786BD04022745B9C0085F619 /* UITextField+CJTextChangeBlock.m in Sources */ = {isa = PBXBuildFile; fileRef = 786BCFF222745B9C0085F619 /* UITextField+CJTextChangeBlock.m */; };
-		786BD04122745B9C0085F619 /* UITextField+CJForbidKeyboard.m in Sources */ = {isa = PBXBuildFile; fileRef = 786BCFF422745B9C0085F619 /* UITextField+CJForbidKeyboard.m */; };
-		786BD04222745B9C0085F619 /* CJTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 786BCFF622745B9C0085F619 /* CJTextField.m */; };
-		786BD04322745B9C0085F619 /* CJExtraTextTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 786BCFF722745B9C0085F619 /* CJExtraTextTextField.m */; };
-		786BD04422745B9C0085F619 /* UITextField+CJPadding.m in Sources */ = {isa = PBXBuildFile; fileRef = 786BCFFA22745B9C0085F619 /* UITextField+CJPadding.m */; };
-		786BD04522745B9C0085F619 /* UITextField+CJSelectedTextRange.m in Sources */ = {isa = PBXBuildFile; fileRef = 786BCFFB22745B9C0085F619 /* UITextField+CJSelectedTextRange.m */; };
 		786BD04D22748B600085F619 /* AppCommon.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 786BD04822748B600085F619 /* AppCommon.xcassets */; };
 		786BD04E22748B600085F619 /* MainAsset.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 786BD04922748B600085F619 /* MainAsset.xcassets */; };
 		786BD04F22748B600085F619 /* AppAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 786BD04A22748B600085F619 /* AppAssets.xcassets */; };
@@ -170,9 +162,8 @@
 		786BCF8422745B9B0085F619 /* UISearchBar+CJAddInputAccessoryView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UISearchBar+CJAddInputAccessoryView.h"; sourceTree = "<group>"; };
 		786BCF8522745B9B0085F619 /* CJDefaultToolbar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJDefaultToolbar.h; sourceTree = "<group>"; };
 		786BCF8822745B9B0085F619 /* UIView+CJShowExtendView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+CJShowExtendView.h"; sourceTree = "<group>"; };
-		786BCF8922745B9B0085F619 /* UIView+CJPopupInView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+CJPopupInView.m"; sourceTree = "<group>"; };
-		786BCF8A22745B9B0085F619 /* UIView+CJShowExtendView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+CJShowExtendView.m"; sourceTree = "<group>"; };
-		786BCF8B22745B9B0085F619 /* UIView+CJPopupInView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+CJPopupInView.h"; sourceTree = "<group>"; };
+		786BCF8922745B9B0085F619 /* UIView+CJPopupInView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+CJPopupInView.swift"; sourceTree = "<group>"; };
+		786BCF8A22745B9B0085F619 /* UIView+CJShowExtendView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+CJShowExtendView.swift"; sourceTree = "<group>"; };
 		786BCF8D22745B9B0085F619 /* UIView+CJDragAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+CJDragAction.h"; sourceTree = "<group>"; };
 		786BCF8E22745B9B0085F619 /* UIView+CJKeepBounds.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+CJKeepBounds.m"; sourceTree = "<group>"; };
 		786BCF8F22745B9B0085F619 /* UIView+CJDragAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+CJDragAction.m"; sourceTree = "<group>"; };
@@ -180,7 +171,6 @@
 		786BCF9122745B9B0085F619 /* UIView+CJExclusiveTouch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+CJExclusiveTouch.h"; sourceTree = "<group>"; };
 		786BCF9322745B9B0085F619 /* UIView+CJAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+CJAnimation.h"; sourceTree = "<group>"; };
 		786BCF9422745B9B0085F619 /* UIView+CJAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+CJAnimation.m"; sourceTree = "<group>"; };
-		786BCF9522745B9B0085F619 /* UIViewCJCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIViewCJCategory.h; sourceTree = "<group>"; };
 		786BCF9722745B9B0085F619 /* UIView+CJGestureRecognizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+CJGestureRecognizer.h"; sourceTree = "<group>"; };
 		786BCF9822745B9B0085F619 /* UIView+CJGestureRecognizer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+CJGestureRecognizer.m"; sourceTree = "<group>"; };
 		786BCF9922745B9B0085F619 /* UIView+CJExclusiveTouch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+CJExclusiveTouch.m"; sourceTree = "<group>"; };
@@ -188,10 +178,6 @@
 		786BCF9C22745B9B0085F619 /* UIView+CJShake.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+CJShake.h"; sourceTree = "<group>"; };
 		786BCF9E22745B9B0085F619 /* CJTableViewHeaderFooterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJTableViewHeaderFooterView.h; sourceTree = "<group>"; };
 		786BCF9F22745B9B0085F619 /* CJTableViewHeaderFooterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJTableViewHeaderFooterView.m; sourceTree = "<group>"; };
-		786BCFA122745B9B0085F619 /* CJAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJAlertView.h; sourceTree = "<group>"; };
-		786BCFA222745B9B0085F619 /* CJAlert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJAlert.h; sourceTree = "<group>"; };
-		786BCFA322745B9B0085F619 /* CJAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJAlertView.m; sourceTree = "<group>"; };
-		786BCFA422745B9B0085F619 /* CJAlert.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJAlert.m; sourceTree = "<group>"; };
 		786BCFA522745B9B0085F619 /* CJUIKit-Swift.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CJUIKit-Swift.h"; sourceTree = "<group>"; };
 		786BCFA822745B9B0085F619 /* cjCheckBoxGreenNO@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cjCheckBoxGreenNO@2x.png"; sourceTree = "<group>"; };
 		786BCFA922745B9C0085F619 /* cjCheckBoxGreen2YES.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cjCheckBoxGreen2YES.png; sourceTree = "<group>"; };
@@ -244,19 +230,6 @@
 		786BCFE722745B9C0085F619 /* CJSwitchView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJSwitchView.m; sourceTree = "<group>"; };
 		786BCFE922745B9C0085F619 /* CJTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJTextView.h; sourceTree = "<group>"; };
 		786BCFEA22745B9C0085F619 /* CJTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJTextView.m; sourceTree = "<group>"; };
-		786BCFEF22745B9C0085F619 /* UITextField+CJPadding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextField+CJPadding.h"; sourceTree = "<group>"; };
-		786BCFF022745B9C0085F619 /* UITextField+CJForbidKeyboard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextField+CJForbidKeyboard.h"; sourceTree = "<group>"; };
-		786BCFF122745B9C0085F619 /* UITextFieldCJCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UITextFieldCJCategory.h; sourceTree = "<group>"; };
-		786BCFF222745B9C0085F619 /* UITextField+CJTextChangeBlock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextField+CJTextChangeBlock.m"; sourceTree = "<group>"; };
-		786BCFF322745B9C0085F619 /* UITextField+CJSelectedTextRange.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextField+CJSelectedTextRange.h"; sourceTree = "<group>"; };
-		786BCFF422745B9C0085F619 /* UITextField+CJForbidKeyboard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextField+CJForbidKeyboard.m"; sourceTree = "<group>"; };
-		786BCFF622745B9C0085F619 /* CJTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJTextField.m; sourceTree = "<group>"; };
-		786BCFF722745B9C0085F619 /* CJExtraTextTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJExtraTextTextField.m; sourceTree = "<group>"; };
-		786BCFF822745B9C0085F619 /* CJTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJTextField.h; sourceTree = "<group>"; };
-		786BCFF922745B9C0085F619 /* CJExtraTextTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJExtraTextTextField.h; sourceTree = "<group>"; };
-		786BCFFA22745B9C0085F619 /* UITextField+CJPadding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextField+CJPadding.m"; sourceTree = "<group>"; };
-		786BCFFB22745B9C0085F619 /* UITextField+CJSelectedTextRange.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextField+CJSelectedTextRange.m"; sourceTree = "<group>"; };
-		786BCFFC22745B9C0085F619 /* UITextField+CJTextChangeBlock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextField+CJTextChangeBlock.h"; sourceTree = "<group>"; };
 		786BD04822748B600085F619 /* AppCommon.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = AppCommon.xcassets; sourceTree = "<group>"; };
 		786BD04922748B600085F619 /* MainAsset.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = MainAsset.xcassets; sourceTree = "<group>"; };
 		786BD04A22748B600085F619 /* AppAssets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = AppAssets.xcassets; sourceTree = "<group>"; };
@@ -381,7 +354,6 @@
 				786BCF7F22745B9B0085F619 /* UIToolbar */,
 				786BCF8622745B9B0085F619 /* UIView */,
 				786BCF9D22745B9B0085F619 /* CJBaseTableViewHeaderFooterView */,
-				786BCFA022745B9B0085F619 /* CJAlert */,
 				786BCFA522745B9B0085F619 /* CJUIKit-Swift.h */,
 				786BCFA622745B9B0085F619 /* CJBaseTableViewCell */,
 				786BCFAF22745B9C0085F619 /* CJToast */,
@@ -391,7 +363,6 @@
 				786BCFCD22745B9C0085F619 /* CJSlider */,
 				786BCFE522745B9C0085F619 /* CJSwitchView */,
 				786BCFE822745B9C0085F619 /* CJTextView */,
-				786BCFEE22745B9C0085F619 /* UITextField */,
 			);
 			name = "CJBaseUIKit-Swift";
 			path = "../../CJBaseUIKit-Swift";
@@ -537,7 +508,6 @@
 				786BCF9A22745B9B0085F619 /* CJShakeAction */,
 				786BCF9122745B9B0085F619 /* UIView+CJExclusiveTouch.h */,
 				786BCF9922745B9B0085F619 /* UIView+CJExclusiveTouch.m */,
-				786BCF9522745B9B0085F619 /* UIViewCJCategory.h */,
 			);
 			path = UIView;
 			sourceTree = "<group>";
@@ -545,10 +515,9 @@
 		786BCF8722745B9B0085F619 /* CJPopupAction */ = {
 			isa = PBXGroup;
 			children = (
+				786BCF8922745B9B0085F619 /* UIView+CJPopupInView.swift */,
 				786BCF8822745B9B0085F619 /* UIView+CJShowExtendView.h */,
-				786BCF8922745B9B0085F619 /* UIView+CJPopupInView.m */,
-				786BCF8A22745B9B0085F619 /* UIView+CJShowExtendView.m */,
-				786BCF8B22745B9B0085F619 /* UIView+CJPopupInView.h */,
+				786BCF8A22745B9B0085F619 /* UIView+CJShowExtendView.swift */,
 			);
 			path = CJPopupAction;
 			sourceTree = "<group>";
@@ -598,17 +567,6 @@
 				786BCF9F22745B9B0085F619 /* CJTableViewHeaderFooterView.m */,
 			);
 			path = CJBaseTableViewHeaderFooterView;
-			sourceTree = "<group>";
-		};
-		786BCFA022745B9B0085F619 /* CJAlert */ = {
-			isa = PBXGroup;
-			children = (
-				786BCFA222745B9B0085F619 /* CJAlert.h */,
-				786BCFA422745B9B0085F619 /* CJAlert.m */,
-				786BCFA122745B9B0085F619 /* CJAlertView.h */,
-				786BCFA322745B9B0085F619 /* CJAlertView.m */,
-			);
-			path = CJAlert;
 			sourceTree = "<group>";
 		};
 		786BCFA622745B9B0085F619 /* CJBaseTableViewCell */ = {
@@ -773,34 +731,6 @@
 				786BCFEA22745B9C0085F619 /* CJTextView.m */,
 			);
 			path = CJTextView;
-			sourceTree = "<group>";
-		};
-		786BCFEE22745B9C0085F619 /* UITextField */ = {
-			isa = PBXGroup;
-			children = (
-				786BCFF522745B9C0085F619 /* CJTextField */,
-				786BCFF022745B9C0085F619 /* UITextField+CJForbidKeyboard.h */,
-				786BCFF422745B9C0085F619 /* UITextField+CJForbidKeyboard.m */,
-				786BCFEF22745B9C0085F619 /* UITextField+CJPadding.h */,
-				786BCFFA22745B9C0085F619 /* UITextField+CJPadding.m */,
-				786BCFF322745B9C0085F619 /* UITextField+CJSelectedTextRange.h */,
-				786BCFFB22745B9C0085F619 /* UITextField+CJSelectedTextRange.m */,
-				786BCFFC22745B9C0085F619 /* UITextField+CJTextChangeBlock.h */,
-				786BCFF222745B9C0085F619 /* UITextField+CJTextChangeBlock.m */,
-				786BCFF122745B9C0085F619 /* UITextFieldCJCategory.h */,
-			);
-			path = UITextField;
-			sourceTree = "<group>";
-		};
-		786BCFF522745B9C0085F619 /* CJTextField */ = {
-			isa = PBXGroup;
-			children = (
-				786BCFF622745B9C0085F619 /* CJTextField.m */,
-				786BCFF722745B9C0085F619 /* CJExtraTextTextField.m */,
-				786BCFF822745B9C0085F619 /* CJTextField.h */,
-				786BCFF922745B9C0085F619 /* CJExtraTextTextField.h */,
-			);
-			path = CJTextField;
 			sourceTree = "<group>";
 		};
 		786BD04622748B0C0085F619 /* Supporting Files */ = {
@@ -1127,15 +1057,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				78B85DDD227899B50074B843 /* CJToast.swift in Sources */,
-				786BD01222745B9C0085F619 /* UIView+CJPopupInView.m in Sources */,
-				786BD04522745B9C0085F619 /* UITextField+CJSelectedTextRange.m in Sources */,
+				786BD01222745B9C0085F619 /* UIView+CJPopupInView.swift in Sources */,
 				786BCFFF22745B9C0085F619 /* UIImage+CJBlur.m in Sources */,
 				786BD03E22745B9C0085F619 /* CJTextView.m in Sources */,
-				786BD01B22745B9C0085F619 /* CJAlertView.m in Sources */,
 				786BD00A22745B9C0085F619 /* CJLabel.swift in Sources */,
 				786BD03722745B9C0085F619 /* CJSliderPopover.m in Sources */,
 				786BD02B22745B9C0085F619 /* UINavigationBar+CJChangeBG.m in Sources */,
-				786BD04022745B9C0085F619 /* UITextField+CJTextChangeBlock.m in Sources */,
 				786BD02C22745B9C0085F619 /* UIViewController+CJSystemComposeView.m in Sources */,
 				786BD00F22745B9C0085F619 /* UISearchBar+CJAddInputAccessoryView.m in Sources */,
 				78B315A9227EBFF300F97DA4 /* CJUIKitBaseViewController.swift in Sources */,
@@ -1152,14 +1079,13 @@
 				786BD01122745B9C0085F619 /* UITextField+CJAddInputAccessoryView.m in Sources */,
 				786BD00822745B9C0085F619 /* UIScrollView+CJKeyboardAvoiding.m in Sources */,
 				786BD03522745B9C0085F619 /* CJSwitchSlider.m in Sources */,
-				786BD01322745B9C0085F619 /* UIView+CJShowExtendView.m in Sources */,
+				786BD01322745B9C0085F619 /* UIView+CJShowExtendView.swift in Sources */,
 				786BD00322745B9C0085F619 /* UIImage+CJTransformSize.m in Sources */,
 				786BD02222745B9C0085F619 /* CJBaseTableViewCell.m in Sources */,
 				786BD01722745B9C0085F619 /* UIView+CJGestureRecognizer.m in Sources */,
 				78B3164A227EDBE700F97DA4 /* CJUIKitBaseHomeViewController.swift in Sources */,
 				786BD03D22745B9C0085F619 /* CJSwitchView.m in Sources */,
 				786BD01422745B9C0085F619 /* UIView+CJKeepBounds.m in Sources */,
-				786BD04222745B9C0085F619 /* CJTextField.m in Sources */,
 				786BD00B22745B9C0085F619 /* CJBadgeButton.m in Sources */,
 				786BD058227495FA0085F619 /* AppDelegate+WindowRootViewController.swift in Sources */,
 				786BD03622745B9C0085F619 /* CJSliderThumb.m in Sources */,
@@ -1168,18 +1094,14 @@
 				786BD00D22745B9C0085F619 /* UIButton+CJUpDownStructure.m in Sources */,
 				78B3164D227EF82300F97DA4 /* CJUIKitBaseScrollViewController.swift in Sources */,
 				786BD02D22745B9C0085F619 /* UIViewController+CJCustomBackBarButtonItem.m in Sources */,
-				786BD04322745B9C0085F619 /* CJExtraTextTextField.m in Sources */,
-				786BD04422745B9C0085F619 /* UITextField+CJPadding.m in Sources */,
 				786BD02322745B9C0085F619 /* UIViewController+CJToast.swift in Sources */,
 				786BD01022745B9C0085F619 /* CJDefaultToolbar.m in Sources */,
 				786BD03422745B9C0085F619 /* CJSwitchSliderStatusModel.m in Sources */,
-				786BD01C22745B9C0085F619 /* CJAlert.m in Sources */,
 				786BD00522745B9C0085F619 /* UIImage+CJFixOrientation.m in Sources */,
 				786BCFFE22745B9C0085F619 /* UIImage+CJChangeColor.m in Sources */,
 				786BD00222745B9C0085F619 /* UIImage+CJBase64.m in Sources */,
 				786BCFFD22745B9C0085F619 /* UIImage+CJRotateAngle.m in Sources */,
 				786BD00122745B9C0085F619 /* UIImage+CJMakeCircle.m in Sources */,
-				786BD04122745B9C0085F619 /* UITextField+CJForbidKeyboard.m in Sources */,
 				786BD03A22745B9C0085F619 /* CJPlayerSlider.m in Sources */,
 				786BCF2322745B040085F619 /* ViewController.swift in Sources */,
 				786BD01822745B9C0085F619 /* UIView+CJExclusiveTouch.m in Sources */,
