@@ -8,43 +8,44 @@
 
 
 /**
- *  2.返回一个RGBA格式的UIColor对象
+ *  1.返回一个RGBA格式的UIColor对象
  */
-func CJRGBA(r:CGFloat, g:CGFloat, b:CGFloat, a:CGFloat) -> UIColor
+func CJColorFromRGBA(r:CGFloat, g:CGFloat, b:CGFloat, a:CGFloat) -> UIColor
 {
     return UIColor(red: (r)/255.0, green: (g)/255.0, blue: (b)/255.0, alpha: a)
 }
 
-/**
- *  一个随机颜色
- */
+/// 一个随机颜色
 func CJColorRandom() -> UIColor
 {
     let r : CGFloat = CGFloat(arc4random_uniform(256))
     let g : CGFloat = CGFloat(arc4random_uniform(256))
     let b : CGFloat = CGFloat(arc4random_uniform(256))
-    return CJRGBA(r: r, g: g, b: b, a: 1.0)
+    return CJColorFromRGBA(r: r, g: g, b: b, a: 1.0)
 }
 
+/// hexValueColor
+func CJColorFromHexValue(_ hexValueColor: NSInteger) -> UIColor
+{
+    let r : CGFloat = CGFloat((hexValueColor & 0xFF0000) >> 16)
+    let g : CGFloat = CGFloat((hexValueColor & 0xFF00) >> 8)
+    let b : CGFloat = CGFloat(hexValueColor & 0xFF)
+    return CJColorFromRGBA(r: r, g: g, b: b, a: 1.0)
+}
 
 /**
- *  3.支持使用16进制数值/字符串来选取颜色
+ *  2.支持使用16进制数值/字符串来选取颜色
  */
-func CJColor(hexStringColor:String) -> UIColor
+func CJColorFromHexString(_ hexStringColor:String) -> UIColor
 {
-    return UIColor.cjColor(hexStringColor: hexStringColor, alpha: 1.0)
+    return CJColorFromHexString(hexStringColor, 1.0)
 }
 
-func CJColor(hexStringColor:String, alpha:CGFloat) -> UIColor
+func CJColorFromHexString(_ hexStringColor:String, _ alpha:CGFloat) -> UIColor
 {
     return UIColor.cjColor(hexStringColor: hexStringColor, alpha: alpha)
 }
 
-//func CJColorFromHexValue(s:String) -> UIColor
-//{
-//
-//    return UIColor.init(red: (((s & 0xFF0000) >> 16))/255.0, green: (((s &0xFF00) >>8))/255.0, blue: (s &0xFF))/255.0, alpha: 1.0)
-//}
 
 
 extension UIColor {

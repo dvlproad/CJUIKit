@@ -12,8 +12,8 @@ import SnapKit
 
 class CJUIKitBaseHomeViewController: CJUIKitBaseViewController, UITableViewDataSource, UITableViewDelegate {
     
-    fileprivate var tableView: UITableView!
-    fileprivate var sectionDataModels: NSMutableArray!
+    var tableView: UITableView!
+    var sectionDataModels: NSMutableArray!
     
     override func viewDidLoad() {
         self.navigationItem.title = NSLocalizedString("XXX首页", comment: "XXX首页") //知识点:使得tabBar中的title可以和显示在顶部的title保持各自

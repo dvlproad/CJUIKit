@@ -41,7 +41,8 @@
     [cjTestButton setBackgroundColor:[UIColor colorWithRed:0.4 green:0.3 blue:0.4 alpha:0.5]];
     [cjTestButton setTitle:@"CJTestButton" forState:UIControlStateNormal];
     [cjTestButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-    [cjTestButton setTitleColor:[UIColor cjColorWithHexString:@"#3388FF"] forState:UIControlStateSelected];
+    
+    [cjTestButton setTitleColor:CJColorFromHexString(@"#3388FF") forState:UIControlStateSelected];
     [cjTestButton.titleLabel setFont:[UIFont systemFontOfSize:14]];
     [cjTestButton addTarget:self action:@selector(cjTestButtonAction:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:cjTestButton];

@@ -10,13 +10,14 @@
 
 @implementation UIColor (CJHex)
 
-/* 完整的描述请参见文件头部 */
-+ (UIColor *)cjColorWithHexString:(NSString *)color
-{
-    return [self cjColorWithHexString:color alpha:1.0f];
-}
-
-/* 完整的描述请参见文件头部 */
+/**
+ *  初始化颜色(从十六进制字符串获取颜色)
+ *
+ *  @param color    颜色的值（支持@“#123456”、 @“0X123456”、 @“123456”三种格式）
+ *  @param alpha    alpha
+ *
+ *  return  颜色
+ */
 + (UIColor *)cjColorWithHexString:(NSString *)color alpha:(CGFloat)alpha
 {
     //删除字符串中的空格

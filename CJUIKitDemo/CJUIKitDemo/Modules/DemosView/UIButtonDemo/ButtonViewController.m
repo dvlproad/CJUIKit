@@ -33,7 +33,7 @@
     [cjTestButton setBackgroundColor:[UIColor colorWithRed:0.4 green:0.3 blue:0.4 alpha:0.5]];
     [cjTestButton setTitle:@"测试为按钮动态增加的属性" forState:UIControlStateNormal];
     [cjTestButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-    [cjTestButton setTitleColor:[UIColor cjColorWithHexString:@"#3388FF"] forState:UIControlStateSelected];
+    [cjTestButton setTitleColor:CJColorFromHexString(@"#3388FF") forState:UIControlStateSelected];
     [cjTestButton.titleLabel setFont:[UIFont systemFontOfSize:14]];
     [self.view addSubview:cjTestButton];
     [cjTestButton mas_makeConstraints:^(MASConstraintMaker *make) {

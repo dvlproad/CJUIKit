@@ -16,7 +16,7 @@ class CJUIKitBaseScrollViewController: CJUIKitBaseViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         let scrollView: UIScrollView = UIScrollView()
-        scrollView.backgroundColor = CJColor(hexStringColor:"#f2f2f2")
+        scrollView.backgroundColor = CJColorFromHexString("#f2f2f2")
         self.view.addSubview(scrollView)
         scrollView.snp.makeConstraints { (make) in
             make.edges.equalToSuperview()
@@ -46,7 +46,7 @@ class CJUIKitBaseScrollViewController: CJUIKitBaseViewController {
      *  @param bottomInterval bottomInterval
      *  @param lastBottomView lastBottomView(可为nil)
      */
-    func updateScrollHeight(bottomInterval:CGFloat, lastBottomView:UIView) {
+    func updateScrollHeight(bottomInterval:CGFloat, lastBottomView:UIView?) {
         assert(bottomInterval >= 0, "Error:scrollView与lastBottomView的底部间隔不能小于0");
         
         if lastBottomView == nil {
@@ -61,7 +61,7 @@ class CJUIKitBaseScrollViewController: CJUIKitBaseViewController {
                 make.left.right.equalTo(self.scrollView);
                 make.top.bottom.equalTo(self.scrollView);
                 make.width.equalTo(self.scrollView.snp_width);
-                make.bottom.equalTo(lastBottomView.snp_bottom).offset(bottomInterval);
+                make.bottom.equalTo(lastBottomView!.snp_bottom).offset(bottomInterval);
             }
         }
     }

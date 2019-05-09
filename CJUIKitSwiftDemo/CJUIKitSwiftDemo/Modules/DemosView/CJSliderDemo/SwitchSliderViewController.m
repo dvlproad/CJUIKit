@@ -205,14 +205,14 @@
     {
         CJSwitchSliderStatusModel *statusModel = [[CJSwitchSliderStatusModel alloc] init];
         statusModel.normalText = NSLocalizedString(@"开始发车、2这里会自适应字体大小", nil);
-        statusModel.normalColor = [UIColor cjColorWithHexString:@"#4288ff"];
+        statusModel.normalColor = CJColorFromHexString(@"#4288ff");
         statusModel.goNextStepWhenSwitchEventOccur = NO;
         [sliderStatusModels addObject:statusModel];
     }
     {
         CJSwitchSliderStatusModel *statusModel = [[CJSwitchSliderStatusModel alloc] init];
         statusModel.normalText = @"";
-        statusModel.normalColor = [UIColor cjColorWithHexString:@"#1D4A98"];
+        statusModel.normalColor = CJColorFromHexString(@"#1D4A98");
         [sliderStatusModels addObject:statusModel];
     }
     
@@ -226,11 +226,11 @@
         CJSwitchSliderStatusModel *statusModel = [[CJSwitchSliderStatusModel alloc] init];
         //statusModel.normalImage = [UIImage imageNamed:@"icon_ddlb_jd.png"];
         statusModel.normalText = @"接到乘客";
-        statusModel.normalColor = [UIColor cjColorWithHexString:@"#00aaff"];
+        statusModel.normalColor = CJColorFromHexString(@"#00aaff");
         
         //statusModel.dragingImage = nil;
         statusModel.dragingText = @"";
-        statusModel.dragingColor = [UIColor cjColorWithHexString:@"#0a6fa2"];
+        statusModel.dragingColor = CJColorFromHexString(@"#0a6fa2");
         statusModel.goNextStepWhenSwitchEventOccur = YES;
         [sliderStatusModels addObject:statusModel];
     }
@@ -239,11 +239,11 @@
         CJSwitchSliderStatusModel *statusModel = [[CJSwitchSliderStatusModel alloc] init];
         //statusModel.normalImage = [UIImage imageNamed:@"icon_ddlb_hd.png"];
         statusModel.normalText = @"送完乘客";
-        statusModel.normalColor = [UIColor cjColorWithHexString:@"#ff4343"];
+        statusModel.normalColor = CJColorFromHexString(@"#ff4343");
         
         statusModel.dragingImage = nil;
         statusModel.dragingText = @"";
-        statusModel.dragingColor = [UIColor cjColorWithHexString:@"#cd3737"];
+        statusModel.dragingColor = CJColorFromHexString(@"#cd3737");
         statusModel.goNextStepWhenSwitchEventOccur = YES;
         [sliderStatusModels addObject:statusModel];
     }

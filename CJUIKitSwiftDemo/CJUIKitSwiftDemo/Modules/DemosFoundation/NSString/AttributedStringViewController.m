@@ -43,7 +43,7 @@
     
     NSDictionary *attributes = @{NSFontAttributeName:           font,
                                  NSForegroundColorAttributeName:[UIColor whiteColor],
-                                 NSBackgroundColorAttributeName:[UIColor cjColorWithHexString:@"fe5000"],
+                                 NSBackgroundColorAttributeName:CJColorFromHexString(@"fe5000"),
                                  NSParagraphStyleAttributeName: paragraphStyle};
     
     NSRange range = [string rangeOfString:@"NSParagraphStyleAttributeName"];
