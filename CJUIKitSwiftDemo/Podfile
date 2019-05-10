@@ -1,7 +1,10 @@
 platform :ios, '8.0'
 #use_frameworks!
-inhibit_all_warnings!
+inhibit_all_warnings! #inhibit_warnings参数能够有效的抑制CocoaPods引入的第三方代码库产生的warning。
 # pod的本地索引文件：~/Library/Caches/CocoaPods/search_index.json
+source 'https://github.com/CocoaPods/Specs.git'
+source 'https://gitee.com/dvlproad/dvlproadSpecs'  #这里要增加的是这条私有仓库的地址，而不是那些私有仓库里的库的地址，即如果你是增加'https://gitee.com/dvlproad/CJCustomView.git'那就错了。（之前自己犯过一次错）
+
 
 #post_install do |installer|
 #    
@@ -22,10 +25,6 @@ inhibit_all_warnings!
 #    end
 #end
 
-source 'https://github.com/CocoaPods/Specs.git'
-source 'https://gitee.com/dvlproad/dvlproadSpecs'  #这里要增加的是这条私有仓库的地址，而不是那些私有仓库里的库的地址，即如果你是增加'https://gitee.com/dvlproad/CJCustomView.git'那就错了。（之前自己犯过一次错）
-
-inhibit_all_warnings! #inhibit_warnings参数能够有效的抑制CocoaPods引入的第三方代码库产生的warning。
 
 # OC第三方库需要在桥街文件中引入，swift第三方库需要import model方式引入！桥街文件不能引入swift第三方库
 target 'CJUIKitSwiftDemo' do

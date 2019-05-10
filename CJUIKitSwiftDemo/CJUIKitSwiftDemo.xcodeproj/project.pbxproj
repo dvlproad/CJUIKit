@@ -27,9 +27,8 @@
 		786BD00822745B9C0085F619 /* UIScrollView+CJKeyboardAvoiding.m in Sources */ = {isa = PBXBuildFile; fileRef = 786BCF6D22745B9B0085F619 /* UIScrollView+CJKeyboardAvoiding.m */; };
 		786BD00922745B9C0085F619 /* UIWindow+CJSnapshot.m in Sources */ = {isa = PBXBuildFile; fileRef = 786BCF7022745B9B0085F619 /* UIWindow+CJSnapshot.m */; };
 		786BD00A22745B9C0085F619 /* CJLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 786BCF7222745B9B0085F619 /* CJLabel.swift */; };
-		786BD00B22745B9C0085F619 /* CJBadgeButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 786BCF7722745B9B0085F619 /* CJBadgeButton.m */; };
-		786BD00C22745B9C0085F619 /* UIButton+CJMoreProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = 786BCF7A22745B9B0085F619 /* UIButton+CJMoreProperty.m */; };
-		786BD00D22745B9C0085F619 /* UIButton+CJUpDownStructure.m in Sources */ = {isa = PBXBuildFile; fileRef = 786BCF7B22745B9B0085F619 /* UIButton+CJUpDownStructure.m */; };
+		786BD00C22745B9C0085F619 /* UIButton+CJMoreProperty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 786BCF7A22745B9B0085F619 /* UIButton+CJMoreProperty.swift */; };
+		786BD00D22745B9C0085F619 /* UIButton+CJUpDownStructure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 786BCF7B22745B9B0085F619 /* UIButton+CJUpDownStructure.swift */; };
 		786BD00F22745B9C0085F619 /* UISearchBar+CJAddInputAccessoryView.m in Sources */ = {isa = PBXBuildFile; fileRef = 786BCF8122745B9B0085F619 /* UISearchBar+CJAddInputAccessoryView.m */; };
 		786BD01022745B9C0085F619 /* CJDefaultToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = 786BCF8222745B9B0085F619 /* CJDefaultToolbar.m */; };
 		786BD01122745B9C0085F619 /* UITextField+CJAddInputAccessoryView.m in Sources */ = {isa = PBXBuildFile; fileRef = 786BCF8322745B9B0085F619 /* UITextField+CJAddInputAccessoryView.m */; };
@@ -42,12 +41,6 @@
 		786BD01822745B9C0085F619 /* UIView+CJExclusiveTouch.m in Sources */ = {isa = PBXBuildFile; fileRef = 786BCF9922745B9B0085F619 /* UIView+CJExclusiveTouch.m */; };
 		786BD01922745B9C0085F619 /* UIView+CJShake.m in Sources */ = {isa = PBXBuildFile; fileRef = 786BCF9B22745B9B0085F619 /* UIView+CJShake.m */; };
 		786BD01A22745B9C0085F619 /* CJTableViewHeaderFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 786BCF9F22745B9B0085F619 /* CJTableViewHeaderFooterView.m */; };
-		786BD01D22745B9C0085F619 /* cjCheckBoxGreenNO@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 786BCFA822745B9B0085F619 /* cjCheckBoxGreenNO@2x.png */; };
-		786BD01E22745B9C0085F619 /* cjCheckBoxGreen2YES.png in Resources */ = {isa = PBXBuildFile; fileRef = 786BCFA922745B9C0085F619 /* cjCheckBoxGreen2YES.png */; };
-		786BD01F22745B9C0085F619 /* cjCheckBoxOrangeYES@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 786BCFAA22745B9C0085F619 /* cjCheckBoxOrangeYES@2x.png */; };
-		786BD02022745B9C0085F619 /* cjCheckBoxGreenYES@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 786BCFAB22745B9C0085F619 /* cjCheckBoxGreenYES@2x.png */; };
-		786BD02122745B9C0085F619 /* cjCheckBoxGreen2NO.png in Resources */ = {isa = PBXBuildFile; fileRef = 786BCFAC22745B9C0085F619 /* cjCheckBoxGreen2NO.png */; };
-		786BD02222745B9C0085F619 /* CJBaseTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 786BCFAE22745B9C0085F619 /* CJBaseTableViewCell.m */; };
 		786BD02322745B9C0085F619 /* UIViewController+CJToast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 786BCFB022745B9C0085F619 /* UIViewController+CJToast.swift */; };
 		786BD02422745B9C0085F619 /* CJToast_success.png in Resources */ = {isa = PBXBuildFile; fileRef = 786BCFB222745B9C0085F619 /* CJToast_success.png */; };
 		786BD02522745B9C0085F619 /* CJToast_success@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 786BCFB322745B9C0085F619 /* CJToast_success@3x.png */; };
@@ -63,7 +56,6 @@
 		786BD03022745B9C0085F619 /* cjBackBarButtonItemGray@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 786BCFC422745B9C0085F619 /* cjBackBarButtonItemGray@3x.png */; };
 		786BD03122745B9C0085F619 /* cjBackBarButtonItemGray@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 786BCFC522745B9C0085F619 /* cjBackBarButtonItemGray@2x.png */; };
 		786BD03222745B9C0085F619 /* UIViewController+CJSystemBackButtonHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 786BCFC622745B9C0085F619 /* UIViewController+CJSystemBackButtonHandler.m */; };
-		786BD03322745B9C0085F619 /* UITableView+CJEmptyView.m in Sources */ = {isa = PBXBuildFile; fileRef = 786BCFCB22745B9C0085F619 /* UITableView+CJEmptyView.m */; };
 		786BD03422745B9C0085F619 /* CJSwitchSliderStatusModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 786BCFCF22745B9C0085F619 /* CJSwitchSliderStatusModel.m */; };
 		786BD03522745B9C0085F619 /* CJSwitchSlider.m in Sources */ = {isa = PBXBuildFile; fileRef = 786BCFD022745B9C0085F619 /* CJSwitchSlider.m */; };
 		786BD03622745B9C0085F619 /* CJSliderThumb.m in Sources */ = {isa = PBXBuildFile; fileRef = 786BCFD622745B9C0085F619 /* CJSliderThumb.m */; };
@@ -151,12 +143,8 @@
 		786BCF6F22745B9B0085F619 /* UIWindow+CJSnapshot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIWindow+CJSnapshot.h"; sourceTree = "<group>"; };
 		786BCF7022745B9B0085F619 /* UIWindow+CJSnapshot.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIWindow+CJSnapshot.m"; sourceTree = "<group>"; };
 		786BCF7222745B9B0085F619 /* CJLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CJLabel.swift; sourceTree = "<group>"; };
-		786BCF7622745B9B0085F619 /* CJBadgeButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJBadgeButton.h; sourceTree = "<group>"; };
-		786BCF7722745B9B0085F619 /* CJBadgeButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJBadgeButton.m; sourceTree = "<group>"; };
-		786BCF7822745B9B0085F619 /* UIButton+CJMoreProperty.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+CJMoreProperty.h"; sourceTree = "<group>"; };
-		786BCF7922745B9B0085F619 /* UIButton+CJUpDownStructure.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+CJUpDownStructure.h"; sourceTree = "<group>"; };
-		786BCF7A22745B9B0085F619 /* UIButton+CJMoreProperty.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+CJMoreProperty.m"; sourceTree = "<group>"; };
-		786BCF7B22745B9B0085F619 /* UIButton+CJUpDownStructure.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+CJUpDownStructure.m"; sourceTree = "<group>"; };
+		786BCF7A22745B9B0085F619 /* UIButton+CJMoreProperty.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton+CJMoreProperty.swift"; sourceTree = "<group>"; };
+		786BCF7B22745B9B0085F619 /* UIButton+CJUpDownStructure.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton+CJUpDownStructure.swift"; sourceTree = "<group>"; };
 		786BCF8022745B9B0085F619 /* UITextField+CJAddInputAccessoryView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextField+CJAddInputAccessoryView.h"; sourceTree = "<group>"; };
 		786BCF8122745B9B0085F619 /* UISearchBar+CJAddInputAccessoryView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UISearchBar+CJAddInputAccessoryView.m"; sourceTree = "<group>"; };
 		786BCF8222745B9B0085F619 /* CJDefaultToolbar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJDefaultToolbar.m; sourceTree = "<group>"; };
@@ -180,13 +168,6 @@
 		786BCF9E22745B9B0085F619 /* CJTableViewHeaderFooterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJTableViewHeaderFooterView.h; sourceTree = "<group>"; };
 		786BCF9F22745B9B0085F619 /* CJTableViewHeaderFooterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJTableViewHeaderFooterView.m; sourceTree = "<group>"; };
 		786BCFA522745B9B0085F619 /* CJUIKit-Swift.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CJUIKit-Swift.h"; sourceTree = "<group>"; };
-		786BCFA822745B9B0085F619 /* cjCheckBoxGreenNO@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cjCheckBoxGreenNO@2x.png"; sourceTree = "<group>"; };
-		786BCFA922745B9C0085F619 /* cjCheckBoxGreen2YES.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cjCheckBoxGreen2YES.png; sourceTree = "<group>"; };
-		786BCFAA22745B9C0085F619 /* cjCheckBoxOrangeYES@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cjCheckBoxOrangeYES@2x.png"; sourceTree = "<group>"; };
-		786BCFAB22745B9C0085F619 /* cjCheckBoxGreenYES@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cjCheckBoxGreenYES@2x.png"; sourceTree = "<group>"; };
-		786BCFAC22745B9C0085F619 /* cjCheckBoxGreen2NO.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cjCheckBoxGreen2NO.png; sourceTree = "<group>"; };
-		786BCFAD22745B9C0085F619 /* CJBaseTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJBaseTableViewCell.h; sourceTree = "<group>"; };
-		786BCFAE22745B9C0085F619 /* CJBaseTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJBaseTableViewCell.m; sourceTree = "<group>"; };
 		786BCFB022745B9C0085F619 /* UIViewController+CJToast.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+CJToast.swift"; sourceTree = "<group>"; };
 		786BCFB222745B9C0085F619 /* CJToast_success.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CJToast_success.png; sourceTree = "<group>"; };
 		786BCFB322745B9C0085F619 /* CJToast_success@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "CJToast_success@3x.png"; sourceTree = "<group>"; };
@@ -206,8 +187,6 @@
 		786BCFC722745B9C0085F619 /* UIViewController+CJSystemComposeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+CJSystemComposeView.h"; sourceTree = "<group>"; };
 		786BCFC822745B9C0085F619 /* UIViewController+CJCustomBackBarButtonItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+CJCustomBackBarButtonItem.h"; sourceTree = "<group>"; };
 		786BCFC922745B9C0085F619 /* UIViewController+CJSystemBackButtonHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+CJSystemBackButtonHandler.h"; sourceTree = "<group>"; };
-		786BCFCB22745B9C0085F619 /* UITableView+CJEmptyView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableView+CJEmptyView.m"; sourceTree = "<group>"; };
-		786BCFCC22745B9C0085F619 /* UITableView+CJEmptyView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableView+CJEmptyView.h"; sourceTree = "<group>"; };
 		786BCFCF22745B9C0085F619 /* CJSwitchSliderStatusModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJSwitchSliderStatusModel.m; sourceTree = "<group>"; };
 		786BCFD022745B9C0085F619 /* CJSwitchSlider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJSwitchSlider.m; sourceTree = "<group>"; };
 		786BCFD122745B9C0085F619 /* CJSwitchSlider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJSwitchSlider.h; sourceTree = "<group>"; };
@@ -359,11 +338,9 @@
 				786BCF8622745B9B0085F619 /* UIView */,
 				786BCF9D22745B9B0085F619 /* CJBaseTableViewHeaderFooterView */,
 				786BCFA522745B9B0085F619 /* CJUIKit-Swift.h */,
-				786BCFA622745B9B0085F619 /* CJBaseTableViewCell */,
 				786BCFAF22745B9C0085F619 /* CJToast */,
 				786BCFBB22745B9C0085F619 /* UINavigationBar */,
 				786BCFBE22745B9C0085F619 /* UIViewController */,
-				786BCFCA22745B9C0085F619 /* UITableView */,
 				786BCFCD22745B9C0085F619 /* CJSlider */,
 				786BCFE522745B9C0085F619 /* CJSwitchView */,
 				786BCFE822745B9C0085F619 /* CJTextView */,
@@ -412,12 +389,12 @@
 		786BCF5F22745B9B0085F619 /* Base */ = {
 			isa = PBXGroup;
 			children = (
-				786BCF6022745B9B0085F619 /* UIImage+CJTransformSize.h */,
 				786BCF6122745B9B0085F619 /* UIImage+CJCreate.h */,
-				786BCF6222745B9B0085F619 /* UIImage+CJFixOrientation.h */,
-				786BCF6322745B9B0085F619 /* UIImage+CJTransformSize.m */,
 				786BCF6422745B9B0085F619 /* UIImage+CJCreate.m */,
+				786BCF6222745B9B0085F619 /* UIImage+CJFixOrientation.h */,
 				786BCF6522745B9B0085F619 /* UIImage+CJFixOrientation.m */,
+				786BCF6022745B9B0085F619 /* UIImage+CJTransformSize.h */,
+				786BCF6322745B9B0085F619 /* UIImage+CJTransformSize.m */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -433,11 +410,11 @@
 		786BCF6722745B9B0085F619 /* CJKeyboardAvoiding */ = {
 			isa = PBXGroup;
 			children = (
-				786BCF6822745B9B0085F619 /* CJKeyboardAvoidingTableView.m */,
-				786BCF6922745B9B0085F619 /* UIScrollView+CJKeyboardAvoiding.h */,
+				786BCF6C22745B9B0085F619 /* CJKeyboardAvoidingScrollView.h */,
 				786BCF6A22745B9B0085F619 /* CJKeyboardAvoidingScrollView.m */,
 				786BCF6B22745B9B0085F619 /* CJKeyboardAvoidingTableView.h */,
-				786BCF6C22745B9B0085F619 /* CJKeyboardAvoidingScrollView.h */,
+				786BCF6822745B9B0085F619 /* CJKeyboardAvoidingTableView.m */,
+				786BCF6922745B9B0085F619 /* UIScrollView+CJKeyboardAvoiding.h */,
 				786BCF6D22745B9B0085F619 /* UIScrollView+CJKeyboardAvoiding.m */,
 			);
 			path = CJKeyboardAvoiding;
@@ -463,22 +440,10 @@
 		786BCF7422745B9B0085F619 /* UIButton */ = {
 			isa = PBXGroup;
 			children = (
-				786BCF7522745B9B0085F619 /* CJBadgeButton */,
-				786BCF7822745B9B0085F619 /* UIButton+CJMoreProperty.h */,
-				786BCF7A22745B9B0085F619 /* UIButton+CJMoreProperty.m */,
-				786BCF7922745B9B0085F619 /* UIButton+CJUpDownStructure.h */,
-				786BCF7B22745B9B0085F619 /* UIButton+CJUpDownStructure.m */,
+				786BCF7A22745B9B0085F619 /* UIButton+CJMoreProperty.swift */,
+				786BCF7B22745B9B0085F619 /* UIButton+CJUpDownStructure.swift */,
 			);
 			path = UIButton;
-			sourceTree = "<group>";
-		};
-		786BCF7522745B9B0085F619 /* CJBadgeButton */ = {
-			isa = PBXGroup;
-			children = (
-				786BCF7622745B9B0085F619 /* CJBadgeButton.h */,
-				786BCF7722745B9B0085F619 /* CJBadgeButton.m */,
-			);
-			path = CJBadgeButton;
 			sourceTree = "<group>";
 		};
 		786BCF7C22745B9B0085F619 /* UIColor */ = {
@@ -557,8 +522,8 @@
 		786BCF9A22745B9B0085F619 /* CJShakeAction */ = {
 			isa = PBXGroup;
 			children = (
-				786BCF9B22745B9B0085F619 /* UIView+CJShake.m */,
 				786BCF9C22745B9B0085F619 /* UIView+CJShake.h */,
+				786BCF9B22745B9B0085F619 /* UIView+CJShake.m */,
 			);
 			path = CJShakeAction;
 			sourceTree = "<group>";
@@ -570,28 +535,6 @@
 				786BCF9F22745B9B0085F619 /* CJTableViewHeaderFooterView.m */,
 			);
 			path = CJBaseTableViewHeaderFooterView;
-			sourceTree = "<group>";
-		};
-		786BCFA622745B9B0085F619 /* CJBaseTableViewCell */ = {
-			isa = PBXGroup;
-			children = (
-				786BCFA722745B9B0085F619 /* Resources */,
-				786BCFAD22745B9C0085F619 /* CJBaseTableViewCell.h */,
-				786BCFAE22745B9C0085F619 /* CJBaseTableViewCell.m */,
-			);
-			path = CJBaseTableViewCell;
-			sourceTree = "<group>";
-		};
-		786BCFA722745B9B0085F619 /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				786BCFA822745B9B0085F619 /* cjCheckBoxGreenNO@2x.png */,
-				786BCFA922745B9C0085F619 /* cjCheckBoxGreen2YES.png */,
-				786BCFAA22745B9C0085F619 /* cjCheckBoxOrangeYES@2x.png */,
-				786BCFAB22745B9C0085F619 /* cjCheckBoxGreenYES@2x.png */,
-				786BCFAC22745B9C0085F619 /* cjCheckBoxGreen2NO.png */,
-			);
-			path = Resources;
 			sourceTree = "<group>";
 		};
 		786BCFAF22745B9C0085F619 /* CJToast */ = {
@@ -607,12 +550,12 @@
 		786BCFB122745B9C0085F619 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				786BCFB222745B9C0085F619 /* CJToast_success.png */,
-				786BCFB322745B9C0085F619 /* CJToast_success@3x.png */,
-				786BCFB422745B9C0085F619 /* CJToast_error@3x.png */,
-				786BCFB522745B9C0085F619 /* CJToast_error@2x.png */,
-				786BCFB622745B9C0085F619 /* CJToast_success@2x.png */,
 				786BCFB722745B9C0085F619 /* CJToast_error.png */,
+				786BCFB522745B9C0085F619 /* CJToast_error@2x.png */,
+				786BCFB422745B9C0085F619 /* CJToast_error@3x.png */,
+				786BCFB222745B9C0085F619 /* CJToast_success.png */,
+				786BCFB622745B9C0085F619 /* CJToast_success@2x.png */,
+				786BCFB322745B9C0085F619 /* CJToast_success@3x.png */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -629,13 +572,13 @@
 		786BCFBE22745B9C0085F619 /* UIViewController */ = {
 			isa = PBXGroup;
 			children = (
-				786BCFBF22745B9C0085F619 /* UIViewController+CJSystemComposeView.m */,
-				786BCFC022745B9C0085F619 /* UIViewController+CJCustomBackBarButtonItem.m */,
 				786BCFC122745B9C0085F619 /* Resources */,
+				786BCFC822745B9C0085F619 /* UIViewController+CJCustomBackBarButtonItem.h */,
+				786BCFC022745B9C0085F619 /* UIViewController+CJCustomBackBarButtonItem.m */,
+				786BCFC922745B9C0085F619 /* UIViewController+CJSystemBackButtonHandler.h */,
 				786BCFC622745B9C0085F619 /* UIViewController+CJSystemBackButtonHandler.m */,
 				786BCFC722745B9C0085F619 /* UIViewController+CJSystemComposeView.h */,
-				786BCFC822745B9C0085F619 /* UIViewController+CJCustomBackBarButtonItem.h */,
-				786BCFC922745B9C0085F619 /* UIViewController+CJSystemBackButtonHandler.h */,
+				786BCFBF22745B9C0085F619 /* UIViewController+CJSystemComposeView.m */,
 			);
 			path = UIViewController;
 			sourceTree = "<group>";
@@ -651,25 +594,16 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
-		786BCFCA22745B9C0085F619 /* UITableView */ = {
-			isa = PBXGroup;
-			children = (
-				786BCFCB22745B9C0085F619 /* UITableView+CJEmptyView.m */,
-				786BCFCC22745B9C0085F619 /* UITableView+CJEmptyView.h */,
-			);
-			path = UITableView;
-			sourceTree = "<group>";
-		};
 		786BCFCD22745B9C0085F619 /* CJSlider */ = {
 			isa = PBXGroup;
 			children = (
-				786BCFCE22745B9C0085F619 /* CJSwitchSlider */,
-				786BCFD322745B9C0085F619 /* CJSliderControl */,
 				786BCFDC22745B9C0085F619 /* CJSlider.h */,
-				786BCFDD22745B9C0085F619 /* CJPlayerSlider */,
+				786BCFE422745B9C0085F619 /* CJBaseUISlider.h */,
 				786BCFE022745B9C0085F619 /* CJBaseUISlider.m */,
 				786BCFE122745B9C0085F619 /* CJAdsorbModel */,
-				786BCFE422745B9C0085F619 /* CJBaseUISlider.h */,
+				786BCFDD22745B9C0085F619 /* CJPlayerSlider */,
+				786BCFD322745B9C0085F619 /* CJSliderControl */,
+				786BCFCE22745B9C0085F619 /* CJSwitchSlider */,
 			);
 			path = CJSlider;
 			sourceTree = "<group>";
@@ -907,7 +841,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				786BD02022745B9C0085F619 /* cjCheckBoxGreenYES@2x.png in Resources */,
 				786BD02622745B9C0085F619 /* CJToast_error@3x.png in Resources */,
 				786BD02722745B9C0085F619 /* CJToast_error@2x.png in Resources */,
 				786BD04E22748B600085F619 /* MainAsset.xcassets in Resources */,
@@ -918,13 +851,9 @@
 				786BD04F22748B600085F619 /* AppAssets.xcassets in Resources */,
 				786BD02522745B9C0085F619 /* CJToast_success@3x.png in Resources */,
 				786BD02922745B9C0085F619 /* CJToast_error.png in Resources */,
-				786BD01D22745B9C0085F619 /* cjCheckBoxGreenNO@2x.png in Resources */,
 				786BD02E22745B9C0085F619 /* cjBackBarButtonItem@3x.png in Resources */,
 				786BD05022748B600085F619 /* bg@2x.jpg in Resources */,
-				786BD02122745B9C0085F619 /* cjCheckBoxGreen2NO.png in Resources */,
-				786BD01F22745B9C0085F619 /* cjCheckBoxOrangeYES@2x.png in Resources */,
 				786BD02822745B9C0085F619 /* CJToast_success@2x.png in Resources */,
-				786BD01E22745B9C0085F619 /* cjCheckBoxGreen2YES.png in Resources */,
 				786BD02422745B9C0085F619 /* CJToast_success.png in Resources */,
 				786BD04D22748B600085F619 /* AppCommon.xcassets in Resources */,
 			);
@@ -1078,14 +1007,13 @@
 				786BD02C22745B9C0085F619 /* UIViewController+CJSystemComposeView.m in Sources */,
 				786BD00F22745B9C0085F619 /* UISearchBar+CJAddInputAccessoryView.m in Sources */,
 				78B315A9227EBFF300F97DA4 /* CJUIKitBaseViewController.swift in Sources */,
-				786BD00C22745B9C0085F619 /* UIButton+CJMoreProperty.m in Sources */,
+				786BD00C22745B9C0085F619 /* UIButton+CJMoreProperty.swift in Sources */,
 				786BD00022745B9C0085F619 /* UIImage+CJSplitImageIntoTwoParts.m in Sources */,
 				786BD03822745B9C0085F619 /* CJSliderControl.m in Sources */,
 				786BD00422745B9C0085F619 /* UIImage+CJCreate.m in Sources */,
 				786BD00722745B9C0085F619 /* CJKeyboardAvoidingScrollView.m in Sources */,
 				786BD03222745B9C0085F619 /* UIViewController+CJSystemBackButtonHandler.m in Sources */,
 				786BD03922745B9C0085F619 /* CJRangeSliderControl.m in Sources */,
-				786BD03322745B9C0085F619 /* UITableView+CJEmptyView.m in Sources */,
 				786BD01522745B9C0085F619 /* UIView+CJDragAction.m in Sources */,
 				786BD03B22745B9C0085F619 /* CJBaseUISlider.m in Sources */,
 				786BD01122745B9C0085F619 /* UITextField+CJAddInputAccessoryView.m in Sources */,
@@ -1093,18 +1021,16 @@
 				786BD03522745B9C0085F619 /* CJSwitchSlider.m in Sources */,
 				786BD01322745B9C0085F619 /* UIView+CJShowExtendView.swift in Sources */,
 				786BD00322745B9C0085F619 /* UIImage+CJTransformSize.m in Sources */,
-				786BD02222745B9C0085F619 /* CJBaseTableViewCell.m in Sources */,
 				786BD01722745B9C0085F619 /* UIView+CJGestureRecognizer.m in Sources */,
 				78B3164A227EDBE700F97DA4 /* CJUIKitBaseHomeViewController.swift in Sources */,
 				786BD03D22745B9C0085F619 /* CJSwitchView.m in Sources */,
 				786BD01422745B9C0085F619 /* UIView+CJKeepBounds.m in Sources */,
-				786BD00B22745B9C0085F619 /* CJBadgeButton.m in Sources */,
 				786BD058227495FA0085F619 /* AppDelegate+WindowRootViewController.swift in Sources */,
 				786BD03622745B9C0085F619 /* CJSliderThumb.m in Sources */,
 				786BD01622745B9C0085F619 /* UIView+CJAnimation.m in Sources */,
 				786BD03C22745B9C0085F619 /* CJAdsorbModel.m in Sources */,
 				78A8ADC22284825B006760A1 /* CJAlert.swift in Sources */,
-				786BD00D22745B9C0085F619 /* UIButton+CJUpDownStructure.m in Sources */,
+				786BD00D22745B9C0085F619 /* UIButton+CJUpDownStructure.swift in Sources */,
 				78B3164D227EF82300F97DA4 /* CJUIKitBaseScrollViewController.swift in Sources */,
 				786BD02D22745B9C0085F619 /* UIViewController+CJCustomBackBarButtonItem.m in Sources */,
 				786BD02322745B9C0085F619 /* UIViewController+CJToast.swift in Sources */,

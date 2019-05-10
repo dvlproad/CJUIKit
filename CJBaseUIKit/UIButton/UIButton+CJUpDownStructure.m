@@ -19,11 +19,15 @@
     NSString *text = self.titleLabel.text;
     UIFont *font = self.titleLabel.font;
     //CGSize textSize = [text sizeWithFont:font];
-    CGSize textSize = [text boundingRectWithSize:CGSizeMake(FLT_MAX, FLT_MAX)
+    CGSize maxSize = CGSizeMake(FLT_MAX, FLT_MAX);
+    NSDictionary *attributes = @{NSFontAttributeName:font};
+    CGRect textRect = [text boundingRectWithSize: maxSize
                                          options:NSStringDrawingUsesLineFragmentOrigin
-                                      attributes:@{NSFontAttributeName:font} context:NULL].size;
-    
-    CGSize frameSize = CGSizeMake(ceilf(textSize.width), ceilf(textSize.height));
+                                      attributes:attributes context:NULL];
+    CGSize textSize = textRect.size;
+    CGFloat frameWidth = ceilf(textSize.width);
+    CGFloat frameHeight = ceilf(textSize.height);
+    CGSize frameSize = CGSizeMake(frameWidth, frameHeight);
     if (titleSize.width + 0.5 < frameSize.width) {
         titleSize.width = frameSize.width;
     }

@@ -79,27 +79,27 @@ Pod::Spec.new do |s|
 
 
 
-  # # UIView
-  # s.subspec 'UIView' do |ss|
-  #   ss.source_files = "CJBaseUIKit-Swift/UIView/*.{h,m}"
+  # UIView
+  s.subspec 'UIView' do |ss|
+    # ss.source_files = "CJBaseUIKit-Swift/UIView/*.{swift}"
 
-  #   ss.subspec 'CJDragAction' do |sss|
-  #     sss.source_files = "CJBaseUIKit-Swift/UIView/CJDragAction/**/*.{h,m}"
-  # 	end
+   #  ss.subspec 'CJDragAction' do |sss|
+   #    sss.source_files = "CJBaseUIKit-Swift/UIView/CJDragAction/**/*.{h,m}"
+  	# end
 
-  # 	ss.subspec 'CJShakeAction' do |sss|
-  #     sss.source_files = "CJBaseUIKit-Swift/UIView/CJShakeAction/**/*.{h,m}"
-  # 	end
+  	# ss.subspec 'CJShakeAction' do |sss|
+   #    sss.source_files = "CJBaseUIKit-Swift/UIView/CJShakeAction/**/*.{h,m}"
+  	# end
 
-  # 	ss.subspec 'CJPopupAction' do |sss|
-  #     sss.source_files = "CJBaseUIKit-Swift/UIView/CJPopupAction/**/*.{h,m}"
-  # 	end
+  	ss.subspec 'CJPopupAction' do |sss|
+      sss.source_files = "CJBaseUIKit-Swift/UIView/CJPopupAction/**/*.{swift}"
+  	end
 
-  # 	ss.subspec 'CJGestureRecognizer' do |sss|
-  #     sss.source_files = "CJBaseUIKit-Swift/UIView/CJGestureRecognizer/**/*.{h,m}"
-  # 	end
+  	# ss.subspec 'CJGestureRecognizer' do |sss|
+   #    sss.source_files = "CJBaseUIKit-Swift/UIView/CJGestureRecognizer/**/*.{h,m}"
+  	# end
 
-  # end
+  end
 
   # # UIWindow
   # s.subspec 'UIWindow' do |ss|
@@ -156,9 +156,9 @@ Pod::Spec.new do |s|
 
 
   # s.subspec 'CJAlert' do |ss|
-  #   ss.source_files = "CJBaseUIKit-Swift/CJAlert/**/*.{h,m}"
+  #   ss.source_files = "CJBaseUIKit-Swift/CJAlert/**/*.{swift}"
   #   #多个依赖就写多行
-  #   ss.dependency 'Masonry'
+  #   ss.dependency 'SnapKit'
   #   ss.dependency 'CJBaseUIKit-Swift/UIView/CJPopupAction'
   # end
 
