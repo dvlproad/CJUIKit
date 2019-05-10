@@ -82,6 +82,7 @@
 		786BD05122748B600085F619 /* ThirdPartIcon.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 786BD04C22748B600085F619 /* ThirdPartIcon.xcassets */; };
 		786BD058227495FA0085F619 /* AppDelegate+WindowRootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 786BD057227495FA0085F619 /* AppDelegate+WindowRootViewController.swift */; };
 		78A8ADBE2284043D006760A1 /* CJAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78A8ADBC2284043D006760A1 /* CJAlertView.swift */; };
+		78A8ADC22284825B006760A1 /* CJAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78A8ADC12284825B006760A1 /* CJAlert.swift */; };
 		78B315A9227EBFF300F97DA4 /* CJUIKitBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78B3158E227EBFF300F97DA4 /* CJUIKitBaseViewController.swift */; };
 		78B315AD227EC07500F97DA4 /* UIColor+CJHex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78B315AC227EC07500F97DA4 /* UIColor+CJHex.swift */; };
 		78B3164A227EDBE700F97DA4 /* CJUIKitBaseHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78B31649227EDBE700F97DA4 /* CJUIKitBaseHomeViewController.swift */; };
@@ -239,6 +240,7 @@
 		786BD057227495FA0085F619 /* AppDelegate+WindowRootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppDelegate+WindowRootViewController.swift"; sourceTree = "<group>"; };
 		786BD05922749FAB0085F619 /* CJUIKit-Brdging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CJUIKit-Brdging-Header.h"; sourceTree = "<group>"; };
 		78A8ADBC2284043D006760A1 /* CJAlertView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CJAlertView.swift; sourceTree = "<group>"; };
+		78A8ADC12284825B006760A1 /* CJAlert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CJAlert.swift; sourceTree = "<group>"; };
 		78B3158E227EBFF300F97DA4 /* CJUIKitBaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CJUIKitBaseViewController.swift; sourceTree = "<group>"; };
 		78B315AC227EC07500F97DA4 /* UIColor+CJHex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+CJHex.swift"; sourceTree = "<group>"; };
 		78B31649227EDBE700F97DA4 /* CJUIKitBaseHomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CJUIKitBaseHomeViewController.swift; sourceTree = "<group>"; };
@@ -761,6 +763,7 @@
 			isa = PBXGroup;
 			children = (
 				78A8ADBC2284043D006760A1 /* CJAlertView.swift */,
+				78A8ADC12284825B006760A1 /* CJAlert.swift */,
 			);
 			path = CJAlert;
 			sourceTree = "<group>";
@@ -1100,6 +1103,7 @@
 				786BD03622745B9C0085F619 /* CJSliderThumb.m in Sources */,
 				786BD01622745B9C0085F619 /* UIView+CJAnimation.m in Sources */,
 				786BD03C22745B9C0085F619 /* CJAdsorbModel.m in Sources */,
+				78A8ADC22284825B006760A1 /* CJAlert.swift in Sources */,
 				786BD00D22745B9C0085F619 /* UIButton+CJUpDownStructure.m in Sources */,
 				78B3164D227EF82300F97DA4 /* CJUIKitBaseScrollViewController.swift in Sources */,
 				786BD02D22745B9C0085F619 /* UIViewController+CJCustomBackBarButtonItem.m in Sources */,

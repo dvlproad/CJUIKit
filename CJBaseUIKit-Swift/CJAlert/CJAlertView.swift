@@ -45,14 +45,14 @@ class CJAlertView: UIView {
     var okHandle: (()->())?
     
     // MARK: - ClassMethod
-    func alertViewWithSize(size: CGSize,
-                           flagImage: UIImage!,
-                           title: String,
-                           message: String,
-                           cancelButtonTitle: String,
-                           okButtonTitle: String,
-                           cancelHandle:(()->())?,
-                           okHandle: (()->())?) -> CJAlertView
+    class func alertViewWithSize(size: CGSize,
+                                 flagImage: UIImage!,
+                                 title: String,
+                                 message: String,
+                                 cancelButtonTitle: String,
+                                 okButtonTitle: String,
+                                 cancelHandle:(()->())?,
+                                 okHandle: (()->())?) -> CJAlertView
     {
         //①创建
         let alertView: CJAlertView = CJAlertView.init(size: size, firstVerticalInterval: 15, secondVerticalInterval: 10, thirdVerticalInterval: 10, bottomMinVerticalInterval: 10)
@@ -63,13 +63,13 @@ class CJAlertView: UIView {
             alertView.addFlagImage(flagImage, CGSize(width: 38, height: 38))
         }
         if title.count > 0 {
-            alertView.addTitle(text: title, font: UIFont.systemFont(ofSize: 18.0), textAlignment: .center, titleLabelLeftOffset: 20, paragraphStyle: nil)
+            alertView.addTitleWithText(title, font: UIFont.systemFont(ofSize: 18.0), textAlignment: .center, margin: 20, paragraphStyle: nil)
         }
         if message.count > 0 {
             let paragraphStyle: NSMutableParagraphStyle = NSParagraphStyle.default.mutableCopy() as! NSMutableParagraphStyle
             paragraphStyle.lineBreakMode = .byCharWrapping
             paragraphStyle.lineSpacing = 4
-            alertView.addMessageText(message, font: UIFont.systemFont(ofSize: 14.0), textAlignment: .center, messageLabelLeftOffset: 20, paragraphStyle: paragraphStyle)
+            alertView.addMessageWithText(message, font: UIFont.systemFont(ofSize: 14.0), textAlignment: .center, margin: 20, paragraphStyle: paragraphStyle)
         }
     
         //③添加 cancelButton、okButton
@@ -157,11 +157,11 @@ class CJAlertView: UIView {
     
     // MARK: - AddView
     ///添加title
-    func addTitle(text: String? = "",
-                  font: UIFont,
-                  textAlignment: NSTextAlignment,
-                  titleLabelLeftOffset: CGFloat,
-                  paragraphStyle: NSMutableParagraphStyle?)
+    func addTitleWithText(_ text: String? = "",
+                          font: UIFont,
+                          textAlignment: NSTextAlignment,
+                          margin titleLabelLeftOffset: CGFloat,
+                          paragraphStyle: NSMutableParagraphStyle?)
     {
         if self.size.equalTo(CGSize.zero) {
             return
@@ -299,11 +299,11 @@ class CJAlertView: UIView {
     
     
     ///添加message的方法(paragraphStyle:当需要设置message行距、缩进等的时候才需要设置，其他设为nil即可)
-    func addMessageText(_ text: String? = "",
-                        font: UIFont,
-                        textAlignment: NSTextAlignment,
-                        messageLabelLeftOffset: CGFloat,
-                        paragraphStyle: NSMutableParagraphStyle?)
+    func addMessageWithText(_ text: String? = "",
+                            font: UIFont,
+                            textAlignment: NSTextAlignment,
+                            margin messageLabelLeftOffset: CGFloat,
+                            paragraphStyle: NSMutableParagraphStyle?)
     {
         //NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle defaultParagraphStyle] mutableCopy];
         //paragraphStyle.lineBreakMode = NSLineBreakByCharWrapping;

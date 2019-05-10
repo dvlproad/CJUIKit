@@ -12,11 +12,11 @@
 @implementation CJAlert
 
 #pragma mark - UIAlertController
-/* 完整的描述请参见文件头部 */
-+ (void)showAlertTypeAlertControllerWithTitle:(NSString *)title
-                                      message:(NSString *)message
-                                 alertActions:(NSArray<UIAlertAction *> *)alertActions
-                             inViewController:(UIViewController *)viewController
+/// 显示系统AlertType弹框
++ (void)showSystemAlertWithTitle:(NSString *)title
+                         message:(NSString *)message
+                    alertActions:(NSArray<UIAlertAction *> *)alertActions
+                inViewController:(UIViewController *)viewController
 {
     [self showAlertControllerWithTitle:title
                                message:message
@@ -25,8 +25,8 @@
                       inViewController:viewController];
 }
 
-/* 完整的描述请参见文件头部 */
-+ (void)showSheetTypeAlertControllerWithTitle:(NSString *)title
+/// 显示系统SheetType弹框
++ (void)showSystemSheetWithTitle:(NSString *)title
                                       message:(NSString *)message
                                  alertActions:(NSArray<UIAlertAction *> *)alertActions
                              inViewController:(UIViewController *)viewController

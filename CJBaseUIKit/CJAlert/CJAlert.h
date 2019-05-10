@@ -11,17 +11,17 @@
 @interface CJAlert : NSObject
 
 #pragma mark - UIAlertController
-///显示系统AlertType弹框
-+ (void)showAlertTypeAlertControllerWithTitle:(NSString *)title
-                                      message:(NSString *)message
-                                 alertActions:(NSArray<UIAlertAction *> *)alertActions
-                             inViewController:(UIViewController *)viewController;
+/// 显示系统AlertType弹框
++ (void)showSystemAlertWithTitle:(NSString *)title
+                         message:(NSString *)message
+                    alertActions:(NSArray<UIAlertAction *> *)alertActions
+                inViewController:(UIViewController *)viewController;
 
-///显示系统SheetType弹框
-+ (void)showSheetTypeAlertControllerWithTitle:(NSString *)title
-                                      message:(NSString *)message
-                                 alertActions:(NSArray<UIAlertAction *> *)alertActions
-                             inViewController:(UIViewController *)viewController;
+/// 显示系统SheetType弹框
++ (void)showSystemSheetWithTitle:(NSString *)title
+                         message:(NSString *)message
+                    alertActions:(NSArray<UIAlertAction *> *)alertActions
+                inViewController:(UIViewController *)viewController;
 
 
 #pragma mark - CJAlertView

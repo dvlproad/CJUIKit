@@ -176,15 +176,15 @@
     NSArray *alertActions = @[cancelAlertAction, okAlertAction];
     
     if (preferredStyle == UIAlertControllerStyleActionSheet) {
-        [CJAlert showSheetTypeAlertControllerWithTitle:title
-                                               message:message
-                                          alertActions:alertActions
-                                      inViewController:self];
+        [CJAlert showSystemSheetWithTitle:title
+                                  message:message
+                             alertActions:alertActions
+                         inViewController:self];
     } else {
-        [CJAlert showAlertTypeAlertControllerWithTitle:title
-                                               message:message
-                                          alertActions:alertActions
-                                      inViewController:self];
+        [CJAlert showSystemAlertWithTitle:title
+                                  message:message
+                             alertActions:alertActions
+                         inViewController:self];
     }
     
 }
