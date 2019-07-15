@@ -75,6 +75,8 @@ target 'CJUIKitDemo' do
     
     pod 'IQKeyboardManager'
     pod 'WMPageController'  # 测试HUD在界面不显示时候的隐藏
+    pod 'SDWebImage'
+    pod 'FLAnimatedImage'
 end
 
 target 'CJUIKitDemoTests' do

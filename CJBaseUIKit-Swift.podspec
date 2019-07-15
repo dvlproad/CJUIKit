@@ -53,6 +53,7 @@ Pod::Spec.new do |s|
   # s.source_files  = "CJBaseUIKit-Swift/*.{h}"
 
   s.frameworks = "UIKit"
+  s.swift_version = '5.0'
 
   s.requires_arc = true
 
@@ -155,21 +156,19 @@ Pod::Spec.new do |s|
   # end
 
 
-  # s.subspec 'CJAlert' do |ss|
-  #   ss.source_files = "CJBaseUIKit-Swift/CJAlert/**/*.{swift}"
-  #   #多个依赖就写多行
-  #   ss.dependency 'SnapKit'
-  #   ss.dependency 'CJBaseUIKit-Swift/UIView/CJPopupAction'
-  # end
+  s.subspec 'CJAlert' do |ss|
+    ss.source_files = "CJBaseUIKit-Swift/CJAlert/**/*.{swift}"
+    #多个依赖就写多行
+    ss.dependency 'SnapKit'
+    ss.dependency 'CJBaseUIKit-Swift/UIView/CJPopupAction'
+  end
 
   # s.subspec 'CJToast' do |ss|
   #   ss.source_files = "CJBaseUIKit-Swift/CJToast/**/*.{swift}"
-  #   ss.resources = "CJBaseUIKit-Swift/CJToast/**/*.{png,xib}"
+  #   ss.resources = "CJBaseUIKit-Swift/CJToast/**/*.{png}"
   #   #多个依赖就写多行
   #   ss.dependency 'MBProgressHUD'
   # end
-
-  s.swift_version = '5.0'
 
 
 end

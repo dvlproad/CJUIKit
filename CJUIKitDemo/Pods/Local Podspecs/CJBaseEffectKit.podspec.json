@@ -39,6 +39,9 @@
       "dependencies": {
         "Masonry": [
 
+        ],
+        "CJFoundation/NSString": [
+
         ]
       }
     },

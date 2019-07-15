@@ -9,6 +9,14 @@
 /* Begin PBXBuildFile section */
 		51F701ECBBD48CC565F3FB87 /* libPods-CJUIKitDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A078401C0E781545EB72B64D /* libPods-CJUIKitDemo.a */; };
 		663D99AA9DDC5B5D8025AEEB /* libPods-CJUIKitDemoUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E0A09F2115A3D53BC658F67A /* libPods-CJUIKitDemoUITests.a */; };
+		7808318322DC10F700F36576 /* loading@2x.gif in Resources */ = {isa = PBXBuildFile; fileRef = 7808318122DC10F600F36576 /* loading@2x.gif */; };
+		7808318422DC10F700F36576 /* loading@3x.gif in Resources */ = {isa = PBXBuildFile; fileRef = 7808318222DC10F700F36576 /* loading@3x.gif */; };
+		7808318722DC116700F36576 /* GifViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7808318622DC116700F36576 /* GifViewController.m */; };
+		7808318922DC272700F36576 /* iamcoming.gif in Resources */ = {isa = PBXBuildFile; fileRef = 7808318822DC272700F36576 /* iamcoming.gif */; };
+		7808318C22DC492E00F36576 /* WelcomeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7808318A22DC492E00F36576 /* WelcomeView.m */; };
+		7808318F22DC4ECD00F36576 /* WelcomeDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7808318E22DC4ECD00F36576 /* WelcomeDataModel.m */; };
+		7808319222DC65DD00F36576 /* WelcomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7808319122DC65DD00F36576 /* WelcomeViewController.m */; };
+		7808319422DC687400F36576 /* welcome.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 7808319322DC687400F36576 /* welcome.mp4 */; };
 		7808D59321703C33007FC851 /* ChangeEnvironmentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7808D59221703C33007FC851 /* ChangeEnvironmentViewController.m */; };
 		7808D5B321707A04007FC851 /* DemoBarButtonItemFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 7808D5B221707A04007FC851 /* DemoBarButtonItemFactory.m */; };
 		7808D5B62170919A007FC851 /* LoginChangeEnvironmentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7808D5B52170919A007FC851 /* LoginChangeEnvironmentViewController.m */; };
@@ -366,6 +374,18 @@
 		3132573BFCFBEA8B4F3BB86F /* Pods-CJUIKitDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CJUIKitDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-CJUIKitDemo/Pods-CJUIKitDemo.release.xcconfig"; sourceTree = "<group>"; };
 		5ABC4BBA112CC688BF877CE8 /* Pods-CJUIKitDemoUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CJUIKitDemoUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-CJUIKitDemoUITests/Pods-CJUIKitDemoUITests.release.xcconfig"; sourceTree = "<group>"; };
 		68D73B38201AA01727123963 /* Pods-CJUIKitDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CJUIKitDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CJUIKitDemo/Pods-CJUIKitDemo.debug.xcconfig"; sourceTree = "<group>"; };
+		7808318122DC10F600F36576 /* loading@2x.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "loading@2x.gif"; sourceTree = "<group>"; };
+		7808318222DC10F700F36576 /* loading@3x.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "loading@3x.gif"; sourceTree = "<group>"; };
+		7808318522DC116700F36576 /* GifViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GifViewController.h; sourceTree = "<group>"; };
+		7808318622DC116700F36576 /* GifViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GifViewController.m; sourceTree = "<group>"; };
+		7808318822DC272700F36576 /* iamcoming.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = iamcoming.gif; sourceTree = "<group>"; };
+		7808318A22DC492E00F36576 /* WelcomeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WelcomeView.m; sourceTree = "<group>"; };
+		7808318B22DC492E00F36576 /* WelcomeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WelcomeView.h; sourceTree = "<group>"; };
+		7808318D22DC4ECD00F36576 /* WelcomeDataModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WelcomeDataModel.h; sourceTree = "<group>"; };
+		7808318E22DC4ECD00F36576 /* WelcomeDataModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WelcomeDataModel.m; sourceTree = "<group>"; };
+		7808319022DC65DD00F36576 /* WelcomeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WelcomeViewController.h; sourceTree = "<group>"; };
+		7808319122DC65DD00F36576 /* WelcomeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WelcomeViewController.m; sourceTree = "<group>"; };
+		7808319322DC687400F36576 /* welcome.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = welcome.mp4; sourceTree = "<group>"; };
 		7808D59121703C33007FC851 /* ChangeEnvironmentViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ChangeEnvironmentViewController.h; sourceTree = "<group>"; };
 		7808D59221703C33007FC851 /* ChangeEnvironmentViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChangeEnvironmentViewController.m; sourceTree = "<group>"; };
 		7808D5B121707A03007FC851 /* DemoBarButtonItemFactory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DemoBarButtonItemFactory.h; sourceTree = "<group>"; };
@@ -2409,24 +2429,36 @@
 		80FF8FD91FC5649E00E437CF /* UIImageDemo */ = {
 			isa = PBXGroup;
 			children = (
-				789C447621F07BBB00181144 /* ImageHomeViewController.h */,
-				789C447521F07BBB00181144 /* ImageHomeViewController.m */,
-				78514132226854CC0023F0C0 /* ImageGetterViewController.h */,
-				78514133226854CC0023F0C0 /* ImageGetterViewController.m */,
 				80FF8FDC1FC5649E00E437CF /* ImageChangeColorViewController.h */,
 				80FF8FDE1FC5649E00E437CF /* ImageChangeColorViewController.m */,
 				80FF8FDF1FC5649E00E437CF /* ImageChangeColorViewController.xib */,
-				789C447E21F07F6C00181144 /* ImageSizeViewController.h */,
-				789C447F21F07F6C00181144 /* ImageSizeViewController.m */,
-				789C448021F07F6C00181144 /* ImageSizeViewController.xib */,
+				78514132226854CC0023F0C0 /* ImageGetterViewController.h */,
+				78514133226854CC0023F0C0 /* ImageGetterViewController.m */,
+				789C447621F07BBB00181144 /* ImageHomeViewController.h */,
+				789C447521F07BBB00181144 /* ImageHomeViewController.m */,
 				80FF8FDA1FC5649E00E437CF /* imageOriginColor@2x.png */,
 				80582F9E20C121B500C01225 /* ImageRotateViewController.h */,
 				80582F9F20C121B500C01225 /* ImageRotateViewController.m */,
 				80582FA020C121B500C01225 /* ImageRotateViewController.xib */,
-				80582FA620C12B1300C01225 /* taixi_icon@2x.png */,
+				789C447E21F07F6C00181144 /* ImageSizeViewController.h */,
+				789C447F21F07F6C00181144 /* ImageSizeViewController.m */,
+				789C448021F07F6C00181144 /* ImageSizeViewController.xib */,
+				7808318522DC116700F36576 /* GifViewController.h */,
+				7808318622DC116700F36576 /* GifViewController.m */,
+				7808318122DC10F600F36576 /* loading@2x.gif */,
+				7808318222DC10F700F36576 /* loading@3x.gif */,
+				7808318B22DC492E00F36576 /* WelcomeView.h */,
+				7808318A22DC492E00F36576 /* WelcomeView.m */,
+				7808319022DC65DD00F36576 /* WelcomeViewController.h */,
+				7808319122DC65DD00F36576 /* WelcomeViewController.m */,
+				7808319322DC687400F36576 /* welcome.mp4 */,
+				7808318D22DC4ECD00F36576 /* WelcomeDataModel.h */,
+				7808318E22DC4ECD00F36576 /* WelcomeDataModel.m */,
+				7808318822DC272700F36576 /* iamcoming.gif */,
 				80FF8FE01FC5649E00E437CF /* QRCodeViewController.h */,
 				80FF8FDD1FC5649E00E437CF /* QRCodeViewController.m */,
 				80FF8FDB1FC5649E00E437CF /* QRCodeViewController.xib */,
+				80582FA620C12B1300C01225 /* taixi_icon@2x.png */,
 			);
 			path = UIImageDemo;
 			sourceTree = "<group>";
@@ -2764,6 +2796,7 @@
 				80FF90B31FC5649F00E437CF /* ButtonViewController.xib in Resources */,
 				781C737221BA65C90090080C /* minus_common_icon@2x.png in Resources */,
 				80FF90A11FC5649F00E437CF /* NestedXibSubViewA.xib in Resources */,
+				7808318422DC10F700F36576 /* loading@3x.gif in Resources */,
 				80FF90A31FC5649F00E437CF /* SampleViewController.xib in Resources */,
 				78A0D059216BB19800EFAD67 /* badgeButton_highlighted@2x.png in Resources */,
 				787FDB9320500B5C008A46E3 /* icon_ddlb_jd@2x.png in Resources */,
@@ -2778,6 +2811,7 @@
 				7850B70820937C5A008F4A21 /* PopupInWindowVC.xib in Resources */,
 				787FDB6520500B1F008A46E3 /* plus@2x.png in Resources */,
 				787FDB8D20500B5C008A46E3 /* slider_double_thumbImage_b@3x.png in Resources */,
+				7808319422DC687400F36576 /* welcome.mp4 in Resources */,
 				787FDB9920500B5C008A46E3 /* RangeSliderViewController.xib in Resources */,
 				80FF909D1FC5649F00E437CF /* NestedXibViewController.xib in Resources */,
 				787FDB8B20500B5C008A46E3 /* btn_hd@3x.png in Resources */,
@@ -2793,6 +2827,7 @@
 				800E07E22016CCF500799B78 /* DataUtilViewController.xib in Resources */,
 				80D01210210336E100D1EDF0 /* ChangeViewController.xib in Resources */,
 				800E07EA2016CD1500799B78 /* KeyboardUtilViewController.xib in Resources */,
+				7808318322DC10F700F36576 /* loading@2x.gif in Resources */,
 				787FDB8C20500B5C008A46E3 /* btn_hd@2x.png in Resources */,
 				7856F82821F4F4C3004AF751 /* CJToast_error.png in Resources */,
 				782F8770225AE80F001ACE76 /* cjTextField_clear@2x.png in Resources */,
@@ -2852,6 +2887,7 @@
 				787FDB8920500B5C008A46E3 /* slider_double_thumbImage_a@3x.png in Resources */,
 				78AB83AD21B7D24E00853E21 /* closePresentVC@3x.png in Resources */,
 				78A0D057216BB19800EFAD67 /* badgeButton_normal@2x.png in Resources */,
+				7808318922DC272700F36576 /* iamcoming.gif in Resources */,
 				7868277B21AF01BA00FCCDE5 /* bgCar@2x.jpg in Resources */,
 				807F126C20B5123A0008B748 /* animationBg02.jpg in Resources */,
 				807F127020B51C390008B748 /* animationBg01.jpg in Resources */,
@@ -3049,6 +3085,7 @@
 				78B6C2DF2159D20000D5864E /* DemoUsePermissionModel.m in Sources */,
 				78575C8A2257242100925842 /* TestTextFieldOffsetViewController.m in Sources */,
 				7856F81521F4F4C3004AF751 /* UIView+CJShake.m in Sources */,
+				7808319222DC65DD00F36576 /* WelcomeViewController.m in Sources */,
 				78B6C2E32159D6BC00D5864E /* DemoBusStationModel.m in Sources */,
 				8050038A211C3A29002A2306 /* NSObjectCJHelperViewController.m in Sources */,
 				7856F80321F4F4C3004AF751 /* UIScrollView+CJKeyboardAvoiding.m in Sources */,
@@ -3061,6 +3098,7 @@
 				7852D9DA216EFFBE00E50A39 /* LockGateKeeperViewController.m in Sources */,
 				80FF90B11FC5649F00E437CF /* NavigationBarChangePositonViewController.m in Sources */,
 				7850B71420937E85008F4A21 /* WelcomePopupView.m in Sources */,
+				7808318F22DC4ECD00F36576 /* WelcomeDataModel.m in Sources */,
 				789C443121EECB8B00181144 /* AppInfo.m in Sources */,
 				78B6C2E02159D20000D5864E /* DemoUser.m in Sources */,
 				782ACC98223C0E220041B642 /* CodeScrollViewController1.m in Sources */,
@@ -3098,6 +3136,7 @@
 				7856F80521F4F4C3004AF751 /* CJLabel.m in Sources */,
 				80FF909E1FC5649F00E437CF /* NestedXibSubViewA.m in Sources */,
 				78C8148D216E11AF00A6B190 /* AChildViewController.m in Sources */,
+				7808318722DC116700F36576 /* GifViewController.m in Sources */,
 				800F3B652011899400A5C326 /* ToastViewController.m in Sources */,
 				78B6C2E62159D6E900D5864E /* DemoBusStationLocationModel.m in Sources */,
 				788113CB21996A2600D1630D /* SubNormalSharedInstanceClass.m in Sources */,
@@ -3175,6 +3214,7 @@
 				7880E6F5213A9E84009C9BCF /* CJRandomNameUtil.m in Sources */,
 				7856F80C21F4F4C3004AF751 /* CJDefaultToolbar.m in Sources */,
 				7857ABB8225482D200B1569C /* CJDemoDatePickerView.m in Sources */,
+				7808318C22DC492E00F36576 /* WelcomeView.m in Sources */,
 				7856F80E21F4F4C3004AF751 /* UIView+CJPopupInView.m in Sources */,
 				788113C82199631A00D1630D /* PerfectSharedInstanceClass.m in Sources */,
 				7850B70720937C5A008F4A21 /* ShowExtendViewVC.m in Sources */,

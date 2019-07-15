@@ -11,9 +11,9 @@ import UIKit
 private var cjChrysanthemumHUDKey: Void?
 
 extension UIViewController {
-//@property (nonatomic, strong, readonly) MBProgressHUD *cjChrysanthemumHUD;  /**< "菊花HUD" */
-//@property (nonatomic, assign, readonly) BOOL isCJChrysanthemumHUDShowing;   /**< 是否"菊花HUD"在显示中 */
+    //@property (nonatomic, assign, readonly) BOOL isCJChrysanthemumHUDShowing;   /**< 是否"菊花HUD"在显示中 */
 
+    /// "菊花HUD"
     var cjChrysanthemumHUD: MBProgressHUD {
         get {
             var hud = objc_getAssociatedObject(self, &cjChrysanthemumHUDKey) as? MBProgressHUD

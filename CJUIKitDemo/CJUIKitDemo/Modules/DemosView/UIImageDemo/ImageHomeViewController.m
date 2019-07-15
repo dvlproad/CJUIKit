@@ -12,6 +12,8 @@
 #import "ImageChangeColorViewController.h"
 #import "ImageRotateViewController.h"
 #import "ImageSizeViewController.h"
+#import "GifViewController.h"
+#import "WelcomeViewController.h"
 
 @interface ImageHomeViewController ()
 
@@ -57,6 +59,18 @@
             imageRotateModule.classEntry = [ImageSizeViewController class];
             imageRotateModule.isCreateByXib = YES;
             [sectionDataModel.values addObject:imageRotateModule];
+        }
+        {
+            CJModuleModel *gifModule = [[CJModuleModel alloc] init];
+            gifModule.title = @"Gif显示";
+            gifModule.classEntry = [GifViewController class];
+            [sectionDataModel.values addObject:gifModule];
+        }
+        {
+            CJModuleModel *gifModule = [[CJModuleModel alloc] init];
+            gifModule.title = @"欢迎页(PNG & GIF)";
+            gifModule.classEntry = [WelcomeViewController class];
+            [sectionDataModel.values addObject:gifModule];
         }
         [sectionDataModels addObject:sectionDataModel];
     }

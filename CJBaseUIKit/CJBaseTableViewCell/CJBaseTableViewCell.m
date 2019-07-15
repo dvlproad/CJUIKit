@@ -87,6 +87,8 @@ static CGFloat kDefaultCJDetailTextLabelHeight = 15;
 /** 完整的描述请参见文件头部 */
 - (void)cjBaseTableViewCell_commonInit {
     UILongPressGestureRecognizer *longPressGR = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(longPressAction:)];
+    longPressGR.minimumPressDuration = 5.0f;
+    self.userInteractionEnabled = YES;
     [self addGestureRecognizer:longPressGR];
 }
 

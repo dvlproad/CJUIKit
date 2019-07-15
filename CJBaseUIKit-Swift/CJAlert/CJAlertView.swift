@@ -428,7 +428,7 @@ class CJAlertView: UIView {
     func addBottomButtons(bottomButtons: [UIButton],
                           actionButtonHeight: CGFloat, //withHeight
                           bottomInterval: CGFloat,
-                          axisType: MASAxisType,
+                          axisType: NSLayoutConstraint.Axis,
                           fixedSpacing: CGFloat,
                           leadSpacing: CGFloat,
                           tailSpacing: CGFloat
@@ -450,16 +450,16 @@ class CJAlertView: UIView {
     
 //        if buttonCount > 1 {
 //            bottomButtons.snp.makeConstraints { (make) in
-//                make?.bottom.equalTo(-bottomInterval)
-//                make?.height.equalTo(actionButtonHeight)
+//                make.bottom.equalTo(-bottomInterval)
+//                make.height.equalTo(actionButtonHeight)
 //            }
 //            bottomButtons.snp.distributeViews(along: axisType, withFixedSpacing: fixedSpacing, leadSpacing: leadSpacing, tailSpacing: tailSpacing)
 //        } else {
 //            bottomButtons.snp.makeConstraints { (make) in
-//                make?.bottom.equalTo(-bottomInterval)
-//                make?.height.equalTo(actionButtonHeight)
-//                make?.left.equalTo(self).offset(leadSpacing)
-//                make?.right.equalTo(self).offset(-tailSpacing)
+//                make.bottom.equalTo(-bottomInterval)
+//                make.height.equalTo(actionButtonHeight)
+//                make.left.equalTo(self).offset(leadSpacing)
+//                make.right.equalTo(self).offset(-tailSpacing)
 //            }
 //        }
     }

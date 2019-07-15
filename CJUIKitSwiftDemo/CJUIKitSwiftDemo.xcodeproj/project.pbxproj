@@ -80,6 +80,9 @@
 		78B3164A227EDBE700F97DA4 /* CJUIKitBaseHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78B31649227EDBE700F97DA4 /* CJUIKitBaseHomeViewController.swift */; };
 		78B3164D227EF82300F97DA4 /* CJUIKitBaseScrollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78B3164B227EF82300F97DA4 /* CJUIKitBaseScrollViewController.swift */; };
 		78B85DDD227899B50074B843 /* CJToast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78B85DDC227899B40074B843 /* CJToast.swift */; };
+		78F9E69C2285C924009AA4FC /* ConstrainArray+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F9E6992285C924009AA4FC /* ConstrainArray+Extension.swift */; };
+		78F9E69D2285C924009AA4FC /* ConstrainArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F9E69A2285C924009AA4FC /* ConstrainArray.swift */; };
+		78F9E69E2285C924009AA4FC /* ConstrainArrayDSL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F9E69B2285C924009AA4FC /* ConstrainArrayDSL.swift */; };
 		FFAB06F460BA5C015026873A /* libPods-CJUIKitSwiftDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B27ADF4089567F26A59BCB7 /* libPods-CJUIKitSwiftDemo.a */; };
 /* End PBXBuildFile section */
 
@@ -225,6 +228,9 @@
 		78B31649227EDBE700F97DA4 /* CJUIKitBaseHomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CJUIKitBaseHomeViewController.swift; sourceTree = "<group>"; };
 		78B3164B227EF82300F97DA4 /* CJUIKitBaseScrollViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CJUIKitBaseScrollViewController.swift; sourceTree = "<group>"; };
 		78B85DDC227899B40074B843 /* CJToast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CJToast.swift; sourceTree = "<group>"; };
+		78F9E6992285C924009AA4FC /* ConstrainArray+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ConstrainArray+Extension.swift"; sourceTree = "<group>"; };
+		78F9E69A2285C924009AA4FC /* ConstrainArray.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstrainArray.swift; sourceTree = "<group>"; };
+		78F9E69B2285C924009AA4FC /* ConstrainArrayDSL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstrainArrayDSL.swift; sourceTree = "<group>"; };
 		9B27ADF4089567F26A59BCB7 /* libPods-CJUIKitSwiftDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CJUIKitSwiftDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D6E567D7DEB0D75715E4299A /* Pods-CJUIKitSwiftDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CJUIKitSwiftDemo.release.xcconfig"; path = "Target Support Files/Pods-CJUIKitSwiftDemo/Pods-CJUIKitSwiftDemo.release.xcconfig"; sourceTree = "<group>"; };
 		E9F6A001CAE33435CA0C93F9 /* libPods-CJUIKitSwiftDemoTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CJUIKitSwiftDemoTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -298,6 +304,7 @@
 				786BCF2022745B040085F619 /* AppDelegate.swift */,
 				786BD057227495FA0085F619 /* AppDelegate+WindowRootViewController.swift */,
 				786BCF2222745B040085F619 /* ViewController.swift */,
+				78F9E6982285C924009AA4FC /* SnapKitExtension */,
 				78B31565227EBFF300F97DA4 /* CommonUI */,
 				786BCF4E22745B9B0085F619 /* CJBaseUIKit-Swift */,
 				786BD04722748B600085F619 /* Resources */,
@@ -720,6 +727,16 @@
 			path = Base;
 			sourceTree = "<group>";
 		};
+		78F9E6982285C924009AA4FC /* SnapKitExtension */ = {
+			isa = PBXGroup;
+			children = (
+				78F9E6992285C924009AA4FC /* ConstrainArray+Extension.swift */,
+				78F9E69A2285C924009AA4FC /* ConstrainArray.swift */,
+				78F9E69B2285C924009AA4FC /* ConstrainArrayDSL.swift */,
+			);
+			path = SnapKitExtension;
+			sourceTree = "<group>";
+		};
 		F2ABA4448141A204D2E96ADC /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -1018,6 +1035,7 @@
 				786BD03B22745B9C0085F619 /* CJBaseUISlider.m in Sources */,
 				786BD01122745B9C0085F619 /* UITextField+CJAddInputAccessoryView.m in Sources */,
 				786BD00822745B9C0085F619 /* UIScrollView+CJKeyboardAvoiding.m in Sources */,
+				78F9E69C2285C924009AA4FC /* ConstrainArray+Extension.swift in Sources */,
 				786BD03522745B9C0085F619 /* CJSwitchSlider.m in Sources */,
 				786BD01322745B9C0085F619 /* UIView+CJShowExtendView.swift in Sources */,
 				786BD00322745B9C0085F619 /* UIImage+CJTransformSize.m in Sources */,
@@ -1035,10 +1053,12 @@
 				786BD02D22745B9C0085F619 /* UIViewController+CJCustomBackBarButtonItem.m in Sources */,
 				786BD02322745B9C0085F619 /* UIViewController+CJToast.swift in Sources */,
 				786BD01022745B9C0085F619 /* CJDefaultToolbar.m in Sources */,
+				78F9E69D2285C924009AA4FC /* ConstrainArray.swift in Sources */,
 				786BD03422745B9C0085F619 /* CJSwitchSliderStatusModel.m in Sources */,
 				786BD00522745B9C0085F619 /* UIImage+CJFixOrientation.m in Sources */,
 				786BCFFE22745B9C0085F619 /* UIImage+CJChangeColor.m in Sources */,
 				786BD00222745B9C0085F619 /* UIImage+CJBase64.m in Sources */,
+				78F9E69E2285C924009AA4FC /* ConstrainArrayDSL.swift in Sources */,
 				786BCFFD22745B9C0085F619 /* UIImage+CJRotateAngle.m in Sources */,
 				786BD00122745B9C0085F619 /* UIImage+CJMakeCircle.m in Sources */,
 				786BD03A22745B9C0085F619 /* CJPlayerSlider.m in Sources */,

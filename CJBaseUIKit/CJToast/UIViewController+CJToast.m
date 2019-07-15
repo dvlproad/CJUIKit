@@ -38,7 +38,10 @@
 
 /// 显示"菊花HUD"视图
 - (void)cj_showChrysanthemumHUDWithMessage:(NSString * _Nullable)startProgressMessage animated:(BOOL)animated {
-    self.cjChrysanthemumHUD.label.text = startProgressMessage;
+    if (startProgressMessage) {
+        self.cjChrysanthemumHUD.label.text = startProgressMessage;
+    }
+    self.cjChrysanthemumHUD.label.numberOfLines = 0;
     
     [self.view addSubview:self.cjChrysanthemumHUD];
     [self.cjChrysanthemumHUD showAnimated:animated];
