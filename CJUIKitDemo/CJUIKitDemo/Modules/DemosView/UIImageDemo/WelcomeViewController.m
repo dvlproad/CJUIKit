@@ -26,7 +26,13 @@
     NSInteger currentYear = [comps year];
     NSString *copyright = [NSString stringWithFormat:@"Copyright © 2001-%ld Weaver Software All Rights Reserved", currentYear];
     
-    WelcomeView *welcomeView = [[WelcomeView alloc] initWithImageURL:imageURL imageType:WelcomeImageTypeStatic movieURL:movieURL isImageFirst:YES];
+    WelcomeImageType imageType = WelcomeImageTypeStatic;
+    BOOL isGif = [[NSUserDefaults standardUserDefaults] boolForKey:@"welcomeBackgroundImageType"];
+    if (isGif) {
+        imageType = WelcomeImageTypeGif;
+    }
+    
+    WelcomeView *welcomeView = [[WelcomeView alloc] initWithImageURL:imageURL imageType:imageType movieURL:movieURL isImageFirst:YES];
     welcomeView.copyright = copyright;
     welcomeView.image = [UIImage imageNamed:@"launch1242x2280.png"];
     welcomeView.backgroundColor = [UIColor whiteColor];

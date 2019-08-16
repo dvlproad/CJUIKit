@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		51F701ECBBD48CC565F3FB87 /* libPods-CJUIKitDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A078401C0E781545EB72B64D /* libPods-CJUIKitDemo.a */; };
 		663D99AA9DDC5B5D8025AEEB /* libPods-CJUIKitDemoUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E0A09F2115A3D53BC658F67A /* libPods-CJUIKitDemoUITests.a */; };
+		7803DAAE22F7D519001E06B7 /* MJExtensionToModelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7803DAAC22F7D519001E06B7 /* MJExtensionToModelViewController.m */; };
+		7803DAB122F7D578001E06B7 /* MJExtensionToJSONViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7803DAAF22F7D578001E06B7 /* MJExtensionToJSONViewController.m */; };
 		7808318322DC10F700F36576 /* loading@2x.gif in Resources */ = {isa = PBXBuildFile; fileRef = 7808318122DC10F600F36576 /* loading@2x.gif */; };
 		7808318422DC10F700F36576 /* loading@3x.gif in Resources */ = {isa = PBXBuildFile; fileRef = 7808318222DC10F700F36576 /* loading@3x.gif */; };
 		7808318722DC116700F36576 /* GifViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7808318622DC116700F36576 /* GifViewController.m */; };
@@ -255,6 +257,7 @@
 		78E189AB21781BD000B8781A /* TranslucentLayoutTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78E189AA21781BD000B8781A /* TranslucentLayoutTableViewController.m */; };
 		78E189AE21781BE200B8781A /* EdgeLayoutTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78E189AD21781BE200B8781A /* EdgeLayoutTableViewController.m */; };
 		78E41D23226965B7000FAC1A /* UIViewController+CJToast.m in Sources */ = {isa = PBXBuildFile; fileRef = 78E41D22226965B7000FAC1A /* UIViewController+CJToast.m */; };
+		78FCF5492306976500D275F9 /* CJButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 78FCF5482306976500D275F9 /* CJButton.m */; };
 		8008D7D220E5CF5700F98EF6 /* CallSystemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8008D7D020E5CF5700F98EF6 /* CallSystemViewController.m */; };
 		800E07E12016CCF500799B78 /* DataUtilViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 800E07D82016CCF500799B78 /* DataUtilViewController.m */; };
 		800E07E22016CCF500799B78 /* DataUtilViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 800E07DA2016CCF500799B78 /* DataUtilViewController.xib */; };
@@ -303,8 +306,6 @@
 		80D71EB22090522F00D2DB68 /* scan_icon_notice@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 80D71EB12090522E00D2DB68 /* scan_icon_notice@2x.png */; };
 		80E7E63520AC227B000F762D /* AppInfoManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 80E7E63420AC227A000F762D /* AppInfoManager.m */; };
 		80FF902A1FC5649E00E437CF /* ThirdPartyHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80FF8F0E1FC5649E00E437CF /* ThirdPartyHomeViewController.m */; };
-		80FF902B1FC5649E00E437CF /* MJExtensionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80FF8F101FC5649E00E437CF /* MJExtensionViewController.m */; };
-		80FF902C1FC5649E00E437CF /* MJExtensionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 80FF8F111FC5649E00E437CF /* MJExtensionViewController.xib */; };
 		80FF909A1FC5649F00E437CF /* FloatingWindowViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80FF8FC71FC5649E00E437CF /* FloatingWindowViewController.m */; };
 		80FF909C1FC5649F00E437CF /* NestedXibView.m in Sources */ = {isa = PBXBuildFile; fileRef = 80FF8FCB1FC5649E00E437CF /* NestedXibView.m */; };
 		80FF909D1FC5649F00E437CF /* NestedXibViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 80FF8FCC1FC5649E00E437CF /* NestedXibViewController.xib */; };
@@ -374,6 +375,10 @@
 		3132573BFCFBEA8B4F3BB86F /* Pods-CJUIKitDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CJUIKitDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-CJUIKitDemo/Pods-CJUIKitDemo.release.xcconfig"; sourceTree = "<group>"; };
 		5ABC4BBA112CC688BF877CE8 /* Pods-CJUIKitDemoUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CJUIKitDemoUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-CJUIKitDemoUITests/Pods-CJUIKitDemoUITests.release.xcconfig"; sourceTree = "<group>"; };
 		68D73B38201AA01727123963 /* Pods-CJUIKitDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CJUIKitDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CJUIKitDemo/Pods-CJUIKitDemo.debug.xcconfig"; sourceTree = "<group>"; };
+		7803DAAC22F7D519001E06B7 /* MJExtensionToModelViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJExtensionToModelViewController.m; sourceTree = "<group>"; };
+		7803DAAD22F7D519001E06B7 /* MJExtensionToModelViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJExtensionToModelViewController.h; sourceTree = "<group>"; };
+		7803DAAF22F7D578001E06B7 /* MJExtensionToJSONViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJExtensionToJSONViewController.m; sourceTree = "<group>"; };
+		7803DAB022F7D578001E06B7 /* MJExtensionToJSONViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJExtensionToJSONViewController.h; sourceTree = "<group>"; };
 		7808318122DC10F600F36576 /* loading@2x.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "loading@2x.gif"; sourceTree = "<group>"; };
 		7808318222DC10F700F36576 /* loading@3x.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "loading@3x.gif"; sourceTree = "<group>"; };
 		7808318522DC116700F36576 /* GifViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GifViewController.h; sourceTree = "<group>"; };
@@ -808,6 +813,8 @@
 		78E189AD21781BE200B8781A /* EdgeLayoutTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EdgeLayoutTableViewController.m; sourceTree = "<group>"; };
 		78E41D21226965B7000FAC1A /* UIViewController+CJToast.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIViewController+CJToast.h"; sourceTree = "<group>"; };
 		78E41D22226965B7000FAC1A /* UIViewController+CJToast.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+CJToast.m"; sourceTree = "<group>"; };
+		78FCF5472306976500D275F9 /* CJButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CJButton.h; sourceTree = "<group>"; };
+		78FCF5482306976500D275F9 /* CJButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CJButton.m; sourceTree = "<group>"; };
 		8008D7CF20E5CF5700F98EF6 /* CallSystemViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CallSystemViewController.h; sourceTree = "<group>"; };
 		8008D7D020E5CF5700F98EF6 /* CallSystemViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CallSystemViewController.m; sourceTree = "<group>"; };
 		800E07D82016CCF500799B78 /* DataUtilViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataUtilViewController.m; sourceTree = "<group>"; };
@@ -889,9 +896,6 @@
 		80E7E63420AC227A000F762D /* AppInfoManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppInfoManager.m; sourceTree = "<group>"; };
 		80FF8F0D1FC5649E00E437CF /* ThirdPartyHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThirdPartyHomeViewController.h; sourceTree = "<group>"; };
 		80FF8F0E1FC5649E00E437CF /* ThirdPartyHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThirdPartyHomeViewController.m; sourceTree = "<group>"; };
-		80FF8F101FC5649E00E437CF /* MJExtensionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJExtensionViewController.m; sourceTree = "<group>"; };
-		80FF8F111FC5649E00E437CF /* MJExtensionViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MJExtensionViewController.xib; sourceTree = "<group>"; };
-		80FF8F121FC5649E00E437CF /* MJExtensionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJExtensionViewController.h; sourceTree = "<group>"; };
 		80FF8FC71FC5649E00E437CF /* FloatingWindowViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FloatingWindowViewController.m; sourceTree = "<group>"; };
 		80FF8FC81FC5649E00E437CF /* FloatingWindowViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FloatingWindowViewController.h; sourceTree = "<group>"; };
 		80FF8FCB1FC5649E00E437CF /* NestedXibView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NestedXibView.m; sourceTree = "<group>"; };
@@ -1433,6 +1437,8 @@
 				7856F76821F4F4C2004AF751 /* CJBadgeButton */,
 				7856F76B21F4F4C2004AF751 /* UIButton+CJMoreProperty.h */,
 				7856F76F21F4F4C2004AF751 /* UIButton+CJMoreProperty.m */,
+				78FCF5472306976500D275F9 /* CJButton.h */,
+				78FCF5482306976500D275F9 /* CJButton.m */,
 				7856F76D21F4F4C2004AF751 /* UIButton+CJUpDownStructure.h */,
 				7856F77021F4F4C2004AF751 /* UIButton+CJUpDownStructure.m */,
 			);
@@ -2345,9 +2351,10 @@
 			isa = PBXGroup;
 			children = (
 				78B6C2D32159D1F100D5864E /* Models */,
-				80FF8F121FC5649E00E437CF /* MJExtensionViewController.h */,
-				80FF8F101FC5649E00E437CF /* MJExtensionViewController.m */,
-				80FF8F111FC5649E00E437CF /* MJExtensionViewController.xib */,
+				7803DAAD22F7D519001E06B7 /* MJExtensionToModelViewController.h */,
+				7803DAAC22F7D519001E06B7 /* MJExtensionToModelViewController.m */,
+				7803DAB022F7D578001E06B7 /* MJExtensionToJSONViewController.h */,
+				7803DAAF22F7D578001E06B7 /* MJExtensionToJSONViewController.m */,
 			);
 			path = MJExtensionDemo;
 			sourceTree = "<group>";
@@ -2892,7 +2899,6 @@
 				807F126C20B5123A0008B748 /* animationBg02.jpg in Resources */,
 				807F127020B51C390008B748 /* animationBg01.jpg in Resources */,
 				80FF919D1FC5682B00E437CF /* CountDownTimeViewController.xib in Resources */,
-				80FF902C1FC5649E00E437CF /* MJExtensionViewController.xib in Resources */,
 				787FDB6620500B1F008A46E3 /* sound@2x.png in Resources */,
 				80FF90A51FC5649F00E437CF /* imageOriginColor@2x.png in Resources */,
 			);
@@ -3122,6 +3128,7 @@
 				80FF90B61FC5649F00E437CF /* CJMJRefreshViewController.m in Sources */,
 				7856F7FD21F4F4C3004AF751 /* UIImage+CJBase64.m in Sources */,
 				80238A602111966B008EB1D5 /* NavigationBarRemoveUnderlineViewController.m in Sources */,
+				78FCF5492306976500D275F9 /* CJButton.m in Sources */,
 				7856F7FC21F4F4C3004AF751 /* UIImage+CJMakeCircle.m in Sources */,
 				8060C48320E0D0B30093B14E /* CJDistanceUtil.m in Sources */,
 				7856F96921F9B2DF004AF751 /* AuthorizationCJHelperViewController.m in Sources */,
@@ -3147,7 +3154,6 @@
 				7856F80B21F4F4C3004AF751 /* UISearchBar+CJAddInputAccessoryView.m in Sources */,
 				7856F80F21F4F4C3004AF751 /* UIView+CJShowExtendView.m in Sources */,
 				789C443C21EECEE800181144 /* CJAppVersionUtil.m in Sources */,
-				80FF902B1FC5649E00E437CF /* MJExtensionViewController.m in Sources */,
 				788113C22199583000D1630D /* NormalSharedInstanceClass.m in Sources */,
 				78A621DC2135C713004DA046 /* DemoSuspendWindow.m in Sources */,
 				78C8148B216E11AF00A6B190 /* BChildViewController.m in Sources */,
@@ -3157,6 +3163,7 @@
 				780E46081E5DF87B00980127 /* AppDelegate.m in Sources */,
 				7856F81321F4F4C3004AF751 /* UIView+CJGestureRecognizer.m in Sources */,
 				80FF919A1FC5682B00E437CF /* DateViewController.m in Sources */,
+				7803DAAE22F7D519001E06B7 /* MJExtensionToModelViewController.m in Sources */,
 				78A4E1B42173A0D9005FEADD /* DemoChangeEnvironmentViewModel.m in Sources */,
 				789C447721F07BBC00181144 /* ImageHomeViewController.m in Sources */,
 				80FF909A1FC5649F00E437CF /* FloatingWindowViewController.m in Sources */,
@@ -3209,6 +3216,7 @@
 				7856F80821F4F4C3004AF751 /* UIButton+CJMoreProperty.m in Sources */,
 				80FF919C1FC5682B00E437CF /* CountDownTimeViewController.m in Sources */,
 				80FF91C51FC581DD00E437CF /* UtilHomeViewController.m in Sources */,
+				7803DAB122F7D578001E06B7 /* MJExtensionToJSONViewController.m in Sources */,
 				787FDB5A20500B01008A46E3 /* ColorViewController.m in Sources */,
 				80FF91351FC5668700E437CF /* NSArray+CJConsoleLog.m in Sources */,
 				7880E6F5213A9E84009C9BCF /* CJRandomNameUtil.m in Sources */,

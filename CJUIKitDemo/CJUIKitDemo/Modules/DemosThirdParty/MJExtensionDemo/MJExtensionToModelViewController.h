@@ -1,5 +1,5 @@
 //
-//  MJExtensionViewController.h
+//  MJExtensionToModelViewController.h
 //  CJUIKitDemo
 //
 //  Created by ciyouzen on 2017/11/2.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MJExtensionViewController : UIViewController
+@interface MJExtensionToModelViewController : UIViewController
 
 @end

@@ -9,7 +9,9 @@
 #import "ThirdPartyHomeViewController.h"
 
 //模型转换
-#import "MJExtensionViewController.h"
+#import "MJExtensionToModelViewController.h"
+#import "MJExtensionToJSONViewController.h"
+
 #import "MantleViewController.h"
 
 
@@ -33,8 +35,13 @@
         {
             CJModuleModel *baseScrollViewModule = [[CJModuleModel alloc] init];
             baseScrollViewModule.title = @"MJExtension的基本使用(待完善)";
-            baseScrollViewModule.classEntry = [MJExtensionViewController class];
-            baseScrollViewModule.isCreateByXib = YES;
+            baseScrollViewModule.classEntry = [MJExtensionToModelViewController class];
+            [sectionDataModel.values addObject:baseScrollViewModule];
+        }
+        {
+            CJModuleModel *baseScrollViewModule = [[CJModuleModel alloc] init];
+            baseScrollViewModule.title = @"MJExtension的基本使用(待完善)";
+            baseScrollViewModule.classEntry = [MJExtensionToJSONViewController class];
             [sectionDataModel.values addObject:baseScrollViewModule];
         }
         {

@@ -13,7 +13,7 @@
 @property (nonatomic, strong) UIColor *cjNormalBGColor;     /**< 设置按钮默认时候的背景颜色 */
 @property (nonatomic, strong) UIColor *cjHighlightedBGColor;/**< 设置按钮高亮时候的背景颜色 */
 @property (nonatomic, strong) UIColor *cjDisabledBGColor;   /**< 设置按钮失效时候的背景颜色 */
-@property (nonatomic, strong) UIColor *cjSelectedBGColor;   /**< 设置按钮失效时候的背景颜色 */
+@property (nonatomic, strong) UIColor *cjSelectedBGColor;   /**< 设置按钮选中时候的背景颜色 */
 
 
 @property (nonatomic, strong) id cjDataModel;               /**< 设置按钮持有的数据对象 */

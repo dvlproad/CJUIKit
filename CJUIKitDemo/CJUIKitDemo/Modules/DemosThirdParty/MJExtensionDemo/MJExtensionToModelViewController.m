@@ -1,19 +1,19 @@
 //
-//  MJExtensionViewController.m
+//  MJExtensionToModelViewController.m
 //  CJUIKitDemo
 //
 //  Created by ciyouzen on 2017/11/2.
 //  Copyright © 2017年 dvlproad. All rights reserved.
 //
 
-#import "MJExtensionViewController.h"
+#import "MJExtensionToModelViewController.h"
 #import "DemoBusFlightModel.h"
 
-@interface MJExtensionViewController ()
+@interface MJExtensionToModelViewController ()
 
 @end
 
-@implementation MJExtensionViewController
+@implementation MJExtensionToModelViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
