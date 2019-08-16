@@ -258,6 +258,9 @@
 		78E189AE21781BE200B8781A /* EdgeLayoutTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78E189AD21781BE200B8781A /* EdgeLayoutTableViewController.m */; };
 		78E41D23226965B7000FAC1A /* UIViewController+CJToast.m in Sources */ = {isa = PBXBuildFile; fileRef = 78E41D22226965B7000FAC1A /* UIViewController+CJToast.m */; };
 		78FCF5492306976500D275F9 /* CJButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 78FCF5482306976500D275F9 /* CJButton.m */; };
+		78FCF5522306A9BA00D275F9 /* UIView+CJDemoPopupAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 78FCF54E2306A9B900D275F9 /* UIView+CJDemoPopupAction.m */; };
+		78FCF5532306A9BA00D275F9 /* CJDemoPopupView.m in Sources */ = {isa = PBXBuildFile; fileRef = 78FCF5502306A9B900D275F9 /* CJDemoPopupView.m */; };
+		78FCF5562306AA8F00D275F9 /* UIView+CJRounderCorner.m in Sources */ = {isa = PBXBuildFile; fileRef = 78FCF5552306AA8F00D275F9 /* UIView+CJRounderCorner.m */; };
 		8008D7D220E5CF5700F98EF6 /* CallSystemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8008D7D020E5CF5700F98EF6 /* CallSystemViewController.m */; };
 		800E07E12016CCF500799B78 /* DataUtilViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 800E07D82016CCF500799B78 /* DataUtilViewController.m */; };
 		800E07E22016CCF500799B78 /* DataUtilViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 800E07DA2016CCF500799B78 /* DataUtilViewController.xib */; };
@@ -815,6 +818,12 @@
 		78E41D22226965B7000FAC1A /* UIViewController+CJToast.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+CJToast.m"; sourceTree = "<group>"; };
 		78FCF5472306976500D275F9 /* CJButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CJButton.h; sourceTree = "<group>"; };
 		78FCF5482306976500D275F9 /* CJButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CJButton.m; sourceTree = "<group>"; };
+		78FCF54B2306A9B900D275F9 /* UIView+CJDemoPopupAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+CJDemoPopupAction.h"; sourceTree = "<group>"; };
+		78FCF54D2306A9B900D275F9 /* CJDemoPopupView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJDemoPopupView.h; sourceTree = "<group>"; };
+		78FCF54E2306A9B900D275F9 /* UIView+CJDemoPopupAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+CJDemoPopupAction.m"; sourceTree = "<group>"; };
+		78FCF5502306A9B900D275F9 /* CJDemoPopupView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJDemoPopupView.m; sourceTree = "<group>"; };
+		78FCF5542306AA8F00D275F9 /* UIView+CJRounderCorner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+CJRounderCorner.h"; sourceTree = "<group>"; };
+		78FCF5552306AA8F00D275F9 /* UIView+CJRounderCorner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+CJRounderCorner.m"; sourceTree = "<group>"; };
 		8008D7CF20E5CF5700F98EF6 /* CallSystemViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CallSystemViewController.h; sourceTree = "<group>"; };
 		8008D7D020E5CF5700F98EF6 /* CallSystemViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CallSystemViewController.m; sourceTree = "<group>"; };
 		800E07D82016CCF500799B78 /* DataUtilViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataUtilViewController.m; sourceTree = "<group>"; };
@@ -1279,9 +1288,10 @@
 		7852D9DF216F16B000E50A39 /* CommonUI */ = {
 			isa = PBXGroup;
 			children = (
-				7857ABB92254AA1100B1569C /* CJDemoDateTextField */,
-				7857ABB5225482D200B1569C /* CJDemoDatePickerView */,
 				78E1895321777C9700B8781A /* Base */,
+				7857ABB5225482D200B1569C /* CJDemoDatePickerView */,
+				7857ABB92254AA1100B1569C /* CJDemoDateTextField */,
+				78FCF54A2306A9B900D275F9 /* CJDemoPopupView */,
 				78226A6A21A4012B002167F2 /* DemoAlert */,
 				7808D5B0217079E5007FC851 /* DemoBarButtonItemFactory */,
 				7852D9DB216F104000E50A39 /* DemoButtonFactory */,
@@ -1479,14 +1489,14 @@
 		7856F77B21F4F4C2004AF751 /* UIView */ = {
 			isa = PBXGroup;
 			children = (
-				7856F77C21F4F4C2004AF751 /* CJPopupAction */,
-				7856F78121F4F4C2004AF751 /* CJDragAction */,
-				7856F78621F4F4C2004AF751 /* UIView+CJExclusiveTouch.h */,
 				7856F78721F4F4C2004AF751 /* CJAnimation */,
-				7856F78A21F4F4C2004AF751 /* UIViewCJCategory.h */,
+				7856F78121F4F4C2004AF751 /* CJDragAction */,
 				7856F78B21F4F4C2004AF751 /* CJGestureRecognizer */,
-				7856F78E21F4F4C2004AF751 /* UIView+CJExclusiveTouch.m */,
+				7856F77C21F4F4C2004AF751 /* CJPopupAction */,
 				7856F78F21F4F4C2004AF751 /* CJShakeAction */,
+				7856F78621F4F4C2004AF751 /* UIView+CJExclusiveTouch.h */,
+				7856F78E21F4F4C2004AF751 /* UIView+CJExclusiveTouch.m */,
+				7856F78A21F4F4C2004AF751 /* UIViewCJCategory.h */,
 			);
 			path = UIView;
 			sourceTree = "<group>";
@@ -1498,6 +1508,8 @@
 				7856F77E21F4F4C2004AF751 /* UIView+CJPopupInView.m */,
 				7856F77D21F4F4C2004AF751 /* UIView+CJShowExtendView.h */,
 				7856F77F21F4F4C2004AF751 /* UIView+CJShowExtendView.m */,
+				78FCF5542306AA8F00D275F9 /* UIView+CJRounderCorner.h */,
+				78FCF5552306AA8F00D275F9 /* UIView+CJRounderCorner.m */,
 			);
 			path = CJPopupAction;
 			sourceTree = "<group>";
@@ -2124,6 +2136,17 @@
 				78E189AA21781BD000B8781A /* TranslucentLayoutTableViewController.m */,
 			);
 			path = AutoLayoutDemo;
+			sourceTree = "<group>";
+		};
+		78FCF54A2306A9B900D275F9 /* CJDemoPopupView */ = {
+			isa = PBXGroup;
+			children = (
+				78FCF54D2306A9B900D275F9 /* CJDemoPopupView.h */,
+				78FCF5502306A9B900D275F9 /* CJDemoPopupView.m */,
+				78FCF54B2306A9B900D275F9 /* UIView+CJDemoPopupAction.h */,
+				78FCF54E2306A9B900D275F9 /* UIView+CJDemoPopupAction.m */,
+			);
+			path = CJDemoPopupView;
 			sourceTree = "<group>";
 		};
 		8008D7CD20E5CF5700F98EF6 /* CallSystemUtilDemo */ = {
@@ -3088,9 +3111,11 @@
 				789C448121F07F6C00181144 /* ImageSizeViewController.m in Sources */,
 				78B6C2D92159D1F100D5864E /* DemoBusFlightModel.m in Sources */,
 				80FF902A1FC5649E00E437CF /* ThirdPartyHomeViewController.m in Sources */,
+				78FCF5532306A9BA00D275F9 /* CJDemoPopupView.m in Sources */,
 				78B6C2DF2159D20000D5864E /* DemoUsePermissionModel.m in Sources */,
 				78575C8A2257242100925842 /* TestTextFieldOffsetViewController.m in Sources */,
 				7856F81521F4F4C3004AF751 /* UIView+CJShake.m in Sources */,
+				78FCF5562306AA8F00D275F9 /* UIView+CJRounderCorner.m in Sources */,
 				7808319222DC65DD00F36576 /* WelcomeViewController.m in Sources */,
 				78B6C2E32159D6BC00D5864E /* DemoBusStationModel.m in Sources */,
 				8050038A211C3A29002A2306 /* NSObjectCJHelperViewController.m in Sources */,
@@ -3199,6 +3224,7 @@
 				808BF3242019C3E900511F7C /* YunUncaughtExceptionHandler.m in Sources */,
 				787FDB8520500B5C008A46E3 /* SwitchSliderViewController.m in Sources */,
 				7850B70220937C5A008F4A21 /* PopupInViewVC.m in Sources */,
+				78FCF5522306A9BA00D275F9 /* UIView+CJDemoPopupAction.m in Sources */,
 				80500388211C3A29002A2306 /* PresentBaseViewController.m in Sources */,
 				7850B70420937C5A008F4A21 /* ShowDropDownViewController.m in Sources */,
 				80D0120A210336B900D1EDF0 /* BeChangeViewController.m in Sources */,

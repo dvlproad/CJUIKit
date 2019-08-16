@@ -69,7 +69,7 @@
     CGFloat popupViewHeight = CGRectGetHeight(self.datePickerView.frame);
     UIColor *blankBGColor = [UIColor colorWithRed:.16 green:.17 blue:.21 alpha:.6];
     __weak typeof(self)weakSelf = self;
-    [self.datePickerView cj_popupInBottomWindow:CJAnimationTypeNormal withHeight:popupViewHeight blankBGColor:blankBGColor showComplete:nil tapBlankComplete:^() {
+    [self.datePickerView cj_popupInBottomWindow:CJAnimationTypeNormal withHeight:popupViewHeight edgeInsets:UIEdgeInsetsZero blankBGColor:blankBGColor showComplete:nil tapBlankComplete:^() {
         [weakSelf.datePickerView cj_hidePopupView];
     }];
 }

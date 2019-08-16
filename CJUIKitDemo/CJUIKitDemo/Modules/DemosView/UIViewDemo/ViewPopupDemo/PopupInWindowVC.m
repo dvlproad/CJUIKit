@@ -52,7 +52,7 @@
     
     CGFloat popupViewHeight = CGRectGetHeight(popupView.frame);
     UIColor *blankBGColor = [UIColor colorWithRed:.16 green:.17 blue:.21 alpha:.6];
-    [popupView cj_popupInBottomWindow:CJAnimationTypeNormal withHeight:popupViewHeight blankBGColor:blankBGColor showComplete:^{
+    [popupView cj_popupInBottomWindow:CJAnimationTypeNormal withHeight:popupViewHeight edgeInsets:UIEdgeInsetsZero blankBGColor:blankBGColor showComplete:^{
         NSLog(@"显示完成");
         
     } tapBlankComplete:^{

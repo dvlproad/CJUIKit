@@ -248,6 +248,7 @@ static NSString *cjMustHideFromPopupViewKey = @"cjMustHideFromPopupView";
 /** 完整的描述请参见文件头部 */
 - (void)cj_popupInBottomWindow:(CJAnimationType)animationType
                     withHeight:(CGFloat)popupViewHeight
+                    edgeInsets:(UIEdgeInsets)edgeInsets
                   blankBGColor:(UIColor *)blankBGColor
                   showComplete:(CJShowPopupViewCompleteBlock)showPopupViewCompleteBlock
               tapBlankComplete:(CJTapBlankViewCompleteBlock)tapBlankViewCompleteBlock
@@ -256,7 +257,7 @@ static NSString *cjMustHideFromPopupViewKey = @"cjMustHideFromPopupView";
     NSAssert(popupViewHeight != 0, @"弹出视图的高都不能为0");
     
     UIWindow *keyWindow = [[UIApplication sharedApplication] keyWindow];
-    CGFloat popupViewWidth = CGRectGetWidth(keyWindow.frame);
+    CGFloat popupViewWidth = CGRectGetWidth(keyWindow.frame) - edgeInsets.left - edgeInsets.right;
     CGSize popupViewSize = CGSizeMake(popupViewWidth, popupViewHeight);
     if (CGSizeEqualToSize(self.frame.size, popupViewSize)) {
         NSLog(@"Warning:popupView视图大小将自动调整为指定的弹出视图大小");
@@ -280,9 +281,11 @@ static NSString *cjMustHideFromPopupViewKey = @"cjMustHideFromPopupView";
 
     
     //popupViewShowFrame
-    
-    CGFloat popupViewX = 0;
-    CGFloat popupViewShowY = CGRectGetHeight(keyWindow.frame) - popupViewHeight;
+    CGFloat screenHeight = [[UIScreen mainScreen] bounds].size.height;
+    BOOL isScreenFull = screenHeight >= 812 && UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone;  // 是否是全面屏
+    CGFloat screenBottomHeight = isScreenFull ?  34.0 : 0.0;    // 屏幕底部
+    CGFloat popupViewX = edgeInsets.left;
+    CGFloat popupViewShowY = CGRectGetHeight(keyWindow.frame) - popupViewHeight - screenBottomHeight - edgeInsets.bottom;
     CGRect popupViewShowFrame = CGRectZero;
     popupViewShowFrame = CGRectMake(popupViewX,
                                     popupViewShowY,

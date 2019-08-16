@@ -77,12 +77,14 @@ typedef NS_ENUM(NSUInteger, CJAnimationType) {
  *
  *  @param animationType                弹出时候的动画采用的类型
  *  @param popupViewHeight              弹出视图的高度
+ *  @param edgeInsets                   弹窗与window的(左右下)边距
  *  @param blankBGColor                 空白区域的背景颜色
  *  @param showPopupViewCompleteBlock   显示弹出视图后的操作
  *  @param tapBlankViewCompleteBlock    点击空白区域后的操作(要自己执行cj_hidePopupView...来隐藏，因为有时候点击背景是不执行隐藏的)
  */
 - (void)cj_popupInBottomWindow:(CJAnimationType)animationType
                     withHeight:(CGFloat)popupViewHeight
+                    edgeInsets:(UIEdgeInsets)edgeInsets
                   blankBGColor:(UIColor *)blankBGColor
                   showComplete:(CJShowPopupViewCompleteBlock)showPopupViewCompleteBlock
               tapBlankComplete:(CJTapBlankViewCompleteBlock)tapBlankViewCompleteBlock;

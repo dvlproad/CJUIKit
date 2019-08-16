@@ -77,7 +77,7 @@
     CGFloat popupViewHeight = CGRectGetHeight(self.frame);
     UIColor *blankBGColor = [UIColor colorWithRed:.16 green:.17 blue:.21 alpha:.6];
     __weak typeof(self)weakSelf = self;
-    [self cj_popupInBottomWindow:CJAnimationTypeNormal withHeight:popupViewHeight blankBGColor:blankBGColor showComplete:nil tapBlankComplete:^() {
+    [self cj_popupInBottomWindow:CJAnimationTypeNormal withHeight:popupViewHeight edgeInsets:UIEdgeInsetsZero blankBGColor:blankBGColor showComplete:nil tapBlankComplete:^() {
         [weakSelf cj_hidePopupView];
     }];
 }
