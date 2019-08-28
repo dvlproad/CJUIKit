@@ -51,7 +51,8 @@
     [self addSubview:titleLabel];
     [titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.mas_equalTo(self.imageView.mas_bottom).mas_offset(17);
-        make.left.right.mas_equalTo(self).mas_offset(10);
+        make.left.mas_equalTo(self).mas_offset(10);
+        make.right.mas_equalTo(self).mas_offset(-10);
     }];
     self.titleLabel = titleLabel;
     
@@ -124,16 +125,25 @@
 }
 
 #pragma mark title
+/// 设置标题
 - (void)setTitle:(NSString *)title {
     _title = title;
     
     self.titleLabel.text = title;
 }
 
+/// 设置标题颜色
 - (void)setTitleColor:(UIColor *)titleColor {
     _titleColor = titleColor;
     
     self.titleLabel.textColor = titleColor;
+}
+
+/// 设置标题字体
+- (void)setTitleFont:(UIFont *)titleFont {
+    _titleFont = titleFont;
+    
+    self.titleLabel.font = titleFont;
 }
 
 #pragma mark message

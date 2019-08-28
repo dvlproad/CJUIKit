@@ -55,6 +55,69 @@
     return indexTitle;
 }
 
+- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
+//    cell.contentView.bounds = CGRectInset(cell.bounds, -40, -10);
+//    cell.contentView.backgroundColor = [UIColor redColor];
+//
+//    UIView *view = [UIView new];
+//    view.backgroundColor = [UIColor lightGrayColor];
+////    [cell.contentView insertSubview:view aboveSubview:cell.contentView];
+//    [cell.contentView insertSubview:view belowSubview:cell.contentView];
+    
+    
+    CAShapeLayer *layer = [[CAShapeLayer alloc] init];
+    CGMutablePathRef pathRef = CGPathCreateMutable();
+    
+    CGRect bounds = cell.bounds;
+    CGFloat cornerRadius = 10.f;
+    
+    if (indexPath.row == 0) {//第一个cell
+        //上边线
+        CGPathMoveToPoint(pathRef, nil, bounds.origin.x + 10, bounds.origin.y + 20);
+        //画弧
+        CGPathAddArcToPoint(pathRef, nil, bounds.origin.x + 10, bounds.origin.y, bounds.origin.x + 30, bounds.origin.y, cornerRadius);
+        //下面三句可以省略掉，写了更容易理解
+        //        CGPathMoveToPoint(pathRef, nil, bounds.origin.x + 20, bounds.origin.y);
+        //        CGPathAddLineToPoint(pathRef, nil, bounds.origin.x + bounds.size.width - 30, bounds.origin.y);
+        //        CGPathMoveToPoint(pathRef, nil,  bounds.origin.x + bounds.size.width - 30, bounds.origin.y);
+        CGPathAddArcToPoint(pathRef, nil, bounds.origin.x + bounds.size.width - 10, bounds.origin.y, bounds.origin.x + bounds.size.width - 10, bounds.origin.y + 20, cornerRadius);
+        
+        //左边线
+        CGPathMoveToPoint(pathRef, nil, bounds.origin.x + 10, bounds.origin.y + 20);
+        CGPathAddLineToPoint(pathRef, nil, bounds.origin.x + 10, bounds.size.height);
+        //右边线
+        CGPathMoveToPoint(pathRef, nil, bounds.origin.x + bounds.size.width - 10, bounds.origin.y + 10);
+        CGPathAddLineToPoint(pathRef, nil, bounds.origin.x + bounds.size.width - 10, bounds.size.height);
+    }
+    if(indexPath.row == [tableView numberOfRowsInSection:indexPath.section] - 1){//最后一个cell
+        //下边线
+        CGPathMoveToPoint(pathRef, nil, bounds.origin.x + 10, bounds.origin.y + bounds.size.height);
+        CGPathAddLineToPoint(pathRef, nil, bounds.origin.x + bounds.size.width - 10, bounds.origin.y + bounds.size.height);
+        
+        //左边线
+        CGPathMoveToPoint(pathRef, nil, bounds.origin.x + 10, bounds.origin.y);
+        CGPathAddLineToPoint(pathRef, nil, bounds.origin.x + 10, bounds.size.height);
+        //右边线
+        CGPathMoveToPoint(pathRef, nil, bounds.origin.x + bounds.size.width - 10, bounds.origin.y);
+        CGPathAddLineToPoint(pathRef, nil, bounds.origin.x + bounds.size.width - 10, bounds.size.height);
+    }
+    if (indexPath.row != 0 && indexPath.row != [tableView numberOfRowsInSection:indexPath.section] - 1) {//中间的cell
+        //左边线
+        CGPathMoveToPoint(pathRef, nil, bounds.origin.x + 10, bounds.origin.y);
+        CGPathAddLineToPoint(pathRef, nil, bounds.origin.x + 10, bounds.size.height);
+        //右边线
+        CGPathMoveToPoint(pathRef, nil, bounds.origin.x + bounds.size.width - 10, bounds.origin.y);
+        CGPathAddLineToPoint(pathRef, nil, bounds.origin.x + bounds.size.width - 10, bounds.size.height);
+    }
+    layer.path = pathRef;
+    CFRelease(pathRef);
+    //颜色修改
+    layer.fillColor = [UIColor whiteColor].CGColor;//这个是填充颜色，一个没有封闭的线条，无法做到完全填充
+    layer.strokeColor=[UIColor redColor].CGColor;
+    layer.borderWidth = 0.5;
+    [cell.contentView.layer insertSublayer:layer atIndex:0];
+}
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     CJSectionDataModel *sectionDataModel = [self.sectionDataModels objectAtIndex:indexPath.section];
     NSArray *dataModels = sectionDataModel.values;

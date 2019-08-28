@@ -1,6 +1,7 @@
 PODS:
   - AFNetworking/Reachability (3.2.1)
   - CJBaseEffectKit/CJDataEmptyView (0.0.1):
+    - CJFoundation/NSString
     - Masonry
   - CJBaseHelper (0.1.4):
     - CJBaseHelper/AuthorizationCJHelper (= 0.1.4)
@@ -21,85 +22,87 @@ PODS:
   - CJBaseHelper/NSOperationQueueCJHelper (0.1.4)
   - CJBaseHelper/UIViewControllerCJHelper (0.1.4)
   - CJBaseHelper/WebCJHelper (0.1.4)
-  - CJBaseUIKit (0.4.1):
-    - CJBaseUIKit/CJAlert (= 0.4.1)
-    - CJBaseUIKit/CJBaseTableViewCell (= 0.4.1)
-    - CJBaseUIKit/CJBaseTableViewHeaderFooterView (= 0.4.1)
-    - CJBaseUIKit/CJSlider (= 0.4.1)
-    - CJBaseUIKit/CJTextView (= 0.4.1)
-    - CJBaseUIKit/CJToast (= 0.4.1)
-    - CJBaseUIKit/UIButton (= 0.4.1)
-    - CJBaseUIKit/UIColor (= 0.4.1)
-    - CJBaseUIKit/UIImage (= 0.4.1)
-    - CJBaseUIKit/UINavigationBar (= 0.4.1)
-    - CJBaseUIKit/UIScrollView (= 0.4.1)
-    - CJBaseUIKit/UITextField (= 0.4.1)
-    - CJBaseUIKit/UIToolbar (= 0.4.1)
-    - CJBaseUIKit/UIView (= 0.4.1)
-    - CJBaseUIKit/UIViewController (= 0.4.1)
-    - CJBaseUIKit/UIWindow (= 0.4.1)
-  - CJBaseUIKit/CJAlert (0.4.1):
+  - CJBaseUIKit (0.4.7):
+    - CJBaseUIKit/CJAlert (= 0.4.7)
+    - CJBaseUIKit/CJBaseTableViewCell (= 0.4.7)
+    - CJBaseUIKit/CJBaseTableViewHeaderFooterView (= 0.4.7)
+    - CJBaseUIKit/CJSlider (= 0.4.7)
+    - CJBaseUIKit/CJTextView (= 0.4.7)
+    - CJBaseUIKit/CJToast (= 0.4.7)
+    - CJBaseUIKit/UIButton (= 0.4.7)
+    - CJBaseUIKit/UIColor (= 0.4.7)
+    - CJBaseUIKit/UIImage (= 0.4.7)
+    - CJBaseUIKit/UINavigationBar (= 0.4.7)
+    - CJBaseUIKit/UIScrollView (= 0.4.7)
+    - CJBaseUIKit/UITextField (= 0.4.7)
+    - CJBaseUIKit/UIToolbar (= 0.4.7)
+    - CJBaseUIKit/UIView (= 0.4.7)
+    - CJBaseUIKit/UIViewController (= 0.4.7)
+    - CJBaseUIKit/UIWindow (= 0.4.7)
+  - CJBaseUIKit/CJAlert (0.4.7):
     - CJBaseUIKit/UIView/CJPopupAction
     - Masonry
-  - CJBaseUIKit/CJBaseTableViewCell (0.4.1):
+  - CJBaseUIKit/CJBaseTableViewCell (0.4.7):
     - CJBaseUIKit/UIButton
-  - CJBaseUIKit/CJBaseTableViewHeaderFooterView (0.4.1)
-  - CJBaseUIKit/CJSlider (0.4.1)
-  - CJBaseUIKit/CJTextView (0.4.1)
-  - CJBaseUIKit/CJToast (0.4.1):
+  - CJBaseUIKit/CJBaseTableViewHeaderFooterView (0.4.7)
+  - CJBaseUIKit/CJSlider (0.4.7)
+  - CJBaseUIKit/CJTextView (0.4.7)
+  - CJBaseUIKit/CJToast (0.4.7):
     - MBProgressHUD
-  - CJBaseUIKit/UIButton (0.4.1)
-  - CJBaseUIKit/UIColor (0.4.1)
-  - CJBaseUIKit/UIImage (0.4.1)
-  - CJBaseUIKit/UINavigationBar (0.4.1)
-  - CJBaseUIKit/UIScrollView (0.4.1):
-    - CJBaseUIKit/UIScrollView/CJKeyboardAvoiding (= 0.4.1)
-  - CJBaseUIKit/UIScrollView/CJKeyboardAvoiding (0.4.1)
-  - CJBaseUIKit/UITextField (0.4.1)
-  - CJBaseUIKit/UIToolbar (0.4.1)
-  - CJBaseUIKit/UIView (0.4.1):
-    - CJBaseUIKit/UIView/CJDragAction (= 0.4.1)
-    - CJBaseUIKit/UIView/CJGestureRecognizer (= 0.4.1)
-    - CJBaseUIKit/UIView/CJPopupAction (= 0.4.1)
-    - CJBaseUIKit/UIView/CJShakeAction (= 0.4.1)
-  - CJBaseUIKit/UIView/CJDragAction (0.4.1)
-  - CJBaseUIKit/UIView/CJGestureRecognizer (0.4.1)
-  - CJBaseUIKit/UIView/CJPopupAction (0.4.1)
-  - CJBaseUIKit/UIView/CJShakeAction (0.4.1)
-  - CJBaseUIKit/UIViewController (0.4.1)
-  - CJBaseUIKit/UIWindow (0.4.1)
-  - CJBaseUtil (0.5.0):
-    - CJBaseUtil/CJAppLastUtil (= 0.5.0)
-    - CJBaseUtil/CJCallUtil (= 0.5.0)
-    - CJBaseUtil/CJDataUtil (= 0.5.0)
-    - CJBaseUtil/CJDateUtil (= 0.5.0)
-    - CJBaseUtil/CJIndentedStringUtil (= 0.5.0)
-    - CJBaseUtil/CJKeyboardUtil (= 0.5.0)
-    - CJBaseUtil/CJLaunchImageUtil (= 0.5.0)
-    - CJBaseUtil/CJManager (= 0.5.0)
-    - CJBaseUtil/CJPinyinHelper (= 0.5.0)
-    - CJBaseUtil/CJQRCodeUtil (= 0.5.0)
-  - CJBaseUtil/CJAppLastUtil (0.5.0):
+  - CJBaseUIKit/UIButton (0.4.7)
+  - CJBaseUIKit/UIColor (0.4.7)
+  - CJBaseUIKit/UIImage (0.4.7)
+  - CJBaseUIKit/UINavigationBar (0.4.7)
+  - CJBaseUIKit/UIScrollView (0.4.7):
+    - CJBaseUIKit/UIScrollView/CJKeyboardAvoiding (= 0.4.7)
+  - CJBaseUIKit/UIScrollView/CJKeyboardAvoiding (0.4.7)
+  - CJBaseUIKit/UITextField (0.4.7):
+    - CJBaseUIKit/UIView/CJPopupAction
+  - CJBaseUIKit/UIToolbar (0.4.7):
+    - CJBaseUIKit/UIImage
+  - CJBaseUIKit/UIView (0.4.7):
+    - CJBaseUIKit/UIView/CJDragAction (= 0.4.7)
+    - CJBaseUIKit/UIView/CJGestureRecognizer (= 0.4.7)
+    - CJBaseUIKit/UIView/CJPopupAction (= 0.4.7)
+    - CJBaseUIKit/UIView/CJShakeAction (= 0.4.7)
+  - CJBaseUIKit/UIView/CJDragAction (0.4.7)
+  - CJBaseUIKit/UIView/CJGestureRecognizer (0.4.7)
+  - CJBaseUIKit/UIView/CJPopupAction (0.4.7)
+  - CJBaseUIKit/UIView/CJShakeAction (0.4.7)
+  - CJBaseUIKit/UIViewController (0.4.7)
+  - CJBaseUIKit/UIWindow (0.4.7)
+  - CJBaseUtil (0.5.1):
+    - CJBaseUtil/CJAppLastUtil (= 0.5.1)
+    - CJBaseUtil/CJCallUtil (= 0.5.1)
+    - CJBaseUtil/CJDataUtil (= 0.5.1)
+    - CJBaseUtil/CJDateUtil (= 0.5.1)
+    - CJBaseUtil/CJIndentedStringUtil (= 0.5.1)
+    - CJBaseUtil/CJKeyboardUtil (= 0.5.1)
+    - CJBaseUtil/CJLaunchImageUtil (= 0.5.1)
+    - CJBaseUtil/CJManager (= 0.5.1)
+    - CJBaseUtil/CJPinyinHelper (= 0.5.1)
+    - CJBaseUtil/CJQRCodeUtil (= 0.5.1)
+  - CJBaseUtil/CJAppLastUtil (0.5.1):
     - SAMKeychain
-  - CJBaseUtil/CJCallUtil (0.5.0)
-  - CJBaseUtil/CJDataUtil (0.5.0)
-  - CJBaseUtil/CJDateUtil (0.5.0)
-  - CJBaseUtil/CJIndentedStringUtil (0.5.0)
-  - CJBaseUtil/CJKeyboardUtil (0.5.0)
-  - CJBaseUtil/CJLaunchImageUtil (0.5.0)
-  - CJBaseUtil/CJManager (0.5.0):
-    - CJBaseUtil/CJManager/CJLocationChangeManager (= 0.5.0)
-    - CJBaseUtil/CJManager/CJModuleManager (= 0.5.0)
-    - CJBaseUtil/CJManager/CJSuspendWindowManager (= 0.5.0)
-    - CJBaseUtil/CJManager/CJTimerManager (= 0.5.0)
-  - CJBaseUtil/CJManager/CJLocationChangeManager (0.5.0):
+  - CJBaseUtil/CJCallUtil (0.5.1)
+  - CJBaseUtil/CJDataUtil (0.5.1)
+  - CJBaseUtil/CJDateUtil (0.5.1)
+  - CJBaseUtil/CJIndentedStringUtil (0.5.1)
+  - CJBaseUtil/CJKeyboardUtil (0.5.1)
+  - CJBaseUtil/CJLaunchImageUtil (0.5.1)
+  - CJBaseUtil/CJManager (0.5.1):
+    - CJBaseUtil/CJManager/CJLocationChangeManager (= 0.5.1)
+    - CJBaseUtil/CJManager/CJModuleManager (= 0.5.1)
+    - CJBaseUtil/CJManager/CJSuspendWindowManager (= 0.5.1)
+    - CJBaseUtil/CJManager/CJTimerManager (= 0.5.1)
+  - CJBaseUtil/CJManager/CJLocationChangeManager (0.5.1):
     - CJBaseUtil/CJDateUtil
-  - CJBaseUtil/CJManager/CJModuleManager (0.5.0)
-  - CJBaseUtil/CJManager/CJSuspendWindowManager (0.5.0)
-  - CJBaseUtil/CJManager/CJTimerManager (0.5.0)
-  - CJBaseUtil/CJPinyinHelper (0.5.0):
+  - CJBaseUtil/CJManager/CJModuleManager (0.5.1)
+  - CJBaseUtil/CJManager/CJSuspendWindowManager (0.5.1)
+  - CJBaseUtil/CJManager/CJTimerManager (0.5.1)
+  - CJBaseUtil/CJPinyinHelper (0.5.1):
     - PinYin4Objc
-  - CJBaseUtil/CJQRCodeUtil (0.5.0)
+  - CJBaseUtil/CJQRCodeUtil (0.5.1)
   - CJComplexUIKit/CJCollectionView (0.2.3):
     - CJComplexUIKit/CJCollectionView/CJBaseCollectionViewCell (= 0.2.3)
     - CJComplexUIKit/CJCollectionView/CJCollectionViewLayout (= 0.2.3)
@@ -181,10 +184,10 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
-  CJBaseEffectKit: 480165473bdc3d10fe004240b241cbedc69b50b0
-  CJBaseHelper: 2a9dede6b455a592ece3efc1c658ebc3accbef23
-  CJBaseUIKit: d3db9747bdc2b04ece980d45dbdc3a3e9b0720b8
-  CJBaseUtil: 4754fa329c92354a93807413572264a25f6192c8
+  CJBaseEffectKit: 9dd70f5430ed582d816e60cfece03ae5bcaccf55
+  CJBaseHelper: dd715e18591da9df5d06364098300591220f0535
+  CJBaseUIKit: f44c87745477410edddbfc0edfd3adc46352b0d6
+  CJBaseUtil: 1bbf8d5f831dc12ae4bb06c8b5326bd39f3522e1
   CJComplexUIKit: 51c4a99d97c7ff32397b56fc63b80b655a5a7a5f
   CJFile: 6c1e6d55b3b94e8afbaa9f413f131301d15fdc48
   CJFoundation: 2c27b7ad85ec0cc5ac24aa112867971e01ae3ea3
@@ -197,4 +200,4 @@ SPEC CHECKSUMS:
 
 PODFILE CHECKSUM: ebd921d25bbd40fbe3fc153eb7ebe94b66ed64f0
 
-COCOAPODS: 1.6.1
+COCOAPODS: 1.7.5

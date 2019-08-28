@@ -52,8 +52,8 @@
 		78590D10215C79DD00F45AD5 /* UploadNoneImagePickerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 78590C75215C79DC00F45AD5 /* UploadNoneImagePickerViewController.xib */; };
 		785F86C2226C450E005CEBF3 /* EmptyScrollViewController1.m in Sources */ = {isa = PBXBuildFile; fileRef = 785F86C1226C450E005CEBF3 /* EmptyScrollViewController1.m */; };
 		785F86C8226C458C005CEBF3 /* EmptyScrollViewController2.m in Sources */ = {isa = PBXBuildFile; fileRef = 785F86C6226C458B005CEBF3 /* EmptyScrollViewController2.m */; };
+		78626B10230FAD9900AC11F0 /* DataEmptyViewFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 78626B0E230FAD9900AC11F0 /* DataEmptyViewFactory.m */; };
 		7886B229226C13F5002A0404 /* TableEmptyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7886B228226C13F5002A0404 /* TableEmptyViewController.m */; };
-		7886B22F226C1490002A0404 /* DataEmptyViewFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 7886B22E226C1490002A0404 /* DataEmptyViewFactory.m */; };
 		789A4F3521FAF3A8001528B9 /* MemoryADCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 789A4EE921FAF3A8001528B9 /* MemoryADCollectionViewCell.m */; };
 		789A4F3621FAF3A8001528B9 /* MyCycleADViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 789A4EEA21FAF3A8001528B9 /* MyCycleADViewController.m */; };
 		789A4F3721FAF3A8001528B9 /* MyADModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 789A4EEC21FAF3A8001528B9 /* MyADModel.m */; };
@@ -270,10 +270,10 @@
 		785F86C1226C450E005CEBF3 /* EmptyScrollViewController1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EmptyScrollViewController1.m; sourceTree = "<group>"; };
 		785F86C6226C458B005CEBF3 /* EmptyScrollViewController2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EmptyScrollViewController2.m; sourceTree = "<group>"; };
 		785F86C7226C458B005CEBF3 /* EmptyScrollViewController2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EmptyScrollViewController2.h; sourceTree = "<group>"; };
+		78626B0E230FAD9900AC11F0 /* DataEmptyViewFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataEmptyViewFactory.m; sourceTree = "<group>"; };
+		78626B0F230FAD9900AC11F0 /* DataEmptyViewFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataEmptyViewFactory.h; sourceTree = "<group>"; };
 		7886B227226C13F5002A0404 /* TableEmptyViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TableEmptyViewController.h; sourceTree = "<group>"; };
 		7886B228226C13F5002A0404 /* TableEmptyViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TableEmptyViewController.m; sourceTree = "<group>"; };
-		7886B22D226C1490002A0404 /* DataEmptyViewFactory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DataEmptyViewFactory.h; sourceTree = "<group>"; };
-		7886B22E226C1490002A0404 /* DataEmptyViewFactory.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DataEmptyViewFactory.m; sourceTree = "<group>"; };
 		789A4EE821FAF3A8001528B9 /* MyADModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyADModel.h; sourceTree = "<group>"; };
 		789A4EE921FAF3A8001528B9 /* MemoryADCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MemoryADCollectionViewCell.m; sourceTree = "<group>"; };
 		789A4EEA21FAF3A8001528B9 /* MyCycleADViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyCycleADViewController.m; sourceTree = "<group>"; };
@@ -664,8 +664,6 @@
 				78DA40A8226B83480026E19D /* ScrollContaintViewController.m */,
 				7886B227226C13F5002A0404 /* TableEmptyViewController.h */,
 				7886B228226C13F5002A0404 /* TableEmptyViewController.m */,
-				7886B22D226C1490002A0404 /* DataEmptyViewFactory.h */,
-				7886B22E226C1490002A0404 /* DataEmptyViewFactory.m */,
 				7856F6B821F4E706004AF751 /* Resources */,
 			);
 			path = EmptyScrollViewDemo;
@@ -819,6 +817,15 @@
 				789A4FA621FB0346001528B9 /* 3H5ImgSetting */,
 			);
 			path = WebViewDemo;
+			sourceTree = "<group>";
+		};
+		78626B0D230FAD9900AC11F0 /* DemoEmptyViewFactory */ = {
+			isa = PBXGroup;
+			children = (
+				78626B0E230FAD9900AC11F0 /* DataEmptyViewFactory.m */,
+				78626B0F230FAD9900AC11F0 /* DataEmptyViewFactory.h */,
+			);
+			path = DemoEmptyViewFactory;
 			sourceTree = "<group>";
 		};
 		789A4EE621FAF3A8001528B9 /* CollectionViewDemo */ = {
@@ -1021,11 +1028,12 @@
 		789C43F221EEC58500181144 /* CommonUI */ = {
 			isa = PBXGroup;
 			children = (
-				78A82A352266F1500013C515 /* CJDemoDatePickerView */,
 				789C440B21EEC58500181144 /* Base */,
+				78A82A352266F1500013C515 /* CJDemoDatePickerView */,
 				789C43FE21EEC58500181144 /* DemoAlert */,
 				789C43FB21EEC58500181144 /* DemoBarButtonItemFactory */,
 				789C440421EEC58500181144 /* DemoButtonFactory */,
+				78626B0D230FAD9900AC11F0 /* DemoEmptyViewFactory */,
 				789C43F321EEC58500181144 /* DemoProgressHUD */,
 				789C43F821EEC58500181144 /* DemoTextFieldFactory */,
 			);
@@ -1586,7 +1594,6 @@
 				78590D0C215C79DD00F45AD5 /* UploadNoneImagePickerViewController.m in Sources */,
 				789C445D21EEDBF500181144 /* AboutViewController.m in Sources */,
 				789A4F5F21FAF3A8001528B9 /* CvDemo_Complex.m in Sources */,
-				7886B22F226C1490002A0404 /* DataEmptyViewFactory.m in Sources */,
 				789A4F9921FAF3FB001528B9 /* OpenTableViewController1.m in Sources */,
 				789A4F5521FAF3A8001528B9 /* DetailCell.m in Sources */,
 				7856F73521F4E79E004AF751 /* DemoInfo.m in Sources */,
@@ -1604,6 +1611,7 @@
 				7856F8A321F5680F004AF751 /* CJUploadCollectionViewCell.m in Sources */,
 				789C448F21F170CF00181144 /* CJAppVersionUtil.m in Sources */,
 				789A4F5221FAF3A8001528B9 /* CustomLayoutCollectionViewController.m in Sources */,
+				78626B10230FAD9900AC11F0 /* DataEmptyViewFactory.m in Sources */,
 				789C442A21EEC90000181144 /* WebHomeViewController.m in Sources */,
 				78A82A382266F1500013C515 /* CJDemoDatePickerView.m in Sources */,
 				789A4FAD21FB053B001528B9 /* H5ImgSettingBaseViewController.m in Sources */,

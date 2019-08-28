@@ -28,7 +28,7 @@ end
 target 'CJHookDemo' do
   pod 'CJBaseUIKit',              :path => '../’
   pod 'CJBaseUtil',               :path => '../’
-  pod 'CJBaseHelper',             :path => '../’
+#  pod 'CJBaseHelper',             :path => '../’
   pod 'CJHook',                   :path => '../’
   pod 'CJFoundation',             :path => '../’
   pod 'CJBaseEffectKit/CJDataEmptyView',  :path => '../’

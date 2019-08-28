@@ -18,8 +18,9 @@
 @property (nonatomic, strong) UIImage *image;
 @property (nonatomic) CGSize imageSize;
 
-@property (nonatomic, copy) NSString *title;
-@property (nonatomic) UIColor *titleColor;
+@property (nonatomic, copy) NSString *title;    /**< 标题 */
+@property (nonatomic) UIColor *titleColor;      /**< 标题颜色 */
+@property (nonatomic) UIFont *titleFont;        /**< 标题字体大小 */
 
 @property (nonatomic, copy) NSString *message;
 

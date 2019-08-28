@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -61,6 +61,7 @@
 		78244ABE22314DE8000D4CFA /* TestHookModel1.m in Sources */ = {isa = PBXBuildFile; fileRef = 78244AB122314DE8000D4CFA /* TestHookModel1.m */; };
 		78244ABF22314DE8000D4CFA /* TestHookModel2.m in Sources */ = {isa = PBXBuildFile; fileRef = 78244AB222314DE8000D4CFA /* TestHookModel2.m */; };
 		78244AC022314DE8000D4CFA /* TestHookModel1+TestHook.m in Sources */ = {isa = PBXBuildFile; fileRef = 78244AB322314DE8000D4CFA /* TestHookModel1+TestHook.m */; };
+		78626B14230FADC400AC11F0 /* DataEmptyViewFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 78626B12230FADC400AC11F0 /* DataEmptyViewFactory.m */; };
 		7894997A22320F830084ECEF /* DemoFileUploadPanel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7894997822320F830084ECEF /* DemoFileUploadPanel.m */; };
 		D0C4BD23F0579EC956509BF1 /* libPods-CJHookDemoTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A9C77A08C989618BAAF7F206 /* libPods-CJHookDemoTests.a */; };
 /* End PBXBuildFile section */
@@ -184,6 +185,8 @@
 		78244AB522314DE8000D4CFA /* HookCJHelperSwizzleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HookCJHelperSwizzleViewController.h; sourceTree = "<group>"; };
 		78244AB622314DE8000D4CFA /* TestHookModel1+TestHook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TestHookModel1+TestHook.h"; sourceTree = "<group>"; };
 		78244AB722314DE8000D4CFA /* TestHookModel2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestHookModel2.h; sourceTree = "<group>"; };
+		78626B12230FADC400AC11F0 /* DataEmptyViewFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataEmptyViewFactory.m; sourceTree = "<group>"; };
+		78626B13230FADC400AC11F0 /* DataEmptyViewFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataEmptyViewFactory.h; sourceTree = "<group>"; };
 		7894997822320F830084ECEF /* DemoFileUploadPanel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DemoFileUploadPanel.m; sourceTree = "<group>"; };
 		7894997922320F830084ECEF /* DemoFileUploadPanel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DemoFileUploadPanel.h; sourceTree = "<group>"; };
 		8284AE8368E13D9CF7C0EF9B /* libPods-CJHookDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CJHookDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -319,12 +322,13 @@
 		78244A2C2230ED85000D4CFA /* CommonUI */ = {
 			isa = PBXGroup;
 			children = (
+				78244A452230ED85000D4CFA /* Base */,
+				78244A382230ED85000D4CFA /* DemoAlert */,
+				78244A352230ED85000D4CFA /* DemoBarButtonItemFactory */,
+				78244A3E2230ED85000D4CFA /* DemoButtonFactory */,
+				78626B11230FADC400AC11F0 /* DemoEmptyViewFactory */,
 				78244A2D2230ED85000D4CFA /* DemoProgressHUD */,
 				78244A322230ED85000D4CFA /* DemoTextFieldFactory */,
-				78244A352230ED85000D4CFA /* DemoBarButtonItemFactory */,
-				78244A382230ED85000D4CFA /* DemoAlert */,
-				78244A3E2230ED85000D4CFA /* DemoButtonFactory */,
-				78244A452230ED85000D4CFA /* Base */,
 			);
 			name = CommonUI;
 			path = ../../CJUIKitDemo/CJUIKitDemo/CommonUI;
@@ -520,6 +524,15 @@
 				78244AB722314DE8000D4CFA /* TestHookModel2.h */,
 			);
 			path = SwizzleMethod;
+			sourceTree = "<group>";
+		};
+		78626B11230FADC400AC11F0 /* DemoEmptyViewFactory */ = {
+			isa = PBXGroup;
+			children = (
+				78626B12230FADC400AC11F0 /* DataEmptyViewFactory.m */,
+				78626B13230FADC400AC11F0 /* DataEmptyViewFactory.h */,
+			);
+			path = DemoEmptyViewFactory;
 			sourceTree = "<group>";
 		};
 		7894997722320F830084ECEF /* HookCommonUtil */ = {
@@ -739,50 +752,11 @@
 			files = (
 			);
 			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-CJHookDemo/Pods-CJHookDemo-resources.sh",
-				"${PODS_ROOT}/../../CJBaseEffectKit/CJDataEmptyView/Resources/cjNetworkDisable@2x.png",
-				"${PODS_ROOT}/../../CJBaseEffectKit/CJDataEmptyView/Resources/cjNetworkDisable@3x.png",
-				"${PODS_ROOT}/../../CJBaseEffectKit/CJDataEmptyView/Resources/cjNetworkError@2x.png",
-				"${PODS_ROOT}/../../CJBaseEffectKit/CJDataEmptyView/Resources/cjNetworkError@3x.png",
-				"${PODS_ROOT}/../../CJBaseUIKit/CJBaseTableViewCell/Resources/cjCheckBoxGreen2NO.png",
-				"${PODS_ROOT}/../../CJBaseUIKit/CJBaseTableViewCell/Resources/cjCheckBoxGreen2YES.png",
-				"${PODS_ROOT}/../../CJBaseUIKit/CJBaseTableViewCell/Resources/cjCheckBoxGreenNO@2x.png",
-				"${PODS_ROOT}/../../CJBaseUIKit/CJBaseTableViewCell/Resources/cjCheckBoxGreenYES@2x.png",
-				"${PODS_ROOT}/../../CJBaseUIKit/CJBaseTableViewCell/Resources/cjCheckBoxOrangeYES@2x.png",
-				"${PODS_ROOT}/../../CJBaseUIKit/CJToast/Resources/CJToast_error.png",
-				"${PODS_ROOT}/../../CJBaseUIKit/CJToast/Resources/CJToast_error@2x.png",
-				"${PODS_ROOT}/../../CJBaseUIKit/CJToast/Resources/CJToast_error@3x.png",
-				"${PODS_ROOT}/../../CJBaseUIKit/CJToast/Resources/CJToast_success.png",
-				"${PODS_ROOT}/../../CJBaseUIKit/CJToast/Resources/CJToast_success@2x.png",
-				"${PODS_ROOT}/../../CJBaseUIKit/CJToast/Resources/CJToast_success@3x.png",
-				"${PODS_ROOT}/PinYin4Objc/PinYin4Objc/Resources/unicode_to_hanyu_pinyin.txt",
-				"${PODS_ROOT}/SAMKeychain/Support/SAMKeychain.bundle",
-				"${PODS_ROOT}/SVProgressHUD/SVProgressHUD/SVProgressHUD.bundle",
+				"${PODS_ROOT}/Target Support Files/Pods-CJHookDemo/Pods-CJHookDemo-resources-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputFileListPaths = (
-			);
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/cjNetworkDisable@2x.png",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/cjNetworkDisable@3x.png",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/cjNetworkError@2x.png",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/cjNetworkError@3x.png",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/cjCheckBoxGreen2NO.png",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/cjCheckBoxGreen2YES.png",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/cjCheckBoxGreenNO@2x.png",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/cjCheckBoxGreenYES@2x.png",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/cjCheckBoxOrangeYES@2x.png",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/CJToast_error.png",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/CJToast_error@2x.png",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/CJToast_error@3x.png",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/CJToast_success.png",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/CJToast_success@2x.png",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/CJToast_success@3x.png",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/unicode_to_hanyu_pinyin.txt",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/SAMKeychain.bundle",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/SVProgressHUD.bundle",
+				"${PODS_ROOT}/Target Support Files/Pods-CJHookDemo/Pods-CJHookDemo-resources-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -820,6 +794,7 @@
 				782449E82230E9AB000D4CFA /* AppDelegate.m in Sources */,
 				78244ABB22314DE8000D4CFA /* HookCJHelperChangeViewController.m in Sources */,
 				78244A272230EABC000D4CFA /* AppDelegate+WindowRootViewController.m in Sources */,
+				78626B14230FADC400AC11F0 /* DataEmptyViewFactory.m in Sources */,
 				78244A5D2230ED85000D4CFA /* CJUIKitCollectionViewCell.m in Sources */,
 				78244AB922314DE8000D4CFA /* TestChangeModel1+TestChange.m in Sources */,
 				7894997A22320F830084ECEF /* DemoFileUploadPanel.m in Sources */,
