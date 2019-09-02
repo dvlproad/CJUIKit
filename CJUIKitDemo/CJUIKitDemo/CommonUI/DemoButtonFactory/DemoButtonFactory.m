@@ -32,6 +32,19 @@
     return button;
 }
 
+///红色背景按钮
++ (UIButton *)redButton {
+    UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
+    button.layer.masksToBounds = YES;
+    button.layer.cornerRadius = 15;
+    
+    button.cjNormalBGColor = CJColorFromHexString(@"#01adfe");
+    button.cjHighlightedBGColor = CJColorFromHexString(@"#1393d7");
+    button.cjDisabledBGColor = CJColorFromHexString(@"#d3d3d5");
+    
+    return button;
+}
+
 ///白色背景按钮
 + (UIButton *)whiteButton {
     UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];

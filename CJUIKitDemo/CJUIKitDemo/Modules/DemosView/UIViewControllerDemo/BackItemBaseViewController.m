@@ -1,42 +1,47 @@
 //
-//  SampleViewController.m
+//  BackItemBaseViewController.m
 //  CJUIKitDemo
 //
 //  Created by ciyouzen on 2017/5/20.
 //  Copyright © 2017年 dvlproad. All rights reserved.
 //
 
-#import "SampleViewController.h"
+#import "BackItemBaseViewController.h"
 
-#import "UIViewController+CJCustomBackBarButtonItem.h"
-#import "UIViewController+CJSystemBackButtonHandler.h"
-
-@interface SampleViewController ()
+@interface BackItemBaseViewController ()
 
 @end
 
-@implementation SampleViewController
-
-- (IBAction)goBack:(id)sender {
-    [self.navigationController popViewControllerAnimated:YES];
-}
+@implementation BackItemBaseViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    self.view.backgroundColor = [UIColor whiteColor];
     
-    //方法②：测试自定义的返回按钮
-//    [self cj_setCustomBackBarButtonItemWithTarget:self action:@selector(testCustomBackBarButtonItemAction)];
+    UIButton *redButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    [redButton setBackgroundColor:[UIColor redColor]];
+    [redButton setTitle:@"返回到上一页(此按钮不会卡住返回)" forState:UIControlStateNormal];
+    [redButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    [redButton addTarget:self action:@selector(goBack) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:redButton];
+    [redButton mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.mas_equalTo(self.view).mas_offset(10);
+        make.right.mas_equalTo(self.view).mas_offset(-10);
+        make.top.mas_equalTo(self.view).mas_offset(110);
+        make.height.mas_equalTo(44);
+    }];
 }
 
-//方法①
-- (BOOL)cj_navigationShouldPopOnBackButton {
-    [self testCustomBackBarButtonItemAction];
-    
-    return NO;
+#pragma mark - Event
+- (void)goBack {
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
-- (void)testCustomBackBarButtonItemAction {
+/**
+ *  自定义返回按钮的返回操作
+ */
+- (void)customBackBarButtonItemAction {
     UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"提示" message:@"信息已更改，是否保存" preferredStyle:UIAlertControllerStyleAlert];
     //添加alertAction
     UIAlertAction *action1 = [UIAlertAction actionWithTitle:@"直接返回" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {

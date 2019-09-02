@@ -42,7 +42,8 @@
 
 
 //UIViewController
-#import "SampleViewController.h"
+#import "BackSystemItemViewController.h"
+#import "BackCustomItemViewController.h"
 #import "SystemComposeViewController.h"
 
 #import "CJMJRefreshViewController.h"
@@ -303,11 +304,18 @@
         CJSectionDataModel *sectionDataModel = [[CJSectionDataModel alloc] init];
         sectionDataModel.theme = @"UIViewController相关";
         {
-            CJModuleModel *ViewCategoryModule = [[CJModuleModel alloc] init];
-            ViewCategoryModule.title = @"BackBarButtonItem (返回按钮事件)";
-            ViewCategoryModule.classEntry = [SampleViewController class];
-            ViewCategoryModule.isCreateByXib = NO;
-            [sectionDataModel.values addObject:ViewCategoryModule];
+            CJModuleModel *backModule = [[CJModuleModel alloc] init];
+            backModule.title = @"BackBarButtonItem (系统返回按钮事件)";
+            backModule.classEntry = [BackSystemItemViewController class];
+            backModule.isCreateByXib = NO;
+            [sectionDataModel.values addObject:backModule];
+        }
+        {
+            CJModuleModel *backModule = [[CJModuleModel alloc] init];
+            backModule.title = @"BackBarButtonItem (自定义返回按钮事件)";
+            backModule.classEntry = [BackCustomItemViewController class];
+            backModule.isCreateByXib = NO;
+            [sectionDataModel.values addObject:backModule];
         }
         {
             CJModuleModel *systemComposeViewModule = [[CJModuleModel alloc] init];
