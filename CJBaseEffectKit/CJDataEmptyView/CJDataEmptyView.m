@@ -104,7 +104,8 @@
     
     [self.titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.mas_equalTo(self.imageView.mas_bottom).mas_offset(distancBetweenTitleAndImage);
-        make.left.right.mas_equalTo(self).mas_offset(10);
+        make.left.mas_equalTo(self).mas_offset(10);
+        make.right.mas_equalTo(self).mas_offset(-10);
     }];
 }
 

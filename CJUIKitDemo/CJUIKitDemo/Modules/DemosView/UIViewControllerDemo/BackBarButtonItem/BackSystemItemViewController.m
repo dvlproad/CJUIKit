@@ -7,7 +7,7 @@
 //
 
 #import "BackSystemItemViewController.h"
-
+//#import <UINavigation-SXFixSpace/UINavigationSXFixSpace.h>
 #import "UIViewController+CJSystemBackButtonHandler.h"
 
 @interface BackSystemItemViewController ()
@@ -15,6 +15,16 @@
 @end
 
 @implementation BackSystemItemViewController
+
+- (instancetype)init {
+    self = [super init];
+    if (self) {
+        // 请在AppDelegate中实现
+//        [UINavigationConfig shared].sx_disableFixSpace = NO;//默认为NO  可以修改
+//        [UINavigationConfig shared].sx_defaultFixSpace = 20;//默认为0 可以修改
+    }
+    return self;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];

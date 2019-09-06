@@ -95,6 +95,7 @@ PODS:
   - SDWebImage/Core (5.0.6)
   - Shimmer (1.0.2)
   - SVProgressHUD (2.2.5)
+  - UINavigation-SXFixSpace (1.2.4)
   - WebViewJavascriptBridge (6.0.3)
   - WMPageController (2.5.2)
   - YYText (1.0.7)
@@ -126,6 +127,7 @@ DEPENDENCIES:
   - SDWebImage
   - Shimmer (~> 1.0.2)
   - SVProgressHUD (~> 2.2.2)
+  - UINavigation-SXFixSpace
   - WebViewJavascriptBridge (~> 6.0.2)
   - WMPageController
   - YYText (~> 1.0.7)
@@ -150,6 +152,7 @@ SPEC REPOS:
     - SDWebImage
     - Shimmer
     - SVProgressHUD
+    - UINavigation-SXFixSpace
     - WebViewJavascriptBridge
     - WMPageController
     - YYText
@@ -193,10 +196,11 @@ SPEC CHECKSUMS:
   SDWebImage: 920f1a2ff1ca8296ad34f6e0510a1ef1d70ac965
   Shimmer: c5374be1c2b0c9e292fb05b339a513cf291cac86
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
+  UINavigation-SXFixSpace: 10f223253ebff2ceefa26694e23b7694269763c4
   WebViewJavascriptBridge: 7f5bc4d3581e672e8f32bd0f812d54bc69bb8e29
   WMPageController: 0c7624d2b48e4f1ab92371688cf6744ed701575d
   YYText: 5c461d709e24d55a182d1441c41dc639a18a4849
 
-PODFILE CHECKSUM: 133ea97a965da94739c11af3086baf4180ea882d
+PODFILE CHECKSUM: 063d5d6b3b875bd2c6016862a52843647ee9cb49
 
-COCOAPODS: 1.6.1
+COCOAPODS: 1.7.5

@@ -17,6 +17,8 @@
 #import "CJAppLastUtil.h"
 #import <IQKeyboardManager/IQKeyboardManager.h>
 
+#import <UINavigation-SXFixSpace/UINavigationSXFixSpace.h>
+
 @interface AppDelegate ()
 
 @end
@@ -48,6 +50,9 @@
     //[[IQKeyboardManager sharedManager].disabledToolbarClasses addObject:NSClassFromString(@"DateViewController")]; //已写在对应的类里了
     
     // 设置主窗口,并设置根控制器
+    [UINavigationConfig shared].sx_disableFixSpace = NO;//默认为NO  可以修改
+    [UINavigationConfig shared].sx_defaultFixSpace = 2;//默认为0 可以修改
+    
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     self.window.rootViewController = [self getMainRootViewController];
     [self.window makeKeyAndVisible];

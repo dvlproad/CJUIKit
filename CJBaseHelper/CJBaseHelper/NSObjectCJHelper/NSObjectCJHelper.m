@@ -10,6 +10,17 @@
 
 @implementation NSObjectCJHelper
 
+/**
+ *  检查并返回非null字符串
+ *
+ *  @param checkString  要检查的字符串
+ *
+ *  @return 新的字符串
+ */
++ (NSString *)checkNullString:(NSString *)checkString {
+    return [self isNullForObject:checkString] ? @"" : checkString;
+}
+
 /// 判断对象是否为NULL或nil(OC方法)
 + (BOOL)isNullForObject:(id)object {
     if (object == nil || object == NULL || [object isKindOfClass:[NSNull class]]) {

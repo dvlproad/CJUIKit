@@ -13,12 +13,6 @@
 #import <UIKit/UIKit.h>
 #import <Foundation/Foundation.h>
 
-//判断是否空字符串
-//#define cjIsNullString(s)   (!s || [s isEqual:[NSNull null]] || [s isEqualToString:@""])
-#define cjIsNullString(s)   ([NSObjectCJHelper isNullForObject:s])
-#define cjIsEmptyString(s)  ([NSObjectCJHelper isEmptyForObject:s])
-
-
 @interface NSObjectCJHelper : NSObject
 
 #pragma mark - C函数
@@ -28,6 +22,15 @@ UIKIT_EXTERN bool isNullObjectCJHelper(id object);
 UIKIT_EXTERN bool isEmptyObjectCJHelper(id object);
 
 #pragma mark - OC方法
+/**
+ *  检查并返回非null字符串
+ *
+ *  @param checkString  要检查的字符串
+ *
+ *  @return 新的字符串
+ */
++ (NSString *)checkNullString:(NSString *)checkString;
+
 /// 判断对象是否为NULL或nil(OC方法)
 + (BOOL)isNullForObject:(id)object;
 

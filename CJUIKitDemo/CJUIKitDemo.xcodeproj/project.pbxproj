@@ -156,9 +156,10 @@
 		7868276021AE926700FCCDE5 /* AppAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7868275F21AE926700FCCDE5 /* AppAssets.xcassets */; };
 		7868277B21AF01BA00FCCDE5 /* bgCar@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7868277A21AF01B800FCCDE5 /* bgCar@2x.jpg */; };
 		7868278121AF02E000FCCDE5 /* bg@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7868278021AF02E000FCCDE5 /* bg@2x.jpg */; };
-		7875C57F231CF49300076A00 /* BackSystemItemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7875C57D231CF49300076A00 /* BackSystemItemViewController.m */; };
-		7875C582231CF4E100076A00 /* BackCustomItemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7875C581231CF4E100076A00 /* BackCustomItemViewController.m */; };
-		7875C585231CF5E700076A00 /* BackItemBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7875C584231CF5E600076A00 /* BackItemBaseViewController.m */; };
+		7875C58D231CF77900076A00 /* BackCustomItemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7875C587231CF77900076A00 /* BackCustomItemViewController.m */; };
+		7875C58E231CF77900076A00 /* BackItemBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7875C588231CF77900076A00 /* BackItemBaseViewController.m */; };
+		7875C58F231CF77900076A00 /* BackSystemItemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7875C589231CF77900076A00 /* BackSystemItemViewController.m */; };
+		787C287F23223DAA00AF84F4 /* DemoEasyModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 787C287E23223DAA00AF84F4 /* DemoEasyModel.m */; };
 		787FDB5620500B01008A46E3 /* SearchBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 787FDB4C20500B00008A46E3 /* SearchBarViewController.m */; };
 		787FDB5720500B01008A46E3 /* SearchBarViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 787FDB4D20500B00008A46E3 /* SearchBarViewController.xib */; };
 		787FDB5820500B01008A46E3 /* TextFieldViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 787FDB5020500B00008A46E3 /* TextFieldViewController.m */; };
@@ -646,12 +647,14 @@
 		7868275F21AE926700FCCDE5 /* AppAssets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = AppAssets.xcassets; sourceTree = "<group>"; };
 		7868277A21AF01B800FCCDE5 /* bgCar@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "bgCar@2x.jpg"; sourceTree = "<group>"; };
 		7868278021AF02E000FCCDE5 /* bg@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "bg@2x.jpg"; sourceTree = "<group>"; };
-		7875C57D231CF49300076A00 /* BackSystemItemViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BackSystemItemViewController.m; sourceTree = "<group>"; };
-		7875C57E231CF49300076A00 /* BackSystemItemViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BackSystemItemViewController.h; sourceTree = "<group>"; };
-		7875C580231CF4E100076A00 /* BackCustomItemViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BackCustomItemViewController.h; sourceTree = "<group>"; };
-		7875C581231CF4E100076A00 /* BackCustomItemViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BackCustomItemViewController.m; sourceTree = "<group>"; };
-		7875C583231CF5E500076A00 /* BackItemBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BackItemBaseViewController.h; sourceTree = "<group>"; };
-		7875C584231CF5E600076A00 /* BackItemBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BackItemBaseViewController.m; sourceTree = "<group>"; };
+		7875C587231CF77900076A00 /* BackCustomItemViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BackCustomItemViewController.m; sourceTree = "<group>"; };
+		7875C588231CF77900076A00 /* BackItemBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BackItemBaseViewController.m; sourceTree = "<group>"; };
+		7875C589231CF77900076A00 /* BackSystemItemViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BackSystemItemViewController.m; sourceTree = "<group>"; };
+		7875C58A231CF77900076A00 /* BackCustomItemViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BackCustomItemViewController.h; sourceTree = "<group>"; };
+		7875C58B231CF77900076A00 /* BackItemBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BackItemBaseViewController.h; sourceTree = "<group>"; };
+		7875C58C231CF77900076A00 /* BackSystemItemViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BackSystemItemViewController.h; sourceTree = "<group>"; };
+		787C287D23223DAA00AF84F4 /* DemoEasyModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DemoEasyModel.h; sourceTree = "<group>"; };
+		787C287E23223DAA00AF84F4 /* DemoEasyModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DemoEasyModel.m; sourceTree = "<group>"; };
 		787FDB4B20500B00008A46E3 /* SearchBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchBarViewController.h; sourceTree = "<group>"; };
 		787FDB4C20500B00008A46E3 /* SearchBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchBarViewController.m; sourceTree = "<group>"; };
 		787FDB4D20500B00008A46E3 /* SearchBarViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SearchBarViewController.xib; sourceTree = "<group>"; };
@@ -1635,13 +1638,13 @@
 		7856F7B921F4F4C2004AF751 /* UIViewController */ = {
 			isa = PBXGroup;
 			children = (
-				7856F7BA21F4F4C2004AF751 /* UIViewController+CJSystemComposeView.m */,
-				7856F7BB21F4F4C2004AF751 /* UIViewController+CJCustomBackBarButtonItem.m */,
 				7856F7BC21F4F4C2004AF751 /* Resources */,
+				7856F7C321F4F4C2004AF751 /* UIViewController+CJCustomBackBarButtonItem.h */,
+				7856F7BB21F4F4C2004AF751 /* UIViewController+CJCustomBackBarButtonItem.m */,
+				7856F7C421F4F4C2004AF751 /* UIViewController+CJSystemBackButtonHandler.h */,
 				7856F7C121F4F4C2004AF751 /* UIViewController+CJSystemBackButtonHandler.m */,
 				7856F7C221F4F4C2004AF751 /* UIViewController+CJSystemComposeView.h */,
-				7856F7C321F4F4C2004AF751 /* UIViewController+CJCustomBackBarButtonItem.h */,
-				7856F7C421F4F4C2004AF751 /* UIViewController+CJSystemBackButtonHandler.h */,
+				7856F7BA21F4F4C2004AF751 /* UIViewController+CJSystemComposeView.m */,
 			);
 			path = UIViewController;
 			sourceTree = "<group>";
@@ -1827,6 +1830,19 @@
 				782F876F225AE80F001ACE76 /* cjTextField_clear@3x.png */,
 			);
 			path = CJDemoDateTextField;
+			sourceTree = "<group>";
+		};
+		7875C586231CF77900076A00 /* BackBarButtonItem */ = {
+			isa = PBXGroup;
+			children = (
+				7875C58B231CF77900076A00 /* BackItemBaseViewController.h */,
+				7875C588231CF77900076A00 /* BackItemBaseViewController.m */,
+				7875C58C231CF77900076A00 /* BackSystemItemViewController.h */,
+				7875C589231CF77900076A00 /* BackSystemItemViewController.m */,
+				7875C58A231CF77900076A00 /* BackCustomItemViewController.h */,
+				7875C587231CF77900076A00 /* BackCustomItemViewController.m */,
+			);
+			path = BackBarButtonItem;
 			sourceTree = "<group>";
 		};
 		787FDB4A20500B00008A46E3 /* SearchBarDemo */ = {
@@ -2039,6 +2055,8 @@
 				78B6C2ED2159D8AF00D5864E /* DemoBusPassengerModel.m */,
 				78B6C2EB2159D8AF00D5864E /* DemoBusPassengerOrderModel.h */,
 				78B6C2EC2159D8AF00D5864E /* DemoBusPassengerOrderModel.m */,
+				787C287D23223DAA00AF84F4 /* DemoEasyModel.h */,
+				787C287E23223DAA00AF84F4 /* DemoEasyModel.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -2450,15 +2468,10 @@
 		80FF8FD41FC5649E00E437CF /* UIViewControllerDemo */ = {
 			isa = PBXGroup;
 			children = (
+				7875C586231CF77900076A00 /* BackBarButtonItem */,
 				78C8147A216E11AF00A6B190 /* ChildViewController */,
 				78C81477216E0DEC00A6B190 /* SystemComposeViewController.h */,
 				78C81478216E0DEC00A6B190 /* SystemComposeViewController.m */,
-				7875C57E231CF49300076A00 /* BackSystemItemViewController.h */,
-				7875C57D231CF49300076A00 /* BackSystemItemViewController.m */,
-				7875C580231CF4E100076A00 /* BackCustomItemViewController.h */,
-				7875C581231CF4E100076A00 /* BackCustomItemViewController.m */,
-				7875C583231CF5E500076A00 /* BackItemBaseViewController.h */,
-				7875C584231CF5E600076A00 /* BackItemBaseViewController.m */,
 			);
 			path = UIViewControllerDemo;
 			sourceTree = "<group>";
@@ -3074,7 +3087,6 @@
 				78AB83B121B8C49900853E21 /* CJUIKitBaseCollectionHomeViewController.m in Sources */,
 				801F75D820A040D800A2E027 /* BBXDAreaCodeTextField.m in Sources */,
 				7856F83A21F4F4C3004AF751 /* CJBaseUISlider.m in Sources */,
-				7875C582231CF4E100076A00 /* BackCustomItemViewController.m in Sources */,
 				78B6C2EE2159D8AF00D5864E /* DemoBusPassengerOrderModel.m in Sources */,
 				7856F81721F4F4C3004AF751 /* CJAlertView.m in Sources */,
 				7856F83C21F4F4C3004AF751 /* CJSwitchView.m in Sources */,
@@ -3089,6 +3101,7 @@
 				78C8148C216E11AF00A6B190 /* DChildViewController.m in Sources */,
 				784AB8ED21E8960200A3F51C /* AHUDChildViewController.m in Sources */,
 				7856F83F21F4F4C3004AF751 /* UITextField+CJTextChangeBlock.m in Sources */,
+				7875C58E231CF77900076A00 /* BackItemBaseViewController.m in Sources */,
 				7856F72B21F4E790004AF751 /* TestDataModel.m in Sources */,
 				7856F82A21F4F4C3004AF751 /* UINavigationBar+CJChangeBG.m in Sources */,
 				788113CE21996A3A00D1630D /* SubInheritableSharedInstanceClass.m in Sources */,
@@ -3119,6 +3132,7 @@
 				78B6C2D92159D1F100D5864E /* DemoBusFlightModel.m in Sources */,
 				80FF902A1FC5649E00E437CF /* ThirdPartyHomeViewController.m in Sources */,
 				78FCF5532306A9BA00D275F9 /* CJDemoPopupView.m in Sources */,
+				787C287F23223DAA00AF84F4 /* DemoEasyModel.m in Sources */,
 				78B6C2DF2159D20000D5864E /* DemoUsePermissionModel.m in Sources */,
 				78575C8A2257242100925842 /* TestTextFieldOffsetViewController.m in Sources */,
 				7856F81521F4F4C3004AF751 /* UIView+CJShake.m in Sources */,
@@ -3174,7 +3188,6 @@
 				7856F80521F4F4C3004AF751 /* CJLabel.m in Sources */,
 				80FF909E1FC5649F00E437CF /* NestedXibSubViewA.m in Sources */,
 				78C8148D216E11AF00A6B190 /* AChildViewController.m in Sources */,
-				7875C585231CF5E700076A00 /* BackItemBaseViewController.m in Sources */,
 				7808318722DC116700F36576 /* GifViewController.m in Sources */,
 				800F3B652011899400A5C326 /* ToastViewController.m in Sources */,
 				78B6C2E62159D6E900D5864E /* DemoBusStationLocationModel.m in Sources */,
@@ -3184,6 +3197,7 @@
 				7856F80621F4F4C3004AF751 /* CJBadgeButton.m in Sources */,
 				78293F0A21FC2B9C00F70F43 /* CodeScrollViewController3.m in Sources */,
 				7856F80B21F4F4C3004AF751 /* UISearchBar+CJAddInputAccessoryView.m in Sources */,
+				7875C58D231CF77900076A00 /* BackCustomItemViewController.m in Sources */,
 				7856F80F21F4F4C3004AF751 /* UIView+CJShowExtendView.m in Sources */,
 				789C443C21EECEE800181144 /* CJAppVersionUtil.m in Sources */,
 				788113C22199583000D1630D /* NormalSharedInstanceClass.m in Sources */,
@@ -3270,6 +3284,7 @@
 				7856F7FF21F4F4C3004AF751 /* UIImage+CJCreate.m in Sources */,
 				7856F83B21F4F4C3004AF751 /* CJAdsorbModel.m in Sources */,
 				784C87FF216F2B1D00AFEE7D /* SemaphoreGateKeeperViewController.m in Sources */,
+				7875C58F231CF77900076A00 /* BackSystemItemViewController.m in Sources */,
 				80FF90B41FC5649F00E437CF /* ButtonViewController.m in Sources */,
 				7856F83921F4F4C3004AF751 /* CJPlayerSlider.m in Sources */,
 				7856F83421F4F4C3004AF751 /* CJSwitchSlider.m in Sources */,
@@ -3277,7 +3292,6 @@
 				8008D7D220E5CF5700F98EF6 /* CallSystemViewController.m in Sources */,
 				7856F7FA21F4F4C3004AF751 /* UIImage+CJBlur.m in Sources */,
 				78E189A8217796DF00B8781A /* EdgeLayoutViewController.m in Sources */,
-				7875C57F231CF49300076A00 /* BackSystemItemViewController.m in Sources */,
 				7856F83E21F4F4C3004AF751 /* CJSearchBar.m in Sources */,
 				7856F82C21F4F4C3004AF751 /* UIViewController+CJCustomBackBarButtonItem.m in Sources */,
 				781C737721BA6A170090080C /* TestValueChangeModel.m in Sources */,

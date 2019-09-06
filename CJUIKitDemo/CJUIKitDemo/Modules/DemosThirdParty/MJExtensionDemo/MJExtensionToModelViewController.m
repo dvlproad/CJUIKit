@@ -9,6 +9,8 @@
 #import "MJExtensionToModelViewController.h"
 #import "DemoBusFlightModel.h"
 
+#import "DemoEasyModel.h"
+
 @interface MJExtensionToModelViewController ()
 
 @end
@@ -40,6 +42,21 @@
     
     DemoBusFlightModel *busFlightModel = [DemoBusFlightModel mj_objectWithKeyValues:busFlightDictionary];
     NSLog(@"busFlightModel = %@", busFlightModel);
+    
+    
+    NSArray *arrayDictionarys = @[@[@{@"name": @"1"},
+                                    @{@"name": @"2"},
+                                    @{@"name": @"3"}
+                                    ],
+                                  @[@{@"name": @"4"},
+                                    @{@"name": @"5"},
+                                    @{@"name": @"6"}
+                                    ],
+                                  @[@{@"name": @"7"},
+                                    @{@"name": @"8"},
+                                    @{@"name": @"9"}
+                                    ],
+                                  ];
 }
 
 - (void)didReceiveMemoryWarning {
