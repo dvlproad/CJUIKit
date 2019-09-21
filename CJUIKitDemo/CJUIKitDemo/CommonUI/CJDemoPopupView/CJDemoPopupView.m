@@ -19,6 +19,12 @@
 - (void)popupInBottomWithHeight:(CGFloat)popupViewHeight {
     self.layer.cornerRadius = 10;
     
+    /* 对popupView做一些默认设置 */
+    self.layer.shadowColor = [[UIColor blackColor] CGColor];
+    self.layer.shadowOffset = CGSizeMake(0, -2);
+    self.layer.shadowRadius = 5.0;
+    self.layer.shadowOpacity = 0.8;
+    
     UIColor *blankBGColor = [UIColor colorWithRed:.16 green:.17 blue:.21 alpha:.6];
     UIEdgeInsets edgeInsets = UIEdgeInsetsMake(0, 10, 10, 10);
     

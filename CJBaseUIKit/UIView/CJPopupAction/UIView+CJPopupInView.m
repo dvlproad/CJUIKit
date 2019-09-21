@@ -369,12 +369,6 @@ static NSString *cjMustHideFromPopupViewKey = @"cjMustHideFromPopupView";
                                        blankViewHeight);
     [blankView setFrame:blankViewFrame];
     
-    /* 对popupView做一些默认设置 */
-    popupView.layer.shadowColor = [[UIColor blackColor] CGColor];
-    popupView.layer.shadowOffset = CGSizeMake(0, -2);
-    popupView.layer.shadowRadius = 5.0;
-    popupView.layer.shadowOpacity = 0.8;
-    
     return YES;
 }
 
