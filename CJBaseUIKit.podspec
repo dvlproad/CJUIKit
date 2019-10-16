@@ -7,6 +7,7 @@ Pod::Spec.new do |s|
   s.homepage     = "https://github.com/dvlproad/CJUIKit"
 
   s.description  = <<-DESC
+                 - CJBaseUIKit/CJUIKitConstant：常量：常量信息
                  - CJBaseUIKit/UIColor：颜色：用来通过十六进制来设置颜色。 支持@“#123456”、 @“0X123456”、 @“123456”三种格式
                  - CJBaseUIKit/UIImage：图片
                  - CJBaseUIKit/UINavigationBar：导航栏
@@ -49,7 +50,7 @@ Pod::Spec.new do |s|
 
   s.platform     = :ios, "8.0"
  
-  s.source       = { :git => "https://github.com/dvlproad/CJUIKit.git", :tag => "CJBaseUIKit_0.4.8" }
+  s.source       = { :git => "https://github.com/dvlproad/CJUIKit.git", :tag => "CJBaseUIKit_0.4.8_1" }
   s.source_files  = "CJBaseUIKit/*.{h,m}"
 
   s.frameworks = "UIKit"
@@ -61,6 +62,11 @@ Pod::Spec.new do |s|
   # s.resources = "CJBaseUIKit/**/*.{png,xib}"
   # s.frameworks = "MediaPlayer"
   # s.dependency 'Masonry'
+
+  # Constant 常量信息
+  s.subspec 'CJUIKitConstant' do |ss|
+    ss.source_files = "CJBaseUIKit/CJUIKitConstant/**/*.{h,m}"
+  end
 
   s.subspec 'UIColor' do |ss|
     ss.source_files = "CJBaseUIKit/UIColor/**/*.{h,m}"
