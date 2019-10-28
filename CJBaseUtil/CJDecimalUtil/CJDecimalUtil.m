@@ -18,24 +18,92 @@
     return lastNumberString;
 }
 
-/* 完整的描述请参见文件头部 */
-+ (NSInteger)processingZeroWithIntValue:(CGFloat)value lastDigitCount:(NSInteger)lastDigitCount decimalDealType:(CJDecimalDealType)decimalDealType
+/**
+ *  将价钱以四舍五入的方式保留两位小数，并对结尾是0的小数数字不显示
+ *
+ *  @param priceString      价钱
+ *
+ *  @return 最多两位小数的价钱
+ */
++ (NSString *)processingMaxTwoDecimalPriceString:(NSString *)priceString
 {
-    //111 -> 120
-    CGFloat unitTimes = 1;  //该单位的倍数
-    if (lastDigitCount > 1) {
-        unitTimes = (lastDigitCount -1) * 10.0;
-    }
-    
-    CGFloat newUnitValue = value/unitTimes;
-    newUnitValue = [self dealValue:newUnitValue withDecimalDealType:decimalDealType];
-    CGFloat newValue = newUnitValue * unitTimes;
-    
-    return newValue;
+    CGFloat fValue = [priceString floatValue];
+    NSString *sNewValue = [self processingAccuracyWithFValue:fValue
+                                              lastDigitCount:-2
+                                             decimalDealType:CJDecimalDealTypeRound];
+    return sNewValue;
 }
 
-///将数值按指定方式处理
-+ (CGFloat)dealValue:(CGFloat)value withDecimalDealType:(CJDecimalDealType)decimalDealType
+
+/**
+ *  将数值(支持Float)在指定位上进行指定处理
+ *  @brief                  注:传入值可为浮点型，但返回值的类型只能是整型
+ *
+ *  @param value            要处理的数(注:含浮点型，如1000.006，要在个数上向上取整的时候,值会为1001)
+ *  @param lastDigitCount   要在什么位上四舍五入①百位,则这里填2;②个位,则这里填0;③小数点后两位,则这里填-2;
+ *  @param decimalDealType  处理的方式(不处理、向上取整、向下取整、四舍五入)
+ *
+ *  @return 数值在指定位上进行指定处理后得到的整型值(注:返回值是整型)
+ */
++ (NSString *)processingAccuracyWithFValue:(CGFloat)value
+                            lastDigitCount:(NSInteger)lastDigitCount
+                           decimalDealType:(CJDecimalDealType)decimalDealType
+{
+    CGFloat fNewValue = [self processingZeroWithIntValue:value
+                                          lastDigitCount:lastDigitCount
+                                         decimalDealType:decimalDealType];
+    NSString *sNewValue = [[NSNumber numberWithFloat:fNewValue] stringValue];
+    return sNewValue;
+}
+
+/**
+ *  将数值(支持Float)在指定位上进行指定处理
+ *  @brief                  注:传入值可为浮点型，但返回值的类型只能是整型
+ *
+ *  @param value            要处理的数(注:含浮点型，如1000.006，要在个数上向上取整的时候,值会为1001)
+ *  @param lastDigitCount   要在什么位上四舍五入①百位,则这里填2;②个位,则这里填0;③小数点后两位,则这里填-2;
+ *  @param decimalDealType  处理的方式(不处理、向上取整、向下取整、四舍五入)
+ *
+ *  @return 数值在指定位上进行指定处理后得到的整型值(注:返回值是整型)
+ */
++ (CGFloat)processingZeroWithIntValue:(CGFloat)value
+                       lastDigitCount:(NSInteger)lastDigitCount
+                      decimalDealType:(CJDecimalDealType)decimalDealType
+{
+    //111 -> 120
+//    CGFloat unitTimes = 1;  //该单位的倍数
+    
+//    int abs(lastDigitCount)
+    
+    CGFloat fNewValue = 0;
+    
+    if (lastDigitCount > 0) {
+        CGFloat unitTimes = pow(10.0, lastDigitCount);
+        CGFloat newUnitValue = value/unitTimes; // 转成一个去个位数处理的值
+        newUnitValue = [self __dealUnitsForValue:newUnitValue withDecimalDealType:decimalDealType];
+        fNewValue = newUnitValue * unitTimes;
+        
+    } else {
+        CGFloat unitTimes = pow(10.0, -lastDigitCount);
+        
+        CGFloat newUnitValue = value*unitTimes; // 转成一个去个位数处理的值
+        newUnitValue = [self __dealUnitsForValue:newUnitValue withDecimalDealType:decimalDealType];
+        fNewValue = newUnitValue/unitTimes;
+    }
+    
+    return fNewValue;
+}
+
+#pragma mark - Private Method
+/**
+*  按照指定处理方式处理数值的个位
+*
+*  @param value            要处理的数(注:含浮点型，如1000.006，要在个数上向上取整的时候,值会为1001)
+*  @param decimalDealType  处理的方式(不处理、向上取整、向下取整、四舍五入)
+*
+*  @return 数值在个位上进行指定处理后得到的值
+*/
++ (CGFloat)__dealUnitsForValue:(CGFloat)value withDecimalDealType:(CJDecimalDealType)decimalDealType
 {
     switch (decimalDealType) {
         case CJDecimalDealTypeCeil:{
@@ -47,7 +115,7 @@
             break;
         }
         case CJDecimalDealTypeRound:{
-            value = (NSInteger)(value+0.5);
+            value = roundf(value);
             break;
         }
         default:{

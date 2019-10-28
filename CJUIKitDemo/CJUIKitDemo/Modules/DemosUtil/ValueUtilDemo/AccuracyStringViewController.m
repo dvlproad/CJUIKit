@@ -75,7 +75,7 @@ typedef NS_ENUM(NSUInteger, ValidateStringType) {
     
     {
         CJSectionDataModel *sectionDataModel = [[CJSectionDataModel alloc] init];
-        sectionDataModel.theme = @"自定义的测试1";
+        sectionDataModel.theme = @"尾部归0,向上取整";
         sectionDataModel.values = [NSMutableArray arrayWithArray:@[@"001", @"002", @"003"]];
         
         [sectionDataModels addObject:sectionDataModel];
@@ -83,7 +83,7 @@ typedef NS_ENUM(NSUInteger, ValidateStringType) {
     
     {
         CJSectionDataModel *sectionDataModel = [[CJSectionDataModel alloc] init];
-        sectionDataModel.theme = @"自定义的测试2";
+        sectionDataModel.theme = @"分转元(向上取整、向下取整、四舍五入)";
         sectionDataModel.values = [NSMutableArray arrayWithArray:@[@"001", @"002", @"003"]];
         
         [sectionDataModels addObject:sectionDataModel];

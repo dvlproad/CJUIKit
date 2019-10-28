@@ -47,15 +47,16 @@
 
 /// 状态栏高度
 + (CGFloat)statusBarHeight {
+    // 导航栏告诉，第一次值无法获取
+    //CGFloat screenHeight = [[UIScreen mainScreen] bounds].size.height;
+    //BOOL isScreenFull = screenHeight >= 812 && UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone;  // 是否是全面屏
     BOOL isScreenFull = [self isScreenFull];
     CGFloat statusBarHeight = isScreenFull ? 44 : 20;
     
-    // 导航栏告诉，第一次值无法获取
     //CGRect statusBarFrame = [[UIApplication sharedApplication] statusBarFrame];
     //CGFloat statusBarHeight = CGRectGetHeight(statusBarFrame);
     
     return statusBarHeight;
 }
-
 
 @end

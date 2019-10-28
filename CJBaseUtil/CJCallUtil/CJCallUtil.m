@@ -26,6 +26,12 @@
     return _sharedInstance;
 }
 
+/**
+*  显示拨打电话视图
+*
+*  @param phoneNum 要拨打的电话号码
+*  @param atView   在什么视图中展示
+*/
 + (void)showCallViewWithPhone:(NSString *)phoneNum atView:(UIView *)atView {
 #if TARGET_IPHONE_SIMULATOR
     NSLog(@"模拟器不支持拨打电话");
@@ -54,10 +60,31 @@
     [[CJCallUtil sharedInstance].callWebview loadRequest:URLRequest];
 }
 
+/// 隐藏拨打电话视图
 + (void)hideCallView {
     if ([CJCallUtil sharedInstance].callWebview) {
         [[CJCallUtil sharedInstance].callWebview removeFromSuperview];
         [CJCallUtil sharedInstance].callWebview = nil;
+    }
+}
+
+/**
+*  拨打电话
+*
+*  @param phone    要拨打的电话
+*/
++ (void)callPhone:(NSString *)phone {
+    if (phone.length == 0) {
+        return;
+    }
+    
+    NSString *phoneUrl = [NSString stringWithFormat:@"telprompt://%@", phone];
+    NSURL *phoneURL = [NSURL URLWithString:phoneUrl];
+    
+    if ([[[UIDevice currentDevice] systemVersion] floatValue] <10.0) {
+        [[UIApplication sharedApplication] openURL:phoneURL];
+    } else {
+        [[UIApplication sharedApplication] openURL:phoneURL options:@{UIApplicationOpenURLOptionUniversalLinksOnly: @NO} completionHandler:nil];
     }
 }
 

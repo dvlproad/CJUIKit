@@ -19,6 +19,11 @@
 
 #import <UINavigation-SXFixSpace/UINavigationSXFixSpace.h>
 
+#import <CJFoundation/NSString+CJCut.h>
+#import <CJFoundation/NSString+CJAttributedString.h>
+
+#import "CJDecimalUtil.h"
+
 @interface AppDelegate ()
 
 @end
@@ -40,6 +45,17 @@
     NSString *dicString = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
     NSLog(@"dicString = %@", dicString);
     
+    NSString *title =  @"还差{{2}}件商品参与抽奖";
+    NSAttributedString *attributedTitle = [[NSAttributedString alloc] initWithString:title];;
+    NSArray<NSString *> *stringArray = [title removeSeprateCharacterWithStart:@"{{" end:@"}}"];
+    if (stringArray.count > 1) {
+        NSString *specialString = stringArray[1];
+        attributedTitle = [title attributedSubString:specialString
+                                                font:[UIFont systemFontOfSize:23]
+                                               color:CJColorFromHexString(@"#212474")
+                                              udline:NO];
+    }
+    
     YunInstallUncaughtExceptionHandler();
     
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
@@ -48,6 +64,66 @@
     });
     
     //[[IQKeyboardManager sharedManager].disabledToolbarClasses addObject:NSClassFromString(@"DateViewController")]; //已写在对应的类里了
+    
+//    NSString *value = @"9.555";
+//    double dValue = [value doubleValue];
+//    NSLog(@"dValue = %.6f", dValue);
+//    
+//    
+//    NSString *originNumberString = @"9.555";
+//    NSInteger stringDecimalCount = 0;   // 字符串数值的小数位数有几个
+//    NSArray<NSString *> *numberComponents = [originNumberString componentsSeparatedByString:originNumberString];
+//    BOOL isDecimal = numberComponents.count > 1;
+//    if (isDecimal) {
+//        stringDecimalCount = numberComponents[0].length;
+//    }
+//    
+//    NSInteger saveCount = -2; // 保留几位数(负数表示保留位小数点后几位，正数表示保留到第几位)
+//    
+//    
+//    NSInteger tempBeishu = 1;
+//    if (saveCount < 0) {
+//        if (stringDecimalCount > 2) {
+//            tempBeishu = 1000.0;
+//        }
+//    }
+//    
+//    
+//    CGFloat originNumber = [originNumberString floatValue] * tempBeishu;
+//    NSInteger lastNumber = [CJDecimalUtil processingZeroWithIntValue:originNumber
+//                                                      lastDigitCount:2
+//                                                     decimalDealType:CJDecimalDealTypeRound];
+//    
+//    CGFloat fLastNumber = lastNumber/tempBeishu;
+//    NSString *lastNumberString = [NSString stringWithFormat:@"%.2f", fLastNumber];
+//    NSLog(@"lastNumberString = %@", lastNumberString);
+//    
+    NSString *lastNumber1 = [CJDecimalUtil processingAccuracyWithFValue:9555
+     lastDigitCount:0
+    decimalDealType:CJDecimalDealTypeRound];
+    NSString *lastNumber2 = [CJDecimalUtil processingAccuracyWithFValue:9555
+     lastDigitCount:2
+    decimalDealType:CJDecimalDealTypeRound];
+    
+    CGFloat fValue = [@"9.555" floatValue];
+    NSString *lastNumber3 = [CJDecimalUtil processingAccuracyWithFValue:fValue
+     lastDigitCount:-2
+    decimalDealType:CJDecimalDealTypeRound];
+    NSString *lastNumber4 = [CJDecimalUtil processingAccuracyWithFValue:9.55
+     lastDigitCount:-2
+    decimalDealType:CJDecimalDealTypeRound];
+    NSString *lastNumber5 = [CJDecimalUtil processingAccuracyWithFValue:9.50
+     lastDigitCount:-2
+    decimalDealType:CJDecimalDealTypeRound];
+    NSString *lastNumber6 = [CJDecimalUtil processingAccuracyWithFValue:9.00
+     lastDigitCount:-2
+    decimalDealType:CJDecimalDealTypeRound];
+    NSLog(@"lastNumber1 = %@", lastNumber1);
+    NSLog(@"lastNumber2 = %@", lastNumber2);
+    NSLog(@"lastNumber3 = %@", lastNumber3);
+    NSLog(@"lastNumber4 = %@", lastNumber4);
+    NSLog(@"lastNumber5 = %@", lastNumber5);
+    NSLog(@"lastNumber6 = %@", lastNumber6);
     
     // 设置主窗口,并设置根控制器
     [UINavigationConfig shared].sx_disableFixSpace = NO;//默认为NO  可以修改
