@@ -11,26 +11,7 @@
 
 @interface NSString (CJCut)
 
-/**
- *  删除特殊字符后返回新的字符串数组
- *
- *  @param startCharacter   startCharacter
- *  @param endCharacter     endCharacter
- *
- *  @return 删除特殊字符后返回的新字符串数组
- */
 - (NSArray<NSString *> *)removeSeprateCharacterWithStart:(NSString *)startCharacter
                                                      end:(NSString *)endCharacter;
-
-/**
-*  截取字符串中两个指定字符串中间的字符串
-*
-*  @param startCharacter   startCharacter
-*  @param endCharacter     endCharacter
-*
-*  @return 截取字符串中两个指定字符串中间的字符串
-*/
-- (NSString *)getStringBetweenSeprateCharacterWithStart:(NSString *)startCharacter
-                                                    end:(NSString *)endCharacter;
 
 @end

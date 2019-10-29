@@ -222,6 +222,11 @@
 		78A621E02135C78B004DA046 /* DemoSuspendWindow+CJSuspendWindowManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 78A621DF2135C78B004DA046 /* DemoSuspendWindow+CJSuspendWindowManager.m */; };
 		78A621E72135C925004DA046 /* DemoSuspendWindowRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78A621E52135C924004DA046 /* DemoSuspendWindowRootViewController.m */; };
 		78A621ED2135CA50004DA046 /* DemoFloatingWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 78A621EC2135CA50004DA046 /* DemoFloatingWindow.m */; };
+		78A74E3C2368773A0023F44B /* CJUIKitBaseTextViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78A74E37236877390023F44B /* CJUIKitBaseTextViewController.m */; };
+		78A74E482368777F0023F44B /* CJDealTextModelFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 78A74E422368777F0023F44B /* CJDealTextModelFactory.m */; };
+		78A74E492368777F0023F44B /* CJSectionDataModel+CJDealTextModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 78A74E442368777F0023F44B /* CJSectionDataModel+CJDealTextModel.m */; };
+		78A74E4A2368777F0023F44B /* CJDealTextModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 78A74E462368777F0023F44B /* CJDealTextModel.m */; };
+		78A74E4E236877BA0023F44B /* ValidateStringTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 78A74E4C236877BA0023F44B /* ValidateStringTableViewCell.m */; };
 		78AB83A621B7CE4500853E21 /* PresentAViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78AB83A521B7CE4500853E21 /* PresentAViewController.m */; };
 		78AB83A921B7CE7100853E21 /* PresentBViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78AB83A821B7CE7100853E21 /* PresentBViewController.m */; };
 		78AB83AC21B7D24E00853E21 /* closePresentVC@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 78AB83AA21B7D24E00853E21 /* closePresentVC@2x.png */; };
@@ -296,7 +301,6 @@
 		80582FA720C12B1300C01225 /* taixi_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 80582FA620C12B1300C01225 /* taixi_icon@2x.png */; };
 		8060C48020E0D0630093B14E /* CJMoneyUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 8060C47F20E0D0630093B14E /* CJMoneyUtil.m */; };
 		8060C48320E0D0B30093B14E /* CJDistanceUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 8060C48220E0D0B30093B14E /* CJDistanceUtil.m */; };
-		8060C48A20E0D5EF0093B14E /* ValidateStringTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8060C48520E0D5EF0093B14E /* ValidateStringTableViewCell.m */; };
 		8060C48C20E0D5EF0093B14E /* AccuracyStringViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8060C48920E0D5EF0093B14E /* AccuracyStringViewController.m */; };
 		807F126020B507A30008B748 /* ViewAnimateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 807F125E20B507A30008B748 /* ViewAnimateViewController.m */; };
 		807F126C20B5123A0008B748 /* animationBg02.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 807F126A20B512390008B748 /* animationBg02.jpg */; };
@@ -752,6 +756,16 @@
 		78A621E62135C925004DA046 /* DemoSuspendWindowRootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DemoSuspendWindowRootViewController.h; sourceTree = "<group>"; };
 		78A621EB2135CA4F004DA046 /* DemoFloatingWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DemoFloatingWindow.h; sourceTree = "<group>"; };
 		78A621EC2135CA50004DA046 /* DemoFloatingWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DemoFloatingWindow.m; sourceTree = "<group>"; };
+		78A74E37236877390023F44B /* CJUIKitBaseTextViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJUIKitBaseTextViewController.m; sourceTree = "<group>"; };
+		78A74E3A236877390023F44B /* CJUIKitBaseTextViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJUIKitBaseTextViewController.h; sourceTree = "<group>"; };
+		78A74E422368777F0023F44B /* CJDealTextModelFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJDealTextModelFactory.m; sourceTree = "<group>"; };
+		78A74E432368777F0023F44B /* CJDealTextModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJDealTextModel.h; sourceTree = "<group>"; };
+		78A74E442368777F0023F44B /* CJSectionDataModel+CJDealTextModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CJSectionDataModel+CJDealTextModel.m"; sourceTree = "<group>"; };
+		78A74E452368777F0023F44B /* CJDealTextModelFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJDealTextModelFactory.h; sourceTree = "<group>"; };
+		78A74E462368777F0023F44B /* CJDealTextModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJDealTextModel.m; sourceTree = "<group>"; };
+		78A74E472368777F0023F44B /* CJSectionDataModel+CJDealTextModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CJSectionDataModel+CJDealTextModel.h"; sourceTree = "<group>"; };
+		78A74E4C236877BA0023F44B /* ValidateStringTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ValidateStringTableViewCell.m; sourceTree = "<group>"; };
+		78A74E4D236877BA0023F44B /* ValidateStringTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ValidateStringTableViewCell.h; sourceTree = "<group>"; };
 		78AB83A421B7CE4500853E21 /* PresentAViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PresentAViewController.h; sourceTree = "<group>"; };
 		78AB83A521B7CE4500853E21 /* PresentAViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PresentAViewController.m; sourceTree = "<group>"; };
 		78AB83A721B7CE7100853E21 /* PresentBViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PresentBViewController.h; sourceTree = "<group>"; };
@@ -888,9 +902,7 @@
 		8060C47F20E0D0630093B14E /* CJMoneyUtil.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CJMoneyUtil.m; sourceTree = "<group>"; };
 		8060C48120E0D0B30093B14E /* CJDistanceUtil.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CJDistanceUtil.h; sourceTree = "<group>"; };
 		8060C48220E0D0B30093B14E /* CJDistanceUtil.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CJDistanceUtil.m; sourceTree = "<group>"; };
-		8060C48520E0D5EF0093B14E /* ValidateStringTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ValidateStringTableViewCell.m; sourceTree = "<group>"; };
 		8060C48620E0D5EF0093B14E /* AccuracyStringViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccuracyStringViewController.h; sourceTree = "<group>"; };
-		8060C48820E0D5EF0093B14E /* ValidateStringTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ValidateStringTableViewCell.h; sourceTree = "<group>"; };
 		8060C48920E0D5EF0093B14E /* AccuracyStringViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccuracyStringViewController.m; sourceTree = "<group>"; };
 		807F125C20B507A20008B748 /* ViewAnimateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewAnimateViewController.h; sourceTree = "<group>"; };
 		807F125E20B507A30008B748 /* ViewAnimateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewAnimateViewController.m; sourceTree = "<group>"; };
@@ -2033,6 +2045,39 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		78A74E34236877390023F44B /* BaseTextViewController */ = {
+			isa = PBXGroup;
+			children = (
+				78A74E3A236877390023F44B /* CJUIKitBaseTextViewController.h */,
+				78A74E37236877390023F44B /* CJUIKitBaseTextViewController.m */,
+				78A74E4B236877BA0023F44B /* View */,
+				78A74E412368777F0023F44B /* Model */,
+			);
+			path = BaseTextViewController;
+			sourceTree = "<group>";
+		};
+		78A74E412368777F0023F44B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				78A74E422368777F0023F44B /* CJDealTextModelFactory.m */,
+				78A74E432368777F0023F44B /* CJDealTextModel.h */,
+				78A74E442368777F0023F44B /* CJSectionDataModel+CJDealTextModel.m */,
+				78A74E452368777F0023F44B /* CJDealTextModelFactory.h */,
+				78A74E462368777F0023F44B /* CJDealTextModel.m */,
+				78A74E472368777F0023F44B /* CJSectionDataModel+CJDealTextModel.h */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		78A74E4B236877BA0023F44B /* View */ = {
+			isa = PBXGroup;
+			children = (
+				78A74E4D236877BA0023F44B /* ValidateStringTableViewCell.h */,
+				78A74E4C236877BA0023F44B /* ValidateStringTableViewCell.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		78AB83BF21B96D7000853E21 /* DemoTextFieldFactory */ = {
 			isa = PBXGroup;
 			children = (
@@ -2119,6 +2164,7 @@
 		78E1895321777C9700B8781A /* Base */ = {
 			isa = PBXGroup;
 			children = (
+				78A74E34236877390023F44B /* BaseTextViewController */,
 				7856F95E21F89A2D004AF751 /* DemoConstant.h */,
 				78AB83B021B8C49900853E21 /* CJUIKitBaseCollectionHomeViewController.h */,
 				78AB83AE21B8C49900853E21 /* CJUIKitBaseCollectionHomeViewController.m */,
@@ -2297,8 +2343,6 @@
 			children = (
 				8060C48620E0D5EF0093B14E /* AccuracyStringViewController.h */,
 				8060C48920E0D5EF0093B14E /* AccuracyStringViewController.m */,
-				8060C48820E0D5EF0093B14E /* ValidateStringTableViewCell.h */,
-				8060C48520E0D5EF0093B14E /* ValidateStringTableViewCell.m */,
 			);
 			path = ValueUtilDemo;
 			sourceTree = "<group>";
@@ -3120,7 +3164,6 @@
 				788113CE21996A3A00D1630D /* SubInheritableSharedInstanceClass.m in Sources */,
 				781495A92140D82600D0F2BC /* MantleViewController.m in Sources */,
 				78293DED223D3615008FF82C /* DemoTagButtonFactory.m in Sources */,
-				8060C48A20E0D5EF0093B14E /* ValidateStringTableViewCell.m in Sources */,
 				7808D59321703C33007FC851 /* ChangeEnvironmentViewController.m in Sources */,
 				783A4A19219BC73500CBF4FC /* NSObject+CJSharedInstance.m in Sources */,
 				7857ABBF2255014F00B1569C /* UITextField+CJForbidKeyboard.m in Sources */,
@@ -3134,6 +3177,7 @@
 				7856F80421F4F4C3004AF751 /* UIWindow+CJSnapshot.m in Sources */,
 				78A621E72135C925004DA046 /* DemoSuspendWindowRootViewController.m in Sources */,
 				8060C48C20E0D5EF0093B14E /* AccuracyStringViewController.m in Sources */,
+				78A74E4E236877BA0023F44B /* ValidateStringTableViewCell.m in Sources */,
 				7856F81821F4F4C3004AF751 /* CJAlert.m in Sources */,
 				7856F97021F9D2C5004AF751 /* BaseTableViewCellViewController.m in Sources */,
 				7856F7FB21F4F4C3004AF751 /* UIImage+CJSplitImageIntoTwoParts.m in Sources */,
@@ -3148,6 +3192,7 @@
 				787C287F23223DAA00AF84F4 /* DemoEasyModel.m in Sources */,
 				78B6C2DF2159D20000D5864E /* DemoUsePermissionModel.m in Sources */,
 				78575C8A2257242100925842 /* TestTextFieldOffsetViewController.m in Sources */,
+				78A74E482368777F0023F44B /* CJDealTextModelFactory.m in Sources */,
 				7856F81521F4F4C3004AF751 /* UIView+CJShake.m in Sources */,
 				78FCF5562306AA8F00D275F9 /* UIView+CJRounderCorner.m in Sources */,
 				7808319222DC65DD00F36576 /* WelcomeViewController.m in Sources */,
@@ -3194,6 +3239,7 @@
 				781C736C21BA61480090080C /* TestValueChangeTableViewCell.m in Sources */,
 				7856F72A21F4E790004AF751 /* DemoInfo.m in Sources */,
 				7856F82B21F4F4C3004AF751 /* UIViewController+CJSystemComposeView.m in Sources */,
+				78A74E492368777F0023F44B /* CJSectionDataModel+CJDealTextModel.m in Sources */,
 				78AB83C221B96D7000853E21 /* DemoTextFieldFactory.m in Sources */,
 				7808D5B62170919A007FC851 /* LoginChangeEnvironmentViewController.m in Sources */,
 				78AB83B521B8D2DA00853E21 /* CJUIKitCollectionViewCell.m in Sources */,
@@ -3225,6 +3271,7 @@
 				7803DAAE22F7D519001E06B7 /* MJExtensionToModelViewController.m in Sources */,
 				78A4E1B42173A0D9005FEADD /* DemoChangeEnvironmentViewModel.m in Sources */,
 				789C447721F07BBC00181144 /* ImageHomeViewController.m in Sources */,
+				78A74E3C2368773A0023F44B /* CJUIKitBaseTextViewController.m in Sources */,
 				80FF909A1FC5649F00E437CF /* FloatingWindowViewController.m in Sources */,
 				7857ABBC2254AA5000B1569C /* CJDemoDateTextField.m in Sources */,
 				7856F83121F4F4C3004AF751 /* UIViewController+CJSystemBackButtonHandler.m in Sources */,
@@ -3312,6 +3359,7 @@
 				78C8148E216E11AF00A6B190 /* Home1.m in Sources */,
 				78E189AB21781BD000B8781A /* TranslucentLayoutTableViewController.m in Sources */,
 				7885FC4A2156681F00B97DAA /* UIView+CJPopupInSuspendWindow.m in Sources */,
+				78A74E4A2368777F0023F44B /* CJDealTextModel.m in Sources */,
 				800E07E12016CCF500799B78 /* DataUtilViewController.m in Sources */,
 				78C81489216E11AF00A6B190 /* CChildViewController.m in Sources */,
 				80FF919E1FC5682B00E437CF /* OtherHomeViewController.m in Sources */,

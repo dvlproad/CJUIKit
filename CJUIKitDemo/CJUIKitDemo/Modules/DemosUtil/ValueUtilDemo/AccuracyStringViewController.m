@@ -13,7 +13,7 @@
 #import "CJDecimalUtil.h"
 #import "CJMoneyUtil.h"
 
-#import "CJModuleModel.h"
+#import "CJDealTextModel.h"
 
 typedef NS_ENUM(NSUInteger, ValidateStringType) {
     ValidateStringTypeNone = 0,     /**< 不验证 */
@@ -27,7 +27,7 @@ typedef NS_ENUM(NSUInteger, ValidateStringType) {
     ValidateStringTypeIdentityCard, /**< 身份证号 */
 };
 
-@interface AccuracyStringViewController () <UITableViewDataSource, UITableViewDelegate>
+@interface AccuracyStringViewController ()
 
 @end
 
@@ -37,205 +37,160 @@ typedef NS_ENUM(NSUInteger, ValidateStringType) {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     self.navigationItem.title = NSLocalizedString(@"数值处理(取整、去尾0等)", nil);
-    self.view.backgroundColor = [UIColor whiteColor];
-    
-    UITableView *tableView = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStyleGrouped];
-    [tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"cell"];
-    [tableView registerClass:[ValidateStringTableViewCell class] forCellReuseIdentifier:@"ValidateStringTableViewCell"];
-    tableView.dataSource = self;
-    tableView.delegate = self;
-    [self.view addSubview:tableView];
-    [tableView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.edges.mas_equalTo(self.view);
-    }];
-    self.tableView = tableView;
     
     NSMutableArray *sectionDataModels = [[NSMutableArray alloc] init];
+    // 去尾部0
     {
-        CJSectionDataModel *sectionDataModel = [[CJSectionDataModel alloc] init];
-        sectionDataModel.theme = @"去除尾部的0";
-        sectionDataModel.values = [NSMutableArray arrayWithArray:@[@"0.090222120000",
-                                                                   @"0.0900",
-                                                                   @"10.00",
-                                                                   ]];
+        CJSectionDataModel *sectionDataModel =
+        [CJSectionDataModel sectionDataModelWithTextArray:@[@"0.090222120000",
+                                                            @"0.0900",
+                                                            @"10.00",
+                                                            ]
+                                          samePlaceholder:@"请输入要验证的值"
+                                          sameActionTitle:@"去尾部0"
+                                          sameActionBlock:^NSString * _Nonnull(NSString * _Nonnull oldString) {
+            NSString *lastNumberString = [CJDecimalUtil removeEndZeroForNumberString:oldString];
+            return lastNumberString;
+        }];
         
         [sectionDataModels addObject:sectionDataModel];
     }
     
+    // 尾部归0
     {
-        CJSectionDataModel *sectionDataModel = [[CJSectionDataModel alloc] init];
-        sectionDataModel.theme = @"尾部归0";
-        sectionDataModel.values = [NSMutableArray arrayWithArray:@[@"1121",
-                                                                   @"1125",
-                                                                   @"1126",
-                                                                   ]];
+        CJSectionDataModel *sectionDataModel =
+        [CJSectionDataModel sectionDataModelWithTextArray:@[@"1121",
+                                                            @"1125",
+                                                            @"1126",
+                                                            ]
+                                          samePlaceholder:@"请输入要验证的值"
+                                          sameActionTitle:@"尾部归0"
+                                          sameActionBlock:^NSString * _Nonnull(NSString * _Nonnull oldString) {
+            CGFloat originNumber = [oldString floatValue];
+            CGFloat lastNumber = [CJDecimalUtil processingZeroWithIntValue:originNumber lastDigitCount:2 decimalDealType:CJDecimalDealTypeCeil];
+           
+            NSString *lastNumberString = [NSString stringWithFormat:@"%.2f", lastNumber];
+            return lastNumberString;
+        }];
         
         [sectionDataModels addObject:sectionDataModel];
     }
     
+    // 尾部归0(向上取整、向下取整、四舍五入)
     {
         CJSectionDataModel *sectionDataModel = [[CJSectionDataModel alloc] init];
-        sectionDataModel.theme = @"尾部归0,向上取整";
-        sectionDataModel.values = [NSMutableArray arrayWithArray:@[@"001", @"002", @"003"]];
+        sectionDataModel.theme = @"尾部归0(向上取整、向下取整、四舍五入)";
+        sectionDataModel.values = [self dealTextModels_numbersDealZero];
         
         [sectionDataModels addObject:sectionDataModel];
     }
     
+    // 分转元(向上取整、向下取整、四舍五入)
     {
         CJSectionDataModel *sectionDataModel = [[CJSectionDataModel alloc] init];
         sectionDataModel.theme = @"分转元(向上取整、向下取整、四舍五入)";
-        sectionDataModel.values = [NSMutableArray arrayWithArray:@[@"001", @"002", @"003"]];
+        sectionDataModel.values = [self dealTextModels_priceFenToYuan];
         
         [sectionDataModels addObject:sectionDataModel];
     }
     
     self.sectionDataModels = sectionDataModels;
-    
-    
-    
-    self.tableView.keyboardDismissMode = UIScrollViewKeyboardDismissModeOnDrag;
 }
 
-#pragma mark - UITableViewDataSource & UITableViewDelegate
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return self.sectionDataModels.count;
-}
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    CJSectionDataModel *sectionDataModel = [self.sectionDataModels objectAtIndex:section];
-    NSArray *dataModels = sectionDataModel.values;
-    
-    return dataModels.count;
-}
-
-- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
-    CJSectionDataModel *sectionDataModel = [self.sectionDataModels objectAtIndex:section];
-    
-    NSString *indexTitle = sectionDataModel.theme;
-    return indexTitle;
-}
-
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    CJSectionDataModel *sectionDataModel = [self.sectionDataModels objectAtIndex:indexPath.section];
-    NSArray *dataModels = sectionDataModel.values;
-    NSString *dataModel = [dataModels objectAtIndex:indexPath.row];
-    
-    
-    ValidateStringTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ValidateStringTableViewCell" forIndexPath:indexPath];
-    cell.selectionStyle = UITableViewCellSelectionStyleNone;
-    
-    cell.textField.placeholder = @"请输入要验证的值";
-    cell.textField.text = dataModel;
-    
-    if (indexPath.section == 0) {
-        [cell.validateButton setTitle:@"去尾部0" forState:UIControlStateNormal];
-        [cell setValidateHandle:^(ValidateStringTableViewCell *mcell) {
-            NSString *originNumberString = mcell.textField.text;
-            NSString *lastNumberString = [CJDecimalUtil removeEndZeroForNumberString:originNumberString];
+#pragma mark - 尾部归0(向上取整、向下取整、四舍五入)
+/// 尾部归0(向上取整、向下取整、四舍五入)
+- (NSMutableArray<CJDealTextModel *> *)dealTextModels_numbersDealZero {
+    NSMutableArray<CJDealTextModel *> *dealTextModels = [[NSMutableArray alloc] init];
+    {
+        CJDealTextModel *dealTextModel = [[CJDealTextModel alloc] init];
+        dealTextModel.placeholder = @"请输入要验证的值";
+        dealTextModel.text = @"1121";
+        dealTextModel.actionTitle = @"尾部归0,向上取整";
+        dealTextModel.actionBlock = ^NSString * _Nonnull(NSString * _Nonnull oldString) {
+            CGFloat originNumber = [oldString floatValue];
+            NSInteger lastNumber = [CJDecimalUtil processingZeroWithIntValue:originNumber lastDigitCount:0 decimalDealType:CJDecimalDealTypeCeil];
             
-            mcell.resultLabel.text = lastNumberString;
-        }];
-        
-    } else if (indexPath.section == 1) {
-        [cell.validateButton setTitle:@"尾部归0" forState:UIControlStateNormal];
-        [cell setValidateHandle:^(ValidateStringTableViewCell *mcell) {
-            NSString *originNumberString = mcell.textField.text;
+            NSString *lastNumberString = [NSString stringWithFormat:@"%zd", lastNumber];
+            return lastNumberString;
+        };
+        [dealTextModels addObject:dealTextModel];
+    }
+    {
+        CJDealTextModel *dealTextModel = [[CJDealTextModel alloc] init];
+        dealTextModel.placeholder = @"请输入要验证的值";
+        dealTextModel.text = @"1121";
+        dealTextModel.actionTitle = @"尾部归0,向下取整";
+        dealTextModel.actionBlock = ^NSString * _Nonnull(NSString * _Nonnull oldString) {
+            CGFloat originNumber = [oldString floatValue];
+            NSInteger lastNumber = [CJDecimalUtil processingZeroWithIntValue:originNumber lastDigitCount:0 decimalDealType:CJDecimalDealTypeFloor];
             
-            CGFloat originNumber = [originNumberString floatValue];
-            CGFloat lastNumber = [CJDecimalUtil processingZeroWithIntValue:originNumber lastDigitCount:2 decimalDealType:CJDecimalDealTypeCeil];
+            NSString *lastNumberString = [NSString stringWithFormat:@"%zd", lastNumber];
+            return lastNumberString;
+        };
+        [dealTextModels addObject:dealTextModel];
+    }
+    {
+        CJDealTextModel *dealTextModel = [[CJDealTextModel alloc] init];
+        dealTextModel.placeholder = @"请输入要验证的值";
+        dealTextModel.text = @"1121";
+        dealTextModel.actionTitle = @"尾部归0,四舍五入";
+        dealTextModel.actionBlock = ^NSString * _Nonnull(NSString * _Nonnull oldString) {
+            CGFloat originNumber = [oldString floatValue];
+            NSInteger lastNumber = [CJDecimalUtil processingZeroWithIntValue:originNumber lastDigitCount:0 decimalDealType:CJDecimalDealTypeRound];
             
-            NSString *lastNumberString = [NSString stringWithFormat:@"%.2f", lastNumber];
-            
-            mcell.resultLabel.text = lastNumberString;
-        }];
-        
-    } else if (indexPath.section == 2) {
-        if (indexPath.row == 0) {
-            cell.textField.text = @"1121";
-            [cell.validateButton setTitle:@"尾部归0,向上取整" forState:UIControlStateNormal];
-            [cell setValidateHandle:^(ValidateStringTableViewCell *mcell) {
-                NSString *originNumberString = mcell.textField.text;
-                
-                CGFloat originNumber = [originNumberString floatValue];
-                NSInteger lastNumber = [CJDecimalUtil processingZeroWithIntValue:originNumber lastDigitCount:2 decimalDealType:CJDecimalDealTypeCeil];
-                
-                NSString *lastNumberString = [NSString stringWithFormat:@"%zd", lastNumber];
-                
-                mcell.resultLabel.text = lastNumberString;
-            }];
-        } else if (indexPath.row == 1) {
-            cell.textField.text = @"1121";
-            [cell.validateButton setTitle:@"尾部归0,向下取整" forState:UIControlStateNormal];
-            [cell setValidateHandle:^(ValidateStringTableViewCell *mcell) {
-                NSString *originNumberString = mcell.textField.text;
-                
-                CGFloat originNumber = [originNumberString floatValue];
-                NSInteger lastNumber = [CJDecimalUtil processingZeroWithIntValue:originNumber lastDigitCount:2 decimalDealType:CJDecimalDealTypeFloor];
-                
-                NSString *lastNumberString = [NSString stringWithFormat:@"%zd", lastNumber];
-                
-                mcell.resultLabel.text = lastNumberString;
-            }];
-        } else if (indexPath.row == 2) {
-            cell.textField.text = @"1121";
-            [cell.validateButton setTitle:@"尾部归0,四舍五入" forState:UIControlStateNormal];
-            [cell setValidateHandle:^(ValidateStringTableViewCell *mcell) {
-                NSString *originNumberString = mcell.textField.text;
-                
-                CGFloat originNumber = [originNumberString floatValue];
-                NSInteger lastNumber = [CJDecimalUtil processingZeroWithIntValue:originNumber lastDigitCount:2 decimalDealType:CJDecimalDealTypeRound];
-                
-                NSString *lastNumberString = [NSString stringWithFormat:@"%zd", lastNumber];
-                
-                mcell.resultLabel.text = lastNumberString;
-            }];
-        }
-        
-    } else if (indexPath.section == 3) {
-        if (indexPath.row == 0) {
-            cell.textField.text = @"1024";
-            [cell.validateButton setTitle:@"分转元,向上取整" forState:UIControlStateNormal];
-            [cell setValidateHandle:^(ValidateStringTableViewCell *mcell) {
-                NSString *originNumberString = mcell.textField.text;
-                
-                CGFloat originNumber = [originNumberString floatValue];
-                NSString *lastNumberString = [CJMoneyUtil getPriceYuanStringFromPriceFen:originNumber withDecimalCount:2 decimalDealType:CJDecimalDealTypeCeil];
-                mcell.resultLabel.text = lastNumberString;
-            }];
-        } else if (indexPath.row == 1) {
-            cell.textField.text = @"1024";
-            [cell.validateButton setTitle:@"分转元,向下取整" forState:UIControlStateNormal];
-            [cell setValidateHandle:^(ValidateStringTableViewCell *mcell) {
-                NSString *originNumberString = mcell.textField.text;
-                
-                CGFloat originNumber = [originNumberString floatValue];
-                NSString *lastNumberString = [CJMoneyUtil getPriceYuanStringFromPriceFen:originNumber withDecimalCount:2 decimalDealType:CJDecimalDealTypeFloor];
-                mcell.resultLabel.text = lastNumberString;
-            }];
-        } else if (indexPath.row == 2) {
-            cell.textField.text = @"1024";
-            [cell.validateButton setTitle:@"分转元,四舍五入" forState:UIControlStateNormal];
-            [cell setValidateHandle:^(ValidateStringTableViewCell *mcell) {
-                NSString *originNumberString = mcell.textField.text;
-                
-                CGFloat originNumber = [originNumberString floatValue];
-                NSString *lastNumberString = [CJMoneyUtil getPriceYuanStringFromPriceFen:originNumber withDecimalCount:2 decimalDealType:CJDecimalDealTypeRound];
-                mcell.resultLabel.text = lastNumberString;
-            }];
-        }
+            NSString *lastNumberString = [NSString stringWithFormat:@"%zd", lastNumber];
+            return lastNumberString;
+        };
+        [dealTextModels addObject:dealTextModel];
     }
     
+    return dealTextModels;
+}
+
+
+#pragma mark - 分转元(向上取整、向下取整、四舍五入)
+/// 分转元(向上取整、向下取整、四舍五入)
+- (NSMutableArray<CJDealTextModel *> *)dealTextModels_priceFenToYuan {
+    NSMutableArray<CJDealTextModel *> *dealTextModels = [[NSMutableArray alloc] init];
+    {
+        CJDealTextModel *dealTextModel = [[CJDealTextModel alloc] init];
+        dealTextModel.placeholder = @"请输入要验证的值";
+        dealTextModel.text = @"1024";
+        dealTextModel.actionTitle = @"分转元,向上取整";
+        dealTextModel.actionBlock = ^NSString * _Nonnull(NSString * _Nonnull oldString) {
+            CGFloat originNumber = [oldString floatValue];
+            NSString *lastNumberString = [CJMoneyUtil getPriceYuanStringFromPriceFen:originNumber withDecimalCount:2 decimalDealType:CJDecimalDealTypeCeil];
+            return lastNumberString;
+        };
+        [dealTextModels addObject:dealTextModel];
+    }
+    {
+        CJDealTextModel *dealTextModel = [[CJDealTextModel alloc] init];
+        dealTextModel.placeholder = @"请输入要验证的值";
+        dealTextModel.text = @"1024";
+        dealTextModel.actionTitle = @"分转元,向下取整";
+        dealTextModel.actionBlock = ^NSString * _Nonnull(NSString * _Nonnull oldString) {
+            CGFloat originNumber = [oldString floatValue];
+            NSString *lastNumberString = [CJMoneyUtil getPriceYuanStringFromPriceFen:originNumber withDecimalCount:2 decimalDealType:CJDecimalDealTypeFloor];
+            return lastNumberString;
+        };
+        [dealTextModels addObject:dealTextModel];
+    }
+    {
+        CJDealTextModel *dealTextModel = [[CJDealTextModel alloc] init];
+        dealTextModel.placeholder = @"请输入要验证的值";
+        dealTextModel.text = @"1024";
+        dealTextModel.actionTitle = @"分转元,四舍五入";
+        dealTextModel.actionBlock = ^NSString * _Nonnull(NSString * _Nonnull oldString) {
+            CGFloat originNumber = [oldString floatValue];
+            NSString *lastNumberString = [CJMoneyUtil getPriceYuanStringFromPriceFen:originNumber withDecimalCount:2 decimalDealType:CJDecimalDealTypeRound];
+            return lastNumberString;
+        };
+        [dealTextModels addObject:dealTextModel];
+    }
     
-    return cell;
-}
-
-- (NSIndexPath *)tableView:(UITableView *)tableView willSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    return nil;
-}
-
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    NSLog(@"didSelectRowAtIndexPath = %zd %zd", indexPath.section, indexPath.row);
-    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    return dealTextModels;
 }
 
 - (void)didReceiveMemoryWarning {
