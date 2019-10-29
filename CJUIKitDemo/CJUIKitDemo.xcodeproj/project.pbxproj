@@ -227,6 +227,7 @@
 		78A74E492368777F0023F44B /* CJSectionDataModel+CJDealTextModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 78A74E442368777F0023F44B /* CJSectionDataModel+CJDealTextModel.m */; };
 		78A74E4A2368777F0023F44B /* CJDealTextModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 78A74E462368777F0023F44B /* CJDealTextModel.m */; };
 		78A74E4E236877BA0023F44B /* ValidateStringTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 78A74E4C236877BA0023F44B /* ValidateStringTableViewCell.m */; };
+		78A74E5123687ACF0023F44B /* AccuracyPriceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78A74E5023687ACF0023F44B /* AccuracyPriceViewController.m */; };
 		78AB83A621B7CE4500853E21 /* PresentAViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78AB83A521B7CE4500853E21 /* PresentAViewController.m */; };
 		78AB83A921B7CE7100853E21 /* PresentBViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78AB83A821B7CE7100853E21 /* PresentBViewController.m */; };
 		78AB83AC21B7D24E00853E21 /* closePresentVC@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 78AB83AA21B7D24E00853E21 /* closePresentVC@2x.png */; };
@@ -766,6 +767,8 @@
 		78A74E472368777F0023F44B /* CJSectionDataModel+CJDealTextModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CJSectionDataModel+CJDealTextModel.h"; sourceTree = "<group>"; };
 		78A74E4C236877BA0023F44B /* ValidateStringTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ValidateStringTableViewCell.m; sourceTree = "<group>"; };
 		78A74E4D236877BA0023F44B /* ValidateStringTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ValidateStringTableViewCell.h; sourceTree = "<group>"; };
+		78A74E4F23687ACF0023F44B /* AccuracyPriceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccuracyPriceViewController.h; sourceTree = "<group>"; };
+		78A74E5023687ACF0023F44B /* AccuracyPriceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccuracyPriceViewController.m; sourceTree = "<group>"; };
 		78AB83A421B7CE4500853E21 /* PresentAViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PresentAViewController.h; sourceTree = "<group>"; };
 		78AB83A521B7CE4500853E21 /* PresentAViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PresentAViewController.m; sourceTree = "<group>"; };
 		78AB83A721B7CE7100853E21 /* PresentBViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PresentBViewController.h; sourceTree = "<group>"; };
@@ -2343,6 +2346,8 @@
 			children = (
 				8060C48620E0D5EF0093B14E /* AccuracyStringViewController.h */,
 				8060C48920E0D5EF0093B14E /* AccuracyStringViewController.m */,
+				78A74E4F23687ACF0023F44B /* AccuracyPriceViewController.h */,
+				78A74E5023687ACF0023F44B /* AccuracyPriceViewController.m */,
 			);
 			path = ValueUtilDemo;
 			sourceTree = "<group>";
@@ -3138,6 +3143,7 @@
 				807F126020B507A30008B748 /* ViewAnimateViewController.m in Sources */,
 				784A7216214C9DF000F8D144 /* MoreHomeViewController.m in Sources */,
 				788113BF2199574900D1630D /* SharedInstanceViewController.m in Sources */,
+				78A74E5123687ACF0023F44B /* AccuracyPriceViewController.m in Sources */,
 				80FF909C1FC5649F00E437CF /* NestedXibView.m in Sources */,
 				7856F82221F4F4C3004AF751 /* CJBaseTableViewCell.m in Sources */,
 				78226A9021A42103002167F2 /* CJConvertUtil.m in Sources */,

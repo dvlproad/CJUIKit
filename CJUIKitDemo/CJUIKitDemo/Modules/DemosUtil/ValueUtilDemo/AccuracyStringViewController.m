@@ -7,13 +7,7 @@
 //
 
 #import "AccuracyStringViewController.h"
-
-#import "ValidateStringTableViewCell.h"
-
 #import "CJDecimalUtil.h"
-#import "CJMoneyUtil.h"
-
-#import "CJDealTextModel.h"
 
 typedef NS_ENUM(NSUInteger, ValidateStringType) {
     ValidateStringTypeNone = 0,     /**< 不验证 */
@@ -85,15 +79,6 @@ typedef NS_ENUM(NSUInteger, ValidateStringType) {
         [sectionDataModels addObject:sectionDataModel];
     }
     
-    // 分转元(向上取整、向下取整、四舍五入)
-    {
-        CJSectionDataModel *sectionDataModel = [[CJSectionDataModel alloc] init];
-        sectionDataModel.theme = @"分转元(向上取整、向下取整、四舍五入)";
-        sectionDataModel.values = [self dealTextModels_priceFenToYuan];
-        
-        [sectionDataModels addObject:sectionDataModel];
-    }
-    
     self.sectionDataModels = sectionDataModels;
 }
 
@@ -140,51 +125,6 @@ typedef NS_ENUM(NSUInteger, ValidateStringType) {
             NSInteger lastNumber = [CJDecimalUtil processingZeroWithIntValue:originNumber lastDigitCount:0 decimalDealType:CJDecimalDealTypeRound];
             
             NSString *lastNumberString = [NSString stringWithFormat:@"%zd", lastNumber];
-            return lastNumberString;
-        };
-        [dealTextModels addObject:dealTextModel];
-    }
-    
-    return dealTextModels;
-}
-
-
-#pragma mark - 分转元(向上取整、向下取整、四舍五入)
-/// 分转元(向上取整、向下取整、四舍五入)
-- (NSMutableArray<CJDealTextModel *> *)dealTextModels_priceFenToYuan {
-    NSMutableArray<CJDealTextModel *> *dealTextModels = [[NSMutableArray alloc] init];
-    {
-        CJDealTextModel *dealTextModel = [[CJDealTextModel alloc] init];
-        dealTextModel.placeholder = @"请输入要验证的值";
-        dealTextModel.text = @"1024";
-        dealTextModel.actionTitle = @"分转元,向上取整";
-        dealTextModel.actionBlock = ^NSString * _Nonnull(NSString * _Nonnull oldString) {
-            CGFloat originNumber = [oldString floatValue];
-            NSString *lastNumberString = [CJMoneyUtil getPriceYuanStringFromPriceFen:originNumber withDecimalCount:2 decimalDealType:CJDecimalDealTypeCeil];
-            return lastNumberString;
-        };
-        [dealTextModels addObject:dealTextModel];
-    }
-    {
-        CJDealTextModel *dealTextModel = [[CJDealTextModel alloc] init];
-        dealTextModel.placeholder = @"请输入要验证的值";
-        dealTextModel.text = @"1024";
-        dealTextModel.actionTitle = @"分转元,向下取整";
-        dealTextModel.actionBlock = ^NSString * _Nonnull(NSString * _Nonnull oldString) {
-            CGFloat originNumber = [oldString floatValue];
-            NSString *lastNumberString = [CJMoneyUtil getPriceYuanStringFromPriceFen:originNumber withDecimalCount:2 decimalDealType:CJDecimalDealTypeFloor];
-            return lastNumberString;
-        };
-        [dealTextModels addObject:dealTextModel];
-    }
-    {
-        CJDealTextModel *dealTextModel = [[CJDealTextModel alloc] init];
-        dealTextModel.placeholder = @"请输入要验证的值";
-        dealTextModel.text = @"1024";
-        dealTextModel.actionTitle = @"分转元,四舍五入";
-        dealTextModel.actionBlock = ^NSString * _Nonnull(NSString * _Nonnull oldString) {
-            CGFloat originNumber = [oldString floatValue];
-            NSString *lastNumberString = [CJMoneyUtil getPriceYuanStringFromPriceFen:originNumber withDecimalCount:2 decimalDealType:CJDecimalDealTypeRound];
             return lastNumberString;
         };
         [dealTextModels addObject:dealTextModel];

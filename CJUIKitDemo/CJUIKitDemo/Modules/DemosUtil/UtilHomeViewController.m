@@ -26,7 +26,10 @@
 #import "CallSystemViewController.h"
 #import "DeviceInfoViewController.h"
 #import "DataUtilViewController.h"
+
 #import "AccuracyStringViewController.h"
+#import "AccuracyPriceViewController.h"
+
 #import "KeyboardUtilViewController.h"
 #import "SharedInstanceViewController.h"
 
@@ -139,6 +142,25 @@
         [sectionDataModels addObject:sectionDataModel];
     }
     
+    // 数值 & 价钱 处理
+    {
+        CJSectionDataModel *sectionDataModel = [[CJSectionDataModel alloc] init];
+        sectionDataModel.theme = @"数值 & 价钱 相关";
+        {
+            CJModuleModel *NSAttributedStringModule = [[CJModuleModel alloc] init];
+            NSAttributedStringModule.title = @"数值number(取整、去尾0等)";
+            NSAttributedStringModule.classEntry = [AccuracyStringViewController class];
+            [sectionDataModel.values addObject:NSAttributedStringModule];
+        }
+        {
+            CJModuleModel *NSAttributedStringModule = [[CJModuleModel alloc] init];
+            NSAttributedStringModule.title = @"价钱price(分转元)";
+            NSAttributedStringModule.classEntry = [AccuracyPriceViewController class];
+            [sectionDataModel.values addObject:NSAttributedStringModule];
+        }
+        [sectionDataModels addObject:sectionDataModel];
+    }
+    
     //其他
     {
         
@@ -165,13 +187,7 @@
             dataUtilModule.isCreateByXib = YES;
             [sectionDataModel.values addObject:dataUtilModule];
         }
-        {
-            CJModuleModel *NSAttributedStringModule = [[CJModuleModel alloc] init];
-            NSAttributedStringModule.title = @"数值处理(取整、去尾0等)";
-            NSAttributedStringModule.classEntry = [AccuracyStringViewController class];
-            NSAttributedStringModule.isCreateByXib = NO;
-            [sectionDataModel.values addObject:NSAttributedStringModule];
-        }
+        
         
         {
             CJModuleModel *keyboardUtilModule = [[CJModuleModel alloc] init];

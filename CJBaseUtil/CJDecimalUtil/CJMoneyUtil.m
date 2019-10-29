@@ -27,15 +27,17 @@
 }
 
 /**
- *  将分以保留几位小数的方式转为元（向上取整）
+ *  将价钱"分"以保留几位小数的方式转为价钱"元"(向上取整、向下取整、四舍五入)
  *
- *  @param priceFen         分
- *  @param decimalCount     保留的小数位数
- *  @param decimalDealType  取整的方式
+ *  @param priceFen         要转化的分
+ *  @param decimalCount     分转化为元后要保留几位小数位数
+ *  @param decimalDealType  取整的方式(向上取整、向下取整、四舍五入)
  *
- *  @return 字符串
+ *  @return 保留了指定位数的价钱"元"字符串
  */
-+ (NSString *)getPriceYuanStringFromPriceFen:(CGFloat)priceFen withDecimalCount:(NSInteger)decimalCount decimalDealType:(CJDecimalDealType)decimalDealType
++ (NSString *)getPriceYuanStringFromPriceFen:(CGFloat)priceFen
+                            withDecimalCount:(NSInteger)decimalCount
+                             decimalDealType:(CJDecimalDealType)decimalDealType
 {
     if (priceFen == 0) {
         return @"0";
