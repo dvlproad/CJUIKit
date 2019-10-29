@@ -1,5 +1,5 @@
 //
-//  ValidateStringTableViewCell.h
+//  CJValidateStringTableViewCell.h
 //  CJUIKitDemo
 //
 //  Created by ciyouzen on 2017/12/29.
@@ -9,13 +9,13 @@
 #import <UIKit/UIKit.h>
 #import <Masonry/Masonry.h>
 
-@interface ValidateStringTableViewCell : UITableViewCell
+@interface CJValidateStringTableViewCell : UITableViewCell
 
 @property (nonatomic, strong) UITextField *textField;
 @property (nonatomic, strong) UIButton *validateButton;
 @property (nonatomic, strong) UILabel *resultLabel;
 
-@property (nonatomic, copy) void (^validateHandle)(ValidateStringTableViewCell *mcell);
+@property (nonatomic, copy) void (^validateHandle)(CJValidateStringTableViewCell *mcell);
 
 
 @end

@@ -226,7 +226,7 @@
 		78A74E482368777F0023F44B /* CJDealTextModelFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 78A74E422368777F0023F44B /* CJDealTextModelFactory.m */; };
 		78A74E492368777F0023F44B /* CJSectionDataModel+CJDealTextModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 78A74E442368777F0023F44B /* CJSectionDataModel+CJDealTextModel.m */; };
 		78A74E4A2368777F0023F44B /* CJDealTextModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 78A74E462368777F0023F44B /* CJDealTextModel.m */; };
-		78A74E4E236877BA0023F44B /* ValidateStringTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 78A74E4C236877BA0023F44B /* ValidateStringTableViewCell.m */; };
+		78A74E4E236877BA0023F44B /* CJValidateStringTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 78A74E4C236877BA0023F44B /* CJValidateStringTableViewCell.m */; };
 		78A74E5123687ACF0023F44B /* AccuracyPriceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78A74E5023687ACF0023F44B /* AccuracyPriceViewController.m */; };
 		78AB83A621B7CE4500853E21 /* PresentAViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78AB83A521B7CE4500853E21 /* PresentAViewController.m */; };
 		78AB83A921B7CE7100853E21 /* PresentBViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78AB83A821B7CE7100853E21 /* PresentBViewController.m */; };
@@ -765,8 +765,8 @@
 		78A74E452368777F0023F44B /* CJDealTextModelFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJDealTextModelFactory.h; sourceTree = "<group>"; };
 		78A74E462368777F0023F44B /* CJDealTextModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJDealTextModel.m; sourceTree = "<group>"; };
 		78A74E472368777F0023F44B /* CJSectionDataModel+CJDealTextModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CJSectionDataModel+CJDealTextModel.h"; sourceTree = "<group>"; };
-		78A74E4C236877BA0023F44B /* ValidateStringTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ValidateStringTableViewCell.m; sourceTree = "<group>"; };
-		78A74E4D236877BA0023F44B /* ValidateStringTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ValidateStringTableViewCell.h; sourceTree = "<group>"; };
+		78A74E4C236877BA0023F44B /* CJValidateStringTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJValidateStringTableViewCell.m; sourceTree = "<group>"; };
+		78A74E4D236877BA0023F44B /* CJValidateStringTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJValidateStringTableViewCell.h; sourceTree = "<group>"; };
 		78A74E4F23687ACF0023F44B /* AccuracyPriceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccuracyPriceViewController.h; sourceTree = "<group>"; };
 		78A74E5023687ACF0023F44B /* AccuracyPriceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccuracyPriceViewController.m; sourceTree = "<group>"; };
 		78AB83A421B7CE4500853E21 /* PresentAViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PresentAViewController.h; sourceTree = "<group>"; };
@@ -2062,12 +2062,12 @@
 		78A74E412368777F0023F44B /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				78A74E422368777F0023F44B /* CJDealTextModelFactory.m */,
 				78A74E432368777F0023F44B /* CJDealTextModel.h */,
-				78A74E442368777F0023F44B /* CJSectionDataModel+CJDealTextModel.m */,
-				78A74E452368777F0023F44B /* CJDealTextModelFactory.h */,
 				78A74E462368777F0023F44B /* CJDealTextModel.m */,
+				78A74E452368777F0023F44B /* CJDealTextModelFactory.h */,
+				78A74E422368777F0023F44B /* CJDealTextModelFactory.m */,
 				78A74E472368777F0023F44B /* CJSectionDataModel+CJDealTextModel.h */,
+				78A74E442368777F0023F44B /* CJSectionDataModel+CJDealTextModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -2075,8 +2075,8 @@
 		78A74E4B236877BA0023F44B /* View */ = {
 			isa = PBXGroup;
 			children = (
-				78A74E4D236877BA0023F44B /* ValidateStringTableViewCell.h */,
-				78A74E4C236877BA0023F44B /* ValidateStringTableViewCell.m */,
+				78A74E4D236877BA0023F44B /* CJValidateStringTableViewCell.h */,
+				78A74E4C236877BA0023F44B /* CJValidateStringTableViewCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -3183,7 +3183,7 @@
 				7856F80421F4F4C3004AF751 /* UIWindow+CJSnapshot.m in Sources */,
 				78A621E72135C925004DA046 /* DemoSuspendWindowRootViewController.m in Sources */,
 				8060C48C20E0D5EF0093B14E /* AccuracyStringViewController.m in Sources */,
-				78A74E4E236877BA0023F44B /* ValidateStringTableViewCell.m in Sources */,
+				78A74E4E236877BA0023F44B /* CJValidateStringTableViewCell.m in Sources */,
 				7856F81821F4F4C3004AF751 /* CJAlert.m in Sources */,
 				7856F97021F9D2C5004AF751 /* BaseTableViewCellViewController.m in Sources */,
 				7856F7FB21F4F4C3004AF751 /* UIImage+CJSplitImageIntoTwoParts.m in Sources */,

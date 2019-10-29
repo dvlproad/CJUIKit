@@ -11,19 +11,25 @@
 @implementation CJMoneyUtil
 
 #pragma mark - "分" 转 "元"
-///将分以保留0位小数的方式转为元
+///将分以保留0位小数的方式转为元(向上取整)
 + (NSString *)zeroUpDecimalPriceYuanStringFromPriceFen:(CGFloat)priceFen {
-    return [self getPriceYuanStringFromPriceFen:priceFen withDecimalCount:0 decimalDealType:CJDecimalDealTypeCeil];
+    return [self getPriceYuanStringFromPriceFen:priceFen
+                               withDecimalCount:0
+                                decimalDealType:CJDecimalDealTypeCeil];
 }
 
 ///将分以保留1位小数的方式转为元(向上取整)
 + (NSString *)oneUpDecimalPriceYuanStringFromPriceFen:(CGFloat)priceFen {
-    return [self getPriceYuanStringFromPriceFen:priceFen withDecimalCount:1 decimalDealType:CJDecimalDealTypeCeil];
+    return [self getPriceYuanStringFromPriceFen:priceFen
+                               withDecimalCount:1
+                                decimalDealType:CJDecimalDealTypeCeil];
 }
 
 ///将分以保留1位小数的方式转为元(向下取整)
 + (NSString *)oneDownDecimalPriceYuanStringFromPriceFen:(CGFloat)priceFen {
-    return [self getPriceYuanStringFromPriceFen:priceFen withDecimalCount:1 decimalDealType:CJDecimalDealTypeFloor];
+    return [self getPriceYuanStringFromPriceFen:priceFen
+                               withDecimalCount:1
+                                decimalDealType:CJDecimalDealTypeFloor];
 }
 
 /**

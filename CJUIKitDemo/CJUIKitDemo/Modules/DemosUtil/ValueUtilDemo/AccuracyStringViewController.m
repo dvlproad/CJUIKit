@@ -91,6 +91,7 @@ typedef NS_ENUM(NSUInteger, ValidateStringType) {
         CJDealTextModel *dealTextModel = [[CJDealTextModel alloc] init];
         dealTextModel.placeholder = @"请输入要验证的值";
         dealTextModel.text = @"1121";
+        dealTextModel.hopeResultText = @"1200";
         dealTextModel.actionTitle = @"尾部归0,向上取整";
         dealTextModel.actionBlock = ^NSString * _Nonnull(NSString * _Nonnull oldString) {
             CGFloat originNumber = [oldString floatValue];
@@ -105,6 +106,7 @@ typedef NS_ENUM(NSUInteger, ValidateStringType) {
         CJDealTextModel *dealTextModel = [[CJDealTextModel alloc] init];
         dealTextModel.placeholder = @"请输入要验证的值";
         dealTextModel.text = @"1121";
+        dealTextModel.hopeResultText = @"1100";
         dealTextModel.actionTitle = @"尾部归0,向下取整";
         dealTextModel.actionBlock = ^NSString * _Nonnull(NSString * _Nonnull oldString) {
             CGFloat originNumber = [oldString floatValue];
@@ -119,6 +121,7 @@ typedef NS_ENUM(NSUInteger, ValidateStringType) {
         CJDealTextModel *dealTextModel = [[CJDealTextModel alloc] init];
         dealTextModel.placeholder = @"请输入要验证的值";
         dealTextModel.text = @"1121";
+        dealTextModel.hopeResultText = @"1100";
         dealTextModel.actionTitle = @"尾部归0,四舍五入";
         dealTextModel.actionBlock = ^NSString * _Nonnull(NSString * _Nonnull oldString) {
             CGFloat originNumber = [oldString floatValue];

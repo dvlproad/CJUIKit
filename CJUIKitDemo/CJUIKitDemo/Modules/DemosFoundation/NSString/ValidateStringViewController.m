@@ -7,7 +7,7 @@
 //
 
 #import "ValidateStringViewController.h"
-#import "ValidateStringTableViewCell.h"
+#import "CJValidateStringTableViewCell.h"
 #import "NSString+CJValidate.h"
 
 typedef NS_ENUM(NSUInteger, ValidateStringType) {
@@ -33,7 +33,7 @@ typedef NS_ENUM(NSUInteger, ValidateStringType) {
     // Do any additional setup after loading the view from its nib.
     
     [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"cell"];
-    [self.tableView registerClass:[ValidateStringTableViewCell class] forCellReuseIdentifier:@"ValidateStringTableViewCell"];
+    [self.tableView registerClass:[CJValidateStringTableViewCell class] forCellReuseIdentifier:@"CJValidateStringTableViewCell"];
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
 
@@ -55,13 +55,13 @@ typedef NS_ENUM(NSUInteger, ValidateStringType) {
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     NSInteger count = self.dataModels.count;
     if (indexPath.row < count) {
-        ValidateStringTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ValidateStringTableViewCell" forIndexPath:indexPath];
+        CJValidateStringTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"CJValidateStringTableViewCell" forIndexPath:indexPath];
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
         
         cell.textField.placeholder = @"请输入要验证的值";
         
         [cell.validateButton setTitle:@"验证" forState:UIControlStateNormal];
-        [cell setValidateHandle:^(ValidateStringTableViewCell *mcell) {
+        [cell setValidateHandle:^(CJValidateStringTableViewCell *mcell) {
             //NSInteger index = button.tag - 1000;
             //NSIndexPath *indexPath = [NSIndexPath indexPathForRow:index inSection:0];
             //NSString *originNumberString = [self.dataModels objectAtIndex:index];

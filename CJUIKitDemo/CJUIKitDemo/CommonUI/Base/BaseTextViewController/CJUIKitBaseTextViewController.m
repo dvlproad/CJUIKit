@@ -7,7 +7,7 @@
 //
 
 #import "CJUIKitBaseTextViewController.h"
-#import "ValidateStringTableViewCell.h"
+#import "CJValidateStringTableViewCell.h"
 
 @interface CJUIKitBaseTextViewController () <UITableViewDataSource, UITableViewDelegate> {
     
@@ -24,7 +24,7 @@
     
     UITableView *tableView = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStyleGrouped];
     //[tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"cell"];
-    [tableView registerClass:[ValidateStringTableViewCell class] forCellReuseIdentifier:@"ValidateStringTableViewCell"];
+    [tableView registerClass:[CJValidateStringTableViewCell class] forCellReuseIdentifier:@"CJValidateStringTableViewCell"];
     tableView.dataSource = self;
     tableView.delegate = self;
     [self.view addSubview:tableView];
@@ -127,16 +127,23 @@
     NSArray *dataModels = sectionDataModel.values;
     CJDealTextModel *dealTextModel = [dataModels objectAtIndex:indexPath.row];
     
-    ValidateStringTableViewCell *cell = (ValidateStringTableViewCell *)[tableView dequeueReusableCellWithIdentifier:@"ValidateStringTableViewCell" forIndexPath:indexPath];
+    CJValidateStringTableViewCell *cell = (CJValidateStringTableViewCell *)[tableView dequeueReusableCellWithIdentifier:@"CJValidateStringTableViewCell" forIndexPath:indexPath];
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     
     cell.textField.placeholder = dealTextModel.placeholder;
     cell.textField.text = dealTextModel.text;
     [cell.validateButton setTitle:dealTextModel.actionTitle forState:UIControlStateNormal];
-    [cell setValidateHandle:^(ValidateStringTableViewCell *mcell) {
+    [cell setValidateHandle:^(CJValidateStringTableViewCell *mcell) {
         NSString *originNumberString = mcell.textField.text;
         NSString *lastNumberString = dealTextModel.actionBlock(originNumberString);
         mcell.resultLabel.text = lastNumberString;
+        
+        if (dealTextModel.hopeResultText.length > 0) {
+            if ([lastNumberString isEqualToString:dealTextModel.hopeResultText] == NO) {
+                NSString *errorMessage = [NSString stringWithFormat:@"代码方法错误，执行结果应为:%@", dealTextModel.hopeResultText];
+                [CJToast shortShowMessage:errorMessage];
+            }
+        }
     }];
         
     return cell;

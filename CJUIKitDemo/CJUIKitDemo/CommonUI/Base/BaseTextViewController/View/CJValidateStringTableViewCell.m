@@ -1,14 +1,14 @@
 //
-//  ValidateStringTableViewCell.m
+//  CJValidateStringTableViewCell.m
 //  CJUIKitDemo
 //
 //  Created by ciyouzen on 2017/12/29.
 //  Copyright © 2017年 dvlproad. All rights reserved.
 //
 
-#import "ValidateStringTableViewCell.h"
+#import "CJValidateStringTableViewCell.h"
 
-@implementation ValidateStringTableViewCell
+@implementation CJValidateStringTableViewCell
 
 - (void)awakeFromNib {
     [super awakeFromNib];

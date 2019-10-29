@@ -12,7 +12,7 @@
 @interface CJMoneyUtil : NSObject
 
 #pragma mark - "分" 转 "元"(向上取整)
-///将分以保留0位小数的方式转为元
+///将分以保留0位小数的方式转为元(向上取整)
 + (NSString *)zeroUpDecimalPriceYuanStringFromPriceFen:(CGFloat)priceFen;
 
 ///将分以保留1位小数的方式转为元(向上取整)

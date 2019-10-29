@@ -42,6 +42,7 @@
         CJDealTextModel *dealTextModel = [[CJDealTextModel alloc] init];
         dealTextModel.placeholder = @"请输入要验证的值";
         dealTextModel.text = @"1024";
+        dealTextModel.hopeResultText = @"11.00";
         dealTextModel.actionTitle = @"分转元,向上取整";
         dealTextModel.actionBlock = ^NSString * _Nonnull(NSString * _Nonnull oldString) {
             CGFloat originNumber = [oldString floatValue];
@@ -54,6 +55,7 @@
         CJDealTextModel *dealTextModel = [[CJDealTextModel alloc] init];
         dealTextModel.placeholder = @"请输入要验证的值";
         dealTextModel.text = @"1024";
+        dealTextModel.hopeResultText = @"10.00";
         dealTextModel.actionTitle = @"分转元,向下取整";
         dealTextModel.actionBlock = ^NSString * _Nonnull(NSString * _Nonnull oldString) {
             CGFloat originNumber = [oldString floatValue];
@@ -66,6 +68,7 @@
         CJDealTextModel *dealTextModel = [[CJDealTextModel alloc] init];
         dealTextModel.placeholder = @"请输入要验证的值";
         dealTextModel.text = @"1024";
+        dealTextModel.hopeResultText = @"10.00";
         dealTextModel.actionTitle = @"分转元,四舍五入";
         dealTextModel.actionBlock = ^NSString * _Nonnull(NSString * _Nonnull oldString) {
             CGFloat originNumber = [oldString floatValue];
