@@ -10,10 +10,16 @@
 
 @implementation CJDecimalUtil
 
-/* 完整的描述请参见文件头部 */
-+ (NSString *)removeEndZeroForNumberString:(NSString *)originNumberString {
+/**
+ *  去除小数部分的尾部多余零的显示
+ *
+ *  @param originNumberString 要处理的原始竖直
+ *
+ *  @return 去除小数部分的尾部多余零后的新数值字符串
+ */
++ (NSString *)removeDecimalFractionZeroForNumberString:(NSString *)originNumberString {
     NSNumber *number = @(originNumberString.doubleValue); //用floatValude的时候精度不够
-    NSString *lastNumberString = [NSString stringWithFormat:@"%@", number];
+    NSString *lastNumberString = [number stringValue];
     
     return lastNumberString;
 }
@@ -40,7 +46,7 @@
  *  @brief                  注:传入值可为浮点型，但返回值的类型只能是整型
  *
  *  @param value            要处理的数(注:含浮点型，如1000.006，要在个数上向上取整的时候,值会为1001)
- *  @param decimalPlaces   精确到什么位(负数代表小数点后几位，正数代表小数点前几位.如①不处理填0;②个位,则这里填1;③百位,则这里填3;③小数点后两位,则这里填-2;)
+ *  @param decimalPlaces   精确到什么位(负数代表小数点后几位，正数代表小数点前几位.如①不处理填0;②个位,则这里填1;③百位,则这里填3;③小数点后两位即百分位,则这里填-2,因为没有个分位;)
  *  @param decimalDealType  处理的方式(不处理、向上取整、向下取整、四舍五入)
  *
  *  @return 数值在指定位上进行指定处理后得到的整型值(注:返回值是整型)
@@ -61,7 +67,7 @@
  *  @brief                  注:传入值可为浮点型，但返回值的类型只能是整型
  *
  *  @param value            要处理的数(注:含浮点型，如1000.006，要在个数上向上取整的时候,值会为1001)
- *  @param decimalPlaces   精确到什么位(负数代表小数点后几位，正数代表小数点前几位.如①不处理填0;②个位,则这里填1;③百位,则这里填3;③小数点后两位,则这里填-2;)
+ *  @param decimalPlaces   精确到什么位(负数代表小数点后几位，正数代表小数点前几位.如①不处理填0;②个位,则这里填1;③百位,则这里填3;③小数点后两位即百分位,则这里填-2,因为没有个分位;)
  *  @param decimalDealType  处理的方式(不处理、向上取整、向下取整、四舍五入)
  *
  *  @return 数值在指定位上进行指定处理后得到的整型值(注:返回值是整型)
@@ -83,7 +89,7 @@
         newUnitValue = [self __dealUnitsForValue:newUnitValue withDecimalDealType:decimalDealType];
         fNewValue = newUnitValue * unitTimes;
         
-    } else {
+    } else { // 因为没有个分位
         CGFloat unitTimes = pow(10.0, -decimalPlaces);
         
         CGFloat newUnitValue = value*unitTimes; // 转成一个去个位数处理的值

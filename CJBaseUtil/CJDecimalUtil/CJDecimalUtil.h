@@ -28,8 +28,14 @@ typedef NS_ENUM(NSUInteger, CJDecimalDealType) {
 @interface CJDecimalUtil : NSObject
 
 
-///删除尾部多余的零
-+ (NSString *)removeEndZeroForNumberString:(NSString *)originNumberString;
+/**
+ *  去除小数部分的尾部多余零的显示
+ *
+ *  @param originNumberString 要处理的原始竖直
+ *
+ *  @return 去除小数部分的尾部多余零后的新数值字符串
+ */
++ (NSString *)removeDecimalFractionZeroForNumberString:(NSString *)originNumberString;
 
 /**
  *  将价钱以四舍五入的方式保留两位小数，并对结尾是0的小数数字不显示
@@ -45,7 +51,7 @@ typedef NS_ENUM(NSUInteger, CJDecimalDealType) {
  *  @brief                  注:传入值可为浮点型，但返回值的类型只能是整型
  *
  *  @param value            要处理的数(注:含浮点型，如1000.006，要在个数上向上取整的时候,值会为1001)
- *  @param decimalPlaces   精确到什么位(负数代表小数点后几位，正数代表小数点前几位.如①不处理填0;②个位,则这里填1;③百位,则这里填3;③小数点后两位,则这里填-2;)
+ *  @param decimalPlaces   精确到什么位(负数代表小数点后几位，正数代表小数点前几位.如①不处理填0;②个位,则这里填1;③百位,则这里填3;③小数点后两位即百分位,则这里填-2,因为没有个分位;)
  *  @param decimalDealType  处理的方式(不处理、向上取整、向下取整、四舍五入)
  *
  *  @return 数值在指定位上进行指定处理后得到的整型值(注:返回值是整型)
@@ -59,7 +65,7 @@ typedef NS_ENUM(NSUInteger, CJDecimalDealType) {
  *  @brief                  注:传入值可为浮点型，但返回值的类型只能是整型
  *
  *  @param value            要处理的数(注:含浮点型，如1000.006，要在个数上向上取整的时候,值会为1001)
- *  @param decimalPlaces   精确到什么位(负数代表小数点后几位，正数代表小数点前几位.如①不处理填0;②个位,则这里填1;③百位,则这里填3;③小数点后两位,则这里填-2;)
+ *  @param decimalPlaces   精确到什么位(负数代表小数点后几位，正数代表小数点前几位.如①不处理填0;②个位,则这里填1;③百位,则这里填3;③小数点后两位即百分位,则这里填-2,因为没有个分位;)
  *  @param decimalDealType  处理的方式(不处理、向上取整、向下取整、四舍五入)
  *
  *  @return 数值在指定位上进行指定处理后得到的整型值(注:返回值是整型)

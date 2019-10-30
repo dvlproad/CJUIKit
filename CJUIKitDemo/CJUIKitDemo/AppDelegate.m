@@ -65,46 +65,7 @@
     
     //[[IQKeyboardManager sharedManager].disabledToolbarClasses addObject:NSClassFromString(@"DateViewController")]; //已写在对应的类里了
     
-//    NSString *value = @"9.555";
-//    double dValue = [value doubleValue];
-//    NSLog(@"dValue = %.6f", dValue);
-//    
-//    
-//    NSString *originNumberString = @"9.555";
-//    NSInteger stringDecimalCount = 0;   // 字符串数值的小数位数有几个
-//    NSArray<NSString *> *numberComponents = [originNumberString componentsSeparatedByString:originNumberString];
-//    BOOL isDecimal = numberComponents.count > 1;
-//    if (isDecimal) {
-//        stringDecimalCount = numberComponents[0].length;
-//    }
-//    
-//    NSInteger saveCount = -2; // 保留几位数(负数表示保留位小数点后几位，正数表示保留到第几位)
-//    
-//    
-//    NSInteger tempBeishu = 1;
-//    if (saveCount < 0) {
-//        if (stringDecimalCount > 2) {
-//            tempBeishu = 1000.0;
-//        }
-//    }
-//    
-//    
-//    CGFloat originNumber = [originNumberString floatValue] * tempBeishu;
-//    NSInteger lastNumber = [CJDecimalUtil floatValueFromFValue:originNumber
-//                                                      accurateToDecimalPlaces:2
-//                                                     decimalDealType:CJDecimalDealTypeRound];
-//    
-//    CGFloat fLastNumber = lastNumber/tempBeishu;
-//    NSString *lastNumberString = [NSString stringWithFormat:@"%.2f", fLastNumber];
-//    NSLog(@"lastNumberString = %@", lastNumberString);
-//    
-    NSString *lastNumber1 = [CJDecimalUtil stringValueFromFValue:9555
-     accurateToDecimalPlaces:0
-    decimalDealType:CJDecimalDealTypeRound];
-    NSString *lastNumber2 = [CJDecimalUtil stringValueFromFValue:9555
-     accurateToDecimalPlaces:2
-    decimalDealType:CJDecimalDealTypeRound];
-    
+
     CGFloat fValue = [@"9.555" floatValue];
     NSString *lastNumber3 = [CJDecimalUtil stringValueFromFValue:fValue
      accurateToDecimalPlaces:-2
@@ -118,8 +79,6 @@
     NSString *lastNumber6 = [CJDecimalUtil stringValueFromFValue:9.00
      accurateToDecimalPlaces:-2
     decimalDealType:CJDecimalDealTypeRound];
-    NSLog(@"lastNumber1 = %@", lastNumber1);
-    NSLog(@"lastNumber2 = %@", lastNumber2);
     NSLog(@"lastNumber3 = %@", lastNumber3);
     NSLog(@"lastNumber4 = %@", lastNumber4);
     NSLog(@"lastNumber5 = %@", lastNumber5);

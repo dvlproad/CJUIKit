@@ -61,7 +61,7 @@ typedef NS_ENUM(NSUInteger, ValidateStringType) {
         cell.textField.placeholder = @"请输入要验证的值";
         
         [cell.validateButton setTitle:@"验证" forState:UIControlStateNormal];
-        [cell setValidateHandle:^(CJValidateStringTableViewCell *mcell) {
+        [cell setValidateHandle:^BOOL(CJValidateStringTableViewCell *mcell, BOOL isAutoExec) {
             //NSInteger index = button.tag - 1000;
             //NSIndexPath *indexPath = [NSIndexPath indexPathForRow:index inSection:0];
             //NSString *originNumberString = [self.dataModels objectAtIndex:index];

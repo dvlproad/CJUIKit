@@ -18,6 +18,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, copy) NSString *hopeResultText;   /**< 可选设置：希望处理后的text结果值(如果有设置，则当处理结果不等于该值时会弹出toast提示) */
 @property (nonatomic, copy) NSString *actionTitle;      /**< 该文本要进行的操作含义 */
 @property (nonatomic, copy) NSString*(^actionBlock)(NSString *oldString);  /**< 点该文本要进行的操作事件 */
+@property (nonatomic, assign) BOOL autoExec;            /**< 是否在cell显示出来的时候自动执行(默认NO) */
 
 @end
 

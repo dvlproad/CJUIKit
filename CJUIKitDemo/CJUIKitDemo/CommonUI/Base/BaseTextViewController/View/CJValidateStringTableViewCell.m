@@ -46,7 +46,7 @@
     [validateButton.titleLabel setFont:[UIFont systemFontOfSize:16]];
     [validateButton.titleLabel setMinimumScaleFactor:0.4];
     [validateButton.titleLabel setAdjustsFontSizeToFitWidth:YES];
-    [validateButton addTarget:self action:@selector(validateEvent:) forControlEvents:UIControlEventTouchUpInside];
+    [validateButton addTarget:self action:@selector(validateAction) forControlEvents:UIControlEventTouchUpInside];
     [parentView addSubview:validateButton];
     [validateButton mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerX.mas_equalTo(parentView);
@@ -72,10 +72,19 @@
     self.resultLabel = resultLabel;
 }
 
-- (void)validateEvent:(UIButton *)validateButton {
+
+- (void)validateAction {
+    [self validateEvent:NO];
+}
+/**
+ *  cell执行既定操作
+ *
+ *  @param isAutoExec   是否在cell显示出来的时候自动执行
+ */
+- (void)validateEvent:(BOOL)isAutoExec {
     BOOL validateSuccess = YES;
     if (self.validateHandle) {
-        validateSuccess = self.validateHandle(self);
+        validateSuccess = self.validateHandle(self, isAutoExec);
     }
     
     self.resultLabel.backgroundColor = validateSuccess ? [UIColor greenColor] : [UIColor redColor];

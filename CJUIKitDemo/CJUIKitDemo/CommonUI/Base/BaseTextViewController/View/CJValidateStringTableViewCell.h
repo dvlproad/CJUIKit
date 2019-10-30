@@ -16,7 +16,13 @@
 @property (nonatomic, strong) UIButton *validateButton;
 @property (nonatomic, strong) UILabel *resultLabel;
 
-@property (nonatomic, copy) BOOL (^validateHandle)(CJValidateStringTableViewCell *mcell);
+@property (nonatomic, copy) BOOL (^validateHandle)(CJValidateStringTableViewCell *mcell, BOOL isAutoExec);
 
+/**
+ *  cell执行既定操作
+ *
+ *  @param isAutoExec   是否是自动执行的
+ */
+- (void)validateEvent:(BOOL)isAutoExec;
 
 @end

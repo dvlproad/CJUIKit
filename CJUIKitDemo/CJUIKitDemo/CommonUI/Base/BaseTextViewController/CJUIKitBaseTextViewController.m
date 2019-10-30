@@ -133,14 +133,45 @@
     cell.textField.placeholder = dealTextModel.placeholder;
     cell.textField.text = dealTextModel.text;
     [cell.validateButton setTitle:dealTextModel.actionTitle forState:UIControlStateNormal];
-    [cell setValidateHandle:^(CJValidateStringTableViewCell *mcell) {
-        NSString *originNumberString = mcell.textField.text;
-        NSString *lastNumberString = dealTextModel.actionBlock(originNumberString);
-        mcell.resultLabel.text = lastNumberString;
+    [cell setValidateHandle:^BOOL(CJValidateStringTableViewCell *mcell, BOOL isAutoExec) {
+        return [self __dealTextModel:dealTextModel inCell:mcell isAutoExec:isAutoExec];
+    }];
+    
+    if (dealTextModel.autoExec) {
+        [cell validateEvent:YES];
+    }
+    
         
-        BOOL validateSuccess = YES;
-        if (dealTextModel.hopeResultText.length > 0) {
-            validateSuccess = [lastNumberString isEqualToString:dealTextModel.hopeResultText];
+    return cell;
+}
+
+- (NSIndexPath *)tableView:(UITableView *)tableView willSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    return nil;
+}
+
+#pragma mark - Private Method
+/**
+ *  将cell中的文本按照dealTextModel设置的方式进行处理后显示在cell上
+ *
+ *  @param dealTextModel    dealTextModel
+ *  @param mcell            mcell
+ *  @param isAutoExec       是否在cell显示出来的时候自动执行
+ *
+ *  @return 处理结果是否正确
+ */
+- (BOOL)__dealTextModel:(CJDealTextModel *)dealTextModel
+                 inCell:(CJValidateStringTableViewCell *)mcell
+             isAutoExec:(BOOL)isAutoExec
+{
+    NSString *originNumberString = mcell.textField.text;
+    NSString *lastNumberString = dealTextModel.actionBlock(originNumberString);
+    mcell.resultLabel.text = lastNumberString;
+    
+    BOOL validateSuccess = YES;
+    if (dealTextModel.hopeResultText.length > 0) {
+        validateSuccess = [lastNumberString isEqualToString:dealTextModel.hopeResultText];
+        
+        if (isAutoExec == NO) {
             if (validateSuccess == NO) {
                 NSString *errorMessage = [NSString stringWithFormat:@"代码方法错误，执行结果应为:%@", dealTextModel.hopeResultText];
                 [CJToast shortShowMessage:errorMessage];
@@ -149,15 +180,9 @@
                 [CJToast shortShowMessage:successMessage];
             }
         }
-        
-        return validateSuccess;
-    }];
-        
-    return cell;
-}
-
-- (NSIndexPath *)tableView:(UITableView *)tableView willSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    return nil;
+    }
+    
+    return validateSuccess;
 }
 
 - (void)didReceiveMemoryWarning {

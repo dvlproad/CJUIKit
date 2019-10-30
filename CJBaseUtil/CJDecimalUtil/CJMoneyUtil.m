@@ -10,53 +10,74 @@
 
 @implementation CJMoneyUtil
 
-#pragma mark - "分" 转 "元"
-///将分以保留0位小数的方式转为元(向上取整)
+#pragma mark - '分' 转 '元'
+/// 将价钱'分'按(向上取整)处理到价钱'元'的该位，并最终以保留0位小数的方式输出价钱"元"
 + (NSString *)zeroUpDecimalPriceYuanStringFromPriceFen:(CGFloat)priceFen {
-    return [self getPriceYuanStringFromPriceFen:priceFen
-                               withDecimalCount:0
-                                decimalDealType:CJDecimalDealTypeCeil];
+    return [self priceYuanStringFromPriceFen:priceFen
+                         accurateToFenPlaces:3
+                             decimalDealType:CJDecimalDealTypeCeil
+                            keepDecimalCount:0];
 }
 
-///将分以保留1位小数的方式转为元(向上取整)
+/// 将价钱'分'按(向上取整)处理到价钱'元'的该位，并最终以保留1位小数的方式输出价钱"元"
 + (NSString *)oneUpDecimalPriceYuanStringFromPriceFen:(CGFloat)priceFen {
-    return [self getPriceYuanStringFromPriceFen:priceFen
-                               withDecimalCount:1
-                                decimalDealType:CJDecimalDealTypeCeil];
+    return [self priceYuanStringFromPriceFen:priceFen
+                         accurateToFenPlaces:3
+                             decimalDealType:CJDecimalDealTypeCeil
+                            keepDecimalCount:1];
 }
 
-///将分以保留1位小数的方式转为元(向下取整)
+/// 将价钱'分'按(向下取整)处理到价钱'元'的该位，并最终以保留1位小数的方式输出价钱"元"
 + (NSString *)oneDownDecimalPriceYuanStringFromPriceFen:(CGFloat)priceFen {
-    return [self getPriceYuanStringFromPriceFen:priceFen
-                               withDecimalCount:1
-                                decimalDealType:CJDecimalDealTypeFloor];
+    return [self priceYuanStringFromPriceFen:priceFen
+                         accurateToFenPlaces:3
+                             decimalDealType:CJDecimalDealTypeFloor
+                            keepDecimalCount:1];
 }
 
 /**
- *  将价钱"分"以保留几位小数的方式转为价钱"元"(向上取整、向下取整、四舍五入)
+ *  将价钱'分'按指定精度处理到价钱'元'的哪一位，并最终以保留几位小数的方式输出价钱"元"(不处理、向上取整、向下取整、四舍五入)
  *
  *  @param priceFen         要转化的分
- *  @param decimalCount     分转化为元后要保留几位小数位数
- *  @param decimalDealType  取整的方式(向上取整、向下取整、四舍五入)
+ *  @param fenPlaces        精确到当前价钱'分'的什么位(
+ *                          ①保留整'元',则为精确到价钱分值的百位,即fenPlaces为3;
+ *                          ②保留'元'值的后两位小数,则为精确到价钱分值的个位,即fenPlaces为1)
+ *  @param decimalDealType  处理的方式(不处理、向上取整、向下取整、四舍五入)
+ *  @param decimalCount     最后的值要始终保留几位小数
  *
- *  @return 保留了指定位数的价钱"元"字符串
+ *  @return 保留了几位小数的价钱'元'字符串
  */
-+ (NSString *)getPriceYuanStringFromPriceFen:(CGFloat)priceFen
-                            withDecimalCount:(NSInteger)decimalCount
-                             decimalDealType:(CJDecimalDealType)decimalDealType
++ (NSString *)priceYuanStringFromPriceFen:(CGFloat)priceFen
+                      accurateToFenPlaces:(NSInteger)fenPlaces
+                          decimalDealType:(CJDecimalDealType)decimalDealType
+                         keepDecimalCount:(NSInteger)decimalCount
 {
     if (priceFen == 0) {
         return @"0";
     }
     
-    NSInteger newPriceFen = [CJDecimalUtil floatValueFromFValue:priceFen accurateToDecimalPlaces:decimalCount decimalDealType:decimalDealType];
+    NSInteger newPriceFen = [CJDecimalUtil floatValueFromFValue:priceFen
+                                        accurateToDecimalPlaces:fenPlaces
+                                                decimalDealType:decimalDealType];
     CGFloat priceYuan = newPriceFen/100.0;
     
-    NSString *priceYuanString = [self yuanStringWithYuanValue:priceYuan decimalCount:decimalCount];
+    // 将'元'数值转化为'元'字符串,并保留两位小数位数
+    NSString *priceYuanString = [self __yuanStringWithYuanValue:priceYuan
+                                                   decimalCount:decimalCount];
     return priceYuanString;
 }
 
-+ (NSString *)yuanStringWithYuanValue:(CGFloat)yuanValue decimalCount:(NSInteger)decimalCount {
+
+#pragma mark - Private Method
+/**
+ *  将'元'数值转化为'元'字符串,并保留指定小数位数
+ *
+ *  @param yuanValue    要进行操作的'元'数值
+ *  @param decimalCount 保留几位小数
+ *
+ *  @return 保留了指定小数位数的'元'字符串
+ */
++ (NSString *)__yuanStringWithYuanValue:(CGFloat)yuanValue decimalCount:(NSInteger)decimalCount {
     NSNumberFormatter *yuanNumberFormatter = [[NSNumberFormatter alloc] init];
     yuanNumberFormatter.numberStyle = NSNumberFormatterDecimalStyle;
     yuanNumberFormatter.groupingSize = 3;

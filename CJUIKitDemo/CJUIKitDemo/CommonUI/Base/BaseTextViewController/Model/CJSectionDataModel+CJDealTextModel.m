@@ -30,7 +30,11 @@
     sectionDataModel.theme = sameActionTitle;
     
     // 创建dealTextModels，赋值给sectionDataModel.values
-    NSMutableArray<CJDealTextModel *> *dealTextModels = [CJDealTextModelFactory textArray:textArray samePlaceholder:placeholder sameActionTitle:sameActionTitle sameActionBlock:sameActionBlock];
+    NSMutableArray<CJDealTextModel *> *dealTextModels =
+                        [CJDealTextModelFactory textArray:textArray
+                                          samePlaceholder:placeholder
+                                          sameActionTitle:sameActionTitle
+                                          sameActionBlock:sameActionBlock];
     sectionDataModel.values = dealTextModels;
     
     return sectionDataModel;
