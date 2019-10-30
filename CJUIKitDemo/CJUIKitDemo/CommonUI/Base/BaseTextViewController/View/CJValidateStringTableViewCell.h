@@ -9,13 +9,14 @@
 #import <UIKit/UIKit.h>
 #import <Masonry/Masonry.h>
 
-@interface CJValidateStringTableViewCell : UITableViewCell
-
+@interface CJValidateStringTableViewCell : UITableViewCell {
+    
+}
 @property (nonatomic, strong) UITextField *textField;
 @property (nonatomic, strong) UIButton *validateButton;
 @property (nonatomic, strong) UILabel *resultLabel;
 
-@property (nonatomic, copy) void (^validateHandle)(CJValidateStringTableViewCell *mcell);
+@property (nonatomic, copy) BOOL (^validateHandle)(CJValidateStringTableViewCell *mcell);
 
 
 @end

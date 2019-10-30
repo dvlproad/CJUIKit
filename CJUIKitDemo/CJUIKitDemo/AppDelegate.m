@@ -90,33 +90,33 @@
 //    
 //    
 //    CGFloat originNumber = [originNumberString floatValue] * tempBeishu;
-//    NSInteger lastNumber = [CJDecimalUtil processingZeroWithIntValue:originNumber
-//                                                      lastDigitCount:2
+//    NSInteger lastNumber = [CJDecimalUtil floatValueFromFValue:originNumber
+//                                                      accurateToDecimalPlaces:2
 //                                                     decimalDealType:CJDecimalDealTypeRound];
 //    
 //    CGFloat fLastNumber = lastNumber/tempBeishu;
 //    NSString *lastNumberString = [NSString stringWithFormat:@"%.2f", fLastNumber];
 //    NSLog(@"lastNumberString = %@", lastNumberString);
 //    
-    NSString *lastNumber1 = [CJDecimalUtil processingAccuracyWithFValue:9555
-     lastDigitCount:0
+    NSString *lastNumber1 = [CJDecimalUtil stringValueFromFValue:9555
+     accurateToDecimalPlaces:0
     decimalDealType:CJDecimalDealTypeRound];
-    NSString *lastNumber2 = [CJDecimalUtil processingAccuracyWithFValue:9555
-     lastDigitCount:2
+    NSString *lastNumber2 = [CJDecimalUtil stringValueFromFValue:9555
+     accurateToDecimalPlaces:2
     decimalDealType:CJDecimalDealTypeRound];
     
     CGFloat fValue = [@"9.555" floatValue];
-    NSString *lastNumber3 = [CJDecimalUtil processingAccuracyWithFValue:fValue
-     lastDigitCount:-2
+    NSString *lastNumber3 = [CJDecimalUtil stringValueFromFValue:fValue
+     accurateToDecimalPlaces:-2
     decimalDealType:CJDecimalDealTypeRound];
-    NSString *lastNumber4 = [CJDecimalUtil processingAccuracyWithFValue:9.55
-     lastDigitCount:-2
+    NSString *lastNumber4 = [CJDecimalUtil stringValueFromFValue:9.55
+     accurateToDecimalPlaces:-2
     decimalDealType:CJDecimalDealTypeRound];
-    NSString *lastNumber5 = [CJDecimalUtil processingAccuracyWithFValue:9.50
-     lastDigitCount:-2
+    NSString *lastNumber5 = [CJDecimalUtil stringValueFromFValue:9.50
+     accurateToDecimalPlaces:-2
     decimalDealType:CJDecimalDealTypeRound];
-    NSString *lastNumber6 = [CJDecimalUtil processingAccuracyWithFValue:9.00
-     lastDigitCount:-2
+    NSString *lastNumber6 = [CJDecimalUtil stringValueFromFValue:9.00
+     accurateToDecimalPlaces:-2
     decimalDealType:CJDecimalDealTypeRound];
     NSLog(@"lastNumber1 = %@", lastNumber1);
     NSLog(@"lastNumber2 = %@", lastNumber2);

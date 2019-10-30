@@ -138,12 +138,19 @@
         NSString *lastNumberString = dealTextModel.actionBlock(originNumberString);
         mcell.resultLabel.text = lastNumberString;
         
+        BOOL validateSuccess = YES;
         if (dealTextModel.hopeResultText.length > 0) {
-            if ([lastNumberString isEqualToString:dealTextModel.hopeResultText] == NO) {
+            validateSuccess = [lastNumberString isEqualToString:dealTextModel.hopeResultText];
+            if (validateSuccess == NO) {
                 NSString *errorMessage = [NSString stringWithFormat:@"代码方法错误，执行结果应为:%@", dealTextModel.hopeResultText];
                 [CJToast shortShowMessage:errorMessage];
+            } else {
+                NSString *successMessage = [NSString stringWithFormat:@"恭喜你，代码方法处理正确！"];
+                [CJToast shortShowMessage:successMessage];
             }
         }
+        
+        return validateSuccess;
     }];
         
     return cell;

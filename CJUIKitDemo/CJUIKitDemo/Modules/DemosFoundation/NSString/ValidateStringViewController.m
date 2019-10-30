@@ -66,6 +66,9 @@ typedef NS_ENUM(NSUInteger, ValidateStringType) {
             //NSIndexPath *indexPath = [NSIndexPath indexPathForRow:index inSection:0];
             //NSString *originNumberString = [self.dataModels objectAtIndex:index];
             NSLog(@"validateStringEvent");
+            
+            BOOL validateSuccess = YES;
+            return validateSuccess;
         }];
         
         return cell;

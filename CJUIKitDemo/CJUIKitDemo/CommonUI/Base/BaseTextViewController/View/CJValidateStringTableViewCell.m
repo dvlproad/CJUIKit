@@ -58,7 +58,7 @@
     
     
     UILabel *resultLabel = [[UILabel alloc] initWithFrame:CGRectZero];
-    resultLabel.backgroundColor = [UIColor greenColor];
+    resultLabel.backgroundColor = [UIColor orangeColor];
     resultLabel.textColor = [UIColor lightGrayColor];
     resultLabel.textAlignment = NSTextAlignmentLeft;
     resultLabel.font = [UIFont systemFontOfSize:14];
@@ -73,9 +73,12 @@
 }
 
 - (void)validateEvent:(UIButton *)validateButton {
+    BOOL validateSuccess = YES;
     if (self.validateHandle) {
-        self.validateHandle(self);
+        validateSuccess = self.validateHandle(self);
     }
+    
+    self.resultLabel.backgroundColor = validateSuccess ? [UIColor greenColor] : [UIColor redColor];
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

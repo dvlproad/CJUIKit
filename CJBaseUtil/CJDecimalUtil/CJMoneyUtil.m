@@ -49,7 +49,7 @@
         return @"0";
     }
     
-    NSInteger newPriceFen = [CJDecimalUtil processingZeroWithIntValue:priceFen lastDigitCount:decimalCount decimalDealType:decimalDealType];
+    NSInteger newPriceFen = [CJDecimalUtil floatValueFromFValue:priceFen accurateToDecimalPlaces:decimalCount decimalDealType:decimalDealType];
     CGFloat priceYuan = newPriceFen/100.0;
     
     NSString *priceYuanString = [self yuanStringWithYuanValue:priceYuan decimalCount:decimalCount];

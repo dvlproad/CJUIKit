@@ -32,7 +32,7 @@
         return @"0";
     }
     
-    NSInteger newMiles = [CJDecimalUtil processingZeroWithIntValue:miles lastDigitCount:decimalCount decimalDealType:decimalDealType];
+    NSInteger newMiles = [CJDecimalUtil floatValueFromFValue:miles accurateToDecimalPlaces:decimalCount decimalDealType:decimalDealType];
     CGFloat kilometerValue = newMiles/1000.0;
     NSString *kilometerString = [self kilometerStringWithKilometerValue:kilometerValue decimalCount:decimalCount];
     return kilometerString;

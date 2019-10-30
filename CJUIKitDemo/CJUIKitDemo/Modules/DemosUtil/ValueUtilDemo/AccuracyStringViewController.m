@@ -61,7 +61,7 @@ typedef NS_ENUM(NSUInteger, ValidateStringType) {
                                           sameActionTitle:@"尾部归0"
                                           sameActionBlock:^NSString * _Nonnull(NSString * _Nonnull oldString) {
             CGFloat originNumber = [oldString floatValue];
-            CGFloat lastNumber = [CJDecimalUtil processingZeroWithIntValue:originNumber lastDigitCount:2 decimalDealType:CJDecimalDealTypeCeil];
+            CGFloat lastNumber = [CJDecimalUtil floatValueFromFValue:originNumber accurateToDecimalPlaces:2 decimalDealType:CJDecimalDealTypeCeil];
            
             NSString *lastNumberString = [NSString stringWithFormat:@"%.2f", lastNumber];
             return lastNumberString;
@@ -70,11 +70,19 @@ typedef NS_ENUM(NSUInteger, ValidateStringType) {
         [sectionDataModels addObject:sectionDataModel];
     }
     
-    // 尾部归0(向上取整、向下取整、四舍五入)
+    // 精确到个位(向上取整、向下取整、四舍五入)
     {
         CJSectionDataModel *sectionDataModel = [[CJSectionDataModel alloc] init];
-        sectionDataModel.theme = @"尾部归0(向上取整、向下取整、四舍五入)";
-        sectionDataModel.values = [self dealTextModels_numbersDealZero];
+        sectionDataModel.theme = @"精确到个位(向上取整、向下取整、四舍五入)";
+        sectionDataModel.values = [self dealTextModels_accurateToUnit];
+        
+        [sectionDataModels addObject:sectionDataModel];
+    }
+    // 精确到百位(向上取整、向下取整、四舍五入)
+    {
+        CJSectionDataModel *sectionDataModel = [[CJSectionDataModel alloc] init];
+        sectionDataModel.theme = @"精确到百位(向上取整、向下取整、四舍五入)";
+        sectionDataModel.values = [self dealTextModels_accurateToHundred];
         
         [sectionDataModels addObject:sectionDataModel];
     }
@@ -83,19 +91,89 @@ typedef NS_ENUM(NSUInteger, ValidateStringType) {
 }
 
 
-#pragma mark - 尾部归0(向上取整、向下取整、四舍五入)
-/// 尾部归0(向上取整、向下取整、四舍五入)
-- (NSMutableArray<CJDealTextModel *> *)dealTextModels_numbersDealZero {
+#pragma mark - 精确到个位(向上取整、向下取整、四舍五入)
+/// 精确到个位(向上取整、向下取整、四舍五入)
+- (NSMutableArray<CJDealTextModel *> *)dealTextModels_accurateToUnit {
+    NSInteger decimalPlaces = 1;
+    NSMutableArray<CJDealTextModel *> *dealTextModels = [[NSMutableArray alloc] init];
+    {
+        CJDealTextModel *dealTextModel = [[CJDealTextModel alloc] init];
+        dealTextModel.placeholder = @"请输入要验证的值";
+        dealTextModel.text = @"99.45";
+        dealTextModel.hopeResultText = @"100";
+        dealTextModel.actionTitle = @"精确到个位,向上取整";
+        dealTextModel.actionBlock = ^NSString * _Nonnull(NSString * _Nonnull oldString) {
+            CGFloat originNumber = [oldString floatValue];
+            NSInteger lastNumber = [CJDecimalUtil floatValueFromFValue:originNumber accurateToDecimalPlaces:decimalPlaces decimalDealType:CJDecimalDealTypeCeil];
+            
+            NSString *lastNumberString = [NSString stringWithFormat:@"%zd", lastNumber];
+            return lastNumberString;
+        };
+        [dealTextModels addObject:dealTextModel];
+    }
+    {
+        CJDealTextModel *dealTextModel = [[CJDealTextModel alloc] init];
+        dealTextModel.placeholder = @"请输入要验证的值";
+        dealTextModel.text = @"99.45";
+        dealTextModel.hopeResultText = @"99";
+        dealTextModel.actionTitle = @"精确到个位,向下取整";
+        dealTextModel.actionBlock = ^NSString * _Nonnull(NSString * _Nonnull oldString) {
+            CGFloat originNumber = [oldString floatValue];
+            NSInteger lastNumber = [CJDecimalUtil floatValueFromFValue:originNumber accurateToDecimalPlaces:decimalPlaces decimalDealType:CJDecimalDealTypeFloor];
+            
+            NSString *lastNumberString = [NSString stringWithFormat:@"%zd", lastNumber];
+            return lastNumberString;
+        };
+        [dealTextModels addObject:dealTextModel];
+    }
+    {
+        CJDealTextModel *dealTextModel = [[CJDealTextModel alloc] init];
+        dealTextModel.placeholder = @"请输入要验证的值";
+        dealTextModel.text = @"99.45";
+        dealTextModel.hopeResultText = @"99";
+        dealTextModel.actionTitle = @"精确到个位,四舍五入";
+        dealTextModel.actionBlock = ^NSString * _Nonnull(NSString * _Nonnull oldString) {
+            CGFloat originNumber = [oldString floatValue];
+            NSInteger lastNumber = [CJDecimalUtil floatValueFromFValue:originNumber accurateToDecimalPlaces:decimalPlaces decimalDealType:CJDecimalDealTypeRound];
+            
+            NSString *lastNumberString = [NSString stringWithFormat:@"%zd", lastNumber];
+            return lastNumberString;
+        };
+        [dealTextModels addObject:dealTextModel];
+    }
+    {
+        CJDealTextModel *dealTextModel = [[CJDealTextModel alloc] init];
+        dealTextModel.placeholder = @"请输入要验证的值";
+        dealTextModel.text = @"99.54";
+        dealTextModel.hopeResultText = @"100";
+        dealTextModel.actionTitle = @"精确到个位,四舍五入";
+        dealTextModel.actionBlock = ^NSString * _Nonnull(NSString * _Nonnull oldString) {
+            CGFloat originNumber = [oldString floatValue];
+            NSInteger lastNumber = [CJDecimalUtil floatValueFromFValue:originNumber accurateToDecimalPlaces:decimalPlaces decimalDealType:CJDecimalDealTypeRound];
+            
+            NSString *lastNumberString = [NSString stringWithFormat:@"%zd", lastNumber];
+            return lastNumberString;
+        };
+        [dealTextModels addObject:dealTextModel];
+    }
+    
+    return dealTextModels;
+}
+
+#pragma mark - 精确到百位(向上取整、向下取整、四舍五入)
+/// 精确到百位(向上取整、向下取整、四舍五入)
+- (NSMutableArray<CJDealTextModel *> *)dealTextModels_accurateToHundred {
+    NSInteger decimalPlaces = 3;
     NSMutableArray<CJDealTextModel *> *dealTextModels = [[NSMutableArray alloc] init];
     {
         CJDealTextModel *dealTextModel = [[CJDealTextModel alloc] init];
         dealTextModel.placeholder = @"请输入要验证的值";
         dealTextModel.text = @"1121";
         dealTextModel.hopeResultText = @"1200";
-        dealTextModel.actionTitle = @"尾部归0,向上取整";
+        dealTextModel.actionTitle = @"精确到百位,向上取整";
         dealTextModel.actionBlock = ^NSString * _Nonnull(NSString * _Nonnull oldString) {
             CGFloat originNumber = [oldString floatValue];
-            NSInteger lastNumber = [CJDecimalUtil processingZeroWithIntValue:originNumber lastDigitCount:0 decimalDealType:CJDecimalDealTypeCeil];
+            NSInteger lastNumber = [CJDecimalUtil floatValueFromFValue:originNumber accurateToDecimalPlaces:decimalPlaces decimalDealType:CJDecimalDealTypeCeil];
             
             NSString *lastNumberString = [NSString stringWithFormat:@"%zd", lastNumber];
             return lastNumberString;
@@ -107,10 +185,10 @@ typedef NS_ENUM(NSUInteger, ValidateStringType) {
         dealTextModel.placeholder = @"请输入要验证的值";
         dealTextModel.text = @"1121";
         dealTextModel.hopeResultText = @"1100";
-        dealTextModel.actionTitle = @"尾部归0,向下取整";
+        dealTextModel.actionTitle = @"精确到百位,向下取整";
         dealTextModel.actionBlock = ^NSString * _Nonnull(NSString * _Nonnull oldString) {
             CGFloat originNumber = [oldString floatValue];
-            NSInteger lastNumber = [CJDecimalUtil processingZeroWithIntValue:originNumber lastDigitCount:0 decimalDealType:CJDecimalDealTypeFloor];
+            NSInteger lastNumber = [CJDecimalUtil floatValueFromFValue:originNumber accurateToDecimalPlaces:decimalPlaces decimalDealType:CJDecimalDealTypeFloor];
             
             NSString *lastNumberString = [NSString stringWithFormat:@"%zd", lastNumber];
             return lastNumberString;
@@ -122,10 +200,10 @@ typedef NS_ENUM(NSUInteger, ValidateStringType) {
         dealTextModel.placeholder = @"请输入要验证的值";
         dealTextModel.text = @"1121";
         dealTextModel.hopeResultText = @"1100";
-        dealTextModel.actionTitle = @"尾部归0,四舍五入";
+        dealTextModel.actionTitle = @"精确到百位,四舍五入";
         dealTextModel.actionBlock = ^NSString * _Nonnull(NSString * _Nonnull oldString) {
             CGFloat originNumber = [oldString floatValue];
-            NSInteger lastNumber = [CJDecimalUtil processingZeroWithIntValue:originNumber lastDigitCount:0 decimalDealType:CJDecimalDealTypeRound];
+            NSInteger lastNumber = [CJDecimalUtil floatValueFromFValue:originNumber accurateToDecimalPlaces:decimalPlaces decimalDealType:CJDecimalDealTypeRound];
             
             NSString *lastNumberString = [NSString stringWithFormat:@"%zd", lastNumber];
             return lastNumberString;
