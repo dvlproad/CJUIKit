@@ -11,6 +11,7 @@
 		663D99AA9DDC5B5D8025AEEB /* libPods-CJUIKitDemoUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E0A09F2115A3D53BC658F67A /* libPods-CJUIKitDemoUITests.a */; };
 		7803DAAE22F7D519001E06B7 /* MJExtensionToModelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7803DAAC22F7D519001E06B7 /* MJExtensionToModelViewController.m */; };
 		7803DAB122F7D578001E06B7 /* MJExtensionToJSONViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7803DAAF22F7D578001E06B7 /* MJExtensionToJSONViewController.m */; };
+		7805E1D72369C5FC00B998EC /* PriceYuanToYuanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7805E1D52369C5FC00B998EC /* PriceYuanToYuanViewController.m */; };
 		7808318322DC10F700F36576 /* loading@2x.gif in Resources */ = {isa = PBXBuildFile; fileRef = 7808318122DC10F600F36576 /* loading@2x.gif */; };
 		7808318422DC10F700F36576 /* loading@3x.gif in Resources */ = {isa = PBXBuildFile; fileRef = 7808318222DC10F700F36576 /* loading@3x.gif */; };
 		7808318722DC116700F36576 /* GifViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7808318622DC116700F36576 /* GifViewController.m */; };
@@ -227,7 +228,7 @@
 		78A74E492368777F0023F44B /* CJSectionDataModel+CJDealTextModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 78A74E442368777F0023F44B /* CJSectionDataModel+CJDealTextModel.m */; };
 		78A74E4A2368777F0023F44B /* CJDealTextModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 78A74E462368777F0023F44B /* CJDealTextModel.m */; };
 		78A74E4E236877BA0023F44B /* CJValidateStringTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 78A74E4C236877BA0023F44B /* CJValidateStringTableViewCell.m */; };
-		78A74E5123687ACF0023F44B /* AccuracyPriceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78A74E5023687ACF0023F44B /* AccuracyPriceViewController.m */; };
+		78A74E5123687ACF0023F44B /* PriceFenToYuanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78A74E5023687ACF0023F44B /* PriceFenToYuanViewController.m */; };
 		78AB83A621B7CE4500853E21 /* PresentAViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78AB83A521B7CE4500853E21 /* PresentAViewController.m */; };
 		78AB83A921B7CE7100853E21 /* PresentBViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78AB83A821B7CE7100853E21 /* PresentBViewController.m */; };
 		78AB83AC21B7D24E00853E21 /* closePresentVC@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 78AB83AA21B7D24E00853E21 /* closePresentVC@2x.png */; };
@@ -390,6 +391,8 @@
 		7803DAAD22F7D519001E06B7 /* MJExtensionToModelViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJExtensionToModelViewController.h; sourceTree = "<group>"; };
 		7803DAAF22F7D578001E06B7 /* MJExtensionToJSONViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJExtensionToJSONViewController.m; sourceTree = "<group>"; };
 		7803DAB022F7D578001E06B7 /* MJExtensionToJSONViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJExtensionToJSONViewController.h; sourceTree = "<group>"; };
+		7805E1D52369C5FC00B998EC /* PriceYuanToYuanViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PriceYuanToYuanViewController.m; sourceTree = "<group>"; };
+		7805E1D62369C5FC00B998EC /* PriceYuanToYuanViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PriceYuanToYuanViewController.h; sourceTree = "<group>"; };
 		7808318122DC10F600F36576 /* loading@2x.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "loading@2x.gif"; sourceTree = "<group>"; };
 		7808318222DC10F700F36576 /* loading@3x.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "loading@3x.gif"; sourceTree = "<group>"; };
 		7808318522DC116700F36576 /* GifViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GifViewController.h; sourceTree = "<group>"; };
@@ -767,8 +770,8 @@
 		78A74E472368777F0023F44B /* CJSectionDataModel+CJDealTextModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CJSectionDataModel+CJDealTextModel.h"; sourceTree = "<group>"; };
 		78A74E4C236877BA0023F44B /* CJValidateStringTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJValidateStringTableViewCell.m; sourceTree = "<group>"; };
 		78A74E4D236877BA0023F44B /* CJValidateStringTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJValidateStringTableViewCell.h; sourceTree = "<group>"; };
-		78A74E4F23687ACF0023F44B /* AccuracyPriceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccuracyPriceViewController.h; sourceTree = "<group>"; };
-		78A74E5023687ACF0023F44B /* AccuracyPriceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccuracyPriceViewController.m; sourceTree = "<group>"; };
+		78A74E4F23687ACF0023F44B /* PriceFenToYuanViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PriceFenToYuanViewController.h; sourceTree = "<group>"; };
+		78A74E5023687ACF0023F44B /* PriceFenToYuanViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PriceFenToYuanViewController.m; sourceTree = "<group>"; };
 		78AB83A421B7CE4500853E21 /* PresentAViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PresentAViewController.h; sourceTree = "<group>"; };
 		78AB83A521B7CE4500853E21 /* PresentAViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PresentAViewController.m; sourceTree = "<group>"; };
 		78AB83A721B7CE7100853E21 /* PresentBViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PresentBViewController.h; sourceTree = "<group>"; };
@@ -2346,8 +2349,10 @@
 			children = (
 				8060C48620E0D5EF0093B14E /* AccuracyStringViewController.h */,
 				8060C48920E0D5EF0093B14E /* AccuracyStringViewController.m */,
-				78A74E4F23687ACF0023F44B /* AccuracyPriceViewController.h */,
-				78A74E5023687ACF0023F44B /* AccuracyPriceViewController.m */,
+				78A74E4F23687ACF0023F44B /* PriceFenToYuanViewController.h */,
+				78A74E5023687ACF0023F44B /* PriceFenToYuanViewController.m */,
+				7805E1D62369C5FC00B998EC /* PriceYuanToYuanViewController.h */,
+				7805E1D52369C5FC00B998EC /* PriceYuanToYuanViewController.m */,
 			);
 			path = ValueUtilDemo;
 			sourceTree = "<group>";
@@ -3143,7 +3148,7 @@
 				807F126020B507A30008B748 /* ViewAnimateViewController.m in Sources */,
 				784A7216214C9DF000F8D144 /* MoreHomeViewController.m in Sources */,
 				788113BF2199574900D1630D /* SharedInstanceViewController.m in Sources */,
-				78A74E5123687ACF0023F44B /* AccuracyPriceViewController.m in Sources */,
+				78A74E5123687ACF0023F44B /* PriceFenToYuanViewController.m in Sources */,
 				80FF909C1FC5649F00E437CF /* NestedXibView.m in Sources */,
 				7856F82221F4F4C3004AF751 /* CJBaseTableViewCell.m in Sources */,
 				78226A9021A42103002167F2 /* CJConvertUtil.m in Sources */,
@@ -3302,6 +3307,7 @@
 				787FDB6420500B1F008A46E3 /* TextViewController.m in Sources */,
 				780E46051E5DF87B00980127 /* main.m in Sources */,
 				7856F84421F4F4C3004AF751 /* UITextField+CJSelectedTextRange.m in Sources */,
+				7805E1D72369C5FC00B998EC /* PriceYuanToYuanViewController.m in Sources */,
 				78A621E02135C78B004DA046 /* DemoSuspendWindow+CJSuspendWindowManager.m in Sources */,
 				783281041F4198BC008267E0 /* CustomTripProgressView.m in Sources */,
 				8060C48020E0D0630093B14E /* CJMoneyUtil.m in Sources */,

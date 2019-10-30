@@ -1,19 +1,19 @@
 //
-//  AccuracyPriceViewController.m
+//  PriceFenToYuanViewController.m
 //  CJUIKitDemo
 //
 //  Created by ciyouzen on 2017/12/29.
 //  Copyright © 2017年 dvlproad. All rights reserved.
 //
 
-#import "AccuracyPriceViewController.h"
+#import "PriceFenToYuanViewController.h"
 #import "CJMoneyUtil.h"
 
-@interface AccuracyPriceViewController ()
+@interface PriceFenToYuanViewController ()
 
 @end
 
-@implementation AccuracyPriceViewController
+@implementation PriceFenToYuanViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -141,7 +141,7 @@
  *
  *  @return 保留了2位小数的价钱整'元'字符串
  */
-- (NSString *)__priceFenSting:(NSString *)priceFenString  toYuan0_decimalCount2:(CJDecimalDealType)decimalDealType
+- (NSString *)__priceFenSting:(NSString *)priceFenString toYuan0_decimalCount2:(CJDecimalDealType)decimalDealType
 {
     NSInteger fenPlaces = 3;
     NSInteger keepDecimalCount = 2;
@@ -161,7 +161,7 @@
  *
  *  @return 保留了2位小数的价钱整'元'字符串
  */
-- (NSString *)__priceFenSting:(NSString *)priceFenString    toYuanD1_decimalCount2:(CJDecimalDealType)decimalDealType
+- (NSString *)__priceFenSting:(NSString *)priceFenString toYuanD1_decimalCount2:(CJDecimalDealType)decimalDealType
 {
     NSInteger fenPlaces = 2;
     NSInteger keepDecimalCount = 2;

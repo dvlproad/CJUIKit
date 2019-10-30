@@ -28,7 +28,8 @@
 #import "DataUtilViewController.h"
 
 #import "AccuracyStringViewController.h"
-#import "AccuracyPriceViewController.h"
+#import "PriceFenToYuanViewController.h"
+#import "PriceYuanToYuanViewController.h"
 
 #import "KeyboardUtilViewController.h"
 #import "SharedInstanceViewController.h"
@@ -155,7 +156,13 @@
         {
             CJModuleModel *NSAttributedStringModule = [[CJModuleModel alloc] init];
             NSAttributedStringModule.title = @"价钱price(分转元)";
-            NSAttributedStringModule.classEntry = [AccuracyPriceViewController class];
+            NSAttributedStringModule.classEntry = [PriceFenToYuanViewController class];
+            [sectionDataModel.values addObject:NSAttributedStringModule];
+        }
+        {
+            CJModuleModel *NSAttributedStringModule = [[CJModuleModel alloc] init];
+            NSAttributedStringModule.title = @"价钱price(元转元)";
+            NSAttributedStringModule.classEntry = [PriceYuanToYuanViewController class];
             [sectionDataModel.values addObject:NSAttributedStringModule];
         }
         [sectionDataModels addObject:sectionDataModel];

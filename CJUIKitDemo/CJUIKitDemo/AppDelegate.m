@@ -22,8 +22,6 @@
 #import <CJFoundation/NSString+CJCut.h>
 #import <CJFoundation/NSString+CJAttributedString.h>
 
-#import "CJDecimalUtil.h"
-
 @interface AppDelegate ()
 
 @end
@@ -64,25 +62,6 @@
     });
     
     //[[IQKeyboardManager sharedManager].disabledToolbarClasses addObject:NSClassFromString(@"DateViewController")]; //已写在对应的类里了
-    
-
-    CGFloat fValue = [@"9.555" floatValue];
-    NSString *lastNumber3 = [CJDecimalUtil stringValueFromFValue:fValue
-     accurateToDecimalPlaces:-2
-    decimalDealType:CJDecimalDealTypeRound];
-    NSString *lastNumber4 = [CJDecimalUtil stringValueFromFValue:9.55
-     accurateToDecimalPlaces:-2
-    decimalDealType:CJDecimalDealTypeRound];
-    NSString *lastNumber5 = [CJDecimalUtil stringValueFromFValue:9.50
-     accurateToDecimalPlaces:-2
-    decimalDealType:CJDecimalDealTypeRound];
-    NSString *lastNumber6 = [CJDecimalUtil stringValueFromFValue:9.00
-     accurateToDecimalPlaces:-2
-    decimalDealType:CJDecimalDealTypeRound];
-    NSLog(@"lastNumber3 = %@", lastNumber3);
-    NSLog(@"lastNumber4 = %@", lastNumber4);
-    NSLog(@"lastNumber5 = %@", lastNumber5);
-    NSLog(@"lastNumber6 = %@", lastNumber6);
     
     // 设置主窗口,并设置根控制器
     [UINavigationConfig shared].sx_disableFixSpace = NO;//默认为NO  可以修改

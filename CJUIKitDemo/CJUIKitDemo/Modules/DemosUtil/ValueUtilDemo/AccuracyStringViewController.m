@@ -130,8 +130,7 @@ typedef NS_ENUM(NSUInteger, ValidateStringType) {
         dealTextModel.actionTitle = @"精确到百分位,向上取整";
         dealTextModel.autoExec = YES;
         dealTextModel.actionBlock = ^NSString * _Nonnull(NSString * _Nonnull oldString) {
-            CGFloat originNumber = [oldString floatValue];
-            NSString *lastNumberString = [CJDecimalUtil stringValueFromFValue:originNumber accurateToDecimalPlaces:decimalPlaces decimalDealType:CJDecimalDealTypeCeil];
+            NSString *lastNumberString = [CJDecimalUtil stringValueFromSValue:oldString accurateToDecimalPlaces:decimalPlaces decimalDealType:CJDecimalDealTypeCeil];
             return lastNumberString;
         };
         [dealTextModels addObject:dealTextModel];
@@ -144,8 +143,7 @@ typedef NS_ENUM(NSUInteger, ValidateStringType) {
         dealTextModel.actionTitle = @"精确到百分位,向下取整";
         dealTextModel.autoExec = YES;
         dealTextModel.actionBlock = ^NSString * _Nonnull(NSString * _Nonnull oldString) {
-            CGFloat originNumber = [oldString floatValue];
-            NSString *lastNumberString = [CJDecimalUtil stringValueFromFValue:originNumber accurateToDecimalPlaces:decimalPlaces decimalDealType:CJDecimalDealTypeFloor];
+            NSString *lastNumberString = [CJDecimalUtil stringValueFromSValue:oldString accurateToDecimalPlaces:decimalPlaces decimalDealType:CJDecimalDealTypeFloor];
             return lastNumberString;
         };
         [dealTextModels addObject:dealTextModel];
@@ -158,8 +156,7 @@ typedef NS_ENUM(NSUInteger, ValidateStringType) {
         dealTextModel.actionTitle = @"精确到百分位,四舍五入";
         dealTextModel.autoExec = YES;
         dealTextModel.actionBlock = ^NSString * _Nonnull(NSString * _Nonnull oldString) {
-            CGFloat originNumber = [oldString floatValue];
-            NSString *lastNumberString = [CJDecimalUtil stringValueFromFValue:originNumber accurateToDecimalPlaces:decimalPlaces decimalDealType:CJDecimalDealTypeRound];
+            NSString *lastNumberString = [CJDecimalUtil stringValueFromSValue:oldString accurateToDecimalPlaces:decimalPlaces decimalDealType:CJDecimalDealTypeRound];
             return lastNumberString;
         };
         [dealTextModels addObject:dealTextModel];
@@ -172,8 +169,7 @@ typedef NS_ENUM(NSUInteger, ValidateStringType) {
         dealTextModel.actionTitle = @"精确到百分位,四舍五入";
         dealTextModel.autoExec = YES;
         dealTextModel.actionBlock = ^NSString * _Nonnull(NSString * _Nonnull oldString) {
-            CGFloat originNumber = [oldString floatValue];
-            NSString *lastNumberString = [CJDecimalUtil stringValueFromFValue:originNumber accurateToDecimalPlaces:decimalPlaces decimalDealType:CJDecimalDealTypeRound];
+            NSString *lastNumberString = [CJDecimalUtil stringValueFromSValue:oldString accurateToDecimalPlaces:decimalPlaces decimalDealType:CJDecimalDealTypeRound];
             return lastNumberString;
         };
         [dealTextModels addObject:dealTextModel];
@@ -186,8 +182,7 @@ typedef NS_ENUM(NSUInteger, ValidateStringType) {
                                         decimalDealType:(CJDecimalDealType)decimalDealType
 {
     NSString *(^actionTextBlock)(NSString *) = ^NSString * _Nonnull(NSString * _Nonnull oldString) {
-        CGFloat originNumber = [oldString floatValue];
-        NSString *lastNumberString = [CJDecimalUtil stringValueFromFValue:originNumber
+        NSString *lastNumberString = [CJDecimalUtil stringValueFromSValue:oldString
                                                   accurateToDecimalPlaces:decimalPlaces
                                                           decimalDealType:decimalDealType];
         return lastNumberString;

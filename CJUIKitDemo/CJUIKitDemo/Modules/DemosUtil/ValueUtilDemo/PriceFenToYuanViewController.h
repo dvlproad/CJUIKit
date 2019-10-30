@@ -1,5 +1,5 @@
 //
-//  AccuracyPriceViewController.h
+//  PriceFenToYuanViewController.h
 //  CJUIKitDemo
 //
 //  Created by ciyouzen on 2017/12/29.
@@ -8,7 +8,7 @@
 
 #import "CJUIKitBaseTextViewController.h"
 
-@interface AccuracyPriceViewController : CJUIKitBaseTextViewController {
+@interface PriceFenToYuanViewController : CJUIKitBaseTextViewController {
     
 }
 
