@@ -41,8 +41,8 @@
 {
     CGFloat fValue = [sValue floatValue];
     CGFloat fNewValue = [self floatValueFromFValue:fValue
-                      accurateToDecimalPlaces:decimalPlaces
-                              decimalDealType:decimalDealType];
+                           accurateToDecimalPlaces:decimalPlaces
+                                   decimalDealType:decimalDealType];
     NSString *sNewValue = [[NSNumber numberWithFloat:fNewValue] stringValue];
     return sNewValue;
 }

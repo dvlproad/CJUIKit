@@ -7,69 +7,68 @@
 //
 
 #import "NSString+CJAttributedString.h"
+#import "NSString+CJCut.h"
 
 @implementation NSString (CJAttributedString)
 
-- (NSAttributedString *)attributedSubString1:(NSString *)string1
-                                       font1:(UIFont *)font1
-                                      color1:(UIColor *)color1
-                                  subString2:(NSString *)string2
-                                       font2:(UIFont *)font2
-                                      color2:(UIColor *)color2 {
-    
-    return [self attributedSubString1:string1 font1:font1 color1:color1 udlin1:NO subString2:string2 font2:font2 color2:color2 udlin2:NO];
-}
-
-
-- (NSAttributedString *)attributedSubString1:(NSString *)string1 font1:(UIFont *)font1 color1:(UIColor *)color1 udlin1:(BOOL)unlin1 subString2:(NSString *)string2 font2:(UIFont *)font2 color2:(UIColor *)color2 udlin2:(BOOL)unlin2{
-    
-    NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc]initWithString:self];
-    
-    NSRange rang1 = [self rangeOfString:string1];
-    if (rang1.location != NSNotFound) {
-        [attributedString addAttribute:NSFontAttributeName value:font1 range:rang1];
-        [attributedString addAttribute:NSForegroundColorAttributeName value:color1 range:rang1];
-        
-        if (unlin1) {
-            [attributedString addAttribute:NSUnderlineStyleAttributeName value:[NSNumber numberWithInteger:NSUnderlineStyleSingle] range:rang1];
+/**
+ *  对字符串中用特殊始止字符包取来的部分，按照指定的字符串配置进行自定义
+ *
+ *  @param startCharacter           开始的特殊字符
+ *  @param endCharacter             结束的特殊字符
+ *  @param stringAttributedModel    特殊字符之间的字符串需要进行自定义的那些配置(不需要设置是什么字符,因为这里已约定处理特殊字符之间的)
+ *
+ *  @return 符合要求的富文本
+ */
+- (NSMutableString *)attributedStringForSepicalBetweenStart:(NSString *)startCharacter
+                                                        end:(NSString *)endCharacter
+                                middleStringAttributedModel:(CJStringAttributedModel *)middleStringAttributedModel
+{
+    NSArray<NSString *> *stringArray = [self removeSeprateCharacterWithStart:startCharacter end:endCharacter];
+    NSMutableString *lastTitle = [[NSMutableString alloc] init];
+    for (NSString *compoentTitle in stringArray) {
+        [lastTitle appendString:compoentTitle];
+    }
+    NSAttributedString *attributedTitle = [[NSAttributedString alloc] initWithString:lastTitle];;
+    if (stringArray.count > 1) {
+        NSInteger specialStringIndex = 1;
+        if ([self hasPrefix:startCharacter]) {
+            specialStringIndex = 0;
+        } else if ([self hasSuffix:endCharacter]) {
+            specialStringIndex = stringArray.count-1;
+        } else {
+            specialStringIndex = 1;
         }
+        
+        NSString *specialString = stringArray[specialStringIndex];
+        middleStringAttributedModel.string = specialString;
+        
+        attributedTitle = [lastTitle attributedStringWithModels:@[middleStringAttributedModel]];
     }
     
-    NSRange rang2 = [self rangeOfString:string2];
-    if (rang2.location != NSNotFound) {
-        [attributedString addAttribute:NSFontAttributeName value:font2 range:rang2];
-        [attributedString addAttribute:NSForegroundColorAttributeName value:color2 range:rang2];
-        
-        if (unlin2) {
-            [attributedString addAttribute:NSUnderlineStyleAttributeName value:[NSNumber numberWithInteger:NSUnderlineStyleSingle] range:rang2];
-        }
-    }
-    
-    return attributedString;
+    return attributedTitle;
 }
-
 
 /**
- *  对字符串中的子字符串进行自定义设置
+ *  对字符串中的子字符串们进行自定义设置
  *
- *  @param string   要设置的子字符串
- *  @param font     子字符串要设置的字体
- *  @param color    子字符串要设置的颜色
- *  @param unline   子字符串是否要有下划线
+ *  @param attributedStringModels   要设置的那些子字符串的①字符串值②字体③颜色④下划线
  *
- *  @return 子字符串经过自定义后的新的字符串
+ *  @return 子字符串们经过自定义后的新的字符串
  */
-- (NSAttributedString *)attributedSubString:(NSString *)string font:(UIFont *)font color:(UIColor *)color udline:(BOOL)unline {
+- (NSAttributedString *)attributedStringWithModels:(NSArray<CJStringAttributedModel *> *)attributedStringModels {
     
     NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc]initWithString:self];
     
-    NSRange range = [self rangeOfString:string];
-    if (range.location != NSNotFound) {
-        [attributedString addAttribute:NSFontAttributeName value:font range:range];
-        [attributedString addAttribute:NSForegroundColorAttributeName value:color range:range];
-        
-        if (unline) {
-            [attributedString addAttribute:NSUnderlineStyleAttributeName value:[NSNumber numberWithInteger:NSUnderlineStyleSingle] range:range];
+    for (CJStringAttributedModel *attributedStringModel in attributedStringModels) {
+        NSRange range = [self rangeOfString:attributedStringModel.string];
+        if (range.location != NSNotFound) {
+            [attributedString addAttribute:NSFontAttributeName value:attributedStringModel.font range:range];
+            [attributedString addAttribute:NSForegroundColorAttributeName value:attributedStringModel.color range:range];
+            
+            if (attributedStringModel.underline) {
+                [attributedString addAttribute:NSUnderlineStyleAttributeName value:[NSNumber numberWithInteger:NSUnderlineStyleSingle] range:range];
+            }
         }
     }
     
@@ -77,5 +76,13 @@
 }
 
 
+
+@end
+
+
+
+#pragma mark - CJStringAttributedModel类的实现
+
+@implementation CJStringAttributedModel
 
 @end

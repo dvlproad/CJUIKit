@@ -6,7 +6,7 @@
 //  Copyright (c) 2015 dvlproad. All rights reserved.
 //
 
-#import "NSString+CJAttributedString.h"
+#import "NSString+CJCut.h"
 
 @implementation NSString (CJCut)
 

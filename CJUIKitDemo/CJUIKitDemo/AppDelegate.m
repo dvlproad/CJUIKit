@@ -44,15 +44,11 @@
     NSLog(@"dicString = %@", dicString);
     
     NSString *title =  @"还差{{2}}件商品参与抽奖";
-    NSAttributedString *attributedTitle = [[NSAttributedString alloc] initWithString:title];;
-    NSArray<NSString *> *stringArray = [title removeSeprateCharacterWithStart:@"{{" end:@"}}"];
-    if (stringArray.count > 1) {
-        NSString *specialString = stringArray[1];
-        attributedTitle = [title attributedSubString:specialString
-                                                font:[UIFont systemFontOfSize:23]
-                                               color:CJColorFromHexString(@"#212474")
-                                              udline:NO];
-    }
+    CJStringAttributedModel *stringAttributedModel = [[CJStringAttributedModel alloc] init];
+    stringAttributedModel.font = [UIFont systemFontOfSize:23];
+    stringAttributedModel.color = CJColorFromHexString(@"#212474");
+    stringAttributedModel.underline = NO;
+    NSAttributedString *attributedTitle = [title attributedStringForSepicalBetweenStart:@"{{" end:@"}}" middleStringAttributedModel:stringAttributedModel];
     
     YunInstallUncaughtExceptionHandler();
     

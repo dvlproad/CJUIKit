@@ -43,7 +43,7 @@
         dealTextModel.placeholder = @"请输入要验证的值";
         dealTextModel.text = @"9.555";
         dealTextModel.hopeResultText = @"9.56";
-        dealTextModel.actionTitle = @"向上取整";
+        dealTextModel.actionTitle = @"四舍五入";
         dealTextModel.autoExec = YES;
         dealTextModel.actionBlock = ^NSString * _Nonnull(NSString * _Nonnull oldString) {
             return [CJMoneyUtil yuanD2_decimalCountMax2_Round_fromPriceYuanString:oldString];
@@ -54,8 +54,8 @@
         CJDealTextModel *dealTextModel = [[CJDealTextModel alloc] init];
         dealTextModel.placeholder = @"请输入要验证的值";
         dealTextModel.text = @"9.544";
-        dealTextModel.hopeResultText = @"9.55";
-        dealTextModel.actionTitle = @"向上取整";
+        dealTextModel.hopeResultText = @"9.54";
+        dealTextModel.actionTitle = @"四舍五入";
         dealTextModel.autoExec = YES;
         dealTextModel.actionBlock = ^NSString * _Nonnull(NSString * _Nonnull oldString) {
             return [CJMoneyUtil yuanD2_decimalCountMax2_Round_fromPriceYuanString:oldString];
@@ -67,7 +67,7 @@
         dealTextModel.placeholder = @"请输入要验证的值";
         dealTextModel.text = @"9.50";
         dealTextModel.hopeResultText = @"9.5";
-        dealTextModel.actionTitle = @"向上取整";
+        dealTextModel.actionTitle = @"四舍五入";
         dealTextModel.autoExec = YES;
         dealTextModel.actionBlock = ^NSString * _Nonnull(NSString * _Nonnull oldString) {
             return [CJMoneyUtil yuanD2_decimalCountMax2_Round_fromPriceYuanString:oldString];
