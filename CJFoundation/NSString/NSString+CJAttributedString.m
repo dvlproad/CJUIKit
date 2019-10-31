@@ -14,15 +14,15 @@
 /**
  *  对字符串中用特殊始止字符包取来的部分，按照指定的字符串配置进行自定义
  *
- *  @param startCharacter           开始的特殊字符
- *  @param endCharacter             结束的特殊字符
- *  @param stringAttributedModel    特殊字符之间的字符串需要进行自定义的那些配置(不需要设置是什么字符,因为这里已约定处理特殊字符之间的)
+ *  @param startCharacter               开始的特殊字符
+ *  @param endCharacter                 结束的特殊字符
+ *  @param middleStringAttributedModel  特殊字符之间的字符串需要进行自定义的那些配置(不需要设置是什么字符,因为这里已约定处理特殊字符之间的)
  *
  *  @return 符合要求的富文本
  */
-- (NSMutableString *)attributedStringForSepicalBetweenStart:(NSString *)startCharacter
-                                                        end:(NSString *)endCharacter
-                                middleStringAttributedModel:(CJStringAttributedModel *)middleStringAttributedModel
+- (NSAttributedString *)attributedStringForSepicalBetweenStart:(NSString *)startCharacter
+                                                           end:(NSString *)endCharacter
+                                   middleStringAttributedModel:(CJStringAttributedModel *)middleStringAttributedModel
 {
     NSArray<NSString *> *stringArray = [self removeSeprateCharacterWithStart:startCharacter end:endCharacter];
     NSMutableString *lastTitle = [[NSMutableString alloc] init];
@@ -30,21 +30,24 @@
         [lastTitle appendString:compoentTitle];
     }
     NSAttributedString *attributedTitle = [[NSAttributedString alloc] initWithString:lastTitle];;
-    if (stringArray.count > 1) {
-        NSInteger specialStringIndex = 1;
-        if ([self hasPrefix:startCharacter]) {
-            specialStringIndex = 0;
-        } else if ([self hasSuffix:endCharacter]) {
-            specialStringIndex = stringArray.count-1;
-        } else {
-            specialStringIndex = 1;
-        }
-        
-        NSString *specialString = stringArray[specialStringIndex];
-        middleStringAttributedModel.string = specialString;
-        
-        attributedTitle = [lastTitle attributedStringWithModels:@[middleStringAttributedModel]];
+    if (stringArray.count <= 1) {
+        return attributedTitle;
     }
+    
+    // 如果字符串含需要自定义的话
+    NSInteger specialStringIndex = 1;
+    if ([self hasPrefix:startCharacter]) {
+        specialStringIndex = 0;
+    } else if ([self hasSuffix:endCharacter]) {
+        specialStringIndex = stringArray.count-1;
+    } else {
+        specialStringIndex = 1;
+    }
+    
+    NSString *specialString = stringArray[specialStringIndex];
+    middleStringAttributedModel.string = specialString;
+    
+    attributedTitle = [lastTitle attributedStringWithModels:@[middleStringAttributedModel]];
     
     return attributedTitle;
 }

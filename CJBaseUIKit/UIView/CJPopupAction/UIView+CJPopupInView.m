@@ -35,8 +35,8 @@ static NSString *cjMustHideFromPopupViewKey = @"cjMustHideFromPopupView";
 @property (nonatomic, strong) UIView *cjShowInView; /**< 弹出视图被add到的view */
 @property (nonatomic, strong) UIView *cjTapView;    /**< 空白区域（指radioButtons组合下的点击区域（不包括radioButtons区域），用来点击之后隐藏列表） */
 
-@property (nonatomic, copy) CJTapBlankViewCompleteBlock cjTapBlankViewCompleteBlock;    /**< 点击空白区域执行的操作 */
-@property (nonatomic, copy) CJShowPopupViewCompleteBlock cjShowPopupViewCompleteBlock;    /**< 显示弹出视图后的操作 */
+@property (nonatomic, copy) void(^cjTapBlankViewCompleteBlock)(void);   /**< 点击空白区域执行的操作 */
+@property (nonatomic, copy) void(^cjShowPopupViewCompleteBlock)(void);  /**< 显示弹出视图后的操作 */
 
 @end
 
@@ -90,20 +90,20 @@ static NSString *cjMustHideFromPopupViewKey = @"cjMustHideFromPopupView";
 }
 
 //cjTapBlankViewCompleteBlock
-- (CJTapBlankViewCompleteBlock)cjTapBlankViewCompleteBlock {
+- (void(^)(void))cjTapBlankViewCompleteBlock {
     return objc_getAssociatedObject(self, &cjTapBlankViewCompleteBlockKey);
 }
 
-- (void)setCjTapBlankViewCompleteBlock:(CJTapBlankViewCompleteBlock)cjTapBlankViewCompleteBlock {
+- (void)setCjTapBlankViewCompleteBlock:(void(^)(void))cjTapBlankViewCompleteBlock {
     return objc_setAssociatedObject(self, &cjTapBlankViewCompleteBlockKey, cjTapBlankViewCompleteBlock, OBJC_ASSOCIATION_COPY_NONATOMIC);
 }
 
 //cjShowPopupViewCompleteBlock
-- (CJShowPopupViewCompleteBlock)cjShowPopupViewCompleteBlock {
+- (void(^)(void))cjShowPopupViewCompleteBlock {
     return objc_getAssociatedObject(self, &cjShowPopupViewCompleteBlockKey);
 }
 
-- (void)setCjShowPopupViewCompleteBlock:(CJShowPopupViewCompleteBlock)cjShowPopupViewCompleteBlock {
+- (void)setCjShowPopupViewCompleteBlock:(void(^)(void))cjShowPopupViewCompleteBlock {
     return objc_setAssociatedObject(self, &cjShowPopupViewCompleteBlockKey, cjShowPopupViewCompleteBlock, OBJC_ASSOCIATION_COPY_NONATOMIC);
 }
 
@@ -123,8 +123,8 @@ static NSString *cjMustHideFromPopupViewKey = @"cjMustHideFromPopupView";
             withOrigin:(CGPoint)popupViewOrigin
                   size:(CGSize)popupViewSize
           blankBGColor:(UIColor *)blankBGColor
-          showComplete:(CJShowPopupViewCompleteBlock)showPopupViewCompleteBlock
-      tapBlankComplete:(CJTapBlankViewCompleteBlock)tapBlankViewCompleteBlock
+          showComplete:(void(^)(void))showPopupViewCompleteBlock
+      tapBlankComplete:(void(^)(void))tapBlankViewCompleteBlock
 {
     CJPopupMainThreadAssert();
     
@@ -190,8 +190,8 @@ static NSString *cjMustHideFromPopupViewKey = @"cjMustHideFromPopupView";
 - (void)cj_popupInCenterWindow:(CJAnimationType)animationType
                       withSize:(CGSize)popupViewSize
                   blankBGColor:(UIColor *)blankBGColor
-                  showComplete:(CJShowPopupViewCompleteBlock)showPopupViewCompleteBlock
-              tapBlankComplete:(CJTapBlankViewCompleteBlock)tapBlankViewCompleteBlock
+                  showComplete:(void(^)(void))showPopupViewCompleteBlock
+              tapBlankComplete:(void(^)(void))tapBlankViewCompleteBlock
 {
     CJPopupMainThreadAssert();
     
@@ -250,8 +250,8 @@ static NSString *cjMustHideFromPopupViewKey = @"cjMustHideFromPopupView";
                     withHeight:(CGFloat)popupViewHeight
                     edgeInsets:(UIEdgeInsets)edgeInsets
                   blankBGColor:(UIColor *)blankBGColor
-                  showComplete:(CJShowPopupViewCompleteBlock)showPopupViewCompleteBlock
-              tapBlankComplete:(CJTapBlankViewCompleteBlock)tapBlankViewCompleteBlock
+                  showComplete:(void(^)(void))showPopupViewCompleteBlock
+              tapBlankComplete:(void(^)(void))tapBlankViewCompleteBlock
 {
     CJPopupMainThreadAssert();
     NSAssert(popupViewHeight != 0, @"弹出视图的高都不能为0");

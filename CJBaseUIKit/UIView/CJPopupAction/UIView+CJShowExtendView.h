@@ -35,8 +35,8 @@ typedef NS_ENUM(NSUInteger, CJPopupViewPosition) {
                atLocation:(CGPoint)popupViewLocation
                  withSize:(CGSize)popupViewSize
              blankBGColor:(UIColor *)blankBGColor
-             showComplete:(CJShowPopupViewCompleteBlock)showPopupViewCompleteBlock
-         tapBlankComplete:(CJTapBlankViewCompleteBlock)tapBlankViewCompleteBlock;
+             showComplete:(void(^)(void))showPopupViewCompleteBlock
+         tapBlankComplete:(void(^)(void))tapBlankViewCompleteBlock;
 
 
 /**
@@ -55,8 +55,8 @@ typedef NS_ENUM(NSUInteger, CJPopupViewPosition) {
     locationAccordingView:(UIView *)accordingView
          relativePosition:(CJPopupViewPosition)popupViewPosition
              blankBGColor:(UIColor *)blankBGColor
-             showComplete:(CJShowPopupViewCompleteBlock)showPopupViewCompleteBlock
-         tapBlankComplete:(CJTapBlankViewCompleteBlock)tapBlankViewCompleteBlock;
+             showComplete:(void(^)(void))showPopupViewCompleteBlock
+         tapBlankComplete:(void(^)(void))tapBlankViewCompleteBlock;
 
 /**
  *  隐藏下拉视图

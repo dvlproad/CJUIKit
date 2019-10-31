@@ -36,8 +36,8 @@ static NSString *cjExtendViewKey = @"cjExtendView";
                atLocation:(CGPoint)popupViewLocation
                  withSize:(CGSize)popupViewSize
              blankBGColor:(UIColor *)blankBGColor
-             showComplete:(CJShowPopupViewCompleteBlock)showPopupViewCompleteBlock
-         tapBlankComplete:(CJTapBlankViewCompleteBlock)tapBlankViewCompleteBlock
+             showComplete:(void(^)(void))showPopupViewCompleteBlock
+         tapBlankComplete:(void(^)(void))tapBlankViewCompleteBlock
 {
     self.cjExtendView = popupView;
     
@@ -55,8 +55,8 @@ static NSString *cjExtendViewKey = @"cjExtendView";
     locationAccordingView:(UIView *)accordingView
          relativePosition:(CJPopupViewPosition)popupViewPosition
              blankBGColor:(UIColor *)blankBGColor
-             showComplete:(CJShowPopupViewCompleteBlock)showPopupViewCompleteBlock
-         tapBlankComplete:(CJTapBlankViewCompleteBlock)tapBlankViewCompleteBlock
+             showComplete:(void(^)(void))showPopupViewCompleteBlock
+         tapBlankComplete:(void(^)(void))tapBlankViewCompleteBlock
 {
     NSAssert(accordingView != nil, @"accordingView不能为空,如果为空，请选择 -cj_showExtendView:inView:atLocation:withSize:showComplete:tapBlankComplete:hideComplete:方法");
     

@@ -10,7 +10,6 @@
 #import <objc/runtime.h>
 
 typedef void(^CJTapBlankViewCompleteBlock)(void);
-typedef void(^CJShowPopupViewCompleteBlock)(void);
 
 
 typedef NS_ENUM(NSUInteger, CJWindowPosition) {
@@ -52,8 +51,8 @@ typedef NS_ENUM(NSUInteger, CJAnimationType) {
             withOrigin:(CGPoint)popupViewOrigin
                   size:(CGSize)popupViewSize
           blankBGColor:(UIColor *)blankBGColor
-          showComplete:(CJShowPopupViewCompleteBlock)showPopupViewCompleteBlock
-      tapBlankComplete:(CJTapBlankViewCompleteBlock)tapBlankViewCompleteBlock;
+          showComplete:(void(^)(void))showPopupViewCompleteBlock
+      tapBlankComplete:(void(^)(void))tapBlankViewCompleteBlock;
 
 
 /**
@@ -68,8 +67,8 @@ typedef NS_ENUM(NSUInteger, CJAnimationType) {
 - (void)cj_popupInCenterWindow:(CJAnimationType)animationType
                       withSize:(CGSize)popupViewSize
                   blankBGColor:(UIColor *)blankBGColor
-                  showComplete:(CJShowPopupViewCompleteBlock)showPopupViewCompleteBlock
-              tapBlankComplete:(CJTapBlankViewCompleteBlock)tapBlankViewCompleteBlock;
+                  showComplete:(void(^)(void))showPopupViewCompleteBlock
+              tapBlankComplete:(void(^)(void))tapBlankViewCompleteBlock;
 
 
 /**
@@ -86,8 +85,8 @@ typedef NS_ENUM(NSUInteger, CJAnimationType) {
                     withHeight:(CGFloat)popupViewHeight
                     edgeInsets:(UIEdgeInsets)edgeInsets
                   blankBGColor:(UIColor *)blankBGColor
-                  showComplete:(CJShowPopupViewCompleteBlock)showPopupViewCompleteBlock
-              tapBlankComplete:(CJTapBlankViewCompleteBlock)tapBlankViewCompleteBlock;
+                  showComplete:(void(^)(void))showPopupViewCompleteBlock
+              tapBlankComplete:(void(^)(void))tapBlankViewCompleteBlock;
 
 /**
  *  隐藏弹出视图
