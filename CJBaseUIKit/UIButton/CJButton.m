@@ -13,23 +13,25 @@
 - (void)setSelected:(BOOL)selected {
     [super setSelected:selected];
     
-    if (selected) {
-        if (self.cjSelectedBorderColor) {
-            self.layer.borderColor = self.cjSelectedBorderColor.CGColor;
-        }
-        
-    } else {
-        if (self.cjNormalBorderColor) {
-            self.layer.borderColor = self.cjNormalBorderColor.CGColor;
-        }
-    }
+    [self __updateBorderColor];
 }
 
 - (void)setEnabled:(BOOL)enabled {
     [super setEnabled:enabled];
     
+    [self __updateBorderColor];
+}
+
+#pragma mark - Private Method
+/**
+ *  根据 selected 和 enabled 更新 borderColor
+ */
+- (void)__updateBorderColor {
+    BOOL selected = self.selected;  //是否选中
+    BOOL enabled = self.enabled;    //是否可操作
+    
     if (enabled) {
-        if (self.selected) {
+        if (selected) {
             if (self.cjSelectedBorderColor) {
                 self.layer.borderColor = self.cjSelectedBorderColor.CGColor;
             }

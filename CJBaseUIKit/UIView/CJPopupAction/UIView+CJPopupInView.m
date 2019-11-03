@@ -281,11 +281,8 @@ static NSString *cjMustHideFromPopupViewKey = @"cjMustHideFromPopupView";
 
     
     //popupViewShowFrame
-    CGFloat screenHeight = [[UIScreen mainScreen] bounds].size.height;
-    BOOL isScreenFull = screenHeight >= 812 && UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone;  // 是否是全面屏
-    CGFloat screenBottomHeight = isScreenFull ?  34.0 : 0.0;    // 屏幕底部
     CGFloat popupViewX = edgeInsets.left;
-    CGFloat popupViewShowY = CGRectGetHeight(keyWindow.frame) - popupViewHeight - screenBottomHeight - edgeInsets.bottom;
+    CGFloat popupViewShowY = CGRectGetHeight(keyWindow.frame) - popupViewHeight - edgeInsets.bottom;
     CGRect popupViewShowFrame = CGRectZero;
     popupViewShowFrame = CGRectMake(popupViewX,
                                     popupViewShowY,
