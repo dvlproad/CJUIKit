@@ -18,7 +18,7 @@
 //UIView
 #import "ViewHomeViewController.h"
 
-#import "ButtonViewController.h"
+#import "ButtonHomeViewController.h"
 #import "TextFieldViewController.h"
 #import "TestTextFieldOffsetViewController.h"
 #import "TextViewController.h"
@@ -201,7 +201,7 @@
             //UIButton
             CJModuleModel *buttonModule = [[CJModuleModel alloc] init];
             buttonModule.title = @"UIButton";
-            buttonModule.classEntry = [ButtonViewController class];
+            buttonModule.classEntry = [ButtonHomeViewController class];
             buttonModule.isCreateByXib = NO;
             [sectionDataModel.values addObject:buttonModule];
         }

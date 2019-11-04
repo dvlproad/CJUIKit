@@ -1,16 +1,21 @@
 //
-//  UIButton+CJUpDownStructure.m
+//  UIButton+CJStructure.m
 //  CJUIKitDemo
 //
 //  Created by ciyouzen on 2017/7/3.
 //  Copyright © 2017年 dvlproad. All rights reserved.
 //
 
-#import "UIButton+CJUpDownStructure.h"
+#import "UIButton+CJStructure.h"
 
-@implementation UIButton (CJUpDownStructure)
+@implementation UIButton (CJStructure)
 
-/* 完整的描述请参见文件头部 */
+/**
+ *  上图片、下文字(竖直排放)（调用前提：必须保证你的button的size已经确定后才能调用）
+ *  @attention  也要保证Button的宽度一定要大于等于图片的宽
+ *
+ *  @param spacing 图片和文字的间隔为多少
+ */
 - (void)cjVerticalImageAndTitle:(CGFloat)spacing
 {
     CGSize imageSize = self.imageView.frame.size;
@@ -32,12 +37,21 @@
         titleSize.width = frameSize.width;
     }
     CGFloat totalFrameHeight = (imageSize.height + spacing + titleSize.height);
+    CGFloat selfFrameHeight = CGRectGetHeight(self.frame);
+    if (selfFrameHeight == 0) {
+        NSLog(@"CJError:您的按钮高度高度未设置");
+    } else {
+        if (totalFrameHeight > selfFrameHeight) {
+            NSLog(@"CJError:您的按钮高度太小不足以设置这个间隔,请给您的button高度至少为%.1f", totalFrameHeight);
+        }
+    }
+    
     self.imageEdgeInsets = UIEdgeInsetsMake(-(totalFrameHeight - imageSize.height), 0.0, 0.0, - titleSize.width);
     self.titleEdgeInsets = UIEdgeInsetsMake(0, - imageSize.width, - (totalFrameHeight - titleSize.height), 0);
 }
 
 /**
- *  左图片、右文字时候
+ *  左图片、右文字(水平排放)
  *
  *  @param spacing          图片与文字的间隔
  *  @param leftOffset       视图与左边缘的距离
@@ -59,4 +73,25 @@
     self.titleEdgeInsets = UIEdgeInsetsMake(0, leftOffset + spacing, 0, 0);
 }
 
+/**
+ *  左文字、右图片(水平排放)
+ *
+ *  @param spacing          图片与文字的间隔
+ *  @param rightOffset      视图与右边缘的距离
+ */
+- (void)cjLeftTextRightImageWithSpacing:(CGFloat)spacing
+                            rightOffset:(CGFloat)rightOffset
+{
+    self.contentHorizontalAlignment = UIControlContentHorizontalAlignmentRight; //水平右对齐
+    self.contentVerticalAlignment = UIControlContentVerticalAlignmentCenter; //垂直居中对齐
+    
+    //文字的size
+//    CGSize imageSize = self.imageView.frame.size;
+//    CGSize titleSize = self.titleLabel.frame.size;
+    CGSize imageSize = CGSizeMake(30, 30);
+    CGSize titleSize = [self.titleLabel.text sizeWithAttributes:@{NSFontAttributeName:self.titleLabel.font}];//iOS7.0+
+
+    self.imageEdgeInsets = UIEdgeInsetsMake(0, titleSize.width + spacing - imageSize.width, 0, -rightOffset- titleSize.width - spacing + imageSize.width);
+    self.titleEdgeInsets = UIEdgeInsetsMake(0, - imageSize.width - spacing, 0, rightOffset + imageSize.width + spacing);
+}
 @end

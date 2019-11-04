@@ -7,6 +7,8 @@
 //
 
 #import "DemoButtonFactory.h"
+#import "UIImage+CJCreate.h"
+#import "UIButton+CJStructure.h"
 
 @implementation DemoButtonFactory
 
@@ -86,6 +88,53 @@
     
     button.cjNormalBGColor = CJColorFromHexString(@"#ffffff");
     button.cjHighlightedBGColor = CJColorFromHexString(@"#e5e5e5");
+    
+    return button;
+}
+
+/// 测试用的"上图片+下文字"按钮
++ (UIButton *)upImage_downText_testButton {
+    UIButton *button = [self __testImageAndTextButton];
+    [button setTitle:@"上图下字按钮" forState:UIControlStateNormal];
+    
+    return button;
+}
+
+/// 测试用的"左图片+右文字"按钮
++ (UIButton *)leftImage_rightText_testButton {
+    UIButton *button = [self __testImageAndTextButton];
+    [button setTitle:@"左图右字按钮" forState:UIControlStateNormal];
+    [button cjLeftImageOffset:10 imageAndTitleSpacing:10];
+    
+    return button;
+}
+
+/// 测试用的"左文字+右图片"按钮
++ (UIButton *)leftText_rightImage_testButton {
+    UIButton *button = [self __testImageAndTextButton];
+    [button setTitle:@"左字右图按钮" forState:UIControlStateNormal];
+    [button cjLeftTextRightImageWithSpacing:10 rightOffset:10];
+    
+    return button;
+}
+
+
+/// 测试用的"图片+文字"按钮
++ (UIButton *)__testImageAndTextButton {
+    UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
+    button.layer.masksToBounds = YES;
+    button.layer.cornerRadius = 15;
+
+    button.cjNormalBGColor = CJColorFromHexString(@"#01adfe");
+    button.cjHighlightedBGColor = CJColorFromHexString(@"#1393d7");
+    button.cjDisabledBGColor = CJColorFromHexString(@"#d3d3d5");
+    
+    UIImage *image = [[UIImage cj_imageWithColor:[UIColor redColor] size:CGSizeMake(30, 30)] cj_circleImage];
+    [button setImage:image forState:UIControlStateNormal];
+    [button setTitle:@"上图下字按钮" forState:UIControlStateNormal];
+    [button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    [button.imageView setBackgroundColor:[UIColor greenColor]]; //为了方便查看imageView的范围
+    [button.titleLabel setBackgroundColor:[UIColor yellowColor]]; //为了方便查看titleLabel的范围
     
     return button;
 }

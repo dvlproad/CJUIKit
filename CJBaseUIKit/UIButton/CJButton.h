@@ -19,6 +19,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) UIColor *cjDisabledBorderColor;   /**< 设置按钮失效时候的边框颜色 */
 @property (nonatomic, strong) UIColor *cjSelectedBorderColor;   /**< 设置按钮选中时候的边框颜色 */
 
+@property (nonatomic, copy) void(^selectedChangeCompleteBlock)(CJButton *button); /**< 单选按钮(选中)状态改变后的block(可用来做一些图片的transform旋转等) */
+
 @end
 
 NS_ASSUME_NONNULL_END

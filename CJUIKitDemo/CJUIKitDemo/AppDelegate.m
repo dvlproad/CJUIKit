@@ -64,7 +64,12 @@
     [UINavigationConfig shared].sx_defaultFixSpace = 2;//默认为0 可以修改
     
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
-    self.window.rootViewController = [self getMainRootViewController];
+    // 所有测试
+    UIViewController *rootViewController = [self getMainRootViewController];
+    // 只直接测试某个页面
+    //UIViewController *rootViewController = [[UINavigationController alloc] initWithRootViewController:[[NSClassFromString(@"ButtonStructureViewController") alloc] init]];
+    
+    self.window.rootViewController = rootViewController;
     [self.window makeKeyAndVisible];
     
     // Override point for customization after application launch.

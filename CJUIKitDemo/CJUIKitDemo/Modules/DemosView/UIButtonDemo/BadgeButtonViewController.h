@@ -6,12 +6,12 @@
 //  Copyright © 2017年 dvlproad. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
-#import <Masonry/Masonry.h>
+#import "CJUIKitBaseViewController.h"
 #import "DemoButtonFactory.h"
 
-@interface BadgeButtonViewController : UIViewController
-
+@interface BadgeButtonViewController : CJUIKitBaseViewController {
+    
+}
 @property (nonatomic, strong) CJBadgeButton *badgeButton;
 
 @end

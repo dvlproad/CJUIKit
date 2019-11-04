@@ -33,6 +33,13 @@
 
 + (UIButton *)disableButton;
 
+/// 测试用的"左图片+右文字"按钮
++ (UIButton *)leftImage_rightText_testButton;
+/// 测试用的"左文字+右图片"按钮
++ (UIButton *)leftText_rightImage_testButton;
+/// 测试用的"图片+文字"按钮
++ (UIButton *)__testImageAndTextButton;
+
 + (CJBadgeButton *)defaultBadgeButton;
 
 + (CJBadgeButton *)goDeliverBadgeButton;

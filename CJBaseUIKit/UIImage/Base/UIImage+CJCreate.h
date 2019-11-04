@@ -20,4 +20,9 @@
  */
 + (UIImage *)cj_imageWithColor:(UIColor *)color size:(CGSize)size;
 
+/**
+ *  将图片弄成圆形
+ */
+- (UIImage *)cj_circleImage;
+
 @end

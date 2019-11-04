@@ -14,6 +14,11 @@
     [super setSelected:selected];
     
     [self __updateBorderColor];
+    
+    // selected 改变时候的回调
+    if (self.selectedChangeCompleteBlock) {
+        self.selectedChangeCompleteBlock(self);
+    }
 }
 
 - (void)setEnabled:(BOOL)enabled {
