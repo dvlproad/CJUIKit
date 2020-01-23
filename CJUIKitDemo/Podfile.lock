@@ -68,13 +68,13 @@ PODS:
   - CJComplexUIKit/CJCollectionView/MyEqualCellSizeCollectionView (0.2.3)
   - CJFile/CJFileManager (0.0.9)
   - CJFile/CJFileModel (0.0.9)
-  - CJFoundation (0.1.2):
-    - CJFoundation/NSDictionary (= 0.1.2)
-    - CJFoundation/NSJSONSerialization (= 0.1.2)
-    - CJFoundation/NSString (= 0.1.2)
-  - CJFoundation/NSDictionary (0.1.2)
-  - CJFoundation/NSJSONSerialization (0.1.2)
-  - CJFoundation/NSString (0.1.2)
+  - CJFoundation (0.1.3):
+    - CJFoundation/NSDictionary (= 0.1.3)
+    - CJFoundation/NSJSONSerialization (= 0.1.3)
+    - CJFoundation/NSString (= 0.1.3)
+  - CJFoundation/NSDictionary (0.1.3)
+  - CJFoundation/NSJSONSerialization (0.1.3)
+  - CJFoundation/NSString (0.1.3)
   - CJPicker (1.3.2)
   - CJPopupView/CJPopoverView (2.1.0)
   - FLAnimatedImage (1.0.12)
@@ -133,7 +133,7 @@ DEPENDENCIES:
   - YYText (~> 1.0.7)
 
 SPEC REPOS:
-  https://github.com/cocoapods/specs.git:
+  https://github.com/CocoaPods/Specs.git:
     - AFNetworking
     - CJFile
     - CJPicker
@@ -179,7 +179,7 @@ SPEC CHECKSUMS:
   CJBaseUtil: 1bbf8d5f831dc12ae4bb06c8b5326bd39f3522e1
   CJComplexUIKit: 51c4a99d97c7ff32397b56fc63b80b655a5a7a5f
   CJFile: 6c1e6d55b3b94e8afbaa9f413f131301d15fdc48
-  CJFoundation: 2c27b7ad85ec0cc5ac24aa112867971e01ae3ea3
+  CJFoundation: 53b4df7152c6d6fd776f55f387c67f431b8574bd
   CJPicker: c33099d47323271b91c2ce112976d1bee19a70ce
   CJPopupView: c7685f6a0225a89c72d97ea946f2816b5442abaf
   FLAnimatedImage: 4a0b56255d9b05f18b6dd7ee06871be5d3b89e31
@@ -203,4 +203,4 @@ SPEC CHECKSUMS:
 
 PODFILE CHECKSUM: 063d5d6b3b875bd2c6016862a52843647ee9cb49
 
-COCOAPODS: 1.7.5
+COCOAPODS: 1.8.4

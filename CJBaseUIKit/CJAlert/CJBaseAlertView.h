@@ -1,5 +1,5 @@
 //
-//  CJAlertView.h
+//  CJBaseAlertView.h
 //  CJUIKitDemo
 //
 //  Created by ciyouzen on 2016/3/11.
@@ -11,17 +11,21 @@
 
 #ifdef TEST_CJBASEUIKIT_POD
 #import "UIView+CJPopupInView.h"
+#import "UIColor+CJHex.h"
+#import "CJTextField.h"
 #else
 #import <CJBaseUIKit/UIView+CJPopupInView.h>
+#import <CJBaseUIKit/UIColor+CJHex.h>
+#import <CJBaseUIKit/CJTextField.h>
 #endif
 
 /*
-@class CJAlertView;
+@class CJBaseAlertView;
 @protocol CJAlertViewDelegate <NSObject>
 
 @optional
-- (void)cjAlertView_OK:(CJAlertView *)alertView;
-- (void)cjAlertView_Cancel:(CJAlertView *)alertView;
+- (void)cjAlertView_OK:(CJBaseAlertView *)alertView;
+- (void)cjAlertView_Cancel:(CJBaseAlertView *)alertView;
 
 @end
 */
@@ -29,9 +33,40 @@
 /**
  *  仿系统 UIAlertView(使用类方法只能创建默认样式的alertView,若要创建更加自定义的alertView,请使用实例方法)
  */
-@interface CJAlertView : UIView {
+@interface CJBaseAlertView : UIView {
     
 }
+@property (nonatomic, strong) UIImageView *flagImageView;
+@property (nonatomic, strong) UILabel *titleLabel;
+
+@property (nonatomic, strong) UIScrollView *messageScrollView;
+@property (nonatomic, strong) UIView *messageContainerView;
+@property (nonatomic, strong) UILabel *messageLabel;
+
+@property (nonatomic, strong) CJTextField *textField;
+
+@property (nonatomic, strong) UIButton *cancelButton;
+@property (nonatomic, strong) UIButton *okButton;
+@property (nonatomic, strong) UIView *bottomButtonView;
+@property (nonatomic, strong, readonly) NSArray<UIButton *> *bottomButtons;
+
+//第一个视图(一般为flagImageView，如果flagImageView不存在，则为下一个即titleLabel，以此类推)与顶部的间隔
+@property (nonatomic, readonly) CGFloat firstVerticalInterval;
+
+//第二个视图与第一个视图的间隔
+@property (nonatomic, readonly) CGFloat secondVerticalInterval;
+
+//第三个视图与第二个视图的间隔
+@property (nonatomic, readonly) CGFloat thirdVerticalInterval;
+
+//底部buttons视图与其上面的视图的最小间隔(上面的视图一般为message；如果不存在message,则是title；如果再不存在，则是flagImage)
+@property (nonatomic, readonly) CGFloat bottomMinVerticalInterval;
+
+@property (nonatomic, readonly) CGFloat flagImageViewHeight;
+@property (nonatomic, assign) CGFloat bottomPartHeight;  /**< 底部区域高度(包含底部按钮及可能的按钮上部的分隔线及按钮下部与边缘的距离) */
+@property (nonatomic, readonly) CGFloat titleLabelHeight;
+@property (nonatomic, readonly) CGFloat messageLabelHeight;
+@property (nonatomic, assign) CGFloat textFieldHeight;
 
 ///创建alertView(使用类方法只能创建默认样式的alertView,若要创建更加自定义的alertView,请使用实例方法)
 + (instancetype)alertViewWithSize:(CGSize)size
@@ -43,6 +78,15 @@
                      cancelHandle:(void(^)(void))cancelHandle
                          okHandle:(void(^)(void))okHandle;
 
+
+/**
+ *  创建alertView
+ *
+ *  @param size                     alertView的大小
+ *
+ *  @return alertView
+ */
+- (instancetype)initWithSize:(CGSize)size;
 
 /**
  *  创建alertView
@@ -65,8 +109,18 @@
 ///添加指示图标
 - (void)addFlagImage:(UIImage *)flagImage size:(CGSize)imageViewSize;
 
+/**
+ *  添加标题
+ *
+ *  @param title    标题
+ *  @param titleLabelLeftOffset    titleLabelLeftOffset
+ */
+- (void)addTitle:(NSString *)title margin:(CGFloat)titleLabelLeftOffset;
+
 ///添加title(paragraphStyle:当需要设置title行距、缩进等的时候才需要设置，其他设为nil即可)
 - (void)addTitleWithText:(NSString *)text font:(UIFont *)font textAlignment:(NSTextAlignment)textAlignment margin:(CGFloat)titleLabelLeftOffset paragraphStyle:(NSMutableParagraphStyle *)paragraphStyle;
+
+- (void)addMessage:(NSString *)message margin:(CGFloat)messageLabelLeftOffset;
 
 ///添加message的方法(paragraphStyle:当需要设置message行距、缩进等的时候才需要设置，其他设为nil即可)
 - (void)addMessageWithText:(NSString *)text font:(UIFont *)font textAlignment:(NSTextAlignment)textAlignment margin:(CGFloat)messageLabelLeftOffset paragraphStyle:(NSMutableParagraphStyle *)paragraphStyle;
@@ -74,32 +128,34 @@
 ///添加 message 的边框等(几乎不会用到)
 - (void)addMessageLayerWithBorderWidth:(CGFloat)borderWidth borderColor:(CGColorRef)borderColor cornerRadius:(CGFloat)cornerRadius;
 
-///添加底部按钮
-/**
- *  添加底部按钮方法①：按指定布局添加底部按钮
- *
- *  @param bottomButtons        要添加的按钮组合(得在外部额外实现点击后的关闭alert操作)
- *  @param actionButtonHeight   按钮高度
- *  @param bottomInterval       按钮与底部的距离
- *  @param axisType             横排还是竖排
- *  @param fixedSpacing         两个控件间隔
- *  @param leadSpacing          第一个控件与边缘的间隔
- *  @param tailSpacing          最后一个控件与边缘的间隔
- */
-- (void)addBottomButtons:(NSArray<UIButton *> *)bottomButtons
-              withHeight:(CGFloat)actionButtonHeight
-          bottomInterval:(CGFloat)bottomInterval
-               alongAxis:(MASAxisType)axisType
-            fixedSpacing:(CGFloat)fixedSpacing
-             leadSpacing:(CGFloat)leadSpacing
-             tailSpacing:(CGFloat)tailSpacing;
+- (void)addTextFiledWithPlaceholder:(NSString *)placeholder;
 
-///只添加一个按钮
-- (void)addOnlyOneBottomButton:(UIButton *)bottomButton
-                    withHeight:(CGFloat)actionButtonHeight
-                bottomInterval:(CGFloat)bottomInterval
-                    leftOffset:(CGFloat)leftOffset
-                   rightOffset:(CGFloat)rightOffset;
+/**
+ *  添加 "Cancel" + "OK" 的 组合按钮
+ *
+ *  @param cancelButtonTitle    取消文案
+ *  @param okButtonTitle        确认文案
+ *  @param cancelHandle         取消事件
+ *  @param okHandle             确认时间
+ */
+- (void)addTwoButtonsWithCancelButtonTitle:(NSString *)cancelButtonTitle
+                             okButtonTitle:(NSString *)okButtonTitle
+                              cancelHandle:(void(^)(void))cancelHandle
+                                  okHandle:(void(^)(void))okHandle;
+
+
+/////只添加一个按钮
+//- (void)addOnlyOneBottomButton:(UIButton *)bottomButton
+//                    withHeight:(CGFloat)actionButtonHeight
+//                bottomInterval:(CGFloat)bottomInterval;
+/**
+*  添加 "OK" 的 组合按钮
+*
+*  @param okButtonTitle        确认文案
+*  @param okHandle             确认时间
+*/
+- (void)addOnlyOneBottomButtonWithOKButtonTitle:(NSString *)okButtonTitle
+                                       okHandle:(void(^)(void))okHandle;
 
 /**
  *  添加底部按钮方法②：按默认布局(横排，1至2个)

@@ -68,6 +68,10 @@ Pod::Spec.new do |s|
     ss.source_files = "CJBaseUIKit/CJUIKitConstant/**/*.{h,m}"
   end
 
+  s.subspec 'CJTheme' do |ss|
+    ss.source_files = "CJBaseUIKit/CJTheme/**/*.{h,m}"
+  end
+
   s.subspec 'UIColor' do |ss|
     ss.source_files = "CJBaseUIKit/UIColor/**/*.{h,m}"
   end

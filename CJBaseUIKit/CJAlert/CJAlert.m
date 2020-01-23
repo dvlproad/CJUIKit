@@ -7,7 +7,7 @@
 //
 
 #import "CJAlert.h"
-#import "CJAlertView.h"
+#import "CJBaseAlertView.h"
 
 @implementation CJAlert
 
@@ -56,7 +56,7 @@
 
 
 
-#pragma mark - CJAlertView
+#pragma mark - CJBaseAlertView
 + (void)showIKnowWithTitle:(NSString *)title message:(NSString *)message okHandle:(void(^)(void))okHandle {
     NSString *okButtonTitle = NSLocalizedString(@"我知道了", nil);
     
@@ -87,7 +87,7 @@
     CGFloat screenWidth = CGRectGetWidth([[UIScreen mainScreen] bounds]);
     CGSize popupViewSize = CGSizeMake(screenWidth * 0.7, 200);
     
-    CJAlertView *alertView = [CJAlertView alertViewWithSize:popupViewSize flagImage:flagImage title:title message:message cancelButtonTitle:cancelButtonTitle okButtonTitle:okButtonTitle cancelHandle:cancelHandle okHandle:okHandle];
+    CJBaseAlertView *alertView = [CJBaseAlertView alertViewWithSize:popupViewSize flagImage:flagImage title:title message:message cancelButtonTitle:cancelButtonTitle okButtonTitle:okButtonTitle cancelHandle:cancelHandle okHandle:okHandle];
     
     UIColor *blankBGColor = [UIColor colorWithRed:.16 green:.17 blue:.21 alpha:.6];
     [alertView showWithShouldFitHeight:YES blankBGColor:blankBGColor];
@@ -118,7 +118,7 @@
 {    
     CGFloat screenWidth = CGRectGetWidth([[UIScreen mainScreen] bounds]);
     CGSize popupViewSize = CGSizeMake(screenWidth * 0.9, 200);
-    CJAlertView *alertView = [[CJAlertView alloc] initWithSize:popupViewSize firstVerticalInterval:10 secondVerticalInterval:10 thirdVerticalInterval:0 bottomMinVerticalInterval:10];
+    CJBaseAlertView *alertView = [[CJBaseAlertView alloc] initWithSize:popupViewSize firstVerticalInterval:10 secondVerticalInterval:10 thirdVerticalInterval:0 bottomMinVerticalInterval:10];
     
     //UIImage *flagImage = [UIImage imageNamed:@"scan_icon_notice"];
     //[alertView addFlagImage:flagImage size:CGSizeMake(38, 38)];

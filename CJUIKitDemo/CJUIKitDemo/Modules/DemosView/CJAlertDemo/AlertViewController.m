@@ -10,7 +10,7 @@
 #import "CJModuleModel.h"
 
 #import "CJAlert.h"
-#import "CJAlertView.h"
+#import "CJBaseAlertView.h"
 
 #import "TestDataUtil.h"
 #import "CJConvertUtil.h"
@@ -202,7 +202,7 @@
     NSString *cancelButtonTitle = NSLocalizedString(@"取消", nil);
     NSString *okButtonTitle = NSLocalizedString(@"结束行程", nil);
     
-    CJAlertView *alertView = [[CJAlertView alloc] initWithSize:popupViewSize firstVerticalInterval:25 secondVerticalInterval:20 thirdVerticalInterval:10 bottomMinVerticalInterval:10];
+    CJBaseAlertView *alertView = [[CJBaseAlertView alloc] initWithSize:popupViewSize firstVerticalInterval:25 secondVerticalInterval:20 thirdVerticalInterval:10 bottomMinVerticalInterval:10];
     [alertView addTitleWithText:title font:[UIFont systemFontOfSize:15.0] textAlignment:NSTextAlignmentCenter margin:20 paragraphStyle:nil];
     
     
@@ -233,7 +233,7 @@
     NSString *okButtonTitle = NSLocalizedString(@"允许上车", nil);
     
     __weak typeof(self)weakSelf = self;
-    CJAlertView *alertView = [CJAlertView alertViewWithSize:popupViewSize flagImage:flagImage title:title message:message cancelButtonTitle:cancelButtonTitle okButtonTitle:okButtonTitle cancelHandle:^{
+    CJBaseAlertView *alertView = [CJBaseAlertView alertViewWithSize:popupViewSize flagImage:flagImage title:title message:message cancelButtonTitle:cancelButtonTitle okButtonTitle:okButtonTitle cancelHandle:^{
         NSLog(@"点击了取消按钮");
     } okHandle:^{
         NSLog(@"点击了确认按钮");

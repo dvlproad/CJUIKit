@@ -12,7 +12,7 @@
 #import "AppInfoManager.h"
 
 #import "YunUncaughtExceptionHandler.h"
-#import "CJAlertView.h"
+#import "CJBaseAlertView.h"
 
 #import "CJAppLastUtil.h"
 #import <IQKeyboardManager/IQKeyboardManager.h>

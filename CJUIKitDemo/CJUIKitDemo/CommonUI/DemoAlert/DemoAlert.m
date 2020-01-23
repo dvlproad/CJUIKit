@@ -27,9 +27,9 @@
 @interface DemoAlert () {
     
 }
-@property (nonatomic, strong) CJAlertView *networkNoOpenAlert;      /**< 网络权限没打开的alert */
-@property (nonatomic, strong) CJAlertView *locationNoOpenAlert;     /**< 定位权限没打开的alert */
-@property (nonatomic, strong) CJAlertView *locationAbnormalAlert;   /**< 定位权限异常的alert */
+@property (nonatomic, strong) CJBaseAlertView *networkNoOpenAlert;      /**< 网络权限没打开的alert */
+@property (nonatomic, strong) CJBaseAlertView *locationNoOpenAlert;     /**< 定位权限没打开的alert */
+@property (nonatomic, strong) CJBaseAlertView *locationAbnormalAlert;   /**< 定位权限异常的alert */
 
 
 @end
@@ -146,38 +146,39 @@
                  okButtonTitle:(NSString *)okButtonTitle
                       okHandle:(void(^)(void))okHandle
 {
-    CJAlertView *alertView = [self alertViewWithTitle:title okButtonTitle:okButtonTitle okHandle:okHandle];
+    CJBaseAlertView *alertView = [self alertViewWithTitle:title okButtonTitle:okButtonTitle okHandle:okHandle];
     
     UIColor *blankBGColor = [UIColor colorWithRed:.16 green:.17 blue:.21 alpha:.6];
     [alertView showWithShouldFitHeight:YES blankBGColor:blankBGColor];
 }
 
-+ (CJAlertView *)alertViewWithTitle:(NSString *)title
++ (CJBaseAlertView *)alertViewWithTitle:(NSString *)title
                       okButtonTitle:(NSString *)okButtonTitle
                            okHandle:(void(^)(void))okHandle
 {
     CGSize popupViewSize = CGSizeMake(290, 150);
-    CJAlertView *alertView = [[CJAlertView alloc] initWithSize:popupViewSize firstVerticalInterval:40 secondVerticalInterval:0 thirdVerticalInterval:0 bottomMinVerticalInterval:40];
-    
-    //title
-    NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle defaultParagraphStyle] mutableCopy];
-    paragraphStyle.lineBreakMode = NSLineBreakByCharWrapping;
-    paragraphStyle.lineSpacing = 5;
-    [alertView addTitleWithText:title font:[UIFont systemFontOfSize:17.0] textAlignment:NSTextAlignmentCenter margin:10 paragraphStyle:paragraphStyle];
-    
-    //bottomButtons
-    UIButton *okButton = [DemoButtonFactory blueButton];
-    [okButton setTitle:okButtonTitle forState:UIControlStateNormal];
-    [okButton setCjTouchUpInsideBlock:^(UIButton *button) {
-        [alertView dismissWithDelay:0];
-        if (okHandle) {
-            okHandle();
-        }
-    }];
-    
-    //NSArray<UIButton *> *bottomButtons = @[okButton];
-    //[alertView addBottomButtons:bottomButtons withHeight:44 bottomInterval:15 alongAxis:MASAxisTypeHorizontal fixedSpacing:10 leadSpacing:15 tailSpacing:15];
-    [alertView addOnlyOneBottomButton:okButton withHeight:44 bottomInterval:15 leftOffset:15 rightOffset:15];
+    CJBaseAlertView *alertView = [[CJBaseAlertView alloc] initWithSize:popupViewSize firstVerticalInterval:40 secondVerticalInterval:0 thirdVerticalInterval:0 bottomMinVerticalInterval:40];
+//
+//    //title
+//    NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle defaultParagraphStyle] mutableCopy];
+//    paragraphStyle.lineBreakMode = NSLineBreakByCharWrapping;
+//    paragraphStyle.lineSpacing = 5;
+//    [alertView addTitleWithText:title font:[UIFont systemFontOfSize:17.0] textAlignment:NSTextAlignmentCenter margin:10 paragraphStyle:paragraphStyle];
+//
+//    //bottomButtons
+//    UIButton *okButton = [DemoButtonFactory blueButton];
+//    [okButton setTitle:okButtonTitle forState:UIControlStateNormal];
+//    [okButton setCjTouchUpInsideBlock:^(UIButton *button) {
+//        [alertView dismissWithDelay:0];
+//        if (okHandle) {
+//            okHandle();
+//        }
+//    }];
+//
+//    //NSArray<UIButton *> *bottomButtons = @[okButton];
+//    //[alertView addBottomButtons:bottomButtons withHeight:44 bottomInterval:15 alongAxis:MASAxisTypeHorizontal fixedSpacing:10 leadSpacing:15 tailSpacing:15];
+//    [alertView addOnlyOneBottomButton:okButton withHeight:44 bottomInterval:15 leftOffset:15 rightOffset:15];
+    [alertView addOnlyOneBottomButtonWithOKButtonTitle:okButtonTitle okHandle:okHandle];
     
     return alertView;
 }
@@ -190,35 +191,36 @@
                       okHandle:(void(^)(void))okHandle
 {
     CGSize popupViewSize = CGSizeMake(290, 150);
-    CJAlertView *alertView = [[CJAlertView alloc] initWithSize:popupViewSize firstVerticalInterval:40 secondVerticalInterval:0 thirdVerticalInterval:0 bottomMinVerticalInterval:40];
+    CJBaseAlertView *alertView = [[CJBaseAlertView alloc] initWithSize:popupViewSize firstVerticalInterval:40 secondVerticalInterval:0 thirdVerticalInterval:0 bottomMinVerticalInterval:40];
     
-    //title
-    NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle defaultParagraphStyle] mutableCopy];
-    paragraphStyle.lineBreakMode = NSLineBreakByCharWrapping;
-    paragraphStyle.lineSpacing = 5;
-    [alertView addTitleWithText:title font:[UIFont systemFontOfSize:17.0] textAlignment:NSTextAlignmentCenter margin:10 paragraphStyle:paragraphStyle];
-    
-    //bottomButtons
-    UIButton *cancelButton = [DemoButtonFactory whiteButton];
-    [cancelButton setTitle:cancelButtonTitle forState:UIControlStateNormal];
-    [cancelButton setCjTouchUpInsideBlock:^(UIButton *button) {
-        [alertView dismissWithDelay:0];
-        if (cancelHandle) {
-            cancelHandle();
-        }
-    }];
-    
-    UIButton *okButton = [DemoButtonFactory blueButton];
-    [okButton setTitle:okButtonTitle forState:UIControlStateNormal];
-    [okButton setCjTouchUpInsideBlock:^(UIButton *button) {
-        [alertView dismissWithDelay:0];
-        if (okHandle) {
-            okHandle();
-        }
-    }];
-    
-    NSArray<UIButton *> *bottomButtons = @[cancelButton, okButton];
-    [alertView addBottomButtons:bottomButtons withHeight:36 bottomInterval:15 alongAxis:MASAxisTypeHorizontal fixedSpacing:10 leadSpacing:15 tailSpacing:15];
+//    //title
+//    NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle defaultParagraphStyle] mutableCopy];
+//    paragraphStyle.lineBreakMode = NSLineBreakByCharWrapping;
+//    paragraphStyle.lineSpacing = 5;
+//    [alertView addTitleWithText:title font:[UIFont systemFontOfSize:17.0] textAlignment:NSTextAlignmentCenter margin:10 paragraphStyle:paragraphStyle];
+//    
+//    //bottomButtons
+//    UIButton *cancelButton = [DemoButtonFactory whiteButton];
+//    [cancelButton setTitle:cancelButtonTitle forState:UIControlStateNormal];
+//    [cancelButton setCjTouchUpInsideBlock:^(UIButton *button) {
+//        [alertView dismissWithDelay:0];
+//        if (cancelHandle) {
+//            cancelHandle();
+//        }
+//    }];
+//    
+//    UIButton *okButton = [DemoButtonFactory blueButton];
+//    [okButton setTitle:okButtonTitle forState:UIControlStateNormal];
+//    [okButton setCjTouchUpInsideBlock:^(UIButton *button) {
+//        [alertView dismissWithDelay:0];
+//        if (okHandle) {
+//            okHandle();
+//        }
+//    }];
+//    
+//    NSArray<UIButton *> *bottomButtons = @[cancelButton, okButton];
+//    [alertView addBottomButtons:bottomButtons withHeight:36 bottomInterval:15 alongAxis:MASAxisTypeHorizontal fixedSpacing:10 leadSpacing:15 tailSpacing:15];
+    [alertView addTwoButtonsWithCancelButtonTitle:cancelButtonTitle okButtonTitle:okButtonTitle cancelHandle:cancelHandle okHandle:okHandle];
     
     UIColor *blankBGColor = [UIColor colorWithRed:.16 green:.17 blue:.21 alpha:.6];
     [alertView showWithShouldFitHeight:YES blankBGColor:blankBGColor];
@@ -234,7 +236,7 @@
     CGFloat textWidth = [title cjTextWidthWithFont:[UIFont systemFontOfSize:17.0]] > 160 ? 290 : 160;
     CGSize popupViewSize = CGSizeMake(textWidth, 150); //登录时候的账号密码错误是160的宽
     
-    CJAlertView *alertView = [[CJAlertView alloc] initWithSize:popupViewSize firstVerticalInterval:20 secondVerticalInterval:15 thirdVerticalInterval:0 bottomMinVerticalInterval:19];
+    CJBaseAlertView *alertView = [[CJBaseAlertView alloc] initWithSize:popupViewSize firstVerticalInterval:20 secondVerticalInterval:15 thirdVerticalInterval:0 bottomMinVerticalInterval:19];
     
     alertView.backgroundColor = CJColorFromHexStringAndAlpha(@"#000000", 0.76);
     

@@ -1,43 +1,35 @@
 //
-//  CJAlertView.m
+//  CJBaseAlertView.m
 //  CJUIKitDemo
 //
 //  Created by ciyouzen on 2016/3/11.
 //  Copyright © 2016年 dvlproad. All rights reserved.
 //
 
-#import "CJAlertView.h"
-#import <CoreText/CoreText.h>
+#import "CJBaseAlertView.h"
+#import "CJAlertComponentFactory.h"
 
-@interface CJAlertView () {
-    CGFloat _flagImageViewHeight;
-    CGFloat _titleLabelHeight;
-    CGFloat _messageLabelHeight;
-    CGFloat _bottomPartHeight;  /**< 底部区域高度(包含底部按钮及可能的按钮上部的分隔线及按钮下部与边缘的距离) */
+#import <CoreText/CoreText.h>
+#import "CJThemeManager.h"
+
+@interface CJBaseAlertView () {
+    
 }
 @property (nonatomic, readonly) CGSize size;
 
-//第一个视图(一般为flagImageView，如果flagImageView不存在，则为下一个即titleLabel，以此类推)与顶部的间隔
-@property (nonatomic, readonly) CGFloat firstVerticalInterval;
+////第一个视图(一般为flagImageView，如果flagImageView不存在，则为下一个即titleLabel，以此类推)与顶部的间隔
+//@property (nonatomic, readonly) CGFloat firstVerticalInterval;
+//
+////第二个视图与第一个视图的间隔
+//@property (nonatomic, readonly) CGFloat secondVerticalInterval;
+//
+////第三个视图与第二个视图的间隔
+//@property (nonatomic, readonly) CGFloat thirdVerticalInterval;
+//
+////底部buttons视图与其上面的视图的最小间隔(上面的视图一般为message；如果不存在message,则是title；如果再不存在，则是flagImage)
+//@property (nonatomic, readonly) CGFloat bottomMinVerticalInterval;
 
-//第二个视图与第一个视图的间隔
-@property (nonatomic, readonly) CGFloat secondVerticalInterval;
 
-//第三个视图与第二个视图的间隔
-@property (nonatomic, readonly) CGFloat thirdVerticalInterval;
-
-//底部buttons视图与其上面的视图的最小间隔(上面的视图一般为message；如果不存在message,则是title；如果再不存在，则是flagImage)
-@property (nonatomic, readonly) CGFloat bottomMinVerticalInterval;
-
-@property (nonatomic, strong) UIImageView *flagImageView;
-@property (nonatomic, strong) UILabel *titleLabel;
-
-@property (nonatomic, strong) UIScrollView *messageScrollView;
-@property (nonatomic, strong) UIView *messageContainerView;
-@property (nonatomic, strong) UILabel *messageLabel;
-
-@property (nonatomic, strong) UIButton *cancelButton;
-@property (nonatomic, strong) UIButton *okButton;
 
 @property (nonatomic, copy) void(^cancelHandle)(void);
 @property (nonatomic, copy) void(^okHandle)(void);
@@ -47,7 +39,7 @@
 
 
 
-@implementation CJAlertView
+@implementation CJBaseAlertView
 
 
 + (instancetype)alertViewWithSize:(CGSize)size
@@ -60,7 +52,7 @@
                          okHandle:(void(^)(void))okHandle
 {
     //①创建
-    CJAlertView *alertView = [[CJAlertView alloc] initWithSize:size firstVerticalInterval:15 secondVerticalInterval:10 thirdVerticalInterval:10 bottomMinVerticalInterval:10];
+    CJBaseAlertView *alertView = [[CJBaseAlertView alloc] initWithSize:size firstVerticalInterval:15 secondVerticalInterval:10 thirdVerticalInterval:10 bottomMinVerticalInterval:10];
     
     //②添加 flagImage、titleLabel、messageLabel
     //[alertView setupFlagImage:flagImage title:title message:message configure:configure]; //已拆解成以下几个方法
@@ -106,11 +98,34 @@
         self.backgroundColor = [UIColor whiteColor];
         self.layer.cornerRadius = 3;
         
+//        self.layer.cornerRadius = 14;
+//        self.backgroundColor = CJColorFromHexString([CJThemeManager serviceThemeModel].alertThemeModel.backgroundColor);
+//        self.clipsToBounds = YES;
+        
         _size = size;
         _firstVerticalInterval = firstVerticalInterval;
         _secondVerticalInterval = secondVerticalInterval;
         _thirdVerticalInterval = thirdVerticalInterval;
         _bottomMinVerticalInterval = bottomMinVerticalInterval;
+    }
+    return self;
+}
+
+/**
+ *  创建alertView
+ *
+ *  @param size                     alertView的大小
+ *
+ *  @return alertView
+ */
+- (instancetype)initWithSize:(CGSize)size
+{
+    self = [super init];
+    if (self) {
+        self.backgroundColor = [UIColor whiteColor];
+        self.layer.cornerRadius = 3;
+        
+        _size = size;
     }
     return self;
 }
@@ -146,7 +161,7 @@
     UIFont *titleLabelFont = [UIFont systemFontOfSize:18.0];
     CGFloat titleLabelMaxWidth = self.size.width - 2*titleLabelLeftOffset;
     CGSize titleLabelMaxSize = CGSizeMake(titleLabelMaxWidth, CGFLOAT_MAX);
-    CGSize titleTextSize = [CJAlertView getTextSizeFromString:title withFont:titleLabelFont maxSize:titleLabelMaxSize mode:NSLineBreakByCharWrapping];
+    CGSize titleTextSize = [CJBaseAlertView getTextSizeFromString:title withFont:titleLabelFont maxSize:titleLabelMaxSize mode:NSLineBreakByCharWrapping];
     CGFloat titleTextHeight = titleTextSize.height;
     
     UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectZero];
@@ -175,7 +190,7 @@
     UIFont *messageLabelFont = [UIFont systemFontOfSize:15.0];
     CGFloat messageLabelMaxWidth = self.size.width - 2*messageLabelLeftOffset;
     CGSize messageLabelMaxSize = CGSizeMake(messageLabelMaxWidth, CGFLOAT_MAX);
-    CGSize messageTextSize = [CJAlertView getTextSizeFromString:message withFont:messageLabelFont maxSize:messageLabelMaxSize mode:NSLineBreakByCharWrapping];
+    CGSize messageTextSize = [CJBaseAlertView getTextSizeFromString:message withFont:messageLabelFont maxSize:messageLabelMaxSize mode:NSLineBreakByCharWrapping];
     CGFloat messageTextHeight = messageTextSize.height;
     
     UILabel *messageLabel = [[UILabel alloc] initWithFrame:CGRectZero];
@@ -196,118 +211,67 @@
 }
 */
 
+#pragma mark - 简洁的添加方法
+/**
+ *  添加标题
+ *
+ *  @param title    标题
+ *  @param titleLabelLeftOffset    titleLabelLeftOffset
+ */
+- (void)addTitle:(NSString *)title margin:(CGFloat)titleLabelLeftOffset {
+    NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle defaultParagraphStyle] mutableCopy];
+   paragraphStyle.lineBreakMode = NSLineBreakByCharWrapping;
+   paragraphStyle.lineSpacing = 5;
+   [self addTitleWithText:title font:[UIFont boldSystemFontOfSize:15.0] textAlignment:NSTextAlignmentCenter margin:titleLabelLeftOffset paragraphStyle:paragraphStyle];
+    self.titleLabel.textColor = CJColorFromHexString(@"#000000");
+}
+
+
+#pragma mark - 完整的添加方法
 ///添加指示图标
 - (void)addFlagImage:(UIImage *)flagImage size:(CGSize)imageViewSize {
     if (_flagImageView == nil) {
-        UIImageView *flagImageView = [[UIImageView alloc] init];
+        UIImageView *flagImageView = [CJAlertComponentFactory flagImage:flagImage];
         [self addSubview:flagImageView];
         
         _flagImageView = flagImageView;
     }
-    _flagImageView.image = flagImage;
     
-    [self.flagImageView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.centerX.mas_equalTo(self);
-        make.width.mas_equalTo(imageViewSize.width);
-        make.top.mas_equalTo(self).mas_offset(self.firstVerticalInterval);
-        make.height.mas_equalTo(imageViewSize.height);
-    }];
     _flagImageViewHeight = imageViewSize.height;
-    
-    if (self.titleLabel) {
-        //由于约束部分不一样，使用update会增加一个新约束，又没设置优先级，从而导致约束冲突。而如果用remake的话，又需要重新设置之前已经设置过的，否则容易缺失。所以使用masnory时候，使用优先级比较合适
-        [self.titleLabel mas_updateConstraints:^(MASConstraintMaker *make) {
-            make.top.mas_equalTo(self.flagImageView.mas_bottom).mas_offset(self.secondVerticalInterval);
-        }];
-    }
-    
-    if (self.messageScrollView) {
-        [self.messageScrollView mas_updateConstraints:^(MASConstraintMaker *make) {
-            if (self.titleLabel) {
-                make.top.mas_equalTo(self.titleLabel.mas_bottom).mas_offset(self.thirdVerticalInterval);
-                
-            } else {
-                make.top.mas_greaterThanOrEqualTo(self.flagImageView.mas_bottom).mas_offset(self.secondVerticalInterval);
-            }
-        }];
-    }
 }
 
 ///添加title
-- (void)addTitleWithText:(NSString *)text font:(UIFont *)font textAlignment:(NSTextAlignment)textAlignment margin:(CGFloat)titleLabelLeftOffset paragraphStyle:(NSMutableParagraphStyle *)paragraphStyle {
+- (void)addTitleWithText:(NSString *)text
+                    font:(UIFont *)font
+           textAlignment:(NSTextAlignment)textAlignment
+                  margin:(CGFloat)titleLabelLeftOffset
+          paragraphStyle:(NSMutableParagraphStyle *)paragraphStyle
+{
     if (CGSizeEqualToSize(self.size, CGSizeZero)) {
         return;
     }
     
+    CGFloat titleLabelMaxWidth = self.size.width - 2*titleLabelLeftOffset;
     if (_titleLabel == nil) {
-        UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectZero];
-        //titleLabel.backgroundColor = [UIColor purpleColor];
-        titleLabel.numberOfLines = 0;
-        titleLabel.textAlignment = NSTextAlignmentCenter;
-        titleLabel.textColor = [UIColor blackColor];
+        CJAlertTitleLableModel *titleLableModel = [CJAlertComponentFactory titleLabelWithText:text font:font textAlignment:textAlignment titleLabelMaxWidth:titleLabelMaxWidth paragraphStyle:paragraphStyle];
+        UILabel *titleLabel = titleLableModel.titleLable;
         [self addSubview:titleLabel];
         
         _titleLabel = titleLabel;
-    }
-    
-    if (text == nil) {
-        text = @""; //若为nil,则设置[[NSMutableAttributedString alloc] initWithString:labelText]的时候会崩溃
-    }
-    
-    CGFloat titleLabelMaxWidth = self.size.width - 2*titleLabelLeftOffset;
-    CGSize titleLabelMaxSize = CGSizeMake(titleLabelMaxWidth, CGFLOAT_MAX);
-    
-
-    CGSize titleTextSize = [CJAlertView getTextSizeFromString:text withFont:font maxSize:titleLabelMaxSize lineBreakMode:NSLineBreakByCharWrapping paragraphStyle:paragraphStyle];
-    CGFloat titleTextHeight = titleTextSize.height;
-    
-    NSMutableArray *lineStringArray = [CJAlertView getLineStringArrayForText:text withFont:font maxTextWidth:titleLabelMaxWidth];
-    CGFloat lineCount = lineStringArray.count;
-    CGFloat lineSpacing = paragraphStyle.lineSpacing;
-    if (lineSpacing == 0) {
-        lineSpacing = 2;
-    }
-    titleTextHeight += lineCount * lineSpacing;
-    
-    if (paragraphStyle == nil) {
-        self.titleLabel.text = text;
-    } else {
-        NSDictionary *attributes = @{NSParagraphStyleAttributeName: paragraphStyle,
-                                     NSFontAttributeName:           font,
-                                     //NSForegroundColorAttributeName:textColor
-                                     //NSKernAttributeName:           @1.5f       //字体间距
-                                     };
-        NSMutableAttributedString *attributedText = [[NSMutableAttributedString alloc] initWithString:text];
-        [attributedText addAttributes:attributes range:NSMakeRange(0, text.length)];
-        //[attributedText addAttribute:NSParagraphStyleAttributeName value:paragraphStyle range:NSMakeRange(0, text.length)];
-        
-        self.titleLabel.attributedText = attributedText;
-    }
-    
-    self.titleLabel.font = font;
-    self.titleLabel.textAlignment = textAlignment;
-    [self.titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.centerX.mas_equalTo(self);
-        make.left.mas_equalTo(self).mas_offset(titleLabelLeftOffset);
-        if (self.flagImageView) {
-            make.top.mas_equalTo(self.flagImageView.mas_bottom).mas_offset(self.secondVerticalInterval);
-        } else {
-            make.top.mas_greaterThanOrEqualTo(self).mas_offset(self.firstVerticalInterval);//优先级
-        }
-        make.height.mas_equalTo(titleTextHeight);
-    }];
-    _titleLabelHeight = titleTextHeight;
-    
-    if (self.messageScrollView) {
-        [self.messageScrollView mas_updateConstraints:^(MASConstraintMaker *make) {
-            if (self.flagImageView) {
-                make.top.mas_equalTo(self.titleLabel.mas_bottom).mas_offset(self.thirdVerticalInterval);
-            } else {
-                make.top.mas_equalTo(self.titleLabel.mas_bottom).mas_offset(self.secondVerticalInterval);
-            }
-        }];
+        _titleLabelHeight = titleLableModel.titleTextHeight;
     }
 }
+
+- (void)addMessage:(NSString *)message margin:(CGFloat)messageLabelLeftOffset {
+    if (message.length > 0) {
+        NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle defaultParagraphStyle] mutableCopy];
+        paragraphStyle.lineBreakMode = NSLineBreakByCharWrapping;
+        paragraphStyle.lineSpacing = 3;
+        paragraphStyle.firstLineHeadIndent = 10;
+        [self addMessageWithText:message font:[UIFont systemFontOfSize:15.0] textAlignment:NSTextAlignmentCenter margin:messageLabelLeftOffset paragraphStyle:paragraphStyle];
+    }
+}
+
 
 ///添加message的方法(paragraphStyle:当需要设置message行距、缩进等的时候才需要设置，其他设为nil即可)
 - (void)addMessageWithText:(NSString *)text font:(UIFont *)font textAlignment:(NSTextAlignment)textAlignment margin:(CGFloat)messageLabelLeftOffset paragraphStyle:(NSMutableParagraphStyle *)paragraphStyle {
@@ -320,91 +284,23 @@
         return;
     }
     
+    CGFloat messageLabelMaxWidth = self.size.width - 2*messageLabelLeftOffset;
     if (_messageScrollView == nil) {
-        UIScrollView *scrollView = [[UIScrollView alloc] init];
-        //scrollView.backgroundColor = [UIColor redColor];
+        CJAlertMessageLableModel *messageLableModel = [CJAlertComponentFactory messageLabelWithText:text font:font textAlignment:textAlignment messageLabelMaxWidth:messageLabelMaxWidth paragraphStyle:paragraphStyle];
+        
+        UIScrollView *scrollView = messageLableModel.messageScrollView;
         [self addSubview:scrollView];
         self.messageScrollView = scrollView;
         
-        UIView *containerView = [[UIView alloc] init];
-        //containerView.backgroundColor = [UIColor greenColor];
+        UIView *containerView = messageLableModel.messageContainerView;
         [scrollView addSubview:containerView];
         self.messageContainerView = containerView;
         
-        UIColor *messageTextColor = [UIColor colorWithRed:136/255.0 green:136/255.0 blue:136/255.0 alpha:1]; //#888888
-        
-        UILabel *messageLabel = [[UILabel alloc] initWithFrame:CGRectZero];
-        messageLabel.numberOfLines = 0;
-        //UITextView *messageLabel = [[UITextView alloc] initWithFrame:CGRectZero];
-        //messageLabel.editable = NO;
-        
-        messageLabel.textAlignment = NSTextAlignmentCenter;
-        messageLabel.textColor = messageTextColor;
-        [containerView addSubview:messageLabel];
-        
+        UILabel *messageLabel = messageLableModel.messageLabel;
         _messageLabel = messageLabel;
-    }
-    CGFloat messageLabelMaxWidth = self.size.width - 2*messageLabelLeftOffset;
-    CGSize messageLabelMaxSize = CGSizeMake(messageLabelMaxWidth, CGFLOAT_MAX);
-    CGSize messageTextSize = [CJAlertView getTextSizeFromString:text withFont:font maxSize:messageLabelMaxSize lineBreakMode:NSLineBreakByCharWrapping paragraphStyle:paragraphStyle];
-    CGFloat messageTextHeight = messageTextSize.height;
-    
-    NSMutableArray *lineStringArray = [CJAlertView getLineStringArrayForText:text withFont:font maxTextWidth:messageLabelMaxWidth];
-    CGFloat lineCount = lineStringArray.count;
-    CGFloat lineSpacing = paragraphStyle.lineSpacing;
-    if (lineSpacing == 0) {
-        lineSpacing = 2;
-    }
-    messageTextHeight += lineCount * lineSpacing;
-    
-    if (paragraphStyle == nil) {
-        self.messageLabel.text = text;
-    } else {
-        NSDictionary *attributes = @{NSParagraphStyleAttributeName: paragraphStyle,
-                                     NSFontAttributeName:           font,
-                                     //NSForegroundColorAttributeName:textColor
-                                     //NSKernAttributeName:           @1.5f       //字体间距
-                                     };
-        NSMutableAttributedString *attributedText = [[NSMutableAttributedString alloc] initWithString:text];
-        [attributedText addAttributes:attributes range:NSMakeRange(0, text.length)];
-        //[attributedText addAttribute:NSParagraphStyleAttributeName value:paragraphStyle range:NSMakeRange(0, text.length)];
         
-        self.messageLabel.attributedText = attributedText;
+        _messageLabelHeight = messageLableModel.messageTextHeight;
     }
-    
-    self.messageLabel.font = font;
-    self.messageLabel.textAlignment = textAlignment;
-    [self.messageScrollView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.centerX.mas_equalTo(self);
-        make.left.mas_equalTo(self).mas_offset(messageLabelLeftOffset);
-        if (self.titleLabel) {
-            if (self.flagImageView) {
-                make.top.mas_equalTo(self.titleLabel.mas_bottom).mas_offset(self.thirdVerticalInterval);
-            } else {
-                make.top.mas_equalTo(self.titleLabel.mas_bottom).mas_offset(self.secondVerticalInterval);
-            }
-        } else if (self.flagImageView) {
-            make.top.mas_greaterThanOrEqualTo(self.flagImageView.mas_bottom).mas_offset(self.secondVerticalInterval);//优先级
-        } else {
-            make.top.mas_greaterThanOrEqualTo(self).mas_offset(self.firstVerticalInterval);//优先级
-        }
-        
-        make.height.mas_equalTo(messageTextHeight);
-    }];
-    
-    [self.messageContainerView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.right.mas_equalTo(self.messageScrollView);
-        make.top.bottom.mas_equalTo(self.messageScrollView);
-        make.width.mas_equalTo(self.messageScrollView.mas_width);
-        make.height.mas_equalTo(messageTextHeight);
-    }];
-    
-    [self.messageLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.right.mas_equalTo(self.messageContainerView);
-        make.top.mas_equalTo(self.messageContainerView);
-        make.height.mas_equalTo(messageTextHeight);
-    }];
-    _messageLabelHeight = messageTextHeight;
 }
 
 ///添加 message 的边框等(几乎不会用到)
@@ -420,70 +316,79 @@
     self.messageScrollView.layer.cornerRadius = cornerRadius;
 }
 
-///添加底部按钮
-/**
- *  添加底部按钮方法①：按指定布局添加底部按钮
- *
- *  @param bottomButtons        要添加的按钮组合(得在外部额外实现点击后的关闭alert操作)
- *  @param actionButtonHeight   按钮高度
- *  @param bottomInterval       按钮与底部的距离
- *  @param axisType             横排还是竖排
- *  @param fixedSpacing         两个控件间隔
- *  @param leadSpacing          第一个控件与边缘的间隔
- *  @param tailSpacing          最后一个控件与边缘的间隔
- */
-- (void)addBottomButtons:(NSArray<UIButton *> *)bottomButtons
-              withHeight:(CGFloat)actionButtonHeight
-          bottomInterval:(CGFloat)bottomInterval
-               alongAxis:(MASAxisType)axisType
-            fixedSpacing:(CGFloat)fixedSpacing
-             leadSpacing:(CGFloat)leadSpacing
-             tailSpacing:(CGFloat)tailSpacing
-{
-    NSInteger buttonCount = bottomButtons.count;
-    if (axisType == MASAxisTypeHorizontal) {
-        _bottomPartHeight = 0 + actionButtonHeight + bottomInterval;
-    } else {
-        _bottomPartHeight = leadSpacing + buttonCount*(actionButtonHeight+fixedSpacing)-fixedSpacing + tailSpacing;
-    }
+- (void)addTextFiledWithPlaceholder:(NSString *)placeholder {
+    self.textField = [CJAlertComponentFactory textFiledWithPlaceholder:placeholder];
+    __weak typeof(self)weakSelf = self;
+    self.textField.cjTextDidChangeBlock = ^(UITextField *textField) {
+        BOOL okEnable = textField.text.length > 0;
+        weakSelf.okButton.enabled = okEnable;
+    };
+    [self addSubview:self.textField];
     
-    for (UIButton *bottomButton in bottomButtons) {
-        [self addSubview:bottomButton];
-    }
-    
-    if (buttonCount > 1) {
-        [bottomButtons mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.bottom.mas_equalTo(-bottomInterval);
-            make.height.mas_equalTo(actionButtonHeight);
-        }];
-        [bottomButtons mas_distributeViewsAlongAxis:axisType withFixedSpacing:fixedSpacing leadSpacing:leadSpacing tailSpacing:tailSpacing];
-    } else {
-        [bottomButtons mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.bottom.mas_equalTo(-bottomInterval);
-            make.height.mas_equalTo(actionButtonHeight);
-            make.left.mas_equalTo(self).mas_offset(leadSpacing);
-            make.right.mas_equalTo(self).mas_offset(-tailSpacing);
-        }];
-    }
+    self.textFieldHeight = 43;
 }
 
-///只添加一个按钮
-- (void)addOnlyOneBottomButton:(UIButton *)bottomButton
-                    withHeight:(CGFloat)actionButtonHeight
-                bottomInterval:(CGFloat)bottomInterval
-                    leftOffset:(CGFloat)leftOffset
-                   rightOffset:(CGFloat)rightOffset
+/**
+*  添加 "OK" 的 组合按钮
+*
+*  @param okButtonTitle        确认文案
+*  @param okHandle             确认时间
+*/
+- (void)addOnlyOneBottomButtonWithOKButtonTitle:(NSString *)okButtonTitle
+                                       okHandle:(void(^)(void))okHandle
 {
-    _bottomPartHeight = 0 + actionButtonHeight + bottomInterval;
-    
-    [self addSubview:bottomButton];
-    
-    [bottomButton mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.bottom.mas_equalTo(-bottomInterval);
-        make.height.mas_equalTo(actionButtonHeight);
-        make.left.mas_equalTo(self).mas_offset(leftOffset);
-        make.right.mas_equalTo(self).mas_offset(-rightOffset);
+    __weak typeof(self)weakSelf = self;
+    CJAlertBottomButtonsModel *bottomButtonsModel = [CJAlertComponentFactory onlyOneBottomButtonWithIKnowButtonTitle:okButtonTitle
+                                                                                                        iKnowHandle:^(UIButton *button) {
+        [weakSelf dismissWithDelay:0];
+        if (okHandle) {
+            okHandle();
+        }
     }];
+    self.okButton = bottomButtonsModel.okButton;
+    _bottomButtonView = bottomButtonsModel.bottomButtonView;
+    
+//    _bottomPartHeight = 0 + actionButtonHeight + bottomInterval;
+    _bottomPartHeight = 45;
+    
+    [self addSubview:bottomButtonsModel.bottomButtonView];
+}
+
+
+///添加底部按钮
+/**
+ *  添加 "Cancel" + "OK" 的 组合按钮
+ *
+ *  @param cancelButtonTitle    取消文案
+ *  @param okButtonTitle        确认文案
+ *  @param cancelHandle         取消事件
+ *  @param okHandle             确认时间
+ */
+- (void)addTwoButtonsWithCancelButtonTitle:(NSString *)cancelButtonTitle
+                             okButtonTitle:(NSString *)okButtonTitle
+                              cancelHandle:(void(^)(void))cancelHandle
+                                  okHandle:(void(^)(void))okHandle
+{
+    __weak typeof(self)weakSelf = self;
+    CJAlertBottomButtonsModel *bottomButtonsModel = [CJAlertComponentFactory twoButtonsWithCancelButtonTitle:cancelButtonTitle okButtonTitle:okButtonTitle cancelHandle:^(UIButton *button) {
+        [weakSelf dismissWithDelay:0];
+        if (cancelHandle) {
+            cancelHandle();
+        }
+    } okHandle:^(UIButton *button) {
+        [weakSelf dismissWithDelay:0];
+        if (okHandle) {
+            okHandle();
+        }
+    }];
+    self.okButton = bottomButtonsModel.okButton;
+    self.cancelButton = bottomButtonsModel.cancelButton;
+    self.bottomButtonView = bottomButtonsModel.bottomButtonView;
+    
+//    _bottomPartHeight = 0 + actionButtonHeight + bottomInterval;
+    self.bottomPartHeight = bottomButtonsModel.bottomPartHeight;
+    
+    [self addSubview:bottomButtonsModel.bottomButtonView];
 }
 
 
@@ -712,107 +617,6 @@
     minHeightWithMessageLabel = ceil(minHeightWithMessageLabel);
     
     return minHeightWithMessageLabel;
-}
-
-#pragma mark - Private
-//以下两个获取textSize取自NSString+CJTextSize
-+ (CGSize)getTextSizeFromString:(NSString *)string withFont:(UIFont *)font
-{
-    if (string.length == 0)
-        return CGSizeZero;
-    if ([string respondsToSelector:@selector(sizeWithAttributes:)])
-    {
-        CGSize size = [string sizeWithAttributes:@{NSFontAttributeName:font}];
-        return CGSizeMake(ceil(size.width), ceil(size.height));
-    }
-    else
-    {
-#pragma clang diagnostic push
-#pragma clang diagnostic ignored "-Wdeprecated-declarations"
-        return [string sizeWithFont:font];
-#pragma clang diagnostic pop
-    }
-}
-
-
-+ (CGSize)getTextSizeFromString:(NSString *)string withFont:(UIFont *)font
-                        maxSize:(CGSize)maxSize
-                  lineBreakMode:(NSLineBreakMode)lineBreakMode
-                 paragraphStyle:(NSMutableParagraphStyle *)paragraphStyle
-{
-    if (string.length == 0) {
-        return CGSizeZero;
-    }
-    
-    if ([self respondsToSelector:@selector(boundingRectWithSize:options:attributes:context:)]) {
-        if (paragraphStyle == nil) {
-            paragraphStyle = [[NSParagraphStyle defaultParagraphStyle] mutableCopy];
-            paragraphStyle.lineBreakMode = lineBreakMode;
-        }
-        
-        NSDictionary *attributes = @{NSParagraphStyleAttributeName: paragraphStyle,
-                                     NSFontAttributeName:           font,
-                                     //NSForegroundColorAttributeName:textColor
-                                     //NSKernAttributeName:           @1.5f       //字体间距
-                                     };
-        
-        NSStringDrawingOptions options = NSStringDrawingUsesLineFragmentOrigin;
-        
-        CGRect textRect = [string boundingRectWithSize:maxSize
-                                               options:options
-                                            attributes:attributes
-                                               context:nil];
-        CGSize size = textRect.size;
-        return CGSizeMake(ceil(size.width), ceil(size.height));
-    }
-    else
-    {
-#pragma clang diagnostic push
-#pragma clang diagnostic ignored "-Wdeprecated-declarations"
-        return [string sizeWithFont:font constrainedToSize:maxSize lineBreakMode:lineBreakMode];
-#pragma clang diagnostic push
-    }
-}
-
-
-
-///获取每行的字符串组成的数组
-+ (NSMutableArray<NSString *> *)getLineStringArrayForText:(NSString *)labelText
-                                                 withFont:(UIFont *)font
-                                             maxTextWidth:(CGFloat)maxTextWidth
-{
-    //convert UIFont to a CTFont
-    CFStringRef fontName = (__bridge CFStringRef)font.fontName;
-    CGFloat fontSize = font.pointSize;
-    CTFontRef fontRef = CTFontCreateWithName(fontName, fontSize, NULL);
-    NSMutableAttributedString *attString = [[NSMutableAttributedString alloc] initWithString:labelText];
-    [attString addAttribute:(NSString *)kCTFontAttributeName value:(__bridge id)fontRef range:NSMakeRange(0, attString.length)];
-    //release the CTFont we created earlier
-    CFRelease(fontRef);
-    
-    CTFramesetterRef framesetter = CTFramesetterCreateWithAttributedString((CFAttributedStringRef)attString);
-    
-    CGMutablePathRef path = CGPathCreateMutable();
-    CGPathAddRect(path, NULL, CGRectMake(0, 0, maxTextWidth, 100000));
-    CTFrameRef frame = CTFramesetterCreateFrame(framesetter, CFRangeMake(0, 0), path, NULL);
-    NSArray *lines = (__bridge NSArray *)CTFrameGetLines(frame);
-    CFRelease(frame);
-    CFRelease(path);
-    CFRelease(framesetter);
-    
-    NSMutableArray *lineStringArray = [[NSMutableArray alloc] init];
-    for (id line in lines)
-    {
-        CTLineRef lineRef = (__bridge CTLineRef )line;
-        CFRange lineRange = CTLineGetStringRange(lineRef);
-        NSRange range = NSMakeRange(lineRange.location, lineRange.length);
-        NSString *lineString = [labelText substringWithRange:range];
-        
-        [lineStringArray addObject:lineString];
-        
-    }
-    
-    return lineStringArray;
 }
 
 @end

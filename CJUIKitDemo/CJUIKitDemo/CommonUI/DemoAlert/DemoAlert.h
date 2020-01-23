@@ -8,9 +8,9 @@
 
 #import <Foundation/Foundation.h>
 #ifdef TEST_CJBASEUIKIT_POD
-#import "CJAlertView.h"
+#import "CJBaseAlertView.h"
 #else
-#import <CJBaseUIKit/CJAlertView.h>
+#import <CJBaseUIKit/CJBaseAlertView.h>
 #endif
 
 

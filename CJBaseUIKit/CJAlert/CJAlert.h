@@ -24,7 +24,7 @@
                 inViewController:(UIViewController *)viewController;
 
 
-#pragma mark - CJAlertView
+#pragma mark - CJBaseAlertView
 /// 显示 title + message + 我知道了
 + (void)showIKnowWithTitle:(NSString *)title message:(NSString *)message okHandle:(void(^)(void))okHandle;
 
