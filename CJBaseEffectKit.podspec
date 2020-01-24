@@ -46,6 +46,14 @@ Pod::Spec.new do |s|
   # s.dependency 'Masonry'
 
 
+  s.subspec 'CJRefresh' do |ss|
+    ss.source_files = "CJBaseEffectKit/CJRefresh/**/*.{h,m}"
+    # ss.resources = "CJBaseEffectKit/CJRefreshView/**/*.{png,xib}"
+    
+    ss.dependency 'Masonry'
+    ss.dependency 'lottie-ios', '~> 2.5.3'
+  end
+
   s.subspec 'CJRefreshView' do |ss|
     ss.source_files = "CJBaseEffectKit/CJRefreshView/**/*.{h,m}"
     # ss.resources = "CJBaseEffectKit/CJRefreshView/**/*.{png,xib}"

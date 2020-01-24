@@ -22,6 +22,9 @@
 #import <CJFoundation/NSString+CJCut.h>
 #import <CJFoundation/NSString+CJAttributedString.h>
 
+#import "CJProgressHUD.h"
+#import <CJBaseEffectKit/CJRefreshAnimateManager.h>
+
 @interface AppDelegate ()
 
 @end
@@ -51,6 +54,9 @@
     NSAttributedString *attributedTitle = [title attributedStringForSepicalBetweenStart:@"{{" end:@"}}" middleStringAttributedModel:stringAttributedModel];
     
     YunInstallUncaughtExceptionHandler();
+    
+    [CJProgressHUD updateAnimationNamed:@"loading_tea"];
+    [CJRefreshAnimateManager sharedInstance].animationNamed = @"loading_coffee";
     
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         //默认的设置，如网络监听等

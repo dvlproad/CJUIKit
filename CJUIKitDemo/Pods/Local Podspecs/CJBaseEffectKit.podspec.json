@@ -19,6 +19,18 @@
   "requires_arc": true,
   "subspecs": [
     {
+      "name": "CJRefresh",
+      "source_files": "CJBaseEffectKit/CJRefresh/**/*.{h,m}",
+      "dependencies": {
+        "Masonry": [
+
+        ],
+        "lottie-ios": [
+          "~> 2.5.3"
+        ]
+      }
+    },
+    {
       "name": "CJRefreshView",
       "source_files": "CJBaseEffectKit/CJRefreshView/**/*.{h,m}"
     },

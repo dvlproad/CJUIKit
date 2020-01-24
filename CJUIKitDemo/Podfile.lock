@@ -3,6 +3,7 @@ PODS:
   - CJBaseEffectKit (0.0.1):
     - CJBaseEffectKit/CJDataEmptyView (= 0.0.1)
     - CJBaseEffectKit/CJMJRefreshComponent (= 0.0.1)
+    - CJBaseEffectKit/CJRefresh (= 0.0.1)
     - CJBaseEffectKit/CJRefreshView (= 0.0.1)
     - CJBaseEffectKit/CJScaleHeadView (= 0.0.1)
   - CJBaseEffectKit/CJDataEmptyView (0.0.1):
@@ -10,6 +11,9 @@ PODS:
     - Masonry
   - CJBaseEffectKit/CJMJRefreshComponent (0.0.1):
     - MJRefresh
+  - CJBaseEffectKit/CJRefresh (0.0.1):
+    - lottie-ios (~> 2.5.3)
+    - Masonry
   - CJBaseEffectKit/CJRefreshView (0.0.1)
   - CJBaseEffectKit/CJScaleHeadView (0.0.1)
   - CJBaseHelper (0.1.4):
@@ -176,7 +180,7 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
-  CJBaseEffectKit: 9dd70f5430ed582d816e60cfece03ae5bcaccf55
+  CJBaseEffectKit: 65c839b264108d18b0edcd6642cc5a119c48b6a1
   CJBaseHelper: dd715e18591da9df5d06364098300591220f0535
   CJBaseTest: a7975369dd9cad3111ea8a8465ccdb1d50752499
   CJBaseUtil: 1bbf8d5f831dc12ae4bb06c8b5326bd39f3522e1
