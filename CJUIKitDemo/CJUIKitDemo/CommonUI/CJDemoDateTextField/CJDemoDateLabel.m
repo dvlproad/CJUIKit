@@ -9,6 +9,12 @@
 #import "CJDemoDateLabel.h"
 #import "CJDemoDatePickerView.h"
 
+#ifdef TEST_CJBASEUIKIT_POD
+#import "UIView+CJPopupInView.h"
+#else
+#import <CJBaseUIKit/UIView+CJPopupInView.h>
+#endif
+
 @interface CJDemoDateLabel () {
     
 }

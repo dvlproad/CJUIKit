@@ -60,14 +60,26 @@
  */
 + (CJAlertThemeModel *)defaultAlertThemeModel {
     CJAlertThemeModel *alertThemeModel = [[CJAlertThemeModel alloc] init];
+    
+    CGFloat screenWidth = [[UIScreen mainScreen] bounds].size.width;
+    alertThemeModel.alertWidth = screenWidth - 2*60;
+    
     alertThemeModel.backgroundColor = @"#FFFFFF";
     alertThemeModel.textFieldBackgroundColor = @"#F1F1F1";
     
+    // alert 水平上的左间距:LeftOffset
+    alertThemeModel.titleLabelLeftOffset    = 20;
+    alertThemeModel.messageLabelLeftOffset  = 20;
+    alertThemeModel.bottomButtonsLeftOffset = 0;
+    
     // alert 竖直上的间距:alertMarginVertical
-    alertThemeModel.marginVertical_title_buttons = @[@30, @30, @0 , @0];
-    alertThemeModel.marginVertical_title_message_buttons = @[@20, @10, @20, @0];
-    alertThemeModel.marginVertical_message_buttons = @[@30, @30, @0, @0];
-    alertThemeModel.marginVertical_flagImage_title_message_buttons = @[@30, @30, @0, @0];
+    alertThemeModel.marginVertical_flagImage_title_message_buttons  = @[@20, @20, @10, @20, @0];
+    alertThemeModel.marginVertical_title_message_buttons            = @[@20, @10, @20, @0];
+    alertThemeModel.marginVertical_title_buttons                    = @[@30, @30, @0];
+    alertThemeModel.marginVertical_message_buttons                  = @[@30, @30, @0];
+    
+    alertThemeModel.marginVertical_title_textField_buttons          = @[@30, @30, @30, @0];
+    
     
     return alertThemeModel;
 }

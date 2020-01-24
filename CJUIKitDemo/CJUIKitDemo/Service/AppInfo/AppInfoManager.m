@@ -8,8 +8,8 @@
 
 #import "AppInfoManager.h"
 #import <SystemConfiguration/CaptiveNetwork.h>
-#import "DemoAlert.h"
 
+#import "CQAlertManager.h"
 
 @interface AppInfoManager ()
 
@@ -84,9 +84,9 @@
     
     NSNotificationCenter *defaultCenter = [NSNotificationCenter defaultCenter];
     if (!currentNetworkEnable) {
-        [DemoAlert showNetworkNoOpenAlert:YES];
+        [[CQAlertManager sharedInstance] showNetworkNoOpenAlert:YES];
     } else {
-        [DemoAlert showNetworkNoOpenAlert:NO];
+        [[CQAlertManager sharedInstance] showNetworkNoOpenAlert:NO];
         [defaultCenter postNotificationName:@"NetworkEnableChange" object:nil];
     }
 }

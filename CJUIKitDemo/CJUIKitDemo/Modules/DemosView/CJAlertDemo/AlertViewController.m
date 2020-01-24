@@ -10,7 +10,9 @@
 #import "CJModuleModel.h"
 
 #import "CJAlert.h"
-#import "CJBaseAlertView.h"
+#import "CJAlertUtil.h"
+#import "CJMessageAlertView.h"
+#import "CJTextInputAlertView.h"
 
 #import "TestDataUtil.h"
 #import "CJConvertUtil.h"
@@ -60,56 +62,42 @@
     //以下几个为自定义的View
     {
         CJSectionDataModel *sectionDataModel = [[CJSectionDataModel alloc] init];
-        sectionDataModel.theme = @"自定义的View";
-        {
-            CJModuleModel *toastModule = [[CJModuleModel alloc] init];
-            toastModule.title = @"FlagImage & Title & Message & OK & Cancel";
-            toastModule.actionBlock = ^{
-                NSString *stationName = @"厦门市软件园二期";
-                [self showInvalidStationAlertForStationName:stationName];
-            };
-            [sectionDataModel.values addObject:toastModule];
-        }
+        sectionDataModel.theme = @"自定义的View(有图片)";
         {
             CJModuleModel *toastModule = [[CJModuleModel alloc] init];
             toastModule.title = @"FlagImage & Title & Message & OK";
-            toastModule.actionBlock = ^{
-                UIImage *flagImage = [UIImage imageNamed:@"scan_icon_notice"];
-                NSString *title = NSLocalizedString(@"未通过", nil);
-                NSString *message = NSLocalizedString(@"班次不符，请核对车票信息", nil);
-                __weak typeof(self)weakSelf = self;
-                [CJAlert showIKnowAlertWithFlagImage:flagImage title:title message:message okHandle:^{
-                    NSLog(@"点击了确认按钮");
-                    [weakSelf continueScanning];
-                }];
-            };
+            toastModule.selector = @selector(show_flagImage_title_message_iKnow);
             [sectionDataModel.values addObject:toastModule];
         }
         {
             CJModuleModel *toastModule = [[CJModuleModel alloc] init];
-            toastModule.title = @"Title & OK & Cancel";
-            toastModule.actionBlock = ^{
-                NSString *stationName = @"厦门市软件园二期";
-                [self checkAllowGetOnAtStationName:stationName];
-            };
+            toastModule.title = @"FlagImage & Title & Message & OK & Cancel";
+            toastModule.selector = @selector(show_flagImage_title_message_cancel_OK);
             [sectionDataModel.values addObject:toastModule];
         }
+        [sectionDataModels addObject:sectionDataModel];
+    }
+    
+    //以下几个为自定义的View
+    {
+        CJSectionDataModel *sectionDataModel = [[CJSectionDataModel alloc] init];
+        sectionDataModel.theme = @"自定义的View(无图片)";
         {
             CJModuleModel *toastModule = [[CJModuleModel alloc] init];
             toastModule.title = @"Title & Message & OK";
-            toastModule.actionBlock = ^{
-                NSString *title = NSLocalizedString(@"友情提示", nil);
-                NSString *message = NSLocalizedString(@"您当前处于离线状态，请检查您的网络", nil);
-                [CJAlert showIKnowWithTitle:title message:message okHandle:^{
-                    NSLog(@"点击了确认按钮");
-                }];
-            };
+            toastModule.selector = @selector(show_title_message_iKnow);
             [sectionDataModel.values addObject:toastModule];
         }
         {
             CJModuleModel *toastModule = [[CJModuleModel alloc] init];
             toastModule.title = @"Title & Message & OK & Cancel";
-            toastModule.selector = @selector(showBorderAlert);
+            toastModule.selector = @selector(show_title_message_cancel_OK);
+            [sectionDataModel.values addObject:toastModule];
+        }
+        {
+            CJModuleModel *toastModule = [[CJModuleModel alloc] init];
+            toastModule.title = @"Title & OK & Cancel";
+            toastModule.selector = @selector(show_title_cancel_OK);
             [sectionDataModel.values addObject:toastModule];
         }
         [sectionDataModels addObject:sectionDataModel];
@@ -128,7 +116,7 @@
                 NSMutableString *appExtraInfo = [NSMutableString string];
                 [appExtraInfo appendFormat:@"appDomain: %@", appDomain];
                 
-                [CJAlert showDebugViewWithAppExtraInfo:appExtraInfo];
+                [CJAlertUtil showDebugViewWithAppExtraInfo:appExtraInfo];
             };
             [sectionDataModel.values addObject:debugViewModule];
         }
@@ -189,9 +177,35 @@
     
 }
 
-- (void)showBorderAlert {
-    CGFloat screenWidth = CGRectGetWidth([[UIScreen mainScreen] bounds]);
-    CGSize popupViewSize = CGSizeMake(screenWidth * 0.7, 200);
+- (void)show_flagImage_title_message_iKnow {
+    UIImage *flagImage = [UIImage imageNamed:@"scan_icon_notice"];
+    NSString *title = NSLocalizedString(@"未通过", nil);
+    NSString *message = NSLocalizedString(@"班次不符，请核对车票信息", nil);
+    [CJAlertUtil showAlertViewWithFlagImage:flagImage title:title message:message okButtonTitle:NSLocalizedString(@"我知道了", nil) okHandle:^{
+        NSLog(@"点击了确认按钮");
+    }];
+}
+
+- (void)show_flagImage_title_message_cancel_OK {
+    UIImage *flagImage = [UIImage imageNamed:@"scan_icon_notice"];
+    NSString *title = NSLocalizedString(@"未通过", nil);
+    NSString *message = [NSString stringWithFormat:@"上车站点不符，应上车站点：\n【%@】", @"厦门市软件园二期"];
+    [CJAlertUtil showAlertViewWithFlagImage:flagImage title:title message:message cancelButtonTitle:NSLocalizedString(@"我知道了", nil) okButtonTitle:NSLocalizedString(@"允许上车", nil) cancelHandle:^{
+        NSLog(@"我知道了");
+    } okHandle:^{
+        NSLog(@"允许上车");
+    }];
+}
+
+- (void)show_title_message_iKnow {
+    NSString *title = NSLocalizedString(@"友情提示", nil);
+    NSString *message = NSLocalizedString(@"您当前处于离线状态，请检查您的网络", nil);
+    [CJAlertUtil showAlertViewWithFlagImage:nil title:title message:message okButtonTitle:NSLocalizedString(@"我知道了", nil) okHandle:^{
+        NSLog(@"点击了确认按钮");
+    }];
+}
+
+- (void)show_title_message_cancel_OK {
     NSString *title = NSLocalizedString(@"请先结束未完成行程才能发车", nil);
     
     NSString *flightNo = @"班次：BCD 12345";
@@ -202,68 +216,25 @@
     NSString *cancelButtonTitle = NSLocalizedString(@"取消", nil);
     NSString *okButtonTitle = NSLocalizedString(@"结束行程", nil);
     
-    CJBaseAlertView *alertView = [[CJBaseAlertView alloc] initWithSize:popupViewSize firstVerticalInterval:25 secondVerticalInterval:20 thirdVerticalInterval:10 bottomMinVerticalInterval:10];
-    [alertView addTitleWithText:title font:[UIFont systemFontOfSize:15.0] textAlignment:NSTextAlignmentCenter margin:20 paragraphStyle:nil];
-    
-    
-    NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle defaultParagraphStyle] mutableCopy];
-    paragraphStyle.lineBreakMode = NSLineBreakByCharWrapping;
-    paragraphStyle.lineSpacing = 3;
-    paragraphStyle.firstLineHeadIndent = 10;
-    [alertView addMessageWithText:message font:[UIFont systemFontOfSize:15.0] textAlignment:NSTextAlignmentLeft margin:20 paragraphStyle:paragraphStyle];
-    [alertView addMessageLayerWithBorderWidth:0.5 borderColor:nil cornerRadius:3];
-    [alertView addBottomButtonWithHeight:50 cancelButtonTitle:cancelButtonTitle okButtonTitle:okButtonTitle cancelHandle:^{
+    [CJAlertUtil showAlertViewWithFlagImage:nil title:title message:message cancelButtonTitle:cancelButtonTitle okButtonTitle:okButtonTitle cancelHandle:^{
         NSLog(@"点击了取消按钮");
     } okHandle:^{
         NSLog(@"点击了确认按钮");
     }];
-    
-    UIColor *blankBGColor = [UIColor colorWithRed:.16 green:.17 blue:.21 alpha:.6];
-    [alertView showWithShouldFitHeight:YES blankBGColor:blankBGColor];
 }
 
-
-- (void)showInvalidStationAlertForStationName:(NSString *)stationName {
-    CGFloat screenWidth = CGRectGetWidth([[UIScreen mainScreen] bounds]);
-    CGSize popupViewSize = CGSizeMake(screenWidth * 0.7, 200);
-    UIImage *flagImage = [UIImage imageNamed:@"scan_icon_notice"];
-    NSString *title = NSLocalizedString(@"未通过", nil);
-    NSString *message = [NSString stringWithFormat:@"上车站点不符，应上车站点：\n【%@】", stationName];
-    NSString *cancelButtonTitle = NSLocalizedString(@"我知道了", nil);
-    NSString *okButtonTitle = NSLocalizedString(@"允许上车", nil);
-    
-    __weak typeof(self)weakSelf = self;
-    CJBaseAlertView *alertView = [CJBaseAlertView alertViewWithSize:popupViewSize flagImage:flagImage title:title message:message cancelButtonTitle:cancelButtonTitle okButtonTitle:okButtonTitle cancelHandle:^{
-        NSLog(@"点击了取消按钮");
-    } okHandle:^{
-        NSLog(@"点击了确认按钮");
-        [weakSelf checkAllowGetOnAtStationName:stationName];
-    }];
-    
-    UIColor *blankBGColor = [UIColor colorWithRed:.16 green:.17 blue:.21 alpha:.6];
-    [alertView showWithShouldFitHeight:NO blankBGColor:blankBGColor];
-}
-
-- (void)checkAllowGetOnAtStationName:(NSString *)stationName {
+- (void)show_title_cancel_OK {
     //乘客上车站为\n【厦门市软件园二期】\n是否本站上车？
     NSString *preTitle = NSLocalizedString(@"乘客上车站为", nil);
-    NSString *midTitle = [NSString stringWithFormat:@"【%@】", stationName];
+    NSString *midTitle = [NSString stringWithFormat:@"【%@】", @"厦门市软件园二期"];
     NSString *sufTitle = NSLocalizedString(@"是否本站上车？", nil);
     NSString *title = [NSString stringWithFormat:@"%@\n%@\n%@", preTitle, midTitle, sufTitle];
     
-    [CJAlert showCancelOKAlertWithTitle:title okHandle:^{
+    [CJAlertUtil showAlertViewWithFlagImage:nil title:title message:nil cancelButtonTitle:NSLocalizedString(@"取消", nil) okButtonTitle:NSLocalizedString(@"确认", nil) cancelHandle:^{
+        NSLog(@"点击了取消按钮");
+    } okHandle:^{
         NSLog(@"点击了确认按钮");
-        [self continueScanning];
     }];
-}
-
-- (void)continueScanning {
-    
-}
-
-
-- (IBAction)showToast:(id)sender {
-    
 }
 
 
@@ -277,7 +248,7 @@
     NSDictionary *dictionary = [CJConvertUtil dictionaryFromModel:dataModel];
     NSString *message = [CJConvertUtil formattedStringFromObject:dictionary];
     
-    [CJAlert showDebugViewWithTitle:title message:message];
+    [CJAlertUtil showDebugViewWithTitle:title message:message];
 }
 
 - (void)testPrintDebugDictionary {
@@ -312,7 +283,7 @@
     //NSString *message = [CJConvertUtil formattedStringFromObject:dictionary];
     NSString *message = [CJIndentedStringUtil fullFormattedStringFromDictionary:dictionary];
     
-    [CJAlert showDebugViewWithTitle:title message:message];
+    [CJAlertUtil showDebugViewWithTitle:title message:message];
 }
 
 

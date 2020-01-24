@@ -86,10 +86,10 @@
 
 ///添加message的方法(paragraphStyle:当需要设置message行距、缩进等的时候才需要设置，其他设为nil即可)
 + (CJAlertMessageLableModel *)messageLabelWithText:(NSString *)text
-                             font:(UIFont *)font
-                    textAlignment:(NSTextAlignment)textAlignment
-             messageLabelMaxWidth:(CGFloat)messageLabelMaxWidth
-                   paragraphStyle:(NSMutableParagraphStyle *)paragraphStyle
+                                              font:(UIFont *)font
+                                     textAlignment:(NSTextAlignment)textAlignment
+                              messageLabelMaxWidth:(CGFloat)messageLabelMaxWidth
+                                    paragraphStyle:(NSMutableParagraphStyle *)paragraphStyle
 {
     //NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle defaultParagraphStyle] mutableCopy];
     //paragraphStyle.lineBreakMode = NSLineBreakByCharWrapping;
@@ -100,32 +100,7 @@
 //        return;
 //    }
     
-    UIScrollView *scrollView = [[UIScrollView alloc] init];
-    //scrollView.backgroundColor = [UIColor redColor];
-//    [self addSubview:scrollView];
-//    self.messageScrollView = scrollView;
     
-    UIView *containerView = [[UIView alloc] init];
-    //containerView.backgroundColor = [UIColor greenColor];
-    [scrollView addSubview:containerView];
-//    self.messageContainerView = containerView;
-    
-    UIColor *messageTextColor = [UIColor colorWithRed:136/255.0 green:136/255.0 blue:136/255.0 alpha:1]; //#888888
-    
-    UILabel *messageLabel = [[UILabel alloc] initWithFrame:CGRectZero];
-    messageLabel.numberOfLines = 0;
-    //UITextView *messageLabel = [[UITextView alloc] initWithFrame:CGRectZero];
-    //messageLabel.editable = NO;
-    
-    messageLabel.textAlignment = NSTextAlignmentCenter;
-    messageLabel.textColor = messageTextColor;
-    [containerView addSubview:messageLabel];
-    
-//    _messageLabel = messageLabel;
-    
-    
-    
-//    CGFloat messageLabelMaxWidth = self.size.width - 2*messageLabelLeftOffset;
     CGSize messageLabelMaxSize = CGSizeMake(messageLabelMaxWidth, CGFLOAT_MAX);
     CGSize messageTextSize = [CJAlertComponentFactory getTextSizeFromString:text withFont:font maxSize:messageLabelMaxSize lineBreakMode:NSLineBreakByCharWrapping paragraphStyle:paragraphStyle];
     CGFloat messageTextHeight = messageTextSize.height;
@@ -137,6 +112,42 @@
         lineSpacing = 2;
     }
     messageTextHeight += lineCount * lineSpacing;
+    messageTextHeight += 4;
+    
+    
+    UIScrollView *scrollView = [[UIScrollView alloc] init];
+    //scrollView.backgroundColor = [UIColor redColor];
+//    [self addSubview:scrollView];
+//    self.messageScrollView = scrollView;
+    
+    UIView *containerView = [[UIView alloc] init];
+    //containerView.backgroundColor = [UIColor greenColor];
+    [scrollView addSubview:containerView];
+    [containerView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.right.mas_equalTo(scrollView);
+        make.top.bottom.mas_equalTo(scrollView);
+        make.width.mas_equalTo(scrollView.mas_width);
+//        make.height.mas_equalTo(scrollView.mas_height).mas_offset(1);
+        make.height.mas_equalTo(messageTextHeight);
+    }];
+    
+    UIColor *messageTextColor = [UIColor colorWithRed:136/255.0 green:136/255.0 blue:136/255.0 alpha:1]; //#888888
+    
+    UILabel *messageLabel = [[UILabel alloc] initWithFrame:CGRectZero];
+    messageLabel.numberOfLines = 0;
+    //UITextView *messageLabel = [[UITextView alloc] initWithFrame:CGRectZero];
+    //messageLabel.editable = NO;
+    
+    messageLabel.textAlignment = NSTextAlignmentCenter;
+    messageLabel.textColor = messageTextColor;
+    [containerView addSubview:messageLabel];
+    [messageLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.right.mas_equalTo(containerView);
+        make.top.mas_equalTo(containerView);
+//        make.height.mas_equalTo(messageTextHeight);
+        make.bottom.mas_equalTo(containerView);
+    }];
+    
     
     if (paragraphStyle == nil) {
         messageLabel.text = text;
@@ -257,17 +268,13 @@
     UIButton *okButton = [self __spaceOKButtonWithOKButtonTitle:okButtonTitle okHandle:okHandle];
     
     CGFloat actionButtonHeight = 32;
-    CGFloat bottomInterval = 15;
+    CGFloat bottomButtonsLeftOffset = 15;
     CGFloat fixedSpacing = 10;
-    CGFloat leadSpacing = 15;
-    CGFloat tailSpacing = 15;
-    CJAlertBottomButtonsModel *bottomButtonsModel = [self __twoButtonsWithCancelButton:cancelButton
-                                                                              okButton:okButton
-                                                                    actionButtonHeight:actionButtonHeight
-                                                                        bottomInterval:bottomInterval
-                                                                          fixedSpacing:fixedSpacing
-                                                                           leadSpacing:leadSpacing
-                                                                           tailSpacing:tailSpacing];
+    CJAlertBottomButtonsModel *bottomButtonsModel = [self __horizontalTwoButtonsWithCancelButton:cancelButton
+                                                                                        okButton:okButton
+                                                                              actionButtonHeight:actionButtonHeight
+                                                                         bottomButtonsLeftOffset:bottomButtonsLeftOffset
+                                                                                    fixedSpacing:fixedSpacing];
     return bottomButtonsModel;
 }
 
@@ -290,17 +297,13 @@
     UIButton *okButton = [self __okButtonWithOKButtonTitle:okButtonTitle okHandle:okHandle];
     
     CGFloat actionButtonHeight = 45;
-    CGFloat bottomInterval = 0;
+    CGFloat bottomButtonsLeftOffset = 0;
     CGFloat fixedSpacing = 1;
-    CGFloat leadSpacing = 0;
-    CGFloat tailSpacing = 0;
-    CJAlertBottomButtonsModel *bottomButtonsModel = [self __twoButtonsWithCancelButton:cancelButton
-                                                                              okButton:okButton
-                                                                    actionButtonHeight:actionButtonHeight
-                                                                        bottomInterval:bottomInterval
-                                                                          fixedSpacing:fixedSpacing
-                                                                           leadSpacing:leadSpacing
-                                                                           tailSpacing:tailSpacing];
+    CJAlertBottomButtonsModel *bottomButtonsModel = [self __horizontalTwoButtonsWithCancelButton:cancelButton
+                                                                                        okButton:okButton
+                                                                              actionButtonHeight:actionButtonHeight
+                                                                         bottomButtonsLeftOffset:bottomButtonsLeftOffset
+                                                                                    fixedSpacing:fixedSpacing];
     UIView *bottomButtonView = bottomButtonsModel.bottomButtonView;
     
     UIColor *separateLineColor = CJColorFromHexString([CJThemeManager serviceThemeModel].separateLineColor);    //分割线颜色
@@ -326,159 +329,38 @@
     return bottomButtonsModel;
 }
 
-///**
-// *  添加 "Cancel" + "OK" 的 组合按钮
-// *
-// *  @param cancelButtonTitle    取消文案
-// *  @param okButtonTitle            确认文案
-// *  @param cancelHandle              取消事件
-// *  @param okHandle                       确认事件
-// */
-//+ (CJAlertBottomButtonsModel *)spaceTwoButtonsWithCancelButtonTitle:(NSString *)cancelButtonTitle
-//                                                 okButtonTitle:(NSString *)okButtonTitle
-//                                                  cancelHandle:(void(^)(UIButton *button))cancelHandle
-//                                                      okHandle:(void(^)(UIButton *button))okHandle
-//{
-//     UIView *bottomButtonView = [[UIView alloc] init];
-//            
-//    //bottomButtons
-//    UIButton *cancelButton = [self __sapceCancelButtonWithCancelButtonTitle:cancelButtonTitle cancelHandle:cancelHandle];;
-//    UIButton *okButton = [self __spaceOKButtonWithOKButtonTitle:okButtonTitle okHandle:okHandle];
-////    self.cancelButton = cancelButton;
-////    self.okButton = okButton;
-//    
-//    NSArray<UIButton *> *bottomButtons = @[cancelButton, okButton];
-////        [self addBottomButtons:bottomButtons withHeight:32 bottomInterval:15 alongAxis:MASAxisTypeHorizontal fixedSpacing:10 leadSpacing:15 tailSpacing:15];
-//    
-//    CGFloat bottomPartHeight = 0;
-//    CGFloat actionButtonHeight = 32;
-//    CGFloat bottomInterval = 15;
-//    MASAxisType axisType = MASAxisTypeHorizontal;
-//    CGFloat fixedSpacing = 10;
-//    CGFloat leadSpacing = 15;
-//    CGFloat tailSpacing = 15;
-//    NSInteger buttonCount = bottomButtons.count;
-//    if (axisType == MASAxisTypeHorizontal) {
-//        bottomPartHeight = 0 + actionButtonHeight + bottomInterval;
-//    } else {
-//        bottomPartHeight = leadSpacing + buttonCount*(actionButtonHeight+fixedSpacing)-fixedSpacing + tailSpacing;
-//    }
-//    self.bottomPartHeight = bottomPartHeight;
-//                
-//        for (UIButton *bottomButton in bottomButtons) {
-//            [bottomButtonView addSubview:bottomButton];
-//        }
-//    //    _bottomButtons = bottomButtons;
-//        
-//        if (buttonCount > 1) {
-//            [bottomButtons mas_makeConstraints:^(MASConstraintMaker *make) {
-//                make.bottom.mas_equalTo(-bottomInterval);
-//                make.height.mas_equalTo(actionButtonHeight);
-//            }];
-//            [bottomButtons mas_distributeViewsAlongAxis:axisType withFixedSpacing:fixedSpacing leadSpacing:leadSpacing tailSpacing:tailSpacing];
-//        } else {
-//            [bottomButtons mas_makeConstraints:^(MASConstraintMaker *make) {
-//                make.bottom.mas_equalTo(-bottomInterval);
-//                make.height.mas_equalTo(actionButtonHeight);
-//                make.left.mas_equalTo(bottomButtonView).mas_offset(leadSpacing);
-//                make.right.mas_equalTo(bottomButtonView).mas_offset(-tailSpacing);
-//            }];
-//        }
-//        
-//     
-//    
-//    self.okButton = okButton;
-//    self.cancelButton = cancelButton;
-//    self.bottomButtonView = bottomButtonView;
-//    
-//
-//    [self addSubview:bottomButtonView];
-//}
-//
-//+ (UIButton *)__spaceOKButtonWithOKButtonTitle:(NSString *)okButtonTitle
-//                                 okHandle:(void(^)(UIButton *button))okHandle
-//{
-//    UIButton *okButton = [UIButton buttonWithType:UIButtonTypeCustom];
-//    [okButton setTitleColor:CJColorFromHexString(@"#FFFFFF") forState:UIControlStateNormal];
-//    okButton.cjNormalBGColor = CJColorFromHexString(@"#2F7DE1");
-//    okButton.layer.masksToBounds = YES;
-//    okButton.layer.cornerRadius = 16;
-//    [okButton setTitle:okButtonTitle forState:UIControlStateNormal];
-//    okButton.titleLabel.font = [UIFont boldSystemFontOfSize:15];
-//    [okButton setCjTouchUpInsideBlock:okHandle];
-//    
-//    return okButton;
-//}
-//
-//+ (UIButton *)__sapceCancelButtonWithCancelButtonTitle:(NSString *)cancelButtonTitle
-//                                     cancelHandle:(void(^)(UIButton *button))cancelHandle
-//{
-//    UIButton *cancelButton = [UIButton buttonWithType:UIButtonTypeCustom];
-//    [cancelButton setTitleColor:CJColorFromHexString(@"#2F7DE1") forState:UIControlStateNormal];
-//    cancelButton.cjNormalBGColor = CJColorFromHexString(@"#FFFFFF");
-//    cancelButton.layer.cornerRadius = 16;
-//    cancelButton.layer.borderWidth = 1;
-//    cancelButton.layer.borderColor = CJColorFromHexString(@"#2F7DE1").CGColor;
-//    [cancelButton setTitle:cancelButtonTitle forState:UIControlStateNormal];
-//    cancelButton.titleLabel.font = [UIFont boldSystemFontOfSize:15];
-//    [cancelButton setCjTouchUpInsideBlock:cancelHandle];
-//    
-//    return cancelButton;
-//}
-
 
 #pragma mark - Private Method
 /**
- *  添加 "Cancel" + "OK" 的 组合按钮
+ *  添加 "Cancel" + "OK" 的 水平组合按钮
  *
- *  @param cancelButton                     取消按钮
- *  @param okButton                              确认按钮
- *  @param actionButtonHeight        actionButtonHeight
- *  @param bottomInterval                 bottomInterval
- *  @param fixedSpacing                      fixedSpacing
- *  @param leadSpacing                        leadSpacing
- *  @param tailSpacing                        tailSpacing
+ *  @param cancelButton                             取消按钮
+ *  @param okButton                                      确认按钮
+ *  @param actionButtonHeight                按钮的高
+ *  @param bottomButtonsLeftOffset     按钮与左边的间距
+ *  @param fixedSpacing                             水平中间距
  */
-+ (CJAlertBottomButtonsModel *)__twoButtonsWithCancelButton:(UIButton *)cancelButton
-                                                   okButton:(UIButton *)okButton
-                                         actionButtonHeight:(CGFloat)actionButtonHeight
-                                             bottomInterval:(CGFloat)bottomInterval
-                                               fixedSpacing:(CGFloat)fixedSpacing
-                                                leadSpacing:(CGFloat)leadSpacing
-                                                tailSpacing:(CGFloat)tailSpacing
++ (CJAlertBottomButtonsModel *)__horizontalTwoButtonsWithCancelButton:(UIButton *)cancelButton
+                                                             okButton:(UIButton *)okButton
+                                                   actionButtonHeight:(CGFloat)actionButtonHeight
+                                              bottomButtonsLeftOffset:(CGFloat)bottomButtonsLeftOffset
+                                                         fixedSpacing:(CGFloat)fixedSpacing
                                             
 {
     UIView *bottomButtonView = [[UIView alloc] init];
     
     //bottomButtons
-    MASAxisType axisType = MASAxisTypeHorizontal;
-    
-    CGFloat bottomPartHeight = 0;
     NSArray<UIButton *> *bottomButtons = @[cancelButton, okButton];
-    NSInteger buttonCount = bottomButtons.count;
-    if (axisType == MASAxisTypeHorizontal) {
-        bottomPartHeight = 0 + actionButtonHeight + bottomInterval;
-    } else {
-        bottomPartHeight = leadSpacing + buttonCount*(actionButtonHeight+fixedSpacing)-fixedSpacing + tailSpacing;
-    }
-    
     for (UIButton *bottomButton in bottomButtons) {
         [bottomButtonView addSubview:bottomButton];
     }
-    if (buttonCount > 1) {
-        [bottomButtons mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.bottom.mas_equalTo(-bottomInterval);
-            make.height.mas_equalTo(actionButtonHeight);
-        }];
-        [bottomButtons mas_distributeViewsAlongAxis:axisType withFixedSpacing:fixedSpacing leadSpacing:leadSpacing tailSpacing:tailSpacing];
-    } else {
-        [bottomButtons mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.bottom.mas_equalTo(-bottomInterval);
-            make.height.mas_equalTo(actionButtonHeight);
-            make.left.mas_equalTo(bottomButtonView).mas_offset(leadSpacing);
-            make.right.mas_equalTo(bottomButtonView).mas_offset(-tailSpacing);
-        }];
-    }
+    [bottomButtons mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.bottom.mas_equalTo(bottomButtonView);
+        make.height.mas_equalTo(actionButtonHeight);
+    }];
+    [bottomButtons mas_distributeViewsAlongAxis:MASAxisTypeHorizontal withFixedSpacing:fixedSpacing leadSpacing:bottomButtonsLeftOffset tailSpacing:-bottomButtonsLeftOffset];
+    
+    CGFloat bottomPartHeight = actionButtonHeight;
     
     CJAlertBottomButtonsModel *bottomButtonsModel = [[CJAlertBottomButtonsModel alloc] init];
     bottomButtonsModel.bottomButtonView = bottomButtonView;
@@ -488,6 +370,51 @@
     
     return bottomButtonsModel;
 }
+
+/**
+ *  添加 "Cancel" + "OK" 的 竖直组合按钮
+ *
+ *  @param cancelButton                             取消按钮
+ *  @param okButton                                      确认按钮
+ *  @param actionButtonHeight                按钮的高
+ *  @param bottomButtonsLeftOffset     按钮与左边的间距
+ *  @param fixedSpacing                             竖直中间距
+ */
++ (CJAlertBottomButtonsModel *)__verticalButtonsWithCancelButton:(UIButton *)cancelButton
+                                                        okButton:(UIButton *)okButton
+                                              actionButtonHeight:(CGFloat)actionButtonHeight
+                                         bottomButtonsLeftOffset:(CGFloat)bottomButtonsLeftOffset
+                                                    fixedSpacing:(CGFloat)fixedSpacing
+{
+    UIView *bottomButtonView = [[UIView alloc] init];
+    
+    //bottomButtons
+    NSArray<UIButton *> *bottomButtons = @[cancelButton, okButton];
+    for (UIButton *bottomButton in bottomButtons) {
+        [bottomButtonView addSubview:bottomButton];
+    }
+    [bottomButtons mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.centerX.mas_equalTo(bottomButtonView);
+        make.left.mas_equalTo(bottomButtonsLeftOffset);
+        make.height.mas_equalTo(actionButtonHeight);
+    }];
+    [bottomButtons mas_distributeViewsAlongAxis:MASAxisTypeVertical withFixedSpacing:fixedSpacing leadSpacing:0 tailSpacing:0];
+    
+    
+    NSInteger buttonCount = bottomButtons.count;
+    CGFloat bottomPartHeight = buttonCount*(actionButtonHeight+fixedSpacing) - fixedSpacing;
+    
+    CJAlertBottomButtonsModel *bottomButtonsModel = [[CJAlertBottomButtonsModel alloc] init];
+    bottomButtonsModel.bottomButtonView = bottomButtonView;
+    bottomButtonsModel.bottomPartHeight = bottomPartHeight;
+    bottomButtonsModel.okButton = okButton;
+    bottomButtonsModel.cancelButton = cancelButton;
+    
+    return bottomButtonsModel;
+}
+
+
+
 
 + (UIButton *)__okButtonWithOKButtonTitle:(NSString *)okButtonTitle
                                  okHandle:(void(^)(UIButton *button))okHandle

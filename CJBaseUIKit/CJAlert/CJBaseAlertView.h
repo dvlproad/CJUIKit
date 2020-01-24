@@ -9,6 +9,9 @@
 #import <UIKit/UIKit.h>
 #import <Masonry/Masonry.h>
 
+#import "CJAlertComponentFactory.h"
+#import "CJThemeManager.h"
+
 #ifdef TEST_CJBASEUIKIT_POD
 #import "UIView+CJPopupInView.h"
 #import "UIColor+CJHex.h"
@@ -36,37 +39,18 @@
 @interface CJBaseAlertView : UIView {
     
 }
-@property (nonatomic, strong) UIImageView *flagImageView;
 @property (nonatomic, strong) UILabel *titleLabel;
+@property (nonatomic, readonly) CGFloat titleLabelHeight;
 
-@property (nonatomic, strong) UIScrollView *messageScrollView;
-@property (nonatomic, strong) UIView *messageContainerView;
-@property (nonatomic, strong) UILabel *messageLabel;
 
-@property (nonatomic, strong) CJTextField *textField;
-
+@property (nonatomic, strong) UIView *bottomButtonView;
+//@property (nonatomic, strong, readonly) NSArray<UIButton *> *bottomButtons;
 @property (nonatomic, strong) UIButton *cancelButton;
 @property (nonatomic, strong) UIButton *okButton;
-@property (nonatomic, strong) UIView *bottomButtonView;
-@property (nonatomic, strong, readonly) NSArray<UIButton *> *bottomButtons;
-
-//第一个视图(一般为flagImageView，如果flagImageView不存在，则为下一个即titleLabel，以此类推)与顶部的间隔
-@property (nonatomic, readonly) CGFloat firstVerticalInterval;
-
-//第二个视图与第一个视图的间隔
-@property (nonatomic, readonly) CGFloat secondVerticalInterval;
-
-//第三个视图与第二个视图的间隔
-@property (nonatomic, readonly) CGFloat thirdVerticalInterval;
-
-//底部buttons视图与其上面的视图的最小间隔(上面的视图一般为message；如果不存在message,则是title；如果再不存在，则是flagImage)
-@property (nonatomic, readonly) CGFloat bottomMinVerticalInterval;
-
-@property (nonatomic, readonly) CGFloat flagImageViewHeight;
 @property (nonatomic, assign) CGFloat bottomPartHeight;  /**< 底部区域高度(包含底部按钮及可能的按钮上部的分隔线及按钮下部与边缘的距离) */
-@property (nonatomic, readonly) CGFloat titleLabelHeight;
-@property (nonatomic, readonly) CGFloat messageLabelHeight;
-@property (nonatomic, assign) CGFloat textFieldHeight;
+
+@property (nonatomic, assign) CGSize size;
+@property (nonatomic, assign) CGFloat totalMarginVertical;
 
 ///创建alertView(使用类方法只能创建默认样式的alertView,若要创建更加自定义的alertView,请使用实例方法)
 + (instancetype)alertViewWithSize:(CGSize)size
@@ -80,36 +64,6 @@
 
 
 /**
- *  创建alertView
- *
- *  @param size                     alertView的大小
- *
- *  @return alertView
- */
-- (instancetype)initWithSize:(CGSize)size;
-
-/**
- *  创建alertView
- *  @brief  这里所说的三个视图范围为：flagImageView(有的话，一定是第一个)、titleLabel(有的话，有可能一或二)、messageLabel(有的话，有可能一或二或三)
- *
- *  @param size                     alertView的大小
- *  @param firstVerticalInterval    第一个视图(一般为flagImageView，如果flagImageView不存在，则为下一个即titleLabel，以此类推)与顶部的间隔
- *  @param secondVerticalInterval   第二个视图与第一个视图的间隔(如果少于两个视图,这个值设为0即可)
- *  @param thirdVerticalInterval    第三个视图与第二个视图的间隔(如果少于三个视图,这个值设为0即可)
- *  @param bottomMinVerticalInterval 底部buttons区域视图与其上面的视图的最小间隔(上面的视图一般为message；如果不存在message,则是title；如果再不存在，则是flagImage)
- *
- *  @return alertView
- */
-- (instancetype)initWithSize:(CGSize)size
-       firstVerticalInterval:(CGFloat)firstVerticalInterval
-      secondVerticalInterval:(CGFloat)secondVerticalInterval
-       thirdVerticalInterval:(CGFloat)thirdVerticalInterval
-   bottomMinVerticalInterval:(CGFloat)bottomMinVerticalInterval;
-
-///添加指示图标
-- (void)addFlagImage:(UIImage *)flagImage size:(CGSize)imageViewSize;
-
-/**
  *  添加标题
  *
  *  @param title    标题
@@ -119,16 +73,6 @@
 
 ///添加title(paragraphStyle:当需要设置title行距、缩进等的时候才需要设置，其他设为nil即可)
 - (void)addTitleWithText:(NSString *)text font:(UIFont *)font textAlignment:(NSTextAlignment)textAlignment margin:(CGFloat)titleLabelLeftOffset paragraphStyle:(NSMutableParagraphStyle *)paragraphStyle;
-
-- (void)addMessage:(NSString *)message margin:(CGFloat)messageLabelLeftOffset;
-
-///添加message的方法(paragraphStyle:当需要设置message行距、缩进等的时候才需要设置，其他设为nil即可)
-- (void)addMessageWithText:(NSString *)text font:(UIFont *)font textAlignment:(NSTextAlignment)textAlignment margin:(CGFloat)messageLabelLeftOffset paragraphStyle:(NSMutableParagraphStyle *)paragraphStyle;
-
-///添加 message 的边框等(几乎不会用到)
-- (void)addMessageLayerWithBorderWidth:(CGFloat)borderWidth borderColor:(CGColorRef)borderColor cornerRadius:(CGFloat)cornerRadius;
-
-- (void)addTextFiledWithPlaceholder:(NSString *)placeholder;
 
 /**
  *  添加 "Cancel" + "OK" 的 组合按钮
@@ -143,11 +87,6 @@
                               cancelHandle:(void(^)(void))cancelHandle
                                   okHandle:(void(^)(void))okHandle;
 
-
-/////只添加一个按钮
-//- (void)addOnlyOneBottomButton:(UIButton *)bottomButton
-//                    withHeight:(CGFloat)actionButtonHeight
-//                bottomInterval:(CGFloat)bottomInterval;
 /**
 *  添加 "OK" 的 组合按钮
 *
@@ -175,8 +114,6 @@
 ///更改 Title 文字颜色
 - (void)updateTitleTextColor:(UIColor *)textColor;
 
-///更改 Message 文字颜色
-- (void)updateMessageTextColor:(UIColor *)textColor;
 
 ///更改底部 Cancel 按钮的文字颜色
 - (void)updateCancelButtonNormalTitleColor:(UIColor *)normalTitleColor highlightedTitleColor:(UIColor *)highlightedTitleColor;
@@ -184,14 +121,17 @@
 ///更改底部 OK 按钮的文字颜色
 - (void)updateOKButtonNormalTitleColor:(UIColor *)normalTitleColor highlightedTitleColor:(UIColor *)highlightedTitleColor;
 
-/**
- *  显示 alert 弹窗
- *
- *  @param shouldFitHeight  是否需要自动适应高度(否:会以之前指定的size的height来显示)
- *  @param blankBGColor     空白区域的背景颜色
- */
-- (void)showWithShouldFitHeight:(BOOL)shouldFitHeight
-       blankBGColor:(UIColor *)blankBGColor;
+///**
+// *  显示 alert 弹窗
+// *
+// *  @param shouldFitHeight  是否需要自动适应高度(否:会以之前指定的size的height来显示)
+// *  @param blankBGColor     空白区域的背景颜色
+// */
+//- (void)showWithShouldFitHeight:(BOOL)shouldFitHeight
+//       blankBGColor:(UIColor *)blankBGColor;
+
+
+- (void)showPopupViewSize:(CGSize)popupViewSize;
 
 /**
  *  隐藏 alert

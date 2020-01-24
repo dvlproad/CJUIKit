@@ -46,6 +46,8 @@
 @interface CJAlertThemeModel : NSObject {
     
 }
+@property (nonatomic, assign) CGFloat alertWidth;
+
 @property (nonatomic, copy) NSString *backgroundColor;
 @property (nonatomic, copy) NSString *textFieldBackgroundColor;
 
@@ -54,6 +56,12 @@
 @property (nonatomic, strong) NSArray *marginVertical_title_message_buttons;
 @property (nonatomic, strong) NSArray *marginVertical_message_buttons;
 @property (nonatomic, strong) NSArray *marginVertical_flagImage_title_message_buttons;
+@property (nonatomic, strong) NSArray *marginVertical_title_textField_buttons;
+
+// alert 水平上的左间距:LeftOffset
+@property (nonatomic, assign) CGFloat titleLabelLeftOffset;
+@property (nonatomic, assign) CGFloat messageLabelLeftOffset;
+@property (nonatomic, assign) CGFloat bottomButtonsLeftOffset;
 
 /**
  *  Alert的默认主题
