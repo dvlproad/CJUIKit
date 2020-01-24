@@ -2,7 +2,7 @@ Pod::Spec.new do |s|
   # 验证方法：pod lib lint CJBaseUIKit.podspec --allow-warnings --use-libraries --verbose
   # pod的本地索引文件：~/Library/Caches/CocoaPods/search_index.json
   s.name         = "CJBaseUIKit"
-  s.version      = "1.0.0"
+  s.version      = "0.6.0"
   s.summary      = "自定义的基础UI"
   s.homepage     = "https://github.com/dvlproad/CJUIKit"
 
@@ -50,7 +50,7 @@ Pod::Spec.new do |s|
 
   s.platform     = :ios, "8.0"
  
-  s.source       = { :git => "https://github.com/dvlproad/CJUIKit.git", :tag => "CJBaseUIKit_1.0.0" }
+  s.source       = { :git => "https://github.com/dvlproad/CJUIKit.git", :tag => "CJBaseUIKit_0.6.0" }
   s.source_files  = "CJBaseUIKit/*.{h,m}"
 
   s.frameworks = "UIKit"
@@ -184,6 +184,13 @@ Pod::Spec.new do |s|
     #多个依赖就写多行
     ss.dependency 'Masonry'
     ss.dependency 'CJBaseUIKit/UIView/CJPopupAction'
+  end
+
+  s.subspec 'CJProgressHUD' do |ss|
+    ss.source_files = "CJBaseUIKit/CJProgressHUD/**/*.{h,m}"
+    #多个依赖就写多行
+    ss.dependency 'Masonry'
+    ss.dependency 'lottie-ios', '~> 2.5.3'
   end
 
 

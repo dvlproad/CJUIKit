@@ -24,6 +24,8 @@
 		15C970D723DB6125008D81B0 /* ActionSheetHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 15C970D523DB6125008D81B0 /* ActionSheetHomeViewController.m */; };
 		15C970DA23DB626C008D81B0 /* CJActionSheetFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 15C970D923DB626C008D81B0 /* CJActionSheetFactory.m */; };
 		15C970DE23DB6768008D81B0 /* CJActionSheetUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 15C970DD23DB6767008D81B0 /* CJActionSheetUtil.m */; };
+		15C970E423DB7B86008D81B0 /* UIViewController+CJProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 15C970E023DB7B85008D81B0 /* UIViewController+CJProgressHUD.m */; };
+		15C970E523DB7B86008D81B0 /* CJProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 15C970E323DB7B86008D81B0 /* CJProgressHUD.m */; };
 		51F701ECBBD48CC565F3FB87 /* libPods-CJUIKitDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A078401C0E781545EB72B64D /* libPods-CJUIKitDemo.a */; };
 		663D99AA9DDC5B5D8025AEEB /* libPods-CJUIKitDemoUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E0A09F2115A3D53BC658F67A /* libPods-CJUIKitDemoUITests.a */; };
 		7803DAAE22F7D519001E06B7 /* MJExtensionToModelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7803DAAC22F7D519001E06B7 /* MJExtensionToModelViewController.m */; };
@@ -433,6 +435,10 @@
 		15C970D923DB626C008D81B0 /* CJActionSheetFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJActionSheetFactory.m; sourceTree = "<group>"; };
 		15C970DC23DB6767008D81B0 /* CJActionSheetUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJActionSheetUtil.h; sourceTree = "<group>"; };
 		15C970DD23DB6767008D81B0 /* CJActionSheetUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJActionSheetUtil.m; sourceTree = "<group>"; };
+		15C970E023DB7B85008D81B0 /* UIViewController+CJProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+CJProgressHUD.m"; sourceTree = "<group>"; };
+		15C970E123DB7B85008D81B0 /* CJProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJProgressHUD.h; sourceTree = "<group>"; };
+		15C970E223DB7B86008D81B0 /* UIViewController+CJProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+CJProgressHUD.h"; sourceTree = "<group>"; };
+		15C970E323DB7B86008D81B0 /* CJProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJProgressHUD.m; sourceTree = "<group>"; };
 		3132573BFCFBEA8B4F3BB86F /* Pods-CJUIKitDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CJUIKitDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-CJUIKitDemo/Pods-CJUIKitDemo.release.xcconfig"; sourceTree = "<group>"; };
 		5ABC4BBA112CC688BF877CE8 /* Pods-CJUIKitDemoUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CJUIKitDemoUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-CJUIKitDemoUITests/Pods-CJUIKitDemoUITests.release.xcconfig"; sourceTree = "<group>"; };
 		68D73B38201AA01727123963 /* Pods-CJUIKitDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CJUIKitDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CJUIKitDemo/Pods-CJUIKitDemo.debug.xcconfig"; sourceTree = "<group>"; };
@@ -1135,6 +1141,17 @@
 			path = DemoActionSheet;
 			sourceTree = "<group>";
 		};
+		15C970DF23DB7B85008D81B0 /* CJProgressHUD */ = {
+			isa = PBXGroup;
+			children = (
+				15C970E123DB7B85008D81B0 /* CJProgressHUD.h */,
+				15C970E323DB7B86008D81B0 /* CJProgressHUD.m */,
+				15C970E223DB7B86008D81B0 /* UIViewController+CJProgressHUD.h */,
+				15C970E023DB7B85008D81B0 /* UIViewController+CJProgressHUD.m */,
+			);
+			path = CJProgressHUD;
+			sourceTree = "<group>";
+		};
 		7808D59021703C18007FC851 /* ChangeEnvironmentDemo */ = {
 			isa = PBXGroup;
 			children = (
@@ -1452,6 +1469,7 @@
 			isa = PBXGroup;
 			children = (
 				7856F79A21F4F4C2004AF751 /* CJUIKit.h */,
+				15C970DF23DB7B85008D81B0 /* CJProgressHUD */,
 				15C970BF23DB5D4E008D81B0 /* CJActionSheet */,
 				154FFCA923DA2B3F00FF1E0D /* CJTheme */,
 				78FED7B22356C7B200D00F10 /* CJUIKitConstant */,
@@ -3265,6 +3283,7 @@
 				801F75D820A040D800A2E027 /* BBXDAreaCodeTextField.m in Sources */,
 				7856F83A21F4F4C3004AF751 /* CJBaseUISlider.m in Sources */,
 				78B6C2EE2159D8AF00D5864E /* DemoBusPassengerOrderModel.m in Sources */,
+				15C970E523DB7B86008D81B0 /* CJProgressHUD.m in Sources */,
 				7856F83C21F4F4C3004AF751 /* CJSwitchView.m in Sources */,
 				784AB8D121E87E7900A3F51C /* TestProgressHUDViewController.m in Sources */,
 				7856F84021F4F4C3004AF751 /* CJTextField.m in Sources */,
@@ -3481,6 +3500,7 @@
 				7856F83B21F4F4C3004AF751 /* CJAdsorbModel.m in Sources */,
 				784C87FF216F2B1D00AFEE7D /* SemaphoreGateKeeperViewController.m in Sources */,
 				7875C58F231CF77900076A00 /* BackSystemItemViewController.m in Sources */,
+				15C970E423DB7B86008D81B0 /* UIViewController+CJProgressHUD.m in Sources */,
 				80FF90B41FC5649F00E437CF /* ButtonStructureViewController.m in Sources */,
 				7856F83921F4F4C3004AF751 /* CJPlayerSlider.m in Sources */,
 				7856F83421F4F4C3004AF751 /* CJSwitchSlider.m in Sources */,
