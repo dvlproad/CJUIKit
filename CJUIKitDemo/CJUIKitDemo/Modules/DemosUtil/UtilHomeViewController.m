@@ -14,6 +14,7 @@
 //弹窗
 #import "ToastViewController.h"
 #import "AlertViewController.h"
+#import "ActionSheetHomeViewController.h"
 
 //string
 #import "StringEventViewController.h"
@@ -104,8 +105,13 @@
             CJModuleModel *alertUtilModule = [[CJModuleModel alloc] init];
             alertUtilModule.title = @"Alert";
             alertUtilModule.classEntry = [AlertViewController class];
-            alertUtilModule.isCreateByXib = NO;
             [sectionDataModel.values addObject:alertUtilModule];
+        }
+        {
+            CJModuleModel *actionSheetUtilModule = [[CJModuleModel alloc] init];
+            actionSheetUtilModule.title = @"ActionSheet";
+            actionSheetUtilModule.classEntry = [ActionSheetHomeViewController class];
+            [sectionDataModel.values addObject:actionSheetUtilModule];
         }
         
         [sectionDataModels addObject:sectionDataModel];

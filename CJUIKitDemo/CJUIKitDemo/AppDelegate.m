@@ -36,7 +36,7 @@
     
     
     NSDictionary *dic = @{@"pushType": @(304),
-                          @"msg": @"员工姓名 您好！您的 健康证 将于3天后，即2019-05-01 到期，为避免因证件到期，导致不能排班，请及时办理新的证件，并在员工APP进行提交更新。Luckin 咖啡感谢有你！"
+                          @"msg": @"员工姓名 您好！您的 健康证 将于3天后，即2019-05-01 到期，为避免因证件到期，导致不能排班，请及时办理新的证件，并在员工APP进行提交更新。XXX感谢有你！"
                           };
     NSError *parseError = nil;
     NSData *jsonData = [NSJSONSerialization dataWithJSONObject:dic options:NSJSONWritingPrettyPrinted error:&parseError];
