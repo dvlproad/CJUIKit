@@ -1,5 +1,5 @@
 //
-//  CJActionSheetUtil.h
+//  CQActionSheetUtil.h
 //  CJUIKitDemo
 //
 //  Created by ciyouzen on 2017/2/25.
@@ -11,7 +11,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface CJActionSheetUtil : NSObject {
+@interface CQActionSheetUtil : NSObject {
     
 }
 

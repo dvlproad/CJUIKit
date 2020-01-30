@@ -9,7 +9,7 @@
 #import "ActionSheetHomeViewController.h"
 #import "CJModuleModel.h"
 
-#import "CJActionSheetUtil.h"
+#import "CQActionSheetUtil.h"
 
 @interface ActionSheetHomeViewController () {
     
@@ -34,7 +34,7 @@
             CJModuleModel *module = [[CJModuleModel alloc] init];
             module.title = @"弹出图片选择ActionSheet";
             module.actionBlock = ^{
-                [CJActionSheetUtil showPickImageSheetWithTakePhotoHandle:^{
+                [CQActionSheetUtil showPickImageSheetWithTakePhotoHandle:^{
 //                    [DemoToast showMessage:@"点击拍摄"];
                 } pickImageHandle:^{
 //                    [DemoToast showMessage:@"点击选择照片"];
@@ -46,7 +46,7 @@
             CJModuleModel *module = [[CJModuleModel alloc] init];
             module.title = @"显示ActionSheet";
             module.actionBlock = ^{
-                [CJActionSheetUtil showWithItemTitles:@[NSLocalizedString(@"拍摄", nil), NSLocalizedString(@"从手机相册选择", nil)] itemClickBlock:^(NSInteger selectIndex) {
+                [CQActionSheetUtil showWithItemTitles:@[NSLocalizedString(@"拍摄", nil), NSLocalizedString(@"从手机相册选择", nil)] itemClickBlock:^(NSInteger selectIndex) {
                     NSLog(@"当前选择的是%zd", selectIndex);
                 }];
             };
@@ -56,7 +56,7 @@
             CJModuleModel *module = [[CJModuleModel alloc] init];
             module.title = @"弹出地图选择ActionSheet";
             module.actionBlock = ^{
-                [CJActionSheetUtil showMapsActionSheetWithUpdateMap:YES baiduMapBlock:^(BOOL canOpenBaiduMap) {
+                [CQActionSheetUtil showMapsActionSheetWithUpdateMap:YES baiduMapBlock:^(BOOL canOpenBaiduMap) {
 //                    [DemoToast showMessage:@"点击百度地图"];
                 } amapBlock:^(BOOL canOpenAmap) {
 //                    [DemoToast showMessage:@"点击高德地图"];
@@ -71,7 +71,7 @@
             module.title = @"弹出自定义的选择ActionSheet(没超屏幕高)";
             module.actionBlock = ^{
                 NSArray *sheetModels = [self __testSheetModelsWithCount:10];
-                [CJActionSheetUtil showWithSheetModels:sheetModels itemClickBlock:^(NSInteger selectIndex) {
+                [CQActionSheetUtil showWithSheetModels:sheetModels itemClickBlock:^(NSInteger selectIndex) {
                     
                 }];
 
@@ -83,7 +83,7 @@
             module.title = @"弹出自定义的选择ActionSheet(已超屏幕高)";
             module.actionBlock = ^{
                 NSArray *sheetModels = [self __testSheetModelsWithCount:20];
-                [CJActionSheetUtil showWithSheetModels:sheetModels itemClickBlock:^(NSInteger selectIndex) {
+                [CQActionSheetUtil showWithSheetModels:sheetModels itemClickBlock:^(NSInteger selectIndex) {
                     
                 }];
             };

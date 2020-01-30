@@ -18,6 +18,8 @@
 #import <CJBaseUtil/CJSectionDataModel.h>   //在CJDataUtil中
 #import <CJBaseUtil/CJModuleModel.h>        //在CJDataUtil中
 
+#import <CJBaseHelper/AuthorizationCJHelper.h>
+
 #ifdef TEST_CJBASEUIKIT_POD
 
 #else

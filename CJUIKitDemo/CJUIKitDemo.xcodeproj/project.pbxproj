@@ -27,7 +27,7 @@
 		15C970D123DB5D4F008D81B0 /* CJJumpMapUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 15C970CB23DB5D4E008D81B0 /* CJJumpMapUtil.m */; };
 		15C970D723DB6125008D81B0 /* ActionSheetHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 15C970D523DB6125008D81B0 /* ActionSheetHomeViewController.m */; };
 		15C970DA23DB626C008D81B0 /* CJActionSheetFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 15C970D923DB626C008D81B0 /* CJActionSheetFactory.m */; };
-		15C970DE23DB6768008D81B0 /* CJActionSheetUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 15C970DD23DB6767008D81B0 /* CJActionSheetUtil.m */; };
+		15C970DE23DB6768008D81B0 /* CQActionSheetUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 15C970DD23DB6767008D81B0 /* CQActionSheetUtil.m */; };
 		15C970E423DB7B86008D81B0 /* UIViewController+CJProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 15C970E023DB7B85008D81B0 /* UIViewController+CJProgressHUD.m */; };
 		15C970E523DB7B86008D81B0 /* CJProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 15C970E323DB7B86008D81B0 /* CJProgressHUD.m */; };
 		51F701ECBBD48CC565F3FB87 /* libPods-CJUIKitDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A078401C0E781545EB72B64D /* libPods-CJUIKitDemo.a */; };
@@ -441,8 +441,8 @@
 		15C970D523DB6125008D81B0 /* ActionSheetHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActionSheetHomeViewController.m; sourceTree = "<group>"; };
 		15C970D823DB626C008D81B0 /* CJActionSheetFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJActionSheetFactory.h; sourceTree = "<group>"; };
 		15C970D923DB626C008D81B0 /* CJActionSheetFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJActionSheetFactory.m; sourceTree = "<group>"; };
-		15C970DC23DB6767008D81B0 /* CJActionSheetUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJActionSheetUtil.h; sourceTree = "<group>"; };
-		15C970DD23DB6767008D81B0 /* CJActionSheetUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJActionSheetUtil.m; sourceTree = "<group>"; };
+		15C970DC23DB6767008D81B0 /* CQActionSheetUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CQActionSheetUtil.h; sourceTree = "<group>"; };
+		15C970DD23DB6767008D81B0 /* CQActionSheetUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CQActionSheetUtil.m; sourceTree = "<group>"; };
 		15C970E023DB7B85008D81B0 /* UIViewController+CJProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+CJProgressHUD.m"; sourceTree = "<group>"; };
 		15C970E123DB7B85008D81B0 /* CJProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJProgressHUD.h; sourceTree = "<group>"; };
 		15C970E223DB7B86008D81B0 /* UIViewController+CJProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+CJProgressHUD.h"; sourceTree = "<group>"; };
@@ -1139,8 +1139,8 @@
 		15C970DB23DB6767008D81B0 /* DemoActionSheet */ = {
 			isa = PBXGroup;
 			children = (
-				15C970DC23DB6767008D81B0 /* CJActionSheetUtil.h */,
-				15C970DD23DB6767008D81B0 /* CJActionSheetUtil.m */,
+				15C970DC23DB6767008D81B0 /* CQActionSheetUtil.h */,
+				15C970DD23DB6767008D81B0 /* CQActionSheetUtil.m */,
 			);
 			path = DemoActionSheet;
 			sourceTree = "<group>";
@@ -3405,7 +3405,7 @@
 				7856F80F21F4F4C3004AF751 /* UIView+CJShowExtendView.m in Sources */,
 				789C443C21EECEE800181144 /* CJAppVersionUtil.m in Sources */,
 				788113C22199583000D1630D /* NormalSharedInstanceClass.m in Sources */,
-				15C970DE23DB6768008D81B0 /* CJActionSheetUtil.m in Sources */,
+				15C970DE23DB6768008D81B0 /* CQActionSheetUtil.m in Sources */,
 				78A621DC2135C713004DA046 /* DemoSuspendWindow.m in Sources */,
 				78C8148B216E11AF00A6B190 /* BChildViewController.m in Sources */,
 				781989A8225A34C000D01DBC /* CJDemoDateLabel.m in Sources */,

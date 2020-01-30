@@ -170,49 +170,46 @@
     return minHeight;
 }
 
+/*
+*  显示弹窗
+*
+*  @param shouldFitHeight  是否自动适应高度
+*  @param blankBGColor     空白区域的背景颜色
+*/
 - (void)showWithShouldFitHeight:(BOOL)shouldFitHeight blankBGColor:(UIColor *)blankBGColor
 {
-    CGFloat fixHeight = 0;
-    if (shouldFitHeight) {
-        CGFloat minHeight = [self getMinHeight];
-        fixHeight = minHeight;
-    } else {
-        fixHeight = self.size.height;
-    }
-
-    [self showWithFixHeight:fixHeight blankBGColor:blankBGColor];
-}
-
-/**
- *  显示弹窗并且是以指定高度显示的
- *
- *  @param fixHeight        高度
- *  @param blankBGColor     空白区域的背景颜色
- */
-- (void)showWithFixHeight:(CGFloat)fixHeight blankBGColor:(UIColor *)blankBGColor {
+    // 计算最后 messageLabelHeight 的值
     CGFloat minHeightWithoutMessageLabel = [self getMinHeightExpectMessageLabel];
-    CGFloat minHeight = minHeightWithoutMessageLabel + self.messageLabelHeight;
-    if (fixHeight < minHeight) {
-        NSString *warningString = [NSString stringWithFormat:@"CJ警告：您设置的size高度小于视图本身的最小高度%.2lf，会导致视图显示不全，请检查", minHeight];
-        NSLog(@"%@", warningString);
-    }
-    
     CGFloat maxHeight = CGRectGetHeight([UIScreen mainScreen].bounds) - 200;
-    if (fixHeight > maxHeight) {
-        fixHeight = maxHeight;
-        
-        //NSString *warningString = [NSString stringWithFormat:@"CJ警告：您设置的size高度超过视图本身的最大高度%.2lf，会导致视图显示不全，已自动缩小", maxHeight];
-        //NSLog(@"%@", warningString);
-        if (self.messageScrollView) {
-            _messageLabelHeight = fixHeight - minHeightWithoutMessageLabel;
-            [self.messageScrollView mas_updateConstraints:^(MASConstraintMaker *make) {
-                make.height.mas_equalTo(self->_messageLabelHeight);
-            }];
-        }
+    CGFloat maxMessageLabelHeight = maxHeight - minHeightWithoutMessageLabel;
+    
+    CGFloat messageLabelHeight = 0;
+    if (shouldFitHeight) {
+        messageLabelHeight = self.messageLabelHeight;
+    } else {
+        messageLabelHeight = self.size.height - minHeightWithoutMessageLabel;
+//        if (messageLabelHeight < 0) {
+//            NSString *warningString = [NSString stringWithFormat:@"CJ警告：您设置的size高度太小，会导致视图显示不全，请检查"];
+//            NSLog(@"%@", warningString);
+//        }
     }
     
+    if (messageLabelHeight > maxMessageLabelHeight) {
+        messageLabelHeight = maxMessageLabelHeight;
+    }
+    
+    
+    // 使用计算出来的最后 messageLabelHeight
+    if (self.messageScrollView) {
+        _messageLabelHeight = messageLabelHeight;
+        [self.messageScrollView mas_updateConstraints:^(MASConstraintMaker *make) {
+            make.height.mas_equalTo(messageLabelHeight);
+        }];
+    }
+    CGFloat fixHeight = minHeightWithoutMessageLabel + messageLabelHeight;
+
     CGSize popupViewSize = CGSizeMake(self.size.width, fixHeight);
-    [self showPopupViewSize:popupViewSize];
+    [self showPopupViewSize:popupViewSize blankBGColor:blankBGColor];
 }
 
 

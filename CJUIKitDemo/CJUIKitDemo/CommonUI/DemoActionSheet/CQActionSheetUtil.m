@@ -1,17 +1,17 @@
 //
-//  CJActionSheetUtil.m
+//  CQActionSheetUtil.m
 //  CJUIKitDemo
 //
 //  Created by ciyouzen on 2017/2/25.
 //  Copyright © 2017年 dvlproad. All rights reserved.
 //
 
-#import "CJActionSheetUtil.h"
+#import "CQActionSheetUtil.h"
 #import "CJActionSheetFactory.h"
 #import "UIView+CJDemoPopupAction.h"
 
 
-@implementation CJActionSheetUtil
+@implementation CQActionSheetUtil
 
 /**
  *  弹出事项选择

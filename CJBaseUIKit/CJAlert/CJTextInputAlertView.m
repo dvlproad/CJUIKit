@@ -80,37 +80,30 @@
 
 
 ///获取当前alertView最小应有的高度值
-- (CGFloat)getMinHeight {
-    CGFloat minHeightWithMessageLabel = self.totalMarginVertical + self.titleLabelHeight + self.textFieldHeight + self.bottomPartHeight;;
-    minHeightWithMessageLabel = ceil(minHeightWithMessageLabel);
+- (CGFloat)getMinHeightExpectTextField {
+    CGFloat minHeightWithoutMessageLabel = self.totalMarginVertical + self.titleLabelHeight + self.bottomPartHeight;;
+    minHeightWithoutMessageLabel = ceil(minHeightWithoutMessageLabel);
     
-    return minHeightWithMessageLabel;
+    return minHeightWithoutMessageLabel;
 }
 
 - (void)showWithShouldFitHeight:(BOOL)shouldFitHeight blankBGColor:(UIColor *)blankBGColor
 {
-    CGFloat fixHeight = 0;
+    // 计算最后 textFieldHeight 的值
+    CGFloat minHeightWithoutTextField = [self getMinHeightExpectTextField];
+
+    CGFloat textFieldHeight = 0;
     if (shouldFitHeight) {
-        CGFloat minHeight = [self getMinHeight];
-        fixHeight = minHeight;
+        textFieldHeight = self.textFieldHeight;
     } else {
-        fixHeight = self.size.height;
+        textFieldHeight = self.size.height - minHeightWithoutTextField;
     }
-
-    [self showWithFixHeight:fixHeight blankBGColor:blankBGColor];
-}
-
-/**
- *  显示弹窗并且是以指定高度显示的
- *
- *  @param fixHeight        高度
- *  @param blankBGColor     空白区域的背景颜色
- */
-- (void)showWithFixHeight:(CGFloat)fixHeight blankBGColor:(UIColor *)blankBGColor {
-    CGFloat minHeight = [self getMinHeight];
     
+    // 使用计算出来的最后 textFieldHeight
+    CGFloat fixHeight = minHeightWithoutTextField + textFieldHeight;
+
     CGSize popupViewSize = CGSizeMake(self.size.width, fixHeight);
-    [self showPopupViewSize:popupViewSize];
+    [self showPopupViewSize:popupViewSize blankBGColor:blankBGColor];
 }
 
 

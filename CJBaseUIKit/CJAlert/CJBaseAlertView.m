@@ -38,123 +38,6 @@
 
 @implementation CJBaseAlertView
 
-
-+ (instancetype)alertViewWithSize:(CGSize)size
-                        flagImage:(UIImage *)flagImage
-                            title:(NSString *)title
-                          message:(NSString *)message
-                cancelButtonTitle:(NSString *)cancelButtonTitle
-                    okButtonTitle:(NSString *)okButtonTitle
-                     cancelHandle:(void(^)(void))cancelHandle
-                         okHandle:(void(^)(void))okHandle
-{
-    //①创建
-    CJBaseAlertView *alertView = [[CJBaseAlertView alloc] init];
-    
-    alertView.size = size;
-    
-//    //②添加 flagImage、titleLabel、messageLabel
-//    //[alertView setupFlagImage:flagImage title:title message:message configure:configure]; //已拆解成以下几个方法
-//    if (flagImage) {
-//        [alertView addFlagImage:flagImage size:CGSizeMake(38, 38)];
-//    }
-//    if (title.length > 0) {
-//        [alertView addTitleWithText:title font:[UIFont systemFontOfSize:18.0] textAlignment:NSTextAlignmentCenter margin:20 paragraphStyle:nil];
-//    }
-//    if (message.length > 0) {
-//        NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle defaultParagraphStyle] mutableCopy];
-//        paragraphStyle.lineBreakMode = NSLineBreakByCharWrapping;
-//        paragraphStyle.lineSpacing = 4;
-//        [alertView addMessageWithText:message font:[UIFont systemFontOfSize:14.0] textAlignment:NSTextAlignmentCenter margin:20 paragraphStyle:paragraphStyle];
-//    }
-//    
-//    //③添加 cancelButton、okButton
-//    [alertView addBottomButtonWithHeight:50 cancelButtonTitle:cancelButtonTitle okButtonTitle:okButtonTitle cancelHandle:cancelHandle okHandle:okHandle];
-    
-    return alertView;
-}
-
-/* //已拆解成以下几个方法
-- (void)setupFlagImage:(UIImage *)flagImage
-                 title:(NSString *)title
-               message:(NSString *)message
-{
-    if (CGSizeEqualToSize(self.size, CGSizeZero)) {
-        return;
-    }
-    
-    UIColor *messageTextColor = [UIColor colorWithRed:136/255.0 green:136/255.0 blue:136/255.0 alpha:1]; //#888888
-    
-    
-    if (flagImage) {
-        UIImageView *flagImageView = [[UIImageView alloc] init];
-        flagImageView.image = flagImage;
-        [self addSubview:flagImageView];
-        [flagImageView mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.centerX.mas_equalTo(self);
-            make.width.mas_equalTo(38);
-            make.top.mas_equalTo(self).mas_offset(25);
-            make.height.mas_equalTo(38);
-        }];
-        _flagImageView = flagImageView;
-    }
-    
-    
-    // titleLabel
-    CGFloat titleLabelLeftOffset = 20;
-    UIFont *titleLabelFont = [UIFont systemFontOfSize:18.0];
-    CGFloat titleLabelMaxWidth = self.size.width - 2*titleLabelLeftOffset;
-    CGSize titleLabelMaxSize = CGSizeMake(titleLabelMaxWidth, CGFLOAT_MAX);
-    CGSize titleTextSize = [CJBaseAlertView getTextSizeFromString:title withFont:titleLabelFont maxSize:titleLabelMaxSize mode:NSLineBreakByCharWrapping];
-    CGFloat titleTextHeight = titleTextSize.height;
-    
-    UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectZero];
-    //titleLabel.backgroundColor = [UIColor clearColor];
-    titleLabel.numberOfLines = 0;
-    titleLabel.textAlignment = NSTextAlignmentCenter;
-    titleLabel.font = titleLabelFont;
-    titleLabel.textColor = [UIColor blackColor];
-    titleLabel.text = title;
-    [self addSubview:titleLabel];
-    [titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.centerX.mas_equalTo(self);
-        make.left.mas_equalTo(self).mas_offset(titleLabelLeftOffset);
-        if (self.flagImageView) {
-            make.top.mas_equalTo(self.flagImageView.mas_bottom).mas_offset(10);
-        } else {
-            make.top.mas_equalTo(self).mas_offset(25);
-        }
-        make.height.mas_equalTo(titleTextHeight);
-    }];
-    _titleLabel = titleLabel;
-    
-    
-    // messageLabel
-    CGFloat messageLabelLeftOffset = 20;
-    UIFont *messageLabelFont = [UIFont systemFontOfSize:15.0];
-    CGFloat messageLabelMaxWidth = self.size.width - 2*messageLabelLeftOffset;
-    CGSize messageLabelMaxSize = CGSizeMake(messageLabelMaxWidth, CGFLOAT_MAX);
-    CGSize messageTextSize = [CJBaseAlertView getTextSizeFromString:message withFont:messageLabelFont maxSize:messageLabelMaxSize mode:NSLineBreakByCharWrapping];
-    CGFloat messageTextHeight = messageTextSize.height;
-    
-    UILabel *messageLabel = [[UILabel alloc] initWithFrame:CGRectZero];
-    //messageLabel.backgroundColor = [UIColor clearColor];
-    messageLabel.numberOfLines = 0;
-    messageLabel.textAlignment = NSTextAlignmentCenter;
-    messageLabel.font = messageLabelFont;
-    messageLabel.textColor = messageTextColor;
-    messageLabel.text = message;
-    [self addSubview:messageLabel];
-    [messageLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.centerX.mas_equalTo(self);
-        make.left.mas_equalTo(self).mas_offset(messageLabelLeftOffset);
-        make.top.mas_equalTo(titleLabel.mas_bottom).mas_offset(10);
-        make.height.mas_equalTo(messageTextHeight);
-    }];
-    _messageLabel = messageLabel;
-}
-*/
-
 #pragma mark - 简洁的添加方法
 /**
  *  添加标题
@@ -356,23 +239,6 @@
     }
 }
 
-///更改 Title 文字颜色
-- (void)updateTitleTextColor:(UIColor *)textColor {
-    self.titleLabel.textColor = textColor;
-}
-
-///更改底部 Cancel 按钮的文字颜色
-- (void)updateCancelButtonNormalTitleColor:(UIColor *)normalTitleColor highlightedTitleColor:(UIColor *)highlightedTitleColor {
-    [self.cancelButton setTitleColor:normalTitleColor forState:UIControlStateNormal];
-    [self.cancelButton setTitleColor:highlightedTitleColor forState:UIControlStateHighlighted];
-}
-
-///更改底部 OK 按钮的文字颜色
-- (void)updateOKButtonNormalTitleColor:(UIColor *)normalTitleColor highlightedTitleColor:(UIColor *)highlightedTitleColor {
-    [self.okButton setTitleColor:normalTitleColor forState:UIControlStateNormal];
-    [self.okButton setTitleColor:highlightedTitleColor forState:UIControlStateHighlighted];
-}
-
 - (void)cancelButtonAction:(UIButton *)button {
     [self dismissWithDelay:0];
     
@@ -448,9 +314,7 @@
 //    [self showPopupViewSize:popupViewSize];
 }
 
-- (void)showPopupViewSize:(CGSize)popupViewSize {
-    UIColor *blankBGColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:.6];
-    
+- (void)showPopupViewSize:(CGSize)popupViewSize blankBGColor:(UIColor *)blankBGColor {
     [self cj_popupInCenterWindow:CJAnimationTypeNormal
                         withSize:popupViewSize
                     blankBGColor:blankBGColor

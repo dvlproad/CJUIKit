@@ -22,16 +22,6 @@
 #import <CJBaseUIKit/CJTextField.h>
 #endif
 
-/*
-@class CJBaseAlertView;
-@protocol CJAlertViewDelegate <NSObject>
-
-@optional
-- (void)cjAlertView_OK:(CJBaseAlertView *)alertView;
-- (void)cjAlertView_Cancel:(CJBaseAlertView *)alertView;
-
-@end
-*/
 
 /**
  *  仿系统 UIAlertView(使用类方法只能创建默认样式的alertView,若要创建更加自定义的alertView,请使用实例方法)
@@ -52,17 +42,6 @@
 @property (nonatomic, assign) CGSize size;
 @property (nonatomic, assign) CGFloat totalMarginVertical;
 
-///创建alertView(使用类方法只能创建默认样式的alertView,若要创建更加自定义的alertView,请使用实例方法)
-+ (instancetype)alertViewWithSize:(CGSize)size
-                        flagImage:(UIImage *)flagImage
-                            title:(NSString *)title
-                          message:(NSString *)message
-                cancelButtonTitle:(NSString *)cancelButtonTitle
-                    okButtonTitle:(NSString *)okButtonTitle
-                     cancelHandle:(void(^)(void))cancelHandle
-                         okHandle:(void(^)(void))okHandle;
-
-
 /**
  *  添加标题
  *
@@ -70,9 +49,6 @@
  *  @param titleLabelLeftOffset    titleLabelLeftOffset
  */
 - (void)addTitle:(NSString *)title margin:(CGFloat)titleLabelLeftOffset;
-
-///添加title(paragraphStyle:当需要设置title行距、缩进等的时候才需要设置，其他设为nil即可)
-- (void)addTitleWithText:(NSString *)text font:(UIFont *)font textAlignment:(NSTextAlignment)textAlignment margin:(CGFloat)titleLabelLeftOffset paragraphStyle:(NSMutableParagraphStyle *)paragraphStyle;
 
 /**
  *  添加 "Cancel" + "OK" 的 组合按钮
@@ -111,16 +87,6 @@
                      cancelHandle:(void(^)(void))cancelHandle
                          okHandle:(void(^)(void))okHandle;
 
-///更改 Title 文字颜色
-- (void)updateTitleTextColor:(UIColor *)textColor;
-
-
-///更改底部 Cancel 按钮的文字颜色
-- (void)updateCancelButtonNormalTitleColor:(UIColor *)normalTitleColor highlightedTitleColor:(UIColor *)highlightedTitleColor;
-
-///更改底部 OK 按钮的文字颜色
-- (void)updateOKButtonNormalTitleColor:(UIColor *)normalTitleColor highlightedTitleColor:(UIColor *)highlightedTitleColor;
-
 ///**
 // *  显示 alert 弹窗
 // *
@@ -131,7 +97,7 @@
 //       blankBGColor:(UIColor *)blankBGColor;
 
 
-- (void)showPopupViewSize:(CGSize)popupViewSize;
+- (void)showPopupViewSize:(CGSize)popupViewSize blankBGColor:(UIColor *)blankBGColor;
 
 /**
  *  隐藏 alert
