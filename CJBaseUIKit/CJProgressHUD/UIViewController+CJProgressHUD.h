@@ -13,10 +13,10 @@ NS_ASSUME_NONNULL_BEGIN
 @interface UIViewController (CJProgressHUD)
 
 /// 显示HUD
-- (void)showDemoProgressHUD;
+- (void)cj_showProgressHUD;
 
 /// 隐藏HUD
-- (void)dismissDemoProgressHUD;
+- (void)cj_dismissProgressHUD;
 
 /*
 /// 上传过程中显示开始上传的进度提示

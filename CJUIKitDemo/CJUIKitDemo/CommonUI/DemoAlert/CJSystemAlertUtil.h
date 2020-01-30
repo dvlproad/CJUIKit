@@ -1,5 +1,5 @@
 //
-//  CJAlert.h
+//  CJSystemAlertUtil.h
 //  CJUIKitDemo
 //
 //  Created by ciyouzen on 2016/3/11.
@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface CJAlert : NSObject
+@interface CJSystemAlertUtil : NSObject
 
 #pragma mark - UIAlertController
 /// 显示系统AlertType弹框

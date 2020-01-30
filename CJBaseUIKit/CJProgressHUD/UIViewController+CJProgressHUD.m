@@ -14,36 +14,36 @@
 @interface UIViewController () {
     
 }
-@property (nonatomic, strong) CJProgressHUD *cj_ProgressHUD;
+@property (nonatomic, strong) CJProgressHUD *cj_progressHUD;
 
 
 @end
 
 @implementation UIViewController (CJProgressHUD)
 
-//cj_ProgressHUD
-- (CJProgressHUD *)cj_ProgressHUD {
-    return objc_getAssociatedObject(self, @selector(cj_ProgressHUD));
+//cj_progressHUD
+- (CJProgressHUD *)cj_progressHUD {
+    return objc_getAssociatedObject(self, @selector(cj_progressHUD));
 }
 
-- (void)setCj_ProgressHUD:(CJProgressHUD *)cj_ProgressHUD {
-    objc_setAssociatedObject(self, @selector(cj_ProgressHUD), cj_ProgressHUD, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+- (void)setCj_progressHUD:(CJProgressHUD *)cj_progressHUD {
+    objc_setAssociatedObject(self, @selector(cj_progressHUD), cj_progressHUD, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
 /// 显示HUD
-- (void)showDemoProgressHUD {
-    if (!self.cj_ProgressHUD) {
-        self.cj_ProgressHUD = [CJProgressHUD defaultProgressHUD];
+- (void)cj_showProgressHUD {
+    if (!self.cj_progressHUD) {
+        self.cj_progressHUD = [CJProgressHUD defaultProgressHUD];
     }
     
-    [self.cj_ProgressHUD showInView:self.view withShowBackground:NO];
+    [self.cj_progressHUD showInView:self.view withShowBackground:NO];
 }
 
 /// 隐藏HUD
-- (void)dismissDemoProgressHUD {
-    BOOL dismissSuccess = [self.cj_ProgressHUD dismissWithForce:NO];
+- (void)cj_dismissProgressHUD {
+    BOOL dismissSuccess = [self.cj_progressHUD dismissWithForce:NO];
     if (dismissSuccess) {
-        self.cj_ProgressHUD = nil;
+        self.cj_progressHUD = nil;
     }
 }
 

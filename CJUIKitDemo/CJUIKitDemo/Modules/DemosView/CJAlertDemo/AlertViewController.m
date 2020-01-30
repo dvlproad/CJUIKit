@@ -9,7 +9,7 @@
 #import "AlertViewController.h"
 #import "CJModuleModel.h"
 
-#import "CJAlert.h"
+#import "CJSystemAlertUtil.h"
 #import "CJAlertUtil.h"
 #import "CJMessageAlertView.h"
 #import "CJTextInputAlertView.h"
@@ -164,12 +164,12 @@
     NSArray *alertActions = @[cancelAlertAction, okAlertAction];
     
     if (preferredStyle == UIAlertControllerStyleActionSheet) {
-        [CJAlert showSystemSheetWithTitle:title
+        [CJSystemAlertUtil showSystemSheetWithTitle:title
                                   message:message
                              alertActions:alertActions
                          inViewController:self];
     } else {
-        [CJAlert showSystemAlertWithTitle:title
+        [CJSystemAlertUtil showSystemAlertWithTitle:title
                                   message:message
                              alertActions:alertActions
                          inViewController:self];

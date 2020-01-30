@@ -12,7 +12,6 @@
 @interface CJProgressHUD () {
     
 }
-@property (nonatomic, copy) NSString *animationNamed;
 @property (nonatomic, strong) UIView *bgView;
 
 @property (nonatomic, assign, readonly) NSInteger callShowMethodCount;
@@ -24,11 +23,10 @@
 @implementation CJProgressHUD
 
 #pragma mark - 全局设置(APP启动时候调用)
-+ (void)updateAnimationNamed:(NSString *)animationNamed {
-    CJProgressHUD *progressHUD = [CJProgressHUD sharedInstance];
-    progressHUD.animationNamed = animationNamed;
-    if (progressHUD.lotAnimationView.loopAnimation == NO) {
-        progressHUD.lotAnimationView.loopAnimation = YES;
+- (void)updateAnimationNamed:(NSString *)animationNamed {
+    _animationNamed = animationNamed;
+    if (self.lotAnimationView.loopAnimation == NO) {
+        self.lotAnimationView.loopAnimation = YES;
     }
 }
 
@@ -39,7 +37,7 @@
 + (CJProgressHUD *)defaultProgressHUD {
     NSString *animationNamed = [CJProgressHUD sharedInstance].animationNamed;
     if (animationNamed == nil) {
-        NSLog(@"Error: 请调用[[CJProgressHUD sharedInstance] updateAnimationNamed: 来设置全局的ProgressHUD动画");
+        NSAssert(NO, @"Error: 请调[CJHUDUtil updateAnimationNamed: 来设置全局的ProgressHUD动画");
     }
     
     CJProgressHUD *progressHUD = [[CJProgressHUD alloc] init];
@@ -48,18 +46,6 @@
     
     return progressHUD;
 }
-
-
-#pragma mark - 使用时候调用
-+ (void)show {
-    // Partner 需要 showBackground
-    [[CJProgressHUD sharedInstance] showInView:nil withShowBackground:YES];
-}
-
-+ (void)dismiss {
-    [[CJProgressHUD sharedInstance] dismissWithForce:YES];
-}
-
 
 #pragma mark - 其他
 + (CJProgressHUD *)sharedInstance {
@@ -107,7 +93,7 @@
 
 - (void)showInView:(UIView *)superView withShowBackground:(BOOL)showBackground {
     if (self.animationNamed.length == 0) {
-        NSAssert(NO, @"Error: 请调用[[CJProgressHUD sharedInstance] updateAnimationNamed: 来设置全局的ProgressHUD动画");
+        NSAssert(NO, @"Error: 请调[CJHUDUtil updateAnimationNamed: 来设置全局的ProgressHUD动画");
     }
     if (self.lotAnimationView.loopAnimation == NO) {
         self.lotAnimationView.loopAnimation = YES;

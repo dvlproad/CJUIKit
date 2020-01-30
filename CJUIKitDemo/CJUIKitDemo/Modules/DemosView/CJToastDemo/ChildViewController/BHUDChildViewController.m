@@ -29,9 +29,9 @@
     self.view.backgroundColor = [UIColor cyanColor];
     
     CJMJRefreshNormalHeader *header = [CJMJRefreshNormalHeader headerWithRefreshingBlock:^{
-        [self showDemoProgressHUD];
+        [self cj_showProgressHUD];
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-            [self dismissDemoProgressHUD];
+            [self cj_dismissProgressHUD];
             [self.tableView.mj_header endRefreshing];
         });
     }];

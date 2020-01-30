@@ -1,17 +1,17 @@
 //
-//  CJAlert.m
+//  CJSystemAlertUtil.m
 //  CJUIKitDemo
 //
 //  Created by ciyouzen on 2016/3/11.
 //  Copyright © 2016年 dvlproad. All rights reserved.
 //
 
-#import "CJAlert.h"
+#import "CJSystemAlertUtil.h"
 //#import "CJBaseAlertView.h"
 #import "CJMessageAlertView.h"
 #import "CJTextInputAlertView.h"
 
-@implementation CJAlert
+@implementation CJSystemAlertUtil
 
 #pragma mark - UIAlertController
 /// 显示系统AlertType弹框

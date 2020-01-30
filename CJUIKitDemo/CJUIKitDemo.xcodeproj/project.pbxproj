@@ -14,8 +14,12 @@
 		154FFCA623DA29AC00FF1E0D /* CJBaseAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 154FFCA423DA29AC00FF1E0D /* CJBaseAlertView.m */; };
 		154FFCAE23DA2B3F00FF1E0D /* CJThemeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 154FFCAC23DA2B3F00FF1E0D /* CJThemeModel.m */; };
 		154FFCAF23DA2B3F00FF1E0D /* CJThemeManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 154FFCAD23DA2B3F00FF1E0D /* CJThemeManager.m */; };
+		156022FF23E29D4600DEAC2A /* CJHUDUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 156022FD23E29D4600DEAC2A /* CJHUDUtil.m */; };
+		1560230223E2A35600DEAC2A /* TSHUDViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1560230123E2A35600DEAC2A /* TSHUDViewController.m */; };
+		1560230523E2A6C300DEAC2A /* loading_coffee.json in Resources */ = {isa = PBXBuildFile; fileRef = 1560230323E2A6C300DEAC2A /* loading_coffee.json */; };
+		1560230623E2A6C300DEAC2A /* loading_tea.json in Resources */ = {isa = PBXBuildFile; fileRef = 1560230423E2A6C300DEAC2A /* loading_tea.json */; };
 		15C970BB23DB594F008D81B0 /* CQAlertManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 15C970BA23DB594F008D81B0 /* CQAlertManager.m */; };
-		15C970BE23DB5AEA008D81B0 /* CJAlert.m in Sources */ = {isa = PBXBuildFile; fileRef = 15C970BD23DB5AEA008D81B0 /* CJAlert.m */; };
+		15C970BE23DB5AEA008D81B0 /* CJSystemAlertUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 15C970BD23DB5AEA008D81B0 /* CJSystemAlertUtil.m */; };
 		15C970CC23DB5D4F008D81B0 /* CJActionSheetView.m in Sources */ = {isa = PBXBuildFile; fileRef = 15C970C023DB5D4E008D81B0 /* CJActionSheetView.m */; };
 		15C970CD23DB5D4F008D81B0 /* CJActionSheetModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 15C970C123DB5D4E008D81B0 /* CJActionSheetModel.m */; };
 		15C970CE23DB5D4F008D81B0 /* CJActionSheetTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 15C970C323DB5D4E008D81B0 /* CJActionSheetTableViewCell.m */; };
@@ -273,8 +277,6 @@
 		78C8148D216E11AF00A6B190 /* AChildViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78C81485216E11AF00A6B190 /* AChildViewController.m */; };
 		78C8148E216E11AF00A6B190 /* Home1.m in Sources */ = {isa = PBXBuildFile; fileRef = 78C81487216E11AF00A6B190 /* Home1.m */; };
 		78C8148F216E11AF00A6B190 /* EChildViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78C81488216E11AF00A6B190 /* EChildViewController.m */; };
-		78D33F0121E87AC200C04FC1 /* DemoProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 78D33EFC21E87AC200C04FC1 /* DemoProgressHUD.m */; };
-		78D33F0321E87AC200C04FC1 /* UIViewController+DemoProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 78D33F0021E87AC200C04FC1 /* UIViewController+DemoProgressHUD.m */; };
 		78E18952217778D900B8781A /* NavigationBarHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78E18951217778D900B8781A /* NavigationBarHomeViewController.m */; };
 		78E1895621777CB900B8781A /* CJUIKitBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78E1895521777CB900B8781A /* CJUIKitBaseViewController.m */; };
 		78E1895921777DC600B8781A /* CJUIKitBaseHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78E1895721777DC600B8781A /* CJUIKitBaseHomeViewController.m */; };
@@ -415,10 +417,16 @@
 		154FFCAB23DA2B3F00FF1E0D /* CJThemeManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJThemeManager.h; sourceTree = "<group>"; };
 		154FFCAC23DA2B3F00FF1E0D /* CJThemeModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJThemeModel.m; sourceTree = "<group>"; };
 		154FFCAD23DA2B3F00FF1E0D /* CJThemeManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJThemeManager.m; sourceTree = "<group>"; };
+		156022FD23E29D4600DEAC2A /* CJHUDUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJHUDUtil.m; sourceTree = "<group>"; };
+		156022FE23E29D4600DEAC2A /* CJHUDUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJHUDUtil.h; sourceTree = "<group>"; };
+		1560230023E2A35600DEAC2A /* TSHUDViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSHUDViewController.h; sourceTree = "<group>"; };
+		1560230123E2A35600DEAC2A /* TSHUDViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSHUDViewController.m; sourceTree = "<group>"; };
+		1560230323E2A6C300DEAC2A /* loading_coffee.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = loading_coffee.json; sourceTree = "<group>"; };
+		1560230423E2A6C300DEAC2A /* loading_tea.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = loading_tea.json; sourceTree = "<group>"; };
 		15C970B923DB594E008D81B0 /* CQAlertManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CQAlertManager.h; sourceTree = "<group>"; };
 		15C970BA23DB594F008D81B0 /* CQAlertManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CQAlertManager.m; sourceTree = "<group>"; };
-		15C970BC23DB5AEA008D81B0 /* CJAlert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJAlert.h; sourceTree = "<group>"; };
-		15C970BD23DB5AEA008D81B0 /* CJAlert.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJAlert.m; sourceTree = "<group>"; };
+		15C970BC23DB5AEA008D81B0 /* CJSystemAlertUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJSystemAlertUtil.h; sourceTree = "<group>"; };
+		15C970BD23DB5AEA008D81B0 /* CJSystemAlertUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJSystemAlertUtil.m; sourceTree = "<group>"; };
 		15C970C023DB5D4E008D81B0 /* CJActionSheetView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJActionSheetView.m; sourceTree = "<group>"; };
 		15C970C123DB5D4E008D81B0 /* CJActionSheetModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJActionSheetModel.m; sourceTree = "<group>"; };
 		15C970C223DB5D4E008D81B0 /* CJJumpMapUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJJumpMapUtil.h; sourceTree = "<group>"; };
@@ -874,10 +882,6 @@
 		78C81486216E11AF00A6B190 /* BChildViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BChildViewController.h; sourceTree = "<group>"; };
 		78C81487216E11AF00A6B190 /* Home1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Home1.m; sourceTree = "<group>"; };
 		78C81488216E11AF00A6B190 /* EChildViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EChildViewController.m; sourceTree = "<group>"; };
-		78D33EFC21E87AC200C04FC1 /* DemoProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DemoProgressHUD.m; sourceTree = "<group>"; };
-		78D33EFD21E87AC200C04FC1 /* UIViewController+DemoProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+DemoProgressHUD.h"; sourceTree = "<group>"; };
-		78D33EFF21E87AC200C04FC1 /* DemoProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DemoProgressHUD.h; sourceTree = "<group>"; };
-		78D33F0021E87AC200C04FC1 /* UIViewController+DemoProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+DemoProgressHUD.m"; sourceTree = "<group>"; };
 		78E18950217778D900B8781A /* NavigationBarHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NavigationBarHomeViewController.h; sourceTree = "<group>"; };
 		78E18951217778D900B8781A /* NavigationBarHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NavigationBarHomeViewController.m; sourceTree = "<group>"; };
 		78E1895421777CB900B8781A /* CJUIKitBaseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CJUIKitBaseViewController.h; sourceTree = "<group>"; };
@@ -1146,6 +1150,8 @@
 			children = (
 				15C970E123DB7B85008D81B0 /* CJProgressHUD.h */,
 				15C970E323DB7B86008D81B0 /* CJProgressHUD.m */,
+				156022FE23E29D4600DEAC2A /* CJHUDUtil.h */,
+				156022FD23E29D4600DEAC2A /* CJHUDUtil.m */,
 				15C970E223DB7B86008D81B0 /* UIViewController+CJProgressHUD.h */,
 				15C970E023DB7B85008D81B0 /* UIViewController+CJProgressHUD.m */,
 			);
@@ -1285,8 +1291,8 @@
 			children = (
 				15C970B923DB594E008D81B0 /* CQAlertManager.h */,
 				15C970BA23DB594F008D81B0 /* CQAlertManager.m */,
-				15C970BC23DB5AEA008D81B0 /* CJAlert.h */,
-				15C970BD23DB5AEA008D81B0 /* CJAlert.m */,
+				15C970BC23DB5AEA008D81B0 /* CJSystemAlertUtil.h */,
+				15C970BD23DB5AEA008D81B0 /* CJSystemAlertUtil.m */,
 			);
 			path = DemoAlert;
 			sourceTree = "<group>";
@@ -1438,7 +1444,6 @@
 				7808D5B0217079E5007FC851 /* DemoBarButtonItemFactory */,
 				7852D9DB216F104000E50A39 /* DemoButtonFactory */,
 				788A55F721AFCE3C0011F993 /* DemoLabel */,
-				78D33EFB21E87AC200C04FC1 /* DemoProgressHUD */,
 				78AB83BF21B96D7000853E21 /* DemoTextFieldFactory */,
 			);
 			path = CommonUI;
@@ -2138,6 +2143,8 @@
 			isa = PBXGroup;
 			children = (
 				7868278021AF02E000FCCDE5 /* bg@2x.jpg */,
+				1560230323E2A6C300DEAC2A /* loading_coffee.json */,
+				1560230423E2A6C300DEAC2A /* loading_tea.json */,
 				7861852B21D3630B004B71FF /* AppCommon.xcassets */,
 				7868275F21AE926700FCCDE5 /* AppAssets.xcassets */,
 				78B90E66218B49CF00776584 /* MainAsset.xcassets */,
@@ -2279,17 +2286,6 @@
 			path = ChildViewController;
 			sourceTree = "<group>";
 		};
-		78D33EFB21E87AC200C04FC1 /* DemoProgressHUD */ = {
-			isa = PBXGroup;
-			children = (
-				78D33EFF21E87AC200C04FC1 /* DemoProgressHUD.h */,
-				78D33EFC21E87AC200C04FC1 /* DemoProgressHUD.m */,
-				78D33EFD21E87AC200C04FC1 /* UIViewController+DemoProgressHUD.h */,
-				78D33F0021E87AC200C04FC1 /* UIViewController+DemoProgressHUD.m */,
-			);
-			path = DemoProgressHUD;
-			sourceTree = "<group>";
-		};
 		78E1895321777C9700B8781A /* Base */ = {
 			isa = PBXGroup;
 			children = (
@@ -2404,6 +2400,8 @@
 			children = (
 				800F3B622011899400A5C326 /* ToastViewController.h */,
 				800F3B632011899400A5C326 /* ToastViewController.m */,
+				1560230023E2A35600DEAC2A /* TSHUDViewController.h */,
+				1560230123E2A35600DEAC2A /* TSHUDViewController.m */,
 				784AB8E721E892FD00A3F51C /* TestHUDHomeViewController.h */,
 				784AB8E821E892FD00A3F51C /* TestHUDHomeViewController.m */,
 				784AB8CF21E87E7900A3F51C /* TestProgressHUDViewController.h */,
@@ -3097,6 +3095,7 @@
 				80FF919F1FC5682B00E437CF /* ProcessLineViewController.xib in Resources */,
 				78B90E67218B49D000776584 /* MainAsset.xcassets in Resources */,
 				78A0D05A216BB19800EFAD67 /* badgeButton_normal@3x.png in Resources */,
+				1560230523E2A6C300DEAC2A /* loading_coffee.json in Resources */,
 				7850B71220937E85008F4A21 /* WelcomePopupView.xib in Resources */,
 				8051E5CE20AAB34E003370AA /* details_icon_huadong@3x.png in Resources */,
 				80FF90B21FC5649F00E437CF /* TableHeaderView.xib in Resources */,
@@ -3115,6 +3114,7 @@
 				787FDB5720500B01008A46E3 /* SearchBarViewController.xib in Resources */,
 				787FDB8820500B5C008A46E3 /* slider_double_thumbImage_a@2x.png in Resources */,
 				7856F81C21F4F4C3004AF751 /* cjCheckBoxOrangeYES@2x.png in Resources */,
+				1560230623E2A6C300DEAC2A /* loading_tea.json in Resources */,
 				787FDB6720500B1F008A46E3 /* smail@2x.png in Resources */,
 				7856F83021F4F4C3004AF751 /* cjBackBarButtonItemGray@2x.png in Resources */,
 				80FF919B1FC5682B00E437CF /* DateViewController.xib in Resources */,
@@ -3340,7 +3340,7 @@
 				78FCF5562306AA8F00D275F9 /* UIView+CJRounderCorner.m in Sources */,
 				7808319222DC65DD00F36576 /* WelcomeViewController.m in Sources */,
 				78B6C2E32159D6BC00D5864E /* DemoBusStationModel.m in Sources */,
-				15C970BE23DB5AEA008D81B0 /* CJAlert.m in Sources */,
+				15C970BE23DB5AEA008D81B0 /* CJSystemAlertUtil.m in Sources */,
 				8050038A211C3A29002A2306 /* NSObjectCJHelperViewController.m in Sources */,
 				7856F80321F4F4C3004AF751 /* UIScrollView+CJKeyboardAvoiding.m in Sources */,
 				80500389211C3A29002A2306 /* HelperHomeViewController.m in Sources */,
@@ -3362,7 +3362,6 @@
 				78E1895621777CB900B8781A /* CJUIKitBaseViewController.m in Sources */,
 				784AB8F321E8962000A3F51C /* CHUDChildViewController.m in Sources */,
 				7856F80921F4F4C3004AF751 /* UIButton+CJStructure.m in Sources */,
-				78D33F0321E87AC200C04FC1 /* UIViewController+DemoProgressHUD.m in Sources */,
 				7856F83221F4F4C3004AF751 /* UITableView+CJEmptyView.m in Sources */,
 				787FDB8620500B5C008A46E3 /* SliderViewController.m in Sources */,
 				7850B70020937C5A008F4A21 /* DragViewController.m in Sources */,
@@ -3462,9 +3461,9 @@
 				80500388211C3A29002A2306 /* PresentBaseViewController.m in Sources */,
 				7850B70420937C5A008F4A21 /* ShowDropDownViewController.m in Sources */,
 				80D0120A210336B900D1EDF0 /* BeChangeViewController.m in Sources */,
-				78D33F0121E87AC200C04FC1 /* DemoProgressHUD.m in Sources */,
 				80FF909F1FC5649F00E437CF /* NestedXibViewController.m in Sources */,
 				787FDB5620500B01008A46E3 /* SearchBarViewController.m in Sources */,
+				1560230223E2A35600DEAC2A /* TSHUDViewController.m in Sources */,
 				80FF91941FC5682B00E437CF /* TypeConvertViewController.m in Sources */,
 				80E7E63520AC227B000F762D /* AppInfoManager.m in Sources */,
 				7808D5B921709E6B007FC851 /* UIViewController+CJChangeEnvironment.m in Sources */,
@@ -3484,6 +3483,7 @@
 				7880E6F5213A9E84009C9BCF /* CJRandomNameUtil.m in Sources */,
 				7856F80C21F4F4C3004AF751 /* CJDefaultToolbar.m in Sources */,
 				7857ABB8225482D200B1569C /* CJDemoDatePickerView.m in Sources */,
+				156022FF23E29D4600DEAC2A /* CJHUDUtil.m in Sources */,
 				7808318C22DC492E00F36576 /* WelcomeView.m in Sources */,
 				7856F80E21F4F4C3004AF751 /* UIView+CJPopupInView.m in Sources */,
 				788113C82199631A00D1630D /* PerfectSharedInstanceClass.m in Sources */,

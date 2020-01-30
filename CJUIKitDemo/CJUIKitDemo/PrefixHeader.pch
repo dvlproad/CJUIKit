@@ -24,7 +24,7 @@
 #import <CJBaseUIKit/CJAlertUtil.h>
 #endif
 
-#import "UIViewController+DemoProgressHUD.h"
+#import "UIViewController+CJProgressHUD.h"
 #import "DemoLabelFactory.h"
 #import "DemoButtonFactory.h"
 #import "DemoTextFieldFactory.h"

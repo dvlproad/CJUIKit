@@ -14,27 +14,21 @@
     
 }
 @property (nonatomic, strong) LOTAnimationView *lotAnimationView;
+@property (nonatomic, copy, readonly) NSString *animationNamed;
 
 + (instancetype)new NS_UNAVAILABLE;
 - (instancetype)init NS_UNAVAILABLE;
 - (instancetype)initWithFrame:(CGRect)frame NS_UNAVAILABLE;
 - (instancetype)initWithCoder:(NSCoder *)aDecoder NS_UNAVAILABLE;
 
-#pragma mark - 全局设置(APP启动时候调用)
++ (CJProgressHUD *)sharedInstance;
+
 /**
  *  设置全局ProgressHUD的json文件名
  *
  *  @param animationNamed animationNamed
  */
-+ (void)updateAnimationNamed:(NSString *)animationNamed;
-
-
-#pragma mark - 使用时候调用
-/// 显示ProgressHUD
-+ (void)show;
-
-/// 隐藏ProgressHUD
-+ (void)dismiss;
+- (void)updateAnimationNamed:(NSString *)animationNamed;
 
 
 #pragma mark - 获取与全局动画一致的ProgressHUD

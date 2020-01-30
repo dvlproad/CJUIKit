@@ -15,6 +15,7 @@
 #import "ToastViewController.h"
 #import "AlertViewController.h"
 #import "ActionSheetHomeViewController.h"
+#import "TSHUDViewController.h"
 
 //string
 #import "StringEventViewController.h"
@@ -111,6 +112,12 @@
             CJModuleModel *actionSheetUtilModule = [[CJModuleModel alloc] init];
             actionSheetUtilModule.title = @"ActionSheet";
             actionSheetUtilModule.classEntry = [ActionSheetHomeViewController class];
+            [sectionDataModel.values addObject:actionSheetUtilModule];
+        }
+        {
+            CJModuleModel *actionSheetUtilModule = [[CJModuleModel alloc] init];
+            actionSheetUtilModule.title = @"HUD";
+            actionSheetUtilModule.classEntry = [TSHUDViewController class];
             [sectionDataModel.values addObject:actionSheetUtilModule];
         }
         

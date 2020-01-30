@@ -22,7 +22,7 @@
 #import <CJFoundation/NSString+CJCut.h>
 #import <CJFoundation/NSString+CJAttributedString.h>
 
-#import "CJProgressHUD.h"
+#import "CJHUDUtil.h"
 #import <CJBaseEffectKit/CJRefreshAnimateManager.h>
 
 @interface AppDelegate ()
@@ -55,7 +55,7 @@
     
     YunInstallUncaughtExceptionHandler();
     
-    [CJProgressHUD updateAnimationNamed:@"loading_tea"];
+    [CJHUDUtil updateAnimationNamed:@"loading_tea"];
     [CJRefreshAnimateManager sharedInstance].animationNamed = @"loading_coffee";
     
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
