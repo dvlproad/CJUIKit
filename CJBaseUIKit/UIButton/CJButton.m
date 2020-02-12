@@ -7,6 +7,7 @@
 //
 
 #import "CJButton.h"
+#import "UIButton+CJMoreProperty.h"
 
 @implementation CJButton
 
@@ -35,21 +36,27 @@
     BOOL selected = self.selected;  //是否选中
     BOOL enabled = self.enabled;    //是否可操作
     
-    if (enabled) {
-        if (selected) {
+    if (selected) {
+        self.layer.borderWidth = self.cjSelectedBorderWidth;
+        if (enabled) {
             if (self.cjSelectedBorderColor) {
                 self.layer.borderColor = self.cjSelectedBorderColor.CGColor;
             }
-            
         } else {
+            if (self.cjSelectedDisabledBorderColor) {
+                self.layer.borderColor = self.cjSelectedDisabledBorderColor.CGColor;
+            }
+        }
+    } else {
+        self.layer.borderWidth = self.cjNormalBorderWidth;
+        if (enabled) {
             if (self.cjNormalBorderColor) {
                 self.layer.borderColor = self.cjNormalBorderColor.CGColor;
             }
-            
-        }
-    } else {
-        if (self.cjDisabledBorderColor) {
-            self.layer.borderColor = self.cjDisabledBorderColor.CGColor;
+        } else {
+            if (self.cjDisabledBorderColor) {
+                self.layer.borderColor = self.cjDisabledBorderColor.CGColor;
+            }
         }
     }
 }

@@ -12,7 +12,10 @@
 static NSString * const cjNormalBGColorKey = @"cjNormalBGColorKey";
 static NSString * const cjHighlightedBGColorKey = @"cjHighlightedBGColorKey";
 static NSString * const cjDisabledBGColorKey = @"cjDisabledBGColorKey";
+
+
 static NSString * const cjSelectedBGColorKey = @"cjSelectedBGColorKey";
+static NSString * const cjSelectedDisabledBGColorKey = @"cjSelectedDisabledBGColorKey";
 
 static NSString * const cjTouchUpInsideBlockKey = @"cjTouchUpInsideBlockKey";
 
@@ -54,8 +57,21 @@ static NSString * const cjDataModelKey = @"cjDataModelKey";
     objc_setAssociatedObject(self, &cjDisabledBGColorKey, cjDisabledBGColor, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     
     UIImage *disabledBGImage = cj_buttonBGImage(cjDisabledBGColor);
-    [self setBackgroundImage:disabledBGImage forState:UIControlStateDisabled];
+    [self setBackgroundImage:disabledBGImage forState:UIControlStateNormal | UIControlStateDisabled];
 }
+
+//cjSelectedDisabledBGColor
+- (UIColor *)cjSelectedDisabledBGColor {
+    return objc_getAssociatedObject(self, &cjSelectedDisabledBGColorKey) ;
+}
+
+- (void)setCjSelectedDisabledBGColor:(UIColor *)cjSelectedDisabledBGColor {
+    objc_setAssociatedObject(self, &cjSelectedDisabledBGColorKey, cjSelectedDisabledBGColor, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    
+    UIImage *disabledBGImage = cj_buttonBGImage(cjSelectedDisabledBGColor);
+    [self setBackgroundImage:disabledBGImage forState:UIControlStateSelected | UIControlStateDisabled];
+}
+
 
 //cjSelectedBGColor
 - (UIColor *)cjSelectedBGColor {

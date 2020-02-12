@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1560230823E2AECA00DEAC2A /* CQAlertManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1560230723E2AECA00DEAC2A /* CQAlertManager.swift */; };
 		2B0D84BB56F363AED1B821D4 /* libPods-CJUIKitSwiftDemoTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E9F6A001CAE33435CA0C93F9 /* libPods-CJUIKitSwiftDemoTests.a */; };
 		2C6FCBE45EDE3507FE1926BE /* libPods-CJUIKitSwiftDemoUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 33E23AEB027F2E56E20571AA /* libPods-CJUIKitSwiftDemoUITests.a */; };
 		786BCF2122745B040085F619 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 786BCF2022745B040085F619 /* AppDelegate.swift */; };
@@ -104,6 +105,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1560230723E2AECA00DEAC2A /* CQAlertManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CQAlertManager.swift; sourceTree = "<group>"; };
 		26D148D26780BBA0452BF615 /* Pods-CJUIKitSwiftDemoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CJUIKitSwiftDemoTests.debug.xcconfig"; path = "Target Support Files/Pods-CJUIKitSwiftDemoTests/Pods-CJUIKitSwiftDemoTests.debug.xcconfig"; sourceTree = "<group>"; };
 		33E23AEB027F2E56E20571AA /* libPods-CJUIKitSwiftDemoUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CJUIKitSwiftDemoUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		405CF151A0991660FD39C270 /* Pods-CJUIKitSwiftDemoUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CJUIKitSwiftDemoUITests.debug.xcconfig"; path = "Target Support Files/Pods-CJUIKitSwiftDemoUITests/Pods-CJUIKitSwiftDemoUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -501,9 +503,9 @@
 			isa = PBXGroup;
 			children = (
 				786BCF8D22745B9B0085F619 /* UIView+CJDragAction.h */,
-				786BCF8E22745B9B0085F619 /* UIView+CJKeepBounds.m */,
 				786BCF8F22745B9B0085F619 /* UIView+CJDragAction.m */,
 				786BCF9022745B9B0085F619 /* UIView+CJKeepBounds.h */,
+				786BCF8E22745B9B0085F619 /* UIView+CJKeepBounds.m */,
 			);
 			path = CJDragAction;
 			sourceTree = "<group>";
@@ -705,6 +707,7 @@
 			children = (
 				78A8ADBC2284043D006760A1 /* CJAlertView.swift */,
 				78A8ADC12284825B006760A1 /* CJAlert.swift */,
+				1560230723E2AECA00DEAC2A /* CQAlertManager.swift */,
 			);
 			path = CJAlert;
 			sourceTree = "<group>";
@@ -1058,6 +1061,7 @@
 				786BD00522745B9C0085F619 /* UIImage+CJFixOrientation.m in Sources */,
 				786BCFFE22745B9C0085F619 /* UIImage+CJChangeColor.m in Sources */,
 				786BD00222745B9C0085F619 /* UIImage+CJBase64.m in Sources */,
+				1560230823E2AECA00DEAC2A /* CQAlertManager.swift in Sources */,
 				78F9E69E2285C924009AA4FC /* ConstrainArrayDSL.swift in Sources */,
 				786BCFFD22745B9C0085F619 /* UIImage+CJRotateAngle.m in Sources */,
 				786BD00122745B9C0085F619 /* UIImage+CJMakeCircle.m in Sources */,

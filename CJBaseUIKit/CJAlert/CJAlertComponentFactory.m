@@ -9,7 +9,9 @@
 #import "CJAlertComponentFactory.h"
 #import <CoreText/CoreText.h>
 #import "CJThemeManager.h"
-
+#import "UITextField+CJPadding.h"
+#import "UIColor+CJHex.h"
+#import "UIButton+CJMoreProperty.h"
 
 @implementation CJAlertComponentFactory
 
@@ -419,8 +421,8 @@
 + (UIButton *)__okButtonWithOKButtonTitle:(NSString *)okButtonTitle
                                  okHandle:(void(^)(UIButton *button))okHandle
 {
-    UIColor *okButtonEnableTitleColor = CJColorFromHexStringAndAlpha([CJThemeManager serviceThemeModel].themeBlueColor, 1.0);
-    UIColor *okButtondisableTitleColor = CJColorFromHexStringAndAlpha([CJThemeManager serviceThemeModel].themeBlueColor, 0.6);
+    UIColor *okButtonEnableTitleColor = CJColorFromHexStringAndAlpha([CJThemeManager serviceThemeModel].themeColor, 1.0);
+    UIColor *okButtondisableTitleColor = CJColorFromHexStringAndAlpha([CJThemeManager serviceThemeModel].themeColor, 0.6);
     
     UIButton *okButton = [UIButton buttonWithType:UIButtonTypeCustom];
     [okButton setTitleColor:okButtonEnableTitleColor forState:UIControlStateNormal];

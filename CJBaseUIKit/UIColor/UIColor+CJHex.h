@@ -25,7 +25,7 @@
 /**
  *  3.支持使用16进制数值/字符串来选取颜色
  */
-#define CJColorFromHexString(color)     CJColorFromHexStringAndAlpha(color, 1.0)
+#define CJColorFromHexString(color)             [UIColor cjColorAlphaWithHexString:color]
 #define CJColorFromHexStringAndAlpha(color, a)  [UIColor cjColorWithHexString:color alpha:a]
 
 
@@ -40,5 +40,15 @@
  *  return  颜色
  */
 + (UIColor *)cjColorWithHexString:(NSString *)color alpha:(CGFloat)alpha;
+
+/*
+ *
+ *  初始化颜色(从十六进制字符串获取颜色)
+ *
+ *  @param colorAlpha    颜色和透明度的值（支持@“#123456FF”、 @“0X123456FF”、 @“123456FF”三种格式）
+ *
+ *  return  颜色
+ */
++ (UIColor *)cjColorAlphaWithHexString:(NSString *)colorAlpha;
 
 @end

@@ -9,6 +9,7 @@
 #import "CJActionSheetTableViewCell.h"
 #import <Masonry/Masonry.h>
 #import "UIColor+CJHex.h"
+#import "CJThemeManager.h"
 
 @interface CJActionSheetTableViewCell () {
     
@@ -79,7 +80,7 @@
         _mainTitleLabel = [[UILabel alloc] init];
         _mainTitleLabel.textAlignment = NSTextAlignmentCenter;
         _mainTitleLabel.font = [UIFont systemFontOfSize:14];
-        _mainTitleLabel.textColor = CJColorFromHexString(@"#333333");
+        _mainTitleLabel.textColor = CJColorFromHexString([CJThemeManager serviceThemeModel].textMainColor);
     }
     return _mainTitleLabel;
 }

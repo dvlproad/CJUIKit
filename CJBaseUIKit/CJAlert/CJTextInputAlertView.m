@@ -7,12 +7,7 @@
 //
 
 #import "CJTextInputAlertView.h"
-#import <CJFoundation/NSString+CJTextSize.h>
-
-//#import <CJBaseUIKit/UIButton+CJMoreProperty.h>
-//#import <CJBaseUIKit/UIColor+CJHex.h>
-//#import <CJBaseUIKit/UITextField+CJPadding.h>
-//#import <CJBaseUIKit/UITextField+CJTextChangeBlock.h>
+#import "UITextField+CJTextChangeBlock.h"
 
 @interface CJTextInputAlertView () {
     

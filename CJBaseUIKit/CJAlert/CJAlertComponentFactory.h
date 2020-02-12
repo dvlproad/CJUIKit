@@ -8,23 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import <Masonry/Masonry.h>
-
-#ifdef TEST_CJBASEUIKIT_POD
-#import "UIView+CJPopupInView.h"
-#import "UIColor+CJHex.h"
-#import "UIButton+CJMoreProperty.h"
 #import "CJTextField.h"
-#import "UITextField+CJPadding.h"
-#import "UITextField+CJTextChangeBlock.h"
-#else
-#import <CJBaseUIKit/UIView+CJPopupInView.h>
-#import <CJBaseUIKit/UIColor+CJHex.h>
-#import <CJBaseUIKit/UIButton+CJMoreProperty.h>
-#import <CJBaseUIKit/CJTextField.h>
-#import <CJBaseUIKit/UITextField+CJPadding.h>
-#import <CJBaseUIKit/UITextField+CJTextChangeBlock.h>
-#endif
-
 
 @class CJAlertTitleLableModel, CJAlertMessageLableModel, CJAlertBottomButtonsModel;
 @interface CJAlertComponentFactory : NSObject {

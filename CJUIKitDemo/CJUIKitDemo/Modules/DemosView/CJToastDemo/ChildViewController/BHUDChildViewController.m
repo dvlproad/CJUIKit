@@ -9,6 +9,7 @@
 #import "BHUDChildViewController.h"
 #import <CJBaseEffectKit/CJMJRefreshNormalHeader.h>
 #import "TestProgressHUDViewController.h"
+#import "UIViewController+CJProgressHUD.h"
 
 @interface BHUDChildViewController ()
 

@@ -14,34 +14,15 @@
     
 }
 @property (nonatomic, strong) LOTAnimationView *lotAnimationView;
-@property (nonatomic, copy, readonly) NSString *animationNamed;
-
-+ (instancetype)new NS_UNAVAILABLE;
-- (instancetype)init NS_UNAVAILABLE;
-- (instancetype)initWithFrame:(CGRect)frame NS_UNAVAILABLE;
-- (instancetype)initWithCoder:(NSCoder *)aDecoder NS_UNAVAILABLE;
-
-+ (CJProgressHUD *)sharedInstance;
 
 /**
- *  设置全局ProgressHUD的json文件名
- *
- *  @param animationNamed animationNamed
- */
-- (void)updateAnimationNamed:(NSString *)animationNamed;
-
-
-#pragma mark - 获取与全局动画一致的ProgressHUD
-/**
- *  获取与全局动画一致的默认的ProgressHUD
- */
-+ (CJProgressHUD *)defaultProgressHUD;
-
-
-
-
-
+*  显示HUD
+*
+*  @param superView                要添加到的视图
+*  @param showBackground    YES:加载过程无法进行其他操作，NO:加载过程可进行其他操作
+*/
 - (void)showInView:(UIView *)superView withShowBackground:(BOOL)showBackground;
+
 /**
  *  隐藏HUD(若非强制隐藏，则需要显示次数与隐藏次数一致时候才隐藏)
  *

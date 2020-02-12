@@ -9,7 +9,6 @@
 #import "CJThemeModel.h"
 
 @implementation CJThemeModel
-
 /**
  *  总的默认主题
  *
@@ -17,7 +16,22 @@
  */
 + (CJThemeModel *)defaultThemeModel {
     CJThemeModel *totalThemeModel = [[CJThemeModel alloc] init];
-    totalThemeModel.themeBlueColor = @"#172991";
+    
+    totalThemeModel.themeColor = @"#01adfeFF";
+    totalThemeModel.themeDisabledColor = @"#01adfe66";
+    totalThemeModel.themeOppositeColor = @"#FFFFFF";
+    totalThemeModel.themeOppositeDisabledColor = @"#FFFFFF4C";
+    
+//    totalThemeModel.themeColor = @"#192B93FF";
+//    totalThemeModel.themeDisabledColor = @"#192B9366";
+//    totalThemeModel.themeOppositeColor = @"#FFFFFF";
+//    totalThemeModel.themeOppositeDisabledColor = @"#FFFFFF4C";
+    
+//    totalThemeModel.themeColor = @"#FF0000";
+//    totalThemeModel.themeDisabledColor = @"#00FF00";
+//    totalThemeModel.themeOppositeColor = @"#0000FF";
+//    totalThemeModel.themeOppositeDisabledColor = @"#FFFFFF";
+    
     totalThemeModel.separateLineColor = @"#E5E5E5";
     totalThemeModel.textMainColor = @"#333333";
     totalThemeModel.text666Color = @"#666666";
@@ -25,28 +39,29 @@
     totalThemeModel.placeholderTextColor = @"#CCCCCC";
     
     totalThemeModel.alertThemeModel = [CJAlertThemeModel defaultAlertThemeModel];
+    totalThemeModel.buttonThemeModel = [CJButtonThemeModel defaultButtonThemeModel];
     
     return totalThemeModel;
 }
 
-/**
- *  总的蓝色主题
- *
- *  @return 总的蓝色主题
- */
-+ (CJThemeModel *)blueThemeModel {
-    CJThemeModel *totalThemeModel = [[CJThemeModel alloc] init];
-    totalThemeModel.themeBlueColor = @"#4499FF";
-    totalThemeModel.separateLineColor = @"#E5E5E5";
-    totalThemeModel.textMainColor = @"#333333";
-    totalThemeModel.text666Color = @"#666666";
-    totalThemeModel.textAssistColor = @"#999999";
-    totalThemeModel.placeholderTextColor = @"#CCCCCC";
-    
-    totalThemeModel.alertThemeModel = [CJAlertThemeModel defaultAlertThemeModel];
-    
-    return totalThemeModel;
-}
+///**
+// *  总的蓝色主题
+// *
+// *  @return 总的蓝色主题
+// */
+//+ (CJThemeModel *)blueThemeModel {
+//    CJThemeModel *totalThemeModel = [[CJThemeModel alloc] init];
+//    totalThemeModel.themeColor = @"#4499FF";
+//    totalThemeModel.separateLineColor = @"#E5E5E5";
+//    totalThemeModel.textMainColor = @"#333333";
+//    totalThemeModel.text666Color = @"#666666";
+//    totalThemeModel.textAssistColor = @"#999999";
+//    totalThemeModel.placeholderTextColor = @"#CCCCCC";
+//    
+//    totalThemeModel.alertThemeModel = [CJAlertThemeModel defaultAlertThemeModel];
+//    
+//    return totalThemeModel;
+//}
 
 @end
 
@@ -83,5 +98,28 @@
     
     return alertThemeModel;
 }
+
+@end
+
+
+
+
+@implementation CJButtonThemeModel
+
+/**
+ *  Button的默认主题
+ *
+ *  @return 默认主题
+ */
++ (CJButtonThemeModel *)defaultButtonThemeModel
+{
+    CJButtonThemeModel *buttonThemeModel = [[CJButtonThemeModel alloc] init];
+    
+    buttonThemeModel.cornerRadius = 15;
+    buttonThemeModel.selectedBorderWidth = 0.5;
+    
+    return buttonThemeModel;
+}
+
 
 @end

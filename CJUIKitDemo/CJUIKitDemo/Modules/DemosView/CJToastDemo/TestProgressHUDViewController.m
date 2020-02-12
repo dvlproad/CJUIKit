@@ -7,7 +7,7 @@
 //
 
 #import "TestProgressHUDViewController.h"
-#import "CJHUDUtil.h"
+#import "CQHUDUtil.h"
 
 @interface TestProgressHUDViewController ()
 
@@ -27,9 +27,9 @@
         self.navigationController.view.userInteractionEnabled = YES;
     });
     
-    [CJHUDUtil show];
+    [CQHUDUtil showProgressHUD];
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(5.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        [CJHUDUtil dismiss];
+        [CQHUDUtil dismissProgressHUD];
     });
 }
 

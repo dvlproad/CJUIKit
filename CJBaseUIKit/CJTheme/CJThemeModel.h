@@ -8,11 +8,14 @@
 
 #import <Foundation/Foundation.h>
 
-@class CJAlertThemeModel;
+@class CJAlertThemeModel, CJButtonThemeModel;
 @interface CJThemeModel : NSObject {
     
 }
-@property (nonatomic, copy) NSString *themeBlueColor;
+@property (nonatomic, copy) NSString *themeColor;
+@property (nonatomic, copy) NSString *themeDisabledColor;
+@property (nonatomic, copy) NSString *themeOppositeColor;
+@property (nonatomic, copy) NSString *themeOppositeDisabledColor;
 @property (nonatomic, copy) NSString *separateLineColor;
 @property (nonatomic, copy) NSString *textMainColor;
 @property (nonatomic, copy) NSString *text666Color;
@@ -20,6 +23,7 @@
 @property (nonatomic, copy) NSString *placeholderTextColor;
 
 @property (nonatomic, strong) CJAlertThemeModel *alertThemeModel;
+@property (nonatomic, strong) CJButtonThemeModel *buttonThemeModel;
 
 
 /**
@@ -29,12 +33,12 @@
 */
 + (CJThemeModel *)defaultThemeModel;
 
-/**
- *  总的蓝色主题
- *
- *  @return 总的蓝色主题
- */
-+ (CJThemeModel *)blueThemeModel;
+///**
+// *  总的蓝色主题
+// *
+// *  @return 总的蓝色主题
+// */
+//+ (CJThemeModel *)blueThemeModel;
 
 @end
 
@@ -69,6 +73,26 @@
  *  @return 默认主题
  */
 + (CJAlertThemeModel *)defaultAlertThemeModel;
+
+
+@end
+
+
+
+
+
+@interface CJButtonThemeModel : NSObject {
+    
+}
+@property (nonatomic, assign) CGFloat cornerRadius;
+@property (nonatomic, assign) CGFloat selectedBorderWidth;
+
+/**
+ *  Button的默认主题
+ *
+ *  @return 默认主题
+ */
++ (CJButtonThemeModel *)defaultButtonThemeModel;
 
 
 @end

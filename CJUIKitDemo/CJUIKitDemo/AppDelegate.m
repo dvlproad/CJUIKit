@@ -22,8 +22,8 @@
 #import <CJFoundation/NSString+CJCut.h>
 #import <CJFoundation/NSString+CJAttributedString.h>
 
-#import "CJHUDUtil.h"
-#import <CJBaseEffectKit/CJRefreshAnimateManager.h>
+#import "CJToast.h"
+#import "CQKitSetting.h"
 
 @interface AppDelegate ()
 
@@ -55,8 +55,18 @@
     
     YunInstallUncaughtExceptionHandler();
     
-    [CJHUDUtil updateAnimationNamed:@"loading_tea"];
-    [CJRefreshAnimateManager sharedInstance].animationNamed = @"loading_coffee";
+    // 设置 全局默认 的 加载
+    [CQKitSetting configHUDAnimationWithAnimationNamed:@"loading_tea"];
+    
+    // 设置 全局默认 的 下拉刷新 和 上拉加载
+    [CQKitSetting configHeaderAnimationWithAnimationNamed:@"loading_coffee"];
+    [CQKitSetting updateHeaderStateTextWithIdleText:NSLocalizedString(@"下拉刷新1", nil)
+                                                 pullingText:NSLocalizedString(@"松开刷新2", nil)
+                                              refreshingText:NSLocalizedString(@"加载数据中3", nil)];
+    [CQKitSetting updateFooterStateTextWithIdleText:NSLocalizedString(@"上拉加载更多4", nil)
+                                                 pullingText:NSLocalizedString(@"释放加载5", nil)
+                                              refreshingText:NSLocalizedString(@"加载中6...", nil)
+                                              noMoreDataText:NSLocalizedString(@"没有更多数据了7...", nil)];
     
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         //默认的设置，如网络监听等
@@ -73,7 +83,7 @@
     // 所有测试
     UIViewController *rootViewController = [self getMainRootViewController];
     // 只直接测试某个页面
-    //UIViewController *rootViewController = [[UINavigationController alloc] initWithRootViewController:[[NSClassFromString(@"ButtonStructureViewController") alloc] init]];
+//    UIViewController *rootViewController = [[UINavigationController alloc] initWithRootViewController:[[NSClassFromString(@"ButtonCategoryViewController") alloc] init]];
     
     self.window.rootViewController = rootViewController;
     [self.window makeKeyAndVisible];

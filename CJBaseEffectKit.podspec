@@ -52,6 +52,7 @@ Pod::Spec.new do |s|
     
     ss.dependency 'Masonry'
     ss.dependency 'lottie-ios', '~> 2.5.3'
+    ss.dependency 'CJBaseEffectKit/CJMJRefreshComponent'
   end
 
   s.subspec 'CJRefreshView' do |ss|

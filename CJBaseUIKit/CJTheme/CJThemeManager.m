@@ -22,7 +22,7 @@
 - (instancetype)init {
     self = [super init];
     if (self) {
-        _serviceThemeModel = [CJThemeModel blueThemeModel];
+        _serviceThemeModel = [CJThemeModel defaultThemeModel];
     }
     return self;
 }

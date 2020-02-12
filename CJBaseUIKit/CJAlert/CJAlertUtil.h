@@ -8,22 +8,22 @@
 
 #import <Foundation/Foundation.h>
 
-@interface CJAlertUtil : NSObject {
-    
-}
+NS_ASSUME_NONNULL_BEGIN
+
+@interface CJAlertUtil : NSObject 
 
 #pragma mark - 常用的接口
 ///显示只有一个 "我知道了" 的 alertView
-+ (void)showIKnowAlertViewWithTitle:(NSString *)title
-                            message:(NSString *)message
-                           okHandle:(void(^)(void))okHandle;
++ (void)showIKnowAlertViewWithTitle:(NSString *_Nullable)title
+                            message:(NSString *_Nullable)message
+                           okHandle:(void(^_Nullable)(void))okHandle;
 
 
 ///显示 "取消" + "确定" 的 alertView
-+ (void)showCancelAndOKAlertViewWithTitle:(NSString *)title
-                                  message:(NSString *)message
-                             cancelHandle:(void(^)(void))cancelHandle
-                                 okHandle:(void(^)(void))okHandle;
++ (void)showCancelAndOKAlertViewWithTitle:(NSString *_Nullable)title
+                                  message:(NSString *_Nullable)message
+                             cancelHandle:(void(^_Nullable)(void))cancelHandle
+                                 okHandle:(void(^_Nullable)(void))okHandle;
 
 #pragma mark - DebugView
 /// 显示app信息
@@ -46,11 +46,11 @@
 *  @param okButtonTitle        确认的文本
 *  @param okHandle              确认的事件
 */
-+ (void)showAlertViewWithFlagImage:(UIImage *)flagImage
-                             title:(NSString *)title
-                           message:(NSString *)message
++ (void)showAlertViewWithFlagImage:(nullable UIImage *)flagImage
+                             title:(nullable NSString *)title
+                           message:(nullable NSString *)message
                      okButtonTitle:(NSString *)okButtonTitle
-                          okHandle:(void(^)(void))okHandle;
+                          okHandle:(void(^_Nullable)(void))okHandle;
 
 /*
  *  显示自定义 "Cancel" + "OK" 的 alertView
@@ -63,32 +63,34 @@
  *  @param cancelHandle         取消的事件
  *  @param okHandle             确认的事件
  */
-+ (void)showAlertViewWithFlagImage:(UIImage *)flagImage
-                             title:(NSString *)title
-                           message:(NSString *)message
++ (void)showAlertViewWithFlagImage:(nullable UIImage *)flagImage
+                             title:(nullable NSString *)title
+                           message:(nullable NSString *)message
                  cancelButtonTitle:(NSString *)cancelButtonTitle
                      okButtonTitle:(NSString *)okButtonTitle
-                      cancelHandle:(void(^)(void))cancelHandle
-                          okHandle:(void(^)(void))okHandle;
+                      cancelHandle:(void(^_Nullable)(void))cancelHandle
+                          okHandle:(void(^_Nullable)(void))okHandle;
 
-/**
-*  显示文本输入的弹窗
-*
-*  @param title                弹框的标题
-*  @param inputText            文本框的text
-*  @param placeholder          文本框的placeholder
-*  @param cancelButtonTitle    取消的文本
-*  @param okButtonTitle        确认的文本
-*  @param cancelHandle         取消的事件
-*  @param okHandle             确认的事件
-*/
-+ (void)showAlertViewWithTitle:(NSString *)title
-                      inputText:(NSString *)inputText
-                   placeholder:(NSString *)placeholder
+/*
+ *  显示文本输入的弹窗
+ *
+ *  @param title                弹框的标题
+ *  @param inputText            文本框的text
+ *  @param placeholder          文本框的placeholder
+ *  @param cancelButtonTitle    取消的文本
+ *  @param okButtonTitle        确认的文本
+ *  @param cancelHandle         取消的事件
+ *  @param okHandle             确认的事件
+ */
++ (void)showAlertViewWithTitle:(nullable NSString *)title
+                      inputText:(nullable NSString *)inputText
+                   placeholder:(nullable NSString *)placeholder
              cancelButtonTitle:(NSString *)cancelButtonTitle
                  okButtonTitle:(NSString *)okButtonTitle
-                  cancelHandle:(void(^)(void))cancelHandle
-                      okHandle:(void(^)(NSString *outputText))okHandle;
+                  cancelHandle:(void(^_Nullable)(void))cancelHandle
+                      okHandle:(void(^_Nullable)(NSString *outputText))okHandle;
 
 
 @end
+
+NS_ASSUME_NONNULL_END

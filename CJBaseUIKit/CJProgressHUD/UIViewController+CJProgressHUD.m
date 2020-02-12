@@ -9,7 +9,6 @@
 #import "UIViewController+CJProgressHUD.h"
 #import <objc/runtime.h>
 #import "CJProgressHUD.h"
-#import "CJToast.h"
 
 @interface UIViewController () {
     
@@ -33,7 +32,7 @@
 /// 显示HUD
 - (void)cj_showProgressHUD {
     if (!self.cj_progressHUD) {
-        self.cj_progressHUD = [CJProgressHUD defaultProgressHUD];
+        self.cj_progressHUD = [[CJProgressHUD alloc] init];
     }
     
     [self.cj_progressHUD showInView:self.view withShowBackground:NO];

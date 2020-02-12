@@ -15,9 +15,9 @@
 
 #pragma mark - 常用的接口
 ///显示只有一个 "我知道了" 的 alertView
-+ (void)showIKnowAlertViewWithTitle:(NSString *)title
-                            message:(NSString *)message
-                           okHandle:(void(^)(void))okHandle
++ (void)showIKnowAlertViewWithTitle:(NSString *_Nullable)title
+                            message:(NSString *_Nullable)message
+                           okHandle:(void(^_Nullable)(void))okHandle
 {
     [self showAlertViewWithFlagImage:nil
                                title:title
@@ -30,8 +30,8 @@
 ///显示 "取消" + "确定" 的 alertView
 + (void)showCancelAndOKAlertViewWithTitle:(NSString *)title
                                   message:(NSString *)message
-                             cancelHandle:(void(^)(void))cancelHandle
-                                 okHandle:(void(^)(void))okHandle
+                             cancelHandle:(void(^_Nullable)(void))cancelHandle
+                                 okHandle:(void(^_Nullable)(void))okHandle
 {
    [self showAlertViewWithFlagImage:nil
                               title:title
@@ -96,11 +96,11 @@
 *  @param okButtonTitle        确认的文本
 *  @param okHandle              确认的事件
 */
-+ (void)showAlertViewWithFlagImage:(UIImage *)flagImage
-                             title:(NSString *)title
-                           message:(NSString *)message
++ (void)showAlertViewWithFlagImage:(nullable UIImage *)flagImage
+                             title:(nullable NSString *)title
+                           message:(nullable NSString *)message
                      okButtonTitle:(NSString *)okButtonTitle
-                          okHandle:(void(^)(void))okHandle
+                          okHandle:(void(^_Nullable)(void))okHandle
 {
     CJMessageAlertView *alertView = [[CJMessageAlertView alloc] initWithFlagImage:flagImage title:title message:message okButtonTitle:okButtonTitle okHandle:okHandle];
     
@@ -118,13 +118,13 @@
  *  @param cancelHandle         取消的事件
  *  @param okHandle             确认的事件
  */
-+ (void)showAlertViewWithFlagImage:(UIImage *)flagImage
-                             title:(NSString *)title
-                           message:(NSString *)message
++ (void)showAlertViewWithFlagImage:(nullable UIImage *)flagImage
+                             title:(nullable NSString *)title
+                           message:(nullable NSString *)message
                  cancelButtonTitle:(NSString *)cancelButtonTitle
                      okButtonTitle:(NSString *)okButtonTitle
-                      cancelHandle:(void(^)(void))cancelHandle
-                          okHandle:(void(^)(void))okHandle
+                      cancelHandle:(void(^_Nullable)(void))cancelHandle
+                          okHandle:(void(^_Nullable)(void))okHandle;
 {
     CJMessageAlertView *alertView = [[CJMessageAlertView alloc] initWithFlagImage:flagImage title:title message:message cancelButtonTitle:cancelButtonTitle okButtonTitle:okButtonTitle cancelHandle:cancelHandle okHandle:okHandle];
     
@@ -132,7 +132,7 @@
 }
 
 
-/**
+/*
  *  显示文本输入的弹窗
  *
  *  @param title                弹框的标题
@@ -143,13 +143,13 @@
  *  @param cancelHandle         取消的事件
  *  @param okHandle             确认的事件
  */
-+ (void)showAlertViewWithTitle:(NSString *)title
-                      inputText:(NSString *)inputText
-                   placeholder:(NSString *)placeholder
++ (void)showAlertViewWithTitle:(nullable NSString *)title
+                      inputText:(nullable NSString *)inputText
+                   placeholder:(nullable NSString *)placeholder
              cancelButtonTitle:(NSString *)cancelButtonTitle
                  okButtonTitle:(NSString *)okButtonTitle
-                  cancelHandle:(void(^)(void))cancelHandle
-                      okHandle:(void(^)(NSString *outputText))okHandle
+                  cancelHandle:(void(^_Nullable)(void))cancelHandle
+                      okHandle:(void(^_Nullable)(NSString *outputText))okHandle
 {
     CJTextInputAlertView *alertView = [[CJTextInputAlertView alloc] initWithTitle:title inputText:inputText placeholder:placeholder cancelButtonTitle:cancelButtonTitle okButtonTitle:okButtonTitle cancelHandle:cancelHandle okHandle:okHandle];
     

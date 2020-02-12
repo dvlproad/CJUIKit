@@ -8,6 +8,7 @@
 
 #import "CJProgressHUD.h"
 #import <Masonry/Masonry.h>
+#import "CJHUDSettingManager.h"
 
 @interface CJProgressHUD () {
     
@@ -22,41 +23,6 @@
 
 @implementation CJProgressHUD
 
-#pragma mark - 全局设置(APP启动时候调用)
-- (void)updateAnimationNamed:(NSString *)animationNamed {
-    _animationNamed = animationNamed;
-    if (self.lotAnimationView.loopAnimation == NO) {
-        self.lotAnimationView.loopAnimation = YES;
-    }
-}
-
-#pragma mark - 获取与全局动画一致的ProgressHUD
-/**
- *  获取与全局动画一致的默认的ProgressHUD
- */
-+ (CJProgressHUD *)defaultProgressHUD {
-    NSString *animationNamed = [CJProgressHUD sharedInstance].animationNamed;
-    if (animationNamed == nil) {
-        NSAssert(NO, @"Error: 请调[CJHUDUtil updateAnimationNamed: 来设置全局的ProgressHUD动画");
-    }
-    
-    CJProgressHUD *progressHUD = [[CJProgressHUD alloc] init];
-    progressHUD.animationNamed = animationNamed;
-    progressHUD.lotAnimationView.loopAnimation = YES;
-    
-    return progressHUD;
-}
-
-#pragma mark - 其他
-+ (CJProgressHUD *)sharedInstance {
-    static CJProgressHUD *_sharedInstance = nil;
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
-        _sharedInstance = [[self alloc] init];
-    });
-    return _sharedInstance;
-}
-
 - (instancetype)init {
     self = [super init];
     if(self){
@@ -64,9 +30,15 @@
         self.layer.cornerRadius = 3;
         self.layer.masksToBounds = YES;
         
+        NSString *animationNamed = [CJHUDSettingManager sharedInstance].animationNamed;
+        if (animationNamed == nil) {
+            NSAssert(NO, @"Error: 请调[[CJHUDSettingManager sharedInstance] configHUDAnimationWithAnimationNamed: 来设置全局的ProgressHUD动画");
+        }
+        
         CGFloat lotAnimationViewHeight = 40;
         
-        _lotAnimationView = [LOTAnimationView animationNamed:@""];
+        _lotAnimationView = [LOTAnimationView animationNamed:animationNamed];
+        //[_lotAnimationView setAnimationNamed:animationNamed];
         _lotAnimationView.loopAnimation = YES;
         [self addSubview:_lotAnimationView];
         [_lotAnimationView mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -84,21 +56,13 @@
     return self;
 }
 
-- (void)setAnimationNamed:(NSString *)animationNamed {
-    _animationNamed = animationNamed;
-    
-    [self.lotAnimationView setAnimationNamed:animationNamed];
-}
-
-
+/**
+*  显示HUD
+*
+*  @param superView                要添加到的视图
+*  @param showBackground    YES:加载过程无法进行其他操作，NO:加载过程可进行其他操作
+*/
 - (void)showInView:(UIView *)superView withShowBackground:(BOOL)showBackground {
-    if (self.animationNamed.length == 0) {
-        NSAssert(NO, @"Error: 请调[CJHUDUtil updateAnimationNamed: 来设置全局的ProgressHUD动画");
-    }
-    if (self.lotAnimationView.loopAnimation == NO) {
-        self.lotAnimationView.loopAnimation = YES;
-    }
-    
     _callShowMethodCount++;
     if (superView == nil) {
         superView = [UIApplication sharedApplication].keyWindow;

@@ -1,14 +1,14 @@
 //
-//  CJRefreshHeader.m
+//  CQRefreshHeader.m
 //  AppCommonUICollect
 //
 //  Created by ciyouzen on 2019/3/15.
 //  Copyright © 2019 dvlproad. All rights reserved.
 //
 
-#import "CJRefreshHeader.h"
+#import "CQRefreshHeader.h"
 #import <Lottie/Lottie.h>
-#import "CJRefreshAnimateManager.h"
+#import "CQRefreshSettingManager.h"
 
 static const CGFloat loadingViewY = 20;
 static const CGFloat loadingViewWidth = 32;
@@ -16,15 +16,84 @@ static const CGFloat loadingViewHeight = 32;
 //static NSString * const lotPullingFileName = @"loading_01";
 //static NSString * const lotRefreshingFileName = @"loading_02";
 
-@interface CJRefreshHeader() {
+@interface CQRefreshHeader() {
     
 }
 @property (nonatomic, strong) LOTAnimationView *lotAnimationView;
 @property (nonatomic, weak) UILabel *stateLabel;
 
+@property (nonatomic, copy) NSString *animationNamed;
+@property (nonatomic, copy) NSString *idleText;       /** 普通闲置状态：@"下拉刷新" */
+@property (nonatomic, copy) NSString *pullingText;    /** 松开就可以进行刷新的状态：@"松开刷新" */
+@property (nonatomic, copy) NSString *refreshingText; /** 正在刷新中的状态：@"加载数据中" */
+
 @end
 
-@implementation CJRefreshHeader
+
+
+@implementation CQRefreshHeader
+
+#pragma mark - 构造方法（原本重写）
++ (instancetype)headerWithRefreshingBlock:(MJRefreshComponentRefreshingBlock)refreshingBlock
+{
+    return [self headerWithAnimationNamed:[CQRefreshSettingManager sharedInstance].animationNamed
+                                 idleText:[CQRefreshSettingManager sharedInstance].headerIdleText
+                              pullingText:[CQRefreshSettingManager sharedInstance].headerPullingText
+                           refreshingText:[CQRefreshSettingManager sharedInstance].headerRefreshingText
+                          refreshingBlock:refreshingBlock];
+}
++ (instancetype)headerWithRefreshingTarget:(id)target refreshingAction:(SEL)action
+{
+    return [self headerWithAnimationNamed:[CQRefreshSettingManager sharedInstance].animationNamed
+                                 idleText:[CQRefreshSettingManager sharedInstance].headerIdleText
+                              pullingText:[CQRefreshSettingManager sharedInstance].headerPullingText
+                           refreshingText:[CQRefreshSettingManager sharedInstance].headerRefreshingText
+                         refreshingTarget:target
+                         refreshingAction:action];
+}
+
+#pragma mark - 构造方法（新增）
++ (instancetype)headerWithAnimationNamed:(NSString *)animationNamed
+                                idleText:(NSString *)idleText
+                             pullingText:(NSString *)pullingText
+                          refreshingText:(NSString *)refreshingText
+                         refreshingBlock:(MJRefreshComponentRefreshingBlock)refreshingBlock
+{
+    CQRefreshHeader *cmp = [[self alloc] init];
+    cmp.animationNamed = animationNamed;
+    cmp.idleText = idleText;
+    cmp.pullingText = pullingText;
+    cmp.refreshingText = refreshingText;
+    cmp.refreshingBlock = refreshingBlock;
+    
+    return cmp;
+}
+
++ (instancetype)headerWithAnimationNamed:(NSString *)animationNamed
+                                idleText:(NSString *)idleText
+                             pullingText:(NSString *)pullingText
+                          refreshingText:(NSString *)refreshingText
+                        refreshingTarget:(id)target
+                        refreshingAction:(SEL)action
+{
+    CQRefreshHeader *cmp = [[self alloc] init];
+    cmp.animationNamed = animationNamed;
+    cmp.idleText = idleText;
+    cmp.pullingText = pullingText;
+    cmp.refreshingText = refreshingText;
+    [cmp setRefreshingTarget:target refreshingAction:action];
+    return cmp;
+}
+
+- (instancetype)init {
+    self = [super init];
+    if (self) {
+        _idleText = @"下拉刷新";
+        _pullingText = @"松开刷新";
+        _refreshingText = @"加载数据中";
+    }
+    return self;
+}
 
 #pragma mark - 重写方法
 #pragma mark 在这里做一些初始化配置（比如添加子控件）
@@ -40,9 +109,9 @@ static const CGFloat loadingViewHeight = 32;
 //    NSBundle *resourceBundle = [NSBundle bundleWithPath:bundlePath];
 //    //NSBundle *resourceBundle2 = [NSBundle bundleForClass:[CQProgressHUD class]]; //错误的取值，取不全
 //    _lotAnimationView = [LOTAnimationView animationNamed:@"loading_test" inBundle:resourceBundle];
-    NSString *headerAnimationNamed = [CJRefreshAnimateManager sharedInstance].animationNamed;
+    NSString *headerAnimationNamed = [CQRefreshSettingManager sharedInstance].animationNamed;
     if (headerAnimationNamed.length == 0) {
-        NSAssert(NO, @"Error: 请在app启动时候调用[CJRefreshAnimateManager sharedInstance].animationNamed = 来设置全局的RefreshHeader动画");
+        NSAssert(NO, @"Error: 请在app启动时候调用[CQRefreshSettingManager sharedInstance].animationNamed = 来设置全局的RefreshHeader动画");
     }
     _lotAnimationView = [LOTAnimationView animationNamed:headerAnimationNamed];
     _lotAnimationView.loopAnimation = YES;
@@ -84,15 +153,15 @@ static const CGFloat loadingViewHeight = 32;
     switch (state) {
         case MJRefreshStateIdle:
             [self.lotAnimationView stop];
-            self.stateLabel.text = @"下拉刷新";
+            self.stateLabel.text = self.idleText;   // @"下拉刷新";
             break;
         case MJRefreshStatePulling:
             [self.lotAnimationView stop];
-            self.stateLabel.text = @"松开刷新";
+            self.stateLabel.text = self.pullingText; // @"松开刷新";
             break;
         case MJRefreshStateRefreshing:
             [self.lotAnimationView play];
-            self.stateLabel.text = @"加载数据中";
+            self.stateLabel.text = self.refreshingText; //@"加载数据中";
             break;
         default:
             break;

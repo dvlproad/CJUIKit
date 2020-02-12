@@ -14,10 +14,16 @@
 		154FFCA623DA29AC00FF1E0D /* CJBaseAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 154FFCA423DA29AC00FF1E0D /* CJBaseAlertView.m */; };
 		154FFCAE23DA2B3F00FF1E0D /* CJThemeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 154FFCAC23DA2B3F00FF1E0D /* CJThemeModel.m */; };
 		154FFCAF23DA2B3F00FF1E0D /* CJThemeManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 154FFCAD23DA2B3F00FF1E0D /* CJThemeManager.m */; };
-		156022FF23E29D4600DEAC2A /* CJHUDUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 156022FD23E29D4600DEAC2A /* CJHUDUtil.m */; };
 		1560230223E2A35600DEAC2A /* TSHUDViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1560230123E2A35600DEAC2A /* TSHUDViewController.m */; };
 		1560230523E2A6C300DEAC2A /* loading_coffee.json in Resources */ = {isa = PBXBuildFile; fileRef = 1560230323E2A6C300DEAC2A /* loading_coffee.json */; };
 		1560230623E2A6C300DEAC2A /* loading_tea.json in Resources */ = {isa = PBXBuildFile; fileRef = 1560230423E2A6C300DEAC2A /* loading_tea.json */; };
+		1560230B23E43A6C00DEAC2A /* CJButtonFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 1560230A23E43A6C00DEAC2A /* CJButtonFactory.m */; };
+		1562EF8023F453450009FCEA /* CJHUDSettingManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1562EF7F23F453450009FCEA /* CJHUDSettingManager.m */; };
+		1562EF8423F469EA0009FCEA /* CQHUDUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 1562EF8323F469E90009FCEA /* CQHUDUtil.m */; };
+		1562EF8823F4723A0009FCEA /* CQKitSetting.m in Sources */ = {isa = PBXBuildFile; fileRef = 1562EF8723F472390009FCEA /* CQKitSetting.m */; };
+		1562EF9023F4762A0009FCEA /* CQRefreshHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 1562EF8D23F4762A0009FCEA /* CQRefreshHeader.m */; };
+		1562EF9123F4762A0009FCEA /* CQRefreshFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = 1562EF8E23F4762A0009FCEA /* CQRefreshFooter.m */; };
+		1562EF9223F4762A0009FCEA /* CQRefreshSettingManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1562EF8F23F4762A0009FCEA /* CQRefreshSettingManager.m */; };
 		15C970BB23DB594F008D81B0 /* CQAlertManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 15C970BA23DB594F008D81B0 /* CQAlertManager.m */; };
 		15C970BE23DB5AEA008D81B0 /* CJSystemAlertUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 15C970BD23DB5AEA008D81B0 /* CJSystemAlertUtil.m */; };
 		15C970CC23DB5D4F008D81B0 /* CJActionSheetView.m in Sources */ = {isa = PBXBuildFile; fileRef = 15C970C023DB5D4E008D81B0 /* CJActionSheetView.m */; };
@@ -417,12 +423,24 @@
 		154FFCAB23DA2B3F00FF1E0D /* CJThemeManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJThemeManager.h; sourceTree = "<group>"; };
 		154FFCAC23DA2B3F00FF1E0D /* CJThemeModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJThemeModel.m; sourceTree = "<group>"; };
 		154FFCAD23DA2B3F00FF1E0D /* CJThemeManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJThemeManager.m; sourceTree = "<group>"; };
-		156022FD23E29D4600DEAC2A /* CJHUDUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJHUDUtil.m; sourceTree = "<group>"; };
-		156022FE23E29D4600DEAC2A /* CJHUDUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJHUDUtil.h; sourceTree = "<group>"; };
 		1560230023E2A35600DEAC2A /* TSHUDViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSHUDViewController.h; sourceTree = "<group>"; };
 		1560230123E2A35600DEAC2A /* TSHUDViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSHUDViewController.m; sourceTree = "<group>"; };
 		1560230323E2A6C300DEAC2A /* loading_coffee.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = loading_coffee.json; sourceTree = "<group>"; };
 		1560230423E2A6C300DEAC2A /* loading_tea.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = loading_tea.json; sourceTree = "<group>"; };
+		1560230923E43A6C00DEAC2A /* CJButtonFactory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CJButtonFactory.h; sourceTree = "<group>"; };
+		1560230A23E43A6C00DEAC2A /* CJButtonFactory.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CJButtonFactory.m; sourceTree = "<group>"; };
+		1562EF7E23F453450009FCEA /* CJHUDSettingManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJHUDSettingManager.h; sourceTree = "<group>"; };
+		1562EF7F23F453450009FCEA /* CJHUDSettingManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJHUDSettingManager.m; sourceTree = "<group>"; };
+		1562EF8223F469E90009FCEA /* CQHUDUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CQHUDUtil.h; sourceTree = "<group>"; };
+		1562EF8323F469E90009FCEA /* CQHUDUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CQHUDUtil.m; sourceTree = "<group>"; };
+		1562EF8623F472390009FCEA /* CQKitSetting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CQKitSetting.h; sourceTree = "<group>"; };
+		1562EF8723F472390009FCEA /* CQKitSetting.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CQKitSetting.m; sourceTree = "<group>"; };
+		1562EF8A23F4762A0009FCEA /* CQRefreshFooter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CQRefreshFooter.h; sourceTree = "<group>"; };
+		1562EF8B23F4762A0009FCEA /* CQRefreshHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CQRefreshHeader.h; sourceTree = "<group>"; };
+		1562EF8C23F4762A0009FCEA /* CQRefreshSettingManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CQRefreshSettingManager.h; sourceTree = "<group>"; };
+		1562EF8D23F4762A0009FCEA /* CQRefreshHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CQRefreshHeader.m; sourceTree = "<group>"; };
+		1562EF8E23F4762A0009FCEA /* CQRefreshFooter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CQRefreshFooter.m; sourceTree = "<group>"; };
+		1562EF8F23F4762A0009FCEA /* CQRefreshSettingManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CQRefreshSettingManager.m; sourceTree = "<group>"; };
 		15C970B923DB594E008D81B0 /* CQAlertManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CQAlertManager.h; sourceTree = "<group>"; };
 		15C970BA23DB594F008D81B0 /* CQAlertManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CQAlertManager.m; sourceTree = "<group>"; };
 		15C970BC23DB5AEA008D81B0 /* CJSystemAlertUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJSystemAlertUtil.h; sourceTree = "<group>"; };
@@ -1108,6 +1126,37 @@
 			path = CJTheme;
 			sourceTree = "<group>";
 		};
+		1562EF8123F469E90009FCEA /* CQHUD */ = {
+			isa = PBXGroup;
+			children = (
+				1562EF8223F469E90009FCEA /* CQHUDUtil.h */,
+				1562EF8323F469E90009FCEA /* CQHUDUtil.m */,
+			);
+			path = CQHUD;
+			sourceTree = "<group>";
+		};
+		1562EF8523F472390009FCEA /* CQKitSetting */ = {
+			isa = PBXGroup;
+			children = (
+				1562EF8623F472390009FCEA /* CQKitSetting.h */,
+				1562EF8723F472390009FCEA /* CQKitSetting.m */,
+			);
+			path = CQKitSetting;
+			sourceTree = "<group>";
+		};
+		1562EF8923F4762A0009FCEA /* CQRefresh */ = {
+			isa = PBXGroup;
+			children = (
+				1562EF8A23F4762A0009FCEA /* CQRefreshFooter.h */,
+				1562EF8E23F4762A0009FCEA /* CQRefreshFooter.m */,
+				1562EF8B23F4762A0009FCEA /* CQRefreshHeader.h */,
+				1562EF8D23F4762A0009FCEA /* CQRefreshHeader.m */,
+				1562EF8C23F4762A0009FCEA /* CQRefreshSettingManager.h */,
+				1562EF8F23F4762A0009FCEA /* CQRefreshSettingManager.m */,
+			);
+			path = CQRefresh;
+			sourceTree = "<group>";
+		};
 		15C970BF23DB5D4E008D81B0 /* CJActionSheet */ = {
 			isa = PBXGroup;
 			children = (
@@ -1136,13 +1185,13 @@
 			path = CJActionSheetDemo;
 			sourceTree = "<group>";
 		};
-		15C970DB23DB6767008D81B0 /* DemoActionSheet */ = {
+		15C970DB23DB6767008D81B0 /* CQActionSheet */ = {
 			isa = PBXGroup;
 			children = (
 				15C970DC23DB6767008D81B0 /* CQActionSheetUtil.h */,
 				15C970DD23DB6767008D81B0 /* CQActionSheetUtil.m */,
 			);
-			path = DemoActionSheet;
+			path = CQActionSheet;
 			sourceTree = "<group>";
 		};
 		15C970DF23DB7B85008D81B0 /* CJProgressHUD */ = {
@@ -1150,8 +1199,8 @@
 			children = (
 				15C970E123DB7B85008D81B0 /* CJProgressHUD.h */,
 				15C970E323DB7B86008D81B0 /* CJProgressHUD.m */,
-				156022FE23E29D4600DEAC2A /* CJHUDUtil.h */,
-				156022FD23E29D4600DEAC2A /* CJHUDUtil.m */,
+				1562EF7E23F453450009FCEA /* CJHUDSettingManager.h */,
+				1562EF7F23F453450009FCEA /* CJHUDSettingManager.m */,
 				15C970E223DB7B86008D81B0 /* UIViewController+CJProgressHUD.h */,
 				15C970E023DB7B85008D81B0 /* UIViewController+CJProgressHUD.m */,
 			);
@@ -1286,7 +1335,7 @@
 			path = NSCalendarCJHelper;
 			sourceTree = "<group>";
 		};
-		78226A6A21A4012B002167F2 /* DemoAlert */ = {
+		78226A6A21A4012B002167F2 /* CQAlert */ = {
 			isa = PBXGroup;
 			children = (
 				15C970B923DB594E008D81B0 /* CQAlertManager.h */,
@@ -1294,7 +1343,7 @@
 				15C970BC23DB5AEA008D81B0 /* CJSystemAlertUtil.h */,
 				15C970BD23DB5AEA008D81B0 /* CJSystemAlertUtil.m */,
 			);
-			path = DemoAlert;
+			path = CQAlert;
 			sourceTree = "<group>";
 		};
 		78226A8D21A42103002167F2 /* CJConvertUtil */ = {
@@ -1435,12 +1484,15 @@
 		7852D9DF216F16B000E50A39 /* CommonUI */ = {
 			isa = PBXGroup;
 			children = (
-				15C970DB23DB6767008D81B0 /* DemoActionSheet */,
 				78E1895321777C9700B8781A /* Base */,
 				7857ABB5225482D200B1569C /* CJDemoDatePickerView */,
 				7857ABB92254AA1100B1569C /* CJDemoDateTextField */,
 				78FCF54A2306A9B900D275F9 /* CJDemoPopupView */,
-				78226A6A21A4012B002167F2 /* DemoAlert */,
+				15C970DB23DB6767008D81B0 /* CQActionSheet */,
+				78226A6A21A4012B002167F2 /* CQAlert */,
+				1562EF8123F469E90009FCEA /* CQHUD */,
+				1562EF8523F472390009FCEA /* CQKitSetting */,
+				1562EF8923F4762A0009FCEA /* CQRefresh */,
 				7808D5B0217079E5007FC851 /* DemoBarButtonItemFactory */,
 				7852D9DB216F104000E50A39 /* DemoButtonFactory */,
 				788A55F721AFCE3C0011F993 /* DemoLabel */,
@@ -1600,6 +1652,8 @@
 				7856F76F21F4F4C2004AF751 /* UIButton+CJMoreProperty.m */,
 				78FCF5472306976500D275F9 /* CJButton.h */,
 				78FCF5482306976500D275F9 /* CJButton.m */,
+				1560230923E43A6C00DEAC2A /* CJButtonFactory.h */,
+				1560230A23E43A6C00DEAC2A /* CJButtonFactory.m */,
 				7856F76D21F4F4C2004AF751 /* UIButton+CJStructure.h */,
 				7856F77021F4F4C2004AF751 /* UIButton+CJStructure.m */,
 			);
@@ -3340,8 +3394,10 @@
 				78FCF5562306AA8F00D275F9 /* UIView+CJRounderCorner.m in Sources */,
 				7808319222DC65DD00F36576 /* WelcomeViewController.m in Sources */,
 				78B6C2E32159D6BC00D5864E /* DemoBusStationModel.m in Sources */,
+				1562EF9223F4762A0009FCEA /* CQRefreshSettingManager.m in Sources */,
 				15C970BE23DB5AEA008D81B0 /* CJSystemAlertUtil.m in Sources */,
 				8050038A211C3A29002A2306 /* NSObjectCJHelperViewController.m in Sources */,
+				1560230B23E43A6C00DEAC2A /* CJButtonFactory.m in Sources */,
 				7856F80321F4F4C3004AF751 /* UIScrollView+CJKeyboardAvoiding.m in Sources */,
 				80500389211C3A29002A2306 /* HelperHomeViewController.m in Sources */,
 				808E3C472109C5B0009E3924 /* StringEventViewController.m in Sources */,
@@ -3423,6 +3479,7 @@
 				7857ABBC2254AA5000B1569C /* CJDemoDateTextField.m in Sources */,
 				7856F83121F4F4C3004AF751 /* UIViewController+CJSystemBackButtonHandler.m in Sources */,
 				7856F83721F4F4C3004AF751 /* CJSliderControl.m in Sources */,
+				1562EF8423F469EA0009FCEA /* CQHUDUtil.m in Sources */,
 				78E189AE21781BE200B8781A /* EdgeLayoutTableViewController.m in Sources */,
 				808DE5E720DA0586003E08F1 /* CJDecimalUtil.m in Sources */,
 				7856F81121F4F4C3004AF751 /* UIView+CJDragAction.m in Sources */,
@@ -3432,6 +3489,8 @@
 				7856F7F821F4F4C3004AF751 /* UIImage+CJRotateAngle.m in Sources */,
 				7832810D1F41AA96008267E0 /* ProcessLineView.m in Sources */,
 				805598B51FF5D612009DC61C /* ValidateStringViewController.m in Sources */,
+				1562EF8823F4723A0009FCEA /* CQKitSetting.m in Sources */,
+				1562EF9123F4762A0009FCEA /* CQRefreshFooter.m in Sources */,
 				15C970CE23DB5D4F008D81B0 /* CJActionSheetTableViewCell.m in Sources */,
 				784AB8E921E892FD00A3F51C /* TestHUDHomeViewController.m in Sources */,
 				7856F83821F4F4C3004AF751 /* CJRangeSliderControl.m in Sources */,
@@ -3483,7 +3542,6 @@
 				7880E6F5213A9E84009C9BCF /* CJRandomNameUtil.m in Sources */,
 				7856F80C21F4F4C3004AF751 /* CJDefaultToolbar.m in Sources */,
 				7857ABB8225482D200B1569C /* CJDemoDatePickerView.m in Sources */,
-				156022FF23E29D4600DEAC2A /* CJHUDUtil.m in Sources */,
 				7808318C22DC492E00F36576 /* WelcomeView.m in Sources */,
 				7856F80E21F4F4C3004AF751 /* UIView+CJPopupInView.m in Sources */,
 				788113C82199631A00D1630D /* PerfectSharedInstanceClass.m in Sources */,
@@ -3502,6 +3560,7 @@
 				7875C58F231CF77900076A00 /* BackSystemItemViewController.m in Sources */,
 				15C970E423DB7B86008D81B0 /* UIViewController+CJProgressHUD.m in Sources */,
 				80FF90B41FC5649F00E437CF /* ButtonStructureViewController.m in Sources */,
+				1562EF9023F4762A0009FCEA /* CQRefreshHeader.m in Sources */,
 				7856F83921F4F4C3004AF751 /* CJPlayerSlider.m in Sources */,
 				7856F83421F4F4C3004AF751 /* CJSwitchSlider.m in Sources */,
 				80FF90AF1FC5649F00E437CF /* NavigationBarBaseViewController.m in Sources */,
@@ -3520,6 +3579,7 @@
 				15C970CD23DB5D4F008D81B0 /* CJActionSheetModel.m in Sources */,
 				80FF919E1FC5682B00E437CF /* OtherHomeViewController.m in Sources */,
 				80D71EA92090277700D2DB68 /* AlertViewController.m in Sources */,
+				1562EF8023F453450009FCEA /* CJHUDSettingManager.m in Sources */,
 				80FF90AD1FC5649F00E437CF /* NavigationBarViewController.m in Sources */,
 				80FF90A81FC5649F00E437CF /* ImageChangeColorViewController.m in Sources */,
 				7856F84121F4F4C3004AF751 /* CJExtraTextTextField.m in Sources */,
