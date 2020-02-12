@@ -1,6 +1,6 @@
 //
-//  CQRefreshSettingManager.h
-//  AppCommonUICollect
+//  CJRefreshJSONSettingManager.h
+//  CJUIKitDemo
 //
 //  Created by ciyouzen on 2019/3/15.
 //  Copyright © 2019 dvlproad. All rights reserved.
@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface CQRefreshSettingManager : NSObject {
+@interface CJRefreshJSONSettingManager : NSObject {
     
 }
 @property (nonatomic, copy, readonly) NSString *animationNamed;       /** Json动画文件名 */
@@ -23,7 +23,7 @@
 @property (nonatomic, copy, readonly) NSString *footerNoMoreDataText; /** 所有数据加载完毕，没有更多的数据了：@"没有更多数据了..." */
 
 
-+ (CQRefreshSettingManager *)sharedInstance;
++ (CJRefreshJSONSettingManager *)sharedInstance;
 
 #pragma mark - HEADER
 /*

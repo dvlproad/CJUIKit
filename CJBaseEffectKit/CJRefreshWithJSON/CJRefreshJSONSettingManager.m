@@ -1,14 +1,14 @@
 //
-//  CQRefreshSettingManager.m
-//  AppCommonUICollect
+//  CJRefreshJSONSettingManager.m
+//  CJUIKitDemo
 //
 //  Created by ciyouzen on 2019/3/15.
 //  Copyright © 2019 dvlproad. All rights reserved.
 //
 
-#import "CQRefreshSettingManager.h"
+#import "CJRefreshJSONSettingManager.h"
 
-@interface CQRefreshSettingManager() {
+@interface CJRefreshJSONSettingManager() {
     
 }
 
@@ -16,10 +16,10 @@
 
 
 
-@implementation CQRefreshSettingManager
+@implementation CJRefreshJSONSettingManager
 
-+ (CQRefreshSettingManager *)sharedInstance {
-    static CQRefreshSettingManager *_sharedInstance = nil;
++ (CJRefreshJSONSettingManager *)sharedInstance {
+    static CJRefreshJSONSettingManager *_sharedInstance = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         _sharedInstance = [[self alloc] init];

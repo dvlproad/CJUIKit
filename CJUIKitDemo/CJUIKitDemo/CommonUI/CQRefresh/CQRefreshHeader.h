@@ -6,24 +6,10 @@
 //  Copyright © 2019 dvlproad. All rights reserved.
 //
 
-#import <MJRefresh/MJRefresh.h>
+#import <CJBaseEffectKit/CJRefreshJSONHeader.h>
 
-@interface CQRefreshHeader : MJRefreshHeader {
+@interface CQRefreshHeader : CJRefreshJSONHeader {
     
 }
-
-#pragma mark - 构造方法（新增）
-+ (instancetype)headerWithAnimationNamed:(NSString *)animationNamed
-                                idleText:(NSString *)idleText
-                             pullingText:(NSString *)pullingText
-                          refreshingText:(NSString *)refreshingText
-                         refreshingBlock:(MJRefreshComponentRefreshingBlock)refreshingBlock;
-
-+ (instancetype)headerWithAnimationNamed:(NSString *)animationNamed
-                                idleText:(NSString *)idleText
-                             pullingText:(NSString *)pullingText
-                          refreshingText:(NSString *)refreshingText
-                        refreshingTarget:(id)target
-                        refreshingAction:(SEL)action;
 
 @end

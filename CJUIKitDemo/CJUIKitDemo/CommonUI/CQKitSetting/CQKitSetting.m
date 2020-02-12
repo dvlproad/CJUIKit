@@ -7,8 +7,13 @@
 //
 
 #import "CQKitSetting.h"
+
+#ifdef TEST_CJBASEUIKIT_POD
 #import "CJHUDSettingManager.h"
-#import "CQRefreshSettingManager.h"
+#else
+#import <CJBaseUIKit/CJHUDSettingManager.h>
+#endif
+#import <CJBaseEffectKit/CJRefreshJSONSettingManager.h>
 
 @interface CQKitSetting() {
     
@@ -34,7 +39,7 @@
 
 #pragma mark - HEADER
 + (void)configHeaderAnimationWithAnimationNamed:(NSString *)animationNamed {
-    CQRefreshSettingManager *refreshAnimateManager = [CQRefreshSettingManager sharedInstance];
+    CJRefreshJSONSettingManager *refreshAnimateManager = [CJRefreshJSONSettingManager sharedInstance];
     [refreshAnimateManager configHeaderAnimationWithAnimationNamed:animationNamed];
 }
 
@@ -42,7 +47,7 @@
                               pullingText:(NSString *)pullingText
                            refreshingText:(NSString *)refreshingText
 {
-    CQRefreshSettingManager *refreshAnimateManager = [CQRefreshSettingManager sharedInstance];
+    CJRefreshJSONSettingManager *refreshAnimateManager = [CJRefreshJSONSettingManager sharedInstance];
     [refreshAnimateManager updateHeaderStateTextWithIdleText:idleText pullingText:pullingText refreshingText:refreshingText];
 }
 
@@ -52,7 +57,7 @@
                            refreshingText:(NSString *)refreshingText
                            noMoreDataText:(NSString *)noMoreDataText
 {
-    CQRefreshSettingManager *refreshAnimateManager = [CQRefreshSettingManager sharedInstance];
+    CJRefreshJSONSettingManager *refreshAnimateManager = [CJRefreshJSONSettingManager sharedInstance];
     [refreshAnimateManager updateFooterStateTextWithIdleText:idleText pullingText:pullingText refreshingText:refreshingText noMoreDataText:noMoreDataText];
 }
 

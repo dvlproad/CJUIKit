@@ -8,7 +8,13 @@
 
 #import <UIKit/UIKit.h>
 #import <Foundation/Foundation.h>
+
+#ifdef TEST_CJBASEUIKIT_POD
 #import "CJLabel.h"
+#else
+#import <CJBaseUIKit/CJLabel.h>
+#endif
+
 
 @interface DemoLabelFactory : NSObject
 

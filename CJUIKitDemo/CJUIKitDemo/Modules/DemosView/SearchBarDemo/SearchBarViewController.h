@@ -7,7 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+
+#ifdef TEST_CJBASEUIKIT_POD
 #import "CJSearchBar.h"
+#else
+#import <CJBaseUIKit/CJSearchBar.h>
+#endif
 
 @interface SearchBarViewController : UIViewController
 

@@ -1,1 +1,0 @@
-../../../../../CJBaseEffectKit/CJRefresh/CJRefreshAnimateManager.h

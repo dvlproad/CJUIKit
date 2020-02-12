@@ -1,12 +1,13 @@
 Pod::Spec.new do |s|
   #验证方法：pod lib lint CJBaseEffectKit.podspec --allow-warnings --verbose
   s.name         = "CJBaseEffectKit"
-  s.version      = "0.0.1"
+  s.version      = "0.0.2"
   s.summary      = "自定义的基础效果UI"
   s.homepage     = "https://github.com/dvlproad/CJUIKit"
 
   s.description  = <<-DESC
                  - CJBaseUIKit/CJRefreshView：刷新
+                 - CJBaseUIKit/CJRefreshWithJSON：使用json动画的刷新
                  - CJBaseUIKit/CJMJRefreshComponent：已包含pod 'MJRefresh'
                  - CJBaseUIKit/CJDataEmptyView：空视图(处理数据为空、网络加载失败等情况)
                  - CJBaseUIKit/CJScaleHeadView：个人中心头部的缩放视图
@@ -32,7 +33,7 @@ Pod::Spec.new do |s|
 
   s.platform     = :ios, "8.0"
  
-  s.source       = { :git => "https://github.com/dvlproad/CJUIKit.git", :tag => "CJBaseEffectKit_0.0.1" }
+  s.source       = { :git => "https://github.com/dvlproad/CJUIKit.git", :tag => "CJBaseEffectKit_0.0.2" }
   #s.source_files  = "CJBaseEffectKit/*.{h,m}"
 
   s.frameworks = "UIKit"
@@ -46,13 +47,13 @@ Pod::Spec.new do |s|
   # s.dependency 'Masonry'
 
 
-  s.subspec 'CJRefresh' do |ss|
-    ss.source_files = "CJBaseEffectKit/CJRefresh/**/*.{h,m}"
-    # ss.resources = "CJBaseEffectKit/CJRefreshView/**/*.{png,xib}"
+  # 使用json动画的刷新
+  s.subspec 'CJRefreshWithJSON' do |ss|
+    ss.source_files = "CJBaseEffectKit/CJRefreshWithJSON/**/*.{h,m}"
+    # ss.resources = "CJBaseEffectKit/CJRefreshWithJSON/**/*.{png,xib}"
     
     ss.dependency 'Masonry'
     ss.dependency 'lottie-ios', '~> 2.5.3'
-    ss.dependency 'CJBaseEffectKit/CJMJRefreshComponent'
   end
 
   s.subspec 'CJRefreshView' do |ss|

@@ -10,6 +10,7 @@
 #define PrefixHeader_pch
 
 #define TEST_CJBASEUIKIT_POD
+//#define TEST_CJBASEUTIL_POD
 //#define TEST_CJBASEHELPER_POD
 #define CJDEBUG
 #import <Masonry/Masonry.h>
