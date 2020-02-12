@@ -8,9 +8,18 @@
 
 #import <UIKit/UIKit.h>
 
+#ifdef TEST_CJBASEUIKIT_POD
+#import "CJThemeModel.h"
+#else
+#import <CJBaseUIKit/CJThemeModel.h>
+#endif
+
 @interface CQKitSetting : NSObject {
     
 }
+#pragma mark - Theme
++ (void)configThemeWithThemeModel:(CJThemeModel *)themeModel;
+
 #pragma mark - HUD
 /**
 *  设置全局ProgressHUD的json文件名

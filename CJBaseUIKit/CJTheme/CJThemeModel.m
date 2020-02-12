@@ -44,25 +44,6 @@
     return totalThemeModel;
 }
 
-///**
-// *  总的蓝色主题
-// *
-// *  @return 总的蓝色主题
-// */
-//+ (CJThemeModel *)blueThemeModel {
-//    CJThemeModel *totalThemeModel = [[CJThemeModel alloc] init];
-//    totalThemeModel.themeColor = @"#4499FF";
-//    totalThemeModel.separateLineColor = @"#E5E5E5";
-//    totalThemeModel.textMainColor = @"#333333";
-//    totalThemeModel.text666Color = @"#666666";
-//    totalThemeModel.textAssistColor = @"#999999";
-//    totalThemeModel.placeholderTextColor = @"#CCCCCC";
-//    
-//    totalThemeModel.alertThemeModel = [CJAlertThemeModel defaultAlertThemeModel];
-//    
-//    return totalThemeModel;
-//}
-
 @end
 
 

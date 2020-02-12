@@ -33,13 +33,6 @@
 */
 + (CJThemeModel *)defaultThemeModel;
 
-///**
-// *  总的蓝色主题
-// *
-// *  @return 总的蓝色主题
-// */
-//+ (CJThemeModel *)blueThemeModel;
-
 @end
 
 

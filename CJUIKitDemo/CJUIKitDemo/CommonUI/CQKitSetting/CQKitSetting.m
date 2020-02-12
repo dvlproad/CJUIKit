@@ -9,8 +9,10 @@
 #import "CQKitSetting.h"
 
 #ifdef TEST_CJBASEUIKIT_POD
+#import "CJThemeManager.h"
 #import "CJHUDSettingManager.h"
 #else
+#import <CJBaseUIKit/CJThemeManager.h>
 #import <CJBaseUIKit/CJHUDSettingManager.h>
 #endif
 #import <CJBaseEffectKit/CJRefreshJSONSettingManager.h>
@@ -24,6 +26,12 @@
 
 
 @implementation CQKitSetting
+
+#pragma mark - Theme
++ (void)configThemeWithThemeModel:(CJThemeModel *)themeModel {
+    [CJThemeManager sharedInstance].serviceThemeModel = [CJThemeModel defaultThemeModel];
+}
+
 
 #pragma mark - HUD
 /**

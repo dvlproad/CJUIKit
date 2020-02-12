@@ -55,6 +55,9 @@
     
     YunInstallUncaughtExceptionHandler();
     
+    // 设置全局默认 的主题
+    [CQKitSetting configThemeWithThemeModel:[CJThemeModel defaultThemeModel]];
+    
     // 设置 全局默认 的 加载
     [CQKitSetting configHUDAnimationWithAnimationNamed:@"loading_tea"];
     

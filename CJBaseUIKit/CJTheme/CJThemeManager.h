@@ -14,6 +14,8 @@
 }
 @property (nonatomic, strong) CJThemeModel *serviceThemeModel;
 
++ (CJThemeManager *)sharedInstance;
+
 /**
  *  获取当前正在使用的主题
  *
