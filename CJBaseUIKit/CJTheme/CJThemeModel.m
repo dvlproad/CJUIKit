@@ -38,6 +38,7 @@
     totalThemeModel.textAssistColor = @"#999999";
     totalThemeModel.placeholderTextColor = @"#CCCCCC";
     
+    totalThemeModel.blankBGColor = @"#282828";
     totalThemeModel.alertThemeModel = [CJAlertThemeModel defaultAlertThemeModel];
     totalThemeModel.buttonThemeModel = [CJButtonThemeModel defaultButtonThemeModel];
     

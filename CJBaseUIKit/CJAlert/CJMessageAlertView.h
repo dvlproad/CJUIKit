@@ -33,6 +33,7 @@
                      cancelHandle:(void(^)(void))cancelHandle
                          okHandle:(void(^)(void))okHandle;
 
-- (void)showWithShouldFitHeight:(BOOL)shouldFitHeight blankBGColor:(UIColor *)blankBGColor;
+/// 创建调试的弹窗
++ (instancetype)debugMessageAlertViewWithTitle:(NSString *)title message:(NSString *)message shouldContailAppInfo:(BOOL)shouldContailAppInfo;
 
 @end

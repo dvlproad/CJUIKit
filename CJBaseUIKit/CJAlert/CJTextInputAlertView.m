@@ -82,13 +82,19 @@
     return minHeightWithoutMessageLabel;
 }
 
-- (void)showWithShouldFitHeight:(BOOL)shouldFitHeight blankBGColor:(UIColor *)blankBGColor
-{
+/**
+*  计算弹窗最后的高度
+*
+*  @param shouldAutoFitHeight   是否根据文本自动适应高度
+*
+*  @return 最终的高度
+*/
+- (CGFloat)calculateAlertHeightWithShouldAutoFitHeight:(BOOL)shouldAutoFitHeight {
     // 计算最后 textFieldHeight 的值
     CGFloat minHeightWithoutTextField = [self getMinHeightExpectTextField];
 
     CGFloat textFieldHeight = 0;
-    if (shouldFitHeight) {
+    if (shouldAutoFitHeight) {
         textFieldHeight = self.textFieldHeight;
     } else {
         textFieldHeight = self.size.height - minHeightWithoutTextField;
@@ -96,9 +102,8 @@
     
     // 使用计算出来的最后 textFieldHeight
     CGFloat fixHeight = minHeightWithoutTextField + textFieldHeight;
-
-    CGSize popupViewSize = CGSizeMake(self.size.width, fixHeight);
-    [self showPopupViewSize:popupViewSize blankBGColor:blankBGColor];
+    
+    return fixHeight;
 }
 
 

@@ -90,7 +90,7 @@
     __weak typeof(self)weakSelf = self;
     CJAlertBottomButtonsModel *bottomButtonsModel = [CJAlertComponentFactory onlyOneBottomButtonWithIKnowButtonTitle:okButtonTitle
                                                                                                         iKnowHandle:^(UIButton *button) {
-        [weakSelf dismissWithDelay:0];
+        [weakSelf dismiss];
         if (okHandle) {
             okHandle();
         }
@@ -121,12 +121,12 @@
 {
     __weak typeof(self)weakSelf = self;
     CJAlertBottomButtonsModel *bottomButtonsModel = [CJAlertComponentFactory twoButtonsWithCancelButtonTitle:cancelButtonTitle okButtonTitle:okButtonTitle cancelHandle:^(UIButton *button) {
-        [weakSelf dismissWithDelay:0];
+        [weakSelf dismiss];
         if (cancelHandle) {
             cancelHandle();
         }
     } okHandle:^(UIButton *button) {
-        [weakSelf dismissWithDelay:0];
+        [weakSelf dismiss];
         if (okHandle) {
             okHandle();
         }
@@ -240,7 +240,7 @@
 }
 
 - (void)cancelButtonAction:(UIButton *)button {
-    [self dismissWithDelay:0];
+    [self dismiss];
     
     if (self.cancelHandle) {
         self.cancelHandle();
@@ -248,7 +248,7 @@
 }
 
 - (void)okButtonAction:(UIButton *)button {
-    [self dismissWithDelay:0];
+    [self dismiss];
     
     if (self.okHandle) {
         self.okHandle();
@@ -257,74 +257,23 @@
 
 
 
-
-/////获取当前alertView最小应有的高度值
-//- (CGFloat)getMinHeight {
-//    CGFloat minHeightWithMessageLabel = self.size.height;
-//    
-//    return minHeightWithMessageLabel;
-//}
-//
-//
-///* 完整的描述请参见文件头部 */
-//- (void)showWithShouldFitHeight:(BOOL)shouldFitHeight blankBGColor:(UIColor *)blankBGColor
-//{
-//    CGFloat fixHeight = 0;
-//    if (shouldFitHeight) {
-//        CGFloat minHeight = [self getMinHeight];
-//        fixHeight = minHeight;
-//    } else {
-//        fixHeight = self.size.height;
-//    }
-//
-//    [self showWithFixHeight:fixHeight blankBGColor:blankBGColor];
-//}
-
-/**
- *  显示弹窗并且是以指定高度显示的
- *
- *  @param fixHeight        高度
- *  @param blankBGColor     空白区域的背景颜色
- */
-- (void)showWithFixHeight:(CGFloat)fixHeight blankBGColor:(UIColor *)blankBGColor {
-//    CGFloat minHeight = [self getMinHeight];
-//    if (fixHeight < minHeight) {
-//        NSString *warningString = [NSString stringWithFormat:@"CJ警告：您设置的size高度小于视图本身的最小高度%.2lf，会导致视图显示不全，请检查", minHeight];
-//        NSLog(@"%@", warningString);
-//    }
-//
-//    CGFloat maxHeight = CGRectGetHeight([UIScreen mainScreen].bounds) - 60;
-//    if (fixHeight > maxHeight) {
-//        fixHeight = maxHeight;
-//
-//        //NSString *warningString = [NSString stringWithFormat:@"CJ警告：您设置的size高度超过视图本身的最大高度%.2lf，会导致视图显示不全，已自动缩小", maxHeight];
-//        //NSLog(@"%@", warningString);
-//        if (self.messageScrollView) {
-//            CGFloat minHeightWithoutMessageLabel = _firstVerticalInterval + _flagImageViewHeight + _secondVerticalInterval + _titleLabelHeight + _thirdVerticalInterval + _bottomMinVerticalInterval + _bottomPartHeight;
-//
-//            _messageLabelHeight = fixHeight - minHeightWithoutMessageLabel;
-//            [self.messageScrollView mas_updateConstraints:^(MASConstraintMaker *make) {
-//                make.height.mas_equalTo(self->_messageLabelHeight);
-//            }];
-//        }
-//
-//    }
-//
-//    CGSize popupViewSize = CGSizeMake(self.size.width, fixHeight);
-//    [self showPopupViewSize:popupViewSize];
+- (CGFloat)calculateAlertHeightWithShouldAutoFitHeight:(BOOL)shouldAutoFitHeight {
+    return 300;
 }
 
-- (void)showPopupViewSize:(CGSize)popupViewSize blankBGColor:(UIColor *)blankBGColor {
-    [self cj_popupInCenterWindow:CJAnimationTypeNormal
-                        withSize:popupViewSize
-                    blankBGColor:blankBGColor
-                    showComplete:nil tapBlankComplete:nil];
-}
+///// 显示弹窗
+//- (void)show {
+//    if (self.alertShowHandle) {
+//        self.alertShowHandle(self);
+//    }
+//}
 
-- (void)dismissWithDelay:(CGFloat)delay {
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delay * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        [self cj_hidePopupViewWithAnimationType:CJAnimationTypeNone];
-    });
+
+/// 关闭弹窗(当需要主动关闭的时候，也会要调这个方法)
+- (void)dismiss {
+    if (self.alertDismissHandle) {
+        self.alertDismissHandle(self);
+    }
 }
 
 

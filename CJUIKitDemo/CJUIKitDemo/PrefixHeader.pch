@@ -18,11 +18,11 @@
 //#ifdef TEST_CJBASEUIKIT_POD
 //#import "UIColor+CJHex.h"
 //#import "CJToast.h"
-//#import "CJAlertUtil.h"
+//#import "CQAlertUtil.h"
 //#else
 //#import <CJBaseUIKit/UIColor+CJHex.h>
 //#import <CJBaseUIKit/CJToast.h>
-//#import <CJBaseUIKit/CJAlertUtil.h>
+//#import <CJBaseUIKit/CQAlertUtil.h>
 //#endif
 
 #import "DemoLabelFactory.h"

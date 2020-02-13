@@ -22,6 +22,7 @@
 @property (nonatomic, copy) NSString *textAssistColor;
 @property (nonatomic, copy) NSString *placeholderTextColor;
 
+@property (nonatomic, copy) NSString *blankBGColor;
 @property (nonatomic, strong) CJAlertThemeModel *alertThemeModel;
 @property (nonatomic, strong) CJButtonThemeModel *buttonThemeModel;
 

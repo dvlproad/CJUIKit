@@ -23,6 +23,4 @@
                  cancelHandle:(void(^)(void))cancelHandle
                      okHandle:(void(^)(NSString *outputText))okHandle;
 
-- (void)showWithShouldFitHeight:(BOOL)shouldFitHeight blankBGColor:(UIColor *)blankBGColor;
-
 @end

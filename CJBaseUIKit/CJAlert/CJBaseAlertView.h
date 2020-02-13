@@ -42,6 +42,9 @@
 @property (nonatomic, assign) CGSize size;
 @property (nonatomic, assign) CGFloat totalMarginVertical;
 
+//@property (nonatomic, copy) void(^alertShowHandle)(CJBaseAlertView *bAlertView);   /**<  显示弹窗的方法 */
+@property (nonatomic, copy) void(^alertDismissHandle)(CJBaseAlertView *bAlertView);   /**<关闭弹窗的方法 */
+
 /**
  *  添加标题
  *
@@ -87,24 +90,18 @@
                      cancelHandle:(void(^)(void))cancelHandle
                          okHandle:(void(^)(void))okHandle;
 
-///**
-// *  显示 alert 弹窗
-// *
-// *  @param shouldFitHeight  是否需要自动适应高度(否:会以之前指定的size的height来显示)
-// *  @param blankBGColor     空白区域的背景颜色
-// */
-//- (void)showWithShouldFitHeight:(BOOL)shouldFitHeight
-//       blankBGColor:(UIColor *)blankBGColor;
-
-
-- (void)showPopupViewSize:(CGSize)popupViewSize blankBGColor:(UIColor *)blankBGColor;
 
 /**
- *  隐藏 alert
- *
- *  @param delay        延迟多少秒后隐藏
- */
-- (void)dismissWithDelay:(CGFloat)delay;
+*  计算弹窗最后的高度
+*
+*  @param shouldAutoFitHeight   是否根据文本自动适应高度(否:会以之前指定的size的height来显示)
+*
+*  @return 最终的高度
+*/
+- (CGFloat)calculateAlertHeightWithShouldAutoFitHeight:(BOOL)shouldAutoFitHeight;
+
+/// 关闭弹窗(当需要主动关闭的时候，也会要调这个方法)
+- (void)dismiss;
 
 
 @end

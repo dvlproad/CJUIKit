@@ -40,10 +40,8 @@
 		1562F1B323F480C30009FCEA /* UITextField+CJAddInputAccessoryView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1562F10123F480C20009FCEA /* UITextField+CJAddInputAccessoryView.m */; };
 		1562F1B423F480C30009FCEA /* CJActionSheetView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1562F10523F480C20009FCEA /* CJActionSheetView.m */; };
 		1562F1B523F480C30009FCEA /* CJActionSheetModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1562F10623F480C20009FCEA /* CJActionSheetModel.m */; };
-		1562F1B623F480C30009FCEA /* CJActionSheetFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 1562F10723F480C20009FCEA /* CJActionSheetFactory.m */; };
 		1562F1B723F480C30009FCEA /* CJActionSheetTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1562F10923F480C20009FCEA /* CJActionSheetTableViewCell.m */; };
 		1562F1B823F480C30009FCEA /* CJScreenBottomTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1562F10E23F480C20009FCEA /* CJScreenBottomTableViewCell.m */; };
-		1562F1B923F480C30009FCEA /* CJJumpMapUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 1562F11023F480C20009FCEA /* CJJumpMapUtil.m */; };
 		1562F1BA23F480C30009FCEA /* UIView+CJPopupInView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1562F11523F480C20009FCEA /* UIView+CJPopupInView.m */; };
 		1562F1BB23F480C30009FCEA /* UIView+CJShowExtendView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1562F11623F480C20009FCEA /* UIView+CJShowExtendView.m */; };
 		1562F1BC23F480C30009FCEA /* UIView+CJRounderCorner.m in Sources */ = {isa = PBXBuildFile; fileRef = 1562F11723F480C20009FCEA /* UIView+CJRounderCorner.m */; };
@@ -57,7 +55,6 @@
 		1562F1C423F480C30009FCEA /* CJTextInputAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1562F12E23F480C30009FCEA /* CJTextInputAlertView.m */; };
 		1562F1C523F480C30009FCEA /* CJAlertComponentFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 1562F12F23F480C30009FCEA /* CJAlertComponentFactory.m */; };
 		1562F1C623F480C30009FCEA /* CJMessageAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1562F13023F480C30009FCEA /* CJMessageAlertView.m */; };
-		1562F1C723F480C30009FCEA /* CJAlertUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 1562F13223F480C30009FCEA /* CJAlertUtil.m */; };
 		1562F1C823F480C30009FCEA /* CJBaseAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1562F13723F480C30009FCEA /* CJBaseAlertView.m */; };
 		1562F1C923F480C30009FCEA /* cjCheckBoxGreenNO@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1562F13B23F480C30009FCEA /* cjCheckBoxGreenNO@2x.png */; };
 		1562F1CA23F480C30009FCEA /* cjCheckBoxGreen2YES.png in Resources */ = {isa = PBXBuildFile; fileRef = 1562F13C23F480C30009FCEA /* cjCheckBoxGreen2YES.png */; };
@@ -105,8 +102,11 @@
 		1562F1F423F480C30009FCEA /* CJExtraTextTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 1562F19623F480C30009FCEA /* CJExtraTextTextField.m */; };
 		1562F1F523F480C30009FCEA /* UITextField+CJPadding.m in Sources */ = {isa = PBXBuildFile; fileRef = 1562F19923F480C30009FCEA /* UITextField+CJPadding.m */; };
 		1562F1F623F480C30009FCEA /* UITextField+CJSelectedTextRange.m in Sources */ = {isa = PBXBuildFile; fileRef = 1562F19A23F480C30009FCEA /* UITextField+CJSelectedTextRange.m */; };
+		1562F1F923F583E70009FCEA /* CQJumpMapUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 1562F1F723F583E60009FCEA /* CQJumpMapUtil.m */; };
+		1562F1FF23F5C0770009FCEA /* CQAlertUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 1562F1FD23F5C0770009FCEA /* CQAlertUtil.m */; };
+		1562F20223F5C8130009FCEA /* CJBaseAlertView+CQPopupAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 1562F20123F5C8130009FCEA /* CJBaseAlertView+CQPopupAction.m */; };
 		15C970BB23DB594F008D81B0 /* CQAlertManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 15C970BA23DB594F008D81B0 /* CQAlertManager.m */; };
-		15C970BE23DB5AEA008D81B0 /* CJSystemAlertUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 15C970BD23DB5AEA008D81B0 /* CJSystemAlertUtil.m */; };
+		15C970BE23DB5AEA008D81B0 /* UIAlertUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 15C970BD23DB5AEA008D81B0 /* UIAlertUtil.m */; };
 		15C970D723DB6125008D81B0 /* ActionSheetHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 15C970D523DB6125008D81B0 /* ActionSheetHomeViewController.m */; };
 		15C970DE23DB6768008D81B0 /* CQActionSheetUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 15C970DD23DB6767008D81B0 /* CQActionSheetUtil.m */; };
 		51F701ECBBD48CC565F3FB87 /* libPods-CJUIKitDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A078401C0E781545EB72B64D /* libPods-CJUIKitDemo.a */; };
@@ -471,16 +471,12 @@
 		1562F10323F480C20009FCEA /* CJDefaultToolbar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJDefaultToolbar.h; sourceTree = "<group>"; };
 		1562F10523F480C20009FCEA /* CJActionSheetView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJActionSheetView.m; sourceTree = "<group>"; };
 		1562F10623F480C20009FCEA /* CJActionSheetModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJActionSheetModel.m; sourceTree = "<group>"; };
-		1562F10723F480C20009FCEA /* CJActionSheetFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJActionSheetFactory.m; sourceTree = "<group>"; };
-		1562F10823F480C20009FCEA /* CJJumpMapUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJJumpMapUtil.h; sourceTree = "<group>"; };
 		1562F10923F480C20009FCEA /* CJActionSheetTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJActionSheetTableViewCell.m; sourceTree = "<group>"; };
 		1562F10A23F480C20009FCEA /* CJScreenBottomTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJScreenBottomTableViewCell.h; sourceTree = "<group>"; };
 		1562F10B23F480C20009FCEA /* CJActionSheetView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJActionSheetView.h; sourceTree = "<group>"; };
-		1562F10C23F480C20009FCEA /* CJActionSheetFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJActionSheetFactory.h; sourceTree = "<group>"; };
 		1562F10D23F480C20009FCEA /* CJActionSheetModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJActionSheetModel.h; sourceTree = "<group>"; };
 		1562F10E23F480C20009FCEA /* CJScreenBottomTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJScreenBottomTableViewCell.m; sourceTree = "<group>"; };
 		1562F10F23F480C20009FCEA /* CJActionSheetTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJActionSheetTableViewCell.h; sourceTree = "<group>"; };
-		1562F11023F480C20009FCEA /* CJJumpMapUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJJumpMapUtil.m; sourceTree = "<group>"; };
 		1562F11323F480C20009FCEA /* UIView+CJShowExtendView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+CJShowExtendView.h"; sourceTree = "<group>"; };
 		1562F11423F480C20009FCEA /* UIView+CJRounderCorner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+CJRounderCorner.h"; sourceTree = "<group>"; };
 		1562F11523F480C20009FCEA /* UIView+CJPopupInView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+CJPopupInView.m"; sourceTree = "<group>"; };
@@ -506,11 +502,9 @@
 		1562F12F23F480C30009FCEA /* CJAlertComponentFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJAlertComponentFactory.m; sourceTree = "<group>"; };
 		1562F13023F480C30009FCEA /* CJMessageAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJMessageAlertView.m; sourceTree = "<group>"; };
 		1562F13123F480C30009FCEA /* CJBaseAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJBaseAlertView.h; sourceTree = "<group>"; };
-		1562F13223F480C30009FCEA /* CJAlertUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJAlertUtil.m; sourceTree = "<group>"; };
 		1562F13323F480C30009FCEA /* CJAlertComponentFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJAlertComponentFactory.h; sourceTree = "<group>"; };
 		1562F13423F480C30009FCEA /* CJTextInputAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJTextInputAlertView.h; sourceTree = "<group>"; };
 		1562F13523F480C30009FCEA /* CJMessageAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJMessageAlertView.h; sourceTree = "<group>"; };
-		1562F13623F480C30009FCEA /* CJAlertUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJAlertUtil.h; sourceTree = "<group>"; };
 		1562F13723F480C30009FCEA /* CJBaseAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJBaseAlertView.m; sourceTree = "<group>"; };
 		1562F13823F480C30009FCEA /* CJUIKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJUIKit.h; sourceTree = "<group>"; };
 		1562F13B23F480C30009FCEA /* cjCheckBoxGreenNO@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cjCheckBoxGreenNO@2x.png"; sourceTree = "<group>"; };
@@ -592,10 +586,16 @@
 		1562F19923F480C30009FCEA /* UITextField+CJPadding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextField+CJPadding.m"; sourceTree = "<group>"; };
 		1562F19A23F480C30009FCEA /* UITextField+CJSelectedTextRange.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextField+CJSelectedTextRange.m"; sourceTree = "<group>"; };
 		1562F19B23F480C30009FCEA /* UITextField+CJTextChangeBlock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextField+CJTextChangeBlock.h"; sourceTree = "<group>"; };
+		1562F1F723F583E60009FCEA /* CQJumpMapUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CQJumpMapUtil.m; sourceTree = "<group>"; };
+		1562F1F823F583E70009FCEA /* CQJumpMapUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CQJumpMapUtil.h; sourceTree = "<group>"; };
+		1562F1FD23F5C0770009FCEA /* CQAlertUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CQAlertUtil.m; sourceTree = "<group>"; };
+		1562F1FE23F5C0770009FCEA /* CQAlertUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CQAlertUtil.h; sourceTree = "<group>"; };
+		1562F20023F5C8130009FCEA /* CJBaseAlertView+CQPopupAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CJBaseAlertView+CQPopupAction.h"; sourceTree = "<group>"; };
+		1562F20123F5C8130009FCEA /* CJBaseAlertView+CQPopupAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CJBaseAlertView+CQPopupAction.m"; sourceTree = "<group>"; };
 		15C970B923DB594E008D81B0 /* CQAlertManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CQAlertManager.h; sourceTree = "<group>"; };
 		15C970BA23DB594F008D81B0 /* CQAlertManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CQAlertManager.m; sourceTree = "<group>"; };
-		15C970BC23DB5AEA008D81B0 /* CJSystemAlertUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJSystemAlertUtil.h; sourceTree = "<group>"; };
-		15C970BD23DB5AEA008D81B0 /* CJSystemAlertUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJSystemAlertUtil.m; sourceTree = "<group>"; };
+		15C970BC23DB5AEA008D81B0 /* UIAlertUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIAlertUtil.h; sourceTree = "<group>"; };
+		15C970BD23DB5AEA008D81B0 /* UIAlertUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIAlertUtil.m; sourceTree = "<group>"; };
 		15C970D423DB6125008D81B0 /* ActionSheetHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActionSheetHomeViewController.h; sourceTree = "<group>"; };
 		15C970D523DB6125008D81B0 /* ActionSheetHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActionSheetHomeViewController.m; sourceTree = "<group>"; };
 		15C970DC23DB6767008D81B0 /* CQActionSheetUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CQActionSheetUtil.h; sourceTree = "<group>"; };
@@ -1322,18 +1322,14 @@
 		1562F10423F480C20009FCEA /* CJActionSheet */ = {
 			isa = PBXGroup;
 			children = (
-				1562F10523F480C20009FCEA /* CJActionSheetView.m */,
-				1562F10623F480C20009FCEA /* CJActionSheetModel.m */,
-				1562F10723F480C20009FCEA /* CJActionSheetFactory.m */,
-				1562F10823F480C20009FCEA /* CJJumpMapUtil.h */,
-				1562F10923F480C20009FCEA /* CJActionSheetTableViewCell.m */,
-				1562F10A23F480C20009FCEA /* CJScreenBottomTableViewCell.h */,
-				1562F10B23F480C20009FCEA /* CJActionSheetView.h */,
-				1562F10C23F480C20009FCEA /* CJActionSheetFactory.h */,
 				1562F10D23F480C20009FCEA /* CJActionSheetModel.h */,
-				1562F10E23F480C20009FCEA /* CJScreenBottomTableViewCell.m */,
+				1562F10623F480C20009FCEA /* CJActionSheetModel.m */,
 				1562F10F23F480C20009FCEA /* CJActionSheetTableViewCell.h */,
-				1562F11023F480C20009FCEA /* CJJumpMapUtil.m */,
+				1562F10923F480C20009FCEA /* CJActionSheetTableViewCell.m */,
+				1562F10B23F480C20009FCEA /* CJActionSheetView.h */,
+				1562F10523F480C20009FCEA /* CJActionSheetView.m */,
+				1562F10A23F480C20009FCEA /* CJScreenBottomTableViewCell.h */,
+				1562F10E23F480C20009FCEA /* CJScreenBottomTableViewCell.m */,
 			);
 			path = CJActionSheet;
 			sourceTree = "<group>";
@@ -1416,16 +1412,14 @@
 		1562F12D23F480C30009FCEA /* CJAlert */ = {
 			isa = PBXGroup;
 			children = (
-				1562F12E23F480C30009FCEA /* CJTextInputAlertView.m */,
-				1562F12F23F480C30009FCEA /* CJAlertComponentFactory.m */,
-				1562F13023F480C30009FCEA /* CJMessageAlertView.m */,
-				1562F13123F480C30009FCEA /* CJBaseAlertView.h */,
-				1562F13223F480C30009FCEA /* CJAlertUtil.m */,
 				1562F13323F480C30009FCEA /* CJAlertComponentFactory.h */,
-				1562F13423F480C30009FCEA /* CJTextInputAlertView.h */,
-				1562F13523F480C30009FCEA /* CJMessageAlertView.h */,
-				1562F13623F480C30009FCEA /* CJAlertUtil.h */,
+				1562F12F23F480C30009FCEA /* CJAlertComponentFactory.m */,
+				1562F13123F480C30009FCEA /* CJBaseAlertView.h */,
 				1562F13723F480C30009FCEA /* CJBaseAlertView.m */,
+				1562F13523F480C30009FCEA /* CJMessageAlertView.h */,
+				1562F13023F480C30009FCEA /* CJMessageAlertView.m */,
+				1562F13423F480C30009FCEA /* CJTextInputAlertView.h */,
+				1562F12E23F480C30009FCEA /* CJTextInputAlertView.m */,
 			);
 			path = CJAlert;
 			sourceTree = "<group>";
@@ -1455,11 +1449,11 @@
 		1562F14223F480C30009FCEA /* CJToast */ = {
 			isa = PBXGroup;
 			children = (
-				1562F14323F480C30009FCEA /* UIViewController+CJToast.m */,
-				1562F14423F480C30009FCEA /* Resources */,
 				1562F14B23F480C30009FCEA /* CJToast.h */,
-				1562F14C23F480C30009FCEA /* UIViewController+CJToast.h */,
 				1562F14D23F480C30009FCEA /* CJToast.m */,
+				1562F14423F480C30009FCEA /* Resources */,
+				1562F14C23F480C30009FCEA /* UIViewController+CJToast.h */,
+				1562F14323F480C30009FCEA /* UIViewController+CJToast.m */,
 			);
 			path = CJToast;
 			sourceTree = "<group>";
@@ -1612,10 +1606,10 @@
 		1562F18523F480C30009FCEA /* CJTheme */ = {
 			isa = PBXGroup;
 			children = (
-				1562F18623F480C30009FCEA /* CJThemeModel.h */,
 				1562F18723F480C30009FCEA /* CJThemeManager.h */,
-				1562F18823F480C30009FCEA /* CJThemeModel.m */,
 				1562F18923F480C30009FCEA /* CJThemeManager.m */,
+				1562F18623F480C30009FCEA /* CJThemeModel.h */,
+				1562F18823F480C30009FCEA /* CJThemeModel.m */,
 			);
 			path = CJTheme;
 			sourceTree = "<group>";
@@ -1671,6 +1665,8 @@
 			children = (
 				15C970DC23DB6767008D81B0 /* CQActionSheetUtil.h */,
 				15C970DD23DB6767008D81B0 /* CQActionSheetUtil.m */,
+				1562F1F823F583E70009FCEA /* CQJumpMapUtil.h */,
+				1562F1F723F583E60009FCEA /* CQJumpMapUtil.m */,
 			);
 			path = CQActionSheet;
 			sourceTree = "<group>";
@@ -1808,8 +1804,12 @@
 			children = (
 				15C970B923DB594E008D81B0 /* CQAlertManager.h */,
 				15C970BA23DB594F008D81B0 /* CQAlertManager.m */,
-				15C970BC23DB5AEA008D81B0 /* CJSystemAlertUtil.h */,
-				15C970BD23DB5AEA008D81B0 /* CJSystemAlertUtil.m */,
+				15C970BC23DB5AEA008D81B0 /* UIAlertUtil.h */,
+				15C970BD23DB5AEA008D81B0 /* UIAlertUtil.m */,
+				1562F1FE23F5C0770009FCEA /* CQAlertUtil.h */,
+				1562F1FD23F5C0770009FCEA /* CQAlertUtil.m */,
+				1562F20023F5C8130009FCEA /* CJBaseAlertView+CQPopupAction.h */,
+				1562F20123F5C8130009FCEA /* CJBaseAlertView+CQPopupAction.m */,
 			);
 			path = CQAlert;
 			sourceTree = "<group>";
@@ -3364,6 +3364,7 @@
 				8060C48C20E0D5EF0093B14E /* AccuracyStringViewController.m in Sources */,
 				1562F1D623F480C30009FCEA /* CJToast.m in Sources */,
 				1562F1A723F480C30009FCEA /* UIScrollView+CJKeyboardAvoiding.m in Sources */,
+				1562F1F923F583E70009FCEA /* CQJumpMapUtil.m in Sources */,
 				78A74E4E236877BA0023F44B /* CJValidateStringTableViewCell.m in Sources */,
 				1562F1A923F480C30009FCEA /* UIWindow+CJSnapshot.m in Sources */,
 				15C970BB23DB594F008D81B0 /* CQAlertManager.m in Sources */,
@@ -3384,7 +3385,7 @@
 				78A74E482368777F0023F44B /* CJDealTextModelFactory.m in Sources */,
 				7808319222DC65DD00F36576 /* WelcomeViewController.m in Sources */,
 				78B6C2E32159D6BC00D5864E /* DemoBusStationModel.m in Sources */,
-				15C970BE23DB5AEA008D81B0 /* CJSystemAlertUtil.m in Sources */,
+				15C970BE23DB5AEA008D81B0 /* UIAlertUtil.m in Sources */,
 				1562F1E523F480C30009FCEA /* CJSliderThumb.m in Sources */,
 				8050038A211C3A29002A2306 /* NSObjectCJHelperViewController.m in Sources */,
 				1562F1E423F480C30009FCEA /* CJSwitchSlider.m in Sources */,
@@ -3396,7 +3397,6 @@
 				78E1895D2177835700B8781A /* ViewHomeViewController.m in Sources */,
 				7852D9DA216EFFBE00E50A39 /* LockGateKeeperViewController.m in Sources */,
 				80FF90B11FC5649F00E437CF /* NavigationBarChangePositonViewController.m in Sources */,
-				1562F1C723F480C30009FCEA /* CJAlertUtil.m in Sources */,
 				7850B71420937E85008F4A21 /* WelcomePopupView.m in Sources */,
 				1562F19C23F480C30009FCEA /* UIImage+CJRotateAngle.m in Sources */,
 				7808318F22DC4ECD00F36576 /* WelcomeDataModel.m in Sources */,
@@ -3413,8 +3413,6 @@
 				7850B70020937C5A008F4A21 /* DragViewController.m in Sources */,
 				1562F1BA23F480C30009FCEA /* UIView+CJPopupInView.m in Sources */,
 				1562F1A523F480C30009FCEA /* CJKeyboardAvoidingTableView.m in Sources */,
-				1562F1B623F480C30009FCEA /* CJActionSheetFactory.m in Sources */,
-				1562F1B923F480C30009FCEA /* CJJumpMapUtil.m in Sources */,
 				7885FC9321567BE000B97DAA /* DemoButtonFactory.m in Sources */,
 				80FF90A41FC5649F00E437CF /* HomeViewController.m in Sources */,
 				800E07E52016CCF500799B78 /* DeviceInfo.m in Sources */,
@@ -3441,6 +3439,7 @@
 				1562F1C023F480C30009FCEA /* UIView+CJGestureRecognizer.m in Sources */,
 				78C8148D216E11AF00A6B190 /* AChildViewController.m in Sources */,
 				7808318722DC116700F36576 /* GifViewController.m in Sources */,
+				1562F1FF23F5C0770009FCEA /* CQAlertUtil.m in Sources */,
 				800F3B652011899400A5C326 /* ToastViewController.m in Sources */,
 				78B6C2E62159D6E900D5864E /* DemoBusStationLocationModel.m in Sources */,
 				788113CB21996A2600D1630D /* SubNormalSharedInstanceClass.m in Sources */,
@@ -3521,6 +3520,7 @@
 				1562F1C623F480C30009FCEA /* CJMessageAlertView.m in Sources */,
 				80FF909F1FC5649F00E437CF /* NestedXibViewController.m in Sources */,
 				787FDB5620500B01008A46E3 /* SearchBarViewController.m in Sources */,
+				1562F20223F5C8130009FCEA /* CJBaseAlertView+CQPopupAction.m in Sources */,
 				1562F1A823F480C30009FCEA /* CJUIKitConstant.m in Sources */,
 				1560230223E2A35600DEAC2A /* TSHUDViewController.m in Sources */,
 				80FF91941FC5682B00E437CF /* TypeConvertViewController.m in Sources */,

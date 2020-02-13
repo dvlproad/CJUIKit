@@ -7,9 +7,9 @@
 //
 
 #import "CQActionSheetUtil.h"
-#import "CJActionSheetFactory.h"
 #import "UIView+CJDemoPopupAction.h"
 
+#import "CQJumpMapUtil.h"
 
 @implementation CQActionSheetUtil
 
@@ -59,7 +59,26 @@
 + (void)showPickImageSheetWithTakePhotoHandle:(void(^)(void))takePhotoHandle
                               pickImageHandle:(void(^)(void))pickImageHandle
 {
-    CJActionSheetView *actionSheet = [CJActionSheetFactory pickImageSheetWithTakePhotoHandle:takePhotoHandle pickImageHandle:pickImageHandle];
+    NSMutableArray *sheetModels = [[NSMutableArray alloc] init];
+    {
+        CJActionSheetModel *takPhotoSheetModel = [[CJActionSheetModel alloc] init];
+        takPhotoSheetModel.title = NSLocalizedString(@"拍摄", nil);
+        [sheetModels addObject:takPhotoSheetModel];
+    }
+    {
+        CJActionSheetModel *pickImageSheetModel = [[CJActionSheetModel alloc] init];
+        pickImageSheetModel.title = NSLocalizedString(@"从手机相册选择", nil);
+        [sheetModels addObject:pickImageSheetModel];
+    }
+    
+    CJActionSheetView *actionSheet = [[CJActionSheetView alloc] initWithSheetModels:sheetModels clickHandle:^(CJActionSheetModel *sheetModel, NSInteger selectIndex) {
+        if (selectIndex == 0) {
+            !takePhotoHandle ?: takePhotoHandle();
+            
+        } else if (selectIndex == 1) {
+            !pickImageHandle ?: pickImageHandle();
+        }
+    }];
     
     [self __showActionSheet:actionSheet];
 }
@@ -78,7 +97,47 @@
                                amapBlock:(void (^ __nullable)(BOOL canOpenAmap))amapBlock
                            appleMapBlock:(void (^ __nullable)(void))appleMapBlock
 {
-    CJActionSheetView *actionSheet = [CJActionSheetFactory mapsActionSheetWithUpdateMap:updateDefaultNavigationMap baiduMapBlock:baiduMapBlock amapBlock:amapBlock appleMapBlock:appleMapBlock];
+    NSMutableArray *sheetModels = [[NSMutableArray alloc] init];
+    // 百度地图 BaiduMap
+    BOOL canOpenBaiduMap = [[UIApplication sharedApplication] canOpenURL:[NSURL URLWithString:@"baidumap://"]];
+    CJActionSheetModel *baiduMapSheetModel = [[CJActionSheetModel alloc] init];
+    baiduMapSheetModel.title = NSLocalizedString(@"百度地图", nil);
+    baiduMapSheetModel.subTitle = canOpenBaiduMap ? @"" : NSLocalizedString(@"未安装", nil);
+    [sheetModels addObject:baiduMapSheetModel];
+    
+    // 高德地图 Amap
+    BOOL canOpenAmap = [[UIApplication sharedApplication] canOpenURL:[NSURL URLWithString:@"amapuri://"]];
+    CJActionSheetModel *amapSheetModel = [[CJActionSheetModel alloc] init];
+    amapSheetModel.title = NSLocalizedString(@"高德地图", nil);
+    amapSheetModel.subTitle = canOpenAmap ? @"" : NSLocalizedString(@"未安装", nil);
+    [sheetModels addObject:amapSheetModel];
+    
+    // 苹果地图 appleMap
+    CJActionSheetModel *appleMapSheetModel = [[CJActionSheetModel alloc] init];
+    appleMapSheetModel.title = NSLocalizedString(@"苹果地图", nil);
+    appleMapSheetModel.subTitle = @"";
+    [sheetModels addObject:appleMapSheetModel];
+    
+    CJActionSheetView *actionSheet = [[CJActionSheetView alloc] initWithSheetModels:sheetModels clickHandle:^(CJActionSheetModel * sheetModel, NSInteger selectIndex) {
+        if (selectIndex == 0) {
+            if (updateDefaultNavigationMap) {
+                [CQJumpMapUtil updateDefaultMapType:CQMapTypeBMKMap];
+            }
+            !baiduMapBlock ?: baiduMapBlock(canOpenBaiduMap);
+            
+        }else if (selectIndex == 1) {
+            if (updateDefaultNavigationMap) {
+                [CQJumpMapUtil updateDefaultMapType:CQMapTypeAMap];
+            }
+            !amapBlock ?: amapBlock(canOpenAmap);
+            
+        }else{
+            if (updateDefaultNavigationMap) {
+                [CQJumpMapUtil updateDefaultMapType:CQMapTypeAppleMap];
+            }
+            !appleMapBlock ?: appleMapBlock();
+        }
+    }];
     
     [self __showActionSheet:actionSheet];
 }

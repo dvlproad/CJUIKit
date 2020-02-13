@@ -1,5 +1,5 @@
 //
-//  CJAlertUtil.h
+//  CQAlertUtil.h
 //  CJUIKitDemo
 //
 //  Created by ciyouzen on 2018/9/27.
@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface CJAlertUtil : NSObject 
+@interface CQAlertUtil : NSObject 
 
 #pragma mark - 常用的接口
 ///显示只有一个 "我知道了" 的 alertView
@@ -89,7 +89,6 @@ NS_ASSUME_NONNULL_BEGIN
                  okButtonTitle:(NSString *)okButtonTitle
                   cancelHandle:(void(^_Nullable)(void))cancelHandle
                       okHandle:(void(^_Nullable)(NSString *outputText))okHandle;
-
 
 @end
 

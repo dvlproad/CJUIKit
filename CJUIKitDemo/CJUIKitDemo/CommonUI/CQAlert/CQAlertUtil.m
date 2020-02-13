@@ -1,17 +1,17 @@
 //
-//  CJAlertUtil.m
+//  CQAlertUtil.m
 //  CJUIKitDemo
 //
 //  Created by ciyouzen on 2018/9/27.
 //  Copyright © 2018年 dvlproad. All rights reserved.
 //
 
-#import "CJAlertUtil.h"
+#import "CQAlertUtil.h"
 #import "CJMessageAlertView.h"
 #import "CJTextInputAlertView.h"
+#import "CJBaseAlertView+CQPopupAction.h"
 
-
-@implementation CJAlertUtil
+@implementation CQAlertUtil
 
 #pragma mark - 常用的接口
 ///显示只有一个 "我知道了" 的 alertView
@@ -47,18 +47,9 @@
 + (void)showDebugViewWithAppExtraInfo:(NSString *)extraInfo {
     NSString *title = @"app信息";
     
-    NSDictionary *infoDictionary = [[NSBundle mainBundle] infoDictionary];
-    NSString *appName = [infoDictionary objectForKey:@"CFBundleDisplayName"]; //app名
-    NSString *appVersion = [infoDictionary objectForKey:@"CFBundleShortVersionString"];//版本号
-    NSString *appBuild = [infoDictionary objectForKey:@"CFBundleVersion"];//buidId
+    CJMessageAlertView *alertView = [CJMessageAlertView debugMessageAlertViewWithTitle:title message:extraInfo shouldContailAppInfo:YES];
     
-    NSMutableString *message = [NSMutableString string];
-    [message appendFormat:@"appName:%@\n", appName];
-    [message appendFormat:@"appVersion:%@\n", appVersion];
-    [message appendFormat:@"appBuild:  %@\n", appBuild];
-    [message appendString:extraInfo];
-    
-    [self showDebugViewWithTitle:title message:message];
+    [self __showMessageAlertView:alertView];
 }
 
 
@@ -67,20 +58,7 @@
 /// @param message      调试面板的信息
 + (void)showDebugViewWithTitle:(NSString *)title message:(NSString *)message
 {
-//    CGFloat screenWidth = CGRectGetWidth([[UIScreen mainScreen] bounds]);
-//    CGSize popupViewSize = CGSizeMake(screenWidth * 0.9, 200);
-//    CJMessageAlertView *alertView = [[CJMessageAlertView alloc] initWithSize:popupViewSize];
-    CJMessageAlertView *alertView = [[CJMessageAlertView alloc] initWithFlagImage:nil title:title message:message cancelButtonTitle:NSLocalizedString(@"取消", nil) okButtonTitle:NSLocalizedString(@"复制到粘贴板", nil) cancelHandle:^{
-        //NSLog(@"调试面板:点击了取消按钮");
-    } okHandle:^{
-        //NSLog(@"调试面板:调试信息已复制到粘贴板");
-        UIPasteboard *pasteboard = [UIPasteboard generalPasteboard];
-        pasteboard.string = message;
-    }];
-    alertView.messageScrollView.layer.borderWidth = 0.5;
-    //alertView.messageScrollView.layer.borderColor = borderColor;
-    alertView.messageScrollView.layer.cornerRadius = 3;
-    
+    CJMessageAlertView *alertView = [CJMessageAlertView debugMessageAlertViewWithTitle:title message:message shouldContailAppInfo:NO];
     
     [self __showMessageAlertView:alertView];
 }
@@ -161,15 +139,14 @@
 
 #pragma mark - Private Method
 + (void)__showMessageAlertView:(CJMessageAlertView *)alertView {
-//    UIColor *blankBGColor = [UIColor colorWithRed:.16 green:.17 blue:.21 alpha:.6];
-    UIColor *blankBGColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:.6];
-    [alertView showWithShouldFitHeight:YES blankBGColor:blankBGColor];
+    [alertView showWithShouldFitHeight:YES];
 }
 
 + (void)__showTextInputAlertView:(CJTextInputAlertView *)alertView {
-    UIColor *blankBGColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:.6];
-    [alertView showWithShouldFitHeight:YES blankBGColor:blankBGColor];
+    [alertView showWithShouldFitHeight:YES];
 }
+
+
 
 
 

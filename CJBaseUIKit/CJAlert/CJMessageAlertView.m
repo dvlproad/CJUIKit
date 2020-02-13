@@ -74,6 +74,40 @@
     return self;
 }
 
+/// 创建调试的弹窗
++ (instancetype)debugMessageAlertViewWithTitle:(NSString *)title message:(NSString *)message shouldContailAppInfo:(BOOL)shouldContailAppInfo
+{
+    NSMutableString *lastMessage = [NSMutableString string];
+    if (shouldContailAppInfo) {
+        NSDictionary *infoDictionary = [[NSBundle mainBundle] infoDictionary];
+        NSString *appName = [infoDictionary objectForKey:@"CFBundleDisplayName"]; //app名
+        NSString *appVersion = [infoDictionary objectForKey:@"CFBundleShortVersionString"];//版本号
+        NSString *appBuild = [infoDictionary objectForKey:@"CFBundleVersion"];//buidId
+        
+        NSMutableString *apppInfoMessage = [NSMutableString string];
+        [apppInfoMessage appendFormat:@"appName:%@\n", appName];
+        [apppInfoMessage appendFormat:@"appVersion:%@\n", appVersion];
+        [apppInfoMessage appendFormat:@"appBuild:  %@\n", appBuild];
+        
+        [lastMessage appendString:apppInfoMessage];
+    }
+    [lastMessage appendString:message];
+    
+    CJMessageAlertView *alertView = [[CJMessageAlertView alloc] initWithFlagImage:nil title:title message:message cancelButtonTitle:NSLocalizedString(@"取消", nil) okButtonTitle:NSLocalizedString(@"复制到粘贴板", nil) cancelHandle:^{
+        //NSLog(@"调试面板:点击了取消按钮");
+    } okHandle:^{
+        //NSLog(@"调试面板:调试信息已复制到粘贴板");
+        UIPasteboard *pasteboard = [UIPasteboard generalPasteboard];
+        pasteboard.string = message;
+    }];
+    alertView.messageScrollView.layer.borderWidth = 0.5;
+    //alertView.messageScrollView.layer.borderColor = borderColor;
+    alertView.messageScrollView.layer.cornerRadius = 3;
+    
+    return alertView;
+}
+
+
 - (void)__commonSetupWithAlertThemeModel:(CJAlertThemeModel *)alertThemeModel
                                flagImage:(UIImage *)flagImage
                                    title:(NSString *)title
@@ -170,13 +204,14 @@
     return minHeight;
 }
 
-/*
-*  显示弹窗
+/**
+*  计算弹窗最后的高度
 *
-*  @param shouldFitHeight  是否自动适应高度
-*  @param blankBGColor     空白区域的背景颜色
+*  @param shouldAutoFitHeight   是否根据文本自动适应高度
+*
+*  @return 最终的高度
 */
-- (void)showWithShouldFitHeight:(BOOL)shouldFitHeight blankBGColor:(UIColor *)blankBGColor
+- (CGFloat)calculateAlertHeightWithShouldAutoFitHeight:(BOOL)shouldAutoFitHeight
 {
     // 计算最后 messageLabelHeight 的值
     CGFloat minHeightWithoutMessageLabel = [self getMinHeightExpectMessageLabel];
@@ -184,7 +219,7 @@
     CGFloat maxMessageLabelHeight = maxHeight - minHeightWithoutMessageLabel;
     
     CGFloat messageLabelHeight = 0;
-    if (shouldFitHeight) {
+    if (shouldAutoFitHeight) {
         messageLabelHeight = self.messageLabelHeight;
     } else {
         messageLabelHeight = self.size.height - minHeightWithoutMessageLabel;
@@ -208,8 +243,7 @@
     }
     CGFloat fixHeight = minHeightWithoutMessageLabel + messageLabelHeight;
 
-    CGSize popupViewSize = CGSizeMake(self.size.width, fixHeight);
-    [self showPopupViewSize:popupViewSize blankBGColor:blankBGColor];
+    return fixHeight;
 }
 
 

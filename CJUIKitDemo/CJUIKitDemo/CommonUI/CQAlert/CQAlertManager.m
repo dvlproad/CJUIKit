@@ -15,6 +15,8 @@
 #import <CJBaseHelper/AuthorizationCJHelper.h>
 #endif
 
+#import "CJBaseAlertView+CQPopupAction.h"
+
 @interface CQAlertManager () {
     
 }
@@ -60,7 +62,7 @@
 - (void)showNetworkNoOpenAlert:(BOOL)show {
     if (!show) {
         if (self.networkNoOpenAlert) {
-            [self.networkNoOpenAlert dismissWithDelay:0];
+            [self.networkNoOpenAlert dismiss];
             self.networkNoOpenAlert = nil;
         }
     } else {
@@ -81,7 +83,7 @@
 - (void)showLocationNoOpenAlert:(BOOL)show {
     if (!show) {
         if (self.locationNoOpenAlert) {
-            [self.locationNoOpenAlert dismissWithDelay:0];
+            [self.locationNoOpenAlert dismiss];
             self.locationNoOpenAlert = nil;
         }
     } else {
@@ -102,7 +104,7 @@
 - (void)showLocationAbnormalAlert:(BOOL)show {
     if (!show) {
         if (self.locationAbnormalAlert) {
-            [self.locationAbnormalAlert dismissWithDelay:0];
+            [self.locationAbnormalAlert dismiss];
             self.locationAbnormalAlert = nil;
         }
     } else {
@@ -121,9 +123,7 @@
 
 #pragma mark - Private Method
 - (void)__showAlertView:(CJMessageAlertView *)alertView {
-    UIColor *blankBGColor = [UIColor colorWithRed:.16 green:.17 blue:.21 alpha:.6];
-//    UIColor *blankBGColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:.6];
-    [alertView showWithShouldFitHeight:YES blankBGColor:blankBGColor];
+    [alertView showWithShouldFitHeight:YES];
 }
 
 

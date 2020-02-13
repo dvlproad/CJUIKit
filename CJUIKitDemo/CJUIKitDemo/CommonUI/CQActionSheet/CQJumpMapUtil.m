@@ -1,29 +1,29 @@
 //
-//  CJJumpMapUtil.m
+//  CQJumpMapUtil.m
 //  CJUIKitDemo
 //
 //  Created by ciyouzen on 2019/4/17.
 //  Copyright © 2019 dvlproad. All rights reserved.
 //
 
-#import "CJJumpMapUtil.h"
+#import "CQJumpMapUtil.h"
 
-@implementation CJJumpMapUtil
+@implementation CQJumpMapUtil
 
 /// 获取默认的导航地图软件类型
-+ (CJDemoMapType)defaultMapType {
-    CJDemoMapType mapType = (CJDemoMapType)[[[NSUserDefaults standardUserDefaults] objectForKey:@"navigationMapType"] integerValue]; //默认地图导航软件
++ (CQMapType)defaultMapType {
+    CQMapType mapType = (CQMapType)[[[NSUserDefaults standardUserDefaults] objectForKey:@"navigationMapType"] integerValue]; //默认地图导航软件
     return mapType;
 }
 
 /// 获取默认的导航地图软件名称
 + (NSString *)defaultMapTitle {
-    CJDemoMapType mapType = [self defaultMapType]; //默认地图导航软件
-    if (mapType == CJDemoMapTypeBMKMap) {
+    CQMapType mapType = [self defaultMapType]; //默认地图导航软件
+    if (mapType == CQMapTypeBMKMap) {
         return NSLocalizedString(@"百度地图", nil);
-    } else if (mapType == CJDemoMapTypeAMap) {
+    } else if (mapType == CQMapTypeAMap) {
         return NSLocalizedString(@"高德地图", nil);
-    } else if (mapType == CJDemoMapTypeAppleMap) {
+    } else if (mapType == CQMapTypeAppleMap) {
         return NSLocalizedString(@"苹果地图", nil);
     } else {
         return @"";
@@ -31,7 +31,7 @@
 }
 
 /// 更新默认的导航地图软件
-+ (void)updateDefaultMapType:(CJDemoMapType)mapType {
++ (void)updateDefaultMapType:(CQMapType)mapType {
     [[NSUserDefaults standardUserDefaults] setObject:@(mapType) forKey:@"navigationMapType"];
 }
 
