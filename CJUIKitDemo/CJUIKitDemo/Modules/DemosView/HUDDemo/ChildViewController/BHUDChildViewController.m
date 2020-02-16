@@ -8,7 +8,7 @@
 
 #import "BHUDChildViewController.h"
 #import <CJBaseEffectKit/CJMJRefreshNormalHeader.h>
-#import "TestProgressHUDViewController.h"
+#import "BackFromSelfHUDViewController.h"
 #import "UIViewController+CJProgressHUD.h"
 
 @interface BHUDChildViewController ()
@@ -47,7 +47,7 @@
         {
             CJModuleModel *autoLayoutModule = [[CJModuleModel alloc] init];
             autoLayoutModule.title = @"B--1(点击进到下一页返回后禁止出现两个HUD)";
-            autoLayoutModule.classEntry = [TestProgressHUDViewController class];
+            autoLayoutModule.classEntry = [BackFromSelfHUDViewController class];
             [sectionDataModel.values addObject:autoLayoutModule];
         }
         

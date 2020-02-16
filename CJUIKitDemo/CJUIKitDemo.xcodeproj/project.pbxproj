@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1560230223E2A35600DEAC2A /* TSHUDViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1560230123E2A35600DEAC2A /* TSHUDViewController.m */; };
 		1560230523E2A6C300DEAC2A /* loading_coffee.json in Resources */ = {isa = PBXBuildFile; fileRef = 1560230323E2A6C300DEAC2A /* loading_coffee.json */; };
 		1560230623E2A6C300DEAC2A /* loading_tea.json in Resources */ = {isa = PBXBuildFile; fileRef = 1560230423E2A6C300DEAC2A /* loading_tea.json */; };
 		1562EF8423F469EA0009FCEA /* CQHUDUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 1562EF8323F469E90009FCEA /* CQHUDUtil.m */; };
@@ -92,6 +91,16 @@
 		1562F30023F945F20009FCEA /* CQToast.m in Sources */ = {isa = PBXBuildFile; fileRef = 1562F2FC23F945F20009FCEA /* CQToast.m */; };
 		1562F30123F945F20009FCEA /* demo_toast_error@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1562F2FE23F945F20009FCEA /* demo_toast_error@3x.png */; };
 		1562F30223F945F20009FCEA /* demo_toast_error@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1562F2FF23F945F20009FCEA /* demo_toast_error@2x.png */; };
+		1562F31423F96BDC0009FCEA /* SelfHUDDismissViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1562F30723F96BDC0009FCEA /* SelfHUDDismissViewController.m */; };
+		1562F31623F96BDC0009FCEA /* TSHUDViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1562F30B23F96BDC0009FCEA /* TSHUDViewController.m */; };
+		1562F31723F96BDC0009FCEA /* AHUDChildViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1562F30D23F96BDC0009FCEA /* AHUDChildViewController.m */; };
+		1562F31823F96BDC0009FCEA /* BHUDChildViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1562F30F23F96BDC0009FCEA /* BHUDChildViewController.m */; };
+		1562F31923F96BDC0009FCEA /* CHUDChildViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1562F31123F96BDC0009FCEA /* CHUDChildViewController.m */; };
+		1562F31E23F96C510009FCEA /* HUDHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1562F31D23F96C510009FCEA /* HUDHomeViewController.m */; };
+		1562F32423F978190009FCEA /* SingleHUDViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1562F32223F978190009FCEA /* SingleHUDViewController.m */; };
+		1562F32723F979C60009FCEA /* BackFromShareHUDViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1562F32623F979C60009FCEA /* BackFromShareHUDViewController.m */; };
+		1562F32A23F981680009FCEA /* TSShareHUDDissmissViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1562F32923F981680009FCEA /* TSShareHUDDissmissViewController.m */; };
+		1562F32D23F9852C0009FCEA /* BackFromSelfHUDViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1562F32C23F9852C0009FCEA /* BackFromSelfHUDViewController.m */; };
 		15C970BB23DB594F008D81B0 /* CQAlertManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 15C970BA23DB594F008D81B0 /* CQAlertManager.m */; };
 		15C970BE23DB5AEA008D81B0 /* UIAlertUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 15C970BD23DB5AEA008D81B0 /* UIAlertUtil.m */; };
 		15C970D723DB6125008D81B0 /* ActionSheetHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 15C970D523DB6125008D81B0 /* ActionSheetHomeViewController.m */; };
@@ -138,11 +147,6 @@
 		7832810D1F41AA96008267E0 /* ProcessLineView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7832810C1F41AA96008267E0 /* ProcessLineView.m */; };
 		783A4A19219BC73500CBF4FC /* NSObject+CJSharedInstance.m in Sources */ = {isa = PBXBuildFile; fileRef = 783A4A18219BC73500CBF4FC /* NSObject+CJSharedInstance.m */; };
 		784A7216214C9DF000F8D144 /* MoreHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 784A7215214C9DF000F8D144 /* MoreHomeViewController.m */; };
-		784AB8D121E87E7900A3F51C /* TestProgressHUDViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 784AB8D021E87E7900A3F51C /* TestProgressHUDViewController.m */; };
-		784AB8E921E892FD00A3F51C /* TestHUDHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 784AB8E821E892FD00A3F51C /* TestHUDHomeViewController.m */; };
-		784AB8ED21E8960200A3F51C /* AHUDChildViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 784AB8EC21E8960200A3F51C /* AHUDChildViewController.m */; };
-		784AB8F021E8961100A3F51C /* BHUDChildViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 784AB8EF21E8961100A3F51C /* BHUDChildViewController.m */; };
-		784AB8F321E8962000A3F51C /* CHUDChildViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 784AB8F221E8962000A3F51C /* CHUDChildViewController.m */; };
 		784C87FF216F2B1D00AFEE7D /* SemaphoreGateKeeperViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 784C87FD216F2B1D00AFEE7D /* SemaphoreGateKeeperViewController.m */; };
 		7850B6FF20937C5A008F4A21 /* DragViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7850B6F020937C59008F4A21 /* DragViewController.xib */; };
 		7850B70020937C5A008F4A21 /* DragViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7850B6F120937C59008F4A21 /* DragViewController.m */; };
@@ -395,8 +399,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		1560230023E2A35600DEAC2A /* TSHUDViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSHUDViewController.h; sourceTree = "<group>"; };
-		1560230123E2A35600DEAC2A /* TSHUDViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSHUDViewController.m; sourceTree = "<group>"; };
 		1560230323E2A6C300DEAC2A /* loading_coffee.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = loading_coffee.json; sourceTree = "<group>"; };
 		1560230423E2A6C300DEAC2A /* loading_tea.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = loading_tea.json; sourceTree = "<group>"; };
 		1562EF8223F469E90009FCEA /* CQHUDUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CQHUDUtil.h; sourceTree = "<group>"; };
@@ -555,6 +557,26 @@
 		1562F2FD23F945F20009FCEA /* CQToast.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CQToast.h; sourceTree = "<group>"; };
 		1562F2FE23F945F20009FCEA /* demo_toast_error@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "demo_toast_error@3x.png"; sourceTree = "<group>"; };
 		1562F2FF23F945F20009FCEA /* demo_toast_error@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "demo_toast_error@2x.png"; sourceTree = "<group>"; };
+		1562F30723F96BDC0009FCEA /* SelfHUDDismissViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelfHUDDismissViewController.m; sourceTree = "<group>"; };
+		1562F30823F96BDC0009FCEA /* TSHUDViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSHUDViewController.h; sourceTree = "<group>"; };
+		1562F30A23F96BDC0009FCEA /* SelfHUDDismissViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelfHUDDismissViewController.h; sourceTree = "<group>"; };
+		1562F30B23F96BDC0009FCEA /* TSHUDViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSHUDViewController.m; sourceTree = "<group>"; };
+		1562F30D23F96BDC0009FCEA /* AHUDChildViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AHUDChildViewController.m; sourceTree = "<group>"; };
+		1562F30E23F96BDC0009FCEA /* CHUDChildViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHUDChildViewController.h; sourceTree = "<group>"; };
+		1562F30F23F96BDC0009FCEA /* BHUDChildViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BHUDChildViewController.m; sourceTree = "<group>"; };
+		1562F31023F96BDC0009FCEA /* AHUDChildViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AHUDChildViewController.h; sourceTree = "<group>"; };
+		1562F31123F96BDC0009FCEA /* CHUDChildViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHUDChildViewController.m; sourceTree = "<group>"; };
+		1562F31223F96BDC0009FCEA /* BHUDChildViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BHUDChildViewController.h; sourceTree = "<group>"; };
+		1562F31C23F96C510009FCEA /* HUDHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HUDHomeViewController.h; sourceTree = "<group>"; };
+		1562F31D23F96C510009FCEA /* HUDHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HUDHomeViewController.m; sourceTree = "<group>"; };
+		1562F32223F978190009FCEA /* SingleHUDViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SingleHUDViewController.m; sourceTree = "<group>"; };
+		1562F32323F978190009FCEA /* SingleHUDViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SingleHUDViewController.h; sourceTree = "<group>"; };
+		1562F32523F979C60009FCEA /* BackFromShareHUDViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BackFromShareHUDViewController.h; sourceTree = "<group>"; };
+		1562F32623F979C60009FCEA /* BackFromShareHUDViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BackFromShareHUDViewController.m; sourceTree = "<group>"; };
+		1562F32823F981680009FCEA /* TSShareHUDDissmissViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSShareHUDDissmissViewController.h; sourceTree = "<group>"; };
+		1562F32923F981680009FCEA /* TSShareHUDDissmissViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSShareHUDDissmissViewController.m; sourceTree = "<group>"; };
+		1562F32B23F9852C0009FCEA /* BackFromSelfHUDViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BackFromSelfHUDViewController.h; sourceTree = "<group>"; };
+		1562F32C23F9852C0009FCEA /* BackFromSelfHUDViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BackFromSelfHUDViewController.m; sourceTree = "<group>"; };
 		15C970B923DB594E008D81B0 /* CQAlertManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CQAlertManager.h; sourceTree = "<group>"; };
 		15C970BA23DB594F008D81B0 /* CQAlertManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CQAlertManager.m; sourceTree = "<group>"; };
 		15C970BC23DB5AEA008D81B0 /* UIAlertUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIAlertUtil.h; sourceTree = "<group>"; };
@@ -638,16 +660,6 @@
 		783A4A18219BC73500CBF4FC /* NSObject+CJSharedInstance.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSObject+CJSharedInstance.m"; sourceTree = "<group>"; };
 		784A7214214C9DF000F8D144 /* MoreHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoreHomeViewController.h; sourceTree = "<group>"; };
 		784A7215214C9DF000F8D144 /* MoreHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoreHomeViewController.m; sourceTree = "<group>"; };
-		784AB8CF21E87E7900A3F51C /* TestProgressHUDViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestProgressHUDViewController.h; sourceTree = "<group>"; };
-		784AB8D021E87E7900A3F51C /* TestProgressHUDViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestProgressHUDViewController.m; sourceTree = "<group>"; };
-		784AB8E721E892FD00A3F51C /* TestHUDHomeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestHUDHomeViewController.h; sourceTree = "<group>"; };
-		784AB8E821E892FD00A3F51C /* TestHUDHomeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestHUDHomeViewController.m; sourceTree = "<group>"; };
-		784AB8EB21E8960200A3F51C /* AHUDChildViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AHUDChildViewController.h; sourceTree = "<group>"; };
-		784AB8EC21E8960200A3F51C /* AHUDChildViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AHUDChildViewController.m; sourceTree = "<group>"; };
-		784AB8EE21E8961100A3F51C /* BHUDChildViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BHUDChildViewController.h; sourceTree = "<group>"; };
-		784AB8EF21E8961100A3F51C /* BHUDChildViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BHUDChildViewController.m; sourceTree = "<group>"; };
-		784AB8F121E8962000A3F51C /* CHUDChildViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CHUDChildViewController.h; sourceTree = "<group>"; };
-		784AB8F221E8962000A3F51C /* CHUDChildViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CHUDChildViewController.m; sourceTree = "<group>"; };
 		784C87FD216F2B1D00AFEE7D /* SemaphoreGateKeeperViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SemaphoreGateKeeperViewController.m; sourceTree = "<group>"; };
 		784C87FE216F2B1D00AFEE7D /* SemaphoreGateKeeperViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SemaphoreGateKeeperViewController.h; sourceTree = "<group>"; };
 		7850B6EF20937C59008F4A21 /* DragViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DragViewController.h; sourceTree = "<group>"; };
@@ -1557,6 +1569,56 @@
 			path = CQToast;
 			sourceTree = "<group>";
 		};
+		1562F30623F96BDC0009FCEA /* HUDDemo */ = {
+			isa = PBXGroup;
+			children = (
+				1562F30823F96BDC0009FCEA /* TSHUDViewController.h */,
+				1562F30B23F96BDC0009FCEA /* TSHUDViewController.m */,
+				1562F30A23F96BDC0009FCEA /* SelfHUDDismissViewController.h */,
+				1562F30723F96BDC0009FCEA /* SelfHUDDismissViewController.m */,
+				1562F32323F978190009FCEA /* SingleHUDViewController.h */,
+				1562F32223F978190009FCEA /* SingleHUDViewController.m */,
+				1562F30C23F96BDC0009FCEA /* ChildViewController */,
+			);
+			path = HUDDemo;
+			sourceTree = "<group>";
+		};
+		1562F30C23F96BDC0009FCEA /* ChildViewController */ = {
+			isa = PBXGroup;
+			children = (
+				1562F31023F96BDC0009FCEA /* AHUDChildViewController.h */,
+				1562F30D23F96BDC0009FCEA /* AHUDChildViewController.m */,
+				1562F31223F96BDC0009FCEA /* BHUDChildViewController.h */,
+				1562F30F23F96BDC0009FCEA /* BHUDChildViewController.m */,
+				1562F30E23F96BDC0009FCEA /* CHUDChildViewController.h */,
+				1562F31123F96BDC0009FCEA /* CHUDChildViewController.m */,
+				1562F32B23F9852C0009FCEA /* BackFromSelfHUDViewController.h */,
+				1562F32C23F9852C0009FCEA /* BackFromSelfHUDViewController.m */,
+			);
+			path = ChildViewController;
+			sourceTree = "<group>";
+		};
+		1562F31A23F96C510009FCEA /* CQDemo */ = {
+			isa = PBXGroup;
+			children = (
+				1562F31B23F96C510009FCEA /* HUDDemo */,
+			);
+			path = CQDemo;
+			sourceTree = "<group>";
+		};
+		1562F31B23F96C510009FCEA /* HUDDemo */ = {
+			isa = PBXGroup;
+			children = (
+				1562F31C23F96C510009FCEA /* HUDHomeViewController.h */,
+				1562F31D23F96C510009FCEA /* HUDHomeViewController.m */,
+				1562F32523F979C60009FCEA /* BackFromShareHUDViewController.h */,
+				1562F32623F979C60009FCEA /* BackFromShareHUDViewController.m */,
+				1562F32823F981680009FCEA /* TSShareHUDDissmissViewController.h */,
+				1562F32923F981680009FCEA /* TSShareHUDDissmissViewController.m */,
+			);
+			path = HUDDemo;
+			sourceTree = "<group>";
+		};
 		15C970D223DB6125008D81B0 /* CJActionSheetDemo */ = {
 			isa = PBXGroup;
 			children = (
@@ -1770,19 +1832,6 @@
 				784A7215214C9DF000F8D144 /* MoreHomeViewController.m */,
 			);
 			path = DemoMore;
-			sourceTree = "<group>";
-		};
-		784AB8EA21E895B200A3F51C /* ChildViewController */ = {
-			isa = PBXGroup;
-			children = (
-				784AB8EB21E8960200A3F51C /* AHUDChildViewController.h */,
-				784AB8EC21E8960200A3F51C /* AHUDChildViewController.m */,
-				784AB8EE21E8961100A3F51C /* BHUDChildViewController.h */,
-				784AB8EF21E8961100A3F51C /* BHUDChildViewController.m */,
-				784AB8F121E8962000A3F51C /* CHUDChildViewController.h */,
-				784AB8F221E8962000A3F51C /* CHUDChildViewController.m */,
-			);
-			path = ChildViewController;
 			sourceTree = "<group>";
 		};
 		7850B6EE20937C59008F4A21 /* ViewDragDemo */ = {
@@ -2356,13 +2405,6 @@
 			children = (
 				800F3B622011899400A5C326 /* ToastViewController.h */,
 				800F3B632011899400A5C326 /* ToastViewController.m */,
-				1560230023E2A35600DEAC2A /* TSHUDViewController.h */,
-				1560230123E2A35600DEAC2A /* TSHUDViewController.m */,
-				784AB8E721E892FD00A3F51C /* TestHUDHomeViewController.h */,
-				784AB8E821E892FD00A3F51C /* TestHUDHomeViewController.m */,
-				784AB8CF21E87E7900A3F51C /* TestProgressHUDViewController.h */,
-				784AB8D021E87E7900A3F51C /* TestProgressHUDViewController.m */,
-				784AB8EA21E895B200A3F51C /* ChildViewController */,
 			);
 			path = CJToastDemo;
 			sourceTree = "<group>";
@@ -2514,6 +2556,7 @@
 		80FF8F0A1FC5649E00E437CF /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				1562F31A23F96C510009FCEA /* CQDemo */,
 				784A7213214C9DF000F8D144 /* DemoMore */,
 				8050037F211C3A29002A2306 /* DemosHelper */,
 				80FF91711FC5682A00E437CF /* DemosFoundation */,
@@ -2553,6 +2596,7 @@
 			children = (
 				80FF90181FC5649E00E437CF /* HomeViewController.h */,
 				80FF8FD81FC5649E00E437CF /* HomeViewController.m */,
+				1562F30623F96BDC0009FCEA /* HUDDemo */,
 				15C970D223DB6125008D81B0 /* CJActionSheetDemo */,
 				78293EFF21FC2B9C00F70F43 /* UIScrollViewDemo */,
 				7856F96C21F9CB19004AF751 /* CJBaseTableViewCellDemo */,
@@ -3247,7 +3291,6 @@
 				801F75D820A040D800A2E027 /* BBXDAreaCodeTextField.m in Sources */,
 				1562F2C423F5DBF40009FCEA /* UISearchBar+CJAddInputAccessoryView.m in Sources */,
 				78B6C2EE2159D8AF00D5864E /* DemoBusPassengerOrderModel.m in Sources */,
-				784AB8D121E87E7900A3F51C /* TestProgressHUDViewController.m in Sources */,
 				1562F2B023F5DBF40009FCEA /* UIImage+CJChangeColor.m in Sources */,
 				1562F2E723F5DBF40009FCEA /* CJBaseUISlider.m in Sources */,
 				1562F2EB23F5DBF40009FCEA /* CJThemeModel.m in Sources */,
@@ -3260,20 +3303,20 @@
 				789C447A21F07DAC00181144 /* ChangeEnvHomeViewController.m in Sources */,
 				801F75D920A040D800A2E027 /* BBXDPasswordTextField.m in Sources */,
 				78C8148C216E11AF00A6B190 /* DChildViewController.m in Sources */,
-				784AB8ED21E8960200A3F51C /* AHUDChildViewController.m in Sources */,
 				7875C58E231CF77900076A00 /* BackItemBaseViewController.m in Sources */,
 				7856F72B21F4E790004AF751 /* TestDataModel.m in Sources */,
 				788113CE21996A3A00D1630D /* SubInheritableSharedInstanceClass.m in Sources */,
 				781495A92140D82600D0F2BC /* MantleViewController.m in Sources */,
 				78293DED223D3615008FF82C /* DemoTagButtonFactory.m in Sources */,
+				1562F31623F96BDC0009FCEA /* TSHUDViewController.m in Sources */,
 				7808D59321703C33007FC851 /* ChangeEnvironmentViewController.m in Sources */,
 				783A4A19219BC73500CBF4FC /* NSObject+CJSharedInstance.m in Sources */,
 				800E07E42016CCF500799B78 /* DeviceInfoViewController.m in Sources */,
 				80FF91341FC5668700E437CF /* NSDictionary+CJConsoleLog.m in Sources */,
 				788113C5219958FF00D1630D /* InheritableSharedInstanceClass.m in Sources */,
 				787FDB5820500B01008A46E3 /* TextFieldViewController.m in Sources */,
+				1562F31923F96BDC0009FCEA /* CHUDChildViewController.m in Sources */,
 				1562F2C723F5DBF40009FCEA /* UIView+CJPopupInView.m in Sources */,
-				784AB8F021E8961100A3F51C /* BHUDChildViewController.m in Sources */,
 				789A4EE021FAAC76001528B9 /* CJBaseTableViewCell+ConfigureForDataModel.m in Sources */,
 				78A621E72135C925004DA046 /* DemoSuspendWindowRootViewController.m in Sources */,
 				8060C48C20E0D5EF0093B14E /* AccuracyStringViewController.m in Sources */,
@@ -3290,6 +3333,7 @@
 				1562F2B623F5DBF40009FCEA /* UIImage+CJCreate.m in Sources */,
 				80FF902A1FC5649E00E437CF /* ThirdPartyHomeViewController.m in Sources */,
 				78FCF5532306A9BA00D275F9 /* CJDemoPopupView.m in Sources */,
+				1562F31823F96BDC0009FCEA /* BHUDChildViewController.m in Sources */,
 				787C287F23223DAA00AF84F4 /* DemoEasyModel.m in Sources */,
 				78B6C2DF2159D20000D5864E /* DemoUsePermissionModel.m in Sources */,
 				78575C8A2257242100925842 /* TestTextFieldOffsetViewController.m in Sources */,
@@ -3299,6 +3343,7 @@
 				78B6C2E32159D6BC00D5864E /* DemoBusStationModel.m in Sources */,
 				15C970BE23DB5AEA008D81B0 /* UIAlertUtil.m in Sources */,
 				8050038A211C3A29002A2306 /* NSObjectCJHelperViewController.m in Sources */,
+				1562F32A23F981680009FCEA /* TSShareHUDDissmissViewController.m in Sources */,
 				80500389211C3A29002A2306 /* HelperHomeViewController.m in Sources */,
 				1562F2E623F5DBF40009FCEA /* CJPlayerSlider.m in Sources */,
 				808E3C472109C5B0009E3924 /* StringEventViewController.m in Sources */,
@@ -3309,6 +3354,7 @@
 				7852D9DA216EFFBE00E50A39 /* LockGateKeeperViewController.m in Sources */,
 				80FF90B11FC5649F00E437CF /* NavigationBarChangePositonViewController.m in Sources */,
 				7850B71420937E85008F4A21 /* WelcomePopupView.m in Sources */,
+				1562F32D23F9852C0009FCEA /* BackFromSelfHUDViewController.m in Sources */,
 				7808318F22DC4ECD00F36576 /* WelcomeDataModel.m in Sources */,
 				789C443121EECB8B00181144 /* AppInfo.m in Sources */,
 				78B6C2E02159D20000D5864E /* DemoUser.m in Sources */,
@@ -3320,10 +3366,11 @@
 				80D0120F210336E100D1EDF0 /* ChangeViewController.m in Sources */,
 				1562F2F323F5DBF40009FCEA /* UITextField+CJSelectedTextRange.m in Sources */,
 				80FF91A01FC5682B00E437CF /* ProcessLineViewController.m in Sources */,
+				1562F31423F96BDC0009FCEA /* SelfHUDDismissViewController.m in Sources */,
 				1562F2C323F5DBF40009FCEA /* UIColor+CJHex.m in Sources */,
+				1562F32423F978190009FCEA /* SingleHUDViewController.m in Sources */,
 				1562F2D623F5DBF40009FCEA /* CJBaseTableViewCell.m in Sources */,
 				78E1895621777CB900B8781A /* CJUIKitBaseViewController.m in Sources */,
-				784AB8F321E8962000A3F51C /* CHUDChildViewController.m in Sources */,
 				787FDB8620500B5C008A46E3 /* SliderViewController.m in Sources */,
 				7850B70020937C5A008F4A21 /* DragViewController.m in Sources */,
 				7885FC9321567BE000B97DAA /* DemoButtonFactory.m in Sources */,
@@ -3339,7 +3386,9 @@
 				1562F2E223F5DBF40009FCEA /* CJSliderThumb.m in Sources */,
 				78AB83A621B7CE4500853E21 /* PresentAViewController.m in Sources */,
 				781C736C21BA61480090080C /* TestValueChangeTableViewCell.m in Sources */,
+				1562F31E23F96C510009FCEA /* HUDHomeViewController.m in Sources */,
 				7856F72A21F4E790004AF751 /* DemoInfo.m in Sources */,
+				1562F31723F96BDC0009FCEA /* AHUDChildViewController.m in Sources */,
 				78A74E492368777F0023F44B /* CJSectionDataModel+CJDealTextModel.m in Sources */,
 				78AB83C221B96D7000853E21 /* DemoTextFieldFactory.m in Sources */,
 				7808D5B62170919A007FC851 /* LoginChangeEnvironmentViewController.m in Sources */,
@@ -3395,7 +3444,6 @@
 				1562EF8823F4723A0009FCEA /* CQKitSetting.m in Sources */,
 				1562F2C123F5DBF40009FCEA /* CJButton.m in Sources */,
 				1562EF9123F4762A0009FCEA /* CQRefreshFooter.m in Sources */,
-				784AB8E921E892FD00A3F51C /* TestHUDHomeViewController.m in Sources */,
 				80FF91971FC5682B00E437CF /* EncryptStringViewController.m in Sources */,
 				789C448521F166FC00181144 /* DemoCacheUtil.m in Sources */,
 				78B6C2E92159D84800D5864E /* DemoBusFlightStationOnOffDetailModel.m in Sources */,
@@ -3431,8 +3479,8 @@
 				1562F2F223F5DBF40009FCEA /* UITextField+CJPadding.m in Sources */,
 				787FDB5620500B01008A46E3 /* SearchBarViewController.m in Sources */,
 				1562F20223F5C8130009FCEA /* CJBaseAlertView+CQPopupAction.m in Sources */,
-				1560230223E2A35600DEAC2A /* TSHUDViewController.m in Sources */,
 				80FF91941FC5682B00E437CF /* TypeConvertViewController.m in Sources */,
+				1562F32723F979C60009FCEA /* BackFromShareHUDViewController.m in Sources */,
 				80E7E63520AC227B000F762D /* AppInfoManager.m in Sources */,
 				1562F2E823F5DBF40009FCEA /* CJAdsorbModel.m in Sources */,
 				1562F2DE23F5DBF40009FCEA /* UIViewController+CJSystemBackButtonHandler.m in Sources */,

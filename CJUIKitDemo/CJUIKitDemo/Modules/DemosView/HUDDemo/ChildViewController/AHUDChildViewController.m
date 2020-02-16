@@ -1,21 +1,21 @@
 //
-//  CHUDChildViewController.m
+//  AHUDChildViewController.m
 //  CJUIKitDemo
 //
 //  Created by ciyouzen on 1/11/19.
 //  Copyright © 2019 dvlproad. All rights reserved.
 //
 
-#import "CHUDChildViewController.h"
+#import "AHUDChildViewController.h"
 #import <CJBaseEffectKit/CJMJRefreshNormalHeader.h>
-#import "TestProgressHUDViewController.h"
+#import "BackFromSelfHUDViewController.h"
 #import "UIViewController+CJProgressHUD.h"
 
-@interface CHUDChildViewController ()
+@interface AHUDChildViewController ()
 
 @end
 
-@implementation CHUDChildViewController
+@implementation AHUDChildViewController
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
@@ -26,8 +26,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.title = NSLocalizedString(@"CHUDChildViewController", nil);
-    self.view.backgroundColor = [UIColor greenColor];
+    self.title = NSLocalizedString(@"AHUDChildViewController", nil);
+    self.view.backgroundColor = [UIColor yellowColor];
     
     CJMJRefreshNormalHeader *header = [CJMJRefreshNormalHeader headerWithRefreshingBlock:^{
         [self cj_showProgressHUD];
@@ -43,11 +43,11 @@
     //....
     {
         CJSectionDataModel *sectionDataModel = [[CJSectionDataModel alloc] init];
-        sectionDataModel.theme = @"C";
+        sectionDataModel.theme = @"A";
         {
             CJModuleModel *autoLayoutModule = [[CJModuleModel alloc] init];
-            autoLayoutModule.title = @"C--1(点击进到下一页返回后禁止出现两个HUD)";
-            autoLayoutModule.classEntry = [TestProgressHUDViewController class];
+            autoLayoutModule.title = @"A--1(点击进到下一页返回后禁止出现两个HUD)";
+            autoLayoutModule.classEntry = [BackFromSelfHUDViewController class];
             [sectionDataModel.values addObject:autoLayoutModule];
         }
         

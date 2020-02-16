@@ -1,16 +1,16 @@
 //
-//  TestProgressHUDViewController.h
+//  SelfHUDDismissViewController.h
 //  CJUIKitDemo
 //
 //  Created by ciyouzen on 1/11/19.
 //  Copyright © 2019 dvlproad. All rights reserved.
 //
 
-#import "CJUIKitBaseHomeViewController.h"
+#import <WMPageController/WMPageController.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface TestProgressHUDViewController : CJUIKitBaseHomeViewController
+@interface SelfHUDDismissViewController : WMPageController
 
 @end
 

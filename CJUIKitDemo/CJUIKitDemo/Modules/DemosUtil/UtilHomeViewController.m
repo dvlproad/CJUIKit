@@ -16,6 +16,11 @@
 #import "AlertViewController.h"
 #import "ActionSheetHomeViewController.h"
 #import "TSHUDViewController.h"
+//弹窗
+//#import "ToastViewController.h"
+//#import "AlertViewController.h"
+//#import "ActionSheetHomeViewController.h"
+#import "HUDHomeViewController.h"
 
 //string
 #import "StringEventViewController.h"
@@ -95,7 +100,7 @@
     //弹窗
     {
         CJSectionDataModel *sectionDataModel = [[CJSectionDataModel alloc] init];
-        sectionDataModel.theme = @"弹窗相关";
+        sectionDataModel.theme = @"弹窗相关(CJ)";
         {
             CJModuleModel *toastUtilModule = [[CJModuleModel alloc] init];
             toastUtilModule.title = @"Toast";
@@ -118,6 +123,37 @@
             CJModuleModel *actionSheetUtilModule = [[CJModuleModel alloc] init];
             actionSheetUtilModule.title = @"HUD";
             actionSheetUtilModule.classEntry = [TSHUDViewController class];
+            [sectionDataModel.values addObject:actionSheetUtilModule];
+        }
+        
+        [sectionDataModels addObject:sectionDataModel];
+    }
+    //弹窗
+    {
+        CJSectionDataModel *sectionDataModel = [[CJSectionDataModel alloc] init];
+        sectionDataModel.theme = @"弹窗相关(CQ)";
+//        {
+//            CJModuleModel *toastUtilModule = [[CJModuleModel alloc] init];
+//            toastUtilModule.title = @"Toast";
+//            toastUtilModule.classEntry = [ToastViewController class];
+//            [sectionDataModel.values addObject:toastUtilModule];
+//        }
+//        {
+//            CJModuleModel *alertUtilModule = [[CJModuleModel alloc] init];
+//            alertUtilModule.title = @"Alert";
+//            alertUtilModule.classEntry = [AlertViewController class];
+//            [sectionDataModel.values addObject:alertUtilModule];
+//        }
+//        {
+//            CJModuleModel *actionSheetUtilModule = [[CJModuleModel alloc] init];
+//            actionSheetUtilModule.title = @"ActionSheet";
+//            actionSheetUtilModule.classEntry = [ActionSheetHomeViewController class];
+//            [sectionDataModel.values addObject:actionSheetUtilModule];
+//        }
+        {
+            CJModuleModel *actionSheetUtilModule = [[CJModuleModel alloc] init];
+            actionSheetUtilModule.title = @"HUD";
+            actionSheetUtilModule.classEntry = [HUDHomeViewController class];
             [sectionDataModel.values addObject:actionSheetUtilModule];
         }
         

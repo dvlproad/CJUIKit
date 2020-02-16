@@ -8,8 +8,8 @@
 
 #import "TSHUDViewController.h"
 #import <CJBaseEffectKit/CJMJRefreshNormalHeader.h>
-#import "TestProgressHUDViewController.h"
-#import "TestHUDHomeViewController.h"
+#import "SingleHUDViewController.h"
+#import "SelfHUDDismissViewController.h"
 #import "UIViewController+CJProgressHUD.h"
 
 @interface TSHUDViewController ()  {
@@ -40,27 +40,45 @@
     
     NSMutableArray *sectionDataModels = [[NSMutableArray alloc] init];
     
-    //ProgressHUD
+    // SingleHUD
     {
         CJSectionDataModel *sectionDataModel = [[CJSectionDataModel alloc] init];
-        sectionDataModel.theme = @"ProgressHUD";
+        sectionDataModel.theme = @"SingleHUD相关";
+        {
+            CJModuleModel *module = [[CJModuleModel alloc] init];
+            module.title = @"CJProgressHUD对象的单个使用";
+            module.classEntry = [SingleHUDViewController class];
+            [sectionDataModel.values addObject:module];
+        }
+        [sectionDataModels addObject:sectionDataModel];
+    }
+    
+    // SelfHUD
+    {
+        CJSectionDataModel *sectionDataModel = [[CJSectionDataModel alloc] init];
+        sectionDataModel.theme = @"SelfHUD相关";
         {
             CJModuleModel *hudModule = [[CJModuleModel alloc] init];
-            hudModule.title = @"测试2秒后自动消失";
-            hudModule.selector = @selector(testShowProgressHUD);
+            hudModule.title = @"SelfHUD的显示(2秒后自动消失)";
+            hudModule.actionBlock = ^{
+                [self cj_showProgressHUD];
+                dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                    [self cj_dismissProgressHUD];
+                });
+            };
             [sectionDataModel.values addObject:hudModule];
         }
         {
             CJModuleModel *hudModule = [[CJModuleModel alloc] init];
-            hudModule.title = @"测试网路延迟时候，消失页面中的HUD是否消失";
-            hudModule.selector = @selector(testDoubleProgressHUD);
+            hudModule.title = @"SelfHUD的消失(进入测试在某页面请求到网络前离开，之前的HUD是否消失)";
+            hudModule.classEntry = [SelfHUDDismissViewController class];
             [sectionDataModel.values addObject:hudModule];
         }
         {
-            CJModuleModel *hudModule = [[CJModuleModel alloc] init];
-            hudModule.title = @"测试网路延迟时候，不显示页面中的HUD是否消失";
-            hudModule.classEntry = [TestHUDHomeViewController class];
-            [sectionDataModel.values addObject:hudModule];
+            CJModuleModel *module = [[CJModuleModel alloc] init];
+            module.title = @"SelfHUD被多个请求调用";
+            module.selector = @selector(testSelfHUDForMoreRequest);
+            [sectionDataModel.values addObject:module];
         }
         [sectionDataModels addObject:sectionDataModel];
     }
@@ -78,19 +96,25 @@
     self.activityIndicator = activityIndicator;
 }
 
-- (void)testShowProgressHUD {
+
+- (void)testSelfHUDForMoreRequest {
+    NSLog(@"-----------------------");
+    NSLog(@"测试多个请求调用了HUD--开始");
+    //第一个请求HUD显示2秒
     [self cj_showProgressHUD];
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         [self cj_dismissProgressHUD];
+        NSLog(@"测试多个请求调用了HUD--dismiss--1");
+    });
+    
+    //第二个请求HUD显示5秒（加上第二个请求与第一个请求之间的时间差，则第一加第二请求至少要执行2+5-1=6秒）
+    sleep(1);
+    [self cj_showProgressHUD];
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [self cj_dismissProgressHUD];
+        NSLog(@"测试多个请求调用了HUD--dismiss--2");
     });
 }
-
-- (void)testDoubleProgressHUD {
-    TestProgressHUDViewController *viewController = [[TestProgressHUDViewController alloc] init];
-    [self.navigationController pushViewController:viewController animated:YES];
-}
-    
-
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

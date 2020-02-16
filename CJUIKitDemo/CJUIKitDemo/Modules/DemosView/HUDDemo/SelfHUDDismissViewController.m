@@ -1,23 +1,23 @@
 //
-//  TestHUDHomeViewController.m
+//  SelfHUDDismissViewController.m
 //  CJUIKitDemo
 //
 //  Created by ciyouzen on 1/11/19.
 //  Copyright © 2019 dvlproad. All rights reserved.
 //
 
-#import "TestHUDHomeViewController.h"
+#import "SelfHUDDismissViewController.h"
 #import "AHUDChildViewController.h"
 #import "BHUDChildViewController.h"
 #import "CHUDChildViewController.h"
 
-@interface TestHUDHomeViewController () {
+@interface SelfHUDDismissViewController () {
     
 }
 
 @end
 
-@implementation TestHUDHomeViewController
+@implementation SelfHUDDismissViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];

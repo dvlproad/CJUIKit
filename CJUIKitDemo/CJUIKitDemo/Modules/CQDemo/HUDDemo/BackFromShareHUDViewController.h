@@ -1,16 +1,16 @@
 //
-//  TestHUDHomeViewController.h
+//  BackFromShareHUDViewController.h
 //  CJUIKitDemo
 //
 //  Created by ciyouzen on 1/11/19.
 //  Copyright © 2019 dvlproad. All rights reserved.
 //
 
-#import <WMPageController/WMPageController.h>
+#import "CJUIKitBaseHomeViewController.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface TestHUDHomeViewController : WMPageController
+@interface BackFromShareHUDViewController : CJUIKitBaseHomeViewController
 
 @end
 
