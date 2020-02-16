@@ -1,70 +1,19 @@
 //
-//  CQAlertUtil.m
+//  TSAlertUtil.m
 //  CJUIKitDemo
 //
 //  Created by ciyouzen on 2018/9/27.
 //  Copyright © 2018年 dvlproad. All rights reserved.
 //
 
-#import "CQAlertUtil.h"
-#import "CJMessageAlertView.h"
-#import "CJTextInputAlertView.h"
+#import "TSAlertUtil.h"
+#import <CJBaseOverlayKit/CJMessageAlertView.h>
+#import <CJBaseOverlayKit/CJTextInputAlertView.h>
 #import "CJBaseAlertView+CQPopupAction.h"
 
-@implementation CQAlertUtil
+@implementation TSAlertUtil
 
-#pragma mark - 常用的接口
-///显示只有一个 "我知道了" 的 alertView
-+ (void)showIKnowAlertViewWithTitle:(NSString *_Nullable)title
-                            message:(NSString *_Nullable)message
-                           okHandle:(void(^_Nullable)(void))okHandle
-{
-    [self showAlertViewWithFlagImage:nil
-                               title:title
-                             message:message
-                       okButtonTitle:NSLocalizedString(@"我知道了", nil)
-                            okHandle:okHandle];
-}
-
-
-///显示 "取消" + "确定" 的 alertView
-+ (void)showCancelAndOKAlertViewWithTitle:(NSString *)title
-                                  message:(NSString *)message
-                             cancelHandle:(void(^_Nullable)(void))cancelHandle
-                                 okHandle:(void(^_Nullable)(void))okHandle
-{
-   [self showAlertViewWithFlagImage:nil
-                              title:title
-                            message:message
-                  cancelButtonTitle:NSLocalizedString(@"取消", nil)
-                      okButtonTitle:NSLocalizedString(@"确定", nil)
-                       cancelHandle:cancelHandle
-                           okHandle:okHandle];
-}
-
-#pragma mark - DebugView
-/* 完整的描述请参见文件头部 */
-+ (void)showDebugViewWithAppExtraInfo:(NSString *)extraInfo {
-    NSString *title = @"app信息";
-    
-    CJMessageAlertView *alertView = [CJMessageAlertView debugMessageAlertViewWithTitle:title message:extraInfo shouldContailAppInfo:YES];
-    
-    [self __showMessageAlertView:alertView];
-}
-
-
-/// 显示调试面板
-/// @param title          调试面板的标题
-/// @param message      调试面板的信息
-+ (void)showDebugViewWithTitle:(NSString *)title message:(NSString *)message
-{
-    CJMessageAlertView *alertView = [CJMessageAlertView debugMessageAlertViewWithTitle:title message:message shouldContailAppInfo:NO];
-    
-    [self __showMessageAlertView:alertView];
-}
-
-
-#pragma mark - 完整的基本接口（请优先考虑上述的常用接口）
+#pragma mark - 完整的基本接口
 /*
 *  显示自定义 "OK" 的 alertView
 *
@@ -134,6 +83,18 @@
     [self __showTextInputAlertView:alertView];
 }
 
+/// 显示调试面板
+/// @param title                                        调试面板的标题
+/// @param message                                   调试面板的信息
+/// @param shouldContailAppInfo      调试面板的信息是否包含app信息
++ (void)showDebugViewWithTitle:(NSString *)title
+                       message:(NSString *)message
+          shouldContailAppInfo:(BOOL)shouldContailAppInfo
+{
+    CJMessageAlertView *alertView = [CJMessageAlertView debugMessageAlertViewWithTitle:title message:message shouldContailAppInfo:shouldContailAppInfo];
+    
+    [self __showMessageAlertView:alertView];
+}
 
 
 

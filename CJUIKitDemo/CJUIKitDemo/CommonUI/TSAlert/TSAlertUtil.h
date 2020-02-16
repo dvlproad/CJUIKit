@@ -1,5 +1,5 @@
 //
-//  CQAlertUtil.h
+//  TSAlertUtil.h
 //  CJUIKitDemo
 //
 //  Created by ciyouzen on 2018/9/27.
@@ -10,33 +10,9 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface CQAlertUtil : NSObject 
+@interface TSAlertUtil : NSObject
 
-#pragma mark - 常用的接口
-///显示只有一个 "我知道了" 的 alertView
-+ (void)showIKnowAlertViewWithTitle:(NSString *_Nullable)title
-                            message:(NSString *_Nullable)message
-                           okHandle:(void(^_Nullable)(void))okHandle;
-
-
-///显示 "取消" + "确定" 的 alertView
-+ (void)showCancelAndOKAlertViewWithTitle:(NSString *_Nullable)title
-                                  message:(NSString *_Nullable)message
-                             cancelHandle:(void(^_Nullable)(void))cancelHandle
-                                 okHandle:(void(^_Nullable)(void))okHandle;
-
-#pragma mark - DebugView
-/// 显示app信息
-+ (void)showDebugViewWithAppExtraInfo:(NSString *)extraInfo;
-
-/// 显示调试面板
-/// @param title           调试面板的标题
-/// @param message      调试面板的信息
-+ (void)showDebugViewWithTitle:(NSString *)title message:(NSString *)message;
-
-
-
-#pragma mark - 完整的基本接口（请优先考虑上述的常用接口）
+#pragma mark - 完整的基本接口
 /*
 *  显示自定义 "OK" 的 alertView
 *
@@ -89,6 +65,14 @@ NS_ASSUME_NONNULL_BEGIN
                  okButtonTitle:(NSString *)okButtonTitle
                   cancelHandle:(void(^_Nullable)(void))cancelHandle
                       okHandle:(void(^_Nullable)(NSString *outputText))okHandle;
+
+/// 显示调试面板
+/// @param title                                        调试面板的标题
+/// @param message                                   调试面板的信息
+/// @param shouldContailAppInfo      调试面板的信息是否包含app信息
++ (void)showDebugViewWithTitle:(NSString *)title
+                       message:(NSString *)message
+          shouldContailAppInfo:(BOOL)shouldContailAppInfo;
 
 @end
 

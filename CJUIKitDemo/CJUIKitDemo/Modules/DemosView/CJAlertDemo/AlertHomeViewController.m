@@ -7,9 +7,8 @@
 //
 
 #import "AlertHomeViewController.h"
-
 #import "UIAlertUtil.h"
-#import "CQAlertUtil.h"
+#import "TSAlertUtil.h"
 
 #import "TestDataUtil.h"
 #import "CJConvertUtil.h"
@@ -102,7 +101,7 @@
             module.title = @"Title & Message & OK & Cancel(超长的信息)";
             module.actionBlock = ^{
                 NSString *message = @"信息，指音讯、消息、通讯系统传输和处理的对象，泛指人类社会传播的一切内容。人通过获得、识别自然界和社会的不同信息来区别不同事物，得以认识和改造世界。在一切通讯和控制系统中，信息是一种普遍联系的形式。1948年，数学家香农在题为“通讯的数学理论”的论文中指出：“信息是用来消除随机不定性的东西”。创建一切宇宙万物的最基本单位是信息。\n“信息”一词在英文、法文、德文、西班牙文中均是“information”，日文中为“情报”，我国台湾称之为“资讯”，我国古代用的是“消息”。作为科学术语最早出现在哈特莱（R.V.Hartley）于1928年撰写的《信息传输》一文中。20世纪40年代，信息的奠基人香农（C.E.Shannon）给出了信息的明确定义，此后许多研究者从各自的研究领域出发，给出了不同的定义。具有代表意义的表述如下：信息奠基人香农（Shannon）认为“信息是用来消除随机不确定性的东西”，这一定义被人们看作是经典性定义并加以引用。\n控制论创始人维纳（Norbert Wiener）认为“信息是人们在适应外部世界，并使这种适应反作用于外部世界的过程中，同外部世界进行互相交换的内容和名称”，它也被作为经典性定义加以引用。经济管理学家认为“信息是提供决策的有效数据”。";
-                [CQAlertUtil showAlertViewWithFlagImage:nil title:@"提示" message:message cancelButtonTitle:NSLocalizedString(@"我知道了", nil) okButtonTitle:NSLocalizedString(@"允许上车", nil) cancelHandle:^{
+                [TSAlertUtil showAlertViewWithFlagImage:nil title:@"提示" message:message cancelButtonTitle:NSLocalizedString(@"我知道了", nil) okButtonTitle:NSLocalizedString(@"允许上车", nil) cancelHandle:^{
                     NSLog(@"我知道了");
                 } okHandle:^{
                     NSLog(@"允许上车");
@@ -121,12 +120,13 @@
             CJModuleModel *debugViewModule = [[CJModuleModel alloc] init];
             debugViewModule.title = @"Debug appInfo";
             debugViewModule.actionBlock = ^{
+                NSString *title = @"app提示";
+                
+                NSMutableString *message = [NSMutableString string];
                 NSString *appDomain = @"https://zhengshi.com:80"; //域名
+                [message appendFormat:@"appDomain: %@", appDomain];
                 
-                NSMutableString *appExtraInfo = [NSMutableString string];
-                [appExtraInfo appendFormat:@"appDomain: %@", appDomain];
-                
-                [CQAlertUtil showDebugViewWithAppExtraInfo:appExtraInfo];
+                [TSAlertUtil showDebugViewWithTitle:title message:message shouldContailAppInfo:YES];
             };
             [sectionDataModel.values addObject:debugViewModule];
         }
@@ -191,7 +191,7 @@
     UIImage *flagImage = [UIImage imageNamed:@"scan_icon_notice"];
     NSString *title = NSLocalizedString(@"未通过", nil);
     NSString *message = NSLocalizedString(@"班次不符，请核对车票信息", nil);
-    [CQAlertUtil showAlertViewWithFlagImage:flagImage title:title message:message okButtonTitle:NSLocalizedString(@"我知道了", nil) okHandle:^{
+    [TSAlertUtil showAlertViewWithFlagImage:flagImage title:title message:message okButtonTitle:NSLocalizedString(@"我知道了", nil) okHandle:^{
         NSLog(@"点击了确认按钮");
     }];
 }
@@ -200,7 +200,7 @@
     UIImage *flagImage = [UIImage imageNamed:@"scan_icon_notice"];
     NSString *title = NSLocalizedString(@"未通过", nil);
     NSString *message = [NSString stringWithFormat:@"上车站点不符，应上车站点：\n【%@】", @"厦门市软件园二期"];
-    [CQAlertUtil showAlertViewWithFlagImage:flagImage title:title message:message cancelButtonTitle:NSLocalizedString(@"我知道了", nil) okButtonTitle:NSLocalizedString(@"允许上车", nil) cancelHandle:^{
+    [TSAlertUtil showAlertViewWithFlagImage:flagImage title:title message:message cancelButtonTitle:NSLocalizedString(@"我知道了", nil) okButtonTitle:NSLocalizedString(@"允许上车", nil) cancelHandle:^{
         NSLog(@"我知道了");
     } okHandle:^{
         NSLog(@"允许上车");
@@ -210,7 +210,7 @@
 - (void)show_title_message_iKnow {
     NSString *title = NSLocalizedString(@"友情提示", nil);
     NSString *message = NSLocalizedString(@"您当前处于离线状态，请检查您的网络", nil);
-    [CQAlertUtil showAlertViewWithFlagImage:nil title:title message:message okButtonTitle:NSLocalizedString(@"我知道了", nil) okHandle:^{
+    [TSAlertUtil showAlertViewWithFlagImage:nil title:title message:message okButtonTitle:NSLocalizedString(@"我知道了", nil) okHandle:^{
         NSLog(@"点击了确认按钮");
     }];
 }
@@ -226,7 +226,7 @@
     NSString *cancelButtonTitle = NSLocalizedString(@"取消", nil);
     NSString *okButtonTitle = NSLocalizedString(@"结束行程", nil);
     
-    [CQAlertUtil showAlertViewWithFlagImage:nil title:title message:message cancelButtonTitle:cancelButtonTitle okButtonTitle:okButtonTitle cancelHandle:^{
+    [TSAlertUtil showAlertViewWithFlagImage:nil title:title message:message cancelButtonTitle:cancelButtonTitle okButtonTitle:okButtonTitle cancelHandle:^{
         NSLog(@"点击了取消按钮");
     } okHandle:^{
         NSLog(@"点击了确认按钮");
@@ -240,7 +240,7 @@
     NSString *sufTitle = NSLocalizedString(@"是否本站上车？", nil);
     NSString *title = [NSString stringWithFormat:@"%@\n%@\n%@", preTitle, midTitle, sufTitle];
     
-    [CQAlertUtil showAlertViewWithFlagImage:nil title:title message:nil cancelButtonTitle:NSLocalizedString(@"取消", nil) okButtonTitle:NSLocalizedString(@"确认", nil) cancelHandle:^{
+    [TSAlertUtil showAlertViewWithFlagImage:nil title:title message:nil cancelButtonTitle:NSLocalizedString(@"取消", nil) okButtonTitle:NSLocalizedString(@"确认", nil) cancelHandle:^{
         NSLog(@"点击了取消按钮");
     } okHandle:^{
         NSLog(@"点击了确认按钮");
@@ -258,7 +258,7 @@
     NSDictionary *dictionary = [CJConvertUtil dictionaryFromModel:dataModel];
     NSString *message = [CJConvertUtil formattedStringFromObject:dictionary];
     
-    [CQAlertUtil showDebugViewWithTitle:title message:message];
+    [TSAlertUtil showDebugViewWithTitle:title message:message shouldContailAppInfo:YES];
 }
 
 - (void)testPrintDebugDictionary {
@@ -293,7 +293,7 @@
     //NSString *message = [CJConvertUtil formattedStringFromObject:dictionary];
     NSString *message = [CJIndentedStringUtil fullFormattedStringFromDictionary:dictionary];
     
-    [CQAlertUtil showDebugViewWithTitle:title message:message];
+    [TSAlertUtil showDebugViewWithTitle:title message:message shouldContailAppInfo:YES];
 }
 
 

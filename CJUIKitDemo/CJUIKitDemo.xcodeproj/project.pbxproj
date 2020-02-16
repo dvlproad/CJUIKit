@@ -12,8 +12,7 @@
 		1562EF8823F4723A0009FCEA /* CQKitSetting.m in Sources */ = {isa = PBXBuildFile; fileRef = 1562EF8723F472390009FCEA /* CQKitSetting.m */; };
 		1562EF9023F4762A0009FCEA /* CQRefreshHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 1562EF8D23F4762A0009FCEA /* CQRefreshHeader.m */; };
 		1562EF9123F4762A0009FCEA /* CQRefreshFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = 1562EF8E23F4762A0009FCEA /* CQRefreshFooter.m */; };
-		1562F1F923F583E70009FCEA /* CQJumpMapUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 1562F1F723F583E60009FCEA /* CQJumpMapUtil.m */; };
-		1562F1FF23F5C0770009FCEA /* CQAlertUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 1562F1FD23F5C0770009FCEA /* CQAlertUtil.m */; };
+		1562F1FF23F5C0770009FCEA /* TSAlertUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 1562F1FD23F5C0770009FCEA /* TSAlertUtil.m */; };
 		1562F20223F5C8130009FCEA /* CJBaseAlertView+CQPopupAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 1562F20123F5C8130009FCEA /* CJBaseAlertView+CQPopupAction.m */; };
 		1562F2AF23F5DBF40009FCEA /* UIImage+CJRotateAngle.m in Sources */ = {isa = PBXBuildFile; fileRef = 1562F20723F5DBF40009FCEA /* UIImage+CJRotateAngle.m */; };
 		1562F2B023F5DBF40009FCEA /* UIImage+CJChangeColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 1562F20823F5DBF40009FCEA /* UIImage+CJChangeColor.m */; };
@@ -94,10 +93,9 @@
 		1562F31923F96BDC0009FCEA /* CHUDChildViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1562F31123F96BDC0009FCEA /* CHUDChildViewController.m */; };
 		1562F32423F978190009FCEA /* SingleHUDViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1562F32223F978190009FCEA /* SingleHUDViewController.m */; };
 		1562F32D23F9852C0009FCEA /* BackFromSelfHUDViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1562F32C23F9852C0009FCEA /* BackFromSelfHUDViewController.m */; };
-		15C970BB23DB594F008D81B0 /* CQAlertManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 15C970BA23DB594F008D81B0 /* CQAlertManager.m */; };
 		15C970BE23DB5AEA008D81B0 /* UIAlertUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 15C970BD23DB5AEA008D81B0 /* UIAlertUtil.m */; };
 		15C970D723DB6125008D81B0 /* ActionSheetHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 15C970D523DB6125008D81B0 /* ActionSheetHomeViewController.m */; };
-		15C970DE23DB6768008D81B0 /* CQActionSheetUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 15C970DD23DB6767008D81B0 /* CQActionSheetUtil.m */; };
+		15C970DE23DB6768008D81B0 /* TSActionSheetUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 15C970DD23DB6767008D81B0 /* TSActionSheetUtil.m */; };
 		51F701ECBBD48CC565F3FB87 /* libPods-CJUIKitDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A078401C0E781545EB72B64D /* libPods-CJUIKitDemo.a */; };
 		663D99AA9DDC5B5D8025AEEB /* libPods-CJUIKitDemoUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E0A09F2115A3D53BC658F67A /* libPods-CJUIKitDemoUITests.a */; };
 		7803DAAE22F7D519001E06B7 /* MJExtensionToModelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7803DAAC22F7D519001E06B7 /* MJExtensionToModelViewController.m */; };
@@ -398,10 +396,8 @@
 		1562EF8B23F4762A0009FCEA /* CQRefreshHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CQRefreshHeader.h; sourceTree = "<group>"; };
 		1562EF8D23F4762A0009FCEA /* CQRefreshHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CQRefreshHeader.m; sourceTree = "<group>"; };
 		1562EF8E23F4762A0009FCEA /* CQRefreshFooter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CQRefreshFooter.m; sourceTree = "<group>"; };
-		1562F1F723F583E60009FCEA /* CQJumpMapUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CQJumpMapUtil.m; sourceTree = "<group>"; };
-		1562F1F823F583E70009FCEA /* CQJumpMapUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CQJumpMapUtil.h; sourceTree = "<group>"; };
-		1562F1FD23F5C0770009FCEA /* CQAlertUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CQAlertUtil.m; sourceTree = "<group>"; };
-		1562F1FE23F5C0770009FCEA /* CQAlertUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CQAlertUtil.h; sourceTree = "<group>"; };
+		1562F1FD23F5C0770009FCEA /* TSAlertUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSAlertUtil.m; sourceTree = "<group>"; };
+		1562F1FE23F5C0770009FCEA /* TSAlertUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSAlertUtil.h; sourceTree = "<group>"; };
 		1562F20023F5C8130009FCEA /* CJBaseAlertView+CQPopupAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CJBaseAlertView+CQPopupAction.h"; sourceTree = "<group>"; };
 		1562F20123F5C8130009FCEA /* CJBaseAlertView+CQPopupAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CJBaseAlertView+CQPopupAction.m"; sourceTree = "<group>"; };
 		1562F20523F5DBF40009FCEA /* UIImageCJCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIImageCJCategory.h; sourceTree = "<group>"; };
@@ -556,14 +552,12 @@
 		1562F32323F978190009FCEA /* SingleHUDViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SingleHUDViewController.h; sourceTree = "<group>"; };
 		1562F32B23F9852C0009FCEA /* BackFromSelfHUDViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BackFromSelfHUDViewController.h; sourceTree = "<group>"; };
 		1562F32C23F9852C0009FCEA /* BackFromSelfHUDViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BackFromSelfHUDViewController.m; sourceTree = "<group>"; };
-		15C970B923DB594E008D81B0 /* CQAlertManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CQAlertManager.h; sourceTree = "<group>"; };
-		15C970BA23DB594F008D81B0 /* CQAlertManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CQAlertManager.m; sourceTree = "<group>"; };
 		15C970BC23DB5AEA008D81B0 /* UIAlertUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIAlertUtil.h; sourceTree = "<group>"; };
 		15C970BD23DB5AEA008D81B0 /* UIAlertUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIAlertUtil.m; sourceTree = "<group>"; };
 		15C970D423DB6125008D81B0 /* ActionSheetHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActionSheetHomeViewController.h; sourceTree = "<group>"; };
 		15C970D523DB6125008D81B0 /* ActionSheetHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActionSheetHomeViewController.m; sourceTree = "<group>"; };
-		15C970DC23DB6767008D81B0 /* CQActionSheetUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CQActionSheetUtil.h; sourceTree = "<group>"; };
-		15C970DD23DB6767008D81B0 /* CQActionSheetUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CQActionSheetUtil.m; sourceTree = "<group>"; };
+		15C970DC23DB6767008D81B0 /* TSActionSheetUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSActionSheetUtil.h; sourceTree = "<group>"; };
+		15C970DD23DB6767008D81B0 /* TSActionSheetUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSActionSheetUtil.m; sourceTree = "<group>"; };
 		3132573BFCFBEA8B4F3BB86F /* Pods-CJUIKitDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CJUIKitDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-CJUIKitDemo/Pods-CJUIKitDemo.release.xcconfig"; sourceTree = "<group>"; };
 		5ABC4BBA112CC688BF877CE8 /* Pods-CJUIKitDemoUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CJUIKitDemoUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-CJUIKitDemoUITests/Pods-CJUIKitDemoUITests.release.xcconfig"; sourceTree = "<group>"; };
 		68D73B38201AA01727123963 /* Pods-CJUIKitDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CJUIKitDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CJUIKitDemo/Pods-CJUIKitDemo.debug.xcconfig"; sourceTree = "<group>"; };
@@ -1569,15 +1563,13 @@
 			path = CJActionSheetDemo;
 			sourceTree = "<group>";
 		};
-		15C970DB23DB6767008D81B0 /* CQActionSheet */ = {
+		15C970DB23DB6767008D81B0 /* TSActionSheet */ = {
 			isa = PBXGroup;
 			children = (
-				15C970DC23DB6767008D81B0 /* CQActionSheetUtil.h */,
-				15C970DD23DB6767008D81B0 /* CQActionSheetUtil.m */,
-				1562F1F823F583E70009FCEA /* CQJumpMapUtil.h */,
-				1562F1F723F583E60009FCEA /* CQJumpMapUtil.m */,
+				15C970DC23DB6767008D81B0 /* TSActionSheetUtil.h */,
+				15C970DD23DB6767008D81B0 /* TSActionSheetUtil.m */,
 			);
-			path = CQActionSheet;
+			path = TSActionSheet;
 			sourceTree = "<group>";
 		};
 		7808D59021703C18007FC851 /* ChangeEnvironmentDemo */ = {
@@ -1707,19 +1699,17 @@
 			path = NSCalendarCJHelper;
 			sourceTree = "<group>";
 		};
-		78226A6A21A4012B002167F2 /* CQAlert */ = {
+		78226A6A21A4012B002167F2 /* TSAlert */ = {
 			isa = PBXGroup;
 			children = (
-				15C970B923DB594E008D81B0 /* CQAlertManager.h */,
-				15C970BA23DB594F008D81B0 /* CQAlertManager.m */,
 				15C970BC23DB5AEA008D81B0 /* UIAlertUtil.h */,
 				15C970BD23DB5AEA008D81B0 /* UIAlertUtil.m */,
-				1562F1FE23F5C0770009FCEA /* CQAlertUtil.h */,
-				1562F1FD23F5C0770009FCEA /* CQAlertUtil.m */,
+				1562F1FE23F5C0770009FCEA /* TSAlertUtil.h */,
+				1562F1FD23F5C0770009FCEA /* TSAlertUtil.m */,
 				1562F20023F5C8130009FCEA /* CJBaseAlertView+CQPopupAction.h */,
 				1562F20123F5C8130009FCEA /* CJBaseAlertView+CQPopupAction.m */,
 			);
-			path = CQAlert;
+			path = TSAlert;
 			sourceTree = "<group>";
 		};
 		78226A8D21A42103002167F2 /* CJConvertUtil */ = {
@@ -1851,8 +1841,6 @@
 				7857ABB5225482D200B1569C /* CJDemoDatePickerView */,
 				7857ABB92254AA1100B1569C /* CJDemoDateTextField */,
 				78FCF54A2306A9B900D275F9 /* CJDemoPopupView */,
-				15C970DB23DB6767008D81B0 /* CQActionSheet */,
-				78226A6A21A4012B002167F2 /* CQAlert */,
 				1562EF8523F472390009FCEA /* CQKitSetting */,
 				1562EF8923F4762A0009FCEA /* CQRefresh */,
 				1562F2FB23F945F20009FCEA /* CQToast */,
@@ -1860,6 +1848,8 @@
 				7852D9DB216F104000E50A39 /* DemoButtonFactory */,
 				788A55F721AFCE3C0011F993 /* DemoLabel */,
 				78AB83BF21B96D7000853E21 /* DemoTextFieldFactory */,
+				15C970DB23DB6767008D81B0 /* TSActionSheet */,
+				78226A6A21A4012B002167F2 /* TSAlert */,
 			);
 			path = CommonUI;
 			sourceTree = "<group>";
@@ -3238,10 +3228,8 @@
 				78A621E72135C925004DA046 /* DemoSuspendWindowRootViewController.m in Sources */,
 				8060C48C20E0D5EF0093B14E /* AccuracyStringViewController.m in Sources */,
 				1562F2CA23F5DBF40009FCEA /* UIView+CJKeepBounds.m in Sources */,
-				1562F1F923F583E70009FCEA /* CQJumpMapUtil.m in Sources */,
 				1562F2CE23F5DBF40009FCEA /* UIView+CJExclusiveTouch.m in Sources */,
 				78A74E4E236877BA0023F44B /* CJValidateStringTableViewCell.m in Sources */,
-				15C970BB23DB594F008D81B0 /* CQAlertManager.m in Sources */,
 				7856F97021F9D2C5004AF751 /* BaseTableViewCellViewController.m in Sources */,
 				787FDB9820500B5C008A46E3 /* ShimmeringSwitchSlider.m in Sources */,
 				7856F72921F4E790004AF751 /* TestDataUtil.m in Sources */,
@@ -3312,7 +3300,7 @@
 				78C8148D216E11AF00A6B190 /* AChildViewController.m in Sources */,
 				7808318722DC116700F36576 /* GifViewController.m in Sources */,
 				1562F2C623F5DBF40009FCEA /* UITextField+CJAddInputAccessoryView.m in Sources */,
-				1562F1FF23F5C0770009FCEA /* CQAlertUtil.m in Sources */,
+				1562F1FF23F5C0770009FCEA /* TSAlertUtil.m in Sources */,
 				800F3B652011899400A5C326 /* ToastViewController.m in Sources */,
 				1562F2CC23F5DBF40009FCEA /* UIView+CJAnimation.m in Sources */,
 				78B6C2E62159D6E900D5864E /* DemoBusStationLocationModel.m in Sources */,
@@ -3324,7 +3312,7 @@
 				1562F2B823F5DBF40009FCEA /* CJKeyboardAvoidingTableView.m in Sources */,
 				789C443C21EECEE800181144 /* CJAppVersionUtil.m in Sources */,
 				788113C22199583000D1630D /* NormalSharedInstanceClass.m in Sources */,
-				15C970DE23DB6768008D81B0 /* CQActionSheetUtil.m in Sources */,
+				15C970DE23DB6768008D81B0 /* TSActionSheetUtil.m in Sources */,
 				1562F2E523F5DBF40009FCEA /* CJRangeSliderControl.m in Sources */,
 				1562F2C223F5DBF40009FCEA /* UIButton+CJMoreProperty.m in Sources */,
 				78A621DC2135C713004DA046 /* DemoSuspendWindow.m in Sources */,

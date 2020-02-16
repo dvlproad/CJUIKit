@@ -9,7 +9,7 @@
 #import "ActionSheetHomeViewController.h"
 #import "CJModuleModel.h"
 
-#import "CQActionSheetUtil.h"
+#import "TSActionSheetUtil.h"
 
 @interface ActionSheetHomeViewController () {
     
@@ -27,26 +27,28 @@
     self.navigationItem.title = NSLocalizedString(@"ActionSheet首页", nil);
     
     NSMutableArray *sectionDataModels = [[NSMutableArray alloc] init];
+    
+    // 测试Sheet的subTitle有无
     {
         CJSectionDataModel *sectionDataModel = [[CJSectionDataModel alloc] init];
-        sectionDataModel.theme = @"Sheet相关(以图片选择为例)";
-        {
-            CJModuleModel *module = [[CJModuleModel alloc] init];
-            module.title = @"弹出图片选择ActionSheet";
-            module.actionBlock = ^{
-                [CQActionSheetUtil showPickImageSheetWithTakePhotoHandle:^{
-//                    [DemoToast showMessage:@"点击拍摄"];
-                } pickImageHandle:^{
-//                    [DemoToast showMessage:@"点击选择照片"];
-                }];
-            };
-            [sectionDataModel.values addObject:module];
-        }
+        sectionDataModel.theme = @"测试Sheet的subTitle有无";
         {
             CJModuleModel *module = [[CJModuleModel alloc] init];
             module.title = @"显示ActionSheet";
             module.actionBlock = ^{
-                [CQActionSheetUtil showWithItemTitles:@[NSLocalizedString(@"拍摄", nil), NSLocalizedString(@"从手机相册选择", nil)] itemClickBlock:^(NSInteger selectIndex) {
+                NSMutableArray *sheetModels = [[NSMutableArray alloc] init];
+                {
+                    CJActionSheetModel *takPhotoSheetModel = [[CJActionSheetModel alloc] init];
+                    takPhotoSheetModel.title = NSLocalizedString(@"拍摄", nil);
+                    [sheetModels addObject:takPhotoSheetModel];
+                }
+                {
+                    CJActionSheetModel *pickImageSheetModel = [[CJActionSheetModel alloc] init];
+                    pickImageSheetModel.title = NSLocalizedString(@"从手机相册选择", nil);
+                    [sheetModels addObject:pickImageSheetModel];
+                }
+                
+                [TSActionSheetUtil showWithSheetModels:sheetModels itemClickBlock:^(NSInteger selectIndex) {
                     NSLog(@"当前选择的是%zd", selectIndex);
                 }];
             };
@@ -56,22 +58,46 @@
             CJModuleModel *module = [[CJModuleModel alloc] init];
             module.title = @"弹出地图选择ActionSheet";
             module.actionBlock = ^{
-                [CQActionSheetUtil showMapsActionSheetWithUpdateMap:YES baiduMapBlock:^(BOOL canOpenBaiduMap) {
-//                    [DemoToast showMessage:@"点击百度地图"];
-                } amapBlock:^(BOOL canOpenAmap) {
-//                    [DemoToast showMessage:@"点击高德地图"];
-                } appleMapBlock:^{
-//                    [DemoToast showMessage:@"点击苹果地图"];
+                NSMutableArray *sheetModels = [[NSMutableArray alloc] init];
+                // 百度地图 BaiduMap
+                BOOL canOpenBaiduMap = [[UIApplication sharedApplication] canOpenURL:[NSURL URLWithString:@"baidumap://"]];
+                CJActionSheetModel *baiduMapSheetModel = [[CJActionSheetModel alloc] init];
+                baiduMapSheetModel.title = NSLocalizedString(@"百度地图", nil);
+                baiduMapSheetModel.subTitle = canOpenBaiduMap ? @"" : NSLocalizedString(@"未安装", nil);
+                [sheetModels addObject:baiduMapSheetModel];
+                
+                // 高德地图 Amap
+                BOOL canOpenAmap = [[UIApplication sharedApplication] canOpenURL:[NSURL URLWithString:@"amapuri://"]];
+                CJActionSheetModel *amapSheetModel = [[CJActionSheetModel alloc] init];
+                amapSheetModel.title = NSLocalizedString(@"高德地图", nil);
+                amapSheetModel.subTitle = canOpenAmap ? @"" : NSLocalizedString(@"未安装", nil);
+                [sheetModels addObject:amapSheetModel];
+                
+                // 苹果地图 appleMap
+                CJActionSheetModel *appleMapSheetModel = [[CJActionSheetModel alloc] init];
+                appleMapSheetModel.title = NSLocalizedString(@"苹果地图", nil);
+                appleMapSheetModel.subTitle = @"";
+                [sheetModels addObject:appleMapSheetModel];
+                
+                [TSActionSheetUtil showWithSheetModels:sheetModels itemClickBlock:^(NSInteger selectIndex) {
+                    NSLog(@"当前选择的是%zd", selectIndex);
                 }];
             };
             [sectionDataModel.values addObject:module];
         }
+        [sectionDataModels addObject:sectionDataModel];
+    }
+    
+    // 测试Sheet的列表长短
+    {
+        CJSectionDataModel *sectionDataModel = [[CJSectionDataModel alloc] init];
+        sectionDataModel.theme = @"测试Sheet的列表长短";
         {
             CJModuleModel *module = [[CJModuleModel alloc] init];
             module.title = @"弹出自定义的选择ActionSheet(没超屏幕高)";
             module.actionBlock = ^{
                 NSArray *sheetModels = [self __testSheetModelsWithCount:10];
-                [CQActionSheetUtil showWithSheetModels:sheetModels itemClickBlock:^(NSInteger selectIndex) {
+                [TSActionSheetUtil showWithSheetModels:sheetModels itemClickBlock:^(NSInteger selectIndex) {
                     
                 }];
 
@@ -83,7 +109,7 @@
             module.title = @"弹出自定义的选择ActionSheet(已超屏幕高)";
             module.actionBlock = ^{
                 NSArray *sheetModels = [self __testSheetModelsWithCount:20];
-                [CQActionSheetUtil showWithSheetModels:sheetModels itemClickBlock:^(NSInteger selectIndex) {
+                [TSActionSheetUtil showWithSheetModels:sheetModels itemClickBlock:^(NSInteger selectIndex) {
                     
                 }];
             };
