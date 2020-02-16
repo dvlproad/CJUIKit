@@ -1,5 +1,5 @@
 //
-//  AlertViewController.h
+//  AlertHomeViewController.h
 //  CJUIKitDemo
 //
 //  Created by ciyouzen on 2018/4/25.
@@ -8,7 +8,7 @@
 
 #import "CJUIKitBaseHomeViewController.h"
 
-@interface AlertViewController : CJUIKitBaseHomeViewController {
+@interface AlertHomeViewController : CJUIKitBaseHomeViewController {
     
 }
 

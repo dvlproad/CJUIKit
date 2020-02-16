@@ -50,7 +50,7 @@
         [self.navigationController popViewControllerAnimated:YES];
     }];
     UIAlertAction *action2 = [UIAlertAction actionWithTitle:@"保存" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-        [CJToast shortShowWhiteMessage:@"保存成功"];
+        [CQToast showMessage:@"保存成功"];
         [self.navigationController popViewControllerAnimated:YES];
     }];
     [alertController addAction:action1];

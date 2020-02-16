@@ -1,25 +1,25 @@
 //
-//  TSHUDViewController.m
+//  HUDHomeViewController.m
 //  CJUIKitDemo
 //
 //  Created by ciyouzen on 2018/1/19.
 //  Copyright © 2018年 dvlproad. All rights reserved.
 //
 
-#import "TSHUDViewController.h"
+#import "HUDHomeViewController.h"
 #import <CJBaseEffectKit/CJMJRefreshNormalHeader.h>
 #import "SingleHUDViewController.h"
 #import "SelfHUDDismissViewController.h"
 #import "UIViewController+CJProgressHUD.h"
 
-@interface TSHUDViewController ()  {
+@interface HUDHomeViewController ()  {
     
 }
 @property (nonatomic, weak) UIActivityIndicatorView *activityIndicator;
 
 @end
 
-@implementation TSHUDViewController
+@implementation HUDHomeViewController
 
 - (void)viewWillAppear:(BOOL)animated {
     [self.tableView.mj_header beginRefreshing];

@@ -6,9 +6,9 @@
 //  Copyright © 2017年 dvlproad. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "CJUIKitBaseViewController.h"
 
-@interface BackItemBaseViewController : UIViewController {
+@interface BackItemBaseViewController : CJUIKitBaseViewController {
     
 }
 /**

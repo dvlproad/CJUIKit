@@ -31,7 +31,7 @@
         make.centerX.mas_equalTo(self.view);
     }];
     themeBGButton.cjTouchUpInsideBlock = ^(UIButton *button) {
-        [CJToast shortShowMessage:@"测试为按钮动态增加的属性\n改变蓝色背景enable"];
+        [CQToast showMessage:@"测试为按钮动态增加的属性\n改变蓝色背景enable"];
     };
     
     UIButton *themeBorderButton = [CJButtonFactory themeBorderButton];

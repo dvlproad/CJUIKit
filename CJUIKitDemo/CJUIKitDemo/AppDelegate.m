@@ -9,8 +9,6 @@
 #import "AppDelegate.h"
 #import "AppDelegate+WindowRootViewController.h"
 
-#import "AppInfoManager.h"
-
 #import "YunUncaughtExceptionHandler.h"
 #import "CJBaseAlertView.h"
 
@@ -70,11 +68,6 @@
                                                  pullingText:NSLocalizedString(@"释放加载5", nil)
                                               refreshingText:NSLocalizedString(@"加载中6...", nil)
                                               noMoreDataText:NSLocalizedString(@"没有更多数据了7...", nil)];
-    
-    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-        //默认的设置，如网络监听等
-        [[AppInfoManager sharedInstance] startNetworkMonitoring];
-    });
     
     //[[IQKeyboardManager sharedManager].disabledToolbarClasses addObject:NSClassFromString(@"DateViewController")]; //已写在对应的类里了
     

@@ -1,25 +1,22 @@
 //
-//  AlertViewController.m
+//  AlertHomeViewController.m
 //  CJUIKitDemo
 //
 //  Created by ciyouzen on 2018/4/25.
 //  Copyright © 2018年 dvlproad. All rights reserved.
 //
 
-#import "AlertViewController.h"
-#import "CJModuleModel.h"
+#import "AlertHomeViewController.h"
 
 #import "UIAlertUtil.h"
 #import "CQAlertUtil.h"
-#import "CJMessageAlertView.h"
-#import "CJTextInputAlertView.h"
 
 #import "TestDataUtil.h"
 #import "CJConvertUtil.h"
 #import "CJIndentedStringUtil.h"
 #import "NSDictionary+CJConvert.h"
 
-@interface AlertViewController () {
+@interface AlertHomeViewController () {
     
 }
 @property (nonatomic, strong) UIActivityIndicatorView *activityIndicator;
@@ -27,7 +24,7 @@
 @end
 
 
-@implementation AlertViewController
+@implementation AlertHomeViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];

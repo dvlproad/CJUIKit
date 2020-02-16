@@ -1,5 +1,5 @@
 //
-//  TSHUDViewController.h
+//  HUDHomeViewController.h
 //  CJUIKitDemo
 //
 //  Created by ciyouzen on 2018/1/19.
@@ -8,7 +8,7 @@
 
 #import "CJUIKitBaseHomeViewController.h"
 
-@interface TSHUDViewController : CJUIKitBaseHomeViewController {
+@interface HUDHomeViewController : CJUIKitBaseHomeViewController {
     
 }
 

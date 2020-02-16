@@ -31,7 +31,7 @@
             toastModule.actionBlock = ^{
                 openSettingCJHelper(^(BOOL success) {
                     if (success) {
-                        [CJToast shortShowMessage:@"正在打开设置..."];
+                        [CQToast showMessage:@"正在打开设置..."];
                     }
                 });
             };

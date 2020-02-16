@@ -49,8 +49,6 @@ target 'CJUIKitDemo' do
     # 账号安全需要依赖的库
     pod 'SAMKeychain'
 
-    pod 'AFNetworking/Reachability'
-
     # 网页
     pod 'WebViewJavascriptBridge', '~> 6.0.2'
 

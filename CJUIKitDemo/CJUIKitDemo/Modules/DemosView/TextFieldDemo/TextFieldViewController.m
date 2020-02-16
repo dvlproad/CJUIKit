@@ -278,7 +278,7 @@
         NSString *oldText = textField.text;
         NSString *newText = [oldText stringByReplacingCharactersInRange:range withString:string];//若允许改变，则会改变成的新文本
         if ([newText length] > 10) {
-            [CJToast shortShowMessage:@"文本过长，超过最大的10个字符了"];
+            [CQToast showMessage:@"文本过长，超过最大的10个字符了"];
             [textField cjShake];
             return NO;
         }

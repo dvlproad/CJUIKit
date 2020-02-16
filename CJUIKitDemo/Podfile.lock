@@ -1,5 +1,4 @@
 PODS:
-  - AFNetworking/Reachability (3.2.1)
   - CJBaseEffectKit (0.0.2):
     - CJBaseEffectKit/CJDataEmptyView (= 0.0.2)
     - CJBaseEffectKit/CJMJRefreshComponent (= 0.0.2)
@@ -126,7 +125,6 @@ PODS:
   - YYText (1.0.7)
 
 DEPENDENCIES:
-  - AFNetworking/Reachability
   - CJBaseEffectKit (from `../`)
   - CJBaseHelper (from `../`)
   - CJBaseOverlayKit (from `../`)
@@ -161,7 +159,6 @@ DEPENDENCIES:
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
-    - AFNetworking
     - CJFile
     - CJPicker
     - CJPopupView
@@ -202,7 +199,6 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
   CJBaseEffectKit: 2d66766c774349a9442c53e816bd44218355fd7c
   CJBaseHelper: dd715e18591da9df5d06364098300591220f0535
   CJBaseOverlayKit: 20ac2200adc1650721bd697a9ff09b5ee809467b
@@ -233,6 +229,6 @@ SPEC CHECKSUMS:
   WMPageController: 0c7624d2b48e4f1ab92371688cf6744ed701575d
   YYText: 5c461d709e24d55a182d1441c41dc639a18a4849
 
-PODFILE CHECKSUM: 4314a70656bc96318d833de191ed180dfb7d572d
+PODFILE CHECKSUM: 8f4b09210e41d2659ff6203f1ed480a55295720d
 
 COCOAPODS: 1.8.4

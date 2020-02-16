@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		1560230523E2A6C300DEAC2A /* loading_coffee.json in Resources */ = {isa = PBXBuildFile; fileRef = 1560230323E2A6C300DEAC2A /* loading_coffee.json */; };
 		1560230623E2A6C300DEAC2A /* loading_tea.json in Resources */ = {isa = PBXBuildFile; fileRef = 1560230423E2A6C300DEAC2A /* loading_tea.json */; };
-		1562EF8423F469EA0009FCEA /* CQHUDUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 1562EF8323F469E90009FCEA /* CQHUDUtil.m */; };
 		1562EF8823F4723A0009FCEA /* CQKitSetting.m in Sources */ = {isa = PBXBuildFile; fileRef = 1562EF8723F472390009FCEA /* CQKitSetting.m */; };
 		1562EF9023F4762A0009FCEA /* CQRefreshHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 1562EF8D23F4762A0009FCEA /* CQRefreshHeader.m */; };
 		1562EF9123F4762A0009FCEA /* CQRefreshFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = 1562EF8E23F4762A0009FCEA /* CQRefreshFooter.m */; };
@@ -85,21 +84,15 @@
 		1562F2F123F5DBF40009FCEA /* CJExtraTextTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 1562F2A923F5DBF40009FCEA /* CJExtraTextTextField.m */; };
 		1562F2F223F5DBF40009FCEA /* UITextField+CJPadding.m in Sources */ = {isa = PBXBuildFile; fileRef = 1562F2AC23F5DBF40009FCEA /* UITextField+CJPadding.m */; };
 		1562F2F323F5DBF40009FCEA /* UITextField+CJSelectedTextRange.m in Sources */ = {isa = PBXBuildFile; fileRef = 1562F2AD23F5DBF40009FCEA /* UITextField+CJSelectedTextRange.m */; };
-		1562F2F823F944EA0009FCEA /* loading_test.json in Resources */ = {isa = PBXBuildFile; fileRef = 1562F2F423F944EA0009FCEA /* loading_test.json */; };
-		1562F2F923F944EB0009FCEA /* loading_03.json in Resources */ = {isa = PBXBuildFile; fileRef = 1562F2F523F944EA0009FCEA /* loading_03.json */; };
-		1562F2FA23F944EB0009FCEA /* UIViewController+CQProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 1562F2F623F944EA0009FCEA /* UIViewController+CQProgressHUD.m */; };
 		1562F30023F945F20009FCEA /* CQToast.m in Sources */ = {isa = PBXBuildFile; fileRef = 1562F2FC23F945F20009FCEA /* CQToast.m */; };
 		1562F30123F945F20009FCEA /* demo_toast_error@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1562F2FE23F945F20009FCEA /* demo_toast_error@3x.png */; };
 		1562F30223F945F20009FCEA /* demo_toast_error@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1562F2FF23F945F20009FCEA /* demo_toast_error@2x.png */; };
 		1562F31423F96BDC0009FCEA /* SelfHUDDismissViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1562F30723F96BDC0009FCEA /* SelfHUDDismissViewController.m */; };
-		1562F31623F96BDC0009FCEA /* TSHUDViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1562F30B23F96BDC0009FCEA /* TSHUDViewController.m */; };
+		1562F31623F96BDC0009FCEA /* HUDHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1562F30B23F96BDC0009FCEA /* HUDHomeViewController.m */; };
 		1562F31723F96BDC0009FCEA /* AHUDChildViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1562F30D23F96BDC0009FCEA /* AHUDChildViewController.m */; };
 		1562F31823F96BDC0009FCEA /* BHUDChildViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1562F30F23F96BDC0009FCEA /* BHUDChildViewController.m */; };
 		1562F31923F96BDC0009FCEA /* CHUDChildViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1562F31123F96BDC0009FCEA /* CHUDChildViewController.m */; };
-		1562F31E23F96C510009FCEA /* HUDHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1562F31D23F96C510009FCEA /* HUDHomeViewController.m */; };
 		1562F32423F978190009FCEA /* SingleHUDViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1562F32223F978190009FCEA /* SingleHUDViewController.m */; };
-		1562F32723F979C60009FCEA /* BackFromShareHUDViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1562F32623F979C60009FCEA /* BackFromShareHUDViewController.m */; };
-		1562F32A23F981680009FCEA /* TSShareHUDDissmissViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1562F32923F981680009FCEA /* TSShareHUDDissmissViewController.m */; };
 		1562F32D23F9852C0009FCEA /* BackFromSelfHUDViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1562F32C23F9852C0009FCEA /* BackFromSelfHUDViewController.m */; };
 		15C970BB23DB594F008D81B0 /* CQAlertManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 15C970BA23DB594F008D81B0 /* CQAlertManager.m */; };
 		15C970BE23DB5AEA008D81B0 /* UIAlertUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 15C970BD23DB5AEA008D81B0 /* UIAlertUtil.m */; };
@@ -225,7 +218,6 @@
 		7885FC9321567BE000B97DAA /* DemoButtonFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 7885FC9221567BE000B97DAA /* DemoButtonFactory.m */; };
 		788A55FA21AFCE540011F993 /* DemoLabelFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 788A55F921AFCE540011F993 /* DemoLabelFactory.m */; };
 		789A4EE021FAAC76001528B9 /* CJBaseTableViewCell+ConfigureForDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 789A4EDF21FAAC76001528B9 /* CJBaseTableViewCell+ConfigureForDataModel.m */; };
-		789C443121EECB8B00181144 /* AppInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 789C443021EECB8B00181144 /* AppInfo.m */; };
 		789C443C21EECEE800181144 /* CJAppVersionUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 789C443A21EECEE700181144 /* CJAppVersionUtil.m */; };
 		789C447421F05D4B00181144 /* UIImageTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = 789C447321F05D4B00181144 /* UIImageTestCase.m */; };
 		789C447721F07BBC00181144 /* ImageHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 789C447521F07BBB00181144 /* ImageHomeViewController.m */; };
@@ -331,10 +323,9 @@
 		80D01210210336E100D1EDF0 /* ChangeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 80D0120E210336E100D1EDF0 /* ChangeViewController.xib */; };
 		80D49F8B20BE7EE0003F642C /* CJDataUtilTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 80D49F8A20BE7EE0003F642C /* CJDataUtilTest.m */; };
 		80D49F8F20BE8574003F642C /* TestCityModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 80D49F8E20BE8574003F642C /* TestCityModel.m */; };
-		80D71EA92090277700D2DB68 /* AlertViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80D71EA72090277700D2DB68 /* AlertViewController.m */; };
+		80D71EA92090277700D2DB68 /* AlertHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80D71EA72090277700D2DB68 /* AlertHomeViewController.m */; };
 		80D71EAA2090277700D2DB68 /* CJUIKitBaseHomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 80D71EA82090277700D2DB68 /* CJUIKitBaseHomeViewController.xib */; };
 		80D71EB22090522F00D2DB68 /* scan_icon_notice@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 80D71EB12090522E00D2DB68 /* scan_icon_notice@2x.png */; };
-		80E7E63520AC227B000F762D /* AppInfoManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 80E7E63420AC227A000F762D /* AppInfoManager.m */; };
 		80FF902A1FC5649E00E437CF /* ThirdPartyHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80FF8F0E1FC5649E00E437CF /* ThirdPartyHomeViewController.m */; };
 		80FF909A1FC5649F00E437CF /* FloatingWindowViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80FF8FC71FC5649E00E437CF /* FloatingWindowViewController.m */; };
 		80FF909C1FC5649F00E437CF /* NestedXibView.m in Sources */ = {isa = PBXBuildFile; fileRef = 80FF8FCB1FC5649E00E437CF /* NestedXibView.m */; };
@@ -401,8 +392,6 @@
 /* Begin PBXFileReference section */
 		1560230323E2A6C300DEAC2A /* loading_coffee.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = loading_coffee.json; sourceTree = "<group>"; };
 		1560230423E2A6C300DEAC2A /* loading_tea.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = loading_tea.json; sourceTree = "<group>"; };
-		1562EF8223F469E90009FCEA /* CQHUDUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CQHUDUtil.h; sourceTree = "<group>"; };
-		1562EF8323F469E90009FCEA /* CQHUDUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CQHUDUtil.m; sourceTree = "<group>"; };
 		1562EF8623F472390009FCEA /* CQKitSetting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CQKitSetting.h; sourceTree = "<group>"; };
 		1562EF8723F472390009FCEA /* CQKitSetting.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CQKitSetting.m; sourceTree = "<group>"; };
 		1562EF8A23F4762A0009FCEA /* CQRefreshFooter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CQRefreshFooter.h; sourceTree = "<group>"; };
@@ -549,32 +538,22 @@
 		1562F2AC23F5DBF40009FCEA /* UITextField+CJPadding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextField+CJPadding.m"; sourceTree = "<group>"; };
 		1562F2AD23F5DBF40009FCEA /* UITextField+CJSelectedTextRange.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextField+CJSelectedTextRange.m"; sourceTree = "<group>"; };
 		1562F2AE23F5DBF40009FCEA /* UITextField+CJTextChangeBlock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextField+CJTextChangeBlock.h"; sourceTree = "<group>"; };
-		1562F2F423F944EA0009FCEA /* loading_test.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = loading_test.json; sourceTree = "<group>"; };
-		1562F2F523F944EA0009FCEA /* loading_03.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = loading_03.json; sourceTree = "<group>"; };
-		1562F2F623F944EA0009FCEA /* UIViewController+CQProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+CQProgressHUD.m"; sourceTree = "<group>"; };
-		1562F2F723F944EA0009FCEA /* UIViewController+CQProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+CQProgressHUD.h"; sourceTree = "<group>"; };
 		1562F2FC23F945F20009FCEA /* CQToast.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CQToast.m; sourceTree = "<group>"; };
 		1562F2FD23F945F20009FCEA /* CQToast.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CQToast.h; sourceTree = "<group>"; };
 		1562F2FE23F945F20009FCEA /* demo_toast_error@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "demo_toast_error@3x.png"; sourceTree = "<group>"; };
 		1562F2FF23F945F20009FCEA /* demo_toast_error@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "demo_toast_error@2x.png"; sourceTree = "<group>"; };
 		1562F30723F96BDC0009FCEA /* SelfHUDDismissViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelfHUDDismissViewController.m; sourceTree = "<group>"; };
-		1562F30823F96BDC0009FCEA /* TSHUDViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSHUDViewController.h; sourceTree = "<group>"; };
+		1562F30823F96BDC0009FCEA /* HUDHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HUDHomeViewController.h; sourceTree = "<group>"; };
 		1562F30A23F96BDC0009FCEA /* SelfHUDDismissViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelfHUDDismissViewController.h; sourceTree = "<group>"; };
-		1562F30B23F96BDC0009FCEA /* TSHUDViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSHUDViewController.m; sourceTree = "<group>"; };
+		1562F30B23F96BDC0009FCEA /* HUDHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HUDHomeViewController.m; sourceTree = "<group>"; };
 		1562F30D23F96BDC0009FCEA /* AHUDChildViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AHUDChildViewController.m; sourceTree = "<group>"; };
 		1562F30E23F96BDC0009FCEA /* CHUDChildViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHUDChildViewController.h; sourceTree = "<group>"; };
 		1562F30F23F96BDC0009FCEA /* BHUDChildViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BHUDChildViewController.m; sourceTree = "<group>"; };
 		1562F31023F96BDC0009FCEA /* AHUDChildViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AHUDChildViewController.h; sourceTree = "<group>"; };
 		1562F31123F96BDC0009FCEA /* CHUDChildViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHUDChildViewController.m; sourceTree = "<group>"; };
 		1562F31223F96BDC0009FCEA /* BHUDChildViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BHUDChildViewController.h; sourceTree = "<group>"; };
-		1562F31C23F96C510009FCEA /* HUDHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HUDHomeViewController.h; sourceTree = "<group>"; };
-		1562F31D23F96C510009FCEA /* HUDHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HUDHomeViewController.m; sourceTree = "<group>"; };
 		1562F32223F978190009FCEA /* SingleHUDViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SingleHUDViewController.m; sourceTree = "<group>"; };
 		1562F32323F978190009FCEA /* SingleHUDViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SingleHUDViewController.h; sourceTree = "<group>"; };
-		1562F32523F979C60009FCEA /* BackFromShareHUDViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BackFromShareHUDViewController.h; sourceTree = "<group>"; };
-		1562F32623F979C60009FCEA /* BackFromShareHUDViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BackFromShareHUDViewController.m; sourceTree = "<group>"; };
-		1562F32823F981680009FCEA /* TSShareHUDDissmissViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSShareHUDDissmissViewController.h; sourceTree = "<group>"; };
-		1562F32923F981680009FCEA /* TSShareHUDDissmissViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSShareHUDDissmissViewController.m; sourceTree = "<group>"; };
 		1562F32B23F9852C0009FCEA /* BackFromSelfHUDViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BackFromSelfHUDViewController.h; sourceTree = "<group>"; };
 		1562F32C23F9852C0009FCEA /* BackFromSelfHUDViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BackFromSelfHUDViewController.m; sourceTree = "<group>"; };
 		15C970B923DB594E008D81B0 /* CQAlertManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CQAlertManager.h; sourceTree = "<group>"; };
@@ -784,8 +763,6 @@
 		788A55F921AFCE540011F993 /* DemoLabelFactory.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DemoLabelFactory.m; sourceTree = "<group>"; };
 		789A4EDE21FAAC76001528B9 /* CJBaseTableViewCell+ConfigureForDataModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CJBaseTableViewCell+ConfigureForDataModel.h"; sourceTree = "<group>"; };
 		789A4EDF21FAAC76001528B9 /* CJBaseTableViewCell+ConfigureForDataModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "CJBaseTableViewCell+ConfigureForDataModel.m"; sourceTree = "<group>"; };
-		789C442F21EECB8B00181144 /* AppInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppInfo.h; sourceTree = "<group>"; };
-		789C443021EECB8B00181144 /* AppInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppInfo.m; sourceTree = "<group>"; };
 		789C443A21EECEE700181144 /* CJAppVersionUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJAppVersionUtil.m; sourceTree = "<group>"; };
 		789C443B21EECEE800181144 /* CJAppVersionUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJAppVersionUtil.h; sourceTree = "<group>"; };
 		789C447321F05D4B00181144 /* UIImageTestCase.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UIImageTestCase.m; sourceTree = "<group>"; };
@@ -975,12 +952,10 @@
 		80D49F8A20BE7EE0003F642C /* CJDataUtilTest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CJDataUtilTest.m; sourceTree = "<group>"; };
 		80D49F8D20BE8574003F642C /* TestCityModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestCityModel.h; sourceTree = "<group>"; };
 		80D49F8E20BE8574003F642C /* TestCityModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestCityModel.m; sourceTree = "<group>"; };
-		80D71EA62090277700D2DB68 /* AlertViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AlertViewController.h; sourceTree = "<group>"; };
-		80D71EA72090277700D2DB68 /* AlertViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AlertViewController.m; sourceTree = "<group>"; };
+		80D71EA62090277700D2DB68 /* AlertHomeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AlertHomeViewController.h; sourceTree = "<group>"; };
+		80D71EA72090277700D2DB68 /* AlertHomeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AlertHomeViewController.m; sourceTree = "<group>"; };
 		80D71EA82090277700D2DB68 /* CJUIKitBaseHomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CJUIKitBaseHomeViewController.xib; sourceTree = "<group>"; };
 		80D71EB12090522E00D2DB68 /* scan_icon_notice@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "scan_icon_notice@2x.png"; sourceTree = "<group>"; };
-		80E7E63320AC227A000F762D /* AppInfoManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppInfoManager.h; sourceTree = "<group>"; };
-		80E7E63420AC227A000F762D /* AppInfoManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppInfoManager.m; sourceTree = "<group>"; };
 		80FF8F0D1FC5649E00E437CF /* ThirdPartyHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThirdPartyHomeViewController.h; sourceTree = "<group>"; };
 		80FF8F0E1FC5649E00E437CF /* ThirdPartyHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThirdPartyHomeViewController.m; sourceTree = "<group>"; };
 		80FF8FC71FC5649E00E437CF /* FloatingWindowViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FloatingWindowViewController.m; sourceTree = "<group>"; };
@@ -1087,19 +1062,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		1562EF8123F469E90009FCEA /* CQHUD */ = {
-			isa = PBXGroup;
-			children = (
-				1562EF8223F469E90009FCEA /* CQHUDUtil.h */,
-				1562EF8323F469E90009FCEA /* CQHUDUtil.m */,
-				1562F2F523F944EA0009FCEA /* loading_03.json */,
-				1562F2F423F944EA0009FCEA /* loading_test.json */,
-				1562F2F723F944EA0009FCEA /* UIViewController+CQProgressHUD.h */,
-				1562F2F623F944EA0009FCEA /* UIViewController+CQProgressHUD.m */,
-			);
-			path = CQHUD;
-			sourceTree = "<group>";
-		};
 		1562EF8523F472390009FCEA /* CQKitSetting */ = {
 			isa = PBXGroup;
 			children = (
@@ -1572,8 +1534,8 @@
 		1562F30623F96BDC0009FCEA /* HUDDemo */ = {
 			isa = PBXGroup;
 			children = (
-				1562F30823F96BDC0009FCEA /* TSHUDViewController.h */,
-				1562F30B23F96BDC0009FCEA /* TSHUDViewController.m */,
+				1562F30823F96BDC0009FCEA /* HUDHomeViewController.h */,
+				1562F30B23F96BDC0009FCEA /* HUDHomeViewController.m */,
 				1562F30A23F96BDC0009FCEA /* SelfHUDDismissViewController.h */,
 				1562F30723F96BDC0009FCEA /* SelfHUDDismissViewController.m */,
 				1562F32323F978190009FCEA /* SingleHUDViewController.h */,
@@ -1596,27 +1558,6 @@
 				1562F32C23F9852C0009FCEA /* BackFromSelfHUDViewController.m */,
 			);
 			path = ChildViewController;
-			sourceTree = "<group>";
-		};
-		1562F31A23F96C510009FCEA /* CQDemo */ = {
-			isa = PBXGroup;
-			children = (
-				1562F31B23F96C510009FCEA /* HUDDemo */,
-			);
-			path = CQDemo;
-			sourceTree = "<group>";
-		};
-		1562F31B23F96C510009FCEA /* HUDDemo */ = {
-			isa = PBXGroup;
-			children = (
-				1562F31C23F96C510009FCEA /* HUDHomeViewController.h */,
-				1562F31D23F96C510009FCEA /* HUDHomeViewController.m */,
-				1562F32523F979C60009FCEA /* BackFromShareHUDViewController.h */,
-				1562F32623F979C60009FCEA /* BackFromShareHUDViewController.m */,
-				1562F32823F981680009FCEA /* TSShareHUDDissmissViewController.h */,
-				1562F32923F981680009FCEA /* TSShareHUDDissmissViewController.m */,
-			);
-			path = HUDDemo;
 			sourceTree = "<group>";
 		};
 		15C970D223DB6125008D81B0 /* CJActionSheetDemo */ = {
@@ -1697,7 +1638,6 @@
 				1562F20323F5DBF40009FCEA /* CJBaseUIKit */,
 				7852D9DF216F16B000E50A39 /* CommonUI */,
 				80FF8F0A1FC5649E00E437CF /* Modules */,
-				78B90E68218B4B5400776584 /* Service */,
 				80FF91021FC5668700E437CF /* CJBaseUtil */,
 				80FF90D71FC5668600E437CF /* CJFoundation */,
 				783281011F4198BC008267E0 /* CJSmallCustomView */,
@@ -1913,7 +1853,6 @@
 				78FCF54A2306A9B900D275F9 /* CJDemoPopupView */,
 				15C970DB23DB6767008D81B0 /* CQActionSheet */,
 				78226A6A21A4012B002167F2 /* CQAlert */,
-				1562EF8123F469E90009FCEA /* CQHUD */,
 				1562EF8523F472390009FCEA /* CQKitSetting */,
 				1562EF8923F4762A0009FCEA /* CQRefresh */,
 				1562F2FB23F945F20009FCEA /* CQToast */,
@@ -2271,14 +2210,6 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
-		78B90E68218B4B5400776584 /* Service */ = {
-			isa = PBXGroup;
-			children = (
-				80E7E63220AC227A000F762D /* AppInfo */,
-			);
-			path = Service;
-			sourceTree = "<group>";
-		};
 		78C8147A216E11AF00A6B190 /* ChildViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -2535,28 +2466,16 @@
 		80D71EA52090274200D2DB68 /* CJAlertDemo */ = {
 			isa = PBXGroup;
 			children = (
-				80D71EA62090277700D2DB68 /* AlertViewController.h */,
-				80D71EA72090277700D2DB68 /* AlertViewController.m */,
+				80D71EA62090277700D2DB68 /* AlertHomeViewController.h */,
+				80D71EA72090277700D2DB68 /* AlertHomeViewController.m */,
 				80D71EB12090522E00D2DB68 /* scan_icon_notice@2x.png */,
 			);
 			path = CJAlertDemo;
 			sourceTree = "<group>";
 		};
-		80E7E63220AC227A000F762D /* AppInfo */ = {
-			isa = PBXGroup;
-			children = (
-				80E7E63320AC227A000F762D /* AppInfoManager.h */,
-				80E7E63420AC227A000F762D /* AppInfoManager.m */,
-				789C442F21EECB8B00181144 /* AppInfo.h */,
-				789C443021EECB8B00181144 /* AppInfo.m */,
-			);
-			path = AppInfo;
-			sourceTree = "<group>";
-		};
 		80FF8F0A1FC5649E00E437CF /* Modules */ = {
 			isa = PBXGroup;
 			children = (
-				1562F31A23F96C510009FCEA /* CQDemo */,
 				784A7213214C9DF000F8D144 /* DemoMore */,
 				8050037F211C3A29002A2306 /* DemosHelper */,
 				80FF91711FC5682A00E437CF /* DemosFoundation */,
@@ -3074,7 +2993,6 @@
 				782F8770225AE80F001ACE76 /* cjTextField_clear@2x.png in Resources */,
 				787FDB8A20500B5C008A46E3 /* slider_maximum_trackimage@2x.png in Resources */,
 				80D71EB22090522F00D2DB68 /* scan_icon_notice@2x.png in Resources */,
-				1562F2F923F944EB0009FCEA /* loading_03.json in Resources */,
 				80FF91991FC5682B00E437CF /* EncryptStringViewController.xib in Resources */,
 				80FF91961FC5682B00E437CF /* AttributedStringViewController.xib in Resources */,
 				8051E5CD20AAB34E003370AA /* details_icon_huadong@2x.png in Resources */,
@@ -3092,7 +3010,6 @@
 				78B90E67218B49D000776584 /* MainAsset.xcassets in Resources */,
 				78A0D05A216BB19800EFAD67 /* badgeButton_normal@3x.png in Resources */,
 				1560230523E2A6C300DEAC2A /* loading_coffee.json in Resources */,
-				1562F2F823F944EA0009FCEA /* loading_test.json in Resources */,
 				1562F2DD23F5DBF40009FCEA /* cjBackBarButtonItemGray@2x.png in Resources */,
 				7850B71220937E85008F4A21 /* WelcomePopupView.xib in Resources */,
 				8051E5CE20AAB34E003370AA /* details_icon_huadong@3x.png in Resources */,
@@ -3308,7 +3225,7 @@
 				788113CE21996A3A00D1630D /* SubInheritableSharedInstanceClass.m in Sources */,
 				781495A92140D82600D0F2BC /* MantleViewController.m in Sources */,
 				78293DED223D3615008FF82C /* DemoTagButtonFactory.m in Sources */,
-				1562F31623F96BDC0009FCEA /* TSHUDViewController.m in Sources */,
+				1562F31623F96BDC0009FCEA /* HUDHomeViewController.m in Sources */,
 				7808D59321703C33007FC851 /* ChangeEnvironmentViewController.m in Sources */,
 				783A4A19219BC73500CBF4FC /* NSObject+CJSharedInstance.m in Sources */,
 				800E07E42016CCF500799B78 /* DeviceInfoViewController.m in Sources */,
@@ -3343,7 +3260,6 @@
 				78B6C2E32159D6BC00D5864E /* DemoBusStationModel.m in Sources */,
 				15C970BE23DB5AEA008D81B0 /* UIAlertUtil.m in Sources */,
 				8050038A211C3A29002A2306 /* NSObjectCJHelperViewController.m in Sources */,
-				1562F32A23F981680009FCEA /* TSShareHUDDissmissViewController.m in Sources */,
 				80500389211C3A29002A2306 /* HelperHomeViewController.m in Sources */,
 				1562F2E623F5DBF40009FCEA /* CJPlayerSlider.m in Sources */,
 				808E3C472109C5B0009E3924 /* StringEventViewController.m in Sources */,
@@ -3356,7 +3272,6 @@
 				7850B71420937E85008F4A21 /* WelcomePopupView.m in Sources */,
 				1562F32D23F9852C0009FCEA /* BackFromSelfHUDViewController.m in Sources */,
 				7808318F22DC4ECD00F36576 /* WelcomeDataModel.m in Sources */,
-				789C443121EECB8B00181144 /* AppInfo.m in Sources */,
 				78B6C2E02159D20000D5864E /* DemoUser.m in Sources */,
 				1562F2B523F5DBF40009FCEA /* UIImage+CJTransformSize.m in Sources */,
 				1562F2BD23F5DBF40009FCEA /* CJLabel.m in Sources */,
@@ -3386,7 +3301,6 @@
 				1562F2E223F5DBF40009FCEA /* CJSliderThumb.m in Sources */,
 				78AB83A621B7CE4500853E21 /* PresentAViewController.m in Sources */,
 				781C736C21BA61480090080C /* TestValueChangeTableViewCell.m in Sources */,
-				1562F31E23F96C510009FCEA /* HUDHomeViewController.m in Sources */,
 				7856F72A21F4E790004AF751 /* DemoInfo.m in Sources */,
 				1562F31723F96BDC0009FCEA /* AHUDChildViewController.m in Sources */,
 				78A74E492368777F0023F44B /* CJSectionDataModel+CJDealTextModel.m in Sources */,
@@ -3423,7 +3337,6 @@
 				7868A06B237056B30013AF4D /* ButtonCategoryViewController.m in Sources */,
 				1562F2B423F5DBF40009FCEA /* UIImage+CJBase64.m in Sources */,
 				80FF919A1FC5682B00E437CF /* DateViewController.m in Sources */,
-				1562F2FA23F944EB0009FCEA /* UIViewController+CQProgressHUD.m in Sources */,
 				1562F2EE23F5DBF40009FCEA /* UITextField+CJTextChangeBlock.m in Sources */,
 				7803DAAE22F7D519001E06B7 /* MJExtensionToModelViewController.m in Sources */,
 				78A4E1B42173A0D9005FEADD /* DemoChangeEnvironmentViewModel.m in Sources */,
@@ -3433,7 +3346,6 @@
 				80FF909A1FC5649F00E437CF /* FloatingWindowViewController.m in Sources */,
 				7857ABBC2254AA5000B1569C /* CJDemoDateTextField.m in Sources */,
 				1562F2E423F5DBF40009FCEA /* CJSliderControl.m in Sources */,
-				1562EF8423F469EA0009FCEA /* CQHUDUtil.m in Sources */,
 				78E189AE21781BE200B8781A /* EdgeLayoutTableViewController.m in Sources */,
 				1562F2DF23F5DBF40009FCEA /* UITableView+CJEmptyView.m in Sources */,
 				808DE5E720DA0586003E08F1 /* CJDecimalUtil.m in Sources */,
@@ -3480,8 +3392,6 @@
 				787FDB5620500B01008A46E3 /* SearchBarViewController.m in Sources */,
 				1562F20223F5C8130009FCEA /* CJBaseAlertView+CQPopupAction.m in Sources */,
 				80FF91941FC5682B00E437CF /* TypeConvertViewController.m in Sources */,
-				1562F32723F979C60009FCEA /* BackFromShareHUDViewController.m in Sources */,
-				80E7E63520AC227B000F762D /* AppInfoManager.m in Sources */,
 				1562F2E823F5DBF40009FCEA /* CJAdsorbModel.m in Sources */,
 				1562F2DE23F5DBF40009FCEA /* UIViewController+CJSystemBackButtonHandler.m in Sources */,
 				7808D5B921709E6B007FC851 /* UIViewController+CJChangeEnvironment.m in Sources */,
@@ -3528,7 +3438,7 @@
 				1562F2BB23F5DBF40009FCEA /* CJUIKitConstant.m in Sources */,
 				78C81489216E11AF00A6B190 /* CChildViewController.m in Sources */,
 				80FF919E1FC5682B00E437CF /* OtherHomeViewController.m in Sources */,
-				80D71EA92090277700D2DB68 /* AlertViewController.m in Sources */,
+				80D71EA92090277700D2DB68 /* AlertHomeViewController.m in Sources */,
 				80FF90AD1FC5649F00E437CF /* NavigationBarViewController.m in Sources */,
 				80FF90A81FC5649F00E437CF /* ImageChangeColorViewController.m in Sources */,
 				78A621A921319723004DA046 /* SuspendWindowViewController.m in Sources */,

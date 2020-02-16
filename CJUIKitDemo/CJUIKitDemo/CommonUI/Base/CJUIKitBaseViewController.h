@@ -10,11 +10,11 @@
 #import <Masonry/Masonry.h>
 #ifdef TEST_CJBASEUIKIT_POD
 #import "UIColor+CJHex.h"
-#import "CJToast.h"
 #else
 #import <CJBaseUIKit/UIColor+CJHex.h>
-#import <CJBaseUIKit/CJToast.h>
 #endif
+
+#import "CQToast.h"
 
 @interface CJUIKitBaseViewController : UIViewController
 

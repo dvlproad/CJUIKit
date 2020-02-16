@@ -8,6 +8,7 @@
 
 #import "ToastViewController.h"
 #import <CJBaseEffectKit/CJMJRefreshNormalHeader.h>
+#import "CJToast.h"
 #import "UIViewController+CJToast.h"
 
 @interface ToastViewController ()  {
@@ -53,15 +54,8 @@
             CJModuleModel *toastModule = [[CJModuleModel alloc] init];
             toastModule.title = @"灰底黑字，2秒后自动消失";
             toastModule.actionBlock = ^{
-                [CJToast shortShowMessage:@"灰底黑字，2秒后自动消失"];
-            };
-            [sectionDataModel.values addObject:toastModule];
-        }
-        {
-            CJModuleModel *toastModule = [[CJModuleModel alloc] init];
-            toastModule.title = @"黑底白字，2秒后自动消失";
-            toastModule.actionBlock = ^{
-                [CJToast shortShowWhiteMessage:@"黑底白字，2秒后自动消失"];
+                UIView *view = [[UIApplication sharedApplication].delegate window];
+                [CJToast shortShowMessage:@"灰底黑字，2秒后自动消失" inView:view withLabelTextColor:nil bezelViewColor:nil hideAfterDelay:2.f];
             };
             [sectionDataModel.values addObject:toastModule];
         }
