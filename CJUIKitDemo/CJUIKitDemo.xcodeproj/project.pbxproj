@@ -10,8 +10,6 @@
 		1560230523E2A6C300DEAC2A /* loading_coffee.json in Resources */ = {isa = PBXBuildFile; fileRef = 1560230323E2A6C300DEAC2A /* loading_coffee.json */; };
 		1560230623E2A6C300DEAC2A /* loading_tea.json in Resources */ = {isa = PBXBuildFile; fileRef = 1560230423E2A6C300DEAC2A /* loading_tea.json */; };
 		1562EF8823F4723A0009FCEA /* CQKitSetting.m in Sources */ = {isa = PBXBuildFile; fileRef = 1562EF8723F472390009FCEA /* CQKitSetting.m */; };
-		1562EF9023F4762A0009FCEA /* CQRefreshHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 1562EF8D23F4762A0009FCEA /* CQRefreshHeader.m */; };
-		1562EF9123F4762A0009FCEA /* CQRefreshFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = 1562EF8E23F4762A0009FCEA /* CQRefreshFooter.m */; };
 		1562F1FF23F5C0770009FCEA /* TSAlertUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 1562F1FD23F5C0770009FCEA /* TSAlertUtil.m */; };
 		1562F20223F5C8130009FCEA /* CJBaseAlertView+CQPopupAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 1562F20123F5C8130009FCEA /* CJBaseAlertView+CQPopupAction.m */; };
 		1562F2AF23F5DBF40009FCEA /* UIImage+CJRotateAngle.m in Sources */ = {isa = PBXBuildFile; fileRef = 1562F20723F5DBF40009FCEA /* UIImage+CJRotateAngle.m */; };
@@ -93,6 +91,8 @@
 		1562F31923F96BDC0009FCEA /* CHUDChildViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1562F31123F96BDC0009FCEA /* CHUDChildViewController.m */; };
 		1562F32423F978190009FCEA /* SingleHUDViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1562F32223F978190009FCEA /* SingleHUDViewController.m */; };
 		1562F32D23F9852C0009FCEA /* BackFromSelfHUDViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1562F32C23F9852C0009FCEA /* BackFromSelfHUDViewController.m */; };
+		1562F37623F9B8C80009FCEA /* BaseRefreshViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1562F37523F9B8C80009FCEA /* BaseRefreshViewController.m */; };
+		1562F37923F9BA660009FCEA /* JSONRefreshViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1562F37823F9BA660009FCEA /* JSONRefreshViewController.m */; };
 		15C970BE23DB5AEA008D81B0 /* UIAlertUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 15C970BD23DB5AEA008D81B0 /* UIAlertUtil.m */; };
 		15C970D723DB6125008D81B0 /* ActionSheetHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 15C970D523DB6125008D81B0 /* ActionSheetHomeViewController.m */; };
 		15C970DE23DB6768008D81B0 /* TSActionSheetUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 15C970DD23DB6767008D81B0 /* TSActionSheetUtil.m */; };
@@ -347,7 +347,6 @@
 		80FF90B11FC5649F00E437CF /* NavigationBarChangePositonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80FF8FED1FC5649E00E437CF /* NavigationBarChangePositonViewController.m */; };
 		80FF90B21FC5649F00E437CF /* TableHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 80FF8FEF1FC5649E00E437CF /* TableHeaderView.xib */; };
 		80FF90B41FC5649F00E437CF /* ButtonStructureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80FF8FF21FC5649E00E437CF /* ButtonStructureViewController.m */; };
-		80FF90B51FC5649F00E437CF /* CJMJRefreshViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 80FF8FF61FC5649E00E437CF /* CJMJRefreshViewController.xib */; };
 		80FF90B61FC5649F00E437CF /* CJMJRefreshViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80FF8FF71FC5649E00E437CF /* CJMJRefreshViewController.m */; };
 		80FF91341FC5668700E437CF /* NSDictionary+CJConsoleLog.m in Sources */ = {isa = PBXBuildFile; fileRef = 80FF90DC1FC5668600E437CF /* NSDictionary+CJConsoleLog.m */; };
 		80FF91351FC5668700E437CF /* NSArray+CJConsoleLog.m in Sources */ = {isa = PBXBuildFile; fileRef = 80FF90DD1FC5668600E437CF /* NSArray+CJConsoleLog.m */; };
@@ -392,10 +391,6 @@
 		1560230423E2A6C300DEAC2A /* loading_tea.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = loading_tea.json; sourceTree = "<group>"; };
 		1562EF8623F472390009FCEA /* CQKitSetting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CQKitSetting.h; sourceTree = "<group>"; };
 		1562EF8723F472390009FCEA /* CQKitSetting.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CQKitSetting.m; sourceTree = "<group>"; };
-		1562EF8A23F4762A0009FCEA /* CQRefreshFooter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CQRefreshFooter.h; sourceTree = "<group>"; };
-		1562EF8B23F4762A0009FCEA /* CQRefreshHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CQRefreshHeader.h; sourceTree = "<group>"; };
-		1562EF8D23F4762A0009FCEA /* CQRefreshHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CQRefreshHeader.m; sourceTree = "<group>"; };
-		1562EF8E23F4762A0009FCEA /* CQRefreshFooter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CQRefreshFooter.m; sourceTree = "<group>"; };
 		1562F1FD23F5C0770009FCEA /* TSAlertUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSAlertUtil.m; sourceTree = "<group>"; };
 		1562F1FE23F5C0770009FCEA /* TSAlertUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSAlertUtil.h; sourceTree = "<group>"; };
 		1562F20023F5C8130009FCEA /* CJBaseAlertView+CQPopupAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CJBaseAlertView+CQPopupAction.h"; sourceTree = "<group>"; };
@@ -552,6 +547,10 @@
 		1562F32323F978190009FCEA /* SingleHUDViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SingleHUDViewController.h; sourceTree = "<group>"; };
 		1562F32B23F9852C0009FCEA /* BackFromSelfHUDViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BackFromSelfHUDViewController.h; sourceTree = "<group>"; };
 		1562F32C23F9852C0009FCEA /* BackFromSelfHUDViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BackFromSelfHUDViewController.m; sourceTree = "<group>"; };
+		1562F37423F9B8C80009FCEA /* BaseRefreshViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseRefreshViewController.h; sourceTree = "<group>"; };
+		1562F37523F9B8C80009FCEA /* BaseRefreshViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseRefreshViewController.m; sourceTree = "<group>"; };
+		1562F37723F9BA660009FCEA /* JSONRefreshViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONRefreshViewController.h; sourceTree = "<group>"; };
+		1562F37823F9BA660009FCEA /* JSONRefreshViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONRefreshViewController.m; sourceTree = "<group>"; };
 		15C970BC23DB5AEA008D81B0 /* UIAlertUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIAlertUtil.h; sourceTree = "<group>"; };
 		15C970BD23DB5AEA008D81B0 /* UIAlertUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIAlertUtil.m; sourceTree = "<group>"; };
 		15C970D423DB6125008D81B0 /* ActionSheetHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActionSheetHomeViewController.h; sourceTree = "<group>"; };
@@ -987,7 +986,6 @@
 		80FF8FF21FC5649E00E437CF /* ButtonStructureViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ButtonStructureViewController.m; sourceTree = "<group>"; };
 		80FF8FF31FC5649E00E437CF /* ButtonStructureViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ButtonStructureViewController.h; sourceTree = "<group>"; };
 		80FF8FF51FC5649E00E437CF /* CJMJRefreshViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJMJRefreshViewController.h; sourceTree = "<group>"; };
-		80FF8FF61FC5649E00E437CF /* CJMJRefreshViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CJMJRefreshViewController.xib; sourceTree = "<group>"; };
 		80FF8FF71FC5649E00E437CF /* CJMJRefreshViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJMJRefreshViewController.m; sourceTree = "<group>"; };
 		80FF90181FC5649E00E437CF /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
 		80FF90DC1FC5668600E437CF /* NSDictionary+CJConsoleLog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+CJConsoleLog.m"; sourceTree = "<group>"; };
@@ -1065,41 +1063,30 @@
 			path = CQKitSetting;
 			sourceTree = "<group>";
 		};
-		1562EF8923F4762A0009FCEA /* CQRefresh */ = {
-			isa = PBXGroup;
-			children = (
-				1562EF8A23F4762A0009FCEA /* CQRefreshFooter.h */,
-				1562EF8E23F4762A0009FCEA /* CQRefreshFooter.m */,
-				1562EF8B23F4762A0009FCEA /* CQRefreshHeader.h */,
-				1562EF8D23F4762A0009FCEA /* CQRefreshHeader.m */,
-			);
-			path = CQRefresh;
-			sourceTree = "<group>";
-		};
 		1562F20323F5DBF40009FCEA /* CJBaseUIKit */ = {
 			isa = PBXGroup;
 			children = (
-				1562F20423F5DBF40009FCEA /* UIImage */,
-				1562F21B23F5DBF40009FCEA /* UIScrollView */,
-				1562F22323F5DBF40009FCEA /* CJUIKitConstant */,
-				1562F22623F5DBF40009FCEA /* UIWindow */,
-				1562F22923F5DBF40009FCEA /* UILabel */,
-				1562F22C23F5DBF40009FCEA /* UIButton */,
-				1562F23823F5DBF40009FCEA /* UIColor */,
-				1562F23B23F5DBF40009FCEA /* UIToolbar */,
-				1562F24223F5DBF40009FCEA /* UIView */,
-				1562F25B23F5DBF40009FCEA /* CJBaseTableViewHeaderFooterView */,
-				1562F25E23F5DBF40009FCEA /* CJUIKit.h */,
 				1562F25F23F5DBF40009FCEA /* CJBaseTableViewCell */,
-				1562F26823F5DBF40009FCEA /* UINavigationBar */,
-				1562F26B23F5DBF40009FCEA /* UIViewController */,
-				1562F27723F5DBF40009FCEA /* UITableView */,
+				1562F25B23F5DBF40009FCEA /* CJBaseTableViewHeaderFooterView */,
+				1562F29D23F5DBF40009FCEA /* CJSearchBar */,
 				1562F27A23F5DBF40009FCEA /* CJSlider */,
 				1562F29223F5DBF40009FCEA /* CJSwitchView */,
 				1562F29523F5DBF40009FCEA /* CJTextView */,
 				1562F29823F5DBF40009FCEA /* CJTheme */,
-				1562F29D23F5DBF40009FCEA /* CJSearchBar */,
+				1562F25E23F5DBF40009FCEA /* CJUIKit.h */,
+				1562F22323F5DBF40009FCEA /* CJUIKitConstant */,
+				1562F22C23F5DBF40009FCEA /* UIButton */,
+				1562F23823F5DBF40009FCEA /* UIColor */,
+				1562F20423F5DBF40009FCEA /* UIImage */,
+				1562F22923F5DBF40009FCEA /* UILabel */,
+				1562F26823F5DBF40009FCEA /* UINavigationBar */,
+				1562F21B23F5DBF40009FCEA /* UIScrollView */,
+				1562F27723F5DBF40009FCEA /* UITableView */,
 				1562F2A023F5DBF40009FCEA /* UITextField */,
+				1562F23B23F5DBF40009FCEA /* UIToolbar */,
+				1562F24223F5DBF40009FCEA /* UIView */,
+				1562F26B23F5DBF40009FCEA /* UIViewController */,
+				1562F22623F5DBF40009FCEA /* UIWindow */,
 			);
 			name = CJBaseUIKit;
 			path = ../../CJBaseUIKit;
@@ -1842,7 +1829,6 @@
 				7857ABB92254AA1100B1569C /* CJDemoDateTextField */,
 				78FCF54A2306A9B900D275F9 /* CJDemoPopupView */,
 				1562EF8523F472390009FCEA /* CQKitSetting */,
-				1562EF8923F4762A0009FCEA /* CQRefresh */,
 				1562F2FB23F945F20009FCEA /* CQToast */,
 				7808D5B0217079E5007FC851 /* DemoBarButtonItemFactory */,
 				7852D9DB216F104000E50A39 /* DemoButtonFactory */,
@@ -2655,7 +2641,10 @@
 			children = (
 				80FF8FF51FC5649E00E437CF /* CJMJRefreshViewController.h */,
 				80FF8FF71FC5649E00E437CF /* CJMJRefreshViewController.m */,
-				80FF8FF61FC5649E00E437CF /* CJMJRefreshViewController.xib */,
+				1562F37723F9BA660009FCEA /* JSONRefreshViewController.h */,
+				1562F37823F9BA660009FCEA /* JSONRefreshViewController.m */,
+				1562F37423F9B8C80009FCEA /* BaseRefreshViewController.h */,
+				1562F37523F9B8C80009FCEA /* BaseRefreshViewController.m */,
 			);
 			path = RefreshDemo;
 			sourceTree = "<group>";
@@ -2990,7 +2979,6 @@
 				7850B6FF20937C5A008F4A21 /* DragViewController.xib in Resources */,
 				1562F30223F945F20009FCEA /* demo_toast_error@2x.png in Resources */,
 				787FDB6820500B1F008A46E3 /* TextViewController.xib in Resources */,
-				80FF90B51FC5649F00E437CF /* CJMJRefreshViewController.xib in Resources */,
 				787FDB9120500B5C008A46E3 /* slider_double_thumbImage_b@2x.png in Resources */,
 				80FF90A61FC5649F00E437CF /* QRCodeViewController.xib in Resources */,
 				7850B70320937C5A008F4A21 /* ShowExtendViewVC.xib in Resources */,
@@ -3278,6 +3266,7 @@
 				7850B70020937C5A008F4A21 /* DragViewController.m in Sources */,
 				7885FC9321567BE000B97DAA /* DemoButtonFactory.m in Sources */,
 				1562F2E023F5DBF40009FCEA /* CJSwitchSliderStatusModel.m in Sources */,
+				1562F37923F9BA660009FCEA /* JSONRefreshViewController.m in Sources */,
 				80FF90A41FC5649F00E437CF /* HomeViewController.m in Sources */,
 				800E07E52016CCF500799B78 /* DeviceInfo.m in Sources */,
 				1562F2B323F5DBF40009FCEA /* UIImage+CJMakeCircle.m in Sources */,
@@ -3300,6 +3289,7 @@
 				78C8148D216E11AF00A6B190 /* AChildViewController.m in Sources */,
 				7808318722DC116700F36576 /* GifViewController.m in Sources */,
 				1562F2C623F5DBF40009FCEA /* UITextField+CJAddInputAccessoryView.m in Sources */,
+				1562F37623F9B8C80009FCEA /* BaseRefreshViewController.m in Sources */,
 				1562F1FF23F5C0770009FCEA /* TSAlertUtil.m in Sources */,
 				800F3B652011899400A5C326 /* ToastViewController.m in Sources */,
 				1562F2CC23F5DBF40009FCEA /* UIView+CJAnimation.m in Sources */,
@@ -3343,7 +3333,6 @@
 				805598B51FF5D612009DC61C /* ValidateStringViewController.m in Sources */,
 				1562EF8823F4723A0009FCEA /* CQKitSetting.m in Sources */,
 				1562F2C123F5DBF40009FCEA /* CJButton.m in Sources */,
-				1562EF9123F4762A0009FCEA /* CQRefreshFooter.m in Sources */,
 				80FF91971FC5682B00E437CF /* EncryptStringViewController.m in Sources */,
 				789C448521F166FC00181144 /* DemoCacheUtil.m in Sources */,
 				78B6C2E92159D84800D5864E /* DemoBusFlightStationOnOffDetailModel.m in Sources */,
@@ -3410,7 +3399,6 @@
 				1562F2AF23F5DBF40009FCEA /* UIImage+CJRotateAngle.m in Sources */,
 				7875C58F231CF77900076A00 /* BackSystemItemViewController.m in Sources */,
 				80FF90B41FC5649F00E437CF /* ButtonStructureViewController.m in Sources */,
-				1562EF9023F4762A0009FCEA /* CQRefreshHeader.m in Sources */,
 				80FF90AF1FC5649F00E437CF /* NavigationBarBaseViewController.m in Sources */,
 				1562F2B123F5DBF40009FCEA /* UIImage+CJBlur.m in Sources */,
 				8008D7D220E5CF5700F98EF6 /* CallSystemViewController.m in Sources */,

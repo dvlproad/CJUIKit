@@ -1,26 +1,26 @@
 //
-//  CJMJRefreshViewController.m
+//  JSONRefreshViewController.m
 //  CJUIKitDemo
 //
 //  Created by ciyouzen on 2017/4/28.
 //  Copyright © 2017年 dvlproad. All rights reserved.
 //
 
-#import "CJMJRefreshViewController.h"
+#import "JSONRefreshViewController.h"
 
-@implementation CJMJRefreshViewController
+@implementation JSONRefreshViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
     __weak typeof(self)weakSelf = self;
-    CJMJRefreshNormalHeader *header = [CJMJRefreshNormalHeader headerWithRefreshingBlock:^{
+    CJRefreshJSONHeader *header = [CJRefreshJSONHeader headerWithRefreshingBlock:^{
         [weakSelf loadNewData];
     }];
     self.tableView.mj_header = header;
     
-    CJMJRefreshNormalFooter *footer = [CJMJRefreshNormalFooter footerWithRefreshingBlock:^{
+    CJRefreshJSONFooter *footer = [CJRefreshJSONFooter footerWithRefreshingBlock:^{
         [weakSelf loadMoreData];
     }];
     self.tableView.mj_footer = footer;

@@ -46,7 +46,9 @@
 #import "BackCustomItemViewController.h"
 #import "SystemComposeViewController.h"
 
+// Refresh
 #import "CJMJRefreshViewController.h"
+#import "JSONRefreshViewController.h"
 
 //ChangeEnvironment
 #import "ChangeEnvHomeViewController.h"
@@ -342,14 +344,20 @@
         [sectionDataModels addObject:sectionDataModel];
     }
     
+    // Refresh
     {
         CJSectionDataModel *sectionDataModel = [[CJSectionDataModel alloc] init];
-        sectionDataModel.theme = @"其他";
+        sectionDataModel.theme = @"Refresh";
         {
             CJModuleModel *cjMJRefreshComponentModuleModel = [[CJModuleModel alloc] init];
             cjMJRefreshComponentModuleModel.title = @"CJMJRefreshComponent";
             cjMJRefreshComponentModuleModel.classEntry = [CJMJRefreshViewController class];
-            cjMJRefreshComponentModuleModel.isCreateByXib = NO;
+            [sectionDataModel.values addObject:cjMJRefreshComponentModuleModel];
+        }
+        {
+            CJModuleModel *cjMJRefreshComponentModuleModel = [[CJModuleModel alloc] init];
+            cjMJRefreshComponentModuleModel.title = @"JSONRefreshViewController";
+            cjMJRefreshComponentModuleModel.classEntry = [JSONRefreshViewController class];
             [sectionDataModel.values addObject:cjMJRefreshComponentModuleModel];
         }
         
