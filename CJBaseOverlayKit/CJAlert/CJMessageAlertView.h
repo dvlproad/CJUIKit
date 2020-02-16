@@ -34,6 +34,8 @@
                          okHandle:(void(^)(void))okHandle;
 
 /// 创建调试的弹窗
-+ (instancetype)debugMessageAlertViewWithTitle:(NSString *)title message:(NSString *)message shouldContailAppInfo:(BOOL)shouldContailAppInfo;
++ (instancetype)debugMessageAlertViewWithTitle:(NSString *)title
+                                       message:(NSString *)message
+                          shouldContailAppInfo:(BOOL)shouldContailAppInfo;
 
 @end

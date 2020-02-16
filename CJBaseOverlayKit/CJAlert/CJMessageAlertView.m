@@ -7,9 +7,6 @@
 //
 
 #import "CJMessageAlertView.h"
-//#import <CJFoundation/NSString+CJTextSize.h>
-//#import <CJBaseUIKit/UIButton+CJMoreProperty.h>
-//#import <CJBaseUIKit/UIColor+CJHex.h>
 #import "CJBaseOverlayThemeManager.h"
 
 @interface CJMessageAlertView () {
@@ -75,7 +72,9 @@
 }
 
 /// 创建调试的弹窗
-+ (instancetype)debugMessageAlertViewWithTitle:(NSString *)title message:(NSString *)message shouldContailAppInfo:(BOOL)shouldContailAppInfo
++ (instancetype)debugMessageAlertViewWithTitle:(NSString *)title
+                                       message:(NSString *)message
+                          shouldContailAppInfo:(BOOL)shouldContailAppInfo
 {
     NSMutableString *lastMessage = [NSMutableString string];
     if (shouldContailAppInfo) {
@@ -342,7 +341,7 @@
     
     NSNumber *buttonMarginTop = alertMarginVerticals[buttonsVerticalIndex];
     NSNumber *buttonMarginBottom = alertMarginVerticals[buttonsVerticalIndex+1];
-    CGFloat actionButtonHeight = 45;
+    CGFloat actionButtonHeight = alertThemeModel.actionButtonHeight;
     [self.bottomButtonView mas_makeConstraints:^(MASConstraintMaker *make) {
 //        make.top.mas_equalTo(self.titleLabel.mas_bottom).mas_offset(buttonMarginTop);
         make.bottom.mas_equalTo(-[buttonMarginBottom floatValue]);

@@ -226,9 +226,10 @@
         make.height.mas_equalTo(0.5);
     }];
     
+    CGFloat actionButtonHeight = [CJBaseOverlayThemeManager serviceThemeModel].alertThemeModel.actionButtonHeight;
     CJAlertBottomButtonsModel *bottomButtonsModel = [[CJAlertBottomButtonsModel alloc] init];
     bottomButtonsModel.bottomButtonView = bottomButtonView;
-    bottomButtonsModel.bottomPartHeight = 45;
+    bottomButtonsModel.bottomPartHeight = actionButtonHeight;
     bottomButtonsModel.okButton = iKnowButton;
     
     return bottomButtonsModel;
@@ -247,8 +248,8 @@
                                                   cancelHandle:(void(^)(UIButton *button))cancelHandle
                                                       okHandle:(void(^)(UIButton *button))okHandle
 {
-    BOOL shouldSpaceButtons = [CJBaseOverlayThemeManager serviceThemeModel].alertThemeModel.shouldSpaceButtons;
-    if (shouldSpaceButtons) {
+    BOOL isSpaceButtons = [CJBaseOverlayThemeManager serviceThemeModel].alertThemeModel.isSpaceButtons;
+    if (isSpaceButtons) {
         return [self __spaceTwoButtonsWithCancelButtonTitle:cancelButtonTitle okButtonTitle:okButtonTitle cancelHandle:cancelHandle okHandle:okHandle];
     } else {
         return [self __closeTwoButtonsWithCancelButtonTitle:cancelButtonTitle okButtonTitle:okButtonTitle cancelHandle:cancelHandle okHandle:okHandle];
@@ -275,14 +276,16 @@
     UIButton *cancelButton = [CJAlertButtonFactory __cancelButtonWithCancelButtonTitle:cancelButtonTitle cancelHandle:cancelHandle];;
     UIButton *okButton = [CJAlertButtonFactory __okButtonWithOKButtonTitle:okButtonTitle okHandle:okHandle];
     
-    CGFloat actionButtonHeight = 32;
-    CGFloat bottomButtonsLeftOffset = 15;
-    CGFloat fixedSpacing = 10;
-    CJAlertBottomButtonsModel *bottomButtonsModel = [self __horizontalTwoButtonsWithCancelButton:cancelButton
-                                                                                        okButton:okButton
-                                                                              actionButtonHeight:actionButtonHeight
-                                                                         bottomButtonsLeftOffset:bottomButtonsLeftOffset
-                                                                                    fixedSpacing:fixedSpacing];
+    CJAlertThemeModel *alertThemeModel = [CJBaseOverlayThemeManager serviceThemeModel].alertThemeModel;
+    CGFloat actionButtonHeight = alertThemeModel.actionButtonHeight;
+    CGFloat bottomButtonsLeftOffset = alertThemeModel.bottomButtonsLeftOffset;
+    CGFloat bottomButtonsFixedSpacing = alertThemeModel.bottomButtonsFixedSpacing;
+    CJAlertBottomButtonsModel *bottomButtonsModel =
+        [self __horizontalTwoButtonsWithCancelButton:cancelButton
+                                            okButton:okButton
+                                  actionButtonHeight:actionButtonHeight
+                             bottomButtonsLeftOffset:bottomButtonsLeftOffset
+                                        fixedSpacing:bottomButtonsFixedSpacing];
     return bottomButtonsModel;
 }
 
@@ -304,7 +307,8 @@
     UIButton *cancelButton = [CJAlertButtonFactory __cancelButtonWithCancelButtonTitle:cancelButtonTitle cancelHandle:cancelHandle];;
     UIButton *okButton = [CJAlertButtonFactory __okButtonWithOKButtonTitle:okButtonTitle okHandle:okHandle];
     
-    CGFloat actionButtonHeight = 45;
+    CJAlertThemeModel *alertThemeModel = [CJBaseOverlayThemeManager serviceThemeModel].alertThemeModel;
+    CGFloat actionButtonHeight = alertThemeModel.actionButtonHeight;
     CGFloat bottomButtonsLeftOffset = 0;
     CGFloat fixedSpacing = 1;
     CJAlertBottomButtonsModel *bottomButtonsModel = [self __horizontalTwoButtonsWithCancelButton:cancelButton

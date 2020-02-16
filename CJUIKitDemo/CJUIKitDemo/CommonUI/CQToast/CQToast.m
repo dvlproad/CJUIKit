@@ -8,7 +8,7 @@
 
 #import "CQToast.h"
 #import <CJBaseOverlayKit/CJToast.h>
-//#import <CJBaseOverlayKit/CJBaseAlertView.h>
+#import <CJBaseOverlayKit/CJMessageAlertView.h>
 #import <CJFoundation/NSString+CJTextSize.h>
 
 #ifdef TEST_CJBASEUIKIT_POD
@@ -62,26 +62,27 @@
         return;
     }
     
+//    CJMessageAlertView *alertView = [CJMessageAlertView alloc]
 //    CGFloat textWidth = [title cjTextWidthWithFont:[UIFont systemFontOfSize:17.0]] > 160 ? 290 : 160;
 //    CGSize popupViewSize = CGSizeMake(textWidth, 150); //登录时候的账号密码错误是160的宽
-//    
+//
 //    CJBaseAlertView *alertView = [[CJBaseAlertView alloc] initWithSize:popupViewSize firstVerticalInterval:20 secondVerticalInterval:15 thirdVerticalInterval:0 bottomMinVerticalInterval:19];
-//    
+//
 //    alertView.backgroundColor = CJColorFromHexStringAndAlpha(@"#000000", 0.76);
-//    
+//
 //    //image
 //    UIImage *errorImage = [UIImage imageNamed:@"cjdemo_toast_error"];
 //    [alertView addFlagImage:errorImage size:CGSizeMake(27, 27)];
-//    
+//
 //    //title
 //    NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle defaultParagraphStyle] mutableCopy];
 //    paragraphStyle.lineBreakMode = NSLineBreakByCharWrapping;
 //    paragraphStyle.lineSpacing = 5;
 //    [alertView addTitleWithText:title font:[UIFont systemFontOfSize:17.0] textAlignment:NSTextAlignmentCenter margin:10 paragraphStyle:paragraphStyle];
 //    [alertView updateTitleTextColor:[UIColor whiteColor]];
-//    
+//
 //    [alertView showWithShouldFitHeight:YES blankBGColor:[UIColor clearColor]];
-//    
+//
 //    // dismiss
 //    [alertView dismissWithDelay:0.7];
 }

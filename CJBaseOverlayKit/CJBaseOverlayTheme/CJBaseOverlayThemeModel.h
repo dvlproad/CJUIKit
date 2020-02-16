@@ -58,9 +58,18 @@
 // alert 水平上的左间距:LeftOffset
 @property (nonatomic, assign) CGFloat titleLabelLeftOffset;
 @property (nonatomic, assign) CGFloat messageLabelLeftOffset;
-@property (nonatomic, assign) CGFloat bottomButtonsLeftOffset;
 
-@property (nonatomic, assign) BOOL shouldSpaceButtons;
+@property (nonatomic, assign, readonly) BOOL isSpaceButtons;
+@property (nonatomic, assign, readonly) CGFloat actionButtonHeight;
+@property (nonatomic, assign, readonly) CGFloat bottomButtonsLeftOffset;      // 仅当shouldSpaceButtons为YES时候才可外部设置
+@property (nonatomic, assign, readonly) CGFloat bottomButtonsFixedSpacing;    // 仅当shouldSpaceButtons为YES时候才可外部设置
+
+
+- (instancetype)initWithCloseWithActionButtonHeight:(CGFloat)actionButtonHeight;
+
+- (instancetype)initWithSpaceWithActionButtonHeight:(CGFloat)actionButtonHeight
+                            bottomButtonsLeftOffset:(CGFloat)bottomButtonsLeftOffset
+                          bottomButtonsFixedSpacing:(CGFloat)bottomButtonsFixedSpacing;
 
 /**
  *  Alert的默认主题

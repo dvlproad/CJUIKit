@@ -40,13 +40,39 @@
 
 @implementation CJAlertThemeModel
 
+- (instancetype)initWithCloseWithActionButtonHeight:(CGFloat)actionButtonHeight {
+    self = [super init];
+    if (self) {
+        _isSpaceButtons = NO;
+        _actionButtonHeight = actionButtonHeight;
+        _bottomButtonsLeftOffset = 0;
+        _bottomButtonsFixedSpacing = 1;
+    }
+    return self;
+}
+
+- (instancetype)initWithSpaceWithActionButtonHeight:(CGFloat)actionButtonHeight
+                            bottomButtonsLeftOffset:(CGFloat)bottomButtonsLeftOffset
+                          bottomButtonsFixedSpacing:(CGFloat)bottomButtonsFixedSpacing
+{
+    self = [super init];
+    if (self) {
+        _isSpaceButtons = YES;
+        _actionButtonHeight = actionButtonHeight;
+        _bottomButtonsLeftOffset = bottomButtonsLeftOffset;
+        _bottomButtonsFixedSpacing = _bottomButtonsFixedSpacing;
+    }
+    return self;
+}
+
 /**
  *  Alert的默认主题
  *
  *  @return 默认主题
  */
 + (CJAlertThemeModel *)defaultAlertThemeModel {
-    CJAlertThemeModel *alertThemeModel = [[CJAlertThemeModel alloc] init];
+//    CJAlertThemeModel *alertThemeModel = [[CJAlertThemeModel alloc] initWithCloseWithActionButtonHeight:45];
+    CJAlertThemeModel *alertThemeModel = [[CJAlertThemeModel alloc] initWithSpaceWithActionButtonHeight:45 bottomButtonsLeftOffset:15 bottomButtonsFixedSpacing:10];
     
     CGFloat screenWidth = [[UIScreen mainScreen] bounds].size.width;
     alertThemeModel.alertWidth = screenWidth - 2*60;
@@ -57,7 +83,6 @@
     // alert 水平上的左间距:LeftOffset
     alertThemeModel.titleLabelLeftOffset    = 20;
     alertThemeModel.messageLabelLeftOffset  = 20;
-    alertThemeModel.bottomButtonsLeftOffset = 0;
     
     // alert 竖直上的间距:alertMarginVertical
     alertThemeModel.marginVertical_flagImage_title_message_buttons  = @[@20, @20, @10, @20, @0];
@@ -66,9 +91,6 @@
     alertThemeModel.marginVertical_message_buttons                  = @[@30, @30, @0];
     
     alertThemeModel.marginVertical_title_textField_buttons          = @[@30, @30, @30, @0];
-    
-    
-    alertThemeModel.shouldSpaceButtons = NO;
     
     return alertThemeModel;
 }
