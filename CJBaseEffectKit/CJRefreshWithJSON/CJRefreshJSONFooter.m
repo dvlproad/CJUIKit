@@ -7,7 +7,6 @@
 //
 
 #import "CJRefreshJSONFooter.h"
-#import "UIColor+CJHex.h"
 
 #import "CJRefreshJSONSettingManager.h"
 
@@ -100,7 +99,7 @@
 {
     [super prepare];
     self.stateLabel.font = [UIFont systemFontOfSize:15.0f];
-    self.stateLabel.textColor = CJColorFromHexString(@"#999999");
+    self.stateLabel.textColor = [UIColor colorWithRed:144/255.0f green:144/255.0f blue:144/255.0f alpha:1.0];  // (@"#999999");
     
 //    [self setTitle:@"上拉加载更多" forState:MJRefreshStateIdle];
 //    [self setTitle:@"释放加载" forState:MJRefreshStatePulling];

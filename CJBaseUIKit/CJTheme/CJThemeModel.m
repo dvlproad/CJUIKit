@@ -7,6 +7,7 @@
 //
 
 #import "CJThemeModel.h"
+#include "UIColor+CJHex.h"
 
 @implementation CJThemeModel
 /**
@@ -17,68 +18,31 @@
 + (CJThemeModel *)defaultThemeModel {
     CJThemeModel *totalThemeModel = [[CJThemeModel alloc] init];
     
-    totalThemeModel.themeColor = @"#01adfeFF";
-    totalThemeModel.themeDisabledColor = @"#01adfe66";
-    totalThemeModel.themeOppositeColor = @"#FFFFFF";
-    totalThemeModel.themeOppositeDisabledColor = @"#FFFFFF4C";
+    totalThemeModel.themeColor = CJColorFromHexString(@"#01adfeFF");
+    totalThemeModel.themeDisabledColor = CJColorFromHexString(@"#01adfe66");
+    totalThemeModel.themeOppositeColor = CJColorFromHexString(@"#FFFFFF");
+    totalThemeModel.themeOppositeDisabledColor = CJColorFromHexString(@"#FFFFFF4C");
     
-//    totalThemeModel.themeColor = @"#192B93FF";
-//    totalThemeModel.themeDisabledColor = @"#192B9366";
-//    totalThemeModel.themeOppositeColor = @"#FFFFFF";
-//    totalThemeModel.themeOppositeDisabledColor = @"#FFFFFF4C";
+//    totalThemeModel.themeColor = CJColorFromHexString(@"#192B93FF");
+//    totalThemeModel.themeDisabledColor = CJColorFromHexString(@"#192B9366");
+//    totalThemeModel.themeOppositeColor = CJColorFromHexString(@"#FFFFFF");
+//    totalThemeModel.themeOppositeDisabledColor = CJColorFromHexString(@"#FFFFFF4C");
     
-//    totalThemeModel.themeColor = @"#FF0000";
-//    totalThemeModel.themeDisabledColor = @"#00FF00";
-//    totalThemeModel.themeOppositeColor = @"#0000FF";
-//    totalThemeModel.themeOppositeDisabledColor = @"#FFFFFF";
+//    totalThemeModel.themeColor = CJColorFromHexString(@"#FF0000");
+//    totalThemeModel.themeDisabledColor = CJColorFromHexString(@"#00FF00");
+//    totalThemeModel.themeOppositeColor = CJColorFromHexString(@"#0000FF");
+//    totalThemeModel.themeOppositeDisabledColor = CJColorFromHexString(@"#FFFFFF");
     
-    totalThemeModel.separateLineColor = @"#E5E5E5";
-    totalThemeModel.textMainColor = @"#333333";
-    totalThemeModel.text666Color = @"#666666";
-    totalThemeModel.textAssistColor = @"#999999";
-    totalThemeModel.placeholderTextColor = @"#CCCCCC";
+    totalThemeModel.separateLineColor = CJColorFromHexString(@"#E5E5E5");
+    totalThemeModel.textMainColor = CJColorFromHexString(@"#333333");
+    totalThemeModel.text666Color = CJColorFromHexString(@"#666666");
+    totalThemeModel.textAssistColor = CJColorFromHexString(@"#999999");
+    totalThemeModel.placeholderTextColor = CJColorFromHexString(@"#CCCCCC");
     
-    totalThemeModel.blankBGColor = @"#282828";
-    totalThemeModel.alertThemeModel = [CJAlertThemeModel defaultAlertThemeModel];
+    totalThemeModel.blankBGColor = CJColorFromHexString(@"#282828");
     totalThemeModel.buttonThemeModel = [CJButtonThemeModel defaultButtonThemeModel];
     
     return totalThemeModel;
-}
-
-@end
-
-
-@implementation CJAlertThemeModel
-
-/**
- *  Alert的默认主题
- *
- *  @return 默认主题
- */
-+ (CJAlertThemeModel *)defaultAlertThemeModel {
-    CJAlertThemeModel *alertThemeModel = [[CJAlertThemeModel alloc] init];
-    
-    CGFloat screenWidth = [[UIScreen mainScreen] bounds].size.width;
-    alertThemeModel.alertWidth = screenWidth - 2*60;
-    
-    alertThemeModel.backgroundColor = @"#FFFFFF";
-    alertThemeModel.textFieldBackgroundColor = @"#F1F1F1";
-    
-    // alert 水平上的左间距:LeftOffset
-    alertThemeModel.titleLabelLeftOffset    = 20;
-    alertThemeModel.messageLabelLeftOffset  = 20;
-    alertThemeModel.bottomButtonsLeftOffset = 0;
-    
-    // alert 竖直上的间距:alertMarginVertical
-    alertThemeModel.marginVertical_flagImage_title_message_buttons  = @[@20, @20, @10, @20, @0];
-    alertThemeModel.marginVertical_title_message_buttons            = @[@20, @10, @20, @0];
-    alertThemeModel.marginVertical_title_buttons                    = @[@30, @30, @0];
-    alertThemeModel.marginVertical_message_buttons                  = @[@30, @30, @0];
-    
-    alertThemeModel.marginVertical_title_textField_buttons          = @[@30, @30, @30, @0];
-    
-    
-    return alertThemeModel;
 }
 
 @end

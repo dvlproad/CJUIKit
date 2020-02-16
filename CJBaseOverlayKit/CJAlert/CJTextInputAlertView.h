@@ -7,12 +7,12 @@
 //
 
 #import "CJBaseAlertView.h"
-#import "CJTextField.h"
+//#import "CJTextField.h"
 
 @interface CJTextInputAlertView : CJBaseAlertView {
     
 }
-@property (nonatomic, strong) CJTextField *textField;
+@property (nonatomic, strong) UITextField *textField;
 @property (nonatomic, assign) CGFloat textFieldHeight;
 
 - (instancetype)initWithTitle:(NSString *)title

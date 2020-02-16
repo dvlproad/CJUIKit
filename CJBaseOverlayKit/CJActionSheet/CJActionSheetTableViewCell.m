@@ -8,8 +8,7 @@
 
 #import "CJActionSheetTableViewCell.h"
 #import <Masonry/Masonry.h>
-#import "UIColor+CJHex.h"
-#import "CJThemeManager.h"
+#import "CJBaseOverlayThemeManager.h"
 
 @interface CJActionSheetTableViewCell () {
     
@@ -80,7 +79,7 @@
         _mainTitleLabel = [[UILabel alloc] init];
         _mainTitleLabel.textAlignment = NSTextAlignmentCenter;
         _mainTitleLabel.font = [UIFont systemFontOfSize:14];
-        _mainTitleLabel.textColor = CJColorFromHexString([CJThemeManager serviceThemeModel].textMainColor);
+        _mainTitleLabel.textColor = [CJBaseOverlayThemeManager serviceThemeModel].textMainColor;
     }
     return _mainTitleLabel;
 }
@@ -90,7 +89,7 @@
     if (_subTitleLabel == nil) {
         _subTitleLabel = [[UILabel alloc] init];
         _subTitleLabel.font = [UIFont systemFontOfSize:10];
-        _subTitleLabel.textColor = CJColorFromHexString(@"#999999");
+        _subTitleLabel.textColor = [CJBaseOverlayThemeManager serviceThemeModel].textAssistColor;
     }
     return _subTitleLabel;
 }
@@ -99,7 +98,7 @@
 - (UIView *)bottomLineView {
     if (_bottomLineView == nil) {
         _bottomLineView = [[UIView alloc] initWithFrame:CGRectZero];
-        _bottomLineView.backgroundColor = CJColorFromHexString(@"#dddddd");
+        _bottomLineView.backgroundColor = [CJBaseOverlayThemeManager serviceThemeModel].separateLineColor;
     }
     return _bottomLineView;
 }

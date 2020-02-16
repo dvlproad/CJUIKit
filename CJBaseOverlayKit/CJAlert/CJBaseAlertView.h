@@ -8,20 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import <Masonry/Masonry.h>
-
 #import "CJAlertComponentFactory.h"
-#import "CJThemeManager.h"
 
-#ifdef TEST_CJBASEUIKIT_POD
-#import "UIView+CJPopupInView.h"
-#import "UIColor+CJHex.h"
-#import "CJTextField.h"
-#else
-#import <CJBaseUIKit/UIView+CJPopupInView.h>
-#import <CJBaseUIKit/UIColor+CJHex.h>
-#import <CJBaseUIKit/CJTextField.h>
-#endif
-
+#import "CJBaseOverlayThemeManager.h"
 
 /**
  *  仿系统 UIAlertView(使用类方法只能创建默认样式的alertView,若要创建更加自定义的alertView,请使用实例方法)

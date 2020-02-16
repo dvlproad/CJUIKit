@@ -8,10 +8,9 @@
 
 #import "CJAlertComponentFactory.h"
 #import <CoreText/CoreText.h>
-#import "CJThemeManager.h"
-#import "UITextField+CJPadding.h"
-#import "UIColor+CJHex.h"
-#import "UIButton+CJMoreProperty.h"
+#import "CJBaseOverlayThemeManager.h"
+//#import "UITextField+CJPadding.h"
+#import "CJAlertButtonFactory.h"
 
 @implementation CJAlertComponentFactory
 
@@ -179,14 +178,18 @@
     return messageLableModel;
 }
 
-+ (CJTextField *)textFiledWithPlaceholder:(NSString *)placeholder {
-    CJTextField *textField = [[CJTextField alloc] initWithFrame:CGRectZero];
-    textField.backgroundColor = CJColorFromHexString([CJThemeManager serviceThemeModel].alertThemeModel.textFieldBackgroundColor);
++ (UITextField *)textFiledWithPlaceholder:(NSString *)placeholder {
+    UITextField *textField = [[UITextField alloc] initWithFrame:CGRectZero];
+    textField.backgroundColor = [CJBaseOverlayThemeManager serviceThemeModel].alertThemeModel.textFieldBackgroundColor;
     textField.textAlignment = NSTextAlignmentLeft;
     textField.font = [UIFont systemFontOfSize:14];
     textField.layer.cornerRadius = 6;
     textField.clearButtonMode = UITextFieldViewModeWhileEditing;
-    [textField cj_addLeftOffset:15];
+    
+    // leftOffset
+    UIView *leftView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 15, 10)];
+    textField.leftView = leftView;
+    textField.leftViewMode = UITextFieldViewModeAlways;
     
     textField.placeholder = placeholder;
     
@@ -200,7 +203,7 @@
 {
     UIView *bottomButtonView = [[UIView alloc] init];
     
-    UIButton *iKnowButton = [self __okButtonWithOKButtonTitle:iKnowButtonTitle okHandle:iKnowHandle];
+    UIButton *iKnowButton = [CJAlertButtonFactory __okButtonWithOKButtonTitle:iKnowButtonTitle okHandle:iKnowHandle];
     [bottomButtonView addSubview:iKnowButton];
 //    CGFloat actionButtonHeight = 45;
 //    CGFloat bottomInterval = 0;
@@ -215,7 +218,7 @@
     }];
     
     UIView *horizontalLine = [[UIView alloc] init];
-    horizontalLine.backgroundColor = CJColorFromHexString([CJThemeManager serviceThemeModel].separateLineColor);
+    horizontalLine.backgroundColor = [CJBaseOverlayThemeManager serviceThemeModel].separateLineColor;
     [bottomButtonView addSubview:horizontalLine];
     [horizontalLine mas_makeConstraints:^(MASConstraintMaker *make) {
         make.leading.trailing.mas_equalTo(bottomButtonView);
@@ -244,7 +247,8 @@
                                                   cancelHandle:(void(^)(UIButton *button))cancelHandle
                                                       okHandle:(void(^)(UIButton *button))okHandle
 {
-    if (0) {
+    BOOL shouldSpaceButtons = [CJBaseOverlayThemeManager serviceThemeModel].alertThemeModel.shouldSpaceButtons;
+    if (shouldSpaceButtons) {
         return [self __spaceTwoButtonsWithCancelButtonTitle:cancelButtonTitle okButtonTitle:okButtonTitle cancelHandle:cancelHandle okHandle:okHandle];
     } else {
         return [self __closeTwoButtonsWithCancelButtonTitle:cancelButtonTitle okButtonTitle:okButtonTitle cancelHandle:cancelHandle okHandle:okHandle];
@@ -266,8 +270,10 @@
                                                            okHandle:(void(^)(UIButton *button))okHandle
 {
     //bottomButtons
-    UIButton *cancelButton = [self __sapceCancelButtonWithCancelButtonTitle:cancelButtonTitle cancelHandle:cancelHandle];;
-    UIButton *okButton = [self __spaceOKButtonWithOKButtonTitle:okButtonTitle okHandle:okHandle];
+//    UIButton *cancelButton = [CJAlertButtonFactory __sapceCancelButtonWithCancelButtonTitle:cancelButtonTitle cancelHandle:cancelHandle];;
+//    UIButton *okButton = [CJAlertButtonFactory __spaceOKButtonWithOKButtonTitle:okButtonTitle okHandle:okHandle];
+    UIButton *cancelButton = [CJAlertButtonFactory __cancelButtonWithCancelButtonTitle:cancelButtonTitle cancelHandle:cancelHandle];;
+    UIButton *okButton = [CJAlertButtonFactory __okButtonWithOKButtonTitle:okButtonTitle okHandle:okHandle];
     
     CGFloat actionButtonHeight = 32;
     CGFloat bottomButtonsLeftOffset = 15;
@@ -295,8 +301,8 @@
                                                            okHandle:(void(^)(UIButton *button))okHandle
 {
     //bottomButtons
-    UIButton *cancelButton = [self __cancelButtonWithCancelButtonTitle:cancelButtonTitle cancelHandle:cancelHandle];;
-    UIButton *okButton = [self __okButtonWithOKButtonTitle:okButtonTitle okHandle:okHandle];
+    UIButton *cancelButton = [CJAlertButtonFactory __cancelButtonWithCancelButtonTitle:cancelButtonTitle cancelHandle:cancelHandle];;
+    UIButton *okButton = [CJAlertButtonFactory __okButtonWithOKButtonTitle:okButtonTitle okHandle:okHandle];
     
     CGFloat actionButtonHeight = 45;
     CGFloat bottomButtonsLeftOffset = 0;
@@ -308,7 +314,7 @@
                                                                                     fixedSpacing:fixedSpacing];
     UIView *bottomButtonView = bottomButtonsModel.bottomButtonView;
     
-    UIColor *separateLineColor = CJColorFromHexString([CJThemeManager serviceThemeModel].separateLineColor);    //分割线颜色
+    UIColor *separateLineColor = [CJBaseOverlayThemeManager serviceThemeModel].separateLineColor;    //分割线颜色
     UIView *horizontalLine = [[UIView alloc] init];
     horizontalLine.backgroundColor = separateLineColor;
     [bottomButtonView addSubview:horizontalLine];
@@ -416,74 +422,7 @@
 }
 
 
-
-
-+ (UIButton *)__okButtonWithOKButtonTitle:(NSString *)okButtonTitle
-                                 okHandle:(void(^)(UIButton *button))okHandle
-{
-    UIColor *okButtonEnableTitleColor = CJColorFromHexStringAndAlpha([CJThemeManager serviceThemeModel].themeColor, 1.0);
-    UIColor *okButtondisableTitleColor = CJColorFromHexStringAndAlpha([CJThemeManager serviceThemeModel].themeColor, 0.6);
-    
-    UIButton *okButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    [okButton setTitleColor:okButtonEnableTitleColor forState:UIControlStateNormal];
-    [okButton setTitleColor:okButtondisableTitleColor forState:UIControlStateDisabled];
-    okButton.cjNormalBGColor = [UIColor clearColor];
-    okButton.cjHighlightedBGColor = [UIColor clearColor];
-    okButton.cjDisabledBGColor = [UIColor clearColor];
-    [okButton setTitle:okButtonTitle forState:UIControlStateNormal];
-    okButton.titleLabel.font = [UIFont systemFontOfSize:15];
-    [okButton setCjTouchUpInsideBlock:okHandle];
-    
-//    okButton.layer.masksToBounds = YES;
-//    okButton.layer.cornerRadius = 16;
-    
-    return okButton;
-}
-
-+ (UIButton *)__cancelButtonWithCancelButtonTitle:(NSString *)cancelButtonTitle
-                                     cancelHandle:(void(^)(UIButton *button))cancelHandle
-{
-    UIColor *cancelButtonEnableTitleColor = CJColorFromHexStringAndAlpha([CJThemeManager serviceThemeModel].text666Color, 1.0);
-    UIColor *cancelButtondisableTitleColor = CJColorFromHexStringAndAlpha([CJThemeManager serviceThemeModel].text666Color, 0.6);
-    
-    UIButton *cancelButton = [self __okButtonWithOKButtonTitle:cancelButtonTitle okHandle:cancelHandle];
-    [cancelButton setTitleColor:cancelButtonEnableTitleColor forState:UIControlStateNormal];
-    [cancelButton setTitleColor:cancelButtondisableTitleColor forState:UIControlStateDisabled];
-    
-    return cancelButton;
-}
-
 #pragma mark - Private Method
-+ (UIButton *)__spaceOKButtonWithOKButtonTitle:(NSString *)okButtonTitle
-                                 okHandle:(void(^)(UIButton *button))okHandle
-{
-    UIButton *okButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    [okButton setTitleColor:CJColorFromHexString(@"#FFFFFF") forState:UIControlStateNormal];
-    okButton.cjNormalBGColor = CJColorFromHexString(@"#2F7DE1");
-    okButton.layer.masksToBounds = YES;
-    okButton.layer.cornerRadius = 16;
-    [okButton setTitle:okButtonTitle forState:UIControlStateNormal];
-    okButton.titleLabel.font = [UIFont boldSystemFontOfSize:15];
-    [okButton setCjTouchUpInsideBlock:okHandle];
-    
-    return okButton;
-}
-
-+ (UIButton *)__sapceCancelButtonWithCancelButtonTitle:(NSString *)cancelButtonTitle
-                                     cancelHandle:(void(^)(UIButton *button))cancelHandle
-{
-    UIButton *cancelButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    [cancelButton setTitleColor:CJColorFromHexString(@"#2F7DE1") forState:UIControlStateNormal];
-    cancelButton.cjNormalBGColor = CJColorFromHexString(@"#FFFFFF");
-    cancelButton.layer.cornerRadius = 16;
-    cancelButton.layer.borderWidth = 1;
-    cancelButton.layer.borderColor = CJColorFromHexString(@"#2F7DE1").CGColor;
-    [cancelButton setTitle:cancelButtonTitle forState:UIControlStateNormal];
-    cancelButton.titleLabel.font = [UIFont boldSystemFontOfSize:15];
-    [cancelButton setCjTouchUpInsideBlock:cancelHandle];
-    
-    return cancelButton;
-}
 
 
 

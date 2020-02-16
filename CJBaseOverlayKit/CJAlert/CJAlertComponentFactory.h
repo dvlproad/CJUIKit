@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import <Masonry/Masonry.h>
-#import "CJTextField.h"
+//#import "CJTextField.h"
 
 @class CJAlertTitleLableModel, CJAlertMessageLableModel, CJAlertBottomButtonsModel;
 @interface CJAlertComponentFactory : NSObject {
@@ -32,7 +32,7 @@
              messageLabelMaxWidth:(CGFloat)messageLabelMaxWidth
                    paragraphStyle:(NSMutableParagraphStyle *)paragraphStyle;
 
-+ (CJTextField *)textFiledWithPlaceholder:(NSString *)placeholder;
++ (UITextField *)textFiledWithPlaceholder:(NSString *)placeholder;
 
 + (CJAlertBottomButtonsModel *)onlyOneBottomButtonWithIKnowButtonTitle:(NSString *)iKnowButtonTitle
                                                            iKnowHandle:(void(^)(UIButton *button))iKnowHandle;

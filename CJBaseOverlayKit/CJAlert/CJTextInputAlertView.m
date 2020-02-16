@@ -7,7 +7,6 @@
 //
 
 #import "CJTextInputAlertView.h"
-#import "UITextField+CJTextChangeBlock.h"
 
 @interface CJTextInputAlertView () {
     
@@ -29,10 +28,10 @@
 {
     self = [super init];
     if (self) {
-        CJAlertThemeModel *alertThemeModel = [CJThemeManager serviceThemeModel].alertThemeModel;
+        CJAlertThemeModel *alertThemeModel = [CJBaseOverlayThemeManager serviceThemeModel].alertThemeModel;
         
         self.layer.cornerRadius = 14;
-        self.backgroundColor = CJColorFromHexString(alertThemeModel.backgroundColor);
+        self.backgroundColor = alertThemeModel.backgroundColor;
         self.clipsToBounds = YES;
         
         CGSize popupViewSize = CGSizeMake(alertThemeModel.alertWidth, 174);
@@ -63,11 +62,12 @@
 
 - (void)addTextFiledWithPlaceholder:(NSString *)placeholder {
     self.textField = [CJAlertComponentFactory textFiledWithPlaceholder:placeholder];
-    __weak typeof(self)weakSelf = self;
-    self.textField.cjTextDidChangeBlock = ^(UITextField *textField) {
-        BOOL okEnable = textField.text.length > 0;
-        weakSelf.okButton.enabled = okEnable;
-    };
+    /// TODO:
+//    __weak typeof(self)weakSelf = self;
+//    self.textField.cjTextDidChangeBlock = ^(UITextField *textField) {
+//        BOOL okEnable = textField.text.length > 0;
+//        weakSelf.okButton.enabled = okEnable;
+//    };
     [self addSubview:self.textField];
     
     self.textFieldHeight = 43;
@@ -109,12 +109,14 @@
 
 - (void)__setupConstraintsWithTitleLabelLeftOffset:(CGFloat)titleLabelLeftOffset
 {
+    CJAlertThemeModel *alertThemeModel = [CJBaseOverlayThemeManager serviceThemeModel].alertThemeModel;
+    
     // alert 竖直上的间距:alertMarginVertical
     NSArray *alertMarginVerticals = @[@0, @0, @0, @0];
     NSInteger titleVerticalIndex = -1;
     NSInteger textFieldVerticalIndex = -1;
     NSInteger buttonsVerticalIndex = -1;
-    alertMarginVerticals = [CJThemeManager serviceThemeModel].alertThemeModel.marginVertical_title_textField_buttons;
+    alertMarginVerticals = alertThemeModel.marginVertical_title_textField_buttons;
     titleVerticalIndex = 0;
     textFieldVerticalIndex = 1;
     buttonsVerticalIndex = 2;

@@ -109,6 +109,9 @@ Pod::Spec.new do |s|
       sss.source_files = "CJBaseUIKit/UIView/CJGestureRecognizer/**/*.{h,m}"
   	end
 
+    ss.subspec 'CJAnimation' do |sss|
+      sss.source_files = "CJBaseUIKit/UIView/CJAnimation/**/*.{h,m}"
+    end
   end
 
   # UIWindow
@@ -130,6 +133,10 @@ Pod::Spec.new do |s|
     ss.dependency "CJBaseUIKit/UIView/CJPopupAction"
   end
 
+  s.subspec 'UILabel' do |ss|
+    ss.source_files = "CJBaseUIKit/UILabel/**/*.{h,m}"
+  end
+
   s.subspec 'CJTextView' do |ss|
     ss.source_files = "CJBaseUIKit/CJTextView/**/*.{h,m}"
     # ss.resources = "CJBaseUIKit/CJTextView/**/*.{png,xib}"
@@ -143,6 +150,10 @@ Pod::Spec.new do |s|
   s.subspec 'UIToolbar' do |ss|
     ss.source_files = "CJBaseUIKit/UIToolbar/**/*.{h,m}"
     ss.dependency "CJBaseUIKit/UIImage"
+  end
+
+  s.subspec 'CJSearchBar' do |ss|
+    ss.source_files = "CJBaseUIKit/CJSearchBar/**/*.{h,m}"
   end
 
 

@@ -8,7 +8,6 @@
 
 #import "CJActionSheetView.h"
 #import <Masonry/Masonry.h>
-#import "UIColor+CJHex.h"
 #import "CJActionSheetTableViewCell.h"
 #import "CJScreenBottomTableViewCell.h"
 
@@ -153,10 +152,9 @@ static CGFloat section12Gap = 10.f;     // section1和section2之间的间隔
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-//    [self cjdemo_hidePopupView];
     
     NSAssert(self.commonClickAction != nil, @"请设置每次点击都会触发的事件");
-    self.commonClickAction(self);
+    self.commonClickAction(self);   //[self cq_hidePopupView];
     
     if (indexPath.section == 0) {
         CJActionSheetModel *sheetModel = self.sheetModels[indexPath.row];
@@ -167,7 +165,7 @@ static CGFloat section12Gap = 10.f;     // section1和section2之间的间隔
 
 #pragma mark - SetupViews & Lazy
 - (void)setupViews {
-    self.backgroundColor = CJColorFromHexString(@"f5f5f5");
+    self.backgroundColor = [UIColor colorWithRed:245/255.0 green:245/255.0 blue:245/255.0 alpha:1]; //@"f5f5f5";
     
     [self addSubview:self.tableView];
     [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {

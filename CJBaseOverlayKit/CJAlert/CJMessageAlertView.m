@@ -10,7 +10,7 @@
 //#import <CJFoundation/NSString+CJTextSize.h>
 //#import <CJBaseUIKit/UIButton+CJMoreProperty.h>
 //#import <CJBaseUIKit/UIColor+CJHex.h>
-#import "CJThemeManager.h"
+#import "CJBaseOverlayThemeManager.h"
 
 @interface CJMessageAlertView () {
     
@@ -34,7 +34,7 @@
 {
     self = [super init];
     if (self) {
-        CJAlertThemeModel *alertThemeModel = [CJThemeManager serviceThemeModel].alertThemeModel;
+        CJAlertThemeModel *alertThemeModel = [CJBaseOverlayThemeManager serviceThemeModel].alertThemeModel;
         
         // flagImage、title、message
         [self __commonSetupWithAlertThemeModel:alertThemeModel flagImage:flagImage title:title message:message];
@@ -44,7 +44,7 @@
         [self addOnlyOneBottomButtonWithOKButtonTitle:okButtonTitle okHandle:okHandle];
         
         // 设置布局约束
-        [self __setupConstraints];
+        [self __setupConstraintsWithAlertThemeModel:alertThemeModel];
     }
     return self;
 }
@@ -59,7 +59,7 @@
 {
     self = [super init];
     if (self) {
-        CJAlertThemeModel *alertThemeModel = [CJThemeManager serviceThemeModel].alertThemeModel;
+        CJAlertThemeModel *alertThemeModel = [CJBaseOverlayThemeManager serviceThemeModel].alertThemeModel;
         
         // flagImage、title、message
         [self __commonSetupWithAlertThemeModel:alertThemeModel flagImage:flagImage title:title message:message];
@@ -69,7 +69,7 @@
         [super addTwoButtonsWithCancelButtonTitle:cancelButtonTitle okButtonTitle:okButtonTitle cancelHandle:cancelHandle okHandle:okHandle];
         
         // 设置布局约束
-        [self __setupConstraints];
+        [self __setupConstraintsWithAlertThemeModel:alertThemeModel];
     }
     return self;
 }
@@ -114,7 +114,7 @@
                                  message:(NSString *)message
 {
     self.layer.cornerRadius = 14;
-    self.backgroundColor = CJColorFromHexString(alertThemeModel.backgroundColor);
+    self.backgroundColor = alertThemeModel.backgroundColor;
     self.clipsToBounds = YES;
     
     CGSize popupViewSize = CGSizeMake(alertThemeModel.alertWidth, 150);
@@ -248,7 +248,7 @@
 
 
 #pragma mark - Private Method
-- (void)__setupConstraints
+- (void)__setupConstraintsWithAlertThemeModel:(CJAlertThemeModel *)alertThemeModel
 {
     // alert 竖直上的间距:alertMarginVertical
     NSArray *alertMarginVerticals = @[@0, @0, @0, @0];
@@ -257,7 +257,7 @@
     NSInteger messageVerticalIndex = -1;
     NSInteger buttonsVerticalIndex = -1;
     if (self.flagImageView) {
-        alertMarginVerticals = [CJThemeManager serviceThemeModel].alertThemeModel.marginVertical_flagImage_title_message_buttons;
+        alertMarginVerticals = alertThemeModel.marginVertical_flagImage_title_message_buttons;
         flagImageVerticalIndex = 0;
         titleVerticalIndex = 1;
         messageVerticalIndex = 2;
@@ -265,20 +265,20 @@
     } else {
         if (self.titleLabel) {
             if (self.messageLabel) {
-                alertMarginVerticals = [CJThemeManager serviceThemeModel].alertThemeModel.marginVertical_title_message_buttons;
+                alertMarginVerticals = alertThemeModel.marginVertical_title_message_buttons;
                 flagImageVerticalIndex = -1;
                 titleVerticalIndex = 0;
                 messageVerticalIndex = 1;
                 buttonsVerticalIndex = 2;
             } else {
-                alertMarginVerticals = [CJThemeManager serviceThemeModel].alertThemeModel.marginVertical_title_buttons;
+                alertMarginVerticals = alertThemeModel.marginVertical_title_buttons;
                 flagImageVerticalIndex = -1;
                 titleVerticalIndex = 0;
                 messageVerticalIndex = -1;
                 buttonsVerticalIndex = 1;
             }
         } else {
-            alertMarginVerticals = [CJThemeManager serviceThemeModel].alertThemeModel.marginVertical_message_buttons;
+            alertMarginVerticals = alertThemeModel.marginVertical_message_buttons;
             flagImageVerticalIndex = -1;
             titleVerticalIndex = -1;
             messageVerticalIndex = 0;

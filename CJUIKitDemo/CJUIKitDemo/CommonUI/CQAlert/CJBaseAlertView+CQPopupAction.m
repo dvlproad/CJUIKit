@@ -7,6 +7,7 @@
 //
 
 #import "CJBaseAlertView+CQPopupAction.h"
+#import "UIView+CJPopupInView.h"
 
 @implementation CJBaseAlertView (CQPopupAction)
 
@@ -25,7 +26,7 @@
     };
     self.alertDismissHandle = alertDismissHandle;
     
-    UIColor *blankBGColor = CJColorFromHexString([CJThemeManager serviceThemeModel].blankBGColor);
+    UIColor *blankBGColor = [CJBaseOverlayThemeManager serviceThemeModel].blankBGColor;
     
     CGFloat fixHeight = [self calculateAlertHeightWithShouldAutoFitHeight:shouldFitHeight];
     

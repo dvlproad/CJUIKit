@@ -9,25 +9,10 @@
 #import "CJBaseAlertView.h"
 
 #import <CoreText/CoreText.h>
-#import "CJThemeManager.h"
 
 @interface CJBaseAlertView () {
     
 }
-////第一个视图(一般为flagImageView，如果flagImageView不存在，则为下一个即titleLabel，以此类推)与顶部的间隔
-//@property (nonatomic, readonly) CGFloat firstVerticalInterval;
-//
-////第二个视图与第一个视图的间隔
-//@property (nonatomic, readonly) CGFloat secondVerticalInterval;
-//
-////第三个视图与第二个视图的间隔
-//@property (nonatomic, readonly) CGFloat thirdVerticalInterval;
-//
-////底部buttons视图与其上面的视图的最小间隔(上面的视图一般为message；如果不存在message,则是title；如果再不存在，则是flagImage)
-//@property (nonatomic, readonly) CGFloat bottomMinVerticalInterval;
-
-
-
 @property (nonatomic, copy) void(^cancelHandle)(void);
 @property (nonatomic, copy) void(^okHandle)(void);
 
@@ -50,7 +35,7 @@
    paragraphStyle.lineBreakMode = NSLineBreakByCharWrapping;
    paragraphStyle.lineSpacing = 5;
    [self addTitleWithText:title font:[UIFont boldSystemFontOfSize:15.0] textAlignment:NSTextAlignmentCenter margin:titleLabelLeftOffset paragraphStyle:paragraphStyle];
-    self.titleLabel.textColor = CJColorFromHexString(@"#000000");
+    self.titleLabel.textColor = [CJBaseOverlayThemeManager serviceThemeModel].textMainColor;
 }
 
 

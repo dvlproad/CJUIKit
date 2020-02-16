@@ -7,6 +7,7 @@
 //
 
 #import "CQActionSheetUtil.h"
+#import "CJActionSheetView.h"
 #import "UIView+CJDemoPopupAction.h"
 
 #import "CQJumpMapUtil.h"

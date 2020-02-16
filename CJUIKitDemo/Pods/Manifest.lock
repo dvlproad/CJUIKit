@@ -35,6 +35,26 @@ PODS:
   - CJBaseHelper/NSOperationQueueCJHelper (0.1.4)
   - CJBaseHelper/UIViewControllerCJHelper (0.1.4)
   - CJBaseHelper/WebCJHelper (0.1.4)
+  - CJBaseOverlayKit (0.1.0):
+    - CJBaseOverlayKit/CJActionSheet (= 0.1.0)
+    - CJBaseOverlayKit/CJAlert (= 0.1.0)
+    - CJBaseOverlayKit/CJBaseOverlayTheme (= 0.1.0)
+    - CJBaseOverlayKit/CJProgressHUD (= 0.1.0)
+    - CJBaseOverlayKit/CJToast (= 0.1.0)
+  - CJBaseOverlayKit/CJActionSheet (0.1.0):
+    - CJBaseOverlayKit/CJBaseOverlayTheme
+    - Masonry
+  - CJBaseOverlayKit/CJAlert (0.1.0):
+    - CJBaseOverlayKit/CJBaseOverlayTheme
+    - Masonry
+  - CJBaseOverlayKit/CJBaseOverlayTheme (0.1.0)
+  - CJBaseOverlayKit/CJProgressHUD (0.1.0):
+    - CJBaseOverlayKit/CJBaseOverlayTheme
+    - lottie-ios (~> 2.5.3)
+    - Masonry
+  - CJBaseOverlayKit/CJToast (0.1.0):
+    - CJBaseOverlayKit/CJBaseOverlayTheme
+    - MBProgressHUD
   - CJBaseTest/Test (0.0.2)
   - CJBaseTest/UITest (0.0.2)
   - CJBaseUtil (0.5.1):
@@ -109,6 +129,7 @@ DEPENDENCIES:
   - AFNetworking/Reachability
   - CJBaseEffectKit (from `../`)
   - CJBaseHelper (from `../`)
+  - CJBaseOverlayKit (from `../`)
   - CJBaseTest/Test (from `~/Project/Github/CJUIKit`)
   - CJBaseTest/UITest (from `~/Project/Github/CJUIKit`)
   - CJBaseUtil (from `../`)
@@ -169,6 +190,8 @@ EXTERNAL SOURCES:
     :path: "../"
   CJBaseHelper:
     :path: "../"
+  CJBaseOverlayKit:
+    :path: "../"
   CJBaseTest:
     :path: "~/Project/Github/CJUIKit"
   CJBaseUtil:
@@ -182,6 +205,7 @@ SPEC CHECKSUMS:
   AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
   CJBaseEffectKit: 2d66766c774349a9442c53e816bd44218355fd7c
   CJBaseHelper: dd715e18591da9df5d06364098300591220f0535
+  CJBaseOverlayKit: 20ac2200adc1650721bd697a9ff09b5ee809467b
   CJBaseTest: a7975369dd9cad3111ea8a8465ccdb1d50752499
   CJBaseUtil: 1bbf8d5f831dc12ae4bb06c8b5326bd39f3522e1
   CJComplexUIKit: 51c4a99d97c7ff32397b56fc63b80b655a5a7a5f
@@ -209,6 +233,6 @@ SPEC CHECKSUMS:
   WMPageController: 0c7624d2b48e4f1ab92371688cf6744ed701575d
   YYText: 5c461d709e24d55a182d1441c41dc639a18a4849
 
-PODFILE CHECKSUM: 6e244fa675d386e3ed846f14069e500a5e23055f
+PODFILE CHECKSUM: 4314a70656bc96318d833de191ed180dfb7d572d
 
 COCOAPODS: 1.8.4
