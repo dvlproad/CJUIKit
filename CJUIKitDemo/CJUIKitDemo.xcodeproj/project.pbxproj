@@ -86,6 +86,12 @@
 		1562F2F123F5DBF40009FCEA /* CJExtraTextTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 1562F2A923F5DBF40009FCEA /* CJExtraTextTextField.m */; };
 		1562F2F223F5DBF40009FCEA /* UITextField+CJPadding.m in Sources */ = {isa = PBXBuildFile; fileRef = 1562F2AC23F5DBF40009FCEA /* UITextField+CJPadding.m */; };
 		1562F2F323F5DBF40009FCEA /* UITextField+CJSelectedTextRange.m in Sources */ = {isa = PBXBuildFile; fileRef = 1562F2AD23F5DBF40009FCEA /* UITextField+CJSelectedTextRange.m */; };
+		1562F2F823F944EA0009FCEA /* loading_test.json in Resources */ = {isa = PBXBuildFile; fileRef = 1562F2F423F944EA0009FCEA /* loading_test.json */; };
+		1562F2F923F944EB0009FCEA /* loading_03.json in Resources */ = {isa = PBXBuildFile; fileRef = 1562F2F523F944EA0009FCEA /* loading_03.json */; };
+		1562F2FA23F944EB0009FCEA /* UIViewController+CQProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 1562F2F623F944EA0009FCEA /* UIViewController+CQProgressHUD.m */; };
+		1562F30023F945F20009FCEA /* CQToast.m in Sources */ = {isa = PBXBuildFile; fileRef = 1562F2FC23F945F20009FCEA /* CQToast.m */; };
+		1562F30123F945F20009FCEA /* demo_toast_error@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1562F2FE23F945F20009FCEA /* demo_toast_error@3x.png */; };
+		1562F30223F945F20009FCEA /* demo_toast_error@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1562F2FF23F945F20009FCEA /* demo_toast_error@2x.png */; };
 		15C970BB23DB594F008D81B0 /* CQAlertManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 15C970BA23DB594F008D81B0 /* CQAlertManager.m */; };
 		15C970BE23DB5AEA008D81B0 /* UIAlertUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 15C970BD23DB5AEA008D81B0 /* UIAlertUtil.m */; };
 		15C970D723DB6125008D81B0 /* ActionSheetHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 15C970D523DB6125008D81B0 /* ActionSheetHomeViewController.m */; };
@@ -541,6 +547,14 @@
 		1562F2AC23F5DBF40009FCEA /* UITextField+CJPadding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextField+CJPadding.m"; sourceTree = "<group>"; };
 		1562F2AD23F5DBF40009FCEA /* UITextField+CJSelectedTextRange.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextField+CJSelectedTextRange.m"; sourceTree = "<group>"; };
 		1562F2AE23F5DBF40009FCEA /* UITextField+CJTextChangeBlock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextField+CJTextChangeBlock.h"; sourceTree = "<group>"; };
+		1562F2F423F944EA0009FCEA /* loading_test.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = loading_test.json; sourceTree = "<group>"; };
+		1562F2F523F944EA0009FCEA /* loading_03.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = loading_03.json; sourceTree = "<group>"; };
+		1562F2F623F944EA0009FCEA /* UIViewController+CQProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+CQProgressHUD.m"; sourceTree = "<group>"; };
+		1562F2F723F944EA0009FCEA /* UIViewController+CQProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+CQProgressHUD.h"; sourceTree = "<group>"; };
+		1562F2FC23F945F20009FCEA /* CQToast.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CQToast.m; sourceTree = "<group>"; };
+		1562F2FD23F945F20009FCEA /* CQToast.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CQToast.h; sourceTree = "<group>"; };
+		1562F2FE23F945F20009FCEA /* demo_toast_error@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "demo_toast_error@3x.png"; sourceTree = "<group>"; };
+		1562F2FF23F945F20009FCEA /* demo_toast_error@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "demo_toast_error@2x.png"; sourceTree = "<group>"; };
 		15C970B923DB594E008D81B0 /* CQAlertManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CQAlertManager.h; sourceTree = "<group>"; };
 		15C970BA23DB594F008D81B0 /* CQAlertManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CQAlertManager.m; sourceTree = "<group>"; };
 		15C970BC23DB5AEA008D81B0 /* UIAlertUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIAlertUtil.h; sourceTree = "<group>"; };
@@ -1066,6 +1080,10 @@
 			children = (
 				1562EF8223F469E90009FCEA /* CQHUDUtil.h */,
 				1562EF8323F469E90009FCEA /* CQHUDUtil.m */,
+				1562F2F523F944EA0009FCEA /* loading_03.json */,
+				1562F2F423F944EA0009FCEA /* loading_test.json */,
+				1562F2F723F944EA0009FCEA /* UIViewController+CQProgressHUD.h */,
+				1562F2F623F944EA0009FCEA /* UIViewController+CQProgressHUD.m */,
 			);
 			path = CQHUD;
 			sourceTree = "<group>";
@@ -1528,6 +1546,17 @@
 			path = CJTextField;
 			sourceTree = "<group>";
 		};
+		1562F2FB23F945F20009FCEA /* CQToast */ = {
+			isa = PBXGroup;
+			children = (
+				1562F2FC23F945F20009FCEA /* CQToast.m */,
+				1562F2FD23F945F20009FCEA /* CQToast.h */,
+				1562F2FE23F945F20009FCEA /* demo_toast_error@3x.png */,
+				1562F2FF23F945F20009FCEA /* demo_toast_error@2x.png */,
+			);
+			path = CQToast;
+			sourceTree = "<group>";
+		};
 		15C970D223DB6125008D81B0 /* CJActionSheetDemo */ = {
 			isa = PBXGroup;
 			children = (
@@ -1838,6 +1867,7 @@
 				1562EF8123F469E90009FCEA /* CQHUD */,
 				1562EF8523F472390009FCEA /* CQKitSetting */,
 				1562EF8923F4762A0009FCEA /* CQRefresh */,
+				1562F2FB23F945F20009FCEA /* CQToast */,
 				7808D5B0217079E5007FC851 /* DemoBarButtonItemFactory */,
 				7852D9DB216F104000E50A39 /* DemoButtonFactory */,
 				788A55F721AFCE3C0011F993 /* DemoLabel */,
@@ -2996,14 +3026,17 @@
 				800E07EA2016CD1500799B78 /* KeyboardUtilViewController.xib in Resources */,
 				7808318322DC10F700F36576 /* loading@2x.gif in Resources */,
 				787FDB8C20500B5C008A46E3 /* btn_hd@2x.png in Resources */,
+				1562F30123F945F20009FCEA /* demo_toast_error@3x.png in Resources */,
 				782F8770225AE80F001ACE76 /* cjTextField_clear@2x.png in Resources */,
 				787FDB8A20500B5C008A46E3 /* slider_maximum_trackimage@2x.png in Resources */,
 				80D71EB22090522F00D2DB68 /* scan_icon_notice@2x.png in Resources */,
+				1562F2F923F944EB0009FCEA /* loading_03.json in Resources */,
 				80FF91991FC5682B00E437CF /* EncryptStringViewController.xib in Resources */,
 				80FF91961FC5682B00E437CF /* AttributedStringViewController.xib in Resources */,
 				8051E5CD20AAB34E003370AA /* details_icon_huadong@2x.png in Resources */,
 				1562F2DC23F5DBF40009FCEA /* cjBackBarButtonItemGray@3x.png in Resources */,
 				7850B6FF20937C5A008F4A21 /* DragViewController.xib in Resources */,
+				1562F30223F945F20009FCEA /* demo_toast_error@2x.png in Resources */,
 				787FDB6820500B1F008A46E3 /* TextViewController.xib in Resources */,
 				80FF90B51FC5649F00E437CF /* CJMJRefreshViewController.xib in Resources */,
 				787FDB9120500B5C008A46E3 /* slider_double_thumbImage_b@2x.png in Resources */,
@@ -3015,6 +3048,7 @@
 				78B90E67218B49D000776584 /* MainAsset.xcassets in Resources */,
 				78A0D05A216BB19800EFAD67 /* badgeButton_normal@3x.png in Resources */,
 				1560230523E2A6C300DEAC2A /* loading_coffee.json in Resources */,
+				1562F2F823F944EA0009FCEA /* loading_test.json in Resources */,
 				1562F2DD23F5DBF40009FCEA /* cjBackBarButtonItemGray@2x.png in Resources */,
 				7850B71220937E85008F4A21 /* WelcomePopupView.xib in Resources */,
 				8051E5CE20AAB34E003370AA /* details_icon_huadong@3x.png in Resources */,
@@ -3261,6 +3295,7 @@
 				78575C8A2257242100925842 /* TestTextFieldOffsetViewController.m in Sources */,
 				78A74E482368777F0023F44B /* CJDealTextModelFactory.m in Sources */,
 				7808319222DC65DD00F36576 /* WelcomeViewController.m in Sources */,
+				1562F30023F945F20009FCEA /* CQToast.m in Sources */,
 				78B6C2E32159D6BC00D5864E /* DemoBusStationModel.m in Sources */,
 				15C970BE23DB5AEA008D81B0 /* UIAlertUtil.m in Sources */,
 				8050038A211C3A29002A2306 /* NSObjectCJHelperViewController.m in Sources */,
@@ -3339,6 +3374,7 @@
 				7868A06B237056B30013AF4D /* ButtonCategoryViewController.m in Sources */,
 				1562F2B423F5DBF40009FCEA /* UIImage+CJBase64.m in Sources */,
 				80FF919A1FC5682B00E437CF /* DateViewController.m in Sources */,
+				1562F2FA23F944EB0009FCEA /* UIViewController+CQProgressHUD.m in Sources */,
 				1562F2EE23F5DBF40009FCEA /* UITextField+CJTextChangeBlock.m in Sources */,
 				7803DAAE22F7D519001E06B7 /* MJExtensionToModelViewController.m in Sources */,
 				78A4E1B42173A0D9005FEADD /* DemoChangeEnvironmentViewModel.m in Sources */,

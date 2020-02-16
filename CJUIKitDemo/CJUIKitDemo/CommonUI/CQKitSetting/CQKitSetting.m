@@ -8,13 +8,7 @@
 
 #import "CQKitSetting.h"
 
-#ifdef TEST_CJBASEUIKIT_POD
-#import "CJThemeManager.h"
-#import "CJHUDSettingManager.h"
-#else
-#import <CJBaseUIKit/CJThemeManager.h>
-#import <CJBaseUIKit/CJHUDSettingManager.h>
-#endif
+#import <CJBaseOverlayKit/CJHUDSettingManager.h>
 #import <CJBaseEffectKit/CJRefreshJSONSettingManager.h>
 
 @interface CQKitSetting() {
@@ -29,7 +23,7 @@
 
 #pragma mark - Theme
 + (void)configThemeWithThemeModel:(CJThemeModel *)themeModel {
-    [CJThemeManager sharedInstance].serviceThemeModel = [CJThemeModel defaultThemeModel];
+    [CJThemeManager sharedInstance].serviceThemeModel = themeModel;
 }
 
 

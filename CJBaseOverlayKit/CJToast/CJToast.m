@@ -11,31 +11,15 @@
 @implementation CJToast
 
 #pragma mark - Only Text
-/* 完整的描述请参见文件头部 */
-+ (void)shortShowMessage:(NSString *)message
-{
-    UIView *view = [[UIApplication sharedApplication].delegate window];
-    
-    [CJToast shortShowMessage:message inView:view];
-}
-
-+ (void)shortShowWhiteMessage:(NSString*)message {
-    UIView *view = [[UIApplication sharedApplication].delegate window];
-    
-    [CJToast shortShowWhiteMessage:message inView:view];
-}
-
-/* 完整的描述请参见文件头部 */
-+ (void)shortShowMessage:(NSString *)message inView:(UIView *)view {
-    [self shortShowMessage:message inView:view withLabelTextColor:nil bezelViewColor:nil hideAfterDelay:2.f];
-}
-
-/* 完整的描述请参见文件头部 */
-+ (void)shortShowWhiteMessage:(NSString *)message inView:(UIView *)view {
-    [self shortShowMessage:message inView:view withLabelTextColor:[UIColor whiteColor] bezelViewColor:[UIColor blackColor] hideAfterDelay:2.f];
-}
-
-/* 完整的描述请参见文件头部 */
+/**
+*  在指定的view上显示文字，并在delay秒后自动消失
+*
+*  @param message          要显示的信息
+*  @param view             信息要显示的位置
+*  @param labelTextColor   文字的颜色
+*  @param bezelViewColor   文字所在背景框的颜色
+*  @param delay            多少秒后自动消失
+*/
 + (void)shortShowMessage:(NSString *)message
                   inView:(UIView *)view
       withLabelTextColor:(UIColor * _Nullable)labelTextColor

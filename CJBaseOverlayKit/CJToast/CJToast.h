@@ -17,37 +17,6 @@ NS_ASSUME_NONNULL_BEGIN
 
 #pragma mark - Only Text
 /**
- *  在window上短暂的显示文字(灰底黑字，2秒后自动消失)
- *
- *  @param message  要显示的信息
- */
-+ (void)shortShowMessage:(NSString *)message;
-
-/**
- *  在window上短暂的显示文字(黑底白字，2秒后自动消失)
- *
- *  @param message  要显示的信息
- */
-+ (void)shortShowWhiteMessage:(NSString*)message;
-
-/**
- *  在指定的view上短暂的显示文字(灰底黑字，2秒后自动消失)
- *
- *  @param message  要显示的信息
- *  @param view     信息要显示的位置
- */
-+ (void)shortShowMessage:(NSString *)message inView:(UIView *)view;
-
-/**
- *  在指定的view上短暂的显示文字(黑底白字，2秒后自动消失)
- *
- *  @param message  要显示的信息
- *  @param view     信息要显示的位置
- */
-+ (void)shortShowWhiteMessage:(NSString *)message inView:(UIView *)view;
-
-
-/**
  *  在指定的view上显示文字，并在delay秒后自动消失
  *
  *  @param message          要显示的信息

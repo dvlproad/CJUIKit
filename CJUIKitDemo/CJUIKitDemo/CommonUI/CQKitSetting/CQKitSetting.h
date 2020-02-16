@@ -9,10 +9,13 @@
 #import <UIKit/UIKit.h>
 
 #ifdef TEST_CJBASEUIKIT_POD
-#import "CJThemeModel.h"
+#import "CJThemeManager.h"
+#import "UIColor+CJHex.h"
 #else
-#import <CJBaseUIKit/CJThemeModel.h>
+#import <CJBaseUIKit/CJThemeManager.h>
+#import <CJBaseUIKit/UIColor+CJHex.h>
 #endif
+
 
 @interface CQKitSetting : NSObject {
     

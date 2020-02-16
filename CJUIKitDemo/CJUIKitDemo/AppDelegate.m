@@ -22,7 +22,7 @@
 #import <CJFoundation/NSString+CJCut.h>
 #import <CJFoundation/NSString+CJAttributedString.h>
 
-#import "CJToast.h"
+#import "CQToast.h"
 #import "CQKitSetting.h"
 
 @interface AppDelegate ()
@@ -104,7 +104,7 @@
     NSString *firstJudgeString = [NSString stringWithFormat:@"%@\n%@", isFirstLaunchAppString, isFirstLaunchThisVersionString];
     NSLog(@"%@", isFirstLaunchAppString);
     NSLog(@"%@", isFirstLaunchThisVersionString);
-    [CJToast shortShowMessage:firstJudgeString];
+    [CQToast showMessage:firstJudgeString];
     
     return YES;
 }
