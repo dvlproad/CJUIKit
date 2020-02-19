@@ -264,7 +264,7 @@
                                                              fixedSpacing:bottomButtonsFixedSpacing];
     
     BOOL isSpaceButtons = alertThemeModel.isSpaceButtons;
-    if (isSpaceButtons) {
+    if (!isSpaceButtons) {
         //bottomButtons
         UIView *bottomButtonView = bottomButtonsModel.bottomButtonView;
         
