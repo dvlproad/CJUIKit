@@ -53,13 +53,18 @@
 
 @property (nonatomic, assign, readonly) BOOL isSpaceButtons;
 @property (nonatomic, assign, readonly) CGFloat actionButtonHeight;
-@property (nonatomic, assign, readonly) CGFloat bottomButtonsLeftOffset;      // 仅当shouldSpaceButtons为YES时候才可外部设置
-@property (nonatomic, assign, readonly) CGFloat bottomButtonsFixedSpacing;    // 仅当shouldSpaceButtons为YES时候才可外部设置
+// 以下几个字段 当且仅当shouldSpaceButtons为YES时候才可外部设置
+@property (nonatomic, assign, readonly) CGFloat actionButtonCornerRadius;
+@property (nonatomic, assign, readonly) CGFloat actionButtonBorderWidth;
+@property (nonatomic, assign, readonly) CGFloat bottomButtonsLeftOffset;
+@property (nonatomic, assign, readonly) CGFloat bottomButtonsFixedSpacing;
 
 
 - (instancetype)initWithCloseWithActionButtonHeight:(CGFloat)actionButtonHeight;
 
 - (instancetype)initWithSpaceWithActionButtonHeight:(CGFloat)actionButtonHeight
+                           actionButtonCornerRadius:(CGFloat)actionButtonCornerRadius
+                            actionButtonBorderWidth:(CGFloat)actionButtonBorderWidth
                             bottomButtonsLeftOffset:(CGFloat)bottomButtonsLeftOffset
                           bottomButtonsFixedSpacing:(CGFloat)bottomButtonsFixedSpacing;
 

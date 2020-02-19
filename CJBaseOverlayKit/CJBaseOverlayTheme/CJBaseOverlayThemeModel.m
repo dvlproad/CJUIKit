@@ -43,6 +43,8 @@
     if (self) {
         _isSpaceButtons = NO;
         _actionButtonHeight = actionButtonHeight;
+        _actionButtonCornerRadius = 0;
+        _actionButtonBorderWidth = 0;
         _bottomButtonsLeftOffset = 0;
         _bottomButtonsFixedSpacing = 1;
         
@@ -52,6 +54,8 @@
 }
 
 - (instancetype)initWithSpaceWithActionButtonHeight:(CGFloat)actionButtonHeight
+                           actionButtonCornerRadius:(CGFloat)actionButtonCornerRadius
+                            actionButtonBorderWidth:(CGFloat)actionButtonBorderWidth
                             bottomButtonsLeftOffset:(CGFloat)bottomButtonsLeftOffset
                           bottomButtonsFixedSpacing:(CGFloat)bottomButtonsFixedSpacing
 {
@@ -59,6 +63,8 @@
     if (self) {
         _isSpaceButtons = YES;
         _actionButtonHeight = actionButtonHeight;
+        _actionButtonCornerRadius = actionButtonCornerRadius;
+        _actionButtonBorderWidth = actionButtonBorderWidth;
         _bottomButtonsLeftOffset = bottomButtonsLeftOffset;
         _bottomButtonsFixedSpacing = _bottomButtonsFixedSpacing;
         

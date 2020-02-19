@@ -9,8 +9,10 @@
 #import <UIKit/UIKit.h>
 #import <Masonry/Masonry.h>
 //#import "CJTextField.h"
+#import "CJAlertBottomButtonsModel.h"
+@class CJAlertTitleLableModel, CJAlertMessageLableModel;
 
-@class CJAlertTitleLableModel, CJAlertMessageLableModel, CJAlertBottomButtonsModel;
+
 @interface CJAlertComponentFactory : NSObject {
     
 }
@@ -71,16 +73,5 @@
 @property (nonatomic, strong) UIView *messageContainerView;
 @property (nonatomic, strong) UILabel *messageLabel;
 @property (nonatomic, assign) CGFloat messageTextHeight;
-
-@end
-
-
-@interface CJAlertBottomButtonsModel : NSObject {
-    
-}
-@property (nonatomic, strong) UIView *bottomButtonView;
-@property (nonatomic, assign) CGFloat bottomPartHeight;  /**< 底部区域高度(包含底部按钮及可能的按钮上部的分隔线及按钮下部与边缘的距离) */
-@property (nonatomic, strong) UIButton *cancelButton;
-@property (nonatomic, strong) UIButton *okButton;
 
 @end

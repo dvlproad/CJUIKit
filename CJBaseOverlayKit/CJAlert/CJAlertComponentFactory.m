@@ -9,8 +9,8 @@
 #import "CJAlertComponentFactory.h"
 #import <CoreText/CoreText.h>
 #import "CJBaseOverlayThemeManager.h"
-//#import "UITextField+CJPadding.h"
 #import "CJAlertButtonFactory.h"
+#import "CJAlertBottomButtonsFactory.h"
 
 @implementation CJAlertComponentFactory
 
@@ -203,7 +203,7 @@
 {
     UIView *bottomButtonView = [[UIView alloc] init];
     
-    UIButton *iKnowButton = [CJAlertButtonFactory __okButtonWithOKButtonTitle:iKnowButtonTitle okHandle:iKnowHandle];
+    UIButton *iKnowButton = [CJAlertButtonFactory okButtonWithTitle:iKnowButtonTitle handle:iKnowHandle];
     [bottomButtonView addSubview:iKnowButton];
 //    CGFloat actionButtonHeight = 45;
 //    CGFloat bottomInterval = 0;
@@ -248,187 +248,50 @@
                                                   cancelHandle:(void(^)(UIButton *button))cancelHandle
                                                       okHandle:(void(^)(UIButton *button))okHandle
 {
-    BOOL isSpaceButtons = [CJBaseOverlayThemeManager serviceThemeModel].alertThemeModel.isSpaceButtons;
-    if (isSpaceButtons) {
-        return [self __spaceTwoButtonsWithCancelButtonTitle:cancelButtonTitle okButtonTitle:okButtonTitle cancelHandle:cancelHandle okHandle:okHandle];
-    } else {
-        return [self __closeTwoButtonsWithCancelButtonTitle:cancelButtonTitle okButtonTitle:okButtonTitle cancelHandle:cancelHandle okHandle:okHandle];
-    }
-}
-
-
-/**
- *  添加 "Cancel" + "OK" 的 组合按钮
- *
- *  @param cancelButtonTitle    取消文案
- *  @param okButtonTitle            确认文案
- *  @param cancelHandle              取消事件
- *  @param okHandle                       确认事件
- */
-+ (CJAlertBottomButtonsModel *)__spaceTwoButtonsWithCancelButtonTitle:(NSString *)cancelButtonTitle
-                                                      okButtonTitle:(NSString *)okButtonTitle
-                                                       cancelHandle:(void(^)(UIButton *button))cancelHandle
-                                                           okHandle:(void(^)(UIButton *button))okHandle
-{
     //bottomButtons
-//    UIButton *cancelButton = [CJAlertButtonFactory __sapceCancelButtonWithCancelButtonTitle:cancelButtonTitle cancelHandle:cancelHandle];;
-//    UIButton *okButton = [CJAlertButtonFactory __spaceOKButtonWithOKButtonTitle:okButtonTitle okHandle:okHandle];
-    UIButton *cancelButton = [CJAlertButtonFactory __cancelButtonWithCancelButtonTitle:cancelButtonTitle cancelHandle:cancelHandle];;
-    UIButton *okButton = [CJAlertButtonFactory __okButtonWithOKButtonTitle:okButtonTitle okHandle:okHandle];
+    UIButton *cancelButton = [CJAlertButtonFactory cancelButtonWithTitle:cancelButtonTitle handle:cancelHandle];;
+    UIButton *okButton = [CJAlertButtonFactory okButtonWithTitle:okButtonTitle handle:okHandle];
     
     CJAlertThemeModel *alertThemeModel = [CJBaseOverlayThemeManager serviceThemeModel].alertThemeModel;
     CGFloat actionButtonHeight = alertThemeModel.actionButtonHeight;
     CGFloat bottomButtonsLeftOffset = alertThemeModel.bottomButtonsLeftOffset;
     CGFloat bottomButtonsFixedSpacing = alertThemeModel.bottomButtonsFixedSpacing;
     CJAlertBottomButtonsModel *bottomButtonsModel =
-        [self __horizontalTwoButtonsWithCancelButton:cancelButton
-                                            okButton:okButton
-                                  actionButtonHeight:actionButtonHeight
-                             bottomButtonsLeftOffset:bottomButtonsLeftOffset
-                                        fixedSpacing:bottomButtonsFixedSpacing];
-    return bottomButtonsModel;
-}
-
-
-/**
- *  添加 "Cancel" + "OK" 的 组合按钮
- *
- *  @param cancelButtonTitle    取消文案
- *  @param okButtonTitle            确认文案
- *  @param cancelHandle              取消事件
- *  @param okHandle                       确认事件
- */
-+ (CJAlertBottomButtonsModel *)__closeTwoButtonsWithCancelButtonTitle:(NSString *)cancelButtonTitle
-                                                      okButtonTitle:(NSString *)okButtonTitle
-                                                       cancelHandle:(void(^)(UIButton *button))cancelHandle
-                                                           okHandle:(void(^)(UIButton *button))okHandle
-{
-    //bottomButtons
-    UIButton *cancelButton = [CJAlertButtonFactory __cancelButtonWithCancelButtonTitle:cancelButtonTitle cancelHandle:cancelHandle];;
-    UIButton *okButton = [CJAlertButtonFactory __okButtonWithOKButtonTitle:okButtonTitle okHandle:okHandle];
+        [CJAlertBottomButtonsFactory horizontalTwoButtonsWithCancelButton:cancelButton
+                                                                 okButton:okButton
+                                                       actionButtonHeight:actionButtonHeight
+                                                  bottomButtonsLeftOffset:bottomButtonsLeftOffset
+                                                             fixedSpacing:bottomButtonsFixedSpacing];
     
-    CJAlertThemeModel *alertThemeModel = [CJBaseOverlayThemeManager serviceThemeModel].alertThemeModel;
-    CGFloat actionButtonHeight = alertThemeModel.actionButtonHeight;
-    CGFloat bottomButtonsLeftOffset = 0;
-    CGFloat fixedSpacing = 1;
-    CJAlertBottomButtonsModel *bottomButtonsModel = [self __horizontalTwoButtonsWithCancelButton:cancelButton
-                                                                                        okButton:okButton
-                                                                              actionButtonHeight:actionButtonHeight
-                                                                         bottomButtonsLeftOffset:bottomButtonsLeftOffset
-                                                                                    fixedSpacing:fixedSpacing];
-    UIView *bottomButtonView = bottomButtonsModel.bottomButtonView;
-    
-    UIColor *separateLineColor = [CJBaseOverlayThemeManager serviceThemeModel].separateLineColor;    //分割线颜色
-    UIView *horizontalLine = [[UIView alloc] init];
-    horizontalLine.backgroundColor = separateLineColor;
-    [bottomButtonView addSubview:horizontalLine];
-    [horizontalLine mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.leading.trailing.mas_equalTo(bottomButtonView);
-        make.bottom.mas_equalTo(okButton.mas_top);
-        make.height.mas_equalTo(0.5);
-    }];
-    
-    UIView *verticalLine = [[UIView alloc] init];
-    verticalLine.backgroundColor = separateLineColor;
-    [bottomButtonView addSubview:verticalLine];
-    [verticalLine mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.mas_equalTo(cancelButton);
-        make.bottom.mas_equalTo(bottomButtonView);
-        make.left.mas_equalTo(cancelButton.mas_right);
-        make.width.mas_equalTo(0.5);
-    }];
-    
-    return bottomButtonsModel;
-}
-
-
-#pragma mark - Private Method
-/**
- *  添加 "Cancel" + "OK" 的 水平组合按钮
- *
- *  @param cancelButton                             取消按钮
- *  @param okButton                                      确认按钮
- *  @param actionButtonHeight                按钮的高
- *  @param bottomButtonsLeftOffset     按钮与左边的间距
- *  @param fixedSpacing                             水平中间距
- */
-+ (CJAlertBottomButtonsModel *)__horizontalTwoButtonsWithCancelButton:(UIButton *)cancelButton
-                                                             okButton:(UIButton *)okButton
-                                                   actionButtonHeight:(CGFloat)actionButtonHeight
-                                              bottomButtonsLeftOffset:(CGFloat)bottomButtonsLeftOffset
-                                                         fixedSpacing:(CGFloat)fixedSpacing
-                                            
-{
-    UIView *bottomButtonView = [[UIView alloc] init];
-    
-    //bottomButtons
-    NSArray<UIButton *> *bottomButtons = @[cancelButton, okButton];
-    for (UIButton *bottomButton in bottomButtons) {
-        [bottomButtonView addSubview:bottomButton];
+    BOOL isSpaceButtons = alertThemeModel.isSpaceButtons;
+    if (isSpaceButtons) {
+        //bottomButtons
+        UIView *bottomButtonView = bottomButtonsModel.bottomButtonView;
+        
+        UIColor *separateLineColor = [CJBaseOverlayThemeManager serviceThemeModel].separateLineColor;    //分割线颜色
+        UIView *horizontalLine = [[UIView alloc] init];
+        horizontalLine.backgroundColor = separateLineColor;
+        [bottomButtonView addSubview:horizontalLine];
+        [horizontalLine mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.leading.trailing.mas_equalTo(bottomButtonView);
+            make.bottom.mas_equalTo(okButton.mas_top);
+            make.height.mas_equalTo(0.5);
+        }];
+        
+        UIView *verticalLine = [[UIView alloc] init];
+        verticalLine.backgroundColor = separateLineColor;
+        [bottomButtonView addSubview:verticalLine];
+        [verticalLine mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.top.mas_equalTo(cancelButton);
+            make.bottom.mas_equalTo(bottomButtonView);
+            make.left.mas_equalTo(cancelButton.mas_right);
+            make.width.mas_equalTo(0.5);
+        }];
     }
-    [bottomButtons mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.bottom.mas_equalTo(bottomButtonView);
-        make.height.mas_equalTo(actionButtonHeight);
-    }];
-    [bottomButtons mas_distributeViewsAlongAxis:MASAxisTypeHorizontal withFixedSpacing:fixedSpacing leadSpacing:bottomButtonsLeftOffset tailSpacing:-bottomButtonsLeftOffset];
     
-    CGFloat bottomPartHeight = actionButtonHeight;
-    
-    CJAlertBottomButtonsModel *bottomButtonsModel = [[CJAlertBottomButtonsModel alloc] init];
-    bottomButtonsModel.bottomButtonView = bottomButtonView;
-    bottomButtonsModel.bottomPartHeight = bottomPartHeight;
-    bottomButtonsModel.okButton = okButton;
-    bottomButtonsModel.cancelButton = cancelButton;
     
     return bottomButtonsModel;
 }
-
-/**
- *  添加 "Cancel" + "OK" 的 竖直组合按钮
- *
- *  @param cancelButton                             取消按钮
- *  @param okButton                                      确认按钮
- *  @param actionButtonHeight                按钮的高
- *  @param bottomButtonsLeftOffset     按钮与左边的间距
- *  @param fixedSpacing                             竖直中间距
- */
-+ (CJAlertBottomButtonsModel *)__verticalButtonsWithCancelButton:(UIButton *)cancelButton
-                                                        okButton:(UIButton *)okButton
-                                              actionButtonHeight:(CGFloat)actionButtonHeight
-                                         bottomButtonsLeftOffset:(CGFloat)bottomButtonsLeftOffset
-                                                    fixedSpacing:(CGFloat)fixedSpacing
-{
-    UIView *bottomButtonView = [[UIView alloc] init];
-    
-    //bottomButtons
-    NSArray<UIButton *> *bottomButtons = @[cancelButton, okButton];
-    for (UIButton *bottomButton in bottomButtons) {
-        [bottomButtonView addSubview:bottomButton];
-    }
-    [bottomButtons mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.centerX.mas_equalTo(bottomButtonView);
-        make.left.mas_equalTo(bottomButtonsLeftOffset);
-        make.height.mas_equalTo(actionButtonHeight);
-    }];
-    [bottomButtons mas_distributeViewsAlongAxis:MASAxisTypeVertical withFixedSpacing:fixedSpacing leadSpacing:0 tailSpacing:0];
-    
-    
-    NSInteger buttonCount = bottomButtons.count;
-    CGFloat bottomPartHeight = buttonCount*(actionButtonHeight+fixedSpacing) - fixedSpacing;
-    
-    CJAlertBottomButtonsModel *bottomButtonsModel = [[CJAlertBottomButtonsModel alloc] init];
-    bottomButtonsModel.bottomButtonView = bottomButtonView;
-    bottomButtonsModel.bottomPartHeight = bottomPartHeight;
-    bottomButtonsModel.okButton = okButton;
-    bottomButtonsModel.cancelButton = cancelButton;
-    
-    return bottomButtonsModel;
-}
-
-
-#pragma mark - Private Method
-
-
 
 
 #pragma mark - Private
@@ -540,9 +403,5 @@
 @end
 
 @implementation CJAlertMessageLableModel
-
-@end
-
-@implementation CJAlertBottomButtonsModel
 
 @end
