@@ -22,7 +22,7 @@
 - (instancetype)init {
     self = [super init];
     if (self) {
-        _serviceThemeModel = [CJBaseOverlayThemeModel defaultThemeModel];
+        _serviceThemeModel = [[CJBaseOverlayThemeModel alloc] init];
     }
     return self;
 }

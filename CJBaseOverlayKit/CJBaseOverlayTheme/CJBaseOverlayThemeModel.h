@@ -25,14 +25,6 @@
 @property (nonatomic, strong) UIColor *blankBGColor;
 @property (nonatomic, strong) CJAlertThemeModel *alertThemeModel;
 
-
-/**
-*  总的默认主题
-*
-*  @return 总的默认主题
-*/
-+ (CJBaseOverlayThemeModel *)defaultThemeModel;
-
 @end
 
 
@@ -70,13 +62,5 @@
 - (instancetype)initWithSpaceWithActionButtonHeight:(CGFloat)actionButtonHeight
                             bottomButtonsLeftOffset:(CGFloat)bottomButtonsLeftOffset
                           bottomButtonsFixedSpacing:(CGFloat)bottomButtonsFixedSpacing;
-
-/**
- *  Alert的默认主题
- *
- *  @return 默认主题
- */
-+ (CJAlertThemeModel *)defaultAlertThemeModel;
-
 
 @end

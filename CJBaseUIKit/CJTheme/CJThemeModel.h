@@ -26,13 +26,6 @@
 @property (nonatomic, strong) CJButtonThemeModel *buttonThemeModel;
 
 
-/**
-*  总的默认主题
-*
-*  @return 总的默认主题
-*/
-+ (CJThemeModel *)defaultThemeModel;
-
 @end
 
 
@@ -43,13 +36,5 @@
 }
 @property (nonatomic, assign) CGFloat cornerRadius;
 @property (nonatomic, assign) CGFloat selectedBorderWidth;
-
-/**
- *  Button的默认主题
- *
- *  @return 默认主题
- */
-+ (CJButtonThemeModel *)defaultButtonThemeModel;
-
 
 @end

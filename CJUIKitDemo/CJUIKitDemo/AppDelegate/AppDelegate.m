@@ -21,7 +21,7 @@
 #import <CJFoundation/NSString+CJAttributedString.h>
 
 #import "CQToast.h"
-#import "CQKitSetting.h"
+#import "APPUIKitSetting.h"
 
 @interface AppDelegate ()
 
@@ -53,21 +53,8 @@
     
     YunInstallUncaughtExceptionHandler();
     
-    // 设置全局默认 的主题
-    [CQKitSetting configThemeWithThemeModel:[CJThemeModel defaultThemeModel]];
-    
-    // 设置 全局默认 的 加载
-    [CQKitSetting configHUDAnimationWithAnimationNamed:@"loading_tea"];
-    
-    // 设置 全局默认 的 下拉刷新 和 上拉加载
-    [CQKitSetting configHeaderAnimationWithAnimationNamed:@"loading_coffee"];
-    [CQKitSetting updateHeaderStateTextWithIdleText:NSLocalizedString(@"下拉刷新1", nil)
-                                                 pullingText:NSLocalizedString(@"松开刷新2", nil)
-                                              refreshingText:NSLocalizedString(@"加载数据中3", nil)];
-    [CQKitSetting updateFooterStateTextWithIdleText:NSLocalizedString(@"上拉加载更多4", nil)
-                                                 pullingText:NSLocalizedString(@"释放加载5", nil)
-                                              refreshingText:NSLocalizedString(@"加载中6...", nil)
-                                              noMoreDataText:NSLocalizedString(@"没有更多数据了7...", nil)];
+    // 设置所有UIKit的主题
+    [APPUIKitSetting configAppThemeUIKit];
     
     //[[IQKeyboardManager sharedManager].disabledToolbarClasses addObject:NSClassFromString(@"DateViewController")]; //已写在对应的类里了
     
