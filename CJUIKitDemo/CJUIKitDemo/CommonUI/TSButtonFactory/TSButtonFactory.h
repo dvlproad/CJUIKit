@@ -1,5 +1,5 @@
 //
-//  CJButtonFactory.h
+//  TSButtonFactory.h
 //  CJUIKitDemo
 //
 //  Created by ciyouzen on 2020/1/31.
@@ -11,10 +11,10 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface CJButtonFactory : NSObject
+@interface TSButtonFactory : NSObject
 
 /// 以主题色为背景的按钮
-+ (CJButton *)themeBGButton;
++ (UIButton *)themeBGButton;
 
 ///以主题色为边框的按钮
 + (UIButton *)themeBorderButton;

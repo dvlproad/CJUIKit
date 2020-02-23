@@ -28,7 +28,6 @@
 		1562F2BD23F5DBF40009FCEA /* CJLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1562F22A23F5DBF40009FCEA /* CJLabel.m */; };
 		1562F2BE23F5DBF40009FCEA /* CJBadgeButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 1562F23023F5DBF40009FCEA /* CJBadgeButton.m */; };
 		1562F2BF23F5DBF40009FCEA /* UIButton+CJStructure.m in Sources */ = {isa = PBXBuildFile; fileRef = 1562F23223F5DBF40009FCEA /* UIButton+CJStructure.m */; };
-		1562F2C023F5DBF40009FCEA /* CJButtonFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 1562F23423F5DBF40009FCEA /* CJButtonFactory.m */; };
 		1562F2C123F5DBF40009FCEA /* CJButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 1562F23523F5DBF40009FCEA /* CJButton.m */; };
 		1562F2C223F5DBF40009FCEA /* UIButton+CJMoreProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = 1562F23723F5DBF40009FCEA /* UIButton+CJMoreProperty.m */; };
 		1562F2C323F5DBF40009FCEA /* UIColor+CJHex.m in Sources */ = {isa = PBXBuildFile; fileRef = 1562F23A23F5DBF40009FCEA /* UIColor+CJHex.m */; };
@@ -71,8 +70,6 @@
 		1562F2E823F5DBF40009FCEA /* CJAdsorbModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1562F29023F5DBF40009FCEA /* CJAdsorbModel.m */; };
 		1562F2E923F5DBF40009FCEA /* CJSwitchView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1562F29423F5DBF40009FCEA /* CJSwitchView.m */; };
 		1562F2EA23F5DBF40009FCEA /* CJTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1562F29723F5DBF40009FCEA /* CJTextView.m */; };
-		1562F2EB23F5DBF40009FCEA /* CJThemeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1562F29B23F5DBF40009FCEA /* CJThemeModel.m */; };
-		1562F2EC23F5DBF40009FCEA /* CJThemeManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1562F29C23F5DBF40009FCEA /* CJThemeManager.m */; };
 		1562F2ED23F5DBF40009FCEA /* CJSearchBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 1562F29E23F5DBF40009FCEA /* CJSearchBar.m */; };
 		1562F2EE23F5DBF40009FCEA /* UITextField+CJTextChangeBlock.m in Sources */ = {isa = PBXBuildFile; fileRef = 1562F2A423F5DBF40009FCEA /* UITextField+CJTextChangeBlock.m */; };
 		1562F2EF23F5DBF40009FCEA /* UITextField+CJForbidKeyboard.m in Sources */ = {isa = PBXBuildFile; fileRef = 1562F2A623F5DBF40009FCEA /* UITextField+CJForbidKeyboard.m */; };
@@ -95,6 +92,7 @@
 		1562F38723FD2FC70009FCEA /* APPUIKitSetting.m in Sources */ = {isa = PBXBuildFile; fileRef = 1562F38123FD2FC70009FCEA /* APPUIKitSetting.m */; };
 		1562F38823FD2FC70009FCEA /* AppDelegate+WindowRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1562F38523FD2FC70009FCEA /* AppDelegate+WindowRootViewController.m */; };
 		1562F38923FD2FC70009FCEA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1562F38623FD2FC70009FCEA /* AppDelegate.m */; };
+		15A7680C23FD966B00358B42 /* TSButtonFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 15A7680523FD966A00358B42 /* TSButtonFactory.m */; };
 		15C970BE23DB5AEA008D81B0 /* UIAlertUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 15C970BD23DB5AEA008D81B0 /* UIAlertUtil.m */; };
 		15C970D723DB6125008D81B0 /* ActionSheetHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 15C970D523DB6125008D81B0 /* ActionSheetHomeViewController.m */; };
 		15C970DE23DB6768008D81B0 /* TSActionSheetUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 15C970DD23DB6767008D81B0 /* TSActionSheetUtil.m */; };
@@ -427,10 +425,8 @@
 		1562F22D23F5DBF40009FCEA /* CJButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJButton.h; sourceTree = "<group>"; };
 		1562F22F23F5DBF40009FCEA /* CJBadgeButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJBadgeButton.h; sourceTree = "<group>"; };
 		1562F23023F5DBF40009FCEA /* CJBadgeButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJBadgeButton.m; sourceTree = "<group>"; };
-		1562F23123F5DBF40009FCEA /* CJButtonFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJButtonFactory.h; sourceTree = "<group>"; };
 		1562F23223F5DBF40009FCEA /* UIButton+CJStructure.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+CJStructure.m"; sourceTree = "<group>"; };
 		1562F23323F5DBF40009FCEA /* UIButton+CJMoreProperty.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+CJMoreProperty.h"; sourceTree = "<group>"; };
-		1562F23423F5DBF40009FCEA /* CJButtonFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJButtonFactory.m; sourceTree = "<group>"; };
 		1562F23523F5DBF40009FCEA /* CJButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJButton.m; sourceTree = "<group>"; };
 		1562F23623F5DBF40009FCEA /* UIButton+CJStructure.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+CJStructure.h"; sourceTree = "<group>"; };
 		1562F23723F5DBF40009FCEA /* UIButton+CJMoreProperty.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+CJMoreProperty.m"; sourceTree = "<group>"; };
@@ -508,10 +504,6 @@
 		1562F29423F5DBF40009FCEA /* CJSwitchView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJSwitchView.m; sourceTree = "<group>"; };
 		1562F29623F5DBF40009FCEA /* CJTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJTextView.h; sourceTree = "<group>"; };
 		1562F29723F5DBF40009FCEA /* CJTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJTextView.m; sourceTree = "<group>"; };
-		1562F29923F5DBF40009FCEA /* CJThemeModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJThemeModel.h; sourceTree = "<group>"; };
-		1562F29A23F5DBF40009FCEA /* CJThemeManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJThemeManager.h; sourceTree = "<group>"; };
-		1562F29B23F5DBF40009FCEA /* CJThemeModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJThemeModel.m; sourceTree = "<group>"; };
-		1562F29C23F5DBF40009FCEA /* CJThemeManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJThemeManager.m; sourceTree = "<group>"; };
 		1562F29E23F5DBF40009FCEA /* CJSearchBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJSearchBar.m; sourceTree = "<group>"; };
 		1562F29F23F5DBF40009FCEA /* CJSearchBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJSearchBar.h; sourceTree = "<group>"; };
 		1562F2A123F5DBF40009FCEA /* UITextField+CJPadding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextField+CJPadding.h"; sourceTree = "<group>"; };
@@ -555,6 +547,8 @@
 		1562F38423FD2FC70009FCEA /* APPUIKitSetting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APPUIKitSetting.h; sourceTree = "<group>"; };
 		1562F38523FD2FC70009FCEA /* AppDelegate+WindowRootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AppDelegate+WindowRootViewController.m"; sourceTree = "<group>"; };
 		1562F38623FD2FC70009FCEA /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		15A7680523FD966A00358B42 /* TSButtonFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSButtonFactory.m; sourceTree = "<group>"; };
+		15A7680623FD966A00358B42 /* TSButtonFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSButtonFactory.h; sourceTree = "<group>"; };
 		15C970BC23DB5AEA008D81B0 /* UIAlertUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIAlertUtil.h; sourceTree = "<group>"; };
 		15C970BD23DB5AEA008D81B0 /* UIAlertUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIAlertUtil.m; sourceTree = "<group>"; };
 		15C970D423DB6125008D81B0 /* ActionSheetHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActionSheetHomeViewController.h; sourceTree = "<group>"; };
@@ -1063,7 +1057,6 @@
 				1562F27A23F5DBF40009FCEA /* CJSlider */,
 				1562F29223F5DBF40009FCEA /* CJSwitchView */,
 				1562F29523F5DBF40009FCEA /* CJTextView */,
-				1562F29823F5DBF40009FCEA /* CJTheme */,
 				1562F25E23F5DBF40009FCEA /* CJUIKit.h */,
 				1562F22323F5DBF40009FCEA /* CJUIKitConstant */,
 				1562F22C23F5DBF40009FCEA /* UIButton */,
@@ -1187,8 +1180,6 @@
 				1562F22E23F5DBF40009FCEA /* CJBadgeButton */,
 				1562F22D23F5DBF40009FCEA /* CJButton.h */,
 				1562F23523F5DBF40009FCEA /* CJButton.m */,
-				1562F23123F5DBF40009FCEA /* CJButtonFactory.h */,
-				1562F23423F5DBF40009FCEA /* CJButtonFactory.m */,
 				1562F23323F5DBF40009FCEA /* UIButton+CJMoreProperty.h */,
 				1562F23723F5DBF40009FCEA /* UIButton+CJMoreProperty.m */,
 				1562F23623F5DBF40009FCEA /* UIButton+CJStructure.h */,
@@ -1444,17 +1435,6 @@
 			path = CJTextView;
 			sourceTree = "<group>";
 		};
-		1562F29823F5DBF40009FCEA /* CJTheme */ = {
-			isa = PBXGroup;
-			children = (
-				1562F29A23F5DBF40009FCEA /* CJThemeManager.h */,
-				1562F29C23F5DBF40009FCEA /* CJThemeManager.m */,
-				1562F29923F5DBF40009FCEA /* CJThemeModel.h */,
-				1562F29B23F5DBF40009FCEA /* CJThemeModel.m */,
-			);
-			path = CJTheme;
-			sourceTree = "<group>";
-		};
 		1562F29D23F5DBF40009FCEA /* CJSearchBar */ = {
 			isa = PBXGroup;
 			children = (
@@ -1543,6 +1523,15 @@
 				1562F38123FD2FC70009FCEA /* APPUIKitSetting.m */,
 			);
 			path = AppDelegate;
+			sourceTree = "<group>";
+		};
+		15A7680423FD966A00358B42 /* TSButtonFactory */ = {
+			isa = PBXGroup;
+			children = (
+				15A7680623FD966A00358B42 /* TSButtonFactory.h */,
+				15A7680523FD966A00358B42 /* TSButtonFactory.m */,
+			);
+			path = TSButtonFactory;
 			sourceTree = "<group>";
 		};
 		15C970D223DB6125008D81B0 /* CJActionSheetDemo */ = {
@@ -1836,6 +1825,7 @@
 				78AB83BF21B96D7000853E21 /* DemoTextFieldFactory */,
 				15C970DB23DB6767008D81B0 /* TSActionSheet */,
 				78226A6A21A4012B002167F2 /* TSAlert */,
+				15A7680423FD966A00358B42 /* TSButtonFactory */,
 			);
 			path = CommonUI;
 			sourceTree = "<group>";
@@ -3177,7 +3167,6 @@
 				78A621ED2135CA50004DA046 /* DemoFloatingWindow.m in Sources */,
 				807F126020B507A30008B748 /* ViewAnimateViewController.m in Sources */,
 				784A7216214C9DF000F8D144 /* MoreHomeViewController.m in Sources */,
-				1562F2C023F5DBF40009FCEA /* CJButtonFactory.m in Sources */,
 				788113BF2199574900D1630D /* SharedInstanceViewController.m in Sources */,
 				78A74E5123687ACF0023F44B /* PriceFenToYuanViewController.m in Sources */,
 				80FF909C1FC5649F00E437CF /* NestedXibView.m in Sources */,
@@ -3188,7 +3177,6 @@
 				78B6C2EE2159D8AF00D5864E /* DemoBusPassengerOrderModel.m in Sources */,
 				1562F2B023F5DBF40009FCEA /* UIImage+CJChangeColor.m in Sources */,
 				1562F2E723F5DBF40009FCEA /* CJBaseUISlider.m in Sources */,
-				1562F2EB23F5DBF40009FCEA /* CJThemeModel.m in Sources */,
 				15C970D723DB6125008D81B0 /* ActionSheetHomeViewController.m in Sources */,
 				7868A068237055660013AF4D /* ButtonHomeViewController.m in Sources */,
 				78C8148F216E11AF00A6B190 /* EChildViewController.m in Sources */,
@@ -3234,6 +3222,7 @@
 				78A74E482368777F0023F44B /* CJDealTextModelFactory.m in Sources */,
 				7808319222DC65DD00F36576 /* WelcomeViewController.m in Sources */,
 				1562F30023F945F20009FCEA /* CQToast.m in Sources */,
+				15A7680C23FD966B00358B42 /* TSButtonFactory.m in Sources */,
 				78B6C2E32159D6BC00D5864E /* DemoBusStationModel.m in Sources */,
 				15C970BE23DB5AEA008D81B0 /* UIAlertUtil.m in Sources */,
 				8050038A211C3A29002A2306 /* NSObjectCJHelperViewController.m in Sources */,
@@ -3339,7 +3328,6 @@
 				80FF91981FC5682B00E437CF /* AttributedStringViewController.m in Sources */,
 				78A4E1D52175EB93005FEADD /* NavigationBarNormalChangeBGViewController.m in Sources */,
 				1562F2C923F5DBF40009FCEA /* UIView+CJRounderCorner.m in Sources */,
-				1562F2EC23F5DBF40009FCEA /* CJThemeManager.m in Sources */,
 				1562F2C523F5DBF40009FCEA /* CJDefaultToolbar.m in Sources */,
 				78514134226854CC0023F0C0 /* ImageGetterViewController.m in Sources */,
 				1562F2D723F5DBF40009FCEA /* UINavigationBar+CJChangeBG.m in Sources */,

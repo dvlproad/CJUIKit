@@ -16,25 +16,9 @@
 
 /// 设置所有UIKit的主题
 + (void)configAppThemeUIKit {
-    [self _configTheme];    // 设置 全局默认 的 主题
     [self _configHUD];      // 设置 全局默认 的 加载
     [self _configRefresh];  // 设置 全局默认 的 下拉刷新 和 上拉加载
 }
-
-#pragma mark - Theme
-/// 设置 全局默认 的 主题
-+ (void)_configTheme {
-    CJThemeModel *totalThemeModel = [CJThemeManager serviceThemeModel];
-    totalThemeModel.themeColor = CJColorFromHexString(@"#192B93FF");
-    totalThemeModel.themeDisabledColor = CJColorFromHexString(@"#192B9366");
-    totalThemeModel.themeOppositeColor = CJColorFromHexString(@"#FFFFFF");
-    totalThemeModel.themeOppositeDisabledColor = CJColorFromHexString(@"#FFFFFF4C");
-//    totalThemeModel.themeColor = CJColorFromHexString(@"#FF0000");
-//    totalThemeModel.themeDisabledColor = CJColorFromHexString(@"#00FF00");
-//    totalThemeModel.themeOppositeColor = CJColorFromHexString(@"#0000FF");
-//    totalThemeModel.themeOppositeDisabledColor = CJColorFromHexString(@"#FFFFFF");
-}
-
 
 #pragma mark - HUD
 /// 设置 全局默认 的 加载

@@ -8,7 +8,7 @@
 
 #import "ButtonCategoryViewController.h"
 #import "DemoButtonFactory.h"
-#import "CJButtonFactory.h"
+#import "TSButtonFactory.h"
 
 @interface ButtonCategoryViewController ()
 
@@ -21,7 +21,7 @@
     // Do any additional setup after loading the view from its nib.
     self.navigationItem.title = NSLocalizedString(@"UIButton 颜色测试", nil);
     
-    UIButton *themeBGButton = [CJButtonFactory themeBGButton];
+    UIButton *themeBGButton = [TSButtonFactory themeBGButton];
     [themeBGButton setTitle:@"以主题色为背景的按钮" forState:UIControlStateNormal];
     [self.view addSubview:themeBGButton];
     [themeBGButton mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -34,7 +34,7 @@
         [CQToast showMessage:@"测试为按钮动态增加的属性\n改变蓝色背景enable"];
     };
     
-    UIButton *themeBorderButton = [CJButtonFactory themeBorderButton];
+    UIButton *themeBorderButton = [TSButtonFactory themeBorderButton];
     [themeBorderButton setTitle:@"以主题色为边框的按钮" forState:UIControlStateNormal];
     [self.view addSubview:themeBorderButton];
     [themeBorderButton mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -53,22 +53,22 @@
         make.height.mas_equalTo(4*44+3*15+10+10);
     }];
     
-    UIButton *normalSelectedButton1 = [CJButtonFactory themeNormalSelectedButton];
+    UIButton *normalSelectedButton1 = [TSButtonFactory themeNormalSelectedButton];
     [normalSelectedButton1 setTitle:@"修改(未选中，可点)" forState:UIControlStateNormal];
     normalSelectedButton1.selected = false;
     normalSelectedButton1.enabled = true;
 
-    UIButton *normalSelectedButton2 = [CJButtonFactory themeNormalSelectedButton];
+    UIButton *normalSelectedButton2 = [TSButtonFactory themeNormalSelectedButton];
     [normalSelectedButton2 setTitle:@"修改(未选中，不可点)" forState:UIControlStateNormal];
     normalSelectedButton2.selected = false;
     normalSelectedButton2.enabled = false;
 
-    UIButton *normalSelectedButton3 = [CJButtonFactory themeNormalSelectedButton];
+    UIButton *normalSelectedButton3 = [TSButtonFactory themeNormalSelectedButton];
     [normalSelectedButton3 setTitle:@"提交(选中，可点)" forState:UIControlStateNormal];
     normalSelectedButton3.selected = true;
     normalSelectedButton3.enabled = true;
 
-    UIButton *normalSelectedButton4 = [CJButtonFactory themeNormalSelectedButton];
+    UIButton *normalSelectedButton4 = [TSButtonFactory themeNormalSelectedButton];
     [normalSelectedButton4 setTitle:@"提交(选中，不可点)" forState:UIControlStateNormal];
     normalSelectedButton4.selected = true;
     normalSelectedButton4.enabled = false;

@@ -12,15 +12,6 @@
 
 @implementation DemoButtonFactory
 
-+ (DemoButtonFactory *)sharedInstance {
-    static DemoButtonFactory *_sharedInstance = nil;
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
-        _sharedInstance = [[self alloc] init];
-    });
-    return _sharedInstance;
-}
-
 ///蓝色背景按钮
 + (UIButton *)blueButton {
     UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
