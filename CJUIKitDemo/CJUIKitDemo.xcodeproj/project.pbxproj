@@ -115,7 +115,6 @@
 		7808319222DC65DD00F36576 /* WelcomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7808319122DC65DD00F36576 /* WelcomeViewController.m */; };
 		7808319422DC687400F36576 /* welcome.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 7808319322DC687400F36576 /* welcome.mp4 */; };
 		7808D59321703C33007FC851 /* ChangeEnvironmentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7808D59221703C33007FC851 /* ChangeEnvironmentViewController.m */; };
-		7808D5B321707A04007FC851 /* DemoBarButtonItemFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 7808D5B221707A04007FC851 /* DemoBarButtonItemFactory.m */; };
 		7808D5B62170919A007FC851 /* LoginChangeEnvironmentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7808D5B52170919A007FC851 /* LoginChangeEnvironmentViewController.m */; };
 		7808D5B921709E6B007FC851 /* UIViewController+CJChangeEnvironment.m in Sources */ = {isa = PBXBuildFile; fileRef = 7808D5B821709E6B007FC851 /* UIViewController+CJChangeEnvironment.m */; };
 		780E46051E5DF87B00980127 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 780E46041E5DF87B00980127 /* main.m */; };
@@ -583,8 +582,6 @@
 		7808319322DC687400F36576 /* welcome.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = welcome.mp4; sourceTree = "<group>"; };
 		7808D59121703C33007FC851 /* ChangeEnvironmentViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ChangeEnvironmentViewController.h; sourceTree = "<group>"; };
 		7808D59221703C33007FC851 /* ChangeEnvironmentViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChangeEnvironmentViewController.m; sourceTree = "<group>"; };
-		7808D5B121707A03007FC851 /* DemoBarButtonItemFactory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DemoBarButtonItemFactory.h; sourceTree = "<group>"; };
-		7808D5B221707A04007FC851 /* DemoBarButtonItemFactory.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DemoBarButtonItemFactory.m; sourceTree = "<group>"; };
 		7808D5B421709199007FC851 /* LoginChangeEnvironmentViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginChangeEnvironmentViewController.h; sourceTree = "<group>"; };
 		7808D5B52170919A007FC851 /* LoginChangeEnvironmentViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginChangeEnvironmentViewController.m; sourceTree = "<group>"; };
 		7808D5B721709E6B007FC851 /* UIViewController+CJChangeEnvironment.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIViewController+CJChangeEnvironment.h"; sourceTree = "<group>"; };
@@ -1568,15 +1565,6 @@
 			path = ChangeEnvironmentDemo;
 			sourceTree = "<group>";
 		};
-		7808D5B0217079E5007FC851 /* DemoBarButtonItemFactory */ = {
-			isa = PBXGroup;
-			children = (
-				7808D5B121707A03007FC851 /* DemoBarButtonItemFactory.h */,
-				7808D5B221707A04007FC851 /* DemoBarButtonItemFactory.m */,
-			);
-			path = DemoBarButtonItemFactory;
-			sourceTree = "<group>";
-		};
 		780E45F71E5DF87B00980127 = {
 			isa = PBXGroup;
 			children = (
@@ -1802,7 +1790,6 @@
 				7857ABB5225482D200B1569C /* CJDemoDatePickerView */,
 				7857ABB92254AA1100B1569C /* CJDemoDateTextField */,
 				78FCF54A2306A9B900D275F9 /* CJDemoPopupView */,
-				7808D5B0217079E5007FC851 /* DemoBarButtonItemFactory */,
 				788A55F721AFCE3C0011F993 /* DemoLabel */,
 				78AB83BF21B96D7000853E21 /* DemoTextFieldFactory */,
 				15C970DB23DB6767008D81B0 /* TSActionSheet */,
@@ -3393,7 +3380,6 @@
 				80FF90AD1FC5649F00E437CF /* NavigationBarViewController.m in Sources */,
 				80FF90A81FC5649F00E437CF /* ImageChangeColorViewController.m in Sources */,
 				78A621A921319723004DA046 /* SuspendWindowViewController.m in Sources */,
-				7808D5B321707A04007FC851 /* DemoBarButtonItemFactory.m in Sources */,
 				78AB83A921B7CE7100853E21 /* PresentBViewController.m in Sources */,
 				787FDB9720500B5C008A46E3 /* RangeSliderViewController.m in Sources */,
 			);

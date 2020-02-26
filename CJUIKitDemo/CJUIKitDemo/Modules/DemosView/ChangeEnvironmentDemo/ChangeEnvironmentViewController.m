@@ -46,7 +46,7 @@ typedef NS_ENUM(NSUInteger, EnvironmentType) {
     self.title = NSLocalizedString(@"ChangeEnvironment(改变app环境)", nil);
     self.view.backgroundColor = [UIColor whiteColor];
     
-    self.navigationItem.rightBarButtonItem = demoDoneBarButtonItem(self, @selector(changeEnvironment));
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"完成", nil) style:UIBarButtonItemStylePlain target:self action:@selector(changeEnvironment)];
     
     UITableView *tableView = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStyleGrouped];
     //[tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"cell"];
