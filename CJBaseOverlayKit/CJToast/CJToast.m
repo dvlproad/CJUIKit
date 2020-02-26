@@ -20,11 +20,11 @@
 *  @param bezelViewColor   文字所在背景框的颜色
 *  @param delay            多少秒后自动消失
 */
-+ (void)shortShowMessage:(NSString *)message
-                  inView:(UIView *)view
-      withLabelTextColor:(UIColor * _Nullable)labelTextColor
-          bezelViewColor:(UIColor * _Nullable)bezelViewColor
-          hideAfterDelay:(NSTimeInterval)delay
++ (void)showMessage:(NSString *)message
+            inView:(UIView *)view
+withLabelTextColor:(UIColor * _Nullable)labelTextColor
+    bezelViewColor:(UIColor * _Nullable)bezelViewColor
+    hideAfterDelay:(NSTimeInterval)delay;
 {
     if (message.length == 0) {
         NSLog(@"toast message length == 0");
@@ -114,8 +114,17 @@
 }
 */
 
-/* 完整的描述请参见文件头部 */
-+ (void)shortShowMessage:(NSString *)message image:(UIImage *)image toView:(UIView *)view
+/**
+ *  在指定的view上短暂的显示文字及图片（delay秒后自动消失）
+ *
+ *  @param message  要显示的文字
+ *  @param image    要显示的图片
+ *  @param view     要显示在的视图
+ */
++ (void)showMessage:(NSString *)message
+              image:(UIImage *)image
+             toView:(UIView *)view
+     hideAfterDelay:(NSTimeInterval)delay
 {
     if (view == nil) {
         view = [UIApplication sharedApplication].keyWindow;
@@ -128,7 +137,7 @@
     hud.mode = MBProgressHUDModeCustomView; // 再设置模式
     
     hud.removeFromSuperViewOnHide = YES;    // 隐藏时候从父控件中移除
-    [hud hideAnimated:YES afterDelay:0.7];  // 0.7秒之后再消失
+    [hud hideAnimated:YES afterDelay:delay];  // 0.7秒之后再消失
 }
 
 #pragma mark - Text And 菊花

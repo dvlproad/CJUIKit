@@ -40,9 +40,9 @@
 */
 + (void)showMessage:(NSString *)message inView:(UIView *)view {
     // 灰底黑字
-    [CJToast shortShowMessage:message inView:view withLabelTextColor:nil bezelViewColor:nil hideAfterDelay:2.f];
+    [CJToast showMessage:message inView:view withLabelTextColor:nil bezelViewColor:nil hideAfterDelay:2.f];
     // 黑底白字
-    // [CJToast shortShowMessage:message inView:view withLabelTextColor:[UIColor whiteColor] bezelViewColor:[UIColor blackColor] hideAfterDelay:2.f];
+    // [CJToast showMessage:message inView:view withLabelTextColor:[UIColor whiteColor] bezelViewColor:[UIColor blackColor] hideAfterDelay:2.f];
 }
 
 @end

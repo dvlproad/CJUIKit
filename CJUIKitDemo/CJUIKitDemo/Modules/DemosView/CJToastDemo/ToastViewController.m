@@ -46,7 +46,7 @@
             CJModuleModel *toastModule = [[CJModuleModel alloc] init];
             toastModule.title = @"直接显示";
             toastModule.actionBlock = ^{
-                [CJToast shortShowMessage:@"测试" image:[UIImage imageNamed:@"icon.png"] toView:self.view];
+                [CJToast showMessage:@"测试" image:[UIImage imageNamed:@"icon.png"] toView:self.view hideAfterDelay:0.7];
             };
             [sectionDataModel.values addObject:toastModule];
         }
@@ -55,7 +55,7 @@
             toastModule.title = @"灰底黑字，2秒后自动消失";
             toastModule.actionBlock = ^{
                 UIView *view = [[UIApplication sharedApplication].delegate window];
-                [CJToast shortShowMessage:@"灰底黑字，2秒后自动消失" inView:view withLabelTextColor:nil bezelViewColor:nil hideAfterDelay:2.f];
+                [CJToast showMessage:@"灰底黑字，2秒后自动消失" inView:view withLabelTextColor:nil bezelViewColor:nil hideAfterDelay:2.f];
             };
             [sectionDataModel.values addObject:toastModule];
         }
@@ -63,11 +63,11 @@
             CJModuleModel *toastModule = [[CJModuleModel alloc] init];
             toastModule.title = @"自定义视图";
             toastModule.actionBlock = ^{
-                [CJToast shortShowMessage:@"在指定的view上显示文字，并在delay秒后自动消失\n换行是否有效"
-                                   inView:self.view
-                       withLabelTextColor:[UIColor redColor]
-                           bezelViewColor:[UIColor greenColor]
-                           hideAfterDelay:2];
+                [CJToast showMessage:@"在指定的view上显示文字，并在delay秒后自动消失\n换行是否有效"
+                              inView:self.view
+                  withLabelTextColor:[UIColor redColor]
+                      bezelViewColor:[UIColor greenColor]
+                      hideAfterDelay:2];
             };
             [sectionDataModel.values addObject:toastModule];
         }
@@ -75,11 +75,11 @@
             CJModuleModel *toastModule = [[CJModuleModel alloc] init];
             toastModule.title = @"测试使用\n换行是否有效";
             toastModule.actionBlock = ^{
-                [CJToast shortShowMessage:@"第一行\n换行是否有效"
-                                   inView:self.view
-                       withLabelTextColor:[UIColor redColor]
-                           bezelViewColor:[UIColor greenColor]
-                           hideAfterDelay:2];
+                [CJToast showMessage:@"第一行\n换行是否有效"
+                              inView:self.view
+                  withLabelTextColor:[UIColor redColor]
+                      bezelViewColor:[UIColor greenColor]
+                      hideAfterDelay:2];
             };
             [sectionDataModel.values addObject:toastModule];
         }

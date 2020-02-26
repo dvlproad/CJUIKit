@@ -25,23 +25,26 @@ NS_ASSUME_NONNULL_BEGIN
  *  @param bezelViewColor   文字所在背景框的颜色
  *  @param delay            多少秒后自动消失
  */
-+ (void)shortShowMessage:(NSString *)message
-                  inView:(UIView *)view
-      withLabelTextColor:(UIColor * _Nullable)labelTextColor
-          bezelViewColor:(UIColor * _Nullable)bezelViewColor
-          hideAfterDelay:(NSTimeInterval)delay;
++ (void)showMessage:(NSString *)message
+             inView:(UIView *)view
+ withLabelTextColor:(UIColor * _Nullable)labelTextColor
+     bezelViewColor:(UIColor * _Nullable)bezelViewColor
+     hideAfterDelay:(NSTimeInterval)delay;
 
 
 
 #pragma mark - Text And Image
 /**
- *  在指定的view上短暂的显示文字及图片（0.7秒后自动消失）
+ *  在指定的view上短暂的显示文字及图片（delay秒后自动消失）
  *
  *  @param message  要显示的文字
  *  @param image    要显示的图片
  *  @param view     要显示在的视图
  */
-+ (void)shortShowMessage:(NSString *)message image:(UIImage *)image toView:(UIView *)view;
++ (void)showMessage:(NSString *)message
+              image:(UIImage *)image
+             toView:(UIView *)view
+     hideAfterDelay:(NSTimeInterval)delay;
 
 
 #pragma mark - Text And 菊花
