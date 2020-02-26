@@ -8,6 +8,7 @@
 
 #import "BadgeButtonViewController.h"
 #import "UIColor+CJHex.h"
+#import "CJBadgeButton.h"
 
 @interface BadgeButtonViewController ()
 
@@ -19,9 +20,8 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     self.title = NSLocalizedString(@"CJBadgeButton", nil);
-    self.view.backgroundColor = [UIColor whiteColor];
     
-    CJBadgeButton *badgeButton = [DemoButtonFactory defaultBadgeButton];
+    CJBadgeButton *badgeButton = [self defaultBadgeButton];
     [self.view addSubview:badgeButton];
     [badgeButton mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.right.mas_equalTo(self.view);
@@ -34,7 +34,7 @@
     [badgeButton addTarget:self action:@selector(buttonAction) forControlEvents:UIControlEventTouchUpInside];
     badgeButton.badge = 100;
     
-    CJBadgeButton *badgeButton2 = [DemoButtonFactory goDeliverBadgeButton];
+    CJBadgeButton *badgeButton2 = [self goDeliverBadgeButton];
     [self.view addSubview:badgeButton2];
     [badgeButton2 mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.mas_equalTo(badgeButton.mas_bottom).mas_offset(40);
@@ -49,6 +49,36 @@
 
 - (void)buttonAction {
     NSLog(@"点击照片");
+}
+
+
+#pragma mark - Private Method
+- (CJBadgeButton *)defaultBadgeButton {
+    CJBadgeButton *badgeButton = [CJBadgeButton buttonWithType:UIButtonTypeCustom];
+    badgeButton.badgeLabel.backgroundColor = [UIColor redColor];
+    badgeButton.badgeLabel.textColor = [UIColor whiteColor];
+    badgeButton.layer.cornerRadius = 10;
+    
+    return badgeButton;
+}
+
+- (CJBadgeButton *)goDeliverBadgeButton {
+    CJBadgeButton *badgeButton = [CJBadgeButton buttonWithType:UIButtonTypeCustom];
+    badgeButton.backgroundColor = [UIColor cyanColor];
+    badgeButton.badgeLabel.backgroundColor = [UIColor redColor];
+    badgeButton.badgeLabel.textColor = [UIColor whiteColor];
+    badgeButton.badgeLabel.font = [UIFont boldSystemFontOfSize:17];
+    badgeButton.badgeLabel.layer.cornerRadius = 3;
+    badgeButton.badgeLabelTop = 5;
+    badgeButton.badgeLabelRight = 0;
+    badgeButton.badgeLabelWidth = 40;
+    badgeButton.badgeLabelHeight = 23;
+    [badgeButton setImage:[UIImage imageNamed:@"badgeButton_normal"] forState:UIControlStateNormal];
+    [badgeButton setImage:[UIImage imageNamed:@"badgeButton_highlighted"] forState:UIControlStateHighlighted];
+    badgeButton.titleLabel.font = [UIFont systemFontOfSize:18];
+    [badgeButton setTitleEdgeInsets:UIEdgeInsetsMake(44, -104, 0, 0)];
+    
+    return badgeButton;
 }
 
 - (void)didReceiveMemoryWarning {

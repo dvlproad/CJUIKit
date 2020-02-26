@@ -8,6 +8,7 @@
 
 #import "CJUIKitBaseScrollViewController.h"
 #import "CJExtraTextTextField.h"
+#import "DemoTextFieldFactory.h"
 
 @interface TextFieldViewController : CJUIKitBaseScrollViewController
 

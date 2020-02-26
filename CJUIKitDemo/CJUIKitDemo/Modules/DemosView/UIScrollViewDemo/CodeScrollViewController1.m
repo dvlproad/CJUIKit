@@ -7,6 +7,7 @@
 //
 
 #import "CodeScrollViewController1.h"
+#import "TSButtonFactory.h"
 
 @interface CodeScrollViewController1 ()
 
@@ -25,7 +26,7 @@
     
 //    [self updateScrollHeightWithBottomInterval:1 accordingToLastBottomView:nil];
     
-    UIButton *blueButton = [DemoButtonFactory blueButton];
+    UIButton *blueButton = [TSButtonFactory themeBGButton];
     [self.containerView addSubview:blueButton];
     [blueButton mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.mas_equalTo(self.containerView).mas_offset(20);

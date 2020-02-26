@@ -1,15 +1,15 @@
 //
-//  CJBaseAlertView+CQPopupAction.m
+//  CJBaseAlertView+TSPopupAction.m
 //  CJUIKitDemo
 //
 //  Created by ciyouzen on 2020/2/14.
 //  Copyright © 2020 dvlproad. All rights reserved.
 //
 
-#import "CJBaseAlertView+CQPopupAction.h"
+#import "CJBaseAlertView+TSPopupAction.h"
 #import "UIView+CJPopupInView.h"
 
-@implementation CJBaseAlertView (CQPopupAction)
+@implementation CJBaseAlertView (TSPopupAction)
 
 /*
 *  显示弹窗

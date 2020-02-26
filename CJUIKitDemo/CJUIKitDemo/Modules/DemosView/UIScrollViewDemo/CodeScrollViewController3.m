@@ -7,6 +7,7 @@
 //
 
 #import "CodeScrollViewController3.h"
+#import "UIColor+CJHex.h"
 
 @interface CodeScrollViewController3 () {
     

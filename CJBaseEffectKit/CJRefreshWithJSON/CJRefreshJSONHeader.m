@@ -107,7 +107,7 @@ static const CGFloat loadingViewHeight = 32;
     // 添加动画
 //    NSString *bundlePath = [[NSBundle mainBundle] pathForResource:@"CommonUIBundle" ofType:@"bundle"];
 //    NSBundle *resourceBundle = [NSBundle bundleWithPath:bundlePath];
-//    //NSBundle *resourceBundle2 = [NSBundle bundleForClass:[CQProgressHUD class]]; //错误的取值，取不全
+//    //NSBundle *resourceBundle2 = [NSBundle bundleForClass:[CJProgressHUD class]]; //错误的取值，取不全
 //    _lotAnimationView = [LOTAnimationView animationNamed:@"loading_test" inBundle:resourceBundle];
     NSString *headerAnimationNamed = [CJRefreshJSONSettingManager sharedInstance].animationNamed;
     if (headerAnimationNamed.length == 0) {

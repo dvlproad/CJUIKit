@@ -24,6 +24,7 @@
 
 
 #import "UIImage+CJCreate.h"
+#import "TSButtonFactory.h"
 
 @interface TextFieldViewController () <UITextFieldDelegate> {
 
@@ -125,9 +126,7 @@
         make.top.mas_equalTo(areaCodeTextField.mas_bottom).mas_offset(40);
         make.height.mas_equalTo(80);
     }];
-    UIButton *changeTFSecureButton = [DemoButtonFactory blueButton];
-    [changeTFSecureButton setTitle:@"明文" forState:UIControlStateNormal];
-    [changeTFSecureButton setTitle:@"密文" forState:UIControlStateSelected];
+    UIButton *changeTFSecureButton = [TSButtonFactory themeNormalSelectedButtonWithNormalTitle:@"明文" selectedTitle:@"密文"];
     [changeTFSecureButton addTarget:self action:@selector(changeSecureTextEntry:) forControlEvents:UIControlEventTouchUpInside];
     self.changeTFSecureButton = changeTFSecureButton;
     CJTextField *cjTextField = [DemoTextFieldFactory textFieldWithLeftLabelText:@"密码:" rightButton:changeTFSecureButton];
@@ -278,7 +277,7 @@
         NSString *oldText = textField.text;
         NSString *newText = [oldText stringByReplacingCharactersInRange:range withString:string];//若允许改变，则会改变成的新文本
         if ([newText length] > 10) {
-            [CQToast showMessage:@"文本过长，超过最大的10个字符了"];
+            [TSToast showMessage:@"文本过长，超过最大的10个字符了"];
             [textField cjShake];
             return NO;
         }

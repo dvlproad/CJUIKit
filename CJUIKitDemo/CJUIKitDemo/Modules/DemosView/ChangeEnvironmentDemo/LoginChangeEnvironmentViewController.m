@@ -10,6 +10,7 @@
 #import <CJPopupView/CJPopoverListView.h>
 #import "UIView+CJShowExtendView.h"
 #import "DemoChangeEnvironmentViewModel.h"
+#import "TSButtonFactory.h"
 
 @interface LoginChangeEnvironmentViewController ()
 
@@ -30,7 +31,7 @@
     self.title = NSLocalizedString(@"ChangeEnvironment(在登录的时候改变app环境)", nil);
     self.view.backgroundColor = [UIColor whiteColor];
     
-    UIButton *cjTestButton1 = [DemoButtonFactory blueButton];
+    UIButton *cjTestButton1 = [TSButtonFactory themeBGButton];
     [cjTestButton1 setTitle:NSLocalizedString(@"改变app环境", nil) forState:UIControlStateNormal];
     [cjTestButton1 addTarget:self action:@selector(popItemChoose1:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:cjTestButton1];
@@ -42,7 +43,7 @@
     }];
     self.cjTestButton1 = cjTestButton1;
     
-    UIButton *cjTestButton2 = [DemoButtonFactory blueButton];
+    UIButton *cjTestButton2 = [TSButtonFactory themeBGButton];
     [cjTestButton2 setTitle:NSLocalizedString(@"改变app环境", nil) forState:UIControlStateNormal];
     [cjTestButton2 addTarget:self action:@selector(popItemChoose2:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:cjTestButton2];
@@ -55,7 +56,7 @@
     self.cjTestButton2 = cjTestButton2;
     
     
-    UIButton *changeEnvironmentButton = [DemoButtonFactory blueButton];
+    UIButton *changeEnvironmentButton = [TSButtonFactory themeBGButton];
     [self.view addSubview:changeEnvironmentButton];
     [changeEnvironmentButton mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.mas_equalTo(self.view).mas_offset(20);

@@ -9,6 +9,7 @@
 #import "GifViewController.h"
 #import <SDWebImage/UIImage+GIF.h>
 #import <SDWebImage/SDWebImageDownloader.h>
+#import "TSButtonFactory.h"
 
 @interface GifViewController () {
     
@@ -24,7 +25,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    UIButton *pngBlueButton = [DemoButtonFactory blueButton];
+    UIButton *pngBlueButton = [TSButtonFactory themeBGButton];
     [pngBlueButton setTitle:NSLocalizedString(@"显示PNG图片", nil) forState:UIControlStateNormal];
     [pngBlueButton addTarget:self action:@selector(showPNG) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:pngBlueButton];
@@ -35,7 +36,7 @@
         make.height.mas_equalTo(44);
     }];
     
-    UIButton *gifBlueButton = [DemoButtonFactory blueButton];
+    UIButton *gifBlueButton = [TSButtonFactory themeBGButton];
     [gifBlueButton setTitle:NSLocalizedString(@"显示Gif动画", nil) forState:UIControlStateNormal];
     [gifBlueButton addTarget:self action:@selector(showGif) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:gifBlueButton];

@@ -8,6 +8,7 @@
 
 #import "NavigationBarNormalChangeBGViewController.h"
 #import "UINavigationBar+CJChangeBG.h"
+#import "TSButtonFactory.h"
 
 @interface NavigationBarNormalChangeBGViewController () {
     
@@ -45,7 +46,7 @@
     self.title = NSLocalizedString(@"登录(改变背景色以隐藏导航栏)", nil);
     self.view.backgroundColor = [UIColor greenColor];
     
-    UIButton *blueButton = [DemoButtonFactory blueButton];
+    UIButton *blueButton = [TSButtonFactory themeBGButton];
     [blueButton setTitle:@"goNextViewController" forState:UIControlStateNormal];
     [blueButton addTarget:self action:@selector(goNextViewController) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:blueButton];

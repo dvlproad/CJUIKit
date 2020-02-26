@@ -10,6 +10,7 @@
 #import <CJFoundation/NSString+CJTextSize.h>
 #import "UIImage+CJCreate.h"
 #import "DemoTextFieldFactory.h"
+#import "UIButton+CJMoreProperty.h"
 
 @interface TestTextFieldOffsetTableViewCell () {
     

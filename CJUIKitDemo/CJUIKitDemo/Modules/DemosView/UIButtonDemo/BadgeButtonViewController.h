@@ -7,11 +7,9 @@
 //
 
 #import "CJUIKitBaseViewController.h"
-#import "DemoButtonFactory.h"
 
 @interface BadgeButtonViewController : CJUIKitBaseViewController {
     
 }
-@property (nonatomic, strong) CJBadgeButton *badgeButton;
 
 @end

@@ -1,5 +1,5 @@
 //
-//  CJBaseAlertView+CQPopupAction.h
+//  CJBaseAlertView+TSPopupAction.h
 //  CJUIKitDemo
 //
 //  Created by ciyouzen on 2020/2/14.
@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface CJBaseAlertView (CQPopupAction)
+@interface CJBaseAlertView (TSPopupAction)
 
 /*
 *  显示弹窗

@@ -10,7 +10,7 @@
 		1560230523E2A6C300DEAC2A /* loading_coffee.json in Resources */ = {isa = PBXBuildFile; fileRef = 1560230323E2A6C300DEAC2A /* loading_coffee.json */; };
 		1560230623E2A6C300DEAC2A /* loading_tea.json in Resources */ = {isa = PBXBuildFile; fileRef = 1560230423E2A6C300DEAC2A /* loading_tea.json */; };
 		1562F1FF23F5C0770009FCEA /* TSAlertUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 1562F1FD23F5C0770009FCEA /* TSAlertUtil.m */; };
-		1562F20223F5C8130009FCEA /* CJBaseAlertView+CQPopupAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 1562F20123F5C8130009FCEA /* CJBaseAlertView+CQPopupAction.m */; };
+		1562F20223F5C8130009FCEA /* CJBaseAlertView+TSPopupAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 1562F20123F5C8130009FCEA /* CJBaseAlertView+TSPopupAction.m */; };
 		1562F2AF23F5DBF40009FCEA /* UIImage+CJRotateAngle.m in Sources */ = {isa = PBXBuildFile; fileRef = 1562F20723F5DBF40009FCEA /* UIImage+CJRotateAngle.m */; };
 		1562F2B023F5DBF40009FCEA /* UIImage+CJChangeColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 1562F20823F5DBF40009FCEA /* UIImage+CJChangeColor.m */; };
 		1562F2B123F5DBF40009FCEA /* UIImage+CJBlur.m in Sources */ = {isa = PBXBuildFile; fileRef = 1562F20C23F5DBF40009FCEA /* UIImage+CJBlur.m */; };
@@ -77,7 +77,7 @@
 		1562F2F123F5DBF40009FCEA /* CJExtraTextTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 1562F2A923F5DBF40009FCEA /* CJExtraTextTextField.m */; };
 		1562F2F223F5DBF40009FCEA /* UITextField+CJPadding.m in Sources */ = {isa = PBXBuildFile; fileRef = 1562F2AC23F5DBF40009FCEA /* UITextField+CJPadding.m */; };
 		1562F2F323F5DBF40009FCEA /* UITextField+CJSelectedTextRange.m in Sources */ = {isa = PBXBuildFile; fileRef = 1562F2AD23F5DBF40009FCEA /* UITextField+CJSelectedTextRange.m */; };
-		1562F30023F945F20009FCEA /* CQToast.m in Sources */ = {isa = PBXBuildFile; fileRef = 1562F2FC23F945F20009FCEA /* CQToast.m */; };
+		1562F30023F945F20009FCEA /* TSToast.m in Sources */ = {isa = PBXBuildFile; fileRef = 1562F2FC23F945F20009FCEA /* TSToast.m */; };
 		1562F30123F945F20009FCEA /* demo_toast_error@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1562F2FE23F945F20009FCEA /* demo_toast_error@3x.png */; };
 		1562F30223F945F20009FCEA /* demo_toast_error@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1562F2FF23F945F20009FCEA /* demo_toast_error@2x.png */; };
 		1562F31423F96BDC0009FCEA /* SelfHUDDismissViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1562F30723F96BDC0009FCEA /* SelfHUDDismissViewController.m */; };
@@ -92,6 +92,11 @@
 		1562F38723FD2FC70009FCEA /* APPUIKitSetting.m in Sources */ = {isa = PBXBuildFile; fileRef = 1562F38123FD2FC70009FCEA /* APPUIKitSetting.m */; };
 		1562F38823FD2FC70009FCEA /* AppDelegate+WindowRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1562F38523FD2FC70009FCEA /* AppDelegate+WindowRootViewController.m */; };
 		1562F38923FD2FC70009FCEA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1562F38623FD2FC70009FCEA /* AppDelegate.m */; };
+		156AC8D12406D9F800A5A23D /* DemoTagButtonFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 156AC8CF2406D9F800A5A23D /* DemoTagButtonFactory.m */; };
+		156AC8D62406DBBE00A5A23D /* badgeButton_highlighted@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 156AC8D22406DBBE00A5A23D /* badgeButton_highlighted@3x.png */; };
+		156AC8D72406DBBE00A5A23D /* badgeButton_normal@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 156AC8D32406DBBE00A5A23D /* badgeButton_normal@2x.png */; };
+		156AC8D82406DBBE00A5A23D /* badgeButton_highlighted@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 156AC8D42406DBBE00A5A23D /* badgeButton_highlighted@2x.png */; };
+		156AC8D92406DBBE00A5A23D /* badgeButton_normal@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 156AC8D52406DBBE00A5A23D /* badgeButton_normal@3x.png */; };
 		15A7680C23FD966B00358B42 /* TSButtonFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 15A7680523FD966A00358B42 /* TSButtonFactory.m */; };
 		15C970BE23DB5AEA008D81B0 /* UIAlertUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 15C970BD23DB5AEA008D81B0 /* UIAlertUtil.m */; };
 		15C970D723DB6125008D81B0 /* ActionSheetHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 15C970D523DB6125008D81B0 /* ActionSheetHomeViewController.m */; };
@@ -127,7 +132,6 @@
 		781C737421BA65C90090080C /* add_common_icon@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 781C737021BA65C90090080C /* add_common_icon@3x.png */; };
 		781C737721BA6A170090080C /* TestValueChangeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 781C737621BA6A170090080C /* TestValueChangeModel.m */; };
 		78226A9021A42103002167F2 /* CJConvertUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 78226A8E21A42103002167F2 /* CJConvertUtil.m */; };
-		78293DED223D3615008FF82C /* DemoTagButtonFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 78293DEC223D3615008FF82C /* DemoTagButtonFactory.m */; };
 		78293F0A21FC2B9C00F70F43 /* CodeScrollViewController3.m in Sources */ = {isa = PBXBuildFile; fileRef = 78293F0121FC2B9C00F70F43 /* CodeScrollViewController3.m */; };
 		78293F0D21FC2B9C00F70F43 /* KeyboardAvoidingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78293F0721FC2B9C00F70F43 /* KeyboardAvoidingViewController.m */; };
 		782ACC98223C0E220041B642 /* CodeScrollViewController1.m in Sources */ = {isa = PBXBuildFile; fileRef = 782ACC97223C0E220041B642 /* CodeScrollViewController1.m */; };
@@ -212,7 +216,6 @@
 		788113CB21996A2600D1630D /* SubNormalSharedInstanceClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 788113CA21996A2600D1630D /* SubNormalSharedInstanceClass.m */; };
 		788113CE21996A3A00D1630D /* SubInheritableSharedInstanceClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 788113CD21996A3A00D1630D /* SubInheritableSharedInstanceClass.m */; };
 		7885FC4A2156681F00B97DAA /* UIView+CJPopupInSuspendWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 7885FC482156681F00B97DAA /* UIView+CJPopupInSuspendWindow.m */; };
-		7885FC9321567BE000B97DAA /* DemoButtonFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 7885FC9221567BE000B97DAA /* DemoButtonFactory.m */; };
 		788A55FA21AFCE540011F993 /* DemoLabelFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 788A55F921AFCE540011F993 /* DemoLabelFactory.m */; };
 		789A4EE021FAAC76001528B9 /* CJBaseTableViewCell+ConfigureForDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 789A4EDF21FAAC76001528B9 /* CJBaseTableViewCell+ConfigureForDataModel.m */; };
 		789C443C21EECEE800181144 /* CJAppVersionUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 789C443A21EECEE700181144 /* CJAppVersionUtil.m */; };
@@ -223,10 +226,6 @@
 		789C448221F07F6C00181144 /* ImageSizeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 789C448021F07F6C00181144 /* ImageSizeViewController.xib */; };
 		789C448521F166FC00181144 /* DemoCacheUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 789C448421F166FC00181144 /* DemoCacheUtil.m */; };
 		78A0D043216B32D100EFAD67 /* BadgeButtonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78A0D042216B32D100EFAD67 /* BadgeButtonViewController.m */; };
-		78A0D057216BB19800EFAD67 /* badgeButton_normal@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 78A0D053216BB19700EFAD67 /* badgeButton_normal@2x.png */; };
-		78A0D058216BB19800EFAD67 /* badgeButton_highlighted@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 78A0D054216BB19700EFAD67 /* badgeButton_highlighted@3x.png */; };
-		78A0D059216BB19800EFAD67 /* badgeButton_highlighted@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 78A0D055216BB19800EFAD67 /* badgeButton_highlighted@2x.png */; };
-		78A0D05A216BB19800EFAD67 /* badgeButton_normal@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 78A0D056216BB19800EFAD67 /* badgeButton_normal@3x.png */; };
 		78A4E1B42173A0D9005FEADD /* DemoChangeEnvironmentViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 78A4E1B32173A0D8005FEADD /* DemoChangeEnvironmentViewModel.m */; };
 		78A4E1D52175EB93005FEADD /* NavigationBarNormalChangeBGViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78A4E1D42175EB93005FEADD /* NavigationBarNormalChangeBGViewController.m */; };
 		78A621A921319723004DA046 /* SuspendWindowViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78A621A821319723004DA046 /* SuspendWindowViewController.m */; };
@@ -389,8 +388,8 @@
 		1560230423E2A6C300DEAC2A /* loading_tea.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = loading_tea.json; sourceTree = "<group>"; };
 		1562F1FD23F5C0770009FCEA /* TSAlertUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSAlertUtil.m; sourceTree = "<group>"; };
 		1562F1FE23F5C0770009FCEA /* TSAlertUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSAlertUtil.h; sourceTree = "<group>"; };
-		1562F20023F5C8130009FCEA /* CJBaseAlertView+CQPopupAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CJBaseAlertView+CQPopupAction.h"; sourceTree = "<group>"; };
-		1562F20123F5C8130009FCEA /* CJBaseAlertView+CQPopupAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CJBaseAlertView+CQPopupAction.m"; sourceTree = "<group>"; };
+		1562F20023F5C8130009FCEA /* CJBaseAlertView+TSPopupAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CJBaseAlertView+TSPopupAction.h"; sourceTree = "<group>"; };
+		1562F20123F5C8130009FCEA /* CJBaseAlertView+TSPopupAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CJBaseAlertView+TSPopupAction.m"; sourceTree = "<group>"; };
 		1562F20523F5DBF40009FCEA /* UIImageCJCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIImageCJCategory.h; sourceTree = "<group>"; };
 		1562F20723F5DBF40009FCEA /* UIImage+CJRotateAngle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+CJRotateAngle.m"; sourceTree = "<group>"; };
 		1562F20823F5DBF40009FCEA /* UIImage+CJChangeColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+CJChangeColor.m"; sourceTree = "<group>"; };
@@ -519,8 +518,8 @@
 		1562F2AC23F5DBF40009FCEA /* UITextField+CJPadding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextField+CJPadding.m"; sourceTree = "<group>"; };
 		1562F2AD23F5DBF40009FCEA /* UITextField+CJSelectedTextRange.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextField+CJSelectedTextRange.m"; sourceTree = "<group>"; };
 		1562F2AE23F5DBF40009FCEA /* UITextField+CJTextChangeBlock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextField+CJTextChangeBlock.h"; sourceTree = "<group>"; };
-		1562F2FC23F945F20009FCEA /* CQToast.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CQToast.m; sourceTree = "<group>"; };
-		1562F2FD23F945F20009FCEA /* CQToast.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CQToast.h; sourceTree = "<group>"; };
+		1562F2FC23F945F20009FCEA /* TSToast.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSToast.m; sourceTree = "<group>"; };
+		1562F2FD23F945F20009FCEA /* TSToast.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSToast.h; sourceTree = "<group>"; };
 		1562F2FE23F945F20009FCEA /* demo_toast_error@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "demo_toast_error@3x.png"; sourceTree = "<group>"; };
 		1562F2FF23F945F20009FCEA /* demo_toast_error@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "demo_toast_error@2x.png"; sourceTree = "<group>"; };
 		1562F30723F96BDC0009FCEA /* SelfHUDDismissViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelfHUDDismissViewController.m; sourceTree = "<group>"; };
@@ -547,6 +546,12 @@
 		1562F38423FD2FC70009FCEA /* APPUIKitSetting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APPUIKitSetting.h; sourceTree = "<group>"; };
 		1562F38523FD2FC70009FCEA /* AppDelegate+WindowRootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AppDelegate+WindowRootViewController.m"; sourceTree = "<group>"; };
 		1562F38623FD2FC70009FCEA /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		156AC8CF2406D9F800A5A23D /* DemoTagButtonFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DemoTagButtonFactory.m; sourceTree = "<group>"; };
+		156AC8D02406D9F800A5A23D /* DemoTagButtonFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DemoTagButtonFactory.h; sourceTree = "<group>"; };
+		156AC8D22406DBBE00A5A23D /* badgeButton_highlighted@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "badgeButton_highlighted@3x.png"; sourceTree = "<group>"; };
+		156AC8D32406DBBE00A5A23D /* badgeButton_normal@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "badgeButton_normal@2x.png"; sourceTree = "<group>"; };
+		156AC8D42406DBBE00A5A23D /* badgeButton_highlighted@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "badgeButton_highlighted@2x.png"; sourceTree = "<group>"; };
+		156AC8D52406DBBE00A5A23D /* badgeButton_normal@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "badgeButton_normal@3x.png"; sourceTree = "<group>"; };
 		15A7680523FD966A00358B42 /* TSButtonFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSButtonFactory.m; sourceTree = "<group>"; };
 		15A7680623FD966A00358B42 /* TSButtonFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSButtonFactory.h; sourceTree = "<group>"; };
 		15C970BC23DB5AEA008D81B0 /* UIAlertUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIAlertUtil.h; sourceTree = "<group>"; };
@@ -610,8 +615,6 @@
 		781C737621BA6A170090080C /* TestValueChangeModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestValueChangeModel.m; sourceTree = "<group>"; };
 		78226A8E21A42103002167F2 /* CJConvertUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJConvertUtil.m; sourceTree = "<group>"; };
 		78226A8F21A42103002167F2 /* CJConvertUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJConvertUtil.h; sourceTree = "<group>"; };
-		78293DEB223D3615008FF82C /* DemoTagButtonFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DemoTagButtonFactory.h; sourceTree = "<group>"; };
-		78293DEC223D3615008FF82C /* DemoTagButtonFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DemoTagButtonFactory.m; sourceTree = "<group>"; };
 		78293F0121FC2B9C00F70F43 /* CodeScrollViewController3.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CodeScrollViewController3.m; sourceTree = "<group>"; };
 		78293F0321FC2B9C00F70F43 /* KeyboardAvoidingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeyboardAvoidingViewController.h; sourceTree = "<group>"; };
 		78293F0421FC2B9C00F70F43 /* CodeScrollViewController3.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CodeScrollViewController3.h; sourceTree = "<group>"; };
@@ -746,8 +749,6 @@
 		788113CD21996A3A00D1630D /* SubInheritableSharedInstanceClass.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SubInheritableSharedInstanceClass.m; sourceTree = "<group>"; };
 		7885FC482156681F00B97DAA /* UIView+CJPopupInSuspendWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+CJPopupInSuspendWindow.m"; sourceTree = "<group>"; };
 		7885FC492156681F00B97DAA /* UIView+CJPopupInSuspendWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+CJPopupInSuspendWindow.h"; sourceTree = "<group>"; };
-		7885FC9121567BE000B97DAA /* DemoButtonFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DemoButtonFactory.h; sourceTree = "<group>"; };
-		7885FC9221567BE000B97DAA /* DemoButtonFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DemoButtonFactory.m; sourceTree = "<group>"; };
 		788A55F821AFCE540011F993 /* DemoLabelFactory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DemoLabelFactory.h; sourceTree = "<group>"; };
 		788A55F921AFCE540011F993 /* DemoLabelFactory.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DemoLabelFactory.m; sourceTree = "<group>"; };
 		789A4EDE21FAAC76001528B9 /* CJBaseTableViewCell+ConfigureForDataModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CJBaseTableViewCell+ConfigureForDataModel.h"; sourceTree = "<group>"; };
@@ -767,10 +768,6 @@
 		789CAB597AD073D5F637D193 /* Pods-CJUIKitDemoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CJUIKitDemoTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-CJUIKitDemoTests/Pods-CJUIKitDemoTests.release.xcconfig"; sourceTree = "<group>"; };
 		78A0D041216B32D000EFAD67 /* BadgeButtonViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BadgeButtonViewController.h; sourceTree = "<group>"; };
 		78A0D042216B32D100EFAD67 /* BadgeButtonViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BadgeButtonViewController.m; sourceTree = "<group>"; };
-		78A0D053216BB19700EFAD67 /* badgeButton_normal@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "badgeButton_normal@2x.png"; sourceTree = "<group>"; };
-		78A0D054216BB19700EFAD67 /* badgeButton_highlighted@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "badgeButton_highlighted@3x.png"; sourceTree = "<group>"; };
-		78A0D055216BB19800EFAD67 /* badgeButton_highlighted@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "badgeButton_highlighted@2x.png"; sourceTree = "<group>"; };
-		78A0D056216BB19800EFAD67 /* badgeButton_normal@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "badgeButton_normal@3x.png"; sourceTree = "<group>"; };
 		78A4E1B22173A0D8005FEADD /* DemoChangeEnvironmentViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DemoChangeEnvironmentViewModel.h; sourceTree = "<group>"; };
 		78A4E1B32173A0D8005FEADD /* DemoChangeEnvironmentViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DemoChangeEnvironmentViewModel.m; sourceTree = "<group>"; };
 		78A4E1D32175EB92005FEADD /* NavigationBarNormalChangeBGViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NavigationBarNormalChangeBGViewController.h; sourceTree = "<group>"; };
@@ -1472,15 +1469,15 @@
 			path = CJTextField;
 			sourceTree = "<group>";
 		};
-		1562F2FB23F945F20009FCEA /* CQToast */ = {
+		1562F2FB23F945F20009FCEA /* TSToast */ = {
 			isa = PBXGroup;
 			children = (
-				1562F2FC23F945F20009FCEA /* CQToast.m */,
-				1562F2FD23F945F20009FCEA /* CQToast.h */,
+				1562F2FC23F945F20009FCEA /* TSToast.m */,
+				1562F2FD23F945F20009FCEA /* TSToast.h */,
 				1562F2FE23F945F20009FCEA /* demo_toast_error@3x.png */,
 				1562F2FF23F945F20009FCEA /* demo_toast_error@2x.png */,
 			);
-			path = CQToast;
+			path = TSToast;
 			sourceTree = "<group>";
 		};
 		1562F30623F96BDC0009FCEA /* HUDDemo */ = {
@@ -1530,6 +1527,8 @@
 			children = (
 				15A7680623FD966A00358B42 /* TSButtonFactory.h */,
 				15A7680523FD966A00358B42 /* TSButtonFactory.m */,
+				156AC8D02406D9F800A5A23D /* DemoTagButtonFactory.h */,
+				156AC8CF2406D9F800A5A23D /* DemoTagButtonFactory.m */,
 			);
 			path = TSButtonFactory;
 			sourceTree = "<group>";
@@ -1683,8 +1682,8 @@
 				15C970BD23DB5AEA008D81B0 /* UIAlertUtil.m */,
 				1562F1FE23F5C0770009FCEA /* TSAlertUtil.h */,
 				1562F1FD23F5C0770009FCEA /* TSAlertUtil.m */,
-				1562F20023F5C8130009FCEA /* CJBaseAlertView+CQPopupAction.h */,
-				1562F20123F5C8130009FCEA /* CJBaseAlertView+CQPopupAction.m */,
+				1562F20023F5C8130009FCEA /* CJBaseAlertView+TSPopupAction.h */,
+				1562F20123F5C8130009FCEA /* CJBaseAlertView+TSPopupAction.m */,
 			);
 			path = TSAlert;
 			sourceTree = "<group>";
@@ -1796,21 +1795,6 @@
 			path = KnowledgeDemo;
 			sourceTree = "<group>";
 		};
-		7852D9DB216F104000E50A39 /* DemoButtonFactory */ = {
-			isa = PBXGroup;
-			children = (
-				7885FC9121567BE000B97DAA /* DemoButtonFactory.h */,
-				7885FC9221567BE000B97DAA /* DemoButtonFactory.m */,
-				78293DEB223D3615008FF82C /* DemoTagButtonFactory.h */,
-				78293DEC223D3615008FF82C /* DemoTagButtonFactory.m */,
-				78A0D055216BB19800EFAD67 /* badgeButton_highlighted@2x.png */,
-				78A0D054216BB19700EFAD67 /* badgeButton_highlighted@3x.png */,
-				78A0D053216BB19700EFAD67 /* badgeButton_normal@2x.png */,
-				78A0D056216BB19800EFAD67 /* badgeButton_normal@3x.png */,
-			);
-			path = DemoButtonFactory;
-			sourceTree = "<group>";
-		};
 		7852D9DF216F16B000E50A39 /* CommonUI */ = {
 			isa = PBXGroup;
 			children = (
@@ -1818,14 +1802,13 @@
 				7857ABB5225482D200B1569C /* CJDemoDatePickerView */,
 				7857ABB92254AA1100B1569C /* CJDemoDateTextField */,
 				78FCF54A2306A9B900D275F9 /* CJDemoPopupView */,
-				1562F2FB23F945F20009FCEA /* CQToast */,
 				7808D5B0217079E5007FC851 /* DemoBarButtonItemFactory */,
-				7852D9DB216F104000E50A39 /* DemoButtonFactory */,
 				788A55F721AFCE3C0011F993 /* DemoLabel */,
 				78AB83BF21B96D7000853E21 /* DemoTextFieldFactory */,
 				15C970DB23DB6767008D81B0 /* TSActionSheet */,
 				78226A6A21A4012B002167F2 /* TSAlert */,
 				15A7680423FD966A00358B42 /* TSButtonFactory */,
+				1562F2FB23F945F20009FCEA /* TSToast */,
 			);
 			path = CommonUI;
 			sourceTree = "<group>";
@@ -2622,6 +2605,10 @@
 				80FF8FF21FC5649E00E437CF /* ButtonStructureViewController.m */,
 				78A0D041216B32D000EFAD67 /* BadgeButtonViewController.h */,
 				78A0D042216B32D100EFAD67 /* BadgeButtonViewController.m */,
+				156AC8D42406DBBE00A5A23D /* badgeButton_highlighted@2x.png */,
+				156AC8D22406DBBE00A5A23D /* badgeButton_highlighted@3x.png */,
+				156AC8D32406DBBE00A5A23D /* badgeButton_normal@2x.png */,
+				156AC8D52406DBBE00A5A23D /* badgeButton_normal@3x.png */,
 			);
 			path = UIButtonDemo;
 			sourceTree = "<group>";
@@ -2926,7 +2913,6 @@
 				781C737221BA65C90090080C /* minus_common_icon@2x.png in Resources */,
 				80FF90A11FC5649F00E437CF /* NestedXibSubViewA.xib in Resources */,
 				7808318422DC10F700F36576 /* loading@3x.gif in Resources */,
-				78A0D059216BB19800EFAD67 /* badgeButton_highlighted@2x.png in Resources */,
 				787FDB9320500B5C008A46E3 /* icon_ddlb_jd@2x.png in Resources */,
 				80FF90A01FC5649F00E437CF /* NestedXibView.xib in Resources */,
 				781C737421BA65C90090080C /* add_common_icon@3x.png in Resources */,
@@ -2936,6 +2922,7 @@
 				1562F2DB23F5DBF40009FCEA /* cjBackBarButtonItem@2x.png in Resources */,
 				80582FA720C12B1300C01225 /* taixi_icon@2x.png in Resources */,
 				78AB83AC21B7D24E00853E21 /* closePresentVC@2x.png in Resources */,
+				156AC8D82406DBBE00A5A23D /* badgeButton_highlighted@2x.png in Resources */,
 				787FDB8E20500B5C008A46E3 /* slider_minimum_trackimage@2x.png in Resources */,
 				7880E6F7213C2C4C009C9BCF /* CJRandomNameUtil.txt in Resources */,
 				7850B70820937C5A008F4A21 /* PopupInWindowVC.xib in Resources */,
@@ -2969,6 +2956,7 @@
 				7850B6FF20937C5A008F4A21 /* DragViewController.xib in Resources */,
 				1562F30223F945F20009FCEA /* demo_toast_error@2x.png in Resources */,
 				787FDB6820500B1F008A46E3 /* TextViewController.xib in Resources */,
+				156AC8D62406DBBE00A5A23D /* badgeButton_highlighted@3x.png in Resources */,
 				787FDB9120500B5C008A46E3 /* slider_double_thumbImage_b@2x.png in Resources */,
 				80FF90A61FC5649F00E437CF /* QRCodeViewController.xib in Resources */,
 				7850B70320937C5A008F4A21 /* ShowExtendViewVC.xib in Resources */,
@@ -2976,13 +2964,13 @@
 				787FDB9420500B5C008A46E3 /* slider_thumbImage@3x.png in Resources */,
 				80FF919F1FC5682B00E437CF /* ProcessLineViewController.xib in Resources */,
 				78B90E67218B49D000776584 /* MainAsset.xcassets in Resources */,
-				78A0D05A216BB19800EFAD67 /* badgeButton_normal@3x.png in Resources */,
 				1560230523E2A6C300DEAC2A /* loading_coffee.json in Resources */,
 				1562F2DD23F5DBF40009FCEA /* cjBackBarButtonItemGray@2x.png in Resources */,
 				7850B71220937E85008F4A21 /* WelcomePopupView.xib in Resources */,
 				8051E5CE20AAB34E003370AA /* details_icon_huadong@3x.png in Resources */,
 				80FF90B21FC5649F00E437CF /* TableHeaderView.xib in Resources */,
 				782F8771225AE80F001ACE76 /* cjTextField_clear@3x.png in Resources */,
+				156AC8D72406DBBE00A5A23D /* badgeButton_normal@2x.png in Resources */,
 				787FDB9520500B5C008A46E3 /* SwitchSliderViewController.xib in Resources */,
 				787FDB8720500B5C008A46E3 /* slider_maximum_trackimage@3x.png in Resources */,
 				787FDB8F20500B5C008A46E3 /* slider_minimum_trackimage@3x.png in Resources */,
@@ -3005,13 +2993,12 @@
 				787FDB9220500B5C008A46E3 /* slider_thumbImage@2x.png in Resources */,
 				80582FA220C121B500C01225 /* ImageRotateViewController.xib in Resources */,
 				789C448221F07F6C00181144 /* ImageSizeViewController.xib in Resources */,
-				78A0D058216BB19800EFAD67 /* badgeButton_highlighted@3x.png in Resources */,
+				156AC8D92406DBBE00A5A23D /* badgeButton_normal@3x.png in Resources */,
 				801F75DB20A040D800A2E027 /* signin_icon_open@2x.png in Resources */,
 				80FF90A91FC5649F00E437CF /* ImageChangeColorViewController.xib in Resources */,
 				787FDB8920500B5C008A46E3 /* slider_double_thumbImage_a@3x.png in Resources */,
 				1562F2D423F5DBF40009FCEA /* cjCheckBoxGreenYES@2x.png in Resources */,
 				78AB83AD21B7D24E00853E21 /* closePresentVC@3x.png in Resources */,
-				78A0D057216BB19800EFAD67 /* badgeButton_normal@2x.png in Resources */,
 				7808318922DC272700F36576 /* iamcoming.gif in Resources */,
 				7868277B21AF01BA00FCCDE5 /* bgCar@2x.jpg in Resources */,
 				807F126C20B5123A0008B748 /* animationBg02.jpg in Resources */,
@@ -3172,6 +3159,7 @@
 				80FF909C1FC5649F00E437CF /* NestedXibView.m in Sources */,
 				78226A9021A42103002167F2 /* CJConvertUtil.m in Sources */,
 				78AB83B121B8C49900853E21 /* CJUIKitBaseCollectionHomeViewController.m in Sources */,
+				156AC8D12406D9F800A5A23D /* DemoTagButtonFactory.m in Sources */,
 				801F75D820A040D800A2E027 /* BBXDAreaCodeTextField.m in Sources */,
 				1562F2C423F5DBF40009FCEA /* UISearchBar+CJAddInputAccessoryView.m in Sources */,
 				78B6C2EE2159D8AF00D5864E /* DemoBusPassengerOrderModel.m in Sources */,
@@ -3190,7 +3178,6 @@
 				7856F72B21F4E790004AF751 /* TestDataModel.m in Sources */,
 				788113CE21996A3A00D1630D /* SubInheritableSharedInstanceClass.m in Sources */,
 				781495A92140D82600D0F2BC /* MantleViewController.m in Sources */,
-				78293DED223D3615008FF82C /* DemoTagButtonFactory.m in Sources */,
 				1562F31623F96BDC0009FCEA /* HUDHomeViewController.m in Sources */,
 				7808D59321703C33007FC851 /* ChangeEnvironmentViewController.m in Sources */,
 				783A4A19219BC73500CBF4FC /* NSObject+CJSharedInstance.m in Sources */,
@@ -3221,7 +3208,7 @@
 				78575C8A2257242100925842 /* TestTextFieldOffsetViewController.m in Sources */,
 				78A74E482368777F0023F44B /* CJDealTextModelFactory.m in Sources */,
 				7808319222DC65DD00F36576 /* WelcomeViewController.m in Sources */,
-				1562F30023F945F20009FCEA /* CQToast.m in Sources */,
+				1562F30023F945F20009FCEA /* TSToast.m in Sources */,
 				15A7680C23FD966B00358B42 /* TSButtonFactory.m in Sources */,
 				78B6C2E32159D6BC00D5864E /* DemoBusStationModel.m in Sources */,
 				15C970BE23DB5AEA008D81B0 /* UIAlertUtil.m in Sources */,
@@ -3254,7 +3241,6 @@
 				78E1895621777CB900B8781A /* CJUIKitBaseViewController.m in Sources */,
 				787FDB8620500B5C008A46E3 /* SliderViewController.m in Sources */,
 				7850B70020937C5A008F4A21 /* DragViewController.m in Sources */,
-				7885FC9321567BE000B97DAA /* DemoButtonFactory.m in Sources */,
 				1562F2E023F5DBF40009FCEA /* CJSwitchSliderStatusModel.m in Sources */,
 				1562F37923F9BA660009FCEA /* JSONRefreshViewController.m in Sources */,
 				80FF90A41FC5649F00E437CF /* HomeViewController.m in Sources */,
@@ -3355,7 +3341,7 @@
 				80FF909F1FC5649F00E437CF /* NestedXibViewController.m in Sources */,
 				1562F2F223F5DBF40009FCEA /* UITextField+CJPadding.m in Sources */,
 				787FDB5620500B01008A46E3 /* SearchBarViewController.m in Sources */,
-				1562F20223F5C8130009FCEA /* CJBaseAlertView+CQPopupAction.m in Sources */,
+				1562F20223F5C8130009FCEA /* CJBaseAlertView+TSPopupAction.m in Sources */,
 				80FF91941FC5682B00E437CF /* TypeConvertViewController.m in Sources */,
 				1562F2E823F5DBF40009FCEA /* CJAdsorbModel.m in Sources */,
 				1562F2DE23F5DBF40009FCEA /* UIViewController+CJSystemBackButtonHandler.m in Sources */,

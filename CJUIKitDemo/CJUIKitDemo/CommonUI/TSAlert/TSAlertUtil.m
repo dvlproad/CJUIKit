@@ -9,7 +9,7 @@
 #import "TSAlertUtil.h"
 #import <CJBaseOverlayKit/CJMessageAlertView.h>
 #import <CJBaseOverlayKit/CJTextInputAlertView.h>
-#import "CJBaseAlertView+CQPopupAction.h"
+#import "CJBaseAlertView+TSPopupAction.h"
 
 @implementation TSAlertUtil
 

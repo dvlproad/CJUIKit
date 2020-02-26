@@ -7,6 +7,7 @@
 //
 
 #import "SemaphoreGateKeeperViewController.h"
+#import "TSButtonFactory.h"
 
 @interface SemaphoreGateKeeperViewController () {
     
@@ -23,17 +24,17 @@
     self.navigationItem.title = NSLocalizedString(@"测试使用semaphore实现gateKeeper", nil);
     self.view.backgroundColor = [UIColor whiteColor];
     
-    UIButton *cjTestButton1 = [DemoButtonFactory blueButton];
+    UIButton *cjTestButton1 = [TSButtonFactory themeBGButton];
     [cjTestButton1 setTitle:@"开始_测试使用semaphore实现gateKeeper" forState:UIControlStateNormal];
     [cjTestButton1 addTarget:self action:@selector(start) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:cjTestButton1];
     
-    UIButton *cjTestButton2 = [DemoButtonFactory blueButton];
+    UIButton *cjTestButton2 = [TSButtonFactory themeBGButton];
     [cjTestButton2 setTitle:@"暂停_测试使用semaphore实现gateKeeper" forState:UIControlStateNormal];
     [cjTestButton2 addTarget:self action:@selector(pause) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:cjTestButton2];
     
-    UIButton *cjTestButton3 = [DemoButtonFactory blueButton];
+    UIButton *cjTestButton3 = [TSButtonFactory themeBGButton];
     [cjTestButton3 setTitle:@"结束_测试使用semaphore实现gateKeeper" forState:UIControlStateNormal];
     [cjTestButton3 addTarget:self action:@selector(stop) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:cjTestButton3];

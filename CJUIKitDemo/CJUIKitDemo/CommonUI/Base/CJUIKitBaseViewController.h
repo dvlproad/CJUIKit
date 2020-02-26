@@ -14,7 +14,7 @@
 #import <CJBaseUIKit/UIColor+CJHex.h>
 #endif
 
-#import "CQToast.h"
+#import "TSToast.h"
 
 @interface CJUIKitBaseViewController : UIViewController
 

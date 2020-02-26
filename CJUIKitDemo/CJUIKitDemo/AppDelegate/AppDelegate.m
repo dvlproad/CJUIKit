@@ -20,7 +20,7 @@
 #import <CJFoundation/NSString+CJCut.h>
 #import <CJFoundation/NSString+CJAttributedString.h>
 
-#import "CQToast.h"
+#import "TSToast.h"
 #import "APPUIKitSetting.h"
 
 @interface AppDelegate ()
@@ -64,9 +64,9 @@
     
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     // 所有测试
-    UIViewController *rootViewController = [self getMainRootViewController];
+//    UIViewController *rootViewController = [self getMainRootViewController];
     // 只直接测试某个页面
-//    UIViewController *rootViewController = [[UINavigationController alloc] initWithRootViewController:[[NSClassFromString(@"ButtonCategoryViewController") alloc] init]];
+    UIViewController *rootViewController = [[UINavigationController alloc] initWithRootViewController:[[NSClassFromString(@"BadgeButtonViewController") alloc] init]];
     
     self.window.rootViewController = rootViewController;
     [self.window makeKeyAndVisible];
@@ -84,7 +84,7 @@
     NSString *firstJudgeString = [NSString stringWithFormat:@"%@\n%@", isFirstLaunchAppString, isFirstLaunchThisVersionString];
     NSLog(@"%@", isFirstLaunchAppString);
     NSLog(@"%@", isFirstLaunchThisVersionString);
-    [CQToast showMessage:firstJudgeString];
+    [TSToast showMessage:firstJudgeString];
     
     return YES;
 }

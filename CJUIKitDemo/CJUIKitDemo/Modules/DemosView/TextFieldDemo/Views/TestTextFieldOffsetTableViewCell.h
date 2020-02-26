@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "DemoTextFieldFactory.h"
 
 @interface TestTextFieldOffsetTableViewCell : UITableViewCell {
     
