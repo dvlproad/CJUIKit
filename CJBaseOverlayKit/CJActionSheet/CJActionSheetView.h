@@ -15,6 +15,7 @@ NS_ASSUME_NONNULL_BEGIN
     
 }
 @property (nonatomic, assign, readonly) CGFloat totalHeight;/**< 整个视图的总高度 */
+@property (nonatomic, copy) NSString *cancelText;           /**< sheet的取消文本(默认"取消") */
 @property (nonatomic, copy) void(^commonClickAction)(CJActionSheetView *actionSheetView);/**< 每个点击共同的事件(包括选项和取消) */
 
 /**
@@ -32,8 +33,6 @@ NS_ASSUME_NONNULL_BEGIN
 - (instancetype)initWithFrame:(CGRect)frame NS_UNAVAILABLE;
 - (instancetype)initWithCoder:(NSCoder *)aDecoder NS_UNAVAILABLE;;
 
-///// 显示sheet
-//- (void)show;
 
 @end
 

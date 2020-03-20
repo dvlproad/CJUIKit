@@ -41,6 +41,7 @@ static CGFloat section12Gap = 10.f;     // section1和section2之间的间隔
     if (self) {
         [self setupViews];
         _clickHandle = clickHandle;
+        _cancelText = @"取消";
         
         [self updateSheetModels:sheetModels];
     }
@@ -127,7 +128,7 @@ static CGFloat section12Gap = 10.f;     // section1和section2之间的间隔
     } else {
         CJScreenBottomTableViewCell *cell = (CJScreenBottomTableViewCell *)[tableView dequeueReusableCellWithIdentifier:@"CJScreenBottomTableViewCell" forIndexPath:indexPath];
         
-        cell.mainTitleLabel.text = NSLocalizedString(@"取消", nil);
+        cell.mainTitleLabel.text = self.cancelText;
         cell.subTitleLabel.text = @"";
         cell.showBottomLine = NO;
         return cell;

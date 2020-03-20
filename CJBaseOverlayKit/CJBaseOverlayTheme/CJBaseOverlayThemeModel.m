@@ -66,7 +66,7 @@
         _actionButtonCornerRadius = actionButtonCornerRadius;
         _actionButtonBorderWidth = actionButtonBorderWidth;
         _bottomButtonsLeftOffset = bottomButtonsLeftOffset;
-        _bottomButtonsFixedSpacing = _bottomButtonsFixedSpacing;
+        _bottomButtonsFixedSpacing = bottomButtonsFixedSpacing;
         
         [self commonInit];
     }
