@@ -339,11 +339,11 @@
         }];
     }
     
-    NSNumber *buttonMarginTop = alertMarginVerticals[buttonsVerticalIndex];
+    //NSNumber *buttonMarginTop = alertMarginVerticals[buttonsVerticalIndex];
     NSNumber *buttonMarginBottom = alertMarginVerticals[buttonsVerticalIndex+1];
     CGFloat actionButtonHeight = alertThemeModel.actionButtonHeight;
     [self.bottomButtonView mas_makeConstraints:^(MASConstraintMaker *make) {
-//        make.top.mas_equalTo(self.titleLabel.mas_bottom).mas_offset(buttonMarginTop);
+        //make.top.mas_equalTo(self.titleLabel.mas_bottom).mas_offset(buttonMarginTop);
         make.bottom.mas_equalTo(-[buttonMarginBottom floatValue]);
         make.height.mas_equalTo(actionButtonHeight);
         make.left.mas_equalTo(self).mas_offset(self.bottomButtonsLeftOffset);
