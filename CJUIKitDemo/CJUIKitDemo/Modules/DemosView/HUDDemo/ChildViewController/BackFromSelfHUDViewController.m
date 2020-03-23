@@ -7,7 +7,7 @@
 //
 
 #import "BackFromSelfHUDViewController.h"
-#import "UIViewController+CJProgressHUD.h"
+#import "UIViewController+CQProgressHUD.h"
 
 @interface BackFromSelfHUDViewController ()
 
@@ -29,9 +29,9 @@
         self.navigationController.view.userInteractionEnabled = YES;
     });
     
-    [self cj_showProgressHUD];
+    [self cq_showProgressHUD];
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(5.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        [self cj_dismissProgressHUD];
+        [self cq_dismissProgressHUD];
     });
 }
 

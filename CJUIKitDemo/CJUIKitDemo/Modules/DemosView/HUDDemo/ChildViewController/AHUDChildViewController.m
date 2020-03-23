@@ -9,7 +9,7 @@
 #import "AHUDChildViewController.h"
 #import <CJBaseEffectKit/CJMJRefreshNormalHeader.h>
 #import "BackFromSelfHUDViewController.h"
-#import "UIViewController+CJProgressHUD.h"
+#import "UIViewController+CQProgressHUD.h"
 
 @interface AHUDChildViewController ()
 
@@ -30,9 +30,9 @@
     self.view.backgroundColor = [UIColor yellowColor];
     
     CJMJRefreshNormalHeader *header = [CJMJRefreshNormalHeader headerWithRefreshingBlock:^{
-        [self cj_showProgressHUD];
+        [self cq_showProgressHUD];
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-            [self cj_dismissProgressHUD];
+            [self cq_dismissProgressHUD];
             [self.tableView.mj_header endRefreshing];
         });
     }];

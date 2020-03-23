@@ -8,7 +8,7 @@
 
 #import "APPUIKitSetting.h"
 
-#import <CJBaseOverlayKit/CJHUDSettingManager.h>
+//#import <CJBaseOverlayKit/CJHUDSettingManager.h>
 #import <CJBaseEffectKit/CJRefreshJSONSettingManager.h>
 
 
@@ -23,8 +23,8 @@
 #pragma mark - HUD
 /// 设置 全局默认 的 加载
 + (void)_configHUD {
-    CJHUDSettingManager *hudSettingManager = [CJHUDSettingManager sharedInstance];
-    [hudSettingManager configHUDAnimationWithAnimationNamed:@"loading_tea"];
+//    CJHUDSettingManager *hudSettingManager = [CJHUDSettingManager sharedInstance];
+//    [hudSettingManager configHUDAnimationWithAnimationNamed:@"loading_tea"];
 }
 
 

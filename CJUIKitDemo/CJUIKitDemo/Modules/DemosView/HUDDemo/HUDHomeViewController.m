@@ -10,7 +10,7 @@
 #import <CJBaseEffectKit/CJMJRefreshNormalHeader.h>
 #import "SingleHUDViewController.h"
 #import "SelfHUDDismissViewController.h"
-#import "UIViewController+CJProgressHUD.h"
+#import "UIViewController+CQProgressHUD.h"
 
 @interface HUDHomeViewController ()  {
     
@@ -61,9 +61,9 @@
             CJModuleModel *hudModule = [[CJModuleModel alloc] init];
             hudModule.title = @"SelfHUD的显示(2秒后自动消失)";
             hudModule.actionBlock = ^{
-                [self cj_showProgressHUD];
+                [self cq_showProgressHUD];
                 dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-                    [self cj_dismissProgressHUD];
+                    [self cq_dismissProgressHUD];
                 });
             };
             [sectionDataModel.values addObject:hudModule];
@@ -101,17 +101,17 @@
     NSLog(@"-----------------------");
     NSLog(@"测试多个请求调用了HUD--开始");
     //第一个请求HUD显示2秒
-    [self cj_showProgressHUD];
+    [self cq_showProgressHUD];
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        [self cj_dismissProgressHUD];
+        [self cq_dismissProgressHUD];
         NSLog(@"测试多个请求调用了HUD--dismiss--1");
     });
     
     //第二个请求HUD显示5秒（加上第二个请求与第一个请求之间的时间差，则第一加第二请求至少要执行2+5-1=6秒）
     sleep(1);
-    [self cj_showProgressHUD];
+    [self cq_showProgressHUD];
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        [self cj_dismissProgressHUD];
+        [self cq_dismissProgressHUD];
         NSLog(@"测试多个请求调用了HUD--dismiss--2");
     });
 }

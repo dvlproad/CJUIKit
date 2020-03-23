@@ -7,8 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1560230523E2A6C300DEAC2A /* loading_coffee.json in Resources */ = {isa = PBXBuildFile; fileRef = 1560230323E2A6C300DEAC2A /* loading_coffee.json */; };
-		1560230623E2A6C300DEAC2A /* loading_tea.json in Resources */ = {isa = PBXBuildFile; fileRef = 1560230423E2A6C300DEAC2A /* loading_tea.json */; };
+		154A11222428F84100AD5F9B /* loading_test.json in Resources */ = {isa = PBXBuildFile; fileRef = 154A111E2428F84100AD5F9B /* loading_test.json */; };
+		154A11232428F84100AD5F9B /* loading_03.json in Resources */ = {isa = PBXBuildFile; fileRef = 154A111F2428F84100AD5F9B /* loading_03.json */; };
+		154A11242428F84100AD5F9B /* TSHUDUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 154A11202428F84100AD5F9B /* TSHUDUtil.m */; };
+		154A11252428F84100AD5F9B /* UIViewController+CQProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 154A11212428F84100AD5F9B /* UIViewController+CQProgressHUD.m */; };
+		154A11282428F88B00AD5F9B /* loading_coffee.json in Resources */ = {isa = PBXBuildFile; fileRef = 154A11262428F88B00AD5F9B /* loading_coffee.json */; };
+		154A11292428F88B00AD5F9B /* loading_tea.json in Resources */ = {isa = PBXBuildFile; fileRef = 154A11272428F88B00AD5F9B /* loading_tea.json */; };
 		1562F1FF23F5C0770009FCEA /* TSAlertUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 1562F1FD23F5C0770009FCEA /* TSAlertUtil.m */; };
 		1562F20223F5C8130009FCEA /* CJBaseAlertView+TSPopupAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 1562F20123F5C8130009FCEA /* CJBaseAlertView+TSPopupAction.m */; };
 		1562F2AF23F5DBF40009FCEA /* UIImage+CJRotateAngle.m in Sources */ = {isa = PBXBuildFile; fileRef = 1562F20723F5DBF40009FCEA /* UIImage+CJRotateAngle.m */; };
@@ -383,8 +387,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		1560230323E2A6C300DEAC2A /* loading_coffee.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = loading_coffee.json; sourceTree = "<group>"; };
-		1560230423E2A6C300DEAC2A /* loading_tea.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = loading_tea.json; sourceTree = "<group>"; };
+		154A111C2428F84100AD5F9B /* UIViewController+CQProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+CQProgressHUD.h"; sourceTree = "<group>"; };
+		154A111D2428F84100AD5F9B /* TSHUDUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSHUDUtil.h; sourceTree = "<group>"; };
+		154A111E2428F84100AD5F9B /* loading_test.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = loading_test.json; sourceTree = "<group>"; };
+		154A111F2428F84100AD5F9B /* loading_03.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = loading_03.json; sourceTree = "<group>"; };
+		154A11202428F84100AD5F9B /* TSHUDUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSHUDUtil.m; sourceTree = "<group>"; };
+		154A11212428F84100AD5F9B /* UIViewController+CQProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+CQProgressHUD.m"; sourceTree = "<group>"; };
+		154A11262428F88B00AD5F9B /* loading_coffee.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = loading_coffee.json; sourceTree = "<group>"; };
+		154A11272428F88B00AD5F9B /* loading_tea.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = loading_tea.json; sourceTree = "<group>"; };
 		1562F1FD23F5C0770009FCEA /* TSAlertUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSAlertUtil.m; sourceTree = "<group>"; };
 		1562F1FE23F5C0770009FCEA /* TSAlertUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSAlertUtil.h; sourceTree = "<group>"; };
 		1562F20023F5C8130009FCEA /* CJBaseAlertView+TSPopupAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CJBaseAlertView+TSPopupAction.h"; sourceTree = "<group>"; };
@@ -1042,6 +1052,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		154A111B2428F84100AD5F9B /* TSHUD */ = {
+			isa = PBXGroup;
+			children = (
+				154A111D2428F84100AD5F9B /* TSHUDUtil.h */,
+				154A11202428F84100AD5F9B /* TSHUDUtil.m */,
+				154A111F2428F84100AD5F9B /* loading_03.json */,
+				154A11262428F88B00AD5F9B /* loading_coffee.json */,
+				154A11272428F88B00AD5F9B /* loading_tea.json */,
+				154A111E2428F84100AD5F9B /* loading_test.json */,
+				154A111C2428F84100AD5F9B /* UIViewController+CQProgressHUD.h */,
+				154A11212428F84100AD5F9B /* UIViewController+CQProgressHUD.m */,
+			);
+			path = TSHUD;
+			sourceTree = "<group>";
+		};
 		1562F20323F5DBF40009FCEA /* CJBaseUIKit */ = {
 			isa = PBXGroup;
 			children = (
@@ -1786,6 +1811,7 @@
 		7852D9DF216F16B000E50A39 /* CommonUI */ = {
 			isa = PBXGroup;
 			children = (
+				154A111B2428F84100AD5F9B /* TSHUD */,
 				78E1895321777C9700B8781A /* Base */,
 				7857ABB5225482D200B1569C /* CJDemoDatePickerView */,
 				7857ABB92254AA1100B1569C /* CJDemoDateTextField */,
@@ -2032,8 +2058,6 @@
 			isa = PBXGroup;
 			children = (
 				7868278021AF02E000FCCDE5 /* bg@2x.jpg */,
-				1560230323E2A6C300DEAC2A /* loading_coffee.json */,
-				1560230423E2A6C300DEAC2A /* loading_tea.json */,
 				7861852B21D3630B004B71FF /* AppCommon.xcassets */,
 				7868275F21AE926700FCCDE5 /* AppAssets.xcassets */,
 				78B90E66218B49CF00776584 /* MainAsset.xcassets */,
@@ -2912,6 +2936,7 @@
 				156AC8D82406DBBE00A5A23D /* badgeButton_highlighted@2x.png in Resources */,
 				787FDB8E20500B5C008A46E3 /* slider_minimum_trackimage@2x.png in Resources */,
 				7880E6F7213C2C4C009C9BCF /* CJRandomNameUtil.txt in Resources */,
+				154A11222428F84100AD5F9B /* loading_test.json in Resources */,
 				7850B70820937C5A008F4A21 /* PopupInWindowVC.xib in Resources */,
 				787FDB6520500B1F008A46E3 /* plus@2x.png in Resources */,
 				787FDB8D20500B5C008A46E3 /* slider_double_thumbImage_b@3x.png in Resources */,
@@ -2923,6 +2948,7 @@
 				781C737321BA65C90090080C /* add_common_icon@2x.png in Resources */,
 				7850B70520937C5A008F4A21 /* ShowDropDownViewController.xib in Resources */,
 				7861852C21D3630B004B71FF /* AppCommon.xcassets in Resources */,
+				154A11292428F88B00AD5F9B /* loading_tea.json in Resources */,
 				787FDB9020500B5C008A46E3 /* icon_ddlb_hd@2x.png in Resources */,
 				7850B70620937C5A008F4A21 /* PopupInViewVC.xib in Resources */,
 				8014A2A21FA3137D00DDDB5A /* ThirdPartIcon.xcassets in Resources */,
@@ -2951,7 +2977,6 @@
 				787FDB9420500B5C008A46E3 /* slider_thumbImage@3x.png in Resources */,
 				80FF919F1FC5682B00E437CF /* ProcessLineViewController.xib in Resources */,
 				78B90E67218B49D000776584 /* MainAsset.xcassets in Resources */,
-				1560230523E2A6C300DEAC2A /* loading_coffee.json in Resources */,
 				1562F2DD23F5DBF40009FCEA /* cjBackBarButtonItemGray@2x.png in Resources */,
 				7850B71220937E85008F4A21 /* WelcomePopupView.xib in Resources */,
 				8051E5CE20AAB34E003370AA /* details_icon_huadong@3x.png in Resources */,
@@ -2969,12 +2994,13 @@
 				80D71EAA2090277700D2DB68 /* CJUIKitBaseHomeViewController.xib in Resources */,
 				1562F2D323F5DBF40009FCEA /* cjCheckBoxOrangeYES@2x.png in Resources */,
 				7868278121AF02E000FCCDE5 /* bg@2x.jpg in Resources */,
+				154A11282428F88B00AD5F9B /* loading_coffee.json in Resources */,
 				781C737121BA65C90090080C /* minus_common_icon@3x.png in Resources */,
 				787FDB5720500B01008A46E3 /* SearchBarViewController.xib in Resources */,
 				787FDB8820500B5C008A46E3 /* slider_double_thumbImage_a@2x.png in Resources */,
-				1560230623E2A6C300DEAC2A /* loading_tea.json in Resources */,
 				1562F2D523F5DBF40009FCEA /* cjCheckBoxGreen2NO.png in Resources */,
 				787FDB6720500B1F008A46E3 /* smail@2x.png in Resources */,
+				154A11232428F84100AD5F9B /* loading_03.json in Resources */,
 				80FF919B1FC5682B00E437CF /* DateViewController.xib in Resources */,
 				780E460E1E5DF87B00980127 /* Main.storyboard in Resources */,
 				787FDB9220500B5C008A46E3 /* slider_thumbImage@2x.png in Resources */,
@@ -3300,6 +3326,7 @@
 				78A0D043216B32D100EFAD67 /* BadgeButtonViewController.m in Sources */,
 				80FF91981FC5682B00E437CF /* AttributedStringViewController.m in Sources */,
 				78A4E1D52175EB93005FEADD /* NavigationBarNormalChangeBGViewController.m in Sources */,
+				154A11252428F84100AD5F9B /* UIViewController+CQProgressHUD.m in Sources */,
 				1562F2C923F5DBF40009FCEA /* UIView+CJRounderCorner.m in Sources */,
 				1562F2C523F5DBF40009FCEA /* CJDefaultToolbar.m in Sources */,
 				78514134226854CC0023F0C0 /* ImageGetterViewController.m in Sources */,
@@ -3356,6 +3383,7 @@
 				78E189A5217791D200B8781A /* TranslucentLayoutViewController.m in Sources */,
 				1562F2BF23F5DBF40009FCEA /* UIButton+CJStructure.m in Sources */,
 				1562F38923FD2FC70009FCEA /* AppDelegate.m in Sources */,
+				154A11242428F84100AD5F9B /* TSHUDUtil.m in Sources */,
 				78C8148A216E11AF00A6B190 /* FChildViewController.m in Sources */,
 				784C87FF216F2B1D00AFEE7D /* SemaphoreGateKeeperViewController.m in Sources */,
 				1562F2AF23F5DBF40009FCEA /* UIImage+CJRotateAngle.m in Sources */,

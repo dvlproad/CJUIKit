@@ -1,52 +1,36 @@
 //
-//  UIViewController+CJProgressHUD.m
+//  UIViewController+CQProgressHUD.m
 //  CJUIKitDemo
 //
 //  Created by ciyouzen on 2018/11/1.
 //  Copyright © 2018年 dvlproad. All rights reserved.
 //
 
-#import "UIViewController+CJProgressHUD.h"
+#import "UIViewController+CQProgressHUD.h"
 #import <objc/runtime.h>
-#import "CJProgressHUD.h"
+#import <CJBaseOverlayKit/UIViewController+CJProgressHUD.h>
+#import <CJBaseOverlayKit/UIViewController+CJToast.h>
+
 
 @interface UIViewController () {
     
 }
-@property (nonatomic, strong) CJProgressHUD *cj_progressHUD;
-
 
 @end
 
-@implementation UIViewController (CJProgressHUD)
-
-//cj_progressHUD
-- (CJProgressHUD *)cj_progressHUD {
-    return objc_getAssociatedObject(self, @selector(cj_progressHUD));
-}
-
-- (void)setCj_progressHUD:(CJProgressHUD *)cj_progressHUD {
-    objc_setAssociatedObject(self, @selector(cj_progressHUD), cj_progressHUD, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-}
+@implementation UIViewController (CQProgressHUD)
 
 /// 显示HUD
-- (void)cj_showProgressHUDWithAnimationNamed:(NSString *)animationNamed {
-    if (!self.cj_progressHUD) {
-        self.cj_progressHUD = [[CJProgressHUD alloc] initWithAnimationNamed:animationNamed];
-    }
-    
-    [self.cj_progressHUD showInView:self.view withShowBackground:NO];
+- (void)cq_showProgressHUD {
+    NSString *animationNamed = @"loading_tea";
+    [self cj_showProgressHUDWithAnimationNamed:animationNamed];
 }
 
 /// 隐藏HUD
-- (void)cj_dismissProgressHUD {
-    BOOL dismissSuccess = [self.cj_progressHUD dismissWithForce:NO];
-    if (dismissSuccess) {
-        self.cj_progressHUD = nil;
-    }
+- (void)cq_dismissProgressHUD {
+    [self cj_dismissProgressHUD];
 }
 
-/*
 /// 上传过程中显示开始上传的进度提示
 - (void)cjdemo_showStartProgressMessage:(NSString * _Nullable)startProgressMessage {
     [self cj_showChrysanthemumHUDWithMessage:startProgressMessage animated:YES];
@@ -66,6 +50,5 @@
         [self cj_hideChrysanthemumHUDWithAnimated:YES afterDelay:1];
     }
 }
-*/
 
 @end

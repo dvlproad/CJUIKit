@@ -34,24 +34,24 @@ PODS:
   - CJBaseHelper/NSOperationQueueCJHelper (0.1.4)
   - CJBaseHelper/UIViewControllerCJHelper (0.1.4)
   - CJBaseHelper/WebCJHelper (0.1.4)
-  - CJBaseOverlayKit (0.1.0):
-    - CJBaseOverlayKit/CJActionSheet (= 0.1.0)
-    - CJBaseOverlayKit/CJAlert (= 0.1.0)
-    - CJBaseOverlayKit/CJBaseOverlayTheme (= 0.1.0)
-    - CJBaseOverlayKit/CJProgressHUD (= 0.1.0)
-    - CJBaseOverlayKit/CJToast (= 0.1.0)
-  - CJBaseOverlayKit/CJActionSheet (0.1.0):
+  - CJBaseOverlayKit (0.1.1):
+    - CJBaseOverlayKit/CJActionSheet (= 0.1.1)
+    - CJBaseOverlayKit/CJAlert (= 0.1.1)
+    - CJBaseOverlayKit/CJBaseOverlayTheme (= 0.1.1)
+    - CJBaseOverlayKit/CJProgressHUD (= 0.1.1)
+    - CJBaseOverlayKit/CJToast (= 0.1.1)
+  - CJBaseOverlayKit/CJActionSheet (0.1.1):
     - CJBaseOverlayKit/CJBaseOverlayTheme
     - Masonry
-  - CJBaseOverlayKit/CJAlert (0.1.0):
+  - CJBaseOverlayKit/CJAlert (0.1.1):
     - CJBaseOverlayKit/CJBaseOverlayTheme
     - Masonry
-  - CJBaseOverlayKit/CJBaseOverlayTheme (0.1.0)
-  - CJBaseOverlayKit/CJProgressHUD (0.1.0):
+  - CJBaseOverlayKit/CJBaseOverlayTheme (0.1.1)
+  - CJBaseOverlayKit/CJProgressHUD (0.1.1):
     - CJBaseOverlayKit/CJBaseOverlayTheme
     - lottie-ios (~> 2.5.3)
     - Masonry
-  - CJBaseOverlayKit/CJToast (0.1.0):
+  - CJBaseOverlayKit/CJToast (0.1.1):
     - CJBaseOverlayKit/CJBaseOverlayTheme
     - MBProgressHUD
   - CJBaseTest/Test (0.0.2)
@@ -201,7 +201,7 @@ EXTERNAL SOURCES:
 SPEC CHECKSUMS:
   CJBaseEffectKit: 2d66766c774349a9442c53e816bd44218355fd7c
   CJBaseHelper: dd715e18591da9df5d06364098300591220f0535
-  CJBaseOverlayKit: 20ac2200adc1650721bd697a9ff09b5ee809467b
+  CJBaseOverlayKit: ae348396ce52420b4e19eccd4c427e7c99f07ee5
   CJBaseTest: a7975369dd9cad3111ea8a8465ccdb1d50752499
   CJBaseUtil: 1bbf8d5f831dc12ae4bb06c8b5326bd39f3522e1
   CJComplexUIKit: 51c4a99d97c7ff32397b56fc63b80b655a5a7a5f

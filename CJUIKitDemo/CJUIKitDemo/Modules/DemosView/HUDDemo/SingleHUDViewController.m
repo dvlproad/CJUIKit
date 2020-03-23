@@ -21,7 +21,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    CJProgressHUD *hud = [[CJProgressHUD alloc] init];
+    CJProgressHUD *hud = [[CJProgressHUD alloc] initWithAnimationNamed:@"loading_tea"];
     [hud.lotAnimationView play];
     [self.view addSubview:hud];
     [hud mas_makeConstraints:^(MASConstraintMaker *make) {

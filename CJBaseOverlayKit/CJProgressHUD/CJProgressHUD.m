@@ -8,7 +8,6 @@
 
 #import "CJProgressHUD.h"
 #import <Masonry/Masonry.h>
-#import "CJHUDSettingManager.h"
 
 @interface CJProgressHUD () {
     
@@ -23,14 +22,14 @@
 
 @implementation CJProgressHUD
 
-- (instancetype)init {
-    self = [super init];
+
+- (instancetype)initWithAnimationNamed:(NSString *)animationNamed {
+    self = [super initWithFrame:CGRectZero];
     if(self){
         self.backgroundColor = [UIColor clearColor];
         self.layer.cornerRadius = 3;
         self.layer.masksToBounds = YES;
         
-        NSString *animationNamed = [CJHUDSettingManager sharedInstance].animationNamed;
         if (animationNamed == nil) {
             NSAssert(NO, @"Error: 请调[[CJHUDSettingManager sharedInstance] configHUDAnimationWithAnimationNamed: 来设置全局的ProgressHUD动画");
         }

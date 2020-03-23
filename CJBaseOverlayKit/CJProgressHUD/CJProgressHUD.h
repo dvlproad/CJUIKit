@@ -15,6 +15,13 @@
 }
 @property (nonatomic, strong) LOTAnimationView *lotAnimationView;
 
+
+- (instancetype)initWithAnimationNamed:(NSString *)animationNamed NS_DESIGNATED_INITIALIZER;
++ (instancetype)new NS_UNAVAILABLE;
+- (instancetype)init NS_UNAVAILABLE;
+- (instancetype)initWithFrame:(CGRect)frame NS_UNAVAILABLE;
+- (instancetype)initWithCoder:(NSCoder *)aDecoder NS_UNAVAILABLE;
+
 /**
 *  显示HUD
 *
