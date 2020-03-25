@@ -105,6 +105,10 @@
 		15C970BE23DB5AEA008D81B0 /* UIAlertUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 15C970BD23DB5AEA008D81B0 /* UIAlertUtil.m */; };
 		15C970D723DB6125008D81B0 /* ActionSheetHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 15C970D523DB6125008D81B0 /* ActionSheetHomeViewController.m */; };
 		15C970DE23DB6768008D81B0 /* TSActionSheetUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 15C970DD23DB6767008D81B0 /* TSActionSheetUtil.m */; };
+		15F4271F242B7D2A00ED2E4C /* DataEmptyViewFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 15F4271D242B7D2A00ED2E4C /* DataEmptyViewFactory.m */; };
+		15F42726242B7D5300ED2E4C /* AppInfoManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 15F42724242B7D5300ED2E4C /* AppInfoManager.m */; };
+		15F42727242B7D5300ED2E4C /* AppInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 15F42725242B7D5300ED2E4C /* AppInfo.m */; };
+		15F4272A242B7E2800ED2E4C /* TSAlertManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 15F42729242B7E2800ED2E4C /* TSAlertManager.m */; };
 		51F701ECBBD48CC565F3FB87 /* libPods-CJUIKitDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A078401C0E781545EB72B64D /* libPods-CJUIKitDemo.a */; };
 		663D99AA9DDC5B5D8025AEEB /* libPods-CJUIKitDemoUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E0A09F2115A3D53BC658F67A /* libPods-CJUIKitDemoUITests.a */; };
 		7803DAAE22F7D519001E06B7 /* MJExtensionToModelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7803DAAC22F7D519001E06B7 /* MJExtensionToModelViewController.m */; };
@@ -569,6 +573,14 @@
 		15C970D523DB6125008D81B0 /* ActionSheetHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActionSheetHomeViewController.m; sourceTree = "<group>"; };
 		15C970DC23DB6767008D81B0 /* TSActionSheetUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSActionSheetUtil.h; sourceTree = "<group>"; };
 		15C970DD23DB6767008D81B0 /* TSActionSheetUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSActionSheetUtil.m; sourceTree = "<group>"; };
+		15F4271D242B7D2A00ED2E4C /* DataEmptyViewFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataEmptyViewFactory.m; sourceTree = "<group>"; };
+		15F4271E242B7D2A00ED2E4C /* DataEmptyViewFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataEmptyViewFactory.h; sourceTree = "<group>"; };
+		15F42722242B7D5300ED2E4C /* AppInfoManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppInfoManager.h; sourceTree = "<group>"; };
+		15F42723242B7D5300ED2E4C /* AppInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppInfo.h; sourceTree = "<group>"; };
+		15F42724242B7D5300ED2E4C /* AppInfoManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppInfoManager.m; sourceTree = "<group>"; };
+		15F42725242B7D5300ED2E4C /* AppInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppInfo.m; sourceTree = "<group>"; };
+		15F42728242B7E2800ED2E4C /* TSAlertManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSAlertManager.h; sourceTree = "<group>"; };
+		15F42729242B7E2800ED2E4C /* TSAlertManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSAlertManager.m; sourceTree = "<group>"; };
 		3132573BFCFBEA8B4F3BB86F /* Pods-CJUIKitDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CJUIKitDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-CJUIKitDemo/Pods-CJUIKitDemo.release.xcconfig"; sourceTree = "<group>"; };
 		5ABC4BBA112CC688BF877CE8 /* Pods-CJUIKitDemoUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CJUIKitDemoUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-CJUIKitDemoUITests/Pods-CJUIKitDemoUITests.release.xcconfig"; sourceTree = "<group>"; };
 		68D73B38201AA01727123963 /* Pods-CJUIKitDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CJUIKitDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CJUIKitDemo/Pods-CJUIKitDemo.debug.xcconfig"; sourceTree = "<group>"; };
@@ -1573,6 +1585,34 @@
 			path = TSActionSheet;
 			sourceTree = "<group>";
 		};
+		15F4271C242B7D2A00ED2E4C /* DemoEmptyViewFactory */ = {
+			isa = PBXGroup;
+			children = (
+				15F4271D242B7D2A00ED2E4C /* DataEmptyViewFactory.m */,
+				15F4271E242B7D2A00ED2E4C /* DataEmptyViewFactory.h */,
+			);
+			path = DemoEmptyViewFactory;
+			sourceTree = "<group>";
+		};
+		15F42720242B7D5300ED2E4C /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				15F42721242B7D5300ED2E4C /* AppInfo */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		15F42721242B7D5300ED2E4C /* AppInfo */ = {
+			isa = PBXGroup;
+			children = (
+				15F42722242B7D5300ED2E4C /* AppInfoManager.h */,
+				15F42723242B7D5300ED2E4C /* AppInfo.h */,
+				15F42724242B7D5300ED2E4C /* AppInfoManager.m */,
+				15F42725242B7D5300ED2E4C /* AppInfo.m */,
+			);
+			path = AppInfo;
+			sourceTree = "<group>";
+		};
 		7808D59021703C18007FC851 /* ChangeEnvironmentDemo */ = {
 			isa = PBXGroup;
 			children = (
@@ -1615,6 +1655,7 @@
 		780E46021E5DF87B00980127 /* CJUIKitDemo */ = {
 			isa = PBXGroup;
 			children = (
+				15F42720242B7D5300ED2E4C /* Service */,
 				1562F38023FD2FC70009FCEA /* AppDelegate */,
 				1562F20323F5DBF40009FCEA /* CJBaseUIKit */,
 				7852D9DF216F16B000E50A39 /* CommonUI */,
@@ -1695,6 +1736,8 @@
 				15C970BD23DB5AEA008D81B0 /* UIAlertUtil.m */,
 				1562F1FE23F5C0770009FCEA /* TSAlertUtil.h */,
 				1562F1FD23F5C0770009FCEA /* TSAlertUtil.m */,
+				15F42728242B7E2800ED2E4C /* TSAlertManager.h */,
+				15F42729242B7E2800ED2E4C /* TSAlertManager.m */,
 				1562F20023F5C8130009FCEA /* CJBaseAlertView+TSPopupAction.h */,
 				1562F20123F5C8130009FCEA /* CJBaseAlertView+TSPopupAction.m */,
 			);
@@ -1811,16 +1854,17 @@
 		7852D9DF216F16B000E50A39 /* CommonUI */ = {
 			isa = PBXGroup;
 			children = (
-				154A111B2428F84100AD5F9B /* TSHUD */,
 				78E1895321777C9700B8781A /* Base */,
 				7857ABB5225482D200B1569C /* CJDemoDatePickerView */,
 				7857ABB92254AA1100B1569C /* CJDemoDateTextField */,
 				78FCF54A2306A9B900D275F9 /* CJDemoPopupView */,
+				15F4271C242B7D2A00ED2E4C /* DemoEmptyViewFactory */,
 				788A55F721AFCE3C0011F993 /* DemoLabel */,
 				78AB83BF21B96D7000853E21 /* DemoTextFieldFactory */,
 				15C970DB23DB6767008D81B0 /* TSActionSheet */,
 				78226A6A21A4012B002167F2 /* TSAlert */,
 				15A7680423FD966A00358B42 /* TSButtonFactory */,
+				154A111B2428F84100AD5F9B /* TSHUD */,
 				1562F2FB23F945F20009FCEA /* TSToast */,
 			);
 			path = CommonUI;
@@ -3175,6 +3219,7 @@
 				156AC8D12406D9F800A5A23D /* DemoTagButtonFactory.m in Sources */,
 				801F75D820A040D800A2E027 /* BBXDAreaCodeTextField.m in Sources */,
 				1562F2C423F5DBF40009FCEA /* UISearchBar+CJAddInputAccessoryView.m in Sources */,
+				15F42726242B7D5300ED2E4C /* AppInfoManager.m in Sources */,
 				78B6C2EE2159D8AF00D5864E /* DemoBusPassengerOrderModel.m in Sources */,
 				1562F2B023F5DBF40009FCEA /* UIImage+CJChangeColor.m in Sources */,
 				1562F2E723F5DBF40009FCEA /* CJBaseUISlider.m in Sources */,
@@ -3246,6 +3291,7 @@
 				78E18952217778D900B8781A /* NavigationBarHomeViewController.m in Sources */,
 				80D0120F210336E100D1EDF0 /* ChangeViewController.m in Sources */,
 				1562F2F323F5DBF40009FCEA /* UITextField+CJSelectedTextRange.m in Sources */,
+				15F42727242B7D5300ED2E4C /* AppInfo.m in Sources */,
 				80FF91A01FC5682B00E437CF /* ProcessLineViewController.m in Sources */,
 				1562F31423F96BDC0009FCEA /* SelfHUDDismissViewController.m in Sources */,
 				1562F2C323F5DBF40009FCEA /* UIColor+CJHex.m in Sources */,
@@ -3277,6 +3323,7 @@
 				80FF909E1FC5649F00E437CF /* NestedXibSubViewA.m in Sources */,
 				78C8148D216E11AF00A6B190 /* AChildViewController.m in Sources */,
 				7808318722DC116700F36576 /* GifViewController.m in Sources */,
+				15F4272A242B7E2800ED2E4C /* TSAlertManager.m in Sources */,
 				1562F2C623F5DBF40009FCEA /* UITextField+CJAddInputAccessoryView.m in Sources */,
 				1562F37623F9B8C80009FCEA /* BaseRefreshViewController.m in Sources */,
 				1562F1FF23F5C0770009FCEA /* TSAlertUtil.m in Sources */,
@@ -3309,6 +3356,7 @@
 				789C447721F07BBC00181144 /* ImageHomeViewController.m in Sources */,
 				78A74E3C2368773A0023F44B /* CJUIKitBaseTextViewController.m in Sources */,
 				1562F2D923F5DBF40009FCEA /* UIViewController+CJCustomBackBarButtonItem.m in Sources */,
+				15F4271F242B7D2A00ED2E4C /* DataEmptyViewFactory.m in Sources */,
 				80FF909A1FC5649F00E437CF /* FloatingWindowViewController.m in Sources */,
 				7857ABBC2254AA5000B1569C /* CJDemoDateTextField.m in Sources */,
 				1562F2E423F5DBF40009FCEA /* CJSliderControl.m in Sources */,

@@ -7,7 +7,7 @@
 //
 
 #import "H5ImgSettingBaseViewController.h"
-#import "DemoButtonFactory.h"
+#import "TSButtonFactory.h"
 #import <CJMedia/MySingleImagePickerController.h>
 #import <CJBaseUIKit/UIImage+CJTransformSize.h>
 #import <CJBaseUIKit/UIImage+CJBase64.h>

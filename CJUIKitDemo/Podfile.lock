@@ -1,4 +1,5 @@
 PODS:
+  - AFNetworking/Reachability (3.2.1)
   - CJBaseEffectKit (0.0.2):
     - CJBaseEffectKit/CJDataEmptyView (= 0.0.2)
     - CJBaseEffectKit/CJMJRefreshComponent (= 0.0.2)
@@ -34,24 +35,24 @@ PODS:
   - CJBaseHelper/NSOperationQueueCJHelper (0.1.4)
   - CJBaseHelper/UIViewControllerCJHelper (0.1.4)
   - CJBaseHelper/WebCJHelper (0.1.4)
-  - CJBaseOverlayKit (0.1.1):
-    - CJBaseOverlayKit/CJActionSheet (= 0.1.1)
-    - CJBaseOverlayKit/CJAlert (= 0.1.1)
-    - CJBaseOverlayKit/CJBaseOverlayTheme (= 0.1.1)
-    - CJBaseOverlayKit/CJProgressHUD (= 0.1.1)
-    - CJBaseOverlayKit/CJToast (= 0.1.1)
-  - CJBaseOverlayKit/CJActionSheet (0.1.1):
+  - CJBaseOverlayKit (0.2.0):
+    - CJBaseOverlayKit/CJActionSheet (= 0.2.0)
+    - CJBaseOverlayKit/CJAlert (= 0.2.0)
+    - CJBaseOverlayKit/CJBaseOverlayTheme (= 0.2.0)
+    - CJBaseOverlayKit/CJProgressHUD (= 0.2.0)
+    - CJBaseOverlayKit/CJToast (= 0.2.0)
+  - CJBaseOverlayKit/CJActionSheet (0.2.0):
     - CJBaseOverlayKit/CJBaseOverlayTheme
     - Masonry
-  - CJBaseOverlayKit/CJAlert (0.1.1):
+  - CJBaseOverlayKit/CJAlert (0.2.0):
     - CJBaseOverlayKit/CJBaseOverlayTheme
     - Masonry
-  - CJBaseOverlayKit/CJBaseOverlayTheme (0.1.1)
-  - CJBaseOverlayKit/CJProgressHUD (0.1.1):
+  - CJBaseOverlayKit/CJBaseOverlayTheme (0.2.0)
+  - CJBaseOverlayKit/CJProgressHUD (0.2.0):
     - CJBaseOverlayKit/CJBaseOverlayTheme
     - lottie-ios (~> 2.5.3)
     - Masonry
-  - CJBaseOverlayKit/CJToast (0.1.1):
+  - CJBaseOverlayKit/CJToast (0.2.0):
     - CJBaseOverlayKit/CJBaseOverlayTheme
     - MBProgressHUD
   - CJBaseTest/Test (0.0.2)
@@ -125,6 +126,7 @@ PODS:
   - YYText (1.0.7)
 
 DEPENDENCIES:
+  - AFNetworking/Reachability
   - CJBaseEffectKit (from `../`)
   - CJBaseHelper (from `../`)
   - CJBaseOverlayKit (from `../`)
@@ -159,6 +161,7 @@ DEPENDENCIES:
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
+    - AFNetworking
     - CJFile
     - CJPicker
     - CJPopupView
@@ -199,9 +202,10 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  CJBaseEffectKit: 2d66766c774349a9442c53e816bd44218355fd7c
+  AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
+  CJBaseEffectKit: 5befb0111e9d73af7973be02943ac805452d5eee
   CJBaseHelper: dd715e18591da9df5d06364098300591220f0535
-  CJBaseOverlayKit: ae348396ce52420b4e19eccd4c427e7c99f07ee5
+  CJBaseOverlayKit: 614d88cb16de0d34e6286a3fe4d5431444867fe8
   CJBaseTest: a7975369dd9cad3111ea8a8465ccdb1d50752499
   CJBaseUtil: 1bbf8d5f831dc12ae4bb06c8b5326bd39f3522e1
   CJComplexUIKit: 51c4a99d97c7ff32397b56fc63b80b655a5a7a5f
@@ -229,6 +233,6 @@ SPEC CHECKSUMS:
   WMPageController: 0c7624d2b48e4f1ab92371688cf6744ed701575d
   YYText: 5c461d709e24d55a182d1441c41dc639a18a4849
 
-PODFILE CHECKSUM: 8f4b09210e41d2659ff6203f1ed480a55295720d
+PODFILE CHECKSUM: e3443bd122551352733ae0785ec38a5f09b3e6c3
 
 COCOAPODS: 1.8.4

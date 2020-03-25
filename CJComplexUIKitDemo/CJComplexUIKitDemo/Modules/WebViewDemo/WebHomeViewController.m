@@ -99,7 +99,7 @@
             CJModuleModel *webViewModule = [[CJModuleModel alloc] init];
             webViewModule.title = @"WebView H5的img拦截(拦截了present)";
             webViewModule.actionBlock = ^{
-                [DemoAlert showIKnowAlertViewWithTitle:@"请查看CJHookDemo中的H5ImgInterceptChooseViewController"];
+                [self showIKnowAlertViewWithTitle:@"请查看CJHookDemo中的H5ImgInterceptChooseViewController"];
             };
             [sectionDataModel.values addObject:webViewModule];
         }
@@ -107,7 +107,7 @@
             CJModuleModel *webViewModule = [[CJModuleModel alloc] init];
             webViewModule.title = @"WebView H5的img拦截(拦截了didFinishPicking)";
             webViewModule.actionBlock = ^{
-                [DemoAlert showIKnowAlertViewWithTitle:@"请查看CJHookDemo中的H5ImgInterceptPickerViewController1"];
+                [self showIKnowAlertViewWithTitle:@"请查看CJHookDemo中的H5ImgInterceptPickerViewController1"];
             };
             [sectionDataModel.values addObject:webViewModule];
         }
@@ -116,7 +116,7 @@
             webViewModule.title = @"WebView H5的img拦截(拦截了image)";
             webViewModule.content = @"注意：记得进入后要退出来试下unhook成功没";
             webViewModule.actionBlock = ^{
-                [DemoAlert showIKnowAlertViewWithTitle:@"请查看CJHookDemo中的H5ImgInterceptPickerViewController"];
+                [self showIKnowAlertViewWithTitle:@"请查看CJHookDemo中的H5ImgInterceptPickerViewController"];
             };
             [sectionDataModel.values addObject:webViewModule];
         }
@@ -125,6 +125,10 @@
     }
     
     self.sectionDataModels = sectionDataModels;
+}
+
+- (void)showIKnowAlertViewWithTitle:(NSString *)title {
+    [TSAlertUtil showAlertViewWithFlagImage:nil title:title message:nil okButtonTitle:@"我知道了" okHandle:nil];
 }
 
 

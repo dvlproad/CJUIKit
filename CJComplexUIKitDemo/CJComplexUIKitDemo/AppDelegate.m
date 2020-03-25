@@ -12,7 +12,6 @@
 #import "AppInfoManager.h"
 
 #import "YunUncaughtExceptionHandler.h"
-#import "CJAlertView.h"
 
 @interface AppDelegate ()
 

@@ -1,9 +1,9 @@
 {
   "name": "CJBaseUIKit",
-  "version": "0.4.7",
+  "version": "0.6.0",
   "summary": "自定义的基础UI",
   "homepage": "https://github.com/dvlproad/CJUIKit",
-  "description": "- CJBaseUIKit/UIColor：颜色：用来通过十六进制来设置颜色。 支持@“#123456”、 @“0X123456”、 @“123456”三种格式\n- CJBaseUIKit/UIImage：图片\n- CJBaseUIKit/UINavigationBar：导航栏\n- CJBaseUIKit/UIView：视图\n- CJBaseUIKit/UIView/CJDragAction：视图拖动\n- CJBaseUIKit/UIView/CJShakeAction：视图抖动\n- CJBaseUIKit/UIView/CJPopupAction：视图弹窗：UIView的类别，用来实现UIView弹出popupView的一个Uiew的类别\n- CJBaseUIKit/UIView/CJGestureRecognizer：视图手势\n- CJBaseUIKit/UIWindow：窗口\n- CJBaseUIKit/UIButton：按钮 及 CJBadgeButton\n- CJBaseUIKit/UITextField：文本视图：包含文本框类别及新的自定义文本框\n- CJBaseUIKit/CJTextView：文本视图：类似微信文本输入框实现\n- CJBaseUIKit/UIToolbar：工具栏\n- CJBaseUIKit/UIScrollView：滚动视图：含监听滚动视图的键盘\n- CJBaseUIKit/CJBaseTableViewCell：基础的TableViewCell\n- CJBaseUIKit/CJBaseTableViewHeaderFooterView：列表--HeaderFooterView\n- CJBaseUIKit/CJSlider：滑块\n- CJBaseUIKit/CJToast：Toast\n- CJBaseUIKit/CJAlert：Alert\n- CJBaseUIKit/UIViewController：自定义返回按钮\n\n  A longer description of CJBaseUIKit in Markdown format.\n\n  * Think: Why did you write this? What is the focus? What does it do?\n  * CocoaPods will be using this to generate tags, and improve search results.\n  * Try to keep it short, snappy and to the point.\n  * Finally, don't worry about the indent, CocoaPods strips it!",
+  "description": "- CJBaseUIKit/CJUIKitConstant：常量：常量信息\n- CJBaseUIKit/UIColor：颜色：用来通过十六进制来设置颜色。 支持@“#123456”、 @“0X123456”、 @“123456”三种格式\n- CJBaseUIKit/UIImage：图片\n- CJBaseUIKit/UINavigationBar：导航栏\n- CJBaseUIKit/UIView：视图\n- CJBaseUIKit/UIView/CJDragAction：视图拖动\n- CJBaseUIKit/UIView/CJShakeAction：视图抖动\n- CJBaseUIKit/UIView/CJPopupAction：视图弹窗：UIView的类别，用来实现UIView弹出popupView的一个Uiew的类别\n- CJBaseUIKit/UIView/CJGestureRecognizer：视图手势\n- CJBaseUIKit/UIWindow：窗口\n- CJBaseUIKit/UIButton：按钮 及 CJBadgeButton\n- CJBaseUIKit/UITextField：文本视图：包含文本框类别及新的自定义文本框\n- CJBaseUIKit/CJTextView：文本视图：类似微信文本输入框实现\n- CJBaseUIKit/UIToolbar：工具栏\n- CJBaseUIKit/UIScrollView：滚动视图：含监听滚动视图的键盘\n- CJBaseUIKit/CJBaseTableViewCell：基础的TableViewCell\n- CJBaseUIKit/CJBaseTableViewHeaderFooterView：列表--HeaderFooterView\n- CJBaseUIKit/CJSlider：滑块\n- CJBaseUIKit/CJToast：Toast\n- CJBaseUIKit/CJAlert：Alert\n- CJBaseUIKit/UIViewController：自定义返回按钮\n\n  A longer description of CJBaseUIKit in Markdown format.\n\n  * Think: Why did you write this? What is the focus? What does it do?\n  * CocoaPods will be using this to generate tags, and improve search results.\n  * Try to keep it short, snappy and to the point.\n  * Finally, don't worry about the indent, CocoaPods strips it!",
   "license": "MIT",
   "authors": {
     "dvlproad": ""
@@ -13,12 +13,20 @@
   },
   "source": {
     "git": "https://github.com/dvlproad/CJUIKit.git",
-    "tag": "CJBaseUIKit_0.4.7"
+    "tag": "CJBaseUIKit_0.6.0"
   },
   "source_files": "CJBaseUIKit/*.{h,m}",
   "frameworks": "UIKit",
   "requires_arc": true,
   "subspecs": [
+    {
+      "name": "CJUIKitConstant",
+      "source_files": "CJBaseUIKit/CJUIKitConstant/**/*.{h,m}"
+    },
+    {
+      "name": "CJTheme",
+      "source_files": "CJBaseUIKit/CJTheme/**/*.{h,m}"
+    },
     {
       "name": "UIColor",
       "source_files": "CJBaseUIKit/UIColor/**/*.{h,m}"
@@ -50,6 +58,10 @@
         {
           "name": "CJGestureRecognizer",
           "source_files": "CJBaseUIKit/UIView/CJGestureRecognizer/**/*.{h,m}"
+        },
+        {
+          "name": "CJAnimation",
+          "source_files": "CJBaseUIKit/UIView/CJAnimation/**/*.{h,m}"
         }
       ]
     },
@@ -76,6 +88,10 @@
       }
     },
     {
+      "name": "UILabel",
+      "source_files": "CJBaseUIKit/UILabel/**/*.{h,m}"
+    },
+    {
       "name": "CJTextView",
       "source_files": "CJBaseUIKit/CJTextView/**/*.{h,m}"
     },
@@ -91,6 +107,10 @@
 
         ]
       }
+    },
+    {
+      "name": "CJSearchBar",
+      "source_files": "CJBaseUIKit/CJSearchBar/**/*.{h,m}"
     },
     {
       "name": "UIScrollView",
@@ -116,6 +136,16 @@
       "source_files": "CJBaseUIKit/CJBaseTableViewHeaderFooterView/**/*.{h,m}"
     },
     {
+      "name": "CJToast",
+      "source_files": "CJBaseUIKit/CJToast/**/*.{h,m}",
+      "resources": "CJBaseUIKit/CJToast/**/*.{png,xib}",
+      "dependencies": {
+        "MBProgressHUD": [
+
+        ]
+      }
+    },
+    {
       "name": "CJAlert",
       "source_files": "CJBaseUIKit/CJAlert/**/*.{h,m}",
       "dependencies": {
@@ -128,12 +158,26 @@
       }
     },
     {
-      "name": "CJToast",
-      "source_files": "CJBaseUIKit/CJToast/**/*.{h,m}",
-      "resources": "CJBaseUIKit/CJToast/**/*.{png,xib}",
+      "name": "CJActionSheet",
+      "source_files": "CJBaseUIKit/CJActionSheet/**/*.{h,m}",
       "dependencies": {
-        "MBProgressHUD": [
+        "Masonry": [
 
+        ],
+        "CJBaseUIKit/UIView/CJPopupAction": [
+
+        ]
+      }
+    },
+    {
+      "name": "CJProgressHUD",
+      "source_files": "CJBaseUIKit/CJProgressHUD/**/*.{h,m}",
+      "dependencies": {
+        "Masonry": [
+
+        ],
+        "lottie-ios": [
+          "~> 2.5.3"
         ]
       }
     }
