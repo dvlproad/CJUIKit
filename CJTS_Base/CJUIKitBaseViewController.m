@@ -17,7 +17,12 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.view.backgroundColor = CJColorFromHexString(@"#f2f2f2");
+    self.view.backgroundColor = [UIColor colorWithRed:242/255.0 green:242/255.0 blue:242/255.0 alpha:1.0]; // #f2f2f2
+}
+
+- (void)showToastMessage:(NSString *)message {
+    UIView *view = [[UIApplication sharedApplication].delegate window];
+    [CJToast showMessage:message inView:view withLabelTextColor:[UIColor blackColor] bezelViewColor:[UIColor whiteColor] hideAfterDelay:2.f];
 }
 
 /*

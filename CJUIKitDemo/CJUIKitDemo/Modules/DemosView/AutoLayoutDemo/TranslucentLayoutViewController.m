@@ -7,6 +7,7 @@
 //
 
 #import "TranslucentLayoutViewController.h"
+#import "UIColor+CJHex.h"
 
 @interface TranslucentLayoutViewController () {
     

@@ -1,5 +1,5 @@
 //
-//  averageWidthCollectionViewController.m
+//  CJUIKitBaseCollectionHomeViewController.m
 //  CJUIKitDemo
 //
 //  Created by ciyouzen on 8/10/15.

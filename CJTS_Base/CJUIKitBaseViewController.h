@@ -8,14 +8,12 @@
 
 #import <UIKit/UIKit.h>
 #import <Masonry/Masonry.h>
-#ifdef TEST_CJBASEUIKIT_POD
-#import "UIColor+CJHex.h"
-#else
-#import <CJBaseUIKit/UIColor+CJHex.h>
-#endif
+#import <CJBaseOverlayKit/CJToast.h>
 
-#import "TSToast.h"
+@interface CJUIKitBaseViewController : UIViewController {
+    
+}
 
-@interface CJUIKitBaseViewController : UIViewController
+- (void)showToastMessage:(NSString *)message;
 
 @end

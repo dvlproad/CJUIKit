@@ -15,13 +15,13 @@
 #define CJDEBUG
 #import <Masonry/Masonry.h>
 
-//#ifdef TEST_CJBASEUIKIT_POD
-//#import "UIColor+CJHex.h"
+#ifdef TEST_CJBASEUIKIT_POD
+#import "UIColor+CJHex.h"
 //#import "TSAlertUtil.h"
-//#else
-//#import <CJBaseUIKit/UIColor+CJHex.h>
+#else
+#import <CJBaseUIKit/UIColor+CJHex.h>
 //#import <CJBaseUIKit/TSAlertUtil.h>
-//#endif
+#endif
 
 #import "DemoLabelFactory.h"
 

@@ -8,7 +8,6 @@
 
 #import "CJUIKitBaseViewController.h"
 #import <CJBaseUtil/CJSectionDataModel.h>   //在CJDataUtil中
-//#import <CJBaseUtil/CJModuleModel.h>        //在CJDataUtil中
 #import "CJSectionDataModel+CJDealTextModel.h"
 
 @interface CJUIKitBaseTextViewController : CJUIKitBaseViewController {

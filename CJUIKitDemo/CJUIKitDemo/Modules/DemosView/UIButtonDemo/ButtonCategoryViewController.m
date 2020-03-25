@@ -7,6 +7,7 @@
 //
 
 #import "ButtonCategoryViewController.h"
+#import "TSToast.h"
 #import "TSButtonFactory.h"
 #import "UIButton+CJMoreProperty.h"
 

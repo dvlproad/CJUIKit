@@ -61,6 +61,7 @@ target 'CJUIKitDemo' do
 #    pod 'CJBaseUIKit',          :path => '../’
     pod 'lottie-ios', '~> 2.5.3' # CJBaseUIKit 需要使用
     
+    pod 'CJTS_Base',            :path => '../'
 #    pod 'CJBaseUIKit',           :path => '../’
     pod 'CJBaseOverlayKit',     :path => '../’
     pod 'CJBaseUtil',           :path => '../’

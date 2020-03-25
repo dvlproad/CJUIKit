@@ -174,10 +174,10 @@
         if (isAutoExec == NO) {
             if (validateSuccess == NO) {
                 NSString *errorMessage = [NSString stringWithFormat:@"代码方法错误，执行结果应为:%@", dealTextModel.hopeResultText];
-                [TSToast showMessage:errorMessage];
+                [self showToastMessage:errorMessage];
             } else {
                 NSString *successMessage = [NSString stringWithFormat:@"恭喜你，代码方法处理正确！"];
-                [TSToast showMessage:successMessage];
+                [self showToastMessage:successMessage];
             }
         }
     }

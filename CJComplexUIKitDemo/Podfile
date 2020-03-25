@@ -26,8 +26,9 @@ end
 
 
 target 'CJComplexUIKitDemo' do
+  pod 'CJTS_Base',                :path => '../’
   pod 'CJBaseUIKit',              :path => '../’
-  pod 'CJBaseOverlayKit',     :path => '../’
+  pod 'CJBaseOverlayKit',         :path => '../’
   pod 'CJBaseUtil',               :path => '../’
   pod 'CJBaseHelper',             :path => '../’
   pod 'CJFoundation',             :path => '../’

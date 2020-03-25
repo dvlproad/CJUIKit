@@ -240,19 +240,11 @@
 		78A621E02135C78B004DA046 /* DemoSuspendWindow+CJSuspendWindowManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 78A621DF2135C78B004DA046 /* DemoSuspendWindow+CJSuspendWindowManager.m */; };
 		78A621E72135C925004DA046 /* DemoSuspendWindowRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78A621E52135C924004DA046 /* DemoSuspendWindowRootViewController.m */; };
 		78A621ED2135CA50004DA046 /* DemoFloatingWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 78A621EC2135CA50004DA046 /* DemoFloatingWindow.m */; };
-		78A74E3C2368773A0023F44B /* CJUIKitBaseTextViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78A74E37236877390023F44B /* CJUIKitBaseTextViewController.m */; };
-		78A74E482368777F0023F44B /* CJDealTextModelFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 78A74E422368777F0023F44B /* CJDealTextModelFactory.m */; };
-		78A74E492368777F0023F44B /* CJSectionDataModel+CJDealTextModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 78A74E442368777F0023F44B /* CJSectionDataModel+CJDealTextModel.m */; };
-		78A74E4A2368777F0023F44B /* CJDealTextModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 78A74E462368777F0023F44B /* CJDealTextModel.m */; };
-		78A74E4E236877BA0023F44B /* CJValidateStringTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 78A74E4C236877BA0023F44B /* CJValidateStringTableViewCell.m */; };
 		78A74E5123687ACF0023F44B /* PriceFenToYuanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78A74E5023687ACF0023F44B /* PriceFenToYuanViewController.m */; };
 		78AB83A621B7CE4500853E21 /* PresentAViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78AB83A521B7CE4500853E21 /* PresentAViewController.m */; };
 		78AB83A921B7CE7100853E21 /* PresentBViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78AB83A821B7CE7100853E21 /* PresentBViewController.m */; };
 		78AB83AC21B7D24E00853E21 /* closePresentVC@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 78AB83AA21B7D24E00853E21 /* closePresentVC@2x.png */; };
 		78AB83AD21B7D24E00853E21 /* closePresentVC@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 78AB83AB21B7D24E00853E21 /* closePresentVC@3x.png */; };
-		78AB83B121B8C49900853E21 /* CJUIKitBaseCollectionHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78AB83AE21B8C49900853E21 /* CJUIKitBaseCollectionHomeViewController.m */; };
-		78AB83B521B8D2DA00853E21 /* CJUIKitCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 78AB83B421B8D2DA00853E21 /* CJUIKitCollectionViewCell.m */; };
-		78AB83BE21B9362200853E21 /* CJUIKitBaseScrollViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78AB83BD21B9362200853E21 /* CJUIKitBaseScrollViewController.m */; };
 		78AB83C221B96D7000853E21 /* DemoTextFieldFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 78AB83C121B96D7000853E21 /* DemoTextFieldFactory.m */; };
 		78B6C2D82159D1F100D5864E /* DemoBusFlightStationModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 78B6C2D42159D1F100D5864E /* DemoBusFlightStationModel.m */; };
 		78B6C2D92159D1F100D5864E /* DemoBusFlightModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 78B6C2D72159D1F100D5864E /* DemoBusFlightModel.m */; };
@@ -273,8 +265,6 @@
 		78C8148E216E11AF00A6B190 /* Home1.m in Sources */ = {isa = PBXBuildFile; fileRef = 78C81487216E11AF00A6B190 /* Home1.m */; };
 		78C8148F216E11AF00A6B190 /* EChildViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78C81488216E11AF00A6B190 /* EChildViewController.m */; };
 		78E18952217778D900B8781A /* NavigationBarHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78E18951217778D900B8781A /* NavigationBarHomeViewController.m */; };
-		78E1895621777CB900B8781A /* CJUIKitBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78E1895521777CB900B8781A /* CJUIKitBaseViewController.m */; };
-		78E1895921777DC600B8781A /* CJUIKitBaseHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78E1895721777DC600B8781A /* CJUIKitBaseHomeViewController.m */; };
 		78E1895D2177835700B8781A /* ViewHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78E1895B2177835600B8781A /* ViewHomeViewController.m */; };
 		78E1899E2177874B00B8781A /* SliderHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78E1899C2177874B00B8781A /* SliderHomeViewController.m */; };
 		78E189A221778A4000B8781A /* AutoLayoutHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78E189A021778A4000B8781A /* AutoLayoutHomeViewController.m */; };
@@ -326,7 +316,6 @@
 		80D49F8B20BE7EE0003F642C /* CJDataUtilTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 80D49F8A20BE7EE0003F642C /* CJDataUtilTest.m */; };
 		80D49F8F20BE8574003F642C /* TestCityModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 80D49F8E20BE8574003F642C /* TestCityModel.m */; };
 		80D71EA92090277700D2DB68 /* AlertHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80D71EA72090277700D2DB68 /* AlertHomeViewController.m */; };
-		80D71EAA2090277700D2DB68 /* CJUIKitBaseHomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 80D71EA82090277700D2DB68 /* CJUIKitBaseHomeViewController.xib */; };
 		80D71EB22090522F00D2DB68 /* scan_icon_notice@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 80D71EB12090522E00D2DB68 /* scan_icon_notice@2x.png */; };
 		80FF902A1FC5649E00E437CF /* ThirdPartyHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80FF8F0E1FC5649E00E437CF /* ThirdPartyHomeViewController.m */; };
 		80FF909A1FC5649F00E437CF /* FloatingWindowViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80FF8FC71FC5649E00E437CF /* FloatingWindowViewController.m */; };
@@ -801,16 +790,6 @@
 		78A621E62135C925004DA046 /* DemoSuspendWindowRootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DemoSuspendWindowRootViewController.h; sourceTree = "<group>"; };
 		78A621EB2135CA4F004DA046 /* DemoFloatingWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DemoFloatingWindow.h; sourceTree = "<group>"; };
 		78A621EC2135CA50004DA046 /* DemoFloatingWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DemoFloatingWindow.m; sourceTree = "<group>"; };
-		78A74E37236877390023F44B /* CJUIKitBaseTextViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJUIKitBaseTextViewController.m; sourceTree = "<group>"; };
-		78A74E3A236877390023F44B /* CJUIKitBaseTextViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJUIKitBaseTextViewController.h; sourceTree = "<group>"; };
-		78A74E422368777F0023F44B /* CJDealTextModelFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJDealTextModelFactory.m; sourceTree = "<group>"; };
-		78A74E432368777F0023F44B /* CJDealTextModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJDealTextModel.h; sourceTree = "<group>"; };
-		78A74E442368777F0023F44B /* CJSectionDataModel+CJDealTextModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CJSectionDataModel+CJDealTextModel.m"; sourceTree = "<group>"; };
-		78A74E452368777F0023F44B /* CJDealTextModelFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJDealTextModelFactory.h; sourceTree = "<group>"; };
-		78A74E462368777F0023F44B /* CJDealTextModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJDealTextModel.m; sourceTree = "<group>"; };
-		78A74E472368777F0023F44B /* CJSectionDataModel+CJDealTextModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CJSectionDataModel+CJDealTextModel.h"; sourceTree = "<group>"; };
-		78A74E4C236877BA0023F44B /* CJValidateStringTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJValidateStringTableViewCell.m; sourceTree = "<group>"; };
-		78A74E4D236877BA0023F44B /* CJValidateStringTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJValidateStringTableViewCell.h; sourceTree = "<group>"; };
 		78A74E4F23687ACF0023F44B /* PriceFenToYuanViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PriceFenToYuanViewController.h; sourceTree = "<group>"; };
 		78A74E5023687ACF0023F44B /* PriceFenToYuanViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PriceFenToYuanViewController.m; sourceTree = "<group>"; };
 		78AB83A421B7CE4500853E21 /* PresentAViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PresentAViewController.h; sourceTree = "<group>"; };
@@ -819,12 +798,6 @@
 		78AB83A821B7CE7100853E21 /* PresentBViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PresentBViewController.m; sourceTree = "<group>"; };
 		78AB83AA21B7D24E00853E21 /* closePresentVC@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "closePresentVC@2x.png"; sourceTree = "<group>"; };
 		78AB83AB21B7D24E00853E21 /* closePresentVC@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "closePresentVC@3x.png"; sourceTree = "<group>"; };
-		78AB83AE21B8C49900853E21 /* CJUIKitBaseCollectionHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJUIKitBaseCollectionHomeViewController.m; sourceTree = "<group>"; };
-		78AB83B021B8C49900853E21 /* CJUIKitBaseCollectionHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJUIKitBaseCollectionHomeViewController.h; sourceTree = "<group>"; };
-		78AB83B321B8D2DA00853E21 /* CJUIKitCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CJUIKitCollectionViewCell.h; sourceTree = "<group>"; };
-		78AB83B421B8D2DA00853E21 /* CJUIKitCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CJUIKitCollectionViewCell.m; sourceTree = "<group>"; };
-		78AB83BC21B9362200853E21 /* CJUIKitBaseScrollViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CJUIKitBaseScrollViewController.h; sourceTree = "<group>"; };
-		78AB83BD21B9362200853E21 /* CJUIKitBaseScrollViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CJUIKitBaseScrollViewController.m; sourceTree = "<group>"; };
 		78AB83C021B96D7000853E21 /* DemoTextFieldFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DemoTextFieldFactory.h; sourceTree = "<group>"; };
 		78AB83C121B96D7000853E21 /* DemoTextFieldFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DemoTextFieldFactory.m; sourceTree = "<group>"; };
 		78B6C2D42159D1F100D5864E /* DemoBusFlightStationModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DemoBusFlightStationModel.m; sourceTree = "<group>"; };
@@ -864,10 +837,6 @@
 		78C81488216E11AF00A6B190 /* EChildViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EChildViewController.m; sourceTree = "<group>"; };
 		78E18950217778D900B8781A /* NavigationBarHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NavigationBarHomeViewController.h; sourceTree = "<group>"; };
 		78E18951217778D900B8781A /* NavigationBarHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NavigationBarHomeViewController.m; sourceTree = "<group>"; };
-		78E1895421777CB900B8781A /* CJUIKitBaseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CJUIKitBaseViewController.h; sourceTree = "<group>"; };
-		78E1895521777CB900B8781A /* CJUIKitBaseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CJUIKitBaseViewController.m; sourceTree = "<group>"; };
-		78E1895721777DC600B8781A /* CJUIKitBaseHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJUIKitBaseHomeViewController.m; sourceTree = "<group>"; };
-		78E1895821777DC600B8781A /* CJUIKitBaseHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJUIKitBaseHomeViewController.h; sourceTree = "<group>"; };
 		78E1895B2177835600B8781A /* ViewHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewHomeViewController.m; sourceTree = "<group>"; };
 		78E1895C2177835600B8781A /* ViewHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewHomeViewController.h; sourceTree = "<group>"; };
 		78E1899C2177874B00B8781A /* SliderHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SliderHomeViewController.m; sourceTree = "<group>"; };
@@ -957,7 +926,6 @@
 		80D49F8E20BE8574003F642C /* TestCityModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestCityModel.m; sourceTree = "<group>"; };
 		80D71EA62090277700D2DB68 /* AlertHomeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AlertHomeViewController.h; sourceTree = "<group>"; };
 		80D71EA72090277700D2DB68 /* AlertHomeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AlertHomeViewController.m; sourceTree = "<group>"; };
-		80D71EA82090277700D2DB68 /* CJUIKitBaseHomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CJUIKitBaseHomeViewController.xib; sourceTree = "<group>"; };
 		80D71EB12090522E00D2DB68 /* scan_icon_notice@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "scan_icon_notice@2x.png"; sourceTree = "<group>"; };
 		80FF8F0D1FC5649E00E437CF /* ThirdPartyHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThirdPartyHomeViewController.h; sourceTree = "<group>"; };
 		80FF8F0E1FC5649E00E437CF /* ThirdPartyHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThirdPartyHomeViewController.m; sourceTree = "<group>"; };
@@ -2138,39 +2106,6 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
-		78A74E34236877390023F44B /* BaseTextViewController */ = {
-			isa = PBXGroup;
-			children = (
-				78A74E3A236877390023F44B /* CJUIKitBaseTextViewController.h */,
-				78A74E37236877390023F44B /* CJUIKitBaseTextViewController.m */,
-				78A74E4B236877BA0023F44B /* View */,
-				78A74E412368777F0023F44B /* Model */,
-			);
-			path = BaseTextViewController;
-			sourceTree = "<group>";
-		};
-		78A74E412368777F0023F44B /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				78A74E432368777F0023F44B /* CJDealTextModel.h */,
-				78A74E462368777F0023F44B /* CJDealTextModel.m */,
-				78A74E452368777F0023F44B /* CJDealTextModelFactory.h */,
-				78A74E422368777F0023F44B /* CJDealTextModelFactory.m */,
-				78A74E472368777F0023F44B /* CJSectionDataModel+CJDealTextModel.h */,
-				78A74E442368777F0023F44B /* CJSectionDataModel+CJDealTextModel.m */,
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		78A74E4B236877BA0023F44B /* View */ = {
-			isa = PBXGroup;
-			children = (
-				78A74E4D236877BA0023F44B /* CJValidateStringTableViewCell.h */,
-				78A74E4C236877BA0023F44B /* CJValidateStringTableViewCell.m */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
 		78AB83BF21B96D7000853E21 /* DemoTextFieldFactory */ = {
 			isa = PBXGroup;
 			children = (
@@ -2238,19 +2173,7 @@
 		78E1895321777C9700B8781A /* Base */ = {
 			isa = PBXGroup;
 			children = (
-				78A74E34236877390023F44B /* BaseTextViewController */,
 				7856F95E21F89A2D004AF751 /* DemoConstant.h */,
-				78AB83B021B8C49900853E21 /* CJUIKitBaseCollectionHomeViewController.h */,
-				78AB83AE21B8C49900853E21 /* CJUIKitBaseCollectionHomeViewController.m */,
-				78AB83B321B8D2DA00853E21 /* CJUIKitCollectionViewCell.h */,
-				78AB83B421B8D2DA00853E21 /* CJUIKitCollectionViewCell.m */,
-				78E1895421777CB900B8781A /* CJUIKitBaseViewController.h */,
-				78E1895521777CB900B8781A /* CJUIKitBaseViewController.m */,
-				78AB83BC21B9362200853E21 /* CJUIKitBaseScrollViewController.h */,
-				78AB83BD21B9362200853E21 /* CJUIKitBaseScrollViewController.m */,
-				78E1895821777DC600B8781A /* CJUIKitBaseHomeViewController.h */,
-				78E1895721777DC600B8781A /* CJUIKitBaseHomeViewController.m */,
-				80D71EA82090277700D2DB68 /* CJUIKitBaseHomeViewController.xib */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -3035,7 +2958,6 @@
 				80FF90AC1FC5649F00E437CF /* NavigationBarViewController.xib in Resources */,
 				1562F2DA23F5DBF40009FCEA /* cjBackBarButtonItem@3x.png in Resources */,
 				80FF90AB1FC5649F00E437CF /* EasyScaleHeadView.xib in Resources */,
-				80D71EAA2090277700D2DB68 /* CJUIKitBaseHomeViewController.xib in Resources */,
 				1562F2D323F5DBF40009FCEA /* cjCheckBoxOrangeYES@2x.png in Resources */,
 				7868278121AF02E000FCCDE5 /* bg@2x.jpg in Resources */,
 				154A11282428F88B00AD5F9B /* loading_coffee.json in Resources */,
@@ -3207,7 +3129,6 @@
 				7850B70120937C5A008F4A21 /* PopupInWindowVC.m in Sources */,
 				7850B71320937E85008F4A21 /* WelcomeViewToPop.m in Sources */,
 				1562F2E923F5DBF40009FCEA /* CJSwitchView.m in Sources */,
-				78AB83BE21B9362200853E21 /* CJUIKitBaseScrollViewController.m in Sources */,
 				78A621ED2135CA50004DA046 /* DemoFloatingWindow.m in Sources */,
 				807F126020B507A30008B748 /* ViewAnimateViewController.m in Sources */,
 				784A7216214C9DF000F8D144 /* MoreHomeViewController.m in Sources */,
@@ -3215,7 +3136,6 @@
 				78A74E5123687ACF0023F44B /* PriceFenToYuanViewController.m in Sources */,
 				80FF909C1FC5649F00E437CF /* NestedXibView.m in Sources */,
 				78226A9021A42103002167F2 /* CJConvertUtil.m in Sources */,
-				78AB83B121B8C49900853E21 /* CJUIKitBaseCollectionHomeViewController.m in Sources */,
 				156AC8D12406D9F800A5A23D /* DemoTagButtonFactory.m in Sources */,
 				801F75D820A040D800A2E027 /* BBXDAreaCodeTextField.m in Sources */,
 				1562F2C423F5DBF40009FCEA /* UISearchBar+CJAddInputAccessoryView.m in Sources */,
@@ -3251,7 +3171,6 @@
 				8060C48C20E0D5EF0093B14E /* AccuracyStringViewController.m in Sources */,
 				1562F2CA23F5DBF40009FCEA /* UIView+CJKeepBounds.m in Sources */,
 				1562F2CE23F5DBF40009FCEA /* UIView+CJExclusiveTouch.m in Sources */,
-				78A74E4E236877BA0023F44B /* CJValidateStringTableViewCell.m in Sources */,
 				7856F97021F9D2C5004AF751 /* BaseTableViewCellViewController.m in Sources */,
 				787FDB9820500B5C008A46E3 /* ShimmeringSwitchSlider.m in Sources */,
 				7856F72921F4E790004AF751 /* TestDataUtil.m in Sources */,
@@ -3264,7 +3183,6 @@
 				787C287F23223DAA00AF84F4 /* DemoEasyModel.m in Sources */,
 				78B6C2DF2159D20000D5864E /* DemoUsePermissionModel.m in Sources */,
 				78575C8A2257242100925842 /* TestTextFieldOffsetViewController.m in Sources */,
-				78A74E482368777F0023F44B /* CJDealTextModelFactory.m in Sources */,
 				7808319222DC65DD00F36576 /* WelcomeViewController.m in Sources */,
 				1562F30023F945F20009FCEA /* TSToast.m in Sources */,
 				15A7680C23FD966B00358B42 /* TSButtonFactory.m in Sources */,
@@ -3297,7 +3215,6 @@
 				1562F2C323F5DBF40009FCEA /* UIColor+CJHex.m in Sources */,
 				1562F32423F978190009FCEA /* SingleHUDViewController.m in Sources */,
 				1562F2D623F5DBF40009FCEA /* CJBaseTableViewCell.m in Sources */,
-				78E1895621777CB900B8781A /* CJUIKitBaseViewController.m in Sources */,
 				787FDB8620500B5C008A46E3 /* SliderViewController.m in Sources */,
 				7850B70020937C5A008F4A21 /* DragViewController.m in Sources */,
 				1562F2E023F5DBF40009FCEA /* CJSwitchSliderStatusModel.m in Sources */,
@@ -3315,10 +3232,8 @@
 				781C736C21BA61480090080C /* TestValueChangeTableViewCell.m in Sources */,
 				7856F72A21F4E790004AF751 /* DemoInfo.m in Sources */,
 				1562F31723F96BDC0009FCEA /* AHUDChildViewController.m in Sources */,
-				78A74E492368777F0023F44B /* CJSectionDataModel+CJDealTextModel.m in Sources */,
 				78AB83C221B96D7000853E21 /* DemoTextFieldFactory.m in Sources */,
 				7808D5B62170919A007FC851 /* LoginChangeEnvironmentViewController.m in Sources */,
-				78AB83B521B8D2DA00853E21 /* CJUIKitCollectionViewCell.m in Sources */,
 				78B6C2D82159D1F100D5864E /* DemoBusFlightStationModel.m in Sources */,
 				80FF909E1FC5649F00E437CF /* NestedXibSubViewA.m in Sources */,
 				78C8148D216E11AF00A6B190 /* AChildViewController.m in Sources */,
@@ -3345,7 +3260,6 @@
 				78C8148B216E11AF00A6B190 /* BChildViewController.m in Sources */,
 				781989A8225A34C000D01DBC /* CJDemoDateLabel.m in Sources */,
 				1562F2B723F5DBF40009FCEA /* UIImage+CJFixOrientation.m in Sources */,
-				78E1895921777DC600B8781A /* CJUIKitBaseHomeViewController.m in Sources */,
 				1562F2F123F5DBF40009FCEA /* CJExtraTextTextField.m in Sources */,
 				7868A06B237056B30013AF4D /* ButtonCategoryViewController.m in Sources */,
 				1562F2B423F5DBF40009FCEA /* UIImage+CJBase64.m in Sources */,
@@ -3354,7 +3268,6 @@
 				7803DAAE22F7D519001E06B7 /* MJExtensionToModelViewController.m in Sources */,
 				78A4E1B42173A0D9005FEADD /* DemoChangeEnvironmentViewModel.m in Sources */,
 				789C447721F07BBC00181144 /* ImageHomeViewController.m in Sources */,
-				78A74E3C2368773A0023F44B /* CJUIKitBaseTextViewController.m in Sources */,
 				1562F2D923F5DBF40009FCEA /* UIViewController+CJCustomBackBarButtonItem.m in Sources */,
 				15F4271F242B7D2A00ED2E4C /* DataEmptyViewFactory.m in Sources */,
 				80FF909A1FC5649F00E437CF /* FloatingWindowViewController.m in Sources */,
@@ -3447,7 +3360,6 @@
 				7885FC4A2156681F00B97DAA /* UIView+CJPopupInSuspendWindow.m in Sources */,
 				1562F2ED23F5DBF40009FCEA /* CJSearchBar.m in Sources */,
 				1562F2C823F5DBF40009FCEA /* UIView+CJShowExtendView.m in Sources */,
-				78A74E4A2368777F0023F44B /* CJDealTextModel.m in Sources */,
 				800E07E12016CCF500799B78 /* DataUtilViewController.m in Sources */,
 				1562F2BB23F5DBF40009FCEA /* CJUIKitConstant.m in Sources */,
 				78C81489216E11AF00A6B190 /* CChildViewController.m in Sources */,

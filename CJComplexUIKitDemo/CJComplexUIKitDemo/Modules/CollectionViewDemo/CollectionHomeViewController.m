@@ -74,7 +74,6 @@
             CJModuleModel *openCollectionViewModule = [[CJModuleModel alloc] init];
             openCollectionViewModule.title = @"OpenCollectionView(可展开)";
             openCollectionViewModule.classEntry = [OpenCollectionViewController class];
-            openCollectionViewModule.isCreateByXib = YES;
             [sectionDataModel.values addObject:openCollectionViewModule];
         }
         {

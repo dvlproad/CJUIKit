@@ -7,14 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "CJOpenCollectionView.h"
-#import "CJHeadAndCellHorizontalLayout.h"
+#import "TSOpenCollectionView.h"
 
 @interface OpenCollectionViewController : UIViewController {
     
 }
 
-@property (nonatomic, strong) IBOutlet CJOpenCollectionView *collectionView;
+@property (nonatomic, strong) TSOpenCollectionView *collectionView;
 @property (nonatomic, strong) NSMutableArray *datas;
 
 @end

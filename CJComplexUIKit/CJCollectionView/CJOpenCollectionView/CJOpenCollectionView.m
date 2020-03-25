@@ -76,7 +76,9 @@ static NSString *const HeaderIdentifierDefault = @"HeaderDefault";
 
 
 /** 完整的描述请参见文件头部 */
-- (void)configureCellBlock:(CJOpenCollectionViewDetailCellConfigureBlock)aCellBlock configureLineBlock:(CJOpenCollectionViewLineCellConfigureBlock)aLineBlock configureHeaderBlock:(CJOpenCollectionViewReusableViewConfigureBlock)aHeaderBlock {
+- (void)configureCellBlock:(CJOpenCollectionViewDetailCellConfigureBlock)aCellBlock
+        configureLineBlock:(CJOpenCollectionViewLineCellConfigureBlock)aLineBlock
+      configureHeaderBlock:(CJOpenCollectionViewReusableViewConfigureBlock)aHeaderBlock {
     _configureCellBlock = aCellBlock;
     _configureLineCellBlock = aLineBlock;
     _configureHeaderBlock = aHeaderBlock;

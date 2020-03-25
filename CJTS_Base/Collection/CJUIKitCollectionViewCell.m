@@ -7,11 +7,6 @@
 //
 
 #import "CJUIKitCollectionViewCell.h"
-#ifdef TEST_CJBASEUIKIT_POD
-#import "UIColor+CJHex.h"
-#else
-#import <CJBaseUIKit/UIColor+CJHex.h>
-#endif
 
 @implementation CJUIKitCollectionViewCell
 
@@ -27,7 +22,7 @@
     self.layer.masksToBounds = YES;
     
     self.layer.borderWidth = 2;
-    self.layer.borderColor = CJColorFromHexString(@"#f2f2f2").CGColor;
+    self.layer.borderColor = [UIColor colorWithRed:242/255.0 green:242/255.0 blue:242/255.0 alpha:1.0].CGColor; // #f2f2f2
     
     UIView *parentView = self.contentView;
     

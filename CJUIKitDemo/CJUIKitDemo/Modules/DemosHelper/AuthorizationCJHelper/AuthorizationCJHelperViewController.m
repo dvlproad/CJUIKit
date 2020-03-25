@@ -7,6 +7,7 @@
 //
 
 #import "AuthorizationCJHelperViewController.h"
+#import "TSToast.h"
 
 @interface AuthorizationCJHelperViewController ()
 

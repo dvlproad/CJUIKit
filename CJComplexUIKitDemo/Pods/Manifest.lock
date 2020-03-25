@@ -219,6 +219,20 @@ PODS:
   - CJNetwork/CJNetworkBase (0.5.0)
   - CJNetwork/CJRequestUtil (0.5.0):
     - CJNetwork/CJNetworkBase
+  - CJTS_Base (0.0.2):
+    - CJBaseOverlayKit/CJToast
+    - CJBaseUtil/CJDataUtil
+    - CJComplexUIKit/CJCollectionView
+    - CJTS_Base/Home_Collection (= 0.0.2)
+    - CJTS_Base/Home_TextView (= 0.0.2)
+  - CJTS_Base/Home_Collection (0.0.2):
+    - CJBaseOverlayKit/CJToast
+    - CJBaseUtil/CJDataUtil
+    - CJComplexUIKit/CJCollectionView
+  - CJTS_Base/Home_TextView (0.0.2):
+    - CJBaseOverlayKit/CJToast
+    - CJBaseUtil/CJDataUtil
+    - CJComplexUIKit/CJCollectionView
   - DZNEmptyDataSet (1.8.1)
   - IjinbuNetwork (0.1.0):
     - CJNetwork/AFNetworkingBaseComponent
@@ -259,6 +273,7 @@ DEPENDENCIES:
   - CJMedia/CJUploadImagePickerUtil (~> 0.0.7)
   - CJNetwork
   - CJNetwork/AFNetworkingBaseComponent
+  - CJTS_Base (from `../`)
   - DZNEmptyDataSet
   - IjinbuNetwork (~> 0.1.0)
   - JGActionSheet
@@ -268,7 +283,7 @@ DEPENDENCIES:
   - SVProgressHUD
 
 SPEC REPOS:
-  https://gitee.com/dvlproad/dvlproadSpecs.git:
+  https://gitee.com/dvlproad/dvlproadSpecs:
     - IjinbuNetwork
   https://github.com/CocoaPods/Specs.git:
     - AFNetworking
@@ -305,6 +320,8 @@ EXTERNAL SOURCES:
     :path: "../"
   CJFoundation:
     :path: "../"
+  CJTS_Base:
+    :path: "../"
 
 SPEC CHECKSUMS:
   AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
@@ -318,6 +335,7 @@ SPEC CHECKSUMS:
   CJFoundation: 53b4df7152c6d6fd776f55f387c67f431b8574bd
   CJMedia: 29b1bd8c127fb80c4993a76420a3bcc31a4657e5
   CJNetwork: a75f849e5c6ec8fc85ca7aa5027f73d6c48a4af1
+  CJTS_Base: 538dc19330d861126cfabe3e80204acf974f59f5
   DZNEmptyDataSet: 9525833b9e68ac21c30253e1d3d7076cc828eaa7
   IjinbuNetwork: 307e7e12d35b547f04b885cc2aa098625e4b9768
   JGActionSheet: 2cfca820b57a11ec4b4a5655d45ee599fbeddc05
@@ -334,6 +352,6 @@ SPEC CHECKSUMS:
   SDWebImage: c5594f1a19c48d526d321e548902b56b479cd508
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
 
-PODFILE CHECKSUM: 37e2808c82bc69537a15db3a670cced7776cb263
+PODFILE CHECKSUM: a053495eb504dac32f2cb69c17602327f4666511
 
 COCOAPODS: 1.8.4
