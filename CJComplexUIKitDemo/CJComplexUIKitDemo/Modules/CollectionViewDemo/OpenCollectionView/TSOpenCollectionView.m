@@ -2,7 +2,7 @@
 //  TSOpenCollectionView.m
 //  CJComplexUIKitDemo
 //
-//  Created by 李超前 on 2020/3/25.
+//  Created by ciyouzen on 2020/3/25.
 //  Copyright © 2020 dvlproad. All rights reserved.
 //
 

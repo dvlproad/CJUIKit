@@ -50,6 +50,7 @@
 		781872E9242BD0CC0098B3A9 /* LEMenuCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 781872E5242BD0CC0098B3A9 /* LEMenuCollectionViewCell.m */; };
 		781872EA242BD0CC0098B3A9 /* LECollectionHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 781872E8242BD0CC0098B3A9 /* LECollectionHeader.m */; };
 		781872ED242BD2150098B3A9 /* LECollectionDecoration.m in Sources */ = {isa = PBXBuildFile; fileRef = 781872EC242BD2150098B3A9 /* LECollectionDecoration.m */; };
+		781872F0242BD3920098B3A9 /* LECollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 781872EF242BD3920098B3A9 /* LECollectionView.m */; };
 		78293F1221FC2D0900F70F43 /* SvDemo_Refresh.xib in Resources */ = {isa = PBXBuildFile; fileRef = 78293F0F21FC2D0800F70F43 /* SvDemo_Refresh.xib */; };
 		78293F1321FC2D0900F70F43 /* SvDemo_Refresh.m in Sources */ = {isa = PBXBuildFile; fileRef = 78293F1121FC2D0900F70F43 /* SvDemo_Refresh.m */; };
 		783281041F4198BC008267E0 /* CustomTripProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 783281031F4198BC008267E0 /* CustomTripProgressView.m */; };
@@ -288,6 +289,8 @@
 		781872E8242BD0CC0098B3A9 /* LECollectionHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LECollectionHeader.m; sourceTree = "<group>"; };
 		781872EB242BD2150098B3A9 /* LECollectionDecoration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LECollectionDecoration.h; sourceTree = "<group>"; };
 		781872EC242BD2150098B3A9 /* LECollectionDecoration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LECollectionDecoration.m; sourceTree = "<group>"; };
+		781872EE242BD3920098B3A9 /* LECollectionView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LECollectionView.h; sourceTree = "<group>"; };
+		781872EF242BD3920098B3A9 /* LECollectionView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LECollectionView.m; sourceTree = "<group>"; };
 		78293F0F21FC2D0800F70F43 /* SvDemo_Refresh.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SvDemo_Refresh.xib; sourceTree = "<group>"; };
 		78293F1021FC2D0800F70F43 /* SvDemo_Refresh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SvDemo_Refresh.h; sourceTree = "<group>"; };
 		78293F1121FC2D0900F70F43 /* SvDemo_Refresh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SvDemo_Refresh.m; sourceTree = "<group>"; };
@@ -763,6 +766,8 @@
 			children = (
 				781872C1242BBA170098B3A9 /* LEWorkHomeViewController.h */,
 				781872C0242BBA170098B3A9 /* LEWorkHomeViewController.m */,
+				781872EE242BD3920098B3A9 /* LECollectionView.h */,
+				781872EF242BD3920098B3A9 /* LECollectionView.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1780,6 +1785,7 @@
 				785F86C2226C450E005CEBF3 /* EmptyScrollViewController1.m in Sources */,
 				7856F8A621F5680F004AF751 /* CJUploadImageCollectionView.m in Sources */,
 				15F4270F242B7C6F00ED2E4C /* DemoLabelFactory.m in Sources */,
+				781872F0242BD3920098B3A9 /* LECollectionView.m in Sources */,
 				7856F89321F5680E004AF751 /* ProgressWebViewController.m in Sources */,
 				7856F6E521F4E706004AF751 /* ScrollViewHomeViewController.m in Sources */,
 				789A4F6721FAF3A8001528B9 /* cvSupplementaryFoot.m in Sources */,

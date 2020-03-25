@@ -18,7 +18,6 @@ FOUNDATION_EXTERN CGFloat const LEWorkFunctionItemCellHeight;
 }
 @property (nonatomic, strong) UILabel *titleNameLabel;
 @property (nonatomic, strong) UIImageView *iconImageView;
-@property (nonatomic, strong) UILabel *messageTipLabel;
 
 - (void)displayMessageWithCount:(NSInteger)messageCount;
 

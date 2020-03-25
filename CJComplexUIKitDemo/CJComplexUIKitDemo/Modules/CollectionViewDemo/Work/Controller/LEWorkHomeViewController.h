@@ -7,14 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <CJBaseUtil/CJSectionDataModel.h>   //在CJDataUtil中
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface LEWorkHomeViewController : UIViewController {
     
 }
-@property (nonatomic, strong) NSMutableArray<CJSectionDataModel *> *menuSectionDataModels;
 
 
 @end

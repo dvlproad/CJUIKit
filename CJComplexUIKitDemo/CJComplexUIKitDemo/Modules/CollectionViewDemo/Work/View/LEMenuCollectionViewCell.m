@@ -20,6 +20,7 @@ static const CGFloat Icon_Size_Height = 42.0f;
 @interface LEMenuCollectionViewCell () {
     
 }
+@property (nonatomic, strong) UILabel *messageTipLabel;
 
 @end
 
