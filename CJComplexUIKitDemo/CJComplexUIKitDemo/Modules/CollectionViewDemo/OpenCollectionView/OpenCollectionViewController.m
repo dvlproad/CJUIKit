@@ -35,7 +35,7 @@
     _collectionView = collectionView;
     
     _datas = [TestDataUtil getTestSectionDataModels];
-    _collectionView.datas = _datas;
+    _collectionView.sectionDataModels = _datas;
 }
 
 #pragma mark - CJOpenCollectionViewDelegate

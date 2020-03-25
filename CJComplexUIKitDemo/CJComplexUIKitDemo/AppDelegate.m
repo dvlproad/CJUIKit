@@ -32,7 +32,13 @@
     // 设置主窗口,并设置根控制器
     self.window = [[UIWindow alloc]init];
     self.window.frame = [UIScreen mainScreen].bounds;
-    self.window.rootViewController = [self getMainRootViewController];
+    
+    // 所有测试
+    UIViewController *rootViewController = [self getMainRootViewController];
+    // 只直接测试某个页面
+//    UIViewController *rootViewController = [[UINavigationController alloc] initWithRootViewController:[[NSClassFromString(@"LEWorkHomeViewController") alloc] init]];
+    
+    self.window.rootViewController = rootViewController;
     [self.window makeKeyAndVisible];
     
     // Override point for customization after application launch.

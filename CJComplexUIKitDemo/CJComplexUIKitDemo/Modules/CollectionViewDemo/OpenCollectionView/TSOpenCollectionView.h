@@ -14,7 +14,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface TSOpenCollectionView : CJOpenCollectionView {
     
 }
-@property (nonatomic, strong) NSMutableArray *datas;
+@property (nonatomic, strong) NSMutableArray *sectionDataModels;
 
 @end
 

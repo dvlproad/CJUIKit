@@ -61,19 +61,19 @@
     /** 设置对应indexPaht上Cell、Line、Header的属性值 */
     __weak typeof(self)weakSelf = self;
     [self configureCellBlock:^(id cell, NSIndexPath *indexPath) {
-        CJSectionDataModel *secctionModel = [weakSelf.datas objectAtIndex:indexPath.section];
+        CJSectionDataModel *secctionModel = [weakSelf.sectionDataModels objectAtIndex:indexPath.section];
         TestDataModel *cellModel = (TestDataModel *)[secctionModel.values objectAtIndex:indexPath.item];
         
         DetailCell *m_cell = (DetailCell *)cell;
         m_cell.labDetail.text = cellModel.name;
         
     } configureLineBlock:^(CJLineCell *lineCell, NSIndexPath *indexPath) {
-        CJSectionDataModel *secctionModel = [weakSelf.datas objectAtIndex:indexPath.section];
+        CJSectionDataModel *secctionModel = [weakSelf.sectionDataModels objectAtIndex:indexPath.section];
         lineCell.label.text = secctionModel.theme;
         lineCell.label.font = [UIFont systemFontOfSize:28];
         
     } configureHeaderBlock:^(CJCollectionViewHeaderFooterView *header, NSIndexPath *indexPath) {
-        CJSectionDataModel *secctionModel = [weakSelf.datas objectAtIndex:indexPath.section];
+        CJSectionDataModel *secctionModel = [weakSelf.sectionDataModels objectAtIndex:indexPath.section];
         
         Header *m_header = (Header *)header;
         m_header.labTheme.text = secctionModel.theme;
@@ -85,11 +85,11 @@
 
 #pragma mark - CJOpenCollectionViewDataSource
 - (NSInteger)cjOpenCollectionView_numberOfSectionsInCollectionView:(CJOpenCollectionView *)collectionView {
-    return [_datas count];
+    return [self.sectionDataModels count];
 }
 
 - (NSInteger)cjOpenCollectionView:(CJOpenCollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    CJSectionDataModel *secctionModel = [_datas objectAtIndex:section];
+    CJSectionDataModel *secctionModel = [self.sectionDataModels objectAtIndex:section];
     if (secctionModel.isSelected) {
         return secctionModel.values.count;
     }
