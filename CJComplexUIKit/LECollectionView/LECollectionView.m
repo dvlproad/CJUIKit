@@ -7,7 +7,6 @@
 //
 
 #import "LECollectionView.h"
-#import <CJBaseUIKit/UIColor+CJHex.h>
 #import <SDWebImage/UIImageView+WebCache.h>
 
 #import "LEMenuCollectionViewCell.h"
@@ -30,7 +29,7 @@
 - (instancetype)init {
     self = [super initWithFrame:CGRectZero collectionViewLayout:self.layout];
     if (self) {
-        self.backgroundColor = CJColorFromHexString(@"#F4F4F4");
+        self.backgroundColor = [UIColor colorWithRed:244/255.0 green:244/255.0 blue:244/255.0 alpha:1.0]; //#f4f4f4;
         
         //注册cell
         [self registerClass:[LEBannerCollectionViewCell class] forCellWithReuseIdentifier:@"LEBannerCollectionViewCell"];
@@ -87,7 +86,7 @@
         NSArray *sectionDataModels = self.menuSectionDataModels;
         CJSectionDataModel *sectionDataModel = [sectionDataModels objectAtIndex:indexPath.section-1];
         NSMutableArray *dataModels = sectionDataModel.values;
-        TestDataModel *dataModel = dataModels[indexPath.row];
+        LEMenuDataModel *dataModel = dataModels[indexPath.row];
         
         [cell.iconImageView sd_setImageWithURL:[NSURL URLWithString:@"https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=3407848463,1025443640&fm=26&gp=0.jpg"] placeholderImage:[UIImage imageNamed:@"replenish_icon"]];
         cell.titleNameLabel.text = @"健康证";
@@ -120,7 +119,7 @@
     } else {
         CJSectionDataModel *sectionDataModel = [self.menuSectionDataModels objectAtIndex:indexPath.section-1];
         NSMutableArray *dataModels = sectionDataModel.values;
-        TestDataModel *dataModel = dataModels[indexPath.row];
+        LEMenuDataModel *dataModel = dataModels[indexPath.row];
         NSLog(@"首页点击菜单，启动 URL: %@", dataModel.imagePath);
 //        [self.viewModel clickBottomItem:menu]; //TODO:
     }

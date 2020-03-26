@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
   #验证方法：pod lib lint CJComplexUIKit.podspec --allow-warnings --use-libraries --verbose
   s.name         = "CJComplexUIKit"
-  s.version      = "0.2.3"
+  s.version      = "0.3.0"
   s.summary      = "自定义的稍微复杂的UI"
   s.homepage     = "https://github.com/dvlproad/CJUIKit"
 
@@ -35,7 +35,7 @@ Pod::Spec.new do |s|
 
   s.platform     = :ios, "8.0"
  
-  s.source       = { :git => "https://github.com/dvlproad/CJUIKit.git", :tag => "CJComplexUIKit_0.2.3" }
+  s.source       = { :git => "https://github.com/dvlproad/CJUIKit.git", :tag => "CJComplexUIKit_0.3.0" }
   s.source_files  = "CJComplexUIKit/*.{h,m}"
 
   s.frameworks = "UIKit"
@@ -94,6 +94,14 @@ Pod::Spec.new do |s|
       sss.source_files = "CJComplexUIKit/CJCollectionView/CJOpenCollectionView/**/*.{h,m}"
     end
 
+  end
+
+  # 可展开的集合视图
+  s.subspec 'LECollectionView' do |ss|
+    ss.source_files = "CJComplexUIKit/LECollectionView/**/*.{h,m}"
+
+    ss.dependency 'Masonry'
+    ss.dependency 'SDCycleScrollView'
   end
 
 

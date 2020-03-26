@@ -7,7 +7,8 @@
 //
 
 #import "LEBannerCollectionViewCell.h"
-#import <SDCycleScrollView.h>
+#import <Masonry/Masonry.h>
+#import <SDCycleScrollView/SDCycleScrollView.h>
 
 @interface LEBannerCollectionViewCell () <SDCycleScrollViewDelegate>
 

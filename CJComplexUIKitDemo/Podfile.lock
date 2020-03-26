@@ -168,16 +168,19 @@ PODS:
   - CJBaseUtil/CJPinyinHelper (0.5.1):
     - PinYin4Objc
   - CJBaseUtil/CJQRCodeUtil (0.5.1)
-  - CJComplexUIKit/CJCollectionView (0.2.3):
-    - CJComplexUIKit/CJCollectionView/CJBaseCollectionViewCell (= 0.2.3)
-    - CJComplexUIKit/CJCollectionView/CJCollectionViewLayout (= 0.2.3)
-    - CJComplexUIKit/CJCollectionView/CJOpenCollectionView (= 0.2.3)
-    - CJComplexUIKit/CJCollectionView/MyEqualCellSizeCollectionView (= 0.2.3)
-  - CJComplexUIKit/CJCollectionView/CJBaseCollectionViewCell (0.2.3)
-  - CJComplexUIKit/CJCollectionView/CJCollectionViewLayout (0.2.3)
-  - CJComplexUIKit/CJCollectionView/CJOpenCollectionView (0.2.3)
-  - CJComplexUIKit/CJCollectionView/MyEqualCellSizeCollectionView (0.2.3)
-  - CJComplexUIKit/CJScrollView (0.2.3)
+  - CJComplexUIKit/CJCollectionView (0.3.0):
+    - CJComplexUIKit/CJCollectionView/CJBaseCollectionViewCell (= 0.3.0)
+    - CJComplexUIKit/CJCollectionView/CJCollectionViewLayout (= 0.3.0)
+    - CJComplexUIKit/CJCollectionView/CJOpenCollectionView (= 0.3.0)
+    - CJComplexUIKit/CJCollectionView/MyEqualCellSizeCollectionView (= 0.3.0)
+  - CJComplexUIKit/CJCollectionView/CJBaseCollectionViewCell (0.3.0)
+  - CJComplexUIKit/CJCollectionView/CJCollectionViewLayout (0.3.0)
+  - CJComplexUIKit/CJCollectionView/CJOpenCollectionView (0.3.0)
+  - CJComplexUIKit/CJCollectionView/MyEqualCellSizeCollectionView (0.3.0)
+  - CJComplexUIKit/CJScrollView (0.3.0)
+  - CJComplexUIKit/LECollectionView (0.3.0):
+    - Masonry
+    - SDCycleScrollView
   - CJFile/CJFileManager (0.0.9)
   - CJFoundation (0.1.3):
     - CJFoundation/NSDictionary (= 0.1.3)
@@ -269,6 +272,7 @@ DEPENDENCIES:
   - CJBaseUtil (from `../`)
   - CJComplexUIKit/CJCollectionView (from `../`)
   - CJComplexUIKit/CJScrollView (from `../`)
+  - CJComplexUIKit/LECollectionView (from `../`)
   - CJFoundation (from `../`)
   - CJMedia/CJUploadImagePickerUtil (~> 0.0.7)
   - CJNetwork
@@ -283,7 +287,7 @@ DEPENDENCIES:
   - SVProgressHUD
 
 SPEC REPOS:
-  https://gitee.com/dvlproad/dvlproadSpecs:
+  https://gitee.com/dvlproad/dvlproadSpecs.git:
     - IjinbuNetwork
   https://github.com/CocoaPods/Specs.git:
     - AFNetworking
@@ -330,7 +334,7 @@ SPEC CHECKSUMS:
   CJBaseOverlayKit: 614d88cb16de0d34e6286a3fe4d5431444867fe8
   CJBaseUIKit: 8a34464da479a1d198ef9582c5966c84f032827e
   CJBaseUtil: 1bbf8d5f831dc12ae4bb06c8b5326bd39f3522e1
-  CJComplexUIKit: 51c4a99d97c7ff32397b56fc63b80b655a5a7a5f
+  CJComplexUIKit: a97bba73966aa872cfa2ab4483f3446532b97e71
   CJFile: 6c1e6d55b3b94e8afbaa9f413f131301d15fdc48
   CJFoundation: 53b4df7152c6d6fd776f55f387c67f431b8574bd
   CJMedia: 29b1bd8c127fb80c4993a76420a3bcc31a4657e5
@@ -352,6 +356,6 @@ SPEC CHECKSUMS:
   SDWebImage: c5594f1a19c48d526d321e548902b56b479cd508
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
 
-PODFILE CHECKSUM: a053495eb504dac32f2cb69c17602327f4666511
+PODFILE CHECKSUM: 1c90528c4be3f770acae30a8839e1e104f63b920
 
 COCOAPODS: 1.8.4

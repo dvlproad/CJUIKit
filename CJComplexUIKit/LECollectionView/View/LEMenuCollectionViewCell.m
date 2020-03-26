@@ -7,7 +7,7 @@
 //
 
 #import "LEMenuCollectionViewCell.h"
-#import <CJBaseUIKit/UIColor+CJHex.h>
+#import <Masonry/Masonry.h>
 
 CGFloat const LEWorkFunctionItemCellWidth = 93.75;
 CGFloat const LEWorkFunctionItemCellHeight = 87;
@@ -32,7 +32,7 @@ static const CGFloat Icon_Size_Height = 42.0f;
         self.backgroundColor = [UIColor clearColor];
         self.selectedBackgroundView = ({
             UIView *view = [UIView new];
-            view.backgroundColor = CJColorFromHexString(@"#f4f4f4");
+            view.backgroundColor = [UIColor colorWithRed:244/255.0 green:244/255.0 blue:244/255.0 alpha:1.0]; //#f4f4f4
             view;
         });
         
@@ -91,7 +91,7 @@ static const CGFloat Icon_Size_Height = 42.0f;
     if (!_titleNameLabel) {
         _titleNameLabel = [[UILabel alloc] init];
         _titleNameLabel.backgroundColor = [UIColor clearColor];
-        _titleNameLabel.textColor = CJColorFromHexString(@"#666666");
+        _titleNameLabel.textColor =  [UIColor colorWithRed:102/255.0f green:102/255.0f blue:102/255.0f alpha:1.0];  // (@"#666666");
         _titleNameLabel.font = [UIFont systemFontOfSize:13];
         _titleNameLabel.textAlignment = NSTextAlignmentCenter;
         _titleNameLabel.adjustsFontSizeToFitWidth = YES;
@@ -112,8 +112,8 @@ static const CGFloat Icon_Size_Height = 42.0f;
 - (UILabel *)messageTipLabel {
     if (!_messageTipLabel) {
         _messageTipLabel = [[UILabel alloc] init];
-        _messageTipLabel.backgroundColor = CJColorFromHexString(@"#ff0000");
-        _messageTipLabel.textColor = CJColorFromHexString(@"#ffffff");
+        _messageTipLabel.backgroundColor = [UIColor redColor]; //#ff0000
+        _messageTipLabel.textColor = [UIColor whiteColor];  // (@"#FFFFFF");
         _messageTipLabel.font = [UIFont systemFontOfSize:11];
         _messageTipLabel.textAlignment = NSTextAlignmentCenter;
         _messageTipLabel.layer.cornerRadius = 7;

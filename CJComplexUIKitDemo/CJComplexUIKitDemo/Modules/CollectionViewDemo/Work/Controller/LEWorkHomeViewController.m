@@ -9,8 +9,7 @@
 #import "LEWorkHomeViewController.h"
 
 #import "TestDataUtil.h"
-
-#import "LECollectionView.h"
+#import <CJComplexUIKit/LECollectionView.h>
 
 @interface LEWorkHomeViewController () <UICollectionViewDelegate> {
     

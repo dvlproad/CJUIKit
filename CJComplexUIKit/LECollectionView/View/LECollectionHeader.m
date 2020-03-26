@@ -7,7 +7,7 @@
 //
 
 #import "LECollectionHeader.h"
-#import <CJBaseUIKit/UIColor+CJHex.h>
+#import <Masonry/Masonry.h>
 
 @implementation LECollectionHeader
 
@@ -38,7 +38,7 @@
     if (!_titleNameLabel) {
         _titleNameLabel = [[UILabel alloc] init];
         _titleNameLabel.backgroundColor = [UIColor clearColor];
-        _titleNameLabel.textColor = CJColorFromHexString(@"#333333");
+        _titleNameLabel.textColor = [UIColor colorWithRed:51/255.0 green:51/255.0 blue:51/255.0 alpha:1.0]; //#333333
         _titleNameLabel.font = [UIFont systemFontOfSize:15];
     }
     return _titleNameLabel;

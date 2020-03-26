@@ -43,14 +43,6 @@
 		780E46291E5DF87B00980127 /* CJComplexUIKitDemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 780E46281E5DF87B00980127 /* CJComplexUIKitDemoUITests.m */; };
 		781872BA242BA9B80098B3A9 /* TSOpenCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 781872B9242BA9B80098B3A9 /* TSOpenCollectionView.m */; };
 		781872DA242BBA180098B3A9 /* LEWorkHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 781872C0242BBA170098B3A9 /* LEWorkHomeViewController.m */; };
-		781872DB242BBA180098B3A9 /* LEADPosModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 781872C5242BBA170098B3A9 /* LEADPosModel.m */; };
-		781872DF242BBA180098B3A9 /* LECollectionViewLayoutAttributes.m in Sources */ = {isa = PBXBuildFile; fileRef = 781872CE242BBA170098B3A9 /* LECollectionViewLayoutAttributes.m */; };
-		781872E0242BBA180098B3A9 /* LECollectionViewFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 781872CF242BBA170098B3A9 /* LECollectionViewFlowLayout.m */; };
-		781872E2242BBA180098B3A9 /* LEBannerCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 781872D4242BBA170098B3A9 /* LEBannerCollectionViewCell.m */; };
-		781872E9242BD0CC0098B3A9 /* LEMenuCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 781872E5242BD0CC0098B3A9 /* LEMenuCollectionViewCell.m */; };
-		781872EA242BD0CC0098B3A9 /* LECollectionHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 781872E8242BD0CC0098B3A9 /* LECollectionHeader.m */; };
-		781872ED242BD2150098B3A9 /* LECollectionDecoration.m in Sources */ = {isa = PBXBuildFile; fileRef = 781872EC242BD2150098B3A9 /* LECollectionDecoration.m */; };
-		781872F0242BD3920098B3A9 /* LECollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 781872EF242BD3920098B3A9 /* LECollectionView.m */; };
 		78293F1221FC2D0900F70F43 /* SvDemo_Refresh.xib in Resources */ = {isa = PBXBuildFile; fileRef = 78293F0F21FC2D0800F70F43 /* SvDemo_Refresh.xib */; };
 		78293F1321FC2D0900F70F43 /* SvDemo_Refresh.m in Sources */ = {isa = PBXBuildFile; fileRef = 78293F1121FC2D0900F70F43 /* SvDemo_Refresh.m */; };
 		783281041F4198BC008267E0 /* CustomTripProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 783281031F4198BC008267E0 /* CustomTripProgressView.m */; };
@@ -275,22 +267,6 @@
 		781872B9242BA9B80098B3A9 /* TSOpenCollectionView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TSOpenCollectionView.m; sourceTree = "<group>"; };
 		781872C0242BBA170098B3A9 /* LEWorkHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LEWorkHomeViewController.m; sourceTree = "<group>"; };
 		781872C1242BBA170098B3A9 /* LEWorkHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LEWorkHomeViewController.h; sourceTree = "<group>"; };
-		781872C3242BBA170098B3A9 /* LEADPosModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LEADPosModel.h; sourceTree = "<group>"; };
-		781872C5242BBA170098B3A9 /* LEADPosModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LEADPosModel.m; sourceTree = "<group>"; };
-		781872C9242BBA170098B3A9 /* LEBannerCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LEBannerCollectionViewCell.h; sourceTree = "<group>"; };
-		781872CC242BBA170098B3A9 /* LECollectionViewFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LECollectionViewFlowLayout.h; sourceTree = "<group>"; };
-		781872CE242BBA170098B3A9 /* LECollectionViewLayoutAttributes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LECollectionViewLayoutAttributes.m; sourceTree = "<group>"; };
-		781872CF242BBA170098B3A9 /* LECollectionViewFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LECollectionViewFlowLayout.m; sourceTree = "<group>"; };
-		781872D0242BBA170098B3A9 /* LECollectionViewLayoutAttributes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LECollectionViewLayoutAttributes.h; sourceTree = "<group>"; };
-		781872D4242BBA170098B3A9 /* LEBannerCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LEBannerCollectionViewCell.m; sourceTree = "<group>"; };
-		781872E5242BD0CC0098B3A9 /* LEMenuCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LEMenuCollectionViewCell.m; sourceTree = "<group>"; };
-		781872E6242BD0CC0098B3A9 /* LEMenuCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LEMenuCollectionViewCell.h; sourceTree = "<group>"; };
-		781872E7242BD0CC0098B3A9 /* LECollectionHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LECollectionHeader.h; sourceTree = "<group>"; };
-		781872E8242BD0CC0098B3A9 /* LECollectionHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LECollectionHeader.m; sourceTree = "<group>"; };
-		781872EB242BD2150098B3A9 /* LECollectionDecoration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LECollectionDecoration.h; sourceTree = "<group>"; };
-		781872EC242BD2150098B3A9 /* LECollectionDecoration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LECollectionDecoration.m; sourceTree = "<group>"; };
-		781872EE242BD3920098B3A9 /* LECollectionView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LECollectionView.h; sourceTree = "<group>"; };
-		781872EF242BD3920098B3A9 /* LECollectionView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LECollectionView.m; sourceTree = "<group>"; };
 		78293F0F21FC2D0800F70F43 /* SvDemo_Refresh.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SvDemo_Refresh.xib; sourceTree = "<group>"; };
 		78293F1021FC2D0800F70F43 /* SvDemo_Refresh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SvDemo_Refresh.h; sourceTree = "<group>"; };
 		78293F1121FC2D0900F70F43 /* SvDemo_Refresh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SvDemo_Refresh.m; sourceTree = "<group>"; };
@@ -755,8 +731,6 @@
 			isa = PBXGroup;
 			children = (
 				781872BF242BBA170098B3A9 /* Controller */,
-				781872C2242BBA170098B3A9 /* Model */,
-				781872C7242BBA170098B3A9 /* View */,
 			);
 			path = Work;
 			sourceTree = "<group>";
@@ -766,46 +740,8 @@
 			children = (
 				781872C1242BBA170098B3A9 /* LEWorkHomeViewController.h */,
 				781872C0242BBA170098B3A9 /* LEWorkHomeViewController.m */,
-				781872EE242BD3920098B3A9 /* LECollectionView.h */,
-				781872EF242BD3920098B3A9 /* LECollectionView.m */,
 			);
 			path = Controller;
-			sourceTree = "<group>";
-		};
-		781872C2242BBA170098B3A9 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				781872C3242BBA170098B3A9 /* LEADPosModel.h */,
-				781872C5242BBA170098B3A9 /* LEADPosModel.m */,
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		781872C7242BBA170098B3A9 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				781872CB242BBA170098B3A9 /* CustomLayout */,
-				781872C9242BBA170098B3A9 /* LEBannerCollectionViewCell.h */,
-				781872D4242BBA170098B3A9 /* LEBannerCollectionViewCell.m */,
-				781872E7242BD0CC0098B3A9 /* LECollectionHeader.h */,
-				781872E8242BD0CC0098B3A9 /* LECollectionHeader.m */,
-				781872E6242BD0CC0098B3A9 /* LEMenuCollectionViewCell.h */,
-				781872E5242BD0CC0098B3A9 /* LEMenuCollectionViewCell.m */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		781872CB242BBA170098B3A9 /* CustomLayout */ = {
-			isa = PBXGroup;
-			children = (
-				781872EB242BD2150098B3A9 /* LECollectionDecoration.h */,
-				781872EC242BD2150098B3A9 /* LECollectionDecoration.m */,
-				781872CC242BBA170098B3A9 /* LECollectionViewFlowLayout.h */,
-				781872CF242BBA170098B3A9 /* LECollectionViewFlowLayout.m */,
-				781872D0242BBA170098B3A9 /* LECollectionViewLayoutAttributes.h */,
-				781872CE242BBA170098B3A9 /* LECollectionViewLayoutAttributes.m */,
-			);
-			path = CustomLayout;
 			sourceTree = "<group>";
 		};
 		78293EFA21FC083A00F70F43 /* 2OCJS */ = {
@@ -1704,13 +1640,10 @@
 				15F42703242B7C6F00ED2E4C /* DemoTagButtonFactory.m in Sources */,
 				789A4F8E21FAF3FB001528B9 /* ReuseDataSourceTableViewController.m in Sources */,
 				15F42701242B7C6F00ED2E4C /* CJDemoDatePickerView.m in Sources */,
-				781872E2242BBA180098B3A9 /* LEBannerCollectionViewCell.m in Sources */,
 				789A4F5B21FAF3A8001528B9 /* MyEqualCellSizeViewController.m in Sources */,
 				15F42710242B7C6F00ED2E4C /* TSActionSheetUtil.m in Sources */,
-				781872E0242BBA180098B3A9 /* LECollectionViewFlowLayout.m in Sources */,
 				789A4F9121FAF3FB001528B9 /* TvDemo_Complex+Event.m in Sources */,
 				15F4272D242B7F0F00ED2E4C /* TSAlertManager.m in Sources */,
-				781872DB242BBA180098B3A9 /* LEADPosModel.m in Sources */,
 				789C443921EECE9100181144 /* AppInfo.m in Sources */,
 				789A4F5721FAF3A8001528B9 /* Header.m in Sources */,
 				789C442E21EECA9800181144 /* JSOCViewController.m in Sources */,
@@ -1770,8 +1703,6 @@
 				789A4F9C21FAF3FB001528B9 /* MyOpenTableView.m in Sources */,
 				7856F73421F4E79E004AF751 /* TestDataUtil.m in Sources */,
 				789A4F5821FAF3A8001528B9 /* OpenCollectionViewController.m in Sources */,
-				781872ED242BD2150098B3A9 /* LECollectionDecoration.m in Sources */,
-				781872DF242BBA180098B3A9 /* LECollectionViewLayoutAttributes.m in Sources */,
 				789C446521EF019F00181144 /* LocalViewController.m in Sources */,
 				7856F8A321F5680F004AF751 /* CJUploadCollectionViewCell.m in Sources */,
 				789C448F21F170CF00181144 /* CJAppVersionUtil.m in Sources */,
@@ -1780,12 +1711,10 @@
 				789A4FAD21FB053B001528B9 /* H5ImgSettingBaseViewController.m in Sources */,
 				80E7E68920AC37CA000F762D /* IjinbuNetworkClient+Login.m in Sources */,
 				15F42702242B7C6F00ED2E4C /* TSButtonFactory.m in Sources */,
-				781872EA242BD0CC0098B3A9 /* LECollectionHeader.m in Sources */,
 				78590D00215C79DD00F45AD5 /* NetworkBaseWebViewController.m in Sources */,
 				785F86C2226C450E005CEBF3 /* EmptyScrollViewController1.m in Sources */,
 				7856F8A621F5680F004AF751 /* CJUploadImageCollectionView.m in Sources */,
 				15F4270F242B7C6F00ED2E4C /* DemoLabelFactory.m in Sources */,
-				781872F0242BD3920098B3A9 /* LECollectionView.m in Sources */,
 				7856F89321F5680E004AF751 /* ProgressWebViewController.m in Sources */,
 				7856F6E521F4E706004AF751 /* ScrollViewHomeViewController.m in Sources */,
 				789A4F6721FAF3A8001528B9 /* cvSupplementaryFoot.m in Sources */,
@@ -1796,7 +1725,6 @@
 				8014A2801FA2C2E500DDDB5A /* AppDelegate+WindowRootViewController.m in Sources */,
 				789A4FB321FB0A1B001528B9 /* H5ImgSettingDataViewController.m in Sources */,
 				789C448D21F170CF00181144 /* YunUncaughtExceptionHandler.m in Sources */,
-				781872E9242BD0CC0098B3A9 /* LEMenuCollectionViewCell.m in Sources */,
 				781872DA242BBA180098B3A9 /* LEWorkHomeViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

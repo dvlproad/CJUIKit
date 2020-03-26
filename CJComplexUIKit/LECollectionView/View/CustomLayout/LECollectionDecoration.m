@@ -7,7 +7,7 @@
 //
 
 #import "LECollectionDecoration.h"
-#import <CJBaseUIKit/UIColor+CJHex.h>
+#import <Masonry/Masonry.h>
 #import "LECollectionViewLayoutAttributes.h"
 
 @interface LECollectionDecoration ()
@@ -26,7 +26,7 @@
         self.backgroundColor = attr.backgroundColor;
         if (!self.bottomView) {
             _bottomView = [[UIView alloc] init];
-            _bottomView.backgroundColor = CJColorFromHexString(@"#f4f4f4");
+            _bottomView.backgroundColor = [UIColor colorWithRed:244/255.0 green:244/255.0 blue:244/255.0 alpha:1.0]; //#f4f4f4
             [self addSubview:_bottomView];
             [_bottomView mas_makeConstraints:^(MASConstraintMaker *make) {
                 make.left.right.bottom.mas_equalTo(self);
