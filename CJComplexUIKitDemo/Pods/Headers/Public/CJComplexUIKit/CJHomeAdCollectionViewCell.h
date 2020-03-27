@@ -1,1 +1,1 @@
-../../../../../CJComplexUIKit/LECollectionView/View/CJHomeAdCollectionViewCell.h
+../../../../../CJComplexUIKit/CJHomeCollectionView/View/CJHomeAdCollectionViewCell.h

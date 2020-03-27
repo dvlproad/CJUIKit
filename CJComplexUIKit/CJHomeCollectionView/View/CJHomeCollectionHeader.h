@@ -1,5 +1,5 @@
 //
-//  LECollectionHeader.h
+//  CJHomeCollectionHeader.h
 //  CJComplexUIKitDemo
 //
 //  Created by ciyouzen on 2019/5/22.
@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface LECollectionHeader : UICollectionReusableView
+@interface CJHomeCollectionHeader : UICollectionReusableView
 
 @property (nonatomic, strong, readonly) UILabel *titleNameLabel;
 

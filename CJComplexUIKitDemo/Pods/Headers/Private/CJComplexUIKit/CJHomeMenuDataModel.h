@@ -1,1 +1,1 @@
-../../../../../CJComplexUIKit/LECollectionView/Model/CJHomeMenuDataModel.h
+../../../../../CJComplexUIKit/CJHomeCollectionView/Model/CJHomeMenuDataModel.h

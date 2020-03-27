@@ -7,12 +7,12 @@
 //
 
 #import "LEWorkHomeViewController.h"
-#import <CJComplexUIKit/LECollectionView.h>
+#import <CJComplexUIKit/CJHomeCollectionView.h>
 
 @interface LEWorkHomeViewController () <UICollectionViewDelegate> {
     
 }
-@property (nonatomic, strong) LECollectionView *collectionView;
+@property (nonatomic, strong) CJHomeCollectionView *collectionView;
 @property (nonatomic, strong) NSArray<CJSectionDataModel *> *menuSectionDataModels;
 
 @end
@@ -106,7 +106,7 @@
 @synthesize collectionView = _collectionView;
 - (UICollectionView *)collectionView {
     if (!_collectionView) {
-        _collectionView = [[LECollectionView alloc] init];
+        _collectionView = [[CJHomeCollectionView alloc] init];
     }
     return _collectionView;
 }

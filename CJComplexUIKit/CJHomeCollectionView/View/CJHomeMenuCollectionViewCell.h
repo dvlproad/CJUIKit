@@ -1,5 +1,5 @@
 //
-//  LEMenuCollectionViewCell.h
+//  CJHomeMenuCollectionViewCell.h
 //  CJComplexUIKitDemo
 //
 //  Created by ciyouzen on 2019/5/21.
@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface LEMenuCollectionViewCell : UICollectionViewCell {
+@interface CJHomeMenuCollectionViewCell : UICollectionViewCell {
     
 }
 @property (nonatomic, strong) UILabel *titleNameLabel;

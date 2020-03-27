@@ -65,8 +65,8 @@
       ]
     },
     {
-      "name": "LECollectionView",
-      "source_files": "CJComplexUIKit/LECollectionView/**/*.{h,m}",
+      "name": "CJHomeCollectionView",
+      "source_files": "CJComplexUIKit/CJHomeCollectionView/**/*.{h,m}",
       "dependencies": {
         "Masonry": [
 

@@ -97,8 +97,8 @@ Pod::Spec.new do |s|
   end
 
   # 可展开的集合视图
-  s.subspec 'LECollectionView' do |ss|
-    ss.source_files = "CJComplexUIKit/LECollectionView/**/*.{h,m}"
+  s.subspec 'CJHomeCollectionView' do |ss|
+    ss.source_files = "CJComplexUIKit/CJHomeCollectionView/**/*.{h,m}"
 
     ss.dependency 'Masonry'
     ss.dependency 'SDCycleScrollView'

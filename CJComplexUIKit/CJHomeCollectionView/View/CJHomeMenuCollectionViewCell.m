@@ -1,12 +1,12 @@
 //
-//  LEMenuCollectionViewCell.m
+//  CJHomeMenuCollectionViewCell.m
 //  CJComplexUIKitDemo
 //
 //  Created by ciyouzen on 2019/5/21.
 //  Copyright © 2019 dvlproad. All rights reserved.
 //
 
-#import "LEMenuCollectionViewCell.h"
+#import "CJHomeMenuCollectionViewCell.h"
 #import <Masonry/Masonry.h>
 
 static const CGFloat Interval_Size_5 = 5.0f;
@@ -14,14 +14,14 @@ static const CGFloat Icon_Size_Width = 42.0f;
 static const CGFloat Icon_Size_Height = 42.0f;
 //static const CGFloat TitleLabel_Size_Height = 20.0f;
 
-@interface LEMenuCollectionViewCell () {
+@interface CJHomeMenuCollectionViewCell () {
     
 }
 @property (nonatomic, strong) UILabel *messageTipLabel;
 
 @end
 
-@implementation LEMenuCollectionViewCell
+@implementation CJHomeMenuCollectionViewCell
 
 - (id)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];

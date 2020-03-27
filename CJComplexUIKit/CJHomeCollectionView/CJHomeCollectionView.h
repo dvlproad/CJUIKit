@@ -1,5 +1,5 @@
 //
-//  LECollectionView.h
+//  CJHomeCollectionView.h
 //  CJComplexUIKitDemo
 //
 //  Created by ciyouzen on 2020/3/26.
@@ -13,7 +13,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface LECollectionView : UICollectionView {
+@interface CJHomeCollectionView : UICollectionView {
     
 }
 @property (nonatomic, strong) NSArray<CJHomeAdDataModel *> *adDataModels;

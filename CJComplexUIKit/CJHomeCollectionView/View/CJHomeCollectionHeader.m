@@ -1,15 +1,15 @@
 //
-//  LECollectionHeader.m
+//  CJHomeCollectionHeader.m
 //  CJComplexUIKitDemo
 //
 //  Created by ciyouzen on 2019/5/22.
 //  Copyright © 2019 dvlproad. All rights reserved.
 //
 
-#import "LECollectionHeader.h"
+#import "CJHomeCollectionHeader.h"
 #import <Masonry/Masonry.h>
 
-@implementation LECollectionHeader
+@implementation CJHomeCollectionHeader
 
 - (id)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];

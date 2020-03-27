@@ -1,22 +1,22 @@
 //
-//  LECollectionView.m
+//  CJHomeCollectionView.m
 //  CJComplexUIKitDemo
 //
 //  Created by ciyouzen on 2020/3/26.
 //  Copyright © 2020 dvlproad. All rights reserved.
 //
 
-#import "LECollectionView.h"
+#import "CJHomeCollectionView.h"
 #import <SDWebImage/UIImageView+WebCache.h>
 
-#import "LEMenuCollectionViewCell.h"
+#import "CJHomeMenuCollectionViewCell.h"
 
 #import "CJHomeAdCollectionViewCell.h"
-#import "LECollectionHeader.h"
+#import "CJHomeCollectionHeader.h"
 
 #import "CJCollectionViewFlowLayout.h"
 
-@interface LECollectionView () <UICollectionViewDelegate, UICollectionViewDataSource, CJCollectionViewDelegateFlowLayout> {
+@interface CJHomeCollectionView () <UICollectionViewDelegate, UICollectionViewDataSource, CJCollectionViewDelegateFlowLayout> {
     
 }
 @property (nonatomic, strong) CJCollectionViewFlowLayout *layout;
@@ -27,7 +27,7 @@
 @end
 
 
-@implementation LECollectionView
+@implementation CJHomeCollectionView
 
 - (instancetype)init {
     self = [super initWithFrame:CGRectZero collectionViewLayout:self.layout];
@@ -36,7 +36,7 @@
         
         //注册cell
         [self registerClass:[CJHomeAdCollectionViewCell class] forCellWithReuseIdentifier:@"CJHomeAdCollectionViewCell"];
-        [self registerClass:[LECollectionHeader class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"LECollectionHeader"];
+        [self registerClass:[CJHomeCollectionHeader class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"CJHomeCollectionHeader"];
         
         self.delegate = self;
         self.dataSource = self;
@@ -87,11 +87,11 @@
     else {
         NSString *cellName = [NSString stringWithFormat:@"%ld%ld",(long)indexPath.section,(long)indexPath.row];
         //注册cell
-        [collectionView registerClass:[LEMenuCollectionViewCell class] forCellWithReuseIdentifier:cellName];
+        [collectionView registerClass:[CJHomeMenuCollectionViewCell class] forCellWithReuseIdentifier:cellName];
         
-        //static NSString * cellName = @"LEMenuCollectionViewCell";
-        LEMenuCollectionViewCell *cell =
-            (LEMenuCollectionViewCell*)[collectionView dequeueReusableCellWithReuseIdentifier:cellName forIndexPath:indexPath];
+        //static NSString * cellName = @"CJHomeMenuCollectionViewCell";
+        CJHomeMenuCollectionViewCell *cell =
+            (CJHomeMenuCollectionViewCell*)[collectionView dequeueReusableCellWithReuseIdentifier:cellName forIndexPath:indexPath];
         
         NSArray *sectionDataModels = self.menuSectionDataModels;
         CJSectionDataModel *sectionDataModel = [sectionDataModels objectAtIndex:indexPath.section-1];
@@ -145,9 +145,9 @@
            viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath
 {
     if (indexPath.section != 0){
-        LECollectionHeader *reusableview = [[LECollectionHeader alloc] init];
+        CJHomeCollectionHeader *reusableview = [[CJHomeCollectionHeader alloc] init];
         if (kind == UICollectionElementKindSectionHeader) {
-            reusableview = [collectionView dequeueReusableSupplementaryViewOfKind:kind withReuseIdentifier:@"LECollectionHeader" forIndexPath:indexPath];
+            reusableview = [collectionView dequeueReusableSupplementaryViewOfKind:kind withReuseIdentifier:@"CJHomeCollectionHeader" forIndexPath:indexPath];
             
             CJSectionDataModel *sectionDataModel = [self.menuSectionDataModels objectAtIndex:indexPath.section-1];
             

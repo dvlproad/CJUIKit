@@ -1,1 +1,1 @@
-../../../../../CJComplexUIKit/LECollectionView/View/CustomLayout/CJCollectionViewLayoutAttributes.h
+../../../../../CJComplexUIKit/CJHomeCollectionView/View/CustomLayout/CJCollectionViewLayoutAttributes.h
