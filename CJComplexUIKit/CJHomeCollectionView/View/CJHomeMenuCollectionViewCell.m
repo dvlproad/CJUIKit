@@ -64,21 +64,18 @@ static const CGFloat Icon_Size_Height = 42.0f;
     }];
 }
 
-- (void)displayMessageWithCount:(NSInteger)messageCount {
-    if (messageCount <= 0) {
+- (void)setBadgeCount:(NSInteger)badgeCount {
+    if (badgeCount <= 0) {
         return;
     }
-    else {
-        self.messageTipLabel.hidden = NO;
-        if (messageCount < 10) {
-            self.messageTipLabel.text = [NSString stringWithFormat:@"%@",@(messageCount)];
-        }
-        else if (messageCount < 100) {
-            self.messageTipLabel.text = [NSString stringWithFormat:@"%@ ", @(messageCount)];
-        }
-        else {
-            self.messageTipLabel.text = @"99+  ";
-        }
+    
+    self.messageTipLabel.hidden = NO;
+    if (badgeCount < 10) {
+        self.messageTipLabel.text = [NSString stringWithFormat:@"%@",@(badgeCount)];
+    } else if (badgeCount < 100) {
+        self.messageTipLabel.text = [NSString stringWithFormat:@"%@ ", @(badgeCount)];
+    } else {
+        self.messageTipLabel.text = @"99+  ";
     }
 }
 

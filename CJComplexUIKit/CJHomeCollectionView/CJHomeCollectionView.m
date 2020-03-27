@@ -16,6 +16,9 @@
 
 #import "CJCollectionViewFlowLayout.h"
 
+#import <CJBaseUIKit/UIView+CJShake.h>
+#import "CJHomeCollectionView+Move.h"
+
 @interface CJHomeCollectionView () <UICollectionViewDelegate, UICollectionViewDataSource, CJCollectionViewDelegateFlowLayout> {
     
 }
@@ -40,6 +43,8 @@
         
         self.delegate = self;
         self.dataSource = self;
+        
+        _menuSectionStartIndex = 1;
     }
     return self;
 }
@@ -54,21 +59,18 @@
 
 #pragma mark - UICollectionViewDataSource
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
-    NSInteger menuSectionCount = 0;
-//    if (self.menuList.count > 0) {
-        NSArray *sectionDataModels = self.menuSectionDataModels;
-        menuSectionCount = sectionDataModels.count;
-//    }
-    return 1 + menuSectionCount;
+    NSArray *sectionDataModels = self.menuSectionDataModels;
+    NSInteger menuSectionCount = sectionDataModels.count;
+    return self.menuSectionStartIndex + menuSectionCount;
 }
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
     if (0 == section) {
         return 1;
     }
-    else {
+    else if (section >= self.menuSectionStartIndex) {
         NSArray *sectionDataModels = self.menuSectionDataModels;
-        CJSectionDataModel *sectionDataModel = [sectionDataModels objectAtIndex:section-1];
+        CJSectionDataModel *sectionDataModel = [sectionDataModels objectAtIndex:section-self.menuSectionStartIndex];
         NSMutableArray *dataModels = sectionDataModel.values;
         
         return dataModels.count;
@@ -83,8 +85,7 @@
         cell.adDataModels = self.adDataModels;
         
         return cell;
-    }
-    else {
+    } else {
         NSString *cellName = [NSString stringWithFormat:@"%ld%ld",(long)indexPath.section,(long)indexPath.row];
         //注册cell
         [collectionView registerClass:[CJHomeMenuCollectionViewCell class] forCellWithReuseIdentifier:cellName];
@@ -100,7 +101,11 @@
         
         [cell.iconImageView sd_setImageWithURL:[NSURL URLWithString:dataModel.imageUrl] placeholderImage:dataModel.imagePlaceholderImage];
         cell.titleNameLabel.text = dataModel.name;
-        [cell displayMessageWithCount:dataModel.badgeCount];
+        cell.badgeCount = dataModel.badgeCount;
+        
+        if (((CJHomeCollectionView *)collectionView).cjIsBeginMove) {
+            [cell cjShakeKeeping];
+        }
         
         return cell;
     }
@@ -129,8 +134,8 @@
         if (self.clickHomeAdHandle) {
             self.clickHomeAdHandle(adIndex);
         }
-    } else {
-        NSIndexPath *menuIndexPath = [NSIndexPath indexPathForItem:indexPath.item inSection:indexPath.section-1];
+    } else if (indexPath.section >= self.menuSectionStartIndex) {
+        NSIndexPath *menuIndexPath = [NSIndexPath indexPathForItem:indexPath.item inSection:indexPath.section-self.menuSectionStartIndex];
         if (self.clickHomeMenuHandle) {
             self.clickHomeMenuHandle(menuIndexPath);
         }
@@ -144,13 +149,12 @@
 - (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView
            viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath
 {
-    if (indexPath.section != 0){
+    if (indexPath.section >= self.menuSectionStartIndex){
         CJHomeCollectionHeader *reusableview = [[CJHomeCollectionHeader alloc] init];
         if (kind == UICollectionElementKindSectionHeader) {
             reusableview = [collectionView dequeueReusableSupplementaryViewOfKind:kind withReuseIdentifier:@"CJHomeCollectionHeader" forIndexPath:indexPath];
             
-            CJSectionDataModel *sectionDataModel = [self.menuSectionDataModels objectAtIndex:indexPath.section-1];
-            
+            CJSectionDataModel *sectionDataModel = [self.menuSectionDataModels objectAtIndex:indexPath.section-self.menuSectionStartIndex];
             reusableview.titleNameLabel.text = sectionDataModel.theme;
             dispatch_async(dispatch_get_main_queue(), ^{
                 reusableview.layer.zPosition = -10;
@@ -166,8 +170,8 @@
 
 
 #pragma mark - UICollectionViewDelegateFlowLayout
--(CGSize)collectionView:(UICollectionView *)collectionView
-                 layout:(UICollectionViewLayout *)collectionViewLayout referenceSizeForHeaderInSection:(NSInteger)section
+- (CGSize)collectionView:(UICollectionView *)collectionView
+                  layout:(UICollectionViewLayout *)collectionViewLayout referenceSizeForHeaderInSection:(NSInteger)section
 {
     CGFloat screenWidth = [[UIScreen mainScreen] bounds].size.width;
     if (section != 0) {
@@ -178,8 +182,8 @@
     }
 }
 
--(CGSize)collectionView:(UICollectionView *)collectionView
-                 layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
+- (CGSize)collectionView:(UICollectionView *)collectionView
+                  layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
 {
     CGFloat screenWidth = [[UIScreen mainScreen] bounds].size.width;
     if (0 == indexPath.section) {
@@ -217,7 +221,8 @@
 }
 
 - (UIColor *)collectionView:(UICollectionView *)collectionView
-                     layout:(UICollectionViewLayout *)collectionViewLayout backgroundColorForSection:(NSInteger)section {
+                     layout:(UICollectionViewLayout *)collectionViewLayout backgroundColorForSection:(NSInteger)section
+{
     return [UIColor whiteColor];
 }
 

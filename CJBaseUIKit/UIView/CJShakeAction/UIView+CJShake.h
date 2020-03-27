@@ -9,10 +9,18 @@
 #import <UIKit/UIKit.h>
 
 /**
- *  UIView的抖动效果（常用语UITextField 抖动效果)
+ *  UIView的抖动效果
  */
 @interface UIView (CJShake)
 
+/**
+*  短暂抖动(常见于密码输入错误)
+*/
 - (void)cjShake;
+
+/**
+ *  持续抖动(常见于拖动操作)
+ */
+- (void)cjShakeKeeping;
 
 @end

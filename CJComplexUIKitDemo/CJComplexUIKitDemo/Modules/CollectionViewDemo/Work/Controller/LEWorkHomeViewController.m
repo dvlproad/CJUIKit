@@ -8,6 +8,7 @@
 
 #import "LEWorkHomeViewController.h"
 #import <CJComplexUIKit/CJHomeCollectionView.h>
+#import <CJComplexUIKit/CJHomeCollectionView+Move.h>
 
 @interface LEWorkHomeViewController () <UICollectionViewDelegate> {
     
@@ -27,7 +28,7 @@
     
     NSMutableArray<CJHomeAdDataModel *> *adDataModels = [[NSMutableArray alloc] init];
     CJHomeAdDataModel *adDataModel = [[CJHomeAdDataModel alloc] init];
-    adDataModel.imageName = @"bitcoin_r";
+    adDataModel.imageName = @"bg.jpg";
     [adDataModels addObject:adDataModel];
     self.collectionView.adDataModels = adDataModels;
     
@@ -45,6 +46,18 @@
         CJHomeMenuDataModel *homeMenuDataModel = sectionDataModel.values[menuIndexPath.row];
 //        NSLog(@"首页点击菜单，启动 URL: %@", menu.url);
     }];
+    [self.collectionView addGestureRecognizerWithContainShakeGR:YES];
+    self.collectionView.cjCheckCellMoveEnableBlock = ^BOOL(NSInteger fromSection, NSInteger toSection) {
+        BOOL moveEnable = fromSection == toSection;
+        if (!moveEnable) {
+            //NSString *message = @"只能在同一功能里移动";
+            NSString *message = [NSString stringWithFormat:@"不能从%zd区移动到%zd区", fromSection, toSection];
+            
+            UIView *view = [[UIApplication sharedApplication].delegate window];
+            [CJToast showMessage:message inView:view withLabelTextColor:[UIColor whiteColor] bezelViewColor:[UIColor blackColor] hideAfterDelay:2.f];
+        }
+        return moveEnable;
+    };
     
     CGFloat UI_NAVIGATION_STATUS_BAR_HEIGHT = 120;
     CGFloat Bottom_Tabbar_Size_Height = 64;
@@ -54,6 +67,7 @@
         make.right.mas_equalTo(self.view.mas_right);
         make.bottom.mas_equalTo(self.view.mas_bottom).offset(-Bottom_Tabbar_Size_Height);
     }];
+
 }
 
 - (NSMutableArray<CJSectionDataModel *> *)getTestMenuSectionDataModels {
@@ -66,7 +80,7 @@
         CJHomeMenuDataModel *cellModel = [[CJHomeMenuDataModel alloc]init];
         cellModel.name = [NSString stringWithFormat:@"%ld", 10+i];
         cellModel.imageUrl = testImageUrl;
-        cellModel.badgeCount = i;
+        cellModel.badgeCount = 10+i;
         [secctionModel1.values addObject:cellModel];
     }
     secctionModel1.selected = YES;

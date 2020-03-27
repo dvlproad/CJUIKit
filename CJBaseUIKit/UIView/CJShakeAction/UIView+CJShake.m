@@ -10,6 +10,9 @@
 
 @implementation UIView (CJShake)
 
+/**
+*  短暂抖动(常见于密码输入错误)
+*/
 - (void)cjShake
 {
     CAKeyframeAnimation *keyAn = [CAKeyframeAnimation animationWithKeyPath:@"position"];
@@ -43,6 +46,31 @@
     [keyAn setKeyTimes:times];
     
     [self.layer addAnimation:keyAn forKey:@"TextAnim"];
+}
+
+
+/**
+ *  持续抖动(常见于拖动操作)
+ */
+- (void)cjShakeKeeping {
+    
+    CABasicAnimation *animation = (CABasicAnimation *)[self.layer animationForKey:@"rotation"];
+    if (animation) {
+        // 复原
+        self.layer.speed = 1.0;
+        return;
+    }
+    
+    // 抖动动画
+    animation = [CABasicAnimation animationWithKeyPath:@"transform.rotation.z"];
+    [animation setDuration:0.1];
+    animation.fromValue = @(-M_1_PI/6);
+    animation.toValue = @(M_1_PI/6);
+    animation.repeatCount = HUGE_VAL;
+    animation.autoreverses = YES;
+    self.layer.anchorPoint = CGPointMake(0.5, 0.5);
+    [self.layer addAnimation:animation forKey:@"rotation"];
+    
 }
 
 @end

@@ -15,8 +15,7 @@ NS_ASSUME_NONNULL_BEGIN
 }
 @property (nonatomic, strong) UILabel *titleNameLabel;
 @property (nonatomic, strong) UIImageView *iconImageView;
-
-- (void)displayMessageWithCount:(NSInteger)messageCount;
+@property (nonatomic, assign) NSInteger badgeCount;
 
 @end
 

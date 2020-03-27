@@ -288,7 +288,7 @@ DEPENDENCIES:
   - SVProgressHUD
 
 SPEC REPOS:
-  https://gitee.com/dvlproad/dvlproadSpecs.git:
+  https://gitee.com/dvlproad/dvlproadSpecs:
     - IjinbuNetwork
   https://github.com/CocoaPods/Specs.git:
     - AFNetworking
@@ -335,7 +335,7 @@ SPEC CHECKSUMS:
   CJBaseOverlayKit: 614d88cb16de0d34e6286a3fe4d5431444867fe8
   CJBaseUIKit: 8a34464da479a1d198ef9582c5966c84f032827e
   CJBaseUtil: 1bbf8d5f831dc12ae4bb06c8b5326bd39f3522e1
-  CJComplexUIKit: 7ac04a294b8fd86eb5158766ddb14ef931e59f42
+  CJComplexUIKit: d6ca4fdf1c397155fe2b6cbb33ba71091c49c7d0
   CJFile: 6c1e6d55b3b94e8afbaa9f413f131301d15fdc48
   CJFoundation: 53b4df7152c6d6fd776f55f387c67f431b8574bd
   CJMedia: 29b1bd8c127fb80c4993a76420a3bcc31a4657e5
