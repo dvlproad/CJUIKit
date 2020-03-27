@@ -1,5 +1,5 @@
 //
-//  LECollectionDecoration.h
+//  CJCollectionDecoration.h
 //  CJComplexUIKitDemo
 //
 //  Created by ciyouzen on 2019/5/23.
@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface LECollectionDecoration : UICollectionReusableView
+@interface CJCollectionDecoration : UICollectionReusableView
 
 @end
 

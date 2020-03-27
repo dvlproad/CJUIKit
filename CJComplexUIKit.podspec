@@ -102,6 +102,7 @@ Pod::Spec.new do |s|
 
     ss.dependency 'Masonry'
     ss.dependency 'SDCycleScrollView'
+    ss.dependency 'CJBaseUtil/CJDataUtil'
   end
 
 

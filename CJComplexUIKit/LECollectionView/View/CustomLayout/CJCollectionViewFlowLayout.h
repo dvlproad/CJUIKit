@@ -1,5 +1,5 @@
 //
-//  LECollectionViewFlowLayout.h
+//  CJCollectionViewFlowLayout.h
 //  CJComplexUIKitDemo
 //
 //  Created by ciyouzen on 2019/5/23.
@@ -10,17 +10,25 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@protocol LECollectionViewDelegateFlowLayout <UICollectionViewDelegateFlowLayout>
+@protocol CJCollectionViewDelegateFlowLayout <UICollectionViewDelegateFlowLayout>
 
 - (UIColor *)collectionView:(UICollectionView *)collectionView
-                     layout:(UICollectionViewLayout *)collectionViewLayout backgroundColorForSection:(NSInteger)section;
+                     layout:(UICollectionViewLayout *)collectionViewLayout
+  backgroundColorForSection:(NSInteger)section;
 
 @end
 
-@interface LECollectionViewFlowLayout : UICollectionViewFlowLayout
+
+
+
+
+@interface CJCollectionViewFlowLayout : UICollectionViewFlowLayout
 
 @property (nonatomic, strong) NSMutableArray<UICollectionViewLayoutAttributes *> *decorationViewAttrs;
 
 @end
+
+
+
 
 NS_ASSUME_NONNULL_END

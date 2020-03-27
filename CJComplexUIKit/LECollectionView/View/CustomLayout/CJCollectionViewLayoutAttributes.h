@@ -1,5 +1,5 @@
 //
-//  LECollectionViewLayoutAttributes.h
+//  CJCollectionViewLayoutAttributes.h
 //  CJComplexUIKitDemo
 //
 //  Created by ciyouzen on 2019/5/23.
@@ -10,8 +10,9 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface LECollectionViewLayoutAttributes : UICollectionViewLayoutAttributes
-
+@interface CJCollectionViewLayoutAttributes : UICollectionViewLayoutAttributes {
+    
+}
 @property (nonatomic, strong) UIColor *backgroundColor;
 
 @end

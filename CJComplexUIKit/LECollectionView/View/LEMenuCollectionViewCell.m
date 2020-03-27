@@ -9,9 +9,6 @@
 #import "LEMenuCollectionViewCell.h"
 #import <Masonry/Masonry.h>
 
-CGFloat const LEWorkFunctionItemCellWidth = 93.75;
-CGFloat const LEWorkFunctionItemCellHeight = 87;
-
 static const CGFloat Interval_Size_5 = 5.0f;
 static const CGFloat Icon_Size_Width = 42.0f;
 static const CGFloat Icon_Size_Height = 42.0f;

@@ -1,18 +1,18 @@
 //
-//  LECollectionViewFlowLayout.m
+//  CJCollectionViewFlowLayout.m
 //  CJComplexUIKitDemo
 //
 //  Created by ciyouzen on 2019/5/23.
 //  Copyright © 2019 dvlproad. All rights reserved.
 //
 
-#import "LECollectionViewFlowLayout.h"
-#import "LECollectionViewLayoutAttributes.h"
-#import "LECollectionDecoration.h"
+#import "CJCollectionViewFlowLayout.h"
+#import "CJCollectionViewLayoutAttributes.h"
+#import "CJCollectionDecoration.h"
 
-NSString *const LECollectionViewSectionBackground = @"LECollectionViewSectionBackground";
+NSString *const CJCollectionViewSectionBackground = @"CJCollectionViewSectionBackground";
 
-@implementation LECollectionViewFlowLayout
+@implementation CJCollectionViewFlowLayout
 - (instancetype)init {
     self = [super init];
     if (self) {
@@ -23,7 +23,7 @@ NSString *const LECollectionViewSectionBackground = @"LECollectionViewSectionBac
 }
 
 - (void)setup {
-    [self registerClass:[LECollectionDecoration class] forDecorationViewOfKind:LECollectionViewSectionBackground];
+    [self registerClass:[CJCollectionDecoration class] forDecorationViewOfKind:CJCollectionViewSectionBackground];
 }
 
 - (void)prepareLayout {
@@ -32,7 +32,7 @@ NSString *const LECollectionViewSectionBackground = @"LECollectionViewSectionBac
     
     NSInteger numberOfSections = [self.collectionView numberOfSections];
     id delegate = self.collectionView.delegate;
-    if (!numberOfSections || ![delegate conformsToProtocol:@protocol(LECollectionViewDelegateFlowLayout)]) {
+    if (!numberOfSections || ![delegate conformsToProtocol:@protocol(CJCollectionViewDelegateFlowLayout)]) {
         return;
     }
     
@@ -68,7 +68,7 @@ NSString *const LECollectionViewSectionBackground = @"LECollectionViewSectionBac
         }
         
         // 2、定义
-        LECollectionViewLayoutAttributes *attr = [LECollectionViewLayoutAttributes layoutAttributesForDecorationViewOfKind:LECollectionViewSectionBackground withIndexPath:[NSIndexPath indexPathForItem:0 inSection:section]];
+        CJCollectionViewLayoutAttributes *attr = [CJCollectionViewLayoutAttributes layoutAttributesForDecorationViewOfKind:CJCollectionViewSectionBackground withIndexPath:[NSIndexPath indexPathForItem:0 inSection:section]];
         attr.frame = sectionFrame;
         attr.zIndex = -1;
         
@@ -90,7 +90,7 @@ NSString *const LECollectionViewSectionBackground = @"LECollectionViewSectionBac
 }
 
 - (nullable UICollectionViewLayoutAttributes *)layoutAttributesForDecorationViewOfKind:(NSString*)elementKind atIndexPath:(NSIndexPath *)indexPath {
-    if ([elementKind isEqualToString:LECollectionViewSectionBackground]) {
+    if ([elementKind isEqualToString:CJCollectionViewSectionBackground]) {
         return [self.decorationViewAttrs objectAtIndex:indexPath.section];
     }
     return [super layoutAttributesForDecorationViewOfKind:elementKind atIndexPath:indexPath];

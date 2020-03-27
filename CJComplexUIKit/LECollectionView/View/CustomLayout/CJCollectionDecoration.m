@@ -1,28 +1,28 @@
 //
-//  LECollectionDecoration.m
+//  CJCollectionDecoration.m
 //  CJComplexUIKitDemo
 //
 //  Created by ciyouzen on 2019/5/23.
 //  Copyright © 2019 dvlproad. All rights reserved.
 //
 
-#import "LECollectionDecoration.h"
+#import "CJCollectionDecoration.h"
 #import <Masonry/Masonry.h>
-#import "LECollectionViewLayoutAttributes.h"
+#import "CJCollectionViewLayoutAttributes.h"
 
-@interface LECollectionDecoration ()
+@interface CJCollectionDecoration ()
 
 @property (nonatomic, strong, readonly) UIView *bottomView;
 
 @end
 
-@implementation LECollectionDecoration
+@implementation CJCollectionDecoration
 
 - (void)applyLayoutAttributes:(UICollectionViewLayoutAttributes *)layoutAttributes
 {
     [super applyLayoutAttributes:layoutAttributes];
-    if ([layoutAttributes isKindOfClass:[LECollectionViewLayoutAttributes class]]) {
-        LECollectionViewLayoutAttributes *attr = (LECollectionViewLayoutAttributes *)layoutAttributes;
+    if ([layoutAttributes isKindOfClass:[CJCollectionViewLayoutAttributes class]]) {
+        CJCollectionViewLayoutAttributes *attr = (CJCollectionViewLayoutAttributes *)layoutAttributes;
         self.backgroundColor = attr.backgroundColor;
         if (!self.bottomView) {
             _bottomView = [[UIView alloc] init];

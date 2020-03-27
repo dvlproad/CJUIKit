@@ -179,6 +179,7 @@ PODS:
   - CJComplexUIKit/CJCollectionView/MyEqualCellSizeCollectionView (0.3.0)
   - CJComplexUIKit/CJScrollView (0.3.0)
   - CJComplexUIKit/LECollectionView (0.3.0):
+    - CJBaseUtil/CJDataUtil
     - Masonry
     - SDCycleScrollView
   - CJFile/CJFileManager (0.0.9)
@@ -334,7 +335,7 @@ SPEC CHECKSUMS:
   CJBaseOverlayKit: 614d88cb16de0d34e6286a3fe4d5431444867fe8
   CJBaseUIKit: 8a34464da479a1d198ef9582c5966c84f032827e
   CJBaseUtil: 1bbf8d5f831dc12ae4bb06c8b5326bd39f3522e1
-  CJComplexUIKit: a97bba73966aa872cfa2ab4483f3446532b97e71
+  CJComplexUIKit: d3830172dfd81c710cde9f09559c28b9461a3a73
   CJFile: 6c1e6d55b3b94e8afbaa9f413f131301d15fdc48
   CJFoundation: 53b4df7152c6d6fd776f55f387c67f431b8574bd
   CJMedia: 29b1bd8c127fb80c4993a76420a3bcc31a4657e5

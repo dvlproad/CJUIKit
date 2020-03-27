@@ -1,23 +1,24 @@
 //
-//  LEBannerCollectionViewCell.m
+//  CJHomeAdCollectionViewCell.m
 //  CJComplexUIKitDemo
 //
 //  Created by ciyouzen on 2019/5/22.
 //  Copyright © 2019 dvlproad. All rights reserved.
 //
 
-#import "LEBannerCollectionViewCell.h"
+#import "CJHomeAdCollectionViewCell.h"
 #import <Masonry/Masonry.h>
 #import <SDCycleScrollView/SDCycleScrollView.h>
 
-@interface LEBannerCollectionViewCell () <SDCycleScrollViewDelegate>
+@interface CJHomeAdCollectionViewCell () <SDCycleScrollViewDelegate>
 
 @property (nonatomic, strong) SDCycleScrollView *activityView;
-@property (nonatomic, strong ) NSMutableArray *bannerListArray;
-@property (nonatomic, strong) LEADPosModelList *listModel;
+
 @end
 
-@implementation LEBannerCollectionViewCell
+
+
+@implementation CJHomeAdCollectionViewCell
 - (id)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
     if (self) {
@@ -41,19 +42,22 @@
 }
 
 #pragma mark - 数据渲染
-- (void)setValueCellWithModel:(LEADPosModelList *)listModel {
-    self.listModel = listModel;
-    [self.bannerListArray removeAllObjects];
-    [self.bannerListArray addObject:@"banner"];
-    self.activityView.localizationImageNamesGroup = self.bannerListArray;
-    self.activityView.autoScroll = self.bannerListArray.count > 1 ? YES : NO;
+- (void)setAdDataModels:(NSArray<CJHomeAdDataModel *> *)adDataModels {
+    _adDataModels = adDataModels;
+    
+    NSMutableArray *imageNames = [[NSMutableArray alloc] init];
+    for (CJHomeAdDataModel *adDataModel in adDataModels) {
+        [imageNames addObject:adDataModel.imageName];
+    }
+    self.activityView.localizationImageNamesGroup = imageNames;
+    self.activityView.autoScroll = self.adDataModels.count > 1 ? YES : NO;
     
 }
 
 #pragma mark - SDCycleScrollViewDelegate
 - (void)cycleScrollView:(SDCycleScrollView *)cycleScrollView didSelectItemAtIndex:(NSInteger)index {
-    if (index < self.listModel.contentList.count) {
-        LEADPosModel *posModel = self.listModel.contentList[index];
+    if (index < self.adDataModels.count) {
+        CJHomeAdDataModel *posModel = self.adDataModels[index];
         if (self.activityClickBlock) {
             self.activityClickBlock(posModel, index);
         }
@@ -82,25 +86,6 @@
     }
     return _activityView;
 }
-
-@synthesize listModel = _listModel;
-- (LEADPosModelList *)listModel {
-    if (_listModel ==nil) {
-        _listModel = [[LEADPosModelList alloc] init];
-    }
-    return _listModel;
-}
-
-
-@synthesize bannerListArray = _bannerListArray;
-- (NSMutableArray *)bannerListArray {
-    if (_bannerListArray == nil) {
-        _bannerListArray = [[NSMutableArray alloc] initWithCapacity:0];
-    }
-    return _bannerListArray;
-}
-
-@synthesize activityClickBlock = _activityClickBlock;
 
 
 @end

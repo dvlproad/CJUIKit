@@ -7,10 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <CJTS_Base/CJUIKitBaseViewController.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface LEWorkHomeViewController : UIViewController {
+@interface LEWorkHomeViewController : CJUIKitBaseViewController {
     
 }
 

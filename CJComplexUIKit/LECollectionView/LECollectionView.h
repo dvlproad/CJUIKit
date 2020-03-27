@@ -8,14 +8,20 @@
 
 #import <UIKit/UIKit.h>
 #import <CJBaseUtil/CJSectionDataModel.h>   //在CJDataUtil中
-#import "LEMenuDataModel.h"
+#import "CJHomeAdDataModel.h"
+#import "CJHomeMenuDataModel.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface LECollectionView : UICollectionView {
     
 }
+@property (nonatomic, strong) NSArray<CJHomeAdDataModel *> *adDataModels;
 @property (nonatomic, strong) NSMutableArray<CJSectionDataModel *> *menuSectionDataModels;
+
+
+- (void)configClickHomeAdHandle:(void(^ _Nullable)(NSInteger adIndex))clickHomeAdHandle
+            clickHomeMenuHandle:(void(^ _Nullable)(NSIndexPath *menuIndexPath))clickHomeMenuHandle;
 
 @end
 

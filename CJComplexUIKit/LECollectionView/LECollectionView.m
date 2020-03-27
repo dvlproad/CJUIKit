@@ -11,15 +11,18 @@
 
 #import "LEMenuCollectionViewCell.h"
 
-#import "LEBannerCollectionViewCell.h"
+#import "CJHomeAdCollectionViewCell.h"
 #import "LECollectionHeader.h"
 
-#import "LECollectionViewFlowLayout.h"
+#import "CJCollectionViewFlowLayout.h"
 
-@interface LECollectionView () <UICollectionViewDelegate, UICollectionViewDataSource, LECollectionViewDelegateFlowLayout> {
+@interface LECollectionView () <UICollectionViewDelegate, UICollectionViewDataSource, CJCollectionViewDelegateFlowLayout> {
     
 }
-@property (nonatomic, strong) LECollectionViewFlowLayout *layout;
+@property (nonatomic, strong) CJCollectionViewFlowLayout *layout;
+
+@property (nonatomic, copy) void(^_Nullable clickHomeAdHandle)(NSInteger adIndex);
+@property (nonatomic, copy) void(^_Nullable clickHomeMenuHandle)(NSIndexPath *menuIndexPath);
 
 @end
 
@@ -32,13 +35,20 @@
         self.backgroundColor = [UIColor colorWithRed:244/255.0 green:244/255.0 blue:244/255.0 alpha:1.0]; //#f4f4f4;
         
         //注册cell
-        [self registerClass:[LEBannerCollectionViewCell class] forCellWithReuseIdentifier:@"LEBannerCollectionViewCell"];
+        [self registerClass:[CJHomeAdCollectionViewCell class] forCellWithReuseIdentifier:@"CJHomeAdCollectionViewCell"];
         [self registerClass:[LECollectionHeader class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"LECollectionHeader"];
         
         self.delegate = self;
         self.dataSource = self;
     }
     return self;
+}
+
+- (void)configClickHomeAdHandle:(void(^ _Nullable)(NSInteger adIndex))clickHomeAdHandle
+            clickHomeMenuHandle:(void(^ _Nullable)(NSIndexPath *menuIndexPath))clickHomeMenuHandle
+{
+    _clickHomeAdHandle = clickHomeAdHandle;
+    _clickHomeMenuHandle = clickHomeMenuHandle;
 }
 
 
@@ -68,10 +78,10 @@
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
 
     if (0 == indexPath.section) {
-        static NSString * cellName = @"LEBannerCollectionViewCell";
-        LEBannerCollectionViewCell *cell = (LEBannerCollectionViewCell*)[collectionView dequeueReusableCellWithReuseIdentifier:cellName forIndexPath:indexPath];
-        LEADPosModelList *list = [[LEADPosModelList alloc] init];
-        [cell setValueCellWithModel:list];
+        static NSString * cellName = @"CJHomeAdCollectionViewCell";
+        CJHomeAdCollectionViewCell *cell = (CJHomeAdCollectionViewCell*)[collectionView dequeueReusableCellWithReuseIdentifier:cellName forIndexPath:indexPath];
+        cell.adDataModels = self.adDataModels;
+        
         return cell;
     }
     else {
@@ -86,11 +96,11 @@
         NSArray *sectionDataModels = self.menuSectionDataModels;
         CJSectionDataModel *sectionDataModel = [sectionDataModels objectAtIndex:indexPath.section-1];
         NSMutableArray *dataModels = sectionDataModel.values;
-        LEMenuDataModel *dataModel = dataModels[indexPath.row];
+        CJHomeMenuDataModel *dataModel = dataModels[indexPath.row];
         
-        [cell.iconImageView sd_setImageWithURL:[NSURL URLWithString:@"https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=3407848463,1025443640&fm=26&gp=0.jpg"] placeholderImage:[UIImage imageNamed:@"replenish_icon"]];
-        cell.titleNameLabel.text = @"健康证";
-        [cell displayMessageWithCount:66];
+        [cell.iconImageView sd_setImageWithURL:[NSURL URLWithString:dataModel.imageUrl] placeholderImage:dataModel.imagePlaceholderImage];
+        cell.titleNameLabel.text = dataModel.name;
+        [cell displayMessageWithCount:dataModel.badgeCount];
         
         return cell;
     }
@@ -115,13 +125,15 @@
     [collectionView deselectItemAtIndexPath:indexPath animated:YES];
     
     if (0 == indexPath.section) {
-        
+        NSInteger adIndex = 0;
+        if (self.clickHomeAdHandle) {
+            self.clickHomeAdHandle(adIndex);
+        }
     } else {
-        CJSectionDataModel *sectionDataModel = [self.menuSectionDataModels objectAtIndex:indexPath.section-1];
-        NSMutableArray *dataModels = sectionDataModel.values;
-        LEMenuDataModel *dataModel = dataModels[indexPath.row];
-        NSLog(@"首页点击菜单，启动 URL: %@", dataModel.imagePath);
-//        [self.viewModel clickBottomItem:menu]; //TODO:
+        NSIndexPath *menuIndexPath = [NSIndexPath indexPathForItem:indexPath.item inSection:indexPath.section-1];
+        if (self.clickHomeMenuHandle) {
+            self.clickHomeMenuHandle(menuIndexPath);
+        }
     }
 }
 
@@ -175,7 +187,7 @@
     }
     else {
         CGFloat width = (screenWidth) / 4;
-        CGFloat height = LEWorkFunctionItemCellHeight;
+        CGFloat height = 87;
         return CGSizeMake(width, height);
     }
     
@@ -213,9 +225,9 @@
 
 #pragma mark - lazy init
 @synthesize layout = _layout;
-- (LECollectionViewFlowLayout *)layout {
+- (CJCollectionViewFlowLayout *)layout {
     if (!_layout) {
-        _layout  = [[LECollectionViewFlowLayout alloc] init];
+        _layout  = [[CJCollectionViewFlowLayout alloc] init];
         [_layout setScrollDirection:UICollectionViewScrollDirectionVertical];//设置对齐方式
     }
     return _layout;

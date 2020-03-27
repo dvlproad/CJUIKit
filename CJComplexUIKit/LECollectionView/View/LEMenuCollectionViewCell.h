@@ -10,9 +10,6 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-FOUNDATION_EXTERN CGFloat const LEWorkFunctionItemCellWidth;
-FOUNDATION_EXTERN CGFloat const LEWorkFunctionItemCellHeight;
-
 @interface LEMenuCollectionViewCell : UICollectionViewCell {
     
 }
