@@ -13,7 +13,6 @@ NS_ASSUME_NONNULL_BEGIN
 @interface CJHomeCollectionView (Move) {
     
 }
-@property (nonatomic, assign, readonly) BOOL cjIsBeginMove; /**< 是否点击长按进行拖动了(在需要添加抖动的等场景中会使用到) */
 @property (nonatomic, copy) BOOL (^cjCheckSectionMoveEnableBlock)(NSIndexPath *indexPath);    /**< 设置允许哪些section中的哪些item进行拖动操作，默认都允许 */
 @property (nonatomic, copy) BOOL (^cjCheckCellMoveEnableBlock)(NSInteger fromSection, NSInteger toSection);    /**< 检查是否允许跨secton操作，默认允许 */
 

@@ -8,10 +8,19 @@
 
 #import <UIKit/UIKit.h>
 
+typedef NS_ENUM(NSUInteger, CJShakeType) {
+    CJShakeTypeNever = 0,   /** 从来不需要抖动(默认值)   */
+    CJShakeTypeMoving,      /** 抖动中   */
+    CJShakeTypeEnd,         /** 抖动结束   */
+};
+
 /**
  *  UIView的抖动效果
  */
-@interface UIView (CJShake)
+@interface UIView (CJShake) {
+    
+}
+@property (nonatomic, assign) CJShakeType cjShakeType;
 
 /**
 *  短暂抖动(常见于密码输入错误)

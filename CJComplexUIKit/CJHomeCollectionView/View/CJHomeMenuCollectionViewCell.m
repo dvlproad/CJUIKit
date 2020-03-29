@@ -66,12 +66,13 @@ static const CGFloat Icon_Size_Height = 42.0f;
 
 - (void)setBadgeCount:(NSInteger)badgeCount {
     if (badgeCount <= 0) {
+        self.messageTipLabel.text = @"";
         return;
     }
     
     self.messageTipLabel.hidden = NO;
     if (badgeCount < 10) {
-        self.messageTipLabel.text = [NSString stringWithFormat:@"%@",@(badgeCount)];
+        self.messageTipLabel.text = [NSString stringWithFormat:@"%@", @(badgeCount)];
     } else if (badgeCount < 100) {
         self.messageTipLabel.text = [NSString stringWithFormat:@"%@ ", @(badgeCount)];
     } else {

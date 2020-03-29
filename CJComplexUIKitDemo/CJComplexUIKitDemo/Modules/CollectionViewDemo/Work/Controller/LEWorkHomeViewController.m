@@ -49,6 +49,7 @@
     [self.collectionView addGestureRecognizerWithContainShakeGR:YES];
     self.collectionView.cjCheckCellMoveEnableBlock = ^BOOL(NSInteger fromSection, NSInteger toSection) {
         BOOL moveEnable = fromSection == toSection;
+        moveEnable = YES;
         if (!moveEnable) {
             //NSString *message = @"只能在同一功能里移动";
             NSString *message = [NSString stringWithFormat:@"不能从%zd区移动到%zd区", fromSection, toSection];
@@ -89,7 +90,7 @@
     CJSectionDataModel *secctionModel2 = [[CJSectionDataModel alloc]init];
     secctionModel2.theme = @"B区";
     secctionModel2.values = [[NSMutableArray alloc]init];
-    for (NSInteger i = 0; i < 3; i++) {
+    for (NSInteger i = 0; i < 9; i++) {
         CJHomeMenuDataModel *cellModel = [[CJHomeMenuDataModel alloc]init];
         cellModel.name = [NSString stringWithFormat:@"%ld", 20+i];
         cellModel.imageUrl = testImageUrl;
@@ -110,7 +111,19 @@
     }
     secctionModel3.selected = YES;
     
-    NSMutableArray *secctionModels = [NSMutableArray arrayWithArray:@[secctionModel1, secctionModel2, secctionModel3]];
+    CJSectionDataModel *secctionModel4 = [[CJSectionDataModel alloc]init];
+    secctionModel4.theme = @"D区";
+    secctionModel4.values = [[NSMutableArray alloc]init];
+    for (NSInteger i = 0; i < 5; i++) {
+        CJHomeMenuDataModel *cellModel = [[CJHomeMenuDataModel alloc]init];
+        cellModel.name = [NSString stringWithFormat:@"%ld", 40+i];
+        cellModel.imageUrl = testImageUrl;
+        cellModel.badgeCount = 40+i;
+        [secctionModel4.values addObject:cellModel];
+    }
+    secctionModel4.selected = YES;
+    
+    NSMutableArray *secctionModels = [NSMutableArray arrayWithArray:@[secctionModel1, secctionModel2, secctionModel3, secctionModel4]];
     return secctionModels;
 }
 

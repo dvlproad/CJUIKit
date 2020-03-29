@@ -8,8 +8,8 @@
 
 #import "CJHomeCollectionView+Move.h"
 #import <objc/runtime.h>
+#import <CJBaseUIKit/UIView+CJShake.h>
 
-static NSString * const cjIsBeginMoveKey = @"cjIsBeginMoveKey";
 static NSString * const cjCheckSectionMoveEnableBlockKey = @"cjCheckSectionMoveEnableBlockKey";
 static NSString * const cjCheckCellMoveEnableBlockKey = @"cjCheckCellMoveEnableBlockKey";
 
@@ -33,15 +33,6 @@ static NSString * const cjCheckCellMoveEnableBlockKey = @"cjCheckCellMoveEnableB
 //- (void)setCjShakeGestureRecognizer:(UILongPressGestureRecognizer *)cjShakeGestureRecognizer {
 //    objc_setAssociatedObject(self, (__bridge const void *)(cjShakeGestureRecognizerKey), cjShakeGestureRecognizer, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 //}
-
-//cjIsBeginMove
-- (BOOL)cjIsBeginMove {
-    return [objc_getAssociatedObject(self, &cjIsBeginMoveKey) boolValue];
-}
-
-- (void)setCjIsBeginMove:(BOOL)cjIsBeginMove {
-    objc_setAssociatedObject(self, &cjIsBeginMoveKey, @(cjIsBeginMove), OBJC_ASSOCIATION_ASSIGN);
-}
 
 
 //cjCheckSectionMoveEnableBlock
@@ -84,11 +75,7 @@ static NSString * const cjCheckCellMoveEnableBlockKey = @"cjCheckCellMoveEnableB
     switch (shakeLongPressGR.state) {
         case UIGestureRecognizerStateBegan:
         {
-            self.cjIsBeginMove = YES;
-            [self removeGestureRecognizer:shakeLongPressGR];
-            [self __addMoveGestureRecognizer];
-            [self reloadData];
-        
+            [self __cjShakeBeginToMove];
             break;
         }
         case UIGestureRecognizerStateChanged:
@@ -100,14 +87,72 @@ static NSString * const cjCheckCellMoveEnableBlockKey = @"cjCheckCellMoveEnableB
     }
 }
 
+/// 添加拖动的手势
 - (void)__addMoveGestureRecognizer {
-    UILongPressGestureRecognizer *moveGR = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(__moveGRAction:)];
-    moveGR.minimumPressDuration = 0;
+    if (self.cjShakeGestureRecognizer) {
+        [self removeGestureRecognizer:self.cjShakeGestureRecognizer];
+    }
+    UILongPressGestureRecognizer *moveGR = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(__cjMoveGRAction:)];
+    moveGR.minimumPressDuration = 1.0;
+    if (self.cjShakeType == CJShakeTypeMoving) {
+        moveGR.minimumPressDuration = 0.3;
+    }
     [self addGestureRecognizer:moveGR];
     self.cjMoveGestureRecognizer = moveGR;
 }
  
-- (void)__moveGRAction:(UILongPressGestureRecognizer *)moveLongPressGR {
+
+
+#pragma mark - UICollectionViewDataSource
+//开启collectionView可以移动
+- (BOOL)collectionView:(UICollectionView *)collectionView canMoveItemAtIndexPath:(NSIndexPath *)indexPath {
+    if (self.cjCheckSectionMoveEnableBlock) {
+        return self.cjCheckSectionMoveEnableBlock(indexPath);
+    }
+    
+    if (indexPath.section == 0) {
+        return NO;
+    }
+    return YES;
+}
+
+//处理collectionView移动过程中的数据操作
+- (void)collectionView:(UICollectionView *)collectionView moveItemAtIndexPath:(NSIndexPath *)sourceIndexPath toIndexPath:(NSIndexPath *)destinationIndexPath {
+    //从数据源中移除该数据
+    CJSectionDataModel *sourceSectionDataModel = [self.menuSectionDataModels objectAtIndex:sourceIndexPath.section-self.menuSectionStartIndex];
+    id dataModel = [sourceSectionDataModel.values objectAtIndex:sourceIndexPath.item];
+    [sourceSectionDataModel.values removeObject:dataModel];
+    //并将数据插入到数据源中目标位置
+    CJSectionDataModel *destinationSectionDataModel = [self.menuSectionDataModels objectAtIndex:destinationIndexPath.section-self.menuSectionStartIndex];
+    [destinationSectionDataModel.values insertObject:dataModel atIndex:destinationIndexPath.row];
+    NSLog(@"移动完毕");
+}
+
+
+
+
+#pragma mark - Private Method
+/// 开始抖动，以进行拖动
+- (void)__cjShakeBeginToMove {
+    self.cjShakeType = CJShakeTypeMoving;
+    [self reloadData];
+    
+    [self __addMoveGestureRecognizer];
+}
+
+/// 拖动结束
+- (void)__cjMoveEnd {
+    if (self.cjShakeType == CJShakeTypeMoving) {
+        // 如果之前是有抖动的，则设置抖动结束，如果不是，则其值仍为原来的CJShakeTypeNever
+        self.cjShakeType == CJShakeTypeEnd;
+        [self addGestureRecognizerWithContainShakeGR:YES];
+    }
+    
+    [self reloadData];
+}
+
+/// 拖动过程中的监听
+- (void)__cjMoveGRAction:(UILongPressGestureRecognizer *)moveLongPressGR {
     static NSInteger fromSection = 0;    // 记录section，防止跨section移动
     static NSInteger lastSection = 0;
     
@@ -157,42 +202,18 @@ static NSString * const cjCheckCellMoveEnableBlockKey = @"cjCheckCellMoveEnableB
             //手势结束
             //iOS9方法 移动结束后关闭cell移动
             [self endInteractiveMovement];
-//            self.cjIsBeginMove = NO;
+            [self __cjMoveEnd];
             break;
         }
         default:
         {
             //取消移动
             [self cancelInteractiveMovement];
-//            self.cjIsBeginMove = NO;
+            [self __cjMoveEnd];
+            
             break;
         }
     }
-}
-
-#pragma mark - UICollectionViewDataSource
-//开启collectionView可以移动
-- (BOOL)collectionView:(UICollectionView *)collectionView canMoveItemAtIndexPath:(NSIndexPath *)indexPath {
-    if (self.cjCheckSectionMoveEnableBlock) {
-        return self.cjCheckSectionMoveEnableBlock(indexPath);
-    }
-    
-    if (indexPath.section == 0) {
-        return NO;
-    }
-    return YES;
-}
-
-//处理collectionView移动过程中的数据操作
-- (void)collectionView:(UICollectionView *)collectionView moveItemAtIndexPath:(NSIndexPath *)sourceIndexPath toIndexPath:(NSIndexPath *)destinationIndexPath {
-    //从数据源中移除该数据
-    CJSectionDataModel *sourceSectionDataModel = [self.menuSectionDataModels objectAtIndex:sourceIndexPath.section-self.menuSectionStartIndex];
-    id dataModel = [sourceSectionDataModel.values objectAtIndex:sourceIndexPath.item];
-    [sourceSectionDataModel.values removeObject:dataModel];
-    //并将数据插入到数据源中目标位置
-    CJSectionDataModel *destinationSectionDataModel = [self.menuSectionDataModels objectAtIndex:destinationIndexPath.section-self.menuSectionStartIndex];
-    [destinationSectionDataModel.values insertObject:dataModel atIndex:destinationIndexPath.row];
-    NSLog(@"移动完毕");
 }
 
 @end

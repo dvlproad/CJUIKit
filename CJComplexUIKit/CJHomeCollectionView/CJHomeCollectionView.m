@@ -103,7 +103,7 @@
         cell.titleNameLabel.text = dataModel.name;
         cell.badgeCount = dataModel.badgeCount;
         
-        if (((CJHomeCollectionView *)collectionView).cjIsBeginMove) {
+        if (((CJHomeCollectionView *)collectionView).cjShakeType == CJShakeTypeMoving) {
             [cell cjShakeKeeping];
         }
         

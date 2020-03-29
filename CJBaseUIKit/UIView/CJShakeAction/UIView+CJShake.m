@@ -7,8 +7,22 @@
 //
 
 #import "UIView+CJShake.h"
+#import <objc/runtime.h>
+
+static NSString * const cjShakeTypeKey = @"cjShakeTypeKey";
 
 @implementation UIView (CJShake)
+
+#pragma mark - runtime
+//cjShakeType
+- (CJShakeType)cjShakeType {
+    return (CJShakeType)[objc_getAssociatedObject(self, &cjShakeTypeKey) integerValue];
+}
+
+- (void)setCjShakeType:(CJShakeType)cjShakeType {
+    objc_setAssociatedObject(self, &cjShakeTypeKey, @(cjShakeType), OBJC_ASSOCIATION_ASSIGN);
+}
+
 
 /**
 *  短暂抖动(常见于密码输入错误)
