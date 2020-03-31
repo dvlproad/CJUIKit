@@ -223,7 +223,7 @@
 - (UIColor *)collectionView:(UICollectionView *)collectionView
                      layout:(UICollectionViewLayout *)collectionViewLayout backgroundColorForSection:(NSInteger)section
 {
-    return [UIColor whiteColor];
+    return [UIColor clearColor];
 }
 
 
