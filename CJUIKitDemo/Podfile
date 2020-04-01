@@ -32,7 +32,7 @@ target 'CJUIKitDemo' do
     pod 'Masonry'
 
     pod 'MJRefresh', '~> 3.1.12'
-    pod 'MBProgressHUD' #CJToast需要使用
+    pod 'MBProgressHUD' #LuckinToast需要使用
     pod 'SVProgressHUD', '~> 2.2.2'
     pod 'OpenUDID', '~> 1.0.0'
 
@@ -69,7 +69,7 @@ target 'CJUIKitDemo' do
     pod 'CJBaseHelper',         :path => '../’
     pod 'CJBaseEffectKit',      :path => '../’
     pod 'CJComplexUIKit/CJCollectionView/MyEqualCellSizeCollectionView',      :path => '../’
-#    pod 'CJBaseUIKit', :subspecs => ['UIColor', 'UIButton', 'UITextField', 'CJToast', 'CJAlert']
+#    pod 'CJBaseUIKit', :subspecs => ['UIColor', 'UIButton', 'UITextField', 'LuckinToast', 'CJAlert']
 #    pod 'CJBaseUtil', :subspecs => ['CJLog']
 #    pod 'CJFoundation', :subspecs => ['NSString']
 #    pod 'CJBaseHelper', :subspecs => ['NSObjectCJHelper', 'AuthorizationCJHelper']

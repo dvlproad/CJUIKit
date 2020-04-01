@@ -20,7 +20,7 @@
 //#import "CJActionSheetView.h"
 //
 //// Toast
-//#import "CJToast.h"
+//#import "LuckinToast.h"
 //
 //// HUD
 //#import "CJProgressHUD.h"

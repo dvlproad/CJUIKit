@@ -3,7 +3,7 @@
   "version": "0.2.1",
   "summary": "自定义的基础悬浮UI(Toast、Alert、ActionSheet、HUD)",
   "homepage": "https://github.com/dvlproad/CJUIKit",
-  "description": "- LuckinBaseOverlayKit/UIView：视图\n- LuckinBaseOverlayKit/UIView/CJDragAction：视图拖动\n- LuckinBaseOverlayKit/UIView/CJShakeAction：视图抖动\n- LuckinBaseOverlayKit/UIView/CJPopupAction：视图弹窗：UIView的类别，用来实现UIView弹出popupView的一个Uiew的类别\n- LuckinBaseOverlayKit/UIView/CJGestureRecognizer：视图手势\n- LuckinBaseOverlayKit/UIWindow：窗口\n- LuckinBaseOverlayKit/CJToast：Toast\n- LuckinBaseOverlayKit/CJAlert：Alert\n\n  A longer description of LuckinBaseOverlayKit in Markdown format.\n\n  * Think: Why did you write this? What is the focus? What does it do?\n  * CocoaPods will be using this to generate tags, and improve search results.\n  * Try to keep it short, snappy and to the point.\n  * Finally, don't worry about the indent, CocoaPods strips it!",
+  "description": "- LuckinBaseOverlayKit/UIView：视图\n- LuckinBaseOverlayKit/UIView/CJDragAction：视图拖动\n- LuckinBaseOverlayKit/UIView/CJShakeAction：视图抖动\n- LuckinBaseOverlayKit/UIView/CJPopupAction：视图弹窗：UIView的类别，用来实现UIView弹出popupView的一个Uiew的类别\n- LuckinBaseOverlayKit/UIView/CJGestureRecognizer：视图手势\n- LuckinBaseOverlayKit/UIWindow：窗口\n- LuckinBaseOverlayKit/LuckinToast：Toast\n- LuckinBaseOverlayKit/CJAlert：Alert\n\n  A longer description of LuckinBaseOverlayKit in Markdown format.\n\n  * Think: Why did you write this? What is the focus? What does it do?\n  * CocoaPods will be using this to generate tags, and improve search results.\n  * Try to keep it short, snappy and to the point.\n  * Finally, don't worry about the indent, CocoaPods strips it!",
   "license": "MIT",
   "authors": {
     "dvlproad": ""
@@ -24,9 +24,9 @@
       "source_files": "LuckinBaseOverlayKit/CJBaseOverlayTheme/**/*.{h,m}"
     },
     {
-      "name": "CJToast",
-      "source_files": "LuckinBaseOverlayKit/CJToast/**/*.{h,m}",
-      "resources": "LuckinBaseOverlayKit/CJToast/**/*.{png,xib}",
+      "name": "LuckinToast",
+      "source_files": "LuckinBaseOverlayKit/LuckinToast/**/*.{h,m}",
+      "resources": "LuckinBaseOverlayKit/LuckinToast/**/*.{png,xib}",
       "dependencies": {
         "MBProgressHUD": [
 

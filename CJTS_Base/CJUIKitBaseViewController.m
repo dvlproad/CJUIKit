@@ -22,7 +22,7 @@
 
 - (void)showToastMessage:(NSString *)message {
     UIView *view = [[UIApplication sharedApplication].delegate window];
-    [CJToast showMessage:message inView:view withLabelTextColor:[UIColor blackColor] bezelViewColor:[UIColor whiteColor] hideAfterDelay:2.f];
+    [LuckinToast showMessage:message inView:view withLabelTextColor:[UIColor blackColor] bezelViewColor:[UIColor whiteColor] hideAfterDelay:2.f];
 }
 
 /*

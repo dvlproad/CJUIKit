@@ -13,7 +13,7 @@ Pod::Spec.new do |s|
                  - LuckinBaseOverlayKit/UIView/CJPopupAction：视图弹窗：UIView的类别，用来实现UIView弹出popupView的一个Uiew的类别
                  - LuckinBaseOverlayKit/UIView/CJGestureRecognizer：视图手势
                  - LuckinBaseOverlayKit/UIWindow：窗口
-                 - LuckinBaseOverlayKit/CJToast：Toast
+                 - LuckinBaseOverlayKit/LuckinToast：Toast
                  - LuckinBaseOverlayKit/CJAlert：Alert
 
                    A longer description of LuckinBaseOverlayKit in Markdown format.
@@ -57,9 +57,9 @@ Pod::Spec.new do |s|
 
 
   # Toast
-  s.subspec 'CJToast' do |ss|
-    ss.source_files = "LuckinBaseOverlayKit/CJToast/**/*.{h,m}"
-    ss.resources = "LuckinBaseOverlayKit/CJToast/**/*.{png,xib}"
+  s.subspec 'LuckinToast' do |ss|
+    ss.source_files = "LuckinBaseOverlayKit/LuckinToast/**/*.{h,m}"
+    ss.resources = "LuckinBaseOverlayKit/LuckinToast/**/*.{png,xib}"
     #多个依赖就写多行
     ss.dependency 'MBProgressHUD'
     ss.dependency 'LuckinBaseOverlayKit/CJBaseOverlayTheme'

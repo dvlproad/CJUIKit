@@ -1,5 +1,5 @@
 //
-//  CJToast.h
+//  LuckinToast.h
 //  CJUIKitDemo
 //
 //  Created by ciyouzen on 2017/5/11.
@@ -13,7 +13,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 //提示语的实现是通过给MBProgressHUD写一个类目方法。
 
-@interface CJToast : NSObject
+@interface LuckinToast : NSObject
 
 #pragma mark - Only Text
 /**

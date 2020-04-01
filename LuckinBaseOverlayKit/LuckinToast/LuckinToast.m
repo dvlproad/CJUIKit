@@ -1,14 +1,14 @@
 //
-//  CJToast.m
+//  LuckinToast.m
 //  CJUIKitDemo
 //
 //  Created by ciyouzen on 2017/5/11.
 //  Copyright © 2017年 dvlproad. All rights reserved.
 //
 
-#import "CJToast.h"
+#import "LuckinToast.h"
 
-@implementation CJToast
+@implementation LuckinToast
 
 #pragma mark - Only Text
 /**
@@ -99,16 +99,16 @@ withLabelTextColor:(UIColor * _Nullable)labelTextColor
 /*
 + (void)shortShowError:(NSString *)error toView:(UIView *)view
 {
-    //NSString *imageName = @"CJToast.bundle/error";
-    NSString *imageName = @"CJToast_error.png";
+    //NSString *imageName = @"LuckinToast.bundle/error";
+    NSString *imageName = @"LuckinToast_error.png";
     UIImage *image = [UIImage imageNamed:imageName];
     [self shortShowMessage:error image:image toView:view];
 }
 
 + (void)shortShowSuccess:(NSString *)success toView:(UIView *)view
 {
-    //NSString *imageName = @"CJToast.bundle/success";
-    NSString *imageName = @"CJToast_success.png";
+    //NSString *imageName = @"LuckinToast.bundle/success";
+    NSString *imageName = @"LuckinToast_success.png";
     UIImage *image = [UIImage imageNamed:imageName];
     [self shortShowMessage:success image:image toView:view];
 }
@@ -208,7 +208,7 @@ withLabelTextColor:(UIColor * _Nullable)labelTextColor
 //    UIView *customView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 400, 200)];
 //    customView.backgroundColor = [UIColor redColor];
 //    
-//    UIImage *image = [[UIImage imageNamed:@"CJToast_success"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+//    UIImage *image = [[UIImage imageNamed:@"LuckinToast_success"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
 //    UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 100-40/2, 40, 40)];
 //    imageView.image = image;
 //    [customView addSubview:imageView];
