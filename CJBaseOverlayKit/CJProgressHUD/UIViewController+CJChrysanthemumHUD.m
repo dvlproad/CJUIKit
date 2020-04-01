@@ -1,12 +1,12 @@
 //
-//  UIViewController+CJToast.m
+//  UIViewController+CJChrysanthemumHUD.m
 //  CJUIKitDemo
 //
 //  Created by ciyouzen on 2019/4/19.
 //  Copyright © 2019 dvlproad. All rights reserved.
 //
 
-#import "UIViewController+CJToast.h"
+#import "UIViewController+CJChrysanthemumHUD.h"
 #import <objc/runtime.h>
 
 @interface UIViewController () {
@@ -18,7 +18,7 @@
 @end
 
 
-@implementation UIViewController (CJToast)
+@implementation UIViewController (CJChrysanthemumHUD)
 
 #pragma mark - runtime
 - (MBProgressHUD *)cjChrysanthemumHUD {

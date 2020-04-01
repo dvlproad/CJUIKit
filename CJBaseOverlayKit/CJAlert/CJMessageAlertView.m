@@ -339,7 +339,7 @@
         }];
     }
     
-    //NSNumber *buttonMarginTop = alertMarginVerticals[buttonsVerticalIndex];
+    NSNumber *buttonMarginTop = alertMarginVerticals[buttonsVerticalIndex];
     NSNumber *buttonMarginBottom = alertMarginVerticals[buttonsVerticalIndex+1];
     CGFloat actionButtonHeight = alertThemeModel.actionButtonHeight;
     [self.bottomButtonView mas_makeConstraints:^(MASConstraintMaker *make) {

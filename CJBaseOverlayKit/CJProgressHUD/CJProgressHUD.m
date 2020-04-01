@@ -25,7 +25,7 @@
 
 - (instancetype)initWithAnimationNamed:(NSString *)animationNamed {
     self = [super initWithFrame:CGRectZero];
-    if(self){
+    if(self) {
         self.backgroundColor = [UIColor clearColor];
         self.layer.cornerRadius = 3;
         self.layer.masksToBounds = YES;

@@ -75,10 +75,6 @@ NS_ASSUME_NONNULL_BEGIN
 // */
 //+ (MBProgressHUD *)createChrysanthemumHUDWithRightMessage:(NSString *)message toView:(UIView *)view;
 
-#pragma mark - HUD
-+ (void)showHUDAddedTo:(UIView *)view animated:(BOOL)animated;
-
-+ (BOOL)hideHUDForView:(UIView *)view animated:(BOOL)animated;
 
 @end
 

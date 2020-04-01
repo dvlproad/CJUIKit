@@ -1,5 +1,5 @@
 //
-//  UIViewController+CJToast.h
+//  UIViewController+CJChrysanthemumHUD.h
 //  CJUIKitDemo
 //
 //  Created by ciyouzen on 2019/4/19.
@@ -11,7 +11,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface UIViewController (CJToast)
+@interface UIViewController (CJChrysanthemumHUD)
 
 /// 显示"菊花HUD"视图
 - (void)cj_showChrysanthemumHUDWithMessage:(NSString * _Nullable)startProgressMessage animated:(BOOL)animated;

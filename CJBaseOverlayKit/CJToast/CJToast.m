@@ -226,20 +226,6 @@ withLabelTextColor:(UIColor * _Nullable)labelTextColor
 //    return hud;
 //}
 
-
-#pragma mark - HUD
-+ (void)showHUDAddedTo:(UIView *)view animated:(BOOL)animated {
-    [MBProgressHUD showHUDAddedTo:view animated:animated];
-    //TODO:UIActivityIndicatorView
-}
-
-+ (BOOL)hideHUDForView:(UIView *)view animated:(BOOL)animated {
-    return [MBProgressHUD hideHUDForView:view animated:animated];
-}
-
-
-
-
 #pragma mark - Private
 //以下获取textSize方法取自NSString+CJTextSize
 + (CGSize)getTextSizeFromString:(NSString *)string withFont:(UIFont *)font

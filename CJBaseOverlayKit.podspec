@@ -2,7 +2,7 @@ Pod::Spec.new do |s|
   # 验证方法：pod lib lint CJBaseOverlayKit.podspec --allow-warnings --use-libraries --verbose
   # pod的本地索引文件：~/Library/Caches/CocoaPods/search_index.json
   s.name         = "CJBaseOverlayKit"
-  s.version      = "0.2.0"
+  s.version      = "0.2.1"
   s.summary      = "自定义的基础悬浮UI(Toast、Alert、ActionSheet、HUD)"
   s.homepage     = "https://github.com/dvlproad/CJUIKit"
 
@@ -37,7 +37,7 @@ Pod::Spec.new do |s|
 
   s.platform     = :ios, "8.0"
  
-  s.source       = { :git => "https://github.com/dvlproad/CJUIKit.git", :tag => "CJBaseOverlayKit_0.2.0_1" }
+  s.source       = { :git => "https://github.com/dvlproad/CJUIKit.git", :tag => "CJBaseOverlayKit_0.2.1" }
   s.source_files  = "CJBaseOverlayKit/*.{h,m}"
 
   s.frameworks = "UIKit"
@@ -90,6 +90,7 @@ Pod::Spec.new do |s|
     ss.dependency 'Masonry'
     ss.dependency 'lottie-ios', '~> 2.5.3'
     ss.dependency 'CJBaseOverlayKit/CJBaseOverlayTheme'
+    ss.dependency 'MBProgressHUD'
   end
 
 
