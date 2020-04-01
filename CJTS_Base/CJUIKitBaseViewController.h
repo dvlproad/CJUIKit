@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import <Masonry/Masonry.h>
-#import <CJBaseOverlayKit/CJToast.h>
+#import <LuckinBaseOverlayKit/CJToast.h>
 
 @interface CJUIKitBaseViewController : UIViewController {
     

@@ -7,8 +7,8 @@
 //
 
 #import "TSToast.h"
-#import <CJBaseOverlayKit/CJToast.h>
-#import <CJBaseOverlayKit/CJMessageAlertView.h>
+#import <LuckinBaseOverlayKit/CJToast.h>
+#import <LuckinBaseOverlayKit/CJMessageAlertView.h>
 #import <CJFoundation/NSString+CJTextSize.h>
 
 #ifdef TEST_CJBASEUIKIT_POD

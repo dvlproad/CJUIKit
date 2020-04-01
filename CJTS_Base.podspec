@@ -42,7 +42,7 @@ Pod::Spec.new do |s|
   # s.frameworks = "MediaPlayer"
   # s.dependency 'Masonry'
   s.dependency "CJBaseUtil/CJDataUtil"
-  s.dependency "CJBaseOverlayKit/CJToast"
+  s.dependency "LuckinBaseOverlayKit/CJToast"
 
   s.subspec 'Home_TextView' do |ss|
     ss.source_files = "CJTS_Base/BaseTextViewController/**/*.{h,m}"

@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <CJBaseOverlayKit/CJActionSheetModel.h>
+#import <LuckinBaseOverlayKit/CJActionSheetModel.h>
 
 NS_ASSUME_NONNULL_BEGIN
 

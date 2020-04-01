@@ -7,7 +7,7 @@
 //
 
 #import "TSAlertManager.h"
-#import <CJBaseOverlayKit/CJMessageAlertView.h>
+#import <LuckinBaseOverlayKit/CJMessageAlertView.h>
 #import <CJBaseHelper/AuthorizationCJHelper.h>
 
 #import "CJBaseAlertView+TSPopupAction.h"

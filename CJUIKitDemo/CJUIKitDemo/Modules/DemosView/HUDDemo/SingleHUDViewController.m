@@ -7,7 +7,7 @@
 //
 
 #import "SingleHUDViewController.h"
-#include <CJBaseOverlayKit/CJProgressHUD.h>
+#include <LuckinBaseOverlayKit/CJProgressHUD.h>
 
 @interface SingleHUDViewController ()
 

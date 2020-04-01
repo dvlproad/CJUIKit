@@ -7,8 +7,8 @@
 //
 
 #import "TSAlertUtil.h"
-#import <CJBaseOverlayKit/CJMessageAlertView.h>
-#import <CJBaseOverlayKit/CJTextInputAlertView.h>
+#import <LuckinBaseOverlayKit/CJMessageAlertView.h>
+#import <LuckinBaseOverlayKit/CJTextInputAlertView.h>
 #import "CJBaseAlertView+TSPopupAction.h"
 
 @implementation TSAlertUtil
