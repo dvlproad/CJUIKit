@@ -67,7 +67,7 @@ target 'CJUIKitDemo' do
     pod 'CJBaseUtil',           :path => '../’
     pod 'CJFoundation',         :path => '../’
     pod 'CJBaseHelper',         :path => '../’
-    pod 'CJBaseEffectKit',      :path => '../’
+    pod 'LuckinBaseEffectKit',  :path => '../’
     pod 'CJComplexUIKit/CJCollectionView/MyEqualCellSizeCollectionView',      :path => '../’
 #    pod 'LuckinBaseUIKit', :subspecs => ['UIColor', 'UIButton', 'UITextField', 'LuckinToast', 'CJAlert']
 #    pod 'CJBaseUtil', :subspecs => ['CJLog']

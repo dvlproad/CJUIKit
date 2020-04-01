@@ -7,7 +7,7 @@
 //
 
 #import "ToastViewController.h"
-#import <CJBaseEffectKit/CJMJRefreshNormalHeader.h>
+#import <LuckinBaseEffectKit/CJMJRefreshNormalHeader.h>
 #import "LuckinToast.h"
 #import <LuckinBaseOverlayKit/UIViewController+CJChrysanthemumHUD.h>
 

@@ -9,7 +9,7 @@
 #import "APPUIKitSetting.h"
 
 //#import <LuckinBaseOverlayKit/CJHUDSettingManager.h>
-#import <CJBaseEffectKit/CJRefreshJSONSettingManager.h>
+#import <LuckinBaseEffectKit/CJRefreshJSONSettingManager.h>
 
 
 @implementation APPUIKitSetting

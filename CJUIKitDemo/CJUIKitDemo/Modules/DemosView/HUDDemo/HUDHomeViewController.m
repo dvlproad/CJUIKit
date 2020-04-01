@@ -7,7 +7,7 @@
 //
 
 #import "HUDHomeViewController.h"
-#import <CJBaseEffectKit/CJMJRefreshNormalHeader.h>
+#import <LuckinBaseEffectKit/CJMJRefreshNormalHeader.h>
 #import "SingleHUDViewController.h"
 #import "SelfHUDDismissViewController.h"
 #import "UIViewController+CQProgressHUD.h"

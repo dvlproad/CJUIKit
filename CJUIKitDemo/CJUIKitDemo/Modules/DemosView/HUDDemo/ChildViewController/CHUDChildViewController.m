@@ -7,7 +7,7 @@
 //
 
 #import "CHUDChildViewController.h"
-#import <CJBaseEffectKit/CJMJRefreshNormalHeader.h>
+#import <LuckinBaseEffectKit/CJMJRefreshNormalHeader.h>
 #import "BackFromSelfHUDViewController.h"
 #import "UIViewController+CQProgressHUD.h"
 

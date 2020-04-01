@@ -1,1 +1,0 @@
-../../../../../CJBaseEffectKit/CJRefreshWithJSON/CJRefreshJSONSettingManager.h
