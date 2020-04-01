@@ -58,18 +58,18 @@ target 'CJUIKitDemo' do
 
     pod 'YYText', '~> 1.0.7'
 
-#    pod 'CJBaseUIKit',          :path => '../’
-    pod 'lottie-ios', '~> 2.5.3' # CJBaseUIKit 需要使用
+#    pod 'LuckinBaseUIKit',          :path => '../’
+    pod 'lottie-ios', '~> 2.5.3' # LuckinBaseUIKit 需要使用
     
     pod 'CJTS_Base',            :path => '../'
-#    pod 'CJBaseUIKit',           :path => '../’
+#    pod 'LuckinBaseUIKit',           :path => '../’
     pod 'LuckinBaseOverlayKit', :path => '../’
     pod 'CJBaseUtil',           :path => '../’
     pod 'CJFoundation',         :path => '../’
     pod 'CJBaseHelper',         :path => '../’
     pod 'CJBaseEffectKit',      :path => '../’
     pod 'CJComplexUIKit/CJCollectionView/MyEqualCellSizeCollectionView',      :path => '../’
-#    pod 'CJBaseUIKit', :subspecs => ['UIColor', 'UIButton', 'UITextField', 'LuckinToast', 'CJAlert']
+#    pod 'LuckinBaseUIKit', :subspecs => ['UIColor', 'UIButton', 'UITextField', 'LuckinToast', 'CJAlert']
 #    pod 'CJBaseUtil', :subspecs => ['CJLog']
 #    pod 'CJFoundation', :subspecs => ['NSString']
 #    pod 'CJBaseHelper', :subspecs => ['NSObjectCJHelper', 'AuthorizationCJHelper']

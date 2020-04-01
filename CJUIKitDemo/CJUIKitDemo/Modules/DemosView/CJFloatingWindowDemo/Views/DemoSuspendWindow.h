@@ -13,8 +13,8 @@
 #import "UIView+CJDragAction.h"
 #import "UIView+CJKeepBounds.h"
 #else
-#import <CJBaseUIKit/UIView+CJDragAction.h>
-#import <CJBaseUIKit/UIView+CJKeepBounds.h>
+#import <LuckinBaseUIKit/UIView+CJDragAction.h>
+#import <LuckinBaseUIKit/UIView+CJKeepBounds.h>
 #endif
 
 

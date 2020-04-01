@@ -79,7 +79,7 @@ Pod::Spec.new do |s|
     ss.source_files = "LuckinBaseOverlayKit/CJActionSheet/**/*.{h,m}"
     #多个依赖就写多行
     ss.dependency 'Masonry'
-    # ss.dependency 'CJBaseUIKit/UIView/CJPopupAction'
+    # ss.dependency 'LuckinBaseUIKit/UIView/CJPopupAction'
     ss.dependency 'LuckinBaseOverlayKit/CJBaseOverlayTheme'
   end
 

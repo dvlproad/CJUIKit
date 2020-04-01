@@ -11,7 +11,7 @@
 #ifdef TEST_CJBASEUIKIT_POD
 #import "CJSearchBar.h"
 #else
-#import <CJBaseUIKit/CJSearchBar.h>
+#import <LuckinBaseUIKit/CJSearchBar.h>
 #endif
 
 @interface SearchBarViewController : UIViewController

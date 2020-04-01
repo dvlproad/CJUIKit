@@ -7,7 +7,7 @@
 //
 
 #import <XCTest/XCTest.h>
-#import <CJBaseUIKit/UIImage+CJTransformSize.h>
+#import <LuckinBaseUIKit/UIImage+CJTransformSize.h>
 
 @interface UIImageTestCase : XCTestCase
 

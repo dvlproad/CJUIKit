@@ -15,72 +15,6 @@
 		154A11292428F88B00AD5F9B /* loading_tea.json in Resources */ = {isa = PBXBuildFile; fileRef = 154A11272428F88B00AD5F9B /* loading_tea.json */; };
 		1562F1FF23F5C0770009FCEA /* TSAlertUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 1562F1FD23F5C0770009FCEA /* TSAlertUtil.m */; };
 		1562F20223F5C8130009FCEA /* CJBaseAlertView+TSPopupAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 1562F20123F5C8130009FCEA /* CJBaseAlertView+TSPopupAction.m */; };
-		1562F2AF23F5DBF40009FCEA /* UIImage+CJRotateAngle.m in Sources */ = {isa = PBXBuildFile; fileRef = 1562F20723F5DBF40009FCEA /* UIImage+CJRotateAngle.m */; };
-		1562F2B023F5DBF40009FCEA /* UIImage+CJChangeColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 1562F20823F5DBF40009FCEA /* UIImage+CJChangeColor.m */; };
-		1562F2B123F5DBF40009FCEA /* UIImage+CJBlur.m in Sources */ = {isa = PBXBuildFile; fileRef = 1562F20C23F5DBF40009FCEA /* UIImage+CJBlur.m */; };
-		1562F2B223F5DBF40009FCEA /* UIImage+CJSplitImageIntoTwoParts.m in Sources */ = {isa = PBXBuildFile; fileRef = 1562F20F23F5DBF40009FCEA /* UIImage+CJSplitImageIntoTwoParts.m */; };
-		1562F2B323F5DBF40009FCEA /* UIImage+CJMakeCircle.m in Sources */ = {isa = PBXBuildFile; fileRef = 1562F21023F5DBF40009FCEA /* UIImage+CJMakeCircle.m */; };
-		1562F2B423F5DBF40009FCEA /* UIImage+CJBase64.m in Sources */ = {isa = PBXBuildFile; fileRef = 1562F21223F5DBF40009FCEA /* UIImage+CJBase64.m */; };
-		1562F2B523F5DBF40009FCEA /* UIImage+CJTransformSize.m in Sources */ = {isa = PBXBuildFile; fileRef = 1562F21823F5DBF40009FCEA /* UIImage+CJTransformSize.m */; };
-		1562F2B623F5DBF40009FCEA /* UIImage+CJCreate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1562F21923F5DBF40009FCEA /* UIImage+CJCreate.m */; };
-		1562F2B723F5DBF40009FCEA /* UIImage+CJFixOrientation.m in Sources */ = {isa = PBXBuildFile; fileRef = 1562F21A23F5DBF40009FCEA /* UIImage+CJFixOrientation.m */; };
-		1562F2B823F5DBF40009FCEA /* CJKeyboardAvoidingTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1562F21D23F5DBF40009FCEA /* CJKeyboardAvoidingTableView.m */; };
-		1562F2B923F5DBF40009FCEA /* CJKeyboardAvoidingScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1562F21F23F5DBF40009FCEA /* CJKeyboardAvoidingScrollView.m */; };
-		1562F2BA23F5DBF40009FCEA /* UIScrollView+CJKeyboardAvoiding.m in Sources */ = {isa = PBXBuildFile; fileRef = 1562F22223F5DBF40009FCEA /* UIScrollView+CJKeyboardAvoiding.m */; };
-		1562F2BB23F5DBF40009FCEA /* CJUIKitConstant.m in Sources */ = {isa = PBXBuildFile; fileRef = 1562F22423F5DBF40009FCEA /* CJUIKitConstant.m */; };
-		1562F2BC23F5DBF40009FCEA /* UIWindow+CJSnapshot.m in Sources */ = {isa = PBXBuildFile; fileRef = 1562F22823F5DBF40009FCEA /* UIWindow+CJSnapshot.m */; };
-		1562F2BD23F5DBF40009FCEA /* CJLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1562F22A23F5DBF40009FCEA /* CJLabel.m */; };
-		1562F2BE23F5DBF40009FCEA /* CJBadgeButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 1562F23023F5DBF40009FCEA /* CJBadgeButton.m */; };
-		1562F2BF23F5DBF40009FCEA /* UIButton+CJStructure.m in Sources */ = {isa = PBXBuildFile; fileRef = 1562F23223F5DBF40009FCEA /* UIButton+CJStructure.m */; };
-		1562F2C123F5DBF40009FCEA /* CJButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 1562F23523F5DBF40009FCEA /* CJButton.m */; };
-		1562F2C223F5DBF40009FCEA /* UIButton+CJMoreProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = 1562F23723F5DBF40009FCEA /* UIButton+CJMoreProperty.m */; };
-		1562F2C323F5DBF40009FCEA /* UIColor+CJHex.m in Sources */ = {isa = PBXBuildFile; fileRef = 1562F23A23F5DBF40009FCEA /* UIColor+CJHex.m */; };
-		1562F2C423F5DBF40009FCEA /* UISearchBar+CJAddInputAccessoryView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1562F23D23F5DBF40009FCEA /* UISearchBar+CJAddInputAccessoryView.m */; };
-		1562F2C523F5DBF40009FCEA /* CJDefaultToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = 1562F23E23F5DBF40009FCEA /* CJDefaultToolbar.m */; };
-		1562F2C623F5DBF40009FCEA /* UITextField+CJAddInputAccessoryView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1562F23F23F5DBF40009FCEA /* UITextField+CJAddInputAccessoryView.m */; };
-		1562F2C723F5DBF40009FCEA /* UIView+CJPopupInView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1562F24623F5DBF40009FCEA /* UIView+CJPopupInView.m */; };
-		1562F2C823F5DBF40009FCEA /* UIView+CJShowExtendView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1562F24723F5DBF40009FCEA /* UIView+CJShowExtendView.m */; };
-		1562F2C923F5DBF40009FCEA /* UIView+CJRounderCorner.m in Sources */ = {isa = PBXBuildFile; fileRef = 1562F24823F5DBF40009FCEA /* UIView+CJRounderCorner.m */; };
-		1562F2CA23F5DBF40009FCEA /* UIView+CJKeepBounds.m in Sources */ = {isa = PBXBuildFile; fileRef = 1562F24C23F5DBF40009FCEA /* UIView+CJKeepBounds.m */; };
-		1562F2CB23F5DBF40009FCEA /* UIView+CJDragAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 1562F24D23F5DBF40009FCEA /* UIView+CJDragAction.m */; };
-		1562F2CC23F5DBF40009FCEA /* UIView+CJAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 1562F25223F5DBF40009FCEA /* UIView+CJAnimation.m */; };
-		1562F2CD23F5DBF40009FCEA /* UIView+CJGestureRecognizer.m in Sources */ = {isa = PBXBuildFile; fileRef = 1562F25623F5DBF40009FCEA /* UIView+CJGestureRecognizer.m */; };
-		1562F2CE23F5DBF40009FCEA /* UIView+CJExclusiveTouch.m in Sources */ = {isa = PBXBuildFile; fileRef = 1562F25723F5DBF40009FCEA /* UIView+CJExclusiveTouch.m */; };
-		1562F2CF23F5DBF40009FCEA /* UIView+CJShake.m in Sources */ = {isa = PBXBuildFile; fileRef = 1562F25923F5DBF40009FCEA /* UIView+CJShake.m */; };
-		1562F2D023F5DBF40009FCEA /* CJTableViewHeaderFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1562F25D23F5DBF40009FCEA /* CJTableViewHeaderFooterView.m */; };
-		1562F2D123F5DBF40009FCEA /* cjCheckBoxGreenNO@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1562F26123F5DBF40009FCEA /* cjCheckBoxGreenNO@2x.png */; };
-		1562F2D223F5DBF40009FCEA /* cjCheckBoxGreen2YES.png in Resources */ = {isa = PBXBuildFile; fileRef = 1562F26223F5DBF40009FCEA /* cjCheckBoxGreen2YES.png */; };
-		1562F2D323F5DBF40009FCEA /* cjCheckBoxOrangeYES@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1562F26323F5DBF40009FCEA /* cjCheckBoxOrangeYES@2x.png */; };
-		1562F2D423F5DBF40009FCEA /* cjCheckBoxGreenYES@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1562F26423F5DBF40009FCEA /* cjCheckBoxGreenYES@2x.png */; };
-		1562F2D523F5DBF40009FCEA /* cjCheckBoxGreen2NO.png in Resources */ = {isa = PBXBuildFile; fileRef = 1562F26523F5DBF40009FCEA /* cjCheckBoxGreen2NO.png */; };
-		1562F2D623F5DBF40009FCEA /* CJBaseTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1562F26723F5DBF40009FCEA /* CJBaseTableViewCell.m */; };
-		1562F2D723F5DBF40009FCEA /* UINavigationBar+CJChangeBG.m in Sources */ = {isa = PBXBuildFile; fileRef = 1562F26A23F5DBF40009FCEA /* UINavigationBar+CJChangeBG.m */; };
-		1562F2D823F5DBF40009FCEA /* UIViewController+CJSystemComposeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1562F26C23F5DBF40009FCEA /* UIViewController+CJSystemComposeView.m */; };
-		1562F2D923F5DBF40009FCEA /* UIViewController+CJCustomBackBarButtonItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 1562F26D23F5DBF40009FCEA /* UIViewController+CJCustomBackBarButtonItem.m */; };
-		1562F2DA23F5DBF40009FCEA /* cjBackBarButtonItem@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1562F26F23F5DBF40009FCEA /* cjBackBarButtonItem@3x.png */; };
-		1562F2DB23F5DBF40009FCEA /* cjBackBarButtonItem@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1562F27023F5DBF40009FCEA /* cjBackBarButtonItem@2x.png */; };
-		1562F2DC23F5DBF40009FCEA /* cjBackBarButtonItemGray@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1562F27123F5DBF40009FCEA /* cjBackBarButtonItemGray@3x.png */; };
-		1562F2DD23F5DBF40009FCEA /* cjBackBarButtonItemGray@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1562F27223F5DBF40009FCEA /* cjBackBarButtonItemGray@2x.png */; };
-		1562F2DE23F5DBF40009FCEA /* UIViewController+CJSystemBackButtonHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 1562F27323F5DBF40009FCEA /* UIViewController+CJSystemBackButtonHandler.m */; };
-		1562F2DF23F5DBF40009FCEA /* UITableView+CJEmptyView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1562F27823F5DBF40009FCEA /* UITableView+CJEmptyView.m */; };
-		1562F2E023F5DBF40009FCEA /* CJSwitchSliderStatusModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1562F27C23F5DBF40009FCEA /* CJSwitchSliderStatusModel.m */; };
-		1562F2E123F5DBF40009FCEA /* CJSwitchSlider.m in Sources */ = {isa = PBXBuildFile; fileRef = 1562F27D23F5DBF40009FCEA /* CJSwitchSlider.m */; };
-		1562F2E223F5DBF40009FCEA /* CJSliderThumb.m in Sources */ = {isa = PBXBuildFile; fileRef = 1562F28323F5DBF40009FCEA /* CJSliderThumb.m */; };
-		1562F2E323F5DBF40009FCEA /* CJSliderPopover.m in Sources */ = {isa = PBXBuildFile; fileRef = 1562F28423F5DBF40009FCEA /* CJSliderPopover.m */; };
-		1562F2E423F5DBF40009FCEA /* CJSliderControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 1562F28523F5DBF40009FCEA /* CJSliderControl.m */; };
-		1562F2E523F5DBF40009FCEA /* CJRangeSliderControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 1562F28623F5DBF40009FCEA /* CJRangeSliderControl.m */; };
-		1562F2E623F5DBF40009FCEA /* CJPlayerSlider.m in Sources */ = {isa = PBXBuildFile; fileRef = 1562F28C23F5DBF40009FCEA /* CJPlayerSlider.m */; };
-		1562F2E723F5DBF40009FCEA /* CJBaseUISlider.m in Sources */ = {isa = PBXBuildFile; fileRef = 1562F28D23F5DBF40009FCEA /* CJBaseUISlider.m */; };
-		1562F2E823F5DBF40009FCEA /* CJAdsorbModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1562F29023F5DBF40009FCEA /* CJAdsorbModel.m */; };
-		1562F2E923F5DBF40009FCEA /* CJSwitchView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1562F29423F5DBF40009FCEA /* CJSwitchView.m */; };
-		1562F2EA23F5DBF40009FCEA /* CJTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1562F29723F5DBF40009FCEA /* CJTextView.m */; };
-		1562F2ED23F5DBF40009FCEA /* CJSearchBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 1562F29E23F5DBF40009FCEA /* CJSearchBar.m */; };
-		1562F2EE23F5DBF40009FCEA /* UITextField+CJTextChangeBlock.m in Sources */ = {isa = PBXBuildFile; fileRef = 1562F2A423F5DBF40009FCEA /* UITextField+CJTextChangeBlock.m */; };
-		1562F2EF23F5DBF40009FCEA /* UITextField+CJForbidKeyboard.m in Sources */ = {isa = PBXBuildFile; fileRef = 1562F2A623F5DBF40009FCEA /* UITextField+CJForbidKeyboard.m */; };
-		1562F2F023F5DBF40009FCEA /* CJTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 1562F2A823F5DBF40009FCEA /* CJTextField.m */; };
-		1562F2F123F5DBF40009FCEA /* CJExtraTextTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 1562F2A923F5DBF40009FCEA /* CJExtraTextTextField.m */; };
-		1562F2F223F5DBF40009FCEA /* UITextField+CJPadding.m in Sources */ = {isa = PBXBuildFile; fileRef = 1562F2AC23F5DBF40009FCEA /* UITextField+CJPadding.m */; };
-		1562F2F323F5DBF40009FCEA /* UITextField+CJSelectedTextRange.m in Sources */ = {isa = PBXBuildFile; fileRef = 1562F2AD23F5DBF40009FCEA /* UITextField+CJSelectedTextRange.m */; };
 		1562F30023F945F20009FCEA /* TSToast.m in Sources */ = {isa = PBXBuildFile; fileRef = 1562F2FC23F945F20009FCEA /* TSToast.m */; };
 		1562F30123F945F20009FCEA /* demo_toast_error@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1562F2FE23F945F20009FCEA /* demo_toast_error@3x.png */; };
 		1562F30223F945F20009FCEA /* demo_toast_error@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1562F2FF23F945F20009FCEA /* demo_toast_error@2x.png */; };
@@ -105,6 +39,72 @@
 		15C970BE23DB5AEA008D81B0 /* UIAlertUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 15C970BD23DB5AEA008D81B0 /* UIAlertUtil.m */; };
 		15C970D723DB6125008D81B0 /* ActionSheetHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 15C970D523DB6125008D81B0 /* ActionSheetHomeViewController.m */; };
 		15C970DE23DB6768008D81B0 /* TSActionSheetUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 15C970DD23DB6767008D81B0 /* TSActionSheetUtil.m */; };
+		15DBE13A24349D75009287C5 /* UIImage+CJRotateAngle.m in Sources */ = {isa = PBXBuildFile; fileRef = 15DBE09924349D75009287C5 /* UIImage+CJRotateAngle.m */; };
+		15DBE13B24349D75009287C5 /* UIImage+CJChangeColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 15DBE09A24349D75009287C5 /* UIImage+CJChangeColor.m */; };
+		15DBE13C24349D75009287C5 /* UIImage+CJBlur.m in Sources */ = {isa = PBXBuildFile; fileRef = 15DBE09E24349D75009287C5 /* UIImage+CJBlur.m */; };
+		15DBE13D24349D75009287C5 /* UIImage+CJSplitImageIntoTwoParts.m in Sources */ = {isa = PBXBuildFile; fileRef = 15DBE0A124349D75009287C5 /* UIImage+CJSplitImageIntoTwoParts.m */; };
+		15DBE13E24349D75009287C5 /* UIImage+CJMakeCircle.m in Sources */ = {isa = PBXBuildFile; fileRef = 15DBE0A224349D75009287C5 /* UIImage+CJMakeCircle.m */; };
+		15DBE13F24349D75009287C5 /* UIImage+CJBase64.m in Sources */ = {isa = PBXBuildFile; fileRef = 15DBE0A424349D75009287C5 /* UIImage+CJBase64.m */; };
+		15DBE14024349D75009287C5 /* UIImage+CJTransformSize.m in Sources */ = {isa = PBXBuildFile; fileRef = 15DBE0AA24349D75009287C5 /* UIImage+CJTransformSize.m */; };
+		15DBE14124349D75009287C5 /* UIImage+CJCreate.m in Sources */ = {isa = PBXBuildFile; fileRef = 15DBE0AB24349D75009287C5 /* UIImage+CJCreate.m */; };
+		15DBE14224349D75009287C5 /* UIImage+CJFixOrientation.m in Sources */ = {isa = PBXBuildFile; fileRef = 15DBE0AC24349D75009287C5 /* UIImage+CJFixOrientation.m */; };
+		15DBE14324349D75009287C5 /* CJKeyboardAvoidingTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 15DBE0AF24349D75009287C5 /* CJKeyboardAvoidingTableView.m */; };
+		15DBE14424349D75009287C5 /* CJKeyboardAvoidingScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 15DBE0B124349D75009287C5 /* CJKeyboardAvoidingScrollView.m */; };
+		15DBE14524349D75009287C5 /* UIScrollView+CJKeyboardAvoiding.m in Sources */ = {isa = PBXBuildFile; fileRef = 15DBE0B424349D75009287C5 /* UIScrollView+CJKeyboardAvoiding.m */; };
+		15DBE14624349D76009287C5 /* CJUIKitConstant.m in Sources */ = {isa = PBXBuildFile; fileRef = 15DBE0B624349D75009287C5 /* CJUIKitConstant.m */; };
+		15DBE14724349D76009287C5 /* UIWindow+CJSnapshot.m in Sources */ = {isa = PBXBuildFile; fileRef = 15DBE0BA24349D75009287C5 /* UIWindow+CJSnapshot.m */; };
+		15DBE14824349D76009287C5 /* CJLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 15DBE0BC24349D75009287C5 /* CJLabel.m */; };
+		15DBE14924349D76009287C5 /* CJBadgeButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 15DBE0C224349D75009287C5 /* CJBadgeButton.m */; };
+		15DBE14A24349D76009287C5 /* UIButton+CJStructure.m in Sources */ = {isa = PBXBuildFile; fileRef = 15DBE0C324349D75009287C5 /* UIButton+CJStructure.m */; };
+		15DBE14B24349D76009287C5 /* CJButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 15DBE0C524349D75009287C5 /* CJButton.m */; };
+		15DBE14C24349D76009287C5 /* UIButton+CJMoreProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = 15DBE0C724349D75009287C5 /* UIButton+CJMoreProperty.m */; };
+		15DBE14D24349D76009287C5 /* UIColor+CJHex.m in Sources */ = {isa = PBXBuildFile; fileRef = 15DBE0CA24349D75009287C5 /* UIColor+CJHex.m */; };
+		15DBE14E24349D76009287C5 /* UISearchBar+CJAddInputAccessoryView.m in Sources */ = {isa = PBXBuildFile; fileRef = 15DBE0CD24349D75009287C5 /* UISearchBar+CJAddInputAccessoryView.m */; };
+		15DBE14F24349D76009287C5 /* CJDefaultToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = 15DBE0CE24349D75009287C5 /* CJDefaultToolbar.m */; };
+		15DBE15024349D76009287C5 /* UITextField+CJAddInputAccessoryView.m in Sources */ = {isa = PBXBuildFile; fileRef = 15DBE0CF24349D75009287C5 /* UITextField+CJAddInputAccessoryView.m */; };
+		15DBE15124349D76009287C5 /* UIView+CJPopupInView.m in Sources */ = {isa = PBXBuildFile; fileRef = 15DBE0D624349D75009287C5 /* UIView+CJPopupInView.m */; };
+		15DBE15224349D76009287C5 /* UIView+CJShowExtendView.m in Sources */ = {isa = PBXBuildFile; fileRef = 15DBE0D724349D75009287C5 /* UIView+CJShowExtendView.m */; };
+		15DBE15324349D76009287C5 /* UIView+CJRounderCorner.m in Sources */ = {isa = PBXBuildFile; fileRef = 15DBE0D824349D75009287C5 /* UIView+CJRounderCorner.m */; };
+		15DBE15424349D76009287C5 /* UIView+CJKeepBounds.m in Sources */ = {isa = PBXBuildFile; fileRef = 15DBE0DC24349D75009287C5 /* UIView+CJKeepBounds.m */; };
+		15DBE15524349D76009287C5 /* UIView+CJDragAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 15DBE0DD24349D75009287C5 /* UIView+CJDragAction.m */; };
+		15DBE15624349D76009287C5 /* UIView+CJAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 15DBE0E224349D75009287C5 /* UIView+CJAnimation.m */; };
+		15DBE15724349D76009287C5 /* UIView+CJGestureRecognizer.m in Sources */ = {isa = PBXBuildFile; fileRef = 15DBE0E624349D75009287C5 /* UIView+CJGestureRecognizer.m */; };
+		15DBE15824349D76009287C5 /* UIView+CJExclusiveTouch.m in Sources */ = {isa = PBXBuildFile; fileRef = 15DBE0E724349D75009287C5 /* UIView+CJExclusiveTouch.m */; };
+		15DBE15924349D76009287C5 /* UIView+CJShake.m in Sources */ = {isa = PBXBuildFile; fileRef = 15DBE0E924349D75009287C5 /* UIView+CJShake.m */; };
+		15DBE15A24349D76009287C5 /* CJTableViewHeaderFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 15DBE0ED24349D75009287C5 /* CJTableViewHeaderFooterView.m */; };
+		15DBE15B24349D76009287C5 /* cjCheckBoxGreenNO@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 15DBE0F124349D75009287C5 /* cjCheckBoxGreenNO@2x.png */; };
+		15DBE15C24349D76009287C5 /* cjCheckBoxGreen2YES.png in Resources */ = {isa = PBXBuildFile; fileRef = 15DBE0F224349D75009287C5 /* cjCheckBoxGreen2YES.png */; };
+		15DBE15D24349D76009287C5 /* cjCheckBoxOrangeYES@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 15DBE0F324349D75009287C5 /* cjCheckBoxOrangeYES@2x.png */; };
+		15DBE15E24349D76009287C5 /* cjCheckBoxGreenYES@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 15DBE0F424349D75009287C5 /* cjCheckBoxGreenYES@2x.png */; };
+		15DBE15F24349D76009287C5 /* cjCheckBoxGreen2NO.png in Resources */ = {isa = PBXBuildFile; fileRef = 15DBE0F524349D75009287C5 /* cjCheckBoxGreen2NO.png */; };
+		15DBE16024349D76009287C5 /* CJBaseTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 15DBE0F724349D75009287C5 /* CJBaseTableViewCell.m */; };
+		15DBE16124349D76009287C5 /* UINavigationBar+CJChangeBG.m in Sources */ = {isa = PBXBuildFile; fileRef = 15DBE0FA24349D75009287C5 /* UINavigationBar+CJChangeBG.m */; };
+		15DBE16224349D76009287C5 /* UIViewController+CJSystemComposeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 15DBE0FC24349D75009287C5 /* UIViewController+CJSystemComposeView.m */; };
+		15DBE16324349D76009287C5 /* UIViewController+CJCustomBackBarButtonItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 15DBE0FD24349D75009287C5 /* UIViewController+CJCustomBackBarButtonItem.m */; };
+		15DBE16424349D76009287C5 /* cjBackBarButtonItem@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 15DBE0FF24349D75009287C5 /* cjBackBarButtonItem@3x.png */; };
+		15DBE16524349D76009287C5 /* cjBackBarButtonItem@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 15DBE10024349D75009287C5 /* cjBackBarButtonItem@2x.png */; };
+		15DBE16624349D76009287C5 /* cjBackBarButtonItemGray@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 15DBE10124349D75009287C5 /* cjBackBarButtonItemGray@3x.png */; };
+		15DBE16724349D76009287C5 /* cjBackBarButtonItemGray@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 15DBE10224349D75009287C5 /* cjBackBarButtonItemGray@2x.png */; };
+		15DBE16824349D76009287C5 /* UIViewController+CJSystemBackButtonHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 15DBE10324349D75009287C5 /* UIViewController+CJSystemBackButtonHandler.m */; };
+		15DBE16924349D76009287C5 /* UITableView+CJEmptyView.m in Sources */ = {isa = PBXBuildFile; fileRef = 15DBE10824349D75009287C5 /* UITableView+CJEmptyView.m */; };
+		15DBE16A24349D76009287C5 /* CJSwitchSliderStatusModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 15DBE10C24349D75009287C5 /* CJSwitchSliderStatusModel.m */; };
+		15DBE16B24349D76009287C5 /* CJSwitchSlider.m in Sources */ = {isa = PBXBuildFile; fileRef = 15DBE10D24349D75009287C5 /* CJSwitchSlider.m */; };
+		15DBE16C24349D76009287C5 /* CJSliderThumb.m in Sources */ = {isa = PBXBuildFile; fileRef = 15DBE11324349D75009287C5 /* CJSliderThumb.m */; };
+		15DBE16D24349D76009287C5 /* CJSliderPopover.m in Sources */ = {isa = PBXBuildFile; fileRef = 15DBE11424349D75009287C5 /* CJSliderPopover.m */; };
+		15DBE16E24349D76009287C5 /* CJSliderControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 15DBE11524349D75009287C5 /* CJSliderControl.m */; };
+		15DBE16F24349D76009287C5 /* CJRangeSliderControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 15DBE11624349D75009287C5 /* CJRangeSliderControl.m */; };
+		15DBE17024349D76009287C5 /* CJPlayerSlider.m in Sources */ = {isa = PBXBuildFile; fileRef = 15DBE11C24349D75009287C5 /* CJPlayerSlider.m */; };
+		15DBE17124349D76009287C5 /* CJBaseUISlider.m in Sources */ = {isa = PBXBuildFile; fileRef = 15DBE11D24349D75009287C5 /* CJBaseUISlider.m */; };
+		15DBE17224349D76009287C5 /* CJAdsorbModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 15DBE12024349D75009287C5 /* CJAdsorbModel.m */; };
+		15DBE17324349D76009287C5 /* CJSwitchView.m in Sources */ = {isa = PBXBuildFile; fileRef = 15DBE12424349D75009287C5 /* CJSwitchView.m */; };
+		15DBE17424349D76009287C5 /* CJTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 15DBE12724349D75009287C5 /* CJTextView.m */; };
+		15DBE17524349D76009287C5 /* CJSearchBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 15DBE12924349D75009287C5 /* CJSearchBar.m */; };
+		15DBE17624349D76009287C5 /* UITextField+CJTextChangeBlock.m in Sources */ = {isa = PBXBuildFile; fileRef = 15DBE12F24349D75009287C5 /* UITextField+CJTextChangeBlock.m */; };
+		15DBE17724349D76009287C5 /* UITextField+CJForbidKeyboard.m in Sources */ = {isa = PBXBuildFile; fileRef = 15DBE13124349D75009287C5 /* UITextField+CJForbidKeyboard.m */; };
+		15DBE17824349D76009287C5 /* CJTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 15DBE13324349D75009287C5 /* CJTextField.m */; };
+		15DBE17924349D76009287C5 /* CJExtraTextTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 15DBE13424349D75009287C5 /* CJExtraTextTextField.m */; };
+		15DBE17A24349D76009287C5 /* UITextField+CJPadding.m in Sources */ = {isa = PBXBuildFile; fileRef = 15DBE13724349D75009287C5 /* UITextField+CJPadding.m */; };
+		15DBE17B24349D76009287C5 /* UITextField+CJSelectedTextRange.m in Sources */ = {isa = PBXBuildFile; fileRef = 15DBE13824349D75009287C5 /* UITextField+CJSelectedTextRange.m */; };
 		15F4271F242B7D2A00ED2E4C /* DataEmptyViewFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 15F4271D242B7D2A00ED2E4C /* DataEmptyViewFactory.m */; };
 		15F42726242B7D5300ED2E4C /* AppInfoManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 15F42724242B7D5300ED2E4C /* AppInfoManager.m */; };
 		15F42727242B7D5300ED2E4C /* AppInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 15F42725242B7D5300ED2E4C /* AppInfo.m */; };
@@ -392,134 +392,6 @@
 		1562F1FE23F5C0770009FCEA /* TSAlertUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSAlertUtil.h; sourceTree = "<group>"; };
 		1562F20023F5C8130009FCEA /* CJBaseAlertView+TSPopupAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CJBaseAlertView+TSPopupAction.h"; sourceTree = "<group>"; };
 		1562F20123F5C8130009FCEA /* CJBaseAlertView+TSPopupAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CJBaseAlertView+TSPopupAction.m"; sourceTree = "<group>"; };
-		1562F20523F5DBF40009FCEA /* UIImageCJCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIImageCJCategory.h; sourceTree = "<group>"; };
-		1562F20723F5DBF40009FCEA /* UIImage+CJRotateAngle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+CJRotateAngle.m"; sourceTree = "<group>"; };
-		1562F20823F5DBF40009FCEA /* UIImage+CJChangeColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+CJChangeColor.m"; sourceTree = "<group>"; };
-		1562F20923F5DBF40009FCEA /* UIImage+CJBlur.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+CJBlur.h"; sourceTree = "<group>"; };
-		1562F20A23F5DBF40009FCEA /* UIImage+CJMakeCircle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+CJMakeCircle.h"; sourceTree = "<group>"; };
-		1562F20B23F5DBF40009FCEA /* UIImage+CJSplitImageIntoTwoParts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+CJSplitImageIntoTwoParts.h"; sourceTree = "<group>"; };
-		1562F20C23F5DBF40009FCEA /* UIImage+CJBlur.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+CJBlur.m"; sourceTree = "<group>"; };
-		1562F20D23F5DBF40009FCEA /* UIImage+CJChangeColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+CJChangeColor.h"; sourceTree = "<group>"; };
-		1562F20E23F5DBF40009FCEA /* UIImage+CJRotateAngle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+CJRotateAngle.h"; sourceTree = "<group>"; };
-		1562F20F23F5DBF40009FCEA /* UIImage+CJSplitImageIntoTwoParts.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+CJSplitImageIntoTwoParts.m"; sourceTree = "<group>"; };
-		1562F21023F5DBF40009FCEA /* UIImage+CJMakeCircle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+CJMakeCircle.m"; sourceTree = "<group>"; };
-		1562F21223F5DBF40009FCEA /* UIImage+CJBase64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+CJBase64.m"; sourceTree = "<group>"; };
-		1562F21323F5DBF40009FCEA /* UIImage+CJBase64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+CJBase64.h"; sourceTree = "<group>"; };
-		1562F21523F5DBF40009FCEA /* UIImage+CJTransformSize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+CJTransformSize.h"; sourceTree = "<group>"; };
-		1562F21623F5DBF40009FCEA /* UIImage+CJCreate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+CJCreate.h"; sourceTree = "<group>"; };
-		1562F21723F5DBF40009FCEA /* UIImage+CJFixOrientation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+CJFixOrientation.h"; sourceTree = "<group>"; };
-		1562F21823F5DBF40009FCEA /* UIImage+CJTransformSize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+CJTransformSize.m"; sourceTree = "<group>"; };
-		1562F21923F5DBF40009FCEA /* UIImage+CJCreate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+CJCreate.m"; sourceTree = "<group>"; };
-		1562F21A23F5DBF40009FCEA /* UIImage+CJFixOrientation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+CJFixOrientation.m"; sourceTree = "<group>"; };
-		1562F21D23F5DBF40009FCEA /* CJKeyboardAvoidingTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJKeyboardAvoidingTableView.m; sourceTree = "<group>"; };
-		1562F21E23F5DBF40009FCEA /* UIScrollView+CJKeyboardAvoiding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+CJKeyboardAvoiding.h"; sourceTree = "<group>"; };
-		1562F21F23F5DBF40009FCEA /* CJKeyboardAvoidingScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJKeyboardAvoidingScrollView.m; sourceTree = "<group>"; };
-		1562F22023F5DBF40009FCEA /* CJKeyboardAvoidingTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJKeyboardAvoidingTableView.h; sourceTree = "<group>"; };
-		1562F22123F5DBF40009FCEA /* CJKeyboardAvoidingScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJKeyboardAvoidingScrollView.h; sourceTree = "<group>"; };
-		1562F22223F5DBF40009FCEA /* UIScrollView+CJKeyboardAvoiding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+CJKeyboardAvoiding.m"; sourceTree = "<group>"; };
-		1562F22423F5DBF40009FCEA /* CJUIKitConstant.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJUIKitConstant.m; sourceTree = "<group>"; };
-		1562F22523F5DBF40009FCEA /* CJUIKitConstant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJUIKitConstant.h; sourceTree = "<group>"; };
-		1562F22723F5DBF40009FCEA /* UIWindow+CJSnapshot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIWindow+CJSnapshot.h"; sourceTree = "<group>"; };
-		1562F22823F5DBF40009FCEA /* UIWindow+CJSnapshot.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIWindow+CJSnapshot.m"; sourceTree = "<group>"; };
-		1562F22A23F5DBF40009FCEA /* CJLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJLabel.m; sourceTree = "<group>"; };
-		1562F22B23F5DBF40009FCEA /* CJLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJLabel.h; sourceTree = "<group>"; };
-		1562F22D23F5DBF40009FCEA /* CJButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJButton.h; sourceTree = "<group>"; };
-		1562F22F23F5DBF40009FCEA /* CJBadgeButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJBadgeButton.h; sourceTree = "<group>"; };
-		1562F23023F5DBF40009FCEA /* CJBadgeButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJBadgeButton.m; sourceTree = "<group>"; };
-		1562F23223F5DBF40009FCEA /* UIButton+CJStructure.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+CJStructure.m"; sourceTree = "<group>"; };
-		1562F23323F5DBF40009FCEA /* UIButton+CJMoreProperty.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+CJMoreProperty.h"; sourceTree = "<group>"; };
-		1562F23523F5DBF40009FCEA /* CJButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJButton.m; sourceTree = "<group>"; };
-		1562F23623F5DBF40009FCEA /* UIButton+CJStructure.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+CJStructure.h"; sourceTree = "<group>"; };
-		1562F23723F5DBF40009FCEA /* UIButton+CJMoreProperty.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+CJMoreProperty.m"; sourceTree = "<group>"; };
-		1562F23923F5DBF40009FCEA /* UIColor+CJHex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+CJHex.h"; sourceTree = "<group>"; };
-		1562F23A23F5DBF40009FCEA /* UIColor+CJHex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+CJHex.m"; sourceTree = "<group>"; };
-		1562F23C23F5DBF40009FCEA /* UITextField+CJAddInputAccessoryView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextField+CJAddInputAccessoryView.h"; sourceTree = "<group>"; };
-		1562F23D23F5DBF40009FCEA /* UISearchBar+CJAddInputAccessoryView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UISearchBar+CJAddInputAccessoryView.m"; sourceTree = "<group>"; };
-		1562F23E23F5DBF40009FCEA /* CJDefaultToolbar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJDefaultToolbar.m; sourceTree = "<group>"; };
-		1562F23F23F5DBF40009FCEA /* UITextField+CJAddInputAccessoryView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextField+CJAddInputAccessoryView.m"; sourceTree = "<group>"; };
-		1562F24023F5DBF40009FCEA /* UISearchBar+CJAddInputAccessoryView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UISearchBar+CJAddInputAccessoryView.h"; sourceTree = "<group>"; };
-		1562F24123F5DBF40009FCEA /* CJDefaultToolbar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJDefaultToolbar.h; sourceTree = "<group>"; };
-		1562F24423F5DBF40009FCEA /* UIView+CJShowExtendView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+CJShowExtendView.h"; sourceTree = "<group>"; };
-		1562F24523F5DBF40009FCEA /* UIView+CJRounderCorner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+CJRounderCorner.h"; sourceTree = "<group>"; };
-		1562F24623F5DBF40009FCEA /* UIView+CJPopupInView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+CJPopupInView.m"; sourceTree = "<group>"; };
-		1562F24723F5DBF40009FCEA /* UIView+CJShowExtendView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+CJShowExtendView.m"; sourceTree = "<group>"; };
-		1562F24823F5DBF40009FCEA /* UIView+CJRounderCorner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+CJRounderCorner.m"; sourceTree = "<group>"; };
-		1562F24923F5DBF40009FCEA /* UIView+CJPopupInView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+CJPopupInView.h"; sourceTree = "<group>"; };
-		1562F24B23F5DBF40009FCEA /* UIView+CJDragAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+CJDragAction.h"; sourceTree = "<group>"; };
-		1562F24C23F5DBF40009FCEA /* UIView+CJKeepBounds.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+CJKeepBounds.m"; sourceTree = "<group>"; };
-		1562F24D23F5DBF40009FCEA /* UIView+CJDragAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+CJDragAction.m"; sourceTree = "<group>"; };
-		1562F24E23F5DBF40009FCEA /* UIView+CJKeepBounds.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+CJKeepBounds.h"; sourceTree = "<group>"; };
-		1562F24F23F5DBF40009FCEA /* UIView+CJExclusiveTouch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+CJExclusiveTouch.h"; sourceTree = "<group>"; };
-		1562F25123F5DBF40009FCEA /* UIView+CJAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+CJAnimation.h"; sourceTree = "<group>"; };
-		1562F25223F5DBF40009FCEA /* UIView+CJAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+CJAnimation.m"; sourceTree = "<group>"; };
-		1562F25323F5DBF40009FCEA /* UIViewCJCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIViewCJCategory.h; sourceTree = "<group>"; };
-		1562F25523F5DBF40009FCEA /* UIView+CJGestureRecognizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+CJGestureRecognizer.h"; sourceTree = "<group>"; };
-		1562F25623F5DBF40009FCEA /* UIView+CJGestureRecognizer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+CJGestureRecognizer.m"; sourceTree = "<group>"; };
-		1562F25723F5DBF40009FCEA /* UIView+CJExclusiveTouch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+CJExclusiveTouch.m"; sourceTree = "<group>"; };
-		1562F25923F5DBF40009FCEA /* UIView+CJShake.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+CJShake.m"; sourceTree = "<group>"; };
-		1562F25A23F5DBF40009FCEA /* UIView+CJShake.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+CJShake.h"; sourceTree = "<group>"; };
-		1562F25C23F5DBF40009FCEA /* CJTableViewHeaderFooterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJTableViewHeaderFooterView.h; sourceTree = "<group>"; };
-		1562F25D23F5DBF40009FCEA /* CJTableViewHeaderFooterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJTableViewHeaderFooterView.m; sourceTree = "<group>"; };
-		1562F25E23F5DBF40009FCEA /* CJUIKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJUIKit.h; sourceTree = "<group>"; };
-		1562F26123F5DBF40009FCEA /* cjCheckBoxGreenNO@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cjCheckBoxGreenNO@2x.png"; sourceTree = "<group>"; };
-		1562F26223F5DBF40009FCEA /* cjCheckBoxGreen2YES.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cjCheckBoxGreen2YES.png; sourceTree = "<group>"; };
-		1562F26323F5DBF40009FCEA /* cjCheckBoxOrangeYES@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cjCheckBoxOrangeYES@2x.png"; sourceTree = "<group>"; };
-		1562F26423F5DBF40009FCEA /* cjCheckBoxGreenYES@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cjCheckBoxGreenYES@2x.png"; sourceTree = "<group>"; };
-		1562F26523F5DBF40009FCEA /* cjCheckBoxGreen2NO.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cjCheckBoxGreen2NO.png; sourceTree = "<group>"; };
-		1562F26623F5DBF40009FCEA /* CJBaseTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJBaseTableViewCell.h; sourceTree = "<group>"; };
-		1562F26723F5DBF40009FCEA /* CJBaseTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJBaseTableViewCell.m; sourceTree = "<group>"; };
-		1562F26923F5DBF40009FCEA /* UINavigationBar+CJChangeBG.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationBar+CJChangeBG.h"; sourceTree = "<group>"; };
-		1562F26A23F5DBF40009FCEA /* UINavigationBar+CJChangeBG.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationBar+CJChangeBG.m"; sourceTree = "<group>"; };
-		1562F26C23F5DBF40009FCEA /* UIViewController+CJSystemComposeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+CJSystemComposeView.m"; sourceTree = "<group>"; };
-		1562F26D23F5DBF40009FCEA /* UIViewController+CJCustomBackBarButtonItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+CJCustomBackBarButtonItem.m"; sourceTree = "<group>"; };
-		1562F26F23F5DBF40009FCEA /* cjBackBarButtonItem@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cjBackBarButtonItem@3x.png"; sourceTree = "<group>"; };
-		1562F27023F5DBF40009FCEA /* cjBackBarButtonItem@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cjBackBarButtonItem@2x.png"; sourceTree = "<group>"; };
-		1562F27123F5DBF40009FCEA /* cjBackBarButtonItemGray@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cjBackBarButtonItemGray@3x.png"; sourceTree = "<group>"; };
-		1562F27223F5DBF40009FCEA /* cjBackBarButtonItemGray@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cjBackBarButtonItemGray@2x.png"; sourceTree = "<group>"; };
-		1562F27323F5DBF40009FCEA /* UIViewController+CJSystemBackButtonHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+CJSystemBackButtonHandler.m"; sourceTree = "<group>"; };
-		1562F27423F5DBF40009FCEA /* UIViewController+CJSystemComposeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+CJSystemComposeView.h"; sourceTree = "<group>"; };
-		1562F27523F5DBF40009FCEA /* UIViewController+CJCustomBackBarButtonItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+CJCustomBackBarButtonItem.h"; sourceTree = "<group>"; };
-		1562F27623F5DBF40009FCEA /* UIViewController+CJSystemBackButtonHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+CJSystemBackButtonHandler.h"; sourceTree = "<group>"; };
-		1562F27823F5DBF40009FCEA /* UITableView+CJEmptyView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableView+CJEmptyView.m"; sourceTree = "<group>"; };
-		1562F27923F5DBF40009FCEA /* UITableView+CJEmptyView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableView+CJEmptyView.h"; sourceTree = "<group>"; };
-		1562F27C23F5DBF40009FCEA /* CJSwitchSliderStatusModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJSwitchSliderStatusModel.m; sourceTree = "<group>"; };
-		1562F27D23F5DBF40009FCEA /* CJSwitchSlider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJSwitchSlider.m; sourceTree = "<group>"; };
-		1562F27E23F5DBF40009FCEA /* CJSwitchSlider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJSwitchSlider.h; sourceTree = "<group>"; };
-		1562F27F23F5DBF40009FCEA /* CJSwitchSliderStatusModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJSwitchSliderStatusModel.h; sourceTree = "<group>"; };
-		1562F28123F5DBF40009FCEA /* CJRangeSliderControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJRangeSliderControl.h; sourceTree = "<group>"; };
-		1562F28223F5DBF40009FCEA /* CJSliderControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJSliderControl.h; sourceTree = "<group>"; };
-		1562F28323F5DBF40009FCEA /* CJSliderThumb.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJSliderThumb.m; sourceTree = "<group>"; };
-		1562F28423F5DBF40009FCEA /* CJSliderPopover.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJSliderPopover.m; sourceTree = "<group>"; };
-		1562F28523F5DBF40009FCEA /* CJSliderControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJSliderControl.m; sourceTree = "<group>"; };
-		1562F28623F5DBF40009FCEA /* CJRangeSliderControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJRangeSliderControl.m; sourceTree = "<group>"; };
-		1562F28723F5DBF40009FCEA /* CJSliderThumb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJSliderThumb.h; sourceTree = "<group>"; };
-		1562F28823F5DBF40009FCEA /* CJSliderPopover.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJSliderPopover.h; sourceTree = "<group>"; };
-		1562F28923F5DBF40009FCEA /* CJSlider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJSlider.h; sourceTree = "<group>"; };
-		1562F28B23F5DBF40009FCEA /* CJPlayerSlider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJPlayerSlider.h; sourceTree = "<group>"; };
-		1562F28C23F5DBF40009FCEA /* CJPlayerSlider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJPlayerSlider.m; sourceTree = "<group>"; };
-		1562F28D23F5DBF40009FCEA /* CJBaseUISlider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJBaseUISlider.m; sourceTree = "<group>"; };
-		1562F28F23F5DBF40009FCEA /* CJAdsorbModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJAdsorbModel.h; sourceTree = "<group>"; };
-		1562F29023F5DBF40009FCEA /* CJAdsorbModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJAdsorbModel.m; sourceTree = "<group>"; };
-		1562F29123F5DBF40009FCEA /* CJBaseUISlider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJBaseUISlider.h; sourceTree = "<group>"; };
-		1562F29323F5DBF40009FCEA /* CJSwitchView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJSwitchView.h; sourceTree = "<group>"; };
-		1562F29423F5DBF40009FCEA /* CJSwitchView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJSwitchView.m; sourceTree = "<group>"; };
-		1562F29623F5DBF40009FCEA /* CJTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJTextView.h; sourceTree = "<group>"; };
-		1562F29723F5DBF40009FCEA /* CJTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJTextView.m; sourceTree = "<group>"; };
-		1562F29E23F5DBF40009FCEA /* CJSearchBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJSearchBar.m; sourceTree = "<group>"; };
-		1562F29F23F5DBF40009FCEA /* CJSearchBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJSearchBar.h; sourceTree = "<group>"; };
-		1562F2A123F5DBF40009FCEA /* UITextField+CJPadding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextField+CJPadding.h"; sourceTree = "<group>"; };
-		1562F2A223F5DBF40009FCEA /* UITextField+CJForbidKeyboard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextField+CJForbidKeyboard.h"; sourceTree = "<group>"; };
-		1562F2A323F5DBF40009FCEA /* UITextFieldCJCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UITextFieldCJCategory.h; sourceTree = "<group>"; };
-		1562F2A423F5DBF40009FCEA /* UITextField+CJTextChangeBlock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextField+CJTextChangeBlock.m"; sourceTree = "<group>"; };
-		1562F2A523F5DBF40009FCEA /* UITextField+CJSelectedTextRange.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextField+CJSelectedTextRange.h"; sourceTree = "<group>"; };
-		1562F2A623F5DBF40009FCEA /* UITextField+CJForbidKeyboard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextField+CJForbidKeyboard.m"; sourceTree = "<group>"; };
-		1562F2A823F5DBF40009FCEA /* CJTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJTextField.m; sourceTree = "<group>"; };
-		1562F2A923F5DBF40009FCEA /* CJExtraTextTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJExtraTextTextField.m; sourceTree = "<group>"; };
-		1562F2AA23F5DBF40009FCEA /* CJTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJTextField.h; sourceTree = "<group>"; };
-		1562F2AB23F5DBF40009FCEA /* CJExtraTextTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJExtraTextTextField.h; sourceTree = "<group>"; };
-		1562F2AC23F5DBF40009FCEA /* UITextField+CJPadding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextField+CJPadding.m"; sourceTree = "<group>"; };
-		1562F2AD23F5DBF40009FCEA /* UITextField+CJSelectedTextRange.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextField+CJSelectedTextRange.m"; sourceTree = "<group>"; };
-		1562F2AE23F5DBF40009FCEA /* UITextField+CJTextChangeBlock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextField+CJTextChangeBlock.h"; sourceTree = "<group>"; };
 		1562F2FC23F945F20009FCEA /* TSToast.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSToast.m; sourceTree = "<group>"; };
 		1562F2FD23F945F20009FCEA /* TSToast.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSToast.h; sourceTree = "<group>"; };
 		1562F2FE23F945F20009FCEA /* demo_toast_error@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "demo_toast_error@3x.png"; sourceTree = "<group>"; };
@@ -562,6 +434,134 @@
 		15C970D523DB6125008D81B0 /* ActionSheetHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActionSheetHomeViewController.m; sourceTree = "<group>"; };
 		15C970DC23DB6767008D81B0 /* TSActionSheetUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSActionSheetUtil.h; sourceTree = "<group>"; };
 		15C970DD23DB6767008D81B0 /* TSActionSheetUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSActionSheetUtil.m; sourceTree = "<group>"; };
+		15DBE09724349D75009287C5 /* UIImageCJCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIImageCJCategory.h; sourceTree = "<group>"; };
+		15DBE09924349D75009287C5 /* UIImage+CJRotateAngle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+CJRotateAngle.m"; sourceTree = "<group>"; };
+		15DBE09A24349D75009287C5 /* UIImage+CJChangeColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+CJChangeColor.m"; sourceTree = "<group>"; };
+		15DBE09B24349D75009287C5 /* UIImage+CJBlur.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+CJBlur.h"; sourceTree = "<group>"; };
+		15DBE09C24349D75009287C5 /* UIImage+CJMakeCircle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+CJMakeCircle.h"; sourceTree = "<group>"; };
+		15DBE09D24349D75009287C5 /* UIImage+CJSplitImageIntoTwoParts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+CJSplitImageIntoTwoParts.h"; sourceTree = "<group>"; };
+		15DBE09E24349D75009287C5 /* UIImage+CJBlur.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+CJBlur.m"; sourceTree = "<group>"; };
+		15DBE09F24349D75009287C5 /* UIImage+CJChangeColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+CJChangeColor.h"; sourceTree = "<group>"; };
+		15DBE0A024349D75009287C5 /* UIImage+CJRotateAngle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+CJRotateAngle.h"; sourceTree = "<group>"; };
+		15DBE0A124349D75009287C5 /* UIImage+CJSplitImageIntoTwoParts.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+CJSplitImageIntoTwoParts.m"; sourceTree = "<group>"; };
+		15DBE0A224349D75009287C5 /* UIImage+CJMakeCircle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+CJMakeCircle.m"; sourceTree = "<group>"; };
+		15DBE0A424349D75009287C5 /* UIImage+CJBase64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+CJBase64.m"; sourceTree = "<group>"; };
+		15DBE0A524349D75009287C5 /* UIImage+CJBase64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+CJBase64.h"; sourceTree = "<group>"; };
+		15DBE0A724349D75009287C5 /* UIImage+CJTransformSize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+CJTransformSize.h"; sourceTree = "<group>"; };
+		15DBE0A824349D75009287C5 /* UIImage+CJCreate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+CJCreate.h"; sourceTree = "<group>"; };
+		15DBE0A924349D75009287C5 /* UIImage+CJFixOrientation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+CJFixOrientation.h"; sourceTree = "<group>"; };
+		15DBE0AA24349D75009287C5 /* UIImage+CJTransformSize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+CJTransformSize.m"; sourceTree = "<group>"; };
+		15DBE0AB24349D75009287C5 /* UIImage+CJCreate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+CJCreate.m"; sourceTree = "<group>"; };
+		15DBE0AC24349D75009287C5 /* UIImage+CJFixOrientation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+CJFixOrientation.m"; sourceTree = "<group>"; };
+		15DBE0AF24349D75009287C5 /* CJKeyboardAvoidingTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJKeyboardAvoidingTableView.m; sourceTree = "<group>"; };
+		15DBE0B024349D75009287C5 /* UIScrollView+CJKeyboardAvoiding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+CJKeyboardAvoiding.h"; sourceTree = "<group>"; };
+		15DBE0B124349D75009287C5 /* CJKeyboardAvoidingScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJKeyboardAvoidingScrollView.m; sourceTree = "<group>"; };
+		15DBE0B224349D75009287C5 /* CJKeyboardAvoidingTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJKeyboardAvoidingTableView.h; sourceTree = "<group>"; };
+		15DBE0B324349D75009287C5 /* CJKeyboardAvoidingScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJKeyboardAvoidingScrollView.h; sourceTree = "<group>"; };
+		15DBE0B424349D75009287C5 /* UIScrollView+CJKeyboardAvoiding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+CJKeyboardAvoiding.m"; sourceTree = "<group>"; };
+		15DBE0B624349D75009287C5 /* CJUIKitConstant.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJUIKitConstant.m; sourceTree = "<group>"; };
+		15DBE0B724349D75009287C5 /* CJUIKitConstant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJUIKitConstant.h; sourceTree = "<group>"; };
+		15DBE0B924349D75009287C5 /* UIWindow+CJSnapshot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIWindow+CJSnapshot.h"; sourceTree = "<group>"; };
+		15DBE0BA24349D75009287C5 /* UIWindow+CJSnapshot.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIWindow+CJSnapshot.m"; sourceTree = "<group>"; };
+		15DBE0BC24349D75009287C5 /* CJLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJLabel.m; sourceTree = "<group>"; };
+		15DBE0BD24349D75009287C5 /* CJLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJLabel.h; sourceTree = "<group>"; };
+		15DBE0BF24349D75009287C5 /* CJButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJButton.h; sourceTree = "<group>"; };
+		15DBE0C124349D75009287C5 /* CJBadgeButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJBadgeButton.h; sourceTree = "<group>"; };
+		15DBE0C224349D75009287C5 /* CJBadgeButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJBadgeButton.m; sourceTree = "<group>"; };
+		15DBE0C324349D75009287C5 /* UIButton+CJStructure.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+CJStructure.m"; sourceTree = "<group>"; };
+		15DBE0C424349D75009287C5 /* UIButton+CJMoreProperty.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+CJMoreProperty.h"; sourceTree = "<group>"; };
+		15DBE0C524349D75009287C5 /* CJButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJButton.m; sourceTree = "<group>"; };
+		15DBE0C624349D75009287C5 /* UIButton+CJStructure.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+CJStructure.h"; sourceTree = "<group>"; };
+		15DBE0C724349D75009287C5 /* UIButton+CJMoreProperty.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+CJMoreProperty.m"; sourceTree = "<group>"; };
+		15DBE0C924349D75009287C5 /* UIColor+CJHex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+CJHex.h"; sourceTree = "<group>"; };
+		15DBE0CA24349D75009287C5 /* UIColor+CJHex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+CJHex.m"; sourceTree = "<group>"; };
+		15DBE0CC24349D75009287C5 /* UITextField+CJAddInputAccessoryView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextField+CJAddInputAccessoryView.h"; sourceTree = "<group>"; };
+		15DBE0CD24349D75009287C5 /* UISearchBar+CJAddInputAccessoryView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UISearchBar+CJAddInputAccessoryView.m"; sourceTree = "<group>"; };
+		15DBE0CE24349D75009287C5 /* CJDefaultToolbar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJDefaultToolbar.m; sourceTree = "<group>"; };
+		15DBE0CF24349D75009287C5 /* UITextField+CJAddInputAccessoryView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextField+CJAddInputAccessoryView.m"; sourceTree = "<group>"; };
+		15DBE0D024349D75009287C5 /* UISearchBar+CJAddInputAccessoryView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UISearchBar+CJAddInputAccessoryView.h"; sourceTree = "<group>"; };
+		15DBE0D124349D75009287C5 /* CJDefaultToolbar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJDefaultToolbar.h; sourceTree = "<group>"; };
+		15DBE0D424349D75009287C5 /* UIView+CJShowExtendView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+CJShowExtendView.h"; sourceTree = "<group>"; };
+		15DBE0D524349D75009287C5 /* UIView+CJRounderCorner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+CJRounderCorner.h"; sourceTree = "<group>"; };
+		15DBE0D624349D75009287C5 /* UIView+CJPopupInView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+CJPopupInView.m"; sourceTree = "<group>"; };
+		15DBE0D724349D75009287C5 /* UIView+CJShowExtendView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+CJShowExtendView.m"; sourceTree = "<group>"; };
+		15DBE0D824349D75009287C5 /* UIView+CJRounderCorner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+CJRounderCorner.m"; sourceTree = "<group>"; };
+		15DBE0D924349D75009287C5 /* UIView+CJPopupInView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+CJPopupInView.h"; sourceTree = "<group>"; };
+		15DBE0DB24349D75009287C5 /* UIView+CJDragAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+CJDragAction.h"; sourceTree = "<group>"; };
+		15DBE0DC24349D75009287C5 /* UIView+CJKeepBounds.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+CJKeepBounds.m"; sourceTree = "<group>"; };
+		15DBE0DD24349D75009287C5 /* UIView+CJDragAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+CJDragAction.m"; sourceTree = "<group>"; };
+		15DBE0DE24349D75009287C5 /* UIView+CJKeepBounds.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+CJKeepBounds.h"; sourceTree = "<group>"; };
+		15DBE0DF24349D75009287C5 /* UIView+CJExclusiveTouch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+CJExclusiveTouch.h"; sourceTree = "<group>"; };
+		15DBE0E124349D75009287C5 /* UIView+CJAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+CJAnimation.h"; sourceTree = "<group>"; };
+		15DBE0E224349D75009287C5 /* UIView+CJAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+CJAnimation.m"; sourceTree = "<group>"; };
+		15DBE0E324349D75009287C5 /* UIViewCJCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIViewCJCategory.h; sourceTree = "<group>"; };
+		15DBE0E524349D75009287C5 /* UIView+CJGestureRecognizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+CJGestureRecognizer.h"; sourceTree = "<group>"; };
+		15DBE0E624349D75009287C5 /* UIView+CJGestureRecognizer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+CJGestureRecognizer.m"; sourceTree = "<group>"; };
+		15DBE0E724349D75009287C5 /* UIView+CJExclusiveTouch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+CJExclusiveTouch.m"; sourceTree = "<group>"; };
+		15DBE0E924349D75009287C5 /* UIView+CJShake.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+CJShake.m"; sourceTree = "<group>"; };
+		15DBE0EA24349D75009287C5 /* UIView+CJShake.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+CJShake.h"; sourceTree = "<group>"; };
+		15DBE0EC24349D75009287C5 /* CJTableViewHeaderFooterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJTableViewHeaderFooterView.h; sourceTree = "<group>"; };
+		15DBE0ED24349D75009287C5 /* CJTableViewHeaderFooterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJTableViewHeaderFooterView.m; sourceTree = "<group>"; };
+		15DBE0EE24349D75009287C5 /* CJUIKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJUIKit.h; sourceTree = "<group>"; };
+		15DBE0F124349D75009287C5 /* cjCheckBoxGreenNO@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cjCheckBoxGreenNO@2x.png"; sourceTree = "<group>"; };
+		15DBE0F224349D75009287C5 /* cjCheckBoxGreen2YES.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cjCheckBoxGreen2YES.png; sourceTree = "<group>"; };
+		15DBE0F324349D75009287C5 /* cjCheckBoxOrangeYES@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cjCheckBoxOrangeYES@2x.png"; sourceTree = "<group>"; };
+		15DBE0F424349D75009287C5 /* cjCheckBoxGreenYES@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cjCheckBoxGreenYES@2x.png"; sourceTree = "<group>"; };
+		15DBE0F524349D75009287C5 /* cjCheckBoxGreen2NO.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cjCheckBoxGreen2NO.png; sourceTree = "<group>"; };
+		15DBE0F624349D75009287C5 /* CJBaseTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJBaseTableViewCell.h; sourceTree = "<group>"; };
+		15DBE0F724349D75009287C5 /* CJBaseTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJBaseTableViewCell.m; sourceTree = "<group>"; };
+		15DBE0F924349D75009287C5 /* UINavigationBar+CJChangeBG.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationBar+CJChangeBG.h"; sourceTree = "<group>"; };
+		15DBE0FA24349D75009287C5 /* UINavigationBar+CJChangeBG.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationBar+CJChangeBG.m"; sourceTree = "<group>"; };
+		15DBE0FC24349D75009287C5 /* UIViewController+CJSystemComposeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+CJSystemComposeView.m"; sourceTree = "<group>"; };
+		15DBE0FD24349D75009287C5 /* UIViewController+CJCustomBackBarButtonItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+CJCustomBackBarButtonItem.m"; sourceTree = "<group>"; };
+		15DBE0FF24349D75009287C5 /* cjBackBarButtonItem@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cjBackBarButtonItem@3x.png"; sourceTree = "<group>"; };
+		15DBE10024349D75009287C5 /* cjBackBarButtonItem@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cjBackBarButtonItem@2x.png"; sourceTree = "<group>"; };
+		15DBE10124349D75009287C5 /* cjBackBarButtonItemGray@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cjBackBarButtonItemGray@3x.png"; sourceTree = "<group>"; };
+		15DBE10224349D75009287C5 /* cjBackBarButtonItemGray@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cjBackBarButtonItemGray@2x.png"; sourceTree = "<group>"; };
+		15DBE10324349D75009287C5 /* UIViewController+CJSystemBackButtonHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+CJSystemBackButtonHandler.m"; sourceTree = "<group>"; };
+		15DBE10424349D75009287C5 /* UIViewController+CJSystemComposeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+CJSystemComposeView.h"; sourceTree = "<group>"; };
+		15DBE10524349D75009287C5 /* UIViewController+CJCustomBackBarButtonItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+CJCustomBackBarButtonItem.h"; sourceTree = "<group>"; };
+		15DBE10624349D75009287C5 /* UIViewController+CJSystemBackButtonHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+CJSystemBackButtonHandler.h"; sourceTree = "<group>"; };
+		15DBE10824349D75009287C5 /* UITableView+CJEmptyView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableView+CJEmptyView.m"; sourceTree = "<group>"; };
+		15DBE10924349D75009287C5 /* UITableView+CJEmptyView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableView+CJEmptyView.h"; sourceTree = "<group>"; };
+		15DBE10C24349D75009287C5 /* CJSwitchSliderStatusModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJSwitchSliderStatusModel.m; sourceTree = "<group>"; };
+		15DBE10D24349D75009287C5 /* CJSwitchSlider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJSwitchSlider.m; sourceTree = "<group>"; };
+		15DBE10E24349D75009287C5 /* CJSwitchSlider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJSwitchSlider.h; sourceTree = "<group>"; };
+		15DBE10F24349D75009287C5 /* CJSwitchSliderStatusModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJSwitchSliderStatusModel.h; sourceTree = "<group>"; };
+		15DBE11124349D75009287C5 /* CJRangeSliderControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJRangeSliderControl.h; sourceTree = "<group>"; };
+		15DBE11224349D75009287C5 /* CJSliderControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJSliderControl.h; sourceTree = "<group>"; };
+		15DBE11324349D75009287C5 /* CJSliderThumb.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJSliderThumb.m; sourceTree = "<group>"; };
+		15DBE11424349D75009287C5 /* CJSliderPopover.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJSliderPopover.m; sourceTree = "<group>"; };
+		15DBE11524349D75009287C5 /* CJSliderControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJSliderControl.m; sourceTree = "<group>"; };
+		15DBE11624349D75009287C5 /* CJRangeSliderControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJRangeSliderControl.m; sourceTree = "<group>"; };
+		15DBE11724349D75009287C5 /* CJSliderThumb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJSliderThumb.h; sourceTree = "<group>"; };
+		15DBE11824349D75009287C5 /* CJSliderPopover.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJSliderPopover.h; sourceTree = "<group>"; };
+		15DBE11924349D75009287C5 /* CJSlider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJSlider.h; sourceTree = "<group>"; };
+		15DBE11B24349D75009287C5 /* CJPlayerSlider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJPlayerSlider.h; sourceTree = "<group>"; };
+		15DBE11C24349D75009287C5 /* CJPlayerSlider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJPlayerSlider.m; sourceTree = "<group>"; };
+		15DBE11D24349D75009287C5 /* CJBaseUISlider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJBaseUISlider.m; sourceTree = "<group>"; };
+		15DBE11F24349D75009287C5 /* CJAdsorbModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJAdsorbModel.h; sourceTree = "<group>"; };
+		15DBE12024349D75009287C5 /* CJAdsorbModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJAdsorbModel.m; sourceTree = "<group>"; };
+		15DBE12124349D75009287C5 /* CJBaseUISlider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJBaseUISlider.h; sourceTree = "<group>"; };
+		15DBE12324349D75009287C5 /* CJSwitchView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJSwitchView.h; sourceTree = "<group>"; };
+		15DBE12424349D75009287C5 /* CJSwitchView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJSwitchView.m; sourceTree = "<group>"; };
+		15DBE12624349D75009287C5 /* CJTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJTextView.h; sourceTree = "<group>"; };
+		15DBE12724349D75009287C5 /* CJTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJTextView.m; sourceTree = "<group>"; };
+		15DBE12924349D75009287C5 /* CJSearchBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJSearchBar.m; sourceTree = "<group>"; };
+		15DBE12A24349D75009287C5 /* CJSearchBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJSearchBar.h; sourceTree = "<group>"; };
+		15DBE12C24349D75009287C5 /* UITextField+CJPadding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextField+CJPadding.h"; sourceTree = "<group>"; };
+		15DBE12D24349D75009287C5 /* UITextField+CJForbidKeyboard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextField+CJForbidKeyboard.h"; sourceTree = "<group>"; };
+		15DBE12E24349D75009287C5 /* UITextFieldCJCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UITextFieldCJCategory.h; sourceTree = "<group>"; };
+		15DBE12F24349D75009287C5 /* UITextField+CJTextChangeBlock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextField+CJTextChangeBlock.m"; sourceTree = "<group>"; };
+		15DBE13024349D75009287C5 /* UITextField+CJSelectedTextRange.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextField+CJSelectedTextRange.h"; sourceTree = "<group>"; };
+		15DBE13124349D75009287C5 /* UITextField+CJForbidKeyboard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextField+CJForbidKeyboard.m"; sourceTree = "<group>"; };
+		15DBE13324349D75009287C5 /* CJTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJTextField.m; sourceTree = "<group>"; };
+		15DBE13424349D75009287C5 /* CJExtraTextTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJExtraTextTextField.m; sourceTree = "<group>"; };
+		15DBE13524349D75009287C5 /* CJTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJTextField.h; sourceTree = "<group>"; };
+		15DBE13624349D75009287C5 /* CJExtraTextTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJExtraTextTextField.h; sourceTree = "<group>"; };
+		15DBE13724349D75009287C5 /* UITextField+CJPadding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextField+CJPadding.m"; sourceTree = "<group>"; };
+		15DBE13824349D75009287C5 /* UITextField+CJSelectedTextRange.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextField+CJSelectedTextRange.m"; sourceTree = "<group>"; };
+		15DBE13924349D75009287C5 /* UITextField+CJTextChangeBlock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextField+CJTextChangeBlock.h"; sourceTree = "<group>"; };
 		15F4271D242B7D2A00ED2E4C /* DataEmptyViewFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataEmptyViewFactory.m; sourceTree = "<group>"; };
 		15F4271E242B7D2A00ED2E4C /* DataEmptyViewFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataEmptyViewFactory.h; sourceTree = "<group>"; };
 		15F42722242B7D5300ED2E4C /* AppInfoManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppInfoManager.h; sourceTree = "<group>"; };
@@ -1047,430 +1047,6 @@
 			path = TSHUD;
 			sourceTree = "<group>";
 		};
-		1562F20323F5DBF40009FCEA /* CJBaseUIKit */ = {
-			isa = PBXGroup;
-			children = (
-				1562F25F23F5DBF40009FCEA /* CJBaseTableViewCell */,
-				1562F25B23F5DBF40009FCEA /* CJBaseTableViewHeaderFooterView */,
-				1562F29D23F5DBF40009FCEA /* CJSearchBar */,
-				1562F27A23F5DBF40009FCEA /* CJSlider */,
-				1562F29223F5DBF40009FCEA /* CJSwitchView */,
-				1562F29523F5DBF40009FCEA /* CJTextView */,
-				1562F25E23F5DBF40009FCEA /* CJUIKit.h */,
-				1562F22323F5DBF40009FCEA /* CJUIKitConstant */,
-				1562F22C23F5DBF40009FCEA /* UIButton */,
-				1562F23823F5DBF40009FCEA /* UIColor */,
-				1562F20423F5DBF40009FCEA /* UIImage */,
-				1562F22923F5DBF40009FCEA /* UILabel */,
-				1562F26823F5DBF40009FCEA /* UINavigationBar */,
-				1562F21B23F5DBF40009FCEA /* UIScrollView */,
-				1562F27723F5DBF40009FCEA /* UITableView */,
-				1562F2A023F5DBF40009FCEA /* UITextField */,
-				1562F23B23F5DBF40009FCEA /* UIToolbar */,
-				1562F24223F5DBF40009FCEA /* UIView */,
-				1562F26B23F5DBF40009FCEA /* UIViewController */,
-				1562F22623F5DBF40009FCEA /* UIWindow */,
-			);
-			name = CJBaseUIKit;
-			path = ../../CJBaseUIKit;
-			sourceTree = "<group>";
-		};
-		1562F20423F5DBF40009FCEA /* UIImage */ = {
-			isa = PBXGroup;
-			children = (
-				1562F20523F5DBF40009FCEA /* UIImageCJCategory.h */,
-				1562F20623F5DBF40009FCEA /* Edit */,
-				1562F21123F5DBF40009FCEA /* Data */,
-				1562F21423F5DBF40009FCEA /* Base */,
-			);
-			path = UIImage;
-			sourceTree = "<group>";
-		};
-		1562F20623F5DBF40009FCEA /* Edit */ = {
-			isa = PBXGroup;
-			children = (
-				1562F20723F5DBF40009FCEA /* UIImage+CJRotateAngle.m */,
-				1562F20823F5DBF40009FCEA /* UIImage+CJChangeColor.m */,
-				1562F20923F5DBF40009FCEA /* UIImage+CJBlur.h */,
-				1562F20A23F5DBF40009FCEA /* UIImage+CJMakeCircle.h */,
-				1562F20B23F5DBF40009FCEA /* UIImage+CJSplitImageIntoTwoParts.h */,
-				1562F20C23F5DBF40009FCEA /* UIImage+CJBlur.m */,
-				1562F20D23F5DBF40009FCEA /* UIImage+CJChangeColor.h */,
-				1562F20E23F5DBF40009FCEA /* UIImage+CJRotateAngle.h */,
-				1562F20F23F5DBF40009FCEA /* UIImage+CJSplitImageIntoTwoParts.m */,
-				1562F21023F5DBF40009FCEA /* UIImage+CJMakeCircle.m */,
-			);
-			path = Edit;
-			sourceTree = "<group>";
-		};
-		1562F21123F5DBF40009FCEA /* Data */ = {
-			isa = PBXGroup;
-			children = (
-				1562F21223F5DBF40009FCEA /* UIImage+CJBase64.m */,
-				1562F21323F5DBF40009FCEA /* UIImage+CJBase64.h */,
-			);
-			path = Data;
-			sourceTree = "<group>";
-		};
-		1562F21423F5DBF40009FCEA /* Base */ = {
-			isa = PBXGroup;
-			children = (
-				1562F21623F5DBF40009FCEA /* UIImage+CJCreate.h */,
-				1562F21923F5DBF40009FCEA /* UIImage+CJCreate.m */,
-				1562F21723F5DBF40009FCEA /* UIImage+CJFixOrientation.h */,
-				1562F21A23F5DBF40009FCEA /* UIImage+CJFixOrientation.m */,
-				1562F21523F5DBF40009FCEA /* UIImage+CJTransformSize.h */,
-				1562F21823F5DBF40009FCEA /* UIImage+CJTransformSize.m */,
-			);
-			path = Base;
-			sourceTree = "<group>";
-		};
-		1562F21B23F5DBF40009FCEA /* UIScrollView */ = {
-			isa = PBXGroup;
-			children = (
-				1562F21C23F5DBF40009FCEA /* CJKeyboardAvoiding */,
-			);
-			path = UIScrollView;
-			sourceTree = "<group>";
-		};
-		1562F21C23F5DBF40009FCEA /* CJKeyboardAvoiding */ = {
-			isa = PBXGroup;
-			children = (
-				1562F21D23F5DBF40009FCEA /* CJKeyboardAvoidingTableView.m */,
-				1562F21E23F5DBF40009FCEA /* UIScrollView+CJKeyboardAvoiding.h */,
-				1562F21F23F5DBF40009FCEA /* CJKeyboardAvoidingScrollView.m */,
-				1562F22023F5DBF40009FCEA /* CJKeyboardAvoidingTableView.h */,
-				1562F22123F5DBF40009FCEA /* CJKeyboardAvoidingScrollView.h */,
-				1562F22223F5DBF40009FCEA /* UIScrollView+CJKeyboardAvoiding.m */,
-			);
-			path = CJKeyboardAvoiding;
-			sourceTree = "<group>";
-		};
-		1562F22323F5DBF40009FCEA /* CJUIKitConstant */ = {
-			isa = PBXGroup;
-			children = (
-				1562F22423F5DBF40009FCEA /* CJUIKitConstant.m */,
-				1562F22523F5DBF40009FCEA /* CJUIKitConstant.h */,
-			);
-			path = CJUIKitConstant;
-			sourceTree = "<group>";
-		};
-		1562F22623F5DBF40009FCEA /* UIWindow */ = {
-			isa = PBXGroup;
-			children = (
-				1562F22723F5DBF40009FCEA /* UIWindow+CJSnapshot.h */,
-				1562F22823F5DBF40009FCEA /* UIWindow+CJSnapshot.m */,
-			);
-			path = UIWindow;
-			sourceTree = "<group>";
-		};
-		1562F22923F5DBF40009FCEA /* UILabel */ = {
-			isa = PBXGroup;
-			children = (
-				1562F22A23F5DBF40009FCEA /* CJLabel.m */,
-				1562F22B23F5DBF40009FCEA /* CJLabel.h */,
-			);
-			path = UILabel;
-			sourceTree = "<group>";
-		};
-		1562F22C23F5DBF40009FCEA /* UIButton */ = {
-			isa = PBXGroup;
-			children = (
-				1562F22E23F5DBF40009FCEA /* CJBadgeButton */,
-				1562F22D23F5DBF40009FCEA /* CJButton.h */,
-				1562F23523F5DBF40009FCEA /* CJButton.m */,
-				1562F23323F5DBF40009FCEA /* UIButton+CJMoreProperty.h */,
-				1562F23723F5DBF40009FCEA /* UIButton+CJMoreProperty.m */,
-				1562F23623F5DBF40009FCEA /* UIButton+CJStructure.h */,
-				1562F23223F5DBF40009FCEA /* UIButton+CJStructure.m */,
-			);
-			path = UIButton;
-			sourceTree = "<group>";
-		};
-		1562F22E23F5DBF40009FCEA /* CJBadgeButton */ = {
-			isa = PBXGroup;
-			children = (
-				1562F22F23F5DBF40009FCEA /* CJBadgeButton.h */,
-				1562F23023F5DBF40009FCEA /* CJBadgeButton.m */,
-			);
-			path = CJBadgeButton;
-			sourceTree = "<group>";
-		};
-		1562F23823F5DBF40009FCEA /* UIColor */ = {
-			isa = PBXGroup;
-			children = (
-				1562F23923F5DBF40009FCEA /* UIColor+CJHex.h */,
-				1562F23A23F5DBF40009FCEA /* UIColor+CJHex.m */,
-			);
-			path = UIColor;
-			sourceTree = "<group>";
-		};
-		1562F23B23F5DBF40009FCEA /* UIToolbar */ = {
-			isa = PBXGroup;
-			children = (
-				1562F24123F5DBF40009FCEA /* CJDefaultToolbar.h */,
-				1562F23E23F5DBF40009FCEA /* CJDefaultToolbar.m */,
-				1562F24023F5DBF40009FCEA /* UISearchBar+CJAddInputAccessoryView.h */,
-				1562F23D23F5DBF40009FCEA /* UISearchBar+CJAddInputAccessoryView.m */,
-				1562F23C23F5DBF40009FCEA /* UITextField+CJAddInputAccessoryView.h */,
-				1562F23F23F5DBF40009FCEA /* UITextField+CJAddInputAccessoryView.m */,
-			);
-			path = UIToolbar;
-			sourceTree = "<group>";
-		};
-		1562F24223F5DBF40009FCEA /* UIView */ = {
-			isa = PBXGroup;
-			children = (
-				1562F25023F5DBF40009FCEA /* CJAnimation */,
-				1562F24A23F5DBF40009FCEA /* CJDragAction */,
-				1562F25423F5DBF40009FCEA /* CJGestureRecognizer */,
-				1562F24323F5DBF40009FCEA /* CJPopupAction */,
-				1562F25823F5DBF40009FCEA /* CJShakeAction */,
-				1562F24F23F5DBF40009FCEA /* UIView+CJExclusiveTouch.h */,
-				1562F25723F5DBF40009FCEA /* UIView+CJExclusiveTouch.m */,
-				1562F25323F5DBF40009FCEA /* UIViewCJCategory.h */,
-			);
-			path = UIView;
-			sourceTree = "<group>";
-		};
-		1562F24323F5DBF40009FCEA /* CJPopupAction */ = {
-			isa = PBXGroup;
-			children = (
-				1562F24923F5DBF40009FCEA /* UIView+CJPopupInView.h */,
-				1562F24623F5DBF40009FCEA /* UIView+CJPopupInView.m */,
-				1562F24523F5DBF40009FCEA /* UIView+CJRounderCorner.h */,
-				1562F24823F5DBF40009FCEA /* UIView+CJRounderCorner.m */,
-				1562F24423F5DBF40009FCEA /* UIView+CJShowExtendView.h */,
-				1562F24723F5DBF40009FCEA /* UIView+CJShowExtendView.m */,
-			);
-			path = CJPopupAction;
-			sourceTree = "<group>";
-		};
-		1562F24A23F5DBF40009FCEA /* CJDragAction */ = {
-			isa = PBXGroup;
-			children = (
-				1562F24B23F5DBF40009FCEA /* UIView+CJDragAction.h */,
-				1562F24C23F5DBF40009FCEA /* UIView+CJKeepBounds.m */,
-				1562F24D23F5DBF40009FCEA /* UIView+CJDragAction.m */,
-				1562F24E23F5DBF40009FCEA /* UIView+CJKeepBounds.h */,
-			);
-			path = CJDragAction;
-			sourceTree = "<group>";
-		};
-		1562F25023F5DBF40009FCEA /* CJAnimation */ = {
-			isa = PBXGroup;
-			children = (
-				1562F25123F5DBF40009FCEA /* UIView+CJAnimation.h */,
-				1562F25223F5DBF40009FCEA /* UIView+CJAnimation.m */,
-			);
-			path = CJAnimation;
-			sourceTree = "<group>";
-		};
-		1562F25423F5DBF40009FCEA /* CJGestureRecognizer */ = {
-			isa = PBXGroup;
-			children = (
-				1562F25523F5DBF40009FCEA /* UIView+CJGestureRecognizer.h */,
-				1562F25623F5DBF40009FCEA /* UIView+CJGestureRecognizer.m */,
-			);
-			path = CJGestureRecognizer;
-			sourceTree = "<group>";
-		};
-		1562F25823F5DBF40009FCEA /* CJShakeAction */ = {
-			isa = PBXGroup;
-			children = (
-				1562F25A23F5DBF40009FCEA /* UIView+CJShake.h */,
-				1562F25923F5DBF40009FCEA /* UIView+CJShake.m */,
-			);
-			path = CJShakeAction;
-			sourceTree = "<group>";
-		};
-		1562F25B23F5DBF40009FCEA /* CJBaseTableViewHeaderFooterView */ = {
-			isa = PBXGroup;
-			children = (
-				1562F25C23F5DBF40009FCEA /* CJTableViewHeaderFooterView.h */,
-				1562F25D23F5DBF40009FCEA /* CJTableViewHeaderFooterView.m */,
-			);
-			path = CJBaseTableViewHeaderFooterView;
-			sourceTree = "<group>";
-		};
-		1562F25F23F5DBF40009FCEA /* CJBaseTableViewCell */ = {
-			isa = PBXGroup;
-			children = (
-				1562F26023F5DBF40009FCEA /* Resources */,
-				1562F26623F5DBF40009FCEA /* CJBaseTableViewCell.h */,
-				1562F26723F5DBF40009FCEA /* CJBaseTableViewCell.m */,
-			);
-			path = CJBaseTableViewCell;
-			sourceTree = "<group>";
-		};
-		1562F26023F5DBF40009FCEA /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				1562F26123F5DBF40009FCEA /* cjCheckBoxGreenNO@2x.png */,
-				1562F26223F5DBF40009FCEA /* cjCheckBoxGreen2YES.png */,
-				1562F26323F5DBF40009FCEA /* cjCheckBoxOrangeYES@2x.png */,
-				1562F26423F5DBF40009FCEA /* cjCheckBoxGreenYES@2x.png */,
-				1562F26523F5DBF40009FCEA /* cjCheckBoxGreen2NO.png */,
-			);
-			path = Resources;
-			sourceTree = "<group>";
-		};
-		1562F26823F5DBF40009FCEA /* UINavigationBar */ = {
-			isa = PBXGroup;
-			children = (
-				1562F26923F5DBF40009FCEA /* UINavigationBar+CJChangeBG.h */,
-				1562F26A23F5DBF40009FCEA /* UINavigationBar+CJChangeBG.m */,
-			);
-			path = UINavigationBar;
-			sourceTree = "<group>";
-		};
-		1562F26B23F5DBF40009FCEA /* UIViewController */ = {
-			isa = PBXGroup;
-			children = (
-				1562F26E23F5DBF40009FCEA /* Resources */,
-				1562F27523F5DBF40009FCEA /* UIViewController+CJCustomBackBarButtonItem.h */,
-				1562F26D23F5DBF40009FCEA /* UIViewController+CJCustomBackBarButtonItem.m */,
-				1562F27623F5DBF40009FCEA /* UIViewController+CJSystemBackButtonHandler.h */,
-				1562F27323F5DBF40009FCEA /* UIViewController+CJSystemBackButtonHandler.m */,
-				1562F27423F5DBF40009FCEA /* UIViewController+CJSystemComposeView.h */,
-				1562F26C23F5DBF40009FCEA /* UIViewController+CJSystemComposeView.m */,
-			);
-			path = UIViewController;
-			sourceTree = "<group>";
-		};
-		1562F26E23F5DBF40009FCEA /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				1562F26F23F5DBF40009FCEA /* cjBackBarButtonItem@3x.png */,
-				1562F27023F5DBF40009FCEA /* cjBackBarButtonItem@2x.png */,
-				1562F27123F5DBF40009FCEA /* cjBackBarButtonItemGray@3x.png */,
-				1562F27223F5DBF40009FCEA /* cjBackBarButtonItemGray@2x.png */,
-			);
-			path = Resources;
-			sourceTree = "<group>";
-		};
-		1562F27723F5DBF40009FCEA /* UITableView */ = {
-			isa = PBXGroup;
-			children = (
-				1562F27823F5DBF40009FCEA /* UITableView+CJEmptyView.m */,
-				1562F27923F5DBF40009FCEA /* UITableView+CJEmptyView.h */,
-			);
-			path = UITableView;
-			sourceTree = "<group>";
-		};
-		1562F27A23F5DBF40009FCEA /* CJSlider */ = {
-			isa = PBXGroup;
-			children = (
-				1562F27B23F5DBF40009FCEA /* CJSwitchSlider */,
-				1562F28023F5DBF40009FCEA /* CJSliderControl */,
-				1562F28923F5DBF40009FCEA /* CJSlider.h */,
-				1562F28A23F5DBF40009FCEA /* CJPlayerSlider */,
-				1562F28D23F5DBF40009FCEA /* CJBaseUISlider.m */,
-				1562F28E23F5DBF40009FCEA /* CJAdsorbModel */,
-				1562F29123F5DBF40009FCEA /* CJBaseUISlider.h */,
-			);
-			path = CJSlider;
-			sourceTree = "<group>";
-		};
-		1562F27B23F5DBF40009FCEA /* CJSwitchSlider */ = {
-			isa = PBXGroup;
-			children = (
-				1562F27C23F5DBF40009FCEA /* CJSwitchSliderStatusModel.m */,
-				1562F27D23F5DBF40009FCEA /* CJSwitchSlider.m */,
-				1562F27E23F5DBF40009FCEA /* CJSwitchSlider.h */,
-				1562F27F23F5DBF40009FCEA /* CJSwitchSliderStatusModel.h */,
-			);
-			path = CJSwitchSlider;
-			sourceTree = "<group>";
-		};
-		1562F28023F5DBF40009FCEA /* CJSliderControl */ = {
-			isa = PBXGroup;
-			children = (
-				1562F28123F5DBF40009FCEA /* CJRangeSliderControl.h */,
-				1562F28223F5DBF40009FCEA /* CJSliderControl.h */,
-				1562F28323F5DBF40009FCEA /* CJSliderThumb.m */,
-				1562F28423F5DBF40009FCEA /* CJSliderPopover.m */,
-				1562F28523F5DBF40009FCEA /* CJSliderControl.m */,
-				1562F28623F5DBF40009FCEA /* CJRangeSliderControl.m */,
-				1562F28723F5DBF40009FCEA /* CJSliderThumb.h */,
-				1562F28823F5DBF40009FCEA /* CJSliderPopover.h */,
-			);
-			path = CJSliderControl;
-			sourceTree = "<group>";
-		};
-		1562F28A23F5DBF40009FCEA /* CJPlayerSlider */ = {
-			isa = PBXGroup;
-			children = (
-				1562F28B23F5DBF40009FCEA /* CJPlayerSlider.h */,
-				1562F28C23F5DBF40009FCEA /* CJPlayerSlider.m */,
-			);
-			path = CJPlayerSlider;
-			sourceTree = "<group>";
-		};
-		1562F28E23F5DBF40009FCEA /* CJAdsorbModel */ = {
-			isa = PBXGroup;
-			children = (
-				1562F28F23F5DBF40009FCEA /* CJAdsorbModel.h */,
-				1562F29023F5DBF40009FCEA /* CJAdsorbModel.m */,
-			);
-			path = CJAdsorbModel;
-			sourceTree = "<group>";
-		};
-		1562F29223F5DBF40009FCEA /* CJSwitchView */ = {
-			isa = PBXGroup;
-			children = (
-				1562F29323F5DBF40009FCEA /* CJSwitchView.h */,
-				1562F29423F5DBF40009FCEA /* CJSwitchView.m */,
-			);
-			path = CJSwitchView;
-			sourceTree = "<group>";
-		};
-		1562F29523F5DBF40009FCEA /* CJTextView */ = {
-			isa = PBXGroup;
-			children = (
-				1562F29623F5DBF40009FCEA /* CJTextView.h */,
-				1562F29723F5DBF40009FCEA /* CJTextView.m */,
-			);
-			path = CJTextView;
-			sourceTree = "<group>";
-		};
-		1562F29D23F5DBF40009FCEA /* CJSearchBar */ = {
-			isa = PBXGroup;
-			children = (
-				1562F29E23F5DBF40009FCEA /* CJSearchBar.m */,
-				1562F29F23F5DBF40009FCEA /* CJSearchBar.h */,
-			);
-			path = CJSearchBar;
-			sourceTree = "<group>";
-		};
-		1562F2A023F5DBF40009FCEA /* UITextField */ = {
-			isa = PBXGroup;
-			children = (
-				1562F2A123F5DBF40009FCEA /* UITextField+CJPadding.h */,
-				1562F2A223F5DBF40009FCEA /* UITextField+CJForbidKeyboard.h */,
-				1562F2A323F5DBF40009FCEA /* UITextFieldCJCategory.h */,
-				1562F2A423F5DBF40009FCEA /* UITextField+CJTextChangeBlock.m */,
-				1562F2A523F5DBF40009FCEA /* UITextField+CJSelectedTextRange.h */,
-				1562F2A623F5DBF40009FCEA /* UITextField+CJForbidKeyboard.m */,
-				1562F2A723F5DBF40009FCEA /* CJTextField */,
-				1562F2AC23F5DBF40009FCEA /* UITextField+CJPadding.m */,
-				1562F2AD23F5DBF40009FCEA /* UITextField+CJSelectedTextRange.m */,
-				1562F2AE23F5DBF40009FCEA /* UITextField+CJTextChangeBlock.h */,
-			);
-			path = UITextField;
-			sourceTree = "<group>";
-		};
-		1562F2A723F5DBF40009FCEA /* CJTextField */ = {
-			isa = PBXGroup;
-			children = (
-				1562F2AB23F5DBF40009FCEA /* CJExtraTextTextField.h */,
-				1562F2A923F5DBF40009FCEA /* CJExtraTextTextField.m */,
-				1562F2AA23F5DBF40009FCEA /* CJTextField.h */,
-				1562F2A823F5DBF40009FCEA /* CJTextField.m */,
-			);
-			path = CJTextField;
-			sourceTree = "<group>";
-		};
 		1562F2FB23F945F20009FCEA /* TSToast */ = {
 			isa = PBXGroup;
 			children = (
@@ -1553,6 +1129,430 @@
 			path = TSActionSheet;
 			sourceTree = "<group>";
 		};
+		15DBE09524349D75009287C5 /* LuckinBaseUIKit */ = {
+			isa = PBXGroup;
+			children = (
+				15DBE09624349D75009287C5 /* UIImage */,
+				15DBE0AD24349D75009287C5 /* UIScrollView */,
+				15DBE0B524349D75009287C5 /* CJUIKitConstant */,
+				15DBE0B824349D75009287C5 /* UIWindow */,
+				15DBE0BB24349D75009287C5 /* UILabel */,
+				15DBE0BE24349D75009287C5 /* UIButton */,
+				15DBE0C824349D75009287C5 /* UIColor */,
+				15DBE0CB24349D75009287C5 /* UIToolbar */,
+				15DBE0D224349D75009287C5 /* UIView */,
+				15DBE0EB24349D75009287C5 /* CJBaseTableViewHeaderFooterView */,
+				15DBE0EE24349D75009287C5 /* CJUIKit.h */,
+				15DBE0EF24349D75009287C5 /* CJBaseTableViewCell */,
+				15DBE0F824349D75009287C5 /* UINavigationBar */,
+				15DBE0FB24349D75009287C5 /* UIViewController */,
+				15DBE10724349D75009287C5 /* UITableView */,
+				15DBE10A24349D75009287C5 /* CJSlider */,
+				15DBE12224349D75009287C5 /* CJSwitchView */,
+				15DBE12524349D75009287C5 /* CJTextView */,
+				15DBE12824349D75009287C5 /* CJSearchBar */,
+				15DBE12B24349D75009287C5 /* UITextField */,
+			);
+			name = LuckinBaseUIKit;
+			path = ../../LuckinBaseUIKit;
+			sourceTree = "<group>";
+		};
+		15DBE09624349D75009287C5 /* UIImage */ = {
+			isa = PBXGroup;
+			children = (
+				15DBE09724349D75009287C5 /* UIImageCJCategory.h */,
+				15DBE09824349D75009287C5 /* Edit */,
+				15DBE0A324349D75009287C5 /* Data */,
+				15DBE0A624349D75009287C5 /* Base */,
+			);
+			path = UIImage;
+			sourceTree = "<group>";
+		};
+		15DBE09824349D75009287C5 /* Edit */ = {
+			isa = PBXGroup;
+			children = (
+				15DBE09924349D75009287C5 /* UIImage+CJRotateAngle.m */,
+				15DBE09A24349D75009287C5 /* UIImage+CJChangeColor.m */,
+				15DBE09B24349D75009287C5 /* UIImage+CJBlur.h */,
+				15DBE09C24349D75009287C5 /* UIImage+CJMakeCircle.h */,
+				15DBE09D24349D75009287C5 /* UIImage+CJSplitImageIntoTwoParts.h */,
+				15DBE09E24349D75009287C5 /* UIImage+CJBlur.m */,
+				15DBE09F24349D75009287C5 /* UIImage+CJChangeColor.h */,
+				15DBE0A024349D75009287C5 /* UIImage+CJRotateAngle.h */,
+				15DBE0A124349D75009287C5 /* UIImage+CJSplitImageIntoTwoParts.m */,
+				15DBE0A224349D75009287C5 /* UIImage+CJMakeCircle.m */,
+			);
+			path = Edit;
+			sourceTree = "<group>";
+		};
+		15DBE0A324349D75009287C5 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				15DBE0A424349D75009287C5 /* UIImage+CJBase64.m */,
+				15DBE0A524349D75009287C5 /* UIImage+CJBase64.h */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		15DBE0A624349D75009287C5 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				15DBE0A724349D75009287C5 /* UIImage+CJTransformSize.h */,
+				15DBE0A824349D75009287C5 /* UIImage+CJCreate.h */,
+				15DBE0A924349D75009287C5 /* UIImage+CJFixOrientation.h */,
+				15DBE0AA24349D75009287C5 /* UIImage+CJTransformSize.m */,
+				15DBE0AB24349D75009287C5 /* UIImage+CJCreate.m */,
+				15DBE0AC24349D75009287C5 /* UIImage+CJFixOrientation.m */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		15DBE0AD24349D75009287C5 /* UIScrollView */ = {
+			isa = PBXGroup;
+			children = (
+				15DBE0AE24349D75009287C5 /* CJKeyboardAvoiding */,
+			);
+			path = UIScrollView;
+			sourceTree = "<group>";
+		};
+		15DBE0AE24349D75009287C5 /* CJKeyboardAvoiding */ = {
+			isa = PBXGroup;
+			children = (
+				15DBE0AF24349D75009287C5 /* CJKeyboardAvoidingTableView.m */,
+				15DBE0B024349D75009287C5 /* UIScrollView+CJKeyboardAvoiding.h */,
+				15DBE0B124349D75009287C5 /* CJKeyboardAvoidingScrollView.m */,
+				15DBE0B224349D75009287C5 /* CJKeyboardAvoidingTableView.h */,
+				15DBE0B324349D75009287C5 /* CJKeyboardAvoidingScrollView.h */,
+				15DBE0B424349D75009287C5 /* UIScrollView+CJKeyboardAvoiding.m */,
+			);
+			path = CJKeyboardAvoiding;
+			sourceTree = "<group>";
+		};
+		15DBE0B524349D75009287C5 /* CJUIKitConstant */ = {
+			isa = PBXGroup;
+			children = (
+				15DBE0B624349D75009287C5 /* CJUIKitConstant.m */,
+				15DBE0B724349D75009287C5 /* CJUIKitConstant.h */,
+			);
+			path = CJUIKitConstant;
+			sourceTree = "<group>";
+		};
+		15DBE0B824349D75009287C5 /* UIWindow */ = {
+			isa = PBXGroup;
+			children = (
+				15DBE0B924349D75009287C5 /* UIWindow+CJSnapshot.h */,
+				15DBE0BA24349D75009287C5 /* UIWindow+CJSnapshot.m */,
+			);
+			path = UIWindow;
+			sourceTree = "<group>";
+		};
+		15DBE0BB24349D75009287C5 /* UILabel */ = {
+			isa = PBXGroup;
+			children = (
+				15DBE0BC24349D75009287C5 /* CJLabel.m */,
+				15DBE0BD24349D75009287C5 /* CJLabel.h */,
+			);
+			path = UILabel;
+			sourceTree = "<group>";
+		};
+		15DBE0BE24349D75009287C5 /* UIButton */ = {
+			isa = PBXGroup;
+			children = (
+				15DBE0BF24349D75009287C5 /* CJButton.h */,
+				15DBE0C024349D75009287C5 /* CJBadgeButton */,
+				15DBE0C324349D75009287C5 /* UIButton+CJStructure.m */,
+				15DBE0C424349D75009287C5 /* UIButton+CJMoreProperty.h */,
+				15DBE0C524349D75009287C5 /* CJButton.m */,
+				15DBE0C624349D75009287C5 /* UIButton+CJStructure.h */,
+				15DBE0C724349D75009287C5 /* UIButton+CJMoreProperty.m */,
+			);
+			path = UIButton;
+			sourceTree = "<group>";
+		};
+		15DBE0C024349D75009287C5 /* CJBadgeButton */ = {
+			isa = PBXGroup;
+			children = (
+				15DBE0C124349D75009287C5 /* CJBadgeButton.h */,
+				15DBE0C224349D75009287C5 /* CJBadgeButton.m */,
+			);
+			path = CJBadgeButton;
+			sourceTree = "<group>";
+		};
+		15DBE0C824349D75009287C5 /* UIColor */ = {
+			isa = PBXGroup;
+			children = (
+				15DBE0C924349D75009287C5 /* UIColor+CJHex.h */,
+				15DBE0CA24349D75009287C5 /* UIColor+CJHex.m */,
+			);
+			path = UIColor;
+			sourceTree = "<group>";
+		};
+		15DBE0CB24349D75009287C5 /* UIToolbar */ = {
+			isa = PBXGroup;
+			children = (
+				15DBE0CC24349D75009287C5 /* UITextField+CJAddInputAccessoryView.h */,
+				15DBE0CD24349D75009287C5 /* UISearchBar+CJAddInputAccessoryView.m */,
+				15DBE0CE24349D75009287C5 /* CJDefaultToolbar.m */,
+				15DBE0CF24349D75009287C5 /* UITextField+CJAddInputAccessoryView.m */,
+				15DBE0D024349D75009287C5 /* UISearchBar+CJAddInputAccessoryView.h */,
+				15DBE0D124349D75009287C5 /* CJDefaultToolbar.h */,
+			);
+			path = UIToolbar;
+			sourceTree = "<group>";
+		};
+		15DBE0D224349D75009287C5 /* UIView */ = {
+			isa = PBXGroup;
+			children = (
+				15DBE0D324349D75009287C5 /* CJPopupAction */,
+				15DBE0DA24349D75009287C5 /* CJDragAction */,
+				15DBE0DF24349D75009287C5 /* UIView+CJExclusiveTouch.h */,
+				15DBE0E024349D75009287C5 /* CJAnimation */,
+				15DBE0E324349D75009287C5 /* UIViewCJCategory.h */,
+				15DBE0E424349D75009287C5 /* CJGestureRecognizer */,
+				15DBE0E724349D75009287C5 /* UIView+CJExclusiveTouch.m */,
+				15DBE0E824349D75009287C5 /* CJShakeAction */,
+			);
+			path = UIView;
+			sourceTree = "<group>";
+		};
+		15DBE0D324349D75009287C5 /* CJPopupAction */ = {
+			isa = PBXGroup;
+			children = (
+				15DBE0D424349D75009287C5 /* UIView+CJShowExtendView.h */,
+				15DBE0D524349D75009287C5 /* UIView+CJRounderCorner.h */,
+				15DBE0D624349D75009287C5 /* UIView+CJPopupInView.m */,
+				15DBE0D724349D75009287C5 /* UIView+CJShowExtendView.m */,
+				15DBE0D824349D75009287C5 /* UIView+CJRounderCorner.m */,
+				15DBE0D924349D75009287C5 /* UIView+CJPopupInView.h */,
+			);
+			path = CJPopupAction;
+			sourceTree = "<group>";
+		};
+		15DBE0DA24349D75009287C5 /* CJDragAction */ = {
+			isa = PBXGroup;
+			children = (
+				15DBE0DB24349D75009287C5 /* UIView+CJDragAction.h */,
+				15DBE0DC24349D75009287C5 /* UIView+CJKeepBounds.m */,
+				15DBE0DD24349D75009287C5 /* UIView+CJDragAction.m */,
+				15DBE0DE24349D75009287C5 /* UIView+CJKeepBounds.h */,
+			);
+			path = CJDragAction;
+			sourceTree = "<group>";
+		};
+		15DBE0E024349D75009287C5 /* CJAnimation */ = {
+			isa = PBXGroup;
+			children = (
+				15DBE0E124349D75009287C5 /* UIView+CJAnimation.h */,
+				15DBE0E224349D75009287C5 /* UIView+CJAnimation.m */,
+			);
+			path = CJAnimation;
+			sourceTree = "<group>";
+		};
+		15DBE0E424349D75009287C5 /* CJGestureRecognizer */ = {
+			isa = PBXGroup;
+			children = (
+				15DBE0E524349D75009287C5 /* UIView+CJGestureRecognizer.h */,
+				15DBE0E624349D75009287C5 /* UIView+CJGestureRecognizer.m */,
+			);
+			path = CJGestureRecognizer;
+			sourceTree = "<group>";
+		};
+		15DBE0E824349D75009287C5 /* CJShakeAction */ = {
+			isa = PBXGroup;
+			children = (
+				15DBE0E924349D75009287C5 /* UIView+CJShake.m */,
+				15DBE0EA24349D75009287C5 /* UIView+CJShake.h */,
+			);
+			path = CJShakeAction;
+			sourceTree = "<group>";
+		};
+		15DBE0EB24349D75009287C5 /* CJBaseTableViewHeaderFooterView */ = {
+			isa = PBXGroup;
+			children = (
+				15DBE0EC24349D75009287C5 /* CJTableViewHeaderFooterView.h */,
+				15DBE0ED24349D75009287C5 /* CJTableViewHeaderFooterView.m */,
+			);
+			path = CJBaseTableViewHeaderFooterView;
+			sourceTree = "<group>";
+		};
+		15DBE0EF24349D75009287C5 /* CJBaseTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				15DBE0F024349D75009287C5 /* Resources */,
+				15DBE0F624349D75009287C5 /* CJBaseTableViewCell.h */,
+				15DBE0F724349D75009287C5 /* CJBaseTableViewCell.m */,
+			);
+			path = CJBaseTableViewCell;
+			sourceTree = "<group>";
+		};
+		15DBE0F024349D75009287C5 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				15DBE0F124349D75009287C5 /* cjCheckBoxGreenNO@2x.png */,
+				15DBE0F224349D75009287C5 /* cjCheckBoxGreen2YES.png */,
+				15DBE0F324349D75009287C5 /* cjCheckBoxOrangeYES@2x.png */,
+				15DBE0F424349D75009287C5 /* cjCheckBoxGreenYES@2x.png */,
+				15DBE0F524349D75009287C5 /* cjCheckBoxGreen2NO.png */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		15DBE0F824349D75009287C5 /* UINavigationBar */ = {
+			isa = PBXGroup;
+			children = (
+				15DBE0F924349D75009287C5 /* UINavigationBar+CJChangeBG.h */,
+				15DBE0FA24349D75009287C5 /* UINavigationBar+CJChangeBG.m */,
+			);
+			path = UINavigationBar;
+			sourceTree = "<group>";
+		};
+		15DBE0FB24349D75009287C5 /* UIViewController */ = {
+			isa = PBXGroup;
+			children = (
+				15DBE0FC24349D75009287C5 /* UIViewController+CJSystemComposeView.m */,
+				15DBE0FD24349D75009287C5 /* UIViewController+CJCustomBackBarButtonItem.m */,
+				15DBE0FE24349D75009287C5 /* Resources */,
+				15DBE10324349D75009287C5 /* UIViewController+CJSystemBackButtonHandler.m */,
+				15DBE10424349D75009287C5 /* UIViewController+CJSystemComposeView.h */,
+				15DBE10524349D75009287C5 /* UIViewController+CJCustomBackBarButtonItem.h */,
+				15DBE10624349D75009287C5 /* UIViewController+CJSystemBackButtonHandler.h */,
+			);
+			path = UIViewController;
+			sourceTree = "<group>";
+		};
+		15DBE0FE24349D75009287C5 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				15DBE0FF24349D75009287C5 /* cjBackBarButtonItem@3x.png */,
+				15DBE10024349D75009287C5 /* cjBackBarButtonItem@2x.png */,
+				15DBE10124349D75009287C5 /* cjBackBarButtonItemGray@3x.png */,
+				15DBE10224349D75009287C5 /* cjBackBarButtonItemGray@2x.png */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		15DBE10724349D75009287C5 /* UITableView */ = {
+			isa = PBXGroup;
+			children = (
+				15DBE10824349D75009287C5 /* UITableView+CJEmptyView.m */,
+				15DBE10924349D75009287C5 /* UITableView+CJEmptyView.h */,
+			);
+			path = UITableView;
+			sourceTree = "<group>";
+		};
+		15DBE10A24349D75009287C5 /* CJSlider */ = {
+			isa = PBXGroup;
+			children = (
+				15DBE10B24349D75009287C5 /* CJSwitchSlider */,
+				15DBE11024349D75009287C5 /* CJSliderControl */,
+				15DBE11924349D75009287C5 /* CJSlider.h */,
+				15DBE11A24349D75009287C5 /* CJPlayerSlider */,
+				15DBE11D24349D75009287C5 /* CJBaseUISlider.m */,
+				15DBE11E24349D75009287C5 /* CJAdsorbModel */,
+				15DBE12124349D75009287C5 /* CJBaseUISlider.h */,
+			);
+			path = CJSlider;
+			sourceTree = "<group>";
+		};
+		15DBE10B24349D75009287C5 /* CJSwitchSlider */ = {
+			isa = PBXGroup;
+			children = (
+				15DBE10C24349D75009287C5 /* CJSwitchSliderStatusModel.m */,
+				15DBE10D24349D75009287C5 /* CJSwitchSlider.m */,
+				15DBE10E24349D75009287C5 /* CJSwitchSlider.h */,
+				15DBE10F24349D75009287C5 /* CJSwitchSliderStatusModel.h */,
+			);
+			path = CJSwitchSlider;
+			sourceTree = "<group>";
+		};
+		15DBE11024349D75009287C5 /* CJSliderControl */ = {
+			isa = PBXGroup;
+			children = (
+				15DBE11124349D75009287C5 /* CJRangeSliderControl.h */,
+				15DBE11224349D75009287C5 /* CJSliderControl.h */,
+				15DBE11324349D75009287C5 /* CJSliderThumb.m */,
+				15DBE11424349D75009287C5 /* CJSliderPopover.m */,
+				15DBE11524349D75009287C5 /* CJSliderControl.m */,
+				15DBE11624349D75009287C5 /* CJRangeSliderControl.m */,
+				15DBE11724349D75009287C5 /* CJSliderThumb.h */,
+				15DBE11824349D75009287C5 /* CJSliderPopover.h */,
+			);
+			path = CJSliderControl;
+			sourceTree = "<group>";
+		};
+		15DBE11A24349D75009287C5 /* CJPlayerSlider */ = {
+			isa = PBXGroup;
+			children = (
+				15DBE11B24349D75009287C5 /* CJPlayerSlider.h */,
+				15DBE11C24349D75009287C5 /* CJPlayerSlider.m */,
+			);
+			path = CJPlayerSlider;
+			sourceTree = "<group>";
+		};
+		15DBE11E24349D75009287C5 /* CJAdsorbModel */ = {
+			isa = PBXGroup;
+			children = (
+				15DBE11F24349D75009287C5 /* CJAdsorbModel.h */,
+				15DBE12024349D75009287C5 /* CJAdsorbModel.m */,
+			);
+			path = CJAdsorbModel;
+			sourceTree = "<group>";
+		};
+		15DBE12224349D75009287C5 /* CJSwitchView */ = {
+			isa = PBXGroup;
+			children = (
+				15DBE12324349D75009287C5 /* CJSwitchView.h */,
+				15DBE12424349D75009287C5 /* CJSwitchView.m */,
+			);
+			path = CJSwitchView;
+			sourceTree = "<group>";
+		};
+		15DBE12524349D75009287C5 /* CJTextView */ = {
+			isa = PBXGroup;
+			children = (
+				15DBE12624349D75009287C5 /* CJTextView.h */,
+				15DBE12724349D75009287C5 /* CJTextView.m */,
+			);
+			path = CJTextView;
+			sourceTree = "<group>";
+		};
+		15DBE12824349D75009287C5 /* CJSearchBar */ = {
+			isa = PBXGroup;
+			children = (
+				15DBE12924349D75009287C5 /* CJSearchBar.m */,
+				15DBE12A24349D75009287C5 /* CJSearchBar.h */,
+			);
+			path = CJSearchBar;
+			sourceTree = "<group>";
+		};
+		15DBE12B24349D75009287C5 /* UITextField */ = {
+			isa = PBXGroup;
+			children = (
+				15DBE12C24349D75009287C5 /* UITextField+CJPadding.h */,
+				15DBE12D24349D75009287C5 /* UITextField+CJForbidKeyboard.h */,
+				15DBE12E24349D75009287C5 /* UITextFieldCJCategory.h */,
+				15DBE12F24349D75009287C5 /* UITextField+CJTextChangeBlock.m */,
+				15DBE13024349D75009287C5 /* UITextField+CJSelectedTextRange.h */,
+				15DBE13124349D75009287C5 /* UITextField+CJForbidKeyboard.m */,
+				15DBE13224349D75009287C5 /* CJTextField */,
+				15DBE13724349D75009287C5 /* UITextField+CJPadding.m */,
+				15DBE13824349D75009287C5 /* UITextField+CJSelectedTextRange.m */,
+				15DBE13924349D75009287C5 /* UITextField+CJTextChangeBlock.h */,
+			);
+			path = UITextField;
+			sourceTree = "<group>";
+		};
+		15DBE13224349D75009287C5 /* CJTextField */ = {
+			isa = PBXGroup;
+			children = (
+				15DBE13324349D75009287C5 /* CJTextField.m */,
+				15DBE13424349D75009287C5 /* CJExtraTextTextField.m */,
+				15DBE13524349D75009287C5 /* CJTextField.h */,
+				15DBE13624349D75009287C5 /* CJExtraTextTextField.h */,
+			);
+			path = CJTextField;
+			sourceTree = "<group>";
+		};
 		15F4271C242B7D2A00ED2E4C /* DemoEmptyViewFactory */ = {
 			isa = PBXGroup;
 			children = (
@@ -1623,9 +1623,9 @@
 		780E46021E5DF87B00980127 /* CJUIKitDemo */ = {
 			isa = PBXGroup;
 			children = (
+				15DBE09524349D75009287C5 /* LuckinBaseUIKit */,
 				15F42720242B7D5300ED2E4C /* Service */,
 				1562F38023FD2FC70009FCEA /* AppDelegate */,
-				1562F20323F5DBF40009FCEA /* CJBaseUIKit */,
 				7852D9DF216F16B000E50A39 /* CommonUI */,
 				80FF8F0A1FC5649E00E437CF /* Modules */,
 				80FF91021FC5668700E437CF /* CJBaseUtil */,
@@ -2892,13 +2892,14 @@
 				80FF90A11FC5649F00E437CF /* NestedXibSubViewA.xib in Resources */,
 				7808318422DC10F700F36576 /* loading@3x.gif in Resources */,
 				787FDB9320500B5C008A46E3 /* icon_ddlb_jd@2x.png in Resources */,
+				15DBE16424349D76009287C5 /* cjBackBarButtonItem@3x.png in Resources */,
 				80FF90A01FC5649F00E437CF /* NestedXibView.xib in Resources */,
 				781C737421BA65C90090080C /* add_common_icon@3x.png in Resources */,
 				801F75DA20A040D800A2E027 /* signin_icon_open@3x.png in Resources */,
-				1562F2D123F5DBF40009FCEA /* cjCheckBoxGreenNO@2x.png in Resources */,
 				787FDB9620500B5C008A46E3 /* SliderViewController.xib in Resources */,
-				1562F2DB23F5DBF40009FCEA /* cjBackBarButtonItem@2x.png in Resources */,
+				15DBE16524349D76009287C5 /* cjBackBarButtonItem@2x.png in Resources */,
 				80582FA720C12B1300C01225 /* taixi_icon@2x.png in Resources */,
+				15DBE15F24349D76009287C5 /* cjCheckBoxGreen2NO.png in Resources */,
 				78AB83AC21B7D24E00853E21 /* closePresentVC@2x.png in Resources */,
 				156AC8D82406DBBE00A5A23D /* badgeButton_highlighted@2x.png in Resources */,
 				787FDB8E20500B5C008A46E3 /* slider_minimum_trackimage@2x.png in Resources */,
@@ -2908,7 +2909,6 @@
 				787FDB6520500B1F008A46E3 /* plus@2x.png in Resources */,
 				787FDB8D20500B5C008A46E3 /* slider_double_thumbImage_b@3x.png in Resources */,
 				7808319422DC687400F36576 /* welcome.mp4 in Resources */,
-				1562F2D223F5DBF40009FCEA /* cjCheckBoxGreen2YES.png in Resources */,
 				787FDB9920500B5C008A46E3 /* RangeSliderViewController.xib in Resources */,
 				80FF909D1FC5649F00E437CF /* NestedXibViewController.xib in Resources */,
 				787FDB8B20500B5C008A46E3 /* btn_hd@3x.png in Resources */,
@@ -2932,8 +2932,8 @@
 				80FF91991FC5682B00E437CF /* EncryptStringViewController.xib in Resources */,
 				80FF91961FC5682B00E437CF /* AttributedStringViewController.xib in Resources */,
 				8051E5CD20AAB34E003370AA /* details_icon_huadong@2x.png in Resources */,
-				1562F2DC23F5DBF40009FCEA /* cjBackBarButtonItemGray@3x.png in Resources */,
 				7850B6FF20937C5A008F4A21 /* DragViewController.xib in Resources */,
+				15DBE16624349D76009287C5 /* cjBackBarButtonItemGray@3x.png in Resources */,
 				1562F30223F945F20009FCEA /* demo_toast_error@2x.png in Resources */,
 				787FDB6820500B1F008A46E3 /* TextViewController.xib in Resources */,
 				156AC8D62406DBBE00A5A23D /* badgeButton_highlighted@3x.png in Resources */,
@@ -2944,28 +2944,28 @@
 				787FDB9420500B5C008A46E3 /* slider_thumbImage@3x.png in Resources */,
 				80FF919F1FC5682B00E437CF /* ProcessLineViewController.xib in Resources */,
 				78B90E67218B49D000776584 /* MainAsset.xcassets in Resources */,
-				1562F2DD23F5DBF40009FCEA /* cjBackBarButtonItemGray@2x.png in Resources */,
 				7850B71220937E85008F4A21 /* WelcomePopupView.xib in Resources */,
 				8051E5CE20AAB34E003370AA /* details_icon_huadong@3x.png in Resources */,
 				80FF90B21FC5649F00E437CF /* TableHeaderView.xib in Resources */,
 				782F8771225AE80F001ACE76 /* cjTextField_clear@3x.png in Resources */,
 				156AC8D72406DBBE00A5A23D /* badgeButton_normal@2x.png in Resources */,
+				15DBE15D24349D76009287C5 /* cjCheckBoxOrangeYES@2x.png in Resources */,
 				787FDB9520500B5C008A46E3 /* SwitchSliderViewController.xib in Resources */,
 				787FDB8720500B5C008A46E3 /* slider_maximum_trackimage@3x.png in Resources */,
 				787FDB8F20500B5C008A46E3 /* slider_minimum_trackimage@3x.png in Resources */,
 				80FF91931FC5682B00E437CF /* TypeConvertViewController.xib in Resources */,
 				7850B71120937E85008F4A21 /* WelcomeViewToPop.xib in Resources */,
 				80FF90AC1FC5649F00E437CF /* NavigationBarViewController.xib in Resources */,
-				1562F2DA23F5DBF40009FCEA /* cjBackBarButtonItem@3x.png in Resources */,
 				80FF90AB1FC5649F00E437CF /* EasyScaleHeadView.xib in Resources */,
-				1562F2D323F5DBF40009FCEA /* cjCheckBoxOrangeYES@2x.png in Resources */,
 				7868278121AF02E000FCCDE5 /* bg@2x.jpg in Resources */,
 				154A11282428F88B00AD5F9B /* loading_coffee.json in Resources */,
+				15DBE15B24349D76009287C5 /* cjCheckBoxGreenNO@2x.png in Resources */,
+				15DBE15E24349D76009287C5 /* cjCheckBoxGreenYES@2x.png in Resources */,
 				781C737121BA65C90090080C /* minus_common_icon@3x.png in Resources */,
 				787FDB5720500B01008A46E3 /* SearchBarViewController.xib in Resources */,
 				787FDB8820500B5C008A46E3 /* slider_double_thumbImage_a@2x.png in Resources */,
-				1562F2D523F5DBF40009FCEA /* cjCheckBoxGreen2NO.png in Resources */,
 				787FDB6720500B1F008A46E3 /* smail@2x.png in Resources */,
+				15DBE16724349D76009287C5 /* cjBackBarButtonItemGray@2x.png in Resources */,
 				154A11232428F84100AD5F9B /* loading_03.json in Resources */,
 				80FF919B1FC5682B00E437CF /* DateViewController.xib in Resources */,
 				780E460E1E5DF87B00980127 /* Main.storyboard in Resources */,
@@ -2976,10 +2976,10 @@
 				801F75DB20A040D800A2E027 /* signin_icon_open@2x.png in Resources */,
 				80FF90A91FC5649F00E437CF /* ImageChangeColorViewController.xib in Resources */,
 				787FDB8920500B5C008A46E3 /* slider_double_thumbImage_a@3x.png in Resources */,
-				1562F2D423F5DBF40009FCEA /* cjCheckBoxGreenYES@2x.png in Resources */,
 				78AB83AD21B7D24E00853E21 /* closePresentVC@3x.png in Resources */,
 				7808318922DC272700F36576 /* iamcoming.gif in Resources */,
 				7868277B21AF01BA00FCCDE5 /* bgCar@2x.jpg in Resources */,
+				15DBE15C24349D76009287C5 /* cjCheckBoxGreen2YES.png in Resources */,
 				807F126C20B5123A0008B748 /* animationBg02.jpg in Resources */,
 				807F127020B51C390008B748 /* animationBg01.jpg in Resources */,
 				80FF919D1FC5682B00E437CF /* CountDownTimeViewController.xib in Resources */,
@@ -3122,33 +3122,31 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1562F2CF23F5DBF40009FCEA /* UIView+CJShake.m in Sources */,
 				8051E5D120AAC172003370AA /* BBXShimmeringSwitchSlider.m in Sources */,
 				8051E5CA20AAAFD2003370AA /* BusShimmeringSwitchSlider.m in Sources */,
 				788A55FA21AFCE540011F993 /* DemoLabelFactory.m in Sources */,
 				7850B70120937C5A008F4A21 /* PopupInWindowVC.m in Sources */,
 				7850B71320937E85008F4A21 /* WelcomeViewToPop.m in Sources */,
-				1562F2E923F5DBF40009FCEA /* CJSwitchView.m in Sources */,
 				78A621ED2135CA50004DA046 /* DemoFloatingWindow.m in Sources */,
 				807F126020B507A30008B748 /* ViewAnimateViewController.m in Sources */,
 				784A7216214C9DF000F8D144 /* MoreHomeViewController.m in Sources */,
+				15DBE15824349D76009287C5 /* UIView+CJExclusiveTouch.m in Sources */,
 				788113BF2199574900D1630D /* SharedInstanceViewController.m in Sources */,
 				78A74E5123687ACF0023F44B /* PriceFenToYuanViewController.m in Sources */,
 				80FF909C1FC5649F00E437CF /* NestedXibView.m in Sources */,
 				78226A9021A42103002167F2 /* CJConvertUtil.m in Sources */,
 				156AC8D12406D9F800A5A23D /* DemoTagButtonFactory.m in Sources */,
 				801F75D820A040D800A2E027 /* BBXDAreaCodeTextField.m in Sources */,
-				1562F2C423F5DBF40009FCEA /* UISearchBar+CJAddInputAccessoryView.m in Sources */,
 				15F42726242B7D5300ED2E4C /* AppInfoManager.m in Sources */,
+				15DBE14124349D75009287C5 /* UIImage+CJCreate.m in Sources */,
+				15DBE16124349D76009287C5 /* UINavigationBar+CJChangeBG.m in Sources */,
+				15DBE15624349D76009287C5 /* UIView+CJAnimation.m in Sources */,
 				78B6C2EE2159D8AF00D5864E /* DemoBusPassengerOrderModel.m in Sources */,
-				1562F2B023F5DBF40009FCEA /* UIImage+CJChangeColor.m in Sources */,
-				1562F2E723F5DBF40009FCEA /* CJBaseUISlider.m in Sources */,
 				15C970D723DB6125008D81B0 /* ActionSheetHomeViewController.m in Sources */,
 				7868A068237055660013AF4D /* ButtonHomeViewController.m in Sources */,
 				78C8148F216E11AF00A6B190 /* EChildViewController.m in Sources */,
-				1562F2EF23F5DBF40009FCEA /* UITextField+CJForbidKeyboard.m in Sources */,
 				800E07E92016CD1500799B78 /* KeyboardUtilViewController.m in Sources */,
-				1562F2B923F5DBF40009FCEA /* CJKeyboardAvoidingScrollView.m in Sources */,
+				15DBE14624349D76009287C5 /* CJUIKitConstant.m in Sources */,
 				789C447A21F07DAC00181144 /* ChangeEnvHomeViewController.m in Sources */,
 				801F75D920A040D800A2E027 /* BBXDPasswordTextField.m in Sources */,
 				78C8148C216E11AF00A6B190 /* DChildViewController.m in Sources */,
@@ -3157,211 +3155,213 @@
 				788113CE21996A3A00D1630D /* SubInheritableSharedInstanceClass.m in Sources */,
 				781495A92140D82600D0F2BC /* MantleViewController.m in Sources */,
 				1562F31623F96BDC0009FCEA /* HUDHomeViewController.m in Sources */,
+				15DBE16D24349D76009287C5 /* CJSliderPopover.m in Sources */,
 				7808D59321703C33007FC851 /* ChangeEnvironmentViewController.m in Sources */,
 				783A4A19219BC73500CBF4FC /* NSObject+CJSharedInstance.m in Sources */,
+				15DBE17124349D76009287C5 /* CJBaseUISlider.m in Sources */,
 				800E07E42016CCF500799B78 /* DeviceInfoViewController.m in Sources */,
 				80FF91341FC5668700E437CF /* NSDictionary+CJConsoleLog.m in Sources */,
 				788113C5219958FF00D1630D /* InheritableSharedInstanceClass.m in Sources */,
+				15DBE14424349D75009287C5 /* CJKeyboardAvoidingScrollView.m in Sources */,
 				1562F38723FD2FC70009FCEA /* APPUIKitSetting.m in Sources */,
 				787FDB5820500B01008A46E3 /* TextFieldViewController.m in Sources */,
 				1562F31923F96BDC0009FCEA /* CHUDChildViewController.m in Sources */,
-				1562F2C723F5DBF40009FCEA /* UIView+CJPopupInView.m in Sources */,
 				789A4EE021FAAC76001528B9 /* CJBaseTableViewCell+ConfigureForDataModel.m in Sources */,
 				78A621E72135C925004DA046 /* DemoSuspendWindowRootViewController.m in Sources */,
 				8060C48C20E0D5EF0093B14E /* AccuracyStringViewController.m in Sources */,
-				1562F2CA23F5DBF40009FCEA /* UIView+CJKeepBounds.m in Sources */,
-				1562F2CE23F5DBF40009FCEA /* UIView+CJExclusiveTouch.m in Sources */,
+				15DBE15324349D76009287C5 /* UIView+CJRounderCorner.m in Sources */,
 				7856F97021F9D2C5004AF751 /* BaseTableViewCellViewController.m in Sources */,
 				787FDB9820500B5C008A46E3 /* ShimmeringSwitchSlider.m in Sources */,
 				7856F72921F4E790004AF751 /* TestDataUtil.m in Sources */,
 				789C448121F07F6C00181144 /* ImageSizeViewController.m in Sources */,
 				78B6C2D92159D1F100D5864E /* DemoBusFlightModel.m in Sources */,
-				1562F2B623F5DBF40009FCEA /* UIImage+CJCreate.m in Sources */,
+				15DBE14824349D76009287C5 /* CJLabel.m in Sources */,
 				80FF902A1FC5649E00E437CF /* ThirdPartyHomeViewController.m in Sources */,
 				78FCF5532306A9BA00D275F9 /* CJDemoPopupView.m in Sources */,
+				15DBE13E24349D75009287C5 /* UIImage+CJMakeCircle.m in Sources */,
 				1562F31823F96BDC0009FCEA /* BHUDChildViewController.m in Sources */,
 				787C287F23223DAA00AF84F4 /* DemoEasyModel.m in Sources */,
 				78B6C2DF2159D20000D5864E /* DemoUsePermissionModel.m in Sources */,
+				15DBE16F24349D76009287C5 /* CJRangeSliderControl.m in Sources */,
 				78575C8A2257242100925842 /* TestTextFieldOffsetViewController.m in Sources */,
+				15DBE17524349D76009287C5 /* CJSearchBar.m in Sources */,
 				7808319222DC65DD00F36576 /* WelcomeViewController.m in Sources */,
+				15DBE16224349D76009287C5 /* UIViewController+CJSystemComposeView.m in Sources */,
 				1562F30023F945F20009FCEA /* TSToast.m in Sources */,
+				15DBE16024349D76009287C5 /* CJBaseTableViewCell.m in Sources */,
 				15A7680C23FD966B00358B42 /* TSButtonFactory.m in Sources */,
 				78B6C2E32159D6BC00D5864E /* DemoBusStationModel.m in Sources */,
 				15C970BE23DB5AEA008D81B0 /* UIAlertUtil.m in Sources */,
 				8050038A211C3A29002A2306 /* NSObjectCJHelperViewController.m in Sources */,
 				80500389211C3A29002A2306 /* HelperHomeViewController.m in Sources */,
-				1562F2E623F5DBF40009FCEA /* CJPlayerSlider.m in Sources */,
+				15DBE15924349D76009287C5 /* UIView+CJShake.m in Sources */,
 				808E3C472109C5B0009E3924 /* StringEventViewController.m in Sources */,
+				15DBE15024349D76009287C5 /* UITextField+CJAddInputAccessoryView.m in Sources */,
 				801F75DC20A040D800A2E027 /* BBXDUserNameTextField.m in Sources */,
 				80FF90AE1FC5649F00E437CF /* EasyScaleHeadView.m in Sources */,
-				1562F2CB23F5DBF40009FCEA /* UIView+CJDragAction.m in Sources */,
+				15DBE13B24349D75009287C5 /* UIImage+CJChangeColor.m in Sources */,
 				78E1895D2177835700B8781A /* ViewHomeViewController.m in Sources */,
+				15DBE16924349D76009287C5 /* UITableView+CJEmptyView.m in Sources */,
 				7852D9DA216EFFBE00E50A39 /* LockGateKeeperViewController.m in Sources */,
+				15DBE14224349D75009287C5 /* UIImage+CJFixOrientation.m in Sources */,
 				80FF90B11FC5649F00E437CF /* NavigationBarChangePositonViewController.m in Sources */,
 				7850B71420937E85008F4A21 /* WelcomePopupView.m in Sources */,
 				1562F32D23F9852C0009FCEA /* BackFromSelfHUDViewController.m in Sources */,
 				7808318F22DC4ECD00F36576 /* WelcomeDataModel.m in Sources */,
 				78B6C2E02159D20000D5864E /* DemoUser.m in Sources */,
-				1562F2B523F5DBF40009FCEA /* UIImage+CJTransformSize.m in Sources */,
-				1562F2BD23F5DBF40009FCEA /* CJLabel.m in Sources */,
 				782ACC98223C0E220041B642 /* CodeScrollViewController1.m in Sources */,
 				78E1899E2177874B00B8781A /* SliderHomeViewController.m in Sources */,
 				78E18952217778D900B8781A /* NavigationBarHomeViewController.m in Sources */,
 				80D0120F210336E100D1EDF0 /* ChangeViewController.m in Sources */,
-				1562F2F323F5DBF40009FCEA /* UITextField+CJSelectedTextRange.m in Sources */,
 				15F42727242B7D5300ED2E4C /* AppInfo.m in Sources */,
+				15DBE14024349D75009287C5 /* UIImage+CJTransformSize.m in Sources */,
+				15DBE17824349D76009287C5 /* CJTextField.m in Sources */,
 				80FF91A01FC5682B00E437CF /* ProcessLineViewController.m in Sources */,
+				15DBE17A24349D76009287C5 /* UITextField+CJPadding.m in Sources */,
 				1562F31423F96BDC0009FCEA /* SelfHUDDismissViewController.m in Sources */,
-				1562F2C323F5DBF40009FCEA /* UIColor+CJHex.m in Sources */,
 				1562F32423F978190009FCEA /* SingleHUDViewController.m in Sources */,
-				1562F2D623F5DBF40009FCEA /* CJBaseTableViewCell.m in Sources */,
+				15DBE16C24349D76009287C5 /* CJSliderThumb.m in Sources */,
 				787FDB8620500B5C008A46E3 /* SliderViewController.m in Sources */,
+				15DBE16B24349D76009287C5 /* CJSwitchSlider.m in Sources */,
+				15DBE16324349D76009287C5 /* UIViewController+CJCustomBackBarButtonItem.m in Sources */,
 				7850B70020937C5A008F4A21 /* DragViewController.m in Sources */,
-				1562F2E023F5DBF40009FCEA /* CJSwitchSliderStatusModel.m in Sources */,
 				1562F37923F9BA660009FCEA /* JSONRefreshViewController.m in Sources */,
 				80FF90A41FC5649F00E437CF /* HomeViewController.m in Sources */,
 				800E07E52016CCF500799B78 /* DeviceInfo.m in Sources */,
-				1562F2B323F5DBF40009FCEA /* UIImage+CJMakeCircle.m in Sources */,
 				80FF90B61FC5649F00E437CF /* CJMJRefreshViewController.m in Sources */,
 				80238A602111966B008EB1D5 /* NavigationBarRemoveUnderlineViewController.m in Sources */,
 				8060C48320E0D0B30093B14E /* CJDistanceUtil.m in Sources */,
-				1562F2BC23F5DBF40009FCEA /* UIWindow+CJSnapshot.m in Sources */,
 				7856F96921F9B2DF004AF751 /* AuthorizationCJHelperViewController.m in Sources */,
-				1562F2E223F5DBF40009FCEA /* CJSliderThumb.m in Sources */,
 				78AB83A621B7CE4500853E21 /* PresentAViewController.m in Sources */,
 				781C736C21BA61480090080C /* TestValueChangeTableViewCell.m in Sources */,
 				7856F72A21F4E790004AF751 /* DemoInfo.m in Sources */,
 				1562F31723F96BDC0009FCEA /* AHUDChildViewController.m in Sources */,
+				15DBE17624349D76009287C5 /* UITextField+CJTextChangeBlock.m in Sources */,
 				78AB83C221B96D7000853E21 /* DemoTextFieldFactory.m in Sources */,
 				7808D5B62170919A007FC851 /* LoginChangeEnvironmentViewController.m in Sources */,
+				15DBE13C24349D75009287C5 /* UIImage+CJBlur.m in Sources */,
 				78B6C2D82159D1F100D5864E /* DemoBusFlightStationModel.m in Sources */,
 				80FF909E1FC5649F00E437CF /* NestedXibSubViewA.m in Sources */,
 				78C8148D216E11AF00A6B190 /* AChildViewController.m in Sources */,
 				7808318722DC116700F36576 /* GifViewController.m in Sources */,
+				15DBE15524349D76009287C5 /* UIView+CJDragAction.m in Sources */,
 				15F4272A242B7E2800ED2E4C /* TSAlertManager.m in Sources */,
-				1562F2C623F5DBF40009FCEA /* UITextField+CJAddInputAccessoryView.m in Sources */,
 				1562F37623F9B8C80009FCEA /* BaseRefreshViewController.m in Sources */,
 				1562F1FF23F5C0770009FCEA /* TSAlertUtil.m in Sources */,
 				800F3B652011899400A5C326 /* ToastViewController.m in Sources */,
-				1562F2CC23F5DBF40009FCEA /* UIView+CJAnimation.m in Sources */,
 				78B6C2E62159D6E900D5864E /* DemoBusStationLocationModel.m in Sources */,
 				788113CB21996A2600D1630D /* SubNormalSharedInstanceClass.m in Sources */,
 				80FF91951FC5682B00E437CF /* FoundationHomeViewController.m in Sources */,
+				15DBE17B24349D76009287C5 /* UITextField+CJSelectedTextRange.m in Sources */,
 				78293F0A21FC2B9C00F70F43 /* CodeScrollViewController3.m in Sources */,
+				15DBE15124349D76009287C5 /* UIView+CJPopupInView.m in Sources */,
 				7875C58D231CF77900076A00 /* BackCustomItemViewController.m in Sources */,
-				1562F2BA23F5DBF40009FCEA /* UIScrollView+CJKeyboardAvoiding.m in Sources */,
-				1562F2B823F5DBF40009FCEA /* CJKeyboardAvoidingTableView.m in Sources */,
 				789C443C21EECEE800181144 /* CJAppVersionUtil.m in Sources */,
 				788113C22199583000D1630D /* NormalSharedInstanceClass.m in Sources */,
 				15C970DE23DB6768008D81B0 /* TSActionSheetUtil.m in Sources */,
-				1562F2E523F5DBF40009FCEA /* CJRangeSliderControl.m in Sources */,
-				1562F2C223F5DBF40009FCEA /* UIButton+CJMoreProperty.m in Sources */,
+				15DBE14724349D76009287C5 /* UIWindow+CJSnapshot.m in Sources */,
+				15DBE15A24349D76009287C5 /* CJTableViewHeaderFooterView.m in Sources */,
+				15DBE14A24349D76009287C5 /* UIButton+CJStructure.m in Sources */,
 				78A621DC2135C713004DA046 /* DemoSuspendWindow.m in Sources */,
 				78C8148B216E11AF00A6B190 /* BChildViewController.m in Sources */,
+				15DBE17724349D76009287C5 /* UITextField+CJForbidKeyboard.m in Sources */,
 				781989A8225A34C000D01DBC /* CJDemoDateLabel.m in Sources */,
-				1562F2B723F5DBF40009FCEA /* UIImage+CJFixOrientation.m in Sources */,
-				1562F2F123F5DBF40009FCEA /* CJExtraTextTextField.m in Sources */,
+				15DBE14524349D75009287C5 /* UIScrollView+CJKeyboardAvoiding.m in Sources */,
 				7868A06B237056B30013AF4D /* ButtonCategoryViewController.m in Sources */,
-				1562F2B423F5DBF40009FCEA /* UIImage+CJBase64.m in Sources */,
 				80FF919A1FC5682B00E437CF /* DateViewController.m in Sources */,
-				1562F2EE23F5DBF40009FCEA /* UITextField+CJTextChangeBlock.m in Sources */,
+				15DBE14924349D76009287C5 /* CJBadgeButton.m in Sources */,
 				7803DAAE22F7D519001E06B7 /* MJExtensionToModelViewController.m in Sources */,
 				78A4E1B42173A0D9005FEADD /* DemoChangeEnvironmentViewModel.m in Sources */,
 				789C447721F07BBC00181144 /* ImageHomeViewController.m in Sources */,
-				1562F2D923F5DBF40009FCEA /* UIViewController+CJCustomBackBarButtonItem.m in Sources */,
 				15F4271F242B7D2A00ED2E4C /* DataEmptyViewFactory.m in Sources */,
 				80FF909A1FC5649F00E437CF /* FloatingWindowViewController.m in Sources */,
+				15DBE17324349D76009287C5 /* CJSwitchView.m in Sources */,
 				7857ABBC2254AA5000B1569C /* CJDemoDateTextField.m in Sources */,
-				1562F2E423F5DBF40009FCEA /* CJSliderControl.m in Sources */,
 				78E189AE21781BE200B8781A /* EdgeLayoutTableViewController.m in Sources */,
-				1562F2DF23F5DBF40009FCEA /* UITableView+CJEmptyView.m in Sources */,
 				808DE5E720DA0586003E08F1 /* CJDecimalUtil.m in Sources */,
-				1562F2E123F5DBF40009FCEA /* CJSwitchSlider.m in Sources */,
+				15DBE14F24349D76009287C5 /* CJDefaultToolbar.m in Sources */,
 				80FF90B01FC5649F00E437CF /* NavigationBarScrollChangeBGViewController.m in Sources */,
 				7832810D1F41AA96008267E0 /* ProcessLineView.m in Sources */,
 				805598B51FF5D612009DC61C /* ValidateStringViewController.m in Sources */,
-				1562F2C123F5DBF40009FCEA /* CJButton.m in Sources */,
 				80FF91971FC5682B00E437CF /* EncryptStringViewController.m in Sources */,
 				789C448521F166FC00181144 /* DemoCacheUtil.m in Sources */,
 				78B6C2E92159D84800D5864E /* DemoBusFlightStationOnOffDetailModel.m in Sources */,
 				78A0D043216B32D100EFAD67 /* BadgeButtonViewController.m in Sources */,
 				80FF91981FC5682B00E437CF /* AttributedStringViewController.m in Sources */,
+				15DBE14324349D75009287C5 /* CJKeyboardAvoidingTableView.m in Sources */,
 				78A4E1D52175EB93005FEADD /* NavigationBarNormalChangeBGViewController.m in Sources */,
+				15DBE17924349D76009287C5 /* CJExtraTextTextField.m in Sources */,
 				154A11252428F84100AD5F9B /* UIViewController+CQProgressHUD.m in Sources */,
-				1562F2C923F5DBF40009FCEA /* UIView+CJRounderCorner.m in Sources */,
-				1562F2C523F5DBF40009FCEA /* CJDefaultToolbar.m in Sources */,
+				15DBE13A24349D75009287C5 /* UIImage+CJRotateAngle.m in Sources */,
 				78514134226854CC0023F0C0 /* ImageGetterViewController.m in Sources */,
-				1562F2D723F5DBF40009FCEA /* UINavigationBar+CJChangeBG.m in Sources */,
 				787FDB6420500B1F008A46E3 /* TextViewController.m in Sources */,
 				780E46051E5DF87B00980127 /* main.m in Sources */,
 				7805E1D72369C5FC00B998EC /* PriceYuanToYuanViewController.m in Sources */,
 				78A621E02135C78B004DA046 /* DemoSuspendWindow+CJSuspendWindowManager.m in Sources */,
-				1562F2BE23F5DBF40009FCEA /* CJBadgeButton.m in Sources */,
-				1562F2D023F5DBF40009FCEA /* CJTableViewHeaderFooterView.m in Sources */,
 				783281041F4198BC008267E0 /* CustomTripProgressView.m in Sources */,
 				8060C48020E0D0630093B14E /* CJMoneyUtil.m in Sources */,
 				80582FA120C121B500C01225 /* ImageRotateViewController.m in Sources */,
 				781C736921BA5E140090080C /* NSCalendarCJHelperViewController.m in Sources */,
-				1562F2E323F5DBF40009FCEA /* CJSliderPopover.m in Sources */,
 				808BF3242019C3E900511F7C /* YunUncaughtExceptionHandler.m in Sources */,
 				787FDB8520500B5C008A46E3 /* SwitchSliderViewController.m in Sources */,
 				7850B70220937C5A008F4A21 /* PopupInViewVC.m in Sources */,
-				1562F2F023F5DBF40009FCEA /* CJTextField.m in Sources */,
 				1562F38823FD2FC70009FCEA /* AppDelegate+WindowRootViewController.m in Sources */,
-				1562F2EA23F5DBF40009FCEA /* CJTextView.m in Sources */,
 				78FCF5522306A9BA00D275F9 /* UIView+CJDemoPopupAction.m in Sources */,
 				80500388211C3A29002A2306 /* PresentBaseViewController.m in Sources */,
 				7850B70420937C5A008F4A21 /* ShowDropDownViewController.m in Sources */,
+				15DBE14B24349D76009287C5 /* CJButton.m in Sources */,
 				80D0120A210336B900D1EDF0 /* BeChangeViewController.m in Sources */,
 				80FF909F1FC5649F00E437CF /* NestedXibViewController.m in Sources */,
-				1562F2F223F5DBF40009FCEA /* UITextField+CJPadding.m in Sources */,
 				787FDB5620500B01008A46E3 /* SearchBarViewController.m in Sources */,
 				1562F20223F5C8130009FCEA /* CJBaseAlertView+TSPopupAction.m in Sources */,
 				80FF91941FC5682B00E437CF /* TypeConvertViewController.m in Sources */,
-				1562F2E823F5DBF40009FCEA /* CJAdsorbModel.m in Sources */,
-				1562F2DE23F5DBF40009FCEA /* UIViewController+CJSystemBackButtonHandler.m in Sources */,
 				7808D5B921709E6B007FC851 /* UIViewController+CJChangeEnvironment.m in Sources */,
 				80FF90A71FC5649F00E437CF /* QRCodeViewController.m in Sources */,
+				15DBE15724349D76009287C5 /* UIView+CJGestureRecognizer.m in Sources */,
 				78B6C2EF2159D8AF00D5864E /* DemoBusPassengerModel.m in Sources */,
 				78293F0D21FC2B9C00F70F43 /* KeyboardAvoidingViewController.m in Sources */,
 				78C81479216E0DEC00A6B190 /* SystemComposeViewController.m in Sources */,
 				80FF919C1FC5682B00E437CF /* CountDownTimeViewController.m in Sources */,
+				15DBE17224349D76009287C5 /* CJAdsorbModel.m in Sources */,
 				80FF91C51FC581DD00E437CF /* UtilHomeViewController.m in Sources */,
 				7803DAB122F7D578001E06B7 /* MJExtensionToJSONViewController.m in Sources */,
 				787FDB5A20500B01008A46E3 /* ColorViewController.m in Sources */,
-				1562F2CD23F5DBF40009FCEA /* UIView+CJGestureRecognizer.m in Sources */,
 				80FF91351FC5668700E437CF /* NSArray+CJConsoleLog.m in Sources */,
-				1562F2D823F5DBF40009FCEA /* UIViewController+CJSystemComposeView.m in Sources */,
 				7880E6F5213A9E84009C9BCF /* CJRandomNameUtil.m in Sources */,
 				7857ABB8225482D200B1569C /* CJDemoDatePickerView.m in Sources */,
-				1562F2B223F5DBF40009FCEA /* UIImage+CJSplitImageIntoTwoParts.m in Sources */,
 				7808318C22DC492E00F36576 /* WelcomeView.m in Sources */,
+				15DBE15424349D76009287C5 /* UIView+CJKeepBounds.m in Sources */,
+				15DBE16824349D76009287C5 /* UIViewController+CJSystemBackButtonHandler.m in Sources */,
+				15DBE16E24349D76009287C5 /* CJSliderControl.m in Sources */,
 				788113C82199631A00D1630D /* PerfectSharedInstanceClass.m in Sources */,
 				7850B70720937C5A008F4A21 /* ShowExtendViewVC.m in Sources */,
 				78E189A221778A4000B8781A /* AutoLayoutHomeViewController.m in Sources */,
 				78575C872257237900925842 /* TestTextFieldOffsetTableViewCell.m in Sources */,
 				80FF91531FC5668700E437CF /* PrivateSetting.m in Sources */,
+				15DBE16A24349D76009287C5 /* CJSwitchSliderStatusModel.m in Sources */,
 				78E189A5217791D200B8781A /* TranslucentLayoutViewController.m in Sources */,
-				1562F2BF23F5DBF40009FCEA /* UIButton+CJStructure.m in Sources */,
+				15DBE13D24349D75009287C5 /* UIImage+CJSplitImageIntoTwoParts.m in Sources */,
+				15DBE17424349D76009287C5 /* CJTextView.m in Sources */,
+				15DBE17024349D76009287C5 /* CJPlayerSlider.m in Sources */,
 				1562F38923FD2FC70009FCEA /* AppDelegate.m in Sources */,
 				154A11242428F84100AD5F9B /* TSHUDUtil.m in Sources */,
 				78C8148A216E11AF00A6B190 /* FChildViewController.m in Sources */,
+				15DBE14E24349D76009287C5 /* UISearchBar+CJAddInputAccessoryView.m in Sources */,
+				15DBE15224349D76009287C5 /* UIView+CJShowExtendView.m in Sources */,
 				784C87FF216F2B1D00AFEE7D /* SemaphoreGateKeeperViewController.m in Sources */,
-				1562F2AF23F5DBF40009FCEA /* UIImage+CJRotateAngle.m in Sources */,
 				7875C58F231CF77900076A00 /* BackSystemItemViewController.m in Sources */,
 				80FF90B41FC5649F00E437CF /* ButtonStructureViewController.m in Sources */,
 				80FF90AF1FC5649F00E437CF /* NavigationBarBaseViewController.m in Sources */,
-				1562F2B123F5DBF40009FCEA /* UIImage+CJBlur.m in Sources */,
 				8008D7D220E5CF5700F98EF6 /* CallSystemViewController.m in Sources */,
+				15DBE14C24349D76009287C5 /* UIButton+CJMoreProperty.m in Sources */,
+				15DBE14D24349D76009287C5 /* UIColor+CJHex.m in Sources */,
 				78E189A8217796DF00B8781A /* EdgeLayoutViewController.m in Sources */,
 				781C737721BA6A170090080C /* TestValueChangeModel.m in Sources */,
 				78C8148E216E11AF00A6B190 /* Home1.m in Sources */,
+				15DBE13F24349D75009287C5 /* UIImage+CJBase64.m in Sources */,
 				78E189AB21781BD000B8781A /* TranslucentLayoutTableViewController.m in Sources */,
 				7885FC4A2156681F00B97DAA /* UIView+CJPopupInSuspendWindow.m in Sources */,
-				1562F2ED23F5DBF40009FCEA /* CJSearchBar.m in Sources */,
-				1562F2C823F5DBF40009FCEA /* UIView+CJShowExtendView.m in Sources */,
 				800E07E12016CCF500799B78 /* DataUtilViewController.m in Sources */,
-				1562F2BB23F5DBF40009FCEA /* CJUIKitConstant.m in Sources */,
 				78C81489216E11AF00A6B190 /* CChildViewController.m in Sources */,
 				80FF919E1FC5682B00E437CF /* OtherHomeViewController.m in Sources */,
 				80D71EA92090277700D2DB68 /* AlertHomeViewController.m in Sources */,

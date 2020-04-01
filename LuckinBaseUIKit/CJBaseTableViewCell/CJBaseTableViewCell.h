@@ -11,7 +11,7 @@
 #ifdef TEST_CJBASEUIKIT_POD
 #import "CJBadgeButton.h"
 #else
-#import <CJBaseUIKit/CJBadgeButton.h>
+#import <LuckinBaseUIKit/CJBadgeButton.h>
 #endif
 
 @class CJBaseTableViewCell;

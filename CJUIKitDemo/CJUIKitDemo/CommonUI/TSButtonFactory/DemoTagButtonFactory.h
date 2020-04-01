@@ -15,9 +15,9 @@
 #import "UIColor+CJHex.h"
 #import "CJBadgeButton.h"
 #else
-#import <CJBaseUIKit/UIButton+CJMoreProperty.h>
-#import <CJBaseUIKit/UIColor+CJHex.h>
-#import <CJBaseUIKit/CJBadgeButton.h>
+#import <LuckinBaseUIKit/UIButton+CJMoreProperty.h>
+#import <LuckinBaseUIKit/UIColor+CJHex.h>
+#import <LuckinBaseUIKit/CJBadgeButton.h>
 #endif
 
 @interface DemoTagButtonFactory : NSObject

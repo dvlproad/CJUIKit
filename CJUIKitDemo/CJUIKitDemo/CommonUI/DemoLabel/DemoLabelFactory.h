@@ -12,7 +12,7 @@
 #ifdef TEST_CJBASEUIKIT_POD
 #import "CJLabel.h"
 #else
-#import <CJBaseUIKit/CJLabel.h>
+#import <LuckinBaseUIKit/CJLabel.h>
 #endif
 
 

@@ -28,8 +28,8 @@
     */
     HomeViewController *homeViewController = [[HomeViewController alloc] init];
     homeViewController.view.backgroundColor = [UIColor whiteColor];
-    homeViewController.navigationItem.title = NSLocalizedString(@"CJBaseUIKit首页", nil);
-    homeViewController.tabBarItem.title = NSLocalizedString(@"CJBaseUIKit", nil);
+    homeViewController.navigationItem.title = NSLocalizedString(@"LuckinBaseUIKit首页", nil);
+    homeViewController.tabBarItem.title = NSLocalizedString(@"LuckinBaseUIKit", nil);
     homeViewController.tabBarItem.image = [[UIImage imageNamed:@"icons8-home"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     //homeViewController. = @"10";
     UINavigationController *homeNavigationController = [[UINavigationController alloc] initWithRootViewController:homeViewController];

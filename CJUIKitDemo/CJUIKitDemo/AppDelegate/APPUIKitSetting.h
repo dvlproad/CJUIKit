@@ -11,7 +11,7 @@
 #ifdef TEST_CJBASEUIKIT_POD
 #import "UIColor+CJHex.h"
 #else
-#import <CJBaseUIKit/UIColor+CJHex.h>
+#import <LuckinBaseUIKit/UIColor+CJHex.h>
 #endif
 
 

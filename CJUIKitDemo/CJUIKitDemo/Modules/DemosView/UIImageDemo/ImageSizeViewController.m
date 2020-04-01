@@ -10,7 +10,7 @@
 #ifdef TEST_CJBASEUIKIT_POD
 #import "UIImage+CJTransformSize.h"
 #else
-#import <CJBaseUIKit/UIImage+CJTransformSize.h>
+#import <LuckinBaseUIKit/UIImage+CJTransformSize.h>
 #endif
 
 #import "DemoCacheUtil.h"

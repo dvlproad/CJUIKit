@@ -19,8 +19,8 @@
 #import "UIColor+CJHex.h"
 //#import "TSAlertUtil.h"
 #else
-#import <CJBaseUIKit/UIColor+CJHex.h>
-//#import <CJBaseUIKit/TSAlertUtil.h>
+#import <LuckinBaseUIKit/UIColor+CJHex.h>
+//#import <LuckinBaseUIKit/TSAlertUtil.h>
 #endif
 
 #import "DemoLabelFactory.h"
