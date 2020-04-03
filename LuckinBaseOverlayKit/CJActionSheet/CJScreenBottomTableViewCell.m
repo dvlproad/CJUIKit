@@ -86,7 +86,7 @@
         _mainTitleLabel = [[UILabel alloc] init];
         _mainTitleLabel.textAlignment = NSTextAlignmentCenter;
         _mainTitleLabel.font = [UIFont systemFontOfSize:14];
-        _mainTitleLabel.textColor = [CJBaseOverlayThemeManager serviceThemeModel].textMainColor;
+        _mainTitleLabel.textColor = [CJBaseOverlayThemeManager serviceThemeModel].commonThemeModel.textMainColor;
     }
     return _mainTitleLabel;
 }
@@ -96,7 +96,7 @@
     if (_subTitleLabel == nil) {
         _subTitleLabel = [[UILabel alloc] init];
         _subTitleLabel.font = [UIFont systemFontOfSize:10];
-        _subTitleLabel.textColor = [CJBaseOverlayThemeManager serviceThemeModel].textAssistColor;
+        _subTitleLabel.textColor = [CJBaseOverlayThemeManager serviceThemeModel].commonThemeModel.textAssistColor;
     }
     return _subTitleLabel;
 }
@@ -105,7 +105,7 @@
 - (UIView *)bottomLineView {
     if (_bottomLineView == nil) {
         _bottomLineView = [[UIView alloc] initWithFrame:CGRectZero];
-        _bottomLineView.backgroundColor = [CJBaseOverlayThemeManager serviceThemeModel].separateLineColor;
+        _bottomLineView.backgroundColor = [CJBaseOverlayThemeManager serviceThemeModel].commonThemeModel.separateLineColor;
     }
     return _bottomLineView;
 }

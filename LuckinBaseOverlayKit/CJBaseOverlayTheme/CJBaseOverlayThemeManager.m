@@ -36,4 +36,14 @@
     return [CJBaseOverlayThemeManager sharedInstance].serviceThemeModel;
 }
 
+
+///**
+// *  获取overlay当前公共的themeModel
+// *
+// *  @return overlay当前公共的themeModel
+// */
+//+ (CJOverlayCommonThemeModel *)serviceOverlayCommonThemeModel {
+//    return [CJBaseOverlayThemeManager sharedInstance].serviceThemeModel.commonThemeModel;
+//}
+
 @end

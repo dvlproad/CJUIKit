@@ -105,6 +105,7 @@ PODS:
   - LuckinBaseEffectKit/CJRefreshWithJSON (0.0.2):
     - lottie-ios (~> 2.5.3)
     - Masonry
+    - MJRefresh
   - LuckinBaseEffectKit/CJScaleHeadView (0.0.2)
   - LuckinBaseOverlayKit (0.2.1):
     - LuckinBaseOverlayKit/CJActionSheet (= 0.2.1)
@@ -241,7 +242,7 @@ SPEC CHECKSUMS:
   FLAnimatedImage: 4a0b56255d9b05f18b6dd7ee06871be5d3b89e31
   IQKeyboardManager: 6194101620b73af5e67900b8f89707a99de0b804
   lottie-ios: a50d5c0160425cd4b01b852bb9578963e6d92d31
-  LuckinBaseEffectKit: d69df2e00ae9423d882921e6410203aa1ee755cd
+  LuckinBaseEffectKit: 6fbf952cc298eab761c49d140cdd94341b661050
   LuckinBaseOverlayKit: 559b960391da624e95805bd2533027610bbf6942
   Mantle: 2fa750afa478cd625a94230fbf1c13462f29395b
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
