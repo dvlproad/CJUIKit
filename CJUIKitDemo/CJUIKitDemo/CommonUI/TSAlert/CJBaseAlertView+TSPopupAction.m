@@ -26,7 +26,7 @@
     };
     self.alertDismissHandle = alertDismissHandle;
     
-    UIColor *blankBGColor = [CJBaseOverlayThemeManager serviceThemeModel].blankBGColor;
+    UIColor *blankBGColor = [CJBaseOverlayThemeManager serviceThemeModel].commonThemeModel.blankBGColor;
     
     CGFloat fixHeight = [self calculateAlertHeightWithShouldAutoFitHeight:shouldFitHeight];
     

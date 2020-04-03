@@ -9,7 +9,7 @@
 #import "ToastViewController.h"
 #import <CJBaseEffectKit/CJMJRefreshNormalHeader.h>
 #import "CJToast.h"
-#import "UIViewController+CJToast.h"
+#import <CJBaseOverlayKit/UIViewController+CJChrysanthemumHUD.h>
 
 @interface ToastViewController ()  {
     

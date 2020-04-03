@@ -3,7 +3,7 @@
   "version": "0.0.2",
   "summary": "自定义的基础效果UI",
   "homepage": "https://github.com/dvlproad/CJUIKit",
-  "description": "- LuckinBaseUIKit/CJRefreshView：刷新\n- LuckinBaseUIKit/CJRefreshWithJSON：使用json动画的刷新\n- LuckinBaseUIKit/CJMJRefreshComponent：已包含pod 'MJRefresh'\n- LuckinBaseUIKit/CJDataEmptyView：空视图(处理数据为空、网络加载失败等情况)\n- LuckinBaseUIKit/CJScaleHeadView：个人中心头部的缩放视图\n\n  A longer description of CJBaseEffectKit in Markdown format.\n\n  * Think: Why did you write this? What is the focus? What does it do?\n  * CocoaPods will be using this to generate tags, and improve search results.\n  * Try to keep it short, snappy and to the point.\n  * Finally, don't worry about the indent, CocoaPods strips it!",
+  "description": "- CJBaseUIKit/CJRefreshView：刷新\n- CJBaseUIKit/CJRefreshWithJSON：使用json动画的刷新\n- CJBaseUIKit/CJMJRefreshComponent：已包含pod 'MJRefresh'\n- CJBaseUIKit/CJDataEmptyView：空视图(处理数据为空、网络加载失败等情况)\n- CJBaseUIKit/CJScaleHeadView：个人中心头部的缩放视图\n\n  A longer description of CJBaseEffectKit in Markdown format.\n\n  * Think: Why did you write this? What is the focus? What does it do?\n  * CocoaPods will be using this to generate tags, and improve search results.\n  * Try to keep it short, snappy and to the point.\n  * Finally, don't worry about the indent, CocoaPods strips it!",
   "license": "MIT",
   "authors": {
     "dvlproad": ""
@@ -23,6 +23,9 @@
       "source_files": "CJBaseEffectKit/CJRefreshWithJSON/**/*.{h,m}",
       "dependencies": {
         "Masonry": [
+
+        ],
+        "MJRefresh": [
 
         ],
         "lottie-ios": [

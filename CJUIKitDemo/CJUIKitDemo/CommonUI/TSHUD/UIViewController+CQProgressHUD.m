@@ -9,7 +9,7 @@
 #import "UIViewController+CQProgressHUD.h"
 #import <objc/runtime.h>
 #import <CJBaseOverlayKit/UIViewController+CJProgressHUD.h>
-#import <CJBaseOverlayKit/UIViewController+CJToast.h>
+#import <CJBaseOverlayKit/UIViewController+CJChrysanthemumHUD.h>
 
 
 @interface UIViewController () {

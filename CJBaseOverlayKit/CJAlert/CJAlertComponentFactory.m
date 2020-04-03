@@ -218,7 +218,7 @@
     }];
     
     UIView *horizontalLine = [[UIView alloc] init];
-    horizontalLine.backgroundColor = [CJBaseOverlayThemeManager serviceThemeModel].separateLineColor;
+    horizontalLine.backgroundColor = [CJBaseOverlayThemeManager serviceThemeModel].commonThemeModel.separateLineColor;
     [bottomButtonView addSubview:horizontalLine];
     [horizontalLine mas_makeConstraints:^(MASConstraintMaker *make) {
         make.leading.trailing.mas_equalTo(bottomButtonView);
@@ -268,7 +268,7 @@
         //bottomButtons
         UIView *bottomButtonView = bottomButtonsModel.bottomButtonView;
         
-        UIColor *separateLineColor = [CJBaseOverlayThemeManager serviceThemeModel].separateLineColor;    //分割线颜色
+        UIColor *separateLineColor = [CJBaseOverlayThemeManager serviceThemeModel].commonThemeModel.separateLineColor;    //分割线颜色
         UIView *horizontalLine = [[UIView alloc] init];
         horizontalLine.backgroundColor = separateLineColor;
         [bottomButtonView addSubview:horizontalLine];

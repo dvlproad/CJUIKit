@@ -35,7 +35,7 @@
    paragraphStyle.lineBreakMode = NSLineBreakByCharWrapping;
    paragraphStyle.lineSpacing = 5;
    [self addTitleWithText:title font:[UIFont boldSystemFontOfSize:15.0] textAlignment:NSTextAlignmentCenter margin:titleLabelLeftOffset paragraphStyle:paragraphStyle];
-    self.titleLabel.textColor = [CJBaseOverlayThemeManager serviceThemeModel].textMainColor;
+    self.titleLabel.textColor = [CJBaseOverlayThemeManager serviceThemeModel].commonThemeModel.textMainColor;
 }
 
 

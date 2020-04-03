@@ -17,8 +17,8 @@
 + (UIButton *)okButtonWithTitle:(NSString *)okButtonTitle
                          handle:(void(^)(UIButton *button))okHandle
 {
-    UIColor *okButtonEnableTitleColor = [CJBaseOverlayThemeManager serviceThemeModel].themeColor;
-    UIColor *okButtondisableTitleColor = [CJBaseOverlayThemeManager serviceThemeModel].themeDisabledColor;
+    UIColor *okButtonEnableTitleColor = [CJBaseOverlayThemeManager serviceThemeModel].commonThemeModel.themeColor;
+    UIColor *okButtondisableTitleColor = [CJBaseOverlayThemeManager serviceThemeModel].commonThemeModel.themeDisabledColor;
     
     
     UIButton *okButton = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -52,7 +52,7 @@
 + (UIButton *)cancelButtonWithTitle:(NSString *)cancelButtonTitle
                              handle:(void(^)(UIButton *button))cancelHandle
 {
-    UIColor *cancelButtonEnableTitleColor = [CJBaseOverlayThemeManager serviceThemeModel].text666Color;
+    UIColor *cancelButtonEnableTitleColor = [CJBaseOverlayThemeManager serviceThemeModel].commonThemeModel.text666Color;
 //    UIColor *cancelButtondisableTitleColor = [CJBaseOverlayThemeManager serviceThemeModel].text666Color, 0.6);
     
     UIButton *cancelButton = [self okButtonWithTitle:cancelButtonTitle handle:cancelHandle];
