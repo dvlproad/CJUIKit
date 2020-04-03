@@ -53,6 +53,7 @@ Pod::Spec.new do |s|
     # ss.resources = "LuckinBaseEffectKit/CJRefreshWithJSON/**/*.{png,xib}"
     
     ss.dependency 'Masonry'
+    ss.dependency 'MJRefresh'
     ss.dependency 'lottie-ios', '~> 2.5.3'
   end
 
