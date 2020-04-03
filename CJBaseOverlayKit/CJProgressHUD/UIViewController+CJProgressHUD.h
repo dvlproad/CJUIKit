@@ -20,13 +20,13 @@ NS_ASSUME_NONNULL_BEGIN
 
 /*
 /// 上传过程中显示开始上传的进度提示
-- (void)cjdemo_showStartProgressMessage:(NSString * _Nullable)startProgressMessage;
+- (void)cq_showStartProgressMessage:(NSString * _Nullable)startProgressMessage;
 
 /// 上传过程中显示正在上传的进度提示
-- (void)cjdemo_showProgressingMessage:(NSString *)progressingMessage;
+- (void)cq_showProgressingMessage:(NSString *)progressingMessage;
 
 /// 上传过程中显示结束上传的进度提示
-- (void)cjdemo_showEndProgressMessage:(NSString *)endProgressMessage isSuccess:(BOOL)isSuccess;
+- (void)cq_showEndProgressMessage:(NSString *)endProgressMessage isSuccess:(BOOL)isSuccess;
 */
 
 @end

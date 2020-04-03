@@ -48,17 +48,17 @@
 
 /*
 /// 上传过程中显示开始上传的进度提示
-- (void)cjdemo_showStartProgressMessage:(NSString * _Nullable)startProgressMessage {
+- (void)cq_showStartProgressMessage:(NSString * _Nullable)startProgressMessage {
     [self cj_showChrysanthemumHUDWithMessage:startProgressMessage animated:YES];
 }
 
 /// 上传过程中显示正在上传的进度提示
-- (void)cjdemo_showProgressingMessage:(NSString *)progressingMessage {
+- (void)cq_showProgressingMessage:(NSString *)progressingMessage {
     [self cj_updateChrysanthemumHUDWithMessage:progressingMessage];
 }
 
 /// 上传过程中显示结束上传的进度提示
-- (void)cjdemo_showEndProgressMessage:(NSString *)endProgressMessage isSuccess:(BOOL)isSuccess {
+- (void)cq_showEndProgressMessage:(NSString *)endProgressMessage isSuccess:(BOOL)isSuccess {
     [self cj_updateChrysanthemumHUDWithMessage:endProgressMessage];
     if (isSuccess) {
         [self cj_hideChrysanthemumHUDWithAnimated:YES afterDelay:0.35];

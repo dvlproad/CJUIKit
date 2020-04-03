@@ -6,11 +6,11 @@ Pod::Spec.new do |s|
   s.homepage     = "https://github.com/dvlproad/CJUIKit"
 
   s.description  = <<-DESC
-                 - LuckinBaseUIKit/CJRefreshView：刷新
-                 - LuckinBaseUIKit/CJRefreshWithJSON：使用json动画的刷新
-                 - LuckinBaseUIKit/CJMJRefreshComponent：已包含pod 'MJRefresh'
-                 - LuckinBaseUIKit/CJDataEmptyView：空视图(处理数据为空、网络加载失败等情况)
-                 - LuckinBaseUIKit/CJScaleHeadView：个人中心头部的缩放视图
+                 - CJBaseUIKit/CJRefreshView：刷新
+                 - CJBaseUIKit/CJRefreshWithJSON：使用json动画的刷新
+                 - CJBaseUIKit/CJMJRefreshComponent：已包含pod 'MJRefresh'
+                 - CJBaseUIKit/CJDataEmptyView：空视图(处理数据为空、网络加载失败等情况)
+                 - CJBaseUIKit/CJScaleHeadView：个人中心头部的缩放视图
 
                    A longer description of CJBaseEffectKit in Markdown format.
 
