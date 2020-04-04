@@ -29,6 +29,7 @@ PODS:
   - CJBaseEffectKit/CJRefreshWithJSON (0.0.2):
     - lottie-ios (~> 2.5.3)
     - Masonry
+    - MJRefresh
   - CJBaseEffectKit/CJScaleHeadView (0.0.2)
   - CJBaseHelper (0.1.4):
     - CJBaseHelper/AuthorizationCJHelper (= 0.1.4)
@@ -49,24 +50,25 @@ PODS:
   - CJBaseHelper/NSOperationQueueCJHelper (0.1.4)
   - CJBaseHelper/UIViewControllerCJHelper (0.1.4)
   - CJBaseHelper/WebCJHelper (0.1.4)
-  - CJBaseOverlayKit (0.2.0):
-    - CJBaseOverlayKit/CJActionSheet (= 0.2.0)
-    - CJBaseOverlayKit/CJAlert (= 0.2.0)
-    - CJBaseOverlayKit/CJBaseOverlayTheme (= 0.2.0)
-    - CJBaseOverlayKit/CJProgressHUD (= 0.2.0)
-    - CJBaseOverlayKit/CJToast (= 0.2.0)
-  - CJBaseOverlayKit/CJActionSheet (0.2.0):
+  - CJBaseOverlayKit (0.2.1):
+    - CJBaseOverlayKit/CJActionSheet (= 0.2.1)
+    - CJBaseOverlayKit/CJAlert (= 0.2.1)
+    - CJBaseOverlayKit/CJBaseOverlayTheme (= 0.2.1)
+    - CJBaseOverlayKit/CJProgressHUD (= 0.2.1)
+    - CJBaseOverlayKit/CJToast (= 0.2.1)
+  - CJBaseOverlayKit/CJActionSheet (0.2.1):
     - CJBaseOverlayKit/CJBaseOverlayTheme
     - Masonry
-  - CJBaseOverlayKit/CJAlert (0.2.0):
+  - CJBaseOverlayKit/CJAlert (0.2.1):
     - CJBaseOverlayKit/CJBaseOverlayTheme
     - Masonry
-  - CJBaseOverlayKit/CJBaseOverlayTheme (0.2.0)
-  - CJBaseOverlayKit/CJProgressHUD (0.2.0):
+  - CJBaseOverlayKit/CJBaseOverlayTheme (0.2.1)
+  - CJBaseOverlayKit/CJProgressHUD (0.2.1):
     - CJBaseOverlayKit/CJBaseOverlayTheme
     - lottie-ios (~> 2.5.3)
     - Masonry
-  - CJBaseOverlayKit/CJToast (0.2.0):
+    - MBProgressHUD
+  - CJBaseOverlayKit/CJToast (0.2.1):
     - CJBaseOverlayKit/CJBaseOverlayTheme
     - MBProgressHUD
   - CJBaseUIKit (0.6.0):
@@ -288,7 +290,7 @@ DEPENDENCIES:
   - SVProgressHUD
 
 SPEC REPOS:
-  https://gitee.com/dvlproad/dvlproadSpecs:
+  https://gitee.com/dvlproad/dvlproadSpecs.git:
     - IjinbuNetwork
   https://github.com/CocoaPods/Specs.git:
     - AFNetworking
@@ -330,9 +332,9 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
-  CJBaseEffectKit: 5befb0111e9d73af7973be02943ac805452d5eee
+  CJBaseEffectKit: 6a9e0180f8bcff9a10b72080b0aa224b1ccb05d9
   CJBaseHelper: dd715e18591da9df5d06364098300591220f0535
-  CJBaseOverlayKit: 614d88cb16de0d34e6286a3fe4d5431444867fe8
+  CJBaseOverlayKit: c692f9eaaecc926949b1d57757ab47cccc19b78f
   CJBaseUIKit: 8a34464da479a1d198ef9582c5966c84f032827e
   CJBaseUtil: 1bbf8d5f831dc12ae4bb06c8b5326bd39f3522e1
   CJComplexUIKit: d6ca4fdf1c397155fe2b6cbb33ba71091c49c7d0
