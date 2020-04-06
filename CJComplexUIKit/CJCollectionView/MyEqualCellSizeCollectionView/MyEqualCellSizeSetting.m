@@ -16,91 +16,25 @@
         self.extralItemSetting = CJExtralItemSettingNone;
         self.maxDataModelShowCount = NSIntegerMax;
         //NSLog(@"maxDataModelShowCount = %zd", self.maxDataModelShowCount);
+        
+        
+        //flowLayout.headerReferenceSize = CGSizeMake(110, 135);
+        _minimumInteritemSpacing = 10;
+        _minimumLineSpacing = 15;
+        _sectionInset = UIEdgeInsetsMake(10, 10, 10, 10);
+        
+        //以下值必须二选一设置（默认cellWidthFromFixedWidth设置后，另外一个自动失效）
+        _cellWidthFromPerRowMaxShowCount = 4;
+        //_cellWidthFromFixedWidth = 50;
+        
+        //以下值，可选设置
+        //_cellHeightFromFixedHeight = 30;
+        //_cellHeightFromPerColumnMaxShowCount = 1;
+        
+        //_maxDataModelShowCount = 5;
+        //_extralItemSetting = CJExtralItemSettingLeading;
     }
     return self;
 }
-
-
-- (BOOL)isExtraItemIndexPath:(NSIndexPath *)indexPath dataModels:(NSArray *)dataModels {
-    BOOL isExtraItem = NO;
-    
-    CJExtralItemSetting extralItemSetting = self.extralItemSetting;
-    switch (extralItemSetting) {
-        case CJExtralItemSettingLeading:
-        {
-            if (indexPath.row >= 1) {
-                isExtraItem = NO;
-            } else {
-                isExtraItem = YES;
-            }
-            break;
-        }
-        case CJExtralItemSettingTailing:
-        {
-            if (indexPath.row < dataModels.count) {
-                isExtraItem = NO;
-            } else {
-                isExtraItem = YES;
-            }
-            break;
-        }
-        case CJExtralItemSettingNone:
-        default:
-        {
-            isExtraItem = NO;
-            break;
-        }
-    }
-    
-    return isExtraItem;
-}
-
-- (NSInteger)getCellCountByDataModels:(NSArray *)dataModels {
-    NSInteger dataModelCount = dataModels.count;
-    
-    CJExtralItemSetting extralItemSetting = self.extralItemSetting;
-    switch (extralItemSetting) {
-        case CJExtralItemSettingLeading:
-        case CJExtralItemSettingTailing:
-        {
-            if (dataModels.count < self.maxDataModelShowCount) {
-                return dataModelCount + 1;
-            } else {
-                return dataModelCount;
-            }
-            
-            break;
-        }
-        case CJExtralItemSettingNone:
-        default:
-        {
-            return dataModelCount;
-            break;
-        }
-    }
-}
-
-- (id)getDataModelAtIndexPath:(NSIndexPath *)indexPath dataModels:(NSArray *)dataModels {
-    id dataModle = nil;
-    
-    CJExtralItemSetting extralItemSetting = self.extralItemSetting;
-    switch (extralItemSetting) {
-        case CJExtralItemSettingLeading:
-        {
-            dataModle = [dataModels objectAtIndex:indexPath.item-1];
-            break;
-        }
-        case CJExtralItemSettingTailing:
-        case CJExtralItemSettingNone:
-        default:
-        {
-            dataModle = [dataModels objectAtIndex:indexPath.item];
-            break;
-        }
-    }
-    
-    return dataModle;
-}
-
 
 @end

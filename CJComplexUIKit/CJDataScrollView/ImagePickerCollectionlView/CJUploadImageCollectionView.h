@@ -16,6 +16,9 @@
 #import <CJMedia/CJImageUploadFileModelsOwner.h>
 #import <CJMedia/CJVideoUploadFileModelsOwner.h>
 
+#import "MyEqualCellSizeCollectionViewDelegate.h"
+#import "MyEqualCellSizeCollectionViewDataSource.h"
+
 typedef NS_ENUM(NSUInteger, CJMediaType) {
     CJMediaTypeImage,
     CJMediaTypeVideo
@@ -32,8 +35,20 @@ typedef NS_ENUM(NSUInteger, CJUploadActionType) {
 @interface CJUploadImageCollectionView : MyEqualCellSizeCollectionView <UIImagePickerControllerDelegate, UINavigationControllerDelegate> {
     
 }
+@property (nonatomic, strong) MyEqualCellSizeCollectionViewDelegate *equalCellSizeCollectionViewDelegate;
+@property (nonatomic, strong) MyEqualCellSizeCollectionViewDataSource *equalCellSizeCollectionViewDataSource;
+
+//@property (nonatomic, strong) NSMutableArray<NSString *> *dataModels;/**< 数据源 */
+//@property (nonatomic, assign) DataCellActionType dataCellActionType;/**< 当前状态dataCell点击执行的操作是 */
+@property (nonatomic, strong) NSIndexPath *alwaysAloneIndexPath;/**< 与其他不共存的indexPath */
+
+//UICollectionUpdateAction
+
+
+
 @property (nonatomic, strong) NSMutableArray *dataModels;
 //创建上传文件到服务器的方法的代码块要实现的效果为：给item设置上传请求，并将上传请求的各个时刻信息momentInfo①保存到该item上，②同时利用这些momentInfo设置uploadProgressView。所以如下
+//@property (nonatomic, assign) NSInteger maxDataModelShowCount;
 
 @property (nonatomic, assign) CJUploadActionType uploadActionType;  /**< 上传操作 TODO: */
 @property (nonatomic, copy) NSURLSessionDataTask * (^createDetailedUploadRequestBlock)(NSArray<CJUploadFileModel *> *uploadFileModels, CJUploadFileModelsOwner *itemThatSaveUploadInfo, void(^uploadInfoChangeBlock)(CJUploadFileModelsOwner *item));    /**< 用来执行生成上传请求的代码块：其是一个用"要上传的数据uploadFileModels"、"上传时刻信息的保存位置itemThatSaveUploadInfo"、"上传时刻信息变化的触发方法uploadInfoChangeBlock"这些参数来创建得到上传请求的代码块，结果返回创建的请求任务DataTask */

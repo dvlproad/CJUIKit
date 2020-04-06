@@ -55,7 +55,6 @@
             CJModuleModel *MyEqualCellSizeCollectionViewModule = [[CJModuleModel alloc] init];
             MyEqualCellSizeCollectionViewModule.title = @"MyEqualCellSizeCollectionView(等cell大小)";
             MyEqualCellSizeCollectionViewModule.classEntry = [MyEqualCellSizeCollectionViewController class];
-            MyEqualCellSizeCollectionViewModule.isCreateByXib = YES;
             [sectionDataModel.values addObject:MyEqualCellSizeCollectionViewModule];
         }
         {

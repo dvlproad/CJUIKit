@@ -1,8 +1,8 @@
 //
 //  CJUploadImageCollectionView.m
-//  CJComplexUIKitDemo
+//  CJUIKitDemo
 //
-//  Created by ciyouzen on 2017/1/19.
+//  Created by ciyouzen on 2017/9/11.
 //  Copyright © 2017年 dvlproad. All rights reserved.
 //
 
@@ -10,31 +10,32 @@
 #import "CJUploadImageCollectionView+Tap.h"
 #import "CJUploadCollectionViewCell.h"
 
+#import "UICollectionView+CJSelect.h"
+
+
+
 static NSString * const CJUploadCollectionViewCellID = @"CJUploadCollectionViewCell";
 static NSString * const CJUploadCollectionViewCellAddID = @"CJUploadCollectionViewCellAdd";
 
-@interface CJUploadImageCollectionView () <UICollectionViewDataSource> {
+@interface CJUploadImageCollectionView () {
     
 }
 
+
 @end
 
+
 @implementation CJUploadImageCollectionView
+
 
 - (void)commonInit {
     [super commonInit];
     
-    self.dataModels = [[NSMutableArray alloc] init];
+    self.backgroundColor = [UIColor clearColor];
     
-    /*
-    {
-        CJImageUploadFileModelsOwner *item = [[CJImageUploadFileModelsOwner alloc] init];
-        item.image = [UIImage imageNamed:@"CJAvatar.png"];
-        [self.dataModels addObject:item];
-    }
-    */
-    MyEqualCellSizeSetting *equalCellSizeSetting = [[MyEqualCellSizeSetting alloc] init];
     //flowLayout.headerReferenceSize = CGSizeMake(110, 135);
+    
+    MyEqualCellSizeSetting *equalCellSizeSetting = [[MyEqualCellSizeSetting alloc] init];
     equalCellSizeSetting.minimumInteritemSpacing = 10;
     equalCellSizeSetting.minimumLineSpacing = 15;
     equalCellSizeSetting.sectionInset = UIEdgeInsetsMake(10, 10, 10, 10);
@@ -42,41 +43,55 @@ static NSString * const CJUploadCollectionViewCellAddID = @"CJUploadCollectionVi
     //以下值必须二选一设置（默认cellWidthFromFixedWidth设置后，另外一个自动失效）
     equalCellSizeSetting.cellWidthFromPerRowMaxShowCount = 4;
     //equalCellSizeSetting.cellWidthFromFixedWidth = 50;
-    
+
     //以下值，可选设置
     //equalCellSizeSetting.cellHeightFromFixedHeight = 100;
     //equalCellSizeSetting.cellHeightFromPerColumnMaxShowCount = 2;
     equalCellSizeSetting.maxDataModelShowCount = 5;
     equalCellSizeSetting.extralItemSetting = CJExtralItemSettingTailing;
     
-    self.equalCellSizeSetting = equalCellSizeSetting;
     
+    //以下值，可选设置
     self.allowsMultipleSelection = YES; //是否打开多选
     
-    
-    
+    /* 设置Register的Cell或Nib */
     CJUploadCollectionViewCell *registerCell = [[CJUploadCollectionViewCell alloc] init];
-    
     [self registerClass:[registerCell class] forCellWithReuseIdentifier:CJUploadCollectionViewCellID];
     [self registerClass:[registerCell class] forCellWithReuseIdentifier:CJUploadCollectionViewCellAddID];
-    
-    /*
-    CJFullBottomCollectionViewCell *registerCell = [[CJFullBottomCollectionViewCell alloc] init];
-    [self registerClass:[registerCell class] forCellWithReuseIdentifier:@"cell"];
-    [self registerClass:[registerCell class] forCellWithReuseIdentifier:@"addCell"];
-    */
+
     
     __weak typeof(self)weakSelf = self;
     
-
+    /* 创建DataSource */
+    MyEqualCellSizeCollectionViewDataSource *equalCellSizeCollectionViewDataSource = [[MyEqualCellSizeCollectionViewDataSource alloc] initWithEqualCellSizeSetting:equalCellSizeSetting cellForItemAtIndexPathBlock:^UICollectionViewCell *(UICollectionView *collectionView, NSIndexPath *indexPath, BOOL isExtralItem) {
+        if (!isExtralItem) {
+            CJUploadCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:CJUploadCollectionViewCellID forIndexPath:indexPath];
+            [self __operateDataCell:cell withIndexPath:indexPath isSettingOperate:YES];
+            
+            [self uploadCell:cell withDataModelIndexPath:indexPath]; //上传操作
+            
+            [self deleteCell:cell inCollectionView:collectionView withDataModelIndexPath:indexPath];
+            
+            return cell;
+            
+        } else {
+            /*
+            CJFullBottomCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"addCell" forIndexPath:indexPath];
+            */
+            CJUploadCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:CJUploadCollectionViewCellAddID forIndexPath:indexPath];
+            
+            cell.cjImageView.image = [UIImage imageNamed:@"cjCollectionViewCellAdd"];
+            [cell.cjDeleteButton setImage:nil forState:UIControlStateNormal];
+            
+            return cell;
+        }
+    }];
+    self.equalCellSizeCollectionViewDataSource = equalCellSizeCollectionViewDataSource;
     
-    /* 设置DataSource */
-    self.dataSource = self;
-    
-    /* 设置Delegate */
-    self.didTapItemBlock = ^(UICollectionView *collectionView, NSIndexPath *indexPath, BOOL isDeselect) {
-        MyEqualCellSizeSetting *equalCellSizeSetting = weakSelf.equalCellSizeSetting;
-        BOOL isExtralItem = [equalCellSizeSetting isExtraItemIndexPath:indexPath dataModels:weakSelf.dataModels];
+    /* 创建Delegate (UICollectionViewDelegateFlowLayout也需实现UICollectionViewDelegate) */
+    MyEqualCellSizeCollectionViewDelegate *delegate = [[MyEqualCellSizeCollectionViewDelegate alloc] initWithEqualCellSizeSetting:equalCellSizeSetting didTapItemBlock:^(UICollectionView *collectionView, NSIndexPath *indexPath, BOOL isDeselect, MyEqualCellSizeSetting *equalCellSizeSetting) {
+        BOOL isExtralItem = [weakSelf.equalCellSizeCollectionViewDataSource isExtraItemIndexPath:indexPath];
+        
         if (!isExtralItem) {
             
             //NSLog(@"当前点击的Item为数据源中的第%zd个", indexPath.item);
@@ -114,76 +129,63 @@ static NSString * const CJUploadCollectionViewCellAddID = @"CJUploadCollectionVi
             
             [weakSelf didTapToAddMediaUploadItemAction];
         }
-    };
-}
-
-#pragma mark - UICollectionViewDataSource
-- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
-    return 1;
-}
-
-- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    NSInteger cellCount = [self.equalCellSizeSetting getCellCountByDataModels:self.dataModels];
-    return cellCount;
-}
-
-- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView
-                  cellForItemAtIndexPath:(NSIndexPath *)indexPath
-{
-    MyEqualCellSizeSetting *equalCellSizeSetting = self.equalCellSizeSetting;
-    BOOL isExtralItem = [equalCellSizeSetting isExtraItemIndexPath:indexPath dataModels:self.dataModels];
+    }];
+    self.equalCellSizeCollectionViewDelegate = delegate;
     
-    if (!isExtralItem) {
-        /*
-        CJFullBottomCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"cell" forIndexPath:indexPath];
-        */
-        CJUploadCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:CJUploadCollectionViewCellID forIndexPath:indexPath];
-        [self operateCell:cell withDataModelIndexPath:indexPath isSettingOperate:YES];
-        
-        [self uploadCell:cell withDataModelIndexPath:indexPath]; //上传操作
-        
-        [self deleteCell:cell inCollectionView:collectionView withDataModelIndexPath:indexPath];
-        
-        return cell;
-        
-    } else {
-        /*
-        CJFullBottomCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"addCell" forIndexPath:indexPath];
-        */
-        CJUploadCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:CJUploadCollectionViewCellAddID forIndexPath:indexPath];
-        
-        cell.cjImageView.image = [UIImage imageNamed:@"cjCollectionViewCellAdd"];
-        [cell.cjDeleteButton setImage:nil forState:UIControlStateNormal];
-        
-        return cell;
-    }
+    /* 设置DataSource和Delegate */
+    //self.dataSource = self;
+    //self.delegate = self;
+    self.dataSource = self.equalCellSizeCollectionViewDataSource;
+    self.delegate = self.equalCellSizeCollectionViewDelegate;
+    
+    self.dataModels = [[NSMutableArray alloc] init];
+    self.equalCellSizeCollectionViewDataSource.dataModels = self.dataModels;
 }
-    
-    
 
-/**
+
+
+//#pragma mark - Setter
+//- (void)setDataModels:(NSMutableArray<NSString *> *)dataModels {
+//    _dataModels = dataModels;
+//    
+//}
+
+#pragma mark - Update
+/// 更新额外cell的样式即位置，(默认不添加）
+- (void)updateExtralItemSetting:(CJExtralItemSetting)extralItemSetting {
+    [self.equalCellSizeCollectionViewDataSource updateExtralItemSetting:extralItemSetting];
+    [self.equalCellSizeCollectionViewDelegate updateExtralItemSetting:extralItemSetting];
+}
+
+
+#pragma mark - Private Method
+/*
  *  设置或者更新Cell
  *
  *  @param cell             要设置或者更新的Cell
- *  @param indexPath        用于获取数据的indexPath(此值一般情况下与cell的indexPath相等)
+ *  @param indexPath        要设置或者更新的Cell的indexPath
  *  @param isSettingOperate 是否是设置，如果否则为更新
  */
-- (void)operateCell:(CJUploadCollectionViewCell *)cell withDataModelIndexPath:(NSIndexPath *)indexPath isSettingOperate:(BOOL)isSettingOperate {
+- (void)__operateDataCell:(CJUploadCollectionViewCell *)dataCell
+            withIndexPath:(NSIndexPath *)indexPath
+         isSettingOperate:(BOOL)isSettingOperate
+{
+    CJImageUploadFileModelsOwner *dataModel = [self.equalCellSizeCollectionViewDataSource dataModelAtIndexPath:indexPath];
     
-    CJImageUploadFileModelsOwner *dataModel = [self.equalCellSizeSetting getDataModelAtIndexPath:indexPath dataModels:self.dataModels];
     if (isSettingOperate) {
         dataModel.indexPath = indexPath;
     }
     
-    cell.cjImageView.image = [UIImage imageNamed:@"icon"];
-    if (cell.selected) {
-        cell.cjImageView.image = [UIImage imageNamed:@"cjCollectionViewCellAdd"];
-        cell.backgroundColor = [UIColor blueColor];
+    dataCell.cjImageView.image = [UIImage imageNamed:@"icon"];
+    if (dataCell.selected) {
+        dataCell.cjImageView.image = [UIImage imageNamed:@"cjCollectionViewCellAdd"];
+        dataCell.backgroundColor = [UIColor blueColor];
     } else {
-        cell.cjImageView.image = dataModel.image;
-        cell.backgroundColor = [UIColor whiteColor];
+        dataCell.cjImageView.image = dataModel.image;
+        dataCell.backgroundColor = [UIColor whiteColor];
     }
 }
+
 
 
 /**
@@ -205,7 +207,7 @@ static NSString * const CJUploadCollectionViewCellAddID = @"CJUploadCollectionVi
         [myCell.uploadProgressView updateProgressText:momentInfo.uploadStatePromptText progressVaule:momentInfo.progressValue];
     };
     
-    CJImageUploadFileModelsOwner *baseUploadItem = [self.equalCellSizeSetting getDataModelAtIndexPath:indexPath dataModels:self.dataModels];
+    CJImageUploadFileModelsOwner *baseUploadItem = [self.equalCellSizeCollectionViewDataSource dataModelAtIndexPath:indexPath];
     NSArray<CJUploadFileModel *> *uploadModels = baseUploadItem.uploadFileModels;
 
     
@@ -257,7 +259,7 @@ static NSString * const CJUploadCollectionViewCellAddID = @"CJUploadCollectionVi
 - (void)deleteCell:(CJUploadCollectionViewCell *)cell inCollectionView:(UICollectionView *)collectionView withDataModelIndexPath:(NSIndexPath *)indexPath {
     __weak typeof(self)weakSelf = self;
     
-    CJImageUploadFileModelsOwner *baseUploadItem = [self.equalCellSizeSetting getDataModelAtIndexPath:indexPath dataModels:self.dataModels];
+    CJImageUploadFileModelsOwner *baseUploadItem = [self.equalCellSizeCollectionViewDataSource dataModelAtIndexPath:indexPath];
     [cell setDeleteHandle:^(CJUploadCollectionViewCell *baseCell) {
         if (baseUploadItem.operation) { //如果有请求任务，则还应该取消掉该任务
             [baseUploadItem.operation cancel];

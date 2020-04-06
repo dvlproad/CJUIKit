@@ -1,14 +1,14 @@
 //
-//  MyEqualCellSizeCollectionView+Select.h
+//  UICollectionView+CJSelect.h
 //  CJUIKitDemo
 //
 //  Created by ciyouzen on 2017/9/15.
 //  Copyright © 2017年 dvlproad. All rights reserved.
 //
 
-#import "MyEqualCellSizeCollectionView.h"
+#import <UIKit/UIKit.h>
 
-@interface MyEqualCellSizeCollectionView (Select)
+@interface UICollectionView (CJSelect)
 
 #pragma mark - reload
 /**
