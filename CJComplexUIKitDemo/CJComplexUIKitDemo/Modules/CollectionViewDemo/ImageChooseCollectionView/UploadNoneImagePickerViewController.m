@@ -20,7 +20,7 @@
     self.title = NSLocalizedString(@"图片选择", nil);
     
     
-    self.uploadImageCollectionView.belongToViewController = self;
+//    self.uploadImageCollectionView.belongToViewController = self;
     self.uploadImageCollectionView.mediaType = CJMediaTypeImage;
 //    self.uploadImageCollectionView.equalCellSizeSetting.maxDataModelShowCount = 5; //TODO:
     

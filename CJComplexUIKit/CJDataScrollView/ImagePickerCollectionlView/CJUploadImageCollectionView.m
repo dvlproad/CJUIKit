@@ -65,19 +65,12 @@ static NSString * const CJUploadCollectionViewCellAddID = @"CJUploadCollectionVi
     /* 创建DataSource */
     MyEqualCellSizeCollectionViewDataSource *equalCellSizeCollectionViewDataSource = [[MyEqualCellSizeCollectionViewDataSource alloc] initWithEqualCellSizeSetting:equalCellSizeSetting cellForItemAtIndexPathBlock:^UICollectionViewCell *(UICollectionView *collectionView, NSIndexPath *indexPath, BOOL isExtralItem) {
         if (!isExtralItem) {
-            CJUploadCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:CJUploadCollectionViewCellID forIndexPath:indexPath];
-            [self __operateDataCell:cell withIndexPath:indexPath isSettingOperate:YES];
+            CJUploadCollectionViewCell *dataCell = [collectionView dequeueReusableCellWithReuseIdentifier:CJUploadCollectionViewCellID forIndexPath:indexPath];
+            [self __operateDataCell:dataCell withIndexPath:indexPath isSettingOperate:YES];
             
-            [self uploadCell:cell withDataModelIndexPath:indexPath]; //上传操作
-            
-            [self deleteCell:cell inCollectionView:collectionView withDataModelIndexPath:indexPath];
-            
-            return cell;
+            return dataCell;
             
         } else {
-            /*
-            CJFullBottomCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"addCell" forIndexPath:indexPath];
-            */
             CJUploadCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:CJUploadCollectionViewCellAddID forIndexPath:indexPath];
             
             cell.cjImageView.image = [UIImage imageNamed:@"cjCollectionViewCellAdd"];
@@ -176,7 +169,6 @@ static NSString * const CJUploadCollectionViewCellAddID = @"CJUploadCollectionVi
         dataModel.indexPath = indexPath;
     }
     
-    dataCell.cjImageView.image = [UIImage imageNamed:@"icon"];
     if (dataCell.selected) {
         dataCell.cjImageView.image = [UIImage imageNamed:@"cjCollectionViewCellAdd"];
         dataCell.backgroundColor = [UIColor blueColor];
@@ -184,34 +176,26 @@ static NSString * const CJUploadCollectionViewCellAddID = @"CJUploadCollectionVi
         dataCell.cjImageView.image = dataModel.image;
         dataCell.backgroundColor = [UIColor whiteColor];
     }
-}
-
-
-
-/**
- *  完善cell这个view的上传请求
- *
- *  @param cell                 cell
- *  @param indexPath            indexPath
- */
-- (void)uploadCell:(CJUploadCollectionViewCell *)cell withDataModelIndexPath:(NSIndexPath *)indexPath {
+    
+    // 完善cell这个view的上传请求
     if (self.uploadActionType == CJUploadActionTypeNone) {
         return;
     }
+    CJUploadMomentInfo *momentInfo = dataModel.momentInfo;
+    [dataCell.uploadProgressView updateProgressText:momentInfo.uploadStatePromptText progressVaule:momentInfo.progressValue];//调用此方法避免reload时候显示错误
     
-    __weak typeof(self)weakSelf = self;
+    __weak typeof(self)weakCollectionView = self;
     void (^uploadInfoChangeBlock)(CJUploadFileModelsOwner *itemThatSaveUploadInfo) = ^(CJUploadFileModelsOwner *itemThatSaveUploadInfo) {
         CJImageUploadFileModelsOwner *imageItem = (CJImageUploadFileModelsOwner *)itemThatSaveUploadInfo;
-        CJUploadCollectionViewCell *myCell = (CJUploadCollectionViewCell *)[weakSelf cellForItemAtIndexPath:imageItem.indexPath];
+        CJUploadCollectionViewCell *myCell = (CJUploadCollectionViewCell *)[weakCollectionView cellForItemAtIndexPath:imageItem.indexPath];
         CJUploadMomentInfo *momentInfo = itemThatSaveUploadInfo.momentInfo;
         [myCell.uploadProgressView updateProgressText:momentInfo.uploadStatePromptText progressVaule:momentInfo.progressValue];
     };
     
-    CJImageUploadFileModelsOwner *baseUploadItem = [self.equalCellSizeCollectionViewDataSource dataModelAtIndexPath:indexPath];
-    NSArray<CJUploadFileModel *> *uploadModels = baseUploadItem.uploadFileModels;
+    NSArray<CJUploadFileModel *> *uploadModels = dataModel.uploadFileModels;
 
     
-    CJUploadFileModelsOwner *saveUploadInfoToItem = baseUploadItem;
+    CJUploadFileModelsOwner *saveUploadInfoToItem = dataModel;
     
     
     
@@ -238,7 +222,7 @@ static NSString * const CJUploadCollectionViewCellAddID = @"CJUploadCollectionVi
     
     //cjReUploadHandle
     __weak typeof(saveUploadInfoToItem)weakItem = saveUploadInfoToItem;
-    [cell.uploadProgressView setCjReUploadHandle:^(UIView *uploadProgressView) {
+    [dataCell.uploadProgressView setCjReUploadHandle:^(UIView *uploadProgressView) {
         __strong __typeof(weakItem)strongItem = weakItem;
         
         [strongItem.operation cancel];
@@ -250,31 +234,22 @@ static NSString * const CJUploadCollectionViewCellAddID = @"CJUploadCollectionVi
         strongItem.operation = newOperation;
     }];
     
-    
-    CJUploadMomentInfo *momentInfo = saveUploadInfoToItem.momentInfo;
-    [cell.uploadProgressView updateProgressText:momentInfo.uploadStatePromptText progressVaule:momentInfo.progressValue];//调用此方法避免reload时候显示错误
-}
-
-///完善cell的deleteButton的操作
-- (void)deleteCell:(CJUploadCollectionViewCell *)cell inCollectionView:(UICollectionView *)collectionView withDataModelIndexPath:(NSIndexPath *)indexPath {
-    __weak typeof(self)weakSelf = self;
-    
-    CJImageUploadFileModelsOwner *baseUploadItem = [self.equalCellSizeCollectionViewDataSource dataModelAtIndexPath:indexPath];
-    [cell setDeleteHandle:^(CJUploadCollectionViewCell *baseCell) {
-        if (baseUploadItem.operation) { //如果有请求任务，则还应该取消掉该任务
-            [baseUploadItem.operation cancel];
+    //完善cell的deleteButton的操作
+    [dataCell setDeleteHandle:^(CJUploadCollectionViewCell *baseCell) {
+        if (dataModel.operation) { //如果有请求任务，则还应该取消掉该任务
+            [dataModel.operation cancel];
         }
-        NSIndexPath *indexPath = [collectionView indexPathForCell:baseCell];
+        NSIndexPath *indexPath = [weakCollectionView indexPathForCell:baseCell];
         
-        __strong __typeof(weakSelf)strongSelf = weakSelf;
-        [strongSelf.dataModels removeObjectAtIndex:indexPath.item];
-        NSInteger currentCount = strongSelf.dataModels.count;
-        NSInteger oldCount = [strongSelf numberOfItemsInSection:0];
+        __strong __typeof(weakCollectionView)strongCollectionView = weakCollectionView;
+        [strongCollectionView.dataModels removeObjectAtIndex:indexPath.item];
+        NSInteger currentCount = strongCollectionView.dataModels.count;
+        NSInteger oldCount = [strongCollectionView numberOfItemsInSection:0];
         //NSLog(@"currentCount = %zd, oldCount = %zd", currentCount, oldCount);
         if (currentCount == oldCount) {
-            [collectionView deleteItemsAtIndexPaths:@[indexPath]];
+            [weakCollectionView deleteItemsAtIndexPaths:@[indexPath]];
         } else {
-            [collectionView reloadData];
+            [weakCollectionView reloadData];
         }
     }];
 }

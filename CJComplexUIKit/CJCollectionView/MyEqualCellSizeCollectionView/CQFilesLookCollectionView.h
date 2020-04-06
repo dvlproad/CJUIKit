@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <Masonry/Masonry.h>
 #import "MyEqualCellSizeCollectionView.h"
+#import "CJFilesLookDataModel.h"
 
 typedef NS_ENUM(NSUInteger, DataCellActionType) {
     DataCellActionTypeNone = 0,     /**< 不操作 */
@@ -20,9 +21,11 @@ typedef NS_ENUM(NSUInteger, DataCellActionType) {
 @interface CQFilesLookCollectionView : MyEqualCellSizeCollectionView {
     
 }
-@property (nonatomic, strong) NSMutableArray<NSString *> *dataModels;/**< 数据源 */
+@property (nonatomic, strong) NSMutableArray<CJFilesLookDataModel *> *dataModels;/**< 数据源 */
+@property (nonatomic, assign) BOOL isChoosing;  /**< 是否是选择操作，如果否则为只是展示 */
+
 @property (nonatomic, assign) DataCellActionType dataCellActionType;/**< 当前状态dataCell点击执行的操作是 */
-@property (nonatomic, strong) NSIndexPath *alwaysAloneIndexPath;/**< 与其他不共存的indexPath */
+@property (nonatomic, strong) NSIndexPath *alwaysAloneIndexPath;/**< 与其他不共存的indexPath(当且仅当dataCellActionType == DataCellActionTypeSelect的时候才会用到这个值) */
 
 //UICollectionUpdateAction
 

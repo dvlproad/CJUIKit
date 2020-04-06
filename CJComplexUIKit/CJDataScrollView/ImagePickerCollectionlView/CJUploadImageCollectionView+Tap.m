@@ -12,10 +12,13 @@
 #import <MediaPlayer/MediaPlayer.h>
 
 #import "CJChooseFileActionSheetUtil.h"
+#import <CJBaseHelper/UIViewControllerCJHelper.h>
 
 @implementation CJUploadImageCollectionView (Tap)
 
 - (void)didSelectMediaUploadItemAtIndexPath:(NSIndexPath *)indexPath {
+    UIViewController *currentShowingVC = [UIViewControllerCJHelper findCurrentShowingViewController];
+    
     if (self.mediaType == CJMediaTypeVideo) {
         CJImageUploadFileModelsOwner *imageUploadItem = [self.dataModels objectAtIndex:indexPath.row];
         NSString *localPath = [NSHomeDirectory() stringByAppendingPathComponent:imageUploadItem.localRelativePath];
@@ -23,7 +26,7 @@
         MPMoviePlayerViewController *moviePlayerController = [[MPMoviePlayerViewController alloc] initWithContentURL:videoURL];
         [moviePlayerController.moviePlayer prepareToPlay];
         moviePlayerController.moviePlayer.movieSourceType = MPMovieSourceTypeFile;
-        [self.belongToViewController presentMoviePlayerViewControllerAnimated:moviePlayerController];
+        [currentShowingVC presentMoviePlayerViewControllerAnimated:moviePlayerController];
         
     } else {
         for (CJImageUploadFileModelsOwner *imageUploadItem in self.dataModels) {
@@ -37,8 +40,6 @@
 }
 
 - (void)didTapToAddMediaUploadItemAction {
-    NSAssert(self.belongToViewController != nil, @"未设置CJUploadCollectionView的belongToViewController");
-    
     NSInteger maxDataModelShowCount = self.equalCellSizeCollectionViewDataSource.equalCellSizeSetting.maxDataModelShowCount;
     if (self.dataModels.count >= maxDataModelShowCount) {
         //[UIGlobal showMessage:@"图片数量已达上限"];

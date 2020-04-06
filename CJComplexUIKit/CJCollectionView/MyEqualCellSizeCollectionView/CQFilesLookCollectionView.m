@@ -7,7 +7,8 @@
 //
 
 #import "CQFilesLookCollectionView.h"
-#import "CJFullBottomCollectionViewCell.h"
+#import "CQFilesLookCollectionViewCell.h"
+
 #import "MyEqualCellSizeCollectionViewDelegate.h"
 #import "MyEqualCellSizeCollectionViewDataSource.h"
 
@@ -50,7 +51,7 @@
     //self.allowsMultipleSelection = YES; //是否打开多选
     
     /* 设置Register的Cell或Nib */
-    CJFullBottomCollectionViewCell *registerCell = [[CJFullBottomCollectionViewCell alloc] init];
+    CQFilesLookCollectionViewCell *registerCell = [[CQFilesLookCollectionViewCell alloc] init];
     [self registerClass:[registerCell class] forCellWithReuseIdentifier:@"cell"];
     [self registerClass:[registerCell class] forCellWithReuseIdentifier:@"addCell"];
     
@@ -59,15 +60,14 @@
     /* 创建DataSource */
     MyEqualCellSizeCollectionViewDataSource *equalCellSizeCollectionViewDataSource = [[MyEqualCellSizeCollectionViewDataSource alloc] initWithEqualCellSizeSetting:equalCellSizeSetting cellForItemAtIndexPathBlock:^UICollectionViewCell *(UICollectionView *collectionView, NSIndexPath *indexPath, BOOL isExtralItem) {
         if (!isExtralItem) {
-            CJFullBottomCollectionViewCell *dataCell = [collectionView dequeueReusableCellWithReuseIdentifier:@"cell" forIndexPath:indexPath];
+            CQFilesLookCollectionViewCell *dataCell = [collectionView dequeueReusableCellWithReuseIdentifier:@"cell" forIndexPath:indexPath];
             NSLog(@"dataCell.selected = %@", dataCell.selected ? @"YES" : @"NO");
             [weakSelf __operateDataCell:dataCell withIndexPath:indexPath isSettingOperate:YES];
 
             return dataCell;
         } else {
-            CJFullBottomCollectionViewCell *extralCell = [collectionView dequeueReusableCellWithReuseIdentifier:@"addCell" forIndexPath:indexPath];
+            CQFilesLookCollectionViewCell *extralCell = [collectionView dequeueReusableCellWithReuseIdentifier:@"addCell" forIndexPath:indexPath];
             extralCell.cjImageView.image = [UIImage imageNamed:@"cjCollectionViewCellAdd"];
-            [extralCell.cjDeleteButton setImage:nil forState:UIControlStateNormal];
             
             return extralCell;
         }
@@ -99,7 +99,7 @@
                     
                     //对当前的cell进行改变，不要为了更新一个cell的状态，而去调用reload方法，那样消耗太大，即
                     //方法①：可取且最优的方法如下
-                    CJFullBottomCollectionViewCell *dataCell = (CJFullBottomCollectionViewCell *)[collectionView cellForItemAtIndexPath:indexPath];
+                    CQFilesLookCollectionViewCell *dataCell = (CQFilesLookCollectionViewCell *)[collectionView cellForItemAtIndexPath:indexPath];
                     [weakSelf __operateDataCell:dataCell withIndexPath:indexPath isSettingOperate:NO];
                     //方法②：可用有效，但不可取的方法如下
                     //[self reloadDataWithKeepSelectedState:YES];
@@ -120,7 +120,12 @@
 
 
 #pragma mark - Setter
-- (void)setDataModels:(NSMutableArray<NSString *> *)dataModels {
+- (void)setIsChoosing:(BOOL)isChoosing {
+    _isChoosing = isChoosing;
+    [self reloadData];
+}
+
+- (void)setDataModels:(NSMutableArray<CJFilesLookDataModel *> *)dataModels {
     _dataModels = dataModels;
     self.equalCellSizeCollectionViewDataSource.dataModels = dataModels;
 }
@@ -141,23 +146,16 @@
  *  @param indexPath        要设置或者更新的Cell的indexPath
  *  @param isSettingOperate 是否是设置，如果否则为更新
  */
-- (void)__operateDataCell:(CJFullBottomCollectionViewCell *)dataCell
+- (void)__operateDataCell:(CQFilesLookCollectionViewCell *)dataCell
                 withIndexPath:(NSIndexPath *)indexPath
             isSettingOperate:(BOOL)isSettingOperate
 {
-    NSString *dataModel = [self.equalCellSizeCollectionViewDataSource dataModelAtIndexPath:indexPath];
+    CJFilesLookDataModel *dataModel = [self.equalCellSizeCollectionViewDataSource dataModelAtIndexPath:indexPath];
     
     if (isSettingOperate) {
-        dataCell.cjTextLabel.text = dataModel;
-    }
-
-    dataCell.cjImageView.image = [UIImage imageNamed:@"icon"];
-    if (dataCell.selected) {
-        dataCell.cjImageView.image = [UIImage imageNamed:@"cjCollectionViewCellAdd"];
-        dataCell.backgroundColor = [UIColor blueColor];
-    } else {
-        dataCell.cjImageView.image = [UIImage imageNamed:@"icon"];
-        dataCell.backgroundColor = [UIColor whiteColor];
+        dataCell.cjTextLabel.text = dataModel.title;
+        dataCell.cjImageView.image = dataModel.image;
+        dataCell.cjSelectedButton.hidden = !self.isChoosing;
     }
 }
 

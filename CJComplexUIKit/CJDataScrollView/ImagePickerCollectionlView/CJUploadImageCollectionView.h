@@ -55,7 +55,7 @@ typedef NS_ENUM(NSUInteger, CJUploadActionType) {
 
 
 @property (nonatomic, assign) CJMediaType mediaType;
-@property (nonatomic, strong) UIViewController *belongToViewController;
+//@property (nonatomic, strong) UIViewController *belongToViewController;
 
 //image
 @property (nonatomic, copy) void(^pickImageCompleteBlock)(void); /**< 选择完图片后的操作 */

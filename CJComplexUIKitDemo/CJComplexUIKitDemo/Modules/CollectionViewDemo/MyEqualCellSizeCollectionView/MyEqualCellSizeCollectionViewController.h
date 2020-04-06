@@ -7,12 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "CQFilesLookCollectionView.h"
-#import "MyEqualCellSizeCollectionView+Select.h"
 
 @interface MyEqualCellSizeCollectionViewController : UIViewController {
     
 }
-@property (nonatomic, strong) CQFilesLookCollectionView *equalCellSizeCollectionView;
 
 @end

@@ -7,16 +7,23 @@
 //
 
 #import "MyEqualCellSizeCollectionViewController.h"
+
+#import <CJComplexUIKit/CQFilesLookCollectionView.h>
+#import <CJComplexUIKit/UICollectionView+CJSelect.h>
+
 #import "CJFullBottomCollectionViewCell.h"
 
-#import "DemoInfo.h"
 
 #import "TSButtonFactory.h"
+#import "TSToast.h"
+
+#import <CJTS_Base/CJUIKitResoucesUtil.h>
 
 @interface MyEqualCellSizeCollectionViewController () {
     
 }
-
+@property (nonatomic, strong) CQFilesLookCollectionView *equalCellSizeCollectionView;
+@property (nonatomic, assign, readonly) BOOL isChoosing;
 @end
 
 @implementation MyEqualCellSizeCollectionViewController
@@ -25,10 +32,26 @@
     return NO;
 }
 
+- (void)__chooseBarAction:(UIBarButtonItem *)chooseBarButtonItem {
+    _isChoosing = !self.isChoosing;
+    
+    if (_isChoosing) {
+        chooseBarButtonItem.title = @"取消";
+        self.equalCellSizeCollectionView.isChoosing = YES;
+    } else {
+        chooseBarButtonItem.title = @"选择";
+        self.equalCellSizeCollectionView.isChoosing = NO;
+    }
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     self.view.backgroundColor = [UIColor whiteColor];
+    
+    UIBarButtonItem *chooseBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"选择" style:UIBarButtonItemStylePlain target:self action:@selector(__chooseBarAction:)];
+    _isChoosing = NO;
+    self.navigationItem.rightBarButtonItems = @[chooseBarButtonItem];
     
     UIButton *themeBGButton1 = [TSButtonFactory themeBGButton];
     [themeBGButton1 setTitle:@"CJExtralItemSettingNone" forState:UIControlStateNormal];
@@ -81,10 +104,10 @@
     self.equalCellSizeCollectionView.dataCellActionType = DataCellActionTypeSelect;
     self.equalCellSizeCollectionView.alwaysAloneIndexPath = [NSIndexPath indexPathForItem:0 inSection:0];//用于测试"我与其他不共存"
     
-    
-    UIView *buttonsView = [[UIView alloc] init];
-    [self.view addSubview:buttonsView];
-    [buttonsView mas_makeConstraints:^(MASConstraintMaker *make) {
+    // 反选 VS 全选
+    UIView *selectButtonsView = [[UIView alloc] init];
+    [self.view addSubview:selectButtonsView];
+    [selectButtonsView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.mas_equalTo(collectionView.mas_bottom).mas_offset(10);
         make.left.mas_equalTo(self.view).mas_offset(10);
         make.centerX.mas_equalTo(self.view);
@@ -93,31 +116,59 @@
     UIButton *invertselectButton = [TSButtonFactory themeBGButton];
     [invertselectButton setTitle:@"反选" forState:UIControlStateNormal];
     [invertselectButton addTarget:self action:@selector(invertselect:) forControlEvents:UIControlEventTouchUpInside];
-    
-    UIButton *reloadButton = [TSButtonFactory themeBGButton];
-    [reloadButton setTitle:@"reloadData" forState:UIControlStateNormal];
-    [reloadButton addTarget:self action:@selector(reloadCollectionView:) forControlEvents:UIControlEventTouchUpInside];
 
     UIButton *selectAllButton = [TSButtonFactory themeBGButton];
     [selectAllButton setTitle:@"全选" forState:UIControlStateNormal];
     [selectAllButton addTarget:self action:@selector(selectAll:) forControlEvents:UIControlEventTouchUpInside];
-    NSArray *buttons = @[invertselectButton, reloadButton, selectAllButton];
-    for (UIButton *button in buttons) {
-        [buttonsView addSubview:button];
+    NSArray *selectButtons = @[invertselectButton, selectAllButton];
+    for (UIButton *button in selectButtons) {
+        [selectButtonsView addSubview:button];
     }
-    [buttons mas_distributeViewsAlongAxis:MASAxisTypeHorizontal withFixedSpacing:10 leadSpacing:0 tailSpacing:0];
-    [buttons mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.bottom.mas_equalTo(buttonsView);
+    [selectButtons mas_distributeViewsAlongAxis:MASAxisTypeHorizontal withFixedSpacing:10 leadSpacing:0 tailSpacing:0];
+    [selectButtons mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.bottom.mas_equalTo(selectButtonsView);
+    }];
+    
+    // reload 保存已选中 VS 放弃已选中
+    UIView *reloadButtonsView = [[UIView alloc] init];
+    [self.view addSubview:reloadButtonsView];
+    [reloadButtonsView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.mas_equalTo(selectButtonsView.mas_bottom).mas_offset(10);
+        make.left.mas_equalTo(self.view).mas_offset(10);
+        make.centerX.mas_equalTo(self.view);
+        make.height.mas_equalTo(2*44);
+    }];
+    UIButton *reloadKeepSelectedButton = [TSButtonFactory themeBGButton];
+    [reloadKeepSelectedButton setTitle:@"reloadData并保存已选中cell的选中状态" forState:UIControlStateNormal];
+    [reloadKeepSelectedButton addTarget:self action:@selector(reloadCollectionViewWithKeepSelected:) forControlEvents:UIControlEventTouchUpInside];
+    
+    UIButton *reloadGiveupSelectedButton = [TSButtonFactory themeBGButton];
+    [reloadGiveupSelectedButton setTitle:@"reloadData并放弃已选中cell的选中状态" forState:UIControlStateNormal];
+    [reloadGiveupSelectedButton addTarget:self action:@selector(reloadCollectionViewWithGiveupSelected:) forControlEvents:UIControlEventTouchUpInside];
+    
+    NSArray *reloadButtons = @[reloadKeepSelectedButton, reloadGiveupSelectedButton];
+    for (UIButton *button in reloadButtons) {
+        [reloadButtonsView addSubview:button];
+    }
+    [reloadButtons mas_distributeViewsAlongAxis:MASAxisTypeVertical withFixedSpacing:10 leadSpacing:0 tailSpacing:0];
+    [reloadButtons mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.right.mas_equalTo(reloadButtonsView);
     }];
     
     
+    
     UIButton *changeScrollDirectionButton = [TSButtonFactory themeBGButton];
-    [changeScrollDirectionButton setTitle:@"切为竖直滚动" forState:UIControlStateNormal];
-    [changeScrollDirectionButton setTitle:@"切为水平滚动" forState:UIControlStateSelected];
+    [changeScrollDirectionButton setTitle:@"切为水平滚动" forState:UIControlStateNormal];
+    [changeScrollDirectionButton setTitle:@"切为竖直滚动" forState:UIControlStateSelected];
+    if (self.equalCellSizeCollectionView.scrollDirection == UICollectionViewScrollDirectionHorizontal) {
+        changeScrollDirectionButton.selected = YES;
+    } else {
+        changeScrollDirectionButton.selected = NO;
+    }
     [changeScrollDirectionButton addTarget:self action:@selector(changeScrollDirectionToHorizontal:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:changeScrollDirectionButton];
     [changeScrollDirectionButton mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.mas_equalTo(buttonsView.mas_bottom).mas_offset(10);
+        make.top.mas_equalTo(reloadButtonsView.mas_bottom).mas_offset(10);
         make.left.mas_equalTo(themeBGButton1);
         make.centerX.mas_equalTo(themeBGButton1);
         make.height.mas_equalTo(themeBGButton1);
@@ -136,14 +187,130 @@
     }];
         
     
-    NSArray *dataModels = @[@"1", @"2", @"3", @"4", @"5",
-                            @"6", @"7", @"8", @"9", @"10",
-                            @"11", @"12", @"13", @"14", @"15",
-                            @"16", @"17", @"18", @"19", @"20",
-                            @"21", @"22", @"23", @"24", @"25",
-                            ];
-    self.equalCellSizeCollectionView.dataModels = [NSMutableArray arrayWithArray:dataModels];
+    self.equalCellSizeCollectionView.dataModels = [self __getTestDataModels];
     [self.equalCellSizeCollectionView reloadData];
+}
+
+
+/// 获取测试用的数据
+- (NSMutableArray<CJFilesLookDataModel *> *)__getTestDataModels {
+    NSMutableArray<CJFilesLookDataModel *> *dataModels = [[NSMutableArray alloc] init];
+    {
+        CJFilesLookDataModel *dataModel = [[CJFilesLookDataModel alloc] init];
+        dataModel.title = @"1";
+        dataModel.image = [CJUIKitResoucesUtil cjts_image1];
+        [dataModels addObject:dataModel];
+    }
+    {
+        CJFilesLookDataModel *dataModel = [[CJFilesLookDataModel alloc] init];
+        dataModel.title = @"2";
+        dataModel.image = [CJUIKitResoucesUtil cjts_image2];
+        [dataModels addObject:dataModel];
+    }
+    {
+        CJFilesLookDataModel *dataModel = [[CJFilesLookDataModel alloc] init];
+        dataModel.title = @"3";
+        dataModel.image = [CJUIKitResoucesUtil cjts_image3];
+        [dataModels addObject:dataModel];
+    }
+    {
+        CJFilesLookDataModel *dataModel = [[CJFilesLookDataModel alloc] init];
+        dataModel.title = @"4";
+        dataModel.image = [CJUIKitResoucesUtil cjts_image4];
+        [dataModels addObject:dataModel];
+    }
+    {
+        CJFilesLookDataModel *dataModel = [[CJFilesLookDataModel alloc] init];
+        dataModel.title = @"5";
+        dataModel.image = [CJUIKitResoucesUtil cjts_image5];
+        [dataModels addObject:dataModel];
+    }
+    {
+        CJFilesLookDataModel *dataModel = [[CJFilesLookDataModel alloc] init];
+        dataModel.title = @"6";
+        dataModel.image = [CJUIKitResoucesUtil cjts_image6];
+        [dataModels addObject:dataModel];
+    }
+    {
+        CJFilesLookDataModel *dataModel = [[CJFilesLookDataModel alloc] init];
+        dataModel.title = @"7";
+        dataModel.image = [CJUIKitResoucesUtil cjts_image7];
+        [dataModels addObject:dataModel];
+    }
+    {
+        CJFilesLookDataModel *dataModel = [[CJFilesLookDataModel alloc] init];
+        dataModel.title = @"8";
+        dataModel.image = [CJUIKitResoucesUtil cjts_image8];
+        [dataModels addObject:dataModel];
+    }
+    {
+        CJFilesLookDataModel *dataModel = [[CJFilesLookDataModel alloc] init];
+        dataModel.title = @"9";
+        dataModel.image = [CJUIKitResoucesUtil cjts_image9];
+        [dataModels addObject:dataModel];
+    }
+    {
+        CJFilesLookDataModel *dataModel = [[CJFilesLookDataModel alloc] init];
+        dataModel.title = @"10";
+        dataModel.image = [CJUIKitResoucesUtil cjts_image10];
+        [dataModels addObject:dataModel];
+    }
+    {
+        CJFilesLookDataModel *dataModel = [[CJFilesLookDataModel alloc] init];
+        dataModel.title = @"11";
+        dataModel.image = [CJUIKitResoucesUtil cjts_image11];
+        [dataModels addObject:dataModel];
+    }
+    {
+        CJFilesLookDataModel *dataModel = [[CJFilesLookDataModel alloc] init];
+        dataModel.title = @"12";
+        dataModel.image = [CJUIKitResoucesUtil cjts_image12];
+        [dataModels addObject:dataModel];
+    }
+    {
+        CJFilesLookDataModel *dataModel = [[CJFilesLookDataModel alloc] init];
+        dataModel.title = @"13";
+        dataModel.image = [CJUIKitResoucesUtil cjts_image13];
+        [dataModels addObject:dataModel];
+    }
+    {
+        CJFilesLookDataModel *dataModel = [[CJFilesLookDataModel alloc] init];
+        dataModel.title = @"14";
+        dataModel.image = [CJUIKitResoucesUtil cjts_image14];
+        [dataModels addObject:dataModel];
+    }
+    {
+        CJFilesLookDataModel *dataModel = [[CJFilesLookDataModel alloc] init];
+        dataModel.title = @"15";
+        dataModel.image = [CJUIKitResoucesUtil cjts_image15];
+        [dataModels addObject:dataModel];
+    }
+    {
+        CJFilesLookDataModel *dataModel = [[CJFilesLookDataModel alloc] init];
+        dataModel.title = @"16";
+        dataModel.image = [CJUIKitResoucesUtil cjts_image16];
+        [dataModels addObject:dataModel];
+    }
+    {
+        CJFilesLookDataModel *dataModel = [[CJFilesLookDataModel alloc] init];
+        dataModel.title = @"17";
+        dataModel.image = [CJUIKitResoucesUtil cjts_image17];
+        [dataModels addObject:dataModel];
+    }
+    {
+        CJFilesLookDataModel *dataModel = [[CJFilesLookDataModel alloc] init];
+        dataModel.title = @"18";
+        dataModel.image = [CJUIKitResoucesUtil cjts_image18];
+        [dataModels addObject:dataModel];
+    }
+    {
+        CJFilesLookDataModel *dataModel = [[CJFilesLookDataModel alloc] init];
+        dataModel.title = @"19";
+        dataModel.image = [CJUIKitResoucesUtil cjts_image19];
+        [dataModels addObject:dataModel];
+    }
+    
+    return dataModels;
 }
 
 
@@ -172,8 +339,12 @@
 }
 
 ///reload (测试cell的selected状态)
-- (void)reloadCollectionView:(id)sender {
+- (void)reloadCollectionViewWithKeepSelected:(id)sender {
     [self.equalCellSizeCollectionView my_reloadDataWithKeepSelectedState:YES];
+}
+
+- (void)reloadCollectionViewWithGiveupSelected:(id)sender {
+    [self.equalCellSizeCollectionView my_reloadDataWithKeepSelectedState:NO];
 }
 
 - (void)changeScrollDirectionToHorizontal:(UIButton *)button {
