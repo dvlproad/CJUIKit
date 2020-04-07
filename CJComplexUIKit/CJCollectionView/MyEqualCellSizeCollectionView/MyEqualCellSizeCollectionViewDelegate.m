@@ -11,8 +11,6 @@
 @interface MyEqualCellSizeCollectionViewDelegate () {
     
 }
-//必须设置的值
-@property (nonatomic, strong, readonly) MyEqualCellSizeSetting *equalCellSizeSetting; /**< 集合视图的布局设置 */
 
 ///可选：点击Item要执行的方法
 @property (nonatomic, copy) void (^didTapItemBlock)(UICollectionView *collectionView, NSIndexPath *indexPath, BOOL isDeselect, MyEqualCellSizeSetting *equalCellSizeSetting); /**< 包括 didSelectItemAtIndexPath 和didDeselectItemAtIndexPath */

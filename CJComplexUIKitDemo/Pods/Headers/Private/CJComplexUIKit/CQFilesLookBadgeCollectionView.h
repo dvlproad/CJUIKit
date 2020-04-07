@@ -1,0 +1,1 @@
+../../../../../CJComplexUIKit/CJCollectionView/MyEqualCellSizeCollectionView/CQFilesLookBadgeCollectionView.h

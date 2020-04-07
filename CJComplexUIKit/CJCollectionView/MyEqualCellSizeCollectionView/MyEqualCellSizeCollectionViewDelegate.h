@@ -17,6 +17,9 @@
 @interface MyEqualCellSizeCollectionViewDelegate : NSObject <UICollectionViewDelegateFlowLayout> {
     
 }
+//必须设置的值
+@property (nonatomic, strong, readonly) MyEqualCellSizeSetting *equalCellSizeSetting; /**< 集合视图的布局设置 */
+
 /**
  *  初始化delegate类
  *

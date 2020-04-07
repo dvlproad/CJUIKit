@@ -11,6 +11,7 @@
 //UICollectionView
 #import "CvDemo_Complex.h"
 
+#import "LookBadgeCollectionViewController.h"
 #import "MyEqualCellSizeCollectionViewController.h"
 #import "MyEqualCellSizeViewController.h"
 #import "MyCycleADViewController.h"
@@ -52,10 +53,16 @@
             [sectionDataModel.values addObject:complexDemoModule];
         }
         {
-            CJModuleModel *MyEqualCellSizeCollectionViewModule = [[CJModuleModel alloc] init];
-            MyEqualCellSizeCollectionViewModule.title = @"MyEqualCellSizeCollectionView(等cell大小)";
-            MyEqualCellSizeCollectionViewModule.classEntry = [MyEqualCellSizeCollectionViewController class];
-            [sectionDataModel.values addObject:MyEqualCellSizeCollectionViewModule];
+            CJModuleModel *collectionViewModule = [[CJModuleModel alloc] init];
+            collectionViewModule.title = @"LookBadgeCollectionViewController(等cell大小)";
+            collectionViewModule.classEntry = [LookBadgeCollectionViewController class];
+            [sectionDataModel.values addObject:collectionViewModule];
+        }
+        {
+            CJModuleModel *collectionViewModule = [[CJModuleModel alloc] init];
+            collectionViewModule.title = @"MyEqualCellSizeCollectionView(等cell大小)";
+            collectionViewModule.classEntry = [MyEqualCellSizeCollectionViewController class];
+            [sectionDataModel.values addObject:collectionViewModule];
         }
         {
             CJModuleModel *MyEqualCellSizeViewModule = [[CJModuleModel alloc] init];

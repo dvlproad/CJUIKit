@@ -11,13 +11,10 @@
 #import <CJComplexUIKit/CQFilesLookCollectionView.h>
 #import <CJComplexUIKit/UICollectionView+CJSelect.h>
 
-#import "CJFullBottomCollectionViewCell.h"
-
-
 #import "TSButtonFactory.h"
 #import "TSToast.h"
 
-#import <CJTS_Base/CJUIKitResoucesUtil.h>
+#import "TSListDataSourceUtil.h"
 
 @interface MyEqualCellSizeCollectionViewController () {
     
@@ -187,130 +184,8 @@
     }];
         
     
-    self.equalCellSizeCollectionView.dataModels = [self __getTestDataModels];
+    self.equalCellSizeCollectionView.dataModels = [TSListDataSourceUtil __getTestDataModels];
     [self.equalCellSizeCollectionView reloadData];
-}
-
-
-/// 获取测试用的数据
-- (NSMutableArray<CJFilesLookDataModel *> *)__getTestDataModels {
-    NSMutableArray<CJFilesLookDataModel *> *dataModels = [[NSMutableArray alloc] init];
-    {
-        CJFilesLookDataModel *dataModel = [[CJFilesLookDataModel alloc] init];
-        dataModel.title = @"1";
-        dataModel.image = [CJUIKitResoucesUtil cjts_image1];
-        [dataModels addObject:dataModel];
-    }
-    {
-        CJFilesLookDataModel *dataModel = [[CJFilesLookDataModel alloc] init];
-        dataModel.title = @"2";
-        dataModel.image = [CJUIKitResoucesUtil cjts_image2];
-        [dataModels addObject:dataModel];
-    }
-    {
-        CJFilesLookDataModel *dataModel = [[CJFilesLookDataModel alloc] init];
-        dataModel.title = @"3";
-        dataModel.image = [CJUIKitResoucesUtil cjts_image3];
-        [dataModels addObject:dataModel];
-    }
-    {
-        CJFilesLookDataModel *dataModel = [[CJFilesLookDataModel alloc] init];
-        dataModel.title = @"4";
-        dataModel.image = [CJUIKitResoucesUtil cjts_image4];
-        [dataModels addObject:dataModel];
-    }
-    {
-        CJFilesLookDataModel *dataModel = [[CJFilesLookDataModel alloc] init];
-        dataModel.title = @"5";
-        dataModel.image = [CJUIKitResoucesUtil cjts_image5];
-        [dataModels addObject:dataModel];
-    }
-    {
-        CJFilesLookDataModel *dataModel = [[CJFilesLookDataModel alloc] init];
-        dataModel.title = @"6";
-        dataModel.image = [CJUIKitResoucesUtil cjts_image6];
-        [dataModels addObject:dataModel];
-    }
-    {
-        CJFilesLookDataModel *dataModel = [[CJFilesLookDataModel alloc] init];
-        dataModel.title = @"7";
-        dataModel.image = [CJUIKitResoucesUtil cjts_image7];
-        [dataModels addObject:dataModel];
-    }
-    {
-        CJFilesLookDataModel *dataModel = [[CJFilesLookDataModel alloc] init];
-        dataModel.title = @"8";
-        dataModel.image = [CJUIKitResoucesUtil cjts_image8];
-        [dataModels addObject:dataModel];
-    }
-    {
-        CJFilesLookDataModel *dataModel = [[CJFilesLookDataModel alloc] init];
-        dataModel.title = @"9";
-        dataModel.image = [CJUIKitResoucesUtil cjts_image9];
-        [dataModels addObject:dataModel];
-    }
-    {
-        CJFilesLookDataModel *dataModel = [[CJFilesLookDataModel alloc] init];
-        dataModel.title = @"10";
-        dataModel.image = [CJUIKitResoucesUtil cjts_image10];
-        [dataModels addObject:dataModel];
-    }
-    {
-        CJFilesLookDataModel *dataModel = [[CJFilesLookDataModel alloc] init];
-        dataModel.title = @"11";
-        dataModel.image = [CJUIKitResoucesUtil cjts_image11];
-        [dataModels addObject:dataModel];
-    }
-    {
-        CJFilesLookDataModel *dataModel = [[CJFilesLookDataModel alloc] init];
-        dataModel.title = @"12";
-        dataModel.image = [CJUIKitResoucesUtil cjts_image12];
-        [dataModels addObject:dataModel];
-    }
-    {
-        CJFilesLookDataModel *dataModel = [[CJFilesLookDataModel alloc] init];
-        dataModel.title = @"13";
-        dataModel.image = [CJUIKitResoucesUtil cjts_image13];
-        [dataModels addObject:dataModel];
-    }
-    {
-        CJFilesLookDataModel *dataModel = [[CJFilesLookDataModel alloc] init];
-        dataModel.title = @"14";
-        dataModel.image = [CJUIKitResoucesUtil cjts_image14];
-        [dataModels addObject:dataModel];
-    }
-    {
-        CJFilesLookDataModel *dataModel = [[CJFilesLookDataModel alloc] init];
-        dataModel.title = @"15";
-        dataModel.image = [CJUIKitResoucesUtil cjts_image15];
-        [dataModels addObject:dataModel];
-    }
-    {
-        CJFilesLookDataModel *dataModel = [[CJFilesLookDataModel alloc] init];
-        dataModel.title = @"16";
-        dataModel.image = [CJUIKitResoucesUtil cjts_image16];
-        [dataModels addObject:dataModel];
-    }
-    {
-        CJFilesLookDataModel *dataModel = [[CJFilesLookDataModel alloc] init];
-        dataModel.title = @"17";
-        dataModel.image = [CJUIKitResoucesUtil cjts_image17];
-        [dataModels addObject:dataModel];
-    }
-    {
-        CJFilesLookDataModel *dataModel = [[CJFilesLookDataModel alloc] init];
-        dataModel.title = @"18";
-        dataModel.image = [CJUIKitResoucesUtil cjts_image18];
-        [dataModels addObject:dataModel];
-    }
-    {
-        CJFilesLookDataModel *dataModel = [[CJFilesLookDataModel alloc] init];
-        dataModel.title = @"19";
-        dataModel.image = [CJUIKitResoucesUtil cjts_image19];
-        [dataModels addObject:dataModel];
-    }
-    
-    return dataModels;
 }
 
 
