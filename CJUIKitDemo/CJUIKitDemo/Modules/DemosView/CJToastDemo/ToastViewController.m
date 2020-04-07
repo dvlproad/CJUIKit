@@ -9,7 +9,7 @@
 #import "ToastViewController.h"
 #import <CJBaseEffectKit/CJMJRefreshNormalHeader.h>
 #import "CJToast.h"
-#import <CJBaseOverlayKit/UIViewController+CJChrysanthemumHUD.h>
+#import <CJBaseOverlayKit/UIView+CJChrysanthemumHUD.h>
 
 @interface ToastViewController ()  {
     
@@ -113,13 +113,13 @@
             CJModuleModel *toastModule = [[CJModuleModel alloc] init];
             toastModule.title = @"菊花显示3（MBProgressHUD）--封装好的";
             toastModule.actionBlock = ^{
-                [self cj_showChrysanthemumHUDWithMessage:nil animated:YES];
+                [self.view cj_showChrysanthemumHUDWithMessage:nil animated:YES];
                 dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-                    [self cj_updateChrysanthemumHUDWithMessage:@"上传第一张照片成功"];
+                    [self.view cj_updateChrysanthemumHUDWithMessage:@"上传第一张照片成功"];
                     
                     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-                        [self cj_updateChrysanthemumHUDWithMessage:@"恭喜，上传完成！"];
-                        [self cj_hideChrysanthemumHUDWithAnimated:YES afterDelay:1];
+                        [self.view cj_updateChrysanthemumHUDWithMessage:@"恭喜，上传完成！"];
+                        [self.view cj_hideChrysanthemumHUDWithAnimated:YES afterDelay:1];
                     });
                 });
             };
