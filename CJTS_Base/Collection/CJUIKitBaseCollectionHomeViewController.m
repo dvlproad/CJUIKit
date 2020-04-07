@@ -51,7 +51,7 @@
     UICollectionViewLayout *layout = [[UICollectionViewFlowLayout alloc] init];
     MyEqualCellSizeCollectionView *collectionView = [[MyEqualCellSizeCollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:layout];
     collectionView.backgroundColor = [UIColor clearColor];
-    collectionView.equalCellSizeSetting = equalCellSizeSetting;
+//    collectionView.equalCellSizeSetting = equalCellSizeSetting;
     collectionView.scrollDirection = UICollectionViewScrollDirectionVertical;
     
     
@@ -64,13 +64,13 @@
     
     /* 设置Delegate */
     __weak typeof(self)weakSelf = self;
-    collectionView.didTapItemBlock = ^(UICollectionView *collectionView, NSIndexPath *indexPath, BOOL isDeselect) {
-        CJSectionDataModel *sectionDataModel = [weakSelf.sectionDataModels objectAtIndex:indexPath.section];
-        NSArray *dataModels = sectionDataModel.values;
-        CJModuleModel *moduleModel = [dataModels objectAtIndex:indexPath.row];
-        
-        [weakSelf execModuleModel:moduleModel];
-    };
+//    collectionView.didTapItemBlock = ^(UICollectionView *collectionView, NSIndexPath *indexPath, BOOL isDeselect) {
+//        CJSectionDataModel *sectionDataModel = [weakSelf.sectionDataModels objectAtIndex:indexPath.section];
+//        NSArray *dataModels = sectionDataModel.values;
+//        CJModuleModel *moduleModel = [dataModels objectAtIndex:indexPath.row];
+//
+//        [weakSelf execModuleModel:moduleModel];
+//    };
     
     [self.view addSubview:collectionView];
     [collectionView mas_makeConstraints:^(MASConstraintMaker *make) {

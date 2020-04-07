@@ -1,30 +1,29 @@
 //
-//  UIViewController+CJChrysanthemumHUD.m
+//  UIView+CJChrysanthemumHUD.m
 //  CJUIKitDemo
 //
 //  Created by ciyouzen on 2019/4/19.
 //  Copyright © 2019 dvlproad. All rights reserved.
 //
 
-#import "UIViewController+CJChrysanthemumHUD.h"
+#import "UIView+CJChrysanthemumHUD.h"
 #import <objc/runtime.h>
 
-@interface UIViewController () {
+@interface UIView () {
     
 }
 @property (nonatomic, strong, readonly) MBProgressHUD *cjChrysanthemumHUD;  /**< "菊花HUD" */
-//@property (nonatomic, assign, readonly) BOOL isCJChrysanthemumHUDShowing;   /**< 是否"菊花HUD"在显示中 */
 
 @end
 
 
-@implementation UIViewController (CJChrysanthemumHUD)
+@implementation UIView (CJChrysanthemumHUD)
 
 #pragma mark - runtime
 - (MBProgressHUD *)cjChrysanthemumHUD {
     MBProgressHUD *hud = objc_getAssociatedObject(self, @selector(cjChrysanthemumHUD));
     if (hud == nil) {
-        hud = [[MBProgressHUD alloc] initWithView:self.view];
+        hud = [[MBProgressHUD alloc] initWithView:self];
         hud.backgroundView.style = MBProgressHUDBackgroundStyleSolidColor;
         hud.backgroundView.color = [UIColor colorWithWhite:0.f alpha:0.1f];
         hud.contentColor = [UIColor whiteColor]; //等待框文字颜色
@@ -43,7 +42,7 @@
     }
     self.cjChrysanthemumHUD.label.numberOfLines = 0;
     
-    [self.view addSubview:self.cjChrysanthemumHUD];
+    [self addSubview:self.cjChrysanthemumHUD];
     [self.cjChrysanthemumHUD showAnimated:animated];
 }
 

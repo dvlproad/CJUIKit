@@ -8,8 +8,8 @@
 
 #import "UIViewController+CQProgressHUD.h"
 #import <objc/runtime.h>
-#import <LuckinBaseOverlayKit/UIViewController+CJProgressHUD.h>
-#import <LuckinBaseOverlayKit/UIViewController+CJChrysanthemumHUD.h>
+#import <LuckinBaseOverlayKit/UIView+CJProgressHUD.h>
+#import <LuckinBaseOverlayKit/UIView+CJChrysanthemumHUD.h>
 
 
 @interface UIViewController () {
@@ -23,31 +23,31 @@
 /// 显示HUD
 - (void)cq_showProgressHUD {
     NSString *animationNamed = @"loading_tea";
-    [self cj_showProgressHUDWithAnimationNamed:animationNamed];
+    [self.view cj_showProgressHUDWithAnimationNamed:animationNamed showBackground:YES];
 }
 
 /// 隐藏HUD
 - (void)cq_dismissProgressHUD {
-    [self cj_dismissProgressHUD];
+    [self.view cj_dismissProgressHUD];
 }
 
 /// 上传过程中显示开始上传的进度提示
 - (void)cjdemo_showStartProgressMessage:(NSString * _Nullable)startProgressMessage {
-    [self cj_showChrysanthemumHUDWithMessage:startProgressMessage animated:YES];
+    [self.view cj_showChrysanthemumHUDWithMessage:startProgressMessage animated:YES];
 }
 
 /// 上传过程中显示正在上传的进度提示
 - (void)cjdemo_showProgressingMessage:(NSString *)progressingMessage {
-    [self cj_updateChrysanthemumHUDWithMessage:progressingMessage];
+    [self.view cj_updateChrysanthemumHUDWithMessage:progressingMessage];
 }
 
 /// 上传过程中显示结束上传的进度提示
 - (void)cjdemo_showEndProgressMessage:(NSString *)endProgressMessage isSuccess:(BOOL)isSuccess {
-    [self cj_updateChrysanthemumHUDWithMessage:endProgressMessage];
+    [self.view cj_updateChrysanthemumHUDWithMessage:endProgressMessage];
     if (isSuccess) {
-        [self cj_hideChrysanthemumHUDWithAnimated:YES afterDelay:0.35];
+        [self.view cj_hideChrysanthemumHUDWithAnimated:YES afterDelay:0.35];
     } else {
-        [self cj_hideChrysanthemumHUDWithAnimated:YES afterDelay:1];
+        [self.view cj_hideChrysanthemumHUDWithAnimated:YES afterDelay:1];
     }
 }
 

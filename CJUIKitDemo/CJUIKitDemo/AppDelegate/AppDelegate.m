@@ -66,7 +66,7 @@
     // 所有测试
 //    UIViewController *rootViewController = [self getMainRootViewController];
     // 只直接测试某个页面
-    UIViewController *rootViewController = [[UINavigationController alloc] initWithRootViewController:[[NSClassFromString(@"BadgeButtonViewController") alloc] init]];
+    UIViewController *rootViewController = [[UINavigationController alloc] initWithRootViewController:[[NSClassFromString(@"ToastViewController") alloc] init]];
     
     self.window.rootViewController = rootViewController;
     [self.window makeKeyAndVisible];

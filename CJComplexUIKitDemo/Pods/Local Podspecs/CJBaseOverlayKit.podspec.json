@@ -1,6 +1,6 @@
 {
   "name": "CJBaseOverlayKit",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "summary": "自定义的基础悬浮UI(Toast、Alert、ActionSheet、HUD)",
   "homepage": "https://github.com/dvlproad/CJUIKit",
   "description": "- CJBaseOverlayKit/UIView：视图\n- CJBaseOverlayKit/UIView/CJDragAction：视图拖动\n- CJBaseOverlayKit/UIView/CJShakeAction：视图抖动\n- CJBaseOverlayKit/UIView/CJPopupAction：视图弹窗：UIView的类别，用来实现UIView弹出popupView的一个Uiew的类别\n- CJBaseOverlayKit/UIView/CJGestureRecognizer：视图手势\n- CJBaseOverlayKit/UIWindow：窗口\n- CJBaseOverlayKit/CJToast：Toast\n- CJBaseOverlayKit/CJAlert：Alert\n\n  A longer description of CJBaseOverlayKit in Markdown format.\n\n  * Think: Why did you write this? What is the focus? What does it do?\n  * CocoaPods will be using this to generate tags, and improve search results.\n  * Try to keep it short, snappy and to the point.\n  * Finally, don't worry about the indent, CocoaPods strips it!",
@@ -13,7 +13,7 @@
   },
   "source": {
     "git": "https://github.com/dvlproad/CJUIKit.git",
-    "tag": "CJBaseOverlayKit_0.2.0_1"
+    "tag": "CJBaseOverlayKit_0.2.1"
   },
   "source_files": "CJBaseOverlayKit/*.{h,m}",
   "frameworks": "UIKit",
@@ -71,6 +71,9 @@
           "~> 2.5.3"
         ],
         "CJBaseOverlayKit/CJBaseOverlayTheme": [
+
+        ],
+        "MBProgressHUD": [
 
         ]
       }

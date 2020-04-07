@@ -17,31 +17,22 @@
 @interface MyEqualCellSizeCollectionView : UICollectionView {
     
 }
-//必须设置的值
-@property (nonatomic, strong) MyEqualCellSizeSetting *equalCellSizeSetting; /**< 集合视图的设置 */
+////必须设置的值
+//@property (nonatomic, strong) MyEqualCellSizeSetting *equalCellSizeSetting; /**< 集合视图的设置 */
 //@property (nonatomic, strong) NSArray<NSIndexPath *> *currentSelectedIndexPaths;    /**< 当前已选中的所有indexPaths（直接通过系统的indexPathsForSelectedItems获得） */
 
 //可选设置的值，不设置采用默认
 @property (nonatomic) UICollectionViewScrollDirection scrollDirection;  /**< 设置滚动方向(默认水平滚动) */
 
 ///可选：点击Item要执行的方法
-@property (nonatomic, copy) void (^didTapItemBlock)(UICollectionView *collectionView, NSIndexPath *indexPath, BOOL isDeselect); /**< 包括 didSelectItemAtIndexPath 和didDeselectItemAtIndexPath */
+//@property (nonatomic, copy) void (^didTapItemBlock)(UICollectionView *collectionView, NSIndexPath *indexPath, BOOL isDeselect); /**< 包括 didSelectItemAtIndexPath 和didDeselectItemAtIndexPath */
 
 - (void)commonInit;
 
 
-/**
- *  获取当前collectionView的高度
- *
- *  @param dataModels               要传入的collectionView的数据源
- *  @param collectionViewWidth      要传入的collectionView的宽度
- *  @param equalCellSizeSetting     集合视图的布局
- *
- *  @return 当前collectionView的高度
- */
-+ (CGFloat)heightForDataModels:(NSArray *)dataModels
-         byCollectionViewWidth:(CGFloat)collectionViewWidth
-      withEqualCellSizeSetting:(MyEqualCellSizeSetting *)equalCellSizeSetting;
+/// 更新额外cell的样式即位置，(默认不添加）
+- (void)updateExtralItemSetting:(CJExtralItemSetting)extralItemSetting;
+
 
 
 @end

@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "MyEqualCellSizeView.h"
-#import "MyEqualCellSizeCollectionView+Select.h"
+#import "UICollectionView+CJSelect.h"
 
 @interface MyEqualCellSizeViewController : UIViewController {
     

@@ -69,7 +69,7 @@
     CJSectionDataModel *sectionDataModel = [sectionDataModels objectAtIndex:section];
     NSMutableArray *dataModels = sectionDataModel.values;
     
-    NSInteger cellCount = [self.equalCellSizeSetting getCellCountByDataModels:dataModels];
+    NSInteger cellCount = [self.equalCellSizeSetting getCellCountByDataModelCount:dataModels.count];
     return cellCount;
 }
 
