@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "CJHomeMenuDataModel.h"
+#import "CQFilesLookBadgeDataModel.h"
 #import "CJFilesLookDataModel.h"
 
 NS_ASSUME_NONNULL_BEGIN
@@ -15,7 +15,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface TSListDataSourceUtil : NSObject
 
 /// 获取测试用的数据
-+ (NSMutableArray<CJHomeMenuDataModel *> *)__getTestLookBadgeDataModels;
++ (NSMutableArray<CQFilesLookBadgeDataModel *> *)__getTestLookBadgeDataModels;
 + (NSMutableArray<CJFilesLookDataModel *> *)__getTestDataModels;
 
 @end

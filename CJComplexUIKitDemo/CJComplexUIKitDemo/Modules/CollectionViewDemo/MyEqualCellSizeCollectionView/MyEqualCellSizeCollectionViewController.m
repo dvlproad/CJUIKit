@@ -85,7 +85,7 @@
     
     CQFilesLookCollectionView *collectionView = [[CQFilesLookCollectionView alloc] init];
     collectionView.backgroundColor = [UIColor lightGrayColor];
-    collectionView.scrollDirection = UICollectionViewScrollDirectionVertical;
+    collectionView.cjScrollDirection = UICollectionViewScrollDirectionVertical;
     [self.view addSubview:collectionView];
     [collectionView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.mas_equalTo(themeBGButton3.mas_bottom).mas_offset(10);
@@ -95,7 +95,7 @@
     }];
     self.equalCellSizeCollectionView = collectionView;
     [self.equalCellSizeCollectionView updateExtralItemSetting:CJExtralItemSettingTailing];
-    self.equalCellSizeCollectionView.scrollDirection = UICollectionViewScrollDirectionHorizontal;
+    self.equalCellSizeCollectionView.cjScrollDirection = UICollectionViewScrollDirectionHorizontal;
     self.equalCellSizeCollectionView.allowsMultipleSelection = YES; //是否打开多选
     
     self.equalCellSizeCollectionView.dataCellActionType = DataCellActionTypeSelect;
@@ -157,7 +157,7 @@
     UIButton *changeScrollDirectionButton = [TSButtonFactory themeBGButton];
     [changeScrollDirectionButton setTitle:@"切为水平滚动" forState:UIControlStateNormal];
     [changeScrollDirectionButton setTitle:@"切为竖直滚动" forState:UIControlStateSelected];
-    if (self.equalCellSizeCollectionView.scrollDirection == UICollectionViewScrollDirectionHorizontal) {
+    if (self.equalCellSizeCollectionView.cjScrollDirection == UICollectionViewScrollDirectionHorizontal) {
         changeScrollDirectionButton.selected = YES;
     } else {
         changeScrollDirectionButton.selected = NO;
@@ -225,9 +225,9 @@
 - (void)changeScrollDirectionToHorizontal:(UIButton *)button {
     button.selected = !button.selected;
     if (button.selected) {
-        self.equalCellSizeCollectionView.scrollDirection = UICollectionViewScrollDirectionHorizontal;
+        self.equalCellSizeCollectionView.cjScrollDirection = UICollectionViewScrollDirectionHorizontal;
     } else {
-        self.equalCellSizeCollectionView.scrollDirection = UICollectionViewScrollDirectionVertical;
+        self.equalCellSizeCollectionView.cjScrollDirection = UICollectionViewScrollDirectionVertical;
     }
     
 }

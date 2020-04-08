@@ -1,1 +1,1 @@
-../../../../../CJComplexUIKit/CJCollectionView/MyEqualCellSizeCollectionView/MyEqualCellSizeSetting.h
+../../../../../CJComplexUIKit/CJCollectionView/MyEqualCellSizeCollectionView/DD/MyEqualCellSizeSetting.h

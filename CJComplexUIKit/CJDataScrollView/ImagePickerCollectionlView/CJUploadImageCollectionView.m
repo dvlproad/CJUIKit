@@ -28,8 +28,16 @@ static NSString * const CJUploadCollectionViewCellAddID = @"CJUploadCollectionVi
 @implementation CJUploadImageCollectionView
 
 
-- (void)commonInit {
-    [super commonInit];
+/// 初始化方法
+- (instancetype)init {
+    UICollectionViewLayout *layout = [[UICollectionViewFlowLayout alloc] init];
+    self = [super initWithFrame:CGRectZero collectionViewLayout:layout];
+    if (self) {
+        [self setupConfigure];
+    }
+    return self;
+}
+- (void)setupConfigure {
     
     self.backgroundColor = [UIColor clearColor];
     
@@ -82,7 +90,7 @@ static NSString * const CJUploadCollectionViewCellAddID = @"CJUploadCollectionVi
     self.equalCellSizeCollectionViewDataSource = equalCellSizeCollectionViewDataSource;
     
     /* 创建Delegate (UICollectionViewDelegateFlowLayout也需实现UICollectionViewDelegate) */
-    MyEqualCellSizeCollectionViewDelegate *delegate = [[MyEqualCellSizeCollectionViewDelegate alloc] initWithEqualCellSizeSetting:equalCellSizeSetting didTapItemBlock:^(UICollectionView *collectionView, NSIndexPath *indexPath, BOOL isDeselect, MyEqualCellSizeSetting *equalCellSizeSetting) {
+    MyEqualCellSizeCollectionViewNormalDelegate *delegate = [[MyEqualCellSizeCollectionViewNormalDelegate alloc] initWithEqualCellSizeSetting:equalCellSizeSetting didTapItemBlock:^(UICollectionView *collectionView, NSIndexPath *indexPath, BOOL isDeselect, MyEqualCellSizeSetting *equalCellSizeSetting) {
         BOOL isExtralItem = [weakSelf.equalCellSizeCollectionViewDataSource isExtraItemIndexPath:indexPath];
         
         if (!isExtralItem) {

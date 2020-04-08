@@ -1,1 +1,1 @@
-../../../../../CJComplexUIKit/CJCollectionView/MyEqualCellSizeCollectionView/MySearchEqualCellSizeCollectionViewDataSource.h
+../../../../../CJComplexUIKit/CJCollectionView/MyEqualCellSizeCollectionView/DDSearch/MySearchEqualCellSizeCollectionViewDataSource.h

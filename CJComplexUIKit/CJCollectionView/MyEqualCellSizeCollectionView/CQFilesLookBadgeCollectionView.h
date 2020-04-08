@@ -8,17 +8,19 @@
 
 #import <UIKit/UIKit.h>
 #import <Masonry/Masonry.h>
-#import "MyEqualCellSizeCollectionView.h"
-#import "CJHomeMenuDataModel.h"
+#import "CQFilesLookBadgeDataModel.h"
 
 
 ///用来测试将MyEqualCellSizeCollectionView包含在自定义的View中时候，时候会有错误
-@interface CQFilesLookBadgeCollectionView : MyEqualCellSizeCollectionView {
+@interface CQFilesLookBadgeCollectionView : UICollectionView {
     
 }
-@property (nonatomic, strong) NSMutableArray<CJHomeMenuDataModel *> *dataModels;/**< 数据源 */
+@property (nonatomic, strong) NSMutableArray<CQFilesLookBadgeDataModel *> *dataModels;/**< 数据源 */
 
-//UICollectionUpdateAction
+/// 初始化方法
+- (instancetype)initWithDidTapShowingItemBlock:(void(^)(UICollectionView *collectionView, NSIndexPath *indexPath, CQFilesLookBadgeDataModel *dataModel))didTapShowingItemBlock NS_DESIGNATED_INITIALIZER;
+
+
 /*
 *  获取collectionView的高度
 *

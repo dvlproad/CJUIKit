@@ -7,10 +7,9 @@
 //
 
 #import "CQFilesLookBadgeCollectionView.h"
-//#import "CQFilesLookBadgeCollectionViewCell.h"
-#import "CQHomeMenuCollectionViewCell.h"
+#import "CQFilesLookBadgeCollectionViewCell.h"
 
-#import "MyEqualCellSizeCollectionViewDelegate.h"
+#import "MyEqualCellSizeCollectionViewNormalDelegate.h"
 #import "MyEqualCellSizeCollectionViewDataSource.h"
 
 #import <SDWebImage/UIImageView+WebCache.h>
@@ -19,24 +18,35 @@
 @interface CQFilesLookBadgeCollectionView () <UICollectionViewDataSource> {
     
 }
-@property (nonatomic, strong) MyEqualCellSizeCollectionViewDelegate *equalCellSizeCollectionViewDelegate;
+@property (nonatomic, strong) MyEqualCellSizeCollectionViewNormalDelegate *equalCellSizeCollectionViewDelegate;
 @property (nonatomic, strong) MyEqualCellSizeCollectionViewDataSource *equalCellSizeCollectionViewDataSource;
+
+@property (nonatomic, copy, readonly) void (^didTapShowingItemBlock)(UICollectionView *collectionView, NSIndexPath *indexPath, CQFilesLookBadgeDataModel *dataModel); /**< 点击item的事件 */
 
 @end
 
 
 @implementation CQFilesLookBadgeCollectionView
 
+/// 初始化方法
+- (instancetype)initWithDidTapShowingItemBlock:(void(^)(UICollectionView *collectionView, NSIndexPath *indexPath, CQFilesLookBadgeDataModel *dataModel))didTapShowingItemBlock {
+    UICollectionViewLayout *layout = [[UICollectionViewFlowLayout alloc] init];
+    self = [super initWithFrame:CGRectZero collectionViewLayout:layout];
+    if (self) {
+        _didTapShowingItemBlock = didTapShowingItemBlock;
+        
+        [self setupConfigure];
+    }
+    return self;
+}
 
-- (void)commonInit {
-    [super commonInit];
-    
+- (void)setupConfigure {
     self.backgroundColor = [UIColor clearColor];
     self.layer.cornerRadius = 6;
     
     MyEqualCellSizeSetting *equalCellSizeSetting = [[MyEqualCellSizeSetting alloc] init];
     equalCellSizeSetting.minimumInteritemSpacing = 10;
-    equalCellSizeSetting.minimumLineSpacing = 15;
+    equalCellSizeSetting.minimumLineSpacing = 10;
     equalCellSizeSetting.sectionInset = UIEdgeInsetsMake(10, 10, 10, 10);
     
     //以下值必须二选一设置（默认cellWidthFromFixedWidth设置后，另外一个自动失效）
@@ -54,7 +64,7 @@
     //self.allowsMultipleSelection = YES; //是否打开多选
     
     /* 设置Register的Cell或Nib */
-    CQHomeMenuCollectionViewCell *registerCell = [[CQHomeMenuCollectionViewCell alloc] init];
+    CQFilesLookBadgeCollectionViewCell *registerCell = [[CQFilesLookBadgeCollectionViewCell alloc] init];
     [self registerClass:[registerCell class] forCellWithReuseIdentifier:@"cell"];
     
     __weak typeof(self)weakSelf = self;
@@ -62,14 +72,14 @@
     /* 创建DataSource */
     MyEqualCellSizeCollectionViewDataSource *equalCellSizeCollectionViewDataSource = [[MyEqualCellSizeCollectionViewDataSource alloc] initWithEqualCellSizeSetting:equalCellSizeSetting cellForItemAtIndexPathBlock:^UICollectionViewCell *(UICollectionView *collectionView, NSIndexPath *indexPath, BOOL isExtralItem) {
         if (!isExtralItem) {
-            CQHomeMenuCollectionViewCell *dataCell = [collectionView dequeueReusableCellWithReuseIdentifier:@"cell" forIndexPath:indexPath];
-            dataCell.backgroundColor = [UIColor redColor];
+            CQFilesLookBadgeCollectionViewCell *dataCell = [collectionView dequeueReusableCellWithReuseIdentifier:@"cell" forIndexPath:indexPath];
+            //dataCell.backgroundColor = [UIColor redColor];
             NSLog(@"dataCell.selected = %@", dataCell.selected ? @"YES" : @"NO");
             [weakSelf __operateDataCell:dataCell withIndexPath:indexPath isSettingOperate:YES];
 
             return dataCell;
         } else {
-            CQHomeMenuCollectionViewCell *extralCell = [collectionView dequeueReusableCellWithReuseIdentifier:@"addCell" forIndexPath:indexPath];
+            CQFilesLookBadgeCollectionViewCell *extralCell = [collectionView dequeueReusableCellWithReuseIdentifier:@"addCell" forIndexPath:indexPath];
             extralCell.iconImageView.image = [UIImage imageNamed:@"cjCollectionViewCellAdd"];
             
             return extralCell;
@@ -78,7 +88,7 @@
     self.equalCellSizeCollectionViewDataSource = equalCellSizeCollectionViewDataSource;
     
     /* 创建Delegate (UICollectionViewDelegateFlowLayout也需实现UICollectionViewDelegate) */
-    MyEqualCellSizeCollectionViewDelegate *delegate = [[MyEqualCellSizeCollectionViewDelegate alloc] initWithEqualCellSizeSetting:equalCellSizeSetting didTapItemBlock:^(UICollectionView *collectionView, NSIndexPath *indexPath, BOOL isDeselect, MyEqualCellSizeSetting *equalCellSizeSetting) {
+    MyEqualCellSizeCollectionViewNormalDelegate *delegate = [[MyEqualCellSizeCollectionViewNormalDelegate alloc] initWithEqualCellSizeSetting:equalCellSizeSetting didTapItemBlock:^(UICollectionView *collectionView, NSIndexPath *indexPath, BOOL isDeselect, MyEqualCellSizeSetting *equalCellSizeSetting) {
         [collectionView deselectItemAtIndexPath:indexPath animated:YES];
         
         BOOL isExtralItem = [weakSelf.equalCellSizeCollectionViewDataSource isExtraItemIndexPath:indexPath];
@@ -88,6 +98,10 @@
             
         } else {
             NSLog(@"当前点击的Item为数据源中的第%zd个", indexPath.item);
+            CQFilesLookBadgeDataModel *dataModel = [self.equalCellSizeCollectionViewDataSource dataModelAtIndexPath:indexPath];
+            if (self.didTapShowingItemBlock) {
+                self.didTapShowingItemBlock(collectionView, indexPath, dataModel);
+            }
         }
     }];
     self.equalCellSizeCollectionViewDelegate = delegate;
@@ -116,12 +130,12 @@
     
     NSInteger allCellCount = self.equalCellSizeCollectionViewDataSource.dataModels.count;
     MyEqualCellSizeSetting *equalCellSizeSetting = self.equalCellSizeCollectionViewDelegate.equalCellSizeSetting;
-    CGFloat height = [MyEqualCellSizeCollectionViewDelegate heightForAllCellCount:allCellCount byCollectionViewWidth:collectionViewWidth withEqualCellSizeSetting:equalCellSizeSetting];
+    CGFloat height = [MyEqualCellSizeCollectionViewNormalDelegate heightForAllCellCount:allCellCount byCollectionViewWidth:collectionViewWidth withEqualCellSizeSetting:equalCellSizeSetting];
     return height;
 }
 
 #pragma mark - Setter
-- (void)setDataModels:(NSMutableArray<CJHomeMenuDataModel *> *)dataModels {
+- (void)setDataModels:(NSMutableArray<CQFilesLookBadgeDataModel *> *)dataModels {
     _dataModels = dataModels;
     self.equalCellSizeCollectionViewDataSource.dataModels = dataModels;
 }
@@ -142,11 +156,11 @@
  *  @param indexPath        要设置或者更新的Cell的indexPath
  *  @param isSettingOperate 是否是设置，如果否则为更新
  */
-- (void)__operateDataCell:(CQHomeMenuCollectionViewCell *)dataCell
+- (void)__operateDataCell:(CQFilesLookBadgeCollectionViewCell *)dataCell
                 withIndexPath:(NSIndexPath *)indexPath
             isSettingOperate:(BOOL)isSettingOperate
 {
-    CJHomeMenuDataModel *dataModel = [self.equalCellSizeCollectionViewDataSource dataModelAtIndexPath:indexPath];
+    CQFilesLookBadgeDataModel *dataModel = [self.equalCellSizeCollectionViewDataSource dataModelAtIndexPath:indexPath];
     
     if (isSettingOperate) {
         [dataCell.iconImageView sd_setImageWithURL:[NSURL URLWithString:dataModel.imageUrl] placeholderImage:dataModel.imagePlaceholderImage];

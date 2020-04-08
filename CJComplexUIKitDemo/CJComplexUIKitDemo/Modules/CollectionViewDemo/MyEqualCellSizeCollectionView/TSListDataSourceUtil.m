@@ -12,57 +12,57 @@
 @implementation TSListDataSourceUtil
 
 /// 获取测试用的数据
-+ (NSMutableArray<CJHomeMenuDataModel *> *)__getTestLookBadgeDataModels {
-    NSMutableArray<CJHomeMenuDataModel *> *dataModels = [[NSMutableArray alloc] init];
++ (NSMutableArray<CQFilesLookBadgeDataModel *> *)__getTestLookBadgeDataModels {
+    NSMutableArray<CQFilesLookBadgeDataModel *> *dataModels = [[NSMutableArray alloc] init];
     {
-        CJHomeMenuDataModel *dataModel = [[CJHomeMenuDataModel alloc] init];
+        CQFilesLookBadgeDataModel *dataModel = [[CQFilesLookBadgeDataModel alloc] init];
         dataModel.name = @"1X透社";
         dataModel.imageUrl = [CJUIKitResoucesUtil cjts_iconImageUrl1];
         dataModel.badgeCount = 0;
         [dataModels addObject:dataModel];
     }
     {
-        CJHomeMenuDataModel *dataModel = [[CJHomeMenuDataModel alloc] init];
+        CQFilesLookBadgeDataModel *dataModel = [[CQFilesLookBadgeDataModel alloc] init];
         dataModel.name = @"2新鲜事";
         dataModel.imageUrl = [CJUIKitResoucesUtil cjts_iconImageUrl2];
         dataModel.badgeCount = 1;
         [dataModels addObject:dataModel];
     }
     {
-        CJHomeMenuDataModel *dataModel = [[CJHomeMenuDataModel alloc] init];
+        CQFilesLookBadgeDataModel *dataModel = [[CQFilesLookBadgeDataModel alloc] init];
         dataModel.name = @"3XX信";
         dataModel.imageUrl = [CJUIKitResoucesUtil cjts_iconImageUrl3];
         [dataModels addObject:dataModel];
     }
     {
-        CJHomeMenuDataModel *dataModel = [[CJHomeMenuDataModel alloc] init];
+        CQFilesLookBadgeDataModel *dataModel = [[CQFilesLookBadgeDataModel alloc] init];
         dataModel.name = @"4X角信";
         dataModel.badgeCount = 9;
         dataModel.imageUrl = [CJUIKitResoucesUtil cjts_iconImageUrl4];
         [dataModels addObject:dataModel];
     }
     {
-        CJHomeMenuDataModel *dataModel = [[CJHomeMenuDataModel alloc] init];
+        CQFilesLookBadgeDataModel *dataModel = [[CQFilesLookBadgeDataModel alloc] init];
         dataModel.name = @"5蓝精灵";
         dataModel.imageUrl = [CJUIKitResoucesUtil cjts_iconImageUrl5];
         dataModel.badgeCount = 10;
         [dataModels addObject:dataModel];
     }
     {
-        CJHomeMenuDataModel *dataModel = [[CJHomeMenuDataModel alloc] init];
+        CQFilesLookBadgeDataModel *dataModel = [[CQFilesLookBadgeDataModel alloc] init];
         dataModel.name = @"6年轻范";
         dataModel.badgeCount = 99;
         dataModel.imageUrl = [CJUIKitResoucesUtil cjts_iconImageUrl6];
         [dataModels addObject:dataModel];
     }
     {
-        CJHomeMenuDataModel *dataModel = [[CJHomeMenuDataModel alloc] init];
+        CQFilesLookBadgeDataModel *dataModel = [[CQFilesLookBadgeDataModel alloc] init];
         dataModel.name = @"7XX福";
         dataModel.imageUrl = [CJUIKitResoucesUtil cjts_iconImageUrl7];
         [dataModels addObject:dataModel];
     }
     {
-        CJHomeMenuDataModel *dataModel = [[CJHomeMenuDataModel alloc] init];
+        CQFilesLookBadgeDataModel *dataModel = [[CQFilesLookBadgeDataModel alloc] init];
         dataModel.name = @"8X之语";
         dataModel.badgeCount = 888;
         dataModel.imageUrl = [CJUIKitResoucesUtil cjts_iconImageUrl8];

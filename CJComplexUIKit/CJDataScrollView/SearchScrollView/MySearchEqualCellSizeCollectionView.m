@@ -20,8 +20,16 @@
 
 @implementation MySearchEqualCellSizeCollectionView
 
-- (void)commonInit {
-    [super commonInit];
+/// 初始化方法
+- (instancetype)init {
+    UICollectionViewLayout *layout = [[UICollectionViewFlowLayout alloc] init];
+    self = [super initWithFrame:CGRectZero collectionViewLayout:layout];
+    if (self) {
+        [self setupConfigure];
+    }
+    return self;
+}
+- (void)setupConfigure {
     
     /*
     UISearchController *searchController = [[UISearchController alloc] initWithSearchResultsController:nil];

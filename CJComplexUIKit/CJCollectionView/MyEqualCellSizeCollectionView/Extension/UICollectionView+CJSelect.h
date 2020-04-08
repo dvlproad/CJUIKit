@@ -10,6 +10,17 @@
 
 @interface UICollectionView (CJSelect)
 
+/*
+*  选中indexPath(已支持单选、多选模式)
+*
+*  @param indexPath             当前选中的indexPath
+*  @param alwaysAloneIndexPath  与其他不共存的indexPath(即如果点击的是这个不共存的indexPath的时候，之前已选中的会被全被设为未选中。如无，则传nil)
+*  @param thisCellUpdateBlock   你自己只需要更新当前点击的这个cell(其他cell的更新我已根据各种情形帮你处理完了)
+*/
+- (void)my_didTapItemAtIndexPath:(NSIndexPath *)indexPath
+        withAlwaysAloneIndexPath:(NSIndexPath *)alwaysAloneIndexPath
+             thisCellUpdateBlock:(void(^)(UICollectionView *collectionView, NSIndexPath *indexPath))thisCellUpdateBlock;
+
 #pragma mark - reload
 /**
  *  reloadData并同时保持reload前那些已选择的cell的选中状态

@@ -9,7 +9,7 @@
 #import "LookBadgeCollectionViewController.h"
 
 #import <CJComplexUIKit/CQFilesLookBadgeCollectionView.h>
-#import "MyEqualCellSizeCollectionViewDelegate.h"
+#import "MyEqualCellSizeCollectionViewNormalDelegate.h"
 
 #import "TSButtonFactory.h"
 #import "TSToast.h"
@@ -33,7 +33,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    CQFilesLookBadgeCollectionView *collectionView = [[CQFilesLookBadgeCollectionView alloc] init];
+    CQFilesLookBadgeCollectionView *collectionView = [[CQFilesLookBadgeCollectionView alloc] initWithDidTapShowingItemBlock:^(UICollectionView *collectionView, NSIndexPath *indexPath, CQFilesLookBadgeDataModel *dataModel) {
+        NSString *message = [NSString stringWithFormat:@"点击了【%@】", dataModel.name];
+        [TSToast showMessage:message];
+    }];
     collectionView.backgroundColor = [UIColor whiteColor];
     [self.view addSubview:collectionView];
     [collectionView mas_makeConstraints:^(MASConstraintMaker *make) {

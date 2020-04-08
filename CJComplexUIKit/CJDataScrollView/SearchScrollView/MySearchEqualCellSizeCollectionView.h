@@ -44,14 +44,5 @@ typedef UICollectionViewCell* (^CJConfigureCollectionViewCellBlock)(UICollection
 @property (nonatomic, copy) void (^searchBarSelectedScopeButtonIndexDidChangeBlock)(NSInteger selectedScope);
 @property (nonatomic, copy) void (^searchResultShowBlock)(void);
 
-/**
- *  获取indexPath位置的dataModel(从数据源中获取每个indexPath要用什么dataModel来赋值)
- *
- *  @param indexPath                    indexPath
- *
- *  @return indexPath位置的dataModel
- */
-- (id)getDataModelAtIndexPath:(NSIndexPath *)indexPath;
-
 
 @end

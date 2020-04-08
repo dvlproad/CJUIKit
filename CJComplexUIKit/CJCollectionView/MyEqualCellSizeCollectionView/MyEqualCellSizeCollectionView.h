@@ -27,12 +27,6 @@
 ///可选：点击Item要执行的方法
 //@property (nonatomic, copy) void (^didTapItemBlock)(UICollectionView *collectionView, NSIndexPath *indexPath, BOOL isDeselect); /**< 包括 didSelectItemAtIndexPath 和didDeselectItemAtIndexPath */
 
-- (void)commonInit;
-
-
-/// 更新额外cell的样式即位置，(默认不添加）
-- (void)updateExtralItemSetting:(CJExtralItemSetting)extralItemSetting;
-
 
 
 @end

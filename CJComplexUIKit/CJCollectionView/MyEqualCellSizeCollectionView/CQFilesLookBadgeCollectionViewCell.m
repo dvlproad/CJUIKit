@@ -1,247 +1,116 @@
 //
 //  CQFilesLookBadgeCollectionViewCell.m
-//  AllScrollViewDemo
+//  CJComplexUIKitDemo
 //
-//  Created by ciyouzen on 2016/06/07.
-//  Copyright © 2016年 dvlproad. All rights reserved.
+//  Created by ciyouzen on 2019/5/21.
+//  Copyright © 2019 dvlproad. All rights reserved.
 //
 
 #import "CQFilesLookBadgeCollectionViewCell.h"
+#import <Masonry/Masonry.h>
 
 @interface CQFilesLookBadgeCollectionViewCell () {
     
 }
+@property (nonatomic, strong) UILabel *messageTipLabel;
 
 @end
 
 @implementation CQFilesLookBadgeCollectionViewCell
 
-- (void)awakeFromNib {
-    [super awakeFromNib];
-    
-    [self commonInit];
-}
-
-- (instancetype)initWithCoder:(NSCoder *)aDecoder {
-    self = [super initWithCoder:aDecoder];
-    if (self) {
-        [self commonInit];
-    }
-    return self;
-}
-
-- (instancetype)initWithFrame:(CGRect)frame {
+- (id)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
     if (self) {
-        [self commonInit];
+        self.backgroundColor = [UIColor clearColor];
+        self.selectedBackgroundView = ({
+            UIView *view = [UIView new];
+            view.backgroundColor = [UIColor colorWithRed:244/255.0 green:244/255.0 blue:244/255.0 alpha:1.0]; //#f4f4f4
+            view;
+        });
         
+        [self setupViews];
     }
     return self;
 }
 
-- (void)commonInit {
-    UIView *parentView = self.contentView;
-    
-    [self addCJImageViewWithEdgeInsets:UIEdgeInsetsZero];
-    self.cjImageView.image = [UIImage imageNamed:@"cjCollectionViewCellAdd"];
-    [self addCJSelectedButton];
+- (void)setupViews {
+    [self addSubview:self.titleNameLabel];
+    [self addSubview:self.iconImageView];
+    [self addSubview:self.messageTipLabel];
+
+    [self.iconImageView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.centerX.mas_equalTo(self);
+        make.left.mas_equalTo(self).mas_offset(15);
+        make.top.mas_equalTo(self).mas_offset(8);
+        //make.centerY.mas_equalTo(self).mas_offset(-4);
+        make.height.mas_equalTo(self.iconImageView.mas_width).multipliedBy(1.0);
+    }];
+    [self.titleNameLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.centerX.mas_equalTo(self);
+        make.left.mas_equalTo(self);
+        make.bottom.mas_equalTo(self).mas_offset(0);
+    }];
+    [self.messageTipLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.centerX.mas_equalTo(self.iconImageView.mas_right);
+        make.centerY.mas_equalTo(self.iconImageView.mas_top);
+        make.width.mas_greaterThanOrEqualTo(16);
+    }];
 }
 
-/**
- *  添加cjTextLabel和cjImageView（一个文字在下，图片占满的collectionViewCell）
- *
- *  @param imageViewEdgeInsets  cjImageView的edgeInsets
- */
-- (void)addBottomTextLabelAndFullImageViewWithEdgeInsets:(UIEdgeInsets)imageViewEdgeInsets {
-    [self addCJImageViewWithEdgeInsets:imageViewEdgeInsets];
-    [self addCJTextLabelWithBottomPosition];
+- (void)setBadgeCount:(NSInteger)badgeCount {
+    if (badgeCount <= 0) {
+        self.messageTipLabel.text = @"";
+        return;
+    }
+    
+    self.messageTipLabel.hidden = NO;
+    if (badgeCount < 10) {
+        self.messageTipLabel.text = [NSString stringWithFormat:@"%@", @(badgeCount)];
+    } else if (badgeCount < 100) {
+        self.messageTipLabel.text = [NSString stringWithFormat:@"%@ ", @(badgeCount)];
+    } else {
+        self.messageTipLabel.text = @"99+  ";
+    }
 }
 
-/**
- *  添加cjImageView
- *
- *  @param edgeInsets    cjImageView的edgeInsets
- */
-- (void)addCJImageViewWithEdgeInsets:(UIEdgeInsets)edgeInsets {
-    UIView *parentView = self.contentView;
-    
-    self.cjImageView = [[UIImageView alloc] init];
-    self.cjImageView.contentMode = UIViewContentModeScaleToFill;
-    [parentView addSubview:self.cjImageView];
-    self.cjImageView.translatesAutoresizingMaskIntoConstraints = NO;
-    [parentView addConstraint:
-     [NSLayoutConstraint constraintWithItem:self.cjImageView
-                                  attribute:NSLayoutAttributeLeft   //left
-                                  relatedBy:NSLayoutRelationEqual
-                                     toItem:parentView
-                                  attribute:NSLayoutAttributeLeft
-                                 multiplier:1
-                                   constant:edgeInsets.left]];
-    [parentView addConstraint:
-     [NSLayoutConstraint constraintWithItem:self.cjImageView
-                                  attribute:NSLayoutAttributeRight  //right
-                                  relatedBy:NSLayoutRelationEqual
-                                     toItem:parentView
-                                  attribute:NSLayoutAttributeRight
-                                 multiplier:1
-                                   constant:edgeInsets.right]];
-    [parentView addConstraint:
-     [NSLayoutConstraint constraintWithItem:self.cjImageView
-                                  attribute:NSLayoutAttributeTop    //top
-                                  relatedBy:NSLayoutRelationEqual
-                                     toItem:parentView
-                                  attribute:NSLayoutAttributeTop
-                                 multiplier:1
-                                   constant:edgeInsets.top]];
-    [parentView addConstraint:
-     [NSLayoutConstraint constraintWithItem:self.cjImageView
-                                  attribute:NSLayoutAttributeBottom //bottom
-                                  relatedBy:NSLayoutRelationEqual
-                                     toItem:parentView
-                                  attribute:NSLayoutAttributeBottom
-                                 multiplier:1
-                                   constant:edgeInsets.bottom]];
+#pragma mark - lazy init
+@synthesize titleNameLabel = _titleNameLabel;
+- (UILabel *)titleNameLabel {
+    if (!_titleNameLabel) {
+        _titleNameLabel = [[UILabel alloc] init];
+        _titleNameLabel.backgroundColor = [UIColor clearColor];
+        _titleNameLabel.textColor =  [UIColor colorWithRed:51/255.0f green:51/255.0f blue:51/255.0f alpha:1.0];  // (@"#333333");
+        _titleNameLabel.font = [UIFont systemFontOfSize:12];
+        _titleNameLabel.textAlignment = NSTextAlignmentCenter;
+        _titleNameLabel.adjustsFontSizeToFitWidth = YES;
+    }
+    return _titleNameLabel;
 }
 
-/**
- *  添加cjTextLabel
- */
-- (void)addCJTextLabelWithBottomPosition {
-    UIView *parentView = self.contentView;
-    
-    self.cjTextLabel = [[UILabel alloc] init];
-    self.cjTextLabel.textAlignment = NSTextAlignmentCenter;
-    [parentView addSubview:self.cjTextLabel];
-    self.cjTextLabel.translatesAutoresizingMaskIntoConstraints = NO;
-    [parentView addConstraint:
-     [NSLayoutConstraint constraintWithItem:self.cjTextLabel
-                                  attribute:NSLayoutAttributeLeft   //left
-                                  relatedBy:NSLayoutRelationEqual
-                                     toItem:parentView
-                                  attribute:NSLayoutAttributeLeft
-                                 multiplier:1
-                                   constant:10]];
-    [parentView addConstraint:
-     [NSLayoutConstraint constraintWithItem:self.cjTextLabel
-                                  attribute:NSLayoutAttributeRight  //right
-                                  relatedBy:NSLayoutRelationEqual
-                                     toItem:parentView
-                                  attribute:NSLayoutAttributeRight
-                                 multiplier:1
-                                   constant:-10]];
-    
-    [parentView addConstraint:
-     [NSLayoutConstraint constraintWithItem:self.cjTextLabel
-                                  attribute:NSLayoutAttributeBottom //bottom
-                                  relatedBy:NSLayoutRelationEqual
-                                     toItem:parentView
-                                  attribute:NSLayoutAttributeBottom
-                                 multiplier:1
-                                   constant:0]];
-    self.cjTextLabelHeightConstraint =
-    [NSLayoutConstraint constraintWithItem:self.cjTextLabel
-                                 attribute:NSLayoutAttributeHeight //height
-                                 relatedBy:NSLayoutRelationEqual
-                                    toItem:nil
-                                 attribute:NSLayoutAttributeNotAnAttribute
-                                multiplier:1
-                                  constant:30];
-    [parentView addConstraint:self.cjTextLabelHeightConstraint];
+@synthesize iconImageView = _iconImageView;
+- (UIImageView *)iconImageView {
+    if (!_iconImageView) {
+        _iconImageView = [[UIImageView alloc] init];
+        _iconImageView.layer.cornerRadius = 6;
+        _iconImageView.layer.masksToBounds = YES;
+        _iconImageView.backgroundColor = [UIColor clearColor];
+    }
+    return _iconImageView;
 }
 
-/**
- *  添加cjDeleteButton
- *
- */
-- (void)addCJSelectedButton {
-    UIView *parentView = self.contentView;
-    self.cjBadgeButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    [self.cjBadgeButton setImage:[UIImage imageNamed:@"cjCollectionViewCellAdd"] forState:UIControlStateNormal];
-    [self.cjBadgeButton addTarget:self action:@selector(selectedButtonAction:) forControlEvents:UIControlEventTouchUpInside];
-    self.cjBadgeButton.userInteractionEnabled = NO; // 设为NO，把button当成imageView用
-    [parentView addSubview:self.cjBadgeButton];
-    self.cjBadgeButton.translatesAutoresizingMaskIntoConstraints = NO;
-    [parentView addConstraint:
-     [NSLayoutConstraint constraintWithItem:self.cjBadgeButton
-                                  attribute:NSLayoutAttributeTop    //top
-                                  relatedBy:NSLayoutRelationEqual
-                                     toItem:parentView
-                                  attribute:NSLayoutAttributeTop
-                                 multiplier:1
-                                   constant:0]];
-    [parentView addConstraint:
-     [NSLayoutConstraint constraintWithItem:self.cjBadgeButton
-                                  attribute:NSLayoutAttributeHeight //height
-                                  relatedBy:NSLayoutRelationEqual
-                                     toItem:nil
-                                  attribute:NSLayoutAttributeNotAnAttribute
-                                 multiplier:1
-                                   constant:25]];
-    [parentView addConstraint:
-     [NSLayoutConstraint constraintWithItem:self.cjBadgeButton
-                                  attribute:NSLayoutAttributeRight  //right
-                                  relatedBy:NSLayoutRelationEqual
-                                     toItem:parentView
-                                  attribute:NSLayoutAttributeRight
-                                 multiplier:1
-                                   constant:0]];
-    [parentView addConstraint:
-     [NSLayoutConstraint constraintWithItem:self.cjBadgeButton
-                                  attribute:NSLayoutAttributeWidth   //width
-                                  relatedBy:NSLayoutRelationEqual
-                                     toItem:nil
-                                  attribute:NSLayoutAttributeNotAnAttribute
-                                 multiplier:1
-                                   constant:25]];
-    //[self.contentView bringSubviewToFront:self.cjDeleteButton];
+@synthesize messageTipLabel = _messageTipLabel;
+- (UILabel *)messageTipLabel {
+    if (!_messageTipLabel) {
+        _messageTipLabel = [[UILabel alloc] init];
+        _messageTipLabel.backgroundColor = [UIColor redColor]; //#ff0000
+        _messageTipLabel.textColor = [UIColor whiteColor];  // (@"#FFFFFF");
+        _messageTipLabel.font = [UIFont systemFontOfSize:11];
+        _messageTipLabel.textAlignment = NSTextAlignmentCenter;
+        _messageTipLabel.layer.cornerRadius = 7;
+        _messageTipLabel.clipsToBounds = YES;
+        _messageTipLabel.hidden = YES;
+    }
+    return _messageTipLabel;
 }
-
-
-#pragma mark - addSubView
-- (void)cj_makeView:(UIView *)superView addSubView:(UIView *)subView withEdgeInsets:(UIEdgeInsets)edgeInsets {
-    [superView addSubview:subView];
-    subView.translatesAutoresizingMaskIntoConstraints = NO;
-    
-    [superView addConstraint:
-     [NSLayoutConstraint constraintWithItem:subView
-                                  attribute:NSLayoutAttributeLeft   //left
-                                  relatedBy:NSLayoutRelationEqual
-                                     toItem:superView
-                                  attribute:NSLayoutAttributeLeft
-                                 multiplier:1
-                                   constant:edgeInsets.left]];
-    
-    [superView addConstraint:
-     [NSLayoutConstraint constraintWithItem:subView
-                                  attribute:NSLayoutAttributeRight  //right
-                                  relatedBy:NSLayoutRelationEqual
-                                     toItem:superView
-                                  attribute:NSLayoutAttributeRight
-                                 multiplier:1
-                                   constant:edgeInsets.right]];
-    
-    [superView addConstraint:
-     [NSLayoutConstraint constraintWithItem:subView
-                                  attribute:NSLayoutAttributeTop    //top
-                                  relatedBy:NSLayoutRelationEqual
-                                     toItem:superView
-                                  attribute:NSLayoutAttributeTop
-                                 multiplier:1
-                                   constant:edgeInsets.top]];
-    
-    [superView addConstraint:
-     [NSLayoutConstraint constraintWithItem:subView
-                                  attribute:NSLayoutAttributeBottom //bottom
-                                  relatedBy:NSLayoutRelationEqual
-                                     toItem:superView
-                                  attribute:NSLayoutAttributeBottom
-                                 multiplier:1
-                                   constant:edgeInsets.bottom]];
-}
-
-- (void)selectedButtonAction:(UIButton *)sender {
-    
-}
-
 
 @end

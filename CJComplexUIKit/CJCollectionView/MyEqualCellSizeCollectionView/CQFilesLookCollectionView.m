@@ -9,7 +9,8 @@
 #import "CQFilesLookCollectionView.h"
 #import "CQFilesLookCollectionViewCell.h"
 
-#import "MyEqualCellSizeCollectionViewDelegate.h"
+#import "MyEqualCellSizeCollectionViewNormalDelegate.h"
+#import "MyEqualCellSizeCollectionViewSelectDelegate.h"
 #import "MyEqualCellSizeCollectionViewDataSource.h"
 
 #import "UICollectionView+CJSelect.h"
@@ -17,8 +18,10 @@
 @interface CQFilesLookCollectionView () <UICollectionViewDataSource> {
     
 }
-@property (nonatomic, strong) MyEqualCellSizeCollectionViewDelegate *equalCellSizeCollectionViewDelegate;
+@property (nonatomic, strong) MyEqualCellSizeCollectionViewBaseDelegate *equalCellSizeCollectionViewDelegate;
 @property (nonatomic, strong) MyEqualCellSizeCollectionViewDataSource *equalCellSizeCollectionViewDataSource;
+
+@property (nonatomic, assign) DataCellActionType dataCellActionType;/**< 当前状态dataCell点击执行的操作是 */
 
 @end
 
@@ -26,9 +29,16 @@
 @implementation CQFilesLookCollectionView
 
 
-- (void)commonInit {
-    [super commonInit];
-    
+/// 初始化方法
+- (instancetype)init {
+    UICollectionViewLayout *layout = [[UICollectionViewFlowLayout alloc] init];
+    self = [super initWithFrame:CGRectZero collectionViewLayout:layout];
+    if (self) {
+        [self setupConfigure];
+    }
+    return self;
+}
+- (void)setupConfigure {
     self.backgroundColor = [UIColor clearColor];
     
     MyEqualCellSizeSetting *equalCellSizeSetting = [[MyEqualCellSizeSetting alloc] init];
@@ -75,7 +85,7 @@
     self.equalCellSizeCollectionViewDataSource = equalCellSizeCollectionViewDataSource;
     
     /* 创建Delegate (UICollectionViewDelegateFlowLayout也需实现UICollectionViewDelegate) */
-    MyEqualCellSizeCollectionViewDelegate *delegate = [[MyEqualCellSizeCollectionViewDelegate alloc] initWithEqualCellSizeSetting:equalCellSizeSetting didTapItemBlock:^(UICollectionView *collectionView, NSIndexPath *indexPath, BOOL isDeselect, MyEqualCellSizeSetting *equalCellSizeSetting) {
+    MyEqualCellSizeCollectionViewNormalDelegate *normalDelegate = [[MyEqualCellSizeCollectionViewNormalDelegate alloc] initWithEqualCellSizeSetting:equalCellSizeSetting didTapItemBlock:^(UICollectionView *collectionView, NSIndexPath *indexPath, BOOL isDeselect, MyEqualCellSizeSetting *equalCellSizeSetting) {
         BOOL isExtralItem = [weakSelf.equalCellSizeCollectionViewDataSource isExtraItemIndexPath:indexPath];
         
         if (isExtralItem) {
@@ -86,35 +96,36 @@
             if (weakSelf.dataCellActionType == DataCellActionTypeNone) {
                 
             } else if (weakSelf.dataCellActionType == DataCellActionTypeBrowse) {
-                
+                NSLog(@"浏览");
             } else if (weakSelf.dataCellActionType == DataCellActionTypeSelect) {
                 /* 测试“我与其他不共存功能” */
-                if ([indexPath isEqual:self.alwaysAloneIndexPath]) {
-                    [self my_deselectOtherExceptIndexPath:indexPath];
-                    
-                } else {
-                    if ([weakSelf.indexPathsForSelectedItems containsObject:weakSelf.alwaysAloneIndexPath]) {//选择其他cell时候，如果独立的cell是选中的，则应去除独立cell的选中状态
-                        [self reloadItemsAtIndexPaths:@[weakSelf.alwaysAloneIndexPath]];
-                    }
-                    
-                    //对当前的cell进行改变，不要为了更新一个cell的状态，而去调用reload方法，那样消耗太大，即
-                    //方法①：可取且最优的方法如下
-                    CQFilesLookCollectionViewCell *dataCell = (CQFilesLookCollectionViewCell *)[collectionView cellForItemAtIndexPath:indexPath];
+                [self my_didTapItemAtIndexPath:indexPath withAlwaysAloneIndexPath:self.alwaysAloneIndexPath thisCellUpdateBlock:^(UICollectionView *collectionView, NSIndexPath *indexPath) {
+                    UICollectionViewCell *dataCell = [collectionView cellForItemAtIndexPath:indexPath];
                     [weakSelf __operateDataCell:dataCell withIndexPath:indexPath isSettingOperate:NO];
-                    //方法②：可用有效，但不可取的方法如下
-                    //[self reloadDataWithKeepSelectedState:YES];
-                    
-                }
+                }];
             }
         }
     }];
-    self.equalCellSizeCollectionViewDelegate = delegate;
+    
+    MyEqualCellSizeCollectionViewSelectDelegate *selectDelegate = [[MyEqualCellSizeCollectionViewSelectDelegate alloc] initWithEqualCellSizeSetting:equalCellSizeSetting withAlwaysAloneIndexPath:self.alwaysAloneIndexPath cellBrowseBlock:^(UICollectionView *collectionView, NSIndexPath *indexPath) {
+        NSLog(@"浏览");
+    } cellSelectedBlock:^(UICollectionView *collectionView, NSIndexPath *indexPath) {
+        UICollectionViewCell *dataCell = [self cellForItemAtIndexPath:indexPath];
+        [weakSelf __operateDataCell:dataCell withIndexPath:indexPath isSettingOperate:NO];
+    }];
+    
+    
+    self.equalCellSizeCollectionViewDelegate = selectDelegate;
     
     /* 设置DataSource和Delegate */
     //self.dataSource = self;
     //self.delegate = self;
     self.dataSource = self.equalCellSizeCollectionViewDataSource;
     self.delegate = self.equalCellSizeCollectionViewDelegate;
+    
+    
+    self.isChoosing = NO;
+    self.dataCellActionType = DataCellActionTypeBrowse;
 }
 
 
@@ -122,6 +133,13 @@
 #pragma mark - Setter
 - (void)setIsChoosing:(BOOL)isChoosing {
     _isChoosing = isChoosing;
+    
+    if (isChoosing) {
+        _dataCellActionType = DataCellActionTypeSelect;
+    } else {
+        _dataCellActionType = DataCellActionTypeBrowse;
+    }
+    
     [self reloadData];
 }
 
