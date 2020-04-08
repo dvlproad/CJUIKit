@@ -7,7 +7,6 @@
 //
 
 #import "MySearchEqualCellSizeCollectionViewDataSource.h"
-#import "CJFullBottomCollectionViewCell.h"
 
 @interface MySearchEqualCellSizeCollectionViewDataSource () {
     

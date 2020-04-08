@@ -139,9 +139,9 @@
 
 
 /**
-*  获取在数据是dataModels的时候，整个cellCount的个数(因为有可能有extralItem)
+*  获取指定section的item个数
 *
-*  @param dataModels   dataModels的个数
+*  @param section   指定的section
 *
 *  @return 整个cellCount的个数
 */
