@@ -8,8 +8,8 @@
 
 #import "MyEqualCellSizeCollectionViewController.h"
 
-#import <CJComplexUIKit/CQFilesLookCollectionView.h>
-#import <CJComplexUIKit/UICollectionView+CJSelect.h>
+#import <CJMenuListKit/CQFilesLookCollectionView.h>
+#import <CJMenuListKit/UICollectionView+CJSelect.h>
 
 #import "TSButtonFactory.h"
 #import "TSToast.h"
@@ -98,7 +98,7 @@
     self.equalCellSizeCollectionView.cjScrollDirection = UICollectionViewScrollDirectionHorizontal;
     self.equalCellSizeCollectionView.allowsMultipleSelection = YES; //是否打开多选
     
-    self.equalCellSizeCollectionView.dataCellActionType = DataCellActionTypeSelect;
+//    self.equalCellSizeCollectionView.dataCellActionType = DataCellActionTypeSelect;
     self.equalCellSizeCollectionView.alwaysAloneIndexPath = [NSIndexPath indexPathForItem:0 inSection:0];//用于测试"我与其他不共存"
     
     // 反选 VS 全选

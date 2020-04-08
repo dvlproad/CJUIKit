@@ -11,7 +11,7 @@
 //#ifdef TEST_CJCOMPLEXUIKIT_POD
 //#import "MyEqualCellSizeCollectionView.h"
 //#else
-#import <CJComplexUIKit/MyEqualCellSizeCollectionView.h>
+#import <CJMenuListKit/MyEqualCellSizeCollectionView.h>
 //#endif
 
 #import <CJBaseUtil/CJSectionDataModel.h>   //在CJDataUtil中
