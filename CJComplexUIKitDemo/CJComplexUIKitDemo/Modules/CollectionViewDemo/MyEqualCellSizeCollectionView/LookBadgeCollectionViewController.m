@@ -9,9 +9,7 @@
 #import "LookBadgeCollectionViewController.h"
 
 #import <CJMenuListKit/CQFilesLookBadgeCollectionView.h>
-#import "MyEqualCellSizeCollectionViewNormalDelegate.h"
 
-#import "TSButtonFactory.h"
 #import "TSToast.h"
 
 #import "TSListDataSourceUtil.h"
