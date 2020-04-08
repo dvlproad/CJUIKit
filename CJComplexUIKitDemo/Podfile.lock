@@ -174,11 +174,9 @@ PODS:
     - CJComplexUIKit/CJCollectionView/CJBaseCollectionViewCell (= 0.3.0)
     - CJComplexUIKit/CJCollectionView/CJCollectionViewLayout (= 0.3.0)
     - CJComplexUIKit/CJCollectionView/CJOpenCollectionView (= 0.3.0)
-    - CJComplexUIKit/CJCollectionView/MyEqualCellSizeCollectionView (= 0.3.0)
   - CJComplexUIKit/CJCollectionView/CJBaseCollectionViewCell (0.3.0)
   - CJComplexUIKit/CJCollectionView/CJCollectionViewLayout (0.3.0)
   - CJComplexUIKit/CJCollectionView/CJOpenCollectionView (0.3.0)
-  - CJComplexUIKit/CJCollectionView/MyEqualCellSizeCollectionView (0.3.0)
   - CJComplexUIKit/CJHomeCollectionView (0.3.0):
     - CJBaseUtil/CJDataUtil
     - Masonry
@@ -206,6 +204,9 @@ PODS:
   - CJMedia/CJValidateAuthorizationUtil (0.0.7)
   - CJMedia/MySingleImagePickerController (0.0.7):
     - CJMedia/CJValidateAuthorizationUtil
+  - CJMenuListKit (0.3.0):
+    - Masonry
+    - SDWebImage
   - CJNetwork (0.5.0):
     - CJNetwork/AFNetworkingBaseComponent (= 0.5.0)
     - CJNetwork/AFNetworkingCacheComponent (= 0.5.0)
@@ -278,6 +279,7 @@ DEPENDENCIES:
   - CJComplexUIKit/CJScrollView (from `../`)
   - CJFoundation (from `../`)
   - CJMedia/CJUploadImagePickerUtil (~> 0.0.7)
+  - CJMenuListKit (from `../`)
   - CJNetwork
   - CJNetwork/AFNetworkingBaseComponent
   - CJTS_Base (from `../`)
@@ -327,6 +329,8 @@ EXTERNAL SOURCES:
     :path: "../"
   CJFoundation:
     :path: "../"
+  CJMenuListKit:
+    :path: "../"
   CJTS_Base:
     :path: "../"
 
@@ -337,10 +341,11 @@ SPEC CHECKSUMS:
   CJBaseOverlayKit: c692f9eaaecc926949b1d57757ab47cccc19b78f
   CJBaseUIKit: 8a34464da479a1d198ef9582c5966c84f032827e
   CJBaseUtil: 1bbf8d5f831dc12ae4bb06c8b5326bd39f3522e1
-  CJComplexUIKit: d6ca4fdf1c397155fe2b6cbb33ba71091c49c7d0
+  CJComplexUIKit: 5f7e57ddfd947450cfe7f8f9d8f0c8633fd708ff
   CJFile: 6c1e6d55b3b94e8afbaa9f413f131301d15fdc48
   CJFoundation: 53b4df7152c6d6fd776f55f387c67f431b8574bd
   CJMedia: 29b1bd8c127fb80c4993a76420a3bcc31a4657e5
+  CJMenuListKit: 6854336ae26469dc0baf671cc615ff5ec8ae348e
   CJNetwork: a75f849e5c6ec8fc85ca7aa5027f73d6c48a4af1
   CJTS_Base: 538dc19330d861126cfabe3e80204acf974f59f5
   DZNEmptyDataSet: 9525833b9e68ac21c30253e1d3d7076cc828eaa7
@@ -359,6 +364,6 @@ SPEC CHECKSUMS:
   SDWebImage: c5594f1a19c48d526d321e548902b56b479cd508
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
 
-PODFILE CHECKSUM: fecd20d061d142724ae9821a6da2edfdebf52102
+PODFILE CHECKSUM: a3724156e93efb02fe9a1beeb1086ed3f95a1008
 
 COCOAPODS: 1.8.4

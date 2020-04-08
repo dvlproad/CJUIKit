@@ -9,7 +9,7 @@
 #import "CJUIKitBaseViewController.h"
 #import <CJBaseUtil/CJSectionDataModel.h>   //在CJDataUtil中
 #import <CJBaseUtil/CJModuleModel.h>        //在CJDataUtil中
-#import <CJComplexUIKit/MyEqualCellSizeCollectionView.h>
+#import <CJMenuListKit/MyEqualCellSizeCollectionView.h>
 
 @interface CJUIKitBaseCollectionHomeViewController : CJUIKitBaseViewController {
     

@@ -16,7 +16,7 @@
 #import <CJMedia/CJImageUploadFileModelsOwner.h>
 #import <CJMedia/CJVideoUploadFileModelsOwner.h>
 
-#import "MyEqualCellSizeCollectionViewDelegate.h"
+#import "MyEqualCellSizeCollectionViewNormalDelegate.h"
 #import "MyEqualCellSizeCollectionViewDataSource.h"
 
 typedef NS_ENUM(NSUInteger, CJMediaType) {
@@ -35,7 +35,7 @@ typedef NS_ENUM(NSUInteger, CJUploadActionType) {
 @interface CJUploadImageCollectionView : MyEqualCellSizeCollectionView <UIImagePickerControllerDelegate, UINavigationControllerDelegate> {
     
 }
-@property (nonatomic, strong) MyEqualCellSizeCollectionViewDelegate *equalCellSizeCollectionViewDelegate;
+@property (nonatomic, strong) MyEqualCellSizeCollectionViewNormalDelegate *equalCellSizeCollectionViewDelegate;
 @property (nonatomic, strong) MyEqualCellSizeCollectionViewDataSource *equalCellSizeCollectionViewDataSource;
 
 //@property (nonatomic, strong) NSMutableArray<NSString *> *dataModels;/**< 数据源 */

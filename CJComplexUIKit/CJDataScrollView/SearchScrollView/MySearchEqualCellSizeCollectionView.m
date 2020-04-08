@@ -7,10 +7,12 @@
 //
 
 #import "MySearchEqualCellSizeCollectionView.h"
+#import "MySearchEqualCellSizeCollectionViewDataSource.h"
 
-@interface MySearchEqualCellSizeCollectionView () <UICollectionViewDataSource, UISearchBarDelegate> {
+@interface MySearchEqualCellSizeCollectionView () <UISearchBarDelegate> {
     
 }
+@property (nonatomic, strong) MySearchEqualCellSizeCollectionViewDataSource *searchEqualCellSizeCollectionViewDataSource;
 
 @end
 
@@ -18,8 +20,16 @@
 
 @implementation MySearchEqualCellSizeCollectionView
 
-- (void)commonInit {
-    [super commonInit];
+/// 初始化方法
+- (instancetype)init {
+    UICollectionViewLayout *layout = [[UICollectionViewFlowLayout alloc] init];
+    self = [super initWithFrame:CGRectZero collectionViewLayout:layout];
+    if (self) {
+        [self setupConfigure];
+    }
+    return self;
+}
+- (void)setupConfigure {
     
     /*
     UISearchController *searchController = [[UISearchController alloc] initWithSearchResultsController:nil];
@@ -32,7 +42,12 @@
     searchBar.delegate = self;
 //    [searchBar sizeToFit];
     
-    self.dataSource = self;
+    MySearchEqualCellSizeCollectionViewDataSource *searchEqualCellSizeCollectionViewDataSource = [[MySearchEqualCellSizeCollectionViewDataSource alloc] initWithEqualCellSizeSetting:nil cellForItemAtIndexPathBlock:^UICollectionViewCell *(UICollectionView *collectionView, NSIndexPath *indexPath, BOOL isExtralItem) {
+        NSAssert(self.configureCellBlock != nil, @"未设置configureCellBlock");
+        return self.configureCellBlock(collectionView, indexPath);
+    }];
+    self.searchEqualCellSizeCollectionViewDataSource = searchEqualCellSizeCollectionViewDataSource;
+    self.dataSource = self.searchEqualCellSizeCollectionViewDataSource;
 }
 
 - (UISearchBar *)searchBar {
@@ -53,45 +68,45 @@
 }
 
 
-#pragma mark - UICollectionViewDataSource
-- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView
-{
-    BOOL isSearching = self.isSearching;
-    NSArray *sectionDataModels = isSearching ? self.resultSectionDataModels : self.originSectionDataModels;
-    
-    NSInteger sectionCount = sectionDataModels.count;
-    return sectionCount;
-}
-- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    BOOL isSearching = self.isSearching;
-    NSArray *sectionDataModels = isSearching ? self.resultSectionDataModels : self.originSectionDataModels;
-    
-    CJSectionDataModel *sectionDataModel = [sectionDataModels objectAtIndex:section];
-    NSMutableArray *dataModels = sectionDataModel.values;
-    
-    NSInteger cellCount = [self.equalCellSizeSetting getCellCountByDataModelCount:dataModels.count];
-    return cellCount;
-}
-
-- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView
-                     cellForItemAtIndexPath:(NSIndexPath *)indexPath
-{
-    NSAssert(self.configureCellBlock != nil, @"未设置configureCellBlock");
-    return self.configureCellBlock(collectionView, indexPath);
-}
-
-/* 完整的描述请参见文件头部 */
-- (id)getDataModelAtIndexPath:(NSIndexPath *)indexPath {
-    BOOL isSearching = self.isSearching;
-    NSArray *sectionDataModels = isSearching ? self.resultSectionDataModels : self.originSectionDataModels;
-    
-    CJSectionDataModel *sectionDataModel = [sectionDataModels objectAtIndex:indexPath.section];
-    NSMutableArray *dataModels = sectionDataModel.values;
-    
-    id dataModle = [self.equalCellSizeSetting getDataModelAtIndexPath:indexPath dataModels:dataModels];
-    
-    return dataModle;
-}
+//#pragma mark - UICollectionViewDataSource
+//- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView
+//{
+//    BOOL isSearching = self.isSearching;
+//    NSArray *sectionDataModels = isSearching ? self.resultSectionDataModels : self.originSectionDataModels;
+//    
+//    NSInteger sectionCount = sectionDataModels.count;
+//    return sectionCount;
+//}
+//- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
+//    BOOL isSearching = self.isSearching;
+//    NSArray *sectionDataModels = isSearching ? self.resultSectionDataModels : self.originSectionDataModels;
+//    
+//    CJSectionDataModel *sectionDataModel = [sectionDataModels objectAtIndex:section];
+//    NSMutableArray *dataModels = sectionDataModel.values;
+//    
+//    NSInteger cellCount = [self.equalCellSizeSetting getCellCountByDataModelCount:dataModels.count];
+//    return cellCount;
+//}
+//
+//- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView
+//                     cellForItemAtIndexPath:(NSIndexPath *)indexPath
+//{
+//    NSAssert(self.configureCellBlock != nil, @"未设置configureCellBlock");
+//    return self.configureCellBlock(collectionView, indexPath);
+//}
+//
+///* 完整的描述请参见文件头部 */
+//- (id)getDataModelAtIndexPath:(NSIndexPath *)indexPath {
+//    BOOL isSearching = self.isSearching;
+//    NSArray *sectionDataModels = isSearching ? self.resultSectionDataModels : self.originSectionDataModels;
+//    
+//    CJSectionDataModel *sectionDataModel = [sectionDataModels objectAtIndex:indexPath.section];
+//    NSMutableArray *dataModels = sectionDataModel.values;
+//    
+//    id dataModle = [self.equalCellSizeSetting getDataModelAtIndexPath:indexPath dataModels:dataModels];
+//    
+//    return dataModle;
+//}
 
 
 #pragma mark - UISearchBarDelegate

@@ -36,7 +36,7 @@
     // 所有测试
     UIViewController *rootViewController = [self getMainRootViewController];
     // 只直接测试某个页面
-//    UIViewController *rootViewController = [[UINavigationController alloc] initWithRootViewController:[[NSClassFromString(@"MyEqualCellSizeCollectionViewController") alloc] init]];
+//    UIViewController *rootViewController = [[UINavigationController alloc] initWithRootViewController:[[NSClassFromString(@"LookBadgeCollectionViewController") alloc] init]];
     
     self.window.rootViewController = rootViewController;
     [self.window makeKeyAndVisible];

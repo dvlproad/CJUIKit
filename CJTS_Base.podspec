@@ -1,5 +1,7 @@
 Pod::Spec.new do |s|
   #验证方法：pod lib lint CJTS_Base.podspec --allow-warnings
+  #查看本地已同步的pod库：pod repo
+  #上传方法：pod repo push cocoapods CJTS_Base.podspec --allow-warnings
   s.name         = "CJTS_Base"
   s.version      = "0.0.2"
   s.summary      = "Hook"
