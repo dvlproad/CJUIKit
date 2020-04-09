@@ -61,14 +61,14 @@ target 'CJUIKitDemo' do
 #    pod 'CJBaseUIKit',          :path => '../’
     pod 'lottie-ios', '~> 2.5.3' # CJBaseUIKit 需要使用
     
-    pod 'CJTS_Base',            :path => '../'
+    pod 'CQDemoKit',            :path => '../'
 #    pod 'CJBaseUIKit',           :path => '../’
     pod 'CJBaseOverlayKit',     :path => '../’
     pod 'CJBaseUtil',           :path => '../’
     pod 'CJFoundation',         :path => '../’
     pod 'CJBaseHelper',         :path => '../’
     pod 'CJBaseEffectKit',      :path => '../’
-    pod 'CJComplexUIKit/CJCollectionView/MyEqualCellSizeCollectionView',      :path => '../’
+    pod 'CJMenuListKit',        :path => '../’
 #    pod 'CJBaseUIKit', :subspecs => ['UIColor', 'UIButton', 'UITextField', 'CJToast', 'CJAlert']
 #    pod 'CJBaseUtil', :subspecs => ['CJLog']
 #    pod 'CJFoundation', :subspecs => ['NSString']

@@ -55,10 +55,6 @@
           "source_files": "CJComplexUIKit/CJCollectionView/CJCollectionViewLayout/**/*.{h,m}"
         },
         {
-          "name": "MyEqualCellSizeCollectionView",
-          "source_files": "CJComplexUIKit/CJCollectionView/MyEqualCellSizeCollectionView/**/*.{h,m}"
-        },
-        {
           "name": "CJOpenCollectionView",
           "source_files": "CJComplexUIKit/CJCollectionView/CJOpenCollectionView/**/*.{h,m}"
         }
