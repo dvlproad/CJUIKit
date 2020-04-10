@@ -1,1 +1,1 @@
-../../../../../CQDemoKit/Base/CJUIKitResoucesUtil.h
+../../../CQDemoKit/CQDemoKit/Base/CJUIKitResoucesUtil.h

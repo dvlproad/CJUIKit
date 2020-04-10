@@ -6,7 +6,7 @@
 //  Copyright (c) 2015 dvlproad. All rights reserved.
 //
 
-#import <CJTS_Base/CJUIKitBaseViewController.h>
+#import <CQDemoKit/CJUIKitBaseViewController.h>
 
 @interface LookBadgeCollectionViewController : CJUIKitBaseViewController {
     

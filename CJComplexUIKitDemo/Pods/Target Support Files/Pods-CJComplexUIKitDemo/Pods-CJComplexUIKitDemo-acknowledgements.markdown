@@ -302,11 +302,11 @@ SOFTWARE.
 
 
 
-## CJTS_Base
+## CQDemoKit
 
 MIT License
 
-Copyright (c) 2017 dvlproad
+Copyright (c) 2020 dvlproad
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal

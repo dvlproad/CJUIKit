@@ -1,1 +1,1 @@
-../../../../../CQDemoKit/TextView/View/CJValidateStringTableViewCell.h
+../../../CQDemoKit/CQDemoKit/TextView/View/CJValidateStringTableViewCell.h

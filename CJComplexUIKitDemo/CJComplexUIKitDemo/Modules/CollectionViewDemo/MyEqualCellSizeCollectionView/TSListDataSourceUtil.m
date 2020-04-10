@@ -7,7 +7,7 @@
 //
 
 #import "TSListDataSourceUtil.h"
-#import <CJTS_Base/CJUIKitResoucesUtil.h>
+#import <CQDemoKit/CJUIKitResoucesUtil.h>
 
 @implementation TSListDataSourceUtil
 

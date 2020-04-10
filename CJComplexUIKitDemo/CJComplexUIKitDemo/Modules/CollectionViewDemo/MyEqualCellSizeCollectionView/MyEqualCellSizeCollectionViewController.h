@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <CJTS_Base/CJUIKitBaseViewController.h>
+#import <CQDemoKit/CJUIKitBaseViewController.h>
 
 @interface MyEqualCellSizeCollectionViewController : CJUIKitBaseViewController {
     

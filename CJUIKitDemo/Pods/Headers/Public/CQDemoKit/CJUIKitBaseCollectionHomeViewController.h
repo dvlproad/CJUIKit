@@ -1,1 +1,1 @@
-../../../../../CQDemoKit/Collection/CJUIKitBaseCollectionHomeViewController.h
+../../../CQDemoKit/CQDemoKit/Collection/CJUIKitBaseCollectionHomeViewController.h

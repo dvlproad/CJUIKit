@@ -204,7 +204,8 @@ PODS:
   - CJMedia/CJValidateAuthorizationUtil (0.0.7)
   - CJMedia/MySingleImagePickerController (0.0.7):
     - CJMedia/CJValidateAuthorizationUtil
-  - CJMenuListKit (0.3.0):
+  - CJMenuListKit (0.1.0):
+    - CJBaseUtil/CJDataUtil
     - Masonry
     - SDWebImage
   - CJNetwork (0.5.0):
@@ -226,20 +227,18 @@ PODS:
   - CJNetwork/CJNetworkBase (0.5.0)
   - CJNetwork/CJRequestUtil (0.5.0):
     - CJNetwork/CJNetworkBase
-  - CJTS_Base (0.0.2):
+  - CQDemoKit (0.1.0):
+    - CQDemoKit/Home_Base (= 0.1.0)
+    - CQDemoKit/Home_Collection (= 0.1.0)
+    - CQDemoKit/Home_TextView (= 0.1.0)
+  - CQDemoKit/Home_Base (0.1.0):
     - CJBaseOverlayKit/CJToast
     - CJBaseUtil/CJDataUtil
-    - CJComplexUIKit/CJCollectionView
-    - CJTS_Base/Home_Collection (= 0.0.2)
-    - CJTS_Base/Home_TextView (= 0.0.2)
-  - CJTS_Base/Home_Collection (0.0.2):
-    - CJBaseOverlayKit/CJToast
-    - CJBaseUtil/CJDataUtil
-    - CJComplexUIKit/CJCollectionView
-  - CJTS_Base/Home_TextView (0.0.2):
-    - CJBaseOverlayKit/CJToast
-    - CJBaseUtil/CJDataUtil
-    - CJComplexUIKit/CJCollectionView
+    - Masonry
+  - CQDemoKit/Home_Collection (0.1.0):
+    - CQDemoKit/Home_Base
+  - CQDemoKit/Home_TextView (0.1.0):
+    - CQDemoKit/Home_Base
   - DZNEmptyDataSet (1.8.1)
   - IjinbuNetwork (0.1.0):
     - CJNetwork/AFNetworkingBaseComponent
@@ -282,7 +281,7 @@ DEPENDENCIES:
   - CJMenuListKit (from `../`)
   - CJNetwork
   - CJNetwork/AFNetworkingBaseComponent
-  - CJTS_Base (from `../`)
+  - CQDemoKit (~> 0.1.0)
   - DZNEmptyDataSet
   - IjinbuNetwork (~> 0.1.0)
   - JGActionSheet
@@ -299,6 +298,7 @@ SPEC REPOS:
     - CJFile
     - CJMedia
     - CJNetwork
+    - CQDemoKit
     - DZNEmptyDataSet
     - JGActionSheet
     - lottie-ios
@@ -331,8 +331,6 @@ EXTERNAL SOURCES:
     :path: "../"
   CJMenuListKit:
     :path: "../"
-  CJTS_Base:
-    :path: "../"
 
 SPEC CHECKSUMS:
   AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
@@ -345,9 +343,9 @@ SPEC CHECKSUMS:
   CJFile: 6c1e6d55b3b94e8afbaa9f413f131301d15fdc48
   CJFoundation: 53b4df7152c6d6fd776f55f387c67f431b8574bd
   CJMedia: 29b1bd8c127fb80c4993a76420a3bcc31a4657e5
-  CJMenuListKit: 6854336ae26469dc0baf671cc615ff5ec8ae348e
+  CJMenuListKit: e569f03243e1f160e2e74584a5c845bbf201a140
   CJNetwork: a75f849e5c6ec8fc85ca7aa5027f73d6c48a4af1
-  CJTS_Base: 538dc19330d861126cfabe3e80204acf974f59f5
+  CQDemoKit: 5ca222de41ee74b83ad98e49f0c0e3785b316b85
   DZNEmptyDataSet: 9525833b9e68ac21c30253e1d3d7076cc828eaa7
   IjinbuNetwork: 307e7e12d35b547f04b885cc2aa098625e4b9768
   JGActionSheet: 2cfca820b57a11ec4b4a5655d45ee599fbeddc05
@@ -364,6 +362,6 @@ SPEC CHECKSUMS:
   SDWebImage: c5594f1a19c48d526d321e548902b56b479cd508
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
 
-PODFILE CHECKSUM: a3724156e93efb02fe9a1beeb1086ed3f95a1008
+PODFILE CHECKSUM: 92b4298356652c320166668868d51bd5b694fc75
 
 COCOAPODS: 1.8.4

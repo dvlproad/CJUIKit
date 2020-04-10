@@ -156,7 +156,7 @@ DEPENDENCIES:
   - CJMenuListKit (from `../`)
   - CJPicker (~> 1.3.2)
   - CJPopupView/CJPopoverView
-  - CQDemoKit (from `../`)
+  - CQDemoKit (~> 0.1.0)
   - FLAnimatedImage
   - IQKeyboardManager
   - lottie-ios (~> 2.5.3)
@@ -183,6 +183,7 @@ SPEC REPOS:
     - CJFile
     - CJPicker
     - CJPopupView
+    - CQDemoKit
     - FLAnimatedImage
     - IQKeyboardManager
     - lottie-ios
@@ -218,8 +219,6 @@ EXTERNAL SOURCES:
     :path: "../"
   CJMenuListKit:
     :path: "../"
-  CQDemoKit:
-    :path: "../"
 
 SPEC CHECKSUMS:
   AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
@@ -233,7 +232,7 @@ SPEC CHECKSUMS:
   CJMenuListKit: e569f03243e1f160e2e74584a5c845bbf201a140
   CJPicker: c33099d47323271b91c2ce112976d1bee19a70ce
   CJPopupView: c7685f6a0225a89c72d97ea946f2816b5442abaf
-  CQDemoKit: 75c22ab800f99c8cfcd6d65b930df68a27e5837b
+  CQDemoKit: 5ca222de41ee74b83ad98e49f0c0e3785b316b85
   FLAnimatedImage: 4a0b56255d9b05f18b6dd7ee06871be5d3b89e31
   IQKeyboardManager: 6194101620b73af5e67900b8f89707a99de0b804
   lottie-ios: a50d5c0160425cd4b01b852bb9578963e6d92d31
@@ -254,6 +253,6 @@ SPEC CHECKSUMS:
   WMPageController: 0c7624d2b48e4f1ab92371688cf6744ed701575d
   YYText: 5c461d709e24d55a182d1441c41dc639a18a4849
 
-PODFILE CHECKSUM: 3d7e503925463d488c535dc454a1741452c2651d
+PODFILE CHECKSUM: 889f517218d2349cc64cde54e104dc1a70ab223a
 
 COCOAPODS: 1.8.4
