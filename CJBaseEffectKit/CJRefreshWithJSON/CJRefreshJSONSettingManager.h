@@ -12,6 +12,7 @@
     
 }
 @property (nonatomic, copy, readonly) NSString *animationNamed;       /** Json动画文件名 */
+@property (nonatomic, copy, readonly) NSBundle *animationBundle;    /** Json动画文件所在的bundle(如果是在MainBundle中，则可直接设为nil) */
 
 @property (nonatomic, copy, readonly) NSString *headerIdleText;       /** 普通闲置状态：@"下拉刷新" */
 @property (nonatomic, copy, readonly) NSString *headerPullingText;    /** 松开就可以进行刷新的状态：@"松开刷新" */
@@ -30,8 +31,10 @@
 *  设置下拉刷新动画对应的json文件名（必须调用）
 *
 *  @param animationNamed    动画对应的json文件名
+*  @param animationBundle   动画对应的json文件所在的bundle(如果是在MainBundle中，则可直接设为nil)
 */
-- (void)configHeaderAnimationWithAnimationNamed:(NSString *)animationNamed;
+- (void)configHeaderAnimationWithAnimationNamed:(NSString *)animationNamed
+                                       inBundle:(NSBundle *)animationBundle;
 - (void)updateHeaderStateTextWithIdleText:(NSString *)idleText
                               pullingText:(NSString *)pullingText
                            refreshingText:(NSString *)refreshingText;

@@ -1,16 +1,16 @@
 Pod::Spec.new do |s|
   #验证方法：pod lib lint CJBaseEffectKit.podspec --allow-warnings --verbose
   s.name         = "CJBaseEffectKit"
-  s.version      = "0.0.2"
+  s.version      = "0.0.4"
   s.summary      = "自定义的基础效果UI"
   s.homepage     = "https://github.com/dvlproad/CJUIKit"
 
   s.description  = <<-DESC
-                 - CJBaseUIKit/CJRefreshView：刷新
-                 - CJBaseUIKit/CJRefreshWithJSON：使用json动画的刷新
-                 - CJBaseUIKit/CJMJRefreshComponent：已包含pod 'MJRefresh'
-                 - CJBaseUIKit/CJDataEmptyView：空视图(处理数据为空、网络加载失败等情况)
-                 - CJBaseUIKit/CJScaleHeadView：个人中心头部的缩放视图
+                 - CJBaseEffectKit/CJRefreshView：刷新
+                 - CJBaseEffectKit/CJRefreshWithJSON：使用json动画的刷新
+                 - CJBaseEffectKit/CJMJRefreshComponent：已包含pod 'MJRefresh'
+                 - CJBaseEffectKit/CJDataEmptyView：空视图(处理数据为空、网络加载失败等情况)
+                 - CJBaseEffectKit/CJScaleHeadView：个人中心头部的缩放视图
 
                    A longer description of CJBaseEffectKit in Markdown format.
 
@@ -33,7 +33,7 @@ Pod::Spec.new do |s|
 
   s.platform     = :ios, "8.0"
  
-  s.source       = { :git => "https://github.com/dvlproad/CJUIKit.git", :tag => "CJBaseEffectKit_0.0.2" }
+  s.source       = { :git => "https://github.com/dvlproad/CJUIKit.git", :tag => "CJBaseEffectKit_0.0.4" }
   #s.source_files  = "CJBaseEffectKit/*.{h,m}"
 
   s.frameworks = "UIKit"

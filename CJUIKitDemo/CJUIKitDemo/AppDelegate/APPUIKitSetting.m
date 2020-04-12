@@ -34,7 +34,7 @@
     CJRefreshJSONSettingManager *refreshAnimateManager = [CJRefreshJSONSettingManager sharedInstance];
     
     // HEADER
-    [refreshAnimateManager configHeaderAnimationWithAnimationNamed:@"loading_coffee"];
+    [refreshAnimateManager configHeaderAnimationWithAnimationNamed:@"loading_coffee" inBundle:nil];
     [refreshAnimateManager updateHeaderStateTextWithIdleText:NSLocalizedString(@"下拉刷新1", nil)
                                                  pullingText:NSLocalizedString(@"松开刷新2", nil)
                                               refreshingText:NSLocalizedString(@"加载数据中3", nil)];

@@ -43,8 +43,17 @@
 }
 
 #pragma mark - HEADER
-- (void)configHeaderAnimationWithAnimationNamed:(NSString *)animationNamed {
+/*
+*  设置下拉刷新动画对应的json文件名（必须调用）
+*
+*  @param animationNamed    动画对应的json文件名
+*  @param animationBundle   动画对应的json文件所在的bundle(如果是在MainBundle中，则可直接设为nil)
+*/
+- (void)configHeaderAnimationWithAnimationNamed:(NSString *)animationNamed
+                                       inBundle:(NSBundle *)animationBundle
+{
     _animationNamed = animationNamed;
+    _animationBundle = animationBundle;
 }
 
 - (void)updateHeaderStateTextWithIdleText:(NSString *)idleText

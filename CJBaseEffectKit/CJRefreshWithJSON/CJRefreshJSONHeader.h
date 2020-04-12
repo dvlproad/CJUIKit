@@ -14,12 +14,14 @@
 
 #pragma mark - 构造方法（新增）
 + (instancetype)headerWithAnimationNamed:(NSString *)animationNamed
+                         animationBundle:(NSBundle *)animationBundle
                                 idleText:(NSString *)idleText
                              pullingText:(NSString *)pullingText
                           refreshingText:(NSString *)refreshingText
                          refreshingBlock:(MJRefreshComponentRefreshingBlock)refreshingBlock;
 
 + (instancetype)headerWithAnimationNamed:(NSString *)animationNamed
+                         animationBundle:(NSBundle *)animationBundle
                                 idleText:(NSString *)idleText
                              pullingText:(NSString *)pullingText
                           refreshingText:(NSString *)refreshingText

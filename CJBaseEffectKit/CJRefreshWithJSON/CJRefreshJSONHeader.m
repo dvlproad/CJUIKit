@@ -22,7 +22,6 @@ static const CGFloat loadingViewHeight = 32;
 @property (nonatomic, strong) LOTAnimationView *lotAnimationView;
 @property (nonatomic, weak) UILabel *stateLabel;
 
-@property (nonatomic, copy) NSString *animationNamed;
 @property (nonatomic, copy) NSString *idleText;       /** 普通闲置状态：@"下拉刷新" */
 @property (nonatomic, copy) NSString *pullingText;    /** 松开就可以进行刷新的状态：@"松开刷新" */
 @property (nonatomic, copy) NSString *refreshingText; /** 正在刷新中的状态：@"加载数据中" */
@@ -37,6 +36,7 @@ static const CGFloat loadingViewHeight = 32;
 + (instancetype)headerWithRefreshingBlock:(MJRefreshComponentRefreshingBlock)refreshingBlock
 {
     return [self headerWithAnimationNamed:[CJRefreshJSONSettingManager sharedInstance].animationNamed
+                          animationBundle:[CJRefreshJSONSettingManager sharedInstance].animationBundle
                                  idleText:[CJRefreshJSONSettingManager sharedInstance].headerIdleText
                               pullingText:[CJRefreshJSONSettingManager sharedInstance].headerPullingText
                            refreshingText:[CJRefreshJSONSettingManager sharedInstance].headerRefreshingText
@@ -45,6 +45,7 @@ static const CGFloat loadingViewHeight = 32;
 + (instancetype)headerWithRefreshingTarget:(id)target refreshingAction:(SEL)action
 {
     return [self headerWithAnimationNamed:[CJRefreshJSONSettingManager sharedInstance].animationNamed
+                          animationBundle:[CJRefreshJSONSettingManager sharedInstance].animationBundle
                                  idleText:[CJRefreshJSONSettingManager sharedInstance].headerIdleText
                               pullingText:[CJRefreshJSONSettingManager sharedInstance].headerPullingText
                            refreshingText:[CJRefreshJSONSettingManager sharedInstance].headerRefreshingText
@@ -54,13 +55,19 @@ static const CGFloat loadingViewHeight = 32;
 
 #pragma mark - 构造方法（新增）
 + (instancetype)headerWithAnimationNamed:(NSString *)animationNamed
+                         animationBundle:(NSBundle *)animationBundle
                                 idleText:(NSString *)idleText
                              pullingText:(NSString *)pullingText
                           refreshingText:(NSString *)refreshingText
                          refreshingBlock:(MJRefreshComponentRefreshingBlock)refreshingBlock
 {
     CJRefreshJSONHeader *cmp = [[self alloc] init];
-    cmp.animationNamed = animationNamed;
+    if (animationBundle) {
+        [cmp.lotAnimationView setAnimationNamed:animationNamed inBundle:animationBundle];
+    } else {
+        [cmp.lotAnimationView setAnimationNamed:animationNamed];
+    }
+    
     cmp.idleText = idleText;
     cmp.pullingText = pullingText;
     cmp.refreshingText = refreshingText;
@@ -70,6 +77,7 @@ static const CGFloat loadingViewHeight = 32;
 }
 
 + (instancetype)headerWithAnimationNamed:(NSString *)animationNamed
+                         animationBundle:(NSBundle *)animationBundle
                                 idleText:(NSString *)idleText
                              pullingText:(NSString *)pullingText
                           refreshingText:(NSString *)refreshingText
@@ -77,7 +85,12 @@ static const CGFloat loadingViewHeight = 32;
                         refreshingAction:(SEL)action
 {
     CJRefreshJSONHeader *cmp = [[self alloc] init];
-    cmp.animationNamed = animationNamed;
+    if (animationBundle) {
+        [cmp.lotAnimationView setAnimationNamed:animationNamed inBundle:animationBundle];
+    } else {
+        [cmp.lotAnimationView setAnimationNamed:animationNamed];
+    }
+    
     cmp.idleText = idleText;
     cmp.pullingText = pullingText;
     cmp.refreshingText = refreshingText;
@@ -105,15 +118,11 @@ static const CGFloat loadingViewHeight = 32;
     self.mj_h = 20+50+20;
     
     // 添加动画
-//    NSString *bundlePath = [[NSBundle mainBundle] pathForResource:@"CommonUIBundle" ofType:@"bundle"];
-//    NSBundle *resourceBundle = [NSBundle bundleWithPath:bundlePath];
-//    //NSBundle *resourceBundle2 = [NSBundle bundleForClass:[CJProgressHUD class]]; //错误的取值，取不全
-//    _lotAnimationView = [LOTAnimationView animationNamed:@"loading_test" inBundle:resourceBundle];
-    NSString *headerAnimationNamed = [CJRefreshJSONSettingManager sharedInstance].animationNamed;
-    if (headerAnimationNamed.length == 0) {
-        NSAssert(NO, @"Error: 请在app启动时候调用[CJRefreshJSONSettingManager sharedInstance].animationNamed = 来设置全局的RefreshHeader动画");
-    }
-    _lotAnimationView = [LOTAnimationView animationNamed:headerAnimationNamed];
+//    NSString *headerAnimationNamed = [CJRefreshJSONSettingManager sharedInstance].animationNamed;
+//    if (headerAnimationNamed.length == 0) {
+//        NSAssert(NO, @"Error: 请在app启动时候调用[CJRefreshJSONSettingManager sharedInstance].animationNamed = 来设置全局的RefreshHeader动画");
+//    }
+    _lotAnimationView = [[LOTAnimationView alloc] initWithFrame:CGRectZero];
     _lotAnimationView.loopAnimation = YES;
     _lotAnimationView.backgroundColor = [UIColor clearColor];
     [self addSubview:_lotAnimationView];
