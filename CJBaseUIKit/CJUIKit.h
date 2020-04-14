@@ -12,17 +12,4 @@
 //UIColor
 #import "UIColor+CJHex.h"
 
-//// Alert
-//#import "CJMessageAlertView.h"
-//#import "CJTextInputAlertView.h"
-//
-//// ActionSheet
-//#import "CJActionSheetView.h"
-//
-//// Toast
-//#import "CJToast.h"
-//
-//// HUD
-//#import "CJProgressHUD.h"
-
 #endif /* CJUIKit_h */

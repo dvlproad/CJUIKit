@@ -25,8 +25,8 @@ Pod::Spec.new do |s|
                  - CJBaseUIKit/CJBaseTableViewCell：基础的TableViewCell
                  - CJBaseUIKit/CJBaseTableViewHeaderFooterView：列表--HeaderFooterView
                  - CJBaseUIKit/CJSlider：滑块
-                 - CJBaseUIKit/CJToast：Toast
-                 - CJBaseUIKit/CJAlert：Alert
+                 - CJBaseUIKit/CJToast：Toast(已转移到 CJBaseOverlayKit)
+                 - CJBaseUIKit/CJAlert：Alert(已转移到 CJBaseOverlayKit)
                  - CJBaseUIKit/UIViewController：自定义返回按钮
 
                    A longer description of CJBaseUIKit in Markdown format.
@@ -66,10 +66,6 @@ Pod::Spec.new do |s|
   # Constant 常量信息
   s.subspec 'CJUIKitConstant' do |ss|
     ss.source_files = "CJBaseUIKit/CJUIKitConstant/**/*.{h,m}"
-  end
-
-  s.subspec 'CJTheme' do |ss|
-    ss.source_files = "CJBaseUIKit/CJTheme/**/*.{h,m}"
   end
 
   s.subspec 'UIColor' do |ss|
@@ -174,36 +170,6 @@ Pod::Spec.new do |s|
   s.subspec 'CJBaseTableViewHeaderFooterView' do |ss|
     ss.source_files = "CJBaseUIKit/CJBaseTableViewHeaderFooterView/**/*.{h,m}"
   end
-
-
-  s.subspec 'CJToast' do |ss|
-    ss.source_files = "CJBaseUIKit/CJToast/**/*.{h,m}"
-    ss.resources = "CJBaseUIKit/CJToast/**/*.{png,xib}"
-    #多个依赖就写多行
-    ss.dependency 'MBProgressHUD'
-  end
-  
-  s.subspec 'CJAlert' do |ss|
-    ss.source_files = "CJBaseUIKit/CJAlert/**/*.{h,m}"
-    #多个依赖就写多行
-    ss.dependency 'Masonry'
-    ss.dependency 'CJBaseUIKit/UIView/CJPopupAction'
-  end
-
-  s.subspec 'CJActionSheet' do |ss|
-    ss.source_files = "CJBaseUIKit/CJActionSheet/**/*.{h,m}"
-    #多个依赖就写多行
-    ss.dependency 'Masonry'
-    ss.dependency 'CJBaseUIKit/UIView/CJPopupAction'
-  end
-
-  s.subspec 'CJProgressHUD' do |ss|
-    ss.source_files = "CJBaseUIKit/CJProgressHUD/**/*.{h,m}"
-    #多个依赖就写多行
-    ss.dependency 'Masonry'
-    ss.dependency 'lottie-ios', '~> 2.5.3'
-  end
-
 
 
 end
