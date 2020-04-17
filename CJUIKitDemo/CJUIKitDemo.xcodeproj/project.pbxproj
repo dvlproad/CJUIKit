@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1515E9A924494CAB00EB1F44 /* TSSearchBarFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 1515E9A824494CAB00EB1F44 /* TSSearchBarFactory.m */; };
+		1515E9AC24494F7600EB1F44 /* CJSearchBarDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1515E9AB24494F7600EB1F44 /* CJSearchBarDelegate.m */; };
 		154A11222428F84100AD5F9B /* loading_test.json in Resources */ = {isa = PBXBuildFile; fileRef = 154A111E2428F84100AD5F9B /* loading_test.json */; };
 		154A11232428F84100AD5F9B /* loading_03.json in Resources */ = {isa = PBXBuildFile; fileRef = 154A111F2428F84100AD5F9B /* loading_03.json */; };
 		154A11242428F84100AD5F9B /* TSHUDUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 154A11202428F84100AD5F9B /* TSHUDUtil.m */; };
@@ -185,7 +187,6 @@
 		7875C58F231CF77900076A00 /* BackSystemItemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7875C589231CF77900076A00 /* BackSystemItemViewController.m */; };
 		787C287F23223DAA00AF84F4 /* DemoEasyModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 787C287E23223DAA00AF84F4 /* DemoEasyModel.m */; };
 		787FDB5620500B01008A46E3 /* SearchBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 787FDB4C20500B00008A46E3 /* SearchBarViewController.m */; };
-		787FDB5720500B01008A46E3 /* SearchBarViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 787FDB4D20500B00008A46E3 /* SearchBarViewController.xib */; };
 		787FDB5820500B01008A46E3 /* TextFieldViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 787FDB5020500B00008A46E3 /* TextFieldViewController.m */; };
 		787FDB5A20500B01008A46E3 /* ColorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 787FDB5320500B01008A46E3 /* ColorViewController.m */; };
 		787FDB6420500B1F008A46E3 /* TextViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 787FDB5D20500B1F008A46E3 /* TextViewController.m */; };
@@ -380,6 +381,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1515E9A724494CAB00EB1F44 /* TSSearchBarFactory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TSSearchBarFactory.h; sourceTree = "<group>"; };
+		1515E9A824494CAB00EB1F44 /* TSSearchBarFactory.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TSSearchBarFactory.m; sourceTree = "<group>"; };
+		1515E9AA24494F7600EB1F44 /* CJSearchBarDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CJSearchBarDelegate.h; sourceTree = "<group>"; };
+		1515E9AB24494F7600EB1F44 /* CJSearchBarDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CJSearchBarDelegate.m; sourceTree = "<group>"; };
 		154A111C2428F84100AD5F9B /* UIViewController+CQProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+CQProgressHUD.h"; sourceTree = "<group>"; };
 		154A111D2428F84100AD5F9B /* TSHUDUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSHUDUtil.h; sourceTree = "<group>"; };
 		154A111E2428F84100AD5F9B /* loading_test.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = loading_test.json; sourceTree = "<group>"; };
@@ -704,7 +709,6 @@
 		787C287E23223DAA00AF84F4 /* DemoEasyModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DemoEasyModel.m; sourceTree = "<group>"; };
 		787FDB4B20500B00008A46E3 /* SearchBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchBarViewController.h; sourceTree = "<group>"; };
 		787FDB4C20500B00008A46E3 /* SearchBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchBarViewController.m; sourceTree = "<group>"; };
-		787FDB4D20500B00008A46E3 /* SearchBarViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SearchBarViewController.xib; sourceTree = "<group>"; };
 		787FDB4F20500B00008A46E3 /* TextFieldViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextFieldViewController.h; sourceTree = "<group>"; };
 		787FDB5020500B00008A46E3 /* TextFieldViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextFieldViewController.m; sourceTree = "<group>"; };
 		787FDB5320500B01008A46E3 /* ColorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ColorViewController.m; sourceTree = "<group>"; };
@@ -1032,6 +1036,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1515E9A624494C8E00EB1F44 /* TSSearchBar */ = {
+			isa = PBXGroup;
+			children = (
+				1515E9A724494CAB00EB1F44 /* TSSearchBarFactory.h */,
+				1515E9A824494CAB00EB1F44 /* TSSearchBarFactory.m */,
+			);
+			path = TSSearchBar;
+			sourceTree = "<group>";
+		};
 		154A111B2428F84100AD5F9B /* TSHUD */ = {
 			isa = PBXGroup;
 			children = (
@@ -1437,8 +1450,10 @@
 		1562F29D23F5DBF40009FCEA /* CJSearchBar */ = {
 			isa = PBXGroup;
 			children = (
-				1562F29E23F5DBF40009FCEA /* CJSearchBar.m */,
 				1562F29F23F5DBF40009FCEA /* CJSearchBar.h */,
+				1562F29E23F5DBF40009FCEA /* CJSearchBar.m */,
+				1515E9AA24494F7600EB1F44 /* CJSearchBarDelegate.h */,
+				1515E9AB24494F7600EB1F44 /* CJSearchBarDelegate.m */,
 			);
 			path = CJSearchBar;
 			sourceTree = "<group>";
@@ -1822,6 +1837,7 @@
 		7852D9DF216F16B000E50A39 /* CommonUI */ = {
 			isa = PBXGroup;
 			children = (
+				1515E9A624494C8E00EB1F44 /* TSSearchBar */,
 				78E1895321777C9700B8781A /* Base */,
 				7857ABB5225482D200B1569C /* CJDemoDatePickerView */,
 				7857ABB92254AA1100B1569C /* CJDemoDateTextField */,
@@ -1927,7 +1943,6 @@
 			children = (
 				787FDB4B20500B00008A46E3 /* SearchBarViewController.h */,
 				787FDB4C20500B00008A46E3 /* SearchBarViewController.m */,
-				787FDB4D20500B00008A46E3 /* SearchBarViewController.xib */,
 			);
 			path = SearchBarDemo;
 			sourceTree = "<group>";
@@ -2962,7 +2977,6 @@
 				7868278121AF02E000FCCDE5 /* bg@2x.jpg in Resources */,
 				154A11282428F88B00AD5F9B /* loading_coffee.json in Resources */,
 				781C737121BA65C90090080C /* minus_common_icon@3x.png in Resources */,
-				787FDB5720500B01008A46E3 /* SearchBarViewController.xib in Resources */,
 				787FDB8820500B5C008A46E3 /* slider_double_thumbImage_a@2x.png in Resources */,
 				1562F2D523F5DBF40009FCEA /* cjCheckBoxGreen2NO.png in Resources */,
 				787FDB6720500B1F008A46E3 /* smail@2x.png in Resources */,
@@ -3275,6 +3289,7 @@
 				1562F2E423F5DBF40009FCEA /* CJSliderControl.m in Sources */,
 				78E189AE21781BE200B8781A /* EdgeLayoutTableViewController.m in Sources */,
 				1562F2DF23F5DBF40009FCEA /* UITableView+CJEmptyView.m in Sources */,
+				1515E9AC24494F7600EB1F44 /* CJSearchBarDelegate.m in Sources */,
 				808DE5E720DA0586003E08F1 /* CJDecimalUtil.m in Sources */,
 				1562F2E123F5DBF40009FCEA /* CJSwitchSlider.m in Sources */,
 				80FF90B01FC5649F00E437CF /* NavigationBarScrollChangeBGViewController.m in Sources */,
@@ -3342,6 +3357,7 @@
 				78575C872257237900925842 /* TestTextFieldOffsetTableViewCell.m in Sources */,
 				80FF91531FC5668700E437CF /* PrivateSetting.m in Sources */,
 				78E189A5217791D200B8781A /* TranslucentLayoutViewController.m in Sources */,
+				1515E9A924494CAB00EB1F44 /* TSSearchBarFactory.m in Sources */,
 				1562F2BF23F5DBF40009FCEA /* UIButton+CJStructure.m in Sources */,
 				1562F38923FD2FC70009FCEA /* AppDelegate.m in Sources */,
 				154A11242428F84100AD5F9B /* TSHUDUtil.m in Sources */,

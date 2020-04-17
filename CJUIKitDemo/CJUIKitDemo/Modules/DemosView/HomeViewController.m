@@ -244,7 +244,6 @@
             CJModuleModel *cjSearchBarModuleModel = [[CJModuleModel alloc] init];
             cjSearchBarModuleModel.title = @"CJSearchBar";
             cjSearchBarModuleModel.classEntry = [SearchBarViewController class];
-            cjSearchBarModuleModel.isCreateByXib = NO;
             [sectionDataModel.values addObject:cjSearchBarModuleModel];
         }
         

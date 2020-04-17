@@ -36,6 +36,9 @@
     NSLog(@"iString = %@", iString);
     
     
+//    [[UIBarButtonItem appearanceWhenContainedInInstancesOfClasses:@[[UISearchBar class]]] setTintColor:[UIColor redColor]];
+//    [[UIBarButtonItem appearanceWhenContainedInInstancesOfClasses:@[[UISearchBar class]]] setTitle:@"取消"];
+    
     NSDictionary *dic = @{@"pushType": @(304),
                           @"msg": @"员工姓名 您好！您的 健康证 将于3天后，即2019-05-01 到期，为避免因证件到期，导致不能排班，请及时办理新的证件，并在员工APP进行提交更新。XXX感谢有你！"
                           };
@@ -64,9 +67,9 @@
     
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     // 所有测试
-//    UIViewController *rootViewController = [self getMainRootViewController];
+    UIViewController *rootViewController = [self getMainRootViewController];
     // 只直接测试某个页面
-    UIViewController *rootViewController = [[UINavigationController alloc] initWithRootViewController:[[NSClassFromString(@"ToastViewController") alloc] init]];
+   rootViewController = [[UINavigationController alloc] initWithRootViewController:[[NSClassFromString(@"SearchBarViewController") alloc] init]];
     
     self.window.rootViewController = rootViewController;
     [self.window makeKeyAndVisible];

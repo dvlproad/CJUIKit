@@ -2,7 +2,7 @@
 //  UICollectionView+CJFlowLayoutScrollDirection.m
 //  CJComplexUIKitDemo
 //
-//  Created by lcQian on 2020/4/8.
+//  Created by ciyouzen on 2020/4/8.
 //  Copyright © 2020 dvlproad. All rights reserved.
 //
 

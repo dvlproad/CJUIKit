@@ -6,16 +6,10 @@
 //  Copyright © 2017年 dvlproad. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import <CQDemoKit/CJUIKitBaseViewController.h>
 
-#ifdef TEST_CJBASEUIKIT_POD
-#import "CJSearchBar.h"
-#else
-#import <CJBaseUIKit/CJSearchBar.h>
-#endif
+#import "TSSearchBarFactory.h"
 
-@interface SearchBarViewController : UIViewController
-
-@property (nonatomic, weak) IBOutlet UISearchBar *searchBar;
+@interface SearchBarViewController : CJUIKitBaseViewController
 
 @end
