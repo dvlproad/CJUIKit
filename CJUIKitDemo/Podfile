@@ -67,7 +67,7 @@ target 'CJUIKitDemo' do
     pod 'CJBaseUtil',           :path => '../’
     pod 'CJFoundation',         :path => '../’
     pod 'CJBaseHelper',         :path => '../’
-    pod 'CJBaseEffectKit',      :path => '../’
+    pod 'CJBaseEffectKit'
     pod 'CJMenuListKit',        :path => '../’
 #    pod 'CJBaseUIKit', :subspecs => ['UIColor', 'UIButton', 'UITextField', 'CJToast', 'CJAlert']
 #    pod 'CJBaseUtil', :subspecs => ['CJLog']

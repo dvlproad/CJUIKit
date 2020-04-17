@@ -1,1 +1,1 @@
-../../../../../CJBaseEffectKit/CJScaleHeadView/MyUserInfoScaleHeadView.h
+../../../CJBaseEffectKit/CJBaseEffectKit/CJScaleHeadView/MyUserInfoScaleHeadView.h

@@ -7,7 +7,6 @@
 //
 
 #import "ToastViewController.h"
-#import <CJBaseEffectKit/CJMJRefreshNormalHeader.h>
 #import "CJToast.h"
 #import <CJBaseOverlayKit/UIView+CJChrysanthemumHUD.h>
 
@@ -21,7 +20,7 @@
 @implementation ToastViewController
 
 - (void)viewWillAppear:(BOOL)animated {
-    [self.tableView.mj_header beginRefreshing];
+    
 }
 
 - (void)viewDidLoad {
@@ -29,13 +28,6 @@
     // Do any additional setup after loading the view.
     
     self.navigationItem.title = NSLocalizedString(@"Toast首页", nil);
-    
-    CJMJRefreshNormalHeader *header = [CJMJRefreshNormalHeader headerWithRefreshingBlock:^{
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-            [self.tableView.mj_header endRefreshing];
-        });
-    }];
-    self.tableView.mj_header = header;
     
     NSMutableArray *sectionDataModels = [[NSMutableArray alloc] init];
     //Toast

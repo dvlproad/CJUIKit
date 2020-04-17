@@ -51,6 +51,7 @@
     return self;
 }
 
+
 //+ (CJProgressHUD *)HUDForView:(UIView *)view {
 //    NSEnumerator *subviewsEnum = [view.subviews reverseObjectEnumerator];
 //    for (UIView *subview in subviewsEnum) {

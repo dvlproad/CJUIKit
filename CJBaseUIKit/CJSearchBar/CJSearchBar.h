@@ -8,6 +8,17 @@
 
 #import <UIKit/UIKit.h>
 
-@interface CJSearchBar : UISearchBar
+@interface CJSearchBar : UISearchBar {
+    
+}
+
+/*
+*  初始化搜索栏
+*
+*  @param textChangeBlock 搜索栏文本改变时的回调
+*
+*  @return 搜索栏
+*/
+- (instancetype)initWithTextDidChange:(void(^)(UISearchBar *searchBar, NSString *searchText))textChangeBlock;
 
 @end

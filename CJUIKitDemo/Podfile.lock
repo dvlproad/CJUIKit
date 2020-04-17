@@ -1,22 +1,22 @@
 PODS:
   - AFNetworking/Reachability (3.2.1)
-  - CJBaseEffectKit (0.0.2):
-    - CJBaseEffectKit/CJDataEmptyView (= 0.0.2)
-    - CJBaseEffectKit/CJMJRefreshComponent (= 0.0.2)
-    - CJBaseEffectKit/CJRefreshView (= 0.0.2)
-    - CJBaseEffectKit/CJRefreshWithJSON (= 0.0.2)
-    - CJBaseEffectKit/CJScaleHeadView (= 0.0.2)
-  - CJBaseEffectKit/CJDataEmptyView (0.0.2):
+  - CJBaseEffectKit (0.2.0):
+    - CJBaseEffectKit/CJDataEmptyView (= 0.2.0)
+    - CJBaseEffectKit/CJMJRefreshComponent (= 0.2.0)
+    - CJBaseEffectKit/CJRefreshView (= 0.2.0)
+    - CJBaseEffectKit/CJRefreshWithJSON (= 0.2.0)
+    - CJBaseEffectKit/CJScaleHeadView (= 0.2.0)
+  - CJBaseEffectKit/CJDataEmptyView (0.2.0):
     - CJFoundation/NSString
     - Masonry
-  - CJBaseEffectKit/CJMJRefreshComponent (0.0.2):
+  - CJBaseEffectKit/CJMJRefreshComponent (0.2.0):
     - MJRefresh
-  - CJBaseEffectKit/CJRefreshView (0.0.2)
-  - CJBaseEffectKit/CJRefreshWithJSON (0.0.2):
+  - CJBaseEffectKit/CJRefreshView (0.2.0)
+  - CJBaseEffectKit/CJRefreshWithJSON (0.2.0):
     - lottie-ios (~> 2.5.3)
     - Masonry
     - MJRefresh
-  - CJBaseEffectKit/CJScaleHeadView (0.0.2)
+  - CJBaseEffectKit/CJScaleHeadView (0.2.0)
   - CJBaseHelper (0.1.4):
     - CJBaseHelper/AuthorizationCJHelper (= 0.1.4)
     - CJBaseHelper/DeviceCJHelper (= 0.1.4)
@@ -144,7 +144,7 @@ PODS:
 
 DEPENDENCIES:
   - AFNetworking/Reachability
-  - CJBaseEffectKit (from `../`)
+  - CJBaseEffectKit
   - CJBaseHelper (from `../`)
   - CJBaseOverlayKit (from `../`)
   - CJBaseTest/Test (from `~/Project/Github/CJUIKit`)
@@ -178,6 +178,8 @@ DEPENDENCIES:
   - YYText (~> 1.0.7)
 
 SPEC REPOS:
+  https://gitee.com/dvlproad/dvlproadSpecs:
+    - CJBaseEffectKit
   https://github.com/CocoaPods/Specs.git:
     - AFNetworking
     - CJFile
@@ -205,8 +207,6 @@ SPEC REPOS:
     - YYText
 
 EXTERNAL SOURCES:
-  CJBaseEffectKit:
-    :path: "../"
   CJBaseHelper:
     :path: "../"
   CJBaseOverlayKit:
@@ -222,7 +222,7 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
-  CJBaseEffectKit: 6a9e0180f8bcff9a10b72080b0aa224b1ccb05d9
+  CJBaseEffectKit: 8640801fa272a1d96a6edce2c994652ced0e519f
   CJBaseHelper: dd715e18591da9df5d06364098300591220f0535
   CJBaseOverlayKit: c692f9eaaecc926949b1d57757ab47cccc19b78f
   CJBaseTest: a7975369dd9cad3111ea8a8465ccdb1d50752499
@@ -253,6 +253,6 @@ SPEC CHECKSUMS:
   WMPageController: 0c7624d2b48e4f1ab92371688cf6744ed701575d
   YYText: 5c461d709e24d55a182d1441c41dc639a18a4849
 
-PODFILE CHECKSUM: 889f517218d2349cc64cde54e104dc1a70ab223a
+PODFILE CHECKSUM: a52d4f560e08e66506cc085c0b0899948797a8b8
 
-COCOAPODS: 1.8.4
+COCOAPODS: 1.9.1

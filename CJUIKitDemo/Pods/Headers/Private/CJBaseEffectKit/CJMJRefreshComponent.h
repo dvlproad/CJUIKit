@@ -1,1 +1,1 @@
-../../../../../CJBaseEffectKit/CJMJRefreshComponent/CJMJRefreshComponent.h
+../../../CJBaseEffectKit/CJBaseEffectKit/CJMJRefreshComponent/CJMJRefreshComponent.h

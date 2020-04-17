@@ -14,6 +14,8 @@ NS_ASSUME_NONNULL_BEGIN
     
 }
 
+- (instancetype)initWithTextDidChange:(void(^)(UISearchBar *searchBar, NSString *searchText))textChangeBlock;
+
 @end
 
 NS_ASSUME_NONNULL_END

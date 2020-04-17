@@ -20,11 +20,11 @@
 #pragma mark - 使用时候调用
 + (void)showProgressHUD {
     // 加载时候不能进行其他操作，故设showBackground为YES
-    [[self sharedProgressHUD] showInView:nil withShowBackground:YES];
+//    [[self sharedProgressHUD] showInView:nil withShowBackground:YES];
 }
 
 + (void)dismissProgressHUD {
-    [[self sharedProgressHUD] dismissWithForce:YES];
+//    [[self sharedProgressHUD] dismissWithForce:YES];
 }
 
 

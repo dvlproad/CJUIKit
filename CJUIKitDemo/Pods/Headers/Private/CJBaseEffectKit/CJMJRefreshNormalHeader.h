@@ -1,1 +1,1 @@
-../../../../../CJBaseEffectKit/CJMJRefreshComponent/Normal/CJMJRefreshNormalHeader.h
+../../../CJBaseEffectKit/CJBaseEffectKit/CJMJRefreshComponent/Normal/CJMJRefreshNormalHeader.h

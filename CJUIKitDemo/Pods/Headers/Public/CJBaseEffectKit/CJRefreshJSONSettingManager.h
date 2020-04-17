@@ -1,1 +1,1 @@
-../../../../../CJBaseEffectKit/CJRefreshWithJSON/CJRefreshJSONSettingManager.h
+../../../CJBaseEffectKit/CJBaseEffectKit/CJRefreshWithJSON/CJRefreshJSONSettingManager.h

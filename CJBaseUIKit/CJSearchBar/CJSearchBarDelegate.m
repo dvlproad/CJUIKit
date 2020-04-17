@@ -8,12 +8,18 @@
 
 #import "CJSearchBarDelegate.h"
 
+@interface CJSearchBarDelegate ()
+
+@property (nonatomic, copy) void(^textChangeBlock)(UISearchBar *searchBar, NSString *searchText);
+
+@end
+
 @implementation CJSearchBarDelegate
 
-- (instancetype)init {
+- (instancetype)initWithTextDidChange:(void(^)(UISearchBar *searchBar, NSString *searchText))textChangeBlock {
     self = [super init];
     if (self) {
-        
+        _textChangeBlock = textChangeBlock;
     }
     return self;
 }
@@ -28,6 +34,12 @@
 
 - (void)searchBarTextDidBeginEditing:(UISearchBar *)searchBar {
     [searchBar setShowsCancelButton:YES animated:YES];
+}
+
+- (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText {
+    if (self.textChangeBlock) {
+        self.textChangeBlock(searchBar, searchText);
+    }
 }
 
 @end

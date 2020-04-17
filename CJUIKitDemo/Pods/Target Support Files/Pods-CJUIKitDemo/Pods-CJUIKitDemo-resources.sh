@@ -97,11 +97,11 @@ EOM
   esac
 }
 if [[ "$CONFIGURATION" == "Debug" ]]; then
-  install_resource "${PODS_ROOT}/../../CJBaseEffectKit/CJDataEmptyView/Resources/cjNetworkDisable@2x.png"
-  install_resource "${PODS_ROOT}/../../CJBaseEffectKit/CJDataEmptyView/Resources/cjNetworkDisable@3x.png"
-  install_resource "${PODS_ROOT}/../../CJBaseEffectKit/CJDataEmptyView/Resources/cjNetworkError@2x.png"
-  install_resource "${PODS_ROOT}/../../CJBaseEffectKit/CJDataEmptyView/Resources/cjNetworkError@3x.png"
-  install_resource "${PODS_ROOT}/../../CJBaseEffectKit/CJMJRefreshComponent/Resources/cjRefreshArrowDown@2x.png"
+  install_resource "${PODS_ROOT}/CJBaseEffectKit/CJBaseEffectKit/CJDataEmptyView/Resources/cjNetworkDisable@2x.png"
+  install_resource "${PODS_ROOT}/CJBaseEffectKit/CJBaseEffectKit/CJDataEmptyView/Resources/cjNetworkDisable@3x.png"
+  install_resource "${PODS_ROOT}/CJBaseEffectKit/CJBaseEffectKit/CJDataEmptyView/Resources/cjNetworkError@2x.png"
+  install_resource "${PODS_ROOT}/CJBaseEffectKit/CJBaseEffectKit/CJDataEmptyView/Resources/cjNetworkError@3x.png"
+  install_resource "${PODS_ROOT}/CJBaseEffectKit/CJBaseEffectKit/CJMJRefreshComponent/Resources/cjRefreshArrowDown@2x.png"
   install_resource "${PODS_ROOT}/../../CJBaseOverlayKit/CJToast/Resources/CJToast_error.png"
   install_resource "${PODS_ROOT}/../../CJBaseOverlayKit/CJToast/Resources/CJToast_error@2x.png"
   install_resource "${PODS_ROOT}/../../CJBaseOverlayKit/CJToast/Resources/CJToast_error@3x.png"
@@ -119,11 +119,11 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_resource "${PODS_ROOT}/SVProgressHUD/SVProgressHUD/SVProgressHUD.bundle"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
-  install_resource "${PODS_ROOT}/../../CJBaseEffectKit/CJDataEmptyView/Resources/cjNetworkDisable@2x.png"
-  install_resource "${PODS_ROOT}/../../CJBaseEffectKit/CJDataEmptyView/Resources/cjNetworkDisable@3x.png"
-  install_resource "${PODS_ROOT}/../../CJBaseEffectKit/CJDataEmptyView/Resources/cjNetworkError@2x.png"
-  install_resource "${PODS_ROOT}/../../CJBaseEffectKit/CJDataEmptyView/Resources/cjNetworkError@3x.png"
-  install_resource "${PODS_ROOT}/../../CJBaseEffectKit/CJMJRefreshComponent/Resources/cjRefreshArrowDown@2x.png"
+  install_resource "${PODS_ROOT}/CJBaseEffectKit/CJBaseEffectKit/CJDataEmptyView/Resources/cjNetworkDisable@2x.png"
+  install_resource "${PODS_ROOT}/CJBaseEffectKit/CJBaseEffectKit/CJDataEmptyView/Resources/cjNetworkDisable@3x.png"
+  install_resource "${PODS_ROOT}/CJBaseEffectKit/CJBaseEffectKit/CJDataEmptyView/Resources/cjNetworkError@2x.png"
+  install_resource "${PODS_ROOT}/CJBaseEffectKit/CJBaseEffectKit/CJDataEmptyView/Resources/cjNetworkError@3x.png"
+  install_resource "${PODS_ROOT}/CJBaseEffectKit/CJBaseEffectKit/CJMJRefreshComponent/Resources/cjRefreshArrowDown@2x.png"
   install_resource "${PODS_ROOT}/../../CJBaseOverlayKit/CJToast/Resources/CJToast_error.png"
   install_resource "${PODS_ROOT}/../../CJBaseOverlayKit/CJToast/Resources/CJToast_error@2x.png"
   install_resource "${PODS_ROOT}/../../CJBaseOverlayKit/CJToast/Resources/CJToast_error@3x.png"
@@ -152,7 +152,7 @@ rm -f "$RESOURCES_TO_COPY"
 if [[ -n "${WRAPPER_EXTENSION}" ]] && [ "`xcrun --find actool`" ] && [ -n "${XCASSET_FILES:-}" ]
 then
   # Find all other xcassets (this unfortunately includes those of path pods and other targets).
-  OTHER_XCASSETS=$(find "$PWD" -iname "*.xcassets" -type d)
+  OTHER_XCASSETS=$(find -L "$PWD" -iname "*.xcassets" -type d)
   while read line; do
     if [[ $line != "${PODS_ROOT}*" ]]; then
       XCASSET_FILES+=("$line")
