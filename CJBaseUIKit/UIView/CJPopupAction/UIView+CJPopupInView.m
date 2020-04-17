@@ -216,6 +216,7 @@ static NSString *cjMustHideFromPopupViewKey = @"cjMustHideFromPopupView";
     self.cjShowPopupViewCompleteBlock = showPopupViewCompleteBlock;
     self.cjTapBlankViewCompleteBlock = tapBlankViewCompleteBlock;
     
+    popupView.alpha = 1.0f; // 修复单例时候，在隐藏过后，想再显示，没法继续显示的问题
     popupView.center = popupSuperview.center;
     if (animationType == CJAnimationTypeNone) {
         
@@ -311,6 +312,7 @@ static NSString *cjMustHideFromPopupViewKey = @"cjMustHideFromPopupView";
                          }];
         
     } else if (animationType == CJAnimationTypeCATransform3D) {
+        popupView.alpha = 1.0f; // 修复单例时候，在隐藏过后，想再显示，没法继续显示的问题
         popupView.frame = popupViewShowFrame;
         
         CATransform3D popupViewShowTransform = CATransform3DIdentity;
