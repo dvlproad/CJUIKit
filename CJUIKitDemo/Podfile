@@ -63,7 +63,6 @@ target 'CJUIKitDemo' do
     
     pod 'CQDemoKit',            '~> 0.1.0'
 #    pod 'CJBaseUIKit',           :path => '../’
-    pod 'CJBaseOverlayKit',     :path => '../’
     pod 'CJBaseUtil',           :path => '../’
     pod 'CJFoundation',         :path => '../’
     pod 'CJBaseHelper',         :path => '../’

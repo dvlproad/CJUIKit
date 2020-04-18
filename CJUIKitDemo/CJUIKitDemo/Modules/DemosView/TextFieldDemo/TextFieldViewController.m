@@ -24,8 +24,7 @@
 
 
 #import "UIImage+CJCreate.h"
-#import "TSButtonFactory.h"
-#import "TSToast.h"
+#import "TSButtonFactory.h""
 
 @interface TextFieldViewController () <UITextFieldDelegate> {
 
@@ -278,7 +277,7 @@
         NSString *oldText = textField.text;
         NSString *newText = [oldText stringByReplacingCharactersInRange:range withString:string];//若允许改变，则会改变成的新文本
         if ([newText length] > 10) {
-            [TSToast showMessage:@"文本过长，超过最大的10个字符了"];
+            [self showToastMessage:@"文本过长，超过最大的10个字符了"];
             [textField cjShake];
             return NO;
         }

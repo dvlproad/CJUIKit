@@ -10,7 +10,6 @@
 #import "AppDelegate+WindowRootViewController.h"
 
 #import "YunUncaughtExceptionHandler.h"
-#import "CJBaseAlertView.h"
 
 #import "CJAppLastUtil.h"
 #import <IQKeyboardManager/IQKeyboardManager.h>
@@ -20,7 +19,6 @@
 #import <CJFoundation/NSString+CJCut.h>
 #import <CJFoundation/NSString+CJAttributedString.h>
 
-#import "TSToast.h"
 #import "APPUIKitSetting.h"
 
 @interface AppDelegate ()
@@ -69,7 +67,7 @@
     // 所有测试
     UIViewController *rootViewController = [self getMainRootViewController];
     // 只直接测试某个页面
-   rootViewController = [[UINavigationController alloc] initWithRootViewController:[[NSClassFromString(@"SearchBarViewController") alloc] init]];
+   //rootViewController = [[UINavigationController alloc] initWithRootViewController:[[NSClassFromString(@"SearchBarViewController") alloc] init]];
     
     self.window.rootViewController = rootViewController;
     [self.window makeKeyAndVisible];
@@ -87,7 +85,7 @@
     NSString *firstJudgeString = [NSString stringWithFormat:@"%@\n%@", isFirstLaunchAppString, isFirstLaunchThisVersionString];
     NSLog(@"%@", isFirstLaunchAppString);
     NSLog(@"%@", isFirstLaunchThisVersionString);
-    [TSToast showMessage:firstJudgeString];
+    NSLog(@"%@", firstJudgeString);
     
     return YES;
 }

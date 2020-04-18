@@ -36,24 +36,7 @@ PODS:
   - CJBaseHelper/NSOperationQueueCJHelper (0.1.4)
   - CJBaseHelper/UIViewControllerCJHelper (0.1.4)
   - CJBaseHelper/WebCJHelper (0.1.4)
-  - CJBaseOverlayKit (0.2.1):
-    - CJBaseOverlayKit/CJActionSheet (= 0.2.1)
-    - CJBaseOverlayKit/CJAlert (= 0.2.1)
-    - CJBaseOverlayKit/CJBaseOverlayTheme (= 0.2.1)
-    - CJBaseOverlayKit/CJProgressHUD (= 0.2.1)
-    - CJBaseOverlayKit/CJToast (= 0.2.1)
-  - CJBaseOverlayKit/CJActionSheet (0.2.1):
-    - CJBaseOverlayKit/CJBaseOverlayTheme
-    - Masonry
-  - CJBaseOverlayKit/CJAlert (0.2.1):
-    - CJBaseOverlayKit/CJBaseOverlayTheme
-    - Masonry
   - CJBaseOverlayKit/CJBaseOverlayTheme (0.2.1)
-  - CJBaseOverlayKit/CJProgressHUD (0.2.1):
-    - CJBaseOverlayKit/CJBaseOverlayTheme
-    - lottie-ios (~> 2.5.3)
-    - Masonry
-    - MBProgressHUD
   - CJBaseOverlayKit/CJToast (0.2.1):
     - CJBaseOverlayKit/CJBaseOverlayTheme
     - MBProgressHUD
@@ -119,22 +102,22 @@ PODS:
   - CQDemoKit/Home_TextView (0.1.0):
     - CQDemoKit/Home_Base
   - FLAnimatedImage (1.0.12)
-  - IQKeyboardManager (6.2.0)
+  - IQKeyboardManager (6.5.5)
   - lottie-ios (2.5.3)
-  - Mantle (2.1.0):
-    - Mantle/extobjc (= 2.1.0)
-  - Mantle/extobjc (2.1.0)
+  - Mantle (2.1.1):
+    - Mantle/extobjc (= 2.1.1)
+  - Mantle/extobjc (2.1.1)
   - Masonry (1.1.0)
-  - MBProgressHUD (1.1.0)
-  - MJExtension (3.0.15.1)
-  - MJRefresh (3.1.15.7)
+  - MBProgressHUD (1.2.0)
+  - MJExtension (3.0.17)
+  - MJRefresh (3.1.17)
   - OpenUDID (1.0.0)
   - PinYin4Objc (1.1.1)
   - PureLayout (3.0.2)
   - SAMKeychain (1.5.3)
-  - SDWebImage (5.0.6):
-    - SDWebImage/Core (= 5.0.6)
-  - SDWebImage/Core (5.0.6)
+  - SDWebImage (5.7.2):
+    - SDWebImage/Core (= 5.7.2)
+  - SDWebImage/Core (5.7.2)
   - Shimmer (1.0.2)
   - SVProgressHUD (2.2.5)
   - UINavigation-SXFixSpace (1.2.4)
@@ -146,7 +129,6 @@ DEPENDENCIES:
   - AFNetworking/Reachability
   - CJBaseEffectKit
   - CJBaseHelper (from `../`)
-  - CJBaseOverlayKit (from `../`)
   - CJBaseTest/Test (from `~/Project/Github/CJUIKit`)
   - CJBaseTest/UITest (from `~/Project/Github/CJUIKit`)
   - CJBaseUtil (from `../`)
@@ -178,8 +160,9 @@ DEPENDENCIES:
   - YYText (~> 1.0.7)
 
 SPEC REPOS:
-  https://gitee.com/dvlproad/dvlproadSpecs:
+  https://gitee.com/dvlproad/dvlproadSpecs.git:
     - CJBaseEffectKit
+    - CJBaseOverlayKit
   https://github.com/CocoaPods/Specs.git:
     - AFNetworking
     - CJFile
@@ -209,8 +192,6 @@ SPEC REPOS:
 EXTERNAL SOURCES:
   CJBaseHelper:
     :path: "../"
-  CJBaseOverlayKit:
-    :path: "../"
   CJBaseTest:
     :path: "~/Project/Github/CJUIKit"
   CJBaseUtil:
@@ -224,7 +205,7 @@ SPEC CHECKSUMS:
   AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
   CJBaseEffectKit: 8640801fa272a1d96a6edce2c994652ced0e519f
   CJBaseHelper: dd715e18591da9df5d06364098300591220f0535
-  CJBaseOverlayKit: c692f9eaaecc926949b1d57757ab47cccc19b78f
+  CJBaseOverlayKit: 84459c59783b88b4f6f570096e1201e32b2eb718
   CJBaseTest: a7975369dd9cad3111ea8a8465ccdb1d50752499
   CJBaseUtil: 1bbf8d5f831dc12ae4bb06c8b5326bd39f3522e1
   CJFile: 6c1e6d55b3b94e8afbaa9f413f131301d15fdc48
@@ -234,18 +215,18 @@ SPEC CHECKSUMS:
   CJPopupView: c7685f6a0225a89c72d97ea946f2816b5442abaf
   CQDemoKit: 5ca222de41ee74b83ad98e49f0c0e3785b316b85
   FLAnimatedImage: 4a0b56255d9b05f18b6dd7ee06871be5d3b89e31
-  IQKeyboardManager: 6194101620b73af5e67900b8f89707a99de0b804
+  IQKeyboardManager: 3a8b9e603f8b0eeaf5f096a1f2b2cfcf121992ef
   lottie-ios: a50d5c0160425cd4b01b852bb9578963e6d92d31
-  Mantle: 2fa750afa478cd625a94230fbf1c13462f29395b
+  Mantle: 35238ae6f2e2b2d474fa7b67fee82a59fea71915
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
-  MBProgressHUD: e7baa36a220447d8aeb12769bf0585582f3866d9
-  MJExtension: 19bc33ce2eee2d319760f5622562cf581a6ff756
-  MJRefresh: 697f8ec75ebdbe9207767bb682cf0f51b0d8a41f
+  MBProgressHUD: 3ee5efcc380f6a79a7cc9b363dd669c5e1ae7406
+  MJExtension: 74ec83124a68891619fb7ba9c5c811bbf1691076
+  MJRefresh: ee5b68f639775462faba4db0fd243baf4d42c2cf
   OpenUDID: e7cb6984c7304906ad20f3a36bf087b025896b6b
   PinYin4Objc: 3fa9673610368330e2dfb688b1d19a35c3930a78
   PureLayout: 4d550abe49a94f24c2808b9b95db9131685fe4cd
   SAMKeychain: 483e1c9f32984d50ca961e26818a534283b4cd5c
-  SDWebImage: 920f1a2ff1ca8296ad34f6e0510a1ef1d70ac965
+  SDWebImage: d9ea4959d99c52276dfada481987018fcaea3d58
   Shimmer: c5374be1c2b0c9e292fb05b339a513cf291cac86
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
   UINavigation-SXFixSpace: 10f223253ebff2ceefa26694e23b7694269763c4
@@ -253,6 +234,6 @@ SPEC CHECKSUMS:
   WMPageController: 0c7624d2b48e4f1ab92371688cf6744ed701575d
   YYText: 5c461d709e24d55a182d1441c41dc639a18a4849
 
-PODFILE CHECKSUM: a52d4f560e08e66506cc085c0b0899948797a8b8
+PODFILE CHECKSUM: bb7fb4a9c21d0563b4d324008edeb988ffa33f67
 
-COCOAPODS: 1.9.1
+COCOAPODS: 1.8.4

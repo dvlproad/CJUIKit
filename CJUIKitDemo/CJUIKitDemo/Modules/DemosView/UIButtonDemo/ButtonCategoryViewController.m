@@ -7,7 +7,6 @@
 //
 
 #import "ButtonCategoryViewController.h"
-#import "TSToast.h"
 #import "TSButtonFactory.h"
 #import "UIButton+CJMoreProperty.h"
 
@@ -32,7 +31,7 @@
         make.centerX.mas_equalTo(self.view);
     }];
     themeBGButton.cjTouchUpInsideBlock = ^(UIButton *button) {
-        [TSToast showMessage:@"测试为按钮动态增加的属性\n改变蓝色背景enable"];
+        [self showToastMessage:@"测试为按钮动态增加的属性\n改变蓝色背景enable"];
     };
     
     UIButton *themeBorderButton = [TSButtonFactory themeBorderButton];

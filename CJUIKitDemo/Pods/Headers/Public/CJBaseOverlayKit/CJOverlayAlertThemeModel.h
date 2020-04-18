@@ -1,1 +1,1 @@
-../../../../../CJBaseOverlayKit/CJBaseOverlayTheme/CJOverlayAlertThemeModel.h
+../../../CJBaseOverlayKit/CJBaseOverlayKit/CJBaseOverlayTheme/CJOverlayAlertThemeModel.h

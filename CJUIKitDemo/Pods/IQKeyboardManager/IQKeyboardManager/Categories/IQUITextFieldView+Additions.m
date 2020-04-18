@@ -38,7 +38,7 @@
 {
     NSNumber *keyboardDistanceFromTextField = objc_getAssociatedObject(self, @selector(keyboardDistanceFromTextField));
     
-    return (keyboardDistanceFromTextField)?[keyboardDistanceFromTextField floatValue]:kIQUseDefaultKeyboardDistance;
+    return (keyboardDistanceFromTextField != nil)?[keyboardDistanceFromTextField floatValue]:kIQUseDefaultKeyboardDistance;
 }
 
 -(void)setIgnoreSwitchingByNextPrevious:(BOOL)ignoreSwitchingByNextPrevious
@@ -53,17 +53,17 @@
     return [ignoreSwitchingByNextPrevious boolValue];
 }
 
-//-(void)setEnableMode:(IQEnableMode)enableMode
-//{
-//    objc_setAssociatedObject(self, @selector(enableMode), @(enableMode), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-//}
-//
-//-(IQEnableMode)enableMode
-//{
-//    NSNumber *enableMode = objc_getAssociatedObject(self, @selector(enableMode));
-//    
-//    return [enableMode unsignedIntegerValue];
-//}
+-(void)setEnableMode:(IQEnableMode)enableMode
+{
+    objc_setAssociatedObject(self, @selector(enableMode), @(enableMode), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+}
+
+-(IQEnableMode)enableMode
+{
+    NSNumber *enableMode = objc_getAssociatedObject(self, @selector(enableMode));
+    
+    return [enableMode unsignedIntegerValue];
+}
 
 -(void)setShouldResignOnTouchOutsideMode:(IQEnableMode)shouldResignOnTouchOutsideMode
 {

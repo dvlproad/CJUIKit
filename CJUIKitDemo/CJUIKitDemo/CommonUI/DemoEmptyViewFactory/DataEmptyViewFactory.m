@@ -7,7 +7,7 @@
 //
 
 #import "DataEmptyViewFactory.h"
-#import "AppInfoManager.h"
+//#import "AppInfoManager.h"
 
 @implementation DataEmptyViewFactory
 
@@ -24,7 +24,8 @@
     emptyView.title = NSLocalizedString(@"数据加载失败，请重新加载...", nil);
     emptyView.buttonTitle = NSLocalizedString(@"刷新", nil);
     emptyView.reloadBlock = ^(CJDataEmptyView *m_emptyView) {
-        BOOL networkEnable = [AppInfoManager sharedInstance].networkEnable;
+//        BOOL networkEnable = [AppInfoManager sharedInstance].networkEnable;
+        BOOL networkEnable = NO;
         if (!networkEnable) {
             [SVProgressHUD show];
             
