@@ -1,1 +1,1 @@
-../../../../../CJBaseEffectKit/CJRefreshWithJSON/CJRefreshJSONFooter.h
+../../../CJBaseEffectKit/CJBaseEffectKit/CJRefreshWithJSON/CJRefreshJSONFooter.h

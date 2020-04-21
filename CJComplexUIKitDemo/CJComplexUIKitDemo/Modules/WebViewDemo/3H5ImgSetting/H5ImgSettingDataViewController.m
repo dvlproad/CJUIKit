@@ -7,7 +7,7 @@
 //
 
 #import "H5ImgSettingDataViewController.h"
-#import "TSToast.h"
+#import <CQOverlayKit/CQToast.h>
 
 @implementation H5ImgSettingDataViewController
 
@@ -35,7 +35,7 @@
     [self.webView evaluateJavaScript:jsString completionHandler:^(id _Nullable response, NSError * _Nullable error) {
         if (error) {
             NSLog(@"error = %@", error);
-            [TSToast showMessage:@"Error:更新H5显示的图片的JS调用失败"];
+            [CQToast showMessage:@"Error:更新H5显示的图片的JS调用失败"];
             return;
         }
         NSLog(@"OC执行JS完成--设置图片(通过上传图片数据)");

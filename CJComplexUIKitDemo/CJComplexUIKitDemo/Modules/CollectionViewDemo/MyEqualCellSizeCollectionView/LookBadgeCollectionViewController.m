@@ -9,8 +9,7 @@
 #import "LookBadgeCollectionViewController.h"
 
 #import <CJMenuListKit/CQFilesLookBadgeCollectionView.h>
-
-#import "TSToast.h"
+#import <CQOverlayKit/CQToast.h>
 
 #import "TSListDataSourceUtil.h"
 
@@ -33,7 +32,7 @@
     // Do any additional setup after loading the view from its nib.
     CQFilesLookBadgeCollectionView *collectionView = [[CQFilesLookBadgeCollectionView alloc] initWithDidTapShowingItemBlock:^(UICollectionView *collectionView, NSIndexPath *indexPath, CQFilesLookBadgeDataModel *dataModel) {
         NSString *message = [NSString stringWithFormat:@"点击了【%@】", dataModel.name];
-        [TSToast showMessage:message];
+        [CQToast showMessage:message];
     }];
     collectionView.backgroundColor = [UIColor whiteColor];
     [self.view addSubview:collectionView];

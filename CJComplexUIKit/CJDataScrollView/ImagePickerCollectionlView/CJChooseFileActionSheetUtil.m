@@ -7,7 +7,7 @@
 //
 
 #import "CJChooseFileActionSheetUtil.h"
-#import "TSActionSheetUtil.h"
+#import <CQOverlayKit/CQActionSheetUtil.h>
 #import <CJBaseHelper/UIViewControllerCJHelper.h>
 
 @implementation CJChooseFileActionSheetUtil
@@ -33,7 +33,7 @@
         [sheetModels addObject:pickImageSheetModel];
     }
     
-    [TSActionSheetUtil showWithSheetModels:sheetModels itemClickBlock:^(NSInteger selectIndex) {
+    [CQActionSheetUtil showWithSheetModels:sheetModels itemClickBlock:^(NSInteger selectIndex) {
         NSLog(@"当前选择的是%zd", selectIndex);
         if (selectIndex == 0) {   //拍照
             UIImagePickerController *imagePickerController = [CJUploadImagePickerUtil takePhotoPickerWithPickCompleteBlock:pickImageCompleteBlock];

@@ -29,4 +29,19 @@
 
 - (instancetype)init;
 
+/*
+ *  获取当前collectionView的高度
+ *
+ *  @param allCellCount             collectionView中cell(含dataCell和extralCell)的总数
+ *  @param maxRowCount              允许的最大行数
+ *  @param collectionViewWidth      要传入的collectionView的宽度
+ *  @param equalCellSizeSetting     集合视图的布局
+ *
+ *  @return 当前collectionView的高度
+ */
++ (CGFloat)heightForAllCellCount:(NSInteger)allCellCount
+                     maxRowCount:(NSInteger)maxRowCount
+           byCollectionViewWidth:(CGFloat)collectionViewWidth
+        withEqualCellSizeSetting:(CJCellHorizontalLayout *)equalCellSizeSetting;
+
 @end

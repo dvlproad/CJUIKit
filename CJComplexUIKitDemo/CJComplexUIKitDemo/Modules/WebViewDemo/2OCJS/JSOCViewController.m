@@ -8,7 +8,6 @@
 
 #import "JSOCViewController.h"
 #import "TSButtonFactory.h"
-#import "TSToast.h"
 
 @interface JSOCViewController () <WKScriptMessageHandler> {
     
@@ -36,7 +35,7 @@
     NSLog(@"receiveScriptMessage.body = %@", message.body);// 传递的数据
     
     if ([message.name isEqualToString:@"showWebText"]) {
-        [TSToast showMessage:message.body];
+        [CQToast showMessage:message.body];
     }
 }
 

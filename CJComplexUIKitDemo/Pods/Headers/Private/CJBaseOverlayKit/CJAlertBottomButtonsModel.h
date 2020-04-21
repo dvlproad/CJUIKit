@@ -1,1 +1,1 @@
-../../../../../CJBaseOverlayKit/CJAlert/UIButton/CJAlertBottomButtonsModel.h
+../../../CJBaseOverlayKit/CJBaseOverlayKit/CJAlert/UIButton/CJAlertBottomButtonsModel.h

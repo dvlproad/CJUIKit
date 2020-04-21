@@ -1,1 +1,1 @@
-../../../../../CJBaseEffectKit/CJMJRefreshComponent/Normal/CJMJRefreshNormalFooter.h
+../../../CJBaseEffectKit/CJBaseEffectKit/CJMJRefreshComponent/Normal/CJMJRefreshNormalFooter.h

@@ -11,7 +11,7 @@
 @interface CustomLayoutCollectionViewController : UIViewController <UICollectionViewDataSource, UICollectionViewDelegate> {
     BOOL isSelected;
 }
-@property (nonatomic, strong) NSArray *datas;
-@property (nonatomic, weak) IBOutlet UICollectionView *collectionView;
+@property (nonatomic, strong) NSArray *dataModels;
+@property (nonatomic, strong) UICollectionView *collectionView;
 
 @end
