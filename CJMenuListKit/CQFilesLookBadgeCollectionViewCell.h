@@ -15,7 +15,9 @@ NS_ASSUME_NONNULL_BEGIN
 }
 @property (nonatomic, strong) UILabel *titleNameLabel;
 @property (nonatomic, strong) UIImageView *iconImageView;
-@property (nonatomic, assign) NSInteger badgeCount;
+@property (nonatomic, assign, readonly) NSInteger badgeCount;
+
+- (void)setupBadgeCount:(NSInteger)badgeCount withMaxNumber:(NSInteger)maxCount;
 
 @end
 

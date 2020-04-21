@@ -55,10 +55,10 @@ minimumInteritemSpacingForSectionAtIndex:(NSInteger)section
     MyEqualCellSizeSetting *equalCellSizeSetting = self.equalCellSizeSetting;
     
     CGFloat collectionViewCellWidth = 0;
-    if (equalCellSizeSetting.cellWidthFromFixedWidth) {
+    if (equalCellSizeSetting.cellWidthFromFixedWidth > 0) {
         collectionViewCellWidth = equalCellSizeSetting.cellWidthFromFixedWidth;
         
-    } else {
+    } else if (equalCellSizeSetting.cellWidthFromPerRowMaxShowCount > 0) {
         NSInteger cellWidthFromPerRowMaxShowCount = equalCellSizeSetting.cellWidthFromPerRowMaxShowCount;
         
         UIEdgeInsets sectionInset = [self collectionView:collectionView
@@ -74,9 +74,9 @@ minimumInteritemSpacingForSectionAtIndex:(NSInteger)section
     }
     
     CGFloat collectionViewCellHeight = 0;
-    if (equalCellSizeSetting.cellHeightFromFixedHeight) {
+    if (equalCellSizeSetting.cellHeightFromFixedHeight >0) {
         collectionViewCellHeight = equalCellSizeSetting.cellHeightFromFixedHeight;
-    } else if (equalCellSizeSetting.cellHeightFromPerColumnMaxShowCount) {
+    } else if (equalCellSizeSetting.cellHeightFromPerColumnMaxShowCount > 0) {
         NSInteger cellHeightFromPerColumnMaxShowCount = equalCellSizeSetting.cellHeightFromPerColumnMaxShowCount;
         
         UIEdgeInsets sectionInset = [self collectionView:collectionView
@@ -89,8 +89,20 @@ minimumInteritemSpacingForSectionAtIndex:(NSInteger)section
         CGFloat height = CGRectGetHeight(collectionView.frame);
         CGFloat validHeight = height - sectionInset.top - sectionInset.bottom - minimumLineSpacing*(cellHeightFromPerColumnMaxShowCount-1);
         collectionViewCellHeight = floorf(validHeight/cellHeightFromPerColumnMaxShowCount);
+    }
+    
+    
+    NSAssert(collectionViewCellWidth > 0 || collectionViewCellHeight > 0, @"collectionViewCell 的 width 与 height 不能都未设置");
+    if (collectionViewCellWidth > 0 && collectionViewCellHeight > 0) {
+        NSLog(@"collectionViewCell 的 width 与 height 已设置完毕");
+        return CGSizeMake(collectionViewCellWidth, collectionViewCellHeight);
+    }
+    
+    NSAssert(equalCellSizeSetting.widthHeightRatio > 0, @"在只设置宽或高时，需要由比例来计算另一个值，所以比例值必须大于0");
+    if (collectionViewCellWidth > 0) {
+        collectionViewCellHeight = collectionViewCellWidth/equalCellSizeSetting.widthHeightRatio;
     } else {
-        collectionViewCellHeight = collectionViewCellWidth;
+        collectionViewCellWidth = collectionViewCellHeight*equalCellSizeSetting.widthHeightRatio;
     }
     
     return CGSizeMake(collectionViewCellWidth, collectionViewCellHeight);
@@ -111,7 +123,7 @@ minimumInteritemSpacingForSectionAtIndex:(NSInteger)section
 #pragma mark - Update
 /// 更新额外cell的样式即位置，(默认不添加）
 - (void)updateExtralItemSetting:(CJExtralItemSetting)extralItemSetting {
-    _equalCellSizeSetting.extralItemSetting = extralItemSetting;
+    _dataSourceSettingModel.extralItemSetting = extralItemSetting;
 }
 
 

@@ -180,7 +180,7 @@
     {
         CJFilesLookDataModel *dataModel = [[CJFilesLookDataModel alloc] init];
         dataModel.title = @"18";
-        dataModel.image = [CJUIKitResoucesUtil cjts_image18];
+        dataModel.image = [CJUIKitResoucesUtil cjts_image17];
         [dataModels addObject:dataModel];
     }
     {

@@ -65,10 +65,8 @@
 		78590D0A215C79DD00F45AD5 /* add_red@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 78590C6C215C79DC00F45AD5 /* add_red@2x.png */; };
 		78590D0B215C79DD00F45AD5 /* SearchTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 78590C6E215C79DC00F45AD5 /* SearchTableViewController.xib */; };
 		78590D0C215C79DD00F45AD5 /* UploadNoneImagePickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78590C71215C79DC00F45AD5 /* UploadNoneImagePickerViewController.m */; };
-		78590D0D215C79DD00F45AD5 /* UploadDirectlyImagePickerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 78590C72215C79DC00F45AD5 /* UploadDirectlyImagePickerViewController.xib */; };
 		78590D0E215C79DD00F45AD5 /* SearchTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78590C73215C79DC00F45AD5 /* SearchTableViewController.m */; };
 		78590D0F215C79DD00F45AD5 /* UploadDirectlyImagePickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78590C74215C79DC00F45AD5 /* UploadDirectlyImagePickerViewController.m */; };
-		78590D10215C79DD00F45AD5 /* UploadNoneImagePickerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 78590C75215C79DC00F45AD5 /* UploadNoneImagePickerViewController.xib */; };
 		785F86C2226C450E005CEBF3 /* EmptyScrollViewController1.m in Sources */ = {isa = PBXBuildFile; fileRef = 785F86C1226C450E005CEBF3 /* EmptyScrollViewController1.m */; };
 		785F86C8226C458C005CEBF3 /* EmptyScrollViewController2.m in Sources */ = {isa = PBXBuildFile; fileRef = 785F86C6226C458B005CEBF3 /* EmptyScrollViewController2.m */; };
 		7886B229226C13F5002A0404 /* TableEmptyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7886B228226C13F5002A0404 /* TableEmptyViewController.m */; };
@@ -294,10 +292,8 @@
 		78590C6F215C79DC00F45AD5 /* SearchTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchTableViewController.h; sourceTree = "<group>"; };
 		78590C70215C79DC00F45AD5 /* UploadDirectlyImagePickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UploadDirectlyImagePickerViewController.h; sourceTree = "<group>"; };
 		78590C71215C79DC00F45AD5 /* UploadNoneImagePickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UploadNoneImagePickerViewController.m; sourceTree = "<group>"; };
-		78590C72215C79DC00F45AD5 /* UploadDirectlyImagePickerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UploadDirectlyImagePickerViewController.xib; sourceTree = "<group>"; };
 		78590C73215C79DC00F45AD5 /* SearchTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchTableViewController.m; sourceTree = "<group>"; };
 		78590C74215C79DC00F45AD5 /* UploadDirectlyImagePickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UploadDirectlyImagePickerViewController.m; sourceTree = "<group>"; };
-		78590C75215C79DC00F45AD5 /* UploadNoneImagePickerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UploadNoneImagePickerViewController.xib; sourceTree = "<group>"; };
 		78590C76215C79DC00F45AD5 /* UploadNoneImagePickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UploadNoneImagePickerViewController.h; sourceTree = "<group>"; };
 		785F86C0226C450D005CEBF3 /* EmptyScrollViewController1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EmptyScrollViewController1.h; sourceTree = "<group>"; };
 		785F86C1226C450E005CEBF3 /* EmptyScrollViewController1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EmptyScrollViewController1.m; sourceTree = "<group>"; };
@@ -734,10 +730,8 @@
 			children = (
 				78590C70215C79DC00F45AD5 /* UploadDirectlyImagePickerViewController.h */,
 				78590C74215C79DC00F45AD5 /* UploadDirectlyImagePickerViewController.m */,
-				78590C72215C79DC00F45AD5 /* UploadDirectlyImagePickerViewController.xib */,
 				78590C76215C79DC00F45AD5 /* UploadNoneImagePickerViewController.h */,
 				78590C71215C79DC00F45AD5 /* UploadNoneImagePickerViewController.m */,
-				78590C75215C79DC00F45AD5 /* UploadNoneImagePickerViewController.xib */,
 				80E7E68820AC37CA000F762D /* IjinbuNetworkClient+Login.h */,
 				80E7E68720AC37CA000F762D /* IjinbuNetworkClient+Login.m */,
 			);
@@ -1330,7 +1324,6 @@
 			files = (
 				789A4F4F21FAF3A8001528B9 /* MemoryAD09.jpg in Resources */,
 				789A4F4D21FAF3A8001528B9 /* MemoryAD08.jpg in Resources */,
-				78590D10215C79DD00F45AD5 /* UploadNoneImagePickerViewController.xib in Resources */,
 				789A4F5921FAF3A8001528B9 /* Header.xib in Resources */,
 				78590D0A215C79DD00F45AD5 /* add_red@2x.png in Resources */,
 				789A4F4B21FAF3A8001528B9 /* MemoryADPose01.jpg in Resources */,
@@ -1364,7 +1357,6 @@
 				789A4F6621FAF3A8001528B9 /* cvSupplementaryHead.xib in Resources */,
 				7856F8A421F5680F004AF751 /* cjCollectionViewCellAdd@2x.png in Resources */,
 				789A4F3F21FAF3A8001528B9 /* MemoryADExample02.jpg in Resources */,
-				78590D0D215C79DD00F45AD5 /* UploadDirectlyImagePickerViewController.xib in Resources */,
 				789C445A21EED99600181144 /* OCJS.html in Resources */,
 				7856F71E21F4E707004AF751 /* jiazhaishibai_bg@2x.png in Resources */,
 				780E460E1E5DF87B00980127 /* Main.storyboard in Resources */,

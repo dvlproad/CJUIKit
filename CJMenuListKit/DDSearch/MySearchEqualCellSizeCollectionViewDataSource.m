@@ -43,7 +43,7 @@
 #pragma mark - Update
 /// 更新额外cell的样式即位置，(默认不添加）
 - (void)updateExtralItemSetting:(CJExtralItemSetting)extralItemSetting {
-    _equalCellSizeSetting.extralItemSetting = extralItemSetting;
+    _dataSourceSettingModel.extralItemSetting = extralItemSetting;
 }
 
 #pragma mark - UICollectionViewDataSource
@@ -89,7 +89,7 @@
     
     id dataModle = nil;
     
-    CJExtralItemSetting extralItemSetting = self.equalCellSizeSetting.extralItemSetting;
+    CJExtralItemSetting extralItemSetting = self.dataSourceSettingModel.extralItemSetting;
     switch (extralItemSetting) {
         case CJExtralItemSettingLeading:
         {
@@ -126,7 +126,7 @@
     
     BOOL isExtraItem = NO;
     
-    CJExtralItemSetting extralItemSetting = self.equalCellSizeSetting.extralItemSetting;
+    CJExtralItemSetting extralItemSetting = self.dataSourceSettingModel.extralItemSetting;
     switch (extralItemSetting) {
         case CJExtralItemSettingLeading:
         {
@@ -174,12 +174,12 @@
     NSMutableArray *dataModels = sectionDataModel.values;
     NSInteger dataModelCount = dataModels.count;
     
-    CJExtralItemSetting extralItemSetting = self.equalCellSizeSetting.extralItemSetting;
+    CJExtralItemSetting extralItemSetting = self.dataSourceSettingModel.extralItemSetting;
     switch (extralItemSetting) {
         case CJExtralItemSettingLeading:
         case CJExtralItemSettingTailing:
         {
-            if (dataModelCount < self.equalCellSizeSetting.maxDataModelShowCount) {
+            if (dataModelCount < self.dataSourceSettingModel.maxDataModelShowCount) {
                 return dataModelCount + 1;
             } else {
                 return dataModelCount;

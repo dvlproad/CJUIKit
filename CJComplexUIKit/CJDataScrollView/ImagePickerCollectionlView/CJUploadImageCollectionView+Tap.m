@@ -40,7 +40,7 @@
 }
 
 - (void)didTapToAddMediaUploadItemAction {
-    NSInteger maxDataModelShowCount = self.equalCellSizeCollectionViewDataSource.equalCellSizeSetting.maxDataModelShowCount;
+    NSInteger maxDataModelShowCount = self.equalCellSizeCollectionViewDataSource.dataSourceSettingModel.maxDataModelShowCount;
     if (self.dataModels.count >= maxDataModelShowCount) {
         //[UIGlobal showMessage:@"图片数量已达上限"];
         NSLog(@"所选媒体数量已达上限");

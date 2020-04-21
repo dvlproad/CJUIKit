@@ -16,9 +16,13 @@
     
 }
 @property (nonatomic, strong) NSMutableArray<CQFilesLookBadgeDataModel *> *dataModels;/**< 数据源 */
+@property (nonatomic, assign) NSInteger maxBadgeNumber;     /**< 允许显示的最大badge（默认99） */
 
 /// 初始化方法
 - (instancetype)initWithDidTapShowingItemBlock:(void(^)(UICollectionView *collectionView, NSIndexPath *indexPath, CQFilesLookBadgeDataModel *dataModel))didTapShowingItemBlock NS_DESIGNATED_INITIALIZER;
+
+/// 将列表以水平滚动，并且行数为rowCount
+- (void)showHorizontalWithRowCount:(NSInteger)rowCount;
 
 
 /*

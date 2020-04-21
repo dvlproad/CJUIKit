@@ -53,8 +53,9 @@
     //以下值，可选设置
     //equalCellSizeSetting.cellHeightFromFixedHeight = 100;
     //equalCellSizeSetting.cellHeightFromPerColumnMaxShowCount = 2;
-    equalCellSizeSetting.maxDataModelShowCount = 5;
-    equalCellSizeSetting.extralItemSetting = CJExtralItemSettingTailing;
+    CJDataSourceSettingModel *dataSourceSettingModel = [[CJDataSourceSettingModel alloc] init];
+    dataSourceSettingModel.maxDataModelShowCount = 5;
+    dataSourceSettingModel.extralItemSetting = CJExtralItemSettingTailing;
     
     
     //以下值，可选设置
@@ -68,7 +69,7 @@
     __weak typeof(self)weakSelf = self;
     
     /* 创建DataSource */
-    MyEqualCellSizeCollectionViewDataSource *equalCellSizeCollectionViewDataSource = [[MyEqualCellSizeCollectionViewDataSource alloc] initWithEqualCellSizeSetting:equalCellSizeSetting cellForItemAtIndexPathBlock:^UICollectionViewCell *(UICollectionView *collectionView, NSIndexPath *indexPath, BOOL isExtralItem) {
+    MyEqualCellSizeCollectionViewDataSource *equalCellSizeCollectionViewDataSource = [[MyEqualCellSizeCollectionViewDataSource alloc] initWithDataSourceSettingModel:dataSourceSettingModel cellForItemAtIndexPathBlock:^UICollectionViewCell *(UICollectionView *collectionView, NSIndexPath *indexPath, BOOL isExtralItem) {
         if (!isExtralItem) {
             CQFilesLookCollectionViewCell *dataCell = [collectionView dequeueReusableCellWithReuseIdentifier:@"cell" forIndexPath:indexPath];
             NSLog(@"dataCell.selected = %@", dataCell.selected ? @"YES" : @"NO");

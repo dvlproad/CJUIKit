@@ -13,11 +13,6 @@
 - (instancetype)init {
     self = [super init];
     if (self) {
-        self.extralItemSetting = CJExtralItemSettingNone;
-        self.maxDataModelShowCount = NSIntegerMax;
-        //NSLog(@"maxDataModelShowCount = %zd", self.maxDataModelShowCount);
-        
-        
         //flowLayout.headerReferenceSize = CGSizeMake(110, 135);
         _minimumInteritemSpacing = 10;
         _minimumLineSpacing = 15;
@@ -30,6 +25,7 @@
         //以下值，可选设置
         //_cellHeightFromFixedHeight = 30;
         //_cellHeightFromPerColumnMaxShowCount = 1;
+        _widthHeightRatio = 1/1.0;
         
         //_maxDataModelShowCount = 5;
         //_extralItemSetting = CJExtralItemSettingLeading;

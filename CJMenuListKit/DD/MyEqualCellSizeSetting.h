@@ -10,14 +10,6 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
-
-typedef NS_ENUM(NSUInteger, CJExtralItemSetting) {
-    CJExtralItemSettingNone,       /**< 不添加额外item */
-    CJExtralItemSettingLeading,    /**< 在头部增加一个(比如在头部增加一个“全部”或者“拍照”按钮) */
-    CJExtralItemSettingTailing,    /**< 在尾部增加一个(比如在尾部增加一个“添加”按钮) */
-};
-
-
 /**
  *  我的集合视图的设置，包含Layout和DataSource部分
  */
@@ -37,12 +29,14 @@ typedef NS_ENUM(NSUInteger, CJExtralItemSetting) {
 @property (nonatomic, assign) CGFloat cellHeightFromFixedHeight; /**< cell高,没设置的话等于其宽 */
 @property (nonatomic, assign) NSUInteger cellHeightFromPerColumnMaxShowCount; /**< 通过每列可显示的最多个数来设置每个cell的高度(循环的时候可设这个值为1即可) */
 
+@property (nonatomic, assign) CGFloat widthHeightRatio; /**< 宽高比（默认1:1,即1/1.0，请确保除数有小数点，否则1/2会变成0，而不是0.5） */
 
 
-#pragma mark - DataSource部分
-//其他附加的可选设置的值，若不设置的话，以下值将采用默认值
-@property (nonatomic, assign) CJExtralItemSetting extralItemSetting;/**< 额外cell的样式，(默认不添加） */
-@property (nonatomic, assign) NSUInteger maxDataModelShowCount; /**< 集合视图最大显示的dataModel数目(默认NSIntegerMax即无限制) */
+//
+//#pragma mark - DataSource部分
+////其他附加的可选设置的值，若不设置的话，以下值将采用默认值
+//@property (nonatomic, assign) CJExtralItemSetting extralItemSetting;/**< 额外cell的样式，(默认不添加） */
+//@property (nonatomic, assign) NSUInteger maxDataModelShowCount; /**< 集合视图最大显示的dataModel数目(默认NSIntegerMax即无限制) */
 
 
 @end

@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "MyEqualCellSizeSetting.h"
+#import "CJDataSourceSettingModel.h"
 
 /**
  *  一个只有一个分区且分区中的每个cell大小相等的集合视图(cell的大小可通过方法①设置cell的固定大小和方法②通过设置每行最大显示的cell个数获得)(采用常用的init...方法后，即可初始化完成)
@@ -18,6 +19,7 @@
 }
 //必须设置的值
 @property (nonatomic, strong) MyEqualCellSizeSetting *equalCellSizeSetting; /**< 集合视图的布局设置 */
+@property (nonatomic, strong) CJDataSourceSettingModel *dataSourceSettingModel;
 
 #pragma mark - Update
 /// 更新额外cell的样式即位置，(默认不添加）

@@ -226,8 +226,10 @@
     button.selected = !button.selected;
     if (button.selected) {
         self.equalCellSizeCollectionView.cjScrollDirection = UICollectionViewScrollDirectionHorizontal;
+        self.equalCellSizeCollectionView.pagingEnabled = YES;
     } else {
         self.equalCellSizeCollectionView.cjScrollDirection = UICollectionViewScrollDirectionVertical;
+        self.equalCellSizeCollectionView.pagingEnabled = NO;
     }
     
 }

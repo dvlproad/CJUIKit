@@ -26,15 +26,18 @@
 /*
  *  初始化dataSource类(初始化完之后，必须在之后设置想要展示的数据dataModels)
  *
- *  @param equalCellSizeSetting                 集合视图的布局设置
+ *  @param dataSourceSettingModel           集合视图的数据类
  *  @param cellForItemAtIndexPathBlock          dataSource中的cell(含dataCell和extralCell)进行定制用的block
  */
-- (id)initWithEqualCellSizeSetting:(MyEqualCellSizeSetting *)equalCellSizeSetting
-       cellForItemAtIndexPathBlock:(UICollectionViewCell* (^)(UICollectionView *collectionView, NSIndexPath *indexPath, BOOL isExtralItem))cellForItemAtIndexPathBlock
+- (id)initWithDataSourceSettingModel:(CJDataSourceSettingModel *)dataSourceSettingModel
+         cellForItemAtIndexPathBlock:(UICollectionViewCell* (^)(UICollectionView *collectionView, NSIndexPath *indexPath, BOOL isExtralItem))cellForItemAtIndexPathBlock
 {
     self = [super init];
     if (self) {
-        _equalCellSizeSetting = equalCellSizeSetting;
+        if (dataSourceSettingModel == nil) {
+            dataSourceSettingModel = [[CJDataSourceSettingModel alloc] init];
+        }
+        _dataSourceSettingModel = dataSourceSettingModel;
         self.cellForItemAtIndexPathBlock = [cellForItemAtIndexPathBlock copy];      //block 要copy
     }
     return self;
@@ -43,7 +46,7 @@
 #pragma mark - Update
 /// 更新额外cell的样式即位置，(默认不添加）
 - (void)updateExtralItemSetting:(CJExtralItemSetting)extralItemSetting {
-    _equalCellSizeSetting.extralItemSetting = extralItemSetting;
+    _dataSourceSettingModel.extralItemSetting = extralItemSetting;
 }
 
 #pragma mark - UICollectionViewDataSource
@@ -75,7 +78,7 @@
 - (id)dataModelAtIndexPath:(NSIndexPath *)indexPath {
     id dataModle = nil;
     
-    CJExtralItemSetting extralItemSetting = self.equalCellSizeSetting.extralItemSetting;
+    CJExtralItemSetting extralItemSetting = self.dataSourceSettingModel.extralItemSetting;
     switch (extralItemSetting) {
         case CJExtralItemSettingLeading:
         {
@@ -106,7 +109,7 @@
 - (BOOL)isExtraItemIndexPath:(NSIndexPath *)indexPath {
     BOOL isExtraItem = NO;
     
-    CJExtralItemSetting extralItemSetting = self.equalCellSizeSetting.extralItemSetting;
+    CJExtralItemSetting extralItemSetting = self.dataSourceSettingModel.extralItemSetting;
     switch (extralItemSetting) {
         case CJExtralItemSettingLeading:
         {
@@ -148,12 +151,12 @@
 - (NSInteger)__numberOfItemsInSection:(NSInteger)section {
     NSInteger dataModelCount = self.dataModels.count;
     
-    CJExtralItemSetting extralItemSetting = self.equalCellSizeSetting.extralItemSetting;
+    CJExtralItemSetting extralItemSetting = self.dataSourceSettingModel.extralItemSetting;
     switch (extralItemSetting) {
         case CJExtralItemSettingLeading:
         case CJExtralItemSettingTailing:
         {
-            if (dataModelCount < self.equalCellSizeSetting.maxDataModelShowCount) {
+            if (dataModelCount < self.dataSourceSettingModel.maxDataModelShowCount) {
                 return dataModelCount + 1;
             } else {
                 return dataModelCount;

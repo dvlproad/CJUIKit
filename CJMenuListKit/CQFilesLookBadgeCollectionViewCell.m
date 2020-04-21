@@ -53,24 +53,26 @@
     [self.messageTipLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerX.mas_equalTo(self.iconImageView.mas_right);
         make.centerY.mas_equalTo(self.iconImageView.mas_top);
-        make.width.mas_greaterThanOrEqualTo(16);
+        make.width.mas_equalTo(16);
+        make.height.mas_equalTo(16);
     }];
 }
 
-- (void)setBadgeCount:(NSInteger)badgeCount {
+- (void)setupBadgeCount:(NSInteger)badgeCount withMaxNumber:(NSInteger)maxCount {
+    _badgeCount = badgeCount;
+    
     if (badgeCount <= 0) {
         self.messageTipLabel.text = @"";
         return;
     }
     
     self.messageTipLabel.hidden = NO;
-    if (badgeCount < 10) {
-        self.messageTipLabel.text = [NSString stringWithFormat:@"%@", @(badgeCount)];
-    } else if (badgeCount < 100) {
-        self.messageTipLabel.text = [NSString stringWithFormat:@"%@ ", @(badgeCount)];
-    } else {
-        self.messageTipLabel.text = @"99+  ";
+    
+    NSString *badgeString = [NSString stringWithFormat:@"%@", @(badgeCount)];
+    if (badgeCount > maxCount) {
+        badgeString = [NSString stringWithFormat:@"%ld+", maxCount];
     }
+    self.messageTipLabel.text = badgeString;
 }
 
 #pragma mark - lazy init

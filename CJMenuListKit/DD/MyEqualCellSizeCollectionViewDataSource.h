@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import <Foundation/Foundation.h>
-#import "MyEqualCellSizeSetting.h"
+#import "CJDataSourceSettingModel.h"
 
 /**
  *  tableView只有一种Cell，且tableView不分区时候的dataSoure
@@ -17,16 +17,16 @@
     
 }
 @property (nonatomic, strong) NSArray *dataModels;
-@property (nonatomic, strong, readonly) MyEqualCellSizeSetting *equalCellSizeSetting;
+@property (nonatomic, strong, readonly) CJDataSourceSettingModel *dataSourceSettingModel;
 
 /*
  *  初始化dataSource类(初始化完之后，必须在之后设置想要展示的数据dataModels)
  *
- *  @param equalCellSizeSetting                 集合视图的布局设置
+ *  @param dataSourceSettingModel           集合视图的数据类
  *  @param cellForItemAtIndexPathBlock          dataSource中的cell(含dataCell和extralCell)进行定制用的block
  */
-- (id)initWithEqualCellSizeSetting:(MyEqualCellSizeSetting *)equalCellSizeSetting
-       cellForItemAtIndexPathBlock:(UICollectionViewCell* (^)(UICollectionView *collectionView, NSIndexPath *indexPath, BOOL isExtralItem))cellForItemAtIndexPathBlock;
+- (id)initWithDataSourceSettingModel:(CJDataSourceSettingModel *)dataSourceSettingModel
+         cellForItemAtIndexPathBlock:(UICollectionViewCell* (^)(UICollectionView *collectionView, NSIndexPath *indexPath, BOOL isExtralItem))cellForItemAtIndexPathBlock;
 
 
 

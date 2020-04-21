@@ -14,10 +14,14 @@
 
 #import <SDWebImage/UIImageView+WebCache.h>
 
+#import "UICollectionView+CJFlowLayoutScrollDirection.h"
+#import "CJCellHorizontalLayout.h"
+
 
 @interface CQFilesLookBadgeCollectionView () <UICollectionViewDataSource> {
     
 }
+@property (nonatomic, strong, readonly) MyEqualCellSizeSetting *equalCellSizeSetting;
 @property (nonatomic, strong) MyEqualCellSizeCollectionViewNormalDelegate *equalCellSizeCollectionViewDelegate;
 @property (nonatomic, strong) MyEqualCellSizeCollectionViewDataSource *equalCellSizeCollectionViewDataSource;
 
@@ -34,6 +38,7 @@
     self = [super initWithFrame:CGRectZero collectionViewLayout:layout];
     if (self) {
         _didTapShowingItemBlock = didTapShowingItemBlock;
+        _maxBadgeNumber = 99;
         
         [self setupConfigure];
     }
@@ -50,14 +55,17 @@
     equalCellSizeSetting.sectionInset = UIEdgeInsetsMake(10, 10, 10, 10);
     
     //以下值必须二选一设置（默认cellWidthFromFixedWidth设置后，另外一个自动失效）
-    equalCellSizeSetting.cellWidthFromPerRowMaxShowCount = 4;
+    //equalCellSizeSetting.cellWidthFromPerRowMaxShowCount = 4;
     //equalCellSizeSetting.cellWidthFromFixedWidth = 50;
 
     //以下值，可选设置
     //equalCellSizeSetting.cellHeightFromFixedHeight = 100;
-    //equalCellSizeSetting.cellHeightFromPerColumnMaxShowCount = 2;
+    equalCellSizeSetting.cellHeightFromPerColumnMaxShowCount = 2;
     //equalCellSizeSetting.maxDataModelShowCount = 5;
     //equalCellSizeSetting.extralItemSetting = CJExtralItemSettingTailing;
+    _equalCellSizeSetting = equalCellSizeSetting;
+    
+    CJDataSourceSettingModel *dataSourceSettingModel = [[CJDataSourceSettingModel alloc] init];
     
     
     //以下值，可选设置
@@ -70,10 +78,10 @@
     __weak typeof(self)weakSelf = self;
     
     /* 创建DataSource */
-    MyEqualCellSizeCollectionViewDataSource *equalCellSizeCollectionViewDataSource = [[MyEqualCellSizeCollectionViewDataSource alloc] initWithEqualCellSizeSetting:equalCellSizeSetting cellForItemAtIndexPathBlock:^UICollectionViewCell *(UICollectionView *collectionView, NSIndexPath *indexPath, BOOL isExtralItem) {
+    MyEqualCellSizeCollectionViewDataSource *equalCellSizeCollectionViewDataSource = [[MyEqualCellSizeCollectionViewDataSource alloc] initWithDataSourceSettingModel:dataSourceSettingModel cellForItemAtIndexPathBlock:^UICollectionViewCell *(UICollectionView *collectionView, NSIndexPath *indexPath, BOOL isExtralItem) {
         if (!isExtralItem) {
             CQFilesLookBadgeCollectionViewCell *dataCell = [collectionView dequeueReusableCellWithReuseIdentifier:@"cell" forIndexPath:indexPath];
-            //dataCell.backgroundColor = [UIColor redColor];
+            dataCell.backgroundColor = [UIColor redColor];
             NSLog(@"dataCell.selected = %@", dataCell.selected ? @"YES" : @"NO");
             [weakSelf __operateDataCell:dataCell withIndexPath:indexPath isSettingOperate:YES];
 
@@ -110,7 +118,7 @@
     //self.dataSource = self;
     //self.delegate = self;
     self.dataSource = self.equalCellSizeCollectionViewDataSource;
-    self.delegate = self.equalCellSizeCollectionViewDelegate;
+//    self.delegate = self.equalCellSizeCollectionViewDelegate;
 }
 
 #pragma mark - Getter
@@ -135,6 +143,30 @@
 }
 
 #pragma mark - Setter
+/// 将列表以水平滚动，并且行数为rowCount
+- (void)showHorizontalWithRowCount:(NSInteger)rowCount {
+//    self.cjScrollDirection = UICollectionViewScrollDirectionHorizontal;
+    [self setupCJCellHorizontalLayout:rowCount];
+    self.equalCellSizeSetting.cellHeightFromPerColumnMaxShowCount = rowCount;
+}
+
+- (void)setupCJCellHorizontalLayout:(NSInteger)rowCount {
+    CJCellHorizontalLayout *cellHorizontalLayout = [[CJCellHorizontalLayout alloc] init];
+    //以下值必须二选一设置（默认cellWidthFromFixedWidth设置后，另外一个自动失效）
+    //cellHorizontalLayout.cellWidthFromPerRowMaxShowCount = 4;
+//    cellHorizontalLayout.cellWidthFromFixedWidth = 70;
+//
+//    //以下值，可选设置
+////    cellHorizontalLayout.cellHeightFromFixedHeight = 85;
+    cellHorizontalLayout.cellHeightFromPerColumnMaxShowCount = rowCount;
+//
+//    cellHorizontalLayout.sectionInset = UIEdgeInsetsMake(5, 10, 5, 10);
+//    cellHorizontalLayout.minimumLineSpacing = 1;
+//    cellHorizontalLayout.minimumInteritemSpacing = 1;
+    
+    [self setCollectionViewLayout:cellHorizontalLayout];
+}
+
 - (void)setDataModels:(NSMutableArray<CQFilesLookBadgeDataModel *> *)dataModels {
     _dataModels = dataModels;
     self.equalCellSizeCollectionViewDataSource.dataModels = dataModels;
@@ -165,7 +197,7 @@
     if (isSettingOperate) {
         [dataCell.iconImageView sd_setImageWithURL:[NSURL URLWithString:dataModel.imageUrl] placeholderImage:dataModel.imagePlaceholderImage];
         dataCell.titleNameLabel.text = dataModel.name;
-        dataCell.badgeCount = dataModel.badgeCount;
+        [dataCell setupBadgeCount:dataModel.badgeCount withMaxNumber:self.maxBadgeNumber];
     }
 }
 

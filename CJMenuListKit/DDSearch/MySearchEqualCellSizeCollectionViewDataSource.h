@@ -10,6 +10,7 @@
 #import <Foundation/Foundation.h>
 #import "MyEqualCellSizeSetting.h"
 #import <CJBaseUtil/CJSectionDataModel.h>   //在CJDataUtil中
+#import "CJDataSourceSettingModel.h"
 
 /**
  *  tableView只有一种Cell，且tableView不分区时候的dataSoure
@@ -22,6 +23,7 @@
 @property (nonatomic, assign, readonly) BOOL isSearching;
 
 @property (nonatomic, strong, readonly) MyEqualCellSizeSetting *equalCellSizeSetting;
+@property (nonatomic, strong, readonly) CJDataSourceSettingModel *dataSourceSettingModel;
 
 /*
  *  初始化dataSource类(初始化完之后，必须在之后设置想要展示的数据dataModels)

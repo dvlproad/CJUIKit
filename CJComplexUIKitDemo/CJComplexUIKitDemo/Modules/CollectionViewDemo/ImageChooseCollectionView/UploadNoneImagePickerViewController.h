@@ -13,7 +13,7 @@
 @interface UploadNoneImagePickerViewController : UIViewController {
     
 }
-@property (nonatomic, strong) IBOutlet CJUploadImageCollectionView *uploadImageCollectionView;
+@property (nonatomic, strong) CJUploadImageCollectionView *uploadImageCollectionView;
 
 
 @end

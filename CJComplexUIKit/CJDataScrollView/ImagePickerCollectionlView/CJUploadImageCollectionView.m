@@ -29,8 +29,10 @@ static NSString * const CJUploadCollectionViewCellAddID = @"CJUploadCollectionVi
 
 
 /// 初始化方法
-- (instancetype)init {
-    UICollectionViewLayout *layout = [[UICollectionViewFlowLayout alloc] init];
+- (instancetype)initWithFrame:(CGRect)frame collectionViewLayout:(UICollectionViewLayout *)layout {
+    if (layout == nil) {
+        layout = [[UICollectionViewFlowLayout alloc] init];
+    }
     self = [super initWithFrame:CGRectZero collectionViewLayout:layout];
     if (self) {
         [self setupConfigure];
@@ -55,8 +57,9 @@ static NSString * const CJUploadCollectionViewCellAddID = @"CJUploadCollectionVi
     //以下值，可选设置
     //equalCellSizeSetting.cellHeightFromFixedHeight = 100;
     //equalCellSizeSetting.cellHeightFromPerColumnMaxShowCount = 2;
-    equalCellSizeSetting.maxDataModelShowCount = 5;
-    equalCellSizeSetting.extralItemSetting = CJExtralItemSettingTailing;
+    CJDataSourceSettingModel *dataSourceSettingModel = [[CJDataSourceSettingModel alloc] init];
+    dataSourceSettingModel.maxDataModelShowCount = 5;
+    dataSourceSettingModel.extralItemSetting = CJExtralItemSettingTailing;
     
     
     //以下值，可选设置
@@ -71,7 +74,7 @@ static NSString * const CJUploadCollectionViewCellAddID = @"CJUploadCollectionVi
     __weak typeof(self)weakSelf = self;
     
     /* 创建DataSource */
-    MyEqualCellSizeCollectionViewDataSource *equalCellSizeCollectionViewDataSource = [[MyEqualCellSizeCollectionViewDataSource alloc] initWithEqualCellSizeSetting:equalCellSizeSetting cellForItemAtIndexPathBlock:^UICollectionViewCell *(UICollectionView *collectionView, NSIndexPath *indexPath, BOOL isExtralItem) {
+    MyEqualCellSizeCollectionViewDataSource *equalCellSizeCollectionViewDataSource = [[MyEqualCellSizeCollectionViewDataSource alloc] initWithDataSourceSettingModel:dataSourceSettingModel cellForItemAtIndexPathBlock:^UICollectionViewCell *(UICollectionView *collectionView, NSIndexPath *indexPath, BOOL isExtralItem) {
         if (!isExtralItem) {
             CJUploadCollectionViewCell *dataCell = [collectionView dequeueReusableCellWithReuseIdentifier:CJUploadCollectionViewCellID forIndexPath:indexPath];
             [self __operateDataCell:dataCell withIndexPath:indexPath isSettingOperate:YES];
