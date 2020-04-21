@@ -32,11 +32,23 @@
 @property (nonatomic, assign) CGFloat widthHeightRatio; /**< 宽高比（默认1:1,即1/1.0，请确保除数有小数点，否则1/2会变成0，而不是0.5） */
 
 
-//
-//#pragma mark - DataSource部分
-////其他附加的可选设置的值，若不设置的话，以下值将采用默认值
-//@property (nonatomic, assign) CJExtralItemSetting extralItemSetting;/**< 额外cell的样式，(默认不添加） */
-//@property (nonatomic, assign) NSUInteger maxDataModelShowCount; /**< 集合视图最大显示的dataModel数目(默认NSIntegerMax即无限制) */
+#pragma mark - Public Method
+- (CGSize)sizeForItemWithCollectionViewSize:(CGSize)collectionViewSize;
 
+#pragma mark - Other Method
+/*
+ *  获取当前collectionView的高度
+ *
+ *  @param allCellCount             collectionView中cell(含dataCell和extralCell)的总数
+ *  @param maxRowCount              允许的最大行数
+ *  @param collectionViewWidth      要传入的collectionView的宽度
+ *  @param collectionViewLayout     集合视图的布局
+ *
+ *  @return 当前collectionView的高度
+ */
++ (CGFloat)heightForAllCellCount:(NSInteger)allCellCount
+                     maxRowCount:(NSInteger)maxRowCount
+           byCollectionViewWidth:(CGFloat)collectionViewWidth
+        withCollectionViewLayout:(MyEqualCellSizeSetting *)collectionViewLayout;
 
 @end

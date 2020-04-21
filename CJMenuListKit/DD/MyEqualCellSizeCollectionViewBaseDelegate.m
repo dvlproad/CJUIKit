@@ -54,6 +54,10 @@ minimumInteritemSpacingForSectionAtIndex:(NSInteger)section
 {
     MyEqualCellSizeSetting *equalCellSizeSetting = self.equalCellSizeSetting;
     
+    CGSize collectionViewCellSize = [self.equalCellSizeSetting sizeForItemWithCollectionViewSize:collectionView.frame.size];
+    return collectionViewCellSize;
+    
+    /*
     CGFloat collectionViewCellWidth = 0;
     if (equalCellSizeSetting.cellWidthFromFixedWidth > 0) {
         collectionViewCellWidth = equalCellSizeSetting.cellWidthFromFixedWidth;
@@ -106,6 +110,7 @@ minimumInteritemSpacingForSectionAtIndex:(NSInteger)section
     }
     
     return CGSizeMake(collectionViewCellWidth, collectionViewCellHeight);
+    */
 }
 //*/
 

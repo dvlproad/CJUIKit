@@ -5,6 +5,7 @@
 //  Created by ciyouzen on 16-5-30.
 //  Copyright (c) 2016年 dvlproad. All rights reserved.
 //
+//  本类参考自UICollectionViewFlowLayout
 
 #import <UIKit/UIKit.h>
 
