@@ -62,6 +62,7 @@
     _badgeCount = badgeCount;
     
     if (badgeCount <= 0) {
+        self.messageTipLabel.hidden = YES;
         self.messageTipLabel.text = @"";
         return;
     }
@@ -109,6 +110,8 @@
         _messageTipLabel.font = [UIFont systemFontOfSize:11];
         _messageTipLabel.textAlignment = NSTextAlignmentCenter;
         _messageTipLabel.layer.cornerRadius = 7;
+        _messageTipLabel.adjustsFontSizeToFitWidth = YES;
+        _messageTipLabel.minimumScaleFactor = 0.3;
         _messageTipLabel.clipsToBounds = YES;
         _messageTipLabel.hidden = YES;
     }
