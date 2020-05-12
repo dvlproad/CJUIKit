@@ -9,6 +9,9 @@
 #import "CQFilesLookBadgeCollectionViewCell.h"
 #import <Masonry/Masonry.h>
 
+static const CGFloat badgeLabelWidth = 16;  // badge的宽高大小
+const CGFloat badgeLabelMargin = 4;         // badge与cell的距离
+
 @interface CQFilesLookBadgeCollectionViewCell () {
     
 }
@@ -38,23 +41,24 @@
     [self addSubview:self.iconImageView];
     [self addSubview:self.messageTipLabel];
 
-    [self.iconImageView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.centerX.mas_equalTo(self);
-        make.left.mas_equalTo(self).mas_offset(15);
-        make.top.mas_equalTo(self).mas_offset(8);
-        //make.centerY.mas_equalTo(self).mas_offset(-4);
-        make.height.mas_equalTo(self.iconImageView.mas_width).multipliedBy(1.0);
-    }];
     [self.titleNameLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerX.mas_equalTo(self);
         make.left.mas_equalTo(self);
         make.bottom.mas_equalTo(self).mas_offset(0);
+        make.height.mas_equalTo(12);
     }];
+    [self.iconImageView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.mas_equalTo(self).mas_offset(badgeLabelMargin);
+        make.bottom.mas_equalTo(self.titleNameLabel.mas_top).mas_offset(-6);
+        make.width.mas_equalTo(self.iconImageView.mas_height).multipliedBy(1.0);
+        make.centerX.mas_equalTo(self);
+    }];
+    
     [self.messageTipLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.centerX.mas_equalTo(self.iconImageView.mas_right);
-        make.centerY.mas_equalTo(self.iconImageView.mas_top);
-        make.width.mas_equalTo(16);
-        make.height.mas_equalTo(16);
+        make.top.mas_equalTo(self.iconImageView.mas_top).mas_offset(-badgeLabelMargin);
+        make.right.mas_equalTo(self.iconImageView.mas_right).mas_offset(badgeLabelMargin);
+        make.width.mas_equalTo(badgeLabelWidth);
+        make.height.mas_equalTo(badgeLabelWidth);
     }];
 }
 
@@ -85,7 +89,7 @@
         _titleNameLabel.textColor =  [UIColor colorWithRed:51/255.0f green:51/255.0f blue:51/255.0f alpha:1.0];  // (@"#333333");
         _titleNameLabel.font = [UIFont systemFontOfSize:12];
         _titleNameLabel.textAlignment = NSTextAlignmentCenter;
-        _titleNameLabel.adjustsFontSizeToFitWidth = YES;
+        //_titleNameLabel.adjustsFontSizeToFitWidth = YES; // 字号不允许进行改变
     }
     return _titleNameLabel;
 }
@@ -109,7 +113,7 @@
         _messageTipLabel.textColor = [UIColor whiteColor];  // (@"#FFFFFF");
         _messageTipLabel.font = [UIFont systemFontOfSize:11];
         _messageTipLabel.textAlignment = NSTextAlignmentCenter;
-        _messageTipLabel.layer.cornerRadius = 7;
+        _messageTipLabel.layer.cornerRadius = badgeLabelWidth/2;
         _messageTipLabel.adjustsFontSizeToFitWidth = YES;
         _messageTipLabel.minimumScaleFactor = 0.3;
         _messageTipLabel.clipsToBounds = YES;

@@ -8,6 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
+FOUNDATION_EXTERN const CGFloat badgeLabelMargin;   // badge与cell的距离
+
+
 NS_ASSUME_NONNULL_BEGIN
 
 @interface CQFilesLookBadgeCollectionViewCell : UICollectionViewCell {

@@ -45,8 +45,8 @@
     cellHorizontalLayout.cellWidthFromPerRowMaxShowCount = 4;
     cellHorizontalLayout.widthHeightRatio = 1/1.0;
     
-    cellHorizontalLayout.sectionInset = UIEdgeInsetsMake(10, 10, 10, 10);
-    cellHorizontalLayout.minimumLineSpacing = 10;
+    cellHorizontalLayout.sectionInset = UIEdgeInsetsMake(15, 10, 15, 10);
+    cellHorizontalLayout.minimumLineSpacing = 15-4;
     cellHorizontalLayout.minimumInteritemSpacing = 10;
     
     return cellHorizontalLayout;
