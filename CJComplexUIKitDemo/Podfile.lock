@@ -296,7 +296,7 @@ DEPENDENCIES:
   - SVProgressHUD
 
 SPEC REPOS:
-  https://gitee.com/dvlproad/dvlproadSpecs:
+  https://gitee.com/dvlproad/dvlproadSpecs.git:
     - CJBaseEffectKit
     - CJBaseOverlayKit
     - CQOverlayKit
@@ -369,4 +369,4 @@ SPEC CHECKSUMS:
 
 PODFILE CHECKSUM: 8eb68d6a8a02c7e2563195fab4d305057bf98151
 
-COCOAPODS: 1.9.1
+COCOAPODS: 1.8.4

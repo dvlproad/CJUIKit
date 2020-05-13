@@ -125,11 +125,6 @@ minimumInteritemSpacingForSectionAtIndex:(NSInteger)section
     NSLog(@"此点击部分请在子类中实现");
 }
 
-#pragma mark - Update
-/// 更新额外cell的样式即位置，(默认不添加）
-- (void)updateExtralItemSetting:(CJExtralItemSetting)extralItemSetting {
-    _dataSourceSettingModel.extralItemSetting = extralItemSetting;
-}
 
 
 #pragma mark - Other

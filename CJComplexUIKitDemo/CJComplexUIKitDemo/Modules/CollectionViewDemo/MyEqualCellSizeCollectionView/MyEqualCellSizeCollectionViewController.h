@@ -6,7 +6,6 @@
 //  Copyright (c) 2015 dvlproad. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
 #import <CQDemoKit/CJUIKitBaseViewController.h>
 
 @interface MyEqualCellSizeCollectionViewController : CJUIKitBaseViewController {

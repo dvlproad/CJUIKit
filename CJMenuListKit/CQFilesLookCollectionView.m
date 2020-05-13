@@ -153,7 +153,6 @@
 /// 更新额外cell的样式即位置，(默认不添加）
 - (void)updateExtralItemSetting:(CJExtralItemSetting)extralItemSetting {
     [self.equalCellSizeCollectionViewDataSource updateExtralItemSetting:extralItemSetting];
-    [self.equalCellSizeCollectionViewDelegate updateExtralItemSetting:extralItemSetting];
 }
 
 

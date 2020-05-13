@@ -33,19 +33,16 @@ static const CGFloat Icon_Size_Height = 42.0f;
             view;
         });
         
-        [self createSubViews];
-        [self createAutoLayout];
+        [self setupViews];
     }
     return self;
 }
 
-- (void)createSubViews {
+- (void)setupViews {
     [self addSubview:self.titleNameLabel];
     [self addSubview:self.iconImageView];
     [self addSubview:self.messageTipLabel];
-}
 
-- (void)createAutoLayout {
     [self.iconImageView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerX.mas_equalTo(self);
         make.top.mas_equalTo(self).mas_offset(5);
@@ -67,6 +64,7 @@ static const CGFloat Icon_Size_Height = 42.0f;
 - (void)setBadgeCount:(NSInteger)badgeCount {
     if (badgeCount <= 0) {
         self.messageTipLabel.text = @"";
+        self.messageTipLabel.hidden = YES;
         return;
     }
     

@@ -93,7 +93,8 @@ minimumInteritemSpacingForSectionAtIndex:(NSInteger)section
 }
 
 - (void)collectionView:(UICollectionView *)collectionView didDeselectItemAtIndexPath:(NSIndexPath *)indexPath {
-    NSLog(@"取消点击");
+    NSString *indexPathString = [NSString stringWithFormat:@"%zd-%zd", indexPath.section, indexPath.item];
+    NSLog(@"取消点击%", indexPathString);
 }
 
 

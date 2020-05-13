@@ -10,7 +10,6 @@
 		150AD95C244EBF5000AA9C4E /* AppInfoManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 150AD95A244EBF5000AA9C4E /* AppInfoManager.m */; };
 		150AD95D244EBF5000AA9C4E /* AppInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 150AD95B244EBF5000AA9C4E /* AppInfo.m */; };
 		154BDAFE243AA75300311EA5 /* CJChooseFileActionSheetUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 154BDAFD243AA75300311EA5 /* CJChooseFileActionSheetUtil.m */; };
-		154BDB04243C6B2D00311EA5 /* LookBadgeCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 154BDB03243C6B2D00311EA5 /* LookBadgeCollectionViewController.m */; };
 		154BDB07243C6C4F00311EA5 /* TSListDataSourceUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 154BDB06243C6C4F00311EA5 /* TSListDataSourceUtil.m */; };
 		15F426FE242B7C6F00ED2E4C /* UIView+CJDemoPopupAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 15F426B3242B7C6F00ED2E4C /* UIView+CJDemoPopupAction.m */; };
 		15F426FF242B7C6F00ED2E4C /* CJDemoPopupView.m in Sources */ = {isa = PBXBuildFile; fileRef = 15F426B6242B7C6F00ED2E4C /* CJDemoPopupView.m */; };
@@ -106,10 +105,7 @@
 		789A4F5721FAF3A8001528B9 /* Header.m in Sources */ = {isa = PBXBuildFile; fileRef = 789A4F1421FAF3A8001528B9 /* Header.m */; };
 		789A4F5821FAF3A8001528B9 /* OpenCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 789A4F1621FAF3A8001528B9 /* OpenCollectionViewController.m */; };
 		789A4F5921FAF3A8001528B9 /* Header.xib in Resources */ = {isa = PBXBuildFile; fileRef = 789A4F1721FAF3A8001528B9 /* Header.xib */; };
-		789A4F5A21FAF3A8001528B9 /* MyEqualCellSizeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 789A4F1921FAF3A8001528B9 /* MyEqualCellSizeView.m */; };
-		789A4F5B21FAF3A8001528B9 /* MyEqualCellSizeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 789A4F1A21FAF3A8001528B9 /* MyEqualCellSizeViewController.m */; };
 		789A4F5C21FAF3A8001528B9 /* MyEqualCellSizeCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 789A4F1B21FAF3A8001528B9 /* MyEqualCellSizeCollectionViewController.m */; };
-		789A4F5E21FAF3A8001528B9 /* MyEqualCellSizeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 789A4F2021FAF3A8001528B9 /* MyEqualCellSizeViewController.xib */; };
 		789A4F5F21FAF3A8001528B9 /* CvDemo_Complex.m in Sources */ = {isa = PBXBuildFile; fileRef = 789A4F2221FAF3A8001528B9 /* CvDemo_Complex.m */; };
 		789A4F6021FAF3A8001528B9 /* CvDemo_Complex+Event.m in Sources */ = {isa = PBXBuildFile; fileRef = 789A4F2421FAF3A8001528B9 /* CvDemo_Complex+Event.m */; };
 		789A4F6121FAF3A8001528B9 /* CvDemo_Complex.xib in Resources */ = {isa = PBXBuildFile; fileRef = 789A4F2621FAF3A8001528B9 /* CvDemo_Complex.xib */; };
@@ -194,8 +190,6 @@
 		150AD95B244EBF5000AA9C4E /* AppInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppInfo.m; sourceTree = "<group>"; };
 		154BDAFC243AA75300311EA5 /* CJChooseFileActionSheetUtil.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CJChooseFileActionSheetUtil.h; sourceTree = "<group>"; };
 		154BDAFD243AA75300311EA5 /* CJChooseFileActionSheetUtil.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CJChooseFileActionSheetUtil.m; sourceTree = "<group>"; };
-		154BDB02243C6B2D00311EA5 /* LookBadgeCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LookBadgeCollectionViewController.h; sourceTree = "<group>"; };
-		154BDB03243C6B2D00311EA5 /* LookBadgeCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LookBadgeCollectionViewController.m; sourceTree = "<group>"; };
 		154BDB05243C6C4F00311EA5 /* TSListDataSourceUtil.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TSListDataSourceUtil.h; sourceTree = "<group>"; };
 		154BDB06243C6C4F00311EA5 /* TSListDataSourceUtil.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TSListDataSourceUtil.m; sourceTree = "<group>"; };
 		15F426B3242B7C6F00ED2E4C /* UIView+CJDemoPopupAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+CJDemoPopupAction.m"; sourceTree = "<group>"; };
@@ -345,13 +339,8 @@
 		789A4F1521FAF3A8001528B9 /* DetailCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailCell.h; sourceTree = "<group>"; };
 		789A4F1621FAF3A8001528B9 /* OpenCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OpenCollectionViewController.m; sourceTree = "<group>"; };
 		789A4F1721FAF3A8001528B9 /* Header.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Header.xib; sourceTree = "<group>"; };
-		789A4F1921FAF3A8001528B9 /* MyEqualCellSizeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyEqualCellSizeView.m; sourceTree = "<group>"; };
-		789A4F1A21FAF3A8001528B9 /* MyEqualCellSizeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyEqualCellSizeViewController.m; sourceTree = "<group>"; };
 		789A4F1B21FAF3A8001528B9 /* MyEqualCellSizeCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyEqualCellSizeCollectionViewController.m; sourceTree = "<group>"; };
-		789A4F1D21FAF3A8001528B9 /* MyEqualCellSizeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyEqualCellSizeViewController.h; sourceTree = "<group>"; };
-		789A4F1E21FAF3A8001528B9 /* MyEqualCellSizeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyEqualCellSizeView.h; sourceTree = "<group>"; };
 		789A4F1F21FAF3A8001528B9 /* MyEqualCellSizeCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyEqualCellSizeCollectionViewController.h; sourceTree = "<group>"; };
-		789A4F2021FAF3A8001528B9 /* MyEqualCellSizeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyEqualCellSizeViewController.xib; sourceTree = "<group>"; };
 		789A4F2221FAF3A8001528B9 /* CvDemo_Complex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CvDemo_Complex.m; sourceTree = "<group>"; };
 		789A4F2321FAF3A8001528B9 /* Detail.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Detail.h; sourceTree = "<group>"; };
 		789A4F2421FAF3A8001528B9 /* CvDemo_Complex+Event.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CvDemo_Complex+Event.m"; sourceTree = "<group>"; };
@@ -1036,15 +1025,8 @@
 			children = (
 				789A4F1F21FAF3A8001528B9 /* MyEqualCellSizeCollectionViewController.h */,
 				789A4F1B21FAF3A8001528B9 /* MyEqualCellSizeCollectionViewController.m */,
-				154BDB02243C6B2D00311EA5 /* LookBadgeCollectionViewController.h */,
-				154BDB03243C6B2D00311EA5 /* LookBadgeCollectionViewController.m */,
 				154BDB05243C6C4F00311EA5 /* TSListDataSourceUtil.h */,
 				154BDB06243C6C4F00311EA5 /* TSListDataSourceUtil.m */,
-				789A4F1E21FAF3A8001528B9 /* MyEqualCellSizeView.h */,
-				789A4F1921FAF3A8001528B9 /* MyEqualCellSizeView.m */,
-				789A4F1D21FAF3A8001528B9 /* MyEqualCellSizeViewController.h */,
-				789A4F1A21FAF3A8001528B9 /* MyEqualCellSizeViewController.m */,
-				789A4F2021FAF3A8001528B9 /* MyEqualCellSizeViewController.xib */,
 			);
 			path = MyEqualCellSizeCollectionView;
 			sourceTree = "<group>";
@@ -1375,7 +1357,6 @@
 				789A4F9321FAF3FB001528B9 /* OpenTableViewController1.xib in Resources */,
 				789A4F4E21FAF3A8001528B9 /* MemoryADTime01.jpg in Resources */,
 				7856F73E21F4E953004AF751 /* header@2x.jpg in Resources */,
-				789A4F5E21FAF3A8001528B9 /* MyEqualCellSizeViewController.xib in Resources */,
 				789A4F4521FAF3A8001528B9 /* MemoryADExample05.jpg in Resources */,
 				789A4F4221FAF3A8001528B9 /* MemoryADResult02.jpg in Resources */,
 				15F42707242B7C6F00ED2E4C /* cjTextField_clear@3x.png in Resources */,
@@ -1551,7 +1532,6 @@
 				15F42703242B7C6F00ED2E4C /* DemoTagButtonFactory.m in Sources */,
 				789A4F8E21FAF3FB001528B9 /* ReuseDataSourceTableViewController.m in Sources */,
 				15F42701242B7C6F00ED2E4C /* CJDemoDatePickerView.m in Sources */,
-				789A4F5B21FAF3A8001528B9 /* MyEqualCellSizeViewController.m in Sources */,
 				789A4F9121FAF3FB001528B9 /* TvDemo_Complex+Event.m in Sources */,
 				789A4F5721FAF3A8001528B9 /* Header.m in Sources */,
 				789C442E21EECA9800181144 /* JSOCViewController.m in Sources */,
@@ -1579,7 +1559,6 @@
 				78590D0F215C79DD00F45AD5 /* UploadDirectlyImagePickerViewController.m in Sources */,
 				781872BA242BA9B80098B3A9 /* TSOpenCollectionView.m in Sources */,
 				15F42700242B7C6F00ED2E4C /* DemoTextFieldFactory.m in Sources */,
-				154BDB04243C6B2D00311EA5 /* LookBadgeCollectionViewController.m in Sources */,
 				780E46051E5DF87B00980127 /* main.m in Sources */,
 				783281041F4198BC008267E0 /* CustomTripProgressView.m in Sources */,
 				785F86C8226C458C005CEBF3 /* EmptyScrollViewController2.m in Sources */,
@@ -1590,7 +1569,6 @@
 				789A4F9B21FAF3FB001528B9 /* SHeaderHome2.m in Sources */,
 				15F426FF242B7C6F00ED2E4C /* CJDemoPopupView.m in Sources */,
 				7856F73621F4E79E004AF751 /* TestDataModel.m in Sources */,
-				789A4F5A21FAF3A8001528B9 /* MyEqualCellSizeView.m in Sources */,
 				789A4FB021FB05D3001528B9 /* H5ImgSettingPathViewController.m in Sources */,
 				789C448E21F170CF00181144 /* DemoCacheUtil.m in Sources */,
 				150AD95D244EBF5000AA9C4E /* AppInfo.m in Sources */,
