@@ -7,13 +7,6 @@
 //
 
 #import <UIKit/UIKit.h>
-
-//#ifdef TEST_CJCOMPLEXUIKIT_POD
-//#import "MyEqualCellSizeCollectionView.h"
-//#else
-#import <CJMenuListKit/MyEqualCellSizeCollectionView.h>
-//#endif
-
 #import <CJBaseUtil/CJSectionDataModel.h>   //在CJDataUtil中
 
 
@@ -22,7 +15,7 @@ typedef UICollectionViewCell* (^CJConfigureCollectionViewCellBlock)(UICollection
 /**
  *  一个集成了搜索功能的EqualCellSizeCollectionView
  */
-@interface MySearchEqualCellSizeCollectionView : MyEqualCellSizeCollectionView {
+@interface MySearchEqualCellSizeCollectionView : UICollectionView {
     
 }
 //必须设置的值

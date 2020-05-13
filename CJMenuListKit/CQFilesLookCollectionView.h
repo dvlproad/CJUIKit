@@ -9,12 +9,10 @@
 #import <UIKit/UIKit.h>
 #import <Masonry/Masonry.h>
 #import "CJFilesLookDataModel.h"
-#import "UICollectionView+CJFlowLayoutScrollDirection.h"
-#import "MyEqualCellSizeSetting.h"
 #import "CJDataSourceSettingModel.h"
 
 
-///用来测试将MyEqualCellSizeCollectionView包含在自定义的View中时候，时候会有错误
+///用来测试将CollectionView包含在自定义的View中时候，时候会有错误
 @interface CQFilesLookCollectionView : UICollectionView {
     
 }

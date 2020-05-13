@@ -1,0 +1,24 @@
+{
+  "name": "UICollectionViewCJSelectHelper",
+  "version": "0.1.0",
+  "summary": "UICollectionView的Select",
+  "homepage": "https://gitee.com/dvlproad/UIKit-List-iOS.git",
+  "license": {
+    "type": "Copyright",
+    "text": "              © 2008-2020 dvlproad. All rights reserved.\n"
+  },
+  "authors": {
+    "dvlproad": ""
+  },
+  "description": "-、UICollectionView的Select\n\n   A longer description of UICollectionViewCJSelectHelper in Markdown format.\n\n   * Think: Why did you write this? What is the focus? What does it do?\n   * CocoaPods will be using this to generate tags, and improve search results.\n   * Try to keep it short, snappy and to the point.\n   * Finally, don't worry about the indent, CocoaPods strips it!",
+  "platforms": {
+    "ios": "8.0"
+  },
+  "source": {
+    "git": "https://gitee.com/dvlproad/UIKit-List-iOS.git",
+    "tag": "UICollectionViewCJSelectHelper_0.1.0"
+  },
+  "frameworks": "UIKit",
+  "requires_arc": true,
+  "source_files": "UICollectionViewCJSelectHelper/**/*.{h,m}"
+}

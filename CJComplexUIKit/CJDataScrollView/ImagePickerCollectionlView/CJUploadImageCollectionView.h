@@ -6,12 +6,7 @@
 //  Copyright © 2017年 dvlproad. All rights reserved.
 //
 
-
-#ifdef TEST_CJCOMPLEXUIKIT_POD
-#import "MyEqualCellSizeCollectionView.h"
-#else
-#import <CJComplexUIKit/MyEqualCellSizeCollectionView.h>
-#endif
+#import <UIKit/UIKit.h>
 
 #import <CJMedia/CJImageUploadFileModelsOwner.h>
 #import <CJMedia/CJVideoUploadFileModelsOwner.h>
@@ -32,7 +27,7 @@ typedef NS_ENUM(NSUInteger, CJUploadActionType) {
 };
 
 ///TODO:将本工程CJTotalDemo中的FileChooseView抽出不含上传请求的部分到CJComplexUIKitDemo中
-@interface CJUploadImageCollectionView : MyEqualCellSizeCollectionView <UIImagePickerControllerDelegate, UINavigationControllerDelegate> {
+@interface CJUploadImageCollectionView : UICollectionView <UIImagePickerControllerDelegate, UINavigationControllerDelegate> {
     
 }
 @property (nonatomic, strong) MyEqualCellSizeCollectionViewNormalDelegate *equalCellSizeCollectionViewDelegate;

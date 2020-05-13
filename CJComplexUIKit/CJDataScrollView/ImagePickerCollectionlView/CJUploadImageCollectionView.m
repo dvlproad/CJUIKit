@@ -10,9 +10,9 @@
 #import "CJUploadImageCollectionView+Tap.h"
 #import "CJUploadCollectionViewCell.h"
 
-#import "UICollectionView+CJSelect.h"
+#import <UICollectionViewCJSelectHelper/UICollectionView+CJSelect.h>
 
-
+#import "MyEqualCellSizeSetting.h"
 
 static NSString * const CJUploadCollectionViewCellID = @"CJUploadCollectionViewCell";
 static NSString * const CJUploadCollectionViewCellAddID = @"CJUploadCollectionViewCellAdd";
@@ -93,7 +93,7 @@ static NSString * const CJUploadCollectionViewCellAddID = @"CJUploadCollectionVi
     self.equalCellSizeCollectionViewDataSource = equalCellSizeCollectionViewDataSource;
     
     /* 创建Delegate (UICollectionViewDelegateFlowLayout也需实现UICollectionViewDelegate) */
-    MyEqualCellSizeCollectionViewNormalDelegate *delegate = [[MyEqualCellSizeCollectionViewNormalDelegate alloc] initWithEqualCellSizeSetting:equalCellSizeSetting didTapItemBlock:^(UICollectionView *collectionView, NSIndexPath *indexPath, BOOL isDeselect, MyEqualCellSizeSetting *equalCellSizeSetting) {
+    MyEqualCellSizeCollectionViewNormalDelegate *delegate = [[MyEqualCellSizeCollectionViewNormalDelegate alloc] initWithEqualCellSizeSetting:equalCellSizeSetting didTapItemBlock:^(UICollectionView *collectionView, NSIndexPath *indexPath, BOOL isDeselect, CQCollectionViewFlowLayout *equalCellSizeSetting) {
         BOOL isExtralItem = [weakSelf.equalCellSizeCollectionViewDataSource isExtraItemIndexPath:indexPath];
         
         if (!isExtralItem) {
@@ -158,7 +158,6 @@ static NSString * const CJUploadCollectionViewCellAddID = @"CJUploadCollectionVi
 /// 更新额外cell的样式即位置，(默认不添加）
 - (void)updateExtralItemSetting:(CJExtralItemSetting)extralItemSetting {
     [self.equalCellSizeCollectionViewDataSource updateExtralItemSetting:extralItemSetting];
-    [self.equalCellSizeCollectionViewDelegate updateExtralItemSetting:extralItemSetting];
 }
 
 

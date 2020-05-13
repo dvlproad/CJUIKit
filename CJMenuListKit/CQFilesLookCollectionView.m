@@ -9,11 +9,13 @@
 #import "CQFilesLookCollectionView.h"
 #import "CQFilesLookCollectionViewCell.h"
 
+#import "MyEqualCellSizeSetting.h"
+
 #import "MyEqualCellSizeCollectionViewNormalDelegate.h"
 #import "MyEqualCellSizeCollectionViewSelectDelegate.h"
 #import "MyEqualCellSizeCollectionViewDataSource.h"
 
-#import "UICollectionView+CJSelect.h"
+#import <UICollectionViewCJSelectHelper/UICollectionView+CJSelect.h>
 
 @interface CQFilesLookCollectionView () <UICollectionViewDataSource> {
     
@@ -86,7 +88,7 @@
     self.equalCellSizeCollectionViewDataSource = equalCellSizeCollectionViewDataSource;
     
     /* 创建Delegate (UICollectionViewDelegateFlowLayout也需实现UICollectionViewDelegate) */
-    MyEqualCellSizeCollectionViewNormalDelegate *normalDelegate = [[MyEqualCellSizeCollectionViewNormalDelegate alloc] initWithEqualCellSizeSetting:equalCellSizeSetting didTapItemBlock:^(UICollectionView *collectionView, NSIndexPath *indexPath, BOOL isDeselect, MyEqualCellSizeSetting *equalCellSizeSetting) {
+    MyEqualCellSizeCollectionViewNormalDelegate *normalDelegate = [[MyEqualCellSizeCollectionViewNormalDelegate alloc] initWithEqualCellSizeSetting:equalCellSizeSetting didTapItemBlock:^(UICollectionView *collectionView, NSIndexPath *indexPath, BOOL isDeselect, CQCollectionViewFlowLayout *equalCellSizeSetting) {
         BOOL isExtralItem = [weakSelf.equalCellSizeCollectionViewDataSource isExtraItemIndexPath:indexPath];
         
         if (isExtralItem) {

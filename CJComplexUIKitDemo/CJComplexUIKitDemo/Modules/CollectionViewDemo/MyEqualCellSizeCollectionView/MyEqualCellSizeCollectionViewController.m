@@ -9,8 +9,7 @@
 #import "MyEqualCellSizeCollectionViewController.h"
 
 #import <CJMenuListKit/CQFilesLookCollectionView.h>
-#import <CJMenuListKit/UICollectionView+CJSelect.h>
-#import <CQOverlayKit/CQToast.h>
+#import <UICollectionViewCJSelectHelper/UICollectionView+CJSelect.h>
 #import "TSButtonFactory.h"
 
 
@@ -44,7 +43,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    self.view.backgroundColor = [UIColor whiteColor];
+    self.navigationItem.title = @"CollectionView Demo";
     
     UIBarButtonItem *chooseBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"选择" style:UIBarButtonItemStylePlain target:self action:@selector(__chooseBarAction:)];
     _isChoosing = NO;
@@ -85,7 +84,6 @@
     
     CQFilesLookCollectionView *collectionView = [[CQFilesLookCollectionView alloc] init];
     collectionView.backgroundColor = [UIColor lightGrayColor];
-    collectionView.cjScrollDirection = UICollectionViewScrollDirectionVertical;
     [self.view addSubview:collectionView];
     [collectionView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.mas_equalTo(themeBGButton3.mas_bottom).mas_offset(10);
@@ -94,9 +92,8 @@
         make.height.mas_equalTo(260);
     }];
     self.equalCellSizeCollectionView = collectionView;
-    [self.equalCellSizeCollectionView updateExtralItemSetting:CJExtralItemSettingTailing];
-    self.equalCellSizeCollectionView.cjScrollDirection = UICollectionViewScrollDirectionHorizontal;
-    self.equalCellSizeCollectionView.allowsMultipleSelection = YES; //是否打开多选
+    [collectionView updateExtralItemSetting:CJExtralItemSettingTailing];
+    collectionView.allowsMultipleSelection = YES; //是否打开多选
     
 //    self.equalCellSizeCollectionView.dataCellActionType = DataCellActionTypeSelect;
     self.equalCellSizeCollectionView.alwaysAloneIndexPath = [NSIndexPath indexPathForItem:0 inSection:0];//用于测试"我与其他不共存"
@@ -154,30 +151,12 @@
     
     
     
-    UIButton *changeScrollDirectionButton = [TSButtonFactory themeBGButton];
-    [changeScrollDirectionButton setTitle:@"切为水平滚动" forState:UIControlStateNormal];
-    [changeScrollDirectionButton setTitle:@"切为竖直滚动" forState:UIControlStateSelected];
-    if (self.equalCellSizeCollectionView.cjScrollDirection == UICollectionViewScrollDirectionHorizontal) {
-        changeScrollDirectionButton.selected = YES;
-    } else {
-        changeScrollDirectionButton.selected = NO;
-    }
-    [changeScrollDirectionButton addTarget:self action:@selector(changeScrollDirectionToHorizontal:) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:changeScrollDirectionButton];
-    [changeScrollDirectionButton mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.mas_equalTo(reloadButtonsView.mas_bottom).mas_offset(10);
-        make.left.mas_equalTo(themeBGButton1);
-        make.centerX.mas_equalTo(themeBGButton1);
-        make.height.mas_equalTo(themeBGButton1);
-    }];
-    
-    
     UIButton *printSelectedItemsButton = [TSButtonFactory themeBGButton];
     [printSelectedItemsButton setTitle:@"打印当前的selectedItemsButton" forState:UIControlStateNormal];
     [printSelectedItemsButton addTarget:self action:@selector(printIndexPathsForSelectedItems:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:printSelectedItemsButton];
     [printSelectedItemsButton mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.mas_equalTo(changeScrollDirectionButton.mas_bottom).mas_offset(30);
+        make.top.mas_equalTo(reloadButtonsView.mas_bottom).mas_offset(30);
         make.left.mas_equalTo(themeBGButton1);
         make.centerX.mas_equalTo(themeBGButton1);
         make.height.mas_equalTo(themeBGButton1);
@@ -220,18 +199,6 @@
 
 - (void)reloadCollectionViewWithGiveupSelected:(id)sender {
     [self.equalCellSizeCollectionView my_reloadDataWithKeepSelectedState:NO];
-}
-
-- (void)changeScrollDirectionToHorizontal:(UIButton *)button {
-    button.selected = !button.selected;
-    if (button.selected) {
-        self.equalCellSizeCollectionView.cjScrollDirection = UICollectionViewScrollDirectionHorizontal;
-        self.equalCellSizeCollectionView.pagingEnabled = YES;
-    } else {
-        self.equalCellSizeCollectionView.cjScrollDirection = UICollectionViewScrollDirectionVertical;
-        self.equalCellSizeCollectionView.pagingEnabled = NO;
-    }
-    
 }
 
 #pragma mark - SelectEvent

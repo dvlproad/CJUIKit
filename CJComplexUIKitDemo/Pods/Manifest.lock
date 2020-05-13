@@ -147,6 +147,7 @@ PODS:
   - CJBaseUtil/CJPinyinHelper (0.5.1):
     - PinYin4Objc
   - CJBaseUtil/CJQRCodeUtil (0.5.1)
+  - CJCollectionViewFlowLayout (0.1.0)
   - CJComplexUIKit/CJCollectionView (0.3.0):
     - CJComplexUIKit/CJCollectionView/CJBaseCollectionViewCell (= 0.3.0)
     - CJComplexUIKit/CJCollectionView/CJCollectionViewLayout (= 0.3.0)
@@ -270,6 +271,7 @@ PODS:
     - SDWebImage/Core (= 4.4.3)
   - SDWebImage/Core (4.4.3)
   - SVProgressHUD (2.2.5)
+  - UICollectionViewCJSelectHelper (0.1.0)
 
 DEPENDENCIES:
   - AFNetworking/Reachability
@@ -277,6 +279,7 @@ DEPENDENCIES:
   - CJBaseHelper (from `../`)
   - CJBaseUIKit (from `../`)
   - CJBaseUtil (from `../`)
+  - CJCollectionViewFlowLayout (from `../../../Gitee/UIKit-List-iOS`)
   - CJComplexUIKit/CJCollectionView (from `../`)
   - CJComplexUIKit/CJHomeCollectionView (from `../`)
   - CJComplexUIKit/CJScrollView (from `../`)
@@ -294,9 +297,10 @@ DEPENDENCIES:
   - NJKWebViewProgress
   - SDCycleScrollView (~> 1.75)
   - SVProgressHUD
+  - UICollectionViewCJSelectHelper (from `../../../Gitee/UIKit-List-iOS`)
 
 SPEC REPOS:
-  https://gitee.com/dvlproad/dvlproadSpecs.git:
+  https://gitee.com/dvlproad/dvlproadSpecs:
     - CJBaseEffectKit
     - CJBaseOverlayKit
     - CQOverlayKit
@@ -329,12 +333,16 @@ EXTERNAL SOURCES:
     :path: "../"
   CJBaseUtil:
     :path: "../"
+  CJCollectionViewFlowLayout:
+    :path: "../../../Gitee/UIKit-List-iOS"
   CJComplexUIKit:
     :path: "../"
   CJFoundation:
     :path: "../"
   CJMenuListKit:
     :path: "../"
+  UICollectionViewCJSelectHelper:
+    :path: "../../../Gitee/UIKit-List-iOS"
 
 SPEC CHECKSUMS:
   AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
@@ -343,6 +351,7 @@ SPEC CHECKSUMS:
   CJBaseOverlayKit: 84459c59783b88b4f6f570096e1201e32b2eb718
   CJBaseUIKit: 094bcdde160d169f1b7823e18e9920bb069594bf
   CJBaseUtil: 1bbf8d5f831dc12ae4bb06c8b5326bd39f3522e1
+  CJCollectionViewFlowLayout: 7617ac3cbfbd00ddd6a8d79fcb838758a168035b
   CJComplexUIKit: 5f7e57ddfd947450cfe7f8f9d8f0c8633fd708ff
   CJFile: 6c1e6d55b3b94e8afbaa9f413f131301d15fdc48
   CJFoundation: 53b4df7152c6d6fd776f55f387c67f431b8574bd
@@ -366,7 +375,8 @@ SPEC CHECKSUMS:
   SDCycleScrollView: 884b88f0266dd4708a0e1934975c69cb971707b1
   SDWebImage: c5594f1a19c48d526d321e548902b56b479cd508
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
+  UICollectionViewCJSelectHelper: e176ca6d3bc396df24238ac5aef4543113ac1e65
 
-PODFILE CHECKSUM: 8eb68d6a8a02c7e2563195fab4d305057bf98151
+PODFILE CHECKSUM: 5be17e5476139ba869003ef87711d3a01fa89ed1
 
-COCOAPODS: 1.8.4
+COCOAPODS: 1.9.1

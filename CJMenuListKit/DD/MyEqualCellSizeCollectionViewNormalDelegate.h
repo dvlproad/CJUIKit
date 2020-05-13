@@ -23,8 +23,8 @@
  *  @param equalCellSizeSetting             集合视图的布局设置
  *  @param didTapItemBlock                         包括 didSelectItemAtIndexPath 和didDeselectItemAtIndexPath
  */
-- (id)initWithEqualCellSizeSetting:(MyEqualCellSizeSetting *)equalCellSizeSetting
-                   didTapItemBlock:(void (^)(UICollectionView *collectionView, NSIndexPath *indexPath, BOOL isDeselect, MyEqualCellSizeSetting *equalCellSizeSetting))didTapItemBlock;
+- (id)initWithEqualCellSizeSetting:(CQCollectionViewFlowLayout *)equalCellSizeSetting
+                   didTapItemBlock:(void (^)(UICollectionView *collectionView, NSIndexPath *indexPath, BOOL isDeselect, CQCollectionViewFlowLayout *equalCellSizeSetting))didTapItemBlock;
 
 
 @end

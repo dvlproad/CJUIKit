@@ -1,0 +1,24 @@
+{
+  "name": "CJCollectionViewFlowLayout",
+  "version": "0.1.0",
+  "summary": "可通过设置每行个数来进行布局的自定义的flowLayout",
+  "homepage": "https://gitee.com/dvlproad/UIKit-List-iOS.git",
+  "license": {
+    "type": "Copyright",
+    "text": "              © 2008-2020 dvlproad. All rights reserved.\n"
+  },
+  "authors": {
+    "dvlproad": ""
+  },
+  "description": "-、FlowLayout\n\n   A longer description of CJCollectionViewFlowLayout in Markdown format.\n\n   * Think: Why did you write this? What is the focus? What does it do?\n   * CocoaPods will be using this to generate tags, and improve search results.\n   * Try to keep it short, snappy and to the point.\n   * Finally, don't worry about the indent, CocoaPods strips it!",
+  "platforms": {
+    "ios": "8.0"
+  },
+  "source": {
+    "git": "https://gitee.com/dvlproad/UIKit-List-iOS.git",
+    "tag": "CJCollectionViewFlowLayout_0.1.0"
+  },
+  "frameworks": "UIKit",
+  "requires_arc": true,
+  "source_files": "CJCollectionViewFlowLayout/**/*.{h,m}"
+}

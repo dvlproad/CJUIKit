@@ -112,9 +112,6 @@
 
     NSInteger allCellCount = self.dataModels.count;
 
-//    MyEqualCellSizeSetting *equalCellSizeSetting = self.equalCellSizeCollectionViewDelegate.equalCellSizeSetting;
-//    CGFloat height = [MyEqualCellSizeCollectionViewNormalDelegate heightForAllCellCount:allCellCount byCollectionViewWidth:collectionViewWidth withEqualCellSizeSetting:equalCellSizeSetting];
-
     CJCellHorizontalLayout *layout = (CJCellHorizontalLayout *)self.collectionView.collectionViewLayout;
     CGFloat height = [CJCellHorizontalLayout heightForAllCellCount:allCellCount maxRowCount:2 byCollectionViewWidth:collectionViewWidth withCollectionViewLayout:layout];
 
