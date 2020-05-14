@@ -26,12 +26,12 @@ end
 
 
 target 'CJComplexUIKitDemo' do
-  pod 'CQDemoKit',                '~> 0.3.0'
-  #pod 'CQDemoKit',                :path => '../../../GitHub/001-UIKit-CQDemo-iOS’
-  pod 'CJBaseUIKit',              :path => '../’
-  pod 'CJBaseUtil',               :path => '../’
-  pod 'CJBaseHelper',             :path => '../’
-  pod 'CJFoundation',             :path => '../’
+  pod 'CQDemoKit',                            '~> 0.3.1'
+#  pod 'CQDemoKit',                            :path => '../../../GitHub/001-UIKit-CQDemo-iOS’
+  pod 'CJBaseUIKit',                          :path => '../’
+  pod 'CJBaseUtil',                           :path => '../’
+  pod 'CJBaseHelper',                         :path => '../’
+  pod 'CJFoundation',                         :path => '../’
   pod 'CQOverlayKit'
   pod 'CJBaseEffectKit',          :subspecs => ['CJDataEmptyView', 'CJScaleHeadView']
   pod 'CJComplexUIKit/CJScrollView',        :path => '../’

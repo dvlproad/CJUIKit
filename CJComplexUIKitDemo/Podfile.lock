@@ -192,18 +192,18 @@ PODS:
   - CJNetwork/CJNetworkBase (0.5.0)
   - CJNetwork/CJRequestUtil (0.5.0):
     - CJNetwork/CJNetworkBase
-  - CQDemoKit (0.3.0):
-    - CQDemoKit/Demo_Resource (= 0.3.0)
-    - CQDemoKit/Home_Base (= 0.3.0)
-    - CQDemoKit/Home_Collection (= 0.3.0)
-    - CQDemoKit/Home_TextView (= 0.3.0)
-  - CQDemoKit/Demo_Resource (0.3.0)
-  - CQDemoKit/Home_Base (0.3.0):
+  - CQDemoKit (0.3.1):
+    - CQDemoKit/Demo_Resource (= 0.3.1)
+    - CQDemoKit/Home_Base (= 0.3.1)
+    - CQDemoKit/Home_Collection (= 0.3.1)
+    - CQDemoKit/Home_TextView (= 0.3.1)
+  - CQDemoKit/Demo_Resource (0.3.1)
+  - CQDemoKit/Home_Base (0.3.1):
     - CJBaseUtil/CJDataUtil
     - Masonry
-  - CQDemoKit/Home_Collection (0.3.0):
+  - CQDemoKit/Home_Collection (0.3.1):
     - CQDemoKit/Home_Base
-  - CQDemoKit/Home_TextView (0.3.0):
+  - CQDemoKit/Home_TextView (0.3.1):
     - CQDemoKit/Home_Base
   - CQExtralItemCollectionViewDataSource (0.1.0)
   - CQOverlayKit (0.3.0):
@@ -279,7 +279,7 @@ DEPENDENCIES:
   - CJMenuListKit (from `../`)
   - CJNetwork
   - CJNetwork/AFNetworkingBaseComponent
-  - CQDemoKit (~> 0.3.0)
+  - CQDemoKit (~> 0.3.1)
   - CQExtralItemCollectionViewDataSource (from `../../../Gitee/UIKit-List-iOS`)
   - CQOverlayKit
   - DZNEmptyDataSet
@@ -351,7 +351,7 @@ SPEC CHECKSUMS:
   CJMedia: 29b1bd8c127fb80c4993a76420a3bcc31a4657e5
   CJMenuListKit: e569f03243e1f160e2e74584a5c845bbf201a140
   CJNetwork: a75f849e5c6ec8fc85ca7aa5027f73d6c48a4af1
-  CQDemoKit: 9f51d7b7c2055ccdb4459409d4af99e8efbb196c
+  CQDemoKit: 939ad9b106b105b875a77a3e1ab21bfbed964c27
   CQExtralItemCollectionViewDataSource: a11a8b5e50d6932ca0f7bce6b68da3dc5efa2667
   CQOverlayKit: 14c376841d352a1c8a18bffea896c53c317cf06a
   DZNEmptyDataSet: 9525833b9e68ac21c30253e1d3d7076cc828eaa7
@@ -370,6 +370,6 @@ SPEC CHECKSUMS:
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
   UICollectionViewCJSelectHelper: e176ca6d3bc396df24238ac5aef4543113ac1e65
 
-PODFILE CHECKSUM: 965b258bd416ec28adc9e211610e5da7dbf63aaa
+PODFILE CHECKSUM: 3e02c11b295b8201515365f5ac64ce255dde21c7
 
 COCOAPODS: 1.8.4

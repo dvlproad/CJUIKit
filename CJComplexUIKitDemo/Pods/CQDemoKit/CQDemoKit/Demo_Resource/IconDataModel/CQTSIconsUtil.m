@@ -10,8 +10,41 @@
 
 @implementation CQTSIconsUtil
 
-/// 获取测试用的数据(image为网络图片)
-+ (NSMutableArray<CQTSIconDataModel *> *)__getTestNetImageDataModels {
+/// 获取测试用的数据(image为icon图片)
+///
+/// @param count 图片个数
+///
+/// @return 返回图片数据
++ (NSMutableArray<CQTSIconDataModel *> *)__getTestIconImageDataModelsWithCount:(NSInteger)count {
+    NSArray *selStrings = @[NSStringFromSelector(@selector(cjts_iconImageUrl1)),
+                            NSStringFromSelector(@selector(cjts_iconImageUrl2)),
+                            NSStringFromSelector(@selector(cjts_iconImageUrl3)),
+                            NSStringFromSelector(@selector(cjts_iconImageUrl4)),
+                            NSStringFromSelector(@selector(cjts_iconImageUrl5)),
+                            NSStringFromSelector(@selector(cjts_iconImageUrl6)),
+                            NSStringFromSelector(@selector(cjts_iconImageUrl7)),
+                            NSStringFromSelector(@selector(cjts_iconImageUrl8)),
+    ];
+    
+    
+    NSMutableArray<CQTSIconDataModel *> *dataModels = [[NSMutableArray alloc] init];
+    
+    for (NSInteger i = 0; i < count; i++) {
+        CQTSIconDataModel *dataModel = [[CQTSIconDataModel alloc] init];
+        
+        NSInteger selIndex = random()%selStrings.count;
+        NSString *selString = [selStrings objectAtIndex:selIndex];
+        SEL sel = NSSelectorFromString(selString);
+        dataModel.imageUrl = [CQTSIconsUtil performSelector:sel];
+        [dataModels addObject:dataModel];
+    }
+    
+    return dataModels;
+}
+   
+
+/// 获取测试用的数据(image为icon图片)
++ (NSMutableArray<CQTSIconDataModel *> *)__getTestIconImageDataModels {
     NSMutableArray<CQTSIconDataModel *> *dataModels = [[NSMutableArray alloc] init];
     {
         CQTSIconDataModel *dataModel = [[CQTSIconDataModel alloc] init];

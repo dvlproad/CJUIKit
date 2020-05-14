@@ -10,12 +10,21 @@
 
 @interface CJUIKitAlertUtil : NSObject
 
-#pragma mark - UIAlert
+#pragma mark - Alert
 /// 显示系统AlertType弹框
-+ (void)showInViewController:(UIViewController *)viewController
-                   withTitle:(NSString *)title
-                     message:(NSString *)message
-                 cancleBlock:(void(^)(void))cancleBlock
-                     okBlock:(void(^)(void))okBlock;
++ (void)showAlertInViewController:(UIViewController *)viewController
+                        withTitle:(NSString *)title
+                          message:(NSString *)message
+                      cancleBlock:(void(^)(void))cancleBlock
+                          okBlock:(void(^)(void))okBlock;
+
+#pragma mark - ActionSheet
+/// 显示系统ActionSheet弹框
++ (void)showActionSheetInViewController:(UIViewController *)viewController
+                              withTitle:(NSString *)title
+                                message:(NSString *)message
+                             itemTitles:(NSArray<NSString *> *)itemTitles
+                            cancleBlock:(void(^)(void))cancleBlock
+                         itemClickBlock:(void(^)(NSInteger index))itemClickBlock;
 
 @end

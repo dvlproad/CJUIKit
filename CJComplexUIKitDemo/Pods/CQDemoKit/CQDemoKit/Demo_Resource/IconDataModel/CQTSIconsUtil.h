@@ -13,8 +13,15 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface CQTSIconsUtil : NSObject
 
+
+/// 获取测试用的数据(image为icon图片)
+///
+/// @param count 图片个数
+///
+/// @return 返回图片数据
++ (NSMutableArray<CQTSIconDataModel *> *)__getTestIconImageDataModelsWithCount:(NSInteger)count;
 /// 获取测试用的数据(image为网络图片)
-+ (NSMutableArray<CQTSIconDataModel *> *)__getTestNetImageDataModels;
++ (NSMutableArray<CQTSIconDataModel *> *)__getTestIconImageDataModels;
 
 #pragma mark - icon Image
 + (UIImage *)cjts_iconImage1;
