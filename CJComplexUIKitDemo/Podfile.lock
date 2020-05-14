@@ -14,22 +14,9 @@ PODS:
   - AFNetworking/Serialization (3.2.1)
   - AFNetworking/UIKit (3.2.1):
     - AFNetworking/NSURLSession
-  - CJBaseEffectKit (0.2.0):
-    - CJBaseEffectKit/CJDataEmptyView (= 0.2.0)
-    - CJBaseEffectKit/CJMJRefreshComponent (= 0.2.0)
-    - CJBaseEffectKit/CJRefreshView (= 0.2.0)
-    - CJBaseEffectKit/CJRefreshWithJSON (= 0.2.0)
-    - CJBaseEffectKit/CJScaleHeadView (= 0.2.0)
   - CJBaseEffectKit/CJDataEmptyView (0.2.0):
     - CJFoundation/NSString
     - Masonry
-  - CJBaseEffectKit/CJMJRefreshComponent (0.2.0):
-    - MJRefresh
-  - CJBaseEffectKit/CJRefreshView (0.2.0)
-  - CJBaseEffectKit/CJRefreshWithJSON (0.2.0):
-    - lottie-ios (~> 2.5.3)
-    - Masonry
-    - MJRefresh
   - CJBaseEffectKit/CJScaleHeadView (0.2.0)
   - CJBaseHelper (0.1.4):
     - CJBaseHelper/AuthorizationCJHelper (= 0.1.4)
@@ -256,7 +243,6 @@ PODS:
   - Masonry (1.1.0)
   - MBProgressHUD (1.2.0)
   - MJPopupViewController (0.4)
-  - MJRefresh (3.4.1)
   - NJKWebViewProgress (0.2.3):
     - NJKWebViewProgress/Core (= 0.2.3)
     - NJKWebViewProgress/ProgressView (= 0.2.3)
@@ -275,7 +261,8 @@ PODS:
 
 DEPENDENCIES:
   - AFNetworking/Reachability
-  - CJBaseEffectKit
+  - CJBaseEffectKit/CJDataEmptyView
+  - CJBaseEffectKit/CJScaleHeadView
   - CJBaseHelper (from `../`)
   - CJBaseUIKit (from `../`)
   - CJBaseUtil (from `../`)
@@ -300,7 +287,7 @@ DEPENDENCIES:
   - UICollectionViewCJSelectHelper (from `../../../Gitee/UIKit-List-iOS`)
 
 SPEC REPOS:
-  https://gitee.com/dvlproad/dvlproadSpecs:
+  https://gitee.com/dvlproad/dvlproadSpecs.git:
     - CJBaseEffectKit
     - CJBaseOverlayKit
     - CQOverlayKit
@@ -317,7 +304,6 @@ SPEC REPOS:
     - Masonry
     - MBProgressHUD
     - MJPopupViewController
-    - MJRefresh
     - NJKWebViewProgress
     - OpenUDID
     - PinYin4Objc
@@ -367,7 +353,6 @@ SPEC CHECKSUMS:
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   MBProgressHUD: 3ee5efcc380f6a79a7cc9b363dd669c5e1ae7406
   MJPopupViewController: e9ad553a3145eb8126ba2748e872ae7fb25cc605
-  MJRefresh: 3153c59a363159092c08b2177ec3a7d09f90bfaf
   NJKWebViewProgress: f481fd424cb5ecc27eacae11b5397db92fba9a4d
   OpenUDID: e7cb6984c7304906ad20f3a36bf087b025896b6b
   PinYin4Objc: 3fa9673610368330e2dfb688b1d19a35c3930a78
@@ -377,6 +362,6 @@ SPEC CHECKSUMS:
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
   UICollectionViewCJSelectHelper: e176ca6d3bc396df24238ac5aef4543113ac1e65
 
-PODFILE CHECKSUM: 5be17e5476139ba869003ef87711d3a01fa89ed1
+PODFILE CHECKSUM: ad23cfd6a8c3e107280b2946270d9d41477486bd
 
-COCOAPODS: 1.9.1
+COCOAPODS: 1.8.4

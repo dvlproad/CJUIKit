@@ -1,1 +1,0 @@
-../../../CJBaseEffectKit/CJBaseEffectKit/CJRefreshView/Normal/CJRefreshFooter.h

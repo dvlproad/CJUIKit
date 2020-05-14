@@ -8,17 +8,9 @@
 
 #import "ScrollViewHomeViewController.h"
 
-//UIScrollView
-#import "SvDemo_Refresh.h"
 
 //PullScale
 #import "PullScaleTopImageViewController.h"
-
-//EmptyView
-#import "EmptyScrollViewController1.h"
-#import "EmptyScrollViewController2.h"
-#import "ScrollContaintViewController.h"
-
 
 
 @interface ScrollViewHomeViewController ()
@@ -34,47 +26,6 @@
     self.navigationItem.title = NSLocalizedString(@"ScrollViewHome首页", nil); //知识点:使得tabBar中的title可以和显示在顶部的title保持各自
     
     NSMutableArray *sectionDataModels = [[NSMutableArray alloc] init];
-    //UIScrollView
-    {
-        CJSectionDataModel *sectionDataModel = [[CJSectionDataModel alloc] init];
-        sectionDataModel.theme = @"UIScrollView相关";
-        {
-            CJModuleModel *refreshScrollViewModule = [[CJModuleModel alloc] init];
-            refreshScrollViewModule.title = @"ScrollView的刷新(MJRefresh)";
-            refreshScrollViewModule.classEntry = [SvDemo_Refresh class];
-            refreshScrollViewModule.isCreateByXib = YES;
-            [sectionDataModel.values addObject:refreshScrollViewModule];
-        }
-        
-        [sectionDataModels addObject:sectionDataModel];
-    }
-    
-    //EmptyView
-    {
-        CJSectionDataModel *sectionDataModel = [[CJSectionDataModel alloc] init];
-        sectionDataModel.theme = @"EmptyView相关";
-        {
-            CJModuleModel *baseScrollViewModule = [[CJModuleModel alloc] init];
-            baseScrollViewModule.title = @"DataEmptyView";
-            baseScrollViewModule.classEntry = [ScrollContaintViewController class];
-            [sectionDataModel.values addObject:baseScrollViewModule];
-        }
-        {
-            CJModuleModel *baseScrollViewModule = [[CJModuleModel alloc] init];
-            baseScrollViewModule.title = @"CJDataEmptyView(DZNEmptyDataSet)";
-            baseScrollViewModule.classEntry = [EmptyScrollViewController1 class];
-            [sectionDataModel.values addObject:baseScrollViewModule];
-        }
-        {
-            CJModuleModel *baseScrollViewModule = [[CJModuleModel alloc] init];
-            baseScrollViewModule.title = @"CJDataEmptyView(UIScrollView+CJAddFillView)";
-            baseScrollViewModule.classEntry = [EmptyScrollViewController2 class];
-            [sectionDataModel.values addObject:baseScrollViewModule];
-        }
-        
-        [sectionDataModels addObject:sectionDataModel];
-    }
-    
     {
         CJSectionDataModel *sectionDataModel = [[CJSectionDataModel alloc] init];
         sectionDataModel.theme = @"其他";
@@ -88,11 +39,6 @@
         
         [sectionDataModels addObject:sectionDataModel];
     }
-    
-    
-    
-    
-    
     
     self.sectionDataModels = sectionDataModels;
 }

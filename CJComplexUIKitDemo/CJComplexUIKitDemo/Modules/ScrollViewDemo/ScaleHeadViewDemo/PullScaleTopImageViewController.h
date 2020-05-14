@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "LEOHeaderView.h"
+#import <CJBaseEffectKit/LEOHeaderView.h>
 
 #define kScreenWidth [UIScreen mainScreen].bounds.size.width
 #define kScreenHeight [UIScreen mainScreen].bounds.size.height
