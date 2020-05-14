@@ -97,11 +97,6 @@ EOM
   esac
 }
 if [[ "$CONFIGURATION" == "Debug" ]]; then
-  install_resource "${PODS_ROOT}/CJBaseEffectKit/CJBaseEffectKit/CJDataEmptyView/Resources/cjNetworkDisable@2x.png"
-  install_resource "${PODS_ROOT}/CJBaseEffectKit/CJBaseEffectKit/CJDataEmptyView/Resources/cjNetworkDisable@3x.png"
-  install_resource "${PODS_ROOT}/CJBaseEffectKit/CJBaseEffectKit/CJDataEmptyView/Resources/cjNetworkError@2x.png"
-  install_resource "${PODS_ROOT}/CJBaseEffectKit/CJBaseEffectKit/CJDataEmptyView/Resources/cjNetworkError@3x.png"
-  install_resource "${PODS_ROOT}/CJBaseEffectKit/CJBaseEffectKit/CJMJRefreshComponent/Resources/cjRefreshArrowDown@2x.png"
   install_resource "${PODS_ROOT}/CJBaseOverlayKit/CJBaseOverlayKit/CJToast/Resources/CJToast_error.png"
   install_resource "${PODS_ROOT}/CJBaseOverlayKit/CJBaseOverlayKit/CJToast/Resources/CJToast_error@2x.png"
   install_resource "${PODS_ROOT}/CJBaseOverlayKit/CJBaseOverlayKit/CJToast/Resources/CJToast_error@3x.png"
@@ -115,14 +110,8 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_resource "${PODS_ROOT}/MJRefresh/MJRefresh/MJRefresh.bundle"
   install_resource "${PODS_ROOT}/PinYin4Objc/PinYin4Objc/Resources/unicode_to_hanyu_pinyin.txt"
   install_resource "${PODS_ROOT}/SAMKeychain/Support/SAMKeychain.bundle"
-  install_resource "${PODS_ROOT}/SVProgressHUD/SVProgressHUD/SVProgressHUD.bundle"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
-  install_resource "${PODS_ROOT}/CJBaseEffectKit/CJBaseEffectKit/CJDataEmptyView/Resources/cjNetworkDisable@2x.png"
-  install_resource "${PODS_ROOT}/CJBaseEffectKit/CJBaseEffectKit/CJDataEmptyView/Resources/cjNetworkDisable@3x.png"
-  install_resource "${PODS_ROOT}/CJBaseEffectKit/CJBaseEffectKit/CJDataEmptyView/Resources/cjNetworkError@2x.png"
-  install_resource "${PODS_ROOT}/CJBaseEffectKit/CJBaseEffectKit/CJDataEmptyView/Resources/cjNetworkError@3x.png"
-  install_resource "${PODS_ROOT}/CJBaseEffectKit/CJBaseEffectKit/CJMJRefreshComponent/Resources/cjRefreshArrowDown@2x.png"
   install_resource "${PODS_ROOT}/CJBaseOverlayKit/CJBaseOverlayKit/CJToast/Resources/CJToast_error.png"
   install_resource "${PODS_ROOT}/CJBaseOverlayKit/CJBaseOverlayKit/CJToast/Resources/CJToast_error@2x.png"
   install_resource "${PODS_ROOT}/CJBaseOverlayKit/CJBaseOverlayKit/CJToast/Resources/CJToast_error@3x.png"
@@ -136,7 +125,6 @@ if [[ "$CONFIGURATION" == "Release" ]]; then
   install_resource "${PODS_ROOT}/MJRefresh/MJRefresh/MJRefresh.bundle"
   install_resource "${PODS_ROOT}/PinYin4Objc/PinYin4Objc/Resources/unicode_to_hanyu_pinyin.txt"
   install_resource "${PODS_ROOT}/SAMKeychain/Support/SAMKeychain.bundle"
-  install_resource "${PODS_ROOT}/SVProgressHUD/SVProgressHUD/SVProgressHUD.bundle"
 fi
 
 mkdir -p "${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}"

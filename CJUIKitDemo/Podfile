@@ -33,7 +33,6 @@ target 'CJUIKitDemo' do
 
     pod 'MJRefresh', '~> 3.1.12'
     pod 'MBProgressHUD' #CJToast需要使用
-    pod 'SVProgressHUD', '~> 2.2.2'
     pod 'OpenUDID', '~> 1.0.0'
 
     pod 'Shimmer', '~> 1.0.2' #fackBook的闪光动画
@@ -49,9 +48,6 @@ target 'CJUIKitDemo' do
     # 账号安全需要依赖的库
     pod 'SAMKeychain'
 
-    # 网页
-    pod 'WebViewJavascriptBridge', '~> 6.0.2'
-
     # 基本的第三方库
     pod 'MJExtension', '~> 3.0.13'
     pod 'Mantle', '~> 2.1.0'
@@ -59,15 +55,13 @@ target 'CJUIKitDemo' do
     pod 'YYText', '~> 1.0.7'
 
 #    pod 'CJBaseUIKit',          :path => '../’
-    pod 'lottie-ios', '~> 2.5.3' # CJBaseUIKit 需要使用
     
     pod 'CQDemoKit',            '~> 0.1.0'
 #    pod 'CJBaseUIKit',           :path => '../’
     pod 'CJBaseUtil',           :path => '../’
     pod 'CJFoundation',         :path => '../’
     pod 'CJBaseHelper',         :path => '../’
-    pod 'CJBaseEffectKit'
-    pod 'CJMenuListKit',        :path => '../’
+    pod 'CJBaseEffectKit',      :subspecs => ['CJScaleHeadView']
 #    pod 'CJBaseUIKit', :subspecs => ['UIColor', 'UIButton', 'UITextField', 'CJToast', 'CJAlert']
 #    pod 'CJBaseUtil', :subspecs => ['CJLog']
 #    pod 'CJFoundation', :subspecs => ['NSString']
@@ -76,7 +70,6 @@ target 'CJUIKitDemo' do
     pod 'CJFile',   :subspecs => ['CJFileModel', 'CJFileManager']
     
     pod 'IQKeyboardManager'
-    pod 'WMPageController'  # 测试HUD在界面不显示时候的隐藏
     pod 'SDWebImage'
     pod 'FLAnimatedImage'
     pod 'UINavigation-SXFixSpace'
