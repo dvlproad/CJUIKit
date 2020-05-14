@@ -282,6 +282,11 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
 
+## CQExtralItemCollectionViewDataSource
+
+© 2008-2020 dvlproad. All rights reserved.
+
+
 ## CQOverlayKit
 
 © 2008-2016 dvlproad. All rights reserved.
@@ -695,7 +700,7 @@ SOFTWARE.
 
 ## SDWebImage
 
-Copyright (c) 2009-2017 Olivier Poitrey rs@dailymotion.com
+Copyright (c) 2009-2018 Olivier Poitrey rs@dailymotion.com
  
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal

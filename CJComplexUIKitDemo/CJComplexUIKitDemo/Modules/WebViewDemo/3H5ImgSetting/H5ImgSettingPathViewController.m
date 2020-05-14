@@ -7,7 +7,7 @@
 //
 
 #import "H5ImgSettingPathViewController.h"
-#import <CQOverlayKit/CQToast.h>
+#import <CQDemoKit/CJUIKitToastUtil.h>
 #import "DemoCacheUtil.h"
 
 @implementation H5ImgSettingPathViewController
@@ -33,7 +33,7 @@
     NSString *jsString = [NSString stringWithFormat:@"js_updateH5ImgSrc('%@', '%@')", imgSrc, imageName];
     [self.webView evaluateJavaScript:jsString completionHandler:^(id _Nullable response, NSError * _Nullable error) {
         if (error) {
-            [CQToast showMessage:@"Error:更新H5显示的图片的JS调用失败"];
+            [CJUIKitToastUtil showMessage:@"Error:更新H5显示的图片的JS调用失败"];
             return;
         }
         NSLog(@"OC执行JS完成--设置图片(通过上传图片地址)");

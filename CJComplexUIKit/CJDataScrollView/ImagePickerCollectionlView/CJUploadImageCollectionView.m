@@ -12,8 +12,6 @@
 
 #import <UICollectionViewCJSelectHelper/UICollectionView+CJSelect.h>
 
-#import "MyEqualCellSizeSetting.h"
-
 static NSString * const CJUploadCollectionViewCellID = @"CJUploadCollectionViewCell";
 static NSString * const CJUploadCollectionViewCellAddID = @"CJUploadCollectionViewCellAdd";
 
@@ -29,10 +27,18 @@ static NSString * const CJUploadCollectionViewCellAddID = @"CJUploadCollectionVi
 
 
 /// 初始化方法
-- (instancetype)initWithFrame:(CGRect)frame collectionViewLayout:(UICollectionViewLayout *)layout {
-    if (layout == nil) {
-        layout = [[UICollectionViewFlowLayout alloc] init];
-    }
+- (instancetype)init {
+    CQCollectionViewFlowLayout *layout = [[CQCollectionViewFlowLayout alloc] init];
+    layout.minimumInteritemSpacing = 10;
+    layout.minimumLineSpacing = 15;
+    layout.sectionInset = UIEdgeInsetsMake(10, 10, 10, 10);
+    
+    //以下值必须二选一设置（默认cellWidthFromFixedWidth设置后，另外一个自动失效）
+    layout.cellWidthFromPerRowMaxShowCount = 4;
+    //layout.cellWidthFromFixedWidth = 50;
+    layout.widthHeightRatio = 1.0;
+    
+    
     self = [super initWithFrame:CGRectZero collectionViewLayout:layout];
     if (self) {
         [self setupConfigure];
@@ -42,25 +48,6 @@ static NSString * const CJUploadCollectionViewCellAddID = @"CJUploadCollectionVi
 - (void)setupConfigure {
     
     self.backgroundColor = [UIColor clearColor];
-    
-    //flowLayout.headerReferenceSize = CGSizeMake(110, 135);
-    
-    MyEqualCellSizeSetting *equalCellSizeSetting = [[MyEqualCellSizeSetting alloc] init];
-    equalCellSizeSetting.minimumInteritemSpacing = 10;
-    equalCellSizeSetting.minimumLineSpacing = 15;
-    equalCellSizeSetting.sectionInset = UIEdgeInsetsMake(10, 10, 10, 10);
-    
-    //以下值必须二选一设置（默认cellWidthFromFixedWidth设置后，另外一个自动失效）
-    equalCellSizeSetting.cellWidthFromPerRowMaxShowCount = 4;
-    //equalCellSizeSetting.cellWidthFromFixedWidth = 50;
-
-    //以下值，可选设置
-    //equalCellSizeSetting.cellHeightFromFixedHeight = 100;
-    //equalCellSizeSetting.cellHeightFromPerColumnMaxShowCount = 2;
-    CJDataSourceSettingModel *dataSourceSettingModel = [[CJDataSourceSettingModel alloc] init];
-    dataSourceSettingModel.maxDataModelShowCount = 5;
-    dataSourceSettingModel.extralItemSetting = CJExtralItemSettingTailing;
-    
     
     //以下值，可选设置
     self.allowsMultipleSelection = YES; //是否打开多选
@@ -74,7 +61,10 @@ static NSString * const CJUploadCollectionViewCellAddID = @"CJUploadCollectionVi
     __weak typeof(self)weakSelf = self;
     
     /* 创建DataSource */
-    MyEqualCellSizeCollectionViewDataSource *equalCellSizeCollectionViewDataSource = [[MyEqualCellSizeCollectionViewDataSource alloc] initWithDataSourceSettingModel:dataSourceSettingModel cellForItemAtIndexPathBlock:^UICollectionViewCell *(UICollectionView *collectionView, NSIndexPath *indexPath, BOOL isExtralItem) {
+    CJDataSourceSettingModel *dataSourceSettingModel = [[CJDataSourceSettingModel alloc] init];
+    dataSourceSettingModel.maxDataModelShowCount = 5;
+    dataSourceSettingModel.extralItemSetting = CJExtralItemSettingTailing;
+    CQExtralItemCollectionViewDataSource *equalCellSizeCollectionViewDataSource = [[CQExtralItemCollectionViewDataSource alloc] initWithDataSourceSettingModel:dataSourceSettingModel cellForItemAtIndexPathBlock:^UICollectionViewCell *(UICollectionView *collectionView, NSIndexPath *indexPath, BOOL isExtralItem) {
         if (!isExtralItem) {
             CJUploadCollectionViewCell *dataCell = [collectionView dequeueReusableCellWithReuseIdentifier:CJUploadCollectionViewCellID forIndexPath:indexPath];
             [self __operateDataCell:dataCell withIndexPath:indexPath isSettingOperate:YES];
@@ -93,7 +83,8 @@ static NSString * const CJUploadCollectionViewCellAddID = @"CJUploadCollectionVi
     self.equalCellSizeCollectionViewDataSource = equalCellSizeCollectionViewDataSource;
     
     /* 创建Delegate (UICollectionViewDelegateFlowLayout也需实现UICollectionViewDelegate) */
-    MyEqualCellSizeCollectionViewNormalDelegate *delegate = [[MyEqualCellSizeCollectionViewNormalDelegate alloc] initWithEqualCellSizeSetting:equalCellSizeSetting didTapItemBlock:^(UICollectionView *collectionView, NSIndexPath *indexPath, BOOL isDeselect, CQCollectionViewFlowLayout *equalCellSizeSetting) {
+    CQCollectionViewFlowLayout *layout = (CQCollectionViewFlowLayout *)self.collectionViewLayout;
+    MyEqualCellSizeCollectionViewNormalDelegate *delegate = [[MyEqualCellSizeCollectionViewNormalDelegate alloc] initWithFlowLayout:layout didTapItemBlock:^(UICollectionView *collectionView, NSIndexPath *indexPath, BOOL isDeselect) {
         BOOL isExtralItem = [weakSelf.equalCellSizeCollectionViewDataSource isExtraItemIndexPath:indexPath];
         
         if (!isExtralItem) {

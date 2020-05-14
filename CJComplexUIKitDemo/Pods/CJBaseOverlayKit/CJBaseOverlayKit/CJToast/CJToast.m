@@ -72,6 +72,7 @@ withLabelTextColor:(UIColor * _Nullable)labelTextColor
             hud.label.textColor = labelTextColor;
         }
         if (bezelViewColor) {
+            hud.bezelView.style = MBProgressHUDBackgroundStyleSolidColor;
             hud.bezelView.color = bezelViewColor;
         }
         

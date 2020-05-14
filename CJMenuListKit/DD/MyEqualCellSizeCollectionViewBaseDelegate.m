@@ -52,8 +52,6 @@
 //                  layout:(UICollectionViewLayout*)collectionViewLayout
 //  sizeForItemAtIndexPath:(NSIndexPath *)indexPath
 //{
-//    MyEqualCellSizeSetting *equalCellSizeSetting = self.equalCellSizeSetting;
-//    
 //    CGSize collectionViewCellSize = [self.equalCellSizeSetting sizeForItemWithCollectionViewSize:collectionView.frame.size];
 //    return collectionViewCellSize;
 //    
@@ -123,69 +121,6 @@
 
 - (void)collectionView:(UICollectionView *)collectionView didDeselectItemAtIndexPath:(NSIndexPath *)indexPath {
     NSLog(@"此点击部分请在子类中实现");
-}
-
-
-
-#pragma mark - Other
-/*
- *  获取当前collectionView的高度
- *
- *  @param allCellCount             collectionView中cell(含dataCell和extralCell)的总数
- *  @param collectionViewWidth      要传入的collectionView的宽度
- *  @param flowLayout               集合视图的布局
- *
- *  @return 当前collectionView的高度
- */
-+ (CGFloat)heightForAllCellCount:(NSInteger)allCellCount
-           byCollectionViewWidth:(CGFloat)collectionViewWidth
-        withEqualCellSizeSetting:(CQCollectionViewFlowLayout *)flowLayout
-{
-    CGFloat minimumLineSpacing = flowLayout.minimumLineSpacing;
-    CGFloat minimumInteritemSpacing = flowLayout.minimumInteritemSpacing;
-    UIEdgeInsets sectionInset = flowLayout.sectionInset;
-    
-    
-    //计算cell的宽度
-    CGFloat collectionViewCellWidth = 0;
-    NSInteger perRowMaxShowCount = 0;
-    if (flowLayout.cellWidthFromFixedWidth) {
-        collectionViewCellWidth = flowLayout.cellWidthFromFixedWidth;
-        
-        //sectionInset.left + x*width + (x-1)*minimumInteritemSpacing + sectionInset.right <= collectionViewWidth;
-        //x*cellWidth + (x-1)*minimumInteritemSpacing <= collectionViewWidth - sectionInset.left - sectionInset.right;
-        //x*(cellWidth+minimumInteritemSpacing) <= collectionViewWidth - sectionInset.left - sectionInset.right + minimumInteritemSpacing;
-        CGFloat validWidth = collectionViewWidth - sectionInset.left - sectionInset.right;
-        perRowMaxShowCount = (validWidth+minimumInteritemSpacing)/(collectionViewCellWidth+minimumInteritemSpacing);
-        
-    } else {
-        perRowMaxShowCount = flowLayout.cellWidthFromPerRowMaxShowCount;
-        NSAssert(perRowMaxShowCount != 0, @"perRowMaxShowCount不能为0");
-        
-        CGFloat validWidth = collectionViewWidth - sectionInset.left - sectionInset.right;
-        CGFloat cellsWidth = validWidth - minimumInteritemSpacing*(perRowMaxShowCount-1);
-        collectionViewCellWidth = floorf(cellsWidth/perRowMaxShowCount);
-    }
-    
-    
-    /* 获取cell的高度 */
-    CGFloat collectionViewCellHeight = flowLayout.cellHeightFromFixedHeight;
-    if (collectionViewCellHeight <= 0) { //如果cell的高度未设置，我们默认使其等于cell的宽度
-        collectionViewCellHeight = collectionViewCellWidth;
-    }
-    
-
-    CGFloat height = 0;
-    if (allCellCount == 0) {
-        NSInteger currentRowCount = 0;
-        height += currentRowCount * collectionViewCellHeight;
-    } else {
-        NSInteger currentRowCount = (allCellCount-1)/perRowMaxShowCount + 1;
-        height += currentRowCount * collectionViewCellHeight + (currentRowCount - 1)*minimumLineSpacing;
-    }
-    height += sectionInset.top + sectionInset.bottom;
-    
-    return height;
 }
 
 @end

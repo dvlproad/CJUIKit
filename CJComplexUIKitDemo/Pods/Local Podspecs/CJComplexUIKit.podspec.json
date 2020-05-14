@@ -9,7 +9,7 @@
     "dvlproad": ""
   },
   "platforms": {
-    "ios": "8.0"
+    "ios": "9.0"
   },
   "source": {
     "git": "https://github.com/dvlproad/CJUIKit.git",

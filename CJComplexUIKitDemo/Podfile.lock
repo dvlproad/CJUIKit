@@ -37,19 +37,19 @@ PODS:
   - CJBaseHelper/NSOperationQueueCJHelper (0.1.4)
   - CJBaseHelper/UIViewControllerCJHelper (0.1.4)
   - CJBaseHelper/WebCJHelper (0.1.4)
-  - CJBaseOverlayKit/CJActionSheet (0.2.1):
+  - CJBaseOverlayKit/CJActionSheet (0.3.0):
     - CJBaseOverlayKit/CJBaseOverlayTheme
     - Masonry
-  - CJBaseOverlayKit/CJAlert (0.2.1):
+  - CJBaseOverlayKit/CJAlert (0.3.0):
     - CJBaseOverlayKit/CJBaseOverlayTheme
     - Masonry
-  - CJBaseOverlayKit/CJBaseOverlayTheme (0.2.1)
-  - CJBaseOverlayKit/CJProgressHUD (0.2.1):
+  - CJBaseOverlayKit/CJBaseOverlayTheme (0.3.0)
+  - CJBaseOverlayKit/CJProgressHUD (0.3.0):
     - CJBaseOverlayKit/CJBaseOverlayTheme
     - lottie-ios (~> 2.5.3)
     - Masonry
     - MBProgressHUD
-  - CJBaseOverlayKit/CJToast (0.2.1):
+  - CJBaseOverlayKit/CJToast (0.3.0):
     - CJBaseOverlayKit/CJBaseOverlayTheme
     - MBProgressHUD
   - CJBaseUIKit (0.6.1):
@@ -192,45 +192,48 @@ PODS:
   - CJNetwork/CJNetworkBase (0.5.0)
   - CJNetwork/CJRequestUtil (0.5.0):
     - CJNetwork/CJNetworkBase
-  - CQDemoKit (0.1.0):
-    - CQDemoKit/Home_Base (= 0.1.0)
-    - CQDemoKit/Home_Collection (= 0.1.0)
-    - CQDemoKit/Home_TextView (= 0.1.0)
-  - CQDemoKit/Home_Base (0.1.0):
-    - CJBaseOverlayKit/CJToast
+  - CQDemoKit (0.3.0):
+    - CQDemoKit/Demo_Resource (= 0.3.0)
+    - CQDemoKit/Home_Base (= 0.3.0)
+    - CQDemoKit/Home_Collection (= 0.3.0)
+    - CQDemoKit/Home_TextView (= 0.3.0)
+  - CQDemoKit/Demo_Resource (0.3.0)
+  - CQDemoKit/Home_Base (0.3.0):
     - CJBaseUtil/CJDataUtil
     - Masonry
-  - CQDemoKit/Home_Collection (0.1.0):
+  - CQDemoKit/Home_Collection (0.3.0):
     - CQDemoKit/Home_Base
-  - CQDemoKit/Home_TextView (0.1.0):
+  - CQDemoKit/Home_TextView (0.3.0):
     - CQDemoKit/Home_Base
-  - CQOverlayKit (0.2.1):
-    - CQOverlayKit/Base (= 0.2.1)
-    - CQOverlayKit/CQActionSheet (= 0.2.1)
-    - CQOverlayKit/CQAlert (= 0.2.1)
-    - CQOverlayKit/CQHUD (= 0.2.1)
-    - CQOverlayKit/CQToast (= 0.2.1)
-    - CQOverlayKit/Theme (= 0.2.1)
-  - CQOverlayKit/Base (0.2.1):
+  - CQExtralItemCollectionViewDataSource (0.1.0)
+  - CQOverlayKit (0.3.0):
+    - CQOverlayKit/Base (= 0.3.0)
+    - CQOverlayKit/CQActionSheet (= 0.3.0)
+    - CQOverlayKit/CQAlert (= 0.3.0)
+    - CQOverlayKit/CQHUD (= 0.3.0)
+    - CQOverlayKit/CQToast (= 0.3.0)
+    - CQOverlayKit/Theme (= 0.3.0)
+  - CQOverlayKit/Base (0.3.0):
     - CJBaseUIKit/UIView/CJPopupAction
     - CQOverlayKit/Theme
-  - CQOverlayKit/CQActionSheet (0.2.1):
+  - CQOverlayKit/CQActionSheet (0.3.0):
     - CJBaseOverlayKit/CJActionSheet
     - CQOverlayKit/Base
     - CQOverlayKit/Theme
-  - CQOverlayKit/CQAlert (0.2.1):
+  - CQOverlayKit/CQAlert (0.3.0):
     - CJBaseHelper/AuthorizationCJHelper
     - CJBaseOverlayKit/CJAlert
     - CJBaseUIKit/UIView/CJPopupAction
     - CQOverlayKit/Theme
-  - CQOverlayKit/CQHUD (0.2.1):
+  - CQOverlayKit/CQHUD (0.3.0):
     - CJBaseOverlayKit/CJProgressHUD
     - CJBaseOverlayKit/CJToast
     - CQOverlayKit/Theme
     - SVProgressHUD
-  - CQOverlayKit/CQToast (0.2.1):
+  - CQOverlayKit/CQToast (0.3.0):
     - CJBaseOverlayKit/CJToast
-  - CQOverlayKit/Theme (0.2.1):
+    - CQOverlayKit/Theme
+  - CQOverlayKit/Theme (0.3.0):
     - CJBaseOverlayKit/CJBaseOverlayTheme
   - DZNEmptyDataSet (1.8.1)
   - IjinbuNetwork (0.1.0):
@@ -251,15 +254,16 @@ PODS:
   - OpenUDID (1.0.0)
   - PinYin4Objc (1.1.1)
   - SAMKeychain (1.5.3)
-  - SDCycleScrollView (1.75):
-    - SDWebImage (>= 4.0.0)
-  - SDWebImage (4.4.3):
-    - SDWebImage/Core (= 4.4.3)
-  - SDWebImage/Core (4.4.3)
+  - SDCycleScrollView (1.80):
+    - SDWebImage (>= 5.0.0)
+  - SDWebImage (5.8.0):
+    - SDWebImage/Core (= 5.8.0)
+  - SDWebImage/Core (5.8.0)
   - SVProgressHUD (2.2.5)
   - UICollectionViewCJSelectHelper (0.1.0)
 
 DEPENDENCIES:
+  - AFNetworking
   - AFNetworking/Reachability
   - CJBaseEffectKit/CJDataEmptyView
   - CJBaseEffectKit/CJScaleHeadView
@@ -275,7 +279,8 @@ DEPENDENCIES:
   - CJMenuListKit (from `../`)
   - CJNetwork
   - CJNetwork/AFNetworkingBaseComponent
-  - CQDemoKit (~> 0.1.0)
+  - CQDemoKit (~> 0.3.0)
+  - CQExtralItemCollectionViewDataSource (from `../../../Gitee/UIKit-List-iOS`)
   - CQOverlayKit
   - DZNEmptyDataSet
   - IjinbuNetwork (~> 0.1.0)
@@ -327,6 +332,8 @@ EXTERNAL SOURCES:
     :path: "../"
   CJMenuListKit:
     :path: "../"
+  CQExtralItemCollectionViewDataSource:
+    :path: "../../../Gitee/UIKit-List-iOS"
   UICollectionViewCJSelectHelper:
     :path: "../../../Gitee/UIKit-List-iOS"
 
@@ -334,18 +341,19 @@ SPEC CHECKSUMS:
   AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
   CJBaseEffectKit: 8640801fa272a1d96a6edce2c994652ced0e519f
   CJBaseHelper: dd715e18591da9df5d06364098300591220f0535
-  CJBaseOverlayKit: 84459c59783b88b4f6f570096e1201e32b2eb718
+  CJBaseOverlayKit: 527fc5c7431854d2265b83a7adee176ccea68ff3
   CJBaseUIKit: 094bcdde160d169f1b7823e18e9920bb069594bf
   CJBaseUtil: 1bbf8d5f831dc12ae4bb06c8b5326bd39f3522e1
   CJCollectionViewFlowLayout: 7617ac3cbfbd00ddd6a8d79fcb838758a168035b
-  CJComplexUIKit: 5f7e57ddfd947450cfe7f8f9d8f0c8633fd708ff
+  CJComplexUIKit: d56fc54e8fd07a77aacdb152172de97d3bcb345d
   CJFile: 6c1e6d55b3b94e8afbaa9f413f131301d15fdc48
   CJFoundation: 53b4df7152c6d6fd776f55f387c67f431b8574bd
   CJMedia: 29b1bd8c127fb80c4993a76420a3bcc31a4657e5
   CJMenuListKit: e569f03243e1f160e2e74584a5c845bbf201a140
   CJNetwork: a75f849e5c6ec8fc85ca7aa5027f73d6c48a4af1
-  CQDemoKit: 5ca222de41ee74b83ad98e49f0c0e3785b316b85
-  CQOverlayKit: faee78c55a92036e573a48d7fe10fbc2e9f3c5c6
+  CQDemoKit: 9f51d7b7c2055ccdb4459409d4af99e8efbb196c
+  CQExtralItemCollectionViewDataSource: a11a8b5e50d6932ca0f7bce6b68da3dc5efa2667
+  CQOverlayKit: 14c376841d352a1c8a18bffea896c53c317cf06a
   DZNEmptyDataSet: 9525833b9e68ac21c30253e1d3d7076cc828eaa7
   IjinbuNetwork: 307e7e12d35b547f04b885cc2aa098625e4b9768
   JGActionSheet: 2cfca820b57a11ec4b4a5655d45ee599fbeddc05
@@ -357,11 +365,11 @@ SPEC CHECKSUMS:
   OpenUDID: e7cb6984c7304906ad20f3a36bf087b025896b6b
   PinYin4Objc: 3fa9673610368330e2dfb688b1d19a35c3930a78
   SAMKeychain: 483e1c9f32984d50ca961e26818a534283b4cd5c
-  SDCycleScrollView: 884b88f0266dd4708a0e1934975c69cb971707b1
-  SDWebImage: c5594f1a19c48d526d321e548902b56b479cd508
+  SDCycleScrollView: b3c9a5ed840c771c4938978174c7c9d9feefeb96
+  SDWebImage: 84000f962cbfa70c07f19d2234cbfcf5d779b5dc
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
   UICollectionViewCJSelectHelper: e176ca6d3bc396df24238ac5aef4543113ac1e65
 
-PODFILE CHECKSUM: ad23cfd6a8c3e107280b2946270d9d41477486bd
+PODFILE CHECKSUM: 965b258bd416ec28adc9e211610e5da7dbf63aaa
 
 COCOAPODS: 1.8.4

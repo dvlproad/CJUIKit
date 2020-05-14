@@ -11,7 +11,6 @@
 //UICollectionView
 #import "CvDemo_Complex.h"
 
-#import "MyEqualCellSizeCollectionViewController.h"
 #import "MyCycleADViewController.h"
 
 #import "OpenCollectionViewController.h"
@@ -49,12 +48,6 @@
             complexDemoModule.classEntry = [CvDemo_Complex class];
             complexDemoModule.isCreateByXib = YES;
             [sectionDataModel.values addObject:complexDemoModule];
-        }
-        {
-            CJModuleModel *collectionViewModule = [[CJModuleModel alloc] init];
-            collectionViewModule.title = @"MyEqualCellSizeCollectionView(等cell大小)";
-            collectionViewModule.classEntry = [MyEqualCellSizeCollectionViewController class];
-            [sectionDataModel.values addObject:collectionViewModule];
         }
         {
             CJModuleModel *cycleScrollViewModule = [[CJModuleModel alloc] init];

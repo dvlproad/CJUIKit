@@ -12,6 +12,7 @@
 #import "CJOverlayCommonThemeModel.h"
 #import "CJOverlayAlertThemeModel.h"
 #import "CQHUDThemeModel.h"
+#import "CQToastThemeModel.h"
 
 // 文本(主要处理国际化类型)
 #import "CQOverlayTextModel.h"
@@ -29,7 +30,10 @@ typedef NS_ENUM(NSUInteger, OverlayThemeType) {
 }
 
 #pragma mark - Theme UI Setting
-/// hud loading
+/// UI Toast
++ (CQToastThemeModel *)serviceUI_toastThemeModel;
+
+/// UI HUD
 + (CQHUDThemeModel *)serviceUI_hudThemeModel;
 
 #pragma mark - Theme Text Setting

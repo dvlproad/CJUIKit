@@ -12,7 +12,7 @@
 #import <CJMedia/CJVideoUploadFileModelsOwner.h>
 
 #import "MyEqualCellSizeCollectionViewNormalDelegate.h"
-#import "MyEqualCellSizeCollectionViewDataSource.h"
+#import "CQExtralItemCollectionViewDataSource.h"
 
 typedef NS_ENUM(NSUInteger, CJMediaType) {
     CJMediaTypeImage,
@@ -31,7 +31,7 @@ typedef NS_ENUM(NSUInteger, CJUploadActionType) {
     
 }
 @property (nonatomic, strong) MyEqualCellSizeCollectionViewNormalDelegate *equalCellSizeCollectionViewDelegate;
-@property (nonatomic, strong) MyEqualCellSizeCollectionViewDataSource *equalCellSizeCollectionViewDataSource;
+@property (nonatomic, strong) CQExtralItemCollectionViewDataSource *equalCellSizeCollectionViewDataSource;
 
 //@property (nonatomic, strong) NSMutableArray<NSString *> *dataModels;/**< 数据源 */
 //@property (nonatomic, assign) DataCellActionType dataCellActionType;/**< 当前状态dataCell点击执行的操作是 */

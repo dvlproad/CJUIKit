@@ -9,6 +9,7 @@
 #import <CJBaseOverlayKit/CJBaseOverlayThemeModel.h>
 
 // UI
+#import "CQToastThemeModel.h"
 #import "CQHUDThemeModel.h"
 
 // 文本(主要处理国际化类型)
@@ -16,7 +17,8 @@
 
 @interface CJBaseOverlayThemeModel (Text)
 
-@property (nonatomic, strong) CQHUDThemeModel *hudThemeModel;           /**< HUD主题设置 */
+@property (nonatomic, strong) CQToastThemeModel *toastThemeModel;
+@property (nonatomic, strong) CQHUDThemeModel *hudThemeModel;
 @property (nonatomic, strong) CQOverlayTextModel *overlayTextModel;     /**< Overlay文本(主要处理国际化类型) */
 
 @end

@@ -20,11 +20,6 @@
     self.view.backgroundColor = [UIColor colorWithRed:245/255.0 green:245/255.0 blue:245/255.0 alpha:1.0]; // #f5f5f5
 }
 
-- (void)showToastMessage:(NSString *)message {
-    UIView *view = [[UIApplication sharedApplication].delegate window];
-    [CJToast showMessage:message inView:view withLabelTextColor:[UIColor blackColor] bezelViewColor:[UIColor whiteColor] hideAfterDelay:2.f];
-}
-
 /*
 #pragma mark - Navigation
 

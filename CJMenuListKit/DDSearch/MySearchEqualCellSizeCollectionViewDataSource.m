@@ -26,15 +26,15 @@
 /*
  *  初始化dataSource类(初始化完之后，必须在之后设置想要展示的数据dataModels)
  *
- *  @param equalCellSizeSetting                 集合视图的布局设置
+ *  @param dataSourceSettingModel           集合视图的数据类
  *  @param cellForItemAtIndexPathBlock          dataSource中的cell(含dataCell和extralCell)进行定制用的block
  */
-- (id)initWithEqualCellSizeSetting:(MyEqualCellSizeSetting *)equalCellSizeSetting
-       cellForItemAtIndexPathBlock:(UICollectionViewCell* (^)(UICollectionView *collectionView, NSIndexPath *indexPath, BOOL isExtralItem))cellForItemAtIndexPathBlock
+- (id)initWithDataSourceSettingModel:(CJDataSourceSettingModel *)dataSourceSettingModel
+         cellForItemAtIndexPathBlock:(UICollectionViewCell* (^)(UICollectionView *collectionView, NSIndexPath *indexPath, BOOL isExtralItem))cellForItemAtIndexPathBlock
 {
     self = [super init];
     if (self) {
-        _equalCellSizeSetting = equalCellSizeSetting;
+        _dataSourceSettingModel = dataSourceSettingModel;
         self.cellForItemAtIndexPathBlock = [cellForItemAtIndexPathBlock copy];      //block 要copy
     }
     return self;

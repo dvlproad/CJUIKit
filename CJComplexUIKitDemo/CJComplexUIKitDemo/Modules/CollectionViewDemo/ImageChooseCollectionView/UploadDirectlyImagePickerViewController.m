@@ -47,8 +47,7 @@
         make.height.mas_equalTo(40);
     }];
     
-    UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc] init];
-    CJUploadImageCollectionView *collectionView = [[CJUploadImageCollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:flowLayout];
+    CJUploadImageCollectionView *collectionView = [[CJUploadImageCollectionView alloc] init];
     collectionView.backgroundColor = [UIColor redColor];
     [self.view addSubview:collectionView];
     [collectionView mas_makeConstraints:^(MASConstraintMaker *make) {

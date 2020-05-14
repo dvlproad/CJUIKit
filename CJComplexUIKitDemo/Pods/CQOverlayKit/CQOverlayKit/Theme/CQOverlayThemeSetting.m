@@ -19,6 +19,11 @@
     return [CJBaseOverlayThemeManager serviceThemeModel].commonThemeModel;
 }
 
+/// UI Toast
++ (CQToastThemeModel *)serviceUI_toastThemeModel {
+    return [CJBaseOverlayThemeManager serviceThemeModel].toastThemeModel;
+}
+
 /// UI Alert
 + (CJAlertThemeModel *)serviceUI_alertThemeModel {
     return [CJBaseOverlayThemeManager serviceThemeModel].alertThemeModel;
@@ -147,7 +152,7 @@
 + (void)_useThemeCoffee {
     // 设置 全局默认 的 进度加载
     CQHUDThemeModel *hudThemeModel = [CJBaseOverlayThemeManager serviceThemeModel].hudThemeModel;
-    [hudThemeModel updateAnimationNamed:@"loading_tea"
+    [hudThemeModel updateAnimationNamed:@"loading_coffee"
                         animationBundle:[CQHUDThemeModel currentHUDBundle]];
     
     
@@ -176,7 +181,7 @@
     // 设置 全局默认 的 进度加载
     CQHUDThemeModel *hudThemeModel = [CJBaseOverlayThemeManager serviceThemeModel].hudThemeModel;
     [hudThemeModel updateAnimationNamed:@"loading_coffee"
-    animationBundle:[CQHUDThemeModel currentHUDBundle]];
+                        animationBundle:[CQHUDThemeModel currentHUDBundle]];
 }
 
 

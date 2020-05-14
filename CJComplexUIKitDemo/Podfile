@@ -1,7 +1,7 @@
 source 'https://github.com/CocoaPods/Specs.git'
 source 'https://gitee.com/dvlproad/dvlproadSpecs'
 
-platform :ios, '8.0'
+platform :ios, '9.0'
 #use_frameworks!
 inhibit_all_warnings! #inhibit_warnings参数能够有效的抑制CocoaPods引入的第三方代码库产生的warning。
 
@@ -26,7 +26,8 @@ end
 
 
 target 'CJComplexUIKitDemo' do
-  pod 'CQDemoKit',                '~> 0.1.0'
+  pod 'CQDemoKit',                '~> 0.3.0'
+  #pod 'CQDemoKit',                :path => '../../../GitHub/001-UIKit-CQDemo-iOS’
   pod 'CJBaseUIKit',              :path => '../’
   pod 'CJBaseUtil',               :path => '../’
   pod 'CJBaseHelper',             :path => '../’
@@ -39,6 +40,7 @@ target 'CJComplexUIKitDemo' do
   pod 'CJMenuListKit',                      :path => '../’
   pod 'CJCollectionViewFlowLayout',         :path => '../../../Gitee/UIKit-List-iOS’
   pod 'UICollectionViewCJSelectHelper',     :path => '../../../Gitee/UIKit-List-iOS’
+  pod 'CQExtralItemCollectionViewDataSource',:path => '../../../Gitee/UIKit-List-iOS’
   
   pod 'AFNetworking/Reachability'
   pod 'NJKWebViewProgress'
@@ -56,7 +58,8 @@ target 'CJComplexUIKitDemo' do
   
   # 测试图片上传
   pod 'IjinbuNetwork', '~> 0.1.0' #之前有过IjinbuNetwork中有依赖CJBaseUtil的CJDevice和CJBaseUIKit的UIImage,所以这里不能使用pod，否则link错误
-  pod 'CJNetwork'
+  pod 'CJNetwork'#,    '0.5.0'
+  pod 'AFNetworking'#, '3.2.1'
 end
 
 target 'CJComplexUIKitDemoTests' do

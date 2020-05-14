@@ -35,7 +35,7 @@
     NSLog(@"receiveScriptMessage.body = %@", message.body);// 传递的数据
     
     if ([message.name isEqualToString:@"showWebText"]) {
-        [CQToast showMessage:message.body];
+        [CQToastUtil showMessage:message.body];
     }
 }
 

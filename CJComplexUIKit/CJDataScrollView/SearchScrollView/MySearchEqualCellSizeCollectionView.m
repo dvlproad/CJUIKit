@@ -42,7 +42,7 @@
     searchBar.delegate = self;
 //    [searchBar sizeToFit];
     
-    MySearchEqualCellSizeCollectionViewDataSource *searchEqualCellSizeCollectionViewDataSource = [[MySearchEqualCellSizeCollectionViewDataSource alloc] initWithEqualCellSizeSetting:nil cellForItemAtIndexPathBlock:^UICollectionViewCell *(UICollectionView *collectionView, NSIndexPath *indexPath, BOOL isExtralItem) {
+    MySearchEqualCellSizeCollectionViewDataSource *searchEqualCellSizeCollectionViewDataSource = [[MySearchEqualCellSizeCollectionViewDataSource alloc] initWithDataSourceSettingModel:nil cellForItemAtIndexPathBlock:^UICollectionViewCell *(UICollectionView *collectionView, NSIndexPath *indexPath, BOOL isExtralItem) {
         NSAssert(self.configureCellBlock != nil, @"未设置configureCellBlock");
         return self.configureCellBlock(collectionView, indexPath);
     }];

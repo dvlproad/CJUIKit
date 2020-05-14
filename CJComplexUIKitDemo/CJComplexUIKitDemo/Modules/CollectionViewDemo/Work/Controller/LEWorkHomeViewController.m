@@ -7,6 +7,7 @@
 //
 
 #import "LEWorkHomeViewController.h"
+#import <CQDemoKit/CJUIKitToastUtil.h>
 #import <CJComplexUIKit/CJHomeCollectionView.h>
 #import <CJComplexUIKit/CJHomeCollectionView+Move.h>
 
@@ -53,9 +54,7 @@
         if (!moveEnable) {
             //NSString *message = @"只能在同一功能里移动";
             NSString *message = [NSString stringWithFormat:@"不能从%zd区移动到%zd区", fromSection, toSection];
-            
-            UIView *view = [[UIApplication sharedApplication].delegate window];
-            [CJToast showMessage:message inView:view withLabelTextColor:[UIColor whiteColor] bezelViewColor:[UIColor blackColor] hideAfterDelay:2.f];
+            [CJUIKitToastUtil showMessage:message];
         }
         return moveEnable;
     };

@@ -33,7 +33,7 @@ Pod::Spec.new do |s|
 
   s.author   = { "dvlproad" => "" }
 
-  s.platform     = :ios, "8.0"
+  s.platform     = :ios, "9.0"
  
   s.source       = { :git => "https://github.com/dvlproad/CJUIKit.git", :tag => "CJComplexUIKit_0.3.0" }
   s.source_files  = "CJComplexUIKit/*.{h,m}"

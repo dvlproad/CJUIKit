@@ -367,6 +367,17 @@ SOFTWARE.
 		</dict>
 		<dict>
 			<key>FooterText</key>
+			<string>© 2008-2020 dvlproad. All rights reserved.
+</string>
+			<key>License</key>
+			<string>Copyright</string>
+			<key>Title</key>
+			<string>CQExtralItemCollectionViewDataSource</string>
+			<key>Type</key>
+			<string>PSGroupSpecifier</string>
+		</dict>
+		<dict>
+			<key>FooterText</key>
 			<string>© 2008-2016 dvlproad. All rights reserved.
 </string>
 			<key>License</key>
@@ -850,7 +861,7 @@ SOFTWARE.
 		</dict>
 		<dict>
 			<key>FooterText</key>
-			<string>Copyright (c) 2009-2017 Olivier Poitrey rs@dailymotion.com
+			<string>Copyright (c) 2009-2018 Olivier Poitrey rs@dailymotion.com
  
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
