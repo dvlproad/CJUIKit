@@ -45,13 +45,6 @@
     NSString *dicString = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
     NSLog(@"dicString = %@", dicString);
     
-    NSString *title =  @"还差{{2}}件商品参与抽奖";
-    CJStringAttributedModel *stringAttributedModel = [[CJStringAttributedModel alloc] init];
-    stringAttributedModel.font = [UIFont systemFontOfSize:23];
-    stringAttributedModel.color = CJColorFromHexString(@"#212474");
-    stringAttributedModel.underline = NO;
-    NSAttributedString *attributedTitle = [title attributedStringForSepicalBetweenStart:@"{{" end:@"}}" middleStringAttributedModel:stringAttributedModel];
-    
     YunInstallUncaughtExceptionHandler();
     
     // 设置所有UIKit的主题

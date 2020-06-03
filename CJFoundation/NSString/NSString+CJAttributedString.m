@@ -59,7 +59,7 @@
  *
  *  @return 子字符串们经过自定义后的新的字符串
  */
-- (NSAttributedString *)attributedStringWithModels:(NSArray<CJStringAttributedModel *> *)attributedStringModels {
+- (NSMutableAttributedString *)attributedStringWithModels:(NSArray<CJStringAttributedModel *> *)attributedStringModels {
     
     NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc]initWithString:self];
     

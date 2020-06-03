@@ -246,6 +246,7 @@
 		78E189A8217796DF00B8781A /* EdgeLayoutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78E189A7217796DF00B8781A /* EdgeLayoutViewController.m */; };
 		78E189AB21781BD000B8781A /* TranslucentLayoutTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78E189AA21781BD000B8781A /* TranslucentLayoutTableViewController.m */; };
 		78E189AE21781BE200B8781A /* EdgeLayoutTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78E189AD21781BE200B8781A /* EdgeLayoutTableViewController.m */; };
+		78F55FFA248818E000B7B27A /* AttributedStringViewController2.m in Sources */ = {isa = PBXBuildFile; fileRef = 78F55FF9248818DF00B7B27A /* AttributedStringViewController2.m */; };
 		78FCF5522306A9BA00D275F9 /* UIView+CJDemoPopupAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 78FCF54E2306A9B900D275F9 /* UIView+CJDemoPopupAction.m */; };
 		78FCF5532306A9BA00D275F9 /* CJDemoPopupView.m in Sources */ = {isa = PBXBuildFile; fileRef = 78FCF5502306A9B900D275F9 /* CJDemoPopupView.m */; };
 		8008D7D220E5CF5700F98EF6 /* CallSystemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8008D7D020E5CF5700F98EF6 /* CallSystemViewController.m */; };
@@ -776,6 +777,8 @@
 		78E189AA21781BD000B8781A /* TranslucentLayoutTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TranslucentLayoutTableViewController.m; sourceTree = "<group>"; };
 		78E189AC21781BE200B8781A /* EdgeLayoutTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EdgeLayoutTableViewController.h; sourceTree = "<group>"; };
 		78E189AD21781BE200B8781A /* EdgeLayoutTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EdgeLayoutTableViewController.m; sourceTree = "<group>"; };
+		78F55FF8248818DF00B7B27A /* AttributedStringViewController2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AttributedStringViewController2.h; sourceTree = "<group>"; };
+		78F55FF9248818DF00B7B27A /* AttributedStringViewController2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AttributedStringViewController2.m; sourceTree = "<group>"; };
 		78FCF54B2306A9B900D275F9 /* UIView+CJDemoPopupAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+CJDemoPopupAction.h"; sourceTree = "<group>"; };
 		78FCF54D2306A9B900D275F9 /* CJDemoPopupView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJDemoPopupView.h; sourceTree = "<group>"; };
 		78FCF54E2306A9B900D275F9 /* UIView+CJDemoPopupAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+CJDemoPopupAction.m"; sourceTree = "<group>"; };
@@ -2455,6 +2458,8 @@
 				80FF91791FC5682A00E437CF /* AttributedStringViewController.h */,
 				80FF917C1FC5682A00E437CF /* AttributedStringViewController.m */,
 				80FF917A1FC5682A00E437CF /* AttributedStringViewController.xib */,
+				78F55FF8248818DF00B7B27A /* AttributedStringViewController2.h */,
+				78F55FF9248818DF00B7B27A /* AttributedStringViewController2.m */,
 				80FF917E1FC5682A00E437CF /* EncryptStringViewController.h */,
 				80FF917B1FC5682A00E437CF /* EncryptStringViewController.m */,
 				80FF917D1FC5682A00E437CF /* EncryptStringViewController.xib */,
@@ -2999,6 +3004,7 @@
 				789C447721F07BBC00181144 /* ImageHomeViewController.m in Sources */,
 				1562F2D923F5DBF40009FCEA /* UIViewController+CJCustomBackBarButtonItem.m in Sources */,
 				80FF909A1FC5649F00E437CF /* FloatingWindowViewController.m in Sources */,
+				78F55FFA248818E000B7B27A /* AttributedStringViewController2.m in Sources */,
 				7857ABBC2254AA5000B1569C /* CJDemoDateTextField.m in Sources */,
 				1562F2E423F5DBF40009FCEA /* CJSliderControl.m in Sources */,
 				78E189AE21781BE200B8781A /* EdgeLayoutTableViewController.m in Sources */,
