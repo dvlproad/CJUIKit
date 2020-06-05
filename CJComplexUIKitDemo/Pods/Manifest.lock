@@ -163,10 +163,6 @@ PODS:
   - CJMedia/CJValidateAuthorizationUtil (0.0.7)
   - CJMedia/MySingleImagePickerController (0.0.7):
     - CJMedia/CJValidateAuthorizationUtil
-  - CJMenuListKit (0.1.0):
-    - CJBaseUtil/CJDataUtil
-    - Masonry
-    - SDWebImage
   - CJNetwork (0.5.0):
     - CJNetwork/AFNetworkingBaseComponent (= 0.5.0)
     - CJNetwork/AFNetworkingCacheComponent (= 0.5.0)
@@ -186,6 +182,13 @@ PODS:
   - CJNetwork/CJNetworkBase (0.5.0)
   - CJNetwork/CJRequestUtil (0.5.0):
     - CJNetwork/CJNetworkBase
+  - CQCollectionViewDataSource (0.1.0):
+    - CQCollectionViewDataSource/ExtralItem (= 0.1.0)
+    - CQCollectionViewDataSource/Search (= 0.1.0)
+  - CQCollectionViewDataSource/ExtralItem (0.1.0)
+  - CQCollectionViewDataSource/Search (0.1.0):
+    - CJBaseUtil/CJDataUtil
+    - CQCollectionViewDataSource/ExtralItem
   - CQDemoKit (0.3.1):
     - CQDemoKit/Demo_Resource (= 0.3.1)
     - CQDemoKit/Home_Base (= 0.3.1)
@@ -199,7 +202,6 @@ PODS:
     - CQDemoKit/Home_Base
   - CQDemoKit/Home_TextView (0.3.1):
     - CQDemoKit/Home_Base
-  - CQExtralItemCollectionViewDataSource (0.1.0)
   - CQOverlayKit (0.3.0):
     - CQOverlayKit/Base (= 0.3.0)
     - CQOverlayKit/CQActionSheet (= 0.3.0)
@@ -269,11 +271,10 @@ DEPENDENCIES:
   - CJComplexUIKit/CJScrollView (from `../`)
   - CJFoundation (from `../`)
   - CJMedia/CJUploadImagePickerUtil (~> 0.0.7)
-  - CJMenuListKit (from `../`)
   - CJNetwork
   - CJNetwork/AFNetworkingBaseComponent
+  - CQCollectionViewDataSource (from `../../../Gitee/UIKit-List-iOS`)
   - CQDemoKit (~> 0.3.1)
-  - CQExtralItemCollectionViewDataSource (from `../../../Gitee/UIKit-List-iOS`)
   - CQOverlayKit
   - DZNEmptyDataSet
   - IjinbuNetwork (~> 0.1.0)
@@ -323,9 +324,7 @@ EXTERNAL SOURCES:
     :path: "../"
   CJFoundation:
     :path: "../"
-  CJMenuListKit:
-    :path: "../"
-  CQExtralItemCollectionViewDataSource:
+  CQCollectionViewDataSource:
     :path: "../../../Gitee/UIKit-List-iOS"
   UICollectionViewCJSelectHelper:
     :path: "../../../Gitee/UIKit-List-iOS"
@@ -342,10 +341,9 @@ SPEC CHECKSUMS:
   CJFile: 6c1e6d55b3b94e8afbaa9f413f131301d15fdc48
   CJFoundation: 53b4df7152c6d6fd776f55f387c67f431b8574bd
   CJMedia: 29b1bd8c127fb80c4993a76420a3bcc31a4657e5
-  CJMenuListKit: e569f03243e1f160e2e74584a5c845bbf201a140
   CJNetwork: a75f849e5c6ec8fc85ca7aa5027f73d6c48a4af1
+  CQCollectionViewDataSource: 5385889e15a04c015d4c74c3e51b4e2edf74e456
   CQDemoKit: 939ad9b106b105b875a77a3e1ab21bfbed964c27
-  CQExtralItemCollectionViewDataSource: a11a8b5e50d6932ca0f7bce6b68da3dc5efa2667
   CQOverlayKit: 14c376841d352a1c8a18bffea896c53c317cf06a
   DZNEmptyDataSet: 9525833b9e68ac21c30253e1d3d7076cc828eaa7
   IjinbuNetwork: 307e7e12d35b547f04b885cc2aa098625e4b9768
@@ -363,6 +361,6 @@ SPEC CHECKSUMS:
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
   UICollectionViewCJSelectHelper: e176ca6d3bc396df24238ac5aef4543113ac1e65
 
-PODFILE CHECKSUM: 36fd32da02d2945f630823834e1374418b757821
+PODFILE CHECKSUM: bed7876a2516173f594f49a24fb51668632250d0
 
 COCOAPODS: 1.9.3

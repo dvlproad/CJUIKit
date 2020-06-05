@@ -10,12 +10,13 @@
 #import "CJUploadImageCollectionView+Tap.h"
 #import "CJUploadCollectionViewCell.h"
 
+#import <CJCollectionViewFlowLayout/CQCollectionViewFlowLayout.h>
 #import <UICollectionViewCJSelectHelper/UICollectionView+CJSelect.h>
 
 static NSString * const CJUploadCollectionViewCellID = @"CJUploadCollectionViewCell";
 static NSString * const CJUploadCollectionViewCellAddID = @"CJUploadCollectionViewCellAdd";
 
-@interface CJUploadImageCollectionView () {
+@interface CJUploadImageCollectionView () <UICollectionViewDelegate> {
     
 }
 
@@ -58,8 +59,6 @@ static NSString * const CJUploadCollectionViewCellAddID = @"CJUploadCollectionVi
     [self registerClass:[registerCell class] forCellWithReuseIdentifier:CJUploadCollectionViewCellAddID];
 
     
-    __weak typeof(self)weakSelf = self;
-    
     /* 创建DataSource */
     CJDataSourceSettingModel *dataSourceSettingModel = [[CJDataSourceSettingModel alloc] init];
     dataSourceSettingModel.maxDataModelShowCount = 5;
@@ -82,56 +81,10 @@ static NSString * const CJUploadCollectionViewCellAddID = @"CJUploadCollectionVi
     }];
     self.equalCellSizeCollectionViewDataSource = equalCellSizeCollectionViewDataSource;
     
-    /* 创建Delegate (UICollectionViewDelegateFlowLayout也需实现UICollectionViewDelegate) */
-    CQCollectionViewFlowLayout *layout = (CQCollectionViewFlowLayout *)self.collectionViewLayout;
-    MyEqualCellSizeCollectionViewNormalDelegate *delegate = [[MyEqualCellSizeCollectionViewNormalDelegate alloc] initWithFlowLayout:layout didTapItemBlock:^(UICollectionView *collectionView, NSIndexPath *indexPath, BOOL isDeselect) {
-        BOOL isExtralItem = [weakSelf.equalCellSizeCollectionViewDataSource isExtraItemIndexPath:indexPath];
-        
-        if (!isExtralItem) {
-            
-            //NSLog(@"当前点击的Item为数据源中的第%zd个", indexPath.item);
-            /*
-             if (collectionView.allowsMultipleSelection == NO) {
-             NSArray *oldSelectedIndexPaths = weakSelf.equalCellSizeColle ctionView.currentSelectedIndexPaths;
-             if (oldSelectedIndexPaths.count > 0) {
-             NSIndexPath *oldSelectedIndexPath = oldSelectedIndexPaths[0];
-             
-             CJFullBottomCollectionViewCell *oldCell = (CJFullBottomCollectionViewCell *)[collectionView cellForItemAtIndexPath:oldSelectedIndexPath];//是oldSelectedIndexPath不要写成indexPath了
-             [self operateCell:oldCell withDataModelIndexPath:oldSelectedIndexPath isSettingOperate:NO];
-             }
-             }
-             
-             NSArray *currentSelectedIndexPaths = [self.equalCellSizeCollectionView indexPathsForSelectedItems];
-             weakSelf.equalCellSizeCollectionView.currentSelectedIndexPaths = currentSelectedIndexPaths;
-             NSLog(@"currentSelectedIndexPaths = %@", currentSelectedIndexPaths);
-             
-             CJFullBottomCollectionViewCell *cell = (CJFullBottomCollectionViewCell *)[collectionView cellForItemAtIndexPath:indexPath];
-             [self operateCell:cell withDataModelIndexPath:indexPath isSettingOperate:NO];
-             */
-            
-            CJUploadFileModelsOwner *baseUploadItem = [weakSelf.dataModels objectAtIndex:indexPath.row];
-            
-            CJUploadMomentInfo *momentInfo = baseUploadItem.momentInfo;
-            if (momentInfo.uploadState == CJUploadMomentStateFailure) {
-                return;
-            }
-            
-            [[[UIApplication sharedApplication] keyWindow] endEditing:YES];
-            
-            [weakSelf didSelectMediaUploadItemAtIndexPath:indexPath];
-        } else {
-            //NSLog(@"点击额外的item");
-            
-            [weakSelf didTapToAddMediaUploadItemAction];
-        }
-    }];
-    self.equalCellSizeCollectionViewDelegate = delegate;
-    
     /* 设置DataSource和Delegate */
     //self.dataSource = self;
-    //self.delegate = self;
     self.dataSource = self.equalCellSizeCollectionViewDataSource;
-    self.delegate = self.equalCellSizeCollectionViewDelegate;
+    self.delegate = self;
     
     self.dataModels = [[NSMutableArray alloc] init];
     self.equalCellSizeCollectionViewDataSource.dataModels = self.dataModels;
@@ -151,6 +104,41 @@ static NSString * const CJUploadCollectionViewCellAddID = @"CJUploadCollectionVi
     [self.equalCellSizeCollectionViewDataSource updateExtralItemSetting:extralItemSetting];
 }
 
+
+#pragma mark - UICollectionViewDelegate
+////“点到”item时候执行的时间(allowsMultipleSelection为默认的NO的时候，只有选中，而为YES的时候有选中和取消选中两种操作)
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+    [self didTapItemWithCollectionView:collectionView indexPath:indexPath isDeselect:NO];
+}
+
+- (void)collectionView:(UICollectionView *)collectionView didDeselectItemAtIndexPath:(NSIndexPath *)indexPath {
+    [self didTapItemWithCollectionView:collectionView indexPath:indexPath isDeselect:YES];
+}
+
+
+- (void)didTapItemWithCollectionView:(UICollectionView *)collectionView
+                           indexPath:(NSIndexPath *)indexPath
+                          isDeselect:(BOOL)isDeselect
+{
+    BOOL isExtralItem = [self.equalCellSizeCollectionViewDataSource isExtraItemIndexPath:indexPath];
+    
+    if (!isExtralItem) {
+        CJUploadFileModelsOwner *baseUploadItem = [self.dataModels objectAtIndex:indexPath.row];
+        
+        CJUploadMomentInfo *momentInfo = baseUploadItem.momentInfo;
+        if (momentInfo.uploadState == CJUploadMomentStateFailure) {
+            return;
+        }
+        
+        [[[UIApplication sharedApplication] keyWindow] endEditing:YES];
+        
+        [self didSelectMediaUploadItemAtIndexPath:indexPath];
+    } else {
+        //NSLog(@"点击额外的item");
+        
+        [self didTapToAddMediaUploadItemAction];
+    }
+}
 
 #pragma mark - Private Method
 /*
