@@ -141,7 +141,7 @@ SOFTWARE.
 			<key>License</key>
 			<string>Copyright</string>
 			<key>Title</key>
-			<string>CJCollectionViewFlowLayout</string>
+			<string>CJCollectionViewLayout</string>
 			<key>Type</key>
 			<string>PSGroupSpecifier</string>
 		</dict>

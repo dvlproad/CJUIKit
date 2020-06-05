@@ -99,7 +99,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
 
-## CJCollectionViewFlowLayout
+## CJCollectionViewLayout
 
 © 2008-2020 dvlproad. All rights reserved.
 

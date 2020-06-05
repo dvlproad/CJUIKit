@@ -10,7 +10,7 @@
 #import "CJUploadImageCollectionView+Tap.h"
 #import "CJUploadCollectionViewCell.h"
 
-#import <CJCollectionViewFlowLayout/CQCollectionViewFlowLayout.h>
+#import <CJCollectionViewLayout/CQCollectionViewFlowLayout.h>
 #import <UICollectionViewCJSelectHelper/UICollectionView+CJSelect.h>
 
 static NSString * const CJUploadCollectionViewCellID = @"CJUploadCollectionViewCell";

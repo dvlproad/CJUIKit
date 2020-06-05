@@ -1,1 +1,1 @@
-../../../../../../../Gitee/UIKit-List-iOS/CQCollectionViewDataSource/Search/MySearchEqualCellSizeCollectionViewDataSource.h
+../../../CQCollectionViewDataSource/CQCollectionViewDataSource/Search/MySearchEqualCellSizeCollectionViewDataSource.h

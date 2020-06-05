@@ -134,7 +134,9 @@ PODS:
   - CJBaseUtil/CJPinyinHelper (0.5.1):
     - PinYin4Objc
   - CJBaseUtil/CJQRCodeUtil (0.5.1)
-  - CJCollectionViewFlowLayout (0.1.0)
+  - CJCollectionViewLayout (0.1.0):
+    - CJCollectionViewLayout/FlowLayout (= 0.1.0)
+  - CJCollectionViewLayout/FlowLayout (0.1.0)
   - CJComplexUIKit/CJCollectionView (0.3.0):
     - CJComplexUIKit/CJCollectionView/CJBaseCollectionViewCell (= 0.3.0)
     - CJComplexUIKit/CJCollectionView/CJCollectionViewLayout (= 0.3.0)
@@ -256,7 +258,8 @@ PODS:
     - SDWebImage/Core (= 5.8.0)
   - SDWebImage/Core (5.8.0)
   - SVProgressHUD (2.2.5)
-  - UICollectionViewCJSelectHelper (0.1.0)
+  - UICollectionViewCJSelectHelper (0.1.0):
+    - CJCollectionViewLayout/FlowLayout
 
 DEPENDENCIES:
   - AFNetworking
@@ -266,14 +269,14 @@ DEPENDENCIES:
   - CJBaseHelper (from `../`)
   - CJBaseUIKit (from `../`)
   - CJBaseUtil (from `../`)
-  - CJCollectionViewFlowLayout (from `../../../Gitee/UIKit-List-iOS`)
+  - CJCollectionViewLayout
   - CJComplexUIKit/CJCollectionView (from `../`)
   - CJComplexUIKit/CJScrollView (from `../`)
   - CJFoundation (from `../`)
   - CJMedia/CJUploadImagePickerUtil (~> 0.0.7)
   - CJNetwork
   - CJNetwork/AFNetworkingBaseComponent
-  - CQCollectionViewDataSource (from `../../../Gitee/UIKit-List-iOS`)
+  - CQCollectionViewDataSource
   - CQDemoKit (~> 0.3.1)
   - CQOverlayKit
   - DZNEmptyDataSet
@@ -283,14 +286,17 @@ DEPENDENCIES:
   - NJKWebViewProgress
   - SDCycleScrollView (~> 1.75)
   - SVProgressHUD
-  - UICollectionViewCJSelectHelper (from `../../../Gitee/UIKit-List-iOS`)
+  - UICollectionViewCJSelectHelper
 
 SPEC REPOS:
   https://gitee.com/dvlproad/dvlproadSpecs.git:
     - CJBaseEffectKit
     - CJBaseOverlayKit
+    - CJCollectionViewLayout
+    - CQCollectionViewDataSource
     - CQOverlayKit
     - IjinbuNetwork
+    - UICollectionViewCJSelectHelper
   https://github.com/CocoaPods/Specs.git:
     - AFNetworking
     - CJFile
@@ -318,16 +324,10 @@ EXTERNAL SOURCES:
     :path: "../"
   CJBaseUtil:
     :path: "../"
-  CJCollectionViewFlowLayout:
-    :path: "../../../Gitee/UIKit-List-iOS"
   CJComplexUIKit:
     :path: "../"
   CJFoundation:
     :path: "../"
-  CQCollectionViewDataSource:
-    :path: "../../../Gitee/UIKit-List-iOS"
-  UICollectionViewCJSelectHelper:
-    :path: "../../../Gitee/UIKit-List-iOS"
 
 SPEC CHECKSUMS:
   AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
@@ -336,13 +336,13 @@ SPEC CHECKSUMS:
   CJBaseOverlayKit: 527fc5c7431854d2265b83a7adee176ccea68ff3
   CJBaseUIKit: 094bcdde160d169f1b7823e18e9920bb069594bf
   CJBaseUtil: 1bbf8d5f831dc12ae4bb06c8b5326bd39f3522e1
-  CJCollectionViewFlowLayout: 7617ac3cbfbd00ddd6a8d79fcb838758a168035b
+  CJCollectionViewLayout: 5ebedfcf323db4cfba03e96e6e97106082f0946e
   CJComplexUIKit: 56b659d31d6e8ba46c77cb045a6c26ac1deb51b2
   CJFile: 6c1e6d55b3b94e8afbaa9f413f131301d15fdc48
   CJFoundation: 53b4df7152c6d6fd776f55f387c67f431b8574bd
   CJMedia: 29b1bd8c127fb80c4993a76420a3bcc31a4657e5
   CJNetwork: a75f849e5c6ec8fc85ca7aa5027f73d6c48a4af1
-  CQCollectionViewDataSource: 5385889e15a04c015d4c74c3e51b4e2edf74e456
+  CQCollectionViewDataSource: dc8ed4fe4eaebe2d63567e617f615fffbf0c3332
   CQDemoKit: 939ad9b106b105b875a77a3e1ab21bfbed964c27
   CQOverlayKit: 14c376841d352a1c8a18bffea896c53c317cf06a
   DZNEmptyDataSet: 9525833b9e68ac21c30253e1d3d7076cc828eaa7
@@ -359,8 +359,8 @@ SPEC CHECKSUMS:
   SDCycleScrollView: b3c9a5ed840c771c4938978174c7c9d9feefeb96
   SDWebImage: 84000f962cbfa70c07f19d2234cbfcf5d779b5dc
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
-  UICollectionViewCJSelectHelper: e176ca6d3bc396df24238ac5aef4543113ac1e65
+  UICollectionViewCJSelectHelper: 79741171831b10c84595c09896237563ab5cf5f3
 
-PODFILE CHECKSUM: bed7876a2516173f594f49a24fb51668632250d0
+PODFILE CHECKSUM: c21c60ec52be6831ec1b711d63d3b44718c160fd
 
 COCOAPODS: 1.9.3

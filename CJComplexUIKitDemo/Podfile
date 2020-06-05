@@ -37,9 +37,9 @@ target 'CJComplexUIKitDemo' do
   pod 'CJComplexUIKit/CJScrollView',        :path => '../’
   pod 'CJComplexUIKit/CJCollectionView',    :path => '../’
   
-  pod 'CJCollectionViewFlowLayout',         :path => '../../../Gitee/UIKit-List-iOS’
-  pod 'UICollectionViewCJSelectHelper',     :path => '../../../Gitee/UIKit-List-iOS’
-  pod 'CQCollectionViewDataSource',         :path => '../../../Gitee/UIKit-List-iOS’
+  pod 'CJCollectionViewLayout'
+  pod 'UICollectionViewCJSelectHelper'
+  pod 'CQCollectionViewDataSource'
   
   pod 'AFNetworking/Reachability'
   pod 'NJKWebViewProgress'
