@@ -136,7 +136,8 @@ PODS:
   - CJBaseUtil/CJQRCodeUtil (0.5.1)
   - CJCollectionViewLayout (0.1.0):
     - CJCollectionViewLayout/FlowLayout (= 0.1.0)
-  - CJCollectionViewLayout/FlowLayout (0.1.0)
+  - CJCollectionViewLayout/FlowLayout (0.1.0):
+    - UICollectionViewCJSelectHelper
   - CJComplexUIKit/CJCollectionView (0.3.0):
     - CJComplexUIKit/CJCollectionView/CJBaseCollectionViewCell (= 0.3.0)
     - CJComplexUIKit/CJCollectionView/CJCollectionViewLayout (= 0.3.0)
@@ -258,8 +259,7 @@ PODS:
     - SDWebImage/Core (= 5.8.0)
   - SDWebImage/Core (5.8.0)
   - SVProgressHUD (2.2.5)
-  - UICollectionViewCJSelectHelper (0.1.0):
-    - CJCollectionViewLayout/FlowLayout
+  - UICollectionViewCJSelectHelper (0.1.0)
 
 DEPENDENCIES:
   - AFNetworking
@@ -336,7 +336,7 @@ SPEC CHECKSUMS:
   CJBaseOverlayKit: 527fc5c7431854d2265b83a7adee176ccea68ff3
   CJBaseUIKit: 094bcdde160d169f1b7823e18e9920bb069594bf
   CJBaseUtil: 1bbf8d5f831dc12ae4bb06c8b5326bd39f3522e1
-  CJCollectionViewLayout: 5ebedfcf323db4cfba03e96e6e97106082f0946e
+  CJCollectionViewLayout: 2c08db0810d0ece00eb69d5da0b91e54c774367c
   CJComplexUIKit: 56b659d31d6e8ba46c77cb045a6c26ac1deb51b2
   CJFile: 6c1e6d55b3b94e8afbaa9f413f131301d15fdc48
   CJFoundation: 53b4df7152c6d6fd776f55f387c67f431b8574bd
@@ -359,7 +359,7 @@ SPEC CHECKSUMS:
   SDCycleScrollView: b3c9a5ed840c771c4938978174c7c9d9feefeb96
   SDWebImage: 84000f962cbfa70c07f19d2234cbfcf5d779b5dc
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
-  UICollectionViewCJSelectHelper: 79741171831b10c84595c09896237563ab5cf5f3
+  UICollectionViewCJSelectHelper: a8a87795c790ef8ca48a9e7301a24403a5ce383c
 
 PODFILE CHECKSUM: c21c60ec52be6831ec1b711d63d3b44718c160fd
 

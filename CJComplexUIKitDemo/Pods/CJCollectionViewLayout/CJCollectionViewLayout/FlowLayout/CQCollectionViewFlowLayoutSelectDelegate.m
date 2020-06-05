@@ -1,15 +1,15 @@
 //
-//  MyEqualCellSizeCollectionViewSelectDelegate.m
+//  CQCollectionViewFlowLayoutSelectDelegate.m
 //  CJUIKitDemo
 //
 //  Created by ciyouzen on 2016/4/10.
 //  Copyright © 2016年 dvlproad. All rights reserved.
 //
 
-#import "MyEqualCellSizeCollectionViewSelectDelegate.h"
-#import "UICollectionView+CJSelect.h"
+#import "CQCollectionViewFlowLayoutSelectDelegate.h"
+#import <UICollectionViewCJSelectHelper/UICollectionView+CJSelect.h>
 
-@interface MyEqualCellSizeCollectionViewSelectDelegate () {
+@interface CQCollectionViewFlowLayoutSelectDelegate () {
     
 }
 @property (nonatomic, copy) void(^cellBrowseBlock)(UICollectionView *collectionView, NSIndexPath *indexPath);
@@ -20,7 +20,7 @@
 
 
 
-@implementation MyEqualCellSizeCollectionViewSelectDelegate
+@implementation CQCollectionViewFlowLayoutSelectDelegate
 
 /*
  *  初始化delegate类(处理布局及点击操作)
@@ -47,34 +47,7 @@ withAlwaysAloneIndexPath:(NSIndexPath *)alwaysAloneIndexPath
 
 
 //#pragma mark - UICollectionViewDelegateFlowLayout
-//// 此部分已在父类中实现
-//- (UIEdgeInsets)collectionView:(UICollectionView *)collectionView
-//                        layout:(UICollectionViewLayout *)collectionViewLayout
-//        insetForSectionAtIndex:(NSInteger)section
-//{
-//    return [super collectionView:collectionView layout:collectionViewLayout insetForSectionAtIndex:section];
-//}
-//
-//- (CGFloat)collectionView:(UICollectionView *)collectionView
-//                   layout:(UICollectionViewLayout *)collectionViewLayout
-//minimumLineSpacingForSectionAtIndex:(NSInteger)section
-//{
-//    return [super collectionView:collectionView layout:collectionViewLayout minimumLineSpacingForSectionAtIndex:section];
-//}
-//
-//- (CGFloat)collectionView:(UICollectionView *)collectionView
-//                   layout:(UICollectionViewLayout *)collectionViewLayout
-//minimumInteritemSpacingForSectionAtIndex:(NSInteger)section
-//{
-//    return [super collectionView:collectionView layout:collectionViewLayout minimumInteritemSpacingForSectionAtIndex:section];
-//}
-//
-//- (CGSize)collectionView:(UICollectionView *)collectionView
-//                  layout:(UICollectionViewLayout*)collectionViewLayout
-//  sizeForItemAtIndexPath:(NSIndexPath *)indexPath
-//{
-//    return [super collectionView:collectionView layout:collectionViewLayout sizeForItemAtIndexPath:indexPath];
-//}
+//略
 
 //#pragma mark - UICollectionViewDelegate
 ////“点到”item时候执行的时间(allowsMultipleSelection为默认的NO的时候，只有选中，而为YES的时候有选中和取消选中两种操作)
