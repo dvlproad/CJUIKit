@@ -83,17 +83,6 @@ Pod::Spec.new do |s|
       sss.source_files = "CJComplexUIKit/CJCollectionView/CJCollectionViewLayout/**/*.{h,m}"
     end
 
-    # # 各种集合视图
-    # # 一个只有一个分区且分区中的每个cell大小相等的集合视图(cell的大小可通过方法①设置cell的固定大小和方法②通过设置每行最大显示的cell个数获得)
-    # ss.subspec 'MyEqualCellSizeCollectionView' do |sss|
-    #   sss.source_files = "CJComplexUIKit/CJCollectionView/MyEqualCellSizeCollectionView/**/*.{h,m}"
-    # end
-
-    # 可展开的集合视图
-    ss.subspec 'CJOpenCollectionView' do |sss|
-      sss.source_files = "CJComplexUIKit/CJCollectionView/CJOpenCollectionView/**/*.{h,m}"
-    end
-
   end
 
   # 可展开的集合视图

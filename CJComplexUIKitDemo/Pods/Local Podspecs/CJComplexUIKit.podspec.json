@@ -53,10 +53,6 @@
         {
           "name": "CJCollectionViewLayout",
           "source_files": "CJComplexUIKit/CJCollectionView/CJCollectionViewLayout/**/*.{h,m}"
-        },
-        {
-          "name": "CJOpenCollectionView",
-          "source_files": "CJComplexUIKit/CJCollectionView/CJOpenCollectionView/**/*.{h,m}"
         }
       ]
     },

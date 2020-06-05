@@ -33,7 +33,7 @@ target 'CJComplexUIKitDemo' do
   pod 'CJBaseHelper',                         :path => '../’
   pod 'CJFoundation',                         :path => '../’
   pod 'CQOverlayKit'
-  pod 'CJBaseEffectKit',          :subspecs => ['CJDataEmptyView', 'CJScaleHeadView']
+  pod 'CJBaseEffectKit',                    :subspecs => ['CJDataEmptyView', 'CJScaleHeadView']
   pod 'CJComplexUIKit/CJScrollView',        :path => '../’
   pod 'CJComplexUIKit/CJCollectionView',    :path => '../’
   pod 'CJComplexUIKit/CJHomeCollectionView',:path => '../’

@@ -67,7 +67,6 @@
         make.right.mas_equalTo(self.view.mas_right);
         make.bottom.mas_equalTo(self.view.mas_bottom).offset(-Bottom_Tabbar_Size_Height);
     }];
-
 }
 
 - (NSMutableArray<CJSectionDataModel *> *)getTestMenuSectionDataModels {

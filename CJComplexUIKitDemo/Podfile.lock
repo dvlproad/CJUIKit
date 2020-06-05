@@ -138,10 +138,8 @@ PODS:
   - CJComplexUIKit/CJCollectionView (0.3.0):
     - CJComplexUIKit/CJCollectionView/CJBaseCollectionViewCell (= 0.3.0)
     - CJComplexUIKit/CJCollectionView/CJCollectionViewLayout (= 0.3.0)
-    - CJComplexUIKit/CJCollectionView/CJOpenCollectionView (= 0.3.0)
   - CJComplexUIKit/CJCollectionView/CJBaseCollectionViewCell (0.3.0)
   - CJComplexUIKit/CJCollectionView/CJCollectionViewLayout (0.3.0)
-  - CJComplexUIKit/CJCollectionView/CJOpenCollectionView (0.3.0)
   - CJComplexUIKit/CJHomeCollectionView (0.3.0):
     - CJBaseUtil/CJDataUtil
     - Masonry
@@ -345,7 +343,7 @@ SPEC CHECKSUMS:
   CJBaseUIKit: 094bcdde160d169f1b7823e18e9920bb069594bf
   CJBaseUtil: 1bbf8d5f831dc12ae4bb06c8b5326bd39f3522e1
   CJCollectionViewFlowLayout: 7617ac3cbfbd00ddd6a8d79fcb838758a168035b
-  CJComplexUIKit: d56fc54e8fd07a77aacdb152172de97d3bcb345d
+  CJComplexUIKit: cbe2e86be37f75450720a19c8261fe81572a1608
   CJFile: 6c1e6d55b3b94e8afbaa9f413f131301d15fdc48
   CJFoundation: 53b4df7152c6d6fd776f55f387c67f431b8574bd
   CJMedia: 29b1bd8c127fb80c4993a76420a3bcc31a4657e5
@@ -372,4 +370,4 @@ SPEC CHECKSUMS:
 
 PODFILE CHECKSUM: 3e02c11b295b8201515365f5ac64ce255dde21c7
 
-COCOAPODS: 1.8.4
+COCOAPODS: 1.9.3
