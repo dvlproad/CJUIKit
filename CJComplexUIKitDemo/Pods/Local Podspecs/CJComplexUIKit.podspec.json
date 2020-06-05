@@ -57,24 +57,6 @@
       ]
     },
     {
-      "name": "CJHomeCollectionView",
-      "source_files": "CJComplexUIKit/CJHomeCollectionView/**/*.{h,m}",
-      "platforms": {
-        "ios": "9.0"
-      },
-      "dependencies": {
-        "Masonry": [
-
-        ],
-        "SDCycleScrollView": [
-
-        ],
-        "CJBaseUtil/CJDataUtil": [
-
-        ]
-      }
-    },
-    {
       "name": "CJDataScrollView",
       "subspecs": [
         {

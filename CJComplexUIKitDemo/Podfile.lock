@@ -140,10 +140,6 @@ PODS:
     - CJComplexUIKit/CJCollectionView/CJCollectionViewLayout (= 0.3.0)
   - CJComplexUIKit/CJCollectionView/CJBaseCollectionViewCell (0.3.0)
   - CJComplexUIKit/CJCollectionView/CJCollectionViewLayout (0.3.0)
-  - CJComplexUIKit/CJHomeCollectionView (0.3.0):
-    - CJBaseUtil/CJDataUtil
-    - Masonry
-    - SDCycleScrollView
   - CJComplexUIKit/CJScrollView (0.3.0)
   - CJFile/CJFileManager (0.0.9)
   - CJFoundation (0.1.3):
@@ -270,7 +266,6 @@ DEPENDENCIES:
   - CJBaseUtil (from `../`)
   - CJCollectionViewFlowLayout (from `../../../Gitee/UIKit-List-iOS`)
   - CJComplexUIKit/CJCollectionView (from `../`)
-  - CJComplexUIKit/CJHomeCollectionView (from `../`)
   - CJComplexUIKit/CJScrollView (from `../`)
   - CJFoundation (from `../`)
   - CJMedia/CJUploadImagePickerUtil (~> 0.0.7)
@@ -343,7 +338,7 @@ SPEC CHECKSUMS:
   CJBaseUIKit: 094bcdde160d169f1b7823e18e9920bb069594bf
   CJBaseUtil: 1bbf8d5f831dc12ae4bb06c8b5326bd39f3522e1
   CJCollectionViewFlowLayout: 7617ac3cbfbd00ddd6a8d79fcb838758a168035b
-  CJComplexUIKit: cbe2e86be37f75450720a19c8261fe81572a1608
+  CJComplexUIKit: 56b659d31d6e8ba46c77cb045a6c26ac1deb51b2
   CJFile: 6c1e6d55b3b94e8afbaa9f413f131301d15fdc48
   CJFoundation: 53b4df7152c6d6fd776f55f387c67f431b8574bd
   CJMedia: 29b1bd8c127fb80c4993a76420a3bcc31a4657e5
@@ -368,6 +363,6 @@ SPEC CHECKSUMS:
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
   UICollectionViewCJSelectHelper: e176ca6d3bc396df24238ac5aef4543113ac1e65
 
-PODFILE CHECKSUM: 3e02c11b295b8201515365f5ac64ce255dde21c7
+PODFILE CHECKSUM: 36fd32da02d2945f630823834e1374418b757821
 
 COCOAPODS: 1.9.3

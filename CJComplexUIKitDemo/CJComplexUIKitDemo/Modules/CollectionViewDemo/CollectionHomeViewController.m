@@ -19,8 +19,6 @@
 #import "UploadNoneImagePickerViewController.h"
 #import "UploadDirectlyImagePickerViewController.h"
 
-#import "LEWorkHomeViewController.h"
-
 @interface CollectionHomeViewController ()  {
     
 }
@@ -79,20 +77,6 @@
             CJModuleModel *imagePickerCollectionViewModule = [[CJModuleModel alloc] init];
             imagePickerCollectionViewModule.title = @"图片选择的集合视图(有上传操作)";
             imagePickerCollectionViewModule.classEntry = [UploadDirectlyImagePickerViewController class];
-            [sectionDataModel.values addObject:imagePickerCollectionViewModule];
-        }
-        
-        [sectionDataModels addObject:sectionDataModel];
-    }
-    
-    // 其他
-    {
-        CJSectionDataModel *sectionDataModel = [[CJSectionDataModel alloc] init];
-        sectionDataModel.theme = @"其他";
-        {
-            CJModuleModel *imagePickerCollectionViewModule = [[CJModuleModel alloc] init];
-            imagePickerCollectionViewModule.title = @"工作首页";
-            imagePickerCollectionViewModule.classEntry = [LEWorkHomeViewController class];
             [sectionDataModel.values addObject:imagePickerCollectionViewModule];
         }
         

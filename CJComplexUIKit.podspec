@@ -85,16 +85,6 @@ Pod::Spec.new do |s|
 
   end
 
-  # 可展开的集合视图
-  s.subspec 'CJHomeCollectionView' do |ss|
-    ss.source_files = "CJComplexUIKit/CJHomeCollectionView/**/*.{h,m}"
-    ss.platform     = :ios, "9.0"
-
-    ss.dependency 'Masonry'
-    ss.dependency 'SDCycleScrollView'
-    ss.dependency 'CJBaseUtil/CJDataUtil'
-  end
-
 
   # 带数据的列表视图或集合视图(常用于搜索、图片选择)
   s.subspec 'CJDataScrollView' do |ss|

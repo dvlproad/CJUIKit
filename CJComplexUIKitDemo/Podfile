@@ -36,7 +36,6 @@ target 'CJComplexUIKitDemo' do
   pod 'CJBaseEffectKit',                    :subspecs => ['CJDataEmptyView', 'CJScaleHeadView']
   pod 'CJComplexUIKit/CJScrollView',        :path => '../’
   pod 'CJComplexUIKit/CJCollectionView',    :path => '../’
-  pod 'CJComplexUIKit/CJHomeCollectionView',:path => '../’
   pod 'CJMenuListKit',                      :path => '../’
   pod 'CJCollectionViewFlowLayout',         :path => '../../../Gitee/UIKit-List-iOS’
   pod 'UICollectionViewCJSelectHelper',     :path => '../../../Gitee/UIKit-List-iOS’
