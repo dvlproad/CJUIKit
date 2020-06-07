@@ -39,7 +39,7 @@ target 'CJComplexUIKitDemo' do
   
   pod 'CJCollectionViewLayout'
   pod 'UICollectionViewCJSelectHelper'
-  pod 'CQCollectionViewDataSource'
+  pod 'CQCollectionViewDataSource',  :subspecs => ['ExtralItem']
   
   pod 'AFNetworking/Reachability'
   pod 'NJKWebViewProgress'

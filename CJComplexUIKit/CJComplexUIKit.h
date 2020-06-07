@@ -10,9 +10,6 @@
 #define CJComplexUIKit_h
 
 
-//搜索相关
-#import "CJSearchTableView.h"
-
 //图片选择相关
 #import "CJUploadImageCollectionView.h"
 

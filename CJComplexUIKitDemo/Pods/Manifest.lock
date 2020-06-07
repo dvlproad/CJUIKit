@@ -185,13 +185,7 @@ PODS:
   - CJNetwork/CJNetworkBase (0.5.0)
   - CJNetwork/CJRequestUtil (0.5.0):
     - CJNetwork/CJNetworkBase
-  - CQCollectionViewDataSource (0.1.0):
-    - CQCollectionViewDataSource/ExtralItem (= 0.1.0)
-    - CQCollectionViewDataSource/Search (= 0.1.0)
   - CQCollectionViewDataSource/ExtralItem (0.1.0)
-  - CQCollectionViewDataSource/Search (0.1.0):
-    - CJBaseUtil/CJDataUtil
-    - CQCollectionViewDataSource/ExtralItem
   - CQDemoKit (0.3.1):
     - CQDemoKit/Demo_Resource (= 0.3.1)
     - CQDemoKit/Home_Base (= 0.3.1)
@@ -276,7 +270,7 @@ DEPENDENCIES:
   - CJMedia/CJUploadImagePickerUtil (~> 0.0.7)
   - CJNetwork
   - CJNetwork/AFNetworkingBaseComponent
-  - CQCollectionViewDataSource
+  - CQCollectionViewDataSource/ExtralItem
   - CQDemoKit (~> 0.3.1)
   - CQOverlayKit
   - DZNEmptyDataSet
@@ -361,6 +355,6 @@ SPEC CHECKSUMS:
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
   UICollectionViewCJSelectHelper: a8a87795c790ef8ca48a9e7301a24403a5ce383c
 
-PODFILE CHECKSUM: c21c60ec52be6831ec1b711d63d3b44718c160fd
+PODFILE CHECKSUM: b1a3ac9320b1c6fd90ef895e079656d4ee4093f9
 
 COCOAPODS: 1.9.3
