@@ -23,6 +23,8 @@
     
     UITableView *tableView = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStyleGrouped];
     //[tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"cell"];
+    tableView.backgroundColor = [UIColor colorWithRed:245/255.0 green:245/255.0 blue:245/255.0 alpha:1.0]; // #f5f5f5
+    tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     tableView.dataSource = self;
     tableView.delegate = self;
     [self.view addSubview:tableView];
@@ -57,6 +59,8 @@
 
 /*
 - (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
+    UIColor *lineColor = [UIColor whiteColor];
+    
 //    cell.contentView.bounds = CGRectInset(cell.bounds, -40, -10);
 //    cell.contentView.backgroundColor = [UIColor redColor];
 //
@@ -67,13 +71,14 @@
     
     if ([cell respondsToSelector:@selector(tintColor)]) {
         
-        cell.backgroundColor = CJColorFromHexString(@"#F5F5F5");
+        cell.backgroundColor = [UIColor colorWithRed:245/255.0 green:245/255.0 blue:245/255.0 alpha:1.0]; // #f5f5f5;
         
-        CAShapeLayer *layer = [[CAShapeLayer alloc] init];
+        // 圆角角度 & offset
+        CGFloat cornerRadius = 20.f;
+        CGFloat offset = 40.f;
+        
         CGMutablePathRef pathRef = CGPathCreateMutable();
-        CGRect bounds = CGRectInset(cell.bounds, 0, 0);
-        
-        CGFloat cornerRadius = 6.f;
+        CGRect bounds = CGRectInset(cell.bounds, offset, 0);    // 获取显示区域大小
         
         if (indexPath.row == 0 && indexPath.row == [tableView numberOfRowsInSection:indexPath.section]-1) {
             
@@ -103,20 +108,110 @@
             CGPathAddRect(pathRef, nil, bounds);
         }
         
-        layer.path = pathRef;
+        // 创建两个layer
+        CAShapeLayer *normalLayer = [[CAShapeLayer alloc] init];
+        CAShapeLayer *selectLayer = [[CAShapeLayer alloc] init];
+        // 把已经绘制好的贝塞尔曲线路径赋值给图层，然后图层根据path进行图像渲染render
+        normalLayer.path = pathRef;
+        selectLayer.path = pathRef;
         CFRelease(pathRef);
         
-        //填充颜色和描边颜色修改
-        layer.fillColor = CJColorFromHexString(@"#FFFFFF").CGColor;
-        layer.strokeColor = CJColorFromHexString(@"#FFFFFF").CGColor;
         
-        UIView *backView = [[UIView alloc] initWithFrame:bounds];
-        [backView.layer insertSublayer:layer atIndex:0];
-        backView.backgroundColor = CJColorFromHexString(@"#F5F5F5");
-        cell.backgroundView = backView;
+        
+        // 填充颜色和描边颜色修改
+        normalLayer.fillColor = [UIColor whiteColor].CGColor;
+        selectLayer.fillColor = [UIColor whiteColor].CGColor;
+        normalLayer.strokeColor = lineColor.CGColor;
+        selectLayer.strokeColor = lineColor.CGColor;
+        
+        
+        // 添加图层到nomarBgView中,圆角显示就完成了，
+        UIView *nomarBgView = [[UIView alloc] initWithFrame:bounds];
+        nomarBgView.backgroundColor = [UIColor clearColor];
+        [nomarBgView.layer insertSublayer:normalLayer atIndex:0];
+        cell.backgroundView = nomarBgView;
+        
+        
+        // 但是如果没有取消cell的点击效果，还是会出现一个灰色的长方形的形状，再用上面创建的selectLayer给cell添加一个selectedBackgroundView
+        UIView *selectBgView = [[UIView alloc] initWithFrame:bounds];
+        selectBgView.backgroundColor = [UIColor clearColor];
+        [selectBgView.layer insertSublayer:selectLayer atIndex:0];
+        cell.selectedBackgroundView = selectBgView;
     }
 }
-*/
+//*/
+
+//*
+// 其他参考:[iOS UITableView设置section圆角](https://www.jianshu.com/p/739408a7aae1?utm_campaign=hugo)
+- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
+    // 设置cell 背景色为透明
+    cell.backgroundColor = UIColor.clearColor;
+    
+    // 圆角角度 & offset
+    CGFloat radius = 10.f;
+    CGFloat offset = 10.f;
+    // 获取显示区域大小
+    CGRect bounds = CGRectInset(cell.bounds, offset, 0);
+    // 获取每组行数
+    NSInteger rowNum = [tableView numberOfRowsInSection:indexPath.section];
+    // 贝塞尔曲线
+    UIBezierPath *bezierPath = nil;
+    if (rowNum == 1) {
+        // 一组只有一行（四个角全部为圆角）
+        bezierPath = [UIBezierPath bezierPathWithRoundedRect:bounds
+                                           byRoundingCorners:UIRectCornerAllCorners
+                                                 cornerRadii:CGSizeMake(radius, radius)];
+    } else {
+        if (indexPath.row == 0) {
+            // 每组第一行（添加左上和右上的圆角）
+            bezierPath = [UIBezierPath bezierPathWithRoundedRect:bounds
+                                               byRoundingCorners:(UIRectCornerTopLeft|UIRectCornerTopRight)
+                                                     cornerRadii:CGSizeMake(radius, radius)];
+            
+        } else if (indexPath.row == rowNum - 1) {
+            // 每组最后一行（添加左下和右下的圆角）
+            bezierPath = [UIBezierPath bezierPathWithRoundedRect:bounds
+                                               byRoundingCorners:(UIRectCornerBottomLeft|UIRectCornerBottomRight)
+                                                     cornerRadii:CGSizeMake(radius, radius)];
+        } else {
+            // 每组不是首位的行不设置圆角
+            bezierPath = [UIBezierPath bezierPathWithRect:bounds];
+        }
+    }
+    
+    [self __configCell:cell withBounds:bounds path:bezierPath.CGPath];
+}
+//*/
+
+
+- (void)__configCell:(UITableViewCell *)cell withBounds:(CGRect)bounds path:(CGPathRef)path {
+    UIColor *lineColor = [UIColor colorWithRed:213/255.0 green:213/255.0 blue:213/255.0 alpha:1.0]; //#e5e5e5
+    
+    // 创建两个layer
+    CAShapeLayer *normalLayer = [[CAShapeLayer alloc] init];
+    CAShapeLayer *selectLayer = [[CAShapeLayer alloc] init];
+    // 设置填充颜色
+    normalLayer.fillColor = [UIColor whiteColor].CGColor;
+    selectLayer.fillColor = [UIColor whiteColor].CGColor;
+    normalLayer.strokeColor = lineColor.CGColor;
+    selectLayer.strokeColor = lineColor.CGColor;
+    // 把已经绘制好的贝塞尔曲线路径赋值给图层，然后图层根据path进行图像渲染render
+    normalLayer.path = path;
+    selectLayer.path = path;
+    
+    
+    // 添加图层到nomarBgView中,圆角显示就完成了，
+    UIView *nomarBgView = [[UIView alloc] initWithFrame:bounds];
+    nomarBgView.backgroundColor = [UIColor clearColor];
+    [nomarBgView.layer insertSublayer:normalLayer atIndex:0];
+    cell.backgroundView = nomarBgView;
+    
+    // 但是如果没有取消cell的点击效果，还是会出现一个灰色的长方形的形状，再用上面创建的selectLayer给cell添加一个selectedBackgroundView
+    UIView *selectBgView = [[UIView alloc] initWithFrame:bounds];
+    selectBgView.backgroundColor = [UIColor clearColor];
+    [selectBgView.layer insertSublayer:selectLayer atIndex:0];
+    cell.selectedBackgroundView = selectBgView;
+}
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     CJSectionDataModel *sectionDataModel = [self.sectionDataModels objectAtIndex:indexPath.section];
