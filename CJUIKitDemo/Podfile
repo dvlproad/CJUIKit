@@ -56,7 +56,7 @@ target 'CJUIKitDemo' do
 
 #    pod 'CJBaseUIKit',          :path => '../’
     
-    pod 'CQDemoKit',            '~> 0.1.0'
+    pod 'CQDemoKit',            '~> 0.4.0'
 #    pod 'CJBaseUIKit',           :path => '../’
     pod 'CJBaseUtil',           :path => '../’
     pod 'CJFoundation',         :path => '../’

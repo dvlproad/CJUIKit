@@ -8,12 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import <Masonry/Masonry.h>
-#import <CJBaseOverlayKit/CJToast.h>
 
 @interface CJUIKitBaseViewController : UIViewController {
     
 }
-
-- (void)showToastMessage:(NSString *)message;
 
 @end

@@ -7,6 +7,7 @@
 //
 
 #import "AuthorizationCJHelperViewController.h"
+#import <CQDemoKit/CJUIKitToastUtil.h>
 
 @interface AuthorizationCJHelperViewController ()
 
@@ -31,7 +32,7 @@
             toastModule.actionBlock = ^{
                 openSettingCJHelper(^(BOOL success) {
                     if (success) {
-                        [self showToastMessage:@"正在打开设置..."];
+                        [CJUIKitToastUtil showMessage:@"正在打开设置..."];
                     }
                 });
             };

@@ -7,6 +7,7 @@
 //
 
 #import "BackItemBaseViewController.h"
+#import <CQDemoKit/CJUIKitToastUtil.h>
 
 @interface BackItemBaseViewController ()
 
@@ -49,7 +50,7 @@
         [self.navigationController popViewControllerAnimated:YES];
     }];
     UIAlertAction *action2 = [UIAlertAction actionWithTitle:@"保存" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-        [self showToastMessage:@"保存成功"];
+        [CJUIKitToastUtil showMessage:@"保存成功"];
         [self.navigationController popViewControllerAnimated:YES];
     }];
     [alertController addAction:action1];

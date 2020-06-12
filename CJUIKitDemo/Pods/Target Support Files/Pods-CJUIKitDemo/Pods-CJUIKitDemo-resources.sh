@@ -97,31 +97,21 @@ EOM
   esac
 }
 if [[ "$CONFIGURATION" == "Debug" ]]; then
-  install_resource "${PODS_ROOT}/CJBaseOverlayKit/CJBaseOverlayKit/CJToast/Resources/CJToast_error.png"
-  install_resource "${PODS_ROOT}/CJBaseOverlayKit/CJBaseOverlayKit/CJToast/Resources/CJToast_error@2x.png"
-  install_resource "${PODS_ROOT}/CJBaseOverlayKit/CJBaseOverlayKit/CJToast/Resources/CJToast_error@3x.png"
-  install_resource "${PODS_ROOT}/CJBaseOverlayKit/CJBaseOverlayKit/CJToast/Resources/CJToast_success.png"
-  install_resource "${PODS_ROOT}/CJBaseOverlayKit/CJBaseOverlayKit/CJToast/Resources/CJToast_success@2x.png"
-  install_resource "${PODS_ROOT}/CJBaseOverlayKit/CJBaseOverlayKit/CJToast/Resources/CJToast_success@3x.png"
   install_resource "${PODS_ROOT}/CJPicker/CJPicker/Resources/area.plist"
   install_resource "${PODS_ROOT}/CJPicker/CJPicker/Resources/city.plist"
   install_resource "${PODS_ROOT}/CJPicker/CJPicker/Resources/line_gray_pickerToolbar.png"
   install_resource "${PODS_ROOT}/CJPicker/CJPicker/Resources/line_gray_pickerToolbar@2x.png"
+  install_resource "${PODS_CONFIGURATION_BUILD_DIR}/CQDemoKit/CQDemoKit.bundle"
   install_resource "${PODS_ROOT}/MJRefresh/MJRefresh/MJRefresh.bundle"
   install_resource "${PODS_ROOT}/PinYin4Objc/PinYin4Objc/Resources/unicode_to_hanyu_pinyin.txt"
   install_resource "${PODS_ROOT}/SAMKeychain/Support/SAMKeychain.bundle"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
-  install_resource "${PODS_ROOT}/CJBaseOverlayKit/CJBaseOverlayKit/CJToast/Resources/CJToast_error.png"
-  install_resource "${PODS_ROOT}/CJBaseOverlayKit/CJBaseOverlayKit/CJToast/Resources/CJToast_error@2x.png"
-  install_resource "${PODS_ROOT}/CJBaseOverlayKit/CJBaseOverlayKit/CJToast/Resources/CJToast_error@3x.png"
-  install_resource "${PODS_ROOT}/CJBaseOverlayKit/CJBaseOverlayKit/CJToast/Resources/CJToast_success.png"
-  install_resource "${PODS_ROOT}/CJBaseOverlayKit/CJBaseOverlayKit/CJToast/Resources/CJToast_success@2x.png"
-  install_resource "${PODS_ROOT}/CJBaseOverlayKit/CJBaseOverlayKit/CJToast/Resources/CJToast_success@3x.png"
   install_resource "${PODS_ROOT}/CJPicker/CJPicker/Resources/area.plist"
   install_resource "${PODS_ROOT}/CJPicker/CJPicker/Resources/city.plist"
   install_resource "${PODS_ROOT}/CJPicker/CJPicker/Resources/line_gray_pickerToolbar.png"
   install_resource "${PODS_ROOT}/CJPicker/CJPicker/Resources/line_gray_pickerToolbar@2x.png"
+  install_resource "${PODS_CONFIGURATION_BUILD_DIR}/CQDemoKit/CQDemoKit.bundle"
   install_resource "${PODS_ROOT}/MJRefresh/MJRefresh/MJRefresh.bundle"
   install_resource "${PODS_ROOT}/PinYin4Objc/PinYin4Objc/Resources/unicode_to_hanyu_pinyin.txt"
   install_resource "${PODS_ROOT}/SAMKeychain/Support/SAMKeychain.bundle"
@@ -138,7 +128,7 @@ rm -f "$RESOURCES_TO_COPY"
 if [[ -n "${WRAPPER_EXTENSION}" ]] && [ "`xcrun --find actool`" ] && [ -n "${XCASSET_FILES:-}" ]
 then
   # Find all other xcassets (this unfortunately includes those of path pods and other targets).
-  OTHER_XCASSETS=$(find "$PWD" -iname "*.xcassets" -type d)
+  OTHER_XCASSETS=$(find -L "$PWD" -iname "*.xcassets" -type d)
   while read line; do
     if [[ $line != "${PODS_ROOT}*" ]]; then
       XCASSET_FILES+=("$line")

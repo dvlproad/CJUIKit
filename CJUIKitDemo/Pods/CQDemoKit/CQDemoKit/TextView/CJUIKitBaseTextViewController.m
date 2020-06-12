@@ -8,6 +8,7 @@
 
 #import "CJUIKitBaseTextViewController.h"
 #import "CJValidateStringTableViewCell.h"
+#import "CJUIKitToastUtil.h"
 
 @interface CJUIKitBaseTextViewController () <UITableViewDataSource, UITableViewDelegate> {
     
@@ -174,10 +175,10 @@
         if (isAutoExec == NO) {
             if (validateSuccess == NO) {
                 NSString *errorMessage = [NSString stringWithFormat:@"代码方法错误，执行结果应为:%@", dealTextModel.hopeResultText];
-                [self showToastMessage:errorMessage];
+                [CJUIKitToastUtil showMessage:errorMessage];
             } else {
                 NSString *successMessage = [NSString stringWithFormat:@"恭喜你，代码方法处理正确！"];
-                [self showToastMessage:successMessage];
+                [CJUIKitToastUtil showMessage:successMessage];
             }
         }
     }

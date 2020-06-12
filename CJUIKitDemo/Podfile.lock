@@ -20,10 +20,6 @@ PODS:
   - CJBaseHelper/NSOperationQueueCJHelper (0.1.4)
   - CJBaseHelper/UIViewControllerCJHelper (0.1.4)
   - CJBaseHelper/WebCJHelper (0.1.4)
-  - CJBaseOverlayKit/CJBaseOverlayTheme (0.3.0)
-  - CJBaseOverlayKit/CJToast (0.3.0):
-    - CJBaseOverlayKit/CJBaseOverlayTheme
-    - MBProgressHUD
   - CJBaseTest/Test (0.0.2)
   - CJBaseTest/UITest (0.0.2)
   - CJBaseUtil (0.5.1):
@@ -69,17 +65,18 @@ PODS:
   - CJFoundation/NSString (0.1.3)
   - CJPicker (1.3.2)
   - CJPopupView/CJPopoverView (2.1.0)
-  - CQDemoKit (0.1.0):
-    - CQDemoKit/Home_Base (= 0.1.0)
-    - CQDemoKit/Home_Collection (= 0.1.0)
-    - CQDemoKit/Home_TextView (= 0.1.0)
-  - CQDemoKit/Home_Base (0.1.0):
-    - CJBaseOverlayKit/CJToast
+  - CQDemoKit (0.4.0):
+    - CQDemoKit/Demo_Resource (= 0.4.0)
+    - CQDemoKit/Home_Base (= 0.4.0)
+    - CQDemoKit/Home_Collection (= 0.4.0)
+    - CQDemoKit/Home_TextView (= 0.4.0)
+  - CQDemoKit/Demo_Resource (0.4.0)
+  - CQDemoKit/Home_Base (0.4.0):
     - CJBaseUtil/CJDataUtil
     - Masonry
-  - CQDemoKit/Home_Collection (0.1.0):
+  - CQDemoKit/Home_Collection (0.4.0):
     - CQDemoKit/Home_Base
-  - CQDemoKit/Home_TextView (0.1.0):
+  - CQDemoKit/Home_TextView (0.4.0):
     - CQDemoKit/Home_Base
   - FLAnimatedImage (1.0.12)
   - IQKeyboardManager (6.5.5)
@@ -113,7 +110,7 @@ DEPENDENCIES:
   - CJFoundation (from `../`)
   - CJPicker (~> 1.3.2)
   - CJPopupView/CJPopoverView
-  - CQDemoKit (~> 0.1.0)
+  - CQDemoKit (~> 0.4.0)
   - FLAnimatedImage
   - IQKeyboardManager
   - Mantle (~> 2.1.0)
@@ -131,9 +128,8 @@ DEPENDENCIES:
   - YYText (~> 1.0.7)
 
 SPEC REPOS:
-  https://gitee.com/dvlproad/dvlproadSpecs.git:
+  https://gitee.com/dvlproad/dvlproadSpecs:
     - CJBaseEffectKit
-    - CJBaseOverlayKit
   https://github.com/CocoaPods/Specs.git:
     - AFNetworking
     - CJFile
@@ -170,14 +166,13 @@ SPEC CHECKSUMS:
   AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
   CJBaseEffectKit: 8640801fa272a1d96a6edce2c994652ced0e519f
   CJBaseHelper: dd715e18591da9df5d06364098300591220f0535
-  CJBaseOverlayKit: 527fc5c7431854d2265b83a7adee176ccea68ff3
   CJBaseTest: a7975369dd9cad3111ea8a8465ccdb1d50752499
   CJBaseUtil: 1bbf8d5f831dc12ae4bb06c8b5326bd39f3522e1
   CJFile: 6c1e6d55b3b94e8afbaa9f413f131301d15fdc48
   CJFoundation: 53b4df7152c6d6fd776f55f387c67f431b8574bd
   CJPicker: c33099d47323271b91c2ce112976d1bee19a70ce
   CJPopupView: c7685f6a0225a89c72d97ea946f2816b5442abaf
-  CQDemoKit: 5ca222de41ee74b83ad98e49f0c0e3785b316b85
+  CQDemoKit: 85bdf8abb83cc62c2746679107603a326215cf09
   FLAnimatedImage: 4a0b56255d9b05f18b6dd7ee06871be5d3b89e31
   IQKeyboardManager: 3a8b9e603f8b0eeaf5f096a1f2b2cfcf121992ef
   Mantle: 35238ae6f2e2b2d474fa7b67fee82a59fea71915
@@ -194,6 +189,6 @@ SPEC CHECKSUMS:
   UINavigation-SXFixSpace: 10f223253ebff2ceefa26694e23b7694269763c4
   YYText: 5c461d709e24d55a182d1441c41dc639a18a4849
 
-PODFILE CHECKSUM: 12c265f7d90a120c5fa450178f3bd5cf6521dbc1
+PODFILE CHECKSUM: 98885e1be8180e9cfc03e57db4da1ed5a0984e16
 
-COCOAPODS: 1.8.4
+COCOAPODS: 1.9.3
