@@ -45,6 +45,24 @@
     NSString *dicString = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
     NSLog(@"dicString = %@", dicString);
     
+    
+    void (^block1)(void) = ^{
+        NSLog(@"block1");
+    };
+    NSLog(@"%@", [block1 class]);
+
+    int age = 1;
+    void (^block2)(void) = ^{
+        NSLog(@"block2:%d",age);
+    };
+    NSLog(@"%@", [block2 class]);
+    
+    
+    int age2 = 2;
+    NSLog(@"%@",[^{
+        NSLog(@"block3:%d",age2);
+    } class]);
+    
     YunInstallUncaughtExceptionHandler();
     
     // 设置所有UIKit的主题

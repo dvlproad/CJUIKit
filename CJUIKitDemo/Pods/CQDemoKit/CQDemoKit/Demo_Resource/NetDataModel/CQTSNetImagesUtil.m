@@ -24,10 +24,11 @@
 
 /// 获取测试用的数据(image为网络图片地址)
 ///
-/// @param count 图片个数
+/// @param count        图片个数
+/// @param randomOrder  顺序是否随机
 ///
 /// @return 返回图片数据
-+ (NSMutableArray<CQTSNetImageDataModel *> *)__getTestNetImageDataModelsWithCount:(NSInteger)count {
++ (NSMutableArray<CQTSNetImageDataModel *> *)__getTestNetImageDataModelsWithCount:(NSInteger)count randomOrder:(BOOL)randomOrder {
     NSArray *selStrings = @[NSStringFromSelector(@selector(cjts_imageUrl1)),
                             NSStringFromSelector(@selector(cjts_imageUrl2)),
                             NSStringFromSelector(@selector(cjts_imageUrl3)),
@@ -53,7 +54,6 @@
                             NSStringFromSelector(@selector(cjts_imageUrl23)),
                             NSStringFromSelector(@selector(cjts_imageUrl24)),
                             NSStringFromSelector(@selector(cjts_imageUrl25)),
-                            NSStringFromSelector(@selector(cjts_imageUrl26)),
     ];
     
     
@@ -62,10 +62,22 @@
     for (NSInteger i = 0; i < count; i++) {
         CQTSNetImageDataModel *dataModel = [[CQTSNetImageDataModel alloc] init];
         
-        NSInteger selIndex = random()%selStrings.count;
-        NSString *selString = [selStrings objectAtIndex:selIndex];
-        SEL sel = NSSelectorFromString(selString);
-        dataModel.imageUrl = [CQTSNetImagesUtil performSelector:sel];
+        if (randomOrder) {
+            NSInteger selIndex = random()%selStrings.count;
+            NSString *selString = [selStrings objectAtIndex:selIndex];
+            SEL sel = NSSelectorFromString(selString);
+            dataModel.imageUrl = [CQTSNetImagesUtil performSelector:sel];
+            dataModel.name = [NSString stringWithFormat:@"%ld:%@", i, selString];
+        } else {
+            NSInteger selIndex = i%selStrings.count;
+            NSString *selString = [selStrings objectAtIndex:selIndex];
+            SEL sel = NSSelectorFromString(selString);
+            dataModel.imageUrl = [CQTSNetImagesUtil performSelector:sel];
+            dataModel.name = [NSString stringWithFormat:@"%ld:%@", i, selString];
+        }
+        
+        
+        
         [dataModels addObject:dataModel];
     }
     
@@ -182,7 +194,7 @@
 }
 
 + (NSString *)cjts_imageUrl10 {
-    return @"https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1586203816373&di=7f37b50d29c588696ae4fc2258b67636&imgtype=0&src=http%3A%2F%2Fwww.feizl.com%2Fupload2007%2F2014_09%2F14090617135391.jpg";
+    return @"http://pic1.win4000.com/mobile/2017-11-27/5a1bda5b4f261.jpg";
 }
 
 + (NSString *)cjts_imageUrl11 {
@@ -190,7 +202,7 @@
 }
 
 + (NSString *)cjts_imageUrl12 {
-    return @"https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=2771695667,4069028531&fm=11&gp=0.jpg";
+    return @"http://pic1.win4000.com/wallpaper/2018-01-26/5a6ae7a58070f.jpg";
 }
 
 + (NSString *)cjts_imageUrl13 {
@@ -198,7 +210,7 @@
 }
 
 + (NSString *)cjts_imageUrl14 {
-    return @"https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1586203816372&di=2dd8dc3c205c85eb3ca798be0a387846&imgtype=0&src=http%3A%2F%2Fhbimg.b0.upaiyun.com%2Fca6d9b8ae88d6e3cef9a01599049bea9c9c549aa378a6-3RmOLu_fw658";
+    return @"http://pic1.win4000.com/wallpaper/b/5680fcc0d31b2.jpg";
 }
 
 + (NSString *)cjts_imageUrl15 {
@@ -206,7 +218,7 @@
 }
 
 + (NSString *)cjts_imageUrl16 {
-    return @"https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1586203816371&di=93e727f5c4e0ea84c5a2a1b46348b2d7&imgtype=0&src=http%3A%2F%2Fimg.jk51.com%2Fimg_jk51%2F319203562.jpeg";
+    return @"http://pic1.win4000.com/wallpaper/2018-01-26/5a6ae83c820f4.jpg";
 }
 
 + (NSString *)cjts_imageUrl17 {
@@ -214,7 +226,7 @@
 }
 
 + (NSString *)cjts_imageUrl18 {
-    return @"https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1586205486786&di=e08f92c5576be234968a977a0712f499&imgtype=0&src=http%3A%2F%2Fimage.namedq.com%2Fuploads%2F20191103%2F19%2F1572779306-CbwlrmPnJD.jpg";
+    return @"http://pic1.win4000.com/wallpaper/2017-10-19/59e8762e07803.jpg";
 }
 
 + (NSString *)cjts_imageUrl19 {
@@ -242,7 +254,7 @@
 }
 
 + (NSString *)cjts_imageUrl25 {
-    return @"https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1586205642604&di=7b2a95d4ff8df16491abe270addd72d2&imgtype=0&src=http%3A%2F%2Fpic1.win4000.com%2Fpic%2Fc%2Ffd%2F8dda1109631.jpg";
+    return @"http://pic1.win4000.com/wallpaper/b/5680fcc0d31b2.jpg";
 }
 
 + (NSString *)cjts_imageUrl26 {

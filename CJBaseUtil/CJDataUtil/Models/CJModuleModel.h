@@ -14,6 +14,7 @@
 @property (nonatomic, copy) NSString *title;
 @property (nonatomic, copy) NSString *content;
 @property (nonatomic, strong) UIImage *normalImage;
+@property (nonatomic, copy) NSString *normalImageUrl;
 @property (nonatomic, strong) UIImage *selectedImage;
 
 @property (nonatomic, strong) NSIndexPath *indexPath;   /**< 该模块所在的位置 */

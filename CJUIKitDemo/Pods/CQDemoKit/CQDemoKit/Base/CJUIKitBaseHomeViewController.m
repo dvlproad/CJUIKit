@@ -7,6 +7,7 @@
 //
 
 #import "CJUIKitBaseHomeViewController.h"
+#import <SDWebImage/SDWebImage.h>
 
 @interface CJUIKitBaseHomeViewController () <UITableViewDataSource, UITableViewDelegate> {
     

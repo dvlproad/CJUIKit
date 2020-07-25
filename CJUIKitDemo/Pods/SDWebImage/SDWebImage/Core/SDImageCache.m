@@ -448,7 +448,9 @@
     return [self queryCacheOperationForKey:key options:options context:context cacheType:SDImageCacheTypeAll done:doneBlock];
 }
 
+// 正式进入缓存查询
 - (nullable NSOperation *)queryCacheOperationForKey:(nullable NSString *)key options:(SDImageCacheOptions)options context:(nullable SDWebImageContext *)context cacheType:(SDImageCacheType)queryCacheType done:(nullable SDImageCacheQueryCompletionBlock)doneBlock {
+    // ①参数合法性判断
     if (!key) {
         if (doneBlock) {
             doneBlock(nil, nil, SDImageCacheTypeNone);
@@ -463,6 +465,7 @@
         return nil;
     }
     
+    // ②从内存缓存中查询我们需要的图片(直接从memoryCache中按照key来读取)
     // First check the in-memory cache...
     UIImage *image;
     if (queryCacheType != SDImageCacheTypeDisk) {
@@ -472,6 +475,7 @@
     if (image) {
         if (options & SDImageCacheDecodeFirstFrameOnly) {
             // Ensure static image
+            // 动图只解码第一帧（否则会全部解码）
             Class animatedImageClass = image.class;
             if (image.sd_isAnimated || ([animatedImageClass isSubclassOfClass:[UIImage class]] && [animatedImageClass conformsToProtocol:@protocol(SDAnimatedImage)])) {
 #if SD_MAC
@@ -482,6 +486,7 @@
             }
         } else if (options & SDImageCacheMatchAnimatedImageClass) {
             // Check image class matching
+            // 强制检查 image 类型是否匹配，否则将数据至 nil:
             Class animatedImageClass = image.class;
             Class desiredImageClass = context[SDWebImageContextAnimatedImageClass];
             if (desiredImageClass && ![animatedImageClass isSubclassOfClass:desiredImageClass]) {
@@ -490,6 +495,7 @@
         }
     }
 
+    // 判断是否是只需在内存中查找，如果是的话直接返回刚才查到的图片，并结束方法调用。如果不是的话，就去硬盘中查找。
     BOOL shouldQueryMemoryOnly = (queryCacheType == SDImageCacheTypeMemory) || (image && !(options & SDImageCacheQueryMemoryData));
     if (shouldQueryMemoryOnly) {
         if (doneBlock) {

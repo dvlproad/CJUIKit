@@ -11,6 +11,7 @@
 
 @interface CQTSNetImageDataModel : NSObject
 
+@property (nonatomic, assign) BOOL haveLoadImage;  /**< 设置此model的时候，是否已经下载了图片 */
 @property (nonatomic, copy) NSString *name;
 @property (nonatomic, copy) NSString *imageUrl;
 @property (nonatomic, strong) UIImage *imagePlaceholderImage;

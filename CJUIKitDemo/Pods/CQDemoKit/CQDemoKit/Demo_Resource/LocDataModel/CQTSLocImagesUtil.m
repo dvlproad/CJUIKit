@@ -10,6 +10,11 @@
 
 @implementation CQTSLocImagesUtil
 
+#pragma mark - placeholder Image
++ (UIImage *)cjts_placeholderImage01 {
+    return [UIImage imageNamed:@"CQDemoKit.bundle/cqts_placeholder01.jpg"];
+}
+
 /// 获取测试用的数据(image为本地图片)
 ///
 /// @param count 图片个数

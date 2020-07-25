@@ -18,10 +18,11 @@ NS_ASSUME_NONNULL_BEGIN
 
 /// 获取测试用的数据(image为网络图片地址)
 ///
-/// @param count 图片个数
+/// @param count        图片个数
+/// @param randomOrder  顺序是否随机
 ///
 /// @return 返回图片数据
-+ (NSMutableArray<CQTSNetImageDataModel *> *)__getTestNetImageDataModelsWithCount:(NSInteger)count;
++ (NSMutableArray<CQTSNetImageDataModel *> *)__getTestNetImageDataModelsWithCount:(NSInteger)count randomOrder:(BOOL)randomOrder;
 
 
 #pragma mark network ImageUrl

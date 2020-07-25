@@ -20,6 +20,7 @@
     
     NSOperationQueue *queue = [[NSOperationQueue alloc] init];
     queue.name = @"this is a queue";
+    queue.maxConcurrentOperationCount = 9;
     
     for (NSBlockOperation *operation in operations) {
         [queue addOperation:operation];

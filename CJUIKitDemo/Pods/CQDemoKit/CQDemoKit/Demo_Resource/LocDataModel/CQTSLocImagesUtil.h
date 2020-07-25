@@ -13,6 +13,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface CQTSLocImagesUtil : NSObject
 
+#pragma mark - placeholder Image
++ (UIImage *)cjts_placeholderImage01;
+
 /// 获取测试用的数据(image为本地图片)
 + (NSMutableArray<CQTSLocImageDataModel *> *)__getTestLocalImageDataModels;
 

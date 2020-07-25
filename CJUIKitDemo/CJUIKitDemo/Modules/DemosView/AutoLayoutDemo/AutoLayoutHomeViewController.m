@@ -8,6 +8,8 @@
 
 #import "AutoLayoutHomeViewController.h"
 
+#import "AutoLayoutViewController.h"
+
 #import "TranslucentLayoutViewController.h"
 #import "EdgeLayoutViewController.h"
 #import "TranslucentLayoutTableViewController.h"
@@ -27,6 +29,19 @@
     
     NSMutableArray *sectionDataModels = [[NSMutableArray alloc] init];
     
+    // intrinsic content size
+    {
+        CJSectionDataModel *sectionDataModel = [[CJSectionDataModel alloc] init];
+        sectionDataModel.theme = @"intrinsic content size";
+        {
+            CJModuleModel *dragViewModule = [[CJModuleModel alloc] init];
+            dragViewModule.title = @"intrinsic content size";
+            dragViewModule.classEntry = [AutoLayoutViewController class];
+            [sectionDataModel.values addObject:dragViewModule];
+        }
+        [sectionDataModels addObject:sectionDataModel];
+    }
+    
     //Layout
     {
         CJSectionDataModel *sectionDataModel = [[CJSectionDataModel alloc] init];
@@ -35,14 +50,12 @@
             CJModuleModel *dragViewModule = [[CJModuleModel alloc] init];
             dragViewModule.title = @"Translucent";
             dragViewModule.classEntry = [TranslucentLayoutViewController class];
-            dragViewModule.isCreateByXib = NO;
             [sectionDataModel.values addObject:dragViewModule];
         }
         {
             CJModuleModel *dragViewModule = [[CJModuleModel alloc] init];
             dragViewModule.title = @"Translucent";
             dragViewModule.classEntry = [TranslucentLayoutTableViewController class];
-            dragViewModule.isCreateByXib = NO;
             [sectionDataModel.values addObject:dragViewModule];
         }
         //edgesForExtendedLayout
@@ -50,14 +63,12 @@
             CJModuleModel *dragViewModule = [[CJModuleModel alloc] init];
             dragViewModule.title = @"edgesForExtendedLayout";
             dragViewModule.classEntry = [EdgeLayoutViewController class];
-            dragViewModule.isCreateByXib = NO;
             [sectionDataModel.values addObject:dragViewModule];
         }
         {
             CJModuleModel *dragViewModule = [[CJModuleModel alloc] init];
             dragViewModule.title = @"edgesForExtendedLayout";
             dragViewModule.classEntry = [EdgeLayoutTableViewController class];
-            dragViewModule.isCreateByXib = NO;
             [sectionDataModel.values addObject:dragViewModule];
         }
 

@@ -73,7 +73,6 @@
             CJModuleModel *autoLayoutModule = [[CJModuleModel alloc] init];
             autoLayoutModule.title = @"AutoLayout";
             autoLayoutModule.classEntry = [AutoLayoutHomeViewController class];
-            autoLayoutModule.isCreateByXib = NO;
             
             [sectionDataModel.values addObject:autoLayoutModule];
         }
@@ -90,7 +89,6 @@
             CJModuleModel *autoLayoutModule = [[CJModuleModel alloc] init];
             autoLayoutModule.title = @"testPushNavigationController";
             autoLayoutModule.selector = @selector(testPushNavigationController);
-            autoLayoutModule.isCreateByXib = NO;
             
             [sectionDataModel.values addObject:autoLayoutModule];
         }

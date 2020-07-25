@@ -7,7 +7,13 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "DemoConstant.h"
+
+
+typedef NS_ENUM(NSUInteger, DemoModuleType) {
+    DemoModuleTypeIot = 502,        /**< 秒秒测模块 */
+    DemoModuleTypeContract = 503,   /**< 电子合同/契约锁 */
+    DemoModuleTypeAsset = 504       /**< 资产管理模块 */
+};
 
 @interface DemoCacheUtil : NSObject
 
