@@ -65,19 +65,27 @@ PODS:
   - CJFoundation/NSString (0.1.3)
   - CJPicker (1.3.2)
   - CJPopupView/CJPopoverView (2.1.0)
-  - CQDemoKit (0.4.0):
-    - CQDemoKit/Demo_Resource (= 0.4.0)
-    - CQDemoKit/Home_Base (= 0.4.0)
-    - CQDemoKit/Home_Collection (= 0.4.0)
-    - CQDemoKit/Home_TextView (= 0.4.0)
-  - CQDemoKit/Demo_Resource (0.4.0)
-  - CQDemoKit/Home_Base (0.4.0):
-    - CJBaseUtil/CJDataUtil
+  - CQDemoKit/BaseUtil (0.5.2)
+  - CQDemoKit/BaseVC (0.5.2):
+    - CQDemoKit/BaseVC/Base (= 0.5.2)
+    - CQDemoKit/BaseVC/Collection (= 0.5.2)
+    - CQDemoKit/BaseVC/ScrollView (= 0.5.2)
+    - CQDemoKit/BaseVC/TableView (= 0.5.2)
+    - CQDemoKit/BaseVC/TextView (= 0.5.2)
+  - CQDemoKit/BaseVC/Base (0.5.2):
     - Masonry
-  - CQDemoKit/Home_Collection (0.4.0):
-    - CQDemoKit/Home_Base
-  - CQDemoKit/Home_TextView (0.4.0):
-    - CQDemoKit/Home_Base
+  - CQDemoKit/BaseVC/Collection (0.5.2):
+    - CJBaseUtil/CJDataUtil
+    - CQDemoKit/BaseVC/Base
+  - CQDemoKit/BaseVC/ScrollView (0.5.2):
+    - CQDemoKit/BaseVC/Base
+  - CQDemoKit/BaseVC/TableView (0.5.2):
+    - CJBaseUtil/CJDataUtil
+    - CQDemoKit/BaseVC/Base
+  - CQDemoKit/BaseVC/TextView (0.5.2):
+    - CJBaseUtil/CJDataUtil
+    - CQDemoKit/BaseUtil
+    - CQDemoKit/BaseVC/Base
   - FLAnimatedImage (1.0.12)
   - IQKeyboardManager (6.5.5)
   - Mantle (2.1.1):
@@ -110,7 +118,8 @@ DEPENDENCIES:
   - CJFoundation (from `../`)
   - CJPicker (~> 1.3.2)
   - CJPopupView/CJPopoverView
-  - CQDemoKit (~> 0.4.0)
+  - CQDemoKit/BaseUtil (~> 0.5.2)
+  - CQDemoKit/BaseVC (~> 0.5.2)
   - FLAnimatedImage
   - IQKeyboardManager
   - Mantle (~> 2.1.0)
@@ -172,7 +181,7 @@ SPEC CHECKSUMS:
   CJFoundation: 53b4df7152c6d6fd776f55f387c67f431b8574bd
   CJPicker: c33099d47323271b91c2ce112976d1bee19a70ce
   CJPopupView: c7685f6a0225a89c72d97ea946f2816b5442abaf
-  CQDemoKit: 85bdf8abb83cc62c2746679107603a326215cf09
+  CQDemoKit: 94f6c3052a056481c0d79e2db5d50130d9e99a91
   FLAnimatedImage: 4a0b56255d9b05f18b6dd7ee06871be5d3b89e31
   IQKeyboardManager: 3a8b9e603f8b0eeaf5f096a1f2b2cfcf121992ef
   Mantle: 35238ae6f2e2b2d474fa7b67fee82a59fea71915
@@ -189,6 +198,6 @@ SPEC CHECKSUMS:
   UINavigation-SXFixSpace: 10f223253ebff2ceefa26694e23b7694269763c4
   YYText: 5c461d709e24d55a182d1441c41dc639a18a4849
 
-PODFILE CHECKSUM: 65c185c10df81808142524b4c3729bed98fb201a
+PODFILE CHECKSUM: e94fdb7ed97e7e079ec2073f77a5f4fdcd95c99b
 
 COCOAPODS: 1.9.3

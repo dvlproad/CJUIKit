@@ -1,1 +1,1 @@
-../../../CQDemoKit/CQDemoKit/Collection/CJUIKitCollectionViewCell.h
+../../../CQDemoKit/CQDemoKit/BaseVC/Collection/CJUIKitCollectionViewCell.h

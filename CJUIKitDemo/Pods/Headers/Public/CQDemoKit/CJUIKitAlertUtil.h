@@ -1,1 +1,1 @@
-../../../CQDemoKit/CQDemoKit/Base/Util/CJUIKitAlertUtil.h
+../../../CQDemoKit/CQDemoKit/BaseUtil/CJUIKitAlertUtil.h
