@@ -71,7 +71,6 @@ target 'CJUIKitDemo' do
     
     pod 'IQKeyboardManager'
     pod 'SDWebImage'
-    pod 'FLAnimatedImage'
     pod 'UINavigation-SXFixSpace'
     
     pod 'AFNetworking/Reachability'

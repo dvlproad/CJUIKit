@@ -86,7 +86,6 @@ PODS:
     - CJBaseUtil/CJDataUtil
     - CQDemoKit/BaseUtil
     - CQDemoKit/BaseVC/Base
-  - FLAnimatedImage (1.0.12)
   - IQKeyboardManager (6.5.5)
   - Mantle (2.1.1):
     - Mantle/extobjc (= 2.1.1)
@@ -120,7 +119,6 @@ DEPENDENCIES:
   - CJPopupView/CJPopoverView
   - CQDemoKit/BaseUtil (~> 0.5.2)
   - CQDemoKit/BaseVC (~> 0.5.2)
-  - FLAnimatedImage
   - IQKeyboardManager
   - Mantle (~> 2.1.0)
   - Masonry
@@ -145,7 +143,6 @@ SPEC REPOS:
     - CJPicker
     - CJPopupView
     - CQDemoKit
-    - FLAnimatedImage
     - IQKeyboardManager
     - Mantle
     - Masonry
@@ -182,7 +179,6 @@ SPEC CHECKSUMS:
   CJPicker: c33099d47323271b91c2ce112976d1bee19a70ce
   CJPopupView: c7685f6a0225a89c72d97ea946f2816b5442abaf
   CQDemoKit: 94f6c3052a056481c0d79e2db5d50130d9e99a91
-  FLAnimatedImage: 4a0b56255d9b05f18b6dd7ee06871be5d3b89e31
   IQKeyboardManager: 3a8b9e603f8b0eeaf5f096a1f2b2cfcf121992ef
   Mantle: 35238ae6f2e2b2d474fa7b67fee82a59fea71915
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
@@ -198,6 +194,6 @@ SPEC CHECKSUMS:
   UINavigation-SXFixSpace: 10f223253ebff2ceefa26694e23b7694269763c4
   YYText: 5c461d709e24d55a182d1441c41dc639a18a4849
 
-PODFILE CHECKSUM: e94fdb7ed97e7e079ec2073f77a5f4fdcd95c99b
+PODFILE CHECKSUM: 272b26045819cfa5a75c787ea8f855651f1151be
 
 COCOAPODS: 1.9.3

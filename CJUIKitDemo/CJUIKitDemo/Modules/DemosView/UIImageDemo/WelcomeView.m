@@ -152,6 +152,7 @@
 }
 
 - (void)itemDidFinishPlaying:(NSNotification*)noti{
+    NSLog(@"欢迎页视频播放结束");
 //    [self endAd];
 }
 
@@ -168,6 +169,7 @@
                isImageFirst:(BOOL)isImageFirst
 {
     if (image) {
+        NSLog(@"有欢迎页图片，则播放欢迎页图片");
         [self addSubview:self.welcomeImageView];
         [self.welcomeImageView mas_makeConstraints:^(MASConstraintMaker *make) {
             make.edges.mas_equalTo(self);
@@ -175,6 +177,7 @@
         
         self.welcomeImageView.image = image;
     } else {
+        NSLog(@"没有欢迎页图片，则播放欢迎页视频");
         playerItem = [AVPlayerItem playerItemWithURL:movieURL];
         [playerItem addObserver:self forKeyPath:@"status" options:NSKeyValueObservingOptionInitial | NSKeyValueObservingOptionNew  context:@"AVPlayerStatus"];
         [[AVAudioSession sharedInstance] setCategory: AVAudioSessionCategoryPlayback withOptions:AVAudioSessionCategoryOptionMixWithOthers error: nil];

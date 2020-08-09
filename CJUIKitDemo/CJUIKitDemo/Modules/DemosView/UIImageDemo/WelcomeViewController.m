@@ -14,7 +14,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    NSString *imageUrl = @"http://pic33.nipic.com/20131007/13639685_123501617185_2.jpg";
+    NSString *imageUrl = @"https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=1697850329,1416483110&fm=26&gp=0.jpg";
     NSURL *imageURL = [NSURL URLWithString:imageUrl];
     
     NSString *filePath = [NSString stringWithFormat:@"%@/%@", [[NSBundle mainBundle] bundlePath], @"welcome.mp4"];
