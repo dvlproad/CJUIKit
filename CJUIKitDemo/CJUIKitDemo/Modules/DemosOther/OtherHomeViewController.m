@@ -8,7 +8,6 @@
 
 #import "OtherHomeViewController.h"
 
-#import "ProcessLineViewController.h"
 #import "CountDownTimeViewController.h"
 
 
@@ -25,20 +24,7 @@
     self.navigationItem.title = NSLocalizedString(@"基础小视图首页", nil);
     
     NSMutableArray *sectionDataModels = [[NSMutableArray alloc] init];
-    //QuartzCore
-    {
-        CJSectionDataModel *sectionDataModel = [[CJSectionDataModel alloc] init];
-        sectionDataModel.theme = @"QuartzCore相关(如画线)";
-        {
-            //ProcessLineViewController
-            CJModuleModel *processLineViewModule = [[CJModuleModel alloc] init];
-            processLineViewModule.title = @"流程线(ProcessLineView)";
-            processLineViewModule.classEntry = [ProcessLineViewController class];
-            [sectionDataModel.values addObject:processLineViewModule];
-        }
-        [sectionDataModels addObject:sectionDataModel];
-    }
-    
+        
     //其他
     {
         CJSectionDataModel *sectionDataModel = [[CJSectionDataModel alloc] init];

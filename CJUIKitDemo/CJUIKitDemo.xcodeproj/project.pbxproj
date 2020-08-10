@@ -116,8 +116,6 @@
 		782ACC98223C0E220041B642 /* CodeScrollViewController1.m in Sources */ = {isa = PBXBuildFile; fileRef = 782ACC97223C0E220041B642 /* CodeScrollViewController1.m */; };
 		782F8770225AE80F001ACE76 /* cjTextField_clear@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 782F876E225AE80F001ACE76 /* cjTextField_clear@2x.png */; };
 		782F8771225AE80F001ACE76 /* cjTextField_clear@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 782F876F225AE80F001ACE76 /* cjTextField_clear@3x.png */; };
-		783281041F4198BC008267E0 /* CustomTripProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 783281031F4198BC008267E0 /* CustomTripProgressView.m */; };
-		7832810D1F41AA96008267E0 /* ProcessLineView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7832810C1F41AA96008267E0 /* ProcessLineView.m */; };
 		783A4A19219BC73500CBF4FC /* NSObject+CJSharedInstance.m in Sources */ = {isa = PBXBuildFile; fileRef = 783A4A18219BC73500CBF4FC /* NSObject+CJSharedInstance.m */; };
 		784A7216214C9DF000F8D144 /* MoreHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 784A7215214C9DF000F8D144 /* MoreHomeViewController.m */; };
 		784C87FF216F2B1D00AFEE7D /* SemaphoreGateKeeperViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 784C87FD216F2B1D00AFEE7D /* SemaphoreGateKeeperViewController.m */; };
@@ -326,8 +324,6 @@
 		80FF919C1FC5682B00E437CF /* CountDownTimeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80FF91851FC5682A00E437CF /* CountDownTimeViewController.m */; };
 		80FF919D1FC5682B00E437CF /* CountDownTimeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 80FF91861FC5682A00E437CF /* CountDownTimeViewController.xib */; };
 		80FF919E1FC5682B00E437CF /* OtherHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80FF91881FC5682A00E437CF /* OtherHomeViewController.m */; };
-		80FF919F1FC5682B00E437CF /* ProcessLineViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 80FF918C1FC5682A00E437CF /* ProcessLineViewController.xib */; };
-		80FF91A01FC5682B00E437CF /* ProcessLineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80FF918D1FC5682A00E437CF /* ProcessLineViewController.m */; };
 		80FF91C51FC581DD00E437CF /* UtilHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80FF91BF1FC581DD00E437CF /* UtilHomeViewController.m */; };
 		E2649F5BE7F7FEF404688168 /* libPods-CJUIKitDemoTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 935109AAB855F6CC8B84B9A5 /* libPods-CJUIKitDemoTests.a */; };
 /* End PBXBuildFile section */
@@ -552,10 +548,6 @@
 		782ACC97223C0E220041B642 /* CodeScrollViewController1.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CodeScrollViewController1.m; sourceTree = "<group>"; };
 		782F876E225AE80F001ACE76 /* cjTextField_clear@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cjTextField_clear@2x.png"; sourceTree = "<group>"; };
 		782F876F225AE80F001ACE76 /* cjTextField_clear@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cjTextField_clear@3x.png"; sourceTree = "<group>"; };
-		783281021F4198BC008267E0 /* CustomTripProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomTripProgressView.h; sourceTree = "<group>"; };
-		783281031F4198BC008267E0 /* CustomTripProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomTripProgressView.m; sourceTree = "<group>"; };
-		7832810B1F41AA96008267E0 /* ProcessLineView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProcessLineView.h; sourceTree = "<group>"; };
-		7832810C1F41AA96008267E0 /* ProcessLineView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProcessLineView.m; sourceTree = "<group>"; };
 		783A4A17219BC73500CBF4FC /* NSObject+CJSharedInstance.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSObject+CJSharedInstance.h"; sourceTree = "<group>"; };
 		783A4A18219BC73500CBF4FC /* NSObject+CJSharedInstance.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSObject+CJSharedInstance.m"; sourceTree = "<group>"; };
 		784A7214214C9DF000F8D144 /* MoreHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoreHomeViewController.h; sourceTree = "<group>"; };
@@ -910,9 +902,6 @@
 		80FF91871FC5682A00E437CF /* CountDownTimeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CountDownTimeViewController.h; sourceTree = "<group>"; };
 		80FF91881FC5682A00E437CF /* OtherHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OtherHomeViewController.m; sourceTree = "<group>"; };
 		80FF91891FC5682A00E437CF /* OtherHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OtherHomeViewController.h; sourceTree = "<group>"; };
-		80FF918B1FC5682A00E437CF /* ProcessLineViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProcessLineViewController.h; sourceTree = "<group>"; };
-		80FF918C1FC5682A00E437CF /* ProcessLineViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProcessLineViewController.xib; sourceTree = "<group>"; };
-		80FF918D1FC5682A00E437CF /* ProcessLineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProcessLineViewController.m; sourceTree = "<group>"; };
 		80FF91BE1FC581DD00E437CF /* UtilHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UtilHomeViewController.h; sourceTree = "<group>"; };
 		80FF91BF1FC581DD00E437CF /* UtilHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UtilHomeViewController.m; sourceTree = "<group>"; };
 		935109AAB855F6CC8B84B9A5 /* libPods-CJUIKitDemoTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CJUIKitDemoTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -1457,7 +1446,6 @@
 				80FF8F0A1FC5649E00E437CF /* Modules */,
 				80FF91021FC5668700E437CF /* CJBaseUtil */,
 				80FF90D71FC5668600E437CF /* CJFoundation */,
-				783281011F4198BC008267E0 /* CJSmallCustomView */,
 				789A19681E61B87D008081E3 /* Resources */,
 				780E46031E5DF87B00980127 /* Supporting Files */,
 				808BF3212019C3E900511F7C /* CommonUtil */,
@@ -1544,18 +1532,6 @@
 				78293F0721FC2B9C00F70F43 /* KeyboardAvoidingViewController.m */,
 			);
 			path = UIScrollViewDemo;
-			sourceTree = "<group>";
-		};
-		783281011F4198BC008267E0 /* CJSmallCustomView */ = {
-			isa = PBXGroup;
-			children = (
-				783281021F4198BC008267E0 /* CustomTripProgressView.h */,
-				783281031F4198BC008267E0 /* CustomTripProgressView.m */,
-				7832810B1F41AA96008267E0 /* ProcessLineView.h */,
-				7832810C1F41AA96008267E0 /* ProcessLineView.m */,
-			);
-			name = CJSmallCustomView;
-			path = ../../CJSmallCustomView;
 			sourceTree = "<group>";
 		};
 		783A4A16219BC71700CBF4FC /* NSObject */ = {
@@ -2473,7 +2449,6 @@
 				80FF91891FC5682A00E437CF /* OtherHomeViewController.h */,
 				80FF91881FC5682A00E437CF /* OtherHomeViewController.m */,
 				80FF91841FC5682A00E437CF /* CountDownTimeDemo */,
-				80FF918A1FC5682A00E437CF /* ProcessLineViewDemo */,
 			);
 			path = DemosOther;
 			sourceTree = "<group>";
@@ -2486,16 +2461,6 @@
 				80FF91861FC5682A00E437CF /* CountDownTimeViewController.xib */,
 			);
 			path = CountDownTimeDemo;
-			sourceTree = "<group>";
-		};
-		80FF918A1FC5682A00E437CF /* ProcessLineViewDemo */ = {
-			isa = PBXGroup;
-			children = (
-				80FF918B1FC5682A00E437CF /* ProcessLineViewController.h */,
-				80FF918C1FC5682A00E437CF /* ProcessLineViewController.xib */,
-				80FF918D1FC5682A00E437CF /* ProcessLineViewController.m */,
-			);
-			path = ProcessLineViewDemo;
 			sourceTree = "<group>";
 		};
 		80FF91B31FC581DD00E437CF /* DemosUtil */ = {
@@ -2698,7 +2663,6 @@
 				7850B70320937C5A008F4A21 /* ShowExtendViewVC.xib in Resources */,
 				805598B61FF5D612009DC61C /* ValidateStringViewController.xib in Resources */,
 				787FDB9420500B5C008A46E3 /* slider_thumbImage@3x.png in Resources */,
-				80FF919F1FC5682B00E437CF /* ProcessLineViewController.xib in Resources */,
 				78B90E67218B49D000776584 /* MainAsset.xcassets in Resources */,
 				1562F2DD23F5DBF40009FCEA /* cjBackBarButtonItemGray@2x.png in Resources */,
 				7850B71220937E85008F4A21 /* WelcomePopupView.xib in Resources */,
@@ -2928,7 +2892,6 @@
 				78E18952217778D900B8781A /* NavigationBarHomeViewController.m in Sources */,
 				80D0120F210336E100D1EDF0 /* ChangeViewController.m in Sources */,
 				1562F2F323F5DBF40009FCEA /* UITextField+CJSelectedTextRange.m in Sources */,
-				80FF91A01FC5682B00E437CF /* ProcessLineViewController.m in Sources */,
 				1562F2C323F5DBF40009FCEA /* UIColor+CJHex.m in Sources */,
 				1562F2D623F5DBF40009FCEA /* CJBaseTableViewCell.m in Sources */,
 				787FDB8620500B5C008A46E3 /* SliderViewController.m in Sources */,
@@ -2988,7 +2951,6 @@
 				808DE5E720DA0586003E08F1 /* CJDecimalUtil.m in Sources */,
 				1562F2E123F5DBF40009FCEA /* CJSwitchSlider.m in Sources */,
 				80FF90B01FC5649F00E437CF /* NavigationBarScrollChangeBGViewController.m in Sources */,
-				7832810D1F41AA96008267E0 /* ProcessLineView.m in Sources */,
 				805598B51FF5D612009DC61C /* ValidateStringViewController.m in Sources */,
 				1562F2C123F5DBF40009FCEA /* CJButton.m in Sources */,
 				80FF91971FC5682B00E437CF /* EncryptStringViewController.m in Sources */,
@@ -3007,7 +2969,6 @@
 				78A621E02135C78B004DA046 /* DemoSuspendWindow+CJSuspendWindowManager.m in Sources */,
 				1562F2BE23F5DBF40009FCEA /* CJBadgeButton.m in Sources */,
 				1562F2D023F5DBF40009FCEA /* CJTableViewHeaderFooterView.m in Sources */,
-				783281041F4198BC008267E0 /* CustomTripProgressView.m in Sources */,
 				8060C48020E0D0630093B14E /* CJMoneyUtil.m in Sources */,
 				80582FA120C121B500C01225 /* ImageRotateViewController.m in Sources */,
 				781C736921BA5E140090080C /* NSCalendarCJHelperViewController.m in Sources */,

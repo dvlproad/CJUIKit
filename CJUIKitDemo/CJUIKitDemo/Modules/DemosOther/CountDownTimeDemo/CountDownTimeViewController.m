@@ -7,6 +7,7 @@
 //
 
 #import "CountDownTimeViewController.h"
+#import <CJBaseUtil/CJTimerManager.h>
 
 static CGFloat kPeriodDuration = 5.0f;
 
