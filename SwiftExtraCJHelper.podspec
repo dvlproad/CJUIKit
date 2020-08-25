@@ -19,6 +19,7 @@ Pod::Spec.new do |s|
   # s.social_media_url   = "http://twitter.com/dvlproad"
 
   s.platform     = :ios, "9.0"
+  s.swift_version = '4.0'
 
   s.source       = { :git => "https://github.com/dvlproad/CJUIKit.git", :tag => "SwiftExtraCJHelper_0.1.0" }
   # s.source_files  = "CJBaseUtil/*.{h,m}"
