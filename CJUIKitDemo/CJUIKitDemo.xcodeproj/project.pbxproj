@@ -1349,16 +1349,16 @@
 		1562F2A023F5DBF40009FCEA /* UITextField */ = {
 			isa = PBXGroup;
 			children = (
-				1562F2A123F5DBF40009FCEA /* UITextField+CJPadding.h */,
-				1562F2A223F5DBF40009FCEA /* UITextField+CJForbidKeyboard.h */,
-				1562F2A323F5DBF40009FCEA /* UITextFieldCJCategory.h */,
-				1562F2A423F5DBF40009FCEA /* UITextField+CJTextChangeBlock.m */,
-				1562F2A523F5DBF40009FCEA /* UITextField+CJSelectedTextRange.h */,
-				1562F2A623F5DBF40009FCEA /* UITextField+CJForbidKeyboard.m */,
 				1562F2A723F5DBF40009FCEA /* CJTextField */,
+				1562F2A223F5DBF40009FCEA /* UITextField+CJForbidKeyboard.h */,
+				1562F2A623F5DBF40009FCEA /* UITextField+CJForbidKeyboard.m */,
+				1562F2A123F5DBF40009FCEA /* UITextField+CJPadding.h */,
 				1562F2AC23F5DBF40009FCEA /* UITextField+CJPadding.m */,
+				1562F2A523F5DBF40009FCEA /* UITextField+CJSelectedTextRange.h */,
 				1562F2AD23F5DBF40009FCEA /* UITextField+CJSelectedTextRange.m */,
 				1562F2AE23F5DBF40009FCEA /* UITextField+CJTextChangeBlock.h */,
+				1562F2A423F5DBF40009FCEA /* UITextField+CJTextChangeBlock.m */,
+				1562F2A323F5DBF40009FCEA /* UITextFieldCJCategory.h */,
 			);
 			path = UITextField;
 			sourceTree = "<group>";
