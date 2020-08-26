@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
   #验证方法：pod lib lint SwiftExtraCJHelper.podspec --allow-warnings --use-libraries --verbose
   s.name         = "SwiftExtraCJHelper"
-  s.version      = "0.1.0"
+  s.version      = "0.1.1"
   s.summary      = "Swift/OC帮助类"
   s.homepage     = "https://github.com/dvlproad/CJUIKit.git"
   s.license      = "MIT"
@@ -21,7 +21,7 @@ Pod::Spec.new do |s|
   s.platform     = :ios, "9.0"
   s.swift_version = '4.0'
 
-  s.source       = { :git => "https://github.com/dvlproad/CJUIKit.git", :tag => "SwiftExtraCJHelper_0.1.0" }
+  s.source       = { :git => "https://github.com/dvlproad/CJUIKit.git", :tag => "SwiftExtraCJHelper_0.1.1" }
   # s.source_files  = "CJBaseUtil/*.{h,m}"
   # s.resources = "CJBaseUtil/**/*.{png}"
   s.frameworks = 'UIKit'

@@ -2,16 +2,15 @@
 //  NSClassFromStringCJHelper.swift
 //  TSOverlayDemo_Swift
 //
-//  Created by 李超前 on 2020/8/9.
+//  Created by ciyouzen on 2020/8/9.
 //  Copyright © 2020 dvlproad. All rights reserved.
 //
 
 import UIKit
 
-//[Swift中关于NSClassFromString获取不到类](https://www.jianshu.com/p/bb4ddb63d709)
-class NSClassFromStringCJHelper: NSObject {
+open class NSClassFromStringCJHelper: NSObject {
     // className:想要转换类名的字符串
-    class func controllerFormString(className: String, isOC:Bool = false, nameSpace: String = "") -> UIViewController{
+    open class func controllerFormString(className: String, isOC:Bool = false, nameSpace: String = "") -> UIViewController{
         var lastClassName : String!
         
         if isOC {
