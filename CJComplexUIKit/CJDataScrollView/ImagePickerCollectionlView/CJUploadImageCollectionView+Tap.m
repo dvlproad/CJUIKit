@@ -20,7 +20,7 @@
     UIViewController *currentShowingVC = [UIViewControllerCJHelper findCurrentShowingViewController];
     
     if (self.mediaType == CJMediaTypeVideo) {
-        CJImageUploadFileModelsOwner *imageUploadItem = [self.dataModels objectAtIndex:indexPath.row];
+        CJImageUploadFileModelsOwner *imageUploadItem = [self.equalCellSizeCollectionViewDataSource.dataModels objectAtIndex:indexPath.row];
         NSString *localPath = [NSHomeDirectory() stringByAppendingPathComponent:imageUploadItem.localRelativePath];
         NSURL *videoURL = [NSURL fileURLWithPath:localPath];
         MPMoviePlayerViewController *moviePlayerController = [[MPMoviePlayerViewController alloc] initWithContentURL:videoURL];
@@ -29,7 +29,7 @@
         [currentShowingVC presentMoviePlayerViewControllerAnimated:moviePlayerController];
         
     } else {
-        for (CJImageUploadFileModelsOwner *imageUploadItem in self.dataModels) {
+        for (CJImageUploadFileModelsOwner *imageUploadItem in self.equalCellSizeCollectionViewDataSource.dataModels) {
             UIImage *image = imageUploadItem.image;
             if (image == nil) {
                 image = nil;    //试着从本地种查找
@@ -40,8 +40,8 @@
 }
 
 - (void)didTapToAddMediaUploadItemAction {
-    NSInteger maxDataModelShowCount = self.equalCellSizeCollectionViewDataSource.dataSourceSettingModel.maxDataModelShowCount;
-    if (self.dataModels.count >= maxDataModelShowCount) {
+    NSInteger maxDataModelShowCount = self.equalCellSizeCollectionViewDataSource.maxDataModelShowCount;
+    if (self.equalCellSizeCollectionViewDataSource.dataModels.count >= maxDataModelShowCount) {
         //[UIGlobal showMessage:@"图片数量已达上限"];
         NSLog(@"所选媒体数量已达上限");
         return;
@@ -51,7 +51,7 @@
     
     
     __weak typeof(self)weakSelf = self;
-    NSInteger canMaxChooseImageCount = maxDataModelShowCount - self.dataModels.count;
+    NSInteger canMaxChooseImageCount = maxDataModelShowCount - self.equalCellSizeCollectionViewDataSource.dataModels.count;
     if (self.mediaType == CJMediaTypeVideo) { //视频选择
         if (self.pickVideoHandle) {
             self.pickVideoHandle();
@@ -61,7 +61,7 @@
         
     } else { // 图片选择
         [CJChooseFileActionSheetUtil defaultImageChooseWithCanMaxChooseImageCount:canMaxChooseImageCount pickCompleteBlock:^(NSArray<CJImageUploadFileModelsOwner *> * _Nonnull pickedImageItems) {
-            [weakSelf.dataModels addObjectsFromArray:pickedImageItems];
+            [weakSelf.equalCellSizeCollectionViewDataSource.dataModels addObjectsFromArray:pickedImageItems];
             [weakSelf reloadData];
             if (weakSelf.pickImageCompleteBlock) {
                 weakSelf.pickImageCompleteBlock();

@@ -46,6 +46,8 @@ static NSString * const CJUploadCollectionViewCellAddID = @"CJUploadCollectionVi
     }
     return self;
 }
+
+
 - (void)setupConfigure {
     
     self.backgroundColor = [UIColor clearColor];
@@ -63,21 +65,20 @@ static NSString * const CJUploadCollectionViewCellAddID = @"CJUploadCollectionVi
     CJDataSourceSettingModel *dataSourceSettingModel = [[CJDataSourceSettingModel alloc] init];
     dataSourceSettingModel.maxDataModelShowCount = 5;
     dataSourceSettingModel.extralItemSetting = CJExtralItemSettingTailing;
-    CQExtralItemCollectionViewDataSource *equalCellSizeCollectionViewDataSource = [[CQExtralItemCollectionViewDataSource alloc] initWithDataSourceSettingModel:dataSourceSettingModel cellForItemAtIndexPathBlock:^UICollectionViewCell *(UICollectionView *collectionView, NSIndexPath *indexPath, BOOL isExtralItem) {
-        if (!isExtralItem) {
-            CJUploadCollectionViewCell *dataCell = [collectionView dequeueReusableCellWithReuseIdentifier:CJUploadCollectionViewCellID forIndexPath:indexPath];
-            [self __operateDataCell:dataCell withIndexPath:indexPath isSettingOperate:YES];
-            
-            return dataCell;
-            
-        } else {
-            CJUploadCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:CJUploadCollectionViewCellAddID forIndexPath:indexPath];
-            
-            cell.cjImageView.image = [UIImage imageNamed:@"cjCollectionViewCellAdd"];
-            [cell.cjDeleteButton setImage:nil forState:UIControlStateNormal];
-            
-            return cell;
-        }
+    CQExtralItemCollectionViewDataSource *equalCellSizeCollectionViewDataSource = [[CQExtralItemCollectionViewDataSource alloc] initWithMaxShowCount:5 cellForPrefixBlock:^UICollectionViewCell *(CQExtralItemCollectionViewDataSource *bDataSource, UICollectionView *collectionView, NSIndexPath *indexPath) {
+        CJUploadCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:CJUploadCollectionViewCellAddID forIndexPath:indexPath];
+        
+        cell.cjImageView.image = [UIImage imageNamed:@"cjCollectionViewCellAdd"];
+        [cell.cjDeleteButton setImage:nil forState:UIControlStateNormal];
+        
+        return cell;
+        
+    } cellForSuffixBlock:nil cellForItemBlock:^UICollectionViewCell *(CQExtralItemCollectionViewDataSource *bDataSource, UICollectionView *collectionView, NSIndexPath *indexPath) {
+    
+        CJUploadCollectionViewCell *dataCell = [collectionView dequeueReusableCellWithReuseIdentifier:CJUploadCollectionViewCellID forIndexPath:indexPath];
+        [self __operateDataCell:dataCell withIndexPath:indexPath isSettingOperate:YES];
+        
+        return dataCell;
     }];
     self.equalCellSizeCollectionViewDataSource = equalCellSizeCollectionViewDataSource;
     
@@ -86,8 +87,7 @@ static NSString * const CJUploadCollectionViewCellAddID = @"CJUploadCollectionVi
     self.dataSource = self.equalCellSizeCollectionViewDataSource;
     self.delegate = self;
     
-    self.dataModels = [[NSMutableArray alloc] init];
-    self.equalCellSizeCollectionViewDataSource.dataModels = self.dataModels;
+    self.equalCellSizeCollectionViewDataSource.dataModels = [[NSMutableArray alloc] init];
 }
 
 
@@ -97,13 +97,6 @@ static NSString * const CJUploadCollectionViewCellAddID = @"CJUploadCollectionVi
 //    _dataModels = dataModels;
 //    
 //}
-
-#pragma mark - Update
-/// 更新额外cell的样式即位置，(默认不添加）
-- (void)updateExtralItemSetting:(CJExtralItemSetting)extralItemSetting {
-    [self.equalCellSizeCollectionViewDataSource updateExtralItemSetting:extralItemSetting];
-}
-
 
 #pragma mark - UICollectionViewDelegate
 ////“点到”item时候执行的时间(allowsMultipleSelection为默认的NO的时候，只有选中，而为YES的时候有选中和取消选中两种操作)
@@ -120,10 +113,9 @@ static NSString * const CJUploadCollectionViewCellAddID = @"CJUploadCollectionVi
                            indexPath:(NSIndexPath *)indexPath
                           isDeselect:(BOOL)isDeselect
 {
-    BOOL isExtralItem = [self.equalCellSizeCollectionViewDataSource isExtraItemIndexPath:indexPath];
-    
-    if (!isExtralItem) {
-        CJUploadFileModelsOwner *baseUploadItem = [self.dataModels objectAtIndex:indexPath.row];
+    NSInteger itemIndex = [self.equalCellSizeCollectionViewDataSource itemIndexByIndexPath:indexPath];
+    if (itemIndex != -1) { // -1代表不是额外的item
+        CJUploadFileModelsOwner *baseUploadItem = [self.equalCellSizeCollectionViewDataSource dataModelAtIndexPath:indexPath];
         
         CJUploadMomentInfo *momentInfo = baseUploadItem.momentInfo;
         if (momentInfo.uploadState == CJUploadMomentStateFailure) {
@@ -166,6 +158,28 @@ static NSString * const CJUploadCollectionViewCellAddID = @"CJUploadCollectionVi
         dataCell.backgroundColor = [UIColor whiteColor];
     }
     
+    // cell 的删除操作
+    __weak typeof(self)weakCollectionView = self;
+    [dataCell setDeleteHandle:^(CJUploadCollectionViewCell *baseCell) {
+        if (dataModel.operation) { //如果有请求任务，则还应该取消掉该任务
+            [dataModel.operation cancel];
+        }
+        NSIndexPath *indexPath = [weakCollectionView indexPathForCell:baseCell];
+        
+        __strong __typeof(weakCollectionView)strongCollectionView = weakCollectionView;
+        [strongCollectionView.equalCellSizeCollectionViewDataSource deletePhotoAtIndexPath:indexPath];
+        
+        NSInteger currentCount = strongCollectionView.equalCellSizeCollectionViewDataSource.dataModels.count;
+        NSInteger oldCount = [strongCollectionView numberOfItemsInSection:0];
+        //NSLog(@"currentCount = %zd, oldCount = %zd", currentCount, oldCount);
+        if (currentCount == oldCount) {
+            [weakCollectionView deleteItemsAtIndexPaths:@[indexPath]];
+        } else {
+            [weakCollectionView reloadData];
+        }
+    }];
+    
+    
     // 完善cell这个view的上传请求
     if (self.uploadActionType == CJUploadActionTypeNone) {
         return;
@@ -173,7 +187,7 @@ static NSString * const CJUploadCollectionViewCellAddID = @"CJUploadCollectionVi
     CJUploadMomentInfo *momentInfo = dataModel.momentInfo;
     [dataCell.uploadProgressView updateProgressText:momentInfo.uploadStatePromptText progressVaule:momentInfo.progressValue];//调用此方法避免reload时候显示错误
     
-    __weak typeof(self)weakCollectionView = self;
+    
     void (^uploadInfoChangeBlock)(CJUploadFileModelsOwner *itemThatSaveUploadInfo) = ^(CJUploadFileModelsOwner *itemThatSaveUploadInfo) {
         CJImageUploadFileModelsOwner *imageItem = (CJImageUploadFileModelsOwner *)itemThatSaveUploadInfo;
         CJUploadCollectionViewCell *myCell = (CJUploadCollectionViewCell *)[weakCollectionView cellForItemAtIndexPath:imageItem.indexPath];
@@ -223,39 +237,15 @@ static NSString * const CJUploadCollectionViewCellAddID = @"CJUploadCollectionVi
         strongItem.operation = newOperation;
     }];
     
-    //完善cell的deleteButton的操作
-    [dataCell setDeleteHandle:^(CJUploadCollectionViewCell *baseCell) {
-        if (dataModel.operation) { //如果有请求任务，则还应该取消掉该任务
-            [dataModel.operation cancel];
-        }
-        NSIndexPath *indexPath = [weakCollectionView indexPathForCell:baseCell];
-        
-        __strong __typeof(weakCollectionView)strongCollectionView = weakCollectionView;
-        [strongCollectionView.dataModels removeObjectAtIndex:indexPath.item];
-        NSInteger currentCount = strongCollectionView.dataModels.count;
-        NSInteger oldCount = [strongCollectionView numberOfItemsInSection:0];
-        //NSLog(@"currentCount = %zd, oldCount = %zd", currentCount, oldCount);
-        if (currentCount == oldCount) {
-            [weakCollectionView deleteItemsAtIndexPaths:@[indexPath]];
-        } else {
-            [weakCollectionView reloadData];
-        }
-    }];
+    
 }
 
 
-///删除第几张图片
-- (void)deletePhoto:(NSInteger)index
-{
-    if (self.dataModels.count > index) {
-        [self.dataModels removeObjectAtIndex:index];
-        [self reloadData];
-    }
-}
+
 
 
 - (BOOL)isAllUploadFinish {
-    for (CJUploadFileModelsOwner *uploadItem in self.dataModels) {
+    for (CJUploadFileModelsOwner *uploadItem in self.equalCellSizeCollectionViewDataSource.dataModels) {
         CJUploadMomentInfo *momentInfo = uploadItem.momentInfo;
         if (momentInfo.uploadState == CJUploadMomentStateFailure) {
             NSLog(@"Failure:请等待所有附件上传完成");
