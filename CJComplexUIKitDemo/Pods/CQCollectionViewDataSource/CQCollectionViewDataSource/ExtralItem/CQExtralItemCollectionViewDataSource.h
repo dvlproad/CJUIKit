@@ -8,7 +8,6 @@
 
 #import <UIKit/UIKit.h>
 #import <Foundation/Foundation.h>
-#import "CJDataSourceSettingModel.h"
 
 @class CQExtralItemCollectionViewDataSource;
 typedef UICollectionViewCell* (^CQPreSufItemCellAtIndexPathBlock)(CQExtralItemCollectionViewDataSource *bDataSource, UICollectionView *collectionView, NSIndexPath *indexPath);
@@ -20,7 +19,7 @@ typedef UICollectionViewCell* (^CQPreSufItemCellAtIndexPathBlock)(CQExtralItemCo
     
 }
 @property (nonatomic, strong) NSMutableArray *dataModels;
-@property (nonatomic, assign, readonly) NSUInteger maxDataModelShowCount; /**< 集合视图最大显示的dataModel数目(默认NSIntegerMax即无限制) */
+@property (nonatomic, assign, readonly) NSInteger currentCanMaxAddCount;  /**< 当前剩余最多可添加多少个 */
 
 /*
  *  初始化dataSource类(初始化完之后，必须在之后设置想要展示的数据dataModels)

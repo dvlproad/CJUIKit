@@ -10,7 +10,6 @@
 		150AD95C244EBF5000AA9C4E /* AppInfoManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 150AD95A244EBF5000AA9C4E /* AppInfoManager.m */; };
 		150AD95D244EBF5000AA9C4E /* AppInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 150AD95B244EBF5000AA9C4E /* AppInfo.m */; };
 		151A11E8246CE6F900FC4CAD /* DataEmptyViewFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 151A11E4246CE6F900FC4CAD /* DataEmptyViewFactory.m */; };
-		154BDAFE243AA75300311EA5 /* CJChooseFileActionSheetUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 154BDAFD243AA75300311EA5 /* CJChooseFileActionSheetUtil.m */; };
 		15F426FE242B7C6F00ED2E4C /* UIView+CJDemoPopupAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 15F426B3242B7C6F00ED2E4C /* UIView+CJDemoPopupAction.m */; };
 		15F426FF242B7C6F00ED2E4C /* CJDemoPopupView.m in Sources */ = {isa = PBXBuildFile; fileRef = 15F426B6242B7C6F00ED2E4C /* CJDemoPopupView.m */; };
 		15F42700242B7C6F00ED2E4C /* DemoTextFieldFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 15F426B9242B7C6F00ED2E4C /* DemoTextFieldFactory.m */; };
@@ -43,14 +42,14 @@
 		7856F8A321F5680F004AF751 /* CJUploadCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7856F87A21F5680E004AF751 /* CJUploadCollectionViewCell.m */; };
 		7856F8A421F5680F004AF751 /* cjCollectionViewCellAdd@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7856F87E21F5680E004AF751 /* cjCollectionViewCellAdd@2x.png */; };
 		7856F8A521F5680F004AF751 /* cjCollectionViewCellDelete@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7856F87F21F5680E004AF751 /* cjCollectionViewCellDelete@2x.png */; };
-		7856F8A621F5680F004AF751 /* CJUploadImageCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7856F88021F5680E004AF751 /* CJUploadImageCollectionView.m */; };
-		7856F8A721F5680F004AF751 /* CJUploadImageCollectionView+Tap.m in Sources */ = {isa = PBXBuildFile; fileRef = 7856F88221F5680E004AF751 /* CJUploadImageCollectionView+Tap.m */; };
+		7856F8A621F5680F004AF751 /* CJImageAddDeletePickUploadCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7856F88021F5680E004AF751 /* CJImageAddDeletePickUploadCollectionView.m */; };
 		78590D00215C79DD00F45AD5 /* NetworkBaseWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78590C5C215C79DC00F45AD5 /* NetworkBaseWebViewController.m */; };
 		78590D08215C79DD00F45AD5 /* add_red_Big.png in Resources */ = {isa = PBXBuildFile; fileRef = 78590C6A215C79DC00F45AD5 /* add_red_Big.png */; };
 		78590D09215C79DD00F45AD5 /* add_red.png in Resources */ = {isa = PBXBuildFile; fileRef = 78590C6B215C79DC00F45AD5 /* add_red.png */; };
 		78590D0A215C79DD00F45AD5 /* add_red@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 78590C6C215C79DC00F45AD5 /* add_red@2x.png */; };
 		78590D0C215C79DD00F45AD5 /* UploadNoneImagePickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78590C71215C79DC00F45AD5 /* UploadNoneImagePickerViewController.m */; };
 		78590D0F215C79DD00F45AD5 /* UploadDirectlyImagePickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78590C74215C79DC00F45AD5 /* UploadDirectlyImagePickerViewController.m */; };
+		786CE6F02509EAA0002C9DD5 /* CJImageAddDeleteCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 786CE6EF2509EAA0002C9DD5 /* CJImageAddDeleteCollectionView.m */; };
 		789A4F3521FAF3A8001528B9 /* MemoryADCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 789A4EE921FAF3A8001528B9 /* MemoryADCollectionViewCell.m */; };
 		789A4F3621FAF3A8001528B9 /* MyCycleADViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 789A4EEA21FAF3A8001528B9 /* MyCycleADViewController.m */; };
 		789A4F3721FAF3A8001528B9 /* MyADModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 789A4EEC21FAF3A8001528B9 /* MyADModel.m */; };
@@ -133,6 +132,8 @@
 		789C448D21F170CF00181144 /* YunUncaughtExceptionHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 789C448821F170CE00181144 /* YunUncaughtExceptionHandler.m */; };
 		789C448E21F170CF00181144 /* DemoCacheUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 789C448A21F170CE00181144 /* DemoCacheUtil.m */; };
 		789C448F21F170CF00181144 /* CJAppVersionUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 789C448C21F170CE00181144 /* CJAppVersionUtil.m */; };
+		78BD44EA250B248E00C49C36 /* CJImageAddDeletePickCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 78BD44E8250B248E00C49C36 /* CJImageAddDeletePickCollectionView.m */; };
+		78BD44EE250B401B00C49C36 /* CJChooseFileActionSheetUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 78BD44ED250B401A00C49C36 /* CJChooseFileActionSheetUtil.m */; };
 		8014A2801FA2C2E500DDDB5A /* AppDelegate+WindowRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8014A27F1FA2C2E500DDDB5A /* AppDelegate+WindowRootViewController.m */; };
 		80D49F8B20BE7EE0003F642C /* CJDataUtilTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 80D49F8A20BE7EE0003F642C /* CJDataUtilTest.m */; };
 		80D49F8F20BE8574003F642C /* TestCityModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 80D49F8E20BE8574003F642C /* TestCityModel.m */; };
@@ -165,8 +166,6 @@
 		150AD95B244EBF5000AA9C4E /* AppInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppInfo.m; sourceTree = "<group>"; };
 		151A11E4246CE6F900FC4CAD /* DataEmptyViewFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataEmptyViewFactory.m; sourceTree = "<group>"; };
 		151A11E6246CE6F900FC4CAD /* DataEmptyViewFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataEmptyViewFactory.h; sourceTree = "<group>"; };
-		154BDAFC243AA75300311EA5 /* CJChooseFileActionSheetUtil.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CJChooseFileActionSheetUtil.h; sourceTree = "<group>"; };
-		154BDAFD243AA75300311EA5 /* CJChooseFileActionSheetUtil.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CJChooseFileActionSheetUtil.m; sourceTree = "<group>"; };
 		15F426B3242B7C6F00ED2E4C /* UIView+CJDemoPopupAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+CJDemoPopupAction.m"; sourceTree = "<group>"; };
 		15F426B4242B7C6F00ED2E4C /* CJDemoPopupView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJDemoPopupView.h; sourceTree = "<group>"; };
 		15F426B5242B7C6F00ED2E4C /* UIView+CJDemoPopupAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+CJDemoPopupAction.h"; sourceTree = "<group>"; };
@@ -225,12 +224,10 @@
 		7856F85421F5680D004AF751 /* CJComplexUIKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJComplexUIKit.h; sourceTree = "<group>"; };
 		7856F87A21F5680E004AF751 /* CJUploadCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJUploadCollectionViewCell.m; sourceTree = "<group>"; };
 		7856F87B21F5680E004AF751 /* CJUploadCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJUploadCollectionViewCell.h; sourceTree = "<group>"; };
-		7856F87C21F5680E004AF751 /* CJUploadImageCollectionView+Tap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CJUploadImageCollectionView+Tap.h"; sourceTree = "<group>"; };
 		7856F87E21F5680E004AF751 /* cjCollectionViewCellAdd@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cjCollectionViewCellAdd@2x.png"; sourceTree = "<group>"; };
 		7856F87F21F5680E004AF751 /* cjCollectionViewCellDelete@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cjCollectionViewCellDelete@2x.png"; sourceTree = "<group>"; };
-		7856F88021F5680E004AF751 /* CJUploadImageCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJUploadImageCollectionView.m; sourceTree = "<group>"; };
-		7856F88121F5680E004AF751 /* CJUploadImageCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJUploadImageCollectionView.h; sourceTree = "<group>"; };
-		7856F88221F5680E004AF751 /* CJUploadImageCollectionView+Tap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CJUploadImageCollectionView+Tap.m"; sourceTree = "<group>"; };
+		7856F88021F5680E004AF751 /* CJImageAddDeletePickUploadCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJImageAddDeletePickUploadCollectionView.m; sourceTree = "<group>"; };
+		7856F88121F5680E004AF751 /* CJImageAddDeletePickUploadCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJImageAddDeletePickUploadCollectionView.h; sourceTree = "<group>"; };
 		78590C5C215C79DC00F45AD5 /* NetworkBaseWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetworkBaseWebViewController.m; sourceTree = "<group>"; };
 		78590C5D215C79DC00F45AD5 /* NetworkBaseWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkBaseWebViewController.h; sourceTree = "<group>"; };
 		78590C6A215C79DC00F45AD5 /* add_red_Big.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = add_red_Big.png; sourceTree = "<group>"; };
@@ -240,6 +237,8 @@
 		78590C71215C79DC00F45AD5 /* UploadNoneImagePickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UploadNoneImagePickerViewController.m; sourceTree = "<group>"; };
 		78590C74215C79DC00F45AD5 /* UploadDirectlyImagePickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UploadDirectlyImagePickerViewController.m; sourceTree = "<group>"; };
 		78590C76215C79DC00F45AD5 /* UploadNoneImagePickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UploadNoneImagePickerViewController.h; sourceTree = "<group>"; };
+		786CE6EE2509EAA0002C9DD5 /* CJImageAddDeleteCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJImageAddDeleteCollectionView.h; sourceTree = "<group>"; };
+		786CE6EF2509EAA0002C9DD5 /* CJImageAddDeleteCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJImageAddDeleteCollectionView.m; sourceTree = "<group>"; };
 		789A4EE821FAF3A8001528B9 /* MyADModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyADModel.h; sourceTree = "<group>"; };
 		789A4EE921FAF3A8001528B9 /* MemoryADCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MemoryADCollectionViewCell.m; sourceTree = "<group>"; };
 		789A4EEA21FAF3A8001528B9 /* MyCycleADViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyCycleADViewController.m; sourceTree = "<group>"; };
@@ -356,6 +355,10 @@
 		789C448A21F170CE00181144 /* DemoCacheUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DemoCacheUtil.m; sourceTree = "<group>"; };
 		789C448B21F170CE00181144 /* YunUncaughtExceptionHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YunUncaughtExceptionHandler.h; sourceTree = "<group>"; };
 		789C448C21F170CE00181144 /* CJAppVersionUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJAppVersionUtil.m; sourceTree = "<group>"; };
+		78BD44E8250B248E00C49C36 /* CJImageAddDeletePickCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJImageAddDeletePickCollectionView.m; sourceTree = "<group>"; };
+		78BD44E9250B248E00C49C36 /* CJImageAddDeletePickCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJImageAddDeletePickCollectionView.h; sourceTree = "<group>"; };
+		78BD44EC250B401A00C49C36 /* CJChooseFileActionSheetUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJChooseFileActionSheetUtil.h; sourceTree = "<group>"; };
+		78BD44ED250B401A00C49C36 /* CJChooseFileActionSheetUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJChooseFileActionSheetUtil.m; sourceTree = "<group>"; };
 		8014A27E1FA2C2E500DDDB5A /* AppDelegate+WindowRootViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AppDelegate+WindowRootViewController.h"; sourceTree = "<group>"; };
 		8014A27F1FA2C2E500DDDB5A /* AppDelegate+WindowRootViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "AppDelegate+WindowRootViewController.m"; sourceTree = "<group>"; };
 		80270BBC1FABFE57001429F0 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
@@ -734,13 +737,14 @@
 		7856F87821F5680E004AF751 /* ImagePickerCollectionlView */ = {
 			isa = PBXGroup;
 			children = (
+				78BD44EB250B401A00C49C36 /* PhotoChooseUtil */,
 				7856F87921F5680E004AF751 /* CJUploadCollectionViewCell */,
-				7856F88121F5680E004AF751 /* CJUploadImageCollectionView.h */,
-				7856F88021F5680E004AF751 /* CJUploadImageCollectionView.m */,
-				154BDAFC243AA75300311EA5 /* CJChooseFileActionSheetUtil.h */,
-				154BDAFD243AA75300311EA5 /* CJChooseFileActionSheetUtil.m */,
-				7856F87C21F5680E004AF751 /* CJUploadImageCollectionView+Tap.h */,
-				7856F88221F5680E004AF751 /* CJUploadImageCollectionView+Tap.m */,
+				7856F88121F5680E004AF751 /* CJImageAddDeletePickUploadCollectionView.h */,
+				7856F88021F5680E004AF751 /* CJImageAddDeletePickUploadCollectionView.m */,
+				78BD44E9250B248E00C49C36 /* CJImageAddDeletePickCollectionView.h */,
+				78BD44E8250B248E00C49C36 /* CJImageAddDeletePickCollectionView.m */,
+				786CE6EE2509EAA0002C9DD5 /* CJImageAddDeleteCollectionView.h */,
+				786CE6EF2509EAA0002C9DD5 /* CJImageAddDeleteCollectionView.m */,
 				7856F87D21F5680E004AF751 /* Resources */,
 			);
 			path = ImagePickerCollectionlView;
@@ -970,6 +974,15 @@
 			);
 			name = CommonUtil;
 			path = ../../CJUIKitDemo/CJUIKitDemo/CommonUtil;
+			sourceTree = "<group>";
+		};
+		78BD44EB250B401A00C49C36 /* PhotoChooseUtil */ = {
+			isa = PBXGroup;
+			children = (
+				78BD44EC250B401A00C49C36 /* CJChooseFileActionSheetUtil.h */,
+				78BD44ED250B401A00C49C36 /* CJChooseFileActionSheetUtil.m */,
+			);
+			path = PhotoChooseUtil;
 			sourceTree = "<group>";
 		};
 		80D49F8C20BE852A003F642C /* Models */ = {
@@ -1348,6 +1361,7 @@
 				789A4F9421FAF3FB001528B9 /* TvDemo_Complex.m in Sources */,
 				150AD95C244EBF5000AA9C4E /* AppInfoManager.m in Sources */,
 				789A4F3721FAF3A8001528B9 /* MyADModel.m in Sources */,
+				786CE6F02509EAA0002C9DD5 /* CJImageAddDeleteCollectionView.m in Sources */,
 				789A4F6021FAF3A8001528B9 /* CvDemo_Complex+Event.m in Sources */,
 				151A11E8246CE6F900FC4CAD /* DataEmptyViewFactory.m in Sources */,
 				780E46081E5DF87B00980127 /* AppDelegate.m in Sources */,
@@ -1360,7 +1374,6 @@
 				78590D0F215C79DD00F45AD5 /* UploadDirectlyImagePickerViewController.m in Sources */,
 				15F42700242B7C6F00ED2E4C /* DemoTextFieldFactory.m in Sources */,
 				780E46051E5DF87B00980127 /* main.m in Sources */,
-				154BDAFE243AA75300311EA5 /* CJChooseFileActionSheetUtil.m in Sources */,
 				789A4F9821FAF3FB001528B9 /* TableViewController.m in Sources */,
 				789A4F3521FAF3A8001528B9 /* MemoryADCollectionViewCell.m in Sources */,
 				789A4F5121FAF3A8001528B9 /* CollectionHomeViewController.m in Sources */,
@@ -1377,11 +1390,11 @@
 				789A4F9921FAF3FB001528B9 /* OpenTableViewController1.m in Sources */,
 				15F4270A242B7C6F00ED2E4C /* CJDemoDateLabel.m in Sources */,
 				7856F73521F4E79E004AF751 /* DemoInfo.m in Sources */,
-				7856F8A721F5680F004AF751 /* CJUploadImageCollectionView+Tap.m in Sources */,
 				15F42709242B7C6F00ED2E4C /* CJDemoDateTextField.m in Sources */,
 				789A4F6821FAF3A8001528B9 /* cvSupplementaryHead.m in Sources */,
 				789A4F9C21FAF3FB001528B9 /* MyOpenTableView.m in Sources */,
 				7856F73421F4E79E004AF751 /* TestDataUtil.m in Sources */,
+				78BD44EE250B401B00C49C36 /* CJChooseFileActionSheetUtil.m in Sources */,
 				789C446521EF019F00181144 /* LocalViewController.m in Sources */,
 				7856F8A321F5680F004AF751 /* CJUploadCollectionViewCell.m in Sources */,
 				789C448F21F170CF00181144 /* CJAppVersionUtil.m in Sources */,
@@ -1391,12 +1404,13 @@
 				80E7E68920AC37CA000F762D /* IjinbuNetworkClient+Login.m in Sources */,
 				15F42702242B7C6F00ED2E4C /* TSButtonFactory.m in Sources */,
 				78590D00215C79DD00F45AD5 /* NetworkBaseWebViewController.m in Sources */,
-				7856F8A621F5680F004AF751 /* CJUploadImageCollectionView.m in Sources */,
+				7856F8A621F5680F004AF751 /* CJImageAddDeletePickUploadCollectionView.m in Sources */,
 				15F4270F242B7C6F00ED2E4C /* DemoLabelFactory.m in Sources */,
 				7856F89321F5680E004AF751 /* ProgressWebViewController.m in Sources */,
 				7856F6E521F4E706004AF751 /* ScrollViewHomeViewController.m in Sources */,
 				789A4F6721FAF3A8001528B9 /* cvSupplementaryFoot.m in Sources */,
 				789A4F3621FAF3A8001528B9 /* MyCycleADViewController.m in Sources */,
+				78BD44EA250B248E00C49C36 /* CJImageAddDeletePickCollectionView.m in Sources */,
 				789A4F9E21FAF3FB001528B9 /* CustomTableViewCell.m in Sources */,
 				8014A2801FA2C2E500DDDB5A /* AppDelegate+WindowRootViewController.m in Sources */,
 				789A4FB321FB0A1B001528B9 /* H5ImgSettingDataViewController.m in Sources */,

@@ -11,7 +11,7 @@
 
 
 //图片选择相关
-#import "CJUploadImageCollectionView.h"
+#import "CJImageAddDeletePickUploadCollectionView.h"
 
 
 

@@ -12,7 +12,7 @@
 
 @interface AFHTTPSessionManager (CJUploadFile)
 
-/**
+/*
  *  上传文件的请求方法：除了上传文件，还对上传过程中的各个时刻信息的进行保存(momentInfo：上传请求的各个时刻信息）
  *  @brief 回调中momentInfoOwner其实就是传进来的fileValueOwner
  *

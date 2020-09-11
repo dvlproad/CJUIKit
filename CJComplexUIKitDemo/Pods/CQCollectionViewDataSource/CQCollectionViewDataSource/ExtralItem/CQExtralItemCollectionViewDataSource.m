@@ -13,6 +13,7 @@
     NSInteger _currentSuffixCellIndex;  /**< 当前 suffixCell 的索引，如果为-1，代表当前不存在 */
     NSInteger _currentCellCount;        /**< 当前cell总数(含头或尾等所有的) */
 }
+@property (nonatomic, assign, readonly) NSUInteger maxDataModelShowCount; /**< 集合视图最大显示的dataModel数目(默认NSIntegerMax即无限制) */
 @property (nonatomic, copy) CQPreSufItemCellAtIndexPathBlock cellForPrefixBlock;
 @property (nonatomic, copy) CQPreSufItemCellAtIndexPathBlock cellForSuffixBlock;
 @property (nonatomic, copy) CQPreSufItemCellAtIndexPathBlock cellForItemBlock;
@@ -50,15 +51,12 @@
         _currentSuffixCellIndex = -1;
 
         self.cellForItemBlock = [cellForItemBlock copy];      //block 要copy
+        
+        self.dataModels = [[NSMutableArray alloc] init];
     }
     return self;
 }
 
-#pragma mark - Setter
-- (void)setDataModels:(NSArray *)dataModels {
-    // 数据
-    _dataModels = dataModels;
-}
 
 - (void)__notifierDataModelCountChange {
     NSInteger itemCount = self.dataModels.count;
@@ -78,6 +76,8 @@
     } else {
         _currentSuffixCellIndex = -1;
     }
+    
+    _currentCanMaxAddCount = _maxDataModelShowCount - itemCount;
 }
 
 #pragma mark - UICollectionViewDataSource

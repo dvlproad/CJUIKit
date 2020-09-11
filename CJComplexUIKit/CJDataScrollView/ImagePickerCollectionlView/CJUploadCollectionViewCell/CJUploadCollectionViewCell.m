@@ -16,12 +16,6 @@
 
 @implementation CJUploadCollectionViewCell
 
-- (void)awakeFromNib {
-    [super awakeFromNib];
-    
-    [self commonInit];
-}
-
 - (instancetype)initWithCoder:(NSCoder *)aDecoder {
     self = [super initWithCoder:aDecoder];
     if (self) {

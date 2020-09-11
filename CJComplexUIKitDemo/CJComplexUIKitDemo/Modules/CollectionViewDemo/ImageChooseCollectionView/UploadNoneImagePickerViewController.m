@@ -29,7 +29,7 @@
         make.height.mas_equalTo(40);
     }];
     
-    CJUploadImageCollectionView *collectionView = [[CJUploadImageCollectionView alloc] init];
+    CJImageAddDeletePickUploadCollectionView *collectionView = [[CJImageAddDeletePickUploadCollectionView alloc] init];
     collectionView.backgroundColor = [UIColor redColor];
     [self.view addSubview:collectionView];
     [collectionView mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -65,11 +65,6 @@
 //    self.uploadImageCollectionView.belongToViewController = self;
     self.uploadImageCollectionView.mediaType = CJMediaTypeImage;
 //    self.uploadImageCollectionView.equalCellSizeSetting.maxDataModelShowCount = 5; //TODO:
-    
-//    __weak typeof(self)weakSelf = self;
-    [self.uploadImageCollectionView setPickImageCompleteBlock:^{
-        //[weakSelf.uploadImageCollectionView reloadData];
-    }];
 }
 
 

@@ -18,8 +18,9 @@
  *  ②上传时候生成的请求、
  *  ③整个上传过程中(上传中、上传成功、上传失败)各时刻的信息(进度以及上传结果)
  */
-@interface CJUploadFileModelsOwner : NSObject
-
+@interface CJUploadFileModelsOwner : NSObject {
+    
+}
 @property (nonatomic, assign) BOOL isNetworkItem;   /**< (新增)是否是网络文件，如果是则不用进行上传 */
 
 //开始请求前,就有的数据

@@ -7,13 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "CJUploadImageCollectionView.h"
+#import "CJImageAddDeletePickUploadCollectionView.h"
 
 //选择图片后，情况①不上传
 @interface UploadNoneImagePickerViewController : UIViewController {
     
 }
-@property (nonatomic, strong) CJUploadImageCollectionView *uploadImageCollectionView;
+@property (nonatomic, strong) CJImageAddDeletePickUploadCollectionView *uploadImageCollectionView;
 
 
 @end

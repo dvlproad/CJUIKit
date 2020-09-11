@@ -14,7 +14,7 @@
 @property (nonatomic, strong) UIImage *image;
 @property (nonatomic, copy) NSString *localRelativePath; /**< 图片的本地相对路径 */
 
-/**
+/*
  *  初始化
  *
  *  @param showImage                显示的图片
