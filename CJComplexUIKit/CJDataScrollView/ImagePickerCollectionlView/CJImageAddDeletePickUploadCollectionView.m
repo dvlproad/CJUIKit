@@ -9,6 +9,8 @@
 #import "CJImageAddDeletePickUploadCollectionView.h"
 #import <MediaPlayer/MediaPlayer.h>
 #import <CJBaseHelper/UIViewControllerCJHelper.h>
+#import <CJNetwork/CJUploadProgressView.h>
+#import <Masonry/Masonry.h>
 
 @interface CJImageAddDeletePickUploadCollectionView () <UICollectionViewDelegate> {
     
@@ -65,15 +67,22 @@
     if (self.uploadActionType == CJUploadActionTypeNone) {
         return;
     }
+    
+    CJUploadProgressView *uploadProgressView = [[CJUploadProgressView alloc] init];
+    [dataCell addSubview:uploadProgressView];
+    [uploadProgressView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.right.mas_equalTo(dataCell);
+    }];
+    
     CJUploadMomentInfo *momentInfo = dataModel.momentInfo;
-    [dataCell.uploadProgressView updateProgressText:momentInfo.uploadStatePromptText progressVaule:momentInfo.progressValue];//调用此方法避免reload时候显示错误
+    [uploadProgressView updateProgressText:momentInfo.uploadStatePromptText progressVaule:momentInfo.progressValue];//调用此方法避免reload时候显示错误
     
     
     void (^uploadInfoChangeBlock)(CJUploadFileModelsOwner *itemThatSaveUploadInfo) = ^(CJUploadFileModelsOwner *itemThatSaveUploadInfo) {
         CJImageUploadFileModelsOwner *imageItem = (CJImageUploadFileModelsOwner *)itemThatSaveUploadInfo;
         CJUploadCollectionViewCell *myCell = (CJUploadCollectionViewCell *)[weakCollectionView cellForItemAtIndexPath:imageItem.indexPath];
         CJUploadMomentInfo *momentInfo = itemThatSaveUploadInfo.momentInfo;
-        [myCell.uploadProgressView updateProgressText:momentInfo.uploadStatePromptText progressVaule:momentInfo.progressValue];
+        [uploadProgressView updateProgressText:momentInfo.uploadStatePromptText progressVaule:momentInfo.progressValue];
     };
     
     NSArray<CJUploadFileModel *> *uploadModels = dataModel.uploadFileModels;
@@ -106,7 +115,7 @@
     
     //cjReUploadHandle
     __weak typeof(saveUploadInfoToItem)weakItem = saveUploadInfoToItem;
-    [dataCell.uploadProgressView setCjReUploadHandle:^(UIView *uploadProgressView) {
+    [uploadProgressView setCjReUploadHandle:^(UIView *uploadProgressView) {
         __strong __typeof(weakItem)strongItem = weakItem;
         
         [strongItem.operation cancel];

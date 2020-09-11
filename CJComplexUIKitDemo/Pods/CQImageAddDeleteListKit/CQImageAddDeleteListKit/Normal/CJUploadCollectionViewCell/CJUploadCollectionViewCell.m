@@ -37,11 +37,8 @@
     UIView *parentView = self.contentView;
     
     [self addCJImageViewWithEdgeInsets:UIEdgeInsetsZero];
-    self.cjImageView.image = [UIImage imageNamed:@"cjCollectionViewCellAdd"];
+    self.cjImageView.image = [UIImage imageNamed:@"CQImageAddDeleteListKit_NormalBundle.bundle/cjCollectionViewCellAdd"];
     [self addCJDeleteButton];
-    
-    self.uploadProgressView = [[CJUploadProgressView alloc] initWithFrame:CGRectZero];
-    [self cj_makeView:parentView addSubView:self.uploadProgressView withEdgeInsets:UIEdgeInsetsMake(0, 0, 0, 0)];
     
     [parentView bringSubviewToFront:self.cjDeleteButton]; //把cjDeleteButton移动最前
 }
@@ -155,7 +152,7 @@
 - (void)addCJDeleteButton {
     UIView *parentView = self.contentView;
     self.cjDeleteButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    [self.cjDeleteButton setImage:[UIImage imageNamed:@"cjCollectionViewCellDelete"] forState:UIControlStateNormal];
+    [self.cjDeleteButton setImage:[UIImage imageNamed:@"CQImageAddDeleteListKit_NormalBundle.bundle/cjCollectionViewCellDelete"] forState:UIControlStateNormal];
     [self.cjDeleteButton addTarget:self action:@selector(deleteButtonAction:) forControlEvents:UIControlEventTouchUpInside];
     [parentView addSubview:self.cjDeleteButton];
     self.cjDeleteButton.translatesAutoresizingMaskIntoConstraints = NO;

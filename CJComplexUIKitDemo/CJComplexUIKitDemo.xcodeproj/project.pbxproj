@@ -39,9 +39,6 @@
 		7856F74021F4E953004AF751 /* PullScaleTopImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7856F73C21F4E953004AF751 /* PullScaleTopImageViewController.m */; };
 		7856F89321F5680E004AF751 /* ProgressWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7856F84E21F5680D004AF751 /* ProgressWebViewController.m */; };
 		7856F89421F5680E004AF751 /* CJBaseWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7856F85221F5680D004AF751 /* CJBaseWebViewController.m */; };
-		7856F8A321F5680F004AF751 /* CJUploadCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7856F87A21F5680E004AF751 /* CJUploadCollectionViewCell.m */; };
-		7856F8A421F5680F004AF751 /* cjCollectionViewCellAdd@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7856F87E21F5680E004AF751 /* cjCollectionViewCellAdd@2x.png */; };
-		7856F8A521F5680F004AF751 /* cjCollectionViewCellDelete@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7856F87F21F5680E004AF751 /* cjCollectionViewCellDelete@2x.png */; };
 		7856F8A621F5680F004AF751 /* CJImageAddDeletePickUploadCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7856F88021F5680E004AF751 /* CJImageAddDeletePickUploadCollectionView.m */; };
 		78590D00215C79DD00F45AD5 /* NetworkBaseWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78590C5C215C79DC00F45AD5 /* NetworkBaseWebViewController.m */; };
 		78590D08215C79DD00F45AD5 /* add_red_Big.png in Resources */ = {isa = PBXBuildFile; fileRef = 78590C6A215C79DC00F45AD5 /* add_red_Big.png */; };
@@ -49,7 +46,6 @@
 		78590D0A215C79DD00F45AD5 /* add_red@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 78590C6C215C79DC00F45AD5 /* add_red@2x.png */; };
 		78590D0C215C79DD00F45AD5 /* UploadNoneImagePickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78590C71215C79DC00F45AD5 /* UploadNoneImagePickerViewController.m */; };
 		78590D0F215C79DD00F45AD5 /* UploadDirectlyImagePickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78590C74215C79DC00F45AD5 /* UploadDirectlyImagePickerViewController.m */; };
-		786CE6F02509EAA0002C9DD5 /* CJImageAddDeleteCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 786CE6EF2509EAA0002C9DD5 /* CJImageAddDeleteCollectionView.m */; };
 		789A4F3521FAF3A8001528B9 /* MemoryADCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 789A4EE921FAF3A8001528B9 /* MemoryADCollectionViewCell.m */; };
 		789A4F3621FAF3A8001528B9 /* MyCycleADViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 789A4EEA21FAF3A8001528B9 /* MyCycleADViewController.m */; };
 		789A4F3721FAF3A8001528B9 /* MyADModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 789A4EEC21FAF3A8001528B9 /* MyADModel.m */; };
@@ -222,10 +218,6 @@
 		7856F85221F5680D004AF751 /* CJBaseWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJBaseWebViewController.m; sourceTree = "<group>"; };
 		7856F85321F5680D004AF751 /* CJBaseWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJBaseWebViewController.h; sourceTree = "<group>"; };
 		7856F85421F5680D004AF751 /* CJComplexUIKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJComplexUIKit.h; sourceTree = "<group>"; };
-		7856F87A21F5680E004AF751 /* CJUploadCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJUploadCollectionViewCell.m; sourceTree = "<group>"; };
-		7856F87B21F5680E004AF751 /* CJUploadCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJUploadCollectionViewCell.h; sourceTree = "<group>"; };
-		7856F87E21F5680E004AF751 /* cjCollectionViewCellAdd@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cjCollectionViewCellAdd@2x.png"; sourceTree = "<group>"; };
-		7856F87F21F5680E004AF751 /* cjCollectionViewCellDelete@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cjCollectionViewCellDelete@2x.png"; sourceTree = "<group>"; };
 		7856F88021F5680E004AF751 /* CJImageAddDeletePickUploadCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJImageAddDeletePickUploadCollectionView.m; sourceTree = "<group>"; };
 		7856F88121F5680E004AF751 /* CJImageAddDeletePickUploadCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJImageAddDeletePickUploadCollectionView.h; sourceTree = "<group>"; };
 		78590C5C215C79DC00F45AD5 /* NetworkBaseWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetworkBaseWebViewController.m; sourceTree = "<group>"; };
@@ -237,8 +229,6 @@
 		78590C71215C79DC00F45AD5 /* UploadNoneImagePickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UploadNoneImagePickerViewController.m; sourceTree = "<group>"; };
 		78590C74215C79DC00F45AD5 /* UploadDirectlyImagePickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UploadDirectlyImagePickerViewController.m; sourceTree = "<group>"; };
 		78590C76215C79DC00F45AD5 /* UploadNoneImagePickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UploadNoneImagePickerViewController.h; sourceTree = "<group>"; };
-		786CE6EE2509EAA0002C9DD5 /* CJImageAddDeleteCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJImageAddDeleteCollectionView.h; sourceTree = "<group>"; };
-		786CE6EF2509EAA0002C9DD5 /* CJImageAddDeleteCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJImageAddDeleteCollectionView.m; sourceTree = "<group>"; };
 		789A4EE821FAF3A8001528B9 /* MyADModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyADModel.h; sourceTree = "<group>"; };
 		789A4EE921FAF3A8001528B9 /* MemoryADCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MemoryADCollectionViewCell.m; sourceTree = "<group>"; };
 		789A4EEA21FAF3A8001528B9 /* MyCycleADViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyCycleADViewController.m; sourceTree = "<group>"; };
@@ -738,34 +728,12 @@
 			isa = PBXGroup;
 			children = (
 				78BD44EB250B401A00C49C36 /* PhotoChooseUtil */,
-				7856F87921F5680E004AF751 /* CJUploadCollectionViewCell */,
 				7856F88121F5680E004AF751 /* CJImageAddDeletePickUploadCollectionView.h */,
 				7856F88021F5680E004AF751 /* CJImageAddDeletePickUploadCollectionView.m */,
 				78BD44E9250B248E00C49C36 /* CJImageAddDeletePickCollectionView.h */,
 				78BD44E8250B248E00C49C36 /* CJImageAddDeletePickCollectionView.m */,
-				786CE6EE2509EAA0002C9DD5 /* CJImageAddDeleteCollectionView.h */,
-				786CE6EF2509EAA0002C9DD5 /* CJImageAddDeleteCollectionView.m */,
-				7856F87D21F5680E004AF751 /* Resources */,
 			);
 			path = ImagePickerCollectionlView;
-			sourceTree = "<group>";
-		};
-		7856F87921F5680E004AF751 /* CJUploadCollectionViewCell */ = {
-			isa = PBXGroup;
-			children = (
-				7856F87B21F5680E004AF751 /* CJUploadCollectionViewCell.h */,
-				7856F87A21F5680E004AF751 /* CJUploadCollectionViewCell.m */,
-			);
-			path = CJUploadCollectionViewCell;
-			sourceTree = "<group>";
-		};
-		7856F87D21F5680E004AF751 /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				7856F87E21F5680E004AF751 /* cjCollectionViewCellAdd@2x.png */,
-				7856F87F21F5680E004AF751 /* cjCollectionViewCellDelete@2x.png */,
-			);
-			path = Resources;
 			sourceTree = "<group>";
 		};
 		78590C59215C79DC00F45AD5 /* WebViewDemo */ = {
@@ -1162,7 +1130,6 @@
 				789C445221EECFA100181144 /* MainAsset.xcassets in Resources */,
 				789A4F3B21FAF3A8001528B9 /* MemoryAD05.jpg in Resources */,
 				789A4F6621FAF3A8001528B9 /* cvSupplementaryHead.xib in Resources */,
-				7856F8A421F5680F004AF751 /* cjCollectionViewCellAdd@2x.png in Resources */,
 				789A4F3F21FAF3A8001528B9 /* MemoryADExample02.jpg in Resources */,
 				789C445A21EED99600181144 /* OCJS.html in Resources */,
 				780E460E1E5DF87B00980127 /* Main.storyboard in Resources */,
@@ -1188,7 +1155,6 @@
 				789A4F4621FAF3A8001528B9 /* MemoryADExample04.jpg in Resources */,
 				789A4F4321FAF3A8001528B9 /* MemoryAD29.jpg in Resources */,
 				789A4FA021FAF3FB001528B9 /* SHeaderHome2.xib in Resources */,
-				7856F8A521F5680F004AF751 /* cjCollectionViewCellDelete@2x.png in Resources */,
 				789C445F21EEFE3100181144 /* JSOC.html in Resources */,
 				789A4F4721FAF3A8001528B9 /* MemoryADKnowledge03.jpg in Resources */,
 				789A4F3A21FAF3A8001528B9 /* MemoryADKnowledge06.jpg in Resources */,
@@ -1290,6 +1256,8 @@
 				"${PODS_ROOT}/CJMedia/CJMedia/CJPhotoBrowser/CJPhotoBrowser/CJPhotoBrowser.bundle/success@3x.png",
 				"${PODS_ROOT}/CJMedia/CJMedia/CJPhotoBrowser/CJPhotoBrowser/CJPhotoBrowser.bundle",
 				"${PODS_CONFIGURATION_BUILD_DIR}/CQDemoKit/CQDemoKit.bundle",
+				"${PODS_CONFIGURATION_BUILD_DIR}/CQImageAddDeleteListKit/CQImageChooseViewBundle.bundle",
+				"${PODS_CONFIGURATION_BUILD_DIR}/CQImageAddDeleteListKit/CQImageAddDeleteListKit_NormalBundle.bundle",
 				"${PODS_CONFIGURATION_BUILD_DIR}/CQOverlayKit/CQHUD.bundle",
 				"${PODS_ROOT}/CQOverlayKit/CQOverlayKit/CQToast/demo_toast_error@2x.png",
 				"${PODS_ROOT}/CQOverlayKit/CQOverlayKit/CQToast/demo_toast_error@3x.png",
@@ -1331,6 +1299,8 @@
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/success@3x.png",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/CJPhotoBrowser.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/CQDemoKit.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/CQImageChooseViewBundle.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/CQImageAddDeleteListKit_NormalBundle.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/CQHUD.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/demo_toast_error@2x.png",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/demo_toast_error@3x.png",
@@ -1361,7 +1331,6 @@
 				789A4F9421FAF3FB001528B9 /* TvDemo_Complex.m in Sources */,
 				150AD95C244EBF5000AA9C4E /* AppInfoManager.m in Sources */,
 				789A4F3721FAF3A8001528B9 /* MyADModel.m in Sources */,
-				786CE6F02509EAA0002C9DD5 /* CJImageAddDeleteCollectionView.m in Sources */,
 				789A4F6021FAF3A8001528B9 /* CvDemo_Complex+Event.m in Sources */,
 				151A11E8246CE6F900FC4CAD /* DataEmptyViewFactory.m in Sources */,
 				780E46081E5DF87B00980127 /* AppDelegate.m in Sources */,
@@ -1396,7 +1365,6 @@
 				7856F73421F4E79E004AF751 /* TestDataUtil.m in Sources */,
 				78BD44EE250B401B00C49C36 /* CJChooseFileActionSheetUtil.m in Sources */,
 				789C446521EF019F00181144 /* LocalViewController.m in Sources */,
-				7856F8A321F5680F004AF751 /* CJUploadCollectionViewCell.m in Sources */,
 				789C448F21F170CF00181144 /* CJAppVersionUtil.m in Sources */,
 				789A4F5221FAF3A8001528B9 /* CustomLayoutCollectionViewController.m in Sources */,
 				789C442A21EEC90000181144 /* WebHomeViewController.m in Sources */,

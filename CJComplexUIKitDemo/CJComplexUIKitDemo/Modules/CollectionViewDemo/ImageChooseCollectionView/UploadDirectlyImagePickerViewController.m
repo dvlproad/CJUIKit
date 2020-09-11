@@ -26,15 +26,19 @@
     // Do any additional setup after loading the view from its nib.
     self.title = NSLocalizedString(@"图片选择(有上传操作)", nil);
     
+   
+    
     //执行上传之前，确保登录了
-    [[IjinbuNetworkClient sharedInstance] requestijinbuLogin_name:@"15800000007" pasd:@"123456" completeBlock:^(IjinbuResponseModel *responseModel) {
-        if (responseModel.status == 1) {
-            NSLog(@"登录成功");
-        } else {
-            NSLog(@"登录失败");
-            [SVProgressHUD showErrorWithStatus:@"登录失败"];
-        }
-    }];
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        [[IjinbuNetworkClient sharedInstance] requestijinbuLogin_name:@"15800000007" pasd:@"123456" completeBlock:^(IjinbuResponseModel *responseModel) {
+            if (responseModel.status == 1) {
+                NSLog(@"登录成功");
+            } else {
+                NSLog(@"登录失败");
+                [SVProgressHUD showErrorWithStatus:@"登录失败"];
+            }
+        }];
+    });
     
     
     UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectZero];
@@ -90,7 +94,7 @@
 //        make.centerX.mas_equalTo(themeBGButton1);
 //        make.height.mas_equalTo(themeBGButton1);
 //    }];
-    
+     
     
     
     self.uploadImageCollectionView.backgroundColor = [UIColor redColor];

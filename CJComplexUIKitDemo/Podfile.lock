@@ -199,6 +199,19 @@ PODS:
     - CQDemoKit/Home_Base
   - CQDemoKit/Home_TextView (0.3.1):
     - CQDemoKit/Home_Base
+  - CQImageAddDeleteListKit (0.1.2):
+    - CJBaseUIKit/UIColor
+    - CQImageAddDeleteListKit/ImageChooseView (= 0.1.2)
+    - CQImageAddDeleteListKit/Normal (= 0.1.2)
+    - Masonry
+  - CQImageAddDeleteListKit/ImageChooseView (0.1.2):
+    - CJBaseHelper/NSObjectCJHelper
+    - CJBaseUIKit/UIColor
+    - Masonry
+  - CQImageAddDeleteListKit/Normal (0.1.2):
+    - CJBaseUIKit/UIColor
+    - CJCollectionViewLayout
+    - Masonry
   - CQOverlayKit (0.3.0):
     - CQOverlayKit/Base (= 0.3.0)
     - CQOverlayKit/CQActionSheet (= 0.3.0)
@@ -272,6 +285,7 @@ DEPENDENCIES:
   - CJNetwork/AFNetworkingBaseComponent
   - CQCollectionViewDataSource/ExtralItem
   - CQDemoKit (~> 0.3.1)
+  - CQImageAddDeleteListKit (~> 0.1.2)
   - CQOverlayKit
   - DZNEmptyDataSet
   - IjinbuNetwork (~> 0.1.0)
@@ -283,11 +297,12 @@ DEPENDENCIES:
   - UICollectionViewCJSelectHelper
 
 SPEC REPOS:
-  https://gitee.com/dvlproad/dvlproadSpecs.git:
+  https://gitee.com/dvlproad/dvlproadSpecs:
     - CJBaseEffectKit
     - CJBaseOverlayKit
     - CJCollectionViewLayout
     - CQCollectionViewDataSource
+    - CQImageAddDeleteListKit
     - CQOverlayKit
     - IjinbuNetwork
     - UICollectionViewCJSelectHelper
@@ -338,6 +353,7 @@ SPEC CHECKSUMS:
   CJNetwork: a75f849e5c6ec8fc85ca7aa5027f73d6c48a4af1
   CQCollectionViewDataSource: dc8ed4fe4eaebe2d63567e617f615fffbf0c3332
   CQDemoKit: 939ad9b106b105b875a77a3e1ab21bfbed964c27
+  CQImageAddDeleteListKit: cca49c4c1cbc4b842186770a67c15dcdcf11c7de
   CQOverlayKit: 14c376841d352a1c8a18bffea896c53c317cf06a
   DZNEmptyDataSet: 9525833b9e68ac21c30253e1d3d7076cc828eaa7
   IjinbuNetwork: 307e7e12d35b547f04b885cc2aa098625e4b9768
@@ -355,6 +371,6 @@ SPEC CHECKSUMS:
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
   UICollectionViewCJSelectHelper: a8a87795c790ef8ca48a9e7301a24403a5ce383c
 
-PODFILE CHECKSUM: b1a3ac9320b1c6fd90ef895e079656d4ee4093f9
+PODFILE CHECKSUM: 278b5efc3a4321921811efe4a706864ecd0a2d71
 
 COCOAPODS: 1.9.3

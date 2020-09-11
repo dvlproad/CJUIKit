@@ -13,7 +13,7 @@
 @interface UploadDirectlyImagePickerViewController : UIViewController {
     
 }
-@property (nonatomic, strong) IBOutlet CJImageAddDeletePickUploadCollectionView *uploadImageCollectionView;
+@property (nonatomic, strong) CJImageAddDeletePickUploadCollectionView *uploadImageCollectionView;
 
 
 @end

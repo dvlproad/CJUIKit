@@ -7,7 +7,6 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <CJNetwork/CJUploadProgressView.h>
 
 @interface CJUploadCollectionViewCell : UICollectionViewCell {
     
@@ -20,8 +19,5 @@
 @property (nonatomic, strong) UIImageView *cjImageView;
 @property (nonatomic, strong) UIButton *cjDeleteButton;
 
-
-
-@property (nonatomic, strong) CJUploadProgressView *uploadProgressView;
 
 @end

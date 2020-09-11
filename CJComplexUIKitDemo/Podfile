@@ -52,6 +52,7 @@ target 'CJComplexUIKitDemo' do
   
   # 图片选择需要依赖的库
   pod 'JGActionSheet'
+  pod 'CQImageAddDeleteListKit', '~> 0.1.2'
   pod 'CJMedia/CJUploadImagePickerUtil', '~> 0.0.7' #其中包含了对CJFile中的部分依赖
   pod 'CJNetwork/AFNetworkingBaseComponent'
   

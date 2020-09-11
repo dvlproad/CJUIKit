@@ -8,7 +8,7 @@
 
 #import "CJImageAddDeleteCollectionView.h"
 #import <CJCollectionViewLayout/CQCollectionViewFlowLayout.h>
-#import "CQExtralItemCollectionViewDataSource.h"
+#import "CJImageAddDeleteCollectionViewDataSource.h"
 
 static NSString * const CJUploadCollectionViewCellID = @"CJUploadCollectionViewCell";
 static NSString * const CJUploadCollectionViewCellAddID = @"CJUploadCollectionViewCellAdd";
@@ -16,7 +16,7 @@ static NSString * const CJUploadCollectionViewCellAddID = @"CJUploadCollectionVi
 @interface CJImageAddDeleteCollectionView () <UICollectionViewDelegate> {
     
 }
-@property (nonatomic, strong) CQExtralItemCollectionViewDataSource *cjDataSource;
+@property (nonatomic, strong) CJImageAddDeleteCollectionViewDataSource *cjDataSource;
 @property (nonatomic, copy) void (^configItemCellBlock)(CJUploadCollectionViewCell *bItemCell, id bDataModel);
 @property (nonatomic, copy) void(^clickItemHandle)(NSArray *bDataModels, NSInteger currentClickItemIndex);
 @property (nonatomic, copy) void(^addHandle)(void);
@@ -97,15 +97,15 @@ static NSString * const CJUploadCollectionViewCellAddID = @"CJUploadCollectionVi
 
     
     /* 创建DataSource */
-    CQExtralItemCollectionViewDataSource *cjDataSource = [[CQExtralItemCollectionViewDataSource alloc] initWithMaxShowCount:5 cellForPrefixBlock:^UICollectionViewCell *(CQExtralItemCollectionViewDataSource *bDataSource, UICollectionView *collectionView, NSIndexPath *indexPath) {
+    CJImageAddDeleteCollectionViewDataSource *cjDataSource = [[CJImageAddDeleteCollectionViewDataSource alloc] initWithMaxShowCount:5 cellForPrefixBlock:^UICollectionViewCell *(CJImageAddDeleteCollectionViewDataSource *bDataSource, UICollectionView *collectionView, NSIndexPath *indexPath) {
         CJUploadCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:CJUploadCollectionViewCellAddID forIndexPath:indexPath];
         
-        cell.cjImageView.image = [UIImage imageNamed:@"cjCollectionViewCellAdd"];
+        cell.cjImageView.image = [UIImage imageNamed:@"CQImageAddDeleteListKit_NormalBundle.bundle/cjCollectionViewCellAdd"];
         [cell.cjDeleteButton setImage:nil forState:UIControlStateNormal];
         
         return cell;
         
-    } cellForSuffixBlock:nil cellForItemBlock:^UICollectionViewCell *(CQExtralItemCollectionViewDataSource *bDataSource, UICollectionView *collectionView, NSIndexPath *indexPath) {
+    } cellForSuffixBlock:nil cellForItemBlock:^UICollectionViewCell *(CJImageAddDeleteCollectionViewDataSource *bDataSource, UICollectionView *collectionView, NSIndexPath *indexPath) {
     
         CJUploadCollectionViewCell *dataCell = [collectionView dequeueReusableCellWithReuseIdentifier:CJUploadCollectionViewCellID forIndexPath:indexPath];
         [self __operateDataCell:dataCell withIndexPath:indexPath isSettingOperate:YES];

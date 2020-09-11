@@ -262,6 +262,11 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
 
+## CQImageAddDeleteListKit
+
+© 2008-2016 dvlproad. All rights reserved.
+
+
 ## CQOverlayKit
 
 © 2008-2016 dvlproad. All rights reserved.
