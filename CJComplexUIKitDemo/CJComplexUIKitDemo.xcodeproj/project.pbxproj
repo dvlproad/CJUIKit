@@ -389,10 +389,10 @@
 		150AD957244EBF5000AA9C4E /* AppInfo */ = {
 			isa = PBXGroup;
 			children = (
-				150AD958244EBF5000AA9C4E /* AppInfoManager.h */,
 				150AD959244EBF5000AA9C4E /* AppInfo.h */,
-				150AD95A244EBF5000AA9C4E /* AppInfoManager.m */,
 				150AD95B244EBF5000AA9C4E /* AppInfo.m */,
+				150AD958244EBF5000AA9C4E /* AppInfoManager.h */,
+				150AD95A244EBF5000AA9C4E /* AppInfoManager.m */,
 			);
 			path = AppInfo;
 			sourceTree = "<group>";

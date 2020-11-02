@@ -1262,13 +1262,13 @@
 		1562F27A23F5DBF40009FCEA /* CJSlider */ = {
 			isa = PBXGroup;
 			children = (
-				1562F27B23F5DBF40009FCEA /* CJSwitchSlider */,
-				1562F28023F5DBF40009FCEA /* CJSliderControl */,
 				1562F28923F5DBF40009FCEA /* CJSlider.h */,
-				1562F28A23F5DBF40009FCEA /* CJPlayerSlider */,
+				1562F29123F5DBF40009FCEA /* CJBaseUISlider.h */,
 				1562F28D23F5DBF40009FCEA /* CJBaseUISlider.m */,
 				1562F28E23F5DBF40009FCEA /* CJAdsorbModel */,
-				1562F29123F5DBF40009FCEA /* CJBaseUISlider.h */,
+				1562F28A23F5DBF40009FCEA /* CJPlayerSlider */,
+				1562F28023F5DBF40009FCEA /* CJSliderControl */,
+				1562F27B23F5DBF40009FCEA /* CJSwitchSlider */,
 			);
 			path = CJSlider;
 			sourceTree = "<group>";
@@ -1276,10 +1276,10 @@
 		1562F27B23F5DBF40009FCEA /* CJSwitchSlider */ = {
 			isa = PBXGroup;
 			children = (
-				1562F27C23F5DBF40009FCEA /* CJSwitchSliderStatusModel.m */,
-				1562F27D23F5DBF40009FCEA /* CJSwitchSlider.m */,
 				1562F27E23F5DBF40009FCEA /* CJSwitchSlider.h */,
+				1562F27D23F5DBF40009FCEA /* CJSwitchSlider.m */,
 				1562F27F23F5DBF40009FCEA /* CJSwitchSliderStatusModel.h */,
+				1562F27C23F5DBF40009FCEA /* CJSwitchSliderStatusModel.m */,
 			);
 			path = CJSwitchSlider;
 			sourceTree = "<group>";
@@ -1288,13 +1288,13 @@
 			isa = PBXGroup;
 			children = (
 				1562F28123F5DBF40009FCEA /* CJRangeSliderControl.h */,
-				1562F28223F5DBF40009FCEA /* CJSliderControl.h */,
-				1562F28323F5DBF40009FCEA /* CJSliderThumb.m */,
-				1562F28423F5DBF40009FCEA /* CJSliderPopover.m */,
-				1562F28523F5DBF40009FCEA /* CJSliderControl.m */,
 				1562F28623F5DBF40009FCEA /* CJRangeSliderControl.m */,
-				1562F28723F5DBF40009FCEA /* CJSliderThumb.h */,
+				1562F28223F5DBF40009FCEA /* CJSliderControl.h */,
+				1562F28523F5DBF40009FCEA /* CJSliderControl.m */,
 				1562F28823F5DBF40009FCEA /* CJSliderPopover.h */,
+				1562F28423F5DBF40009FCEA /* CJSliderPopover.m */,
+				1562F28723F5DBF40009FCEA /* CJSliderThumb.h */,
+				1562F28323F5DBF40009FCEA /* CJSliderThumb.m */,
 			);
 			path = CJSliderControl;
 			sourceTree = "<group>";
