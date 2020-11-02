@@ -1,1 +1,1 @@
-../../../CQImageAddDeleteListKit/CQImageAddDeleteListKit/Normal/CJImageAddDeleteCollectionViewDataSource.h
+../../../CQImageAddDeleteListKit/CQImageAddDeleteListKit/AddDelete/CJImageAddDeleteCollectionViewDataSource.h

@@ -57,10 +57,19 @@
         
     } clickItemHandle:^(NSArray *bDataModels, NSInteger currentClickItemIndex) {
         [self __clickDataModelAtItemIndex:currentClickItemIndex
-        inDataModels:bDataModels];
+                             inDataModels:bDataModels];
     } addHandle:^{
         //NSLog(@"点击额外的item");
-        [self __didTapToAddMediaUploadItemAction];
+        if (self.mediaType == CJMediaTypeVideo) { //视频选择
+            if (self.pickVideoHandle) {
+                self.pickVideoHandle();
+            } else {
+                NSLog(@"未操作视频选择");
+            }
+        } else { // 图片选择
+            [self __pickImageWithCompleteBlock:self.pickImageCompleteBlock];
+        }
+        
     } otherItemCellDeleteBlock:^(id bDataModel) {
         CJImageUploadFileModelsOwner *dataModel = (CJImageUploadFileModelsOwner *)bDataModel;
         if (self.otherItemCellDeleteBlock) {
@@ -112,32 +121,24 @@
     }
 }
 
-/// 点击添加
-- (void)__didTapToAddMediaUploadItemAction {
+/// 选择照片
+- (void)__pickImageWithCompleteBlock:(void(^)(void))pickImageCompleteBlock {
     [[[UIApplication sharedApplication] keyWindow] endEditing:YES];
     
-    if (self.mediaType == CJMediaTypeVideo) { //视频选择
-        if (self.pickVideoHandle) {
-            self.pickVideoHandle();
-        } else {
-            NSLog(@"未操作视频选择");
+    __weak typeof(self)weakSelf = self;
+    NSInteger canMaxChooseImageCount = self.currentCanMaxAddCount;
+    
+    [CJChooseFileActionSheetUtil defaultImageChooseWithCanMaxChooseImageCount:canMaxChooseImageCount pickCompleteBlock:^(NSArray<CJImageUploadFileModelsOwner *> * _Nonnull pickedImageItems) {
+        [weakSelf addDtaModels:pickedImageItems];
+        
+        [weakSelf reloadData];
+        
+        if (weakSelf.pickImageCompleteBlock) {
+            weakSelf.pickImageCompleteBlock();
         }
-        
-    } else { // 图片选择
-        __weak typeof(self)weakSelf = self;
-        NSInteger canMaxChooseImageCount = self.currentCanMaxAddCount;
-        
-        [CJChooseFileActionSheetUtil defaultImageChooseWithCanMaxChooseImageCount:canMaxChooseImageCount pickCompleteBlock:^(NSArray<CJImageUploadFileModelsOwner *> * _Nonnull pickedImageItems) {
-            [weakSelf addDtaModels:pickedImageItems];
-            
-            [weakSelf reloadData];
-            
-            if (weakSelf.pickImageCompleteBlock) {
-                weakSelf.pickImageCompleteBlock();
-            }
-        }];
-    }
+    }];
 }
+
 
 
 @end

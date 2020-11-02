@@ -180,7 +180,12 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
 
-## CJMedia
+## CJImagePickerKit
+
+© 2008-2016 dvlproad. All rights reserved.
+
+
+## CJNetwork
 
 The MIT License (MIT)
 
@@ -206,7 +211,7 @@ SOFTWARE.
 
 
 
-## CJNetwork
+## CJNetworkFileModel
 
 The MIT License (MIT)
 
@@ -263,6 +268,11 @@ SOFTWARE.
 
 
 ## CQImageAddDeleteListKit
+
+© 2008-2016 dvlproad. All rights reserved.
+
+
+## CQImagePickerKit
 
 © 2008-2016 dvlproad. All rights reserved.
 

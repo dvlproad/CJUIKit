@@ -9,7 +9,7 @@
 #import "CJImageAddDeletePickUploadCollectionView.h"
 #import <MediaPlayer/MediaPlayer.h>
 #import <CJBaseHelper/UIViewControllerCJHelper.h>
-#import <CJNetwork/CJUploadProgressView.h>
+#import "CJImageAddUploadProgressView.h"
 #import <Masonry/Masonry.h>
 
 @interface CJImageAddDeletePickUploadCollectionView () <UICollectionViewDelegate> {
@@ -68,7 +68,7 @@
         return;
     }
     
-    CJUploadProgressView *uploadProgressView = [[CJUploadProgressView alloc] init];
+    CJImageAddUploadProgressView *uploadProgressView = [[CJImageAddUploadProgressView alloc] init];
     [dataCell addSubview:uploadProgressView];
     [uploadProgressView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.right.mas_equalTo(dataCell);
