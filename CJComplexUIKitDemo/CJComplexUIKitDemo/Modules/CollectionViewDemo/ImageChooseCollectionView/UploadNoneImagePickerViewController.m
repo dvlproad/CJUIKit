@@ -63,7 +63,7 @@
     }];
     
 //    self.uploadImageCollectionView.belongToViewController = self;
-    self.uploadImageCollectionView.mediaType = CJMediaTypeImage;
+//    self.uploadImageCollectionView.mediaType = CJMediaTypeImage; // 选择图片
 //    self.uploadImageCollectionView.equalCellSizeSetting.maxDataModelShowCount = 5; //TODO:
 }
 

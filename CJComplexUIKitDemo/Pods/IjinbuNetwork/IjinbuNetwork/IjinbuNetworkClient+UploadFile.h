@@ -7,18 +7,7 @@
 //
 
 #import "IjinbuNetworkClient.h"
-#import "AFHTTPSessionManager+CJUploadFile.h"
-
-#import <UIKit/UIKit.h>
-
-#ifdef CJTESTPOD
-#import "CJUploadFileModelsOwner.h"
-#import "CJUploadFileModel.h"
-#else
-#import <CJNetwork/CJUploadFileModelsOwner.h>
-#import <CJNetwork/CJUploadFileModel.h>
-#endif
-
+#import <CJNetwork/AFHTTPSessionManager+CJUploadFile.h>
 
 @interface IjinbuNetworkClient (UploadFile)
 

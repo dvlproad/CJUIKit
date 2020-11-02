@@ -23,7 +23,6 @@
  *  @param progressText     该上传状态的提示文字
  *  @param progressValue    该上传状态的进度值[0-100]
  */
-- (void)updateProgressText:(NSString *)progressText
-             progressVaule:(CGFloat)progressValue;
+- (void)updateProgressText:(NSString *)progressText progressVaule:(CGFloat)progressValue;
 
 @end

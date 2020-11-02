@@ -1,5 +1,13 @@
 # CJNetwork
+
+免费api：[https://api.you-fire.com/youapi/api/index](https://api.you-fire.com/youapi/api/index)
+
+* [免费api-网易新闻](https://api.you-fire.com/youapi/api/detail/2332fc38958311e986e700163e0e0ef0)
+
+
+
 ## 一、功能介绍(Feature introduce)
+
 二次封装AFNetworking，增加实现
 
 * 1、在接口请求中加密、解密
@@ -7,65 +15,161 @@
 * 3、对请求接口进行缓存数据的功能
 * 4、按指定格式输出请求信息(比如①你要在控制台查看请求信息、②当你脱离调试模式时候，你希望通过一个alert弹出显示你的log)
 
+#### 包含组件
+>
+- CJNetwork/CJNetworkCommon：AFN请求过程中需要的几个公共方法(包含请求前获取缓存、请求后成功与失败操作)
+- CJNetwork/AFNetworkingSerializerEncrypt：AFN的请求方法(加解密方法写在Method方法中)
+- CJNetwork/AFNetworkingMethodEncrypt：AFN的请求方法(加解密方法写在Method方法中)
+- CJNetwork/AFNetworkingUploadComponent：AFN的上传请求方法
+- CJNetwork/CJNetworkClient：网络请求的管理类，其他NetworkClient可通过本CJNetworkClient继承，也可自己再实现
+>
+- CJNetwork/CJRequestUtil：原生(非AFN)的请求
+>
+- CJNetwork/CJCacheManager：自己实现的非第三方的缓存机制
+
 #### Screenshots
 > ![CJNetwork](./Screenshots/CJNetwork.jpg "CJNetwork")
 
-#### 1、加解密：AFHTTPSessionManager+CJEncrypt
-###### (1)、功能：
-在接口请求中加密、解密。
-
-###### (2)、场景：
-我们平时的接口，为保证数据安全，经常需要加密请求、解密返回数据。原始的AFNetworking并未提供相关功能。所这里我们对AFNetworking进行一次二次封装，方便以后使用。
 
 
-###### (3)、How to Use
-所提供的接口有两个，分别为GET和POST，根据需要调用相应的即可。
+
+
+## 二、最少代码的实现自己的网络库 CJNetworkClient
+
+`CJNetworkClient`类是依赖基于`AFNetworking`进行二次封装的请求接口类`AFHTTPSessionManager+CJSerializerEncrypt.h`来实现的网络库。
+
+#### 1、实现方式
+
+子类直接继承`CJNetworkClient`，并进行如下的初始化后，即可直接使用接口
+
+#### 2、代码示例
+
+```objective-c
+@interface TestNetworkClient : CJNetworkClient
+
++ (TestNetworkClient *)sharedInstance;
+
+@end
+
+
+
+@implementation TestNetworkClient
+
++ (TestNetworkClient *)sharedInstance {
+    static TestNetworkClient *_sharedInstance = nil;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        _sharedInstance = [[self alloc] init];
+    });
+    return _sharedInstance;
+}
+
+- (instancetype)init {
+    self = [super init];
+    if (self) {
+        AFHTTPSessionManager *cleanHTTPSessionManager = [TestHTTPSessionManager sharedInstance];
+        TestHTTPSessionManager *cryptHTTPSessionManager = [TestHTTPSessionManager sharedInstance];
+        [self setupCleanHTTPSessionManager:cleanHTTPSessionManager cryptHTTPSessionManager:cryptHTTPSessionManager];
+        
+        //TestEnvironmentManager *environmentManager = [TestEnvironmentManager sharedInstance];
+        [self setupCompleteFullUrlBlock:^NSString *(NSString *apiSuffix) {
+            NSString *baseUrl = @"http://xxx.xxx.xxx";
+            NSString *mainUrl = [[baseUrl stringByAppendingString:apiSuffix] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+            return mainUrl;
+            //return [environmentManager completeUrlWithApiSuffix:apiSuffix];
+        } completeAllParamsBlock:^NSDictionary *(NSDictionary *customParams) {
+            NSMutableDictionary *allParams = [NSMutableDictionary dictionaryWithDictionary:customParams];
+            NSDictionary *commonParams = @{@"phone": @"iPhone6"};
+            [allParams addEntriesFromDictionary:commonParams];
+            return allParams;
+            //return [environmentManager completeParamsWithCustomParams:customParams];
+        }];
+        
+        [self setupResponseConvertBlock:^CJResponseModel *(id responseObject, BOOL isCacheData) {
+            NSDictionary *responseDictionary = responseObject;
+            CJResponseModel *responseModel = [[CJResponseModel alloc] init];
+            responseModel.statusCode = [responseDictionary[@"status"] integerValue];
+            responseModel.message = responseDictionary[@"message"];
+            responseModel.result = responseDictionary[@"result"];
+            responseModel.isCacheData = isCacheData;
+
+            return responseModel;
+            
+        } checkIsCommonBlock:^BOOL(CJResponseModel *responseModel) {
+            return NO;
+            
+        } getRequestFailureMessageBlock:^NSString *(NSError *error) {
+            return @"网络错误";
+        }];
+        
+        NSString *simulateDomain = @"http://localhost/CJDemoDataSimulationDemo";
+        [self setupSimulateDomain:simulateDomain];
+    }
+    return self;
+}
 
 ```
+
+
+
+如果你想自己从头实现CJNetworkClient，那么您可以调用`#import "AFHTTPSessionManager+CJSerializerEncrypt.h"`,只要再请求的时候调用里面的方法即可。
+
+
+
+## 三、基于`AFNetworking`进行二次封装的请求接口类`AFHTTPSessionManager+CJSerializerEncrypt`
+
+###### (1)、功能：
+
+在接口请求中加密、解密、缓存、log输出。
+
+###### (2)、场景：
+
+我们平时的接口，为保证数据安全，经常需要加密请求、解密返回数据。原始的AFNetworking并未提供相关功能。所这里我们对AFNetworking进行一次二次封装，方便以后使用。
+
+###### (3)、How to Use
+
+所提供的接口有两个，分别为GET和POST，根据需要调用相应的即可。
+
+```objective-c
 /**
  *  发起GET请求
  *
  *  @param Url              Url
- *  @param params           params
- *  @param uploadProgress   uploadProgress
+ *  @param allParams        allParams
+ *  @param settingModel     settingModel
  *  @param success          请求成功的回调success
  *  @param failure          请求失败的回调failure
  *
  *  @return NSURLSessionDataTask
  */
 - (nullable NSURLSessionDataTask *)cj_getUrl:(nullable NSString *)Url
-                                      params:(nullable NSDictionary *)params
-                                    progress:(nullable void (^)(NSProgress * _Nonnull))uploadProgress
-                                     success:(nullable void (^)(NSDictionary *_Nullable responseObject))success
-                                     failure:(nullable void (^)(NSError * _Nullable error))failure;
-
+                                      params:(nullable NSDictionary *)allParams
+                                settingModel:(CJRequestSettingModel *)settingModel
+                                     success:(nullable void (^)(id _Nullable responseObject))success
+                                     failure:(void (^)(NSString *errorMessage))failure;
 
 /**
- *  发起POST请求
+ *  发起POST请求(是否加密等都通过Serializer处理)
  *
  *  @param Url              Url
- *  @param params           params
- *  @param encrypt          是否加密
- *  @param encryptBlock     对请求的参数requestParmas加密的方法
- *  @param decryptBlock     对请求得到的responseString解密的方法
- *  @param uploadProgress   uploadProgress
+ *  @param allParams        allParams
+ *  @param settingModel     settingModel
  *  @param success          请求成功的回调success
  *  @param failure          请求失败的回调failure
  *
  *  @return NSURLSessionDataTask
  */
 - (nullable NSURLSessionDataTask *)cj_postUrl:(nullable NSString *)Url
-                                       params:(nullable id)params
-                                      encrypt:(BOOL)encrypt
-                                 encryptBlock:(nullable NSData * _Nullable (^)(NSDictionary * _Nullable requestParmas))encryptBlock
-                                 decryptBlock:(nullable NSDictionary * _Nullable (^)(NSString * _Nullable responseString))decryptBlock
-                                     progress:(nullable void (^)(NSProgress * _Nonnull))uploadProgress
-                                      success:(nullable void (^)(NSDictionary *_Nullable responseObject))success
-                                      failure:(nullable void (^)(NSError * _Nullable error))failure;
+                                       params:(nullable id)allParams
+                                 settingModel:(CJRequestSettingModel *)settingModel
+                                      success:(nullable void (^)(id _Nullable responseObject))success
+                                      failure:(void (^)(NSString *errorMessage))failure;
 ```
 
 
+
 #### 2、文件上传：AFHTTPSessionManager+CJUploadFile
+
 资源文件的上传(比如上传一张或多张图片等)。这里提供两个接口。
 
 > ①一个是只是上传文件，不对上传过程中的各个时刻信息的进行保存;
@@ -74,7 +178,7 @@
 
 两个接口分别如下：
 
-```
+```objective-c
 /**
  *  上传文件的请求方法：除了上传文件，还对上传过程中的各个时刻信息的进行保存(momentInfo：上传请求的各个时刻信息）
  *  @brief 回调中momentInfoOwner其实就是传进来的fileValueOwner
@@ -120,55 +224,6 @@
 同时，这里还为UIView增加类目，实现view直接调用上传接口的功能，该类目名称为`UIView+AFNetworkingUpload`。
 
 
-#### 3、接口数据缓存：AFHTTPSessionManager+CJCacheRequest
-对请求接口进行缓存数据的功能。这个有别于NSURLCache，更偏向SDWebImage的图片存储原理。
-
-```
-/**
- *  发起POST请求
- *
- *  @param Url              Url
- *  @param params           params
- *  @param shouldCache      需要缓存网络数据的情况(如果有缓存，则即代表可以从缓存中获取数据)
- *  @param uploadProgress   uploadProgress
- *  @param success          请求成功的回调success
- *  @param failure          请求失败的回调failure
- *
- *  return NSURLSessionDataTask
- */
-- (nullable NSURLSessionDataTask *)cj_postUrl:(nullable NSString *)Url
-                                       params:(nullable id)params
-                                  shouldCache:(BOOL)shouldCache
-                                     progress:(nullable void (^)(NSProgress * _Nonnull))uploadProgress
-                                      success:(nullable void (^)(NSDictionary *_Nullable responseObject, BOOL isCacheData))success
-                                      failure:(nullable void (^)(NSError * _Nullable error))failure;
-
-#pragma mark - CJCacheEncrypt
-/**
- *  发起POST请求
- *
- *  @param Url              Url
- *  @param params           params
- *  @param shouldCache      需要缓存网络数据的情况(如果有缓存，则即代表可以从缓存中获取数据)
- *  @param encrypt          是否加密
- *  @param encryptBlock     对请求的参数requestParmas加密的方法
- *  @param decryptBlock     对请求得到的responseString解密的方法
- *  @param uploadProgress   uploadProgress
- *  @param success          请求成功的回调success
- *  @param failure          请求失败的回调failure
- *
- *  return NSURLSessionDataTask
- */
-- (nullable NSURLSessionDataTask *)cj_postUrl:(nullable NSString *)Url
-                                       params:(nullable id)params
-                                  shouldCache:(BOOL)shouldCache
-                                      encrypt:(BOOL)encrypt
-                                 encryptBlock:(nullable NSData * _Nullable (^)(NSDictionary * _Nullable requestParmas))encryptBlock
-                                 decryptBlock:(nullable NSDictionary * _Nullable (^)(NSString * _Nullable responseString))decryptBlock
-                                     progress:(nullable void (^)(NSProgress * _Nonnull))uploadProgress
-                                      success:(nullable void (^)(NSDictionary *_Nullable responseObject, BOOL isCacheData))success
-                                      failure:(nullable void (^)(NSError * _Nullable error))failure;
-```
 
 #### 4、断点续传
 ###### (1)、关于断点续传原理：
@@ -197,8 +252,42 @@
 
 
 ## 版本介绍/更新记录
+* V0.6.4 2018-12-12
+
+> 1. 完善CJNetworkClient，增加回调只用一个的情况，并优化接口分类；
+
+
+* V0.6.1 2018-11-21
+
+> 1. 为AFNetworking增加dns处理时候的拦截及处理完之后的并发数控制，并发数的控制放在Manager中，而非每个请求的settingModel中；
+> 2. 将并发数的控制和Ulr的拦截独立抽取到Manager的一个分类中，方便问题的调查和以后方案的替换；
+> 3. 增加记录并发数个数的信号量，确保所记录的并发数个数的正确性。
+> 4. 增加一个独立测试并发数的TestConcurrenModel和一个测试并发数和拦截的TestConcurrenceManager，用于在测试网络前，测试所添加的并发数控制方法是否正确的问题。
+
+* V0.6.0 2018-11-15
+
+> 1. 通过不同的加密方式，实现不同的加密接口，并分类；
+> 2. 优化每个请求的参数设置，避免接口太长，同时提高扩展性；
+> 3. 抽取每个请求的结果回调处理，为加入缓存处理预备；
+> 4. 导入`YYCache`以方便的使用缓存以及获取整个模型，而非只有模型的数据。并实现`CJNetworkCacheManager`缓存类。
+> 5. 增加缓存策略CJNetworkCacheStrategy，支持以下几种实现。
+> 
+```
+///缓存策略
+typedef NS_ENUM(NSUInteger, CJNetworkCacheStrategy) {
+    CJNetworkCacheStrategyNoneCache,            /**< 成功/失败的时候，都不使用缓存，直接使用网络数据 */
+    CJNetworkCacheStrategyEndWithCacheIfExist,  /**< 成功/失败的时候，如果有缓存，则不用再去取网络实际值 */
+    CJNetworkCacheStrategyUseCacheToTransition, /**< 成功/失败的时候，如果有缓存，使用缓存过渡来快速显示，最终以网络数据显示 */
+};
+```
+以及对每个请求结果根据对应的缓存策略，进行结果输出与显示；
+
+
+* V0.5.0 2018-09-26
+> 1. 修改每个请求的回调结果为Model，以提供更全面的信息；
+
 * V0.4.2 2018-09-13
-> 增加打印加密后的body的值
+> 增加打印加密后的body的值；
 
 * V0.4.1 2018-09-11
 > 修复0.4.0版本中加密算法不会调用的问题；

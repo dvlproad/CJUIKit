@@ -7,11 +7,12 @@
 //
 
 #import "CJImageAddDeletePickUploadCollectionView.h"
+#import <Masonry/Masonry.h>
 #import <MediaPlayer/MediaPlayer.h>
 #import <CJBaseHelper/UIViewControllerCJHelper.h>
 #import "CJImageAddUploadProgressView.h"
-#import <Masonry/Masonry.h>
 #import "CJMediaBrowserUtil.h"
+#import "CJChooseFileActionSheetUtil.h"
 
 @interface CJImageAddDeletePickUploadCollectionView () <UICollectionViewDelegate> {
     
@@ -26,12 +27,7 @@
 /*
  *  初始化方法
  *
- *  @param configImageBlock     设置 imageView 的方法（不能为nil）
- *  @param clickItemHandle      点击item时候的操作(如查看大图)
- *  @param addHandle            添加操作
- *  @param deleteCompleteBlock  删除照片后还要执行的操作，如取消之前没结束的请求
- *
- *  @return 返回
+ *  @return 图片 添加+删除+选择+删除+上传 集合视图
  */
 - (instancetype)init {
     self = [super initWithConfigItemCellBlock:^(CJUploadCollectionViewCell *bItemCell, id bDataModel) {
@@ -53,7 +49,7 @@
 //                NSLog(@"未操作视频选择");
 //            }
 //        } else { // 图片选择
-//            [self __pickImageWithCompleteBlock:pickImageCompleteBlock];
+            [self __pickImageWithCompleteBlock:nil];
 //        }
         
     } otherItemCellDeleteBlock:^(id bDataModel) {
@@ -181,5 +177,23 @@
 //        
 //    }
 }
+
+
+/// 选择照片
+- (void)__pickImageWithCompleteBlock:(void(^)(void))pickImageCompleteBlock {
+    [[[UIApplication sharedApplication] keyWindow] endEditing:YES];
+    
+    __weak typeof(self)weakSelf = self;
+    NSInteger canMaxChooseImageCount = self.currentCanMaxAddCount;
+    
+    [CJChooseFileActionSheetUtil defaultImageChooseWithCanMaxChooseImageCount:canMaxChooseImageCount pickCompleteBlock:^(NSArray<UIImage *> *bImages) {
+        [weakSelf addDtaModels:bImages];
+        
+        if (pickImageCompleteBlock) {
+            pickImageCompleteBlock();
+        }
+    }];
+}
+
 
 @end

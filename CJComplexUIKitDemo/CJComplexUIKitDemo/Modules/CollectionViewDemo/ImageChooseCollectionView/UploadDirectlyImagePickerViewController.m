@@ -99,7 +99,7 @@
     
     self.uploadImageCollectionView.backgroundColor = [UIColor redColor];
 //    self.uploadImageCollectionView.belongToViewController = self;
-    self.uploadImageCollectionView.mediaType = CJMediaTypeImage;
+//    self.uploadImageCollectionView.mediaType = CJMediaTypeImage;
 //    self.uploadImageCollectionView.equalCellSizeSetting.maxDataModelShowCount = 5; //TODO:
     
     __weak typeof(self)weakSelf = self;

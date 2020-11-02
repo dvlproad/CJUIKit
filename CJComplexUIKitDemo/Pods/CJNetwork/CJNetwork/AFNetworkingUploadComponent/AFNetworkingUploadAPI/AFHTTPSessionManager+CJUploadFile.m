@@ -3,7 +3,7 @@
 //  CJNetworkDemo
 //
 //  Created by ciyouzen on 2016/10/5.
-//  Copyright © 2017年 dvlproad. All rights reserved.
+//  Copyright © 2016年 dvlproad. All rights reserved.
 //
 
 #import "AFHTTPSessionManager+CJUploadFile.h"
@@ -12,12 +12,15 @@
 
 #pragma mark - 上传文件请求的接口
 /* 完整的描述请参见文件头部 */
-- (nullable NSURLSessionDataTask *)cj_postUploadUrl:(nullable NSString *)Url
-                                             params:(nullable id)params
-                                            fileKey:(nullable NSString *)fileKey
-                                     fileValueOwner:(nullable CJUploadFileModelsOwner *)fileValueOwner
-                        uploadMomentInfoChangeBlock:(nullable void(^)(CJUploadFileModelsOwner * _Nonnull momentInfoOwner))uploadMomentInfoChangeBlock
-               getUploadMomentInfoFromResopnseBlock:(nullable CJUploadMomentInfo * _Nonnull (^)(id _Nonnull responseObject))getUploadMomentInfoFromResopnseBlock;
+- (nullable NSURLSessionDataTask *)cj_uploadUrl:(NSString *)Url
+                                      urlParams:(nullable id)urlParams
+                                     formParams:(nullable id)formParams
+                                        headers:(nullable NSDictionary <NSString *, NSString *> *)headers
+                              cacheSettingModel:(nullable CJRequestCacheSettingModel *)cacheSettingModel
+                                        logType:(CJRequestLogType)logType
+                                 fileValueOwner:(nullable CJUploadFileModelsOwner *)fileValueOwner
+                    uploadMomentInfoChangeBlock:(nullable void(^)(CJUploadFileModelsOwner * _Nonnull momentInfoOwner))uploadMomentInfoChangeBlock
+           getUploadMomentInfoFromResopnseBlock:(nullable CJUploadMomentInfo * _Nonnull (^)(id _Nonnull responseObject))getUploadMomentInfoFromResopnseBlock
 {
     __weak typeof(fileValueOwner)weakFileValueOwner = fileValueOwner;
     
@@ -54,13 +57,13 @@
     
     
     NSURLSessionDataTask *URLSessionDataTask =
-    [self cj_postUploadUrl:Url params:params fileKey:fileKey fileValue:fileValueOwner.uploadFileModels progress:uploadingBlock success:^(NSURLSessionDataTask * _Nonnull task, id _Nonnull responseObject) {
+    [self cj_uploadUrl:Url urlParams:urlParams formParams:formParams headers:headers uploadFileModels:fileValueOwner.uploadFileModels cacheSettingModel:cacheSettingModel logType:logType progress:uploadingBlock success:^(CJSuccessRequestInfo * _Nullable successRequestInfo) {
         if (getUploadMomentInfoFromResopnseBlock) {
-            CJUploadMomentInfo *momentInfo = getUploadMomentInfoFromResopnseBlock(responseObject);
+            CJUploadMomentInfo *momentInfo = getUploadMomentInfoFromResopnseBlock(successRequestInfo.responseObject);
             uploadCompleteBlock(momentInfo);
         }
         
-    } failure:^(NSURLSessionDataTask * _Nonnull task, NSError * _Nonnull error) {
+    } failure:^(CJFailureRequestInfo * _Nullable failureRequestInfo) {
         CJUploadMomentInfo *momentInfo = [[CJUploadMomentInfo alloc] init];
         momentInfo.responseModel = nil;
         momentInfo.uploadState = CJUploadMomentStateFailure;
@@ -68,27 +71,36 @@
         
         uploadCompleteBlock(momentInfo);
         
-        NSLog(@"error: %@", [error localizedDescription]);
+        NSLog(@"error: %@", [failureRequestInfo.error localizedDescription]);
     }];
     
     return URLSessionDataTask;
 }
 
+
 /* 完整的描述请参见文件头部 */
-- (nullable NSURLSessionDataTask *)cj_postUploadUrl:(nullable NSString *)Url
-                                             params:(nullable id)parameters
-                                            fileKey:(nullable NSString *)fileKey
-                                          fileValue:(nullable NSArray<CJUploadFileModel *> *)uploadFileModels
-                                           progress:(nullable void (^)(NSProgress * _Nonnull))uploadProgress
-                                            success:(nullable void (^)(NSURLSessionDataTask * _Nonnull task, id _Nonnull responseObject))success
-                                            failure:(nullable void (^)(NSURLSessionDataTask *_Nonnull task, NSError *_Nonnull error))failure
+- (nullable NSURLSessionDataTask *)cj_uploadUrl:(NSString *)Url
+                                      urlParams:(nullable id)urlParams
+                                     formParams:(nullable id)formParams
+                                        headers:(nullable NSDictionary <NSString *, NSString *> *)headers
+                               uploadFileModels:(nullable NSArray<CJUploadFileModel *> *)uploadFileModels
+                              cacheSettingModel:(nullable CJRequestCacheSettingModel *)cacheSettingModel
+                                        logType:(CJRequestLogType)logType
+                                       progress:(nullable void (^)(NSProgress * _Nonnull))uploadProgress
+                                        success:(nullable void (^)(CJSuccessRequestInfo * _Nullable successRequestInfo))success
+                                        failure:(nullable void (^)(CJFailureRequestInfo * _Nullable failureRequestInfo))failure
 {
+    if (urlParams) {
+        Url = [self __appendUrl:Url withParams:urlParams];
+    }
+    
     NSURLSessionDataTask *URLSessionDataTask =
-    [self POST:Url parameters:parameters constructingBodyWithBlock:^(id<AFMultipartFormData>  _Nonnull formData)
+    [self POST:Url parameters:formParams headers:headers constructingBodyWithBlock:^(id<AFMultipartFormData>  _Nonnull formData)
     {
         for (CJUploadFileModel *uploadFileModel in uploadFileModels) {
             NSData *data = uploadFileModel.uploadItemData;
             NSString *fileName = uploadFileModel.uploadItemName;
+            NSString *fileKey = uploadFileModel.uploadItemKey;
             
             switch (uploadFileModel.uploadItemType) {
                 case CJUploadItemTypeImage:
@@ -124,8 +136,12 @@
                 }
             }
         }
+    } progress:uploadProgress success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        [self __didRequestSuccessForTask:task withResponseObject:responseObject isCacheData:NO forUrl:Url params:formParams cacheSettingModel:cacheSettingModel logType:logType success:success];
         
-    } progress:uploadProgress success:success failure:failure];
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        [self __didRequestFailureForTask:task withResponseError:error forUrl:Url params:formParams logType:logType failure:failure];
+    }];
     
     return URLSessionDataTask;
 }

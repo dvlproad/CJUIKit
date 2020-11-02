@@ -1,18 +1,18 @@
 PODS:
-  - AFNetworking (3.2.1):
-    - AFNetworking/NSURLSession (= 3.2.1)
-    - AFNetworking/Reachability (= 3.2.1)
-    - AFNetworking/Security (= 3.2.1)
-    - AFNetworking/Serialization (= 3.2.1)
-    - AFNetworking/UIKit (= 3.2.1)
-  - AFNetworking/NSURLSession (3.2.1):
+  - AFNetworking (4.0.1):
+    - AFNetworking/NSURLSession (= 4.0.1)
+    - AFNetworking/Reachability (= 4.0.1)
+    - AFNetworking/Security (= 4.0.1)
+    - AFNetworking/Serialization (= 4.0.1)
+    - AFNetworking/UIKit (= 4.0.1)
+  - AFNetworking/NSURLSession (4.0.1):
     - AFNetworking/Reachability
     - AFNetworking/Security
     - AFNetworking/Serialization
-  - AFNetworking/Reachability (3.2.1)
-  - AFNetworking/Security (3.2.1)
-  - AFNetworking/Serialization (3.2.1)
-  - AFNetworking/UIKit (3.2.1):
+  - AFNetworking/Reachability (4.0.1)
+  - AFNetworking/Security (4.0.1)
+  - AFNetworking/Serialization (4.0.1)
+  - AFNetworking/UIKit (4.0.1):
     - AFNetworking/NSURLSession
   - CJBaseEffectKit/CJDataEmptyView (0.2.0):
     - CJFoundation/NSString
@@ -160,53 +160,51 @@ PODS:
     - MBProgressHUD
   - CJImagePickerKit/SystemImagePickerController (0.0.4):
     - Masonry
-  - CJNetwork (0.5.0):
-    - CJNetwork/AFNetworkingBaseComponent (= 0.5.0)
-    - CJNetwork/AFNetworkingCacheComponent (= 0.5.0)
-    - CJNetwork/AFNetworkingUploadComponent (= 0.5.0)
-    - CJNetwork/CJCacheManager (= 0.5.0)
-    - CJNetwork/CJNetworkBase (= 0.5.0)
-    - CJNetwork/CJRequestUtil (= 0.5.0)
-  - CJNetwork/AFNetworkingBaseComponent (0.5.0):
+  - CJNetwork/AFNetworkingSerializerEncrypt (0.8.0-beta.2):
+    - CJNetwork/CJNetworkCommon
+  - CJNetwork/AFNetworkingUploadComponent (0.8.0-beta.2):
+    - CJNetwork/CJNetworkCommon
+    - CJNetworkFileModel
+  - CJNetwork/CJNetworkCommon (0.8.0-beta.2):
     - AFNetworking
-    - CJNetwork/CJNetworkBase
-  - CJNetwork/AFNetworkingCacheComponent (0.5.0):
-    - CJNetwork/AFNetworkingBaseComponent
-    - CJNetwork/CJCacheManager
-  - CJNetwork/AFNetworkingUploadComponent (0.5.0):
-    - AFNetworking
-  - CJNetwork/CJCacheManager (0.5.0)
-  - CJNetwork/CJNetworkBase (0.5.0)
-  - CJNetwork/CJRequestUtil (0.5.0):
-    - CJNetwork/CJNetworkBase
+    - MJExtension
+    - YYCache
   - CJNetworkFileModel (0.1.0):
     - CJNetworkFileModel/Upload (= 0.1.0)
   - CJNetworkFileModel/Upload (0.1.0)
   - CQCollectionViewDataSource/ExtralItem (0.1.0)
-  - CQDemoKit (0.3.1):
-    - CQDemoKit/Demo_Resource (= 0.3.1)
-    - CQDemoKit/Home_Base (= 0.3.1)
-    - CQDemoKit/Home_Collection (= 0.3.1)
-    - CQDemoKit/Home_TextView (= 0.3.1)
-  - CQDemoKit/Demo_Resource (0.3.1)
-  - CQDemoKit/Home_Base (0.3.1):
+  - CQDemoKit/BaseUtil (0.5.4)
+  - CQDemoKit/BaseVC (0.5.4):
+    - CQDemoKit/BaseVC/Base (= 0.5.4)
+    - CQDemoKit/BaseVC/Collection (= 0.5.4)
+    - CQDemoKit/BaseVC/ScrollView (= 0.5.4)
+    - CQDemoKit/BaseVC/TableView (= 0.5.4)
+    - CQDemoKit/BaseVC/TextView (= 0.5.4)
+  - CQDemoKit/BaseVC/Base (0.5.4):
+    - Masonry
+  - CQDemoKit/BaseVC/Collection (0.5.4):
     - CJBaseUtil/CJDataUtil
-    - Masonry
-  - CQDemoKit/Home_Collection (0.3.1):
-    - CQDemoKit/Home_Base
-  - CQDemoKit/Home_TextView (0.3.1):
-    - CQDemoKit/Home_Base
-  - CQImageAddDeleteListKit (0.2.0):
+    - CQDemoKit/BaseVC/Base
+  - CQDemoKit/BaseVC/ScrollView (0.5.4):
+    - CQDemoKit/BaseVC/Base
+  - CQDemoKit/BaseVC/TableView (0.5.4):
+    - CJBaseUtil/CJDataUtil
+    - CQDemoKit/BaseVC/Base
+  - CQDemoKit/BaseVC/TextView (0.5.4):
+    - CJBaseUtil/CJDataUtil
+    - CQDemoKit/BaseUtil
+    - CQDemoKit/BaseVC/Base
+  - CQImageAddDeleteListKit (0.2.1):
     - CJBaseUIKit/UIColor
-    - CQImageAddDeleteListKit/AddDelete (= 0.2.0)
-    - CQImageAddDeleteListKit/AddDeletePickUpload (= 0.2.0)
-    - CQImageAddDeleteListKit/ImageChooseView (= 0.2.0)
+    - CQImageAddDeleteListKit/AddDelete (= 0.2.1)
+    - CQImageAddDeleteListKit/AddDeletePickUpload (= 0.2.1)
+    - CQImageAddDeleteListKit/ImageChooseView (= 0.2.1)
     - Masonry
-  - CQImageAddDeleteListKit/AddDelete (0.2.0):
+  - CQImageAddDeleteListKit/AddDelete (0.2.1):
     - CJBaseUIKit/UIColor
     - CJCollectionViewLayout
     - Masonry
-  - CQImageAddDeleteListKit/AddDeletePickUpload (0.2.0):
+  - CQImageAddDeleteListKit/AddDeletePickUpload (0.2.1):
     - CJBaseHelper/UIViewControllerCJHelper
     - CJBaseUIKit/UIColor
     - CJFile/CJFileManager
@@ -215,7 +213,7 @@ PODS:
     - CQImagePickerKit
     - CQOverlayKit/CQActionSheet
     - Masonry
-  - CQImageAddDeleteListKit/ImageChooseView (0.2.0):
+  - CQImageAddDeleteListKit/ImageChooseView (0.2.1):
     - CJBaseHelper/NSObjectCJHelper
     - CJBaseUIKit/UIColor
     - Masonry
@@ -266,15 +264,14 @@ PODS:
   - CQOverlayKit/Theme (0.3.0):
     - CJBaseOverlayKit/CJBaseOverlayTheme
   - DZNEmptyDataSet (1.8.1)
-  - IjinbuNetwork (0.1.0):
-    - CJNetwork/AFNetworkingBaseComponent
-    - CJNetwork/AFNetworkingCacheComponent
-    - CJNetwork/AFNetworkingUploadComponent
+  - IjinbuNetwork (0.2.0):
+    - CJNetwork/AFNetworkingSerializerEncrypt (~> 0.8.0-beta.2)
+    - CJNetwork/AFNetworkingUploadComponent (~> 0.8.0-beta.2)
     - OpenUDID
-  - JGActionSheet (1.0.5)
   - lottie-ios (2.5.3)
   - Masonry (1.1.0)
   - MBProgressHUD (1.2.0)
+  - MJExtension (3.2.2)
   - MJPopupViewController (0.4)
   - NJKWebViewProgress (0.2.3):
     - NJKWebViewProgress/Core (= 0.2.3)
@@ -291,9 +288,9 @@ PODS:
   - SDWebImage/Core (5.8.0)
   - SVProgressHUD (2.2.5)
   - UICollectionViewCJSelectHelper (0.1.0)
+  - YYCache (1.0.4)
 
 DEPENDENCIES:
-  - AFNetworking
   - AFNetworking/Reachability
   - CJBaseEffectKit/CJDataEmptyView
   - CJBaseEffectKit/CJScaleHeadView
@@ -304,15 +301,12 @@ DEPENDENCIES:
   - CJComplexUIKit/CJCollectionView (from `../`)
   - CJComplexUIKit/CJScrollView (from `../`)
   - CJFoundation (from `../`)
-  - CJNetwork
-  - CJNetwork/AFNetworkingBaseComponent
   - CQCollectionViewDataSource/ExtralItem
-  - CQDemoKit (~> 0.3.1)
+  - CQDemoKit/BaseVC (~> 0.5.4)
   - CQImageAddDeleteListKit (~> 0.2.0)
   - CQOverlayKit
   - DZNEmptyDataSet
-  - IjinbuNetwork (~> 0.1.0)
-  - JGActionSheet
+  - IjinbuNetwork (~> 0.2.0)
   - MJPopupViewController (~> 0.4)
   - NJKWebViewProgress
   - SDCycleScrollView (~> 1.75)
@@ -338,10 +332,10 @@ SPEC REPOS:
     - CJNetworkFileModel
     - CQDemoKit
     - DZNEmptyDataSet
-    - JGActionSheet
     - lottie-ios
     - Masonry
     - MBProgressHUD
+    - MJExtension
     - MJPopupViewController
     - NJKWebViewProgress
     - OpenUDID
@@ -350,6 +344,7 @@ SPEC REPOS:
     - SDCycleScrollView
     - SDWebImage
     - SVProgressHUD
+    - YYCache
 
 EXTERNAL SOURCES:
   CJBaseHelper:
@@ -364,7 +359,7 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
+  AFNetworking: 7864c38297c79aaca1500c33288e429c3451fdce
   CJBaseEffectKit: 8640801fa272a1d96a6edce2c994652ced0e519f
   CJBaseHelper: dd715e18591da9df5d06364098300591220f0535
   CJBaseOverlayKit: 527fc5c7431854d2265b83a7adee176ccea68ff3
@@ -375,19 +370,19 @@ SPEC CHECKSUMS:
   CJFile: 6c1e6d55b3b94e8afbaa9f413f131301d15fdc48
   CJFoundation: 53b4df7152c6d6fd776f55f387c67f431b8574bd
   CJImagePickerKit: 805ba0ab68cac4671aa4c39a9cf3b6a7f1b71252
-  CJNetwork: a75f849e5c6ec8fc85ca7aa5027f73d6c48a4af1
+  CJNetwork: d056360a15eeb94039676897c4219a8aed89e8f6
   CJNetworkFileModel: 738b736e68e577b4affdf78f8a4a2ded4204364d
   CQCollectionViewDataSource: dc8ed4fe4eaebe2d63567e617f615fffbf0c3332
-  CQDemoKit: 939ad9b106b105b875a77a3e1ab21bfbed964c27
-  CQImageAddDeleteListKit: 15522527bfc6eb45baf5390607b69dae11747f0c
+  CQDemoKit: 232a9fdfc68ab2dba64a786167a49db75789222c
+  CQImageAddDeleteListKit: 52871e793d01b29558967584a8855f2587654043
   CQImagePickerKit: 22a8d03c17754d4a18729f0e24f438a3a5805cb3
   CQOverlayKit: 14c376841d352a1c8a18bffea896c53c317cf06a
   DZNEmptyDataSet: 9525833b9e68ac21c30253e1d3d7076cc828eaa7
-  IjinbuNetwork: 307e7e12d35b547f04b885cc2aa098625e4b9768
-  JGActionSheet: 2cfca820b57a11ec4b4a5655d45ee599fbeddc05
+  IjinbuNetwork: d42df83a03bd2a9098d8a8498d669b8a057e6f16
   lottie-ios: a50d5c0160425cd4b01b852bb9578963e6d92d31
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   MBProgressHUD: 3ee5efcc380f6a79a7cc9b363dd669c5e1ae7406
+  MJExtension: d9b9c74cbdeb724c1e9ecbb157b318276e62e876
   MJPopupViewController: e9ad553a3145eb8126ba2748e872ae7fb25cc605
   NJKWebViewProgress: f481fd424cb5ecc27eacae11b5397db92fba9a4d
   OpenUDID: e7cb6984c7304906ad20f3a36bf087b025896b6b
@@ -397,7 +392,8 @@ SPEC CHECKSUMS:
   SDWebImage: 84000f962cbfa70c07f19d2234cbfcf5d779b5dc
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
   UICollectionViewCJSelectHelper: a8a87795c790ef8ca48a9e7301a24403a5ce383c
+  YYCache: 8105b6638f5e849296c71f331ff83891a4942952
 
-PODFILE CHECKSUM: 5bd37881036f981aba07bd7b39f5b254914dc010
+PODFILE CHECKSUM: 2f8334dc587bf6ad7ff5b377c9a6c76047473e01
 
 COCOAPODS: 1.9.3

@@ -8,7 +8,7 @@
 
 #import "H5ImgSettingBaseViewController.h"
 #import "TSButtonFactory.h"
-#import <CJMedia/MySingleImagePickerController.h>
+#import <CQImagePickerKit/CQImagePickerControllerFactory.h>
 #import <CJBaseUIKit/UIImage+CJTransformSize.h>
 #import <CJBaseUIKit/UIImage+CJBase64.h>
 
@@ -43,13 +43,8 @@
 }
 
 - (void)showCamera {
-    MySingleImagePickerController *imagePickerController = [[MySingleImagePickerController alloc] init];
-    [imagePickerController pickImageFinishBlock:^(UIImage *image) {
+    CJSystemImagePickerController *imagePickerController = [CQImagePickerControllerFactory pickSingleAssetVC_pickFinishBlock:^(UIImage *image) {
         [self dealOriginImage:image];
-    } pickVideoFinishBlock:^(UIImage *firstImage) {
-        
-    } pickCancelBlock:^{
-        
     }];
     [self presentViewController:imagePickerController animated:YES completion:nil];
 }

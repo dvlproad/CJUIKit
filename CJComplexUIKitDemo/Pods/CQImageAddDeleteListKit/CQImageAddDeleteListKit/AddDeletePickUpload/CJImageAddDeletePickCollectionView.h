@@ -5,6 +5,7 @@
 //  Created by ciyouzen on 2017/1/19.
 //  Copyright © 2017年 dvlproad. All rights reserved.
 //
+//  图片 添加+删除+选择+删除 集合视图
 
 #import "CJImageAddDeleteCollectionView.h"
 
@@ -31,8 +32,9 @@ typedef NS_ENUM(NSUInteger, CJMediaType) {
  *  @return 返回列表
  */
 - (instancetype)initWithPickImageCompleteBlock:(void(^)(void))pickImageCompleteBlock
-                               pickVideoHandle:(void(^)(void))pickVideoHandle;
+                               pickVideoHandle:(void(^)(void))pickVideoHandle NS_DESIGNATED_INITIALIZER;
 
+- (instancetype)initWithConfigItemCellBlock:(void (^)(CJUploadCollectionViewCell *, id))configItemCellBlock clickItemHandle:(void (^)(NSArray *, NSInteger))clickItemHandle addHandle:(void (^)(CJImageAddDeleteCollectionView *))addHandle otherItemCellDeleteBlock:(void (^)(id))otherItemCellDeleteBlock NS_UNAVAILABLE;
 
 
 @end

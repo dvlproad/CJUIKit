@@ -5,6 +5,7 @@
 //  Created by ciyouzen on 2017/1/19.
 //  Copyright © 2017年 dvlproad. All rights reserved.
 //
+//  图片 添加+删除+选择+删除+上传 集合视图
 
 #import "CJImageAddDeleteCollectionView.h"
 #import "CJImageUploadFileModelsOwner.h"
@@ -30,6 +31,11 @@ typedef NS_ENUM(NSUInteger, CJUploadActionType) {
 
 
 //@property (nonatomic, strong) UIViewController *belongToViewController;
+
+
+- (instancetype)init NS_DESIGNATED_INITIALIZER;
+
+- (instancetype)initWithConfigItemCellBlock:(void (^)(CJUploadCollectionViewCell *, id))configItemCellBlock clickItemHandle:(void (^)(NSArray *, NSInteger))clickItemHandle addHandle:(void (^)(CJImageAddDeleteCollectionView *))addHandle otherItemCellDeleteBlock:(void (^)(id))otherItemCellDeleteBlock NS_UNAVAILABLE;
 
 /**
  *  检查所有文件是否上传完成

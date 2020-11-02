@@ -14,8 +14,11 @@
 - (void)cjConfigureUploadProgressView:(CJUploadProgressView *)uploadProgressView
            withUploadRequestByManager:(AFHTTPSessionManager *)manager
                                   Url:(NSString *)Url
-                               params:(id)params
-                              fileKey:(NSString *)fileKey
+                            urlParams:(nullable id)urlParams
+                           formParams:(nullable id)formParams
+                              headers:(nullable NSDictionary <NSString *, NSString *> *)headers
+                    cacheSettingModel:(nullable CJRequestCacheSettingModel *)cacheSettingModel
+                              logType:(CJRequestLogType)logType
                        fileValueOwner:(CJUploadFileModelsOwner *)fileValueOwner
           uploadMomentInfoChangeBlock:(void(^)(CJUploadFileModelsOwner *momentInfoOwner))uploadMomentInfoChangeBlock
  getUploadMomentInfoFromResopnseBlock:(CJUploadMomentInfo * (^)(id responseObject))getUploadMomentInfoFromResopnseBlock
@@ -24,11 +27,14 @@
     NSURLSessionDataTask *operation = fileValueOwner.operation;
     if (operation == nil) {
         operation =
-        [manager cj_postUploadUrl:Url
-                           params:params
-                          fileKey:fileKey
-                   fileValueOwner:fileValueOwner
-      uploadMomentInfoChangeBlock:uploadMomentInfoChangeBlock
+        [manager cj_uploadUrl:Url
+                    urlParams:urlParams
+                   formParams:formParams
+                      headers:headers
+            cacheSettingModel:cacheSettingModel
+                      logType:logType
+               fileValueOwner:fileValueOwner
+  uploadMomentInfoChangeBlock:uploadMomentInfoChangeBlock
 getUploadMomentInfoFromResopnseBlock:getUploadMomentInfoFromResopnseBlock];
         
         fileValueOwner.operation = operation;
@@ -43,11 +49,14 @@ getUploadMomentInfoFromResopnseBlock:getUploadMomentInfoFromResopnseBlock];
         [strongFileValueOwner.operation cancel];
         
         NSURLSessionDataTask *newOperation =
-        [manager cj_postUploadUrl:Url
-                           params:params
-                          fileKey:fileKey
-                   fileValueOwner:fileValueOwner
-      uploadMomentInfoChangeBlock:uploadMomentInfoChangeBlock
+        [manager cj_uploadUrl:Url
+                    urlParams:urlParams
+                   formParams:formParams
+                      headers:headers
+            cacheSettingModel:cacheSettingModel
+                      logType:logType
+               fileValueOwner:fileValueOwner
+  uploadMomentInfoChangeBlock:uploadMomentInfoChangeBlock
 getUploadMomentInfoFromResopnseBlock:getUploadMomentInfoFromResopnseBlock];
         
         strongFileValueOwner.operation = newOperation;
