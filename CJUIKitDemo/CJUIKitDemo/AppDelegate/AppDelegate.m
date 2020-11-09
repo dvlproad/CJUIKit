@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-#import "AppDelegate+WindowRootViewController.h"
+#import "UIWindow+RootSetting.h"
 
 #import "YunUncaughtExceptionHandler.h"
 
@@ -75,13 +75,7 @@
     [UINavigationConfig shared].sx_defaultFixSpace = 2;//默认为0 可以修改
     
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
-    // 所有测试
-    UIViewController *rootViewController = [self getMainRootViewController];
-    // 只直接测试某个页面
-   //rootViewController = [[UINavigationController alloc] initWithRootViewController:[[NSClassFromString(@"SearchBarViewController") alloc] init]];
-    
-    self.window.rootViewController = rootViewController;
-    [self.window makeKeyAndVisible];
+    [self.window settingRoot];
     
     // Override point for customization after application launch.
     [self configureDefaultNavigationBarAppearance];

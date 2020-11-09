@@ -76,7 +76,6 @@
 		1562F2F223F5DBF40009FCEA /* UITextField+CJPadding.m in Sources */ = {isa = PBXBuildFile; fileRef = 1562F2AC23F5DBF40009FCEA /* UITextField+CJPadding.m */; };
 		1562F2F323F5DBF40009FCEA /* UITextField+CJSelectedTextRange.m in Sources */ = {isa = PBXBuildFile; fileRef = 1562F2AD23F5DBF40009FCEA /* UITextField+CJSelectedTextRange.m */; };
 		1562F38723FD2FC70009FCEA /* APPUIKitSetting.m in Sources */ = {isa = PBXBuildFile; fileRef = 1562F38123FD2FC70009FCEA /* APPUIKitSetting.m */; };
-		1562F38823FD2FC70009FCEA /* AppDelegate+WindowRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1562F38523FD2FC70009FCEA /* AppDelegate+WindowRootViewController.m */; };
 		1562F38923FD2FC70009FCEA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1562F38623FD2FC70009FCEA /* AppDelegate.m */; };
 		156AC8D12406D9F800A5A23D /* DemoTagButtonFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 156AC8CF2406D9F800A5A23D /* DemoTagButtonFactory.m */; };
 		156AC8D62406DBBE00A5A23D /* badgeButton_highlighted@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 156AC8D22406DBBE00A5A23D /* badgeButton_highlighted@3x.png */; };
@@ -325,6 +324,8 @@
 		80FF919D1FC5682B00E437CF /* CountDownTimeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 80FF91861FC5682A00E437CF /* CountDownTimeViewController.xib */; };
 		80FF919E1FC5682B00E437CF /* OtherHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80FF91881FC5682A00E437CF /* OtherHomeViewController.m */; };
 		80FF91C51FC581DD00E437CF /* UtilHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80FF91BF1FC581DD00E437CF /* UtilHomeViewController.m */; };
+		97578AAC25590E9300249AD6 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 97578AAB25590E9300249AD6 /* MainViewController.m */; };
+		97578AB225590F7100249AD6 /* UIWindow+RootSetting.m in Sources */ = {isa = PBXBuildFile; fileRef = 97578AB125590F7100249AD6 /* UIWindow+RootSetting.m */; };
 		E2649F5BE7F7FEF404688168 /* libPods-CJUIKitDemoTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 935109AAB855F6CC8B84B9A5 /* libPods-CJUIKitDemoTests.a */; };
 /* End PBXBuildFile section */
 
@@ -480,9 +481,7 @@
 		1562F2AE23F5DBF40009FCEA /* UITextField+CJTextChangeBlock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextField+CJTextChangeBlock.h"; sourceTree = "<group>"; };
 		1562F38123FD2FC70009FCEA /* APPUIKitSetting.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APPUIKitSetting.m; sourceTree = "<group>"; };
 		1562F38223FD2FC70009FCEA /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		1562F38323FD2FC70009FCEA /* AppDelegate+WindowRootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AppDelegate+WindowRootViewController.h"; sourceTree = "<group>"; };
 		1562F38423FD2FC70009FCEA /* APPUIKitSetting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APPUIKitSetting.h; sourceTree = "<group>"; };
-		1562F38523FD2FC70009FCEA /* AppDelegate+WindowRootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AppDelegate+WindowRootViewController.m"; sourceTree = "<group>"; };
 		1562F38623FD2FC70009FCEA /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		156AC8CF2406D9F800A5A23D /* DemoTagButtonFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DemoTagButtonFactory.m; sourceTree = "<group>"; };
 		156AC8D02406D9F800A5A23D /* DemoTagButtonFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DemoTagButtonFactory.h; sourceTree = "<group>"; };
@@ -905,6 +904,10 @@
 		80FF91BE1FC581DD00E437CF /* UtilHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UtilHomeViewController.h; sourceTree = "<group>"; };
 		80FF91BF1FC581DD00E437CF /* UtilHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UtilHomeViewController.m; sourceTree = "<group>"; };
 		935109AAB855F6CC8B84B9A5 /* libPods-CJUIKitDemoTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CJUIKitDemoTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		97578AAA25590E9300249AD6 /* MainViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
+		97578AAB25590E9300249AD6 /* MainViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
+		97578AB025590F7100249AD6 /* UIWindow+RootSetting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIWindow+RootSetting.h"; sourceTree = "<group>"; };
+		97578AB125590F7100249AD6 /* UIWindow+RootSetting.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIWindow+RootSetting.m"; sourceTree = "<group>"; };
 		9AC0A78AFE86FE250B370A06 /* Pods-CJUIKitDemoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CJUIKitDemoTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CJUIKitDemoTests/Pods-CJUIKitDemoTests.debug.xcconfig"; sourceTree = "<group>"; };
 		A078401C0E781545EB72B64D /* libPods-CJUIKitDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CJUIKitDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF18E9E3F2E33815C8D88994 /* Pods-CJUIKitDemoUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CJUIKitDemoUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CJUIKitDemoUITests/Pods-CJUIKitDemoUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -1379,8 +1382,10 @@
 			children = (
 				1562F38223FD2FC70009FCEA /* AppDelegate.h */,
 				1562F38623FD2FC70009FCEA /* AppDelegate.m */,
-				1562F38323FD2FC70009FCEA /* AppDelegate+WindowRootViewController.h */,
-				1562F38523FD2FC70009FCEA /* AppDelegate+WindowRootViewController.m */,
+				97578AB025590F7100249AD6 /* UIWindow+RootSetting.h */,
+				97578AB125590F7100249AD6 /* UIWindow+RootSetting.m */,
+				97578AAA25590E9300249AD6 /* MainViewController.h */,
+				97578AAB25590E9300249AD6 /* MainViewController.m */,
 				1562F38423FD2FC70009FCEA /* APPUIKitSetting.h */,
 				1562F38123FD2FC70009FCEA /* APPUIKitSetting.m */,
 			);
@@ -2819,6 +2824,7 @@
 				788A55FA21AFCE540011F993 /* DemoLabelFactory.m in Sources */,
 				7850B70120937C5A008F4A21 /* PopupInWindowVC.m in Sources */,
 				7850B71320937E85008F4A21 /* WelcomeViewToPop.m in Sources */,
+				97578AB225590F7100249AD6 /* UIWindow+RootSetting.m in Sources */,
 				1562F2E923F5DBF40009FCEA /* CJSwitchView.m in Sources */,
 				78A621ED2135CA50004DA046 /* DemoFloatingWindow.m in Sources */,
 				807F126020B507A30008B748 /* ViewAnimateViewController.m in Sources */,
@@ -2916,6 +2922,7 @@
 				7808318722DC116700F36576 /* GifViewController.m in Sources */,
 				1562F2C623F5DBF40009FCEA /* UITextField+CJAddInputAccessoryView.m in Sources */,
 				1562F2CC23F5DBF40009FCEA /* UIView+CJAnimation.m in Sources */,
+				97578AAC25590E9300249AD6 /* MainViewController.m in Sources */,
 				78B6C2E62159D6E900D5864E /* DemoBusStationLocationModel.m in Sources */,
 				788113CB21996A2600D1630D /* SubNormalSharedInstanceClass.m in Sources */,
 				80FF91951FC5682B00E437CF /* FoundationHomeViewController.m in Sources */,
@@ -2977,7 +2984,6 @@
 				787FDB8520500B5C008A46E3 /* SwitchSliderViewController.m in Sources */,
 				7850B70220937C5A008F4A21 /* PopupInViewVC.m in Sources */,
 				1562F2F023F5DBF40009FCEA /* CJTextField.m in Sources */,
-				1562F38823FD2FC70009FCEA /* AppDelegate+WindowRootViewController.m in Sources */,
 				1562F2EA23F5DBF40009FCEA /* CJTextView.m in Sources */,
 				78FCF5522306A9BA00D275F9 /* UIView+CJDemoPopupAction.m in Sources */,
 				80500388211C3A29002A2306 /* PresentBaseViewController.m in Sources */,

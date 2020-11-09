@@ -1,12 +1,12 @@
 //
-//  AppDelegate+WindowRootViewController.m
+//  MainViewController.m
 //  CJUIKitDemo
 //
 //  Created by ciyouzen on 2017/2/25.
 //  Copyright © 2017年 dvlproad. All rights reserved.
 //
 
-#import "AppDelegate+WindowRootViewController.h"
+#import "MainViewController.h"
 
 #import "HomeViewController.h"
 #import "FoundationHomeViewController.h"
@@ -14,11 +14,22 @@
 #import "HelperHomeViewController.h"
 #import "MoreHomeViewController.h"
 
-@implementation AppDelegate (WindowRootViewController)
 
-- (UIViewController *)getMainRootViewController {
-    UITabBarController *tabBarController = [[UITabBarController alloc] init];
-    tabBarController.tabBar.backgroundImage = [UIImage imageNamed:@"tabbar_BG"];
+@interface MainViewController ()
+
+@end
+
+@implementation MainViewController
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    // Do any additional setup after loading the view.
+    
+    [self setupViews];
+}
+
+- (void)setupViews {
+    self.tabBar.backgroundImage = [UIImage imageNamed:@"tabbar_BG"];
     
     /*
     知识点(UITabBarController):
@@ -33,7 +44,7 @@
     homeViewController.tabBarItem.image = [[UIImage imageNamed:@"icons8-home"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     //homeViewController. = @"10";
     UINavigationController *homeNavigationController = [[UINavigationController alloc] initWithRootViewController:homeViewController];
-    [tabBarController addChildViewController:homeNavigationController];
+    [self addChildViewController:homeNavigationController];
     
     FoundationHomeViewController *foundationHomeViewController = [[FoundationHomeViewController alloc] init];
     foundationHomeViewController.view.backgroundColor = [UIColor whiteColor];
@@ -41,7 +52,7 @@
     foundationHomeViewController.tabBarItem.title = NSLocalizedString(@"CJFoundataion", nil);
     foundationHomeViewController.tabBarItem.image = [[UIImage imageNamed:@"icons8-settings"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     UINavigationController *foundationHomeNavigationController = [[UINavigationController alloc] initWithRootViewController:foundationHomeViewController];
-    [tabBarController addChildViewController:foundationHomeNavigationController];
+    [self addChildViewController:foundationHomeNavigationController];
     
     HelperHomeViewController *helperHomeViewController = [[HelperHomeViewController alloc] init];
     helperHomeViewController.view.backgroundColor = [UIColor whiteColor];
@@ -49,7 +60,7 @@
     helperHomeViewController.tabBarItem.title = NSLocalizedString(@"CJHelper", nil);
     helperHomeViewController.tabBarItem.image = [[UIImage imageNamed:@"icons8-settings"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     UINavigationController *helperHomeNavigationController = [[UINavigationController alloc] initWithRootViewController:helperHomeViewController];
-    [tabBarController addChildViewController:helperHomeNavigationController];
+    [self addChildViewController:helperHomeNavigationController];
     
     UtilHomeViewController *utilHomeViewController = [[UtilHomeViewController alloc] init];
     utilHomeViewController.view.backgroundColor = [UIColor whiteColor];
@@ -57,7 +68,7 @@
     utilHomeViewController.tabBarItem.title = NSLocalizedString(@"CJUtil", nil);
     utilHomeViewController.tabBarItem.image = [[UIImage imageNamed:@"icons8-settings"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     UINavigationController *utilHomeNavigationController = [[UINavigationController alloc] initWithRootViewController:utilHomeViewController];
-    [tabBarController addChildViewController:utilHomeNavigationController];
+    [self addChildViewController:utilHomeNavigationController];
     
     MoreHomeViewController *moreHomeViewController = [[MoreHomeViewController alloc] init];
     moreHomeViewController.view.backgroundColor = [UIColor whiteColor];
@@ -65,7 +76,7 @@
     moreHomeViewController.tabBarItem.title = NSLocalizedString(@"更多", nil);
     moreHomeViewController.tabBarItem.image = [[UIImage imageNamed:@"icons8-settings"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     UINavigationController *moreHomeNavigationController = [[UINavigationController alloc] initWithRootViewController:moreHomeViewController];
-    [tabBarController addChildViewController:moreHomeNavigationController];
+    [self addChildViewController:moreHomeNavigationController];
     
     /*
     UIViewController *secondViewController = [[ThirdPartyHomeViewController alloc] init];
@@ -74,11 +85,19 @@
     secondViewController.tabBarItem.title = NSLocalizedString(@"第三方库首页", nil);
     secondViewController.tabBarItem.image = [[UIImage imageNamed:@"icons8-calendar"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     UINavigationController *secondNavigationController = [[UINavigationController alloc] initWithRootViewController:secondViewController];
-    [tabBarController addChildViewController:secondNavigationController];
+    [self addChildViewController:secondNavigationController];
     */
-//    [tabBarController setViewControllers:@[firstNavigationController, secondNavigationController, navigationController3, navigationController4] animated:YES];
-    
-    return tabBarController;
+//    [self setViewControllers:@[firstNavigationController, secondNavigationController, navigationController3, navigationController4] animated:YES];
 }
+
+/*
+#pragma mark - Navigation
+
+// In a storyboard-based application, you will often want to do a little preparation before navigation
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    // Get the new view controller using [segue destinationViewController].
+    // Pass the selected object to the new view controller.
+}
+*/
 
 @end
