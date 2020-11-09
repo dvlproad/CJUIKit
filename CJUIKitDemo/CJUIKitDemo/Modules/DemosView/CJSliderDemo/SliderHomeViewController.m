@@ -43,7 +43,6 @@
             CJModuleModel *sliderModule = [[CJModuleModel alloc] init];
             sliderModule.title = @"RangeSlider";
             sliderModule.classEntry = [RangeSliderViewController class];
-            sliderModule.isCreateByXib = NO;
             [sectionDataModel.values addObject:sliderModule];
         }
         {

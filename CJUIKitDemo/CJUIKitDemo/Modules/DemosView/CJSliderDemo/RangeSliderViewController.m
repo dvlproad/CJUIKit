@@ -7,8 +7,18 @@
 //
 
 #import "RangeSliderViewController.h"
+#import "TSSliderFactory.h"
 
-@interface RangeSliderViewController ()
+#import "DemoLabelFactory.h"
+
+@interface RangeSliderViewController ()<CJRangeSliderControlDelegate> {
+    
+}
+@property (nonatomic, strong) TSRangeSliderControl1 *sliderControl2;
+@property (nonatomic, strong) UILabel *sliderControlValueLabel2;
+
+@property (nonatomic, strong) CJRangeSliderControl *rangeSliderControl;
+@property (nonatomic, strong) UILabel *rangeSliderControlValueLabel;
 
 @end
 
@@ -19,52 +29,62 @@
     // Do any additional setup after loading the view from its nib.
     self.title = NSLocalizedString(@"RangeSliderViewController", nil);
     
-    [self.sliderControl2 setupViewWithCreateTrackViewBlock:nil
-                               createMinimumTrackViewBlock:nil
-                               createMaximumTrackViewBlock:nil];
-    [self.sliderControl2.trackView setBackgroundColor:[UIColor redColor]];
-    [self.sliderControl2.minimumTrackView setBackgroundColor:[UIColor yellowColor]];
-    [self.sliderControl2.maximumTrackView setBackgroundColor:[UIColor redColor]];
-    self.sliderControl2.baseValue = 40; // 设置基准值
-    self.sliderControl2.minValue = 0.0f;
-    self.sliderControl2.maxValue = 100.0f;
-    self.sliderControl2.value = 80;
-    self.sliderControl2.trackHeight = 5;  // 设置滑道高度
-    self.sliderControl2.delegate = self;
-    self.sliderControlValueLabel2.text = [NSString stringWithFormat:@"选取的区间是 : [ %.1f, %.1f ]",self.sliderControl2.baseValue, self.sliderControl2.value];
+    [self setupViews];
     
-    self.sliderControl2.sliderType = CJSliderTypeRange;
-//    self.sliderControl2.thumbSize = CGSizeMake(50, 36);
-//    self.sliderControl2.thumbMoveMinXMargin = -self.sliderControl2.thumbSize.width/2;
-//    self.sliderControl2.thumbMoveMaxXMargin = -self.sliderControl2.thumbSize.width/2;
-    UIImage *normalImage = [UIImage imageNamed:@"slider_double_thumbImage_b"];
-    UIImage *highlightedImage = [UIImage imageNamed:@"slider_double_thumbImage_a"];
-    [self.sliderControl2.mainThumb setImage:normalImage forState:UIControlStateNormal];
-    [self.sliderControl2.mainThumb setImage:highlightedImage forState:UIControlStateHighlighted];
-    self.sliderControl2.mainThumb.alpha = 0.5;
-    [self.sliderControl2.leftThumb setImage:normalImage forState:UIControlStateNormal];
-    [self.sliderControl2.leftThumb setImage:highlightedImage forState:UIControlStateHighlighted];
-    self.sliderControl2.leftThumb.alpha = 0.5;
-    
-    self.sliderControl2.popoverType = CJSliderPopoverDispalyTypeNum;
-
-    
-    
-    /* CJRangeSliderControl */
-    self.rangeSliderControl.minValue = 0.0f;    //设置滑竿的最小值
-    self.rangeSliderControl.maxValue = 100.0f;  //设置滑竿的最大值
-    self.rangeSliderControl.delegate = self;
-    
+    self.sliderControlValueLabel2.text = [NSString stringWithFormat:@"选取的区间是 : [ %.1f, %.1f ]", self.sliderControl2.baseValue, self.sliderControl2.value];
     self.rangeSliderControlValueLabel.text = [NSString stringWithFormat:@"选取的区间是 : [ %.1f, %.1f ]",self.rangeSliderControl.minValue, self.rangeSliderControl.maxValue];
 }
 
-#pragma mark - CJSliderControlDelegate
-- (void)slider:(CJSliderControl *)slider didDargToValue:(CGFloat)value {
-    NSLog(@"slider value is %1.2f",value);
-    if (slider == self.sliderControl2) {
-        self.sliderControlValueLabel2.text = [NSString stringWithFormat:@"选取的区间是 : [ %.1f, %.1f ]",self.sliderControl2.baseValue, self.sliderControl2.value];
-    }
+- (void)setupViews {
+    UILabel *sliderControlValueLabel2 = [DemoLabelFactory testExplainLabel];
+    [self.view addSubview:sliderControlValueLabel2];
+    [sliderControlValueLabel2 mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(self.view).offset(30);
+        make.centerX.equalTo(self.view);
+        make.top.equalTo(self.mas_topLayoutGuide).offset(20);
+        make.height.equalTo(@29);
+    }];
+    self.sliderControlValueLabel2 = sliderControlValueLabel2;
+    
+    TSRangeSliderControl1 *sliderControl2 = [[TSRangeSliderControl1 alloc] initWithChooseCompleteBlock:^(CGFloat minValue, CGFloat maxValue) {
+        self.sliderControlValueLabel2.text = [NSString stringWithFormat:@"选取的区间是 : [ %.1f, %.1f ]", minValue, maxValue];
+    }];
+    [self.view addSubview:sliderControl2];
+    [sliderControl2 mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.right.mas_equalTo(sliderControlValueLabel2);
+        make.top.mas_equalTo(sliderControlValueLabel2.mas_bottom).mas_offset(20);
+        make.height.mas_equalTo(29);
+    }];
+    self.sliderControl2 = sliderControl2;
+    
+    
+    
+    
+    /* CJRangeSliderControl */
+    UILabel *rangeSliderControlValueLabel = [DemoLabelFactory testExplainLabel];
+    [self.view addSubview:rangeSliderControlValueLabel];
+    [rangeSliderControlValueLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(self.view).offset(30);
+        make.centerX.equalTo(self.view);
+        make.top.equalTo(self.sliderControl2.mas_bottom).offset(100);
+        make.height.equalTo(@20);
+    }];
+    self.rangeSliderControlValueLabel = rangeSliderControlValueLabel;
+    
+    
+    CJRangeSliderControl *rangeSliderControl = [[CJRangeSliderControl alloc] initWithFrame:CGRectZero];
+    rangeSliderControl.minValue = 0.0f;    //设置滑竿的最小值
+    rangeSliderControl.maxValue = 100.0f;  //设置滑竿的最大值
+    rangeSliderControl.delegate = self;
+    [self.view addSubview:rangeSliderControl];
+    [rangeSliderControl mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.right.mas_equalTo(rangeSliderControlValueLabel);
+        make.top.mas_equalTo(rangeSliderControlValueLabel.mas_bottom).mas_offset(20);
+        make.height.mas_equalTo(30);
+    }];
+    self.rangeSliderControl = rangeSliderControl;
 }
+
 
 #pragma mark - CJRangeSliderControlDelegate
 - (void)rangeSlider:(CJRangeSliderControl *)slider didChangedMinValue:(CGFloat)minValue didChangedMaxValue:(CGFloat)maxValue {

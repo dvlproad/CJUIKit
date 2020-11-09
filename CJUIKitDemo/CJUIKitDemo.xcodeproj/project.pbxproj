@@ -183,7 +183,6 @@
 		787FDB9620500B5C008A46E3 /* SliderViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 787FDB7F20500B5B008A46E3 /* SliderViewController.xib */; };
 		787FDB9720500B5C008A46E3 /* RangeSliderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 787FDB8020500B5B008A46E3 /* RangeSliderViewController.m */; };
 		787FDB9820500B5C008A46E3 /* ShimmeringSwitchSlider.m in Sources */ = {isa = PBXBuildFile; fileRef = 787FDB8220500B5B008A46E3 /* ShimmeringSwitchSlider.m */; };
-		787FDB9920500B5C008A46E3 /* RangeSliderViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 787FDB8420500B5B008A46E3 /* RangeSliderViewController.xib */; };
 		7880E6F5213A9E84009C9BCF /* CJRandomNameUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 7880E6F4213A9E84009C9BCF /* CJRandomNameUtil.m */; };
 		7880E6F7213C2C4C009C9BCF /* CJRandomNameUtil.txt in Resources */ = {isa = PBXBuildFile; fileRef = 7880E6F6213C2C4C009C9BCF /* CJRandomNameUtil.txt */; };
 		788113BF2199574900D1630D /* SharedInstanceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 788113BE2199574900D1630D /* SharedInstanceViewController.m */; };
@@ -326,6 +325,9 @@
 		80FF91C51FC581DD00E437CF /* UtilHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80FF91BF1FC581DD00E437CF /* UtilHomeViewController.m */; };
 		97578AAC25590E9300249AD6 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 97578AAB25590E9300249AD6 /* MainViewController.m */; };
 		97578AB225590F7100249AD6 /* UIWindow+RootSetting.m in Sources */ = {isa = PBXBuildFile; fileRef = 97578AB125590F7100249AD6 /* UIWindow+RootSetting.m */; };
+		97578CF52559400700249AD6 /* TSSliderFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 97578CF32559400600249AD6 /* TSSliderFactory.m */; };
+		97578D012559473500249AD6 /* TSRangeSliderControl1.m in Sources */ = {isa = PBXBuildFile; fileRef = 97578D002559473500249AD6 /* TSRangeSliderControl1.m */; };
+		97578D072559474F00249AD6 /* TSRangeSliderControl2.m in Sources */ = {isa = PBXBuildFile; fileRef = 97578D062559474F00249AD6 /* TSRangeSliderControl2.m */; };
 		E2649F5BE7F7FEF404688168 /* libPods-CJUIKitDemoTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 935109AAB855F6CC8B84B9A5 /* libPods-CJUIKitDemoTests.a */; };
 /* End PBXBuildFile section */
 
@@ -653,7 +655,6 @@
 		787FDB8020500B5B008A46E3 /* RangeSliderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RangeSliderViewController.m; sourceTree = "<group>"; };
 		787FDB8220500B5B008A46E3 /* ShimmeringSwitchSlider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShimmeringSwitchSlider.m; sourceTree = "<group>"; };
 		787FDB8320500B5B008A46E3 /* ShimmeringSwitchSlider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShimmeringSwitchSlider.h; sourceTree = "<group>"; };
-		787FDB8420500B5B008A46E3 /* RangeSliderViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RangeSliderViewController.xib; sourceTree = "<group>"; };
 		7880E6F3213A9E84009C9BCF /* CJRandomNameUtil.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CJRandomNameUtil.h; sourceTree = "<group>"; };
 		7880E6F4213A9E84009C9BCF /* CJRandomNameUtil.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CJRandomNameUtil.m; sourceTree = "<group>"; };
 		7880E6F6213C2C4C009C9BCF /* CJRandomNameUtil.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CJRandomNameUtil.txt; sourceTree = "<group>"; };
@@ -908,6 +909,12 @@
 		97578AAB25590E9300249AD6 /* MainViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
 		97578AB025590F7100249AD6 /* UIWindow+RootSetting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIWindow+RootSetting.h"; sourceTree = "<group>"; };
 		97578AB125590F7100249AD6 /* UIWindow+RootSetting.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIWindow+RootSetting.m"; sourceTree = "<group>"; };
+		97578CF32559400600249AD6 /* TSSliderFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSSliderFactory.m; sourceTree = "<group>"; };
+		97578CF42559400600249AD6 /* TSSliderFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSSliderFactory.h; sourceTree = "<group>"; };
+		97578CFF2559473500249AD6 /* TSRangeSliderControl1.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TSRangeSliderControl1.h; sourceTree = "<group>"; };
+		97578D002559473500249AD6 /* TSRangeSliderControl1.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TSRangeSliderControl1.m; sourceTree = "<group>"; };
+		97578D052559474F00249AD6 /* TSRangeSliderControl2.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TSRangeSliderControl2.h; sourceTree = "<group>"; };
+		97578D062559474F00249AD6 /* TSRangeSliderControl2.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TSRangeSliderControl2.m; sourceTree = "<group>"; };
 		9AC0A78AFE86FE250B370A06 /* Pods-CJUIKitDemoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CJUIKitDemoTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CJUIKitDemoTests/Pods-CJUIKitDemoTests.debug.xcconfig"; sourceTree = "<group>"; };
 		A078401C0E781545EB72B64D /* libPods-CJUIKitDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CJUIKitDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF18E9E3F2E33815C8D88994 /* Pods-CJUIKitDemoUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CJUIKitDemoUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CJUIKitDemoUITests/Pods-CJUIKitDemoUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -1615,6 +1622,7 @@
 		7852D9DF216F16B000E50A39 /* CommonUI */ = {
 			isa = PBXGroup;
 			children = (
+				97578CF22559400600249AD6 /* TSSliderFactory */,
 				1515E9A624494C8E00EB1F44 /* TSSearchBar */,
 				7857ABB5225482D200B1569C /* CJDemoDatePickerView */,
 				7857ABB92254AA1100B1569C /* CJDemoDateTextField */,
@@ -1771,7 +1779,6 @@
 				787FDB7F20500B5B008A46E3 /* SliderViewController.xib */,
 				787FDB6C20500B5B008A46E3 /* RangeSliderViewController.h */,
 				787FDB8020500B5B008A46E3 /* RangeSliderViewController.m */,
-				787FDB8420500B5B008A46E3 /* RangeSliderViewController.xib */,
 				787FDB7E20500B5B008A46E3 /* SwitchSliderViewController.h */,
 				787FDB6A20500B5B008A46E3 /* SwitchSliderViewController.m */,
 				787FDB7C20500B5B008A46E3 /* SwitchSliderViewController.xib */,
@@ -2485,6 +2492,19 @@
 			path = DemosUtil;
 			sourceTree = "<group>";
 		};
+		97578CF22559400600249AD6 /* TSSliderFactory */ = {
+			isa = PBXGroup;
+			children = (
+				97578CF42559400600249AD6 /* TSSliderFactory.h */,
+				97578CF32559400600249AD6 /* TSSliderFactory.m */,
+				97578CFF2559473500249AD6 /* TSRangeSliderControl1.h */,
+				97578D002559473500249AD6 /* TSRangeSliderControl1.m */,
+				97578D052559474F00249AD6 /* TSRangeSliderControl2.h */,
+				97578D062559474F00249AD6 /* TSRangeSliderControl2.m */,
+			);
+			path = TSSliderFactory;
+			sourceTree = "<group>";
+		};
 		E75FB8B4AF71C8FE7F95B93C /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -2639,7 +2659,6 @@
 				787FDB6520500B1F008A46E3 /* plus@2x.png in Resources */,
 				787FDB8D20500B5C008A46E3 /* slider_double_thumbImage_b@3x.png in Resources */,
 				1562F2D223F5DBF40009FCEA /* cjCheckBoxGreen2YES.png in Resources */,
-				787FDB9920500B5C008A46E3 /* RangeSliderViewController.xib in Resources */,
 				80FF909D1FC5649F00E437CF /* NestedXibViewController.xib in Resources */,
 				787FDB8B20500B5C008A46E3 /* btn_hd@3x.png in Resources */,
 				781C737321BA65C90090080C /* add_common_icon@2x.png in Resources */,
@@ -2866,6 +2885,7 @@
 				1562F2CA23F5DBF40009FCEA /* UIView+CJKeepBounds.m in Sources */,
 				1562F2CE23F5DBF40009FCEA /* UIView+CJExclusiveTouch.m in Sources */,
 				7856F97021F9D2C5004AF751 /* BaseTableViewCellViewController.m in Sources */,
+				97578CF52559400700249AD6 /* TSSliderFactory.m in Sources */,
 				787FDB9820500B5C008A46E3 /* ShimmeringSwitchSlider.m in Sources */,
 				7856F72921F4E790004AF751 /* TestDataUtil.m in Sources */,
 				789C448121F07F6C00181144 /* ImageSizeViewController.m in Sources */,
@@ -2879,6 +2899,7 @@
 				15A7680C23FD966B00358B42 /* TSButtonFactory.m in Sources */,
 				78B6C2E32159D6BC00D5864E /* DemoBusStationModel.m in Sources */,
 				8050038A211C3A29002A2306 /* NSObjectCJHelperViewController.m in Sources */,
+				97578D012559473500249AD6 /* TSRangeSliderControl1.m in Sources */,
 				80500389211C3A29002A2306 /* HelperHomeViewController.m in Sources */,
 				1562F2E623F5DBF40009FCEA /* CJPlayerSlider.m in Sources */,
 				808E3C472109C5B0009E3924 /* StringEventViewController.m in Sources */,
@@ -3040,6 +3061,7 @@
 				80FF919E1FC5682B00E437CF /* OtherHomeViewController.m in Sources */,
 				80FF90AD1FC5649F00E437CF /* NavigationBarViewController.m in Sources */,
 				80FF90A81FC5649F00E437CF /* ImageChangeColorViewController.m in Sources */,
+				97578D072559474F00249AD6 /* TSRangeSliderControl2.m in Sources */,
 				78A621A921319723004DA046 /* SuspendWindowViewController.m in Sources */,
 				78AB83A921B7CE7100853E21 /* PresentBViewController.m in Sources */,
 				787FDB9720500B5C008A46E3 /* RangeSliderViewController.m in Sources */,
