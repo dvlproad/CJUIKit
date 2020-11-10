@@ -35,6 +35,8 @@
 }
 
 - (void)setupViews {
+    self.backgroundColor = [UIColor cyanColor];
+    
     [self setupViewWithCreateTrackViewBlock:^UIView *{
         UIView *view = [[UIView alloc] initWithFrame:CGRectZero];
         view.backgroundColor = [UIColor redColor];
@@ -53,11 +55,12 @@
 //    [self.trackView setBackgroundColor:[UIColor redColor]];
 //    [self.minimumTrackView setBackgroundColor:[UIColor yellowColor]];
 //    [self.maximumTrackView setBackgroundColor:[UIColor redColor]];
-    self.baseValue = 40; // 设置基准值
+    self.baseValue = 40;    // 设置基准值
     self.minValue = 0.0f;
     self.maxValue = 100.0f;
     self.value = 80;
-    self.trackHeight = 5;  // 设置滑道高度
+    self.trackHeight = 5;                   // 设置滑道高度
+    self.thumbSize = CGSizeMake(100, 30);   // 设置滑块大小
 
     
     self.sliderType = CJSliderTypeRange;
@@ -66,12 +69,16 @@
 //    self.thumbMoveMaxXMargin = -self.thumbSize.width/2;
     UIImage *normalImage = [UIImage imageNamed:@"slider_double_thumbImage_b"];
     UIImage *highlightedImage = [UIImage imageNamed:@"slider_double_thumbImage_a"];
-    [self.mainThumb setImage:normalImage forState:UIControlStateNormal];
-    [self.mainThumb setImage:highlightedImage forState:UIControlStateHighlighted];
-    self.mainThumb.alpha = 0.5;
     [self.leftThumb setImage:normalImage forState:UIControlStateNormal];
     [self.leftThumb setImage:highlightedImage forState:UIControlStateHighlighted];
+    [self.mainThumb setImage:normalImage forState:UIControlStateNormal];
+    [self.mainThumb setImage:highlightedImage forState:UIControlStateHighlighted];
+    
+    
     self.leftThumb.alpha = 0.5;
+    self.mainThumb.alpha = 0.5;
+    [self.leftThumb setBackgroundColor:[UIColor purpleColor]];
+    [self.mainThumb setBackgroundColor:[UIColor brownColor]];
     
     self.popoverType = CJSliderPopoverDispalyTypeNum;
     

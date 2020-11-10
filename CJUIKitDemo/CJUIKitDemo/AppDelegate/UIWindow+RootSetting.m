@@ -15,7 +15,7 @@
 - (void)settingRoot {
     [self setBackgroundColor:[UIColor whiteColor]];
     // 只直接测试某个页面
-    UIViewController *rootViewController = [[UINavigationController alloc] initWithRootViewController:[[NSClassFromString(@"RangeSliderViewController") alloc] init]];
+    UIViewController *rootViewController = [[UINavigationController alloc] initWithRootViewController:[[NSClassFromString(@"SliderHomeViewController") alloc] init]];
 //    UIViewController *rootViewController = [[MainViewController alloc] init];
     
     self.rootViewController = rootViewController;

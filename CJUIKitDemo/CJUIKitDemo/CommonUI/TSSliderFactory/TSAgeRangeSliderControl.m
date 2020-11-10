@@ -61,10 +61,15 @@
     
     UIImage *normalImage = [UIImage imageNamed:@"slider_double_thumbImage_a"];
     UIImage *highlightedImage = [UIImage imageNamed:@"slider_double_thumbImage_b"];
-    [self.rightThumb setImage:normalImage forState:UIControlStateNormal];
-    [self.rightThumb setImage:highlightedImage forState:UIControlStateHighlighted];
     [self.leftThumb setImage:normalImage forState:UIControlStateNormal];
     [self.leftThumb setImage:highlightedImage forState:UIControlStateHighlighted];
+    [self.rightThumb setImage:normalImage forState:UIControlStateNormal];
+    [self.rightThumb setImage:highlightedImage forState:UIControlStateHighlighted];
+    
+    self.leftThumb.alpha = 0.5;
+    self.rightThumb.alpha = 0.5;
+    [self.leftThumb setBackgroundColor:[UIColor purpleColor]];
+    [self.rightThumb setBackgroundColor:[UIColor brownColor]];
     
     self.delegate = self;
 }

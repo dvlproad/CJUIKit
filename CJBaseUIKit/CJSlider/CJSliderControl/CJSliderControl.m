@@ -163,7 +163,7 @@ static NSTimeInterval const kCJSliderControlDidTapSlidAnimationDuration  = 0.3f;
     self.mainThumb.frame = thumbRect;
     
     if (self.leftThumb) {
-        CGSize baseThumbSize = CGSizeMake(self.thumbSize.width-10, self.thumbSize.height-10);
+        CGSize baseThumbSize = self.thumbSize;
         
         CGRect baseThumbRect = [self baseThumbRectForBounds:self.bounds trackRect:trackRect value:self.baseValue thumbWidth:CGRectGetWidth(thumbRect) baseThumbSize:baseThumbSize];
         self.leftThumb.frame = baseThumbRect;
@@ -293,6 +293,7 @@ static NSTimeInterval const kCJSliderControlDidTapSlidAnimationDuration  = 0.3f;
     //value
     NSAssert(self.thumbCanMoveWidth != 0, @"除数不能为0");
     CGFloat percent = (CGRectGetMinX(thumbRect) - self.thumbMoveMinX) / self.thumbCanMoveWidth;
+    //NSLog(@"percent = %.2f, thumbMinX = %.2f", percent, CGRectGetMinX(thumbRect));
     
     CGFloat value = percent * (self.maxValue - self.minValue);
     if (thumb == self.mainThumb) {
@@ -475,6 +476,8 @@ static NSTimeInterval const kCJSliderControlDidTapSlidAnimationDuration  = 0.3f;
 
 #pragma mark - 拖动的事件
 - (void)buttonEndDrag:(UIButton *)button {
+    [self bringSubviewToFront:button]; // 移动结束后，将本次操作的滑块置顶，防止类型为RangeSlider的时候，如当左侧滑块和右侧滑块重合的时候，只能固定滑动某个，导致在都滑到最左/最右侧的时候，出现问题
+    
     [self hidePopoverAnimated:YES];
     
     if (self.adsorbInfos) {
@@ -496,6 +499,7 @@ static NSTimeInterval const kCJSliderControlDidTapSlidAnimationDuration  = 0.3f;
     if (validMoveDistance == 0) {
         return;
     }
+    //NSLog(@"validMoveDistance = %.2f", validMoveDistance);
     
     //更新视图
     CGRect thumbFrame = thumb.frame;
@@ -595,7 +599,7 @@ static NSTimeInterval const kCJSliderControlDidTapSlidAnimationDuration  = 0.3f;
 
 - (UIButton *)createThumb {
     UIButton *thumb = [UIButton buttonWithType:UIButtonTypeCustom];
-    [thumb addTarget:self action:@selector(buttonDidDrag:withEvent:) forControlEvents:UIControlEventTouchDragInside];
+    [thumb addTarget:self action:@selector(buttonDidDrag:withEvent:) forControlEvents:UIControlEventTouchDragInside]; // 添加拖动事件
     [thumb addTarget:self action:@selector(buttonEndDrag:) forControlEvents:UIControlEventTouchUpInside | UIControlEventTouchUpOutside];
     
     thumb.adjustsImageWhenHighlighted = NO;
