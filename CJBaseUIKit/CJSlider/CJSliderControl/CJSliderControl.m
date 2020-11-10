@@ -225,11 +225,11 @@ static NSTimeInterval const kCJSliderControlDidTapSlidAnimationDuration  = 0.3f;
     return thumbRect;
 }
 
-/**
+/*
  *  通过滑道宽度获取指定值的X坐标
  *
  *  @param bounds           整个视图的bounds
- *  @param rect             滑道的frame
+ *  @param rect             滑道的frame（滑道与视图的左右一般是有间距的）
  *  @param value            要获取的滑块frame是value上的
  */
 - (CGFloat)pointXForBounds:(CGRect)bounds trackRect:(CGRect)rect value:(float)value {
@@ -240,7 +240,7 @@ static NSTimeInterval const kCJSliderControlDidTapSlidAnimationDuration  = 0.3f;
     return basePointX;
 }
 
-/**
+/*
  *  通过基准块的baseThumbSize获取在基准块在指定值时的完整坐标frame(x,y,w,h)
  *
  *  @param bounds           整个视图的bounds

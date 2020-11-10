@@ -135,14 +135,12 @@
 #pragma mark - Public Method
 
 - (void)updatePopoverTextValue:(NSString *)text {
-    
-    self.textLabel.text = [NSString stringWithFormat:@"%@",text];
+    self.textLabel.text = text;
 }
 
 #pragma mark - Getter and Setter
 
--(UILabel *)textLabel {
-
+- (UILabel *)textLabel {
     if (!_textLabel) {
         _textLabel = [[UILabel alloc] initWithFrame:CGRectZero];
         _textLabel.backgroundColor = [UIColor clearColor];

@@ -79,13 +79,13 @@ typedef NS_ENUM(NSUInteger, CJSliderPopoverDispalyType) {
 @property (nonatomic, weak) id<CJSliderControlDelegate> delegate;
 @property (nonatomic, assign) BOOL allowTouchChangeValue;   /**< 是否允许通过点击来改变值(默认否) */
 
-@property (nonatomic, assign) CGFloat minValue;     /**< 最小值(默认0) */
-@property (nonatomic, assign) CGFloat maxValue;     /**< 最大值(默认1) */
+@property (nonatomic, assign) CGFloat minValue;         /**< 最小值(默认0) */
+@property (nonatomic, assign) CGFloat maxValue;         /**< 最大值(默认1) */
 
-//滑道视图
-@property (nonatomic, strong) UIView *trackView;    /**< 滑道视图 */
-@property (nonatomic, assign) CGFloat trackHeight;  /**< 滑道高度 */
-@property (nonatomic, assign) CGSize thumbSize;     /**< 滑块大小 */
+// 滑道视图
+@property (nonatomic, strong) UIView *trackView;        /**< 滑道视图 */
+@property (nonatomic, assign) CGFloat trackHeight;      /**< 滑道高度（未设置或者超过视图高度，都重置为等于视图的高） */
+@property (nonatomic, assign) CGSize thumbSize;         /**< 滑块大小（默认CGSizeMake(30, 30) */
 
 @property (nonatomic, strong) UIView *minimumTrackView; /**< 主滑块左侧的视图 */
 @property (nonatomic, strong) UIView *maximumTrackView; /**< 主滑块右侧的视图 */
@@ -94,24 +94,25 @@ typedef NS_ENUM(NSUInteger, CJSliderPopoverDispalyType) {
 
 @property (nonatomic, assign) CJSliderRangeType rangeType;  /**< 标注区域的绘制是从哪到哪 */
 
-//滑块视图
+// 滑块视图
 @property (nonatomic, strong) UIButton *mainThumb;      /**< 主滑块视图 */
 @property (nonatomic, strong) UIButton *leftThumb;      /**< 主滑块左侧的另一个滑块 */
-@property (nonatomic, assign) CJSliderType sliderType;  /**< slider的类型 */
+@property (nonatomic, assign) CJSliderType sliderType;  /**< slider的类型（有Normal和Range两种类型） */
 
 @property (nonatomic, assign) CGFloat baseValue;        /**< 基准值(默认0) */
 
-@property (nonatomic, assign) CJSliderPopoverDispalyType popoverType; /**< 弹出框的类型 */
-@property (nonatomic, assign) CGSize popoverSize;
+// 弹出框视图
+@property (nonatomic, assign) CJSliderPopoverDispalyType popoverType;   /**< 弹出框的类型 */
+@property (nonatomic, assign) CGSize popoverSize;                       /**< 弹出框大小（默认CGSizeMake(30, 32)） */
 
-@property (nonatomic, strong) NSArray<CJAdsorbModel *> *adsorbInfos; /** 设置吸附信息(含吸附区间及该区间要吸附到什么值)，上面的值是具体的滑块值，不是百分比 */
+@property (nonatomic, strong) NSArray<CJAdsorbModel *> *adsorbInfos;    /** 设置吸附信息(含吸附区间及该区间要吸附到什么值)，上面的值是具体的滑块值，不是百分比 */
 
 
 @property (nonatomic, assign) CJSliderMoveType moveType;    /**< 移动变化类型 */
 
 - (void)commonInit;
 
-/**
+/*
  *  设置自定义的view，调用此方法可设置slider各部分为自己的视图（必须设置，各参数可为空）
  *
  *  @param createTrackViewBlock         创建自定义的滑道视图

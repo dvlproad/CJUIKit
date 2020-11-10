@@ -1,40 +1,40 @@
 //
-//  TSRangeSliderControl2.m
+//  TSAgeRangeSliderControl.m
 //  CJUIKitDemo
 //
 //  Created by qian on 2020/11/9.
 //  Copyright © 2020 dvlproad. All rights reserved.
 //
 
-#import "TSRangeSliderControl2.h"
+#import "TSAgeRangeSliderControl.h"
 
-@interface TSRangeSliderControl2 ()<CJRangeSliderControlDelegate> {
+@interface TSAgeRangeSliderControl ()<CJRangeSliderControlDelegate> {
     
 }
-@property (nonatomic, copy) void(^chooseCompleteBlock)(CGFloat minValue, CGFloat maxValue);
+@property (nonatomic, copy) void(^chooseCompleteBlock)(NSInteger minAge, NSInteger maxAge);
 
 @end
 
-@implementation TSRangeSliderControl2
+@implementation TSAgeRangeSliderControl
 
 /*
  *  初始化
  *
- *  @param minRangeValue                选择范围的最小值
- *  @param maxRangeValue                选择范围的最大值
- *  @param startRangeValue              初始范围的起始值
- *  @param endRangeValue                初始范围的结束值
+ *  @param minRangeAge                  选择范围的最小值
+ *  @param maxRangeAge                  选择范围的最大值
+ *  @param startRangeAge                初始范围的起始值
+ *  @param endRangeAge                  初始范围的结束值
  *  @param chooseCompleteBlock          选择结束，返回选择的最大和最小值
  *
- *  @param slider滑块视图
+ *  @param 年龄范围选择slider滑块视图
  */
-- (instancetype)initWithMinRangeValue:(CGFloat)minRangeValue
-                        maxRangeValue:(CGFloat)maxRangeValue
-                      startRangeValue:(CGFloat)startRangeValue
-                        endRangeValue:(CGFloat)endRangeValue
-                  chooseCompleteBlock:(void(^)(CGFloat minValue, CGFloat maxValue))chooseCompleteBlock
+- (instancetype)initWithMinRangeAge:(NSInteger)minRangeAge
+                        maxRangeAge:(NSInteger)maxRangeAge
+                      startRangeAge:(NSInteger)startRangeAge
+                        endRangeAge:(NSInteger)endRangeAge
+                chooseCompleteBlock:(void(^)(NSInteger minAge, NSInteger maxAge))chooseCompleteBlock
 {
-    self = [super initWithMinRangeValue:minRangeValue maxRangeValue:maxRangeValue startRangeValue:startRangeValue endRangeValue:endRangeValue createBackgroundViewBlock:^UIView *{
+    self = [super initWithMinRangeValue:minRangeAge maxRangeValue:maxRangeAge startRangeValue:startRangeAge endRangeValue:endRangeAge createBackgroundViewBlock:^UIView *{
         UIView *view = [[UIView alloc] initWithFrame:CGRectZero];
         view.backgroundColor = [UIColor redColor];
         return view;
@@ -43,7 +43,8 @@
         view.backgroundColor = [UIColor greenColor];
         return view;
     } popoverTextTransBlock:^NSString *(CGFloat percentValue, CGFloat realValue) {
-        return [NSString stringWithFormat:@"%.1f", realValue];
+        NSInteger age = (NSInteger)realValue;
+        return [NSString stringWithFormat:@"%zd", age];
     }];
     if (self) {
         _chooseCompleteBlock = chooseCompleteBlock;
@@ -70,9 +71,12 @@
 
 #pragma mark - CJRangeSliderControlDelegate
 - (void)rangeSlider:(CJRangeSliderControl *)slider didChangedMinValue:(CGFloat)minValue didChangedMaxValue:(CGFloat)maxValue {
-    NSLog(@"rangeSlider rangion:%f,%f", minValue, maxValue);
+    //NSLog(@"age rangeSlider rangion:%f,%f", minValue, maxValue);
+    
+    NSInteger minAge = (NSInteger)minValue;
+    NSInteger maxAge = (NSInteger)maxValue;
 
-    !_chooseCompleteBlock ?: _chooseCompleteBlock(minValue, maxValue);
+    !_chooseCompleteBlock ?: _chooseCompleteBlock(minAge, maxAge);
 }
 
 

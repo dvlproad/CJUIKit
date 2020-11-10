@@ -7,17 +7,19 @@
 //
 
 #import "RangeSliderViewController.h"
-#import "TSSliderFactory.h"
+#import "TSRangeSliderControl1.h"
+#import "TSRangeSliderControl2.h"
+#import "TSAgeRangeSliderControl.h"
 
 #import "DemoLabelFactory.h"
 
-@interface RangeSliderViewController ()<CJRangeSliderControlDelegate> {
+@interface RangeSliderViewController () {
     
 }
 @property (nonatomic, strong) TSRangeSliderControl1 *sliderControl2;
 @property (nonatomic, strong) UILabel *sliderControlValueLabel2;
 
-@property (nonatomic, strong) CJRangeSliderControl *rangeSliderControl;
+@property (nonatomic, strong) TSRangeSliderControl2 *rangeSliderControl;
 @property (nonatomic, strong) UILabel *rangeSliderControlValueLabel;
 
 @end
@@ -72,10 +74,9 @@
     self.rangeSliderControlValueLabel = rangeSliderControlValueLabel;
     
     
-    CJRangeSliderControl *rangeSliderControl = [[CJRangeSliderControl alloc] initWithFrame:CGRectZero];
-    rangeSliderControl.minValue = 0.0f;    //设置滑竿的最小值
-    rangeSliderControl.maxValue = 100.0f;  //设置滑竿的最大值
-    rangeSliderControl.delegate = self;
+    TSRangeSliderControl2 *rangeSliderControl = [[TSRangeSliderControl2 alloc] initWithMinRangeValue:0.0 maxRangeValue:100.0 startRangeValue:20.5 endRangeValue:70.8 chooseCompleteBlock:^(CGFloat minValue, CGFloat maxValue) {
+        self.rangeSliderControlValueLabel.text = [NSString stringWithFormat:@"选取的区间是 : [ %.1f, %.1f ]",minValue,maxValue];
+    }];
     [self.view addSubview:rangeSliderControl];
     [rangeSliderControl mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.right.mas_equalTo(rangeSliderControlValueLabel);
@@ -83,15 +84,30 @@
         make.height.mas_equalTo(30);
     }];
     self.rangeSliderControl = rangeSliderControl;
-}
-
-
-#pragma mark - CJRangeSliderControlDelegate
-- (void)rangeSlider:(CJRangeSliderControl *)slider didChangedMinValue:(CGFloat)minValue didChangedMaxValue:(CGFloat)maxValue {
-    NSLog(@"rangeSlider rangion:%f,%f",minValue,maxValue);
     
-    self.rangeSliderControlValueLabel.text = [NSString stringWithFormat:@"选取的区间是 : [ %.1f, %.1f ]",minValue,maxValue];
+    
+    /* 年龄区间选择 */
+    UILabel *ageRangeSliderValueLabel = [DemoLabelFactory testExplainLabel];
+    ageRangeSliderValueLabel.text = [NSString stringWithFormat:@"选取的区间是 :"];
+    [self.view addSubview:ageRangeSliderValueLabel];
+    [ageRangeSliderValueLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(self.view).offset(30);
+        make.centerX.equalTo(self.view);
+        make.top.equalTo(rangeSliderControl.mas_bottom).offset(100);
+        make.height.equalTo(@20);
+    }];
+    
+    TSAgeRangeSliderControl *ageRangeSlider = [[TSAgeRangeSliderControl alloc] initWithMinRangeAge:0 maxRangeAge:100 startRangeAge:18 endRangeAge:32 chooseCompleteBlock:^(NSInteger minAge, NSInteger maxAge) {
+        ageRangeSliderValueLabel.text = [NSString stringWithFormat:@"选取的区间是 : [ %zd, %zd ]",minAge,maxAge];
+    }];
+    [self.view addSubview:ageRangeSlider];
+    [ageRangeSlider mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.right.mas_equalTo(ageRangeSliderValueLabel);
+        make.top.mas_equalTo(ageRangeSliderValueLabel.mas_bottom).mas_offset(20);
+        make.height.mas_equalTo(30);
+    }];
 }
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

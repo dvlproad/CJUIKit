@@ -35,12 +35,24 @@
 }
 
 - (void)setupViews {
-    [self setupViewWithCreateTrackViewBlock:nil
-                createMinimumTrackViewBlock:nil
-                createMaximumTrackViewBlock:nil];
-    [self.trackView setBackgroundColor:[UIColor redColor]];
-    [self.minimumTrackView setBackgroundColor:[UIColor yellowColor]];
-    [self.maximumTrackView setBackgroundColor:[UIColor redColor]];
+    [self setupViewWithCreateTrackViewBlock:^UIView *{
+        UIView *view = [[UIView alloc] initWithFrame:CGRectZero];
+        view.backgroundColor = [UIColor redColor];
+        return view;
+        
+    } createMinimumTrackViewBlock:^UIView *{
+        UIView *view = [[UIView alloc] initWithFrame:CGRectZero];
+        view.backgroundColor = [UIColor greenColor];
+        return view;
+        
+    } createMaximumTrackViewBlock:^UIView *{
+        UIView *view = [[UIView alloc] initWithFrame:CGRectZero];
+        view.backgroundColor = [UIColor blueColor];
+        return view;
+    }];
+//    [self.trackView setBackgroundColor:[UIColor redColor]];
+//    [self.minimumTrackView setBackgroundColor:[UIColor yellowColor]];
+//    [self.maximumTrackView setBackgroundColor:[UIColor redColor]];
     self.baseValue = 40; // 设置基准值
     self.minValue = 0.0f;
     self.maxValue = 100.0f;

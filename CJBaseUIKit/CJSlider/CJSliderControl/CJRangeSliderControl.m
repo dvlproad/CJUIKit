@@ -8,72 +8,156 @@
 
 #import "CJRangeSliderControl.h"
 
-#import "CJSliderThumb.h"
 #import "CJSliderPopover.h"
 
 static CGFloat const kCJRangeSliderControlLeftPadding                         = 10.0f;
-static CGFloat const kCJRangeSliderControlBackgroundImageViewHeight           = 15.0f;
-static CGFloat const kCJRangeSliderControlThumbSizeWidth                      = 30.0f;
-static CGFloat const kCJRangeSliderControlThumbSizeHeight                     = 30.0f;
-static CGFloat const kCJRangeSliderControlPopoverWidth                        = 30.0f;
-static CGFloat const kCJRangeSliderControlPopoverHeight                       = 32.0f;
 static CGFloat const kCJRangeSliderControlBackgroundViewCornerRadius          = 8.0f;
 static NSTimeInterval const kCJRangeSliderControlPopoverAnimationDuration     = 0.25f;
 static NSTimeInterval const kMTRngeSliderDidTapSlidAnimationDuration   = 0.3f;
 
-@interface CJRangeSliderControl ()
-
+@interface CJRangeSliderControl () {
+    
+}
 @property (nonatomic, assign) CGRect lastFrame;
 
 @property (nonatomic, assign) CGPoint lastThumbPoint;
 
-@property (nonatomic, strong) UIImageView *backgroundImageView;
-
-@property (nonatomic, strong) UIImageView *frontImageView;
-
-@property (nonatomic, strong) CJSliderThumb *leftThumb;
-
-@property (nonatomic, strong) CJSliderThumb *rightThumb;
+@property (nonatomic, strong) UIView *backgroundView;
+@property (nonatomic, strong) UIView *frontView;
 
 @property (nonatomic, strong) CJSliderPopover *leftPopover;
-
 @property (nonatomic, strong) CJSliderPopover *rightPopover;
+
+@property (nonatomic, copy) NSString *(^popoverTextTransBlock)(CGFloat percentValue, CGFloat realValue); /**< popover上的文本转换方法(默认使用realValue保留一位小数 ) */
+
 @end
+
+
 
 @implementation CJRangeSliderControl
 
-
--(instancetype)initWithFrame:(CGRect)frame {
-    
-    self = [super initWithFrame:frame];
+/*
+ *  初始化
+ *
+ *  @param minRangeValue                选择范围的最小值
+ *  @param maxRangeValue                选择范围的最大值
+ *  @param startRangeValue              初始范围的起始值
+ *  @param endRangeValue                初始范围的结束值
+ *  @param createBackgroundViewBlock    backgroundView的创建方法
+ *  @param createFrontViewBlock         frontView的创建方法
+ *  @param popoverTextTransBlock        popover上的文本转换方法(默认使用realValue保留一位小数 )
+ *
+ *  @param slider滑块视图
+ */
+- (instancetype)initWithMinRangeValue:(CGFloat)minRangeValue
+                        maxRangeValue:(CGFloat)maxRangeValue
+                      startRangeValue:(CGFloat)startRangeValue
+                        endRangeValue:(CGFloat)endRangeValue
+            createBackgroundViewBlock:(UIView * (^)(void))createBackgroundViewBlock
+                 createFrontViewBlock:(UIView *(^)(void))createFrontViewBlock
+                popoverTextTransBlock:(NSString *(^)(CGFloat percentValue, CGFloat realValue))popoverTextTransBlock
+{
+    self = [super initWithFrame:CGRectZero];
     if (self) {
+        _minValue = minRangeValue;
+        _maxValue = maxRangeValue;
+        _startRangeValue = startRangeValue;
+        _endRangeValue = endRangeValue;
+        _popoverTextTransBlock = popoverTextTransBlock;
         
-        [self setupUI];
+        [self setupViewWithStartRangeValue:startRangeValue
+                             endRangeValue:endRangeValue
+                 createBackgroundViewBlock:createBackgroundViewBlock
+                      createFrontViewBlock:createFrontViewBlock];
     }
     return self;
 }
 
-- (id)initWithCoder:(NSCoder *)aDecoder {
-    self = [super initWithCoder:aDecoder];
-    if (self) {
-        [self setupUI];
-    }
-    return self;
-}
+//- (instancetype)initWithCoder:(NSCoder *)coder {
+//    self = [self initWithCreateBackgroundViewBlock:nil createFrontViewBlock:nil];
+//    if (self) {
+//        
+//    }
+//    return self;
+//}
 
-- (void)setupUI {
+- (void)setupViewWithStartRangeValue:(CGFloat)startRangeValue
+                       endRangeValue:(CGFloat)endRangeValue
+           createBackgroundViewBlock:(UIView * (^)(void))createBackgroundViewBlock
+                createFrontViewBlock:(UIView * (^)(void))createFrontViewBlock
+{
+    if (!_backgroundView) {
+        if (createBackgroundViewBlock) {
+            _backgroundView = createBackgroundViewBlock();
+        } else {
+            UIImage *backgroundImage = [UIImage imageNamed:@"slider_maximum_trackimage"];
+            UIEdgeInsets insets = UIEdgeInsetsMake(3, 7, 3, 7);
+            backgroundImage = [backgroundImage resizableImageWithCapInsets:insets resizingMode:UIImageResizingModeStretch];
+            _backgroundView = [[UIImageView alloc] initWithImage:backgroundImage];
+            _backgroundView.userInteractionEnabled = YES;
+            _backgroundView.layer.cornerRadius = kCJRangeSliderControlBackgroundViewCornerRadius;
+            _backgroundView.layer.masksToBounds = YES;
+            _backgroundView.alpha = 0.5;
+        }
+    }
+    
+    
+    if (!_frontView) {
+        if (createFrontViewBlock) {
+            _frontView = createFrontViewBlock();
+        } else {
+            UIImage *frontImage = [UIImage imageNamed:@"slider_minimum_trackimage"];
+            UIEdgeInsets insets = UIEdgeInsetsMake(0, 5, 0, 5);
+            frontImage = [frontImage resizableImageWithCapInsets:insets resizingMode:UIImageResizingModeStretch];
+            _frontView = [[UIImageView alloc] initWithImage:frontImage];
+            _frontView.userInteractionEnabled = YES;
+            _frontView.layer.cornerRadius = kCJRangeSliderControlBackgroundViewCornerRadius;
+            _frontView.layer.masksToBounds = YES;
+        }
+    }
+    
+    
     self.backgroundColor = [UIColor clearColor];
     
-    [self addSubview:self.backgroundImageView];
-    [self addSubview:self.frontImageView];
+    [self addSubview:self.backgroundView];
+    [self addSubview:self.frontView];
     [self addSubview:self.leftThumb];
     [self addSubview:self.rightThumb];
     [self addSubview:self.leftPopover];
     [self addSubview:self.rightPopover];
+    
+    _thumbSize = CGSizeMake(30, 30);
+    _popoverSize = CGSizeMake(30, 32);
+    
+    CGFloat leftThumbPercent  = self.startRangeValue/(_maxValue - _minValue);;
+    CGFloat leftPopoverNum    = self.startRangeValue;
+    NSString *leftContent = [self __popoverTextWithPercentValue:leftThumbPercent realValue:leftPopoverNum];
+    [self.leftPopover updatePopoverTextValue:leftContent];
+    
+    CGFloat rightThumbPercent = self.endRangeValue/(_maxValue - _minValue);
+    CGFloat rightPopoverNum   = self.endRangeValue;
+    NSString *rightContent = [self __popoverTextWithPercentValue:rightThumbPercent realValue:rightPopoverNum];
+    [self.rightPopover updatePopoverTextValue:rightContent];
+    
+    self.popoverShowTimeType = CJSliderPopoverShowTimeTypeAll; // 有 Setter 方法
 }
 
-- (void)layoutSubviews {
+
+#pragma mark - Setter
+- (void)setPopoverShowTimeType:(BOOL)popoverShowTimeType {
+    _popoverShowTimeType = popoverShowTimeType;
     
+    if (_popoverShowTimeType == CJSliderPopoverShowTimeTypeDrag) {
+        self.leftPopover.alpha = 0;
+        self.rightPopover.alpha = 0;
+    } else {
+        self.leftPopover.alpha = 1;
+        self.rightPopover.alpha = 1;
+    }
+}
+
+#pragma mark - layoutSubviews
+- (void)layoutSubviews {
     [super layoutSubviews];
     
     //防止多次调用
@@ -83,28 +167,48 @@ static NSTimeInterval const kMTRngeSliderDidTapSlidAnimationDuration   = 0.3f;
     
     self.lastFrame = self.frame;
     
-    CGFloat backgroundImageViewY = self.bounds.size.height / 2 - kCJRangeSliderControlBackgroundImageViewHeight / 2;
-    CGFloat backgroundImageViewWidth = self.bounds.size.width - kCJRangeSliderControlLeftPadding * 2;
-    self.backgroundImageView.frame = CGRectMake(kCJRangeSliderControlLeftPadding, backgroundImageViewY,backgroundImageViewWidth,kCJRangeSliderControlBackgroundImageViewHeight);
+    if (self.trackHeight == 0 || self.trackHeight > CGRectGetHeight(self.bounds)) {
+        //NSLog(@"修正trackHeight的高度");
+        self.trackHeight = CGRectGetHeight(self.bounds);
+    }
+    CGFloat backgroundViewY = self.bounds.size.height / 2 - self.trackHeight / 2;
+    CGFloat backgroundViewWidth = self.bounds.size.width - kCJRangeSliderControlLeftPadding * 2;
+    self.backgroundView.frame = CGRectMake(kCJRangeSliderControlLeftPadding, backgroundViewY, backgroundViewWidth, self.trackHeight);
     
-
-    CGFloat leftThumbY = self.bounds.size.height / 2 - kCJRangeSliderControlThumbSizeHeight / 2;
-    self.leftThumb.frame = CGRectMake(0, leftThumbY, kCJRangeSliderControlThumbSizeWidth, kCJRangeSliderControlThumbSizeHeight);
+    CGFloat thumbWidth = self.thumbSize.width;      // 滑块的宽
+    CGFloat trackWidth = self.bounds.size.width - thumbWidth; // 滑道的宽
     
-    CGFloat rightThumbX = self.bounds.size.width - kCJRangeSliderControlThumbSizeWidth;
-    self.rightThumb.frame = CGRectMake(rightThumbX, leftThumbY, kCJRangeSliderControlThumbSizeWidth, kCJRangeSliderControlPopoverHeight);
-
+    CGFloat leftThumbPercent  = self.startRangeValue/(self.maxValue-self.minValue);
+    CGFloat rightThumbPercent  = self.endRangeValue/(self.maxValue-self.minValue);
+    CGFloat leftThumbX = leftThumbPercent*trackWidth;
+    CGFloat rightThumbX = rightThumbPercent*trackWidth;
+    [self __updateThumbFrameWithLeftThumbX:leftThumbX rightThumbX:rightThumbX];
     
-    CGFloat popoverY = self.leftThumb.frame.origin.y - kCJRangeSliderControlPopoverHeight;
-    self.leftPopover.frame = CGRectMake(0, popoverY, kCJRangeSliderControlPopoverWidth, kCJRangeSliderControlPopoverHeight);
-    self.rightPopover.frame = CGRectMake(rightThumbX, popoverY, kCJRangeSliderControlThumbSizeWidth, kCJRangeSliderControlPopoverHeight);
     [self updateFrontImageView];
+}
+
+- (void)__updateThumbFrameWithLeftThumbX:(CGFloat)leftThumbX rightThumbX:(CGFloat)rightThumbX {
+    CGFloat thumbHeight = self.thumbSize.height;    // 滑块的高
+    CGFloat thumbWidth = self.thumbSize.width;      // 滑块的宽
+    CGFloat thumbY = self.bounds.size.height / 2 - thumbHeight / 2;
     
+    CGFloat popoverHeight = self.popoverSize.height;// 弹出框的高
+    CGFloat popoverWidth = self.popoverSize.width;  // 弹出框的宽
+    
+    
+    self.leftThumb.frame = CGRectMake(leftThumbX, thumbY, thumbWidth, thumbHeight);
+    
+    
+    self.rightThumb.frame = CGRectMake(rightThumbX, thumbY, thumbWidth, popoverHeight);
+
+    
+    CGFloat popoverY = self.leftThumb.frame.origin.y - popoverHeight;
+    self.leftPopover.frame = CGRectMake(leftThumbX, popoverY, popoverWidth, popoverHeight);
+    self.rightPopover.frame = CGRectMake(rightThumbX, popoverY, thumbWidth, popoverHeight);
 }
 
 #pragma mark - Event
 - (void)buttonDidDrag:(CJSliderThumb *)thumb withEvent:(UIEvent *)event {
-    
     UITouch *touch    = [[event touchesForView:thumb] anyObject];
     CGPoint point     = [touch locationInView:self];
     CGPoint lastPoint = [touch previousLocationInView:self];
@@ -115,7 +219,7 @@ static NSTimeInterval const kMTRngeSliderDidTapSlidAnimationDuration   = 0.3f;
         return;
     }
     
-    BOOL isLeftThumb  = [self isLeftThumb:thumb];
+    BOOL isLeftThumb  = [self __isLeftThumb:thumb];
     
     //移动Thumb
     [self dragThumb:thumb withPoint:point lastPoint:lastPoint];
@@ -129,45 +233,37 @@ static NSTimeInterval const kMTRngeSliderDidTapSlidAnimationDuration   = 0.3f;
 
 
 - (void)buttonEndDrag:(CJSliderThumb *)thumb {
-    
-    BOOL isLeftThumb = [self isLeftThumb:thumb];
+    BOOL isLeftThumb = [self __isLeftThumb:thumb];
     
     //更新Thumb状态
     [self updateEndDragThumbStatus:isLeftThumb];
     
-    //隐藏Popover
-    [self hidePopover:isLeftThumb];
+    if (self.popoverShowTimeType == CJSliderPopoverShowTimeTypeDrag) { // 只有Drag的时候才显示Popover
+        [self hidePopover:isLeftThumb]; //隐藏Popover
+    }
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-    
     [super touchesBegan:touches withEvent:event];
+    
     UITouch *touch = [touches anyObject];
     CGPoint point = [touch  locationInView:self];
-    
     if (CGPointEqualToPoint(_lastThumbPoint, point)) {
         return;
     }
     
     _lastThumbPoint = point;
-    
     //判断点击的位置与两个Thumb的距离，哪个比较近则移动哪一个Thumb
     BOOL isCloseLeftThumb = [self isCloseLeftThumbWithPoint:point];
-    
     [UIView animateWithDuration:kMTRngeSliderDidTapSlidAnimationDuration animations:^{
-        
         if (isCloseLeftThumb) {
-            
             [self moveThumb:self.leftThumb withPoint:point];
         } else {
-            
             [self moveThumb:self.rightThumb withPoint:point];
         }
-        
         [self updateFrontImageView];
         
     } completion:^(BOOL finished) {
-        
         [self updateEndDragThumbStatus:isCloseLeftThumb];
         [self updatePopover:isCloseLeftThumb];
         [self hidePopover:isCloseLeftThumb animationDuration:1.0f];
@@ -180,9 +276,8 @@ static NSTimeInterval const kMTRngeSliderDidTapSlidAnimationDuration   = 0.3f;
  *  更新slider的进度
  */
 - (void)updateFrontImageView {
-    
-    CGRect frontImageViewFrame = CGRectMake(self.leftThumb.center.x, self.backgroundImageView.frame.origin.y, self.rightThumb.center.x - self.leftThumb.center.x, self.backgroundImageView.bounds.size.height);
-    self.frontImageView.frame = frontImageViewFrame;
+    CGRect frontViewFrame = CGRectMake(self.leftThumb.center.x, self.backgroundView.frame.origin.y, self.rightThumb.center.x - self.leftThumb.center.x, self.backgroundView.bounds.size.height);
+    self.frontView.frame = frontViewFrame;
 }
 
 /**
@@ -191,44 +286,77 @@ static NSTimeInterval const kMTRngeSliderDidTapSlidAnimationDuration   = 0.3f;
  *  @param isLeftThumb 是否左边的Thumb
  */
 - (void)updatePopover:(BOOL)isLeftThumb {
-    
-    CGFloat leftThumbPercent  = self.leftThumb.frame.origin.x / (self.bounds.size.width - kCJRangeSliderControlThumbSizeWidth);
-    CGFloat rightThumbPercent = self.rightThumb.frame.origin.x / (self.bounds.size.width - kCJRangeSliderControlThumbSizeWidth);
+    CGFloat leftThumbPercent  = [self __leftThumbPercent];
     CGFloat leftPopoverNum    = leftThumbPercent  * (_maxValue - _minValue);
+    
+    
+    CGFloat rightThumbPercent = [self __rightThumbPercent];
     CGFloat rightPopoverNum   = rightThumbPercent * (_maxValue - _minValue);
+    
     if (isLeftThumb) {
-        
         [self movePopover:self.leftPopover aboveThumb:self.leftThumb];
         
-        [self showPopover:self.leftPopover content:leftPopoverNum];
+        NSString *leftContent = [self __popoverTextWithPercentValue:leftThumbPercent realValue:leftPopoverNum];
+        [self.leftPopover updatePopoverTextValue:leftContent];
+        [self showPopover:self.leftPopover];
         
         self.rightThumb.userInteractionEnabled = NO;
         
     } else {
-        
         [self movePopover:self.rightPopover aboveThumb:self.rightThumb];
         
-        [self showPopover:self.rightPopover content:rightPopoverNum];
+        NSString *rightContent = [self __popoverTextWithPercentValue:rightThumbPercent realValue:rightPopoverNum];
+        [self.rightPopover updatePopoverTextValue:rightContent];
+        [self showPopover:self.rightPopover];
         
         self.leftThumb.userInteractionEnabled = NO;
     }
     
     if (self.delegate && [self.delegate respondsToSelector:@selector(rangeSlider:didChangedMinValue:didChangedMaxValue:)]) {
-        
         [self.delegate rangeSlider:self didChangedMinValue:leftPopoverNum didChangedMaxValue:rightPopoverNum];
     }
 }
+
+//- (CGFloat)__leftPopoverNum {
+//    CGFloat leftThumbPercent  = [self __leftThumbPercent];
+//    CGFloat leftPopoverNum    = leftThumbPercent  * (_maxValue - _minValue);
+//    return leftPopoverNum;
+//}
+//
+//- (CGFloat)__rightPopoverNum {
+//    CGFloat rightThumbPercent = [self __rightThumbPercent];
+//    CGFloat rightPopoverNum   = rightThumbPercent * (_maxValue - _minValue);
+//    return rightPopoverNum;
+//}
+
+- (CGFloat)__leftThumbPercent {
+    CGFloat thumbWidth = self.thumbSize.width;      // 滑块的宽
+    CGFloat leftThumbPercent  = self.leftThumb.frame.origin.x / (self.bounds.size.width - thumbWidth);
+    return leftThumbPercent;
+}
+
+- (CGFloat)__rightThumbPercent {
+    CGFloat thumbWidth = self.thumbSize.width;      // 滑块的宽
+    CGFloat rightThumbPercent = self.rightThumb.frame.origin.x / (self.bounds.size.width - thumbWidth);
+    return rightThumbPercent;
+}
+
+- (NSString *)__popoverTextWithPercentValue:(CGFloat)percentValue realValue:(CGFloat)realValue {
+    if (self.popoverTextTransBlock) {
+        return self.popoverTextTransBlock(percentValue, realValue);
+    } else {
+        return [NSString stringWithFormat:@"%.1f", realValue];
+    }
+}
+
 /**
  *  更新结束拖动时候Thumb的显示状态
  *
  *  @param isLeftThumb 是否左边的Thumb
  */
 - (void)updateEndDragThumbStatus:(BOOL)isLeftThumb {
-    
     self.rightThumb.userInteractionEnabled = YES;
     self.leftThumb.userInteractionEnabled = YES;
-    self.leftThumb.isNormal = YES;
-    self.rightThumb.isNormal = YES;
 }
 
 /**
@@ -239,12 +367,10 @@ static NSTimeInterval const kMTRngeSliderDidTapSlidAnimationDuration   = 0.3f;
  *  @param lastPoint 上一次的点
  */
 - (void)dragThumb:(CJSliderThumb *)thumb withPoint:(CGPoint)point lastPoint:(CGPoint)lastPoint {
-    
     CGFloat moveToX = MIN(CGRectGetWidth(self.bounds) - CGRectGetWidth(thumb.bounds) / 2,
                           MAX(CGRectGetWidth(thumb.bounds) / 2,
                               thumb.center.x + (point.x - lastPoint.x)));
     thumb.center = CGPointMake(moveToX, thumb.center.y);
-    thumb.isNormal = NO;
 }
 
 
@@ -264,17 +390,13 @@ static NSTimeInterval const kMTRngeSliderDidTapSlidAnimationDuration   = 0.3f;
     thumb.center = thumbPoint;
 }
 
-- (void)movePopover:(CJSliderPopover *)popover aboveThumb:(CJSliderThumb *)thumb{
-    
+- (void)movePopover:(UIView *)popover aboveThumb:(CJSliderThumb *)thumb {
     CGRect tempRect = popover.frame;
     tempRect.origin.x = thumb.frame.origin.x;
     popover.frame = tempRect;
 }
 
-- (void)showPopover:(CJSliderPopover *)popover content:(CGFloat)num {
-    
-    NSString *content = [NSString stringWithFormat:@"%.1f",num];
-    [popover updatePopoverTextValue:content];
+- (void)showPopover:(CJSliderPopover *)popover {
     [UIView animateWithDuration:kCJRangeSliderControlPopoverAnimationDuration animations:^{
         popover.alpha = 1.0;
     }];
@@ -282,14 +404,11 @@ static NSTimeInterval const kMTRngeSliderDidTapSlidAnimationDuration   = 0.3f;
 }
 
 - (void)hidePopover:(BOOL)isLeftPopover {
-    
     [self hidePopover:isLeftPopover animationDuration:kCJRangeSliderControlPopoverAnimationDuration];
 }
 
 - (void)hidePopover:(BOOL)isLeftPopover animationDuration:(NSTimeInterval)duration {
-    
     if (isLeftPopover) {
-        
         [UIView animateWithDuration:duration animations:^{
             self.leftPopover.alpha = 0;
         }];
@@ -325,94 +444,48 @@ static NSTimeInterval const kMTRngeSliderDidTapSlidAnimationDuration   = 0.3f;
     return NO;
 }
 
-- (BOOL)isLeftThumb:(CJSliderThumb *)thumb {
-    
+- (BOOL)__isLeftThumb:(CJSliderThumb *)thumb {
     return (thumb == self.leftThumb);
 }
 
 - (BOOL)isCloseLeftThumbWithPoint:(CGPoint)point {
-    
     return fabs(point.x - self.leftThumb.frame.origin.x) < fabs(point.x - self.rightThumb.frame.origin.x);
 }
 
 #pragma mark - Getter and Setter
--(UIImageView *)backgroundImageView {
-    
-    if (!_backgroundImageView) {
-        
-        UIImage *backgroundImage = [UIImage imageNamed:@"slider_maximum_trackimage"];
-        UIEdgeInsets insets = UIEdgeInsetsMake(3, 7, 3, 7);
-        backgroundImage = [backgroundImage resizableImageWithCapInsets:insets resizingMode:UIImageResizingModeStretch];
-        _backgroundImageView = [[UIImageView alloc] initWithImage:backgroundImage];
-        _backgroundImageView.userInteractionEnabled = YES;
-        _backgroundImageView.layer.cornerRadius = kCJRangeSliderControlBackgroundViewCornerRadius;
-        _backgroundImageView.layer.masksToBounds = YES;
-        _backgroundImageView.alpha = 0.5;
-    }
-    return _backgroundImageView;
-}
-
--(UIImageView *)frontImageView {
-    
-    if (!_frontImageView) {
-        
-        UIImage *frontImageView = [UIImage imageNamed:@"slider_minimum_trackimage"];
-        UIEdgeInsets insets = UIEdgeInsetsMake(0, 5, 0, 5);
-        frontImageView = [frontImageView resizableImageWithCapInsets:insets resizingMode:UIImageResizingModeStretch];
-        _frontImageView = [[UIImageView alloc] initWithImage:frontImageView];
-        _frontImageView.userInteractionEnabled = YES;
-        _frontImageView.layer.cornerRadius = kCJRangeSliderControlBackgroundViewCornerRadius;
-        _frontImageView.layer.masksToBounds = YES;
-    }
-    return _frontImageView;
-}
-
--(CJSliderThumb *)leftThumb {
-    
+- (CJSliderThumb *)leftThumb {
     if (!_leftThumb) {
-        
         _leftThumb = [CJSliderThumb buttonWithType:UIButtonTypeCustom];
-        _leftThumb.isNormal = YES;
-        [_leftThumb addTarget:self
-                   action:@selector(buttonDidDrag:withEvent:)
-         forControlEvents:UIControlEventTouchDragInside];
-        [_leftThumb addTarget:self action:@selector(buttonEndDrag:) forControlEvents:UIControlEventTouchUpInside |
-         UIControlEventTouchUpOutside];
+        [_leftThumb addTarget:self action:@selector(buttonDidDrag:withEvent:) forControlEvents:UIControlEventTouchDragInside];
+        [_leftThumb addTarget:self action:@selector(buttonEndDrag:) forControlEvents:UIControlEventTouchUpInside | UIControlEventTouchUpOutside];
         
     }
     return _leftThumb;
 }
 
--(CJSliderThumb *)rightThumb {
-    
+- (CJSliderThumb *)rightThumb {
     if (!_rightThumb) {
-        
         _rightThumb = [CJSliderThumb buttonWithType:UIButtonTypeCustom];
-        _rightThumb.isNormal = YES;
-        [_rightThumb addTarget:self
-                       action:@selector(buttonDidDrag:withEvent:)
-             forControlEvents:UIControlEventTouchDragInside];
-
-        [_rightThumb addTarget:self action:@selector(buttonEndDrag:) forControlEvents:UIControlEventTouchUpInside|
-         UIControlEventTouchUpOutside];
+        [_rightThumb addTarget:self action:@selector(buttonDidDrag:withEvent:) forControlEvents:UIControlEventTouchDragInside];
+        [_rightThumb addTarget:self action:@selector(buttonEndDrag:) forControlEvents:UIControlEventTouchUpInside| UIControlEventTouchUpOutside];
     }
     return _rightThumb;
 }
 
 - (CJSliderPopover *)leftPopover {
-    
     if (!_leftPopover) {
-        _leftPopover = [[CJSliderPopover alloc] initWithFrame:CGRectMake(0, 0, kCJRangeSliderControlPopoverWidth, kCJRangeSliderControlPopoverHeight)];
-        _leftPopover.alpha = 0;
+        CGFloat popoverHeight = self.popoverSize.height;// 弹出框的高
+        CGFloat popoverWidth = self.popoverSize.width;  // 弹出框的宽
+        _leftPopover = [[CJSliderPopover alloc] initWithFrame:CGRectMake(0, 0, popoverWidth, popoverHeight)];
     }
     return _leftPopover;
 }
 
--(CJSliderPopover *)rightPopover {
-   
+- (CJSliderPopover *)rightPopover {
     if (!_rightPopover) {
-        _rightPopover = [[CJSliderPopover alloc] initWithFrame:CGRectMake(0, 0, kCJRangeSliderControlPopoverWidth, kCJRangeSliderControlPopoverHeight)];
-        _rightPopover.alpha = 0;
+        CGFloat popoverHeight = self.popoverSize.height;// 弹出框的高
+        CGFloat popoverWidth = self.popoverSize.width;  // 弹出框的宽
+        _rightPopover = [[CJSliderPopover alloc] initWithFrame:CGRectMake(0, 0, popoverWidth, popoverHeight)];
     }
     return _rightPopover;
 }

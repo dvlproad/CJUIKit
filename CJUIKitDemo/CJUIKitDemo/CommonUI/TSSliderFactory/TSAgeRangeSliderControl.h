@@ -1,5 +1,5 @@
 //
-//  TSRangeSliderControl2.h
+//  TSAgeRangeSliderControl.h
 //  CJUIKitDemo
 //
 //  Created by qian on 2020/11/9.
@@ -10,25 +10,25 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface TSRangeSliderControl2 : CJRangeSliderControl {
+@interface TSAgeRangeSliderControl : CJRangeSliderControl {
     
 }
 /*
  *  初始化
  *
- *  @param minRangeValue                选择范围的最小值
- *  @param maxRangeValue                选择范围的最大值
- *  @param startRangeValue              初始范围的起始值
- *  @param endRangeValue                初始范围的结束值
+ *  @param minRangeAge                  选择范围的最小值
+ *  @param maxRangeAge                  选择范围的最大值
+ *  @param startRangeAge                初始范围的起始值
+ *  @param endRangeAge                  初始范围的结束值
  *  @param chooseCompleteBlock          选择结束，返回选择的最大和最小值
  *
- *  @param slider滑块视图
+ *  @param 年龄范围选择slider滑块视图
  */
-- (instancetype)initWithMinRangeValue:(CGFloat)minRangeValue
-                        maxRangeValue:(CGFloat)maxRangeValue
-                      startRangeValue:(CGFloat)startRangeValue
-                        endRangeValue:(CGFloat)endRangeValue
-                  chooseCompleteBlock:(void(^)(CGFloat minValue, CGFloat maxValue))chooseCompleteBlock NS_DESIGNATED_INITIALIZER;
+- (instancetype)initWithMinRangeAge:(NSInteger)minRangeAge
+                        maxRangeAge:(NSInteger)maxRangeAge
+                      startRangeAge:(NSInteger)startRangeAge
+                        endRangeAge:(NSInteger)endRangeAge
+                chooseCompleteBlock:(void(^)(NSInteger minAge, NSInteger maxAge))chooseCompleteBlock NS_DESIGNATED_INITIALIZER;
 + (instancetype)new NS_UNAVAILABLE;
 - (instancetype)init NS_UNAVAILABLE;
 - (instancetype)initWithFrame:(CGRect)frame NS_UNAVAILABLE;

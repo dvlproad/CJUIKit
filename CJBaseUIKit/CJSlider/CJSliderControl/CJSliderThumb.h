@@ -10,10 +10,4 @@
 
 @interface CJSliderThumb : UIButton
 
-
-@property (nonatomic, strong) UIImage *normalImage;
-
-@property (nonatomic, strong) UIImage *selectedImage;
-
-@property (nonatomic, assign, setter=setThumbStatus:) BOOL isNormal;
 @end
