@@ -229,41 +229,6 @@ static NSTimeInterval const kMTRngeSliderDidTapSlidAnimationDuration   = 0.3f;
 }
 
 #pragma mark - Event
-- (void)buttonDidDrag:(UIButton *)thumb withEvent:(UIEvent *)event {
-    UITouch *touch    = [[event touchesForView:thumb] anyObject];
-    CGPoint point     = [touch locationInView:self];
-    CGPoint lastPoint = [touch previousLocationInView:self];
-    
-    //判断是否需要阻止leftThumb右移,阻止rightThumb左移
-    BOOL stopDragThumb = [self thumbNeedsToStopDrag:thumb point:point lastPoint:lastPoint];
-    if (stopDragThumb) {
-        return;
-    }
-    
-    BOOL isLeftThumb  = [self __isLeftThumb:thumb];
-    
-    //移动Thumb
-    [self dragThumb:thumb withPoint:point lastPoint:lastPoint];
-    
-    //更新进度区间
-    [self updateFrontImageView];
-    
-    //更新thumb的显示
-    [self updatePopover:isLeftThumb];
-}
-
-
-- (void)buttonEndDrag:(UIButton *)thumb {
-    BOOL isLeftThumb = [self __isLeftThumb:thumb];
-    
-    //更新Thumb状态
-    [self updateEndDragThumbStatus:isLeftThumb];
-    
-    if (self.popoverShowTimeType == CJSliderPopoverShowTimeTypeDrag) { // 只有Drag的时候才显示Popover
-        [self hidePopover:isLeftThumb]; //隐藏Popover
-    }
-}
-
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
     [super touchesBegan:touches withEvent:event];
     
@@ -376,10 +341,6 @@ static NSTimeInterval const kMTRngeSliderDidTapSlidAnimationDuration   = 0.3f;
  *  @param lastPoint 上一次的点
  */
 - (void)dragThumb:(UIButton *)thumb withPoint:(CGPoint)point lastPoint:(CGPoint)lastPoint {
-    CGFloat moveToX = MIN(CGRectGetWidth(self.bounds) - CGRectGetWidth(thumb.bounds) / 2,
-                          MAX(CGRectGetWidth(thumb.bounds) / 2,
-                              thumb.center.x + (point.x - lastPoint.x)));
-    thumb.center = CGPointMake(moveToX, thumb.center.y);
 }
 
 
@@ -429,30 +390,6 @@ static NSTimeInterval const kMTRngeSliderDidTapSlidAnimationDuration   = 0.3f;
     }
 }
 
-
-- (BOOL)thumbNeedsToStopDrag:(UIButton *)thumb point:(CGPoint)point lastPoint:(CGPoint)lastPoint {
-    //判断是否左移
-    BOOL isSlideToLeft = point.x - lastPoint.x < 0;
-    
-    //判断leftThumb和rightThumb是否相交
-    BOOL isIntersect  = CGRectIntersectsRect(self.leftThumb.frame, self.rightThumb.frame);
-    
-    BOOL isLeftThumb  = ( thumb == self.leftThumb );
-    
-    //如果相交,阻止leftThumb有移,阻止rightThumb左移。
-    if ( isLeftThumb && !isSlideToLeft && isIntersect) {
-        
-        return YES;
-    }
-    
-    if (  !isLeftThumb && isSlideToLeft && isIntersect) {
-        
-        return YES;
-    }
-    
-    return NO;
-}
-
 - (BOOL)__isLeftThumb:(UIButton *)thumb {
     return (thumb == self.leftThumb);
 }
@@ -460,6 +397,155 @@ static NSTimeInterval const kMTRngeSliderDidTapSlidAnimationDuration   = 0.3f;
 - (BOOL)isCloseLeftThumbWithPoint:(CGPoint)point {
     return fabs(point.x - self.leftThumb.frame.origin.x) < fabs(point.x - self.rightThumb.frame.origin.x);
 }
+
+#pragma mark - 拖动的事件
+- (void)buttonEndDrag:(UIButton *)button {
+    [self bringSubviewToFront:button]; // 移动结束后，将本次操作的滑块置顶，防止类型为RangeSlider的时候，如当左侧滑块和右侧滑块重合的时候，只能固定滑动某个，导致在都滑到最左/最右侧的时候，出现问题
+    
+    
+    BOOL isLeftThumb = [self __isLeftThumb:button];
+    
+    //更新Thumb状态
+    [self updateEndDragThumbStatus:isLeftThumb];
+    
+    if (self.popoverShowTimeType == CJSliderPopoverShowTimeTypeDrag) { // 只有Drag的时候才显示Popover
+        [self hidePopover:isLeftThumb]; //隐藏Popover
+    }
+}
+
+- (void)buttonDidDrag:(UIButton *)thumb withEvent:(UIEvent *)event {
+    UITouch *touch      = [[event touchesForView:thumb] anyObject];
+    CGPoint point       = [touch locationInView:self];
+    CGPoint lastPoint   = [touch previousLocationInView:self];
+    CGFloat moveDistance = (point.x - lastPoint.x); //滑动的距离
+    if (moveDistance == 0) {
+        return;
+    }
+    
+    // 判断是否需要阻止leftThumb右移,阻止rightThumb左移
+    BOOL stopDragThumb = [self thumbNeedsToStopDrag:thumb point:point lastPoint:lastPoint];
+    if (stopDragThumb) {
+        return;
+    }
+    
+    CGFloat oldThumbX = thumb.frame.origin.x;
+    CGFloat newThumbX = [self newThumbXForThumb:thumb withMoveDistance:moveDistance];
+    if (newThumbX == oldThumbX) {
+        return;
+    }
+    
+    //更新视图
+    CGRect thumbFrame = thumb.frame;
+    thumbFrame.origin.x = newThumbX;
+    thumb.frame = thumbFrame;
+    
+    //更新完后的额外操作(如显示popover之类的)
+    [self doSomethingWhenCompleteUpdateFrameForThumb:thumb];
+}
+
+/**
+ *  更新slider的值显示
+ */
+- (void)doSomethingWhenCompleteUpdateFrameForThumb:(UIButton *)thumb {
+    //更新进度区间
+    [self updateFrontImageView];
+    
+    //更新thumb的显示
+    BOOL isLeftThumb  = [self __isLeftThumb:thumb];
+    [self updatePopover:isLeftThumb];
+}
+
+
+- (BOOL)thumbNeedsToStopDrag:(UIButton *)thumb point:(CGPoint)point lastPoint:(CGPoint)lastPoint {
+    //判断是否左移
+    BOOL isSlideToLeft = point.x - lastPoint.x < 0;
+    
+    //判断leftThumb和rightThumb是否相交
+//    BOOL isIntersect  = CGRectIntersectsRect(self.leftThumb.frame, self.rightThumb.frame);
+    BOOL isIntersect  = NO;
+    
+    BOOL isLeftThumb  = ( thumb == self.leftThumb );
+    
+    //如果相交,阻止leftThumb右移,阻止rightThumb左移。
+    if (isLeftThumb && !isSlideToLeft && isIntersect) {
+        return YES;
+    }
+    
+    if (!isLeftThumb && isSlideToLeft && isIntersect) {
+        return YES;
+    }
+    
+    return NO;
+}
+
+
+- (CGFloat)newThumbXForThumb:(UIButton *)thumb withMoveDistance:(CGFloat)moveDistance {
+    CGFloat rightThumbMoveMinMidX = CGRectGetMidX(self.leftThumb.frame); //右侧滑块移动最小中心可到左侧滑块的中心
+    CGFloat rightThumbMoveMaxMidX = self.thumbMoveMaxX - CGRectGetWidth(thumb.frame)/2; //右侧滑块移动最大中心可到的最大thumbMoveMaxX减去一半滑块宽
+    
+    CGFloat leftThumbMoveMaxMidX = CGRectGetMidX(self.rightThumb.frame); //左侧滑块移动最大中心可到右侧滑块的中心
+    CGFloat leftThumbMoveMinMidX = self.thumbMoveMinX + CGRectGetWidth(thumb.frame)/2; //左侧滑块移动最小中心可到的最小thumbMoveMinX加上一半滑块宽
+    
+    BOOL isSlideToLeft = moveDistance < 0;      //判断是否左移(否，则是右移)
+    BOOL isLeftThumb  = ( thumb == self.leftThumb );
+    
+//    /* newThumbX 的计算方法1 */
+//    CGFloat validMoveDistance = moveDistance;
+//    if (!isLeftThumb) {
+//        if (isSlideToLeft) {    //右滑块向左滑时候
+//            CGFloat canMaxMoveDistance = leftThumbMoveMaxMidX - rightThumbMoveMinMidX;
+//            if (ABS(moveDistance) > ABS(canMaxMoveDistance)) {
+//                validMoveDistance = -canMaxMoveDistance;
+//            }
+//
+//        } else {                //右滑块向右滑时候
+//            CGFloat canMaxMoveDistance = rightThumbMoveMaxMidX - leftThumbMoveMaxMidX;
+//            if (ABS(moveDistance) > ABS(canMaxMoveDistance)) {
+//                validMoveDistance = canMaxMoveDistance;
+//            }
+//        }
+//
+//    } else if (isLeftThumb) {
+//        if (!isSlideToLeft) {   //左滑块向右滑时候
+//            CGFloat canMaxMoveDistance = leftThumbMoveMaxMidX - rightThumbMoveMinMidX;
+//            if (ABS(moveDistance) > ABS(canMaxMoveDistance)) {
+//                validMoveDistance = canMaxMoveDistance;
+//            }
+//
+//        } else {                //左滑块向左滑时候
+//            CGFloat canMaxMoveDistance = rightThumbMoveMinMidX - leftThumbMoveMinMidX;
+//            if (ABS(moveDistance) > ABS(canMaxMoveDistance)) {
+//                validMoveDistance = -canMaxMoveDistance;
+//            }
+//        }
+//    }
+//    CGFloat newThumbX = thumb.frame.origin.x + validMoveDistance;
+//    return newThumbX;
+    
+    /* newThumbX 的计算方法2 */
+    CGFloat tempThumbMidX = thumb.center.x + moveDistance;
+    if (!isLeftThumb) {
+        CGFloat newThumbMidX;
+        if (isSlideToLeft) {    //右滑块向左滑时候
+            newThumbMidX = MAX(tempThumbMidX, rightThumbMoveMinMidX);
+            
+        } else {                //右滑块向右滑时候
+            newThumbMidX = MIN(tempThumbMidX, rightThumbMoveMaxMidX);
+        }
+        return newThumbMidX-self.thumbSize.width/2;
+    } else {
+        CGFloat newThumbMidX;
+        if (!isSlideToLeft) {   //左滑块向右滑时候
+            newThumbMidX = MIN(tempThumbMidX, leftThumbMoveMaxMidX);
+            
+        } else {                //左滑块向左滑时候
+            newThumbMidX = MAX(tempThumbMidX, leftThumbMoveMinMidX);
+        }
+        return newThumbMidX-self.thumbSize.width/2;
+    }
+}
+
+
 
 #pragma mark - Getter and Setter
 - (UIButton *)leftThumb {
