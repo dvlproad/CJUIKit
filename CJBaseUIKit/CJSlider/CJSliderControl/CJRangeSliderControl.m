@@ -16,6 +16,8 @@ static NSTimeInterval const kMTRngeSliderDidTapSlidAnimationDuration   = 0.3f;
 @interface CJRangeSliderControl () {
     
 }
+@property (nonatomic, assign, readonly) CGFloat thumbCanMoveWidth;  //滑块可滑动的实际大小
+
 @property (nonatomic, assign) CGRect lastFrame;
 
 @property (nonatomic, assign) CGPoint lastThumbPoint;
@@ -174,15 +176,33 @@ static NSTimeInterval const kMTRngeSliderDidTapSlidAnimationDuration   = 0.3f;
     CGRect trackRect = [self trackRectForBounds:self.bounds];
     self.trackView.frame = trackRect;
     
-    CGFloat thumbWidth = self.thumbSize.width;      // 滑块的宽
-    CGFloat trackWidth = self.bounds.size.width - thumbWidth; // 滑道的宽
     
-    CGFloat leftThumbPercent  = self.startRangeValue/(self.maxValue-self.minValue);
-    CGFloat rightThumbPercent  = self.endRangeValue/(self.maxValue-self.minValue);
-    CGFloat leftThumbX = leftThumbPercent*trackWidth;
-    CGFloat rightThumbX = rightThumbPercent*trackWidth;
-    [self __updateThumbFrameWithLeftThumbX:leftThumbX rightThumbX:rightThumbX];
     
+    CGFloat thumbWidth = self.thumbSize.width;
+    CGFloat thumbHeight = self.thumbSize.height;
+    CGFloat thumbY = CGRectGetHeight(self.bounds)/2 - thumbHeight/2;
+    
+    _thumbMoveMinX = 0 + self.thumbMoveMinXMargin;
+    _thumbMoveMaxX = CGRectGetWidth(self.bounds) - self.thumbMoveMaxXMargin;
+    _thumbCanMoveWidth = (self.thumbMoveMaxX-thumbWidth) - self.thumbMoveMinX; //滑块可滑动的实际大小
+    
+    //计算该值在坐标上的X是多少
+    CGFloat leftPercent = self.startRangeValue /(self.maxValue - self.minValue);
+    CGFloat leftThumbX = CGRectGetMinX(trackRect) + _thumbMoveMinX + leftPercent*self.thumbCanMoveWidth;
+    CGRect leftThumbRect = CGRectMake(leftThumbX, thumbY, thumbWidth, thumbHeight);
+    self.leftThumb.frame = leftThumbRect;
+    
+    CGFloat rightPercent = self.endRangeValue /(self.maxValue - self.minValue);
+    CGFloat rightThumbX = CGRectGetMinX(trackRect) + _thumbMoveMinX + rightPercent*self.thumbCanMoveWidth;
+    CGRect rightThumbRect = CGRectMake(rightThumbX, thumbY, thumbWidth, thumbHeight);
+    self.rightThumb.frame = rightThumbRect;
+    
+    CGFloat popoverWidth = self.popoverSize.width;  // 弹出框的宽
+    CGFloat popoverHeight = self.popoverSize.height;// 弹出框的高
+    CGFloat popoverY = thumbY - popoverHeight;
+    self.leftPopover.frame = CGRectMake(leftThumbX, popoverY, popoverWidth, popoverHeight);
+    self.rightPopover.frame = CGRectMake(rightThumbX, popoverY, popoverWidth, popoverHeight);
+
     [self updateFrontImageView];
 }
 
@@ -206,27 +226,6 @@ static NSTimeInterval const kMTRngeSliderDidTapSlidAnimationDuration   = 0.3f;
     CGFloat trackViewWidth = self.trackViewMaxX - self.trackViewMinX;
     
     return CGRectMake(trackViewOriginX, trackViewOriginY, trackViewWidth, trackViewHeight);
-}
-
-
-- (void)__updateThumbFrameWithLeftThumbX:(CGFloat)leftThumbX rightThumbX:(CGFloat)rightThumbX {
-    CGFloat thumbHeight = self.thumbSize.height;    // 滑块的高
-    CGFloat thumbWidth = self.thumbSize.width;      // 滑块的宽
-    CGFloat thumbY = self.bounds.size.height / 2 - thumbHeight / 2;
-    
-    CGFloat popoverHeight = self.popoverSize.height;// 弹出框的高
-    CGFloat popoverWidth = self.popoverSize.width;  // 弹出框的宽
-    
-    
-    self.leftThumb.frame = CGRectMake(leftThumbX, thumbY, thumbWidth, thumbHeight);
-    
-    
-    self.rightThumb.frame = CGRectMake(rightThumbX, thumbY, thumbWidth, popoverHeight);
-
-    
-    CGFloat popoverY = self.leftThumb.frame.origin.y - popoverHeight;
-    self.leftPopover.frame = CGRectMake(leftThumbX, popoverY, popoverWidth, popoverHeight);
-    self.rightPopover.frame = CGRectMake(rightThumbX, popoverY, thumbWidth, popoverHeight);
 }
 
 #pragma mark - Event

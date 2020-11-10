@@ -39,9 +39,13 @@ typedef NS_ENUM(NSUInteger, CJSliderPopoverShowTimeType) {
 }
 @property (nonatomic, assign) CGFloat trackViewMinXMargin;  /**< 滑道的最小值离bound的边缘距离 */
 @property (nonatomic, assign) CGFloat trackViewMaxXMargin;  /**< 滑道的最大值离bound的边缘距离 */
+@property (nonatomic, assign) CGFloat thumbMoveMinXMargin;  /**< 滑块可移动到的最小X值离bound的边缘距离 */
+@property (nonatomic, assign) CGFloat thumbMoveMaxXMargin;  /**< 滑块可移动到的最大X值离bound的边缘距离 */
 
 @property (nonatomic, assign, readonly) CGFloat trackViewMinX;  /**< 滑道的最小值 */
 @property (nonatomic, assign, readonly) CGFloat trackViewMaxX;  /**< 滑道的最大值 */
+@property (nonatomic, assign, readonly) CGFloat thumbMoveMinX;  /**< 滑块可移动到的最小X值 */
+@property (nonatomic, assign, readonly) CGFloat thumbMoveMaxX;  /**< 滑块可移动到的最大X值 */
 
 @property (nonatomic, assign, readonly) CGFloat minValue; /**< 最小值 */
 @property (nonatomic, assign, readonly) CGFloat maxValue; /**< 最大值 */
