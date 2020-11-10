@@ -37,7 +37,7 @@ NS_ASSUME_NONNULL_BEGIN
                         maxRangeValue:(CGFloat)maxRangeValue
                       startRangeValue:(CGFloat)startRangeValue
                         endRangeValue:(CGFloat)endRangeValue
-            createBackgroundViewBlock:(UIView * (^)(void))createBackgroundViewBlock
+                 createTrackViewBlock:(UIView * (^)(void))createTrackViewBlock
                  createFrontViewBlock:(UIView *(^)(void))createFrontViewBlock
                 popoverTextTransBlock:(NSString *(^)(CGFloat percentValue, CGFloat realValue))popoverTextTransBlock NS_UNAVAILABLE;
 

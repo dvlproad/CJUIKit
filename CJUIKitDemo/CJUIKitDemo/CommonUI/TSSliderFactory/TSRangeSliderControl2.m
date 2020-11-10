@@ -34,7 +34,7 @@
                         endRangeValue:(CGFloat)endRangeValue
                   chooseCompleteBlock:(void(^)(CGFloat minValue, CGFloat maxValue))chooseCompleteBlock
 {
-    self = [super initWithMinRangeValue:minRangeValue maxRangeValue:maxRangeValue startRangeValue:startRangeValue endRangeValue:endRangeValue createBackgroundViewBlock:^UIView *{
+    self = [super initWithMinRangeValue:minRangeValue maxRangeValue:maxRangeValue startRangeValue:startRangeValue endRangeValue:endRangeValue createTrackViewBlock:^UIView *{
         UIView *view = [[UIView alloc] initWithFrame:CGRectZero];
         view.backgroundColor = [UIColor redColor];
         return view;

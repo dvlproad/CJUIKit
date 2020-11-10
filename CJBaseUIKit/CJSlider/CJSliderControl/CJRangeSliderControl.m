@@ -10,8 +10,6 @@
 
 #import "CJSliderPopover.h"
 
-static CGFloat const kCJRangeSliderControlLeftPadding                         = 10.0f;
-static CGFloat const kCJRangeSliderControlBackgroundViewCornerRadius          = 8.0f;
 static NSTimeInterval const kCJRangeSliderControlPopoverAnimationDuration     = 0.25f;
 static NSTimeInterval const kMTRngeSliderDidTapSlidAnimationDuration   = 0.3f;
 
@@ -22,7 +20,7 @@ static NSTimeInterval const kMTRngeSliderDidTapSlidAnimationDuration   = 0.3f;
 
 @property (nonatomic, assign) CGPoint lastThumbPoint;
 
-@property (nonatomic, strong) UIView *backgroundView;
+@property (nonatomic, strong) UIView *trackView;
 @property (nonatomic, strong) UIView *frontView;
 
 @property (nonatomic, strong) CJSliderPopover *leftPopover;
@@ -43,7 +41,7 @@ static NSTimeInterval const kMTRngeSliderDidTapSlidAnimationDuration   = 0.3f;
  *  @param maxRangeValue                选择范围的最大值
  *  @param startRangeValue              初始范围的起始值
  *  @param endRangeValue                初始范围的结束值
- *  @param createBackgroundViewBlock    backgroundView的创建方法
+ *  @param createTrackViewBlock             trackView的创建方法
  *  @param createFrontViewBlock         frontView的创建方法
  *  @param popoverTextTransBlock        popover上的文本转换方法(默认使用realValue保留一位小数 )
  *
@@ -53,7 +51,7 @@ static NSTimeInterval const kMTRngeSliderDidTapSlidAnimationDuration   = 0.3f;
                         maxRangeValue:(CGFloat)maxRangeValue
                       startRangeValue:(CGFloat)startRangeValue
                         endRangeValue:(CGFloat)endRangeValue
-            createBackgroundViewBlock:(UIView * (^)(void))createBackgroundViewBlock
+                 createTrackViewBlock:(UIView * (^)(void))createTrackViewBlock
                  createFrontViewBlock:(UIView *(^)(void))createFrontViewBlock
                 popoverTextTransBlock:(NSString *(^)(CGFloat percentValue, CGFloat realValue))popoverTextTransBlock
 {
@@ -64,17 +62,20 @@ static NSTimeInterval const kMTRngeSliderDidTapSlidAnimationDuration   = 0.3f;
         _startRangeValue = startRangeValue;
         _endRangeValue = endRangeValue;
         _popoverTextTransBlock = popoverTextTransBlock;
+
+        _trackViewMinXMargin = 10;
+        _trackViewMaxXMargin = 10;
         
         [self setupViewWithStartRangeValue:startRangeValue
                              endRangeValue:endRangeValue
-                 createBackgroundViewBlock:createBackgroundViewBlock
+                      createTrackViewBlock:createTrackViewBlock
                       createFrontViewBlock:createFrontViewBlock];
     }
     return self;
 }
 
 //- (instancetype)initWithCoder:(NSCoder *)coder {
-//    self = [self initWithCreateBackgroundViewBlock:nil createFrontViewBlock:nil];
+//    self = [self initWithCreateTrackViewBlock:nil createFrontViewBlock:nil];
 //    if (self) {
 //        
 //    }
@@ -83,21 +84,21 @@ static NSTimeInterval const kMTRngeSliderDidTapSlidAnimationDuration   = 0.3f;
 
 - (void)setupViewWithStartRangeValue:(CGFloat)startRangeValue
                        endRangeValue:(CGFloat)endRangeValue
-           createBackgroundViewBlock:(UIView * (^)(void))createBackgroundViewBlock
+                createTrackViewBlock:(UIView * (^)(void))createTrackViewBlock
                 createFrontViewBlock:(UIView * (^)(void))createFrontViewBlock
 {
-    if (!_backgroundView) {
-        if (createBackgroundViewBlock) {
-            _backgroundView = createBackgroundViewBlock();
+    if (!_trackView) {
+        if (createTrackViewBlock) {
+            _trackView = createTrackViewBlock();
         } else {
             UIImage *backgroundImage = [UIImage imageNamed:@"slider_maximum_trackimage"];
             UIEdgeInsets insets = UIEdgeInsetsMake(3, 7, 3, 7);
             backgroundImage = [backgroundImage resizableImageWithCapInsets:insets resizingMode:UIImageResizingModeStretch];
-            _backgroundView = [[UIImageView alloc] initWithImage:backgroundImage];
-            _backgroundView.userInteractionEnabled = YES;
-            _backgroundView.layer.cornerRadius = kCJRangeSliderControlBackgroundViewCornerRadius;
-            _backgroundView.layer.masksToBounds = YES;
-            _backgroundView.alpha = 0.5;
+            _trackView = [[UIImageView alloc] initWithImage:backgroundImage];
+            _trackView.userInteractionEnabled = YES;
+            _trackView.layer.cornerRadius = 8.0f;
+            _trackView.layer.masksToBounds = YES;
+            _trackView.alpha = 0.5;
         }
     }
     
@@ -111,7 +112,7 @@ static NSTimeInterval const kMTRngeSliderDidTapSlidAnimationDuration   = 0.3f;
             frontImage = [frontImage resizableImageWithCapInsets:insets resizingMode:UIImageResizingModeStretch];
             _frontView = [[UIImageView alloc] initWithImage:frontImage];
             _frontView.userInteractionEnabled = YES;
-            _frontView.layer.cornerRadius = kCJRangeSliderControlBackgroundViewCornerRadius;
+            _frontView.layer.cornerRadius = 8.0f;
             _frontView.layer.masksToBounds = YES;
         }
     }
@@ -119,7 +120,7 @@ static NSTimeInterval const kMTRngeSliderDidTapSlidAnimationDuration   = 0.3f;
     
     self.backgroundColor = [UIColor clearColor];
     
-    [self addSubview:self.backgroundView];
+    [self addSubview:self.trackView];
     [self addSubview:self.frontView];
     [self addSubview:self.leftThumb];
     [self addSubview:self.rightThumb];
@@ -160,20 +161,18 @@ static NSTimeInterval const kMTRngeSliderDidTapSlidAnimationDuration   = 0.3f;
 - (void)layoutSubviews {
     [super layoutSubviews];
     
-    //防止多次调用
     if (CGRectEqualToRect(self.lastFrame, self.frame)) {
-        return;
+        return; //防止多次调用
     }
-    
     self.lastFrame = self.frame;
     
-    if (self.trackHeight == 0 || self.trackHeight > CGRectGetHeight(self.bounds)) {
-        //NSLog(@"修正trackHeight的高度");
-        self.trackHeight = CGRectGetHeight(self.bounds);
-    }
-    CGFloat backgroundViewY = self.bounds.size.height / 2 - self.trackHeight / 2;
-    CGFloat backgroundViewWidth = self.bounds.size.width - kCJRangeSliderControlLeftPadding * 2;
-    self.backgroundView.frame = CGRectMake(kCJRangeSliderControlLeftPadding, backgroundViewY, backgroundViewWidth, self.trackHeight);
+    [self reloadSlider];
+}
+
+/* 完整的描述请参见文件头部 */
+- (void)reloadSlider {
+    CGRect trackRect = [self trackRectForBounds:self.bounds];
+    self.trackView.frame = trackRect;
     
     CGFloat thumbWidth = self.thumbSize.width;      // 滑块的宽
     CGFloat trackWidth = self.bounds.size.width - thumbWidth; // 滑道的宽
@@ -186,6 +185,29 @@ static NSTimeInterval const kMTRngeSliderDidTapSlidAnimationDuration   = 0.3f;
     
     [self updateFrontImageView];
 }
+
+#pragma mark - 一些位置的获取
+/**
+ *  获取滑道的frame
+ *
+ *  @param bounds   整个视图的bounds
+ */
+- (CGRect)trackRectForBounds:(CGRect)bounds {
+    if (self.trackHeight == 0 || self.trackHeight > CGRectGetHeight(bounds)) {
+        //NSLog(@"修正trackHeight的高度");
+        self.trackHeight = CGRectGetHeight(bounds);
+    }
+    CGFloat trackViewHeight = self.trackHeight;
+    CGFloat trackViewOriginY = CGRectGetHeight(bounds)/2 - trackViewHeight/2;
+    
+    _trackViewMinX = 0 + self.trackViewMinXMargin;
+    _trackViewMaxX = CGRectGetWidth(bounds) - self.trackViewMaxXMargin;
+    CGFloat trackViewOriginX = self.trackViewMinX;
+    CGFloat trackViewWidth = self.trackViewMaxX - self.trackViewMinX;
+    
+    return CGRectMake(trackViewOriginX, trackViewOriginY, trackViewWidth, trackViewHeight);
+}
+
 
 - (void)__updateThumbFrameWithLeftThumbX:(CGFloat)leftThumbX rightThumbX:(CGFloat)rightThumbX {
     CGFloat thumbHeight = self.thumbSize.height;    // 滑块的高
@@ -208,7 +230,7 @@ static NSTimeInterval const kMTRngeSliderDidTapSlidAnimationDuration   = 0.3f;
 }
 
 #pragma mark - Event
-- (void)buttonDidDrag:(CJSliderThumb *)thumb withEvent:(UIEvent *)event {
+- (void)buttonDidDrag:(UIButton *)thumb withEvent:(UIEvent *)event {
     UITouch *touch    = [[event touchesForView:thumb] anyObject];
     CGPoint point     = [touch locationInView:self];
     CGPoint lastPoint = [touch previousLocationInView:self];
@@ -232,7 +254,7 @@ static NSTimeInterval const kMTRngeSliderDidTapSlidAnimationDuration   = 0.3f;
 }
 
 
-- (void)buttonEndDrag:(CJSliderThumb *)thumb {
+- (void)buttonEndDrag:(UIButton *)thumb {
     BOOL isLeftThumb = [self __isLeftThumb:thumb];
     
     //更新Thumb状态
@@ -276,7 +298,7 @@ static NSTimeInterval const kMTRngeSliderDidTapSlidAnimationDuration   = 0.3f;
  *  更新slider的进度
  */
 - (void)updateFrontImageView {
-    CGRect frontViewFrame = CGRectMake(self.leftThumb.center.x, self.backgroundView.frame.origin.y, self.rightThumb.center.x - self.leftThumb.center.x, self.backgroundView.bounds.size.height);
+    CGRect frontViewFrame = CGRectMake(self.leftThumb.center.x, self.trackView.frame.origin.y, self.rightThumb.center.x - self.leftThumb.center.x, self.trackView.bounds.size.height);
     self.frontView.frame = frontViewFrame;
 }
 
@@ -366,7 +388,7 @@ static NSTimeInterval const kMTRngeSliderDidTapSlidAnimationDuration   = 0.3f;
  *  @param point     当前拖动的point
  *  @param lastPoint 上一次的点
  */
-- (void)dragThumb:(CJSliderThumb *)thumb withPoint:(CGPoint)point lastPoint:(CGPoint)lastPoint {
+- (void)dragThumb:(UIButton *)thumb withPoint:(CGPoint)point lastPoint:(CGPoint)lastPoint {
     CGFloat moveToX = MIN(CGRectGetWidth(self.bounds) - CGRectGetWidth(thumb.bounds) / 2,
                           MAX(CGRectGetWidth(thumb.bounds) / 2,
                               thumb.center.x + (point.x - lastPoint.x)));
@@ -382,7 +404,7 @@ static NSTimeInterval const kMTRngeSliderDidTapSlidAnimationDuration   = 0.3f;
  *  @param thumb 当前的thumb
  *  @param point 手指点击的位置
  */
-- (void)moveThumb:(CJSliderThumb *)thumb withPoint:(CGPoint)point{
+- (void)moveThumb:(UIButton *)thumb withPoint:(CGPoint)point{
     
     CGPoint thumbPoint = CGPointMake(MIN(CGRectGetWidth(self.bounds) - CGRectGetWidth(thumb.bounds) / 2,
                                          MAX(CGRectGetWidth(thumb.bounds) / 2,
@@ -390,7 +412,7 @@ static NSTimeInterval const kMTRngeSliderDidTapSlidAnimationDuration   = 0.3f;
     thumb.center = thumbPoint;
 }
 
-- (void)movePopover:(UIView *)popover aboveThumb:(CJSliderThumb *)thumb {
+- (void)movePopover:(UIView *)popover aboveThumb:(UIButton *)thumb {
     CGRect tempRect = popover.frame;
     tempRect.origin.x = thumb.frame.origin.x;
     popover.frame = tempRect;
@@ -421,7 +443,7 @@ static NSTimeInterval const kMTRngeSliderDidTapSlidAnimationDuration   = 0.3f;
 }
 
 
-- (BOOL)thumbNeedsToStopDrag:(CJSliderThumb *)thumb point:(CGPoint)point lastPoint:(CGPoint)lastPoint {
+- (BOOL)thumbNeedsToStopDrag:(UIButton *)thumb point:(CGPoint)point lastPoint:(CGPoint)lastPoint {
     //判断是否左移
     BOOL isSlideToLeft = point.x - lastPoint.x < 0;
     
@@ -444,7 +466,7 @@ static NSTimeInterval const kMTRngeSliderDidTapSlidAnimationDuration   = 0.3f;
     return NO;
 }
 
-- (BOOL)__isLeftThumb:(CJSliderThumb *)thumb {
+- (BOOL)__isLeftThumb:(UIButton *)thumb {
     return (thumb == self.leftThumb);
 }
 
@@ -453,9 +475,9 @@ static NSTimeInterval const kMTRngeSliderDidTapSlidAnimationDuration   = 0.3f;
 }
 
 #pragma mark - Getter and Setter
-- (CJSliderThumb *)leftThumb {
+- (UIButton *)leftThumb {
     if (!_leftThumb) {
-        _leftThumb = [CJSliderThumb buttonWithType:UIButtonTypeCustom];
+        _leftThumb = [UIButton buttonWithType:UIButtonTypeCustom];
         [_leftThumb addTarget:self action:@selector(buttonDidDrag:withEvent:) forControlEvents:UIControlEventTouchDragInside];
         [_leftThumb addTarget:self action:@selector(buttonEndDrag:) forControlEvents:UIControlEventTouchUpInside | UIControlEventTouchUpOutside];
         
@@ -463,9 +485,9 @@ static NSTimeInterval const kMTRngeSliderDidTapSlidAnimationDuration   = 0.3f;
     return _leftThumb;
 }
 
-- (CJSliderThumb *)rightThumb {
+- (UIButton *)rightThumb {
     if (!_rightThumb) {
-        _rightThumb = [CJSliderThumb buttonWithType:UIButtonTypeCustom];
+        _rightThumb = [UIButton buttonWithType:UIButtonTypeCustom];
         [_rightThumb addTarget:self action:@selector(buttonDidDrag:withEvent:) forControlEvents:UIControlEventTouchDragInside];
         [_rightThumb addTarget:self action:@selector(buttonEndDrag:) forControlEvents:UIControlEventTouchUpInside| UIControlEventTouchUpOutside];
     }

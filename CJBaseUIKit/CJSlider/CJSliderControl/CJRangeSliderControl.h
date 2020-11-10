@@ -7,7 +7,6 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "CJSliderThumb.h"
 
 @class CJRangeSliderControl;
 
@@ -38,31 +37,11 @@ typedef NS_ENUM(NSUInteger, CJSliderPopoverShowTimeType) {
 @interface CJRangeSliderControl : UIControl {
     
 }
-/*
- *  初始化
- *
- *  @param minRangeValue                选择范围的最小值
- *  @param maxRangeValue                选择范围的最大值
- *  @param startRangeValue              初始范围的起始值
- *  @param endRangeValue                初始范围的结束值
- *  @param createBackgroundViewBlock    backgroundView的创建方法
- *  @param createFrontViewBlock         frontView的创建方法
- *  @param popoverTextTransBlock        popover上的文本转换方法(默认使用realValue保留一位小数 )
- *
- *  @param slider滑块视图
- */
-- (instancetype)initWithMinRangeValue:(CGFloat)minRangeValue
-                        maxRangeValue:(CGFloat)maxRangeValue
-                      startRangeValue:(CGFloat)startRangeValue
-                        endRangeValue:(CGFloat)endRangeValue
-            createBackgroundViewBlock:(UIView * (^)(void))createBackgroundViewBlock
-                 createFrontViewBlock:(UIView *(^)(void))createFrontViewBlock
-                popoverTextTransBlock:(NSString *(^)(CGFloat percentValue, CGFloat realValue))popoverTextTransBlock NS_DESIGNATED_INITIALIZER;
-+ (instancetype)new NS_UNAVAILABLE;
-- (instancetype)init NS_UNAVAILABLE;
-- (instancetype)initWithFrame:(CGRect)frame NS_UNAVAILABLE;
-- (instancetype)initWithCoder:(NSCoder *)aDecoder NS_UNAVAILABLE;
+@property (nonatomic, assign) CGFloat trackViewMinXMargin;  /**< 滑道的最小值离bound的边缘距离 */
+@property (nonatomic, assign) CGFloat trackViewMaxXMargin;  /**< 滑道的最大值离bound的边缘距离 */
 
+@property (nonatomic, assign, readonly) CGFloat trackViewMinX;  /**< 滑道的最小值 */
+@property (nonatomic, assign, readonly) CGFloat trackViewMaxX;  /**< 滑道的最大值 */
 
 @property (nonatomic, assign, readonly) CGFloat minValue; /**< 最小值 */
 @property (nonatomic, assign, readonly) CGFloat maxValue; /**< 最大值 */
@@ -76,13 +55,38 @@ typedef NS_ENUM(NSUInteger, CJSliderPopoverShowTimeType) {
 @property (nonatomic, assign) CGSize thumbSize;     /**< 滑块大小（默认CGSizeMake(30, 30)） */
 
 // 滑块视图
-@property (nonatomic, strong) CJSliderThumb *leftThumb; /**< 左滑块视图 */
-@property (nonatomic, strong) CJSliderThumb *rightThumb;/**<右左滑块视图 */
+@property (nonatomic, strong) UIButton *leftThumb; /**< 左滑块视图 */
+@property (nonatomic, strong) UIButton *rightThumb;/**<右左滑块视图 */
 
 // 弹出框视图
 @property (nonatomic, assign) CGSize popoverSize;           /**< 弹出框大小（默认CGSizeMake(30, 32)） */
 @property (nonatomic, assign) BOOL popoverShowTimeType;     /**< 弹出框显示的时机（默认一直显示） */
 
 @property (nonatomic, weak) id<CJRangeSliderControlDelegate> delegate;
+
+/*
+ *  初始化
+ *
+ *  @param minRangeValue                选择范围的最小值
+ *  @param maxRangeValue                选择范围的最大值
+ *  @param startRangeValue              初始范围的起始值
+ *  @param endRangeValue                初始范围的结束值
+ *  @param createTrackViewBlock         trackView的创建方法
+ *  @param createFrontViewBlock         frontView的创建方法
+ *  @param popoverTextTransBlock        popover上的文本转换方法(默认使用realValue保留一位小数 )
+ *
+ *  @param slider滑块视图
+ */
+- (instancetype)initWithMinRangeValue:(CGFloat)minRangeValue
+                        maxRangeValue:(CGFloat)maxRangeValue
+                      startRangeValue:(CGFloat)startRangeValue
+                        endRangeValue:(CGFloat)endRangeValue
+                 createTrackViewBlock:(UIView * (^)(void))createTrackViewBlock
+                 createFrontViewBlock:(UIView *(^)(void))createFrontViewBlock
+                popoverTextTransBlock:(NSString *(^)(CGFloat percentValue, CGFloat realValue))popoverTextTransBlock NS_DESIGNATED_INITIALIZER;
++ (instancetype)new NS_UNAVAILABLE;
+- (instancetype)init NS_UNAVAILABLE;
+- (instancetype)initWithFrame:(CGRect)frame NS_UNAVAILABLE;
+- (instancetype)initWithCoder:(NSCoder *)aDecoder NS_UNAVAILABLE;
 
 @end

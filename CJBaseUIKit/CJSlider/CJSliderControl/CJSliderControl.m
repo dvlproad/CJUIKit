@@ -7,7 +7,6 @@
 //
 
 #import "CJSliderControl.h"
-#import "CJSliderThumb.h"
 
 static NSTimeInterval const kCJSliderPopoverAnimationDuration     = 0.7f;
 static NSTimeInterval const kCJSliderControlDidTapSlidAnimationDuration  = 0.3f;
@@ -148,7 +147,7 @@ static NSTimeInterval const kCJSliderControlDidTapSlidAnimationDuration  = 0.3f;
     [super layoutSubviews];
     
     if (CGRectEqualToRect(self.lastFrame, self.frame)) {
-        return;
+        return; //防止多次调用
     }
     self.lastFrame = self.frame;
     
@@ -190,10 +189,9 @@ static NSTimeInterval const kCJSliderControlDidTapSlidAnimationDuration  = 0.3f;
     CGFloat trackViewHeight = self.trackHeight;
     CGFloat trackViewOriginY = CGRectGetHeight(bounds)/2 - trackViewHeight/2;
     
-    CGFloat trackViewOriginX = self.trackViewMinX;
-    
     _trackViewMinX = 0 + self.trackViewMinXMargin;
     _trackViewMaxX = CGRectGetWidth(bounds) - self.trackViewMaxXMargin;
+    CGFloat trackViewOriginX = self.trackViewMinX;
     CGFloat trackViewWidth = self.trackViewMaxX - self.trackViewMinX;
     
     return CGRectMake(trackViewOriginX, trackViewOriginY, trackViewWidth, trackViewHeight);

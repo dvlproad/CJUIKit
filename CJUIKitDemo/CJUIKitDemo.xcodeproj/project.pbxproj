@@ -59,7 +59,6 @@
 		1562F2DF23F5DBF40009FCEA /* UITableView+CJEmptyView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1562F27823F5DBF40009FCEA /* UITableView+CJEmptyView.m */; };
 		1562F2E023F5DBF40009FCEA /* CJSwitchSliderStatusModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1562F27C23F5DBF40009FCEA /* CJSwitchSliderStatusModel.m */; };
 		1562F2E123F5DBF40009FCEA /* CJSwitchSlider.m in Sources */ = {isa = PBXBuildFile; fileRef = 1562F27D23F5DBF40009FCEA /* CJSwitchSlider.m */; };
-		1562F2E223F5DBF40009FCEA /* CJSliderThumb.m in Sources */ = {isa = PBXBuildFile; fileRef = 1562F28323F5DBF40009FCEA /* CJSliderThumb.m */; };
 		1562F2E323F5DBF40009FCEA /* CJSliderPopover.m in Sources */ = {isa = PBXBuildFile; fileRef = 1562F28423F5DBF40009FCEA /* CJSliderPopover.m */; };
 		1562F2E423F5DBF40009FCEA /* CJSliderControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 1562F28523F5DBF40009FCEA /* CJSliderControl.m */; };
 		1562F2E523F5DBF40009FCEA /* CJRangeSliderControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 1562F28623F5DBF40009FCEA /* CJRangeSliderControl.m */; };
@@ -449,11 +448,9 @@
 		1562F27F23F5DBF40009FCEA /* CJSwitchSliderStatusModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJSwitchSliderStatusModel.h; sourceTree = "<group>"; };
 		1562F28123F5DBF40009FCEA /* CJRangeSliderControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJRangeSliderControl.h; sourceTree = "<group>"; };
 		1562F28223F5DBF40009FCEA /* CJSliderControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJSliderControl.h; sourceTree = "<group>"; };
-		1562F28323F5DBF40009FCEA /* CJSliderThumb.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJSliderThumb.m; sourceTree = "<group>"; };
 		1562F28423F5DBF40009FCEA /* CJSliderPopover.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJSliderPopover.m; sourceTree = "<group>"; };
 		1562F28523F5DBF40009FCEA /* CJSliderControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJSliderControl.m; sourceTree = "<group>"; };
 		1562F28623F5DBF40009FCEA /* CJRangeSliderControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJRangeSliderControl.m; sourceTree = "<group>"; };
-		1562F28723F5DBF40009FCEA /* CJSliderThumb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJSliderThumb.h; sourceTree = "<group>"; };
 		1562F28823F5DBF40009FCEA /* CJSliderPopover.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJSliderPopover.h; sourceTree = "<group>"; };
 		1562F28923F5DBF40009FCEA /* CJSlider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJSlider.h; sourceTree = "<group>"; };
 		1562F28B23F5DBF40009FCEA /* CJPlayerSlider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJPlayerSlider.h; sourceTree = "<group>"; };
@@ -1303,8 +1300,6 @@
 				1562F28523F5DBF40009FCEA /* CJSliderControl.m */,
 				1562F28823F5DBF40009FCEA /* CJSliderPopover.h */,
 				1562F28423F5DBF40009FCEA /* CJSliderPopover.m */,
-				1562F28723F5DBF40009FCEA /* CJSliderThumb.h */,
-				1562F28323F5DBF40009FCEA /* CJSliderThumb.m */,
 			);
 			path = CJSliderControl;
 			sourceTree = "<group>";
@@ -2930,7 +2925,6 @@
 				8060C48320E0D0B30093B14E /* CJDistanceUtil.m in Sources */,
 				1562F2BC23F5DBF40009FCEA /* UIWindow+CJSnapshot.m in Sources */,
 				7856F96921F9B2DF004AF751 /* AuthorizationCJHelperViewController.m in Sources */,
-				1562F2E223F5DBF40009FCEA /* CJSliderThumb.m in Sources */,
 				78AB83A621B7CE4500853E21 /* PresentAViewController.m in Sources */,
 				781C736C21BA61480090080C /* TestValueChangeTableViewCell.m in Sources */,
 				7856F72A21F4E790004AF751 /* DemoInfo.m in Sources */,
