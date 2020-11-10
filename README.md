@@ -139,6 +139,21 @@
 
 #### 1、CJBaseUIKit更新记录
 
+* 2020-11-10 V0.7.0
+
+> 1、优化 CJSliderControl 移动时候，新X的计算方法
+>
+> 2、优化范围滑块 CJRangeSliderControl，增加新功能，使其可以设置初始值，且滑块位置能够滑道对应的初始值处
+
+
+* 2020-04-17 V0.6.1
+
+> 修复弹窗单例时候，在隐藏过后，想再显示，没法继续显示的问题
+
+* 2020-04-15 V0.6.0
+
+> 将CJBaseUIKit中的Toast、Alert、ActionSheet、HUD等组件都转移到CJBaseOverlayKit库中
+
 - 2019-01-21 V0.4.0
 
 > 1. 精简CJBaseUIKit库，转移不一定是Base的库到CJComplexUIKit中
@@ -164,6 +179,10 @@
 
 
 #### 2、CJComplexUIKit更新记录
+
+* 2020-11-02
+
+  > 1、将CJComplexUIKitDemo 中的 图片添加删除上传列表CJImageAddDeletePickUploadCollectionView 改为使用 CQImageAddDeleteListKit 库中的类
 
 - 2018-09-27 V0.2.0
 
