@@ -492,13 +492,11 @@ static NSTimeInterval const kCJSliderControlDidTapSlidAnimationDuration  = 0.3f;
         return;
     }
     
-    //判断是否需要阻止leftThumb右移,阻止rightThumb左移
     CGFloat oldThumbX = thumb.frame.origin.x;
     CGFloat newThumbX = [self newThumbXForThumb:thumb withMoveDistance:moveDistance];
     if (newThumbX == oldThumbX) {
         return;
     }
-    //NSLog(@"validMoveDistance = %.2f", validMoveDistance);
     
     //更新视图
     CGRect thumbFrame = thumb.frame;
@@ -547,40 +545,63 @@ static NSTimeInterval const kCJSliderControlDidTapSlidAnimationDuration  = 0.3f;
     CGFloat leftThumbMoveMaxMidX = CGRectGetMidX(self.mainThumb.frame); //左侧滑块移动最大中心可到右侧滑块的中心
     CGFloat leftThumbMoveMinMidX = self.thumbMoveMinX + CGRectGetWidth(thumb.frame)/2; //左侧滑块移动最小中心可到的最小thumbMoveMinX加上一半滑块宽
     
-    CGFloat validMoveDistance = moveDistance;
     BOOL isSlideToLeft = moveDistance < 0;      //判断是否左移(否，则是右移)
     BOOL isLeftThumb  = ( thumb == self.leftThumb );
+    
+//    /* newThumbX 的计算方法1 */
+//    CGFloat validMoveDistance = moveDistance;
+//    if (!isLeftThumb) {
+//        if (isSlideToLeft) {    //右滑块向左滑时候
+//            CGFloat canMaxMoveDistance = leftThumbMoveMaxMidX - rightThumbMoveMinMidX;
+//            if (ABS(moveDistance) > ABS(canMaxMoveDistance)) {
+//                validMoveDistance = -canMaxMoveDistance;
+//            }
+//
+//        } else {                //右滑块向右滑时候
+//            CGFloat canMaxMoveDistance = rightThumbMoveMaxMidX - leftThumbMoveMaxMidX;
+//            if (ABS(moveDistance) > ABS(canMaxMoveDistance)) {
+//                validMoveDistance = canMaxMoveDistance;
+//            }
+//        }
+//
+//    } else if (isLeftThumb) {
+//        if (!isSlideToLeft) {   //左滑块向右滑时候
+//            CGFloat canMaxMoveDistance = leftThumbMoveMaxMidX - rightThumbMoveMinMidX;
+//            if (ABS(moveDistance) > ABS(canMaxMoveDistance)) {
+//                validMoveDistance = canMaxMoveDistance;
+//            }
+//
+//        } else {                //左滑块向左滑时候
+//            CGFloat canMaxMoveDistance = rightThumbMoveMinMidX - leftThumbMoveMinMidX;
+//            if (ABS(moveDistance) > ABS(canMaxMoveDistance)) {
+//                validMoveDistance = -canMaxMoveDistance;
+//            }
+//        }
+//    }
+//    CGFloat newThumbX = thumb.frame.origin.x + validMoveDistance;
+//    return newThumbX;
+    
+    /* newThumbX 的计算方法2 */
+    CGFloat tempThumbMidX = thumb.center.x + moveDistance;
     if (!isLeftThumb) {
+        CGFloat newThumbMidX;
         if (isSlideToLeft) {    //右滑块向左滑时候
-            CGFloat canMaxMoveDistance = leftThumbMoveMaxMidX - rightThumbMoveMinMidX;
-            if (ABS(moveDistance) > ABS(canMaxMoveDistance)) {
-                validMoveDistance = -canMaxMoveDistance;
-            }
+            newThumbMidX = MAX(tempThumbMidX, rightThumbMoveMinMidX);
             
         } else {                //右滑块向右滑时候
-            CGFloat canMaxMoveDistance = rightThumbMoveMaxMidX - leftThumbMoveMaxMidX;
-            if (ABS(moveDistance) > ABS(canMaxMoveDistance)) {
-                validMoveDistance = canMaxMoveDistance;
-            }
+            newThumbMidX = MIN(tempThumbMidX, rightThumbMoveMaxMidX);
         }
-        
-    } else if (isLeftThumb) {
+        return newThumbMidX-self.thumbSize.width/2;
+    } else {
+        CGFloat newThumbMidX;
         if (!isSlideToLeft) {   //左滑块向右滑时候
-            CGFloat canMaxMoveDistance = leftThumbMoveMaxMidX - rightThumbMoveMinMidX;
-            if (ABS(moveDistance) > ABS(canMaxMoveDistance)) {
-                validMoveDistance = canMaxMoveDistance;
-            }
+            newThumbMidX = MIN(tempThumbMidX, leftThumbMoveMaxMidX);
             
         } else {                //左滑块向左滑时候
-            CGFloat canMaxMoveDistance = rightThumbMoveMinMidX - leftThumbMoveMinMidX;
-            if (ABS(moveDistance) > ABS(canMaxMoveDistance)) {
-                validMoveDistance = -canMaxMoveDistance;
-            }
+            newThumbMidX = MAX(tempThumbMidX, leftThumbMoveMinMidX);
         }
+        return newThumbMidX-self.thumbSize.width/2;
     }
-    
-    CGFloat newThumbX = thumb.frame.origin.x + validMoveDistance;
-    return newThumbX;
 }
 
 
