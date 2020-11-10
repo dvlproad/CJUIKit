@@ -334,17 +334,6 @@ static NSTimeInterval const kMTRngeSliderDidTapSlidAnimationDuration   = 0.3f;
 }
 
 /**
- *  拖动Thumb调用这个方法
- *
- *  @param thumb     当前的thumb
- *  @param point     当前拖动的point
- *  @param lastPoint 上一次的点
- */
-- (void)dragThumb:(UIButton *)thumb withPoint:(CGPoint)point lastPoint:(CGPoint)lastPoint {
-}
-
-
-/**
  *  移动Thumb到对应的点
  *
  *  说明: 需要对传入的point进行处理
@@ -422,12 +411,6 @@ static NSTimeInterval const kMTRngeSliderDidTapSlidAnimationDuration   = 0.3f;
         return;
     }
     
-    // 判断是否需要阻止leftThumb右移,阻止rightThumb左移
-    BOOL stopDragThumb = [self thumbNeedsToStopDrag:thumb point:point lastPoint:lastPoint];
-    if (stopDragThumb) {
-        return;
-    }
-    
     CGFloat oldThumbX = thumb.frame.origin.x;
     CGFloat newThumbX = [self newThumbXForThumb:thumb withMoveDistance:moveDistance];
     if (newThumbX == oldThumbX) {
@@ -454,30 +437,6 @@ static NSTimeInterval const kMTRngeSliderDidTapSlidAnimationDuration   = 0.3f;
     BOOL isLeftThumb  = [self __isLeftThumb:thumb];
     [self updatePopover:isLeftThumb];
 }
-
-
-- (BOOL)thumbNeedsToStopDrag:(UIButton *)thumb point:(CGPoint)point lastPoint:(CGPoint)lastPoint {
-    //判断是否左移
-    BOOL isSlideToLeft = point.x - lastPoint.x < 0;
-    
-    //判断leftThumb和rightThumb是否相交
-//    BOOL isIntersect  = CGRectIntersectsRect(self.leftThumb.frame, self.rightThumb.frame);
-    BOOL isIntersect  = NO;
-    
-    BOOL isLeftThumb  = ( thumb == self.leftThumb );
-    
-    //如果相交,阻止leftThumb右移,阻止rightThumb左移。
-    if (isLeftThumb && !isSlideToLeft && isIntersect) {
-        return YES;
-    }
-    
-    if (!isLeftThumb && isSlideToLeft && isIntersect) {
-        return YES;
-    }
-    
-    return NO;
-}
-
 
 - (CGFloat)newThumbXForThumb:(UIButton *)thumb withMoveDistance:(CGFloat)moveDistance {
     CGFloat rightThumbMoveMinMidX = CGRectGetMidX(self.leftThumb.frame); //右侧滑块移动最小中心可到左侧滑块的中心

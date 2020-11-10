@@ -54,7 +54,7 @@
     [self.view addSubview:sliderControl2];
     [sliderControl2 mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.right.mas_equalTo(sliderControlValueLabel2);
-        make.top.mas_equalTo(sliderControlValueLabel2.mas_bottom).mas_offset(20);
+        make.top.mas_equalTo(sliderControlValueLabel2.mas_bottom).mas_offset(30);
         make.height.mas_equalTo(29);
     }];
     self.sliderControl2 = sliderControl2;
@@ -80,7 +80,7 @@
     [self.view addSubview:rangeSliderControl];
     [rangeSliderControl mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.right.mas_equalTo(rangeSliderControlValueLabel);
-        make.top.mas_equalTo(rangeSliderControlValueLabel.mas_bottom).mas_offset(20);
+        make.top.mas_equalTo(rangeSliderControlValueLabel.mas_bottom).mas_offset(30);
         make.height.mas_equalTo(30);
     }];
     self.rangeSliderControl = rangeSliderControl;
@@ -103,7 +103,7 @@
     [self.view addSubview:ageRangeSlider];
     [ageRangeSlider mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.right.mas_equalTo(ageRangeSliderValueLabel);
-        make.top.mas_equalTo(ageRangeSliderValueLabel.mas_bottom).mas_offset(20);
+        make.top.mas_equalTo(ageRangeSliderValueLabel.mas_bottom).mas_offset(30);
         make.height.mas_equalTo(30);
     }];
 }
