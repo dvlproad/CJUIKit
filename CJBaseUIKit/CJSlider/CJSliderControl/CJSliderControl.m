@@ -373,7 +373,6 @@ static NSTimeInterval const kCJSliderControlDidTapSlidAnimationDuration  = 0.3f;
         } else if (thumb == self.leftThumb) {
             [self.delegate slider:self didDargToValue:self.baseValue];
         }
-        
     }
 }
 
@@ -486,9 +485,9 @@ static NSTimeInterval const kCJSliderControlDidTapSlidAnimationDuration  = 0.3f;
 }
 
 - (void)buttonDidDrag:(UIButton *)thumb withEvent:(UIEvent *)event {
-    UITouch *touch = [[event touchesForView:thumb] anyObject];
-    CGPoint point = [touch locationInView:self];
-    CGPoint lastPoint = [touch previousLocationInView:self];
+    UITouch *touch      = [[event touchesForView:thumb] anyObject];
+    CGPoint point       = [touch locationInView:self];
+    CGPoint lastPoint   = [touch previousLocationInView:self];
     CGFloat moveDistance = (point.x - lastPoint.x); //滑动的距离
     if (moveDistance == 0) {
         return;
@@ -511,69 +510,83 @@ static NSTimeInterval const kCJSliderControlDidTapSlidAnimationDuration  = 0.3f;
 }
 
 - (CGFloat)validMoveDistanceForThumb:(UIButton *)thumb withMoveDistance:(CGFloat)moveDistance {
+    if (self.leftThumb == nil) { //如果不是range类型的
+        return [self singleSlider_validMoveDistanceForThumb:thumb withMoveDistance:moveDistance];
+        
+    } else {
+        return [self rangeSlider_validMoveDistanceForThumb:thumb withMoveDistance:moveDistance];
+    }
+}
+
+- (CGFloat)singleSlider_validMoveDistanceForThumb:(UIButton *)thumb withMoveDistance:(CGFloat)moveDistance {
     CGFloat validMoveDistance = moveDistance;
     //判断是否左移(否，则是右移)
     BOOL isSlideToLeft = moveDistance < 0;
-    if (self.leftThumb == nil) { //如果不是range类型的
-        if (isSlideToLeft) {
-            CGFloat canMaxMoveDistance = CGRectGetMinX(self.mainThumb.frame) - self.thumbMoveMinX;
+    
+    if (isSlideToLeft) {
+        CGFloat canMaxMoveDistance = CGRectGetMinX(self.mainThumb.frame) - self.thumbMoveMinX;
+        if (ABS(moveDistance) > ABS(canMaxMoveDistance)) {
+            validMoveDistance = -canMaxMoveDistance;
+        }
+        
+    } else {
+        CGFloat canMaxMoveDistance = self.thumbMoveMaxX - CGRectGetMaxX(self.mainThumb.frame);
+        if (ABS(moveDistance) > ABS(canMaxMoveDistance)) {
+            validMoveDistance = canMaxMoveDistance;
+        }
+    }
+    return validMoveDistance;
+}
+
+- (CGFloat)rangeSlider_validMoveDistanceForThumb:(UIButton *)thumb withMoveDistance:(CGFloat)moveDistance {
+    CGFloat validMoveDistance = moveDistance;
+    //判断是否左移(否，则是右移)
+    BOOL isSlideToLeft = moveDistance < 0;
+    
+    CGFloat rightThumbMoveMinMidX = CGRectGetMidX(self.leftThumb.frame); //右侧滑块移动最小中心可到左侧滑块的中心
+    CGFloat rightThumbMoveMaxMidX = self.thumbMoveMaxX - CGRectGetWidth(thumb.frame)/2; //右侧滑块移动最大中心可到的最大thumbMoveMaxX减去一半滑块宽
+    
+    CGFloat leftThumbMoveMaxMidX = CGRectGetMidX(self.mainThumb.frame); //左侧滑块移动最大中心可到右侧滑块的中心
+    CGFloat leftThumbMoveMinMidX = self.thumbMoveMinX + CGRectGetWidth(thumb.frame)/2; //左侧滑块移动最小中心可到的最小thumbMoveMinX加上一半滑块宽
+    
+    BOOL isLeftThumb  = ( thumb == self.leftThumb );
+    if (!isLeftThumb) {
+        if (isSlideToLeft) { //主滑块向左滑时候
+            CGFloat canMaxMoveDistance = leftThumbMoveMaxMidX - rightThumbMoveMinMidX;
             
             if (ABS(moveDistance) > ABS(canMaxMoveDistance)) {
                 validMoveDistance = -canMaxMoveDistance;
             }
             
-        } else {
-            CGFloat canMaxMoveDistance = self.thumbMoveMaxX - CGRectGetMaxX(self.mainThumb.frame);
+        } else { //主滑块向右滑时候
+            
+            CGFloat canMaxMoveDistance = rightThumbMoveMaxMidX - leftThumbMoveMaxMidX;
             
             if (ABS(moveDistance) > ABS(canMaxMoveDistance)) {
                 validMoveDistance = canMaxMoveDistance;
             }
         }
-        return validMoveDistance;
         
-    } else {
-        BOOL isLeftThumb  = ( thumb == self.leftThumb );
-        if (!isLeftThumb) {
-            if (isSlideToLeft) { //主滑块向左滑时候
-                CGFloat rightThumbMoveMinMidX = CGRectGetMidX(self.leftThumb.frame); //右侧滑块移动可到的最小MidX
-                CGFloat canMaxMoveDistance = CGRectGetMidX(self.mainThumb.frame) - rightThumbMoveMinMidX;
-                
-                if (ABS(moveDistance) > ABS(canMaxMoveDistance)) {
-                    validMoveDistance = -canMaxMoveDistance;
-                }
-                
-            } else { //主滑块向右滑时候
-                CGFloat rightThumbMoveMaxMidX = self.thumbMoveMaxX - CGRectGetWidth(thumb.frame)/2; //右侧滑块移动可到的最大中心
-                CGFloat canMaxMoveDistance = rightThumbMoveMaxMidX - CGRectGetMidX(self.mainThumb.frame);
-                
-                if (ABS(moveDistance) > ABS(canMaxMoveDistance)) {
-                    validMoveDistance = canMaxMoveDistance;
-                }
+    } else if (isLeftThumb) {
+        if (!isSlideToLeft) { //左滑块向右滑时候
+            
+            CGFloat canMaxMoveDistance = leftThumbMoveMaxMidX - rightThumbMoveMinMidX;
+            
+            if (ABS(moveDistance) > ABS(canMaxMoveDistance)) {
+                validMoveDistance = canMaxMoveDistance;
             }
             
-        } else if (isLeftThumb) {
-            if (!isSlideToLeft) { //左滑块向右滑时候
-                CGFloat leftThumbMoveMaxMidX = CGRectGetMidX(self.mainThumb.frame); //左侧滑块移动可到的最小MidX
-                CGFloat canMaxMoveDistance = leftThumbMoveMaxMidX - CGRectGetMidX(self.leftThumb.frame);
-                
-                if (ABS(moveDistance) > ABS(canMaxMoveDistance)) {
-                    validMoveDistance = canMaxMoveDistance;
-                }
-                
-            } else { //左滑块向左滑时候
-                CGFloat leftThumbMoveMinMidX = self.thumbMoveMinX + CGRectGetWidth(thumb.frame)/2; //右侧滑块移动可到的最大中心
-                CGFloat canMaxMoveDistance = CGRectGetMidX(self.leftThumb.frame) - leftThumbMoveMinMidX;
-                
-                if (ABS(moveDistance) > ABS(canMaxMoveDistance)) {
-                    validMoveDistance = -canMaxMoveDistance;
-                }
+        } else { //左滑块向左滑时候
+            CGFloat canMaxMoveDistance = rightThumbMoveMinMidX - leftThumbMoveMinMidX;
+            
+            if (ABS(moveDistance) > ABS(canMaxMoveDistance)) {
+                validMoveDistance = -canMaxMoveDistance;
             }
         }
-        
-        return validMoveDistance;
     }
+    
+    return validMoveDistance;
 }
-
 
 
 #pragma mark - Getter and Setter

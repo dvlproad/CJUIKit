@@ -339,18 +339,6 @@ static NSTimeInterval const kMTRngeSliderDidTapSlidAnimationDuration   = 0.3f;
     }
 }
 
-//- (CGFloat)__leftPopoverNum {
-//    CGFloat leftThumbPercent  = [self __leftThumbPercent];
-//    CGFloat leftPopoverNum    = leftThumbPercent  * (_maxValue - _minValue);
-//    return leftPopoverNum;
-//}
-//
-//- (CGFloat)__rightPopoverNum {
-//    CGFloat rightThumbPercent = [self __rightThumbPercent];
-//    CGFloat rightPopoverNum   = rightThumbPercent * (_maxValue - _minValue);
-//    return rightPopoverNum;
-//}
-
 - (CGFloat)__leftThumbPercent {
     CGFloat thumbWidth = self.thumbSize.width;      // 滑块的宽
     CGFloat leftThumbPercent  = self.leftThumb.frame.origin.x / (self.bounds.size.width - thumbWidth);

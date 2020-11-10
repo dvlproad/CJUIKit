@@ -56,7 +56,7 @@ typedef NS_ENUM(NSUInteger, CJSliderPopoverShowTimeType) {
 
 // 滑块视图
 @property (nonatomic, strong) UIButton *leftThumb; /**< 左滑块视图 */
-@property (nonatomic, strong) UIButton *rightThumb;/**<右左滑块视图 */
+@property (nonatomic, strong) UIButton *rightThumb;/**<右滑块视图 */
 
 // 弹出框视图
 @property (nonatomic, assign) CGSize popoverSize;           /**< 弹出框大小（默认CGSizeMake(30, 32)） */
