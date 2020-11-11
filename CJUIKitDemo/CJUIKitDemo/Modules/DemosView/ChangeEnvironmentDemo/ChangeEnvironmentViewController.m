@@ -9,11 +9,11 @@
 #import "ChangeEnvironmentViewController.h"
 
 #ifdef TEST_CJBASEUIKIT_POD
-#import "CJSectionDataModel.h"
-#import "CJModuleModel.h"
+#import "CQDMSectionDataModel.h"
+#import "CQDMModuleModel.h"
 #else
-#import <CJBaseUtil/CJSectionDataModel.h>   //在CJDataUtil中
-#import <CJBaseUtil/CJModuleModel.h>        //在CJDataUtil中
+#import <CJBaseUtil/CQDMSectionDataModel.h>   //在CJDataUtil中
+#import <CJBaseUtil/CQDMModuleModel.h>        //在CJDataUtil中
 #endif
 
 /**
@@ -32,7 +32,7 @@ typedef NS_ENUM(NSUInteger, EnvironmentType) {
     
 }
 @property (nonatomic, strong) UITableView *tableView;
-@property (nonatomic, strong) NSMutableArray<CJSectionDataModel *> *sectionDataModels;
+@property (nonatomic, strong) NSMutableArray<CQDMSectionDataModel *> *sectionDataModels;
 @property (nonatomic, strong) NSIndexPath *selectedIndexPath;   /**< 当前选择的index */
 
 @end
@@ -62,10 +62,10 @@ typedef NS_ENUM(NSUInteger, EnvironmentType) {
     
     //ChangeEnvironment
     {
-        CJSectionDataModel *sectionDataModel = [[CJSectionDataModel alloc] init];
+        CQDMSectionDataModel *sectionDataModel = [[CQDMSectionDataModel alloc] init];
         sectionDataModel.theme = @"ChangeEnvironment相关";
         {
-            CJModuleModel *environmentModule = [[CJModuleModel alloc] init];
+            CQDMModuleModel *environmentModule = [[CQDMModuleModel alloc] init];
             environmentModule.title = @"Product(生产环境)";
             environmentModule.classEntry = [ChangeEnvironmentViewController class];
             
@@ -73,7 +73,7 @@ typedef NS_ENUM(NSUInteger, EnvironmentType) {
         }
         
         {
-            CJModuleModel *environmentModule = [[CJModuleModel alloc] init];
+            CQDMModuleModel *environmentModule = [[CQDMModuleModel alloc] init];
             environmentModule.title = @"PreProduct(预生产环境)";
             environmentModule.classEntry = [ChangeEnvironmentViewController class];
             
@@ -81,7 +81,7 @@ typedef NS_ENUM(NSUInteger, EnvironmentType) {
         }
         
         {
-            CJModuleModel *environmentModule = [[CJModuleModel alloc] init];
+            CQDMModuleModel *environmentModule = [[CQDMModuleModel alloc] init];
             environmentModule.title = @"Develop1(开发环境1)";
             environmentModule.classEntry = [ChangeEnvironmentViewController class];
             
@@ -89,7 +89,7 @@ typedef NS_ENUM(NSUInteger, EnvironmentType) {
         }
         
         {
-            CJModuleModel *environmentModule = [[CJModuleModel alloc] init];
+            CQDMModuleModel *environmentModule = [[CQDMModuleModel alloc] init];
             environmentModule.title = @"Develop2(开发环境2)";
             environmentModule.classEntry = [ChangeEnvironmentViewController class];
             
@@ -117,23 +117,23 @@ typedef NS_ENUM(NSUInteger, EnvironmentType) {
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    CJSectionDataModel *sectionDataModel = [self.sectionDataModels objectAtIndex:section];
+    CQDMSectionDataModel *sectionDataModel = [self.sectionDataModels objectAtIndex:section];
     NSArray *dataModels = sectionDataModel.values;
     
     return dataModels.count;
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
-    CJSectionDataModel *sectionDataModel = [self.sectionDataModels objectAtIndex:section];
+    CQDMSectionDataModel *sectionDataModel = [self.sectionDataModels objectAtIndex:section];
     
     NSString *indexTitle = sectionDataModel.theme;
     return indexTitle;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    CJSectionDataModel *sectionDataModel = [self.sectionDataModels objectAtIndex:indexPath.section];
+    CQDMSectionDataModel *sectionDataModel = [self.sectionDataModels objectAtIndex:indexPath.section];
     NSArray *dataModels = sectionDataModel.values;
-    CJModuleModel *moduleModel = [dataModels objectAtIndex:indexPath.row];
+    CQDMModuleModel *moduleModel = [dataModels objectAtIndex:indexPath.row];
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
     if (cell == nil) {

@@ -27,7 +27,7 @@
     NSMutableArray *sectionDataModels = [[NSMutableArray alloc] init];
     //Toast
     {
-        CJSectionDataModel *sectionDataModel = [[CJSectionDataModel alloc] init];
+        CQDMSectionDataModel *sectionDataModel = [[CQDMSectionDataModel alloc] init];
         sectionDataModel.theme = @"字符串相关";
         
         [sectionDataModels addObject:sectionDataModel];

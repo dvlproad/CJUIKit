@@ -35,7 +35,7 @@ typedef NS_ENUM(NSUInteger, ValidateStringType) {
     NSMutableArray *sectionDataModels = [[NSMutableArray alloc] init];
     // 去除小数部分的尾部多余0的显示
     {
-        CJSectionDataModel *sectionDataModel = [[CJSectionDataModel alloc] init];
+        CQDMSectionDataModel *sectionDataModel = [[CQDMSectionDataModel alloc] init];
         sectionDataModel.theme = @"去除小数部分的尾部多余0的显示";
         sectionDataModel.values = [self dealTextModels_removeDecimalFractionZero];
         
@@ -43,7 +43,7 @@ typedef NS_ENUM(NSUInteger, ValidateStringType) {
     }
     // 精确到百分位(向上取整、向下取整、四舍五入)
     {
-        CJSectionDataModel *sectionDataModel = [[CJSectionDataModel alloc] init];
+        CQDMSectionDataModel *sectionDataModel = [[CQDMSectionDataModel alloc] init];
         sectionDataModel.theme = @"精确到百分位(向上取整、向下取整、四舍五入)";
         sectionDataModel.values = [self dealTextModels_accurateToHundredth];
         
@@ -51,7 +51,7 @@ typedef NS_ENUM(NSUInteger, ValidateStringType) {
     }
     // 精确到个位(向上取整、向下取整、四舍五入)
     {
-        CJSectionDataModel *sectionDataModel = [[CJSectionDataModel alloc] init];
+        CQDMSectionDataModel *sectionDataModel = [[CQDMSectionDataModel alloc] init];
         sectionDataModel.theme = @"精确到个位(向上取整、向下取整、四舍五入)";
         sectionDataModel.values = [self dealTextModels_accurateToUnit];
         
@@ -59,7 +59,7 @@ typedef NS_ENUM(NSUInteger, ValidateStringType) {
     }
     // 精确到百位(向上取整、向下取整、四舍五入)
     {
-        CJSectionDataModel *sectionDataModel = [[CJSectionDataModel alloc] init];
+        CQDMSectionDataModel *sectionDataModel = [[CQDMSectionDataModel alloc] init];
         sectionDataModel.theme = @"精确到百位(向上取整、向下取整、四舍五入)";
         sectionDataModel.values = [self dealTextModels_accurateToHundred];
         

@@ -67,10 +67,10 @@
     
     //AutoLayout
     {
-        CJSectionDataModel *sectionDataModel = [[CJSectionDataModel alloc] init];
+        CQDMSectionDataModel *sectionDataModel = [[CQDMSectionDataModel alloc] init];
         sectionDataModel.theme = @"AutoLayout";
         {
-            CJModuleModel *autoLayoutModule = [[CJModuleModel alloc] init];
+            CQDMModuleModel *autoLayoutModule = [[CQDMModuleModel alloc] init];
             autoLayoutModule.title = @"AutoLayout";
             autoLayoutModule.classEntry = [AutoLayoutHomeViewController class];
             
@@ -83,10 +83,10 @@
     
     // 测试push UINavigationController
     {
-        CJSectionDataModel *sectionDataModel = [[CJSectionDataModel alloc] init];
+        CQDMSectionDataModel *sectionDataModel = [[CQDMSectionDataModel alloc] init];
         sectionDataModel.theme = @"Push";
         {
-            CJModuleModel *autoLayoutModule = [[CJModuleModel alloc] init];
+            CQDMModuleModel *autoLayoutModule = [[CQDMModuleModel alloc] init];
             autoLayoutModule.title = @"testPushNavigationController";
             autoLayoutModule.selector = @selector(testPushNavigationController);
             
@@ -98,10 +98,10 @@
     
     //Interface
     {
-        CJSectionDataModel *sectionDataModel = [[CJSectionDataModel alloc] init];
+        CQDMSectionDataModel *sectionDataModel = [[CQDMSectionDataModel alloc] init];
         sectionDataModel.theme = @"Interface相关(xib/storyboard)";
         {
-            CJModuleModel *xibModule = [[CJModuleModel alloc] init];
+            CQDMModuleModel *xibModule = [[CQDMModuleModel alloc] init];
             xibModule.title = @"xib";
             xibModule.classEntry = [NestedXibViewController class];
             xibModule.isCreateByXib = YES;
@@ -109,7 +109,7 @@
             [sectionDataModel.values addObject:xibModule];
         }
         {
-            CJModuleModel *xibModule = [[CJModuleModel alloc] init];
+            CQDMModuleModel *xibModule = [[CQDMModuleModel alloc] init];
             xibModule.title = @"后视图改变前视图的值的实现事例";
             xibModule.classEntry = [BeChangeViewController class];
             xibModule.isCreateByXib = NO;
@@ -122,10 +122,10 @@
     
     //UIImage
     {
-        CJSectionDataModel *sectionDataModel = [[CJSectionDataModel alloc] init];
+        CQDMSectionDataModel *sectionDataModel = [[CQDMSectionDataModel alloc] init];
         sectionDataModel.theme = @"UIImage相关";
         {
-            CJModuleModel *imageChangeColorModule = [[CJModuleModel alloc] init];
+            CQDMModuleModel *imageChangeColorModule = [[CQDMModuleModel alloc] init];
             imageChangeColorModule.title = @"UIImage相关";
             imageChangeColorModule.classEntry = [ImageHomeViewController class];
             [sectionDataModel.values addObject:imageChangeColorModule];
@@ -137,10 +137,10 @@
     
     //UIWindow
     {
-        CJSectionDataModel *sectionDataModel = [[CJSectionDataModel alloc] init];
+        CQDMSectionDataModel *sectionDataModel = [[CQDMSectionDataModel alloc] init];
         sectionDataModel.theme = @"UIWindow";
         {
-            CJModuleModel *floatingWindowModule = [[CJModuleModel alloc] init];
+            CQDMModuleModel *floatingWindowModule = [[CQDMModuleModel alloc] init];
             floatingWindowModule.title = @"FloatingWindow（悬浮视图）";
             floatingWindowModule.classEntry = [FloatingWindowViewController class];
             floatingWindowModule.isCreateByXib = NO;
@@ -148,7 +148,7 @@
         }
         
         {
-            CJModuleModel *floatingWindowModule = [[CJModuleModel alloc] init];
+            CQDMModuleModel *floatingWindowModule = [[CQDMModuleModel alloc] init];
             floatingWindowModule.title = @"SuspendWindow（悬浮球）";
             floatingWindowModule.classEntry = [SuspendWindowViewController class];
             floatingWindowModule.isCreateByXib = NO;
@@ -161,10 +161,10 @@
     
     //UIView
     {
-        CJSectionDataModel *sectionDataModel = [[CJSectionDataModel alloc] init];
+        CQDMSectionDataModel *sectionDataModel = [[CQDMSectionDataModel alloc] init];
         sectionDataModel.theme = @"UIView相关";
         {
-            CJModuleModel *dragViewModule = [[CJModuleModel alloc] init];
+            CQDMModuleModel *dragViewModule = [[CQDMModuleModel alloc] init];
             dragViewModule.title = @"UIView首页(Drag+Popup+Animate)";
             dragViewModule.content = @"(Drag+Popup+Animate)";
             dragViewModule.classEntry = [ViewHomeViewController class];
@@ -176,10 +176,10 @@
     
     //UINavigationBar
     {
-        CJSectionDataModel *sectionDataModel = [[CJSectionDataModel alloc] init];
+        CQDMSectionDataModel *sectionDataModel = [[CQDMSectionDataModel alloc] init];
         sectionDataModel.theme = @"UINavigationBar相关";
         {
-            CJModuleModel *navigationBarModule = [[CJModuleModel alloc] init];
+            CQDMModuleModel *navigationBarModule = [[CQDMModuleModel alloc] init];
             navigationBarModule.title = @"UINavigationBar(导航栏的设置)";
             navigationBarModule.classEntry = [NavigationBarHomeViewController class];
             navigationBarModule.isCreateByXib = NO;
@@ -191,11 +191,11 @@
     
     
     {
-        CJSectionDataModel *sectionDataModel = [[CJSectionDataModel alloc] init];
+        CQDMSectionDataModel *sectionDataModel = [[CQDMSectionDataModel alloc] init];
         sectionDataModel.theme = @"UIView的子类相关";
         {
             //UIButton
-            CJModuleModel *buttonModule = [[CJModuleModel alloc] init];
+            CQDMModuleModel *buttonModule = [[CQDMModuleModel alloc] init];
             buttonModule.title = @"UIButton";
             buttonModule.classEntry = [ButtonHomeViewController class];
             buttonModule.isCreateByXib = NO;
@@ -203,7 +203,7 @@
         }
         {
             //TextField
-            CJModuleModel *textFieldModule = [[CJModuleModel alloc] init];
+            CQDMModuleModel *textFieldModule = [[CQDMModuleModel alloc] init];
             textFieldModule.title = @"TextField";
             textFieldModule.classEntry = [TextFieldViewController class];
             textFieldModule.isCreateByXib = NO;
@@ -211,7 +211,7 @@
         }
         {
             //TextField
-            CJModuleModel *textFieldModule = [[CJModuleModel alloc] init];
+            CQDMModuleModel *textFieldModule = [[CQDMModuleModel alloc] init];
             textFieldModule.title = @"TextFieldOffset";
             textFieldModule.classEntry = [TestTextFieldOffsetViewController class];
             textFieldModule.isCreateByXib = NO;
@@ -219,7 +219,7 @@
         }
         {
             //TextView
-            CJModuleModel *textViewModule = [[CJModuleModel alloc] init];
+            CQDMModuleModel *textViewModule = [[CQDMModuleModel alloc] init];
             textViewModule.title = @"TextView";
             textViewModule.classEntry = [TextViewController class];
             textViewModule.isCreateByXib = NO;
@@ -227,7 +227,7 @@
         }
         {
             //CJBadgeButton
-            CJModuleModel *badgeButtonModule = [[CJModuleModel alloc] init];
+            CQDMModuleModel *badgeButtonModule = [[CQDMModuleModel alloc] init];
             badgeButtonModule.title = @"CJBadgeButton";
             badgeButtonModule.classEntry = [ColorViewController class];
             badgeButtonModule.isCreateByXib = NO;
@@ -235,7 +235,7 @@
         }
         {
             //CJSearchBar
-            CJModuleModel *cjSearchBarModuleModel = [[CJModuleModel alloc] init];
+            CQDMModuleModel *cjSearchBarModuleModel = [[CQDMModuleModel alloc] init];
             cjSearchBarModuleModel.title = @"CJSearchBar";
             cjSearchBarModuleModel.classEntry = [SearchBarViewController class];
             [sectionDataModel.values addObject:cjSearchBarModuleModel];
@@ -243,7 +243,7 @@
         
         {
             //UISlider
-            CJModuleModel *cjSearchBarModuleModel = [[CJModuleModel alloc] init];
+            CQDMModuleModel *cjSearchBarModuleModel = [[CQDMModuleModel alloc] init];
             cjSearchBarModuleModel.title = @"UISlider";
             cjSearchBarModuleModel.classEntry = [SliderHomeViewController class];
             cjSearchBarModuleModel.isCreateByXib = NO;
@@ -256,10 +256,10 @@
     
     //Cell
     {
-        CJSectionDataModel *sectionDataModel = [[CJSectionDataModel alloc] init];
+        CQDMSectionDataModel *sectionDataModel = [[CQDMSectionDataModel alloc] init];
         sectionDataModel.theme = @"Cell相关";
         {
-            CJModuleModel *cellModule = [[CJModuleModel alloc] init];
+            CQDMModuleModel *cellModule = [[CQDMModuleModel alloc] init];
             cellModule.title = @"BaseTableViewCell";
             cellModule.classEntry = [BaseTableViewCellViewController class];
             [sectionDataModel.values addObject:cellModule];
@@ -270,22 +270,22 @@
     
     //UIScrollView
     {
-        CJSectionDataModel *sectionDataModel = [[CJSectionDataModel alloc] init];
+        CQDMSectionDataModel *sectionDataModel = [[CQDMSectionDataModel alloc] init];
         sectionDataModel.theme = @"UIScrollView相关";
         {
-            CJModuleModel *scrollViewModule = [[CJModuleModel alloc] init];
+            CQDMModuleModel *scrollViewModule = [[CQDMModuleModel alloc] init];
             scrollViewModule.title = @"ScrollView(纯代码创建1)";
             scrollViewModule.classEntry = [CodeScrollViewController1 class];
             [sectionDataModel.values addObject:scrollViewModule];
         }
         {
-            CJModuleModel *scrollViewModule = [[CJModuleModel alloc] init];
+            CQDMModuleModel *scrollViewModule = [[CQDMModuleModel alloc] init];
             scrollViewModule.title = @"ScrollView(纯代码创建3)";
             scrollViewModule.classEntry = [CodeScrollViewController3 class];
             [sectionDataModel.values addObject:scrollViewModule];
         }
         {
-            CJModuleModel *scrollViewModule = [[CJModuleModel alloc] init];
+            CQDMModuleModel *scrollViewModule = [[CQDMModuleModel alloc] init];
             scrollViewModule.title = @"KeyboardAvoiding";
             scrollViewModule.classEntry = [KeyboardAvoidingViewController class];
             [sectionDataModel.values addObject:scrollViewModule];
@@ -296,24 +296,24 @@
     
     //UIViewController
     {
-        CJSectionDataModel *sectionDataModel = [[CJSectionDataModel alloc] init];
+        CQDMSectionDataModel *sectionDataModel = [[CQDMSectionDataModel alloc] init];
         sectionDataModel.theme = @"UIViewController相关";
         {
-            CJModuleModel *backModule = [[CJModuleModel alloc] init];
+            CQDMModuleModel *backModule = [[CQDMModuleModel alloc] init];
             backModule.title = @"BackBarButtonItem (系统返回按钮事件)";
             backModule.classEntry = [BackSystemItemViewController class];
             backModule.isCreateByXib = NO;
             [sectionDataModel.values addObject:backModule];
         }
         {
-            CJModuleModel *backModule = [[CJModuleModel alloc] init];
+            CQDMModuleModel *backModule = [[CQDMModuleModel alloc] init];
             backModule.title = @"BackBarButtonItem (自定义返回按钮事件)";
             backModule.classEntry = [BackCustomItemViewController class];
             backModule.isCreateByXib = NO;
             [sectionDataModel.values addObject:backModule];
         }
         {
-            CJModuleModel *systemComposeViewModule = [[CJModuleModel alloc] init];
+            CQDMModuleModel *systemComposeViewModule = [[CQDMModuleModel alloc] init];
             systemComposeViewModule.title = @"SystemComposeViewController";
             systemComposeViewModule.classEntry = [SystemComposeViewController class];
             systemComposeViewModule.isCreateByXib = NO;
@@ -325,10 +325,10 @@
     
     //ChangeEnvironment
     {
-        CJSectionDataModel *sectionDataModel = [[CJSectionDataModel alloc] init];
+        CQDMSectionDataModel *sectionDataModel = [[CQDMSectionDataModel alloc] init];
         sectionDataModel.theme = @"ChangeEnvironment相关";
         {
-            CJModuleModel *xibModule = [[CJModuleModel alloc] init];
+            CQDMModuleModel *xibModule = [[CQDMModuleModel alloc] init];
             xibModule.title = @"ChangeEnvironment(改变网络环境)";
             xibModule.classEntry = [ChangeEnvHomeViewController class];
             [sectionDataModel.values addObject:xibModule];

@@ -28,11 +28,11 @@
     
     //Slider(滑块)
     {
-        CJSectionDataModel *sectionDataModel = [[CJSectionDataModel alloc] init];
+        CQDMSectionDataModel *sectionDataModel = [[CQDMSectionDataModel alloc] init];
         sectionDataModel.theme = @"Slider(滑块)";
         {
             //Slider
-            CJModuleModel *sliderModule = [[CJModuleModel alloc] init];
+            CQDMModuleModel *sliderModule = [[CQDMModuleModel alloc] init];
             sliderModule.title = @"CJSliderControl";
             sliderModule.classEntry = [SliderViewController class];
             sliderModule.isCreateByXib = NO;
@@ -40,14 +40,14 @@
         }
         {
             //RangeSlider
-            CJModuleModel *sliderModule = [[CJModuleModel alloc] init];
+            CQDMModuleModel *sliderModule = [[CQDMModuleModel alloc] init];
             sliderModule.title = @"RangeSlider";
             sliderModule.classEntry = [RangeSliderViewController class];
             [sectionDataModel.values addObject:sliderModule];
         }
         {
             //SwitchSlider
-            CJModuleModel *sliderModule = [[CJModuleModel alloc] init];
+            CQDMModuleModel *sliderModule = [[CQDMModuleModel alloc] init];
             sliderModule.title = @"SwitchSlider";
             sliderModule.classEntry = [SwitchSliderViewController class];
             sliderModule.isCreateByXib = NO;

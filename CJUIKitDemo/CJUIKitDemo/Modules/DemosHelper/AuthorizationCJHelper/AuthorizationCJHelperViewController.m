@@ -24,10 +24,10 @@
     NSMutableArray *sectionDataModels = [[NSMutableArray alloc] init];
     //AuthorizationCJHelper
     {
-        CJSectionDataModel *sectionDataModel = [[CJSectionDataModel alloc] init];
+        CQDMSectionDataModel *sectionDataModel = [[CQDMSectionDataModel alloc] init];
         sectionDataModel.theme = @"AuthorizationCJHelper相关";
         {
-            CJModuleModel *toastModule = [[CJModuleModel alloc] init];
+            CQDMModuleModel *toastModule = [[CQDMModuleModel alloc] init];
             toastModule.title = @"系统--设置";
             toastModule.actionBlock = ^{
                 openSettingCJHelper(^(BOOL success) {

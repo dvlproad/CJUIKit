@@ -47,14 +47,14 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    CJSectionDataModel *sectionDataModel = [self.sectionDataModels objectAtIndex:section];
+    CQDMSectionDataModel *sectionDataModel = [self.sectionDataModels objectAtIndex:section];
     NSArray *dataModels = sectionDataModel.values;
     
     return dataModels.count;
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
-    CJSectionDataModel *sectionDataModel = [self.sectionDataModels objectAtIndex:section];
+    CQDMSectionDataModel *sectionDataModel = [self.sectionDataModels objectAtIndex:section];
     
     NSString *indexTitle = sectionDataModel.theme;
     return indexTitle;
@@ -124,7 +124,7 @@
 */
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    CJSectionDataModel *sectionDataModel = [self.sectionDataModels objectAtIndex:indexPath.section];
+    CQDMSectionDataModel *sectionDataModel = [self.sectionDataModels objectAtIndex:indexPath.section];
     NSArray *dataModels = sectionDataModel.values;
     CJDealTextModel *dealTextModel = [dataModels objectAtIndex:indexPath.row];
     

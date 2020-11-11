@@ -110,9 +110,9 @@ minimumInteritemSpacingForSectionAtIndex:(NSInteger)section
 #pragma mark - UICollectionViewDelegate
 ////“点到”item时候执行的时间(allowsMultipleSelection为默认的NO的时候，只有选中，而为YES的时候有选中和取消选中两种操作)
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
-    CJSectionDataModel *sectionDataModel = [self.sectionDataModels objectAtIndex:indexPath.section];
+    CQDMSectionDataModel *sectionDataModel = [self.sectionDataModels objectAtIndex:indexPath.section];
     NSArray *dataModels = sectionDataModel.values;
-    CJModuleModel *moduleModel = [dataModels objectAtIndex:indexPath.row];
+    CQDMModuleModel *moduleModel = [dataModels objectAtIndex:indexPath.row];
 
     [self execModuleModel:moduleModel];
 }
@@ -129,7 +129,7 @@ minimumInteritemSpacingForSectionAtIndex:(NSInteger)section
 }
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    CJSectionDataModel *sectionDataModel = [self.sectionDataModels objectAtIndex:section];
+    CQDMSectionDataModel *sectionDataModel = [self.sectionDataModels objectAtIndex:section];
     NSArray *dataModels = sectionDataModel.values;
     
     return dataModels.count;
@@ -138,18 +138,21 @@ minimumInteritemSpacingForSectionAtIndex:(NSInteger)section
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView
                   cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    CJSectionDataModel *sectionDataModel = [self.sectionDataModels objectAtIndex:indexPath.section];
+    CQDMSectionDataModel *sectionDataModel = [self.sectionDataModels objectAtIndex:indexPath.section];
     NSArray *dataModels = sectionDataModel.values;
-    CJModuleModel *moduleModel = [dataModels objectAtIndex:indexPath.row];
+    CQDMModuleModel *moduleModel = [dataModels objectAtIndex:indexPath.row];
     
     CJUIKitCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"cell" forIndexPath:indexPath];
-    cell.imageView.image = [UIImage imageNamed:@"icon"];
+    
+    UIImage *image = moduleModel.normalImage ? moduleModel.normalImage : [UIImage imageNamed:@"icon"];
+    cell.imageView.image = image;
+    
     cell.textLabel.text = moduleModel.title;
     
     return cell;
 }
 
-- (void)execModuleModel:(CJModuleModel *)moduleModel {
+- (void)execModuleModel:(CQDMModuleModel *)moduleModel {
     if (moduleModel.actionBlock) {
         moduleModel.actionBlock();
         

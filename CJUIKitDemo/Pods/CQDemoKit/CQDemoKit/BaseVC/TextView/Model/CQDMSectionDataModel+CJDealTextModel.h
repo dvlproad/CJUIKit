@@ -1,17 +1,17 @@
 //
-//  CJSectionDataModel+CJDealTextModel.h
+//  CQDMSectionDataModel+CJDealTextModel.h
 //  CJUIKitDemo
 //
 //  Created by ciyouzen on 2019/10/29.
 //  Copyright © 2019 dvlproad. All rights reserved.
 //
 
-#import "CJSectionDataModel.h"
+#import "CQDMSectionDataModel.h"
 #import "CJDealTextModel.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface CJSectionDataModel (CJDealTextModel)
+@interface CQDMSectionDataModel (CJDealTextModel)
 
 /**
  *  初始化生成sectionDataModel
@@ -23,7 +23,7 @@ NS_ASSUME_NONNULL_BEGIN
  *
  *  @return sectionDataModel
  */
-+ (CJSectionDataModel *)sectionDataModelWithTextArray:(NSArray<NSString *> *)textArray
++ (CQDMSectionDataModel *)sectionDataModelWithTextArray:(NSArray<NSString *> *)textArray
                                       samePlaceholder:(NSString *)placeholder
                                       sameActionTitle:(NSString *)sameActionTitle
                                       sameActionBlock:(NSString*(^)(NSString *oldString))sameActionBlock;

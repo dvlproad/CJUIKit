@@ -30,22 +30,22 @@
     NSMutableArray *sectionDataModels = [[NSMutableArray alloc] init];
     //UIScrollView
     {
-        CJSectionDataModel *sectionDataModel = [[CJSectionDataModel alloc] init];
+        CQDMSectionDataModel *sectionDataModel = [[CQDMSectionDataModel alloc] init];
         sectionDataModel.theme = @"模型转换相关";
         {
-            CJModuleModel *baseScrollViewModule = [[CJModuleModel alloc] init];
+            CQDMModuleModel *baseScrollViewModule = [[CQDMModuleModel alloc] init];
             baseScrollViewModule.title = @"MJExtension的基本使用(待完善)";
             baseScrollViewModule.classEntry = [MJExtensionToModelViewController class];
             [sectionDataModel.values addObject:baseScrollViewModule];
         }
         {
-            CJModuleModel *baseScrollViewModule = [[CJModuleModel alloc] init];
+            CQDMModuleModel *baseScrollViewModule = [[CQDMModuleModel alloc] init];
             baseScrollViewModule.title = @"MJExtension的基本使用(待完善)";
             baseScrollViewModule.classEntry = [MJExtensionToJSONViewController class];
             [sectionDataModel.values addObject:baseScrollViewModule];
         }
         {
-            CJModuleModel *baseScrollViewModule = [[CJModuleModel alloc] init];
+            CQDMModuleModel *baseScrollViewModule = [[CQDMModuleModel alloc] init];
             baseScrollViewModule.title = @"Mantle的基本使用(待完善)";
             baseScrollViewModule.classEntry = [MantleViewController class];
             baseScrollViewModule.isCreateByXib = NO;

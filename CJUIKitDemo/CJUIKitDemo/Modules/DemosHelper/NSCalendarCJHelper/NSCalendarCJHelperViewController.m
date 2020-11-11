@@ -45,7 +45,7 @@
     NSMutableArray *sectionDataModels = [[NSMutableArray alloc] init];
     //Helper
     {
-        CJSectionDataModel *sectionDataModel = [[CJSectionDataModel alloc] init];
+        CQDMSectionDataModel *sectionDataModel = [[CQDMSectionDataModel alloc] init];
         sectionDataModel.theme = @"测试字符串";
         {
             TestValueChangeModel *valueChangeModel = [[TestValueChangeModel alloc] initWithValue:@"20" textFromValueBlock:^NSString *(id value) {
@@ -71,7 +71,7 @@
     }
     
     {
-        CJSectionDataModel *sectionDataModel = [[CJSectionDataModel alloc] init];
+        CQDMSectionDataModel *sectionDataModel = [[CQDMSectionDataModel alloc] init];
         sectionDataModel.theme = @"测试年月日时分秒";
         {
             TestValueChangeModel *valueChangeModel = [self calendarValueChangeModel];
@@ -137,7 +137,7 @@
     
     
     {
-        CJSectionDataModel *sectionDataModel = [[CJSectionDataModel alloc] init];
+        CQDMSectionDataModel *sectionDataModel = [[CQDMSectionDataModel alloc] init];
         sectionDataModel.theme = @"测试获取第一天和最后一天";
         {
             TestValueChangeModel *valueChangeModel = [self calendarValueChangeModel];
@@ -170,7 +170,7 @@
     
     // 测试获取<每周>第一天和最后一天之间的数组
     {
-        CJSectionDataModel *sectionDataModel = [[CJSectionDataModel alloc] init];
+        CQDMSectionDataModel *sectionDataModel = [[CQDMSectionDataModel alloc] init];
         sectionDataModel.theme = @"测试获取<每周>第一天和最后一天之间的数组";
         {
             TestValueChangeModel *valueChangeModel = [self calendarValueChangeModel];
@@ -213,7 +213,7 @@
 
     // 测试获取<每月>第一天和最后一天之间的数组
     {
-        CJSectionDataModel *sectionDataModel = [[CJSectionDataModel alloc] init];
+        CQDMSectionDataModel *sectionDataModel = [[CQDMSectionDataModel alloc] init];
         sectionDataModel.theme = @"测试获取<每月>第一天和最后一天之间的数组";
         {
             TestValueChangeModel *valueChangeModel = [self calendarValueChangeModel];
@@ -273,21 +273,21 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    CJSectionDataModel *sectionDataModel = [self.sectionDataModels objectAtIndex:section];
+    CQDMSectionDataModel *sectionDataModel = [self.sectionDataModels objectAtIndex:section];
     NSArray *dataModels = sectionDataModel.values;
     
     return dataModels.count;
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
-    CJSectionDataModel *sectionDataModel = [self.sectionDataModels objectAtIndex:section];
+    CQDMSectionDataModel *sectionDataModel = [self.sectionDataModels objectAtIndex:section];
     
     NSString *indexTitle = sectionDataModel.theme;
     return indexTitle;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    CJSectionDataModel *sectionDataModel = [self.sectionDataModels objectAtIndex:indexPath.section];
+    CQDMSectionDataModel *sectionDataModel = [self.sectionDataModels objectAtIndex:indexPath.section];
     NSArray *dataModels = sectionDataModel.values;
     TestValueChangeModel *valueChangeModel = [dataModels objectAtIndex:indexPath.row];
     

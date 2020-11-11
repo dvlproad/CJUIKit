@@ -30,37 +30,37 @@
     
     //UIImage
     {
-        CJSectionDataModel *sectionDataModel = [[CJSectionDataModel alloc] init];
+        CQDMSectionDataModel *sectionDataModel = [[CQDMSectionDataModel alloc] init];
         sectionDataModel.theme = @"UIImage相关";
         {
-            CJModuleModel *imageChangeColorModule = [[CJModuleModel alloc] init];
+            CQDMModuleModel *imageChangeColorModule = [[CQDMModuleModel alloc] init];
             imageChangeColorModule.title = @"UIImage(图片获取)";
             imageChangeColorModule.classEntry = [ImageGetterViewController class];
             [sectionDataModel.values addObject:imageChangeColorModule];
         }
         {
-            CJModuleModel *imageChangeColorModule = [[CJModuleModel alloc] init];
+            CQDMModuleModel *imageChangeColorModule = [[CQDMModuleModel alloc] init];
             imageChangeColorModule.title = @"UIImage(改变颜色)";
             imageChangeColorModule.classEntry = [ImageChangeColorViewController class];
             imageChangeColorModule.isCreateByXib = YES;
             [sectionDataModel.values addObject:imageChangeColorModule];
         }
         {
-            CJModuleModel *imageRotateModule = [[CJModuleModel alloc] init];
+            CQDMModuleModel *imageRotateModule = [[CQDMModuleModel alloc] init];
             imageRotateModule.title = @"UIImage(旋转任意角度)";
             imageRotateModule.classEntry = [ImageRotateViewController class];
             imageRotateModule.isCreateByXib = YES;
             [sectionDataModel.values addObject:imageRotateModule];
         }
         {
-            CJModuleModel *imageRotateModule = [[CJModuleModel alloc] init];
+            CQDMModuleModel *imageRotateModule = [[CQDMModuleModel alloc] init];
             imageRotateModule.title = @"UIImage(图片尺寸)";
             imageRotateModule.classEntry = [ImageSizeViewController class];
             imageRotateModule.isCreateByXib = YES;
             [sectionDataModel.values addObject:imageRotateModule];
         }
         {
-            CJModuleModel *gifModule = [[CJModuleModel alloc] init];
+            CQDMModuleModel *gifModule = [[CQDMModuleModel alloc] init];
             gifModule.title = @"Gif显示";
             gifModule.classEntry = [GifViewController class];
             [sectionDataModel.values addObject:gifModule];

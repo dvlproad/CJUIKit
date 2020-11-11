@@ -27,11 +27,11 @@
         
     //其他
     {
-        CJSectionDataModel *sectionDataModel = [[CJSectionDataModel alloc] init];
+        CQDMSectionDataModel *sectionDataModel = [[CQDMSectionDataModel alloc] init];
         sectionDataModel.theme = @"其他";
         {
             //CountDownTimeViewController
-            CJModuleModel *countDownTimeModule = [[CJModuleModel alloc] init];
+            CQDMModuleModel *countDownTimeModule = [[CQDMModuleModel alloc] init];
             countDownTimeModule.title = @"倒计时 CountDownTime";
             countDownTimeModule.classEntry = [CountDownTimeViewController class];
             [sectionDataModel.values addObject:countDownTimeModule];

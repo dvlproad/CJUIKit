@@ -26,10 +26,10 @@
     
     //ChangeEnvironment
     {
-        CJSectionDataModel *sectionDataModel = [[CJSectionDataModel alloc] init];
+        CQDMSectionDataModel *sectionDataModel = [[CQDMSectionDataModel alloc] init];
         sectionDataModel.theme = @"ChangeEnvironment相关";
         {
-            CJModuleModel *xibModule = [[CJModuleModel alloc] init];
+            CQDMModuleModel *xibModule = [[CQDMModuleModel alloc] init];
             xibModule.title = @"ChangeEnvironment(改变网络环境)";
             xibModule.classEntry = [ChangeEnvironmentViewController class];
             xibModule.isCreateByXib = NO;
@@ -37,7 +37,7 @@
         }
         
         {
-            CJModuleModel *xibModule = [[CJModuleModel alloc] init];
+            CQDMModuleModel *xibModule = [[CQDMModuleModel alloc] init];
             xibModule.title = @"ChangeEnvironment(在登录的时候改变网络环境)";
             xibModule.classEntry = [LoginChangeEnvironmentViewController class];
             xibModule.isCreateByXib = NO;

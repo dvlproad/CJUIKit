@@ -33,10 +33,10 @@
     
     NSMutableArray *sectionDataModels = [[NSMutableArray alloc] init];
     {
-        CJSectionDataModel *sectionDataModel = [[CJSectionDataModel alloc] init];
+        CQDMSectionDataModel *sectionDataModel = [[CQDMSectionDataModel alloc] init];
         sectionDataModel.theme = @"测试CJTextFieldOffset";
         {
-            CJModuleModel *tfModule = [[CJModuleModel alloc] init];
+            CQDMModuleModel *tfModule = [[CQDMModuleModel alloc] init];
             tfModule.title = @"测试<CJTextFieldOffset>的加减(请输入内容仔细观察文字头尾是否被遮盖)";
             
             [sectionDataModel.values addObject:tfModule];
@@ -54,7 +54,7 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    CJSectionDataModel *sectionDataModel = [self.sectionDataModels objectAtIndex:section];
+    CQDMSectionDataModel *sectionDataModel = [self.sectionDataModels objectAtIndex:section];
     NSArray *dataModels = sectionDataModel.values;
     
     return dataModels.count;
@@ -65,16 +65,16 @@
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
-    CJSectionDataModel *sectionDataModel = [self.sectionDataModels objectAtIndex:section];
+    CQDMSectionDataModel *sectionDataModel = [self.sectionDataModels objectAtIndex:section];
     
     NSString *indexTitle = sectionDataModel.theme;
     return indexTitle;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    CJSectionDataModel *sectionDataModel = [self.sectionDataModels objectAtIndex:indexPath.section];
+    CQDMSectionDataModel *sectionDataModel = [self.sectionDataModels objectAtIndex:indexPath.section];
     NSArray *dataModels = sectionDataModel.values;
-    CJModuleModel *tfModule = [dataModels objectAtIndex:indexPath.row];
+    CQDMModuleModel *tfModule = [dataModels objectAtIndex:indexPath.row];
     
     TestTextFieldOffsetTableViewCell *cell = (TestTextFieldOffsetTableViewCell *)[tableView dequeueReusableCellWithIdentifier:@"TestTextFieldOffsetTableViewCell" forIndexPath:indexPath];
     cell.changeExplainLabel.text = tfModule.title;

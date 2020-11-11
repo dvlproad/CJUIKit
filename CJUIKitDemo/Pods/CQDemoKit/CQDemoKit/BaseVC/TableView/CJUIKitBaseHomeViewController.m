@@ -42,14 +42,14 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    CJSectionDataModel *sectionDataModel = [self.sectionDataModels objectAtIndex:section];
+    CQDMSectionDataModel *sectionDataModel = [self.sectionDataModels objectAtIndex:section];
     NSArray *dataModels = sectionDataModel.values;
     
     return dataModels.count;
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
-    CJSectionDataModel *sectionDataModel = [self.sectionDataModels objectAtIndex:section];
+    CQDMSectionDataModel *sectionDataModel = [self.sectionDataModels objectAtIndex:section];
     
     NSString *indexTitle = sectionDataModel.theme;
     return indexTitle;
@@ -119,9 +119,9 @@
 */
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    CJSectionDataModel *sectionDataModel = [self.sectionDataModels objectAtIndex:indexPath.section];
+    CQDMSectionDataModel *sectionDataModel = [self.sectionDataModels objectAtIndex:indexPath.section];
     NSArray *dataModels = sectionDataModel.values;
-    CJModuleModel *moduleModel = [dataModels objectAtIndex:indexPath.row];
+    CQDMModuleModel *moduleModel = [dataModels objectAtIndex:indexPath.row];
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
     if (cell == nil) {
@@ -137,15 +137,15 @@
     //NSLog(@"didSelectRowAtIndexPath = %zd %zd", indexPath.section, indexPath.row);
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
-    CJSectionDataModel *sectionDataModel = [self.sectionDataModels objectAtIndex:indexPath.section];
+    CQDMSectionDataModel *sectionDataModel = [self.sectionDataModels objectAtIndex:indexPath.section];
     NSArray *dataModels = sectionDataModel.values;
-    CJModuleModel *moduleModel = [dataModels objectAtIndex:indexPath.row];
+    CQDMModuleModel *moduleModel = [dataModels objectAtIndex:indexPath.row];
     
     [self execModuleModel:moduleModel];
 }
 
 
-- (void)execModuleModel:(CJModuleModel *)moduleModel {
+- (void)execModuleModel:(CQDMModuleModel *)moduleModel {
     if (moduleModel.actionBlock) {
         moduleModel.actionBlock();
         

@@ -24,7 +24,7 @@
     
     // 将价钱'分'按(四舍五入)处理到价钱'元'的后两位，并最终以(最多)保留2位小数的方式输出价钱'元'(即会对小数部分的结尾是0的小数数字不显示)
     {
-        CJSectionDataModel *sectionDataModel = [[CJSectionDataModel alloc] init];
+        CQDMSectionDataModel *sectionDataModel = [[CQDMSectionDataModel alloc] init];
         sectionDataModel.theme = @"将价钱'分'按(四舍五入)处理到价钱'元'的后两位，并最终以(最多)保留2位小数的方式输出价钱'元'(即会对小数部分的结尾是0的小数数字不显示)";
         sectionDataModel.values = [self dealTextModels_priceYuanToYuanD2_decimalCountMax2_Round];
         

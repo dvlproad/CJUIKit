@@ -31,10 +31,10 @@
     
     // intrinsic content size
     {
-        CJSectionDataModel *sectionDataModel = [[CJSectionDataModel alloc] init];
+        CQDMSectionDataModel *sectionDataModel = [[CQDMSectionDataModel alloc] init];
         sectionDataModel.theme = @"intrinsic content size";
         {
-            CJModuleModel *dragViewModule = [[CJModuleModel alloc] init];
+            CQDMModuleModel *dragViewModule = [[CQDMModuleModel alloc] init];
             dragViewModule.title = @"intrinsic content size";
             dragViewModule.classEntry = [AutoLayoutViewController class];
             [sectionDataModel.values addObject:dragViewModule];
@@ -44,29 +44,29 @@
     
     //Layout
     {
-        CJSectionDataModel *sectionDataModel = [[CJSectionDataModel alloc] init];
+        CQDMSectionDataModel *sectionDataModel = [[CQDMSectionDataModel alloc] init];
         sectionDataModel.theme = @"Layout";
         {
-            CJModuleModel *dragViewModule = [[CJModuleModel alloc] init];
+            CQDMModuleModel *dragViewModule = [[CQDMModuleModel alloc] init];
             dragViewModule.title = @"Translucent";
             dragViewModule.classEntry = [TranslucentLayoutViewController class];
             [sectionDataModel.values addObject:dragViewModule];
         }
         {
-            CJModuleModel *dragViewModule = [[CJModuleModel alloc] init];
+            CQDMModuleModel *dragViewModule = [[CQDMModuleModel alloc] init];
             dragViewModule.title = @"Translucent";
             dragViewModule.classEntry = [TranslucentLayoutTableViewController class];
             [sectionDataModel.values addObject:dragViewModule];
         }
         //edgesForExtendedLayout
         {
-            CJModuleModel *dragViewModule = [[CJModuleModel alloc] init];
+            CQDMModuleModel *dragViewModule = [[CQDMModuleModel alloc] init];
             dragViewModule.title = @"edgesForExtendedLayout";
             dragViewModule.classEntry = [EdgeLayoutViewController class];
             [sectionDataModel.values addObject:dragViewModule];
         }
         {
-            CJModuleModel *dragViewModule = [[CJModuleModel alloc] init];
+            CQDMModuleModel *dragViewModule = [[CQDMModuleModel alloc] init];
             dragViewModule.title = @"edgesForExtendedLayout";
             dragViewModule.classEntry = [EdgeLayoutTableViewController class];
             [sectionDataModel.values addObject:dragViewModule];

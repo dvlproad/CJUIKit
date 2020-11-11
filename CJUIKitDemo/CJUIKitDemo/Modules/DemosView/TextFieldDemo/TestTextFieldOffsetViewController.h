@@ -7,14 +7,14 @@
 //
 
 #import "CJUIKitBaseViewController.h"
-#import <CJBaseUtil/CJSectionDataModel.h>   //在CJDataUtil中
-#import <CJBaseUtil/CJModuleModel.h>        //在CJDataUtil中
+#import <CQDemoKit/CQDMSectionDataModel.h>
+#import <CQDemoKit/CQDMModuleModel.h>
 
 
 @interface TestTextFieldOffsetViewController : CJUIKitBaseViewController <UITableViewDataSource, UITableViewDelegate> {
     
 }
 @property (nonatomic, strong) UITableView *tableView;
-@property (nonatomic, strong) NSMutableArray<CJSectionDataModel *> *sectionDataModels;
+@property (nonatomic, strong) NSMutableArray<CQDMSectionDataModel *> *sectionDataModels;
 
 @end

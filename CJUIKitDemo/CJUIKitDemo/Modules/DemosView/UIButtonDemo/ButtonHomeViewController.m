@@ -26,25 +26,25 @@
     
     //UIButton(按钮)
     {
-        CJSectionDataModel *sectionDataModel = [[CJSectionDataModel alloc] init];
+        CQDMSectionDataModel *sectionDataModel = [[CQDMSectionDataModel alloc] init];
         sectionDataModel.theme = @"UIButton(按钮)";
         {
             //Category
-            CJModuleModel *buttonModule = [[CJModuleModel alloc] init];
+            CQDMModuleModel *buttonModule = [[CQDMModuleModel alloc] init];
             buttonModule.title = @"Button Category";
             buttonModule.classEntry = [ButtonCategoryViewController class];
             [sectionDataModel.values addObject:buttonModule];
         }
         {
             //Badge
-            CJModuleModel *buttonModule = [[CJModuleModel alloc] init];
+            CQDMModuleModel *buttonModule = [[CQDMModuleModel alloc] init];
             buttonModule.title = @"BadgeButton";
             buttonModule.classEntry = [BadgeButtonViewController class];
             [sectionDataModel.values addObject:buttonModule];
         }
         {
             //Structure
-            CJModuleModel *sliderModule = [[CJModuleModel alloc] init];
+            CQDMModuleModel *sliderModule = [[CQDMModuleModel alloc] init];
             sliderModule.title = @"StructureButton";
             sliderModule.classEntry = [ButtonStructureViewController class];
             [sectionDataModel.values addObject:sliderModule];

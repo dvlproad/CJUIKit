@@ -7,14 +7,14 @@
 //
 
 #import "CJUIKitBaseViewController.h"
-#import <CJBaseUtil/CJSectionDataModel.h>   //在CJDataUtil中
-#import "CJSectionDataModel+CJDealTextModel.h"
+#import "CQDMSectionDataModel.h"
+#import "CQDMSectionDataModel+CJDealTextModel.h"
 
 @interface CJUIKitBaseTextViewController : CJUIKitBaseViewController {
     
 }
 @property (nonatomic, strong) UITableView *tableView;
-@property (nonatomic, strong) NSMutableArray<CJSectionDataModel *> *sectionDataModels;
+@property (nonatomic, strong) NSMutableArray<CQDMSectionDataModel *> *sectionDataModels;
 
 
 @end

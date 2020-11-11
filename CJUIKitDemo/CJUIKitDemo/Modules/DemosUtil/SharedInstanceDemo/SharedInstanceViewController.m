@@ -27,22 +27,22 @@
     
     NSMutableArray *sectionDataModels = [[NSMutableArray alloc] init];
     {
-        CJSectionDataModel *sectionDataModel = [[CJSectionDataModel alloc] init];
+        CQDMSectionDataModel *sectionDataModel = [[CQDMSectionDataModel alloc] init];
         sectionDataModel.theme = @"唯一性问题";
         {
-            CJModuleModel *toastUtilModule = [[CJModuleModel alloc] init];
+            CQDMModuleModel *toastUtilModule = [[CQDMModuleModel alloc] init];
             toastUtilModule.title = @"NormalSharedInstanceClass(正常的单例)";
             toastUtilModule.selector = @selector(printNormalSharedInstance);
             [sectionDataModel.values addObject:toastUtilModule];
         }
         {
-            CJModuleModel *toastUtilModule = [[CJModuleModel alloc] init];
+            CQDMModuleModel *toastUtilModule = [[CQDMModuleModel alloc] init];
             toastUtilModule.title = @"PerfectSharedInstanceClass(完善的单例)";
             toastUtilModule.selector = @selector(printPerfectSharedInstance);
             [sectionDataModel.values addObject:toastUtilModule];
         }
         {
-            CJModuleModel *toastUtilModule = [[CJModuleModel alloc] init];
+            CQDMModuleModel *toastUtilModule = [[CQDMModuleModel alloc] init];
             toastUtilModule.title = @"InheritableSharedInstanceClass(可继承单例的并发测试)";
             toastUtilModule.selector = @selector(printInheritableSharedInstance_inConcurrence);
             [sectionDataModel.values addObject:toastUtilModule];
@@ -51,16 +51,16 @@
     }
     
     {
-        CJSectionDataModel *sectionDataModel = [[CJSectionDataModel alloc] init];
+        CQDMSectionDataModel *sectionDataModel = [[CQDMSectionDataModel alloc] init];
         sectionDataModel.theme = @"继承问题";
         {
-            CJModuleModel *toastUtilModule = [[CJModuleModel alloc] init];
+            CQDMModuleModel *toastUtilModule = [[CQDMModuleModel alloc] init];
             toastUtilModule.title = @"NormalSharedInstanceClass(不可继承的单例)";
             toastUtilModule.selector = @selector(printSubNormalSharedInstance);
             [sectionDataModel.values addObject:toastUtilModule];
         }
         {
-            CJModuleModel *toastUtilModule = [[CJModuleModel alloc] init];
+            CQDMModuleModel *toastUtilModule = [[CQDMModuleModel alloc] init];
             toastUtilModule.title = @"InheritableSharedInstanceClass(可继承的单例)";
             toastUtilModule.selector = @selector(printSubInheritableSharedInstance);
             [sectionDataModel.values addObject:toastUtilModule];

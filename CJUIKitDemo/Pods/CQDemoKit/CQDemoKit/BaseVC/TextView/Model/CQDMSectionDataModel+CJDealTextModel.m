@@ -1,15 +1,15 @@
 //
-//  CJSectionDataModel+CJDealTextModel.m
+//  CQDMSectionDataModel+CJDealTextModel.m
 //  CJUIKitDemo
 //
 //  Created by ciyouzen on 2019/10/29.
 //  Copyright © 2019 dvlproad. All rights reserved.
 //
 
-#import "CJSectionDataModel+CJDealTextModel.h"
+#import "CQDMSectionDataModel+CJDealTextModel.h"
 #import "CJDealTextModelFactory.h"
 
-@implementation CJSectionDataModel (CJDealTextModel)
+@implementation CQDMSectionDataModel (CJDealTextModel)
 
 /**
  *  初始化生成sectionDataModel
@@ -21,12 +21,12 @@
  *
  *  @return sectionDataModel
  */
-+ (CJSectionDataModel *)sectionDataModelWithTextArray:(NSArray<NSString *> *)textArray
++ (CQDMSectionDataModel *)sectionDataModelWithTextArray:(NSArray<NSString *> *)textArray
                                       samePlaceholder:(NSString *)placeholder
                                       sameActionTitle:(NSString *)sameActionTitle
                                       sameActionBlock:(NSString*(^)(NSString *oldString))sameActionBlock
 {
-    CJSectionDataModel *sectionDataModel = [[CJSectionDataModel alloc] init];
+    CQDMSectionDataModel *sectionDataModel = [[CQDMSectionDataModel alloc] init];
     sectionDataModel.theme = sameActionTitle;
     
     // 创建dealTextModels，赋值给sectionDataModel.values

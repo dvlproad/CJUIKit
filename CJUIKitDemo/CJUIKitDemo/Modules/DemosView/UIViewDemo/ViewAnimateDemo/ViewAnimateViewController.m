@@ -8,7 +8,7 @@
 
 #import "ViewAnimateViewController.h"
 
-#import "CJModuleModel.h"
+#import "CQDMModuleModel.h"
 
 #import "CountDownTimeViewController.h"
 
@@ -33,10 +33,10 @@
     
     //UIViewAnimationTransition
     {
-        CJSectionDataModel *sectionDataModel = [[CJSectionDataModel alloc] init];
+        CQDMSectionDataModel *sectionDataModel = [[CQDMSectionDataModel alloc] init];
         sectionDataModel.theme = @"UIViewAnimationTransition";
         {
-            CJModuleModel *animationModule = [[CJModuleModel alloc] init];
+            CQDMModuleModel *animationModule = [[CQDMModuleModel alloc] init];
             animationModule.title = @"0.None(生硬效果)";
             animationModule.actionBlock = ^{
                 [self.tableView cj_animationWithAnimationTransition:UIViewAnimationTransitionNone];
@@ -45,7 +45,7 @@
             [sectionDataModel.values addObject:animationModule];
         }
         {
-            CJModuleModel *animationModule = [[CJModuleModel alloc] init];
+            CQDMModuleModel *animationModule = [[CQDMModuleModel alloc] init];
             animationModule.title = @"1.FlipFromLeft(左翻转效果)";
             animationModule.actionBlock = ^{
                 [self.tableView cj_animationWithAnimationTransition:UIViewAnimationTransitionFlipFromLeft];
@@ -54,7 +54,7 @@
             [sectionDataModel.values addObject:animationModule];
         }
         {
-            CJModuleModel *animationModule = [[CJModuleModel alloc] init];
+            CQDMModuleModel *animationModule = [[CQDMModuleModel alloc] init];
             animationModule.title = @"2.FlipFromRight(右翻转效果)";
             animationModule.actionBlock = ^{
                 [self.tableView cj_animationWithAnimationTransition:UIViewAnimationTransitionFlipFromRight];
@@ -63,7 +63,7 @@
             [sectionDataModel.values addObject:animationModule];
         }
         {
-            CJModuleModel *animationModule = [[CJModuleModel alloc] init];
+            CQDMModuleModel *animationModule = [[CQDMModuleModel alloc] init];
             animationModule.title = @"3.CurlUp(上翻页效果)";
             animationModule.actionBlock = ^{
                 [self.tableView cj_animationWithAnimationTransition:UIViewAnimationTransitionCurlUp];
@@ -72,7 +72,7 @@
             [sectionDataModel.values addObject:animationModule];
         }
         {
-            CJModuleModel *animationModule = [[CJModuleModel alloc] init];
+            CQDMModuleModel *animationModule = [[CQDMModuleModel alloc] init];
             animationModule.title = @"4.CurlDown(下翻页效果)";
             animationModule.actionBlock = ^{
                 [self.tableView cj_animationWithAnimationTransition:UIViewAnimationTransitionCurlDown];
@@ -86,10 +86,10 @@
     
     //CommonTransition:Fade淡入淡出、MoveIn覆盖、Push推挤、Reveal揭开
     {
-        CJSectionDataModel *sectionDataModel = [[CJSectionDataModel alloc] init];
+        CQDMSectionDataModel *sectionDataModel = [[CQDMSectionDataModel alloc] init];
         sectionDataModel.theme = @"CommonTransition";
         {
-            CJModuleModel *animationModule = [[CJModuleModel alloc] init];
+            CQDMModuleModel *animationModule = [[CQDMModuleModel alloc] init];
             animationModule.title = @"Fade(淡化效果)";
             animationModule.actionBlock = ^{
                 CJTransitionDirection transitionDirection = CJTransitionDirectionFromRight;
@@ -100,7 +100,7 @@
             [sectionDataModel.values addObject:animationModule];
         }
         {
-            CJModuleModel *animationModule = [[CJModuleModel alloc] init];
+            CQDMModuleModel *animationModule = [[CQDMModuleModel alloc] init];
             animationModule.title = @"MoveIn(覆盖效果)";
             animationModule.actionBlock = ^{
                 CJTransitionDirection transitionDirection = CJTransitionDirectionFromRight;
@@ -111,7 +111,7 @@
             [sectionDataModel.values addObject:animationModule];
         }
         {
-            CJModuleModel *animationModule = [[CJModuleModel alloc] init];
+            CQDMModuleModel *animationModule = [[CQDMModuleModel alloc] init];
             animationModule.title = @"Push(推挤效果)";
             animationModule.actionBlock = ^{
                 CJTransitionDirection transitionDirection = CJTransitionDirectionFromRight;
@@ -122,7 +122,7 @@
             [sectionDataModel.values addObject:animationModule];
         }
         {
-            CJModuleModel *animationModule = [[CJModuleModel alloc] init];
+            CQDMModuleModel *animationModule = [[CQDMModuleModel alloc] init];
             animationModule.title = @"Reveal(揭开效果)";
             animationModule.actionBlock = ^{
                 CJTransitionDirection transitionDirection = CJTransitionDirectionFromRight;
@@ -137,10 +137,10 @@
     
     //CustomTransition
     {
-        CJSectionDataModel *sectionDataModel = [[CJSectionDataModel alloc] init];
+        CQDMSectionDataModel *sectionDataModel = [[CQDMSectionDataModel alloc] init];
         sectionDataModel.theme = @"CustomTransition";
         {
-            CJModuleModel *animationModule = [[CJModuleModel alloc] init];
+            CQDMModuleModel *animationModule = [[CQDMModuleModel alloc] init];
             animationModule.title = @"Cube(3D立方效果)";
             animationModule.actionBlock = ^{
                 CJTransitionDirection transitionDirection = CJTransitionDirectionFromRight;
@@ -151,7 +151,7 @@
             [sectionDataModel.values addObject:animationModule];
         }
         {
-            CJModuleModel *animationModule = [[CJModuleModel alloc] init];
+            CQDMModuleModel *animationModule = [[CQDMModuleModel alloc] init];
             animationModule.title = @"SuckEffect(吮吸效果)";
             animationModule.actionBlock = ^{
                 CJTransitionDirection transitionDirection = CJTransitionDirectionFromRight;
@@ -162,7 +162,7 @@
             [sectionDataModel.values addObject:animationModule];
         }
         {
-            CJModuleModel *animationModule = [[CJModuleModel alloc] init];
+            CQDMModuleModel *animationModule = [[CQDMModuleModel alloc] init];
             animationModule.title = @"OglFlip(翻转效果)";
             animationModule.actionBlock = ^{
                 CJTransitionDirection transitionDirection = CJTransitionDirectionFromRight;
@@ -174,7 +174,7 @@
         }
         
         {
-            CJModuleModel *animationModule = [[CJModuleModel alloc] init];
+            CQDMModuleModel *animationModule = [[CQDMModuleModel alloc] init];
             animationModule.title = @"RippleEffect(波纹效果)";
             animationModule.actionBlock = ^{
                 CJTransitionDirection transitionDirection = CJTransitionDirectionFromRight;
@@ -185,7 +185,7 @@
             [sectionDataModel.values addObject:animationModule];
         }
         {
-            CJModuleModel *animationModule = [[CJModuleModel alloc] init];
+            CQDMModuleModel *animationModule = [[CQDMModuleModel alloc] init];
             animationModule.title = @"PageCurl(翻页效果)";
             animationModule.actionBlock = ^{
                 CJTransitionDirection transitionDirection = CJTransitionDirectionFromRight;
@@ -196,7 +196,7 @@
             [sectionDataModel.values addObject:animationModule];
         }
         {
-            CJModuleModel *animationModule = [[CJModuleModel alloc] init];
+            CQDMModuleModel *animationModule = [[CQDMModuleModel alloc] init];
             animationModule.title = @"PageUnCurl(反翻页效果)";
             animationModule.actionBlock = ^{
                 CJTransitionDirection transitionDirection = CJTransitionDirectionFromRight;
@@ -207,7 +207,7 @@
             [sectionDataModel.values addObject:animationModule];
         }
         {
-            CJModuleModel *animationModule = [[CJModuleModel alloc] init];
+            CQDMModuleModel *animationModule = [[CQDMModuleModel alloc] init];
             animationModule.title = @"CameraIrisHollowOpen(开镜头效果)";
             animationModule.actionBlock = ^{
                 CJTransitionDirection transitionDirection = CJTransitionDirectionFromRight;
@@ -218,7 +218,7 @@
             [sectionDataModel.values addObject:animationModule];
         }
         {
-            CJModuleModel *animationModule = [[CJModuleModel alloc] init];
+            CQDMModuleModel *animationModule = [[CQDMModuleModel alloc] init];
             animationModule.title = @"CameraIrisHollowClose(关镜头效果)";
             animationModule.actionBlock = ^{
                 CJTransitionDirection transitionDirection = CJTransitionDirectionFromRight;
@@ -237,9 +237,9 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    CJSectionDataModel *sectionDataModel = [self.sectionDataModels objectAtIndex:indexPath.section];
+    CQDMSectionDataModel *sectionDataModel = [self.sectionDataModels objectAtIndex:indexPath.section];
     NSArray *dataModels = sectionDataModel.values;
-    CJModuleModel *moduleModel = [dataModels objectAtIndex:indexPath.row];
+    CQDMModuleModel *moduleModel = [dataModels objectAtIndex:indexPath.row];
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
     if (cell == nil) {

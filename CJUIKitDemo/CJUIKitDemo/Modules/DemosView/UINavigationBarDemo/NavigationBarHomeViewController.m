@@ -30,35 +30,35 @@
     
     //UINavigationBar
     {
-        CJSectionDataModel *sectionDataModel = [[CJSectionDataModel alloc] init];
+        CQDMSectionDataModel *sectionDataModel = [[CQDMSectionDataModel alloc] init];
         sectionDataModel.theme = @"UINavigationBar相关";
         {
-            CJModuleModel *UINavigationBarModuleModel1 = [[CJModuleModel alloc] init];
+            CQDMModuleModel *UINavigationBarModuleModel1 = [[CQDMModuleModel alloc] init];
             UINavigationBarModuleModel1.title = @"UINavigationBar(导航栏的设置)";
             UINavigationBarModuleModel1.classEntry = [NavigationBarViewController class];
             UINavigationBarModuleModel1.isCreateByXib = YES;
             [sectionDataModel.values addObject:UINavigationBarModuleModel1];
         }
         {
-            CJModuleModel *UINavigationBarModuleModel1 = [[CJModuleModel alloc] init];
+            CQDMModuleModel *UINavigationBarModuleModel1 = [[CQDMModuleModel alloc] init];
             UINavigationBarModuleModel1.title = @"UINavigationBar(去除导航条最下面的横线)";
             UINavigationBarModuleModel1.classEntry = [NavigationBarRemoveUnderlineViewController class];
             [sectionDataModel.values addObject:UINavigationBarModuleModel1];
         }
         {
-            CJModuleModel *UINavigationBarModuleModel1 = [[CJModuleModel alloc] init];
+            CQDMModuleModel *UINavigationBarModuleModel1 = [[CQDMModuleModel alloc] init];
             UINavigationBarModuleModel1.title = @"UINavigationBar(改变背景色以隐藏导航栏)";
             UINavigationBarModuleModel1.classEntry = [NavigationBarNormalChangeBGViewController class];
             [sectionDataModel.values addObject:UINavigationBarModuleModel1];
         }
         {
-            CJModuleModel *UINavigationBarModuleModel1 = [[CJModuleModel alloc] init];
+            CQDMModuleModel *UINavigationBarModuleModel1 = [[CQDMModuleModel alloc] init];
             UINavigationBarModuleModel1.title = @"UINavigationBar(常见的导航栏背景色改变隐藏)";
             UINavigationBarModuleModel1.classEntry = [NavigationBarScrollChangeBGViewController class];
             [sectionDataModel.values addObject:UINavigationBarModuleModel1];
         }
         {
-            CJModuleModel *UINavigationBarModuleModel2 = [[CJModuleModel alloc] init];
+            CQDMModuleModel *UINavigationBarModuleModel2 = [[CQDMModuleModel alloc] init];
             UINavigationBarModuleModel2.title = @"UINavigationBar(类似斗鱼的导航栏移动隐藏)";
             UINavigationBarModuleModel2.classEntry = [NavigationBarChangePositonViewController class];
             [sectionDataModel.values addObject:UINavigationBarModuleModel2];

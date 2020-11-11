@@ -28,28 +28,28 @@
     NSMutableArray *sectionDataModels = [[NSMutableArray alloc] init];
     //Helper
     {
-        CJSectionDataModel *sectionDataModel = [[CJSectionDataModel alloc] init];
+        CQDMSectionDataModel *sectionDataModel = [[CQDMSectionDataModel alloc] init];
         sectionDataModel.theme = @"CJHelper";
         {
-            CJModuleModel *helperModule = [[CJModuleModel alloc] init];
+            CQDMModuleModel *helperModule = [[CQDMModuleModel alloc] init];
             helperModule.title = @"NSObjectCJHelper";
             helperModule.classEntry = [NSObjectCJHelperViewController class];
             [sectionDataModel.values addObject:helperModule];
         }
         {
-            CJModuleModel *helperModule = [[CJModuleModel alloc] init];
+            CQDMModuleModel *helperModule = [[CQDMModuleModel alloc] init];
             helperModule.title = @"NSCalendarCJHelper";
             helperModule.classEntry = [NSCalendarCJHelperViewController class];
             [sectionDataModel.values addObject:helperModule];
         }
         {
-            CJModuleModel *helperModule = [[CJModuleModel alloc] init];
+            CQDMModuleModel *helperModule = [[CQDMModuleModel alloc] init];
             helperModule.title = @"AuthorizationCJHelper";
             helperModule.classEntry = [AuthorizationCJHelperViewController class];
             [sectionDataModel.values addObject:helperModule];
         }
         {
-            CJModuleModel *helperModule = [[CJModuleModel alloc] init];
+            CQDMModuleModel *helperModule = [[CQDMModuleModel alloc] init];
             helperModule.title = @"UIViewControllerCJHelper";
             helperModule.content = @"获取present前的视图";
             helperModule.selector = @selector(testPresentViewController);

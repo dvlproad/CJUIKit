@@ -30,10 +30,10 @@
     
     //ThirdParty
     {
-        CJSectionDataModel *sectionDataModel = [[CJSectionDataModel alloc] init];
+        CQDMSectionDataModel *sectionDataModel = [[CQDMSectionDataModel alloc] init];
         sectionDataModel.theme = @"ThirdParty";
         {
-            CJModuleModel *xibModule = [[CJModuleModel alloc] init];
+            CQDMModuleModel *xibModule = [[CQDMModuleModel alloc] init];
             xibModule.title = @"ThirdPartyHome(第三方库入口)";
             xibModule.classEntry = [ThirdPartyHomeViewController class];
             
@@ -45,10 +45,10 @@
     
     //Other
     {
-        CJSectionDataModel *sectionDataModel = [[CJSectionDataModel alloc] init];
+        CQDMSectionDataModel *sectionDataModel = [[CQDMSectionDataModel alloc] init];
         sectionDataModel.theme = @"Other";
         {
-            CJModuleModel *xibModule = [[CJModuleModel alloc] init];
+            CQDMModuleModel *xibModule = [[CQDMModuleModel alloc] init];
             xibModule.title = @"OtherHome(其他基础小视图入口)";
             xibModule.classEntry = [OtherHomeViewController class];
             

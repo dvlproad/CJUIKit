@@ -32,28 +32,28 @@
     NSMutableArray *sectionDataModels = [[NSMutableArray alloc] init];
     //NSString
     {
-        CJSectionDataModel *sectionDataModel = [[CJSectionDataModel alloc] init];
+        CQDMSectionDataModel *sectionDataModel = [[CQDMSectionDataModel alloc] init];
         sectionDataModel.theme = @"NSString相关";
         {
-            CJModuleModel *NSStringModule = [[CJModuleModel alloc] init];
+            CQDMModuleModel *NSStringModule = [[CQDMModuleModel alloc] init];
             NSStringModule.title = @"EncryptString";
             NSStringModule.classEntry = [EncryptStringViewController class];
             [sectionDataModel.values addObject:NSStringModule];
         }
         {
-            CJModuleModel *NSAttributedStringModule = [[CJModuleModel alloc] init];
+            CQDMModuleModel *NSAttributedStringModule = [[CQDMModuleModel alloc] init];
             NSAttributedStringModule.title = @"NSAttributedString";
             NSAttributedStringModule.classEntry = [AttributedStringViewController class];
             [sectionDataModel.values addObject:NSAttributedStringModule];
         }
         {
-            CJModuleModel *NSAttributedStringModule = [[CJModuleModel alloc] init];
+            CQDMModuleModel *NSAttributedStringModule = [[CQDMModuleModel alloc] init];
             NSAttributedStringModule.title = @"NSAttributedString";
             NSAttributedStringModule.classEntry = [AttributedStringViewController2 class];
             [sectionDataModel.values addObject:NSAttributedStringModule];
         }
         {
-            CJModuleModel *NSAttributedStringModule = [[CJModuleModel alloc] init];
+            CQDMModuleModel *NSAttributedStringModule = [[CQDMModuleModel alloc] init];
             NSAttributedStringModule.title = @"ValidateString";
             NSAttributedStringModule.classEntry = [ValidateStringViewController class];
             [sectionDataModel.values addObject:NSAttributedStringModule];
@@ -65,10 +65,10 @@
     
     //NSDate
     {
-        CJSectionDataModel *sectionDataModel = [[CJSectionDataModel alloc] init];
+        CQDMSectionDataModel *sectionDataModel = [[CQDMSectionDataModel alloc] init];
         sectionDataModel.theme = @"NSDate相关";
         {
-            CJModuleModel *NSDateModule = [[CJModuleModel alloc] init];
+            CQDMModuleModel *NSDateModule = [[CQDMModuleModel alloc] init];
             NSDateModule.title = @"NSDate";
             NSDateModule.classEntry = [DateViewController class];
             [sectionDataModel.values addObject:NSDateModule];
@@ -79,11 +79,11 @@
     
     //Json-Model类型转换
     {
-        CJSectionDataModel *sectionDataModel = [[CJSectionDataModel alloc] init];
+        CQDMSectionDataModel *sectionDataModel = [[CQDMSectionDataModel alloc] init];
         sectionDataModel.theme = @"Json-Model类型转换相关";
         {
             //TypeConvert
-            CJModuleModel *TypeConvertModule = [[CJModuleModel alloc] init];
+            CQDMModuleModel *TypeConvertModule = [[CQDMModuleModel alloc] init];
             TypeConvertModule.title = @"TypeConvertModule（类型转换）";
             TypeConvertModule.classEntry = [TypeConvertViewController class];
             [sectionDataModel.values addObject:TypeConvertModule];

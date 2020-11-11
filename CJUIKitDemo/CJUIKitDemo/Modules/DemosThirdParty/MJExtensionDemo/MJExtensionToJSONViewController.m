@@ -25,10 +25,10 @@
     
     //ThirdParty
     {
-        CJSectionDataModel *sectionDataModel = [[CJSectionDataModel alloc] init];
+        CQDMSectionDataModel *sectionDataModel = [[CQDMSectionDataModel alloc] init];
         sectionDataModel.theme = @"Model->JSON首页";
         {
-            CJModuleModel *xibModule = [[CJModuleModel alloc] init];
+            CQDMModuleModel *xibModule = [[CQDMModuleModel alloc] init];
             xibModule.title = @"ThirdPartyHome(第三方库入口)";
             xibModule.actionBlock = ^{
                 

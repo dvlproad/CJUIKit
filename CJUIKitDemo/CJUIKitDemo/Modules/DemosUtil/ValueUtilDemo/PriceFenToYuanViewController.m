@@ -24,7 +24,7 @@
     
     // 将价钱'分'按指定精度处理到价钱'元'的该位(向上取整、向下取整、四舍五入)并始终显示2位小数
     {
-        CJSectionDataModel *sectionDataModel = [[CJSectionDataModel alloc] init];
+        CQDMSectionDataModel *sectionDataModel = [[CQDMSectionDataModel alloc] init];
         sectionDataModel.theme = @"将价钱'分'按指定精度处理到价钱'元'的该位(向上取整、向下取整、四舍五入)并始终显示2位小数";
         sectionDataModel.values = [self dealTextModels_priceFenToYuan0_decimalCount2];
         
@@ -33,7 +33,7 @@
     
     // 将价钱'分'按指定精度处理到价钱'元'的后一位(向上取整、向下取整、四舍五入)并始终显示2位小数
     {
-        CJSectionDataModel *sectionDataModel = [[CJSectionDataModel alloc] init];
+        CQDMSectionDataModel *sectionDataModel = [[CQDMSectionDataModel alloc] init];
         sectionDataModel.theme = @"将价钱'分'按指定精度处理到价钱'元'的后一位(向上取整、向下取整、四舍五入)并始终显示2位小数";
         sectionDataModel.values = [self dealTextModels_priceFenToYuanD1_decimalCount2];
         

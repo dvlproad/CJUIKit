@@ -32,8 +32,8 @@
 }
 
 /** 完整的描述请参见文件头部 */
-+ (NSMutableArray<CJSectionDataModel *> *)getTestSectionDataModels {
-    CJSectionDataModel *secctionModel1 = [[CJSectionDataModel alloc] init];
++ (NSMutableArray<CQDMSectionDataModel *> *)getTestSectionDataModels {
+    CQDMSectionDataModel *secctionModel1 = [[CQDMSectionDataModel alloc] init];
     secctionModel1.theme = @"A区";
     secctionModel1.values = [[NSMutableArray alloc]init];
     for (NSInteger i = 0; i < 5; i++) {
@@ -44,7 +44,7 @@
     secctionModel1.selected = YES;
     
     
-    CJSectionDataModel *secctionModel2 = [[CJSectionDataModel alloc]init];
+    CQDMSectionDataModel *secctionModel2 = [[CQDMSectionDataModel alloc]init];
     secctionModel2.theme = @"B区";
     secctionModel2.values = [[NSMutableArray alloc]init];
     for (NSInteger i = 0; i < 3; i++) {
@@ -54,7 +54,7 @@
     }
     secctionModel2.selected = YES;
     
-    CJSectionDataModel *secctionModel3 = [[CJSectionDataModel alloc]init];
+    CQDMSectionDataModel *secctionModel3 = [[CQDMSectionDataModel alloc]init];
     secctionModel3.theme = @"C区";
     secctionModel3.values = [[NSMutableArray alloc]init];
     for (NSInteger i = 0; i < 4; i++) {
@@ -76,9 +76,9 @@
 //};             // available in iPhone OS 3.0
 
 /** 完整的描述请参见文件头部 */
-+ (NSMutableArray<CJSectionDataModel *> *)testDataForDemoTableViewController {
++ (NSMutableArray<CQDMSectionDataModel *> *)testDataForDemoTableViewController {
     //secctionModel1
-    CJSectionDataModel *secctionModel1 = [[CJSectionDataModel alloc] init];
+    CQDMSectionDataModel *secctionModel1 = [[CQDMSectionDataModel alloc] init];
     secctionModel1.type = UITableViewCellStyleDefault;
     secctionModel1.theme = @"CJBaseTableViewCell_Default";
     secctionModel1.values = [[NSMutableArray alloc]init];
@@ -108,7 +108,7 @@
     }
     
     //secctionModel2
-    CJSectionDataModel *secctionModel2 = [[CJSectionDataModel alloc] init];
+    CQDMSectionDataModel *secctionModel2 = [[CQDMSectionDataModel alloc] init];
     secctionModel2.type = UITableViewCellStyleValue1;
     secctionModel2.theme = @"CJBaseTableViewCell_Value1";
     secctionModel2.values = [[NSMutableArray alloc]init];
@@ -138,7 +138,7 @@
     }
     
     //secctionModel3
-    CJSectionDataModel *secctionModel3 = [[CJSectionDataModel alloc] init];
+    CQDMSectionDataModel *secctionModel3 = [[CQDMSectionDataModel alloc] init];
     secctionModel3.type = UITableViewCellStyleValue2;
     secctionModel3.theme = @"CJBaseTableViewCell_Value2";
     secctionModel3.values = [[NSMutableArray alloc]init];
@@ -168,7 +168,7 @@
     }
     
     //secctionModel4
-    CJSectionDataModel *secctionModel4 = [[CJSectionDataModel alloc] init];
+    CQDMSectionDataModel *secctionModel4 = [[CQDMSectionDataModel alloc] init];
     secctionModel4.type = UITableViewCellStyleSubtitle;
     secctionModel4.theme = @"CJBaseTableViewCell_Subtitle";
     secctionModel4.values = [[NSMutableArray alloc]init];
@@ -198,7 +198,7 @@
     }
     
     //secctionModel5
-    CJSectionDataModel *secctionModel5 = [[CJSectionDataModel alloc] init];
+    CQDMSectionDataModel *secctionModel5 = [[CQDMSectionDataModel alloc] init];
     secctionModel5.theme = @"UITableViewCellStyleDefault";
     secctionModel5.values = [[NSMutableArray alloc]init];
     {

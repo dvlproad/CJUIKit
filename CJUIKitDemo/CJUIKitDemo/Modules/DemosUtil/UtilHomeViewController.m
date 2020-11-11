@@ -53,10 +53,10 @@
     NSMutableArray *sectionDataModels = [[NSMutableArray alloc] init];
     //AppLast
     {
-        CJSectionDataModel *sectionDataModel = [[CJSectionDataModel alloc] init];
+        CQDMSectionDataModel *sectionDataModel = [[CQDMSectionDataModel alloc] init];
         sectionDataModel.theme = @"AppLast相关";
         {
-            CJModuleModel *toastUtilModule = [[CJModuleModel alloc] init];
+            CQDMModuleModel *toastUtilModule = [[CQDMModuleModel alloc] init];
             toastUtilModule.title = @"AppLast(点击使得引导页)";
             toastUtilModule.selector = @selector(readOverGuide);
             [sectionDataModel.values addObject:toastUtilModule];
@@ -67,17 +67,17 @@
     
     //Knowledge
     {
-        CJSectionDataModel *sectionDataModel = [[CJSectionDataModel alloc] init];
+        CQDMSectionDataModel *sectionDataModel = [[CQDMSectionDataModel alloc] init];
         sectionDataModel.theme = @"Knowledge相关";
         {
-            CJModuleModel *QRCodeModule = [[CJModuleModel alloc] init];
+            CQDMModuleModel *QRCodeModule = [[CQDMModuleModel alloc] init];
             QRCodeModule.title = @"SemaphoreGateKeeper";
             QRCodeModule.classEntry = [SemaphoreGateKeeperViewController class];
             QRCodeModule.isCreateByXib = NO;
             [sectionDataModel.values addObject:QRCodeModule];
         }
         {
-            CJModuleModel *QRCodeModule = [[CJModuleModel alloc] init];
+            CQDMModuleModel *QRCodeModule = [[CQDMModuleModel alloc] init];
             QRCodeModule.title = @"LockGateKeeper";
             QRCodeModule.classEntry = [LockGateKeeperViewController class];
             QRCodeModule.isCreateByXib = NO;
@@ -90,11 +90,11 @@
     
     //string
     {
-        CJSectionDataModel *sectionDataModel = [[CJSectionDataModel alloc] init];
+        CQDMSectionDataModel *sectionDataModel = [[CQDMSectionDataModel alloc] init];
         sectionDataModel.theme = @"string相关";
         
         {
-            CJModuleModel *stringModule = [[CJModuleModel alloc] init];
+            CQDMModuleModel *stringModule = [[CQDMModuleModel alloc] init];
             stringModule.title = @"String(字符串)";
             stringModule.classEntry = [StringEventViewController class];
             [sectionDataModel.values addObject:stringModule];
@@ -105,11 +105,11 @@
     
     //image
     {
-        CJSectionDataModel *sectionDataModel = [[CJSectionDataModel alloc] init];
+        CQDMSectionDataModel *sectionDataModel = [[CQDMSectionDataModel alloc] init];
         sectionDataModel.theme = @"image相关";
         
         {
-            CJModuleModel *QRCodeModule = [[CJModuleModel alloc] init];
+            CQDMModuleModel *QRCodeModule = [[CQDMModuleModel alloc] init];
             QRCodeModule.title = @"QRCode(二维码)";
             QRCodeModule.classEntry = [QRCodeViewController class];
             QRCodeModule.isCreateByXib = NO;
@@ -121,22 +121,22 @@
     
     // 数值 & 价钱 处理
     {
-        CJSectionDataModel *sectionDataModel = [[CJSectionDataModel alloc] init];
+        CQDMSectionDataModel *sectionDataModel = [[CQDMSectionDataModel alloc] init];
         sectionDataModel.theme = @"数值 & 价钱 相关";
         {
-            CJModuleModel *NSAttributedStringModule = [[CJModuleModel alloc] init];
+            CQDMModuleModel *NSAttributedStringModule = [[CQDMModuleModel alloc] init];
             NSAttributedStringModule.title = @"数值number(取整、去尾0等)";
             NSAttributedStringModule.classEntry = [AccuracyStringViewController class];
             [sectionDataModel.values addObject:NSAttributedStringModule];
         }
         {
-            CJModuleModel *NSAttributedStringModule = [[CJModuleModel alloc] init];
+            CQDMModuleModel *NSAttributedStringModule = [[CQDMModuleModel alloc] init];
             NSAttributedStringModule.title = @"价钱price(分转元)";
             NSAttributedStringModule.classEntry = [PriceFenToYuanViewController class];
             [sectionDataModel.values addObject:NSAttributedStringModule];
         }
         {
-            CJModuleModel *NSAttributedStringModule = [[CJModuleModel alloc] init];
+            CQDMModuleModel *NSAttributedStringModule = [[CQDMModuleModel alloc] init];
             NSAttributedStringModule.title = @"价钱price(元转元)";
             NSAttributedStringModule.classEntry = [PriceYuanToYuanViewController class];
             [sectionDataModel.values addObject:NSAttributedStringModule];
@@ -147,24 +147,24 @@
     //其他
     {
         
-        CJSectionDataModel *sectionDataModel = [[CJSectionDataModel alloc] init];
+        CQDMSectionDataModel *sectionDataModel = [[CQDMSectionDataModel alloc] init];
         sectionDataModel.theme = @"Util相关";
         {
-            CJModuleModel *deviceInfoModule = [[CJModuleModel alloc] init];
+            CQDMModuleModel *deviceInfoModule = [[CQDMModuleModel alloc] init];
             deviceInfoModule.title = @"CallSystem(拨打电话等)";
             deviceInfoModule.classEntry = [CallSystemViewController class];
             deviceInfoModule.isCreateByXib = NO;
             [sectionDataModel.values addObject:deviceInfoModule];
         }
         {
-            CJModuleModel *deviceInfoModule = [[CJModuleModel alloc] init];
+            CQDMModuleModel *deviceInfoModule = [[CQDMModuleModel alloc] init];
             deviceInfoModule.title = @"DeviceInfo";
             deviceInfoModule.classEntry = [DeviceInfoViewController class];
             deviceInfoModule.isCreateByXib = NO;
             [sectionDataModel.values addObject:deviceInfoModule];
         }
         {
-            CJModuleModel *dataUtilModule = [[CJModuleModel alloc] init];
+            CQDMModuleModel *dataUtilModule = [[CQDMModuleModel alloc] init];
             dataUtilModule.title = @"DataUtil";
             dataUtilModule.classEntry = [DataUtilViewController class];
             dataUtilModule.isCreateByXib = YES;
@@ -173,7 +173,7 @@
         
         
         {
-            CJModuleModel *keyboardUtilModule = [[CJModuleModel alloc] init];
+            CQDMModuleModel *keyboardUtilModule = [[CQDMModuleModel alloc] init];
             keyboardUtilModule.title = @"KeyboardUtil(键盘高度)";
             keyboardUtilModule.classEntry = [KeyboardUtilViewController class];
             keyboardUtilModule.isCreateByXib = YES;
@@ -181,7 +181,7 @@
         }
         
         {
-            CJModuleModel *sharedInstanceModule = [[CJModuleModel alloc] init];
+            CQDMModuleModel *sharedInstanceModule = [[CQDMModuleModel alloc] init];
             sharedInstanceModule.title = @"SharedInstance(单例)";
             sharedInstanceModule.classEntry = [SharedInstanceViewController class];
             sharedInstanceModule.isCreateByXib = NO;
@@ -194,11 +194,11 @@
     
     //CodeObfuscation
     {
-        CJSectionDataModel *sectionDataModel = [[CJSectionDataModel alloc] init];
+        CQDMSectionDataModel *sectionDataModel = [[CQDMSectionDataModel alloc] init];
         sectionDataModel.theme = @"代码混淆相关";
         
         {
-            CJModuleModel *QRCodeModule = [[CJModuleModel alloc] init];
+            CQDMModuleModel *QRCodeModule = [[CQDMModuleModel alloc] init];
             QRCodeModule.title = @"CJRandomNameUtil(混淆名生成器)";
             QRCodeModule.selector = @selector(readOverGuide);
             [sectionDataModel.values addObject:QRCodeModule];

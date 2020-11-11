@@ -54,13 +54,13 @@ target 'CJUIKitDemo' do
 
     pod 'YYText', '~> 1.0.7'
 
-#    pod 'CJBaseUIKit',          :path => '../’
+#    pod 'CJBaseUIKit',          :path => '../'
     
-    pod 'CQDemoKit',            '~> 0.5.2',     :subspecs => ['BaseVC', 'BaseUtil']
+    pod 'CQDemoKit',            '~> 0.5.6',     :subspecs => ['BaseVC', 'BaseUtil']
 #    pod 'CJBaseUIKit',           :path => '../’
-    pod 'CJBaseUtil',           :path => '../’
-    pod 'CJFoundation',         :path => '../’
-    pod 'CJBaseHelper',         :path => '../’
+    pod 'CJBaseUtil',           :path => '../'
+    pod 'CJFoundation',         :path => '../'
+    pod 'CJBaseHelper',         :path => '../'
     pod 'CJBaseEffectKit',      :subspecs => ['CJScaleHeadView']
 #    pod 'CJBaseUIKit', :subspecs => ['UIColor', 'UIButton', 'UITextField', 'CJToast', 'CJAlert']
 #    pod 'CJBaseUtil', :subspecs => ['CJLog']
@@ -79,10 +79,10 @@ end
 target 'CJUIKitDemoTests' do
     platform :ios, '9.0'
     #pod 'OCMock', '~> 3.4.1'
-    pod 'CJBaseTest/Test',      :path => '~/Project/Github/CJUIKit’
+    pod 'CJBaseTest/Test',      :path => '../'
 end
 
 target 'CJUIKitDemoUITests' do
     platform :ios, '9.0'
-    pod 'CJBaseTest/UITest',    :path => '~/Project/Github/CJUIKit’
+    pod 'CJBaseTest/UITest',    :path => '../'
 end

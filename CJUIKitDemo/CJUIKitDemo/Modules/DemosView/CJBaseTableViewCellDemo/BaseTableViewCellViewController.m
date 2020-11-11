@@ -14,7 +14,7 @@
     BOOL isAllSelected;
 }
 @property (nonatomic, strong) UITableView *tableView;
-@property (nonatomic, strong) NSMutableArray<CJSectionDataModel *> *sectionDataModels;
+@property (nonatomic, strong) NSMutableArray<CQDMSectionDataModel *> *sectionDataModels;
 
 @property (nonatomic, strong) UIBarButtonItem *editBarButtonItem;
 @property (nonatomic, strong) UIBarButtonItem *selectAllBarButtonItem;
@@ -88,7 +88,7 @@
     
     NSUInteger sectionCount = [self.sectionDataModels count];
     for (NSInteger section = 0; section < sectionCount; section++) {
-        CJSectionDataModel *sectionDataModel = [self.sectionDataModels objectAtIndex:section];
+        CQDMSectionDataModel *sectionDataModel = [self.sectionDataModels objectAtIndex:section];
         NSUInteger rowCount = sectionDataModel.values.count;
         for (NSInteger row = 0; row < rowCount; row++) {
             NSIndexPath *indexPath = [NSIndexPath indexPathForRow:row inSection:section];
@@ -109,12 +109,12 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    CJSectionDataModel *sectionDataModel = [self.sectionDataModels objectAtIndex:section];
+    CQDMSectionDataModel *sectionDataModel = [self.sectionDataModels objectAtIndex:section];
     return sectionDataModel.values.count;
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
-    CJSectionDataModel *sectionDataModel = [self.sectionDataModels objectAtIndex:section];
+    CQDMSectionDataModel *sectionDataModel = [self.sectionDataModels objectAtIndex:section];
     
     return sectionDataModel.theme;
 }
@@ -124,7 +124,7 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    CJSectionDataModel *sectionDataModel = [self.sectionDataModels objectAtIndex:indexPath.section];
+    CQDMSectionDataModel *sectionDataModel = [self.sectionDataModels objectAtIndex:indexPath.section];
     TestDataModel *dataModel = [sectionDataModel.values objectAtIndex:indexPath.row];
 
     switch (indexPath.section) {

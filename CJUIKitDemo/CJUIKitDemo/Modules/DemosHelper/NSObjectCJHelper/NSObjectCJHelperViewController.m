@@ -25,10 +25,10 @@
     NSMutableArray *sectionDataModels = [[NSMutableArray alloc] init];
     //Toast
     {
-        CJSectionDataModel *sectionDataModel = [[CJSectionDataModel alloc] init];
+        CQDMSectionDataModel *sectionDataModel = [[CQDMSectionDataModel alloc] init];
         sectionDataModel.theme = @"字符串相关";
         {
-            CJModuleModel *toastModule = [[CJModuleModel alloc] init];
+            CQDMModuleModel *toastModule = [[CQDMModuleModel alloc] init];
             toastModule.title = @"控制台输出 [NSNull null] 的值";
             toastModule.actionBlock = ^{
                 NSNull *string1 = [NSNull null];
@@ -40,7 +40,7 @@
             [sectionDataModel.values addObject:toastModule];
         }
         {
-            CJModuleModel *toastModule = [[CJModuleModel alloc] init];
+            CQDMModuleModel *toastModule = [[CQDMModuleModel alloc] init];
             toastModule.title = @"字符串判空，调用实例，无法正确判断";
             toastModule.actionBlock = ^{
 //                NSString *string;
@@ -49,7 +49,7 @@
             [sectionDataModel.values addObject:toastModule];
         }
         {
-            CJModuleModel *toastModule = [[CJModuleModel alloc] init];
+            CQDMModuleModel *toastModule = [[CQDMModuleModel alloc] init];
             toastModule.title = @"字符串判空，调用类方法，可以正确判断";
             toastModule.actionBlock = ^{
                 NSString *string;

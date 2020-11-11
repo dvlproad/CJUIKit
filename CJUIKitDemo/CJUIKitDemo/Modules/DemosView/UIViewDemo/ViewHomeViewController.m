@@ -36,10 +36,10 @@
     
     //Drag
     {
-        CJSectionDataModel *sectionDataModel = [[CJSectionDataModel alloc] init];
+        CQDMSectionDataModel *sectionDataModel = [[CQDMSectionDataModel alloc] init];
         sectionDataModel.theme = @"UIView+CJDragAction";
         {
-            CJModuleModel *dragViewModule = [[CJModuleModel alloc] init];
+            CQDMModuleModel *dragViewModule = [[CQDMModuleModel alloc] init];
             dragViewModule.title = @"Drag And KeepBounds (视图的拖曳和吸附)";
             dragViewModule.classEntry = [DragViewController class];
             dragViewModule.isCreateByXib = YES;
@@ -51,10 +51,10 @@
     
     //Animation
     {
-        CJSectionDataModel *sectionDataModel = [[CJSectionDataModel alloc] init];
+        CQDMSectionDataModel *sectionDataModel = [[CQDMSectionDataModel alloc] init];
         sectionDataModel.theme = @"UIView+CJAnimation";
         {
-            CJModuleModel *animateViewModule = [[CJModuleModel alloc] init];
+            CQDMModuleModel *animateViewModule = [[CQDMModuleModel alloc] init];
             animateViewModule.title = @"ViewAnimate (View动画)";
             animateViewModule.classEntry = [ViewAnimateViewController class];
             [sectionDataModel.values addObject:animateViewModule];
@@ -66,31 +66,31 @@
     
     //Popup
     {
-        CJSectionDataModel *sectionDataModel = [[CJSectionDataModel alloc] init];
+        CQDMSectionDataModel *sectionDataModel = [[CQDMSectionDataModel alloc] init];
         sectionDataModel.theme = @"UIView+CJPopupInView";
         {
-            CJModuleModel *popupInViewModule = [[CJModuleModel alloc] init];
+            CQDMModuleModel *popupInViewModule = [[CQDMModuleModel alloc] init];
             popupInViewModule.title = @"PopupInView (弹出到任意View)";
             popupInViewModule.classEntry = [PopupInViewVC class];
             popupInViewModule.isCreateByXib = YES;
             [sectionDataModel.values addObject:popupInViewModule];
         }
         {
-            CJModuleModel *popupInWindowModule = [[CJModuleModel alloc] init];
+            CQDMModuleModel *popupInWindowModule = [[CQDMModuleModel alloc] init];
             popupInWindowModule.title = @"PopupInWindow (弹出到Window)";
             popupInWindowModule.classEntry = [PopupInWindowVC class];
             popupInWindowModule.isCreateByXib = YES;
             [sectionDataModel.values addObject:popupInWindowModule];
         }
         {
-            CJModuleModel *showExtendViewModule = [[CJModuleModel alloc] init];
+            CQDMModuleModel *showExtendViewModule = [[CQDMModuleModel alloc] init];
             showExtendViewModule.title = @"ShowExtendView (弹出任意视图)";
             showExtendViewModule.classEntry = [ShowExtendViewVC class];
             showExtendViewModule.isCreateByXib = YES;
             [sectionDataModel.values addObject:showExtendViewModule];
         }
         {
-            CJModuleModel *showDropDownViewModule = [[CJModuleModel alloc] init];
+            CQDMModuleModel *showDropDownViewModule = [[CQDMModuleModel alloc] init];
             showDropDownViewModule.title = @"ShowDropDownView (弹出下拉视图)";
             showDropDownViewModule.classEntry = [ShowDropDownViewController class];
             showDropDownViewModule.isCreateByXib = YES;
