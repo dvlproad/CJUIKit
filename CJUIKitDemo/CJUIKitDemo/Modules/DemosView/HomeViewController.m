@@ -23,7 +23,6 @@
 #import "TestTextFieldOffsetViewController.h"
 #import "TextViewController.h"
 #import "SliderHomeViewController.h"
-#import "SearchBarViewController.h"
 
 //Cell
 #import "BaseTableViewCellViewController.h"
@@ -232,13 +231,6 @@
             badgeButtonModule.classEntry = [ColorViewController class];
             badgeButtonModule.isCreateByXib = NO;
             [sectionDataModel.values addObject:badgeButtonModule];
-        }
-        {
-            //CJSearchBar
-            CQDMModuleModel *cjSearchBarModuleModel = [[CQDMModuleModel alloc] init];
-            cjSearchBarModuleModel.title = @"CJSearchBar";
-            cjSearchBarModuleModel.classEntry = [SearchBarViewController class];
-            [sectionDataModel.values addObject:cjSearchBarModuleModel];
         }
         
         {
