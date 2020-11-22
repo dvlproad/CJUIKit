@@ -139,7 +139,11 @@
 
 #### 1、CJBaseUIKit更新记录
 
-* 2020-11-10 V0.7.0
+* 2020-11-23 V0.6.4
+
+> 1、为UIView+CJPopupInView 弹出到屏幕window中间增加中心偏移属性
+
+* 2020-11-10 V0.6.2
 
 > 1、优化 CJSliderControl 移动时候，新X的计算方法
 >

@@ -56,7 +56,7 @@
     
     UIColor *blankBGColor = [UIColor colorWithRed:.16 green:.17 blue:.21 alpha:.6];
     
-    [self cj_popupInCenterWindow:CJAnimationTypeNormal withSize:popupViewSize blankBGColor:blankBGColor showComplete:nil tapBlankComplete:^{
+    [self cj_popupInCenterWindow:CJAnimationTypeNormal withSize:popupViewSize centerOffset:CGPointZero blankBGColor:blankBGColor showComplete:nil tapBlankComplete:^{
         [self hidePopupView];
     }];
 }

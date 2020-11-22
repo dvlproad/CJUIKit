@@ -36,7 +36,27 @@
     CGSize popupViewSize = popupView.frame.size;
     //popupViewSize = CGSizeMake(200, 200);
     UIColor *blankBGColor = [UIColor colorWithRed:.16 green:.17 blue:.21 alpha:.6];
-    [popupView cj_popupInCenterWindow:CJAnimationTypeCATransform3D withSize:popupViewSize blankBGColor:blankBGColor showComplete:^{
+    [popupView cj_popupInCenterWindow:CJAnimationTypeCATransform3D withSize:popupViewSize centerOffset:CGPointZero blankBGColor:blankBGColor showComplete:^{
+        NSLog(@"显示完成");
+        
+    } tapBlankComplete:^{
+        NSLog(@"点击背景完成");
+        [popupView cj_hidePopupView];
+    }];
+}
+
+- (IBAction)popupInWindow_center2:(id)sender{
+//    WelcomeViewToPop *popupView = (WelcomeViewToPop *)[[[NSBundle mainBundle] loadNibNamed:@"WelcomeViewToPop" owner:nil options:nil] lastObject];
+    WelcomePopupView *popupView = (WelcomePopupView *)[[[NSBundle mainBundle] loadNibNamed:@"WelcomePopupView" owner:nil options:nil] lastObject];
+//    popupView.cjExtraOffset = 20;
+    
+    popupView.popupViewDelegate = self;
+    popupView.outestView = self.view;
+    
+    CGSize popupViewSize = popupView.frame.size;
+    //popupViewSize = CGSizeMake(200, 200);
+    UIColor *blankBGColor = [UIColor colorWithRed:.16 green:.17 blue:.21 alpha:.6];
+    [popupView cj_popupInCenterWindow:CJAnimationTypeCATransform3D withSize:popupViewSize centerOffset:CGPointMake(0, 30) blankBGColor:blankBGColor showComplete:^{
         NSLog(@"显示完成");
         
     } tapBlankComplete:^{
