@@ -149,10 +149,6 @@ Pod::Spec.new do |s|
     ss.dependency "CJBaseUIKit/UIImage"
   end
 
-  s.subspec 'CJSearchBar' do |ss|
-    ss.source_files = "CJBaseUIKit/CJSearchBar/**/*.{h,m}"
-  end
-
 
   # 与 UIScrollView 相关的基础类
   s.subspec 'UIScrollView' do |ss|

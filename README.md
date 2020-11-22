@@ -142,6 +142,8 @@
 * 2020-11-23 V0.6.4
 
 > 1、为UIView+CJPopupInView 弹出到屏幕window中间增加中心偏移属性
+>
+> 2、CJSearchBarDelegate相关之前已另起放在CQSearchKit库里来处理了
 
 * 2020-11-10 V0.6.2
 
