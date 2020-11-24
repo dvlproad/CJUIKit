@@ -7,11 +7,16 @@
 //
 
 #import "PopupInWindowVC.h"
+#import <IQKeyboardManager/IQKeyboardManager.h>
+#import <CQDemoKit/CJUIKitToastUtil.h>
+#import "UIView+CJPopupInView.h"
+#import "UIView+CJAutoMoveUp.h"
 
 #import "WelcomeViewToPop.h"
 #import "WelcomePopupView.h"
+#import "CQUpdateContentPopupView.h"
 
-#import "UIView+CJPopupInView.h"
+
 
 @interface PopupInWindowVC ()<CJPopupViewDelegate>
 
@@ -19,19 +24,68 @@
 
 @implementation PopupInWindowVC
 
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+    // Do any additional setup after loading the view.
+    self.navigationItem.title = NSLocalizedString(@"CJBaseUIKit首页", nil); //知识点:使得tabBar中的title可以和显示在顶部的title保持各自
+    
+    [IQKeyboardManager sharedManager].enable = NO; // 禁用 IQKeyboardManager
+    
+    NSMutableArray *sectionDataModels = [[NSMutableArray alloc] init];
+    
+    // 弹出到屏幕中间
+    {
+        CQDMSectionDataModel *sectionDataModel = [[CQDMSectionDataModel alloc] init];
+        sectionDataModel.theme = @"弹出到屏幕中间";
+        {
+            CQDMModuleModel *autoLayoutModule = [[CQDMModuleModel alloc] init];
+            autoLayoutModule.title = @"中间(弹出的视图中心处于window中心)";
+            autoLayoutModule.selector = @selector(popupInWindow_center1);
+            [sectionDataModel.values addObject:autoLayoutModule];
+        }
+        {
+            CQDMModuleModel *autoLayoutModule = [[CQDMModuleModel alloc] init];
+            autoLayoutModule.title = @"中间(弹出的视图中心偏离window中心)";
+            autoLayoutModule.selector = @selector(popupInWindow_center2);
+            [sectionDataModel.values addObject:autoLayoutModule];
+        }
+        [sectionDataModels addObject:sectionDataModel];
+    }
+    
+    // 弹出到屏幕底部
+    {
+        CQDMSectionDataModel *sectionDataModel = [[CQDMSectionDataModel alloc] init];
+        sectionDataModel.theme = @"弹出到屏幕底部";
+        {
+            CQDMModuleModel *autoLayoutModule = [[CQDMModuleModel alloc] init];
+            autoLayoutModule.title = @"底部(弹出的视图在window底部)";
+            autoLayoutModule.selector = @selector(popupInWindow_bottom1);
+            [sectionDataModel.values addObject:autoLayoutModule];
+        }
+        [sectionDataModels addObject:sectionDataModel];
+    }
+    
+    // 弹出到屏幕底部+自动上移
+    {
+        CQDMSectionDataModel *sectionDataModel = [[CQDMSectionDataModel alloc] init];
+        sectionDataModel.theme = @"弹出到屏幕底部+自动上移";
+        {
+            CQDMModuleModel *autoLayoutModule = [[CQDMModuleModel alloc] init];
+            autoLayoutModule.title = @"底部(弹出的视图在键盘弹出时候能够自动上移)";
+            autoLayoutModule.selector = @selector(popupInWindow_bottom2);
+            [sectionDataModel.values addObject:autoLayoutModule];
+        }
+        [sectionDataModels addObject:sectionDataModel];
+    }
+    
+    self.sectionDataModels = sectionDataModels;
 }
 
 
-- (IBAction)popupInWindow_center:(id)sender{
-//    WelcomeViewToPop *popupView = (WelcomeViewToPop *)[[[NSBundle mainBundle] loadNibNamed:@"WelcomeViewToPop" owner:nil options:nil] lastObject];
-    WelcomePopupView *popupView = (WelcomePopupView *)[[[NSBundle mainBundle] loadNibNamed:@"WelcomePopupView" owner:nil options:nil] lastObject];
-//    popupView.cjExtraOffset = 20;
-    
-    popupView.popupViewDelegate = self;
-    popupView.outestView = self.view;
+
+- (void)popupInWindow_center1 {
+    WelcomePopupView *popupView = [self welcomePopupView];
     
     CGSize popupViewSize = popupView.frame.size;
     //popupViewSize = CGSizeMake(200, 200);
@@ -45,13 +99,8 @@
     }];
 }
 
-- (IBAction)popupInWindow_center2:(id)sender{
-//    WelcomeViewToPop *popupView = (WelcomeViewToPop *)[[[NSBundle mainBundle] loadNibNamed:@"WelcomeViewToPop" owner:nil options:nil] lastObject];
-    WelcomePopupView *popupView = (WelcomePopupView *)[[[NSBundle mainBundle] loadNibNamed:@"WelcomePopupView" owner:nil options:nil] lastObject];
-//    popupView.cjExtraOffset = 20;
-    
-    popupView.popupViewDelegate = self;
-    popupView.outestView = self.view;
+- (void)popupInWindow_center2 {
+    WelcomePopupView *popupView = [self welcomePopupView];
     
     CGSize popupViewSize = popupView.frame.size;
     //popupViewSize = CGSizeMake(200, 200);
@@ -66,9 +115,42 @@
 }
 
 
-- (IBAction)popupInWindow_bottom:(id)sender{
+- (WelcomePopupView *)welcomePopupView {
+    //    WelcomeViewToPop *popupView = (WelcomeViewToPop *)[[[NSBundle mainBundle] loadNibNamed:@"WelcomeViewToPop" owner:nil options:nil] lastObject];
+        WelcomePopupView *popupView = (WelcomePopupView *)[[[NSBundle mainBundle] loadNibNamed:@"WelcomePopupView" owner:nil options:nil] lastObject];
+    //    popupView.cjExtraOffset = 20;
+        
+        popupView.popupViewDelegate = self;
+        popupView.outestView = self.view;
+    
+    return popupView;
+}
+
+- (void)popupInWindow_bottom1 {
     WelcomeViewToPop *popupView = (WelcomeViewToPop *)[[[NSBundle mainBundle] loadNibNamed:@"WelcomeViewToPop" owner:nil options:nil] lastObject];
     popupView.popupViewDelegate = self;
+//    [popupView cj_autoMoveUpByKeyboard:NO spacing:0];
+    
+    CGFloat popupViewHeight = CGRectGetHeight(popupView.frame);
+    UIColor *blankBGColor = [UIColor colorWithRed:.16 green:.17 blue:.21 alpha:.6];
+    [popupView cj_popupInBottomWindow:CJAnimationTypeNormal withHeight:popupViewHeight edgeInsets:UIEdgeInsetsZero blankBGColor:blankBGColor showComplete:^{
+        NSLog(@"显示完成");
+        
+    } tapBlankComplete:^{
+        NSLog(@"点击背景完成");
+        [popupView cj_hidePopupView];
+    }];
+}
+
+
+- (void)popupInWindow_bottom2 {
+    CQUpdateContentPopupView *popupView = [[CQUpdateContentPopupView alloc] init];
+    [popupView setupTitle:NSLocalizedString(@"编辑昵称", nil) placeholder:@"请输入" updateCompleteBlock:^(NSString * _Nonnull bText) {
+        NSString *message = [NSString stringWithFormat:@"新内容为%@", bText];
+        [CJUIKitToastUtil showMessage:message];
+        [popupView cj_hidePopupView];
+    }];
+    [popupView cj_autoMoveUpByKeyboard:YES spacing:0];
     
     CGFloat popupViewHeight = CGRectGetHeight(popupView.frame);
     UIColor *blankBGColor = [UIColor colorWithRed:.16 green:.17 blue:.21 alpha:.6];

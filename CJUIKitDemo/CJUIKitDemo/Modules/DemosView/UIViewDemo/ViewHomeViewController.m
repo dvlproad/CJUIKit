@@ -79,7 +79,7 @@
             CQDMModuleModel *popupInWindowModule = [[CQDMModuleModel alloc] init];
             popupInWindowModule.title = @"PopupInWindow (弹出到Window)";
             popupInWindowModule.classEntry = [PopupInWindowVC class];
-            popupInWindowModule.isCreateByXib = YES;
+
             [sectionDataModel.values addObject:popupInWindowModule];
         }
         {

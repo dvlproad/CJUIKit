@@ -123,7 +123,6 @@
 		7850B70520937C5A008F4A21 /* ShowDropDownViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7850B6F720937C59008F4A21 /* ShowDropDownViewController.xib */; };
 		7850B70620937C5A008F4A21 /* PopupInViewVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7850B6F820937C59008F4A21 /* PopupInViewVC.xib */; };
 		7850B70720937C5A008F4A21 /* ShowExtendViewVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 7850B6F920937C59008F4A21 /* ShowExtendViewVC.m */; };
-		7850B70820937C5A008F4A21 /* PopupInWindowVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7850B6FD20937C59008F4A21 /* PopupInWindowVC.xib */; };
 		7850B71120937E85008F4A21 /* WelcomeViewToPop.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7850B70A20937E85008F4A21 /* WelcomeViewToPop.xib */; };
 		7850B71220937E85008F4A21 /* WelcomePopupView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7850B70B20937E85008F4A21 /* WelcomePopupView.xib */; };
 		7850B71320937E85008F4A21 /* WelcomeViewToPop.m in Sources */ = {isa = PBXBuildFile; fileRef = 7850B70C20937E85008F4A21 /* WelcomeViewToPop.m */; };
@@ -318,6 +317,8 @@
 		80FF919D1FC5682B00E437CF /* CountDownTimeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 80FF91861FC5682A00E437CF /* CountDownTimeViewController.xib */; };
 		80FF919E1FC5682B00E437CF /* OtherHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80FF91881FC5682A00E437CF /* OtherHomeViewController.m */; };
 		80FF91C51FC581DD00E437CF /* UtilHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80FF91BF1FC581DD00E437CF /* UtilHomeViewController.m */; };
+		975164A2256CF5E5001DE112 /* UIView+CJAutoMoveUp.m in Sources */ = {isa = PBXBuildFile; fileRef = 975164A0256CF5E5001DE112 /* UIView+CJAutoMoveUp.m */; };
+		975164AE256CFE34001DE112 /* CQUpdateContentPopupView.m in Sources */ = {isa = PBXBuildFile; fileRef = 975164AD256CFE34001DE112 /* CQUpdateContentPopupView.m */; };
 		97578AAC25590E9300249AD6 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 97578AAB25590E9300249AD6 /* MainViewController.m */; };
 		97578AB225590F7100249AD6 /* UIWindow+RootSetting.m in Sources */ = {isa = PBXBuildFile; fileRef = 97578AB125590F7100249AD6 /* UIWindow+RootSetting.m */; };
 		97578D012559473500249AD6 /* TSRangeSliderControl1.m in Sources */ = {isa = PBXBuildFile; fileRef = 97578D002559473500249AD6 /* TSRangeSliderControl1.m */; };
@@ -555,7 +556,6 @@
 		7850B6FA20937C59008F4A21 /* PopupInViewVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PopupInViewVC.h; sourceTree = "<group>"; };
 		7850B6FB20937C59008F4A21 /* PopupInWindowVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PopupInWindowVC.h; sourceTree = "<group>"; };
 		7850B6FC20937C59008F4A21 /* ShowDropDownViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShowDropDownViewController.h; sourceTree = "<group>"; };
-		7850B6FD20937C59008F4A21 /* PopupInWindowVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PopupInWindowVC.xib; sourceTree = "<group>"; };
 		7850B6FE20937C59008F4A21 /* ShowExtendViewVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShowExtendViewVC.h; sourceTree = "<group>"; };
 		7850B70A20937E85008F4A21 /* WelcomeViewToPop.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WelcomeViewToPop.xib; sourceTree = "<group>"; };
 		7850B70B20937E85008F4A21 /* WelcomePopupView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WelcomePopupView.xib; sourceTree = "<group>"; };
@@ -890,6 +890,10 @@
 		80FF91BE1FC581DD00E437CF /* UtilHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UtilHomeViewController.h; sourceTree = "<group>"; };
 		80FF91BF1FC581DD00E437CF /* UtilHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UtilHomeViewController.m; sourceTree = "<group>"; };
 		935109AAB855F6CC8B84B9A5 /* libPods-CJUIKitDemoTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CJUIKitDemoTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		975164A0256CF5E5001DE112 /* UIView+CJAutoMoveUp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+CJAutoMoveUp.m"; sourceTree = "<group>"; };
+		975164A1256CF5E5001DE112 /* UIView+CJAutoMoveUp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+CJAutoMoveUp.h"; sourceTree = "<group>"; };
+		975164AC256CFE34001DE112 /* CQUpdateContentPopupView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CQUpdateContentPopupView.h; sourceTree = "<group>"; };
+		975164AD256CFE34001DE112 /* CQUpdateContentPopupView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CQUpdateContentPopupView.m; sourceTree = "<group>"; };
 		97578AAA25590E9300249AD6 /* MainViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
 		97578AAB25590E9300249AD6 /* MainViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
 		97578AB025590F7100249AD6 /* UIWindow+RootSetting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIWindow+RootSetting.h"; sourceTree = "<group>"; };
@@ -1124,6 +1128,8 @@
 			children = (
 				1562F24923F5DBF40009FCEA /* UIView+CJPopupInView.h */,
 				1562F24623F5DBF40009FCEA /* UIView+CJPopupInView.m */,
+				975164A1256CF5E5001DE112 /* UIView+CJAutoMoveUp.h */,
+				975164A0256CF5E5001DE112 /* UIView+CJAutoMoveUp.m */,
 				1562F24523F5DBF40009FCEA /* UIView+CJRounderCorner.h */,
 				1562F24823F5DBF40009FCEA /* UIView+CJRounderCorner.m */,
 				1562F24423F5DBF40009FCEA /* UIView+CJShowExtendView.h */,
@@ -1544,7 +1550,6 @@
 				7850B6F820937C59008F4A21 /* PopupInViewVC.xib */,
 				7850B6FB20937C59008F4A21 /* PopupInWindowVC.h */,
 				7850B6F320937C59008F4A21 /* PopupInWindowVC.m */,
-				7850B6FD20937C59008F4A21 /* PopupInWindowVC.xib */,
 				7850B6FC20937C59008F4A21 /* ShowDropDownViewController.h */,
 				7850B6F620937C59008F4A21 /* ShowDropDownViewController.m */,
 				7850B6F720937C59008F4A21 /* ShowDropDownViewController.xib */,
@@ -1564,6 +1569,8 @@
 				7850B71020937E85008F4A21 /* WelcomePopupView.m */,
 				7850B70B20937E85008F4A21 /* WelcomePopupView.xib */,
 				7850B70F20937E85008F4A21 /* WelcomeViewToPop.h */,
+				975164AC256CFE34001DE112 /* CQUpdateContentPopupView.h */,
+				975164AD256CFE34001DE112 /* CQUpdateContentPopupView.m */,
 				7850B70C20937E85008F4A21 /* WelcomeViewToPop.m */,
 				7850B70A20937E85008F4A21 /* WelcomeViewToPop.xib */,
 			);
@@ -2606,7 +2613,6 @@
 				156AC8D82406DBBE00A5A23D /* badgeButton_highlighted@2x.png in Resources */,
 				787FDB8E20500B5C008A46E3 /* slider_minimum_trackimage@2x.png in Resources */,
 				7880E6F7213C2C4C009C9BCF /* CJRandomNameUtil.txt in Resources */,
-				7850B70820937C5A008F4A21 /* PopupInWindowVC.xib in Resources */,
 				787FDB6520500B1F008A46E3 /* plus@2x.png in Resources */,
 				787FDB8D20500B5C008A46E3 /* slider_double_thumbImage_b@3x.png in Resources */,
 				1562F2D223F5DBF40009FCEA /* cjCheckBoxGreen2YES.png in Resources */,
@@ -2876,6 +2882,7 @@
 				78E1899E2177874B00B8781A /* SliderHomeViewController.m in Sources */,
 				78E18952217778D900B8781A /* NavigationBarHomeViewController.m in Sources */,
 				80D0120F210336E100D1EDF0 /* ChangeViewController.m in Sources */,
+				975164AE256CFE34001DE112 /* CQUpdateContentPopupView.m in Sources */,
 				1562F2F323F5DBF40009FCEA /* UITextField+CJSelectedTextRange.m in Sources */,
 				1562F2C323F5DBF40009FCEA /* UIColor+CJHex.m in Sources */,
 				1562F2D623F5DBF40009FCEA /* CJBaseTableViewCell.m in Sources */,
@@ -2971,6 +2978,7 @@
 				1562F2F223F5DBF40009FCEA /* UITextField+CJPadding.m in Sources */,
 				80FF91941FC5682B00E437CF /* TypeConvertViewController.m in Sources */,
 				1562F2E823F5DBF40009FCEA /* CJAdsorbModel.m in Sources */,
+				975164A2256CF5E5001DE112 /* UIView+CJAutoMoveUp.m in Sources */,
 				1562F2DE23F5DBF40009FCEA /* UIViewController+CJSystemBackButtonHandler.m in Sources */,
 				7808D5B921709E6B007FC851 /* UIViewController+CJChangeEnvironment.m in Sources */,
 				80FF90A71FC5649F00E437CF /* QRCodeViewController.m in Sources */,
