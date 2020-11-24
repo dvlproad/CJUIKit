@@ -301,6 +301,23 @@ static NSString *cjMustHideFromPopupViewKey = @"cjMustHideFromPopupView";
                                     popupViewWidth,
                                     popupViewHeight);
     
+    [self __popupViewShowFrame:popupViewShowFrame animationType:animationType];
+    
+    if(showPopupViewCompleteBlock){
+        showPopupViewCompleteBlock();
+    }
+}
+
+/*
+ *  视图
+ *
+ *  @param popupViewShowFrame   popupViewShowFrame
+ *  @param animationType        animationType
+ */
+- (void)__popupViewShowFrame:(CGRect)popupViewShowFrame animationType:(CJAnimationType)animationType {
+    UIWindow *keyWindow = [[UIApplication sharedApplication] keyWindow];
+    UIView *popupView = self;
+    
     if (animationType == CJAnimationTypeNone) {
         popupView.frame = popupViewShowFrame;
         
@@ -342,10 +359,6 @@ static NSString *cjMustHideFromPopupViewKey = @"cjMustHideFromPopupView";
                              
                          }];
         
-    }
-    
-    if(showPopupViewCompleteBlock){
-        showPopupViewCompleteBlock();
     }
 }
 

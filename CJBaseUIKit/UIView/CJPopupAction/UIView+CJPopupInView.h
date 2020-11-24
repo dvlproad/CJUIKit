@@ -5,6 +5,7 @@
 //  Created by ciyouzen on 15/11/12.
 //  Copyright (c) 2015年 dvlproad. All rights reserved.
 //
+//  本视图弹出到指定视图(如window)中的方法
 
 #import <UIKit/UIKit.h>
 #import <objc/runtime.h>
