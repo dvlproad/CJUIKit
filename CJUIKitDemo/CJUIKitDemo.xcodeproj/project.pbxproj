@@ -318,7 +318,6 @@
 		80FF919D1FC5682B00E437CF /* CountDownTimeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 80FF91861FC5682A00E437CF /* CountDownTimeViewController.xib */; };
 		80FF919E1FC5682B00E437CF /* OtherHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80FF91881FC5682A00E437CF /* OtherHomeViewController.m */; };
 		80FF91C51FC581DD00E437CF /* UtilHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80FF91BF1FC581DD00E437CF /* UtilHomeViewController.m */; };
-		9751643C256CE5CC001DE112 /* UIView+CJShowKeyboard.m in Sources */ = {isa = PBXBuildFile; fileRef = 9751643B256CE5CC001DE112 /* UIView+CJShowKeyboard.m */; };
 		97578AAC25590E9300249AD6 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 97578AAB25590E9300249AD6 /* MainViewController.m */; };
 		97578AB225590F7100249AD6 /* UIWindow+RootSetting.m in Sources */ = {isa = PBXBuildFile; fileRef = 97578AB125590F7100249AD6 /* UIWindow+RootSetting.m */; };
 		97578D012559473500249AD6 /* TSRangeSliderControl1.m in Sources */ = {isa = PBXBuildFile; fileRef = 97578D002559473500249AD6 /* TSRangeSliderControl1.m */; };
@@ -891,8 +890,6 @@
 		80FF91BE1FC581DD00E437CF /* UtilHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UtilHomeViewController.h; sourceTree = "<group>"; };
 		80FF91BF1FC581DD00E437CF /* UtilHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UtilHomeViewController.m; sourceTree = "<group>"; };
 		935109AAB855F6CC8B84B9A5 /* libPods-CJUIKitDemoTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CJUIKitDemoTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		9751643A256CE5CB001DE112 /* UIView+CJShowKeyboard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+CJShowKeyboard.h"; sourceTree = "<group>"; };
-		9751643B256CE5CC001DE112 /* UIView+CJShowKeyboard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+CJShowKeyboard.m"; sourceTree = "<group>"; };
 		97578AAA25590E9300249AD6 /* MainViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
 		97578AAB25590E9300249AD6 /* MainViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
 		97578AB025590F7100249AD6 /* UIWindow+RootSetting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIWindow+RootSetting.h"; sourceTree = "<group>"; };
@@ -1127,8 +1124,6 @@
 			children = (
 				1562F24923F5DBF40009FCEA /* UIView+CJPopupInView.h */,
 				1562F24623F5DBF40009FCEA /* UIView+CJPopupInView.m */,
-				9751643A256CE5CB001DE112 /* UIView+CJShowKeyboard.h */,
-				9751643B256CE5CC001DE112 /* UIView+CJShowKeyboard.m */,
 				1562F24523F5DBF40009FCEA /* UIView+CJRounderCorner.h */,
 				1562F24823F5DBF40009FCEA /* UIView+CJRounderCorner.m */,
 				1562F24423F5DBF40009FCEA /* UIView+CJShowExtendView.h */,
@@ -2767,7 +2762,11 @@
 				"${PODS_ROOT}/CJPicker/CJPicker/Resources/city.plist",
 				"${PODS_ROOT}/CJPicker/CJPicker/Resources/line_gray_pickerToolbar.png",
 				"${PODS_ROOT}/CJPicker/CJPicker/Resources/line_gray_pickerToolbar@2x.png",
-				"${PODS_ROOT}/MJRefresh/MJRefresh/MJRefresh.bundle",
+				"${PODS_ROOT}/CQDemoKit/CQDemoKit/BaseVC/TabBar/Resources/icons8-calendar.png",
+				"${PODS_ROOT}/CQDemoKit/CQDemoKit/BaseVC/TabBar/Resources/icons8-folder.png",
+				"${PODS_ROOT}/CQDemoKit/CQDemoKit/BaseVC/TabBar/Resources/icons8-home.png",
+				"${PODS_ROOT}/CQDemoKit/CQDemoKit/BaseVC/TabBar/Resources/icons8-menu.png",
+				"${PODS_ROOT}/CQDemoKit/CQDemoKit/BaseVC/TabBar/Resources/icons8-settings.png",
 				"${PODS_ROOT}/PinYin4Objc/PinYin4Objc/Resources/unicode_to_hanyu_pinyin.txt",
 				"${PODS_ROOT}/SAMKeychain/Support/SAMKeychain.bundle",
 			);
@@ -2777,7 +2776,11 @@
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/city.plist",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/line_gray_pickerToolbar.png",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/line_gray_pickerToolbar@2x.png",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MJRefresh.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/icons8-calendar.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/icons8-folder.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/icons8-home.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/icons8-menu.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/icons8-settings.png",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/unicode_to_hanyu_pinyin.txt",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/SAMKeychain.bundle",
 			);
@@ -2878,7 +2881,6 @@
 				1562F2D623F5DBF40009FCEA /* CJBaseTableViewCell.m in Sources */,
 				787FDB8620500B5C008A46E3 /* SliderViewController.m in Sources */,
 				7850B70020937C5A008F4A21 /* DragViewController.m in Sources */,
-				9751643C256CE5CC001DE112 /* UIView+CJShowKeyboard.m in Sources */,
 				1562F2E023F5DBF40009FCEA /* CJSwitchSliderStatusModel.m in Sources */,
 				80FF90A41FC5649F00E437CF /* HomeViewController.m in Sources */,
 				800E07E52016CCF500799B78 /* DeviceInfo.m in Sources */,

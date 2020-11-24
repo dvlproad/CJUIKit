@@ -65,22 +65,24 @@ PODS:
   - CJFoundation/NSString (0.1.3)
   - CJPicker (1.3.2)
   - CJPopupView/CJPopoverView (2.1.0)
-  - CQDemoKit/BaseUtil (0.5.6)
-  - CQDemoKit/BaseVC (0.5.6):
-    - CQDemoKit/BaseVC/Base (= 0.5.6)
-    - CQDemoKit/BaseVC/Collection (= 0.5.6)
-    - CQDemoKit/BaseVC/ScrollView (= 0.5.6)
-    - CQDemoKit/BaseVC/TableView (= 0.5.6)
-    - CQDemoKit/BaseVC/TextView (= 0.5.6)
-  - CQDemoKit/BaseVC/Base (0.5.6):
+  - CQDemoKit/BaseUtil (0.5.9)
+  - CQDemoKit/BaseVC (0.5.9):
+    - CQDemoKit/BaseVC/Base (= 0.5.9)
+    - CQDemoKit/BaseVC/Collection (= 0.5.9)
+    - CQDemoKit/BaseVC/ScrollView (= 0.5.9)
+    - CQDemoKit/BaseVC/TabBar (= 0.5.9)
+    - CQDemoKit/BaseVC/TableView (= 0.5.9)
+    - CQDemoKit/BaseVC/TextView (= 0.5.9)
+  - CQDemoKit/BaseVC/Base (0.5.9):
     - Masonry
-  - CQDemoKit/BaseVC/Collection (0.5.6):
+  - CQDemoKit/BaseVC/Collection (0.5.9):
     - CQDemoKit/BaseVC/Base
-  - CQDemoKit/BaseVC/ScrollView (0.5.6):
+  - CQDemoKit/BaseVC/ScrollView (0.5.9):
     - CQDemoKit/BaseVC/Base
-  - CQDemoKit/BaseVC/TableView (0.5.6):
+  - CQDemoKit/BaseVC/TabBar (0.5.9)
+  - CQDemoKit/BaseVC/TableView (0.5.9):
     - CQDemoKit/BaseVC/Base
-  - CQDemoKit/BaseVC/TextView (0.5.6):
+  - CQDemoKit/BaseVC/TextView (0.5.9):
     - CQDemoKit/BaseUtil
     - CQDemoKit/BaseVC/Base
   - IQKeyboardManager (6.5.5)
@@ -88,12 +90,8 @@ PODS:
     - Mantle/extobjc (= 2.1.1)
   - Mantle/extobjc (2.1.1)
   - Masonry (1.1.0)
-  - MBProgressHUD (1.2.0)
   - MJExtension (3.0.17)
-  - MJRefresh (3.1.17)
-  - OpenUDID (1.0.0)
   - PinYin4Objc (1.1.1)
-  - PureLayout (3.0.2)
   - SAMKeychain (1.5.3)
   - SDWebImage (5.8.0):
     - SDWebImage/Core (= 5.8.0)
@@ -114,18 +112,13 @@ DEPENDENCIES:
   - CJFoundation (from `../`)
   - CJPicker (~> 1.3.2)
   - CJPopupView/CJPopoverView
-  - CQDemoKit/BaseUtil (~> 0.5.6)
-  - CQDemoKit/BaseVC (~> 0.5.6)
+  - CQDemoKit/BaseUtil (~> 0.5.9)
+  - CQDemoKit/BaseVC (~> 0.5.9)
   - IQKeyboardManager
   - Mantle (~> 2.1.0)
   - Masonry
-  - MBProgressHUD
   - MJExtension (~> 3.0.13)
-  - MJRefresh (~> 3.1.12)
-  - OpenUDID (~> 1.0.0)
   - PinYin4Objc (~> 1.1.1)
-  - PureLayout (~> 3.0.2)
-  - SAMKeychain
   - SDWebImage
   - Shimmer (~> 1.0.2)
   - UINavigation-SXFixSpace
@@ -143,12 +136,8 @@ SPEC REPOS:
     - IQKeyboardManager
     - Mantle
     - Masonry
-    - MBProgressHUD
     - MJExtension
-    - MJRefresh
-    - OpenUDID
     - PinYin4Objc
-    - PureLayout
     - SAMKeychain
     - SDWebImage
     - Shimmer
@@ -175,22 +164,18 @@ SPEC CHECKSUMS:
   CJFoundation: 53b4df7152c6d6fd776f55f387c67f431b8574bd
   CJPicker: c33099d47323271b91c2ce112976d1bee19a70ce
   CJPopupView: c7685f6a0225a89c72d97ea946f2816b5442abaf
-  CQDemoKit: 07874548bcda546e1c4d714cd73b66fd9207a707
+  CQDemoKit: ef311a1fbb8ba1c58d5974da948ddaceac5ac245
   IQKeyboardManager: 3a8b9e603f8b0eeaf5f096a1f2b2cfcf121992ef
   Mantle: 35238ae6f2e2b2d474fa7b67fee82a59fea71915
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
-  MBProgressHUD: 3ee5efcc380f6a79a7cc9b363dd669c5e1ae7406
   MJExtension: 74ec83124a68891619fb7ba9c5c811bbf1691076
-  MJRefresh: ee5b68f639775462faba4db0fd243baf4d42c2cf
-  OpenUDID: e7cb6984c7304906ad20f3a36bf087b025896b6b
   PinYin4Objc: 3fa9673610368330e2dfb688b1d19a35c3930a78
-  PureLayout: 4d550abe49a94f24c2808b9b95db9131685fe4cd
   SAMKeychain: 483e1c9f32984d50ca961e26818a534283b4cd5c
   SDWebImage: 84000f962cbfa70c07f19d2234cbfcf5d779b5dc
   Shimmer: c5374be1c2b0c9e292fb05b339a513cf291cac86
   UINavigation-SXFixSpace: 10f223253ebff2ceefa26694e23b7694269763c4
   YYText: 5c461d709e24d55a182d1441c41dc639a18a4849
 
-PODFILE CHECKSUM: 6facacf3753a7f6a5157417feaf4c3197c1c5414
+PODFILE CHECKSUM: 06efc067c9587a13aa382be1c13a860479fd48be
 
-COCOAPODS: 1.9.3
+COCOAPODS: 1.10.0

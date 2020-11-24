@@ -23,17 +23,11 @@ inhibit_all_warnings!
 #end
 
 source 'https://github.com/CocoaPods/Specs.git'
-source 'https://gitee.com/dvlproad/dvlproadSpecs'  #这里要增加的是这条私有仓库的地址，而不是那些私有仓库里的库的地址，即如果你是增加'https://gitee.com/dvlproad/CJCustomView.git'那就错了。（之前自己犯过一次错）
 
 inhibit_all_warnings! #inhibit_warnings参数能够有效的抑制CocoaPods引入的第三方代码库产生的warning。
 
-target 'CJUIKitDemo' do  
-    pod 'PureLayout', '~> 3.0.2'
+target 'CJUIKitDemo' do
     pod 'Masonry'
-
-    pod 'MJRefresh', '~> 3.1.12'
-    pod 'MBProgressHUD' #CJToast需要使用
-    pod 'OpenUDID', '~> 1.0.0'
 
     pod 'Shimmer', '~> 1.0.2' #fackBook的闪光动画
 
@@ -45,9 +39,6 @@ target 'CJUIKitDemo' do
     # 搜索功能需要使用的库
     pod 'PinYin4Objc', '~> 1.1.1'
 
-    # 账号安全需要依赖的库
-    pod 'SAMKeychain'
-
     # 基本的第三方库
     pod 'MJExtension', '~> 3.0.13'
     pod 'Mantle', '~> 2.1.0'
@@ -56,7 +47,7 @@ target 'CJUIKitDemo' do
 
 #    pod 'CJBaseUIKit',          :path => '../'
     
-    pod 'CQDemoKit',            '~> 0.5.6',     :subspecs => ['BaseVC', 'BaseUtil']
+    pod 'CQDemoKit',            '~> 0.5.9',     :subspecs => ['BaseVC', 'BaseUtil']
 #    pod 'CJBaseUIKit',           :path => '../’
     pod 'CJBaseUtil',           :path => '../'
     pod 'CJFoundation',         :path => '../'
