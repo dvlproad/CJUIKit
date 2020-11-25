@@ -60,8 +60,9 @@ typedef NS_ENUM(NSUInteger, CJSliderValueChangeHappenType) {
 // 弹出框视图
 @property (nonatomic, strong) UIView *leftPopover;
 @property (nonatomic, strong) UIView *rightPopover;
-@property (nonatomic, assign) CGSize popoverSize;           /**< 弹出框大小（默认CGSizeMake(30, 32)） */
-@property (nonatomic, assign) BOOL popoverShowTimeType;     /**< 弹出框显示的时机（默认一直显示） */
+@property (nonatomic, assign) CGFloat popoverSpacing;   /**< 弹出框底部与滑块顶部间距大小（默认0） */
+@property (nonatomic, assign) CGSize popoverSize;       /**< 弹出框大小（默认CGSizeMake(30, 32)） */
+@property (nonatomic, assign) BOOL popoverShowTimeType; /**< 弹出框显示的时机（默认一直显示） */
 
 /*
  *  初始化

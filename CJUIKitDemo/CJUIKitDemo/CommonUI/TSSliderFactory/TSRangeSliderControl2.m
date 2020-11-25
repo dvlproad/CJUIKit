@@ -66,6 +66,8 @@
     
     self.trackHeight = 15;                  // 设置滑道高度
     self.thumbSize = CGSizeMake(100, 30);   // 设置滑块大小
+    self.popoverSize = CGSizeMake(30, 32);  // 设置弹出框大小
+    self.popoverSpacing = 2;                // 设置弹出框底部与滑块顶部间距大小
     
     UIImage *normalImage = [UIImage imageNamed:@"slider_double_thumbImage_a"];
     UIImage *highlightedImage = [UIImage imageNamed:@"slider_double_thumbImage_b"];

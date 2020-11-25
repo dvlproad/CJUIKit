@@ -139,6 +139,12 @@
 
 #### 1、CJBaseUIKit更新记录
 
+* 2020-11-26 V0.6.6
+
+>1、增加本视图据键盘自动上移的方法：\#import "UIView+CJAutoMoveUp.h"
+>
+>2、重构CJRangeSliderControl ：增加连popoverView都可以允许自定义，并增加弹出框popoverView底部与滑块顶部间距大小属性popoverSpacing
+
 * 2020-11-23 V0.6.4
 
 > 1、为UIView+CJPopupInView 弹出到屏幕window中间增加中心偏移属性

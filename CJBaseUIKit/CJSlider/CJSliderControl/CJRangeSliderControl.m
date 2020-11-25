@@ -220,7 +220,7 @@ static NSTimeInterval const kMTRngeSliderDidTapSlidAnimationDuration   = 0.3f;
     
     CGFloat popoverWidth = self.popoverSize.width;  // 弹出框的宽
     CGFloat popoverHeight = self.popoverSize.height;// 弹出框的高
-    CGFloat popoverY = thumbY - popoverHeight;
+    CGFloat popoverY = thumbY - self.popoverSpacing - popoverHeight;
     self.leftPopover.frame = CGRectMake(leftThumbX, popoverY, popoverWidth, popoverHeight);
     self.rightPopover.frame = CGRectMake(rightThumbX, popoverY, popoverWidth, popoverHeight);
 
