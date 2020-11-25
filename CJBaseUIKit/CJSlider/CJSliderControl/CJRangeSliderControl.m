@@ -271,9 +271,8 @@ static NSTimeInterval const kMTRngeSliderDidTapSlidAnimationDuration   = 0.3f;
         [self updateFrontImageView];
         
     } completion:^(BOOL finished) {
-        [self updateEndDragThumbStatus:isCloseLeftThumb];
+        [self updateEndDragThumbStatus:isCloseLeftThumb isTouch:YES];
         [self updatePopover:isCloseLeftThumb];
-        [self hidePopover:isCloseLeftThumb animationDuration:1.0f];
     }];
 }
 
@@ -348,12 +347,21 @@ static NSTimeInterval const kMTRngeSliderDidTapSlidAnimationDuration   = 0.3f;
     CGFloat rightThumbPercent = self.rightThumb.frame.origin.x / (self.bounds.size.width - thumbWidth);
     return rightThumbPercent;
 }
-/**
+/*
  *  更新结束拖动时候Thumb的显示状态
  *
- *  @param isLeftThumb 是否左边的Thumb
+ *  @param isLeftThumb      是否是移动左滑块/靠近左滑块的Thumb
+ *  @param isTouch          是否是点击操作(否,则即代表是按住滑块的拖动动作)
  */
-- (void)updateEndDragThumbStatus:(BOOL)isLeftThumb {
+- (void)updateEndDragThumbStatus:(BOOL)isLeftThumb isTouch:(BOOL)isTouch {
+    if (self.popoverShowTimeType == CJSliderPopoverShowTimeTypeDrag) { // 只有Drag的时候才显示Popover
+        if (isTouch) {
+            [self hidePopover:isLeftThumb animationDuration:1.0f];
+        } else {
+            [self hidePopover:isLeftThumb];
+        }
+    }
+    
     self.rightThumb.userInteractionEnabled = YES;
     self.leftThumb.userInteractionEnabled = YES;
 }
@@ -435,11 +443,7 @@ static NSTimeInterval const kMTRngeSliderDidTapSlidAnimationDuration   = 0.3f;
     BOOL isLeftThumb = [self __isLeftThumb:button];
     
     //更新Thumb状态
-    [self updateEndDragThumbStatus:isLeftThumb];
-    
-    if (self.popoverShowTimeType == CJSliderPopoverShowTimeTypeDrag) { // 只有Drag的时候才显示Popover
-        [self hidePopover:isLeftThumb]; //隐藏Popover
-    }
+    [self updateEndDragThumbStatus:isLeftThumb isTouch:NO];
 }
 
 - (void)buttonDidDrag:(UIButton *)thumb withEvent:(UIEvent *)event {
@@ -547,7 +551,7 @@ static NSTimeInterval const kMTRngeSliderDidTapSlidAnimationDuration   = 0.3f;
 
 
 
-#pragma mark - Getter and Setter
+#pragma mark - Lazy
 - (UIButton *)leftThumb {
     if (!_leftThumb) {
         _leftThumb = [UIButton buttonWithType:UIButtonTypeCustom];
