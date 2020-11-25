@@ -190,6 +190,7 @@
 		7894C2A7256ECAE200C73B5E /* CQAgeRangeSliderControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 7894C2A2256ECAE100C73B5E /* CQAgeRangeSliderControl.m */; };
 		7894C2A8256ECAE200C73B5E /* slider_range_start@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7894C2A4256ECAE200C73B5E /* slider_range_start@3x.png */; };
 		7894C2A9256ECAE200C73B5E /* slider_range_start@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7894C2A5256ECAE200C73B5E /* slider_range_start@2x.png */; };
+		7894C2C2256ED89C00C73B5E /* UIView+CJAutoMoveUp.m in Sources */ = {isa = PBXBuildFile; fileRef = 7894C2C0256ED89C00C73B5E /* UIView+CJAutoMoveUp.m */; };
 		789A4EE021FAAC76001528B9 /* CJBaseTableViewCell+ConfigureForDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 789A4EDF21FAAC76001528B9 /* CJBaseTableViewCell+ConfigureForDataModel.m */; };
 		789C443C21EECEE800181144 /* CJAppVersionUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 789C443A21EECEE700181144 /* CJAppVersionUtil.m */; };
 		789C447421F05D4B00181144 /* UIImageTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = 789C447321F05D4B00181144 /* UIImageTestCase.m */; };
@@ -320,7 +321,6 @@
 		80FF919D1FC5682B00E437CF /* CountDownTimeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 80FF91861FC5682A00E437CF /* CountDownTimeViewController.xib */; };
 		80FF919E1FC5682B00E437CF /* OtherHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80FF91881FC5682A00E437CF /* OtherHomeViewController.m */; };
 		80FF91C51FC581DD00E437CF /* UtilHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80FF91BF1FC581DD00E437CF /* UtilHomeViewController.m */; };
-		975164A2256CF5E5001DE112 /* UIView+CJAutoMoveUp.m in Sources */ = {isa = PBXBuildFile; fileRef = 975164A0256CF5E5001DE112 /* UIView+CJAutoMoveUp.m */; };
 		975164AE256CFE34001DE112 /* CQUpdateContentPopupView.m in Sources */ = {isa = PBXBuildFile; fileRef = 975164AD256CFE34001DE112 /* CQUpdateContentPopupView.m */; };
 		97578AAC25590E9300249AD6 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 97578AAB25590E9300249AD6 /* MainViewController.m */; };
 		97578AB225590F7100249AD6 /* UIWindow+RootSetting.m in Sources */ = {isa = PBXBuildFile; fileRef = 97578AB125590F7100249AD6 /* UIWindow+RootSetting.m */; };
@@ -665,6 +665,8 @@
 		7894C2A4256ECAE200C73B5E /* slider_range_start@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "slider_range_start@3x.png"; sourceTree = "<group>"; };
 		7894C2A5256ECAE200C73B5E /* slider_range_start@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "slider_range_start@2x.png"; sourceTree = "<group>"; };
 		7894C2A6256ECAE200C73B5E /* CQAgeRangeSliderControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CQAgeRangeSliderControl.h; sourceTree = "<group>"; };
+		7894C2C0256ED89C00C73B5E /* UIView+CJAutoMoveUp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+CJAutoMoveUp.m"; sourceTree = "<group>"; };
+		7894C2C1256ED89C00C73B5E /* UIView+CJAutoMoveUp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+CJAutoMoveUp.h"; sourceTree = "<group>"; };
 		789A4EDE21FAAC76001528B9 /* CJBaseTableViewCell+ConfigureForDataModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CJBaseTableViewCell+ConfigureForDataModel.h"; sourceTree = "<group>"; };
 		789A4EDF21FAAC76001528B9 /* CJBaseTableViewCell+ConfigureForDataModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "CJBaseTableViewCell+ConfigureForDataModel.m"; sourceTree = "<group>"; };
 		789C443A21EECEE700181144 /* CJAppVersionUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJAppVersionUtil.m; sourceTree = "<group>"; };
@@ -896,8 +898,6 @@
 		80FF91BE1FC581DD00E437CF /* UtilHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UtilHomeViewController.h; sourceTree = "<group>"; };
 		80FF91BF1FC581DD00E437CF /* UtilHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UtilHomeViewController.m; sourceTree = "<group>"; };
 		935109AAB855F6CC8B84B9A5 /* libPods-CJUIKitDemoTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CJUIKitDemoTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		975164A0256CF5E5001DE112 /* UIView+CJAutoMoveUp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+CJAutoMoveUp.m"; sourceTree = "<group>"; };
-		975164A1256CF5E5001DE112 /* UIView+CJAutoMoveUp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+CJAutoMoveUp.h"; sourceTree = "<group>"; };
 		975164AC256CFE34001DE112 /* CQUpdateContentPopupView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CQUpdateContentPopupView.h; sourceTree = "<group>"; };
 		975164AD256CFE34001DE112 /* CQUpdateContentPopupView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CQUpdateContentPopupView.m; sourceTree = "<group>"; };
 		97578AAA25590E9300249AD6 /* MainViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
@@ -1115,6 +1115,7 @@
 		1562F24223F5DBF40009FCEA /* UIView */ = {
 			isa = PBXGroup;
 			children = (
+				7894C2BF256ED89C00C73B5E /* CJAutoMoveUp */,
 				1562F25023F5DBF40009FCEA /* CJAnimation */,
 				1562F24A23F5DBF40009FCEA /* CJDragAction */,
 				1562F25423F5DBF40009FCEA /* CJGestureRecognizer */,
@@ -1132,8 +1133,6 @@
 			children = (
 				1562F24923F5DBF40009FCEA /* UIView+CJPopupInView.h */,
 				1562F24623F5DBF40009FCEA /* UIView+CJPopupInView.m */,
-				975164A1256CF5E5001DE112 /* UIView+CJAutoMoveUp.h */,
-				975164A0256CF5E5001DE112 /* UIView+CJAutoMoveUp.m */,
 				1562F24523F5DBF40009FCEA /* UIView+CJRounderCorner.h */,
 				1562F24823F5DBF40009FCEA /* UIView+CJRounderCorner.m */,
 				1562F24423F5DBF40009FCEA /* UIView+CJShowExtendView.h */,
@@ -1830,6 +1829,15 @@
 				7894C2A5256ECAE200C73B5E /* slider_range_start@2x.png */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		7894C2BF256ED89C00C73B5E /* CJAutoMoveUp */ = {
+			isa = PBXGroup;
+			children = (
+				7894C2C0256ED89C00C73B5E /* UIView+CJAutoMoveUp.m */,
+				7894C2C1256ED89C00C73B5E /* UIView+CJAutoMoveUp.h */,
+			);
+			path = CJAutoMoveUp;
 			sourceTree = "<group>";
 		};
 		789A19681E61B87D008081E3 /* Resources */ = {
@@ -2892,6 +2900,7 @@
 				80FF90B11FC5649F00E437CF /* NavigationBarChangePositonViewController.m in Sources */,
 				7850B71420937E85008F4A21 /* WelcomePopupView.m in Sources */,
 				78B6C2E02159D20000D5864E /* DemoUser.m in Sources */,
+				7894C2C2256ED89C00C73B5E /* UIView+CJAutoMoveUp.m in Sources */,
 				1562F2B523F5DBF40009FCEA /* UIImage+CJTransformSize.m in Sources */,
 				1562F2BD23F5DBF40009FCEA /* CJLabel.m in Sources */,
 				782ACC98223C0E220041B642 /* CodeScrollViewController1.m in Sources */,
@@ -2993,7 +3002,6 @@
 				1562F2F223F5DBF40009FCEA /* UITextField+CJPadding.m in Sources */,
 				80FF91941FC5682B00E437CF /* TypeConvertViewController.m in Sources */,
 				1562F2E823F5DBF40009FCEA /* CJAdsorbModel.m in Sources */,
-				975164A2256CF5E5001DE112 /* UIView+CJAutoMoveUp.m in Sources */,
 				1562F2DE23F5DBF40009FCEA /* UIViewController+CJSystemBackButtonHandler.m in Sources */,
 				7808D5B921709E6B007FC851 /* UIViewController+CJChangeEnvironment.m in Sources */,
 				80FF90A71FC5649F00E437CF /* QRCodeViewController.m in Sources */,

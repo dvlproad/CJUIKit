@@ -1,5 +1,6 @@
 Pod::Spec.new do |s|
   # 验证方法：pod lib lint CJBaseUIKit.podspec --allow-warnings --use-libraries --verbose
+  # 上传方法：pod trunk push CJBaseUIKit.podspec --allow-warnings --use-libraries --verbose
   # pod的本地索引文件：~/Library/Caches/CocoaPods/search_index.json
   # pod的owner操作：https://www.jianshu.com/p/a9b8c2a1f3cf
   s.name         = "CJBaseUIKit"
@@ -16,6 +17,7 @@ Pod::Spec.new do |s|
                  - CJBaseUIKit/UIView/CJDragAction：视图拖动
                  - CJBaseUIKit/UIView/CJShakeAction：视图抖动
                  - CJBaseUIKit/UIView/CJPopupAction：视图弹窗：UIView的类别，用来实现UIView弹出popupView的一个Uiew的类别
+                 - CJBaseUIKit/UIView/CJAutoMoveUp：本视图据键盘自动上移的方法
                  - CJBaseUIKit/UIView/CJGestureRecognizer：视图手势
                  - CJBaseUIKit/UIWindow：窗口
                  - CJBaseUIKit/UIButton：按钮 及 CJBadgeButton
@@ -100,6 +102,9 @@ Pod::Spec.new do |s|
 
   	ss.subspec 'CJPopupAction' do |sss|
       sss.source_files = "CJBaseUIKit/UIView/CJPopupAction/**/*.{h,m}"
+  	end
+  	ss.subspec 'CJAutoMoveUp' do |sss|
+      sss.source_files = "CJBaseUIKit/UIView/CJAutoMoveUp/**/*.{h,m}"
   	end
 
   	ss.subspec 'CJGestureRecognizer' do |sss|
