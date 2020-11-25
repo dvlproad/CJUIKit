@@ -9,7 +9,7 @@
 #import "RangeSliderViewController.h"
 #import "TSRangeSliderControl1.h"
 #import "TSRangeSliderControl2.h"
-#import "TSAgeRangeSliderControl.h"
+#import "CQAgeRangeSliderControl.h"
 
 #import "DemoLabelFactory.h"
 
@@ -38,6 +38,8 @@
 }
 
 - (void)setupViews {
+    self.view.backgroundColor = [UIColor lightGrayColor];
+    
     UILabel *sliderControlValueLabel2 = [DemoLabelFactory testExplainLabel];
     [self.view addSubview:sliderControlValueLabel2];
     [sliderControlValueLabel2 mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -97,7 +99,7 @@
         make.height.equalTo(@20);
     }];
     
-    TSAgeRangeSliderControl *ageRangeSlider = [[TSAgeRangeSliderControl alloc] initWithMinRangeAge:0 maxRangeAge:100 startRangeAge:18 endRangeAge:32 chooseCompleteBlock:^(NSInteger minAge, NSInteger maxAge) {
+    CQAgeRangeSliderControl *ageRangeSlider = [[CQAgeRangeSliderControl alloc] initWithMinRangeAge:0 maxRangeAge:100 startRangeAge:18 endRangeAge:32 chooseCompleteBlock:^(NSInteger minAge, NSInteger maxAge) {
         ageRangeSliderValueLabel.text = [NSString stringWithFormat:@"选取的区间是 : [ %zd, %zd ]",minAge,maxAge];
     }];
     [self.view addSubview:ageRangeSlider];

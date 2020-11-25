@@ -1,47 +1,47 @@
 //
-//  TSRangeSliderControl2.m
+//  CQAgeRangeSliderControl.m
 //  CJUIKitDemo
 //
 //  Created by qian on 2020/11/9.
 //  Copyright © 2020 dvlproad. All rights reserved.
 //
 
-#import "TSRangeSliderControl2.h"
+#import "CQAgeRangeSliderControl.h"
 #import "CJSliderPopover.h"
 
-@interface TSRangeSliderControl2 () {
+@interface CQAgeRangeSliderControl () {
     
 }
-@property (nonatomic, copy) void(^chooseCompleteBlock)(CGFloat minValue, CGFloat maxValue);
+@property (nonatomic, copy) void(^chooseCompleteBlock)(NSInteger minAge, NSInteger maxAge);
 
 @end
 
-@implementation TSRangeSliderControl2
+@implementation CQAgeRangeSliderControl
 
 /*
  *  初始化
  *
- *  @param minRangeValue                选择范围的最小值
- *  @param maxRangeValue                选择范围的最大值
- *  @param startRangeValue              初始范围的起始值
- *  @param endRangeValue                初始范围的结束值
+ *  @param minRangeAge                  选择范围的最小值
+ *  @param maxRangeAge                  选择范围的最大值
+ *  @param startRangeAge                初始范围的起始值
+ *  @param endRangeAge                  初始范围的结束值
  *  @param chooseCompleteBlock          选择结束，返回选择的最大和最小值
  *
- *  @param slider滑块视图
+ *  @param 年龄范围选择slider滑块视图
  */
-- (instancetype)initWithMinRangeValue:(CGFloat)minRangeValue
-                        maxRangeValue:(CGFloat)maxRangeValue
-                      startRangeValue:(CGFloat)startRangeValue
-                        endRangeValue:(CGFloat)endRangeValue
-                  chooseCompleteBlock:(void(^)(CGFloat minValue, CGFloat maxValue))chooseCompleteBlock
+- (instancetype)initWithMinRangeAge:(NSInteger)minRangeAge
+                        maxRangeAge:(NSInteger)maxRangeAge
+                      startRangeAge:(NSInteger)startRangeAge
+                        endRangeAge:(NSInteger)endRangeAge
+                chooseCompleteBlock:(void(^)(NSInteger minAge, NSInteger maxAge))chooseCompleteBlock
 {
-    self = [super initWithMinRangeValue:minRangeValue maxRangeValue:maxRangeValue startRangeValue:startRangeValue endRangeValue:endRangeValue createTrackViewBlock:^UIView *{
+    self = [super initWithMinRangeValue:minRangeAge maxRangeValue:maxRangeAge startRangeValue:startRangeAge endRangeValue:endRangeAge createTrackViewBlock:^UIView *{
         UIView *view = [[UIView alloc] initWithFrame:CGRectZero];
-        view.backgroundColor = [UIColor redColor];
+        view.backgroundColor = [UIColor colorWithRed:247/255.0f green:247/255.0f blue:248/255.0f alpha:1.0];        // #F7F7F8
         return view;
     } createFrontViewBlock:^UIView *{
         UIView *view = [[UIView alloc] initWithFrame:CGRectZero];
-        view.backgroundColor = [UIColor greenColor];
+        view.backgroundColor = [UIColor colorWithRed:12/255.0f green:16/255.0f blue:27/255.0f alpha:1.0];            // #0C101B
         return view;
     } createPopoverViewBlock:^UIView *(BOOL left) {
         CGFloat popoverHeight = self.popoverSize.height;// 弹出框的高
@@ -62,13 +62,14 @@
 }
 
 - (void)setupViews {
-    self.backgroundColor = [UIColor cyanColor];
+    self.backgroundColor = [UIColor clearColor];
     
-    self.trackHeight = 15;                  // 设置滑道高度
-    self.thumbSize = CGSizeMake(100, 30);   // 设置滑块大小
+    self.trackHeight = 4;                       // 设置滑道高度
+    self.thumbSize = CGSizeMake(26, 26);        // 设置滑块大小
+    self.popoverSize = CGSizeMake(26, 29);      // 设置弹出框大小
     
-    UIImage *normalImage = [UIImage imageNamed:@"slider_double_thumbImage_a"];
-    UIImage *highlightedImage = [UIImage imageNamed:@"slider_double_thumbImage_b"];
+    UIImage *normalImage = [UIImage imageNamed:@"slider_range_start"];
+    UIImage *highlightedImage = [UIImage imageNamed:@"slider_range_start"];
     [self.leftThumb setImage:normalImage forState:UIControlStateNormal];
     [self.leftThumb setImage:highlightedImage forState:UIControlStateHighlighted];
     [self.rightThumb setImage:normalImage forState:UIControlStateNormal];
@@ -79,7 +80,6 @@
     [self.leftThumb setBackgroundColor:[UIColor purpleColor]];
     [self.rightThumb setBackgroundColor:[UIColor brownColor]];
 }
-
 
 #pragma mark - Private Method
 /*
@@ -137,8 +137,6 @@
 
     !_chooseCompleteBlock ?: _chooseCompleteBlock(minAge, maxAge);
 }
-
-
 
 /*
 // Only override drawRect: if you perform custom drawing.

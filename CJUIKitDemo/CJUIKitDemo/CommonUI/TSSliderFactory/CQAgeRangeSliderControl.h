@@ -1,5 +1,5 @@
 //
-//  TSAgeRangeSliderControl.h
+//  CQAgeRangeSliderControl.h
 //  CJUIKitDemo
 //
 //  Created by qian on 2020/11/9.
@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface TSAgeRangeSliderControl : CJRangeSliderControl {
+@interface CQAgeRangeSliderControl : CJRangeSliderControl {
     
 }
 /*
@@ -39,7 +39,8 @@ NS_ASSUME_NONNULL_BEGIN
                         endRangeValue:(CGFloat)endRangeValue
                  createTrackViewBlock:(UIView * (^)(void))createTrackViewBlock
                  createFrontViewBlock:(UIView *(^)(void))createFrontViewBlock
-                popoverTextTransBlock:(NSString *(^)(CGFloat percentValue, CGFloat realValue))popoverTextTransBlock NS_UNAVAILABLE;
+               createPopoverViewBlock:(UIView * (^)(BOOL left))createPopoverViewBlock
+                    valueChangedBlock:(void(^)(CJRangeSliderControl *bSlider, CJSliderValueChangeHappenType happenType, CGFloat leftThumbPercent, CGFloat rightThumbPercent))valueChangedBlock NS_UNAVAILABLE;
 
 @end
 

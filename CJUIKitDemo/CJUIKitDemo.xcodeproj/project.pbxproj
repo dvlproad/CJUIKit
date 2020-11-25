@@ -187,6 +187,9 @@
 		788113CE21996A3A00D1630D /* SubInheritableSharedInstanceClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 788113CD21996A3A00D1630D /* SubInheritableSharedInstanceClass.m */; };
 		7885FC4A2156681F00B97DAA /* UIView+CJPopupInSuspendWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 7885FC482156681F00B97DAA /* UIView+CJPopupInSuspendWindow.m */; };
 		788A55FA21AFCE540011F993 /* DemoLabelFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 788A55F921AFCE540011F993 /* DemoLabelFactory.m */; };
+		7894C2A7256ECAE200C73B5E /* CQAgeRangeSliderControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 7894C2A2256ECAE100C73B5E /* CQAgeRangeSliderControl.m */; };
+		7894C2A8256ECAE200C73B5E /* slider_range_start@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7894C2A4256ECAE200C73B5E /* slider_range_start@3x.png */; };
+		7894C2A9256ECAE200C73B5E /* slider_range_start@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7894C2A5256ECAE200C73B5E /* slider_range_start@2x.png */; };
 		789A4EE021FAAC76001528B9 /* CJBaseTableViewCell+ConfigureForDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 789A4EDF21FAAC76001528B9 /* CJBaseTableViewCell+ConfigureForDataModel.m */; };
 		789C443C21EECEE800181144 /* CJAppVersionUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 789C443A21EECEE700181144 /* CJAppVersionUtil.m */; };
 		789C447421F05D4B00181144 /* UIImageTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = 789C447321F05D4B00181144 /* UIImageTestCase.m */; };
@@ -323,7 +326,6 @@
 		97578AB225590F7100249AD6 /* UIWindow+RootSetting.m in Sources */ = {isa = PBXBuildFile; fileRef = 97578AB125590F7100249AD6 /* UIWindow+RootSetting.m */; };
 		97578D012559473500249AD6 /* TSRangeSliderControl1.m in Sources */ = {isa = PBXBuildFile; fileRef = 97578D002559473500249AD6 /* TSRangeSliderControl1.m */; };
 		97578D072559474F00249AD6 /* TSRangeSliderControl2.m in Sources */ = {isa = PBXBuildFile; fileRef = 97578D062559474F00249AD6 /* TSRangeSliderControl2.m */; };
-		97578F0C255A8A3300249AD6 /* TSAgeRangeSliderControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 97578F0B255A8A3300249AD6 /* TSAgeRangeSliderControl.m */; };
 		E2649F5BE7F7FEF404688168 /* libPods-CJUIKitDemoTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 935109AAB855F6CC8B84B9A5 /* libPods-CJUIKitDemoTests.a */; };
 /* End PBXBuildFile section */
 
@@ -659,6 +661,10 @@
 		7885FC492156681F00B97DAA /* UIView+CJPopupInSuspendWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+CJPopupInSuspendWindow.h"; sourceTree = "<group>"; };
 		788A55F821AFCE540011F993 /* DemoLabelFactory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DemoLabelFactory.h; sourceTree = "<group>"; };
 		788A55F921AFCE540011F993 /* DemoLabelFactory.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DemoLabelFactory.m; sourceTree = "<group>"; };
+		7894C2A2256ECAE100C73B5E /* CQAgeRangeSliderControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CQAgeRangeSliderControl.m; sourceTree = "<group>"; };
+		7894C2A4256ECAE200C73B5E /* slider_range_start@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "slider_range_start@3x.png"; sourceTree = "<group>"; };
+		7894C2A5256ECAE200C73B5E /* slider_range_start@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "slider_range_start@2x.png"; sourceTree = "<group>"; };
+		7894C2A6256ECAE200C73B5E /* CQAgeRangeSliderControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CQAgeRangeSliderControl.h; sourceTree = "<group>"; };
 		789A4EDE21FAAC76001528B9 /* CJBaseTableViewCell+ConfigureForDataModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CJBaseTableViewCell+ConfigureForDataModel.h"; sourceTree = "<group>"; };
 		789A4EDF21FAAC76001528B9 /* CJBaseTableViewCell+ConfigureForDataModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "CJBaseTableViewCell+ConfigureForDataModel.m"; sourceTree = "<group>"; };
 		789C443A21EECEE700181144 /* CJAppVersionUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJAppVersionUtil.m; sourceTree = "<group>"; };
@@ -902,8 +908,6 @@
 		97578D002559473500249AD6 /* TSRangeSliderControl1.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TSRangeSliderControl1.m; sourceTree = "<group>"; };
 		97578D052559474F00249AD6 /* TSRangeSliderControl2.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TSRangeSliderControl2.h; sourceTree = "<group>"; };
 		97578D062559474F00249AD6 /* TSRangeSliderControl2.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TSRangeSliderControl2.m; sourceTree = "<group>"; };
-		97578F0A255A8A3300249AD6 /* TSAgeRangeSliderControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSAgeRangeSliderControl.h; sourceTree = "<group>"; };
-		97578F0B255A8A3300249AD6 /* TSAgeRangeSliderControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSAgeRangeSliderControl.m; sourceTree = "<group>"; };
 		9AC0A78AFE86FE250B370A06 /* Pods-CJUIKitDemoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CJUIKitDemoTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CJUIKitDemoTests/Pods-CJUIKitDemoTests.debug.xcconfig"; sourceTree = "<group>"; };
 		A078401C0E781545EB72B64D /* libPods-CJUIKitDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CJUIKitDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF18E9E3F2E33815C8D88994 /* Pods-CJUIKitDemoUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CJUIKitDemoUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CJUIKitDemoUITests/Pods-CJUIKitDemoUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -1819,6 +1823,15 @@
 			path = DemoLabel;
 			sourceTree = "<group>";
 		};
+		7894C2A3256ECAE200C73B5E /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				7894C2A4256ECAE200C73B5E /* slider_range_start@3x.png */,
+				7894C2A5256ECAE200C73B5E /* slider_range_start@2x.png */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		789A19681E61B87D008081E3 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -2457,8 +2470,9 @@
 				97578D002559473500249AD6 /* TSRangeSliderControl1.m */,
 				97578D052559474F00249AD6 /* TSRangeSliderControl2.h */,
 				97578D062559474F00249AD6 /* TSRangeSliderControl2.m */,
-				97578F0A255A8A3300249AD6 /* TSAgeRangeSliderControl.h */,
-				97578F0B255A8A3300249AD6 /* TSAgeRangeSliderControl.m */,
+				7894C2A6256ECAE200C73B5E /* CQAgeRangeSliderControl.h */,
+				7894C2A2256ECAE100C73B5E /* CQAgeRangeSliderControl.m */,
+				7894C2A3256ECAE200C73B5E /* Resources */,
 			);
 			path = TSSliderFactory;
 			sourceTree = "<group>";
@@ -2641,6 +2655,7 @@
 				156AC8D62406DBBE00A5A23D /* badgeButton_highlighted@3x.png in Resources */,
 				787FDB9120500B5C008A46E3 /* slider_double_thumbImage_b@2x.png in Resources */,
 				80FF90A61FC5649F00E437CF /* QRCodeViewController.xib in Resources */,
+				7894C2A8256ECAE200C73B5E /* slider_range_start@3x.png in Resources */,
 				7850B70320937C5A008F4A21 /* ShowExtendViewVC.xib in Resources */,
 				805598B61FF5D612009DC61C /* ValidateStringViewController.xib in Resources */,
 				787FDB9420500B5C008A46E3 /* slider_thumbImage@3x.png in Resources */,
@@ -2674,6 +2689,7 @@
 				801F75DB20A040D800A2E027 /* signin_icon_open@2x.png in Resources */,
 				80FF90A91FC5649F00E437CF /* ImageChangeColorViewController.xib in Resources */,
 				787FDB8920500B5C008A46E3 /* slider_double_thumbImage_a@3x.png in Resources */,
+				7894C2A9256ECAE200C73B5E /* slider_range_start@2x.png in Resources */,
 				1562F2D423F5DBF40009FCEA /* cjCheckBoxGreenYES@2x.png in Resources */,
 				78AB83AD21B7D24E00853E21 /* closePresentVC@3x.png in Resources */,
 				7808318922DC272700F36576 /* iamcoming.gif in Resources */,
@@ -2950,7 +2966,6 @@
 				78A0D043216B32D100EFAD67 /* BadgeButtonViewController.m in Sources */,
 				80FF91981FC5682B00E437CF /* AttributedStringViewController.m in Sources */,
 				78A4E1D52175EB93005FEADD /* NavigationBarNormalChangeBGViewController.m in Sources */,
-				97578F0C255A8A3300249AD6 /* TSAgeRangeSliderControl.m in Sources */,
 				1562F2C923F5DBF40009FCEA /* UIView+CJRounderCorner.m in Sources */,
 				1562F2C523F5DBF40009FCEA /* CJDefaultToolbar.m in Sources */,
 				78514134226854CC0023F0C0 /* ImageGetterViewController.m in Sources */,
@@ -3003,6 +3018,7 @@
 				78E189A5217791D200B8781A /* TranslucentLayoutViewController.m in Sources */,
 				1562F2BF23F5DBF40009FCEA /* UIButton+CJStructure.m in Sources */,
 				1562F38923FD2FC70009FCEA /* AppDelegate.m in Sources */,
+				7894C2A7256ECAE200C73B5E /* CQAgeRangeSliderControl.m in Sources */,
 				78C8148A216E11AF00A6B190 /* FChildViewController.m in Sources */,
 				784C87FF216F2B1D00AFEE7D /* SemaphoreGateKeeperViewController.m in Sources */,
 				1562F2AF23F5DBF40009FCEA /* UIImage+CJRotateAngle.m in Sources */,

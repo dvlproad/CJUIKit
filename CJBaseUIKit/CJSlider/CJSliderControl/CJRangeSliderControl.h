@@ -18,20 +18,15 @@ typedef NS_ENUM(NSUInteger, CJSliderPopoverShowTimeType) {
     CJSliderPopoverShowTimeTypeDrag,        /**< 只有Drag的时候才显示Popover */
 };
 
-
-@protocol CJRangeSliderControlDelegate <NSObject>
-
 /**
- *  Slider的值改变后触发
- *
- *  @param slider   当前的slider控件
- *  @param minValue 选取的区间的最小值
- *  @param maxValue 选取的区间最大值
+ *  滑块上的值改变发生的事件来源类型
  */
-- (void)rangeSlider:(CJRangeSliderControl *)slider didChangedMinValue:(CGFloat)minValue didChangedMaxValue:(CGFloat)maxValue;
-
-@end
-
+typedef NS_ENUM(NSUInteger, CJSliderValueChangeHappenType) {
+    CJSliderValueChangeHappenTypeInit,          /**< 由初始化设置而来 */
+    CJSliderValueChangeHappenTypeLeftMove,      /**< 由左边滑块拖动引起 */
+    CJSliderValueChangeHappenTypeRightMove,     /**< 由右边滑块拖动引起 */
+    CJSliderValueChangeHappenTypeTouchTrack,    /**< 由点击滑块上的点引起 */
+};
 
 
 @interface CJRangeSliderControl : UIControl {
@@ -63,10 +58,10 @@ typedef NS_ENUM(NSUInteger, CJSliderPopoverShowTimeType) {
 @property (nonatomic, strong) UIButton *rightThumb;/**<右滑块视图 */
 
 // 弹出框视图
+@property (nonatomic, strong) UIView *leftPopover;
+@property (nonatomic, strong) UIView *rightPopover;
 @property (nonatomic, assign) CGSize popoverSize;           /**< 弹出框大小（默认CGSizeMake(30, 32)） */
 @property (nonatomic, assign) BOOL popoverShowTimeType;     /**< 弹出框显示的时机（默认一直显示） */
-
-@property (nonatomic, weak) id<CJRangeSliderControlDelegate> delegate;
 
 /*
  *  初始化
@@ -75,9 +70,10 @@ typedef NS_ENUM(NSUInteger, CJSliderPopoverShowTimeType) {
  *  @param maxRangeValue                选择范围的最大值
  *  @param startRangeValue              初始范围的起始值
  *  @param endRangeValue                初始范围的结束值
- *  @param createTrackViewBlock         trackView的创建方法
- *  @param createFrontViewBlock         frontView的创建方法
- *  @param popoverTextTransBlock        popover上的文本转换方法(默认使用realValue保留一位小数 )
+ *  @param createTrackViewBlock         trackView的创建方法（会默认创建）
+ *  @param createFrontViewBlock         frontView的创建方法（会默认创建）
+ *  @param createPopoverViewBlock       popoverView的创建方法（会默认创建）
+ *  @param valueChangedBlock            选择的值发生变化的回调（happenType:滑块上的值改变发生的事件来源类型;leftThumbPercent:左边滑块中心点所在滑道的比例;rightThumbPercent:右边滑块中心点所在滑道的比例）
  *
  *  @param slider滑块视图
  */
@@ -87,7 +83,8 @@ typedef NS_ENUM(NSUInteger, CJSliderPopoverShowTimeType) {
                         endRangeValue:(CGFloat)endRangeValue
                  createTrackViewBlock:(UIView * (^)(void))createTrackViewBlock
                  createFrontViewBlock:(UIView *(^)(void))createFrontViewBlock
-                popoverTextTransBlock:(NSString *(^)(CGFloat percentValue, CGFloat realValue))popoverTextTransBlock NS_DESIGNATED_INITIALIZER;
+               createPopoverViewBlock:(UIView * (^)(BOOL left))createPopoverViewBlock
+                    valueChangedBlock:(void(^)(CJRangeSliderControl *bSlider, CJSliderValueChangeHappenType happenType, CGFloat leftThumbPercent, CGFloat rightThumbPercent))valueChangedBlock NS_DESIGNATED_INITIALIZER;
 + (instancetype)new NS_UNAVAILABLE;
 - (instancetype)init NS_UNAVAILABLE;
 - (instancetype)initWithFrame:(CGRect)frame NS_UNAVAILABLE;
