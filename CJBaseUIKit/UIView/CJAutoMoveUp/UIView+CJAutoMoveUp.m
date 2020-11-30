@@ -30,12 +30,6 @@
 }
 
 
-#pragma mark - LifeCycle
-- (void)dealloc {
-    [self cjAutoMoveUp_unregisterNotification];
-}
-
-
 #pragma mark - Event
 /**
  *  自动根据键盘上移
