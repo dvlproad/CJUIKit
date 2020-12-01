@@ -41,19 +41,36 @@
         CQDMSectionDataModel *sectionDataModel = [[CQDMSectionDataModel alloc] init];
         sectionDataModel.theme = @"弹出到屏幕中间（用于Toast）";
         {
-            CQDMModuleModel *autoLayoutModule = [[CQDMModuleModel alloc] init];
-            autoLayoutModule.title = @"中间（用于Toast）";
-            autoLayoutModule.actionBlock = ^{
+            CQDMModuleModel *toastModule = [[CQDMModuleModel alloc] init];
+            toastModule.title = @"中间Toast(弹出的视图中心处于window中心)";
+            toastModule.actionBlock = ^{
                 UIView *view = [UIView new];
                 view.backgroundColor = [UIColor redColor];
                 view.layer.cornerRadius = 23;
-                [view cj_toastInView:self.view
-                            withSize:CGSizeMake(180, 46)
-                        centerOffset:CGPointZero animated:YES];
+                [view cj_toastCenterInView:self.view
+                                  withSize:CGSizeMake(180, 46)
+                              centerOffset:CGPointZero
+                                  animated:YES];
                 [view cj_toastHiddenWithAnimated:YES afterDelay:2.0];
             };
-            [sectionDataModel.values addObject:autoLayoutModule];
+            [sectionDataModel.values addObject:toastModule];
         }
+        {
+            CQDMModuleModel *toastModule = [[CQDMModuleModel alloc] init];
+            toastModule.title = @"中间Toast(弹出的视图中心偏离window中心）";
+            toastModule.actionBlock = ^{
+                UIView *view = [UIView new];
+                view.backgroundColor = [UIColor redColor];
+                view.layer.cornerRadius = 23;
+                [view cj_toastCenterInView:self.view
+                                  withSize:CGSizeMake(180, 46)
+                              centerOffset:CGPointMake(0, -100)
+                                  animated:YES];
+                [view cj_toastHiddenWithAnimated:YES afterDelay:2.0];
+            };
+            [sectionDataModel.values addObject:toastModule];
+        }
+        
         [sectionDataModels addObject:sectionDataModel];
     }
     

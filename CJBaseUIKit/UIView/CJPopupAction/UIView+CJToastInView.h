@@ -20,10 +20,10 @@ NS_ASSUME_NONNULL_BEGIN
  *  @param centerOffset                 toast视图的中心与superView中心的偏移量
  *  @param animated                     弹出时候的动画采用的类型
  */
-- (void)cj_toastInView:(nullable UIView *)superView
-              withSize:(CGSize)size
-          centerOffset:(CGPoint)centerOffset
-              animated:(BOOL)animated;
+- (void)cj_toastCenterInView:(nullable UIView *)superView
+                    withSize:(CGSize)size
+                centerOffset:(CGPoint)centerOffset
+                    animated:(BOOL)animated;
 
 /*
  *  隐藏弹出的toast视图

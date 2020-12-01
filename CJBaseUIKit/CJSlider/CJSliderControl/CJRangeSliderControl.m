@@ -293,11 +293,8 @@ static NSTimeInterval const kMTRngeSliderDidTapSlidAnimationDuration   = 0.3f;
  */
 - (void)updatePopover:(BOOL)isLeftThumb {
     CGFloat leftThumbPercent  = [self __leftThumbPercent];
-    CGFloat leftPopoverNum    = leftThumbPercent  * (_maxValue - _minValue);
-    
     
     CGFloat rightThumbPercent = [self __rightThumbPercent];
-    CGFloat rightPopoverNum   = rightThumbPercent * (_maxValue - _minValue);
     
     CJSliderValueChangeHappenType happenType = CJSliderValueChangeHappenTypeTouchTrack;
     if (isLeftThumb) {

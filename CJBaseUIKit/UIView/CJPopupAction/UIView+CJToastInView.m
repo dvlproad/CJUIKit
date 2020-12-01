@@ -7,7 +7,6 @@
 //
 
 #import "UIView+CJToastInView.h"
-#import <Masonry/Masonry.h>
 
 @implementation UIView (CJToastInView)
 
@@ -19,10 +18,10 @@
  *  @param centerOffset                 toast视图的中心与superView中心的偏移量
  *  @param animated                     弹出时候的动画采用的类型
  */
-- (void)cj_toastInView:(nullable UIView *)superView
-              withSize:(CGSize)size
-          centerOffset:(CGPoint)centerOffset
-              animated:(BOOL)animated
+- (void)cj_toastCenterInView:(nullable UIView *)superView
+                    withSize:(CGSize)size
+                centerOffset:(CGPoint)centerOffset
+                    animated:(BOOL)animated
 {
     if (superView == nil) {
         superView = [UIApplication sharedApplication].keyWindow;
@@ -30,11 +29,43 @@
     [superView addSubview:self];
     
     
-    [self mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.centerX.equalTo(superView).offset(centerOffset.x);
-        make.centerY.equalTo(superView).offset(centerOffset.y);
-        make.size.equalTo(@(size));
-    }];
+    self.translatesAutoresizingMaskIntoConstraints = NO;
+    [superView addConstraint:
+     [NSLayoutConstraint constraintWithItem:self
+                                  attribute:NSLayoutAttributeCenterX   //centerX
+                                  relatedBy:NSLayoutRelationEqual
+                                     toItem:superView
+                                  attribute:NSLayoutAttributeCenterX
+                                 multiplier:1
+                                   constant:centerOffset.x]];
+    
+    [superView addConstraint:
+     [NSLayoutConstraint constraintWithItem:self
+                                  attribute:NSLayoutAttributeCenterY  //centerY
+                                  relatedBy:NSLayoutRelationEqual
+                                     toItem:superView
+                                  attribute:NSLayoutAttributeCenterY
+                                 multiplier:1
+                                   constant:centerOffset.y]];
+    
+    [superView addConstraint:
+     [NSLayoutConstraint constraintWithItem:self
+                                  attribute:NSLayoutAttributeWidth    //width
+                                  relatedBy:NSLayoutRelationEqual
+                                     toItem:nil
+                                  attribute:NSLayoutAttributeNotAnAttribute
+                                 multiplier:1
+                                   constant:size.width]];
+    
+    [superView addConstraint:
+     [NSLayoutConstraint constraintWithItem:self
+                                  attribute:NSLayoutAttributeHeight //height
+                                  relatedBy:NSLayoutRelationEqual
+                                     toItem:nil
+                                  attribute:NSLayoutAttributeNotAnAttribute
+                                 multiplier:1
+                                   constant:size.height]];
+    
     [self __cj_toastUpdateAlpha:1 animated:animated completion:NULL];
 }
 
