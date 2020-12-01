@@ -12,6 +12,8 @@
 #import "UIView+CJPopupInView.h"
 #import "UIView+CJAutoMoveUp.h"
 
+#import "UIView+CJToastInView.h"
+
 #import "WelcomeViewToPop.h"
 #import "WelcomePopupView.h"
 #import "CQUpdateContentPopupView.h"
@@ -33,6 +35,27 @@
     [IQKeyboardManager sharedManager].enable = NO; // 禁用 IQKeyboardManager
     
     NSMutableArray *sectionDataModels = [[NSMutableArray alloc] init];
+    
+    // 弹出Toast
+    {
+        CQDMSectionDataModel *sectionDataModel = [[CQDMSectionDataModel alloc] init];
+        sectionDataModel.theme = @"弹出到屏幕中间（用于Toast）";
+        {
+            CQDMModuleModel *autoLayoutModule = [[CQDMModuleModel alloc] init];
+            autoLayoutModule.title = @"中间（用于Toast）";
+            autoLayoutModule.actionBlock = ^{
+                UIView *view = [UIView new];
+                view.backgroundColor = [UIColor redColor];
+                view.layer.cornerRadius = 23;
+                [view cj_toastInView:self.view
+                            withSize:CGSizeMake(180, 46)
+                        centerOffset:CGPointZero animated:YES];
+                [view cj_toastHiddenWithAnimated:YES afterDelay:2.0];
+            };
+            [sectionDataModel.values addObject:autoLayoutModule];
+        }
+        [sectionDataModels addObject:sectionDataModel];
+    }
     
     // 弹出到屏幕中间
     {

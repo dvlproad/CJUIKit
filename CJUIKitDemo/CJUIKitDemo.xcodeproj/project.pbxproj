@@ -240,6 +240,7 @@
 		78E189AB21781BD000B8781A /* TranslucentLayoutTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78E189AA21781BD000B8781A /* TranslucentLayoutTableViewController.m */; };
 		78E189AE21781BE200B8781A /* EdgeLayoutTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78E189AD21781BE200B8781A /* EdgeLayoutTableViewController.m */; };
 		78F55FFA248818E000B7B27A /* AttributedStringViewController2.m in Sources */ = {isa = PBXBuildFile; fileRef = 78F55FF9248818DF00B7B27A /* AttributedStringViewController2.m */; };
+		78F65DA72576A9E20020916A /* UIView+CJToastInView.m in Sources */ = {isa = PBXBuildFile; fileRef = 78F65DA62576A9E20020916A /* UIView+CJToastInView.m */; };
 		78FCF5522306A9BA00D275F9 /* UIView+CJDemoPopupAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 78FCF54E2306A9B900D275F9 /* UIView+CJDemoPopupAction.m */; };
 		78FCF5532306A9BA00D275F9 /* CJDemoPopupView.m in Sources */ = {isa = PBXBuildFile; fileRef = 78FCF5502306A9B900D275F9 /* CJDemoPopupView.m */; };
 		8008D7D220E5CF5700F98EF6 /* CallSystemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8008D7D020E5CF5700F98EF6 /* CallSystemViewController.m */; };
@@ -761,6 +762,8 @@
 		78E189AD21781BE200B8781A /* EdgeLayoutTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EdgeLayoutTableViewController.m; sourceTree = "<group>"; };
 		78F55FF8248818DF00B7B27A /* AttributedStringViewController2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AttributedStringViewController2.h; sourceTree = "<group>"; };
 		78F55FF9248818DF00B7B27A /* AttributedStringViewController2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AttributedStringViewController2.m; sourceTree = "<group>"; };
+		78F65DA52576A9E10020916A /* UIView+CJToastInView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+CJToastInView.h"; sourceTree = "<group>"; };
+		78F65DA62576A9E20020916A /* UIView+CJToastInView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+CJToastInView.m"; sourceTree = "<group>"; };
 		78FCF54B2306A9B900D275F9 /* UIView+CJDemoPopupAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+CJDemoPopupAction.h"; sourceTree = "<group>"; };
 		78FCF54D2306A9B900D275F9 /* CJDemoPopupView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJDemoPopupView.h; sourceTree = "<group>"; };
 		78FCF54E2306A9B900D275F9 /* UIView+CJDemoPopupAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+CJDemoPopupAction.m"; sourceTree = "<group>"; };
@@ -1137,6 +1140,8 @@
 				1562F24823F5DBF40009FCEA /* UIView+CJRounderCorner.m */,
 				1562F24423F5DBF40009FCEA /* UIView+CJShowExtendView.h */,
 				1562F24723F5DBF40009FCEA /* UIView+CJShowExtendView.m */,
+				78F65DA52576A9E10020916A /* UIView+CJToastInView.h */,
+				78F65DA62576A9E20020916A /* UIView+CJToastInView.m */,
 			);
 			path = CJPopupAction;
 			sourceTree = "<group>";
@@ -2908,6 +2913,7 @@
 				78E18952217778D900B8781A /* NavigationBarHomeViewController.m in Sources */,
 				80D0120F210336E100D1EDF0 /* ChangeViewController.m in Sources */,
 				975164AE256CFE34001DE112 /* CQUpdateContentPopupView.m in Sources */,
+				78F65DA72576A9E20020916A /* UIView+CJToastInView.m in Sources */,
 				1562F2F323F5DBF40009FCEA /* UITextField+CJSelectedTextRange.m in Sources */,
 				1562F2C323F5DBF40009FCEA /* UIColor+CJHex.m in Sources */,
 				1562F2D623F5DBF40009FCEA /* CJBaseTableViewCell.m in Sources */,
