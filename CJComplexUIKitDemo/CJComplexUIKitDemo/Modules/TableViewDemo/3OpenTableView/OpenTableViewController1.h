@@ -7,15 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import <CQDemoKit/CQDMSectionDataModel.h>
 #import "TableViewHeader.h"
 
 
-//实际只需采用CJTableViewHeaderFooterView和CJSectionDataModel即可实现
+//实际只需采用CJTableViewHeaderFooterView和CQDMSectionDataModel即可实现
 @interface OpenTableViewController1 : UIViewController <UITableViewDataSource, UITableViewDelegate> {
     
 }
 @property (nonatomic, strong) IBOutlet UITableView *tableView;
-@property (nonatomic, strong) NSMutableArray<CJSectionDataModel *> *sectionModels;
+@property (nonatomic, strong) NSMutableArray<CQDMSectionDataModel *> *sectionModels;
 
 @end

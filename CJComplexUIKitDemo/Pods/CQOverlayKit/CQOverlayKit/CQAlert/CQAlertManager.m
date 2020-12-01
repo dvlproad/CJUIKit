@@ -129,7 +129,7 @@
 
 #pragma mark - Private Method
 - (void)__showAlertView:(CJMessageAlertView *)alertView {
-    [alertView showWithShouldFitHeight:YES];
+    [alertView showAlertWithShouldFitHeight:YES];
 }
 
 

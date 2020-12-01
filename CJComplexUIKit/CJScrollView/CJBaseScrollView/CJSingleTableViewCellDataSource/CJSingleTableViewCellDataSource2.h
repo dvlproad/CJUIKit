@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "CJSectionDataModel.h"
+#import <CQDemoKit/CQDMSectionDataModel.h>
 
 /**
  *  tableView只有一种Cell，且tableView有分区时候的dataSoure

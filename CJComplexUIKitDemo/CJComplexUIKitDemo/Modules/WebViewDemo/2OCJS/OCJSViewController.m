@@ -7,7 +7,7 @@
 //
 
 #import "OCJSViewController.h"
-#import "TSButtonFactory.h"
+#import <CQDemoKit/CQTSButtonFactory.h>
 #import "AppInfo.h"
 
 @interface OCJSViewController () <WKUIDelegate, WKNavigationDelegate>
@@ -40,7 +40,7 @@
     self.webView.navigationDelegate = self;
     
     
-    UIButton *blueButton = [TSButtonFactory themeBGButton];
+    UIButton *blueButton = [CQTSButtonFactory themeBGButton];
     [blueButton setTitle:NSLocalizedString(@"OC调用JS(改值)", nil) forState:UIControlStateNormal];
     [blueButton addTarget:self action:@selector(updateWebText)
          forControlEvents:UIControlEventTouchUpInside];
@@ -52,7 +52,7 @@
         make.bottom.mas_equalTo(self.view).mas_offset(-20);
     }];
     
-    UIButton *blueButton2 = [TSButtonFactory themeBGButton];
+    UIButton *blueButton2 = [CQTSButtonFactory themeBGButton];
     [blueButton2 setTitle:NSLocalizedString(@"OC调用JS(弹窗)", nil) forState:UIControlStateNormal];
     [blueButton2 addTarget:self action:@selector(showWebAlert)
          forControlEvents:UIControlEventTouchUpInside];
@@ -64,7 +64,7 @@
         make.bottom.mas_equalTo(blueButton.mas_top).mas_offset(-20);
     }];
     
-    UIButton *blueButton3 = [TSButtonFactory themeBGButton];
+    UIButton *blueButton3 = [CQTSButtonFactory themeBGButton];
     [blueButton3 setTitle:NSLocalizedString(@"OC调用JS(数据加工有返回值)", nil) forState:UIControlStateNormal];
     [blueButton3 addTarget:self action:@selector(dataProcessing)
           forControlEvents:UIControlEventTouchUpInside];

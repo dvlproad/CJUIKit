@@ -7,6 +7,7 @@
 //
 
 #import "NetworkBaseWebViewController.h"
+#import <CJBaseUIKit/UIColor+CJHex.h>
 #import "AppInfoManager.h"
 #import "DataEmptyViewFactory.h"
 #import "UIScrollView+CJAddFillView.h"

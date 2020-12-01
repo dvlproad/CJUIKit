@@ -13,8 +13,6 @@
 
 #import "MyCycleADViewController.h"
 
-#import "CustomLayoutCollectionViewController.h"
-
 //图片选择的集合视图
 #import "UploadNoneImagePickerViewController.h"
 #import "UploadDirectlyImagePickerViewController.h"
@@ -37,44 +35,37 @@
     
     //UICollectionView
     {
-        CJSectionDataModel *sectionDataModel = [[CJSectionDataModel alloc] init];
+        CQDMSectionDataModel *sectionDataModel = [[CQDMSectionDataModel alloc] init];
         sectionDataModel.theme = @"UICollectionView相关";
         {
-            CJModuleModel *complexDemoModule = [[CJModuleModel alloc] init];
+            CQDMModuleModel *complexDemoModule = [[CQDMModuleModel alloc] init];
             complexDemoModule.title = @"ComplexDemo";
             complexDemoModule.classEntry = [CvDemo_Complex class];
             complexDemoModule.isCreateByXib = YES;
             [sectionDataModel.values addObject:complexDemoModule];
         }
         {
-            CJModuleModel *cycleScrollViewModule = [[CJModuleModel alloc] init];
+            CQDMModuleModel *cycleScrollViewModule = [[CQDMModuleModel alloc] init];
             cycleScrollViewModule.title = @"MyCycleADView(无限循环的视图)";
             cycleScrollViewModule.classEntry = [MyCycleADViewController class];
             cycleScrollViewModule.isCreateByXib = YES;
             [sectionDataModel.values addObject:cycleScrollViewModule];
-        }
-        {
-            CJModuleModel *customLayoutModule = [[CJModuleModel alloc] init];
-            customLayoutModule.title = @"CustomLayout(自定义布局)";
-            customLayoutModule.classEntry = [CustomLayoutCollectionViewController class];
-            customLayoutModule.isCreateByXib = YES;
-            [sectionDataModel.values addObject:customLayoutModule];
         }
         [sectionDataModels addObject:sectionDataModel];
     }
     
     //图片选择的集合视图DataScrollView
     {
-        CJSectionDataModel *sectionDataModel = [[CJSectionDataModel alloc] init];
+        CQDMSectionDataModel *sectionDataModel = [[CQDMSectionDataModel alloc] init];
         sectionDataModel.theme = @"DataScrollView(带数据源的滚动视图)";
         {
-            CJModuleModel *imagePickerCollectionViewModule = [[CJModuleModel alloc] init];
+            CQDMModuleModel *imagePickerCollectionViewModule = [[CQDMModuleModel alloc] init];
             imagePickerCollectionViewModule.title = @"图片选择的集合视图(没上传操作)";
             imagePickerCollectionViewModule.classEntry = [UploadNoneImagePickerViewController class];
             [sectionDataModel.values addObject:imagePickerCollectionViewModule];
         }
         {
-            CJModuleModel *imagePickerCollectionViewModule = [[CJModuleModel alloc] init];
+            CQDMModuleModel *imagePickerCollectionViewModule = [[CQDMModuleModel alloc] init];
             imagePickerCollectionViewModule.title = @"图片选择的集合视图(有上传操作)";
             imagePickerCollectionViewModule.classEntry = [UploadDirectlyImagePickerViewController class];
             [sectionDataModel.values addObject:imagePickerCollectionViewModule];

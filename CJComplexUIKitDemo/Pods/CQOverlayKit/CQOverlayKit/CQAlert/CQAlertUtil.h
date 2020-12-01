@@ -84,8 +84,8 @@ NS_ASSUME_NONNULL_BEGIN
                       okHandle:(void(^_Nullable)(NSString *outputText))okHandle;
 
 /// 显示调试面板
-/// @param title                                        调试面板的标题
-/// @param message                                   调试面板的信息
+/// @param title                     调试面板的标题
+/// @param message                   调试面板的信息
 /// @param shouldContailAppInfo      调试面板的信息是否包含app信息
 + (void)showDebugViewWithTitle:(NSString *)title
                        message:(NSString *)message

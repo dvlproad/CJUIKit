@@ -35,7 +35,7 @@
     if ([imageData length] > 0.5 * 1024 * 1024) {
         imageData = UIImageJPEGRepresentation(image, 0.8);
         if ([imageData length] > 0.5 * 1024 * 1024) {
-            UIImage *tempImage = [UIImage imageWithData:imageData];
+//            UIImage *tempImage = [UIImage imageWithData:imageData];
 //            image = [CJAlumbImageUtil cj_transformImage:tempImage toMinificationSize:CGSizeMake(1920, 1920)];
         }
         

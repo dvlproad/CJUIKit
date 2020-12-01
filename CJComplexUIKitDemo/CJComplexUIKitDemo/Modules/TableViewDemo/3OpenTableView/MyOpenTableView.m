@@ -6,7 +6,7 @@
 //  Copyright © 2017年 dvlproad. All rights reserved.
 //
 
-#import "MyOpenTableView.h" //只需采用CJTableViewHeaderFooterView和CJSectionDataModel即可实现
+#import "MyOpenTableView.h" //只需采用CJTableViewHeaderFooterView和CQDMSectionDataModel即可实现
 
 
 @implementation CJOpenTableViewSetting
@@ -118,7 +118,7 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    CJSectionDataModel *sectionDataModel = [self.sectionModels objectAtIndex:section];
+    CQDMSectionDataModel *sectionDataModel = [self.sectionModels objectAtIndex:section];
     NSInteger rowCount = [sectionDataModel.values count];
     
     return sectionDataModel.isSelected ? rowCount : 0;
@@ -168,7 +168,7 @@
  *  @param section section
  */
 - (void)tapHeaderAtSection:(NSInteger)section {
-    CJSectionDataModel *secctionModel = [self.sectionModels objectAtIndex:section];
+    CQDMSectionDataModel *secctionModel = [self.sectionModels objectAtIndex:section];
     secctionModel.selected = !secctionModel.isSelected;
     
     [self reloadSections:[NSIndexSet indexSetWithIndex:section] withRowAnimation:UITableViewRowAnimationNone];

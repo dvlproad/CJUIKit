@@ -10,17 +10,7 @@
 		150AD95C244EBF5000AA9C4E /* AppInfoManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 150AD95A244EBF5000AA9C4E /* AppInfoManager.m */; };
 		150AD95D244EBF5000AA9C4E /* AppInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 150AD95B244EBF5000AA9C4E /* AppInfo.m */; };
 		151A11E8246CE6F900FC4CAD /* DataEmptyViewFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 151A11E4246CE6F900FC4CAD /* DataEmptyViewFactory.m */; };
-		15F426FE242B7C6F00ED2E4C /* UIView+CJDemoPopupAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 15F426B3242B7C6F00ED2E4C /* UIView+CJDemoPopupAction.m */; };
-		15F426FF242B7C6F00ED2E4C /* CJDemoPopupView.m in Sources */ = {isa = PBXBuildFile; fileRef = 15F426B6242B7C6F00ED2E4C /* CJDemoPopupView.m */; };
-		15F42700242B7C6F00ED2E4C /* DemoTextFieldFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 15F426B9242B7C6F00ED2E4C /* DemoTextFieldFactory.m */; };
 		15F42701242B7C6F00ED2E4C /* CJDemoDatePickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 15F426BB242B7C6F00ED2E4C /* CJDemoDatePickerView.m */; };
-		15F42702242B7C6F00ED2E4C /* TSButtonFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 15F426C0242B7C6F00ED2E4C /* TSButtonFactory.m */; };
-		15F42703242B7C6F00ED2E4C /* DemoTagButtonFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 15F426C1242B7C6F00ED2E4C /* DemoTagButtonFactory.m */; };
-		15F42707242B7C6F00ED2E4C /* cjTextField_clear@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 15F426CC242B7C6F00ED2E4C /* cjTextField_clear@3x.png */; };
-		15F42708242B7C6F00ED2E4C /* cjTextField_clear@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 15F426CD242B7C6F00ED2E4C /* cjTextField_clear@2x.png */; };
-		15F42709242B7C6F00ED2E4C /* CJDemoDateTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 15F426CE242B7C6F00ED2E4C /* CJDemoDateTextField.m */; };
-		15F4270A242B7C6F00ED2E4C /* CJDemoDateLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 15F426CF242B7C6F00ED2E4C /* CJDemoDateLabel.m */; };
-		15F4270F242B7C6F00ED2E4C /* DemoLabelFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 15F426DA242B7C6F00ED2E4C /* DemoLabelFactory.m */; };
 		565B2E0476773464F9FB4F0E /* libPods-CJComplexUIKitDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 073CC62DB7C334259D342E99 /* libPods-CJComplexUIKitDemo.a */; };
 		5D3633836100310A792F6863 /* libPods-CJComplexUIKitDemoTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4EAC4EC15FD53C9DBD68EC00 /* libPods-CJComplexUIKitDemoTests.a */; };
 		780E46051E5DF87B00980127 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 780E46041E5DF87B00980127 /* main.m */; };
@@ -74,8 +64,6 @@
 		789A4F4F21FAF3A8001528B9 /* MemoryAD09.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 789A4F0521FAF3A8001528B9 /* MemoryAD09.jpg */; };
 		789A4F5021FAF3A8001528B9 /* MyCycleADViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 789A4F0721FAF3A8001528B9 /* MyCycleADViewController.xib */; };
 		789A4F5121FAF3A8001528B9 /* CollectionHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 789A4F0921FAF3A8001528B9 /* CollectionHomeViewController.m */; };
-		789A4F5221FAF3A8001528B9 /* CustomLayoutCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 789A4F0B21FAF3A8001528B9 /* CustomLayoutCollectionViewController.m */; };
-		789A4F5321FAF3A8001528B9 /* CustomLayoutCollectionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 789A4F0D21FAF3A8001528B9 /* CustomLayoutCollectionViewController.xib */; };
 		789A4F5F21FAF3A8001528B9 /* CvDemo_Complex.m in Sources */ = {isa = PBXBuildFile; fileRef = 789A4F2221FAF3A8001528B9 /* CvDemo_Complex.m */; };
 		789A4F6021FAF3A8001528B9 /* CvDemo_Complex+Event.m in Sources */ = {isa = PBXBuildFile; fileRef = 789A4F2421FAF3A8001528B9 /* CvDemo_Complex+Event.m */; };
 		789A4F6121FAF3A8001528B9 /* CvDemo_Complex.xib in Resources */ = {isa = PBXBuildFile; fileRef = 789A4F2621FAF3A8001528B9 /* CvDemo_Complex.xib */; };
@@ -116,7 +104,6 @@
 		789C445221EECFA100181144 /* MainAsset.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 789C444D21EECFA100181144 /* MainAsset.xcassets */; };
 		789C445321EECFA100181144 /* AppAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 789C444E21EECFA100181144 /* AppAssets.xcassets */; };
 		789C445421EECFA100181144 /* bg@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 789C444F21EECFA100181144 /* bg@2x.jpg */; };
-		789C445521EECFA100181144 /* ThirdPartIcon.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 789C445021EECFA100181144 /* ThirdPartIcon.xcassets */; };
 		789C445821EED3AB00181144 /* OCJSViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 789C445721EED3AB00181144 /* OCJSViewController.m */; };
 		789C445A21EED99600181144 /* OCJS.html in Resources */ = {isa = PBXBuildFile; fileRef = 789C445921EED99600181144 /* OCJS.html */; };
 		789C445D21EEDBF500181144 /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 789C445C21EEDBF500181144 /* AboutViewController.m */; };
@@ -159,27 +146,8 @@
 		150AD95B244EBF5000AA9C4E /* AppInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppInfo.m; sourceTree = "<group>"; };
 		151A11E4246CE6F900FC4CAD /* DataEmptyViewFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataEmptyViewFactory.m; sourceTree = "<group>"; };
 		151A11E6246CE6F900FC4CAD /* DataEmptyViewFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataEmptyViewFactory.h; sourceTree = "<group>"; };
-		15F426B3242B7C6F00ED2E4C /* UIView+CJDemoPopupAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+CJDemoPopupAction.m"; sourceTree = "<group>"; };
-		15F426B4242B7C6F00ED2E4C /* CJDemoPopupView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJDemoPopupView.h; sourceTree = "<group>"; };
-		15F426B5242B7C6F00ED2E4C /* UIView+CJDemoPopupAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+CJDemoPopupAction.h"; sourceTree = "<group>"; };
-		15F426B6242B7C6F00ED2E4C /* CJDemoPopupView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJDemoPopupView.m; sourceTree = "<group>"; };
-		15F426B8242B7C6F00ED2E4C /* DemoTextFieldFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DemoTextFieldFactory.h; sourceTree = "<group>"; };
-		15F426B9242B7C6F00ED2E4C /* DemoTextFieldFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DemoTextFieldFactory.m; sourceTree = "<group>"; };
 		15F426BB242B7C6F00ED2E4C /* CJDemoDatePickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJDemoDatePickerView.m; sourceTree = "<group>"; };
 		15F426BC242B7C6F00ED2E4C /* CJDemoDatePickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJDemoDatePickerView.h; sourceTree = "<group>"; };
-		15F426BE242B7C6F00ED2E4C /* TSButtonFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSButtonFactory.h; sourceTree = "<group>"; };
-		15F426BF242B7C6F00ED2E4C /* DemoTagButtonFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DemoTagButtonFactory.h; sourceTree = "<group>"; };
-		15F426C0242B7C6F00ED2E4C /* TSButtonFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSButtonFactory.m; sourceTree = "<group>"; };
-		15F426C1242B7C6F00ED2E4C /* DemoTagButtonFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DemoTagButtonFactory.m; sourceTree = "<group>"; };
-		15F426CA242B7C6F00ED2E4C /* CJDemoDateLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJDemoDateLabel.h; sourceTree = "<group>"; };
-		15F426CB242B7C6F00ED2E4C /* CJDemoDateTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJDemoDateTextField.h; sourceTree = "<group>"; };
-		15F426CC242B7C6F00ED2E4C /* cjTextField_clear@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cjTextField_clear@3x.png"; sourceTree = "<group>"; };
-		15F426CD242B7C6F00ED2E4C /* cjTextField_clear@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cjTextField_clear@2x.png"; sourceTree = "<group>"; };
-		15F426CE242B7C6F00ED2E4C /* CJDemoDateTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJDemoDateTextField.m; sourceTree = "<group>"; };
-		15F426CF242B7C6F00ED2E4C /* CJDemoDateLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJDemoDateLabel.m; sourceTree = "<group>"; };
-		15F426D9242B7C6F00ED2E4C /* DemoLabelFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DemoLabelFactory.h; sourceTree = "<group>"; };
-		15F426DA242B7C6F00ED2E4C /* DemoLabelFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DemoLabelFactory.m; sourceTree = "<group>"; };
-		15F426E4242B7C6F00ED2E4C /* DemoConstant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DemoConstant.h; sourceTree = "<group>"; };
 		18C1A083041B9B42AD45248F /* Pods-CJComplexUIKitDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CJComplexUIKitDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-CJComplexUIKitDemo/Pods-CJComplexUIKitDemo.release.xcconfig"; sourceTree = "<group>"; };
 		3792BE1F43A6FBA9A33BADA4 /* Pods-CJComplexUIKitDemoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CJComplexUIKitDemoTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CJComplexUIKitDemoTests/Pods-CJComplexUIKitDemoTests.debug.xcconfig"; sourceTree = "<group>"; };
 		4EAC4EC15FD53C9DBD68EC00 /* libPods-CJComplexUIKitDemoTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CJComplexUIKitDemoTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -257,9 +225,6 @@
 		789A4F0721FAF3A8001528B9 /* MyCycleADViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyCycleADViewController.xib; sourceTree = "<group>"; };
 		789A4F0821FAF3A8001528B9 /* CollectionHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectionHomeViewController.h; sourceTree = "<group>"; };
 		789A4F0921FAF3A8001528B9 /* CollectionHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectionHomeViewController.m; sourceTree = "<group>"; };
-		789A4F0B21FAF3A8001528B9 /* CustomLayoutCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomLayoutCollectionViewController.m; sourceTree = "<group>"; };
-		789A4F0C21FAF3A8001528B9 /* CustomLayoutCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomLayoutCollectionViewController.h; sourceTree = "<group>"; };
-		789A4F0D21FAF3A8001528B9 /* CustomLayoutCollectionViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomLayoutCollectionViewController.xib; sourceTree = "<group>"; };
 		789A4F2221FAF3A8001528B9 /* CvDemo_Complex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CvDemo_Complex.m; sourceTree = "<group>"; };
 		789A4F2321FAF3A8001528B9 /* Detail.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Detail.h; sourceTree = "<group>"; };
 		789A4F2421FAF3A8001528B9 /* CvDemo_Complex+Event.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CvDemo_Complex+Event.m"; sourceTree = "<group>"; };
@@ -322,7 +287,6 @@
 		789C444D21EECFA100181144 /* MainAsset.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = MainAsset.xcassets; sourceTree = "<group>"; };
 		789C444E21EECFA100181144 /* AppAssets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = AppAssets.xcassets; sourceTree = "<group>"; };
 		789C444F21EECFA100181144 /* bg@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "bg@2x.jpg"; sourceTree = "<group>"; };
-		789C445021EECFA100181144 /* ThirdPartIcon.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = ThirdPartIcon.xcassets; sourceTree = "<group>"; };
 		789C445621EED3AB00181144 /* OCJSViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OCJSViewController.h; sourceTree = "<group>"; };
 		789C445721EED3AB00181144 /* OCJSViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OCJSViewController.m; sourceTree = "<group>"; };
 		789C445921EED99600181144 /* OCJS.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = OCJS.html; sourceTree = "<group>"; };
@@ -409,36 +373,10 @@
 		15F426A8242B7C6F00ED2E4C /* CommonUI */ = {
 			isa = PBXGroup;
 			children = (
-				15F426DE242B7C6F00ED2E4C /* Base */,
 				15F426BA242B7C6F00ED2E4C /* CJDemoDatePickerView */,
-				15F426C9242B7C6F00ED2E4C /* CJDemoDateTextField */,
-				15F426B2242B7C6F00ED2E4C /* CJDemoPopupView */,
-				15F426D8242B7C6F00ED2E4C /* DemoLabel */,
-				15F426B7242B7C6F00ED2E4C /* DemoTextFieldFactory */,
-				15F426BD242B7C6F00ED2E4C /* TSButtonFactory */,
 			);
 			name = CommonUI;
 			path = ../../CJUIKitDemo/CJUIKitDemo/CommonUI;
-			sourceTree = "<group>";
-		};
-		15F426B2242B7C6F00ED2E4C /* CJDemoPopupView */ = {
-			isa = PBXGroup;
-			children = (
-				15F426B3242B7C6F00ED2E4C /* UIView+CJDemoPopupAction.m */,
-				15F426B4242B7C6F00ED2E4C /* CJDemoPopupView.h */,
-				15F426B5242B7C6F00ED2E4C /* UIView+CJDemoPopupAction.h */,
-				15F426B6242B7C6F00ED2E4C /* CJDemoPopupView.m */,
-			);
-			path = CJDemoPopupView;
-			sourceTree = "<group>";
-		};
-		15F426B7242B7C6F00ED2E4C /* DemoTextFieldFactory */ = {
-			isa = PBXGroup;
-			children = (
-				15F426B8242B7C6F00ED2E4C /* DemoTextFieldFactory.h */,
-				15F426B9242B7C6F00ED2E4C /* DemoTextFieldFactory.m */,
-			);
-			path = DemoTextFieldFactory;
 			sourceTree = "<group>";
 		};
 		15F426BA242B7C6F00ED2E4C /* CJDemoDatePickerView */ = {
@@ -448,47 +386,6 @@
 				15F426BC242B7C6F00ED2E4C /* CJDemoDatePickerView.h */,
 			);
 			path = CJDemoDatePickerView;
-			sourceTree = "<group>";
-		};
-		15F426BD242B7C6F00ED2E4C /* TSButtonFactory */ = {
-			isa = PBXGroup;
-			children = (
-				15F426BF242B7C6F00ED2E4C /* DemoTagButtonFactory.h */,
-				15F426C1242B7C6F00ED2E4C /* DemoTagButtonFactory.m */,
-				15F426BE242B7C6F00ED2E4C /* TSButtonFactory.h */,
-				15F426C0242B7C6F00ED2E4C /* TSButtonFactory.m */,
-			);
-			path = TSButtonFactory;
-			sourceTree = "<group>";
-		};
-		15F426C9242B7C6F00ED2E4C /* CJDemoDateTextField */ = {
-			isa = PBXGroup;
-			children = (
-				15F426CA242B7C6F00ED2E4C /* CJDemoDateLabel.h */,
-				15F426CB242B7C6F00ED2E4C /* CJDemoDateTextField.h */,
-				15F426CC242B7C6F00ED2E4C /* cjTextField_clear@3x.png */,
-				15F426CD242B7C6F00ED2E4C /* cjTextField_clear@2x.png */,
-				15F426CE242B7C6F00ED2E4C /* CJDemoDateTextField.m */,
-				15F426CF242B7C6F00ED2E4C /* CJDemoDateLabel.m */,
-			);
-			path = CJDemoDateTextField;
-			sourceTree = "<group>";
-		};
-		15F426D8242B7C6F00ED2E4C /* DemoLabel */ = {
-			isa = PBXGroup;
-			children = (
-				15F426D9242B7C6F00ED2E4C /* DemoLabelFactory.h */,
-				15F426DA242B7C6F00ED2E4C /* DemoLabelFactory.m */,
-			);
-			path = DemoLabel;
-			sourceTree = "<group>";
-		};
-		15F426DE242B7C6F00ED2E4C /* Base */ = {
-			isa = PBXGroup;
-			children = (
-				15F426E4242B7C6F00ED2E4C /* DemoConstant.h */,
-			);
-			path = Base;
 			sourceTree = "<group>";
 		};
 		780E45F71E5DF87B00980127 = {
@@ -730,7 +627,6 @@
 				789A4F0921FAF3A8001528B9 /* CollectionHomeViewController.m */,
 				78293F1721FC640300F70F43 /* ImageChooseCollectionView */,
 				789A4F2121FAF3A8001528B9 /* Base */,
-				789A4F0A21FAF3A8001528B9 /* CustomLayoutCollectionView */,
 				789A4EE721FAF3A8001528B9 /* CycleADView */,
 			);
 			path = CollectionViewDemo;
@@ -780,16 +676,6 @@
 				789A4F0221FAF3A8001528B9 /* MemoryADTime02.jpg */,
 			);
 			path = MemoryAD;
-			sourceTree = "<group>";
-		};
-		789A4F0A21FAF3A8001528B9 /* CustomLayoutCollectionView */ = {
-			isa = PBXGroup;
-			children = (
-				789A4F0C21FAF3A8001528B9 /* CustomLayoutCollectionViewController.h */,
-				789A4F0B21FAF3A8001528B9 /* CustomLayoutCollectionViewController.m */,
-				789A4F0D21FAF3A8001528B9 /* CustomLayoutCollectionViewController.xib */,
-			);
-			path = CustomLayoutCollectionView;
 			sourceTree = "<group>";
 		};
 		789A4F2121FAF3A8001528B9 /* Base */ = {
@@ -893,7 +779,6 @@
 				789C444D21EECFA100181144 /* MainAsset.xcassets */,
 				789C444E21EECFA100181144 /* AppAssets.xcassets */,
 				789C444F21EECFA100181144 /* bg@2x.jpg */,
-				789C445021EECFA100181144 /* ThirdPartIcon.xcassets */,
 			);
 			name = Resources;
 			path = ../../CJUIKitDemo/CJUIKitDemo/Resources;
@@ -965,7 +850,7 @@
 				780E45FC1E5DF87B00980127 /* Sources */,
 				780E45FD1E5DF87B00980127 /* Frameworks */,
 				780E45FE1E5DF87B00980127 /* Resources */,
-				D2D9F0D3F549A3C71630EAA0 /* [CP] Copy Pods Resources */,
+				41A7D4D60470FD0D6944B800 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -1069,14 +954,12 @@
 				78590D0A215C79DD00F45AD5 /* add_red@2x.png in Resources */,
 				789A4F4B21FAF3A8001528B9 /* MemoryADPose01.jpg in Resources */,
 				789A4F5021FAF3A8001528B9 /* MyCycleADViewController.xib in Resources */,
-				789C445521EECFA100181144 /* ThirdPartIcon.xcassets in Resources */,
 				789A4F3921FAF3A8001528B9 /* MemoryADExample01.jpg in Resources */,
 				789A4F3E21FAF3A8001528B9 /* MemoryADExample03.jpg in Resources */,
 				789A4F4421FAF3A8001528B9 /* MemoryADKnowledge02.jpg in Resources */,
 				789A4F6321FAF3A8001528B9 /* NibCell.xib in Resources */,
 				789A4FAA21FB03C7001528B9 /* H5ImgSetting.html in Resources */,
 				78590D08215C79DD00F45AD5 /* add_red_Big.png in Resources */,
-				15F42708242B7C6F00ED2E4C /* cjTextField_clear@2x.png in Resources */,
 				789A4F4121FAF3A8001528B9 /* MemoryADKnowledge01.jpg in Resources */,
 				789C445321EECFA100181144 /* AppAssets.xcassets in Resources */,
 				789A4F3D21FAF3A8001528B9 /* MemoryADExplain01.jpg in Resources */,
@@ -1111,7 +994,6 @@
 				7856F73E21F4E953004AF751 /* header@2x.jpg in Resources */,
 				789A4F4521FAF3A8001528B9 /* MemoryADExample05.jpg in Resources */,
 				789A4F4221FAF3A8001528B9 /* MemoryADResult02.jpg in Resources */,
-				15F42707242B7C6F00ED2E4C /* cjTextField_clear@3x.png in Resources */,
 				7856F73D21F4E953004AF751 /* bgSky@2x.jpg in Resources */,
 				789A4F4621FAF3A8001528B9 /* MemoryADExample04.jpg in Resources */,
 				789A4F4321FAF3A8001528B9 /* MemoryAD29.jpg in Resources */,
@@ -1119,7 +1001,6 @@
 				789C445F21EEFE3100181144 /* JSOC.html in Resources */,
 				789A4F4721FAF3A8001528B9 /* MemoryADKnowledge03.jpg in Resources */,
 				789A4F3A21FAF3A8001528B9 /* MemoryADKnowledge06.jpg in Resources */,
-				789A4F5321FAF3A8001528B9 /* CustomLayoutCollectionViewController.xib in Resources */,
 				789A4F6A21FAF3A8001528B9 /* Detail.xib in Resources */,
 				789C445421EECFA100181144 /* bg@2x.jpg in Resources */,
 			);
@@ -1178,7 +1059,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		D2D9F0D3F549A3C71630EAA0 /* [CP] Copy Pods Resources */ = {
+		41A7D4D60470FD0D6944B800 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -1189,12 +1070,6 @@
 				"${PODS_ROOT}/CJBaseEffectKit/CJBaseEffectKit/CJDataEmptyView/Resources/cjNetworkDisable@3x.png",
 				"${PODS_ROOT}/CJBaseEffectKit/CJBaseEffectKit/CJDataEmptyView/Resources/cjNetworkError@2x.png",
 				"${PODS_ROOT}/CJBaseEffectKit/CJBaseEffectKit/CJDataEmptyView/Resources/cjNetworkError@3x.png",
-				"${PODS_ROOT}/CJBaseOverlayKit/CJBaseOverlayKit/CJToast/Resources/CJToast_error.png",
-				"${PODS_ROOT}/CJBaseOverlayKit/CJBaseOverlayKit/CJToast/Resources/CJToast_error@2x.png",
-				"${PODS_ROOT}/CJBaseOverlayKit/CJBaseOverlayKit/CJToast/Resources/CJToast_error@3x.png",
-				"${PODS_ROOT}/CJBaseOverlayKit/CJBaseOverlayKit/CJToast/Resources/CJToast_success.png",
-				"${PODS_ROOT}/CJBaseOverlayKit/CJBaseOverlayKit/CJToast/Resources/CJToast_success@2x.png",
-				"${PODS_ROOT}/CJBaseOverlayKit/CJBaseOverlayKit/CJToast/Resources/CJToast_success@3x.png",
 				"${PODS_ROOT}/../../CJBaseUIKit/CJBaseTableViewCell/Resources/cjCheckBoxGreen2NO.png",
 				"${PODS_ROOT}/../../CJBaseUIKit/CJBaseTableViewCell/Resources/cjCheckBoxGreen2YES.png",
 				"${PODS_ROOT}/../../CJBaseUIKit/CJBaseTableViewCell/Resources/cjCheckBoxGreenNO@2x.png",
@@ -1205,13 +1080,12 @@
 				"${PODS_ROOT}/../../CJBaseUIKit/UIViewController/Resources/cjBackBarButtonItemGray@2x.png",
 				"${PODS_ROOT}/../../CJBaseUIKit/UIViewController/Resources/cjBackBarButtonItemGray@3x.png",
 				"${PODS_CONFIGURATION_BUILD_DIR}/CJImagePickerKit/CJImagePickerKit.bundle",
-				"${PODS_CONFIGURATION_BUILD_DIR}/CQImageAddDeleteListKit/CQImageAddDeleteListKit_AddDeleteBundle.bundle",
-				"${PODS_CONFIGURATION_BUILD_DIR}/CQImageAddDeleteListKit/CQImageChooseViewBundle.bundle",
-				"${PODS_CONFIGURATION_BUILD_DIR}/CQOverlayKit/CQHUD.bundle",
-				"${PODS_ROOT}/CQOverlayKit/CQOverlayKit/CQToast/demo_toast_error@2x.png",
-				"${PODS_ROOT}/CQOverlayKit/CQOverlayKit/CQToast/demo_toast_error@3x.png",
-				"${PODS_ROOT}/PinYin4Objc/PinYin4Objc/Resources/unicode_to_hanyu_pinyin.txt",
-				"${PODS_ROOT}/SAMKeychain/Support/SAMKeychain.bundle",
+				"${PODS_CONFIGURATION_BUILD_DIR}/CQActionCollectionView/CQActionCollectionView_ActionImageBundle.bundle",
+				"${PODS_ROOT}/CQDemoKit/CQDemoKit/BaseVC/TabBar/Resources/icons8-calendar.png",
+				"${PODS_ROOT}/CQDemoKit/CQDemoKit/BaseVC/TabBar/Resources/icons8-folder.png",
+				"${PODS_ROOT}/CQDemoKit/CQDemoKit/BaseVC/TabBar/Resources/icons8-home.png",
+				"${PODS_ROOT}/CQDemoKit/CQDemoKit/BaseVC/TabBar/Resources/icons8-menu.png",
+				"${PODS_ROOT}/CQDemoKit/CQDemoKit/BaseVC/TabBar/Resources/icons8-settings.png",
 				"${PODS_ROOT}/SVProgressHUD/SVProgressHUD/SVProgressHUD.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
@@ -1220,12 +1094,6 @@
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/cjNetworkDisable@3x.png",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/cjNetworkError@2x.png",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/cjNetworkError@3x.png",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/CJToast_error.png",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/CJToast_error@2x.png",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/CJToast_error@3x.png",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/CJToast_success.png",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/CJToast_success@2x.png",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/CJToast_success@3x.png",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/cjCheckBoxGreen2NO.png",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/cjCheckBoxGreen2YES.png",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/cjCheckBoxGreenNO@2x.png",
@@ -1236,13 +1104,12 @@
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/cjBackBarButtonItemGray@2x.png",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/cjBackBarButtonItemGray@3x.png",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/CJImagePickerKit.bundle",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/CQImageAddDeleteListKit_AddDeleteBundle.bundle",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/CQImageChooseViewBundle.bundle",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/CQHUD.bundle",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/demo_toast_error@2x.png",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/demo_toast_error@3x.png",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/unicode_to_hanyu_pinyin.txt",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/SAMKeychain.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/CQActionCollectionView_ActionImageBundle.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/icons8-calendar.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/icons8-folder.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/icons8-home.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/icons8-menu.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/icons8-settings.png",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/SVProgressHUD.bundle",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1257,7 +1124,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				15F42703242B7C6F00ED2E4C /* DemoTagButtonFactory.m in Sources */,
 				789A4F8E21FAF3FB001528B9 /* ReuseDataSourceTableViewController.m in Sources */,
 				15F42701242B7C6F00ED2E4C /* CJDemoDatePickerView.m in Sources */,
 				789A4F9121FAF3FB001528B9 /* TvDemo_Complex+Event.m in Sources */,
@@ -1273,18 +1139,15 @@
 				780E46081E5DF87B00980127 /* AppDelegate.m in Sources */,
 				789A4F9A21FAF3FB001528B9 /* TableHomeViewController.m in Sources */,
 				789C446221EEFF1B00181144 /* LocalBaseWebViewController.m in Sources */,
-				15F426FE242B7C6F00ED2E4C /* UIView+CJDemoPopupAction.m in Sources */,
 				7856F89421F5680E004AF751 /* CJBaseWebViewController.m in Sources */,
 				789A4F6521FAF3A8001528B9 /* CustomCollectionViewCell.m in Sources */,
 				789A4F6221FAF3A8001528B9 /* Detail.m in Sources */,
 				78590D0F215C79DD00F45AD5 /* UploadDirectlyImagePickerViewController.m in Sources */,
-				15F42700242B7C6F00ED2E4C /* DemoTextFieldFactory.m in Sources */,
 				780E46051E5DF87B00980127 /* main.m in Sources */,
 				789A4F9821FAF3FB001528B9 /* TableViewController.m in Sources */,
 				789A4F3521FAF3A8001528B9 /* MemoryADCollectionViewCell.m in Sources */,
 				789A4F5121FAF3A8001528B9 /* CollectionHomeViewController.m in Sources */,
 				789A4F9B21FAF3FB001528B9 /* SHeaderHome2.m in Sources */,
-				15F426FF242B7C6F00ED2E4C /* CJDemoPopupView.m in Sources */,
 				7856F73621F4E79E004AF751 /* TestDataModel.m in Sources */,
 				789A4FB021FB05D3001528B9 /* H5ImgSettingPathViewController.m in Sources */,
 				789C448E21F170CF00181144 /* DemoCacheUtil.m in Sources */,
@@ -1294,21 +1157,16 @@
 				789C445D21EEDBF500181144 /* AboutViewController.m in Sources */,
 				789A4F5F21FAF3A8001528B9 /* CvDemo_Complex.m in Sources */,
 				789A4F9921FAF3FB001528B9 /* OpenTableViewController1.m in Sources */,
-				15F4270A242B7C6F00ED2E4C /* CJDemoDateLabel.m in Sources */,
 				7856F73521F4E79E004AF751 /* DemoInfo.m in Sources */,
-				15F42709242B7C6F00ED2E4C /* CJDemoDateTextField.m in Sources */,
 				789A4F6821FAF3A8001528B9 /* cvSupplementaryHead.m in Sources */,
 				789A4F9C21FAF3FB001528B9 /* MyOpenTableView.m in Sources */,
 				7856F73421F4E79E004AF751 /* TestDataUtil.m in Sources */,
 				789C446521EF019F00181144 /* LocalViewController.m in Sources */,
 				789C448F21F170CF00181144 /* CJAppVersionUtil.m in Sources */,
-				789A4F5221FAF3A8001528B9 /* CustomLayoutCollectionViewController.m in Sources */,
 				789C442A21EEC90000181144 /* WebHomeViewController.m in Sources */,
 				789A4FAD21FB053B001528B9 /* H5ImgSettingBaseViewController.m in Sources */,
 				80E7E68920AC37CA000F762D /* IjinbuNetworkClient+Login.m in Sources */,
-				15F42702242B7C6F00ED2E4C /* TSButtonFactory.m in Sources */,
 				78590D00215C79DD00F45AD5 /* NetworkBaseWebViewController.m in Sources */,
-				15F4270F242B7C6F00ED2E4C /* DemoLabelFactory.m in Sources */,
 				7856F89321F5680E004AF751 /* ProgressWebViewController.m in Sources */,
 				7856F6E521F4E706004AF751 /* ScrollViewHomeViewController.m in Sources */,
 				789A4F6721FAF3A8001528B9 /* cvSupplementaryFoot.m in Sources */,

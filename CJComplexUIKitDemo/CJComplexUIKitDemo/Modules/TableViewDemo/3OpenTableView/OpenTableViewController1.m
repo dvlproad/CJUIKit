@@ -37,7 +37,7 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    CJSectionDataModel *sectionDataModel = [self.sectionModels objectAtIndex:section];
+    CQDMSectionDataModel *sectionDataModel = [self.sectionModels objectAtIndex:section];
     NSInteger rowCount = [sectionDataModel.values count];
     
     return sectionDataModel.isSelected ? rowCount : 0;
@@ -48,7 +48,7 @@
 }
 
 - (UIView*)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
-    CJSectionDataModel *sectionDataModel = [self.sectionModels objectAtIndex:section];
+    CQDMSectionDataModel *sectionDataModel = [self.sectionModels objectAtIndex:section];
     
     TableViewHeader *header = (TableViewHeader *)[tableView dequeueReusableHeaderFooterViewWithIdentifier:@"TableViewHeader"];
     header.belongToSection = section;
@@ -68,7 +68,7 @@
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    CJSectionDataModel *sectionDataModel = [self.sectionModels objectAtIndex:indexPath.section];
+    CQDMSectionDataModel *sectionDataModel = [self.sectionModels objectAtIndex:indexPath.section];
     TestDataModel *dataModel = [sectionDataModel.values objectAtIndex:indexPath.row];
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
@@ -84,7 +84,7 @@
  *  @param section section
  */
 - (void)tapHeaderAtSection:(NSInteger)section {
-    CJSectionDataModel *secctionModel = [self.sectionModels objectAtIndex:section];
+    CQDMSectionDataModel *secctionModel = [self.sectionModels objectAtIndex:section];
     secctionModel.selected = !secctionModel.isSelected;
     
     [self.tableView reloadData];

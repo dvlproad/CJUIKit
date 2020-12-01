@@ -7,13 +7,13 @@
 //
 
 #import "CJUIKitBaseViewController.h"
-#import <CJBaseUtil/CJSectionDataModel.h>   //在CJDataUtil中
-#import <CJBaseUtil/CJModuleModel.h>        //在CJDataUtil中
+#import "CQDMSectionDataModel.h"
+#import "CQDMModuleModel.h"
 
 @interface CJUIKitBaseCollectionHomeViewController : CJUIKitBaseViewController {
     
 }
 @property (nonatomic, strong) UICollectionView *collectionView;
-@property (nonatomic, strong) NSMutableArray<CJSectionDataModel *> *sectionDataModels;
+@property (nonatomic, strong) NSMutableArray<CQDMSectionDataModel *> *sectionDataModels;
 
 @end

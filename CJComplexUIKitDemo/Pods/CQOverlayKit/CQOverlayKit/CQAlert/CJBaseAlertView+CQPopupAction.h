@@ -17,7 +17,7 @@ NS_ASSUME_NONNULL_BEGIN
 *
 *  @param shouldFitHeight  是否自动适应高度
 */
-- (void)showWithShouldFitHeight:(BOOL)shouldFitHeight;
+- (void)showAlertWithShouldFitHeight:(BOOL)shouldFitHeight;
 
 @end
 

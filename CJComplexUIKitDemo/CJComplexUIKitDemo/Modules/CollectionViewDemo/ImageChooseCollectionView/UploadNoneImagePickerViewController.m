@@ -7,6 +7,8 @@
 //
 
 #import "UploadNoneImagePickerViewController.h"
+#import <Masonry/Masonry.h>
+#import <CQDemoKit/CQTSButtonFactory.h>
 
 @interface UploadNoneImagePickerViewController ()
 
@@ -40,7 +42,7 @@
     }];
     self.uploadImageCollectionView = collectionView;
     
-    UIButton *themeBGButton1 = [TSButtonFactory themeBGButton];
+    UIButton *themeBGButton1 = [CQTSButtonFactory themeBGButton];
     [themeBGButton1 setTitle:@"reloadCollectionView" forState:UIControlStateNormal];
     [themeBGButton1 addTarget:self action:@selector(reloadCollectionView:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:themeBGButton1];
@@ -51,7 +53,7 @@
         make.height.mas_equalTo(44);
     }];
     
-    UIButton *themeBGButton2 = [TSButtonFactory themeBGButton];
+    UIButton *themeBGButton2 = [CQTSButtonFactory themeBGButton];
     [themeBGButton2 setTitle:@"开始上传/继续上传没上传完的" forState:UIControlStateNormal];
     [themeBGButton2 addTarget:self action:@selector(uploadUnFinishImageModel:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:themeBGButton2];

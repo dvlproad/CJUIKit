@@ -8,7 +8,7 @@
 
 #import "CQActionSheetUtil.h"
 #import "CJActionSheetView.h"
-#import "UIView+CQPopupAction.h"
+#import "UIView+CQPopupOverlayAction.h"
 
 #import "CQJumpMapUtil.h"
 
@@ -163,9 +163,9 @@
 #pragma mark - Private Method
 + (void)__showActionSheet:(CJActionSheetView *)actionSheet {
     actionSheet.commonClickAction = ^(CJActionSheetView * _Nonnull actionSheetView) {
-        [actionSheetView cjdemo_hidePopupView];
+        [actionSheetView cqOverlay_popupHideBottom];
     };
-    [actionSheet cjdemo_popupInBottomWithHeight:actionSheet.totalHeight];
+    [actionSheet cqOverlay_popupInBottomWithHeight:actionSheet.totalHeight];
 }
 
 @end

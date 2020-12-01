@@ -28,13 +28,13 @@
     [self.openTableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"cell"];
     self.openTableView.sectionModels = self.sectionModels;
     [self.openTableView configureHeaderBlock:^(TableViewHeader *header, NSInteger section) {
-        CJSectionDataModel *sectionDataModel = [self.sectionModels objectAtIndex:section];
+        CQDMSectionDataModel *sectionDataModel = [self.sectionModels objectAtIndex:section];
         
         header.tilteLabel.backgroundColor = [UIColor cyanColor];
         header.tilteLabel.text = sectionDataModel.theme;
         
     } configureCellBlock:^(UITableViewCell *cell, NSIndexPath *indexPath) {
-        CJSectionDataModel *sectionDataModel = [self.sectionModels objectAtIndex:indexPath.section];
+        CQDMSectionDataModel *sectionDataModel = [self.sectionModels objectAtIndex:indexPath.section];
         TestDataModel *dataModel = [sectionDataModel.values objectAtIndex:indexPath.row];
         
         cell.textLabel.text = dataModel.name;

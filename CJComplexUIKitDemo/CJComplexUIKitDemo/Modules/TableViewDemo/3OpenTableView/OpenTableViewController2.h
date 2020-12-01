@@ -7,22 +7,17 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import <CQDemoKit/CQDMSectionDataModel.h>
 #import "TableViewHeader.h"
-#ifdef CJTESTPOD
-#import "CJSectionDataModel.h"
-#else
-#import <CJBaseUtil/CJSectionDataModel.h> //在CJDataUtil中
-#endif
 
 #import "MyOpenTableView.h"
 
 
-//实际只需采用CJTableViewHeaderFooterView和CJSectionDataModel即可实现
+//实际只需采用CJTableViewHeaderFooterView和CQDMSectionDataModel即可实现
 @interface OpenTableViewController2 : UIViewController {
     
 }
 @property (nonatomic, strong) IBOutlet MyOpenTableView *openTableView;
-@property (nonatomic, strong) NSMutableArray<CJSectionDataModel *> *sectionModels;
+@property (nonatomic, strong) NSMutableArray<CQDMSectionDataModel *> *sectionModels;
 
 @end

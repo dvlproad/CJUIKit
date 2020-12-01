@@ -26,35 +26,27 @@ end
 
 
 target 'CJComplexUIKitDemo' do
-  pod 'CQDemoKit',      '~> 0.5.4',     :subspecs => ['BaseVC']
-#  pod 'CQDemoKit',                            :path => '../../../GitHub/001-UIKit-CQDemo-iOS’
-  pod 'CJBaseUIKit',                      :path => '../'
-  pod 'CJBaseUtil',                       :path => '../'
-  pod 'CJBaseHelper',                     :path => '../'
-  pod 'CJFoundation',                     :path => '../'
-  pod 'CQOverlayKit'
-  pod 'CJBaseEffectKit',                  :subspecs => ['CJDataEmptyView', 'CJScaleHeadView']
-  pod 'CJComplexUIKit/CJScrollView',      :path => '../'
-  pod 'CJComplexUIKit/CJCollectionView',  :path => '../'
+  pod 'CQDemoKit',        '~> 0.5.10',     :subspecs => ['BaseVC', 'BaseUIKit']
   
-  pod 'CJCollectionViewLayout'
-  pod 'UICollectionViewCJSelectHelper'
-  pod 'CQCollectionViewDataSource',  :subspecs => ['ExtralItem']
+  pod 'CJComplexUIKit',   :path => '../',  :subspecs => ['CJScrollView', 'CJCollectionView']
+  pod 'CJBaseUIKit',      :path => '../'
   
-  pod 'AFNetworking/Reachability'
+  pod 'CJBaseHelper',     :path => '../'  #:subspecs => ['NSDateFormatterCJHelper', 'NSCalendarCJHelper', 'WebCJHelper']
+  pod 'CJFoundation',     :path => '../'
+  pod 'CJBaseEffectKit',  :subspecs => ['CJDataEmptyView', 'CJScaleHeadView']
+  pod 'CQOverlayKit',     :subspecs => ['CQAlert']
+
   pod 'NJKWebViewProgress'
   pod 'SVProgressHUD'
-  pod 'SDCycleScrollView', '~> 1.75' #(已包括SDWebImage)原理其实就是扩大dataSource的count
-  #    pod 'SDWebImage', '~> 4.0.0'
-  pod 'DZNEmptyDataSet'
-  pod 'MJPopupViewController', '~> 0.4'
-  
+  pod 'SDCycleScrollView',        '~> 1.75' #(已包括SDWebImage)原理其实就是扩大dataSource的count
+  pod 'DZNEmptyDataSet',          '~> 1.8.1'
+  pod 'MJPopupViewController',    '~> 0.4'
   
   # 图片选择需要依赖的库
-  pod 'CQImageAddDeleteListKit', '~> 0.2.0'
-  
+  pod 'CQImageAddDeleteListKit',  '~> 0.3.0'
+
   # 测试图片上传
-  pod 'IjinbuNetwork', '~> 0.2.0' #之前有过IjinbuNetwork中有依赖CJBaseUtil的CJDevice和CJBaseUIKit的UIImage,所以这里不能使用pod，否则link错误
+  pod 'IjinbuNetwork',            '~> 0.2.0' #之前有过IjinbuNetwork中有依赖CJBaseUtil的CJDevice和CJBaseUIKit的UIImage,所以这里不能使用pod，否则link错误
 end
 
 target 'CJComplexUIKitDemoTests' do

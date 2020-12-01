@@ -146,11 +146,11 @@
 
 #pragma mark - Private Method
 + (void)__showMessageAlertView:(CJMessageAlertView *)alertView {
-    [alertView showWithShouldFitHeight:YES];
+    [alertView showAlertWithShouldFitHeight:YES];
 }
 
 + (void)__showTextInputAlertView:(CJTextInputAlertView *)alertView {
-    [alertView showWithShouldFitHeight:YES];
+    [alertView showAlertWithShouldFitHeight:YES];
 }
 
 

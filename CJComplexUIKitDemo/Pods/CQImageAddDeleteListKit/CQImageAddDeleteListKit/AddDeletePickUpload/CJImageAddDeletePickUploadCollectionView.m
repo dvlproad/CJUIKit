@@ -30,17 +30,17 @@
  *  @return 图片 添加+删除+选择+删除+上传 集合视图
  */
 - (instancetype)init {
-    self = [super initWithConfigItemCellBlock:^(CJUploadCollectionViewCell *bItemCell, id bDataModel) {
+    self = [super initWithConfigItemCellBlock:^(CQActionImageCollectionViewCell *bItemCell, id bDataModel) {
         UIImage *dataModel = (UIImage *)bDataModel;
         //dataModel.indexPath = indexPath;
-        bItemCell.cjImageView.image = dataModel;
+        bItemCell.image = dataModel;
         
         [self __operateDataCell:bItemCell withDataModel:bDataModel];
         
     } clickItemHandle:^(NSArray *bDataModels, NSInteger currentClickItemIndex) {
         [self __clickDataModelAtItemIndex:currentClickItemIndex
                              inDataModels:bDataModels];
-    } addHandle:^(CJImageAddDeleteCollectionView *bCollectionView) {
+    } addHandle:^(CQActionImageCollectionView *bCollectionView) {
         //NSLog(@"点击额外的item");
 //        if (self.mediaType == CJMediaTypeVideo) { //视频选择
 //            if (pickVideoHandle) {
@@ -69,7 +69,7 @@
  *  @param cell             要设置或者更新的Cell
  *  @param dataModel        用来设置cell的dataModel
  */
-- (void)__operateDataCell:(CJUploadCollectionViewCell *)dataCell
+- (void)__operateDataCell:(CQActionImageCollectionViewCell *)dataCell
             withDataModel:(CJImageUploadFileModelsOwner *)dataModel
 {
     // cell 的删除操作
@@ -92,7 +92,7 @@
     
     void (^uploadInfoChangeBlock)(CJUploadFileModelsOwner *itemThatSaveUploadInfo) = ^(CJUploadFileModelsOwner *itemThatSaveUploadInfo) {
         CJImageUploadFileModelsOwner *imageItem = (CJImageUploadFileModelsOwner *)itemThatSaveUploadInfo;
-        CJUploadCollectionViewCell *myCell = (CJUploadCollectionViewCell *)[weakCollectionView cellForItemAtIndexPath:imageItem.indexPath];
+        //CQActionImageCollectionViewCell *myCell = (CQActionImageCollectionViewCell *)[weakCollectionView cellForItemAtIndexPath:imageItem.indexPath];
         CJUploadMomentInfo *momentInfo = itemThatSaveUploadInfo.momentInfo;
         [uploadProgressView updateProgressText:momentInfo.uploadStatePromptText progressVaule:momentInfo.progressValue];
     };
@@ -187,7 +187,7 @@
     NSInteger canMaxChooseImageCount = self.currentCanMaxAddCount;
     
     [CJChooseFileActionSheetUtil defaultImageChooseWithCanMaxChooseImageCount:canMaxChooseImageCount pickCompleteBlock:^(NSArray<UIImage *> *bImages) {
-        [weakSelf addDtaModels:bImages];
+        [weakSelf addImageModels:bImages];
         
         if (pickImageCompleteBlock) {
             pickImageCompleteBlock();

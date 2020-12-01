@@ -8,9 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import <Foundation/Foundation.h>
-
-@class CQExtralItemCollectionViewDataSource;
-typedef UICollectionViewCell* (^CQPreSufItemCellAtIndexPathBlock)(CQExtralItemCollectionViewDataSource *bDataSource, UICollectionView *collectionView, NSIndexPath *indexPath);
+#import "CJDataSourceSettingModel.h"
 
 /**
  *  tableView只有一种Cell，且tableView不分区时候的dataSoure
@@ -18,28 +16,23 @@ typedef UICollectionViewCell* (^CQPreSufItemCellAtIndexPathBlock)(CQExtralItemCo
 @interface CQExtralItemCollectionViewDataSource : NSObject <UICollectionViewDataSource> {
     
 }
-@property (nonatomic, strong) NSMutableArray *dataModels;
-@property (nonatomic, assign, readonly) NSInteger currentCanMaxAddCount;  /**< 当前剩余最多可添加多少个 */
+@property (nonatomic, strong) NSArray *dataModels;
+@property (nonatomic, strong, readonly) CJDataSourceSettingModel *dataSourceSettingModel;
 
 /*
  *  初始化dataSource类(初始化完之后，必须在之后设置想要展示的数据dataModels)
  *
- *  @param maxDataModelShowCount        最大显示的dataModel数目
- *  @param cellForPrefixBlock           头部prefixCell定制用的block
- *  @param cellForSuffixBlock           尾部suffixCell定制用的block
- *  @param cellForItemBlock             数据cell定制用的block
+ *  @param dataSourceSettingModel           集合视图的数据类
+ *  @param cellForItemAtIndexPathBlock          dataSource中的cell(含dataCell和extralCell)进行定制用的block
  */
-- (id)initWithMaxShowCount:(NSUInteger)maxDataModelShowCount
-        cellForPrefixBlock:(CQPreSufItemCellAtIndexPathBlock)cellForPrefixBlock
-        cellForSuffixBlock:(CQPreSufItemCellAtIndexPathBlock)cellForSuffixBlock
-          cellForItemBlock:(CQPreSufItemCellAtIndexPathBlock)cellForItemBlock NS_DESIGNATED_INITIALIZER;
-+ (instancetype)new NS_UNAVAILABLE;
-- (instancetype)init NS_UNAVAILABLE;
-- (instancetype)initWithFrame:(CGRect)frame NS_UNAVAILABLE;
-- (instancetype)initWithCoder:(NSCoder *)aDecoder NS_UNAVAILABLE;
+- (id)initWithDataSourceSettingModel:(CJDataSourceSettingModel *)dataSourceSettingModel
+         cellForItemAtIndexPathBlock:(UICollectionViewCell* (^)(UICollectionView *collectionView, NSIndexPath *indexPath, BOOL isExtralItem))cellForItemAtIndexPathBlock;
 
 
 
+#pragma mark - Update
+/// 更新额外cell的样式即位置，(默认不添加）
+- (void)updateExtralItemSetting:(CJExtralItemSetting)extralItemSetting;
 
 /*
  *  dataSoure中indexPath位置的dataModel值
@@ -48,17 +41,13 @@ typedef UICollectionViewCell* (^CQPreSufItemCellAtIndexPathBlock)(CQExtralItemCo
  */
 - (id)dataModelAtIndexPath:(NSIndexPath *)indexPath;
 
-
 /*
-*  IndexPath 位置的 itemIndex 是多少(如果为-1，则代表不是item的位置)
+*  判断indexPath是否是非数据即额外加上去的cell（如添加图片的cell）
 *
-*  @param indexPath    collectionView的indexPath
+*  @param indexPath     要判断的indexPath
+*
+*  @return indexPath    是否是非数据即额外加上去的cell（如添加图片的cell）
 */
-- (NSInteger)itemIndexByIndexPath:(NSIndexPath *)indexPath;
-
-
-///删除第几张图片
-- (BOOL)deletePhotoAtIndexPath:(NSIndexPath *)indexPath;
-
+- (BOOL)isExtraItemIndexPath:(NSIndexPath *)indexPath;
 
 @end

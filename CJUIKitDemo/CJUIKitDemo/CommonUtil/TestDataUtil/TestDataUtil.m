@@ -10,27 +10,6 @@
 
 @implementation TestDataUtil
 
-+ (NSMutableArray<TestDataModel *> *)getTestDataModels {
-    NSArray *imageNames =
-    @[@"alipay_r",  @"bitcoin_r",   @"dianpin_r",   @"douban_r",    @"dribbble_r",
-      @"dropbox_r", @"email_r",     @"evernote_r",  @"facebook_r",  @"google-plus_r",
-      @"instagram_r",@"instapaper_r",@"line_r",     @"linkedin_r",  @"path_r",
-      @"snapchat_r",@"path_r",      @"snapchat_r",  @"pinterest_r", @"pocket_r",
-      @"qq_r",      @"quora_r",     @"qzone_r",     @"readability_r",@"reddit_r",
-      @"path_r",    @"snapchat_r",  @"pinterest_r", @"pocket_r",    @"qq_r",
-      @"quora_r",   @"qzone_r",     @"readability_r",@"reddit_r"];
-    
-    NSMutableArray *values = [[NSMutableArray alloc] init];
-    for (NSInteger i = 0; i < 34; i++) {
-        TestDataModel *cellModel = [[TestDataModel alloc]init];
-        cellModel.name = [NSString stringWithFormat:@"%02zd", i];
-        cellModel.imagePath = [imageNames objectAtIndex:i];
-        [values addObject:cellModel];
-    }
-    
-    return values;
-}
-
 /** 完整的描述请参见文件头部 */
 + (NSMutableArray<CQDMSectionDataModel *> *)getTestSectionDataModels {
     CQDMSectionDataModel *secctionModel1 = [[CQDMSectionDataModel alloc] init];

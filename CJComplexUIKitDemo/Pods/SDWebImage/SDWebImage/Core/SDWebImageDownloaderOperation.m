@@ -12,13 +12,6 @@
 #import "SDWebImageDownloaderResponseModifier.h"
 #import "SDWebImageDownloaderDecryptor.h"
 
-// iOS 8 Foundation.framework extern these symbol but the define is in CFNetwork.framework. We just fix this without import CFNetwork.framework
-#if ((__IPHONE_OS_VERSION_MIN_REQUIRED && __IPHONE_OS_VERSION_MIN_REQUIRED < __IPHONE_9_0) || (__MAC_OS_X_VERSION_MIN_REQUIRED && __MAC_OS_X_VERSION_MIN_REQUIRED < __MAC_10_11))
-const float NSURLSessionTaskPriorityHigh = 0.75;
-const float NSURLSessionTaskPriorityDefault = 0.5;
-const float NSURLSessionTaskPriorityLow = 0.25;
-#endif
-
 static NSString *const kProgressCallbackKey = @"progress";
 static NSString *const kCompletedCallbackKey = @"completed";
 
@@ -41,7 +34,7 @@ typedef NSMutableDictionary<NSString *, id> SDCallbacksDictionary;
 @property (strong, nonatomic, nullable) NSError *responseError;
 @property (assign, nonatomic) double previousProgress; // previous progress percent
 
-@property (strong, nonatomic, nullable) id<SDWebImageDownloaderResponseModifier> responseModifier; // modifiy original URLResponse
+@property (strong, nonatomic, nullable) id<SDWebImageDownloaderResponseModifier> responseModifier; // modify original URLResponse
 @property (strong, nonatomic, nullable) id<SDWebImageDownloaderDecryptor> decryptor; // decrypt image data
 
 // This is weak because it is injected by whoever manages this session. If this gets nil-ed out, we won't be able to run
@@ -390,7 +383,7 @@ didReceiveResponse:(NSURLResponse *)response
         // Get the image data
         NSData *imageData = [self.imageData copy];
         
-        // keep maxmium one progressive decode process during download
+        // keep maximum one progressive decode process during download
         if (self.coderQueue.operationCount == 0) {
             // NSOperation have autoreleasepool, don't need to create extra one
             [self.coderQueue addOperationWithBlock:^{

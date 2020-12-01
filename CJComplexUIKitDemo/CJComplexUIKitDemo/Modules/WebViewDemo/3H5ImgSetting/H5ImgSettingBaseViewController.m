@@ -7,7 +7,7 @@
 //
 
 #import "H5ImgSettingBaseViewController.h"
-#import "TSButtonFactory.h"
+#import <CQDemoKit/CQTSButtonFactory.h>
 #import <CQImagePickerKit/CQImagePickerControllerFactory.h>
 #import <CJBaseUIKit/UIImage+CJTransformSize.h>
 #import <CJBaseUIKit/UIImage+CJBase64.h>

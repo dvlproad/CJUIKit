@@ -31,15 +31,15 @@
 - (instancetype)initWithPickImageCompleteBlock:(void(^)(void))pickImageCompleteBlock
                                pickVideoHandle:(void(^)(void))pickVideoHandle
 {
-    self = [super initWithConfigItemCellBlock:^(CJUploadCollectionViewCell *bItemCell, id bDataModel) {
+    self = [super initWithConfigItemCellBlock:^(CQActionImageCollectionViewCell *bItemCell, id bDataModel) {
         UIImage *dataModel = (UIImage *)bDataModel;
         //dataModel.indexPath = indexPath;
-        bItemCell.cjImageView.image = dataModel;
+        bItemCell.image = dataModel;
         
     } clickItemHandle:^(NSArray *bDataModels, NSInteger currentClickItemIndex) {
         [self __clickDataModelAtItemIndex:currentClickItemIndex
                              inDataModels:bDataModels];
-    } addHandle:^(CJImageAddDeleteCollectionView *bCollectionView) {
+    } addHandle:^(CQActionImageCollectionView *bCollectionView) {
         //NSLog(@"点击额外的item");
         if (self.mediaType == CJMediaTypeVideo) { //视频选择
             if (pickVideoHandle) {
@@ -78,7 +78,7 @@
     NSInteger canMaxChooseImageCount = self.currentCanMaxAddCount;
     
     [CJChooseFileActionSheetUtil defaultImageChooseWithCanMaxChooseImageCount:canMaxChooseImageCount pickCompleteBlock:^(NSArray<UIImage *> *bImages) {
-        [weakSelf addDtaModels:bImages];
+        [weakSelf addImageModels:bImages];
         
         if (pickImageCompleteBlock) {
             pickImageCompleteBlock();

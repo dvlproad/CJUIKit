@@ -81,7 +81,7 @@ typedef void (^CJTableViewDidSelectCellBlock)(id tableView, NSIndexPath *indexPa
 
 
 #import "CJTableViewHeaderFooterView.h"
-#import "CJSectionDataModel.h"
+#import "CQDMSectionDataModel.h"
 /**
  *  自定义的MyOpenTableView类
  */
@@ -91,7 +91,7 @@ typedef void (^CJTableViewDidSelectCellBlock)(id tableView, NSIndexPath *indexPa
 //@property (nonatomic, assign) id <CJOpenTableViewDataSource> openDataSource;
 //@property (nonatomic, assign) id <CJOpenTableViewDelegate> openDelegate;
 
-@property (nonatomic, strong) NSMutableArray<CJSectionDataModel *> *sectionModels;
+@property (nonatomic, strong) NSMutableArray<CQDMSectionDataModel *> *sectionModels;
 @property (nonatomic, strong) CJOpenTableViewSetting *setting;
 /**
  *  对Header、Cell进行定制、以及点击Cell的block

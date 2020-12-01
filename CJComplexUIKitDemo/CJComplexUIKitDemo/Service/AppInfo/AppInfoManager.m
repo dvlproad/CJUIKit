@@ -8,8 +8,7 @@
 
 #import "AppInfoManager.h"
 #import <SystemConfiguration/CaptiveNetwork.h>
-
-#import "CQAlertManager.h"
+#import <CQOverlayKit/CQAlertManager.h>
 
 @interface AppInfoManager ()
 

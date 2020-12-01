@@ -8,7 +8,33 @@
 
 #import "CQCollectionViewFlowLayout.h"
 
+@interface CQCollectionViewFlowLayout () {
+    
+}
+@property (nonatomic, assign, readonly) CGFloat columnSpacing;  /**<  水平列间距 */
+@property (nonatomic, assign, readonly) CGFloat rowSpacing;     /**<  竖直行间距 */
+
+@end
+
 @implementation CQCollectionViewFlowLayout
+
+/// 水平列间距
+- (CGFloat)columnSpacing {
+    CGFloat columnSpacing = self.minimumInteritemSpacing;
+    if (self.scrollDirection == UICollectionViewScrollDirectionHorizontal) {
+        columnSpacing = self.minimumLineSpacing;
+    }
+    return columnSpacing;
+}
+
+/// 竖直行间距
+- (CGFloat)rowSpacing {
+    CGFloat rowSpacing = self.minimumLineSpacing;
+    if (self.scrollDirection == UICollectionViewScrollDirectionHorizontal) {
+        rowSpacing = self.minimumInteritemSpacing;
+    }
+    return rowSpacing;;
+}
 
 - (instancetype)init {
     self = [super init];
@@ -19,16 +45,13 @@
         self.sectionInset = UIEdgeInsetsMake(10, 10, 10, 10);
         
         //以下值必须二选一设置（默认cellWidthFromFixedWidth设置后，另外一个自动失效）
-        _cellWidthFromPerRowMaxShowCount = 4;
+        //_cellWidthFromPerRowMaxShowCount = 4;
         //_cellWidthFromFixedWidth = 50;
         
         //以下值，可选设置
         //_cellHeightFromFixedHeight = 30;
         //_cellHeightFromPerColumnMaxShowCount = 1;
         _widthHeightRatio = 1/1.0;
-        
-        //_maxDataModelShowCount = 5;
-        //_extralItemSetting = CJExtralItemSettingLeading;
     }
     return self;
 }
@@ -38,7 +61,7 @@
 - (void)prepareLayout
 {
     [super prepareLayout];
-    self.itemSize = [self __sizeForItemWithCollectionViewSize:self.collectionView.frame.size];;
+    self.itemSize = [self __sizeForItemWithCollectionViewSize:self.collectionView.frame.size];
 }
 
 
@@ -74,29 +97,29 @@
     if (self.cellWidthFromFixedWidth > 0) {
         collectionViewCellWidth = self.cellWidthFromFixedWidth;
         
-    } else if (self.cellWidthFromPerRowMaxShowCount > 0) {
-        NSInteger cellWidthFromPerRowMaxShowCount = self.cellWidthFromPerRowMaxShowCount;
+    } else if (self.cellWidthFromPerRowMaxShowCount > 0 && collectionViewSize.width > 0) {
+        // 每行最大列数
+        NSInteger perRowMaxColumnCount = self.cellWidthFromPerRowMaxShowCount;
         
         UIEdgeInsets sectionInset = self.sectionInset;
-        CGFloat minimumInteritemSpacing = self.minimumInteritemSpacing;
-        
+        CGFloat columnSpacing = self.columnSpacing; // 水平列间距
         CGFloat width = collectionViewSize.width;
-        CGFloat validWith = width - sectionInset.left - sectionInset.right - minimumInteritemSpacing*(cellWidthFromPerRowMaxShowCount-1);
-        collectionViewCellWidth = floorf(validWith/cellWidthFromPerRowMaxShowCount);
+        CGFloat validWith = width - sectionInset.left - sectionInset.right - columnSpacing*(perRowMaxColumnCount-1);
+        collectionViewCellWidth = floorf(validWith/perRowMaxColumnCount);
     }
     
     CGFloat collectionViewCellHeight = 0;
     if (self.cellHeightFromFixedHeight > 0) {
         collectionViewCellHeight = self.cellHeightFromFixedHeight;
-    } else if (self.cellHeightFromPerColumnMaxShowCount > 0) {
-        NSInteger cellHeightFromPerColumnMaxShowCount = self.cellHeightFromPerColumnMaxShowCount;
+    } else if (self.cellHeightFromPerColumnMaxShowCount > 0 && collectionViewSize.height > 0) {
+        NSInteger perColumnMaxRowCount = self.cellHeightFromPerColumnMaxShowCount;
         
         UIEdgeInsets sectionInset = self.sectionInset;
-        CGFloat minimumLineSpacing = self.minimumLineSpacing;
+        CGFloat rowSpacing = self.rowSpacing;
         
         CGFloat height = collectionViewSize.height;
-        CGFloat validHeight = height - sectionInset.top - sectionInset.bottom - minimumLineSpacing*(cellHeightFromPerColumnMaxShowCount-1);
-        collectionViewCellHeight = floorf(validHeight/cellHeightFromPerColumnMaxShowCount);
+        CGFloat validHeight = height - sectionInset.top - sectionInset.bottom - rowSpacing*(perColumnMaxRowCount-1);
+        collectionViewCellHeight = floorf(validHeight/perColumnMaxRowCount);
     }
     
     NSAssert(collectionViewCellWidth > 0 || collectionViewCellHeight > 0, @"collectionViewCell 的 width 与 height 不能都未设置");
@@ -117,12 +140,12 @@
 
 
 
-#pragma mark - Other Method
+#pragma mark - Other Method Get Height
 /*
  *  获取当前collectionView的高度
  *
  *  @param allCellCount             collectionView中cell(含dataCell和extralCell)的总数
- *  @param maxRowCount              允许的最大行数
+ *  @param maxRowCount              允许的最大行数(即超过的部分需要滚动，若要计算全部高展开的高度，则此值用NSIntegerMax)
  *  @param collectionViewWidth      要传入的collectionView的宽度
  *  @param collectionViewLayout     集合视图的布局
  *
@@ -133,34 +156,184 @@
            byCollectionViewWidth:(CGFloat)collectionViewWidth
         withCollectionViewLayout:(CQCollectionViewFlowLayout *)collectionViewLayout
 {
-    CGFloat minimumLineSpacing      = collectionViewLayout.minimumLineSpacing;
-    CGFloat minimumInteritemSpacing = collectionViewLayout.minimumInteritemSpacing;
-    UIEdgeInsets sectionInset       = collectionViewLayout.sectionInset;
-
-    //计算cell的宽度
+    // 计算cell的大小
     CGSize collectionViewCellSize = [collectionViewLayout __sizeForItemWithCollectionViewSize:CGSizeMake(collectionViewWidth, 0)];
+    
+    // 计算每行最大显示的item个数
     CGFloat collectionViewCellWidth = collectionViewCellSize.width;
+    NSInteger maxColumnCountPerRow =
+        [self maxColumnCountInCollectionViewWidth:collectionViewWidth
+                          collectionViewCellWidth:collectionViewCellWidth
+                         withCollectionViewLayout:collectionViewLayout];
+
+    // 当前 items 所占的行数
+    NSInteger currentRowCount = 0;
+    if (allCellCount > 0) {
+        currentRowCount = (allCellCount-1)/maxColumnCountPerRow + 1;
+        currentRowCount = MIN(currentRowCount, maxRowCount);
+    }
+    
+    // 当前 items 所占的高度
     CGFloat collectionViewCellHeight = collectionViewCellSize.height;
+    CGFloat height = [self heightForRowCount:currentRowCount
+                    collectionViewCellHeight:collectionViewCellHeight
+                    withCollectionViewLayout:collectionViewLayout];
+    return height;
+}
+
+/*
+ *  获取collectionViewWidth按collectionViewLayout布局时候，每行最大显示的item个数/列数
+ *
+ *  @param collectionViewWidth      要传入的collectionView的宽度
+ *  @param collectionViewCellWidth  cell的宽度(此值由collectionViewWidth计算得来)
+ *  @param collectionViewLayout     集合视图的布局
+ *
+ *  @return 每行最大显示的item个数
+ */
++ (NSInteger)maxColumnCountInCollectionViewWidth:(CGFloat)collectionViewWidth
+                         collectionViewCellWidth:(CGFloat)collectionViewCellWidth
+                        withCollectionViewLayout:(CQCollectionViewFlowLayout *)collectionViewLayout
+{
+    // 计算每行最大显示的item个数
     NSInteger perRowMaxShowCount = 0;
+    
     if (collectionViewLayout.cellHeightFromPerColumnMaxShowCount) {
+        UIEdgeInsets sectionInset = collectionViewLayout.sectionInset;
+        CGFloat columnSpacing = collectionViewLayout.columnSpacing; // 水平列间距
+        
         CGFloat validWidth = collectionViewWidth - sectionInset.left - sectionInset.right;
-        perRowMaxShowCount = (validWidth+minimumInteritemSpacing)/(collectionViewCellWidth+minimumInteritemSpacing);
+        perRowMaxShowCount = (validWidth+columnSpacing)/(collectionViewCellWidth+columnSpacing);
     } else {
         perRowMaxShowCount = collectionViewLayout.cellWidthFromPerRowMaxShowCount;
     }
+    
+    return perRowMaxShowCount;
+}
+
+/*
+ *  获取指定行数时候的collectionView高度
+ *
+ *  @param rowCount                 指定的最大行数
+ *  @param collectionViewCellHeight cell的高度
+ *  @param collectionViewLayout     集合视图的布局
+ *
+ *  @return 指定行数时候的collectionView高度
+ */
++ (CGFloat)heightForRowCount:(NSInteger)rowCount
+    collectionViewCellHeight:(CGFloat)collectionViewCellHeight
+    withCollectionViewLayout:(CQCollectionViewFlowLayout *)collectionViewLayout
+{
+    CGFloat rowSpacing = collectionViewLayout.rowSpacing; // 竖直行间距
+    UIEdgeInsets sectionInset = collectionViewLayout.sectionInset;
 
     CGFloat height = 0;
-    if (allCellCount == 0) {
-        NSInteger currentRowCount = 0;
-        height += currentRowCount * collectionViewCellHeight;
+    if (rowCount == 0) {
+        height += 0;
     } else {
-        NSInteger currentRowCount = (allCellCount-1)/perRowMaxShowCount + 1;
-        currentRowCount = MIN(currentRowCount, maxRowCount);
-        height += currentRowCount * collectionViewCellHeight + (currentRowCount - 1)*minimumLineSpacing;
+        height += rowCount * collectionViewCellHeight + (rowCount - 1)*rowSpacing;
     }
     height += sectionInset.top + sectionInset.bottom;
     
     return height;
 }
+
+
+#pragma mark - Other Method Get Width
+/*
+ *  获取当前collectionView的宽度
+ *
+ *  @param allCellCount             collectionView中cell(含dataCell和extralCell)的总数
+ *  @param maxColumnCount           允许的最大列数(即超过的部分需要滚动，若要计算全部高展开的宽度，则此值用NSIntegerMax)
+ *  @param collectionViewHeight     要传入的collectionView的高度
+ *  @param collectionViewLayout     集合视图的布局
+ *
+ *  @return 当前collectionView的高度
+ */
++ (CGFloat)widthForAllCellCount:(NSInteger)allCellCount
+                 maxColumnCount:(NSInteger)maxColumnCount
+         byCollectionViewHeight:(CGFloat)collectionViewHeight
+       withCollectionViewLayout:(CQCollectionViewFlowLayout *)collectionViewLayout
+{
+    // 计算cell的大小
+    CGSize collectionViewCellSize = [collectionViewLayout __sizeForItemWithCollectionViewSize:CGSizeMake(0, collectionViewHeight)];
+    
+    // 计算每列最大显示的item个数
+    CGFloat collectionViewCellHeight = collectionViewCellSize.height;
+    NSInteger perColumnMaxShowCount =
+        [self maxRowCountInCollectionViewHeight:collectionViewHeight
+                       collectionViewCellHeight:collectionViewCellHeight
+                       withCollectionViewLayout:collectionViewLayout];
+
+    // 当前 items 所占的列数
+    NSInteger currentColumnCount = 0;
+    if (allCellCount > 0) {
+        currentColumnCount = (allCellCount-1)/perColumnMaxShowCount + 1;
+        currentColumnCount = MIN(currentColumnCount, maxColumnCount);
+    }
+    
+    // 当前 items 所占的宽度
+    CGFloat collectionViewCellWidth = collectionViewCellSize.width;
+    CGFloat width = [self widthForColumnCount:currentColumnCount
+                      collectionViewCellWidth:collectionViewCellWidth
+                     withCollectionViewLayout:collectionViewLayout];
+    return width;
+}
+
+/*
+ *  获取collectionViewHeight按collectionViewLayout布局时候，每列最大显示的item个数
+ *
+ *  @param collectionViewHeight     要传入的collectionView的高度
+ *  @param collectionViewCellHeight cell的高度(此值由collectionViewHeight计算得来)
+ *  @param collectionViewLayout     集合视图的布局
+ *
+ *  @return 每列最大显示的item个数
+ */
++ (NSInteger)maxRowCountInCollectionViewHeight:(CGFloat)collectionViewHeight
+                      collectionViewCellHeight:(CGFloat)collectionViewCellHeight
+                      withCollectionViewLayout:(CQCollectionViewFlowLayout *)collectionViewLayout
+{
+    // 计算每列最大显示的item个数
+    NSInteger perColumnMaxShowCount = 0;
+    
+    if (collectionViewLayout.cellHeightFromPerColumnMaxShowCount) {
+        UIEdgeInsets sectionInset = collectionViewLayout.sectionInset;
+        CGFloat rowSpacing = collectionViewLayout.rowSpacing; // 竖直行间距
+        
+        CGFloat validHeight = collectionViewHeight - sectionInset.top - sectionInset.bottom;
+        perColumnMaxShowCount = (validHeight+rowSpacing)/(collectionViewCellHeight+rowSpacing);
+    } else {
+        perColumnMaxShowCount = collectionViewLayout.cellHeightFromPerColumnMaxShowCount;
+    }
+    
+    return perColumnMaxShowCount;
+}
+
+/*
+ *  获取指定列数时候的collectionView宽度
+ *
+ *  @param columnCount              指定的最大列数
+ *  @param collectionViewCellWidth  cell的宽度
+ *  @param collectionViewLayout     集合视图的布局
+ *
+ *  @return 指定列数时候的collectionView宽度
+ */
++ (CGFloat)widthForColumnCount:(NSInteger)columnCount
+       collectionViewCellWidth:(CGFloat)collectionViewCellWidth
+      withCollectionViewLayout:(CQCollectionViewFlowLayout *)collectionViewLayout
+{
+    CGFloat columnSpacing = collectionViewLayout.columnSpacing; // 水平列间距
+    UIEdgeInsets sectionInset = collectionViewLayout.sectionInset;
+
+    CGFloat width = 0;
+    if (columnCount == 0) {
+        width += 0;
+    } else {
+        width += columnCount * collectionViewCellWidth + (columnCount - 1)*columnSpacing;
+    }
+    width += sectionInset.left + sectionInset.right;
+    
+    return width;
+}
+
 
 @end

@@ -7,6 +7,7 @@
 //
 
 #import "LocalBaseWebViewController.h"
+#import <CJBaseUIKit/UIColor+CJHex.h>
 
 @interface LocalBaseWebViewController ()
 

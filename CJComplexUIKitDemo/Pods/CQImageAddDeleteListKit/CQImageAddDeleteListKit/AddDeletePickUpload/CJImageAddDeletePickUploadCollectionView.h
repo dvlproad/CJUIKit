@@ -7,7 +7,7 @@
 //
 //  图片 添加+删除+选择+删除+上传 集合视图
 
-#import "CJImageAddDeleteCollectionView.h"
+#import "CQActionImageCollectionView.h"
 #import "CJImageUploadFileModelsOwner.h"
 #import "CJVideoUploadFileModelsOwner.h"
 
@@ -20,7 +20,7 @@ typedef NS_ENUM(NSUInteger, CJUploadActionType) {
 };
 
 ///TODO:将本工程CJTotalDemo中的FileChooseView抽出不含上传请求的部分到CJComplexUIKitDemo中
-@interface CJImageAddDeletePickUploadCollectionView : CJImageAddDeleteCollectionView {
+@interface CJImageAddDeletePickUploadCollectionView : CQActionImageCollectionView {
     
 }
 //创建上传文件到服务器的方法的代码块要实现的效果为：给item设置上传请求，并将上传请求的各个时刻信息momentInfo①保存到该item上，②同时利用这些momentInfo设置uploadProgressView。所以如下
@@ -35,7 +35,7 @@ typedef NS_ENUM(NSUInteger, CJUploadActionType) {
 
 - (instancetype)init NS_DESIGNATED_INITIALIZER;
 
-- (instancetype)initWithConfigItemCellBlock:(void (^)(CJUploadCollectionViewCell *, id))configItemCellBlock clickItemHandle:(void (^)(NSArray *, NSInteger))clickItemHandle addHandle:(void (^)(CJImageAddDeleteCollectionView *))addHandle otherItemCellDeleteBlock:(void (^)(id))otherItemCellDeleteBlock NS_UNAVAILABLE;
+- (instancetype)initWithConfigItemCellBlock:(void (^)(CQActionImageCollectionViewCell *, id))configItemCellBlock clickItemHandle:(void (^)(NSArray *, NSInteger))clickItemHandle addHandle:(void (^)(CQActionImageCollectionView *))addHandle otherItemCellDeleteBlock:(void (^)(id))otherItemCellDeleteBlock NS_UNAVAILABLE;
 
 /**
  *  检查所有文件是否上传完成
