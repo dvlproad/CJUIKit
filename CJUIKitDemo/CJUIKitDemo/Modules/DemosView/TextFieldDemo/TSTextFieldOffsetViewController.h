@@ -1,5 +1,5 @@
 //
-//  TestTextFieldOffsetViewController.h
+//  TSTextFieldOffsetViewController.h
 //  CJUIKitDemo
 //
 //  Created by ciyouzen on 12/7/18.
@@ -10,8 +10,7 @@
 #import <CQDemoKit/CQDMSectionDataModel.h>
 #import <CQDemoKit/CQDMModuleModel.h>
 
-
-@interface TestTextFieldOffsetViewController : CJUIKitBaseViewController <UITableViewDataSource, UITableViewDelegate> {
+@interface TSTextFieldOffsetViewController : CJUIKitBaseViewController <UITableViewDataSource, UITableViewDelegate> {
     
 }
 @property (nonatomic, strong) UITableView *tableView;

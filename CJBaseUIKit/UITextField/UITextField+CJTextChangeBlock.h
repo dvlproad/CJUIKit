@@ -14,6 +14,6 @@
  */
 @interface UITextField (CJTextChangeBlock)
 
-@property (nonatomic, copy) void (^cjTextDidChangeBlock)(UITextField *textField);   /**< 文本已经改变的通知事件 */
+@property (nonatomic, copy) void (^cjTextDidChangeBlock)(UITextField *bTextField);  /**< 文本已经改变的通知事件 */
 
 @end

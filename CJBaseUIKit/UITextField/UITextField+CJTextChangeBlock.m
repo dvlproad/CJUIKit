@@ -14,11 +14,11 @@
 #pragma mark - runtime
 static NSString * const cjTextDidChangeBlockKey = @"cjTextDidChangeBlockKey";
 
-- (void (^)(UITextField *))cjTextDidChangeBlock {
+- (void (^)(UITextField *bTextField))cjTextDidChangeBlock {
     return objc_getAssociatedObject(self, (__bridge const void *)(cjTextDidChangeBlockKey));
 }
 
-- (void)setCjTextDidChangeBlock:(void (^)(UITextField *))cjTextDidChangeBlock {
+- (void)setCjTextDidChangeBlock:(void (^)(UITextField *bTextField))cjTextDidChangeBlock {
     objc_setAssociatedObject(self, (__bridge const void *)(cjTextDidChangeBlockKey), cjTextDidChangeBlock, OBJC_ASSOCIATION_COPY_NONATOMIC);
     
     //①KVO方式：为了检测通过代码textField.text = newValue赋值时，文本内容的变化

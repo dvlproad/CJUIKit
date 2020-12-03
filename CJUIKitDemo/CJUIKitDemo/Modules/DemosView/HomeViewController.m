@@ -19,9 +19,7 @@
 #import "ViewHomeViewController.h"
 
 #import "ButtonHomeViewController.h"
-#import "TextFieldViewController.h"
-#import "TestTextFieldOffsetViewController.h"
-#import "TextViewController.h"
+#import "TextFieldHomeViewController.h" // TextField + TextView
 #import "SliderHomeViewController.h"
 
 //Cell
@@ -197,49 +195,30 @@
             CQDMModuleModel *buttonModule = [[CQDMModuleModel alloc] init];
             buttonModule.title = @"UIButton";
             buttonModule.classEntry = [ButtonHomeViewController class];
-            buttonModule.isCreateByXib = NO;
             [sectionDataModel.values addObject:buttonModule];
         }
         {
-            //TextField
-            CQDMModuleModel *textFieldModule = [[CQDMModuleModel alloc] init];
-            textFieldModule.title = @"TextField";
-            textFieldModule.classEntry = [TextFieldViewController class];
-            textFieldModule.isCreateByXib = NO;
-            [sectionDataModel.values addObject:textFieldModule];
+            // TextField + TextView
+            CQDMModuleModel *textInputModule = [[CQDMModuleModel alloc] init];
+            textInputModule.title = @"TextField + TextView";
+            textInputModule.classEntry = [TextFieldHomeViewController class];
+            [sectionDataModel.values addObject:textInputModule];
         }
-        {
-            //TextField
-            CQDMModuleModel *textFieldModule = [[CQDMModuleModel alloc] init];
-            textFieldModule.title = @"TextFieldOffset";
-            textFieldModule.classEntry = [TestTextFieldOffsetViewController class];
-            textFieldModule.isCreateByXib = NO;
-            [sectionDataModel.values addObject:textFieldModule];
-        }
-        {
-            //TextView
-            CQDMModuleModel *textViewModule = [[CQDMModuleModel alloc] init];
-            textViewModule.title = @"TextView";
-            textViewModule.classEntry = [TextViewController class];
-            textViewModule.isCreateByXib = NO;
-            [sectionDataModel.values addObject:textViewModule];
-        }
+        
         {
             //CJBadgeButton
             CQDMModuleModel *badgeButtonModule = [[CQDMModuleModel alloc] init];
             badgeButtonModule.title = @"CJBadgeButton";
             badgeButtonModule.classEntry = [ColorViewController class];
-            badgeButtonModule.isCreateByXib = NO;
             [sectionDataModel.values addObject:badgeButtonModule];
         }
         
         {
             //UISlider
-            CQDMModuleModel *cjSearchBarModuleModel = [[CQDMModuleModel alloc] init];
-            cjSearchBarModuleModel.title = @"UISlider";
-            cjSearchBarModuleModel.classEntry = [SliderHomeViewController class];
-            cjSearchBarModuleModel.isCreateByXib = NO;
-            [sectionDataModel.values addObject:cjSearchBarModuleModel];
+            CQDMModuleModel *sliderModule = [[CQDMModuleModel alloc] init];
+            sliderModule.title = @"UISlider";
+            sliderModule.classEntry = [SliderHomeViewController class];
+            [sectionDataModel.values addObject:sliderModule];
         }
         
         

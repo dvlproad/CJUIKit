@@ -1,19 +1,19 @@
 //
-//  TestTextFieldOffsetViewController.m
+//  TSTextFieldOffsetViewController.m
 //  CJUIKitDemo
 //
 //  Created by ciyouzen on 12/7/18.
 //  Copyright © 2018 dvlproad. All rights reserved.
 //
 
-#import "TestTextFieldOffsetViewController.h"
+#import "TSTextFieldOffsetViewController.h"
 #import "TestTextFieldOffsetTableViewCell.h"
 
-@interface TestTextFieldOffsetViewController ()
+@interface TSTextFieldOffsetViewController ()
 
 @end
 
-@implementation TestTextFieldOffsetViewController
+@implementation TSTextFieldOffsetViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];

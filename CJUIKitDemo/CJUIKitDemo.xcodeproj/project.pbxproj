@@ -135,7 +135,7 @@
 		7856F96921F9B2DF004AF751 /* AuthorizationCJHelperViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7856F96821F9B2DF004AF751 /* AuthorizationCJHelperViewController.m */; };
 		7856F97021F9D2C5004AF751 /* BaseTableViewCellViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7856F96D21F9D2C4004AF751 /* BaseTableViewCellViewController.m */; };
 		78575C872257237900925842 /* TestTextFieldOffsetTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 78575C852257237900925842 /* TestTextFieldOffsetTableViewCell.m */; };
-		78575C8A2257242100925842 /* TestTextFieldOffsetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78575C892257242100925842 /* TestTextFieldOffsetViewController.m */; };
+		78575C8A2257242100925842 /* TSTextFieldOffsetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78575C892257242100925842 /* TSTextFieldOffsetViewController.m */; };
 		7857ABB8225482D200B1569C /* CJDemoDatePickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7857ABB6225482D200B1569C /* CJDemoDatePickerView.m */; };
 		7857ABBC2254AA5000B1569C /* CJDemoDateTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 7857ABBB2254AA5000B1569C /* CJDemoDateTextField.m */; };
 		7861852C21D3630B004B71FF /* AppCommon.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7861852B21D3630B004B71FF /* AppCommon.xcassets */; };
@@ -150,7 +150,7 @@
 		7875C58E231CF77900076A00 /* BackItemBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7875C588231CF77900076A00 /* BackItemBaseViewController.m */; };
 		7875C58F231CF77900076A00 /* BackSystemItemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7875C589231CF77900076A00 /* BackSystemItemViewController.m */; };
 		787C287F23223DAA00AF84F4 /* DemoEasyModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 787C287E23223DAA00AF84F4 /* DemoEasyModel.m */; };
-		787FDB5820500B01008A46E3 /* TextFieldViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 787FDB5020500B00008A46E3 /* TextFieldViewController.m */; };
+		787FDB5820500B01008A46E3 /* TSTextFieldInputViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 787FDB5020500B00008A46E3 /* TSTextFieldInputViewController.m */; };
 		787FDB5A20500B01008A46E3 /* ColorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 787FDB5320500B01008A46E3 /* ColorViewController.m */; };
 		787FDB6420500B1F008A46E3 /* TextViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 787FDB5D20500B1F008A46E3 /* TextViewController.m */; };
 		787FDB6520500B1F008A46E3 /* plus@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 787FDB5F20500B1F008A46E3 /* plus@2x.png */; };
@@ -208,6 +208,9 @@
 		78A621E72135C925004DA046 /* DemoSuspendWindowRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78A621E52135C924004DA046 /* DemoSuspendWindowRootViewController.m */; };
 		78A621ED2135CA50004DA046 /* DemoFloatingWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 78A621EC2135CA50004DA046 /* DemoFloatingWindow.m */; };
 		78A74E5123687ACF0023F44B /* PriceFenToYuanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78A74E5023687ACF0023F44B /* PriceFenToYuanViewController.m */; };
+		78A9923025792EAC00B54E30 /* TSBlockTextFieldViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78A9922F25792EAC00B54E30 /* TSBlockTextFieldViewController.m */; };
+		78A99236257934B100B54E30 /* TextFieldHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78A99235257934B100B54E30 /* TextFieldHomeViewController.m */; };
+		78A992422579502300B54E30 /* TSTextFieldClickViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78A992402579502300B54E30 /* TSTextFieldClickViewController.m */; };
 		78AB83A621B7CE4500853E21 /* PresentAViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78AB83A521B7CE4500853E21 /* PresentAViewController.m */; };
 		78AB83A921B7CE7100853E21 /* PresentBViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78AB83A821B7CE7100853E21 /* PresentBViewController.m */; };
 		78AB83AC21B7D24E00853E21 /* closePresentVC@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 78AB83AA21B7D24E00853E21 /* closePresentVC@2x.png */; };
@@ -583,8 +586,8 @@
 		7856F96F21F9D2C5004AF751 /* BaseTableViewCellViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseTableViewCellViewController.h; sourceTree = "<group>"; };
 		78575C852257237900925842 /* TestTextFieldOffsetTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestTextFieldOffsetTableViewCell.m; sourceTree = "<group>"; };
 		78575C862257237900925842 /* TestTextFieldOffsetTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestTextFieldOffsetTableViewCell.h; sourceTree = "<group>"; };
-		78575C882257242000925842 /* TestTextFieldOffsetViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestTextFieldOffsetViewController.h; sourceTree = "<group>"; };
-		78575C892257242100925842 /* TestTextFieldOffsetViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestTextFieldOffsetViewController.m; sourceTree = "<group>"; };
+		78575C882257242000925842 /* TSTextFieldOffsetViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSTextFieldOffsetViewController.h; sourceTree = "<group>"; };
+		78575C892257242100925842 /* TSTextFieldOffsetViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSTextFieldOffsetViewController.m; sourceTree = "<group>"; };
 		7857ABB6225482D200B1569C /* CJDemoDatePickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJDemoDatePickerView.m; sourceTree = "<group>"; };
 		7857ABB7225482D200B1569C /* CJDemoDatePickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJDemoDatePickerView.h; sourceTree = "<group>"; };
 		7857ABBA2254AA5000B1569C /* CJDemoDateTextField.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CJDemoDateTextField.h; sourceTree = "<group>"; };
@@ -609,8 +612,8 @@
 		7875C58C231CF77900076A00 /* BackSystemItemViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BackSystemItemViewController.h; sourceTree = "<group>"; };
 		787C287D23223DAA00AF84F4 /* DemoEasyModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DemoEasyModel.h; sourceTree = "<group>"; };
 		787C287E23223DAA00AF84F4 /* DemoEasyModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DemoEasyModel.m; sourceTree = "<group>"; };
-		787FDB4F20500B00008A46E3 /* TextFieldViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextFieldViewController.h; sourceTree = "<group>"; };
-		787FDB5020500B00008A46E3 /* TextFieldViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextFieldViewController.m; sourceTree = "<group>"; };
+		787FDB4F20500B00008A46E3 /* TSTextFieldInputViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSTextFieldInputViewController.h; sourceTree = "<group>"; };
+		787FDB5020500B00008A46E3 /* TSTextFieldInputViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSTextFieldInputViewController.m; sourceTree = "<group>"; };
 		787FDB5320500B01008A46E3 /* ColorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ColorViewController.m; sourceTree = "<group>"; };
 		787FDB5520500B01008A46E3 /* ColorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColorViewController.h; sourceTree = "<group>"; };
 		787FDB5D20500B1F008A46E3 /* TextViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextViewController.m; sourceTree = "<group>"; };
@@ -701,6 +704,12 @@
 		78A621EC2135CA50004DA046 /* DemoFloatingWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DemoFloatingWindow.m; sourceTree = "<group>"; };
 		78A74E4F23687ACF0023F44B /* PriceFenToYuanViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PriceFenToYuanViewController.h; sourceTree = "<group>"; };
 		78A74E5023687ACF0023F44B /* PriceFenToYuanViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PriceFenToYuanViewController.m; sourceTree = "<group>"; };
+		78A9922E25792EAC00B54E30 /* TSBlockTextFieldViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSBlockTextFieldViewController.h; sourceTree = "<group>"; };
+		78A9922F25792EAC00B54E30 /* TSBlockTextFieldViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSBlockTextFieldViewController.m; sourceTree = "<group>"; };
+		78A99234257934B100B54E30 /* TextFieldHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextFieldHomeViewController.h; sourceTree = "<group>"; };
+		78A99235257934B100B54E30 /* TextFieldHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextFieldHomeViewController.m; sourceTree = "<group>"; };
+		78A992402579502300B54E30 /* TSTextFieldClickViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSTextFieldClickViewController.m; sourceTree = "<group>"; };
+		78A992412579502300B54E30 /* TSTextFieldClickViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSTextFieldClickViewController.h; sourceTree = "<group>"; };
 		78AB83A421B7CE4500853E21 /* PresentAViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PresentAViewController.h; sourceTree = "<group>"; };
 		78AB83A521B7CE4500853E21 /* PresentAViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PresentAViewController.m; sourceTree = "<group>"; };
 		78AB83A721B7CE7100853E21 /* PresentBViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PresentBViewController.h; sourceTree = "<group>"; };
@@ -1697,10 +1706,16 @@
 		787FDB4E20500B00008A46E3 /* TextFieldDemo */ = {
 			isa = PBXGroup;
 			children = (
-				787FDB4F20500B00008A46E3 /* TextFieldViewController.h */,
-				787FDB5020500B00008A46E3 /* TextFieldViewController.m */,
-				78575C882257242000925842 /* TestTextFieldOffsetViewController.h */,
-				78575C892257242100925842 /* TestTextFieldOffsetViewController.m */,
+				78A99234257934B100B54E30 /* TextFieldHomeViewController.h */,
+				78A99235257934B100B54E30 /* TextFieldHomeViewController.m */,
+				787FDB4F20500B00008A46E3 /* TSTextFieldInputViewController.h */,
+				787FDB5020500B00008A46E3 /* TSTextFieldInputViewController.m */,
+				78A992412579502300B54E30 /* TSTextFieldClickViewController.h */,
+				78A992402579502300B54E30 /* TSTextFieldClickViewController.m */,
+				78A9922E25792EAC00B54E30 /* TSBlockTextFieldViewController.h */,
+				78A9922F25792EAC00B54E30 /* TSBlockTextFieldViewController.m */,
+				78575C882257242000925842 /* TSTextFieldOffsetViewController.h */,
+				78575C892257242100925842 /* TSTextFieldOffsetViewController.m */,
 				801F75CF20A040D800A2E027 /* Views */,
 			);
 			path = TextFieldDemo;
@@ -2840,6 +2855,7 @@
 				97578AB225590F7100249AD6 /* UIWindow+RootSetting.m in Sources */,
 				1562F2E923F5DBF40009FCEA /* CJSwitchView.m in Sources */,
 				78A621ED2135CA50004DA046 /* DemoFloatingWindow.m in Sources */,
+				78A99236257934B100B54E30 /* TextFieldHomeViewController.m in Sources */,
 				807F126020B507A30008B748 /* ViewAnimateViewController.m in Sources */,
 				784A7216214C9DF000F8D144 /* MoreHomeViewController.m in Sources */,
 				788113BF2199574900D1630D /* SharedInstanceViewController.m in Sources */,
@@ -2871,7 +2887,7 @@
 				80FF91341FC5668700E437CF /* NSDictionary+CJConsoleLog.m in Sources */,
 				788113C5219958FF00D1630D /* InheritableSharedInstanceClass.m in Sources */,
 				1562F38723FD2FC70009FCEA /* APPUIKitSetting.m in Sources */,
-				787FDB5820500B01008A46E3 /* TextFieldViewController.m in Sources */,
+				787FDB5820500B01008A46E3 /* TSTextFieldInputViewController.m in Sources */,
 				1562F2C723F5DBF40009FCEA /* UIView+CJPopupInView.m in Sources */,
 				789A4EE021FAAC76001528B9 /* CJBaseTableViewCell+ConfigureForDataModel.m in Sources */,
 				78A621E72135C925004DA046 /* DemoSuspendWindowRootViewController.m in Sources */,
@@ -2888,7 +2904,7 @@
 				78FCF5532306A9BA00D275F9 /* CJDemoPopupView.m in Sources */,
 				787C287F23223DAA00AF84F4 /* DemoEasyModel.m in Sources */,
 				78B6C2DF2159D20000D5864E /* DemoUsePermissionModel.m in Sources */,
-				78575C8A2257242100925842 /* TestTextFieldOffsetViewController.m in Sources */,
+				78575C8A2257242100925842 /* TSTextFieldOffsetViewController.m in Sources */,
 				15A7680C23FD966B00358B42 /* TSButtonFactory.m in Sources */,
 				78B6C2E32159D6BC00D5864E /* DemoBusStationModel.m in Sources */,
 				8050038A211C3A29002A2306 /* NSObjectCJHelperViewController.m in Sources */,
@@ -2914,6 +2930,7 @@
 				80D0120F210336E100D1EDF0 /* ChangeViewController.m in Sources */,
 				975164AE256CFE34001DE112 /* CQUpdateContentPopupView.m in Sources */,
 				78F65DA72576A9E20020916A /* UIView+CJToastInView.m in Sources */,
+				78A9923025792EAC00B54E30 /* TSBlockTextFieldViewController.m in Sources */,
 				1562F2F323F5DBF40009FCEA /* UITextField+CJSelectedTextRange.m in Sources */,
 				1562F2C323F5DBF40009FCEA /* UIColor+CJHex.m in Sources */,
 				1562F2D623F5DBF40009FCEA /* CJBaseTableViewCell.m in Sources */,
@@ -2992,6 +3009,7 @@
 				1562F2BE23F5DBF40009FCEA /* CJBadgeButton.m in Sources */,
 				1562F2D023F5DBF40009FCEA /* CJTableViewHeaderFooterView.m in Sources */,
 				8060C48020E0D0630093B14E /* CJMoneyUtil.m in Sources */,
+				78A992422579502300B54E30 /* TSTextFieldClickViewController.m in Sources */,
 				80582FA120C121B500C01225 /* ImageRotateViewController.m in Sources */,
 				781C736921BA5E140090080C /* NSCalendarCJHelperViewController.m in Sources */,
 				1562F2E323F5DBF40009FCEA /* CJSliderPopover.m in Sources */,
