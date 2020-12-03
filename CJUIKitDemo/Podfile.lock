@@ -85,7 +85,7 @@ PODS:
   - CQDemoKit/BaseVC/TextView (0.5.9):
     - CQDemoKit/BaseUtil
     - CQDemoKit/BaseVC/Base
-  - IQKeyboardManager (6.5.5)
+  - IQKeyboardManager (6.5.6)
   - Mantle (2.1.1):
     - Mantle/extobjc (= 2.1.1)
   - Mantle/extobjc (2.1.1)
@@ -165,7 +165,7 @@ SPEC CHECKSUMS:
   CJPicker: c33099d47323271b91c2ce112976d1bee19a70ce
   CJPopupView: c7685f6a0225a89c72d97ea946f2816b5442abaf
   CQDemoKit: ef311a1fbb8ba1c58d5974da948ddaceac5ac245
-  IQKeyboardManager: 3a8b9e603f8b0eeaf5f096a1f2b2cfcf121992ef
+  IQKeyboardManager: 2a6e97afdafc7becf0cb17a9a8d795e3a980717f
   Mantle: 35238ae6f2e2b2d474fa7b67fee82a59fea71915
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   MJExtension: 74ec83124a68891619fb7ba9c5c811bbf1691076

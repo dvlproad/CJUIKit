@@ -9,9 +9,10 @@
 #import "TextFieldHomeViewController.h"
 
 // TextField
-#import "TSBlockTextFieldViewController.h"
+#import "TSTextFieldBlockViewController.h"
 #import "TSTextFieldOffsetViewController.h"
 #import "TSTextFieldInputViewController.h"
+#import "TSTextFieldAccessoryViewController.h"
 #import "TSTextFieldClickViewController.h"
 
 // TextView
@@ -39,7 +40,7 @@
         {
             CQDMModuleModel *buttonModule = [[CQDMModuleModel alloc] init];
             buttonModule.title = @"TextField 的 Block";
-            buttonModule.classEntry = [TSBlockTextFieldViewController class];
+            buttonModule.classEntry = [TSTextFieldBlockViewController class];
             [sectionDataModel.values addObject:buttonModule];
         }
         {
@@ -52,6 +53,12 @@
             CQDMModuleModel *textFieldModule = [[CQDMModuleModel alloc] init];
             textFieldModule.title = @"TextField 的 input";
             textFieldModule.classEntry = [TSTextFieldInputViewController class];
+            [sectionDataModel.values addObject:textFieldModule];
+        }
+        {
+            CQDMModuleModel *textFieldModule = [[CQDMModuleModel alloc] init];
+            textFieldModule.title = @"TextField 的 AccessoryView";
+            textFieldModule.classEntry = [TSTextFieldAccessoryViewController class];
             [sectionDataModel.values addObject:textFieldModule];
         }
         {

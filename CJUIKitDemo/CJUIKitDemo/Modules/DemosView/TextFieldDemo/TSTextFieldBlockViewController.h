@@ -1,14 +1,14 @@
 //
-//  TSBlockTextFieldViewController.h
+//  TSTextFieldBlockViewController.h
 //  CJUIKitDemo
 //
 //  Created by ciyouzen on 2015/12/23.
 //  Copyright © 2015年 dvlproad. All rights reserved.
 //
 
-#import "CJUIKitBaseScrollViewController.h"
+#import "CJUIKitBaseViewController.h"
 
-@interface TSBlockTextFieldViewController : CJUIKitBaseScrollViewController
+@interface TSTextFieldBlockViewController : CJUIKitBaseViewController
 
 @property (nonatomic, strong) UITextField *uiTextField;
 

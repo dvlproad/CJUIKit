@@ -22,7 +22,7 @@ static NSString * const cjTextDidChangeBlockKey = @"cjTextDidChangeBlockKey";
     objc_setAssociatedObject(self, (__bridge const void *)(cjTextDidChangeBlockKey), cjTextDidChangeBlock, OBJC_ASSOCIATION_COPY_NONATOMIC);
     
     //①KVO方式：为了检测通过代码textField.text = newValue赋值时，文本内容的变化
-    [self addObserver:self forKeyPath:@"text" options:NSKeyValueObservingOptionNew | NSKeyValueObservingOptionOld context:nil];
+//    [self addObserver:self forKeyPath:@"text" options:NSKeyValueObservingOptionNew | NSKeyValueObservingOptionOld context:nil];   // 使用此方式，会导致当执行[self.view endEditing:YES];时候崩溃，比如在touchesBegan执行
     
     //②直接添加监视
     [self addTarget:self action:@selector(textFieldDidChange:) forControlEvents:UIControlEventEditingChanged];

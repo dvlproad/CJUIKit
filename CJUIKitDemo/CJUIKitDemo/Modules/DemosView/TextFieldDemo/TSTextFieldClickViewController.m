@@ -7,7 +7,6 @@
 //
 
 #import "TSTextFieldClickViewController.h"
-#import <IQKeyboardManager/IQKeyboardManager.h>
 #import <CQDemoKit/CJUIKitToastUtil.h>
 
 #import "UITextField+CJPadding.h"

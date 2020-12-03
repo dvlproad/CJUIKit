@@ -12,7 +12,7 @@
 #import "YunUncaughtExceptionHandler.h"
 
 #import "CJAppLastUtil.h"
-#import <IQKeyboardManager/IQKeyboardManager.h>
+//#import <IQKeyboardManager/IQKeyboardManager.h>
 
 #import <UINavigation-SXFixSpace/UINavigationSXFixSpace.h>
 
