@@ -14,12 +14,21 @@
 
 #import "CQUpdateContentPopupView.h"
 
-@interface KeyboardAutoMoveUpViewController ()
+@interface KeyboardAutoMoveUpViewController () {
+    
+}
+@property (nonatomic, strong) UITextField *autoMoveUpView;
 
 @end
 
 @implementation KeyboardAutoMoveUpViewController
 
+
+- (void)viewDidLayoutSubviews {
+    [super viewDidLayoutSubviews];
+    
+    [self.autoMoveUpView cj_registerKeyboardNotificationWithAutoMoveUpSpacing:0 hasSpacing:YES];
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -28,8 +37,9 @@
     
     
     UITextField *autoMoveUpView = [UITextField new];
-    autoMoveUpView.placeholder = @"测试本视图自动上移";
+    autoMoveUpView.placeholder = @"本视图中的视图自动上移";
     autoMoveUpView.backgroundColor = [UIColor redColor];
+    
     [self.view addSubview:autoMoveUpView];
     [autoMoveUpView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerX.mas_equalTo(self.view);
@@ -37,6 +47,7 @@
         make.height.mas_equalTo(@44);
         make.bottom.mas_equalTo(self.mas_bottomLayoutGuide).offset(-60);
     }];
+    self.autoMoveUpView = autoMoveUpView;
     
     
     [IQKeyboardManager sharedManager].enable = NO; // 禁用 IQKeyboardManager
@@ -58,7 +69,7 @@
                     [CJUIKitToastUtil showMessage:message];
                     [popupView cj_hidePopupView];
                 }];
-                [popupView cj_registerKeyboardNotificationWithAutoMoveUpSpacing:0];
+                [popupView cj_registerKeyboardNotificationWithAutoMoveUpSpacing:0 hasSpacing:NO];
                 
                 CGFloat popupViewHeight = CGRectGetHeight(popupView.frame);
                 UIColor *blankBGColor = [UIColor colorWithRed:.16 green:.17 blue:.21 alpha:.6];
@@ -73,14 +84,7 @@
             [sectionDataModel.values addObject:autoLayoutModule];
         }
         
-        {
-            CQDMModuleModel *autoLayoutModule = [[CQDMModuleModel alloc] init];
-            autoLayoutModule.title = @"本视图中的视图自动上移";
-            autoLayoutModule.actionBlock = ^{
-                [autoMoveUpView cj_registerKeyboardNotificationWithAutoMoveUpSpacing:0];
-            };
-            [sectionDataModel.values addObject:autoLayoutModule];
-        }
+       
         [sectionDataModels addObject:sectionDataModel];
     }
     

@@ -1870,8 +1870,8 @@
 		7894C2BF256ED89C00C73B5E /* CJAutoMoveUp */ = {
 			isa = PBXGroup;
 			children = (
-				7894C2C0256ED89C00C73B5E /* UIView+CJAutoMoveUp.m */,
 				7894C2C1256ED89C00C73B5E /* UIView+CJAutoMoveUp.h */,
+				7894C2C0256ED89C00C73B5E /* UIView+CJAutoMoveUp.m */,
 			);
 			path = CJAutoMoveUp;
 			sourceTree = "<group>";
