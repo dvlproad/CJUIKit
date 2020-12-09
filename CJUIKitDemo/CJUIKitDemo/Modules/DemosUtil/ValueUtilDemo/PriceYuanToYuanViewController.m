@@ -19,6 +19,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     self.navigationItem.title = NSLocalizedString(@"元转元(向上取整、向下取整、四舍五入)", nil);
+    self.fixCellResultLableWidth = 80;  // 固定result的视图宽度（该值大于20才生效），默认为0<20，表示自适应宽度
     
     NSMutableArray *sectionDataModels = [[NSMutableArray alloc] init];
     

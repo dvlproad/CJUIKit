@@ -11,7 +11,10 @@
 #import "EncryptStringViewController.h"
 #import "AttributedStringViewController.h"
 #import "AttributedStringViewController2.h"
+
+#import "StringLengthViewController.h"
 #import "ValidateStringViewController.h"
+
 
 #import "DateViewController.h"
 #import "TypeConvertViewController.h"
@@ -52,11 +55,18 @@
             NSAttributedStringModule.classEntry = [AttributedStringViewController2 class];
             [sectionDataModel.values addObject:NSAttributedStringModule];
         }
+        
         {
-            CQDMModuleModel *NSAttributedStringModule = [[CQDMModuleModel alloc] init];
-            NSAttributedStringModule.title = @"ValidateString";
-            NSAttributedStringModule.classEntry = [ValidateStringViewController class];
-            [sectionDataModel.values addObject:NSAttributedStringModule];
+            CQDMModuleModel *stringModule = [[CQDMModuleModel alloc] init];
+            stringModule.title = @"String Length";
+            stringModule.classEntry = [StringLengthViewController class];
+            [sectionDataModel.values addObject:stringModule];
+        }
+        {
+            CQDMModuleModel *stringModule = [[CQDMModuleModel alloc] init];
+            stringModule.title = @"String Validate";
+            stringModule.classEntry = [ValidateStringViewController class];
+            [sectionDataModel.values addObject:stringModule];
         }
         
         [sectionDataModels addObject:sectionDataModel];

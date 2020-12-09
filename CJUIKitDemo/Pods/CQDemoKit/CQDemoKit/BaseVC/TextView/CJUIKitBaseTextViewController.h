@@ -16,5 +16,6 @@
 @property (nonatomic, strong) UITableView *tableView;
 @property (nonatomic, strong) NSMutableArray<CQDMSectionDataModel *> *sectionDataModels;
 
+@property (nonatomic, assign) CGFloat fixCellResultLableWidth;  /**< 固定result的视图宽度（该值大于20才生效），默认为0<20，表示自适应宽度 */
 
 @end

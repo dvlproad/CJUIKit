@@ -130,12 +130,17 @@
     
     CJValidateStringTableViewCell *cell = (CJValidateStringTableViewCell *)[tableView dequeueReusableCellWithIdentifier:@"CJValidateStringTableViewCell" forIndexPath:indexPath];
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    cell.fixResultLableWidth = self.fixCellResultLableWidth;
     
     cell.textField.placeholder = dealTextModel.placeholder;
     cell.textField.text = dealTextModel.text;
     [cell.validateButton setTitle:dealTextModel.actionTitle forState:UIControlStateNormal];
     [cell setValidateHandle:^BOOL(CJValidateStringTableViewCell *mcell, BOOL isAutoExec) {
         return [self __dealTextModel:dealTextModel inCell:mcell isAutoExec:isAutoExec];
+    }];
+    // cell上的文本内容改变的时候，自动执行validateButton的点击事件
+    [cell setTextDidChangeBlock:^(NSString *bText) {
+        return [cell validateEvent:NO];
     }];
     
     if (dealTextModel.autoExec) {

@@ -1,5 +1,5 @@
 //
-//  ValidateStringViewController.h
+//  StringLengthViewController.h
 //  CJUIKitDemo
 //
 //  Created by ciyouzen on 2017/12/29.
@@ -8,7 +8,7 @@
 
 #import "CJUIKitBaseTextViewController.h"
 
-@interface ValidateStringViewController : CJUIKitBaseTextViewController
+@interface StringLengthViewController : CJUIKitBaseTextViewController
 
 
 @end

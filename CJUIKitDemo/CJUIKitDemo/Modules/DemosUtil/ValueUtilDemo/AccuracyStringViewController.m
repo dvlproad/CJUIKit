@@ -31,6 +31,7 @@ typedef NS_ENUM(NSUInteger, ValidateStringType) {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     self.navigationItem.title = NSLocalizedString(@"数值处理(取整、去尾0等)", nil);
+    self.fixCellResultLableWidth = 120;  // 固定result的视图宽度（该值大于20才生效），默认为0<20，表示自适应宽度
     
     NSMutableArray *sectionDataModels = [[NSMutableArray alloc] init];
     // 去除小数部分的尾部多余0的显示
