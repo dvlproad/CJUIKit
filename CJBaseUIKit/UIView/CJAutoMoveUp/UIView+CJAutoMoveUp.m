@@ -13,13 +13,45 @@
     
 }
 @property (nonatomic, assign) CGFloat cjAutoMoveUp__spacing; /**< 视图底部与所弹出来的键盘顶部的间距（默认0） */
+@property (nonatomic, copy) void(^cjKeyboardWillShowBlock)(void);
+@property (nonatomic, copy) void(^cjKeyboardWillHideBlock)(void);
+@property (nonatomic, copy) void(^cjKeyboardWillChangeFrameBlock)(CGFloat keyboardTopY, CGFloat duration);
 
 @end
 
 
 @implementation UIView (CJAutoMoveUp)
 
-#pragma mark - runtime
+#pragma mark - runtime:block
+
+// cjKeyboardWillShowBlock
+- (void (^)(void))cjKeyboardWillShowBlock {
+    return objc_getAssociatedObject(self, @selector(cjKeyboardWillShowBlock));
+}
+
+- (void)setCjKeyboardWillShowBlock:(void (^)(void))cjKeyboardWillShowBlock {
+    objc_setAssociatedObject(self, @selector(cjKeyboardWillShowBlock), cjKeyboardWillShowBlock, OBJC_ASSOCIATION_COPY_NONATOMIC);
+}
+
+// cjKeyboardWillHideBlock
+- (void (^)(void))cjKeyboardWillHideBlock {
+    return objc_getAssociatedObject(self, @selector(cjKeyboardWillHideBlock));
+}
+
+- (void)setCjKeyboardWillHideBlock:(void (^)(void))cjKeyboardWillHideBlock {
+    objc_setAssociatedObject(self, @selector(cjKeyboardWillHideBlock), cjKeyboardWillHideBlock, OBJC_ASSOCIATION_COPY_NONATOMIC);
+}
+
+// cjKeyboardWillChangeFrameBlock
+- (void (^)(CGFloat keyboardTopY, CGFloat duration))cjKeyboardWillChangeFrameBlock {
+    return objc_getAssociatedObject(self, @selector(cjKeyboardWillChangeFrameBlock));
+}
+
+- (void)setCjKeyboardWillChangeFrameBlock:(void (^)(CGFloat keyboardTopY, CGFloat duration))cjKeyboardWillChangeFrameBlock {
+    objc_setAssociatedObject(self, @selector(cjKeyboardWillChangeFrameBlock), cjKeyboardWillChangeFrameBlock, OBJC_ASSOCIATION_COPY_NONATOMIC);
+}
+
+#pragma mark - runtime:normal
 //cjAutoMoveUp__spacing
 - (CGFloat)cjAutoMoveUp__spacing {
     return [objc_getAssociatedObject(self, @selector(cjAutoMoveUp__spacing)) integerValue];
@@ -32,55 +64,80 @@
 
 #pragma mark - Event
 /**
- *  自动根据键盘上移
+ *  视图添加键盘变化通知监听，自动根据键盘上移
  *  @brief  （请确保此视图的其他地方没有注册键盘通知，否则容易重复，且记得 [IQKeyboardManager sharedManager].enable = NO; // 禁用 IQKeyboardManager）
  *
- *  @param shouldAutoMoveUp     是否根据键盘自动上移
  *  @param spacing                          视图底部与所弹出来的键盘顶部的间距（默认0）
  */
-- (void)cj_autoMoveUpByKeyboard:(BOOL)shouldAutoMoveUp spacing:(CGFloat)spacing {
+- (void)cj_registerKeyboardNotificationWithAutoMoveUpSpacing:(CGFloat)spacing {
     self.cjAutoMoveUp__spacing = spacing;
     
-    if (shouldAutoMoveUp) {
-        [self cjAutoMoveUp_registerNotification];
-    } else {
-        [self cjAutoMoveUp_unregisterNotification];
-    }
+    [self cj_registerKeyboardNotificationWithWillShowBlock:nil willHideBlock:nil willChangeFrameBlock:^(CGFloat keyboardTopY, CGFloat duration) {
+        // 修改底部视图距离底部的间距
+        UIView *popupView = self;
+    //    UIWindow *keyWindow = [[UIApplication sharedApplication] keyWindow];
+    //    CGFloat popupViewShowY = CGRectGetHeight(keyWindow.frame) - popupViewHeight - edgeInsets.bottom;
+        CGFloat newPopupViewShowMaxY = keyboardTopY - self.cjAutoMoveUp__spacing;
+        CGFloat newPopupViewShowY = newPopupViewShowMaxY - popupView.frame.size.height;
+        
+        CGRect new_popupViewShowFrame;
+        new_popupViewShowFrame.origin = CGPointMake(popupView.frame.origin.x, newPopupViewShowY);
+        new_popupViewShowFrame.size = popupView.frame.size;
+        
+        // 约束动画
+        [UIView animateWithDuration:duration animations:^{
+            popupView.frame = new_popupViewShowFrame;
+            [popupView layoutIfNeeded];
+        }];
+    }];
 }
 
 
 #pragma mark - Keyboard Notification
-/// 移除通知
-- (void)cjAutoMoveUp_unregisterNotification {
+/// 移除视图对键盘变化通知监听
+- (void)cj_removeKeyboardNotification {
     [[NSNotificationCenter defaultCenter] removeObserver:self name:UIKeyboardWillShowNotification object:nil];
     [[NSNotificationCenter defaultCenter] removeObserver:self name:UIKeyboardWillHideNotification object:nil];
     [[NSNotificationCenter defaultCenter] removeObserver:self name:UIKeyboardWillChangeFrameNotification object:nil];
 }
 
-/// 注册通知（请确保此视图的其他地方没有注册键盘通知，否则容易重复，且记得 [IQKeyboardManager sharedManager].enable = NO; // 禁用 IQKeyboardManager）
-- (void)cjAutoMoveUp_registerNotification {
+/*
+ *  添加视图对键盘变化的通知监听
+ *  @brief  （请确保此视图的其他地方没有注册键盘通知，否则容易重复，且记得 [IQKeyboardManager sharedManager].enable = NO; // 禁用 IQKeyboardManager）
+ *
+ *  @param keyboardWillShowBlock                    键盘将要显示的回调
+ *  @param keyboardWillHideBlock                    键盘将要隐藏的回调
+ *  @param keyboardWillChangeFrameBlock             键盘大小将要变化的回调
+ */
+- (void)cj_registerKeyboardNotificationWithWillShowBlock:(void(^ _Nullable)(void))keyboardWillShowBlock
+                                           willHideBlock:(void(^ _Nullable)(void))keyboardWillHideBlock
+                                    willChangeFrameBlock:(void(^ _Nullable)(CGFloat keyboardTopY, CGFloat duration))keyboardWillChangeFrameBlock
+{
+    self.cjKeyboardWillShowBlock = keyboardWillShowBlock;
+    self.cjKeyboardWillHideBlock = keyboardWillHideBlock;
+    self.cjKeyboardWillChangeFrameBlock = keyboardWillChangeFrameBlock;
     
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(cjAutoMoveUp_keyboardWillShow:) name:UIKeyboardWillShowNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(cjKeyboard_WillShow:) name:UIKeyboardWillShowNotification object:nil];
 
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(cjAutoMoveUp_keyboardWillHide:) name:UIKeyboardWillHideNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(cjKeyboard_WillHide:) name:UIKeyboardWillHideNotification object:nil];
 
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(cjAutoMoveUp_keyboardWillChangeFrame:) name:UIKeyboardWillChangeFrameNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(cjKeyboard_WillChangeFrame:) name:UIKeyboardWillChangeFrameNotification object:nil];
 }
 
 
-
+#pragma mark - Notification Action
 ///键盘显示事件
-- (void)cjAutoMoveUp_keyboardWillShow:(NSNotification *)notification {
-    
+- (void)cjKeyboard_WillShow:(NSNotification *)notification {
+    !self.cjKeyboardWillShowBlock ?: self.cjKeyboardWillShowBlock();
 }
 
 ///键盘消失事件
-- (void)cjAutoMoveUp_keyboardWillHide:(NSNotification *)notification {
-    
+- (void)cjKeyboard_WillHide:(NSNotification *)notification {
+    !self.cjKeyboardWillHideBlock ?: self.cjKeyboardWillHideBlock();
 }
 
 // 键盘弹出会调用
-- (void)cjAutoMoveUp_keyboardWillChangeFrame:(NSNotification *)notification
+- (void)cjKeyboard_WillChangeFrame:(NSNotification *)notification
 {
     NSDictionary *userInfo = notification.userInfo;
     
@@ -91,22 +148,7 @@
     // 获取键盘弹出时长
     CGFloat duration = [userInfo[UIKeyboardAnimationDurationUserInfoKey] floatValue];
 
-    // 修改底部视图距离底部的间距
-    UIView *popupView = self;
-//    UIWindow *keyWindow = [[UIApplication sharedApplication] keyWindow];
-//    CGFloat popupViewShowY = CGRectGetHeight(keyWindow.frame) - popupViewHeight - edgeInsets.bottom;
-    CGFloat newPopupViewShowMaxY = endKeyboardRect.origin.y - self.cjAutoMoveUp__spacing;
-    CGFloat newPopupViewShowY = newPopupViewShowMaxY - popupView.frame.size.height;
-    
-    CGRect new_popupViewShowFrame;
-    new_popupViewShowFrame.origin = CGPointMake(popupView.frame.origin.x, newPopupViewShowY);
-    new_popupViewShowFrame.size = popupView.frame.size;
-    
-    // 约束动画
-    [UIView animateWithDuration:duration animations:^{
-        popupView.frame = new_popupViewShowFrame;
-        [popupView layoutIfNeeded];
-    }];
+    !self.cjKeyboardWillChangeFrameBlock ?: self.cjKeyboardWillChangeFrameBlock(endKeyboardRect.origin.y, duration);
 }
 
 

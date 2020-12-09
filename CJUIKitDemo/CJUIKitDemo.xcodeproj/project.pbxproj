@@ -332,6 +332,7 @@
 		97578D012559473500249AD6 /* TSRangeSliderControl1.m in Sources */ = {isa = PBXBuildFile; fileRef = 97578D002559473500249AD6 /* TSRangeSliderControl1.m */; };
 		97578D072559474F00249AD6 /* TSRangeSliderControl2.m in Sources */ = {isa = PBXBuildFile; fileRef = 97578D062559474F00249AD6 /* TSRangeSliderControl2.m */; };
 		976794E9258093EF002FD0C7 /* StringLengthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 976794E7258093EE002FD0C7 /* StringLengthViewController.m */; };
+		976794FA2580B494002FD0C7 /* KeyboardAutoMoveUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 976794F92580B494002FD0C7 /* KeyboardAutoMoveUpViewController.m */; };
 		E2649F5BE7F7FEF404688168 /* libPods-CJUIKitDemoTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 935109AAB855F6CC8B84B9A5 /* libPods-CJUIKitDemoTests.a */; };
 /* End PBXBuildFile section */
 
@@ -927,6 +928,8 @@
 		97578D062559474F00249AD6 /* TSRangeSliderControl2.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TSRangeSliderControl2.m; sourceTree = "<group>"; };
 		976794E7258093EE002FD0C7 /* StringLengthViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StringLengthViewController.m; sourceTree = "<group>"; };
 		976794E8258093EF002FD0C7 /* StringLengthViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StringLengthViewController.h; sourceTree = "<group>"; };
+		976794F82580B494002FD0C7 /* KeyboardAutoMoveUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeyboardAutoMoveUpViewController.h; sourceTree = "<group>"; };
+		976794F92580B494002FD0C7 /* KeyboardAutoMoveUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeyboardAutoMoveUpViewController.m; sourceTree = "<group>"; };
 		9AC0A78AFE86FE250B370A06 /* Pods-CJUIKitDemoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CJUIKitDemoTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CJUIKitDemoTests/Pods-CJUIKitDemoTests.debug.xcconfig"; sourceTree = "<group>"; };
 		A078401C0E781545EB72B64D /* libPods-CJUIKitDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CJUIKitDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF18E9E3F2E33815C8D88994 /* Pods-CJUIKitDemoUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CJUIKitDemoUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CJUIKitDemoUITests/Pods-CJUIKitDemoUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -1576,6 +1579,8 @@
 				7850B6F820937C59008F4A21 /* PopupInViewVC.xib */,
 				7850B6FB20937C59008F4A21 /* PopupInWindowVC.h */,
 				7850B6F320937C59008F4A21 /* PopupInWindowVC.m */,
+				976794F82580B494002FD0C7 /* KeyboardAutoMoveUpViewController.h */,
+				976794F92580B494002FD0C7 /* KeyboardAutoMoveUpViewController.m */,
 				7850B6FC20937C59008F4A21 /* ShowDropDownViewController.h */,
 				7850B6F620937C59008F4A21 /* ShowDropDownViewController.m */,
 				7850B6F720937C59008F4A21 /* ShowDropDownViewController.xib */,
@@ -3001,6 +3006,7 @@
 				808DE5E720DA0586003E08F1 /* CJDecimalUtil.m in Sources */,
 				1562F2E123F5DBF40009FCEA /* CJSwitchSlider.m in Sources */,
 				80FF90B01FC5649F00E437CF /* NavigationBarScrollChangeBGViewController.m in Sources */,
+				976794FA2580B494002FD0C7 /* KeyboardAutoMoveUpViewController.m in Sources */,
 				78A99268257958CB00B54E30 /* UIScrollView+CJTouch.m in Sources */,
 				805598B51FF5D612009DC61C /* ValidateStringViewController.m in Sources */,
 				1562F2C123F5DBF40009FCEA /* CJButton.m in Sources */,

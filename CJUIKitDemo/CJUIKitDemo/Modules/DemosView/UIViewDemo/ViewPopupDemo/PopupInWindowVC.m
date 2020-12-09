@@ -16,8 +16,6 @@
 
 #import "WelcomeViewToPop.h"
 #import "WelcomePopupView.h"
-#import "CQUpdateContentPopupView.h"
-
 
 
 @interface PopupInWindowVC ()<CJPopupViewDelegate>
@@ -30,7 +28,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.navigationItem.title = NSLocalizedString(@"CJBaseUIKit首页", nil); //知识点:使得tabBar中的title可以和显示在顶部的title保持各自
+    self.navigationItem.title = NSLocalizedString(@"PopupInWindow首页", nil); //知识点:使得tabBar中的title可以和显示在顶部的title保持各自
     
     [IQKeyboardManager sharedManager].enable = NO; // 禁用 IQKeyboardManager
     
@@ -106,19 +104,6 @@
         [sectionDataModels addObject:sectionDataModel];
     }
     
-    // 弹出到屏幕底部+自动上移
-    {
-        CQDMSectionDataModel *sectionDataModel = [[CQDMSectionDataModel alloc] init];
-        sectionDataModel.theme = @"弹出到屏幕底部+自动上移";
-        {
-            CQDMModuleModel *autoLayoutModule = [[CQDMModuleModel alloc] init];
-            autoLayoutModule.title = @"底部(弹出的视图在键盘弹出时候能够自动上移)";
-            autoLayoutModule.selector = @selector(popupInWindow_bottom2);
-            [sectionDataModel.values addObject:autoLayoutModule];
-        }
-        [sectionDataModels addObject:sectionDataModel];
-    }
-    
     self.sectionDataModels = sectionDataModels;
 }
 
@@ -170,27 +155,6 @@
     WelcomeViewToPop *popupView = (WelcomeViewToPop *)[[[NSBundle mainBundle] loadNibNamed:@"WelcomeViewToPop" owner:nil options:nil] lastObject];
     popupView.popupViewDelegate = self;
 //    [popupView cj_autoMoveUpByKeyboard:NO spacing:0];
-    
-    CGFloat popupViewHeight = CGRectGetHeight(popupView.frame);
-    UIColor *blankBGColor = [UIColor colorWithRed:.16 green:.17 blue:.21 alpha:.6];
-    [popupView cj_popupInBottomWindow:CJAnimationTypeNormal withHeight:popupViewHeight edgeInsets:UIEdgeInsetsZero blankBGColor:blankBGColor showComplete:^{
-        NSLog(@"显示完成");
-        
-    } tapBlankComplete:^{
-        NSLog(@"点击背景完成");
-        [popupView cj_hidePopupView];
-    }];
-}
-
-
-- (void)popupInWindow_bottom2 {
-    CQUpdateContentPopupView *popupView = [[CQUpdateContentPopupView alloc] init];
-    [popupView setupTitle:NSLocalizedString(@"编辑昵称", nil) placeholder:@"请输入" updateCompleteBlock:^(NSString * _Nonnull bText) {
-        NSString *message = [NSString stringWithFormat:@"新内容为%@", bText];
-        [CJUIKitToastUtil showMessage:message];
-        [popupView cj_hidePopupView];
-    }];
-    [popupView cj_autoMoveUpByKeyboard:YES spacing:0];
     
     CGFloat popupViewHeight = CGRectGetHeight(popupView.frame);
     UIColor *blankBGColor = [UIColor colorWithRed:.16 green:.17 blue:.21 alpha:.6];

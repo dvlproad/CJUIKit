@@ -13,6 +13,8 @@
 
 //ViewPopup
 #import "PopupInWindowVC.h"
+#import "KeyboardAutoMoveUpViewController.h"
+
 #import "PopupInViewVC.h"
 #import "ShowExtendViewVC.h"
 #import "ShowDropDownViewController.h"
@@ -79,6 +81,13 @@
             CQDMModuleModel *popupInWindowModule = [[CQDMModuleModel alloc] init];
             popupInWindowModule.title = @"PopupInWindow (弹出到Window)";
             popupInWindowModule.classEntry = [PopupInWindowVC class];
+
+            [sectionDataModel.values addObject:popupInWindowModule];
+        }
+        {
+            CQDMModuleModel *popupInWindowModule = [[CQDMModuleModel alloc] init];
+            popupInWindowModule.title = @"伴随键盘弹出";
+            popupInWindowModule.classEntry = [KeyboardAutoMoveUpViewController class];
 
             [sectionDataModel.values addObject:popupInWindowModule];
         }
