@@ -17,6 +17,9 @@
 
 // TextView
 #import "TextViewController.h"
+#import "TextViewPlaceholderViewController.h"
+#import "TextViewVerticalCenterViewController.h"
+#import "TextViewAutoHeightViewController.h"
 
 @interface TextFieldHomeViewController ()
 
@@ -78,8 +81,26 @@
         sectionDataModel.theme = @"TextView相关";
         {
             CQDMModuleModel *textViewModule = [[CQDMModuleModel alloc] init];
-            textViewModule.title = @"TextView";
+            textViewModule.title = @"TextView仿微信输入框";
             textViewModule.classEntry = [TextViewController class];
+            [sectionDataModel.values addObject:textViewModule];
+        }
+        {
+            CQDMModuleModel *textViewModule = [[CQDMModuleModel alloc] init];
+            textViewModule.title = @"TextView占位符";
+            textViewModule.classEntry = [TextViewPlaceholderViewController class];
+            [sectionDataModel.values addObject:textViewModule];
+        }
+        {
+            CQDMModuleModel *textViewModule = [[CQDMModuleModel alloc] init];
+            textViewModule.title = @"TextView文字竖直居中";
+            textViewModule.classEntry = [TextViewVerticalCenterViewController class];
+            [sectionDataModel.values addObject:textViewModule];
+        }
+        {
+            CQDMModuleModel *textViewModule = [[CQDMModuleModel alloc] init];
+            textViewModule.title = @"TextView高度自适应";
+            textViewModule.classEntry = [TextViewAutoHeightViewController class];
             [sectionDataModel.values addObject:textViewModule];
         }
         

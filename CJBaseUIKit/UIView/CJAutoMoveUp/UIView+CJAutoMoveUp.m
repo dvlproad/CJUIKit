@@ -180,6 +180,7 @@
     CGRect endKeyboardRect = [[userInfo objectForKey:UIKeyboardFrameEndUserInfoKey] CGRectValue];
     CGFloat keyboardTopY = endKeyboardRect.origin.y;
     CGFloat keyboardHeight = CGRectGetHeight([UIScreen mainScreen].bounds) - keyboardTopY;
+    //keyboardHeight = endKeyboardRect.size.height;
 
     // 获取键盘弹出时长
     CGFloat duration = [userInfo[UIKeyboardAnimationDurationUserInfoKey] floatValue];
