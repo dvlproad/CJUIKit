@@ -6,10 +6,10 @@
 //  Copyright © 2015年 dvlproad. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "CJUIKitBaseViewController.h"
 #import "CJTextView.h"
 
-@interface TextViewController : UIViewController
+@interface TextViewController : CJUIKitBaseViewController
 
 @property (nonatomic, weak) IBOutlet CJTextView *textView;
 

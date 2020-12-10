@@ -6,9 +6,9 @@
 //  Copyright © 2015年 dvlproad. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "CJUIKitBaseViewController.h"
 
-@interface TextViewAutoHeightViewController : UIViewController {
+@interface TextViewAutoHeightViewController : CJUIKitBaseViewController {
     
 }
 

@@ -28,15 +28,13 @@
 
 @implementation CJTextView
 
-- (void)awakeFromNib
-{
+- (void)awakeFromNib {
     [super awakeFromNib];
     
     [self commonInit];
 }
 
-- (instancetype)initWithFrame:(CGRect)frame
-{
+- (instancetype)initWithFrame:(CGRect)frame {
     if (self = [super initWithFrame:frame]) {
         [self commonInit];
     }
@@ -48,9 +46,6 @@
     self.scrollsToTop = NO;
     self.showsHorizontalScrollIndicator = NO;
     self.enablesReturnKeyAutomatically = YES;
-    self.layer.borderWidth = 1;
-    self.layer.cornerRadius = 5;
-    self.layer.borderColor = [UIColor lightGrayColor].CGColor;
     
     
     [[NSNotificationCenter defaultCenter] addObserver:self
@@ -58,11 +53,12 @@
                                                  name:UITextViewTextDidChangeNotification
                                                object:self];
     
-    [self cj_makeView:self addSubView:self.placeholderView withEdgeInsets:UIEdgeInsetsZero];
+    [self cj_makeView:self
+           addSubView:self.placeholderView
+       withEdgeInsets:UIEdgeInsetsMake(0, 0, 0, 0)];
 }
 
-- (void)dealloc
-{
+- (void)dealloc {
     [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
@@ -70,13 +66,14 @@
 - (UITextView *)placeholderView {
     if (_placeholderView == nil) {
         _placeholderView = [[UITextView alloc] init];
+        //_placeholderView.numberOfLines = 0;
         _placeholderView.scrollEnabled = NO;
         _placeholderView.showsHorizontalScrollIndicator = NO;
         _placeholderView.showsVerticalScrollIndicator = NO;
         _placeholderView.userInteractionEnabled = NO;
         _placeholderView.font = self.font;
         _placeholderView.textColor = [UIColor lightGrayColor];
-        _placeholderView.backgroundColor = [UIColor clearColor];
+        _placeholderView.backgroundColor = [UIColor greenColor];
     }
     return _placeholderView;
 }

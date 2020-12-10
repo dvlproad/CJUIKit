@@ -6,9 +6,9 @@
 //  Copyright © 2015年 dvlproad. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "CJUIKitBaseViewController.h"
 
-@interface TextViewVerticalCenterViewController : UIViewController {
+@interface TextViewVerticalCenterViewController : CJUIKitBaseViewController {
     
 }
 

@@ -84,6 +84,7 @@
 		7802490F25828D4C00C7DBAD /* TextViewPlaceholderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7802490925828D4A00C7DBAD /* TextViewPlaceholderViewController.m */; };
 		7802491025828D4C00C7DBAD /* TextViewAutoHeightViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7802490C25828D4B00C7DBAD /* TextViewAutoHeightViewController.m */; };
 		7802491125828D4C00C7DBAD /* TextViewVerticalCenterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7802490D25828D4B00C7DBAD /* TextViewVerticalCenterViewController.m */; };
+		78024917258296BE00C7DBAD /* CQHeightTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 78024915258296BD00C7DBAD /* CQHeightTextView.m */; };
 		7803DAAE22F7D519001E06B7 /* MJExtensionToModelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7803DAAC22F7D519001E06B7 /* MJExtensionToModelViewController.m */; };
 		7803DAB122F7D578001E06B7 /* MJExtensionToJSONViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7803DAAF22F7D578001E06B7 /* MJExtensionToJSONViewController.m */; };
 		7805E1D72369C5FC00B998EC /* PriceYuanToYuanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7805E1D52369C5FC00B998EC /* PriceYuanToYuanViewController.m */; };
@@ -502,6 +503,8 @@
 		7802490C25828D4B00C7DBAD /* TextViewAutoHeightViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextViewAutoHeightViewController.m; sourceTree = "<group>"; };
 		7802490D25828D4B00C7DBAD /* TextViewVerticalCenterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextViewVerticalCenterViewController.m; sourceTree = "<group>"; };
 		7802490E25828D4B00C7DBAD /* TextViewPlaceholderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextViewPlaceholderViewController.h; sourceTree = "<group>"; };
+		78024915258296BD00C7DBAD /* CQHeightTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CQHeightTextView.m; sourceTree = "<group>"; };
+		78024916258296BE00C7DBAD /* CQHeightTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CQHeightTextView.h; sourceTree = "<group>"; };
 		7803DAAC22F7D519001E06B7 /* MJExtensionToModelViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJExtensionToModelViewController.m; sourceTree = "<group>"; };
 		7803DAAD22F7D519001E06B7 /* MJExtensionToModelViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJExtensionToModelViewController.h; sourceTree = "<group>"; };
 		7803DAAF22F7D578001E06B7 /* MJExtensionToJSONViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJExtensionToJSONViewController.m; sourceTree = "<group>"; };
@@ -1356,6 +1359,8 @@
 			children = (
 				1562F29623F5DBF40009FCEA /* CJTextView.h */,
 				1562F29723F5DBF40009FCEA /* CJTextView.m */,
+				78024916258296BE00C7DBAD /* CQHeightTextView.h */,
+				78024915258296BD00C7DBAD /* CQHeightTextView.m */,
 			);
 			path = CJTextView;
 			sourceTree = "<group>";
@@ -2958,6 +2963,7 @@
 				1562F2BD23F5DBF40009FCEA /* CJLabel.m in Sources */,
 				782ACC98223C0E220041B642 /* CodeScrollViewController1.m in Sources */,
 				78E1899E2177874B00B8781A /* SliderHomeViewController.m in Sources */,
+				78024917258296BE00C7DBAD /* CQHeightTextView.m in Sources */,
 				78E18952217778D900B8781A /* NavigationBarHomeViewController.m in Sources */,
 				80D0120F210336E100D1EDF0 /* ChangeViewController.m in Sources */,
 				975164AE256CFE34001DE112 /* CQUpdateContentPopupView.m in Sources */,

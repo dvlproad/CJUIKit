@@ -18,7 +18,7 @@
     
     CJTextView *textView1 = [[CJTextView alloc] init];
     textView1.text = nil;
-    textView1.placeholder = @"请输入总感觉看得见的生活在";
+    textView1.placeholder = @"请输入生活";
     [self.view addSubview:textView1];
     [textView1 mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.mas_equalTo(self.view).mas_offset(60);
