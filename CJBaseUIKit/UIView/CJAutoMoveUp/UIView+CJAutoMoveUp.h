@@ -38,6 +38,6 @@
  */
 - (void)cj_registerKeyboardNotificationWithWillShowBlock:(void(^ _Nullable)(CGFloat duration))keyboardWillShowBlock
                                            willHideBlock:(void(^ _Nullable)(CGFloat duration))keyboardWillHideBlock
-                                    willChangeFrameBlock:(void(^ _Nullable)(BOOL isHideAction, CGFloat keyboardTopY, CGFloat duration))keyboardWillChangeFrameBlock;
+                                    willChangeFrameBlock:(void(^ _Nullable)(CGFloat keyboardHeight, CGFloat keyboardTopY, CGFloat duration))keyboardWillChangeFrameBlock;
 
 @end

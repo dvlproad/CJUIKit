@@ -16,7 +16,7 @@
 @property (nonatomic, assign) CGRect cjAutoMoveUp__originFrame; /**< 键盘弹出前，视图原始位置 */
 @property (nonatomic, copy) void(^cjKeyboardWillShowBlock)(CGFloat duration);
 @property (nonatomic, copy) void(^cjKeyboardWillHideBlock)(CGFloat duration);
-@property (nonatomic, copy) void(^cjKeyboardWillChangeFrameBlock)(BOOL isHideAction, CGFloat keyboardTopY, CGFloat duration);
+@property (nonatomic, copy) void(^cjKeyboardWillChangeFrameBlock)(CGFloat keyboardHeight, CGFloat keyboardTopY, CGFloat duration);
 
 @end
 
@@ -44,11 +44,11 @@
 }
 
 // cjKeyboardWillChangeFrameBlock
-- (void (^)(BOOL isHideAction, CGFloat keyboardTopY, CGFloat duration))cjKeyboardWillChangeFrameBlock {
+- (void (^)(CGFloat keyboardHeight, CGFloat keyboardTopY, CGFloat duration))cjKeyboardWillChangeFrameBlock {
     return objc_getAssociatedObject(self, @selector(cjKeyboardWillChangeFrameBlock));
 }
 
-- (void)setCjKeyboardWillChangeFrameBlock:(void (^)(BOOL isHideAction, CGFloat keyboardTopY, CGFloat duration))cjKeyboardWillChangeFrameBlock {
+- (void)setCjKeyboardWillChangeFrameBlock:(void (^)(CGFloat keyboardHeight, CGFloat keyboardTopY, CGFloat duration))cjKeyboardWillChangeFrameBlock {
     objc_setAssociatedObject(self, @selector(cjKeyboardWillChangeFrameBlock), cjKeyboardWillChangeFrameBlock, OBJC_ASSOCIATION_COPY_NONATOMIC);
 }
 
@@ -91,8 +91,8 @@
     self.cjAutoMoveUp__spacing = spacing;
     
     UIView *popupView = self;
-    [self cj_registerKeyboardNotificationWithWillShowBlock:nil willHideBlock:nil willChangeFrameBlock:^(BOOL isHideAction, CGFloat keyboardTopY, CGFloat duration) {
-        if (hasSpacing && isHideAction) {
+    [self cj_registerKeyboardNotificationWithWillShowBlock:nil willHideBlock:nil willChangeFrameBlock:^(CGFloat keyboardHeight, CGFloat keyboardTopY, CGFloat duration) {
+        if (hasSpacing && keyboardHeight == 0) {
             [UIView animateWithDuration:duration animations:^{
                 popupView.frame = self.cjAutoMoveUp__originFrame;
                 [popupView layoutIfNeeded];
@@ -137,7 +137,7 @@
  */
 - (void)cj_registerKeyboardNotificationWithWillShowBlock:(void(^ _Nullable)(CGFloat duration))keyboardWillShowBlock
                                            willHideBlock:(void(^ _Nullable)(CGFloat duration))keyboardWillHideBlock
-                                    willChangeFrameBlock:(void(^ _Nullable)(BOOL isHideAction, CGFloat keyboardTopY, CGFloat duration))keyboardWillChangeFrameBlock
+                                    willChangeFrameBlock:(void(^ _Nullable)(CGFloat keyboardHeight, CGFloat keyboardTopY, CGFloat duration))keyboardWillChangeFrameBlock
 {
     self.cjKeyboardWillShowBlock = keyboardWillShowBlock;
     self.cjKeyboardWillHideBlock = keyboardWillHideBlock;
@@ -179,12 +179,12 @@
     //CGRect beginKeyboardRect = [[userInfo objectForKey:UIKeyboardFrameBeginUserInfoKey] CGRectValue];
     CGRect endKeyboardRect = [[userInfo objectForKey:UIKeyboardFrameEndUserInfoKey] CGRectValue];
     CGFloat keyboardTopY = endKeyboardRect.origin.y;
-    BOOL isHideAction = keyboardTopY == CGRectGetHeight([UIScreen mainScreen].bounds);
+    CGFloat keyboardHeight = CGRectGetHeight([UIScreen mainScreen].bounds) - keyboardTopY;
 
     // 获取键盘弹出时长
     CGFloat duration = [userInfo[UIKeyboardAnimationDurationUserInfoKey] floatValue];
 
-    !self.cjKeyboardWillChangeFrameBlock ?: self.cjKeyboardWillChangeFrameBlock(isHideAction, keyboardTopY, duration);
+    !self.cjKeyboardWillChangeFrameBlock ?: self.cjKeyboardWillChangeFrameBlock(keyboardHeight, keyboardTopY, duration);
 }
 
 

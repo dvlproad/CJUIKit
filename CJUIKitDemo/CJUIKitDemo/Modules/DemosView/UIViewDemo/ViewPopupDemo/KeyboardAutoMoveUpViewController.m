@@ -27,7 +27,13 @@
 - (void)viewDidLayoutSubviews {
     [super viewDidLayoutSubviews];
     
-    [self.autoMoveUpView cj_registerKeyboardNotificationWithAutoMoveUpSpacing:0 hasSpacing:YES];
+//    [self.autoMoveUpView cj_registerKeyboardNotificationWithAutoMoveUpSpacing:0 hasSpacing:YES];
+    __weak typeof(self)weakSelf = self;
+    [self.autoMoveUpView cj_registerKeyboardNotificationWithWillShowBlock:nil willHideBlock:nil willChangeFrameBlock:^(CGFloat keyboardHeight, CGFloat keyboardTopY, CGFloat duration) {
+        [weakSelf.autoMoveUpView mas_updateConstraints:^(MASConstraintMaker *make) {
+            make.bottom.mas_equalTo(weakSelf.view).offset(-keyboardHeight);
+        }];
+    }];
 }
 
 - (void)viewDidLoad {
