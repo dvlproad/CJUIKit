@@ -105,24 +105,28 @@
     [self textDidChange];
 }
 
-- (void)setCornerRadius:(NSUInteger)cornerRadius
-{
+- (void)setCornerRadius:(NSUInteger)cornerRadius {
     _cornerRadius = cornerRadius;
     self.layer.cornerRadius = cornerRadius;
 }
 
-- (void)setPlaceholderColor:(UIColor *)placeholderColor
-{
+- (void)setPlaceholderColor:(UIColor *)placeholderColor {
     _placeholderColor = placeholderColor;
     
     self.placeholderView.textColor = placeholderColor;
 }
 
-- (void)setPlaceholder:(NSString *)placeholder
-{
+- (void)setPlaceholder:(NSString *)placeholder {
     _placeholder = placeholder;
     
     self.placeholderView.text = placeholder;
+    self.placeholderView.hidden = self.text.length > 0; //占位文字是否显示
+}
+
+- (void)setText:(NSString *)text {
+    [super setText:text];
+    
+    self.placeholderView.hidden = self.text.length > 0; //占位文字是否显示
 }
 
 - (void)setFont:(UIFont *)font {
