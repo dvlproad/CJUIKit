@@ -84,7 +84,7 @@
  */
 - (void)cj_registerKeyboardNotificationWithAutoMoveUpSpacing:(CGFloat)spacing hasSpacing:(BOOL)hasSpacing {
     if (hasSpacing && CGSizeEqualToSize(self.frame.size, CGSizeZero)) {
-        NSAssert(NO, @"此时弹出前的视图frame未获得，会导致键盘收起的时候无法回到原来的位置。故请在视图frame加载出来的时候再执行此方法，如viewDidLayoutSubviews或layoutSubviews");
+        NSAssert(NO, @"此时弹出前的视图frame未获得，会导致键盘收起的时候无法回到原来的位置。故请在视图frame加载出来的时候再执行此方法，如vc的viewDidLayoutSubviews或者view的layoutSubviews");
         return;
     }
     self.cjAutoMoveUp__originFrame = self.frame;

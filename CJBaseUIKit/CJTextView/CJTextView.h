@@ -14,16 +14,21 @@
 
 #import <UIKit/UIKit.h>
 
-@interface CJTextView : UITextView
-
+@interface CJTextView : UITextView {
+    
+}
+@property (nonatomic, strong) UITextView *placeholderView;      /**< 占位文字View: 为什么使用UITextView，这样直接让占位文字View = 当前textView,文字就会重叠显示 */
 @property (nonatomic, strong) NSString *placeholder;        /**< 占位文字 */
 @property (nonatomic, strong) UIColor *placeholderColor;    /**< 占位文字颜色 */
 @property (nonatomic, assign) NSUInteger cornerRadius;      /**< 设置圆角 */
 
+
+@property (nonatomic, strong, readonly) NSLayoutConstraint *placeholderViewTopLayoutConstraint;
+
 @property (nonatomic, assign, readonly) NSInteger originTextViewHeight;   /**< 文本框的初始高度 */
 
 ///通用设置，子类需要继承此方法
-- (void)commonInit;
+- (void)commonInit NS_REQUIRES_SUPER;
 
 /**
  *  设置文本框的最大行数，在文本框文字高度改变变化的时候，利用block中返回的文本高度来更新textView的高度

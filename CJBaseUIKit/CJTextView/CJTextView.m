@@ -8,10 +8,9 @@
 
 #import "CJTextView.h"
 
-@interface CJTextView ()
-
-@property (nonatomic, strong) UITextView *placeholderView;      /**< 占位文字View: 为什么使用UITextView，这样直接让占位文字View = 当前textView,文字就会重叠显示 */
-
+@interface CJTextView () {
+    
+}
 @property (nonatomic, assign) NSInteger currentTexViewHeight;   /**< 文本框的当前高度 */
 @property (nonatomic, assign) NSInteger maxTextViewHeight;      /**< 文字框的最大显示高度 */
 
@@ -27,6 +26,11 @@
 
 
 @implementation CJTextView
+
+- (void)dealloc {
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+
 
 - (void)awakeFromNib {
     [super awakeFromNib];
@@ -75,14 +79,17 @@
                                  multiplier:1
                                    constant:0]];
     
-    [self addConstraint:
-     [NSLayoutConstraint constraintWithItem:self.placeholderView
-                                  attribute:NSLayoutAttributeTop    //top
-                                  relatedBy:NSLayoutRelationEqual
-                                     toItem:self
-                                  attribute:NSLayoutAttributeTop
-                                 multiplier:1
-                                   constant:0]];
+    
+    _placeholderViewTopLayoutConstraint =
+        [NSLayoutConstraint constraintWithItem:self.placeholderView
+                                     attribute:NSLayoutAttributeTop    //top
+                                     relatedBy:NSLayoutRelationEqual
+                                        toItem:self
+                                     attribute:NSLayoutAttributeTop
+                                    multiplier:1
+                                      constant:0];
+    [self addConstraint:self.placeholderViewTopLayoutConstraint];
+    
     
     [self addConstraint:
      [NSLayoutConstraint constraintWithItem:self.placeholderView
@@ -93,11 +100,6 @@
                                  multiplier:1
                                    constant:0]];
 }
-
-- (void)dealloc {
-    [[NSNotificationCenter defaultCenter] removeObserver:self];
-}
-
 
 - (UITextView *)placeholderView {
     if (_placeholderView == nil) {
@@ -167,6 +169,7 @@
     self.placeholderView.font = font;
 }
 
+#pragma mark - textDidChange(由UITextViewTextDidChangeNotification触发，或者手动触发)
 - (void)textDidChange
 {
     self.placeholderView.hidden = self.text.length > 0; //占位文字是否显示
