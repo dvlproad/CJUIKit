@@ -46,7 +46,6 @@
 }
 
 - (void)commonInit {
-    self.scrollEnabled = NO;
     self.scrollsToTop = NO;
     self.showsHorizontalScrollIndicator = NO;
     self.enablesReturnKeyAutomatically = YES;
