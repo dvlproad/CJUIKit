@@ -53,9 +53,45 @@
                                                  name:UITextViewTextDidChangeNotification
                                                object:self];
     
-    [self cj_makeView:self
-           addSubView:self.placeholderView
-       withEdgeInsets:UIEdgeInsetsMake(0, 0, 0, 0)];
+    
+    [self addSubview:self.placeholderView];
+    self.placeholderView.translatesAutoresizingMaskIntoConstraints = NO;
+    
+    [self addConstraint:
+     [NSLayoutConstraint constraintWithItem:self.placeholderView
+                                  attribute:NSLayoutAttributeLeft   //left
+                                  relatedBy:NSLayoutRelationEqual
+                                     toItem:self
+                                  attribute:NSLayoutAttributeLeft
+                                 multiplier:1
+                                   constant:0]];
+    
+    [self addConstraint:
+     [NSLayoutConstraint constraintWithItem:self.placeholderView
+                                  attribute:NSLayoutAttributeWidth  //width（不知道为什么使用right无法限制placeholder textView的宽）
+                                  relatedBy:NSLayoutRelationEqual
+                                     toItem:self
+                                  attribute:NSLayoutAttributeWidth
+                                 multiplier:1
+                                   constant:0]];
+    
+    [self addConstraint:
+     [NSLayoutConstraint constraintWithItem:self.placeholderView
+                                  attribute:NSLayoutAttributeTop    //top
+                                  relatedBy:NSLayoutRelationEqual
+                                     toItem:self
+                                  attribute:NSLayoutAttributeTop
+                                 multiplier:1
+                                   constant:0]];
+    
+    [self addConstraint:
+     [NSLayoutConstraint constraintWithItem:self.placeholderView
+                                  attribute:NSLayoutAttributeHeight //height（不知道为什么使用bottom无法限制placeholder textView的高）
+                                  relatedBy:NSLayoutRelationEqual
+                                     toItem:self
+                                  attribute:NSLayoutAttributeHeight
+                                 multiplier:1
+                                   constant:0]];
 }
 
 - (void)dealloc {
@@ -66,14 +102,13 @@
 - (UITextView *)placeholderView {
     if (_placeholderView == nil) {
         _placeholderView = [[UITextView alloc] init];
-        //_placeholderView.numberOfLines = 0;
         _placeholderView.scrollEnabled = NO;
         _placeholderView.showsHorizontalScrollIndicator = NO;
         _placeholderView.showsVerticalScrollIndicator = NO;
         _placeholderView.userInteractionEnabled = NO;
         _placeholderView.font = self.font;
         _placeholderView.textColor = [UIColor lightGrayColor];
-        _placeholderView.backgroundColor = [UIColor greenColor];
+        _placeholderView.backgroundColor = [UIColor clearColor];
     }
     return _placeholderView;
 }
@@ -141,7 +176,7 @@
     if (_originTextViewHeight == 0) {
         _originTextViewHeight = currentTextViewHeight;//使用文本的高度作为默认高度
     }
-        
+    
     if (self.currentTexViewHeight != currentTextViewHeight) { //高度不一样，就改变了高度
         self.currentTexViewHeight = currentTextViewHeight;
         
@@ -158,58 +193,6 @@
         }
     }
 }
-
-#pragma mark - addSubView
-- (void)cj_makeView:(UIView *)superView addSubView:(UIView *)subView withEdgeInsets:(UIEdgeInsets)edgeInsets {
-    [superView addSubview:subView];
-    subView.translatesAutoresizingMaskIntoConstraints = NO;
-    
-    [superView addConstraint:
-     [NSLayoutConstraint constraintWithItem:subView
-                                  attribute:NSLayoutAttributeLeft   //left
-                                  relatedBy:NSLayoutRelationEqual
-                                     toItem:superView
-                                  attribute:NSLayoutAttributeLeft
-                                 multiplier:1
-                                   constant:edgeInsets.left]];
-    
-    [superView addConstraint:
-     [NSLayoutConstraint constraintWithItem:subView
-                                  attribute:NSLayoutAttributeRight  //right
-                                  relatedBy:NSLayoutRelationEqual
-                                     toItem:superView
-                                  attribute:NSLayoutAttributeRight
-                                 multiplier:1
-                                   constant:edgeInsets.right]];
-    
-    [superView addConstraint:
-     [NSLayoutConstraint constraintWithItem:subView
-                                  attribute:NSLayoutAttributeTop    //top
-                                  relatedBy:NSLayoutRelationEqual
-                                     toItem:superView
-                                  attribute:NSLayoutAttributeTop
-                                 multiplier:1
-                                   constant:edgeInsets.top]];
-    
-    [superView addConstraint:
-     [NSLayoutConstraint constraintWithItem:subView
-                                  attribute:NSLayoutAttributeBottom //bottom
-                                  relatedBy:NSLayoutRelationEqual
-                                     toItem:superView
-                                  attribute:NSLayoutAttributeBottom
-                                 multiplier:1
-                                   constant:edgeInsets.bottom]];
-}
-
-
-
-
-
-
-
-
-
-
 
 #pragma mark - 字符插入或者删除操作
 /**
