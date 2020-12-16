@@ -14,6 +14,8 @@
 
 #import "CQUpdateContentPopupView.h"
 
+#import "UIView+CJPan.h"
+
 @interface KeyboardAutoMoveUpViewController () {
     
 }
@@ -70,6 +72,9 @@
             autoLayoutModule.title = @"底部(弹出的视图在键盘弹出时候能够自动上移)";
             autoLayoutModule.actionBlock = ^{
                 CQUpdateContentPopupView *popupView = [[CQUpdateContentPopupView alloc] init];
+                [popupView cj_addPanWithPanCompleteDismissBlock:^{
+                    [popupView cj_hidePopupView];
+                }];
                 [popupView setupTitle:NSLocalizedString(@"编辑昵称", nil) placeholder:@"请输入" updateCompleteBlock:^(NSString * _Nonnull bText) {
                     NSString *message = [NSString stringWithFormat:@"新内容为%@", bText];
                     [CJUIKitToastUtil showMessage:message];
