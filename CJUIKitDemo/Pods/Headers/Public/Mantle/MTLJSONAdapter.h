@@ -1,1 +1,1 @@
-../../../Mantle/Mantle/MTLJSONAdapter.h
+../../../Mantle/Mantle/include/MTLJSONAdapter.h

@@ -1,7 +1,10 @@
-platform :ios, '8.0'
+platform :ios, '9.0'
 #use_frameworks!
 inhibit_all_warnings!
 # pod的本地索引文件：~/Library/Caches/CocoaPods/search_index.json
+
+source 'https://github.com/CocoaPods/Specs.git'
+source 'https://gitee.com/dvlproad/dvlproadSpecs' 
 
 #post_install do |installer|
 #    
@@ -47,7 +50,7 @@ target 'CJUIKitDemo' do
 
 #    pod 'CJBaseUIKit',          :path => '../'
     
-    pod 'CQDemoKit',            '~> 0.5.9',     :subspecs => ['BaseVC', 'BaseUtil']
+    pod 'CQDemoKit'#,     '~> 0.5.9',     :subspecs => ['BaseVC', 'BaseUtil']
 #    pod 'CJBaseUIKit',           :path => '../’
     pod 'CJBaseUtil',           :path => '../'
     pod 'CJFoundation',         :path => '../'

@@ -6,9 +6,9 @@
 //  Copyright (c) 2013 GitHub. All rights reserved.
 //
 
+#import "MTLEXTRuntimeExtensions.h"
+#import "MTLEXTScope.h"
 #import "MTLModel+NSCoding.h"
-#import <Mantle/EXTRuntimeExtensions.h>
-#import <Mantle/EXTScope.h>
 #import "MTLReflection.h"
 
 // Used in archives to store the modelVersion of the archived instance.

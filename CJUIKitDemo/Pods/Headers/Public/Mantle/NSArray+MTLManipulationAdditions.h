@@ -1,1 +1,1 @@
-../../../Mantle/Mantle/NSArray+MTLManipulationAdditions.h
+../../../Mantle/Mantle/include/NSArray+MTLManipulationAdditions.h

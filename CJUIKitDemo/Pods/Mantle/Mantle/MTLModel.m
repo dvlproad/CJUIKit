@@ -6,11 +6,11 @@
 //  Copyright (c) 2012 GitHub. All rights reserved.
 //
 
-#import "NSError+MTLModelException.h"
+#import "MTLEXTRuntimeExtensions.h"
+#import "MTLEXTScope.h"
 #import "MTLModel.h"
-#import <Mantle/EXTRuntimeExtensions.h>
-#import <Mantle/EXTScope.h>
 #import "MTLReflection.h"
+#import "NSError+MTLModelException.h"
 #import <objc/runtime.h>
 
 // Used to cache the reflection performed in +propertyKeys.

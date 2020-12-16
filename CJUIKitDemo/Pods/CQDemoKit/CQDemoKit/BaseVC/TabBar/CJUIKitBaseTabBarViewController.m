@@ -67,6 +67,42 @@
     return rootViewController;;
 }
 
+
+
+/*
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    // Do any additional setup after loading the view.
+    
+    [self setupViews];
+}
+
+- (void)setupViews {
+    self.tabBar.backgroundImage = [UIImage imageNamed:@"tabbar_BG"];
+    
+    UIViewController *viewController1 = [[CQPhoneStepLoginHomeViewController alloc] init];
+    viewController1.tabBarItem.title = NSLocalizedString(@"登录", nil);
+    viewController1.tabBarItem.image = [[UIImage imageNamed:@"icons8-settings"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    UINavigationController *navigationController1 = [[UINavigationController alloc] initWithRootViewController:viewController1];
+    [self addChildViewController:navigationController1];
+    
+    UIViewController *viewController2 = [[CQImproveNameViewController alloc] initWithIdentityType:CQIdentityTypeBiao];
+    viewController2.tabBarItem.title = NSLocalizedString(@"完善表资料", nil);
+    viewController2.tabBarItem.image = [[UIImage imageNamed:@"icons8-settings"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    UINavigationController *navigationController2 = [[UINavigationController alloc] initWithRootViewController:viewController2];
+    [self addChildViewController:navigationController2];
+    
+    UIViewController *viewController3 = [[CQImproveNameViewController alloc] initWithIdentityType:CQIdentityTypeLi];
+    viewController3.tabBarItem.title = NSLocalizedString(@"完善里资料", nil);
+    viewController3.tabBarItem.image = [[UIImage imageNamed:@"icons8-settings"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    UINavigationController *navigationController3 = [[UINavigationController alloc] initWithRootViewController:viewController3];
+    [self addChildViewController:navigationController3];
+    
+//    [self setViewControllers:@[navigationController1, navigationController2, navigationController3, navigationController4] animated:YES];
+}
+*/
+
+
 /*
 #pragma mark - Navigation
 

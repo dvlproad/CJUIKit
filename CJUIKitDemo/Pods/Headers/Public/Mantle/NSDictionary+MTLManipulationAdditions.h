@@ -1,1 +1,1 @@
-../../../Mantle/Mantle/NSDictionary+MTLManipulationAdditions.h
+../../../Mantle/Mantle/include/NSDictionary+MTLManipulationAdditions.h

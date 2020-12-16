@@ -1,7 +1,11 @@
-# Mantle [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
+# Mantle
 
-Mantle makes it easy to write a simple model layer for your Cocoa or Cocoa Touch
-application.
+[![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
+[![CocoaPods Compatible](https://img.shields.io/cocoapods/v/Mantle.svg)](https://img.shields.io/cocoapods/v/Mantle.svg)
+[![SPM compatible](https://img.shields.io/badge/SPM-compatible-4BC51D.svg?style=flat)](https://swift.org/package-manager)
+[![Platform](https://img.shields.io/cocoapods/p/Mantle.svg?style=flat)](http://cocoadocs.org/docsets/Mantle)
+
+Mantle makes it easy to write a simple model layer for your Cocoa or Cocoa Touch application.
 
 ## The Typical Model Object
 
@@ -472,9 +476,16 @@ in memory at once, Core Data may be a better choice.
 
 ## System Requirements
 
-Mantle supports OS X 10.9+ and iOS 8.0+.
+Mantle supports the following platform deployment targets:
+
+* macOS 10.10+
+* iOS 8.0+
+* tvOS 9.0+
+* watchOS 2.0+
 
 ## Importing Mantle
+
+### Manually
 
 To add Mantle to your application:
 
@@ -483,16 +494,39 @@ To add Mantle to your application:
  1. Drag and drop `Mantle.xcodeproj` into your application's Xcode project.
  1. On the "General" tab of your application target, add `Mantle.framework` to the "Embedded Binaries".
 
-[Carthage](https://github.com/Carthage/Carthage) users can simply add Mantle to their `Cartfile`:
+If you’re instead developing Mantle on its own, use the `Mantle.xcworkspace` file.
+
+### [Carthage](https://github.com/Carthage/Carthage)
+
+Simply add Mantle to your `Cartfile`:
+
 ```
 github "Mantle/Mantle"
 ```
 
-If you would prefer to use [CocoaPods](http://cocoapods.org), there are some
-[Mantle podspecs](https://github.com/CocoaPods/Specs/tree/master/Specs/5/d/c/Mantle) that
-have been generously contributed by third parties.
+### [CocoaPods](https://cocoapods.org/pods/Mantle)
 
-If you’re instead developing Mantle on its own, use the `Mantle.xcworkspace` file.
+Add Mantle to your `Podfile` under the build target they want it used in:
+
+```
+target 'MyAppOrFramework' do
+  pod 'Mantle'
+end
+```
+
+Then run a `pod install` within Terminal or the [CocoaPods app](https://cocoapods.org/app).
+
+### [Swift Package Manager](https://swift.org/package-manager)
+
+If you are writing an application, add Mantle to your project dependencies [directly within Xcode](https://developer.apple.com/documentation/xcode/adding_package_dependencies_to_your_app).
+
+If you are writing a package that requires Mantle as dependency, add it to the `dependencies` list in its `Package.swift` manifest, for example:
+
+```
+dependencies: [
+    .package(url: "https://github.com/Mantle/Mantle.git", .upToNextMajor(from: "2.0.0"))
+]
+```
 
 ## License
 

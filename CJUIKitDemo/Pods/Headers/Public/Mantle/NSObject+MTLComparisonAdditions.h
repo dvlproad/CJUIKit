@@ -1,1 +1,1 @@
-../../../Mantle/Mantle/NSObject+MTLComparisonAdditions.h
+../../../Mantle/Mantle/include/NSObject+MTLComparisonAdditions.h
