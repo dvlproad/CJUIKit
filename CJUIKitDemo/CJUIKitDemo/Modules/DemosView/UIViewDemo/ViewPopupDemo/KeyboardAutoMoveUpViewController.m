@@ -15,6 +15,7 @@
 #import "CQUpdateContentPopupView.h"
 
 #import "UIView+CJPan.h"
+#import <CQDemoKit/CQTSRipeTableView.h>
 
 @interface KeyboardAutoMoveUpViewController () {
     
@@ -83,6 +84,37 @@
                 [popupView cj_registerKeyboardNotificationWithAutoMoveUpSpacing:0 hasSpacing:NO];
                 
                 CGFloat popupViewHeight = CGRectGetHeight(popupView.frame);
+                UIColor *blankBGColor = [UIColor colorWithRed:.16 green:.17 blue:.21 alpha:.6];
+                [popupView cj_popupInBottomWindow:CJAnimationTypeNormal withHeight:popupViewHeight edgeInsets:UIEdgeInsetsZero blankBGColor:blankBGColor showComplete:^{
+                    NSLog(@"显示完成");
+                    
+                } tapBlankComplete:^{
+                    NSLog(@"点击背景完成");
+                    [popupView cj_hidePopupView];
+                }];
+            };
+            [sectionDataModel.values addObject:autoLayoutModule];
+        }
+        
+       
+        [sectionDataModels addObject:sectionDataModel];
+    }
+    
+    
+    // 仿抖音评论下拉
+    {
+        CQDMSectionDataModel *sectionDataModel = [[CQDMSectionDataModel alloc] init];
+        sectionDataModel.theme = @"仿抖音评论下拉";
+        {
+            CQDMModuleModel *autoLayoutModule = [[CQDMModuleModel alloc] init];
+            autoLayoutModule.title = @"仿抖音评论下拉";
+            autoLayoutModule.actionBlock = ^{
+                CQTSRipeTableView *popupView = [[CQTSRipeTableView alloc] initWithSectionRowCounts:@[@3, @4, @5]];
+                [popupView cj_addPanWithPanCompleteDismissBlock:^{
+                    [popupView cj_hidePopupView];
+                }];
+                
+                CGFloat popupViewHeight = 400;
                 UIColor *blankBGColor = [UIColor colorWithRed:.16 green:.17 blue:.21 alpha:.6];
                 [popupView cj_popupInBottomWindow:CJAnimationTypeNormal withHeight:popupViewHeight edgeInsets:UIEdgeInsetsZero blankBGColor:blankBGColor showComplete:^{
                     NSLog(@"显示完成");

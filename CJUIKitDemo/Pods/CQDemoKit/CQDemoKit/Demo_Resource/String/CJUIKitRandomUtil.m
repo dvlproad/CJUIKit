@@ -9,32 +9,45 @@
 
 @implementation CJUIKitRandomUtil
 
-/*
- *  获取随机的颜色
- *
- *  @return 随机的颜色
- */
+#pragma mark - C函数
+/// 获取随机的颜色
 UIColor *cqtsRandomColor() {
-    return [UIColor colorWithRed:arc4random()%255/256.0f green:arc4random()%255/256.0f blue:arc4random()%255/256.0f alpha:1.0f];
+    return [CJUIKitRandomUtil randomColorWithAlpha:1.0f];
+}
+
+/// 获取随机的字符串
+NSString *cqtsRandomString(NSInteger minLength, NSInteger maxLength, CQRipeStringType stringType) {
+    return [CJUIKitRandomUtil randomStringWithMinLength:minLength maxLength:maxLength stringType:stringType];
 }
 
 
+#pragma mark - OC方法
+/// 获取随机的颜色
++ (UIColor *)randomColorWithAlpha:(CGFloat)alpha {
+    return [UIColor colorWithRed:arc4random()%255/256.0f green:arc4random()%255/256.0f blue:arc4random()%255/256.0f alpha:1.0f];
+}
 
 /*
  *  获取随机的字符串
  *
+ *  @param minLength    随机字符串的最小长度
  *  @param maxLength    随机字符串的最大长度
- *  @param fixMaxLength 是否固定为最大长度
  *  @param stringType   想要输出的随机字符的类型
  *
  *  @return 随机的字符串
  */
-NSString *cqtsRandomString(NSInteger maxLength, BOOL fixMaxLength, CQRipeStringType stringType) {
++ (NSString *)randomStringWithMinLength:(NSInteger)minLength
+                              maxLength:(NSInteger)maxLength
+                             stringType:(CQRipeStringType)stringType
+{
+    NSAssert(maxLength > minLength, @"maxLength > minLength");
+    
     NSInteger randomStringLength = 0;   // 随机字符串的长度
-    if (fixMaxLength) {
-        randomStringLength = maxLength;
+    
+    if (maxLength == minLength) {
+        randomStringLength = minLength;
     } else {
-        randomStringLength = rand() % maxLength;
+        randomStringLength = minLength + rand() % (maxLength-minLength);
     }
     
     
