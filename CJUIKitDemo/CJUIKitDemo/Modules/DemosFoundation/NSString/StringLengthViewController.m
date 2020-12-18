@@ -34,10 +34,38 @@
             dealTextModel.placeholder = @"请输入要验证的值";
             dealTextModel.text = @"18012345678";
             dealTextModel.hopeResultText = @"11";
-            dealTextModel.actionTitle = @"纯数字";
+            dealTextModel.actionTitle = @"纯数字(length)";
+            dealTextModel.autoExec = YES;
+            dealTextModel.actionBlock = ^NSString * _Nonnull(NSString * _Nonnull oldString) {
+                NSInteger length = [oldString length];
+                return [NSString stringWithFormat:@"%zd", length];
+            };
+            [sectionDataModel.values addObject:dealTextModel];
+        }
+        {
+            CJDealTextModel *dealTextModel = [[CJDealTextModel alloc] init];
+            dealTextModel.placeholder = @"请输入要验证的值";
+            dealTextModel.text = @"18012345678";
+            dealTextModel.hopeResultText = @"11";
+            dealTextModel.actionTitle = @"纯数字(cj_length)";
             dealTextModel.autoExec = YES;
             dealTextModel.actionBlock = ^NSString * _Nonnull(NSString * _Nonnull oldString) {
                 NSInteger length = [oldString cj_length];
+                return [NSString stringWithFormat:@"%zd", length];
+            };
+            [sectionDataModel.values addObject:dealTextModel];
+        }
+        
+        
+        {
+            CJDealTextModel *dealTextModel = [[CJDealTextModel alloc] init];
+            dealTextModel.placeholder = @"请输入要验证的值";
+            dealTextModel.text = @"一二三四五六七八九十";
+            dealTextModel.hopeResultText = @"20";
+            dealTextModel.actionTitle = @"纯中文(length)";
+            dealTextModel.autoExec = YES;
+            dealTextModel.actionBlock = ^NSString * _Nonnull(NSString * _Nonnull oldString) {
+                NSInteger length = [oldString length];
                 return [NSString stringWithFormat:@"%zd", length];
             };
             [sectionDataModel.values addObject:dealTextModel];
@@ -47,10 +75,24 @@
             dealTextModel.placeholder = @"请输入要验证的值";
             dealTextModel.text = @"一二三四五六七八九十";
             dealTextModel.hopeResultText = @"20";
-            dealTextModel.actionTitle = @"纯中文";
+            dealTextModel.actionTitle = @"纯中文(cj_length)";
             dealTextModel.autoExec = YES;
             dealTextModel.actionBlock = ^NSString * _Nonnull(NSString * _Nonnull oldString) {
                 NSInteger length = [oldString cj_length];
+                return [NSString stringWithFormat:@"%zd", length];
+            };
+            [sectionDataModel.values addObject:dealTextModel];
+        }
+        
+        {
+            CJDealTextModel *dealTextModel = [[CJDealTextModel alloc] init];
+            dealTextModel.placeholder = @"请输入要验证的值";
+            dealTextModel.text = @"abcde12345abcde12345";
+            dealTextModel.hopeResultText = @"20";
+            dealTextModel.actionTitle = @"无中文(length)";
+            dealTextModel.autoExec = YES;
+            dealTextModel.actionBlock = ^NSString * _Nonnull(NSString * _Nonnull oldString) {
+                NSInteger length = [oldString length];
                 return [NSString stringWithFormat:@"%zd", length];
             };
             [sectionDataModel.values addObject:dealTextModel];
@@ -60,7 +102,7 @@
             dealTextModel.placeholder = @"请输入要验证的值";
             dealTextModel.text = @"abcde12345abcde12345";
             dealTextModel.hopeResultText = @"20";
-            dealTextModel.actionTitle = @"无中文";
+            dealTextModel.actionTitle = @"无中文(cj_length)";
             dealTextModel.autoExec = YES;
             dealTextModel.actionBlock = ^NSString * _Nonnull(NSString * _Nonnull oldString) {
                 NSInteger length = [oldString cj_length];
@@ -81,7 +123,20 @@
             dealTextModel.placeholder = @"请输入要验证的值";
             dealTextModel.text = @"一二三四五六七八九十1";
             dealTextModel.hopeResultText = @"21";
-            dealTextModel.actionTitle = @"中文+非中文";
+            dealTextModel.actionTitle = @"中文+非中文(length)";
+            dealTextModel.autoExec = YES;
+            dealTextModel.actionBlock = ^NSString * _Nonnull(NSString * _Nonnull oldString) {
+                NSInteger length = [oldString length];
+                return [NSString stringWithFormat:@"%zd", length];
+            };
+            [sectionDataModel.values addObject:dealTextModel];
+        }
+        {
+            CJDealTextModel *dealTextModel = [[CJDealTextModel alloc] init];
+            dealTextModel.placeholder = @"请输入要验证的值";
+            dealTextModel.text = @"一二三四五六七八九十1";
+            dealTextModel.hopeResultText = @"21";
+            dealTextModel.actionTitle = @"中文+非中文(cj_length)";
             dealTextModel.autoExec = YES;
             dealTextModel.actionBlock = ^NSString * _Nonnull(NSString * _Nonnull oldString) {
                 NSInteger length = [oldString cj_length];

@@ -12,7 +12,7 @@
 #import "YunUncaughtExceptionHandler.h"
 
 #import "CJAppLastUtil.h"
-//#import <IQKeyboardManager/IQKeyboardManager.h>
+#import <IQKeyboardManager/IQKeyboardManager.h>
 
 #import <UINavigation-SXFixSpace/UINavigationSXFixSpace.h>
 
@@ -69,6 +69,7 @@
     [APPUIKitSetting configAppThemeUIKit];
     
     //[[IQKeyboardManager sharedManager].disabledToolbarClasses addObject:NSClassFromString(@"DateViewController")]; //已写在对应的类里了
+    [IQKeyboardManager sharedManager].enableAutoToolbar = NO;
     
     // 设置主窗口,并设置根控制器
     [UINavigationConfig shared].sx_disableFixSpace = NO;//默认为NO  可以修改
