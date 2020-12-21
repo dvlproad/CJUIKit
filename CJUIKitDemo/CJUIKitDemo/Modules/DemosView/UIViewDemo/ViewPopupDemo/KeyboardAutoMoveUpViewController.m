@@ -84,8 +84,7 @@
                 [popupView cj_registerKeyboardNotificationWithAutoMoveUpSpacing:0 hasSpacing:NO];
                 
                 CGFloat popupViewHeight = CGRectGetHeight(popupView.frame);
-                UIColor *blankBGColor = [UIColor colorWithRed:.16 green:.17 blue:.21 alpha:.6];
-                [popupView cj_popupInBottomWindow:CJAnimationTypeNormal withHeight:popupViewHeight edgeInsets:UIEdgeInsetsZero blankBGColor:blankBGColor showComplete:^{
+                [popupView cj_popupInBottomWindow:CJAnimationTypeNormal withHeight:popupViewHeight edgeInsets:UIEdgeInsetsZero blankViewCreateBlock:nil showComplete:^{
                     NSLog(@"显示完成");
                     
                 } tapBlankComplete:^{
@@ -115,8 +114,7 @@
                 }];
                 
                 CGFloat popupViewHeight = 400;
-                UIColor *blankBGColor = [UIColor colorWithRed:.16 green:.17 blue:.21 alpha:.6];
-                [popupView cj_popupInBottomWindow:CJAnimationTypeNormal withHeight:popupViewHeight edgeInsets:UIEdgeInsetsZero blankBGColor:blankBGColor showComplete:^{
+                [popupView cj_popupInBottomWindow:CJAnimationTypeNormal withHeight:popupViewHeight edgeInsets:UIEdgeInsetsZero blankViewCreateBlock:nil showComplete:^{
                     NSLog(@"显示完成");
                     
                 } tapBlankComplete:^{

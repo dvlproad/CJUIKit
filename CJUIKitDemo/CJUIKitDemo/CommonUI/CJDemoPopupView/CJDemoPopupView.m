@@ -25,7 +25,6 @@
     self.layer.shadowRadius = 5.0;
     self.layer.shadowOpacity = 0.8;
     
-    UIColor *blankBGColor = [UIColor colorWithRed:.16 green:.17 blue:.21 alpha:.6];
     UIEdgeInsets edgeInsets = UIEdgeInsetsMake(0, 10, 10, 10);
     
 //    UIWindow *keyWindow = [[UIApplication sharedApplication] keyWindow];
@@ -38,7 +37,7 @@
 //                            borderColor:[UIColor purpleColor]
 //     ];
     
-    [self cj_popupInBottomWindow:CJAnimationTypeNormal withHeight:popupViewHeight edgeInsets:edgeInsets blankBGColor:blankBGColor showComplete:nil tapBlankComplete:^{
+    [self cj_popupInBottomWindow:CJAnimationTypeNormal withHeight:popupViewHeight edgeInsets:edgeInsets blankViewCreateBlock:nil showComplete:nil tapBlankComplete:^{
         [self hidePopupView];
     }];
 }
@@ -54,9 +53,7 @@
     CGFloat screenWidth = [UIScreen mainScreen].bounds.size.width;
     CGSize popupViewSize = CGSizeMake(screenWidth-15, popupViewHeight);
     
-    UIColor *blankBGColor = [UIColor colorWithRed:.16 green:.17 blue:.21 alpha:.6];
-    
-    [self cj_popupInCenterWindow:CJAnimationTypeNormal withSize:popupViewSize centerOffset:CGPointZero blankBGColor:blankBGColor showComplete:nil tapBlankComplete:^{
+    [self cj_popupInCenterWindow:CJAnimationTypeNormal withSize:popupViewSize centerOffset:CGPointZero blankViewCreateBlock:nil showComplete:nil tapBlankComplete:^{
         [self hidePopupView];
     }];
 }

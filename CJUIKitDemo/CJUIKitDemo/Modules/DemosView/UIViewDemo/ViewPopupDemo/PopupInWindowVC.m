@@ -114,8 +114,7 @@
     
     CGSize popupViewSize = popupView.frame.size;
     //popupViewSize = CGSizeMake(200, 200);
-    UIColor *blankBGColor = [UIColor colorWithRed:.16 green:.17 blue:.21 alpha:.6];
-    [popupView cj_popupInCenterWindow:CJAnimationTypeCATransform3D withSize:popupViewSize centerOffset:CGPointZero blankBGColor:blankBGColor showComplete:^{
+    [popupView cj_popupInCenterWindow:CJAnimationTypeCATransform3D withSize:popupViewSize centerOffset:CGPointZero blankViewCreateBlock:nil showComplete:^{
         NSLog(@"显示完成");
         
     } tapBlankComplete:^{
@@ -129,8 +128,7 @@
     
     CGSize popupViewSize = popupView.frame.size;
     //popupViewSize = CGSizeMake(200, 200);
-    UIColor *blankBGColor = [UIColor colorWithRed:.16 green:.17 blue:.21 alpha:.6];
-    [popupView cj_popupInCenterWindow:CJAnimationTypeCATransform3D withSize:popupViewSize centerOffset:CGPointMake(0, 30) blankBGColor:blankBGColor showComplete:^{
+    [popupView cj_popupInCenterWindow:CJAnimationTypeCATransform3D withSize:popupViewSize centerOffset:CGPointMake(0, 30) blankViewCreateBlock:nil showComplete:^{
         NSLog(@"显示完成");
         
     } tapBlankComplete:^{
@@ -157,8 +155,7 @@
 //    [popupView cj_autoMoveUpByKeyboard:NO spacing:0];
     
     CGFloat popupViewHeight = CGRectGetHeight(popupView.frame);
-    UIColor *blankBGColor = [UIColor colorWithRed:.16 green:.17 blue:.21 alpha:.6];
-    [popupView cj_popupInBottomWindow:CJAnimationTypeNormal withHeight:popupViewHeight edgeInsets:UIEdgeInsetsZero blankBGColor:blankBGColor showComplete:^{
+    [popupView cj_popupInBottomWindow:CJAnimationTypeNormal withHeight:popupViewHeight edgeInsets:UIEdgeInsetsZero blankViewCreateBlock:nil showComplete:^{
         NSLog(@"显示完成");
         
     } tapBlankComplete:^{

@@ -41,8 +41,7 @@
         CGPoint pointLocation = CGPointMake(pointBtnConvert.x, pointBtnConvert.y + CGRectGetHeight(sender.frame));
         CGSize size_popupView = CGSizeMake(CGRectGetWidth(sender.frame), h_popupView);
         
-        UIColor *blankBGColor = [UIColor colorWithRed:.16 green:.17 blue:.21 alpha:.6];
-        [popupView cj_popupInView:popupSuperview withOrigin:pointLocation size:size_popupView blankBGColor:blankBGColor showComplete:^{
+        [popupView cj_popupInView:popupSuperview withOrigin:pointLocation size:size_popupView blankViewCreateBlock:nil showComplete:^{
             NSLog(@"显示完成");
         } tapBlankComplete:^() {
             NSLog(@"点击背景隐藏完成");
@@ -75,8 +74,7 @@
         CGPoint pointLocation = CGPointMake(pointBtnConvert.x, pointBtnConvert.y + CGRectGetHeight(sender.frame));
         CGSize size_popupView = CGSizeMake(CGRectGetWidth(sender.frame), h_popupView);
         
-        UIColor *blankBGColor = [UIColor colorWithRed:.16 green:.17 blue:.21 alpha:.6];
-        [popupView cj_popupInView:popupSuperview withOrigin:pointLocation size:size_popupView blankBGColor:blankBGColor showComplete:^{
+        [popupView cj_popupInView:popupSuperview withOrigin:pointLocation size:size_popupView blankViewCreateBlock:nil showComplete:^{
             NSLog(@"显示完成");
         } tapBlankComplete:^() {
             NSLog(@"点击背景完成");
@@ -108,8 +106,7 @@
         CGPoint pointLocation = CGPointMake(pointBtnConvert.x, pointBtnConvert.y + CGRectGetHeight(sender.frame));
         CGSize size_popupView = CGSizeMake(CGRectGetWidth(sender.frame), h_popupView);
         
-        UIColor *blankBGColor = [UIColor colorWithRed:.16 green:.17 blue:.21 alpha:.6];
-        [popupView cj_popupInView:popupSuperview withOrigin:pointLocation size:size_popupView blankBGColor:blankBGColor showComplete:^{
+        [popupView cj_popupInView:popupSuperview withOrigin:pointLocation size:size_popupView blankViewCreateBlock:nil showComplete:^{
             NSLog(@"显示完成");
         } tapBlankComplete:^() {
             NSLog(@"点击背景完成");

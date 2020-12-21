@@ -68,9 +68,8 @@
 
 - (void)__handleSingleTap:(UIGestureRecognizer *)gr {
     CGFloat popupViewHeight = CGRectGetHeight(self.cjTextPicker.frame);
-    UIColor *blankBGColor = [UIColor colorWithRed:.16 green:.17 blue:.21 alpha:.6];
     __weak typeof(self)weakSelf = self;
-    [self.cjTextPicker cj_popupInBottomWindow:CJAnimationTypeNormal withHeight:popupViewHeight edgeInsets:UIEdgeInsetsZero blankBGColor:blankBGColor showComplete:nil tapBlankComplete:^() {
+    [self.cjTextPicker cj_popupInBottomWindow:CJAnimationTypeNormal withHeight:popupViewHeight edgeInsets:UIEdgeInsetsZero blankViewCreateBlock:nil showComplete:nil tapBlankComplete:^() {
         [weakSelf.cjTextPicker cj_hidePopupView];
     }];
 }

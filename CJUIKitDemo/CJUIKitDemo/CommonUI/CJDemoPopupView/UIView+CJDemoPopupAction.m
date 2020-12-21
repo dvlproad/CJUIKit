@@ -47,15 +47,13 @@ static NSString *cjdemo_hidePopupViewBlockKey = @"cjdemo_hidePopupViewBlockKey";
     CGFloat popupViewWidth = 260;
     CGSize popupViewSize = CGSizeMake(popupViewWidth, popupViewHeight);
     
-    UIColor *blankBGColor = [UIColor colorWithRed:.16 green:.17 blue:.21 alpha:.6];
-    
     // 设置隐藏弹窗的方法
     __weak typeof(UIView *)weakPopupView = self;
     weakPopupView.cjdemo_hidePopupViewBlock = ^(void){
         [weakPopupView cj_hidePopupView];
     };
     // 执行显示弹窗的方法
-    [self cj_popupInCenterWindow:CJAnimationTypeNormal withSize:popupViewSize centerOffset:CGPointZero blankBGColor:blankBGColor showComplete:nil tapBlankComplete:nil];
+    [self cj_popupInCenterWindow:CJAnimationTypeNormal withSize:popupViewSize centerOffset:CGPointZero blankViewCreateBlock:nil showComplete:nil tapBlankComplete:nil];
 }
 
 /**
@@ -67,15 +65,13 @@ static NSString *cjdemo_hidePopupViewBlockKey = @"cjdemo_hidePopupViewBlockKey";
     CGFloat popupViewWidth = 270;
     CGSize popupViewSize = CGSizeMake(popupViewWidth, popupViewHeight);
     
-    UIColor *blankBGColor = [UIColor colorWithWhite:0 alpha:0.8];
-    
     // 设置隐藏弹窗的方法
     __weak typeof(UIView *)weakPopupView = self;
     weakPopupView.cjdemo_hidePopupViewBlock = ^(void){
         [weakPopupView cj_hidePopupView];
     };
     // 执行显示弹窗的方法
-    [self cj_popupInCenterWindow:CJAnimationTypeNormal withSize:popupViewSize centerOffset:CGPointZero blankBGColor:blankBGColor showComplete:nil tapBlankComplete:nil];
+    [self cj_popupInCenterWindow:CJAnimationTypeNormal withSize:popupViewSize centerOffset:CGPointZero blankViewCreateBlock:nil showComplete:nil tapBlankComplete:nil];
 }
 
 
@@ -85,7 +81,6 @@ static NSString *cjdemo_hidePopupViewBlockKey = @"cjdemo_hidePopupViewBlockKey";
  *  @param popupViewHeight              弹出视图的高度
  */
 - (void)cjdemo_popupInBottomWithHeight:(CGFloat)popupViewHeight {
-    UIColor *blankBGColor = [UIColor colorWithRed:.16 green:.17 blue:.21 alpha:.6];
     UIEdgeInsets edgeInsets = UIEdgeInsetsZero;
     
     // 设置隐藏弹窗的方法
@@ -94,7 +89,7 @@ static NSString *cjdemo_hidePopupViewBlockKey = @"cjdemo_hidePopupViewBlockKey";
         [weakPopupView cj_hidePopupView];
     };
     // 执行显示弹窗的方法
-    [self cj_popupInBottomWindow:CJAnimationTypeNormal withHeight:popupViewHeight edgeInsets:edgeInsets blankBGColor:blankBGColor showComplete:nil tapBlankComplete:^{
+    [self cj_popupInBottomWindow:CJAnimationTypeNormal withHeight:popupViewHeight edgeInsets:edgeInsets blankViewCreateBlock:nil showComplete:nil tapBlankComplete:^{
         [self cjdemo_hidePopupView];
     }];
 }
@@ -106,8 +101,6 @@ static NSString *cjdemo_hidePopupViewBlockKey = @"cjdemo_hidePopupViewBlockKey";
  */
 - (void)cjdemo_popupInBottomCornerRadiusWithHeight:(CGFloat)popupViewHeight {
     self.layer.cornerRadius = 10;
-    
-    UIColor *blankBGColor = [UIColor colorWithRed:.16 green:.17 blue:.21 alpha:.6];
     
     CGFloat screenHeight = [[UIScreen mainScreen] bounds].size.height;
     BOOL isScreenFull = screenHeight >= 812 && UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone;  // 是否是全面屏
@@ -130,7 +123,7 @@ static NSString *cjdemo_hidePopupViewBlockKey = @"cjdemo_hidePopupViewBlockKey";
         [weakPopupView cj_hidePopupView];
     };
     // 执行显示弹窗的方法
-    [self cj_popupInBottomWindow:CJAnimationTypeNormal withHeight:popupViewHeight edgeInsets:edgeInsets blankBGColor:blankBGColor showComplete:nil tapBlankComplete:^{
+    [self cj_popupInBottomWindow:CJAnimationTypeNormal withHeight:popupViewHeight edgeInsets:edgeInsets blankViewCreateBlock:nil showComplete:nil tapBlankComplete:^{
         [self cjdemo_hidePopupView];
     }];
 }

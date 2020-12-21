@@ -1029,16 +1029,16 @@
 		1562F20623F5DBF40009FCEA /* Edit */ = {
 			isa = PBXGroup;
 			children = (
-				1562F20723F5DBF40009FCEA /* UIImage+CJRotateAngle.m */,
-				1562F20823F5DBF40009FCEA /* UIImage+CJChangeColor.m */,
 				1562F20923F5DBF40009FCEA /* UIImage+CJBlur.h */,
-				1562F20A23F5DBF40009FCEA /* UIImage+CJMakeCircle.h */,
-				1562F20B23F5DBF40009FCEA /* UIImage+CJSplitImageIntoTwoParts.h */,
 				1562F20C23F5DBF40009FCEA /* UIImage+CJBlur.m */,
 				1562F20D23F5DBF40009FCEA /* UIImage+CJChangeColor.h */,
-				1562F20E23F5DBF40009FCEA /* UIImage+CJRotateAngle.h */,
-				1562F20F23F5DBF40009FCEA /* UIImage+CJSplitImageIntoTwoParts.m */,
+				1562F20823F5DBF40009FCEA /* UIImage+CJChangeColor.m */,
+				1562F20A23F5DBF40009FCEA /* UIImage+CJMakeCircle.h */,
 				1562F21023F5DBF40009FCEA /* UIImage+CJMakeCircle.m */,
+				1562F20E23F5DBF40009FCEA /* UIImage+CJRotateAngle.h */,
+				1562F20723F5DBF40009FCEA /* UIImage+CJRotateAngle.m */,
+				1562F20B23F5DBF40009FCEA /* UIImage+CJSplitImageIntoTwoParts.h */,
+				1562F20F23F5DBF40009FCEA /* UIImage+CJSplitImageIntoTwoParts.m */,
 			);
 			path = Edit;
 			sourceTree = "<group>";

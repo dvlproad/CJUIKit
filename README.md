@@ -139,6 +139,16 @@
 
 #### 1、CJBaseUIKit更新记录
 
+* 2020-11-28 V
+
+> 1、处理CJTextView
+>
+> 2、UIView+CJAutoMoveUp 完善键盘变化的信息回调
+>
+> 3、添加测试访抖音评论拖动效果
+>
+> 4、UIView+CJPopupInView增加对弹出视图的blankView增加可定制方法
+
 * 2020-11-26 V0.6.6
 
 >1、增加本视图据键盘自动上移的方法：\#import "UIView+CJAutoMoveUp.h"
