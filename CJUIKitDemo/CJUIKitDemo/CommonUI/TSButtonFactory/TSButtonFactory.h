@@ -14,7 +14,6 @@ typedef NS_ENUM(NSUInteger, DemoTextImageButtonLocation) {
     DemoTextImageButtonLocationDefault,
     DemoTextImageButtonLocationLeftImageRightText,  // "左图片+右文字"按钮
     DemoTextImageButtonLocationLeftTextRightImage,  // "左文字+右图片"按钮
-    DemoTextImageButtonLocationImageTop,  // "上图片+下文字"按钮
 };
 
 NS_ASSUME_NONNULL_BEGIN

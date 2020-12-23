@@ -135,21 +135,16 @@
     switch (location) {
         case DemoTextImageButtonLocationLeftImageRightText: // "左图片+右文字"按钮
         {
-            
             [button cjLeftImageOffset:10 imageAndTitleSpacing:10];
             break;
         }
         case DemoTextImageButtonLocationLeftTextRightImage: // "左文字+右图片"按钮
         {
             [button cjLeftTextRightImageWithSpacing:10 rightOffset:10];
+            break;
         }
-        case DemoTextImageButtonLocationImageTop: // "上图片+下文字"按钮
+        default:    // 默认是系统的"左图片+右文字"按钮
         {
-            [button cjVerticalImageAndTitle:10];
-        }
-        default:    // 默认是 "左文字+右图片"按钮
-        {
-            [button cjLeftTextRightImageWithSpacing:10 rightOffset:10];
             break;
         }
     }

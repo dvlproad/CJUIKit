@@ -10,11 +10,24 @@
 #import "TSButtonFactory.h"
 #import "UIImage+CJCreate.h"
 
-@interface ButtonStructureViewController ()
+#import "UIButton+CJStructure.h"
+
+@interface ButtonStructureViewController () {
+    
+}
+@property (nonatomic, strong) UIButton *upDownButton1;
+@property (nonatomic, strong) UIButton *upDownButton2;
 
 @end
 
 @implementation ButtonStructureViewController
+
+- (void)viewDidLayoutSubviews {
+    [super viewDidLayoutSubviews];
+    
+    [self.upDownButton1 cjVerticalImageAndTitle:10];
+    [self.upDownButton2 cjVerticalImageAndTitle:10];
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -35,16 +48,29 @@
     }];
     
     // 上图下字按钮
-    UIButton *upDownButton = [TSButtonFactory textImageButtonWithTitle:@"上图下字按钮"
+    UIButton *upDownButton1 = [TSButtonFactory textImageButtonWithTitle:@"上图下字按钮1"
                                                                  image:image
-                                                         imagePosition:DemoTextImageButtonLocationImageTop];
-    [self.view addSubview:upDownButton];
-    [upDownButton mas_makeConstraints:^(MASConstraintMaker *make) {
+                                                         imagePosition:DemoTextImageButtonLocationDefault];
+    [self.view addSubview:upDownButton1];
+    [upDownButton1 mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.mas_equalTo(normalStructure.mas_bottom).mas_offset(20);
-        make.height.mas_equalTo(normalStructure);
+        make.height.mas_equalTo(60);
         make.left.mas_equalTo(normalStructure);
         make.centerX.mas_equalTo(normalStructure);
     }];
+    self.upDownButton1 = upDownButton1;
+    
+    UIButton *upDownButton2 = [TSButtonFactory textImageButtonWithTitle:@"上图下字按钮2"
+                                                                 image:image
+                                                         imagePosition:DemoTextImageButtonLocationDefault];
+    [self.view addSubview:upDownButton2];
+    [upDownButton2 mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.mas_equalTo(upDownButton1.mas_bottom).mas_offset(20);
+        make.height.mas_equalTo(120);
+        make.left.mas_equalTo(normalStructure);
+        make.centerX.mas_equalTo(normalStructure);
+    }];
+    self.upDownButton1 = upDownButton2;
     
     
     // 左图右字按钮(测试用的"左图片+右文字"按钮)
@@ -53,10 +79,10 @@
                                                              imagePosition:DemoTextImageButtonLocationLeftImageRightText];
     [self.view addSubview:leftRightButton1];
     [leftRightButton1 mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.mas_equalTo(upDownButton.mas_bottom).mas_offset(20);
-        make.height.mas_equalTo(upDownButton);
-        make.left.mas_equalTo(upDownButton);
-        make.centerX.mas_equalTo(upDownButton);
+        make.top.mas_equalTo(upDownButton2.mas_bottom).mas_offset(20);
+        make.height.mas_equalTo(normalStructure);
+        make.left.mas_equalTo(normalStructure);
+        make.centerX.mas_equalTo(normalStructure);
     }];
     
     // 左字右图按钮(测试用的"左文字+右图片"按钮)
