@@ -22,6 +22,9 @@
 //ViewAnimate
 #import "ViewAnimateViewController.h"
 
+// View Pandown
+#import "ViewPandownViewController.h"
+
 @interface ViewHomeViewController ()
 
 @end
@@ -65,6 +68,33 @@
         [sectionDataModels addObject:sectionDataModel];
     }
     
+    // View Pandown
+    {
+        CQDMSectionDataModel *sectionDataModel = [[CQDMSectionDataModel alloc] init];
+        sectionDataModel.theme = @"UIView+CJPanAction";
+        {
+            CQDMModuleModel *animateViewModule = [[CQDMModuleModel alloc] init];
+            animateViewModule.title = @"View Pandown (仿抖音评论下拉)";
+            animateViewModule.classEntry = [ViewPandownViewController class];
+            [sectionDataModel.values addObject:animateViewModule];
+        }
+        
+        [sectionDataModels addObject:sectionDataModel];
+    }
+    
+    // View AutoMoveUp
+    {
+        CQDMSectionDataModel *sectionDataModel = [[CQDMSectionDataModel alloc] init];
+        sectionDataModel.theme = @"UIView+CJAutoMoveUp";
+        {
+            CQDMModuleModel *animateViewModule = [[CQDMModuleModel alloc] init];
+            animateViewModule.title = @"View AutoMoveUp (键盘上方的视图(跟随键盘))";
+            animateViewModule.classEntry = [KeyboardAutoMoveUpViewController class];
+            [sectionDataModel.values addObject:animateViewModule];
+        }
+        
+        [sectionDataModels addObject:sectionDataModel];
+    }
     
     //Popup
     {
@@ -81,13 +111,6 @@
             CQDMModuleModel *popupInWindowModule = [[CQDMModuleModel alloc] init];
             popupInWindowModule.title = @"PopupInWindow (弹出到Window)";
             popupInWindowModule.classEntry = [PopupInWindowVC class];
-
-            [sectionDataModel.values addObject:popupInWindowModule];
-        }
-        {
-            CQDMModuleModel *popupInWindowModule = [[CQDMModuleModel alloc] init];
-            popupInWindowModule.title = @"伴随键盘弹出";
-            popupInWindowModule.classEntry = [KeyboardAutoMoveUpViewController class];
 
             [sectionDataModel.values addObject:popupInWindowModule];
         }

@@ -153,6 +153,7 @@
 		7875C58D231CF77900076A00 /* BackCustomItemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7875C587231CF77900076A00 /* BackCustomItemViewController.m */; };
 		7875C58E231CF77900076A00 /* BackItemBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7875C588231CF77900076A00 /* BackItemBaseViewController.m */; };
 		7875C58F231CF77900076A00 /* BackSystemItemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7875C589231CF77900076A00 /* BackSystemItemViewController.m */; };
+		7877601F2594F54200B0D33C /* CQCommentsPopView.m in Sources */ = {isa = PBXBuildFile; fileRef = 787760152594F54100B0D33C /* CQCommentsPopView.m */; };
 		787C287F23223DAA00AF84F4 /* DemoEasyModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 787C287E23223DAA00AF84F4 /* DemoEasyModel.m */; };
 		787FDB5820500B01008A46E3 /* TSTextFieldInputViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 787FDB5020500B00008A46E3 /* TSTextFieldInputViewController.m */; };
 		787FDB5A20500B01008A46E3 /* ColorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 787FDB5320500B01008A46E3 /* ColorViewController.m */; };
@@ -222,6 +223,8 @@
 		78AB83AC21B7D24E00853E21 /* closePresentVC@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 78AB83AA21B7D24E00853E21 /* closePresentVC@2x.png */; };
 		78AB83AD21B7D24E00853E21 /* closePresentVC@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 78AB83AB21B7D24E00853E21 /* closePresentVC@3x.png */; };
 		78AB83C221B96D7000853E21 /* DemoTextFieldFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 78AB83C121B96D7000853E21 /* DemoTextFieldFactory.m */; };
+		78ACAFEF2595066C000FEEEB /* UIView+CJPanAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 78ACAFED2595066C000FEEEB /* UIView+CJPanAction.m */; };
+		78ACAFFF2595088F000FEEEB /* ViewPandownViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78ACAFFD2595088F000FEEEB /* ViewPandownViewController.m */; };
 		78B6C2D82159D1F100D5864E /* DemoBusFlightStationModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 78B6C2D42159D1F100D5864E /* DemoBusFlightStationModel.m */; };
 		78B6C2D92159D1F100D5864E /* DemoBusFlightModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 78B6C2D72159D1F100D5864E /* DemoBusFlightModel.m */; };
 		78B6C2DF2159D20000D5864E /* DemoUsePermissionModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 78B6C2DD2159D20000D5864E /* DemoUsePermissionModel.m */; };
@@ -240,7 +243,6 @@
 		78C8148D216E11AF00A6B190 /* AChildViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78C81485216E11AF00A6B190 /* AChildViewController.m */; };
 		78C8148E216E11AF00A6B190 /* Home1.m in Sources */ = {isa = PBXBuildFile; fileRef = 78C81487216E11AF00A6B190 /* Home1.m */; };
 		78C8148F216E11AF00A6B190 /* EChildViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78C81488216E11AF00A6B190 /* EChildViewController.m */; };
-		78CFFB5C258A80F5000CC032 /* UIView+CJPan.m in Sources */ = {isa = PBXBuildFile; fileRef = 78CFFB5A258A80F5000CC032 /* UIView+CJPan.m */; };
 		78E18952217778D900B8781A /* NavigationBarHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78E18951217778D900B8781A /* NavigationBarHomeViewController.m */; };
 		78E1895D2177835700B8781A /* ViewHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78E1895B2177835600B8781A /* ViewHomeViewController.m */; };
 		78E1899E2177874B00B8781A /* SliderHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78E1899C2177874B00B8781A /* SliderHomeViewController.m */; };
@@ -629,6 +631,8 @@
 		7875C58A231CF77900076A00 /* BackCustomItemViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BackCustomItemViewController.h; sourceTree = "<group>"; };
 		7875C58B231CF77900076A00 /* BackItemBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BackItemBaseViewController.h; sourceTree = "<group>"; };
 		7875C58C231CF77900076A00 /* BackSystemItemViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BackSystemItemViewController.h; sourceTree = "<group>"; };
+		787760152594F54100B0D33C /* CQCommentsPopView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CQCommentsPopView.m; sourceTree = "<group>"; };
+		787760192594F54100B0D33C /* CQCommentsPopView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CQCommentsPopView.h; sourceTree = "<group>"; };
 		787C287D23223DAA00AF84F4 /* DemoEasyModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DemoEasyModel.h; sourceTree = "<group>"; };
 		787C287E23223DAA00AF84F4 /* DemoEasyModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DemoEasyModel.m; sourceTree = "<group>"; };
 		787FDB4F20500B00008A46E3 /* TSTextFieldInputViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSTextFieldInputViewController.h; sourceTree = "<group>"; };
@@ -741,6 +745,10 @@
 		78AB83AB21B7D24E00853E21 /* closePresentVC@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "closePresentVC@3x.png"; sourceTree = "<group>"; };
 		78AB83C021B96D7000853E21 /* DemoTextFieldFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DemoTextFieldFactory.h; sourceTree = "<group>"; };
 		78AB83C121B96D7000853E21 /* DemoTextFieldFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DemoTextFieldFactory.m; sourceTree = "<group>"; };
+		78ACAFED2595066C000FEEEB /* UIView+CJPanAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+CJPanAction.m"; sourceTree = "<group>"; };
+		78ACAFEE2595066C000FEEEB /* UIView+CJPanAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+CJPanAction.h"; sourceTree = "<group>"; };
+		78ACAFFD2595088F000FEEEB /* ViewPandownViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewPandownViewController.m; sourceTree = "<group>"; };
+		78ACAFFE2595088F000FEEEB /* ViewPandownViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewPandownViewController.h; sourceTree = "<group>"; };
 		78B6C2D42159D1F100D5864E /* DemoBusFlightStationModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DemoBusFlightStationModel.m; sourceTree = "<group>"; };
 		78B6C2D52159D1F100D5864E /* DemoBusFlightModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DemoBusFlightModel.h; sourceTree = "<group>"; };
 		78B6C2D62159D1F100D5864E /* DemoBusFlightStationModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DemoBusFlightStationModel.h; sourceTree = "<group>"; };
@@ -776,8 +784,6 @@
 		78C81486216E11AF00A6B190 /* BChildViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BChildViewController.h; sourceTree = "<group>"; };
 		78C81487216E11AF00A6B190 /* Home1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Home1.m; sourceTree = "<group>"; };
 		78C81488216E11AF00A6B190 /* EChildViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EChildViewController.m; sourceTree = "<group>"; };
-		78CFFB5A258A80F5000CC032 /* UIView+CJPan.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+CJPan.m"; sourceTree = "<group>"; };
-		78CFFB5B258A80F5000CC032 /* UIView+CJPan.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+CJPan.h"; sourceTree = "<group>"; };
 		78E18950217778D900B8781A /* NavigationBarHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NavigationBarHomeViewController.h; sourceTree = "<group>"; };
 		78E18951217778D900B8781A /* NavigationBarHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NavigationBarHomeViewController.m; sourceTree = "<group>"; };
 		78E1895B2177835600B8781A /* ViewHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewHomeViewController.m; sourceTree = "<group>"; };
@@ -1196,8 +1202,8 @@
 				1562F24D23F5DBF40009FCEA /* UIView+CJDragAction.m */,
 				1562F24E23F5DBF40009FCEA /* UIView+CJKeepBounds.h */,
 				1562F24C23F5DBF40009FCEA /* UIView+CJKeepBounds.m */,
-				78CFFB5B258A80F5000CC032 /* UIView+CJPan.h */,
-				78CFFB5A258A80F5000CC032 /* UIView+CJPan.m */,
+				78ACAFEE2595066C000FEEEB /* UIView+CJPanAction.h */,
+				78ACAFED2595066C000FEEEB /* UIView+CJPanAction.m */,
 			);
 			path = CJDragAction;
 			sourceTree = "<group>";
@@ -1613,8 +1619,7 @@
 				7850B6F820937C59008F4A21 /* PopupInViewVC.xib */,
 				7850B6FB20937C59008F4A21 /* PopupInWindowVC.h */,
 				7850B6F320937C59008F4A21 /* PopupInWindowVC.m */,
-				976794F82580B494002FD0C7 /* KeyboardAutoMoveUpViewController.h */,
-				976794F92580B494002FD0C7 /* KeyboardAutoMoveUpViewController.m */,
+				787760102594F54100B0D33C /* tttt */,
 				7850B6FC20937C59008F4A21 /* ShowDropDownViewController.h */,
 				7850B6F620937C59008F4A21 /* ShowDropDownViewController.m */,
 				7850B6F720937C59008F4A21 /* ShowDropDownViewController.xib */,
@@ -1749,6 +1754,23 @@
 				7875C587231CF77900076A00 /* BackCustomItemViewController.m */,
 			);
 			path = BackBarButtonItem;
+			sourceTree = "<group>";
+		};
+		787760102594F54100B0D33C /* tttt */ = {
+			isa = PBXGroup;
+			children = (
+				787760132594F54100B0D33C /* TCCommentsPopView */,
+			);
+			path = tttt;
+			sourceTree = "<group>";
+		};
+		787760132594F54100B0D33C /* TCCommentsPopView */ = {
+			isa = PBXGroup;
+			children = (
+				787760192594F54100B0D33C /* CQCommentsPopView.h */,
+				787760152594F54100B0D33C /* CQCommentsPopView.m */,
+			);
+			path = TCCommentsPopView;
 			sourceTree = "<group>";
 		};
 		787FDB4E20500B00008A46E3 /* TextFieldDemo */ = {
@@ -1965,6 +1987,24 @@
 			path = DemoTextFieldFactory;
 			sourceTree = "<group>";
 		};
+		78ACAFFC2595088F000FEEEB /* ViewPandownDemo */ = {
+			isa = PBXGroup;
+			children = (
+				78ACAFFE2595088F000FEEEB /* ViewPandownViewController.h */,
+				78ACAFFD2595088F000FEEEB /* ViewPandownViewController.m */,
+			);
+			path = ViewPandownDemo;
+			sourceTree = "<group>";
+		};
+		78ACB00C25950AA7000FEEEB /* ViewAutoMoveUp */ = {
+			isa = PBXGroup;
+			children = (
+				976794F82580B494002FD0C7 /* KeyboardAutoMoveUpViewController.h */,
+				976794F92580B494002FD0C7 /* KeyboardAutoMoveUpViewController.m */,
+			);
+			path = ViewAutoMoveUp;
+			sourceTree = "<group>";
+		};
 		78B6C2D32159D1F100D5864E /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -2025,6 +2065,8 @@
 			children = (
 				78E1895C2177835600B8781A /* ViewHomeViewController.h */,
 				78E1895B2177835600B8781A /* ViewHomeViewController.m */,
+				78ACB00C25950AA7000FEEEB /* ViewAutoMoveUp */,
+				78ACAFFC2595088F000FEEEB /* ViewPandownDemo */,
 				807F125B20B507340008B748 /* ViewAnimateDemo */,
 				7850B6EE20937C59008F4A21 /* ViewDragDemo */,
 				7850B6F220937C59008F4A21 /* ViewPopupDemo */,
@@ -2988,6 +3030,7 @@
 				78E1899E2177874B00B8781A /* SliderHomeViewController.m in Sources */,
 				78024917258296BE00C7DBAD /* CQHeightTextView.m in Sources */,
 				78E18952217778D900B8781A /* NavigationBarHomeViewController.m in Sources */,
+				78ACAFEF2595066C000FEEEB /* UIView+CJPanAction.m in Sources */,
 				80D0120F210336E100D1EDF0 /* ChangeViewController.m in Sources */,
 				975164AE256CFE34001DE112 /* CQUpdateContentPopupView.m in Sources */,
 				78F65DA72576A9E20020916A /* UIView+CJToastInView.m in Sources */,
@@ -3019,7 +3062,6 @@
 				1562F2C623F5DBF40009FCEA /* UITextField+CJAddInputAccessoryView.m in Sources */,
 				1562F2CC23F5DBF40009FCEA /* UIView+CJAnimation.m in Sources */,
 				97578AAC25590E9300249AD6 /* MainViewController.m in Sources */,
-				78CFFB5C258A80F5000CC032 /* UIView+CJPan.m in Sources */,
 				78B6C2E62159D6E900D5864E /* DemoBusStationLocationModel.m in Sources */,
 				788113CB21996A2600D1630D /* SubNormalSharedInstanceClass.m in Sources */,
 				80FF91951FC5682B00E437CF /* FoundationHomeViewController.m in Sources */,
@@ -3049,6 +3091,7 @@
 				78F55FFA248818E000B7B27A /* AttributedStringViewController2.m in Sources */,
 				7857ABBC2254AA5000B1569C /* CJDemoDateTextField.m in Sources */,
 				1562F2E423F5DBF40009FCEA /* CJSliderControl.m in Sources */,
+				7877601F2594F54200B0D33C /* CQCommentsPopView.m in Sources */,
 				78E189AE21781BE200B8781A /* EdgeLayoutTableViewController.m in Sources */,
 				1562F2DF23F5DBF40009FCEA /* UITableView+CJEmptyView.m in Sources */,
 				808DE5E720DA0586003E08F1 /* CJDecimalUtil.m in Sources */,
@@ -3132,6 +3175,7 @@
 				781C737721BA6A170090080C /* TestValueChangeModel.m in Sources */,
 				78C8148E216E11AF00A6B190 /* Home1.m in Sources */,
 				78E189AB21781BD000B8781A /* TranslucentLayoutTableViewController.m in Sources */,
+				78ACAFFF2595088F000FEEEB /* ViewPandownViewController.m in Sources */,
 				7885FC4A2156681F00B97DAA /* UIView+CJPopupInSuspendWindow.m in Sources */,
 				1562F2C823F5DBF40009FCEA /* UIView+CJShowExtendView.m in Sources */,
 				800E07E12016CCF500799B78 /* DataUtilViewController.m in Sources */,

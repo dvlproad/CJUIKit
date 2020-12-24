@@ -1,16 +1,16 @@
 //
-//  UIView+CJPan.h
+//  UIView+CJPanAction.h
 //  CJUIKitDemo
 //
-//  Created by ciyouzen on 2018/11/05.
-//  Copyright © 2018年 dvlproad. All rights reserved.
+//  Created by ciyouzen on 2019/05/10.
+//  Copyright © 2019年 dvlproad. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface UIView (CJPan) {
+@interface UIView (CJPanAction) {
     
 }
 @property (nonatomic, assign, readonly) CGRect cjPanStartFrame;   /**< 拖动开始时候视图的frame位置(用于复原等操作) */

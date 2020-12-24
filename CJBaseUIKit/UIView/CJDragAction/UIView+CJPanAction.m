@@ -1,12 +1,12 @@
 //
-//  UIView+CJPan.m
+//  UIView+CJPanAction.m
 //  CJUIKitDemo
 //
-//  Created by ciyouzen on 2018/11/05.
-//  Copyright © 2018年 dvlproad. All rights reserved.
+//  Created by ciyouzen on 2019/05/10.
+//  Copyright © 2019年 dvlproad. All rights reserved.
 //
 
-#import "UIView+CJPan.h"
+#import "UIView+CJPanAction.h"
 #import <objc/runtime.h>
 
 @interface UIView () <UIGestureRecognizerDelegate> {
@@ -26,7 +26,7 @@
 @end
 
 
-@implementation UIView (CJPan)
+@implementation UIView (CJPanAction)
 
 #pragma mark - runtime:block
 - (void (^)(BOOL, CGPoint))cjPaningOffsetBlock {
@@ -153,6 +153,8 @@
 - (void)cj_addPanWithPaningOffsetBlock:(void(^)(BOOL isDown, CGPoint offset))paningOffsetBlock
                       panCompleteBlock:(void(^)(BOOL isFast))panCompleteBlock
 {
+    NSAssert([self isKindOfClass:[UIScrollView class]] == NO, @"调用此方法的视图不能是UIScrollView或其子类，否则下拉滑动会有问题。解决方式，请将你想要的那个UIScrollView或其子类视图用个UIView包起来，再调用此方法。不信你自己注释掉此行代码，执行下就知道");
+    
     self.cjPaningOffsetBlock = paningOffsetBlock;
     self.cjPanCompleteBlock = panCompleteBlock;
     

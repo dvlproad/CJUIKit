@@ -14,8 +14,6 @@
 
 #import "CQUpdateContentPopupView.h"
 
-#import "UIView+CJPan.h"
-#import <CQDemoKit/CQTSRipeTableView.h>
 
 @interface KeyboardAutoMoveUpViewController () {
     
@@ -44,6 +42,7 @@
     // Do any additional setup after loading the view.
     self.navigationItem.title = NSLocalizedString(@"伴随键盘弹出", nil);
     
+    self.tableView.keyboardDismissMode = UIScrollViewKeyboardDismissModeOnDrag; //tableView拖动，自动隐藏键盘
     
     UITextField *autoMoveUpView = [UITextField new];
     autoMoveUpView.placeholder = @"本视图中的视图自动上移";
@@ -73,9 +72,7 @@
             autoLayoutModule.title = @"底部(弹出的视图在键盘弹出时候能够自动上移)";
             autoLayoutModule.actionBlock = ^{
                 CQUpdateContentPopupView *popupView = [[CQUpdateContentPopupView alloc] init];
-                [popupView cj_addPanWithPanCompleteDismissBlock:^{
-                    [popupView cj_hidePopupView];
-                }];
+ 
                 [popupView setupTitle:NSLocalizedString(@"编辑昵称", nil) placeholder:@"请输入" updateCompleteBlock:^(NSString * _Nonnull bText) {
                     NSString *message = [NSString stringWithFormat:@"新内容为%@", bText];
                     [CJUIKitToastUtil showMessage:message];
@@ -84,36 +81,6 @@
                 [popupView cj_registerKeyboardNotificationWithAutoMoveUpSpacing:0 hasSpacing:NO];
                 
                 CGFloat popupViewHeight = CGRectGetHeight(popupView.frame);
-                [popupView cj_popupInBottomWindow:CJAnimationTypeNormal withHeight:popupViewHeight edgeInsets:UIEdgeInsetsZero blankViewCreateBlock:nil showComplete:^{
-                    NSLog(@"显示完成");
-                    
-                } tapBlankComplete:^{
-                    NSLog(@"点击背景完成");
-                    [popupView cj_hidePopupView];
-                }];
-            };
-            [sectionDataModel.values addObject:autoLayoutModule];
-        }
-        
-       
-        [sectionDataModels addObject:sectionDataModel];
-    }
-    
-    
-    // 仿抖音评论下拉
-    {
-        CQDMSectionDataModel *sectionDataModel = [[CQDMSectionDataModel alloc] init];
-        sectionDataModel.theme = @"仿抖音评论下拉";
-        {
-            CQDMModuleModel *autoLayoutModule = [[CQDMModuleModel alloc] init];
-            autoLayoutModule.title = @"仿抖音评论下拉";
-            autoLayoutModule.actionBlock = ^{
-                CQTSRipeTableView *popupView = [[CQTSRipeTableView alloc] initWithSectionRowCounts:@[@3, @4, @5]];
-                [popupView cj_addPanWithPanCompleteDismissBlock:^{
-                    [popupView cj_hidePopupView];
-                }];
-                
-                CGFloat popupViewHeight = 400;
                 [popupView cj_popupInBottomWindow:CJAnimationTypeNormal withHeight:popupViewHeight edgeInsets:UIEdgeInsetsZero blankViewCreateBlock:nil showComplete:^{
                     NSLog(@"显示完成");
                     
