@@ -19,15 +19,15 @@ NS_ASSUME_NONNULL_BEGIN
 /*
  *  添加pan手势
  *
- *  @param panCompleteDismissBlock     拖动结束需要执行dimiss的回调(其他部分已自动内部设置frame)
+ *  @param panCompleteDismissBlock      拖动结束需要执行dimiss的回调(其他部分已自动内部设置frame)
  */
 - (void)cj_addPanWithPanCompleteDismissBlock:(void(^)(void))panCompleteDismissBlock;
 
 /*
  *  添加pan手势
  *
- *  @param paningOffsetBlockpan     拖动进行中的回调(isDown:是否是向下，offset:偏移量)
- *  @param cjPanCompleteBlock         拖动结束的回调(isFast:是类似轻扫的那种)
+ *  @param paningOffsetBlockpan         拖动进行中的回调(isDown:是否是向下，offset:偏移量)
+ *  @param cjPanCompleteBlock           拖动结束的回调(isFast:是类似轻扫的那种)
  */
 - (void)cj_addPanWithPaningOffsetBlock:(void(^)(BOOL isDown, CGPoint offset))paningOffsetBlock
                       panCompleteBlock:(void(^)(BOOL isFast))panCompleteBlock;

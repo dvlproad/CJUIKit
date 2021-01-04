@@ -23,7 +23,8 @@
 #import "ViewAnimateViewController.h"
 
 // View Pandown
-#import "ViewPandownViewController.h"
+#import "ViewPandownViewController1.h"
+#import "ViewPandownViewController2.h"
 
 @interface ViewHomeViewController ()
 
@@ -74,8 +75,14 @@
         sectionDataModel.theme = @"UIView+CJPanAction";
         {
             CQDMModuleModel *animateViewModule = [[CQDMModuleModel alloc] init];
-            animateViewModule.title = @"View Pandown (仿抖音评论下拉)";
-            animateViewModule.classEntry = [ViewPandownViewController class];
+            animateViewModule.title = @"View Pandown (仿抖音评论下拉,对列表需自己包装container)";
+            animateViewModule.classEntry = [ViewPandownViewController1 class];
+            [sectionDataModel.values addObject:animateViewModule];
+        }
+        {
+            CQDMModuleModel *animateViewModule = [[CQDMModuleModel alloc] init];
+            animateViewModule.title = @"View Pandown (仿抖音评论下拉,对所有都不需自己包装container)";
+            animateViewModule.classEntry = [ViewPandownViewController2 class];
             [sectionDataModel.values addObject:animateViewModule];
         }
         

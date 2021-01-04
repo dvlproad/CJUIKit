@@ -1,12 +1,12 @@
 //
-//  ViewPandownViewController.m
+//  ViewPandownViewController1.m
 //  CJUIKitDemo
 //
 //  Created by ciyouzen on 15/11/12.
 //  Copyright (c) 2015年 dvlproad. All rights reserved.
 //
 
-#import "ViewPandownViewController.h"
+#import "ViewPandownViewController1.h"
 #import <CQDemoKit/CJUIKitToastUtil.h>
 #import "UIView+CJPopupInView.h"
 
@@ -17,13 +17,13 @@
 
 #import "CQCommentsPopView.h"
 
-@interface ViewPandownViewController () {
+@interface ViewPandownViewController1 () {
     
 }
 
 @end
 
-@implementation ViewPandownViewController
+@implementation ViewPandownViewController1
 
 - (void)viewDidLoad {
     [super viewDidLoad];

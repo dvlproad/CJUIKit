@@ -224,7 +224,7 @@
 		78AB83AD21B7D24E00853E21 /* closePresentVC@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 78AB83AB21B7D24E00853E21 /* closePresentVC@3x.png */; };
 		78AB83C221B96D7000853E21 /* DemoTextFieldFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 78AB83C121B96D7000853E21 /* DemoTextFieldFactory.m */; };
 		78ACAFEF2595066C000FEEEB /* UIView+CJPanAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 78ACAFED2595066C000FEEEB /* UIView+CJPanAction.m */; };
-		78ACAFFF2595088F000FEEEB /* ViewPandownViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78ACAFFD2595088F000FEEEB /* ViewPandownViewController.m */; };
+		78ACAFFF2595088F000FEEEB /* ViewPandownViewController1.m in Sources */ = {isa = PBXBuildFile; fileRef = 78ACAFFD2595088F000FEEEB /* ViewPandownViewController1.m */; };
 		78B6C2D82159D1F100D5864E /* DemoBusFlightStationModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 78B6C2D42159D1F100D5864E /* DemoBusFlightStationModel.m */; };
 		78B6C2D92159D1F100D5864E /* DemoBusFlightModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 78B6C2D72159D1F100D5864E /* DemoBusFlightModel.m */; };
 		78B6C2DF2159D20000D5864E /* DemoUsePermissionModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 78B6C2DD2159D20000D5864E /* DemoUsePermissionModel.m */; };
@@ -333,6 +333,7 @@
 		80FF919D1FC5682B00E437CF /* CountDownTimeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 80FF91861FC5682A00E437CF /* CountDownTimeViewController.xib */; };
 		80FF919E1FC5682B00E437CF /* OtherHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80FF91881FC5682A00E437CF /* OtherHomeViewController.m */; };
 		80FF91C51FC581DD00E437CF /* UtilHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80FF91BF1FC581DD00E437CF /* UtilHomeViewController.m */; };
+		973E4CBD25A353D200748B44 /* ViewPandownViewController2.m in Sources */ = {isa = PBXBuildFile; fileRef = 973E4CBB25A353D200748B44 /* ViewPandownViewController2.m */; };
 		975164AE256CFE34001DE112 /* CQUpdateContentPopupView.m in Sources */ = {isa = PBXBuildFile; fileRef = 975164AD256CFE34001DE112 /* CQUpdateContentPopupView.m */; };
 		97578AAC25590E9300249AD6 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 97578AAB25590E9300249AD6 /* MainViewController.m */; };
 		97578AB225590F7100249AD6 /* UIWindow+RootSetting.m in Sources */ = {isa = PBXBuildFile; fileRef = 97578AB125590F7100249AD6 /* UIWindow+RootSetting.m */; };
@@ -747,8 +748,8 @@
 		78AB83C121B96D7000853E21 /* DemoTextFieldFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DemoTextFieldFactory.m; sourceTree = "<group>"; };
 		78ACAFED2595066C000FEEEB /* UIView+CJPanAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+CJPanAction.m"; sourceTree = "<group>"; };
 		78ACAFEE2595066C000FEEEB /* UIView+CJPanAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+CJPanAction.h"; sourceTree = "<group>"; };
-		78ACAFFD2595088F000FEEEB /* ViewPandownViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewPandownViewController.m; sourceTree = "<group>"; };
-		78ACAFFE2595088F000FEEEB /* ViewPandownViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewPandownViewController.h; sourceTree = "<group>"; };
+		78ACAFFD2595088F000FEEEB /* ViewPandownViewController1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewPandownViewController1.m; sourceTree = "<group>"; };
+		78ACAFFE2595088F000FEEEB /* ViewPandownViewController1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewPandownViewController1.h; sourceTree = "<group>"; };
 		78B6C2D42159D1F100D5864E /* DemoBusFlightStationModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DemoBusFlightStationModel.m; sourceTree = "<group>"; };
 		78B6C2D52159D1F100D5864E /* DemoBusFlightModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DemoBusFlightModel.h; sourceTree = "<group>"; };
 		78B6C2D62159D1F100D5864E /* DemoBusFlightStationModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DemoBusFlightStationModel.h; sourceTree = "<group>"; };
@@ -940,6 +941,8 @@
 		80FF91BE1FC581DD00E437CF /* UtilHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UtilHomeViewController.h; sourceTree = "<group>"; };
 		80FF91BF1FC581DD00E437CF /* UtilHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UtilHomeViewController.m; sourceTree = "<group>"; };
 		935109AAB855F6CC8B84B9A5 /* libPods-CJUIKitDemoTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CJUIKitDemoTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		973E4CBB25A353D200748B44 /* ViewPandownViewController2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewPandownViewController2.m; sourceTree = "<group>"; };
+		973E4CBC25A353D200748B44 /* ViewPandownViewController2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewPandownViewController2.h; sourceTree = "<group>"; };
 		975164AC256CFE34001DE112 /* CQUpdateContentPopupView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CQUpdateContentPopupView.h; sourceTree = "<group>"; };
 		975164AD256CFE34001DE112 /* CQUpdateContentPopupView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CQUpdateContentPopupView.m; sourceTree = "<group>"; };
 		97578AAA25590E9300249AD6 /* MainViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
@@ -1990,8 +1993,10 @@
 		78ACAFFC2595088F000FEEEB /* ViewPandownDemo */ = {
 			isa = PBXGroup;
 			children = (
-				78ACAFFE2595088F000FEEEB /* ViewPandownViewController.h */,
-				78ACAFFD2595088F000FEEEB /* ViewPandownViewController.m */,
+				78ACAFFE2595088F000FEEEB /* ViewPandownViewController1.h */,
+				78ACAFFD2595088F000FEEEB /* ViewPandownViewController1.m */,
+				973E4CBC25A353D200748B44 /* ViewPandownViewController2.h */,
+				973E4CBB25A353D200748B44 /* ViewPandownViewController2.m */,
 			);
 			path = ViewPandownDemo;
 			sourceTree = "<group>";
@@ -3128,6 +3133,7 @@
 				787FDB8520500B5C008A46E3 /* SwitchSliderViewController.m in Sources */,
 				7850B70220937C5A008F4A21 /* PopupInViewVC.m in Sources */,
 				1562F2F023F5DBF40009FCEA /* CJTextField.m in Sources */,
+				973E4CBD25A353D200748B44 /* ViewPandownViewController2.m in Sources */,
 				1562F2EA23F5DBF40009FCEA /* CJTextView.m in Sources */,
 				78FCF5522306A9BA00D275F9 /* UIView+CJDemoPopupAction.m in Sources */,
 				80500388211C3A29002A2306 /* PresentBaseViewController.m in Sources */,
@@ -3175,7 +3181,7 @@
 				781C737721BA6A170090080C /* TestValueChangeModel.m in Sources */,
 				78C8148E216E11AF00A6B190 /* Home1.m in Sources */,
 				78E189AB21781BD000B8781A /* TranslucentLayoutTableViewController.m in Sources */,
-				78ACAFFF2595088F000FEEEB /* ViewPandownViewController.m in Sources */,
+				78ACAFFF2595088F000FEEEB /* ViewPandownViewController1.m in Sources */,
 				7885FC4A2156681F00B97DAA /* UIView+CJPopupInSuspendWindow.m in Sources */,
 				1562F2C823F5DBF40009FCEA /* UIView+CJShowExtendView.m in Sources */,
 				800E07E12016CCF500799B78 /* DataUtilViewController.m in Sources */,

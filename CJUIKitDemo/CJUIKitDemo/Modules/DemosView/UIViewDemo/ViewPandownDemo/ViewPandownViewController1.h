@@ -1,5 +1,5 @@
 //
-//  ViewPandownViewController.h
+//  ViewPandownViewController1.h
 //  CJUIKitDemo
 //
 //  Created by ciyouzen on 15/11/12.
@@ -8,6 +8,6 @@
 
 #import "CJUIKitBaseHomeViewController.h"
 
-@interface ViewPandownViewController : CJUIKitBaseHomeViewController
+@interface ViewPandownViewController1 : CJUIKitBaseHomeViewController
 
 @end
