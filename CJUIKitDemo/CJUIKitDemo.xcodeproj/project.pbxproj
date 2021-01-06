@@ -335,6 +335,10 @@
 		80FF91C51FC581DD00E437CF /* UtilHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80FF91BF1FC581DD00E437CF /* UtilHomeViewController.m */; };
 		973E4CBD25A353D200748B44 /* ViewPandownViewController2.m in Sources */ = {isa = PBXBuildFile; fileRef = 973E4CBB25A353D200748B44 /* ViewPandownViewController2.m */; };
 		975164AE256CFE34001DE112 /* CQUpdateContentPopupView.m in Sources */ = {isa = PBXBuildFile; fileRef = 975164AD256CFE34001DE112 /* CQUpdateContentPopupView.m */; };
+		9756E36E25A5C6A00039365C /* TSTextFieldDelegateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9756E36D25A5C6A00039365C /* TSTextFieldDelegateViewController.m */; };
+		9756E37A25A5CD610039365C /* CQBlockTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 9756E37825A5CD610039365C /* CQBlockTextField.m */; };
+		9756E38025A5CDB90039365C /* UITextViewCJHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 9756E37E25A5CDB90039365C /* UITextViewCJHelper.m */; };
+		9756E38625A5CE840039365C /* CQTextFieldDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9756E38525A5CE840039365C /* CQTextFieldDelegate.m */; };
 		97578AAC25590E9300249AD6 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 97578AAB25590E9300249AD6 /* MainViewController.m */; };
 		97578AB225590F7100249AD6 /* UIWindow+RootSetting.m in Sources */ = {isa = PBXBuildFile; fileRef = 97578AB125590F7100249AD6 /* UIWindow+RootSetting.m */; };
 		97578D012559473500249AD6 /* TSRangeSliderControl1.m in Sources */ = {isa = PBXBuildFile; fileRef = 97578D002559473500249AD6 /* TSRangeSliderControl1.m */; };
@@ -945,6 +949,14 @@
 		973E4CBC25A353D200748B44 /* ViewPandownViewController2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewPandownViewController2.h; sourceTree = "<group>"; };
 		975164AC256CFE34001DE112 /* CQUpdateContentPopupView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CQUpdateContentPopupView.h; sourceTree = "<group>"; };
 		975164AD256CFE34001DE112 /* CQUpdateContentPopupView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CQUpdateContentPopupView.m; sourceTree = "<group>"; };
+		9756E36C25A5C6A00039365C /* TSTextFieldDelegateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSTextFieldDelegateViewController.h; sourceTree = "<group>"; };
+		9756E36D25A5C6A00039365C /* TSTextFieldDelegateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSTextFieldDelegateViewController.m; sourceTree = "<group>"; };
+		9756E37825A5CD610039365C /* CQBlockTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CQBlockTextField.m; sourceTree = "<group>"; };
+		9756E37925A5CD610039365C /* CQBlockTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CQBlockTextField.h; sourceTree = "<group>"; };
+		9756E37E25A5CDB90039365C /* UITextViewCJHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UITextViewCJHelper.m; sourceTree = "<group>"; };
+		9756E37F25A5CDB90039365C /* UITextViewCJHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UITextViewCJHelper.h; sourceTree = "<group>"; };
+		9756E38425A5CE840039365C /* CQTextFieldDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CQTextFieldDelegate.h; sourceTree = "<group>"; };
+		9756E38525A5CE840039365C /* CQTextFieldDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CQTextFieldDelegate.m; sourceTree = "<group>"; };
 		97578AAA25590E9300249AD6 /* MainViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
 		97578AAB25590E9300249AD6 /* MainViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
 		97578AB025590F7100249AD6 /* UIWindow+RootSetting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIWindow+RootSetting.h"; sourceTree = "<group>"; };
@@ -1787,6 +1799,14 @@
 				78A992402579502300B54E30 /* TSTextFieldClickViewController.m */,
 				78A9922E25792EAC00B54E30 /* TSTextFieldBlockViewController.h */,
 				78A9922F25792EAC00B54E30 /* TSTextFieldBlockViewController.m */,
+				9756E36C25A5C6A00039365C /* TSTextFieldDelegateViewController.h */,
+				9756E36D25A5C6A00039365C /* TSTextFieldDelegateViewController.m */,
+				9756E37925A5CD610039365C /* CQBlockTextField.h */,
+				9756E37825A5CD610039365C /* CQBlockTextField.m */,
+				9756E38425A5CE840039365C /* CQTextFieldDelegate.h */,
+				9756E38525A5CE840039365C /* CQTextFieldDelegate.m */,
+				9756E37F25A5CDB90039365C /* UITextViewCJHelper.h */,
+				9756E37E25A5CDB90039365C /* UITextViewCJHelper.m */,
 				78A9926C25795E2F00B54E30 /* TSTextFieldAccessoryViewController.h */,
 				78A9926D25795E3000B54E30 /* TSTextFieldAccessoryViewController.m */,
 				78575C882257242000925842 /* TSTextFieldOffsetViewController.h */,
@@ -2703,7 +2723,7 @@
 				TargetAttributes = {
 					780E45FF1E5DF87B00980127 = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = D225N2EYEE;
+						DevelopmentTeam = 8285LLMDV3;
 						ProvisioningStyle = Automatic;
 					};
 					780E46181E5DF87B00980127 = {
@@ -2983,6 +3003,7 @@
 				789C447A21F07DAC00181144 /* ChangeEnvHomeViewController.m in Sources */,
 				801F75D920A040D800A2E027 /* BBXDPasswordTextField.m in Sources */,
 				78C8148C216E11AF00A6B190 /* DChildViewController.m in Sources */,
+				9756E38625A5CE840039365C /* CQTextFieldDelegate.m in Sources */,
 				7875C58E231CF77900076A00 /* BackItemBaseViewController.m in Sources */,
 				7856F72B21F4E790004AF751 /* TestDataModel.m in Sources */,
 				788113CE21996A3A00D1630D /* SubInheritableSharedInstanceClass.m in Sources */,
@@ -3080,6 +3101,7 @@
 				1562F2E523F5DBF40009FCEA /* CJRangeSliderControl.m in Sources */,
 				1562F2C223F5DBF40009FCEA /* UIButton+CJMoreProperty.m in Sources */,
 				78A621DC2135C713004DA046 /* DemoSuspendWindow.m in Sources */,
+				9756E37A25A5CD610039365C /* CQBlockTextField.m in Sources */,
 				78C8148B216E11AF00A6B190 /* BChildViewController.m in Sources */,
 				781989A8225A34C000D01DBC /* CJDemoDateLabel.m in Sources */,
 				1562F2B723F5DBF40009FCEA /* UIImage+CJFixOrientation.m in Sources */,
@@ -3102,6 +3124,7 @@
 				808DE5E720DA0586003E08F1 /* CJDecimalUtil.m in Sources */,
 				1562F2E123F5DBF40009FCEA /* CJSwitchSlider.m in Sources */,
 				80FF90B01FC5649F00E437CF /* NavigationBarScrollChangeBGViewController.m in Sources */,
+				9756E38025A5CDB90039365C /* UITextViewCJHelper.m in Sources */,
 				976794FA2580B494002FD0C7 /* KeyboardAutoMoveUpViewController.m in Sources */,
 				78A99268257958CB00B54E30 /* UIScrollView+CJTouch.m in Sources */,
 				805598B51FF5D612009DC61C /* ValidateStringViewController.m in Sources */,
@@ -3129,6 +3152,7 @@
 				1562F2E323F5DBF40009FCEA /* CJSliderPopover.m in Sources */,
 				9767974425836B41002FD0C7 /* UIVerticalCenterTextView.m in Sources */,
 				9767973825834D11002FD0C7 /* UITextView+CJVerticalCenter.m in Sources */,
+				9756E36E25A5C6A00039365C /* TSTextFieldDelegateViewController.m in Sources */,
 				808BF3242019C3E900511F7C /* YunUncaughtExceptionHandler.m in Sources */,
 				787FDB8520500B5C008A46E3 /* SwitchSliderViewController.m in Sources */,
 				7850B70220937C5A008F4A21 /* PopupInViewVC.m in Sources */,
@@ -3360,7 +3384,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = D225N2EYEE;
+				DEVELOPMENT_TEAM = 8285LLMDV3;
 				GCC_PREFIX_HEADER = CJUIKitDemo/PrefixHeader.pch;
 				INFOPLIST_FILE = CJUIKitDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -3380,7 +3404,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = D225N2EYEE;
+				DEVELOPMENT_TEAM = 8285LLMDV3;
 				GCC_PREFIX_HEADER = CJUIKitDemo/PrefixHeader.pch;
 				INFOPLIST_FILE = CJUIKitDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;

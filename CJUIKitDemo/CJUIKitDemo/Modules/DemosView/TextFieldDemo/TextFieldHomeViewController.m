@@ -9,6 +9,7 @@
 #import "TextFieldHomeViewController.h"
 
 // TextField
+#import "TSTextFieldDelegateViewController.h"
 #import "TSTextFieldBlockViewController.h"
 #import "TSTextFieldOffsetViewController.h"
 #import "TSTextFieldInputViewController.h"
@@ -40,6 +41,12 @@
     {
         CQDMSectionDataModel *sectionDataModel = [[CQDMSectionDataModel alloc] init];
         sectionDataModel.theme = @"TextField相关";
+        {
+            CQDMModuleModel *buttonModule = [[CQDMModuleModel alloc] init];
+            buttonModule.title = @"TextField 的 Delegate";
+            buttonModule.classEntry = [TSTextFieldDelegateViewController class];
+            [sectionDataModel.values addObject:buttonModule];
+        }
         {
             CQDMModuleModel *buttonModule = [[CQDMModuleModel alloc] init];
             buttonModule.title = @"TextField 的 Block";
