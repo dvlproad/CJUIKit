@@ -13,16 +13,10 @@ NS_ASSUME_NONNULL_BEGIN
 @interface CQTextFieldDelegate : NSObject <UITextFieldDelegate> {
     
 }
-@property (nonatomic, assign, readonly) NSInteger maxTextLength;    /**< 最大长度（英文长度算1，中文长度算2） */
-
-@property (nonatomic, copy, readonly) NSString *shouldChangeWithOldText;
+@property (nullable, nonatomic, copy, readonly) NSString *shouldChangeWithOldText;
 @property (nonatomic, assign, readonly) NSRange shouldChangeCharactersInRange;
 @property (nonatomic, copy, readonly) NSString *shouldChangeWithReplacementString;
-
-
-//- (instancetype)initForTextField:(UITextField *)textField NS_DESIGNATED_INITIALIZER;
-//+ (instancetype)new NS_UNAVAILABLE;
-//- (instancetype)init NS_UNAVAILABLE;
+@property (nonatomic, assign, readonly) NSInteger maxTextLength;    /**< 最大长度（英文长度算1，中文长度算2） */
 
 #pragma mark - Setup
 /*

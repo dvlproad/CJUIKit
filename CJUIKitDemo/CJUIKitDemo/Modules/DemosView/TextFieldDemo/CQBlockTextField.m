@@ -7,9 +7,8 @@
 //
 
 #import "CQBlockTextField.h"
-#import "NSString+CJTextLength.h"
-#import "UITextViewCJHelper.h"
 #import "CQTextFieldDelegate.h"
+#import "UITextViewCJHelper.h"
 
 @interface CQBlockTextField () <UITextFieldDelegate> {
     
@@ -86,7 +85,7 @@
     }
     
     // 过滤空格
-    NSLog(@"系统处理后得到的文本:%@", textField.text);
+    //NSLog(@"系统处理后得到的文本:%@", textField.text);
     NSString *oldText = self.blockDelegate.shouldChangeWithOldText; // 文本框中高亮和不高亮的文本
     NSRange range = self.blockDelegate.shouldChangeCharactersInRange;
     NSString *string = self.blockDelegate.shouldChangeWithReplacementString;
@@ -98,7 +97,7 @@
                                               replacementString:string maxTextLength:maxTextLength
                                                lastSelectedText:lastSelectedText];
     NSString *newText = resultModel.hopeNewText;
-    NSLog(@"自己处理希望得到的文本:%@", newText);    // 有时候限制了最大长度，又在中间插入超多字符。会希望原有字符不变。只插入其他数值
+    //NSLog(@"自己处理希望得到的文本:%@", newText);    // 有时候限制了最大长度，又在中间插入超多字符。会希望原有字符不变。只插入其他数值
     textField.text = newText;   // 使用这个方法会使得光标变到末尾了,所以我们还需要更新光标位置
     NSString *lastReplacementString = resultModel.hopeReplacementString;
     NSInteger cursorLocation = range.location+lastReplacementString.length;
