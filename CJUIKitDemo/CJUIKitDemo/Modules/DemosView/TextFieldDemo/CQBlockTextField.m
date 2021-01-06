@@ -14,8 +14,6 @@
     
 }
 @property (nonatomic, strong) CQTextFieldDelegate *blockDelegate;
-@property (nonatomic, copy, readonly) NSString *lastSelectedText;   /**< 上一次没有未选中/没有高亮文本时候的文本 */
-
 @property (nonatomic, copy) void (^textDidChangeBlock)(NSString *text);         /**< 文本改变的回调（只回调没有待定词的回调） */
 
 @end

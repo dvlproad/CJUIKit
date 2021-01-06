@@ -14,6 +14,8 @@ NS_ASSUME_NONNULL_BEGIN
 @interface CQBlockTextField : CJTextField {
     
 }
+@property (nonatomic, copy, readonly) NSString *lastSelectedText;   /**< 上一次没有未选中/没有高亮文本时候的文本（对外提供该值，防止页面切换时候，如果只能采用textField.text的取值方法，则会造成有时候把未选中待确认的文本也赋值上去，造成原本的长度限制该时候无效的bug） */
+
 /*
  *  初始化将delegete接口改为block的文本输入框视图(使用此类时候，禁止再进行delegate的设置)
  *  @brief  使用此类时候，禁止再进行delegate的设置
