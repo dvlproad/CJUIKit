@@ -32,14 +32,17 @@
     if (oldText == nil) {
         oldText = @"";
     }
+    string = [[string componentsSeparatedByCharactersInSet:[NSCharacterSet whitespaceCharacterSet]] componentsJoinedByString:@""];
+    
     NSString *tempNewText = [oldText stringByReplacingCharactersInRange:range withString:string];//若不做任何长度等限制，则改变后新生成的文本
-    tempNewText = [[tempNewText componentsSeparatedByCharactersInSet:[NSCharacterSet whitespaceCharacterSet]] componentsJoinedByString:@""];
+//    tempNewText = [[tempNewText componentsSeparatedByCharactersInSet:[NSCharacterSet whitespaceCharacterSet]] componentsJoinedByString:@""];
     if (maxTextLength == 0) {
         resultModel.hopeNewText = tempNewText;
         resultModel.hopeReplacementString = string;
         return resultModel;
     }
     
+    NSString *unchangeText = [UITextViewCJHelper substringExceptRange:range forString:oldText];
     NSInteger lastSelectedTextLength = lastSelectedText.cj_length;
     if (lastSelectedTextLength > maxTextLength) {
         resultModel.hopeNewText = lastSelectedText;
@@ -69,6 +72,26 @@
     }
     
     return resultModel;
+}
+
+/// 获取除选中部分外的其他字符串
++ (NSString *)substringExceptRange:(NSRange)range forString:(NSString *)string {
+    NSLog(@"%@中处在%@范围内的剩余字符串为%@", string, NSStringFromRange(range), [string substringWithRange:range]);
+    
+    NSInteger beforeEndIndex = range.location;
+    NSString *beforeSubstring = [string substringToIndex:beforeEndIndex];
+    
+    NSInteger afterBeginIndex = range.location+range.length;
+    NSString *afterSubstring;
+    if (afterBeginIndex > string.length-1) {
+        afterSubstring = @"";
+    } else {
+        [string substringFromIndex:afterBeginIndex];
+    }
+    
+    NSString *substring = [NSString stringWithFormat:@"%@%@", beforeSubstring, afterSubstring];
+    NSLog(@"%@中处在%@范围外的剩余字符串为%@", string, NSStringFromRange(range), substring);
+    return substring;
 }
 
 

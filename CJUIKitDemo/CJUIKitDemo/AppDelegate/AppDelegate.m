@@ -20,6 +20,7 @@
 #import <CJFoundation/NSString+CJAttributedString.h>
 
 #import "APPUIKitSetting.h"
+#import "UITextViewCJHelper.h"
 
 @interface AppDelegate ()
 
@@ -44,6 +45,10 @@
     NSData *jsonData = [NSJSONSerialization dataWithJSONObject:dic options:NSJSONWritingPrettyPrinted error:&parseError];
     NSString *dicString = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
     NSLog(@"dicString = %@", dicString);
+    
+    [UITextViewCJHelper substringExceptRange:NSMakeRange(1, 0) forString:@"1234567890"];
+    [UITextViewCJHelper substringExceptRange:NSMakeRange(1, 1) forString:@"1234567890"];
+    [UITextViewCJHelper substringExceptRange:NSMakeRange(1, 9) forString:@"1234567890"];
     
     
     void (^block1)(void) = ^{

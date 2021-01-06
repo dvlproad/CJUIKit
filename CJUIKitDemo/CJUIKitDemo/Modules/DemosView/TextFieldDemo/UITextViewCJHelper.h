@@ -57,6 +57,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (BOOL)textViewDidChange:(UITextView *)textView maxTextLength:(NSInteger)maxTextLength;
 
+
+/// 获取除选中部分外的其他字符串
++ (NSString *)substringExceptRange:(NSRange)range forString:(NSString *)string;
+
 @end
 
 NS_ASSUME_NONNULL_END
