@@ -9,19 +9,19 @@
 #import "CQBlockTextField.h"
 #import "NSString+CJTextLength.h"
 #import "UITextViewCJHelper.h"
-//#import "UITextField+CJBlock.h"
 #import "CQTextFieldDelegate.h"
 
 @interface CQBlockTextField () <UITextFieldDelegate> {
     
 }
-@property (nonatomic, copy) void (^textDidChangeBlock)(NSString *text);         /**< 文本已经改变的通知事件 */
-
 @property (nonatomic, strong) CQTextFieldDelegate *blockDelegate;
-@property (nonatomic, copy, readonly) NSString *lastSuccessDidChangeText;
-@property (nonatomic, assign, readonly) NSRange newChangeCharactersInRange;
+@property (nonatomic, copy, readonly) NSString *lastSelectedText;   /**< 上一次没有未选中/没有高亮文本时候的文本 */
+
+@property (nonatomic, copy) void (^textDidChangeBlock)(NSString *text);         /**< 文本改变的回调（只回调没有待定词的回调） */
 
 @end
+
+
 
 @implementation CQBlockTextField
 
@@ -57,14 +57,19 @@
 }
 
 
-
-#pragma mark - Event
-- (NSInteger)maxTextLength {
-    return self.blockDelegate.maxTextLength;
+#pragma mark - Setup
+/*
+ *  设置最大长度
+ *
+ *  @param maxTextLength    最大长度（英文长度算1，中文长度算2）
+ */
+- (void)setupMaxTextLength:(NSInteger)maxTextLength {
+    [self.blockDelegate setupMaxTextLength:maxTextLength];
 }
 
-- (void)updateMaxTextLength:(NSInteger)maxTextLength {
-    [self.blockDelegate setupMaxTextLength:maxTextLength];
+#pragma mark - Getter
+- (NSInteger)maxTextLength {
+    return self.blockDelegate.maxTextLength;
 }
 
 #pragma mark - Private Method
@@ -75,31 +80,32 @@
     // 判断是否存在高亮字符，如果有，则不进行字数统计和字符串截断(注意1高亮的时候，长度计算以莫名其妙的规则计算，2shouldChangeCharactersInRange中无法获取第一个未选中的时机)
     UITextRange *selectedRange = textField.markedTextRange;
     UITextPosition *position = [textField positionFromPosition:selectedRange.start offset:0];
-    
-    if (position) {
-        
-//        return;
-    } else {
-        _newChangeCharactersInRange = self.blockDelegate.shouldChangeCharactersInRange;
+    BOOL donotneedCustomDealText = position != nil; // 存在高亮即未选中文本的时候，不需要自己处理文本框内容
+    if (donotneedCustomDealText ==  YES) {
+        return;
     }
     
     // 过滤空格
     NSLog(@"系统处理后得到的文本:%@", textField.text);
-    NSString *oldText = self.lastSuccessDidChangeText;
-    NSRange range = self.newChangeCharactersInRange;
+    NSString *oldText = self.blockDelegate.shouldChangeWithOldText; // 文本框中高亮和不高亮的文本
+    NSRange range = self.blockDelegate.shouldChangeCharactersInRange;
     NSString *string = self.blockDelegate.shouldChangeWithReplacementString;
-    NSString *newText = [UITextViewCJHelper shouldChange_newTextFromOldText:oldText shouldChangeCharactersInRange:range replacementString:string maxTextLength:self.maxTextLength];
+    NSInteger maxTextLength = self.blockDelegate.maxTextLength;
+    NSString *lastSelectedText = self.lastSelectedText;
+    CQTextInputChangeResultModel *resultModel =
+            [UITextViewCJHelper shouldChange_newTextFromOldText:oldText
+                                  shouldChangeCharactersInRange:range
+                                              replacementString:string maxTextLength:maxTextLength
+                                               lastSelectedText:lastSelectedText];
+    NSString *newText = resultModel.hopeNewText;
     NSLog(@"自己处理希望得到的文本:%@", newText);    // 有时候限制了最大长度，又在中间插入超多字符。会希望原有字符不变。只插入其他数值
+    textField.text = newText;   // 使用这个方法会使得光标变到末尾了,所以我们还需要更新光标位置
+    NSString *lastReplacementString = resultModel.hopeReplacementString;
+    NSInteger cursorLocation = range.location+lastReplacementString.length;
+    [UITextViewCJHelper setCursorLocationForTextField:textField atIndex:cursorLocation];
     
-//    if (shouldChangeText != nil) {
-//        NSString *oldText = shouldChangeText;
-//        NSInteger maxTextLength = self.blockDelegate.maxTextLength;
-//        NSString *newText = [UITextViewCJHelper didChange_newTextFromShouldChangeText:oldText maxTextLength:maxTextLength];
-//        textField.text = newText;
-//    }
-    textField.text = newText;
+    _lastSelectedText = textField.text;  // 只文本框中高亮的文本
     
-    _lastSuccessDidChangeText = textField.text;
     
     if (self.textDidChangeBlock) {
         self.textDidChangeBlock(textField.text);

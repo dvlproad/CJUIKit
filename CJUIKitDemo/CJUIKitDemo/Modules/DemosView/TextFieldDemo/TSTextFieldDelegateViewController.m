@@ -28,7 +28,7 @@
     /* 1、测试UITextField的cjTextDidChangeBlock方法 */
 //    UITextField *textField = [[UITextField alloc] initWithFrame:CGRectZero];
     CQBlockTextField *textField = [[CQBlockTextField alloc] initWithTextDidChangeBlock:nil];
-    [textField updateMaxTextLength:10];
+    [textField setupMaxTextLength:20];
     
     textField.backgroundColor = CJColorFromHexString(@"#ffffff");
     [textField setBorderStyle:UITextBorderStyleLine];

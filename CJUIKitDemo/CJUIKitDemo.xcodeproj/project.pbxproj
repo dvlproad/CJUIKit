@@ -150,6 +150,7 @@
 		7868278121AF02E000FCCDE5 /* bg@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7868278021AF02E000FCCDE5 /* bg@2x.jpg */; };
 		7868A068237055660013AF4D /* ButtonHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7868A067237055650013AF4D /* ButtonHomeViewController.m */; };
 		7868A06B237056B30013AF4D /* ButtonCategoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7868A06A237056B30013AF4D /* ButtonCategoryViewController.m */; };
+		786F5BEF25A6260700C5D2D1 /* CQTextInputChangeResultModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 786F5BEE25A6260700C5D2D1 /* CQTextInputChangeResultModel.m */; };
 		7875C58D231CF77900076A00 /* BackCustomItemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7875C587231CF77900076A00 /* BackCustomItemViewController.m */; };
 		7875C58E231CF77900076A00 /* BackItemBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7875C588231CF77900076A00 /* BackItemBaseViewController.m */; };
 		7875C58F231CF77900076A00 /* BackSystemItemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7875C589231CF77900076A00 /* BackSystemItemViewController.m */; };
@@ -630,6 +631,8 @@
 		7868A067237055650013AF4D /* ButtonHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ButtonHomeViewController.m; sourceTree = "<group>"; };
 		7868A069237056B30013AF4D /* ButtonCategoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ButtonCategoryViewController.h; sourceTree = "<group>"; };
 		7868A06A237056B30013AF4D /* ButtonCategoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ButtonCategoryViewController.m; sourceTree = "<group>"; };
+		786F5BED25A6260700C5D2D1 /* CQTextInputChangeResultModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CQTextInputChangeResultModel.h; sourceTree = "<group>"; };
+		786F5BEE25A6260700C5D2D1 /* CQTextInputChangeResultModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CQTextInputChangeResultModel.m; sourceTree = "<group>"; };
 		7875C587231CF77900076A00 /* BackCustomItemViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BackCustomItemViewController.m; sourceTree = "<group>"; };
 		7875C588231CF77900076A00 /* BackItemBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BackItemBaseViewController.m; sourceTree = "<group>"; };
 		7875C589231CF77900076A00 /* BackSystemItemViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BackSystemItemViewController.m; sourceTree = "<group>"; };
@@ -1807,6 +1810,8 @@
 				9756E38525A5CE840039365C /* CQTextFieldDelegate.m */,
 				9756E37F25A5CDB90039365C /* UITextViewCJHelper.h */,
 				9756E37E25A5CDB90039365C /* UITextViewCJHelper.m */,
+				786F5BED25A6260700C5D2D1 /* CQTextInputChangeResultModel.h */,
+				786F5BEE25A6260700C5D2D1 /* CQTextInputChangeResultModel.m */,
 				78A9926C25795E2F00B54E30 /* TSTextFieldAccessoryViewController.h */,
 				78A9926D25795E3000B54E30 /* TSTextFieldAccessoryViewController.m */,
 				78575C882257242000925842 /* TSTextFieldOffsetViewController.h */,
@@ -3095,6 +3100,7 @@
 				7875C58D231CF77900076A00 /* BackCustomItemViewController.m in Sources */,
 				1562F2BA23F5DBF40009FCEA /* UIScrollView+CJKeyboardAvoiding.m in Sources */,
 				1562F2B823F5DBF40009FCEA /* CJKeyboardAvoidingTableView.m in Sources */,
+				786F5BEF25A6260700C5D2D1 /* CQTextInputChangeResultModel.m in Sources */,
 				78143150249C8FA50014EA69 /* AutoLayoutViewController.m in Sources */,
 				789C443C21EECEE800181144 /* CJAppVersionUtil.m in Sources */,
 				788113C22199583000D1630D /* NormalSharedInstanceClass.m in Sources */,
