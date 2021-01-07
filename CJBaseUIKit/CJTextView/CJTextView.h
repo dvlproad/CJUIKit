@@ -18,7 +18,7 @@
     
 }
 @property (nonatomic, strong) UITextView *placeholderView;      /**< 占位文字View: 为什么使用UITextView，这样直接让占位文字View = 当前textView,文字就会重叠显示 */
-@property (nonatomic, strong) NSString *placeholder;        /**< 占位文字 */
+@property (nonatomic, copy) NSString *placeholder;          /**< 占位文字 */
 @property (nonatomic, strong) UIColor *placeholderColor;    /**< 占位文字颜色 */
 @property (nonatomic, assign) NSUInteger cornerRadius;      /**< 设置圆角 */
 
