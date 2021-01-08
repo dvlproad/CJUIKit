@@ -20,7 +20,7 @@
 #import <CJFoundation/NSString+CJAttributedString.h>
 
 #import "APPUIKitSetting.h"
-#import "UITextViewCJHelper.h"
+#import "CQSubStringUtil.h"
 
 @interface AppDelegate ()
 
@@ -46,9 +46,13 @@
     NSString *dicString = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
     NSLog(@"dicString = %@", dicString);
     
-    [UITextViewCJHelper substringExceptRange:NSMakeRange(1, 0) forString:@"1234567890"];
-    [UITextViewCJHelper substringExceptRange:NSMakeRange(1, 1) forString:@"1234567890"];
-    [UITextViewCJHelper substringExceptRange:NSMakeRange(1, 9) forString:@"1234567890"];
+    [CQSubStringUtil substringExceptRange:NSMakeRange(1, 0) forString:@"1234567890"];
+    [CQSubStringUtil substringExceptRange:NSMakeRange(1, 1) forString:@"1234567890"];
+    [CQSubStringUtil substringExceptRange:NSMakeRange(1, 9) forString:@"1234567890"];
+    
+    [CQSubStringUtil maxSubstringFromString:@"一二三四五六七八九十01234567890壹贰叁肆伍陆柒捌玖拾" maxLength:5];
+    [CQSubStringUtil maxSubstringFromString:@"一二三四五六七八九十01234567890壹贰叁肆伍陆柒捌玖拾" maxLength:25];
+    [CQSubStringUtil maxSubstringFromString:@"一二三四五六七八九十01234567890壹贰叁肆伍陆柒捌玖拾" maxLength:45];
     
     
     void (^block1)(void) = ^{

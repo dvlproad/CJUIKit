@@ -22,15 +22,13 @@ NS_ASSUME_NONNULL_BEGIN
  *  @param range                range
  *  @param string               string
  *  @param maxTextLength        maxTextLength(为0的时候不做长度限制)
- *  @param lastSelectedText     上一次没有未选中/没有高亮文本时候的文本
  *
  *  @return newText
  */
 + (CQTextInputChangeResultModel *)shouldChange_newTextFromOldText:(nullable NSString *)oldText
-                shouldChangeCharactersInRange:(NSRange)range
-                            replacementString:(NSString *)string
-                                maxTextLength:(NSInteger)maxTextLength
-                             lastSelectedText:(nullable NSString *)lastSelectedText;
+                                    shouldChangeCharactersInRange:(NSRange)range
+                                                replacementString:(NSString *)string
+                                                    maxTextLength:(NSInteger)maxTextLength;
 
 
 #pragma mark - 设置光标
@@ -57,9 +55,6 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (BOOL)textViewDidChange:(UITextView *)textView maxTextLength:(NSInteger)maxTextLength;
 
-
-/// 获取除选中部分外的其他字符串
-+ (NSString *)substringExceptRange:(NSRange)range forString:(NSString *)string;
 
 @end
 

@@ -88,12 +88,10 @@
     NSRange range = self.blockDelegate.shouldChangeCharactersInRange;
     NSString *string = self.blockDelegate.shouldChangeWithReplacementString;
     NSInteger maxTextLength = self.blockDelegate.maxTextLength;
-    NSString *lastSelectedText = self.lastSelectedText;
     CQTextInputChangeResultModel *resultModel =
             [UITextViewCJHelper shouldChange_newTextFromOldText:oldText
                                   shouldChangeCharactersInRange:range
-                                              replacementString:string maxTextLength:maxTextLength
-                                               lastSelectedText:lastSelectedText];
+                                              replacementString:string maxTextLength:maxTextLength];
     NSString *newText = resultModel.hopeNewText;
     //NSLog(@"自己处理希望得到的文本:%@", newText);    // 有时候限制了最大长度，又在中间插入超多字符。会希望原有字符不变。只插入其他数值
     textField.text = newText;   // 使用这个方法会使得光标变到末尾了,所以我们还需要更新光标位置

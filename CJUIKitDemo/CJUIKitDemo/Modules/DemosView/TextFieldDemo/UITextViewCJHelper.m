@@ -8,6 +8,7 @@
 
 #import "UITextViewCJHelper.h"
 #import "NSString+CJTextLength.h"
+#import "CQSubStringUtil.h"
 
 @implementation UITextViewCJHelper
 
@@ -18,15 +19,13 @@
  *  @param range                range
  *  @param string               string
  *  @param maxTextLength        maxTextLength(为0的时候不做长度限制)
- *  @param lastSelectedText     上一次没有未选中/没有高亮文本时候的文本
  *
  *  @return newText
  */
 + (CQTextInputChangeResultModel *)shouldChange_newTextFromOldText:(nullable NSString *)oldText
-                shouldChangeCharactersInRange:(NSRange)range
-                            replacementString:(NSString *)string
-                                maxTextLength:(NSInteger)maxTextLength
-                             lastSelectedText:(nullable NSString *)lastSelectedText
+                                    shouldChangeCharactersInRange:(NSRange)range
+                                                replacementString:(NSString *)string
+                                                    maxTextLength:(NSInteger)maxTextLength
 {
     CQTextInputChangeResultModel *resultModel = [[CQTextInputChangeResultModel alloc] initWithOriginReplacementString:string];
     if (oldText == nil) {
@@ -39,7 +38,7 @@
     }
     
     NSString *tempNewText = [oldText stringByReplacingCharactersInRange:range withString:hopeReplacementString];//若不做任何长度等限制，则改变后新生成的文本
-//    tempNewText = [[tempNewText componentsSeparatedByCharactersInSet:[NSCharacterSet whitespaceCharacterSet]] componentsJoinedByString:@""];
+    //    tempNewText = [[tempNewText componentsSeparatedByCharactersInSet:[NSCharacterSet whitespaceCharacterSet]] componentsJoinedByString:@""];
     if (maxTextLength == 0) {
         resultModel.hopeNewText = tempNewText;
         resultModel.hopeReplacementString = hopeReplacementString;
@@ -47,74 +46,33 @@
         return resultModel;
     }
     
-    NSString *unchangeText = [UITextViewCJHelper substringExceptRange:range forString:oldText];
-    NSInteger unchangeTextLength = unchangeText.cj_length;
-//    NSInteger lastSelectedTextLength = lastSelectedText.cj_length;
-//    if (unchangeTextLength > maxTextLength) { // 防止之前如10个中文字，在已有8个中文字的时候，插入3个中文字，导致变为11个中文字，长度22，超过原本限制的20
-//        NSLog(@"发生异常了");
-////        resultModel.hopeNewText = lastSelectedText;
-////        resultModel.hopeReplacementString = hopeReplacementString;
-////        resultModel.isDifferentFromSystemDeal = isDifferentFromSystemDeal;
-////        return resultModel;
-//    }
-    
     NSInteger tempNewTextLength = tempNewText.cj_length;
-    
-    NSString *newText;
-    if (tempNewTextLength > maxTextLength) {
-        NSInteger replacementStringMaxLength = maxTextLength-unchangeTextLength;
-        // 限制10个中文字的文本框，在已有8个中文字的时候，还可以的字符个数4个
-        // 如果要插入的文本所占的字符个数超过所剩余的4个，如此时视图插入3个中文字，则应该进行限制
-        if (hopeReplacementString.cj_length > replacementStringMaxLength) {
-            replacementStringMaxLength = replacementStringMaxLength/2;
-            // 得到replacementStringMaxLength是还可以输入4个字符，但所replacementString的长度只有3，所以应该先裁剪，防止取4的时候，超出边界而崩溃
-            replacementStringMaxLength = MIN(replacementStringMaxLength, hopeReplacementString.length);
-            // 所以计算后是感觉要插入3个中文字，但是如果真插入3个中文字，则长度变成8*2+3*2=22，肯定超出了原本限制的最大字符长度20了,故还要再计算
-            // 当然如果你插入的3个英文字，那由于英文字是按一个字符计算的，所以长度是8*2+3*1=19，没超出
-        }
-        NSString *newReplacementString = [hopeReplacementString substringToIndex:replacementStringMaxLength];
-        if (newReplacementString.cj_length > replacementStringMaxLength) {
-            NSLog(@"Error:发生异常,此时数据应该不会超过才对");
-        }
-        
-        NSRange newRange = NSMakeRange(range.location, range.length);
-        newText = [oldText stringByReplacingCharactersInRange:newRange withString:newReplacementString];//若允许改变，则会改变成的新文本
-        
-        isDifferentFromSystemDeal = [newReplacementString isEqualToString:string] == NO;
-        resultModel.hopeNewText = newText;
-        resultModel.hopeReplacementString = newReplacementString;
-        resultModel.isDifferentFromSystemDeal = isDifferentFromSystemDeal;
-        
-    } else {
-        newText = tempNewText;
-        
-        resultModel.hopeNewText = newText;
+    if (tempNewTextLength <= maxTextLength) {
+        resultModel.hopeNewText = tempNewText;
         resultModel.hopeReplacementString = hopeReplacementString;
         resultModel.isDifferentFromSystemDeal = isDifferentFromSystemDeal;
+        return resultModel;
     }
+    
+    NSString *unchangeText = [CQSubStringUtil substringExceptRange:range forString:oldText];
+    NSInteger unchangeTextLength = unchangeText.cj_length;
+    NSInteger replacementStringMaxLength = maxTextLength-unchangeTextLength;
+    // 限制10个中文字的文本框，在已有8个中文字的时候，还可以的字符个数4个
+    // 如果要插入的文本所占的字符个数超过所剩余的4个，如此时视图插入3个中文字，则应该进行限制
+    NSString *newReplacementString = [CQSubStringUtil maxSubstringFromString:hopeReplacementString maxLength:replacementStringMaxLength];
+    
+    NSRange newRange = NSMakeRange(range.location, range.length);
+    NSString *newText = [oldText stringByReplacingCharactersInRange:newRange withString:newReplacementString];//若允许改变，则会改变成的新文本
+    
+    isDifferentFromSystemDeal = [newReplacementString isEqualToString:string] == NO;
+    resultModel.hopeNewText = newText;
+    resultModel.hopeReplacementString = newReplacementString;
+    resultModel.isDifferentFromSystemDeal = isDifferentFromSystemDeal;
     
     return resultModel;
 }
 
-/// 获取除选中部分外的其他字符串
-+ (NSString *)substringExceptRange:(NSRange)range forString:(NSString *)string {
-    NSLog(@"%@中处在%@范围内的剩余字符串为%@", string, NSStringFromRange(range), [string substringWithRange:range]);
-    
-    NSInteger beforeEndIndex = range.location;
-    NSString *beforeSubstring = [string substringToIndex:beforeEndIndex];
-    
-    NSInteger afterBeginIndex = range.location+range.length;
-    NSString *afterSubstring;
-    if (afterBeginIndex > string.length-1) {
-        afterSubstring = @"";
-    } else {
-        afterSubstring = [string substringFromIndex:afterBeginIndex];
-    }
-    
-    NSString *substring = [NSString stringWithFormat:@"%@%@", beforeSubstring, afterSubstring];
-    NSLog(@"%@中处在%@范围外的剩余字符串为%@", string, NSStringFromRange(range), substring);
-    return substring;
-}
+
 
 
 #pragma mark - 设置光标
@@ -155,7 +113,7 @@
 + (NSString *)didChange_newTextFromShouldChangeText:(NSString *)shouldChangeText maxTextLength:(NSInteger)maxTextLength {
     // 过滤空格
     NSString *newText = [[shouldChangeText componentsSeparatedByCharactersInSet:[NSCharacterSet whitespaceCharacterSet]] componentsJoinedByString:@""];
-
+    
     NSInteger textLength = newText.cj_length;
     if (maxTextLength != 0 && textLength > maxTextLength) { // 有限制，且超多限制，则禁止输入
         maxTextLength = maxTextLength/2; //暂时以中文处理
