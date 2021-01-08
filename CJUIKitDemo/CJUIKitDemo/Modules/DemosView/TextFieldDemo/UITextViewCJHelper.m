@@ -54,21 +54,38 @@
         return resultModel;
     }
     
+    // 使用系统方式处理的文本会超过我们所希望的最大长度，则我们继续裁剪。方法如下：
     NSString *unchangeText = [CQSubStringUtil substringExceptRange:range forString:oldText];
     NSInteger unchangeTextLength = unchangeText.cj_length;
+    if (unchangeTextLength > maxTextLength) {
+        NSString *logMessage1 = [NSString stringWithFormat:@"Warning出现特殊情况:未被替换的文本【%@】的所占的长度%zd已经超过了最大限制长度%zd。理论上是不会出现这个情况的，除非对文本框使用setText。但为了容错,我们还是处理下。", unchangeText, unchangeTextLength, maxTextLength];
+        
+        
+        NSString *maxSubUnchangeText = [CQSubStringUtil maxSubstringFromString:unchangeText maxLength:maxTextLength];
+        
+        resultModel.hopeNewText = maxSubUnchangeText;
+        resultModel.hopeReplacementString = nil;
+        resultModel.isDifferentFromSystemDeal = YES;
+        
+        NSString *logMessage2 = [NSString stringWithFormat:@"计算结果为最终的文本是未替换的文本还要裁剪，而要被替换的文本和替换进去的文本都没用。即\n最终的文本是:%@", maxSubUnchangeText];
+        NSLog(@"%@%@", logMessage1, logMessage2);
+        
+        return resultModel;
+    }
+    
     NSInteger replacementStringMaxLength = maxTextLength-unchangeTextLength;
     // 限制10个中文字的文本框，在已有8个中文字的时候，还可以的字符个数4个
     // 如果要插入的文本所占的字符个数超过所剩余的4个，如此时视图插入3个中文字，则应该进行限制
     NSString *newReplacementString = [CQSubStringUtil maxSubstringFromString:hopeReplacementString maxLength:replacementStringMaxLength];
     
-    NSRange newRange = NSMakeRange(range.location, range.length);
-    NSString *newText = [oldText stringByReplacingCharactersInRange:newRange withString:newReplacementString];//若允许改变，则会改变成的新文本
+    NSString *newText = [oldText stringByReplacingCharactersInRange:range withString:newReplacementString];//若允许改变，则会改变成的新文本
     
     isDifferentFromSystemDeal = [newReplacementString isEqualToString:string] == NO;
     resultModel.hopeNewText = newText;
     resultModel.hopeReplacementString = newReplacementString;
     resultModel.isDifferentFromSystemDeal = isDifferentFromSystemDeal;
     
+    NSLog(@"将【%@】中%@范围的文本【%@】替换为%@，得到的结果是：\n最终替换文本是【%@】\n最终替换结束后的结果为【%@】", oldText, NSStringFromRange(range), [oldText substringWithRange:range], string, newReplacementString, newText);
     return resultModel;
 }
 

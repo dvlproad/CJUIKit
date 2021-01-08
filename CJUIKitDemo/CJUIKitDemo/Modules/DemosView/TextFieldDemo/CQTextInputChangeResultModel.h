@@ -14,7 +14,7 @@ NS_ASSUME_NONNULL_BEGIN
     
 }
 @property (nonatomic, copy, readonly) NSString *originReplacementString;/**< 原始的替换文本（未处理空格等之前的） */
-@property (nonatomic, copy) NSString *hopeReplacementString;  /**< 希望替换的文本(有时候往中间粘贴太多文本时候，希望只粘贴部分) */
+@property (nullable, nonatomic, copy) NSString *hopeReplacementString;  /**< 希望替换的文本(有时候往中间粘贴太多文本时候，希望只粘贴部分) */
 @property (nonatomic, copy) NSString *hopeNewText;            /**< 最终希望显示的文本(有时候往中间粘贴太多文本时候，希望保留原本的，而只对粘贴部分截取来粘贴) */
 @property (nonatomic, assign) BOOL isDifferentFromSystemDeal; /**< 是否最终得到的字符串不同于系统处理(有时候往中间粘贴太多文本时候，希望只粘贴部分) */
 
