@@ -150,7 +150,6 @@
 		7868278121AF02E000FCCDE5 /* bg@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7868278021AF02E000FCCDE5 /* bg@2x.jpg */; };
 		7868A068237055660013AF4D /* ButtonHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7868A067237055650013AF4D /* ButtonHomeViewController.m */; };
 		7868A06B237056B30013AF4D /* ButtonCategoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7868A06A237056B30013AF4D /* ButtonCategoryViewController.m */; };
-		786F5BEF25A6260700C5D2D1 /* CQTextInputChangeResultModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 786F5BEE25A6260700C5D2D1 /* CQTextInputChangeResultModel.m */; };
 		7875C58D231CF77900076A00 /* BackCustomItemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7875C587231CF77900076A00 /* BackCustomItemViewController.m */; };
 		7875C58E231CF77900076A00 /* BackItemBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7875C588231CF77900076A00 /* BackItemBaseViewController.m */; };
 		7875C58F231CF77900076A00 /* BackSystemItemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7875C589231CF77900076A00 /* BackSystemItemViewController.m */; };
@@ -252,7 +251,6 @@
 		78E189A8217796DF00B8781A /* EdgeLayoutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78E189A7217796DF00B8781A /* EdgeLayoutViewController.m */; };
 		78E189AB21781BD000B8781A /* TranslucentLayoutTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78E189AA21781BD000B8781A /* TranslucentLayoutTableViewController.m */; };
 		78E189AE21781BE200B8781A /* EdgeLayoutTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78E189AD21781BE200B8781A /* EdgeLayoutTableViewController.m */; };
-		78F406A525A8C278004971D1 /* CQSubStringUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 78F406A425A8C278004971D1 /* CQSubStringUtil.m */; };
 		78F406AB25A8C803004971D1 /* StringHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78F406A925A8C803004971D1 /* StringHomeViewController.m */; };
 		78F55FFA248818E000B7B27A /* AttributedStringViewController2.m in Sources */ = {isa = PBXBuildFile; fileRef = 78F55FF9248818DF00B7B27A /* AttributedStringViewController2.m */; };
 		78F65DA72576A9E20020916A /* UIView+CJToastInView.m in Sources */ = {isa = PBXBuildFile; fileRef = 78F65DA62576A9E20020916A /* UIView+CJToastInView.m */; };
@@ -338,16 +336,12 @@
 		80FF91C51FC581DD00E437CF /* UtilHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80FF91BF1FC581DD00E437CF /* UtilHomeViewController.m */; };
 		973E4CBD25A353D200748B44 /* ViewPandownViewController2.m in Sources */ = {isa = PBXBuildFile; fileRef = 973E4CBB25A353D200748B44 /* ViewPandownViewController2.m */; };
 		975164AE256CFE34001DE112 /* CQUpdateContentPopupView.m in Sources */ = {isa = PBXBuildFile; fileRef = 975164AD256CFE34001DE112 /* CQUpdateContentPopupView.m */; };
-		9754879825A991D100DD7080 /* CJSubStringUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 9754879625A991D000DD7080 /* CJSubStringUtil.m */; };
 		975487A025A9943000DD7080 /* CMaxSubStringViewController1.m in Sources */ = {isa = PBXBuildFile; fileRef = 9754879D25A9942F00DD7080 /* CMaxSubStringViewController1.m */; };
 		975487A125A9943000DD7080 /* CMaxSubStringViewController2.m in Sources */ = {isa = PBXBuildFile; fileRef = 9754879E25A9943000DD7080 /* CMaxSubStringViewController2.m */; };
 		975487AA25A997CF00DD7080 /* DChangeStringViewController1.m in Sources */ = {isa = PBXBuildFile; fileRef = 975487A825A997CF00DD7080 /* DChangeStringViewController1.m */; };
 		975487B025A99F8B00DD7080 /* BRangeSubStringViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 975487AF25A99F8B00DD7080 /* BRangeSubStringViewController.m */; };
 		975487B625A9A06300DD7080 /* StringForInputHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 975487B425A9A06200DD7080 /* StringForInputHomeViewController.m */; };
 		9756E36E25A5C6A00039365C /* TSTextFieldDelegateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9756E36D25A5C6A00039365C /* TSTextFieldDelegateViewController.m */; };
-		9756E37A25A5CD610039365C /* CQBlockTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 9756E37825A5CD610039365C /* CQBlockTextField.m */; };
-		9756E38025A5CDB90039365C /* UITextViewCJHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 9756E37E25A5CDB90039365C /* UITextViewCJHelper.m */; };
-		9756E38625A5CE840039365C /* CQTextFieldDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9756E38525A5CE840039365C /* CQTextFieldDelegate.m */; };
 		97578AAC25590E9300249AD6 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 97578AAB25590E9300249AD6 /* MainViewController.m */; };
 		97578AB225590F7100249AD6 /* UIWindow+RootSetting.m in Sources */ = {isa = PBXBuildFile; fileRef = 97578AB125590F7100249AD6 /* UIWindow+RootSetting.m */; };
 		97578D012559473500249AD6 /* TSRangeSliderControl1.m in Sources */ = {isa = PBXBuildFile; fileRef = 97578D002559473500249AD6 /* TSRangeSliderControl1.m */; };
@@ -357,6 +351,12 @@
 		9767973825834D11002FD0C7 /* UITextView+CJVerticalCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 9767973725834D10002FD0C7 /* UITextView+CJVerticalCenter.m */; };
 		9767973E2583512D002FD0C7 /* CJVerticalCenterTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9767973D2583512D002FD0C7 /* CJVerticalCenterTextView.m */; };
 		9767974425836B41002FD0C7 /* UIVerticalCenterTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9767974225836B41002FD0C7 /* UIVerticalCenterTextView.m */; };
+		97EB212D25A9BC0E008CDC13 /* CQSubStringUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 97EB212125A9BC0E008CDC13 /* CQSubStringUtil.m */; };
+		97EB212E25A9BC0E008CDC13 /* CQBlockTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 97EB212425A9BC0E008CDC13 /* CQBlockTextField.m */; };
+		97EB212F25A9BC0E008CDC13 /* CQTextFieldDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 97EB212725A9BC0E008CDC13 /* CQTextFieldDelegate.m */; };
+		97EB213025A9BC0E008CDC13 /* CQTextInputChangeResultModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 97EB212A25A9BC0E008CDC13 /* CQTextInputChangeResultModel.m */; };
+		97EB213125A9BC0E008CDC13 /* CJSubStringUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 97EB212B25A9BC0E008CDC13 /* CJSubStringUtil.m */; };
+		97EB213225A9BC0E008CDC13 /* UITextViewCJHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 97EB212C25A9BC0E008CDC13 /* UITextViewCJHelper.m */; };
 		E2649F5BE7F7FEF404688168 /* libPods-CJUIKitDemoTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 935109AAB855F6CC8B84B9A5 /* libPods-CJUIKitDemoTests.a */; };
 /* End PBXBuildFile section */
 
@@ -639,8 +639,6 @@
 		7868A067237055650013AF4D /* ButtonHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ButtonHomeViewController.m; sourceTree = "<group>"; };
 		7868A069237056B30013AF4D /* ButtonCategoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ButtonCategoryViewController.h; sourceTree = "<group>"; };
 		7868A06A237056B30013AF4D /* ButtonCategoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ButtonCategoryViewController.m; sourceTree = "<group>"; };
-		786F5BED25A6260700C5D2D1 /* CQTextInputChangeResultModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CQTextInputChangeResultModel.h; sourceTree = "<group>"; };
-		786F5BEE25A6260700C5D2D1 /* CQTextInputChangeResultModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CQTextInputChangeResultModel.m; sourceTree = "<group>"; };
 		7875C587231CF77900076A00 /* BackCustomItemViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BackCustomItemViewController.m; sourceTree = "<group>"; };
 		7875C588231CF77900076A00 /* BackItemBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BackItemBaseViewController.m; sourceTree = "<group>"; };
 		7875C589231CF77900076A00 /* BackSystemItemViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BackSystemItemViewController.m; sourceTree = "<group>"; };
@@ -816,8 +814,6 @@
 		78E189AA21781BD000B8781A /* TranslucentLayoutTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TranslucentLayoutTableViewController.m; sourceTree = "<group>"; };
 		78E189AC21781BE200B8781A /* EdgeLayoutTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EdgeLayoutTableViewController.h; sourceTree = "<group>"; };
 		78E189AD21781BE200B8781A /* EdgeLayoutTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EdgeLayoutTableViewController.m; sourceTree = "<group>"; };
-		78F406A325A8C278004971D1 /* CQSubStringUtil.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CQSubStringUtil.h; sourceTree = "<group>"; };
-		78F406A425A8C278004971D1 /* CQSubStringUtil.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CQSubStringUtil.m; sourceTree = "<group>"; };
 		78F406A925A8C803004971D1 /* StringHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StringHomeViewController.m; sourceTree = "<group>"; };
 		78F406AA25A8C803004971D1 /* StringHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StringHomeViewController.h; sourceTree = "<group>"; };
 		78F55FF8248818DF00B7B27A /* AttributedStringViewController2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AttributedStringViewController2.h; sourceTree = "<group>"; };
@@ -964,8 +960,6 @@
 		973E4CBC25A353D200748B44 /* ViewPandownViewController2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewPandownViewController2.h; sourceTree = "<group>"; };
 		975164AC256CFE34001DE112 /* CQUpdateContentPopupView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CQUpdateContentPopupView.h; sourceTree = "<group>"; };
 		975164AD256CFE34001DE112 /* CQUpdateContentPopupView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CQUpdateContentPopupView.m; sourceTree = "<group>"; };
-		9754879625A991D000DD7080 /* CJSubStringUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJSubStringUtil.m; sourceTree = "<group>"; };
-		9754879725A991D100DD7080 /* CJSubStringUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJSubStringUtil.h; sourceTree = "<group>"; };
 		9754879C25A9942F00DD7080 /* CMaxSubStringViewController2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMaxSubStringViewController2.h; sourceTree = "<group>"; };
 		9754879D25A9942F00DD7080 /* CMaxSubStringViewController1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMaxSubStringViewController1.m; sourceTree = "<group>"; };
 		9754879E25A9943000DD7080 /* CMaxSubStringViewController2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMaxSubStringViewController2.m; sourceTree = "<group>"; };
@@ -978,12 +972,6 @@
 		975487B525A9A06200DD7080 /* StringForInputHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StringForInputHomeViewController.h; sourceTree = "<group>"; };
 		9756E36C25A5C6A00039365C /* TSTextFieldDelegateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSTextFieldDelegateViewController.h; sourceTree = "<group>"; };
 		9756E36D25A5C6A00039365C /* TSTextFieldDelegateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSTextFieldDelegateViewController.m; sourceTree = "<group>"; };
-		9756E37825A5CD610039365C /* CQBlockTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CQBlockTextField.m; sourceTree = "<group>"; };
-		9756E37925A5CD610039365C /* CQBlockTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CQBlockTextField.h; sourceTree = "<group>"; };
-		9756E37E25A5CDB90039365C /* UITextViewCJHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UITextViewCJHelper.m; sourceTree = "<group>"; };
-		9756E37F25A5CDB90039365C /* UITextViewCJHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UITextViewCJHelper.h; sourceTree = "<group>"; };
-		9756E38425A5CE840039365C /* CQTextFieldDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CQTextFieldDelegate.h; sourceTree = "<group>"; };
-		9756E38525A5CE840039365C /* CQTextFieldDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CQTextFieldDelegate.m; sourceTree = "<group>"; };
 		97578AAA25590E9300249AD6 /* MainViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
 		97578AAB25590E9300249AD6 /* MainViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
 		97578AB025590F7100249AD6 /* UIWindow+RootSetting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIWindow+RootSetting.h"; sourceTree = "<group>"; };
@@ -1002,6 +990,18 @@
 		9767973D2583512D002FD0C7 /* CJVerticalCenterTextView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CJVerticalCenterTextView.m; sourceTree = "<group>"; };
 		9767974225836B41002FD0C7 /* UIVerticalCenterTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIVerticalCenterTextView.m; sourceTree = "<group>"; };
 		9767974325836B41002FD0C7 /* UIVerticalCenterTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIVerticalCenterTextView.h; sourceTree = "<group>"; };
+		97EB212025A9BC0E008CDC13 /* CQTextInputChangeResultModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CQTextInputChangeResultModel.h; sourceTree = "<group>"; };
+		97EB212125A9BC0E008CDC13 /* CQSubStringUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CQSubStringUtil.m; sourceTree = "<group>"; };
+		97EB212225A9BC0E008CDC13 /* CJSubStringUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJSubStringUtil.h; sourceTree = "<group>"; };
+		97EB212425A9BC0E008CDC13 /* CQBlockTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CQBlockTextField.m; sourceTree = "<group>"; };
+		97EB212525A9BC0E008CDC13 /* CQTextFieldDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CQTextFieldDelegate.h; sourceTree = "<group>"; };
+		97EB212625A9BC0E008CDC13 /* CQBlockTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CQBlockTextField.h; sourceTree = "<group>"; };
+		97EB212725A9BC0E008CDC13 /* CQTextFieldDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CQTextFieldDelegate.m; sourceTree = "<group>"; };
+		97EB212825A9BC0E008CDC13 /* UITextViewCJHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UITextViewCJHelper.h; sourceTree = "<group>"; };
+		97EB212925A9BC0E008CDC13 /* CQSubStringUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CQSubStringUtil.h; sourceTree = "<group>"; };
+		97EB212A25A9BC0E008CDC13 /* CQTextInputChangeResultModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CQTextInputChangeResultModel.m; sourceTree = "<group>"; };
+		97EB212B25A9BC0E008CDC13 /* CJSubStringUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJSubStringUtil.m; sourceTree = "<group>"; };
+		97EB212C25A9BC0E008CDC13 /* UITextViewCJHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UITextViewCJHelper.m; sourceTree = "<group>"; };
 		9AC0A78AFE86FE250B370A06 /* Pods-CJUIKitDemoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CJUIKitDemoTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CJUIKitDemoTests/Pods-CJUIKitDemoTests.debug.xcconfig"; sourceTree = "<group>"; };
 		A078401C0E781545EB72B64D /* libPods-CJUIKitDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CJUIKitDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF18E9E3F2E33815C8D88994 /* Pods-CJUIKitDemoUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CJUIKitDemoUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CJUIKitDemoUITests/Pods-CJUIKitDemoUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -1054,6 +1054,7 @@
 				1562F21B23F5DBF40009FCEA /* UIScrollView */,
 				1562F27723F5DBF40009FCEA /* UITableView */,
 				1562F2A023F5DBF40009FCEA /* UITextField */,
+				97EB211F25A9BC0E008CDC13 /* UITextInputCJHelper */,
 				1562F23B23F5DBF40009FCEA /* UIToolbar */,
 				1562F24223F5DBF40009FCEA /* UIView */,
 				1562F26B23F5DBF40009FCEA /* UIViewController */,
@@ -1828,18 +1829,6 @@
 				78A9922F25792EAC00B54E30 /* TSTextFieldBlockViewController.m */,
 				9756E36C25A5C6A00039365C /* TSTextFieldDelegateViewController.h */,
 				9756E36D25A5C6A00039365C /* TSTextFieldDelegateViewController.m */,
-				9756E37925A5CD610039365C /* CQBlockTextField.h */,
-				9756E37825A5CD610039365C /* CQBlockTextField.m */,
-				9756E38425A5CE840039365C /* CQTextFieldDelegate.h */,
-				9756E38525A5CE840039365C /* CQTextFieldDelegate.m */,
-				9756E37F25A5CDB90039365C /* UITextViewCJHelper.h */,
-				9756E37E25A5CDB90039365C /* UITextViewCJHelper.m */,
-				78F406A325A8C278004971D1 /* CQSubStringUtil.h */,
-				78F406A425A8C278004971D1 /* CQSubStringUtil.m */,
-				9754879725A991D100DD7080 /* CJSubStringUtil.h */,
-				9754879625A991D000DD7080 /* CJSubStringUtil.m */,
-				786F5BED25A6260700C5D2D1 /* CQTextInputChangeResultModel.h */,
-				786F5BEE25A6260700C5D2D1 /* CQTextInputChangeResultModel.m */,
 				78A9926C25795E2F00B54E30 /* TSTextFieldAccessoryViewController.h */,
 				78A9926D25795E3000B54E30 /* TSTextFieldAccessoryViewController.m */,
 				78575C882257242000925842 /* TSTextFieldOffsetViewController.h */,
@@ -2682,6 +2671,33 @@
 			path = TSSliderFactory;
 			sourceTree = "<group>";
 		};
+		97EB211F25A9BC0E008CDC13 /* UITextInputCJHelper */ = {
+			isa = PBXGroup;
+			children = (
+				97EB212325A9BC0E008CDC13 /* TextField */,
+				97EB212225A9BC0E008CDC13 /* CJSubStringUtil.h */,
+				97EB212B25A9BC0E008CDC13 /* CJSubStringUtil.m */,
+				97EB212925A9BC0E008CDC13 /* CQSubStringUtil.h */,
+				97EB212125A9BC0E008CDC13 /* CQSubStringUtil.m */,
+				97EB212025A9BC0E008CDC13 /* CQTextInputChangeResultModel.h */,
+				97EB212A25A9BC0E008CDC13 /* CQTextInputChangeResultModel.m */,
+				97EB212825A9BC0E008CDC13 /* UITextViewCJHelper.h */,
+				97EB212C25A9BC0E008CDC13 /* UITextViewCJHelper.m */,
+			);
+			path = UITextInputCJHelper;
+			sourceTree = "<group>";
+		};
+		97EB212325A9BC0E008CDC13 /* TextField */ = {
+			isa = PBXGroup;
+			children = (
+				97EB212625A9BC0E008CDC13 /* CQBlockTextField.h */,
+				97EB212425A9BC0E008CDC13 /* CQBlockTextField.m */,
+				97EB212525A9BC0E008CDC13 /* CQTextFieldDelegate.h */,
+				97EB212725A9BC0E008CDC13 /* CQTextFieldDelegate.m */,
+			);
+			path = TextField;
+			sourceTree = "<group>";
+		};
 		E75FB8B4AF71C8FE7F95B93C /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -3029,7 +3045,6 @@
 				8051E5CA20AAAFD2003370AA /* BusShimmeringSwitchSlider.m in Sources */,
 				788A55FA21AFCE540011F993 /* DemoLabelFactory.m in Sources */,
 				7850B70120937C5A008F4A21 /* PopupInWindowVC.m in Sources */,
-				78F406A525A8C278004971D1 /* CQSubStringUtil.m in Sources */,
 				975487B025A99F8B00DD7080 /* BRangeSubStringViewController.m in Sources */,
 				7850B71320937E85008F4A21 /* WelcomeViewToPop.m in Sources */,
 				97578AB225590F7100249AD6 /* UIWindow+RootSetting.m in Sources */,
@@ -3059,7 +3074,6 @@
 				789C447A21F07DAC00181144 /* ChangeEnvHomeViewController.m in Sources */,
 				801F75D920A040D800A2E027 /* BBXDPasswordTextField.m in Sources */,
 				78C8148C216E11AF00A6B190 /* DChildViewController.m in Sources */,
-				9756E38625A5CE840039365C /* CQTextFieldDelegate.m in Sources */,
 				7875C58E231CF77900076A00 /* BackItemBaseViewController.m in Sources */,
 				7856F72B21F4E790004AF751 /* TestDataModel.m in Sources */,
 				788113CE21996A3A00D1630D /* SubInheritableSharedInstanceClass.m in Sources */,
@@ -3080,6 +3094,7 @@
 				1562F2CE23F5DBF40009FCEA /* UIView+CJExclusiveTouch.m in Sources */,
 				7856F97021F9D2C5004AF751 /* BaseTableViewCellViewController.m in Sources */,
 				787FDB9820500B5C008A46E3 /* ShimmeringSwitchSlider.m in Sources */,
+				97EB212F25A9BC0E008CDC13 /* CQTextFieldDelegate.m in Sources */,
 				7856F72921F4E790004AF751 /* TestDataUtil.m in Sources */,
 				789C448121F07F6C00181144 /* ImageSizeViewController.m in Sources */,
 				78B6C2D92159D1F100D5864E /* DemoBusFlightModel.m in Sources */,
@@ -3113,6 +3128,7 @@
 				78E1899E2177874B00B8781A /* SliderHomeViewController.m in Sources */,
 				78024917258296BE00C7DBAD /* CQHeightTextView.m in Sources */,
 				78E18952217778D900B8781A /* NavigationBarHomeViewController.m in Sources */,
+				97EB212D25A9BC0E008CDC13 /* CQSubStringUtil.m in Sources */,
 				78ACAFEF2595066C000FEEEB /* UIView+CJPanAction.m in Sources */,
 				80D0120F210336E100D1EDF0 /* ChangeViewController.m in Sources */,
 				975164AE256CFE34001DE112 /* CQUpdateContentPopupView.m in Sources */,
@@ -3126,6 +3142,7 @@
 				1562F2D623F5DBF40009FCEA /* CJBaseTableViewCell.m in Sources */,
 				787FDB8620500B5C008A46E3 /* SliderViewController.m in Sources */,
 				7850B70020937C5A008F4A21 /* DragViewController.m in Sources */,
+				97EB213125A9BC0E008CDC13 /* CJSubStringUtil.m in Sources */,
 				1562F2E023F5DBF40009FCEA /* CJSwitchSliderStatusModel.m in Sources */,
 				80FF90A41FC5649F00E437CF /* HomeViewController.m in Sources */,
 				800E07E52016CCF500799B78 /* DeviceInfo.m in Sources */,
@@ -3154,14 +3171,13 @@
 				7875C58D231CF77900076A00 /* BackCustomItemViewController.m in Sources */,
 				1562F2BA23F5DBF40009FCEA /* UIScrollView+CJKeyboardAvoiding.m in Sources */,
 				1562F2B823F5DBF40009FCEA /* CJKeyboardAvoidingTableView.m in Sources */,
-				786F5BEF25A6260700C5D2D1 /* CQTextInputChangeResultModel.m in Sources */,
 				78143150249C8FA50014EA69 /* AutoLayoutViewController.m in Sources */,
 				789C443C21EECEE800181144 /* CJAppVersionUtil.m in Sources */,
 				788113C22199583000D1630D /* NormalSharedInstanceClass.m in Sources */,
 				1562F2E523F5DBF40009FCEA /* CJRangeSliderControl.m in Sources */,
+				97EB212E25A9BC0E008CDC13 /* CQBlockTextField.m in Sources */,
 				1562F2C223F5DBF40009FCEA /* UIButton+CJMoreProperty.m in Sources */,
 				78A621DC2135C713004DA046 /* DemoSuspendWindow.m in Sources */,
-				9756E37A25A5CD610039365C /* CQBlockTextField.m in Sources */,
 				78C8148B216E11AF00A6B190 /* BChildViewController.m in Sources */,
 				781989A8225A34C000D01DBC /* CJDemoDateLabel.m in Sources */,
 				1562F2B723F5DBF40009FCEA /* UIImage+CJFixOrientation.m in Sources */,
@@ -3185,7 +3201,6 @@
 				808DE5E720DA0586003E08F1 /* CJDecimalUtil.m in Sources */,
 				1562F2E123F5DBF40009FCEA /* CJSwitchSlider.m in Sources */,
 				80FF90B01FC5649F00E437CF /* NavigationBarScrollChangeBGViewController.m in Sources */,
-				9756E38025A5CDB90039365C /* UITextViewCJHelper.m in Sources */,
 				976794FA2580B494002FD0C7 /* KeyboardAutoMoveUpViewController.m in Sources */,
 				78A99268257958CB00B54E30 /* UIScrollView+CJTouch.m in Sources */,
 				805598B51FF5D612009DC61C /* ValidateStringViewController.m in Sources */,
@@ -3256,6 +3271,7 @@
 				78A9926E25795E3000B54E30 /* TSTextFieldAccessoryViewController.m in Sources */,
 				78C8148A216E11AF00A6B190 /* FChildViewController.m in Sources */,
 				784C87FF216F2B1D00AFEE7D /* SemaphoreGateKeeperViewController.m in Sources */,
+				97EB213025A9BC0E008CDC13 /* CQTextInputChangeResultModel.m in Sources */,
 				1562F2AF23F5DBF40009FCEA /* UIImage+CJRotateAngle.m in Sources */,
 				7875C58F231CF77900076A00 /* BackSystemItemViewController.m in Sources */,
 				80FF90B41FC5649F00E437CF /* ButtonStructureViewController.m in Sources */,
@@ -3264,13 +3280,13 @@
 				8008D7D220E5CF5700F98EF6 /* CallSystemViewController.m in Sources */,
 				78E189A8217796DF00B8781A /* EdgeLayoutViewController.m in Sources */,
 				781C737721BA6A170090080C /* TestValueChangeModel.m in Sources */,
-				9754879825A991D100DD7080 /* CJSubStringUtil.m in Sources */,
 				78C8148E216E11AF00A6B190 /* Home1.m in Sources */,
 				78E189AB21781BD000B8781A /* TranslucentLayoutTableViewController.m in Sources */,
 				78ACAFFF2595088F000FEEEB /* ViewPandownViewController1.m in Sources */,
 				7885FC4A2156681F00B97DAA /* UIView+CJPopupInSuspendWindow.m in Sources */,
 				1562F2C823F5DBF40009FCEA /* UIView+CJShowExtendView.m in Sources */,
 				800E07E12016CCF500799B78 /* DataUtilViewController.m in Sources */,
+				97EB213225A9BC0E008CDC13 /* UITextViewCJHelper.m in Sources */,
 				1562F2BB23F5DBF40009FCEA /* CJUIKitConstant.m in Sources */,
 				976794E9258093EF002FD0C7 /* AStringLengthViewController.m in Sources */,
 				78C81489216E11AF00A6B190 /* CChildViewController.m in Sources */,
