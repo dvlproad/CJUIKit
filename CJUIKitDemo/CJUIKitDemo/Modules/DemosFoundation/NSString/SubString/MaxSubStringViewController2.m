@@ -1,25 +1,25 @@
 //
-//  MaxSubStringViewController.m
+//  MaxSubStringViewController2.m
 //  CJUIKitDemo
 //
 //  Created by ciyouzen on 2017/12/29.
 //  Copyright © 2017年 dvlproad. All rights reserved.
 //
 
-#import "MaxSubStringViewController.h"
+#import "MaxSubStringViewController2.h"
 #import "CQSubStringUtil.h"
 
-@interface MaxSubStringViewController ()
+@interface MaxSubStringViewController2 ()
 
 @end
 
-@implementation MaxSubStringViewController
+@implementation MaxSubStringViewController2
 
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    self.navigationItem.title = NSLocalizedString(@"最大子字符串 MaxSubString(以下每个都不能删，都得通过)", nil);
+    self.navigationItem.title = NSLocalizedString(@"长度计算使用【自定义cj_length算法】的时候的最大字符串(以下每个都不能删，都得通过)", nil);
     self.fixTextViewHeight = 60;  // 固定textView的视图高度（该值大于44才生效），默认固定为44
     
     NSMutableArray *sectionDataModels = [[NSMutableArray alloc] init];
@@ -27,7 +27,7 @@
     // 字符串验证
     {
         CQDMSectionDataModel *sectionDataModel = [[CQDMSectionDataModel alloc] init];
-        sectionDataModel.theme = @"最大子字符串 MaxSubString\n(注意：以下每个都不能删，都得通过\n以下每个都不能删，都得通过\n以下每个都不能删，都得通过\n)";
+        sectionDataModel.theme = @"长度计算使用【自定义cj_length算法】的时候的最大字符串\n(注意：以下每个都不能删，都得通过\n以下每个都不能删，都得通过\n以下每个都不能删，都得通过\n)";
         {
             CJDealTextModel *dealTextModel = [[CJDealTextModel alloc] init];
             dealTextModel.placeholder = @"请输入截取的操作对象";

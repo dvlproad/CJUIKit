@@ -16,7 +16,8 @@
 #import "ValidateStringViewController.h"
 
 // SubString
-#import "MaxSubStringViewController.h"
+#import "MaxSubStringViewController1.h"
+#import "MaxSubStringViewController2.h"
 
 @interface StringHomeViewController ()
 
@@ -73,11 +74,17 @@
     // SubString
     {
         CQDMSectionDataModel *sectionDataModel = [[CQDMSectionDataModel alloc] init];
-        sectionDataModel.theme = @"SubString相关";
+        sectionDataModel.theme = @"最大子字符串 MaxSubString";
         {
             CQDMModuleModel *NSStringModule = [[CQDMModuleModel alloc] init];
-            NSStringModule.title = @"最大子字符串 MaxSubString";
-            NSStringModule.classEntry = [MaxSubStringViewController class];
+            NSStringModule.title = @"长度计算使用【系统length算法】的时候的最大字符串";
+            NSStringModule.classEntry = [MaxSubStringViewController1 class];
+            [sectionDataModel.values addObject:NSStringModule];
+        }
+        {
+            CQDMModuleModel *NSStringModule = [[CQDMModuleModel alloc] init];
+            NSStringModule.title = @"长度计算使用【自定义cj_length算法】的时候的最大字符串";
+            NSStringModule.classEntry = [MaxSubStringViewController2 class];
             [sectionDataModel.values addObject:NSStringModule];
         }
         
