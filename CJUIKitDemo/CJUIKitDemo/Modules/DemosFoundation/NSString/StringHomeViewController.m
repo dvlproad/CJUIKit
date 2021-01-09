@@ -12,12 +12,10 @@
 #import "AttributedStringViewController.h"
 #import "AttributedStringViewController2.h"
 
-#import "StringLengthViewController.h"
 #import "ValidateStringViewController.h"
 
-// SubString
-#import "MaxSubStringViewController1.h"
-#import "MaxSubStringViewController2.h"
+// 文本框输入【长度限制】需要用到的String相关方法
+#import "StringForInputHomeViewController.h"
 
 @interface StringHomeViewController ()
 
@@ -57,12 +55,6 @@
         
         {
             CQDMModuleModel *stringModule = [[CQDMModuleModel alloc] init];
-            stringModule.title = @"字符串长度计算String Length";
-            stringModule.classEntry = [StringLengthViewController class];
-            [sectionDataModel.values addObject:stringModule];
-        }
-        {
-            CQDMModuleModel *stringModule = [[CQDMModuleModel alloc] init];
             stringModule.title = @"字符串类型验证String Validate";
             stringModule.classEntry = [ValidateStringViewController class];
             [sectionDataModel.values addObject:stringModule];
@@ -71,20 +63,14 @@
         [sectionDataModels addObject:sectionDataModel];
     }
     
-    // SubString
+    // 文本框输入【长度限制】需要用到的String相关方法
     {
         CQDMSectionDataModel *sectionDataModel = [[CQDMSectionDataModel alloc] init];
-        sectionDataModel.theme = @"最大子字符串 MaxSubString";
+        sectionDataModel.theme = @"文本框输入【长度限制】需要用到的String相关方法";
         {
             CQDMModuleModel *NSStringModule = [[CQDMModuleModel alloc] init];
-            NSStringModule.title = @"长度计算使用【系统length算法】的时候的最大字符串";
-            NSStringModule.classEntry = [MaxSubStringViewController1 class];
-            [sectionDataModel.values addObject:NSStringModule];
-        }
-        {
-            CQDMModuleModel *NSStringModule = [[CQDMModuleModel alloc] init];
-            NSStringModule.title = @"长度计算使用【自定义cj_length算法】的时候的最大字符串";
-            NSStringModule.classEntry = [MaxSubStringViewController2 class];
+            NSStringModule.title = @"文本框输入【长度限制】需要用到的String相关方法";
+            NSStringModule.classEntry = [StringForInputHomeViewController class];
             [sectionDataModel.values addObject:NSStringModule];
         }
         

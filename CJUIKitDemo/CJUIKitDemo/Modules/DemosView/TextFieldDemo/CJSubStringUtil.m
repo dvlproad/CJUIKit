@@ -59,7 +59,7 @@ typedef NS_ENUM(NSUInteger, CJCompareResult) {
                                               maxLength:replacementStringMaxLength
                                  lengthCalculationBlock:lengthCalculationBlock];
     NSString *maxSubstring = [hopeReplacementString substringToIndex:maxIndex];
-    NSLog(@"最大字符串计算结果如下：\n【%@】\n中不超过%zd长度的最大字符串是\n【%@】，其长度为%zd", hopeReplacementString, replacementStringMaxLength, maxSubstring, lengthCalculationBlock(maxSubstring));
+    //NSLog(@"最大字符串计算结果如下：\n【%@】\n中不超过%zd长度的最大字符串是\n【%@】，其长度为%zd", hopeReplacementString, replacementStringMaxLength, maxSubstring, lengthCalculationBlock(maxSubstring));
     return maxSubstring;
 }
 

@@ -1,19 +1,19 @@
 //
-//  MaxSubStringViewController1.m
+//  BRangeSubStringViewController.m
 //  CJUIKitDemo
 //
 //  Created by ciyouzen on 2017/12/29.
 //  Copyright © 2017年 dvlproad. All rights reserved.
 //
 
-#import "MaxSubStringViewController1.h"
+#import "BRangeSubStringViewController.h"
 #import "CQSubStringUtil.h"
 
-@interface MaxSubStringViewController1 ()
+@interface BRangeSubStringViewController ()
 
 @end
 
-@implementation MaxSubStringViewController1
+@implementation BRangeSubStringViewController
 
 
 - (void)viewDidLoad {

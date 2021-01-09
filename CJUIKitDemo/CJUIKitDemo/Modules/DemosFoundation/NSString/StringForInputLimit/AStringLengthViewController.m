@@ -1,20 +1,20 @@
 //
-//  StringLengthViewController.m
+//  AStringLengthViewController.m
 //  CJUIKitDemo
 //
 //  Created by ciyouzen on 2017/12/29.
 //  Copyright © 2017年 dvlproad. All rights reserved.
 //
 
-#import "StringLengthViewController.h"
+#import "AStringLengthViewController.h"
 #import "NSString+CJTextLength.h"
 
 
-@interface StringLengthViewController ()
+@interface AStringLengthViewController ()
 
 @end
 
-@implementation StringLengthViewController
+@implementation AStringLengthViewController
 
 
 - (void)viewDidLoad {

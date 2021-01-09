@@ -1,5 +1,5 @@
 //
-//  MaxSubStringViewController1.h
+//  CMaxSubStringViewController1.h
 //  CJUIKitDemo
 //
 //  Created by ciyouzen on 2017/12/29.
@@ -9,7 +9,7 @@
 
 #import "CJUIKitBaseBigTextViewController.h"
 
-@interface MaxSubStringViewController1 : CJUIKitBaseBigTextViewController
+@interface CMaxSubStringViewController1 : CJUIKitBaseBigTextViewController
 
 
 @end

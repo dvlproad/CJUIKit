@@ -339,8 +339,11 @@
 		973E4CBD25A353D200748B44 /* ViewPandownViewController2.m in Sources */ = {isa = PBXBuildFile; fileRef = 973E4CBB25A353D200748B44 /* ViewPandownViewController2.m */; };
 		975164AE256CFE34001DE112 /* CQUpdateContentPopupView.m in Sources */ = {isa = PBXBuildFile; fileRef = 975164AD256CFE34001DE112 /* CQUpdateContentPopupView.m */; };
 		9754879825A991D100DD7080 /* CJSubStringUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 9754879625A991D000DD7080 /* CJSubStringUtil.m */; };
-		975487A025A9943000DD7080 /* MaxSubStringViewController1.m in Sources */ = {isa = PBXBuildFile; fileRef = 9754879D25A9942F00DD7080 /* MaxSubStringViewController1.m */; };
-		975487A125A9943000DD7080 /* MaxSubStringViewController2.m in Sources */ = {isa = PBXBuildFile; fileRef = 9754879E25A9943000DD7080 /* MaxSubStringViewController2.m */; };
+		975487A025A9943000DD7080 /* CMaxSubStringViewController1.m in Sources */ = {isa = PBXBuildFile; fileRef = 9754879D25A9942F00DD7080 /* CMaxSubStringViewController1.m */; };
+		975487A125A9943000DD7080 /* CMaxSubStringViewController2.m in Sources */ = {isa = PBXBuildFile; fileRef = 9754879E25A9943000DD7080 /* CMaxSubStringViewController2.m */; };
+		975487AA25A997CF00DD7080 /* DChangeStringViewController1.m in Sources */ = {isa = PBXBuildFile; fileRef = 975487A825A997CF00DD7080 /* DChangeStringViewController1.m */; };
+		975487B025A99F8B00DD7080 /* BRangeSubStringViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 975487AF25A99F8B00DD7080 /* BRangeSubStringViewController.m */; };
+		975487B625A9A06300DD7080 /* StringForInputHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 975487B425A9A06200DD7080 /* StringForInputHomeViewController.m */; };
 		9756E36E25A5C6A00039365C /* TSTextFieldDelegateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9756E36D25A5C6A00039365C /* TSTextFieldDelegateViewController.m */; };
 		9756E37A25A5CD610039365C /* CQBlockTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 9756E37825A5CD610039365C /* CQBlockTextField.m */; };
 		9756E38025A5CDB90039365C /* UITextViewCJHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 9756E37E25A5CDB90039365C /* UITextViewCJHelper.m */; };
@@ -349,7 +352,7 @@
 		97578AB225590F7100249AD6 /* UIWindow+RootSetting.m in Sources */ = {isa = PBXBuildFile; fileRef = 97578AB125590F7100249AD6 /* UIWindow+RootSetting.m */; };
 		97578D012559473500249AD6 /* TSRangeSliderControl1.m in Sources */ = {isa = PBXBuildFile; fileRef = 97578D002559473500249AD6 /* TSRangeSliderControl1.m */; };
 		97578D072559474F00249AD6 /* TSRangeSliderControl2.m in Sources */ = {isa = PBXBuildFile; fileRef = 97578D062559474F00249AD6 /* TSRangeSliderControl2.m */; };
-		976794E9258093EF002FD0C7 /* StringLengthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 976794E7258093EE002FD0C7 /* StringLengthViewController.m */; };
+		976794E9258093EF002FD0C7 /* AStringLengthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 976794E7258093EE002FD0C7 /* AStringLengthViewController.m */; };
 		976794FA2580B494002FD0C7 /* KeyboardAutoMoveUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 976794F92580B494002FD0C7 /* KeyboardAutoMoveUpViewController.m */; };
 		9767973825834D11002FD0C7 /* UITextView+CJVerticalCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 9767973725834D10002FD0C7 /* UITextView+CJVerticalCenter.m */; };
 		9767973E2583512D002FD0C7 /* CJVerticalCenterTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9767973D2583512D002FD0C7 /* CJVerticalCenterTextView.m */; };
@@ -963,10 +966,16 @@
 		975164AD256CFE34001DE112 /* CQUpdateContentPopupView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CQUpdateContentPopupView.m; sourceTree = "<group>"; };
 		9754879625A991D000DD7080 /* CJSubStringUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJSubStringUtil.m; sourceTree = "<group>"; };
 		9754879725A991D100DD7080 /* CJSubStringUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJSubStringUtil.h; sourceTree = "<group>"; };
-		9754879C25A9942F00DD7080 /* MaxSubStringViewController2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MaxSubStringViewController2.h; sourceTree = "<group>"; };
-		9754879D25A9942F00DD7080 /* MaxSubStringViewController1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MaxSubStringViewController1.m; sourceTree = "<group>"; };
-		9754879E25A9943000DD7080 /* MaxSubStringViewController2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MaxSubStringViewController2.m; sourceTree = "<group>"; };
-		9754879F25A9943000DD7080 /* MaxSubStringViewController1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MaxSubStringViewController1.h; sourceTree = "<group>"; };
+		9754879C25A9942F00DD7080 /* CMaxSubStringViewController2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMaxSubStringViewController2.h; sourceTree = "<group>"; };
+		9754879D25A9942F00DD7080 /* CMaxSubStringViewController1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMaxSubStringViewController1.m; sourceTree = "<group>"; };
+		9754879E25A9943000DD7080 /* CMaxSubStringViewController2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMaxSubStringViewController2.m; sourceTree = "<group>"; };
+		9754879F25A9943000DD7080 /* CMaxSubStringViewController1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMaxSubStringViewController1.h; sourceTree = "<group>"; };
+		975487A825A997CF00DD7080 /* DChangeStringViewController1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DChangeStringViewController1.m; sourceTree = "<group>"; };
+		975487A925A997CF00DD7080 /* DChangeStringViewController1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DChangeStringViewController1.h; sourceTree = "<group>"; };
+		975487AE25A99F8B00DD7080 /* BRangeSubStringViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BRangeSubStringViewController.h; sourceTree = "<group>"; };
+		975487AF25A99F8B00DD7080 /* BRangeSubStringViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BRangeSubStringViewController.m; sourceTree = "<group>"; };
+		975487B425A9A06200DD7080 /* StringForInputHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StringForInputHomeViewController.m; sourceTree = "<group>"; };
+		975487B525A9A06200DD7080 /* StringForInputHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StringForInputHomeViewController.h; sourceTree = "<group>"; };
 		9756E36C25A5C6A00039365C /* TSTextFieldDelegateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSTextFieldDelegateViewController.h; sourceTree = "<group>"; };
 		9756E36D25A5C6A00039365C /* TSTextFieldDelegateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSTextFieldDelegateViewController.m; sourceTree = "<group>"; };
 		9756E37825A5CD610039365C /* CQBlockTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CQBlockTextField.m; sourceTree = "<group>"; };
@@ -983,8 +992,8 @@
 		97578D002559473500249AD6 /* TSRangeSliderControl1.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TSRangeSliderControl1.m; sourceTree = "<group>"; };
 		97578D052559474F00249AD6 /* TSRangeSliderControl2.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TSRangeSliderControl2.h; sourceTree = "<group>"; };
 		97578D062559474F00249AD6 /* TSRangeSliderControl2.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TSRangeSliderControl2.m; sourceTree = "<group>"; };
-		976794E7258093EE002FD0C7 /* StringLengthViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StringLengthViewController.m; sourceTree = "<group>"; };
-		976794E8258093EF002FD0C7 /* StringLengthViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StringLengthViewController.h; sourceTree = "<group>"; };
+		976794E7258093EE002FD0C7 /* AStringLengthViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AStringLengthViewController.m; sourceTree = "<group>"; };
+		976794E8258093EF002FD0C7 /* AStringLengthViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AStringLengthViewController.h; sourceTree = "<group>"; };
 		976794F82580B494002FD0C7 /* KeyboardAutoMoveUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeyboardAutoMoveUpViewController.h; sourceTree = "<group>"; };
 		976794F92580B494002FD0C7 /* KeyboardAutoMoveUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeyboardAutoMoveUpViewController.m; sourceTree = "<group>"; };
 		9767973625834D10002FD0C7 /* UITextView+CJVerticalCenter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UITextView+CJVerticalCenter.h"; sourceTree = "<group>"; };
@@ -2142,15 +2151,23 @@
 			path = AutoLayoutDemo;
 			sourceTree = "<group>";
 		};
-		78F4072125A8F9AF004971D1 /* SubString */ = {
+		78F4072125A8F9AF004971D1 /* StringForInputLimit */ = {
 			isa = PBXGroup;
 			children = (
-				9754879F25A9943000DD7080 /* MaxSubStringViewController1.h */,
-				9754879D25A9942F00DD7080 /* MaxSubStringViewController1.m */,
-				9754879C25A9942F00DD7080 /* MaxSubStringViewController2.h */,
-				9754879E25A9943000DD7080 /* MaxSubStringViewController2.m */,
+				976794E8258093EF002FD0C7 /* AStringLengthViewController.h */,
+				976794E7258093EE002FD0C7 /* AStringLengthViewController.m */,
+				975487AE25A99F8B00DD7080 /* BRangeSubStringViewController.h */,
+				975487AF25A99F8B00DD7080 /* BRangeSubStringViewController.m */,
+				9754879F25A9943000DD7080 /* CMaxSubStringViewController1.h */,
+				9754879D25A9942F00DD7080 /* CMaxSubStringViewController1.m */,
+				9754879C25A9942F00DD7080 /* CMaxSubStringViewController2.h */,
+				9754879E25A9943000DD7080 /* CMaxSubStringViewController2.m */,
+				975487A925A997CF00DD7080 /* DChangeStringViewController1.h */,
+				975487A825A997CF00DD7080 /* DChangeStringViewController1.m */,
+				975487B525A9A06200DD7080 /* StringForInputHomeViewController.h */,
+				975487B425A9A06200DD7080 /* StringForInputHomeViewController.m */,
 			);
-			path = SubString;
+			path = StringForInputLimit;
 			sourceTree = "<group>";
 		};
 		78FCF54A2306A9B900D275F9 /* CJDemoPopupView */ = {
@@ -2589,6 +2606,7 @@
 			children = (
 				78F406AA25A8C803004971D1 /* StringHomeViewController.h */,
 				78F406A925A8C803004971D1 /* StringHomeViewController.m */,
+				78F4072125A8F9AF004971D1 /* StringForInputLimit */,
 				80FF91791FC5682A00E437CF /* AttributedStringViewController.h */,
 				80FF917C1FC5682A00E437CF /* AttributedStringViewController.m */,
 				80FF917A1FC5682A00E437CF /* AttributedStringViewController.xib */,
@@ -2598,10 +2616,7 @@
 				80FF917B1FC5682A00E437CF /* EncryptStringViewController.m */,
 				80FF917D1FC5682A00E437CF /* EncryptStringViewController.xib */,
 				805598B21FF5D612009DC61C /* ValidateStringViewController.h */,
-				78F4072125A8F9AF004971D1 /* SubString */,
 				805598B31FF5D612009DC61C /* ValidateStringViewController.m */,
-				976794E8258093EF002FD0C7 /* StringLengthViewController.h */,
-				976794E7258093EE002FD0C7 /* StringLengthViewController.m */,
 			);
 			path = NSString;
 			sourceTree = "<group>";
@@ -3015,6 +3030,7 @@
 				788A55FA21AFCE540011F993 /* DemoLabelFactory.m in Sources */,
 				7850B70120937C5A008F4A21 /* PopupInWindowVC.m in Sources */,
 				78F406A525A8C278004971D1 /* CQSubStringUtil.m in Sources */,
+				975487B025A99F8B00DD7080 /* BRangeSubStringViewController.m in Sources */,
 				7850B71320937E85008F4A21 /* WelcomeViewToPop.m in Sources */,
 				97578AB225590F7100249AD6 /* UIWindow+RootSetting.m in Sources */,
 				1562F2E923F5DBF40009FCEA /* CJSwitchView.m in Sources */,
@@ -3029,6 +3045,7 @@
 				156AC8D12406D9F800A5A23D /* DemoTagButtonFactory.m in Sources */,
 				786254C324A92EBF00E3CCC3 /* CJDataSearchUtil.m in Sources */,
 				801F75D820A040D800A2E027 /* BBXDAreaCodeTextField.m in Sources */,
+				975487B625A9A06300DD7080 /* StringForInputHomeViewController.m in Sources */,
 				1562F2C423F5DBF40009FCEA /* UISearchBar+CJAddInputAccessoryView.m in Sources */,
 				78B6C2EE2159D8AF00D5864E /* DemoBusPassengerOrderModel.m in Sources */,
 				1562F2B023F5DBF40009FCEA /* UIImage+CJChangeColor.m in Sources */,
@@ -3072,7 +3089,7 @@
 				787C287F23223DAA00AF84F4 /* DemoEasyModel.m in Sources */,
 				78B6C2DF2159D20000D5864E /* DemoUsePermissionModel.m in Sources */,
 				78575C8A2257242100925842 /* TSTextFieldOffsetViewController.m in Sources */,
-				975487A025A9943000DD7080 /* MaxSubStringViewController1.m in Sources */,
+				975487A025A9943000DD7080 /* CMaxSubStringViewController1.m in Sources */,
 				15A7680C23FD966B00358B42 /* TSButtonFactory.m in Sources */,
 				78B6C2E32159D6BC00D5864E /* DemoBusStationModel.m in Sources */,
 				8050038A211C3A29002A2306 /* NSObjectCJHelperViewController.m in Sources */,
@@ -3100,7 +3117,7 @@
 				80D0120F210336E100D1EDF0 /* ChangeViewController.m in Sources */,
 				975164AE256CFE34001DE112 /* CQUpdateContentPopupView.m in Sources */,
 				78F406AB25A8C803004971D1 /* StringHomeViewController.m in Sources */,
-				975487A125A9943000DD7080 /* MaxSubStringViewController2.m in Sources */,
+				975487A125A9943000DD7080 /* CMaxSubStringViewController2.m in Sources */,
 				78F65DA72576A9E20020916A /* UIView+CJToastInView.m in Sources */,
 				78A9923025792EAC00B54E30 /* TSTextFieldBlockViewController.m in Sources */,
 				1562F2F323F5DBF40009FCEA /* UITextField+CJSelectedTextRange.m in Sources */,
@@ -3163,6 +3180,7 @@
 				1562F2E423F5DBF40009FCEA /* CJSliderControl.m in Sources */,
 				7877601F2594F54200B0D33C /* CQCommentsPopView.m in Sources */,
 				78E189AE21781BE200B8781A /* EdgeLayoutTableViewController.m in Sources */,
+				975487AA25A997CF00DD7080 /* DChangeStringViewController1.m in Sources */,
 				1562F2DF23F5DBF40009FCEA /* UITableView+CJEmptyView.m in Sources */,
 				808DE5E720DA0586003E08F1 /* CJDecimalUtil.m in Sources */,
 				1562F2E123F5DBF40009FCEA /* CJSwitchSlider.m in Sources */,
@@ -3254,7 +3272,7 @@
 				1562F2C823F5DBF40009FCEA /* UIView+CJShowExtendView.m in Sources */,
 				800E07E12016CCF500799B78 /* DataUtilViewController.m in Sources */,
 				1562F2BB23F5DBF40009FCEA /* CJUIKitConstant.m in Sources */,
-				976794E9258093EF002FD0C7 /* StringLengthViewController.m in Sources */,
+				976794E9258093EF002FD0C7 /* AStringLengthViewController.m in Sources */,
 				78C81489216E11AF00A6B190 /* CChildViewController.m in Sources */,
 				80FF919E1FC5682B00E437CF /* OtherHomeViewController.m in Sources */,
 				80FF90AD1FC5649F00E437CF /* NavigationBarViewController.m in Sources */,

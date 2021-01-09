@@ -1,5 +1,5 @@
 //
-//  StringLengthViewController.h
+//  AStringLengthViewController.h
 //  CJUIKitDemo
 //
 //  Created by ciyouzen on 2017/12/29.
@@ -8,7 +8,7 @@
 
 #import "CJUIKitBaseTextViewController.h"
 
-@interface StringLengthViewController : CJUIKitBaseTextViewController
+@interface AStringLengthViewController : CJUIKitBaseTextViewController
 
 
 @end

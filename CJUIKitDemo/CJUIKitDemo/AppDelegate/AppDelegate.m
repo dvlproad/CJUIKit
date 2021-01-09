@@ -22,8 +22,6 @@
 #import "APPUIKitSetting.h"
 #import "CQSubStringUtil.h"
 
-#import "UITextViewCJHelper.h"
-
 @interface AppDelegate ()
 
 @end
@@ -51,12 +49,6 @@
     [CQSubStringUtil substringExceptRange:NSMakeRange(1, 0) forString:@"1234567890"];
     [CQSubStringUtil substringExceptRange:NSMakeRange(1, 1) forString:@"1234567890"];
     [CQSubStringUtil substringExceptRange:NSMakeRange(1, 9) forString:@"1234567890"];
-    
-    
-    
-    
-    NSString *originString = @"一二三四五六七八九十01234567890壹贰叁肆伍陆柒捌玖拾";
-//    [UITextViewCJHelper shouldChange_newTextFromOldText:originString shouldChangeCharactersInRange:NSMakeRange(0, 0) replacementString:@"好好学习天天向上" maxTextLength:25]; // 未被替换的文本的所占的长度已经超过了最大限制长度（特殊情况：发生在使用setText设置错误数据到文本框）
     
     
     void (^block1)(void) = ^{
