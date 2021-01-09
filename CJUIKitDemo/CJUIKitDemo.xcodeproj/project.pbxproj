@@ -254,6 +254,7 @@
 		78E189AE21781BE200B8781A /* EdgeLayoutTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78E189AD21781BE200B8781A /* EdgeLayoutTableViewController.m */; };
 		78F406A525A8C278004971D1 /* CQSubStringUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 78F406A425A8C278004971D1 /* CQSubStringUtil.m */; };
 		78F406AB25A8C803004971D1 /* StringHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78F406A925A8C803004971D1 /* StringHomeViewController.m */; };
+		78F4072425A8F9AF004971D1 /* MaxSubStringViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78F4072225A8F9AF004971D1 /* MaxSubStringViewController.m */; };
 		78F55FFA248818E000B7B27A /* AttributedStringViewController2.m in Sources */ = {isa = PBXBuildFile; fileRef = 78F55FF9248818DF00B7B27A /* AttributedStringViewController2.m */; };
 		78F65DA72576A9E20020916A /* UIView+CJToastInView.m in Sources */ = {isa = PBXBuildFile; fileRef = 78F65DA62576A9E20020916A /* UIView+CJToastInView.m */; };
 		78FCF5522306A9BA00D275F9 /* UIView+CJDemoPopupAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 78FCF54E2306A9B900D275F9 /* UIView+CJDemoPopupAction.m */; };
@@ -814,6 +815,8 @@
 		78F406A425A8C278004971D1 /* CQSubStringUtil.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CQSubStringUtil.m; sourceTree = "<group>"; };
 		78F406A925A8C803004971D1 /* StringHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StringHomeViewController.m; sourceTree = "<group>"; };
 		78F406AA25A8C803004971D1 /* StringHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StringHomeViewController.h; sourceTree = "<group>"; };
+		78F4072225A8F9AF004971D1 /* MaxSubStringViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MaxSubStringViewController.m; sourceTree = "<group>"; };
+		78F4072325A8F9AF004971D1 /* MaxSubStringViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MaxSubStringViewController.h; sourceTree = "<group>"; };
 		78F55FF8248818DF00B7B27A /* AttributedStringViewController2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AttributedStringViewController2.h; sourceTree = "<group>"; };
 		78F55FF9248818DF00B7B27A /* AttributedStringViewController2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AttributedStringViewController2.m; sourceTree = "<group>"; };
 		78F65DA52576A9E10020916A /* UIView+CJToastInView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+CJToastInView.h"; sourceTree = "<group>"; };
@@ -2131,6 +2134,15 @@
 			path = AutoLayoutDemo;
 			sourceTree = "<group>";
 		};
+		78F4072125A8F9AF004971D1 /* SubString */ = {
+			isa = PBXGroup;
+			children = (
+				78F4072325A8F9AF004971D1 /* MaxSubStringViewController.h */,
+				78F4072225A8F9AF004971D1 /* MaxSubStringViewController.m */,
+			);
+			path = SubString;
+			sourceTree = "<group>";
+		};
 		78FCF54A2306A9B900D275F9 /* CJDemoPopupView */ = {
 			isa = PBXGroup;
 			children = (
@@ -2576,6 +2588,7 @@
 				80FF917B1FC5682A00E437CF /* EncryptStringViewController.m */,
 				80FF917D1FC5682A00E437CF /* EncryptStringViewController.xib */,
 				805598B21FF5D612009DC61C /* ValidateStringViewController.h */,
+				78F4072125A8F9AF004971D1 /* SubString */,
 				805598B31FF5D612009DC61C /* ValidateStringViewController.m */,
 				976794E8258093EF002FD0C7 /* StringLengthViewController.h */,
 				976794E7258093EE002FD0C7 /* StringLengthViewController.m */,
@@ -3171,6 +3184,7 @@
 				9767974425836B41002FD0C7 /* UIVerticalCenterTextView.m in Sources */,
 				9767973825834D11002FD0C7 /* UITextView+CJVerticalCenter.m in Sources */,
 				9756E36E25A5C6A00039365C /* TSTextFieldDelegateViewController.m in Sources */,
+				78F4072425A8F9AF004971D1 /* MaxSubStringViewController.m in Sources */,
 				808BF3242019C3E900511F7C /* YunUncaughtExceptionHandler.m in Sources */,
 				787FDB8520500B5C008A46E3 /* SwitchSliderViewController.m in Sources */,
 				7850B70220937C5A008F4A21 /* PopupInViewVC.m in Sources */,

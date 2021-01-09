@@ -2,7 +2,7 @@
 //  CQSubStringUtil.m
 //  CJUIKitDemo
 //
-//  Created by 李超前 on 2021/1/9.
+//  Created by ciyouzen on 2021/1/9.
 //  Copyright © 2021 dvlproad. All rights reserved.
 //
 
@@ -55,7 +55,7 @@ typedef NS_ENUM(NSUInteger, CQCompareResult) {
     NSInteger maxIndex = [self searchMaxIndexFromString:hopeReplacementString
                                               maxLength:replacementStringMaxLength];
     NSString *maxSubstring = [hopeReplacementString substringToIndex:maxIndex];
-    NSLog(@"最大字符串计算结果如下：\n【%@】\n中不超过%zd长度的最大字符串是\n【%@】", hopeReplacementString, replacementStringMaxLength, maxSubstring);
+    NSLog(@"最大字符串计算结果如下：\n【%@】\n中不超过%zd长度的最大字符串是\n【%@】，其长度为%zd", hopeReplacementString, replacementStringMaxLength, maxSubstring, maxSubstring.cj_length);
     return maxSubstring;
 }
 
@@ -71,6 +71,11 @@ typedef NS_ENUM(NSUInteger, CQCompareResult) {
 + (NSInteger)searchMaxIndexFromString:(NSString *)hopeReplacementString
                             maxLength:(NSInteger)replacementStringMaxLength
 {
+    NSInteger hopeCustomLength = hopeReplacementString.cj_length;
+    if (replacementStringMaxLength >= hopeCustomLength) {
+        return replacementStringMaxLength;
+    }
+    
     NSInteger hopeLength = hopeReplacementString.length;
     NSInteger index = hopeLength/2;
     return [self __searchMaxIndexFromString:hopeReplacementString maxLength:replacementStringMaxLength searchStartIndex:index];
@@ -100,13 +105,28 @@ typedef NS_ENUM(NSUInteger, CQCompareResult) {
         //截取到该位置的子字符串刚好到最大长度，即本身刚好或者加上一个字后刚好
         return index;
     } else if (compareResult == CQCompareResultTooBig) {
-        //截取到该位置的子字符串太大，需要去找更小的
-        index = index - index/2;
-        return [self __searchMaxIndexFromString:hopeReplacementString maxLength:replacementStringMaxLength searchStartIndex:index];
-    } else {
-        //截取到该位置的子字符串太小，需要去找更大的
-        index = index + index/2;
-        return [self __searchMaxIndexFromString:hopeReplacementString maxLength:replacementStringMaxLength searchStartIndex:index];
+        //截取到该位置的子字符串太大，先试下减去上个字是不是到了，到就取[前个位置]结束。没到那就那就去寻找更小的
+        NSString *beforeHalfHopeReplacementString = [hopeReplacementString substringToIndex:index-1]; // 替换文本的一半字符串-减去一个字之后
+        NSInteger beforeHalfHopeReplacementStringLength = beforeHalfHopeReplacementString.cj_length;
+        if (beforeHalfHopeReplacementStringLength <= replacementStringMaxLength) {
+            return index-1; //取[前个位置]
+        } else {
+            NSInteger unsearchLength = index;
+            NSInteger nextIndex = index - unsearchLength/2; // 特殊情况1=1-1/2
+            return [self __searchMaxIndexFromString:hopeReplacementString maxLength:replacementStringMaxLength searchStartIndex:nextIndex];
+        }
+        
+    } else { // CQCompareResultTooSmall
+        //截取到该位置的子字符串太小，试下加上下个字是不是到了，到就取[本个位置]结束。没到那就去寻找更大的
+        NSString *afterHalfHopeReplacementString = [hopeReplacementString substringToIndex:index+1]; // 替换文本的一半字符串+加上一个字之后
+        NSInteger afterHalfHopeReplacementStringLength = afterHalfHopeReplacementString.cj_length;
+        if (afterHalfHopeReplacementStringLength > replacementStringMaxLength) {
+            return index;   //取[本个位置]
+        } else {
+            NSInteger unsearchLength = hopeReplacementString.length - index;
+            NSInteger nextIndex = index + unsearchLength/2;
+            return [self __searchMaxIndexFromString:hopeReplacementString maxLength:replacementStringMaxLength searchStartIndex:nextIndex];
+        }
     }
 }
 
@@ -124,7 +144,6 @@ typedef NS_ENUM(NSUInteger, CQCompareResult) {
                              forString:(NSString *)hopeReplacementString
                          withMaxLength:(NSInteger)replacementStringMaxLength
 {
-    
     if (index > hopeReplacementString.length) {
         return CQCompareResultBeyondMax;
     }
@@ -136,17 +155,11 @@ typedef NS_ENUM(NSUInteger, CQCompareResult) {
         // 替换文本的一半字符串刚好，那就直接用这个
         return CQCompareResultOK;
     } else if (halfHopeReplacementStringSmallLength > replacementStringMaxLength) {
-        // 替换文本的一半字符串已经超过，那就去寻找更小的
-        return CQCompareResultTooBig;
+        // 替换文本的一半字符串已经超过，等会先试下减去上个字是不是到了，到就取[前个位置]结束。没到那就那就去寻找更小的
+            return CQCompareResultTooBig;
     } else {
-        // 替换文本的一半字符串还没到，试下加上下个字是不是到了，到就结束。没到那就去寻找更大的
-        NSString *halfHopeReplacementStringBig = [hopeReplacementString substringToIndex:index+1]; // 替换文本的一半字符串+加上一个字之后
-        NSInteger halfHopeReplacementStringBigLength = halfHopeReplacementStringBig.cj_length;
-        if (halfHopeReplacementStringBigLength > replacementStringMaxLength) {
-            return CQCompareResultOK;
-        } else {
+        // 替换文本的一半字符串还没到，等会先试下加上下个字是不是到了，到就取[本个位置]结束。没到那就去寻找更大的
             return CQCompareResultTooSmall;
-        }
     }
 }
 

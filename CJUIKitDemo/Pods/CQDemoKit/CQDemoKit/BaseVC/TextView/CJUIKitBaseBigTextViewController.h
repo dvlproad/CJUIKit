@@ -1,22 +1,22 @@
 //
-//  CJUIKitBaseTextViewController.h
+//  CJUIKitBaseBigTextViewController.h
 //  CJFoundationDemo
 //
 //  Created by ciyouzen on 2016/3/26.
 //  Copyright © 2016年 dvlproad. All rights reserved.
 //
-//  Cell视图【单行排列】的文本列表控制器
+//  Cell视图【多行排列】的文本列表控制器
 
 #import "CJUIKitBaseViewController.h"
 #import "CQDMSectionDataModel.h"
 #import "CQDMSectionDataModel+CJDealTextModel.h"
 
-@interface CJUIKitBaseTextViewController : CJUIKitBaseViewController {
+@interface CJUIKitBaseBigTextViewController : CJUIKitBaseViewController {
     
 }
 @property (nonatomic, strong) UITableView *tableView;
 @property (nonatomic, strong) NSMutableArray<CQDMSectionDataModel *> *sectionDataModels;
 
-@property (nonatomic, assign) CGFloat fixCellResultLableWidth;  /**< 固定result的视图宽度（该值大于20才生效），默认为0<20，表示自适应宽度 */
+@property (nonatomic, assign) CGFloat fixTextViewHeight;  /**< 固定textView的视图高度（该值大于44才生效），默认固定为44 */
 
 @end

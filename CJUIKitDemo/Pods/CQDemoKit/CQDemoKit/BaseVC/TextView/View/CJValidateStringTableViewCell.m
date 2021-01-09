@@ -43,6 +43,8 @@
 }
 
 - (void)setupViews {
+    self.backgroundColor = [UIColor clearColor];
+    
     UIView *parentView = self.contentView;
     
     UITextField *textField = [[UITextField alloc] initWithFrame:CGRectZero];

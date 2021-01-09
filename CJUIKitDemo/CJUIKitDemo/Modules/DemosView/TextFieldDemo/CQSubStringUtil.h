@@ -2,7 +2,7 @@
 //  CQSubStringUtil.h
 //  CJUIKitDemo
 //
-//  Created by 李超前 on 2021/1/9.
+//  Created by ciyouzen on 2021/1/9.
 //  Copyright © 2021 dvlproad. All rights reserved.
 //
 

@@ -15,6 +15,9 @@
 #import "StringLengthViewController.h"
 #import "ValidateStringViewController.h"
 
+// SubString
+#import "MaxSubStringViewController.h"
+
 @interface StringHomeViewController ()
 
 @end
@@ -62,6 +65,20 @@
             stringModule.title = @"字符串类型验证String Validate";
             stringModule.classEntry = [ValidateStringViewController class];
             [sectionDataModel.values addObject:stringModule];
+        }
+        
+        [sectionDataModels addObject:sectionDataModel];
+    }
+    
+    // SubString
+    {
+        CQDMSectionDataModel *sectionDataModel = [[CQDMSectionDataModel alloc] init];
+        sectionDataModel.theme = @"SubString相关";
+        {
+            CQDMModuleModel *NSStringModule = [[CQDMModuleModel alloc] init];
+            NSStringModule.title = @"最大子字符串 MaxSubString";
+            NSStringModule.classEntry = [MaxSubStringViewController class];
+            [sectionDataModel.values addObject:NSStringModule];
         }
         
         [sectionDataModels addObject:sectionDataModel];

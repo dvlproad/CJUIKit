@@ -65,36 +65,36 @@ PODS:
   - CJFoundation/NSString (0.1.3)
   - CJPicker (1.3.2)
   - CJPopupView/CJPopoverView (2.1.0)
-  - CQDemoKit (0.5.10):
-    - CQDemoKit/BaseUIKit (= 0.5.10)
-    - CQDemoKit/BaseUtil (= 0.5.10)
-    - CQDemoKit/BaseVC (= 0.5.10)
-    - CQDemoKit/Demo_Resource (= 0.5.10)
-    - CQDemoKit/Demo_RipeView (= 0.5.10)
-  - CQDemoKit/BaseUIKit (0.5.10):
+  - CQDemoKit (0.5.11):
+    - CQDemoKit/BaseUIKit (= 0.5.11)
+    - CQDemoKit/BaseUtil (= 0.5.11)
+    - CQDemoKit/BaseVC (= 0.5.11)
+    - CQDemoKit/Demo_Resource (= 0.5.11)
+    - CQDemoKit/Demo_RipeView (= 0.5.11)
+  - CQDemoKit/BaseUIKit (0.5.11):
     - Masonry
-  - CQDemoKit/BaseUtil (0.5.10)
-  - CQDemoKit/BaseVC (0.5.10):
-    - CQDemoKit/BaseVC/Base (= 0.5.10)
-    - CQDemoKit/BaseVC/Collection (= 0.5.10)
-    - CQDemoKit/BaseVC/ScrollView (= 0.5.10)
-    - CQDemoKit/BaseVC/TabBar (= 0.5.10)
-    - CQDemoKit/BaseVC/TableView (= 0.5.10)
-    - CQDemoKit/BaseVC/TextView (= 0.5.10)
-  - CQDemoKit/BaseVC/Base (0.5.10):
+  - CQDemoKit/BaseUtil (0.5.11)
+  - CQDemoKit/BaseVC (0.5.11):
+    - CQDemoKit/BaseVC/Base (= 0.5.11)
+    - CQDemoKit/BaseVC/Collection (= 0.5.11)
+    - CQDemoKit/BaseVC/ScrollView (= 0.5.11)
+    - CQDemoKit/BaseVC/TabBar (= 0.5.11)
+    - CQDemoKit/BaseVC/TableView (= 0.5.11)
+    - CQDemoKit/BaseVC/TextView (= 0.5.11)
+  - CQDemoKit/BaseVC/Base (0.5.11):
     - Masonry
-  - CQDemoKit/BaseVC/Collection (0.5.10):
+  - CQDemoKit/BaseVC/Collection (0.5.11):
     - CQDemoKit/BaseVC/Base
-  - CQDemoKit/BaseVC/ScrollView (0.5.10):
+  - CQDemoKit/BaseVC/ScrollView (0.5.11):
     - CQDemoKit/BaseVC/Base
-  - CQDemoKit/BaseVC/TabBar (0.5.10)
-  - CQDemoKit/BaseVC/TableView (0.5.10):
+  - CQDemoKit/BaseVC/TabBar (0.5.11)
+  - CQDemoKit/BaseVC/TableView (0.5.11):
     - CQDemoKit/BaseVC/Base
-  - CQDemoKit/BaseVC/TextView (0.5.10):
+  - CQDemoKit/BaseVC/TextView (0.5.11):
     - CQDemoKit/BaseUtil
     - CQDemoKit/BaseVC/Base
-  - CQDemoKit/Demo_Resource (0.5.10)
-  - CQDemoKit/Demo_RipeView (0.5.10):
+  - CQDemoKit/Demo_Resource (0.5.11)
+  - CQDemoKit/Demo_RipeView (0.5.11):
     - CQDemoKit/BaseUIKit
     - CQDemoKit/BaseUtil
   - IQKeyboardManager (6.5.6)
@@ -105,9 +105,9 @@ PODS:
   - MJExtension (3.0.17)
   - PinYin4Objc (1.1.1)
   - SAMKeychain (1.5.3)
-  - SDWebImage (5.10.0):
-    - SDWebImage/Core (= 5.10.0)
-  - SDWebImage/Core (5.10.0)
+  - SDWebImage (5.10.2):
+    - SDWebImage/Core (= 5.10.2)
+  - SDWebImage/Core (5.10.2)
   - Shimmer (1.0.2)
   - UINavigation-SXFixSpace (1.2.4)
   - YYText (1.0.7)
@@ -175,14 +175,14 @@ SPEC CHECKSUMS:
   CJFoundation: 53b4df7152c6d6fd776f55f387c67f431b8574bd
   CJPicker: c33099d47323271b91c2ce112976d1bee19a70ce
   CJPopupView: c7685f6a0225a89c72d97ea946f2816b5442abaf
-  CQDemoKit: a3385728b155ce80d8c5db57e06b8cfe1c3612e6
+  CQDemoKit: 6e31ac7bdc2580bc63ddeac7b5fbea974e8b32b6
   IQKeyboardManager: 2a6e97afdafc7becf0cb17a9a8d795e3a980717f
   Mantle: 4c0ed6ce47c96eccc4dc3bb071deb3def0e2c3be
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   MJExtension: 74ec83124a68891619fb7ba9c5c811bbf1691076
   PinYin4Objc: 3fa9673610368330e2dfb688b1d19a35c3930a78
   SAMKeychain: 483e1c9f32984d50ca961e26818a534283b4cd5c
-  SDWebImage: 9169792e9eec3e45bba2a0c02f74bf8bd922d1ee
+  SDWebImage: b969dcfc02c40a5da71eac0b03b8f1a0c794a86f
   Shimmer: c5374be1c2b0c9e292fb05b339a513cf291cac86
   UINavigation-SXFixSpace: 10f223253ebff2ceefa26694e23b7694269763c4
   YYText: 5c461d709e24d55a182d1441c41dc639a18a4849
