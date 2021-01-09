@@ -8,7 +8,10 @@
 
 #import "CQTextFieldDelegate.h"
 
-@interface CQTextFieldDelegate ()
+@interface CQTextFieldDelegate () {
+    
+}
+@property (nonatomic, copy, readonly) BOOL (^extraShouldChangeCheckBlock)(NSString *newText);  /**< 在已封装shouldChange中增加额外的能否输入的判断（如输入手机号码的时候，希望会系统处理出的新文本判断，在新文本不合法的时候能有对应toast提示） */
 
 @end
 
@@ -24,13 +27,14 @@
 
 #pragma mark - Setup
 /*
- *  设置最大长度
-    @brief                  (因为文本框有可能处在cell中，所以单独提供此接口设置最大长度)
+ *  设置最大长度，并在已封装shouldChange中增加额外的能否输入的判断（如输入手机号码的时候，希望会系统处理出的新文本判断，在新文本不合法的时候能有对应toast提示）
  *
- *  @param maxTextLength    最大长度（英文长度算1，中文长度算2）
+ *  @param maxTextLength                最大长度（英文长度算1，中文长度算2）
+ *  @param extraShouldChangeCheckBlock  增加的额外能否输入的判断
  */
-- (void)setupMaxTextLength:(NSInteger)maxTextLength {
+- (void)setupMaxTextLength:(NSInteger)maxTextLength addExtraShouldChangeCheckBlock:(BOOL (^ _Nullable)(NSString *newText))extraShouldChangeCheckBlock {
     _maxTextLength = maxTextLength;
+    _extraShouldChangeCheckBlock = extraShouldChangeCheckBlock;
 }
 
 #pragma mark - UITextFieldDelegate
@@ -56,6 +60,10 @@
         return NO;
     }
     /// 以上为额外增加的判断 ///
+    
+    if (self.extraShouldChangeCheckBlock) {
+        return self.extraShouldChangeCheckBlock(newText);
+    }
     
     return YES;
 }
