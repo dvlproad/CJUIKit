@@ -92,12 +92,15 @@
             [UITextViewCJHelper shouldChange_newTextFromOldText:oldText
                                   shouldChangeCharactersInRange:range
                                               replacementString:string maxTextLength:maxTextLength];
-    NSString *newText = resultModel.hopeNewText;
-    //NSLog(@"自己处理希望得到的文本:%@", newText);    // 有时候限制了最大长度，又在中间插入超多字符。会希望原有字符不变。只插入其他数值
-    textField.text = newText;   // 使用这个方法会使得光标变到末尾了,所以我们还需要更新光标位置
-    NSString *lastReplacementString = resultModel.hopeReplacementString;
-    NSInteger cursorLocation = range.location+lastReplacementString.length;
-    [UITextViewCJHelper setCursorLocationForTextField:textField atIndex:cursorLocation];
+    if (resultModel.isDifferentFromSystemDeal) {
+        // 注意，此步非常重要。是为了对于那些系统能处理的，就不去自己再setText了，防止光标和range变化。可有异常
+        NSString *newText = resultModel.hopeNewText;
+        //NSLog(@"自己处理希望得到的文本:%@", newText);    // 有时候限制了最大长度，又在中间插入超多字符。会希望原有字符不变。只插入其他数值
+        textField.text = newText;   // 使用这个方法会使得光标变到末尾了,所以我们还需要更新光标位置
+        NSString *lastReplacementString = resultModel.hopeReplacementString;
+        NSInteger cursorLocation = range.location+lastReplacementString.length;
+        [UITextViewCJHelper setCursorLocationForTextField:textField atIndex:cursorLocation];
+    }
     
     _lastSelectedText = textField.text;  // 只文本框中高亮的文本
     

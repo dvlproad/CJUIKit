@@ -34,6 +34,7 @@
     BOOL isDifferentFromSystemDeal = NO;
     NSString *hopeReplacementString = [[string componentsSeparatedByCharactersInSet:[NSCharacterSet whitespaceCharacterSet]] componentsJoinedByString:@""];
     if ([hopeReplacementString isEqualToString:string] == NO) { // 系统处理是允许输入空格的
+        NSLog(@"友情提示：替换的文本发生改变了，需要自己处理textField.text=处理。而该方法，可能会导致你的光标和range变化，比如中文26键下，先输入哈哈两个字，再输入5个h，选择5个h可能导致把第二个哈字删掉了。");
         isDifferentFromSystemDeal = YES;
     }
     
@@ -81,6 +82,9 @@
     NSString *newText = [oldText stringByReplacingCharactersInRange:range withString:newReplacementString];//若允许改变，则会改变成的新文本
     
     isDifferentFromSystemDeal = [newReplacementString isEqualToString:string] == NO;
+    if (isDifferentFromSystemDeal) {
+        NSLog(@"友情提示：替换的文本发生改变了，需要自己处理textField.text=处理。而该方法，可能会导致你的光标和range变化，比如中文26键下，先输入哈哈两个字，再输入5个h，选择5个h可能导致把第二个哈字删掉了。");
+    }
     resultModel.hopeNewText = newText;
     resultModel.hopeReplacementString = newReplacementString;
     resultModel.isDifferentFromSystemDeal = isDifferentFromSystemDeal;
