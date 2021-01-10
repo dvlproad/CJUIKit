@@ -1,14 +1,14 @@
 //
-//  CQTextInputChangeResultModel.m
+//  UITextInputChangeResultModel.m
 //  CJUIKitDemo
 //
 //  Created by ciyouzen on 2020/5/15.
 //  Copyright © 2020 dvlproad. All rights reserved.
 //
 
-#import "CQTextInputChangeResultModel.h"
+#import "UITextInputChangeResultModel.h"
 
-@implementation CQTextInputChangeResultModel
+@implementation UITextInputChangeResultModel
 
 /*
  *  初始化

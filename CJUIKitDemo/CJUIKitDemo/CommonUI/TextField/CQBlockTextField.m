@@ -8,7 +8,7 @@
 
 #import "CQBlockTextField.h"
 #import "CQTextFieldDelegate.h"
-#import "UITextViewCJHelper.h"
+#import "UITextViewCQHelper.h"
 
 @interface CQBlockTextField () <UITextFieldDelegate> {
     
@@ -89,8 +89,8 @@
     NSRange range = self.blockDelegate.shouldChangeCharactersInRange;
     NSString *string = self.blockDelegate.shouldChangeWithReplacementString;
     NSInteger maxTextLength = self.blockDelegate.maxTextLength;
-    CQTextInputChangeResultModel *resultModel =
-            [UITextViewCJHelper shouldChange_newTextFromOldText:oldText
+    UITextInputChangeResultModel *resultModel =
+            [UITextViewCQHelper shouldChange_newTextFromOldText:oldText
                                   shouldChangeCharactersInRange:range
                                               replacementString:string maxTextLength:maxTextLength];
     if (resultModel.isDifferentFromSystemDeal) {
@@ -100,7 +100,7 @@
         textField.text = newText;   // 使用这个方法会使得光标变到末尾了,所以我们还需要更新光标位置
         NSString *lastReplacementString = resultModel.hopeReplacementString;
         NSInteger cursorLocation = range.location+lastReplacementString.length;
-        [UITextViewCJHelper setCursorLocationForTextField:textField atIndex:cursorLocation];
+        [UITextViewCQHelper setCursorLocationForTextField:textField atIndex:cursorLocation];
     }
     
     _lastSelectedText = textField.text;  // 只文本框中高亮的文本

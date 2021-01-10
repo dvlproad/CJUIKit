@@ -1,5 +1,5 @@
 //
-//  UITextViewCJHelper.h
+//  UITextViewCQHelper.h
 //  CJUIKitDemo
 //
 //  Created by ciyouzen on 2020/5/15.
@@ -8,11 +8,11 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
-#import "CQTextInputChangeResultModel.h"
+#import "UITextInputCJHelper.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface UITextViewCJHelper : NSObject
+@interface UITextViewCQHelper : NSObject
 
 
 /*
@@ -25,7 +25,7 @@ NS_ASSUME_NONNULL_BEGIN
  *
  *  @return newText
  */
-+ (CQTextInputChangeResultModel *)shouldChange_newTextFromOldText:(nullable NSString *)oldText
++ (UITextInputChangeResultModel *)shouldChange_newTextFromOldText:(nullable NSString *)oldText
                                     shouldChangeCharactersInRange:(NSRange)range
                                                 replacementString:(NSString *)string
                                                     maxTextLength:(NSInteger)maxTextLength;

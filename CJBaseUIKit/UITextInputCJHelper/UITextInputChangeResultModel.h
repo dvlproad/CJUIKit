@@ -1,5 +1,5 @@
 //
-//  CQTextInputChangeResultModel.h
+//  UITextInputChangeResultModel.h
 //  CJUIKitDemo
 //
 //  Created by ciyouzen on 2020/5/15.
@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface CQTextInputChangeResultModel : NSObject {
+@interface UITextInputChangeResultModel : NSObject {
     
 }
 @property (nonatomic, copy, readonly) NSString *originReplacementString;/**< 原始的替换文本（未处理空格等之前的） */

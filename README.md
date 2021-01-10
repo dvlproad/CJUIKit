@@ -139,6 +139,14 @@
 
 #### 1、CJBaseUIKit更新记录
 
+* 
+
+> 1、增加UITextInputCJHelper：文本长度限制：UITextField 和 UITextView 会需要使用到的字符串处理方法
+>
+> 2、优化CJTextView，增加返回是否应该更新高度的参数
+>
+> 3、更新CJRangeSliderControl，增加slider手势变化的回调（有时候会需要在某种结束后做震动处理）
+
 * 2020-11-28 V
 
 > 1、处理CJTextView

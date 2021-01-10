@@ -8,7 +8,7 @@
 
 #import "DChangeStringViewController1.h"
 #import "CQSubStringUtil.h"
-#import "UITextViewCJHelper.h"
+#import "UITextViewCQHelper.h"
 
 @interface DChangeStringViewController1 ()
 
@@ -39,7 +39,7 @@
             dealTextModel.actionTitle = @"限制20长度，在开头插入【一二三123】(能插全部)";
             dealTextModel.autoExec = YES;
             dealTextModel.actionBlock = ^NSString * _Nonnull(NSString * _Nonnull oldString) {
-                CQTextInputChangeResultModel *resultModel = [UITextViewCJHelper shouldChange_newTextFromOldText:oldString shouldChangeCharactersInRange:NSMakeRange(0, 0) replacementString:@"一二三123" maxTextLength:20];
+                UITextInputChangeResultModel *resultModel = [UITextViewCQHelper shouldChange_newTextFromOldText:oldString shouldChangeCharactersInRange:NSMakeRange(0, 0) replacementString:@"一二三123" maxTextLength:20];
                 NSString *newText = resultModel.hopeNewText;
                 return newText;
             };
@@ -63,7 +63,7 @@
             dealTextModel.actionTitle = @"限制20长度，在开头插入【一二三四五12345】(能插部分)";
             dealTextModel.autoExec = YES;
             dealTextModel.actionBlock = ^NSString * _Nonnull(NSString * _Nonnull oldString) {
-                CQTextInputChangeResultModel *resultModel = [UITextViewCJHelper shouldChange_newTextFromOldText:oldString shouldChangeCharactersInRange:NSMakeRange(0, 0) replacementString:@"一二三四五12345" maxTextLength:20];
+                UITextInputChangeResultModel *resultModel = [UITextViewCQHelper shouldChange_newTextFromOldText:oldString shouldChangeCharactersInRange:NSMakeRange(0, 0) replacementString:@"一二三四五12345" maxTextLength:20];
                 NSString *newText = resultModel.hopeNewText;
                 return newText;
             };
@@ -88,7 +88,7 @@
             dealTextModel.actionTitle = @"限制20长度，在开头插入【一二三四五12345】(都不能插的情况1)";
             dealTextModel.autoExec = YES;
             dealTextModel.actionBlock = ^NSString * _Nonnull(NSString * _Nonnull oldString) {
-                CQTextInputChangeResultModel *resultModel = [UITextViewCJHelper shouldChange_newTextFromOldText:oldString shouldChangeCharactersInRange:NSMakeRange(0, 0) replacementString:@"一二三四五12345" maxTextLength:20];
+                UITextInputChangeResultModel *resultModel = [UITextViewCQHelper shouldChange_newTextFromOldText:oldString shouldChangeCharactersInRange:NSMakeRange(0, 0) replacementString:@"一二三四五12345" maxTextLength:20];
                 NSString *newText = resultModel.hopeNewText;
                 return newText;
             };
@@ -105,7 +105,7 @@
             dealTextModel.actionTitle = @"限制20长度，在开头插入【一二三四五12345】(都不能插的情况2)";
             dealTextModel.autoExec = YES;
             dealTextModel.actionBlock = ^NSString * _Nonnull(NSString * _Nonnull oldString) {
-                CQTextInputChangeResultModel *resultModel = [UITextViewCJHelper shouldChange_newTextFromOldText:oldString shouldChangeCharactersInRange:NSMakeRange(0, 0) replacementString:@"一二三四五12345" maxTextLength:20]; // 未被替换的文本的所占的长度已经超过了最大限制长度（特殊情况：发生在使用setText设置错误数据到文本框）
+                UITextInputChangeResultModel *resultModel = [UITextViewCQHelper shouldChange_newTextFromOldText:oldString shouldChangeCharactersInRange:NSMakeRange(0, 0) replacementString:@"一二三四五12345" maxTextLength:20]; // 未被替换的文本的所占的长度已经超过了最大限制长度（特殊情况：发生在使用setText设置错误数据到文本框）
                 NSString *newText = resultModel.hopeNewText;
                 return newText;
             };

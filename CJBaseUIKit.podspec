@@ -21,6 +21,7 @@ Pod::Spec.new do |s|
                  - CJBaseUIKit/UIView/CJGestureRecognizer：视图手势
                  - CJBaseUIKit/UIWindow：窗口
                  - CJBaseUIKit/UIButton：按钮 及 CJBadgeButton
+                 - CJBaseUIKit/UITextInputCJHelper：文本长度限制：UITextField 和 UITextView 会需要使用到的字符串处理方法
                  - CJBaseUIKit/UITextField：文本视图：包含文本框类别及新的自定义文本框
                  - CJBaseUIKit/CJTextView：文本视图：类似微信文本输入框实现
                  - CJBaseUIKit/UIToolbar：工具栏
@@ -137,6 +138,11 @@ Pod::Spec.new do |s|
 
   s.subspec 'UILabel' do |ss|
     ss.source_files = "CJBaseUIKit/UILabel/**/*.{h,m}"
+  end
+
+  # 文本长度限制：UITextField 和 UITextView 会需要使用到的字符串处理方法
+  s.subspec 'UITextInputCJHelper' do |ss|
+    ss.source_files = "CJBaseUIKit/UITextInputCJHelper/**/*.{h,m}"
   end
 
   s.subspec 'CJTextView' do |ss|
