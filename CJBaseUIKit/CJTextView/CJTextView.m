@@ -14,12 +14,13 @@
 @property (nonatomic, assign) NSInteger currentTexViewHeight;   /**< 文本框的当前高度 */
 @property (nonatomic, assign) NSInteger maxTextViewHeight;      /**< 文字框的最大显示高度 */
 
+@property (nonatomic, copy, readonly) void(^didChangeHappenHandle)(UITextView *bTextView);
 /**
  *  文字高度改变block → 文字高度改变且变化的范围在指定区间内则会调用这个代码块
  *  block参数(text) → 文字内容
  *  block参数(textHeight) → 文字高度
  */
-@property (nonatomic, copy) void(^textViewHeightChangeBlock)(NSString *text, CGFloat currentTexViewHeight);
+@property (nonatomic, copy, readonly) void(^didChangeCompleteBlock)(NSString *text, BOOL shouldUpdateHeight, CGFloat currentTextViewHeight);
 
 @end
 
@@ -114,27 +115,37 @@
     return _placeholderView;
 }
 
+
+/*
+ *  设置didChange触发时候的各个操作
+ *
+ *  @param didChangeHappenHandle        didChange触发开始的时候
+ *  @param didChangeCompleteBlock       didChange操作结束的时候
+ */
+- (void)configDidChangeHappenHandle:(void(^ _Nullable)(UITextView *bTextView))didChangeHappenHandle
+             didChangeCompleteBlock:(void(^ _Nonnull)(NSString *text, BOOL shouldUpdateHeight, CGFloat currentTextViewHeight))didChangeCompleteBlock
+{
+    _didChangeHappenHandle = didChangeHappenHandle;
+    _didChangeCompleteBlock = didChangeCompleteBlock;
+}
+
 /* 完整的描述请参见文件头部 */
 - (void)setMaxNumberOfLines:(NSUInteger)maxNumberOfLines
-      textHeightChangeBlock:(void(^)(NSString *text, CGFloat currentTextViewHeight))textViewHeightChangeBlock
 {
     //计算文本框显示的最大高度 = (每行高度 * 总行数 + 文字上下间距)
     NSAssert(self.font != nil, @"此时未设置文字字体，会导致文本框最大高度计算问题，所以请先设置");
     _maxTextViewHeight = ceil(self.font.lineHeight * maxNumberOfLines + self.textContainerInset.top + self.textContainerInset.bottom);
     
-    _textViewHeightChangeBlock = textViewHeightChangeBlock;
-    
+    NSAssert(self.didChangeCompleteBlock != nil, @"请在此方法前设置didChangeCompleteBlock，否则此方法执行后如果高度有变化，会无法得到回调");
     [self textDidChange];
 }
 
 /* 完整的描述请参见文件头部 */
 - (void)setMaxTextViewHeight:(NSUInteger)maxTextViewHeight
-       textHeightChangeBlock:(void (^)(NSString *text, CGFloat currentTextViewHeight))textViewHeightChangeBlock
 {
     _maxTextViewHeight = maxTextViewHeight;
     
-    _textViewHeightChangeBlock = textViewHeightChangeBlock;
-    
+    NSAssert(self.didChangeCompleteBlock != nil, @"请在此方法前设置didChangeCompleteBlock，否则此方法执行后如果高度有变化，会无法得到回调");
     [self textDidChange];
 }
 
@@ -162,6 +173,12 @@
     self.placeholderView.hidden = self.text.length > 0; //占位文字是否显示
 }
 
+- (void)setTextAlignment:(NSTextAlignment)textAlignment {
+    [super setTextAlignment:textAlignment];
+    
+    self.placeholderView.textAlignment = textAlignment;
+}
+
 - (void)setFont:(UIFont *)font {
     [super setFont:font];
     
@@ -169,8 +186,13 @@
 }
 
 #pragma mark - textDidChange(由UITextViewTextDidChangeNotification触发，或者手动触发)
-- (void)textDidChange
-{
+- (void)textDidChange {
+    // 执行开始事件
+    if (self.didChangeHappenHandle) {
+        self.didChangeHappenHandle(self);
+    }
+    
+    // 继续执行其他事件
     self.placeholderView.hidden = self.text.length > 0; //占位文字是否显示
     
     CGSize size = [self sizeThatFits:CGSizeMake(self.bounds.size.width, MAXFLOAT)];
@@ -179,19 +201,30 @@
         _originTextViewHeight = currentTextViewHeight;//使用文本的高度作为默认高度
     }
     
-    if (self.currentTexViewHeight != currentTextViewHeight) { //高度不一样，就改变了高度
-        self.currentTexViewHeight = currentTextViewHeight;
-        
+    BOOL oldTextViewHeight = self.currentTexViewHeight;
+    if (oldTextViewHeight != currentTextViewHeight) { //高度不一样，就改变了高度
         if (currentTextViewHeight > self.maxTextViewHeight) {
             self.scrollEnabled = YES;//当前文本框的最大高度，已经大于文本框的最大显示高度，则应该允许滚动
         } else {
             self.scrollEnabled = NO;
         }
         
-        if (currentTextViewHeight <= self.maxTextViewHeight) {
-            if (self.textViewHeightChangeBlock) {
-                self.textViewHeightChangeBlock(self.text, currentTextViewHeight);
-            }
+        BOOL shouldUpdateHeight = YES;
+        if (oldTextViewHeight > self.maxTextViewHeight && currentTextViewHeight > self.maxTextViewHeight) {
+            shouldUpdateHeight = NO;
+        }
+        
+        if (shouldUpdateHeight) {
+            CGFloat newTextViewHeight = MIN(currentTextViewHeight, self.maxTextViewHeight);
+            _currentTexViewHeight = newTextViewHeight;
+        }
+        
+        if (self.didChangeCompleteBlock) {
+            self.didChangeCompleteBlock(self.text, shouldUpdateHeight, self.currentTexViewHeight);
+        }
+    } else {
+        if (self.didChangeCompleteBlock) {
+            self.didChangeCompleteBlock(self.text, NO, self.currentTexViewHeight);
         }
     }
 }

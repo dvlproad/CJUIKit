@@ -39,6 +39,9 @@ typedef NS_ENUM(NSUInteger, CJSliderPopoverDispalyType) {
     CJSliderPopoverDispalyTypePercent,      /**< 百分比显示 */
 };
 
+
+//NS_ASSUME_NONNULL_BEGIN
+
 @protocol CJSliderControlDelegate <NSObject>
 
 /**
@@ -138,3 +141,4 @@ typedef NS_ENUM(NSUInteger, CJSliderPopoverDispalyType) {
 
 @end
 
+//NS_ASSUME_NONNULL_END

@@ -33,6 +33,11 @@ typedef NS_ENUM(NSUInteger, CJAnimationType) {
     CJAnimationTypeCATransform3D
 };
 
+
+
+
+NS_ASSUME_NONNULL_BEGIN
+
 @interface UIView (CJPopupInView) {
     
 }
@@ -51,9 +56,9 @@ typedef NS_ENUM(NSUInteger, CJAnimationType) {
 - (void)cj_popupInView:(UIView *)popupSuperview
             withOrigin:(CGPoint)popupViewOrigin
                   size:(CGSize)popupViewSize
-  blankViewCreateBlock:(UIView *(^)(void))blankViewCreateBlock
-          showComplete:(void(^)(void))showPopupViewCompleteBlock
-      tapBlankComplete:(void(^)(void))tapBlankViewCompleteBlock;
+  blankViewCreateBlock:(UIView *(^ _Nullable)(void))blankViewCreateBlock
+          showComplete:(void(^ _Nullable)(void))showPopupViewCompleteBlock
+      tapBlankComplete:(void(^ _Nullable)(void))tapBlankViewCompleteBlock;
 
 
 /*
@@ -69,9 +74,9 @@ typedef NS_ENUM(NSUInteger, CJAnimationType) {
 - (void)cj_popupInCenterWindow:(CJAnimationType)animationType
                       withSize:(CGSize)popupViewSize
                   centerOffset:(CGPoint)centerOffset
-                  blankViewCreateBlock:(UIView *(^)(void))blankViewCreateBlock
-                  showComplete:(void(^)(void))showPopupViewCompleteBlock
-              tapBlankComplete:(void(^)(void))tapBlankViewCompleteBlock;
+          blankViewCreateBlock:(UIView *(^ _Nullable)(void))blankViewCreateBlock
+                  showComplete:(void(^ _Nullable)(void))showPopupViewCompleteBlock
+              tapBlankComplete:(void(^ _Nullable)(void))tapBlankViewCompleteBlock;
 
 
 /*
@@ -87,9 +92,9 @@ typedef NS_ENUM(NSUInteger, CJAnimationType) {
 - (void)cj_popupInBottomWindow:(CJAnimationType)animationType
                     withHeight:(CGFloat)popupViewHeight
                     edgeInsets:(UIEdgeInsets)edgeInsets
-          blankViewCreateBlock:(UIView *(^)(void))blankViewCreateBlock
-                  showComplete:(void(^)(void))showPopupViewCompleteBlock
-              tapBlankComplete:(void(^)(void))tapBlankViewCompleteBlock;
+                  blankViewCreateBlock:(UIView *(^ _Nullable)(void))blankViewCreateBlock
+                  showComplete:(void(^ _Nullable)(void))showPopupViewCompleteBlock
+              tapBlankComplete:(void(^ _Nullable)(void))tapBlankViewCompleteBlock;
 
 /**
  *  隐藏弹出视图
@@ -101,3 +106,5 @@ typedef NS_ENUM(NSUInteger, CJAnimationType) {
 - (void)cj_hidePopupViewWithAnimationType:(CJAnimationType)animationType;
 
 @end
+
+NS_ASSUME_NONNULL_END

@@ -14,6 +14,8 @@
 
 #import <UIKit/UIKit.h>
 
+NS_ASSUME_NONNULL_BEGIN
+
 @interface CJTextView : UITextView {
     
 }
@@ -27,18 +29,28 @@
 
 @property (nonatomic, assign, readonly) NSInteger originTextViewHeight;   /**< 文本框的初始高度 */
 
+
+
+
 ///通用设置，子类需要继承此方法
 - (void)commonInit NS_REQUIRES_SUPER;
+
+/*
+ *  设置didChange触发时候的各个操作
+ *
+ *  @param didChangeHappenHandle        didChange触发开始的时候
+ *  @param didChangeCompleteBlock       didChange操作结束的时候
+ */
+- (void)configDidChangeHappenHandle:(void(^ _Nullable)(UITextView *bTextView))didChangeHappenHandle
+             didChangeCompleteBlock:(void(^ _Nonnull)(NSString *text, BOOL shouldUpdateHeight, CGFloat currentTextViewHeight))didChangeCompleteBlock;
 
 /**
  *  设置文本框的最大行数，在文本框文字高度改变变化的时候，利用block中返回的文本高度来更新textView的高度
  *
  *  @param maxNumberOfLines             textView的最大行数
- *  @param textViewHeightChangeBlock    文字高度改变block（文字高度改变会自动调用）
  *
  */
-- (void)setMaxNumberOfLines:(NSUInteger)maxNumberOfLines
-      textHeightChangeBlock:(void(^)(NSString *text, CGFloat currentTextViewHeight))textViewHeightChangeBlock;
+- (void)setMaxNumberOfLines:(NSUInteger)maxNumberOfLines;
 
 
 
@@ -46,11 +58,9 @@
  *  设置文本框的最大高度，在文本框文字高度改变变化的时候，利用block中返回的文本高度来更新textView的高度
  *
  *  @param maxTextViewHeight            textView的最大高度
- *  @param textViewHeightChangeBlock    文字高度改变block（文字高度改变会自动调用）
  *
  */
-- (void)setMaxTextViewHeight:(NSUInteger)maxTextViewHeight
-       textHeightChangeBlock:(void (^)(NSString *text, CGFloat currentTextViewHeight))textViewHeightChangeBlock;
+- (void)setMaxTextViewHeight:(NSUInteger)maxTextViewHeight;
 
 ///如果是attributedText，需要手动调用textDidChange，因为不是改变text的不会调用，所以这个方法目前只用在了输入表情时候
 - (void)textDidChange;
@@ -71,3 +81,5 @@
 - (void)deleteCharactersLength:(NSInteger)shouldDeleteCharactersLength;
 
 @end
+
+NS_ASSUME_NONNULL_END

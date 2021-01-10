@@ -21,6 +21,19 @@
     CGSize imageSize = self.imageView.frame.size;
     CGSize titleSize = self.titleLabel.frame.size;
     
+    [self cjVerticalImageSize:imageSize spacing:spacing titleSize:titleSize];
+}
+
+/*
+ *  上图片、下文字(竖直排放)（调用前提：必须保证你的button的size已经确定后才能调用）
+ *  @attention  也要保证Button的宽度一定要大于等于图片的宽
+ *
+ *  @param imageSize    图片大小
+ *  @param spacing      图片和文字的间隔为多少
+ *  @param titleSize    文字大小
+ */
+- (void)cjVerticalImageSize:(CGSize)imageSize spacing:(CGFloat)spacing titleSize:(CGSize)titleSize
+{
     NSString *text = self.titleLabel.text;
     UIFont *font = self.titleLabel.font;
     //CGSize textSize = [text sizeWithFont:font];

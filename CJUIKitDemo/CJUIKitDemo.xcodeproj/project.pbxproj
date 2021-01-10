@@ -100,6 +100,12 @@
 		780E461E1E5DF87B00980127 /* CJUIKitDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 780E461D1E5DF87B00980127 /* CJUIKitDemoTests.m */; };
 		780E46291E5DF87B00980127 /* CJUIKitDemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 780E46281E5DF87B00980127 /* CJUIKitDemoUITests.m */; };
 		780F51E325AB3D4800DECB38 /* CQShakeUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 780F51E225AB3D4800DECB38 /* CQShakeUtil.m */; };
+		780F529C25AB5CCC00DECB38 /* CQSubStringUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 780F529025AB5CCC00DECB38 /* CQSubStringUtil.m */; };
+		780F529D25AB5CCC00DECB38 /* CQBlockTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 780F529325AB5CCC00DECB38 /* CQBlockTextField.m */; };
+		780F529E25AB5CCC00DECB38 /* CQTextFieldDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 780F529625AB5CCC00DECB38 /* CQTextFieldDelegate.m */; };
+		780F529F25AB5CCC00DECB38 /* CQTextInputChangeResultModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 780F529925AB5CCC00DECB38 /* CQTextInputChangeResultModel.m */; };
+		780F52A025AB5CCC00DECB38 /* CJSubStringUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 780F529A25AB5CCC00DECB38 /* CJSubStringUtil.m */; };
+		780F52A125AB5CCC00DECB38 /* UITextViewCJHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 780F529B25AB5CCC00DECB38 /* UITextViewCJHelper.m */; };
 		78143150249C8FA50014EA69 /* AutoLayoutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7814314F249C8FA50014EA69 /* AutoLayoutViewController.m */; };
 		781495A92140D82600D0F2BC /* MantleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 781495A82140D82600D0F2BC /* MantleViewController.m */; };
 		781989A8225A34C000D01DBC /* CJDemoDateLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 781989A6225A34C000D01DBC /* CJDemoDateLabel.m */; };
@@ -555,6 +561,18 @@
 		780E462A1E5DF87B00980127 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		780F51E125AB3D4800DECB38 /* CQShakeUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CQShakeUtil.h; sourceTree = "<group>"; };
 		780F51E225AB3D4800DECB38 /* CQShakeUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CQShakeUtil.m; sourceTree = "<group>"; };
+		780F528F25AB5CCC00DECB38 /* CQTextInputChangeResultModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CQTextInputChangeResultModel.h; sourceTree = "<group>"; };
+		780F529025AB5CCC00DECB38 /* CQSubStringUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CQSubStringUtil.m; sourceTree = "<group>"; };
+		780F529125AB5CCC00DECB38 /* CJSubStringUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJSubStringUtil.h; sourceTree = "<group>"; };
+		780F529325AB5CCC00DECB38 /* CQBlockTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CQBlockTextField.m; sourceTree = "<group>"; };
+		780F529425AB5CCC00DECB38 /* CQTextFieldDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CQTextFieldDelegate.h; sourceTree = "<group>"; };
+		780F529525AB5CCC00DECB38 /* CQBlockTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CQBlockTextField.h; sourceTree = "<group>"; };
+		780F529625AB5CCC00DECB38 /* CQTextFieldDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CQTextFieldDelegate.m; sourceTree = "<group>"; };
+		780F529725AB5CCC00DECB38 /* UITextViewCJHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UITextViewCJHelper.h; sourceTree = "<group>"; };
+		780F529825AB5CCC00DECB38 /* CQSubStringUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CQSubStringUtil.h; sourceTree = "<group>"; };
+		780F529925AB5CCC00DECB38 /* CQTextInputChangeResultModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CQTextInputChangeResultModel.m; sourceTree = "<group>"; };
+		780F529A25AB5CCC00DECB38 /* CJSubStringUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJSubStringUtil.m; sourceTree = "<group>"; };
+		780F529B25AB5CCC00DECB38 /* UITextViewCJHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UITextViewCJHelper.m; sourceTree = "<group>"; };
 		7814314E249C8FA50014EA69 /* AutoLayoutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AutoLayoutViewController.h; sourceTree = "<group>"; };
 		7814314F249C8FA50014EA69 /* AutoLayoutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AutoLayoutViewController.m; sourceTree = "<group>"; };
 		781495A72140D82600D0F2BC /* MantleViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MantleViewController.h; sourceTree = "<group>"; };
@@ -1048,6 +1066,7 @@
 				1562F29223F5DBF40009FCEA /* CJSwitchView */,
 				1562F29523F5DBF40009FCEA /* CJTextView */,
 				1562F25E23F5DBF40009FCEA /* CJUIKit.h */,
+				780F528E25AB5CCC00DECB38 /* UITextInputCJHelper */,
 				1562F22323F5DBF40009FCEA /* CJUIKitConstant */,
 				1562F22C23F5DBF40009FCEA /* UIButton */,
 				1562F23823F5DBF40009FCEA /* UIColor */,
@@ -1578,6 +1597,33 @@
 				780E462A1E5DF87B00980127 /* Info.plist */,
 			);
 			path = CJUIKitDemoUITests;
+			sourceTree = "<group>";
+		};
+		780F528E25AB5CCC00DECB38 /* UITextInputCJHelper */ = {
+			isa = PBXGroup;
+			children = (
+				780F528F25AB5CCC00DECB38 /* CQTextInputChangeResultModel.h */,
+				780F529025AB5CCC00DECB38 /* CQSubStringUtil.m */,
+				780F529125AB5CCC00DECB38 /* CJSubStringUtil.h */,
+				780F529225AB5CCC00DECB38 /* TextField */,
+				780F529725AB5CCC00DECB38 /* UITextViewCJHelper.h */,
+				780F529825AB5CCC00DECB38 /* CQSubStringUtil.h */,
+				780F529925AB5CCC00DECB38 /* CQTextInputChangeResultModel.m */,
+				780F529A25AB5CCC00DECB38 /* CJSubStringUtil.m */,
+				780F529B25AB5CCC00DECB38 /* UITextViewCJHelper.m */,
+			);
+			path = UITextInputCJHelper;
+			sourceTree = "<group>";
+		};
+		780F529225AB5CCC00DECB38 /* TextField */ = {
+			isa = PBXGroup;
+			children = (
+				780F529325AB5CCC00DECB38 /* CQBlockTextField.m */,
+				780F529425AB5CCC00DECB38 /* CQTextFieldDelegate.h */,
+				780F529525AB5CCC00DECB38 /* CQBlockTextField.h */,
+				780F529625AB5CCC00DECB38 /* CQTextFieldDelegate.m */,
+			);
+			path = TextField;
 			sourceTree = "<group>";
 		};
 		781495A32140D80700D0F2BC /* MantleDemo */ = {
@@ -3054,6 +3100,7 @@
 				7850B71320937E85008F4A21 /* WelcomeViewToPop.m in Sources */,
 				97578AB225590F7100249AD6 /* UIWindow+RootSetting.m in Sources */,
 				1562F2E923F5DBF40009FCEA /* CJSwitchView.m in Sources */,
+				780F529C25AB5CCC00DECB38 /* CQSubStringUtil.m in Sources */,
 				78A621ED2135CA50004DA046 /* DemoFloatingWindow.m in Sources */,
 				78A99236257934B100B54E30 /* TextFieldHomeViewController.m in Sources */,
 				807F126020B507A30008B748 /* ViewAnimateViewController.m in Sources */,
@@ -3162,11 +3209,13 @@
 				78AB83C221B96D7000853E21 /* DemoTextFieldFactory.m in Sources */,
 				7808D5B62170919A007FC851 /* LoginChangeEnvironmentViewController.m in Sources */,
 				78B6C2D82159D1F100D5864E /* DemoBusFlightStationModel.m in Sources */,
+				780F529F25AB5CCC00DECB38 /* CQTextInputChangeResultModel.m in Sources */,
 				80FF909E1FC5649F00E437CF /* NestedXibSubViewA.m in Sources */,
 				78C8148D216E11AF00A6B190 /* AChildViewController.m in Sources */,
 				7802490F25828D4C00C7DBAD /* TextViewPlaceholderViewController.m in Sources */,
 				7808318722DC116700F36576 /* GifViewController.m in Sources */,
 				1562F2C623F5DBF40009FCEA /* UITextField+CJAddInputAccessoryView.m in Sources */,
+				780F529E25AB5CCC00DECB38 /* CQTextFieldDelegate.m in Sources */,
 				1562F2CC23F5DBF40009FCEA /* UIView+CJAnimation.m in Sources */,
 				97578AAC25590E9300249AD6 /* MainViewController.m in Sources */,
 				78B6C2E62159D6E900D5864E /* DemoBusStationLocationModel.m in Sources */,
@@ -3271,6 +3320,7 @@
 				80FF91531FC5668700E437CF /* PrivateSetting.m in Sources */,
 				78E189A5217791D200B8781A /* TranslucentLayoutViewController.m in Sources */,
 				1562F2BF23F5DBF40009FCEA /* UIButton+CJStructure.m in Sources */,
+				780F52A025AB5CCC00DECB38 /* CJSubStringUtil.m in Sources */,
 				1562F38923FD2FC70009FCEA /* AppDelegate.m in Sources */,
 				7894C2A7256ECAE200C73B5E /* CQAgeRangeSliderControl.m in Sources */,
 				78A9926E25795E3000B54E30 /* TSTextFieldAccessoryViewController.m in Sources */,
@@ -3285,6 +3335,7 @@
 				8008D7D220E5CF5700F98EF6 /* CallSystemViewController.m in Sources */,
 				78E189A8217796DF00B8781A /* EdgeLayoutViewController.m in Sources */,
 				781C737721BA6A170090080C /* TestValueChangeModel.m in Sources */,
+				780F529D25AB5CCC00DECB38 /* CQBlockTextField.m in Sources */,
 				78C8148E216E11AF00A6B190 /* Home1.m in Sources */,
 				78E189AB21781BD000B8781A /* TranslucentLayoutTableViewController.m in Sources */,
 				78ACAFFF2595088F000FEEEB /* ViewPandownViewController1.m in Sources */,
@@ -3298,6 +3349,7 @@
 				78C81489216E11AF00A6B190 /* CChildViewController.m in Sources */,
 				80FF919E1FC5682B00E437CF /* OtherHomeViewController.m in Sources */,
 				80FF90AD1FC5649F00E437CF /* NavigationBarViewController.m in Sources */,
+				780F52A125AB5CCC00DECB38 /* UITextViewCJHelper.m in Sources */,
 				80FF90A81FC5649F00E437CF /* ImageChangeColorViewController.m in Sources */,
 				97578D072559474F00249AD6 /* TSRangeSliderControl2.m in Sources */,
 				78A621A921319723004DA046 /* SuspendWindowViewController.m in Sources */,

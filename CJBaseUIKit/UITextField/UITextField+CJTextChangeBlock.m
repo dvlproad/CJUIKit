@@ -40,6 +40,9 @@ static NSString * const cjTextDidChangeBlockKey = @"cjTextDidChangeBlockKey";
  *  文本内容改变的事件
  */
 - (void)textFieldDidChange:(UITextField *)textField {
+//    // 过滤空格
+//    NSString *text = [[textField.text componentsSeparatedByCharactersInSet:[NSCharacterSet whitespaceCharacterSet]] componentsJoinedByString:@""];
+//    textField.text = text;
     if (self.cjTextDidChangeBlock) {
         self.cjTextDidChangeBlock(textField);
     }

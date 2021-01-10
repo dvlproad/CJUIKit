@@ -118,13 +118,22 @@ static NSString *cjMustHideFromPopupViewKey = @"cjMustHideFromPopupView";
 }
 
 #pragma mark - 底层接口
-/** 完整的描述请参见文件头部 */
+/*
+ *  将本View以size大小弹出到showInView视图中location位置
+ *
+ *  @param popupSuperview               弹出视图的父视图view
+ *  @param popupViewOrigin              弹出视图的左上角origin坐标
+ *  @param popupViewSize                弹出视图的size大小
+ *  @param blankViewCreateBlock         空白区域视图的创建方法
+ *  @param showPopupViewCompleteBlock   显示弹出视图后的操作
+ *  @param tapBlankViewCompleteBlock    点击空白区域后的操作(要自己执行cj_hidePopupView...来隐藏，因为有时候点击背景是不执行隐藏的)
+ */
 - (void)cj_popupInView:(UIView *)popupSuperview
             withOrigin:(CGPoint)popupViewOrigin
                   size:(CGSize)popupViewSize
-  blankViewCreateBlock:(UIView *(^)(void))blankViewCreateBlock
-          showComplete:(void(^)(void))showPopupViewCompleteBlock
-      tapBlankComplete:(void(^)(void))tapBlankViewCompleteBlock
+  blankViewCreateBlock:(UIView *(^ _Nullable)(void))blankViewCreateBlock
+          showComplete:(void(^ _Nullable)(void))showPopupViewCompleteBlock
+      tapBlankComplete:(void(^ _Nullable)(void))tapBlankViewCompleteBlock
 {
     CJPopupMainThreadAssert();
     
@@ -199,9 +208,9 @@ static NSString *cjMustHideFromPopupViewKey = @"cjMustHideFromPopupView";
 - (void)cj_popupInCenterWindow:(CJAnimationType)animationType
                       withSize:(CGSize)popupViewSize
                   centerOffset:(CGPoint)centerOffset
-          blankViewCreateBlock:(UIView *(^)(void))blankViewCreateBlock
-                  showComplete:(void(^)(void))showPopupViewCompleteBlock
-              tapBlankComplete:(void(^)(void))tapBlankViewCompleteBlock
+          blankViewCreateBlock:(UIView *(^ _Nullable)(void))blankViewCreateBlock
+                  showComplete:(void(^ _Nullable)(void))showPopupViewCompleteBlock
+              tapBlankComplete:(void(^ _Nullable)(void))tapBlankViewCompleteBlock
 {
     CJPopupMainThreadAssert();
     
@@ -257,13 +266,24 @@ static NSString *cjMustHideFromPopupViewKey = @"cjMustHideFromPopupView";
     }
     
 }
-/** 完整的描述请参见文件头部 */
+
+
+/*
+ *  将当前视图弹出到window底部
+ *
+ *  @param animationType                弹出时候的动画采用的类型
+ *  @param popupViewHeight              弹出视图的高度
+ *  @param edgeInsets                   弹窗与window的(左右下)边距
+ *  @param blankViewCreateBlock         空白区域视图的创建方法
+ *  @param showPopupViewCompleteBlock   显示弹出视图后的操作
+ *  @param tapBlankViewCompleteBlock    点击空白区域后的操作(要自己执行cj_hidePopupView...来隐藏，因为有时候点击背景是不执行隐藏的)
+ */
 - (void)cj_popupInBottomWindow:(CJAnimationType)animationType
                     withHeight:(CGFloat)popupViewHeight
                     edgeInsets:(UIEdgeInsets)edgeInsets
-                  blankViewCreateBlock:(UIView *(^)(void))blankViewCreateBlock
-                  showComplete:(void(^)(void))showPopupViewCompleteBlock
-              tapBlankComplete:(void(^)(void))tapBlankViewCompleteBlock
+                  blankViewCreateBlock:(UIView *(^ _Nullable)(void))blankViewCreateBlock
+                  showComplete:(void(^ _Nullable)(void))showPopupViewCompleteBlock
+              tapBlankComplete:(void(^ _Nullable)(void))tapBlankViewCompleteBlock
 {
     CJPopupMainThreadAssert();
     NSAssert(popupViewHeight != 0, @"弹出视图的高都不能为0");
@@ -372,7 +392,7 @@ static NSString *cjMustHideFromPopupViewKey = @"cjMustHideFromPopupView";
  *  @return 是否可以被添加成功
  */
 - (BOOL)letkeyWindowAddPopupView:(UIView *)popupView
-            blankViewCreateBlock:(UIView *(^)(void))blankViewCreateBlock
+            blankViewCreateBlock:(UIView *(^ _Nullable)(void))blankViewCreateBlock
 {
     UIWindow *keyWindow = [[UIApplication sharedApplication] keyWindow];
     
@@ -407,7 +427,7 @@ static NSString *cjMustHideFromPopupViewKey = @"cjMustHideFromPopupView";
  */
 - (BOOL)__letPopupSuperview:(UIView *)popupSuperview
                addPopupView:(UIView *)popupView
-       blankViewCreateBlock:(UIView *(^)(void))blankViewCreateBlock
+       blankViewCreateBlock:(UIView *(^ _Nullable)(void))blankViewCreateBlock
 {
     if ([popupSuperview.subviews containsObject:popupView]) {
         return NO;
