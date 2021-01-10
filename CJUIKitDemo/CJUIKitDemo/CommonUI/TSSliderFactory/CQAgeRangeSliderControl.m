@@ -7,7 +7,7 @@
 //
 
 #import "CQAgeRangeSliderControl.h"
-#import "CJSliderPopover.h"
+#import "CQShakeUtil.h"
 
 @interface CQAgeRangeSliderControl () {
     
@@ -17,6 +17,14 @@
 @end
 
 @implementation CQAgeRangeSliderControl
+
+#pragma mark - Init
+- (instancetype)initWithStartRangeAge:(NSInteger)startRangeAge
+                          endRangeAge:(NSInteger)endRangeAge
+                  chooseCompleteBlock:(void(^)(NSInteger minAge, NSInteger maxAge))chooseCompleteBlock
+{
+    return [self initWithMinRangeAge:16 maxRangeAge:60 startRangeAge:startRangeAge endRangeAge:endRangeAge chooseCompleteBlock:chooseCompleteBlock];
+}
 
 /*
  *  初始化
@@ -46,12 +54,22 @@
     } createPopoverViewBlock:^UIView *(BOOL left) {
         CGFloat popoverHeight = self.popoverSize.height;// 弹出框的高
         CGFloat popoverWidth = self.popoverSize.width;  // 弹出框的宽
-        UIView *popoverView = [[CJSliderPopover alloc] initWithFrame:CGRectMake(0, 0, popoverWidth, popoverHeight)];
-        return popoverView;
-    } valueChangedBlock:^(CJRangeSliderControl *bSlider, CJSliderValueChangeHappenType happenType, CGFloat leftThumbPercent, CGFloat rightThumbPercent) {
+        
+        UILabel *popoverLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, popoverWidth, popoverHeight)];
+        //popoverLabel.backgroundColor = [UIColor redColor];
+        popoverLabel.font = [UIFont systemFontOfSize:22];
+        popoverLabel.textColor = [UIColor colorWithRed:12/255.0 green:16/255.0 blue:27/255.0 alpha:1.0]; // #0C101B
+        popoverLabel.textAlignment = NSTextAlignmentCenter;
+        return popoverLabel;
+    } valueChangedBlock:^(CJRangeSliderControl *bSlider, CJSliderValueChangeHappenType happenType, CGFloat leftThumbPercent, CGFloat rightThumbPercent, CGFloat leftPopoverNum, CGFloat rightPopoverNum) {
         [self __ageUpdateValueByHappenType:happenType
-                          leftThumbPercent:leftThumbPercent
-                         rightThumbPercent:rightThumbPercent];
+                              leftThumbNum:leftPopoverNum
+                             rightThumbNum:rightPopoverNum];
+        
+    } gestureStateChangeBlock:^(CJSliderGRState gestureRecognizerState) {
+        if (gestureRecognizerState == CJSliderGRStateThumbDragEnd || gestureRecognizerState == CJSliderGRStateTrackTouchEnd) {
+            [CQShakeUtil shake];
+        }
     }];
     if (self) {
         _chooseCompleteBlock = chooseCompleteBlock;
@@ -64,10 +82,10 @@
 - (void)setupViews {
     self.backgroundColor = [UIColor clearColor];
     
-    self.trackHeight = 4;                   // 设置滑道高度
-    self.thumbSize = CGSizeMake(26, 26);    // 设置滑块大小
-    self.popoverSize = CGSizeMake(30, 32);  // 设置弹出框大小
-    self.popoverSpacing = 2;                // 设置弹出框底部与滑块顶部间距大小
+    self.trackHeight = 4;                       // 设置滑道高度
+    self.thumbSize = CGSizeMake(26, 26);        // 设置滑块大小
+    self.popoverSize = CGSizeMake(28, 22);      // 设置弹出框大小
+    self.popoverSpacing = 29;
     
     UIImage *normalImage = [UIImage imageNamed:@"slider_range_start"];
     UIImage *highlightedImage = [UIImage imageNamed:@"slider_range_start"];
@@ -76,10 +94,23 @@
     [self.rightThumb setImage:normalImage forState:UIControlStateNormal];
     [self.rightThumb setImage:highlightedImage forState:UIControlStateHighlighted];
     
-    self.leftThumb.alpha = 0.5;
-    self.rightThumb.alpha = 0.5;
-    [self.leftThumb setBackgroundColor:[UIColor purpleColor]];
-    [self.rightThumb setBackgroundColor:[UIColor brownColor]];
+//    self.leftThumb.alpha = 0.5;
+//    self.rightThumb.alpha = 0.5;
+//    [self.leftThumb setBackgroundColor:[UIColor purpleColor]];
+//    [self.rightThumb setBackgroundColor:[UIColor brownColor]];
+}
+
+#pragma mark - Event
+/*
+ *  请求到网络数据后更新选择值
+ *
+ *  @param startRangeAge                初始范围的起始值
+ *  @param endRangeAge                  初始范围的结束值
+ */
+- (void)updateStartRangeAge:(NSInteger)startRangeAge
+                endRangeAge:(NSInteger)endRangeAge
+{
+    [super updateStartRangeValue:startRangeAge endRangeValue:endRangeAge];
 }
 
 #pragma mark - Private Method
@@ -91,12 +122,9 @@
  *  @param rightThumbPercent    右边滑块中心点所在滑道的比例
  */
 - (void)__ageUpdateValueByHappenType:(CJSliderValueChangeHappenType)happenType
-                    leftThumbPercent:(CGFloat)leftThumbPercent
-                   rightThumbPercent:(CGFloat)rightThumbPercent
+                        leftThumbNum:(CGFloat)leftPopoverNum
+                       rightThumbNum:(CGFloat)rightPopoverNum
 {
-    CGFloat leftPopoverNum    = leftThumbPercent  * (self.maxValue - self.minValue);
-    CGFloat rightPopoverNum   = rightThumbPercent * (self.maxValue - self.minValue);
-    
     BOOL shouldUpdateLeft = YES;
     BOOL shouldUpdateRight = YES;
     
@@ -123,20 +151,20 @@
         }
     }
     
-    NSInteger minAge = (NSInteger)leftPopoverNum;
-    NSInteger maxAge = (NSInteger)rightPopoverNum;
+    NSInteger startAge = (NSInteger)leftPopoverNum;
+    NSInteger endAge = (NSInteger)rightPopoverNum;
     if (shouldUpdateLeft) {
-        NSString *leftContent = [NSString stringWithFormat:@"%zd", minAge];
-        [(CJSliderPopover *)self.leftPopover updatePopoverTextValue:leftContent];
+        NSString *leftContent = [NSString stringWithFormat:@"%zd", startAge];
+        [(UILabel *)self.leftPopover setText:leftContent];
     }
     
     if (shouldUpdateRight) {
-        NSString *rightContent = [NSString stringWithFormat:@"%zd", maxAge];
-        [(CJSliderPopover *)self.rightPopover updatePopoverTextValue:rightContent];
+        NSString *rightContent = [NSString stringWithFormat:@"%zd", endAge];
+        [(UILabel *)self.rightPopover setText:rightContent];
     }
-    //NSLog(@"age rangeSlider rangion:%f,%f", minValue, maxValue);
+    //NSLog(@"age rangeSlider rangion:%f,%f", startAge, endAge);
 
-    !_chooseCompleteBlock ?: _chooseCompleteBlock(minAge, maxAge);
+    !_chooseCompleteBlock ?: _chooseCompleteBlock(startAge, endAge);
 }
 
 /*

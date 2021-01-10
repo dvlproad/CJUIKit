@@ -13,6 +13,11 @@ NS_ASSUME_NONNULL_BEGIN
 @interface CQAgeRangeSliderControl : CJRangeSliderControl {
     
 }
+
+#pragma mark - Init
+- (instancetype)initWithStartRangeAge:(NSInteger)startRangeAge
+                          endRangeAge:(NSInteger)endRangeAge
+                  chooseCompleteBlock:(void(^)(NSInteger minAge, NSInteger maxAge))chooseCompleteBlock;
 /*
  *  初始化
  *
@@ -40,7 +45,22 @@ NS_ASSUME_NONNULL_BEGIN
                  createTrackViewBlock:(UIView * (^)(void))createTrackViewBlock
                  createFrontViewBlock:(UIView *(^)(void))createFrontViewBlock
                createPopoverViewBlock:(UIView * (^)(BOOL left))createPopoverViewBlock
-                    valueChangedBlock:(void(^)(CJRangeSliderControl *bSlider, CJSliderValueChangeHappenType happenType, CGFloat leftThumbPercent, CGFloat rightThumbPercent))valueChangedBlock NS_UNAVAILABLE;
+                    valueChangedBlock:(void(^)(CJRangeSliderControl *bSlider, CJSliderValueChangeHappenType happenType, CGFloat leftThumbPercent, CGFloat rightThumbPercent))valueChangedBlock
+              gestureStateChangeBlock:(void(^)(CJSliderGRState gestureRecognizerState))gestureStateChangeBlock NS_UNAVAILABLE;
+
+
+#pragma mark - Event
+/*
+ *  请求到网络数据后更新选择值
+ *
+ *  @param startRangeAge                初始范围的起始值
+ *  @param endRangeAge                  初始范围的结束值
+ */
+- (void)updateStartRangeAge:(NSInteger)startRangeAge
+                endRangeAge:(NSInteger)endRangeAge;
+
+- (void)updateStartRangeValue:(CGFloat)startRangeValue
+                endRangeValue:(CGFloat)endRangeValue NS_UNAVAILABLE;
 
 @end
 

@@ -99,6 +99,7 @@
 		780E460E1E5DF87B00980127 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 780E460C1E5DF87B00980127 /* Main.storyboard */; };
 		780E461E1E5DF87B00980127 /* CJUIKitDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 780E461D1E5DF87B00980127 /* CJUIKitDemoTests.m */; };
 		780E46291E5DF87B00980127 /* CJUIKitDemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 780E46281E5DF87B00980127 /* CJUIKitDemoUITests.m */; };
+		780F51E325AB3D4800DECB38 /* CQShakeUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 780F51E225AB3D4800DECB38 /* CQShakeUtil.m */; };
 		78143150249C8FA50014EA69 /* AutoLayoutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7814314F249C8FA50014EA69 /* AutoLayoutViewController.m */; };
 		781495A92140D82600D0F2BC /* MantleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 781495A82140D82600D0F2BC /* MantleViewController.m */; };
 		781989A8225A34C000D01DBC /* CJDemoDateLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 781989A6225A34C000D01DBC /* CJDemoDateLabel.m */; };
@@ -552,6 +553,8 @@
 		780E46241E5DF87B00980127 /* CJUIKitDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CJUIKitDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		780E46281E5DF87B00980127 /* CJUIKitDemoUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CJUIKitDemoUITests.m; sourceTree = "<group>"; };
 		780E462A1E5DF87B00980127 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		780F51E125AB3D4800DECB38 /* CQShakeUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CQShakeUtil.h; sourceTree = "<group>"; };
+		780F51E225AB3D4800DECB38 /* CQShakeUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CQShakeUtil.m; sourceTree = "<group>"; };
 		7814314E249C8FA50014EA69 /* AutoLayoutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AutoLayoutViewController.h; sourceTree = "<group>"; };
 		7814314F249C8FA50014EA69 /* AutoLayoutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AutoLayoutViewController.m; sourceTree = "<group>"; };
 		781495A72140D82600D0F2BC /* MantleViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MantleViewController.h; sourceTree = "<group>"; };
@@ -2666,6 +2669,8 @@
 				97578D062559474F00249AD6 /* TSRangeSliderControl2.m */,
 				7894C2A6256ECAE200C73B5E /* CQAgeRangeSliderControl.h */,
 				7894C2A2256ECAE100C73B5E /* CQAgeRangeSliderControl.m */,
+				780F51E125AB3D4800DECB38 /* CQShakeUtil.h */,
+				780F51E225AB3D4800DECB38 /* CQShakeUtil.m */,
 				7894C2A3256ECAE200C73B5E /* Resources */,
 			);
 			path = TSSliderFactory;
@@ -3286,6 +3291,7 @@
 				7885FC4A2156681F00B97DAA /* UIView+CJPopupInSuspendWindow.m in Sources */,
 				1562F2C823F5DBF40009FCEA /* UIView+CJShowExtendView.m in Sources */,
 				800E07E12016CCF500799B78 /* DataUtilViewController.m in Sources */,
+				780F51E325AB3D4800DECB38 /* CQShakeUtil.m in Sources */,
 				97EB213225A9BC0E008CDC13 /* UITextViewCJHelper.m in Sources */,
 				1562F2BB23F5DBF40009FCEA /* CJUIKitConstant.m in Sources */,
 				976794E9258093EF002FD0C7 /* AStringLengthViewController.m in Sources */,

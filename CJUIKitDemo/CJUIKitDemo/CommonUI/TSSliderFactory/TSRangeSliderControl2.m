@@ -8,6 +8,7 @@
 
 #import "TSRangeSliderControl2.h"
 #import "CJSliderPopover.h"
+#import <CQDemoKit/CJUIKitToastUtil.h>
 
 @interface TSRangeSliderControl2 () {
     
@@ -48,10 +49,14 @@
         CGFloat popoverWidth = self.popoverSize.width;  // 弹出框的宽
         UIView *popoverView = [[CJSliderPopover alloc] initWithFrame:CGRectMake(0, 0, popoverWidth, popoverHeight)];
         return popoverView;
-    } valueChangedBlock:^(CJRangeSliderControl *bSlider, CJSliderValueChangeHappenType happenType, CGFloat leftThumbPercent, CGFloat rightThumbPercent) {
+    } valueChangedBlock:^(CJRangeSliderControl *bSlider, CJSliderValueChangeHappenType happenType, CGFloat leftThumbPercent, CGFloat rightThumbPercent, CGFloat leftPopoverNum, CGFloat rightPopoverNum) {
         [self __ageUpdateValueByHappenType:happenType
                           leftThumbPercent:leftThumbPercent
                          rightThumbPercent:rightThumbPercent];
+    } gestureStateChangeBlock:^(CJSliderGRState gestureRecognizerState) {
+        if (gestureRecognizerState == CJSliderGRStateThumbDragEnd || gestureRecognizerState == CJSliderGRStateTrackTouchEnd) {
+            [CJUIKitToastUtil showMessage:@"做抖动动作"];
+        }
     }];
     if (self) {
         _chooseCompleteBlock = chooseCompleteBlock;

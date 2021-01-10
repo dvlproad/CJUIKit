@@ -23,11 +23,21 @@ typedef NS_ENUM(NSUInteger, CJSliderPopoverShowTimeType) {
  */
 typedef NS_ENUM(NSUInteger, CJSliderValueChangeHappenType) {
     CJSliderValueChangeHappenTypeInit,          /**< 由初始化设置而来 */
+    CJSliderValueChangeHappenTypeUpdate,        /**< 由用户设置网络请求后更新而来 */
     CJSliderValueChangeHappenTypeLeftMove,      /**< 由左边滑块拖动引起 */
     CJSliderValueChangeHappenTypeRightMove,     /**< 由右边滑块拖动引起 */
     CJSliderValueChangeHappenTypeTouchTrack,    /**< 由点击滑块上的点引起 */
 };
 
+/// slider的手势类型
+typedef NS_ENUM(NSUInteger, CJSliderGRState) {
+    CJSliderGRStateNone,                /**< 没有手势 */
+    CJSliderGRStateThumbDragBegin,      /**< 滑块拖动开始 */
+    CJSliderGRStateThumbDraging,        /**< 滑块拖动中 */
+    CJSliderGRStateThumbDragEnd,        /**< 滑块拖动结束 */
+    CJSliderGRStateTrackTouchBegin,     /**< 滑道点击开始 */
+    CJSliderGRStateTrackTouchEnd,       /**< 滑道点击结束 */
+};
 
 @interface CJRangeSliderControl : UIControl {
     
@@ -74,7 +84,9 @@ typedef NS_ENUM(NSUInteger, CJSliderValueChangeHappenType) {
  *  @param createTrackViewBlock         trackView的创建方法（会默认创建）
  *  @param createFrontViewBlock         frontView的创建方法（会默认创建）
  *  @param createPopoverViewBlock       popoverView的创建方法（会默认创建）
+ *  @param textFormatBlock              将浮点型value格式化的方法（比如将value显示为整数），默认nil，表示使用原值显示
  *  @param valueChangedBlock            选择的值发生变化的回调（happenType:滑块上的值改变发生的事件来源类型;leftThumbPercent:左边滑块中心点所在滑道的比例;rightThumbPercent:右边滑块中心点所在滑道的比例）
+ *  @param gestureStateChangeBlock      slider手势变化的回调（有时候会需要在某种结束后做震动处理）
  *
  *  @param slider滑块视图
  */
@@ -85,10 +97,23 @@ typedef NS_ENUM(NSUInteger, CJSliderValueChangeHappenType) {
                  createTrackViewBlock:(UIView * (^)(void))createTrackViewBlock
                  createFrontViewBlock:(UIView *(^)(void))createFrontViewBlock
                createPopoverViewBlock:(UIView * (^)(BOOL left))createPopoverViewBlock
-                    valueChangedBlock:(void(^)(CJRangeSliderControl *bSlider, CJSliderValueChangeHappenType happenType, CGFloat leftThumbPercent, CGFloat rightThumbPercent))valueChangedBlock NS_DESIGNATED_INITIALIZER;
+//                      textFormatBlock:(NSString *(^ _Nullable)(CGFloat value))textFormatBlock
+                    valueChangedBlock:(void(^)(CJRangeSliderControl *bSlider, CJSliderValueChangeHappenType happenType, CGFloat leftThumbPercent, CGFloat rightThumbPercent, CGFloat leftPopoverNum, CGFloat rightPopoverNum))valueChangedBlock
+              gestureStateChangeBlock:(void(^)(CJSliderGRState gestureRecognizerState))gestureStateChangeBlock NS_DESIGNATED_INITIALIZER;
 + (instancetype)new NS_UNAVAILABLE;
 - (instancetype)init NS_UNAVAILABLE;
 - (instancetype)initWithFrame:(CGRect)frame NS_UNAVAILABLE;
 - (instancetype)initWithCoder:(NSCoder *)aDecoder NS_UNAVAILABLE;
+
+
+#pragma mark - Event
+/*
+ *  请求到网络数据后更新选择值
+ *
+ *  @param startRangeValue              初始范围的起始值
+ *  @param endRangeValue                初始范围的结束值
+ */
+- (void)updateStartRangeValue:(CGFloat)startRangeValue
+                endRangeValue:(CGFloat)endRangeValue;
 
 @end
