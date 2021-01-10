@@ -84,7 +84,6 @@
 		7802490F25828D4C00C7DBAD /* TextViewPlaceholderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7802490925828D4A00C7DBAD /* TextViewPlaceholderViewController.m */; };
 		7802491025828D4C00C7DBAD /* TextViewAutoHeightViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7802490C25828D4B00C7DBAD /* TextViewAutoHeightViewController.m */; };
 		7802491125828D4C00C7DBAD /* TextViewVerticalCenterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7802490D25828D4B00C7DBAD /* TextViewVerticalCenterViewController.m */; };
-		78024917258296BE00C7DBAD /* CQHeightTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 78024915258296BD00C7DBAD /* CQHeightTextView.m */; };
 		7803DAAE22F7D519001E06B7 /* MJExtensionToModelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7803DAAC22F7D519001E06B7 /* MJExtensionToModelViewController.m */; };
 		7803DAB122F7D578001E06B7 /* MJExtensionToJSONViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7803DAAF22F7D578001E06B7 /* MJExtensionToJSONViewController.m */; };
 		7805E1D72369C5FC00B998EC /* PriceYuanToYuanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7805E1D52369C5FC00B998EC /* PriceYuanToYuanViewController.m */; };
@@ -107,6 +106,8 @@
 		780F534825AB678900DECB38 /* UITextInputChangeResultModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 780F534225AB678900DECB38 /* UITextInputChangeResultModel.m */; };
 		780F534925AB678900DECB38 /* CJSubStringUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 780F534625AB678900DECB38 /* CJSubStringUtil.m */; };
 		780F534A25AB678900DECB38 /* UITextInputCJHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 780F534725AB678900DECB38 /* UITextInputCJHelper.m */; };
+		780F536525AB728E00DECB38 /* UIVerticalCenterTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 780F536125AB728D00DECB38 /* UIVerticalCenterTextView.m */; };
+		780F536625AB728E00DECB38 /* CJVerticalCenterTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 780F536425AB728E00DECB38 /* CJVerticalCenterTextView.m */; };
 		78143150249C8FA50014EA69 /* AutoLayoutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7814314F249C8FA50014EA69 /* AutoLayoutViewController.m */; };
 		781495A92140D82600D0F2BC /* MantleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 781495A82140D82600D0F2BC /* MantleViewController.m */; };
 		781989A8225A34C000D01DBC /* CJDemoDateLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 781989A6225A34C000D01DBC /* CJDemoDateLabel.m */; };
@@ -357,8 +358,6 @@
 		976794E9258093EF002FD0C7 /* AStringLengthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 976794E7258093EE002FD0C7 /* AStringLengthViewController.m */; };
 		976794FA2580B494002FD0C7 /* KeyboardAutoMoveUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 976794F92580B494002FD0C7 /* KeyboardAutoMoveUpViewController.m */; };
 		9767973825834D11002FD0C7 /* UITextView+CJVerticalCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 9767973725834D10002FD0C7 /* UITextView+CJVerticalCenter.m */; };
-		9767973E2583512D002FD0C7 /* CJVerticalCenterTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9767973D2583512D002FD0C7 /* CJVerticalCenterTextView.m */; };
-		9767974425836B41002FD0C7 /* UIVerticalCenterTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9767974225836B41002FD0C7 /* UIVerticalCenterTextView.m */; };
 		E2649F5BE7F7FEF404688168 /* libPods-CJUIKitDemoTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 935109AAB855F6CC8B84B9A5 /* libPods-CJUIKitDemoTests.a */; };
 /* End PBXBuildFile section */
 
@@ -525,8 +524,6 @@
 		7802490C25828D4B00C7DBAD /* TextViewAutoHeightViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextViewAutoHeightViewController.m; sourceTree = "<group>"; };
 		7802490D25828D4B00C7DBAD /* TextViewVerticalCenterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextViewVerticalCenterViewController.m; sourceTree = "<group>"; };
 		7802490E25828D4B00C7DBAD /* TextViewPlaceholderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextViewPlaceholderViewController.h; sourceTree = "<group>"; };
-		78024915258296BD00C7DBAD /* CQHeightTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CQHeightTextView.m; sourceTree = "<group>"; };
-		78024916258296BE00C7DBAD /* CQHeightTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CQHeightTextView.h; sourceTree = "<group>"; };
 		7803DAAC22F7D519001E06B7 /* MJExtensionToModelViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJExtensionToModelViewController.m; sourceTree = "<group>"; };
 		7803DAAD22F7D519001E06B7 /* MJExtensionToModelViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJExtensionToModelViewController.h; sourceTree = "<group>"; };
 		7803DAAF22F7D578001E06B7 /* MJExtensionToJSONViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJExtensionToJSONViewController.m; sourceTree = "<group>"; };
@@ -570,6 +567,10 @@
 		780F534525AB678900DECB38 /* UITextInputChangeResultModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UITextInputChangeResultModel.h; sourceTree = "<group>"; };
 		780F534625AB678900DECB38 /* CJSubStringUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJSubStringUtil.m; sourceTree = "<group>"; };
 		780F534725AB678900DECB38 /* UITextInputCJHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UITextInputCJHelper.m; sourceTree = "<group>"; };
+		780F536125AB728D00DECB38 /* UIVerticalCenterTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIVerticalCenterTextView.m; sourceTree = "<group>"; };
+		780F536225AB728D00DECB38 /* UIVerticalCenterTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIVerticalCenterTextView.h; sourceTree = "<group>"; };
+		780F536325AB728E00DECB38 /* CJVerticalCenterTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJVerticalCenterTextView.h; sourceTree = "<group>"; };
+		780F536425AB728E00DECB38 /* CJVerticalCenterTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJVerticalCenterTextView.m; sourceTree = "<group>"; };
 		7814314E249C8FA50014EA69 /* AutoLayoutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AutoLayoutViewController.h; sourceTree = "<group>"; };
 		7814314F249C8FA50014EA69 /* AutoLayoutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AutoLayoutViewController.m; sourceTree = "<group>"; };
 		781495A72140D82600D0F2BC /* MantleViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MantleViewController.h; sourceTree = "<group>"; };
@@ -1004,10 +1005,6 @@
 		976794F92580B494002FD0C7 /* KeyboardAutoMoveUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeyboardAutoMoveUpViewController.m; sourceTree = "<group>"; };
 		9767973625834D10002FD0C7 /* UITextView+CJVerticalCenter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UITextView+CJVerticalCenter.h"; sourceTree = "<group>"; };
 		9767973725834D10002FD0C7 /* UITextView+CJVerticalCenter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UITextView+CJVerticalCenter.m"; sourceTree = "<group>"; };
-		9767973C2583512D002FD0C7 /* CJVerticalCenterTextView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CJVerticalCenterTextView.h; sourceTree = "<group>"; };
-		9767973D2583512D002FD0C7 /* CJVerticalCenterTextView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CJVerticalCenterTextView.m; sourceTree = "<group>"; };
-		9767974225836B41002FD0C7 /* UIVerticalCenterTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIVerticalCenterTextView.m; sourceTree = "<group>"; };
-		9767974325836B41002FD0C7 /* UIVerticalCenterTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIVerticalCenterTextView.h; sourceTree = "<group>"; };
 		9AC0A78AFE86FE250B370A06 /* Pods-CJUIKitDemoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CJUIKitDemoTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CJUIKitDemoTests/Pods-CJUIKitDemoTests.debug.xcconfig"; sourceTree = "<group>"; };
 		A078401C0E781545EB72B64D /* libPods-CJUIKitDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CJUIKitDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF18E9E3F2E33815C8D88994 /* Pods-CJUIKitDemoUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CJUIKitDemoUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CJUIKitDemoUITests/Pods-CJUIKitDemoUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -1428,14 +1425,8 @@
 			children = (
 				1562F29623F5DBF40009FCEA /* CJTextView.h */,
 				1562F29723F5DBF40009FCEA /* CJTextView.m */,
-				9767973C2583512D002FD0C7 /* CJVerticalCenterTextView.h */,
-				9767973D2583512D002FD0C7 /* CJVerticalCenterTextView.m */,
-				9767974325836B41002FD0C7 /* UIVerticalCenterTextView.h */,
-				9767974225836B41002FD0C7 /* UIVerticalCenterTextView.m */,
 				9767973625834D10002FD0C7 /* UITextView+CJVerticalCenter.h */,
 				9767973725834D10002FD0C7 /* UITextView+CJVerticalCenter.m */,
-				78024916258296BE00C7DBAD /* CQHeightTextView.h */,
-				78024915258296BD00C7DBAD /* CQHeightTextView.m */,
 			);
 			path = CJTextView;
 			sourceTree = "<group>";
@@ -1619,6 +1610,17 @@
 			path = UITextInputCJHelper;
 			sourceTree = "<group>";
 		};
+		780F535D25AB724700DECB38 /* TextView */ = {
+			isa = PBXGroup;
+			children = (
+				780F536325AB728E00DECB38 /* CJVerticalCenterTextView.h */,
+				780F536425AB728E00DECB38 /* CJVerticalCenterTextView.m */,
+				780F536225AB728D00DECB38 /* UIVerticalCenterTextView.h */,
+				780F536125AB728D00DECB38 /* UIVerticalCenterTextView.m */,
+			);
+			path = TextView;
+			sourceTree = "<group>";
+		};
 		781495A32140D80700D0F2BC /* MantleDemo */ = {
 			isa = PBXGroup;
 			children = (
@@ -1746,6 +1748,7 @@
 		7852D9DF216F16B000E50A39 /* CommonUI */ = {
 			isa = PBXGroup;
 			children = (
+				780F535D25AB724700DECB38 /* TextView */,
 				780F52D625AB65C600DECB38 /* TextField */,
 				97578CF22559400600249AD6 /* TSSliderFactory */,
 				7857ABB5225482D200B1569C /* CJDemoDatePickerView */,
@@ -3089,7 +3092,6 @@
 				1562F2EF23F5DBF40009FCEA /* UITextField+CJForbidKeyboard.m in Sources */,
 				800E07E92016CD1500799B78 /* KeyboardUtilViewController.m in Sources */,
 				1562F2B923F5DBF40009FCEA /* CJKeyboardAvoidingScrollView.m in Sources */,
-				9767973E2583512D002FD0C7 /* CJVerticalCenterTextView.m in Sources */,
 				789C447A21F07DAC00181144 /* ChangeEnvHomeViewController.m in Sources */,
 				801F75D920A040D800A2E027 /* BBXDPasswordTextField.m in Sources */,
 				78C8148C216E11AF00A6B190 /* DChildViewController.m in Sources */,
@@ -3097,6 +3099,7 @@
 				7856F72B21F4E790004AF751 /* TestDataModel.m in Sources */,
 				788113CE21996A3A00D1630D /* SubInheritableSharedInstanceClass.m in Sources */,
 				781495A92140D82600D0F2BC /* MantleViewController.m in Sources */,
+				780F536525AB728E00DECB38 /* UIVerticalCenterTextView.m in Sources */,
 				7808D59321703C33007FC851 /* ChangeEnvironmentViewController.m in Sources */,
 				780F52E125AB65C600DECB38 /* CQTextFieldDelegate.m in Sources */,
 				783A4A19219BC73500CBF4FC /* NSObject+CJSharedInstance.m in Sources */,
@@ -3145,7 +3148,6 @@
 				1562F2BD23F5DBF40009FCEA /* CJLabel.m in Sources */,
 				782ACC98223C0E220041B642 /* CodeScrollViewController1.m in Sources */,
 				78E1899E2177874B00B8781A /* SliderHomeViewController.m in Sources */,
-				78024917258296BE00C7DBAD /* CQHeightTextView.m in Sources */,
 				78E18952217778D900B8781A /* NavigationBarHomeViewController.m in Sources */,
 				78ACAFEF2595066C000FEEEB /* UIView+CJPanAction.m in Sources */,
 				80D0120F210336E100D1EDF0 /* ChangeViewController.m in Sources */,
@@ -3245,7 +3247,6 @@
 				80582FA120C121B500C01225 /* ImageRotateViewController.m in Sources */,
 				781C736921BA5E140090080C /* NSCalendarCJHelperViewController.m in Sources */,
 				1562F2E323F5DBF40009FCEA /* CJSliderPopover.m in Sources */,
-				9767974425836B41002FD0C7 /* UIVerticalCenterTextView.m in Sources */,
 				9767973825834D11002FD0C7 /* UITextView+CJVerticalCenter.m in Sources */,
 				9756E36E25A5C6A00039365C /* TSTextFieldDelegateViewController.m in Sources */,
 				808BF3242019C3E900511F7C /* YunUncaughtExceptionHandler.m in Sources */,
@@ -3305,6 +3306,7 @@
 				78ACAFFF2595088F000FEEEB /* ViewPandownViewController1.m in Sources */,
 				7885FC4A2156681F00B97DAA /* UIView+CJPopupInSuspendWindow.m in Sources */,
 				1562F2C823F5DBF40009FCEA /* UIView+CJShowExtendView.m in Sources */,
+				780F536625AB728E00DECB38 /* CJVerticalCenterTextView.m in Sources */,
 				800E07E12016CCF500799B78 /* DataUtilViewController.m in Sources */,
 				780F51E325AB3D4800DECB38 /* CQShakeUtil.m in Sources */,
 				1562F2BB23F5DBF40009FCEA /* CJUIKitConstant.m in Sources */,
