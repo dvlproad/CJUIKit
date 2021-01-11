@@ -181,7 +181,9 @@ typedef NS_ENUM(NSUInteger, CJCompareResult) {
         //截取到该位置的子字符串太小，试下加上下个字是不是到了，到就取[本个位置]结束。没到那就去寻找更大的
         NSString *afterHalfHopeReplacementString =  substringToIndexBlock(hopeReplacementString, index+1); // 替换文本的一半字符串+加上一个字之后
         NSInteger afterHalfHopeReplacementStringLength = lengthCalculationBlock(afterHalfHopeReplacementString);
-        if (afterHalfHopeReplacementStringLength > replacementStringMaxLength) {
+        if (afterHalfHopeReplacementStringLength == replacementStringMaxLength) {
+            return index+1; //取[下个位置]
+        } else if (afterHalfHopeReplacementStringLength > replacementStringMaxLength) {
             return index;   //取[本个位置]
         } else {
             NSInteger unsearchLength = hopeReplacementString.length - index;

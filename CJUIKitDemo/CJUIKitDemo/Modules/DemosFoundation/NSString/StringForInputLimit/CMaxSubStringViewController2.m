@@ -83,6 +83,31 @@
 
         [sectionDataModels addObject:sectionDataModel];
     }
+    
+    
+    
+    // 字符串截取（不含表情时候）
+    {
+        CQDMSectionDataModel *sectionDataModel = [[CQDMSectionDataModel alloc] init];
+        sectionDataModel.theme = @"长度计算使用【自定义cj_length算法】的时候的最大字符串\n(注意：以下每个都不能删，都得通过\n以下每个都不能删，都得通过\n以下每个都不能删，都得通过\n)";
+        {
+            CJDealTextModel *dealTextModel = [[CJDealTextModel alloc] init];
+            dealTextModel.placeholder = @"请输入截取的操作对象";
+            dealTextModel.text = @"一二三四五六七八九十壹贰叁肆伍陆柒捌"; //经济开发区的生活状态越来越好越来越多
+            dealTextModel.hopeResultText = @"一二三四五六七八九十";
+            dealTextModel.actionTitle = @"截取子字符串使其最多字符个数不超过20";
+            dealTextModel.autoExec = YES;
+            dealTextModel.actionBlock = ^NSString * _Nonnull(NSString * _Nonnull oldString) {
+                NSString *maxSubstring = [CQSubStringUtil maxSubstringFromString:oldString maxLength:20];
+                return maxSubstring;
+            };
+            [sectionDataModel.values addObject:dealTextModel];
+        }
+
+        [sectionDataModels addObject:sectionDataModel];
+    }
+    
+    
 
     // 字符串截取（含表情时候）
     {

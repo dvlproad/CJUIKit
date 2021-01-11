@@ -25,6 +25,112 @@
     
     NSMutableArray *sectionDataModels = [[NSMutableArray alloc] init];
     
+    // 字符串长度验证--纯(空和nil)
+    {
+        CQDMSectionDataModel *sectionDataModel = [[CQDMSectionDataModel alloc] init];
+        sectionDataModel.theme = @"字符串长度验证--空和nil";
+        // 空字符串
+        {
+            CJDealTextModel *dealTextModel = [[CJDealTextModel alloc] init];
+            dealTextModel.placeholder = @"请输入要验证的值";
+            dealTextModel.text = @"我是【空字符串】";
+            dealTextModel.hopeResultText = @"0";
+            dealTextModel.actionTitle = @"【空字符串】(length)";
+            dealTextModel.autoExec = YES;
+            dealTextModel.actionBlock = ^NSString * _Nonnull(NSString * _Nonnull oldString) {
+                oldString = @"";
+                NSInteger length = [oldString length];
+                return [NSString stringWithFormat:@"%zd", length];
+            };
+            [sectionDataModel.values addObject:dealTextModel];
+        }
+        {
+            CJDealTextModel *dealTextModel = [[CJDealTextModel alloc] init];
+            dealTextModel.placeholder = @"请输入要验证的值";
+            dealTextModel.text = @"我是【空字符串】";
+            dealTextModel.hopeResultText = @"0";
+            dealTextModel.actionTitle = @"【空字符串】(cj_length)";
+            dealTextModel.autoExec = YES;
+            dealTextModel.actionBlock = ^NSString * _Nonnull(NSString * _Nonnull oldString) {
+                oldString = @"";
+                NSInteger length = [oldString cj_length];
+                return [NSString stringWithFormat:@"%zd", length];
+            };
+            [sectionDataModel.values addObject:dealTextModel];
+        }
+        
+        // nil字符串
+        {
+            CJDealTextModel *dealTextModel = [[CJDealTextModel alloc] init];
+            dealTextModel.placeholder = @"请输入要验证的值";
+            dealTextModel.text = @"我是【nil字符串】";
+            dealTextModel.hopeResultText = @"0";
+            dealTextModel.actionTitle = @"【nil字符串】(length)";
+            dealTextModel.autoExec = YES;
+            dealTextModel.actionBlock = ^NSString * _Nonnull(NSString * _Nonnull oldString) {
+                oldString = nil;
+                NSInteger length = [oldString length];
+                return [NSString stringWithFormat:@"%zd", length];
+            };
+            [sectionDataModel.values addObject:dealTextModel];
+        }
+        {
+            CJDealTextModel *dealTextModel = [[CJDealTextModel alloc] init];
+            dealTextModel.placeholder = @"请输入要验证的值";
+            dealTextModel.text = @"我是【nil字符串】";
+            dealTextModel.hopeResultText = @"0";
+            dealTextModel.actionTitle = @"【nil字符串】(cj_length)";
+            dealTextModel.autoExec = YES;
+            dealTextModel.actionBlock = ^NSString * _Nonnull(NSString * _Nonnull oldString) {
+                oldString = nil;
+                NSInteger length = [oldString cj_length];
+                return [NSString stringWithFormat:@"%zd", length];
+            };
+            [sectionDataModel.values addObject:dealTextModel];
+        }
+        
+        [sectionDataModels addObject:sectionDataModel];
+    }
+    
+    
+    // 字符串长度验证--截取错误的字符串的计算
+    {
+        CQDMSectionDataModel *sectionDataModel = [[CQDMSectionDataModel alloc] init];
+        sectionDataModel.theme = @"字符串长度验证--截取错误的字符串的计算";
+        // 截取错误的字符串的计算
+        {
+            CJDealTextModel *dealTextModel = [[CJDealTextModel alloc] init];
+            dealTextModel.placeholder = @"请输入要验证的值";
+            dealTextModel.text = @"好好👌 使用系统方法截取前3位的时候的那个值的长度";
+            dealTextModel.hopeResultText = @"3";
+            dealTextModel.actionTitle = @"【空字符串】(length)";
+            dealTextModel.autoExec = YES;
+            dealTextModel.actionBlock = ^NSString * _Nonnull(NSString * _Nonnull oldString) {
+                oldString = [@"好好👌" substringToIndex:3];
+                NSInteger length = [oldString length];
+                return [NSString stringWithFormat:@"%zd", length];
+            };
+            [sectionDataModel.values addObject:dealTextModel];
+        }
+        {
+            CJDealTextModel *dealTextModel = [[CJDealTextModel alloc] init];
+            dealTextModel.placeholder = @"请输入要验证的值";
+            dealTextModel.text = @"好好👌 使用系统方法截取前3位的时候的那个值的长度（验证系统的length方法处理含表情字符串的时候有bug）";
+            dealTextModel.hopeResultText = @"4";
+            dealTextModel.actionTitle = @"【空字符串】(cj_length)";
+            dealTextModel.autoExec = YES;
+            dealTextModel.actionBlock = ^NSString * _Nonnull(NSString * _Nonnull oldString) {
+                oldString = [@"好好👌" substringToIndex:3];
+                NSInteger length = [oldString cj_length];
+                return [NSString stringWithFormat:@"%zd", length];
+            };
+            [sectionDataModel.values addObject:dealTextModel];
+        }
+        
+        [sectionDataModels addObject:sectionDataModel];
+    }
+    
+    
     // 字符串长度验证--纯
     {
         CQDMSectionDataModel *sectionDataModel = [[CQDMSectionDataModel alloc] init];
