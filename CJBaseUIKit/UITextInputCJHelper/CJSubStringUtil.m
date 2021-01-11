@@ -128,19 +128,21 @@ typedef NS_ENUM(NSUInteger, CJCompareResult) {
     }
     
     NSInteger hopeLength = hopeReplacementString.length;
-    NSInteger index = hopeLength/2;
-    return [self __searchMaxIndexFromString:hopeReplacementString maxLength:replacementStringMaxLength searchStartIndex:index substringToIndexBlock:substringToIndexBlock lengthCalculationBlock:lengthCalculationBlock];
+    NSInteger searchMinIndex = 0;
+    NSInteger searchMaxIndex = hopeLength;
+    return [self __searchMaxIndexFromString:hopeReplacementString maxLength:replacementStringMaxLength searchMinIndex:searchMinIndex searchMaxIndex:searchMaxIndex substringToIndexBlock:substringToIndexBlock lengthCalculationBlock:lengthCalculationBlock];
 }
 
 
 #pragma mark - Private Method
 /*
- *  按自定义的指定算法计算字符串占位长度时候，从index位置开始寻找最大字符串的索引
+ *  按自定义的指定算法计算字符串占位长度时候，计算从searchMinIndex到searchMaxIndex中哪个checkIndex是最大字符串的索引位置
  （如中文按占2个字符计算，则从10个中文字中查找不超过5个字符的字符串，应该是2个中文字）
  *
  *  @param hopeReplacementString        字符串
  *  @param replacementStringMaxLength   字符长度
- *  @param index                        查找开始的位置
+ *  @param searchMinIndex               查找最小的位置
+ *  @param searchMaxIndex               查找最大的位置
  *  @param substringToIndexBlock        子字符串截取的方法（有时候不能使用系统方法，防止在处理含表情字符串的时候，截取的字符串错误。如"👌",截取1，得到的不是"👌"）
  *  @param lengthCalculationBlock       字符串占位长度的计算方法
  *
@@ -148,14 +150,16 @@ typedef NS_ENUM(NSUInteger, CJCompareResult) {
  */
 + (NSInteger)__searchMaxIndexFromString:(NSString *)hopeReplacementString
                               maxLength:(NSInteger)replacementStringMaxLength
-                       searchStartIndex:(NSInteger)index
+                         searchMinIndex:(NSInteger)searchMinIndex
+                         searchMaxIndex:(NSInteger)searchMaxIndex
                   substringToIndexBlock:(NSString*(^ _Nonnull)(NSString *bString, NSInteger bIndex))substringToIndexBlock
                  lengthCalculationBlock:(NSInteger(^ _Nonnull)(NSString *calculationString))lengthCalculationBlock
 {
     NSAssert(substringToIndexBlock != nil, @"子字符串截取的方法不能为空（有时候不能使用系统方法，防止在处理含表情字符串的时候，截取的字符串错误。如【👌】,截取1，得到的不是【👌】）");
     NSAssert(lengthCalculationBlock != nil, @"字符串占位长度的计算方法不能为空");
     
-    CJCompareResult compareResult = [self __checkIsMaxAtIndex:index
+    NSInteger checkIndex = searchMinIndex+(searchMaxIndex-searchMinIndex)/2;
+    CJCompareResult compareResult = [self __checkIsMaxAtIndex:checkIndex
                                                     forString:hopeReplacementString
                                                 withMaxLength:replacementStringMaxLength
                                         substringToIndexBlock:substringToIndexBlock
@@ -164,31 +168,31 @@ typedef NS_ENUM(NSUInteger, CJCompareResult) {
         return hopeReplacementString.length;
     } else if (compareResult == CJCompareResultOK) {
         //截取到该位置的子字符串刚好到最大长度，即本身刚好或者加上一个字后刚好
-        return index;
+        return checkIndex;
     } else if (compareResult == CJCompareResultTooBig) {
         //截取到该位置的子字符串太大，先试下减去上个字是不是到了，到就取[前个位置]结束。没到那就那就去寻找更小的
-        NSString *beforeHalfHopeReplacementString = substringToIndexBlock(hopeReplacementString, index-1); // 替换文本的一半字符串-减去一个字之后
+        NSString *beforeHalfHopeReplacementString = substringToIndexBlock(hopeReplacementString, checkIndex-1); // 替换文本的一半字符串-减去一个字之后
         NSInteger beforeHalfHopeReplacementStringLength = lengthCalculationBlock(beforeHalfHopeReplacementString);
         if (beforeHalfHopeReplacementStringLength <= replacementStringMaxLength) {
-            return index-1; //取[前个位置]
+            return checkIndex-1; //取[前个位置]
         } else {
-            NSInteger unsearchLength = index;
-            NSInteger nextIndex = index - unsearchLength/2; // 特殊情况1=1-1/2
-            return [self __searchMaxIndexFromString:hopeReplacementString maxLength:replacementStringMaxLength searchStartIndex:nextIndex substringToIndexBlock:substringToIndexBlock lengthCalculationBlock:lengthCalculationBlock];
+            NSInteger newSearchMinIndex = searchMinIndex;
+            NSInteger newSearchMaxIndex = checkIndex;
+            return [self __searchMaxIndexFromString:hopeReplacementString maxLength:replacementStringMaxLength searchMinIndex:newSearchMinIndex searchMaxIndex:newSearchMaxIndex substringToIndexBlock:substringToIndexBlock lengthCalculationBlock:lengthCalculationBlock];
         }
         
     } else { // CJCompareResultTooSmall
         //截取到该位置的子字符串太小，试下加上下个字是不是到了，到就取[本个位置]结束。没到那就去寻找更大的
-        NSString *afterHalfHopeReplacementString =  substringToIndexBlock(hopeReplacementString, index+1); // 替换文本的一半字符串+加上一个字之后
+        NSString *afterHalfHopeReplacementString =  substringToIndexBlock(hopeReplacementString, checkIndex+1); // 替换文本的一半字符串+加上一个字之后
         NSInteger afterHalfHopeReplacementStringLength = lengthCalculationBlock(afterHalfHopeReplacementString);
         if (afterHalfHopeReplacementStringLength == replacementStringMaxLength) {
-            return index+1; //取[下个位置]
+            return checkIndex+1; //取[下个位置]
         } else if (afterHalfHopeReplacementStringLength > replacementStringMaxLength) {
-            return index;   //取[本个位置]
+            return checkIndex;   //取[本个位置]
         } else {
-            NSInteger unsearchLength = hopeReplacementString.length - index;
-            NSInteger nextIndex = index + unsearchLength/2;
-            return [self __searchMaxIndexFromString:hopeReplacementString maxLength:replacementStringMaxLength searchStartIndex:nextIndex substringToIndexBlock:substringToIndexBlock lengthCalculationBlock:lengthCalculationBlock];
+            NSInteger newSearchMinIndex = checkIndex;
+            NSInteger newSearchMaxIndex = searchMaxIndex;
+            return [self __searchMaxIndexFromString:hopeReplacementString maxLength:replacementStringMaxLength searchMinIndex:newSearchMinIndex searchMaxIndex:newSearchMaxIndex substringToIndexBlock:substringToIndexBlock lengthCalculationBlock:lengthCalculationBlock];
         }
     }
 }
