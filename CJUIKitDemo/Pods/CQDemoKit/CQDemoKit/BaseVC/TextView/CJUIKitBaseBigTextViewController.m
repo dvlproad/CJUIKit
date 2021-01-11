@@ -173,7 +173,7 @@
     NSString *lastNumberString = dealTextModel.actionBlock(originNumberString);
     mcell.resultLabel.text = lastNumberString;
     
-    BOOL validateSuccess = YES;
+    BOOL validateSuccess = NO;
     if (dealTextModel.hopeResultText.length > 0) {
         validateSuccess = [lastNumberString isEqualToString:dealTextModel.hopeResultText];
         
@@ -185,6 +185,12 @@
                 NSString *successMessage = [NSString stringWithFormat:@"恭喜你，代码方法处理正确！"];
                 [CJUIKitToastUtil showMessage:successMessage];
             }
+        }
+    } else {
+        if (lastNumberString == nil || lastNumberString.length == 0) {
+            validateSuccess = YES;
+        } else {
+            validateSuccess = NO;
         }
     }
     

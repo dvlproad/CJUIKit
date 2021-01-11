@@ -45,15 +45,15 @@
             };
             [sectionDataModel.values addObject:dealTextModel];
         }
-        
+
         [sectionDataModels addObject:sectionDataModel];
     }
-    
+
     // 情况2：能插部分
     {
         CQDMSectionDataModel *sectionDataModel = [[CQDMSectionDataModel alloc] init];
         sectionDataModel.theme = @"情况2：能插部分";
-        
+
         {
             // 情况2：能插部分
             CJDealTextModel *dealTextModel = [[CJDealTextModel alloc] init];
@@ -69,7 +69,7 @@
             };
             [sectionDataModel.values addObject:dealTextModel];
         }
-        
+
         [sectionDataModels addObject:sectionDataModel];
     }
     

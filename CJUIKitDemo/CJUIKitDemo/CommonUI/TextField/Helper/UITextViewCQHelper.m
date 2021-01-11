@@ -8,6 +8,7 @@
 
 #import "UITextViewCQHelper.h"
 #import "NSString+CJTextLength.h"
+#import "CQSubStringUtil.h"
 
 @implementation UITextViewCQHelper
 
@@ -26,7 +27,10 @@
                                                 replacementString:(NSString *)string
                                                     maxTextLength:(NSInteger)maxTextLength
 {
-    UITextInputChangeResultModel *resultModel = [UITextInputCJHelper shouldChange_newTextFromOldText:oldText shouldChangeCharactersInRange:range replacementString:string maxTextLength:maxTextLength lengthCalculationBlock:^NSInteger(NSString * _Nonnull calculationString) {
+    UITextInputChangeResultModel *resultModel = [UITextInputCJHelper shouldChange_newTextFromOldText:oldText shouldChangeCharactersInRange:range replacementString:string maxTextLength:maxTextLength substringToIndexBlock:^NSString * _Nonnull(NSString * _Nonnull bString, NSInteger bIndex) {
+        NSString *indexSubstring = [CQSubStringUtil substringToIndex:bIndex forEmojiString:bString];
+        return indexSubstring;
+    } lengthCalculationBlock:^NSInteger(NSString * _Nonnull calculationString) {
         NSInteger calculationStringLength = calculationString.cj_length;
         return calculationStringLength;
     }];

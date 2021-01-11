@@ -18,6 +18,7 @@
  *  @param range                    range
  *  @param string                   string
  *  @param maxTextLength            maxTextLength(为0的时候不做长度限制)
+ *  @param substringToIndexBlock    子字符串截取的方法（有时候不能使用系统方法，防止在处理含表情字符串的时候，截取的字符串错误。如"👌",截取1，得到的不是"👌"）
  *  @param lengthCalculationBlock   字符串占位长度的计算方法
  *
  *  @return newText
@@ -26,7 +27,7 @@
                                     shouldChangeCharactersInRange:(NSRange)range
                                                 replacementString:(NSString *)string
                                                     maxTextLength:(NSInteger)maxTextLength
-
+                                            substringToIndexBlock:(NSString*(^ _Nonnull)(NSString *bString, NSInteger bIndex))substringToIndexBlock
                                            lengthCalculationBlock:(NSInteger(^ _Nonnull)(NSString *calculationString))lengthCalculationBlock
 {
     NSAssert(lengthCalculationBlock != nil, @"字符串占位长度的计算方法不能为空");
@@ -66,7 +67,7 @@
         NSString *logMessage1 = [NSString stringWithFormat:@"Warning出现特殊情况:未被替换的文本【%@】的所占的长度%zd已经超过了最大限制长度%zd。理论上是不会出现这个情况的，除非对文本框使用setText。但为了容错,我们还是处理下。", unchangeText, unchangeTextLength, maxTextLength];
         
         
-        NSString *maxSubUnchangeText = [CJSubStringUtil maxSubstringFromString:unchangeText maxLength:maxTextLength lengthCalculationBlock:lengthCalculationBlock];
+        NSString *maxSubUnchangeText = [CJSubStringUtil maxSubstringFromString:unchangeText maxLength:maxTextLength substringToIndexBlock:substringToIndexBlock lengthCalculationBlock:lengthCalculationBlock];
         
         resultModel.hopeNewText = maxSubUnchangeText;
         resultModel.hopeReplacementString = nil;
@@ -81,8 +82,10 @@
     NSInteger replacementStringMaxLength = maxTextLength-unchangeTextLength;
     // 限制10个中文字的文本框，在已有8个中文字的时候，还可以的字符个数4个
     // 如果要插入的文本所占的字符个数超过所剩余的4个，如此时视图插入3个中文字，则应该进行限制
-    NSString *newReplacementString = [CJSubStringUtil maxSubstringFromString:hopeReplacementString maxLength:replacementStringMaxLength lengthCalculationBlock:lengthCalculationBlock];
-    
+    NSString *newReplacementString = [CJSubStringUtil maxSubstringFromString:hopeReplacementString maxLength:replacementStringMaxLength substringToIndexBlock:substringToIndexBlock lengthCalculationBlock:lengthCalculationBlock];
+    if (newReplacementString == nil) {
+        newReplacementString = @""; // 进行容错，确保下面调用stringByReplacingCharactersInRange的时候不会崩溃
+    }
     NSString *newText = [oldText stringByReplacingCharactersInRange:range withString:newReplacementString];//若允许改变，则会改变成的新文本
     
     isDifferentFromSystemDeal = [newReplacementString isEqualToString:string] == NO;

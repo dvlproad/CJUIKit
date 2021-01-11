@@ -61,7 +61,7 @@
             CJDealTextModel *dealTextModel = [[CJDealTextModel alloc] init];
             dealTextModel.placeholder = @"请输入要验证的值";
             dealTextModel.text = @"一二三四五六七八九十";
-            dealTextModel.hopeResultText = @"20";
+            dealTextModel.hopeResultText = @"10";
             dealTextModel.actionTitle = @"纯中文(length)";
             dealTextModel.autoExec = YES;
             dealTextModel.actionBlock = ^NSString * _Nonnull(NSString * _Nonnull oldString) {
@@ -122,7 +122,7 @@
             CJDealTextModel *dealTextModel = [[CJDealTextModel alloc] init];
             dealTextModel.placeholder = @"请输入要验证的值";
             dealTextModel.text = @"一二三四五六七八九十1";
-            dealTextModel.hopeResultText = @"21";
+            dealTextModel.hopeResultText = @"11";
             dealTextModel.actionTitle = @"中文+非中文(length)";
             dealTextModel.autoExec = YES;
             dealTextModel.actionBlock = ^NSString * _Nonnull(NSString * _Nonnull oldString) {

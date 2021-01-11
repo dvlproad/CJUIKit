@@ -24,7 +24,7 @@
     
     NSMutableArray *sectionDataModels = [[NSMutableArray alloc] init];
     
-    // 字符串验证
+    // 字符串截取（不含表情时候）
     {
         CQDMSectionDataModel *sectionDataModel = [[CQDMSectionDataModel alloc] init];
         sectionDataModel.theme = @"长度计算使用【自定义cj_length算法】的时候的最大字符串\n(注意：以下每个都不能删，都得通过\n以下每个都不能删，都得通过\n以下每个都不能删，都得通过\n)";
@@ -80,6 +80,67 @@
             };
             [sectionDataModel.values addObject:dealTextModel];
         }
+
+        [sectionDataModels addObject:sectionDataModel];
+    }
+
+    // 字符串截取（含表情时候）
+    {
+        CQDMSectionDataModel *sectionDataModel = [[CQDMSectionDataModel alloc] init];
+        sectionDataModel.theme = @"长度计算使用【中文2，英文1，表情不定】的时候的最大字符串";
+        {
+            CJDealTextModel *dealTextModel = [[CJDealTextModel alloc] init];
+            dealTextModel.placeholder = @"请输入截取的操作对象";
+            dealTextModel.text = @"一二👌三四五";
+            dealTextModel.hopeResultText = @"一二";
+            dealTextModel.actionTitle = @"截取子字符串使其最多字符个数不超过5";
+            dealTextModel.autoExec = YES;
+            dealTextModel.actionBlock = ^NSString * _Nonnull(NSString * _Nonnull oldString) {
+                NSString *maxSubstring = [CQSubStringUtil maxSubstringFromString:oldString maxLength:5];
+                return maxSubstring;
+            };
+            [sectionDataModel.values addObject:dealTextModel];
+        }
+        {
+            CJDealTextModel *dealTextModel = [[CJDealTextModel alloc] init];
+            dealTextModel.placeholder = @"请输入截取的操作对象";
+            dealTextModel.text = @"一👌👌三四五";
+            dealTextModel.hopeResultText = @"一";
+            dealTextModel.actionTitle = @"截取子字符串使其最多字符个数不超过5";
+            dealTextModel.autoExec = YES;
+            dealTextModel.actionBlock = ^NSString * _Nonnull(NSString * _Nonnull oldString) {
+                NSString *maxSubstring = [CQSubStringUtil maxSubstringFromString:oldString maxLength:5];
+                return maxSubstring;
+            };
+            [sectionDataModel.values addObject:dealTextModel];
+        }
+        {
+            CJDealTextModel *dealTextModel = [[CJDealTextModel alloc] init];
+            dealTextModel.placeholder = @"请输入截取的操作对象";
+            dealTextModel.text = @"一👌👌三四五";
+            dealTextModel.hopeResultText = @"一👌";
+            dealTextModel.actionTitle = @"截取子字符串使其最多字符个数不超过6";
+            dealTextModel.autoExec = YES;
+            dealTextModel.actionBlock = ^NSString * _Nonnull(NSString * _Nonnull oldString) {
+                NSString *maxSubstring = [CQSubStringUtil maxSubstringFromString:oldString maxLength:6];
+                return maxSubstring;
+            };
+            [sectionDataModel.values addObject:dealTextModel];
+        }
+        {
+            CJDealTextModel *dealTextModel = [[CJDealTextModel alloc] init];
+            dealTextModel.placeholder = @"请输入截取的操作对象";
+            dealTextModel.text = @"一1👌👌三四五";
+            dealTextModel.hopeResultText = @"一1";
+            dealTextModel.actionTitle = @"截取子字符串使其最多字符个数不超过5";
+            dealTextModel.autoExec = YES;
+            dealTextModel.actionBlock = ^NSString * _Nonnull(NSString * _Nonnull oldString) {
+                NSString *maxSubstring = [CQSubStringUtil maxSubstringFromString:oldString maxLength:5];
+                return maxSubstring;
+            };
+            [sectionDataModel.values addObject:dealTextModel];
+        }
+        
         
         [sectionDataModels addObject:sectionDataModel];
     }

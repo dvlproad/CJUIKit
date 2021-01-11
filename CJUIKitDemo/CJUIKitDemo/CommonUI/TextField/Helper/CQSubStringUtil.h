@@ -12,9 +12,33 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface CQSubStringUtil : NSObject
 
-#pragma mark - 范围字符串
+#pragma mark - 范围子字符串
 /// 获取除选中部分外的其他字符串
 + (NSString *)substringExceptRange:(NSRange)range forString:(NSString *)string;
+
+#pragma mark - 位置子字符串
+/*
+ *  截取字符前多少位，处理emoji表情问题（比如"好好👌"，截取前3位，系统substringToIndex会返回，而正确应该是要返回"好好👌"）
+ *
+ *  @param index        截取字符前多少位
+ *  @param emojiString  要截取的字符串
+ *
+ *  @return 截取后的字符串长度
+ */
++ (NSString *)substringToIndex:(NSInteger)index forEmojiString:(NSString *)emojiString;
+
+/*
+ *  【系统方式】截取字符前多少位，处理emoji表情时候会有问题（比如"好好👌"，截取前3位，系统substringToIndex会返回，而正确应该是要返回"好好👌"）
+ *
+ *  @param index        截取字符前多少位
+ *  @param emojiString  要截取的字符串
+ *
+ *  @return 截取后的字符串长度
+ */
++ (NSString *)sys_substringToIndex:(NSInteger)index forEmojiString:(NSString *)emojiString;
+
+
+
 
 #pragma mark - 最大字符串
 /*

@@ -22,6 +22,7 @@ NS_ASSUME_NONNULL_BEGIN
  *  @param range                    range
  *  @param string                   string
  *  @param maxTextLength            maxTextLength(为0的时候不做长度限制)
+ *  @param substringToIndexBlock    子字符串截取的方法（有时候不能使用系统方法，防止在处理含表情字符串的时候，截取的字符串错误。如"👌",截取1，得到的不是"👌"）
  *  @param lengthCalculationBlock   字符串占位长度的计算方法
  *
  *  @return newText
@@ -30,6 +31,7 @@ NS_ASSUME_NONNULL_BEGIN
                                     shouldChangeCharactersInRange:(NSRange)range
                                                 replacementString:(NSString *)string
                                                     maxTextLength:(NSInteger)maxTextLength
+                                            substringToIndexBlock:(NSString*(^ _Nonnull)(NSString *bString, NSInteger bIndex))substringToIndexBlock
                                            lengthCalculationBlock:(NSInteger(^ _Nonnull)(NSString *calculationString))lengthCalculationBlock;
 
 @end

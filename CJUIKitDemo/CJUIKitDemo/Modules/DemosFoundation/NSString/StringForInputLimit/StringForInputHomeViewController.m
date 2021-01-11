@@ -11,7 +11,8 @@
 // StringLength
 #import "AStringLengthViewController.h"
 
-// RangeSubString
+// SubString
+#import "BIndexSubStringViewController.h"
 #import "BRangeSubStringViewController.h"
 
 // MaxSubString
@@ -51,13 +52,19 @@
     }
     
     
-    // RangeSubString
+    // SubString
     {
         CQDMSectionDataModel *sectionDataModel = [[CQDMSectionDataModel alloc] init];
-        sectionDataModel.theme = @"最大子范围字符串串 RangeSubString";
+        sectionDataModel.theme = @"子字符串 SubString";
         {
             CQDMModuleModel *NSStringModule = [[CQDMModuleModel alloc] init];
-            NSStringModule.title = @"范围字符串";
+            NSStringModule.title = @"位置子字符串IndexSubString";
+            NSStringModule.classEntry = [BIndexSubStringViewController class];
+            [sectionDataModel.values addObject:NSStringModule];
+        }
+        {
+            CQDMModuleModel *NSStringModule = [[CQDMModuleModel alloc] init];
+            NSStringModule.title = @"范围子字符串RangeSubString";
             NSStringModule.classEntry = [BRangeSubStringViewController class];
             [sectionDataModel.values addObject:NSStringModule];
         }
