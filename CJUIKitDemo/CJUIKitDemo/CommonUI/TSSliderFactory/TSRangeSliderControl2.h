@@ -40,7 +40,9 @@ NS_ASSUME_NONNULL_BEGIN
                  createTrackViewBlock:(UIView * (^)(void))createTrackViewBlock
                  createFrontViewBlock:(UIView *(^)(void))createFrontViewBlock
                createPopoverViewBlock:(UIView * (^)(BOOL left))createPopoverViewBlock
-                    valueChangedBlock:(void(^)(CJRangeSliderControl *bSlider, CJSliderValueChangeHappenType happenType, CGFloat leftThumbPercent, CGFloat rightThumbPercent))valueChangedBlock NS_UNAVAILABLE;
+//                      textFormatBlock:(NSString *(^ _Nullable)(CGFloat value))textFormatBlock
+                    valueChangedBlock:(void(^)(CJRangeSliderControl *bSlider, CJSliderValueChangeHappenType happenType, CGFloat leftThumbPercent, CGFloat rightThumbPercent, CGFloat leftPopoverNum, CGFloat rightPopoverNum))valueChangedBlock
+              gestureStateChangeBlock:(void(^)(CJSliderGRState gestureRecognizerState))gestureStateChangeBlock NS_UNAVAILABLE;
 
 @end
 

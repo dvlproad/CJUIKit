@@ -83,9 +83,15 @@
     self.backgroundColor = [UIColor clearColor];
     
     self.trackHeight = 4;                       // 设置滑道高度
-    self.thumbSize = CGSizeMake(26, 26);        // 设置滑块大小
     self.popoverSize = CGSizeMake(28, 22);      // 设置弹出框大小
     self.popoverSpacing = 29;
+    [self configThumbMoveMinXMargin:0
+                      leftThumbSize:CGSizeMake(26, 26)
+      trackViewMinXIsLeftThumbXType:CJThumbXTypeMid];
+    [self configThumbMoveMaxXMargin:0
+                     rightThumbSize:CGSizeMake(26, 26)
+     trackViewMaxXIsRightThumbXType:CJThumbXTypeMid];
+
     
     UIImage *normalImage = [UIImage imageNamed:@"slider_range_start"];
     UIImage *highlightedImage = [UIImage imageNamed:@"slider_range_start"];

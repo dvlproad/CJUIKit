@@ -34,7 +34,10 @@
     [self setupViews];
     
     self.sliderControlValueLabel2.text = [NSString stringWithFormat:@"选取的区间是 : [ %.1f, %.1f ]", self.sliderControl2.baseValue, self.sliderControl2.value];
-    self.rangeSliderControlValueLabel.text = [NSString stringWithFormat:@"选取的区间是 : [ %.1f, %.1f ]",self.rangeSliderControl.minValue, self.rangeSliderControl.maxValue];
+
+    CGFloat startRangeValue = self.rangeSliderControl.startRangeValue;
+    CGFloat endRangeValue = self.rangeSliderControl.endRangeValue;
+    self.rangeSliderControlValueLabel.text = [NSString stringWithFormat:@"选取的区间是 : [ %.1f, %.1f ]\n请验证第一次滑动某个滑块后，另一个滑块上的值不会改变",startRangeValue,endRangeValue];
 }
 
 - (void)setupViews {
@@ -46,7 +49,6 @@
         make.left.equalTo(self.view).offset(30);
         make.centerX.equalTo(self.view);
         make.top.equalTo(self.mas_topLayoutGuide).offset(20);
-        make.height.equalTo(@29);
     }];
     self.sliderControlValueLabel2 = sliderControlValueLabel2;
     
@@ -71,7 +73,6 @@
         make.left.equalTo(self.view).offset(30);
         make.centerX.equalTo(self.view);
         make.top.equalTo(self.sliderControl2.mas_bottom).offset(100);
-        make.height.equalTo(@20);
     }];
     self.rangeSliderControlValueLabel = rangeSliderControlValueLabel;
     

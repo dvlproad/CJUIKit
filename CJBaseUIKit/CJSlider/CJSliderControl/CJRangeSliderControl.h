@@ -40,13 +40,22 @@ typedef NS_ENUM(NSUInteger, CJSliderGRState) {
     CJSliderGRStateTrackTouchEnd,       /**< 滑道点击结束 */
 };
 
+/// x类型
+typedef NS_ENUM(NSUInteger, CJThumbXType) {
+    CJThumbXTypeMin,    /**< 最小值 */
+    CJThumbXTypeMid,    /**< 中间值 */
+    CJThumbXTypeMax,    /**< 最大值 */
+};
+
 @interface CJRangeSliderControl : UIControl {
     
 }
-@property (nonatomic, assign) CGFloat trackViewMinXMargin;  /**< 滑道的最小值离bound的边缘距离 */
-@property (nonatomic, assign) CGFloat trackViewMaxXMargin;  /**< 滑道的最大值离bound的边缘距离 */
-@property (nonatomic, assign) CGFloat thumbMoveMinXMargin;  /**< 滑块可移动到的最小X值离bound的边缘距离 */
-@property (nonatomic, assign) CGFloat thumbMoveMaxXMargin;  /**< 滑块可移动到的最大X值离bound的边缘距离 */
+
+@property (nonatomic, assign, readonly) CGFloat trackViewMinXMargin;  /**< 滑道的最小值离bound的边缘距离 */
+@property (nonatomic, assign, readonly) CGFloat trackViewMaxXMargin;  /**< 滑道的最大值离bound的边缘距离 */
+
+@property (nonatomic, assign, readonly) CGFloat thumbMoveMinXMargin;  /**< 滑块(假设是个点)可移动到的最小X值离bound的边缘距离 */
+@property (nonatomic, assign, readonly) CGFloat thumbMoveMaxXMargin;  /**< 滑块(假设是个点)可移动到的最大X值离bound的边缘距离 */
 
 @property (nonatomic, assign, readonly) CGFloat trackViewMinX;  /**< 滑道的最小值 */
 @property (nonatomic, assign, readonly) CGFloat trackViewMaxX;  /**< 滑道的最大值 */
@@ -62,7 +71,7 @@ typedef NS_ENUM(NSUInteger, CJSliderGRState) {
 // 滑道视图
 //@property (nonatomic, strong) UIView *trackView;    /**< 滑道视图 */
 @property (nonatomic, assign) CGFloat trackHeight;  /**< 滑道高度（未设置或者超过视图高度，都重置为等于视图的高） */
-@property (nonatomic, assign) CGSize thumbSize;     /**< 滑块大小（默认CGSizeMake(30, 30)） */
+@property (nonatomic, assign, readonly) CGSize thumbSize;   /**< 滑块大小（默认CGSizeMake(30, 30)） */
 
 // 滑块视图
 @property (nonatomic, strong) UIButton *leftThumb; /**< 左滑块视图 */
@@ -105,6 +114,29 @@ typedef NS_ENUM(NSUInteger, CJSliderGRState) {
 - (instancetype)init NS_UNAVAILABLE;
 - (instancetype)initWithFrame:(CGRect)frame NS_UNAVAILABLE;
 - (instancetype)initWithCoder:(NSCoder *)aDecoder NS_UNAVAILABLE;
+
+#pragma mark - Config
+/*
+ *  设置左侧滑块和滑道
+ *
+ *  @param thumbMoveMinXMargin              滑块(假设是个点)可移动到的最小X值离bound的边缘距离
+ *  @param leftThumbSize                    左滑块大小
+ *  @param trackViewMinXIsLeftThumbXType    滑道的最小值是对齐左滑块的哪个x(min/mid/max，默认mid)
+ */
+- (void)configThumbMoveMinXMargin:(CGFloat)thumbMoveMinXMargin
+                    leftThumbSize:(CGSize)leftThumbSize
+    trackViewMinXIsLeftThumbXType:(CJThumbXType)trackViewMinXIsLeftThumbXType;
+
+/*
+ *  设置左侧滑块和滑道
+ *
+ *  @param thumbMoveMaxXMargin              滑块(假设是个点)可移动到的最大X值离bound的边缘距离
+ *  @param rightThumbSize                   右滑块大小
+ *  @param trackViewMinXIsLeftThumbXType    滑道的最大值是对齐右滑块的哪个x(min/mid/max，默认mid)
+ */
+- (void)configThumbMoveMaxXMargin:(CGFloat)thumbMoveMaxXMargin
+                    rightThumbSize:(CGSize)rightThumbSize
+    trackViewMaxXIsRightThumbXType:(CJThumbXType)trackViewMaxXIsRightThumbXType;
 
 
 #pragma mark - Event

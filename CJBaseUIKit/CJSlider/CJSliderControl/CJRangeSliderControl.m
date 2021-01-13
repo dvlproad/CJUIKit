@@ -175,6 +175,47 @@ static NSTimeInterval const kMTRngeSliderDidTapSlidAnimationDuration   = 0.3f;
     self.popoverShowTimeType = CJSliderPopoverShowTimeTypeAll; // 有 Setter 方法
 }
 
+#pragma mark - Config
+/*
+ *  设置左侧滑块和滑道
+ *
+ *  @param thumbMoveMinXMargin              滑块(假设是个点)可移动到的最小X值离bound的边缘距离
+ *  @param leftThumbSize                    左滑块大小
+ *  @param trackViewMinXIsLeftThumbXType    滑道的最小值是对齐左滑块的哪个x(min/mid/max，默认mid)
+ */
+- (void)configThumbMoveMinXMargin:(CGFloat)thumbMoveMinXMargin
+                    leftThumbSize:(CGSize)leftThumbSize
+    trackViewMinXIsLeftThumbXType:(CJThumbXType)trackViewMinXIsLeftThumbXType
+{
+    _thumbMoveMinXMargin = thumbMoveMinXMargin;
+    _thumbSize = leftThumbSize;
+    if (trackViewMinXIsLeftThumbXType == CJThumbXTypeMid) {
+        _trackViewMinXMargin = thumbMoveMinXMargin + leftThumbSize.width/2;
+    } else {
+        _trackViewMinXMargin = thumbMoveMinXMargin + leftThumbSize.width/2;
+    }
+}
+
+/*
+ *  设置左侧滑块和滑道
+ *
+ *  @param thumbMoveMaxXMargin              滑块(假设是个点)可移动到的最大X值离bound的边缘距离
+ *  @param rightThumbSize                   右滑块大小
+ *  @param trackViewMinXIsLeftThumbXType    滑道的最大值是对齐右滑块的哪个x(min/mid/max，默认mid)
+ */
+- (void)configThumbMoveMaxXMargin:(CGFloat)thumbMoveMaxXMargin
+                    rightThumbSize:(CGSize)rightThumbSize
+    trackViewMaxXIsRightThumbXType:(CJThumbXType)trackViewMaxXIsRightThumbXType
+{
+    _thumbMoveMaxXMargin = thumbMoveMaxXMargin;
+    _thumbSize = rightThumbSize;
+    if (trackViewMaxXIsRightThumbXType == CJThumbXTypeMid) {
+        _trackViewMaxXMargin = thumbMoveMaxXMargin + rightThumbSize.width/2;
+    } else {
+        _trackViewMaxXMargin = thumbMoveMaxXMargin + rightThumbSize.width/2;
+    }
+}
+
 #pragma mark - Event
 /*
  *  请求到网络数据后更新选择值
@@ -252,11 +293,13 @@ static NSTimeInterval const kMTRngeSliderDidTapSlidAnimationDuration   = 0.3f;
     CGFloat rightThumbPercent = [self __rightThumbPercentByValue:self.endRangeValue];
     
     // 由percent获取到X的方法
-    CGFloat leftThumbX = CGRectGetMinX(trackRect) + _thumbMoveMinX + leftThumbPercent*self.thumbCanMoveWidth;
+    CGFloat leftThumbMidX = CGRectGetMinX(trackRect) + _thumbMoveMinX + leftThumbPercent*self.thumbCanMoveWidth;
+    CGFloat leftThumbX = leftThumbMidX - thumbWidth/2;
     CGRect leftThumbRect = CGRectMake(leftThumbX, thumbY, thumbWidth, thumbHeight);
     self.leftThumb.frame = leftThumbRect;
     
-    CGFloat rightThumbX = CGRectGetMinX(trackRect) + _thumbMoveMinX + rightThumbPercent*self.thumbCanMoveWidth;
+    CGFloat rightThumbMidX = CGRectGetMinX(trackRect) + _thumbMoveMinX + rightThumbPercent*self.thumbCanMoveWidth;
+    CGFloat rightThumbX = rightThumbMidX - thumbWidth/2;
     CGRect rightThumbRect = CGRectMake(rightThumbX, thumbY, thumbWidth, thumbHeight);
     self.rightThumb.frame = rightThumbRect;
     
@@ -405,14 +448,19 @@ static NSTimeInterval const kMTRngeSliderDidTapSlidAnimationDuration   = 0.3f;
 - (void)__updateValueByPeopleGRHappenType:(CJSliderValueChangeHappenType)happenType
 {
     // 由percent获取到X的方法
-    //CGFloat leftThumbX = CGRectGetMinX(trackRect) + _thumbMoveMinX + leftThumbPercent*self.thumbCanMoveWidth;
-    //CGFloat rightThumbX = CGRectGetMinX(trackRect) + _thumbMoveMinX + rightThumbPercent*self.thumbCanMoveWidth;
+    //CGFloat leftThumbMidX = CGRectGetMinX(trackRect) + _thumbMoveMinX + leftThumbPercent*self.thumbCanMoveWidth;
+    //CGFloat rightThumbMidX = CGRectGetMinX(trackRect) + _thumbMoveMinX + rightThumbPercent*self.thumbCanMoveWidth;
     // 由X获取到percent的方法
-    CGFloat leftThumbX = self.leftThumb.frame.origin.x;
+    CGFloat leftThumbMidX = self.leftThumb.center.x;
     CGFloat trackMinX = CGRectGetMinX(self.trackView.frame);
-    CGFloat leftThumbPercent  = (leftThumbX-trackMinX-self.thumbMoveMinX) / self.thumbCanMoveWidth;
-    CGFloat rightThumbX = self.rightThumb.frame.origin.x;
-    CGFloat rightThumbPercent = (rightThumbX-trackMinX-self.thumbMoveMinX) / self.thumbCanMoveWidth;
+    CGFloat leftThumbPercent  = (leftThumbMidX-trackMinX-self.thumbMoveMinX) / self.thumbCanMoveWidth;
+    CGFloat rightThumbMidX = self.rightThumb.center.x;
+    CGFloat rightThumbPercent = (rightThumbMidX-trackMinX-self.thumbMoveMinX) / self.thumbCanMoveWidth;
+    
+//    CGFloat thumbWidth = self.thumbSize.width;      // 滑块的宽
+//    CGFloat leftThumbPercent  = self.leftThumb.frame.origin.x / (self.bounds.size.width - thumbWidth);
+//    CGFloat rightThumbPercent  = self.rightThumb.frame.origin.x / (self.bounds.size.width - thumbWidth);
+
     
     CGFloat leftThumbValue    = self.minValue + leftThumbPercent  * (self.maxValue - self.minValue);
     CGFloat rightThumbValue   = self.minValue + rightThumbPercent * (self.maxValue - self.minValue);
@@ -433,6 +481,7 @@ static NSTimeInterval const kMTRngeSliderDidTapSlidAnimationDuration   = 0.3f;
     _startRangeValue = leftThumbValue;
     _endRangeValue = rightThumbValue;
     
+    //NSLog(@"leftThumbPercent = %.2f, rightThumbPercent = %.2f, leftThumbValue = %.2f, rightThumbValue = %.2f", leftThumbPercent, rightThumbPercent, leftThumbValue, rightThumbValue);
     !self.valueChangedBlock ?: self.valueChangedBlock(self, happenType, leftThumbPercent, rightThumbPercent, leftThumbValue, rightThumbValue);
 }
 
