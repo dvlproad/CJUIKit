@@ -97,9 +97,6 @@ static NSTimeInterval const kMTRngeSliderDidTapSlidAnimationDuration   = 0.3f;
                 createFrontViewBlock:(UIView * (^)(void))createFrontViewBlock
               createPopoverViewBlock:(UIView * (^)(BOOL left))createPopoverViewBlock
 {
-    _startRangeValue = startRangeValue;
-    _endRangeValue = endRangeValue;
-    
     if (!_trackView) {
         if (createTrackViewBlock) {
             _trackView = createTrackViewBlock();
@@ -167,11 +164,13 @@ static NSTimeInterval const kMTRngeSliderDidTapSlidAnimationDuration   = 0.3f;
     _thumbSize = CGSizeMake(30, 30);
     _popoverSize = CGSizeMake(30, 32);
     
-    CGFloat leftThumbPercent  = [self __leftThumbPercentByValue];
-    CGFloat rightThumbPercent = [self __rightThumbPercentByValue];
-    [self __updateValueByHappenType:CJSliderValueChangeHappenTypeInit
-                   leftThumbPercent:leftThumbPercent
-                  rightThumbPercent:rightThumbPercent];
+    CGFloat leftThumbPercent  = [self __leftThumbPercentByValue:startRangeValue];
+    CGFloat rightThumbPercent = [self __rightThumbPercentByValue:endRangeValue];
+    [self __updateValueByCodeSetHappenType:CJSliderValueChangeHappenTypeInit
+                          leftThumbPercent:leftThumbPercent
+                         rightThumbPercent:rightThumbPercent
+                            leftThumbValue:startRangeValue
+                           rightThumbValue:endRangeValue];
     
     self.popoverShowTimeType = CJSliderPopoverShowTimeTypeAll; // 有 Setter 方法
 }
@@ -186,27 +185,24 @@ static NSTimeInterval const kMTRngeSliderDidTapSlidAnimationDuration   = 0.3f;
 - (void)updateStartRangeValue:(CGFloat)startRangeValue
                 endRangeValue:(CGFloat)endRangeValue
 {
-    _startRangeValue = startRangeValue;
-    _endRangeValue = endRangeValue;
-    
-    CGFloat leftThumbPercent  = [self __leftThumbPercentByValue];
-    CGFloat rightThumbPercent = [self __rightThumbPercentByValue];
-    [self __updateValueByHappenType:CJSliderValueChangeHappenTypeUpdate
-                   leftThumbPercent:leftThumbPercent
-                  rightThumbPercent:rightThumbPercent];
-    
-    [self reloadSlider];    // 无法触发layoutSubviews中的reloadSlider，所以这里手动调用
+    CGFloat leftThumbPercent  = [self __leftThumbPercentByValue:startRangeValue];
+    CGFloat rightThumbPercent = [self __rightThumbPercentByValue:endRangeValue];
+    [self __updateValueByCodeSetHappenType:CJSliderValueChangeHappenTypeUpdate
+                          leftThumbPercent:leftThumbPercent
+                         rightThumbPercent:rightThumbPercent
+                            leftThumbValue:startRangeValue
+                           rightThumbValue:endRangeValue];
 }
 
 
 
-- (CGFloat)__leftThumbPercentByValue {
-    CGFloat leftThumbPercent  = (self.startRangeValue-self.minValue)/(_maxValue - _minValue);
+- (CGFloat)__leftThumbPercentByValue:(CGFloat)startRangeValue {
+    CGFloat leftThumbPercent  = (startRangeValue-self.minValue)/(_maxValue - _minValue);
     return leftThumbPercent;
 }
 
-- (CGFloat)__rightThumbPercentByValue {
-    CGFloat rightThumbPercent = (self.endRangeValue-self.minValue)/(_maxValue - _minValue);
+- (CGFloat)__rightThumbPercentByValue:(CGFloat)endRangeValue {
+    CGFloat rightThumbPercent = (endRangeValue-self.minValue)/(_maxValue - _minValue);
     return rightThumbPercent;
 }
 
@@ -252,9 +248,10 @@ static NSTimeInterval const kMTRngeSliderDidTapSlidAnimationDuration   = 0.3f;
     _thumbCanMoveWidth = (self.thumbMoveMaxX-thumbWidth) - self.thumbMoveMinX; //滑块可滑动的实际大小
     
     //计算该值在坐标上的X是多少
-    CGFloat leftThumbPercent  = [self __leftThumbPercentByValue];
-    CGFloat rightThumbPercent = [self __rightThumbPercentByValue];
+    CGFloat leftThumbPercent  = [self __leftThumbPercentByValue:self.startRangeValue];
+    CGFloat rightThumbPercent = [self __rightThumbPercentByValue:self.endRangeValue];
     
+    // 由percent获取到X的方法
     CGFloat leftThumbX = CGRectGetMinX(trackRect) + _thumbMoveMinX + leftThumbPercent*self.thumbCanMoveWidth;
     CGRect leftThumbRect = CGRectMake(leftThumbX, thumbY, thumbWidth, thumbHeight);
     self.leftThumb.frame = leftThumbRect;
@@ -319,7 +316,14 @@ static NSTimeInterval const kMTRngeSliderDidTapSlidAnimationDuration   = 0.3f;
         
     } completion:^(BOOL finished) {
         [self updateEndDragThumbStatus:isCloseLeftThumb isTouch:YES];
-        [self updatePopover:isCloseLeftThumb happenType:CJSliderValueChangeHappenTypeTouchTrack];
+        
+        CJSliderValueChangeHappenType happenType;
+        if (isCloseLeftThumb) {
+            happenType = CJSliderValueChangeHappenTypeTouchTrackCloseThumbLeft;
+        } else {
+            happenType = CJSliderValueChangeHappenTypeTouchTrackCloseThumbRight;
+        }
+        [self updatePopover:isCloseLeftThumb happenType:happenType];
     }];
 }
 
@@ -342,13 +346,10 @@ static NSTimeInterval const kMTRngeSliderDidTapSlidAnimationDuration   = 0.3f;
  *
  *  @param isLeftThumb 是否左边的Thumb
  */
-- (void)updatePopover:(BOOL)isLeftThumb happenType:(CJSliderValueChangeHappenType)happenType {
-    CGFloat leftThumbPercent  = [self __leftThumbPercent];
-    
-    CGFloat rightThumbPercent = [self __rightThumbPercent];
-
+- (void)updatePopover:(BOOL)isLeftThumb
+           happenType:(CJSliderValueChangeHappenType)happenType
+{
     if (isLeftThumb) {
-        happenType = CJSliderValueChangeHappenTypeLeftMove;
         [self movePopover:self.leftPopover aboveThumb:self.leftThumb];
         
         [self showPopover:self.leftPopover];
@@ -356,7 +357,6 @@ static NSTimeInterval const kMTRngeSliderDidTapSlidAnimationDuration   = 0.3f;
         self.rightThumb.userInteractionEnabled = NO;
         
     } else {
-        happenType = CJSliderValueChangeHappenTypeRightMove;
         [self movePopover:self.rightPopover aboveThumb:self.rightThumb];
         
         [self showPopover:self.rightPopover];
@@ -364,41 +364,79 @@ static NSTimeInterval const kMTRngeSliderDidTapSlidAnimationDuration   = 0.3f;
         self.leftThumb.userInteractionEnabled = NO;
     }
     
-    [self __updateValueByHappenType:happenType
-                   leftThumbPercent:leftThumbPercent
-                  rightThumbPercent:rightThumbPercent];
+    [self __updateValueByPeopleGRHappenType:happenType];
 }
 
 /*
- *  根据选中的值更新popover上的值
+ *  根据选中的值更新popover上的值(代码设置：1初始化，2更新)
+ *
+ *  @param happenInLeft         滑块上的值改变发生的事件来源类型
+ *  @param leftThumbPercent     左边滑块中心点所在滑道的比例
+ *  @param rightThumbPercent    右边滑块中心点所在滑道的比例
+ *  @param leftThumbValue       左边滑块数值
+ *  @param rightThumbValue      右边滑块数值
+ */
+- (void)__updateValueByCodeSetHappenType:(CJSliderValueChangeHappenType)happenType
+                        leftThumbPercent:(CGFloat)leftThumbPercent
+                       rightThumbPercent:(CGFloat)rightThumbPercent
+                          leftThumbValue:(CGFloat)leftThumbValue
+                         rightThumbValue:(CGFloat)rightThumbValue
+{
+    if (happenType == CJSliderValueChangeHappenTypeInit) {
+        // do nothing (会自动调用layoutSubviews，然后触发reloadSlider)
+    } else if (happenType == CJSliderValueChangeHappenTypeUpdate) {
+        [self reloadSlider];    // 无法触发layoutSubviews中的reloadSlider，所以这里手动调用
+    }
+    
+    [self __valueChangeCompleteWithHappenType:happenType
+                             leftThumbPercent:leftThumbPercent
+                            rightThumbPercent:rightThumbPercent
+                               leftThumbValue:leftThumbValue
+                              rightThumbValue:rightThumbValue];
+}
+
+/*
+ *  根据选中的值更新popover上的值(人为手势：1点击滑块上的点；2拖动滑块)
  *
  *  @param happenInLeft         滑块上的值改变发生的事件来源类型
  *  @param leftThumbPercent     左边滑块中心点所在滑道的比例
  *  @param rightThumbPercent    右边滑块中心点所在滑道的比例
  */
-- (void)__updateValueByHappenType:(CJSliderValueChangeHappenType)happenType
-                 leftThumbPercent:(CGFloat)leftThumbPercent
-                rightThumbPercent:(CGFloat)rightThumbPercent
+- (void)__updateValueByPeopleGRHappenType:(CJSliderValueChangeHappenType)happenType
 {
-    CGFloat leftPopoverNum    = self.minValue + leftThumbPercent  * (self.maxValue - self.minValue);
-    CGFloat rightPopoverNum   = self.minValue + rightThumbPercent * (self.maxValue - self.minValue);
-    _startRangeValue = leftPopoverNum;
-    _endRangeValue = rightPopoverNum;
+    // 由percent获取到X的方法
+    //CGFloat leftThumbX = CGRectGetMinX(trackRect) + _thumbMoveMinX + leftThumbPercent*self.thumbCanMoveWidth;
+    //CGFloat rightThumbX = CGRectGetMinX(trackRect) + _thumbMoveMinX + rightThumbPercent*self.thumbCanMoveWidth;
+    // 由X获取到percent的方法
+    CGFloat leftThumbX = self.leftThumb.frame.origin.x;
+    CGFloat trackMinX = CGRectGetMinX(self.trackView.frame);
+    CGFloat leftThumbPercent  = (leftThumbX-trackMinX-self.thumbMoveMinX) / self.thumbCanMoveWidth;
+    CGFloat rightThumbX = self.rightThumb.frame.origin.x;
+    CGFloat rightThumbPercent = (rightThumbX-trackMinX-self.thumbMoveMinX) / self.thumbCanMoveWidth;
     
-    !self.valueChangedBlock ?: self.valueChangedBlock(self, happenType, leftThumbPercent, rightThumbPercent, leftPopoverNum, rightPopoverNum);
+    CGFloat leftThumbValue    = self.minValue + leftThumbPercent  * (self.maxValue - self.minValue);
+    CGFloat rightThumbValue   = self.minValue + rightThumbPercent * (self.maxValue - self.minValue);
+    
+    [self __valueChangeCompleteWithHappenType:happenType
+                             leftThumbPercent:leftThumbPercent
+                            rightThumbPercent:rightThumbPercent
+                               leftThumbValue:leftThumbValue
+                              rightThumbValue:rightThumbValue];
 }
 
-- (CGFloat)__leftThumbPercent {
-    CGFloat thumbWidth = self.thumbSize.width;      // 滑块的宽
-    CGFloat leftThumbPercent  = self.leftThumb.frame.origin.x / (self.bounds.size.width - thumbWidth);
-    return leftThumbPercent;
+- (void)__valueChangeCompleteWithHappenType:(CJSliderValueChangeHappenType)happenType
+                           leftThumbPercent:(CGFloat)leftThumbPercent
+                          rightThumbPercent:(CGFloat)rightThumbPercent
+                             leftThumbValue:(CGFloat)leftThumbValue
+                            rightThumbValue:(CGFloat)rightThumbValue
+{
+    _startRangeValue = leftThumbValue;
+    _endRangeValue = rightThumbValue;
+    
+    !self.valueChangedBlock ?: self.valueChangedBlock(self, happenType, leftThumbPercent, rightThumbPercent, leftThumbValue, rightThumbValue);
 }
 
-- (CGFloat)__rightThumbPercent {
-    CGFloat thumbWidth = self.thumbSize.width;      // 滑块的宽
-    CGFloat rightThumbPercent = self.rightThumb.frame.origin.x / (self.bounds.size.width - thumbWidth);
-    return rightThumbPercent;
-}
+
 /*
  *  更新结束拖动时候Thumb的显示状态
  *

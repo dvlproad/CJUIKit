@@ -90,24 +90,27 @@
     
     /* 年龄区间选择 */
     UILabel *ageRangeSliderValueLabel = [DemoLabelFactory testExplainLabel];
-    ageRangeSliderValueLabel.text = [NSString stringWithFormat:@"选取的区间是 :"];
+    ageRangeSliderValueLabel.text = [NSString stringWithFormat:@"选取的区间是 :\n请验证第一次滑动某个滑块后，另一个滑块上的值不会改变"];
     [self.view addSubview:ageRangeSliderValueLabel];
     [ageRangeSliderValueLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(self.view).offset(30);
         make.centerX.equalTo(self.view);
         make.top.equalTo(rangeSliderControl.mas_bottom).offset(100);
-        make.height.equalTo(@20);
     }];
     
     CQAgeRangeSliderControl *ageRangeSlider = [[CQAgeRangeSliderControl alloc] initWithMinRangeAge:0 maxRangeAge:100 startRangeAge:18 endRangeAge:32 chooseCompleteBlock:^(NSInteger minAge, NSInteger maxAge) {
-        ageRangeSliderValueLabel.text = [NSString stringWithFormat:@"选取的区间是 : [ %zd, %zd ]",minAge,maxAge];
+        ageRangeSliderValueLabel.text = [NSString stringWithFormat:@"选取的区间是 : [ %zd, %zd ]\n请验证第一次滑动某个滑块后，另一个滑块上的值不会改变",minAge,maxAge];
+        
     }];
     [self.view addSubview:ageRangeSlider];
     [ageRangeSlider mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.right.mas_equalTo(ageRangeSliderValueLabel);
-        make.top.mas_equalTo(ageRangeSliderValueLabel.mas_bottom).mas_offset(30);
+        make.top.mas_equalTo(ageRangeSliderValueLabel.mas_bottom).mas_offset(50);
         make.height.mas_equalTo(30);
     }];
+    NSInteger startRangeAge = ageRangeSlider.startRangeAge;
+    NSInteger endRangeAge = ageRangeSlider.endRangeAge;
+    ageRangeSliderValueLabel.text = [NSString stringWithFormat:@"选取的区间是 : [ %zd, %zd ]\n请验证第一次滑动某个滑块后，另一个滑块上的值不会改变",startRangeAge,endRangeAge];
 }
 
 

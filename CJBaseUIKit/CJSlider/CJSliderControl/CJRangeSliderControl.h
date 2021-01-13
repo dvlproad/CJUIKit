@@ -26,7 +26,8 @@ typedef NS_ENUM(NSUInteger, CJSliderValueChangeHappenType) {
     CJSliderValueChangeHappenTypeUpdate,        /**< 由用户设置网络请求后更新而来 */
     CJSliderValueChangeHappenTypeLeftMove,      /**< 由左边滑块拖动引起 */
     CJSliderValueChangeHappenTypeRightMove,     /**< 由右边滑块拖动引起 */
-    CJSliderValueChangeHappenTypeTouchTrack,    /**< 由点击滑块上的点引起 */
+    CJSliderValueChangeHappenTypeTouchTrackCloseThumbLeft,  /**< 由点击滑块上的靠近左滑块的点引起 */
+    CJSliderValueChangeHappenTypeTouchTrackCloseThumbRight, /**< 由点击滑块上的靠近右滑块的点引起 */
 };
 
 /// slider的手势类型

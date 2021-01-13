@@ -13,6 +13,8 @@ NS_ASSUME_NONNULL_BEGIN
 @interface CQAgeRangeSliderControl : CJRangeSliderControl {
     
 }
+@property (nonatomic, assign, readonly) NSInteger startRangeAge;/**< 选择后的最小年龄 */
+@property (nonatomic, assign, readonly) NSInteger endRangeAge;  /**< 选择后的最小年龄 */
 
 #pragma mark - Init
 - (instancetype)initWithStartRangeAge:(NSInteger)startRangeAge

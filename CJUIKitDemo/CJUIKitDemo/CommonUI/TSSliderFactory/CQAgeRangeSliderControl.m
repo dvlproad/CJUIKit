@@ -163,6 +163,8 @@
         [(UILabel *)self.rightPopover setText:rightContent];
     }
     //NSLog(@"age rangeSlider rangion:%f,%f", startAge, endAge);
+    _startRangeAge = startAge;
+    _endRangeAge = endAge;
 
     !_chooseCompleteBlock ?: _chooseCompleteBlock(startAge, endAge);
 }
