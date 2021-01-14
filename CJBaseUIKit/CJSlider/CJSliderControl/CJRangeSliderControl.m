@@ -7,6 +7,7 @@
 //
 
 #import "CJRangeSliderControl.h"
+#import "CJSliderThumb.h"
 
 static NSTimeInterval const kCJRangeSliderControlPopoverAnimationDuration     = 0.25f;
 static NSTimeInterval const kMTRngeSliderDidTapSlidAnimationDuration   = 0.3f;
@@ -273,8 +274,25 @@ static NSTimeInterval const kMTRngeSliderDidTapSlidAnimationDuration   = 0.3f;
     [self reloadSlider];
 }
 
-/* 完整的描述请参见文件头部 */
-- (void)reloadSlider {
+
+/*
+ *  更新范围(如果你更新了startRangeValue和endRangeValue，请确保调用此方法前为_startRangeValue和_endRangeValue赋值了)
+ *
+ */
+- (void)reloadSlider
+{
+    [self __reloadSliderWithStartRangeValue:self.startRangeValue endRangeValue:self.endRangeValue];
+}
+
+/*
+ *  更新范围
+ *
+ *  @param startRangeValue              初始范围的起始值
+ *  @param endRangeValue                初始范围的结束值
+ */
+- (void)__reloadSliderWithStartRangeValue:(CGFloat)startRangeValue
+                            endRangeValue:(CGFloat)endRangeValue
+{
     CGRect trackRect = [self trackRectForBounds:self.bounds];
     self.trackView.frame = trackRect;
     
@@ -289,8 +307,8 @@ static NSTimeInterval const kMTRngeSliderDidTapSlidAnimationDuration   = 0.3f;
     _thumbCanMoveWidth = (self.thumbMoveMaxX-thumbWidth) - self.thumbMoveMinX; //滑块可滑动的实际大小
     
     //计算该值在坐标上的X是多少
-    CGFloat leftThumbPercent  = [self __leftThumbPercentByValue:self.startRangeValue];
-    CGFloat rightThumbPercent = [self __rightThumbPercentByValue:self.endRangeValue];
+    CGFloat leftThumbPercent  = [self __leftThumbPercentByValue:startRangeValue];
+    CGFloat rightThumbPercent = [self __rightThumbPercentByValue:endRangeValue];
     
     // 由percent获取到X的方法
     CGFloat leftThumbMidX = CGRectGetMinX(trackRect) + _thumbMoveMinX + leftThumbPercent*self.thumbCanMoveWidth;
@@ -425,6 +443,8 @@ static NSTimeInterval const kMTRngeSliderDidTapSlidAnimationDuration   = 0.3f;
                           leftThumbValue:(CGFloat)leftThumbValue
                          rightThumbValue:(CGFloat)rightThumbValue
 {
+    _startRangeValue = leftThumbValue;
+    _endRangeValue = rightThumbValue;
     if (happenType == CJSliderValueChangeHappenTypeInit) {
         // do nothing (会自动调用layoutSubviews，然后触发reloadSlider)
     } else if (happenType == CJSliderValueChangeHappenTypeUpdate) {
@@ -707,7 +727,7 @@ static NSTimeInterval const kMTRngeSliderDidTapSlidAnimationDuration   = 0.3f;
 #pragma mark - Lazy
 - (UIButton *)leftThumb {
     if (!_leftThumb) {
-        _leftThumb = [UIButton buttonWithType:UIButtonTypeCustom];
+        _leftThumb = [CJSliderThumb buttonWithType:UIButtonTypeCustom]; // 直接使用UIButton易引起无法拖动的bug
         [_leftThumb addTarget:self action:@selector(buttonDidDrag:withEvent:) forControlEvents:UIControlEventTouchDragInside];
         [_leftThumb addTarget:self action:@selector(buttonEndDrag:) forControlEvents:UIControlEventTouchUpInside | UIControlEventTouchUpOutside];
         [_leftThumb addTarget:self action:@selector(buttonStartDrag:) forControlEvents:UIControlEventTouchDown];
@@ -717,7 +737,7 @@ static NSTimeInterval const kMTRngeSliderDidTapSlidAnimationDuration   = 0.3f;
 
 - (UIButton *)rightThumb {
     if (!_rightThumb) {
-        _rightThumb = [UIButton buttonWithType:UIButtonTypeCustom];
+        _rightThumb = [CJSliderThumb buttonWithType:UIButtonTypeCustom]; // 直接使用UIButton易引起无法拖动的bug
         [_rightThumb addTarget:self action:@selector(buttonDidDrag:withEvent:) forControlEvents:UIControlEventTouchDragInside];
         [_rightThumb addTarget:self action:@selector(buttonEndDrag:) forControlEvents:UIControlEventTouchUpInside| UIControlEventTouchUpOutside];
         [_rightThumb addTarget:self action:@selector(buttonStartDrag:) forControlEvents:UIControlEventTouchDown];

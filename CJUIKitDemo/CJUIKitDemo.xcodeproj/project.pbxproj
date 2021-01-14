@@ -362,6 +362,7 @@
 		97A9192325AFE8510051B902 /* loading@3x.gif in Resources */ = {isa = PBXBuildFile; fileRef = 97A9191A25AFE8510051B902 /* loading@3x.gif */; };
 		97A9192425AFE8510051B902 /* longHorizontal.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 97A9191B25AFE8510051B902 /* longHorizontal.jpg */; };
 		97A9192525AFE8510051B902 /* TwoImageCompareView.m in Sources */ = {isa = PBXBuildFile; fileRef = 97A9191C25AFE8510051B902 /* TwoImageCompareView.m */; };
+		97CA816525AFEE330061F6CA /* CJSliderThumb.m in Sources */ = {isa = PBXBuildFile; fileRef = 97CA816425AFEE320061F6CA /* CJSliderThumb.m */; };
 		97EB21DA25ABFEC2008CDC13 /* BIndexSubStringViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 97EB21D925ABFEC2008CDC13 /* BIndexSubStringViewController.m */; };
 		E2649F5BE7F7FEF404688168 /* libPods-CJUIKitDemoTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 935109AAB855F6CC8B84B9A5 /* libPods-CJUIKitDemoTests.a */; };
 /* End PBXBuildFile section */
@@ -1016,6 +1017,8 @@
 		97A9191B25AFE8510051B902 /* longHorizontal.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = longHorizontal.jpg; sourceTree = "<group>"; };
 		97A9191C25AFE8510051B902 /* TwoImageCompareView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TwoImageCompareView.m; sourceTree = "<group>"; };
 		97A9191D25AFE8510051B902 /* TwoImageCompareView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TwoImageCompareView.h; sourceTree = "<group>"; };
+		97CA816325AFEE320061F6CA /* CJSliderThumb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJSliderThumb.h; sourceTree = "<group>"; };
+		97CA816425AFEE320061F6CA /* CJSliderThumb.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJSliderThumb.m; sourceTree = "<group>"; };
 		97EB21D825ABFEC2008CDC13 /* BIndexSubStringViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BIndexSubStringViewController.h; sourceTree = "<group>"; };
 		97EB21D925ABFEC2008CDC13 /* BIndexSubStringViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BIndexSubStringViewController.m; sourceTree = "<group>"; };
 		9AC0A78AFE86FE250B370A06 /* Pods-CJUIKitDemoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CJUIKitDemoTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CJUIKitDemoTests/Pods-CJUIKitDemoTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -1404,6 +1407,8 @@
 				1562F28523F5DBF40009FCEA /* CJSliderControl.m */,
 				1562F28823F5DBF40009FCEA /* CJSliderPopover.h */,
 				1562F28423F5DBF40009FCEA /* CJSliderPopover.m */,
+				97CA816325AFEE320061F6CA /* CJSliderThumb.h */,
+				97CA816425AFEE320061F6CA /* CJSliderThumb.m */,
 			);
 			path = CJSliderControl;
 			sourceTree = "<group>";
@@ -3284,6 +3289,7 @@
 				9767973825834D11002FD0C7 /* UITextView+CJVerticalCenter.m in Sources */,
 				9756E36E25A5C6A00039365C /* TSTextFieldDelegateViewController.m in Sources */,
 				808BF3242019C3E900511F7C /* YunUncaughtExceptionHandler.m in Sources */,
+				97CA816525AFEE330061F6CA /* CJSliderThumb.m in Sources */,
 				787FDB8520500B5C008A46E3 /* SwitchSliderViewController.m in Sources */,
 				7850B70220937C5A008F4A21 /* PopupInViewVC.m in Sources */,
 				1562F2F023F5DBF40009FCEA /* CJTextField.m in Sources */,

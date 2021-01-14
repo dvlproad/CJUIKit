@@ -112,6 +112,10 @@
     NSInteger startRangeAge = ageRangeSlider.startRangeAge;
     NSInteger endRangeAge = ageRangeSlider.endRangeAge;
     ageRangeSliderValueLabel.text = [NSString stringWithFormat:@"选取的区间是 : [ %zd, %zd ]\n请验证第一次滑动某个滑块后，另一个滑块上的值不会改变",startRangeAge,endRangeAge];
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        NSLog(@"测试Update方法");
+        [ageRangeSlider updateStartRangeAge:10 endRangeAge:90];
+    });
 }
 
 
