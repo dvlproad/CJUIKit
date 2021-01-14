@@ -7,6 +7,7 @@
 //
 
 #import "UIImage+CJTransformSize.h"
+#import "CQImageRatioModel.h"
 
 @implementation UIImage (CJTransformSize)
 
@@ -69,6 +70,171 @@
     
     return newImage;   //返回新的改变大小后的图片
 }
+
+
+/**
+ *  从图片中按指定的位置大小截取图片的一部分
+ *
+ *  @param image UIImage image 原始的图片
+ *  @param rect  CGRect rect 要截取的区域
+ *
+ *  @return UIImage
+ */
++ (UIImage *)ct_imageFromImage:(UIImage *)image inRect:(CGRect)rect {
+    //把像 素rect 转化为 点rect（如无转化则按原图像素取部分图片）
+    CGFloat scale = [UIScreen mainScreen].scale;
+    CGFloat x = rect.origin.x*scale;
+    CGFloat y = rect.origin.y*scale;
+    CGFloat w = rect.size.width*scale;
+    CGFloat h = rect.size.height*scale;
+    CGRect dianRect = CGRectMake(x, y, w, h);
+
+    //截取部分图片并生成新图片
+    CGImageRef sourceImageRef = [image CGImage];
+    CGImageRef newImageRef = CGImageCreateWithImageInRect(sourceImageRef, dianRect);
+    UIImage *newImage = [UIImage imageWithCGImage:newImageRef scale:scale orientation:UIImageOrientationUp];
+    return newImage;
+}
+
+//传入size记得屏幕的1x的size
++ (UIImage *)cutCenterImageSize:(CGSize)size iMg:(UIImage *)img {
+    CGFloat scale = [UIScreen mainScreen].scale;
+    size.width = size.width*scale;
+    size.height = size.height *scale;
+    CGSize imageSize = img.size;
+    CGRect pixelRect;
+    //根据图片的大小计算出图片中间矩形区域的位置与大小
+//    if (imageSize.width > imageSize.height) {
+//        float leftMargin = (imageSize.width - imageSize.height) *0.5;
+//        rect = CGRectMake(leftMargin,0, imageSize.height, imageSize.height);
+//    }else{
+//        float topMargin = (imageSize.height - imageSize.width) *0.5;
+//        rect = CGRectMake(0, topMargin, imageSize.width, imageSize.width);
+//    }
+    
+    float topMargin = (imageSize.height - size.height) *0.5;
+    float leftMargin = (imageSize.width - size.width) *0.5;
+    
+    pixelRect = CGRectMake(leftMargin, topMargin, size.width, size.height);
+    
+    return [self cutImage:img inPixelRect:pixelRect];
+}
+
+
+/*
+ *  裁剪pixelRect像素区域中的图片
+ *
+ *  @param img img
+ *  @param tooWidthWidthHeightRatio     宽太长时候，裁剪宽，保持高，裁剪后的图片比例
+ *  @param tooHeightWidthHeightRatio    高太高时候，裁剪高，保持宽，裁剪后的图片比例
+ *
+ *  @return 裁剪后的新图
+ */
++ (UIImage *)cutImage:(nullable UIImage *)image
+tooWidthTrimmedWidthKeepHeightWithRatio:(CGFloat)tooWidthWidthHeightRatio
+tooHeightTrimmedHeightKeepWithWithRatio:(CGFloat)tooHeightWidthHeightRatio
+{
+    CQImageRatioModel *ratioModel = [self correctImageViewRatioWithImage:image tooWidthTrimmedWidthKeepHeightWithRatio:tooWidthWidthHeightRatio tooHeightTrimmedHeightKeepWithWithRatio:tooHeightWidthHeightRatio];
+    CGFloat newPixelWidth = ratioModel.newWidth;
+    CGFloat newPixelHeight = ratioModel.newHeight;
+    
+    CGFloat newPixelX = (image.size.width - newPixelWidth) *0.5;
+    CGFloat newPixelY = (image.size.height - newPixelHeight) *0.5;
+    
+    CGRect pixelRect = CGRectMake(newPixelX, newPixelY, newPixelWidth, newPixelHeight);
+    
+    UIImage *newImage = [self cutImage:image inPixelRect:pixelRect];
+    
+    return newImage;;
+}
+
+
+/*
+ *  根据图片比例，纠正最后的图片视图所希望的比例
+ *
+ *  @param imageRatio   图片比例
+ *
+ *  @return 最后的图片视图所希望的比例
+ */
++ (CQImageRatioModel *)correctImageViewRatioWithImage:(nullable UIImage *)image
+              tooWidthTrimmedWidthKeepHeightWithRatio:(CGFloat)tooWidthWidthHeightRatio
+              tooHeightTrimmedHeightKeepWithWithRatio:(CGFloat)tooHeightWidthHeightRatio
+{
+    if (image == nil) { // 容错
+        return nil;
+    }
+    
+    CGFloat oldImageWidth = image.size.width;
+    CGFloat oldImageHeight = image.size.height;
+    NSAssert(oldImageWidth != 0 || oldImageHeight != 0, @"图片宽高不可能为0，请检查");
+    CGFloat imageRatio = oldImageWidth/oldImageHeight;
+    
+    
+    CGFloat newWidth;
+    CGFloat newHeight;
+    
+    CGFloat viewWidthHeightRatio;
+    CQTrimmedEdge trimmedEdge = CQTrimmedEdgeNone;  /**< 要裁剪的边 */
+    if (imageRatio > tooWidthWidthHeightRatio) {           // 宽太宽，超出4:3，保持高，裁剪宽
+        viewWidthHeightRatio = tooWidthWidthHeightRatio;
+        trimmedEdge = CQTrimmedEdgeWidth;
+        newHeight = oldImageHeight;
+        newWidth = newHeight*viewWidthHeightRatio;
+    } else {
+        if (imageRatio < tooHeightWidthHeightRatio) {
+            viewWidthHeightRatio = tooHeightWidthHeightRatio;
+            trimmedEdge = CQTrimmedEdgeHeight;
+            newWidth = oldImageWidth;
+            newHeight = newWidth/viewWidthHeightRatio;
+        } else {
+            viewWidthHeightRatio = imageRatio;
+            trimmedEdge = CQTrimmedEdgeNone;
+            newWidth = oldImageWidth;
+            newHeight = oldImageHeight;
+        }
+    }
+    
+    CQImageRatioModel *ratioModel = [[CQImageRatioModel alloc] init];
+    ratioModel.hopeNewRatio = viewWidthHeightRatio;
+    ratioModel.trimmedEdge = trimmedEdge;
+    ratioModel.newWidth = newWidth;
+    ratioModel.newHeight = newHeight;
+    
+    return ratioModel;
+}
+
+/*
+ *  裁剪pixelRect像素区域中的图片
+ *
+ *  @param img img
+ *  @param pixelRect 要裁剪的像素区域
+ *
+ *  @return 裁剪后的新图
+ */
++ (UIImage *)cutImage:(UIImage *)img inPixelRect:(CGRect)pixelRect {
+//    rect = CGRectMake(0, 0, 100, 100);
+//    UIImage *newImage = [self ct_imageFromImage:img inRect:rect];
+//    return newImage;
+    
+    CGImageRef imageRef = img.CGImage;
+    //截取中间区域矩形图片
+    CGImageRef imageRefRect =CGImageCreateWithImageInRect(imageRef, pixelRect);
+    
+    UIImage *tmp = [[UIImage alloc] initWithCGImage:imageRefRect];
+    CGImageRelease(imageRefRect);
+    
+    UIGraphicsBeginImageContext(pixelRect.size);
+    CGRect rectDraw =CGRectMake(0, 0, pixelRect.size.width, pixelRect.size.height);
+    [tmp drawInRect:rectDraw];
+    // 从当前context中创建一个改变大小后的图片
+    tmp = UIGraphicsGetImageFromCurrentImageContext();
+    
+    // 使当前的context出堆栈
+    UIGraphicsEndImageContext();
+    NSLog(@"tmp sizewidth is %f sizeHeight is %f",tmp.size.width,tmp.size.height);
+    return tmp;
+}
+
 
 /* 完整的描述请参见文件头部 */
 - (UIImage *)cj_resizableImageWithCapInsets:(UIEdgeInsets)insets {

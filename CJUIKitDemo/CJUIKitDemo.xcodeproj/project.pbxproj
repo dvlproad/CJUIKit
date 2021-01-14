@@ -87,10 +87,7 @@
 		7803DAAE22F7D519001E06B7 /* MJExtensionToModelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7803DAAC22F7D519001E06B7 /* MJExtensionToModelViewController.m */; };
 		7803DAB122F7D578001E06B7 /* MJExtensionToJSONViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7803DAAF22F7D578001E06B7 /* MJExtensionToJSONViewController.m */; };
 		7805E1D72369C5FC00B998EC /* PriceYuanToYuanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7805E1D52369C5FC00B998EC /* PriceYuanToYuanViewController.m */; };
-		7808318322DC10F700F36576 /* loading@2x.gif in Resources */ = {isa = PBXBuildFile; fileRef = 7808318122DC10F600F36576 /* loading@2x.gif */; };
-		7808318422DC10F700F36576 /* loading@3x.gif in Resources */ = {isa = PBXBuildFile; fileRef = 7808318222DC10F700F36576 /* loading@3x.gif */; };
 		7808318722DC116700F36576 /* GifViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7808318622DC116700F36576 /* GifViewController.m */; };
-		7808318922DC272700F36576 /* iamcoming.gif in Resources */ = {isa = PBXBuildFile; fileRef = 7808318822DC272700F36576 /* iamcoming.gif */; };
 		7808D59321703C33007FC851 /* ChangeEnvironmentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7808D59221703C33007FC851 /* ChangeEnvironmentViewController.m */; };
 		7808D5B62170919A007FC851 /* LoginChangeEnvironmentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7808D5B52170919A007FC851 /* LoginChangeEnvironmentViewController.m */; };
 		7808D5B921709E6B007FC851 /* UIViewController+CJChangeEnvironment.m in Sources */ = {isa = PBXBuildFile; fileRef = 7808D5B821709E6B007FC851 /* UIViewController+CJChangeEnvironment.m */; };
@@ -289,7 +286,6 @@
 		805598B51FF5D612009DC61C /* ValidateStringViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 805598B31FF5D612009DC61C /* ValidateStringViewController.m */; };
 		80582FA120C121B500C01225 /* ImageRotateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80582F9F20C121B500C01225 /* ImageRotateViewController.m */; };
 		80582FA220C121B500C01225 /* ImageRotateViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 80582FA020C121B500C01225 /* ImageRotateViewController.xib */; };
-		80582FA720C12B1300C01225 /* taixi_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 80582FA620C12B1300C01225 /* taixi_icon@2x.png */; };
 		8060C48020E0D0630093B14E /* CJMoneyUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 8060C47F20E0D0630093B14E /* CJMoneyUtil.m */; };
 		8060C48320E0D0B30093B14E /* CJDistanceUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 8060C48220E0D0B30093B14E /* CJDistanceUtil.m */; };
 		8060C48C20E0D5EF0093B14E /* AccuracyStringViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8060C48920E0D5EF0093B14E /* AccuracyStringViewController.m */; };
@@ -313,7 +309,6 @@
 		80FF90A01FC5649F00E437CF /* NestedXibView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 80FF8FCF1FC5649E00E437CF /* NestedXibView.xib */; };
 		80FF90A11FC5649F00E437CF /* NestedXibSubViewA.xib in Resources */ = {isa = PBXBuildFile; fileRef = 80FF8FD31FC5649E00E437CF /* NestedXibSubViewA.xib */; };
 		80FF90A41FC5649F00E437CF /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80FF8FD81FC5649E00E437CF /* HomeViewController.m */; };
-		80FF90A51FC5649F00E437CF /* imageOriginColor@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 80FF8FDA1FC5649E00E437CF /* imageOriginColor@2x.png */; };
 		80FF90A61FC5649F00E437CF /* QRCodeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 80FF8FDB1FC5649E00E437CF /* QRCodeViewController.xib */; };
 		80FF90A71FC5649F00E437CF /* QRCodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80FF8FDD1FC5649E00E437CF /* QRCodeViewController.m */; };
 		80FF90A81FC5649F00E437CF /* ImageChangeColorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80FF8FDE1FC5649E00E437CF /* ImageChangeColorViewController.m */; };
@@ -358,6 +353,15 @@
 		976794E9258093EF002FD0C7 /* AStringLengthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 976794E7258093EE002FD0C7 /* AStringLengthViewController.m */; };
 		976794FA2580B494002FD0C7 /* KeyboardAutoMoveUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 976794F92580B494002FD0C7 /* KeyboardAutoMoveUpViewController.m */; };
 		9767973825834D11002FD0C7 /* UITextView+CJVerticalCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 9767973725834D10002FD0C7 /* UITextView+CJVerticalCenter.m */; };
+		97A9191025AFE8380051B902 /* CQImageRatioModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 97A9190F25AFE8370051B902 /* CQImageRatioModel.m */; };
+		97A9191E25AFE8510051B902 /* imageOriginColor@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 97A9191525AFE8510051B902 /* imageOriginColor@2x.png */; };
+		97A9191F25AFE8510051B902 /* longVertical.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 97A9191625AFE8510051B902 /* longVertical.jpg */; };
+		97A9192025AFE8510051B902 /* taixi_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 97A9191725AFE8510051B902 /* taixi_icon@2x.png */; };
+		97A9192125AFE8510051B902 /* loading@2x.gif in Resources */ = {isa = PBXBuildFile; fileRef = 97A9191825AFE8510051B902 /* loading@2x.gif */; };
+		97A9192225AFE8510051B902 /* iamcoming.gif in Resources */ = {isa = PBXBuildFile; fileRef = 97A9191925AFE8510051B902 /* iamcoming.gif */; };
+		97A9192325AFE8510051B902 /* loading@3x.gif in Resources */ = {isa = PBXBuildFile; fileRef = 97A9191A25AFE8510051B902 /* loading@3x.gif */; };
+		97A9192425AFE8510051B902 /* longHorizontal.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 97A9191B25AFE8510051B902 /* longHorizontal.jpg */; };
+		97A9192525AFE8510051B902 /* TwoImageCompareView.m in Sources */ = {isa = PBXBuildFile; fileRef = 97A9191C25AFE8510051B902 /* TwoImageCompareView.m */; };
 		97EB21DA25ABFEC2008CDC13 /* BIndexSubStringViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 97EB21D925ABFEC2008CDC13 /* BIndexSubStringViewController.m */; };
 		E2649F5BE7F7FEF404688168 /* libPods-CJUIKitDemoTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 935109AAB855F6CC8B84B9A5 /* libPods-CJUIKitDemoTests.a */; };
 /* End PBXBuildFile section */
@@ -531,11 +535,8 @@
 		7803DAB022F7D578001E06B7 /* MJExtensionToJSONViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJExtensionToJSONViewController.h; sourceTree = "<group>"; };
 		7805E1D52369C5FC00B998EC /* PriceYuanToYuanViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PriceYuanToYuanViewController.m; sourceTree = "<group>"; };
 		7805E1D62369C5FC00B998EC /* PriceYuanToYuanViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PriceYuanToYuanViewController.h; sourceTree = "<group>"; };
-		7808318122DC10F600F36576 /* loading@2x.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "loading@2x.gif"; sourceTree = "<group>"; };
-		7808318222DC10F700F36576 /* loading@3x.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "loading@3x.gif"; sourceTree = "<group>"; };
 		7808318522DC116700F36576 /* GifViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GifViewController.h; sourceTree = "<group>"; };
 		7808318622DC116700F36576 /* GifViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GifViewController.m; sourceTree = "<group>"; };
-		7808318822DC272700F36576 /* iamcoming.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = iamcoming.gif; sourceTree = "<group>"; };
 		7808D59121703C33007FC851 /* ChangeEnvironmentViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ChangeEnvironmentViewController.h; sourceTree = "<group>"; };
 		7808D59221703C33007FC851 /* ChangeEnvironmentViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChangeEnvironmentViewController.m; sourceTree = "<group>"; };
 		7808D5B421709199007FC851 /* LoginChangeEnvironmentViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginChangeEnvironmentViewController.h; sourceTree = "<group>"; };
@@ -885,7 +886,6 @@
 		80582F9E20C121B500C01225 /* ImageRotateViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ImageRotateViewController.h; sourceTree = "<group>"; };
 		80582F9F20C121B500C01225 /* ImageRotateViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ImageRotateViewController.m; sourceTree = "<group>"; };
 		80582FA020C121B500C01225 /* ImageRotateViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ImageRotateViewController.xib; sourceTree = "<group>"; };
-		80582FA620C12B1300C01225 /* taixi_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "taixi_icon@2x.png"; sourceTree = "<group>"; };
 		8060C47E20E0D0630093B14E /* CJMoneyUtil.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CJMoneyUtil.h; sourceTree = "<group>"; };
 		8060C47F20E0D0630093B14E /* CJMoneyUtil.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CJMoneyUtil.m; sourceTree = "<group>"; };
 		8060C48120E0D0B30093B14E /* CJDistanceUtil.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CJDistanceUtil.h; sourceTree = "<group>"; };
@@ -924,7 +924,6 @@
 		80FF8FD21FC5649E00E437CF /* NestedXibSubViewA.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NestedXibSubViewA.h; sourceTree = "<group>"; };
 		80FF8FD31FC5649E00E437CF /* NestedXibSubViewA.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NestedXibSubViewA.xib; sourceTree = "<group>"; };
 		80FF8FD81FC5649E00E437CF /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
-		80FF8FDA1FC5649E00E437CF /* imageOriginColor@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "imageOriginColor@2x.png"; sourceTree = "<group>"; };
 		80FF8FDB1FC5649E00E437CF /* QRCodeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QRCodeViewController.xib; sourceTree = "<group>"; };
 		80FF8FDC1FC5649E00E437CF /* ImageChangeColorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageChangeColorViewController.h; sourceTree = "<group>"; };
 		80FF8FDD1FC5649E00E437CF /* QRCodeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QRCodeViewController.m; sourceTree = "<group>"; };
@@ -1006,6 +1005,17 @@
 		976794F92580B494002FD0C7 /* KeyboardAutoMoveUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeyboardAutoMoveUpViewController.m; sourceTree = "<group>"; };
 		9767973625834D10002FD0C7 /* UITextView+CJVerticalCenter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UITextView+CJVerticalCenter.h"; sourceTree = "<group>"; };
 		9767973725834D10002FD0C7 /* UITextView+CJVerticalCenter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UITextView+CJVerticalCenter.m"; sourceTree = "<group>"; };
+		97A9190E25AFE8370051B902 /* CQImageRatioModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CQImageRatioModel.h; sourceTree = "<group>"; };
+		97A9190F25AFE8370051B902 /* CQImageRatioModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CQImageRatioModel.m; sourceTree = "<group>"; };
+		97A9191525AFE8510051B902 /* imageOriginColor@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "imageOriginColor@2x.png"; sourceTree = "<group>"; };
+		97A9191625AFE8510051B902 /* longVertical.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = longVertical.jpg; sourceTree = "<group>"; };
+		97A9191725AFE8510051B902 /* taixi_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "taixi_icon@2x.png"; sourceTree = "<group>"; };
+		97A9191825AFE8510051B902 /* loading@2x.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "loading@2x.gif"; sourceTree = "<group>"; };
+		97A9191925AFE8510051B902 /* iamcoming.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = iamcoming.gif; sourceTree = "<group>"; };
+		97A9191A25AFE8510051B902 /* loading@3x.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "loading@3x.gif"; sourceTree = "<group>"; };
+		97A9191B25AFE8510051B902 /* longHorizontal.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = longHorizontal.jpg; sourceTree = "<group>"; };
+		97A9191C25AFE8510051B902 /* TwoImageCompareView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TwoImageCompareView.m; sourceTree = "<group>"; };
+		97A9191D25AFE8510051B902 /* TwoImageCompareView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TwoImageCompareView.h; sourceTree = "<group>"; };
 		97EB21D825ABFEC2008CDC13 /* BIndexSubStringViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BIndexSubStringViewController.h; sourceTree = "<group>"; };
 		97EB21D925ABFEC2008CDC13 /* BIndexSubStringViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BIndexSubStringViewController.m; sourceTree = "<group>"; };
 		9AC0A78AFE86FE250B370A06 /* Pods-CJUIKitDemoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CJUIKitDemoTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CJUIKitDemoTests/Pods-CJUIKitDemoTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -1116,6 +1126,8 @@
 				1562F21A23F5DBF40009FCEA /* UIImage+CJFixOrientation.m */,
 				1562F21523F5DBF40009FCEA /* UIImage+CJTransformSize.h */,
 				1562F21823F5DBF40009FCEA /* UIImage+CJTransformSize.m */,
+				97A9190E25AFE8370051B902 /* CQImageRatioModel.h */,
+				97A9190F25AFE8370051B902 /* CQImageRatioModel.m */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -2503,7 +2515,9 @@
 				78514133226854CC0023F0C0 /* ImageGetterViewController.m */,
 				789C447621F07BBB00181144 /* ImageHomeViewController.h */,
 				789C447521F07BBB00181144 /* ImageHomeViewController.m */,
-				80FF8FDA1FC5649E00E437CF /* imageOriginColor@2x.png */,
+				97A9191425AFE8510051B902 /* Resources */,
+				97A9191D25AFE8510051B902 /* TwoImageCompareView.h */,
+				97A9191C25AFE8510051B902 /* TwoImageCompareView.m */,
 				80582F9E20C121B500C01225 /* ImageRotateViewController.h */,
 				80582F9F20C121B500C01225 /* ImageRotateViewController.m */,
 				80582FA020C121B500C01225 /* ImageRotateViewController.xib */,
@@ -2512,13 +2526,9 @@
 				789C448021F07F6C00181144 /* ImageSizeViewController.xib */,
 				7808318522DC116700F36576 /* GifViewController.h */,
 				7808318622DC116700F36576 /* GifViewController.m */,
-				7808318122DC10F600F36576 /* loading@2x.gif */,
-				7808318222DC10F700F36576 /* loading@3x.gif */,
-				7808318822DC272700F36576 /* iamcoming.gif */,
 				80FF8FE01FC5649E00E437CF /* QRCodeViewController.h */,
 				80FF8FDD1FC5649E00E437CF /* QRCodeViewController.m */,
 				80FF8FDB1FC5649E00E437CF /* QRCodeViewController.xib */,
-				80582FA620C12B1300C01225 /* taixi_icon@2x.png */,
 			);
 			path = UIImageDemo;
 			sourceTree = "<group>";
@@ -2724,6 +2734,20 @@
 			path = TSSliderFactory;
 			sourceTree = "<group>";
 		};
+		97A9191425AFE8510051B902 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				97A9191525AFE8510051B902 /* imageOriginColor@2x.png */,
+				97A9191625AFE8510051B902 /* longVertical.jpg */,
+				97A9191725AFE8510051B902 /* taixi_icon@2x.png */,
+				97A9191825AFE8510051B902 /* loading@2x.gif */,
+				97A9191925AFE8510051B902 /* iamcoming.gif */,
+				97A9191A25AFE8510051B902 /* loading@3x.gif */,
+				97A9191B25AFE8510051B902 /* longHorizontal.jpg */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		E75FB8B4AF71C8FE7F95B93C /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -2861,7 +2885,6 @@
 			files = (
 				781C737221BA65C90090080C /* minus_common_icon@2x.png in Resources */,
 				80FF90A11FC5649F00E437CF /* NestedXibSubViewA.xib in Resources */,
-				7808318422DC10F700F36576 /* loading@3x.gif in Resources */,
 				787FDB9320500B5C008A46E3 /* icon_ddlb_jd@2x.png in Resources */,
 				80FF90A01FC5649F00E437CF /* NestedXibView.xib in Resources */,
 				781C737421BA65C90090080C /* add_common_icon@3x.png in Resources */,
@@ -2869,10 +2892,10 @@
 				1562F2D123F5DBF40009FCEA /* cjCheckBoxGreenNO@2x.png in Resources */,
 				787FDB9620500B5C008A46E3 /* SliderViewController.xib in Resources */,
 				1562F2DB23F5DBF40009FCEA /* cjBackBarButtonItem@2x.png in Resources */,
-				80582FA720C12B1300C01225 /* taixi_icon@2x.png in Resources */,
 				78AB83AC21B7D24E00853E21 /* closePresentVC@2x.png in Resources */,
 				156AC8D82406DBBE00A5A23D /* badgeButton_highlighted@2x.png in Resources */,
 				787FDB8E20500B5C008A46E3 /* slider_minimum_trackimage@2x.png in Resources */,
+				97A9191E25AFE8510051B902 /* imageOriginColor@2x.png in Resources */,
 				7880E6F7213C2C4C009C9BCF /* CJRandomNameUtil.txt in Resources */,
 				787FDB6520500B1F008A46E3 /* plus@2x.png in Resources */,
 				787FDB8D20500B5C008A46E3 /* slider_double_thumbImage_b@3x.png in Resources */,
@@ -2889,7 +2912,7 @@
 				800E07E22016CCF500799B78 /* DataUtilViewController.xib in Resources */,
 				80D01210210336E100D1EDF0 /* ChangeViewController.xib in Resources */,
 				800E07EA2016CD1500799B78 /* KeyboardUtilViewController.xib in Resources */,
-				7808318322DC10F700F36576 /* loading@2x.gif in Resources */,
+				97A9192225AFE8510051B902 /* iamcoming.gif in Resources */,
 				787FDB8C20500B5C008A46E3 /* btn_hd@2x.png in Resources */,
 				782F8770225AE80F001ACE76 /* cjTextField_clear@2x.png in Resources */,
 				787FDB8A20500B5C008A46E3 /* slider_maximum_trackimage@2x.png in Resources */,
@@ -2899,6 +2922,7 @@
 				1562F2DC23F5DBF40009FCEA /* cjBackBarButtonItemGray@3x.png in Resources */,
 				7850B6FF20937C5A008F4A21 /* DragViewController.xib in Resources */,
 				787FDB6820500B1F008A46E3 /* TextViewController.xib in Resources */,
+				97A9191F25AFE8510051B902 /* longVertical.jpg in Resources */,
 				156AC8D62406DBBE00A5A23D /* badgeButton_highlighted@3x.png in Resources */,
 				787FDB9120500B5C008A46E3 /* slider_double_thumbImage_b@2x.png in Resources */,
 				80FF90A61FC5649F00E437CF /* QRCodeViewController.xib in Resources */,
@@ -2906,11 +2930,13 @@
 				7850B70320937C5A008F4A21 /* ShowExtendViewVC.xib in Resources */,
 				787FDB9420500B5C008A46E3 /* slider_thumbImage@3x.png in Resources */,
 				78B90E67218B49D000776584 /* MainAsset.xcassets in Resources */,
+				97A9192425AFE8510051B902 /* longHorizontal.jpg in Resources */,
 				1562F2DD23F5DBF40009FCEA /* cjBackBarButtonItemGray@2x.png in Resources */,
 				7850B71220937E85008F4A21 /* WelcomePopupView.xib in Resources */,
 				8051E5CE20AAB34E003370AA /* details_icon_huadong@3x.png in Resources */,
 				80FF90B21FC5649F00E437CF /* TableHeaderView.xib in Resources */,
 				782F8771225AE80F001ACE76 /* cjTextField_clear@3x.png in Resources */,
+				97A9192325AFE8510051B902 /* loading@3x.gif in Resources */,
 				156AC8D72406DBBE00A5A23D /* badgeButton_normal@2x.png in Resources */,
 				787FDB9520500B5C008A46E3 /* SwitchSliderViewController.xib in Resources */,
 				787FDB8720500B5C008A46E3 /* slider_maximum_trackimage@3x.png in Resources */,
@@ -2925,9 +2951,11 @@
 				781C737121BA65C90090080C /* minus_common_icon@3x.png in Resources */,
 				787FDB8820500B5C008A46E3 /* slider_double_thumbImage_a@2x.png in Resources */,
 				1562F2D523F5DBF40009FCEA /* cjCheckBoxGreen2NO.png in Resources */,
+				97A9192125AFE8510051B902 /* loading@2x.gif in Resources */,
 				787FDB6720500B1F008A46E3 /* smail@2x.png in Resources */,
 				80FF919B1FC5682B00E437CF /* DateViewController.xib in Resources */,
 				780E460E1E5DF87B00980127 /* Main.storyboard in Resources */,
+				97A9192025AFE8510051B902 /* taixi_icon@2x.png in Resources */,
 				787FDB9220500B5C008A46E3 /* slider_thumbImage@2x.png in Resources */,
 				80582FA220C121B500C01225 /* ImageRotateViewController.xib in Resources */,
 				789C448221F07F6C00181144 /* ImageSizeViewController.xib in Resources */,
@@ -2938,13 +2966,11 @@
 				7894C2A9256ECAE200C73B5E /* slider_range_start@2x.png in Resources */,
 				1562F2D423F5DBF40009FCEA /* cjCheckBoxGreenYES@2x.png in Resources */,
 				78AB83AD21B7D24E00853E21 /* closePresentVC@3x.png in Resources */,
-				7808318922DC272700F36576 /* iamcoming.gif in Resources */,
 				7868277B21AF01BA00FCCDE5 /* bgCar@2x.jpg in Resources */,
 				807F126C20B5123A0008B748 /* animationBg02.jpg in Resources */,
 				807F127020B51C390008B748 /* animationBg01.jpg in Resources */,
 				80FF919D1FC5682B00E437CF /* CountDownTimeViewController.xib in Resources */,
 				787FDB6620500B1F008A46E3 /* sound@2x.png in Resources */,
-				80FF90A51FC5649F00E437CF /* imageOriginColor@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3085,6 +3111,7 @@
 				78226A9021A42103002167F2 /* CJConvertUtil.m in Sources */,
 				156AC8D12406D9F800A5A23D /* DemoTagButtonFactory.m in Sources */,
 				786254C324A92EBF00E3CCC3 /* CJDataSearchUtil.m in Sources */,
+				97A9192525AFE8510051B902 /* TwoImageCompareView.m in Sources */,
 				801F75D820A040D800A2E027 /* BBXDAreaCodeTextField.m in Sources */,
 				780F52E025AB65C600DECB38 /* CQBlockTextField.m in Sources */,
 				975487B625A9A06300DD7080 /* StringForInputHomeViewController.m in Sources */,
@@ -3231,6 +3258,7 @@
 				78A99268257958CB00B54E30 /* UIScrollView+CJTouch.m in Sources */,
 				805598B51FF5D612009DC61C /* ValidateStringViewController.m in Sources */,
 				1562F2C123F5DBF40009FCEA /* CJButton.m in Sources */,
+				97A9191025AFE8380051B902 /* CQImageRatioModel.m in Sources */,
 				80FF91971FC5682B00E437CF /* EncryptStringViewController.m in Sources */,
 				789C448521F166FC00181144 /* DemoCacheUtil.m in Sources */,
 				78B6C2E92159D84800D5864E /* DemoBusFlightStationOnOffDetailModel.m in Sources */,
