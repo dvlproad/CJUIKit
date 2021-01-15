@@ -43,6 +43,9 @@
         isDifferentFromSystemDeal = YES;
     }
     
+    if (hopeReplacementString == nil) {
+        hopeReplacementString = @""; // 进行容错，确保下面调用stringByReplacingCharactersInRange的时候不会崩溃
+    }
     NSString *tempNewText = [oldText stringByReplacingCharactersInRange:range withString:hopeReplacementString];//若不做任何长度等限制，则改变后新生成的文本
     //    tempNewText = [[tempNewText componentsSeparatedByCharactersInSet:[NSCharacterSet whitespaceCharacterSet]] componentsJoinedByString:@""];
     if (maxTextLength == 0) {

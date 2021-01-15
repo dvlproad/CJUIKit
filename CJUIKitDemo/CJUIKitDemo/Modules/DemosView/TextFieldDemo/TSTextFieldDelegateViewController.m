@@ -8,10 +8,12 @@
 
 #import "TSTextFieldDelegateViewController.h"
 #import "CQBlockTextField.h"
+#import <CQDemoKit/CJUIKitToastUtil.h>
 
 @interface TSTextFieldDelegateViewController () <UITextFieldDelegate>  {
 
 }
+@property (nonatomic, strong) CQBlockTextField *textField;
 
 @end
 
@@ -40,10 +42,28 @@
         make.top.mas_equalTo(parentView).mas_offset(100);
         make.height.mas_equalTo(30);    //系统默认高度30
     }];
+    self.textField = textField;
     
 //    textField.delegate = self;
 //    [textField addTarget:self action:@selector(__textFieldDidChange:) forControlEvents:UIControlEventEditingChanged];
     
+    UIButton *nextButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    [nextButton setBackgroundColor:[UIColor redColor]];
+    [nextButton setTitle:@"测试点击按钮时候，获取的文本（进入下一页）" forState:UIControlStateNormal];
+    [nextButton addTarget:self action:@selector(goNext) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:nextButton];
+    [nextButton mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.center.mas_equalTo(self.view);
+        make.height.mas_equalTo(44);
+        make.left.mas_equalTo(self.view).mas_offset(40);
+    }];
+}
+
+- (void)goNext {
+    NSString *currentText = self.textField.text;
+    NSString *currentText2 = self.textField.lastSelectedText;
+    NSString *message = [NSString stringWithFormat:@"获取系统的：%@\n自己的:%@", currentText, currentText2];
+    [CJUIKitToastUtil showMessage:message];
 }
 
 
