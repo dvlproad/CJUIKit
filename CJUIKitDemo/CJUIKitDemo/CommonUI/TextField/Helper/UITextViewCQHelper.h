@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
-#import "UITextInputCJHelper.h"
+#import "UITextInputLimitCJHelper.h"
 
 NS_ASSUME_NONNULL_BEGIN
 

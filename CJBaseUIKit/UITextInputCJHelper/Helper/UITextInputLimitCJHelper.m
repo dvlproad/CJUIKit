@@ -1,15 +1,15 @@
 //
-//  UITextInputCJHelper.m
+//  UITextInputLimitCJHelper.m
 //  CJUIKitDemo
 //
 //  Created by ciyouzen on 2020/5/15.
 //  Copyright © 2020 dvlproad. All rights reserved.
 //
 
-#import "UITextInputCJHelper.h"
+#import "UITextInputLimitCJHelper.h"
 #import "CJSubStringUtil.h"
 
-@implementation UITextInputCJHelper
+@implementation UITextInputLimitCJHelper
 
 /*
  *  根据最大长度获取shouldChange的时候返回的newText

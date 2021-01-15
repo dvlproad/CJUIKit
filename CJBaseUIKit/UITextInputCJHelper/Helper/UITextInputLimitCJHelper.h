@@ -1,5 +1,5 @@
 //
-//  UITextInputCJHelper.h
+//  UITextInputLimitCJHelper.h
 //  CJUIKitDemo
 //
 //  Created by ciyouzen on 2020/5/15.
@@ -12,7 +12,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface UITextInputCJHelper : NSObject
+@interface UITextInputLimitCJHelper : NSObject
 
 
 /*

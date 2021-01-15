@@ -96,13 +96,8 @@
 		780E461E1E5DF87B00980127 /* CJUIKitDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 780E461D1E5DF87B00980127 /* CJUIKitDemoTests.m */; };
 		780E46291E5DF87B00980127 /* CJUIKitDemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 780E46281E5DF87B00980127 /* CJUIKitDemoUITests.m */; };
 		780F51E325AB3D4800DECB38 /* CQShakeUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 780F51E225AB3D4800DECB38 /* CQShakeUtil.m */; };
-		780F52E025AB65C600DECB38 /* CQBlockTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 780F52D725AB65C600DECB38 /* CQBlockTextField.m */; };
-		780F52E125AB65C600DECB38 /* CQTextFieldDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 780F52DA25AB65C600DECB38 /* CQTextFieldDelegate.m */; };
 		780F52E225AB65C600DECB38 /* CQSubStringUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 780F52DC25AB65C600DECB38 /* CQSubStringUtil.m */; };
 		780F52E325AB65C600DECB38 /* UITextViewCQHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 780F52DD25AB65C600DECB38 /* UITextViewCQHelper.m */; };
-		780F534825AB678900DECB38 /* UITextInputChangeResultModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 780F534225AB678900DECB38 /* UITextInputChangeResultModel.m */; };
-		780F534925AB678900DECB38 /* CJSubStringUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 780F534625AB678900DECB38 /* CJSubStringUtil.m */; };
-		780F534A25AB678900DECB38 /* UITextInputCJHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 780F534725AB678900DECB38 /* UITextInputCJHelper.m */; };
 		780F536525AB728E00DECB38 /* UIVerticalCenterTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 780F536125AB728D00DECB38 /* UIVerticalCenterTextView.m */; };
 		780F536625AB728E00DECB38 /* CJVerticalCenterTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 780F536425AB728E00DECB38 /* CJVerticalCenterTextView.m */; };
 		78143150249C8FA50014EA69 /* AutoLayoutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7814314F249C8FA50014EA69 /* AutoLayoutViewController.m */; };
@@ -156,6 +151,15 @@
 		7868278121AF02E000FCCDE5 /* bg@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7868278021AF02E000FCCDE5 /* bg@2x.jpg */; };
 		7868A068237055660013AF4D /* ButtonHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7868A067237055650013AF4D /* ButtonHomeViewController.m */; };
 		7868A06B237056B30013AF4D /* ButtonCategoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7868A06A237056B30013AF4D /* ButtonCategoryViewController.m */; };
+		786B5BED25B203F400433A48 /* UITextView+CJBlock.m in Sources */ = {isa = PBXBuildFile; fileRef = 786B5BE025B203F400433A48 /* UITextView+CJBlock.m */; };
+		786B5BEE25B203F400433A48 /* UITextField+CJBlock.m in Sources */ = {isa = PBXBuildFile; fileRef = 786B5BE325B203F400433A48 /* UITextField+CJBlock.m */; };
+		786B5BEF25B203F400433A48 /* UITextInputChangeResultModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 786B5BE525B203F400433A48 /* UITextInputChangeResultModel.m */; };
+		786B5BF025B203F400433A48 /* UITextInputCursorCJHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 786B5BEA25B203F400433A48 /* UITextInputCursorCJHelper.m */; };
+		786B5BF125B203F400433A48 /* CJSubStringUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 786B5BEB25B203F400433A48 /* CJSubStringUtil.m */; };
+		786B5BF225B203F400433A48 /* UITextInputLimitCJHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 786B5BEC25B203F400433A48 /* UITextInputLimitCJHelper.m */; };
+		786B5BFD25B2054500433A48 /* CQBlockTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 786B5BF925B2054200433A48 /* CQBlockTextField.m */; };
+		786B5BFE25B2054500433A48 /* CJTextFieldDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 786B5BFB25B2054200433A48 /* CJTextFieldDelegate.m */; };
+		786B5C0425B2054C00433A48 /* CJTextViewDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 786B5C0225B2054C00433A48 /* CJTextViewDelegate.m */; };
 		7875C58D231CF77900076A00 /* BackCustomItemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7875C587231CF77900076A00 /* BackCustomItemViewController.m */; };
 		7875C58E231CF77900076A00 /* BackItemBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7875C588231CF77900076A00 /* BackItemBaseViewController.m */; };
 		7875C58F231CF77900076A00 /* BackSystemItemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7875C589231CF77900076A00 /* BackSystemItemViewController.m */; };
@@ -556,20 +560,10 @@
 		780E462A1E5DF87B00980127 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		780F51E125AB3D4800DECB38 /* CQShakeUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CQShakeUtil.h; sourceTree = "<group>"; };
 		780F51E225AB3D4800DECB38 /* CQShakeUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CQShakeUtil.m; sourceTree = "<group>"; };
-		780F52D725AB65C600DECB38 /* CQBlockTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CQBlockTextField.m; sourceTree = "<group>"; };
-		780F52D825AB65C600DECB38 /* CQTextFieldDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CQTextFieldDelegate.h; sourceTree = "<group>"; };
-		780F52D925AB65C600DECB38 /* CQBlockTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CQBlockTextField.h; sourceTree = "<group>"; };
-		780F52DA25AB65C600DECB38 /* CQTextFieldDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CQTextFieldDelegate.m; sourceTree = "<group>"; };
 		780F52DC25AB65C600DECB38 /* CQSubStringUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CQSubStringUtil.m; sourceTree = "<group>"; };
 		780F52DD25AB65C600DECB38 /* UITextViewCQHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UITextViewCQHelper.m; sourceTree = "<group>"; };
 		780F52DE25AB65C600DECB38 /* CQSubStringUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CQSubStringUtil.h; sourceTree = "<group>"; };
 		780F52DF25AB65C600DECB38 /* UITextViewCQHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UITextViewCQHelper.h; sourceTree = "<group>"; };
-		780F534225AB678900DECB38 /* UITextInputChangeResultModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UITextInputChangeResultModel.m; sourceTree = "<group>"; };
-		780F534325AB678900DECB38 /* CJSubStringUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJSubStringUtil.h; sourceTree = "<group>"; };
-		780F534425AB678900DECB38 /* UITextInputCJHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UITextInputCJHelper.h; sourceTree = "<group>"; };
-		780F534525AB678900DECB38 /* UITextInputChangeResultModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UITextInputChangeResultModel.h; sourceTree = "<group>"; };
-		780F534625AB678900DECB38 /* CJSubStringUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJSubStringUtil.m; sourceTree = "<group>"; };
-		780F534725AB678900DECB38 /* UITextInputCJHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UITextInputCJHelper.m; sourceTree = "<group>"; };
 		780F536125AB728D00DECB38 /* UIVerticalCenterTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIVerticalCenterTextView.m; sourceTree = "<group>"; };
 		780F536225AB728D00DECB38 /* UIVerticalCenterTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIVerticalCenterTextView.h; sourceTree = "<group>"; };
 		780F536325AB728E00DECB38 /* CJVerticalCenterTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJVerticalCenterTextView.h; sourceTree = "<group>"; };
@@ -661,6 +655,24 @@
 		7868A067237055650013AF4D /* ButtonHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ButtonHomeViewController.m; sourceTree = "<group>"; };
 		7868A069237056B30013AF4D /* ButtonCategoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ButtonCategoryViewController.h; sourceTree = "<group>"; };
 		7868A06A237056B30013AF4D /* ButtonCategoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ButtonCategoryViewController.m; sourceTree = "<group>"; };
+		786B5BDF25B203F400433A48 /* UITextView+CJBlock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextView+CJBlock.h"; sourceTree = "<group>"; };
+		786B5BE025B203F400433A48 /* UITextView+CJBlock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextView+CJBlock.m"; sourceTree = "<group>"; };
+		786B5BE225B203F400433A48 /* UITextField+CJBlock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextField+CJBlock.h"; sourceTree = "<group>"; };
+		786B5BE325B203F400433A48 /* UITextField+CJBlock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextField+CJBlock.m"; sourceTree = "<group>"; };
+		786B5BE525B203F400433A48 /* UITextInputChangeResultModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UITextInputChangeResultModel.m; sourceTree = "<group>"; };
+		786B5BE625B203F400433A48 /* CJSubStringUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJSubStringUtil.h; sourceTree = "<group>"; };
+		786B5BE725B203F400433A48 /* UITextInputCursorCJHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UITextInputCursorCJHelper.h; sourceTree = "<group>"; };
+		786B5BE825B203F400433A48 /* UITextInputLimitCJHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UITextInputLimitCJHelper.h; sourceTree = "<group>"; };
+		786B5BE925B203F400433A48 /* UITextInputChangeResultModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UITextInputChangeResultModel.h; sourceTree = "<group>"; };
+		786B5BEA25B203F400433A48 /* UITextInputCursorCJHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UITextInputCursorCJHelper.m; sourceTree = "<group>"; };
+		786B5BEB25B203F400433A48 /* CJSubStringUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJSubStringUtil.m; sourceTree = "<group>"; };
+		786B5BEC25B203F400433A48 /* UITextInputLimitCJHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UITextInputLimitCJHelper.m; sourceTree = "<group>"; };
+		786B5BF925B2054200433A48 /* CQBlockTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CQBlockTextField.m; sourceTree = "<group>"; };
+		786B5BFA25B2054200433A48 /* CJTextFieldDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJTextFieldDelegate.h; sourceTree = "<group>"; };
+		786B5BFB25B2054200433A48 /* CJTextFieldDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJTextFieldDelegate.m; sourceTree = "<group>"; };
+		786B5BFC25B2054300433A48 /* CQBlockTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CQBlockTextField.h; sourceTree = "<group>"; };
+		786B5C0225B2054C00433A48 /* CJTextViewDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJTextViewDelegate.m; sourceTree = "<group>"; };
+		786B5C0325B2054C00433A48 /* CJTextViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJTextViewDelegate.h; sourceTree = "<group>"; };
 		7875C587231CF77900076A00 /* BackCustomItemViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BackCustomItemViewController.m; sourceTree = "<group>"; };
 		7875C588231CF77900076A00 /* BackItemBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BackItemBaseViewController.m; sourceTree = "<group>"; };
 		7875C589231CF77900076A00 /* BackSystemItemViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BackSystemItemViewController.m; sourceTree = "<group>"; };
@@ -1062,7 +1074,6 @@
 				1562F25B23F5DBF40009FCEA /* CJBaseTableViewHeaderFooterView */,
 				1562F27A23F5DBF40009FCEA /* CJSlider */,
 				1562F29223F5DBF40009FCEA /* CJSwitchView */,
-				1562F29523F5DBF40009FCEA /* CJTextView */,
 				1562F25E23F5DBF40009FCEA /* CJUIKit.h */,
 				1562F22323F5DBF40009FCEA /* CJUIKitConstant */,
 				1562F22C23F5DBF40009FCEA /* UIButton */,
@@ -1073,7 +1084,8 @@
 				1562F21B23F5DBF40009FCEA /* UIScrollView */,
 				1562F27723F5DBF40009FCEA /* UITableView */,
 				1562F2A023F5DBF40009FCEA /* UITextField */,
-				780F534125AB678900DECB38 /* UITextInputCJHelper */,
+				786B5BDD25B203F400433A48 /* UITextInputCJHelper */,
+				1562F29523F5DBF40009FCEA /* UITextView */,
 				1562F23B23F5DBF40009FCEA /* UIToolbar */,
 				1562F24223F5DBF40009FCEA /* UIView */,
 				1562F26B23F5DBF40009FCEA /* UIViewController */,
@@ -1440,15 +1452,14 @@
 			path = CJSwitchView;
 			sourceTree = "<group>";
 		};
-		1562F29523F5DBF40009FCEA /* CJTextView */ = {
+		1562F29523F5DBF40009FCEA /* UITextView */ = {
 			isa = PBXGroup;
 			children = (
-				1562F29623F5DBF40009FCEA /* CJTextView.h */,
-				1562F29723F5DBF40009FCEA /* CJTextView.m */,
+				786B5C1D25B20CAC00433A48 /* CJTextView */,
 				9767973625834D10002FD0C7 /* UITextView+CJVerticalCenter.h */,
 				9767973725834D10002FD0C7 /* UITextView+CJVerticalCenter.m */,
 			);
-			path = CJTextView;
+			path = UITextView;
 			sourceTree = "<group>";
 		};
 		1562F2A023F5DBF40009FCEA /* UITextField */ = {
@@ -1597,10 +1608,8 @@
 		780F52D625AB65C600DECB38 /* TextField */ = {
 			isa = PBXGroup;
 			children = (
-				780F52D925AB65C600DECB38 /* CQBlockTextField.h */,
-				780F52D725AB65C600DECB38 /* CQBlockTextField.m */,
-				780F52D825AB65C600DECB38 /* CQTextFieldDelegate.h */,
-				780F52DA25AB65C600DECB38 /* CQTextFieldDelegate.m */,
+				786B5BFC25B2054300433A48 /* CQBlockTextField.h */,
+				786B5BF925B2054200433A48 /* CQBlockTextField.m */,
 				780F52DB25AB65C600DECB38 /* Helper */,
 			);
 			path = TextField;
@@ -1615,19 +1624,6 @@
 				780F52DD25AB65C600DECB38 /* UITextViewCQHelper.m */,
 			);
 			path = Helper;
-			sourceTree = "<group>";
-		};
-		780F534125AB678900DECB38 /* UITextInputCJHelper */ = {
-			isa = PBXGroup;
-			children = (
-				780F534325AB678900DECB38 /* CJSubStringUtil.h */,
-				780F534625AB678900DECB38 /* CJSubStringUtil.m */,
-				780F534525AB678900DECB38 /* UITextInputChangeResultModel.h */,
-				780F534225AB678900DECB38 /* UITextInputChangeResultModel.m */,
-				780F534425AB678900DECB38 /* UITextInputCJHelper.h */,
-				780F534725AB678900DECB38 /* UITextInputCJHelper.m */,
-			);
-			path = UITextInputCJHelper;
 			sourceTree = "<group>";
 		};
 		780F535D25AB724700DECB38 /* TextView */ = {
@@ -1850,6 +1846,62 @@
 				782F876F225AE80F001ACE76 /* cjTextField_clear@3x.png */,
 			);
 			path = CJDemoDateTextField;
+			sourceTree = "<group>";
+		};
+		786B5BDD25B203F400433A48 /* UITextInputCJHelper */ = {
+			isa = PBXGroup;
+			children = (
+				786B5BDE25B203F400433A48 /* TextView */,
+				786B5BE125B203F400433A48 /* TextField */,
+				786B5BE425B203F400433A48 /* Helper */,
+			);
+			path = UITextInputCJHelper;
+			sourceTree = "<group>";
+		};
+		786B5BDE25B203F400433A48 /* TextView */ = {
+			isa = PBXGroup;
+			children = (
+				786B5BDF25B203F400433A48 /* UITextView+CJBlock.h */,
+				786B5BE025B203F400433A48 /* UITextView+CJBlock.m */,
+				786B5C0325B2054C00433A48 /* CJTextViewDelegate.h */,
+				786B5C0225B2054C00433A48 /* CJTextViewDelegate.m */,
+			);
+			path = TextView;
+			sourceTree = "<group>";
+		};
+		786B5BE125B203F400433A48 /* TextField */ = {
+			isa = PBXGroup;
+			children = (
+				786B5BE225B203F400433A48 /* UITextField+CJBlock.h */,
+				786B5BE325B203F400433A48 /* UITextField+CJBlock.m */,
+				786B5BFA25B2054200433A48 /* CJTextFieldDelegate.h */,
+				786B5BFB25B2054200433A48 /* CJTextFieldDelegate.m */,
+			);
+			path = TextField;
+			sourceTree = "<group>";
+		};
+		786B5BE425B203F400433A48 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				786B5BE625B203F400433A48 /* CJSubStringUtil.h */,
+				786B5BEB25B203F400433A48 /* CJSubStringUtil.m */,
+				786B5BE925B203F400433A48 /* UITextInputChangeResultModel.h */,
+				786B5BE525B203F400433A48 /* UITextInputChangeResultModel.m */,
+				786B5BE825B203F400433A48 /* UITextInputLimitCJHelper.h */,
+				786B5BEC25B203F400433A48 /* UITextInputLimitCJHelper.m */,
+				786B5BE725B203F400433A48 /* UITextInputCursorCJHelper.h */,
+				786B5BEA25B203F400433A48 /* UITextInputCursorCJHelper.m */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
+		786B5C1D25B20CAC00433A48 /* CJTextView */ = {
+			isa = PBXGroup;
+			children = (
+				1562F29623F5DBF40009FCEA /* CJTextView.h */,
+				1562F29723F5DBF40009FCEA /* CJTextView.m */,
+			);
+			path = CJTextView;
 			sourceTree = "<group>";
 		};
 		7875C586231CF77900076A00 /* BackBarButtonItem */ = {
@@ -3118,7 +3170,6 @@
 				786254C324A92EBF00E3CCC3 /* CJDataSearchUtil.m in Sources */,
 				97A9192525AFE8510051B902 /* TwoImageCompareView.m in Sources */,
 				801F75D820A040D800A2E027 /* BBXDAreaCodeTextField.m in Sources */,
-				780F52E025AB65C600DECB38 /* CQBlockTextField.m in Sources */,
 				975487B625A9A06300DD7080 /* StringForInputHomeViewController.m in Sources */,
 				1562F2C423F5DBF40009FCEA /* UISearchBar+CJAddInputAccessoryView.m in Sources */,
 				78B6C2EE2159D8AF00D5864E /* DemoBusPassengerOrderModel.m in Sources */,
@@ -3136,10 +3187,10 @@
 				7856F72B21F4E790004AF751 /* TestDataModel.m in Sources */,
 				788113CE21996A3A00D1630D /* SubInheritableSharedInstanceClass.m in Sources */,
 				781495A92140D82600D0F2BC /* MantleViewController.m in Sources */,
+				786B5BFE25B2054500433A48 /* CJTextFieldDelegate.m in Sources */,
 				780F536525AB728E00DECB38 /* UIVerticalCenterTextView.m in Sources */,
 				7808D59321703C33007FC851 /* ChangeEnvironmentViewController.m in Sources */,
 				97EB21DA25ABFEC2008CDC13 /* BIndexSubStringViewController.m in Sources */,
-				780F52E125AB65C600DECB38 /* CQTextFieldDelegate.m in Sources */,
 				783A4A19219BC73500CBF4FC /* NSObject+CJSharedInstance.m in Sources */,
 				800E07E42016CCF500799B78 /* DeviceInfoViewController.m in Sources */,
 				80FF91341FC5668700E437CF /* NSDictionary+CJConsoleLog.m in Sources */,
@@ -3155,12 +3206,14 @@
 				1562F2CE23F5DBF40009FCEA /* UIView+CJExclusiveTouch.m in Sources */,
 				7856F97021F9D2C5004AF751 /* BaseTableViewCellViewController.m in Sources */,
 				787FDB9820500B5C008A46E3 /* ShimmeringSwitchSlider.m in Sources */,
+				786B5BF025B203F400433A48 /* UITextInputCursorCJHelper.m in Sources */,
 				7856F72921F4E790004AF751 /* TestDataUtil.m in Sources */,
 				789C448121F07F6C00181144 /* ImageSizeViewController.m in Sources */,
 				78B6C2D92159D1F100D5864E /* DemoBusFlightModel.m in Sources */,
 				1562F2B623F5DBF40009FCEA /* UIImage+CJCreate.m in Sources */,
 				80FF902A1FC5649E00E437CF /* ThirdPartyHomeViewController.m in Sources */,
 				78FCF5532306A9BA00D275F9 /* CJDemoPopupView.m in Sources */,
+				786B5C0425B2054C00433A48 /* CJTextViewDelegate.m in Sources */,
 				787C287F23223DAA00AF84F4 /* DemoEasyModel.m in Sources */,
 				78B6C2DF2159D20000D5864E /* DemoUsePermissionModel.m in Sources */,
 				78575C8A2257242100925842 /* TSTextFieldOffsetViewController.m in Sources */,
@@ -3197,6 +3250,7 @@
 				1562F2F323F5DBF40009FCEA /* UITextField+CJSelectedTextRange.m in Sources */,
 				7802491125828D4C00C7DBAD /* TextViewVerticalCenterViewController.m in Sources */,
 				1562F2C323F5DBF40009FCEA /* UIColor+CJHex.m in Sources */,
+				786B5BFD25B2054500433A48 /* CQBlockTextField.m in Sources */,
 				1562F2D623F5DBF40009FCEA /* CJBaseTableViewCell.m in Sources */,
 				787FDB8620500B5C008A46E3 /* SliderViewController.m in Sources */,
 				7850B70020937C5A008F4A21 /* DragViewController.m in Sources */,
@@ -3213,15 +3267,16 @@
 				7856F72A21F4E790004AF751 /* DemoInfo.m in Sources */,
 				78AB83C221B96D7000853E21 /* DemoTextFieldFactory.m in Sources */,
 				7808D5B62170919A007FC851 /* LoginChangeEnvironmentViewController.m in Sources */,
+				786B5BEF25B203F400433A48 /* UITextInputChangeResultModel.m in Sources */,
 				78B6C2D82159D1F100D5864E /* DemoBusFlightStationModel.m in Sources */,
 				80FF909E1FC5649F00E437CF /* NestedXibSubViewA.m in Sources */,
 				78C8148D216E11AF00A6B190 /* AChildViewController.m in Sources */,
-				780F534A25AB678900DECB38 /* UITextInputCJHelper.m in Sources */,
 				7802490F25828D4C00C7DBAD /* TextViewPlaceholderViewController.m in Sources */,
 				7808318722DC116700F36576 /* GifViewController.m in Sources */,
 				1562F2C623F5DBF40009FCEA /* UITextField+CJAddInputAccessoryView.m in Sources */,
 				1562F2CC23F5DBF40009FCEA /* UIView+CJAnimation.m in Sources */,
 				97578AAC25590E9300249AD6 /* MainViewController.m in Sources */,
+				786B5BED25B203F400433A48 /* UITextView+CJBlock.m in Sources */,
 				78B6C2E62159D6E900D5864E /* DemoBusStationLocationModel.m in Sources */,
 				780F52E325AB65C600DECB38 /* UITextViewCQHelper.m in Sources */,
 				788113CB21996A2600D1630D /* SubNormalSharedInstanceClass.m in Sources */,
@@ -3267,7 +3322,6 @@
 				80FF91971FC5682B00E437CF /* EncryptStringViewController.m in Sources */,
 				789C448521F166FC00181144 /* DemoCacheUtil.m in Sources */,
 				78B6C2E92159D84800D5864E /* DemoBusFlightStationOnOffDetailModel.m in Sources */,
-				780F534825AB678900DECB38 /* UITextInputChangeResultModel.m in Sources */,
 				78A0D043216B32D100EFAD67 /* BadgeButtonViewController.m in Sources */,
 				80FF91981FC5682B00E437CF /* AttributedStringViewController.m in Sources */,
 				78A4E1D52175EB93005FEADD /* NavigationBarNormalChangeBGViewController.m in Sources */,
@@ -3288,6 +3342,7 @@
 				1562F2E323F5DBF40009FCEA /* CJSliderPopover.m in Sources */,
 				9767973825834D11002FD0C7 /* UITextView+CJVerticalCenter.m in Sources */,
 				9756E36E25A5C6A00039365C /* TSTextFieldDelegateViewController.m in Sources */,
+				786B5BF125B203F400433A48 /* CJSubStringUtil.m in Sources */,
 				808BF3242019C3E900511F7C /* YunUncaughtExceptionHandler.m in Sources */,
 				97CA816525AFEE330061F6CA /* CJSliderThumb.m in Sources */,
 				787FDB8520500B5C008A46E3 /* SwitchSliderViewController.m in Sources */,
@@ -3310,7 +3365,6 @@
 				78293F0D21FC2B9C00F70F43 /* KeyboardAvoidingViewController.m in Sources */,
 				78C81479216E0DEC00A6B190 /* SystemComposeViewController.m in Sources */,
 				80FF919C1FC5682B00E437CF /* CountDownTimeViewController.m in Sources */,
-				780F534925AB678900DECB38 /* CJSubStringUtil.m in Sources */,
 				80FF91C51FC581DD00E437CF /* UtilHomeViewController.m in Sources */,
 				7803DAB122F7D578001E06B7 /* MJExtensionToJSONViewController.m in Sources */,
 				787FDB5A20500B01008A46E3 /* ColorViewController.m in Sources */,
@@ -3337,6 +3391,8 @@
 				7875C58F231CF77900076A00 /* BackSystemItemViewController.m in Sources */,
 				80FF90B41FC5649F00E437CF /* ButtonStructureViewController.m in Sources */,
 				80FF90AF1FC5649F00E437CF /* NavigationBarBaseViewController.m in Sources */,
+				786B5BEE25B203F400433A48 /* UITextField+CJBlock.m in Sources */,
+				786B5BF225B203F400433A48 /* UITextInputLimitCJHelper.m in Sources */,
 				1562F2B123F5DBF40009FCEA /* UIImage+CJBlur.m in Sources */,
 				8008D7D220E5CF5700F98EF6 /* CallSystemViewController.m in Sources */,
 				78E189A8217796DF00B8781A /* EdgeLayoutViewController.m in Sources */,

@@ -1,21 +1,21 @@
 //
-//  CQTextFieldDelegate.m
+//  CJTextFieldDelegate.m
 //  CJUIKitDemo
 //
-//  Created by ciyouzen on 2020/5/15.
+//  Created by ciyouzen on 2017/5/15.
 //  Copyright © 2020 dvlproad. All rights reserved.
 //
 
-#import "CQTextFieldDelegate.h"
+#import "CJTextFieldDelegate.h"
 
-@interface CQTextFieldDelegate () {
+@interface CJTextFieldDelegate () {
     
 }
 @property (nonatomic, copy, readonly) BOOL (^extraShouldChangeCheckBlock)(NSString *newText);  /**< 在已封装shouldChange中增加额外的能否输入的判断（如输入手机号码的时候，希望会系统处理出的新文本判断，在新文本不合法的时候能有对应toast提示） */
 
 @end
 
-@implementation CQTextFieldDelegate
+@implementation CJTextFieldDelegate
 
 - (instancetype)init {
     self = [super init];

@@ -2,18 +2,19 @@
 //  CQBlockTextField.m
 //  CJUIKitDemo
 //
-//  Created by ciyouzen on 2020/5/15.
+//  Created by ciyouzen on 2017/5/15.
 //  Copyright © 2020 dvlproad. All rights reserved.
 //
 
 #import "CQBlockTextField.h"
-#import "CQTextFieldDelegate.h"
+#import "CJTextFieldDelegate.h"
 #import "UITextViewCQHelper.h"
+#import "UITextInputCursorCJHelper.h"
 
 @interface CQBlockTextField () <UITextFieldDelegate> {
     
 }
-@property (nonatomic, strong) CQTextFieldDelegate *blockDelegate;
+@property (nonatomic, strong) CJTextFieldDelegate *blockDelegate;
 @property (nonatomic, copy) void (^textDidChangeBlock)(NSString *text);         /**< 文本改变的回调（只回调没有待定词的回调） */
 
 @end
@@ -43,7 +44,7 @@
 
 /// 将delegete接口改为block
 - (void)changeDelegateToBlock {
-    CQTextFieldDelegate *blockDelegate = [[CQTextFieldDelegate alloc] init];
+    CJTextFieldDelegate *blockDelegate = [[CJTextFieldDelegate alloc] init];
     self.blockDelegate = blockDelegate;
     self.delegate = blockDelegate;
     
@@ -104,7 +105,7 @@
         textField.text = newTextFromCustomDeal;   // 使用这个方法会使得光标变到末尾了,所以我们还需要更新光标位置
         NSString *lastReplacementString = resultModel.hopeReplacementString;
         NSInteger cursorLocation = range.location+lastReplacementString.length;
-        [UITextViewCQHelper setCursorLocationForTextField:textField atIndex:cursorLocation];
+        [UITextInputCursorCJHelper setCursorLocationForTextField:textField atIndex:cursorLocation];
     }
     
     _lastSelectedText = textField.text;  // 只文本框中高亮的文本

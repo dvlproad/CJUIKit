@@ -2,7 +2,7 @@
 //  CQBlockTextField.h
 //  CJUIKitDemo
 //
-//  Created by ciyouzen on 2020/5/15.
+//  Created by ciyouzen on 2017/5/15.
 //  Copyright © 2020 dvlproad. All rights reserved.
 //
 //  将delegete改为block的文本输入框视图(使用此类时候，禁止再进行delegate的设置)
