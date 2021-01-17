@@ -4,7 +4,7 @@ Pod::Spec.new do |s|
   # pod的本地索引文件：~/Library/Caches/CocoaPods/search_index.json
   # pod的owner操作：https://www.jianshu.com/p/a9b8c2a1f3cf
   s.name         = "CJBaseUIKit"
-  s.version      = "0.7.0"
+  s.version      = "0.7.1"
   s.summary      = "自定义的基础UI"
   s.homepage     = "https://github.com/dvlproad/CJUIKit"
 
@@ -23,7 +23,7 @@ Pod::Spec.new do |s|
                  - CJBaseUIKit/UIButton：按钮 及 CJBadgeButton
                  - CJBaseUIKit/UITextInputCJHelper：文本长度限制：UITextField 和 UITextView 会需要使用到的字符串处理方法
                  - CJBaseUIKit/UITextField：文本视图：包含文本框类别及新的自定义文本框
-                 - CJBaseUIKit/CJTextView：文本视图：类似微信文本输入框实现
+                 - CJBaseUIKit/UITextView：文本视图：类似微信文本输入框实现
                  - CJBaseUIKit/UIToolbar：工具栏
                  - CJBaseUIKit/UIScrollView：滚动视图：含监听滚动视图的键盘
                  - CJBaseUIKit/CJBaseTableViewCell：基础的TableViewCell
@@ -54,7 +54,7 @@ Pod::Spec.new do |s|
 
   s.platform     = :ios, "8.0"
  
-  s.source       = { :git => "https://github.com/dvlproad/CJUIKit.git", :tag => "CJBaseUIKit_0.7.0" }
+  s.source       = { :git => "https://github.com/dvlproad/CJUIKit.git", :tag => "CJBaseUIKit_0.7.1" }
   s.source_files  = "CJBaseUIKit/*.{h,m}"
 
   s.frameworks = "UIKit"
@@ -145,9 +145,9 @@ Pod::Spec.new do |s|
     ss.source_files = "CJBaseUIKit/UITextInputCJHelper/**/*.{h,m}"
   end
 
-  s.subspec 'CJTextView' do |ss|
-    ss.source_files = "CJBaseUIKit/CJTextView/**/*.{h,m}"
-    # ss.resources = "CJBaseUIKit/CJTextView/**/*.{png,xib}"
+  s.subspec 'UITextView' do |ss|
+    ss.source_files = "CJBaseUIKit/UITextView/**/*.{h,m}"
+    # ss.resources = "CJBaseUIKit/UITextView/**/*.{png,xib}"
   end
 
   s.subspec 'CJSlider' do |ss|

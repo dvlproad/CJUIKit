@@ -173,14 +173,15 @@
 
 #pragma mark - UIGestureRecognizerDelegate
 //1
-- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldReceiveTouch:(UITouch *)touch {
-
+- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer
+       shouldReceiveTouch:(UITouch *)touch
+{
     if(gestureRecognizer == self.cjPan_PanGestureRecognizer) {
         UIView *touchView = touch.view;
         while (touchView != nil) {
             if([touchView isKindOfClass:[UIScrollView class]]) {
                 self.cjPan_isDragScrollView = YES;
-                self.cjPan_scrollerView = touchView;
+                self.cjPan_scrollerView = (UIScrollView *)touchView;
                 break;
             } else if(touchView == self) {
                 self.cjPan_isDragScrollView = NO;

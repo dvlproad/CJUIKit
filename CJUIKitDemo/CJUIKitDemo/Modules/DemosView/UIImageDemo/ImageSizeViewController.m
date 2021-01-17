@@ -8,9 +8,11 @@
 
 #import "ImageSizeViewController.h"
 #ifdef TEST_CJBASEUIKIT_POD
-#import "UIImage+CJTransformSize.h"
+#import "UIImageCJCompressHelper.h"
+#import "UIImageCJCutHelper.h"
 #else
-#import <CJBaseUIKit/UIImage+CJTransformSize.h>
+#import <CJBaseUIKit/UIImageCJCompressHelper.h>
+#import <CJBaseUIKit/UIImageCJCutHelper.h>
 #endif
 
 #import "DemoCacheUtil.h"
@@ -33,7 +35,7 @@
     
     UIImage *oldImage = [UIImage imageNamed:@"bgCar.jpg"];
     self.imageView1_old.image = oldImage;
-    NSData *compressImageData = [oldImage cj_compressWithMaxDataLength:40.0f * 1024.0f]; //40k
+    NSData *compressImageData = [UIImageCJCompressHelper compressImage:oldImage withMaxDataLength:40.0f * 1024.0f]; //40k
     NSLog(@"压缩后数据大小:%.4f MB",(double)compressImageData.length/1024.0f/1024.0f);
     [DemoCacheUtil saveImageData:compressImageData forModuleType:DemoModuleTypeAsset];
     UIImage *compressImage = [UIImage imageWithData:compressImageData];
@@ -84,8 +86,7 @@
     compareView1.imageView1.contentMode = UIViewContentModeScaleAspectFit; // 为了显示原图，好作为新图的比对
     compareView1.imageView2.contentMode = UIViewContentModeScaleAspectFit;
     
-//    UIImage *newImage = [UIImage cutCenterImageSize:cutSize iMg:originImage];
-    UIImage *newImage = [UIImage cutImage:originImage tooWidthTrimmedWidthKeepHeightWithRatio:4/3.0 tooHeightTrimmedHeightKeepWithWithRatio:343/580.0];
+    UIImage *newImage = [UIImageCJCutHelper cutImage:originImage tooWidthTrimmedWidthKeepHeightWithRatio:4/3.0 tooHeightTrimmedHeightKeepWithWithRatio:343/580.0];
     compareView1.imageView1.image = originImage;
     compareView1.imageView2.image = newImage;
     

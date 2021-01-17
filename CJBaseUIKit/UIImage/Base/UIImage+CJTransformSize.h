@@ -3,7 +3,8 @@
 //  CJUIKitDemo
 //
 //  Created by ciyouzen on 16/4/20.
-//  Copyright © 2016年 dvlproad. All rights reserved.//
+//  Copyright © 2016年 dvlproad. All rights reserved.
+//
 
 #import <UIKit/UIKit.h>
 
@@ -12,6 +13,8 @@ typedef NS_ENUM(NSUInteger, CJScaleType) {
     CJScaleTypeAsFarAsPossibleLittle,   /**< 缩放后尽量小 */
     CJScaleTypeAsFarAsPossibleBig       /**< 缩放后尽量大 */
 };
+
+NS_ASSUME_NONNULL_BEGIN
 
 @interface UIImage (CJTransformSize)
 
@@ -37,33 +40,6 @@ typedef NS_ENUM(NSUInteger, CJScaleType) {
  *  @return 修改后的图片
  */
 - (UIImage *)cj_transformImageToSize:(CGSize)size;
-
-/**
- *  从图片中按指定的位置大小截取图片的一部分
- *
- *  @param image UIImage image 原始的图片
- *  @param rect  CGRect rect 要截取的区域
- *
- *  @return UIImage
- */
-+ (UIImage *)ct_imageFromImage:(UIImage *)image inRect:(CGRect)rect;
-
-//传入size记得屏幕的1x的size
-+ (UIImage *)cutCenterImageSize:(CGSize)size iMg:(UIImage *)img;
-
-/*
- *  裁剪pixelRect像素区域中的图片
- *
- *  @param img img
- *  @param tooWidthWidthHeightRatio     宽太长时候，裁剪宽，保持高，裁剪后的图片比例
- *  @param tooHeightWidthHeightRatio    高太高时候，裁剪高，保持宽，裁剪后的图片比例
- *
- *  @return 裁剪后的新图
- */
-+ (UIImage *)cutImage:(nullable UIImage *)image
-tooWidthTrimmedWidthKeepHeightWithRatio:(CGFloat)tooWidthWidthHeightRatio
-tooHeightTrimmedHeightKeepWithWithRatio:(CGFloat)tooHeightWidthHeightRatio;
-
 /**
  *  将图片Stretch拉伸处理
  *
@@ -74,10 +50,7 @@ tooHeightTrimmedHeightKeepWithWithRatio:(CGFloat)tooHeightWidthHeightRatio;
 - (UIImage *)cj_resizableImageWithCapInsets:(UIEdgeInsets)insets;
 
 
-#pragma mark - compress(图片压缩)
-/// 压缩图片(先压缩图片质量，再压缩图片尺寸)
-- (NSData *)cj_compressWithMaxDataLength:(NSInteger)maxDataLength;
-
-
 
 @end
+
+NS_ASSUME_NONNULL_END

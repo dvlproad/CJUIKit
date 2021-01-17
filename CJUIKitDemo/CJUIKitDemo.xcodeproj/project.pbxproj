@@ -244,6 +244,8 @@
 		78B6C2E92159D84800D5864E /* DemoBusFlightStationOnOffDetailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 78B6C2E72159D84700D5864E /* DemoBusFlightStationOnOffDetailModel.m */; };
 		78B6C2EE2159D8AF00D5864E /* DemoBusPassengerOrderModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 78B6C2EC2159D8AF00D5864E /* DemoBusPassengerOrderModel.m */; };
 		78B6C2EF2159D8AF00D5864E /* DemoBusPassengerModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 78B6C2ED2159D8AF00D5864E /* DemoBusPassengerModel.m */; };
+		78B831B325B484060016C561 /* UIImageCJCutHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 78B831B125B484050016C561 /* UIImageCJCutHelper.m */; };
+		78B831C125B48C670016C561 /* UIImageCJCompressHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 78B831C025B48C670016C561 /* UIImageCJCompressHelper.m */; };
 		78B90E67218B49D000776584 /* MainAsset.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 78B90E66218B49CF00776584 /* MainAsset.xcassets */; };
 		78C81479216E0DEC00A6B190 /* SystemComposeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78C81478216E0DEC00A6B190 /* SystemComposeViewController.m */; };
 		78C81489216E11AF00A6B190 /* CChildViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78C8147B216E11AF00A6B190 /* CChildViewController.m */; };
@@ -357,7 +359,7 @@
 		976794E9258093EF002FD0C7 /* AStringLengthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 976794E7258093EE002FD0C7 /* AStringLengthViewController.m */; };
 		976794FA2580B494002FD0C7 /* KeyboardAutoMoveUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 976794F92580B494002FD0C7 /* KeyboardAutoMoveUpViewController.m */; };
 		9767973825834D11002FD0C7 /* UITextView+CJVerticalCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 9767973725834D10002FD0C7 /* UITextView+CJVerticalCenter.m */; };
-		97A9191025AFE8380051B902 /* CQImageRatioModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 97A9190F25AFE8370051B902 /* CQImageRatioModel.m */; };
+		97A9191025AFE8380051B902 /* CJImageTrimmedModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 97A9190F25AFE8370051B902 /* CJImageTrimmedModel.m */; };
 		97A9191E25AFE8510051B902 /* imageOriginColor@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 97A9191525AFE8510051B902 /* imageOriginColor@2x.png */; };
 		97A9191F25AFE8510051B902 /* longVertical.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 97A9191625AFE8510051B902 /* longVertical.jpg */; };
 		97A9192025AFE8510051B902 /* taixi_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 97A9191725AFE8510051B902 /* taixi_icon@2x.png */; };
@@ -815,6 +817,10 @@
 		78B6C2EB2159D8AF00D5864E /* DemoBusPassengerOrderModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DemoBusPassengerOrderModel.h; sourceTree = "<group>"; };
 		78B6C2EC2159D8AF00D5864E /* DemoBusPassengerOrderModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DemoBusPassengerOrderModel.m; sourceTree = "<group>"; };
 		78B6C2ED2159D8AF00D5864E /* DemoBusPassengerModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DemoBusPassengerModel.m; sourceTree = "<group>"; };
+		78B831B125B484050016C561 /* UIImageCJCutHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIImageCJCutHelper.m; sourceTree = "<group>"; };
+		78B831B225B484060016C561 /* UIImageCJCutHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIImageCJCutHelper.h; sourceTree = "<group>"; };
+		78B831BF25B48C670016C561 /* UIImageCJCompressHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UIImageCJCompressHelper.h; sourceTree = "<group>"; };
+		78B831C025B48C670016C561 /* UIImageCJCompressHelper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UIImageCJCompressHelper.m; sourceTree = "<group>"; };
 		78B90E66218B49CF00776584 /* MainAsset.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = MainAsset.xcassets; sourceTree = "<group>"; };
 		78C81477216E0DEC00A6B190 /* SystemComposeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SystemComposeViewController.h; sourceTree = "<group>"; };
 		78C81478216E0DEC00A6B190 /* SystemComposeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SystemComposeViewController.m; sourceTree = "<group>"; };
@@ -1018,8 +1024,8 @@
 		976794F92580B494002FD0C7 /* KeyboardAutoMoveUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeyboardAutoMoveUpViewController.m; sourceTree = "<group>"; };
 		9767973625834D10002FD0C7 /* UITextView+CJVerticalCenter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UITextView+CJVerticalCenter.h"; sourceTree = "<group>"; };
 		9767973725834D10002FD0C7 /* UITextView+CJVerticalCenter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UITextView+CJVerticalCenter.m"; sourceTree = "<group>"; };
-		97A9190E25AFE8370051B902 /* CQImageRatioModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CQImageRatioModel.h; sourceTree = "<group>"; };
-		97A9190F25AFE8370051B902 /* CQImageRatioModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CQImageRatioModel.m; sourceTree = "<group>"; };
+		97A9190E25AFE8370051B902 /* CJImageTrimmedModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJImageTrimmedModel.h; sourceTree = "<group>"; };
+		97A9190F25AFE8370051B902 /* CJImageTrimmedModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJImageTrimmedModel.m; sourceTree = "<group>"; };
 		97A9191525AFE8510051B902 /* imageOriginColor@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "imageOriginColor@2x.png"; sourceTree = "<group>"; };
 		97A9191625AFE8510051B902 /* longVertical.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = longVertical.jpg; sourceTree = "<group>"; };
 		97A9191725AFE8510051B902 /* taixi_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "taixi_icon@2x.png"; sourceTree = "<group>"; };
@@ -1099,6 +1105,8 @@
 			isa = PBXGroup;
 			children = (
 				1562F20523F5DBF40009FCEA /* UIImageCJCategory.h */,
+				78B831BE25B48C1D0016C561 /* CompressHelper */,
+				78B831BA25B4889D0016C561 /* CutHelper */,
 				1562F20623F5DBF40009FCEA /* Edit */,
 				1562F21123F5DBF40009FCEA /* Data */,
 				1562F21423F5DBF40009FCEA /* Base */,
@@ -1141,8 +1149,6 @@
 				1562F21A23F5DBF40009FCEA /* UIImage+CJFixOrientation.m */,
 				1562F21523F5DBF40009FCEA /* UIImage+CJTransformSize.h */,
 				1562F21823F5DBF40009FCEA /* UIImage+CJTransformSize.m */,
-				97A9190E25AFE8370051B902 /* CQImageRatioModel.h */,
-				97A9190F25AFE8370051B902 /* CQImageRatioModel.m */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -2202,6 +2208,26 @@
 				78B6C2DE2159D20000D5864E /* DemoUser.m */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		78B831BA25B4889D0016C561 /* CutHelper */ = {
+			isa = PBXGroup;
+			children = (
+				78B831B225B484060016C561 /* UIImageCJCutHelper.h */,
+				78B831B125B484050016C561 /* UIImageCJCutHelper.m */,
+				97A9190E25AFE8370051B902 /* CJImageTrimmedModel.h */,
+				97A9190F25AFE8370051B902 /* CJImageTrimmedModel.m */,
+			);
+			path = CutHelper;
+			sourceTree = "<group>";
+		};
+		78B831BE25B48C1D0016C561 /* CompressHelper */ = {
+			isa = PBXGroup;
+			children = (
+				78B831BF25B48C670016C561 /* UIImageCJCompressHelper.h */,
+				78B831C025B48C670016C561 /* UIImageCJCompressHelper.m */,
+			);
+			path = CompressHelper;
 			sourceTree = "<group>";
 		};
 		78C8147A216E11AF00A6B190 /* ChildViewController */ = {
@@ -3291,6 +3317,7 @@
 				1562F2E523F5DBF40009FCEA /* CJRangeSliderControl.m in Sources */,
 				1562F2C223F5DBF40009FCEA /* UIButton+CJMoreProperty.m in Sources */,
 				78A621DC2135C713004DA046 /* DemoSuspendWindow.m in Sources */,
+				78B831B325B484060016C561 /* UIImageCJCutHelper.m in Sources */,
 				78C8148B216E11AF00A6B190 /* BChildViewController.m in Sources */,
 				781989A8225A34C000D01DBC /* CJDemoDateLabel.m in Sources */,
 				1562F2B723F5DBF40009FCEA /* UIImage+CJFixOrientation.m in Sources */,
@@ -3318,7 +3345,7 @@
 				78A99268257958CB00B54E30 /* UIScrollView+CJTouch.m in Sources */,
 				805598B51FF5D612009DC61C /* ValidateStringViewController.m in Sources */,
 				1562F2C123F5DBF40009FCEA /* CJButton.m in Sources */,
-				97A9191025AFE8380051B902 /* CQImageRatioModel.m in Sources */,
+				97A9191025AFE8380051B902 /* CJImageTrimmedModel.m in Sources */,
 				80FF91971FC5682B00E437CF /* EncryptStringViewController.m in Sources */,
 				789C448521F166FC00181144 /* DemoCacheUtil.m in Sources */,
 				78B6C2E92159D84800D5864E /* DemoBusFlightStationOnOffDetailModel.m in Sources */,
@@ -3394,6 +3421,7 @@
 				786B5BEE25B203F400433A48 /* UITextField+CJBlock.m in Sources */,
 				786B5BF225B203F400433A48 /* UITextInputLimitCJHelper.m in Sources */,
 				1562F2B123F5DBF40009FCEA /* UIImage+CJBlur.m in Sources */,
+				78B831C125B48C670016C561 /* UIImageCJCompressHelper.m in Sources */,
 				8008D7D220E5CF5700F98EF6 /* CallSystemViewController.m in Sources */,
 				78E189A8217796DF00B8781A /* EdgeLayoutViewController.m in Sources */,
 				781C737721BA6A170090080C /* TestValueChangeModel.m in Sources */,

@@ -54,6 +54,7 @@
 
     UIImage *thumbImage = [[UIImage imageNamed:@"bg.jpg"] cj_transformImageToSize:CGSizeMake(80, 80)];
     
+    
     thumbImage = [thumbImage stretchableImageWithLeftCapWidth:1 topCapHeight:0];
     [self.baseSlider setThumbImage:thumbImage forState:UIControlStateNormal];
     
