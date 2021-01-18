@@ -162,8 +162,8 @@ static NSString *cjMustHideFromPopupViewKey = @"cjMustHideFromPopupView";
     
     
     
-    CGFloat popupViewX = popupViewOrigin.x;
-    CGFloat popupViewY = popupViewOrigin.y;
+    CGFloat popupViewX = 0; // popupView改成添加到blankView中
+    CGFloat popupViewY = 0; // popupView改成添加到blankView中
     CGFloat popupViewWidth = popupViewSize.width;
     CGFloat popupViewShowHeight = popupViewSize.height;
     CGFloat popupViewHideHeight = 0;
@@ -463,7 +463,7 @@ static NSString *cjMustHideFromPopupViewKey = @"cjMustHideFromPopupView";
     if (self.cjPopupViewShowing) { //如果存在，先清除
         [popupView removeFromSuperview];
     }
-    [blankView addSubview:popupView];
+    [blankView addSubview:popupView];   // popupView改成添加到blankView中
     if (popupSuperview.cjPopupSuperviewSubview == nil) {
         popupSuperview.cjPopupSuperviewSubview = [[NSMutableArray alloc] init];
     }
