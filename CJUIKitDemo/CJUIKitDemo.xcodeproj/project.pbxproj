@@ -133,6 +133,8 @@
 		7850B71320937E85008F4A21 /* WelcomeViewToPop.m in Sources */ = {isa = PBXBuildFile; fileRef = 7850B70C20937E85008F4A21 /* WelcomeViewToPop.m */; };
 		7850B71420937E85008F4A21 /* WelcomePopupView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7850B71020937E85008F4A21 /* WelcomePopupView.m */; };
 		78514134226854CC0023F0C0 /* ImageGetterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78514133226854CC0023F0C0 /* ImageGetterViewController.m */; };
+		7851F6A525B5E41200C63A53 /* TSHideWindowView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7851F6A425B5E41200C63A53 /* TSHideWindowView.m */; };
+		7851F6AB25B5F25000C63A53 /* UIView+CJPopupSuperviewSubview.m in Sources */ = {isa = PBXBuildFile; fileRef = 7851F6AA25B5F25000C63A53 /* UIView+CJPopupSuperviewSubview.m */; };
 		7852D9DA216EFFBE00E50A39 /* LockGateKeeperViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7852D9D9216EFFBE00E50A39 /* LockGateKeeperViewController.m */; };
 		7856F72921F4E790004AF751 /* TestDataUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 7856F72221F4E790004AF751 /* TestDataUtil.m */; };
 		7856F72A21F4E790004AF751 /* DemoInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 7856F72621F4E790004AF751 /* DemoInfo.m */; };
@@ -625,6 +627,10 @@
 		7850B71020937E85008F4A21 /* WelcomePopupView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WelcomePopupView.m; sourceTree = "<group>"; };
 		78514132226854CC0023F0C0 /* ImageGetterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ImageGetterViewController.h; sourceTree = "<group>"; };
 		78514133226854CC0023F0C0 /* ImageGetterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ImageGetterViewController.m; sourceTree = "<group>"; };
+		7851F6A325B5E41200C63A53 /* TSHideWindowView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TSHideWindowView.h; sourceTree = "<group>"; };
+		7851F6A425B5E41200C63A53 /* TSHideWindowView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TSHideWindowView.m; sourceTree = "<group>"; };
+		7851F6A925B5F25000C63A53 /* UIView+CJPopupSuperviewSubview.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+CJPopupSuperviewSubview.h"; sourceTree = "<group>"; };
+		7851F6AA25B5F25000C63A53 /* UIView+CJPopupSuperviewSubview.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+CJPopupSuperviewSubview.m"; sourceTree = "<group>"; };
 		7852D9D8216EFFBE00E50A39 /* LockGateKeeperViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LockGateKeeperViewController.h; sourceTree = "<group>"; };
 		7852D9D9216EFFBE00E50A39 /* LockGateKeeperViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LockGateKeeperViewController.m; sourceTree = "<group>"; };
 		7856F72221F4E790004AF751 /* TestDataUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestDataUtil.m; sourceTree = "<group>"; };
@@ -1267,6 +1273,8 @@
 			children = (
 				1562F24923F5DBF40009FCEA /* UIView+CJPopupInView.h */,
 				1562F24623F5DBF40009FCEA /* UIView+CJPopupInView.m */,
+				7851F6A925B5F25000C63A53 /* UIView+CJPopupSuperviewSubview.h */,
+				7851F6AA25B5F25000C63A53 /* UIView+CJPopupSuperviewSubview.m */,
 				1562F24523F5DBF40009FCEA /* UIView+CJRounderCorner.h */,
 				1562F24823F5DBF40009FCEA /* UIView+CJRounderCorner.m */,
 				1562F24423F5DBF40009FCEA /* UIView+CJShowExtendView.h */,
@@ -2256,6 +2264,8 @@
 			children = (
 				78E1895C2177835600B8781A /* ViewHomeViewController.h */,
 				78E1895B2177835600B8781A /* ViewHomeViewController.m */,
+				7851F6A325B5E41200C63A53 /* TSHideWindowView.h */,
+				7851F6A425B5E41200C63A53 /* TSHideWindowView.m */,
 				78ACB00C25950AA7000FEEEB /* ViewAutoMoveUp */,
 				78ACAFFC2595088F000FEEEB /* ViewPandownDemo */,
 				807F125B20B507340008B748 /* ViewAnimateDemo */,
@@ -3183,9 +3193,11 @@
 				975487B025A99F8B00DD7080 /* BRangeSubStringViewController.m in Sources */,
 				7850B71320937E85008F4A21 /* WelcomeViewToPop.m in Sources */,
 				97578AB225590F7100249AD6 /* UIWindow+RootSetting.m in Sources */,
+				7851F6A525B5E41200C63A53 /* TSHideWindowView.m in Sources */,
 				1562F2E923F5DBF40009FCEA /* CJSwitchView.m in Sources */,
 				78A621ED2135CA50004DA046 /* DemoFloatingWindow.m in Sources */,
 				78A99236257934B100B54E30 /* TextFieldHomeViewController.m in Sources */,
+				7851F6AB25B5F25000C63A53 /* UIView+CJPopupSuperviewSubview.m in Sources */,
 				807F126020B507A30008B748 /* ViewAnimateViewController.m in Sources */,
 				784A7216214C9DF000F8D144 /* MoreHomeViewController.m in Sources */,
 				788113BF2199574900D1630D /* SharedInstanceViewController.m in Sources */,

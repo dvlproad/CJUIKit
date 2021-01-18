@@ -53,7 +53,9 @@ static NSString *cjdemo_hidePopupViewBlockKey = @"cjdemo_hidePopupViewBlockKey";
         [weakPopupView cj_hidePopupView];
     };
     // 执行显示弹窗的方法
-    [self cj_popupInCenterWindow:CJAnimationTypeNormal withSize:popupViewSize centerOffset:CGPointZero blankViewCreateBlock:nil showComplete:nil tapBlankComplete:nil];
+    [self cj_popupInCenterWindow:CJAnimationTypeNormal withSize:popupViewSize centerOffset:CGPointZero blankViewCreateBlock:nil showComplete:nil tapBlankComplete:^{
+        [self cjdemo_hidePopupView];
+    }];
 }
 
 /**

@@ -7,6 +7,7 @@
 //
 
 #import "UIView+CJPopupInView.h"
+#import "UIView+CJPopupSuperviewSubview.h"
 
 #define CJPopupMainThreadAssert() NSAssert([NSThread isMainThread], @"UIView+CJPopupInView needs to be accessed on the main thread.");
 
@@ -462,7 +463,11 @@ static NSString *cjMustHideFromPopupViewKey = @"cjMustHideFromPopupView";
     if (self.cjPopupViewShowing) { //如果存在，先清除
         [popupView removeFromSuperview];
     }
-    [popupSuperview addSubview:popupView];
+    [blankView addSubview:popupView];
+    if (popupSuperview.cjPopupSuperviewSubview == nil) {
+        popupSuperview.cjPopupSuperviewSubview = [[NSMutableArray alloc] init];
+    }
+    [popupSuperview.cjPopupSuperviewSubview addObject:blankView];
     
     self.cjShowInView = popupSuperview;
     self.cjPopupViewShowing = YES;
