@@ -138,6 +138,7 @@
 		7852D9DA216EFFBE00E50A39 /* LockGateKeeperViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7852D9D9216EFFBE00E50A39 /* LockGateKeeperViewController.m */; };
 		78542E2425B9CA0D00ABE1E5 /* TextSizeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78542E2325B9CA0C00ABE1E5 /* TextSizeViewController.m */; };
 		78542E2A25B9DB6B00ABE1E5 /* TextSizeCompareView.m in Sources */ = {isa = PBXBuildFile; fileRef = 78542E2925B9DB6B00ABE1E5 /* TextSizeCompareView.m */; };
+		78542E6825BA02DB00ABE1E5 /* UITextInputHeightCJHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 78542E6725BA02DB00ABE1E5 /* UITextInputHeightCJHelper.m */; };
 		7856F72921F4E790004AF751 /* TestDataUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 7856F72221F4E790004AF751 /* TestDataUtil.m */; };
 		7856F72A21F4E790004AF751 /* DemoInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 7856F72621F4E790004AF751 /* DemoInfo.m */; };
 		7856F72B21F4E790004AF751 /* TestDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7856F72721F4E790004AF751 /* TestDataModel.m */; };
@@ -639,6 +640,8 @@
 		78542E2325B9CA0C00ABE1E5 /* TextSizeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextSizeViewController.m; sourceTree = "<group>"; };
 		78542E2825B9DB6B00ABE1E5 /* TextSizeCompareView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TextSizeCompareView.h; sourceTree = "<group>"; };
 		78542E2925B9DB6B00ABE1E5 /* TextSizeCompareView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TextSizeCompareView.m; sourceTree = "<group>"; };
+		78542E6625BA02DB00ABE1E5 /* UITextInputHeightCJHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UITextInputHeightCJHelper.h; sourceTree = "<group>"; };
+		78542E6725BA02DB00ABE1E5 /* UITextInputHeightCJHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UITextInputHeightCJHelper.m; sourceTree = "<group>"; };
 		7856F72221F4E790004AF751 /* TestDataUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestDataUtil.m; sourceTree = "<group>"; };
 		7856F72421F4E790004AF751 /* TestDataModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestDataModel.h; sourceTree = "<group>"; };
 		7856F72521F4E790004AF751 /* DemoInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DemoInfo.h; sourceTree = "<group>"; };
@@ -1478,6 +1481,8 @@
 				786B5C1D25B20CAC00433A48 /* CJTextView */,
 				9767973625834D10002FD0C7 /* UITextView+CJVerticalCenter.h */,
 				9767973725834D10002FD0C7 /* UITextView+CJVerticalCenter.m */,
+				78542E6625BA02DB00ABE1E5 /* UITextInputHeightCJHelper.h */,
+				78542E6725BA02DB00ABE1E5 /* UITextInputHeightCJHelper.m */,
 			);
 			path = UITextView;
 			sourceTree = "<group>";
@@ -3434,6 +3439,7 @@
 				1562F2B223F5DBF40009FCEA /* UIImage+CJSplitImageIntoTwoParts.m in Sources */,
 				788113C82199631A00D1630D /* PerfectSharedInstanceClass.m in Sources */,
 				7850B70720937C5A008F4A21 /* ShowExtendViewVC.m in Sources */,
+				78542E6825BA02DB00ABE1E5 /* UITextInputHeightCJHelper.m in Sources */,
 				78E189A221778A4000B8781A /* AutoLayoutHomeViewController.m in Sources */,
 				78575C872257237900925842 /* TestTextFieldOffsetTableViewCell.m in Sources */,
 				78542E2425B9CA0D00ABE1E5 /* TextSizeViewController.m in Sources */,

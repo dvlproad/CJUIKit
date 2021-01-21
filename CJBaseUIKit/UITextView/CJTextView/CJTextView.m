@@ -7,7 +7,7 @@
 //
 
 #import "CJTextView.h"
-
+#import "UITextInputHeightCJHelper.h"
 
 @interface CJTextView () {
     
@@ -186,6 +186,14 @@
     self.placeholderView.font = font;
 }
 
+
+#pragma mark - layoutSubviews
+- (void)layoutSubviews {
+    [super layoutSubviews];
+    
+    //[self textDidChange];
+}
+
 #pragma mark - textDidChange(由UITextViewTextDidChangeNotification触发，或者手动触发)
 - (void)textDidChange {
     // 执行开始事件
@@ -196,15 +204,13 @@
     // 继续执行其他事件
     self.placeholderView.hidden = self.text.length > 0; //占位文字是否显示
     
-    CGSize maxSize = CGSizeMake(self.bounds.size.width, MAXFLOAT);
+    CGFloat maxWidth = self.bounds.size.width;
+    CGSize maxSize = CGSizeMake(maxWidth, MAXFLOAT);
     CGSize size = [self sizeThatFits:maxSize];
     NSInteger currentTextViewHeight = ceilf(size.height);
     
     // 如果placeholder文本的高度大于正式文本的高度，则使用placeholder的高度
-    NSMutableDictionary *attrs = [NSMutableDictionary dictionary];
-    attrs[NSFontAttributeName] = self.font;
-    CGSize placeholderSize = [self.placeholder boundingRectWithSize:maxSize options:NSStringDrawingUsesLineFragmentOrigin attributes:attrs context:nil].size;
-    CGFloat placeholderHeight = placeholderSize.height;
+    CGFloat placeholderHeight = [UITextInputHeightCJHelper textHeightInTextViewForText:self.placeholder ithMaxWidth:maxWidth font:self.placeholderView.font];
     if (currentTextViewHeight < placeholderHeight) {
         currentTextViewHeight = placeholderHeight;
     }
