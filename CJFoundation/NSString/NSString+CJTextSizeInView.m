@@ -72,7 +72,7 @@
     NSDictionary *textViewAttributesWithFont = [NSString __textViewAttributesWithFont:font];
     CGSize textSizeInView = [self cjTextSizeWithAttributes:textViewAttributesWithFont maxSize:maxSize];
     
-    CGFloat textHeightInTextView = textSizeInView.height + 10;
+    CGFloat textHeightInTextView = textSizeInView.height + 14;
     
     return textHeightInTextView;
 }
