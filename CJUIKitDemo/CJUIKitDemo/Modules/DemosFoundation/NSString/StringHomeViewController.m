@@ -17,6 +17,8 @@
 // 文本框输入【长度限制】需要用到的String相关方法
 #import "StringForInputHomeViewController.h"
 
+#import "TextSizeViewController.h"
+
 @interface StringHomeViewController ()
 
 @end
@@ -58,6 +60,21 @@
             stringModule.title = @"字符串类型验证String Validate";
             stringModule.classEntry = [ValidateStringViewController class];
             [sectionDataModel.values addObject:stringModule];
+        }
+        
+        [sectionDataModels addObject:sectionDataModel];
+    }
+    
+    
+    // 文本框输入【长度限制】需要用到的String相关方法
+    {
+        CQDMSectionDataModel *sectionDataModel = [[CQDMSectionDataModel alloc] init];
+        sectionDataModel.theme = @"文本框输入【长度限制】需要用到的String相关方法";
+        {
+            CQDMModuleModel *NSStringModule = [[CQDMModuleModel alloc] init];
+            NSStringModule.title = @"使用TextSize的视图高度";
+            NSStringModule.classEntry = [TextSizeViewController class];
+            [sectionDataModel.values addObject:NSStringModule];
         }
         
         [sectionDataModels addObject:sectionDataModel];

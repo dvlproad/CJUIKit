@@ -136,6 +136,8 @@
 		7851F6A525B5E41200C63A53 /* TSHideWindowView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7851F6A425B5E41200C63A53 /* TSHideWindowView.m */; };
 		7851F6AB25B5F25000C63A53 /* UIView+CJPopupSuperviewSubview.m in Sources */ = {isa = PBXBuildFile; fileRef = 7851F6AA25B5F25000C63A53 /* UIView+CJPopupSuperviewSubview.m */; };
 		7852D9DA216EFFBE00E50A39 /* LockGateKeeperViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7852D9D9216EFFBE00E50A39 /* LockGateKeeperViewController.m */; };
+		78542E2425B9CA0D00ABE1E5 /* TextSizeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78542E2325B9CA0C00ABE1E5 /* TextSizeViewController.m */; };
+		78542E2A25B9DB6B00ABE1E5 /* TextSizeCompareView.m in Sources */ = {isa = PBXBuildFile; fileRef = 78542E2925B9DB6B00ABE1E5 /* TextSizeCompareView.m */; };
 		7856F72921F4E790004AF751 /* TestDataUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 7856F72221F4E790004AF751 /* TestDataUtil.m */; };
 		7856F72A21F4E790004AF751 /* DemoInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 7856F72621F4E790004AF751 /* DemoInfo.m */; };
 		7856F72B21F4E790004AF751 /* TestDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7856F72721F4E790004AF751 /* TestDataModel.m */; };
@@ -633,6 +635,10 @@
 		7851F6AA25B5F25000C63A53 /* UIView+CJPopupSuperviewSubview.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+CJPopupSuperviewSubview.m"; sourceTree = "<group>"; };
 		7852D9D8216EFFBE00E50A39 /* LockGateKeeperViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LockGateKeeperViewController.h; sourceTree = "<group>"; };
 		7852D9D9216EFFBE00E50A39 /* LockGateKeeperViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LockGateKeeperViewController.m; sourceTree = "<group>"; };
+		78542E2225B9CA0C00ABE1E5 /* TextSizeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextSizeViewController.h; sourceTree = "<group>"; };
+		78542E2325B9CA0C00ABE1E5 /* TextSizeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextSizeViewController.m; sourceTree = "<group>"; };
+		78542E2825B9DB6B00ABE1E5 /* TextSizeCompareView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TextSizeCompareView.h; sourceTree = "<group>"; };
+		78542E2925B9DB6B00ABE1E5 /* TextSizeCompareView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TextSizeCompareView.m; sourceTree = "<group>"; };
 		7856F72221F4E790004AF751 /* TestDataUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestDataUtil.m; sourceTree = "<group>"; };
 		7856F72421F4E790004AF751 /* TestDataModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestDataModel.h; sourceTree = "<group>"; };
 		7856F72521F4E790004AF751 /* DemoInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DemoInfo.h; sourceTree = "<group>"; };
@@ -1791,6 +1797,17 @@
 			path = CommonUI;
 			sourceTree = "<group>";
 		};
+		78542E2125B9C9E800ABE1E5 /* TextSize */ = {
+			isa = PBXGroup;
+			children = (
+				78542E2225B9CA0C00ABE1E5 /* TextSizeViewController.h */,
+				78542E2325B9CA0C00ABE1E5 /* TextSizeViewController.m */,
+				78542E2825B9DB6B00ABE1E5 /* TextSizeCompareView.h */,
+				78542E2925B9DB6B00ABE1E5 /* TextSizeCompareView.m */,
+			);
+			path = TextSize;
+			sourceTree = "<group>";
+		};
 		7856F72121F4E790004AF751 /* TestDataUtil */ = {
 			isa = PBXGroup;
 			children = (
@@ -2749,6 +2766,7 @@
 			children = (
 				78F406AA25A8C803004971D1 /* StringHomeViewController.h */,
 				78F406A925A8C803004971D1 /* StringHomeViewController.m */,
+				78542E2125B9C9E800ABE1E5 /* TextSize */,
 				78F4072125A8F9AF004971D1 /* StringForInputLimit */,
 				80FF91791FC5682A00E437CF /* AttributedStringViewController.h */,
 				80FF917C1FC5682A00E437CF /* AttributedStringViewController.m */,
@@ -3379,6 +3397,7 @@
 				80582FA120C121B500C01225 /* ImageRotateViewController.m in Sources */,
 				781C736921BA5E140090080C /* NSCalendarCJHelperViewController.m in Sources */,
 				1562F2E323F5DBF40009FCEA /* CJSliderPopover.m in Sources */,
+				78542E2A25B9DB6B00ABE1E5 /* TextSizeCompareView.m in Sources */,
 				9767973825834D11002FD0C7 /* UITextView+CJVerticalCenter.m in Sources */,
 				9756E36E25A5C6A00039365C /* TSTextFieldDelegateViewController.m in Sources */,
 				786B5BF125B203F400433A48 /* CJSubStringUtil.m in Sources */,
@@ -3417,6 +3436,7 @@
 				7850B70720937C5A008F4A21 /* ShowExtendViewVC.m in Sources */,
 				78E189A221778A4000B8781A /* AutoLayoutHomeViewController.m in Sources */,
 				78575C872257237900925842 /* TestTextFieldOffsetTableViewCell.m in Sources */,
+				78542E2425B9CA0D00ABE1E5 /* TextSizeViewController.m in Sources */,
 				80FF91531FC5668700E437CF /* PrivateSetting.m in Sources */,
 				78E189A5217791D200B8781A /* TranslucentLayoutViewController.m in Sources */,
 				1562F2BF23F5DBF40009FCEA /* UIButton+CJStructure.m in Sources */,

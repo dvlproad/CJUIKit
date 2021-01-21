@@ -62,6 +62,7 @@
         if (paragraphStyle == nil) {
             paragraphStyle = [[NSParagraphStyle defaultParagraphStyle] mutableCopy];
             paragraphStyle.lineBreakMode = lineBreakMode;
+            //paragraphStyle.alignment = NSTextAlignmentLeft;
         }
         
         NSDictionary *attributes = @{NSParagraphStyleAttributeName: paragraphStyle,
@@ -87,6 +88,33 @@
 #pragma clang diagnostic push
     }
 }
+
+
+/*
+ *  计算文本/富文本大小(假设最大宽高可以maxSize)
+ *
+ *  @param attributes   字符串各属性（字体font、对齐方式paragraphStyle、行尾方式lineBreakMode）
+ *  @param maxSize      字符串允许占用的最大maxSize
+ *
+ *  @return 文本/富文本大小
+ */
+- (CGSize)cjTextSizeWithAttributes:(nullable NSDictionary<NSAttributedStringKey, id> *)attributes
+                           maxSize:(CGSize)maxSize
+{
+    if (self.length == 0) {
+        return CGSizeZero;
+    }
+    
+    NSStringDrawingOptions options = NSStringDrawingUsesLineFragmentOrigin;
+    
+    CGRect textRect = [self boundingRectWithSize:maxSize
+                                         options:options
+                                      attributes:attributes
+                                         context:nil];
+    CGSize size = textRect.size;
+    return CGSizeMake(ceil(size.width), ceil(size.height));
+}
+
 
 
 #pragma mark - <#Section#>

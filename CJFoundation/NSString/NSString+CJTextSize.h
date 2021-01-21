@@ -5,6 +5,7 @@
 //  Created by ciyouzen on 7/9/15.
 //  Copyright (c) 2015 dvlproad. All rights reserved.
 //
+//  计算文本在指定参数下得到的结果
 
 #import <UIKit/UIKit.h>
 #import <Foundation/Foundation.h>
@@ -36,6 +37,16 @@
               paragraphStyle:(NSMutableParagraphStyle *)paragraphStyle;
 
 
+/*
+ *  计算文本/富文本大小(假设最大宽高可以maxSize)
+ *
+ *  @param attributes   字符串各属性（字体font、对齐方式paragraphStyle、行尾方式lineBreakMode）
+ *  @param maxSize      字符串允许占用的最大maxSize
+ *
+ *  @return 文本/富文本大小
+ */
+- (CGSize)cjTextSizeWithAttributes:(nullable NSDictionary<NSAttributedStringKey, id> *)attributes
+                           maxSize:(CGSize)maxSize;
 
 #pragma mark - <#Section#>
 /**
