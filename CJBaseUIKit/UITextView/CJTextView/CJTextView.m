@@ -186,12 +186,6 @@
     self.placeholderView.font = font;
 }
 
-- (void)layoutSubviews {
-    [super layoutSubviews];
-    
-    [self textDidChange];
-}
-
 #pragma mark - textDidChange(由UITextViewTextDidChangeNotification触发，或者手动触发)
 - (void)textDidChange {
     // 执行开始事件
@@ -203,9 +197,8 @@
     self.placeholderView.hidden = self.text.length > 0; //占位文字是否显示
     
     CGSize maxSize = CGSizeMake(self.bounds.size.width, MAXFLOAT);
-//    CGSize size = [self sizeThatFits:maxSize];
-//    NSInteger currentTextViewHeight = ceilf(size.height);
-    NSInteger currentTextViewHeight= 40;
+    CGSize size = [self sizeThatFits:maxSize];
+    NSInteger currentTextViewHeight = ceilf(size.height);
     
     // 如果placeholder文本的高度大于正式文本的高度，则使用placeholder的高度
     NSMutableDictionary *attrs = [NSMutableDictionary dictionary];

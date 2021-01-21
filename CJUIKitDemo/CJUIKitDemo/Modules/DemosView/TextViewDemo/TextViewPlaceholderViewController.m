@@ -8,7 +8,6 @@
 
 #import "TextViewPlaceholderViewController.h"
 #import "CJTextView.h"
-#import <CJFoundation/NSString+CJTextSizeInView.h>
 
 @implementation TextViewPlaceholderViewController
 
@@ -44,23 +43,13 @@
     CJTextView *textView3 = [[CJTextView alloc] init];
     textView3.text = nil;
     textView3.placeholder = @"凡事都有一定的定数，我们只不过在自己的人行道上重复了虚幻中看到的方向，然后一步步向前，直到路的尽头。";
-    textView3.font = [UIFont systemFontOfSize:17];
     [self.view addSubview:textView3];
     [textView3 mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.mas_equalTo(self.view).mas_offset(60);
         make.centerX.mas_equalTo(self.view);
         make.top.mas_equalTo(textView2.mas_bottom).mas_offset(24);
-        make.height.mas_equalTo(140);
+        make.height.mas_greaterThanOrEqualTo(100);
     }];
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        //CGFloat maxWidth = textView3.bounds.size.width;
-        CGFloat maxWidth = [UIScreen mainScreen].bounds.size.width - 2*60;
-        
-        CGFloat placeholderHeight = [textView3.placeholder cjTextHeightInTextViewWithMaxWidth:maxWidth font:textView3.font];
-        [textView3 mas_updateConstraints:^(MASConstraintMaker *make) {
-            make.height.mas_equalTo(placeholderHeight);
-        }];
-    });
     
     
     CJTextView *textView4 = [[CJTextView alloc] init];
