@@ -29,7 +29,7 @@ typedef NS_ENUM(NSUInteger, CJTrimmedEdge) {
 
 
 /*
- *  根据设置，获取要等会要如何裁剪image图片像素的裁剪模型数据
+ *  根据设置，获取要等会要如何裁剪image图片像素的裁剪模型数据（如果没有太宽也没有太高，则不裁剪保持原图大小）
  *
  *  @param image                        图片
  *  @param tooWidthWidthHeightRatio     宽太长时候，裁剪宽，保持高，裁剪后的图片比例
@@ -37,9 +37,9 @@ typedef NS_ENUM(NSUInteger, CJTrimmedEdge) {
  *
  *  @return 裁剪后的新图
  */
-+ (CGRect)getLastPixelRectForImage:(nullable UIImage *)image
-                 tooWidthKeepRatio:(CGFloat)tooWidthWidthHeightRatio
-                tooHeightKeepRatio:(CGFloat)tooHeightWidthHeightRatio;
++ (CJImageTrimmedModel *)trimmedModelForImage:(nullable UIImage *)image
+      tooWidthTrimmedWidthKeepHeightWithRatio:(CGFloat)tooWidthWidthHeightRatio
+      tooHeightTrimmedHeightKeepWithWithRatio:(CGFloat)tooHeightWidthHeightRatio;
 
 @end
 

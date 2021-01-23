@@ -11,7 +11,10 @@
 #import "ImageGetterViewController.h"
 #import "ImageChangeColorViewController.h"
 #import "ImageRotateViewController.h"
+
 #import "ImageSizeViewController.h"
+#import "ImageCompressViewController.h"
+
 #import "GifViewController.h"
 
 @interface ImageHomeViewController ()
@@ -54,9 +57,14 @@
         }
         {
             CQDMModuleModel *imageRotateModule = [[CQDMModuleModel alloc] init];
-            imageRotateModule.title = @"UIImage(图片尺寸)";
+            imageRotateModule.title = @"UIImage Size (图片裁剪前后比对)";
             imageRotateModule.classEntry = [ImageSizeViewController class];
-            imageRotateModule.isCreateByXib = YES;
+            [sectionDataModel.values addObject:imageRotateModule];
+        }
+        {
+            CQDMModuleModel *imageRotateModule = [[CQDMModuleModel alloc] init];
+            imageRotateModule.title = @"UIImage Compress (图片压缩前后比对)";
+            imageRotateModule.classEntry = [ImageCompressViewController class];
             [sectionDataModel.values addObject:imageRotateModule];
         }
         {

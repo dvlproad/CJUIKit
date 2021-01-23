@@ -8,14 +8,10 @@
 
 #import "ImageSizeViewController.h"
 #ifdef TEST_CJBASEUIKIT_POD
-#import "UIImageCJCompressHelper.h"
 #import "UIImageCJCutHelper.h"
 #else
-#import <CJBaseUIKit/UIImageCJCompressHelper.h>
 #import <CJBaseUIKit/UIImageCJCutHelper.h>
 #endif
-
-#import "DemoCacheUtil.h"
 
 #import "TwoImageCompareView.h"
 
@@ -33,16 +29,14 @@
     
     self.navigationItem.title = NSLocalizedString(@"图片裁剪前后比对", nil);
     
-    UIImage *oldImage = [UIImage imageNamed:@"bgCar.jpg"];
-    self.imageView1_old.image = oldImage;
-    NSData *compressImageData = [UIImageCJCompressHelper compressImage:oldImage withMaxDataLength:40.0f * 1024.0f]; //40k
-    NSLog(@"压缩后数据大小:%.4f MB",(double)compressImageData.length/1024.0f/1024.0f);
-    [DemoCacheUtil saveImageData:compressImageData forModuleType:DemoModuleTypeAsset];
-    UIImage *compressImage = [UIImage imageWithData:compressImageData];
-    self.imageView1_new.image = compressImage;
-    
-    self.pathLabel1.numberOfLines = 0;
-    self.pathLabel1.text = NSHomeDirectory();
+    UILabel *homeDirectoryLabel = [[UILabel alloc] init];
+    [self.view addSubview:homeDirectoryLabel];
+    [homeDirectoryLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.mas_equalTo(self.mas_topLayoutGuide).mas_offset(20);
+        make.left.right.mas_equalTo(self.view);
+    }];
+    homeDirectoryLabel.numberOfLines = 0;
+    homeDirectoryLabel.text = NSHomeDirectory();
     NSLog(@"NSHomeDirectory() = %@", NSHomeDirectory());
     
     
@@ -70,7 +64,7 @@
     
     [self.view addSubview:container];
     [container mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.mas_equalTo(self.pathLabel1.mas_bottom).mas_offset(20);
+        make.top.mas_equalTo(self.mas_topLayoutGuide).mas_offset(150);
         make.height.mas_equalTo(4*100+3*10);
         make.left.mas_equalTo(self.view).mas_offset(20);
         make.centerX.mas_equalTo(self.view);
@@ -78,7 +72,9 @@
 }
 
 #pragma mark - Private Method
-- (TwoImageCompareView *)compareViewWithOriginImage:(UIImage *)originImage cutSize:(CGSize)cutSize {
+- (TwoImageCompareView *)compareViewWithOriginImage:(UIImage *)originImage
+                                            cutSize:(CGSize)cutSize
+{
     TwoImageCompareView *compareView1 = [[TwoImageCompareView alloc] initWithFrame:CGRectZero];
     compareView1.backgroundColor = [UIColor redColor];
     compareView1.imageView1.layer.masksToBounds = YES;

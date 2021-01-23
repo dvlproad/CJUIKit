@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 
 typedef NS_ENUM(NSUInteger, CJScaleType) {
-    CJScaleTypeNone,                    /**< 不进行缩放 */
+    CJScaleTypeNone = 0,                /**< 不进行缩放 */
     CJScaleTypeAsFarAsPossibleLittle,   /**< 缩放后尽量小 */
     CJScaleTypeAsFarAsPossibleBig       /**< 缩放后尽量大 */
 };
