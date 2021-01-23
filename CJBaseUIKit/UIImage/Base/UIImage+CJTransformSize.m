@@ -12,11 +12,17 @@
 
 /*
  *  按指定模式修正大小
- *  @brief 假设原始(100,100),给定size(50,60),那么最终裁剪成的大小有可能有不进行缩放(50,60)、缩放后尽量小(50,50)、缩放后尽量大(60,60)
+ *          @brief 假设原始(100,100),给定size(50,60),那么最终裁剪成的大小有可能
+            ①放弃原始大小的比例，直接使用现在的大小(50,60)；
+            ②保持原始大小的比例，并在缩放后尽量小（宽太宽，裁宽；高太高，裁高）(50,50)；
+            ③保持原始大小的比例，并在缩放后尽量大（宽不够，拓宽；高不够，拓高）(60,60)
  *
  *  @param correctionSize   待修正的大小
  *  @param lastPossibleSize 最后可能的大小
- *  @param scaleType        图片指定的缩放模式(不进行缩放、缩放后尽量小、缩放后尽量大)
+ *  @param scaleType        图片指定的缩放模式
+                            ①放弃原始大小的比例，直接使用现在的大小；
+                            ②保持原始大小的比例，并在缩放后尽量小（宽太宽，裁宽；高太高，裁高）；
+                            ③保持原始大小的比例，并在缩放后尽量大（宽不够，拓宽；高不够，拓高）
  *
  *  @return 修正后的大小
  */
@@ -25,7 +31,7 @@
               withScaleType:(CJScaleType)scaleType
 {
     switch (scaleType) {
-        case CJScaleTypeAsFarAsPossibleLittle:
+        case CJScaleTypeKeepOriginRatioAndTryLittle:
         {
             // 在保持等比的情况下，修正size的值，使得size尽量小
             CGFloat ratioWidth = correctionSize.width/lastPossibleSize.width;    //宽度需变化的倍数
@@ -40,7 +46,7 @@
             
             break;
         }
-        case CJScaleTypeAsFarAsPossibleBig:
+        case CJScaleTypeKeepOriginRatioAndTryBig:
         {
             // 在保持等比的情况下，修正size的值，使得size尽量大
             CGFloat ratioWidth = correctionSize.width/lastPossibleSize.width;    //宽度需变化的倍数

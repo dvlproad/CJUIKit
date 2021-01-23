@@ -29,7 +29,7 @@ typedef NS_ENUM(NSUInteger, CJCompareResult) {
  *  @param maxDataLength        指定的最大大小
  */
 + (NSData *)compressImage:(UIImage *)image withLastPossibleSize:(CGSize)lastPossibleSize maxDataLength:(NSInteger)maxDataLength {
-    image = [self cutImage:image withLastPossibleSize:lastPossibleSize scaleType:CJScaleTypeNone]; // 保持图片比例，最大宽或最大高只能为1080
+    image = [self cutImage:image withLastPossibleSize:lastPossibleSize scaleType:CJScaleTypeKeepOriginRatioAndTryLittle]; // 图片保持原始大小的比例，并在缩放后尽量小（宽太宽，裁宽；高太高，裁高）
     
     // Compress by quality
     NSData *data = [self compressQualityForImage:image withMaxDataLength:maxDataLength];
