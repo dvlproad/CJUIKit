@@ -87,7 +87,7 @@
     
     compareView1.imageView1.image = originImage;
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-        NSData *compressImageData = [UIImageCJCompressHelper compressImage:originImage withMaxDataLength:maxDataLength];
+        NSData *compressImageData = [UIImageCJCompressHelper compressImage:originImage withLastPossibleSize:CGSizeMake(1080, 1080) maxDataLength:maxDataLength];
         UIImage *compressImage = [UIImage imageWithData:compressImageData];
         dispatch_async(dispatch_get_main_queue(), ^{
             compareView1.imageView2.image = compressImage;

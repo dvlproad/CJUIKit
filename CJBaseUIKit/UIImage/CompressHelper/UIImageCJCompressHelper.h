@@ -14,8 +14,14 @@ NS_ASSUME_NONNULL_BEGIN
 
 
 #pragma mark - compress(图片压缩)
-/// 压缩图片(先压缩图片质量，再压缩图片尺寸)
-+ (NSData *)compressImage:(UIImage *)image withMaxDataLength:(NSInteger)maxDataLength;
+/*
+ *  压缩图片(先压缩图片质量，再压缩图片尺寸)
+ *
+ *  @param image                要压缩的图片
+ *  @param lastPossibleSize     最后可能的大小(此过程保持图片比例)
+ *  @param maxDataLength        指定的最大大小
+ */
++ (NSData *)compressImage:(UIImage *)image withLastPossibleSize:(CGSize)lastPossibleSize maxDataLength:(NSInteger)maxDataLength;
 
 @end
 

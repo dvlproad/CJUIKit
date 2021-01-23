@@ -20,9 +20,17 @@ typedef NS_ENUM(NSUInteger, CJCompareResult) {
 @implementation UIImageCJCompressHelper
 
 #pragma mark - compress(图片压缩)
-/// 压缩图片(先压缩图片质量，再压缩图片尺寸)
 /// 其他参考：[iOS 图片压缩总结](https://www.jianshu.com/p/66164b9a7692)
-+ (NSData *)compressImage:(UIImage *)image withMaxDataLength:(NSInteger)maxDataLength {
+/*
+ *  压缩图片(先压缩图片质量，再压缩图片尺寸)
+ *
+ *  @param image                要压缩的图片
+ *  @param lastPossibleSize     最后可能的大小(此过程保持图片比例)
+ *  @param maxDataLength        指定的最大大小
+ */
++ (NSData *)compressImage:(UIImage *)image withLastPossibleSize:(CGSize)lastPossibleSize maxDataLength:(NSInteger)maxDataLength {
+    image = [self cutImage:image withLastPossibleSize:lastPossibleSize scaleType:CJScaleTypeNone]; // 保持图片比例，最大宽或最大高只能为1080
+    
     // Compress by quality
     NSData *data = [self compressQualityForImage:image withMaxDataLength:maxDataLength];
     //NSLog(@"After compressing quality, image size = %ld KB", data.length / 1024);
@@ -51,6 +59,29 @@ typedef NS_ENUM(NSUInteger, CJCompareResult) {
     return data;
 }
 
+/*
+ *  根据指定方式，裁剪最大只能为maxSize的图片，得到新图
+ *  @brief 假设原始(100,100),给定size(50,60),那么最终裁剪成的大小有可能有不进行缩放(50,60)、缩放后尽量小(50,50)、缩放后尽量大(60,60)
+ *
+ *  @param image            要裁剪的图片
+ *  @param lastPossibleSize 最后可能的大小
+ *  @param scaleType        图片指定的缩放模式(不进行缩放、缩放后尽量小、缩放后尽量大)
+ *
+ *  @return 修正后的大小
+ */
++ (UIImage *)cutImage:(UIImage *)image withLastPossibleSize:(CGSize)lastPossibleSize scaleType:(CJScaleType)scaleType {
+    NSLog(@"-----------图片裁剪开始-----------");
+    NSData *originImageData = UIImageJPEGRepresentation(image, 1);
+    CGSize originImageSize = image.size;
+    NSLog(@"图片在裁剪像素前数据大小约%.4fKB，尺寸大小为%@", originImageData.length/1024.0f, NSStringFromCGSize(image.size));
+    CGSize lastImageSize = [UIImage cj_correctionSize:originImageSize toLastPossibleSize:lastPossibleSize withScaleType:scaleType];
+    UIImage *newImage = [image cj_transformImageToSize:lastImageSize];
+    NSData *newImageData = UIImageJPEGRepresentation(newImage, 1);
+    NSLog(@"图片在裁剪像素后数据大小约%.4fKB，尺寸大小为%@", newImageData.length/1024.0f, NSStringFromCGSize(newImage.size));
+    NSLog(@"-----------图片裁剪结束-----------");
+    
+    return newImage;
+}
 
 
 /*
