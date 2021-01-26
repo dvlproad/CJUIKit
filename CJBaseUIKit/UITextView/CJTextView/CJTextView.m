@@ -201,6 +201,18 @@
         self.didChangeHappenHandle(self);
     }
     
+    [self updateTexViewHeightIfNeed];
+}
+
+- (void)updateTexViewHeightIfNeed {
+    BOOL shouldUpdateTexViewHeight = [self __checkShouldUpdateTexViewHeightIfNeed];
+    
+    if (self.didChangeCompleteBlock) {
+        self.didChangeCompleteBlock(self.text, shouldUpdateTexViewHeight, self.currentTexViewHeight);
+    }
+}
+
+- (BOOL)__checkShouldUpdateTexViewHeightIfNeed {
     // 继续执行其他事件
     self.placeholderView.hidden = self.text.length > 0; //占位文字是否显示
     
@@ -239,13 +251,9 @@
             _currentTexViewHeight = newTextViewHeight;
         }
         
-        if (self.didChangeCompleteBlock) {
-            self.didChangeCompleteBlock(self.text, shouldUpdateHeight, self.currentTexViewHeight);
-        }
+        return shouldUpdateHeight;
     } else {
-        if (self.didChangeCompleteBlock) {
-            self.didChangeCompleteBlock(self.text, NO, self.currentTexViewHeight);
-        }
+        return NO;
     }
 }
 
