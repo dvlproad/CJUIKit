@@ -20,6 +20,20 @@
     self.view.backgroundColor = [UIColor colorWithRed:245/255.0 green:245/255.0 blue:245/255.0 alpha:1.0]; // #f5f5f5
 }
 
+/// 测试进入其他视图的情况（从导航栏右键）
+- (void)testGoOtherViewControllerByRightBarButtonItem {
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"进其他视图", nil) style:UIBarButtonItemStylePlain target:self action:@selector(__goOtherViewController)];
+}
+
+- (void)__goOtherViewController {
+    UIViewController *viewController = [[UIViewController alloc] init];
+    
+    UIColor *randomColor = [UIColor colorWithRed:arc4random_uniform(256)/255.0 green:arc4random_uniform(256)/255.0 blue:arc4random_uniform(256)/255.0 alpha:1.0];
+    viewController.view.backgroundColor = randomColor;
+    
+    [self.navigationController pushViewController:viewController animated:YES];
+}
+
 /*
 #pragma mark - Navigation
 

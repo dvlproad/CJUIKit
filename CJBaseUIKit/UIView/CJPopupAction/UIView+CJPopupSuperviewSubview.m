@@ -27,20 +27,19 @@
 }
 
 
-#pragma mark - Event
-/// 隐藏弹出到本视图的弹窗
-- (void)hideWindowPopupViews {
-    [self __showWindowPopupViews:NO];
+#pragma mark - Event:window上的弹窗的显示与隐藏
+/// 隐藏弹出到window视图的弹窗
++ (void)hideWindowPopupViews {
+    [self __showOrHideWindowPopupViews:NO];
 }
 
-/// 重新显示弹出到本视图的弹窗
-- (void)reshowWindowPopupViews {
-    [self __showWindowPopupViews:YES];
+/// 重新显示弹出到window视图的弹窗
++ (void)reshowWindowPopupViews {
+    [self __showOrHideWindowPopupViews:YES];
 }
 
 
-
-- (void)__showWindowPopupViews:(BOOL)show {
++ (void)__showOrHideWindowPopupViews:(BOOL)show {
     UIWindow *keyWindow = [[UIApplication sharedApplication] keyWindow];
     NSArray *subViews1 = keyWindow.subviews;
     NSInteger subViewCount1 = subViews1.count;
@@ -49,7 +48,25 @@
         NSLog(@"view = %@", view);
     }
     
-    NSArray *subViews2 = keyWindow.cjPopupSuperviewSubview;
+    [keyWindow __showOrHidePopupViews:show];
+}
+
+
+
+#pragma mark - Event:当前view视图上的弹窗的显示与隐藏
+/// 隐藏弹出在本视图的弹窗
+- (void)hidePopupViewsShowInCurrent {
+    [self __showOrHidePopupViews:NO];
+}
+
+/// 重新显示弹出到本视图的弹窗
+- (void)reshowPopupViewsHideFromCurrent {
+    [self __showOrHidePopupViews:YES];
+}
+
+
+- (void)__showOrHidePopupViews:(BOOL)show {
+    NSArray *subViews2 = self.cjPopupSuperviewSubview;
     NSInteger subViewCount2 = subViews2.count;
     for (NSInteger i = 0; i < subViewCount2; i++) {
         UIView *view = subViews2[i];
@@ -57,7 +74,6 @@
         view.hidden = !show;
     }
 }
-
 
 
 @end

@@ -13,4 +13,7 @@
     
 }
 
+/// 测试进入其他视图的情况（从导航栏右键）
+- (void)testGoOtherViewControllerByRightBarButtonItem;
+
 @end

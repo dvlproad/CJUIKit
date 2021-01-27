@@ -29,13 +29,11 @@
 }
 
 + (void)hideWindowPopupViews {
-    UIWindow *keyWindow = [[UIApplication sharedApplication] keyWindow];
-    [keyWindow hideWindowPopupViews];
+    [UIView hideWindowPopupViews];
 }
 
 + (void)reshowWindowPopupViews {
-    UIWindow *keyWindow = [[UIApplication sharedApplication] keyWindow];
-    [keyWindow reshowWindowPopupViews];
+    [UIView reshowWindowPopupViews];
 }
 
 

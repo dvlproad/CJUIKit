@@ -7,7 +7,7 @@
 //
 
 #import "UIView+CJPopupInView.h"
-#import "UIView+CJPopupSuperviewSubview.h"
+#import <objc/runtime.h>
 
 #define CJPopupMainThreadAssert() NSAssert([NSThread isMainThread], @"UIView+CJPopupInView needs to be accessed on the main thread.");
 
@@ -118,7 +118,7 @@ static NSString *cjMustHideFromPopupViewKey = @"cjMustHideFromPopupView";
     return objc_setAssociatedObject(self, &cjPopupViewShowingKey, @(cjPopupViewShowing), OBJC_ASSOCIATION_ASSIGN);
 }
 
-#pragma mark - 底层接口
+#pragma mark - 底层接口:弹出到视图View
 /*
  *  将本View以size大小弹出到showInView视图中location位置
  *
@@ -145,10 +145,10 @@ static NSString *cjMustHideFromPopupViewKey = @"cjMustHideFromPopupView";
         return;
     }
     UIView *blankView = self.cjTapView;
-    CGFloat blankViewX = popupViewOrigin.x;
-    CGFloat blankViewY = popupViewOrigin.y;
-    CGFloat blankViewWidth = popupViewSize.width;
-    CGFloat blankViewHeight = CGRectGetHeight(popupSuperview.frame) - popupViewOrigin.y;
+    CGFloat blankViewX = 0;
+    CGFloat blankViewY = 0;
+    CGFloat blankViewWidth = CGRectGetWidth(popupSuperview.frame);
+    CGFloat blankViewHeight = CGRectGetHeight(popupSuperview.frame);
     CGRect blankViewFrame = CGRectMake(blankViewX,
                                        blankViewY,
                                        blankViewWidth,
@@ -161,9 +161,13 @@ static NSString *cjMustHideFromPopupViewKey = @"cjMustHideFromPopupView";
     self.cjTapBlankViewCompleteBlock = tapBlankViewCompleteBlock;
     
     
-    
-    CGFloat popupViewX = 0; // popupView改成添加到blankView中
-    CGFloat popupViewY = 0; // popupView改成添加到blankView中
+//    CGFloat blankViewX = popupViewOrigin.x;
+//    CGFloat blankViewY = popupViewOrigin.y;
+//    CGFloat blankViewWidth = popupViewSize.width;
+//    CGFloat blankViewHeight = CGRectGetHeight(popupSuperview.frame) - popupViewOrigin.y;
+
+    CGFloat popupViewX = popupViewOrigin.x; // popupView改成添加到blankView中
+    CGFloat popupViewY = popupViewOrigin.y; // popupView改成添加到blankView中
     CGFloat popupViewWidth = popupViewSize.width;
     CGFloat popupViewShowHeight = popupViewSize.height;
     CGFloat popupViewHideHeight = 0;
@@ -196,6 +200,66 @@ static NSString *cjMustHideFromPopupViewKey = @"cjMustHideFromPopupView";
     }
 }
 
+/*
+ *  将当前视图弹出到视图view中央
+ *
+ *  @param popupSuperview               弹出视图的父视图view
+ *  @param animationType                弹出时候的动画采用的类型
+ *  @param popupViewSize                弹出视图的大小
+ *  @param centerOffset                 弹窗弹出位置的中心与window中心的偏移量
+ *  @param blankViewCreateBlock         空白区域视图的创建方法
+ *  @param showPopupViewCompleteBlock   显示弹出视图后的操作
+ *  @param tapBlankViewCompleteBlock    点击空白区域后的操作(要自己执行cj_hidePopupView...来隐藏，因为有时候点击背景是不执行隐藏的)
+ */
+- (void)cj_popupInCenterInView:(UIView *)popupSuperview
+                 animationType:(CJAnimationType)animationType
+                      withSize:(CGSize)popupViewSize
+                  centerOffset:(CGPoint)centerOffset
+          blankViewCreateBlock:(UIView *(^ _Nullable)(void))blankViewCreateBlock
+                  showComplete:(void(^ _Nullable)(void))showPopupViewCompleteBlock
+              tapBlankComplete:(void(^ _Nullable)(void))tapBlankViewCompleteBlock
+{
+    CGFloat popupSuperviewWidth = CGRectGetWidth(popupSuperview.frame);
+    CGFloat popupSuperviewHeight = CGRectGetHeight(popupSuperview.frame);
+    CGSize popupSize = popupViewSize;
+    CGFloat originX = (popupSuperviewWidth - popupViewSize.width)/2;
+    CGFloat originY = (popupSuperviewHeight- popupViewSize.height)/2;
+    CGPoint popupOrigin = CGPointMake(originX, originY);
+    
+    [self cj_popupInView:popupSuperview withOrigin:popupOrigin size:popupSize blankViewCreateBlock:blankViewCreateBlock showComplete:showPopupViewCompleteBlock tapBlankComplete:tapBlankViewCompleteBlock];
+}
+
+/*
+ *  将当前视图弹出到视图view底部
+ *
+ *  @param popupSuperview               弹出视图的父视图view
+ *  @param animationType                弹出时候的动画采用的类型
+ *  @param popupViewHeight              弹出视图的高度
+ *  @param edgeInsets                   弹窗与window的(左右下)边距
+ *  @param blankViewCreateBlock         空白区域视图的创建方法
+ *  @param showPopupViewCompleteBlock   显示弹出视图后的操作
+ *  @param tapBlankViewCompleteBlock    点击空白区域后的操作(要自己执行cj_hidePopupView...来隐藏，因为有时候点击背景是不执行隐藏的)
+ */
+- (void)cj_popupInBottomInView:(UIView *)popupSuperview
+                 animationType:(CJAnimationType)animationType
+                    withHeight:(CGFloat)popupViewHeight
+                    edgeInsets:(UIEdgeInsets)edgeInsets
+          blankViewCreateBlock:(UIView *(^ _Nullable)(void))blankViewCreateBlock
+                  showComplete:(void(^ _Nullable)(void))showPopupViewCompleteBlock
+              tapBlankComplete:(void(^ _Nullable)(void))tapBlankViewCompleteBlock
+{
+    CGFloat popupSuperviewWidth = CGRectGetWidth(popupSuperview.frame);
+    CGFloat popupSuperviewHeight = CGRectGetHeight(popupSuperview.frame);
+    CGSize popupSize = CGSizeMake(popupSuperviewWidth, popupViewHeight);
+    CGFloat originX = 0;
+    CGFloat originY = popupSuperviewHeight - popupViewHeight;
+    CGPoint popupOrigin = CGPointMake(originX, originY);
+    
+    [self cj_popupInView:popupSuperview withOrigin:popupOrigin size:popupSize blankViewCreateBlock:blankViewCreateBlock showComplete:showPopupViewCompleteBlock tapBlankComplete:tapBlankViewCompleteBlock];
+}
+
+
+#pragma mark - 弹出到窗口Window
 /*
  *  将当前视图弹出到window中央
  *
@@ -444,8 +508,50 @@ static NSString *cjMustHideFromPopupViewKey = @"cjMustHideFromPopupView";
             blankView.backgroundColor = [UIColor colorWithRed:.16 green:.17 blue:.21 alpha:.6];
         }
         
-        UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(cj_TapBlankViewAction:)];
-        [blankView addGestureRecognizer:tapGesture];
+        // 为了解决bug:将手势改为button，防止弹出的视图上有tableView或collectionView的时候，点击上面的cell会无法响应cell的点击事件，而变成响应tap的事件的bug
+//        UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(cj_TapBlankViewAction:)];
+//        [blankView addGestureRecognizer:tapGesture];
+        UIButton *tapButton = [UIButton buttonWithType:UIButtonTypeCustom];
+        //tapButton.backgroundColor = [UIColor redColor];
+        [tapButton addTarget:self action:@selector(cj_TapBlankViewAction:) forControlEvents:UIControlEventTouchUpInside];
+        [blankView addSubview:tapButton];
+        tapButton.translatesAutoresizingMaskIntoConstraints = NO;
+        
+        [blankView addConstraint:
+         [NSLayoutConstraint constraintWithItem:tapButton
+                                      attribute:NSLayoutAttributeLeft   //left
+                                      relatedBy:NSLayoutRelationEqual
+                                         toItem:blankView
+                                      attribute:NSLayoutAttributeLeft
+                                     multiplier:1
+                                       constant:0]];
+        
+        [blankView addConstraint:
+         [NSLayoutConstraint constraintWithItem:tapButton
+                                      attribute:NSLayoutAttributeRight  //right
+                                      relatedBy:NSLayoutRelationEqual
+                                         toItem:blankView
+                                      attribute:NSLayoutAttributeRight
+                                     multiplier:1
+                                       constant:0]];
+        
+        [blankView addConstraint:
+         [NSLayoutConstraint constraintWithItem:tapButton
+                                      attribute:NSLayoutAttributeTop    //top
+                                      relatedBy:NSLayoutRelationEqual
+                                         toItem:blankView
+                                      attribute:NSLayoutAttributeTop
+                                     multiplier:1
+                                       constant:0]];
+        
+        [blankView addConstraint:
+         [NSLayoutConstraint constraintWithItem:tapButton
+                                      attribute:NSLayoutAttributeBottom //bottom
+                                      relatedBy:NSLayoutRelationEqual
+                                         toItem:blankView
+                                      attribute:NSLayoutAttributeBottom
+                                     multiplier:1
+                                       constant:0]];
         
         self.cjTapView = blankView;
     }
@@ -477,7 +583,8 @@ static NSString *cjMustHideFromPopupViewKey = @"cjMustHideFromPopupView";
 
 
 /** 点击空白区域的事件 */
-- (void)cj_TapBlankViewAction:(UITapGestureRecognizer *)tap {
+//- (void)cj_TapBlankViewAction:(UITapGestureRecognizer *)tapGR {
+- (void)cj_TapBlankViewAction:(UIButton *)tapButton {
     if (self.cjTapBlankViewCompleteBlock) {
         self.cjTapBlankViewCompleteBlock();
     }
@@ -544,6 +651,9 @@ static NSString *cjMustHideFromPopupViewKey = @"cjMustHideFromPopupView";
             break;
         }
     }
+    
+    UIView *blankView = self.cjTapView;
+    [self.cjPopupSuperviewSubview removeObject:blankView];
 }
 
 
