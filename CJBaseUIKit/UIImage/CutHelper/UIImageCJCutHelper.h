@@ -25,13 +25,15 @@ NS_ASSUME_NONNULL_BEGIN
  *  根据设置，先得到等会要如何裁剪image图片像素的裁剪模型数据，并根据得到的该模型进行裁剪其对应的pixelRect像素区域，得到新图片
  *
  *  @param image                        要进行裁剪的图片(不能为nil)
+ *  @param fromRegionType               要从图片的哪个区域开始裁剪(一般从中间裁剪)
  *  @param tooWidthWidthHeightRatio     宽太宽时候，裁剪宽，保持高，裁剪后的图片比例（不可以为0）
  *  @param tooHeightWidthHeightRatio    高太高时候，裁剪高，保持宽，裁剪后的图片比例（不可以为0）
  *  @param noTooWidthOrHeightKeepRatio  不太宽也不太高的时候，裁剪宽或者高二者之一，裁剪后的图片比例（可以为0，且如果为0，则表示使用原图片的比例）
  *
  *  @return 裁剪后的新图
  */
-+ (UIImage *)cutImage:(nullable UIImage *)image
++ (UIImage *)cutImage:(nonnull UIImage *)image
+       fromRegionType:(UIImageCutFromRegion)fromRegionType
     tooWidthKeepRatio:(CGFloat)tooWidthWidthHeightRatio
    tooHeightKeepRatio:(CGFloat)tooHeightWidthHeightRatio
 noTooWidthOrHeightKeepRatio:(CGFloat)noTooWidthOrHeightKeepRatio;
