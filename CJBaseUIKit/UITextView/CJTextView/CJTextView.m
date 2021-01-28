@@ -191,7 +191,7 @@
 - (void)layoutSubviews {
     [super layoutSubviews];
     
-    //[self textDidChange];
+    //[self updateTexViewHeightIfNeed];
 }
 
 #pragma mark - textDidChange(由UITextViewTextDidChangeNotification触发，或者手动触发)

@@ -29,17 +29,34 @@ typedef NS_ENUM(NSUInteger, CJTrimmedEdge) {
 
 
 /*
- *  根据设置，获取要等会要如何裁剪image图片像素的裁剪模型数据（如果没有太宽也没有太高，则不裁剪保持原图大小）
+ *  根据设置，获取要等会要如何裁剪image图片像素的裁剪模型数据
  *
- *  @param image                        图片
- *  @param tooWidthWidthHeightRatio     宽太长时候，裁剪宽，保持高，裁剪后的图片比例
- *  @param tooHeightWidthHeightRatio    高太高时候，裁剪高，保持宽，裁剪后的图片比例
+ *  @param image                        要裁剪的图片(不能为nil)
+ *  @param tooWidthWidthHeightRatio     宽太宽时候，裁剪宽，保持高，裁剪后的图片比例（不可以为0）
+ *  @param tooHeightWidthHeightRatio    高太高时候，裁剪高，保持宽，裁剪后的图片比例（不可以为0）
+ *  @param noTooWidthOrHeightKeepRatio  不太宽也不太高的时候，裁剪宽或者高二者之一，裁剪后的图片比例（可以为0，且如果为0，则表示使用原图片的比例）
  *
  *  @return 裁剪后的新图
  */
-+ (CJImageTrimmedModel *)trimmedModelForImage:(nullable UIImage *)image
++ (CGRect)getLastPixelRectForImage:(nonnull UIImage *)image
+                 tooWidthKeepRatio:(CGFloat)tooWidthWidthHeightRatio
+                tooHeightKeepRatio:(CGFloat)tooHeightWidthHeightRatio
+       noTooWidthOrHeightKeepRatio:(CGFloat)noTooWidthOrHeightKeepRatio;
+
+/*
+ *  根据设置，获取要等会要如何裁剪image图片像素的裁剪模型数据
+ *
+ *  @param image                        要裁剪的图片(不能为nil)
+ *  @param tooWidthWidthHeightRatio     宽太宽时候，裁剪宽，保持高，裁剪后的图片比例（不可以为0）
+ *  @param tooHeightWidthHeightRatio    高太高时候，裁剪高，保持宽，裁剪后的图片比例（不可以为0）
+ *  @param noTooWidthOrHeightKeepRatio  不太宽也不太高的时候，裁剪宽或者高二者之一，裁剪后的图片比例（可以为0，且如果为0，则表示使用原图片的比例）
+ *
+ *  @return 裁剪后的新图
+ */
++ (CJImageTrimmedModel *)trimmedModelForImage:(nonnull UIImage *)image
       tooWidthTrimmedWidthKeepHeightWithRatio:(CGFloat)tooWidthWidthHeightRatio
-      tooHeightTrimmedHeightKeepWithWithRatio:(CGFloat)tooHeightWidthHeightRatio;
+      tooHeightTrimmedHeightKeepWithWithRatio:(CGFloat)tooHeightWidthHeightRatio
+                  noTooWidthOrHeightKeepRatio:(CGFloat)noTooWidthOrHeightKeepRatio;
 
 @end
 

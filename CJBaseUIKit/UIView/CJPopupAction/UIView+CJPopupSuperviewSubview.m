@@ -70,7 +70,7 @@
     NSInteger subViewCount2 = subViews2.count;
     for (NSInteger i = 0; i < subViewCount2; i++) {
         UIView *view = subViews2[i];
-        NSLog(@"view = %@", view);
+        //NSLog(@"要显示或隐藏的view = %@", view);
         view.hidden = !show;
     }
 }

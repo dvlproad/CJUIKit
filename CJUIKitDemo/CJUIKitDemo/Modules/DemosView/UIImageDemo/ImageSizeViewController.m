@@ -82,7 +82,7 @@
     compareView1.imageView1.contentMode = UIViewContentModeScaleAspectFit; // 为了显示原图，好作为新图的比对
     compareView1.imageView2.contentMode = UIViewContentModeScaleAspectFit;
     
-    UIImage *newImage = [UIImageCJCutHelper cutImage:originImage tooWidthTrimmedWidthKeepHeightWithRatio:4/3.0 tooHeightTrimmedHeightKeepWithWithRatio:343/580.0];
+    UIImage *newImage = [UIImageCJCutHelper cutImage:originImage tooWidthKeepRatio:4/3.0 tooHeightKeepRatio:343/580.0 noTooWidthOrHeightKeepRatio:1/1.0];
     compareView1.imageView1.image = originImage;
     compareView1.imageView2.image = newImage;
     
