@@ -22,7 +22,7 @@
 
 
 #pragma mark - 导航栏最下面的横线
-/**
+/*
  *  是否隐藏导航栏最下面的横线
  *
  *  @param hide 是否隐藏
@@ -33,7 +33,7 @@
 
 
 #pragma mark - 导航栏的位置
-/**
+/*
  *  设置导航栏的位置
  *
  *  @param translationY    translationY
@@ -43,7 +43,7 @@
 
 
 
-/**
+/*
  *  改变导航栏上左、右及titleView的alpha值
  *
  *  @param alpha    alpha

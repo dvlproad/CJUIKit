@@ -8,56 +8,74 @@
 
 #import "UINavigationBar+CJChangeBG.h"
 #import <objc/runtime.h>
+#import "UIImage+CJCreate.h"
 
 @interface UINavigationBar ()
 
-@property (nonatomic, strong) UIView *cjBackgroundColorOverlayView;
+@property (nonatomic) UIColor *cjOldBackgroundColor;
 
 @end
 
 @implementation UINavigationBar (CJChangeBG)
 
 #pragma mark - runtime
-- (UIView *)cjBackgroundColorOverlayView {
-    return objc_getAssociatedObject(self, @selector(cjBackgroundColorOverlayView));
+- (UIColor *)cjOldBackgroundColor {
+    return objc_getAssociatedObject(self, @selector(cjOldBackgroundColor));
 }
 
-- (void)setCjBackgroundColorOverlayView:(UIView *)cjBackgroundColorOverlayView {
-    objc_setAssociatedObject(self, @selector(cjBackgroundColorOverlayView), cjBackgroundColorOverlayView, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+- (void)setCjOldBackgroundColor:(UIColor *)cjOldBackgroundColor {
+    objc_setAssociatedObject(self, @selector(cjOldBackgroundColor), cjOldBackgroundColor, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
 
 #pragma mark - 背景色
-/* 完整的描述请参见文件头部 */
+///设置导航栏的背景色为指定背景色backgroundColor
 - (void)cj_setBackgroundColor:(UIColor *)backgroundColor
 {
-    if (!self.cjBackgroundColorOverlayView) {
-        [self setBackgroundImage:[UIImage new] forBarMetrics:UIBarMetricsDefault];
-        
-        CGRect statusBarFrame = [[UIApplication sharedApplication] statusBarFrame];
-        CGFloat statusBarHeight = CGRectGetHeight(statusBarFrame);
-        CGRect overlayViewFrame = CGRectMake(0, -statusBarHeight, [UIScreen mainScreen].bounds.size.width, CGRectGetHeight(self.bounds) + statusBarHeight);
-        UIView *cjBackgroundColorOverlayView = [[UIView alloc] initWithFrame:overlayViewFrame];
-        cjBackgroundColorOverlayView.userInteractionEnabled = NO;
-        cjBackgroundColorOverlayView.autoresizingMask = UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleHeight;
-        [self insertSubview:cjBackgroundColorOverlayView atIndex:0];
-        
-        self.cjBackgroundColorOverlayView = cjBackgroundColorOverlayView;
-    }
-    self.cjBackgroundColorOverlayView.backgroundColor = backgroundColor;
+    UIImage *backgroundImage = [UIImage cj_imageWithColor:backgroundColor size:CGSizeMake(10, 10)];
+    [self setBackgroundImage:backgroundImage forBarMetrics:UIBarMetricsDefault];
+    self.backgroundColor = backgroundColor;
+    
+    // 状态栏颜色变化
+    // info.plist文件中设置 View controller-based status bar appearance 为 NO
+//    if (@available(iOS 13.0, *)) {
+//        // iOS 13之后，苹果禁止KVC直接修改私有属性。以前用KVC修改状态栏背景色也会Crash。
+//        CGRect statusBarFrame = [[UIApplication sharedApplication] statusBarFrame];
+//        //CGRect statusBarFrame = [UIApplication sharedApplication].keyWindow.windowScene.statusBarManager.statusBarFrame;
+//        
+//        static UIWindow *newWindow;     // 加static的目的是让局部变量不要被释放掉
+//        if (newWindow == nil) {
+//            newWindow = [[UIWindow alloc] initWithFrame:statusBarFrame];
+//        }
+//        newWindow.windowLevel = UIWindowLevelStatusBar + 100;   // 大于UIWindowLevelStatusBar将会显示在statusBar的前面，后面隐藏的时候，需要将此值改为小于UIWindowLevelNormal
+//        [newWindow makeKeyAndVisible];  // 作为关键Window并且显示，后面注意要把keyWindow替换回去，不然会影响正常的window的工作
+//        
+//        UIImageView *statusBar = [[UIImageView alloc] initWithFrame:statusBarFrame];
+//        statusBar.image = backgroundImage;
+//        //[[UIApplication sharedApplication].keyWindow addSubview:statusBar];
+//        [newWindow addSubview:statusBar];
+//
+//    } else {
+//        // Fallback on earlier versions
+//        UIView *statusBar = [[[UIApplication sharedApplication] valueForKey:@"statusBarWindow"] valueForKey:@"statusBar"];
+//        if ([statusBar respondsToSelector:@selector(setBackgroundColor:)]) {
+//            statusBar.backgroundColor = backgroundColor;
+//        }
+//    }
 }
 
-/* 完整的描述请参见文件头部 */
-- (void)cj_resetBackgroundColor
-{
-    [self setBackgroundImage:nil forBarMetrics:UIBarMetricsDefault];
-    [self.cjBackgroundColorOverlayView removeFromSuperview];
-    self.cjBackgroundColorOverlayView = nil;
+///还原导航栏的背景色为之前的设置
+- (void)cj_resetBackgroundColor {
+    [self cj_setBackgroundColor:self.cjOldBackgroundColor];
 }
 
 
 #pragma mark - 导航栏最下面的横线
-/* 完整的描述请参见文件头部 */
+/*
+ *  是否隐藏导航栏最下面的横线
+ *
+ *  @param hide 是否隐藏
+ */
 - (void)cj_hideUnderline:(BOOL)hide {
     if (hide) {
         [self setShadowImage:[[UIImage alloc] init]];
@@ -67,35 +85,46 @@
 }
 
 #pragma mark - 导航栏的位置
+/*
+ *  设置导航栏的位置
+ *
+ *  @param translationY    translationY
+ */
 - (void)cj_setTranslationY:(CGFloat)translationY
 {
     self.transform = CGAffineTransformMakeTranslation(0, translationY);
 }
 
+
+/*
+ *  改变导航栏上左、右及titleView的alpha值
+ *
+ *  @param alpha    alpha
+ */
 - (void)cj_setElementsAlpha:(CGFloat)alpha
 {
     //iOS11有bug,因为多了一个叫_UINavigationBarContentView的类。参考:[iOS11导航栏隐藏失效的问题](http://www.cocoachina.com/bbs/read.php?tid=1726064)
-//    <__NSArrayM 0x600000449390>(
-//                                <_UIBarBackground: 0x7ff541e0a4c0; frame = (0 -20; 414 64); userInteractionEnabled = NO; layer = <CALayer: 0x600000036fe0>>,
-//                                <_UINavigationBarLargeTitleView: 0x7ff541d04f20; frame = (0 0; 0 44); clipsToBounds = YES; alpha = 0; hidden = YES; layer = <CALayer: 0x604000234100>>,
-//                                <_UINavigationBarContentView: 0x7ff541e0bcf0; frame = (0 0; 414 44); clipsToBounds = YES; layer = <CALayer: 0x600000037340>>,
-//                                <_UINavigationBarModernPromptView: 0x7ff541c11180; frame = (0 0; 0 44); alpha = 0; hidden = YES; layer = <CALayer: 0x6040002359e0>>
-//                                )
+    //    <__NSArrayM 0x600000449390>(
+    //                                <_UIBarBackground: 0x7ff541e0a4c0; frame = (0 -20; 414 64); userInteractionEnabled = NO; layer = <CALayer: 0x600000036fe0>>,
+    //                                <_UINavigationBarLargeTitleView: 0x7ff541d04f20; frame = (0 0; 0 44); clipsToBounds = YES; alpha = 0; hidden = YES; layer = <CALayer: 0x604000234100>>,
+    //                                <_UINavigationBarContentView: 0x7ff541e0bcf0; frame = (0 0; 414 44); clipsToBounds = YES; layer = <CALayer: 0x600000037340>>,
+    //                                <_UINavigationBarModernPromptView: 0x7ff541c11180; frame = (0 0; 0 44); alpha = 0; hidden = YES; layer = <CALayer: 0x6040002359e0>>
+    //                                )
     
-    if (@available(iOS 11.0, *)) {
-        NSLog(@"iOS11有bug,因为多了一个叫_UINavigationBarContentView的类。参考:[IOS11导航栏隐藏失效的问题](http://www.cocoachina.com/bbs/read.php?tid=1726064)");
-    } else {
-        [[self valueForKey:@"_leftViews"] enumerateObjectsUsingBlock:^(UIView *view, NSUInteger i, BOOL *stop) {
-            view.alpha = alpha;
-        }];
-        
-        [[self valueForKey:@"_rightViews"] enumerateObjectsUsingBlock:^(UIView *view, NSUInteger i, BOOL *stop) {
-            view.alpha = alpha;
-        }];
-        
-        UIView *titleView = [self valueForKey:@"_titleView"];
-        titleView.alpha = alpha;
-    }
+//    if (@available(iOS 11.0, *)) {
+//        NSLog(@"iOS11有bug,因为多了一个叫_UINavigationBarContentView的类。参考:[IOS11导航栏隐藏失效的问题](http://www.cocoachina.com/bbs/read.php?tid=1726064)");
+//    } else {
+//        [[self valueForKey:@"_leftViews"] enumerateObjectsUsingBlock:^(UIView *view, NSUInteger i, BOOL *stop) {
+//            view.alpha = alpha;
+//        }];
+//        
+//        [[self valueForKey:@"_rightViews"] enumerateObjectsUsingBlock:^(UIView *view, NSUInteger i, BOOL *stop) {
+//            view.alpha = alpha;
+//        }];
+//        
+//        UIView *titleView = [self valueForKey:@"_titleView"];
+//        titleView.alpha = alpha;
+//    }
 }
 
 

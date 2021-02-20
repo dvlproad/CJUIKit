@@ -49,11 +49,11 @@
     UIButton *blueButton = [TSButtonFactory themeBGButton];
     [blueButton setTitle:@"goNextViewController" forState:UIControlStateNormal];
     [blueButton addTarget:self action:@selector(goNextViewController) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:blueButton];
+    [self.containerView addSubview:blueButton];
     [blueButton mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.mas_equalTo(self.view).mas_offset(20);
-        make.right.mas_equalTo(self.view).mas_offset(-20);
-        make.top.mas_equalTo(self.view).mas_offset(100);
+        make.left.mas_equalTo(self.containerView).mas_offset(20);
+        make.right.mas_equalTo(self.containerView).mas_offset(-20);
+        make.top.mas_equalTo(self.containerView).mas_offset(100);
         make.height.mas_equalTo(44);
     }];
 }
