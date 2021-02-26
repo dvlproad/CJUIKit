@@ -9,6 +9,7 @@
 #import "ImageSizeViewController.h"
 #ifdef TEST_CJBASEUIKIT_POD
 #import "UIImageCJCutHelper.h"
+#import "UIButton+CJMoreProperty.h"
 #else
 #import <CJBaseUIKit/UIImageCJCutHelper.h>
 #endif
@@ -16,6 +17,7 @@
 #import "TwoImageCompareView.h"
 
 #import <CQDemoKit/CQTSContainerViewFactory.h>
+#import <CQDemoKit/CQTSButtonFactory.h>
 
 @interface ImageSizeViewController ()
 
@@ -45,49 +47,70 @@
 
 #pragma mark - SetupViews
 - (void)setupViews {
-    UIImage *originImage1 = [UIImage imageNamed:@"longVertical.jpg"];
-    
-    CGSize cutSize1 = CGSizeMake(30, 100);
-    TwoImageCompareView *compareView1 = [self compareViewWithOriginImage:originImage1 cutSize:cutSize1];
-    
-    CGSize cutSize2 = CGSizeMake(50, 100);
-    TwoImageCompareView *compareView2 = [self compareViewWithOriginImage:originImage1 cutSize:cutSize2];
-    
-    CGSize cutSize3 = CGSizeMake(100, 100);
-    TwoImageCompareView *compareView3 = [self compareViewWithOriginImage:originImage1 cutSize:cutSize3];
-    
-    CGSize cutSize4 = CGSizeMake(120, 100);
-    TwoImageCompareView *compareView4 = [self compareViewWithOriginImage:originImage1 cutSize:cutSize4];
-    
+    TwoImageCompareView *compareView1 = [self compareView];
+    TwoImageCompareView *compareView2 = [self compareView];
+    TwoImageCompareView *compareView3 = [self compareView];
+    TwoImageCompareView *compareView4 = [self compareView];
     NSArray<UIView *> *compareViews = @[compareView1, compareView2, compareView3, compareView4];
     UIView *container = [CQTSContainerViewFactory containerViewAlongAxis:MASAxisTypeVertical withSubviews:compareViews];
-    
     [self.view addSubview:container];
-    [container mas_makeConstraints:^(MASConstraintMaker *make) {
+    
+    
+    UIButton *tsButton = [CQTSButtonFactory themeBGButtonWithTitle:@"重新裁剪，测试闪烁" actionBlock:^(UIButton * _Nonnull bButton) {
+        UIImage *originImage1 = [UIImage imageNamed:@"longVertical.jpg"];
+        
+        CGSize cutSize1 = CGSizeMake(30, 100);
+        [self setupCompareView:compareView1 withOriginImage:originImage1 cutSize:cutSize1];
+        
+        CGSize cutSize2 = CGSizeMake(50, 100);
+        [self setupCompareView:compareView2 withOriginImage:originImage1 cutSize:cutSize2];
+        
+        CGSize cutSize3 = CGSizeMake(100, 100);
+        [self setupCompareView:compareView3 withOriginImage:originImage1 cutSize:cutSize3];
+        
+        CGSize cutSize4 = CGSizeMake(120, 100);
+        [self setupCompareView:compareView4 withOriginImage:originImage1 cutSize:cutSize4];
+    }];
+    [self.view addSubview:tsButton];
+    [tsButton mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.mas_equalTo(self.mas_topLayoutGuide).mas_offset(150);
+        make.height.mas_equalTo(44);
+        make.left.mas_equalTo(self.view).mas_offset(20);
+        make.centerX.mas_equalTo(self.view);
+    }];
+  
+    
+    [container mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.mas_equalTo(tsButton.mas_bottom).mas_offset(30);
         make.height.mas_equalTo(4*100+3*10);
         make.left.mas_equalTo(self.view).mas_offset(20);
         make.centerX.mas_equalTo(self.view);
     }];
 }
 
+
 #pragma mark - Private Method
-- (TwoImageCompareView *)compareViewWithOriginImage:(UIImage *)originImage
-                                            cutSize:(CGSize)cutSize
-{
-    TwoImageCompareView *compareView1 = [[TwoImageCompareView alloc] initWithFrame:CGRectZero];
-    compareView1.backgroundColor = [UIColor redColor];
-    compareView1.imageView1.layer.masksToBounds = YES;
-    compareView1.imageView2.layer.masksToBounds = YES;
-    compareView1.imageView1.contentMode = UIViewContentModeScaleAspectFit; // 为了显示原图，好作为新图的比对
-    compareView1.imageView2.contentMode = UIViewContentModeScaleAspectFit;
+- (TwoImageCompareView *)compareView {
+    TwoImageCompareView *compareView = [[TwoImageCompareView alloc] initWithFrame:CGRectZero];
+    compareView.backgroundColor = [UIColor redColor];
+    compareView.imageView1.layer.masksToBounds = YES;
+    compareView.imageView2.layer.masksToBounds = YES;
+    compareView.imageView1.contentMode = UIViewContentModeScaleAspectFit; // 为了显示原图，好作为新图的比对
+    compareView.imageView2.contentMode = UIViewContentModeScaleAspectFit;
     
-    UIImage *newImage = [UIImageCJCutHelper cutImage:originImage fromRegionType:UIImageCutFromRegionCenter tooWidthKeepRatio:4/3.0 tooHeightKeepRatio:343/580.0 noTooWidthOrHeightKeepRatio:1/1.0];
-    compareView1.imageView1.image = originImage;
-    compareView1.imageView2.image = newImage;
-    
-    return compareView1;
+    return compareView;
 }
+
+
+- (void)setupCompareView:(TwoImageCompareView *)compareView
+         withOriginImage:(UIImage *)originImage
+                 cutSize:(CGSize)cutSize
+{
+    UIImage *newImage = [UIImageCJCutHelper cutImage:originImage fromRegionType:UIImageCutFromRegionCenter tooWidthKeepRatio:4/3.0 tooHeightKeepRatio:343/580.0 noTooWidthOrHeightKeepRatio:1/1.0];
+    compareView.imageView1.image = originImage;
+    compareView.imageView2.image = newImage;
+}
+
 
 /*
 #pragma mark - Navigation

@@ -1,5 +1,5 @@
 //
-//  TextViewVerticalCenterViewController.h
+//  TextViewVerticalCenterViewController2.h
 //  CJUIKitDemo
 //
 //  Created by ciyouzen on 2015/12/23.
@@ -8,7 +8,7 @@
 
 #import "CJUIKitBaseViewController.h"
 
-@interface TextViewVerticalCenterViewController : CJUIKitBaseViewController {
+@interface TextViewVerticalCenterViewController2 : CJUIKitBaseViewController {
     
 }
 

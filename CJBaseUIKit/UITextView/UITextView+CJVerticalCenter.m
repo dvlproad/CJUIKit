@@ -21,6 +21,8 @@
  *  @param delay delay秒后执行（当外部使用mas_remakeConstraints更新文本框位置或大小的时候，必须延迟执行，否则文本竖直居中无效）
  */
 - (void)cj_adjustedContentInsetToTextCenter:(CGFloat)delay {
+    [self layoutIfNeeded]; // 本行代码是为了避免或为了修复如下情况：mas_makeConstraints或mas_updateConstraints等更新高度会出现偶尔延迟的情况而导致居中错误
+    
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delay * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         CGFloat height = self.bounds.size.height;
         CGFloat contentHeight = self.contentSize.height;    // 注：如果你设置了self.scrollEnabled = NO;则会导致contentSize有时候不会正确变化，导致无法竖直居中

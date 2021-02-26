@@ -83,7 +83,6 @@
 		663D99AA9DDC5B5D8025AEEB /* libPods-CJUIKitDemoUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E0A09F2115A3D53BC658F67A /* libPods-CJUIKitDemoUITests.a */; };
 		7802490F25828D4C00C7DBAD /* TextViewPlaceholderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7802490925828D4A00C7DBAD /* TextViewPlaceholderViewController.m */; };
 		7802491025828D4C00C7DBAD /* TextViewAutoHeightViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7802490C25828D4B00C7DBAD /* TextViewAutoHeightViewController.m */; };
-		7802491125828D4C00C7DBAD /* TextViewVerticalCenterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7802490D25828D4B00C7DBAD /* TextViewVerticalCenterViewController.m */; };
 		7803DAAE22F7D519001E06B7 /* MJExtensionToModelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7803DAAC22F7D519001E06B7 /* MJExtensionToModelViewController.m */; };
 		7803DAB122F7D578001E06B7 /* MJExtensionToJSONViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7803DAAF22F7D578001E06B7 /* MJExtensionToJSONViewController.m */; };
 		7805E1D72369C5FC00B998EC /* PriceYuanToYuanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7805E1D52369C5FC00B998EC /* PriceYuanToYuanViewController.m */; };
@@ -351,6 +350,8 @@
 		80FF919D1FC5682B00E437CF /* CountDownTimeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 80FF91861FC5682A00E437CF /* CountDownTimeViewController.xib */; };
 		80FF919E1FC5682B00E437CF /* OtherHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80FF91881FC5682A00E437CF /* OtherHomeViewController.m */; };
 		80FF91C51FC581DD00E437CF /* UtilHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80FF91BF1FC581DD00E437CF /* UtilHomeViewController.m */; };
+		9721821A25E90283000E9001 /* TextViewVerticalCenterViewController2.m in Sources */ = {isa = PBXBuildFile; fileRef = 9721821825E90283000E9001 /* TextViewVerticalCenterViewController2.m */; };
+		9721821B25E90283000E9001 /* TextViewVerticalCenterViewController1.m in Sources */ = {isa = PBXBuildFile; fileRef = 9721821925E90283000E9001 /* TextViewVerticalCenterViewController1.m */; };
 		973E4CBD25A353D200748B44 /* ViewPandownViewController2.m in Sources */ = {isa = PBXBuildFile; fileRef = 973E4CBB25A353D200748B44 /* ViewPandownViewController2.m */; };
 		975164AE256CFE34001DE112 /* CQUpdateContentPopupView.m in Sources */ = {isa = PBXBuildFile; fileRef = 975164AD256CFE34001DE112 /* CQUpdateContentPopupView.m */; };
 		975487A025A9943000DD7080 /* CMaxSubStringViewController1.m in Sources */ = {isa = PBXBuildFile; fileRef = 9754879D25A9942F00DD7080 /* CMaxSubStringViewController1.m */; };
@@ -539,9 +540,7 @@
 		68D73B38201AA01727123963 /* Pods-CJUIKitDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CJUIKitDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CJUIKitDemo/Pods-CJUIKitDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		7802490925828D4A00C7DBAD /* TextViewPlaceholderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextViewPlaceholderViewController.m; sourceTree = "<group>"; };
 		7802490A25828D4B00C7DBAD /* TextViewAutoHeightViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextViewAutoHeightViewController.h; sourceTree = "<group>"; };
-		7802490B25828D4B00C7DBAD /* TextViewVerticalCenterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextViewVerticalCenterViewController.h; sourceTree = "<group>"; };
 		7802490C25828D4B00C7DBAD /* TextViewAutoHeightViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextViewAutoHeightViewController.m; sourceTree = "<group>"; };
-		7802490D25828D4B00C7DBAD /* TextViewVerticalCenterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextViewVerticalCenterViewController.m; sourceTree = "<group>"; };
 		7802490E25828D4B00C7DBAD /* TextViewPlaceholderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextViewPlaceholderViewController.h; sourceTree = "<group>"; };
 		7803DAAC22F7D519001E06B7 /* MJExtensionToModelViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJExtensionToModelViewController.m; sourceTree = "<group>"; };
 		7803DAAD22F7D519001E06B7 /* MJExtensionToModelViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJExtensionToModelViewController.h; sourceTree = "<group>"; };
@@ -1014,6 +1013,10 @@
 		80FF91BE1FC581DD00E437CF /* UtilHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UtilHomeViewController.h; sourceTree = "<group>"; };
 		80FF91BF1FC581DD00E437CF /* UtilHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UtilHomeViewController.m; sourceTree = "<group>"; };
 		935109AAB855F6CC8B84B9A5 /* libPods-CJUIKitDemoTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CJUIKitDemoTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9721821625E90283000E9001 /* TextViewVerticalCenterViewController2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextViewVerticalCenterViewController2.h; sourceTree = "<group>"; };
+		9721821725E90283000E9001 /* TextViewVerticalCenterViewController1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextViewVerticalCenterViewController1.h; sourceTree = "<group>"; };
+		9721821825E90283000E9001 /* TextViewVerticalCenterViewController2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextViewVerticalCenterViewController2.m; sourceTree = "<group>"; };
+		9721821925E90283000E9001 /* TextViewVerticalCenterViewController1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextViewVerticalCenterViewController1.m; sourceTree = "<group>"; };
 		973E4CBB25A353D200748B44 /* ViewPandownViewController2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewPandownViewController2.m; sourceTree = "<group>"; };
 		973E4CBC25A353D200748B44 /* ViewPandownViewController2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewPandownViewController2.h; sourceTree = "<group>"; };
 		975164AC256CFE34001DE112 /* CQUpdateContentPopupView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CQUpdateContentPopupView.h; sourceTree = "<group>"; };
@@ -2016,8 +2019,7 @@
 				7802490C25828D4B00C7DBAD /* TextViewAutoHeightViewController.m */,
 				7802490E25828D4B00C7DBAD /* TextViewPlaceholderViewController.h */,
 				7802490925828D4A00C7DBAD /* TextViewPlaceholderViewController.m */,
-				7802490B25828D4B00C7DBAD /* TextViewVerticalCenterViewController.h */,
-				7802490D25828D4B00C7DBAD /* TextViewVerticalCenterViewController.m */,
+				9721821525E90283000E9001 /* VerticalCenter */,
 				787FDB6320500B1F008A46E3 /* TextViewController.xib */,
 			);
 			path = TextViewDemo;
@@ -2840,6 +2842,17 @@
 			path = DemosUtil;
 			sourceTree = "<group>";
 		};
+		9721821525E90283000E9001 /* VerticalCenter */ = {
+			isa = PBXGroup;
+			children = (
+				9721821725E90283000E9001 /* TextViewVerticalCenterViewController1.h */,
+				9721821925E90283000E9001 /* TextViewVerticalCenterViewController1.m */,
+				9721821625E90283000E9001 /* TextViewVerticalCenterViewController2.h */,
+				9721821825E90283000E9001 /* TextViewVerticalCenterViewController2.m */,
+			);
+			path = VerticalCenter;
+			sourceTree = "<group>";
+		};
 		97578CF22559400600249AD6 /* TSSliderFactory */ = {
 			isa = PBXGroup;
 			children = (
@@ -3319,7 +3332,6 @@
 				78F65DA72576A9E20020916A /* UIView+CJToastInView.m in Sources */,
 				78A9923025792EAC00B54E30 /* TSTextFieldBlockViewController.m in Sources */,
 				1562F2F323F5DBF40009FCEA /* UITextField+CJSelectedTextRange.m in Sources */,
-				7802491125828D4C00C7DBAD /* TextViewVerticalCenterViewController.m in Sources */,
 				1562F2C323F5DBF40009FCEA /* UIColor+CJHex.m in Sources */,
 				786B5BFD25B2054500433A48 /* CQBlockTextField.m in Sources */,
 				1562F2D623F5DBF40009FCEA /* CJBaseTableViewCell.m in Sources */,
@@ -3410,9 +3422,11 @@
 				8060C48020E0D0630093B14E /* CJMoneyUtil.m in Sources */,
 				78A992422579502300B54E30 /* TSTextFieldClickViewController.m in Sources */,
 				80582FA120C121B500C01225 /* ImageRotateViewController.m in Sources */,
+				9721821B25E90283000E9001 /* TextViewVerticalCenterViewController1.m in Sources */,
 				781C736921BA5E140090080C /* NSCalendarCJHelperViewController.m in Sources */,
 				1562F2E323F5DBF40009FCEA /* CJSliderPopover.m in Sources */,
 				78542E2A25B9DB6B00ABE1E5 /* TextSizeCompareView.m in Sources */,
+				9721821A25E90283000E9001 /* TextViewVerticalCenterViewController2.m in Sources */,
 				9767973825834D11002FD0C7 /* UITextView+CJVerticalCenter.m in Sources */,
 				9756E36E25A5C6A00039365C /* TSTextFieldDelegateViewController.m in Sources */,
 				786B5BF125B203F400433A48 /* CJSubStringUtil.m in Sources */,
