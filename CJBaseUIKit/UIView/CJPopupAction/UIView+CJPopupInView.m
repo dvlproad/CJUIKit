@@ -8,6 +8,7 @@
 
 #import "UIView+CJPopupInView.h"
 #import <objc/runtime.h>
+#import "UIView+CJPopupAnimation.h"
 
 #define CJPopupMainThreadAssert() NSAssert([NSThread isMainThread], @"UIView+CJPopupInView needs to be accessed on the main thread.");
 
@@ -29,7 +30,7 @@ static NSString *cjMustHideFromPopupViewKey = @"cjMustHideFromPopupView";
 
 @interface UIView ()
 
-@property (nonatomic, assign) CJAnimationType cjPopupAnimationType; /**< 弹出视图的动画方式 */
+@property (nonatomic, assign, readonly) CJAnimationType cjPopupAnimationType;   /**< 弹出视图的动画方式 */
 @property (nonatomic, copy) NSString *cjPopupViewHideFrameString;   /**< 弹出视图隐藏时候的frame */
 //@property (nonatomic, assign) CATransform3D cjPopupViewHideTransform;/**< 弹出视图隐藏时候的transform */
 
@@ -323,7 +324,9 @@ static NSString *cjMustHideFromPopupViewKey = @"cjMustHideFromPopupView";
                          } completion:^(BOOL finished) {
                              
                          }];
-        
+//        [self cj_animateFromDirection:CJDirectionTop animateOffset:40 completion:^(BOOL finished) {
+//            
+//        }];
     }
     
     if(showPopupViewCompleteBlock){

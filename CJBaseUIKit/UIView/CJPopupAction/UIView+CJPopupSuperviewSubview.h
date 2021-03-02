@@ -15,7 +15,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface UIView (CJPopupSuperviewSubview) {
     
 }
-@property (nonatomic, strong) NSMutableArray<UIView *> *cjPopupSuperviewSubview;    /**< 弹出到popupSuperview的视图 */
+@property (nonatomic, strong) NSMutableArray<UIView *> *cjPopupSuperviewSubview;    /**< 弹出到popupSuperview的所有子视图 */
 
 #pragma mark - Event:window上的弹窗的显示与隐藏
 /// 隐藏弹出到window视图的弹窗

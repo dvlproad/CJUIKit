@@ -352,6 +352,7 @@
 		80FF91C51FC581DD00E437CF /* UtilHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80FF91BF1FC581DD00E437CF /* UtilHomeViewController.m */; };
 		9721821A25E90283000E9001 /* TextViewVerticalCenterViewController2.m in Sources */ = {isa = PBXBuildFile; fileRef = 9721821825E90283000E9001 /* TextViewVerticalCenterViewController2.m */; };
 		9721821B25E90283000E9001 /* TextViewVerticalCenterViewController1.m in Sources */ = {isa = PBXBuildFile; fileRef = 9721821925E90283000E9001 /* TextViewVerticalCenterViewController1.m */; };
+		972A105C25EDF04F002C52CB /* UIView+CJPopupAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 972A105B25EDF04F002C52CB /* UIView+CJPopupAnimation.m */; };
 		973E4CBD25A353D200748B44 /* ViewPandownViewController2.m in Sources */ = {isa = PBXBuildFile; fileRef = 973E4CBB25A353D200748B44 /* ViewPandownViewController2.m */; };
 		975164AE256CFE34001DE112 /* CQUpdateContentPopupView.m in Sources */ = {isa = PBXBuildFile; fileRef = 975164AD256CFE34001DE112 /* CQUpdateContentPopupView.m */; };
 		975487A025A9943000DD7080 /* CMaxSubStringViewController1.m in Sources */ = {isa = PBXBuildFile; fileRef = 9754879D25A9942F00DD7080 /* CMaxSubStringViewController1.m */; };
@@ -1017,6 +1018,8 @@
 		9721821725E90283000E9001 /* TextViewVerticalCenterViewController1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextViewVerticalCenterViewController1.h; sourceTree = "<group>"; };
 		9721821825E90283000E9001 /* TextViewVerticalCenterViewController2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextViewVerticalCenterViewController2.m; sourceTree = "<group>"; };
 		9721821925E90283000E9001 /* TextViewVerticalCenterViewController1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextViewVerticalCenterViewController1.m; sourceTree = "<group>"; };
+		972A105A25EDF04F002C52CB /* UIView+CJPopupAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+CJPopupAnimation.h"; sourceTree = "<group>"; };
+		972A105B25EDF04F002C52CB /* UIView+CJPopupAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+CJPopupAnimation.m"; sourceTree = "<group>"; };
 		973E4CBB25A353D200748B44 /* ViewPandownViewController2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewPandownViewController2.m; sourceTree = "<group>"; };
 		973E4CBC25A353D200748B44 /* ViewPandownViewController2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewPandownViewController2.h; sourceTree = "<group>"; };
 		975164AC256CFE34001DE112 /* CQUpdateContentPopupView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CQUpdateContentPopupView.h; sourceTree = "<group>"; };
@@ -1290,6 +1293,8 @@
 			children = (
 				1562F24923F5DBF40009FCEA /* UIView+CJPopupInView.h */,
 				1562F24623F5DBF40009FCEA /* UIView+CJPopupInView.m */,
+				972A105A25EDF04F002C52CB /* UIView+CJPopupAnimation.h */,
+				972A105B25EDF04F002C52CB /* UIView+CJPopupAnimation.m */,
 				7851F6A925B5F25000C63A53 /* UIView+CJPopupSuperviewSubview.h */,
 				7851F6AA25B5F25000C63A53 /* UIView+CJPopupSuperviewSubview.m */,
 				1562F24523F5DBF40009FCEA /* UIView+CJRounderCorner.h */,
@@ -3383,6 +3388,7 @@
 				1562F2B423F5DBF40009FCEA /* UIImage+CJBase64.m in Sources */,
 				80FF919A1FC5682B00E437CF /* DateViewController.m in Sources */,
 				1562F2EE23F5DBF40009FCEA /* UITextField+CJTextChangeBlock.m in Sources */,
+				972A105C25EDF04F002C52CB /* UIView+CJPopupAnimation.m in Sources */,
 				7803DAAE22F7D519001E06B7 /* MJExtensionToModelViewController.m in Sources */,
 				78A4E1B42173A0D9005FEADD /* DemoChangeEnvironmentViewModel.m in Sources */,
 				789C447721F07BBC00181144 /* ImageHomeViewController.m in Sources */,
