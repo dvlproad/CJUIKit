@@ -19,8 +19,6 @@
 // TextView
 #import "TextViewController.h"
 #import "TextViewPlaceholderViewController.h"
-#import "TextViewVerticalCenterViewController1.h"
-#import "TextViewVerticalCenterViewController2.h"
 #import "TextViewAutoHeightViewController.h"
 
 @interface TextFieldHomeViewController ()
@@ -103,26 +101,6 @@
             CQDMModuleModel *textViewModule = [[CQDMModuleModel alloc] init];
             textViewModule.title = @"TextView高度自适应";
             textViewModule.classEntry = [TextViewAutoHeightViewController class];
-            [sectionDataModel.values addObject:textViewModule];
-        }
-        
-        [sectionDataModels addObject:sectionDataModel];
-    }
-    
-    // TextView 文字竖直居中
-    {
-        CQDMSectionDataModel *sectionDataModel = [[CQDMSectionDataModel alloc] init];
-        sectionDataModel.theme = @"TextView 文字竖直居中相关";
-        {
-            CQDMModuleModel *textViewModule = [[CQDMModuleModel alloc] init];
-            textViewModule.title = @"TextView文字竖直居中1(UIVerticalCenterTextView)";
-            textViewModule.classEntry = [TextViewVerticalCenterViewController1 class];
-            [sectionDataModel.values addObject:textViewModule];
-        }
-        {
-            CQDMModuleModel *textViewModule = [[CQDMModuleModel alloc] init];
-            textViewModule.title = @"TextView文字竖直居中2(CJVerticalCenterTextView)";
-            textViewModule.classEntry = [TextViewVerticalCenterViewController2 class];
             [sectionDataModel.values addObject:textViewModule];
         }
         

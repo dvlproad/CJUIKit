@@ -145,9 +145,15 @@ Pod::Spec.new do |s|
     ss.source_files = "CJBaseUIKit/UITextInputCJHelper/**/*.{h,m}"
   end
 
+  # 文字高度计算和竖直居中设置方法：UITextView 会需要使用到
+  s.subspec 'UITextHeightCenterCJHelper' do |ss|
+    ss.source_files = "CJBaseUIKit/UITextHeightCenterCJHelper/**/*.{h,m}"
+  end
+
   s.subspec 'UITextView' do |ss|
     ss.source_files = "CJBaseUIKit/UITextView/**/*.{h,m}"
     # ss.resources = "CJBaseUIKit/UITextView/**/*.{png,xib}"
+    ss.dependency "CJBaseUIKit/UITextInputHeightCJHelper"
   end
 
   s.subspec 'CJSlider' do |ss|
