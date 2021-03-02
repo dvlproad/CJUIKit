@@ -8,7 +8,6 @@
 
 #import "UINavigationBar+CJChangeBG.h"
 #import <objc/runtime.h>
-#import "UIImage+CJCreate.h"
 
 @interface UINavigationBar ()
 
@@ -32,7 +31,7 @@
 ///设置导航栏的背景色为指定背景色backgroundColor
 - (void)cj_setBackgroundColor:(UIColor *)backgroundColor
 {
-    UIImage *backgroundImage = [UIImage cj_imageWithColor:backgroundColor size:CGSizeMake(10, 10)];
+    UIImage *backgroundImage = [UINavigationBar imageWithColor:backgroundColor size:CGSizeMake(10, 10)];
     [self setBackgroundImage:backgroundImage forBarMetrics:UIBarMetricsDefault];
     self.backgroundColor = backgroundColor;
     
@@ -125,6 +124,30 @@
 //        UIView *titleView = [self valueForKey:@"_titleView"];
 //        titleView.alpha = alpha;
 //    }
+}
+
+
+
+#pragma mark - Private Method
+/*
+*  根据颜色创建图片(方法来源于cj_imageWithColor)
+*
+*  @param color 图片颜色
+*  @param size  图片大小
+*
+*  @return 纯色的图片
+*/
++ (UIImage *)imageWithColor:(UIColor *)color size:(CGSize)size
+{
+    CGRect rect = CGRectMake(0, 0, size.width, size.height);
+    UIGraphicsBeginImageContext(rect.size);
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    CGContextSetFillColorWithColor(context, [color CGColor]);
+    CGContextFillRect(context, rect);
+    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    
+    return image;
 }
 
 

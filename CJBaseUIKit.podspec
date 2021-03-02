@@ -4,7 +4,7 @@ Pod::Spec.new do |s|
   # pod的本地索引文件：~/Library/Caches/CocoaPods/search_index.json
   # pod的owner操作：https://www.jianshu.com/p/a9b8c2a1f3cf
   s.name         = "CJBaseUIKit"
-  s.version      = "0.7.1"
+  s.version      = "0.7.3"
   s.summary      = "自定义的基础UI"
   s.homepage     = "https://github.com/dvlproad/CJUIKit"
 
@@ -54,7 +54,7 @@ Pod::Spec.new do |s|
 
   s.platform     = :ios, "8.0"
  
-  s.source       = { :git => "https://github.com/dvlproad/CJUIKit.git", :tag => "CJBaseUIKit_0.7.1" }
+  s.source       = { :git => "https://github.com/dvlproad/CJUIKit.git", :tag => "CJBaseUIKit_0.7.3" }
   s.source_files  = "CJBaseUIKit/*.{h,m}"
 
   s.frameworks = "UIKit"
@@ -153,7 +153,7 @@ Pod::Spec.new do |s|
   s.subspec 'UITextView' do |ss|
     ss.source_files = "CJBaseUIKit/UITextView/**/*.{h,m}"
     # ss.resources = "CJBaseUIKit/UITextView/**/*.{png,xib}"
-    ss.dependency "CJBaseUIKit/UITextInputHeightCJHelper"
+    ss.dependency "CJBaseUIKit/UITextHeightCenterCJHelper"
   end
 
   s.subspec 'CJSlider' do |ss|
