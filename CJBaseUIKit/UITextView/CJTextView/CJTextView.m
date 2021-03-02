@@ -142,7 +142,7 @@
 }
 
 /* 完整的描述请参见文件头部 */
-- (void)setMaxTextViewHeight:(NSUInteger)maxTextViewHeight
+- (void)setMaxTextViewHeight:(NSInteger)maxTextViewHeight
 {
     _maxTextViewHeight = maxTextViewHeight;
     
@@ -235,12 +235,6 @@
     
     BOOL oldTextViewHeight = self.currentTexViewHeight;
     if (oldTextViewHeight != currentTextViewHeight) { //高度不一样，就改变了高度
-        if (currentTextViewHeight > self.maxTextViewHeight) {
-            self.scrollEnabled = YES;//当前文本框的最大高度，已经大于文本框的最大显示高度，则应该允许滚动
-        } else {
-            self.scrollEnabled = NO;
-        }
-        
         BOOL shouldUpdateHeight = YES;
         if (oldTextViewHeight > self.maxTextViewHeight && currentTextViewHeight > self.maxTextViewHeight) {
             shouldUpdateHeight = NO;

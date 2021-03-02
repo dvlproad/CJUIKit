@@ -1116,8 +1116,9 @@
 				1562F21B23F5DBF40009FCEA /* UIScrollView */,
 				1562F27723F5DBF40009FCEA /* UITableView */,
 				1562F2A023F5DBF40009FCEA /* UITextField */,
-				786B5BDD25B203F400433A48 /* UITextInputCJHelper */,
 				1562F29523F5DBF40009FCEA /* UITextView */,
+				972A106B25EE0C41002C52CB /* UITextCenterCJHelper */,
+				786B5BDD25B203F400433A48 /* UITextInputCJHelper */,
 				1562F23B23F5DBF40009FCEA /* UIToolbar */,
 				1562F24223F5DBF40009FCEA /* UIView */,
 				1562F26B23F5DBF40009FCEA /* UIViewController */,
@@ -1492,10 +1493,6 @@
 			isa = PBXGroup;
 			children = (
 				786B5C1D25B20CAC00433A48 /* CJTextView */,
-				9767973625834D10002FD0C7 /* UITextView+CJVerticalCenter.h */,
-				9767973725834D10002FD0C7 /* UITextView+CJVerticalCenter.m */,
-				78542E6625BA02DB00ABE1E5 /* UITextInputHeightCJHelper.h */,
-				78542E6725BA02DB00ABE1E5 /* UITextInputHeightCJHelper.m */,
 			);
 			path = UITextView;
 			sourceTree = "<group>";
@@ -2856,6 +2853,25 @@
 				9721821825E90283000E9001 /* TextViewVerticalCenterViewController2.m */,
 			);
 			path = VerticalCenter;
+			sourceTree = "<group>";
+		};
+		972A106B25EE0C41002C52CB /* UITextCenterCJHelper */ = {
+			isa = PBXGroup;
+			children = (
+				972A106C25EE0CA0002C52CB /* Helper */,
+			);
+			path = UITextCenterCJHelper;
+			sourceTree = "<group>";
+		};
+		972A106C25EE0CA0002C52CB /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				9767973625834D10002FD0C7 /* UITextView+CJVerticalCenter.h */,
+				9767973725834D10002FD0C7 /* UITextView+CJVerticalCenter.m */,
+				78542E6625BA02DB00ABE1E5 /* UITextInputHeightCJHelper.h */,
+				78542E6725BA02DB00ABE1E5 /* UITextInputHeightCJHelper.m */,
+			);
+			path = Helper;
 			sourceTree = "<group>";
 		};
 		97578CF22559400600249AD6 /* TSSliderFactory */ = {

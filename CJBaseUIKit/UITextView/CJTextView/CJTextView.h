@@ -60,7 +60,7 @@ NS_ASSUME_NONNULL_BEGIN
  *  @param maxTextViewHeight            textView的最大高度
  *
  */
-- (void)setMaxTextViewHeight:(NSUInteger)maxTextViewHeight;
+- (void)setMaxTextViewHeight:(NSInteger)maxTextViewHeight;
 
 - (void)updateTexViewHeightIfNeed;
 
