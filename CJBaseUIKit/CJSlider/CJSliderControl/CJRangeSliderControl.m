@@ -324,8 +324,15 @@ static NSTimeInterval const kMTRngeSliderDidTapSlidAnimationDuration   = 0.3f;
     CGFloat popoverWidth = self.popoverSize.width;  // 弹出框的宽
     CGFloat popoverHeight = self.popoverSize.height;// 弹出框的高
     CGFloat popoverY = thumbY - self.popoverSpacing - popoverHeight;
-    self.leftPopover.frame = CGRectMake(leftThumbX, popoverY, popoverWidth, popoverHeight);
-    self.rightPopover.frame = CGRectMake(rightThumbX, popoverY, popoverWidth, popoverHeight);
+    CGFloat leftPopoverX = leftThumbMidX - popoverWidth/2;
+    CGFloat rightPopoverX = rightThumbMidX - popoverWidth/2;
+//    popoverY = thumbY - 0 - popoverHeight;
+//    self.leftThumb.backgroundColor = [UIColor redColor];
+//    self.rightThumb.backgroundColor = [UIColor redColor];
+//    self.leftPopover.backgroundColor = [UIColor redColor];
+//    self.rightPopover.backgroundColor = [UIColor redColor];
+    self.leftPopover.frame = CGRectMake(leftPopoverX, popoverY, popoverWidth, popoverHeight);
+    self.rightPopover.frame = CGRectMake(rightPopoverX, popoverY, popoverWidth, popoverHeight);
 
     [self updateFrontImageView];
 }
@@ -542,9 +549,9 @@ static NSTimeInterval const kMTRngeSliderDidTapSlidAnimationDuration   = 0.3f;
 }
 
 - (void)movePopover:(UIView *)popover aboveThumb:(UIButton *)thumb {
-    CGRect tempRect = popover.frame;
-    tempRect.origin.x = thumb.frame.origin.x;
-    popover.frame = tempRect;
+    CGPoint popoverCenter = popover.center;
+    popoverCenter.x = thumb.center.x;
+    popover.center = popoverCenter;
 }
 
 - (void)showPopover:(UIView *)popover {
