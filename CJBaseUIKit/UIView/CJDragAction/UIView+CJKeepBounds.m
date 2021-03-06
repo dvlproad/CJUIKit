@@ -7,6 +7,7 @@
 //
 
 #import "UIView+CJKeepBounds.h"
+#import "CGRectCJAdjustHelper.h"
 
 @implementation UIView (CJKeepBounds)
 
@@ -45,104 +46,32 @@
         originBondHeight = CGRectGetHeight(self.superview.frame);
     }
     
-    
+    // 视图可移动的四边分别是
     CGFloat bondMinX = MAX(0, boundEdgeInsets.left); //黏合区域的minX
     CGFloat bondMaxX = MIN(originBondWidth, originBondWidth - boundEdgeInsets.right);   //黏合区域的maxX
     
-    //1、x的黏合：先判断是否超出边界，如果超出边界，是否自动黏合
-    if (CGRectGetMinX(self.frame) < bondMinX) {
-        if (isKeepBoundsXYWhenBeyondBound) {    //超出左边界，自动黏合到左侧
-            [self absorbXToLeftMinX:bondMinX];
-        }
-        
-    } else if(CGRectGetMaxX(self.frame) > bondMaxX) {
-        if (isKeepBoundsXYWhenBeyondBound) {    //超出右边界，自动黏合到右侧
-            [self absorbXToRightMaxX:bondMaxX];
-        }
-    } else if (CGRectGetMidX(self.frame) < bondMinX + (bondMaxX-bondMinX)/2) {
-        if (isKeepBoundsXWhenContaintInBound) { //在左边界及中间边界之间，自动黏合到左侧
-            [self absorbXToLeftMinX:bondMinX];
-        }
-        
-    } else {
-        if (isKeepBoundsXWhenContaintInBound) { //在中间边界及右边界之间，自动黏合到右侧
-            [self absorbXToRightMaxX:bondMaxX];
-        }
-    }
-    
-    
     CGFloat bondMinY = MAX(0, boundEdgeInsets.top); //黏合区域的minY
     CGFloat bondMaxY = MIN(originBondHeight, originBondHeight - boundEdgeInsets.bottom); //黏合区域的maxY
-    //2、y的黏合：只需考虑超出边界是否黏合，不超出边界的话，不用处理y
-    if (CGRectGetMinY(self.frame) < bondMinY) {
-        if (isKeepBoundsXYWhenBeyondBound) {    //超出上边界，自动黏合到上侧
-            [self absorbYToTopMinY:bondMinY];
-        }
-        
-    } else if(CGRectGetMaxY(self.frame) > bondMaxY){
-        if (isKeepBoundsXYWhenBeyondBound) {    //超出下边界，自动黏合到下侧
-            [self absorbYToBottomMaxY:bondMaxY];
-        }
-    } else if (CGRectGetMidY(self.frame) < bondMinY + (bondMaxY-bondMinY)/2) {
-        if (isKeepBoundsYWhenContaintInBound) { //在上边界及中间边界之间，自动黏合到上侧
-            [self absorbYToTopMinY:bondMinY];
-        }
-        
-    } else {
-        if (isKeepBoundsYWhenContaintInBound) { //在中间边界及下边界之间，自动黏合到下侧
-            [self absorbYToBottomMaxY:bondMaxY];
-        }
-    }
-}
-
-#pragma mark - 吸附方法
-- (void)absorbXToLeftMinX:(CGFloat)bondMinX {
-    CGContextRef context = UIGraphicsGetCurrentContext();
-    [UIView beginAnimations:@"leftMove" context:context];
-    [UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
-    [UIView setAnimationDuration:0.5];
+    
     
     CGRect frame = self.frame;
-    frame.origin.x = bondMinX;
-    self.frame = frame;
+    CGRect cageBound = CGRectMake(bondMinX, bondMinY, bondMaxX-bondMinX, bondMaxY-bondMinY);
+    
+    
+    CGRect newSmallFrame = [CGRectCJAdjustHelper adjustXYForSmallFrame:frame
+                                                  accordingToCageFrame:cageBound
+                                         isKeepBoundsXYWhenBeyondBound:isKeepBoundsXYWhenBeyondBound
+                                      isKeepBoundsXWhenContaintInBound:isKeepBoundsXWhenContaintInBound
+                                      isKeepBoundsYWhenContaintInBound:isKeepBoundsYWhenContaintInBound];
+    
+    
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    [UIView beginAnimations:@"commonMove" context:context];
+    [UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
+    [UIView setAnimationDuration:0.5];
+    self.frame = newSmallFrame;
     [UIView commitAnimations];
 }
 
-- (void)absorbXToRightMaxX:(CGFloat)bondMaxX {
-    CGContextRef context = UIGraphicsGetCurrentContext();
-    [UIView beginAnimations:@"rightMove" context:context];
-    [UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
-    [UIView setAnimationDuration:0.5];
-    
-    CGRect frame = self.frame;
-    frame.origin.x = bondMaxX - CGRectGetWidth(self.frame);
-    self.frame = frame;
-    [UIView commitAnimations];
-}
-
-
-- (void)absorbYToTopMinY:(CGFloat)bondMinY {
-    CGContextRef context = UIGraphicsGetCurrentContext();
-    [UIView beginAnimations:@"topMove" context:context];
-    [UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
-    [UIView setAnimationDuration:0.5];
-    
-    CGRect frame = self.frame;
-    frame.origin.y = bondMinY;
-    self.frame = frame;
-    [UIView commitAnimations];
-}
-
-- (void)absorbYToBottomMaxY:(CGFloat)bondMaxY {
-    CGContextRef context = UIGraphicsGetCurrentContext();
-    [UIView beginAnimations:@"bottomMove" context:context];
-    [UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
-    [UIView setAnimationDuration:0.5];
-    
-    CGRect frame = self.frame;
-    frame.origin.y = bondMaxY - CGRectGetHeight(self.frame);
-    self.frame = frame;
-    [UIView commitAnimations];
-}
 
 @end

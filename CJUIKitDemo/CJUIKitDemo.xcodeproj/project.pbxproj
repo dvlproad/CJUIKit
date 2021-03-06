@@ -148,6 +148,7 @@
 		78575C8A2257242100925842 /* TSTextFieldOffsetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78575C892257242100925842 /* TSTextFieldOffsetViewController.m */; };
 		7857ABB8225482D200B1569C /* CJDemoDatePickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7857ABB6225482D200B1569C /* CJDemoDatePickerView.m */; };
 		7857ABBC2254AA5000B1569C /* CJDemoDateTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 7857ABBB2254AA5000B1569C /* CJDemoDateTextField.m */; };
+		785E6EE825F3E77F0039C9C3 /* CGRectCJAdjustHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 785E6EE725F3E77F0039C9C3 /* CGRectCJAdjustHelper.m */; };
 		7861852C21D3630B004B71FF /* AppCommon.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7861852B21D3630B004B71FF /* AppCommon.xcassets */; };
 		786254C024A9283800E3CCC3 /* CJSortUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 786254BF24A9283800E3CCC3 /* CJSortUtil.m */; };
 		786254C324A92EBF00E3CCC3 /* CJDataSearchUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 786254C224A92EBF00E3CCC3 /* CJDataSearchUtil.m */; };
@@ -658,6 +659,8 @@
 		7857ABB7225482D200B1569C /* CJDemoDatePickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJDemoDatePickerView.h; sourceTree = "<group>"; };
 		7857ABBA2254AA5000B1569C /* CJDemoDateTextField.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CJDemoDateTextField.h; sourceTree = "<group>"; };
 		7857ABBB2254AA5000B1569C /* CJDemoDateTextField.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CJDemoDateTextField.m; sourceTree = "<group>"; };
+		785E6EE625F3E77F0039C9C3 /* CGRectCJAdjustHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CGRectCJAdjustHelper.h; sourceTree = "<group>"; };
+		785E6EE725F3E77F0039C9C3 /* CGRectCJAdjustHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CGRectCJAdjustHelper.m; sourceTree = "<group>"; };
 		7861852B21D3630B004B71FF /* AppCommon.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = AppCommon.xcassets; sourceTree = "<group>"; };
 		786254BE24A9283800E3CCC3 /* CJSortUtil.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CJSortUtil.h; sourceTree = "<group>"; };
 		786254BF24A9283800E3CCC3 /* CJSortUtil.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CJSortUtil.m; sourceTree = "<group>"; };
@@ -1305,6 +1308,8 @@
 				1562F24C23F5DBF40009FCEA /* UIView+CJKeepBounds.m */,
 				78ACAFEE2595066C000FEEEB /* UIView+CJPanAction.h */,
 				78ACAFED2595066C000FEEEB /* UIView+CJPanAction.m */,
+				785E6EE625F3E77F0039C9C3 /* CGRectCJAdjustHelper.h */,
+				785E6EE725F3E77F0039C9C3 /* CGRectCJAdjustHelper.m */,
 			);
 			path = CJDragAction;
 			sourceTree = "<group>";
@@ -3401,6 +3406,7 @@
 				787FDB6420500B1F008A46E3 /* TextViewController.m in Sources */,
 				780E46051E5DF87B00980127 /* main.m in Sources */,
 				7805E1D72369C5FC00B998EC /* PriceYuanToYuanViewController.m in Sources */,
+				785E6EE825F3E77F0039C9C3 /* CGRectCJAdjustHelper.m in Sources */,
 				78A621E02135C78B004DA046 /* DemoSuspendWindow+CJSuspendWindowManager.m in Sources */,
 				1562F2BE23F5DBF40009FCEA /* CJBadgeButton.m in Sources */,
 				1562F2D023F5DBF40009FCEA /* CJTableViewHeaderFooterView.m in Sources */,

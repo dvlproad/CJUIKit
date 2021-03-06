@@ -5,6 +5,7 @@
 //  Created by ciyouzen on 2016/11/05.
 //  Copyright © 2016年 dvlproad. All rights reserved.
 //
+//  限制本视图不移出其父视图或keyWindow
 
 #import <UIKit/UIKit.h>
 
