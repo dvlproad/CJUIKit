@@ -137,41 +137,41 @@ isKeepBoundsYWhenContaintInBound:(BOOL)isKeepBoundsYWhenContaintInBound
  *  @return 宽高都不小于对应最小值的大框新大小
  */
 + (CGSize)adjustSizeForCageSize:(CGSize)cageSize accordingToSmallSize:(CGSize)smallSize {
-    CGFloat minWidth = smallSize.width;
-    CGFloat minHeight = smallSize.height;
+    CGFloat minCageWidth = smallSize.width;
+    CGFloat minCageHeight = smallSize.height;
 
-    CGFloat currentWidth = cageSize.width;
-    CGFloat currentHeight = cageSize.height;
+    CGFloat currentCageWidth = cageSize.width;
+    CGFloat currentCageHeight = cageSize.height;
     
-    CGFloat minSizeRatio = minWidth/minHeight;
-//    CGFloat viewWidthWhenUseMinSizeRatio = currentHeight * minSizeRatio;
-    CGFloat viewRatio = currentWidth/currentHeight;
-    // 相比要裁剪的minSize区域，原图的区域属于长图，还是宽图
-    BOOL isLongFrame = viewRatio < minSizeRatio;
+    CGFloat minCageRatio = minCageWidth/minCageHeight;
+    //CGFloat cageWidthWhenUseMinCageRatio = currentCageHeight * minCageRatio; // 采用minCageRatio后判断其宽度是否会超出currentCageWidth
+    CGFloat keepCageRatio = currentCageWidth/currentCageHeight;
+    // 相比要裁剪的minCageSize区域，原图的区域属于长图，还是宽图
+    BOOL isLongCageFrame = keepCageRatio < minCageRatio;
 
-    CGFloat lastWidth;
-    CGFloat lastHeight;
+    CGFloat newCageWidth;
+    CGFloat newCageHeight;
     // 在维持原图的比例下，要保证宽高都大于其对应的最小值，
-    if (isLongFrame) {
+    if (isLongCageFrame) {
         // 长图的时候，只要保证宽不小于最小宽，高就会自动会不小于最小高
-        if (currentWidth < minWidth) {  // 长图且宽太小，需要调整宽
-            lastWidth = minWidth;
-            lastHeight = lastWidth/viewRatio;
+        if (currentCageWidth < minCageWidth) {  // 长图且宽太小，需要调整宽
+            newCageWidth = minCageWidth;
+            newCageHeight = newCageWidth/keepCageRatio;
         } else {                        // 不需要调整大小
-            lastWidth = currentWidth;
-            lastHeight = currentHeight;
+            newCageWidth = currentCageWidth;
+            newCageHeight = currentCageHeight;
         }
     } else {
         // 宽图的时候，只要保证高不小于最小高，宽就会自动会不小于最小宽
-        if (currentHeight < minHeight) {// 宽图且高太小，需要调整高
-            lastHeight = minHeight;
-            lastWidth = lastHeight*viewRatio;
+        if (currentCageHeight < minCageHeight) {// 宽图且高太小，需要调整高
+            newCageHeight = minCageHeight;
+            newCageWidth = newCageHeight*keepCageRatio;
         } else {                        // 不需要调整大小
-            lastHeight = currentHeight;
-            lastWidth = currentWidth;
+            newCageHeight = currentCageHeight;
+            newCageWidth = currentCageWidth;
         }
     }
-    return CGSizeMake(lastWidth, lastHeight);
+    return CGSizeMake(newCageWidth, newCageHeight);
 }
 
 
@@ -223,5 +223,6 @@ isKeepBoundsYWhenContaintInBound:(BOOL)isKeepBoundsYWhenContaintInBound
 
     return cageFrame;
 }
+
 
 @end
