@@ -52,7 +52,8 @@
     [logoButton setCjDragEndBlock:^(UIView *view) {
         [view cjKeepBoundsWithBoundEdgeInsets:UIEdgeInsetsMake(64, 20, 0, 20)
                 isKeepBoundsXYWhenBeyondBound:YES
-             isKeepBoundsXWhenContaintInBound:NO];
+             isKeepBoundsXWhenContaintInBound:YES
+             isKeepBoundsYWhenContaintInBound:NO];
     }];
     [[UIApplication sharedApplication].keyWindow addSubview:logoButton]; //添加到window上了
 }
