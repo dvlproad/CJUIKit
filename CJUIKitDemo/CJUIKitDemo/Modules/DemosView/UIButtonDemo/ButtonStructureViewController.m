@@ -9,6 +9,7 @@
 #import "ButtonStructureViewController.h"
 #import "TSButtonFactory.h"
 #import "UIImage+CJCreate.h"
+#import "UIImage+CJMakeCircle.h"
 
 #import "UIButton+CJStructure.h"
 
@@ -33,7 +34,8 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
-    UIImage *image = [[UIImage cj_imageWithColor:[UIColor redColor] size:CGSizeMake(30, 30)] cj_circleImage];
+    UIImage *image = [UIImage cj_imageWithColor:[UIColor redColor] size:CGSizeMake(30, 30)];
+    image = [image cj_circleImage];
     
     // 正常图文的按钮(测试用的"左图片+右文字"按钮)
     UIButton *normalStructure = [TSButtonFactory textImageButtonWithTitle:@"正常图文的按钮"

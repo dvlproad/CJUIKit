@@ -10,7 +10,6 @@
 #define UIViewCJCategory_h
 
 #import "UIView+CJDragAction.h"
-#import "UIView+CJKeepBounds.h"
 #import "UIView+CJShake.h"
 
 #import "UIView+CJExclusiveTouch.h"

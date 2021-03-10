@@ -11,10 +11,8 @@
 
 #ifdef TEST_CJBASEUIKIT_POD
 #import "UIView+CJDragAction.h"
-#import "UIView+CJKeepBounds.h"
 #else
 #import <CJBaseUIKit/UIView+CJDragAction.h>
-#import <CJBaseUIKit/UIView+CJKeepBounds.h>
 #endif
 
 

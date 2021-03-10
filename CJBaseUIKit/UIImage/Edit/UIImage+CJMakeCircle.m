@@ -41,5 +41,24 @@ imageView.layer.cornerRadius = 50;//cornerradus的确定问题
     return newimg;
 }
 
+/**
+ *  将图片弄成圆形
+ */
+- (UIImage *)cj_circleImage {
+    // 开始图形上下文，NO代表透明
+    UIGraphicsBeginImageContextWithOptions(self.size, NO, 0.0);
+    CGContextRef ctx = UIGraphicsGetCurrentContext();                   // 获得图形上下文
+    CGRect rect = CGRectMake(0, 0, self.size.width, self.size.height);  // 设置一个范围
+    CGContextAddEllipseInRect(ctx, rect);   // 根据一个rect创建一个椭圆
+    CGContextClip(ctx);                     // 裁剪
+    [self drawInRect:rect];                 // 将原照片画到图形上下文
+
+    // 从上下文上获取剪裁后的照片
+    UIImage *newImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();            // 关闭上下文
+
+    return newImage;
+}
+
 
 @end

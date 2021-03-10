@@ -10,7 +10,8 @@
 
 @interface UIImage (CJCreate)
 
-/**
+#pragma mark - 根据颜色创建图片
+/*
  *  根据颜色创建图片
  *
  *  @param color 图片颜色
@@ -20,9 +21,16 @@
  */
 + (UIImage *)cj_imageWithColor:(UIColor *)color size:(CGSize)size;
 
-/**
- *  将图片弄成圆形
+
+#pragma mark - 将视图转成图片
+/*
+ *  将视图转成图片
+ *
+ *  @param contentView      要转成图片的视图
+ *  @param opaque           是否是非透明的（NO,半透明效果；YES:透明）
+ *
+ *  @return 由视图生成的图片
  */
-- (UIImage *)cj_circleImage;
++ (UIImage *)cj_imageWithView:(UIView *)contentView opaque:(BOOL)opaque;
 
 @end

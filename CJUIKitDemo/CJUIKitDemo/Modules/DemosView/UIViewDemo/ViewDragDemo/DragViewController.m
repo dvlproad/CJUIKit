@@ -7,9 +7,8 @@
 //
 
 #import "DragViewController.h"
-
+#import <CQDemoKit/CJUIKitToastUtil.h>
 #import "UIView+CJDragAction.h"
-#import "UIView+CJKeepBounds.h"
 
 @interface DragViewController ()
 
@@ -27,7 +26,8 @@
     
     self.redView.cjDragEnable = YES;
     [self.redView setCjDragEndBlock:^(UIView *view) {
-        [view cjKeepBounds];
+        [CJUIKitToastUtil showMessage:@"拖动结束"];
+        //[view cjKeepBounds];
     }];
     
     
@@ -36,10 +36,12 @@
     self.orangeButton.cjDragEnable = YES;
     [self.orangeButton setCjDragBeginBlock:^(UIView *view) {
         NSLog(@"开始拖曳橙色视图");
+        [CJUIKitToastUtil showMessage:@"开始拖曳橙色视图"];
     }];
     [self.orangeButton setCjDragEndBlock:^(UIView *view) {
         NSLog(@"结束拖曳橙色视图");
-        [view cjKeepBounds];
+        [CJUIKitToastUtil showMessage:@"结束拖曳橙色视图"];
+        //[view cjKeepBounds];
     }];
     
     UIButton *logoButton = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -50,10 +52,11 @@
     [logoButton addTarget:self action:@selector(closeLogoButton:) forControlEvents:UIControlEventTouchUpInside];
     logoButton.cjDragEnable = YES;
     [logoButton setCjDragEndBlock:^(UIView *view) {
-        [view cjKeepBoundsWithBoundEdgeInsets:UIEdgeInsetsMake(64, 20, 0, 20)
-                isKeepBoundsXYWhenBeyondBound:YES
-             isKeepBoundsXWhenContaintInBound:YES
-             isKeepBoundsYWhenContaintInBound:NO];
+//        [view cjKeepBoundsWithBoundEdgeInsets:UIEdgeInsetsMake(64, 20, 0, 20)
+//                isKeepBoundsXYWhenBeyondBound:YES
+//             isKeepBoundsXWhenContaintInBound:YES
+//             isKeepBoundsYWhenContaintInBound:NO];
+        [CJUIKitToastUtil showMessage:@"拖动结束"];
     }];
     [[UIApplication sharedApplication].keyWindow addSubview:logoButton]; //添加到window上了
 }

@@ -7,6 +7,8 @@
 //
 
 #import "DemoSuspendWindow.h"
+#import <CQDemoKit/CJUIKitToastUtil.h>
+//#import <CJGRKit/UIView+CJKeepBounds.h>
 #import "DemoSuspendWindowRootViewController.h"
 #import "CJSuspendWindowManager.h"
 
@@ -42,7 +44,8 @@
         
     }];
     [self setCjDragEndBlock:^(UIView *view) {
-        [view cjKeepBounds];
+        [CJUIKitToastUtil showMessage:@"拖动结束(一般会加上边缘限制)"];
+        //[view cjKeepBounds];
     }];
     
     
