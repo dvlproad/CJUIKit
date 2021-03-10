@@ -52,7 +52,7 @@
     TwoImageCompareView *compareView3 = [self compareView];
     TwoImageCompareView *compareView4 = [self compareView];
     NSArray<UIView *> *compareViews = @[compareView1, compareView2, compareView3, compareView4];
-    UIView *container = [CQTSContainerViewFactory containerViewAlongAxis:MASAxisTypeVertical withSubviews:compareViews];
+    UIView *container = [CQTSContainerViewFactory containerViewAlongAxis:MASAxisTypeVertical withSubviews:compareViews fixedSpacing:10];
     [self.view addSubview:container];
     
     

@@ -162,7 +162,8 @@
             
         } else {
             if (moduleModel.isCreateByXib) {
-                viewController = [[classEntry alloc] initWithNibName:clsString bundle:nil];
+                NSBundle *xibBundle = moduleModel.xibBundle;
+                viewController = [[classEntry alloc] initWithNibName:clsString bundle:xibBundle];
             } else {
                 viewController = [[classEntry alloc] init];
             }

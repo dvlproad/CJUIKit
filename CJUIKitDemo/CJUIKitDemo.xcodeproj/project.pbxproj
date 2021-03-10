@@ -249,7 +249,6 @@
 		78B6C2EF2159D8AF00D5864E /* DemoBusPassengerModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 78B6C2ED2159D8AF00D5864E /* DemoBusPassengerModel.m */; };
 		78B831B325B484060016C561 /* UIImageCJCutHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 78B831B125B484050016C561 /* UIImageCJCutHelper.m */; };
 		78B831C125B48C670016C561 /* UIImageCJCompressHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 78B831C025B48C670016C561 /* UIImageCJCompressHelper.m */; };
-		78B90E67218B49D000776584 /* MainAsset.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 78B90E66218B49CF00776584 /* MainAsset.xcassets */; };
 		78C81479216E0DEC00A6B190 /* SystemComposeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78C81478216E0DEC00A6B190 /* SystemComposeViewController.m */; };
 		78C81489216E11AF00A6B190 /* CChildViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78C8147B216E11AF00A6B190 /* CChildViewController.m */; };
 		78C8148A216E11AF00A6B190 /* FChildViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78C8147C216E11AF00A6B190 /* FChildViewController.m */; };
@@ -278,7 +277,6 @@
 		800E07E52016CCF500799B78 /* DeviceInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 800E07E02016CCF500799B78 /* DeviceInfo.m */; };
 		800E07E92016CD1500799B78 /* KeyboardUtilViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 800E07E72016CD1500799B78 /* KeyboardUtilViewController.m */; };
 		800E07EA2016CD1500799B78 /* KeyboardUtilViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 800E07E82016CD1500799B78 /* KeyboardUtilViewController.xib */; };
-		8014A2A21FA3137D00DDDB5A /* ThirdPartIcon.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8014A2A11FA3137D00DDDB5A /* ThirdPartIcon.xcassets */; };
 		801F75D820A040D800A2E027 /* BBXDAreaCodeTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 801F75D020A040D800A2E027 /* BBXDAreaCodeTextField.m */; };
 		801F75D920A040D800A2E027 /* BBXDPasswordTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 801F75D120A040D800A2E027 /* BBXDPasswordTextField.m */; };
 		801F75DA20A040D800A2E027 /* signin_icon_open@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 801F75D520A040D800A2E027 /* signin_icon_open@3x.png */; };
@@ -830,7 +828,6 @@
 		78B831B225B484060016C561 /* UIImageCJCutHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIImageCJCutHelper.h; sourceTree = "<group>"; };
 		78B831BF25B48C670016C561 /* UIImageCJCompressHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UIImageCJCompressHelper.h; sourceTree = "<group>"; };
 		78B831C025B48C670016C561 /* UIImageCJCompressHelper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UIImageCJCompressHelper.m; sourceTree = "<group>"; };
-		78B90E66218B49CF00776584 /* MainAsset.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = MainAsset.xcassets; sourceTree = "<group>"; };
 		78C81477216E0DEC00A6B190 /* SystemComposeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SystemComposeViewController.h; sourceTree = "<group>"; };
 		78C81478216E0DEC00A6B190 /* SystemComposeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SystemComposeViewController.m; sourceTree = "<group>"; };
 		78C8147B216E11AF00A6B190 /* CChildViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CChildViewController.m; sourceTree = "<group>"; };
@@ -885,7 +882,6 @@
 		800E07E62016CD1500799B78 /* KeyboardUtilViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KeyboardUtilViewController.h; sourceTree = "<group>"; };
 		800E07E72016CD1500799B78 /* KeyboardUtilViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KeyboardUtilViewController.m; sourceTree = "<group>"; };
 		800E07E82016CD1500799B78 /* KeyboardUtilViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = KeyboardUtilViewController.xib; sourceTree = "<group>"; };
-		8014A2A11FA3137D00DDDB5A /* ThirdPartIcon.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = ThirdPartIcon.xcassets; sourceTree = "<group>"; };
 		801F75D020A040D800A2E027 /* BBXDAreaCodeTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBXDAreaCodeTextField.m; sourceTree = "<group>"; };
 		801F75D120A040D800A2E027 /* BBXDPasswordTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBXDPasswordTextField.m; sourceTree = "<group>"; };
 		801F75D220A040D800A2E027 /* BBXDUserNameTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBXDUserNameTextField.h; sourceTree = "<group>"; };
@@ -2122,8 +2118,6 @@
 				7868278021AF02E000FCCDE5 /* bg@2x.jpg */,
 				7861852B21D3630B004B71FF /* AppCommon.xcassets */,
 				7868275F21AE926700FCCDE5 /* AppAssets.xcassets */,
-				78B90E66218B49CF00776584 /* MainAsset.xcassets */,
-				8014A2A11FA3137D00DDDB5A /* ThirdPartIcon.xcassets */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -3024,7 +3018,6 @@
 				7861852C21D3630B004B71FF /* AppCommon.xcassets in Resources */,
 				787FDB9020500B5C008A46E3 /* icon_ddlb_hd@2x.png in Resources */,
 				7850B70620937C5A008F4A21 /* PopupInViewVC.xib in Resources */,
-				8014A2A21FA3137D00DDDB5A /* ThirdPartIcon.xcassets in Resources */,
 				7868276021AE926700FCCDE5 /* AppAssets.xcassets in Resources */,
 				800E07E22016CCF500799B78 /* DataUtilViewController.xib in Resources */,
 				80D01210210336E100D1EDF0 /* ChangeViewController.xib in Resources */,
@@ -3047,7 +3040,6 @@
 				7894C2A8256ECAE200C73B5E /* slider_range_start@3x.png in Resources */,
 				7850B70320937C5A008F4A21 /* ShowExtendViewVC.xib in Resources */,
 				787FDB9420500B5C008A46E3 /* slider_thumbImage@3x.png in Resources */,
-				78B90E67218B49D000776584 /* MainAsset.xcassets in Resources */,
 				97A9192425AFE8510051B902 /* longHorizontal.jpg in Resources */,
 				1562F2DD23F5DBF40009FCEA /* cjBackBarButtonItemGray@2x.png in Resources */,
 				7850B71220937E85008F4A21 /* WelcomePopupView.xib in Resources */,
@@ -3179,7 +3171,6 @@
 				"${PODS_ROOT}/CQDemoKit/CQDemoKit/BaseVC/TabBar/Resources/icons8-home.png",
 				"${PODS_ROOT}/CQDemoKit/CQDemoKit/BaseVC/TabBar/Resources/icons8-menu.png",
 				"${PODS_ROOT}/CQDemoKit/CQDemoKit/BaseVC/TabBar/Resources/icons8-settings.png",
-				"${PODS_CONFIGURATION_BUILD_DIR}/CQDemoKit/CQDemoKit.bundle",
 				"${PODS_ROOT}/PinYin4Objc/PinYin4Objc/Resources/unicode_to_hanyu_pinyin.txt",
 				"${PODS_ROOT}/SAMKeychain/Support/SAMKeychain.bundle",
 			);
@@ -3194,7 +3185,6 @@
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/icons8-home.png",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/icons8-menu.png",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/icons8-settings.png",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/CQDemoKit.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/unicode_to_hanyu_pinyin.txt",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/SAMKeychain.bundle",
 			);

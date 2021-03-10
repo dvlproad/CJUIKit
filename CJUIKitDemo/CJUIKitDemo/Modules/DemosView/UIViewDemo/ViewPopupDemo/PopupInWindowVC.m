@@ -30,7 +30,7 @@
     // Do any additional setup after loading the view.
     self.navigationItem.title = NSLocalizedString(@"PopupInWindow首页", nil); //知识点:使得tabBar中的title可以和显示在顶部的title保持各自
     
-    [self testGoOtherViewControllerByRightBarButtonItem];
+    [self tsGoOtherViewControllerByRightBarButtonItem];
     
     [IQKeyboardManager sharedManager].enable = NO; // 禁用 IQKeyboardManager
     

@@ -21,7 +21,7 @@
 }
 
 /// 测试进入其他视图的情况（从导航栏右键）
-- (void)testGoOtherViewControllerByRightBarButtonItem {
+- (void)tsGoOtherViewControllerByRightBarButtonItem {
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"进其他视图", nil) style:UIBarButtonItemStylePlain target:self action:@selector(__goOtherViewController)];
 }
 
@@ -30,6 +30,7 @@
     
     UIColor *randomColor = [UIColor colorWithRed:arc4random_uniform(256)/255.0 green:arc4random_uniform(256)/255.0 blue:arc4random_uniform(256)/255.0 alpha:1.0];
     viewController.view.backgroundColor = randomColor;
+    viewController.hidesBottomBarWhenPushed = YES;
     
     [self.navigationController pushViewController:viewController animated:YES];
 }

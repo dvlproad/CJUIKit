@@ -33,7 +33,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 #pragma mark - 多视图的基础接口
 + (UIView *)containerViewAlongAxis:(MASAxisType)axisType
-                      withSubviews:(NSArray<UIView *> *)subviews;
+                      withSubviews:(NSArray<UIView *> *)subviews
+                      fixedSpacing:(CGFloat)fixedSpacing;
 
 
 @end

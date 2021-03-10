@@ -7,6 +7,7 @@
 //
 
 #import "CJUIKitBaseTabBarViewController.h"
+#import "UIImage+CQDemoKit.h"
 
 @interface CJUIKitBaseTabBarViewController ()
 
@@ -18,7 +19,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    self.tabBar.backgroundImage = [UIImage imageNamed:@"tabbar_BG"];
+    //self.tabBar.backgroundImage = [UIImage cqdemokit_xcassetImageNamed:@"tabbar_BG"];
     
 //    [self setSelectedIndex:0];
 //    [self setViewControllers:@[firstNavigationController, secondNavigationController, navigationController3, navigationController4] animated:YES];
@@ -54,7 +55,8 @@
     Class classEntry = tabBarModel.classEntry;
     NSString *clsString = NSStringFromClass(tabBarModel.classEntry);
     if (tabBarModel.isCreateByXib) {
-        viewController = [[classEntry alloc] initWithNibName:clsString bundle:nil];
+        NSBundle *xibBundle = tabBarModel.xibBundle;
+        viewController = [[classEntry alloc] initWithNibName:clsString bundle:xibBundle];
     } else {
         viewController = [[classEntry alloc] init];
     }
@@ -62,7 +64,7 @@
     viewController.title = tabBarModel.title;
     viewController.navigationItem.title = tabBarModel.title;
     viewController.tabBarItem.title = tabBarModel.title;
-    viewController.tabBarItem.image = [[UIImage imageNamed:@"icons8-calendar"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    viewController.tabBarItem.image = [[UIImage cqdemokit_xcassetImageNamed:@"icons8-calendar"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     UINavigationController *rootViewController = [[UINavigationController alloc] initWithRootViewController:viewController];
     return rootViewController;;
 }
@@ -78,23 +80,23 @@
 }
 
 - (void)setupViews {
-    self.tabBar.backgroundImage = [UIImage imageNamed:@"tabbar_BG"];
+    self.tabBar.backgroundImage = [UIImage cqdemokit_xcassetImageNamed:@"tabbar_BG"];
     
     UIViewController *viewController1 = [[CQPhoneStepLoginHomeViewController alloc] init];
     viewController1.tabBarItem.title = NSLocalizedString(@"登录", nil);
-    viewController1.tabBarItem.image = [[UIImage imageNamed:@"icons8-settings"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    viewController1.tabBarItem.image = [[UIImage cqdemokit_xcassetImageNamed:@"icons8-settings"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     UINavigationController *navigationController1 = [[UINavigationController alloc] initWithRootViewController:viewController1];
     [self addChildViewController:navigationController1];
     
     UIViewController *viewController2 = [[CQImproveNameViewController alloc] initWithIdentityType:CQIdentityTypeBiao];
     viewController2.tabBarItem.title = NSLocalizedString(@"完善表资料", nil);
-    viewController2.tabBarItem.image = [[UIImage imageNamed:@"icons8-settings"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    viewController2.tabBarItem.image = [[UIImage cqdemokit_xcassetImageNamed:@"icons8-settings"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     UINavigationController *navigationController2 = [[UINavigationController alloc] initWithRootViewController:viewController2];
     [self addChildViewController:navigationController2];
     
     UIViewController *viewController3 = [[CQImproveNameViewController alloc] initWithIdentityType:CQIdentityTypeLi];
     viewController3.tabBarItem.title = NSLocalizedString(@"完善里资料", nil);
-    viewController3.tabBarItem.image = [[UIImage imageNamed:@"icons8-settings"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    viewController3.tabBarItem.image = [[UIImage cqdemokit_xcassetImageNamed:@"icons8-settings"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     UINavigationController *navigationController3 = [[UINavigationController alloc] initWithRootViewController:viewController3];
     [self addChildViewController:navigationController3];
     

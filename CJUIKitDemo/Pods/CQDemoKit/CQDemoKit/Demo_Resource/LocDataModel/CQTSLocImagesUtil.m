@@ -7,12 +7,13 @@
 //
 
 #import "CQTSLocImagesUtil.h"
+#import "UIImage+CQDemoKit.h"
 
 @implementation CQTSLocImagesUtil
 
 #pragma mark - placeholder Image
 + (UIImage *)cjts_placeholderImage01 {
-    return [UIImage imageNamed:@"CQDemoKit.bundle/cqts_placeholder01.jpg"];
+    return [UIImage cqdemokit_xcassetImageNamed:@"cqts_placeholder01.jpg"];
 }
 
 /// 获取测试用的数据(image为本地图片)
@@ -98,11 +99,11 @@
 
 #pragma mark - local BGImage
 + (UIImage *)cjts_localImageBG1 {
-    return [UIImage imageNamed:@"CQDemoKit.bundle/cqts_bgSky.jpg"];
+    return [UIImage cqdemokit_xcassetImageNamed:@"cqts_bgSky.jpg"];
 }
 
 + (UIImage *)cjts_localImageBG2 {
-    return [UIImage imageNamed:@"CQDemoKit.bundle/cqts_bgCar.jpg"];
+    return [UIImage cqdemokit_xcassetImageNamed:@"cqts_bgCar.jpg"];
 }
 
 
@@ -120,6 +121,8 @@
                                    [CQTSLocImagesUtil cjts_localImage8],
                                    [CQTSLocImagesUtil cjts_localImage9],
                                    [CQTSLocImagesUtil cjts_localImage10],
+                                   [CQTSLocImagesUtil longHorizontal01],
+                                   [CQTSLocImagesUtil longVertical01],
     ];
     
     return images;
@@ -135,44 +138,55 @@
 }
 
 + (UIImage *)cjts_localImage1 {
-    return [UIImage imageNamed:@"CQDemoKit.bundle/cqts_1.jpg"];
+    UIImage *image = [UIImage cqdemokit_xcassetImageNamed:@"cqts_1.jpg"];
+    return image;
 }
 
 + (UIImage *)cjts_localImage2 {
-    return [UIImage imageNamed:@"CQDemoKit.bundle/cqts_2.jpg"];
+    return [UIImage cqdemokit_xcassetImageNamed:@"cqts_2.jpg"];
 }
 
 + (UIImage *)cjts_localImage3 {
-    return [UIImage imageNamed:@"CQDemoKit.bundle/cqts_3.jpg"];
+    return [UIImage cqdemokit_xcassetImageNamed:@"cqts_3.jpg"];
 }
 
 + (UIImage *)cjts_localImage4 {
-    return [UIImage imageNamed:@"CQDemoKit.bundle/cqts_4.jpg"];
+    return [UIImage cqdemokit_xcassetImageNamed:@"cqts_4.jpg"];
 }
 
 + (UIImage *)cjts_localImage5 {
-    return [UIImage imageNamed:@"CQDemoKit.bundle/cqts_5.jpg"];
+    return [UIImage cqdemokit_xcassetImageNamed:@"cqts_5.jpg"];
 }
 
 + (UIImage *)cjts_localImage6 {
-    return [UIImage imageNamed:@"CQDemoKit.bundle/cqts_6.jpg"];
+    return [UIImage cqdemokit_xcassetImageNamed:@"cqts_6.jpg"];
 }
 
 + (UIImage *)cjts_localImage7 {
-    return [UIImage imageNamed:@"CQDemoKit.bundle/cqts_7.jpg"];
+    return [UIImage cqdemokit_xcassetImageNamed:@"cqts_7.jpg"];
 }
 
 + (UIImage *)cjts_localImage8 {
-    return [UIImage imageNamed:@"CQDemoKit.bundle/cqts_8.jpg"];
+    return [UIImage cqdemokit_xcassetImageNamed:@"cqts_8.jpg"];
 }
 
 + (UIImage *)cjts_localImage9 {
-    return [UIImage imageNamed:@"CQDemoKit.bundle/cqts_9.jpg"];
+    return [UIImage cqdemokit_xcassetImageNamed:@"cqts_9.jpg"];
 }
 
 + (UIImage *)cjts_localImage10 {
-    return [UIImage imageNamed:@"CQDemoKit.bundle/cqts_10.jpg"];
+    return [UIImage cqdemokit_xcassetImageNamed:@"cqts_10.jpg"];
 }
 
+#pragma mark - test Image
+/// 水平长图
++ (UIImage *)longHorizontal01 {
+    return [UIImage cqdemokit_xcassetImageNamed:@"cqts_long_horizontal_1.jpg"];
+}
+
+/// 竖直长图
++ (UIImage *)longVertical01 {
+    return [UIImage cqdemokit_xcassetImageNamed:@"cqts_long_vertical_1.jpg"];
+}
 
 @end

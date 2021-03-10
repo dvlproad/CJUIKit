@@ -63,7 +63,7 @@
 //    TwoImageCompareView *compareView4 = [self compareViewWithOriginImage:originImage1 compressMaxDataLength:compressMaxDataLength4];
     
     NSArray<UIView *> *compareViews = @[compareView1];
-    UIView *container = [CQTSContainerViewFactory containerViewAlongAxis:MASAxisTypeVertical withSubviews:compareViews];
+    UIView *container = [CQTSContainerViewFactory containerViewAlongAxis:MASAxisTypeVertical withSubviews:compareViews fixedSpacing:10];
     
     [self.view addSubview:container];
     [container mas_makeConstraints:^(MASConstraintMaker *make) {

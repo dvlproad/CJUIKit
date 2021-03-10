@@ -47,7 +47,11 @@ NS_ASSUME_NONNULL_BEGIN
 + (UIImage *)cjts_localImage9;
 + (UIImage *)cjts_localImage10;
 
-
+#pragma mark - test Image
+/// 水平长图
++ (UIImage *)longHorizontal01;
+/// 竖直长图
++ (UIImage *)longVertical01;
 
 @end
 
