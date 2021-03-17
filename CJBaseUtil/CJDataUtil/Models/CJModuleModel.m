@@ -12,7 +12,7 @@
 
 - (NSBundle *)xibBundle {
     NSBundle *xibBundle = _xibBundle;
-    if (xibBundle == nil) {
+    if (xibBundle == nil && self.xibBundleName != nil) {
         Class classEntry = self.classEntry;
         NSString *clsString = NSStringFromClass(classEntry);
         NSBundle *bundle = [NSBundle bundleForClass:clsString];

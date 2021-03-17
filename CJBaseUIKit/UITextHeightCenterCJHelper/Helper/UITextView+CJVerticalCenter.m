@@ -26,6 +26,8 @@
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delay * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         CGFloat height = self.bounds.size.height;
         //NSAssert(self.scrollEnabled == YES, @"执行此方法时候，scrollEnabled不能为NO，否则会导致contentSize值不一定正确，最终导致无法竖直居中");
+//        CGRect textFrame = [[self layoutManager] usedRectForTextContainer:[self textContainer]];
+//        CGFloat contentHeight = CGRectGetHeight(textFrame);
         CGFloat contentHeight = self.contentSize.height;    // 注：如果你设置了self.scrollEnabled = NO;则会导致contentSize有时候不会正确变化，导致无法竖直居中
         CGFloat deadSpace = height - contentHeight;
         CGFloat inset = MAX(0, deadSpace/2.0);

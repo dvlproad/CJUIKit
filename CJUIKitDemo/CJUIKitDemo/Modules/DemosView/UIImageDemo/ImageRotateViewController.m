@@ -19,6 +19,8 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
+    self.navigationItem.title = NSLocalizedString(@"UIImage(旋转任意角度)", nil);
+    
     UIImage *image = [UIImage imageNamed:@"taixi_icon"];
     self.imageView1.image = image;
     //self.imageView1.contentMode = UIViewContentModeScaleAspectFit;
