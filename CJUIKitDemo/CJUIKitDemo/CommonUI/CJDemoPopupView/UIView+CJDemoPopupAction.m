@@ -53,7 +53,7 @@ static NSString *cjdemo_hidePopupViewBlockKey = @"cjdemo_hidePopupViewBlockKey";
         [weakPopupView cj_hidePopupView];
     };
     // 执行显示弹窗的方法
-    [self cj_popupInCenterWindow:CJAnimationTypeNormal withSize:popupViewSize centerOffset:CGPointZero blankViewCreateBlock:nil showComplete:nil tapBlankComplete:^{
+    [self cj_popupInCenterWindow:CJAnimationTypeNormal withSize:popupViewSize centerOffset:CGPointZero showBeforeConfigBlock:nil showComplete:nil tapBlankComplete:^{
         [self cjdemo_hidePopupView];
     }];
 }
@@ -73,7 +73,7 @@ static NSString *cjdemo_hidePopupViewBlockKey = @"cjdemo_hidePopupViewBlockKey";
         [weakPopupView cj_hidePopupView];
     };
     // 执行显示弹窗的方法
-    [self cj_popupInCenterWindow:CJAnimationTypeNormal withSize:popupViewSize centerOffset:CGPointZero blankViewCreateBlock:nil showComplete:nil tapBlankComplete:nil];
+    [self cj_popupInCenterWindow:CJAnimationTypeNormal withSize:popupViewSize centerOffset:CGPointZero showBeforeConfigBlock:nil showComplete:nil tapBlankComplete:nil];
 }
 
 
@@ -91,7 +91,7 @@ static NSString *cjdemo_hidePopupViewBlockKey = @"cjdemo_hidePopupViewBlockKey";
         [weakPopupView cj_hidePopupView];
     };
     // 执行显示弹窗的方法
-    [self cj_popupInBottomWindow:CJAnimationTypeNormal withHeight:popupViewHeight edgeInsets:edgeInsets blankViewCreateBlock:nil showComplete:nil tapBlankComplete:^{
+    [self cj_popupInBottomWindow:CJAnimationTypeNormal withHeight:popupViewHeight edgeInsets:edgeInsets showBeforeConfigBlock:nil showComplete:nil tapBlankComplete:^{
         [self cjdemo_hidePopupView];
     }];
 }
@@ -125,7 +125,7 @@ static NSString *cjdemo_hidePopupViewBlockKey = @"cjdemo_hidePopupViewBlockKey";
         [weakPopupView cj_hidePopupView];
     };
     // 执行显示弹窗的方法
-    [self cj_popupInBottomWindow:CJAnimationTypeNormal withHeight:popupViewHeight edgeInsets:edgeInsets blankViewCreateBlock:nil showComplete:nil tapBlankComplete:^{
+    [self cj_popupInBottomWindow:CJAnimationTypeNormal withHeight:popupViewHeight edgeInsets:edgeInsets showBeforeConfigBlock:nil showComplete:nil tapBlankComplete:^{
         [self cjdemo_hidePopupView];
     }];
 }

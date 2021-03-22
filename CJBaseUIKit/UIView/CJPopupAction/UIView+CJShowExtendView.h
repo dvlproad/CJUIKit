@@ -26,7 +26,7 @@ typedef NS_ENUM(NSUInteger, CJPopupViewPosition) {
  *  @param popupSuperview               弹出视图popupView的superview
  *  @param popupViewLocation            弹出视图popupView的位置location
  *  @param popupViewSize                弹出视图popupView的大小size
- *  @param blankViewCreateBlock         空白区域视图的创建方法
+ *  @param showBeforeConfigBlock        显示弹出视图前的一些对视图定制操作(可为nil,为nil时候会内置默认设置背景颜色)
  *  @param showPopupViewCompleteBlock   显示弹出视图后的操作
  *  @param tapBlankViewCompleteBlock    点击空白区域后的操作
  */
@@ -34,7 +34,7 @@ typedef NS_ENUM(NSUInteger, CJPopupViewPosition) {
                    inView:(UIView *)popupSuperview
                atLocation:(CGPoint)popupViewLocation
                  withSize:(CGSize)popupViewSize
-     blankViewCreateBlock:(UIView *(^)(void))blankViewCreateBlock
+     showBeforeConfigBlock:(void(^ _Nullable)(UIView *bBlankView, UIView *bRealPopupView))showBeforeConfigBlock
              showComplete:(void(^)(void))showPopupViewCompleteBlock
          tapBlankComplete:(void(^)(void))tapBlankViewCompleteBlock;
 
@@ -46,7 +46,7 @@ typedef NS_ENUM(NSUInteger, CJPopupViewPosition) {
  *  @param popupSuperview               弹出视图popupView的superview
  *  @param accordingView                根据accordingView来取得弹出视图的应该的位置
  *  @param popupViewPosition            弹出视图popupView相对accordingView的位置
- *  @param blankViewCreateBlock         空白区域视图的创建方法
+ *  @param showBeforeConfigBlock        显示弹出视图前的一些对视图定制操作(可为nil,为nil时候会内置默认设置背景颜色)
  *  @param showPopupViewCompleteBlock   显示弹出视图后的操作
  *  @param tapBlankViewCompleteBlock    点击空白区域后的操作
  */
@@ -54,7 +54,7 @@ typedef NS_ENUM(NSUInteger, CJPopupViewPosition) {
                    inView:(UIView *)popupSuperview
     locationAccordingView:(UIView *)accordingView
          relativePosition:(CJPopupViewPosition)popupViewPosition
-             blankViewCreateBlock:(UIView *(^)(void))blankViewCreateBlock
+             showBeforeConfigBlock:(void(^ _Nullable)(UIView *bBlankView, UIView *bRealPopupView))showBeforeConfigBlock
              showComplete:(void(^)(void))showPopupViewCompleteBlock
          tapBlankComplete:(void(^)(void))tapBlankViewCompleteBlock;
 

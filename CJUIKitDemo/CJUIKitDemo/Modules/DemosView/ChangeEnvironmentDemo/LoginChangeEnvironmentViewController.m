@@ -127,7 +127,7 @@
         [weakSelf updateCurrentEnvironment:currentEnvironment];
     };
     
-    [button cj_showExtendView:pop inView:self.view locationAccordingView:button relativePosition:CJPopupViewPositionBelow blankViewCreateBlock:nil showComplete:^{
+    [button cj_showExtendView:pop inView:self.view locationAccordingView:button relativePosition:CJPopupViewPositionBelow showBeforeConfigBlock:nil showComplete:^{
         
     } tapBlankComplete:^{
         [pop dismissPopoverView:YES];

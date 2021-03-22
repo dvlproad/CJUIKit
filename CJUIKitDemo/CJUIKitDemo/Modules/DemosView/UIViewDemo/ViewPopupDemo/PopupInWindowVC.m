@@ -116,7 +116,7 @@
     
     CGSize popupViewSize = popupView.frame.size;
     //popupViewSize = CGSizeMake(200, 200);
-    [popupView cj_popupInCenterWindow:CJAnimationTypeCATransform3D withSize:popupViewSize centerOffset:CGPointZero blankViewCreateBlock:nil showComplete:^{
+    [popupView cj_popupInCenterWindow:CJAnimationTypeCATransform3D withSize:popupViewSize centerOffset:CGPointZero showBeforeConfigBlock:nil showComplete:^{
         NSLog(@"显示完成");
         
     } tapBlankComplete:^{
@@ -130,7 +130,7 @@
     
     CGSize popupViewSize = popupView.frame.size;
     //popupViewSize = CGSizeMake(200, 200);
-    [popupView cj_popupInCenterWindow:CJAnimationTypeCATransform3D withSize:popupViewSize centerOffset:CGPointMake(0, 30) blankViewCreateBlock:nil showComplete:^{
+    [popupView cj_popupInCenterWindow:CJAnimationTypeCATransform3D withSize:popupViewSize centerOffset:CGPointMake(0, 30) showBeforeConfigBlock:nil showComplete:^{
         NSLog(@"显示完成");
         
     } tapBlankComplete:^{
@@ -157,7 +157,7 @@
 //    [popupView cj_autoMoveUpByKeyboard:NO spacing:0];
     
     CGFloat popupViewHeight = CGRectGetHeight(popupView.frame);
-    [popupView cj_popupInBottomWindow:CJAnimationTypeNormal withHeight:popupViewHeight edgeInsets:UIEdgeInsetsZero blankViewCreateBlock:nil showComplete:^{
+    [popupView cj_popupInBottomWindow:CJAnimationTypeNormal withHeight:popupViewHeight edgeInsets:UIEdgeInsetsZero showBeforeConfigBlock:nil showComplete:^{
         NSLog(@"显示完成");
         
     } tapBlankComplete:^{

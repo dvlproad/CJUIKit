@@ -90,7 +90,7 @@
     }];
     
     CGFloat popupViewHeight = 400;
-    [panContainer cj_popupInBottomWindow:CJAnimationTypeNormal withHeight:popupViewHeight edgeInsets:UIEdgeInsetsZero blankViewCreateBlock:nil showComplete:^{
+    [panContainer cj_popupInBottomWindow:CJAnimationTypeNormal withHeight:popupViewHeight edgeInsets:UIEdgeInsetsZero showBeforeConfigBlock:nil showComplete:^{
         NSLog(@"显示完成");
         
     } tapBlankComplete:^{

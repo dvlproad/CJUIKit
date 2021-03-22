@@ -74,7 +74,7 @@
 - (void)__handleSingleTap:(UIGestureRecognizer *)gr {
     CGFloat popupViewHeight = CGRectGetHeight(self.datePickerView.frame);
     __weak typeof(self)weakSelf = self;
-    [self.datePickerView cj_popupInBottomWindow:CJAnimationTypeNormal withHeight:popupViewHeight edgeInsets:UIEdgeInsetsZero blankViewCreateBlock:nil showComplete:nil tapBlankComplete:^() {
+    [self.datePickerView cj_popupInBottomWindow:CJAnimationTypeNormal withHeight:popupViewHeight edgeInsets:UIEdgeInsetsZero showBeforeConfigBlock:nil showComplete:nil tapBlankComplete:^() {
         [weakSelf.datePickerView cj_hidePopupView];
     }];
 }

@@ -50,14 +50,14 @@ NS_ASSUME_NONNULL_BEGIN
  *  @param popupSuperview               弹出视图的父视图view
  *  @param popupViewOrigin              弹出视图的左上角origin坐标
  *  @param popupViewSize                弹出视图的size大小
- *  @param blankViewCreateBlock         空白区域视图的创建方法
+ *  @param showBeforeConfigBlock        显示弹出视图前的一些对视图定制操作(可为nil,为nil时候会内置默认设置背景颜色)
  *  @param showPopupViewCompleteBlock   显示弹出视图后的操作
  *  @param tapBlankViewCompleteBlock    点击空白区域后的操作(要自己执行cj_hidePopupView...来隐藏，因为有时候点击背景是不执行隐藏的)
  */
 - (void)cj_popupInView:(UIView *)popupSuperview
             withOrigin:(CGPoint)popupViewOrigin
                   size:(CGSize)popupViewSize
-  blankViewCreateBlock:(UIView *(^ _Nullable)(void))blankViewCreateBlock
+ showBeforeConfigBlock:(void(^ _Nullable)(UIView *bBlankView, UIView *bRealPopupView))showBeforeConfigBlock
           showComplete:(void(^ _Nullable)(void))showPopupViewCompleteBlock
       tapBlankComplete:(void(^ _Nullable)(void))tapBlankViewCompleteBlock;
 /*
@@ -67,7 +67,7 @@ NS_ASSUME_NONNULL_BEGIN
  *  @param animationType                弹出时候的动画采用的类型
  *  @param popupViewSize                弹出视图的大小
  *  @param centerOffset                 弹窗弹出位置的中心与window中心的偏移量
- *  @param blankViewCreateBlock         空白区域视图的创建方法
+ *  @param showBeforeConfigBlock        显示弹出视图前的一些对视图定制操作(可为nil,为nil时候会内置默认设置背景颜色)
  *  @param showPopupViewCompleteBlock   显示弹出视图后的操作
  *  @param tapBlankViewCompleteBlock    点击空白区域后的操作(要自己执行cj_hidePopupView...来隐藏，因为有时候点击背景是不执行隐藏的)
  */
@@ -75,7 +75,7 @@ NS_ASSUME_NONNULL_BEGIN
                  animationType:(CJAnimationType)animationType
                       withSize:(CGSize)popupViewSize
                   centerOffset:(CGPoint)centerOffset
-          blankViewCreateBlock:(UIView *(^ _Nullable)(void))blankViewCreateBlock
+         showBeforeConfigBlock:(void(^ _Nullable)(UIView *bBlankView, UIView *bRealPopupView))showBeforeConfigBlock
                   showComplete:(void(^ _Nullable)(void))showPopupViewCompleteBlock
               tapBlankComplete:(void(^ _Nullable)(void))tapBlankViewCompleteBlock;
 
@@ -86,7 +86,7 @@ NS_ASSUME_NONNULL_BEGIN
  *  @param animationType                弹出时候的动画采用的类型
  *  @param popupViewHeight              弹出视图的高度
  *  @param edgeInsets                   弹窗与window的(左右下)边距
- *  @param blankViewCreateBlock         空白区域视图的创建方法
+ *  @param showBeforeConfigBlock        显示弹出视图前的一些对视图定制操作(可为nil,为nil时候会内置默认设置背景颜色)
  *  @param showPopupViewCompleteBlock   显示弹出视图后的操作
  *  @param tapBlankViewCompleteBlock    点击空白区域后的操作(要自己执行cj_hidePopupView...来隐藏，因为有时候点击背景是不执行隐藏的)
  */
@@ -94,7 +94,7 @@ NS_ASSUME_NONNULL_BEGIN
                  animationType:(CJAnimationType)animationType
                     withHeight:(CGFloat)popupViewHeight
                     edgeInsets:(UIEdgeInsets)edgeInsets
-          blankViewCreateBlock:(UIView *(^ _Nullable)(void))blankViewCreateBlock
+         showBeforeConfigBlock:(void(^ _Nullable)(UIView *bBlankView, UIView *bRealPopupView))showBeforeConfigBlock
                   showComplete:(void(^ _Nullable)(void))showPopupViewCompleteBlock
               tapBlankComplete:(void(^ _Nullable)(void))tapBlankViewCompleteBlock;
 
@@ -106,14 +106,14 @@ NS_ASSUME_NONNULL_BEGIN
  *  @param animationType                弹出时候的动画采用的类型
  *  @param popupViewSize                弹出视图的大小
  *  @param centerOffset                 弹窗弹出位置的中心与window中心的偏移量
- *  @param blankViewCreateBlock         空白区域视图的创建方法
+ *  @param showBeforeConfigBlock        显示弹出视图前的一些对视图定制操作(可为nil,为nil时候会内置默认设置背景颜色)
  *  @param showPopupViewCompleteBlock   显示弹出视图后的操作
  *  @param tapBlankViewCompleteBlock    点击空白区域后的操作(要自己执行cj_hidePopupView...来隐藏，因为有时候点击背景是不执行隐藏的)
  */
 - (void)cj_popupInCenterWindow:(CJAnimationType)animationType
                       withSize:(CGSize)popupViewSize
                   centerOffset:(CGPoint)centerOffset
-          blankViewCreateBlock:(UIView *(^ _Nullable)(void))blankViewCreateBlock
+         showBeforeConfigBlock:(void(^ _Nullable)(UIView *bBlankView, UIView *bRealPopupView))showBeforeConfigBlock
                   showComplete:(void(^ _Nullable)(void))showPopupViewCompleteBlock
               tapBlankComplete:(void(^ _Nullable)(void))tapBlankViewCompleteBlock;
 
@@ -124,14 +124,14 @@ NS_ASSUME_NONNULL_BEGIN
  *  @param animationType                弹出时候的动画采用的类型
  *  @param popupViewHeight              弹出视图的高度
  *  @param edgeInsets                   弹窗与window的(左右下)边距
- *  @param blankViewCreateBlock         空白区域视图的创建方法
+ *  @param showBeforeConfigBlock        显示弹出视图前的一些对视图定制操作(可为nil,为nil时候会内置默认设置背景颜色)
  *  @param showPopupViewCompleteBlock   显示弹出视图后的操作
  *  @param tapBlankViewCompleteBlock    点击空白区域后的操作(要自己执行cj_hidePopupView...来隐藏，因为有时候点击背景是不执行隐藏的)
  */
 - (void)cj_popupInBottomWindow:(CJAnimationType)animationType
                     withHeight:(CGFloat)popupViewHeight
                     edgeInsets:(UIEdgeInsets)edgeInsets
-                  blankViewCreateBlock:(UIView *(^ _Nullable)(void))blankViewCreateBlock
+         showBeforeConfigBlock:(void(^ _Nullable)(UIView *bBlankView, UIView *bRealPopupView))showBeforeConfigBlock
                   showComplete:(void(^ _Nullable)(void))showPopupViewCompleteBlock
               tapBlankComplete:(void(^ _Nullable)(void))tapBlankViewCompleteBlock;
 

@@ -81,7 +81,7 @@
                 [popupView cj_registerKeyboardNotificationWithAutoMoveUpSpacing:0 hasSpacing:NO];
                 
                 CGFloat popupViewHeight = CGRectGetHeight(popupView.frame);
-                [popupView cj_popupInBottomWindow:CJAnimationTypeNormal withHeight:popupViewHeight edgeInsets:UIEdgeInsetsZero blankViewCreateBlock:nil showComplete:^{
+                [popupView cj_popupInBottomWindow:CJAnimationTypeNormal withHeight:popupViewHeight edgeInsets:UIEdgeInsetsZero showBeforeConfigBlock:nil showComplete:^{
                     NSLog(@"显示完成");
                     
                 } tapBlankComplete:^{

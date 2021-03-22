@@ -76,7 +76,7 @@
 
     CGFloat popupViewHeight = CGRectGetHeight(self.frame);
     __weak typeof(self)weakSelf = self;
-    [self cj_popupInBottomWindow:CJAnimationTypeNormal withHeight:popupViewHeight edgeInsets:UIEdgeInsetsZero blankViewCreateBlock:nil showComplete:nil tapBlankComplete:^() {
+    [self cj_popupInBottomWindow:CJAnimationTypeNormal withHeight:popupViewHeight edgeInsets:UIEdgeInsetsZero showBeforeConfigBlock:nil showComplete:nil tapBlankComplete:^() {
         [weakSelf cj_hidePopupView];
     }];
 }

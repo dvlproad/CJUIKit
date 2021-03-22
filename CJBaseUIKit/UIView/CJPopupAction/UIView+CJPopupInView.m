@@ -126,14 +126,14 @@ static NSString *cjMustHideFromPopupViewKey = @"cjMustHideFromPopupView";
  *  @param popupSuperview               弹出视图的父视图view
  *  @param popupViewOrigin              弹出视图的左上角origin坐标
  *  @param popupViewSize                弹出视图的size大小
- *  @param blankViewCreateBlock         空白区域视图的创建方法
+ *  @param showBeforeConfigBlock        显示弹出视图前的一些对视图定制操作(可为nil,为nil时候会内置默认设置背景颜色)
  *  @param showPopupViewCompleteBlock   显示弹出视图后的操作
  *  @param tapBlankViewCompleteBlock    点击空白区域后的操作(要自己执行cj_hidePopupView...来隐藏，因为有时候点击背景是不执行隐藏的)
  */
 - (void)cj_popupInView:(UIView *)popupSuperview
             withOrigin:(CGPoint)popupViewOrigin
                   size:(CGSize)popupViewSize
-  blankViewCreateBlock:(UIView *(^ _Nullable)(void))blankViewCreateBlock
+ showBeforeConfigBlock:(void(^ _Nullable)(UIView *bBlankView, UIView *bRealPopupView))showBeforeConfigBlock
           showComplete:(void(^ _Nullable)(void))showPopupViewCompleteBlock
       tapBlankComplete:(void(^ _Nullable)(void))tapBlankViewCompleteBlock
 {
@@ -141,7 +141,7 @@ static NSString *cjMustHideFromPopupViewKey = @"cjMustHideFromPopupView";
     
     UIView *popupView = self;
     
-    BOOL canAdd = [self __letPopupSuperview:popupSuperview addPopupView:popupView blankViewCreateBlock:blankViewCreateBlock];
+    BOOL canAdd = [self __letPopupSuperview:popupSuperview addPopupView:popupView];
     if (!canAdd) {
         return;
     }
@@ -184,6 +184,11 @@ static NSString *cjMustHideFromPopupViewKey = @"cjMustHideFromPopupView";
     
     
     
+    if (showBeforeConfigBlock == nil) {
+        blankView.backgroundColor = [UIColor colorWithRed:.16 green:.17 blue:.21 alpha:.6];
+    } else {
+        showBeforeConfigBlock(blankView, self);
+    }
     
     //动画设置位置
     blankView.alpha = 0.2;
@@ -208,7 +213,7 @@ static NSString *cjMustHideFromPopupViewKey = @"cjMustHideFromPopupView";
  *  @param animationType                弹出时候的动画采用的类型
  *  @param popupViewSize                弹出视图的大小
  *  @param centerOffset                 弹窗弹出位置的中心与window中心的偏移量
- *  @param blankViewCreateBlock         空白区域视图的创建方法
+ *  @param showBeforeConfigBlock        显示弹出视图前的一些对视图定制操作(可为nil,为nil时候会内置默认设置背景颜色)
  *  @param showPopupViewCompleteBlock   显示弹出视图后的操作
  *  @param tapBlankViewCompleteBlock    点击空白区域后的操作(要自己执行cj_hidePopupView...来隐藏，因为有时候点击背景是不执行隐藏的)
  */
@@ -216,7 +221,7 @@ static NSString *cjMustHideFromPopupViewKey = @"cjMustHideFromPopupView";
                  animationType:(CJAnimationType)animationType
                       withSize:(CGSize)popupViewSize
                   centerOffset:(CGPoint)centerOffset
-          blankViewCreateBlock:(UIView *(^ _Nullable)(void))blankViewCreateBlock
+         showBeforeConfigBlock:(void(^ _Nullable)(UIView *bBlankView, UIView *bRealPopupView))showBeforeConfigBlock
                   showComplete:(void(^ _Nullable)(void))showPopupViewCompleteBlock
               tapBlankComplete:(void(^ _Nullable)(void))tapBlankViewCompleteBlock
 {
@@ -227,7 +232,7 @@ static NSString *cjMustHideFromPopupViewKey = @"cjMustHideFromPopupView";
     CGFloat originY = (popupSuperviewHeight- popupViewSize.height)/2;
     CGPoint popupOrigin = CGPointMake(originX, originY);
     
-    [self cj_popupInView:popupSuperview withOrigin:popupOrigin size:popupSize blankViewCreateBlock:blankViewCreateBlock showComplete:showPopupViewCompleteBlock tapBlankComplete:tapBlankViewCompleteBlock];
+    [self cj_popupInView:popupSuperview withOrigin:popupOrigin size:popupSize showBeforeConfigBlock:showBeforeConfigBlock showComplete:showPopupViewCompleteBlock tapBlankComplete:tapBlankViewCompleteBlock];
 }
 
 /*
@@ -237,7 +242,7 @@ static NSString *cjMustHideFromPopupViewKey = @"cjMustHideFromPopupView";
  *  @param animationType                弹出时候的动画采用的类型
  *  @param popupViewHeight              弹出视图的高度
  *  @param edgeInsets                   弹窗与window的(左右下)边距
- *  @param blankViewCreateBlock         空白区域视图的创建方法
+ *  @param showBeforeConfigBlock        显示弹出视图前的一些对视图定制操作(可为nil,为nil时候会内置默认设置背景颜色)
  *  @param showPopupViewCompleteBlock   显示弹出视图后的操作
  *  @param tapBlankViewCompleteBlock    点击空白区域后的操作(要自己执行cj_hidePopupView...来隐藏，因为有时候点击背景是不执行隐藏的)
  */
@@ -245,7 +250,7 @@ static NSString *cjMustHideFromPopupViewKey = @"cjMustHideFromPopupView";
                  animationType:(CJAnimationType)animationType
                     withHeight:(CGFloat)popupViewHeight
                     edgeInsets:(UIEdgeInsets)edgeInsets
-          blankViewCreateBlock:(UIView *(^ _Nullable)(void))blankViewCreateBlock
+         showBeforeConfigBlock:(void(^ _Nullable)(UIView *bBlankView, UIView *bRealPopupView))showBeforeConfigBlock
                   showComplete:(void(^ _Nullable)(void))showPopupViewCompleteBlock
               tapBlankComplete:(void(^ _Nullable)(void))tapBlankViewCompleteBlock
 {
@@ -256,7 +261,7 @@ static NSString *cjMustHideFromPopupViewKey = @"cjMustHideFromPopupView";
     CGFloat originY = popupSuperviewHeight - popupViewHeight;
     CGPoint popupOrigin = CGPointMake(originX, originY);
     
-    [self cj_popupInView:popupSuperview withOrigin:popupOrigin size:popupSize blankViewCreateBlock:blankViewCreateBlock showComplete:showPopupViewCompleteBlock tapBlankComplete:tapBlankViewCompleteBlock];
+    [self cj_popupInView:popupSuperview withOrigin:popupOrigin size:popupSize showBeforeConfigBlock:showBeforeConfigBlock showComplete:showPopupViewCompleteBlock tapBlankComplete:tapBlankViewCompleteBlock];
 }
 
 
@@ -267,14 +272,14 @@ static NSString *cjMustHideFromPopupViewKey = @"cjMustHideFromPopupView";
  *  @param animationType                弹出时候的动画采用的类型
  *  @param popupViewSize                弹出视图的大小
  *  @param centerOffset                 弹窗弹出位置的中心与window中心的偏移量
- *  @param blankViewCreateBlock         空白区域视图的创建方法
+ *  @param showBeforeConfigBlock        显示弹出视图前的一些对视图定制操作(可为nil,为nil时候会内置默认设置背景颜色)
  *  @param showPopupViewCompleteBlock   显示弹出视图后的操作
  *  @param tapBlankViewCompleteBlock    点击空白区域后的操作(要自己执行cj_hidePopupView...来隐藏，因为有时候点击背景是不执行隐藏的)
  */
 - (void)cj_popupInCenterWindow:(CJAnimationType)animationType
                       withSize:(CGSize)popupViewSize
                   centerOffset:(CGPoint)centerOffset
-          blankViewCreateBlock:(UIView *(^ _Nullable)(void))blankViewCreateBlock
+         showBeforeConfigBlock:(void(^ _Nullable)(UIView *bBlankView, UIView *bRealPopupView))showBeforeConfigBlock
                   showComplete:(void(^ _Nullable)(void))showPopupViewCompleteBlock
               tapBlankComplete:(void(^ _Nullable)(void))tapBlankViewCompleteBlock
 {
@@ -291,7 +296,7 @@ static NSString *cjMustHideFromPopupViewKey = @"cjMustHideFromPopupView";
     frame.size.height = popupViewSize.height;
     popupView.frame = frame;
     
-    BOOL canAdd = [self letkeyWindowAddPopupView:popupView blankViewCreateBlock:blankViewCreateBlock];
+    BOOL canAdd = [self letkeyWindowAddPopupView:popupView];
     if (!canAdd) {
         return;
     }
@@ -300,6 +305,13 @@ static NSString *cjMustHideFromPopupViewKey = @"cjMustHideFromPopupView";
     self.cjPopupAnimationType = animationType;
     self.cjShowPopupViewCompleteBlock = showPopupViewCompleteBlock;
     self.cjTapBlankViewCompleteBlock = tapBlankViewCompleteBlock;
+    
+    UIView *blankView = self.cjTapView;
+    if (showBeforeConfigBlock == nil) {
+        blankView.backgroundColor = [UIColor colorWithRed:.16 green:.17 blue:.21 alpha:.6];
+    } else {
+        showBeforeConfigBlock(blankView, self);
+    }
     
     popupView.alpha = 1.0f; // 修复单例时候，在隐藏过后，想再显示，没法继续显示的问题
     popupView.center = CGPointMake(popupSuperview.center.x + centerOffset.x,
@@ -342,14 +354,14 @@ static NSString *cjMustHideFromPopupViewKey = @"cjMustHideFromPopupView";
  *  @param animationType                弹出时候的动画采用的类型
  *  @param popupViewHeight              弹出视图的高度
  *  @param edgeInsets                   弹窗与window的(左右下)边距
- *  @param blankViewCreateBlock         空白区域视图的创建方法
+ *  @param showBeforeConfigBlock        显示弹出视图前的一些对视图定制操作(可为nil,为nil时候会内置默认设置背景颜色)
  *  @param showPopupViewCompleteBlock   显示弹出视图后的操作
  *  @param tapBlankViewCompleteBlock    点击空白区域后的操作(要自己执行cj_hidePopupView...来隐藏，因为有时候点击背景是不执行隐藏的)
  */
 - (void)cj_popupInBottomWindow:(CJAnimationType)animationType
                     withHeight:(CGFloat)popupViewHeight
                     edgeInsets:(UIEdgeInsets)edgeInsets
-                  blankViewCreateBlock:(UIView *(^ _Nullable)(void))blankViewCreateBlock
+         showBeforeConfigBlock:(void(^ _Nullable)(UIView *bBlankView, UIView *bRealPopupView))showBeforeConfigBlock
                   showComplete:(void(^ _Nullable)(void))showPopupViewCompleteBlock
               tapBlankComplete:(void(^ _Nullable)(void))tapBlankViewCompleteBlock
 {
@@ -368,7 +380,7 @@ static NSString *cjMustHideFromPopupViewKey = @"cjMustHideFromPopupView";
     
     UIView *popupView = self;
     
-    BOOL canAdd = [self letkeyWindowAddPopupView:popupView blankViewCreateBlock:blankViewCreateBlock];
+    BOOL canAdd = [self letkeyWindowAddPopupView:popupView];
     if (!canAdd) {
         return;
     }
@@ -379,6 +391,12 @@ static NSString *cjMustHideFromPopupViewKey = @"cjMustHideFromPopupView";
     self.cjShowPopupViewCompleteBlock = showPopupViewCompleteBlock;
     self.cjTapBlankViewCompleteBlock = tapBlankViewCompleteBlock;
 
+    UIView *blankView = self.cjTapView;
+    if (showBeforeConfigBlock == nil) {
+        blankView.backgroundColor = [UIColor colorWithRed:.16 green:.17 blue:.21 alpha:.6];
+    } else {
+        showBeforeConfigBlock(blankView, self);
+    }
     
     //popupViewShowFrame
     CGFloat popupViewX = edgeInsets.left;
@@ -452,19 +470,17 @@ static NSString *cjMustHideFromPopupViewKey = @"cjMustHideFromPopupView";
 
 
 /*
- *  将popupView添加进keyWindow中(会默认添加进blankView及对popupView做一些默认设置)
+ *  将popupView添加进keyWindow中
  *
  *  @param popupView                要被添加的视图
- *  @param blankViewCreateBlock     空白区域视图的创建方法
  *
  *  @return 是否可以被添加成功
  */
 - (BOOL)letkeyWindowAddPopupView:(UIView *)popupView
-            blankViewCreateBlock:(UIView *(^ _Nullable)(void))blankViewCreateBlock
 {
     UIWindow *keyWindow = [[UIApplication sharedApplication] keyWindow];
     
-    BOOL canAdd = [self __letPopupSuperview:keyWindow addPopupView:popupView blankViewCreateBlock:blankViewCreateBlock];
+    BOOL canAdd = [self __letPopupSuperview:keyWindow addPopupView:popupView];
     if (!canAdd) {
         return NO;
     }
@@ -489,13 +505,11 @@ static NSString *cjMustHideFromPopupViewKey = @"cjMustHideFromPopupView";
  *
  *  @param popupSuperview           被添加到的地方
  *  @param popupView                要被添加的视图
- *  @param blankViewCreateBlock     空白区域视图的创建方法
  *
  *  @return 是否可以被添加成功
  */
 - (BOOL)__letPopupSuperview:(UIView *)popupSuperview
                addPopupView:(UIView *)popupView
-       blankViewCreateBlock:(UIView *(^ _Nullable)(void))blankViewCreateBlock
 {
     if ([popupSuperview.subviews containsObject:popupView]) {
         return NO;
@@ -504,12 +518,7 @@ static NSString *cjMustHideFromPopupViewKey = @"cjMustHideFromPopupView";
     /* 添加进空白的点击区域blankView */
     UIView *blankView = self.cjTapView;
     if (blankView == nil) {
-        if (blankViewCreateBlock) {
-            blankView = blankViewCreateBlock();
-        } else {
-            blankView = [[UIView alloc] initWithFrame:CGRectZero];
-            blankView.backgroundColor = [UIColor colorWithRed:.16 green:.17 blue:.21 alpha:.6];
-        }
+        blankView = [[UIView alloc] initWithFrame:CGRectZero];
         
         // 为了解决bug:将手势改为button，防止弹出的视图上有tableView或collectionView的时候，点击上面的cell会无法响应cell的点击事件，而变成响应tap的事件的bug
 //        UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(cj_TapBlankViewAction:)];
