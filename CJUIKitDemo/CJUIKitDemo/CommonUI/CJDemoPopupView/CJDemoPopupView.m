@@ -37,7 +37,7 @@
 //                            borderColor:[UIColor purpleColor]
 //     ];
     
-    [self cj_popupInBottomWindow:CJAnimationTypeNormal withHeight:popupViewHeight edgeInsets:edgeInsets showBeforeConfigBlock:nil showComplete:nil tapBlankComplete:^{
+    [self cj_popupInBottomInView:nil animationType:CJAnimationTypeNormal withHeight:popupViewHeight edgeInsets:edgeInsets showBeforeConfigBlock:nil showComplete:nil tapBlankComplete:^{
         [self hidePopupView];
     }];
 }
@@ -53,7 +53,7 @@
     CGFloat screenWidth = [UIScreen mainScreen].bounds.size.width;
     CGSize popupViewSize = CGSizeMake(screenWidth-15, popupViewHeight);
     
-    [self cj_popupInCenterWindow:CJAnimationTypeNormal withSize:popupViewSize centerOffset:CGPointZero showBeforeConfigBlock:nil showComplete:nil tapBlankComplete:^{
+    [self cj_popupInCenterInView:nil animationType:CJAnimationTypeNormal withSize:popupViewSize centerOffset:CGPointZero showBeforeConfigBlock:nil showComplete:nil tapBlankComplete:^{
         [self hidePopupView];
     }];
 }

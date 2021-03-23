@@ -54,7 +54,7 @@
     
     // 执行显示弹窗的方法
     __weak typeof(UIView *)weakPopupView = self;
-    [self cj_popupInCenterWindow:CJAnimationTypeNormal withSize:popupViewSize centerOffset:CGPointZero showBeforeConfigBlock:nil showComplete:nil tapBlankComplete:^{
+    [self cj_popupInCenterInView:nil animationType:CJAnimationTypeNormal withSize:popupViewSize centerOffset:CGPointZero showBeforeConfigBlock:nil showComplete:nil tapBlankComplete:^{
         [weakPopupView cj_hidePopupView];
     }];
 }
@@ -70,7 +70,7 @@
     
     // 执行显示弹窗的方法
     __weak typeof(UIView *)weakPopupView = self;
-    [self cj_popupInBottomWindow:CJAnimationTypeNormal withHeight:popupViewHeight edgeInsets:edgeInsets showBeforeConfigBlock:nil showComplete:nil tapBlankComplete:^{
+    [self cj_popupInBottomInView:nil animationType:CJAnimationTypeNormal withHeight:popupViewHeight edgeInsets:edgeInsets showBeforeConfigBlock:nil showComplete:nil tapBlankComplete:^{
         [weakPopupView cj_hidePopupView];
     }];
 }

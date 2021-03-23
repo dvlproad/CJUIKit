@@ -114,7 +114,7 @@
     }];
     
     CGFloat popupViewHeight = 400;
-    [commentView cj_popupInBottomWindow:CJAnimationTypeNormal withHeight:popupViewHeight edgeInsets:UIEdgeInsetsZero showBeforeConfigBlock:nil showComplete:^{
+    [commentView cj_popupInBottomInView:nil animationType:CJAnimationTypeNormal withHeight:popupViewHeight edgeInsets:UIEdgeInsetsZero showBeforeConfigBlock:nil showComplete:^{
         NSLog(@"显示完成");
         
     } tapBlankComplete:^{

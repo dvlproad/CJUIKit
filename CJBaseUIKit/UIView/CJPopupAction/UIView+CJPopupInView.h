@@ -54,7 +54,7 @@ NS_ASSUME_NONNULL_BEGIN
  *  @param showPopupViewCompleteBlock   显示弹出视图后的操作
  *  @param tapBlankViewCompleteBlock    点击空白区域后的操作(要自己执行cj_hidePopupView...来隐藏，因为有时候点击背景是不执行隐藏的)
  */
-- (void)cj_popupInView:(UIView *)popupSuperview
+- (void)cj_popupInView:(nonnull UIView *)popupSuperview
             withOrigin:(CGPoint)popupViewOrigin
                   size:(CGSize)popupViewSize
  showBeforeConfigBlock:(void(^ _Nullable)(UIView *bBlankView, UIView *bRealPopupView))showBeforeConfigBlock
@@ -63,7 +63,7 @@ NS_ASSUME_NONNULL_BEGIN
 /*
  *  将当前视图弹出到视图view中央
  *
- *  @param popupSuperview               弹出视图的父视图view
+ *  @param popupSuperview               弹出视图的父视图view(可以为nil,为nil时候弹出到keyWindow上)
  *  @param animationType                弹出时候的动画采用的类型
  *  @param popupViewSize                弹出视图的大小
  *  @param centerOffset                 弹窗弹出位置的中心与window中心的偏移量
@@ -71,18 +71,18 @@ NS_ASSUME_NONNULL_BEGIN
  *  @param showPopupViewCompleteBlock   显示弹出视图后的操作
  *  @param tapBlankViewCompleteBlock    点击空白区域后的操作(要自己执行cj_hidePopupView...来隐藏，因为有时候点击背景是不执行隐藏的)
  */
-- (void)cj_popupInCenterInView:(UIView *)popupSuperview
+- (void)cj_popupInCenterInView:(nullable UIView *)popupSuperview
                  animationType:(CJAnimationType)animationType
                       withSize:(CGSize)popupViewSize
                   centerOffset:(CGPoint)centerOffset
-         showBeforeConfigBlock:(void(^ _Nullable)(UIView *bBlankView, UIView *bRealPopupView))showBeforeConfigBlock
+          showBeforeConfigBlock:(void(^ _Nullable)(UIView *bBlankView, UIView *bRealPopupView))showBeforeConfigBlock
                   showComplete:(void(^ _Nullable)(void))showPopupViewCompleteBlock
               tapBlankComplete:(void(^ _Nullable)(void))tapBlankViewCompleteBlock;
 
 /*
  *  将当前视图弹出到视图view底部
  *
- *  @param popupSuperview               弹出视图的父视图view
+ *  @param popupSuperview               弹出视图的父视图view(可以为nil,为nil时候弹出到keyWindow上)
  *  @param animationType                弹出时候的动画采用的类型
  *  @param popupViewHeight              弹出视图的高度
  *  @param edgeInsets                   弹窗与window的(左右下)边距
@@ -90,48 +90,11 @@ NS_ASSUME_NONNULL_BEGIN
  *  @param showPopupViewCompleteBlock   显示弹出视图后的操作
  *  @param tapBlankViewCompleteBlock    点击空白区域后的操作(要自己执行cj_hidePopupView...来隐藏，因为有时候点击背景是不执行隐藏的)
  */
-- (void)cj_popupInBottomInView:(UIView *)popupSuperview
+- (void)cj_popupInBottomInView:(nullable UIView *)popupSuperview
                  animationType:(CJAnimationType)animationType
                     withHeight:(CGFloat)popupViewHeight
                     edgeInsets:(UIEdgeInsets)edgeInsets
-         showBeforeConfigBlock:(void(^ _Nullable)(UIView *bBlankView, UIView *bRealPopupView))showBeforeConfigBlock
-                  showComplete:(void(^ _Nullable)(void))showPopupViewCompleteBlock
-              tapBlankComplete:(void(^ _Nullable)(void))tapBlankViewCompleteBlock;
-
-
-#pragma mark - 弹出到窗口Window
-/*
- *  将当前视图弹出到window中央
- *
- *  @param animationType                弹出时候的动画采用的类型
- *  @param popupViewSize                弹出视图的大小
- *  @param centerOffset                 弹窗弹出位置的中心与window中心的偏移量
- *  @param showBeforeConfigBlock        显示弹出视图前的一些对视图定制操作(可为nil,为nil时候会内置默认设置背景颜色)
- *  @param showPopupViewCompleteBlock   显示弹出视图后的操作
- *  @param tapBlankViewCompleteBlock    点击空白区域后的操作(要自己执行cj_hidePopupView...来隐藏，因为有时候点击背景是不执行隐藏的)
- */
-- (void)cj_popupInCenterWindow:(CJAnimationType)animationType
-                      withSize:(CGSize)popupViewSize
-                  centerOffset:(CGPoint)centerOffset
-         showBeforeConfigBlock:(void(^ _Nullable)(UIView *bBlankView, UIView *bRealPopupView))showBeforeConfigBlock
-                  showComplete:(void(^ _Nullable)(void))showPopupViewCompleteBlock
-              tapBlankComplete:(void(^ _Nullable)(void))tapBlankViewCompleteBlock;
-
-
-/*
- *  将当前视图弹出到window底部
- *
- *  @param animationType                弹出时候的动画采用的类型
- *  @param popupViewHeight              弹出视图的高度
- *  @param edgeInsets                   弹窗与window的(左右下)边距
- *  @param showBeforeConfigBlock        显示弹出视图前的一些对视图定制操作(可为nil,为nil时候会内置默认设置背景颜色)
- *  @param showPopupViewCompleteBlock   显示弹出视图后的操作
- *  @param tapBlankViewCompleteBlock    点击空白区域后的操作(要自己执行cj_hidePopupView...来隐藏，因为有时候点击背景是不执行隐藏的)
- */
-- (void)cj_popupInBottomWindow:(CJAnimationType)animationType
-                    withHeight:(CGFloat)popupViewHeight
-                    edgeInsets:(UIEdgeInsets)edgeInsets
-         showBeforeConfigBlock:(void(^ _Nullable)(UIView *bBlankView, UIView *bRealPopupView))showBeforeConfigBlock
+          showBeforeConfigBlock:(void(^ _Nullable)(UIView *bBlankView, UIView *bRealPopupView))showBeforeConfigBlock
                   showComplete:(void(^ _Nullable)(void))showPopupViewCompleteBlock
               tapBlankComplete:(void(^ _Nullable)(void))tapBlankViewCompleteBlock;
 
