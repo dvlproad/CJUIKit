@@ -135,53 +135,25 @@ static NSString *cjMustHideFromPopupViewKey = @"cjMustHideFromPopupView";
                   size:(CGSize)popupViewSize
  showBeforeConfigBlock:(void(^ _Nullable)(UIView *bBlankView, UIView *bRealPopupView))showBeforeConfigBlock
           showComplete:(void(^ _Nullable)(void))showPopupViewCompleteBlock
-      tapBlankComplete:(void(^ _Nullable)(void))tapBlankViewCompleteBlock
+      tapBlankComplete:(void(^ _Nullable)(void))tapBlankViewCompleteBlock;
 {
-    CJPopupMainThreadAssert();
-    
     self.cjPopupAnimationType = CJAnimationTypeNormal;
     self.cjShowPopupViewCompleteBlock = showPopupViewCompleteBlock;
     self.cjTapBlankViewCompleteBlock = tapBlankViewCompleteBlock;
     
-    
-    if (CGSizeEqualToSize(self.frame.size, popupViewSize)) {
-        NSLog(@"Warning:popupView视图大小将自动调整为指定的弹出视图大小");
-        CGRect selfFrame = self.frame;
-        selfFrame.size = popupViewSize;
-        self.frame = selfFrame;
-    }
-    
-    // popupView改成添加到blankView中
-    CGRect popupViewShowFrame = CGRectMake(popupViewOrigin.x, popupViewOrigin.y,
-                                           popupViewSize.width, popupViewSize.height);
-    NSAssert(popupViewShowFrame.size.width != 0 && popupViewShowFrame.size.height != 0, @"弹出视图的宽高都不能为0");
-    
-    BOOL canAdd = [self __letPopupSuperview:popupSuperview addPopupView:self];
-    if (!canAdd) {
-        return;
-    }
-
-    /* 设置blankView的位置 */
-    UIView *blankView = self.cjTapView;
-    //[UIView cjPopup_makeView:popupSuperview addSubView:blankView withEdgeInsets:UIEdgeInsetsZero];
-    CGFloat blankViewWidth = CGRectGetWidth(popupSuperview.frame);
-    CGFloat blankViewHeight = CGRectGetHeight(popupSuperview.frame);
-    CGRect blankViewFrame = CGRectMake(0, 0, blankViewWidth, blankViewHeight);
-    [blankView setFrame:blankViewFrame];
+    [self cjPopup_addInView:popupSuperview withOrigin:popupViewOrigin size:popupViewSize completeBlock:^(UIView *bBlankView, UIView *bPopupView, CGRect bPopupViewShowFrame) {
+        if (showBeforeConfigBlock == nil) {
+            bBlankView.backgroundColor = [UIColor colorWithRed:.16 green:.17 blue:.21 alpha:.6];
+        } else {
+            showBeforeConfigBlock(bBlankView, self);
+        }
         
-    if (showBeforeConfigBlock == nil) {
-        blankView.backgroundColor = [UIColor colorWithRed:.16 green:.17 blue:.21 alpha:.6];
-    } else {
-        showBeforeConfigBlock(blankView, self);
-    }
-    
-    [self __popupViewToShowFrame:popupViewShowFrame
-                      isToBottom:NO
-                   animationType:CJAnimationTypeNone];
-    
-    if(showPopupViewCompleteBlock){
-        showPopupViewCompleteBlock();
-    }
+        [self __popupViewToShowFrame:bPopupViewShowFrame isToBottom:NO animationType:CJAnimationTypeNone];
+        
+        if(showPopupViewCompleteBlock){
+            showPopupViewCompleteBlock();
+        }
+    }];
 }
 
 /*
@@ -255,7 +227,49 @@ static NSString *cjMustHideFromPopupViewKey = @"cjMustHideFromPopupView";
 }
 
 
+#pragma mark - Private Method
+/*
+ *  将本View以size大小添加到showInView视图中location位置
+ *
+ *  @param popupSuperview               弹出视图的父视图view
+ *  @param popupViewOrigin              弹出视图的左上角origin坐标
+ *  @param popupViewSize                弹出视图的size大小
+ *  @param completeBlock                添加完毕
+ */
+- (void)cjPopup_addInView:(nonnull UIView *)popupSuperview
+               withOrigin:(CGPoint)popupViewOrigin
+                     size:(CGSize)popupViewSize
+            completeBlock:(void(^ _Nullable)(UIView *bBlankView, UIView *bPopupView, CGRect bPopupViewShowFrame))completeBlock
+{
+    CJPopupMainThreadAssert();
+    
+    if (CGSizeEqualToSize(self.frame.size, popupViewSize)) {
+        NSLog(@"Warning:popupView视图大小将自动调整为指定的弹出视图大小");
+        CGRect selfFrame = self.frame;
+        selfFrame.size = popupViewSize;
+        self.frame = selfFrame;
+    }
+    
+    // popupView改成添加到blankView中
+    CGRect popupViewShowFrame = CGRectMake(popupViewOrigin.x, popupViewOrigin.y,
+                                           popupViewSize.width, popupViewSize.height);
+    NSAssert(popupViewShowFrame.size.width != 0 && popupViewShowFrame.size.height != 0, @"弹出视图的宽高都不能为0");
+    
+    BOOL canAdd = [self __letPopupSuperview:popupSuperview addPopupView:self];
+    if (!canAdd) {
+        return;
+    }
 
+    /* 设置blankView的位置 */
+    UIView *blankView = self.cjTapView;
+    //[UIView cjPopup_makeView:popupSuperview addSubView:blankView withEdgeInsets:UIEdgeInsetsZero];
+    CGFloat blankViewWidth = CGRectGetWidth(popupSuperview.frame);
+    CGFloat blankViewHeight = CGRectGetHeight(popupSuperview.frame);
+    CGRect blankViewFrame = CGRectMake(0, 0, blankViewWidth, blankViewHeight);
+    [blankView setFrame:blankViewFrame];
+    
+    !completeBlock ?: completeBlock(blankView, self, popupViewShowFrame);
+}
 
 
 /*
