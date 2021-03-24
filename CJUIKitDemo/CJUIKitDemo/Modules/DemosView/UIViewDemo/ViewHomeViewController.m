@@ -127,8 +127,9 @@
         {
             CQDMModuleModel *popupInWindowModule = [[CQDMModuleModel alloc] init];
             popupInWindowModule.title = @"弹出各种弹窗，一次性隐藏";
+            popupInWindowModule.content = @"先一次性显示10个，过2秒后全隐藏，再过2秒全重复显示出来";
             popupInWindowModule.actionBlock = ^{
-                [TSHideWindowView popWindows:5];
+                [TSHideWindowView popWindows:10];
                 
                 dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
                     [TSHideWindowView hideWindowPopupViews];

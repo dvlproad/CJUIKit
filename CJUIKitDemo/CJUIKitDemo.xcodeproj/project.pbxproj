@@ -217,6 +217,7 @@
 		789C447A21F07DAC00181144 /* ChangeEnvHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 789C447921F07DAC00181144 /* ChangeEnvHomeViewController.m */; };
 		789C448121F07F6C00181144 /* ImageSizeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 789C447F21F07F6C00181144 /* ImageSizeViewController.m */; };
 		789C448521F166FC00181144 /* DemoCacheUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 789C448421F166FC00181144 /* DemoCacheUtil.m */; };
+		789C9B4E260B795000BC0FB4 /* CJBasePopupInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 789C9B4D260B795000BC0FB4 /* CJBasePopupInfo.m */; };
 		78A0D043216B32D100EFAD67 /* BadgeButtonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78A0D042216B32D100EFAD67 /* BadgeButtonViewController.m */; };
 		78A4E1B42173A0D9005FEADD /* DemoChangeEnvironmentViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 78A4E1B32173A0D8005FEADD /* DemoChangeEnvironmentViewModel.m */; };
 		78A4E1D52175EB93005FEADD /* NavigationBarNormalChangeBGViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78A4E1D42175EB93005FEADD /* NavigationBarNormalChangeBGViewController.m */; };
@@ -765,6 +766,8 @@
 		789C447F21F07F6C00181144 /* ImageSizeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ImageSizeViewController.m; sourceTree = "<group>"; };
 		789C448321F166FC00181144 /* DemoCacheUtil.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DemoCacheUtil.h; sourceTree = "<group>"; };
 		789C448421F166FC00181144 /* DemoCacheUtil.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DemoCacheUtil.m; sourceTree = "<group>"; };
+		789C9B4C260B795000BC0FB4 /* CJBasePopupInfo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CJBasePopupInfo.h; sourceTree = "<group>"; };
+		789C9B4D260B795000BC0FB4 /* CJBasePopupInfo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CJBasePopupInfo.m; sourceTree = "<group>"; };
 		789CAB597AD073D5F637D193 /* Pods-CJUIKitDemoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CJUIKitDemoTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-CJUIKitDemoTests/Pods-CJUIKitDemoTests.release.xcconfig"; sourceTree = "<group>"; };
 		78A0D041216B32D000EFAD67 /* BadgeButtonViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BadgeButtonViewController.h; sourceTree = "<group>"; };
 		78A0D042216B32D100EFAD67 /* BadgeButtonViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BadgeButtonViewController.m; sourceTree = "<group>"; };
@@ -1275,6 +1278,8 @@
 			children = (
 				1562F24923F5DBF40009FCEA /* UIView+CJPopupInView.h */,
 				1562F24623F5DBF40009FCEA /* UIView+CJPopupInView.m */,
+				789C9B4C260B795000BC0FB4 /* CJBasePopupInfo.h */,
+				789C9B4D260B795000BC0FB4 /* CJBasePopupInfo.m */,
 				972A105A25EDF04F002C52CB /* UIView+CJPopupAnimation.h */,
 				972A105B25EDF04F002C52CB /* UIView+CJPopupAnimation.m */,
 				7851F6A925B5F25000C63A53 /* UIView+CJPopupSuperviewSubview.h */,
@@ -3444,6 +3449,7 @@
 				78C8148A216E11AF00A6B190 /* FChildViewController.m in Sources */,
 				784C87FF216F2B1D00AFEE7D /* SemaphoreGateKeeperViewController.m in Sources */,
 				1562F2AF23F5DBF40009FCEA /* UIImage+CJRotateAngle.m in Sources */,
+				789C9B4E260B795000BC0FB4 /* CJBasePopupInfo.m in Sources */,
 				7875C58F231CF77900076A00 /* BackSystemItemViewController.m in Sources */,
 				80FF90B41FC5649F00E437CF /* ButtonStructureViewController.m in Sources */,
 				80FF90AF1FC5649F00E437CF /* NavigationBarBaseViewController.m in Sources */,
