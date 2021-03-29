@@ -1,5 +1,5 @@
 //
-//  ImageRotateViewController.h
+//  ImageShakeViewController.h
 //  CJUIKitDemo
 //
 //  Created by ciyouzen on 2018/6/1.
@@ -9,7 +9,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ImageRotateViewController : UIViewController {
+@interface ImageShakeViewController : UIViewController {
     
 }
 

@@ -1,17 +1,18 @@
 //
-//  ImageRotateViewController.m
+//  ImageShakeViewController.m
 //  CJUIKitDemo
 //
 //  Created by ciyouzen on 2018/6/1.
 //  Copyright © 2018年 dvlproad. All rights reserved.
 //
 
-#import "ImageRotateViewController.h"
+#import "ImageShakeViewController.h"
 #import <Masonry/Masonry.h>
 #import <CQDemoKit/CQTSContainerViewFactory.h>
+#import <CQDemoKit/CQTSLocImagesUtil.h>
 #import "UIImage+CJRotateAngle.h"
 
-@interface ImageRotateViewController () {
+@interface ImageShakeViewController () {
     
 }
 @property (nonatomic, strong) UILabel *sliderValueLabel;    /**< 旋转的角度值 */
@@ -25,7 +26,7 @@
 @end
 
 
-@implementation ImageRotateViewController
+@implementation ImageShakeViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -36,13 +37,9 @@
     [self setupViews];
     self.sliderValueLabel.text = @"当前旋转的角度为0°";
     
-    UIImage *image = [UIImage imageNamed:@"taixi_icon"];
+    UIImage *image = [UIImage imageNamed:@"bg.jpg"];
     self.imageView1.image = image;
-    //self.imageView1.contentMode = UIViewContentModeScaleAspectFit;
-    
     self.imageView2.image = image;
-    //self.imageView2.contentMode = UIViewContentModeScaleAspectFit;
-    
     self.imageView3.image = image;
     
     self.slider.minimumValue = 0;
@@ -103,17 +100,10 @@
     CGFloat angle = slider.value;
     self.sliderValueLabel.text = [NSString stringWithFormat:@"当前旋转的角度为%.2f°", angle];
     
-    UIImage *image = [UIImage imageNamed:@"taixi_icon"];
-    
-    UIImage *image1 = [image cj_rotateImageWithAngle:angle isExpand:YES];
-    self.imageView1.image = image1;
-    
-    UIImage *image2 = [image cj_rotateImageWithAngle:angle isExpand:NO];
-    self.imageView2.image = image2;
-    
     CGFloat rotaAngle = angle/180.0*M_PI;
-    CGAffineTransform transform= CGAffineTransformMakeRotation(rotaAngle);
-    self.imageView3.transform = transform;
+    self.imageView1.layer.transform = CATransform3DMakeRotation(rotaAngle, 1, 0, 0);
+    self.imageView2.layer.transform = CATransform3DMakeRotation(rotaAngle, 0, 1, 0);
+    self.imageView3.layer.transform = CATransform3DMakeRotation(rotaAngle, 0, 0, 1);
 }
 
 - (void)didReceiveMemoryWarning {

@@ -31,7 +31,7 @@
     [badgeButton setBackgroundImage:[UIImage imageNamed:@"icon.png"] forState:UIControlStateNormal];
     [badgeButton setTitle:@"年年年年" forState:UIControlStateNormal];
     [badgeButton setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
-    [badgeButton addTarget:self action:@selector(buttonAction) forControlEvents:UIControlEventTouchUpInside];
+    [badgeButton addTarget:self action:@selector(buttonAction:) forControlEvents:UIControlEventTouchUpInside];
     badgeButton.badge = 100;
     
     CJBadgeButton *badgeButton2 = [self goDeliverBadgeButton];
@@ -43,11 +43,11 @@
         make.height.mas_equalTo(104);
     }];
     [badgeButton2 setTitle:NSLocalizedString(@"去配送", nil) forState:UIControlStateNormal];
-    [badgeButton2 addTarget:self action:@selector(buttonAction) forControlEvents:UIControlEventTouchUpInside];
+    [badgeButton2 addTarget:self action:@selector(buttonAction:) forControlEvents:UIControlEventTouchUpInside];
     badgeButton2.badge = 6;
 }
 
-- (void)buttonAction {
+- (void)buttonAction:(UIButton *)button {
     NSLog(@"点击照片");
 }
 

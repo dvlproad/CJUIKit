@@ -8,6 +8,8 @@
 
 #import "ImageHomeViewController.h"
 
+#import "ImageShakeViewController.h"
+
 #import "ImageGetterViewController.h"
 #import "ImageChangeColorViewController.h"
 #import "ImageRotateViewController.h"
@@ -52,7 +54,6 @@
             CQDMModuleModel *imageRotateModule = [[CQDMModuleModel alloc] init];
             imageRotateModule.title = @"UIImage(旋转任意角度)";
             imageRotateModule.classEntry = [ImageRotateViewController class];
-            imageRotateModule.isCreateByXib = YES;
             [sectionDataModel.values addObject:imageRotateModule];
         }
         {
@@ -72,6 +73,18 @@
             gifModule.title = @"Gif显示";
             gifModule.classEntry = [GifViewController class];
             [sectionDataModel.values addObject:gifModule];
+        }
+        [sectionDataModels addObject:sectionDataModel];
+    }
+    
+    {
+        CQDMSectionDataModel *sectionDataModel = [[CQDMSectionDataModel alloc] init];
+        sectionDataModel.theme = @"视图抖动";
+        {
+            CQDMModuleModel *imageChangeColorModule = [[CQDMModuleModel alloc] init];
+            imageChangeColorModule.title = @"视图抖动";
+            imageChangeColorModule.classEntry = [ImageShakeViewController class];
+            [sectionDataModel.values addObject:imageChangeColorModule];
         }
         [sectionDataModels addObject:sectionDataModel];
     }

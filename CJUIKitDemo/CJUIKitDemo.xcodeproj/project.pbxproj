@@ -101,6 +101,7 @@
 		780F52E325AB65C600DECB38 /* UITextViewCQHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 780F52DD25AB65C600DECB38 /* UITextViewCQHelper.m */; };
 		78143150249C8FA50014EA69 /* AutoLayoutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7814314F249C8FA50014EA69 /* AutoLayoutViewController.m */; };
 		781495A92140D82600D0F2BC /* MantleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 781495A82140D82600D0F2BC /* MantleViewController.m */; };
+		7817B6AF2612272F006168AE /* ImageShakeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7817B6AD2612272F006168AE /* ImageShakeViewController.m */; };
 		781989A8225A34C000D01DBC /* CJDemoDateLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 781989A6225A34C000D01DBC /* CJDemoDateLabel.m */; };
 		781C736921BA5E140090080C /* NSCalendarCJHelperViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 781C736821BA5E140090080C /* NSCalendarCJHelperViewController.m */; };
 		781C736C21BA61480090080C /* TestValueChangeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 781C736B21BA61480090080C /* TestValueChangeTableViewCell.m */; };
@@ -293,7 +294,6 @@
 		8051E5D120AAC172003370AA /* BBXShimmeringSwitchSlider.m in Sources */ = {isa = PBXBuildFile; fileRef = 8051E5D020AAC172003370AA /* BBXShimmeringSwitchSlider.m */; };
 		805598B51FF5D612009DC61C /* ValidateStringViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 805598B31FF5D612009DC61C /* ValidateStringViewController.m */; };
 		80582FA120C121B500C01225 /* ImageRotateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80582F9F20C121B500C01225 /* ImageRotateViewController.m */; };
-		80582FA220C121B500C01225 /* ImageRotateViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 80582FA020C121B500C01225 /* ImageRotateViewController.xib */; };
 		8060C48020E0D0630093B14E /* CJMoneyUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 8060C47F20E0D0630093B14E /* CJMoneyUtil.m */; };
 		8060C48320E0D0B30093B14E /* CJDistanceUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 8060C48220E0D0B30093B14E /* CJDistanceUtil.m */; };
 		8060C48C20E0D5EF0093B14E /* AccuracyStringViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8060C48920E0D5EF0093B14E /* AccuracyStringViewController.m */; };
@@ -573,6 +573,8 @@
 		7814314F249C8FA50014EA69 /* AutoLayoutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AutoLayoutViewController.m; sourceTree = "<group>"; };
 		781495A72140D82600D0F2BC /* MantleViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MantleViewController.h; sourceTree = "<group>"; };
 		781495A82140D82600D0F2BC /* MantleViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MantleViewController.m; sourceTree = "<group>"; };
+		7817B6AD2612272F006168AE /* ImageShakeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageShakeViewController.m; sourceTree = "<group>"; };
+		7817B6AE2612272F006168AE /* ImageShakeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageShakeViewController.h; sourceTree = "<group>"; };
 		781989A6225A34C000D01DBC /* CJDemoDateLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJDemoDateLabel.m; sourceTree = "<group>"; };
 		781989A7225A34C000D01DBC /* CJDemoDateLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJDemoDateLabel.h; sourceTree = "<group>"; };
 		781C736721BA5E140090080C /* NSCalendarCJHelperViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NSCalendarCJHelperViewController.h; sourceTree = "<group>"; };
@@ -912,7 +914,6 @@
 		805598B31FF5D612009DC61C /* ValidateStringViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ValidateStringViewController.m; sourceTree = "<group>"; };
 		80582F9E20C121B500C01225 /* ImageRotateViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ImageRotateViewController.h; sourceTree = "<group>"; };
 		80582F9F20C121B500C01225 /* ImageRotateViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ImageRotateViewController.m; sourceTree = "<group>"; };
-		80582FA020C121B500C01225 /* ImageRotateViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ImageRotateViewController.xib; sourceTree = "<group>"; };
 		8060C47E20E0D0630093B14E /* CJMoneyUtil.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CJMoneyUtil.h; sourceTree = "<group>"; };
 		8060C47F20E0D0630093B14E /* CJMoneyUtil.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CJMoneyUtil.m; sourceTree = "<group>"; };
 		8060C48120E0D0B30093B14E /* CJDistanceUtil.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CJDistanceUtil.h; sourceTree = "<group>"; };
@@ -2613,7 +2614,8 @@
 				97A9191C25AFE8510051B902 /* TwoImageCompareView.m */,
 				80582F9E20C121B500C01225 /* ImageRotateViewController.h */,
 				80582F9F20C121B500C01225 /* ImageRotateViewController.m */,
-				80582FA020C121B500C01225 /* ImageRotateViewController.xib */,
+				7817B6AE2612272F006168AE /* ImageShakeViewController.h */,
+				7817B6AD2612272F006168AE /* ImageShakeViewController.m */,
 				789C447E21F07F6C00181144 /* ImageSizeViewController.h */,
 				789C447F21F07F6C00181144 /* ImageSizeViewController.m */,
 				780C1F2625BC6D910034D770 /* ImageCompressViewController.h */,
@@ -3072,7 +3074,6 @@
 				780E460E1E5DF87B00980127 /* Main.storyboard in Resources */,
 				97A9192025AFE8510051B902 /* taixi_icon@2x.png in Resources */,
 				787FDB9220500B5C008A46E3 /* slider_thumbImage@2x.png in Resources */,
-				80582FA220C121B500C01225 /* ImageRotateViewController.xib in Resources */,
 				780C1F2225BC6C2C0034D770 /* 10M_01.jpg in Resources */,
 				156AC8D92406DBBE00A5A23D /* badgeButton_normal@3x.png in Resources */,
 				801F75DB20A040D800A2E027 /* signin_icon_open@2x.png in Resources */,
@@ -3366,6 +3367,7 @@
 				7857ABBC2254AA5000B1569C /* CJDemoDateTextField.m in Sources */,
 				1562F2E423F5DBF40009FCEA /* CJSliderControl.m in Sources */,
 				7877601F2594F54200B0D33C /* CQCommentsPopView.m in Sources */,
+				7817B6AF2612272F006168AE /* ImageShakeViewController.m in Sources */,
 				78E189AE21781BE200B8781A /* EdgeLayoutTableViewController.m in Sources */,
 				975487AA25A997CF00DD7080 /* DChangeStringViewController1.m in Sources */,
 				1562F2DF23F5DBF40009FCEA /* UITableView+CJEmptyView.m in Sources */,

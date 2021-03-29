@@ -23,7 +23,9 @@
             bundle = [NSBundle bundleForClass:NSClassFromString(@"CJUIKitBaseTabBarViewController")];
         }
         NSURL *url = [bundle URLForResource:@"CQDemoKit" withExtension:@"bundle"];
-        if(!url) return [UIImage new];
+        if (url == nil) {
+            return nil;
+        }
         NSBundle *imageBundle = [NSBundle bundleWithURL:url];
         UIImage *image = [UIImage imageNamed:name inBundle:imageBundle compatibleWithTraitCollection:nil];
         return image;
