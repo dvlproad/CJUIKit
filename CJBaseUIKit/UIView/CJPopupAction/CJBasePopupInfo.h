@@ -22,7 +22,7 @@ typedef NS_ENUM(NSUInteger, CJBlankViewBelong) {
 }
 @property (nonatomic, strong) UIView *blankView;        /**< 弹出的视图所在的父视图/空白区域视图 */
 @property (nonatomic, strong) UIView *popupView;        /**< 弹出的视图 */
-@property (nonatomic, assign) CGRect popupViewShowFrame;/**< 弹出视图显示时候的frame */
+@property (nonatomic, strong) UIView *popupSuperview;   /**< 弹出视图的父视图 */
 
 @end
 

@@ -169,6 +169,8 @@
 		7875C58E231CF77900076A00 /* BackItemBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7875C588231CF77900076A00 /* BackItemBaseViewController.m */; };
 		7875C58F231CF77900076A00 /* BackSystemItemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7875C589231CF77900076A00 /* BackSystemItemViewController.m */; };
 		7877601F2594F54200B0D33C /* CQCommentsPopView.m in Sources */ = {isa = PBXBuildFile; fileRef = 787760152594F54100B0D33C /* CQCommentsPopView.m */; };
+		787851D3261F4A5900244867 /* PopupViewAddCJHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 787851D2261F4A5900244867 /* PopupViewAddCJHelper.m */; };
+		787851D9261F58DE00244867 /* PopupViewFrameCJHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 787851D8261F58DE00244867 /* PopupViewFrameCJHelper.m */; };
 		787C287F23223DAA00AF84F4 /* DemoEasyModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 787C287E23223DAA00AF84F4 /* DemoEasyModel.m */; };
 		787FDB5820500B01008A46E3 /* TSTextFieldInputViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 787FDB5020500B00008A46E3 /* TSTextFieldInputViewController.m */; };
 		787FDB5A20500B01008A46E3 /* ColorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 787FDB5320500B01008A46E3 /* ColorViewController.m */; };
@@ -694,6 +696,10 @@
 		7875C58C231CF77900076A00 /* BackSystemItemViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BackSystemItemViewController.h; sourceTree = "<group>"; };
 		787760152594F54100B0D33C /* CQCommentsPopView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CQCommentsPopView.m; sourceTree = "<group>"; };
 		787760192594F54100B0D33C /* CQCommentsPopView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CQCommentsPopView.h; sourceTree = "<group>"; };
+		787851D1261F4A5900244867 /* PopupViewAddCJHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PopupViewAddCJHelper.h; sourceTree = "<group>"; };
+		787851D2261F4A5900244867 /* PopupViewAddCJHelper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PopupViewAddCJHelper.m; sourceTree = "<group>"; };
+		787851D7261F58DE00244867 /* PopupViewFrameCJHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PopupViewFrameCJHelper.h; sourceTree = "<group>"; };
+		787851D8261F58DE00244867 /* PopupViewFrameCJHelper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PopupViewFrameCJHelper.m; sourceTree = "<group>"; };
 		787C287D23223DAA00AF84F4 /* DemoEasyModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DemoEasyModel.h; sourceTree = "<group>"; };
 		787C287E23223DAA00AF84F4 /* DemoEasyModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DemoEasyModel.m; sourceTree = "<group>"; };
 		787FDB4F20500B00008A46E3 /* TSTextFieldInputViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSTextFieldInputViewController.h; sourceTree = "<group>"; };
@@ -1279,6 +1285,10 @@
 			children = (
 				1562F24923F5DBF40009FCEA /* UIView+CJPopupInView.h */,
 				1562F24623F5DBF40009FCEA /* UIView+CJPopupInView.m */,
+				787851D1261F4A5900244867 /* PopupViewAddCJHelper.h */,
+				787851D2261F4A5900244867 /* PopupViewAddCJHelper.m */,
+				787851D7261F58DE00244867 /* PopupViewFrameCJHelper.h */,
+				787851D8261F58DE00244867 /* PopupViewFrameCJHelper.m */,
 				789C9B4C260B795000BC0FB4 /* CJBasePopupInfo.h */,
 				789C9B4D260B795000BC0FB4 /* CJBasePopupInfo.m */,
 				972A105A25EDF04F002C52CB /* UIView+CJPopupAnimation.h */,
@@ -3335,6 +3345,7 @@
 				97578AAC25590E9300249AD6 /* MainViewController.m in Sources */,
 				786B5BED25B203F400433A48 /* UITextView+CJBlock.m in Sources */,
 				78B6C2E62159D6E900D5864E /* DemoBusStationLocationModel.m in Sources */,
+				787851D9261F58DE00244867 /* PopupViewFrameCJHelper.m in Sources */,
 				780F52E325AB65C600DECB38 /* UITextViewCQHelper.m in Sources */,
 				788113CB21996A2600D1630D /* SubNormalSharedInstanceClass.m in Sources */,
 				80FF91951FC5682B00E437CF /* FoundationHomeViewController.m in Sources */,
@@ -3444,6 +3455,7 @@
 				80FF91531FC5668700E437CF /* PrivateSetting.m in Sources */,
 				78E189A5217791D200B8781A /* TranslucentLayoutViewController.m in Sources */,
 				1562F2BF23F5DBF40009FCEA /* UIButton+CJStructure.m in Sources */,
+				787851D3261F4A5900244867 /* PopupViewAddCJHelper.m in Sources */,
 				780F52E225AB65C600DECB38 /* CQSubStringUtil.m in Sources */,
 				1562F38923FD2FC70009FCEA /* AppDelegate.m in Sources */,
 				7894C2A7256ECAE200C73B5E /* CQAgeRangeSliderControl.m in Sources */,

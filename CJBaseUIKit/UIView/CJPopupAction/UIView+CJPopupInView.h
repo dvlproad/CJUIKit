@@ -8,7 +8,7 @@
 //  本视图弹出到指定视图(如window)中的方法
 
 #import <UIKit/UIKit.h>
-#import "UIView+CJPopupSuperviewSubview.h"
+#import "UIView+CJPopupAnimation.h"
 
 typedef void(^CJTapBlankViewCompleteBlock)(void);
 
@@ -18,20 +18,6 @@ typedef NS_ENUM(NSUInteger, CJWindowPosition) {
     CJWindowPositionCenter
 };
 
-typedef NS_ENUM(NSUInteger, CJAnimationType) {
-    //    MJPopupViewAnimationFade = 0,
-    //    MJPopupViewAnimationSlideBottomTop = 1,
-    //    MJPopupViewAnimationSlideBottomBottom,
-    //    MJPopupViewAnimationSlideTopTop,
-    //    MJPopupViewAnimationSlideTopBottom,
-    //    MJPopupViewAnimationSlideLeftLeft,
-    //    MJPopupViewAnimationSlideLeftRight,
-    //    MJPopupViewAnimationSlideRightLeft,
-    //    MJPopupViewAnimationSlideRightRight,
-    CJAnimationTypeNone = 0,   //Directly
-    CJAnimationTypeNormal,     //通过设置frame来实现
-    CJAnimationTypeCATransform3D
-};
 
 
 
@@ -98,14 +84,6 @@ NS_ASSUME_NONNULL_BEGIN
                   showComplete:(void(^ _Nullable)(void))showPopupViewCompleteBlock
               tapBlankComplete:(void(^ _Nullable)(void))tapBlankViewCompleteBlock;
 
-/**
- *  隐藏弹出视图
- */
-- (void)cj_hidePopupView;
-/**
- *  隐藏弹出视图
- */
-- (void)cj_hidePopupViewWithAnimationType:(CJAnimationType)animationType;
 
 @end
 

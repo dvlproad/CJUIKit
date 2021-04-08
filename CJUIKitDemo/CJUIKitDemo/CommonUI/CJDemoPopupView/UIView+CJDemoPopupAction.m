@@ -7,6 +7,7 @@
 //
 
 #import "UIView+CJDemoPopupAction.h"
+#import <objc/runtime.h>
 #import "UIView+CJPopupInView.h"
 
 static NSString *cjdemo_hidePopupViewBlockKey = @"cjdemo_hidePopupViewBlockKey";
