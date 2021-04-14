@@ -101,7 +101,7 @@
     self.sliderValueLabel.text = [NSString stringWithFormat:@"当前旋转的角度为%.2f°", angle];
     
     CGFloat rotaAngle = angle/180.0*M_PI;
-    self.imageView1.layer.transform = CATransform3DMakeRotation(rotaAngle, 1, 0, 0);
+    self.imageView1.layer.transform = CATransform3DMakeRotation(rotaAngle, 0.5, 0.5, 0);
     self.imageView2.layer.transform = CATransform3DMakeRotation(rotaAngle, 0, 1, 0);
     self.imageView3.layer.transform = CATransform3DMakeRotation(rotaAngle, 0, 0, 1);
 }

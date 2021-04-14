@@ -14,6 +14,8 @@
 
 #import "MantleViewController.h"
 
+#import "TSLayoutPriorityViewController.h"
+
 
 @interface ThirdPartyHomeViewController ()
 
@@ -49,6 +51,20 @@
             baseScrollViewModule.title = @"Mantle的基本使用(待完善)";
             baseScrollViewModule.classEntry = [MantleViewController class];
             baseScrollViewModule.isCreateByXib = NO;
+            [sectionDataModel.values addObject:baseScrollViewModule];
+        }
+        
+        [sectionDataModels addObject:sectionDataModel];
+    }
+    
+    
+    {
+        CQDMSectionDataModel *sectionDataModel = [[CQDMSectionDataModel alloc] init];
+        sectionDataModel.theme = @"LayoutPriority相关";
+        {
+            CQDMModuleModel *baseScrollViewModule = [[CQDMModuleModel alloc] init];
+            baseScrollViewModule.title = @"LayoutPriority";
+            baseScrollViewModule.classEntry = [TSLayoutPriorityViewController class];
             [sectionDataModel.values addObject:baseScrollViewModule];
         }
         

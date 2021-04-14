@@ -26,6 +26,13 @@ NS_ASSUME_NONNULL_BEGIN
                              actionBlock:(void(^)(UIButton *bButton))actionBlock;
 
 #pragma mark - submitButton
+/*
+ *  "重现bug"/"重现bug"的状态选择按钮(默认是bug已重现待修复的状态)
+ *  @param fixBugHandle             修复bug要执行的操作
+ *  @param reproduceBugHandle       重现bug要执行的操作
+ */
++ (UIButton *)bugButtonWithFixBugHandle:(void(^)(void))fixBugHandle reproduceBugHandle:(void(^)(void))reproduceBugHandle;
+
 /**
  *  "提交"/"修改"状态选择按钮(if you want to show editTitle, you should make selected == YES)
  *

@@ -348,6 +348,11 @@
 		80FF919D1FC5682B00E437CF /* CountDownTimeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 80FF91861FC5682A00E437CF /* CountDownTimeViewController.xib */; };
 		80FF919E1FC5682B00E437CF /* OtherHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80FF91881FC5682A00E437CF /* OtherHomeViewController.m */; };
 		80FF91C51FC581DD00E437CF /* UtilHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80FF91BF1FC581DD00E437CF /* UtilHomeViewController.m */; };
+		9725C153261DA4D80021D5D9 /* TSLayoutPriorityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9725C152261DA4D80021D5D9 /* TSLayoutPriorityViewController.m */; };
+		9725C159261DA5930021D5D9 /* TSLayoutPriorityView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9725C158261DA5930021D5D9 /* TSLayoutPriorityView.m */; };
+		9725C15F261DA7680021D5D9 /* recognize_icon_pass@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9725C15D261DA7680021D5D9 /* recognize_icon_pass@2x.png */; };
+		9725C160261DA7680021D5D9 /* recognize_icon_pass@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9725C15E261DA7680021D5D9 /* recognize_icon_pass@3x.png */; };
+		9725C1CB262005C30021D5D9 /* TSBugLayoutPriorityView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9725C1CA262005C30021D5D9 /* TSBugLayoutPriorityView.m */; };
 		972A105C25EDF04F002C52CB /* UIView+CJPopupAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 972A105B25EDF04F002C52CB /* UIView+CJPopupAnimation.m */; };
 		973E4CBD25A353D200748B44 /* ViewPandownViewController2.m in Sources */ = {isa = PBXBuildFile; fileRef = 973E4CBB25A353D200748B44 /* ViewPandownViewController2.m */; };
 		975164AE256CFE34001DE112 /* CQUpdateContentPopupView.m in Sources */ = {isa = PBXBuildFile; fileRef = 975164AD256CFE34001DE112 /* CQUpdateContentPopupView.m */; };
@@ -1009,6 +1014,14 @@
 		80FF91BE1FC581DD00E437CF /* UtilHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UtilHomeViewController.h; sourceTree = "<group>"; };
 		80FF91BF1FC581DD00E437CF /* UtilHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UtilHomeViewController.m; sourceTree = "<group>"; };
 		935109AAB855F6CC8B84B9A5 /* libPods-CJUIKitDemoTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CJUIKitDemoTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9725C151261DA4D80021D5D9 /* TSLayoutPriorityViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TSLayoutPriorityViewController.h; sourceTree = "<group>"; };
+		9725C152261DA4D80021D5D9 /* TSLayoutPriorityViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TSLayoutPriorityViewController.m; sourceTree = "<group>"; };
+		9725C157261DA5930021D5D9 /* TSLayoutPriorityView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TSLayoutPriorityView.h; sourceTree = "<group>"; };
+		9725C158261DA5930021D5D9 /* TSLayoutPriorityView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TSLayoutPriorityView.m; sourceTree = "<group>"; };
+		9725C15D261DA7680021D5D9 /* recognize_icon_pass@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "recognize_icon_pass@2x.png"; sourceTree = "<group>"; };
+		9725C15E261DA7680021D5D9 /* recognize_icon_pass@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "recognize_icon_pass@3x.png"; sourceTree = "<group>"; };
+		9725C1C9262005C30021D5D9 /* TSBugLayoutPriorityView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TSBugLayoutPriorityView.h; sourceTree = "<group>"; };
+		9725C1CA262005C30021D5D9 /* TSBugLayoutPriorityView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TSBugLayoutPriorityView.m; sourceTree = "<group>"; };
 		972A105A25EDF04F002C52CB /* UIView+CJPopupAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+CJPopupAnimation.h"; sourceTree = "<group>"; };
 		972A105B25EDF04F002C52CB /* UIView+CJPopupAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+CJPopupAnimation.m"; sourceTree = "<group>"; };
 		973E4CBB25A353D200748B44 /* ViewPandownViewController2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewPandownViewController2.m; sourceTree = "<group>"; };
@@ -2523,6 +2536,14 @@
 			children = (
 				80FF8F0D1FC5649E00E437CF /* ThirdPartyHomeViewController.h */,
 				80FF8F0E1FC5649E00E437CF /* ThirdPartyHomeViewController.m */,
+				9725C151261DA4D80021D5D9 /* TSLayoutPriorityViewController.h */,
+				9725C152261DA4D80021D5D9 /* TSLayoutPriorityViewController.m */,
+				9725C157261DA5930021D5D9 /* TSLayoutPriorityView.h */,
+				9725C158261DA5930021D5D9 /* TSLayoutPriorityView.m */,
+				9725C1C9262005C30021D5D9 /* TSBugLayoutPriorityView.h */,
+				9725C1CA262005C30021D5D9 /* TSBugLayoutPriorityView.m */,
+				9725C15D261DA7680021D5D9 /* recognize_icon_pass@2x.png */,
+				9725C15E261DA7680021D5D9 /* recognize_icon_pass@3x.png */,
 				781495A32140D80700D0F2BC /* MantleDemo */,
 				80FF8F0F1FC5649E00E437CF /* MJExtensionDemo */,
 			);
@@ -3047,6 +3068,7 @@
 				80FF91961FC5682B00E437CF /* AttributedStringViewController.xib in Resources */,
 				780C1F3025BC73520034D770 /* 10M_02.jpg in Resources */,
 				8051E5CD20AAB34E003370AA /* details_icon_huadong@2x.png in Resources */,
+				9725C160261DA7680021D5D9 /* recognize_icon_pass@3x.png in Resources */,
 				1562F2DC23F5DBF40009FCEA /* cjBackBarButtonItemGray@3x.png in Resources */,
 				7850B6FF20937C5A008F4A21 /* DragViewController.xib in Resources */,
 				787FDB6820500B1F008A46E3 /* TextViewController.xib in Resources */,
@@ -3057,6 +3079,7 @@
 				7894C2A8256ECAE200C73B5E /* slider_range_start@3x.png in Resources */,
 				7850B70320937C5A008F4A21 /* ShowExtendViewVC.xib in Resources */,
 				787FDB9420500B5C008A46E3 /* slider_thumbImage@3x.png in Resources */,
+				9725C15F261DA7680021D5D9 /* recognize_icon_pass@2x.png in Resources */,
 				97A9192425AFE8510051B902 /* longHorizontal.jpg in Resources */,
 				1562F2DD23F5DBF40009FCEA /* cjBackBarButtonItemGray@2x.png in Resources */,
 				7850B71220937E85008F4A21 /* WelcomePopupView.xib in Resources */,
@@ -3359,7 +3382,9 @@
 				1562F2E523F5DBF40009FCEA /* CJRangeSliderControl.m in Sources */,
 				1562F2C223F5DBF40009FCEA /* UIButton+CJMoreProperty.m in Sources */,
 				78A621DC2135C713004DA046 /* DemoSuspendWindow.m in Sources */,
+				9725C153261DA4D80021D5D9 /* TSLayoutPriorityViewController.m in Sources */,
 				78B831B325B484060016C561 /* UIImageCJCutHelper.m in Sources */,
+				9725C1CB262005C30021D5D9 /* TSBugLayoutPriorityView.m in Sources */,
 				78C8148B216E11AF00A6B190 /* BChildViewController.m in Sources */,
 				781989A8225A34C000D01DBC /* CJDemoDateLabel.m in Sources */,
 				1562F2B723F5DBF40009FCEA /* UIImage+CJFixOrientation.m in Sources */,
@@ -3386,6 +3411,7 @@
 				1562F2E123F5DBF40009FCEA /* CJSwitchSlider.m in Sources */,
 				80FF90B01FC5649F00E437CF /* NavigationBarScrollChangeBGViewController.m in Sources */,
 				976794FA2580B494002FD0C7 /* KeyboardAutoMoveUpViewController.m in Sources */,
+				9725C159261DA5930021D5D9 /* TSLayoutPriorityView.m in Sources */,
 				78A99268257958CB00B54E30 /* UIScrollView+CJTouch.m in Sources */,
 				805598B51FF5D612009DC61C /* ValidateStringViewController.m in Sources */,
 				1562F2C123F5DBF40009FCEA /* CJButton.m in Sources */,

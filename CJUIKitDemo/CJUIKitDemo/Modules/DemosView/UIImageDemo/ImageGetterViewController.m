@@ -21,20 +21,24 @@
     
     UIImageView *imageView1 = [[UIImageView alloc] initWithFrame:CGRectZero];
     imageView1.backgroundColor = [UIColor redColor];
+    imageView1.layer.masksToBounds = YES;
+    imageView1.layer.cornerRadius = 30;
     [self.view addSubview:imageView1];
     [imageView1 mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.mas_equalTo(self.view).mas_offset(100);
         make.centerX.mas_equalTo(self.view);
-        make.size.mas_equalTo(CGSizeMake(100, 100));
+        make.size.mas_equalTo(CGSizeMake(300, 100));
     }];
     
     UIImageView *imageView2 = [[UIImageView alloc] initWithFrame:CGRectZero];
     imageView2.backgroundColor = [UIColor redColor];
+    imageView2.layer.masksToBounds = YES;
+    imageView2.layer.cornerRadius = 30;
     [self.view addSubview:imageView2];
     [imageView2 mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.mas_equalTo(imageView1.mas_bottom).mas_offset(30);
         make.centerX.mas_equalTo(self.view);
-        make.size.mas_equalTo(CGSizeMake(100, 100));
+        make.size.mas_equalTo(CGSizeMake(300, 300));
     }];
     
     NSString *imageUrl = @"https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1554202630803&di=84fad580a2f1e780fc28b447b4906520&imgtype=0&src=http%3A%2F%2Fmedia.putibaby.com%2Fmedia%2Fimage-8bfbfc5c9c91179b45b8c6c5163b8f06.jpg"; //正常情况下显示不出来
