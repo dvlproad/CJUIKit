@@ -8,6 +8,7 @@
 
 #import "CJUIKitBaseHomeViewController.h"
 #import "CQTSSuspendWindowFactory.h"
+#import <objc/runtime.h>
 
 @interface CJUIKitBaseHomeViewController () <UITableViewDataSource, UITableViewDelegate> {
     
@@ -174,13 +175,17 @@
         
         // 如果是要跳到 UITabBarController 控制器
         if ([viewController isKindOfClass:[UITabBarController class]]) {
-            [UIApplication sharedApplication].delegate.window.rootViewController = viewController;
+            id<UIApplicationDelegate> appDelegate = [UIApplication sharedApplication].delegate;
+            UIViewController *originRootViewController = appDelegate.window.rootViewController;
+            objc_setAssociatedObject(appDelegate, "originRootViewController", originRootViewController, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
             
+            [UIApplication sharedApplication].delegate.window.rootViewController = viewController;
             UIWindow *suspendButton = [CQTSSuspendWindowFactory showSuspendButtonWithSize:CGSizeMake(100, 44) title:NSLocalizedString(@"返回主页", nil) clickCompleteBlock:^{
-                   NSLog(@"");
-                UIViewController *originRootViewController = [[NSClassFromString(@"TSTabBarViewController") alloc] init];
-                [UIApplication sharedApplication].delegate.window.rootViewController = originRootViewController;
-           }];
+                UIViewController *bOriginRootViewController = objc_getAssociatedObject(appDelegate, "originRootViewController");
+                [UIApplication sharedApplication].delegate.window.rootViewController = bOriginRootViewController;
+            }];
+            // 必须强引用，才能显示出来
+            objc_setAssociatedObject(viewController, "suspendButton", suspendButton, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
             
         } else {
             viewController.hidesBottomBarWhenPushed = YES;
