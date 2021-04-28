@@ -225,8 +225,7 @@
 		78A4E1B42173A0D9005FEADD /* DemoChangeEnvironmentViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 78A4E1B32173A0D8005FEADD /* DemoChangeEnvironmentViewModel.m */; };
 		78A4E1D52175EB93005FEADD /* NavigationBarNormalChangeBGViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78A4E1D42175EB93005FEADD /* NavigationBarNormalChangeBGViewController.m */; };
 		78A621A921319723004DA046 /* SuspendWindowViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78A621A821319723004DA046 /* SuspendWindowViewController.m */; };
-		78A621DC2135C713004DA046 /* DemoSuspendWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 78A621D92135C713004DA046 /* DemoSuspendWindow.m */; };
-		78A621E02135C78B004DA046 /* DemoSuspendWindow+CJSuspendWindowManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 78A621DF2135C78B004DA046 /* DemoSuspendWindow+CJSuspendWindowManager.m */; };
+		78A621DC2135C713004DA046 /* SuspendWindowFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 78A621D92135C713004DA046 /* SuspendWindowFactory.m */; };
 		78A621E72135C925004DA046 /* DemoSuspendWindowRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78A621E52135C924004DA046 /* DemoSuspendWindowRootViewController.m */; };
 		78A621ED2135CA50004DA046 /* DemoFloatingWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 78A621EC2135CA50004DA046 /* DemoFloatingWindow.m */; };
 		78A74E5123687ACF0023F44B /* PriceFenToYuanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78A74E5023687ACF0023F44B /* PriceFenToYuanViewController.m */; };
@@ -790,10 +789,8 @@
 		78A4E1D42175EB93005FEADD /* NavigationBarNormalChangeBGViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NavigationBarNormalChangeBGViewController.m; sourceTree = "<group>"; };
 		78A621A721319723004DA046 /* SuspendWindowViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SuspendWindowViewController.h; sourceTree = "<group>"; };
 		78A621A821319723004DA046 /* SuspendWindowViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SuspendWindowViewController.m; sourceTree = "<group>"; };
-		78A621D92135C713004DA046 /* DemoSuspendWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DemoSuspendWindow.m; sourceTree = "<group>"; };
-		78A621DB2135C713004DA046 /* DemoSuspendWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DemoSuspendWindow.h; sourceTree = "<group>"; };
-		78A621DE2135C78B004DA046 /* DemoSuspendWindow+CJSuspendWindowManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DemoSuspendWindow+CJSuspendWindowManager.h"; sourceTree = "<group>"; };
-		78A621DF2135C78B004DA046 /* DemoSuspendWindow+CJSuspendWindowManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "DemoSuspendWindow+CJSuspendWindowManager.m"; sourceTree = "<group>"; };
+		78A621D92135C713004DA046 /* SuspendWindowFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SuspendWindowFactory.m; sourceTree = "<group>"; };
+		78A621DB2135C713004DA046 /* SuspendWindowFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SuspendWindowFactory.h; sourceTree = "<group>"; };
 		78A621E52135C924004DA046 /* DemoSuspendWindowRootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DemoSuspendWindowRootViewController.m; sourceTree = "<group>"; };
 		78A621E62135C925004DA046 /* DemoSuspendWindowRootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DemoSuspendWindowRootViewController.h; sourceTree = "<group>"; };
 		78A621EB2135CA4F004DA046 /* DemoFloatingWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DemoFloatingWindow.h; sourceTree = "<group>"; };
@@ -2167,10 +2164,8 @@
 			children = (
 				78A621EB2135CA4F004DA046 /* DemoFloatingWindow.h */,
 				78A621EC2135CA50004DA046 /* DemoFloatingWindow.m */,
-				78A621DB2135C713004DA046 /* DemoSuspendWindow.h */,
-				78A621D92135C713004DA046 /* DemoSuspendWindow.m */,
-				78A621DE2135C78B004DA046 /* DemoSuspendWindow+CJSuspendWindowManager.h */,
-				78A621DF2135C78B004DA046 /* DemoSuspendWindow+CJSuspendWindowManager.m */,
+				78A621DB2135C713004DA046 /* SuspendWindowFactory.h */,
+				78A621D92135C713004DA046 /* SuspendWindowFactory.m */,
 				78A621E62135C925004DA046 /* DemoSuspendWindowRootViewController.h */,
 				78A621E52135C924004DA046 /* DemoSuspendWindowRootViewController.m */,
 				7885FC492156681F00B97DAA /* UIView+CJPopupInSuspendWindow.h */,
@@ -3381,7 +3376,7 @@
 				788113C22199583000D1630D /* NormalSharedInstanceClass.m in Sources */,
 				1562F2E523F5DBF40009FCEA /* CJRangeSliderControl.m in Sources */,
 				1562F2C223F5DBF40009FCEA /* UIButton+CJMoreProperty.m in Sources */,
-				78A621DC2135C713004DA046 /* DemoSuspendWindow.m in Sources */,
+				78A621DC2135C713004DA046 /* SuspendWindowFactory.m in Sources */,
 				9725C153261DA4D80021D5D9 /* TSLayoutPriorityViewController.m in Sources */,
 				78B831B325B484060016C561 /* UIImageCJCutHelper.m in Sources */,
 				9725C1CB262005C30021D5D9 /* TSBugLayoutPriorityView.m in Sources */,
@@ -3429,7 +3424,6 @@
 				787FDB6420500B1F008A46E3 /* TextViewController.m in Sources */,
 				780E46051E5DF87B00980127 /* main.m in Sources */,
 				7805E1D72369C5FC00B998EC /* PriceYuanToYuanViewController.m in Sources */,
-				78A621E02135C78B004DA046 /* DemoSuspendWindow+CJSuspendWindowManager.m in Sources */,
 				1562F2BE23F5DBF40009FCEA /* CJBadgeButton.m in Sources */,
 				1562F2D023F5DBF40009FCEA /* CJTableViewHeaderFooterView.m in Sources */,
 				8060C48020E0D0630093B14E /* CJMoneyUtil.m in Sources */,

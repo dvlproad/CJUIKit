@@ -11,7 +11,7 @@
 
 #pragma mark - C函数
 /// 获取随机的颜色
-UIColor *cqtsRandomColor() {
+UIColor *cqtsRandomColor(void) {
     return [CJUIKitRandomUtil randomColorWithAlpha:1.0f];
 }
 

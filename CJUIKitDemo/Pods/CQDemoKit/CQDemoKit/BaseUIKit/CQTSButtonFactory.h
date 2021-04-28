@@ -33,7 +33,7 @@ NS_ASSUME_NONNULL_BEGIN
  */
 + (UIButton *)bugButtonWithFixBugHandle:(void(^)(void))fixBugHandle reproduceBugHandle:(void(^)(void))reproduceBugHandle;
 
-/**
+/*
  *  "提交"/"修改"状态选择按钮(if you want to show editTitle, you should make selected == YES)
  *
  *  @param submitTitle              submitTitle(current selected should be YES)

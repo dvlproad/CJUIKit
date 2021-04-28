@@ -13,7 +13,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface CQTSLocImageDataModel : NSObject
 
-@property (nonatomic, copy) NSString *name;
+@property (nullable, nonatomic, copy) NSString *name;
 @property (nonatomic, strong) UIImage *image;
 
 @end

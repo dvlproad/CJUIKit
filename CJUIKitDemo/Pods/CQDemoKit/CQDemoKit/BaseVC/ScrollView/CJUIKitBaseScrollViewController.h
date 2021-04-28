@@ -8,6 +8,8 @@
 
 #import "CJUIKitBaseViewController.h"
 
+NS_ASSUME_NONNULL_BEGIN
+
 @interface CJUIKitBaseScrollViewController : CJUIKitBaseViewController {
     
 }
@@ -26,3 +28,5 @@
                    accordingToLastBottomView:(UIView *)lastBottomView;
 
 @end
+
+NS_ASSUME_NONNULL_END

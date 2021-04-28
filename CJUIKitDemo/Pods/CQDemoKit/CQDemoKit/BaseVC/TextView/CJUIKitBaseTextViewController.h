@@ -11,6 +11,8 @@
 #import "CQDMSectionDataModel.h"
 #import "CQDMSectionDataModel+CJDealTextModel.h"
 
+NS_ASSUME_NONNULL_BEGIN
+
 @interface CJUIKitBaseTextViewController : CJUIKitBaseViewController {
     
 }
@@ -20,3 +22,5 @@
 @property (nonatomic, assign) CGFloat fixCellResultLableWidth;  /**< 固定result的视图宽度（该值大于20才生效），默认为0<20，表示自适应宽度 */
 
 @end
+
+NS_ASSUME_NONNULL_END

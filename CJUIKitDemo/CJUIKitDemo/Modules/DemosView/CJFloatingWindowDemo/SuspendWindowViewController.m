@@ -8,11 +8,15 @@
 
 #import "SuspendWindowViewController.h"
 
-#import "DemoSuspendWindow+CJSuspendWindowManager.h"
+#import "SuspendWindowFactory.h"
+#import "CQTSSuspendWindowFactory.h"
+
+
 
 @interface SuspendWindowViewController ()
 
-@property (nonatomic, strong) DemoSuspendWindow *suspendWindow;
+@property (nonatomic, strong) UIWindow *suspendWindow;
+@property (nonatomic, strong) UIWindow *ww;
 
 @end
 
@@ -28,17 +32,13 @@
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     
-    DemoSuspendWindow *suspendWindow = [DemoSuspendWindow windowWithIdentifier:@"testWindow"];
+    UIWindow *suspendWindow = [SuspendWindowFactory windowWithIdentifier:@"testWindow"];
     [suspendWindow setFrame:CGRectMake(10, 200, 100, 100)];
     
-    __weak typeof(suspendWindow)weakSuspendWindow = suspendWindow;
-    [suspendWindow setCloseWindowBlock:^{
-        //[weakSuspendWindow removeFromScreen];
-        [CJSuspendWindowManager destroyWindowForKey:weakSuspendWindow.windowIdentifier];
+    UIWindow *suspendWindow2 = [CQTSSuspendWindowFactory showSuspendButtonWithSize:CGSizeMake(100, 44) title:NSLocalizedString(@"返回主页", nil) clickCompleteBlock:^{
+            NSLog(@"");
     }];
-    [suspendWindow setClickWindowBlock:^(UIButton *clickButton) {
-        NSLog(@"click %@", clickButton.titleLabel.text);
-    }];
+    self.ww = suspendWindow2;
 }
 
 - (void)viewDidLoad {

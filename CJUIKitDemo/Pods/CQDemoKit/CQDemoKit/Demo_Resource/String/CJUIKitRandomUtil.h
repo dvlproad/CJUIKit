@@ -21,7 +21,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 #pragma mark - C函数
 /// 获取随机的颜色
-UIColor *cqtsRandomColor();
+UIColor *cqtsRandomColor(void);
 
 /// 获取随机的字符串
 NSString *cqtsRandomString(NSInteger minLength, NSInteger maxLength, CQRipeStringType stringType);

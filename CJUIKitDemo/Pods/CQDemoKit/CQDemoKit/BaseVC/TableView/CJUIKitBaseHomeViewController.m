@@ -7,6 +7,7 @@
 //
 
 #import "CJUIKitBaseHomeViewController.h"
+#import "CQTSSuspendWindowFactory.h"
 
 @interface CJUIKitBaseHomeViewController () <UITableViewDataSource, UITableViewDelegate> {
     
@@ -170,8 +171,23 @@
         }
         
         viewController.title = NSLocalizedString(moduleModel.title, nil);
-        viewController.hidesBottomBarWhenPushed = YES;
-        [self.navigationController pushViewController:viewController animated:YES];
+        
+        // 如果是要跳到 UITabBarController 控制器
+        if ([viewController isKindOfClass:[UITabBarController class]]) {
+            [UIApplication sharedApplication].delegate.window.rootViewController = viewController;
+            
+            UIWindow *suspendButton = [CQTSSuspendWindowFactory showSuspendButtonWithSize:CGSizeMake(100, 44) title:NSLocalizedString(@"返回主页", nil) clickCompleteBlock:^{
+                   NSLog(@"");
+                UIViewController *originRootViewController = [[NSClassFromString(@"TSTabBarViewController") alloc] init];
+                [UIApplication sharedApplication].delegate.window.rootViewController = originRootViewController;
+           }];
+            
+        } else {
+            viewController.hidesBottomBarWhenPushed = YES;
+            [self.navigationController pushViewController:viewController animated:YES];
+        }
+        
+        
     }
 }
     

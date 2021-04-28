@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface DemoSuspendWindowRootViewController : UIViewController
+@interface DemoSuspendWindowRootViewController : UIViewController {
+    
+}
+@property (nullable, nonatomic, copy) void (^clickWindowBlock)(UIButton *clickButton);
+@property (nullable, nonatomic, copy) void (^closeWindowBlock)(void);
 
 @end

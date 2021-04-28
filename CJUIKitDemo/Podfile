@@ -47,7 +47,7 @@ target 'CJUIKitDemo' do
     pod 'YYText', '~> 1.0.7'
 
 
-    pod 'CQDemoKit',            '~> 0.6.0',     :subspecs => ['BaseVC', 'BaseUIKit', 'BaseUtil', 'Demo_RipeView', 'Demo_Resource']
+    pod 'CQDemoKit',            '~> 0.6.2',     :subspecs => ['BaseVC', 'BaseUIKit', 'BaseUtil', 'Demo_RipeView', 'Demo_Resource']
     
 #    pod 'CJBaseUIKit',           :path => '../'
     pod 'CJBaseUtil',           :path => '../'

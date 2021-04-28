@@ -139,8 +139,9 @@
         return [self __dealTextModel:dealTextModel inCell:mcell isAutoExec:isAutoExec];
     }];
     // cell上的文本内容改变的时候，自动执行validateButton的点击事件
+    __weak typeof(cell)weakCell = cell;
     [cell setTextDidChangeBlock:^(NSString *bText) {
-        return [cell validateEvent:NO];
+        return [weakCell validateEvent:NO];
     }];
     
     if (dealTextModel.autoExec) {

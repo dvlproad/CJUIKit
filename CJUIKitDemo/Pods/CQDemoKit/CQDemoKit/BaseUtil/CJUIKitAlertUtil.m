@@ -14,7 +14,7 @@
 /// 显示系统AlertType弹框（我知道了）
 + (void)showIKnowAlertInViewController:(UIViewController *)viewController
                              withTitle:(NSString *)title
-                            iKnowBlock:(void(^)(void))iKnowBlock
+                            iKnowBlock:(void(^ _Nullable)(void))iKnowBlock
 {
     UIAlertAction *iKnowAction = [UIAlertAction actionWithTitle:NSLocalizedString(@"我知道了", nil) style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
         iKnowBlock ? iKnowBlock():nil;
@@ -30,10 +30,10 @@
 
 /// 显示系统AlertType弹框（取消+确认）
 + (void)showCancleOKAlertInViewController:(UIViewController *)viewController
-                                withTitle:(NSString *)title
-                                  message:(NSString *)message
-                              cancleBlock:(void(^)(void))cancleBlock
-                                  okBlock:(void(^)(void))okBlock;
+                                withTitle:(nullable NSString *)title
+                                  message:(nullable NSString *)message
+                              cancleBlock:(void(^ _Nullable)(void))cancleBlock
+                                  okBlock:(void(^ _Nullable)(void))okBlock;
 {
     UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:NSLocalizedString(@"取消", nil) style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
         cancleBlock ? cancleBlock():nil;
@@ -54,11 +54,11 @@
 #pragma mark - ActionSheet
 /// 显示系统ActionSheet弹框
 + (void)showActionSheetInViewController:(UIViewController *)viewController
-                              withTitle:(NSString *)title
-                                message:(NSString *)message
+                              withTitle:(nullable NSString *)title
+                                message:(nullable NSString *)message
                              itemTitles:(NSArray<NSString *> *)itemTitles
-                            cancleBlock:(void(^)(void))cancleBlock
-                         itemClickBlock:(void(^)(NSInteger index))itemClickBlock
+                            cancleBlock:(void(^ _Nullable)(void))cancleBlock
+                         itemClickBlock:(void(^ _Nullable)(NSInteger index))itemClickBlock
 {
     NSMutableArray<UIAlertAction *> *alertActions = [[NSMutableArray alloc] init];
     
@@ -86,8 +86,8 @@
 
 
 #pragma mark - UIAlertController
-+ (void)__showControllerWithTitle:(NSString *)title
-                          message:(NSString *)message
++ (void)__showControllerWithTitle:(nullable NSString *)title
+                          message:(nullable NSString *)message
                    preferredStyle:(UIAlertControllerStyle)preferredStyle
                      alertActions:(NSArray<UIAlertAction *> *)alertActions
                  inViewController:(UIViewController *)viewController

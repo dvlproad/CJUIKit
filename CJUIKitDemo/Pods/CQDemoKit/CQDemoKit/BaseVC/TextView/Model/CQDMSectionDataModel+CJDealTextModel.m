@@ -11,7 +11,7 @@
 
 @implementation CQDMSectionDataModel (CJDealTextModel)
 
-/**
+/*
  *  初始化生成sectionDataModel
  *
  *  @param textArray        要处理的text数组
@@ -22,7 +22,7 @@
  *  @return sectionDataModel
  */
 + (CQDMSectionDataModel *)sectionDataModelWithTextArray:(NSArray<NSString *> *)textArray
-                                      samePlaceholder:(NSString *)placeholder
+                                      samePlaceholder:(nullable NSString *)placeholder
                                       sameActionTitle:(NSString *)sameActionTitle
                                       sameActionBlock:(NSString*(^)(NSString *oldString))sameActionBlock
 {

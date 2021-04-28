@@ -138,7 +138,7 @@
     }];
     return bugStateButton;
 }
-/**
+/*
  *  "提交"/"修改"状态选择按钮(if you want to show editTitle, you should make selected == YES)
  *
  *  @param submitTitle              submitTitle(current selected should be YES)

@@ -11,6 +11,8 @@
 #import "CQDMSectionDataModel.h"
 #import "CQDMSectionDataModel+CJDealTextModel.h"
 
+NS_ASSUME_NONNULL_BEGIN
+
 @interface CJUIKitBaseBigTextViewController : CJUIKitBaseViewController {
     
 }
@@ -20,3 +22,5 @@
 @property (nonatomic, assign) CGFloat fixTextViewHeight;  /**< 固定textView的视图高度（该值大于44才生效），默认固定为44 */
 
 @end
+
+NS_ASSUME_NONNULL_END
