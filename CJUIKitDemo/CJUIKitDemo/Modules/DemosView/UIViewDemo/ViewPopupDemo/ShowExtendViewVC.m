@@ -36,6 +36,7 @@
         CGPoint pointLocation = CGPointMake(pointBtnConvert.x, pointBtnConvert.y + CGRectGetHeight(sender.frame));
         CGSize size_popupView = CGSizeMake(CGRectGetWidth(sender.frame), h_popupView);
         
+        __weak typeof(sender)weakSender = sender;
         [sender cj_showExtendView:popupView inView:popupSuperview atLocation:pointLocation withSize:size_popupView showBeforeConfigBlock:nil showComplete:^{
             NSLog(@"显示完成");
             
@@ -43,7 +44,7 @@
             NSLog(@"点击背景完成");
             sender.selected = !sender.selected;
             
-            [popupView cj_hidePopupView];
+            [weakSender cj_hideExtendViewAnimated:YES];
         }];
         
     }else{
@@ -68,7 +69,7 @@
         CGPoint pointLocation = CGPointMake(pointBtnConvert.x, pointBtnConvert.y + CGRectGetHeight(sender.frame));
         CGSize size_popupView = CGSizeMake(CGRectGetWidth(sender.frame), h_popupView);
         
-        UIColor *blankBGColor = [UIColor colorWithRed:.16 green:.17 blue:.21 alpha:.6];
+        __weak typeof(sender)weakSender = sender;
         [sender cj_showExtendView:popupView inView:popupSuperview atLocation:pointLocation withSize:size_popupView showBeforeConfigBlock:nil showComplete:^{
             NSLog(@"显示完成");
             
@@ -76,7 +77,7 @@
             NSLog(@"点击背景完成");
             sender.selected = !sender.selected;
             
-            [popupView cj_hidePopupView];
+            [weakSender cj_hideExtendViewAnimated:YES];
         }];
         
     }else{

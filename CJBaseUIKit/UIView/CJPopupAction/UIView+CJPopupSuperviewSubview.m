@@ -7,7 +7,6 @@
 //
 
 #import "UIView+CJPopupSuperviewSubview.h"
-static NSString *cjTapViewKey = @"cjTapView";
 
 @interface UIView ()
 
@@ -17,15 +16,6 @@ static NSString *cjTapViewKey = @"cjTapView";
 @implementation UIView (CJPopupInView)
 
 #pragma mark - runtime
-////cjTapView
-//- (UIView *)cjTapView {
-//    return objc_getAssociatedObject(self, &cjTapViewKey);
-//}
-//
-//- (void)setCjTapView:(UIView *)cjTapView {
-//    return objc_setAssociatedObject(self, &cjTapViewKey, cjTapView, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-//}
-
 #pragma mark - 弹出到popupSuperview的视图
 // cjPopupSuperviewSubview
 - (NSMutableArray<UIView *> *)cjPopupSuperviewSubview {

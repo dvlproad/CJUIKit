@@ -7,13 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "UIView+CJPopupInView.h"
-
 
 typedef NS_ENUM(NSUInteger, CJPopupViewPosition) {
     CJPopupViewPositionBelow = 0,
     CJPopupViewPositionAbove,
 };
+
+NS_ASSUME_NONNULL_BEGIN
 
 @interface UIView (CJShowExtendView)
 
@@ -66,3 +66,5 @@ typedef NS_ENUM(NSUInteger, CJPopupViewPosition) {
 - (void)cj_hideExtendViewAnimated:(BOOL)animated;
 
 @end
+
+NS_ASSUME_NONNULL_END

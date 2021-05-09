@@ -15,7 +15,6 @@ NS_ASSUME_NONNULL_BEGIN
 @interface UIView (CJPopupSuperviewSubview) {
     
 }
-//@property (nonatomic, strong) UIView *cjTapView;    /**< 空白区域（指radioButtons组合下的点击区域（不包括radioButtons区域），用来点击之后隐藏列表） */
 @property (nonatomic, strong) NSMutableArray<UIView *> *cjPopupSuperviewSubview;    /**< 弹出到popupSuperview的所有子视图 */
 
 #pragma mark - Event:window上的弹窗的显示与隐藏
