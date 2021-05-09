@@ -1297,21 +1297,8 @@
 		1562F24323F5DBF40009FCEA /* CJPopupAction */ = {
 			isa = PBXGroup;
 			children = (
-				1562F24923F5DBF40009FCEA /* UIView+CJPopupInView.h */,
-				1562F24623F5DBF40009FCEA /* UIView+CJPopupInView.m */,
-				787851D1261F4A5900244867 /* PopupViewAddCJHelper.h */,
-				787851D2261F4A5900244867 /* PopupViewAddCJHelper.m */,
-				787851D7261F58DE00244867 /* PopupViewFrameCJHelper.h */,
-				787851D8261F58DE00244867 /* PopupViewFrameCJHelper.m */,
-				789C9B4C260B795000BC0FB4 /* CJBasePopupInfo.h */,
-				789C9B4D260B795000BC0FB4 /* CJBasePopupInfo.m */,
-				972A105A25EDF04F002C52CB /* UIView+CJPopupAnimation.h */,
-				972A105B25EDF04F002C52CB /* UIView+CJPopupAnimation.m */,
-				78CC6D192648311E003E5CCD /* UIView+CJPopupFrameAnimation.h */,
-				78CC6D1A2648311E003E5CCD /* UIView+CJPopupFrameAnimation.m */,
-				78CC6D1526482D01003E5CCD /* UIViewAnimateEnum.h */,
-				7851F6A925B5F25000C63A53 /* UIView+CJPopupSuperviewSubview.h */,
-				7851F6AA25B5F25000C63A53 /* UIView+CJPopupSuperviewSubview.m */,
+				78CC6D2D264846D4003E5CCD /* PopupFrame */,
+				78CC6D38264847E2003E5CCD /* AnimateFrame */,
 				1562F24523F5DBF40009FCEA /* UIView+CJRounderCorner.h */,
 				1562F24823F5DBF40009FCEA /* UIView+CJRounderCorner.m */,
 				1562F24423F5DBF40009FCEA /* UIView+CJShowExtendView.h */,
@@ -2283,6 +2270,59 @@
 				78C81487216E11AF00A6B190 /* Home1.m */,
 			);
 			path = ChildViewController;
+			sourceTree = "<group>";
+		};
+		78CC6D25264840FF003E5CCD /* 1addSubviewForPopupSuperview */ = {
+			isa = PBXGroup;
+			children = (
+				787851D1261F4A5900244867 /* PopupViewAddCJHelper.h */,
+				787851D2261F4A5900244867 /* PopupViewAddCJHelper.m */,
+				789C9B4C260B795000BC0FB4 /* CJBasePopupInfo.h */,
+				789C9B4D260B795000BC0FB4 /* CJBasePopupInfo.m */,
+			);
+			path = 1addSubviewForPopupSuperview;
+			sourceTree = "<group>";
+		};
+		78CC6D2926484233003E5CCD /* 2getPopupViewShowFrame */ = {
+			isa = PBXGroup;
+			children = (
+				787851D7261F58DE00244867 /* PopupViewFrameCJHelper.h */,
+				787851D8261F58DE00244867 /* PopupViewFrameCJHelper.m */,
+			);
+			path = 2getPopupViewShowFrame;
+			sourceTree = "<group>";
+		};
+		78CC6D2D264846D4003E5CCD /* PopupFrame */ = {
+			isa = PBXGroup;
+			children = (
+				1562F24923F5DBF40009FCEA /* UIView+CJPopupInView.h */,
+				1562F24623F5DBF40009FCEA /* UIView+CJPopupInView.m */,
+				78CC6D25264840FF003E5CCD /* 1addSubviewForPopupSuperview */,
+				78CC6D2926484233003E5CCD /* 2getPopupViewShowFrame */,
+				78CC6D3426484785003E5CCD /* 3animateToShowFrame */,
+			);
+			path = PopupFrame;
+			sourceTree = "<group>";
+		};
+		78CC6D3426484785003E5CCD /* 3animateToShowFrame */ = {
+			isa = PBXGroup;
+			children = (
+				78CC6D192648311E003E5CCD /* UIView+CJPopupFrameAnimation.h */,
+				78CC6D1A2648311E003E5CCD /* UIView+CJPopupFrameAnimation.m */,
+				7851F6A925B5F25000C63A53 /* UIView+CJPopupSuperviewSubview.h */,
+				7851F6AA25B5F25000C63A53 /* UIView+CJPopupSuperviewSubview.m */,
+			);
+			path = 3animateToShowFrame;
+			sourceTree = "<group>";
+		};
+		78CC6D38264847E2003E5CCD /* AnimateFrame */ = {
+			isa = PBXGroup;
+			children = (
+				972A105A25EDF04F002C52CB /* UIView+CJPopupAnimation.h */,
+				972A105B25EDF04F002C52CB /* UIView+CJPopupAnimation.m */,
+				78CC6D1526482D01003E5CCD /* UIViewAnimateEnum.h */,
+			);
+			path = AnimateFrame;
 			sourceTree = "<group>";
 		};
 		78E1895A217782FF00B8781A /* UIViewDemo */ = {

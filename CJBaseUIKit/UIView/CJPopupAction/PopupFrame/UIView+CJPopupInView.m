@@ -8,7 +8,6 @@
 
 #import "UIView+CJPopupInView.h"
 #import <objc/runtime.h>
-#import "CJBasePopupInfo.h"
 #import "PopupViewAddCJHelper.h"
 #import "PopupViewFrameCJHelper.h"
 
@@ -112,7 +111,7 @@ static NSString *cjPopupViewShowingKey = @"cjPopupViewShowing";
                  animationType:(CJAnimationType)animationType
                       withSize:(CGSize)popupViewSize
                   centerOffset:(CGPoint)centerOffset
-          showBeforeConfigBlock:(void(^ _Nullable)(UIView *bBlankView, UIView *bRealPopupView))showBeforeConfigBlock
+         showBeforeConfigBlock:(void(^ _Nullable)(UIView *bBlankView, UIView *bRealPopupView))showBeforeConfigBlock
                   showComplete:(void(^ _Nullable)(void))showPopupViewCompleteBlock
               tapBlankComplete:(void(^ _Nullable)(void))tapBlankViewCompleteBlock
 {
@@ -160,7 +159,7 @@ static NSString *cjPopupViewShowingKey = @"cjPopupViewShowing";
                  animationType:(CJAnimationType)animationType
                     withHeight:(CGFloat)popupViewHeight
                     edgeInsets:(UIEdgeInsets)edgeInsets
-          showBeforeConfigBlock:(void(^ _Nullable)(UIView *bBlankView, UIView *bRealPopupView))showBeforeConfigBlock
+         showBeforeConfigBlock:(void(^ _Nullable)(UIView *bBlankView, UIView *bRealPopupView))showBeforeConfigBlock
                   showComplete:(void(^ _Nullable)(void))showPopupViewCompleteBlock
               tapBlankComplete:(void(^ _Nullable)(void))tapBlankViewCompleteBlock
 {

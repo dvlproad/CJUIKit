@@ -11,7 +11,6 @@
 
 @implementation UIView (CJPopupAnimation)
 
-
 #pragma mark - Runtime: Assign
 - (CJDirection)cjShowFromDirection {
     return [objc_getAssociatedObject(self, @selector(cjShowFromDirection)) integerValue];
@@ -92,5 +91,6 @@
     
     self.transform = transform;
 }
+
 
 @end

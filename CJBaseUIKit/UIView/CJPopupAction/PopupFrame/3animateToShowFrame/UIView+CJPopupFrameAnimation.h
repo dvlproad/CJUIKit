@@ -7,7 +7,6 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "UIViewAnimateEnum.h"
 
 typedef NS_ENUM(NSUInteger, CJAnimationType) {
     //    MJPopupViewAnimationFade = 0,

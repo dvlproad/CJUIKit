@@ -61,7 +61,7 @@ NS_ASSUME_NONNULL_BEGIN
                  animationType:(CJAnimationType)animationType
                       withSize:(CGSize)popupViewSize
                   centerOffset:(CGPoint)centerOffset
-          showBeforeConfigBlock:(void(^ _Nullable)(UIView *bBlankView, UIView *bRealPopupView))showBeforeConfigBlock
+         showBeforeConfigBlock:(void(^ _Nullable)(UIView *bBlankView, UIView *bRealPopupView))showBeforeConfigBlock
                   showComplete:(void(^ _Nullable)(void))showPopupViewCompleteBlock
               tapBlankComplete:(void(^ _Nullable)(void))tapBlankViewCompleteBlock;
 
@@ -80,7 +80,7 @@ NS_ASSUME_NONNULL_BEGIN
                  animationType:(CJAnimationType)animationType
                     withHeight:(CGFloat)popupViewHeight
                     edgeInsets:(UIEdgeInsets)edgeInsets
-          showBeforeConfigBlock:(void(^ _Nullable)(UIView *bBlankView, UIView *bRealPopupView))showBeforeConfigBlock
+         showBeforeConfigBlock:(void(^ _Nullable)(UIView *bBlankView, UIView *bRealPopupView))showBeforeConfigBlock
                   showComplete:(void(^ _Nullable)(void))showPopupViewCompleteBlock
               tapBlankComplete:(void(^ _Nullable)(void))tapBlankViewCompleteBlock;
 
