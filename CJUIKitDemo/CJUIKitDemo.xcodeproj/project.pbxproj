@@ -260,6 +260,7 @@
 		78C8148D216E11AF00A6B190 /* AChildViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78C81485216E11AF00A6B190 /* AChildViewController.m */; };
 		78C8148E216E11AF00A6B190 /* Home1.m in Sources */ = {isa = PBXBuildFile; fileRef = 78C81487216E11AF00A6B190 /* Home1.m */; };
 		78C8148F216E11AF00A6B190 /* EChildViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78C81488216E11AF00A6B190 /* EChildViewController.m */; };
+		78CC6D1B2648311E003E5CCD /* UIView+CJPopupFrameAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 78CC6D1A2648311E003E5CCD /* UIView+CJPopupFrameAnimation.m */; };
 		78E18952217778D900B8781A /* NavigationBarHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78E18951217778D900B8781A /* NavigationBarHomeViewController.m */; };
 		78E1895D2177835700B8781A /* ViewHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78E1895B2177835600B8781A /* ViewHomeViewController.m */; };
 		78E1899E2177874B00B8781A /* SliderHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78E1899C2177874B00B8781A /* SliderHomeViewController.m */; };
@@ -858,6 +859,8 @@
 		78C81487216E11AF00A6B190 /* Home1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Home1.m; sourceTree = "<group>"; };
 		78C81488216E11AF00A6B190 /* EChildViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EChildViewController.m; sourceTree = "<group>"; };
 		78CC6D1526482D01003E5CCD /* UIViewAnimateEnum.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIViewAnimateEnum.h; sourceTree = "<group>"; };
+		78CC6D192648311E003E5CCD /* UIView+CJPopupFrameAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+CJPopupFrameAnimation.h"; sourceTree = "<group>"; };
+		78CC6D1A2648311E003E5CCD /* UIView+CJPopupFrameAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+CJPopupFrameAnimation.m"; sourceTree = "<group>"; };
 		78E18950217778D900B8781A /* NavigationBarHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NavigationBarHomeViewController.h; sourceTree = "<group>"; };
 		78E18951217778D900B8781A /* NavigationBarHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NavigationBarHomeViewController.m; sourceTree = "<group>"; };
 		78E1895B2177835600B8781A /* ViewHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewHomeViewController.m; sourceTree = "<group>"; };
@@ -1304,6 +1307,8 @@
 				789C9B4D260B795000BC0FB4 /* CJBasePopupInfo.m */,
 				972A105A25EDF04F002C52CB /* UIView+CJPopupAnimation.h */,
 				972A105B25EDF04F002C52CB /* UIView+CJPopupAnimation.m */,
+				78CC6D192648311E003E5CCD /* UIView+CJPopupFrameAnimation.h */,
+				78CC6D1A2648311E003E5CCD /* UIView+CJPopupFrameAnimation.m */,
 				78CC6D1526482D01003E5CCD /* UIViewAnimateEnum.h */,
 				7851F6A925B5F25000C63A53 /* UIView+CJPopupSuperviewSubview.h */,
 				7851F6AA25B5F25000C63A53 /* UIView+CJPopupSuperviewSubview.m */,
@@ -3397,6 +3402,7 @@
 				1562F2D923F5DBF40009FCEA /* UIViewController+CJCustomBackBarButtonItem.m in Sources */,
 				80FF909A1FC5649F00E437CF /* FloatingWindowViewController.m in Sources */,
 				78F55FFA248818E000B7B27A /* AttributedStringViewController2.m in Sources */,
+				78CC6D1B2648311E003E5CCD /* UIView+CJPopupFrameAnimation.m in Sources */,
 				7857ABBC2254AA5000B1569C /* CJDemoDateTextField.m in Sources */,
 				1562F2E423F5DBF40009FCEA /* CJSliderControl.m in Sources */,
 				7877601F2594F54200B0D33C /* CQCommentsPopView.m in Sources */,

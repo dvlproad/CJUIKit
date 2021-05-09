@@ -8,7 +8,7 @@
 //  本视图弹出到指定视图(如window)中的方法
 
 #import <UIKit/UIKit.h>
-#import "UIView+CJPopupAnimation.h"
+#import "UIView+CJPopupFrameAnimation.h"
 
 typedef void(^CJTapBlankViewCompleteBlock)(void);
 
