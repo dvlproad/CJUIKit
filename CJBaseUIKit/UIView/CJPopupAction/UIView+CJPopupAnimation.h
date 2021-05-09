@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "UIViewAnimateEnum.h"
 
 typedef NS_ENUM(NSUInteger, CJAnimationType) {
     //    MJPopupViewAnimationFade = 0,
@@ -23,20 +24,12 @@ typedef NS_ENUM(NSUInteger, CJAnimationType) {
     CJAnimationTypeCATransform3D
 };
 
-
-/// 从哪个方向弹出
-typedef NS_ENUM(NSUInteger, CJDirection) {
-    CJDirectionTop = 0,         /**< 从顶部弹出 */
-    CJDirectionLeft,
-    CJDirectionBottom,
-    CJDirectionRight
-};
-
 NS_ASSUME_NONNULL_BEGIN
 
 @interface UIView (CJPopupAnimation) {
     
 }
+@property (nonatomic, assign) CJDirection cjShowFromDirection;  /**< 如果是显示的话，是从哪个方向进来的(关闭的时候回到对应的方向) */
 
 /*
  *  弹出视图
@@ -58,15 +51,17 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)cj_hidePopupViewWithAnimationType:(CJAnimationType)animationType;
 
 /*
- *  添加从哪个方向进来的动画
+ *  添加从哪个方向进来的动画(变化过程透明度会从0到1)
  *
- *  @param direction        从哪个方向进来的动画
- *  @param animateOffset    移动的距离（正数）
- *  @param completion       动画结束的回调
+ *  @param forShow              显示还是隐藏
+ *  @param showFromDirection    如果是显示的话，是从哪个方向进来的(关闭的时候回到对应的方向)
+ *  @param animateOffset        移动的距离（正数）
+ *  @param completion           动画结束的回调
  */
-- (void)cj_animateFromDirection:(CJDirection)direction
-                  animateOffset:(CGFloat)animateOffset
-                     completion:(void (^ __nullable)(BOOL finished))completion;
+- (void)cj_animateForShow:(BOOL)forShow
+        withShowDirection:(CJDirection)showFromDirection
+            animateOffset:(CGFloat)animateOffset
+               completion:(void (^ __nullable)(BOOL finished))completion;
 
 @end
 

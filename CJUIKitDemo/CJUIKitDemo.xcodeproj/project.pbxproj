@@ -857,6 +857,7 @@
 		78C81486216E11AF00A6B190 /* BChildViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BChildViewController.h; sourceTree = "<group>"; };
 		78C81487216E11AF00A6B190 /* Home1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Home1.m; sourceTree = "<group>"; };
 		78C81488216E11AF00A6B190 /* EChildViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EChildViewController.m; sourceTree = "<group>"; };
+		78CC6D1526482D01003E5CCD /* UIViewAnimateEnum.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIViewAnimateEnum.h; sourceTree = "<group>"; };
 		78E18950217778D900B8781A /* NavigationBarHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NavigationBarHomeViewController.h; sourceTree = "<group>"; };
 		78E18951217778D900B8781A /* NavigationBarHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NavigationBarHomeViewController.m; sourceTree = "<group>"; };
 		78E1895B2177835600B8781A /* ViewHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewHomeViewController.m; sourceTree = "<group>"; };
@@ -1303,6 +1304,7 @@
 				789C9B4D260B795000BC0FB4 /* CJBasePopupInfo.m */,
 				972A105A25EDF04F002C52CB /* UIView+CJPopupAnimation.h */,
 				972A105B25EDF04F002C52CB /* UIView+CJPopupAnimation.m */,
+				78CC6D1526482D01003E5CCD /* UIViewAnimateEnum.h */,
 				7851F6A925B5F25000C63A53 /* UIView+CJPopupSuperviewSubview.h */,
 				7851F6AA25B5F25000C63A53 /* UIView+CJPopupSuperviewSubview.m */,
 				1562F24523F5DBF40009FCEA /* UIView+CJRounderCorner.h */,
