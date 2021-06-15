@@ -163,9 +163,9 @@
     self.cjPan_lastDrapDistance = 0.0;
     
     //添加拖拽手势
-    UIPanGestureRecognizer *panGestureRecognizer = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(pan:)];
+    UIPanGestureRecognizer *panGestureRecognizer = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(cj_panAction:)];
     [self addGestureRecognizer:panGestureRecognizer];
-    panGestureRecognizer.delegate = self;
+    panGestureRecognizer.delegate = self; // 只有竖直拖动的时候才执行手势事件（gestureRecognizerShouldBegin）
     self.cjPan_PanGestureRecognizer = panGestureRecognizer;
 }
 
@@ -196,8 +196,16 @@
 //2.
 - (BOOL)gestureRecognizerShouldBegin:(UIGestureRecognizer *)gestureRecognizer {
     if(gestureRecognizer == self.cjPan_PanGestureRecognizer){
-        //如果是自己加的拖拽手势
+//        如果是自己加的拖拽手势
         NSLog(@"gestureRecognizerShouldBegin");
+        CGPoint velocity = [self.cjPan_PanGestureRecognizer velocityInView:self];
+        CGFloat verticalMove = fabs(velocity.y);
+        CGFloat horizontalMove = fabs(velocity.x);
+        if (verticalMove > horizontalMove) { // 只有竖直拖动的时候才执行手势事件
+            return YES;
+        } else {
+            return NO;
+        }
     }
     return YES;
 }
@@ -217,7 +225,7 @@
 }
 
 //拖拽手势
-- (void)pan:(UIPanGestureRecognizer *)panGestureRecognizer {
+- (void)cj_panAction:(UIPanGestureRecognizer *)panGestureRecognizer {
     if(panGestureRecognizer.state == UIGestureRecognizerStateBegan) {
         self.cjPanStartFrame = self.frame;
         NSLog(@"cjPanStartFrame=%@", NSStringFromCGRect(self.cjPanStartFrame));
@@ -244,6 +252,12 @@
             }
         }
     } else {
+//        CGFloat verticalTranslation = fabsf(transP.y);
+//        CGFloat horizontalTranslation = fabsf(transP.x);
+//        if (verticalTranslation < horizontalTranslation) { // 只有竖直拖动的时候才执行手势事件
+//            return;
+//        }
+        
         if(transP.y > 0) {
             //向下拖
             !self.cjPaningOffsetBlock ?: self.cjPaningOffsetBlock(YES, transP);
