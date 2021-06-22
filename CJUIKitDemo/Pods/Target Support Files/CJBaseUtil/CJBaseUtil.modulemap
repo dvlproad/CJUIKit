@@ -1,0 +1,6 @@
+framework module CJBaseUtil {
+  umbrella header "CJBaseUtil-umbrella.h"
+
+  export *
+  module * { export * }
+}

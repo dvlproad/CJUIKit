@@ -1,0 +1,6 @@
+framework module CJPicker {
+  umbrella header "CJPicker-umbrella.h"
+
+  export *
+  module * { export * }
+}

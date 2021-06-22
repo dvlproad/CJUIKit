@@ -9,7 +9,7 @@
 #import "KeyboardAutoMoveUpViewController.h"
 #import <IQKeyboardManager/IQKeyboardManager.h>
 #import <CQDemoKit/CJUIKitToastUtil.h>
-#import "UIView+CJPopupInView.h"
+//#import "UIView+CJPopupInView.h"
 #import "UIView+CJAutoMoveUp.h"
 
 #import "CQUpdateContentPopupView.h"
@@ -76,18 +76,18 @@
                 [popupView setupTitle:NSLocalizedString(@"编辑昵称", nil) placeholder:@"请输入" updateCompleteBlock:^(NSString * _Nonnull bText) {
                     NSString *message = [NSString stringWithFormat:@"新内容为%@", bText];
                     [CJUIKitToastUtil showMessage:message];
-                    [popupView cj_hidePopupView];
+//                    [popupView cj_hidePopupView];
                 }];
                 [popupView cj_registerKeyboardNotificationWithAutoMoveUpSpacing:0 hasSpacing:NO];
                 
                 CGFloat popupViewHeight = CGRectGetHeight(popupView.frame);
-                [popupView cj_popupInBottomInView:nil animationType:CJAnimationTypeNormal withHeight:popupViewHeight edgeInsets:UIEdgeInsetsZero showBeforeConfigBlock:nil showComplete:^{
-                    NSLog(@"显示完成");
-                    
-                } tapBlankComplete:^{
-                    NSLog(@"点击背景完成");
-                    [popupView cj_hidePopupView];
-                }];
+//                [popupView cj_popupInBottomInView:nil animationType:CJAnimationTypeNormal withHeight:popupViewHeight edgeInsets:UIEdgeInsetsZero showBeforeConfigBlock:nil showComplete:^{
+//                    NSLog(@"显示完成");
+//                    
+//                } tapBlankComplete:^{
+//                    NSLog(@"点击背景完成");
+//                    [popupView cj_hidePopupView];
+//                }];
             };
             [sectionDataModel.values addObject:autoLayoutModule];
         }

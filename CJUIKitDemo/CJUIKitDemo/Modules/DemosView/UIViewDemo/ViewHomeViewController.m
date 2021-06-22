@@ -12,12 +12,7 @@
 #import "DragViewController.h"
 
 //ViewPopup
-#import "PopupInWindowVC.h"
 #import "KeyboardAutoMoveUpViewController.h"
-
-#import "PopupInViewVC.h"
-#import "ShowExtendViewVC.h"
-#import "ShowDropDownViewController.h"
 
 //ViewAnimate
 #import "ViewAnimateViewController.h"
@@ -26,8 +21,6 @@
 #import "ViewPandownViewController1.h"
 #import "ViewPandownViewController2.h"
 
-#import "TSHideWindowView.h"
-#import "UIView+CJPopupInView.h"
 
 @interface ViewHomeViewController ()
 
@@ -103,58 +96,6 @@
             [sectionDataModel.values addObject:animateViewModule];
         }
         
-        [sectionDataModels addObject:sectionDataModel];
-    }
-    
-    //Popup
-    {
-        CQDMSectionDataModel *sectionDataModel = [[CQDMSectionDataModel alloc] init];
-        sectionDataModel.theme = @"UIView+CJPopupInView";
-        {
-            CQDMModuleModel *popupInViewModule = [[CQDMModuleModel alloc] init];
-            popupInViewModule.title = @"PopupInView (弹出到任意View)";
-            popupInViewModule.classEntry = [PopupInViewVC class];
-            popupInViewModule.isCreateByXib = YES;
-            [sectionDataModel.values addObject:popupInViewModule];
-        }
-        {
-            CQDMModuleModel *popupInWindowModule = [[CQDMModuleModel alloc] init];
-            popupInWindowModule.title = @"PopupInWindow (弹出到Window)";
-            popupInWindowModule.classEntry = [PopupInWindowVC class];
-
-            [sectionDataModel.values addObject:popupInWindowModule];
-        }
-        {
-            CQDMModuleModel *popupInWindowModule = [[CQDMModuleModel alloc] init];
-            popupInWindowModule.title = @"弹出各种弹窗，一次性隐藏";
-            popupInWindowModule.content = @"先一次性显示10个，过2秒后全隐藏，再过2秒全重复显示出来";
-            popupInWindowModule.actionBlock = ^{
-                [TSHideWindowView popWindows:10];
-                
-                dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-                    [TSHideWindowView hideWindowPopupViews];
-                    
-                    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-                        [TSHideWindowView reshowWindowPopupViews];
-                    });
-                });
-            };
-            [sectionDataModel.values addObject:popupInWindowModule];
-        }
-        {
-            CQDMModuleModel *showExtendViewModule = [[CQDMModuleModel alloc] init];
-            showExtendViewModule.title = @"ShowExtendView (弹出任意视图)";
-            showExtendViewModule.classEntry = [ShowExtendViewVC class];
-            showExtendViewModule.isCreateByXib = YES;
-            [sectionDataModel.values addObject:showExtendViewModule];
-        }
-        {
-            CQDMModuleModel *showDropDownViewModule = [[CQDMModuleModel alloc] init];
-            showDropDownViewModule.title = @"ShowDropDownView (弹出下拉视图)";
-            showDropDownViewModule.classEntry = [ShowDropDownViewController class];
-            showDropDownViewModule.isCreateByXib = YES;
-            [sectionDataModel.values addObject:showDropDownViewModule];
-        }
         [sectionDataModels addObject:sectionDataModel];
     }
     

@@ -7,7 +7,6 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "UITextField+CJForbidKeyboard.h"
 
 /// 文本框菜单禁止的类型
 typedef NS_ENUM(NSUInteger, CJTextFieldForbidMenuType) {

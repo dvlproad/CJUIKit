@@ -9,11 +9,11 @@
 #import "CJDemoDateLabel.h"
 #import "CJDemoDatePickerView.h"
 
-#ifdef TEST_CJBASEUIKIT_POD
-#import "UIView+CJPopupInView.h"
-#else
-#import <CJBaseUIKit/UIView+CJPopupInView.h>
-#endif
+//#ifdef TEST_CJBASEUIKIT_POD
+//#import "UIView+CJPopupInView.h"
+//#else
+//#import <CJBaseUIKit/UIView+CJPopupInView.h>
+//#endif
 
 @interface CJDemoDateLabel () {
     
@@ -74,9 +74,9 @@
 - (void)__handleSingleTap:(UIGestureRecognizer *)gr {
     CGFloat popupViewHeight = CGRectGetHeight(self.datePickerView.frame);
     __weak typeof(self)weakSelf = self;
-    [self.datePickerView cj_popupInBottomInView:nil animationType:CJAnimationTypeNormal withHeight:popupViewHeight edgeInsets:UIEdgeInsetsZero showBeforeConfigBlock:nil showComplete:nil tapBlankComplete:^() {
-        [weakSelf.datePickerView cj_hidePopupView];
-    }];
+//    [self.datePickerView cj_popupInBottomInView:nil animationType:CJAnimationTypeNormal withHeight:popupViewHeight edgeInsets:UIEdgeInsetsZero showBeforeConfigBlock:nil showComplete:nil tapBlankComplete:^() {
+//        [weakSelf.datePickerView cj_hidePopupView];
+//    }];
 }
 
 - (void)__updateCurrentDate:(NSDate *)date isFromDatePicker:(BOOL)isFromDatePicker {

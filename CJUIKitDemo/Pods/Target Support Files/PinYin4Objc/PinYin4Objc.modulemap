@@ -1,0 +1,6 @@
+framework module PinYin4Objc {
+  umbrella header "PinYin4Objc-umbrella.h"
+
+  export *
+  module * { export * }
+}

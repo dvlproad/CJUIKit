@@ -8,7 +8,7 @@
 
 #import "LoginChangeEnvironmentViewController.h"
 #import <CJPopupView/CJPopoverListView.h>
-#import "UIView+CJShowExtendView.h"
+//#import "UIView+CJShowExtendView.h"
 #import "DemoChangeEnvironmentViewModel.h"
 #import "TSButtonFactory.h"
 
@@ -127,11 +127,11 @@
         [weakSelf updateCurrentEnvironment:currentEnvironment];
     };
     
-    [button cj_showExtendView:pop inView:self.view locationAccordingView:button relativePosition:CJPopupViewPositionBelow showBeforeConfigBlock:nil showComplete:^{
-        
-    } tapBlankComplete:^{
-        [pop dismissPopoverView:YES];
-    }];
+//    [button cj_showExtendView:pop inView:self.view locationAccordingView:button relativePosition:CJPopupViewPositionBelow showBeforeConfigBlock:nil showComplete:^{
+//        
+//    } tapBlankComplete:^{
+//        [pop dismissPopoverView:YES];
+//    }];
 }
 
 - (void)didReceiveMemoryWarning {

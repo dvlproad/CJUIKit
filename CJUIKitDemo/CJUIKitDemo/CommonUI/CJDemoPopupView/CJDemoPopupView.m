@@ -7,7 +7,7 @@
 //
 
 #import "CJDemoPopupView.h"
-#import "UIView+CJPopupInView.h"
+//#import "UIView+CJPopupInView.h"
 
 @implementation CJDemoPopupView
 
@@ -37,9 +37,9 @@
 //                            borderColor:[UIColor purpleColor]
 //     ];
     
-    [self cj_popupInBottomInView:nil animationType:CJAnimationTypeNormal withHeight:popupViewHeight edgeInsets:edgeInsets showBeforeConfigBlock:nil showComplete:nil tapBlankComplete:^{
-        [self hidePopupView];
-    }];
+//    [self cj_popupInBottomInView:nil animationType:CJAnimationTypeNormal withHeight:popupViewHeight edgeInsets:edgeInsets showBeforeConfigBlock:nil showComplete:nil tapBlankComplete:^{
+//        [self hidePopupView];
+//    }];
 }
 
 /**
@@ -53,16 +53,16 @@
     CGFloat screenWidth = [UIScreen mainScreen].bounds.size.width;
     CGSize popupViewSize = CGSizeMake(screenWidth-15, popupViewHeight);
     
-    [self cj_popupInCenterInView:nil animationType:CJAnimationTypeNormal withSize:popupViewSize centerOffset:CGPointZero showBeforeConfigBlock:nil showComplete:nil tapBlankComplete:^{
-        [self hidePopupView];
-    }];
+//    [self cj_popupInCenterInView:nil animationType:CJAnimationTypeNormal withSize:popupViewSize centerOffset:CGPointZero showBeforeConfigBlock:nil showComplete:nil tapBlankComplete:^{
+//        [self hidePopupView];
+//    }];
 }
 
 /**
  *  隐藏弹出视图
  */
 - (void)hidePopupView {
-    [self cj_hidePopupView];
+//    [self cj_hidePopupView];
 }
 
 

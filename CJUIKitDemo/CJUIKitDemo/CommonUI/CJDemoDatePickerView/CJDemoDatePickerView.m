@@ -7,11 +7,11 @@
 //
 
 #import "CJDemoDatePickerView.h"
-#ifdef TEST_CJBASEUIKIT_POD
-#import "UIView+CJPopupInView.h"
-#else
-#import <CJBaseUIKit/UIView+CJPopupInView.h>
-#endif
+//#ifdef TEST_CJBASEUIKIT_POD
+//#import "UIView+CJPopupInView.h"
+//#else
+//#import <CJBaseUIKit/UIView+CJPopupInView.h>
+//#endif
 
 @interface CJDemoDatePickerView () {
     
@@ -76,9 +76,9 @@
 
     CGFloat popupViewHeight = CGRectGetHeight(self.frame);
     __weak typeof(self)weakSelf = self;
-    [self cj_popupInBottomInView:nil animationType:CJAnimationTypeNormal withHeight:popupViewHeight edgeInsets:UIEdgeInsetsZero showBeforeConfigBlock:nil showComplete:nil tapBlankComplete:^() {
-        [weakSelf cj_hidePopupView];
-    }];
+//    [self cj_popupInBottomInView:nil animationType:CJAnimationTypeNormal withHeight:popupViewHeight edgeInsets:UIEdgeInsetsZero showBeforeConfigBlock:nil showComplete:nil tapBlankComplete:^() {
+//        [weakSelf cj_hidePopupView];
+//    }];
 }
 
 #pragma mark - SetupView & Lazy
@@ -232,13 +232,13 @@
 }
 
 - (void)__cancel {
-    [self cj_hidePopupView];
+//    [self cj_hidePopupView];
     
     !self.cancelHandle ?: self.cancelHandle();
 }
 
 - (void)__confirm {
-    [self cj_hidePopupView];
+//    [self cj_hidePopupView];
     
     NSDate *seletedDate = self.datePicker.date;
     

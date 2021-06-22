@@ -1,0 +1,6 @@
+framework module CJBaseTest {
+  umbrella header "CJBaseTest-UITest-umbrella.h"
+
+  export *
+  module * { export * }
+}

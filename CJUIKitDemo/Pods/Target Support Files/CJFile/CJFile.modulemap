@@ -1,0 +1,6 @@
+framework module CJFile {
+  umbrella header "CJFile-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -1,0 +1,6 @@
+framework module CJFoundation {
+  umbrella header "CJFoundation-umbrella.h"
+
+  export *
+  module * { export * }
+}

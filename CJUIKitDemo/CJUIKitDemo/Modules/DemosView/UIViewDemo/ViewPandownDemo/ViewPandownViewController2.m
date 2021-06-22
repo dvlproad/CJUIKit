@@ -8,7 +8,7 @@
 
 #import "ViewPandownViewController2.h"
 #import <CQDemoKit/CJUIKitToastUtil.h>
-#import "UIView+CJPopupInView.h"
+//#import <CQPopupContainerAnimation/UIView+CJPopupFrameAnimation.h>
 
 #import "CQUpdateContentPopupView.h"
 
@@ -85,18 +85,37 @@
         make.bottom.mas_equalTo(panContainer);
     }];
     
-    [panContainer cj_addPanWithPanCompleteDismissBlock:^{
-        [panContainer cj_hidePopupView];
-    }];
+    
+    UIView *popupSuperview = [[UIApplication sharedApplication] keyWindow];
+    
     
     CGFloat popupViewHeight = 400;
-    [panContainer cj_popupInBottomInView:nil animationType:CJAnimationTypeNormal withHeight:popupViewHeight edgeInsets:UIEdgeInsetsZero showBeforeConfigBlock:nil showComplete:^{
-        NSLog(@"显示完成");
-        
-    } tapBlankComplete:^{
-        NSLog(@"点击背景完成");
-        [panContainer cj_hidePopupView];
+    
+    CGFloat popupViewWidth = CGRectGetWidth(popupSuperview.frame) - 0 - 0;
+    CGFloat popupViewX = 0;
+    CGFloat popupViewShowY = CGRectGetHeight(popupSuperview.frame) - popupViewHeight - 0;
+    CGRect popupViewShowFrame = CGRectMake(popupViewX, popupViewShowY, popupViewWidth, popupViewHeight);
+    
+    CGRect popupViewHideFrame = popupViewShowFrame;
+    popupViewHideFrame.size.height = 0;
+    
+    
+    [panContainer cj_addPanWithPanCompleteDismissBlock:^{
+        [UIView animateWithDuration:0.3 animations:^{
+            panContainer.alpha = 0.0f;
+            panContainer.frame = popupViewHideFrame;
+         } completion:^(BOOL finished) {
+             NSLog(@"关闭完成");
+         }];
     }];
+    
+  
+    panContainer.frame = popupViewHideFrame;
+    [UIView animateWithDuration:0.3 animations:^{
+        panContainer.alpha = 1.0f; // 修复单例时候，在隐藏过后，想再显示，没法继续显示的问题
+        panContainer.frame = popupViewShowFrame;
+        NSLog(@"显示完成");
+     }];
 }
 
 

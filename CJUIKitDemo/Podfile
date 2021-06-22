@@ -48,6 +48,7 @@ target 'CJUIKitDemo' do
 
 
     pod 'CQDemoKit',            '~> 0.6.2',     :subspecs => ['BaseVC', 'BaseUIKit', 'BaseUtil', 'Demo_RipeView', 'Demo_Resource']
+#    pod 'CQPopupContainerAnimation',     :subspecs => ['PopupAnimation']
     
 #    pod 'CJBaseUIKit',           :path => '../'
     pod 'CJBaseUtil',           :path => '../'

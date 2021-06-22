@@ -8,7 +8,6 @@
 
 #import "ViewPandownViewController1.h"
 #import <CQDemoKit/CJUIKitToastUtil.h>
-#import "UIView+CJPopupInView.h"
 
 #import "CQUpdateContentPopupView.h"
 
@@ -109,18 +108,18 @@
 
 #pragma mark - Private Method
 - (void)__popupView:(UIView *)commentView {
-    [commentView cj_addPanWithPanCompleteDismissBlock:^{
-        [commentView cj_hidePopupView];
-    }];
-    
-    CGFloat popupViewHeight = 400;
-    [commentView cj_popupInBottomInView:nil animationType:CJAnimationTypeNormal withHeight:popupViewHeight edgeInsets:UIEdgeInsetsZero showBeforeConfigBlock:nil showComplete:^{
-        NSLog(@"显示完成");
-        
-    } tapBlankComplete:^{
-        NSLog(@"点击背景完成");
-        [commentView cj_hidePopupView];
-    }];
+//    [commentView cj_addPanWithPanCompleteDismissBlock:^{
+//        [commentView cj_hidePopupView];
+//    }];
+//    
+//    CGFloat popupViewHeight = 400;
+//    [commentView cj_popupInBottomInView:nil animationType:CJAnimationTypeNormal withHeight:popupViewHeight edgeInsets:UIEdgeInsetsZero showBeforeConfigBlock:nil showComplete:^{
+//        NSLog(@"显示完成");
+//        
+//    } tapBlankComplete:^{
+//        NSLog(@"点击背景完成");
+//        [commentView cj_hidePopupView];
+//    }];
 }
 
 

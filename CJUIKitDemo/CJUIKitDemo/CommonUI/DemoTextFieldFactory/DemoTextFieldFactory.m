@@ -7,7 +7,7 @@
 //
 
 #import "DemoTextFieldFactory.h"
-#import "UITextField+CJForbidKeyboard.h"
+//#import "UITextField+CJForbidKeyboard.h"
 #import "UIButton+CJMoreProperty.h"
 
 @implementation DemoTextFieldFactory
@@ -73,7 +73,7 @@
 /// 用来选择的文本框(文本框中的值只能来源于选择，不能来源于输入)
 + (CJTextField *)textFieldWhichTextOnlyFromPickerView:(UIView *)pickerView {
     CJTextField *textField = [[CJTextField alloc] initWithFrame:CGRectZero];
-    [textField cj_forbidKeyboardAndTextPicker:pickerView];
+//    [textField cj_forbidKeyboardAndTextPicker:pickerView];
     textField.forbidMenuType = CJTextFieldForbidMenuTypeAll;
     textField.textAlignment = NSTextAlignmentCenter;
     textField.backgroundColor = CJColorFromHexString(@"#ffffff");
@@ -93,7 +93,7 @@
                                     rightButtonHandle:(void(^)(UIButton *button))rightButtonHandle
 {
     CJTextField *textField = [[CJTextField alloc] initWithFrame:CGRectZero];
-    [textField cj_forbidKeyboardAndTextPicker:pickerView];
+//    [textField cj_forbidKeyboardAndTextPicker:pickerView];
     textField.forbidMenuType = CJTextFieldForbidMenuTypeAll;
     textField.textAlignment = NSTextAlignmentCenter;
     textField.backgroundColor = CJColorFromHexString(@"#ffffff");
