@@ -4,7 +4,7 @@ Pod::Spec.new do |s|
   # pod的本地索引文件：~/Library/Caches/CocoaPods/search_index.json
   # pod的owner操作：https://www.jianshu.com/p/a9b8c2a1f3cf
   s.name         = "CJBaseUIKit"
-  s.version      = "0.7.6"
+  s.version      = "0.7.5"
   s.summary      = "自定义的基础UI"
   s.homepage     = "https://github.com/dvlproad/CJUIKit"
 
@@ -53,7 +53,7 @@ Pod::Spec.new do |s|
 
   s.platform     = :ios, "8.0"
  
-  s.source       = { :git => "https://github.com/dvlproad/CJUIKit.git", :tag => "CJBaseUIKit_0.7.6" }
+  s.source       = { :git => "https://github.com/dvlproad/CJUIKit.git", :tag => "CJBaseUIKit_0.7.5" }
   s.source_files  = "CJBaseUIKit/*.{h,m}"
 
   s.frameworks = "UIKit"
@@ -99,10 +99,6 @@ Pod::Spec.new do |s|
   	ss.subspec 'CJShakeAction' do |sss|
       sss.source_files = "CJBaseUIKit/UIView/CJShakeAction/**/*.{h,m}"
   	end
-
-    ss.subspec 'CJPopupAction' do |sss|
-      sss.source_files = "CJBaseUIKit/UIView/CJPopupAction/**/*.{h,m}"
-    end
 
   	ss.subspec 'CJAutoMoveUp' do |sss|
       sss.source_files = "CJBaseUIKit/UIView/CJAutoMoveUp/**/*.{h,m}"
