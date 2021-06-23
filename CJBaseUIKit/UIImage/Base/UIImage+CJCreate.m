@@ -32,6 +32,43 @@
     return image;
 }
 
+/*
+*  根据渐变颜色创建渐变的图片
+*
+*  @param colors        图片的渐变颜色
+*  @param startPoint    渐变起点
+*  @param endPoint      渐变终点
+*  @param size          图片大小
+*
+*  @return 渐变的图片
+*/
++ (UIImage *)cj_imageWithGradientColors:(NSArray<UIColor *> *)colors
+                     gradientStartPoint:(CGPoint)startPoint
+                       gradientEndPoint:(CGPoint)endPoint
+                                   size:(CGSize)size
+{
+    if (CGSizeEqualToSize(size, CGSizeZero) || colors.count < 2) {
+        return nil;
+    }
+    
+    CAGradientLayer *gradientLayer = [CAGradientLayer layer];
+    gradientLayer.frame = CGRectMake(0, 0, size.width, size.height);
+    gradientLayer.startPoint = startPoint;
+    gradientLayer.endPoint = endPoint;
+    
+    NSMutableArray *array = [NSMutableArray new];
+    for (UIColor *color in colors) {
+        [array addObject:(__bridge id)color.CGColor];
+    }
+    
+    gradientLayer.colors = array.copy;
+    UIGraphicsBeginImageContext(size);
+    [gradientLayer renderInContext:UIGraphicsGetCurrentContext()];
+    UIImage*image = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return image;
+}
+
 
 #pragma mark - 将视图转成图片
 /*
@@ -78,5 +115,7 @@
 
     return image;
 }
+
+
 
 @end

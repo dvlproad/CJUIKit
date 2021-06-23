@@ -21,6 +21,21 @@
  */
 + (UIImage *)cj_imageWithColor:(UIColor *)color size:(CGSize)size;
 
+/*
+*  根据渐变颜色创建渐变的图片
+*
+*  @param colors        图片的渐变颜色
+*  @param startPoint    渐变起点
+*  @param endPoint      渐变终点
+*  @param size          图片大小
+*
+*  @return 渐变的图片
+*/
++ (UIImage *)cj_imageWithGradientColors:(NSArray<UIColor *> *)colors
+                     gradientStartPoint:(CGPoint)startPoint
+                       gradientEndPoint:(CGPoint)endPoint
+                                   size:(CGSize)size;
+
 
 #pragma mark - 将视图转成图片
 /*
