@@ -91,7 +91,12 @@
     self.cjAutoMoveUp__spacing = spacing;
     
     UIView *popupView = self;
-    [self cj_registerKeyboardNotificationWithWillShowBlock:nil willHideBlock:nil willChangeFrameBlock:^(CGFloat keyboardHeight, CGFloat keyboardTopY, CGFloat duration) {
+    [self cj_registerKeyboardNotificationWithWillShowBlock:^(CGFloat duration) {
+        //NSLog(@"键盘通知：UIKeyboardWillShowNotification");
+    } willHideBlock:^(CGFloat duration) {
+        //NSLog(@"键盘通知：UIKeyboardWillHideNotification");
+    } willChangeFrameBlock:^(CGFloat keyboardHeight, CGFloat keyboardTopY, CGFloat duration) {
+        //NSLog(@"键盘通知：UIKeyboardWillChangeFrameNotification");
         if (hasSpacing && keyboardHeight == 0) {
             [UIView animateWithDuration:duration animations:^{
                 popupView.frame = self.cjAutoMoveUp__originFrame;
@@ -114,6 +119,7 @@
         [UIView animateWithDuration:duration animations:^{
             popupView.frame = new_popupViewShowFrame;
             [popupView layoutIfNeeded];
+            //popupView.transform =CGAffineTransformMakeTranslation(0, keyboardHeight);
         }];
     }];
 }

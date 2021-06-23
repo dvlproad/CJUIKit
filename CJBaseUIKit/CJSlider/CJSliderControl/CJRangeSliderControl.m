@@ -45,7 +45,7 @@ static NSTimeInterval const kMTRngeSliderDidTapSlidAnimationDuration   = 0.3f;
  *  @param endRangeValue                初始范围的结束值
  *  @param createTrackViewBlock         trackView的创建方法（会默认创建）
  *  @param createFrontViewBlock         frontView的创建方法（会默认创建）
- *  @param createPopoverViewBlock       popoverView的创建方法（会默认创建）
+ *  @param createPopoverViewBlock       popoverView的创建方法（会默认创建）（目前仅支持悬浮气泡在滑条的上面区域）
  *  @param textFormatBlock              将浮点型value格式化的方法（比如将value显示为整数），默认nil，表示使用原值显示
  *  @param valueChangedBlock            选择的值发生变化的回调（happenType:滑块上的值改变发生的事件来源类型;leftThumbPercent:左边滑块中心点所在滑道的比例;rightThumbPercent:右边滑块中心点所在滑道的比例）
  *  @param gestureStateChangeBlock      slider手势变化的回调（有时候会需要在某种结束后做震动处理）
@@ -229,7 +229,7 @@ static NSTimeInterval const kMTRngeSliderDidTapSlidAnimationDuration   = 0.3f;
 {
     CGFloat leftThumbPercent  = [self __leftThumbPercentByValue:startRangeValue];
     CGFloat rightThumbPercent = [self __rightThumbPercentByValue:endRangeValue];
-    [self __updateValueByCodeSetHappenType:CJSliderValueChangeHappenTypeUpdate
+    [self __updateValueByCodeSetHappenType:CJSliderValueChangeHappenTypeUpdateFromRequest
                           leftThumbPercent:leftThumbPercent
                          rightThumbPercent:rightThumbPercent
                             leftThumbValue:startRangeValue
@@ -293,14 +293,14 @@ static NSTimeInterval const kMTRngeSliderDidTapSlidAnimationDuration   = 0.3f;
 - (void)__reloadSliderWithStartRangeValue:(CGFloat)startRangeValue
                             endRangeValue:(CGFloat)endRangeValue
 {
-    CGRect trackRect = [self trackRectForBounds:self.bounds];
-    self.trackView.frame = trackRect;
-    
-    
-    
     CGFloat thumbWidth = self.thumbSize.width;
     CGFloat thumbHeight = self.thumbSize.height;
-    CGFloat thumbY = CGRectGetHeight(self.bounds)/2 - thumbHeight/2;
+    CGFloat thumbY = CGRectGetHeight(self.bounds) - thumbHeight;    // UI布局之可拖动的滑块的底部与本视图的底部对齐
+    //CGFloat thumbY = CGRectGetHeight(self.bounds)/2 - thumbHeight/2;// UI布局之可拖动的滑块的中心与本视图的中心对齐
+
+    CGRect trackRect = [self trackRectForBounds:self.bounds thumbCenterY:thumbY+thumbHeight/2];
+    self.trackView.frame = trackRect;
+    
     
     _thumbMoveMinX = 0 + self.thumbMoveMinXMargin;
     _thumbMoveMaxX = CGRectGetWidth(self.bounds) - self.thumbMoveMaxXMargin;
@@ -323,7 +323,7 @@ static NSTimeInterval const kMTRngeSliderDidTapSlidAnimationDuration   = 0.3f;
     
     CGFloat popoverWidth = self.popoverSize.width;  // 弹出框的宽
     CGFloat popoverHeight = self.popoverSize.height;// 弹出框的高
-    CGFloat popoverY = thumbY - self.popoverSpacing - popoverHeight;
+    CGFloat popoverY = thumbY - self.popoverSpacing - popoverHeight;    // 悬浮气泡在滑条的上面区域
     CGFloat leftPopoverX = leftThumbMidX - popoverWidth/2;
     CGFloat rightPopoverX = rightThumbMidX - popoverWidth/2;
 //    popoverY = thumbY - 0 - popoverHeight;
@@ -338,18 +338,19 @@ static NSTimeInterval const kMTRngeSliderDidTapSlidAnimationDuration   = 0.3f;
 }
 
 #pragma mark - 一些位置的获取
-/**
+/*
  *  获取滑道的frame
  *
- *  @param bounds   整个视图的bounds
+ *  @param bounds           整个视图的bounds
+ *  @param thumbCenterY     可拖动的滑块的竖直中心Y值（用于通过对齐来确认到滑条的竖直中心位置）
  */
-- (CGRect)trackRectForBounds:(CGRect)bounds {
+- (CGRect)trackRectForBounds:(CGRect)bounds thumbCenterY:(CGFloat)thumbCenterY {
     if (self.trackHeight == 0 || self.trackHeight > CGRectGetHeight(bounds)) {
         //NSLog(@"修正trackHeight的高度");
         self.trackHeight = CGRectGetHeight(bounds);
     }
     CGFloat trackViewHeight = self.trackHeight;
-    CGFloat trackViewOriginY = CGRectGetHeight(bounds)/2 - trackViewHeight/2;
+    CGFloat trackViewOriginY = thumbCenterY - trackViewHeight/2;   // UI布局之滑条的竖直中心位置与可拖动的滑块的竖直中心位置对齐
     
     _trackViewMinX = 0 + self.trackViewMinXMargin;
     _trackViewMaxX = CGRectGetWidth(bounds) - self.trackViewMaxXMargin;
@@ -454,7 +455,7 @@ static NSTimeInterval const kMTRngeSliderDidTapSlidAnimationDuration   = 0.3f;
     _endRangeValue = rightThumbValue;
     if (happenType == CJSliderValueChangeHappenTypeInit) {
         // do nothing (会自动调用layoutSubviews，然后触发reloadSlider)
-    } else if (happenType == CJSliderValueChangeHappenTypeUpdate) {
+    } else if (happenType == CJSliderValueChangeHappenTypeUpdateFromRequest) {
         [self reloadSlider];    // 无法触发layoutSubviews中的reloadSlider，所以这里手动调用
     }
     
@@ -588,6 +589,9 @@ static NSTimeInterval const kMTRngeSliderDidTapSlidAnimationDuration   = 0.3f;
 
 #pragma mark - 拖动的事件
 - (void)buttonStartDrag:(UIButton *)button {
+    // 特别注意：如果本RangeSlider所在的视图中添加了其他的Pan手势（常见于你为了关闭侧滑，而不小心添加了Pan），则会导致此控制器响应不灵敏
+    // 特别注意：如果本RangeSlider所在的视图中添加了其他的Pan手势（常见于你为了关闭侧滑，而不小心添加了Pan），则会导致此控制器响应不灵敏
+    // 特别注意：如果本RangeSlider所在的视图中添加了其他的Pan手势（常见于你为了关闭侧滑，而不小心添加了Pan），则会导致此控制器响应不灵敏
     //NSLog(@"buttonStartDrag");
     !self.gestureStateChangeBlock ?: self.gestureStateChangeBlock(CJSliderGRStateThumbDragBegin);
     
@@ -729,7 +733,11 @@ static NSTimeInterval const kMTRngeSliderDidTapSlidAnimationDuration   = 0.3f;
     }
 }
 
-
+#pragma mark - Get Method
+/// 获取要显示下本视图中的所有视图所需要的最小高度
+- (CGFloat)minViewHeight {
+    return self.thumbSize.height + self.popoverSpacing + self.popoverSize.height;
+}
 
 #pragma mark - Lazy
 - (UIButton *)leftThumb {

@@ -10,6 +10,12 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+typedef NS_ENUM(NSUInteger, CJVerticalAlignment) {
+    CJVerticalAlignmentCenterByOne = 0, /**< 这种方式，能修复发现卡片滚动的问题 */
+    CJVerticalAlignmentCenterByTwo,     /**< 这种方式，能修复编辑里卡片的一句话的居中问题 */
+    CJVerticalAlignmentCenterGiveUp,    /**< 这种方式，用于临时放弃居中功能，如编辑资料里的文字修改 */
+};
+
 @interface UITextView (CJVerticalCenter)
 
 /**
@@ -21,7 +27,7 @@ NS_ASSUME_NONNULL_BEGIN
  *
  *  @param delay delay秒后执行（当外部使用mas_remakeConstraints更新文本框位置或大小的时候，必须延迟执行，否则文本竖直居中无效）
  */
-- (void)cj_adjustedContentInsetToTextCenter:(CGFloat)delay;
+- (void)cj_adjustedContentInsetToTextCenter:(CGFloat)delay verticalAlignment:(CJVerticalAlignment)verticalAlignment;
 
 @end
 

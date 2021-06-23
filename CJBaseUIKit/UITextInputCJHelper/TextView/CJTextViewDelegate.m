@@ -11,6 +11,7 @@
 @interface CJTextViewDelegate () {
     
 }
+@property (nullable, nonatomic, copy) BOOL(^inputTextCheckHandle)(NSString *bInputText);   /**< 此次想要输入的文本能否真正输入的判断（如\n回车） */
 @property (nonatomic, copy, readonly) BOOL (^extraShouldChangeCheckBlock)(NSString *newText);  /**< 在已封装shouldChange中增加额外的能否输入的判断（如输入手机号码的时候，希望会系统处理出的新文本判断，在新文本不合法的时候能有对应toast提示） */
 
 @end
@@ -30,18 +31,31 @@
  *  设置最大长度，并在已封装shouldChange中增加额外的能否输入的判断（如输入手机号码的时候，希望会系统处理出的新文本判断，在新文本不合法的时候能有对应toast提示）
  *
  *  @param maxTextLength                最大长度（英文长度算1，中文长度算2）
+ *  @param inputTextCheckHandle         此次想要输入的文本能否真正输入的判断（如\n回车，为nil的时候，输入\n会执行resignFirstResponder）
  *  @param extraShouldChangeCheckBlock  增加的额外能否输入的判断（这里添加的block一般都不应该再做长度限制了）
  */
-- (void)setupMaxTextLength:(NSInteger)maxTextLength addExtraShouldChangeCheckBlock:(BOOL (^ _Nullable)(NSString *newText))extraShouldChangeCheckBlock {
+- (void)setupMaxTextLength:(NSInteger)maxTextLength
+      inputTextCheckHandle:(BOOL(^ _Nullable)(NSString *bInputText))inputTextCheckHandle
+addExtraShouldChangeCheckBlock:(BOOL (^ _Nullable)(NSString *newText))extraShouldChangeCheckBlock
+{
     _maxTextLength = maxTextLength;
+    _inputTextCheckHandle = inputTextCheckHandle;
     _extraShouldChangeCheckBlock = extraShouldChangeCheckBlock;
 }
 
+
 #pragma mark - UITextViewDelegate
 - (BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text {
-    if ([text isEqualToString:@"\n"]) {
-        [textView resignFirstResponder];
-        return NO;
+    if (self.inputTextCheckHandle) {
+        BOOL canInput = self.inputTextCheckHandle(text);
+        if (canInput == NO) {
+            return NO;
+        }
+    } else {
+        if ([text isEqualToString:@"\n"]) {
+            [textView resignFirstResponder];
+            return NO;
+        }
     }
     
     _shouldChangeWithOldText = textView.text;

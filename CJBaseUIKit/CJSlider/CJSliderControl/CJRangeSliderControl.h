@@ -22,10 +22,10 @@ typedef NS_ENUM(NSUInteger, CJSliderPopoverShowTimeType) {
  *  滑块上的值改变发生的事件来源类型
  */
 typedef NS_ENUM(NSUInteger, CJSliderValueChangeHappenType) {
-    CJSliderValueChangeHappenTypeInit,          /**< 由初始化设置而来 */
-    CJSliderValueChangeHappenTypeUpdate,        /**< 由用户设置网络请求后更新而来 */
-    CJSliderValueChangeHappenTypeLeftMove,      /**< 由左边滑块拖动引起 */
-    CJSliderValueChangeHappenTypeRightMove,     /**< 由右边滑块拖动引起 */
+    CJSliderValueChangeHappenTypeInit,                  /**< 由初始化设置而来 ：：不需要震动*/
+    CJSliderValueChangeHappenTypeUpdateFromRequest,     /**< 由用户请求数据完成后的更新：不需要震动（目前没有其他更新情况） */
+    CJSliderValueChangeHappenTypeLeftMove,              /**< 由左边滑块拖动引起 */
+    CJSliderValueChangeHappenTypeRightMove,             /**< 由右边滑块拖动引起 */
     CJSliderValueChangeHappenTypeTouchTrackCloseThumbLeft,  /**< 由点击滑块上的靠近左滑块的点引起 */
     CJSliderValueChangeHappenTypeTouchTrackCloseThumbRight, /**< 由点击滑块上的靠近右滑块的点引起 */
 };
@@ -80,7 +80,7 @@ typedef NS_ENUM(NSUInteger, CJThumbXType) {
 // 弹出框视图
 @property (nonatomic, strong) UIView *leftPopover;
 @property (nonatomic, strong) UIView *rightPopover;
-@property (nonatomic, assign) CGFloat popoverSpacing;   /**< 弹出框底部与滑块顶部间距大小（默认0） */
+@property (nonatomic, assign) CGFloat popoverSpacing;   /**< 弹出框底部与滑块顶部间距大小（默认0，（目前仅支持悬浮气泡在滑条的上面区域）） */
 @property (nonatomic, assign) CGSize popoverSize;       /**< 弹出框大小（默认CGSizeMake(30, 32)） */
 @property (nonatomic, assign) BOOL popoverShowTimeType; /**< 弹出框显示的时机（默认一直显示） */
 
@@ -93,7 +93,7 @@ typedef NS_ENUM(NSUInteger, CJThumbXType) {
  *  @param endRangeValue                初始范围的结束值
  *  @param createTrackViewBlock         trackView的创建方法（会默认创建）
  *  @param createFrontViewBlock         frontView的创建方法（会默认创建）
- *  @param createPopoverViewBlock       popoverView的创建方法（会默认创建）
+ *  @param createPopoverViewBlock       popoverView的创建方法（会默认创建）（目前仅支持悬浮气泡在滑条的上面区域）
  *  @param textFormatBlock              将浮点型value格式化的方法（比如将value显示为整数），默认nil，表示使用原值显示
  *  @param valueChangedBlock            选择的值发生变化的回调（happenType:滑块上的值改变发生的事件来源类型;leftThumbPercent:左边滑块中心点所在滑道的比例;rightThumbPercent:右边滑块中心点所在滑道的比例）
  *  @param gestureStateChangeBlock      slider手势变化的回调（有时候会需要在某种结束后做震动处理）
@@ -139,6 +139,10 @@ typedef NS_ENUM(NSUInteger, CJThumbXType) {
     trackViewMaxXIsRightThumbXType:(CJThumbXType)trackViewMaxXIsRightThumbXType;
 
 
+#pragma mark - Get Method
+/// 获取要显示下本视图中的所有视图所需要的最小高度
+- (CGFloat)minViewHeight;
+
 #pragma mark - Event
 /*
  *  请求到网络数据后更新选择值
@@ -147,6 +151,6 @@ typedef NS_ENUM(NSUInteger, CJThumbXType) {
  *  @param endRangeValue                初始范围的结束值
  */
 - (void)updateStartRangeValue:(CGFloat)startRangeValue
-                endRangeValue:(CGFloat)endRangeValue;
+                endRangeValue:(CGFloat)endRangeValue NS_REQUIRES_SUPER;
 
 @end

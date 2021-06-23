@@ -5,7 +5,7 @@
 //  Created by ciyouzen on 15/11/12.
 //  Copyright (c) 2015年 dvlproad. All rights reserved.
 //
-//  本视图据键盘自动上移的方法
+//  本视图据键盘自动上移的方法（常用于底部弹窗内部有文本框的时候）
 
 #import <UIKit/UIKit.h>
 

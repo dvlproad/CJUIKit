@@ -71,12 +71,21 @@
                                  multiplier:1
                                    constant:0]];
     
+    // textView是UIScrollView，所以需要宽两个属性来限制，如width、right(如过单纯只使用right无法限制placeholder textView的宽)
     [self addConstraint:
      [NSLayoutConstraint constraintWithItem:self.placeholderView
-                                  attribute:NSLayoutAttributeWidth  //width（不知道为什么使用right无法限制placeholder textView的宽）
+                                  attribute:NSLayoutAttributeWidth
                                   relatedBy:NSLayoutRelationEqual
                                      toItem:self
                                   attribute:NSLayoutAttributeWidth
+                                 multiplier:1
+                                   constant:0]];
+    [self addConstraint:
+     [NSLayoutConstraint constraintWithItem:self.placeholderView
+                                  attribute:NSLayoutAttributeRight
+                                  relatedBy:NSLayoutRelationEqual
+                                     toItem:self
+                                  attribute:NSLayoutAttributeRight
                                  multiplier:1
                                    constant:0]];
     
@@ -92,14 +101,27 @@
     [self addConstraint:self.placeholderViewTopLayoutConstraint];
     
     
+    // textView是UIScrollView，所以需要高两个属性来限制，如height、bottom(如过单纯只使用bottom无法限制placeholder textView的高)
     [self addConstraint:
      [NSLayoutConstraint constraintWithItem:self.placeholderView
-                                  attribute:NSLayoutAttributeHeight //height（不知道为什么使用bottom无法限制placeholder textView的高）
+                                  attribute:NSLayoutAttributeHeight
                                   relatedBy:NSLayoutRelationEqual
                                      toItem:self
                                   attribute:NSLayoutAttributeHeight
                                  multiplier:1
                                    constant:0]];
+    [self addConstraint:
+     [NSLayoutConstraint constraintWithItem:self.placeholderView
+                                  attribute:NSLayoutAttributeBottom
+                                  relatedBy:NSLayoutRelationEqual
+                                     toItem:self
+                                  attribute:NSLayoutAttributeBottom
+                                 multiplier:1
+                                   constant:0]];
+    
+    
+    //self.backgroundColor = [UIColor.redColor colorWithAlphaComponent:0.5];
+    //self.placeholderView.backgroundColor = [UIColor.greenColor colorWithAlphaComponent:0.5];
 }
 
 - (UITextView *)placeholderView {

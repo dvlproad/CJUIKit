@@ -73,8 +73,8 @@ static NSString * const cjKeyboardAvoidingOffsetKey = @"cjKeyboardAvoidingOffset
     
     UIWindow *window = [[UIApplication sharedApplication] keyWindow];
     CGRect firstResponderFrameInWindow = [firstResponder convertRect:firstResponder.bounds toView:window];
-    CGFloat offset = CGRectGetMinY(endFrame) - CGRectGetMaxY(firstResponderFrameInWindow);
-    if (offset < self.cjKeyboardAvoidingOffset) {
+    CGFloat offset = CGRectGetMinY(endFrame) - CGRectGetMaxY(firstResponderFrameInWindow);  // 键盘顶部离所点击的文本框底部的距离
+    if (offset < self.cjKeyboardAvoidingOffset) {   // 键盘顶部离所点击的文本框底部的距离 小于指定值，则要滚动视图到可显示得下
         //self.oldContentOffset = self.contentOffset;
         
         CGFloat newOffsetX = self.contentOffset.x;
