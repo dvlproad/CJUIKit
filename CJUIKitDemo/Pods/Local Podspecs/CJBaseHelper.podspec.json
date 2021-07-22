@@ -59,8 +59,12 @@
       ]
     },
     {
-      "name": "ServerHelper",
-      "source_files": "CJBaseHelper/CJBaseHelper/ServerHelper/**/*.{h,m}"
+      "name": "ServerCJHelper",
+      "source_files": "CJBaseHelper/CJBaseHelper/ServerCJHelper/**/*.{h,m}"
+    },
+    {
+      "name": "AppInfoCJHelper",
+      "source_files": "CJBaseHelper/CJBaseHelper/AppInfoCJHelper/**/*.{h,m}"
     }
   ]
 }

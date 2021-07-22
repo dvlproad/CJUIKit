@@ -1,7 +1,10 @@
 Pod::Spec.new do |s|
-  #验证方法：pod lib lint CJBaseHelper.podspec --allow-warnings --use-libraries --verbose
+  # 验证方法：pod lib lint CJBaseHelper.podspec --allow-warnings --use-libraries --verbose
+  # 上传方法：pod trunk push CJBaseHelper.podspec --allow-warnings --use-libraries --verbose
+  # pod的本地索引文件：~/Library/Caches/CocoaPods/search_index.json
+  # pod的owner操作：https://www.jianshu.com/p/a9b8c2a1f3cf
   s.name         = "CJBaseHelper"
-  s.version      = "0.1.6"
+  s.version      = "0.1.7"
   s.summary      = "自定义的基础帮助类"
   s.homepage     = "https://github.com/dvlproad/CJUIKit.git"
   s.license      = "MIT"
@@ -17,7 +20,8 @@ Pod::Spec.new do |s|
                   - CJBaseHelper/NSOperationQueueHelper：多任务处理
                   - CJBaseHelper/WebCJHelper：Web帮助类，包含清除缓存问题等
                   - CJBaseHelper/AuthorizationCJHelper：权限判断及系统设置打开
-                  - CJBaseHelper/ServerHelper：服务器帮助类（服务器时间、服务器敏感词）
+                  - CJBaseHelper/ServerCJHelper：服务器帮助类（服务器时间、服务器敏感词）
+                  - CJBaseHelper/AppInfoCJHelper：app的版本号信息
                   
 
                    A longer description of CJBaseHelper in Markdown format.
@@ -32,7 +36,7 @@ Pod::Spec.new do |s|
 
   s.platform     = :ios, "8.0"
 
-  s.source       = { :git => "https://github.com/dvlproad/CJUIKit.git", :tag => "CJBaseHelper_0.1.6" }
+  s.source       = { :git => "https://github.com/dvlproad/CJUIKit.git", :tag => "CJBaseHelper_0.1.7" }
   # s.source_files  = "CJBaseUtil/*.{h,m}"
   # s.resources = "CJBaseUtil/**/*.{png}"
   s.frameworks = 'UIKit'
@@ -93,10 +97,14 @@ Pod::Spec.new do |s|
   end
 
   # 服务器帮助类（服务器时间、服务器敏感词）
-  s.subspec 'ServerHelper' do |ss|
-    ss.source_files = "CJBaseHelper/CJBaseHelper/ServerHelper/**/*.{h,m}"
+  s.subspec 'ServerCJHelper' do |ss|
+    ss.source_files = "CJBaseHelper/CJBaseHelper/ServerCJHelper/**/*.{h,m}"
   end
 
+  # app的版本号信息
+  s.subspec 'AppInfoCJHelper' do |ss|
+    ss.source_files = "CJBaseHelper/CJBaseHelper/AppInfoCJHelper/**/*.{h,m}"
+  end
   
 
 end

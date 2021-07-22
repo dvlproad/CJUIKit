@@ -2,6 +2,7 @@ PODS:
   - AFNetworking/Reachability (4.0.1)
   - CJBaseEffectKit/CJScaleHeadView (0.2.0)
   - CJBaseHelper (0.1.6):
+    - CJBaseHelper/AppInfoCJHelper (= 0.1.6)
     - CJBaseHelper/AuthorizationCJHelper (= 0.1.6)
     - CJBaseHelper/DeviceCJHelper (= 0.1.6)
     - CJBaseHelper/HookCJHelper (= 0.1.6)
@@ -9,9 +10,10 @@ PODS:
     - CJBaseHelper/NSDateFormatterCJHelper (= 0.1.6)
     - CJBaseHelper/NSObjectCJHelper (= 0.1.6)
     - CJBaseHelper/NSOperationQueueCJHelper (= 0.1.6)
-    - CJBaseHelper/ServerHelper (= 0.1.6)
+    - CJBaseHelper/ServerCJHelper (= 0.1.6)
     - CJBaseHelper/UIViewControllerCJHelper (= 0.1.6)
     - CJBaseHelper/WebCJHelper (= 0.1.6)
+  - CJBaseHelper/AppInfoCJHelper (0.1.6)
   - CJBaseHelper/AuthorizationCJHelper (0.1.6)
   - CJBaseHelper/DeviceCJHelper (0.1.6)
   - CJBaseHelper/HookCJHelper (0.1.6)
@@ -19,7 +21,7 @@ PODS:
   - CJBaseHelper/NSDateFormatterCJHelper (0.1.6)
   - CJBaseHelper/NSObjectCJHelper (0.1.6)
   - CJBaseHelper/NSOperationQueueCJHelper (0.1.6)
-  - CJBaseHelper/ServerHelper (0.1.6)
+  - CJBaseHelper/ServerCJHelper (0.1.6)
   - CJBaseHelper/UIViewControllerCJHelper (0.1.6)
   - CJBaseHelper/WebCJHelper (0.1.6)
   - CJBaseTest/Test (0.0.2)
@@ -177,7 +179,7 @@ EXTERNAL SOURCES:
 SPEC CHECKSUMS:
   AFNetworking: 7864c38297c79aaca1500c33288e429c3451fdce
   CJBaseEffectKit: 8640801fa272a1d96a6edce2c994652ced0e519f
-  CJBaseHelper: 5556bf2c66659fccca8df3615d2763b4e8a87429
+  CJBaseHelper: 384f0d6a26be0b1de972d2f26eecf6d380fcf24a
   CJBaseTest: a7975369dd9cad3111ea8a8465ccdb1d50752499
   CJBaseUtil: 1bbf8d5f831dc12ae4bb06c8b5326bd39f3522e1
   CJFile: 6c1e6d55b3b94e8afbaa9f413f131301d15fdc48
