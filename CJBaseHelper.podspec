@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
   #验证方法：pod lib lint CJBaseHelper.podspec --allow-warnings --use-libraries --verbose
   s.name         = "CJBaseHelper"
-  s.version      = "0.1.4"
+  s.version      = "0.1.6"
   s.summary      = "自定义的基础帮助类"
   s.homepage     = "https://github.com/dvlproad/CJUIKit.git"
   s.license      = "MIT"
@@ -17,6 +17,7 @@ Pod::Spec.new do |s|
                   - CJBaseHelper/NSOperationQueueHelper：多任务处理
                   - CJBaseHelper/WebCJHelper：Web帮助类，包含清除缓存问题等
                   - CJBaseHelper/AuthorizationCJHelper：权限判断及系统设置打开
+                  - CJBaseHelper/ServerHelper：服务器帮助类（服务器时间、服务器敏感词）
                   
 
                    A longer description of CJBaseHelper in Markdown format.
@@ -31,7 +32,7 @@ Pod::Spec.new do |s|
 
   s.platform     = :ios, "8.0"
 
-  s.source       = { :git => "https://github.com/dvlproad/CJUIKit.git", :tag => "CJBaseHelper_0.1.4" }
+  s.source       = { :git => "https://github.com/dvlproad/CJUIKit.git", :tag => "CJBaseHelper_0.1.6" }
   # s.source_files  = "CJBaseUtil/*.{h,m}"
   # s.resources = "CJBaseUtil/**/*.{png}"
   s.frameworks = 'UIKit'
@@ -89,6 +90,11 @@ Pod::Spec.new do |s|
   s.subspec 'AuthorizationCJHelper' do |ss|
     ss.source_files = "CJBaseHelper/CJBaseHelper/AuthorizationCJHelper/**/*.{h,m}"
     ss.frameworks = 'AVFoundation', 'Photos', 'CoreLocation'
+  end
+
+  # 服务器帮助类（服务器时间、服务器敏感词）
+  s.subspec 'ServerHelper' do |ss|
+    ss.source_files = "CJBaseHelper/CJBaseHelper/ServerHelper/**/*.{h,m}"
   end
 
   
