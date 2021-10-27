@@ -9,6 +9,8 @@
 #import <Foundation/Foundation.h>
 #import "CJDateModel.h"
 
+NS_ASSUME_NONNULL_BEGIN
+
 @interface NSCalendarCJHelper : NSObject
 
 
@@ -103,3 +105,5 @@ FOUNDATION_EXTERN NSDate *NSCalendarCJHelper_addUnits(NSDate *sinceDate, NSInteg
 FOUNDATION_EXTERN NSMutableArray<CJDateModel *> *NSCalendarCJHelper_allCJDateModels(NSDate *dateBegin, NSDate *dateEnd);
 
 @end
+
+NS_ASSUME_NONNULL_END

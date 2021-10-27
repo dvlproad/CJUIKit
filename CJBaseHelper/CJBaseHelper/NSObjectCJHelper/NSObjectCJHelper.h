@@ -13,6 +13,8 @@
 #import <UIKit/UIKit.h>
 #import <Foundation/Foundation.h>
 
+NS_ASSUME_NONNULL_BEGIN
+
 @interface NSObjectCJHelper : NSObject
 
 #pragma mark - C函数
@@ -29,7 +31,7 @@ UIKIT_EXTERN bool isEmptyObjectCJHelper(id object);
  *
  *  @return 新的字符串
  */
-+ (NSString *)checkNullString:(NSString *)checkString;
++ (NSString *)checkNullString:(nullable NSString *)checkString;
 
 /// 判断对象是否为NULL或nil(OC方法)
 + (BOOL)isNullForObject:(id)object;
@@ -38,3 +40,5 @@ UIKIT_EXTERN bool isEmptyObjectCJHelper(id object);
 + (BOOL)isEmptyForObject:(id)object;
 
 @end
+
+NS_ASSUME_NONNULL_END

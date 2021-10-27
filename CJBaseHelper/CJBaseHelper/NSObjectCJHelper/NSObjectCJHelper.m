@@ -17,7 +17,7 @@
  *
  *  @return 新的字符串
  */
-+ (NSString *)checkNullString:(NSString *)checkString {
++ (NSString *)checkNullString:(nullable NSString *)checkString {
     return [self isNullForObject:checkString] ? @"" : checkString;
 }
 

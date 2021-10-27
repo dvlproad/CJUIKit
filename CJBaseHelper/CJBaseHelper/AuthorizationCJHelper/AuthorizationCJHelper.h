@@ -10,6 +10,8 @@
 #import <UIKit/UIKit.h>
 #import <AVFoundation/AVFoundation.h>   //UIImagePickerController需要使用
 
+NS_ASSUME_NONNULL_BEGIN
+
 typedef NS_ENUM(NSUInteger, CJDeviceComponentType) {
     CJDeviceComponentTypeCamera,    /**< 相机 */
     CJDeviceComponentTypeAlbum,     /**< 相册 */
@@ -39,3 +41,5 @@ UIKIT_EXTERN void openSettingCJHelper(void(^completionHandler)(BOOL success));
 + (void)openSettingWithCompletionHandler:(void(^)(BOOL success))completionHandler;
 
 @end
+
+NS_ASSUME_NONNULL_END

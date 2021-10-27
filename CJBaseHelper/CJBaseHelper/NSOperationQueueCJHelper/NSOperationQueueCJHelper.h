@@ -10,6 +10,8 @@
 
 #import <Foundation/Foundation.h>
 
+NS_ASSUME_NONNULL_BEGIN
+
 ///搜索功能常常需要依赖的库
 @interface NSOperationQueueCJHelper : NSObject
 
@@ -24,3 +26,5 @@
 + (NSOperationQueue *)createOperationQueueWithOperations:(NSArray<NSOperation *> *)operations lastOperation:(NSOperation *)lastOperation;
 
 @end
+
+NS_ASSUME_NONNULL_END

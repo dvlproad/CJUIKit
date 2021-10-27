@@ -14,6 +14,8 @@ enum TheMethodWhichFromDiffClassDealType{
     RecoverOriMethod
 };
 
+NS_ASSUME_NONNULL_BEGIN
+
 @interface HookCJHelper : NSObject
 
 #pragma mark - the swizzle which Can recover originalMethod
@@ -57,3 +59,6 @@ bool HookCJHelper_recoverOriMethodToNewMethodWhichAddFromDiffClass(Class origina
 
 
 @end
+
+
+NS_ASSUME_NONNULL_END

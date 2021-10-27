@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
+NS_ASSUME_NONNULL_BEGIN
+
 @interface AppInfoCJHelper : NSObject {
     
 }
@@ -22,3 +24,6 @@
 + (NSString *)appVersionFive;
 
 @end
+
+
+NS_ASSUME_NONNULL_END

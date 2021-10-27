@@ -10,6 +10,8 @@
 
 //以后可以参考 NSDateComponents 来进一步改进
 
+NS_ASSUME_NONNULL_BEGIN
+
 @interface CJDateModel : NSObject
 
 @property (nonatomic, assign) NSInteger index;  /**< 该天的索引 */
@@ -28,3 +30,5 @@
 @property (nonatomic, assign, getter=isFirstMonthInYear) BOOL firstMonthInYear;/**< 该天所在的月是否是该天所在年的第一月 */
 
 @end
+
+NS_ASSUME_NONNULL_END
