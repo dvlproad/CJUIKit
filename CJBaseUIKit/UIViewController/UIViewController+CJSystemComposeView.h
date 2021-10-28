@@ -9,6 +9,8 @@
 
 #import <UIKit/UIKit.h>
 
+NS_ASSUME_NONNULL_BEGIN
+
 @interface UIViewController (CJSystemComposeView)
 
 @property (nonatomic, assign, readonly) NSInteger cjCurrentSelectedIndex;
@@ -20,3 +22,5 @@
                             completeBlock:(void(^)(NSInteger index_cur))completeBlock;
 
 @end
+
+NS_ASSUME_NONNULL_END

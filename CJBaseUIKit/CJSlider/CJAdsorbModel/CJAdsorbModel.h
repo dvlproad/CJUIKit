@@ -9,6 +9,8 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
+NS_ASSUME_NONNULL_BEGIN
+
 @interface CJAdsorbModel : NSObject
 
 @property (nonatomic, assign) CGFloat adsorbMin; //吸附区间的最小值
@@ -27,3 +29,5 @@
 - (instancetype)initWithMin:(CGFloat)adsorbMin max:(CGFloat)adsorbMax toValue:(CGFloat)adsorbToValue;
 
 @end
+
+NS_ASSUME_NONNULL_END

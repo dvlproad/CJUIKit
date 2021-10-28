@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
+NS_ASSUME_NONNULL_BEGIN
+
 @interface UIImage (CJRotateAngle)
 
 /**
@@ -21,3 +23,5 @@
 - (UIImage *)cj_rotateImageWithAngle:(CGFloat)angle isExpand:(BOOL)isExpand;
 
 @end
+
+NS_ASSUME_NONNULL_END

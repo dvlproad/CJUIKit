@@ -8,6 +8,8 @@
 
 #import "CJDataUtil.h"
 
+NS_ASSUME_NONNULL_BEGIN
+
 @interface CJDataUtil (Value)
 
 /*
@@ -31,3 +33,5 @@
 + (NSArray *)arrayValueForDataSelector:(SEL)dataSelector inDataModel:(id)dataModel;
 
 @end
+
+NS_ASSUME_NONNULL_END

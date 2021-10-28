@@ -14,10 +14,9 @@
 #import "ImageChangeColorViewController.h"
 #import "ImageRotateViewController.h"
 
-#import "ImageSizeViewController.h"
+#import "TSImageCutViewController1.h"
+#import "TSImageCutViewController2.h"
 #import "ImageCompressViewController.h"
-
-#import "GifViewController.h"
 
 @interface ImageHomeViewController ()
 
@@ -59,7 +58,15 @@
         {
             CQDMModuleModel *imageRotateModule = [[CQDMModuleModel alloc] init];
             imageRotateModule.title = @"UIImage Size (图片裁剪前后比对)";
-            imageRotateModule.classEntry = [ImageSizeViewController class];
+            imageRotateModule.content = @"从原图中裁剪出指定宽高比的图片";
+            imageRotateModule.classEntry = [TSImageCutViewController1 class];
+            [sectionDataModel.values addObject:imageRotateModule];
+        }
+        {
+            CQDMModuleModel *imageRotateModule = [[CQDMModuleModel alloc] init];
+            imageRotateModule.title = @"UIImage Size (图片裁剪前后比对)";
+            imageRotateModule.content = @"确保图片的宽高比的在什么范围内，如果不在则裁剪";
+            imageRotateModule.classEntry = [TSImageCutViewController2 class];
             [sectionDataModel.values addObject:imageRotateModule];
         }
         {
@@ -67,12 +74,6 @@
             imageRotateModule.title = @"UIImage Compress (图片压缩前后比对)";
             imageRotateModule.classEntry = [ImageCompressViewController class];
             [sectionDataModel.values addObject:imageRotateModule];
-        }
-        {
-            CQDMModuleModel *gifModule = [[CQDMModuleModel alloc] init];
-            gifModule.title = @"Gif显示";
-            gifModule.classEntry = [GifViewController class];
-            [sectionDataModel.values addObject:gifModule];
         }
         [sectionDataModels addObject:sectionDataModel];
     }

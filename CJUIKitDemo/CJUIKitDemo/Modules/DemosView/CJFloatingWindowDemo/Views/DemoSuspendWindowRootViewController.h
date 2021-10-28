@@ -8,10 +8,14 @@
 
 #import <UIKit/UIKit.h>
 
+NS_ASSUME_NONNULL_BEGIN
+
 @interface DemoSuspendWindowRootViewController : UIViewController {
     
 }
-@property (nullable, nonatomic, copy) void (^clickWindowBlock)(UIButton *clickButton);
+@property (nullable, nonatomic, copy) void (^clickWindowBlock)(UIButton *bClickButton);
 @property (nullable, nonatomic, copy) void (^closeWindowBlock)(void);
 
 @end
+
+NS_ASSUME_NONNULL_END

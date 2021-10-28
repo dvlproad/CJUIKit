@@ -13,6 +13,8 @@
 #import <UIKit/UIKit.h>
 #import <objc/runtime.h>
 
+NS_ASSUME_NONNULL_BEGIN
+
 @interface UIScrollView (CJKeyboardAvoiding)
 
 @property (nonatomic, assign) CGFloat cjKeyboardAvoidingOffset;  /**< 当键盘会遮挡时候，文本底部离键盘的距离(默认20) */
@@ -27,3 +29,5 @@
 - (void)cj_resignFirstResponder;
 
 @end
+
+NS_ASSUME_NONNULL_END

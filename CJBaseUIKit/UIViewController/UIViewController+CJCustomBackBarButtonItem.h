@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
+NS_ASSUME_NONNULL_BEGIN
+
 /**
  *  设置自定义的返回按钮
  */
@@ -45,3 +47,5 @@
                                               action:(SEL)action;
 
 @end
+
+NS_ASSUME_NONNULL_END

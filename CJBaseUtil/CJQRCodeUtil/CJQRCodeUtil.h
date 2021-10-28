@@ -9,6 +9,8 @@
 
 #import <UIKit/UIKit.h>
 
+NS_ASSUME_NONNULL_BEGIN
+
 /**
  *  原生的二维码创建与扫描
  *  (附：iOS7之后，可以使用原生的CIFilter创建二维码。关于二维码生成，网上也是有很多，三方库也是有的如zxing，也是挺好用，这里介绍的是通过CIFilter创建二维码。)
@@ -58,3 +60,5 @@
                 waterImageSize:(CGSize)waterImageSize;
 
 @end
+
+NS_ASSUME_NONNULL_END

@@ -249,9 +249,9 @@ dataModelMemberSearchSelector:(SEL)dataModelMemberSearchSelector
    pinyinFromStringBlock:(NSString *(^)(NSString *string))pinyinFromStringBlock
 {
     
-    dataModel.isSearchResult = YES;
-    dataModel.isContainInSelf = NO;
-    dataModel.isContainInMembers = NO;
+    dataModel.cj_isSearchResult = YES;
+    dataModel.cj_isContainInSelf = NO;
+    dataModel.cj_isContainInMembers = NO;
     
     
     NSString *dataModelSearchSelectorString = [CJDataUtil stringValueForDataSelector:dataModelSearchSelector inDataModel:dataModel];
@@ -261,7 +261,7 @@ dataModelMemberSearchSelector:(SEL)dataModelMemberSearchSelector
                                           fromString:dataModelSearchSelectorString
                                       withSearchType:searchType
                                        supportPinyin:supportPinyin pinyinFromStringBlock:pinyinFromStringBlock];
-    dataModel.isContainInSelf = isContainInSelf;
+    dataModel.cj_isContainInSelf = isContainInSelf;
     
     //包含:xx、xx
     NSArray *members = [CJDataUtil arrayValueForDataSelector:dataModelMemberSelector inDataModel:dataModel];
@@ -271,10 +271,10 @@ dataModelMemberSearchSelector:(SEL)dataModelMemberSearchSelector
                                             withSearchType:searchType
                                              supportPinyin:supportPinyin
                                      pinyinFromStringBlock:pinyinFromStringBlock];
-    dataModel.containMembers = resultMembers;
-    dataModel.isContainInMembers = resultMembers.count ? YES : NO;
+    dataModel.cj_containMembers = resultMembers;
+    dataModel.cj_isContainInMembers = resultMembers.count ? YES : NO;
     
-    if (dataModel.isContainInSelf || dataModel.isContainInMembers) {
+    if (dataModel.cj_isContainInSelf || dataModel.cj_isContainInMembers) {
         return dataModel;
         
     } else {

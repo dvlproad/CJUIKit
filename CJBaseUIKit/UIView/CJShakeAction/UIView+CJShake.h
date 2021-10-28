@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
+NS_ASSUME_NONNULL_BEGIN
+
 typedef NS_ENUM(NSUInteger, CJShakeType) {
     CJShakeTypeNever = 0,   /** 从来不需要抖动(默认值)   */
     CJShakeTypeMoving,      /** 抖动中   */
@@ -33,3 +35,5 @@ typedef NS_ENUM(NSUInteger, CJShakeType) {
 - (void)cjShakeKeeping;
 
 @end
+
+NS_ASSUME_NONNULL_END

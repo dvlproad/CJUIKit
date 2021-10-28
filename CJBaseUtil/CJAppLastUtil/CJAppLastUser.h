@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
+NS_ASSUME_NONNULL_BEGIN
 
 @interface CJAppLastUser : NSObject {
     
@@ -16,3 +17,5 @@
 @property (nonatomic, copy) NSString *lastLoginAccessToken; /**< 上次退出app时候登录的accessToken */
 
 @end
+
+NS_ASSUME_NONNULL_END

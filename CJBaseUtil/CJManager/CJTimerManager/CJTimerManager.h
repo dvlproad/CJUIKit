@@ -9,6 +9,8 @@
 #import <Foundation/Foundation.h>
 #import "CJTimerModel.h"
 
+NS_ASSUME_NONNULL_BEGIN
+
 //typedef NS_ENUM(NSUInteger, MyCountDownTimeZeroAction) {
 //    MyCountDownTimeZeroActionInvalidate,    /**< 销毁(结束定时器) */
 //    MyCountDownTimeZeroActionRestore,       /**< 还原(多用于循环定时,会自动将定时器时间还原到周期时间) */
@@ -53,3 +55,5 @@
 - (void)invalidateTimerWithCompleteBlock:(void(^)(void))completeBlock;
 
 @end
+
+NS_ASSUME_NONNULL_END

@@ -93,7 +93,7 @@
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         // 2秒后异步执行这里的代码...
         CGFloat maxWidth = viewWidth-2*lefMargin;
-        CGFloat maxWidth1 = label.bounds.size.width;
+        //CGFloat maxWidth1 = label.bounds.size.width;
                 
         CGFloat labelHeight = [text cjTextHeightInLabelWithMaxWidth:maxWidth font:font];
         CGFloat textViewHeight = [text cjTextHeightInTextViewWithMaxWidth:maxWidth font:font];

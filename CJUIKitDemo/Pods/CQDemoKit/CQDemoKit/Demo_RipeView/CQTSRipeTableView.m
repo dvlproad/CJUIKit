@@ -11,14 +11,19 @@
 @interface CQTSRipeTableView () <UITableViewDataSource, UITableViewDelegate> {
     
 }
-@property (nonatomic, strong) UITableView *tableView;
 @property (nonatomic, strong) NSArray<NSNumber *> *sectionRowCounts;    /**< 每个section的rowCount个数 */
+
+//// section 的 header 和 footer 的定制
+//@property (nonatomic, assign, readonly) CGFloat sectionHeaderHeight;
+//@property (nullable, nonatomic, copy) void(^sectionHeaderConfigBlock)(UILabel *bSectionHeaderView); /**< section的header定制（有时候背景色为透明） */
+//@property (nonatomic, assign, readonly) CGFloat sectionFooterHeight;
+//@property (nullable, nonatomic, copy) void(^sectionFooterConfigBlock)(UILabel *bSectionFooterView); /**< section的footer定制（有时候背景色为透明） */
 
 @end
 
 @implementation CQTSRipeTableView
 
-
+#pragma mark - Init
 /*
  *  初始化 TableView
  *
@@ -38,6 +43,41 @@
     return self;
 }
 
+/*
+#pragma mark - Config Section 的 header 和 footer
+- (void)configSectionHeaderHeight:(CGFloat)sectionHeaderHeight
+         sectionHeaderConfigBlock:(void(^)(UILabel *bSectionHeaderView))sectionHeaderConfigBlock
+              sectionFooterHeight:(CGFloat)sectionFooterHeight
+         sectionFooterConfigBlock:(void(^)(UILabel *bSectionFooterView))sectionFooterConfigBlock
+{
+    _sectionHeaderHeight = sectionHeaderHeight;
+    _sectionHeaderConfigBlock = sectionHeaderConfigBlock;
+    
+    _sectionFooterHeight = sectionFooterHeight;
+    _sectionFooterConfigBlock = sectionFooterConfigBlock;
+}
+
+
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
+    NSString *indexTitle = [NSString stringWithFormat:@"section:%zd", section];
+    
+    UILabel *indexTitleLabel = [[UILabel alloc] init];
+    //indexTitleLabel.backgroundColor = UIColor.whiteColor;
+    indexTitleLabel.text = indexTitle;
+    return indexTitleLabel;
+}
+
+// 同时实现以下两个方法，缺一不可，使得每个section的footer高度为0
+- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
+    return 0;
+}
+
+- (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section {
+    UIView *view = [UIView new];
+    view.backgroundColor = [UIColor greenColor];
+    return view;
+}
+*/
 
 #pragma mark - UITableViewDataSource & UITableViewDelegate
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -64,6 +104,8 @@
     
     NSString *title = [NSString stringWithFormat:@"%zd", indexPath.row];
     cell.textLabel.text = title;
+    
+    !self.cellConfigBlock ?: self.cellConfigBlock(cell);
     
     return cell;
 }

@@ -97,10 +97,6 @@ EOM
   esac
 }
 if [[ "$CONFIGURATION" == "Debug" ]]; then
-  install_resource "${PODS_ROOT}/CJPicker/CJPicker/Resources/area.plist"
-  install_resource "${PODS_ROOT}/CJPicker/CJPicker/Resources/city.plist"
-  install_resource "${PODS_ROOT}/CJPicker/CJPicker/Resources/line_gray_pickerToolbar.png"
-  install_resource "${PODS_ROOT}/CJPicker/CJPicker/Resources/line_gray_pickerToolbar@2x.png"
   install_resource "${PODS_ROOT}/CQDemoKit/CQDemoKit/BaseVC/TabBar/Resources/icons8-calendar.png"
   install_resource "${PODS_ROOT}/CQDemoKit/CQDemoKit/BaseVC/TabBar/Resources/icons8-folder.png"
   install_resource "${PODS_ROOT}/CQDemoKit/CQDemoKit/BaseVC/TabBar/Resources/icons8-home.png"
@@ -110,10 +106,6 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_resource "${PODS_ROOT}/SAMKeychain/Support/SAMKeychain.bundle"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
-  install_resource "${PODS_ROOT}/CJPicker/CJPicker/Resources/area.plist"
-  install_resource "${PODS_ROOT}/CJPicker/CJPicker/Resources/city.plist"
-  install_resource "${PODS_ROOT}/CJPicker/CJPicker/Resources/line_gray_pickerToolbar.png"
-  install_resource "${PODS_ROOT}/CJPicker/CJPicker/Resources/line_gray_pickerToolbar@2x.png"
   install_resource "${PODS_ROOT}/CQDemoKit/CQDemoKit/BaseVC/TabBar/Resources/icons8-calendar.png"
   install_resource "${PODS_ROOT}/CQDemoKit/CQDemoKit/BaseVC/TabBar/Resources/icons8-folder.png"
   install_resource "${PODS_ROOT}/CQDemoKit/CQDemoKit/BaseVC/TabBar/Resources/icons8-home.png"

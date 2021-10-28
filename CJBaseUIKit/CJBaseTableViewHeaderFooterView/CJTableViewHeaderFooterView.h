@@ -8,9 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
+NS_ASSUME_NONNULL_BEGIN
+
 @interface CJTableViewHeaderFooterView : UITableViewHeaderFooterView
 
 @property (nonatomic, assign) NSInteger belongToSection;    /**< 当前header或footer属于哪个section下 */
 @property (nonatomic, copy) void (^tapHandle)(NSInteger section);   /**< 当前视图的点击 */
 
 @end
+
+NS_ASSUME_NONNULL_END

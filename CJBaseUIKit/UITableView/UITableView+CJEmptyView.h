@@ -8,8 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
+NS_ASSUME_NONNULL_BEGIN
+
 //使用pod 'DZNEmptyDataSet', '~> 1.8.1'
 
 @interface UITableView (CJEmptyView)
 
 @end
+
+NS_ASSUME_NONNULL_END

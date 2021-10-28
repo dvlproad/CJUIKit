@@ -9,6 +9,8 @@
 #import <Foundation/Foundation.h>
 #import "CJDataUtil+NormalSearch.h"
 
+NS_ASSUME_NONNULL_BEGIN
+
 typedef void (^CJRealtimeSearchResultsBlock)(NSArray *searchResults);
 
 @interface CJRealtimeSearchUtil : NSObject {
@@ -45,3 +47,5 @@ typedef void (^CJRealtimeSearchResultsBlock)(NSArray *searchResults);
 - (void)realtimeSearchStop;
 
 @end
+
+NS_ASSUME_NONNULL_END

@@ -9,6 +9,8 @@
 #import <Foundation/Foundation.h>
 #import "CJAppLastUser.h"
 
+NS_ASSUME_NONNULL_BEGIN
+
 /**
  *  上一次退出前的APP账号信息
  */
@@ -40,3 +42,5 @@
 + (void)deleteAccountFromKeychain:(NSString *)account;
 
 @end
+
+NS_ASSUME_NONNULL_END

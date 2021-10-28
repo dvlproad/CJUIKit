@@ -10,6 +10,8 @@
 @import UIKit;
 @import UserNotifications;
 
+NS_ASSUME_NONNULL_BEGIN
+
 @protocol CJModule <UIApplicationDelegate, UNUserNotificationCenterDelegate>
 
 @end
@@ -25,3 +27,5 @@
 - (NSArray<id<CJModule>> *)allModules;
 
 @end
+
+NS_ASSUME_NONNULL_END

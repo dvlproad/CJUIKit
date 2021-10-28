@@ -13,12 +13,12 @@
 
 #pragma mark - 裁剪图片像素区域
 /*
- *  根据设置，先得到等会要如何裁剪image图片像素的裁剪模型数据，并根据得到的该模型进行裁剪其对应的pixelRect像素区域，得到新图片
+ *  确保图片的宽高比的在什么范围内，如果不在则裁剪。根据设置，先得到等会要如何裁剪image图片像素的裁剪模型数据，并根据得到的该模型进行裁剪其对应的pixelRect像素区域，得到新图片
  *
  *  @param image                        要进行裁剪的图片(不能为nil)
  *  @param fromRegionType               要从图片的哪个区域开始裁剪(一般从中间裁剪)
- *  @param tooWidthWidthHeightRatio     宽太宽时候，裁剪宽，保持高，裁剪后的图片比例（不可以为0）
- *  @param tooHeightWidthHeightRatio    高太高时候，裁剪高，保持宽，裁剪后的图片比例（不可以为0）
+ *  @param tooWidthWidthHeightRatio     宽高比的最大值/原图宽太宽时候，裁剪宽，保持高，裁剪后的图片比例（不可以为0）
+ *  @param tooHeightWidthHeightRatio    宽高比的最小值/原图高太高时候，裁剪高，保持宽，裁剪后的图片比例（不可以为0）
  *  @param noTooWidthOrHeightKeepRatio  不太宽也不太高的时候，裁剪宽或者高二者之一，裁剪后的图片比例（可以为0，且如果为0，则表示使用原图片的比例）
  *
  *  @return 裁剪后的新图
@@ -52,8 +52,8 @@ noTooWidthOrHeightKeepRatio:(CGFloat)noTooWidthOrHeightKeepRatio
  *  从图片指定区域裁剪指定像素大小newPixelSize的图片
  *
  *  @param image            要进行裁剪的图片
- *  @param fromRegionType   要从图片的哪个区域开始裁剪
- *  @param newPixelSize     要裁剪出的像素大小
+ *  @param fromRegionType   要从图片的哪个区域开始裁剪(一般为从图片的中间开始裁剪)
+ *  @param newPixelSize     要裁剪出的像素大小(会结合fromRegionType来获取要裁剪的像素区域pixelRect)
  *
  *  @return 裁剪后的新图
  */
@@ -61,7 +61,7 @@ noTooWidthOrHeightKeepRatio:(CGFloat)noTooWidthOrHeightKeepRatio
        fromRegionType:(UIImageCutFromRegion)fromRegionType
      withNewPixelSize:(CGSize)newPixelSize
 {
-    CGRect pixelRect = [self cutPixelRectForImage:image fromRegionType:fromRegionType withNewPixelSize:newPixelSize];
+    CGRect pixelRect = [self __cutPixelRectForImage:image fromRegionType:fromRegionType withNewPixelSize:newPixelSize];
     
     UIImage *newImage = [self __cutImage:image inPixelRect:pixelRect];
     
@@ -69,18 +69,21 @@ noTooWidthOrHeightKeepRatio:(CGFloat)noTooWidthOrHeightKeepRatio
 }
 
 
+
+
+#pragma mark Private Method
 /*
  *  根据设置，获取等会要如何裁剪image图片像素的裁剪模型数据
  *
- *  @param image                        要进行裁剪的图片
- *  @param tooWidthWidthHeightRatio     宽太长时候，裁剪宽，保持高，裁剪后的图片比例
- *  @param tooHeightWidthHeightRatio    高太高时候，裁剪高，保持宽，裁剪后的图片比例
+ *  @param image            要进行裁剪的图片
+ *  @param fromRegionType   要从图片的哪个区域开始裁剪(一般为从图片的中间开始裁剪)
+ *  @param newPixelSize     要裁剪出的像素大小
  *
  *  @return 裁剪后的新图
  */
-+ (CGRect)cutPixelRectForImage:(nullable UIImage *)image
-                fromRegionType:(UIImageCutFromRegion)fromRegionType
-              withNewPixelSize:(CGSize)newPixelSize
++ (CGRect)__cutPixelRectForImage:(nullable UIImage *)image
+                  fromRegionType:(UIImageCutFromRegion)fromRegionType
+                withNewPixelSize:(CGSize)newPixelSize
 {
     CGFloat newPixelWidth = newPixelSize.width;
     CGFloat newPixelHeight = newPixelSize.height;
@@ -100,7 +103,6 @@ noTooWidthOrHeightKeepRatio:(CGFloat)noTooWidthOrHeightKeepRatio
     return pixelRect;
 }
 
-#pragma mark Private Method
 /*
  *  裁剪pixelRect像素区域中的图片
  *

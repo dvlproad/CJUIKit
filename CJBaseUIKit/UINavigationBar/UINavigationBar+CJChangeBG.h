@@ -5,9 +5,12 @@
 //  Created by ciyouzen on 2015/12/23.
 //  Copyright © 2015年 dvlproad. All rights reserved.
 //
+//  应用场景，项目中有某一两个界面的导航栏在一开始时候是透明的，然后随着scrollView的移动才逐渐显示成它自己的颜色，这里为了能够在退出那些界面的时候，还原导航栏的颜色，我们直接在navigationBar上加一层视图overlay
 
 #import <UIKit/UIKit.h>
-//应用场景，项目中有某一两个界面的导航栏在一开始时候是透明的，然后随着scrollView的移动才逐渐显示成它自己的颜色，这里为了能够在退出那些界面的时候，还原导航栏的颜色，我们直接在navigationBar上加一层视图overlay
+
+
+NS_ASSUME_NONNULL_BEGIN
 
 @interface UINavigationBar (CJChangeBG)
 
@@ -55,3 +58,5 @@
 
 
 @end
+
+NS_ASSUME_NONNULL_END

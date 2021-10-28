@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
+NS_ASSUME_NONNULL_BEGIN
+
 /**
  *  1.返回一个RGB格式的UIColor对象
  */
@@ -52,3 +54,5 @@
 + (UIColor *)cjColorAlphaWithHexString:(NSString *)colorAlpha;
 
 @end
+
+NS_ASSUME_NONNULL_END

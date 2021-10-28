@@ -36,6 +36,9 @@ NS_ASSUME_NONNULL_BEGIN
 + (NSArray<UIImage *> *)cjts_localImages;
 /// 随机的本地测试图片
 + (UIImage *)cjts_localImageRandom;
+/// 获取指定位置的图片(为了cell显示的图片不会一直变化)
++ (UIImage *)cjts_localImageAtIndex:(NSInteger)selIndex;
+
 + (UIImage *)cjts_localImage1;
 + (UIImage *)cjts_localImage2;
 + (UIImage *)cjts_localImage3;

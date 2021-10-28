@@ -22,14 +22,14 @@ typedef NS_ENUM(NSUInteger, CJCompareResult) {
 #pragma mark - compress(图片压缩)
 /// 其他参考：[iOS 图片压缩总结](https://www.jianshu.com/p/66164b9a7692)
 /*
- *  压缩图片(先压缩图片质量，再压缩图片尺寸)
+ *  压缩图片(先压缩图片尺寸，再压缩图片质量。防止质量压缩不下去后，执行压缩图片尺寸前生成的图片变大)
  *
  *  @param image                要压缩的图片
- *  @param lastPossibleSize     最后可能的大小(此过程保持图片比例)
+ *  @param lastPossibleSize     最后可能的大小(此过程保持图片比例)，(一般直接取图片的image.size，然后乘以比例后的值)
  *  @param maxDataLength        指定的最大大小
  */
 + (NSData *)compressImage:(UIImage *)image withLastPossibleSize:(CGSize)lastPossibleSize maxDataLength:(NSInteger)maxDataLength {
-    image = [self cutImage:image withLastPossibleSize:lastPossibleSize scaleType:CJScaleTypeKeepOriginRatioAndTryLittle]; // 图片保持原始大小的比例，并在缩放后尽量小（宽太宽，裁宽；高太高，裁高）
+    image = [self __cutMaxImage:image inSize:lastPossibleSize]; // 在inSize中，保持图片比例，裁剪最大的size图片，得到新图
     
     // Compress by quality
     NSData *data = [self compressQualityForImage:image withMaxDataLength:maxDataLength];
@@ -60,21 +60,20 @@ typedef NS_ENUM(NSUInteger, CJCompareResult) {
 }
 
 /*
- *  根据指定方式，裁剪最大只能为maxSize的图片，得到新图
- *  @brief 假设原始(100,100),给定size(50,60),那么最终裁剪成的大小有可能有不进行缩放(50,60)、缩放后尽量小(50,50)、缩放后尽量大(60,60)
+ *  在inSize中，保持图片比例，裁剪最大的size图片，得到新图
+ *  @brief 假设给定size(50,60),比例来源(100,100),那么最终的大小为(50,50)：（宽太宽，裁宽；高太高，裁高）(50,50)；
  *
  *  @param image            要裁剪的图片
- *  @param lastPossibleSize 最后可能的大小
- *  @param scaleType        图片指定的缩放模式(不进行缩放、缩放后尽量小、缩放后尽量大)
+ *  @param inSize           在什么大小里寻找（宽太宽，裁宽；高太高，裁高）
  *
  *  @return 修正后的大小
  */
-+ (UIImage *)cutImage:(UIImage *)image withLastPossibleSize:(CGSize)lastPossibleSize scaleType:(CJScaleType)scaleType {
++ (UIImage *)__cutMaxImage:(UIImage *)image inSize:(CGSize)inSize {
     NSLog(@"-----------图片裁剪开始-----------");
     NSData *originImageData = UIImageJPEGRepresentation(image, 1);
     CGSize originImageSize = image.size;
     NSLog(@"图片在裁剪像素前数据大小约%.4fKB，尺寸大小为%@", originImageData.length/1024.0f, NSStringFromCGSize(image.size));
-    CGSize lastImageSize = [UIImage cj_correctionSize:originImageSize toLastPossibleSize:lastPossibleSize withScaleType:scaleType];
+    CGSize lastImageSize = [UIImage cj_correctionSize:originImageSize toLastPossibleSize:inSize withScaleType:CJScaleTypeKeepOriginRatioAndTryLittle];
     UIImage *newImage = [image cj_transformImageToSize:lastImageSize];
     NSData *newImageData = UIImageJPEGRepresentation(newImage, 1);
     NSLog(@"图片在裁剪像素后数据大小约%.4fKB，尺寸大小为%@", newImageData.length/1024.0f, NSStringFromCGSize(newImage.size));
@@ -85,7 +84,7 @@ typedef NS_ENUM(NSUInteger, CJCompareResult) {
 
 
 /*
- *  压缩图片质量,直到图片稍小于指定的最大大小(maxDataLength)
+ *  压缩图片质量，当图片稍小于指定的大小(maxDataLength)后就不再压缩。如果达不到，则压缩到能压缩的最大值就退出。
  *  @brief 压缩图片质量的优点在于，尽可能保留图片清晰度，图片不会明显模糊；
             缺点在于，不能保证图片压缩后小于指定大小。（因为图片的大小是由图片的宽高和像素决定的，而压质量其实只能决定部分图片大小。当图片的宽高过大时，是不能通过压质量来决定最优的图片大小）
  *
@@ -102,7 +101,7 @@ typedef NS_ENUM(NSUInteger, CJCompareResult) {
     NSData *data = UIImageJPEGRepresentation(image, compression);
     NSLog(@"开始压缩前数据大小:%.4f KB", (double)data.length/1024.0f);
     if (data.length < maxDataLength) {
-        NSLog(@"恭喜本图片大于没超过限制，不需要压缩");
+        NSLog(@"恭喜本图片大小没超过限制，不需要压缩");
         return data;
     }
     
@@ -122,11 +121,11 @@ typedef NS_ENUM(NSUInteger, CJCompareResult) {
     for (int i = 0; i < 8; ++i) { // 最多压缩8次，超过即使没到也退出。但正常8次后，应该到了。
         //比如100%->①50%->②25%->③12.5%->④6.25%->⑤3.125%->
         //⑥1.5625%(1/64)->⑦0.78125%(1/128)->⑧0.390625%(1/256)。
-        //附：30M*1024*1/256=30*4=120k
+        //附：30M*1024*1/256=30*4=120k，即即使是30M大小的图片经过8次压缩后也只剩下120k了
         compression = (max + min) / 2;
         data = UIImageJPEGRepresentation(image, compression);
         if (data.length == lastCompressDataLength) {
-            NSLog(@"温馨提示：本次压缩后数据大小没变，即表示已到达本图的最大质量压缩比，无法继续压缩了");
+            NSLog(@"温馨提示🤩：本次压缩后数据大小没变，即表示已到达本图的最大质量压缩比，无法继续压缩了");
             break;
         }
         

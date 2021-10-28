@@ -9,6 +9,8 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
+NS_ASSUME_NONNULL_BEGIN
+
 @interface CJSwitchSliderStatusModel : NSObject
 
 //normalState
@@ -26,3 +28,5 @@
 @property (nonatomic, assign) BOOL goNextStepWhenSwitchEventOccur;   /**< 已默认初始化为YES(只对非最后一步有效) */
 
 @end
+
+NS_ASSUME_NONNULL_END

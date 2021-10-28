@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
+NS_ASSUME_NONNULL_BEGIN
+
 @class CJPlayerSlider;
 @protocol CJPlayerSliderDelegate <NSObject>
 
@@ -43,3 +45,5 @@
 - (void)hideTipView;
 
 @end
+
+NS_ASSUME_NONNULL_END

@@ -9,6 +9,8 @@
 #import "CJSliderControl.h"
 #import "CJSwitchSliderStatusModel.h"
 
+NS_ASSUME_NONNULL_BEGIN
+
 typedef NS_ENUM(NSUInteger, CJSwitchAnimatedType) {
     /**
      *  滑道右侧当当前步,则相应的滑道本身当下一步
@@ -57,3 +59,5 @@ typedef NS_ENUM(NSUInteger, CJSwitchAnimatedType) {
 - (void)showStep:(NSInteger)step;
 
 @end
+
+NS_ASSUME_NONNULL_END

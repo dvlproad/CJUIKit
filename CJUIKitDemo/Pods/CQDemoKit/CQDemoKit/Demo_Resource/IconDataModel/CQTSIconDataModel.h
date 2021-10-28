@@ -18,8 +18,6 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nullable, nonatomic, strong) UIImage *imagePlaceholderImage;
 @property (nonatomic, assign) NSInteger badgeCount;
 
-//+ (void)setupImageView:(UIImageView *)imageView withImageUrl:(NSString *)imageUrl;
-
 @end
 
 NS_ASSUME_NONNULL_END

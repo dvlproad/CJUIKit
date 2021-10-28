@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
+NS_ASSUME_NONNULL_BEGIN
+
 @interface CJTimerModel : NSObject
 
 @property (nonatomic, copy) NSString *timerid;  /**< 备用的属性：用来区分timer */
@@ -39,3 +41,5 @@
                             resetSecondBlock:(void(^)(CJTimerModel *timer))resetSecondBlock;
 
 @end
+
+NS_ASSUME_NONNULL_END

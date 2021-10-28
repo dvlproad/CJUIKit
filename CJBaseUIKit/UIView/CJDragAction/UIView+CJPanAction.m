@@ -136,22 +136,23 @@
 {
     __weak typeof(self)weakSelf = self;
     [self cj_addPanWithPaningOffsetBlock:^(BOOL isDown, CGPoint transP) {
-        CGRect oldFrame = self.frame;
+        __strong __typeof(weakSelf)strongSelf = weakSelf;
+        CGRect oldFrame = strongSelf.frame;
         
         if (isDown) {
             //向下拖 transP.y > 0
             oldFrame.origin.y += transP.y;
-            self.frame = oldFrame;
+            strongSelf.frame = oldFrame;
             
         } else {
             //向上拖 transP.y < 0
-            CGFloat containerPanStartY = CGRectGetMinY(self.cjPanStartFrame);
-            CGFloat containerCurrentY = CGRectGetMinY(self.frame);
+            CGFloat containerPanStartY = CGRectGetMinY(strongSelf.cjPanStartFrame);
+            CGFloat containerCurrentY = CGRectGetMinY(strongSelf.frame);
             if(containerCurrentY > containerPanStartY){
                 NSLog(@"currentY2=%.0f, originY=%0.f", containerCurrentY, containerPanStartY);
                 oldFrame.origin.y += transP.y;
                 oldFrame.origin.y = MAX(oldFrame.origin.y, containerPanStartY);
-                self.frame = oldFrame;
+                strongSelf.frame = oldFrame;
             }
         }
     } panCompleteBlock:panCompleteBlock];
@@ -200,7 +201,7 @@
                 self.cjPan_isDragScrollView = NO;
                 break;
             }
-            touchView = [touchView nextResponder];
+            touchView = (UIView *)[touchView nextResponder];
         }
     }
     return YES;

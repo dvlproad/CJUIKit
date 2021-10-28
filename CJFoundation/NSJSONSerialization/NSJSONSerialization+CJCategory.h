@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
+NS_ASSUME_NONNULL_BEGIN
+
 /**
  *  通过NSJSONSerialization在jsonObject(如NSDictionary或NSArray)与NSData之间互相转换(含NSData与NSString的转换)
  *
@@ -51,3 +53,5 @@
 + (id)cj_JSONObjectFromString:(NSString *)jsonString;
 
 @end
+
+NS_ASSUME_NONNULL_END

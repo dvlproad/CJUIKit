@@ -137,6 +137,16 @@
     return image;
 }
 
+/// 获取指定位置的图片(为了cell显示的图片不会一直变化)
++ (UIImage *)cjts_localImageAtIndex:(NSInteger)selIndex {
+    NSArray<UIImage *> *images = [self cjts_localImages];
+    if (selIndex >= images.count) { //位置太大的时候，固定使用第一张图片
+        selIndex = 0;
+    }
+    UIImage *image = [images objectAtIndex:selIndex];
+    return image;
+}
+
 + (UIImage *)cjts_localImage1 {
     UIImage *image = [UIImage cqdemokit_xcassetImageNamed:@"cqts_1.jpg"];
     return image;

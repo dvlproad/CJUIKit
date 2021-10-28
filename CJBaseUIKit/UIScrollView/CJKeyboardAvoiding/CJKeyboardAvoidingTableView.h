@@ -9,6 +9,10 @@
 #import <UIKit/UIKit.h>
 #import "UIScrollView+CJKeyboardAvoiding.h"
 
+NS_ASSUME_NONNULL_BEGIN
+
 @interface CJKeyboardAvoidingTableView : UITableView
 
 @end
+
+NS_ASSUME_NONNULL_END

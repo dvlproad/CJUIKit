@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
+NS_ASSUME_NONNULL_BEGIN
+
 /**
  *  与时间相关的处理工具
  */
@@ -24,3 +26,5 @@
 + (long long)millisecondsFromDate:(NSDate *)date;
 
 @end
+
+NS_ASSUME_NONNULL_END

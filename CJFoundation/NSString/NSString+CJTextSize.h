@@ -10,6 +10,8 @@
 #import <UIKit/UIKit.h>
 #import <Foundation/Foundation.h>
 
+NS_ASSUME_NONNULL_BEGIN
+
 @interface NSString (CJCalculateSize)
 
 ///获取字符串高度(假设最大高可以MAXFLOAT)
@@ -78,3 +80,5 @@
                                               maxTextWidth:(CGFloat)maxTextWidth;
 
 @end
+
+NS_ASSUME_NONNULL_END

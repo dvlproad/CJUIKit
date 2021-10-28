@@ -9,6 +9,9 @@
 #import <UIKit/UIKit.h>
 #import "CJAdsorbModel.h"
 
+
+NS_ASSUME_NONNULL_BEGIN
+
 typedef NS_ENUM(NSUInteger, CJUISliderType) {
     CJUISliderTypeDefault,
     CJUISliderTypeRange,
@@ -34,3 +37,5 @@ typedef NS_ENUM(NSUInteger, CJUISliderType) {
 
 
 @end
+
+NS_ASSUME_NONNULL_END

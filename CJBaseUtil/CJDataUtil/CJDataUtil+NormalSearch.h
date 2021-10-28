@@ -9,7 +9,9 @@
 #import "CJDataUtil.h"
 
 #import "CJSectionDataModel.h"
-#import "NSObject+SearchProperty.h"
+#import "NSObject+CJSearchProperty.h"
+
+NS_ASSUME_NONNULL_BEGIN
 
 typedef NS_ENUM(NSUInteger, CJSearchType) {
     CJSearchTypeFull,                           /**< 检查整个字符串 */
@@ -171,3 +173,5 @@ dataModelMemberSearchSelector:(SEL)dataModelMemberSearchSelector
       pinyinFromStringBlock:(NSString *(^)(NSString *string))pinyinFromStringBlock;
 
 @end
+
+NS_ASSUME_NONNULL_END

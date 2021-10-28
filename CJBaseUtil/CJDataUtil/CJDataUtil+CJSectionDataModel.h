@@ -11,9 +11,11 @@
 #import <UIKit/UIKit.h>
 #import "CJSectionDataModel.h"
 
+NS_ASSUME_NONNULL_BEGIN
+
 @interface CJDataUtil (CJSectionDataModel)
 
-/**
+/*
  *  统计从fromIndexPath到toIndexPath中的所有indexPath
  *
  *  @param fromIndexPath        开始选择的indexPath
@@ -26,7 +28,7 @@
                                                       toEndIndexPath:(NSIndexPath *)endIndexPath
                                                  inSectionDataModels:(NSMutableArray<CJSectionDataModel *> *)sectionDataModels;
 
-/**
+/*
  *  判断是否是向后选择
  *
  *  @param fromIndexPath        开始选择的indexPath
@@ -37,7 +39,7 @@
 + (BOOL)checkIsBackwardsSelectionByFromIndexPath:(NSIndexPath *)fromIndexPath
                                   toEndIndexPath:(NSIndexPath *)endIndexPath;
 
-/**
+/*
  *  比较fromIndexPath和endIndexPath的大小
  *
  *  @param fromIndexPath        开始选择的indexPath
@@ -50,3 +52,5 @@
 
 
 @end
+
+NS_ASSUME_NONNULL_END

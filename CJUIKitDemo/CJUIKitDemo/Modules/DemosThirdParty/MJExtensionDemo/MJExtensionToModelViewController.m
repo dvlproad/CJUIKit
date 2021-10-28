@@ -43,7 +43,7 @@
     DemoBusFlightModel *busFlightModel = [DemoBusFlightModel mj_objectWithKeyValues:busFlightDictionary];
     NSLog(@"busFlightModel = %@", busFlightModel);
     
-    
+    /*
     NSArray *arrayDictionarys = @[@[@{@"name": @"1"},
                                     @{@"name": @"2"},
                                     @{@"name": @"3"}
@@ -57,6 +57,7 @@
                                     @{@"name": @"9"}
                                     ],
                                   ];
+    */
 }
 
 - (void)didReceiveMemoryWarning {

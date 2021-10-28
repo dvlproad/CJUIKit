@@ -9,8 +9,12 @@
 #import <UIKit/UIKit.h>
 #import <Foundation/Foundation.h>
 
+NS_ASSUME_NONNULL_BEGIN
+
 @interface NSString (CJTextLength)
 
 //得到中英文混合字符串长度
 - (NSInteger)cj_length;
 @end
+
+NS_ASSUME_NONNULL_END

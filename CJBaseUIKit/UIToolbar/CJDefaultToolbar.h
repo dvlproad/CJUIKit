@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
+NS_ASSUME_NONNULL_BEGIN
+
 typedef NS_OPTIONS(NSUInteger, CJDefaultToolbarOption) {
     CJDefaultToolbarOptionConfirm = 1 << 0, /**< 是否有确定按钮 */
     CJDefaultToolbarOptionCancel = 1 << 1,  /**< 是否有取消按钮 */
@@ -32,3 +34,5 @@ typedef NS_OPTIONS(NSUInteger, CJDefaultToolbarOption) {
 - (void)updateShowingValue:(NSString *)value;
 
 @end
+
+NS_ASSUME_NONNULL_END

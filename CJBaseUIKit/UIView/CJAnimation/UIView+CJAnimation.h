@@ -9,6 +9,8 @@
 
 #import <UIKit/UIKit.h>
 
+NS_ASSUME_NONNULL_BEGIN
+
 typedef NS_ENUM(NSUInteger, CJAnimateCommonType) {
     CJAnimateCommonTypeFade = 0,                   //淡入淡出
     CJAnimateCommonTypeMoveIn,                     //覆盖
@@ -51,3 +53,5 @@ typedef NS_ENUM(NSUInteger, CJTransitionDirection) {
 - (void)cj_animationWithAnimationTransition:(UIViewAnimationTransition)transition;
 
 @end
+
+NS_ASSUME_NONNULL_END

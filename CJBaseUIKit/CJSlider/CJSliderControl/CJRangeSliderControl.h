@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
+NS_ASSUME_NONNULL_BEGIN
+
 @class CJRangeSliderControl;
 
 /**
@@ -154,3 +156,5 @@ typedef NS_ENUM(NSUInteger, CJThumbXType) {
                 endRangeValue:(CGFloat)endRangeValue NS_REQUIRES_SUPER;
 
 @end
+
+NS_ASSUME_NONNULL_END

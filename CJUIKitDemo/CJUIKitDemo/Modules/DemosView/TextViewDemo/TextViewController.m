@@ -31,9 +31,11 @@
 //    }];
     
     // 监听键盘弹出
+    __weak typeof(self)weakSelf = self;
     [self.textView cj_registerKeyboardNotificationWithWillShowBlock:nil willHideBlock:nil willChangeFrameBlock:^(CGFloat keyboardHeight, CGFloat keyboardTopY, CGFloat duration) {
         // 修改底部视图距离底部的间距
-        _bottomViewBottomConstraint.constant = keyboardHeight;
+        __strong __typeof(weakSelf)strongSelf = weakSelf;
+        strongSelf->_bottomViewBottomConstraint.constant = keyboardHeight;
         
         // 约束动画
         [UIView animateWithDuration:duration animations:^{
@@ -45,7 +47,6 @@
     _textView.placeholder = @"这是CJTextView的占位文字";
     _textView.placeholderColor = [UIColor redColor];
     
-    __weak typeof(self)weakSelf = self;
     // 设置文本框最大行数 及 监听文本框文字高度改变
     [self.textView setMaxNumberOfLines:4];
     [self.textView configDidChangeHappenHandle:nil didChangeCompleteBlock:^(NSString * _Nonnull text, BOOL shouldUpdateHeight, CGFloat currentTextViewHeight) {

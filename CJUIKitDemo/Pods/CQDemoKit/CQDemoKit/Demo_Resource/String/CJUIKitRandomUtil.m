@@ -2,7 +2,8 @@
 //  CJUIKitRandomUtil.m
 //  CQDemoKit
 //
-//  Created by 李超前 on 2020/11/13.
+//  Created by ciyouzen on 2020/11/13.
+//  Copyright © 2020 dvlproad. All rights reserved.
 //
 
 #import "CJUIKitRandomUtil.h"
@@ -50,9 +51,13 @@ NSString *cqtsRandomString(NSInteger minLength, NSInteger maxLength, CQRipeStrin
         randomStringLength = minLength + rand() % (maxLength-minLength);
     }
     
+    if (randomStringLength == 0) {  // 如果随机字符串的长度为0，则返回空字符串
+        return @"";
+    }
+    
     
     NSString *number = @"0123456789";
-    NSString *english = @"ABCDEFGHIJKLMNOPQRST";
+    NSString *english = @"ABCDEFGHIJKLMNOPQRSTUVWXYZ";
     NSString *chinese = @"君不见黄河之水天上来奔流到海不复回君不见高堂明镜悲白发朝如青丝暮成雪人生得意须尽欢莫使金樽空对月天生我材必有用千金散尽还复来烹羊宰牛且为乐会须一饮三百杯岑夫子丹丘生将进酒杯莫停与君歌一曲请君为我倾耳听钟鼓馔玉不足贵但愿长醉不愿醒古来圣贤皆寂寞惟有饮者留其名陈王昔时宴平乐斗酒十千恣欢谑主人何为言少钱径须沽取对君酌五花马千金裘呼儿将出换美酒与尔同销万古愁";
     
     NSMutableString *sourceStr = [[NSMutableString alloc] init];

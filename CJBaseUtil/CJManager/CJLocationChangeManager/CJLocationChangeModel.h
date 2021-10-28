@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
+NS_ASSUME_NONNULL_BEGIN
+
 ///距离新增的模型
 @interface CJLocationChangeModel : NSObject
 
@@ -17,3 +19,5 @@
 @property (nonatomic, assign) double KMHSpeed;              /**< 这段时间内的时速(时速计算采用百度计算出来的距离) */
 
 @end
+
+NS_ASSUME_NONNULL_END

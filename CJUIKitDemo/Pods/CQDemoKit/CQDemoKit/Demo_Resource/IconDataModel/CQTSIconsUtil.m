@@ -7,6 +7,7 @@
 //
 
 #import "CQTSIconsUtil.h"
+#import "CQTSImageLoader.h"
 
 @implementation CQTSIconsUtil
 
@@ -147,7 +148,7 @@
 #pragma mark - Private Method
 // 图片比较小只是测试临时使用
 + (UIImage *)_iconImageWithUrl:(NSString *)imageUrl {
-    UIImage *image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:imageUrl]]];
+    UIImage *image = [CQTSImageLoader syncLoadImageWithUrl:imageUrl optionUseCache:NO];
     return image;
 }
 

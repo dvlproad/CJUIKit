@@ -17,6 +17,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nullable, nonatomic, copy) NSString *content;
 @property (nullable, nonatomic, strong) UIImage *normalImage;
 @property (nullable, nonatomic, strong) UIImage *selectedImage;
+@property (nullable, nonatomic, copy) NSString *imageUrl;       /**< 有网络图片时候，优先使用网络图片 */
 
 @property (nullable, nonatomic, strong) NSIndexPath *indexPath; /**< 该模块所在的位置 */
 

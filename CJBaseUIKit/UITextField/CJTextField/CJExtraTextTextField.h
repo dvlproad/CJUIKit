@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
+NS_ASSUME_NONNULL_BEGIN
+
 ///一个可以在自己输入的字符串前后添加其他额外字符串的文本框
 @interface CJExtraTextTextField : UITextField {
     
@@ -32,3 +34,5 @@
 - (void)fixExtraString;
 
 @end
+
+NS_ASSUME_NONNULL_END

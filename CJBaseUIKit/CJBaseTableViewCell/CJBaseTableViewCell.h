@@ -14,6 +14,8 @@
 #import <CJBaseUIKit/CJBadgeButton.h>
 #endif
 
+NS_ASSUME_NONNULL_BEGIN
+
 @class CJBaseTableViewCell;
 
 //建议：Configure类的设置强烈建议优先用block，而事件类的可以优先使用delegate
@@ -83,3 +85,5 @@
 - (void)addCJSeparateLineView;
 
 @end
+
+NS_ASSUME_NONNULL_END

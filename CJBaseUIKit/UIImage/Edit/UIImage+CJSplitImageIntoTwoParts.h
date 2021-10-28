@@ -8,8 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
+NS_ASSUME_NONNULL_BEGIN
+
 @interface UIImage (CJSplitImageIntoTwoParts)
 
 - (NSArray<UIImage *> *)cj_splitImageIntoTwoParts;
 
 @end
+
+NS_ASSUME_NONNULL_END

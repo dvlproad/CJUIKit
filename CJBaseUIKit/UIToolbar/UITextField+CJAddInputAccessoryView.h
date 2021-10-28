@@ -9,8 +9,12 @@
 #import <UIKit/UIKit.h>
 #import "CJDefaultToolbar.h"
 
+NS_ASSUME_NONNULL_BEGIN
+
 @interface UITextField (CJAddInputAccessoryView)
 
 - (void)addDefaultInputAccessoryViewWithDoneButtonClickBlock:(void (^)(UITextField *textField))doneButtonClickBlock;
 
 @end
+
+NS_ASSUME_NONNULL_END

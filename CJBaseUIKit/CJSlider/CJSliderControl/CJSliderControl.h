@@ -11,6 +11,8 @@
 #import "CJSliderPopover.h"
 #import "CJAdsorbModel.h"
 
+NS_ASSUME_NONNULL_BEGIN
+
 @class CJSliderControl;
 
 typedef NS_ENUM(NSUInteger, CJSliderType) {
@@ -141,4 +143,4 @@ typedef NS_ENUM(NSUInteger, CJSliderPopoverDispalyType) {
 
 @end
 
-//NS_ASSUME_NONNULL_END
+NS_ASSUME_NONNULL_END

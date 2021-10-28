@@ -26,7 +26,7 @@
     return _sharedInstance;
 }
 
-/**
+/*
 *  显示拨打电话视图
 *
 *  @param phoneNum 要拨打的电话号码
@@ -68,7 +68,7 @@
     }
 }
 
-/**
+/*
 *  拨打电话
 *
 *  @param phone    要拨打的电话

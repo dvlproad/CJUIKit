@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
+NS_ASSUME_NONNULL_BEGIN
+
 /// 文本框菜单禁止的类型
 typedef NS_ENUM(NSUInteger, CJTextFieldForbidMenuType) {
     CJTextFieldForbidMenuTypeNone = 0,      /**< 不禁止 */
@@ -51,3 +53,5 @@ typedef NS_ENUM(NSUInteger, CJTextFieldForbidMenuType) {
                    rightMargin:(CGFloat)rightMargin;
 
 @end
+
+NS_ASSUME_NONNULL_END

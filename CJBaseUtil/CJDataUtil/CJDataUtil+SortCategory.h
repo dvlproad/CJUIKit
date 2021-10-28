@@ -11,9 +11,11 @@
 #import <UIKit/UIKit.h>
 #import "CJSortedCategoryResult.h"
 
+NS_ASSUME_NONNULL_BEGIN
+
 @interface CJDataUtil (SortCategory)
 
-/**
+/*
  *  对数组进行分组
  *
  *  @param sortedDataSource         要分组的数据(数组的元素可以为自定义类，也可以为NSString)
@@ -31,3 +33,5 @@
 
 
 @end
+
+NS_ASSUME_NONNULL_END

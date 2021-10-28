@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
+NS_ASSUME_NONNULL_BEGIN
+
 @interface CJAppLastLaunchInfo : NSObject <NSCoding> {
     
 }
@@ -18,3 +20,5 @@
 @property (nonatomic, assign, readonly) BOOL isFirstLaunchThisVersion;  /**< 是否是第一次安装这个版本 */
 
 @end
+
+NS_ASSUME_NONNULL_END

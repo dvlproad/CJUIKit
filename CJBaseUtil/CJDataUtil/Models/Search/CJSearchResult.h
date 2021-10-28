@@ -8,9 +8,13 @@
 
 #import <Foundation/Foundation.h>
 
+NS_ASSUME_NONNULL_BEGIN
+
 @interface CJSearchResult : NSObject
 
 @property (nonatomic, strong) NSMutableArray *selfs;    /**< 在本身中搜索的结果 */
 @property (nonatomic, strong) NSMutableArray *members;  /**< 在成员中搜索的结果 */
 
 @end
+
+NS_ASSUME_NONNULL_END

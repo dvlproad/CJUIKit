@@ -14,6 +14,8 @@ NS_ASSUME_NONNULL_BEGIN
 @interface CQTSRipeTableView : UITableView {
     
 }
+@property (nullable, nonatomic, copy) void(^cellConfigBlock)(UITableViewCell *bCell); /**< cell的UI定制（有时候需要cell和其所在列表的背景色为透明） */
+
 
 /*
  *  初始化 TableView
@@ -29,7 +31,15 @@ NS_ASSUME_NONNULL_BEGIN
 - (instancetype)initWithFrame:(CGRect)frame style:(UITableViewStyle)style NS_UNAVAILABLE;
 - (instancetype)initWithCoder:(NSCoder *)aDecoder NS_UNAVAILABLE;
 
-// 初始化示例 CQTSRipeTableView *tableView = [[CQTSRipeTableView alloc] initWithSectionRowCounts:@[@1, @3, @6, @8]];
+/* 初始化示例
+CQTSRipeTableView *tableView = [[CQTSRipeTableView alloc] initWithSectionRowCounts:@[@1, @3, @6, @8]];
+CQTSRipeTableView *tableView = [[CQTSRipeTableView alloc] initWithSectionRowCounts:@[@1, @3, @6, @8]];
+tableView.backgroundColor = [UIColor colorWithWhite:1 alpha:0.5];
+tableView.cellConfigBlock = ^(UITableViewCell * _Nonnull bCell) {
+    bCell.contentView.backgroundColor = [UIColor colorWithWhite:1 alpha:0.8];
+    bCell.backgroundColor = [UIColor colorWithWhite:1 alpha:0.8];
+};
+*/
 
 @end
 

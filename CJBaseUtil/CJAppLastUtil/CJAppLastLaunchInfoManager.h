@@ -9,6 +9,8 @@
 #import <Foundation/Foundation.h>
 #import "CJAppLastLaunchInfo.h"
 
+NS_ASSUME_NONNULL_BEGIN
+
 /**
  *  上一次启动的APP信息
  */
@@ -23,3 +25,5 @@
 
 
 @end
+
+NS_ASSUME_NONNULL_END

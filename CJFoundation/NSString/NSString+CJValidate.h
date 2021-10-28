@@ -14,6 +14,8 @@ typedef NS_ENUM(NSUInteger, CJAreaType) {
     CJAreaTypeMacao,        /**< 澳门地区 */
 };
 
+NS_ASSUME_NONNULL_BEGIN
+
 @interface NSString (CJValidate)
 
 /*
@@ -81,3 +83,5 @@ typedef NS_ENUM(NSUInteger, CJAreaType) {
 - (BOOL)canAppendString:(NSString *)appendString allowDecimals:(BOOL)allowDecimals;
 
 @end
+
+NS_ASSUME_NONNULL_END

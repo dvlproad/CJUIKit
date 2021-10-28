@@ -18,7 +18,7 @@
             ③保持原始大小的比例，并在缩放后尽量大（宽不够，拓宽；高不够，拓高）(60,60)
  *
  *  @param correctionSize   待修正的大小
- *  @param lastPossibleSize 最后可能的大小
+ *  @param lastPossibleSize 最后可能的大小(一般直接取图片的image.size，然后乘以比例后的值)
  *  @param scaleType        图片指定的缩放模式
                             ①放弃原始大小的比例，直接使用现在的大小；
                             ②保持原始大小的比例，并在缩放后尽量小（宽太宽，裁宽；高太高，裁高）；
@@ -30,41 +30,69 @@
          toLastPossibleSize:(CGSize)lastPossibleSize
               withScaleType:(CJScaleType)scaleType
 {
-    switch (scaleType) {
-        case CJScaleTypeKeepOriginRatioAndTryLittle:
-        {
-            // 在保持等比的情况下，修正size的值，使得size尽量小
-            CGFloat ratioWidth = correctionSize.width/lastPossibleSize.width;    //宽度需变化的倍数
-            CGFloat ratioHeight = correctionSize.height/lastPossibleSize.height; //高度需变化的倍数
-            if (ratioWidth > ratioHeight) {
-                //lastPossibleSize.width = lastPossibleSize.width;
-                lastPossibleSize.height = (lastPossibleSize.width/correctionSize.width)*correctionSize.height;
-            } else {
-                lastPossibleSize.width = (lastPossibleSize.height/correctionSize.height)*correctionSize.width;
-                //lastPossibleSize.height = lastPossibleSize.height;
-            }
-            
-            break;
-        }
-        case CJScaleTypeKeepOriginRatioAndTryBig:
-        {
-            // 在保持等比的情况下，修正size的值，使得size尽量大
-            CGFloat ratioWidth = correctionSize.width/lastPossibleSize.width;    //宽度需变化的倍数
-            CGFloat ratioHeight = correctionSize.height/lastPossibleSize.height; //高度需变化的倍数
-            if (ratioWidth < ratioHeight) {
-                //lastPossibleSize.width = lastPossibleSize.width;
-                lastPossibleSize.height = (lastPossibleSize.width/correctionSize.width)*correctionSize.height;
-            } else {
-                lastPossibleSize.width = (lastPossibleSize.height/correctionSize.height)*correctionSize.width;
-                //lastPossibleSize.height = lastPossibleSize.height;
-            }
-            break;
-        }
-        default:
-            break;
+    if (scaleType == CJScaleTypeKeepOriginRatioAndTryLittle) {
+        CGSize maxSize = [self cj_getMaxSizeInSize:lastPossibleSize withRatioForSize:correctionSize];
+        return maxSize;
+    } else if (scaleType == CJScaleTypeKeepOriginRatioAndTryBig) {
+        CGSize minSize = [self cj_getMinSizeContainSize:lastPossibleSize withRatioForSize:correctionSize];
+        return minSize;
+    } else {
+        return lastPossibleSize;
     }
-    return lastPossibleSize;
 }
+
+
+/*
+ *  获取在保持指定比例情况下，包含想要的containSize的最小size
+ *  @brief 假设给定size(50,60),比例来源(100,100),那么最终的大小为(60,60)：（宽不够，拓宽；高不够，拓高）
+ *
+ *  @param containSize      要包含的大小（宽不够，拓宽；高不够，拓高）
+ *  @param correctionSize   要维持的比例的来源
+ *
+ *  @return 包含containSize的最小minSize
+ */
++ (CGSize)cj_getMinSizeContainSize:(CGSize)containSize withRatioForSize:(CGSize)correctionSize
+{
+    CGFloat ratioWidth = correctionSize.width/containSize.width;    //宽度需变化的倍数
+    CGFloat ratioHeight = correctionSize.height/containSize.height; //高度需变化的倍数
+    
+    CGFloat minSizeWidth = 0;
+    CGFloat minSizeHeight = 0;
+    if (ratioWidth < ratioHeight) {
+        minSizeWidth = containSize.width;
+        minSizeHeight = (containSize.width/correctionSize.width)*correctionSize.height;
+    } else {    // 宽变小得更多(可以假设高不变)，让新宽不变小，而是变大
+        minSizeWidth = (containSize.height/correctionSize.height)*correctionSize.width;
+        minSizeHeight = containSize.height;
+    }
+    return CGSizeMake(minSizeWidth, minSizeHeight);
+}
+
+/*
+ *  获取在inSize中保持指定比例情况下的最大size
+ *  @brief 假设给定size(50,60),比例来源(100,100),那么最终的大小为(50,50)：（宽太宽，裁宽；高太高，裁高）(50,50)；
+ *
+ *  @param inSize           在什么大小里寻找（宽太宽，裁宽；高太高，裁高）
+ *  @param correctionSize   要维持的比例的来源
+ *
+ *  @return 在inSize里的最大size
+ */
++ (CGSize)cj_getMaxSizeInSize:(CGSize)inSize withRatioForSize:(CGSize)correctionSize {
+    CGFloat ratioWidth = correctionSize.width/inSize.width;    //宽度需变化的倍数
+    CGFloat ratioHeight = correctionSize.height/inSize.height; //高度需变化的倍数
+    
+    CGFloat maxSizeWidth = 0;
+    CGFloat maxSizeHeight = 0;
+    if (ratioWidth > ratioHeight) { // 宽变小得更多(可以假设高不变)，在新宽维持原宽下，让高也变小
+        maxSizeWidth = inSize.width;
+        maxSizeHeight = (inSize.width/correctionSize.width)*correctionSize.height;
+    } else {
+        maxSizeWidth = (inSize.height/correctionSize.height)*correctionSize.width;
+        maxSizeHeight = inSize.height;
+    }
+    return CGSizeMake(maxSizeWidth, maxSizeHeight);;
+}
+
 
 /* 完整的描述请参见文件头部 */
 - (UIImage *)cj_transformImageToSize:(CGSize)size {

@@ -18,15 +18,5 @@
     return self;
 }
 
-+ (void)setupImageView:(UIImageView *)imageView withImageUrl:(NSString *)imageUrl {
-    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-        UIImage *image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:imageUrl]]];
-
-        dispatch_async(dispatch_get_main_queue(), ^{
-            imageView.image = image;
-        });
-    });
-}
-
 
 @end

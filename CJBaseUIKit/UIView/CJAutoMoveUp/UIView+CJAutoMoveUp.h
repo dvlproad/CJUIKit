@@ -9,6 +9,8 @@
 
 #import <UIKit/UIKit.h>
 
+NS_ASSUME_NONNULL_BEGIN
+
 @interface UIView (CJAutoMoveUp) {
     
 }
@@ -41,3 +43,5 @@
                                     willChangeFrameBlock:(void(^ _Nullable)(CGFloat keyboardHeight, CGFloat keyboardTopY, CGFloat duration))keyboardWillChangeFrameBlock;
 
 @end
+
+NS_ASSUME_NONNULL_END

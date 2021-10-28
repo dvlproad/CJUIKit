@@ -8,13 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
+NS_ASSUME_NONNULL_BEGIN
+
 typedef NS_ENUM(NSUInteger, CJScaleType) {
     CJScaleTypeIgnoreOriginRatio = 0,           /**< 放弃原始大小的比例，直接使用现在的大小 */
     CJScaleTypeKeepOriginRatioAndTryLittle,     /**< 保持原始大小的比例，并在缩放后尽量小（宽太宽，裁宽；高太高，裁高） */
     CJScaleTypeKeepOriginRatioAndTryBig         /**< 保持原始大小的比例，并在缩放后尽量大（宽不够，拓宽；高不够，拓高） */
 };
-
-NS_ASSUME_NONNULL_BEGIN
 
 @interface UIImage (CJTransformSize)
 
@@ -26,7 +26,7 @@ NS_ASSUME_NONNULL_BEGIN
             ③保持原始大小的比例，并在缩放后尽量大（宽不够，拓宽；高不够，拓高）(60,60)
  *
  *  @param correctionSize   待修正的大小
- *  @param lastPossibleSize 最后可能的大小
+ *  @param lastPossibleSize 最后可能的大小(一般直接取图片的image.size，然后乘以比例后的值)
  *  @param scaleType        图片指定的缩放模式
                             ①放弃原始大小的比例，直接使用现在的大小；
                             ②保持原始大小的比例，并在缩放后尽量小（宽太宽，裁宽；高太高，裁高）；

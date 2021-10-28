@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
+NS_ASSUME_NONNULL_BEGIN
+
 /**
  *  类目说明：通过给View添加UIPanGestureRecognizer手势，使其可以移动到拖动的位置
  */
@@ -20,3 +22,5 @@
 
 
 @end
+
+NS_ASSUME_NONNULL_END

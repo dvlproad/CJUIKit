@@ -2,7 +2,8 @@
 //  CJUIKitRandomUtil.h
 //  CQDemoKit
 //
-//  Created by 李超前 on 2020/11/13.
+//  Created by ciyouzen on 2020/11/13.
+//  Copyright © 2020 dvlproad. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>

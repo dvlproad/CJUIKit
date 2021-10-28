@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
+NS_ASSUME_NONNULL_BEGIN
+
 @interface UIImage (CJCreate)
 
 #pragma mark - 根据颜色创建图片
@@ -49,3 +51,5 @@
 + (UIImage *)cj_imageWithView:(UIView *)contentView opaque:(BOOL)opaque;
 
 @end
+
+NS_ASSUME_NONNULL_END

@@ -9,9 +9,13 @@
 #import <UIKit/UIKit.h>
 #import <Foundation/Foundation.h>
 
+NS_ASSUME_NONNULL_BEGIN
+
 @interface NSString (CJCut)
 
 - (NSArray<NSString *> *)removeSeprateCharacterWithStart:(NSString *)startCharacter
                                                      end:(NSString *)endCharacter;
 
 @end
+
+NS_ASSUME_NONNULL_END

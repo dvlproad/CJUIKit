@@ -11,6 +11,8 @@
 #import "CJAppLastLaunchInfoManager.h"
 #import "CJAppLastUserManager.h"
 
+NS_ASSUME_NONNULL_BEGIN
+
 @interface CJAppLastUtil : NSObject
 
 #pragma mark - LastLaunchInfo
@@ -46,3 +48,5 @@
 + (void)deleteAccountFromKeychain:(NSString *)account;
 
 @end
+
+NS_ASSUME_NONNULL_END

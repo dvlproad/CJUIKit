@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
+NS_ASSUME_NONNULL_BEGIN
+
 @interface CJBadgeButton : UIButton { //需要能够使用SDWebImage
 
     
@@ -21,3 +23,5 @@
 @property (nonatomic, assign) NSInteger badge;
 
 @end
+
+NS_ASSUME_NONNULL_END

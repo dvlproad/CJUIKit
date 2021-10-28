@@ -32,6 +32,9 @@ NS_ASSUME_NONNULL_BEGIN
 /// 随机的网络测试图片地址
 + (NSString *)cjts_imageUrlRandom;
 
+/// 获取指定位置的图片(为了cell显示的图片不会一直变化)
++ (NSString *)cjts_imageUrlAtIndex:(NSInteger)selIndex;
+
 + (NSString *)cjts_imageUrl1;
 
 + (NSString *)cjts_imageUrl2;

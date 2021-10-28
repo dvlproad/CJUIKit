@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
+NS_ASSUME_NONNULL_BEGIN
+
 ///将 字符串/字典/数组转成含缩进字符串的字符串 的工具
 @interface CJIndentedStringUtil : NSObject
 
@@ -22,3 +24,5 @@
 
 
 @end
+
+NS_ASSUME_NONNULL_END

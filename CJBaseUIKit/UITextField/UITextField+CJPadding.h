@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
+NS_ASSUME_NONNULL_BEGIN
+
 /**
  *  设置 UITextField 的内边距
  */
@@ -45,3 +47,5 @@
 - (void)cj_setPaddingEdge:(UIEdgeInsets)paddingEdge;
 
 @end
+
+NS_ASSUME_NONNULL_END
