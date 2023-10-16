@@ -7,165 +7,112 @@
 //
 
 #import "CQActionSheetUtil.h"
-#import "CJActionSheetView.h"
+#import <CJOverlayView/CJActionSheetView.h>
+#import "CQImageSheetView.h"
 #import "UIView+CQPopupOverlayAction.h"
-
-#import "CQJumpMapUtil.h"
-
-#import "CQOverlayTheme.h"
 
 @implementation CQActionSheetUtil
 
 
 #pragma mark - 常用的接口（简洁接口）
-/**
- *  弹出事项选择
+/*
+ *  弹出常用的事项选择弹窗(可以下滑)
  *
- *  @param itemTitles       可点击的事项标题数组
- *  @param itemClickBlock   点击事件
+ *  @param title                标题
+ *  @param itemTitles           可点击的事项标题数组(取消按钮上方section0中的那些数组，取消按钮位于section1)
+ *  @param showCancelSection    是否显示取消section（有时候不需要显示，文字已固定为"取消"，若要改为"我再想想"请另取方法）
+ *  @param itemClickBlock       点击事件
  */
-+ (void)showWithItemTitles:(NSArray<NSString *> *)itemTitles
-            itemClickBlock:(void(^)(NSInteger selectIndex))itemClickBlock
++ (void)showNormalSheetWithTitle:(nullable NSString *)sheetTitle
+                      itemTitles:(NSArray<NSString *> *)itemTitles
+                      showCancel:(BOOL)showCancelSection
+                  itemClickBlock:(void(^)(NSInteger selectIndex))itemClickBlock
 {
-    NSMutableArray *sheetModels = [[NSMutableArray alloc] init];
-    for (NSInteger i = 0; i < itemTitles.count; i++) {
-        CJActionSheetModel *sheetModel = [[CJActionSheetModel alloc] init];
-        sheetModel.title = itemTitles[i];
-        [sheetModels addObject:sheetModel];
-    }
-    
-    [self showWithSheetModels:sheetModels itemClickBlock:itemClickBlock];
+    CJActionSheetView *actionSheet = [CJActionSheetView normalSheetWithTitle:sheetTitle itemTitles:itemTitles showCancel:showCancelSection itemClickBlock:itemClickBlock];
+
+    [self __showActionSheet:actionSheet shouldAddPanAction:YES];
 }
 
-/**
- *  弹出图片选择
+/*
+ *  弹出某个动作的【二次确认】弹窗
  *
- *  @param takePhotoHandle 选择"拍摄"的回调
- *  @param pickImageHandle 选择"从手机相册选择"的回调
+ *  @param level                二次确认弹窗的级别(警告(文字颜色还是黑色，且弹窗可以下滑)、危险(文字颜色会变红色，且弹窗不能下滑))
+ *  @param promptTitle          该操作的提醒标题
+ *  @param cancelEventText      取消的文本(常为"取消",或"我再想想")
+ *  @param operateEventText     该操作事项的文字
+ *  @param operateEventBlock    该操作事项的点击回调
  */
-+ (void)showPickImageSheetWithTakePhotoHandle:(void(^)(void))takePhotoHandle
-                              pickImageHandle:(void(^)(void))pickImageHandle
++ (void)showSecondaryConfirmSheetWithLevel:(CQSecondaryConfirmLevel)level
+                                     title:(NSString *)promptTitle
+                           cancelEventText:(NSString *)cancelEventText
+                          operateEventText:(NSString *)operateEventText
+                         operateEventBlock:(void(^)(void))operateEventBlock
 {
-    NSMutableArray *sheetModels = [[NSMutableArray alloc] init];
-    {
-        CJActionSheetModel *takPhotoSheetModel = [[CJActionSheetModel alloc] init];
-        //takPhotoSheetModel.title = NSLocalizedString(@"拍摄", nil);
-        takPhotoSheetModel.title = [CJBaseOverlayThemeManager serviceThemeModel].overlayTextModel.sheetTakPhotoText;
-        [sheetModels addObject:takPhotoSheetModel];
-    }
-    {
-        CJActionSheetModel *pickImageSheetModel = [[CJActionSheetModel alloc] init];
-        //pickImageSheetModel.title = NSLocalizedString(@"从手机相册选择", nil);
-        pickImageSheetModel.title = [CJBaseOverlayThemeManager serviceThemeModel].overlayTextModel.sheetPickImageText;
-        [sheetModels addObject:pickImageSheetModel];
-    }
+    CJActionSheetView *actionSheet = [CJActionSheetView confirmSheetWithTitle:promptTitle cancelEventText:cancelEventText operateEventText:operateEventText operateEventBlock:operateEventBlock];
     
-    CJActionSheetView *actionSheet = [[CJActionSheetView alloc] initWithSheetModels:sheetModels clickHandle:^(CJActionSheetModel *sheetModel, NSInteger selectIndex) {
-        if (selectIndex == 0) {
-            !takePhotoHandle ?: takePhotoHandle();
-            
-        } else if (selectIndex == 1) {
-            !pickImageHandle ?: pickImageHandle();
-        }
+    BOOL shouldAddPanAction = YES;
+    if (level == CQSecondaryConfirmLevelDanger) {   // 危险(文字颜色会变红色，且弹窗不能下滑)
+        shouldAddPanAction = NO;
+    }
+    [self __showActionSheet:actionSheet shouldAddPanAction:shouldAddPanAction];
+}
+
+/*
+ *  弹出图片选择示例样图
+ *
+ *  @param sheetTitle               标题
+ *  @param image                    图片
+ *  @param imageWithHeightRatio     图片的宽高比
+ *  @param clickHandle              选择"从手机相册选择"的回调
+ */
++ (void)showImageSheetWithTitle:(NSString *)sheetTitle
+                          image:(UIImage *)image
+           imageWithHeightRatio:(CGFloat)imageWithHeightRatio
+                    clickHandle:(void(^)(void))clickHandle
+{
+    CQImageSheetView *sheetView = [[CQImageSheetView alloc] initWithTitle:sheetTitle image:image imageWithHeightRatio:imageWithHeightRatio clickHandle:^(CQImageSheetView * _Nonnull bSheetView) {
+        [bSheetView cqOverlay_actionSheet_hide];
+        
+        !clickHandle ?: clickHandle();
     }];
     
-    [self __showActionSheet:actionSheet];
+    [sheetView cqOverlay_actionSheet_showWithHeight:sheetView.totalHeight shouldAddPanAction:YES];
 }
 
-
-/**
- *  弹出地图选择
- *
- *  @param updateDefaultNavigationMap   是否在选择结束后更新默认的导航地图软件
- *  @param baiduMapBlock                选择"百度地图"
- *  @param amapBlock                    选择"高德地图"
- *  @param appleMapBlock                选择"苹果地图"
- */
-+ (void)showMapsActionSheetWithUpdateMap:(BOOL)updateDefaultNavigationMap
-                           baiduMapBlock:(void (^ __nullable)(BOOL canOpenBaiduMap))baiduMapBlock
-                               amapBlock:(void (^ __nullable)(BOOL canOpenAmap))amapBlock
-                           appleMapBlock:(void (^ __nullable)(void))appleMapBlock
-{
-    //NSString *sheetBaiduMapText = NSLocalizedString(@"百度地图", nil);
-    //NSString *sheetAmapText = NSLocalizedString(@"高德地图", nil);
-    //NSString *sheetAppleMapText = NSLocalizedString(@"苹果地图", nil);
-    //NSString *sheetNoInstallMapText = NSLocalizedString(@"未安装", nil);
-    NSString *sheetBaiduMapText = [CJBaseOverlayThemeManager serviceThemeModel].overlayTextModel.sheetBaiduMapText;
-    NSString *sheetAmapText = [CJBaseOverlayThemeManager serviceThemeModel].overlayTextModel.sheetAmapText;
-    NSString *sheetAppleMapText = [CJBaseOverlayThemeManager serviceThemeModel].overlayTextModel.sheetAppleMapText;
-    NSString *sheetNoInstallMapText = [CJBaseOverlayThemeManager serviceThemeModel].overlayTextModel.sheetNoInstallMapText;
-    
-    NSMutableArray *sheetModels = [[NSMutableArray alloc] init];
-    // 百度地图 BaiduMap
-    BOOL canOpenBaiduMap = [[UIApplication sharedApplication] canOpenURL:[NSURL URLWithString:@"baidumap://"]];
-    CJActionSheetModel *baiduMapSheetModel = [[CJActionSheetModel alloc] init];
-    baiduMapSheetModel.title = sheetBaiduMapText;
-    baiduMapSheetModel.subTitle = canOpenBaiduMap ? @"" : sheetNoInstallMapText;
-    [sheetModels addObject:baiduMapSheetModel];
-    
-    // 高德地图 Amap
-    BOOL canOpenAmap = [[UIApplication sharedApplication] canOpenURL:[NSURL URLWithString:@"amapuri://"]];
-    CJActionSheetModel *amapSheetModel = [[CJActionSheetModel alloc] init];
-    amapSheetModel.title = sheetAmapText;
-    amapSheetModel.subTitle = canOpenAmap ? @"" : sheetNoInstallMapText;
-    [sheetModels addObject:amapSheetModel];
-    
-    // 苹果地图 appleMap
-    CJActionSheetModel *appleMapSheetModel = [[CJActionSheetModel alloc] init];
-    appleMapSheetModel.title = sheetAppleMapText;
-    appleMapSheetModel.subTitle = @"";
-    [sheetModels addObject:appleMapSheetModel];
-    
-    CJActionSheetView *actionSheet = [[CJActionSheetView alloc] initWithSheetModels:sheetModels clickHandle:^(CJActionSheetModel * sheetModel, NSInteger selectIndex) {
-        if (selectIndex == 0) {
-            if (updateDefaultNavigationMap) {
-                [CQJumpMapUtil updateDefaultMapType:CQMapTypeBMKMap];
-            }
-            !baiduMapBlock ?: baiduMapBlock(canOpenBaiduMap);
-            
-        }else if (selectIndex == 1) {
-            if (updateDefaultNavigationMap) {
-                [CQJumpMapUtil updateDefaultMapType:CQMapTypeAMap];
-            }
-            !amapBlock ?: amapBlock(canOpenAmap);
-            
-        }else{
-            if (updateDefaultNavigationMap) {
-                [CQJumpMapUtil updateDefaultMapType:CQMapTypeAppleMap];
-            }
-            !appleMapBlock ?: appleMapBlock();
-        }
-    }];
-    
-    [self __showActionSheet:actionSheet];
-}
 
 #pragma mark - 完整的基本接口（请优先考虑上述的常用接口）
-/**
+/*
  *  弹出事项选择
  *
- *  @param sheetModels          数据数组(取消按钮上方section0中的那些数组)
- *  @param itemClickBlock   点击事件
+ *  @param title                标题
+ *  @param sheetModels          数据数组(取消按钮上方section0中的那些数组，取消按钮位于section1)
+ *  @param showCancelSection    是否显示取消section（有时候不需要显示，文字已固定为"取消"，若要改为"我再想想"请另取方法）
+ *  @param shouldAddPanAction   是否添加仿抖音评论的下拉拖动手势(附对于那些会弹出键盘的视图，一般设为NO，即不添加)
+ *  @param itemClickBlock       点击事件
  */
-+ (void)showWithSheetModels:(NSArray<CJActionSheetModel *> *)sheetModels
-             itemClickBlock:(void(^)(NSInteger selectIndex))itemClickBlock
++ (void)showWithSheetTitle:(nullable NSString *)sheetTitle
+               sheetModels:(NSArray<CJActionSheetModel *> *)sheetModels
+                showCancel:(BOOL)showCancelSection
+        shouldAddPanAction:(BOOL)shouldAddPanAction
+            itemClickBlock:(void(^)(NSInteger selectIndex))itemClickBlock
 {
-    CJActionSheetView *actionSheet = [[CJActionSheetView alloc] initWithSheetModels:sheetModels clickHandle:^(CJActionSheetModel *sheetModel, NSInteger selectIndex) {
+    CJActionSheetView *actionSheet = [[CJActionSheetView alloc] initWithTitle:sheetTitle sheetModels:sheetModels showCancel:showCancelSection clickHandle:^(CJActionSheetModel *sheetModel, NSInteger selectIndex) {
         if (itemClickBlock) {
             itemClickBlock(selectIndex);
         }
     }];
+    actionSheet.cancelText = @"取消"; // 标题常为"取消"或"我再想想"
     
-    [self __showActionSheet:actionSheet];
+    [self __showActionSheet:actionSheet shouldAddPanAction:shouldAddPanAction];
 }
 
 
 #pragma mark - Private Method
-+ (void)__showActionSheet:(CJActionSheetView *)actionSheet {
++ (void)__showActionSheet:(CJActionSheetView *)actionSheet shouldAddPanAction:(BOOL)shouldAddPanAction {
     actionSheet.commonClickAction = ^(CJActionSheetView * _Nonnull actionSheetView) {
-        [actionSheetView cqOverlay_popupHideBottom];
+        [actionSheetView cqOverlay_actionSheet_hide];
     };
-    [actionSheet cqOverlay_popupInBottomWithHeight:actionSheet.totalHeight];
+    [actionSheet cqOverlay_actionSheet_showWithHeight:actionSheet.totalHeight shouldAddPanAction:shouldAddPanAction];
 }
 
 @end

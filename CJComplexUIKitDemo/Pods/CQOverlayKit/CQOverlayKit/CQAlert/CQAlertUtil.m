@@ -7,9 +7,9 @@
 //
 
 #import "CQAlertUtil.h"
-#import <CJBaseOverlayKit/CJMessageAlertView.h>
-#import <CJBaseOverlayKit/CJTextInputAlertView.h>
-#import "CJBaseAlertView+CQPopupAction.h"
+#import <CJOverlayView/CJMessageAlertView.h>
+#import <CJOverlayView/CJTextInputAlertView.h>
+#import "UIView+CQPopupOverlayAction.h"
 
 #import "CQOverlayTheme.h"
 
@@ -47,17 +47,6 @@
                            okHandle:okHandle];
 }
 
-#pragma mark - DebugView
-/* 完整的描述请参见文件头部 */
-+ (void)showDebugViewWithAppExtraInfo:(NSString *)extraInfo {
-    NSString *title = @"app信息";
-    
-    CJMessageAlertView *alertView = [CJMessageAlertView debugMessageAlertViewWithTitle:title message:extraInfo shouldContailAppInfo:YES];
-    
-    [self __showMessageAlertView:alertView];
-}
-
-
 #pragma mark - 完整的基本接口（请优先考虑上述的常用接口）
 /*
 *  显示自定义 "OK" 的 alertView
@@ -74,9 +63,14 @@
                      okButtonTitle:(NSString *)okButtonTitle
                           okHandle:(void(^_Nullable)(void))okHandle
 {
-    CJMessageAlertView *alertView = [[CJMessageAlertView alloc] initWithFlagImage:flagImage title:title message:message okButtonTitle:okButtonTitle okHandle:okHandle];
+    CJMessageAlertView *alertView = [[CJMessageAlertView alloc] initWithFlagImage:flagImage title:title message:message okButtonTitle:okButtonTitle okHandle:^(CJMessageAlertView * _Nonnull bAlertView) {
+        [bAlertView cqOverlay_alert_hide];
+        !okHandle ?: okHandle();
+    }];
     
-    [self __showMessageAlertView:alertView];
+    
+    CGSize popupViewSize = [alertView alertSizeWithShouldAutoFitHeight:YES];
+    [alertView cqOverlay_alert_showWithSize:popupViewSize tapBlankShouldHide:NO];
 }
 
 /*
@@ -96,11 +90,20 @@
                  cancelButtonTitle:(NSString *)cancelButtonTitle
                      okButtonTitle:(NSString *)okButtonTitle
                       cancelHandle:(void(^_Nullable)(void))cancelHandle
-                          okHandle:(void(^_Nullable)(void))okHandle;
+                          okHandle:(void(^_Nullable)(void))okHandle
 {
-    CJMessageAlertView *alertView = [[CJMessageAlertView alloc] initWithFlagImage:flagImage title:title message:message cancelButtonTitle:cancelButtonTitle okButtonTitle:okButtonTitle cancelHandle:cancelHandle okHandle:okHandle];
+    CJMessageAlertView *alertView = [[CJMessageAlertView alloc] initWithFlagImage:flagImage title:title message:message cancelButtonTitle:cancelButtonTitle okButtonTitle:okButtonTitle cancelHandle:^(CJMessageAlertView * _Nonnull bAlertView) {
+        [bAlertView cqOverlay_alert_hide];
+        !cancelHandle ?: cancelHandle();
+        
+    } okHandle:^(CJMessageAlertView * _Nonnull bAlertView) {
+        [bAlertView cqOverlay_alert_hide];
+        !okHandle ?: okHandle();
+    }];
     
-    [self __showMessageAlertView:alertView];
+    
+    CGSize popupViewSize = [alertView alertSizeWithShouldAutoFitHeight:YES];
+    [alertView cqOverlay_alert_showWithSize:popupViewSize tapBlankShouldHide:NO];
 }
 
 
@@ -123,35 +126,41 @@
                   cancelHandle:(void(^_Nullable)(void))cancelHandle
                       okHandle:(void(^_Nullable)(NSString *outputText))okHandle
 {
-    CJTextInputAlertView *alertView = [[CJTextInputAlertView alloc] initWithTitle:title inputText:inputText placeholder:placeholder cancelButtonTitle:cancelButtonTitle okButtonTitle:okButtonTitle cancelHandle:cancelHandle okHandle:okHandle];
+    CJTextInputAlertView *alertView = [[CJTextInputAlertView alloc] initWithTitle:title inputText:inputText placeholder:placeholder cancelButtonTitle:cancelButtonTitle okButtonTitle:okButtonTitle cancelHandle:^(CJTextInputAlertView * _Nonnull bAlertView) {
+        [bAlertView cqOverlay_alert_hide];
+        !cancelHandle ?: cancelHandle();
+        
+    } okHandle:^(CJTextInputAlertView * _Nonnull bAlertView, NSString * _Nonnull outputText) {
+        [bAlertView cqOverlay_alert_hide];
+        !okHandle ?: okHandle(outputText);
+    }];
     
-    [self __showTextInputAlertView:alertView];
+    CGSize popupViewSize = [alertView alertSizeWithShouldAutoFitHeight:YES];
+    [alertView cqOverlay_alert_showWithSize:popupViewSize tapBlankShouldHide:NO];
 }
 
-
-/// 显示调试面板
-/// @param title                                        调试面板的标题
-/// @param message                                   调试面板的信息
-/// @param shouldContailAppInfo      调试面板的信息是否包含app信息
+#pragma mark - DebugView
+/*
+ *  显示调试面板
+ *
+ *  @param title                调试面板的标题
+ *  @param message              调试面板的信息
+ *  @param shouldContailAppInfo 调试面板的信息是否包含app信息
+ */
 + (void)showDebugViewWithTitle:(NSString *)title
                        message:(NSString *)message
           shouldContailAppInfo:(BOOL)shouldContailAppInfo
 {
-    CJMessageAlertView *alertView = [CJMessageAlertView debugMessageAlertViewWithTitle:title message:message shouldContailAppInfo:shouldContailAppInfo];
+    CJMessageAlertView *alertView = [CJMessageAlertView debugMessageAlertViewWithTitle:title message:message shouldContailAppInfo:shouldContailAppInfo cancelCompleteBlock:^(CJMessageAlertView * _Nonnull bAlertView) {
+        [bAlertView cqOverlay_alert_hide];
+    } pasteCompleteBlock:^(CJMessageAlertView * _Nonnull bAlertView) {
+        [bAlertView cqOverlay_alert_hide];
+    }];
     
-    [self __showMessageAlertView:alertView];
+    CGSize popupViewSize = [alertView alertSizeWithShouldAutoFitHeight:YES];
+    [alertView cqOverlay_alert_showWithSize:popupViewSize tapBlankShouldHide:YES];
 }
 
-
-
-#pragma mark - Private Method
-+ (void)__showMessageAlertView:(CJMessageAlertView *)alertView {
-    [alertView showAlertWithShouldFitHeight:YES];
-}
-
-+ (void)__showTextInputAlertView:(CJTextInputAlertView *)alertView {
-    [alertView showAlertWithShouldFitHeight:YES];
-}
 
 
 

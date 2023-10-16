@@ -85,6 +85,22 @@
             NSError *error;
             NSData *data = [NSJSONSerialization dataWithJSONObject:parameters options:NSJSONWritingPrettyPrinted error:&error];
             NSString *paramsString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+            
+            NSMutableString *mutStr = [NSMutableString stringWithString:paramsString];
+
+            NSRange range = {0, paramsString.length};
+
+            //去掉字符串中的空格
+
+            [mutStr replaceOccurrencesOfString:@" " withString:@"" options:NSLiteralSearch range:range];
+
+            NSRange range2 = {0,mutStr.length};
+
+            //去掉字符串中的换行符
+
+            [mutStr replaceOccurrencesOfString:@"\n" withString:@"" options:NSLiteralSearch range:range2];
+
+            
             [requestCacheKey appendString:paramsString];
         }
     }

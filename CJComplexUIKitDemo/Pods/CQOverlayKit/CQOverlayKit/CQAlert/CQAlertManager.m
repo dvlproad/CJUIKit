@@ -7,12 +7,11 @@
 //
 
 #import "CQAlertManager.h"
-#import <CJBaseOverlayKit/CJMessageAlertView.h>
+#import <CJOverlayView/CJMessageAlertView.h>
 #import <CJBaseHelper/AuthorizationCJHelper.h>
-
-#import "CJBaseAlertView+CQPopupAction.h"
-
 #import "CQOverlayTheme.h"
+
+#import "UIView+CQPopupOverlayAction.h"
 
 @interface CQAlertManager () {
     
@@ -50,10 +49,13 @@
     NSString *alertCancelText = [CJBaseOverlayThemeManager serviceThemeModel].overlayTextModel.alertCancelText;
     NSString *alertCallPhoneText = [CJBaseOverlayThemeManager serviceThemeModel].overlayTextModel.alertCallPhoneText;
     
-    CJMessageAlertView *alertView = [[CJMessageAlertView alloc] initWithFlagImage:nil title:phone message:nil cancelButtonTitle:alertCancelText okButtonTitle:alertCallPhoneText cancelHandle:^{
+    __weak typeof(self)weakSelf = self;
+    CJMessageAlertView *alertView = [[CJMessageAlertView alloc] initWithFlagImage:nil title:phone message:nil cancelButtonTitle:alertCancelText okButtonTitle:alertCallPhoneText cancelHandle:^(CJMessageAlertView * _Nonnull bAlertView) {
         NSLog(@"取消");
-    } okHandle:^{
+        [weakSelf __hideAlertView:bAlertView];
+    } okHandle:^(CJMessageAlertView * _Nonnull bAlertView) {
         NSLog(@"拨打电话");
+        [weakSelf __hideAlertView:bAlertView];
     }];
     [self __showAlertView:alertView];
 }
@@ -62,7 +64,7 @@
 - (void)showNetworkNoOpenAlert:(BOOL)show {
     if (!show) {
         if (self.networkNoOpenAlert) {
-            [self.networkNoOpenAlert dismiss];
+            [self __hideAlertView:self.networkNoOpenAlert];
             self.networkNoOpenAlert = nil;
         }
     } else {
@@ -71,12 +73,14 @@
         }
         NSString *networkNoOpenText = [CJBaseOverlayThemeManager serviceThemeModel].overlayTextModel.networkNoOpenText;
         NSString *networkGoOpenText = [CJBaseOverlayThemeManager serviceThemeModel].overlayTextModel.networkGoOpenText;
-        CJMessageAlertView *alertView = [[CJMessageAlertView alloc] initWithFlagImage:nil title:networkNoOpenText message:nil okButtonTitle:networkGoOpenText okHandle:^{
+        __weak typeof(self)weakSelf = self;
+        CJMessageAlertView *alertView = [[CJMessageAlertView alloc] initWithFlagImage:nil title:networkNoOpenText message:nil okButtonTitle:networkGoOpenText okHandle:^(CJMessageAlertView * _Nonnull bAlertView) {
+            [weakSelf __hideAlertView:bAlertView];
             self.networkNoOpenAlert = nil;
             [AuthorizationCJHelper openSettingWithCompletionHandler:nil];
         }];
         self.networkNoOpenAlert = alertView;
-        
+
         [self __showAlertView:self.networkNoOpenAlert];
     }
 }
@@ -85,7 +89,7 @@
 - (void)showLocationNoOpenAlert:(BOOL)show {
     if (!show) {
         if (self.locationNoOpenAlert) {
-            [self.locationNoOpenAlert dismiss];
+            [self __hideAlertView:self.locationNoOpenAlert];
             self.locationNoOpenAlert = nil;
         }
     } else {
@@ -95,11 +99,13 @@
         }
         NSString *locationNoOpenText = [CJBaseOverlayThemeManager serviceThemeModel].overlayTextModel.locationNoOpenText;
         NSString *locationGoOpenText = [CJBaseOverlayThemeManager serviceThemeModel].overlayTextModel.locationGoOpenText;
-        self.locationNoOpenAlert = [[CJMessageAlertView alloc] initWithFlagImage:nil title:locationNoOpenText message:nil okButtonTitle:locationGoOpenText okHandle:^{
+        __weak typeof(self)weakSelf = self;
+        self.locationNoOpenAlert = [[CJMessageAlertView alloc] initWithFlagImage:nil title:locationNoOpenText message:nil okButtonTitle:locationGoOpenText okHandle:^(CJMessageAlertView * _Nonnull bAlertView) {
+            [weakSelf __hideAlertView:bAlertView];
             self.locationNoOpenAlert = nil;
             [AuthorizationCJHelper openSettingWithCompletionHandler:nil];
         }];
-        
+
         [self __showAlertView:self.locationNoOpenAlert];
     }
 }
@@ -108,7 +114,7 @@
 - (void)showLocationAbnormalAlert:(BOOL)show {
     if (!show) {
         if (self.locationAbnormalAlert) {
-            [self.locationAbnormalAlert dismiss];
+            [self __hideAlertView:self.locationAbnormalAlert];
             self.locationAbnormalAlert = nil;
         }
     } else {
@@ -118,19 +124,25 @@
         }
         NSString *locationAbnormalText = [CJBaseOverlayThemeManager serviceThemeModel].overlayTextModel.locationAbnormalText;
         NSString *alertIKonwText = [CJBaseOverlayThemeManager serviceThemeModel].overlayTextModel.alertIKonwText;
-        self.locationAbnormalAlert = [[CJMessageAlertView alloc] initWithFlagImage:nil title:locationAbnormalText message:nil okButtonTitle:alertIKonwText okHandle:^{
+        __weak typeof(self)weakSelf = self;
+        self.locationAbnormalAlert = [[CJMessageAlertView alloc] initWithFlagImage:nil title:locationAbnormalText message:nil okButtonTitle:alertIKonwText okHandle:^(CJMessageAlertView * _Nonnull bAlertView) {
+            [weakSelf __hideAlertView:bAlertView];
             self.locationAbnormalAlert = nil;
             [AuthorizationCJHelper openSettingWithCompletionHandler:nil];
         }];
-        
+
         [self __showAlertView:self.locationAbnormalAlert];
     }
 }
 
 #pragma mark - Private Method
 - (void)__showAlertView:(CJMessageAlertView *)alertView {
-    [alertView showAlertWithShouldFitHeight:YES];
+    CGSize popupViewSize = [alertView alertSizeWithShouldAutoFitHeight:YES];
+    [alertView cqOverlay_alert_showWithSize:popupViewSize tapBlankShouldHide:YES];
 }
 
+- (void)__hideAlertView:(CJMessageAlertView *)alertView {
+    [alertView cqOverlay_alert_hide];
+}
 
 @end

@@ -12,12 +12,33 @@
     NSMutableDictionary *dic_attributes_cell; // 记录所有cell布局属性的字典
     NSMutableDictionary *dic_attributes_header; // 记录所有head布局属性的字典
 }
-@property (nonatomic, assign, readonly) CGRect lastHorizontalFrame;     // 上一个水平item的布局
-@property (nonatomic, assign, readonly) CGRect firstFrame;              // 第一个item的布局
+@property (nonatomic, assign, readonly) CGSize mainCellSize;            // 第一个item的大小(初始化layout的时候要用)
+@property (nonatomic, assign, readonly) CGFloat subCellWidthHeightRatio; /**< 宽高比（默认1:1,即1/1.0，请确保除数有小数点，否则1/2会变成0，而不是0.5） */
+
+@property (nonatomic, assign, readonly) CGRect lastHorizontalFrame;     // prepareLayout布局后得到的上一个水平item的布局
+@property (nonatomic, assign, readonly) CGRect firstFrame;              // prepareLayout布局后得到的第一个item的布局
+
 
 @end
 
 @implementation CJCellMainSubLayout
+
+/*
+ *  初始化
+ *
+ *  @param mainCellSize             第一个item的大小(初始化layout的时候要用)
+ *  @param subCellWidthHeightRatio  其他item的大小(初始化layout的时候要用)
+ *
+ *  @return layout
+ */
+- (instancetype)initWithMainCellSize:(CGSize)mainCellSize subCellWidthHeightRatio:(CGFloat)subCellWidthHeightRatio {
+    self = [super init];
+    if (self) {
+        _mainCellSize = mainCellSize;
+        _subCellWidthHeightRatio = subCellWidthHeightRatio;
+    }
+    return self;
+}
 
 - (NSIndexPath *)indexPathFromString:(NSString *)indexPathString {
     NSArray *array = [indexPathString componentsSeparatedByString:@"-"];
@@ -73,8 +94,8 @@
             UICollectionViewLayoutAttributes *cellAttributes = [UICollectionViewLayoutAttributes layoutAttributesForCellWithIndexPath:indexPath];
             
         
-            CGFloat mainCellWidth = 200;
-            CGFloat mainCellHeight = 200;
+            CGFloat mainCellWidth = self.mainCellSize.width;
+            CGFloat mainCellHeight = self.mainCellSize.height;
             CGFloat lastCellWidth = collectionViewWidth - self.sectionInset.left - mainCellWidth - self.minimumInteritemSpacing - self.sectionInset.right;
             CGFloat lastCellHeight = collectionViewHeight - self.sectionInset.top - mainCellHeight - self.minimumLineSpacing - self.sectionInset.bottom;
             
@@ -98,15 +119,25 @@
                 // 更新上一个item的位置
                 _firstFrame = cellFrame;
                 
-            } else { // 水平方向上除最右下角cell外的cell布局
-                itemOriginY = CGRectGetMaxY(self.firstFrame) + self.minimumLineSpacing;
+            } else {
                 if (item == 1) {
                     itemOriginX = CGRectGetMinX(self.firstFrame);
                 } else {
                     itemOriginX = CGRectGetMaxX(self.lastHorizontalFrame) + self.minimumInteritemSpacing;
                 }
-                subCellHeight = collectionViewHeight - itemOriginY - self.sectionInset.bottom;
                 subCellWidth = subHorizontalCellWidth;
+                
+                if (self.subCellWidthHeightRatio > 0) {
+                    subCellHeight = subCellWidth/self.subCellWidthHeightRatio;
+                    itemOriginY = CGRectGetMaxY(self.firstFrame) + self.minimumLineSpacing;
+                } else {
+                    subCellHeight = collectionViewHeight - itemOriginY - self.sectionInset.bottom;
+                    itemOriginY = CGRectGetMaxY(self.firstFrame) + self.minimumLineSpacing;
+                }
+                
+                
+                
+                
                 cellFrame = CGRectMake(itemOriginX, itemOriginY, subCellWidth, subCellHeight);
                 
                 // 更新上一个item的位置
@@ -219,6 +250,21 @@
 - (BOOL)shouldInvalidateLayoutForBoundsChange:(CGRect)newBounds {
     //NSLog(@"BoundsChange");
     return !CGRectEqualToRect(self.collectionView.bounds, newBounds);
+}
+
+
+#pragma mark - Other Method Get Height
+/*
+ *  获取当前collectionView的高度
+ *
+ *  @param collectionViewLayout     集合视图的布局
+ *
+ *  @return 当前collectionView的高度
+ */
++ (CGFloat)heightForCollectionViewLayout:(CJCellMainSubLayout *)collectionViewLayout {
+    CGFloat height = 255;
+    
+    return height;
 }
 
 @end

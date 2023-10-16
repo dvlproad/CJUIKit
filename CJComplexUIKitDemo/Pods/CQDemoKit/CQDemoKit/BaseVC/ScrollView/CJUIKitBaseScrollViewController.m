@@ -39,7 +39,7 @@
 }
 
 /**
- *  更新ScrollView的高
+ *  更新ScrollView的高（如果视图滚动异常，请检查你的视图是不是加在了self.view上了。而不是self.containerView上）
  *  @brief  ①如果没有lastBottomView来确认scrollView的高，那么高为根据父视图设置；
             ②如果有lastBottomView，则通过设置scrollView的containerView与lastBottomView的底部间隔来更新ScrollView的高
  *

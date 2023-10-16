@@ -33,7 +33,7 @@
     self = [super initWithConfigItemCellBlock:^(CQActionImageCollectionViewCell *bItemCell, id bDataModel) {
         UIImage *dataModel = (UIImage *)bDataModel;
         //dataModel.indexPath = indexPath;
-        bItemCell.image = dataModel;
+        bItemCell.cjImageView.image= dataModel;
         
         [self __operateDataCell:bItemCell withDataModel:bDataModel];
         

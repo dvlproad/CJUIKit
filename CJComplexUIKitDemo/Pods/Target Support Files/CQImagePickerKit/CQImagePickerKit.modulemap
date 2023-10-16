@@ -1,0 +1,6 @@
+module CQImagePickerKit {
+  umbrella header "CQImagePickerKit-umbrella.h"
+
+  export *
+  module * { export * }
+}

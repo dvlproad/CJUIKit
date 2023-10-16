@@ -26,6 +26,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, assign) CGFloat widthHeightRatio; /**< 宽高比（默认1:1,即1/1.0，请确保除数有小数点，否则1/2会变成0，而不是0.5） */
 
 
+
 #pragma mark - Other Method Get Height
 /*
  *  获取当前collectionView的高度
@@ -41,6 +42,19 @@ NS_ASSUME_NONNULL_BEGIN
                      maxRowCount:(NSInteger)maxRowCount
            byCollectionViewWidth:(CGFloat)collectionViewWidth
         withCollectionViewLayout:(CQCollectionViewFlowLayout *)collectionViewLayout;
+/*
+ *  获取当前collectionView的高度
+ *
+ *  @param currentRowCount          指定的行数
+ *  @param collectionViewWidth      要传入的collectionView的宽度
+ *  @param collectionViewLayout     集合视图的布局
+ *
+ *  @return 当前collectionView的高度
+ */
++ (CGFloat)heightForRowCount:(NSInteger)currentRowCount
+       byCollectionViewWidth:(CGFloat)collectionViewWidth
+    withCollectionViewLayout:(CQCollectionViewFlowLayout *)collectionViewLayout;
+
 
 /*
  *  获取collectionViewWidth按collectionViewLayout布局时候，每行最大显示的item个数/列数
@@ -54,6 +68,10 @@ NS_ASSUME_NONNULL_BEGIN
 + (NSInteger)maxColumnCountInCollectionViewWidth:(CGFloat)collectionViewWidth
                          collectionViewCellWidth:(CGFloat)collectionViewCellWidth
                         withCollectionViewLayout:(CQCollectionViewFlowLayout *)collectionViewLayout;
+
+
+
+
 
 #pragma mark - Other Method Get Width
 /*
@@ -70,6 +88,19 @@ NS_ASSUME_NONNULL_BEGIN
                  maxColumnCount:(NSInteger)maxColumnCount
          byCollectionViewHeight:(CGFloat)collectionViewHeight
        withCollectionViewLayout:(CQCollectionViewFlowLayout *)collectionViewLayout;
+/*
+ *  获取当前collectionView的宽度
+ *
+ *  @param currentColumnCount       指定的列数
+ *  @param collectionViewHeight     要传入的collectionView的高度
+ *  @param collectionViewLayout     集合视图的布局
+ *
+ *  @return 当前collectionView的高度
+ */
++ (CGFloat)widthForColumnCount:(NSInteger)currentColumnCount
+        byCollectionViewHeight:(CGFloat)collectionViewHeight
+      withCollectionViewLayout:(CQCollectionViewFlowLayout *)collectionViewLayout;
+
 
 /*
  *  获取collectionViewHeight按collectionViewLayout布局时候，每列最大显示的item个数

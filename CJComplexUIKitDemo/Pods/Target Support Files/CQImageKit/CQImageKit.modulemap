@@ -1,0 +1,6 @@
+module CQImageKit {
+  umbrella header "CQImageKit-umbrella.h"
+
+  export *
+  module * { export * }
+}

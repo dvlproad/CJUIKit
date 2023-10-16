@@ -117,6 +117,9 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_resource "${PODS_ROOT}/CQDemoKit/CQDemoKit/BaseVC/TabBar/Resources/icons8-home.png"
   install_resource "${PODS_ROOT}/CQDemoKit/CQDemoKit/BaseVC/TabBar/Resources/icons8-menu.png"
   install_resource "${PODS_ROOT}/CQDemoKit/CQDemoKit/BaseVC/TabBar/Resources/icons8-settings.png"
+  install_resource "${PODS_CONFIGURATION_BUILD_DIR}/CQImageKit/CQImageKit.bundle"
+  install_resource "${PODS_CONFIGURATION_BUILD_DIR}/CQOverlayKit/CQActionSheet.bundle"
+  install_resource "${PODS_CONFIGURATION_BUILD_DIR}/CQOverlayKit/CQAlert.bundle"
   install_resource "${PODS_ROOT}/SVProgressHUD/SVProgressHUD/SVProgressHUD.bundle"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
@@ -140,6 +143,9 @@ if [[ "$CONFIGURATION" == "Release" ]]; then
   install_resource "${PODS_ROOT}/CQDemoKit/CQDemoKit/BaseVC/TabBar/Resources/icons8-home.png"
   install_resource "${PODS_ROOT}/CQDemoKit/CQDemoKit/BaseVC/TabBar/Resources/icons8-menu.png"
   install_resource "${PODS_ROOT}/CQDemoKit/CQDemoKit/BaseVC/TabBar/Resources/icons8-settings.png"
+  install_resource "${PODS_CONFIGURATION_BUILD_DIR}/CQImageKit/CQImageKit.bundle"
+  install_resource "${PODS_CONFIGURATION_BUILD_DIR}/CQOverlayKit/CQActionSheet.bundle"
+  install_resource "${PODS_CONFIGURATION_BUILD_DIR}/CQOverlayKit/CQAlert.bundle"
   install_resource "${PODS_ROOT}/SVProgressHUD/SVProgressHUD/SVProgressHUD.bundle"
 fi
 

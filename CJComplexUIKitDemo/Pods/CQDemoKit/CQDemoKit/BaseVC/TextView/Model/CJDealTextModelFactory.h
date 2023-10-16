@@ -15,7 +15,7 @@ NS_ASSUME_NONNULL_BEGIN
     
 }
 
-/**
+/*
  *  初始化生成文本处理的数组
  *
  *  @param textArray        要处理的text数组
@@ -26,7 +26,7 @@ NS_ASSUME_NONNULL_BEGIN
  *  @return 文本处理的数组
  */
 + (NSMutableArray<CJDealTextModel *> *)textArray:(NSArray<NSString *> *)textArray
-                                 samePlaceholder:(NSString *)placeholder
+                                 samePlaceholder:(nullable NSString *)placeholder
                                  sameActionTitle:(NSString *)sameActionTitle
                                  sameActionBlock:(NSString*(^)(NSString *oldString))sameActionBlock;
 

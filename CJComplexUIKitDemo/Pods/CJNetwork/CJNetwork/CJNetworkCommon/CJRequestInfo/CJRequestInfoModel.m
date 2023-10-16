@@ -197,11 +197,11 @@
 
 @implementation CJSuccessRequestInfo
 
-+ (id)successNetworkLogWithType:(CJRequestLogType)logType
-                            Url:(NSString *)Url
-                         params:(id)params
-                        request:(NSURLRequest *)request
-                 responseObject:(id)responseObject
++ (CJSuccessRequestInfo *)successNetworkLogWithType:(CJRequestLogType)logType
+                                                Url:(NSString *)Url
+                                             params:(id)params
+                                            request:(NSURLRequest *)request
+                                     responseObject:(id)responseObject
 {
     CJSuccessRequestInfo *networkInfoModel = [[CJSuccessRequestInfo alloc] initWithType:logType Url:Url params:params request:request];
     

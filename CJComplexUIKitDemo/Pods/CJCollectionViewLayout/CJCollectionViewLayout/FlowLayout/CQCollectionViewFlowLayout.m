@@ -182,6 +182,30 @@
 }
 
 /*
+ *  获取当前collectionView的高度
+ *
+ *  @param currentRowCount          指定的行数
+ *  @param collectionViewWidth      要传入的collectionView的宽度
+ *  @param collectionViewLayout     集合视图的布局
+ *
+ *  @return 当前collectionView的高度
+ */
++ (CGFloat)heightForRowCount:(NSInteger)currentRowCount
+       byCollectionViewWidth:(CGFloat)collectionViewWidth
+    withCollectionViewLayout:(CQCollectionViewFlowLayout *)collectionViewLayout
+{
+    // 计算cell的大小
+    CGSize collectionViewCellSize = [collectionViewLayout __sizeForItemWithCollectionViewSize:CGSizeMake(collectionViewWidth, 0)];
+    
+    // 当前 items 所占的高度
+    CGFloat collectionViewCellHeight = collectionViewCellSize.height;
+    CGFloat height = [self heightForRowCount:currentRowCount
+                    collectionViewCellHeight:collectionViewCellHeight
+                    withCollectionViewLayout:collectionViewLayout];
+    return height;
+}
+
+/*
  *  获取collectionViewWidth按collectionViewLayout布局时候，每行最大显示的item个数/列数
  *
  *  @param collectionViewWidth      要传入的collectionView的宽度
@@ -270,6 +294,30 @@
         currentColumnCount = (allCellCount-1)/perColumnMaxShowCount + 1;
         currentColumnCount = MIN(currentColumnCount, maxColumnCount);
     }
+    
+    // 当前 items 所占的宽度
+    CGFloat collectionViewCellWidth = collectionViewCellSize.width;
+    CGFloat width = [self widthForColumnCount:currentColumnCount
+                      collectionViewCellWidth:collectionViewCellWidth
+                     withCollectionViewLayout:collectionViewLayout];
+    return width;
+}
+
+/*
+ *  获取当前collectionView的宽度
+ *
+ *  @param currentColumnCount       指定的列数
+ *  @param collectionViewHeight     要传入的collectionView的高度
+ *  @param collectionViewLayout     集合视图的布局
+ *
+ *  @return 当前collectionView的高度
+ */
++ (CGFloat)widthForColumnCount:(NSInteger)currentColumnCount
+        byCollectionViewHeight:(CGFloat)collectionViewHeight
+      withCollectionViewLayout:(CQCollectionViewFlowLayout *)collectionViewLayout
+{
+    // 计算cell的大小
+    CGSize collectionViewCellSize = [collectionViewLayout __sizeForItemWithCollectionViewSize:CGSizeMake(0, collectionViewHeight)];
     
     // 当前 items 所占的宽度
     CGFloat collectionViewCellWidth = collectionViewCellSize.width;

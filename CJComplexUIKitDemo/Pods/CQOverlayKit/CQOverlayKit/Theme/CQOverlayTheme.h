@@ -9,7 +9,7 @@
 #ifndef CQOverlayThemeModel_h
 #define CQOverlayThemeModel_h
 
-#import <CJBaseOverlayKit/CJBaseOverlayThemeManager.h>
+#import <CJOverlayView/CJBaseOverlayThemeManager.h>
 #import "CJBaseOverlayThemeModel+Text.h"
 
 #endif /* CQOverlayThemeModel_h */

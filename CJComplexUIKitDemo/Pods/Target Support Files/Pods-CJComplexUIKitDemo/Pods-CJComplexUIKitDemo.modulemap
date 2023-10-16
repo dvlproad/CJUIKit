@@ -1,0 +1,6 @@
+module Pods_CJComplexUIKitDemo {
+  umbrella header "Pods-CJComplexUIKitDemo-umbrella.h"
+
+  export *
+  module * { export * }
+}

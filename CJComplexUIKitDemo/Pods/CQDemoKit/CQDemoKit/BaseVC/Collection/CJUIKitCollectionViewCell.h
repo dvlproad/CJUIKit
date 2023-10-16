@@ -9,6 +9,8 @@
 #import <UIKit/UIKit.h>
 #import <Masonry/Masonry.h>
 
+NS_ASSUME_NONNULL_BEGIN
+
 @interface CJUIKitCollectionViewCell : UICollectionViewCell {
     
 }
@@ -17,3 +19,5 @@
 @property (nonatomic, strong) UIImageView *imageView;
 
 @end
+
+NS_ASSUME_NONNULL_END

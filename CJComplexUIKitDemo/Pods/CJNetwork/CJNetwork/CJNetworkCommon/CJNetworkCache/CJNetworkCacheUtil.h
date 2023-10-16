@@ -57,6 +57,17 @@ NS_ASSUME_NONNULL_BEGIN
  */
 + (void)clearAllCache;
 
+
+/**
+ *  获取请求的缓存key
+ *
+ *  @param Url          Url
+ *  @param parameters   parameters
+ *
+ *  return 请求的缓存key
+ */
++ (NSString *)getRequestCacheKeyByRequestUrl:(NSString *)Url parameters:(NSDictionary *)parameters;
+
 NS_ASSUME_NONNULL_END
 
 @end

@@ -83,6 +83,7 @@
     // 不换行 && (indexPath.row=0时  self.lastFrame 还未赋值)  调整X值
     if (oldAttributes.frame.origin.x != itemX && indexPath.row != 0 && sameLine) {
         itemX =  self.lastFrame.origin.x + self.lastFrame.size.width + self.minimumLineSpacing;
+        itemX =  itemX-5;   // TODO:临时处理小屏幕上的缺角
     }
  
     // 赋值

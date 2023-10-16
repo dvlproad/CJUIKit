@@ -91,7 +91,7 @@
                                         failure:(nullable void (^)(CJFailureRequestInfo * _Nullable failureRequestInfo))failure
 {
     if (urlParams) {
-        Url = [self __appendUrl:Url withParams:urlParams];
+        Url = [CJRequestCommonHelper __appendUrl:Url withParams:urlParams];
     }
     
     NSURLSessionDataTask *URLSessionDataTask =
@@ -137,10 +137,10 @@
             }
         }
     } progress:uploadProgress success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-        [self __didRequestSuccessForTask:task withResponseObject:responseObject isCacheData:NO forUrl:Url params:formParams cacheSettingModel:cacheSettingModel logType:logType success:success];
+        [CJRequestCommonHelper __didRequestSuccessForTask:task withResponseObject:responseObject isCacheData:NO forUrl:Url params:formParams cacheSettingModel:cacheSettingModel logType:logType success:success];
         
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-        [self __didRequestFailureForTask:task withResponseError:error forUrl:Url params:formParams logType:logType failure:failure];
+        [CJRequestCommonHelper __didRequestFailureForTask:task withResponseError:error forUrl:Url params:formParams logType:logType failure:failure];
     }];
     
     return URLSessionDataTask;

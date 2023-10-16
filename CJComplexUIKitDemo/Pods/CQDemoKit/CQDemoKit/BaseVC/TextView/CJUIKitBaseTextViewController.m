@@ -130,12 +130,18 @@
     
     CJValidateStringTableViewCell *cell = (CJValidateStringTableViewCell *)[tableView dequeueReusableCellWithIdentifier:@"CJValidateStringTableViewCell" forIndexPath:indexPath];
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    cell.fixResultLableWidth = self.fixCellResultLableWidth;
     
     cell.textField.placeholder = dealTextModel.placeholder;
     cell.textField.text = dealTextModel.text;
     [cell.validateButton setTitle:dealTextModel.actionTitle forState:UIControlStateNormal];
     [cell setValidateHandle:^BOOL(CJValidateStringTableViewCell *mcell, BOOL isAutoExec) {
         return [self __dealTextModel:dealTextModel inCell:mcell isAutoExec:isAutoExec];
+    }];
+    // cell上的文本内容改变的时候，自动执行validateButton的点击事件
+    __weak typeof(cell)weakCell = cell;
+    [cell setTextDidChangeBlock:^(NSString *bText) {
+        return [weakCell validateEvent:NO];
     }];
     
     if (dealTextModel.autoExec) {
@@ -168,7 +174,7 @@
     NSString *lastNumberString = dealTextModel.actionBlock(originNumberString);
     mcell.resultLabel.text = lastNumberString;
     
-    BOOL validateSuccess = YES;
+    BOOL validateSuccess = NO;
     if (dealTextModel.hopeResultText.length > 0) {
         validateSuccess = [lastNumberString isEqualToString:dealTextModel.hopeResultText];
         
@@ -180,6 +186,12 @@
                 NSString *successMessage = [NSString stringWithFormat:@"恭喜你，代码方法处理正确！"];
                 [CJUIKitToastUtil showMessage:successMessage];
             }
+        }
+    } else {
+        if (lastNumberString == nil || lastNumberString.length == 0) {
+            validateSuccess = YES;
+        } else {
+            validateSuccess = NO;
         }
     }
     

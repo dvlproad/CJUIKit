@@ -6,7 +6,7 @@
 //  Copyright (c) 2015 dvlproad. All rights reserved.
 //
 
-#import <CJBaseOverlayKit/CJBaseOverlayThemeModel.h>
+#import <CJOverlayView/CJBaseOverlayThemeModel.h>
 
 // UI
 #import "CQToastThemeModel.h"

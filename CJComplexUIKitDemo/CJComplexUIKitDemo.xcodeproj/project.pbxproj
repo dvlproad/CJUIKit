@@ -1086,6 +1086,9 @@
 				"${PODS_ROOT}/CQDemoKit/CQDemoKit/BaseVC/TabBar/Resources/icons8-home.png",
 				"${PODS_ROOT}/CQDemoKit/CQDemoKit/BaseVC/TabBar/Resources/icons8-menu.png",
 				"${PODS_ROOT}/CQDemoKit/CQDemoKit/BaseVC/TabBar/Resources/icons8-settings.png",
+				"${PODS_CONFIGURATION_BUILD_DIR}/CQImageKit/CQImageKit.bundle",
+				"${PODS_CONFIGURATION_BUILD_DIR}/CQOverlayKit/CQActionSheet.bundle",
+				"${PODS_CONFIGURATION_BUILD_DIR}/CQOverlayKit/CQAlert.bundle",
 				"${PODS_ROOT}/SVProgressHUD/SVProgressHUD/SVProgressHUD.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
@@ -1110,6 +1113,9 @@
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/icons8-home.png",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/icons8-menu.png",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/icons8-settings.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/CQImageKit.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/CQActionSheet.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/CQAlert.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/SVProgressHUD.bundle",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1349,7 +1355,7 @@
 				DEVELOPMENT_TEAM = "";
 				GCC_PREFIX_HEADER = CJComplexUIKitDemo/PrefixHeader.pch;
 				INFOPLIST_FILE = "$(SRCROOT)/CJComplexUIKitDemo/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.dvlproad.CJComplexUIKitDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1368,7 +1374,7 @@
 				DEVELOPMENT_TEAM = "";
 				GCC_PREFIX_HEADER = CJComplexUIKitDemo/PrefixHeader.pch;
 				INFOPLIST_FILE = "$(SRCROOT)/CJComplexUIKitDemo/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.dvlproad.CJComplexUIKitDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";

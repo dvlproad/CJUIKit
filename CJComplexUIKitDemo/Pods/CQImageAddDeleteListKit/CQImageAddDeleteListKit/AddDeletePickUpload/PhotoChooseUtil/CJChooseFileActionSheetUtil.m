@@ -34,7 +34,7 @@
         [sheetModels addObject:pickImageSheetModel];
     }
     
-    [CQActionSheetUtil showWithSheetModels:sheetModels itemClickBlock:^(NSInteger selectIndex) {
+    [CQActionSheetUtil showWithSheetTitle:nil sheetModels:sheetModels showCancel:YES shouldAddPanAction:YES itemClickBlock:^(NSInteger selectIndex) {
         NSLog(@"当前选择的是%zd", selectIndex);
         if (selectIndex == 0) {   //拍照
             UIImagePickerController *imagePickerController = [CQImagePickerControllerFactory takePhotoVC_PickFinishBlock:^(UIImage *image) {

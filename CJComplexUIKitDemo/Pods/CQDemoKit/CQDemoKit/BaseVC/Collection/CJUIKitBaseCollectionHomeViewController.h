@@ -10,6 +10,8 @@
 #import "CQDMSectionDataModel.h"
 #import "CQDMModuleModel.h"
 
+NS_ASSUME_NONNULL_BEGIN
+
 @interface CJUIKitBaseCollectionHomeViewController : CJUIKitBaseViewController {
     
 }
@@ -17,3 +19,5 @@
 @property (nonatomic, strong) NSMutableArray<CQDMSectionDataModel *> *sectionDataModels;
 
 @end
+
+NS_ASSUME_NONNULL_END

@@ -1,0 +1,1 @@
+../../../CQNetworkPublic/CQNetworkPublic/Base/CJRequestSetting/CJRequestSettingEnum.h

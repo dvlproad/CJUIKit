@@ -1,0 +1,6 @@
+module CJCollectionViewLayout {
+  umbrella header "CJCollectionViewLayout-umbrella.h"
+
+  export *
+  module * { export * }
+}

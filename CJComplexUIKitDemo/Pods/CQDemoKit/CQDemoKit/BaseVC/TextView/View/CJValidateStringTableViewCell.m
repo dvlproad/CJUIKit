@@ -8,6 +8,12 @@
 
 #import "CJValidateStringTableViewCell.h"
 
+@interface CJValidateStringTableViewCell () {
+    
+}
+
+@end
+
 @implementation CJValidateStringTableViewCell
 
 - (void)awakeFromNib {
@@ -25,15 +31,30 @@
     return self;
 }
 
+#pragma mark - Setter
+- (void)setFixResultLableWidth:(CGFloat)fixResultLableWidth {
+    _fixResultLableWidth = fixResultLableWidth;
+    
+    if (fixResultLableWidth > 20) {
+        [self.resultLabel mas_updateConstraints:^(MASConstraintMaker *make) {
+            make.width.equalTo(@(fixResultLableWidth));
+        }];
+    }
+}
+
 - (void)setupViews {
+    self.backgroundColor = [UIColor clearColor];
+    
     UIView *parentView = self.contentView;
     
     UITextField *textField = [[UITextField alloc] initWithFrame:CGRectZero];
     textField.font = [UIFont systemFontOfSize:14];
+    textField.minimumFontSize = 6;
+    [textField addTarget:self action:@selector(__textFieldDidChange:) forControlEvents:UIControlEventEditingChanged];
     [parentView addSubview:textField];
     [textField mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.mas_equalTo(parentView).mas_offset(5);
-        make.width.mas_equalTo(125);
+        //make.width.mas_equalTo(125);
         make.centerY.mas_equalTo(parentView);
         make.top.mas_equalTo(parentView).mas_offset(5);
     }];
@@ -49,7 +70,7 @@
     [validateButton addTarget:self action:@selector(validateAction) forControlEvents:UIControlEventTouchUpInside];
     [parentView addSubview:validateButton];
     [validateButton mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.centerX.mas_equalTo(parentView);
+        make.left.mas_equalTo(textField.mas_right).offset(0);
         make.width.mas_equalTo(88);
         make.centerY.mas_equalTo(parentView);
         make.top.mas_equalTo(parentView).mas_offset(5);
@@ -68,6 +89,7 @@
         make.right.mas_equalTo(parentView).mas_offset(-5);
         make.centerY.mas_equalTo(parentView);
         make.top.mas_equalTo(parentView).mas_offset(5);
+//        make.width.equalTo(@100);
     }];
     self.resultLabel = resultLabel;
 }
@@ -88,6 +110,13 @@
     }
     
     self.resultLabel.backgroundColor = validateSuccess ? [UIColor greenColor] : [UIColor redColor];
+}
+
+
+#pragma mark - Private Method
+- (void)__textFieldDidChange:(UITextField *)textField {
+    //NSLog(@"textField内容改变了:%@", textField.text);
+    !self.textDidChangeBlock ?: self.textDidChangeBlock(textField.text);
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

@@ -8,28 +8,32 @@
 
 #import <UIKit/UIKit.h>
 
+NS_ASSUME_NONNULL_BEGIN
+
 @interface CJUIKitAlertUtil : NSObject
 
 #pragma mark - Alert
 /// 显示系统AlertType弹框（我知道了）
 + (void)showIKnowAlertInViewController:(UIViewController *)viewController
                              withTitle:(NSString *)title
-                            iKnowBlock:(void(^)(void))iKnowBlock;
+                            iKnowBlock:(void(^ _Nullable)(void))iKnowBlock;
 
 /// 显示系统AlertType弹框（取消+确认）
 + (void)showCancleOKAlertInViewController:(UIViewController *)viewController
-                                withTitle:(NSString *)title
-                                  message:(NSString *)message
-                              cancleBlock:(void(^)(void))cancleBlock
-                                  okBlock:(void(^)(void))okBlock;
+                                withTitle:(nullable NSString *)title
+                                  message:(nullable NSString *)message
+                              cancleBlock:(void(^ _Nullable)(void))cancleBlock
+                                  okBlock:(void(^ _Nullable)(void))okBlock;
 
 #pragma mark - ActionSheet
 /// 显示系统ActionSheet弹框
 + (void)showActionSheetInViewController:(UIViewController *)viewController
-                              withTitle:(NSString *)title
-                                message:(NSString *)message
+                              withTitle:(nullable NSString *)title
+                                message:(nullable NSString *)message
                              itemTitles:(NSArray<NSString *> *)itemTitles
-                            cancleBlock:(void(^)(void))cancleBlock
-                         itemClickBlock:(void(^)(NSInteger index))itemClickBlock;
+                            cancleBlock:(void(^ _Nullable)(void))cancleBlock
+                         itemClickBlock:(void(^ _Nullable)(NSInteger index))itemClickBlock;
 
 @end
+
+NS_ASSUME_NONNULL_END

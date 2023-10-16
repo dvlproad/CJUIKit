@@ -7,6 +7,8 @@
 //
 
 #import "CJUIKitBaseHomeViewController.h"
+#import "CQTSSuspendWindowFactory.h"
+#import <objc/runtime.h>
 
 @interface CJUIKitBaseHomeViewController () <UITableViewDataSource, UITableViewDelegate> {
     
@@ -162,15 +164,35 @@
             
         } else {
             if (moduleModel.isCreateByXib) {
-                viewController = [[classEntry alloc] initWithNibName:clsString bundle:nil];
+                NSBundle *xibBundle = moduleModel.xibBundle;
+                viewController = [[classEntry alloc] initWithNibName:clsString bundle:xibBundle];
             } else {
                 viewController = [[classEntry alloc] init];
             }
         }
         
         viewController.title = NSLocalizedString(moduleModel.title, nil);
-        viewController.hidesBottomBarWhenPushed = YES;
-        [self.navigationController pushViewController:viewController animated:YES];
+        
+        // 如果是要跳到 UITabBarController 控制器
+        if ([viewController isKindOfClass:[UITabBarController class]]) {
+            id<UIApplicationDelegate> appDelegate = [UIApplication sharedApplication].delegate;
+            UIViewController *originRootViewController = appDelegate.window.rootViewController;
+            objc_setAssociatedObject(appDelegate, "originRootViewController", originRootViewController, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+            
+            [UIApplication sharedApplication].delegate.window.rootViewController = viewController;
+            UIWindow *suspendButton = [CQTSSuspendWindowFactory showSuspendButtonWithSize:CGSizeMake(100, 44) title:NSLocalizedString(@"返回主页", nil) clickCompleteBlock:^{
+                UIViewController *bOriginRootViewController = objc_getAssociatedObject(appDelegate, "originRootViewController");
+                [UIApplication sharedApplication].delegate.window.rootViewController = bOriginRootViewController;
+            }];
+            // 必须强引用，才能显示出来
+            objc_setAssociatedObject(viewController, "suspendButton", suspendButton, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+            
+        } else {
+            viewController.hidesBottomBarWhenPushed = YES;
+            [self.navigationController pushViewController:viewController animated:YES];
+        }
+        
+        
     }
 }
     

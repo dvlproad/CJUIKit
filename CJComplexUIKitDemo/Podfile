@@ -3,6 +3,7 @@ source 'https://gitee.com/dvlproad/dvlproadSpecs'
 
 platform :ios, '9.0'
 #use_frameworks!
+#use_modular_headers!
 inhibit_all_warnings! #inhibit_warnings参数能够有效的抑制CocoaPods引入的第三方代码库产生的warning。
 
 post_install do |installer|
@@ -13,12 +14,14 @@ post_install do |installer|
     deployment_target_key = 'IPHONEOS_DEPLOYMENT_TARGET'
     deployment_targets = pods_project.build_configurations.map{ |config| config.build_settings[deployment_target_key] }
     minimal_deployment_target = deployment_targets.min_by{ |version| Gem::Version.new(version) }
-    
-    puts 'Minimal deployment target is ' + minimal_deployment_target
-    puts 'Setting each pod deployment target to ' + minimal_deployment_target
-    
+    # 所得 minimal_deployment_target 为本文件顶部设置的 platform :ios, '9.0' ，下面打印的log可在执行pod install的终端上查看
+
+    puts 'Minimal deployment target is ' + minimal_deployment_target.to_s # 添加了 .to_s，将值转换为字符串
+    puts 'Setting each pod deployment target to ' + minimal_deployment_target.to_s # 添加了 .to_s，将值转换为字符串
+
     installer.pods_project.targets.each do |target|
         target.build_configurations.each do |config|
+            # 修复[File not found: /Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/arc/libarclite_iphoneos.a](https://stackoverflow.com/questions/75574268/missing-file-libarclite-iphoneos-a-xcode-14-3)
             config.build_settings[deployment_target_key] = minimal_deployment_target
         end
     end
@@ -26,7 +29,7 @@ end
 
 
 target 'CJComplexUIKitDemo' do
-  pod 'CQDemoKit',        '~> 0.5.10',     :subspecs => ['BaseVC', 'BaseUIKit']
+  pod 'CQDemoKit',        '~> 0.6.9',     :subspecs => ['BaseVC', 'BaseUIKit']
   
   pod 'CJComplexUIKit',   :path => '../',  :subspecs => ['CJScrollView', 'CJCollectionView']
   pod 'CJBaseUIKit',      :path => '../'
@@ -34,7 +37,10 @@ target 'CJComplexUIKitDemo' do
   pod 'CJBaseHelper',     :path => '../'  #:subspecs => ['NSDateFormatterCJHelper', 'NSCalendarCJHelper', 'WebCJHelper']
   pod 'CJFoundation',     :path => '../'
   pod 'CJBaseEffectKit',  :subspecs => ['CJDataEmptyView', 'CJScaleHeadView']
-  pod 'CQOverlayKit',     :subspecs => ['CQAlert']
+  pod 'CQOverlayKit',     :subspecs => ['CQAlert']#, :modular_headers => true
+  pod 'CJContainer',      :modular_headers => true  # 修复 CQOverlayKit 引入有swift问题
+  pod 'Masonry',          :modular_headers => true  # 修复 CQOverlayKit 引入有swift问题
+  
 
   pod 'NJKWebViewProgress'
   pod 'SVProgressHUD'

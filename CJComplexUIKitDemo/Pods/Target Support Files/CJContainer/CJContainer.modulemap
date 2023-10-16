@@ -1,0 +1,6 @@
+module CJContainer {
+  umbrella header "CJContainer-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -1,0 +1,6 @@
+module CQImageAddDeleteListKit {
+  umbrella header "CQImageAddDeleteListKit-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -1,0 +1,6 @@
+module CJOverlayView {
+  umbrella header "CJOverlayView-umbrella.h"
+
+  export *
+  module * { export * }
+}

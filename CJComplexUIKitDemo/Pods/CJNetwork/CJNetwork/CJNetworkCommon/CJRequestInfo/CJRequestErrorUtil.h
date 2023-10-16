@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
+NS_ASSUME_NONNULL_BEGIN
+
 @interface CJRequestErrorUtil : NSObject
 
 ///将moreUserInfo添加到pError中
@@ -22,3 +24,5 @@
 + (NSString *)getErrorMessageFromHTTPURLResponse:(NSHTTPURLResponse *)response;
 
 @end
+
+NS_ASSUME_NONNULL_END

@@ -1,0 +1,6 @@
+module CQPopupCreater_Base {
+  umbrella header "CQPopupCreater_Base-umbrella.h"
+
+  export *
+  module * { export * }
+}

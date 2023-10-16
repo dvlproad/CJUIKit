@@ -34,7 +34,7 @@
     self = [super initWithConfigItemCellBlock:^(CQActionImageCollectionViewCell *bItemCell, id bDataModel) {
         UIImage *dataModel = (UIImage *)bDataModel;
         //dataModel.indexPath = indexPath;
-        bItemCell.image = dataModel;
+        bItemCell.cjImageView.image = dataModel;
         
     } clickItemHandle:^(NSArray *bDataModels, NSInteger currentClickItemIndex) {
         [self __clickDataModelAtItemIndex:currentClickItemIndex

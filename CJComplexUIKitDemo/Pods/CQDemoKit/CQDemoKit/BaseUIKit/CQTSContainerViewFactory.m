@@ -28,7 +28,7 @@
                          [CQTSButtonFactory themeBGButtonWithTitle:title2 actionBlock:actionBlock2],
     ];
     
-    return [self containerViewAlongAxis:axisType withSubviews:buttons];
+    return [self containerViewAlongAxis:axisType withSubviews:buttons fixedSpacing:10];
 }
 
 
@@ -45,13 +45,14 @@
                          [CQTSButtonFactory themeBGButtonWithTitle:title3 actionBlock:actionBlock3],
     ];
 
-    return [self containerViewAlongAxis:axisType withSubviews:buttons];
+    return [self containerViewAlongAxis:axisType withSubviews:buttons fixedSpacing:10];
 }
 
 
 #pragma mark - 多视图的基础接口
 + (UIView *)containerViewAlongAxis:(MASAxisType)axisType
                       withSubviews:(NSArray<UIView *> *)subviews
+                      fixedSpacing:(CGFloat)fixedSpacing
 {
     NSAssert(subviews.count >= 0, @"视图个数不能为空");
     if (subviews.count == 1) {
@@ -65,13 +66,13 @@
     }
     
     if (axisType == MASAxisTypeHorizontal) {
-        [subviews mas_distributeViewsAlongAxis:MASAxisTypeHorizontal withFixedSpacing:10 leadSpacing:0 tailSpacing:0];
+        [subviews mas_distributeViewsAlongAxis:MASAxisTypeHorizontal withFixedSpacing:fixedSpacing leadSpacing:0 tailSpacing:0];
         [subviews mas_makeConstraints:^(MASConstraintMaker *make) {
             make.top.bottom.mas_equalTo(containerView);
         }];
         
     } else {
-        [subviews mas_distributeViewsAlongAxis:MASAxisTypeVertical withFixedSpacing:10 leadSpacing:0 tailSpacing:0];
+        [subviews mas_distributeViewsAlongAxis:MASAxisTypeVertical withFixedSpacing:fixedSpacing leadSpacing:0 tailSpacing:0];
         [subviews mas_makeConstraints:^(MASConstraintMaker *make) {
             make.left.right.mas_equalTo(containerView);
         }];

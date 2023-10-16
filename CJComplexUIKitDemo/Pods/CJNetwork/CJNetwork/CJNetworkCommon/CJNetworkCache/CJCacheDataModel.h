@@ -9,6 +9,8 @@
 #import <Foundation/Foundation.h>
 #import <MJExtension/MJExtension.h>
 
+NS_ASSUME_NONNULL_BEGIN
+
 @interface CJCacheDataModel : NSObject <NSCoding>
 
 @property (nonatomic, strong) id<NSCoding> dataObject;              /**< 存储对象的数据 */
@@ -23,3 +25,5 @@
 - (instancetype)initWithDataObject:(id<NSCoding>)object timeInterval:(NSTimeInterval)timeInterval;
 
 @end
+
+NS_ASSUME_NONNULL_END

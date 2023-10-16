@@ -1,0 +1,6 @@
+module CJImagePickerKit {
+  umbrella header "CJImagePickerKit-umbrella.h"
+
+  export *
+  module * { export * }
+}

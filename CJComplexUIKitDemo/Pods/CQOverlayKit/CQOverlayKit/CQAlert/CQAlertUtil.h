@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -24,9 +25,6 @@ NS_ASSUME_NONNULL_BEGIN
                                   message:(NSString *_Nullable)message
                              cancelHandle:(void(^_Nullable)(void))cancelHandle
                                  okHandle:(void(^_Nullable)(void))okHandle;
-
-/// 显示app信息
-+ (void)showDebugViewWithAppExtraInfo:(NSString *)extraInfo;
 
 
 #pragma mark - 完整的基本接口（请优先考虑上述的常用接口）
@@ -83,10 +81,17 @@ NS_ASSUME_NONNULL_BEGIN
                   cancelHandle:(void(^_Nullable)(void))cancelHandle
                       okHandle:(void(^_Nullable)(NSString *outputText))okHandle;
 
-/// 显示调试面板
-/// @param title                     调试面板的标题
-/// @param message                   调试面板的信息
-/// @param shouldContailAppInfo      调试面板的信息是否包含app信息
+
+
+
+#pragma mark - DebugView
+/*
+ *  显示调试面板
+ *
+ *  @param title                调试面板的标题
+ *  @param message              调试面板的信息
+ *  @param shouldContailAppInfo 调试面板的信息是否包含app信息
+ */
 + (void)showDebugViewWithTitle:(NSString *)title
                        message:(NSString *)message
           shouldContailAppInfo:(BOOL)shouldContailAppInfo;
