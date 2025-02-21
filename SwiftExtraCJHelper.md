@@ -47,19 +47,22 @@ NSClassFromString(lastClassName)
 1、Swift中调用OC写的类
 
 ```swift
-let viewController: UIViewController = NSClassFromStringCJHelper.controllerFormString(className: "OverlayHomeViewController", isOC: true)
+let anyCls: AnyClass? = NSClassFromStringCJHelper.ocClass(from: "OverlayHomeViewController")
+let viewController: UIViewController = anyCls.init()
 ```
 
 2、Swift中调用Swift写的类，且该类在本工程中
 
 ```swift
-let viewController: UIViewController = NSClassFromStringCJHelper.controllerFormString(className: "OverlayHomeViewController", isOC: false)
+let anyCls: AnyClass? = NSClassFromStringCJHelper.swiftClass(from: "OverlayHomeViewController", nameSpace: '')
+let viewController: UIViewController = anyCls.init()
 ```
 
 3、Swift中调用Swift写的类，且该类在其他工程/库`TSSwiftDemo_Overlay`中
 
 ```swift
-let viewController: UIViewController = NSClassFromStringCJHelper.controllerFormString(className: "OverlayHomeViewController", isOC: false, nameSpace='TSSwiftDemo_Overlay')
+let anyCls: AnyClass? = NSClassFromStringCJHelper.swiftClass(from: "OverlayHomeViewController", nameSpace: 'TSSwiftDemo_Overlay')
+let viewController: UIViewController = anyCls.init()
 ```
 
 

@@ -1,7 +1,9 @@
 Pod::Spec.new do |s|
-  #验证方法：pod lib lint SwiftExtraCJHelper.podspec --allow-warnings --use-libraries --verbose
+  #验证方法1：pod lib lint SwiftExtraCJHelper.podspec --sources='https://github.com/CocoaPods/Specs.git' --allow-warnings --verbose
+  #提交方法(github公有库)： pod trunk push SwiftExtraCJHelper.podspec --allow-warnings --verbose
+
   s.name         = "SwiftExtraCJHelper"
-  s.version      = "0.1.1"
+  s.version      = "0.1.2"
   s.summary      = "Swift/OC帮助类"
   s.homepage     = "https://github.com/dvlproad/CJUIKit.git"
   s.license      = "MIT"
@@ -21,7 +23,7 @@ Pod::Spec.new do |s|
   s.platform     = :ios, "9.0"
   s.swift_version = '4.0'
 
-  s.source       = { :git => "https://github.com/dvlproad/CJUIKit.git", :tag => "SwiftExtraCJHelper_0.1.1" }
+  s.source       = { :git => "https://github.com/dvlproad/CJUIKit.git", :tag => "SwiftExtraCJHelper_0.1.2" }
   # s.source_files  = "CJBaseUtil/*.{h,m}"
   # s.resources = "CJBaseUtil/**/*.{png}"
   s.frameworks = 'UIKit'
