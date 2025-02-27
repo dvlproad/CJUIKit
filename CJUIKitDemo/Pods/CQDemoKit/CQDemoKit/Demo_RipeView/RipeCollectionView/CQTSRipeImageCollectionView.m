@@ -8,9 +8,13 @@
 
 #import "CQTSRipeImageCollectionView.h"
 #import "CQTSRipeImageCollectionViewCell.h"
-#import <CQDemoKit/CQTSLocImagesUtil.h>
-#import <CQDemoKit/CQTSNetImagesUtil.h>
+#import "CQTSLocImagesUtil.h"
+#import "CQTSNetImagesUtil.h"
 #import "CQTSIconsUtil.h"
+
+#import "CQTSRipeBaseCollectionViewDelegate.h"
+
+#import "CQTSRipeSectionDataUtil.h"
 
 @interface CQTSRipeImageCollectionView () <UICollectionViewDelegateFlowLayout, UICollectionViewDelegate, UICollectionViewDataSource> {
     
@@ -19,6 +23,8 @@
 
 @property (nonatomic, strong, readonly) NSArray<NSNumber *> *sectionRowCounts;  /**< 每个section的rowCount个数 */
 @property (nonatomic, assign, readonly) CQTSRipeImageSource ripeImageSource;   /**< 数据源(有网络图片、本地图片、网络icon) */
+@property (nonatomic, strong, readonly) CQTSRipeBaseCollectionViewDelegate *ripeCollectionViewDelegate;   /**< collectionView的delegate */
+
 
 @end
 
@@ -45,8 +51,16 @@
         
         [self registerClass:[CQTSRipeImageCollectionViewCell class] forCellWithReuseIdentifier:@"cell"];
         
+        
+        __weak typeof(self) weakSelf = self;
+        _ripeCollectionViewDelegate = [[CQTSRipeBaseCollectionViewDelegate alloc] initWithPerMaxCount:perMaxCount didSelectItemHandle:^(UICollectionView * _Nonnull bCollectionView, NSIndexPath * _Nonnull indexPath) {
+            
+        }];
+        self.delegate = self.ripeCollectionViewDelegate;
+        
+        
         self.dataSource = self;
-        self.delegate = self;
+        
     }
     return self;
 }
@@ -64,86 +78,6 @@
     _sectionRowCounts = sectionRowCounts;
     _ripeImageSource = ripeImageSource;
 }
-
-
-
-#pragma mark - UICollectionViewDelegateFlowLayout
-// 此部分已在父类中实现
-- (UIEdgeInsets)collectionView:(UICollectionView *)collectionView
-                        layout:(UICollectionViewLayout *)collectionViewLayout
-        insetForSectionAtIndex:(NSInteger)section
-{
-    return UIEdgeInsetsMake(10, 10, 10, 10);
-}
-
-- (CGFloat)collectionView:(UICollectionView *)collectionView
-                   layout:(UICollectionViewLayout *)collectionViewLayout
-minimumLineSpacingForSectionAtIndex:(NSInteger)section
-{
-    return 10;
-}
-
-- (CGFloat)collectionView:(UICollectionView *)collectionView
-                   layout:(UICollectionViewLayout *)collectionViewLayout
-minimumInteritemSpacingForSectionAtIndex:(NSInteger)section
-{
-    return 10;
-}
-
-- (CGSize)collectionView:(UICollectionView *)collectionView
-                  layout:(UICollectionViewLayout *)collectionViewLayout
-  sizeForItemAtIndexPath:(NSIndexPath *)indexPath
-{
-    CGFloat collectionViewCellWidth = 0;
-    CGFloat collectionViewCellHeight = 0;
-    
-    UICollectionViewFlowLayout *flowLayout = collectionViewLayout;
-    BOOL isScrollHorizontal = flowLayout.scrollDirection == UICollectionViewScrollDirectionHorizontal;
-    if (isScrollHorizontal) {   // 按水平方向滚动时，按个数计算cell的高
-        NSInteger perColumnMaxRowCount = self.perMaxCount;
-        
-        UIEdgeInsets sectionInset = [self collectionView:collectionView
-                                                  layout:collectionViewLayout
-                                  insetForSectionAtIndex:indexPath.section];;
-        CGFloat rowSpacing = [self collectionView:collectionView
-                                           layout:collectionViewLayout
-         minimumInteritemSpacingForSectionAtIndex:indexPath.section];
-        
-        CGFloat height = CGRectGetHeight(collectionView.frame);
-        CGFloat validHeight = height - sectionInset.top - sectionInset.bottom - rowSpacing*(perColumnMaxRowCount-1);
-        collectionViewCellHeight = floorf(validHeight/perColumnMaxRowCount);
-        collectionViewCellWidth = collectionViewCellHeight;
-        
-    } else {                    // 按竖直方向滚动时，按个数计算cell的宽
-        NSInteger perRowMaxColumnCount = self.perMaxCount;
-        
-        UIEdgeInsets sectionInset = [self collectionView:collectionView
-                                                  layout:collectionViewLayout
-                                  insetForSectionAtIndex:indexPath.section];
-        CGFloat columnSpacing = [self collectionView:collectionView
-                                              layout:collectionViewLayout
-            minimumInteritemSpacingForSectionAtIndex:indexPath.section];
-        
-        CGFloat width = CGRectGetWidth(collectionView.frame);
-        CGFloat validWith = width - sectionInset.left - sectionInset.right - columnSpacing*(perRowMaxColumnCount-1);
-        collectionViewCellWidth = floorf(validWith/perRowMaxColumnCount);
-        collectionViewCellHeight = collectionViewCellWidth;
-    }
-    
-    
-    return CGSizeMake(collectionViewCellWidth, collectionViewCellHeight);
-}
-
-#pragma mark - UICollectionViewDelegate
-////“点到”item时候执行的时间(allowsMultipleSelection为默认的NO的时候，只有选中，而为YES的时候有选中和取消选中两种操作)
-- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
-    
-}
-
-- (void)collectionView:(UICollectionView *)collectionView didDeselectItemAtIndexPath:(NSIndexPath *)indexPath {
-    
-}
-
 
 
 #pragma mark - UICollectionViewDataSource
@@ -164,7 +98,7 @@ minimumInteritemSpacingForSectionAtIndex:(NSInteger)section
     CQTSRipeImageCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"cell" forIndexPath:indexPath];
     
     // title
-    NSString *title = [NSString stringWithFormat:@"%zd", indexPath.row];
+    NSString *title = [NSString stringWithFormat:@"%zd-%zd", indexPath.section, indexPath.row];
     [cell setupText:title];
     
     // image

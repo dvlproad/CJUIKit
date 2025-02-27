@@ -8,6 +8,7 @@
 
 #import "CJUIKitBaseCollectionHomeViewController.h"
 #import "CJUIKitCollectionViewCell.h"
+#import "CJUIKitCollectionViewHeader.h"
 #import "UIImageView+CQTSBaseUtil.h"
 
 @interface CJUIKitBaseCollectionHomeViewController () <UICollectionViewDelegateFlowLayout, UICollectionViewDelegate, UICollectionViewDataSource> {
@@ -32,8 +33,20 @@
     
     NSMutableArray *sectionDataModels = [[NSMutableArray alloc] init];
     self.sectionDataModels = sectionDataModels;
+    
+    self.perMaxCount = 3;
+//    self.scrollDirection = UICollectionViewScrollDirectionHorizontal;
 }
 
+#pragma mark - Setter
+- (void)setScrollDirection:(UICollectionViewScrollDirection)scrollDirection {
+    _scrollDirection = scrollDirection;
+    
+    UICollectionViewFlowLayout *flowLayout = (UICollectionViewFlowLayout *)self.collectionView.collectionViewLayout;//通过这种方式去获取layout，避免使用xib初始化的时候得不到
+    flowLayout.scrollDirection = scrollDirection;
+}
+
+#pragma mark - setupViews
 - (void)setupViews {
     UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
     layout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
@@ -44,6 +57,7 @@
     /* 设置Register的Cell或Nib */
     CJUIKitCollectionViewCell *registerCell = [[CJUIKitCollectionViewCell alloc] init];
     [collectionView registerClass:[registerCell class] forCellWithReuseIdentifier:@"cell"];
+    [collectionView registerClass:[CJUIKitCollectionViewHeader class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"CJUIKitCollectionViewHeader"];
     
     /* 设置DataSource */
     collectionView.dataSource = self;
@@ -53,7 +67,26 @@
     
     [self.view addSubview:collectionView];
     [collectionView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.edges.mas_equalTo(self.view);
+//        if #available(iOS 11.0, *) {
+//            make.top.equalTo(self.view.safeAreaLayoutGuide.snp.top).offset(10)
+//            make.bottom.equalTo(self.view.safeAreaLayoutGuide.snp.bottom).offset(-10)
+//        } else {
+//            // Fallback on earlier versions
+//            // topLayoutGuide\bottomLayoutGuide iOS11已经被弃用
+//            make.top.equalTo(topLayoutGuide.snp.bottom).offset(10)
+//            make.bottom.equalTo(bottomLayoutGuide.snp.top).offset(-10)
+//        }
+        if (@available(iOS 11.0, *)) {
+            make.top.equalTo(self.view.mas_safeAreaLayoutGuideTop).offset(10);
+            make.bottom.equalTo(self.view.mas_safeAreaLayoutGuideBottom).offset(-10);
+        } else {
+            // Fallback on earlier versions
+            // topLayoutGuide\bottomLayoutGuide iOS11已经被弃用
+            make.top.equalTo(self.mas_topLayoutGuideBottom).offset(10);
+            make.bottom.equalTo(self.mas_bottomLayoutGuideTop).offset(-10);
+        }
+        make.left.mas_equalTo(self.view).mas_offset(10);
+        make.centerX.mas_equalTo(self.view);
     }];
     self.collectionView = collectionView;
 }
@@ -92,7 +125,7 @@ minimumInteritemSpacingForSectionAtIndex:(NSInteger)section
     UICollectionViewFlowLayout *flowLayout = collectionViewLayout;
     BOOL isScrollHorizontal = flowLayout.scrollDirection == UICollectionViewScrollDirectionHorizontal;
     if (isScrollHorizontal) {   // 按水平方向滚动时，按个数计算cell的高
-        NSInteger perColumnMaxRowCount = 3;
+        NSInteger perColumnMaxRowCount = self.perMaxCount;
         
         UIEdgeInsets sectionInset = [self collectionView:collectionView
                                                   layout:collectionViewLayout
@@ -107,7 +140,7 @@ minimumInteritemSpacingForSectionAtIndex:(NSInteger)section
         collectionViewCellWidth = collectionViewCellHeight;
         
     } else {                    // 按竖直方向滚动时，按个数计算cell的宽
-        NSInteger perRowMaxColumnCount = 3;
+        NSInteger perRowMaxColumnCount = self.perMaxCount;
         
         UIEdgeInsets sectionInset = [self collectionView:collectionView
                                                   layout:collectionViewLayout
@@ -210,6 +243,30 @@ minimumInteritemSpacingForSectionAtIndex:(NSInteger)section
         viewController.hidesBottomBarWhenPushed = YES;
         [self.navigationController pushViewController:viewController animated:YES];
     }
+}
+
+- (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView
+           viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath
+{
+    CQDMSectionDataModel *sectionDataModel = [self.sectionDataModels objectAtIndex:indexPath.section];
+    
+    CJUIKitCollectionViewHeader *reusableview = [[CJUIKitCollectionViewHeader alloc] init];
+    if (kind == UICollectionElementKindSectionHeader) {
+        reusableview = [collectionView dequeueReusableSupplementaryViewOfKind:kind withReuseIdentifier:@"CJUIKitCollectionViewHeader" forIndexPath:indexPath];
+        reusableview.titleNameLabel.text = [NSString stringWithFormat:@"%zd.%@", indexPath.section, sectionDataModel.theme];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            reusableview.layer.zPosition = -10;
+        });
+    }
+    return reusableview;
+}
+
+#pragma mark - UICollectionViewDelegateFlowLayout
+- (CGSize)collectionView:(UICollectionView *)collectionView
+                  layout:(UICollectionViewLayout *)collectionViewLayout referenceSizeForHeaderInSection:(NSInteger)section
+{
+    CGFloat screenWidth = [[UIScreen mainScreen] bounds].size.width;
+    return CGSizeMake(screenWidth, 46.0f);
 }
 
 - (void)didReceiveMemoryWarning {

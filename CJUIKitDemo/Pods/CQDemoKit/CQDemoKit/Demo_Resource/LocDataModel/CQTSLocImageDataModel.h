@@ -14,7 +14,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface CQTSLocImageDataModel : NSObject
 
 @property (nullable, nonatomic, copy) NSString *name;
-@property (nonatomic, strong) UIImage *image;
+@property (nonnull, nonatomic, copy) NSString *imageName;
 
 @property (nonatomic, assign) BOOL selected;    /**< 是否选中状态 */
 

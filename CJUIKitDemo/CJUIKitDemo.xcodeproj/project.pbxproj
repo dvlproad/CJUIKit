@@ -302,7 +302,6 @@
 		80FF90A61FC5649F00E437CF /* QRCodeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 80FF8FDB1FC5649E00E437CF /* QRCodeViewController.xib */; };
 		80FF90A71FC5649F00E437CF /* QRCodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80FF8FDD1FC5649E00E437CF /* QRCodeViewController.m */; };
 		80FF90A81FC5649F00E437CF /* ImageChangeColorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80FF8FDE1FC5649E00E437CF /* ImageChangeColorViewController.m */; };
-		80FF90A91FC5649F00E437CF /* ImageChangeColorViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 80FF8FDF1FC5649E00E437CF /* ImageChangeColorViewController.xib */; };
 		80FF90AB1FC5649F00E437CF /* EasyScaleHeadView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 80FF8FE41FC5649E00E437CF /* EasyScaleHeadView.xib */; };
 		80FF90AC1FC5649F00E437CF /* NavigationBarViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 80FF8FE51FC5649E00E437CF /* NavigationBarViewController.xib */; };
 		80FF90AD1FC5649F00E437CF /* NavigationBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80FF8FE61FC5649E00E437CF /* NavigationBarViewController.m */; };
@@ -906,7 +905,6 @@
 		80FF8FDC1FC5649E00E437CF /* ImageChangeColorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageChangeColorViewController.h; sourceTree = "<group>"; };
 		80FF8FDD1FC5649E00E437CF /* QRCodeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QRCodeViewController.m; sourceTree = "<group>"; };
 		80FF8FDE1FC5649E00E437CF /* ImageChangeColorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageChangeColorViewController.m; sourceTree = "<group>"; };
-		80FF8FDF1FC5649E00E437CF /* ImageChangeColorViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ImageChangeColorViewController.xib; sourceTree = "<group>"; };
 		80FF8FE01FC5649E00E437CF /* QRCodeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QRCodeViewController.h; sourceTree = "<group>"; };
 		80FF8FE31FC5649E00E437CF /* NavigationBarBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NavigationBarBaseViewController.h; sourceTree = "<group>"; };
 		80FF8FE41FC5649E00E437CF /* EasyScaleHeadView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EasyScaleHeadView.xib; sourceTree = "<group>"; };
@@ -2502,7 +2500,6 @@
 			children = (
 				80FF8FDC1FC5649E00E437CF /* ImageChangeColorViewController.h */,
 				80FF8FDE1FC5649E00E437CF /* ImageChangeColorViewController.m */,
-				80FF8FDF1FC5649E00E437CF /* ImageChangeColorViewController.xib */,
 				78514132226854CC0023F0C0 /* ImageGetterViewController.h */,
 				78514133226854CC0023F0C0 /* ImageGetterViewController.m */,
 				789C447621F07BBB00181144 /* ImageHomeViewController.h */,
@@ -2946,7 +2943,6 @@
 				780C1F2225BC6C2C0034D770 /* 10M_01.jpg in Resources */,
 				156AC8D92406DBBE00A5A23D /* badgeButton_normal@3x.png in Resources */,
 				801F75DB20A040D800A2E027 /* signin_icon_open@2x.png in Resources */,
-				80FF90A91FC5649F00E437CF /* ImageChangeColorViewController.xib in Resources */,
 				787FDB8920500B5C008A46E3 /* slider_double_thumbImage_a@3x.png in Resources */,
 				7894C2A9256ECAE200C73B5E /* slider_range_start@2x.png in Resources */,
 				78AB83AD21B7D24E00853E21 /* closePresentVC@3x.png in Resources */,

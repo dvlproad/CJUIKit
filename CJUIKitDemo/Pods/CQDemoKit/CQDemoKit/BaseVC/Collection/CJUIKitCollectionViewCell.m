@@ -33,6 +33,7 @@
     self.imageView = imageView;
     
     UILabel *textLabel = [[UILabel alloc] init];
+    textLabel.numberOfLines = 0;
     textLabel.textAlignment = NSTextAlignmentCenter;
     textLabel.font = [UIFont systemFontOfSize:17];
     textLabel.minimumScaleFactor = 0.4;

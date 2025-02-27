@@ -24,7 +24,9 @@
       "name": "CJAppLastUtil",
       "source_files": "CJBaseUtil/CJAppLastUtil/**/*.{h,m}",
       "dependencies": {
-        "SAMKeychain": []
+        "SAMKeychain": [
+
+        ]
       }
     },
     {
@@ -62,7 +64,9 @@
           "name": "CJLocationChangeManager",
           "source_files": "CJBaseUtil/CJManager/CJLocationChangeManager/**/*.{h,m}",
           "dependencies": {
-            "CJBaseUtil/CJDateUtil": []
+            "CJBaseUtil/CJDateUtil": [
+
+            ]
           }
         },
         {
@@ -79,7 +83,9 @@
       "name": "CJPinyinHelper",
       "source_files": "CJBaseUtil/CJPinyinHelper/**/*.{h,m}",
       "dependencies": {
-        "PinYin4Objc": []
+        "PinYin4Objc": [
+
+        ]
       }
     }
   ]

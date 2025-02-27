@@ -10,6 +10,13 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+typedef NS_ENUM(NSUInteger, CQTSFileType) {
+    CQTSFileTypeUnknown,          // 未知
+    CQTSFileTypeImage,            // 图片
+    CQTSFileTypeAudio,            // 音频
+    CQTSFileTypeVideo,            // 视频
+};
+
 @interface CQTSResourceUtil : NSObject
 
 #pragma mark - Extract FileName And Extension
@@ -20,6 +27,9 @@ NS_ASSUME_NONNULL_BEGIN
 /// @return 包含文件名和扩展名的元组（NSDictionary模拟）
 + (NSDictionary<NSString *, id> *)extractFileNameAndExtensionFromFileName:(NSString *)fileName;
 
+
+#pragma mark - File Type
++ (CQTSFileType)fileTypeForFilePathOrUrl:(NSString *)pathOrUrl;
 
 @end
 

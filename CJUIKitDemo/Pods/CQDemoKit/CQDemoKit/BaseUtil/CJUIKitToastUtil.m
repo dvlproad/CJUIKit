@@ -13,7 +13,16 @@
 /// 在window的中心显示message信息
 + (void)showMessage:(NSString *)message {
     UIWindow *keyWindow = [UIApplication sharedApplication].keyWindow;
-    [self showToast:message inView:keyWindow centerOffset:CGPointZero];
+    
+    // 判断当前是否是主线程
+    if ([NSThread isMainThread]) {
+        [self showToast:message inView:keyWindow centerOffset:CGPointZero];
+    } else {
+        NSLog(@"警告⚠️:请在主线程调用此方法(目前帮你调到主线程): %s", __PRETTY_FUNCTION__);
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self showToast:message inView:keyWindow centerOffset:CGPointZero];
+        });
+    }
 }
 
 /*

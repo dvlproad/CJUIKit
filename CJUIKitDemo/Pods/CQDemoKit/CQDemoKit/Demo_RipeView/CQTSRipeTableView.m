@@ -102,7 +102,7 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"cell"];
     }
     
-    NSString *title = [NSString stringWithFormat:@"%zd", indexPath.row];
+    NSString *title = [NSString stringWithFormat:@"%zd-%zd", indexPath.section, indexPath.row];
     cell.textLabel.text = title;
     
     !self.cellConfigBlock ?: self.cellConfigBlock(cell);

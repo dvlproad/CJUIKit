@@ -12,10 +12,6 @@
 
 @interface ImageChangeColorViewController ()
 
-@property (nonatomic, weak) IBOutlet UIImageView *imageView;
-@property (nonatomic, weak) IBOutlet UIImageView *imageView1;
-@property (nonatomic, weak) IBOutlet UIImageView *imageView2;
-@property (nonatomic, weak) IBOutlet UIImageView *imageView3;
 
 @end
 
@@ -25,27 +21,89 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
-    self.view.backgroundColor = UIColor.lightGrayColor;
+    UIImage *originImage = [UIImage imageNamed:@"imageOriginColor"];
+//    UIImage *originImage = [UIImage imageNamed:@"qq"];
     
-    UIImage *originImage = [UIImage imageNamed:@"qq"];
+    self.navigationItem.title = NSLocalizedString(@"ImageChangeColor首页", nil); //知识点:使得tabBar中的title可以和显示在顶部的title保持各自
     
-    self.imageView.image = [originImage cj_resizeToSize:CGSizeMake(100, 100)];;
+    NSMutableArray *sectionDataModels = [[NSMutableArray alloc] init];
+    //Helper
+    {
+        CQDMSectionDataModel *sectionDataModel = [[CQDMSectionDataModel alloc] init];
+        sectionDataModel.theme = @"原图";
+        {
+            CQDMModuleModel *helperModule = [[CQDMModuleModel alloc] init];
+            helperModule.title = @"原图";
+            helperModule.normalImage = originImage;
+            [sectionDataModel.values addObject:helperModule];
+        }
+        [sectionDataModels addObject:sectionDataModel];
+    }
     
-    //kCGBlendModeDestinationIn
-    self.imageView1.image = [originImage cj_imageWithTintColor:[UIColor orangeColor]];
-    self.imageView1.image = [originImage cj_addBackgroundColor:[UIColor redColor] size:CGSizeMake(100, 100) cornerRadius:50];
+    //Helper
+    {
+        CQDMSectionDataModel *sectionDataModel = [[CQDMSectionDataModel alloc] init];
+        sectionDataModel.theme = @"改变图片颜色";
+        {
+            CQDMModuleModel *helperModule = [[CQDMModuleModel alloc] init];
+            helperModule.title = @"改变图片大小 resizeToSize";
+            helperModule.normalImage = [originImage cj_resizeToSize:CGSizeMake(100, 100)];
+            [sectionDataModel.values addObject:helperModule];
+        }
+        {
+            CQDMModuleModel *helperModule = [[CQDMModuleModel alloc] init];
+            helperModule.title = @"tintColor";
+            helperModule.content = @"kCGBlendModeDestinationIn";
+            helperModule.normalImage = [originImage cj_imageWithTintColor:[UIColor orangeColor]];
+            [sectionDataModel.values addObject:helperModule];
+        }
+        {
+            CQDMModuleModel *helperModule = [[CQDMModuleModel alloc] init];
+            helperModule.title = @"tintColor";
+            helperModule.content = @"kCGBlendModeOverlay";
+            helperModule.normalImage = [originImage cj_imageWithGradientTintColor:[UIColor orangeColor]];
+            [sectionDataModel.values addObject:helperModule];
+        }
+        {
+            CQDMModuleModel *helperModule = [[CQDMModuleModel alloc] init];
+            helperModule.title = @"changeQRCodeImage";
+            helperModule.normalImage = [CJQRCodeUtil changeQRCodeImage:originImage withColor:[UIColor orangeColor]];
+            [sectionDataModel.values addObject:helperModule];
+        }
+        [sectionDataModels addObject:sectionDataModel];
+    }
     
-    //kCGBlendModeOverlay
-    self.imageView2.image = [originImage cj_imageWithGradientTintColor:[UIColor orangeColor]];
-    UIImage *image2 = originImage;
-    image2 = [image2 cj_resizeToSize:CGSizeMake(50, 50)];
-    image2 = [image2 cj_imageWithTintColor:[UIColor whiteColor]];
-//    image2 = [image2 cj_addBackgroundColor:[UIColor redColor] size:CGSizeMake(100, 100) cornerRadius:50];
-    image2 = [image2 cj_addBackgroundColor:[UIColor redColor] backgroundSize:CGSizeMake(100, 100) imageSize:CGSizeMake(50, 50) cornerRadius:50];
-    self.imageView2.image = image2;
-//    self.imageView2.image = [originImage cj_imageWithGradientTintColor:[UIColor orangeColor]];
+    //Helper
+    {
+        CQDMSectionDataModel *sectionDataModel = [[CQDMSectionDataModel alloc] init];
+        sectionDataModel.theme = @"改变图片颜色";
+
+        {
+            CQDMModuleModel *helperModule = [[CQDMModuleModel alloc] init];
+            helperModule.title = @"tintColor";
+            UIImage *newImage = originImage;
+            newImage = [newImage cj_resizeToSize:CGSizeMake(30, 30)];
+            helperModule.normalImage = newImage;
+            [sectionDataModel.values addObject:helperModule];
+        }
+        {
+            CQDMModuleModel *helperModule = [[CQDMModuleModel alloc] init];
+            helperModule.title = @"tintColor";
+            UIImage *newImage = originImage;
+            newImage = [newImage cj_resizeToSize:CGSizeMake(50, 50)];
+            newImage = [newImage cj_imageWithTintColor:[UIColor whiteColor]];
+            newImage = [newImage cj_addBackgroundColor:[UIColor redColor] backgroundSize:CGSizeMake(100, 100) imageSize:CGSizeMake(50, 50) cornerRadius:50];
+            helperModule.normalImage = newImage;
+            [sectionDataModel.values addObject:helperModule];
+        }
+        
+        
+        [sectionDataModels addObject:sectionDataModel];
+    }
     
-    self.imageView3.image = [CJQRCodeUtil changeQRCodeImage:originImage withColor:[UIColor orangeColor]];
+    self.perMaxCount = 2;
+    self.scrollDirection = UICollectionViewScrollDirectionVertical;
+    self.sectionDataModels = sectionDataModels;
 }
 
 - (void)didReceiveMemoryWarning {

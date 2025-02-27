@@ -7,7 +7,6 @@
 //
 
 #import "CQTSRipeBaseCollectionViewDataSource.h"
-#import "CJUIKitCollectionViewCell.h"
 #import "UIImageView+CQTSBaseUtil.h"
 #import "CQTSLocImagesUtil.h"
 
@@ -15,7 +14,7 @@
     
 }
 
-@property (nonatomic, copy, readonly) void(^cellAtIndexPathConfigBlock)(UICollectionViewCell *bCollectionViewCell, NSIndexPath *bIndexPath); /**< 绘制指定indexPath的cell */
+@property (nonatomic, copy, readonly) UICollectionViewCell *(^cellForItemAtIndexPathBlock)(UICollectionView *bCollectionView, NSIndexPath *bIndexPath, CQTSLocImageDataModel *dataModel); /**< 绘制指定indexPath的cell */
 
 @end
 
@@ -26,63 +25,24 @@
 /*
  *  初始化 CollectionView 的 dataSource
  *
- *  @param sectionRowCounts             每个section的rowCount个数(数组有多少个就多少个section，数组里的元素值为该section的row行数)
- *  @param selectedIndexPaths             选中的indexPath数组
- *
- *  @return CollectionView 的 dataSource
- */
-- (instancetype)initWithSectionRowCounts:(NSArray<NSNumber *> *)sectionRowCounts
-                      selectedIndexPaths:(nullable NSArray<NSIndexPath *> *)selectedIndexPaths
-{
-    NSMutableArray<CQDMSectionDataModel *> *sectionDataModels = [[NSMutableArray alloc] init];
-    for (int section = 0; section < sectionRowCounts.count; section++) {
-        NSNumber *nRowCount = [sectionRowCounts objectAtIndex:section];
-        NSInteger iRowCount = [nRowCount integerValue];
-        
-        CQDMSectionDataModel *sectionDataModel = [[CQDMSectionDataModel alloc] init];
-        sectionDataModel.theme = [NSString stringWithFormat:@"section %d", section];
-        sectionDataModel.values = [CQTSLocImagesUtil __getTestLocalImageDataModelsWithCount:iRowCount randomOrder:NO];
-        for (int item = 0; item < iRowCount; item++) {
-            CQTSLocImageDataModel *module = [sectionDataModel.values objectAtIndex:item];
-            module.name = [NSString stringWithFormat:@"%d-%02zd", section, item];
-            
-            BOOL isSelected = [selectedIndexPaths containsObject:[NSIndexPath indexPathForItem:item inSection:section]];
-            module.selected = isSelected;
-//            CQTSLocImageDataModel *module = [[CQTSLocImageDataModel alloc] init];
-//            module.title = [NSString stringWithFormat:@"%d-%02zd", section, item];
-//            [sectionDataModel.values addObject:module];
-        }
-        [sectionDataModels addObject:sectionDataModel];
-    }
-
-    self = [self initWithSectionDataModels:sectionDataModels];
-    if (self) {
-        
-    }
-    return self;
-}
-
-/*
- *  初始化 CollectionView 的 dataSource
- *
  *  @param sectionDataModels            每个section的数据(section中的数据元素必须是 CQDMModuleModel )
+ *  @param registerHandler              集合视图cell等的注册
+ *  @param cellForItemAtIndexPath       获取指定indexPath的cell
  *
  *  @return CollectionView 的 dataSource
  */
-- (instancetype)initWithSectionDataModels:(NSArray<CQTSLocImageDataModel *> *)sectionDataModels
+- (instancetype)initWithSectionDataModels:(NSArray<CQDMSectionDataModel *> *)sectionDataModels
+                          registerHandler:(void(^)(void))registerHandler
+                   cellForItemAtIndexPath:(UICollectionViewCell *(^)(UICollectionView *bCollectionView, NSIndexPath *bIndexPath, CQTSLocImageDataModel *dataModel))cellForItemAtIndexPath
 {
     self = [super init];
     if (self) {
         _sectionDataModels = sectionDataModels;
+        
+        registerHandler();
+        _cellForItemAtIndexPathBlock = cellForItemAtIndexPath;
     }
     return self;
-}
-
-/*
- *  注册 CollectionView 所需的所有 cell
- */
-- (void)registerAllCellsForCollectionView:(UICollectionView *)collectionView {
-    [collectionView registerClass:[CJUIKitCollectionViewCell class] forCellWithReuseIdentifier:@"cell"];
 }
 
 /*
@@ -115,10 +75,8 @@
 {
     CQTSLocImageDataModel *moduleModel = [self dataModelAtIndexPath:indexPath];
     
-    CJUIKitCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"cell" forIndexPath:indexPath];
-    cell.imageView.image = moduleModel.image;
-    cell.textLabel.text = moduleModel.name;
-    
+    UICollectionViewCell *cell = self.cellForItemAtIndexPathBlock(collectionView, indexPath, moduleModel);
+
     return cell;
 }
 

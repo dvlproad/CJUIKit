@@ -45,8 +45,9 @@
         {
             CQDMModuleModel *imageChangeColorModule = [[CQDMModuleModel alloc] init];
             imageChangeColorModule.title = @"UIImage(改变颜色)";
+            imageChangeColorModule.content = @"同样一张图片，利用代码改变图片上的颜色，使其看起来像另一张图片";
+            imageChangeColorModule.contentLines = 3;
             imageChangeColorModule.classEntry = [ImageChangeColorViewController class];
-            imageChangeColorModule.isCreateByXib = YES;
             [sectionDataModel.values addObject:imageChangeColorModule];
         }
         {

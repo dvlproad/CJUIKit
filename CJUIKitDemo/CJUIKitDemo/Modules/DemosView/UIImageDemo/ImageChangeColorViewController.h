@@ -8,7 +8,8 @@
 //  图片改变颜色
 
 #import <UIKit/UIKit.h>
+#import <CQDemoKit/CJUIKitBaseCollectionHomeViewController.h>
 
-@interface ImageChangeColorViewController : UIViewController
+@interface ImageChangeColorViewController : CJUIKitBaseCollectionHomeViewController
 
 @end

@@ -21,18 +21,18 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import "IQKeyboardManagerConstants.h"
-#import "IQUIView+IQKeyboardToolbar.h"
-#import "IQPreviousNextView.h"
-#import "IQUIViewController+Additions.h"
-#import "IQKeyboardReturnKeyHandler.h"
-#import "IQTextView.h"
-#import "IQToolbar.h"
-#import "IQUIScrollView+Additions.h"
-#import "IQUITextFieldView+Additions.h"
-#import "IQBarButtonItem.h"
-#import "IQTitleBarButtonItem.h"
-#import "IQUIView+Hierarchy.h"
+#import <IQKeyboardManagerConstants.h>
+#import <IQUIView+IQKeyboardToolbar.h>
+#import <IQPreviousNextView.h>
+#import <IQUIViewController+Additions.h>
+#import <IQKeyboardReturnKeyHandler.h>
+#import <IQTextView.h>
+#import <IQToolbar.h>
+#import <IQUIScrollView+Additions.h>
+#import <IQUITextFieldView+Additions.h>
+#import <IQBarButtonItem.h>
+#import <IQTitleBarButtonItem.h>
+#import <IQUIView+Hierarchy.h>
 
 #import <CoreGraphics/CGBase.h>
 
@@ -300,6 +300,20 @@ extern NSInteger const kIQPreviousNextButtonToolbarTag;
  if shouldResignOnTouchOutside is enabled then you can customise the behaviour to not recognise gesture touches on some specific view subclasses. Class should be kind of UIView. Default is [UIControl, UINavigationBar]
  */
 @property(nonatomic, strong, nonnull, readonly) NSMutableSet<Class> *touchResignedGestureIgnoreClasses;
+
+///---------------------------------------------
+/// @name Register for keyboard size events
+///---------------------------------------------
+
+/**
+ register an object to get keyboard size change events
+ */
+-(void)registerKeyboardSizeChangeWithIdentifier:(nonnull id<NSCopying>)identifier sizeHandler:(void (^_Nonnull)(CGSize size))sizeHandler;
+
+/**
+ unregister the object which was registered before
+ */
+-(void)unregisterKeyboardSizeChangeWithIdentifier:(nonnull id<NSCopying>)identifier;
 
 ///-------------------------------------------
 /// @name Third Party Library support

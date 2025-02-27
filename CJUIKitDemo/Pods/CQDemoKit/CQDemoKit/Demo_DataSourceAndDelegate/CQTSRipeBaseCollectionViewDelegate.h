@@ -32,11 +32,6 @@ NS_ASSUME_NONNULL_BEGIN
 - (instancetype)initWithFrame:(CGRect)frame collectionViewLayout:(UICollectionViewLayout *)layout NS_UNAVAILABLE;
 - (instancetype)initWithCoder:(NSCoder *)aDecoder NS_UNAVAILABLE;
 
-/*
- *  注册 CollectionView 所需的所有 cell
- */
-- (void)registerAllCellsForCollectionView:(UICollectionView *)collectionView;
-
 @end
 
 NS_ASSUME_NONNULL_END

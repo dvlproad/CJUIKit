@@ -1,1 +1,0 @@
-../../../CQDemoKit/CQDemoKit/Demo_DataSourceAndDelegate/CQTSRipeBaseCollectionViewEasyDataSource.h

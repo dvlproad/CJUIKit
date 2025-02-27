@@ -29,5 +29,23 @@
     }
 }
 
+#pragma mark - File Type
++ (CQTSFileType)fileTypeForFilePathOrUrl:(NSString *)pathOrUrl {
+    NSString *extension = [pathOrUrl pathExtension].lowercaseString;
+    NSArray *imageExtensions = @[@"jpg", @"jpeg", @"png", @"gif", @"bmp", @"webp"];
+    NSArray *audioExtensions = @[@"mp3", @"wav", @"m4a", @"aac", @"ogg"];
+    NSArray *videoExtensions = @[@"mp4", @"mov", @"avi", @"mkv", @"flv"];
+    if ([imageExtensions containsObject:extension]) {
+        return CQTSFileTypeImage;
+    } else if ([audioExtensions containsObject:extension]) {
+        return CQTSFileTypeAudio;
+    } else if ([videoExtensions containsObject:extension]) {
+        return CQTSFileTypeVideo;
+    } else {
+        return CQTSFileTypeUnknown;
+    }
+}
+
+
 
 @end

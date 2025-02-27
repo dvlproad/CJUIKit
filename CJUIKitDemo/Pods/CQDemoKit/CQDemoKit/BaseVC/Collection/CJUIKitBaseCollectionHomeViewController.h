@@ -18,6 +18,9 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) UICollectionView *collectionView;
 @property (nonatomic, strong) NSMutableArray<CQDMSectionDataModel *> *sectionDataModels;
 
+@property (nonatomic, assign) NSInteger perMaxCount;
+@property (nonatomic) UICollectionViewScrollDirection scrollDirection;
+
 @end
 
 NS_ASSUME_NONNULL_END
