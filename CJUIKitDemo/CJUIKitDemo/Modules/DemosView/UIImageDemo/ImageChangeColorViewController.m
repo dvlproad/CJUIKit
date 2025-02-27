@@ -25,15 +25,25 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
-    UIImage *originImage = [UIImage imageNamed:@"imageOriginColor"];
+    self.view.backgroundColor = UIColor.lightGrayColor;
     
-    self.imageView.image = originImage;
+    UIImage *originImage = [UIImage imageNamed:@"qq"];
+    
+    self.imageView.image = [originImage cj_resizeToSize:CGSizeMake(100, 100)];;
     
     //kCGBlendModeDestinationIn
     self.imageView1.image = [originImage cj_imageWithTintColor:[UIColor orangeColor]];
+    self.imageView1.image = [originImage cj_addBackgroundColor:[UIColor redColor] size:CGSizeMake(100, 100) cornerRadius:50];
     
     //kCGBlendModeOverlay
     self.imageView2.image = [originImage cj_imageWithGradientTintColor:[UIColor orangeColor]];
+    UIImage *image2 = originImage;
+    image2 = [image2 cj_resizeToSize:CGSizeMake(50, 50)];
+    image2 = [image2 cj_imageWithTintColor:[UIColor whiteColor]];
+//    image2 = [image2 cj_addBackgroundColor:[UIColor redColor] size:CGSizeMake(100, 100) cornerRadius:50];
+    image2 = [image2 cj_addBackgroundColor:[UIColor redColor] backgroundSize:CGSizeMake(100, 100) imageSize:CGSizeMake(50, 50) cornerRadius:50];
+    self.imageView2.image = image2;
+//    self.imageView2.image = [originImage cj_imageWithGradientTintColor:[UIColor orangeColor]];
     
     self.imageView3.image = [CJQRCodeUtil changeQRCodeImage:originImage withColor:[UIColor orangeColor]];
 }

@@ -7,16 +7,21 @@
 //
 
 #import "CQTSRipeBaseCollectionView.h"
-#import <CQDemoKit/CQTSLocImagesUtil.h>
+#import "CQTSLocImagesUtil.h"
+#import "CQTSRipeBaseCollectionViewDelegate.h"
+#import "CQTSRipeBaseCollectionViewDataSource.h"
 
 @interface CQTSRipeBaseCollectionView () <UICollectionViewDelegateFlowLayout, UICollectionViewDelegate, UICollectionViewDataSource> {
     
 }
-@property (nonatomic, strong) NSArray<NSNumber *> *sectionRowCounts;    /**< 每个section的rowCount个数 */
-@property (nonatomic, assign, readonly) CGFloat perMaxCount;            /**< 每行/每列个数 */
+//@property (nonatomic, assign, readonly) CGFloat perMaxCount;            /**< 每行/每列个数 */
+@property (nonatomic, strong, readonly) CQTSRipeBaseCollectionViewDelegate *ripeCollectionViewDelegate;   /**< collectionView的delegate */
 
-@property (nonatomic, copy, readonly) void(^cellAtIndexPathConfigBlock)(UICollectionViewCell *bCollectionViewCell, NSIndexPath *bIndexPath); /**< 绘制指定indexPath的cell */
-@property (nonatomic, strong) UICollectionViewCell *cellClass;
+//@property (nonatomic, strong) NSArray<NSNumber *> *sectionRowCounts;    /**< 每个section的rowCount个数 */
+//@property (nonatomic, copy, readonly) void(^cellAtIndexPathConfigBlock)(UICollectionViewCell *bCollectionViewCell, NSIndexPath *bIndexPath); /**< 绘制指定indexPath的cell */
+//@property (nonatomic, strong) UICollectionViewCell *cellClass;
+@property (nonatomic, strong, readonly) CQTSRipeBaseCollectionViewDataSource *ripeCollectionViewDataSource;   /**< collectionView的dataSource */
+
 @end
 
 
@@ -44,23 +49,32 @@
     layout.scrollDirection = scrollDirection;
     self = [super initWithFrame:CGRectZero collectionViewLayout:layout];
     if (self) {
-        _perMaxCount = perMaxCount;
+        //_perMaxCount = perMaxCount;
+        __weak typeof(self) weakSelf = self;
+        _ripeCollectionViewDelegate = [[CQTSRipeBaseCollectionViewDelegate alloc] initWithPerMaxCount:perMaxCount didSelectItemHandle:^(UICollectionView * _Nonnull bCollectionView, NSIndexPath * _Nonnull bIndexPath) {
+            CQTSLocImageDataModel *moduleModel = [weakSelf.ripeCollectionViewDataSource dataModelAtIndexPath:bIndexPath];
+            moduleModel.selected = YES;
+        }];
         
+        /*
         [self registerClass:cellClass forCellWithReuseIdentifier:@"cell"];
         _cellClass = cellClass;
         _cellAtIndexPathConfigBlock = cellAtIndexPathConfigBlock;
-        
-        self.dataSource = self;
-        self.delegate = self;
-        
         self.sectionRowCounts = sectionRowCounts;
+        */
+//        _ripeCollectionViewDataSource = [[CQTSRipeBaseCollectionViewDataSource alloc] initWithSectionRowCounts:sectionRowCounts cellAtIndexPathConfigBlock:cellAtIndexPathConfigBlock];
+        _ripeCollectionViewDataSource = [[CQTSRipeBaseCollectionViewDataSource alloc] initWithSectionRowCounts:sectionRowCounts selectedIndexPaths:nil];
+        [_ripeCollectionViewDataSource registerAllCellsForCollectionView:self];
+        
+        self.dataSource = self.ripeCollectionViewDataSource;
+        self.delegate = self.ripeCollectionViewDelegate;
     }
     return self;
 }
 
 
 
-
+/*
 #pragma mark - UICollectionViewDelegateFlowLayout
 // 此部分已在父类中实现
 - (UIEdgeInsets)collectionView:(UICollectionView *)collectionView
@@ -137,9 +151,9 @@ minimumInteritemSpacingForSectionAtIndex:(NSInteger)section
 - (void)collectionView:(UICollectionView *)collectionView didDeselectItemAtIndexPath:(NSIndexPath *)indexPath {
     
 }
+*/
 
-
-
+/*
 #pragma mark - UICollectionViewDataSource
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
     return self.sectionRowCounts.count;
@@ -161,6 +175,6 @@ minimumInteritemSpacingForSectionAtIndex:(NSInteger)section
     
     return cell;
 }
-
+*/
 
 @end

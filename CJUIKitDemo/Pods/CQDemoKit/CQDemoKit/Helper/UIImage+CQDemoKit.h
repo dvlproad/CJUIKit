@@ -15,6 +15,7 @@ NS_ASSUME_NONNULL_BEGIN
 + (nullable UIImage *)cqdemokit_imageNamed:(NSString *)name __attribute((deprecated("已废弃，请使用doraemon_xcassetImageNamed")));
 
 + (nullable UIImage *)cqdemokit_xcassetImageNamed:(NSString *)name;
++ (nullable UIImage *)cqdemokit_xcassetImageNamed:(NSString *)name withCache:(BOOL)shouldCache;
 
 @end
 

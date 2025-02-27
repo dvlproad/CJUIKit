@@ -30,7 +30,7 @@ source 'https://github.com/CocoaPods/Specs.git'
 inhibit_all_warnings! #inhibit_warnings参数能够有效的抑制CocoaPods引入的第三方代码库产生的warning。
 
 target 'CJUIKitDemo' do
-  pod 'CQDemoKit',    '~> 0.6.8',   :subspecs => ['BaseVC', 'BaseUIKit', 'BaseUtil', 'Demo_RipeView', 'Demo_Resource']
+    pod 'CQDemoKit',    '~> 0.7.5',   :subspecs => ['BaseVC', 'BaseUIKit', 'BaseUtil', 'Demo_RipeView', 'Demo_Resource']
   
     pod 'Masonry'
 

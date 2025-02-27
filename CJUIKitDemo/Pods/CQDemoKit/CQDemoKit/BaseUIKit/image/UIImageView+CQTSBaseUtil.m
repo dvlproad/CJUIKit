@@ -44,27 +44,28 @@
     
     //UIImage *placeholderImage = [CQPlaceholderImageSource placeholdeImageForImageUseType:imageUseType];
     //self.image = placeholderImage;
+    __weak typeof(self) weakSelf = self;
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-        if ([imageUrl isEqualToString:[self cqdmCheckReuseImageUrl]] == NO) {   // 防止重用
-            NSLog(@"happen reuse111======\n realImageUrl:%@,\n reuseImageUrl:%@", imageUrl, [self cqdmCheckReuseImageUrl]);
+        if ([imageUrl isEqualToString:[weakSelf cqdmCheckReuseImageUrl]] == NO) {   // 防止重用
+            NSLog(@"happen reuse111======\n realImageUrl:%@,\n reuseImageUrl:%@", imageUrl, [weakSelf cqdmCheckReuseImageUrl]);
             return;
         }
         
         UIImage *newImage = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:imageUrl]]];
         
         dispatch_async(dispatch_get_main_queue(), ^{
-            if ([imageUrl isEqualToString:[self cqdmCheckReuseImageUrl]]) {   // 防止重用
+            if ([imageUrl isEqualToString:[weakSelf cqdmCheckReuseImageUrl]]) {   // 防止重用
                 //if (newImage == nil) {    // 如果获取图片失败，则显示默认的失败图片
                 //    UIImage *errorImage = [CQPlaceholderImageSource errorImageForImageUseType:imageUseType];
-                //    self.image = errorImage;// 图片错乱根源:用户在滑动的过程中，因为cell的重用，第11行的cell可能使用的是第0行的cell，即self位置可能变了
+                //    weakSelf.image = errorImage;// 图片错乱根源:用户在滑动的过程中，因为cell的重用，第11行的cell可能使用的是第0行的cell，即self位置可能变了
                 //} else {
-                    self.image = newImage;  // 图片错乱根源:用户在滑动的过程中，因为cell的重用，第11行的cell可能使用的是第0行的cell，即self位置可能变了
+                    weakSelf.image = newImage;  // 图片错乱根源:用户在滑动的过程中，因为cell的重用，第11行的cell可能使用的是第0行的cell，即self位置可能变了
                 //}
                 
                 NSURL *imageURL = [NSURL URLWithString:imageUrl];
                 !completedBlock ?: completedBlock(newImage, imageURL);
             } else {
-                NSLog(@"happen reuse222======\n realImageUrl:%@,\n reuseImageUrl:%@", imageUrl, [self cqdmCheckReuseImageUrl]);
+                NSLog(@"happen reuse222======\n realImageUrl:%@,\n reuseImageUrl:%@", imageUrl, [weakSelf cqdmCheckReuseImageUrl]);
             }
             
         });

@@ -38,13 +38,14 @@
     NSArray<NSNumber *> *sectionRowCounts = @[number];
     NSInteger perMaxCount = 1;
     
+    __weak typeof(self) weakSelf = self;
     self = [super initWithSectionRowCounts:sectionRowCounts perMaxCount:perMaxCount scrollDirection:scrollDirection cellClass:[CQTSRipeButtonCollectionViewCell class] cellAtIndexPathConfigBlock:^(UICollectionViewCell * _Nonnull bCollectionViewCell, NSIndexPath * _Nonnull bIndexPath) {
         CQTSRipeButtonCollectionViewCell *cell = (CQTSRipeButtonCollectionViewCell *)bCollectionViewCell;
         
         NSString *title = buttonTitles[bIndexPath.item];
         cell.text = title;
         
-        !self.cellConfigBlock ?: self.cellConfigBlock(cell);
+        !weakSelf.cellConfigBlock ?: weakSelf.cellConfigBlock(cell);
     }];
     if (self) {
         _didSelectItemAtIndexHandle = didSelectItemAtIndexHandle;

@@ -18,6 +18,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nullable, nonatomic, strong) UIImage *imagePlaceholderImage;
 @property (nonatomic, assign) NSInteger badgeCount;
 
+@property (nonatomic, assign) BOOL selected;    /**< 是否选中状态 */
+
 @end
 
 NS_ASSUME_NONNULL_END

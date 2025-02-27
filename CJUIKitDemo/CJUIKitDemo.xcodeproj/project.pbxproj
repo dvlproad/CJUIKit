@@ -344,6 +344,7 @@
 		97578AB225590F7100249AD6 /* UIWindow+RootSetting.m in Sources */ = {isa = PBXBuildFile; fileRef = 97578AB125590F7100249AD6 /* UIWindow+RootSetting.m */; };
 		97578D012559473500249AD6 /* TSRangeSliderControl1.m in Sources */ = {isa = PBXBuildFile; fileRef = 97578D002559473500249AD6 /* TSRangeSliderControl1.m */; };
 		97578D072559474F00249AD6 /* TSRangeSliderControl2.m in Sources */ = {isa = PBXBuildFile; fileRef = 97578D062559474F00249AD6 /* TSRangeSliderControl2.m */; };
+		9760EBDE2D70728B00F2E464 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9760EBDD2D70728B00F2E464 /* Images.xcassets */; };
 		976794E9258093EF002FD0C7 /* AStringLengthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 976794E7258093EE002FD0C7 /* AStringLengthViewController.m */; };
 		976794FA2580B494002FD0C7 /* KeyboardAutoMoveUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 976794F92580B494002FD0C7 /* KeyboardAutoMoveUpViewController.m */; };
 		97A9191E25AFE8510051B902 /* imageOriginColor@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 97A9191525AFE8510051B902 /* imageOriginColor@2x.png */; };
@@ -981,6 +982,7 @@
 		97578D002559473500249AD6 /* TSRangeSliderControl1.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TSRangeSliderControl1.m; sourceTree = "<group>"; };
 		97578D052559474F00249AD6 /* TSRangeSliderControl2.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TSRangeSliderControl2.h; sourceTree = "<group>"; };
 		97578D062559474F00249AD6 /* TSRangeSliderControl2.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TSRangeSliderControl2.m; sourceTree = "<group>"; };
+		9760EBDD2D70728B00F2E464 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		976794E7258093EE002FD0C7 /* AStringLengthViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AStringLengthViewController.m; sourceTree = "<group>"; };
 		976794E8258093EF002FD0C7 /* AStringLengthViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AStringLengthViewController.h; sourceTree = "<group>"; };
 		976794F82580B494002FD0C7 /* KeyboardAutoMoveUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeyboardAutoMoveUpViewController.h; sourceTree = "<group>"; };
@@ -2730,6 +2732,7 @@
 		97A9191425AFE8510051B902 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				9760EBDD2D70728B00F2E464 /* Images.xcassets */,
 				97A9191525AFE8510051B902 /* imageOriginColor@2x.png */,
 				97A9191625AFE8510051B902 /* longVertical.jpg */,
 				97A9191725AFE8510051B902 /* taixi_icon@2x.png */,
@@ -2950,6 +2953,7 @@
 				7868277B21AF01BA00FCCDE5 /* bgCar@2x.jpg in Resources */,
 				807F126C20B5123A0008B748 /* animationBg02.jpg in Resources */,
 				807F127020B51C390008B748 /* animationBg01.jpg in Resources */,
+				9760EBDE2D70728B00F2E464 /* Images.xcassets in Resources */,
 				80FF919D1FC5682B00E437CF /* CountDownTimeViewController.xib in Resources */,
 				78778E26272AB18200576853 /* cjBackBarButtonItem@2x.png in Resources */,
 				787FDB6620500B1F008A46E3 /* sound@2x.png in Resources */,

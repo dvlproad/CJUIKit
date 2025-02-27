@@ -16,6 +16,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nullable, nonatomic, copy) NSString *name;
 @property (nonatomic, strong) UIImage *image;
 
+@property (nonatomic, assign) BOOL selected;    /**< 是否选中状态 */
+
 @end
 
 NS_ASSUME_NONNULL_END

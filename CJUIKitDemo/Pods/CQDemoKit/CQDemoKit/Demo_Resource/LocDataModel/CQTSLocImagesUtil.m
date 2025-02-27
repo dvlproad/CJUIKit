@@ -18,21 +18,27 @@
 
 /// 获取测试用的数据(image为本地图片)
 ///
-/// @param count 图片个数
+/// @param count                图片个数
+/// @param randomOrder  顺序是否随机
 ///
 /// @return 返回图片数据
-+ (NSMutableArray<CQTSLocImageDataModel *> *)__getTestLocalImageDataModelsWithCount:(NSInteger)count {
++ (NSMutableArray<CQTSLocImageDataModel *> *)__getTestLocalImageDataModelsWithCount:(NSInteger)count randomOrder:(BOOL)randomOrder {
     NSArray<UIImage *> *images = [self cjts_localImages];
     
     NSMutableArray<CQTSLocImageDataModel *> *dataModels = [[NSMutableArray alloc] init];
+    NSArray<NSString *> *titles = @[@"X透社", @"新鲜事", @"XX信", @"X角信", @"蓝精灵", @"年轻范", @"XX福", @"X之语"];
     
     for (NSInteger i = 0; i < count; i++) {
         CQTSLocImageDataModel *dataModel = [[CQTSLocImageDataModel alloc] init];
-        dataModel.name = [NSString stringWithFormat:@"%zd", i];
+        NSInteger maySelIndex = randomOrder ? random() : i;
+        NSInteger lastImageSelIndex = maySelIndex%images.count;
+        NSInteger lastTitleSelIndex = maySelIndex%titles.count;
         
-        NSInteger selIndex = random()%images.count;
-        UIImage *image = [images objectAtIndex:selIndex];
+        UIImage *image = [images objectAtIndex:lastImageSelIndex];
+        //NSString *title = [NSString stringWithFormat:@"%zd:第index=%zd张", i, lastImageSelIndex];
+        NSString *title = [titles objectAtIndex:lastTitleSelIndex];
         dataModel.image = image;
+        dataModel.name = [NSString stringWithFormat:@"%02zd%@", i+1, title];
         [dataModels addObject:dataModel];
     }
     
@@ -43,57 +49,7 @@
 
 /// 获取测试用的数据(image为本地图片)
 + (NSMutableArray<CQTSLocImageDataModel *> *)__getTestLocalImageDataModels {
-    NSMutableArray<CQTSLocImageDataModel *> *dataModels = [[NSMutableArray alloc] init];
-    {
-        CQTSLocImageDataModel *dataModel = [[CQTSLocImageDataModel alloc] init];
-        dataModel.name = @"1X透社";
-        dataModel.image = [CQTSLocImagesUtil cjts_localImage1];
-        [dataModels addObject:dataModel];
-    }
-    {
-        CQTSLocImageDataModel *dataModel = [[CQTSLocImageDataModel alloc] init];
-        dataModel.name = @"2新鲜事";
-        dataModel.image = [CQTSLocImagesUtil cjts_localImage2];
-        [dataModels addObject:dataModel];
-    }
-    {
-        CQTSLocImageDataModel *dataModel = [[CQTSLocImageDataModel alloc] init];
-        dataModel.name = @"3XX信";
-        dataModel.image = [CQTSLocImagesUtil cjts_localImage3];
-        [dataModels addObject:dataModel];
-    }
-    {
-        CQTSLocImageDataModel *dataModel = [[CQTSLocImageDataModel alloc] init];
-        dataModel.name = @"4X角信";
-        dataModel.image = [CQTSLocImagesUtil cjts_localImage4];
-        [dataModels addObject:dataModel];
-    }
-    {
-        CQTSLocImageDataModel *dataModel = [[CQTSLocImageDataModel alloc] init];
-        dataModel.name = @"5蓝精灵";
-        dataModel.image = [CQTSLocImagesUtil cjts_localImage5];
-        [dataModels addObject:dataModel];
-    }
-    {
-        CQTSLocImageDataModel *dataModel = [[CQTSLocImageDataModel alloc] init];
-        dataModel.name = @"6年轻范";
-        dataModel.image = [CQTSLocImagesUtil cjts_localImage6];
-        [dataModels addObject:dataModel];
-    }
-    {
-        CQTSLocImageDataModel *dataModel = [[CQTSLocImageDataModel alloc] init];
-        dataModel.name = @"7XX福";
-        dataModel.image = [CQTSLocImagesUtil cjts_localImage7];
-        [dataModels addObject:dataModel];
-    }
-    {
-        CQTSLocImageDataModel *dataModel = [[CQTSLocImageDataModel alloc] init];
-        dataModel.name = @"8X之语";
-        dataModel.image = [CQTSLocImagesUtil cjts_localImage8];
-        [dataModels addObject:dataModel];
-    }
-    
-    return dataModels;
+    return [self __getTestLocalImageDataModelsWithCount:8 randomOrder:NO];
 }
 
 
@@ -111,21 +67,38 @@
 
 /// 所有的本地测试图片
 + (NSArray<UIImage *> *)cjts_localImages {
-    NSArray<UIImage *> *images = @[[CQTSLocImagesUtil cjts_localImage1],
-                                   [CQTSLocImagesUtil cjts_localImage2],
-                                   [CQTSLocImagesUtil cjts_localImage3],
-                                   [CQTSLocImagesUtil cjts_localImage4],
-                                   [CQTSLocImagesUtil cjts_localImage5],
-                                   [CQTSLocImagesUtil cjts_localImage6],
-                                   [CQTSLocImagesUtil cjts_localImage7],
-                                   [CQTSLocImagesUtil cjts_localImage8],
-                                   [CQTSLocImagesUtil cjts_localImage9],
-                                   [CQTSLocImagesUtil cjts_localImage10],
-                                   [CQTSLocImagesUtil longHorizontal01],
-                                   [CQTSLocImagesUtil longVertical01],
-    ];
+    NSMutableArray<UIImage *> *images = [[NSMutableArray alloc] init];
+    
+    NSArray<NSString *> *imageNames = [self cjts_localImageNames];
+    NSInteger imageCount = [imageNames count];
+    for (int i = 0; i < imageCount; i++) {
+        NSString *imageName = [imageNames objectAtIndex:i];
+        UIImage *image = [UIImage cqdemokit_xcassetImageNamed:imageName];
+        if (image == nil) {
+            image = [[UIImage alloc] init];
+        }
+        [images addObject:image];
+    }
     
     return images;
+}
+/// 所有的本地测试图片的名称
++ (NSArray<NSString *> *)cjts_localImageNames {
+    NSArray<NSString *> *imagesNames = @[@"cqts_1.jpg",
+                                         @"cqts_2.jpg",
+                                         @"cqts_3.jpg",
+                                         @"cqts_4.jpg",
+                                         @"cqts_5.jpg",
+                                         @"cqts_6.jpg",
+                                         @"cqts_7.jpg",
+                                         @"cqts_8.jpg",
+                                         @"cqts_9.jpg",
+                                         @"cqts_10.jpg",
+                                         @"cqts_long_horizontal_1.jpg",
+                                         @"cqts_long_vertical_1.jpg",
+    ];
+    
+    return imagesNames;
 }
 
 /// 随机的本地测试图片

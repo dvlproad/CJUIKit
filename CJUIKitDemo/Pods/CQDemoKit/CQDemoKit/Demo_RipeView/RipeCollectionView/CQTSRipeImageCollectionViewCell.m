@@ -153,4 +153,21 @@ const CGFloat badgeLabelMargin = 4;         // badge与cell的距离
     return _badgeLabel;
 }
 
+/*
+- (void)setSelected:(BOOL)selected {
+    [super setSelected:selected];
+    
+    self.layer.masksToBounds = YES;
+    UIColor *borderColor = [UIColor colorWithRed:255/255.0 green:0/255.0 blue:0/255.0 alpha:1.0];
+    if (selected) {
+        self.layer.borderColor = [borderColor colorWithAlphaComponent:1.0].CGColor;
+        self.layer.borderWidth = 2;
+    } else {
+        self.layer.borderColor = [UIColor colorWithRed:144/255.0 green:144/255.0 blue:144/255.0 alpha:1.0].CGColor; // #999999
+        self.layer.borderWidth = 2;
+    }
+}
+*/
+
+
 @end

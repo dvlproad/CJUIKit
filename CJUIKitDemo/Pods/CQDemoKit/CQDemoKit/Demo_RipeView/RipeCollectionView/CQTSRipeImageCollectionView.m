@@ -10,6 +10,7 @@
 #import "CQTSRipeImageCollectionViewCell.h"
 #import <CQDemoKit/CQTSLocImagesUtil.h>
 #import <CQDemoKit/CQTSNetImagesUtil.h>
+#import "CQTSIconsUtil.h"
 
 @interface CQTSRipeImageCollectionView () <UICollectionViewDelegateFlowLayout, UICollectionViewDelegate, UICollectionViewDataSource> {
     
@@ -17,7 +18,7 @@
 @property (nonatomic, assign, readonly) CGFloat perMaxCount;   /**< 每行/每列个数 */
 
 @property (nonatomic, strong, readonly) NSArray<NSNumber *> *sectionRowCounts;  /**< 每个section的rowCount个数 */
-@property (nonatomic, assign, readonly) BOOL useNetworkImage;   /**< 数据源是否使用网络图片(否,则是使用本地图片) */
+@property (nonatomic, assign, readonly) CQTSRipeImageSource ripeImageSource;   /**< 数据源(有网络图片、本地图片、网络icon) */
 
 @end
 
@@ -55,13 +56,13 @@
  *  只设置数据源
  *
  *  @param sectionRowCounts     每个section的rowCount个数(数组有多少个就多少个section，数组里的元素值为该section的row行数)
- *  @param useNetworkImage      数据源是否使用网络图片(否,则是使用本地图片)
+ *  @param ripeImageSource      数据源(有网络图片、本地图片、网络icon)
  */
 - (void)setupSectionRowCounts:(NSArray<NSNumber *> *)sectionRowCounts
-              useNetworkImage:(BOOL)useNetworkImage
+              ripeImageSource:(CQTSRipeImageSource)ripeImageSource
 {
     _sectionRowCounts = sectionRowCounts;
-    _useNetworkImage = useNetworkImage;
+    _ripeImageSource = ripeImageSource;
 }
 
 
@@ -167,12 +168,18 @@ minimumInteritemSpacingForSectionAtIndex:(NSInteger)section
     [cell setupText:title];
     
     // image
-    if (self.useNetworkImage == YES) {
+    if (self.ripeImageSource == CQTSRipeImageSourceImageNetwork) {      // 网络图片
         NSString *imageUrl = [CQTSNetImagesUtil cjts_imageUrlAtIndex:indexPath.item];
         [cell setupImageWithImageUrl:imageUrl];
-    } else {
+    } else if (self.ripeImageSource == CQTSRipeImageSourceImageLocal) { // 本地图片
         UIImage *image = [CQTSLocImagesUtil cjts_localImageAtIndex:indexPath.item];
         [cell setupImageWithImage:image];
+    } else if (self.ripeImageSource == CQTSRipeImageSourceIconNetwork) { // 网络icon
+        NSString *imageUrl = [CQTSIconsUtil cjts_iconUrlAtIndex:indexPath.item];
+        [cell setupImageWithImageUrl:imageUrl];
+    } else {
+        NSString *imageUrl = [CQTSNetImagesUtil cjts_imageUrlAtIndex:indexPath.item];
+        [cell setupImageWithImageUrl:imageUrl];
     }
     
     // badge

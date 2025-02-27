@@ -16,10 +16,11 @@ NS_ASSUME_NONNULL_BEGIN
 
 /// 获取测试用的数据(image为icon图片)
 ///
-/// @param count 图片个数
+/// @param count                图片个数
+/// @param randomOrder  顺序是否随机
 ///
 /// @return 返回图片数据
-+ (NSMutableArray<CQTSIconDataModel *> *)__getTestIconImageDataModelsWithCount:(NSInteger)count;
++ (NSMutableArray<CQTSIconDataModel *> *)__getTestIconImageDataModelsWithCount:(NSInteger)count randomOrder:(BOOL)randomOrder;
 /// 获取测试用的数据(image为网络图片)
 + (NSMutableArray<CQTSIconDataModel *> *)__getTestIconImageDataModels;
 
@@ -35,6 +36,12 @@ NS_ASSUME_NONNULL_BEGIN
 
 
 #pragma mark icon ImageUrl
+/// 所有的网络测试icon图片地址
++ (NSArray<NSString *> *)cjts_iconUrls;
+
+/// 获取指定位置的图片(为了cell显示的图片不会一直变化)
++ (NSString *)cjts_iconUrlAtIndex:(NSInteger)selIndex;
+
 + (NSString *)cjts_iconImageUrl1;
 + (NSString *)cjts_iconImageUrl2;
 + (NSString *)cjts_iconImageUrl3;

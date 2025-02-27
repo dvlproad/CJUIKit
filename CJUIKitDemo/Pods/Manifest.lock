@@ -66,44 +66,48 @@ PODS:
   - CJFoundation/NSJSONSerialization (0.1.3)
   - CJFoundation/NSString (0.1.3)
   - CJPopupView/CJPopoverView (2.1.0)
-  - CQDemoKit/BaseUIKit (0.6.8):
+  - CQDemoKit/BaseUIKit (0.7.5):
     - Masonry
-  - CQDemoKit/BaseUtil (0.6.8)
-  - CQDemoKit/BaseVC (0.6.8):
-    - CQDemoKit/BaseVC/Base (= 0.6.8)
-    - CQDemoKit/BaseVC/Collection (= 0.6.8)
-    - CQDemoKit/BaseVC/ScrollView (= 0.6.8)
-    - CQDemoKit/BaseVC/TabBar (= 0.6.8)
-    - CQDemoKit/BaseVC/TableView (= 0.6.8)
-    - CQDemoKit/BaseVC/TextView (= 0.6.8)
+  - CQDemoKit/BaseUtil (0.7.5)
+  - CQDemoKit/BaseVC (0.7.5):
+    - CQDemoKit/BaseVC/Base (= 0.7.5)
+    - CQDemoKit/BaseVC/Collection (= 0.7.5)
+    - CQDemoKit/BaseVC/ScrollView (= 0.7.5)
+    - CQDemoKit/BaseVC/TabBar (= 0.7.5)
+    - CQDemoKit/BaseVC/TableView (= 0.7.5)
+    - CQDemoKit/BaseVC/TextView (= 0.7.5)
     - CQDemoKit/Helper
-  - CQDemoKit/BaseVC/Base (0.6.8):
+  - CQDemoKit/BaseVC/Base (0.7.5):
     - CQDemoKit/BaseUIKit
     - CQDemoKit/Helper
     - Masonry
-  - CQDemoKit/BaseVC/Collection (0.6.8):
+  - CQDemoKit/BaseVC/Collection (0.7.5):
     - CQDemoKit/BaseVC/Base
     - CQDemoKit/Helper
-  - CQDemoKit/BaseVC/ScrollView (0.6.8):
+  - CQDemoKit/BaseVC/ScrollView (0.7.5):
     - CQDemoKit/BaseVC/Base
     - CQDemoKit/Helper
-  - CQDemoKit/BaseVC/TabBar (0.6.8):
+  - CQDemoKit/BaseVC/TabBar (0.7.5):
     - CQDemoKit/Helper
-  - CQDemoKit/BaseVC/TableView (0.6.8):
+  - CQDemoKit/BaseVC/TableView (0.7.5):
     - CQDemoKit/BaseVC/Base
     - CQDemoKit/Helper
-  - CQDemoKit/BaseVC/TextView (0.6.8):
+  - CQDemoKit/BaseVC/TextView (0.7.5):
     - CQDemoKit/BaseUtil
     - CQDemoKit/BaseVC/Base
     - CQDemoKit/Helper
-  - CQDemoKit/Demo_Resource (0.6.8):
-    - CQDemoKit/BaseUIKit
-    - CQDemoKit/Helper
-  - CQDemoKit/Demo_RipeView (0.6.8):
-    - CQDemoKit/BaseUIKit
-    - CQDemoKit/BaseUtil
+  - CQDemoKit/Demo_DataSourceAndDelegate (0.7.5):
+    - CQDemoKit/BaseVC
     - CQDemoKit/Demo_Resource
-  - CQDemoKit/Helper (0.6.8)
+  - CQDemoKit/Demo_Resource (0.7.5):
+    - CQDemoKit/BaseUIKit
+    - CQDemoKit/Helper
+  - CQDemoKit/Demo_RipeView (0.7.5):
+    - CQDemoKit/BaseUIKit
+    - CQDemoKit/BaseUtil
+    - CQDemoKit/Demo_DataSourceAndDelegate
+    - CQDemoKit/Demo_Resource
+  - CQDemoKit/Helper (0.7.5)
   - IQKeyboardManager (6.5.6)
   - Mantle (2.1.6):
     - Mantle/extobjc (= 2.1.6)
@@ -125,11 +129,11 @@ DEPENDENCIES:
   - CJFile/CJFileModel
   - CJFoundation (from `../`)
   - CJPopupView/CJPopoverView
-  - CQDemoKit/BaseUIKit (~> 0.6.8)
-  - CQDemoKit/BaseUtil (~> 0.6.8)
-  - CQDemoKit/BaseVC (~> 0.6.8)
-  - CQDemoKit/Demo_Resource (~> 0.6.8)
-  - CQDemoKit/Demo_RipeView (~> 0.6.8)
+  - CQDemoKit/BaseUIKit (~> 0.7.5)
+  - CQDemoKit/BaseUtil (~> 0.7.5)
+  - CQDemoKit/BaseVC (~> 0.7.5)
+  - CQDemoKit/Demo_Resource (~> 0.7.5)
+  - CQDemoKit/Demo_RipeView (~> 0.7.5)
   - IQKeyboardManager
   - Mantle (~> 2.1.0)
   - Masonry
@@ -165,14 +169,14 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  AFNetworking: 7864c38297c79aaca1500c33288e429c3451fdce
+  AFNetworking: 3bd23d814e976cd148d7d44c3ab78017b744cd58
   CJBaseEffectKit: 8640801fa272a1d96a6edce2c994652ced0e519f
   CJBaseHelper: 71c9d695c76736b2fc66123157d5626da4556177
-  CJBaseUtil: 1bbf8d5f831dc12ae4bb06c8b5326bd39f3522e1
+  CJBaseUtil: f1616c533ce97b1f37c93c30fd3503f3f2d1476c
   CJFile: 6c1e6d55b3b94e8afbaa9f413f131301d15fdc48
   CJFoundation: 53b4df7152c6d6fd776f55f387c67f431b8574bd
   CJPopupView: c7685f6a0225a89c72d97ea946f2816b5442abaf
-  CQDemoKit: 1c320796bdcd9b6047887b67ebd29bb8366a361b
+  CQDemoKit: 1c1e5b27b6a973ab0b6535f4c3df3164e6c82285
   IQKeyboardManager: 2a6e97afdafc7becf0cb17a9a8d795e3a980717f
   Mantle: 4c0ed6ce47c96eccc4dc3bb071deb3def0e2c3be
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
@@ -183,6 +187,6 @@ SPEC CHECKSUMS:
   UINavigation-SXFixSpace: 10f223253ebff2ceefa26694e23b7694269763c4
   YYText: 5c461d709e24d55a182d1441c41dc639a18a4849
 
-PODFILE CHECKSUM: 3c283e42074160bf913a1616af1f298c810b0853
+PODFILE CHECKSUM: 9419eb3160491940d61f7a31cbf00f869babf824
 
-COCOAPODS: 1.10.1
+COCOAPODS: 1.16.2

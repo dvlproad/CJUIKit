@@ -13,10 +13,11 @@
 
 /// 获取测试用的数据(image为icon图片)
 ///
-/// @param count 图片个数
+/// @param count                图片个数
+/// @param randomOrder  顺序是否随机
 ///
 /// @return 返回图片数据
-+ (NSMutableArray<CQTSIconDataModel *> *)__getTestIconImageDataModelsWithCount:(NSInteger)count {
++ (NSMutableArray<CQTSIconDataModel *> *)__getTestIconImageDataModelsWithCount:(NSInteger)count randomOrder:(BOOL)randomOrder {
     NSArray *selStrings = @[NSStringFromSelector(@selector(cjts_iconImageUrl1)),
                             NSStringFromSelector(@selector(cjts_iconImageUrl2)),
                             NSStringFromSelector(@selector(cjts_iconImageUrl3)),
@@ -33,16 +34,19 @@
     for (NSInteger i = 0; i < count; i++) {
         CQTSIconDataModel *dataModel = [[CQTSIconDataModel alloc] init];
         
-        NSInteger selIndex = random()%selStrings.count;
-        NSString *selString = [selStrings objectAtIndex:selIndex];
+        NSInteger maySelIndex = randomOrder ? random() : i;
+        NSInteger lastSelIndex = maySelIndex%selStrings.count;
+        
+        NSString *selString = [selStrings objectAtIndex:lastSelIndex];
         SEL sel = NSSelectorFromString(selString);
         dataModel.imageUrl = [CQTSIconsUtil performSelector:sel];
+        dataModel.name = [NSString stringWithFormat:@"%zd:%@", i, selString];
         [dataModels addObject:dataModel];
     }
     
     return dataModels;
 }
-   
+
 
 /// 获取测试用的数据(image为icon图片)
 + (NSMutableArray<CQTSIconDataModel *> *)__getTestIconImageDataModels {
@@ -113,6 +117,34 @@
 }
 
 #pragma mark - icon Image
+/// 所有的网络测试icon图片地址
++ (NSArray<NSString *> *)cjts_iconUrls {
+    NSArray<NSString *> *imageUrls = @[
+        @"https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=4012764803,2714809145&fm=26&gp=0.jpg",
+        @"https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=2349859212,1053714951&fm=26&gp=0.jpg",
+        #pragma mark 以下网络图片从 https://image.baidu.com 中获取
+        @"https://img2.baidu.com/it/u=248809548,2992510422&fm=253&fmt=auto&app=138&f=PNG?w=500&h=500",
+        @"https://img0.baidu.com/it/u=3181153752,3984838184&fm=26&fmt=auto",
+        @"https://img0.baidu.com/it/u=3087067444,242345469&fm=253&fmt=auto&app=138&f=JPEG?w=500&h=500",
+        @"https://img0.baidu.com/it/u=2142566046,3495686177&fm=253&fmt=auto&app=138&f=JPEG?w=500&h=500",
+        @"https://img2.baidu.com/it/u=3935222850,2993881202&fm=253&fmt=auto&app=138&f=JPEG?w=707&h=500",
+        @"https://img1.baidu.com/it/u=1110022854,3922459600&fm=253&fmt=auto&app=138&f=PNG?w=500&h=500",
+        @"https://img0.baidu.com/it/u=2618490059,1120160608&fm=253&fmt=auto&app=138&f=JPEG?w=560&h=500",
+    ];
+    return imageUrls;
+}
+
+/// 获取指定位置的图片(为了cell显示的图片不会一直变化)
++ (NSString *)cjts_iconUrlAtIndex:(NSInteger)selIndex {
+    NSArray<NSString *> *imageUrls = [self cjts_iconUrls];
+    if (selIndex >= imageUrls.count) {  //位置太大的时候，固定使用第一张图片
+        selIndex = 0;
+    }
+    NSString *imageUrl = [imageUrls objectAtIndex:selIndex];
+    
+    return imageUrl;
+}
+
 + (UIImage *)cjts_iconImage1 {
     return [self _iconImageWithUrl:[self cjts_iconImageUrl1]];
 }
@@ -156,35 +188,35 @@
 
 #pragma mark - icon ImageUrl
 + (NSString *)cjts_iconImageUrl1 {
-    return @"https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=4012764803,2714809145&fm=26&gp=0.jpg";
+    return self.cjts_iconUrls[0];
 }
 
 + (NSString *)cjts_iconImageUrl2 {
-    return @"https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1586263545058&di=cbe1e0a579231c04bf511c0d2fc72460&imgtype=0&src=http%3A%2F%2Fimg0.imgtn.bdimg.com%2Fit%2Fu%3D329733760%2C3032832928%26fm%3D214%26gp%3D0.jpg";
+    return self.cjts_iconUrls[1];
 }
 
 + (NSString *)cjts_iconImageUrl3 {
-    return @"https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=2349859212,1053714951&fm=26&gp=0.jpg";
+    return self.cjts_iconUrls[2];
 }
 
 + (NSString *)cjts_iconImageUrl4 {
-    return @"https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1586263068902&di=5874c527bfd19f27db2b066e74411eb6&imgtype=0&src=http%3A%2F%2Ff.hiphotos.baidu.com%2Fzhidao%2Fpic%2Fitem%2F5fdf8db1cb13495404d04cf4544e9258d0094a57.jpg";
+    return self.cjts_iconUrls[3];
 }
 
 + (NSString *)cjts_iconImageUrl5 {
-    return @"https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1586263601036&di=3876d2d43d466f9678206ef237626834&imgtype=0&src=http%3A%2F%2Fimg2.imgtn.bdimg.com%2Fit%2Fu%3D1879040502%2C280709257%26fm%3D214%26gp%3D0.jpg";
+    return self.cjts_iconUrls[4];
 }
 
 + (NSString *)cjts_iconImageUrl6 {
-    return @"https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1586263627980&di=22fd69f597e7b87c353bc98a85a0d453&imgtype=0&src=http%3A%2F%2Fimg1.imgtn.bdimg.com%2Fit%2Fu%3D3488745561%2C199519317%26fm%3D214%26gp%3D0.jpg";
+    return self.cjts_iconUrls[5];
 }
 
 + (NSString *)cjts_iconImageUrl7 {
-    return @"https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1586263611842&di=04be24736a2727a95bfbf05fdefee3ea&imgtype=0&src=http%3A%2F%2Fa1.att.hudong.com%2F30%2F37%2F19300001372833132237377419887.png";
+    return self.cjts_iconUrls[6];
 }
 
 + (NSString *)cjts_iconImageUrl8 {
-    return @"https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1586263649084&di=f84aae3f3e512116dec9fba77cd7027e&imgtype=0&src=http%3A%2F%2Fimg0.imgtn.bdimg.com%2Fit%2Fu%3D3283679520%2C4132935319%26fm%3D214%26gp%3D0.jpg";
+    return self.cjts_iconUrls[7];
 }
 
 

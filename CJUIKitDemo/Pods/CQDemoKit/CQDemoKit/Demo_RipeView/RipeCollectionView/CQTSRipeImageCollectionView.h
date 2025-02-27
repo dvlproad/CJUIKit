@@ -8,6 +8,7 @@
 //  为了快速构建完整 Demo 工程提供的成熟的CollectionView(已含内容和事件)，另图片数据源支持全本地图片或全网络图片
 
 #import <UIKit/UIKit.h>
+#import "CQTSResourceEnum.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -38,19 +39,24 @@ NS_ASSUME_NONNULL_BEGIN
  *  只设置数据源
  *
  *  @param sectionRowCounts     每个section的rowCount个数(数组有多少个就多少个section，数组里的元素值为该section的row行数)
- *  @param useNetworkImage      数据源是否使用网络图片(否,则是使用本地图片)
+ *  @param ripeImageSource      数据源(有网络图片、本地图片、网络icon)
  */
 - (void)setupSectionRowCounts:(NSArray<NSNumber *> *)sectionRowCounts
-              useNetworkImage:(BOOL)useNetworkImage;
+              ripeImageSource:(CQTSRipeImageSource)ripeImageSource;
 
 /* 初始化示例
 CQTSRipeImageCollectionView *collectionView = [[CQTSRipeImageCollectionView alloc] initWithScrollDirection:UICollectionViewScrollDirectionVertical perMaxCount:3];
-[collectionView setupSectionRowCounts:@[@1, @3, @6, @8] useNetworkImage:YES];
+[collectionView setupSectionRowCounts:@[@1, @3, @6, @8] ripeImageSource:CQTSRipeImageSourceImageNetwork];
 collectionView.backgroundColor = [UIColor colorWithWhite:1 alpha:0.5];
 collectionView.cellConfigBlock = ^(UICollectionViewCell * _Nonnull bCell) {
     bCell.contentView.backgroundColor = [UIColor colorWithWhite:1 alpha:0.8];
     bCell.backgroundColor = [UIColor colorWithWhite:1 alpha:0.8];
 };
+[self.view addSubview:collectionView];
+[collectionView mas_makeConstraints:^(MASConstraintMaker *make) {
+    make.left.right.top.mas_equalTo(self.view);
+    make.height.mas_equalTo(200);
+}];
 */
 
 @end

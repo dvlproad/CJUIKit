@@ -17,21 +17,36 @@
 }
 
 + (nullable UIImage *)cqdemokit_xcassetImageNamed:(NSString *)name {
-    if(name && ![name isEqualToString:@""]) {
-        NSBundle *bundle = [NSBundle bundleForClass:NSClassFromString(@"CQTSLocImagesUtil")];
-        if (bundle == nil) {
-            bundle = [NSBundle bundleForClass:NSClassFromString(@"CJUIKitBaseTabBarViewController")];
-        }
-        NSURL *url = [bundle URLForResource:@"CQDemoKit" withExtension:@"bundle"];
-        if (url == nil) {
-            return nil;
-        }
-        NSBundle *imageBundle = [NSBundle bundleWithURL:url];
-        UIImage *image = [UIImage imageNamed:name inBundle:imageBundle compatibleWithTraitCollection:nil];
-        return image;
+    return [self cqdemokit_xcassetImageNamed:name withCache:YES];
+}
+
++ (nullable UIImage *)cqdemokit_xcassetImageNamed:(NSString *)name withCache:(BOOL)shouldCache {
+    if(name == nil || [name isEqualToString:@""]) {
+        return nil;
     }
     
-    return nil;
+    // bundle 获取
+    NSBundle *bundle = [NSBundle bundleForClass:NSClassFromString(@"CQTSLocImagesUtil")];
+    if (bundle == nil) {
+        bundle = [NSBundle bundleForClass:NSClassFromString(@"CJUIKitBaseTabBarViewController")];
+    }
+    NSURL *url = [bundle URLForResource:@"CQDemoKit" withExtension:@"bundle"];
+    if (url == nil) {
+        return nil;
+    }
+    NSBundle *imageBundle = [NSBundle bundleWithURL:url];
+    
+    // image
+    UIImage *image;
+    if (!shouldCache) {
+        NSString *fileExtension = [name pathExtension];
+        NSString *fileNameWithoutExtension = [[name lastPathComponent] stringByDeletingPathExtension];
+        NSString *imagePath = [imageBundle pathForResource:fileNameWithoutExtension ofType:fileExtension];
+        image = [UIImage imageWithContentsOfFile:imagePath];
+    } else {
+        image = [UIImage imageNamed:name inBundle:imageBundle compatibleWithTraitCollection:nil];
+    }
+    return image;
 }
 
 @end

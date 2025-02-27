@@ -182,6 +182,13 @@ minimumInteritemSpacingForSectionAtIndex:(NSInteger)section
     } else if (moduleModel.selector) {
         [self performSelectorOnMainThread:moduleModel.selector withObject:nil waitUntilDone:NO];
         
+    } else if (moduleModel.viewGetterHandle) {
+        UIView *tsview = moduleModel.viewGetterHandle();
+        
+        UIViewController *viewController = [CQDMModuleModel viewControllWithTitle:moduleModel.title tsview:tsview];
+        viewController.hidesBottomBarWhenPushed = YES;
+        [self.navigationController pushViewController:viewController animated:YES];
+        
     } else {
         UIViewController *viewController = nil;
         Class classEntry = moduleModel.classEntry;

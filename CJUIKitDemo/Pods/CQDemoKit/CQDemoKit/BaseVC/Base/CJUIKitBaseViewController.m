@@ -29,7 +29,7 @@
     self.view.backgroundColor = [UIColor colorWithRed:245/255.0 green:245/255.0 blue:245/255.0 alpha:1.0]; // #f5f5f5
 }
 
-#pragma mark - 测试进入其他视图的情况（从导航栏右键）
+#pragma mark - 测试进入其他视图的情况（从导航栏右键）tsChangeByRightBarButtonItemWithSubmitTitle
 /// 测试进入其他视图的情况（从导航栏右键）
 - (void)tsGoOtherViewControllerByRightBarButtonItem {
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"进其他视图", nil) style:UIBarButtonItemStylePlain target:self action:@selector(__goOtherViewController)];
