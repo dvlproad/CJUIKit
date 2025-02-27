@@ -66,6 +66,8 @@ PODS:
   - CJFoundation/NSJSONSerialization (0.1.3)
   - CJFoundation/NSString (0.1.3)
   - CJPopupView/CJPopoverView (2.1.0)
+  - CQDemoKit/Auxiliary (0.7.6):
+    - Masonry
   - CQDemoKit/BaseUIKit (0.7.6):
     - Masonry
   - CQDemoKit/BaseUtil (0.7.6)
@@ -129,11 +131,12 @@ DEPENDENCIES:
   - CJFile/CJFileModel
   - CJFoundation (from `../`)
   - CJPopupView/CJPopoverView
-  - CQDemoKit/BaseUIKit (~> 0.7.5)
-  - CQDemoKit/BaseUtil (~> 0.7.5)
-  - CQDemoKit/BaseVC (~> 0.7.5)
-  - CQDemoKit/Demo_Resource (~> 0.7.5)
-  - CQDemoKit/Demo_RipeView (~> 0.7.5)
+  - CQDemoKit/Auxiliary (~> 0.7.6)
+  - CQDemoKit/BaseUIKit (~> 0.7.6)
+  - CQDemoKit/BaseUtil (~> 0.7.6)
+  - CQDemoKit/BaseVC (~> 0.7.6)
+  - CQDemoKit/Demo_Resource (~> 0.7.6)
+  - CQDemoKit/Demo_RipeView (~> 0.7.6)
   - IQKeyboardManager
   - Mantle (~> 2.1.0)
   - Masonry
@@ -187,6 +190,6 @@ SPEC CHECKSUMS:
   UINavigation-SXFixSpace: 10f223253ebff2ceefa26694e23b7694269763c4
   YYText: 5c461d709e24d55a182d1441c41dc639a18a4849
 
-PODFILE CHECKSUM: 9419eb3160491940d61f7a31cbf00f869babf824
+PODFILE CHECKSUM: f9c7dae5f670d64c4128c7f3e6831636ec48d16b
 
 COCOAPODS: 1.16.2
