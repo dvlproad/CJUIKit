@@ -19,13 +19,15 @@ NS_ASSUME_NONNULL_BEGIN
 /*
  *  获取 sectionModels
  *
+ *  @param fileExtensions               要获取哪些文件后缀的文件
  *  @param sectionRowCounts             每个section的rowCount个数(数组有多少个就多少个section，数组里的元素值为该section的row行数)
  *  @param selectedIndexPaths           选中的indexPath数组
  *
  *  @return sectionModels
  */
-+ (NSMutableArray<CQDMSectionDataModel *> *)sectionModelsWithSectionRowCounts:(NSArray<NSNumber *> *)sectionRowCounts
-                                                           selectedIndexPaths:(nullable NSArray<NSIndexPath *> *)selectedIndexPaths;
++ (NSMutableArray<CQDMSectionDataModel *> *)sectionModelsWithExtensions:(NSArray<NSString *> *)fileExtensions
+                                                       sectionRowCounts:(NSArray<NSNumber *> *)sectionRowCounts
+                                                    selectedIndexPaths:(nullable NSArray<NSIndexPath *> *)selectedIndexPaths;
 
 /*
  *  获取 sectionModels

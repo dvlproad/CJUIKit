@@ -29,12 +29,12 @@ NS_ASSUME_NONNULL_BEGIN
 
 #pragma mark - 添加辅助文本(含删除）
 /// 添加辅助文本
-- (void)cqdemo_addPromptText:(NSString *)text layout:(CQAuxiliaryAlignment)layout;
+- (void)cqdemo_addPromptText:(NSString *)text layout:(CQAuxiliaryAlignment)layout height:(CGFloat)height;
 /// 删除辅助文本
 - (void)cqdemo_removePromptText:(CQAuxiliaryRemoveOrder)order;
 
 #pragma mark - 添加任意辅助视图
-- (void)cqdemo_addPromptView:(UIView *)promptView layout:(CQAuxiliaryAlignment)layout;
+- (void)cqdemo_addPromptView:(UIView *)promptView layout:(CQAuxiliaryAlignment)layout height:(CGFloat)height;
 
 @end
 

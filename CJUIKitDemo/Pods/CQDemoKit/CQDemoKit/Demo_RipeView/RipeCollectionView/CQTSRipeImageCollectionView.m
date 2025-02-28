@@ -36,12 +36,14 @@
  *  初始化 CollectionView
  *
  *  @param scrollDirection      集合视图的滚动方向
+ *  @param widthHeightRatio     宽高比（一般为1.0）
  *  @param perMaxCount          当滚动方向为①水平时,每列显示几个；②竖直时,每行显示几个；
  *
  *  @return CollectionView
  */
 - (instancetype)initWithScrollDirection:(UICollectionViewScrollDirection)scrollDirection
                             perMaxCount:(NSInteger)perMaxCount
+                       widthHeightRatio:(CGFloat)widthHeightRatio
 {
     UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
     layout.scrollDirection = scrollDirection;
@@ -53,7 +55,7 @@
         
         
         __weak typeof(self) weakSelf = self;
-        _ripeCollectionViewDelegate = [[CQTSRipeBaseCollectionViewDelegate alloc] initWithPerMaxCount:perMaxCount didSelectItemHandle:^(UICollectionView * _Nonnull bCollectionView, NSIndexPath * _Nonnull indexPath) {
+        _ripeCollectionViewDelegate = [[CQTSRipeBaseCollectionViewDelegate alloc] initWithPerMaxCount:perMaxCount widthHeightRatio:widthHeightRatio didSelectItemHandle:^(UICollectionView * _Nonnull bCollectionView, NSIndexPath * _Nonnull indexPath) {
             
         }];
         self.delegate = self.ripeCollectionViewDelegate;

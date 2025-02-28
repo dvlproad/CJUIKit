@@ -23,11 +23,13 @@ NS_ASSUME_NONNULL_BEGIN
  *
  *  @param scrollDirection      集合视图的滚动方向
  *  @param perMaxCount          当滚动方向为①水平时,每列显示几个；②竖直时,每行显示几个；
+ *  @param widthHeightRatio     宽高比（一般为1.0）
  *
  *  @return CollectionView
  */
 - (instancetype)initWithScrollDirection:(UICollectionViewScrollDirection)scrollDirection
-                            perMaxCount:(NSInteger)perMaxCount;
+                            perMaxCount:(NSInteger)perMaxCount
+                       widthHeightRatio:(CGFloat)widthHeightRatio;
 + (instancetype)new NS_UNAVAILABLE;
 - (instancetype)init NS_UNAVAILABLE;
 - (instancetype)initWithFrame:(CGRect)frame NS_UNAVAILABLE;
@@ -45,7 +47,7 @@ NS_ASSUME_NONNULL_BEGIN
               ripeImageSource:(CQTSRipeImageSource)ripeImageSource;
 
 /* 初始化示例
-CQTSRipeImageCollectionView *collectionView = [[CQTSRipeImageCollectionView alloc] initWithScrollDirection:UICollectionViewScrollDirectionVertical perMaxCount:3];
+CQTSRipeImageCollectionView *collectionView = [[CQTSRipeImageCollectionView alloc] initWithScrollDirection:UICollectionViewScrollDirectionVertical perMaxCount:3 widthHeightRatio:1.0];
 [collectionView setupSectionRowCounts:@[@1, @3, @6, @8] ripeImageSource:CQTSRipeImageSourceImageNetwork];
 collectionView.backgroundColor = [UIColor colorWithWhite:1 alpha:0.5];
 collectionView.cellConfigBlock = ^(UICollectionViewCell * _Nonnull bCell) {

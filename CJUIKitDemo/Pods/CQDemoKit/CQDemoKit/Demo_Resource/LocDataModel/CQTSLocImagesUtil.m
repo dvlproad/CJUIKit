@@ -44,7 +44,7 @@
 + (NSArray<UIImage *> *)cjts_localImages {
     NSMutableArray<UIImage *> *images = [[NSMutableArray alloc] init];
     
-    NSArray<NSString *> *imageNames = [self cjts_localFileNames:CQTSLocalFileOptionJPG];
+    NSArray<NSString *> *imageNames = [self cjts_localImageNames];
     NSInteger imageCount = [imageNames count];
     for (int i = 0; i < imageCount; i++) {
         NSString *imageName = [imageNames objectAtIndex:i];
@@ -81,38 +81,27 @@
     return image;
 }
 
++ (NSArray<NSString *> *)cjts_localImageNames {
+    NSArray<NSString *> *imageExtensions = @[@"png", @"jpg", @"gif", @"webp", @"svg"];
+    return [self cjts_localFileNames:imageExtensions];
+}
+
 #pragma mark - test Files
 /// 获取测试用的数据
 /// （为本地图片名时候，UIImage *image = [UIImage cqdemokit_xcassetImageNamed:imageName]; ）
 ///
-/// @param count                                                        图片个数
-/// @param randomOrder                                          顺序是否随机
-/// @param changeImageNameToNetworkUrl      是否将本地图片名转为其所在的网络地址
-///
-/// @return 返回图片数据
-+ (NSMutableArray<CQTSLocImageDataModel *> *)imageModelsWithCount:(NSInteger)count
-                                                      randomOrder:(BOOL)randomOrder
-                                      changeImageNameToNetworkUrl:(BOOL)changeImageNameToNetworkUrl
-{
-    CQTSLocalFileOption options = CQTSLocalFileOptionJPG | CQTSLocalFileOptionGIF | CQTSLocalFileOptionWebP | CQTSLocalFileOptionSVG;
-    return [self fileModelsWithOptions:options count:count randomOrder:randomOrder changeImageNameToNetworkUrl:changeImageNameToNetworkUrl];
-}
-
-/// 获取测试用的数据
-/// （为本地图片名时候，UIImage *image = [UIImage cqdemokit_xcassetImageNamed:imageName]; ）
-///
-/// @param options                                                    文件类型
+/// @param fileExtensions                                    要获取哪些文件后缀的文件
 /// @param count                                                        文件个数
 /// @param randomOrder                                          顺序是否随机
 /// @param changeImageNameToNetworkUrl      是否将本地图片名转为其所在的网络地址
 ///
 /// @return 返回图片数据
-+ (NSMutableArray<CQTSLocImageDataModel *> *)fileModelsWithOptions:(CQTSLocalFileOption)options
-                                                             count:(NSInteger)count
-                                                       randomOrder:(BOOL)randomOrder
-                                       changeImageNameToNetworkUrl:(BOOL)changeImageNameToNetworkUrl
++ (NSMutableArray<CQTSLocImageDataModel *> *)fileModelsWithExtensions:(NSArray<NSString *> *)fileExtensions
+                                                                count:(NSInteger)count
+                                                          randomOrder:(BOOL)randomOrder
+                                          changeImageNameToNetworkUrl:(BOOL)changeImageNameToNetworkUrl
 {
-    NSArray<NSString *> *imageNames = [self cjts_localFileNames:options];
+    NSArray<NSString *> *imageNames = [self cjts_localFileNames:fileExtensions];
     
     NSMutableArray<CQTSLocImageDataModel *> *dataModels = [[NSMutableArray alloc] init];
     NSArray<NSString *> *titles = @[@"X透社", @"新鲜事", @"XX信", @"X角信", @"蓝精灵", @"年轻范", @"XX福", @"X之语"];
@@ -136,8 +125,18 @@
             NSString *fileExtension = [imageName pathExtension].lowercaseString;    // 获取文件扩展名
             if (fileExtension == @"mp4") {
                 [resourceDir stringByAppendingPathComponent:@"mp4"];
+            } else if (fileExtension == @"mov") {
+                    [resourceDir stringByAppendingPathComponent:@"mov"];
+            } else if (fileExtension == @"png") {
+                [resourceDir stringByAppendingPathComponent:@"png"];
+            } else if (fileExtension == @"jpg") {
+                [resourceDir stringByAppendingPathComponent:@"jpg"];
             } else if (fileExtension == @"gif") {
                 [resourceDir stringByAppendingPathComponent:@"GIF"];
+            } else if (fileExtension == @"webp") {
+                [resourceDir stringByAppendingPathComponent:@"webp"];
+            } else if (fileExtension == @"heic") {
+                [resourceDir stringByAppendingPathComponent:@"heic"];
             } else if (fileExtension == @"svg") {
                 [resourceDir stringByAppendingPathComponent:@"SVG"];
             } else {
@@ -159,14 +158,9 @@
     return dataModels;
 }
 
-+ (NSArray<NSString *> *)cjts_localImageNames {
-    CQTSLocalFileOption options = CQTSLocalFileOptionJPG | CQTSLocalFileOptionGIF | CQTSLocalFileOptionWebP | CQTSLocalFileOptionSVG;
-    return [self cjts_localFileNames:options];
-}
-
-+ (NSArray<NSString *> *)cjts_localFileNames:(CQTSLocalFileOption)options {
++ (NSArray<NSString *> *)cjts_localFileNames:(NSArray<NSString *> *)fileExtensions {
     NSMutableArray *resultImagesNames = [[NSMutableArray alloc] init];
-    if (options & CQTSLocalFileOptionJPG) {
+    if ([fileExtensions containsObject:@"jpg"]) {
         [resultImagesNames addObjectsFromArray:@[
             @"cqts_1.jpg",
             @"cqts_2.jpg",
@@ -187,7 +181,7 @@
         ]];
     }
     
-    if (options & CQTSLocalFileOptionGIF) {
+    if ([fileExtensions containsObject:@"gif"]) {
         [resultImagesNames addObjectsFromArray:@[
             @"cqts_01.gif",
             @"cqts_02.gif",
@@ -196,13 +190,13 @@
         ]];
     }
     
-    if (options & CQTSLocalFileOptionWebP) {
+    if ([fileExtensions containsObject:@"webp"]) {
         [resultImagesNames addObjectsFromArray:@[
             @"cqts_wp_1.webp",
         ]];
     }
     
-    if (options & CQTSLocalFileOptionSVG) {
+    if ([fileExtensions containsObject:@"svg"]) {
         [resultImagesNames addObjectsFromArray:@[
             @"cqts_normal_svg_01.svg",
             @"cqts_normal_svg_02.svg",
@@ -211,21 +205,21 @@
         ]];
     }
     
-    if (options & CQTSLocalFileOptionAudio) {
+    if ([fileExtensions containsObject:@"mp3"]) {
         [resultImagesNames addObjectsFromArray:@[
 //            @"cqts_normal_audio_01.mp3",
 //            @"cqts_normal_audio_02.mp3",
         ]];
     }
     
-    if (options & CQTSLocalFileOptionVideoNormal) {
+    if ([fileExtensions containsObject:@"mp4"]) {
         [resultImagesNames addObjectsFromArray:@[
 //            @"cqts_normal_video_01.mp4",
 //            @"cqts_normal_video_02.mp4",
         ]];
     }
     
-    if (options & CQTSLocalFileOptionVideoVap) {
+    if ([fileExtensions containsObject:@"mp4"]) {
         [resultImagesNames addObjectsFromArray:@[
             @"cqts_vap_01.mp4",
         ]];

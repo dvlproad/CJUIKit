@@ -20,11 +20,13 @@ NS_ASSUME_NONNULL_BEGIN
  *  初始化 CollectionView 的 delegate
  *
  *  @param perMaxCount          当滚动方向为①水平时,每列显示几个；②竖直时,每行显示几个；
+ *  @param widthHeightRatio     宽高比（一般为1.0）
  *  @param didSelectItemHandle  点击item时候要处理的事件
  *
  *  @return CollectionView
  */
 - (instancetype)initWithPerMaxCount:(NSInteger)perMaxCount
+                   widthHeightRatio:(CGFloat)widthHeightRatio
                 didSelectItemHandle:(nullable void(^)(UICollectionView *bCollectionView, NSIndexPath *bIndexPath))didSelectItemHandle NS_DESIGNATED_INITIALIZER;
 + (instancetype)new NS_UNAVAILABLE;
 - (instancetype)init NS_UNAVAILABLE;

@@ -15,13 +15,14 @@ NS_ASSUME_NONNULL_BEGIN
 // 辅助文本的移除顺序（当有多个相同tag的辅助文本的时候需要）
 typedef NS_OPTIONS(NSInteger, CQTSLocalFileOption) {
 //    CQTSLocalFileOptionAll    = 0,       // 所有
-    CQTSLocalFileOptionJPG          = 1 << 0,  // jpg
-    CQTSLocalFileOptionGIF          = 1 << 1,  // gif
-    CQTSLocalFileOptionWebP         = 1 << 2,  // webp
-    CQTSLocalFileOptionSVG          = 1 << 3,  // svg
-    CQTSLocalFileOptionAudio        = 1 << 4,  // audio
-    CQTSLocalFileOptionVideoNormal  = 1 << 5,  // video
-    CQTSLocalFileOptionVideoVap     = 1 << 6,  // video
+    CQTSLocalFileOptionPNG          = 1 << 0,  // png
+    CQTSLocalFileOptionJPG          = 1 << 1,  // jpg
+    CQTSLocalFileOptionGIF          = 1 << 2,  // gif
+    CQTSLocalFileOptionWebP         = 1 << 3,  // webp
+    CQTSLocalFileOptionSVG          = 1 << 4,  // svg
+    CQTSLocalFileOptionAudio        = 1 << 5,  // audio
+    CQTSLocalFileOptionVideoNormal  = 1 << 6,  // video
+    CQTSLocalFileOptionVideoVap     = 1 << 7,  // vap
 };
 
 @interface CQTSLocImagesUtil : NSObject
@@ -53,28 +54,16 @@ typedef NS_OPTIONS(NSInteger, CQTSLocalFileOption) {
 /// 获取测试用的数据
 /// （为本地图片名时候，UIImage *image = [UIImage cqdemokit_xcassetImageNamed:imageName]; ）
 ///
-/// @param count                                                        图片个数
-/// @param randomOrder                                          顺序是否随机
-/// @param changeImageNameToNetworkUrl      是否将本地图片名转为其所在的网络地址
-///
-/// @return 返回图片数据
-+ (NSMutableArray<CQTSLocImageDataModel *> *)imageModelsWithCount:(NSInteger)count
-                                                      randomOrder:(BOOL)randomOrder
-                                      changeImageNameToNetworkUrl:(BOOL)changeImageNameToNetworkUrl;
-
-/// 获取测试用的数据
-/// （为本地图片名时候，UIImage *image = [UIImage cqdemokit_xcassetImageNamed:imageName]; ）
-///
-/// @param options                                                    文件类型
+/// @param fileExtensions                                    要获取哪些文件后缀的文件
 /// @param count                                                        文件个数
 /// @param randomOrder                                          顺序是否随机
 /// @param changeImageNameToNetworkUrl      是否将本地图片名转为其所在的网络地址
 ///
 /// @return 返回图片数据
-+ (NSMutableArray<CQTSLocImageDataModel *> *)fileModelsWithOptions:(CQTSLocalFileOption)options
-                                                             count:(NSInteger)count
-                                                       randomOrder:(BOOL)randomOrder
-                                       changeImageNameToNetworkUrl:(BOOL)changeImageNameToNetworkUrl;
++ (NSMutableArray<CQTSLocImageDataModel *> *)fileModelsWithExtensions:(NSArray<NSString *> *)fileExtensions
+                                                                count:(NSInteger)count
+                                                          randomOrder:(BOOL)randomOrder
+                                          changeImageNameToNetworkUrl:(BOOL)changeImageNameToNetworkUrl;
 
 @end
 

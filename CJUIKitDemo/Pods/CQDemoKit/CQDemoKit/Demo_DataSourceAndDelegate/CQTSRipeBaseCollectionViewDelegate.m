@@ -12,6 +12,7 @@
     
 }
 @property (nonatomic, assign, readonly) CGFloat perMaxCount;            /**< 每行/每列个数 */
+@property (nonatomic, assign, readonly) CGFloat widthHeightRatio;       /**< 宽高比 */
 @property (nonatomic, copy) void(^didSelectItemHandle)(UICollectionView *bCollectionView, NSIndexPath *bIndexPath);/**< 点击item时候要处理的事件 */
 
 @end
@@ -24,16 +25,19 @@
  *  初始化 CollectionView 的 delegate
  *
  *  @param perMaxCount          当滚动方向为①水平时,每列显示几个；②竖直时,每行显示几个；
+ *  @param widthHeightRatio     宽高比（一般为1.0）
  *  @param didSelectItemHandle  点击item时候要处理的事件
  *
  *  @return CollectionView
  */
 - (instancetype)initWithPerMaxCount:(NSInteger)perMaxCount
+                   widthHeightRatio:(CGFloat)widthHeightRatio
                 didSelectItemHandle:(nullable void(^)(UICollectionView *bCollectionView, NSIndexPath *bIndexPath))didSelectItemHandle
 {
     self = [super init];
     if (self) {
         _perMaxCount = perMaxCount;
+        _widthHeightRatio = widthHeightRatio;
         _didSelectItemHandle = didSelectItemHandle;
     }
     return self;
@@ -84,7 +88,7 @@ minimumInteritemSpacingForSectionAtIndex:(NSInteger)section
         CGFloat height = CGRectGetHeight(collectionView.frame);
         CGFloat validHeight = height - sectionInset.top - sectionInset.bottom - rowSpacing*(perColumnMaxRowCount-1);
         collectionViewCellHeight = floorf(validHeight/perColumnMaxRowCount);
-        collectionViewCellWidth = collectionViewCellHeight;
+        collectionViewCellWidth = collectionViewCellHeight * self.widthHeightRatio;
         
     } else {                    // 按竖直方向滚动时，按个数计算cell的宽
         NSInteger perRowMaxColumnCount = self.perMaxCount;
@@ -99,7 +103,7 @@ minimumInteritemSpacingForSectionAtIndex:(NSInteger)section
         CGFloat width = CGRectGetWidth(collectionView.frame);
         CGFloat validWith = width - sectionInset.left - sectionInset.right - columnSpacing*(perRowMaxColumnCount-1);
         collectionViewCellWidth = floorf(validWith/perRowMaxColumnCount);
-        collectionViewCellHeight = collectionViewCellWidth;
+        collectionViewCellHeight = collectionViewCellWidth / self.widthHeightRatio;
     }
     
     

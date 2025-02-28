@@ -11,14 +11,15 @@
 
 @implementation UIView (Prompt)
 
-- (void)cqdemo_addPromptText:(NSString *)text layout:(CQAuxiliaryAlignment)layout {
+- (void)cqdemo_addPromptText:(NSString *)text layout:(CQAuxiliaryAlignment)layout height:(CGFloat)height {
     UILabel *label = [[UILabel alloc] init];
+    label.numberOfLines = 0;
     label.tag = 9004;
     label.text = text;
     label.textColor = [UIColor blackColor];
     label.font = [UIFont systemFontOfSize:16 weight:UIFontWeightBold];
     label.textAlignment = NSTextAlignmentCenter;
-    [self cqdemo_addPromptView:label layout:layout];
+    [self cqdemo_addPromptView:label layout:layout height:height];
 }
 
 - (void)cqdemo_removePromptText:(CQAuxiliaryRemoveOrder)order {
@@ -56,7 +57,7 @@
 }
 
 
-- (void)cqdemo_addPromptView:(UIView *)promptView layout:(CQAuxiliaryAlignment)layout {
+- (void)cqdemo_addPromptView:(UIView *)promptView layout:(CQAuxiliaryAlignment)layout height:(CGFloat)height {
     [self addSubview:promptView];
 
     if (layout == CQAuxiliaryAlignmentTop ||
@@ -66,7 +67,7 @@
         [promptView mas_makeConstraints:^(MASConstraintMaker *make) {
             make.centerX.equalTo(self);
             make.left.equalTo(self).offset(4);
-            make.height.mas_equalTo(20);
+            make.height.mas_equalTo(height);
             
             if (layout == CQAuxiliaryAlignmentTop) {
                 make.top.equalTo(self);
@@ -80,8 +81,8 @@
     } else { // CQAuxiliaryAlignmentFill
         [promptView mas_makeConstraints:^(MASConstraintMaker *make) {
             make.centerX.equalTo(self);
-            make.left.equalTo(self).offset(4);
-            make.height.mas_equalTo(20);
+            make.left.equalTo(self);
+            make.top.equalTo(self);
             make.centerY.equalTo(self);
         }];
     }

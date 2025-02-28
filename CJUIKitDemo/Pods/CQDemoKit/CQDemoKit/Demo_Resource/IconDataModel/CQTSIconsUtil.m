@@ -120,11 +120,8 @@
 /// 所有的网络测试icon图片地址
 + (NSArray<NSString *> *)cjts_iconUrls {
     NSArray<NSString *> *imageUrls = @[
-        @"https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=4012764803,2714809145&fm=26&gp=0.jpg",
-        @"https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=2349859212,1053714951&fm=26&gp=0.jpg",
         #pragma mark 以下网络图片从 https://image.baidu.com 中获取
         @"https://img2.baidu.com/it/u=248809548,2992510422&fm=253&fmt=auto&app=138&f=PNG?w=500&h=500",
-        @"https://img0.baidu.com/it/u=3181153752,3984838184&fm=26&fmt=auto",
         @"https://img0.baidu.com/it/u=3087067444,242345469&fm=253&fmt=auto&app=138&f=JPEG?w=500&h=500",
         @"https://img0.baidu.com/it/u=2142566046,3495686177&fm=253&fmt=auto&app=138&f=JPEG?w=500&h=500",
         @"https://img2.baidu.com/it/u=3935222850,2993881202&fm=253&fmt=auto&app=138&f=JPEG?w=707&h=500",

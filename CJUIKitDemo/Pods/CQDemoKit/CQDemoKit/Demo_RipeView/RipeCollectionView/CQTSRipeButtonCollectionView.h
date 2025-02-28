@@ -23,6 +23,7 @@ NS_ASSUME_NONNULL_BEGIN
  *
  *  @param buttonTitles                 按钮的标题数组
  *  @param perMaxCount                  当滚动方向为①水平时,每列显示几个；②竖直时,每行显示几个；
+ *  @param widthHeightRatio             宽高比（一般为1.0）
  *  @param scrollDirection              集合视图的滚动方向
  *  @param didSelectItemAtIndexHandle   点击item的回调
  *
@@ -30,6 +31,7 @@ NS_ASSUME_NONNULL_BEGIN
  */
 - (instancetype)initWithTitles:(NSArray<NSString *> *)buttonTitles
                    perMaxCount:(NSInteger)perMaxCount
+              widthHeightRatio:(CGFloat)widthHeightRatio
                scrollDirection:(UICollectionViewScrollDirection)scrollDirection
     didSelectItemAtIndexHandle:(void(^)(NSInteger index))didSelectItemAtIndexHandle NS_DESIGNATED_INITIALIZER;
 + (instancetype)new NS_UNAVAILABLE;
@@ -40,7 +42,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 /* 初始化示例
 NSArray<NSString *> *buttonTitles = @[@"按钮01", @"按钮02", @"按钮03", @"按钮04", @"按钮05", @"按钮06", @"按钮07", @"按钮08", @"按钮09", @"按钮10"];
-CQTSRipeButtonCollectionView *collectionView = [[CQTSRipeButtonCollectionView alloc] initWithTitles:buttonTitles scrollDirection:UICollectionViewScrollDirectionHorizontal didSelectItemAtIndexHandle:^(NSInteger index) {
+CQTSRipeButtonCollectionView *collectionView = [[CQTSRipeButtonCollectionView alloc] initWithTitles:buttonTitles perMaxCount:1  widthHeightRatio:88/44.0 scrollDirection:UICollectionViewScrollDirectionHorizontal didSelectItemAtIndexHandle:^(NSInteger index) {
     NSString *title = buttonTitles[index];
     NSLog(@"点击了“%@”", title);
 }];

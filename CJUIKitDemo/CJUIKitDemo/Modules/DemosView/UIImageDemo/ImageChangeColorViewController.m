@@ -33,7 +33,7 @@
     __weak typeof(self)weakSelf = self;
     
     NSArray<NSString *> *buttonTitles = @[@"星星", @"qq", @"按钮03", @"按钮04", @"按钮05", @"按钮06", @"按钮07", @"按钮08", @"按钮09", @"按钮10"];
-    CQTSRipeButtonCollectionView *buttonCollectionView = [[CQTSRipeButtonCollectionView alloc] initWithTitles:buttonTitles perMaxCount:1 scrollDirection:UICollectionViewScrollDirectionHorizontal didSelectItemAtIndexHandle:^(NSInteger index) {
+    CQTSRipeButtonCollectionView *buttonCollectionView = [[CQTSRipeButtonCollectionView alloc] initWithTitles:buttonTitles perMaxCount:1 widthHeightRatio:2.0/1.0 scrollDirection:UICollectionViewScrollDirectionHorizontal didSelectItemAtIndexHandle:^(NSInteger index) {
         NSString *title = buttonTitles[index];
         NSLog(@"点击了“%@”", title);
         if (index == 0) {
@@ -54,8 +54,14 @@
     [self.view addSubview:buttonCollectionView];
     [buttonCollectionView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.right.equalTo(self.view);
-        make.top.equalTo(self.view).offset(64);
-        make.height.mas_equalTo(88);
+        if (@available(iOS 11.0, *)) {
+            make.top.equalTo(self.view.mas_safeAreaLayoutGuideTop).offset(10);
+        } else {
+            // Fallback on earlier versions
+            // topLayoutGuide\bottomLayoutGuide iOS11已经被弃用
+            make.top.equalTo(self.mas_topLayoutGuideBottom).offset(10);
+        }
+        make.height.mas_equalTo(60);
     }];
     
     
@@ -86,7 +92,7 @@
         sectionDataModel.theme = @"改变图片颜色";
         {
             CQDMModuleModel *helperModule = [[CQDMModuleModel alloc] init];
-            helperModule.title = @"改变图片大小 resizeToSize";
+            helperModule.title = @"改变图片大小 resizeToSize(实际上有效)";
             helperModule.normalImage = [self.originImage cj_resizeToSize:CGSizeMake(100, 100)];
             [sectionDataModel.values addObject:helperModule];
         }
@@ -116,21 +122,13 @@
     //Helper
     {
         CQDMSectionDataModel *sectionDataModel = [[CQDMSectionDataModel alloc] init];
-        sectionDataModel.theme = @"改变图片颜色";
+        sectionDataModel.theme = @"为图片添加背景和修改颜色";
 
         {
             CQDMModuleModel *helperModule = [[CQDMModuleModel alloc] init];
-            helperModule.title = @"tintColor 30*30";
+            helperModule.title = @"错误示例:不先 resizeToSize 会有问题";
             UIImage *newImage = self.originImage;
-            newImage = [newImage cj_resizeToSize:CGSizeMake(30, 30)];
-            helperModule.normalImage = newImage;
-            [sectionDataModel.values addObject:helperModule];
-        }
-        {
-            CQDMModuleModel *helperModule = [[CQDMModuleModel alloc] init];
-            helperModule.title = @"tintColor";
-            UIImage *newImage = self.originImage;
-            newImage = [newImage cj_resizeToSize:CGSizeMake(50, 50)];
+            //newImage = [newImage cj_resizeToSize:CGSizeMake(50, 50)];
             newImage = [newImage cj_imageWithTintColor:[UIColor whiteColor]];
             newImage = [newImage cj_addBackgroundColor:[UIColor redColor] backgroundSize:CGSizeMake(100, 100) imageSize:CGSizeMake(50, 50) cornerRadius:50];
             helperModule.normalImage = newImage;
@@ -138,7 +136,7 @@
         }
         {
             CQDMModuleModel *helperModule = [[CQDMModuleModel alloc] init];
-            helperModule.title = @"tintColor";
+            helperModule.title = @"正确示例:resizeToSize + tintColor + addBackgroundColor";
             UIImage *newImage = self.originImage;
             newImage = [newImage cj_resizeToSize:CGSizeMake(50, 50)];
             newImage = [newImage cj_imageWithTintColor:[UIColor whiteColor]];
