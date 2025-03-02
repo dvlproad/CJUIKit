@@ -72,6 +72,12 @@
     
     // 设置所有UIKit的主题
     [APPUIKitSetting configAppThemeUIKit];
+    UIWindow *window = UIApplication.sharedApplication.windows.firstObject;
+    if (@available(iOS 13.0, *)) {
+        window.overrideUserInterfaceStyle = UIUserInterfaceStyleLight;
+    } else {
+        // Fallback on earlier versions
+    }
     
     //[[IQKeyboardManager sharedManager].disabledToolbarClasses addObject:NSClassFromString(@"DateViewController")]; //已写在对应的类里了
     [IQKeyboardManager sharedManager].enableAutoToolbar = NO;
@@ -120,14 +126,33 @@
 
 ///配置导航栏
 - (void)configureDefaultNavigationBarAppearance {
-    [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
-    
-    //改变导航栏背景色
-    [[UINavigationBar appearance] setBarTintColor:[UIColor redColor]];
-    
-    //改变导航栏的字体
-    [[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor whiteColor],
-                                                           NSFontAttributeName:[UIFont systemFontOfSize:21]}];
+    if (@available(iOS 15.0, *)) {
+        UINavigationBarAppearance *appearance = [[UINavigationBarAppearance alloc] init];
+        [appearance configureWithOpaqueBackground]; // 让导航栏背景不透明
+        
+        // 设置导航栏背景色
+        appearance.backgroundColor = [UIColor redColor];
+        
+        // 设置导航栏标题样式
+        appearance.titleTextAttributes = @{
+            NSForegroundColorAttributeName: [UIColor whiteColor],
+            NSFontAttributeName: [UIFont systemFontOfSize:21]
+        };
+        
+        // 统一应用到导航栏
+        [[UINavigationBar appearance] setStandardAppearance:appearance];
+        [[UINavigationBar appearance] setScrollEdgeAppearance:appearance]; // 适用于滚动边界
+    } else {
+        // iOS 14 及以下，使用旧 API
+        [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
+        //改变导航栏背景色
+        [[UINavigationBar appearance] setBarTintColor:[UIColor redColor]];
+        //改变导航栏的字体
+        [[UINavigationBar appearance] setTitleTextAttributes:@{
+            NSForegroundColorAttributeName:[UIColor whiteColor],
+            NSFontAttributeName:[UIFont systemFontOfSize:21]
+        }];
+    }
 }
 
 - (void)configureDefaultBarButtonItemAppearance {

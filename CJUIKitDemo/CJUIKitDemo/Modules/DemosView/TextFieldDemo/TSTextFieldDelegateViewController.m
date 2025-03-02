@@ -49,6 +49,7 @@
     
     UIButton *nextButton = [UIButton buttonWithType:UIButtonTypeCustom];
     [nextButton setBackgroundColor:[UIColor redColor]];
+    nextButton.titleLabel.numberOfLines = 0;
     [nextButton setTitle:@"测试点击按钮时候，获取的文本（进入下一页）" forState:UIControlStateNormal];
     [nextButton addTarget:self action:@selector(goNext) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:nextButton];

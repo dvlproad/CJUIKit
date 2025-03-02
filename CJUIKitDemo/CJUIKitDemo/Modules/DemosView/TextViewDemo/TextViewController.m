@@ -48,13 +48,13 @@
     _textView.placeholderColor = [UIColor redColor];
     
     // 设置文本框最大行数 及 监听文本框文字高度改变
-    [self.textView setMaxNumberOfLines:4];
     [self.textView configDidChangeHappenHandle:nil didChangeCompleteBlock:^(NSString * _Nonnull text, BOOL shouldUpdateHeight, CGFloat currentTextViewHeight) {
         // 文本框文字高度改变会自动执行这个【block】，可以在这【修改底部View的高度】
         // 设置底部条的高度 = 文字高度 + textView距离上下间距约束
         // 为什么添加10 ？（10 = 底部View距离上（5）底部View距离下（5）间距总和）
         weakSelf.bottomViewHeightConstraint.constant = currentTextViewHeight + 10;
     }];
+    [self.textView setMaxNumberOfLines:4];
     
     //方法②：
 //    [self.textView setMaxTextViewHeight:200 textHeightChangeBlock:^(NSString *text, CGFloat currentTextViewHeight) {
