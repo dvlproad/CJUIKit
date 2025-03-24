@@ -1,6 +1,6 @@
 {
   "name": "CJBaseHelper",
-  "version": "0.1.7",
+  "version": "0.1.8",
   "summary": "自定义的基础帮助类",
   "homepage": "https://github.com/dvlproad/CJUIKit.git",
   "license": "MIT",
@@ -11,7 +11,7 @@
   },
   "source": {
     "git": "https://github.com/dvlproad/CJUIKit.git",
-    "tag": "CJBaseHelper_0.1.7"
+    "tag": "CJBaseHelper_0.1.8"
   },
   "frameworks": "UIKit",
   "requires_arc": true,

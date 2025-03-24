@@ -31,6 +31,7 @@ inhibit_all_warnings! #inhibit_warnings参数能够有效的抑制CocoaPods引�
 
 target 'CJUIKitDemo' do
     pod 'CQDemoKit',    '~> 0.7.7',   :subspecs => ['BaseVC', 'BaseUIKit', 'BaseUtil', 'Demo_RipeView', 'Demo_Resource', 'Auxiliary']
+#    pod 'CQDemoResource'
   
     pod 'Masonry'
 
@@ -44,7 +45,7 @@ target 'CJUIKitDemo' do
 
     pod 'YYText', '~> 1.0.7'
 
-#    pod 'CJBaseUIKit',          :path => '../'
+    pod 'CJBaseUIKit',          :path => '../'
     pod 'CJBaseUtil',           :path => '../'
     pod 'CJFoundation',         :path => '../'
     pod 'CJBaseHelper',         :path => '../'

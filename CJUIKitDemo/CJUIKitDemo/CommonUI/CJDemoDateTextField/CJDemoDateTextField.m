@@ -10,11 +10,9 @@
 
 #ifdef TEST_CJBASEUIKIT_POD
 #import "UIColor+CJHex.h"
-//#import "UIView+CJPopupInView.h"
 #import "UITextField+CJTextChangeBlock.h"
 #else
 #import <CJBaseUIKit/UIColor+CJHex.h>
-//#import <CJBaseUIKit/UIView+CJPopupInView.h>
 #import <CJBaseUIKit/UITextField+CJTextChangeBlock.h>
 #endif
 

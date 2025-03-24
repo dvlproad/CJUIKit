@@ -1,29 +1,83 @@
 PODS:
   - AFNetworking/Reachability (4.0.1)
   - CJBaseEffectKit/CJScaleHeadView (0.2.0)
-  - CJBaseHelper (0.1.7):
-    - CJBaseHelper/AppInfoCJHelper (= 0.1.7)
-    - CJBaseHelper/AuthorizationCJHelper (= 0.1.7)
-    - CJBaseHelper/DeviceCJHelper (= 0.1.7)
-    - CJBaseHelper/HookCJHelper (= 0.1.7)
-    - CJBaseHelper/NSCalendarCJHelper (= 0.1.7)
-    - CJBaseHelper/NSDateFormatterCJHelper (= 0.1.7)
-    - CJBaseHelper/NSObjectCJHelper (= 0.1.7)
-    - CJBaseHelper/NSOperationQueueCJHelper (= 0.1.7)
-    - CJBaseHelper/ServerCJHelper (= 0.1.7)
-    - CJBaseHelper/UIViewControllerCJHelper (= 0.1.7)
-    - CJBaseHelper/WebCJHelper (= 0.1.7)
-  - CJBaseHelper/AppInfoCJHelper (0.1.7)
-  - CJBaseHelper/AuthorizationCJHelper (0.1.7)
-  - CJBaseHelper/DeviceCJHelper (0.1.7)
-  - CJBaseHelper/HookCJHelper (0.1.7)
-  - CJBaseHelper/NSCalendarCJHelper (0.1.7)
-  - CJBaseHelper/NSDateFormatterCJHelper (0.1.7)
-  - CJBaseHelper/NSObjectCJHelper (0.1.7)
-  - CJBaseHelper/NSOperationQueueCJHelper (0.1.7)
-  - CJBaseHelper/ServerCJHelper (0.1.7)
-  - CJBaseHelper/UIViewControllerCJHelper (0.1.7)
-  - CJBaseHelper/WebCJHelper (0.1.7)
+  - CJBaseHelper (0.1.8):
+    - CJBaseHelper/AppInfoCJHelper (= 0.1.8)
+    - CJBaseHelper/AuthorizationCJHelper (= 0.1.8)
+    - CJBaseHelper/DeviceCJHelper (= 0.1.8)
+    - CJBaseHelper/HookCJHelper (= 0.1.8)
+    - CJBaseHelper/NSCalendarCJHelper (= 0.1.8)
+    - CJBaseHelper/NSDateFormatterCJHelper (= 0.1.8)
+    - CJBaseHelper/NSObjectCJHelper (= 0.1.8)
+    - CJBaseHelper/NSOperationQueueCJHelper (= 0.1.8)
+    - CJBaseHelper/ServerCJHelper (= 0.1.8)
+    - CJBaseHelper/UIViewControllerCJHelper (= 0.1.8)
+    - CJBaseHelper/WebCJHelper (= 0.1.8)
+  - CJBaseHelper/AppInfoCJHelper (0.1.8)
+  - CJBaseHelper/AuthorizationCJHelper (0.1.8)
+  - CJBaseHelper/DeviceCJHelper (0.1.8)
+  - CJBaseHelper/HookCJHelper (0.1.8)
+  - CJBaseHelper/NSCalendarCJHelper (0.1.8)
+  - CJBaseHelper/NSDateFormatterCJHelper (0.1.8)
+  - CJBaseHelper/NSObjectCJHelper (0.1.8)
+  - CJBaseHelper/NSOperationQueueCJHelper (0.1.8)
+  - CJBaseHelper/ServerCJHelper (0.1.8)
+  - CJBaseHelper/UIViewControllerCJHelper (0.1.8)
+  - CJBaseHelper/WebCJHelper (0.1.8)
+  - CJBaseUIKit (0.8.1):
+    - CJBaseUIKit/CJBaseTableViewCell (= 0.8.1)
+    - CJBaseUIKit/CJBaseTableViewHeaderFooterView (= 0.8.1)
+    - CJBaseUIKit/CJSlider (= 0.8.1)
+    - CJBaseUIKit/CJUIKitConstant (= 0.8.1)
+    - CJBaseUIKit/UIButton (= 0.8.1)
+    - CJBaseUIKit/UIColor (= 0.8.1)
+    - CJBaseUIKit/UIImage (= 0.8.1)
+    - CJBaseUIKit/UILabel (= 0.8.1)
+    - CJBaseUIKit/UINavigationBar (= 0.8.1)
+    - CJBaseUIKit/UIScrollView (= 0.8.1)
+    - CJBaseUIKit/UITextField (= 0.8.1)
+    - CJBaseUIKit/UITextHeightCenterCJHelper (= 0.8.1)
+    - CJBaseUIKit/UITextInputCJHelper (= 0.8.1)
+    - CJBaseUIKit/UITextView (= 0.8.1)
+    - CJBaseUIKit/UIToolbar (= 0.8.1)
+    - CJBaseUIKit/UIView (= 0.8.1)
+    - CJBaseUIKit/UIViewController (= 0.8.1)
+    - CJBaseUIKit/UIWindow (= 0.8.1)
+  - CJBaseUIKit/CJBaseTableViewCell (0.8.1):
+    - CJBaseUIKit/UIButton
+  - CJBaseUIKit/CJBaseTableViewHeaderFooterView (0.8.1)
+  - CJBaseUIKit/CJSlider (0.8.1)
+  - CJBaseUIKit/CJUIKitConstant (0.8.1)
+  - CJBaseUIKit/UIButton (0.8.1)
+  - CJBaseUIKit/UIColor (0.8.1)
+  - CJBaseUIKit/UIImage (0.8.1)
+  - CJBaseUIKit/UILabel (0.8.1)
+  - CJBaseUIKit/UINavigationBar (0.8.1)
+  - CJBaseUIKit/UIScrollView (0.8.1):
+    - CJBaseUIKit/UIScrollView/CJKeyboardAvoiding (= 0.8.1)
+  - CJBaseUIKit/UIScrollView/CJKeyboardAvoiding (0.8.1)
+  - CJBaseUIKit/UITextField (0.8.1)
+  - CJBaseUIKit/UITextHeightCenterCJHelper (0.8.1)
+  - CJBaseUIKit/UITextInputCJHelper (0.8.1)
+  - CJBaseUIKit/UITextView (0.8.1):
+    - CJBaseUIKit/UITextHeightCenterCJHelper
+  - CJBaseUIKit/UIToolbar (0.8.1):
+    - CJBaseUIKit/UIImage
+  - CJBaseUIKit/UIView (0.8.1):
+    - CJBaseUIKit/UIView/CJAddCorner (= 0.8.1)
+    - CJBaseUIKit/UIView/CJAnimation (= 0.8.1)
+    - CJBaseUIKit/UIView/CJAutoMoveUp (= 0.8.1)
+    - CJBaseUIKit/UIView/CJDragAction (= 0.8.1)
+    - CJBaseUIKit/UIView/CJGestureRecognizer (= 0.8.1)
+    - CJBaseUIKit/UIView/CJShakeAction (= 0.8.1)
+  - CJBaseUIKit/UIView/CJAddCorner (0.8.1)
+  - CJBaseUIKit/UIView/CJAnimation (0.8.1)
+  - CJBaseUIKit/UIView/CJAutoMoveUp (0.8.1)
+  - CJBaseUIKit/UIView/CJDragAction (0.8.1)
+  - CJBaseUIKit/UIView/CJGestureRecognizer (0.8.1)
+  - CJBaseUIKit/UIView/CJShakeAction (0.8.1)
+  - CJBaseUIKit/UIViewController (0.8.1)
+  - CJBaseUIKit/UIWindow (0.8.1)
   - CJBaseUtil (0.5.1):
     - CJBaseUtil/CJAppLastUtil (= 0.5.1)
     - CJBaseUtil/CJCallUtil (= 0.5.1)
@@ -120,6 +174,7 @@ DEPENDENCIES:
   - AFNetworking/Reachability
   - CJBaseEffectKit/CJScaleHeadView
   - CJBaseHelper (from `../`)
+  - CJBaseUIKit (from `../`)
   - CJBaseUtil (from `../`)
   - CJFile/CJFileManager
   - CJFile/CJFileModel
@@ -160,6 +215,8 @@ SPEC REPOS:
 EXTERNAL SOURCES:
   CJBaseHelper:
     :path: "../"
+  CJBaseUIKit:
+    :path: "../"
   CJBaseUtil:
     :path: "../"
   CJFoundation:
@@ -168,8 +225,9 @@ EXTERNAL SOURCES:
 SPEC CHECKSUMS:
   AFNetworking: 3bd23d814e976cd148d7d44c3ab78017b744cd58
   CJBaseEffectKit: 8640801fa272a1d96a6edce2c994652ced0e519f
-  CJBaseHelper: 71c9d695c76736b2fc66123157d5626da4556177
-  CJBaseUtil: f1616c533ce97b1f37c93c30fd3503f3f2d1476c
+  CJBaseHelper: 9a903eb83edd4e831e39c5112c6940e2559b79b7
+  CJBaseUIKit: 1445f55a4c9f942351fcd1964694f32196472837
+  CJBaseUtil: 1bbf8d5f831dc12ae4bb06c8b5326bd39f3522e1
   CJFile: 6c1e6d55b3b94e8afbaa9f413f131301d15fdc48
   CJFoundation: 53b4df7152c6d6fd776f55f387c67f431b8574bd
   CJPopupView: c7685f6a0225a89c72d97ea946f2816b5442abaf
@@ -184,6 +242,6 @@ SPEC CHECKSUMS:
   UINavigation-SXFixSpace: 10f223253ebff2ceefa26694e23b7694269763c4
   YYText: 5c461d709e24d55a182d1441c41dc639a18a4849
 
-PODFILE CHECKSUM: 50b2f24861123750f5be3f8b300a147b1f537c47
+PODFILE CHECKSUM: ac8cf93ab98cf272dde243d4acda092081af2545
 
 COCOAPODS: 1.16.2

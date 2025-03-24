@@ -5,6 +5,7 @@
 //  Created by ciyouzen on 2016/12/14.
 //  Copyright © 2016年 dvlproad. All rights reserved.
 //
+//  小数的处理
 
 #import <Foundation/Foundation.h>
 

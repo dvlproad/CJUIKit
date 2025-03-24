@@ -9,7 +9,6 @@
 #import "KeyboardAutoMoveUpViewController.h"
 #import <IQKeyboardManager/IQKeyboardManager.h>
 #import <CQDemoKit/CJUIKitToastUtil.h>
-//#import "UIView+CJPopupInView.h"
 #import "UIView+CJAutoMoveUp.h"
 
 #import "CQUpdateContentPopupView.h"

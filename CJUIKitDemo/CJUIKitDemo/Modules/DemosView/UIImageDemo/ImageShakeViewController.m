@@ -9,7 +9,6 @@
 #import "ImageShakeViewController.h"
 #import <Masonry/Masonry.h>
 #import <CQDemoKit/CQTSContainerViewFactory.h>
-#import <CQDemoKit/CQTSLocImagesUtil.h>
 #import "UIImage+CJRotateAngle.h"
 
 @interface ImageShakeViewController () {
