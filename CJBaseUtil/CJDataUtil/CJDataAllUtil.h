@@ -11,11 +11,14 @@
 
 #import "CJDataUtil+Value.h"
 
+// 排序、分类
 #import "CJDataUtil+SortCategory.h"
 #import "CJDataUtil+SortOrder.h"
 
+// 搜索
 #import "CJDataUtil+NormalSearch.h"
 
+// 实时搜索
 #import "CJRealtimeSearchUtil.h"
 
 
