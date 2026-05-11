@@ -11,26 +11,21 @@ Pod::Spec.new do |s|
   s.author       = "dvlproad"
 
   s.description  = <<-DESC
-                  - CJBaseHelper/DeviceCJHelper：设备信息获取帮助类
-                  - CJBaseHelper/NSObjectCJHelper：对象判空帮助类
-                  - CJBaseHelper/HookCJHelper：Hook帮助类
-                  - CJBaseHelper/UIViewControllerCJHelper：视图控制器帮助类：包含获取当前显示的视图控制器和通过视图找到它所在的视图控制器等
-                  - CJBaseHelper/NSDateFormatterCJHelper：NSDateFormatter帮助类
-                  - CJBaseHelper/NSCalendarCJHelper：NSCalendar帮助类
-                  - CJBaseHelper/NSOperationQueueHelper：多任务处理帮助类（搜索功能常常需要的多线程处理）
-                  - CJBaseHelper/WebCJHelper：Web帮助类，包含清除缓存问题等
-                  - CJBaseHelper/AuthorizationCJHelper：权限判断及系统设置打开
-                  - CJBaseHelper/ServerCJHelper：服务器帮助类（服务器时间、服务器敏感词）
-                  - CJBaseHelper/AppInfoCJHelper：app的版本号信息
-                  
+                 自定义的基础帮助类，可按需独立引入：
+                 • CJBaseHelper/DeviceCJHelper - Device 设备信息获取帮助类
+                 • CJBaseHelper/NSObjectCJHelper - 对象判空帮助类
+                 • CJBaseHelper/HookCJHelper - Hook帮助类
+                 • CJBaseHelper/UIViewControllerCJHelper - 视图控制器帮助类：包含获取当前显示的视图控制器和通过视图找到它所在的视图控制器等
+                 • CJBaseHelper/NSDateFormatterCJHelper - NSDateFormatter帮助类
+                 • CJBaseHelper/NSCalendarCJHelper - NSCalendar帮助类
+                 • CJBaseHelper/NSOperationQueueCJHelper - NSOperationQueue 多任务处理帮助类（搜索功能常常需要的多线程处理）
+                 • CJBaseHelper/WebCJHelper - Web帮助类，包含清除缓存问题等
+                 • CJBaseHelper/AuthorizationCJHelper - 权限判断及系统设置打开
+                 • CJBaseHelper/ServerCJHelper - 服务器帮助类（服务器时间、服务器敏感词）
+                 • CJBaseHelper/AppInfoCJHelper - app的版本号信息
 
-                   A longer description of CJBaseHelper in Markdown format.
-
-                   * Think: Why did you write this? What is the focus? What does it do?
-                   * CocoaPods will be using this to generate tags, and improve search results.
-                   * Try to keep it short, snappy and to the point.
-                   * Finally, don't worry about the indent, CocoaPods strips it!
-                   DESC
+                 每个子库可独立引入，详见各子库描述。
+                 DESC
 
   # s.social_media_url   = "http://twitter.com/dvlproad"
 
@@ -49,70 +44,60 @@ Pod::Spec.new do |s|
   # s.xcconfig = { "HEADER_SEARCH_PATHS" => "$(SDKROOT)/usr/include/libxml2" }
   # s.dependency "JSONKit", "~> 1.4"
 
+  # Device 设备信息获取帮助类
   s.subspec 'DeviceCJHelper' do |ss|
-    ss.summary = "Device 设备信息获取帮助类"
     ss.source_files = "CJBaseHelper/CJBaseHelper/DeviceCJHelper/**/*.{h,m}"
   end
 
-  # NSObject
+  # 对象判空帮助类
   s.subspec 'NSObjectCJHelper' do |ss|
-    ss.summary = "对象判空帮助类"
     ss.source_files = "CJBaseHelper/CJBaseHelper/NSObjectCJHelper/**/*.{h,m}"
   end
 
-  # Hook
+  # Hook帮助类
   s.subspec 'HookCJHelper' do |ss|
-    ss.summary = "Hook帮助类"
     ss.source_files = "CJBaseHelper/CJBaseHelper/HookCJHelper/*.{h,m}"
   end
 
-  # UIViewController
+  # 视图控制器帮助类：包含获取当前显示的视图控制器和通过视图找到它所在的视图控制器等
   s.subspec 'UIViewControllerCJHelper' do |ss|
-    ss.summary = "视图控制器帮助类：包含获取当前显示的视图控制器和通过视图找到它所在的视图控制器等"
     ss.source_files = "CJBaseHelper/CJBaseHelper/UIViewControllerCJHelper/**/*.{h,m}"
   end
 
-  # NSDateFormatter
+  # NSDateFormatter帮助类
   s.subspec 'NSDateFormatterCJHelper' do |ss|
-    ss.summary = "NSDateFormatter帮助类"
     ss.source_files = "CJBaseHelper/CJBaseHelper/NSDateFormatterCJHelper/**/*.{h,m}"
   end
 
-  # NSCalendar
+  # NSCalendar帮助类
   s.subspec 'NSCalendarCJHelper' do |ss|
-    ss.summary = "NSCalendar帮助类"
     ss.source_files = "CJBaseHelper/CJBaseHelper/NSCalendarCJHelper/**/*.{h,m}"
   end
 
-  # Web
+  # NSOperationQueue 多任务处理帮助类（搜索功能常常需要的多线程处理）
+  s.subspec 'NSOperationQueueCJHelper' do |ss|
+    ss.source_files = "CJBaseHelper/CJBaseHelper/NSOperationQueueCJHelper/**/*.{h,m}"
+  end
+
+  # Web帮助类，包含清除缓存问题等
   s.subspec 'WebCJHelper' do |ss|
-    ss.summary = "Web帮助类，包含清除缓存问题等"
     ss.source_files = "CJBaseHelper/CJBaseHelper/WebCJHelper/**/*.{h,m}"
     ss.frameworks = 'WebKit'
   end
 
-  # NSOperationQueue 搜索功能常常需要的多线程处理工具类
-  s.subspec 'NSOperationQueueCJHelper' do |ss|
-    ss.summary = "多任务处理帮助类（搜索功能常常需要的多线程处理）"
-    ss.source_files = "CJBaseHelper/CJBaseHelper/NSOperationQueueCJHelper/**/*.{h,m}"
-  end
-
-  # 权限判断
+  # 权限判断及系统设置打开
   s.subspec 'AuthorizationCJHelper' do |ss|
-    ss.summary = "权限判断及系统设置打开"
     ss.source_files = "CJBaseHelper/CJBaseHelper/AuthorizationCJHelper/**/*.{h,m}"
     ss.frameworks = 'AVFoundation', 'Photos', 'CoreLocation'
   end
 
   # 服务器帮助类（服务器时间、服务器敏感词）
   s.subspec 'ServerCJHelper' do |ss|
-    ss.summary = "服务器帮助类（服务器时间、服务器敏感词）"
     ss.source_files = "CJBaseHelper/CJBaseHelper/ServerCJHelper/**/*.{h,m}"
   end
 
   # app的版本号信息
   s.subspec 'AppInfoCJHelper' do |ss|
-    ss.summary = "app的版本号信息"
     ss.source_files = "CJBaseHelper/CJBaseHelper/AppInfoCJHelper/**/*.{h,m}"
   end
   
