@@ -3,6 +3,14 @@ Pod::Spec.new do |s|
   s.name         = "CJFoundation"
   s.version      = "0.1.3"
   s.summary      = "系统Foundation的扩展"
+  s.description  = <<-DESC
+                 系统Foundation的扩展，可按需独立引入：
+                 • CJFoundation/NSString - NSString 的扩展
+                 • CJFoundation/NSDictionary - NSDictionary 的扩展
+                 • CJFoundation/NSJSONSerialization - NSJSONSerialization 的扩展
+
+                 每个子库可独立引入，详见各子库描述。
+                 DESC
   s.homepage     = "https://github.com/dvlproad/CJUIKit"
   s.license      = "MIT"
   s.author             = "dvlproad"
@@ -25,15 +33,18 @@ Pod::Spec.new do |s|
   # s.dependency "JSONKit", "~> 1.4"
 
   
+  # NSString 的扩展
   s.subspec 'NSString' do |ss|
     ss.source_files = "CJFoundation/NSString/*.{h,m}"
   end
 
 
+  # NSDictionary 的扩展
   s.subspec 'NSDictionary' do |ss|
     ss.source_files = "CJFoundation/NSDictionary/*.{h,m}"
   end
 
+  # NSJSONSerialization 的扩展
   s.subspec 'NSJSONSerialization' do |ss|
     ss.source_files = "CJFoundation/NSJSONSerialization/**/*.{h,m}"
   end

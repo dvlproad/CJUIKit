@@ -8,17 +8,12 @@ Pod::Spec.new do |s|
   s.author       = "dvlproad"
 
   s.description  = <<-DESC
-                  - CJBaseTest/Test：单元测试类
-                  - CJBaseTest/UITest：自动化测试类
-                  
+                 自定义的基础帮助类，可按需独立引入：
+                 • CJBaseTest/Test - 单元测试
+                 • CJBaseTest/UITest - 自动化测试
 
-                   A longer description of CJBaseTest in Markdown format.
-
-                   * Think: Why did you write this? What is the focus? What does it do?
-                   * CocoaPods will be using this to generate tags, and improve search results.
-                   * Try to keep it short, snappy and to the point.
-                   * Finally, don't worry about the indent, CocoaPods strips it!
-                   DESC
+                 每个子库可独立引入，详见各子库描述。
+                 DESC
 
   # s.social_media_url   = "http://twitter.com/dvlproad"
 

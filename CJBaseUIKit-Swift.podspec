@@ -7,34 +7,14 @@ Pod::Spec.new do |s|
   s.homepage     = "https://github.com/dvlproad/CJUIKit"
 
   s.description  = <<-DESC
-                 - CJBaseUIKit-Swift/UIColor：颜色：用来通过十六进制来设置颜色。 支持@“#123456”、 @“0X123456”、 @“123456”三种格式
-                 - CJBaseUIKit-Swift/UIImage：图片
-                 - CJBaseUIKit-Swift/UINavigationBar：导航栏
-                 - CJBaseUIKit-Swift/UIView：视图
-                 - CJBaseUIKit-Swift/UIView/CJDragAction：视图拖动
-                 - CJBaseUIKit-Swift/UIView/CJShakeAction：视图抖动
-                 - CJBaseUIKit-Swift/UIView/CJPopupAction：视图弹窗：UIView的类别，用来实现UIView弹出popupView的一个Uiew的类别
-                 - CJBaseUIKit-Swift/UIView/CJGestureRecognizer：视图手势
-                 - CJBaseUIKit-Swift/UIWindow：窗口
-                 - CJBaseUIKit-Swift/UIButton：按钮 及 CJBadgeButton
-                 - CJBaseUIKit-Swift/UITextField：文本视图：包含文本框类别及新的自定义文本框
-                 - CJBaseUIKit-Swift/CJTextView：文本视图：类似微信文本输入框实现
-                 - CJBaseUIKit-Swift/UIToolbar：工具栏
-                 - CJBaseUIKit-Swift/UIScrollView：滚动视图：含监听滚动视图的键盘
-                 - CJBaseUIKit-Swift/CJBaseTableViewCell：基础的TableViewCell
-                 - CJBaseUIKit-Swift/CJBaseTableViewHeaderFooterView：列表--HeaderFooterView
-                 - CJBaseUIKit-Swift/CJSlider：滑块
-                 - CJBaseUIKit-Swift/CJToast：Toast
-                 - CJBaseUIKit-Swift/CJAlert：Alert
-                 - CJBaseUIKit-Swift/UIViewController：自定义返回按钮
+                 自定义的基础UI，可按需独立引入：
+                 • CJBaseUIKit-Swift/UIColor - 颜色：用来通过十六进制来设置颜色。 支持@“#123456”、 @“0X123456”、 @“123456”三种格式
+                 • CJBaseUIKit-Swift/UIView - UIView
+                 • CJBaseUIKit-Swift/UIView/CJPopupAction - 视图弹窗：UIView的类别，用来实现UIView弹出popupView的一个Uiew的类别
+                 • CJBaseUIKit-Swift/CJAlert - Alert
 
-                   A longer description of CJBaseUIKit in Markdown format.
-
-                   * Think: Why did you write this? What is the focus? What does it do?
-                   * CocoaPods will be using this to generate tags, and improve search results.
-                   * Try to keep it short, snappy and to the point.
-                   * Finally, don't worry about the indent, CocoaPods strips it!
-                   DESC
+                 每个子库可独立引入，详见各子库描述。
+                 DESC
   
 
   #s.license      = {
@@ -63,6 +43,7 @@ Pod::Spec.new do |s|
   # s.frameworks = "MediaPlayer"
   # s.dependency 'Masonry'
 
+  # 颜色：用来通过十六进制来设置颜色。 支持@“#123456”、 @“0X123456”、 @“123456”三种格式
   s.subspec 'UIColor' do |ss|
     ss.source_files = "CJBaseUIKit-Swift/UIColor/**/*.{swift}"
   end
@@ -84,18 +65,22 @@ Pod::Spec.new do |s|
   s.subspec 'UIView' do |ss|
     # ss.source_files = "CJBaseUIKit-Swift/UIView/*.{swift}"
 
+    # 视图拖动
    #  ss.subspec 'CJDragAction' do |sss|
    #    sss.source_files = "CJBaseUIKit-Swift/UIView/CJDragAction/**/*.{h,m}"
   	# end
 
+    # 视图抖动
   	# ss.subspec 'CJShakeAction' do |sss|
    #    sss.source_files = "CJBaseUIKit-Swift/UIView/CJShakeAction/**/*.{h,m}"
   	# end
 
+  	# 视图弹窗：UIView的类别，用来实现UIView弹出popupView的一个Uiew的类别
   	ss.subspec 'CJPopupAction' do |sss|
       sss.source_files = "CJBaseUIKit-Swift/UIView/CJPopupAction/**/*.{swift}"
   	end
 
+    # 视图手势
   	# ss.subspec 'CJGestureRecognizer' do |sss|
    #    sss.source_files = "CJBaseUIKit-Swift/UIView/CJGestureRecognizer/**/*.{h,m}"
   	# end
@@ -156,6 +141,7 @@ Pod::Spec.new do |s|
   # end
 
 
+  # Alert
   s.subspec 'CJAlert' do |ss|
     ss.source_files = "CJBaseUIKit-Swift/CJAlert/**/*.{swift}"
     #多个依赖就写多行
