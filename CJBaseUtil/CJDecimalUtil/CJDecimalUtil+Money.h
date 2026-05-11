@@ -1,5 +1,5 @@
 //
-//  CJMoneyUtil.h
+//  CJDecimalUtil+Money.h
 //  CJUIKitDemo
 //
 //  Created by ciyouzen on 2016/12/14.
@@ -7,10 +7,9 @@
 //
 //  价格相关的处理
 
-#import <Foundation/Foundation.h>
 #import "CJDecimalUtil.h"
 
-@interface CJMoneyUtil : NSObject
+@interface CJDecimalUtil (Money)
 
 #pragma mark - '分' 转 '元'
 /// 将价钱'分'按(向上取整)处理到价钱'元'的该位，并最终以保留0位小数的方式输出价钱'元'

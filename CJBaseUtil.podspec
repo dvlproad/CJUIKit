@@ -61,6 +61,12 @@ Pod::Spec.new do |s|
     ss.source_files = "CJBaseUtil/CJDataUtil/**/*.{h,m}"
   end
 
+
+  # # 小数的处理（常用于价钱Money、距离Distance的计算)
+  # s.subspec 'CJDecimalUtil' do |ss|
+  #   ss.source_files = "CJBaseUtil/CJDecimalUtil/**/*.{h,m}"
+  # end
+
   # 日期工具
   s.subspec 'CJDateUtil' do |ss|
     ss.source_files = "CJBaseUtil/CJDateUtil/**/*.{h,m}"

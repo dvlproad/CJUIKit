@@ -1,14 +1,14 @@
 //
-//  CJMoneyUtil.m
+//  CJDecimalUtil+Money.m
 //  CJUIKitDemo
 //
 //  Created by ciyouzen on 2016/12/14.
 //  Copyright © 2016年 dvlproad. All rights reserved.
 //
 
-#import "CJMoneyUtil.h"
+#import "CJDecimalUtil+Money.h"
 
-@implementation CJMoneyUtil
+@implementation CJDecimalUtil (Money)
 
 #pragma mark - '分' 转 '元'
 /// 将价钱'分'按(向上取整)处理到价钱'元'的该位，并最终以保留0位小数的方式输出价钱'元'

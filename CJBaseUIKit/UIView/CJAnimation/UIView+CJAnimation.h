@@ -11,6 +11,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+// 常见的出现动画
 typedef NS_ENUM(NSUInteger, CJAnimateCommonType) {
     CJAnimateCommonTypeFade = 0,                   //淡入淡出
     CJAnimateCommonTypeMoveIn,                     //覆盖
@@ -18,6 +19,7 @@ typedef NS_ENUM(NSUInteger, CJAnimateCommonType) {
     CJAnimateCommonTypeReveal,                     //揭开
 };
 
+//自定义的出现动画
 typedef NS_ENUM(NSUInteger, CJAnimateCustomType) {
     CJAnimateCustomTypeCube,                       //立方体
     CJAnimateCustomTypeSuckEffect,                 //吮吸
@@ -29,6 +31,7 @@ typedef NS_ENUM(NSUInteger, CJAnimateCustomType) {
     CJAnimateCustomTypeCameraIrisHollowClose,      //关镜头
 };
 
+// 转场动画
 typedef NS_ENUM(NSUInteger, CJTransitionDirection) {
     CJTransitionDirectionFromTop = 0,
     CJTransitionDirectionFromLeft,
@@ -42,14 +45,15 @@ typedef NS_ENUM(NSUInteger, CJTransitionDirection) {
  */
 @interface UIView (CJAnimation)
 
-///执行(Fade淡入淡出、MoveIn覆盖、Push推挤、Reveal揭开)动画
+///执行(常见的出现动画：Fade淡入淡出、MoveIn覆盖、Push推挤、Reveal揭开)动画
 - (void)cj_commonTransitionFrom:(CJTransitionDirection)transitionDirection
               withAnimationType:(CJAnimateCommonType)animationType;
 
+///执行(自定义的出现动画：Cube立方体、SuckEffect吮吸、OglFlip翻转、RippleEffect波纹、PageCurl翻页、PageUnCurl反翻页、CameraIrisHollowOpen开镜头、CameraIrisHollowClose关镜头)动画
 - (void)cj_customTransitionFrom:(CJTransitionDirection)transitionDirection
               withAnimationType:(CJAnimateCustomType)animationType;
 
-///支持(None无、FlipFromLeft左翻转、FlipFromRight右翻转、CurlUp上翻页、CurlDown下翻页)动画
+///支持(转场动画：None无、FlipFromLeft左翻转、FlipFromRight右翻转、CurlUp上翻页、CurlDown下翻页)动画
 - (void)cj_animationWithAnimationTransition:(UIViewAnimationTransition)transition;
 
 @end

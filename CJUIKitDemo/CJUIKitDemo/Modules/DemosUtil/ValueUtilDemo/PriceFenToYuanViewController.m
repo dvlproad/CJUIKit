@@ -7,7 +7,7 @@
 //
 
 #import "PriceFenToYuanViewController.h"
-#import "CJMoneyUtil.h"
+#import "CJDecimalUtil+Money.h"
 
 @interface PriceFenToYuanViewController ()
 
@@ -148,7 +148,7 @@
     NSInteger keepDecimalCount = 2;
     
     CGFloat originNumber = [priceFenString floatValue];
-    NSString *lastNumberString = [CJMoneyUtil priceYuanStringFromPriceFen:originNumber
+    NSString *lastNumberString = [CJDecimalUtil priceYuanStringFromPriceFen:originNumber
                                                       accurateToFenPlaces:fenPlaces
                                                           decimalDealType:decimalDealType
                                                          keepDecimalCount:keepDecimalCount];
@@ -168,7 +168,7 @@
     NSInteger keepDecimalCount = 2;
     
     CGFloat originNumber = [priceFenString floatValue];
-    NSString *lastNumberString = [CJMoneyUtil priceYuanStringFromPriceFen:originNumber
+    NSString *lastNumberString = [CJDecimalUtil priceYuanStringFromPriceFen:originNumber
                                                       accurateToFenPlaces:fenPlaces
                                                           decimalDealType:decimalDealType
                                                          keepDecimalCount:keepDecimalCount];

@@ -5,7 +5,7 @@
 //  Created by ciyouzen on 2016/12/14.
 //  Copyright © 2016年 dvlproad. All rights reserved.
 //
-//  小数的处理
+//  小数的处理（常用于价钱Money、距离Distance的计算)
 
 #import <Foundation/Foundation.h>
 

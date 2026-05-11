@@ -7,7 +7,7 @@
 //
 
 #import "PriceYuanToYuanViewController.h"
-#import "CJMoneyUtil.h"
+#import "CJDecimalUtil+Money.h"
 
 @interface PriceYuanToYuanViewController ()
 
@@ -47,7 +47,7 @@
         dealTextModel.actionTitle = @"四舍五入";
         dealTextModel.autoExec = YES;
         dealTextModel.actionBlock = ^NSString * _Nonnull(NSString * _Nonnull oldString) {
-            return [CJMoneyUtil yuanD2_decimalCountMax2_Round_fromPriceYuanString:oldString];
+            return [CJDecimalUtil yuanD2_decimalCountMax2_Round_fromPriceYuanString:oldString];
         };
         [dealTextModels addObject:dealTextModel];
     }
@@ -59,7 +59,7 @@
         dealTextModel.actionTitle = @"四舍五入";
         dealTextModel.autoExec = YES;
         dealTextModel.actionBlock = ^NSString * _Nonnull(NSString * _Nonnull oldString) {
-            return [CJMoneyUtil yuanD2_decimalCountMax2_Round_fromPriceYuanString:oldString];
+            return [CJDecimalUtil yuanD2_decimalCountMax2_Round_fromPriceYuanString:oldString];
         };
         [dealTextModels addObject:dealTextModel];
     }
@@ -71,7 +71,7 @@
         dealTextModel.actionTitle = @"四舍五入";
         dealTextModel.autoExec = YES;
         dealTextModel.actionBlock = ^NSString * _Nonnull(NSString * _Nonnull oldString) {
-            return [CJMoneyUtil yuanD2_decimalCountMax2_Round_fromPriceYuanString:oldString];
+            return [CJDecimalUtil yuanD2_decimalCountMax2_Round_fromPriceYuanString:oldString];
         };
         [dealTextModels addObject:dealTextModel];
     }
