@@ -5,7 +5,7 @@
   "homepage": "https://github.com/dvlproad/CJUIKit.git",
   "license": "MIT",
   "authors": "dvlproad",
-  "description": "- CJBaseHelper/DeviceCJHelper：设备信息获取帮助类\n- CJBaseHelper/NSObjectCJHelper：对象判空帮助类\n- CJBaseHelper/HookCJHelper：Hook帮助类\n- CJBaseHelper/UIViewControllerCJHelper：视图控制器帮助类：包含获取当前显示的视图控制器和通过视图找到它所在的视图控制器等\n- CJBaseHelper/NSDateFormatterCJHelper：NSDateFormatter帮助类\n- CJBaseHelper/NSCalendarCJHelper：NSCalendar帮助类\n- CJBaseHelper/NSOperationQueueHelper：多任务处理\n- CJBaseHelper/WebCJHelper：Web帮助类，包含清除缓存问题等\n- CJBaseHelper/AuthorizationCJHelper：权限判断及系统设置打开\n- CJBaseHelper/ServerCJHelper：服务器帮助类（服务器时间、服务器敏感词）\n- CJBaseHelper/AppInfoCJHelper：app的版本号信息\n\n\n A longer description of CJBaseHelper in Markdown format.\n\n * Think: Why did you write this? What is the focus? What does it do?\n * CocoaPods will be using this to generate tags, and improve search results.\n * Try to keep it short, snappy and to the point.\n * Finally, don't worry about the indent, CocoaPods strips it!",
+  "description": "自定义的基础帮助类，可按需独立引入：\n• CJBaseHelper/DeviceCJHelper - Device 设备信息获取帮助类\n• CJBaseHelper/NSObjectCJHelper - 对象判空帮助类\n• CJBaseHelper/HookCJHelper - Hook帮助类\n• CJBaseHelper/UIViewControllerCJHelper - 视图控制器帮助类：包含获取当前显示的视图控制器和通过视图找到它所在的视图控制器等\n• CJBaseHelper/NSDateFormatterCJHelper - NSDateFormatter帮助类\n• CJBaseHelper/NSCalendarCJHelper - NSCalendar帮助类\n• CJBaseHelper/NSOperationQueueCJHelper - NSOperationQueue 多任务处理帮助类（搜索功能常常需要的多线程处理）\n• CJBaseHelper/WebCJHelper - Web帮助类，包含清除缓存问题等\n• CJBaseHelper/AuthorizationCJHelper - 权限判断及系统设置打开\n• CJBaseHelper/ServerCJHelper - 服务器帮助类（服务器时间、服务器敏感词）\n• CJBaseHelper/AppInfoCJHelper - app的版本号信息\n\n每个子库可独立引入，详见各子库描述。",
   "platforms": {
     "ios": "8.0"
   },
@@ -41,13 +41,13 @@
       "source_files": "CJBaseHelper/CJBaseHelper/NSCalendarCJHelper/**/*.{h,m}"
     },
     {
+      "name": "NSOperationQueueCJHelper",
+      "source_files": "CJBaseHelper/CJBaseHelper/NSOperationQueueCJHelper/**/*.{h,m}"
+    },
+    {
       "name": "WebCJHelper",
       "source_files": "CJBaseHelper/CJBaseHelper/WebCJHelper/**/*.{h,m}",
       "frameworks": "WebKit"
-    },
-    {
-      "name": "NSOperationQueueCJHelper",
-      "source_files": "CJBaseHelper/CJBaseHelper/NSOperationQueueCJHelper/**/*.{h,m}"
     },
     {
       "name": "AuthorizationCJHelper",

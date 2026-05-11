@@ -2,6 +2,7 @@
   "name": "CJFoundation",
   "version": "0.1.3",
   "summary": "系统Foundation的扩展",
+  "description": "系统Foundation的扩展，可按需独立引入：\n• CJFoundation/NSString - NSString 的扩展\n• CJFoundation/NSDictionary - NSDictionary 的扩展\n• CJFoundation/NSJSONSerialization - NSJSONSerialization 的扩展\n\n每个子库可独立引入，详见各子库描述。",
   "homepage": "https://github.com/dvlproad/CJUIKit",
   "license": "MIT",
   "authors": "dvlproad",

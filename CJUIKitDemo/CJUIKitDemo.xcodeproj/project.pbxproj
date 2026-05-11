@@ -205,7 +205,6 @@
 		807F126C20B5123A0008B748 /* animationBg02.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 807F126A20B512390008B748 /* animationBg02.jpg */; };
 		807F127020B51C390008B748 /* animationBg01.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 807F126F20B51C390008B748 /* animationBg01.jpg */; };
 		808BF3242019C3E900511F7C /* YunUncaughtExceptionHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 808BF3222019C3E900511F7C /* YunUncaughtExceptionHandler.m */; };
-		808DE5E720DA0586003E08F1 /* CJDecimalUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 808DE5E520DA0586003E08F1 /* CJDecimalUtil.m */; };
 		808E3C472109C5B0009E3924 /* StringEventViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 808E3C452109C5B0009E3924 /* StringEventViewController.m */; };
 		80D0120A210336B900D1EDF0 /* BeChangeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80D01208210336B900D1EDF0 /* BeChangeViewController.m */; };
 		80D0120F210336E100D1EDF0 /* ChangeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80D0120D210336E100D1EDF0 /* ChangeViewController.m */; };
@@ -276,8 +275,6 @@
 		97A9192325AFE8510051B902 /* loading@3x.gif in Resources */ = {isa = PBXBuildFile; fileRef = 97A9191A25AFE8510051B902 /* loading@3x.gif */; };
 		97A9192425AFE8510051B902 /* longHorizontal.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 97A9191B25AFE8510051B902 /* longHorizontal.jpg */; };
 		97A9192525AFE8510051B902 /* TwoImageCompareView.m in Sources */ = {isa = PBXBuildFile; fileRef = 97A9191C25AFE8510051B902 /* TwoImageCompareView.m */; };
-		97BD53472FB28A2900E8F593 /* CJDecimalUtil+Money.m in Sources */ = {isa = PBXBuildFile; fileRef = 97BD53462FB28A2900E8F593 /* CJDecimalUtil+Money.m */; };
-		97BD53482FB28A2900E8F593 /* CJDecimalUtil+Distance.m in Sources */ = {isa = PBXBuildFile; fileRef = 97BD53442FB28A2900E8F593 /* CJDecimalUtil+Distance.m */; };
 		97EB21DA25ABFEC2008CDC13 /* BIndexSubStringViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 97EB21D925ABFEC2008CDC13 /* BIndexSubStringViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -647,8 +644,6 @@
 		807F126F20B51C390008B748 /* animationBg01.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = animationBg01.jpg; sourceTree = "<group>"; };
 		808BF3222019C3E900511F7C /* YunUncaughtExceptionHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YunUncaughtExceptionHandler.m; sourceTree = "<group>"; };
 		808BF3232019C3E900511F7C /* YunUncaughtExceptionHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YunUncaughtExceptionHandler.h; sourceTree = "<group>"; };
-		808DE5E520DA0586003E08F1 /* CJDecimalUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJDecimalUtil.m; sourceTree = "<group>"; };
-		808DE5E620DA0586003E08F1 /* CJDecimalUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJDecimalUtil.h; sourceTree = "<group>"; };
 		808E3C452109C5B0009E3924 /* StringEventViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StringEventViewController.m; sourceTree = "<group>"; };
 		808E3C462109C5B0009E3924 /* StringEventViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StringEventViewController.h; sourceTree = "<group>"; };
 		80D01207210336B900D1EDF0 /* BeChangeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BeChangeViewController.h; sourceTree = "<group>"; };
@@ -766,10 +761,6 @@
 		97A9191B25AFE8510051B902 /* longHorizontal.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = longHorizontal.jpg; sourceTree = "<group>"; };
 		97A9191C25AFE8510051B902 /* TwoImageCompareView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TwoImageCompareView.m; sourceTree = "<group>"; };
 		97A9191D25AFE8510051B902 /* TwoImageCompareView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TwoImageCompareView.h; sourceTree = "<group>"; };
-		97BD53432FB28A2900E8F593 /* CJDecimalUtil+Distance.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CJDecimalUtil+Distance.h"; sourceTree = "<group>"; };
-		97BD53442FB28A2900E8F593 /* CJDecimalUtil+Distance.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "CJDecimalUtil+Distance.m"; sourceTree = "<group>"; };
-		97BD53452FB28A2900E8F593 /* CJDecimalUtil+Money.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CJDecimalUtil+Money.h"; sourceTree = "<group>"; };
-		97BD53462FB28A2900E8F593 /* CJDecimalUtil+Money.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "CJDecimalUtil+Money.m"; sourceTree = "<group>"; };
 		97EB21D825ABFEC2008CDC13 /* BIndexSubStringViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BIndexSubStringViewController.h; sourceTree = "<group>"; };
 		97EB21D925ABFEC2008CDC13 /* BIndexSubStringViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BIndexSubStringViewController.m; sourceTree = "<group>"; };
 		F010C33DEBAF70AA8E83ACAA /* libPods-CJUIKitDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CJUIKitDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -1610,19 +1601,6 @@
 			path = CommonUtil;
 			sourceTree = "<group>";
 		};
-		808DE5E420DA0586003E08F1 /* CJDecimalUtil */ = {
-			isa = PBXGroup;
-			children = (
-				808DE5E620DA0586003E08F1 /* CJDecimalUtil.h */,
-				808DE5E520DA0586003E08F1 /* CJDecimalUtil.m */,
-				97BD53452FB28A2900E8F593 /* CJDecimalUtil+Money.h */,
-				97BD53462FB28A2900E8F593 /* CJDecimalUtil+Money.m */,
-				97BD53432FB28A2900E8F593 /* CJDecimalUtil+Distance.h */,
-				97BD53442FB28A2900E8F593 /* CJDecimalUtil+Distance.m */,
-			);
-			path = CJDecimalUtil;
-			sourceTree = "<group>";
-		};
 		808E3C442109C5B0009E3924 /* StringUtilDemo */ = {
 			isa = PBXGroup;
 			children = (
@@ -1852,7 +1830,6 @@
 			isa = PBXGroup;
 			children = (
 				78226A8D21A42103002167F2 /* CJConvertUtil */,
-				808DE5E420DA0586003E08F1 /* CJDecimalUtil */,
 				80FF912A1FC5668700E437CF /* UIUtil */,
 				7880E6F3213A9E84009C9BCF /* CJRandomNameUtil.h */,
 				7880E6F4213A9E84009C9BCF /* CJRandomNameUtil.m */,
@@ -2411,12 +2388,9 @@
 				7817B6AF2612272F006168AE /* ImageShakeViewController.m in Sources */,
 				78E189AE21781BE200B8781A /* EdgeLayoutTableViewController.m in Sources */,
 				975487AA25A997CF00DD7080 /* DChangeStringViewController1.m in Sources */,
-				808DE5E720DA0586003E08F1 /* CJDecimalUtil.m in Sources */,
 				80FF90B01FC5649F00E437CF /* NavigationBarScrollChangeBGViewController.m in Sources */,
 				976794FA2580B494002FD0C7 /* KeyboardAutoMoveUpViewController.m in Sources */,
 				9725C159261DA5930021D5D9 /* TSLayoutPriorityView.m in Sources */,
-				97BD53472FB28A2900E8F593 /* CJDecimalUtil+Money.m in Sources */,
-				97BD53482FB28A2900E8F593 /* CJDecimalUtil+Distance.m in Sources */,
 				78778E47272AEA8A00576853 /* TSImageCutViewController2.m in Sources */,
 				78A99268257958CB00B54E30 /* UIScrollView+CJTouch.m in Sources */,
 				805598B51FF5D612009DC61C /* ValidateStringViewController.m in Sources */,

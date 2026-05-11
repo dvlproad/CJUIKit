@@ -5,7 +5,7 @@
   "homepage": "https://github.com/dvlproad/CJUIKit",
   "license": "MIT",
   "authors": "dvlproad",
-  "description": "- CJBaseUtil/CJDataUtil：包含搜索、排序等数据处理工具类\n- CJBaseUtil/CJDateUtil：日期工具\n- CJBaseUtil/CJKeyboardUtil：键盘工具\n- CJBaseUtil/CJIndentedStringUtil：将 字符串/字典/数组转成含缩进字符串的字符串 的工具\n- CJBaseUtil/CJAppLastUtil：APP上次信息+账号安全工具\n- CJBaseUtil/CJManager：其他各种工具类\n- CJBaseUtil/CJPinyinHelper：拼音相关工具\n- CJBaseUtil/CJCallUtil：拨打电话工具\n- CJBaseUtil/CJQRCodeUtil：二维码\n- CJBaseUtil/CJLaunchImageUtil：启动图\n\n A longer description of CJBaseUtil in Markdown format.\n\n * Think: Why did you write this? What is the focus? What does it do?\n * CocoaPods will be using this to generate tags, and improve search results.\n * Try to keep it short, snappy and to the point.\n * Finally, don't worry about the indent, CocoaPods strips it!",
+  "description": "自定义的基础工具类，可按需独立引入：\n• CJBaseUtil/CJIndentedStringUtil - 将 字符串/字典/数组转成含缩进字符串的字符串 的工具\n• CJBaseUtil/CJAppLastUtil - APP上次信息+账号安全工具\n• CJBaseUtil/CJDataUtil - 包含排序+SortOrder、分类+SortCategory、搜索+NormalSearch 等的数据处理工具类\n• CJBaseUtil/CJDateUtil - 日期工具\n• CJBaseUtil/CJKeyboardUtil - 键盘工具\n• CJBaseUtil/CJCallUtil - 拨打电话工具\n• CJBaseUtil/CJQRCodeUtil - 二维码工具\n• CJBaseUtil/CJLaunchImageUtil - 启动图工具\n• CJBaseUtil/CJManager - 其他各种管理器(AppDelegate瘦身、位置变化、倒计时、悬浮框)\n• CJBaseUtil/CJManager/CJModuleManager - AppDelegate瘦身管理器\n• CJBaseUtil/CJManager/CJLocationChangeManager - 位置变化管理器\n• CJBaseUtil/CJManager/CJTimerManager - 倒计时管理器\n• CJBaseUtil/CJManager/CJSuspendWindowManager - 悬浮框管理器\n• CJBaseUtil/CJPinyinHelper - 拼音相关工具\n\n每个子库可独立引入，详见各子库描述。",
   "platforms": {
     "ios": "8.0"
   },
@@ -24,14 +24,16 @@
       "name": "CJAppLastUtil",
       "source_files": "CJBaseUtil/CJAppLastUtil/**/*.{h,m}",
       "dependencies": {
-        "SAMKeychain": [
-
-        ]
+        "SAMKeychain": []
       }
     },
     {
       "name": "CJDataUtil",
       "source_files": "CJBaseUtil/CJDataUtil/**/*.{h,m}"
+    },
+    {
+      "name": "CJDecimalUtil",
+      "source_files": "CJBaseUtil/CJDecimalUtil/**/*.{h,m}"
     },
     {
       "name": "CJDateUtil",
@@ -64,9 +66,7 @@
           "name": "CJLocationChangeManager",
           "source_files": "CJBaseUtil/CJManager/CJLocationChangeManager/**/*.{h,m}",
           "dependencies": {
-            "CJBaseUtil/CJDateUtil": [
-
-            ]
+            "CJBaseUtil/CJDateUtil": []
           }
         },
         {
@@ -83,9 +83,7 @@
       "name": "CJPinyinHelper",
       "source_files": "CJBaseUtil/CJPinyinHelper/**/*.{h,m}",
       "dependencies": {
-        "PinYin4Objc": [
-
-        ]
+        "PinYin4Objc": []
       }
     }
   ]
