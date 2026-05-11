@@ -4,19 +4,17 @@ Pod::Spec.new do |s|
 
   s.name         = "SwiftExtraCJHelper"
   s.version      = "0.1.2"
-  s.summary      = "Swift/OC帮助类"
+  s.summary      = "NSClassFromString 帮助类（解决 Swift 命名空间前缀问题）"
   s.homepage     = "https://github.com/dvlproad/CJUIKit.git"
   s.license      = "MIT"
   s.author       = "dvlproad"
 
   s.description  = <<-DESC
-                   A longer description of SwiftExtraCJHelper in Markdown format.
+                 NSClassFromString 帮助类，可按需独立引入：
+                 • SwiftExtraCJHelper/Base - NSClassFromString 获取 Swift/OC 类（处理命名空间前缀）
 
-                   * Think: Why did you write this? What is the focus? What does it do?
-                   * CocoaPods will be using this to generate tags, and improve search results.
-                   * Try to keep it short, snappy and to the point.
-                   * Finally, don't worry about the indent, CocoaPods strips it!
-                   DESC
+                 每个子库可独立引入，详见各子库描述。
+                 DESC
 
   # s.social_media_url   = "http://twitter.com/dvlproad"
 
@@ -36,7 +34,7 @@ Pod::Spec.new do |s|
   # s.xcconfig = { "HEADER_SEARCH_PATHS" => "$(SDKROOT)/usr/include/libxml2" }
   # s.dependency "JSONKit", "~> 1.4"
 
-  # 基础的帮助类
+  # NSClassFromString 获取 Swift/OC 类（处理命名空间前缀）
   s.subspec 'Base' do |ss|
     ss.source_files = "SwiftExtraCJHelper/Base/**/*.{swift}"
   end

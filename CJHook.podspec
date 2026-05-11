@@ -2,19 +2,17 @@ Pod::Spec.new do |s|
   #验证方法：pod lib lint CJHook.podspec --allow-warnings
   s.name         = "CJHook"
   s.version      = "0.0.2"
-  s.summary      = "Hook"
+  s.summary      = "Hook 方法（拦截 H5 图片上传、防止按钮重复点击）"
   s.homepage     = "https://github.com/dvlproad/CJUIKit"
 
   s.description  = <<-DESC
-                 - CJHook/HookCJHelper：Hook帮助类
+                 Hook，可按需独立引入：
+                 • CJHook/CJFileUploadPanel - hook:H5 <input> 选取图片的拦截处理，替换原图后，继续走系统上传流程
+                 • CJHook/UIViewController - hook:拦截 H5 <input> 触发文件上传面板（拦截 present + 拦截图片选择结果）
+                 • CJHook/UIButton - hook:防止按钮重复点击
 
-                   A longer description of CJHook in Markdown format.
-
-                   * Think: Why did you write this? What is the focus? What does it do?
-                   * CocoaPods will be using this to generate tags, and improve search results.
-                   * Try to keep it short, snappy and to the point.
-                   * Finally, don't worry about the indent, CocoaPods strips it!
-                   DESC
+                 每个子库可独立引入，详见各子库描述。
+                 DESC
   
 
   #s.license      = {
@@ -43,15 +41,18 @@ Pod::Spec.new do |s|
   # s.dependency 'Masonry'
   s.dependency "CJBaseHelper/HookCJHelper"
 
+  # hook:H5 <input> 选取图片的拦截处理，替换原图后，继续走系统上传流程
   s.subspec 'CJFileUploadPanel' do |ss|
     ss.source_files = "CJHook/CJFileUploadPanel/**/*.{h,m}"
   end
 
+  # hook:拦截 H5 <input> 触发文件上传面板（拦截 present + 拦截图片选择结果）
   s.subspec 'UIViewController' do |ss|
     ss.source_files = "CJHook/UIViewController/**/*.{h,m}"
     ss.dependency "CJBaseHelper/UIViewControllerCJHelper"
   end
 
+  # hook:防止按钮重复点击
   s.subspec 'UIButton' do |ss|
     ss.source_files = "CJHook/UIButton/**/*.{h,m}"
   end
