@@ -1,0 +1,6 @@
+module CJBaseUtil_Swift {
+  umbrella header "CJBaseUtil-Swift-umbrella.h"
+
+  export *
+  module * { export * }
+}

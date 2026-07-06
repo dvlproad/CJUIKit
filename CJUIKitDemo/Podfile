@@ -46,7 +46,10 @@ target 'CJUIKitDemo' do
     pod 'YYText', '~> 1.0.7'
 
     pod 'CJBaseUIKit',          :path => '../'
+    
     pod 'CJBaseUtil',           :path => '../'
+    pod 'CJBaseUtil-Swift',     :path => '../'
+    
     pod 'CJFoundation',         :path => '../'
     pod 'CJBaseHelper',         :path => '../'
     pod 'CJBaseEffectKit',      :subspecs => ['CJScaleHeadView']
