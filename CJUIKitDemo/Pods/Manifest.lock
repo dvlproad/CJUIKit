@@ -90,9 +90,9 @@ PODS:
     - CJBaseUtil/CJManager (= 0.5.1)
     - CJBaseUtil/CJPinyinHelper (= 0.5.1)
     - CJBaseUtil/CJQRCodeUtil (= 0.5.1)
-  - CJBaseUtil-Swift (0.1.0):
-    - CJBaseUtil-Swift/FrameworkCJHelper (= 0.1.0)
-  - CJBaseUtil-Swift/FrameworkCJHelper (0.1.0)
+  - CJBaseUtil-Swift (0.1.1):
+    - CJBaseUtil-Swift/FrameworkCJHelper (= 0.1.1)
+  - CJBaseUtil-Swift/FrameworkCJHelper (0.1.1)
   - CJBaseUtil/CJAppLastUtil (0.5.1):
     - SAMKeychain
   - CJBaseUtil/CJCallUtil (0.5.1)
@@ -236,7 +236,7 @@ SPEC CHECKSUMS:
   CJBaseHelper: 31eefe3f92f963bcf01ff6948984a8e25381e7b6
   CJBaseUIKit: 9e39328501c4f627a223ea48fac826cc2d93af27
   CJBaseUtil: b2b39023972510aa42badcf8bc1facfd8ee3f8f6
-  CJBaseUtil-Swift: 6a4a0ffa0231d89e0b670801b7a734f1b2efcf9a
+  CJBaseUtil-Swift: ba15bb3ac8512a9e374078b5e7514e77b9303af5
   CJFile: 6c1e6d55b3b94e8afbaa9f413f131301d15fdc48
   CJFoundation: 816d2d20aa9444a5d0f01da4c747b14d6cc51aef
   CJPopupView: c7685f6a0225a89c72d97ea946f2816b5442abaf

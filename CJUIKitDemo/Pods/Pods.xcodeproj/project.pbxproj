@@ -4981,6 +4981,35 @@
 			};
 			name = Release;
 		};
+		0AD48FA322F2A4A753A83BCB3623A488 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 898DB3D79B78F0B46EA752BF99F670FD /* CJBaseUtil-Swift.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				ENABLE_MODULE_VERIFIER = NO;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				GCC_PREFIX_HEADER = "Target Support Files/CJBaseUtil-Swift/CJBaseUtil-Swift-prefix.pch";
+				GENERATE_INFOPLIST_FILE = NO;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MODULEMAP_FILE = "Headers/Public/CJBaseUtil_Swift/CJBaseUtil-Swift.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_MODULE_NAME = CJBaseUtil_Swift;
+				PRODUCT_NAME = "CJBaseUtil-Swift";
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_INSTALL_OBJC_HEADER = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
 		0EDC0A26B8929A374775D557A7E46850 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 89C4460374D136AB85BA8F094E4FF3E7 /* Masonry.debug.xcconfig */;
@@ -5003,34 +5032,6 @@
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
 				SWIFT_INSTALL_OBJC_HEADER = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
-		1DE6B9CF75430C378649A7B05B01C462 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 89728A7321F430518273116E37C95502 /* CJBaseUtil-Swift.debug.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				ENABLE_MODULE_VERIFIER = NO;
-				ENABLE_USER_SCRIPT_SANDBOXING = NO;
-				GCC_PREFIX_HEADER = "Target Support Files/CJBaseUtil-Swift/CJBaseUtil-Swift-prefix.pch";
-				GENERATE_INFOPLIST_FILE = NO;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				MODULEMAP_FILE = "Headers/Public/CJBaseUtil_Swift/CJBaseUtil-Swift.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PRIVATE_HEADERS_FOLDER_PATH = "";
-				PRODUCT_MODULE_NAME = CJBaseUtil_Swift;
-				PRODUCT_NAME = "CJBaseUtil-Swift";
-				PUBLIC_HEADERS_FOLDER_PATH = "";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_INSTALL_OBJC_HEADER = YES;
-				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -6008,6 +6009,34 @@
 			};
 			name = Debug;
 		};
+		F1E7E57E69A8A0D5C4A4A4073A3C4060 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 89728A7321F430518273116E37C95502 /* CJBaseUtil-Swift.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				ENABLE_MODULE_VERIFIER = NO;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				GCC_PREFIX_HEADER = "Target Support Files/CJBaseUtil-Swift/CJBaseUtil-Swift-prefix.pch";
+				GENERATE_INFOPLIST_FILE = NO;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MODULEMAP_FILE = "Headers/Public/CJBaseUtil_Swift/CJBaseUtil-Swift.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_MODULE_NAME = CJBaseUtil_Swift;
+				PRODUCT_NAME = "CJBaseUtil-Swift";
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_INSTALL_OBJC_HEADER = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
 		F2EA6422632243A27CCE8F6FC48172B1 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = ADF25E34543BDC62B73A74FC04E5B373 /* SAMKeychain.debug.xcconfig */;
@@ -6082,35 +6111,6 @@
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
 				SWIFT_INSTALL_OBJC_HEADER = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-			};
-			name = Release;
-		};
-		F829C6FBBF124AF116FE881538475A50 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 898DB3D79B78F0B46EA752BF99F670FD /* CJBaseUtil-Swift.release.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				ENABLE_MODULE_VERIFIER = NO;
-				ENABLE_USER_SCRIPT_SANDBOXING = NO;
-				GCC_PREFIX_HEADER = "Target Support Files/CJBaseUtil-Swift/CJBaseUtil-Swift-prefix.pch";
-				GENERATE_INFOPLIST_FILE = NO;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				MODULEMAP_FILE = "Headers/Public/CJBaseUtil_Swift/CJBaseUtil-Swift.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PRIVATE_HEADERS_FOLDER_PATH = "";
-				PRODUCT_MODULE_NAME = CJBaseUtil_Swift;
-				PRODUCT_NAME = "CJBaseUtil-Swift";
-				PUBLIC_HEADERS_FOLDER_PATH = "";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_INSTALL_OBJC_HEADER = YES;
-				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};
@@ -6229,8 +6229,8 @@
 		75569FC419F17CE37AF0E0D4D6CBC426 /* Build configuration list for PBXNativeTarget "CJBaseUtil-Swift" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				1DE6B9CF75430C378649A7B05B01C462 /* Debug */,
-				F829C6FBBF124AF116FE881538475A50 /* Release */,
+				F1E7E57E69A8A0D5C4A4A4073A3C4060 /* Debug */,
+				0AD48FA322F2A4A753A83BCB3623A488 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
