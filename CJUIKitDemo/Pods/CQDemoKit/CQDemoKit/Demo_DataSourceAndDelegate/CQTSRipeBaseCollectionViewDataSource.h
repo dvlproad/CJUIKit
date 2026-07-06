@@ -7,8 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "CQDMSectionDataModel.h"
-#import "CQTSLocImageDataModel.h"
+#import "CQDMSectionDataModel.h"    // 在 subspec:BaseVC 下
+//#import "CQTSLocImageDataModel.h"   // 在 subspec:Demo_Resource 下
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -29,7 +29,7 @@ NS_ASSUME_NONNULL_BEGIN
  */
 - (instancetype)initWithSectionDataModels:(NSArray<CQDMSectionDataModel *> *)sectionDataModels
                           registerHandler:(void(^)(void))registerHandler
-                   cellForItemAtIndexPath:(UICollectionViewCell *(^)(UICollectionView *bCollectionView, NSIndexPath *bIndexPath, CQTSLocImageDataModel *dataModel))cellForItemAtIndexPath NS_DESIGNATED_INITIALIZER;
+                   cellForItemAtIndexPath:(UICollectionViewCell *(^)(UICollectionView *bCollectionView, NSIndexPath *bIndexPath, id bDataModel))cellForItemAtIndexPath NS_DESIGNATED_INITIALIZER;
 + (instancetype)new NS_UNAVAILABLE;
 - (instancetype)init NS_UNAVAILABLE;
 - (instancetype)initWithFrame:(CGRect)frame NS_UNAVAILABLE;
@@ -42,7 +42,7 @@ NS_ASSUME_NONNULL_BEGIN
  *
  *  @return 指定位置的dataModel
  */
-- (CQTSLocImageDataModel *)dataModelAtIndexPath:(NSIndexPath *)indexPath;
+- (id)dataModelAtIndexPath:(NSIndexPath *)indexPath;
 
 @end
 

@@ -11,7 +11,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface CQTSNetImageDataModel : NSObject
+@interface CQTSNetImageDataModel : NSObject<NSCoding>
 
 @property (nonatomic, assign) BOOL haveLoadImage;  /**< 设置此model的时候，是否已经下载了图片 */
 @property (nullable, nonatomic, copy) NSString *name;

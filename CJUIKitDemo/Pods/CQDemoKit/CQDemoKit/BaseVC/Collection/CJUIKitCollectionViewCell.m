@@ -45,6 +45,16 @@
     self.textLabel = textLabel;
 }
 
+// 1.解决图片重用问题(是推荐方法）
+// prepareForReuse 解决"cell 复用时还挂着旧图"的问题（肉眼可见的闪旧图）。
+// 注意：cqdmCheckReuseImageUrl 解决的是另一个问题——"旧下载完成覆盖新 cell 的图片"，
+// 两者分工不同，缺一不可。
+- (void)prepareForReuse {
+    [super prepareForReuse];
+    self.imageView.image = nil;
+    self.textLabel.text = nil;
+}
+
 - (void)setSelected:(BOOL)selected {
     [super setSelected:selected];
     

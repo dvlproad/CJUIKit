@@ -73,7 +73,7 @@ minimumInteritemSpacingForSectionAtIndex:(NSInteger)section
     CGFloat collectionViewCellWidth = 0;
     CGFloat collectionViewCellHeight = 0;
     
-    UICollectionViewFlowLayout *flowLayout = collectionViewLayout;
+    UICollectionViewFlowLayout *flowLayout = (UICollectionViewFlowLayout *)collectionViewLayout;
     BOOL isScrollHorizontal = flowLayout.scrollDirection == UICollectionViewScrollDirectionHorizontal;
     if (isScrollHorizontal) {   // 按水平方向滚动时，按个数计算cell的高
         NSInteger perColumnMaxRowCount = self.perMaxCount;

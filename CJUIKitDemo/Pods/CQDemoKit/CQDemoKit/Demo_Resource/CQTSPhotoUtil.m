@@ -82,7 +82,7 @@
         return;
     }
     
-    UIImage *watiToSaveImage = nil;
+    //UIImage *watiToSaveImage = nil;
     CQTSFileType fileType = [CQTSResourceUtil fileTypeForFilePathOrUrl:fileExtension];
     if (fileType == CQTSFileTypeImage) {    // 如果是图片
         [self saveImageToPhotoAlbum:mediaLocalURL success:success failure:failure];

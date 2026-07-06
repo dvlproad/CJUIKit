@@ -11,7 +11,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface CQTSLocImageDataModel : NSObject
+@interface CQTSLocImageDataModel : NSObject<NSCoding>
 
 @property (nullable, nonatomic, copy) NSString *name;
 @property (nonnull, nonatomic, copy) NSString *imageName;

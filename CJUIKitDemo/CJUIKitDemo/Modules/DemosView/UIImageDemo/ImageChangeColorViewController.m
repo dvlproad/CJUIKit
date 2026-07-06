@@ -7,7 +7,10 @@
 //
 
 #import "ImageChangeColorViewController.h"
-#import <CQDemoKit/CQTSRipeButtonCollectionView.h>
+//#import <CQDemoKit/CQTSRipeButtonCollectionView.h>
+#import <CQDemoKit/CQTSRipeButtonCollectionViewCell.h>
+#import <CQDemoKit/CQTSRipeBaseCollectionViewDelegate.h>
+#import <CQDemoKit/CQTSRipeBaseCollectionViewDataSource.h>
 #import <CQDemoKit/UIView+CQAuxiliaryText.h>
 #import "UIImage+CJChangeColor.h"
 #import "CJQRCodeUtil.h"
@@ -15,6 +18,9 @@
 @interface ImageChangeColorViewController () {
     
 }
+@property (nonatomic, strong, readonly) CQTSRipeBaseCollectionViewDelegate *ripeCollectionViewDelegate;   /**< collectionView的delegate */
+@property (nonatomic, strong, readonly) CQTSRipeBaseCollectionViewDataSource *ripeCollectionViewDataSource;   /**< collectionView的dataSource */
+
 @property (nonatomic, strong) UIImage *originImage;
 
 
@@ -33,6 +39,7 @@
     __weak typeof(self)weakSelf = self;
     
     NSArray<NSString *> *buttonTitles = @[@"星星", @"qq", @"按钮03", @"按钮04", @"按钮05", @"按钮06", @"按钮07", @"按钮08", @"按钮09", @"按钮10"];
+    /*
     CQTSRipeButtonCollectionView *buttonCollectionView = [[CQTSRipeButtonCollectionView alloc] initWithTitles:buttonTitles perMaxCount:1 widthHeightRatio:2.0/1.0 scrollDirection:UICollectionViewScrollDirectionHorizontal didSelectItemAtIndexHandle:^(NSInteger index) {
         NSString *title = buttonTitles[index];
         NSLog(@"点击了“%@”", title);
@@ -51,6 +58,50 @@
         bCell.contentView.backgroundColor = [UIColor colorWithWhite:1 alpha:0.8];
         bCell.backgroundColor = [UIColor colorWithWhite:1 alpha:0.8];
     };
+    */
+    UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
+    layout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
+    UICollectionView *buttonCollectionView = [[UICollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:layout];
+    buttonCollectionView.backgroundColor = [UIColor colorWithWhite:1 alpha:0.5];
+    
+    __weak typeof(buttonCollectionView)weakCollectionView = buttonCollectionView;
+    _ripeCollectionViewDelegate = [[CQTSRipeBaseCollectionViewDelegate alloc] initWithPerMaxCount:1 widthHeightRatio:2.0/1.0 didSelectItemHandle:^(UICollectionView * _Nonnull bCollectionView, NSIndexPath * _Nonnull bIndexPath) {
+        NSInteger index = bIndexPath.item;
+        NSString *title = buttonTitles[index];
+        NSLog(@"点击了“%@”", title);
+        if (index == 0) {
+            weakSelf.originImage = [UIImage imageNamed:@"imageOriginColor"];
+            [weakSelf getSectionDatas];
+            [weakSelf.collectionView reloadData];
+        } else if (index == 1) {
+            weakSelf.originImage = [UIImage imageNamed:@"qq"];
+            [weakSelf getSectionDatas];
+            [weakSelf.collectionView reloadData];
+        }
+    }];
+    buttonCollectionView.delegate = self.ripeCollectionViewDelegate;
+    
+    [self getSectionDatas];
+    NSMutableArray<CQDMSectionDataModel *> *sectionDataModels = self.sectionDataModels;
+    _ripeCollectionViewDataSource = [[CQTSRipeBaseCollectionViewDataSource alloc] initWithSectionDataModels:sectionDataModels registerHandler:^{
+        [weakCollectionView registerClass:[CQTSRipeButtonCollectionViewCell class] forCellWithReuseIdentifier:@"cell"];
+        
+    } cellForItemAtIndexPath:^UICollectionViewCell * _Nonnull(UICollectionView * _Nonnull bCollectionView, NSIndexPath * _Nonnull bIndexPath, id bDataModel) {
+        CQTSRipeButtonCollectionViewCell *cell = [bCollectionView dequeueReusableCellWithReuseIdentifier:@"cell" forIndexPath:bIndexPath];
+        
+        NSString *title = buttonTitles[bIndexPath.item];
+        cell.text = title;
+        //cell.text = [NSString stringWithFormat:@"%zd", bIndexPath.item];
+        
+        cell.contentView.backgroundColor = [UIColor colorWithWhite:1 alpha:0.8];
+        cell.backgroundColor = [UIColor colorWithWhite:1 alpha:0.8];
+        
+        return cell;
+    }];
+    buttonCollectionView.dataSource = self.ripeCollectionViewDataSource;
+    
+    
+    
     [self.view addSubview:buttonCollectionView];
     [buttonCollectionView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.right.equalTo(self.view);
@@ -72,7 +123,7 @@
 }
 
 - (void)getSectionDatas {
-    NSMutableArray *sectionDataModels = [[NSMutableArray alloc] init];
+    NSMutableArray<CQDMSectionDataModel *> *sectionDataModels = [[NSMutableArray alloc] init];
     //Helper
     {
         CQDMSectionDataModel *sectionDataModel = [[CQDMSectionDataModel alloc] init];

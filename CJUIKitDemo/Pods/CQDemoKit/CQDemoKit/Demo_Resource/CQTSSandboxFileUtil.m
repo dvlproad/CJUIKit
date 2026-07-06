@@ -16,7 +16,7 @@
 /// 拷贝主工程中的文件到沙盒中
 ///
 /// @param fileNameWithExtension        要拷贝的文件
-/// @param inBundle                                     从项目中的哪个bundle中拷贝（nil时候为 [NSBundle mainBundle] ）
+/// @param bundle                                         从项目中的哪个bundle中拷贝（nil时候为 [NSBundle mainBundle] ）
 /// @param sandboxURL                                要放到的沙盒位置
 /// @param subDirectory                             要放到的沙盒的子目录
 ///
@@ -50,7 +50,7 @@
     }
 
     // 创建目标路径（共享资源目录下的目标文件路径）:相对路径
-    NSURL *destinationPath = pathInfo[@"absoluteFilePath"];
+    NSString *destinationPath = pathInfo[@"absoluteFilePath"];
     NSURL *destinationURL = [NSURL fileURLWithPath:destinationPath];
 
     NSError *error = nil;

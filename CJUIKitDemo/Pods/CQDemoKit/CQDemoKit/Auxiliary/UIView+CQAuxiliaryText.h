@@ -5,6 +5,7 @@
 //  Created by ciyouzen on 7/9/15.
 //  Copyright (c) 2015 dvlproad. All rights reserved.
 //
+//  添加辅助文本(含删除)、添加任意辅助视图
 
 // 包含上下中的枚举： UIControl.ContentVerticalAlignment
 // 包含上下中左右的枚举： UIStackView.Alignment ,但只适用于Swift

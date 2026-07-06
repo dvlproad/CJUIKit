@@ -19,10 +19,6 @@
 
 @implementation CJUIKitBaseCollectionHomeViewController
 
-- (BOOL)automaticallyAdjustsScrollViewInsets {
-    return NO;
-}
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
@@ -52,7 +48,14 @@
     layout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
     UICollectionView *collectionView = [[UICollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:layout];
     collectionView.backgroundColor = [UIColor clearColor];
-    
+    if (@available(iOS 11.0, *)) {
+        // iOS 11 及以上，使用新 API
+        collectionView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
+        // 或者 UIScrollViewContentInsetAdjustmentAutomatic，根据你的需求
+    } else {
+        // iOS 11 以下，使用旧 API
+        self.automaticallyAdjustsScrollViewInsets = NO;
+    }
     
     /* 设置Register的Cell或Nib */
     CJUIKitCollectionViewCell *registerCell = [[CJUIKitCollectionViewCell alloc] init];
@@ -122,7 +125,7 @@ minimumInteritemSpacingForSectionAtIndex:(NSInteger)section
     CGFloat collectionViewCellWidth = 0;
     CGFloat collectionViewCellHeight = 0;
     
-    UICollectionViewFlowLayout *flowLayout = collectionViewLayout;
+    UICollectionViewFlowLayout *flowLayout = (UICollectionViewFlowLayout *)collectionViewLayout;
     BOOL isScrollHorizontal = flowLayout.scrollDirection == UICollectionViewScrollDirectionHorizontal;
     if (isScrollHorizontal) {   // 按水平方向滚动时，按个数计算cell的高
         NSInteger perColumnMaxRowCount = self.perMaxCount;
@@ -195,6 +198,7 @@ minimumInteritemSpacingForSectionAtIndex:(NSInteger)section
     CQDMModuleModel *moduleModel = [dataModels objectAtIndex:indexPath.row];
     
     CJUIKitCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"cell" forIndexPath:indexPath];
+    //cell.imageView.image = nil;   // 1.解决图片重用问题(建议换在cell内部处理）
     
     if (moduleModel.imageUrl.length > 0) {
         [cell.imageView cqdm_setImageWithUrl:moduleModel.imageUrl completed:nil];

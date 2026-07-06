@@ -1,1 +1,0 @@
-../../../CQDemoKit/CQDemoKit/Demo_RipeView/RipeCollectionView/CQTSRipeButtonCollectionView.h

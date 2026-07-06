@@ -7,14 +7,12 @@
 //
 
 #import "CQTSRipeBaseCollectionViewDataSource.h"
-#import "UIImageView+CQTSBaseUtil.h"
-#import "CQTSLocImagesUtil.h"
 
 @interface CQTSRipeBaseCollectionViewDataSource () {
     
 }
 
-@property (nonatomic, copy, readonly) UICollectionViewCell *(^cellForItemAtIndexPathBlock)(UICollectionView *bCollectionView, NSIndexPath *bIndexPath, CQTSLocImageDataModel *dataModel); /**< 绘制指定indexPath的cell */
+@property (nonatomic, copy, readonly) UICollectionViewCell *(^cellForItemAtIndexPathBlock)(UICollectionView *bCollectionView, NSIndexPath *bIndexPath, id bDataModel); /**< 绘制指定indexPath的cell */
 
 @end
 
@@ -33,7 +31,7 @@
  */
 - (instancetype)initWithSectionDataModels:(NSArray<CQDMSectionDataModel *> *)sectionDataModels
                           registerHandler:(void(^)(void))registerHandler
-                   cellForItemAtIndexPath:(UICollectionViewCell *(^)(UICollectionView *bCollectionView, NSIndexPath *bIndexPath, CQTSLocImageDataModel *dataModel))cellForItemAtIndexPath
+                   cellForItemAtIndexPath:(UICollectionViewCell *(^)(UICollectionView *bCollectionView, NSIndexPath *bIndexPath, id bDataModel))cellForItemAtIndexPath
 {
     self = [super init];
     if (self) {
@@ -50,10 +48,10 @@
  *
  *  @return 指定位置的dataModel
  */
-- (CQTSLocImageDataModel *)dataModelAtIndexPath:(NSIndexPath *)indexPath {
+- (id)dataModelAtIndexPath:(NSIndexPath *)indexPath {
     CQDMSectionDataModel *sectionDataModel = [self.sectionDataModels objectAtIndex:indexPath.section];
     NSArray *dataModels = sectionDataModel.values;
-    CQTSLocImageDataModel *moduleModel = [dataModels objectAtIndex:indexPath.row];
+    id moduleModel = [dataModels objectAtIndex:indexPath.row];
     
     return moduleModel;
 }
@@ -73,7 +71,7 @@
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView
                   cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    CQTSLocImageDataModel *moduleModel = [self dataModelAtIndexPath:indexPath];
+    id moduleModel = [self dataModelAtIndexPath:indexPath];
     
     UICollectionViewCell *cell = self.cellForItemAtIndexPathBlock(collectionView, indexPath, moduleModel);
 

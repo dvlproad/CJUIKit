@@ -16,7 +16,7 @@ NS_ASSUME_NONNULL_BEGIN
 /// 拷贝主工程中的文件到沙盒中
 ///
 /// @param fileNameWithExtension        要拷贝的文件
-/// @param inBundle                                     从项目中的哪个bundle中拷贝（nil时候为 [NSBundle mainBundle] ）
+/// @param bundle                                         从项目中的哪个bundle中拷贝（nil时候为 [NSBundle mainBundle] ）
 /// @param sandboxURL                                要放到的沙盒位置
 /// @param subDirectory                             要放到的沙盒的子目录
 ///
@@ -34,8 +34,6 @@ NS_ASSUME_NONNULL_BEGIN
 /// @param fileNameWithExtension        文件保存的名字(为nil的时候使用下载的文件名)
 /// @param success                                        下载成功
 /// @param failure                                        下载失败
-///
-/// @return 返回存放后的文件路径信息（存放失败，返回nil）
 + (void)downloadFileWithUrl:(NSString *)fileUrl
                toSandboxURL:(NSURL *)sandboxURL
                subDirectory:(nullable NSString *)subDirectory
