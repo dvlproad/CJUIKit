@@ -6,7 +6,7 @@
 //  Copyright © 2020 dvlproad. All rights reserved.
 //
 
-#import "CJSliderControl.h"
+#import <CJBaseUIKit/CJSliderControl.h>
 
 NS_ASSUME_NONNULL_BEGIN
 

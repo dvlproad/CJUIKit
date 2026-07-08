@@ -7,7 +7,7 @@
 //
 
 #import "TSRangeSliderControl2.h"
-#import "CJSliderPopover.h"
+#import <CJBaseUIKit/CJSliderPopover.h>
 #import <CQDemoKit/CJUIKitToastUtil.h>
 
 @interface TSRangeSliderControl2 () {

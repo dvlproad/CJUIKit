@@ -6,7 +6,7 @@
 //  Copyright © 2020 dvlproad. All rights reserved.
 //
 
-#import "CJRangeSliderControl.h"
+#import <CJBaseUIKit/CJRangeSliderControl.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
