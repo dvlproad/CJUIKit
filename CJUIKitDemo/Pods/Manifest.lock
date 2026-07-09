@@ -43,20 +43,22 @@ PODS:
     - CJBaseUIKit/UIView (= 0.8.1)
     - CJBaseUIKit/UIViewController (= 0.8.1)
     - CJBaseUIKit/UIWindow (= 0.8.1)
-  - CJBaseUIKit-Swift (0.0.1):
-    - CJBaseUIKit-Swift/Color (= 0.0.1)
-    - CJBaseUIKit-Swift/String (= 0.0.1)
-    - CJBaseUIKit-Swift/UIView (= 0.0.1)
-  - CJBaseUIKit-Swift/Color (0.0.1):
+  - CJBaseUIKit-Swift (0.0.2):
+    - CJBaseUIKit-Swift/Color (= 0.0.2)
+    - CJBaseUIKit-Swift/String (= 0.0.2)
+    - CJBaseUIKit-Swift/UIView (= 0.0.2)
+  - CJBaseUIKit-Swift/Color (0.0.2):
     - CJBaseUIKit-Swift/String
-  - CJBaseUIKit-Swift/String (0.0.1)
-  - CJBaseUIKit-Swift/UIView (0.0.1):
-    - CJBaseUIKit-Swift/UIView/adapt (= 0.0.1)
-    - CJBaseUIKit-Swift/UIView/as (= 0.0.1)
-    - CJBaseUIKit-Swift/UIView/CJPopupAction (= 0.0.1)
-  - CJBaseUIKit-Swift/UIView/adapt (0.0.1)
-  - CJBaseUIKit-Swift/UIView/as (0.0.1)
-  - CJBaseUIKit-Swift/UIView/CJPopupAction (0.0.1)
+  - CJBaseUIKit-Swift/String (0.0.2)
+  - CJBaseUIKit-Swift/UIView (0.0.2):
+    - CJBaseUIKit-Swift/UIView/adapt (= 0.0.2)
+    - CJBaseUIKit-Swift/UIView/appear (= 0.0.2)
+    - CJBaseUIKit-Swift/UIView/as (= 0.0.2)
+    - CJBaseUIKit-Swift/UIView/CJPopupAction (= 0.0.2)
+  - CJBaseUIKit-Swift/UIView/adapt (0.0.2)
+  - CJBaseUIKit-Swift/UIView/appear (0.0.2)
+  - CJBaseUIKit-Swift/UIView/as (0.0.2)
+  - CJBaseUIKit-Swift/UIView/CJPopupAction (0.0.2)
   - CJBaseUIKit/CJBaseTableViewCell (0.8.1):
     - CJBaseUIKit/UIButton
   - CJBaseUIKit/CJBaseTableViewHeaderFooterView (0.8.1)
@@ -254,7 +256,7 @@ SPEC CHECKSUMS:
   CJBaseEffectKit: 178d5e0f4cb87379f06cfd49a7c7329d49a2d5de
   CJBaseHelper: 31eefe3f92f963bcf01ff6948984a8e25381e7b6
   CJBaseUIKit: 9e39328501c4f627a223ea48fac826cc2d93af27
-  CJBaseUIKit-Swift: 12f13eee3377a46c88ac21dacb5db1d105d83278
+  CJBaseUIKit-Swift: e9fb305e1d7785b919a5877e06c4efd342ef98e6
   CJBaseUtil: b2b39023972510aa42badcf8bc1facfd8ee3f8f6
   CJBaseUtil-Swift: ba15bb3ac8512a9e374078b5e7514e77b9303af5
   CJFile: 6c1e6d55b3b94e8afbaa9f413f131301d15fdc48

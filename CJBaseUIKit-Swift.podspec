@@ -6,7 +6,7 @@
 
 Pod::Spec.new do |s|
   s.name         = "CJBaseUIKit-Swift"
-  s.version      = "0.0.1"
+  s.version      = "0.0.2"
   s.summary      = "自定义的基础UI"
   s.homepage     = "https://github.com/dvlproad/CJUIKit"
 
@@ -17,6 +17,7 @@ Pod::Spec.new do |s|
                  • CJBaseUIKit-Swift/UIView - UIView
                  • CJBaseUIKit-Swift/UIView/adapt - 自适应宽\高\字体等
                  • CJBaseUIKit-Swift/UIView/as - SwiftUI 与 UIKit 互转的方法
+                 • CJBaseUIKit-Swift/UIView/appear - 生命周期
                  • CJBaseUIKit-Swift/UIView/CJPopupAction - 视图弹窗：UIView的类别，用来实现UIView弹出popupView的一个Uiew的类别
                  • CJBaseUIKit-Swift/CJAlert - Alert
 
@@ -36,7 +37,7 @@ Pod::Spec.new do |s|
 
   s.platform     = :ios, "10.0"
  
-  s.source       = { :git => "https://github.com/dvlproad/CJUIKit.git", :tag => "CJBaseUIKit-Swift_0.0.1" }
+  s.source       = { :git => "https://github.com/dvlproad/CJUIKit.git", :tag => "CJBaseUIKit-Swift_0.0.2" }
   # s.source_files  = "CJBaseUIKit-Swift/*.{h}"
 
   s.frameworks = "UIKit"
@@ -86,6 +87,11 @@ Pod::Spec.new do |s|
     # SwiftUI 与 UIKit 互转的方法
     ss.subspec 'as' do |sss|
       sss.source_files = "CJBaseUIKit-Swift/UIView/as/**/*.{swift}"
+    end
+
+    # 生命周期
+    ss.subspec 'appear' do |sss|
+      sss.source_files = "CJBaseUIKit-Swift/UIView/appear/**/*.{swift}"
     end
 
     # 视图拖动

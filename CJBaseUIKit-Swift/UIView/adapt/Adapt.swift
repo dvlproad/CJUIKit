@@ -1,5 +1,5 @@
 //
-//  TempShouldRemove.swift
+//  Adapt.swift
 //  CJUIKitDemo
 //
 //  Created by qian on 2020/12/15.
