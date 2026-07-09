@@ -43,26 +43,27 @@ func CJColorFromHexString(_ hexStringColor:String) -> UIColor
 
 func CJColorFromHexString(_ hexStringColor:String, _ alpha:CGFloat) -> UIColor
 {
-    return UIColor.cjColor(hexStringColor: hexStringColor, alpha: alpha)
+    return UIColor(hex: hexStringColor, alpha: alpha)
 }
 
 
 
-extension UIColor {
-    /**
+public extension UIColor {
+    /*
      *  初始化颜色(从十六进制字符串获取颜色)
      *
-     *  @param hexStringColor   颜色的值（支持@“#123456”、 @“0X123456”、 @“123456”三种格式）
-     *  @param alpha            alpha
+     *  @param hex              颜色的值（支持@"#123456"、 @"0X123456"、 @"123456"三种格式）
+     *  @param alpha            透明度(1.0完全显示)
      *
      *  return  颜色
      */
-    class func cjColor(hexStringColor: String, alpha: CGFloat) -> UIColor {
+    public convenience init(hex: String, alpha: CGFloat = 1) {
         //删除字符串中的空格
-        var cString: String = hexStringColor.trimmingCharacters(in: NSCharacterSet.whitespacesAndNewlines).uppercased()
+        var cString: String = hex.trimmingCharacters(in: NSCharacterSet.whitespacesAndNewlines).uppercased()
         // String should be 6 or 8 characters
         if cString.count < 6 {
-            return UIColor.clear
+            self.init(white: 0, alpha: 1)
+            return
         }
         // strip 0X if it appears
         //如果是0x开头的，那么截取字符串，字符串从索引为2的位置开始，一直到末尾
@@ -78,20 +79,21 @@ extension UIColor {
             cString = String(cString2)
         }
         if cString.count != 6 {
-            return UIColor.clear
+            self.init(white: 0, alpha: 1)
+            return
         }
         // Separate into r, g, b substrings
         //r
-        let rStartIndex = cString.index(cString.startIndex, offsetBy:1)
-        let rEndIndex = cString.index(cString.startIndex, offsetBy:2)
+        let rStartIndex = cString.index(cString.startIndex, offsetBy:0)
+        let rEndIndex = cString.index(cString.startIndex, offsetBy:1)
         let rString: String = String(cString[rStartIndex..<rEndIndex])
         //g
-        let gStartIndex = cString.index(cString.startIndex, offsetBy:3)
-        let gEndIndex = cString.index(cString.startIndex, offsetBy:4)
+        let gStartIndex = cString.index(cString.startIndex, offsetBy:2)
+        let gEndIndex = cString.index(cString.startIndex, offsetBy:3)
         let gString: String = String(cString[gStartIndex..<gEndIndex])
         //b
-        let bStartIndex = cString.index(cString.startIndex, offsetBy:5)
-        let bEndIndex = cString.index(cString.startIndex, offsetBy:6)
+        let bStartIndex = cString.index(cString.startIndex, offsetBy:4)
+        let bEndIndex = cString.index(cString.startIndex, offsetBy:5)
         let bString: String = String(cString[bStartIndex..<bEndIndex])
         // Scan values
         var r: UInt32 = 0x0
@@ -100,8 +102,6 @@ extension UIColor {
         Scanner(string: rString).scanHexInt32(&r)
         Scanner(string: gString).scanHexInt32(&g)
         Scanner(string: bString).scanHexInt32(&b)
-        let hexColor = UIColor.init(red: CGFloat(r)/255.0, green: CGFloat(g)/255.0, blue: CGFloat(b)/255.0, alpha: alpha)
-        
-        return hexColor
+        self.init(red: CGFloat(r)/255.0, green: CGFloat(g)/255.0, blue: CGFloat(b)/255.0, alpha: alpha)
     }
 }

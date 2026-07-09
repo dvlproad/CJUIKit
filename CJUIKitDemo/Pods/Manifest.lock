@@ -43,6 +43,20 @@ PODS:
     - CJBaseUIKit/UIView (= 0.8.1)
     - CJBaseUIKit/UIViewController (= 0.8.1)
     - CJBaseUIKit/UIWindow (= 0.8.1)
+  - CJBaseUIKit-Swift (0.0.1):
+    - CJBaseUIKit-Swift/Color (= 0.0.1)
+    - CJBaseUIKit-Swift/String (= 0.0.1)
+    - CJBaseUIKit-Swift/UIView (= 0.0.1)
+  - CJBaseUIKit-Swift/Color (0.0.1):
+    - CJBaseUIKit-Swift/String
+  - CJBaseUIKit-Swift/String (0.0.1)
+  - CJBaseUIKit-Swift/UIView (0.0.1):
+    - CJBaseUIKit-Swift/UIView/adapt (= 0.0.1)
+    - CJBaseUIKit-Swift/UIView/as (= 0.0.1)
+    - CJBaseUIKit-Swift/UIView/CJPopupAction (= 0.0.1)
+  - CJBaseUIKit-Swift/UIView/adapt (0.0.1)
+  - CJBaseUIKit-Swift/UIView/as (0.0.1)
+  - CJBaseUIKit-Swift/UIView/CJPopupAction (0.0.1)
   - CJBaseUIKit/CJBaseTableViewCell (0.8.1):
     - CJBaseUIKit/UIButton
   - CJBaseUIKit/CJBaseTableViewHeaderFooterView (0.8.1)
@@ -180,6 +194,7 @@ DEPENDENCIES:
   - CJBaseEffectKit/CJScaleHeadView
   - CJBaseHelper (from `../`)
   - CJBaseUIKit (from `../`)
+  - CJBaseUIKit-Swift (from `../`)
   - CJBaseUtil (from `../`)
   - CJBaseUtil-Swift (from `../`)
   - CJFile/CJFileManager
@@ -225,6 +240,8 @@ EXTERNAL SOURCES:
     :path: "../"
   CJBaseUIKit:
     :path: "../"
+  CJBaseUIKit-Swift:
+    :path: "../"
   CJBaseUtil:
     :path: "../"
   CJBaseUtil-Swift:
@@ -237,6 +254,7 @@ SPEC CHECKSUMS:
   CJBaseEffectKit: 178d5e0f4cb87379f06cfd49a7c7329d49a2d5de
   CJBaseHelper: 31eefe3f92f963bcf01ff6948984a8e25381e7b6
   CJBaseUIKit: 9e39328501c4f627a223ea48fac826cc2d93af27
+  CJBaseUIKit-Swift: 12f13eee3377a46c88ac21dacb5db1d105d83278
   CJBaseUtil: b2b39023972510aa42badcf8bc1facfd8ee3f8f6
   CJBaseUtil-Swift: ba15bb3ac8512a9e374078b5e7514e77b9303af5
   CJFile: 6c1e6d55b3b94e8afbaa9f413f131301d15fdc48
@@ -254,6 +272,6 @@ SPEC CHECKSUMS:
   UINavigation-SXFixSpace: 10f223253ebff2ceefa26694e23b7694269763c4
   YYText: 5c461d709e24d55a182d1441c41dc639a18a4849
 
-PODFILE CHECKSUM: fff5839e30b8a9e78c1de64b41f8653201930bb9
+PODFILE CHECKSUM: 431837087349c863d7f0fa79e97404b476695dd3
 
 COCOAPODS: 1.16.2

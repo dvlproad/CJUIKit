@@ -1,0 +1,6 @@
+module CJBaseUIKit_Swift {
+  umbrella header "CJBaseUIKit-Swift-umbrella.h"
+
+  export *
+  module * { export * }
+}
