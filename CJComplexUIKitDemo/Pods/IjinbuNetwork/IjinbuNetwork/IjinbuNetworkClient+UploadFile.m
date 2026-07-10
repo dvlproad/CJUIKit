@@ -8,15 +8,7 @@
 
 #import "IjinbuNetworkClient+UploadFile.h"
 #import "IjinbuHTTPSessionManager.h"
-
-#ifdef CJTESTPOD
-#import "AFHTTPSessionManager+CJUploadFile.h"
-#else
-#import <CJNetwork/AFHTTPSessionManager+CJUploadFile.h>
-#endif
-
 #import "IjinbuUploadItemResult.h"
-
 
 @implementation IjinbuNetworkClient (UploadFile)
 
@@ -32,19 +24,27 @@
     NSLog(@"Url = %@", Url);
     NSLog(@"params = %@", params);
     
-    return [manager cj_postUploadUrl:Url params:params fileKey:@"file" fileValue:uploadFileModels progress:uploadProgress success:^(NSURLSessionDataTask * _Nonnull task, id _Nonnull responseObject) {
+    NSDictionary *urlParams = params;
+    NSDictionary *formParams = nil;
+    
+    CJRequestCacheSettingModel *cacheSettingModel = [[CJRequestCacheSettingModel alloc] init];
+    CJRequestLogType logType = CJRequestLogTypeSuppendWindow;
+    
+    return [manager cj_uploadUrl:Url urlParams:urlParams formParams:formParams headers:nil uploadFileModels:uploadFileModels cacheSettingModel:cacheSettingModel logType:logType progress:uploadProgress success:^(CJSuccessRequestInfo * _Nullable successRequestInfo) {
+        NSDictionary *responseDictionary = successRequestInfo.responseObject;
+         
         IjinbuResponseModel *responseModel = [[IjinbuResponseModel alloc] init];
-        responseModel.status = [responseObject[@"status"] integerValue];
-        responseModel.message = responseObject[@"msg"];
-        responseModel.result = responseObject[@"result"];
+        responseModel.status = [responseDictionary[@"status"] integerValue];
+        responseModel.message = responseDictionary[@"msg"];
+        responseModel.result = responseDictionary[@"result"];
         if (completeBlock) {
             completeBlock(responseModel);
         }
         
-    } failure:^(NSURLSessionDataTask * _Nonnull task, NSError * _Nonnull error) {
+    } failure:^(CJFailureRequestInfo * _Nullable failureRequestInfo) {
         IjinbuResponseModel *responseModel = [[IjinbuResponseModel alloc] init];
         responseModel.status = -1;
-        responseModel.message = NSLocalizedString(@"网络请求失败", nil);
+        responseModel.message = failureRequestInfo.errorMessage;
         responseModel.result = nil;
         if (completeBlock) {
             completeBlock(responseModel);
@@ -124,12 +124,21 @@
     };
     
     
+    NSDictionary *urlParams = parameters;
+    NSDictionary *formParams = nil;
+    
+    CJRequestCacheSettingModel *cacheSettingModel = [[CJRequestCacheSettingModel alloc] init];
+    CJRequestLogType logType = CJRequestLogTypeSuppendWindow;
+    
     NSURLSessionDataTask *operation =
-    [manager cj_postUploadUrl:Url
-                       params:parameters
-                      fileKey:@"file"
-               fileValueOwner:saveUploadInfoToItem
-  uploadMomentInfoChangeBlock:uploadInfoChangeBlock
+    [manager cj_uploadUrl:Url
+                urlParams:urlParams
+               formParams:formParams
+                  headers:nil
+        cacheSettingModel:cacheSettingModel
+                  logType:logType
+           fileValueOwner:saveUploadInfoToItem
+uploadMomentInfoChangeBlock:uploadInfoChangeBlock
 getUploadMomentInfoFromResopnseBlock:getUploadMomentInfoFromResopnseBlock];
     
     return operation;

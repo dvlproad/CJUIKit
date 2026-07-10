@@ -1,0 +1,6 @@
+framework module CJNetworkFileModel {
+  umbrella header "CJNetworkFileModel-umbrella.h"
+
+  export *
+  module * { export * }
+}

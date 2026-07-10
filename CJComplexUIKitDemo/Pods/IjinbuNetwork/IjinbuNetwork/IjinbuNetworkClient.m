@@ -9,8 +9,8 @@
 #import "IjinbuNetworkClient.h"
 #import "IjinbuHTTPSessionManager.h"
 
-#import "AFHTTPSessionManager+CJCacheRequest.h"
-#import "AFHTTPSessionManager+CJUploadFile.h"
+#import <CJNetwork/AFHTTPSessionManager+CJSerializerEncrypt.h>
+#import <CJNetwork/AFHTTPSessionManager+CJUploadFile.h>
 
 @implementation IjinbuNetworkClient
 
@@ -34,28 +34,29 @@
     NSLog(@"sign = %@", sign);
     [manager.requestSerializer setValue:sign forHTTPHeaderField:@"sign"];
     
-    NSURLSessionDataTask *URLSessionDataTask =
-    [manager cjCache_postUrl:Url params:params shouldCache:cache progress:nil logType:CJNetworkLogTypeConsoleLog success:^(CJSuccessNetworkInfo * _Nullable successNetworkInfo, BOOL isCacheData) {
+    CJRequestCacheSettingModel *cacheSettingModel = [[CJRequestCacheSettingModel alloc] init];
+    CJRequestLogType logType = CJRequestLogTypeSuppendWindow;
+    
+    return [manager cj_requestUrl:Url params:params headers:nil method:CJRequestMethodPOST cacheSettingModel:cacheSettingModel logType:logType progress:nil success:^(CJSuccessRequestInfo * _Nullable successRequestInfo) {
+        NSDictionary *responseDictionary = successRequestInfo.responseObject;
+        //NSDictionary *networkLogString = successRequestInfo.networkLogString;
         
-        NSDictionary *responseDictionary = successNetworkInfo.responseObject;
         IjinbuResponseModel *responseModel = [[IjinbuResponseModel alloc] initWithResponseDictionary:responseDictionary];
-        responseModel.cjNetworkLog = successNetworkInfo.networkLogString;
-  
+        responseModel.cjNetworkLog = successRequestInfo.networkLogString;
         if (completeBlock) {
             completeBlock(responseModel);
         }
         
-    } failure:^(CJFailureNetworkInfo * _Nullable failureNetworkInfo) {
+    } failure:^(CJFailureRequestInfo * _Nullable failureRequestInfo) {
         IjinbuResponseModel *responseModel = [[IjinbuResponseModel alloc] init];
         responseModel.status = -1;
         responseModel.message = NSLocalizedString(@"网络请求失败", nil);
         responseModel.result = nil;
-        responseModel.cjNetworkLog = failureNetworkInfo.networkLogString;
+        responseModel.cjNetworkLog = failureRequestInfo.networkLogString;
         if (completeBlock) {
             completeBlock(responseModel);
         }
     }];
-    return URLSessionDataTask;
 }
 
 

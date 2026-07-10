@@ -78,6 +78,7 @@ Pod::Spec.new do |s|
       # 搜索功能需要依赖的库
       sss.dependency 'CJComplexUIKit/CJCollectionView/MyEqualCellSizeCollectionView'
       sss.dependency 'CJBaseUtil/CJDataUtil'
+      sss.dependency 'JGActionSheet'
     end
 
     ss.subspec 'ImagePickerCollectionlView' do |sss|
@@ -90,7 +91,8 @@ Pod::Spec.new do |s|
       sss.dependency 'CJComplexUIKit/CJCollectionView/MyEqualCellSizeCollectionView'
       sss.dependency 'CJComplexUIKit/CJCollectionView/CJBaseCollectionViewCell'
 
-      sss.dependency 'CJMedia/CJUploadImagePickerUtil'
+      sss.dependency 'CQImageAddDeleteListKit/AddDeletePickUpload'
+      sss.dependency 'CJNetwork/AFNetworkingUploadComponent'
     end
 
     

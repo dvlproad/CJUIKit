@@ -26,7 +26,7 @@ end
 
 
 target 'CJComplexUIKitDemo' do
-  pod 'CQDemoKit',          '~> 0.9.2',      :subspecs => ['BaseVC', 'Demo_Resource', 'Demo_DataSourceAndDelegate']
+  pod 'CQDemoKit',          '~> 0.9.2',      :subspecs => ['BaseVC', 'Demo_Resource', 'Demo_DataSourceAndDelegate', 'Demo_RipeView']
   #pod 'CQDemoKit',          :path => '../../001-UIKit-CQDemo-iOS',      :subspecs => ['BaseVC', 'Demo_DataSourceAndDelegate']
   
   pod 'CJBaseUIKit',      :subspecs => ['UIColor', 'UINavigationBar', 'UIButton', 'UIImage', 'UITextField', 'CJBaseTableViewHeaderFooterView']
@@ -37,7 +37,6 @@ target 'CJComplexUIKitDemo' do
   pod 'CJPopupAction'
   
   pod 'CJComplexUIKit',           :path => '../’
-  
 #  pod 'CJComplexUIKit/CJScrollView',      :path => '../’
 #  pod 'CJComplexUIKit/CJCollectionView',  :path => '../’
 #  pod 'CJComplexUIKit/CJHomeCollectionView',  :path => '../’
@@ -49,15 +48,10 @@ target 'CJComplexUIKitDemo' do
   pod 'DZNEmptyDataSet'
   pod 'MJPopupViewController', '~> 0.4'
   
-  
-  # 图片选择需要依赖的库
-  pod 'JGActionSheet'
-  pod 'CJMedia/CJUploadImagePickerUtil', '~> 0.0.7' #其中包含了对CJFile中的部分依赖
-  pod 'CJNetwork/AFNetworkingBaseComponent'
-  
   # 测试图片上传
-  pod 'IjinbuNetwork', '~> 0.1.0' #之前有过IjinbuNetwork中有依赖CJBaseUtil的CJDevice和CJBaseUIKit的UIImage,所以这里不能使用pod，否则link错误
-  pod 'CJNetwork'
+  pod 'IjinbuNetwork'#,  :path => '../../../Gitee/Feature-Network-iOS'
+  # pod 'CQAppNetwork',   :path => '../../../Gitee/Feature-Network-iOS'
+  pod 'CQImageAddDeleteListKit', :subspecs => ['AddDeletePickUpload']#,  :path => '../../../Gitee/UIKit-List-ImageAddDelete-iOS'
 end
 
 target 'CJComplexUIKitDemoTests' do

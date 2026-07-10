@@ -1,0 +1,6 @@
+framework module CQNetworkPublic {
+  umbrella header "CQNetworkPublic-umbrella.h"
+
+  export *
+  module * { export * }
+}

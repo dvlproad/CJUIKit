@@ -11,6 +11,8 @@
 #endif
 
 #import "AuthorizationCJHelper.h"
+#import "UIViewCJHelper.h"
+#import "UIViewControllerCJHelper.h"
 
 FOUNDATION_EXPORT double CJBaseHelperVersionNumber;
 FOUNDATION_EXPORT const unsigned char CJBaseHelperVersionString[];

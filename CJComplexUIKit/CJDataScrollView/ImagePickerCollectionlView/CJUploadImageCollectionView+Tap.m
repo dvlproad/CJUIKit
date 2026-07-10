@@ -11,7 +11,7 @@
 
 #import <MediaPlayer/MediaPlayer.h>
 
-#import <CJMedia/CJUploadImagePickerUtil.h>
+#import <CQImageAddDeleteListKit/CJUploadImagePickerUtil.h>
 
 @implementation CJUploadImageCollectionView (Tap)
 

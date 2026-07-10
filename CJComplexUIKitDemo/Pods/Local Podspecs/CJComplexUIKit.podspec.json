@@ -48,7 +48,8 @@
           "source_files": "CJComplexUIKit/CJDataScrollView/SearchScrollView/**/*.{h,m}",
           "dependencies": {
             "CJComplexUIKit/CJCollectionView/MyEqualCellSizeCollectionView": [],
-            "CJBaseUtil/CJDataUtil": []
+            "CJBaseUtil/CJDataUtil": [],
+            "JGActionSheet": []
           }
         },
         {
@@ -60,7 +61,8 @@
             "JGActionSheet": [],
             "CJComplexUIKit/CJCollectionView/MyEqualCellSizeCollectionView": [],
             "CJComplexUIKit/CJCollectionView/CJBaseCollectionViewCell": [],
-            "CJMedia/CJUploadImagePickerUtil": []
+            "CQImageAddDeleteListKit/AddDeletePickUpload": [],
+            "CJNetwork/AFNetworkingUploadComponent": []
           }
         }
       ]

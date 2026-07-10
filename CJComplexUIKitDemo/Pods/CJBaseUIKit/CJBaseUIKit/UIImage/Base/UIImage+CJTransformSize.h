@@ -56,7 +56,6 @@ typedef NS_ENUM(NSUInteger, CJScaleType) {
 - (UIImage *)cj_resizableImageWithCapInsets:(UIEdgeInsets)insets;
 
 
-- (NSData *)cj_compressSizeWithMaxDataLength:(NSInteger)maxDataLength;
 
 @end
 

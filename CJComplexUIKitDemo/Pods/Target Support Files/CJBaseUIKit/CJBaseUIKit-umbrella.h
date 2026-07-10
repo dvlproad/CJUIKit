@@ -36,6 +36,8 @@
 #import "UITextField+CJSelectedTextRange.h"
 #import "UITextField+CJTextChangeBlock.h"
 #import "UITextFieldCJCategory.h"
+#import "UIView+CJDragAction.h"
+#import "UIView+CJPanAction.h"
 
 FOUNDATION_EXPORT double CJBaseUIKitVersionNumber;
 FOUNDATION_EXPORT const unsigned char CJBaseUIKitVersionString[];

@@ -53,6 +53,11 @@
 #import "CJUIKitRandomUtil.h"
 #import "CQTSGitUtil.h"
 #import "UIImage+CQTSInFramework.h"
+#import "CQTSMediaPickerViewController.h"
+#import "CQTSRipeButton.h"
+#import "CQTSRipeTableView.h"
+#import "CQTSRipeButtonCollectionViewCell.h"
+#import "CQTSRipeImageCollectionViewCell.h"
 #import "NSError+CQTSErrorString.h"
 
 FOUNDATION_EXPORT double CQDemoKitVersionNumber;

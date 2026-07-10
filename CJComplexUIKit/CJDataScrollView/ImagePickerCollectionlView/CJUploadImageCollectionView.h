@@ -13,8 +13,8 @@
 #import <CJComplexUIKit/MyEqualCellSizeCollectionView.h>
 #endif
 
-#import <CJMedia/CJImageUploadFileModelsOwner.h>
-#import <CJMedia/CJVideoUploadFileModelsOwner.h>
+#import <CQImageAddDeleteListKit/CJImageUploadFileModelsOwner.h>
+#import <CQImageAddDeleteListKit/CJVideoUploadFileModelsOwner.h>
 
 typedef NS_ENUM(NSUInteger, CJMediaType) {
     CJMediaTypeImage,

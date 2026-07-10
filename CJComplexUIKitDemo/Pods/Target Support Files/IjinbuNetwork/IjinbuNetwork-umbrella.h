@@ -10,6 +10,7 @@
 #endif
 #endif
 
+#import "CJJSONResponseSerializer.h"
 #import "IjinbuHTTPSessionManager.h"
 #import "IjinbuNetworkClient+UploadFile.h"
 #import "IjinbuNetworkClient.h"
