@@ -110,7 +110,6 @@
 		9729D80C300188E600FFF239 /* CustomTripProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9729D808300188E600FFF239 /* CustomTripProgressView.m */; };
 		9729D80D300188E600FFF239 /* ProcessLineView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9729D80A300188E600FFF239 /* ProcessLineView.m */; };
 		976CB3242FFE6AA4000505DD /* DataEmptyViewFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 976CB2FC2FFE6AA4000505DD /* DataEmptyViewFactory.m */; };
-		976CB34F2FFE6C9D000505DD /* DemoCacheUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 976CB3492FFE6C9D000505DD /* DemoCacheUtil.m */; };
 		976CB3502FFE6C9D000505DD /* TestDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 976CB3412FFE6C9D000505DD /* TestDataModel.m */; };
 		976CB3512FFE6C9D000505DD /* TestDataUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 976CB3442FFE6C9D000505DD /* TestDataUtil.m */; };
 		976CB3522FFE6C9D000505DD /* DemoInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 976CB33F2FFE6C9D000505DD /* DemoInfo.m */; };
@@ -304,7 +303,6 @@
 		9729D808300188E600FFF239 /* CustomTripProgressView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomTripProgressView.m; sourceTree = "<group>"; };
 		9729D809300188E600FFF239 /* ProcessLineView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProcessLineView.h; sourceTree = "<group>"; };
 		9729D80A300188E600FFF239 /* ProcessLineView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProcessLineView.m; sourceTree = "<group>"; };
-		976CB2EA2FFE6AA4000505DD /* DemoConstant.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DemoConstant.h; sourceTree = "<group>"; };
 		976CB2FB2FFE6AA4000505DD /* DataEmptyViewFactory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DataEmptyViewFactory.h; sourceTree = "<group>"; };
 		976CB2FC2FFE6AA4000505DD /* DataEmptyViewFactory.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DataEmptyViewFactory.m; sourceTree = "<group>"; };
 		976CB33E2FFE6C9D000505DD /* DemoInfo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DemoInfo.h; sourceTree = "<group>"; };
@@ -313,8 +311,6 @@
 		976CB3412FFE6C9D000505DD /* TestDataModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestDataModel.m; sourceTree = "<group>"; };
 		976CB3432FFE6C9D000505DD /* TestDataUtil.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestDataUtil.h; sourceTree = "<group>"; };
 		976CB3442FFE6C9D000505DD /* TestDataUtil.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestDataUtil.m; sourceTree = "<group>"; };
-		976CB3482FFE6C9D000505DD /* DemoCacheUtil.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DemoCacheUtil.h; sourceTree = "<group>"; };
-		976CB3492FFE6C9D000505DD /* DemoCacheUtil.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DemoCacheUtil.m; sourceTree = "<group>"; };
 		976CB3532FFE6CF6000505DD /* AppInfo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppInfo.h; sourceTree = "<group>"; };
 		976CB3542FFE6CF6000505DD /* AppInfo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppInfo.m; sourceTree = "<group>"; };
 		976CB3552FFE6CF6000505DD /* AppInfoManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppInfoManager.h; sourceTree = "<group>"; };
@@ -733,14 +729,6 @@
 			path = CJSmallCustomView;
 			sourceTree = "<group>";
 		};
-		976CB2EB2FFE6AA4000505DD /* Base */ = {
-			isa = PBXGroup;
-			children = (
-				976CB2EA2FFE6AA4000505DD /* DemoConstant.h */,
-			);
-			path = Base;
-			sourceTree = "<group>";
-		};
 		976CB2FD2FFE6AA4000505DD /* DemoEmptyViewFactory */ = {
 			isa = PBXGroup;
 			children = (
@@ -754,7 +742,6 @@
 			isa = PBXGroup;
 			children = (
 				976CB36B2FFE76A0000505DD /* TSAlert */,
-				976CB2EB2FFE6AA4000505DD /* Base */,
 				976CB2FD2FFE6AA4000505DD /* DemoEmptyViewFactory */,
 			);
 			path = CommonUI;
@@ -785,8 +772,6 @@
 			isa = PBXGroup;
 			children = (
 				976CB3452FFE6C9D000505DD /* TestDataUtil */,
-				976CB3482FFE6C9D000505DD /* DemoCacheUtil.h */,
-				976CB3492FFE6C9D000505DD /* DemoCacheUtil.m */,
 			);
 			path = CommonUtil;
 			sourceTree = "<group>";
@@ -1129,7 +1114,6 @@
 				"${BUILT_PRODUCTS_DIR}/MJPopupViewController/MJPopupViewController.framework",
 				"${BUILT_PRODUCTS_DIR}/MJRefresh/MJRefresh.framework",
 				"${BUILT_PRODUCTS_DIR}/Masonry/Masonry.framework",
-				"${BUILT_PRODUCTS_DIR}/NJKWebViewProgress/NJKWebViewProgress.framework",
 				"${BUILT_PRODUCTS_DIR}/OpenUDID/OpenUDID.framework",
 				"${BUILT_PRODUCTS_DIR}/PinYin4Objc/PinYin4Objc.framework",
 				"${BUILT_PRODUCTS_DIR}/SDCycleScrollView/SDCycleScrollView.framework",
@@ -1162,7 +1146,6 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MJPopupViewController.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MJRefresh.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Masonry.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NJKWebViewProgress.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/OpenUDID.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PinYin4Objc.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDCycleScrollView.framework",
@@ -1217,7 +1200,6 @@
 				789A4F5C21FAF3A8001528B9 /* MyEqualCellSizeCollectionViewController.m in Sources */,
 				789A4F9C21FAF3FB001528B9 /* MyOpenTableView.m in Sources */,
 				976CB3242FFE6AA4000505DD /* DataEmptyViewFactory.m in Sources */,
-				976CB34F2FFE6C9D000505DD /* DemoCacheUtil.m in Sources */,
 				976CB3502FFE6C9D000505DD /* TestDataModel.m in Sources */,
 				976CB3512FFE6C9D000505DD /* TestDataUtil.m in Sources */,
 				976CB3522FFE6C9D000505DD /* DemoInfo.m in Sources */,

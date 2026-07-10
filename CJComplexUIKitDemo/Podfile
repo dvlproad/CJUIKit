@@ -43,7 +43,6 @@ target 'CJComplexUIKitDemo' do
 #  pod 'CJComplexUIKit/CJHomeCollectionView',  :path => '../’
   
   pod 'AFNetworking/Reachability'
-  pod 'NJKWebViewProgress'
   pod 'SVProgressHUD'
   pod 'SDCycleScrollView', '~> 1.75' #(已包括SDWebImage)原理其实就是扩大dataSource的count
   #    pod 'SDWebImage', '~> 4.0.0'

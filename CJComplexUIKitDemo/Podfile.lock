@@ -184,11 +184,6 @@ PODS:
   - MBProgressHUD (1.2.0)
   - MJPopupViewController (0.4)
   - MJRefresh (3.7.9)
-  - NJKWebViewProgress (0.2.3):
-    - NJKWebViewProgress/Core (= 0.2.3)
-    - NJKWebViewProgress/ProgressView (= 0.2.3)
-  - NJKWebViewProgress/Core (0.2.3)
-  - NJKWebViewProgress/ProgressView (0.2.3)
   - OpenUDID (1.0.0)
   - PinYin4Objc (1.1.1)
   - SDCycleScrollView (1.82):
@@ -224,7 +219,6 @@ DEPENDENCIES:
   - IjinbuNetwork (~> 0.1.0)
   - JGActionSheet
   - MJPopupViewController (~> 0.4)
-  - NJKWebViewProgress
   - SDCycleScrollView (~> 1.75)
   - SVProgressHUD
 
@@ -253,7 +247,6 @@ SPEC REPOS:
     - MBProgressHUD
     - MJPopupViewController
     - MJRefresh
-    - NJKWebViewProgress
     - OpenUDID
     - PinYin4Objc
     - SDCycleScrollView
@@ -271,7 +264,7 @@ SPEC CHECKSUMS:
   CJBaseHelper: 9a903eb83edd4e831e39c5112c6940e2559b79b7
   CJBaseUIKit: 1445f55a4c9f942351fcd1964694f32196472837
   CJBaseUtil: 1bbf8d5f831dc12ae4bb06c8b5326bd39f3522e1
-  CJComplexUIKit: 1f3e7e577f288f342dfa766722e6f7785210de87
+  CJComplexUIKit: 44887889975c332c521037f71746dd19b805b66f
   CJContainer: b7d5d626a05691c9107ce57b5991ab5c066f86a3
   CJFile: 6c1e6d55b3b94e8afbaa9f413f131301d15fdc48
   CJFoundation: 53b4df7152c6d6fd776f55f387c67f431b8574bd
@@ -289,7 +282,6 @@ SPEC CHECKSUMS:
   MBProgressHUD: 3ee5efcc380f6a79a7cc9b363dd669c5e1ae7406
   MJPopupViewController: e9ad553a3145eb8126ba2748e872ae7fb25cc605
   MJRefresh: ff9e531227924c84ce459338414550a05d2aea78
-  NJKWebViewProgress: f481fd424cb5ecc27eacae11b5397db92fba9a4d
   OpenUDID: e7cb6984c7304906ad20f3a36bf087b025896b6b
   PinYin4Objc: 3fa9673610368330e2dfb688b1d19a35c3930a78
   SDCycleScrollView: a0d74c3384caa72bdfc81470bdbc8c14b3e1fbcf
@@ -297,6 +289,6 @@ SPEC CHECKSUMS:
   SnapKit: d612e99e678a2d3b95bf60b0705ed0a35c03484a
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
 
-PODFILE CHECKSUM: 28bb560829b2ceed4cef58226331768c3363bf2e
+PODFILE CHECKSUM: cda13db09d90b781d674e70f8993ced1733c41ce
 
 COCOAPODS: 1.16.2
