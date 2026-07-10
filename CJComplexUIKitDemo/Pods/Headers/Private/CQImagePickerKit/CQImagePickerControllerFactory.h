@@ -1,1 +1,0 @@
-../../../CQImagePickerKit/CQImagePickerKit/ImagePickerController/CQImagePickerControllerFactory.h

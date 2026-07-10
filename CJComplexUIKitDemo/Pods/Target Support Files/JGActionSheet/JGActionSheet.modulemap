@@ -1,0 +1,6 @@
+framework module JGActionSheet {
+  umbrella header "JGActionSheet-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -10,8 +10,12 @@
 #define CJComplexUIKit_h
 
 
+//搜索相关
+#import "CJSearchTableView.h"
+#import "MySearchEqualCellSizeCollectionView.h"
+
 //图片选择相关
-#import "CJImageAddDeletePickUploadCollectionView.h"
+#import "CJUploadImageCollectionView.h"
 
 
 

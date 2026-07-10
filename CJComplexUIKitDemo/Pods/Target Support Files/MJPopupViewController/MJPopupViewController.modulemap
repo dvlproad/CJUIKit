@@ -1,4 +1,4 @@
-module MJPopupViewController {
+framework module MJPopupViewController {
   umbrella header "MJPopupViewController-umbrella.h"
 
   export *

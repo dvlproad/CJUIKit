@@ -11,7 +11,6 @@
 #import "ScrollViewHomeViewController.h"
 #import "TableHomeViewController.h"
 #import "CollectionHomeViewController.h"
-#import "WebHomeViewController.h"
 
 @implementation AppDelegate (WindowRootViewController)
 
@@ -44,20 +43,6 @@
     collectionViewHomeViewController.tabBarItem.image = [[UIImage imageNamed:@"icons8-calendar"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     UINavigationController *collectionViewHomeNavigationController = [[UINavigationController alloc] initWithRootViewController:collectionViewHomeViewController];
     [tabBarController addChildViewController:collectionViewHomeNavigationController];
-    
-    WebHomeViewController *scrollViewHomeViewController = [[WebHomeViewController alloc] init];
-    scrollViewHomeViewController.tabBarItem.title = NSLocalizedString(@"Web", nil);
-    scrollViewHomeViewController.tabBarItem.image = [[UIImage imageNamed:@"icons8-calendar"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
-    UINavigationController *scrollViewHomeNavigationController = [[UINavigationController alloc] initWithRootViewController:scrollViewHomeViewController];
-    [tabBarController addChildViewController:scrollViewHomeNavigationController];
-    
-    ScrollViewHomeViewController *moreHomeViewController = [[ScrollViewHomeViewController alloc] init];
-    moreHomeViewController.view.backgroundColor = [UIColor whiteColor];
-    moreHomeViewController.navigationItem.title = NSLocalizedString(@"更多", nil);
-    moreHomeViewController.tabBarItem.title = NSLocalizedString(@"更多", nil);
-    moreHomeViewController.tabBarItem.image = [[UIImage imageNamed:@"icons8-settings"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
-    UINavigationController *moreHomeNavigationController = [[UINavigationController alloc] initWithRootViewController:moreHomeViewController];
-    [tabBarController addChildViewController:moreHomeNavigationController];
     
     /*
     OtherHomeViewController *viewController4 = [[OtherHomeViewController alloc] init];

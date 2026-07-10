@@ -11,6 +11,7 @@ import Foundation
 import UIKit
 import SnapKit
 import CJContainer
+// 因为引入的CJContainer 不是Swift库，所以你所在的工程的Podfile，至少单独需要 pod 'CJContainer', :modular_headers => true，或者全局设置#use_frameworks! 或 use_modular_headers! 的一种
 
 public class CQCancelOKImageAlertView: UIView {
     fileprivate var imageLabelView: CQHorizontalImageLabelView?
@@ -52,7 +53,7 @@ public class CQCancelOKImageAlertView: UIView {
         
         let imageLabelView: CQHorizontalImageLabelView = CQHorizontalImageLabelView.init(iconHeight: 22, iconTitleSpacing: 0, contentHorizontalAlignment: UIControl.ContentHorizontalAlignment.center)
         self.addSubview(imageLabelView)
-        imageLabelView.snp_makeConstraints { (make) in
+        imageLabelView.snp.makeConstraints { (make) in
             make.left.equalTo(self).offset(50)
             make.centerX.equalTo(self)
             make.top.equalToSuperview().offset(44)
@@ -79,8 +80,8 @@ public class CQCancelOKImageAlertView: UIView {
         paragraphStyle.alignment = .center
         desLabel.attributedText = NSMutableAttributedString(string: "你要先完善资料，这样喜欢对方之后才会被对方看到～", attributes: [NSAttributedString.Key.paragraphStyle: paragraphStyle])
         self.addSubview(desLabel)
-        desLabel.snp_makeConstraints { (make) in
-            make.top.equalTo(titleLable.snp_bottom).offset(10)
+        desLabel.snp.makeConstraints { (make) in
+            make.top.equalTo(titleLable.snp.bottom).offset(10)
             make.left.equalTo(self).offset(34)
             make.centerX.equalTo(self)
             make.height.equalTo(40)
@@ -90,8 +91,8 @@ public class CQCancelOKImageAlertView: UIView {
         let emptyImageView: UIImageView = UIImageView.init()
         emptyImageView.image = UIImage.init(named: "pic_guide_improve")
         self.addSubview(emptyImageView)
-        emptyImageView.snp_makeConstraints { (make) in
-            make.top.equalTo(desLabel.snp_bottom).offset(20)
+        emptyImageView.snp.makeConstraints { (make) in
+            make.top.equalTo(desLabel.snp.bottom).offset(20)
             make.width.height.equalTo(160)
             make.centerX.equalTo(titleLable)
         }
@@ -101,10 +102,10 @@ public class CQCancelOKImageAlertView: UIView {
         improveButton1.addTarget(self, action: #selector(clickOK), for: .touchUpInside)
         improveButton1.setTitle("马上开启", for: .normal)
         self.addSubview(improveButton1)
-        improveButton1.snp_makeConstraints { (make) in
+        improveButton1.snp.makeConstraints { (make) in
             make.left.equalTo(self).offset(34)
             make.centerX.equalTo(self)
-            make.top.equalTo(emptyImageView.snp_bottom).offset(10)
+            make.top.equalTo(emptyImageView.snp.bottom).offset(10)
             make.height.equalTo(50)
         }
         self.okButton = improveButton1
@@ -115,10 +116,10 @@ public class CQCancelOKImageAlertView: UIView {
         improveButton2.addTarget(self, action: #selector(clickCancel), for: .touchUpInside)
         improveButton2.setTitle("稍后再说", for: .normal)
         self.addSubview(improveButton2)
-        improveButton2.snp_makeConstraints { (make) in
+        improveButton2.snp.makeConstraints { (make) in
             make.left.equalTo(self).offset(34)
             make.centerX.equalTo(self)
-            make.top.equalTo(improveButton1.snp_bottom).offset(10)
+            make.top.equalTo(improveButton1.snp.bottom).offset(10)
             make.height.equalTo(50)
         }
         self.cancelButton = improveButton2

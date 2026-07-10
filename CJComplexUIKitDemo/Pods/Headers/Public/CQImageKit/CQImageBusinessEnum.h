@@ -1,1 +1,0 @@
-../../../CQImageKit/CQImageKit/Loader/CQImageBusinessEnum.h

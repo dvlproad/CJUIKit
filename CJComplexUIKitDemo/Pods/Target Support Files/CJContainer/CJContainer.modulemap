@@ -1,4 +1,4 @@
-module CJContainer {
+framework module CJContainer {
   umbrella header "CJContainer-umbrella.h"
 
   export *

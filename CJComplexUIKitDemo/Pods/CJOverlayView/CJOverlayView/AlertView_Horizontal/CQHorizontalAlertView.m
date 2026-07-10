@@ -8,6 +8,7 @@
 
 #import "CQHorizontalAlertView.h"
 #import <Masonry/Masonry.h>
+//#import "CJOverlayView/CJOverlayView-Swift.h"
 
 @interface CQHorizontalAlertView () {
     
@@ -150,5 +151,16 @@
 - (void)clickCloseAction:(UIButton *)sender {
     !self.closeHandle ?: self.closeHandle();
 }
+
+/*
+#pragma mark - Test
+- (void)testCallSwift {
+    UIImage *image = [UIImage imageNamed:@"ts.png"];
+    CQIKnowImageAlertView *alertView = [[CQIKnowImageAlertView alloc] initWithFrame:CGRectZero title:@"hello" desText:@"descript" image:image iknowTitle:@"我知道了" iknowClickBlock:^(CQIKnowImageAlertView * _Nonnull b_alertView) {
+        
+    }];
+    [alertView updateDesTextWithDesText:@"测试2"];
+}
+*/
 
 @end

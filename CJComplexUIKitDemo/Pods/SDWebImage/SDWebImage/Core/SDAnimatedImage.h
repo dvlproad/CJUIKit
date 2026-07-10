@@ -68,11 +68,13 @@
 /**
  The image class which supports animating on `SDAnimatedImageView`. You can also use it on normal UIImageView/NSImageView.
  */
+NS_SWIFT_NONISOLATED
 @interface SDAnimatedImage : UIImage <SDAnimatedImage>
 
 // This class override these methods from UIImage(NSImage), and it supports NSSecureCoding.
 // You should use these methods to create a new animated image. Use other methods just call super instead.
-// Pay attention, when the animated image frame count <= 1, all the `SDAnimatedImageProvider` protocol methods will return nil or 0 value, you'd better check the frame count before usage and keep fallback.
+// @note Before 5.19, these initializer will return nil for static image (when all candidate SDAnimatedImageCoder returns nil instance), like JPEG data. After 5.19, these initializer will retry for static image as well, so JPEG data will return non-nil instance. For vector image(PDF/SVG), always return nil.
+// @note When the animated image frame count <= 1, all the `SDAnimatedImageProvider` protocol methods will return nil or 0 value, you'd better check the frame count before usage and keep fallback.
 + (nullable instancetype)imageNamed:(nonnull NSString *)name; // Cache in memory, no Asset Catalog support
 #if __has_include(<UIKit/UITraitCollection.h>)
 + (nullable instancetype)imageNamed:(nonnull NSString *)name inBundle:(nullable NSBundle *)bundle compatibleWithTraitCollection:(nullable UITraitCollection *)traitCollection; // Cache in memory, no Asset Catalog support
@@ -88,7 +90,8 @@
 
 /**
  Current animated image format.
- @note This format is only valid when `animatedImageData` not nil
+ @note This format is only valid when `animatedImageData` not nil.
+ @note This actually just call `[NSData sd_imageFormatForImageData:self.animatedImageData]`
  */
 @property (nonatomic, assign, readonly) SDImageFormat animatedImageFormat;
 

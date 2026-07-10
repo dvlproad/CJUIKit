@@ -10,16 +10,12 @@
 #endif
 #endif
 
-#import "NSDictionary+CJConvert.h"
-#import "NSJSONSerialization+CJCategory.h"
 #import "NSString+CJAttributedString.h"
 #import "NSString+CJCategory.h"
 #import "NSString+CJCut.h"
 #import "NSString+CJEncoding.h"
 #import "NSString+CJEncryption.h"
-#import "NSString+CJTextLength.h"
 #import "NSString+CJTextSize.h"
-#import "NSString+CJTextSizeInView.h"
 #import "NSString+CJValidate.h"
 
 FOUNDATION_EXPORT double CJFoundationVersionNumber;

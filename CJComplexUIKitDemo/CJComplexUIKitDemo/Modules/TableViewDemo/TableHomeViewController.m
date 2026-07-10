@@ -15,6 +15,9 @@
 #import "OpenTableViewController1.h"
 #import "OpenTableViewController2.h"
 
+//Search--DataScrollView
+#import "SearchTableViewController.h"
+
 @interface TableHomeViewController ()  {
     
 }
@@ -33,7 +36,7 @@
     
     //UITableView
     {
-        CQDMSectionDataModel *sectionDataModel = [[CQDMSectionDataModel alloc] init];
+        CJSectionDataModel *sectionDataModel = [[CJSectionDataModel alloc] init];
         sectionDataModel.theme = @"UITableView相关";
         {
             CQDMModuleModel *TableViewModule = [[CQDMModuleModel alloc] init];
@@ -68,6 +71,20 @@
             openTableModule.classEntry = [OpenTableViewController2 class];
             openTableModule.isCreateByXib = YES;
             [sectionDataModel.values addObject:openTableModule];
+        }
+        [sectionDataModels addObject:sectionDataModel];
+    }
+    
+    //DataScrollView
+    {
+        CJSectionDataModel *sectionDataModel = [[CJSectionDataModel alloc] init];
+        sectionDataModel.theme = @"DataScrollView(带数据源的滚动视图)";
+        {
+            CQDMModuleModel *searchTableViewModule = [[CQDMModuleModel alloc] init];
+            searchTableViewModule.title = @"带搜索功能的列表";
+            searchTableViewModule.classEntry = [SearchTableViewController class];
+            searchTableViewModule.isCreateByXib = YES;
+            [sectionDataModel.values addObject:searchTableViewModule];
         }
         [sectionDataModels addObject:sectionDataModel];
     }

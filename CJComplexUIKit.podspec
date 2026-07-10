@@ -6,17 +6,14 @@ Pod::Spec.new do |s|
   s.homepage     = "https://github.com/dvlproad/CJUIKit"
 
   s.description  = <<-DESC
-                 - CJComplexUIKit/CJCollectionView/MyEqualCellSizeCollectionView：一个只有一个分区且分区中的每个cell大小相等的集合视图(cell的大小可通过方法①设置cell的固定大小和方法②通过设置每行最大显示的cell个数获得)
-                 - CJComplexUIKit/CJCollectionView/CJOpenCollectionView：可展开的集合视图
                  自定义的稍微复杂的UI，可按需独立引入：
-                 • CJComplexUIKit/UIViewController - UIViewController
-                 • CJComplexUIKit/UIViewController/CJBaseWebViewController - Web视图控制器基类
 
                  • CJComplexUIKit/CJScrollView - 滚动视图：自定义的基础滚动视图
                  
                  • CJComplexUIKit/CJCollectionView - 自定义的集合视图
                  • CJComplexUIKit/CJCollectionView/CJBaseCollectionViewCell - 集合单元格
                  • CJComplexUIKit/CJCollectionView/CJCollectionViewLayout - 集合视图布局
+                 • CJComplexUIKit/CJCollectionView/MyEqualCellSizeCollectionView - 一个只有一个分区且分区中的每个cell大小相等的集合视图(cell的大小可通过方法①设置cell的固定大小和方法②通过设置每行最大显示的cell个数获得)
 
                  • CJComplexUIKit/CJDataScrollView - 带数据的列表视图或集合视图(常用于搜索、图片选择)
                  • CJComplexUIKit/CJDataScrollView/SearchScrollView - 搜索滚动视图
@@ -36,7 +33,7 @@ Pod::Spec.new do |s|
 
   s.author   = { "dvlproad" => "" }
 
-  s.platform     = :ios, "9.0"
+  s.platform     = :ios, "8.0"
  
   s.source       = { :git => "https://github.com/dvlproad/CJUIKit.git", :tag => "CJComplexUIKit_0.3.0" }
   s.source_files  = "CJComplexUIKit/*.{h,m}"
@@ -49,52 +46,32 @@ Pod::Spec.new do |s|
   # s.dependency "JSONKit", "~> 1.4"
 
 
-  
-  # UIViewController
-  s.subspec 'UIViewController' do |ss|
-    # ss.subspec 'ProgressWebViewController' do |sss|
-    #   sss.source_files = "CJComplexUIKit/UIViewController/ProgressWebViewController/**/*.{h,m}"
-
-    #   sss.dependency 'Masonry'
-    #   sss.dependency 'SVProgressHUD'
-    #   sss.dependency 'NJKWebViewProgress'
-    # end
-
-    # Web视图控制器基类
-    ss.subspec 'CJBaseWebViewController' do |sss|
-      sss.source_files = "CJComplexUIKit/UIViewController/CJBaseWebViewController/**/*.{h,m}"
-
-      sss.dependency 'Masonry'
-      sss.dependency 'SVProgressHUD'
-      sss.dependency 'CJBaseHelper/WebCJHelper'
-    end
-  end
-
-
-  # 滚动视图：自定义的基础滚动视图
+  # 与 UIScrollView 相关的基础类
   s.subspec 'CJScrollView' do |ss|
     ss.source_files = "CJComplexUIKit/CJScrollView/**/*.{h,m}"
   end
 
 
-  # 自定义的集合视图
+    # 与 UICollectionView 相关的基础类
   s.subspec 'CJCollectionView' do |ss|
-    # 集合单元格
     ss.subspec 'CJBaseCollectionViewCell' do |sss|
       sss.source_files = "CJComplexUIKit/CJCollectionView/CJBaseCollectionViewCell/**/*.{h,m}"
     end
 
-    # 集合视图布局
     ss.subspec 'CJCollectionViewLayout' do |sss|
       sss.source_files = "CJComplexUIKit/CJCollectionView/CJCollectionViewLayout/**/*.{h,m}"
     end
 
-  end
+    # 各种集合视图
+    # 一个只有一个分区且分区中的每个cell大小相等的集合视图(cell的大小可通过方法①设置cell的固定大小和方法②通过设置每行最大显示的cell个数获得)
+    ss.subspec 'MyEqualCellSizeCollectionView' do |sss|
+      sss.source_files = "CJComplexUIKit/CJCollectionView/MyEqualCellSizeCollectionView/**/*.{h,m}"
+    end
 
+  end
 
   # 带数据的列表视图或集合视图(常用于搜索、图片选择)
   s.subspec 'CJDataScrollView' do |ss|
-    # 搜索滚动视图
     ss.subspec 'SearchScrollView' do |sss|
       sss.source_files = "CJComplexUIKit/CJDataScrollView/SearchScrollView/**/*.{h,m}"
 
@@ -103,7 +80,6 @@ Pod::Spec.new do |s|
       sss.dependency 'CJBaseUtil/CJDataUtil'
     end
 
-    # 图片选择集合视图
     ss.subspec 'ImagePickerCollectionlView' do |sss|
       sss.source_files = "CJComplexUIKit/CJDataScrollView/ImagePickerCollectionlView/**/*.{h,m}"
       sss.resources = "CJComplexUIKit/CJDataScrollView/ImagePickerCollectionlView/**/*.{png,xib,bundle}"

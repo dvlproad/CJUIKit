@@ -1,1 +1,0 @@
-../../../CJBaseEffectKit/CJBaseEffectKit/CJScaleHeadView/MyUserInfoScaleHeadView.h

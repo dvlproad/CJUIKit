@@ -1,4 +1,4 @@
-module CJBaseHelper {
+framework module CJBaseHelper {
   umbrella header "CJBaseHelper-umbrella.h"
 
   export *

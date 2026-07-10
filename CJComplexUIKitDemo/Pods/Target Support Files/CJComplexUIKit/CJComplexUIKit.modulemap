@@ -1,4 +1,4 @@
-module CJComplexUIKit {
+framework module CJComplexUIKit {
   umbrella header "CJComplexUIKit-umbrella.h"
 
   export *

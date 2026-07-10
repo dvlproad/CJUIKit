@@ -1,4 +1,4 @@
-module CJBaseEffectKit {
+framework module CJBaseEffectKit {
   umbrella header "CJBaseEffectKit-umbrella.h"
 
   export *

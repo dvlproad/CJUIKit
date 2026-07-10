@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-NS_ASSUME_NONNULL_BEGIN
-
 /**
  *  图片等上传时候，为了显示进度而添加的视图
  */
@@ -28,5 +26,3 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)updateProgressText:(NSString *)progressText progressVaule:(CGFloat)progressValue;
 
 @end
-
-NS_ASSUME_NONNULL_END

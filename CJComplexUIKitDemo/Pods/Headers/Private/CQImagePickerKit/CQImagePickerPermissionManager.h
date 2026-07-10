@@ -1,1 +1,0 @@
-../../../CQImagePickerKit/CQImagePickerKit/ImagePickerPermissionManager/CQImagePickerPermissionManager.h

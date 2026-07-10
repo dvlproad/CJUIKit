@@ -1,4 +1,4 @@
-module OpenUDID {
+framework module OpenUDID {
   umbrella header "OpenUDID-umbrella.h"
 
   export *

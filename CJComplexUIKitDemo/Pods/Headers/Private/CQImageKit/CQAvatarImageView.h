@@ -1,1 +1,0 @@
-../../../CQImageKit/CQImageKit/AvatarImageView/CQAvatarImageView.h

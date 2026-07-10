@@ -78,6 +78,14 @@ NS_ASSUME_NONNULL_BEGIN
                      cancelHandle:(void(^)(void))cancelHandle
                          okHandle:(void(^)(void))okHandle;
 
+/*
+*  计算alertView弹窗最后的大小
+*
+*  @param shouldAutoFitHeight   是否根据文本自动适应高度(宽度固定)
+*
+*  @return alertView弹窗最终的大小
+*/
+- (CGSize)alertSizeWithShouldAutoFitHeight:(BOOL)shouldAutoFitHeight NS_REQUIRES_SUPER;
 
 @end
 

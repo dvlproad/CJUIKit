@@ -1,0 +1,6 @@
+framework module CJMedia {
+  umbrella header "CJMedia-umbrella.h"
+
+  export *
+  module * { export * }
+}

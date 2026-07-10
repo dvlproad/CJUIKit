@@ -72,7 +72,7 @@
 - (void)addOnlyOneBottomButtonWithOKButtonTitle:(NSString *)okButtonTitle
                                        okHandle:(void(^)(void))okHandle
 {
-    __weak typeof(self)weakSelf = self;
+    //__weak typeof(self)weakSelf = self;
     CJAlertBottomButtonsModel *bottomButtonsModel = [CJAlertComponentFactory onlyOneBottomButtonWithIKnowButtonTitle:okButtonTitle iKnowHandle:^(UIButton *button) {
         if (okHandle) {
             okHandle();
@@ -102,7 +102,7 @@
                               cancelHandle:(void(^)(void))cancelHandle
                                   okHandle:(void(^)(void))okHandle
 {
-    __weak typeof(self)weakSelf = self;
+    //__weak typeof(self)weakSelf = self;
     CJAlertBottomButtonsModel *bottomButtonsModel = [CJAlertComponentFactory twoButtonsWithCancelButtonTitle:cancelButtonTitle okButtonTitle:okButtonTitle cancelHandle:^(UIButton *button) {
         if (cancelHandle) {
             cancelHandle();

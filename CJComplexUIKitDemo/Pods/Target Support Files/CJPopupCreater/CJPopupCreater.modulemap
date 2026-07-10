@@ -1,6 +1,0 @@
-module CJPopupCreater {
-  umbrella header "CJPopupCreater-umbrella.h"
-
-  export *
-  module * { export * }
-}

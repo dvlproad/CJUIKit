@@ -18,6 +18,7 @@
     return self;
 }
 
+#pragma mark - NSCopying, NSMutableCopying
 //知识点(深拷贝deepCopy)
 - (id)copyWithZone:(NSZone *)zone {
     CQDMSectionDataModel *deepCopySectionDataModel = [[self class] allocWithZone:zone];
@@ -48,5 +49,24 @@
     
     return deepCopySectionDataModel;
 }
+
+
+#pragma mark - NSCoding
+- (instancetype)initWithCoder:(NSCoder *)coder {
+    self = [super init];
+    if (self) {
+        _type = [coder decodeIntegerForKey:@"type"];
+        _theme = [coder decodeObjectForKey:@"theme"];
+        _values = [coder decodeObjectForKey:@"values"];
+    }
+    return self;
+}
+
+- (void)encodeWithCoder:(NSCoder *)coder {
+    [coder encodeInteger:_type forKey:@"type"];
+    [coder encodeObject:_theme forKey:@"theme"];
+    [coder encodeObject:_values forKey:@"values"];
+}
+
 
 @end

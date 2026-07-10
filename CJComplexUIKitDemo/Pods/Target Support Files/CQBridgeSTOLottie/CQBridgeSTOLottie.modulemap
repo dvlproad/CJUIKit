@@ -1,0 +1,6 @@
+framework module CQBridgeSTOLottie {
+  umbrella header "CQBridgeSTOLottie-umbrella.h"
+
+  export *
+  module * { export * }
+}

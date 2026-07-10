@@ -1,1 +1,0 @@
-../../../CQDemoKit/CQDemoKit/Helper/UIImage+CQDemoKit.h

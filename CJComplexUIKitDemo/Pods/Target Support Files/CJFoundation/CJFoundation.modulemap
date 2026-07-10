@@ -1,4 +1,4 @@
-module CJFoundation {
+framework module CJFoundation {
   umbrella header "CJFoundation-umbrella.h"
 
   export *

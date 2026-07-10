@@ -1,4 +1,4 @@
-module IjinbuNetwork {
+framework module IjinbuNetwork {
   umbrella header "IjinbuNetwork-umbrella.h"
 
   export *

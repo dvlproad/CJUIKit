@@ -18,7 +18,7 @@ public class CQIKnowImageAlertView: UIView {
     fileprivate var improveButton1: UIButton?
     @objc fileprivate var IKnowClickBlock: ((_ bAlertView: CQIKnowImageAlertView)->())?
     
-    public init(frame: CGRect, title: String, desText: String, image: UIImage, iknowTitle: String, iknowClickBlock: ((_ bAlertView: CQIKnowImageAlertView)->())?) {
+    @objc public init(frame: CGRect, title: String, desText: String, image: UIImage, iknowTitle: String, iknowClickBlock: ((_ bAlertView: CQIKnowImageAlertView)->())?) {
         super.init(frame: frame)
         
         self.setupViews()
@@ -34,7 +34,7 @@ public class CQIKnowImageAlertView: UIView {
     }
     
     
-    func updateDesText(desText: String) -> Void {
+    @objc public func updateDesText(desText: String) -> Void {
         let paragraphStyle = NSMutableParagraphStyle()
         paragraphStyle.lineHeightMultiple = 1.1
         paragraphStyle.alignment = .center
@@ -53,7 +53,7 @@ public class CQIKnowImageAlertView: UIView {
         titleLable.textAlignment = .center
         titleLable.text = "完善资料"
         self.addSubview(titleLable)
-        titleLable.snp_makeConstraints { (make) in
+        titleLable.snp.makeConstraints { (make) in
             make.centerX.equalTo(self)
             make.top.equalToSuperview().offset(44)
             make.height.equalTo(24)
@@ -66,8 +66,8 @@ public class CQIKnowImageAlertView: UIView {
         desLabel.numberOfLines = 0
         desLabel.lineBreakMode = .byWordWrapping
         self.addSubview(desLabel)
-        desLabel.snp_makeConstraints { (make) in
-            make.top.equalTo(titleLable.snp_bottom).offset(10)
+        desLabel.snp.makeConstraints { (make) in
+            make.top.equalTo(titleLable.snp.bottom).offset(10)
             make.left.equalTo(self).offset(34)
             make.centerX.equalTo(self)
             make.height.equalTo(38) // 36的高度不够显示两行，改成38
@@ -77,8 +77,8 @@ public class CQIKnowImageAlertView: UIView {
         let emptyImageView: UIImageView = UIImageView.init()
         emptyImageView.image = UIImage.init(named: "pic_guide_improve")
         self.addSubview(emptyImageView)
-        emptyImageView.snp_makeConstraints { (make) in
-            make.top.equalTo(desLabel.snp_bottom).offset(10)
+        emptyImageView.snp.makeConstraints { (make) in
+            make.top.equalTo(desLabel.snp.bottom).offset(10)
             make.width.height.equalTo(160)
             make.centerX.equalTo(titleLable)
         }
@@ -88,10 +88,10 @@ public class CQIKnowImageAlertView: UIView {
         improveButton1.addTarget(self, action: #selector(imporveInfo1), for: .touchUpInside)
         improveButton1.setTitle("去完善", for: .normal)
         self.addSubview(improveButton1)
-        improveButton1.snp_makeConstraints { (make) in
+        improveButton1.snp.makeConstraints { (make) in
             make.left.equalTo(self).offset(34)
             make.centerX.equalTo(self)
-            make.top.equalTo(emptyImageView.snp_bottom).offset(10)
+            make.top.equalTo(emptyImageView.snp.bottom).offset(10)
             make.height.equalTo(44)
         }
         self.improveButton1 = improveButton1
@@ -120,4 +120,13 @@ public class CQIKnowImageAlertView: UIView {
     public class func viewHeight() -> CGFloat {
         return 374
     }
+    
+    /*
+    // MARK: - Test Mixing
+    func testCallOC() {
+        let view: CJBaseAlertView = CJBaseAlertView.init()
+        
+        let factory: CJAlertComponentFactory = CJAlertComponentFactory()
+    }
+    */
 }

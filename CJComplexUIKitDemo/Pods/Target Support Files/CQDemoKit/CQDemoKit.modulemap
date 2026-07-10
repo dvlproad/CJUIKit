@@ -1,4 +1,4 @@
-module CQDemoKit {
+framework module CQDemoKit {
   umbrella header "CQDemoKit-umbrella.h"
 
   export *

@@ -1,1 +1,0 @@
-../../../CQImageKit/CQImageKit/Loader/CQImageLoaderCut.h

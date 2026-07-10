@@ -8,10 +8,16 @@
 
 #import "CollectionHomeViewController.h"
 
+
+
 //UICollectionView
 #import "CvDemo_Complex.h"
 
+#import "MyEqualCellSizeCollectionViewController.h"
+#import "MyEqualCellSizeViewController.h"
 #import "MyCycleADViewController.h"
+
+#import "CustomLayoutCollectionViewController.h"
 
 //图片选择的集合视图
 #import "UploadNoneImagePickerViewController.h"
@@ -35,7 +41,7 @@
     
     //UICollectionView
     {
-        CQDMSectionDataModel *sectionDataModel = [[CQDMSectionDataModel alloc] init];
+        CJSectionDataModel *sectionDataModel = [[CJSectionDataModel alloc] init];
         sectionDataModel.theme = @"UICollectionView相关";
         {
             CQDMModuleModel *complexDemoModule = [[CQDMModuleModel alloc] init];
@@ -45,29 +51,52 @@
             [sectionDataModel.values addObject:complexDemoModule];
         }
         {
+            CQDMModuleModel *MyEqualCellSizeCollectionViewModule = [[CQDMModuleModel alloc] init];
+            MyEqualCellSizeCollectionViewModule.title = @"MyEqualCellSizeCollectionView(等cell大小)";
+            MyEqualCellSizeCollectionViewModule.classEntry = [MyEqualCellSizeCollectionViewController class];
+            MyEqualCellSizeCollectionViewModule.isCreateByXib = YES;
+            [sectionDataModel.values addObject:MyEqualCellSizeCollectionViewModule];
+        }
+        {
+            CQDMModuleModel *MyEqualCellSizeViewModule = [[CQDMModuleModel alloc] init];
+            MyEqualCellSizeViewModule.title = @"MyEqualCellSizeView(嵌套的等cell大小)";
+            MyEqualCellSizeViewModule.classEntry = [MyEqualCellSizeViewController class];
+            MyEqualCellSizeViewModule.isCreateByXib = YES;
+            [sectionDataModel.values addObject:MyEqualCellSizeViewModule];
+        }
+        {
             CQDMModuleModel *cycleScrollViewModule = [[CQDMModuleModel alloc] init];
             cycleScrollViewModule.title = @"MyCycleADView(无限循环的视图)";
             cycleScrollViewModule.classEntry = [MyCycleADViewController class];
             cycleScrollViewModule.isCreateByXib = YES;
             [sectionDataModel.values addObject:cycleScrollViewModule];
         }
+        {
+            CQDMModuleModel *customLayoutModule = [[CQDMModuleModel alloc] init];
+            customLayoutModule.title = @"CustomLayout(自定义布局)";
+            customLayoutModule.classEntry = [CustomLayoutCollectionViewController class];
+            customLayoutModule.isCreateByXib = YES;
+            [sectionDataModel.values addObject:customLayoutModule];
+        }
         [sectionDataModels addObject:sectionDataModel];
     }
     
     //图片选择的集合视图DataScrollView
     {
-        CQDMSectionDataModel *sectionDataModel = [[CQDMSectionDataModel alloc] init];
+        CJSectionDataModel *sectionDataModel = [[CJSectionDataModel alloc] init];
         sectionDataModel.theme = @"DataScrollView(带数据源的滚动视图)";
         {
             CQDMModuleModel *imagePickerCollectionViewModule = [[CQDMModuleModel alloc] init];
             imagePickerCollectionViewModule.title = @"图片选择的集合视图(没上传操作)";
             imagePickerCollectionViewModule.classEntry = [UploadNoneImagePickerViewController class];
+            imagePickerCollectionViewModule.isCreateByXib = YES;
             [sectionDataModel.values addObject:imagePickerCollectionViewModule];
         }
         {
             CQDMModuleModel *imagePickerCollectionViewModule = [[CQDMModuleModel alloc] init];
             imagePickerCollectionViewModule.title = @"图片选择的集合视图(有上传操作)";
             imagePickerCollectionViewModule.classEntry = [UploadDirectlyImagePickerViewController class];
+            imagePickerCollectionViewModule.isCreateByXib = YES;
             [sectionDataModel.values addObject:imagePickerCollectionViewModule];
         }
         

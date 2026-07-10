@@ -11,8 +11,6 @@
 #import "CJOverlayAlertThemeModel.h"
 #import "CJOverlaySheetThemeModel.h"
 
-#define CQConstraintTest_Overlay 1  // 测试布局
-
 @interface CJBaseOverlayThemeModel : NSObject {
     
 }

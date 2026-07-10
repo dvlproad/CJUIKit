@@ -109,9 +109,11 @@ typedef void (^AFNetworkActivityActionBlock)(BOOL networkActivityIndicatorVisibl
 
 - (void)setNetworkActivityIndicatorVisible:(BOOL)networkActivityIndicatorVisible {
     if (_networkActivityIndicatorVisible != networkActivityIndicatorVisible) {
+        [self willChangeValueForKey:@"networkActivityIndicatorVisible"];
         @synchronized(self) {
-            _networkActivityIndicatorVisible = networkActivityIndicatorVisible;
+             _networkActivityIndicatorVisible = networkActivityIndicatorVisible;
         }
+        [self didChangeValueForKey:@"networkActivityIndicatorVisible"];
         if (self.networkActivityActionBlock) {
             self.networkActivityActionBlock(networkActivityIndicatorVisible);
         } else {
@@ -120,20 +122,35 @@ typedef void (^AFNetworkActivityActionBlock)(BOOL networkActivityIndicatorVisibl
     }
 }
 
+- (void)setActivityCount:(NSInteger)activityCount {
+	@synchronized(self) {
+		_activityCount = activityCount;
+	}
+
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self updateCurrentStateForNetworkActivityChange];
+    });
+}
 
 - (void)incrementActivityCount {
-    @synchronized(self) {
-        self.activityCount++;
-    }
+    [self willChangeValueForKey:@"activityCount"];
+	@synchronized(self) {
+		_activityCount++;
+	}
+    [self didChangeValueForKey:@"activityCount"];
+
     dispatch_async(dispatch_get_main_queue(), ^{
         [self updateCurrentStateForNetworkActivityChange];
     });
 }
 
 - (void)decrementActivityCount {
-    @synchronized(self) {
-        self.activityCount = MAX(_activityCount - 1, 0);
-    }
+    [self willChangeValueForKey:@"activityCount"];
+	@synchronized(self) {
+		_activityCount = MAX(_activityCount - 1, 0);
+	}
+    [self didChangeValueForKey:@"activityCount"];
+
     dispatch_async(dispatch_get_main_queue(), ^{
         [self updateCurrentStateForNetworkActivityChange];
     });
@@ -155,6 +172,7 @@ typedef void (^AFNetworkActivityActionBlock)(BOOL networkActivityIndicatorVisibl
 - (void)setCurrentState:(AFNetworkActivityManagerState)currentState {
     @synchronized(self) {
         if (_currentState != currentState) {
+            [self willChangeValueForKey:@"currentState"];
             _currentState = currentState;
             switch (currentState) {
                 case AFNetworkActivityManagerStateNotActive:
@@ -173,7 +191,9 @@ typedef void (^AFNetworkActivityActionBlock)(BOOL networkActivityIndicatorVisibl
                     [self startCompletionDelayTimer];
                     break;
             }
+            [self didChangeValueForKey:@"currentState"];
         }
+        
     }
 }
 

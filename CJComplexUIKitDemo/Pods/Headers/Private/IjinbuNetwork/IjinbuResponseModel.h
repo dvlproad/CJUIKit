@@ -1,1 +1,0 @@
-../../../IjinbuNetwork/IjinbuNetwork/ResponseModels/IjinbuResponseModel.h

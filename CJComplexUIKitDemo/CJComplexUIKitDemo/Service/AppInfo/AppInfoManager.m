@@ -8,7 +8,8 @@
 
 #import "AppInfoManager.h"
 #import <SystemConfiguration/CaptiveNetwork.h>
-#import <CQOverlayKit/CQAlertManager.h>
+#import "TSAlertManager.h"  // #import <CQOverlayKit/CQAlertManager.h>
+
 
 @interface AppInfoManager ()
 
@@ -83,9 +84,9 @@
     
     NSNotificationCenter *defaultCenter = [NSNotificationCenter defaultCenter];
     if (!currentNetworkEnable) {
-        [[CQAlertManager sharedInstance] showNetworkNoOpenAlert:YES];
+        [[TSAlertManager sharedInstance] showNetworkNoOpenAlert:YES];
     } else {
-        [[CQAlertManager sharedInstance] showNetworkNoOpenAlert:NO];
+        [[TSAlertManager sharedInstance] showNetworkNoOpenAlert:NO];
         [defaultCenter postNotificationName:@"NetworkEnableChange" object:nil];
     }
 }

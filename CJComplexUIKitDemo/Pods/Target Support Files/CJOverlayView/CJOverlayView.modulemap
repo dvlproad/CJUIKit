@@ -1,4 +1,4 @@
-module CJOverlayView {
+framework module CJOverlayView {
   umbrella header "CJOverlayView-umbrella.h"
 
   export *

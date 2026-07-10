@@ -1,9 +1,8 @@
 source 'https://github.com/CocoaPods/Specs.git'
 source 'https://gitee.com/dvlproad/dvlproadSpecs'
 
-platform :ios, '9.0'
-#use_frameworks!
-#use_modular_headers!
+platform :ios, '13.0'
+use_frameworks!
 inhibit_all_warnings! #inhibit_warnings参数能够有效的抑制CocoaPods引入的第三方代码库产生的warning。
 
 post_install do |installer|
@@ -14,14 +13,12 @@ post_install do |installer|
     deployment_target_key = 'IPHONEOS_DEPLOYMENT_TARGET'
     deployment_targets = pods_project.build_configurations.map{ |config| config.build_settings[deployment_target_key] }
     minimal_deployment_target = deployment_targets.min_by{ |version| Gem::Version.new(version) }
-    # 所得 minimal_deployment_target 为本文件顶部设置的 platform :ios, '9.0' ，下面打印的log可在执行pod install的终端上查看
-
-    puts 'Minimal deployment target is ' + minimal_deployment_target.to_s # 添加了 .to_s，将值转换为字符串
-    puts 'Setting each pod deployment target to ' + minimal_deployment_target.to_s # 添加了 .to_s，将值转换为字符串
-
+    
+    puts 'Minimal deployment target is ' + minimal_deployment_target
+    puts 'Setting each pod deployment target to ' + minimal_deployment_target
+    
     installer.pods_project.targets.each do |target|
         target.build_configurations.each do |config|
-            # 修复[File not found: /Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/arc/libarclite_iphoneos.a](https://stackoverflow.com/questions/75574268/missing-file-libarclite-iphoneos-a-xcode-14-3)
             config.build_settings[deployment_target_key] = minimal_deployment_target
         end
     end
@@ -29,30 +26,39 @@ end
 
 
 target 'CJComplexUIKitDemo' do
-  pod 'CQDemoKit',        '~> 0.6.9',     :subspecs => ['BaseVC', 'BaseUIKit']
+  pod 'CQDemoKit',          '~> 0.9.2',      :subspecs => ['BaseVC', 'Demo_Resource', 'Demo_DataSourceAndDelegate']
+  #pod 'CQDemoKit',          :path => '../../001-UIKit-CQDemo-iOS',      :subspecs => ['BaseVC', 'Demo_DataSourceAndDelegate']
   
-  pod 'CJComplexUIKit',   :path => '../',  :subspecs => ['CJScrollView', 'CJCollectionView']
-  pod 'CJBaseUIKit',      :path => '../'
+  pod 'CJBaseUIKit',      :subspecs => ['UIColor', 'UINavigationBar', 'UIButton', 'UIImage', 'UITextField', 'CJBaseTableViewHeaderFooterView']
+  pod 'CJBaseUtil',       :subspecs => ['CJDataUtil', 'CJPinyinHelper']
+  pod 'CJBaseHelper',     :subspecs => ['AuthorizationCJHelper']
+  pod 'CJOverlayView'
+  pod 'CJBaseEffectKit'
+  pod 'CJPopupAction'
   
-  pod 'CJBaseHelper',     :path => '../'  #:subspecs => ['NSDateFormatterCJHelper', 'NSCalendarCJHelper', 'WebCJHelper']
-  pod 'CJFoundation',     :path => '../'
-  pod 'CJBaseEffectKit',  :subspecs => ['CJDataEmptyView', 'CJScaleHeadView']
-  pod 'CQOverlayKit',     :subspecs => ['CQAlert']#, :modular_headers => true
-  pod 'CJContainer',      :modular_headers => true  # 修复 CQOverlayKit 引入有swift问题
-  pod 'Masonry',          :modular_headers => true  # 修复 CQOverlayKit 引入有swift问题
+  pod 'CJComplexUIKit',           :path => '../’
   
-
+#  pod 'CJComplexUIKit/CJScrollView',      :path => '../’
+#  pod 'CJComplexUIKit/CJCollectionView',  :path => '../’
+#  pod 'CJComplexUIKit/CJHomeCollectionView',  :path => '../’
+  
+  pod 'AFNetworking/Reachability'
   pod 'NJKWebViewProgress'
   pod 'SVProgressHUD'
-  pod 'SDCycleScrollView',        '~> 1.75' #(已包括SDWebImage)原理其实就是扩大dataSource的count
-  pod 'DZNEmptyDataSet',          '~> 1.8.1'
-  pod 'MJPopupViewController',    '~> 0.4'
+  pod 'SDCycleScrollView', '~> 1.75' #(已包括SDWebImage)原理其实就是扩大dataSource的count
+  #    pod 'SDWebImage', '~> 4.0.0'
+  pod 'DZNEmptyDataSet'
+  pod 'MJPopupViewController', '~> 0.4'
+  
   
   # 图片选择需要依赖的库
-  pod 'CQImageAddDeleteListKit',  '~> 0.3.0'
-
+  pod 'JGActionSheet'
+  pod 'CJMedia/CJUploadImagePickerUtil', '~> 0.0.7' #其中包含了对CJFile中的部分依赖
+  pod 'CJNetwork/AFNetworkingBaseComponent'
+  
   # 测试图片上传
-  pod 'IjinbuNetwork',            '~> 0.2.0' #之前有过IjinbuNetwork中有依赖CJBaseUtil的CJDevice和CJBaseUIKit的UIImage,所以这里不能使用pod，否则link错误
+  pod 'IjinbuNetwork', '~> 0.1.0' #之前有过IjinbuNetwork中有依赖CJBaseUtil的CJDevice和CJBaseUIKit的UIImage,所以这里不能使用pod，否则link错误
+  pod 'CJNetwork'
 end
 
 target 'CJComplexUIKitDemoTests' do

@@ -7,7 +7,7 @@
 //
 
 #import "PullScaleTopImageViewController.h"
-#import "UINavigationBar+CJChangeBG.h"
+#import <CJBaseUIKit/UINavigationBar+CJChangeBG.h>
 
 @interface PullScaleTopImageViewController () <UITableViewDataSource,UITableViewDelegate> {
     

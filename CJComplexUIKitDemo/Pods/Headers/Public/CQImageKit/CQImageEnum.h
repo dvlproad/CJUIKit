@@ -1,1 +1,0 @@
-../../../CQImageKit/CQImageKit/ViewBannedCategory/CQImageEnum.h

@@ -1,6 +1,0 @@
-module CQOverlayKit {
-  umbrella header "CQOverlayKit-umbrella.h"
-
-  export *
-  module * { export * }
-}

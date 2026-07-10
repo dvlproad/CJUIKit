@@ -135,8 +135,9 @@
     //cell.textField.placeholder = dealTextModel.placeholder;
     cell.textView.text = dealTextModel.text;
     [cell.validateButton setTitle:dealTextModel.actionTitle forState:UIControlStateNormal];
+    __weak typeof(self) weakSelf = self;
     [cell setValidateHandle:^BOOL(CJValidateStringBigTableViewCell *mcell, BOOL isAutoExec) {
-        return [self __dealTextModel:dealTextModel inCell:mcell isAutoExec:isAutoExec];
+        return [weakSelf __dealTextModel:dealTextModel inCell:mcell isAutoExec:isAutoExec];
     }];
     // cell上的文本内容改变的时候，自动执行validateButton的点击事件
     __weak typeof(cell)weakCell = cell;

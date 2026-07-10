@@ -6,7 +6,7 @@
 //  Copyright (c) 2015 dvlproad. All rights reserved.
 //
 
-#import "CJTableViewHeaderFooterView.h"
+#import <CJBaseUIKit/CJTableViewHeaderFooterView.h>
 
 @interface TableViewHeader : CJTableViewHeaderFooterView {
     

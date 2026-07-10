@@ -1,6 +1,6 @@
 //
 //  CJDataEmptyView.m
-//  CJUIKitDemo
+//  UIKit-Effect-iOS
 //
 //  Created by ciyouzen on 2016/2/6.
 //  Copyright © 2016年 dvlproad. All rights reserved.

@@ -1,1 +1,0 @@
-../../../CJImagePickerKit/CJImagePickerKit/CustomImagePickerController/Models/CJAlumbImageModel.h
