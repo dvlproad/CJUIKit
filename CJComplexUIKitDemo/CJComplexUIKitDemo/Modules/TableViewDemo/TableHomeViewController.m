@@ -13,9 +13,6 @@
 #import "ReuseDataSourceTableViewController.h"
 #import "TvDemo_Complex.h"
 
-//Search--DataScrollView
-#import "SearchTableViewController.h"
-
 @interface TableHomeViewController ()  {
     
 }
@@ -55,20 +52,6 @@
             complexDemoModule.classEntry = [TvDemo_Complex class];
             complexDemoModule.isCreateByXib = YES;
             [sectionDataModel.values addObject:complexDemoModule];
-        }
-        [sectionDataModels addObject:sectionDataModel];
-    }
-    
-    //DataScrollView
-    {
-        CJSectionDataModel *sectionDataModel = [[CJSectionDataModel alloc] init];
-        sectionDataModel.theme = @"DataScrollView(带数据源的滚动视图)";
-        {
-            CQDMModuleModel *searchTableViewModule = [[CQDMModuleModel alloc] init];
-            searchTableViewModule.title = @"带搜索功能的列表";
-            searchTableViewModule.classEntry = [SearchTableViewController class];
-            searchTableViewModule.isCreateByXib = YES;
-            [sectionDataModel.values addObject:searchTableViewModule];
         }
         [sectionDataModels addObject:sectionDataModel];
     }

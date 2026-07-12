@@ -20,8 +20,6 @@
 #import "CJUploadCollectionViewCell.h"
 #import "CJUploadImageCollectionView+Tap.h"
 #import "CJUploadImageCollectionView.h"
-#import "CJSearchTableView.h"
-#import "MySearchEqualCellSizeCollectionView.h"
 #import "CJSingleTableViewCellDataSource.h"
 #import "CJSingleTableViewCellDataSource2.h"
 
