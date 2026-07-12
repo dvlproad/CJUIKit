@@ -11,9 +11,6 @@
 //UIScrollView
 #import "SvDemo_Refresh.h"
 
-//PullScale
-#import "PullScaleTopImageViewController.h"
-
 //EmptyView
 #import "EmptyScrollViewController1.h"
 #import "EmptyScrollViewController2.h"
@@ -74,25 +71,6 @@
         
         [sectionDataModels addObject:sectionDataModel];
     }
-    
-    {
-        CJSectionDataModel *sectionDataModel = [[CJSectionDataModel alloc] init];
-        sectionDataModel.theme = @"其他";
-        {
-            //PullScaleTopImageViewController
-            CQDMModuleModel *pullScaleTopImageModuleModel = [[CQDMModuleModel alloc] init];
-            pullScaleTopImageModuleModel.title = @"顶部图片下拉放大，上拉缩小";
-            pullScaleTopImageModuleModel.classEntry = [PullScaleTopImageViewController class];
-            [sectionDataModel.values addObject:pullScaleTopImageModuleModel];
-        }
-        
-        [sectionDataModels addObject:sectionDataModel];
-    }
-    
-    
-    
-    
-    
     
     self.sectionDataModels = sectionDataModels;
 }

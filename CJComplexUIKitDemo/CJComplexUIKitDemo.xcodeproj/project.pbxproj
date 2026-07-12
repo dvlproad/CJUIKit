@@ -21,10 +21,6 @@
 		7856F71D21F4E707004AF751 /* currency_icon_network@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7856F6BA21F4E706004AF751 /* currency_icon_network@2x.png */; };
 		7856F71E21F4E707004AF751 /* jiazhaishibai_bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7856F6BB21F4E706004AF751 /* jiazhaishibai_bg@2x.png */; };
 		7856F71F21F4E707004AF751 /* jiazhaishibai_bg@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7856F6BC21F4E706004AF751 /* jiazhaishibai_bg@3x.png */; };
-		7856F73D21F4E953004AF751 /* bgSky@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7856F73821F4E953004AF751 /* bgSky@2x.jpg */; };
-		7856F73E21F4E953004AF751 /* header@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7856F73A21F4E953004AF751 /* header@2x.jpg */; };
-		7856F73F21F4E953004AF751 /* PullScaleTopImageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7856F73B21F4E953004AF751 /* PullScaleTopImageViewController.xib */; };
-		7856F74021F4E953004AF751 /* PullScaleTopImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7856F73C21F4E953004AF751 /* PullScaleTopImageViewController.m */; };
 		78590D09215C79DD00F45AD5 /* add_red.png in Resources */ = {isa = PBXBuildFile; fileRef = 78590C6B215C79DC00F45AD5 /* add_red.png */; };
 		78590D0A215C79DD00F45AD5 /* add_red@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 78590C6C215C79DC00F45AD5 /* add_red@2x.png */; };
 		78590D0C215C79DD00F45AD5 /* UploadNoneImagePickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78590C71215C79DC00F45AD5 /* UploadNoneImagePickerViewController.m */; };
@@ -165,11 +161,6 @@
 		7856F6BA21F4E706004AF751 /* currency_icon_network@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "currency_icon_network@2x.png"; sourceTree = "<group>"; };
 		7856F6BB21F4E706004AF751 /* jiazhaishibai_bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "jiazhaishibai_bg@2x.png"; sourceTree = "<group>"; };
 		7856F6BC21F4E706004AF751 /* jiazhaishibai_bg@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "jiazhaishibai_bg@3x.png"; sourceTree = "<group>"; };
-		7856F73821F4E953004AF751 /* bgSky@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "bgSky@2x.jpg"; sourceTree = "<group>"; };
-		7856F73921F4E953004AF751 /* PullScaleTopImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PullScaleTopImageViewController.h; sourceTree = "<group>"; };
-		7856F73A21F4E953004AF751 /* header@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "header@2x.jpg"; sourceTree = "<group>"; };
-		7856F73B21F4E953004AF751 /* PullScaleTopImageViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PullScaleTopImageViewController.xib; sourceTree = "<group>"; };
-		7856F73C21F4E953004AF751 /* PullScaleTopImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PullScaleTopImageViewController.m; sourceTree = "<group>"; };
 		78590C6B215C79DC00F45AD5 /* add_red.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = add_red.png; sourceTree = "<group>"; };
 		78590C6C215C79DC00F45AD5 /* add_red@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "add_red@2x.png"; sourceTree = "<group>"; };
 		78590C70215C79DC00F45AD5 /* UploadDirectlyImagePickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UploadDirectlyImagePickerViewController.h; sourceTree = "<group>"; };
@@ -451,7 +442,6 @@
 				78293F1021FC2D0800F70F43 /* SvDemo_Refresh.h */,
 				78293F1121FC2D0900F70F43 /* SvDemo_Refresh.m */,
 				78293F0F21FC2D0800F70F43 /* SvDemo_Refresh.xib */,
-				7856F73721F4E953004AF751 /* ScaleHeadViewDemo */,
 				7856F6B521F4E706004AF751 /* EmptyScrollViewDemo */,
 			);
 			path = ScrollViewDemo;
@@ -482,18 +472,6 @@
 				7856F6BC21F4E706004AF751 /* jiazhaishibai_bg@3x.png */,
 			);
 			path = Resources;
-			sourceTree = "<group>";
-		};
-		7856F73721F4E953004AF751 /* ScaleHeadViewDemo */ = {
-			isa = PBXGroup;
-			children = (
-				7856F73821F4E953004AF751 /* bgSky@2x.jpg */,
-				7856F73A21F4E953004AF751 /* header@2x.jpg */,
-				7856F73921F4E953004AF751 /* PullScaleTopImageViewController.h */,
-				7856F73C21F4E953004AF751 /* PullScaleTopImageViewController.m */,
-				7856F73B21F4E953004AF751 /* PullScaleTopImageViewController.xib */,
-			);
-			path = ScaleHeadViewDemo;
 			sourceTree = "<group>";
 		};
 		789A4EE621FAF3A8001528B9 /* CollectionViewDemo */ = {
@@ -910,7 +888,6 @@
 				789A4F4121FAF3A8001528B9 /* MemoryADKnowledge01.jpg in Resources */,
 				789A4F3D21FAF3A8001528B9 /* MemoryADExplain01.jpg in Resources */,
 				780E46131E5DF87B00980127 /* LaunchScreen.storyboard in Resources */,
-				7856F73F21F4E953004AF751 /* PullScaleTopImageViewController.xib in Resources */,
 				7856F71C21F4E707004AF751 /* currency_icon_network@3x.png in Resources */,
 				789A4F9D21FAF3FB001528B9 /* CustomTableViewCell.xib in Resources */,
 				789A4F4021FAF3A8001528B9 /* MemoryADKnowledge05.jpg in Resources */,
@@ -944,11 +921,9 @@
 				789A4F8F21FAF3FB001528B9 /* TvDemo_Complex.xib in Resources */,
 				789A4F4921FAF3A8001528B9 /* MemoryADPose02.jpg in Resources */,
 				789A4F4E21FAF3A8001528B9 /* MemoryADTime01.jpg in Resources */,
-				7856F73E21F4E953004AF751 /* header@2x.jpg in Resources */,
 				789A4F5E21FAF3A8001528B9 /* MyEqualCellSizeViewController.xib in Resources */,
 				789A4F4521FAF3A8001528B9 /* MemoryADExample05.jpg in Resources */,
 				789A4F4221FAF3A8001528B9 /* MemoryADResult02.jpg in Resources */,
-				7856F73D21F4E953004AF751 /* bgSky@2x.jpg in Resources */,
 				789A4F4621FAF3A8001528B9 /* MemoryADExample04.jpg in Resources */,
 				789A4F4321FAF3A8001528B9 /* MemoryAD29.jpg in Resources */,
 				789A4FA021FAF3FB001528B9 /* SHeaderHome2.xib in Resources */,
@@ -1117,7 +1092,6 @@
 				789A4F8E21FAF3FB001528B9 /* ReuseDataSourceTableViewController.m in Sources */,
 				789A4F5B21FAF3A8001528B9 /* MyEqualCellSizeViewController.m in Sources */,
 				789A4F9121FAF3FB001528B9 /* TvDemo_Complex+Event.m in Sources */,
-				7856F74021F4E953004AF751 /* PullScaleTopImageViewController.m in Sources */,
 				789A4F9421FAF3FB001528B9 /* TvDemo_Complex.m in Sources */,
 				789A4F3721FAF3A8001528B9 /* MyADModel.m in Sources */,
 				789A4F6021FAF3A8001528B9 /* CvDemo_Complex+Event.m in Sources */,

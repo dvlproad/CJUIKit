@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import <SVProgressHUD/SVProgressHUD.h>
-#import "CJDataEmptyView.h"
+#import <CJBaseEffectKit/CJDataEmptyView.h>
 
 NS_ASSUME_NONNULL_BEGIN
 

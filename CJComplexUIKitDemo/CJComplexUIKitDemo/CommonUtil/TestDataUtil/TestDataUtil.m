@@ -10,64 +10,6 @@
 
 @implementation TestDataUtil
 
-+ (NSMutableArray<TestDataModel *> *)getTestDataModels {
-    NSArray *imageNames =
-    @[@"alipay_r",  @"bitcoin_r",   @"dianpin_r",   @"douban_r",    @"dribbble_r",
-      @"dropbox_r", @"email_r",     @"evernote_r",  @"facebook_r",  @"google-plus_r",
-      @"instagram_r",@"instapaper_r",@"line_r",     @"linkedin_r",  @"path_r",
-      @"snapchat_r",@"path_r",      @"snapchat_r",  @"pinterest_r", @"pocket_r",
-      @"qq_r",      @"quora_r",     @"qzone_r",     @"readability_r",@"reddit_r",
-      @"path_r",    @"snapchat_r",  @"pinterest_r", @"pocket_r",    @"qq_r",
-      @"quora_r",   @"qzone_r",     @"readability_r",@"reddit_r"];
-    
-    NSMutableArray *values = [[NSMutableArray alloc] init];
-    for (NSInteger i = 0; i < 34; i++) {
-        TestDataModel *cellModel = [[TestDataModel alloc]init];
-        cellModel.name = [NSString stringWithFormat:@"%02zd", i];
-        cellModel.imagePath = [imageNames objectAtIndex:i];
-        [values addObject:cellModel];
-    }
-    
-    return values;
-}
-
-/** 完整的描述请参见文件头部 */
-+ (NSMutableArray<CJSectionDataModel *> *)getTestSectionDataModels {
-    CJSectionDataModel *secctionModel1 = [[CJSectionDataModel alloc] init];
-    secctionModel1.theme = @"A区";
-    secctionModel1.values = [[NSMutableArray alloc]init];
-    for (NSInteger i = 0; i < 5; i++) {
-        TestDataModel *cellModel = [[TestDataModel alloc]init];
-        cellModel.name = [NSString stringWithFormat:@"%ld", 10+i];
-        [secctionModel1.values addObject:cellModel];
-    }
-    secctionModel1.selected = YES;
-    
-    
-    CJSectionDataModel *secctionModel2 = [[CJSectionDataModel alloc]init];
-    secctionModel2.theme = @"B区";
-    secctionModel2.values = [[NSMutableArray alloc]init];
-    for (NSInteger i = 0; i < 3; i++) {
-        TestDataModel *cellModel = [[TestDataModel alloc]init];
-        cellModel.name = [NSString stringWithFormat:@"%ld", 20+i];
-        [secctionModel2.values addObject:cellModel];
-    }
-    secctionModel2.selected = YES;
-    
-    CJSectionDataModel *secctionModel3 = [[CJSectionDataModel alloc]init];
-    secctionModel3.theme = @"C区";
-    secctionModel3.values = [[NSMutableArray alloc]init];
-    for (NSInteger i = 0; i < 4; i++) {
-        TestDataModel *cellModel = [[TestDataModel alloc]init];
-        cellModel.name = [NSString stringWithFormat:@"%ld", 30+i];
-        [secctionModel3.values addObject:cellModel];
-    }
-    secctionModel3.selected = YES;
-    
-    NSMutableArray *secctionModels = [NSMutableArray arrayWithArray:@[secctionModel1, secctionModel2, secctionModel3]];
-    return secctionModels;
-}
-
 //typedef NS_ENUM(NSInteger, UITableViewCellStyle) {
 //    UITableViewCellStyleDefault,    // Simple cell with text label and optional image view (behavior of UITableViewCell in iPhoneOS 2.x)
 //    UITableViewCellStyleValue1,        // Left aligned label on left and right aligned label on right with blue text (Used in Settings)
