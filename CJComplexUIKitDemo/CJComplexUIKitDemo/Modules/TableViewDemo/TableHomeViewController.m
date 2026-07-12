@@ -12,8 +12,6 @@
 #import "TableViewController.h"
 #import "ReuseDataSourceTableViewController.h"
 #import "TvDemo_Complex.h"
-#import "OpenTableViewController1.h"
-#import "OpenTableViewController2.h"
 
 //Search--DataScrollView
 #import "SearchTableViewController.h"
@@ -57,20 +55,6 @@
             complexDemoModule.classEntry = [TvDemo_Complex class];
             complexDemoModule.isCreateByXib = YES;
             [sectionDataModel.values addObject:complexDemoModule];
-        }
-        {
-            CQDMModuleModel *openTableModule = [[CQDMModuleModel alloc] init];
-            openTableModule.title = @"OpenTable(不使用控件)";
-            openTableModule.classEntry = [OpenTableViewController1 class];
-            openTableModule.isCreateByXib = YES;
-            [sectionDataModel.values addObject:openTableModule];
-        }
-        {
-            CQDMModuleModel *openTableModule = [[CQDMModuleModel alloc] init];
-            openTableModule.title = @"OpenTable(使用控件)";
-            openTableModule.classEntry = [OpenTableViewController2 class];
-            openTableModule.isCreateByXib = YES;
-            [sectionDataModel.values addObject:openTableModule];
         }
         [sectionDataModels addObject:sectionDataModel];
     }

@@ -85,21 +85,14 @@
 		789A4F8E21FAF3FB001528B9 /* ReuseDataSourceTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 789A4F6F21FAF3FA001528B9 /* ReuseDataSourceTableViewController.m */; };
 		789A4F8F21FAF3FB001528B9 /* TvDemo_Complex.xib in Resources */ = {isa = PBXBuildFile; fileRef = 789A4F7421FAF3FA001528B9 /* TvDemo_Complex.xib */; };
 		789A4F9121FAF3FB001528B9 /* TvDemo_Complex+Event.m in Sources */ = {isa = PBXBuildFile; fileRef = 789A4F7821FAF3FB001528B9 /* TvDemo_Complex+Event.m */; };
-		789A4F9221FAF3FB001528B9 /* OpenTableViewController2.xib in Resources */ = {isa = PBXBuildFile; fileRef = 789A4F7921FAF3FB001528B9 /* OpenTableViewController2.xib */; };
-		789A4F9321FAF3FB001528B9 /* OpenTableViewController1.xib in Resources */ = {isa = PBXBuildFile; fileRef = 789A4F7A21FAF3FB001528B9 /* OpenTableViewController1.xib */; };
 		789A4F9421FAF3FB001528B9 /* TvDemo_Complex.m in Sources */ = {isa = PBXBuildFile; fileRef = 789A4F7B21FAF3FB001528B9 /* TvDemo_Complex.m */; };
 		789A4F9521FAF3FB001528B9 /* TableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 789A4F7C21FAF3FB001528B9 /* TableViewController.xib */; };
-		789A4F9621FAF3FB001528B9 /* OpenTableViewController2.m in Sources */ = {isa = PBXBuildFile; fileRef = 789A4F7D21FAF3FB001528B9 /* OpenTableViewController2.m */; };
 		789A4F9821FAF3FB001528B9 /* TableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 789A4F7F21FAF3FB001528B9 /* TableViewController.m */; };
-		789A4F9921FAF3FB001528B9 /* OpenTableViewController1.m in Sources */ = {isa = PBXBuildFile; fileRef = 789A4F8021FAF3FB001528B9 /* OpenTableViewController1.m */; };
 		789A4F9A21FAF3FB001528B9 /* TableHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 789A4F8121FAF3FB001528B9 /* TableHomeViewController.m */; };
 		789A4F9B21FAF3FB001528B9 /* SHeaderHome2.m in Sources */ = {isa = PBXBuildFile; fileRef = 789A4F8321FAF3FB001528B9 /* SHeaderHome2.m */; };
-		789A4F9C21FAF3FB001528B9 /* MyOpenTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 789A4F8421FAF3FB001528B9 /* MyOpenTableView.m */; };
 		789A4F9D21FAF3FB001528B9 /* CustomTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 789A4F8521FAF3FB001528B9 /* CustomTableViewCell.xib */; };
 		789A4F9E21FAF3FB001528B9 /* CustomTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 789A4F8621FAF3FB001528B9 /* CustomTableViewCell.m */; };
-		789A4F9F21FAF3FB001528B9 /* TableViewHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 789A4F8821FAF3FB001528B9 /* TableViewHeader.xib */; };
 		789A4FA021FAF3FB001528B9 /* SHeaderHome2.xib in Resources */ = {isa = PBXBuildFile; fileRef = 789A4F8A21FAF3FB001528B9 /* SHeaderHome2.xib */; };
-		789A4FA121FAF3FB001528B9 /* TableViewHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 789A4F8D21FAF3FB001528B9 /* TableViewHeader.m */; };
 		78DA40A9226B83480026E19D /* ScrollContaintViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78DA40A8226B83480026E19D /* ScrollContaintViewController.m */; };
 		8014A2801FA2C2E500DDDB5A /* AppDelegate+WindowRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8014A27F1FA2C2E500DDDB5A /* AppDelegate+WindowRootViewController.m */; };
 		80D49F8B20BE7EE0003F642C /* CJDataUtilTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 80D49F8A20BE7EE0003F642C /* CJDataUtilTest.m */; };
@@ -258,32 +251,21 @@
 		789A4F6C21FAF3FA001528B9 /* TableHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableHomeViewController.h; sourceTree = "<group>"; };
 		789A4F6E21FAF3FA001528B9 /* TvDemo_Complex+Event.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TvDemo_Complex+Event.h"; sourceTree = "<group>"; };
 		789A4F6F21FAF3FA001528B9 /* ReuseDataSourceTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReuseDataSourceTableViewController.m; sourceTree = "<group>"; };
-		789A4F7121FAF3FA001528B9 /* OpenTableViewController2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpenTableViewController2.h; sourceTree = "<group>"; };
 		789A4F7221FAF3FA001528B9 /* TvDemo_Complex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TvDemo_Complex.h; sourceTree = "<group>"; };
 		789A4F7321FAF3FA001528B9 /* TableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewController.h; sourceTree = "<group>"; };
 		789A4F7421FAF3FA001528B9 /* TvDemo_Complex.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TvDemo_Complex.xib; sourceTree = "<group>"; };
-		789A4F7521FAF3FA001528B9 /* OpenTableViewController1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpenTableViewController1.h; sourceTree = "<group>"; };
 		789A4F7721FAF3FA001528B9 /* ReuseDataSourceTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReuseDataSourceTableViewController.h; sourceTree = "<group>"; };
 		789A4F7821FAF3FB001528B9 /* TvDemo_Complex+Event.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "TvDemo_Complex+Event.m"; sourceTree = "<group>"; };
-		789A4F7921FAF3FB001528B9 /* OpenTableViewController2.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OpenTableViewController2.xib; sourceTree = "<group>"; };
-		789A4F7A21FAF3FB001528B9 /* OpenTableViewController1.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OpenTableViewController1.xib; sourceTree = "<group>"; };
 		789A4F7B21FAF3FB001528B9 /* TvDemo_Complex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TvDemo_Complex.m; sourceTree = "<group>"; };
 		789A4F7C21FAF3FB001528B9 /* TableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TableViewController.xib; sourceTree = "<group>"; };
-		789A4F7D21FAF3FB001528B9 /* OpenTableViewController2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OpenTableViewController2.m; sourceTree = "<group>"; };
 		789A4F7F21FAF3FB001528B9 /* TableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewController.m; sourceTree = "<group>"; };
-		789A4F8021FAF3FB001528B9 /* OpenTableViewController1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OpenTableViewController1.m; sourceTree = "<group>"; };
 		789A4F8121FAF3FB001528B9 /* TableHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableHomeViewController.m; sourceTree = "<group>"; };
 		789A4F8321FAF3FB001528B9 /* SHeaderHome2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHeaderHome2.m; sourceTree = "<group>"; };
-		789A4F8421FAF3FB001528B9 /* MyOpenTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyOpenTableView.m; sourceTree = "<group>"; };
 		789A4F8521FAF3FB001528B9 /* CustomTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomTableViewCell.xib; sourceTree = "<group>"; };
 		789A4F8621FAF3FB001528B9 /* CustomTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomTableViewCell.m; sourceTree = "<group>"; };
-		789A4F8721FAF3FB001528B9 /* TableViewHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewHeader.h; sourceTree = "<group>"; };
-		789A4F8821FAF3FB001528B9 /* TableViewHeader.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TableViewHeader.xib; sourceTree = "<group>"; };
 		789A4F8921FAF3FB001528B9 /* SHeaderHome2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHeaderHome2.h; sourceTree = "<group>"; };
 		789A4F8A21FAF3FB001528B9 /* SHeaderHome2.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SHeaderHome2.xib; sourceTree = "<group>"; };
 		789A4F8B21FAF3FB001528B9 /* CustomTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomTableViewCell.h; sourceTree = "<group>"; };
-		789A4F8C21FAF3FB001528B9 /* MyOpenTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyOpenTableView.h; sourceTree = "<group>"; };
-		789A4F8D21FAF3FB001528B9 /* TableViewHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewHeader.m; sourceTree = "<group>"; };
 		78DA40A7226B83480026E19D /* ScrollContaintViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScrollContaintViewController.h; sourceTree = "<group>"; };
 		78DA40A8226B83480026E19D /* ScrollContaintViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScrollContaintViewController.m; sourceTree = "<group>"; };
 		8014A27E1FA2C2E500DDDB5A /* AppDelegate+WindowRootViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AppDelegate+WindowRootViewController.h"; sourceTree = "<group>"; };
@@ -643,7 +625,6 @@
 				789A4F8121FAF3FB001528B9 /* TableHomeViewController.m */,
 				789A4F6D21FAF3FA001528B9 /* 1Use */,
 				78293EFC21FC0E2A00F70F43 /* 2Optimize */,
-				789A4FA221FAFE15001528B9 /* 3OpenTableView */,
 				78293F1821FC662A00F70F43 /* 4SearchTableView */,
 			);
 			path = TableViewDemo;
@@ -663,24 +644,6 @@
 				78293EFD21FC0F5400F70F43 /* View */,
 			);
 			path = 1Use;
-			sourceTree = "<group>";
-		};
-		789A4FA221FAFE15001528B9 /* 3OpenTableView */ = {
-			isa = PBXGroup;
-			children = (
-				789A4F7521FAF3FA001528B9 /* OpenTableViewController1.h */,
-				789A4F8021FAF3FB001528B9 /* OpenTableViewController1.m */,
-				789A4F7A21FAF3FB001528B9 /* OpenTableViewController1.xib */,
-				789A4F7121FAF3FA001528B9 /* OpenTableViewController2.h */,
-				789A4F7D21FAF3FB001528B9 /* OpenTableViewController2.m */,
-				789A4F7921FAF3FB001528B9 /* OpenTableViewController2.xib */,
-				789A4F8721FAF3FB001528B9 /* TableViewHeader.h */,
-				789A4F8D21FAF3FB001528B9 /* TableViewHeader.m */,
-				789A4F8821FAF3FB001528B9 /* TableViewHeader.xib */,
-				789A4F8C21FAF3FB001528B9 /* MyOpenTableView.h */,
-				789A4F8421FAF3FB001528B9 /* MyOpenTableView.m */,
-			);
-			path = 3OpenTableView;
 			sourceTree = "<group>";
 		};
 		80D49F8C20BE852A003F642C /* Models */ = {
@@ -990,16 +953,13 @@
 				780E460E1E5DF87B00980127 /* Main.storyboard in Resources */,
 				789A4F6921FAF3A8001528B9 /* CustomCollectionViewCell.xib in Resources */,
 				789A4F6121FAF3A8001528B9 /* CvDemo_Complex.xib in Resources */,
-				789A4F9F21FAF3FB001528B9 /* TableViewHeader.xib in Resources */,
 				78590D09215C79DD00F45AD5 /* add_red.png in Resources */,
 				789A4F9521FAF3FB001528B9 /* TableViewController.xib in Resources */,
 				789A4F3821FAF3A8001528B9 /* MemoryADKnowledge07.jpg in Resources */,
-				789A4F9221FAF3FB001528B9 /* OpenTableViewController2.xib in Resources */,
 				789A4F4C21FAF3A8001528B9 /* MemoryADTime02.jpg in Resources */,
 				789A4F6421FAF3A8001528B9 /* cvSupplementaryFoot.xib in Resources */,
 				789A4F8F21FAF3FB001528B9 /* TvDemo_Complex.xib in Resources */,
 				789A4F4921FAF3A8001528B9 /* MemoryADPose02.jpg in Resources */,
-				789A4F9321FAF3FB001528B9 /* OpenTableViewController1.xib in Resources */,
 				789A4F4E21FAF3A8001528B9 /* MemoryADTime01.jpg in Resources */,
 				7856F73E21F4E953004AF751 /* header@2x.jpg in Resources */,
 				789A4F5E21FAF3A8001528B9 /* MyEqualCellSizeViewController.xib in Resources */,
@@ -1174,7 +1134,6 @@
 				789A4F8E21FAF3FB001528B9 /* ReuseDataSourceTableViewController.m in Sources */,
 				789A4F5B21FAF3A8001528B9 /* MyEqualCellSizeViewController.m in Sources */,
 				789A4F9121FAF3FB001528B9 /* TvDemo_Complex+Event.m in Sources */,
-				789A4F9621FAF3FB001528B9 /* OpenTableViewController2.m in Sources */,
 				7856F74021F4E953004AF751 /* PullScaleTopImageViewController.m in Sources */,
 				789A4F9421FAF3FB001528B9 /* TvDemo_Complex.m in Sources */,
 				78590D0E215C79DD00F45AD5 /* SearchTableViewController.m in Sources */,
@@ -1197,13 +1156,10 @@
 				789A4F9B21FAF3FB001528B9 /* SHeaderHome2.m in Sources */,
 				789A4F5A21FAF3A8001528B9 /* MyEqualCellSizeView.m in Sources */,
 				7886B229226C13F5002A0404 /* TableEmptyViewController.m in Sources */,
-				789A4FA121FAF3FB001528B9 /* TableViewHeader.m in Sources */,
 				78590D0C215C79DD00F45AD5 /* UploadNoneImagePickerViewController.m in Sources */,
 				789A4F5F21FAF3A8001528B9 /* CvDemo_Complex.m in Sources */,
-				789A4F9921FAF3FB001528B9 /* OpenTableViewController1.m in Sources */,
 				789A4F6821FAF3A8001528B9 /* cvSupplementaryHead.m in Sources */,
 				789A4F5C21FAF3A8001528B9 /* MyEqualCellSizeCollectionViewController.m in Sources */,
-				789A4F9C21FAF3FB001528B9 /* MyOpenTableView.m in Sources */,
 				976CB3242FFE6AA4000505DD /* DataEmptyViewFactory.m in Sources */,
 				976CB3502FFE6C9D000505DD /* TestDataModel.m in Sources */,
 				976CB3512FFE6C9D000505DD /* TestDataUtil.m in Sources */,
