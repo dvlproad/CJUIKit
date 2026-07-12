@@ -14,9 +14,6 @@
 		780E46131E5DF87B00980127 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 780E46111E5DF87B00980127 /* LaunchScreen.storyboard */; };
 		780E461E1E5DF87B00980127 /* CJComplexUIKitDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 780E461D1E5DF87B00980127 /* CJComplexUIKitDemoTests.m */; };
 		780E46291E5DF87B00980127 /* CJComplexUIKitDemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 780E46281E5DF87B00980127 /* CJComplexUIKitDemoUITests.m */; };
-		78293F1221FC2D0900F70F43 /* SvDemo_Refresh.xib in Resources */ = {isa = PBXBuildFile; fileRef = 78293F0F21FC2D0800F70F43 /* SvDemo_Refresh.xib */; };
-		78293F1321FC2D0900F70F43 /* SvDemo_Refresh.m in Sources */ = {isa = PBXBuildFile; fileRef = 78293F1121FC2D0900F70F43 /* SvDemo_Refresh.m */; };
-		7856F6E521F4E706004AF751 /* ScrollViewHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7856F66721F4E706004AF751 /* ScrollViewHomeViewController.m */; };
 		78590D09215C79DD00F45AD5 /* add_red.png in Resources */ = {isa = PBXBuildFile; fileRef = 78590C6B215C79DC00F45AD5 /* add_red.png */; };
 		78590D0A215C79DD00F45AD5 /* add_red@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 78590C6C215C79DC00F45AD5 /* add_red@2x.png */; };
 		78590D0C215C79DD00F45AD5 /* UploadNoneImagePickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78590C71215C79DC00F45AD5 /* UploadNoneImagePickerViewController.m */; };
@@ -86,7 +83,6 @@
 		80E7E68920AC37CA000F762D /* IjinbuNetworkClient+Login.m in Sources */ = {isa = PBXBuildFile; fileRef = 80E7E68720AC37CA000F762D /* IjinbuNetworkClient+Login.m */; };
 		9729D80C300188E600FFF239 /* CustomTripProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9729D808300188E600FFF239 /* CustomTripProgressView.m */; };
 		9729D80D300188E600FFF239 /* ProcessLineView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9729D80A300188E600FFF239 /* ProcessLineView.m */; };
-		976CB3242FFE6AA4000505DD /* DataEmptyViewFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 976CB2FC2FFE6AA4000505DD /* DataEmptyViewFactory.m */; };
 		976CB3502FFE6C9D000505DD /* TestDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 976CB3412FFE6C9D000505DD /* TestDataModel.m */; };
 		976CB3512FFE6C9D000505DD /* TestDataUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 976CB3442FFE6C9D000505DD /* TestDataUtil.m */; };
 		976CB3522FFE6C9D000505DD /* DemoInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 976CB33F2FFE6C9D000505DD /* DemoInfo.m */; };
@@ -144,11 +140,6 @@
 		780E46241E5DF87B00980127 /* CJComplexUIKitDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CJComplexUIKitDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		780E46281E5DF87B00980127 /* CJComplexUIKitDemoUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CJComplexUIKitDemoUITests.m; sourceTree = "<group>"; };
 		780E462A1E5DF87B00980127 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		78293F0F21FC2D0800F70F43 /* SvDemo_Refresh.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SvDemo_Refresh.xib; sourceTree = "<group>"; };
-		78293F1021FC2D0800F70F43 /* SvDemo_Refresh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SvDemo_Refresh.h; sourceTree = "<group>"; };
-		78293F1121FC2D0900F70F43 /* SvDemo_Refresh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SvDemo_Refresh.m; sourceTree = "<group>"; };
-		7856F63921F4E706004AF751 /* ScrollViewHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScrollViewHomeViewController.h; sourceTree = "<group>"; };
-		7856F66721F4E706004AF751 /* ScrollViewHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScrollViewHomeViewController.m; sourceTree = "<group>"; };
 		78590C6B215C79DC00F45AD5 /* add_red.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = add_red.png; sourceTree = "<group>"; };
 		78590C6C215C79DC00F45AD5 /* add_red@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "add_red@2x.png"; sourceTree = "<group>"; };
 		78590C70215C79DC00F45AD5 /* UploadDirectlyImagePickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UploadDirectlyImagePickerViewController.h; sourceTree = "<group>"; };
@@ -246,8 +237,6 @@
 		9729D808300188E600FFF239 /* CustomTripProgressView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomTripProgressView.m; sourceTree = "<group>"; };
 		9729D809300188E600FFF239 /* ProcessLineView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProcessLineView.h; sourceTree = "<group>"; };
 		9729D80A300188E600FFF239 /* ProcessLineView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProcessLineView.m; sourceTree = "<group>"; };
-		976CB2FB2FFE6AA4000505DD /* DataEmptyViewFactory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DataEmptyViewFactory.h; sourceTree = "<group>"; };
-		976CB2FC2FFE6AA4000505DD /* DataEmptyViewFactory.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DataEmptyViewFactory.m; sourceTree = "<group>"; };
 		976CB33E2FFE6C9D000505DD /* DemoInfo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DemoInfo.h; sourceTree = "<group>"; };
 		976CB33F2FFE6C9D000505DD /* DemoInfo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DemoInfo.m; sourceTree = "<group>"; };
 		976CB3402FFE6C9D000505DD /* TestDataModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestDataModel.h; sourceTree = "<group>"; };
@@ -414,18 +403,6 @@
 			path = ImageChooseCollectionView;
 			sourceTree = "<group>";
 		};
-		7856F62121F4E706004AF751 /* ScrollViewDemo */ = {
-			isa = PBXGroup;
-			children = (
-				7856F63921F4E706004AF751 /* ScrollViewHomeViewController.h */,
-				7856F66721F4E706004AF751 /* ScrollViewHomeViewController.m */,
-				78293F1021FC2D0800F70F43 /* SvDemo_Refresh.h */,
-				78293F1121FC2D0900F70F43 /* SvDemo_Refresh.m */,
-				78293F0F21FC2D0800F70F43 /* SvDemo_Refresh.xib */,
-			);
-			path = ScrollViewDemo;
-			sourceTree = "<group>";
-		};
 		789A4EE621FAF3A8001528B9 /* CollectionViewDemo */ = {
 			isa = PBXGroup;
 			children = (
@@ -574,7 +551,6 @@
 			children = (
 				789A4F6B21FAF3FA001528B9 /* TableViewDemo */,
 				789A4EE621FAF3A8001528B9 /* CollectionViewDemo */,
-				7856F62121F4E706004AF751 /* ScrollViewDemo */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -590,20 +566,10 @@
 			path = CJSmallCustomView;
 			sourceTree = "<group>";
 		};
-		976CB2FD2FFE6AA4000505DD /* DemoEmptyViewFactory */ = {
-			isa = PBXGroup;
-			children = (
-				976CB2FB2FFE6AA4000505DD /* DataEmptyViewFactory.h */,
-				976CB2FC2FFE6AA4000505DD /* DataEmptyViewFactory.m */,
-			);
-			path = DemoEmptyViewFactory;
-			sourceTree = "<group>";
-		};
 		976CB3232FFE6AA4000505DD /* CommonUI */ = {
 			isa = PBXGroup;
 			children = (
 				976CB36B2FFE76A0000505DD /* TSAlert */,
-				976CB2FD2FFE6AA4000505DD /* DemoEmptyViewFactory */,
 			);
 			path = CommonUI;
 			sourceTree = "<group>";
@@ -834,7 +800,6 @@
 				789A4F3E21FAF3A8001528B9 /* MemoryADExample03.jpg in Resources */,
 				789A4F4421FAF3A8001528B9 /* MemoryADKnowledge02.jpg in Resources */,
 				789A4F6321FAF3A8001528B9 /* NibCell.xib in Resources */,
-				78293F1221FC2D0900F70F43 /* SvDemo_Refresh.xib in Resources */,
 				789A4F4121FAF3A8001528B9 /* MemoryADKnowledge01.jpg in Resources */,
 				789A4F3D21FAF3A8001528B9 /* MemoryADExplain01.jpg in Resources */,
 				780E46131E5DF87B00980127 /* LaunchScreen.storyboard in Resources */,
@@ -1047,7 +1012,6 @@
 				976CB36C2FFE76A0000505DD /* TSAlertManager.m in Sources */,
 				976CB36D2FFE76A0000505DD /* CJBaseAlertView+TSPopupAction.m in Sources */,
 				789A4F9A21FAF3FB001528B9 /* TableHomeViewController.m in Sources */,
-				78293F1321FC2D0900F70F43 /* SvDemo_Refresh.m in Sources */,
 				789A4F6521FAF3A8001528B9 /* CustomCollectionViewCell.m in Sources */,
 				789A4F6221FAF3A8001528B9 /* Detail.m in Sources */,
 				78590D0F215C79DD00F45AD5 /* UploadDirectlyImagePickerViewController.m in Sources */,
@@ -1061,12 +1025,10 @@
 				789A4F5F21FAF3A8001528B9 /* CvDemo_Complex.m in Sources */,
 				789A4F6821FAF3A8001528B9 /* cvSupplementaryHead.m in Sources */,
 				789A4F5C21FAF3A8001528B9 /* MyEqualCellSizeCollectionViewController.m in Sources */,
-				976CB3242FFE6AA4000505DD /* DataEmptyViewFactory.m in Sources */,
 				976CB3502FFE6C9D000505DD /* TestDataModel.m in Sources */,
 				976CB3512FFE6C9D000505DD /* TestDataUtil.m in Sources */,
 				976CB3522FFE6C9D000505DD /* DemoInfo.m in Sources */,
 				80E7E68920AC37CA000F762D /* IjinbuNetworkClient+Login.m in Sources */,
-				7856F6E521F4E706004AF751 /* ScrollViewHomeViewController.m in Sources */,
 				9729D80C300188E600FFF239 /* CustomTripProgressView.m in Sources */,
 				9729D80D300188E600FFF239 /* ProcessLineView.m in Sources */,
 				789A4F6721FAF3A8001528B9 /* cvSupplementaryFoot.m in Sources */,

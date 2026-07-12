@@ -8,7 +8,6 @@
 
 #import "AppDelegate+WindowRootViewController.h"
 
-#import "ScrollViewHomeViewController.h"
 #import "TableHomeViewController.h"
 #import "CollectionHomeViewController.h"
 
@@ -24,13 +23,6 @@
     ②设置图片tabBarItem.image：会默认去掉图片的颜色，如果要看到原图片，需要设置图片的渲染模式为UIImageRenderingModeAlwaysOriginal
     ③设置角标tabBarItem.badgeValue：如果没有设置图片，角标默认显示在左上角，设置了图片就会在图片的右上角显示
     */
-    ScrollViewHomeViewController *homeViewController = [[ScrollViewHomeViewController alloc] init];
-    homeViewController.tabBarItem.title = NSLocalizedString(@"ScrollView", nil);
-    homeViewController.tabBarItem.image = [[UIImage imageNamed:@"icons8-home"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
-    //homeViewController. = @"10";
-    UINavigationController *homeNavigationController = [[UINavigationController alloc] initWithRootViewController:homeViewController];
-    [tabBarController addChildViewController:homeNavigationController];
-    
     
     TableHomeViewController *tableViewHomeViewController = [[TableHomeViewController alloc] init];
     tableViewHomeViewController.tabBarItem.title = NSLocalizedString(@"Table", nil);
