@@ -17,8 +17,6 @@
 #import "MyEqualCellSizeViewController.h"
 #import "MyCycleADViewController.h"
 
-#import "CustomLayoutCollectionViewController.h"
-
 //图片选择的集合视图
 #import "UploadNoneImagePickerViewController.h"
 #import "UploadDirectlyImagePickerViewController.h"
@@ -70,13 +68,6 @@
             cycleScrollViewModule.classEntry = [MyCycleADViewController class];
             cycleScrollViewModule.isCreateByXib = YES;
             [sectionDataModel.values addObject:cycleScrollViewModule];
-        }
-        {
-            CQDMModuleModel *customLayoutModule = [[CQDMModuleModel alloc] init];
-            customLayoutModule.title = @"CustomLayout(自定义布局)";
-            customLayoutModule.classEntry = [CustomLayoutCollectionViewController class];
-            customLayoutModule.isCreateByXib = YES;
-            [sectionDataModel.values addObject:customLayoutModule];
         }
         [sectionDataModels addObject:sectionDataModel];
     }
