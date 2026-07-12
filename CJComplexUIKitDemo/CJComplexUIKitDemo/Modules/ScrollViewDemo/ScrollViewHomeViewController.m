@@ -11,11 +11,6 @@
 //UIScrollView
 #import "SvDemo_Refresh.h"
 
-//EmptyView
-#import "EmptyScrollViewController1.h"
-#import "EmptyScrollViewController2.h"
-#import "ScrollContaintViewController.h"
-
 
 
 @interface ScrollViewHomeViewController ()
@@ -41,32 +36,6 @@
             refreshScrollViewModule.classEntry = [SvDemo_Refresh class];
             refreshScrollViewModule.isCreateByXib = YES;
             [sectionDataModel.values addObject:refreshScrollViewModule];
-        }
-        
-        [sectionDataModels addObject:sectionDataModel];
-    }
-    
-    //EmptyView
-    {
-        CJSectionDataModel *sectionDataModel = [[CJSectionDataModel alloc] init];
-        sectionDataModel.theme = @"EmptyView相关";
-        {
-            CQDMModuleModel *baseScrollViewModule = [[CQDMModuleModel alloc] init];
-            baseScrollViewModule.title = @"DataEmptyView";
-            baseScrollViewModule.classEntry = [ScrollContaintViewController class];
-            [sectionDataModel.values addObject:baseScrollViewModule];
-        }
-        {
-            CQDMModuleModel *baseScrollViewModule = [[CQDMModuleModel alloc] init];
-            baseScrollViewModule.title = @"CJDataEmptyView(DZNEmptyDataSet)";
-            baseScrollViewModule.classEntry = [EmptyScrollViewController1 class];
-            [sectionDataModel.values addObject:baseScrollViewModule];
-        }
-        {
-            CQDMModuleModel *baseScrollViewModule = [[CQDMModuleModel alloc] init];
-            baseScrollViewModule.title = @"CJDataEmptyView(UIScrollView+CJAddFillView)";
-            baseScrollViewModule.classEntry = [EmptyScrollViewController2 class];
-            [sectionDataModel.values addObject:baseScrollViewModule];
         }
         
         [sectionDataModels addObject:sectionDataModel];
