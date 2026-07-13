@@ -31,17 +31,17 @@
     //UITableView
     {
         CJSectionDataModel *sectionDataModel = [[CJSectionDataModel alloc] init];
-        sectionDataModel.theme = @"UITableView相关";
+        sectionDataModel.theme = @"UITableView方法了解";
         {
             CQDMModuleModel *TableViewModule = [[CQDMModuleModel alloc] init];
-            TableViewModule.title = @"TableView(最原始的使用)";
+            TableViewModule.title = @"UITableView方法了解(基础)";
             TableViewModule.classEntry = [TableViewController class];
             TableViewModule.isCreateByXib = YES;
             [sectionDataModel.values addObject:TableViewModule];
         }
         {
             CQDMModuleModel *complexDemoModule = [[CQDMModuleModel alloc] init];
-            complexDemoModule.title = @"ComplexDemo";
+            complexDemoModule.title = @"UITableView方法了解(更多更全)";
             complexDemoModule.classEntry = [TvDemo_Complex class];
             complexDemoModule.isCreateByXib = YES;
             [sectionDataModel.values addObject:complexDemoModule];

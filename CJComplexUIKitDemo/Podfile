@@ -36,10 +36,7 @@ target 'CJComplexUIKitDemo' do
   pod 'CJOverlayView'
   pod 'CJPopupAction'
   
-  pod 'CJComplexUIKit',           :path => '../’
-#  pod 'CJComplexUIKit/CJScrollView',      :path => '../’
-#  pod 'CJComplexUIKit/CJCollectionView',  :path => '../’
-#  pod 'CJComplexUIKit/CJHomeCollectionView',  :path => '../’
+  pod 'CJComplexUIKit',           :path => '../'
   
   pod 'AFNetworking/Reachability'
   pod 'SVProgressHUD'

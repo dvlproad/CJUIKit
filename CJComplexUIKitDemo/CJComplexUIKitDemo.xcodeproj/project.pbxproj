@@ -47,8 +47,6 @@
 		80D49F8B20BE7EE0003F642C /* CJDataUtilTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 80D49F8A20BE7EE0003F642C /* CJDataUtilTest.m */; };
 		80D49F8F20BE8574003F642C /* TestCityModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 80D49F8E20BE8574003F642C /* TestCityModel.m */; };
 		80E7E68920AC37CA000F762D /* IjinbuNetworkClient+Login.m in Sources */ = {isa = PBXBuildFile; fileRef = 80E7E68720AC37CA000F762D /* IjinbuNetworkClient+Login.m */; };
-		9729D80C300188E600FFF239 /* CustomTripProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9729D808300188E600FFF239 /* CustomTripProgressView.m */; };
-		9729D80D300188E600FFF239 /* ProcessLineView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9729D80A300188E600FFF239 /* ProcessLineView.m */; };
 		976CB3502FFE6C9D000505DD /* TestDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 976CB3412FFE6C9D000505DD /* TestDataModel.m */; };
 		976CB3512FFE6C9D000505DD /* TestDataUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 976CB3442FFE6C9D000505DD /* TestDataUtil.m */; };
 		976CB3522FFE6C9D000505DD /* DemoInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 976CB33F2FFE6C9D000505DD /* DemoInfo.m */; };
@@ -67,6 +65,8 @@
 		976CB37A2FFE8262000505DD /* ThirdPartIcon.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 976CB3752FFE8262000505DD /* ThirdPartIcon.xcassets */; };
 		976CB37B2FFE8262000505DD /* AppCommon.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 976CB36F2FFE8262000505DD /* AppCommon.xcassets */; };
 		976CB37C2FFE8262000505DD /* CQControlWidgetColorSymbolSectionExample.json in Resources */ = {isa = PBXBuildFile; fileRef = 976CB3712FFE8262000505DD /* CQControlWidgetColorSymbolSectionExample.json */; };
+		9791AAD530055AB800040DC0 /* ProcessLineView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9791AAD330055AB800040DC0 /* ProcessLineView.m */; };
+		9791AAD630055AB800040DC0 /* CustomTripProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9791AAD130055AB800040DC0 /* CustomTripProgressView.m */; };
 		C2849CA383CBF0E734AE6DE8 /* Pods_CJComplexUIKitDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30757D6810FE9E3D37A620D8 /* Pods_CJComplexUIKitDemo.framework */; };
 /* End PBXBuildFile section */
 
@@ -158,10 +158,6 @@
 		80D49F8E20BE8574003F642C /* TestCityModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestCityModel.m; sourceTree = "<group>"; };
 		80E7E68720AC37CA000F762D /* IjinbuNetworkClient+Login.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "IjinbuNetworkClient+Login.m"; sourceTree = "<group>"; };
 		80E7E68820AC37CA000F762D /* IjinbuNetworkClient+Login.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "IjinbuNetworkClient+Login.h"; sourceTree = "<group>"; };
-		9729D807300188E600FFF239 /* CustomTripProgressView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomTripProgressView.h; sourceTree = "<group>"; };
-		9729D808300188E600FFF239 /* CustomTripProgressView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomTripProgressView.m; sourceTree = "<group>"; };
-		9729D809300188E600FFF239 /* ProcessLineView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProcessLineView.h; sourceTree = "<group>"; };
-		9729D80A300188E600FFF239 /* ProcessLineView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProcessLineView.m; sourceTree = "<group>"; };
 		976CB33E2FFE6C9D000505DD /* DemoInfo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DemoInfo.h; sourceTree = "<group>"; };
 		976CB33F2FFE6C9D000505DD /* DemoInfo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DemoInfo.m; sourceTree = "<group>"; };
 		976CB3402FFE6C9D000505DD /* TestDataModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestDataModel.h; sourceTree = "<group>"; };
@@ -187,6 +183,10 @@
 		976CB3722FFE8262000505DD /* CQControlWidgetTextSectionExample.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = CQControlWidgetTextSectionExample.json; sourceTree = "<group>"; };
 		976CB3742FFE8262000505DD /* MainAsset.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = MainAsset.xcassets; sourceTree = "<group>"; };
 		976CB3752FFE8262000505DD /* ThirdPartIcon.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = ThirdPartIcon.xcassets; sourceTree = "<group>"; };
+		9791AAD030055AB800040DC0 /* CustomTripProgressView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomTripProgressView.h; sourceTree = "<group>"; };
+		9791AAD130055AB800040DC0 /* CustomTripProgressView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomTripProgressView.m; sourceTree = "<group>"; };
+		9791AAD230055AB800040DC0 /* ProcessLineView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProcessLineView.h; sourceTree = "<group>"; };
+		9791AAD330055AB800040DC0 /* ProcessLineView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProcessLineView.m; sourceTree = "<group>"; };
 		D92FC512BBC21CC0D27F656A /* Pods-CJComplexUIKitDemoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CJComplexUIKitDemoTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-CJComplexUIKitDemoTests/Pods-CJComplexUIKitDemoTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -249,9 +249,9 @@
 				976CB3582FFE6CF6000505DD /* Service */,
 				976CB34C2FFE6C9D000505DD /* CommonUtil */,
 				976CB3232FFE6AA4000505DD /* CommonUI */,
+				9791AAD430055AB800040DC0 /* CJSmallCustomView */,
 				80FF8F0A1FC5649E00E437CF /* Modules */,
 				976CB3622FFE710E000505DD /* Resource */,
-				9729D80B300188E600FFF239 /* CJSmallCustomView */,
 				780E46031E5DF87B00980127 /* Supporting Files */,
 			);
 			path = CJComplexUIKitDemo;
@@ -407,17 +407,6 @@
 			path = Modules;
 			sourceTree = "<group>";
 		};
-		9729D80B300188E600FFF239 /* CJSmallCustomView */ = {
-			isa = PBXGroup;
-			children = (
-				9729D807300188E600FFF239 /* CustomTripProgressView.h */,
-				9729D808300188E600FFF239 /* CustomTripProgressView.m */,
-				9729D809300188E600FFF239 /* ProcessLineView.h */,
-				9729D80A300188E600FFF239 /* ProcessLineView.m */,
-			);
-			path = CJSmallCustomView;
-			sourceTree = "<group>";
-		};
 		976CB3232FFE6AA4000505DD /* CommonUI */ = {
 			isa = PBXGroup;
 			children = (
@@ -510,6 +499,18 @@
 			);
 			path = data;
 			sourceTree = "<group>";
+		};
+		9791AAD430055AB800040DC0 /* CJSmallCustomView */ = {
+			isa = PBXGroup;
+			children = (
+				9791AAD030055AB800040DC0 /* CustomTripProgressView.h */,
+				9791AAD130055AB800040DC0 /* CustomTripProgressView.m */,
+				9791AAD230055AB800040DC0 /* ProcessLineView.h */,
+				9791AAD330055AB800040DC0 /* ProcessLineView.m */,
+			);
+			name = CJSmallCustomView;
+			path = ../CJSmallCustomView;
+			sourceTree = SOURCE_ROOT;
 		};
 		E75FB8B4AF71C8FE7F95B93C /* Pods */ = {
 			isa = PBXGroup;
@@ -820,6 +821,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				789A4F9121FAF3FB001528B9 /* TvDemo_Complex+Event.m in Sources */,
+				9791AAD530055AB800040DC0 /* ProcessLineView.m in Sources */,
+				9791AAD630055AB800040DC0 /* CustomTripProgressView.m in Sources */,
 				789A4F9421FAF3FB001528B9 /* TvDemo_Complex.m in Sources */,
 				789A4F6021FAF3A8001528B9 /* CvDemo_Complex+Event.m in Sources */,
 				780E46081E5DF87B00980127 /* AppDelegate.m in Sources */,
@@ -840,8 +843,6 @@
 				976CB3512FFE6C9D000505DD /* TestDataUtil.m in Sources */,
 				976CB3522FFE6C9D000505DD /* DemoInfo.m in Sources */,
 				80E7E68920AC37CA000F762D /* IjinbuNetworkClient+Login.m in Sources */,
-				9729D80C300188E600FFF239 /* CustomTripProgressView.m in Sources */,
-				9729D80D300188E600FFF239 /* ProcessLineView.m in Sources */,
 				789A4F6721FAF3A8001528B9 /* cvSupplementaryFoot.m in Sources */,
 				789A4F9E21FAF3FB001528B9 /* CustomTableViewCell.m in Sources */,
 				976CB3592FFE6CF6000505DD /* AppInfo.m in Sources */,

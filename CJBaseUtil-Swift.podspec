@@ -10,7 +10,7 @@ Pod::Spec.new do |s|
   s.author       = "dvlproad"
 
   s.description  = <<-DESC
-                 自定义的基础工具类，可按需独立引入：
+                 自定义的基础工具类（Swift版），可按需独立引入：
                  • CJBaseUtil-Swift/FrameworkCJHelper - Framework 帮助类（解决 use_frameworks! 命名空间前缀问题）
 
                  每个子库可独立引入，详见各子库描述。

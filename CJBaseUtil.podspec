@@ -12,6 +12,7 @@ Pod::Spec.new do |s|
                  • CJBaseUtil/CJIndentedStringUtil - 将 字符串/字典/数组转成含缩进字符串的字符串 的工具
                  • CJBaseUtil/CJAppLastUtil - APP上次信息+账号安全工具
                  • CJBaseUtil/CJDataUtil - 包含排序+SortOrder、分类+SortCategory、搜索+NormalSearch 等的数据处理工具类
+                 • CJBaseUtil/CJDecimalUtil - 小数的处理（常用于价钱Money、距离Distance的计算)
                  • CJBaseUtil/CJDateUtil - 日期工具
                  • CJBaseUtil/CJKeyboardUtil - 键盘工具
                  • CJBaseUtil/CJCallUtil - 拨打电话工具

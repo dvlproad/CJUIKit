@@ -3,7 +3,7 @@
   "version": "0.4.0",
   "summary": "自定义的稍微复杂的UI( 内部有 CJUploadImageCollectionView 依赖到了私有的 CQImageAddDeleteListKit )",
   "homepage": "https://github.com/dvlproad/CJUIKit",
-  "description": "自定义的稍微复杂的UI，可按需独立引入：\n• CJComplexUIKit/CJCollectionView/CJBaseCollectionViewCell - 集合单元格\n• CJComplexUIKit/CJDataScrollView/ImagePickerCollectionlView - 图片选择集合视图\n\n每个子库可独立引入，详见各子库描述。",
+  "description": "自定义的稍微复杂的UI( 内部有 CJUploadImageCollectionView 依赖到了私有的 CQImageAddDeleteListKit )，可按需独立引入：\n• CJComplexUIKit/CJBaseCollectionViewCell - 集合单元格\n• CJComplexUIKit/CJUploadImageCollectionView - 图片选择及上传视图( 内部有 CJUploadImageCollectionView 依赖到了私有的 CQImageAddDeleteListKit )\n\n每个子库可独立引入，详见各子库描述。",
   "license": "MIT",
   "authors": {
     "dvlproad": ""
@@ -19,34 +19,24 @@
   "requires_arc": true,
   "subspecs": [
     {
-      "name": "CJCollectionView",
-      "subspecs": [
-        {
-          "name": "CJBaseCollectionViewCell",
-          "source_files": "CJComplexUIKit/CJCollectionView/CJBaseCollectionViewCell/**/*.{h,m}"
-        }
-      ]
+      "name": "CJBaseCollectionViewCell",
+      "source_files": "CJComplexUIKit/CJBaseCollectionViewCell/**/*.{h,m}"
     },
     {
-      "name": "CJDataScrollView",
-      "subspecs": [
-        {
-          "name": "ImagePickerCollectionlView",
-          "source_files": "CJComplexUIKit/CJDataScrollView/ImagePickerCollectionlView/**/*.{h,m}",
-          "resource_bundles": {
-            "CJComplexUIKit_ImagePickerCollectionlView": [
-              "CJComplexUIKit/CJDataScrollView/ImagePickerCollectionlView/**/*.{png,xib,bundle}"
-            ]
-          },
-          "frameworks": "MediaPlayer",
-          "dependencies": {
-            "JGActionSheet": [],
-            "CJComplexUIKit/CJCollectionView/CJBaseCollectionViewCell": [],
-            "CQImageAddDeleteListKit/AddDeletePickUpload": [],
-            "CJNetwork/AFNetworkingUploadComponent": []
-          }
-        }
-      ]
+      "name": "CJUploadImageCollectionView",
+      "source_files": "CJComplexUIKit/CJUploadImageCollectionView/**/*.{h,m}",
+      "resource_bundles": {
+        "CJComplexUIKit_ImagePickerCollectionlView": [
+          "CJComplexUIKit/CJUploadImageCollectionView/**/*.{png,xib,bundle}"
+        ]
+      },
+      "frameworks": "MediaPlayer",
+      "dependencies": {
+        "JGActionSheet": [],
+        "CJComplexUIKit/CJBaseCollectionViewCell": [],
+        "CQImageAddDeleteListKit/AddDeletePickUpload": [],
+        "CJNetwork/AFNetworkingUploadComponent": []
+      }
     }
   ]
 }

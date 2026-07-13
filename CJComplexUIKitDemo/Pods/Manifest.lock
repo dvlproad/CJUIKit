@@ -39,15 +39,11 @@ PODS:
   - CJCollectionViewLayout/MainSubLayout (0.2.8)
   - CJCollectionViewLayout/WaterLayout (0.2.8)
   - CJComplexUIKit (0.4.0):
-    - CJComplexUIKit/CJCollectionView (= 0.4.0)
-    - CJComplexUIKit/CJDataScrollView (= 0.4.0)
-  - CJComplexUIKit/CJCollectionView (0.4.0):
-    - CJComplexUIKit/CJCollectionView/CJBaseCollectionViewCell (= 0.4.0)
-  - CJComplexUIKit/CJCollectionView/CJBaseCollectionViewCell (0.4.0)
-  - CJComplexUIKit/CJDataScrollView (0.4.0):
-    - CJComplexUIKit/CJDataScrollView/ImagePickerCollectionlView (= 0.4.0)
-  - CJComplexUIKit/CJDataScrollView/ImagePickerCollectionlView (0.4.0):
-    - CJComplexUIKit/CJCollectionView/CJBaseCollectionViewCell
+    - CJComplexUIKit/CJBaseCollectionViewCell (= 0.4.0)
+    - CJComplexUIKit/CJUploadImageCollectionView (= 0.4.0)
+  - CJComplexUIKit/CJBaseCollectionViewCell (0.4.0)
+  - CJComplexUIKit/CJUploadImageCollectionView (0.4.0):
+    - CJComplexUIKit/CJBaseCollectionViewCell
     - CJNetwork/AFNetworkingUploadComponent
     - CQImageAddDeleteListKit/AddDeletePickUpload
     - JGActionSheet
@@ -342,7 +338,7 @@ SPEC CHECKSUMS:
   CJBaseUIKit: 1445f55a4c9f942351fcd1964694f32196472837
   CJBaseUtil: 1bbf8d5f831dc12ae4bb06c8b5326bd39f3522e1
   CJCollectionViewLayout: 00c661838ff985134c364036e4bffbf07233c092
-  CJComplexUIKit: 0e9c8287b173439e3309de09ee02e087035b74a2
+  CJComplexUIKit: d6b3ca468702f95c24f85b3bcd8bffa56ef60040
   CJContainer: b7d5d626a05691c9107ce57b5991ab5c066f86a3
   CJFile: 6c1e6d55b3b94e8afbaa9f413f131301d15fdc48
   CJFoundation: 53b4df7152c6d6fd776f55f387c67f431b8574bd
@@ -374,6 +370,6 @@ SPEC CHECKSUMS:
   SVProgressHUD: 4837c74bdfe2e51e8821c397825996a8d7de6e22
   YYCache: 8105b6638f5e849296c71f331ff83891a4942952
 
-PODFILE CHECKSUM: d1360db8c3cb216f1d152bc2f957b13f32817d4b
+PODFILE CHECKSUM: fe5c282d0ea6df395247620f24348363b6d35be2
 
 COCOAPODS: 1.16.2

@@ -39,7 +39,7 @@
         sectionDataModel.theme = @"UICollectionView相关";
         {
             CQDMModuleModel *complexDemoModule = [[CQDMModuleModel alloc] init];
-            complexDemoModule.title = @"ComplexDemo";
+            complexDemoModule.title = @"UICollectionView方法了解(更多更全)";
             complexDemoModule.classEntry = [CvDemo_Complex class];
             complexDemoModule.isCreateByXib = YES;
             [sectionDataModel.values addObject:complexDemoModule];

@@ -10,9 +10,9 @@ Pod::Spec.new do |s|
   s.homepage     = "https://github.com/dvlproad/CJUIKit"
 
   s.description  = <<-DESC
-                 自定义的稍微复杂的UI，可按需独立引入：
-                 • CJComplexUIKit/CJCollectionView/CJBaseCollectionViewCell - 集合单元格
-                 • CJComplexUIKit/CJDataScrollView/ImagePickerCollectionlView - 图片选择集合视图
+                 自定义的稍微复杂的UI( 内部有 CJUploadImageCollectionView 依赖到了私有的 CQImageAddDeleteListKit )，可按需独立引入：
+                 • CJComplexUIKit/CJBaseCollectionViewCell - 集合单元格
+                 • CJComplexUIKit/CJUploadImageCollectionView - 图片选择及上传视图( 内部有 CJUploadImageCollectionView 依赖到了私有的 CQImageAddDeleteListKit )
 
                  每个子库可独立引入，详见各子库描述。
                  DESC
@@ -40,31 +40,27 @@ Pod::Spec.new do |s|
   # s.xcconfig = { "HEADER_SEARCH_PATHS" => "$(SDKROOT)/usr/include/libxml2" }
   # s.dependency "JSONKit", "~> 1.4"
 
-    # 与 UICollectionView 相关的基础类
-  s.subspec 'CJCollectionView' do |ss|
-    ss.subspec 'CJBaseCollectionViewCell' do |sss|
-      sss.source_files = "CJComplexUIKit/CJCollectionView/CJBaseCollectionViewCell/**/*.{h,m}"
-    end
+  # 集合单元格
+  s.subspec 'CJBaseCollectionViewCell' do |ss|
+    ss.source_files = "CJComplexUIKit/CJBaseCollectionViewCell/**/*.{h,m}"
   end
 
-  # 带数据的列表视图或集合视图(常用于搜索、图片选择)
-  s.subspec 'CJDataScrollView' do |ss|
-    ss.subspec 'ImagePickerCollectionlView' do |sss|
-      sss.source_files = "CJComplexUIKit/CJDataScrollView/ImagePickerCollectionlView/**/*.{h,m}"
-      #sss.resources = "CJComplexUIKit/CJDataScrollView/ImagePickerCollectionlView/**/*.{png,xib,bundle}"
-      sss.resource_bundle = {
-        'CJComplexUIKit_ImagePickerCollectionlView' => ['CJComplexUIKit/CJDataScrollView/ImagePickerCollectionlView/**/*.{png,xib,bundle}'] # CJComplexUIKit_ImagePickerCollectionlView 为生成boudle的名称，随便起，记下，下面要用
-      }
+  # 图片选择及上传视图( 内部有 CJUploadImageCollectionView 依赖到了私有的 CQImageAddDeleteListKit )
+  s.subspec 'CJUploadImageCollectionView' do |ss|
+    ss.source_files = "CJComplexUIKit/CJUploadImageCollectionView/**/*.{h,m}"
+    #ss.resources = "CJComplexUIKit/CJDataScrollView/ImagePickerCollectionlView/**/*.{png,xib,bundle}"
+    ss.resource_bundle = {
+      'CJComplexUIKit_ImagePickerCollectionlView' => ['CJComplexUIKit/CJUploadImageCollectionView/**/*.{png,xib,bundle}'] # CJComplexUIKit_ImagePickerCollectionlView 为生成boudle的名称，随便起，记下，下面要用
+    }
 
-      sss.frameworks = "MediaPlayer"
+    ss.frameworks = "MediaPlayer"
 
-      # 图片选择功能需要依赖的库
-      sss.dependency 'JGActionSheet'
-      sss.dependency 'CJComplexUIKit/CJCollectionView/CJBaseCollectionViewCell'
+    # 图片选择功能需要依赖的库
+    ss.dependency 'JGActionSheet'
+    ss.dependency 'CJComplexUIKit/CJBaseCollectionViewCell'
 
-      sss.dependency 'CQImageAddDeleteListKit/AddDeletePickUpload'
-      sss.dependency 'CJNetwork/AFNetworkingUploadComponent'
-    end
+    ss.dependency 'CQImageAddDeleteListKit/AddDeletePickUpload'
+    ss.dependency 'CJNetwork/AFNetworkingUploadComponent'
   end
 
 
