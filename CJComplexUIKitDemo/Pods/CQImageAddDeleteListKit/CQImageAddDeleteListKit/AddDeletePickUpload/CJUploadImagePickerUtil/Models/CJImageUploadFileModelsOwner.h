@@ -1,12 +1,14 @@
 //
 //  CJImageUploadFileModelsOwner.h
-//  CJPickerDemo
+//  UIKit-List-ImageAddDelete-iOS
 //
 //  Created by ciyouzen on 2017/1/19.
 //  Copyright © 2017年 dvlproad. All rights reserved.
 //
 
 #import <CJNetworkFileModel/CJUploadFileModelsOwner.h>
+
+NS_ASSUME_NONNULL_BEGIN
 
 @interface CJImageUploadFileModelsOwner : CJUploadFileModelsOwner
 
@@ -28,3 +30,4 @@
                  uploadFileModels:(NSArray<CJUploadFileModel *> *)uploadFileModels;
 
 @end
+NS_ASSUME_NONNULL_END

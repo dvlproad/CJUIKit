@@ -1,24 +1,24 @@
 //
-//  CJImagePickerTableView.m
-//  CJPickerDemo
+//  CJCustomImagePickerTableView.m
+//  UIKit-ImagePicker-iOS
 //
 //  Created by ciyouzen on 2015/8/31.
 //  Copyright © 2015年 dvlproad. All rights reserved.
 //
 
-#import "CJImagePickerTableView.h"
+#import "CJCustomImagePickerTableView.h"
 #import "CJMultiColumnPhotoTableViewCell.h"
 
 #import <AVFoundation/AVFoundation.h>
 
-@interface CJImagePickerTableView () <UIScrollViewDelegate, UITableViewDataSource, UITableViewDelegate> {
+@interface CJCustomImagePickerTableView () <UIScrollViewDelegate, UITableViewDataSource, UITableViewDelegate> {
     
 }
 @property (nonatomic, strong) NSMutableArray<CJAlumbSectionDataModel *> *sectionDataModels;
 
 @property (nonatomic, copy) void(^selectedCountChangeBlock)(NSMutableArray<CJAlumbImageModel *> *bSelectedArray);
 
-@property (nonatomic, copy) void(^overLimitBlock)(void);
+@property (nonatomic, copy) void(^overLimitBlock)(NSInteger currentCount, NSInteger maxCount);
 @property (nonatomic, copy) void (^clickImageBlock)(CJAlumbImageModel *imageModel); /**< 图片的点击操作 */
 
 
@@ -29,7 +29,7 @@
 
 
 
-@implementation CJImagePickerTableView
+@implementation CJCustomImagePickerTableView
 
 /*
  *  初始化
@@ -41,10 +41,11 @@
  *  @return 照片列表
  */
 - (instancetype)initWithSelectedCountChangeBlock:(void(^)(NSMutableArray<CJAlumbImageModel *> *bSelectedArray))selectedCountChangeBlock
-                                  overLimitBlock:(void(^)(void))overLimitBlock
+                                  overLimitBlock:(void(^ _Nullable)(NSInteger currentCount, NSInteger maxCount))overLimitBlock
                                  clickImageBlock:(void(^)(CJAlumbImageModel *imageModel))clickImageBlock
 {
-    if (self = [super init]) {
+    self = [super initWithFrame:CGRectZero style:UITableViewStylePlain];
+    if (self) {
         self.canMaxChooseImageCount = 9;
         
         self.separatorStyle = UITableViewCellSeparatorStyleNone;
@@ -67,7 +68,7 @@
 
 
 #pragma mark - Event
-- (void)reloadWithData:(NSArray<CJAlumbImageModel *> *)currentGroupAssetModels {
+- (void)reloadWithData:(NSMutableArray<CJAlumbImageModel *> *)currentGroupAssetModels {
     CJAlumbSectionDataModel *sectionDataModel = [[CJAlumbSectionDataModel alloc] init];
     sectionDataModel.values = currentGroupAssetModels;
     NSMutableArray<CJAlumbSectionDataModel *> *sectionDataModels = [[NSMutableArray alloc] init];
@@ -95,11 +96,13 @@
     item.selected = !item.selected;
     photoGridCell.selected = item.selected;
     if (item.selected) {
-        if (self.selectedArray.count >= self.canMaxChooseImageCount) {
+        NSInteger currentCount = self.selectedArray.count;
+        NSInteger maxCount = self.canMaxChooseImageCount;
+        if (currentCount >= maxCount) {
             item.selected = NO;
             
             if (self.overLimitBlock) {
-                self.overLimitBlock();
+                self.overLimitBlock(currentCount, maxCount);
             }
             
             return;

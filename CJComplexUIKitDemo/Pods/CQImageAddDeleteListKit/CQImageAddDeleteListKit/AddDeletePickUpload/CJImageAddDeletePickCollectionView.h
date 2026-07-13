@@ -1,13 +1,15 @@
 //
 //  CJImageAddDeletePickCollectionView.h
-//  CJComplexUIKitDemo
+//  UIKit-List-ImageAddDelete-iOS
 //
 //  Created by ciyouzen on 2017/1/19.
 //  Copyright © 2017年 dvlproad. All rights reserved.
 //
 //  图片 添加+删除+选择+删除 集合视图
 
-#import "CQActionImageCollectionView.h"
+#import <CQActionCollectionView/CQActionImageCollectionView.h>
+
+NS_ASSUME_NONNULL_BEGIN
 
 typedef NS_ENUM(NSUInteger, CJMediaType) {
     CJMediaTypeImage = 0,
@@ -38,3 +40,4 @@ typedef NS_ENUM(NSUInteger, CJMediaType) {
 
 
 @end
+NS_ASSUME_NONNULL_END

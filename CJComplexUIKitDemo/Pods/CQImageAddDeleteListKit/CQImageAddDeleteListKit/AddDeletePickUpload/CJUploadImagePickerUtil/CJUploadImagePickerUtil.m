@@ -1,6 +1,6 @@
 //
 //  CJUploadImagePickerUtil.m
-//  CJPickerDemo
+//  UIKit-List-ImageAddDelete-iOS
 //
 //  Created by ciyouzen on 2017/8/30.
 //  Copyright © 2017年 dvlproad. All rights reserved.
@@ -36,7 +36,7 @@
 
 
 /* 完整的描述请参见文件头部 */
-+ (CJImagePickerViewController *)choosePhotoPickerWithCanMaxChooseImageCount:(NSInteger)canMaxChooseImageCount pickCompleteBlock:(void (^)(NSArray<CJImageUploadFileModelsOwner *> *pickedImageItems))pickImageCompleteBlock
++ (CJCustomImagePickerViewController *)choosePhotoPickerWithCanMaxChooseImageCount:(NSInteger)canMaxChooseImageCount pickCompleteBlock:(void (^)(NSArray<CJImageUploadFileModelsOwner *> *pickedImageItems))pickImageCompleteBlock
 {
     /*
     UIImagePickerControllerSourceType sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
@@ -60,25 +60,30 @@
      }];
     return;
     */
-    return nil;
-//    CJImagePickerViewController *imagePickerViewController = [[CJImagePickerViewController alloc] init];
-//    imagePickerViewController.canMaxChooseImageCount = canMaxChooseImageCount;
-//    imagePickerViewController.pickCompleteBlock = ^(NSArray<AlumbImageModel *> *imageModels) {
-//        NSMutableArray *pickerImageModels = [[NSMutableArray alloc] init];
-//        for (NSInteger i = 0; i < imageModels.count; i++) {
-//            AlumbImageModel *item = imageModels[i];
-//            UIImage *image = item.image;
-//
-//            CJImageUploadFileModelsOwner *imageItem = [self saveImageToSandbox:image];   //保存图片到APP沙盒中
-//            [pickerImageModels addObject:imageItem];
-//        }
-//        //选择结束
-//        if (pickImageCompleteBlock) {
-//            pickImageCompleteBlock(pickerImageModels);
-//        }
-//    };
-//
-//    return imagePickerViewController;
+    CJCustomImagePickerViewController *imagePickerViewController = [[CJCustomImagePickerViewController alloc] initWithOverLimitBlock:^(NSInteger currentCount, NSInteger maxCount) {
+        // 超过最大选择图片数量的限制回调
+    } clickImageBlock:^(CJAlumbImageModel *imageModel) {
+        // 点击图片执行的事件
+    } previewAction:^(NSArray *bTotoalImageModels, NSMutableArray<CJAlumbImageModel *> *bSelectedImageModels) {
+        // 点击底部左侧"预览"执行的事件
+    } pickFinishBlock:^(UIViewController *bVC, NSArray<CJAlumbImageModel *> *bSelectedImageModels) {
+        // 点击底部右侧"完成"执行的事件
+        NSMutableArray *pickerImageModels = [[NSMutableArray alloc] init];
+        for (NSInteger i = 0; i < bSelectedImageModels.count; i++) {
+            CJAlumbImageModel *item = bSelectedImageModels[i];
+            UIImage *image = item.image;
+            
+            CJImageUploadFileModelsOwner *imageItem = [self saveImageToSandbox:image];   //保存图片到APP沙盒中
+            [pickerImageModels addObject:imageItem];
+        }
+        //选择结束
+        if (pickImageCompleteBlock) {
+            pickImageCompleteBlock(pickerImageModels);
+        }
+    }];
+    imagePickerViewController.canMaxChooseImageCount = canMaxChooseImageCount;
+    
+    return imagePickerViewController;
 }
 
 

@@ -1,15 +1,15 @@
 //
-//  CJImagePickerNavigatorController.m
-//  CJPickerDemo
+//  CJCustomImagePickerController.m
+//  UIKit-ImagePicker-iOS
 //
 //  Created by ciyouzen on 2015/8/31.
 //  Copyright © 2015年 dvlproad. All rights reserved.
 //
 
-#import "CJImagePickerNavigatorController.h"
-#import "CJImagePickerViewController.h"
+#import "CJCustomImagePickerController.h"
+#import "CJCustomImagePickerViewController.h"
 
-@interface CJImagePickerNavigatorController () {
+@interface CJCustomImagePickerController () {
     
 }
 @property (nonatomic, copy) void(^pickCancelBlock)(UINavigationController *bNavVC);
@@ -22,12 +22,12 @@
 
 
 
-@implementation CJImagePickerNavigatorController
+@implementation CJCustomImagePickerController
 
 /*
  *  初始化
  *
- *  @param overLimitBlock           超过最大选择图片数量的限制回调
+ *  @param overLimitBlock           超过最大选择图片数量的限制回调(为nil时候，会自动使用默认的提示)
  *  @param clickImageBlock          点击图片执行的事件
  *  @param previewAction            点击底部左侧"预览"执行的事件
  *  @param pickFinishBlock          点击底部右侧"完成"执行的事件
@@ -36,7 +36,7 @@
  *
  *  @return 照片选择器
  */
-- (instancetype)initWithOverLimitBlock:(void(^)(void))overLimitBlock
+- (instancetype)initWithOverLimitBlock:(void(^ _Nullable)(NSInteger currentCount, NSInteger maxCount))overLimitBlock
                        clickImageBlock:(void(^)(CJAlumbImageModel *imageModel))clickImageBlock
                          previewAction:(void(^)(NSArray *bTotoalImageModels, NSMutableArray<CJAlumbImageModel *> *bSelectedImageModels))previewAction
                        pickFinishBlock:(void(^)(UINavigationController *bNavVC, NSArray<CJAlumbImageModel *> *bSelectedImageModels))pickFinishBlock
@@ -44,12 +44,13 @@
                  changePhotoGroupBlock:(void(^)(void))changePhotoGroupBlock
 {
     
-    CJImagePickerViewController *viewController = [[CJImagePickerViewController alloc] initWithOverLimitBlock:overLimitBlock clickImageBlock:clickImageBlock previewAction:previewAction pickFinishBlock:^(UIViewController *bVC, NSArray<CJAlumbImageModel *> *bSelectedImageModels) {
+    UIViewController *viewController = [[CJCustomImagePickerViewController alloc] initWithOverLimitBlock:overLimitBlock clickImageBlock:clickImageBlock previewAction:previewAction pickFinishBlock:^(UIViewController *bVC, NSArray<CJAlumbImageModel *> *bSelectedImageModels) {
         if (pickFinishBlock) {
             pickFinishBlock(self, bSelectedImageModels);
         }
     }];
-    if (self = [super initWithRootViewController:viewController]) {
+    self = [super initWithRootViewController:viewController];
+    if (self) {
         self.changePhotoGroupBlock = changePhotoGroupBlock;
         self.pickCancelBlock = pickCancelBlock;
     }

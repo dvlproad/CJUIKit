@@ -42,8 +42,13 @@
 - (void)commonInit {
     UIView *parentView = self.contentView;
     
+    NSString *bundleName = @"CJComplexUIKit_ImagePickerCollectionlView";
+    NSBundle *frameworkBundle = [NSBundle bundleForClass:[self class]];
+    NSURL *bundleURL = [frameworkBundle URLForResource:bundleName withExtension:@"bundle"];
+    NSBundle *resourceBundle = bundleURL ? [NSBundle bundleWithURL:bundleURL] : nil;
+    
     [self addCJImageViewWithEdgeInsets:UIEdgeInsetsZero];
-    self.cjImageView.image = [UIImage imageNamed:@"cjCollectionViewCellAdd"];
+    self.cjImageView.image = [UIImage imageNamed:@"cjCollectionViewCellAdd" inBundle:resourceBundle withConfiguration:nil];
     [self addCJDeleteButton];
     
     self.uploadProgressView = [[CJUploadProgressView alloc] initWithFrame:CGRectZero];
@@ -159,9 +164,14 @@
  *
  */
 - (void)addCJDeleteButton {
+    NSString *bundleName = @"CJComplexUIKit_ImagePickerCollectionlView";
+    NSBundle *frameworkBundle = [NSBundle bundleForClass:[self class]];
+    NSURL *bundleURL = [frameworkBundle URLForResource:bundleName withExtension:@"bundle"];
+    NSBundle *resourceBundle = bundleURL ? [NSBundle bundleWithURL:bundleURL] : nil;
+    
     UIView *parentView = self.contentView;
     self.cjDeleteButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    [self.cjDeleteButton setImage:[UIImage imageNamed:@"cjCollectionViewCellDelete"] forState:UIControlStateNormal];
+    [self.cjDeleteButton setImage:[UIImage imageNamed:@"cjCollectionViewCellDelete" inBundle:resourceBundle withConfiguration:nil] forState:UIControlStateNormal];
     [self.cjDeleteButton addTarget:self action:@selector(deleteButtonAction:) forControlEvents:UIControlEventTouchUpInside];
     [parentView addSubview:self.cjDeleteButton];
     self.cjDeleteButton.translatesAutoresizingMaskIntoConstraints = NO;

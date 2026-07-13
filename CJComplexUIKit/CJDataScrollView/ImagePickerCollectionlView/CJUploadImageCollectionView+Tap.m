@@ -93,7 +93,7 @@
             } else {
                 NSInteger canMaxChooseImageCount = weakSelf.equalCellSizeSetting.maxDataModelShowCount - weakSelf.dataModels.count;
                 
-                CJImagePickerViewController *imagePickerController =
+                CJCustomImagePickerViewController *imagePickerController =
                 [CJUploadImagePickerUtil choosePhotoPickerWithCanMaxChooseImageCount:canMaxChooseImageCount pickCompleteBlock:^(NSArray<CJImageUploadFileModelsOwner *> *pickedImageItems) {
                     [weakSelf.dataModels addObjectsFromArray:pickedImageItems];
                     [weakSelf reloadData];

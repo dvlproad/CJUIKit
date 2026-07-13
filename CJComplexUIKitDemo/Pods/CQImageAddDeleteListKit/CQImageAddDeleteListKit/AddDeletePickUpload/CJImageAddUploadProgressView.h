@@ -1,12 +1,14 @@
 //
 //  CJImageAddUploadProgressView.h
-//  CJNetworkDemo
+//  UIKit-List-ImageAddDelete-iOS
 //
 //  Created by ciyouzen on 2017/8/26.
 //  Copyright © 2017年 dvlproad. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
+
+NS_ASSUME_NONNULL_BEGIN
 
 /**
  *  图片等上传时候，为了显示进度而添加的视图
@@ -27,3 +29,4 @@
              progressVaule:(CGFloat)progressValue;
 
 @end
+NS_ASSUME_NONNULL_END

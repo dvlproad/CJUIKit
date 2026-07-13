@@ -13,11 +13,11 @@
 #import "CJImageAddDeletePickCollectionView.h"
 #import "CJImageAddDeletePickUploadCollectionView.h"
 #import "CJImageAddUploadProgressView.h"
+#import "CJChooseFileActionSheetUtil.h"
+#import "CJMediaBrowserUtil.h"
 #import "CJUploadImagePickerUtil.h"
 #import "CJImageUploadFileModelsOwner.h"
 #import "CJVideoUploadFileModelsOwner.h"
-#import "CJChooseFileActionSheetUtil.h"
-#import "CJMediaBrowserUtil.h"
 
 FOUNDATION_EXPORT double CQImageAddDeleteListKitVersionNumber;
 FOUNDATION_EXPORT const unsigned char CQImageAddDeleteListKitVersionString[];

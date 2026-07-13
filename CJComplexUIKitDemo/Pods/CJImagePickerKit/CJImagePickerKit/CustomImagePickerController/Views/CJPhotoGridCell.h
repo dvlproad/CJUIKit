@@ -1,6 +1,6 @@
 //
 //  CJPhotoGridCell.h
-//  CJPickerDemo
+//  UIKit-ImagePicker-iOS
 //
 //  Created by ciyouzen on 2015/8/31.
 //  Copyright © 2015年 dvlproad. All rights reserved.
@@ -10,6 +10,8 @@
 #import <Masonry/Masonry.h>
 
 #import "CJAlumbImageModel.h"
+
+NS_ASSUME_NONNULL_BEGIN
 
 @interface CJPhotoGridCell : UIView {
     
@@ -23,3 +25,4 @@
 
 
 @end
+NS_ASSUME_NONNULL_END

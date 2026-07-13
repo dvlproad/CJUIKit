@@ -2,7 +2,7 @@ CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = NO
 CONFIGURATION_BUILD_DIR = ${PODS_CONFIGURATION_BUILD_DIR}/CJNetwork
 FRAMEWORK_SEARCH_PATHS = $(inherited) "${PODS_CONFIGURATION_BUILD_DIR}/AFNetworking" "${PODS_CONFIGURATION_BUILD_DIR}/CJNetworkFileModel" "${PODS_CONFIGURATION_BUILD_DIR}/CQNetworkPublic" "${PODS_CONFIGURATION_BUILD_DIR}/YYCache"
 GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
-OTHER_LDFLAGS = $(inherited) -framework "AFNetworking" -framework "CJNetworkFileModel" -framework "CQNetworkPublic" -framework "CoreFoundation" -framework "CoreGraphics" -framework "MobileCoreServices" -framework "QuartzCore" -framework "Security" -framework "SystemConfiguration" -framework "UIKit" -framework "YYCache"
+OTHER_LDFLAGS = $(inherited) -framework "AFNetworking" -framework "CJNetworkFileModel" -framework "CQNetworkPublic" -framework "CoreFoundation" -framework "QuartzCore" -framework "UIKit" -framework "YYCache"
 PODS_BUILD_DIR = ${BUILD_DIR}
 PODS_CONFIGURATION_BUILD_DIR = ${PODS_BUILD_DIR}/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)
 PODS_DEVELOPMENT_LANGUAGE = ${DEVELOPMENT_LANGUAGE}

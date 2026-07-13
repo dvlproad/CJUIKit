@@ -33,6 +33,17 @@ typedef NS_ENUM(NSUInteger, SDImageForceDecodePolicy) {
     SDImageForceDecodePolicyAlways
 };
 
+/// These enum is used to represent the High Dynamic Range type during image encoding/decoding.
+/// There are alao other HDR type in history before ISO Standard (ISO 21496-1), including Google and Apple's old OSs captured photos, but which is non-standard and we do not support.
+typedef NS_ENUM(NSUInteger, SDImageHDRType) {
+    /// SDR, mostly only 8 bits color per components, RGBA8
+    SDImageHDRTypeSDR = 0,
+    /// ISO HDR (supported by modern format only, like HEIF/AVIF/JPEG-XL)
+    SDImageHDRTypeISOHDR = 1,
+    /// ISO Gain Map based HDR (supported by nearly all format, including tranditional JPEG, which stored the gain map into XMP)
+    SDImageHDRTypeISOGainMap = 2,
+};
+
 /// Byte alignment the bytes size with alignment
 /// - Parameters:
 ///   - size: The bytes size
@@ -57,7 +68,8 @@ typedef struct SDImagePixelFormat {
 /**
  Return an animated image with frames array.
  For UIKit, this will apply the patch and then create animated UIImage. The patch is because that `+[UIImage animatedImageWithImages:duration:]` just use the average of duration for each image. So it will not work if different frame has different duration. Therefore we repeat the specify frame for specify times to let it work.
- For AppKit, NSImage does not support animates other than GIF. This will try to encode the frames to GIF format and then create an animated NSImage for rendering. Attention the animated image may loss some detail if the input frames contain full alpha channel because GIF only supports 1 bit alpha channel. (For 1 pixel, either transparent or not)
+ For AppKit before macOS 10.13, NSImage does not support animates other than GIF. This will try to encode the frames to GIF format and then create an animated NSImage for rendering. Attention the animated image may loss some detail if the input frames contain full alpha channel because GIF only supports 1 bit alpha channel. (For 1 pixel, either transparent or not)
+ For AppKit after macOS 10.14, use APNG format, which has a better render result.
 
  @param frames The frames array. If no frames or frames is empty, return nil
  @return A animated image for rendering on UIImageView(UIKit) or NSImageView(AppKit)
@@ -112,6 +124,12 @@ typedef struct SDImagePixelFormat {
  The implementation use the Core Graphics internal to check whether the CGImage is `CGImageProvider` based, or `CGDataProvider` based. The `CGDataProvider` based is treated as non-lazy.
  */
 + (BOOL)CGImageIsLazy:(_Nonnull CGImageRef)cgImage;
+
+/**
+ Check if the CGImage is using HDR color space.
+ @note This use the same implementation like Apple, to checkl if color space uses transfer functions defined in ITU Rec.2100
+ */
++ (BOOL)CGImageIsHDR:(_Nonnull CGImageRef)cgImage;
 
 /**
  Create a decoded CGImage by the provided CGImage. This follows The Create Rule and you are response to call release after usage.

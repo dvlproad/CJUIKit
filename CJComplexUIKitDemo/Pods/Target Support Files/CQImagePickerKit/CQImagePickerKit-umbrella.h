@@ -11,8 +11,6 @@
 #endif
 
 #import "CQImagePickerControllerFactory.h"
-#import "CQImagePickerControllerUtil.h"
-#import "CQImagePickerPermissionManager.h"
 
 FOUNDATION_EXPORT double CQImagePickerKitVersionNumber;
 FOUNDATION_EXPORT const unsigned char CQImagePickerKitVersionString[];

@@ -1,6 +1,6 @@
 //
 //  CJSystemImagePickerController.m
-//  CJPickerDemo
+//  UIKit-ImagePicker-iOS
 //
 //  Created by ciyouzen on 14-02-16.
 //  Copyright © 2014年 dvlproad. All rights reserved.
@@ -28,6 +28,11 @@
     return self;
 }
 
+/*
+ *  是否是选择视频，否:则为默认的图像
+ *
+ *  @param isVideo   是否是选择视频(YES:视频, NO:图像)
+ */
 - (void)setSingleMediaTypeForVideo:(BOOL)isVideo {
     //NSArray<NSString *> *mediaTypes = @[(NSString *)kUTTypeImage,(NSString *)kUTTypeMovie];
     if (isVideo) {

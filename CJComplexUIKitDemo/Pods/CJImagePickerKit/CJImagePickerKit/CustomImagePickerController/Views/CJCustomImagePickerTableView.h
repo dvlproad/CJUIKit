@@ -1,6 +1,6 @@
 //
-//  CJImagePickerTableView.h
-//  CJPickerDemo
+//  CJCustomImagePickerTableView.h
+//  UIKit-ImagePicker-iOS
 //
 //  Created by ciyouzen on 2015/8/31.
 //  Copyright © 2015年 dvlproad. All rights reserved.
@@ -16,11 +16,11 @@
 
 #import "CJAlumbSectionDataModel.h"
 
-
+NS_ASSUME_NONNULL_BEGIN
 /**
- *  自定义的“图片选择器CJImagePickerViewController”
+ *  自定义的“图片选择器CJCustomImagePickerViewController”
  */
-@interface CJImagePickerTableView : UITableView {
+@interface CJCustomImagePickerTableView : UITableView {
     
 }
 @property (nonatomic, assign) NSInteger canMaxChooseImageCount;     /**< 可一次性选取的最大数目 */
@@ -37,15 +37,16 @@
  *  @return 照片列表
  */
 - (instancetype)initWithSelectedCountChangeBlock:(void(^)(NSMutableArray<CJAlumbImageModel *> *bSelectedArray))selectedCountChangeBlock
-                                  overLimitBlock:(void(^)(void))overLimitBlock
+                                  overLimitBlock:(void(^ _Nullable)(NSInteger currentCount, NSInteger maxCount))overLimitBlock
                                  clickImageBlock:(void(^)(CJAlumbImageModel *imageModel))clickImageBlock NS_DESIGNATED_INITIALIZER;
 + (instancetype)new NS_UNAVAILABLE;
 - (instancetype)init NS_UNAVAILABLE;
-- (instancetype)initWithFrame:(CGRect)frame NS_UNAVAILABLE;
+- (instancetype)initWithFrame:(CGRect)frame style:(UITableViewStyle)style NS_UNAVAILABLE;
 - (instancetype)initWithCoder:(NSCoder *)aDecoder NS_UNAVAILABLE;
 
 
 #pragma mark - Event
-- (void)reloadWithData:(NSArray<CJAlumbImageModel *> *)currentGroupAssetModels;
+- (void)reloadWithData:(NSMutableArray<CJAlumbImageModel *> *)currentGroupAssetModels;
 
 @end
+NS_ASSUME_NONNULL_END

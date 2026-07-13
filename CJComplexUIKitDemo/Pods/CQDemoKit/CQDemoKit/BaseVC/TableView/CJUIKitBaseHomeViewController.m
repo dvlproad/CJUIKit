@@ -32,10 +32,14 @@
         make.edges.mas_equalTo(self.view);
     }];
     self.tableView = tableView;
-    
-    
-    NSMutableArray *sectionDataModels = [[NSMutableArray alloc] init];
-    self.sectionDataModels = sectionDataModels;
+}
+
+#pragma mark - Lazy
+- (NSMutableArray<CQDMSectionDataModel *> *)sectionDataModels {
+    if (_sectionDataModels == nil) {
+        _sectionDataModels = [[NSMutableArray alloc] init];
+    }
+    return _sectionDataModels;
 }
 
 #pragma mark - UITableViewDataSource & UITableViewDelegate

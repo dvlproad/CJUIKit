@@ -10,11 +10,11 @@
 #endif
 #endif
 
-#import "CJImagePickerNavigatorController.h"
-#import "CJImagePickerTableView.h"
-#import "CJImagePickerViewController.h"
+#import "CJCustomImagePickerController.h"
+#import "CJCustomImagePickerViewController.h"
 #import "CJAlumbImageModel.h"
 #import "CJAlumbSectionDataModel.h"
+#import "CJCustomImagePickerTableView.h"
 #import "CJMultiColumnPhotoTableViewCell.h"
 #import "CJPhotoGridCell.h"
 #import "CJSystemImagePickerController.h"

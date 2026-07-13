@@ -1,6 +1,6 @@
 //
 //  CJMediaBrowserUtil.m
-//  CJComplexUIKitDemo
+//  UIKit-List-ImageAddDelete-iOS
 //
 //  Created by lcQian on 2020/4/6.
 //  Copyright © 2020 dvlproad. All rights reserved.

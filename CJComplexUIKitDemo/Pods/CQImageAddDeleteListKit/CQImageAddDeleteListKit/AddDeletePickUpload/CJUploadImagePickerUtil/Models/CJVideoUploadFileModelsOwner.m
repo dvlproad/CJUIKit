@@ -1,6 +1,6 @@
 //
 //  CJVideoUploadFileModelsOwner.m
-//  CJPickerDemo
+//  UIKit-List-ImageAddDelete-iOS
 //
 //  Created by ciyouzen on 2017/2/23.
 //  Copyright © 2017年 dvlproad. All rights reserved.

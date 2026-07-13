@@ -83,7 +83,11 @@ Pod::Spec.new do |s|
 
     ss.subspec 'ImagePickerCollectionlView' do |sss|
       sss.source_files = "CJComplexUIKit/CJDataScrollView/ImagePickerCollectionlView/**/*.{h,m}"
-      sss.resources = "CJComplexUIKit/CJDataScrollView/ImagePickerCollectionlView/**/*.{png,xib,bundle}"
+      #sss.resources = "CJComplexUIKit/CJDataScrollView/ImagePickerCollectionlView/**/*.{png,xib,bundle}"
+      sss.resource_bundle = {
+        'CJComplexUIKit_ImagePickerCollectionlView' => ['CJComplexUIKit/CJDataScrollView/ImagePickerCollectionlView/**/*.{png,xib,bundle}'] # CJComplexUIKit_ImagePickerCollectionlView 为生成boudle的名称，随便起，记下，下面要用
+      }
+
       sss.frameworks = "MediaPlayer"
 
       # 图片选择功能需要依赖的库

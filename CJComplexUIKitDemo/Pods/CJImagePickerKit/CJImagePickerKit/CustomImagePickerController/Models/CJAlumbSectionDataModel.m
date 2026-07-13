@@ -1,6 +1,6 @@
 //
 //  CJAlumbSectionDataModel.m
-//  CJPickerDemo
+//  UIKit-ImagePicker-iOS
 //
 //  Created by ciyouzen on 2015/8/31.
 //  Copyright © 2015年 dvlproad. All rights reserved.

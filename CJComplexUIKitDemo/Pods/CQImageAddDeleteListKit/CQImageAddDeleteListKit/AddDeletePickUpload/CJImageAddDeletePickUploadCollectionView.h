@@ -1,15 +1,17 @@
 //
 //  CJImageAddDeletePickUploadCollectionView.h
-//  CJComplexUIKitDemo
+//  UIKit-List-ImageAddDelete-iOS
 //
 //  Created by ciyouzen on 2017/1/19.
 //  Copyright © 2017年 dvlproad. All rights reserved.
 //
 //  图片 添加+删除+选择+删除+上传 集合视图
 
-#import "CQActionImageCollectionView.h"
+#import <CQActionCollectionView/CQActionImageCollectionView.h>
 #import "CJImageUploadFileModelsOwner.h"
 #import "CJVideoUploadFileModelsOwner.h"
+
+NS_ASSUME_NONNULL_BEGIN
 
 
 ///上传操作
@@ -48,3 +50,4 @@ typedef NS_ENUM(NSUInteger, CJUploadActionType) {
 
 
 @end
+NS_ASSUME_NONNULL_END

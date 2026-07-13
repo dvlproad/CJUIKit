@@ -1,23 +1,23 @@
 //
-//  CJImagePickerViewController.m
-//  CJPickerDemo
+//  CJCustomImagePickerViewController.m
+//  UIKit-ImagePicker-iOS
 //
 //  Created by ciyouzen on 2015/8/31.
 //  Copyright © 2015年 dvlproad. All rights reserved.
 //
 
-#import "CJImagePickerViewController.h"
+#import "CJCustomImagePickerViewController.h"
 #import <AVFoundation/AVFoundation.h>
 #import <MBProgressHUD/MBProgressHUD.h>
 
-#import "CJImagePickerTableView.h"
+#import "CJCustomImagePickerTableView.h"
 
 
-@interface CJImagePickerViewController () <UIScrollViewDelegate, UITableViewDataSource, UITableViewDelegate>
+@interface CJCustomImagePickerViewController () <UIScrollViewDelegate, UITableViewDelegate>
 
 @property (nonatomic, assign) int type;
 
-@property (nonatomic, strong) CJImagePickerTableView *tableView;
+@property (nonatomic, strong) CJCustomImagePickerTableView *tableView;
 
 @property (nonatomic, strong) NSMutableArray<CJAlumbImageModel *> *currentGroupAssetModels;    /**< 当前组的图片 */
 @property (nonatomic, assign) BOOL hasMoreFav;
@@ -25,7 +25,7 @@
 @property (nonatomic, strong) UILabel * number;
 
 
-@property (nonatomic, copy) void(^overLimitBlock)(void);
+@property (nonatomic, copy) void(^overLimitBlock)(NSInteger currentCount, NSInteger maxCount);
 @property (nonatomic, copy) void (^clickImageBlock)(CJAlumbImageModel *imageModel); /**< 图片的点击操作 */
 @property (nonatomic, copy) void(^previewAction)(NSArray *bTotoalImageModels, NSMutableArray<CJAlumbImageModel *> *bSelectedImageModels);
 @property (nonatomic, copy) void(^pickFinishBlock)(UIViewController *bVC, NSArray<CJAlumbImageModel *> *bSelectedImageModels);
@@ -39,24 +39,25 @@
 
 
 
-@implementation CJImagePickerViewController
+@implementation CJCustomImagePickerViewController
 
 /*
  *  初始化
  *
- *  @param overLimitBlock       超过最大选择图片数量的限制回调
+ *  @param overLimitBlock       超过最大选择图片数量的限制回调(为nil时候，会自动使用默认的提示)
  *  @param clickImageBlock      点击图片执行的事件
  *  @param previewAction        点击底部左侧"预览"执行的事件
  *  @param pickFinishBlock      点击底部右侧"完成"执行的事件
  *
  *  @return 照片选择器
  */
-- (instancetype)initWithOverLimitBlock:(void(^)(void))overLimitBlock
+- (instancetype)initWithOverLimitBlock:(void(^)(NSInteger currentCount, NSInteger maxCount))overLimitBlock
                        clickImageBlock:(void(^)(CJAlumbImageModel *imageModel))clickImageBlock
                          previewAction:(void(^)(NSArray *bTotoalImageModels, NSMutableArray<CJAlumbImageModel *> *bSelectedImageModels))previewAction
                        pickFinishBlock:(void(^)(UIViewController *bVC, NSArray<CJAlumbImageModel *> *bSelectedImageModels))pickFinishBlock
 {
-    if (self = [super init]) {
+    self = [super initWithNibName:nil bundle:nil];
+    if (self) {
         self.overLimitBlock = overLimitBlock;
         self.clickImageBlock = clickImageBlock;
         self.previewAction = previewAction;
@@ -158,15 +159,17 @@
 - (void)setupViews {
     // 图片列表
     __weak typeof(self)weakSelf = self;
-    _tableView = [[CJImagePickerTableView alloc] initWithSelectedCountChangeBlock:^(NSMutableArray<CJAlumbImageModel *> *bSelectedArray) {
+    _tableView = [[CJCustomImagePickerTableView alloc] initWithSelectedCountChangeBlock:^(NSMutableArray<CJAlumbImageModel *> *bSelectedArray) {
         weakSelf.number.text = [NSString stringWithFormat:@"(%zd)", bSelectedArray.count];
-    } overLimitBlock:^{
-        NSString *message = [NSString stringWithFormat:@"最多只能选%zd张图片", self.canMaxChooseImageCount];
-        [self __showMessag:message toView:self.view];
+    } overLimitBlock:^(NSInteger currentCount, NSInteger maxCount) {
+        if (weakSelf.overLimitBlock != nil) {
+            weakSelf.overLimitBlock(currentCount, maxCount);
+        } else {
+            NSString *message = [NSString stringWithFormat:@"最多只能选%zd张图片", self.canMaxChooseImageCount];
+            [self __showMessag:message toView:self.view];
+        }
         
-    } clickImageBlock:^(CJAlumbImageModel *imageModel) {
-        
-    }];
+    } clickImageBlock:self.clickImageBlock];
     [self.view addSubview:_tableView];
     [_tableView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.mas_equalTo(0);

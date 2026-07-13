@@ -1,6 +1,6 @@
 //
 //  CJPhotoGridCell.m
-//  CJPickerDemo
+//  UIKit-ImagePicker-iOS
 //
 //  Created by ciyouzen on 2015/8/31.
 //  Copyright © 2015年 dvlproad. All rights reserved.
@@ -64,9 +64,14 @@
     }];
     self.checkButton = checkButton;
     
-    
-    [self.checkButton setImage:[UIImage imageNamed:@"CJImagePickerKit.bundle/cjAlbumCheckedNormal"] forState:UIControlStateNormal];
-    [self.checkButton setImage:[UIImage imageNamed:@"CJImagePickerKit.bundle/cjAlbumCheckedSelect"] forState:UIControlStateSelected];
+    NSString *bundleName = @"CJImagePickerKit";
+    NSBundle *frameworkBundle = [NSBundle bundleForClass:[self class]];
+    NSURL *bundleURL = [frameworkBundle URLForResource:bundleName withExtension:@"bundle"];
+    NSBundle *resourceBundle = bundleURL ? [NSBundle bundleWithURL:bundleURL] : nil;
+    UIImage *checkImageNO = [UIImage imageNamed:@"cjAlbumCheckedNormal" inBundle:resourceBundle withConfiguration:nil];
+    UIImage *checkImageYES = [UIImage imageNamed:@"cjAlbumCheckedSelect" inBundle:resourceBundle withConfiguration:nil];
+    [self.checkButton setImage:checkImageNO forState:UIControlStateNormal];
+    [self.checkButton setImage:checkImageYES forState:UIControlStateSelected];
     self.selected = NO;
 }
 

@@ -55,7 +55,11 @@
         {
           "name": "ImagePickerCollectionlView",
           "source_files": "CJComplexUIKit/CJDataScrollView/ImagePickerCollectionlView/**/*.{h,m}",
-          "resources": "CJComplexUIKit/CJDataScrollView/ImagePickerCollectionlView/**/*.{png,xib,bundle}",
+          "resource_bundles": {
+            "CJComplexUIKit_ImagePickerCollectionlView": [
+              "CJComplexUIKit/CJDataScrollView/ImagePickerCollectionlView/**/*.{png,xib,bundle}"
+            ]
+          },
           "frameworks": "MediaPlayer",
           "dependencies": {
             "JGActionSheet": [],

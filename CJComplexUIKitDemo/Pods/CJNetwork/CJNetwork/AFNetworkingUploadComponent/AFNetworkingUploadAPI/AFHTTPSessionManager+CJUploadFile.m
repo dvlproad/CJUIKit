@@ -95,7 +95,7 @@
     }
     
     NSURLSessionDataTask *URLSessionDataTask =
-    [self POST:Url parameters:formParams constructingBodyWithBlock:^(id<AFMultipartFormData>  _Nonnull formData)
+    [self POST:Url parameters:formParams headers:headers constructingBodyWithBlock:^(id<AFMultipartFormData>  _Nonnull formData)
     {
         for (CJUploadFileModel *uploadFileModel in uploadFileModels) {
             NSData *data = uploadFileModel.uploadItemData;

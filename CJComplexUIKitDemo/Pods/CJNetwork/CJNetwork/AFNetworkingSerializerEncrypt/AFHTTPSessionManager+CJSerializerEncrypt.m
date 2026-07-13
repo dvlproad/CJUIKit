@@ -72,7 +72,7 @@
         void (^downloadProgress)(NSProgress * _Nonnull) = progress;
         
         NSURLSessionDataTask *URLSessionDataTask =
-        [self GET:Url parameters:allParams progress:downloadProgress success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        [self GET:Url parameters:allParams headers:headers progress:downloadProgress success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
             [CJRequestCommonHelper __didRequestSuccessForTask:task withResponseObject:responseObject isCacheData:NO forUrl:Url params:allParams cacheSettingModel:cacheSettingModel logType:logType success:success];
             
         } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
@@ -85,7 +85,7 @@
         void (^uploadProgress)(NSProgress * _Nonnull) = progress;
         
         NSURLSessionDataTask *URLSessionDataTask =
-        [self POST:Url parameters:allParams progress:uploadProgress success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        [self POST:Url parameters:allParams headers:headers progress:uploadProgress success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
             [CJRequestCommonHelper __didRequestSuccessForTask:task withResponseObject:responseObject isCacheData:NO forUrl:Url params:allParams cacheSettingModel:cacheSettingModel logType:logType success:success];
             
         } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
