@@ -4,24 +4,20 @@ A demo contain scrollView、tableView、collectionView
 ## 知识储备
 #### 一、tableView updates 对比 reloadData
 	调用numberOfRows方法的次数比较：都只调用一次 numberOfRows 方法
-
+	
 	调用cellForRow方法的次数比较：
 	①reloadData会为当前显示的所有cell调用这个方法
 	②updates只会为新增的cell调用这个方法
-
+	
 	调用cellForRow方法的调用时刻比较：
 	①、reloadData：会在numberOfRows方法调用后的某一时间异步调用cellForRow方法
 	②、updates：会在numberOfRows方法调用后马上调用cellForRow方法
-
+	
 	各自的缺陷：
 	①reloadData方法缺陷：带来额外的不必要开销，缺乏动画
 	②updates方法缺陷：deleteRows不会调用cellForRow方法，可能导致显示结果与数据源不一致；需要手动保证 insertRows、deleteRows 之后，row 的数量与 numberOfRows 的结果一致，否则会运行时崩溃
-	
-## CollectionView的自定义
-参考文档：[横向排列数据的UICollectionview](http://blog.csdn.net/shengpeng3344/article/details/51673707) 其中包含可以拖动cell的示例
 
-## MyEqualCellSizeCollectionView
-一个只有一个分区且分区中的每个cell大小相等的集合视图(cell的大小可通过方法①设置cell的固定大小和方法②通过设置每行最大显示的cell个数获得)
+
 
 
 ## UIScrollView+AutoLayout

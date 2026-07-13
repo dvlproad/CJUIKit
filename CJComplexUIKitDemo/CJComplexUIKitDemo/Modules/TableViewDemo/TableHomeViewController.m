@@ -10,7 +10,6 @@
 
 //UITableView
 #import "TableViewController.h"
-#import "ReuseDataSourceTableViewController.h"
 #import "TvDemo_Complex.h"
 
 @interface TableHomeViewController ()  {
@@ -39,12 +38,6 @@
             TableViewModule.classEntry = [TableViewController class];
             TableViewModule.isCreateByXib = YES;
             [sectionDataModel.values addObject:TableViewModule];
-        }
-        {
-            CQDMModuleModel *reuseDataSourceTableModule = [[CQDMModuleModel alloc] init];
-            reuseDataSourceTableModule.title = @"ReuseDataSourceTable";
-            reuseDataSourceTableModule.classEntry = [ReuseDataSourceTableViewController class];
-            [sectionDataModel.values addObject:reuseDataSourceTableModule];
         }
         {
             CQDMModuleModel *complexDemoModule = [[CQDMModuleModel alloc] init];

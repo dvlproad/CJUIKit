@@ -61,7 +61,6 @@
 		789A4F6821FAF3A8001528B9 /* cvSupplementaryHead.m in Sources */ = {isa = PBXBuildFile; fileRef = 789A4F2F21FAF3A8001528B9 /* cvSupplementaryHead.m */; };
 		789A4F6921FAF3A8001528B9 /* CustomCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 789A4F3221FAF3A8001528B9 /* CustomCollectionViewCell.xib */; };
 		789A4F6A21FAF3A8001528B9 /* Detail.xib in Resources */ = {isa = PBXBuildFile; fileRef = 789A4F3321FAF3A8001528B9 /* Detail.xib */; };
-		789A4F8E21FAF3FB001528B9 /* ReuseDataSourceTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 789A4F6F21FAF3FA001528B9 /* ReuseDataSourceTableViewController.m */; };
 		789A4F8F21FAF3FB001528B9 /* TvDemo_Complex.xib in Resources */ = {isa = PBXBuildFile; fileRef = 789A4F7421FAF3FA001528B9 /* TvDemo_Complex.xib */; };
 		789A4F9121FAF3FB001528B9 /* TvDemo_Complex+Event.m in Sources */ = {isa = PBXBuildFile; fileRef = 789A4F7821FAF3FB001528B9 /* TvDemo_Complex+Event.m */; };
 		789A4F9421FAF3FB001528B9 /* TvDemo_Complex.m in Sources */ = {isa = PBXBuildFile; fileRef = 789A4F7B21FAF3FB001528B9 /* TvDemo_Complex.m */; };
@@ -196,11 +195,9 @@
 		789A4F3421FAF3A8001528B9 /* CvDemo_Complex+Event.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CvDemo_Complex+Event.h"; sourceTree = "<group>"; };
 		789A4F6C21FAF3FA001528B9 /* TableHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableHomeViewController.h; sourceTree = "<group>"; };
 		789A4F6E21FAF3FA001528B9 /* TvDemo_Complex+Event.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TvDemo_Complex+Event.h"; sourceTree = "<group>"; };
-		789A4F6F21FAF3FA001528B9 /* ReuseDataSourceTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReuseDataSourceTableViewController.m; sourceTree = "<group>"; };
 		789A4F7221FAF3FA001528B9 /* TvDemo_Complex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TvDemo_Complex.h; sourceTree = "<group>"; };
 		789A4F7321FAF3FA001528B9 /* TableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewController.h; sourceTree = "<group>"; };
 		789A4F7421FAF3FA001528B9 /* TvDemo_Complex.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TvDemo_Complex.xib; sourceTree = "<group>"; };
-		789A4F7721FAF3FA001528B9 /* ReuseDataSourceTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReuseDataSourceTableViewController.h; sourceTree = "<group>"; };
 		789A4F7821FAF3FB001528B9 /* TvDemo_Complex+Event.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "TvDemo_Complex+Event.m"; sourceTree = "<group>"; };
 		789A4F7B21FAF3FB001528B9 /* TvDemo_Complex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TvDemo_Complex.m; sourceTree = "<group>"; };
 		789A4F7C21FAF3FB001528B9 /* TableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TableViewController.xib; sourceTree = "<group>"; };
@@ -351,15 +348,6 @@
 			path = CJComplexUIKitDemoUITests;
 			sourceTree = "<group>";
 		};
-		78293EFC21FC0E2A00F70F43 /* 2Optimize */ = {
-			isa = PBXGroup;
-			children = (
-				789A4F7721FAF3FA001528B9 /* ReuseDataSourceTableViewController.h */,
-				789A4F6F21FAF3FA001528B9 /* ReuseDataSourceTableViewController.m */,
-			);
-			path = 2Optimize;
-			sourceTree = "<group>";
-		};
 		78293EFD21FC0F5400F70F43 /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -487,7 +475,6 @@
 				789A4F6C21FAF3FA001528B9 /* TableHomeViewController.h */,
 				789A4F8121FAF3FB001528B9 /* TableHomeViewController.m */,
 				789A4F6D21FAF3FA001528B9 /* 1Use */,
-				78293EFC21FC0E2A00F70F43 /* 2Optimize */,
 			);
 			path = TableViewDemo;
 			sourceTree = "<group>";
@@ -971,7 +958,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				789A4F8E21FAF3FB001528B9 /* ReuseDataSourceTableViewController.m in Sources */,
 				789A4F9121FAF3FB001528B9 /* TvDemo_Complex+Event.m in Sources */,
 				789A4F9421FAF3FB001528B9 /* TvDemo_Complex.m in Sources */,
 				789A4F3721FAF3A8001528B9 /* MyADModel.m in Sources */,

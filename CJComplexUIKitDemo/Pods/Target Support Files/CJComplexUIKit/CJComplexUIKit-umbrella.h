@@ -17,8 +17,6 @@
 #import "CJUploadCollectionViewCell.h"
 #import "CJUploadImageCollectionView+Tap.h"
 #import "CJUploadImageCollectionView.h"
-#import "CJSingleTableViewCellDataSource.h"
-#import "CJSingleTableViewCellDataSource2.h"
 
 FOUNDATION_EXPORT double CJComplexUIKitVersionNumber;
 FOUNDATION_EXPORT const unsigned char CJComplexUIKitVersionString[];
