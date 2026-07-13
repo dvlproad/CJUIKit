@@ -36,6 +36,15 @@ NS_ASSUME_NONNULL_BEGIN
 #pragma mark - FindBelongViewControllerForView
 + (nullable UIViewController *)findBelongViewControllerForView:(UIView *)view;
 
+#pragma mark - 获取指定视图的显示比例
+/*
+ *  获取指定视图的显示比例
+ *
+ *  @param view   要判断的视图
+ *
+ *  @return 视图的显示比例(范围为0.0到1.0)
+ */
++ (CGFloat)getVisibleRatioForView:(UIView *)view;
 
 @end
 
