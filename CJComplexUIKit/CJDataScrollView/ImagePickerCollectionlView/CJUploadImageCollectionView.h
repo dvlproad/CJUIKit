@@ -7,12 +7,6 @@
 //
 
 
-#ifdef TEST_CJCOMPLEXUIKIT_POD
-#import "MyEqualCellSizeCollectionView.h"
-#else
-#import <CJComplexUIKit/MyEqualCellSizeCollectionView.h>
-#endif
-
 #import <CQImageAddDeleteListKit/CJImageUploadFileModelsOwner.h>
 #import <CQImageAddDeleteListKit/CJVideoUploadFileModelsOwner.h>
 
@@ -29,9 +23,10 @@ typedef NS_ENUM(NSUInteger, CJUploadActionType) {
 };
 
 ///TODO:将本工程CJTotalDemo中的FileChooseView抽出不含上传请求的部分到CJComplexUIKitDemo中
-@interface CJUploadImageCollectionView : MyEqualCellSizeCollectionView <UIImagePickerControllerDelegate, UINavigationControllerDelegate> {
+@interface CJUploadImageCollectionView : UICollectionView <UIImagePickerControllerDelegate, UINavigationControllerDelegate> {
     
 }
+@property (nonatomic, assign, readonly) NSUInteger maxDataModelShowCount; /**< 集合视图最大显示的dataModel数目(默认NSIntegerMax即无限制) */
 @property (nonatomic, strong) NSMutableArray *dataModels;
 //创建上传文件到服务器的方法的代码块要实现的效果为：给item设置上传请求，并将上传请求的各个时刻信息momentInfo①保存到该item上，②同时利用这些momentInfo设置uploadProgressView。所以如下
 

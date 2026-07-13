@@ -18,6 +18,13 @@ import Foundation
         
         let resourceBundle = Bundle(url: bundleURL)
         return resourceBundle
+        /*
+        // OC 不想引入此类的情况下，可直接使用以下代码
+        NSString *bundleName = @"xxx";
+        NSBundle *frameworkBundle = [NSBundle bundleForClass:[self class]];
+        NSURL *bundleURL = [frameworkBundle URLForResource:bundleName withExtension:@"bundle"];
+        NSBundle *resourceBundle = bundleURL ? [NSBundle bundleWithURL:bundleURL] : nil;
+        */
     }
     
     // 方法一：不需要循环(从指定Swift类所在的 framework 中取出 resource bundle)

@@ -49,11 +49,6 @@
 		789A4F4F21FAF3A8001528B9 /* MemoryAD09.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 789A4F0521FAF3A8001528B9 /* MemoryAD09.jpg */; };
 		789A4F5021FAF3A8001528B9 /* MyCycleADViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 789A4F0721FAF3A8001528B9 /* MyCycleADViewController.xib */; };
 		789A4F5121FAF3A8001528B9 /* CollectionHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 789A4F0921FAF3A8001528B9 /* CollectionHomeViewController.m */; };
-		789A4F5A21FAF3A8001528B9 /* MyEqualCellSizeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 789A4F1921FAF3A8001528B9 /* MyEqualCellSizeView.m */; };
-		789A4F5B21FAF3A8001528B9 /* MyEqualCellSizeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 789A4F1A21FAF3A8001528B9 /* MyEqualCellSizeViewController.m */; };
-		789A4F5C21FAF3A8001528B9 /* MyEqualCellSizeCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 789A4F1B21FAF3A8001528B9 /* MyEqualCellSizeCollectionViewController.m */; };
-		789A4F5D21FAF3A8001528B9 /* MyEqualCellSizeCollectionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 789A4F1C21FAF3A8001528B9 /* MyEqualCellSizeCollectionViewController.xib */; };
-		789A4F5E21FAF3A8001528B9 /* MyEqualCellSizeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 789A4F2021FAF3A8001528B9 /* MyEqualCellSizeViewController.xib */; };
 		789A4F5F21FAF3A8001528B9 /* CvDemo_Complex.m in Sources */ = {isa = PBXBuildFile; fileRef = 789A4F2221FAF3A8001528B9 /* CvDemo_Complex.m */; };
 		789A4F6021FAF3A8001528B9 /* CvDemo_Complex+Event.m in Sources */ = {isa = PBXBuildFile; fileRef = 789A4F2421FAF3A8001528B9 /* CvDemo_Complex+Event.m */; };
 		789A4F6121FAF3A8001528B9 /* CvDemo_Complex.xib in Resources */ = {isa = PBXBuildFile; fileRef = 789A4F2621FAF3A8001528B9 /* CvDemo_Complex.xib */; };
@@ -181,14 +176,6 @@
 		789A4F0721FAF3A8001528B9 /* MyCycleADViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyCycleADViewController.xib; sourceTree = "<group>"; };
 		789A4F0821FAF3A8001528B9 /* CollectionHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectionHomeViewController.h; sourceTree = "<group>"; };
 		789A4F0921FAF3A8001528B9 /* CollectionHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectionHomeViewController.m; sourceTree = "<group>"; };
-		789A4F1921FAF3A8001528B9 /* MyEqualCellSizeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyEqualCellSizeView.m; sourceTree = "<group>"; };
-		789A4F1A21FAF3A8001528B9 /* MyEqualCellSizeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyEqualCellSizeViewController.m; sourceTree = "<group>"; };
-		789A4F1B21FAF3A8001528B9 /* MyEqualCellSizeCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyEqualCellSizeCollectionViewController.m; sourceTree = "<group>"; };
-		789A4F1C21FAF3A8001528B9 /* MyEqualCellSizeCollectionViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyEqualCellSizeCollectionViewController.xib; sourceTree = "<group>"; };
-		789A4F1D21FAF3A8001528B9 /* MyEqualCellSizeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyEqualCellSizeViewController.h; sourceTree = "<group>"; };
-		789A4F1E21FAF3A8001528B9 /* MyEqualCellSizeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyEqualCellSizeView.h; sourceTree = "<group>"; };
-		789A4F1F21FAF3A8001528B9 /* MyEqualCellSizeCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyEqualCellSizeCollectionViewController.h; sourceTree = "<group>"; };
-		789A4F2021FAF3A8001528B9 /* MyEqualCellSizeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyEqualCellSizeViewController.xib; sourceTree = "<group>"; };
 		789A4F2221FAF3A8001528B9 /* CvDemo_Complex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CvDemo_Complex.m; sourceTree = "<group>"; };
 		789A4F2321FAF3A8001528B9 /* Detail.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Detail.h; sourceTree = "<group>"; };
 		789A4F2421FAF3A8001528B9 /* CvDemo_Complex+Event.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CvDemo_Complex+Event.m"; sourceTree = "<group>"; };
@@ -411,7 +398,6 @@
 				78293F1721FC640300F70F43 /* ImageChooseCollectionView */,
 				789A4F2121FAF3A8001528B9 /* Base */,
 				789A4EE721FAF3A8001528B9 /* CycleADView */,
-				789A4F1821FAF3A8001528B9 /* MyEqualCellSizeCollectionView */,
 			);
 			path = CollectionViewDemo;
 			sourceTree = "<group>";
@@ -460,21 +446,6 @@
 				789A4F0221FAF3A8001528B9 /* MemoryADTime02.jpg */,
 			);
 			path = MemoryAD;
-			sourceTree = "<group>";
-		};
-		789A4F1821FAF3A8001528B9 /* MyEqualCellSizeCollectionView */ = {
-			isa = PBXGroup;
-			children = (
-				789A4F1F21FAF3A8001528B9 /* MyEqualCellSizeCollectionViewController.h */,
-				789A4F1B21FAF3A8001528B9 /* MyEqualCellSizeCollectionViewController.m */,
-				789A4F1C21FAF3A8001528B9 /* MyEqualCellSizeCollectionViewController.xib */,
-				789A4F1E21FAF3A8001528B9 /* MyEqualCellSizeView.h */,
-				789A4F1921FAF3A8001528B9 /* MyEqualCellSizeView.m */,
-				789A4F1D21FAF3A8001528B9 /* MyEqualCellSizeViewController.h */,
-				789A4F1A21FAF3A8001528B9 /* MyEqualCellSizeViewController.m */,
-				789A4F2021FAF3A8001528B9 /* MyEqualCellSizeViewController.xib */,
-			);
-			path = MyEqualCellSizeCollectionView;
 			sourceTree = "<group>";
 		};
 		789A4F2121FAF3A8001528B9 /* Base */ = {
@@ -794,7 +765,6 @@
 				78590D10215C79DD00F45AD5 /* UploadNoneImagePickerViewController.xib in Resources */,
 				78590D0A215C79DD00F45AD5 /* add_red@2x.png in Resources */,
 				789A4F4B21FAF3A8001528B9 /* MemoryADPose01.jpg in Resources */,
-				789A4F5D21FAF3A8001528B9 /* MyEqualCellSizeCollectionViewController.xib in Resources */,
 				789A4F5021FAF3A8001528B9 /* MyCycleADViewController.xib in Resources */,
 				789A4F3921FAF3A8001528B9 /* MemoryADExample01.jpg in Resources */,
 				789A4F3E21FAF3A8001528B9 /* MemoryADExample03.jpg in Resources */,
@@ -834,7 +804,6 @@
 				789A4F8F21FAF3FB001528B9 /* TvDemo_Complex.xib in Resources */,
 				789A4F4921FAF3A8001528B9 /* MemoryADPose02.jpg in Resources */,
 				789A4F4E21FAF3A8001528B9 /* MemoryADTime01.jpg in Resources */,
-				789A4F5E21FAF3A8001528B9 /* MyEqualCellSizeViewController.xib in Resources */,
 				789A4F4521FAF3A8001528B9 /* MemoryADExample05.jpg in Resources */,
 				789A4F4221FAF3A8001528B9 /* MemoryADResult02.jpg in Resources */,
 				789A4F4621FAF3A8001528B9 /* MemoryADExample04.jpg in Resources */,
@@ -1003,7 +972,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				789A4F8E21FAF3FB001528B9 /* ReuseDataSourceTableViewController.m in Sources */,
-				789A4F5B21FAF3A8001528B9 /* MyEqualCellSizeViewController.m in Sources */,
 				789A4F9121FAF3FB001528B9 /* TvDemo_Complex+Event.m in Sources */,
 				789A4F9421FAF3FB001528B9 /* TvDemo_Complex.m in Sources */,
 				789A4F3721FAF3A8001528B9 /* MyADModel.m in Sources */,
@@ -1020,11 +988,9 @@
 				789A4F3521FAF3A8001528B9 /* MemoryADCollectionViewCell.m in Sources */,
 				789A4F5121FAF3A8001528B9 /* CollectionHomeViewController.m in Sources */,
 				789A4F9B21FAF3FB001528B9 /* SHeaderHome2.m in Sources */,
-				789A4F5A21FAF3A8001528B9 /* MyEqualCellSizeView.m in Sources */,
 				78590D0C215C79DD00F45AD5 /* UploadNoneImagePickerViewController.m in Sources */,
 				789A4F5F21FAF3A8001528B9 /* CvDemo_Complex.m in Sources */,
 				789A4F6821FAF3A8001528B9 /* cvSupplementaryHead.m in Sources */,
-				789A4F5C21FAF3A8001528B9 /* MyEqualCellSizeCollectionViewController.m in Sources */,
 				976CB3502FFE6C9D000505DD /* TestDataModel.m in Sources */,
 				976CB3512FFE6C9D000505DD /* TestDataUtil.m in Sources */,
 				976CB3522FFE6C9D000505DD /* DemoInfo.m in Sources */,

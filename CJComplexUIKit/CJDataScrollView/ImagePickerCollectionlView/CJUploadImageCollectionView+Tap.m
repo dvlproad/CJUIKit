@@ -39,7 +39,7 @@
 - (void)didTapToAddMediaUploadItemAction {
     NSAssert(self.belongToViewController != nil, @"未设置CJUploadCollectionView的belongToViewController");
     
-    if (self.dataModels.count >= self.equalCellSizeSetting.maxDataModelShowCount) {
+    if (self.dataModels.count >= self.maxDataModelShowCount) {
         //[UIGlobal showMessage:@"图片数量已达上限"];
         NSLog(@"所选媒体数量已达上限");
         return;
@@ -91,7 +91,7 @@
                 }
                 
             } else {
-                NSInteger canMaxChooseImageCount = weakSelf.equalCellSizeSetting.maxDataModelShowCount - weakSelf.dataModels.count;
+                NSInteger canMaxChooseImageCount = weakSelf.maxDataModelShowCount - weakSelf.dataModels.count;
                 
                 CJCustomImagePickerViewController *imagePickerController =
                 [CJUploadImagePickerUtil choosePhotoPickerWithCanMaxChooseImageCount:canMaxChooseImageCount pickCompleteBlock:^(NSArray<CJImageUploadFileModelsOwner *> *pickedImageItems) {

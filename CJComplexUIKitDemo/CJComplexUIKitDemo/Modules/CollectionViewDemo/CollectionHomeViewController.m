@@ -13,8 +13,6 @@
 //UICollectionView
 #import "CvDemo_Complex.h"
 
-#import "MyEqualCellSizeCollectionViewController.h"
-#import "MyEqualCellSizeViewController.h"
 #import "MyCycleADViewController.h"
 
 //图片选择的集合视图
@@ -47,20 +45,6 @@
             complexDemoModule.classEntry = [CvDemo_Complex class];
             complexDemoModule.isCreateByXib = YES;
             [sectionDataModel.values addObject:complexDemoModule];
-        }
-        {
-            CQDMModuleModel *MyEqualCellSizeCollectionViewModule = [[CQDMModuleModel alloc] init];
-            MyEqualCellSizeCollectionViewModule.title = @"MyEqualCellSizeCollectionView(等cell大小)";
-            MyEqualCellSizeCollectionViewModule.classEntry = [MyEqualCellSizeCollectionViewController class];
-            MyEqualCellSizeCollectionViewModule.isCreateByXib = YES;
-            [sectionDataModel.values addObject:MyEqualCellSizeCollectionViewModule];
-        }
-        {
-            CQDMModuleModel *MyEqualCellSizeViewModule = [[CQDMModuleModel alloc] init];
-            MyEqualCellSizeViewModule.title = @"MyEqualCellSizeView(嵌套的等cell大小)";
-            MyEqualCellSizeViewModule.classEntry = [MyEqualCellSizeViewController class];
-            MyEqualCellSizeViewModule.isCreateByXib = YES;
-            [sectionDataModel.values addObject:MyEqualCellSizeViewModule];
         }
         {
             CQDMModuleModel *cycleScrollViewModule = [[CQDMModuleModel alloc] init];
