@@ -1,57 +1,35 @@
 {
   "name": "CJComplexUIKit",
-  "version": "0.3.0",
-  "summary": "自定义的稍微复杂的UI",
+  "version": "0.4.0",
+  "summary": "自定义的稍微复杂的UI( 内部有 CJUploadImageCollectionView 依赖到了私有的 CQImageAddDeleteListKit )",
   "homepage": "https://github.com/dvlproad/CJUIKit",
-  "description": "自定义的稍微复杂的UI，可按需独立引入：\n\n• CJComplexUIKit/CJScrollView - 滚动视图：自定义的基础滚动视图\n\n• CJComplexUIKit/CJCollectionView - 自定义的集合视图\n• CJComplexUIKit/CJCollectionView/CJBaseCollectionViewCell - 集合单元格\n• CJComplexUIKit/CJCollectionView/CJCollectionViewLayout - 集合视图布局\n• CJComplexUIKit/CJCollectionView/MyEqualCellSizeCollectionView - 一个只有一个分区且分区中的每个cell大小相等的集合视图(cell的大小可通过方法①设置cell的固定大小和方法②通过设置每行最大显示的cell个数获得)\n\n• CJComplexUIKit/CJDataScrollView - 带数据的列表视图或集合视图(常用于搜索、图片选择)\n• CJComplexUIKit/CJDataScrollView/SearchScrollView - 搜索滚动视图\n• CJComplexUIKit/CJDataScrollView/ImagePickerCollectionlView - 图片选择集合视图\n\n每个子库可独立引入，详见各子库描述。",
+  "description": "自定义的稍微复杂的UI，可按需独立引入：\n• CJComplexUIKit/CJCollectionView/CJBaseCollectionViewCell - 集合单元格\n• CJComplexUIKit/CJDataScrollView/ImagePickerCollectionlView - 图片选择集合视图\n\n每个子库可独立引入，详见各子库描述。",
   "license": "MIT",
   "authors": {
     "dvlproad": ""
   },
   "platforms": {
-    "ios": "8.0"
+    "ios": "9.0"
   },
   "source": {
     "git": "https://github.com/dvlproad/CJUIKit.git",
-    "tag": "CJComplexUIKit_0.3.0"
+    "tag": "CJComplexUIKit_0.4.0"
   },
-  "source_files": "CJComplexUIKit/*.{h,m}",
   "frameworks": "UIKit",
   "requires_arc": true,
   "subspecs": [
-    {
-      "name": "CJScrollView",
-      "source_files": "CJComplexUIKit/CJScrollView/**/*.{h,m}"
-    },
     {
       "name": "CJCollectionView",
       "subspecs": [
         {
           "name": "CJBaseCollectionViewCell",
           "source_files": "CJComplexUIKit/CJCollectionView/CJBaseCollectionViewCell/**/*.{h,m}"
-        },
-        {
-          "name": "CJCollectionViewLayout",
-          "source_files": "CJComplexUIKit/CJCollectionView/CJCollectionViewLayout/**/*.{h,m}"
-        },
-        {
-          "name": "MyEqualCellSizeCollectionView",
-          "source_files": "CJComplexUIKit/CJCollectionView/MyEqualCellSizeCollectionView/**/*.{h,m}"
         }
       ]
     },
     {
       "name": "CJDataScrollView",
       "subspecs": [
-        {
-          "name": "SearchScrollView",
-          "source_files": "CJComplexUIKit/CJDataScrollView/SearchScrollView/**/*.{h,m}",
-          "dependencies": {
-            "CJComplexUIKit/CJCollectionView/MyEqualCellSizeCollectionView": [],
-            "CJBaseUtil/CJDataUtil": [],
-            "JGActionSheet": []
-          }
-        },
         {
           "name": "ImagePickerCollectionlView",
           "source_files": "CJComplexUIKit/CJDataScrollView/ImagePickerCollectionlView/**/*.{h,m}",
@@ -63,7 +41,6 @@
           "frameworks": "MediaPlayer",
           "dependencies": {
             "JGActionSheet": [],
-            "CJComplexUIKit/CJCollectionView/MyEqualCellSizeCollectionView": [],
             "CJComplexUIKit/CJCollectionView/CJBaseCollectionViewCell": [],
             "CQImageAddDeleteListKit/AddDeletePickUpload": [],
             "CJNetwork/AFNetworkingUploadComponent": []

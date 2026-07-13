@@ -48,7 +48,7 @@
     NSBundle *resourceBundle = bundleURL ? [NSBundle bundleWithURL:bundleURL] : nil;
     
     [self addCJImageViewWithEdgeInsets:UIEdgeInsetsZero];
-    self.cjImageView.image = [UIImage imageNamed:@"cjCollectionViewCellAdd" inBundle:resourceBundle withConfiguration:nil];
+    self.cjImageView.image = [UIImage imageNamed:@"cjCollectionViewCellAdd" inBundle:resourceBundle compatibleWithTraitCollection:nil];
     [self addCJDeleteButton];
     
     self.uploadProgressView = [[CJUploadProgressView alloc] initWithFrame:CGRectZero];
@@ -171,7 +171,7 @@
     
     UIView *parentView = self.contentView;
     self.cjDeleteButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    [self.cjDeleteButton setImage:[UIImage imageNamed:@"cjCollectionViewCellDelete" inBundle:resourceBundle withConfiguration:nil] forState:UIControlStateNormal];
+    [self.cjDeleteButton setImage:[UIImage imageNamed:@"cjCollectionViewCellDelete" inBundle:resourceBundle compatibleWithTraitCollection:nil] forState:UIControlStateNormal];
     [self.cjDeleteButton addTarget:self action:@selector(deleteButtonAction:) forControlEvents:UIControlEventTouchUpInside];
     [parentView addSubview:self.cjDeleteButton];
     self.cjDeleteButton.translatesAutoresizingMaskIntoConstraints = NO;

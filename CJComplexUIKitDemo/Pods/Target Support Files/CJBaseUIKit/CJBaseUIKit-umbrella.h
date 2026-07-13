@@ -10,7 +10,6 @@
 #endif
 #endif
 
-#import "CJTableViewHeaderFooterView.h"
 #import "CJBadgeButton.h"
 #import "CJButton.h"
 #import "UIButton+CJMoreProperty.h"
@@ -30,12 +29,6 @@
 #import "UIImage+CJSplitImageIntoTwoParts.h"
 #import "UIImageCJCategory.h"
 #import "UINavigationBar+CJChangeBG.h"
-#import "CJExtraTextTextField.h"
-#import "CJTextField.h"
-#import "UITextField+CJPadding.h"
-#import "UITextField+CJSelectedTextRange.h"
-#import "UITextField+CJTextChangeBlock.h"
-#import "UITextFieldCJCategory.h"
 #import "UIView+CJDragAction.h"
 #import "UIView+CJPanAction.h"
 

@@ -10,7 +10,6 @@
 #endif
 #endif
 
-#import "CJComplexUIKit.h"
 #import "CJBaseCollectionViewCell.h"
 #import "CJFullBottomCollectionViewCell.h"
 #import "CJFullCenterCollectionViewCell.h"

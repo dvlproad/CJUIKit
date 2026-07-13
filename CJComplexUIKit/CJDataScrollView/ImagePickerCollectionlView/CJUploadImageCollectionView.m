@@ -178,7 +178,7 @@ static NSString * const CJUploadCollectionViewCellAddID = @"CJUploadCollectionVi
         */
         CJUploadCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:CJUploadCollectionViewCellAddID forIndexPath:indexPath];
         
-        cell.cjImageView.image = [UIImage imageNamed:@"cjCollectionViewCellAdd" inBundle:resourceBundle withConfiguration:nil];
+        cell.cjImageView.image = [UIImage imageNamed:@"cjCollectionViewCellAdd" inBundle:resourceBundle compatibleWithTraitCollection:nil];
         [cell.cjDeleteButton setImage:nil forState:UIControlStateNormal];
         
         return cell;
@@ -204,9 +204,9 @@ static NSString * const CJUploadCollectionViewCellAddID = @"CJUploadCollectionVi
     NSURL *bundleURL = [frameworkBundle URLForResource:bundleName withExtension:@"bundle"];
     NSBundle *resourceBundle = bundleURL ? [NSBundle bundleWithURL:bundleURL] : nil;
     
-    cell.cjImageView.image = [UIImage imageNamed:@"icons8-home" inBundle:resourceBundle withConfiguration:nil];
+    cell.cjImageView.image = [UIImage imageNamed:@"icons8-home" inBundle:resourceBundle compatibleWithTraitCollection:nil];
     if (cell.selected) {
-        cell.cjImageView.image = [UIImage imageNamed:@"cjCollectionViewCellAdd" inBundle:resourceBundle withConfiguration:nil];
+        cell.cjImageView.image = [UIImage imageNamed:@"cjCollectionViewCellAdd" inBundle:resourceBundle compatibleWithTraitCollection:nil];
         cell.backgroundColor = [UIColor blueColor];
     } else {
         cell.cjImageView.image = dataModel.image;
