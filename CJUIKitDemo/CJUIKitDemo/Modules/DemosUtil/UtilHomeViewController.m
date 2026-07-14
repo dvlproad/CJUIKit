@@ -7,6 +7,7 @@
 //
 
 #import "UtilHomeViewController.h"
+#import <CQDemoKit/CJUIKitToastUtil.h>
 
 //AppLast
 #import "CJAppLastUtil.h"
@@ -32,7 +33,7 @@
 #import "SharedInstanceViewController.h"
 
 //混淆名生成器
-#import "CJRandomNameUtil.h"
+#import "CJConfuseManager.h"
 
 //Knowledge
 #import "SemaphoreGateKeeperViewController.h"
@@ -58,7 +59,9 @@
         {
             CQDMModuleModel *toastUtilModule = [[CQDMModuleModel alloc] init];
             toastUtilModule.title = @"AppLast(点击使得引导页)";
-            toastUtilModule.selector = @selector(readOverGuide);
+            toastUtilModule.actionBlock = ^{
+                [CJAppLastUtil readOverGuide];
+            };
             [sectionDataModel.values addObject:toastUtilModule];
         }
         
@@ -199,8 +202,13 @@
         
         {
             CQDMModuleModel *QRCodeModule = [[CQDMModuleModel alloc] init];
-            QRCodeModule.title = @"CJRandomNameUtil(混淆名生成器)";
-            QRCodeModule.selector = @selector(readOverGuide);
+            QRCodeModule.title = @"CJConfuseManager(混淆名生成器)";
+            QRCodeModule.actionBlock = ^{
+                NSString *aaa = [CJConfuseManager randomMethodName];
+                NSString *bbb = [CJConfuseManager randomClassName];
+                NSString *message = [NSString stringWithFormat:@"获得随机方法名 = %@, 随机类名 = %@", aaa, bbb];
+                [CJUIKitToastUtil showMessage:message];
+            };
             [sectionDataModel.values addObject:QRCodeModule];
         }
         
@@ -210,16 +218,6 @@
     self.sectionDataModels = sectionDataModels;
 }
 
-
-- (void)readOverGuide {
-    [CJAppLastUtil readOverGuide];
-}
-
-- (void)randomName {
-    NSString *aaa = [CJRandomNameUtil randomMethodName];
-    NSString *bbb = [CJRandomNameUtil randomClassName];
-    NSLog(@"aaa = %@, bbb = %@", aaa, bbb);
-}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

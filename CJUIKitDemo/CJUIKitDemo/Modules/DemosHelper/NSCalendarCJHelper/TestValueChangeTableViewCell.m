@@ -7,7 +7,9 @@
 //
 
 #import "TestValueChangeTableViewCell.h"
+#import <Masonry/Masonry.h>
 #import <CJFoundation/NSString+CJTextSize.h>
+#import "DemoLabelFactory.h"
 #import "DemoTextFieldFactory.h"
 
 @interface TestValueChangeTableViewCell () {

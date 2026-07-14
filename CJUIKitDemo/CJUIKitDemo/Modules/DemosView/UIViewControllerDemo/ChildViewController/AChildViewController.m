@@ -7,6 +7,7 @@
 //
 
 #import "AChildViewController.h"
+#import "DemoLabelFactory.h"
 
 @interface AChildViewController ()
 

@@ -7,7 +7,7 @@
 //
 
 #import "NavigationBarBaseViewController.h"
-
+#import <Masonry/Masonry.h>
 #import "EasyScaleHeadView.h"
 
 @interface NavigationBarBaseViewController () <UITableViewDataSource, UITableViewDelegate> {

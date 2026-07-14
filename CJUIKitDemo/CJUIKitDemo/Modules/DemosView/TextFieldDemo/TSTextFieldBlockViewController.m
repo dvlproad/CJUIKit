@@ -7,6 +7,7 @@
 //
 
 #import "TSTextFieldBlockViewController.h"
+#import <CJBaseUIKit/UIColor+CJHex.h>
 //#import <IQKeyboardManager/IQKeyboardManager.h>
 #import "UITextField+CJTextChangeBlock.h"
 

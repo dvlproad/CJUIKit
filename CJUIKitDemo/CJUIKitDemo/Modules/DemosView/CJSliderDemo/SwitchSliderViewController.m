@@ -14,6 +14,8 @@
 #import "BBXShimmeringSwitchSlider.h"
 #import "BusShimmeringSwitchSlider.h"
 
+#import "DemoLabelFactory.h"
+
 @interface SwitchSliderViewController () {
     
 }

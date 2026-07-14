@@ -16,6 +16,7 @@
 #import "TSButtonFactory.h"
 
 #import "CJExtraTextTextField.h"
+#import "DemoLabelFactory.h"
 
 
 @interface TSTextFieldInputViewController () <UITextFieldDelegate> {

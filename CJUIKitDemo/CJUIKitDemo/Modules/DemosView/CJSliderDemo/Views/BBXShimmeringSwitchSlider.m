@@ -7,6 +7,7 @@
 //
 
 #import "BBXShimmeringSwitchSlider.h"
+#import "DemoLabelFactory.h"
 
 @interface BBXShimmeringSwitchSlider ()
 

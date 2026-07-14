@@ -7,6 +7,7 @@
 //
 
 #import "SuspendWindowViewController.h"
+#import <Masonry/Masonry.h>
 
 #import "SuspendWindowFactory.h"
 #import "CQTSSuspendWindowFactory.h"

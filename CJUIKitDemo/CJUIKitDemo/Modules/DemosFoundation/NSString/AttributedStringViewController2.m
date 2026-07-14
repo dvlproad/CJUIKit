@@ -7,7 +7,8 @@
 //
 
 #import "AttributedStringViewController2.h"
-#import "UIColor+CJHex.h"
+#import <Masonry/Masonry.h>
+#import <CJBaseUIKit/UIColor+CJHex.h>
 #import <CJFoundation/NSString+CJAttributedString.h>
 
 @interface AttributedStringViewController2 ()

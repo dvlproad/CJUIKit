@@ -7,6 +7,7 @@
 //
 
 #import "NestedXibSubViewA.h"
+#import <Masonry/Masonry.h>
 
 @implementation NestedXibSubViewA
 

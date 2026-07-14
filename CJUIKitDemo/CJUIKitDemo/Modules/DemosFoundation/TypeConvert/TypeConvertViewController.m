@@ -7,7 +7,7 @@
 //
 
 #import "TypeConvertViewController.h"
-#import "NSJSONSerialization+CJCategory.h"
+#import <CJFoundation/NSJSONSerialization+CJCategory.h>
 
 @interface TypeConvertViewController ()
 

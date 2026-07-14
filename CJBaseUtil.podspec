@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
   #验证方法：pod lib lint CJBaseUtil.podspec --allow-warnings --use-libraries --verbose
   s.name         = "CJBaseUtil"
-  s.version      = "0.5.1"
+  s.version      = "0.5.2"
   s.summary      = "自定义的基础工具类"
   s.homepage     = "https://github.com/dvlproad/CJUIKit"
   s.license      = "MIT"
@@ -32,7 +32,7 @@ Pod::Spec.new do |s|
 
   s.platform     = :ios, "8.0"
 
-  s.source       = { :git => "https://github.com/dvlproad/CJUIKit.git", :tag => "CJBaseUtil_0.5.1" }
+  s.source       = { :git => "https://github.com/dvlproad/CJUIKit.git", :tag => "CJBaseUtil_0.5.2" }
   # s.source_files  = "CJBaseUtil/*.{h,m}"
   # s.resources = "CJBaseUtil/**/*.{png}"
   s.frameworks = 'UIKit'
@@ -124,6 +124,11 @@ Pod::Spec.new do |s|
     ss.subspec 'CJSuspendWindowManager' do |sss|
       sss.source_files = "CJBaseUtil/CJManager/CJSuspendWindowManager/**/*.{h,m}"
       #sss.resources = "CJBaseUtil/CJManager/**/*.{png,xib}"
+    end
+
+    # 混淆类名时候需要生成随机值来替代
+    ss.subspec 'CJConfuseManager' do |sss|
+      sss.source_files = "CJBaseUtil/CJManager/CJConfuseManager/**/*.{h,m}"
     end
 
   end

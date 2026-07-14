@@ -1,29 +1,29 @@
 PODS:
   - AFNetworking/Reachability (4.0.1)
   - CJBaseEffectKit/CJScaleHeadView (0.2.0)
-  - CJBaseHelper (0.1.8):
-    - CJBaseHelper/AppInfoCJHelper (= 0.1.8)
-    - CJBaseHelper/AuthorizationCJHelper (= 0.1.8)
-    - CJBaseHelper/DeviceCJHelper (= 0.1.8)
-    - CJBaseHelper/HookCJHelper (= 0.1.8)
-    - CJBaseHelper/NSCalendarCJHelper (= 0.1.8)
-    - CJBaseHelper/NSDateFormatterCJHelper (= 0.1.8)
-    - CJBaseHelper/NSObjectCJHelper (= 0.1.8)
-    - CJBaseHelper/NSOperationQueueCJHelper (= 0.1.8)
-    - CJBaseHelper/ServerCJHelper (= 0.1.8)
-    - CJBaseHelper/UIViewControllerCJHelper (= 0.1.8)
-    - CJBaseHelper/WebCJHelper (= 0.1.8)
-  - CJBaseHelper/AppInfoCJHelper (0.1.8)
-  - CJBaseHelper/AuthorizationCJHelper (0.1.8)
-  - CJBaseHelper/DeviceCJHelper (0.1.8)
-  - CJBaseHelper/HookCJHelper (0.1.8)
-  - CJBaseHelper/NSCalendarCJHelper (0.1.8)
-  - CJBaseHelper/NSDateFormatterCJHelper (0.1.8)
-  - CJBaseHelper/NSObjectCJHelper (0.1.8)
-  - CJBaseHelper/NSOperationQueueCJHelper (0.1.8)
-  - CJBaseHelper/ServerCJHelper (0.1.8)
-  - CJBaseHelper/UIViewControllerCJHelper (0.1.8)
-  - CJBaseHelper/WebCJHelper (0.1.8)
+  - CJBaseHelper (0.1.9):
+    - CJBaseHelper/AppInfoCJHelper (= 0.1.9)
+    - CJBaseHelper/AuthorizationCJHelper (= 0.1.9)
+    - CJBaseHelper/DeviceCJHelper (= 0.1.9)
+    - CJBaseHelper/HookCJHelper (= 0.1.9)
+    - CJBaseHelper/NSCalendarCJHelper (= 0.1.9)
+    - CJBaseHelper/NSDateFormatterCJHelper (= 0.1.9)
+    - CJBaseHelper/NSObjectCJHelper (= 0.1.9)
+    - CJBaseHelper/NSOperationQueueCJHelper (= 0.1.9)
+    - CJBaseHelper/ServerCJHelper (= 0.1.9)
+    - CJBaseHelper/UIViewControllerCJHelper (= 0.1.9)
+    - CJBaseHelper/WebCJHelper (= 0.1.9)
+  - CJBaseHelper/AppInfoCJHelper (0.1.9)
+  - CJBaseHelper/AuthorizationCJHelper (0.1.9)
+  - CJBaseHelper/DeviceCJHelper (0.1.9)
+  - CJBaseHelper/HookCJHelper (0.1.9)
+  - CJBaseHelper/NSCalendarCJHelper (0.1.9)
+  - CJBaseHelper/NSDateFormatterCJHelper (0.1.9)
+  - CJBaseHelper/NSObjectCJHelper (0.1.9)
+  - CJBaseHelper/NSOperationQueueCJHelper (0.1.9)
+  - CJBaseHelper/ServerCJHelper (0.1.9)
+  - CJBaseHelper/UIViewControllerCJHelper (0.1.9)
+  - CJBaseHelper/WebCJHelper (0.1.9)
   - CJBaseUIKit (0.8.1):
     - CJBaseUIKit/CJBaseTableViewCell (= 0.8.1)
     - CJBaseUIKit/CJBaseTableViewHeaderFooterView (= 0.8.1)
@@ -119,10 +119,12 @@ PODS:
   - CJBaseUtil/CJKeyboardUtil (0.5.1)
   - CJBaseUtil/CJLaunchImageUtil (0.5.1)
   - CJBaseUtil/CJManager (0.5.1):
+    - CJBaseUtil/CJManager/CJConfuseManager (= 0.5.1)
     - CJBaseUtil/CJManager/CJLocationChangeManager (= 0.5.1)
     - CJBaseUtil/CJManager/CJModuleManager (= 0.5.1)
     - CJBaseUtil/CJManager/CJSuspendWindowManager (= 0.5.1)
     - CJBaseUtil/CJManager/CJTimerManager (= 0.5.1)
+  - CJBaseUtil/CJManager/CJConfuseManager (0.5.1)
   - CJBaseUtil/CJManager/CJLocationChangeManager (0.5.1):
     - CJBaseUtil/CJDateUtil
   - CJBaseUtil/CJManager/CJModuleManager (0.5.1)
@@ -133,13 +135,13 @@ PODS:
   - CJBaseUtil/CJQRCodeUtil (0.5.1)
   - CJFile/CJFileManager (0.0.9)
   - CJFile/CJFileModel (0.0.9)
-  - CJFoundation (0.1.3):
-    - CJFoundation/NSDictionary (= 0.1.3)
-    - CJFoundation/NSJSONSerialization (= 0.1.3)
-    - CJFoundation/NSString (= 0.1.3)
-  - CJFoundation/NSDictionary (0.1.3)
-  - CJFoundation/NSJSONSerialization (0.1.3)
-  - CJFoundation/NSString (0.1.3)
+  - CJFoundation (0.1.5):
+    - CJFoundation/NSDictionary (= 0.1.5)
+    - CJFoundation/NSJSONSerialization (= 0.1.5)
+    - CJFoundation/NSString (= 0.1.5)
+  - CJFoundation/NSDictionary (0.1.5)
+  - CJFoundation/NSJSONSerialization (0.1.5)
+  - CJFoundation/NSString (0.1.5)
   - CJPopupAction (1.5.0)
   - CJPopupView/CJPopoverView (2.1.0)
   - CQDemoKit/Auxiliary (0.9.0):
@@ -254,13 +256,13 @@ EXTERNAL SOURCES:
 SPEC CHECKSUMS:
   AFNetworking: 3bd23d814e976cd148d7d44c3ab78017b744cd58
   CJBaseEffectKit: 178d5e0f4cb87379f06cfd49a7c7329d49a2d5de
-  CJBaseHelper: 31eefe3f92f963bcf01ff6948984a8e25381e7b6
+  CJBaseHelper: 8080ddf39b5edd71798d5a45a3e03a5484522e2c
   CJBaseUIKit: 9e39328501c4f627a223ea48fac826cc2d93af27
   CJBaseUIKit-Swift: e9fb305e1d7785b919a5877e06c4efd342ef98e6
-  CJBaseUtil: b2b39023972510aa42badcf8bc1facfd8ee3f8f6
-  CJBaseUtil-Swift: ba15bb3ac8512a9e374078b5e7514e77b9303af5
+  CJBaseUtil: aa117e552182cbd0829c4c8b1e5a82de159cc14c
+  CJBaseUtil-Swift: 837f333ad19be6e2df8467f965c8735560a7c085
   CJFile: 6c1e6d55b3b94e8afbaa9f413f131301d15fdc48
-  CJFoundation: 816d2d20aa9444a5d0f01da4c747b14d6cc51aef
+  CJFoundation: e170ae85eff487b91ce5ac7c711bfbc3ec5d9919
   CJPopupAction: 0f0a424a44b46d3582e0d4a90f14f15e70255436
   CJPopupView: c7685f6a0225a89c72d97ea946f2816b5442abaf
   CQDemoKit: b85faf85550efed4200bad7ffc3a20cdc3af3107

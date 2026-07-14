@@ -7,10 +7,13 @@
 //
 
 #import "TestTextFieldOffsetTableViewCell.h"
+#import <Masonry/Masonry.h>
 #import <CJFoundation/NSString+CJTextSize.h>
-#import "UIImage+CJCreate.h"
+#import <CJBaseUIKit/UIImage+CJCreate.h>
+#import <CJBaseUIKit/UIButton+CJMoreProperty.h>
+
+#import "DemoLabelFactory.h"
 #import "DemoTextFieldFactory.h"
-#import "UIButton+CJMoreProperty.h"
 
 @interface TestTextFieldOffsetTableViewCell () {
     

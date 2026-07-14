@@ -7,6 +7,7 @@
 //
 
 #import "PresentBaseViewController.h"
+#import "DemoLabelFactory.h"
 
 @interface PresentBaseViewController () {
     

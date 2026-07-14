@@ -176,6 +176,7 @@ Pod::Spec.new do |s|
   #   #多个依赖就写多行
   #   ss.dependency 'SnapKit'
   #   ss.dependency 'CJBaseUIKit-Swift/UIView/CJPopupAction'
+  #   ss.dependency 'CJBaseHelper/AuthorizationCJHelper'
   # end
 
   # s.subspec 'CJToast' do |ss|

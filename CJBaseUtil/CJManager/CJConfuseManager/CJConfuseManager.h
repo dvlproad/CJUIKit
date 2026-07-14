@@ -1,5 +1,5 @@
 //
-//  CJRandomNameUtil.h
+//  CJConfuseManager.h
 //  CJUIKitDemo
 //
 //  Created by ciyouzen on 2018/9/1.
@@ -9,7 +9,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface CJRandomNameUtil : NSObject
+@interface CJConfuseManager : NSObject
 
 /** 随机一个实例方法名*/
 + (NSString *)randomMethodName;

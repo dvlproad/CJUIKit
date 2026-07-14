@@ -7,6 +7,7 @@
 //
 
 #import "MantleViewController.h"
+#import <Masonry/Masonry.h>
 #import "DemoUser.h"
 
 @interface MantleViewController ()

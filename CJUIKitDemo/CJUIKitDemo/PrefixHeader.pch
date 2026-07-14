@@ -7,23 +7,25 @@
 //
 
 #ifndef PrefixHeader_pch
-#define PrefixHeader_pch
+    #define PrefixHeader_pch
 
-#define TEST_CJBASEUIKIT_POD
-//#define TEST_CJBASEUTIL_POD
-//#define TEST_CJBASEHELPER_POD
-#define CJDEBUG
-#import <Masonry/Masonry.h>
+    #define TEST_CJBASEUIKIT_POD
+    //#define TEST_CJBASEUTIL_POD
+    //#define TEST_CJBASEHELPER_POD
+    #define CJDEBUG
 
-#ifdef TEST_CJBASEUIKIT_POD
-#import "UIColor+CJHex.h"
-//#import "TSAlertUtil.h"
-#else
-#import <CJBaseUIKit/UIColor+CJHex.h>
-//#import <CJBaseUIKit/TSAlertUtil.h>
-#endif
+    #import <Masonry/Masonry.h>
 
-#import "DemoLabelFactory.h"
+    #import <CJBaseUIKit/UIColor+CJHex.h>
+    /*
+    #ifdef TEST_CJBASEUIKIT_POD
+        #import "UIColor+CJHex.h"
+        #import "TSAlertUtil.h"
+    #else
+        #import <CJBaseUIKit/UIColor+CJHex.h>
+        #import <CJBaseUIKit/TSAlertUtil.h>
+    #endif
+    */
 
 // Include any system framework and library headers here that should be included in all compilation units.
 // You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.

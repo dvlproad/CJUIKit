@@ -1,12 +1,12 @@
 //
-//  CJRandomNameUtil.m
+//  CJConfuseManager.m
 //  CJUIKitDemo
 //
 //  Created by ciyouzen on 2018/9/1.
 //  Copyright © 2018年 dvlproad. All rights reserved.
 //
 
-#import "CJRandomNameUtil.h"
+#import "CJConfuseManager.h"
 
 typedef NS_ENUM(NSUInteger, DJNameType) {
     DJClassName,
@@ -14,7 +14,7 @@ typedef NS_ENUM(NSUInteger, DJNameType) {
 };
 
 
-@interface CJRandomNameUtil () {
+@interface CJConfuseManager () {
     
 }
 @property (nonatomic, strong) NSMutableArray *memoryArray;  /**< 内存中缓存数组 */
@@ -24,13 +24,13 @@ typedef NS_ENUM(NSUInteger, DJNameType) {
 
 
 static dispatch_once_t dj_predicate;
-static CJRandomNameUtil * manager = nil;
+static CJConfuseManager *manager = nil;
 
 
-@implementation CJRandomNameUtil
+@implementation CJConfuseManager
 
 #pragma mark - singleShare
-+ (CJRandomNameUtil *)share
++ (CJConfuseManager *)share
 {
     dispatch_once(&dj_predicate, ^{
         manager = [super allocWithZone:NULL];
@@ -46,19 +46,20 @@ static CJRandomNameUtil * manager = nil;
     });
     return manager;
 }
+
 - (id)copy
 {
-    return [CJRandomNameUtil share];
+    return [CJConfuseManager share];
 }
 + (instancetype)allocWithZone:(struct _NSZone *)zone
 {
-    return [CJRandomNameUtil share];
+    return [CJConfuseManager share];
 }
 
 #pragma mark - Methods
 - (NSString *)getFilePath
 {
-    NSString *filePath = [[NSBundle mainBundle] pathForResource:@"CJRandomNameUtil" ofType:@"txt"];
+    NSString *filePath = [[NSBundle mainBundle] pathForResource:@"CJConfuseManager" ofType:@"txt"];
     return filePath;
 }
 - (NSArray *)getWordFromFile:(NSString *)file
@@ -105,7 +106,7 @@ static CJRandomNameUtil * manager = nil;
 
 + (NSString *)randomMethodName
 {
-    CJRandomNameUtil *myDj = [CJRandomNameUtil share];
+    CJConfuseManager *myDj = [CJConfuseManager share];
     NSString *name;
     do {
         name = [myDj randomNameWithWordsMin:2 Max:4 WithType:DJMethodName];
@@ -118,7 +119,7 @@ static CJRandomNameUtil * manager = nil;
 
 + (NSString *)randomClassName
 {
-    CJRandomNameUtil *myDj = [CJRandomNameUtil share];
+    CJConfuseManager *myDj = [CJConfuseManager share];
     NSString *name;
     do {
         name = [myDj randomNameWithWordsMin:1 Max:3 WithType:DJClassName];
