@@ -74,19 +74,28 @@ typedef NS_ENUM(NSUInteger, CQAddDeleteContainerViewActionType) {
 
 #pragma mark - Config
 /*
- *  设置各个点击的执行事件（//子类建议使用delegate 来实现各点击事件）
+ *  设置 delete 的执行事件
+ *
+ *  @param deleteHandle     点击“减号”进行删除
+ */
+- (void)configDeleteHandle:(void(^)(void))deleteHandle;
+
+/*
+ *  设置 add 和 browser 的执行事件(不一定要设置，很多时候我们不设置，而是靠的是 cell 的 didSelectItemAtIndexPath)
  *
  *  @param addHandle        点击“加号”进行添加
- *  @param deleteHandle     点击“减号”进行删除
  *  @param browseHandle     点击"内容"进行查看(可以为nil,为ni的时候不会添加browseTapGR，防止无脑添加盖住了某些视图本身的tap操作)
  */
 - (void)configAddHandle:(void(^)(void))addHandle
-           deleteHandle:(void(^)(void))deleteHandle
            browseHandle:(void(^ _Nullable)(void))browseHandle;
 
-
-/// 显示成没有数据时候只有的加号UI
-- (void)showNoDataUI:(BOOL)isEmpty;
+#pragma mark - UI
+/*
+ *  显示内容视图
+ *
+ *  @param isAddButton  是否是添加按钮(是添加按钮的话，则要隐藏删除按钮;不是的话，显示删除按钮，用于有些视图要浏览的时候才能删除)
+ */
+- (void)showContentUIWithIsAddButton:(BOOL)isAddButton;
 
 @end
 

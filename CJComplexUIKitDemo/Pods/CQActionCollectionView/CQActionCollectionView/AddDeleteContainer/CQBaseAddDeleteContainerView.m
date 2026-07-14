@@ -12,10 +12,13 @@
     
 }
 @property (nonatomic, strong) UIView *addContainerView;
-@property (nonatomic, strong) UIButton *deleteButton;
 
-@property (nonatomic, copy, readonly) void(^addHandle)(void);
+// delete
+@property (nonatomic, strong) UIButton *deleteButton;
 @property (nonatomic, copy, readonly) void(^deleteHandle)(void);
+
+// add 和 browser (不一定要设置，很多时候我们不设置，而是靠的是 cell 的 didSelectItemAtIndexPath)
+@property (nonatomic, copy, readonly) void(^addHandle)(void);
 @property (nonatomic, copy, readonly) void(^browseHandle)(void);
 
 @end
@@ -88,7 +91,7 @@
         self.addContainerView.layer.cornerRadius = self.contentContainerView.layer.cornerRadius;
         
         // 数据
-        [self showNoDataUI:YES];
+        [self showContentUIWithIsAddButton:NO];
     }
     return self;
 }
@@ -136,18 +139,25 @@
 
 #pragma mark - Config
 /*
- *  设置各个点击的执行事件
+ *  设置 delete 的执行事件
+ *
+ *  @param deleteHandle     点击“减号”进行删除
+ */
+- (void)configDeleteHandle:(void(^)(void))deleteHandle
+{
+    _deleteHandle = deleteHandle;
+}
+
+/*
+ *  设置 add 和 browser 的执行事件(不一定要设置，很多时候我们不设置，而是靠的是 cell 的 didSelectItemAtIndexPath)
  *
  *  @param addHandle        点击“加号”进行添加
- *  @param deleteHandle     点击“减号”进行删除
  *  @param browseHandle     点击"内容"进行查看(可以为nil,为ni的时候不会添加browseTapGR，防止无脑添加盖住了某些视图本身的tap操作)
  */
 - (void)configAddHandle:(void(^)(void))addHandle
-           deleteHandle:(void(^)(void))deleteHandle
            browseHandle:(void(^ _Nullable)(void))browseHandle
 {
     _addHandle = addHandle;
-    _deleteHandle = deleteHandle;
     _browseHandle = browseHandle;
     
     if (browseHandle != nil) {
@@ -156,18 +166,16 @@
     }
 }
 
-/// 显示成没有数据时候只有的加号UI
-- (void)showNoDataUI:(BOOL)isEmpty {
-    if (isEmpty) {
-        self.addContainerView.hidden = NO;
-        self.deleteButton.hidden = YES;
-        self.contentContainerView.hidden = YES;
-        
-    } else {
-        self.addContainerView.hidden = YES;
-        self.deleteButton.hidden = NO;
-        self.contentContainerView.hidden = NO;
-    }
+#pragma mark - UI
+/*
+ *  显示内容视图
+ *
+ *  @param isAddButton  是否是添加按钮(是添加按钮的话，则要隐藏删除按钮;不是的话，显示删除按钮，用于有些视图要浏览的时候才能删除)
+ */
+- (void)showContentUIWithIsAddButton:(BOOL)isAddButton {
+    self.addContainerView.hidden = !isAddButton;
+    self.deleteButton.hidden = isAddButton;
+    self.contentContainerView.hidden = isAddButton;
 }
 
 
@@ -185,6 +193,7 @@
 
 /// 点击“内容”进行查看
 - (void)__browseAction {
+    NSLog(@"外部设置了 browseHandle ，导致整个视图了添加自定义 UITapGestureRecognizer，并触发了");
     !self.browseHandle ?: self.browseHandle();
 }
 

@@ -99,13 +99,13 @@ static NSString * const CJUploadCollectionViewCellAddID = @"CJUploadCollectionVi
     /* 创建DataSource */
     CJActionCollectionViewDataSource *cjDataSource = [[CJActionCollectionViewDataSource alloc] initWithMaxShowCount:5 cellForPrefixBlock:nil cellForSuffixBlock:^UICollectionViewCell *(CJActionCollectionViewDataSource *bDataSource, UICollectionView *collectionView, NSIndexPath *indexPath) {
         CQActionImageCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:CJUploadCollectionViewCellAddID forIndexPath:indexPath];
-        cell.isAdd = YES;
+        [cell setIsAdd:YES];
         
         return cell;
     } cellForItemBlock:^UICollectionViewCell *(CJActionCollectionViewDataSource *bDataSource, UICollectionView *collectionView, NSIndexPath *indexPath) {
     
         CQActionImageCollectionViewCell *dataCell = [collectionView dequeueReusableCellWithReuseIdentifier:CJUploadCollectionViewCellID forIndexPath:indexPath];
-        dataCell.isAdd = NO;
+        [dataCell setIsAdd:NO];
         
         [self __operateDataCell:dataCell withIndexPath:indexPath isSettingOperate:YES];
         

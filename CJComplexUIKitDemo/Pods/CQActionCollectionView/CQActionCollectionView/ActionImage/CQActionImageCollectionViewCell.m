@@ -40,14 +40,20 @@
 }
 
 - (void)commonInit {
+    NSString *bundleName = @"CQActionCollectionView_ActionImageBundle";
+    NSBundle *frameworkBundle = [NSBundle bundleForClass:[self class]];
+    NSURL *bundleURL = [frameworkBundle URLForResource:bundleName withExtension:@"bundle"];
+    NSBundle *resourceBundle = bundleURL ? [NSBundle bundleWithURL:bundleURL] : nil;
+    
+    UIImage *addImage = [UIImage imageNamed:@"icon_cell_image_add" inBundle:resourceBundle compatibleWithTraitCollection:nil];
+    UIImage *deleteIconImage = [UIImage imageNamed:@"icon_cell_image_delete" inBundle:resourceBundle compatibleWithTraitCollection:nil];
+    
     UIView *parentView = self.contentView;
     
-    
     UIImageView *addContainerView = [[UIImageView alloc] init];
-    addContainerView.image = [UIImage imageNamed:@"CQActionCollectionView_ActionImageBundle.bundle/icon_cell_image_add"];
+    addContainerView.image = addImage;
     addContainerView.contentMode = UIViewContentModeScaleAspectFill;
     
-    UIImage *deleteIconImage = [UIImage imageNamed:@"CQActionCollectionView_ActionImageBundle.bundle/icon_cell_image_delete"];
     
     CQActionImageCellContentContainerView *contentContainerView = [[CQActionImageCellContentContainerView alloc] initWithFrame:CGRectZero];
     CQBaseAddDeleteContainerView *addDeleteContainerView = [[CQBaseAddDeleteContainerView alloc] initWithAddContainerView:addContainerView deleteIconImage:deleteIconImage containerMarginToTopRight:0 contentContainerView:contentContainerView];
@@ -58,14 +64,17 @@
         make.edges.mas_equalTo(self.contentView);
     }];
     
-    [addDeleteContainerView configAddHandle:^{
-        
-    } deleteHandle:^{
+    [addDeleteContainerView configDeleteHandle:^{
         !self.deleteHandle ?: self.deleteHandle(self);
+    }];
+    /*
+    // 不设置,而是靠的是 cell 的 didSelectItemAtIndexPath
+    [addDeleteContainerView configAddHandle:^{
         
     } browseHandle:^{
         
     }];
+    */
     
     _addDeleteContainerView = addDeleteContainerView;
 }
@@ -75,14 +84,14 @@
     [self.contentContainerView.cjImageView cq_configUIWithBannedSize:bannedSize];
 }
 
-
+#pragma mark - Setter
 - (void)setIsAdd:(BOOL)isAdd {
     _isAdd = isAdd;
+    
     if (isAdd) {
-        [self.addDeleteContainerView showNoDataUI:YES];
-        
+        [self.addDeleteContainerView showContentUIWithIsAddButton:YES];
     } else {
-        [self.addDeleteContainerView showNoDataUI:NO];
+        [self.addDeleteContainerView showContentUIWithIsAddButton:NO];
     }
 }
 
@@ -99,9 +108,16 @@
     self.contentContainerView.flagType = flagType;
 }
 
+- (instancetype)updateImage:(UIImage *)image {
+    //[self showContentUIWithHiddenDeleteButton:NO];
+    
+    [self.cjImageView setImage:image];
+    return self;
+}
 
-- (void)updateImage:(UIImage *)image {
-    [self.contentContainerView.cjImageView setImage:image];
+- (instancetype)makeImageContentMode:(UIViewContentMode)contentMode {
+    [self.cjImageView setContentMode:contentMode];
+    return self;
 }
 
 

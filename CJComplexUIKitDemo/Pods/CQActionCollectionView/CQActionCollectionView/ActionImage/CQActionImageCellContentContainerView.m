@@ -16,9 +16,16 @@
 - (instancetype)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
     if (self) {
+        NSString *bundleName = @"CQActionCollectionView_ActionImageBundle";
+        NSBundle *frameworkBundle = [NSBundle bundleForClass:[self class]];
+        NSURL *bundleURL = [frameworkBundle URLForResource:bundleName withExtension:@"bundle"];
+        NSBundle *resourceBundle = bundleURL ? [NSBundle bundleWithURL:bundleURL] : nil;
+        
+        UIImage *addImage = [UIImage imageNamed:@"icon_cell_image_add" inBundle:resourceBundle compatibleWithTraitCollection:nil];
+        //UIImage *deleteIconImage = [UIImage imageNamed:@"icon_cell_image_delete" inBundle:resourceBundle compatibleWithTraitCollection:nil];
         
         UIImageView *addContainerView = [[UIImageView alloc] init];
-        addContainerView.image = [UIImage imageNamed:@"CQActionCollectionView_ActionImageBundle.bundle/icon_cell_image_add"];
+        addContainerView.image = addImage;
         addContainerView.contentMode = UIViewContentModeScaleAspectFill;
         [self addSubview:addContainerView];
         [addContainerView mas_makeConstraints:^(MASConstraintMaker *make) {

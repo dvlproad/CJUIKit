@@ -21,6 +21,7 @@ PODS:
   - CJBaseUIKit/UIImage (0.8.1)
   - CJBaseUIKit/UINavigationBar (0.8.1)
   - CJBaseUIKit/UIView/CJDragAction (0.8.1)
+  - CJBaseUtil-Swift/FrameworkCJHelper (0.1.1)
   - CJBaseUtil/CJDataUtil (0.5.1)
   - CJBaseUtil/CJPinyinHelper (0.5.1):
     - PinYin4Objc
@@ -125,17 +126,18 @@ PODS:
     - CJPopupCreater/Base
     - Masonry
   - CJPopupCreater/EffectAndCornerHelper (0.1.1)
-  - CQActionCollectionView/ActionDataSource (0.3.4):
+  - CQActionCollectionView/ActionDataSource (0.4.0):
     - CJBaseUIKit/UIColor
     - Masonry
-  - CQActionCollectionView/ActionImage (0.3.4):
+  - CQActionCollectionView/ActionImage (0.4.0):
     - CJBaseUIKit/UIColor
+    - CJBaseUtil-Swift/FrameworkCJHelper
     - CJCollectionViewLayout
     - CQActionCollectionView/ActionDataSource
     - CQActionCollectionView/AddDeleteContainer
     - CQImageKit
     - Masonry
-  - CQActionCollectionView/AddDeleteContainer (0.3.4):
+  - CQActionCollectionView/AddDeleteContainer (0.4.0):
     - CJBaseUIKit/UIColor
     - Masonry
   - CQBridgeSTOLottie (0.3.0):
@@ -309,6 +311,7 @@ SPEC REPOS:
     - CJBaseHelper
     - CJBaseUIKit
     - CJBaseUtil
+    - CJBaseUtil-Swift
     - CJFile
     - CJFoundation
     - CJNetwork
@@ -337,6 +340,7 @@ SPEC CHECKSUMS:
   CJBaseHelper: 9a903eb83edd4e831e39c5112c6940e2559b79b7
   CJBaseUIKit: 1445f55a4c9f942351fcd1964694f32196472837
   CJBaseUtil: 1bbf8d5f831dc12ae4bb06c8b5326bd39f3522e1
+  CJBaseUtil-Swift: ba15bb3ac8512a9e374078b5e7514e77b9303af5
   CJCollectionViewLayout: 00c661838ff985134c364036e4bffbf07233c092
   CJComplexUIKit: d6b3ca468702f95c24f85b3bcd8bffa56ef60040
   CJContainer: b7d5d626a05691c9107ce57b5991ab5c066f86a3
@@ -348,7 +352,7 @@ SPEC CHECKSUMS:
   CJOverlayView: 35ff284fb9a9b1a21e0a2f4cb24193ed72fb5215
   CJPopupAction: 0f0a424a44b46d3582e0d4a90f14f15e70255436
   CJPopupCreater: eb8af290023be9aeaeb78165c9458d910d022ed3
-  CQActionCollectionView: 7e0dab47c9f2389784df267c45b2f5ba6160a1ce
+  CQActionCollectionView: baf8f21efb647b05396d2461ffd97f74f1c6b4d1
   CQBridgeSTOLottie: 5e9bb0ab3b67570586d2ec5835c62e662e570371
   CQDemoKit: 22fc91b3ab0b53b0de98e93eefe0c6778a211f2b
   CQImageAddDeleteListKit: af21a18fafdeee617fd6acb24967db64903b6ed7
