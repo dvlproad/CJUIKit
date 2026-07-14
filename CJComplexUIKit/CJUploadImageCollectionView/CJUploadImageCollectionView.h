@@ -5,6 +5,7 @@
 //  Created by ciyouzen on 2017/1/19.
 //  Copyright © 2017年 dvlproad. All rights reserved.
 //
+// 待废弃，参考改成使用 #import <CQImageAddDeleteListKit/CJImageAddDeletePickUploadCollectionView.h>
 
 
 #import <CQImageAddDeleteListKit/CJImageUploadFileModelsOwner.h>

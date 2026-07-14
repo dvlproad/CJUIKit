@@ -49,7 +49,8 @@
         make.height.mas_equalTo(40);
     }];
     
-    CJUploadImageCollectionView *collectionView = [[CJUploadImageCollectionView alloc] init];
+    //CJUploadImageCollectionView *collectionView = [[CJUploadImageCollectionView alloc] init];
+    CJImageAddDeletePickUploadCollectionView *collectionView = [[CJImageAddDeletePickUploadCollectionView alloc] init];
     collectionView.backgroundColor = [UIColor redColor];
     [self.view addSubview:collectionView];
     [collectionView mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -96,6 +97,7 @@
     
     
     self.uploadImageCollectionView.backgroundColor = [UIColor redColor];
+    /*
     self.uploadImageCollectionView.belongToViewController = self;
     self.uploadImageCollectionView.mediaType = CJMediaTypeImage;
     //self.uploadImageCollectionView.equalCellSizeSetting.maxDataModelShowCount = 5;
@@ -105,6 +107,7 @@
         [weakSelf.uploadImageCollectionView reloadData];
     }];
     
+    */
     
     /* 设置上传 */
     NSInteger uploadItemToWhere = 0; /** 可选：上传到哪里(一个项目中可能有好几个地方都要上传) */
