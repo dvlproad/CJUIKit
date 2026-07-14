@@ -28,7 +28,7 @@
     
     CGSize maxSize = CGSizeMake(maxWidth, MAXFLOAT);
     
-    NSStringDrawingOptions options = NSStringDrawingUsesLineFragmentOrigin;
+    //NSStringDrawingOptions options = NSStringDrawingUsesLineFragmentOrigin;
     NSDictionary *labelAttributesWithFont = [NSString __labelAttributesWithFont:font];
     CGSize textSizeInView = [self cjTextSizeWithAttributes:labelAttributesWithFont maxSize:maxSize];
     
@@ -68,7 +68,7 @@
     }
     CGSize maxSize = CGSizeMake(maxWidth, MAXFLOAT);
     
-    NSStringDrawingOptions options = NSStringDrawingUsesLineFragmentOrigin;
+    //NSStringDrawingOptions options = NSStringDrawingUsesLineFragmentOrigin;
     NSDictionary *textViewAttributesWithFont = [NSString __textViewAttributesWithFont:font];
     CGSize textSizeInView = [self cjTextSizeWithAttributes:textViewAttributesWithFont maxSize:maxSize];
     
