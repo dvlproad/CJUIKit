@@ -55,14 +55,12 @@
             CQDMModuleModel *imagePickerCollectionViewModule = [[CQDMModuleModel alloc] init];
             imagePickerCollectionViewModule.title = @"图片选择的集合视图(没上传操作)";
             imagePickerCollectionViewModule.classEntry = [UploadNoneImagePickerViewController class];
-            imagePickerCollectionViewModule.isCreateByXib = YES;
             [sectionDataModel.values addObject:imagePickerCollectionViewModule];
         }
         {
             CQDMModuleModel *imagePickerCollectionViewModule = [[CQDMModuleModel alloc] init];
             imagePickerCollectionViewModule.title = @"图片选择的集合视图(有上传操作)";
             imagePickerCollectionViewModule.classEntry = [UploadDirectlyImagePickerViewController class];
-            imagePickerCollectionViewModule.isCreateByXib = YES;
             [sectionDataModel.values addObject:imagePickerCollectionViewModule];
         }
         

@@ -9,18 +9,8 @@
 
 #import <CQImageAddDeleteListKit/CJImageUploadFileModelsOwner.h>
 #import <CQImageAddDeleteListKit/CJVideoUploadFileModelsOwner.h>
-
-typedef NS_ENUM(NSUInteger, CJMediaType) {
-    CJMediaTypeImage,
-    CJMediaTypeVideo
-};
-
-///上传操作
-typedef NS_ENUM(NSUInteger, CJUploadActionType) {
-    CJUploadActionTypeNone = 0,         /**< 没有上传文件的操作 */
-    CJUploadActionTypeDirectly,         /**< 选择完之后直接上传(cell显示的时候就开始直接上传) */
-    CJUploadActionTypeWaitForClick,     /**< 等待点击"上传"按钮再统一上传(不直接上传,则我们一般会有一个统一“上传”的按钮，来让这些上传) */
-};
+#import <CQImageAddDeleteListKit/CJImageAddDeletePickCollectionView.h>          // 引入 CJMediaType
+#import <CQImageAddDeleteListKit/CJImageAddDeletePickUploadCollectionView.h>    // 引入 CJUploadActionType
 
 ///TODO:将本工程CJTotalDemo中的FileChooseView抽出不含上传请求的部分到CJComplexUIKitDemo中
 @interface CJUploadImageCollectionView : UICollectionView <UIImagePickerControllerDelegate, UINavigationControllerDelegate> {
