@@ -8,8 +8,8 @@
 
 #import "UITextField+CJBlock.h"
 #import <objc/runtime.h>
+#import <CJDataVientianeSDK/UITextInputLimitCJHelper.h>
 #import "CJTextFieldDelegate.h"
-#import "UITextInputLimitCJHelper.h"
 #import "UITextInputCursorCJHelper.h"
 
 @interface UITextField () {

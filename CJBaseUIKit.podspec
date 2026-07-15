@@ -4,7 +4,7 @@ Pod::Spec.new do |s|
   # pod的本地索引文件：~/Library/Caches/CocoaPods/search_index.json
   # pod的owner操作：https://www.jianshu.com/p/a9b8c2a1f3cf
   s.name         = "CJBaseUIKit"
-  s.version      = "0.8.1"
+  s.version      = "0.9.0"
   s.summary      = "自定义的基础UI"
   s.homepage     = "https://github.com/dvlproad/CJUIKit"
 
@@ -26,8 +26,8 @@ Pod::Spec.new do |s|
                  • CJBaseUIKit/UILabel - Label
                  • CJBaseUIKit/UIButton - 按钮 及 CJBadgeButton
                  • CJBaseUIKit/UITextField - 文本视图：包含文本框类别及新的自定义文本框
-                 • CJBaseUIKit/UITextInputCJHelper - 文本长度限制：UITextField 和 UITextView 会需要使用到的字符串处理方法
-                 • CJBaseUIKit/UITextHeightCenterCJHelper - 文字高度计算和竖直居中设置方法：UITextView 会需要使用到
+                 • CJBaseUIKit/UITextInputCJHelper - 文本长度限制、光标设置等：UITextField 和 UITextView 会需要使用到的字符串处理方法，会依赖CJDataVientianeSDK(从0.9.0开始，1指定位置、指定范围、最大长度字符串获取；2复制粘贴新字符串获取的方法，已移动到 CJDataVientianeSDK)
+                 • CJBaseUIKit/UITextHeightCenterCJHelper - 竖直居中设置方法：UITextView 会需要使用到(从0.9.0开始，文本在指定宽度下的高度计算，已移动到 CJDataVientianeSDK)
                  • CJBaseUIKit/UITextView - 文本视图：类似微信文本输入框实现
                  • CJBaseUIKit/UIToolbar - 工具栏
                  • CJBaseUIKit/UIScrollView - 与 UIScrollView 相关的基础类
@@ -52,7 +52,7 @@ Pod::Spec.new do |s|
 
   s.platform     = :ios, "8.0"
  
-  s.source       = { :git => "https://github.com/dvlproad/CJUIKit.git", :tag => "CJBaseUIKit_0.8.1" }
+  s.source       = { :git => "https://github.com/dvlproad/CJUIKit.git", :tag => "CJBaseUIKit_0.9.0" }
   s.source_files  = "CJBaseUIKit/*.{h,m}"
 
   s.frameworks = "UIKit"
@@ -151,12 +151,13 @@ Pod::Spec.new do |s|
     ss.source_files = "CJBaseUIKit/UITextField/**/*.{h,m}"
   end
 
-  # 文本长度限制：UITextField 和 UITextView 会需要使用到的字符串处理方法
+  # 文本长度限制、光标设置等：UITextField 和 UITextView 会需要使用到的字符串处理方法，会依赖CJDataVientianeSDK(从0.9.0开始，1指定位置、指定范围、最大长度字符串获取；2复制粘贴新字符串获取的方法，已移动到 CJDataVientianeSDK)
   s.subspec 'UITextInputCJHelper' do |ss|
     ss.source_files = "CJBaseUIKit/UITextInputCJHelper/**/*.{h,m}"
+    ss.dependency 'CJDataVientianeSDK/UITextInputLimitCJHelper'
   end
 
-  # 文字高度计算和竖直居中设置方法：UITextView 会需要使用到
+  # 竖直居中设置方法：UITextView 会需要使用到(从0.9.0开始，文本在指定宽度下的高度计算，已移动到 CJDataVientianeSDK)
   s.subspec 'UITextHeightCenterCJHelper' do |ss|
     ss.source_files = "CJBaseUIKit/UITextHeightCenterCJHelper/**/*.{h,m}"
   end

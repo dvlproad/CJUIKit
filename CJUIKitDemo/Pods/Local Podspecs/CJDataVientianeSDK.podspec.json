@@ -1,0 +1,34 @@
+{
+  "name": "CJDataVientianeSDK",
+  "version": "0.0.1",
+  "summary": "数据万象SDK",
+  "homepage": "https://github.com/dvlproad/CJDataVientianeSDK",
+  "license": "MIT",
+  "authors": "dvlproad",
+  "description": "Demo，可按需独立引入：\n• CQDemoKit/Helper - 本库中的资源获取帮助类\n\n• CQDemoKit/BaseVC - 基础模块VC\n• CQDemoKit/BaseVC/Base - 基础模块\n• CQDemoKit/BaseVC/ScrollView - 滚动视图\n• CQDemoKit/BaseVC/TableView - 表格视图\n• CQDemoKit/BaseVC/Collection - 集合视图\n• CQDemoKit/BaseVC/ValidateMethod - 验证方法是否正确的基类(输入支持单行和多行，如测试获取字符串长度的方法、测试获取字符串、日期计算等方法)\n• CQDemoKit/BaseVC/TabBar - TabBar\n\n• CQDemoKit/BaseUIKit - 基础模块UIKit\n• CQDemoKit/BaseUtil - 基础工具\n\n• CQDemoKit/Demo_Resource - Demo 工程中基本都需要的 DemoResource\n\n• CQDemoKit/Demo_RipeView - 为了快速构建完整 Demo 工程提供的一些成熟的DemoRipeView(已含内容和事件)\n• CQDemoKit/Demo_DataSourceAndDelegate - 为了快速构建完整 Demo 工程提供的一些成熟的DataSource和Delegate(已含内容和事件)\n• CQDemoKit/Auxiliary - 辅助模块(①添加辅助文本(含删除)、添加任意辅助视图；②为 present 出来的视图，添加 NavigationBar)\n• CQDemoKit/Monitor - 监控\n\n每个子库可独立引入，详见各子库描述。",
+  "platforms": {
+    "ios": "8.0"
+  },
+  "swift_versions": "5.0",
+  "source": {
+    "git": "https://github.com/dvlproad/CJDataVientianeSDK",
+    "tag": "CJDataVientianeSDK_0.0.1"
+  },
+  "frameworks": "UIKit",
+  "requires_arc": true,
+  "subspecs": [
+    {
+      "name": "CJSubStringUtil",
+      "source_files": "CJDataVientianeSDK/CJSubStringUtil/**/*.{h,m}"
+    },
+    {
+      "name": "UITextInputLimitCJHelper",
+      "source_files": "CJDataVientianeSDK/UITextInputLimitCJHelper/**/*.{h,m}"
+    },
+    {
+      "name": "UITextInputHeightCJHelper",
+      "source_files": "CJDataVientianeSDK/UITextInputHeightCJHelper/**/*.{h,m}"
+    }
+  ],
+  "swift_version": "5.0"
+}

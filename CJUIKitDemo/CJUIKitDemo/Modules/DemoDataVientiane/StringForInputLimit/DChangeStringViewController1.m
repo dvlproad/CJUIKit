@@ -7,7 +7,6 @@
 //
 
 #import "DChangeStringViewController1.h"
-#import "CQSubStringUtil.h"
 #import "UITextViewCQHelper.h"
 
 @interface DChangeStringViewController1 ()

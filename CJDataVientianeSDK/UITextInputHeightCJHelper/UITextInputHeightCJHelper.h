@@ -7,7 +7,7 @@
 //
 //  文本输入高度计算的帮助方法
 
-#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
 
 NS_ASSUME_NONNULL_BEGIN
 

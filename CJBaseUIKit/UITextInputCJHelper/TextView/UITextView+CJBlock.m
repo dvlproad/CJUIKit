@@ -8,8 +8,8 @@
 
 #import "UITextView+CJBlock.h"
 #import <objc/runtime.h>
+#import <CJDataVientianeSDK/UITextInputLimitCJHelper.h>
 #import "CJTextViewDelegate.h"
-#import "UITextInputLimitCJHelper.h"
 #import "UITextInputCursorCJHelper.h"
 
 @interface UITextView () {

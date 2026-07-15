@@ -7,7 +7,7 @@
 //
 
 #import "ValidateStringViewController.h"
-#import "NSString+CJValidate.h"
+#import <CJFoundation/NSString+CJValidate.h>
 
 typedef NS_ENUM(NSUInteger, ValidateStringType) {
     ValidateStringTypeNone = 0,     /**< 不验证 */

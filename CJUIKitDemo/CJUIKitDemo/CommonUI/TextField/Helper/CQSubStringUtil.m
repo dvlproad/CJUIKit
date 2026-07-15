@@ -7,7 +7,7 @@
 //
 
 #import "CQSubStringUtil.h"
-#import <CJBaseUIKit/CJSubStringUtil.h>
+#import <CJDataVientianeSDK/CJSubStringUtil.h>
 #import <CJFoundation/NSString+CJTextLength.h>
 
 @implementation CQSubStringUtil

@@ -1854,13 +1854,13 @@
 			path = NSString;
 			sourceTree = "<group>";
 		};
-		80FF917F1FC5682A00E437CF /* NSDate */ = {
+		80FF917F1FC5682A00E437CF /* DateData */ = {
 			isa = PBXGroup;
 			children = (
 				80FF91801FC5682A00E437CF /* DateViewController.h */,
 				80FF91811FC5682A00E437CF /* DateViewController.m */,
 			);
-			path = NSDate;
+			path = DateData;
 			sourceTree = "<group>";
 		};
 		80FF91831FC5682A00E437CF /* DemosOther */ = {
@@ -1922,9 +1922,7 @@
 				977C55E63007DF7D001EC6C7 /* TSDataVientianeMainViewController.h */,
 				977C55E73007DF7D001EC6C7 /* TSDataVientianeMainViewController.m */,
 				977C55EA3007E0B7001EC6C7 /* ValidateLogic */,
-				805598B21FF5D612009DC61C /* ValidateStringViewController.h */,
-				805598B31FF5D612009DC61C /* ValidateStringViewController.m */,
-				80FF917F1FC5682A00E437CF /* NSDate */,
+				80FF917F1FC5682A00E437CF /* DateData */,
 				78F4072125A8F9AF004971D1 /* StringForInputLimit */,
 			);
 			path = DemoDataVientiane;
@@ -1933,6 +1931,8 @@
 		977C55EA3007E0B7001EC6C7 /* ValidateLogic */ = {
 			isa = PBXGroup;
 			children = (
+				805598B21FF5D612009DC61C /* ValidateStringViewController.h */,
+				805598B31FF5D612009DC61C /* ValidateStringViewController.m */,
 			);
 			path = ValidateLogic;
 			sourceTree = "<group>";
