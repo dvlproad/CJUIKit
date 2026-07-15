@@ -38,10 +38,10 @@ NS_ASSUME_NONNULL_BEGIN
  *  @param target           点击自定义的返回按钮要执行谁的的事件
  *  @param action           点击自定义的返回按钮要执行的事件
  */
-- (void)cj_setCustomBackBarButtonItemWithNormalImage:(UIImage *)normalImage
-                                    highlightedImage:(UIImage *)highlightedImage
-                                         normalTitle:(NSString *)normalTitle
-                                       selectedTitle:(NSString *)selectedTitle
+- (void)cj_setCustomBackBarButtonItemWithNormalImage:(nullable UIImage *)normalImage
+                                    highlightedImage:(nullable UIImage *)highlightedImage
+                                         normalTitle:(nullable NSString *)normalTitle
+                                       selectedTitle:(nullable NSString *)selectedTitle
                                             withSize:(CGSize)size
                                               target:(id)target
                                               action:(SEL)action;

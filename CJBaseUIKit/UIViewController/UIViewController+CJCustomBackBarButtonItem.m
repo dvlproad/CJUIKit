@@ -35,10 +35,10 @@ static NSString * const kcjCustomNavigationBackButtonKey = @"kcjCustomNavigation
 }
 
 /* 完整的描述请参见文件头部 */
-- (void)cj_setCustomBackBarButtonItemWithNormalImage:(UIImage *)normalImage
-                                    highlightedImage:(UIImage *)highlightedImage
-                                         normalTitle:(NSString *)normalTitle
-                                       selectedTitle:(NSString *)selectedTitle
+- (void)cj_setCustomBackBarButtonItemWithNormalImage:(nullable UIImage *)normalImage
+                                    highlightedImage:(nullable UIImage *)highlightedImage
+                                         normalTitle:(nullable NSString *)normalTitle
+                                       selectedTitle:(nullable NSString *)selectedTitle
                                             withSize:(CGSize)size
                                               target:(id)target
                                               action:(SEL)action

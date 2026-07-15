@@ -7,7 +7,7 @@
 //
 
 #import "CJTextView.h"
-#import "UITextInputHeightCJHelper.h"
+#import <CJDataVientianeSDK/UITextInputHeightCJHelper.h>
 
 @interface CJTextView () {
     

@@ -1,7 +1,7 @@
 # 上传到github公有库:
   #验证方法1：pod lib lint CJDataVientianeSDK.podspec --sources='https://github.com/CocoaPods/Specs.git' --allow-warnings --use-libraries --verbose
   #验证方法2：pod lib lint CJDataVientianeSDK.podspec --sources=cocoapods --allow-warnings --use-libraries --verbose
-  #提交方法(github公有库)： pod trunk push CJDataVientianeSDK.podspec --allow-warnings
+  #提交方法(github公有库)： pod trunk push CJDataVientianeSDK.podspec --allow-warnings --verbose
   
 
 

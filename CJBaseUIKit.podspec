@@ -1,5 +1,5 @@
 Pod::Spec.new do |s|
-  # 验证方法：pod lib lint CJBaseUIKit.podspec --allow-warnings --use-libraries --verbose
+  # 验证方法：pod lib lint CJBaseUIKit.podspec --sources='https://github.com/CocoaPods/Specs.git' --allow-warnings --use-libraries --verbose
   # 上传方法：pod trunk push CJBaseUIKit.podspec --allow-warnings --use-libraries --verbose
   # pod的本地索引文件：~/Library/Caches/CocoaPods/search_index.json
   # pod的owner操作：https://www.jianshu.com/p/a9b8c2a1f3cf
@@ -52,7 +52,7 @@ Pod::Spec.new do |s|
 
   s.platform     = :ios, "9.0"
  
-  s.source       = { :git => "https://github.com/dvlproad/CJUIKit.git", :tag => "CJBaseUIKit_0.9.0" }
+  s.source       = { :git => "https://github.com/dvlproad/CJUIKit.git", :tag => "CJBaseUIKit_0.9.0_1" }
   s.source_files  = "CJBaseUIKit/*.{h,m}"
 
   s.frameworks = "UIKit"
@@ -167,6 +167,7 @@ Pod::Spec.new do |s|
     ss.source_files = "CJBaseUIKit/UITextView/**/*.{h,m}"
     # ss.resources = "CJBaseUIKit/UITextView/**/*.{png,xib}"
     ss.dependency "CJBaseUIKit/UITextHeightCenterCJHelper"
+    ss.dependency 'CJDataVientianeSDK/UITextInputHeightCJHelper'
   end
   
   # 工具栏
