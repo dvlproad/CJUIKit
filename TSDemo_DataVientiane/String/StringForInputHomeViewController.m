@@ -64,7 +64,7 @@
         }
         {
             CQDMModuleModel *NSStringModule = [[CQDMModuleModel alloc] init];
-            NSStringModule.title = @"范围子字符串RangeSubString";
+            NSStringModule.title = @"范围子字符串RangeSubString(暂无示例)";
             NSStringModule.classEntry = [BRangeSubStringViewController class];
             [sectionDataModel.values addObject:NSStringModule];
         }

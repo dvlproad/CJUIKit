@@ -7,7 +7,7 @@
 //
 
 #import "CMaxSubStringViewController1.h"
-#import "CQSubStringUtil.h"
+#import <CJDataVientianeSDK/CJSubStringUtil.h>
 
 @interface CMaxSubStringViewController1 ()
 
@@ -36,7 +36,7 @@
             dealTextModel.actionTitle = @"截取子字符串使其最多字符个数不超过5";
             dealTextModel.autoExec = YES;
             dealTextModel.actionBlock = ^NSString * _Nonnull(NSString * _Nonnull oldString) {
-                NSString *maxSubstring = [CQSubStringUtil sys_maxSubstringFromString:oldString maxLength:5];
+                NSString *maxSubstring = [[self class] sys_maxSubstringFromString:oldString maxLength:5];
                 return maxSubstring;
             };
             [sectionDataModel.values addObject:dealTextModel];
@@ -49,7 +49,7 @@
             dealTextModel.actionTitle = @"截取子字符串使其最多字符个数不超过25";
             dealTextModel.autoExec = YES;
             dealTextModel.actionBlock = ^NSString * _Nonnull(NSString * _Nonnull oldString) {
-                NSString *maxSubstring = [CQSubStringUtil sys_maxSubstringFromString:oldString maxLength:25];
+                NSString *maxSubstring = [[self class] sys_maxSubstringFromString:oldString maxLength:25];
                 return maxSubstring;
             };
             [sectionDataModel.values addObject:dealTextModel];
@@ -62,7 +62,7 @@
             dealTextModel.actionTitle = @"截取子字符串使其最多字符个数不超过45";
             dealTextModel.autoExec = YES;
             dealTextModel.actionBlock = ^NSString * _Nonnull(NSString * _Nonnull oldString) {
-                NSString *maxSubstring = [CQSubStringUtil sys_maxSubstringFromString:oldString maxLength:45];
+                NSString *maxSubstring = [[self class] sys_maxSubstringFromString:oldString maxLength:45];
                 return maxSubstring;
             };
             [sectionDataModel.values addObject:dealTextModel];
@@ -75,7 +75,7 @@
             dealTextModel.actionTitle = @"截取子字符串使其最多字符个数不超过10";
             dealTextModel.autoExec = YES;
             dealTextModel.actionBlock = ^NSString * _Nonnull(NSString * _Nonnull oldString) {
-                NSString *maxSubstring = [CQSubStringUtil sys_maxSubstringFromString:oldString maxLength:10];
+                NSString *maxSubstring = [[self class] sys_maxSubstringFromString:oldString maxLength:10];
                 return maxSubstring;
             };
             [sectionDataModel.values addObject:dealTextModel];
@@ -96,7 +96,7 @@
             dealTextModel.actionTitle = @"截取子字符串使其最多字符个数不超过5";
             dealTextModel.autoExec = YES;
             dealTextModel.actionBlock = ^NSString * _Nonnull(NSString * _Nonnull oldString) {
-                NSString *maxSubstring = [CQSubStringUtil sys_maxSubstringFromString:oldString maxLength:5];
+                NSString *maxSubstring = [[self class] sys_maxSubstringFromString:oldString maxLength:5];
                 return maxSubstring;
             };
             [sectionDataModel.values addObject:dealTextModel];
@@ -108,6 +108,31 @@
     
     self.sectionDataModels = sectionDataModels;
 }
+
+#pragma mark - 最大字符串
+/*
+ *  长度计算使用【系统length算法】的时候的最大字符串
+    （如中文按占1个字符计算，则从10个中文字中查找不超过5个字符的字符串，应该是5个中文字）
+ *  @brief 此方法适合封装为 CQSubStringUtil 类里的一个方法
+ *
+ *  @param hopeReplacementString        字符串
+ *  @param replacementStringMaxLength   字符长度
+ *
+ *  @return 不超过长度的最大字符串
+ */
++ (NSString *)sys_maxSubstringFromString:(NSString *)hopeReplacementString
+                               maxLength:(NSInteger)replacementStringMaxLength
+{
+    NSString *maxSubstring = [CJSubStringUtil maxSubstringFromString:hopeReplacementString maxLength:replacementStringMaxLength substringToIndexBlock:^NSString * _Nonnull(NSString * _Nonnull bString, NSInteger bIndex) {
+        NSString *indexSubstring = [bString substringToIndex:bIndex];
+        return indexSubstring;
+    } lengthCalculationBlock:^NSInteger(NSString * _Nonnull calculationString) {
+        NSInteger length = calculationString.length;
+        return length;
+    }];
+    return maxSubstring;
+}
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

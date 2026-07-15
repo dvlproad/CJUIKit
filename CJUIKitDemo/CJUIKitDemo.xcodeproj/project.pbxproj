@@ -248,24 +248,6 @@
 		9760EBDE2D70728B00F2E464 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9760EBDD2D70728B00F2E464 /* Images.xcassets */; };
 		976794FA2580B494002FD0C7 /* KeyboardAutoMoveUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 976794F92580B494002FD0C7 /* KeyboardAutoMoveUpViewController.m */; };
 		976CB37F2FFE9A85000505DD /* UITextField+CJForbidKeyboard.m in Sources */ = {isa = PBXBuildFile; fileRef = 976CB37E2FFE9A85000505DD /* UITextField+CJForbidKeyboard.m */; };
-		977C568730081B5F001EC6C7 /* TSDataVientianeMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 977C567C30081B5F001EC6C7 /* TSDataVientianeMainViewController.m */; };
-		977C568A30081B5F001EC6C7 /* ValidateStringViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 977C567930081B5F001EC6C7 /* ValidateStringViewController.m */; };
-		977C56AF30081BFC001EC6C7 /* AStringLengthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 977C56A130081BFC001EC6C7 /* AStringLengthViewController.m */; };
-		977C56B030081BFC001EC6C7 /* CMaxSubStringViewController2.m in Sources */ = {isa = PBXBuildFile; fileRef = 977C56A930081BFC001EC6C7 /* CMaxSubStringViewController2.m */; };
-		977C56B130081BFC001EC6C7 /* CMaxSubStringViewController1.m in Sources */ = {isa = PBXBuildFile; fileRef = 977C56A730081BFC001EC6C7 /* CMaxSubStringViewController1.m */; };
-		977C56B230081BFC001EC6C7 /* DChangeStringViewController1.m in Sources */ = {isa = PBXBuildFile; fileRef = 977C56AB30081BFC001EC6C7 /* DChangeStringViewController1.m */; };
-		977C56B330081BFC001EC6C7 /* BIndexSubStringViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 977C56A330081BFC001EC6C7 /* BIndexSubStringViewController.m */; };
-		977C56B430081BFC001EC6C7 /* StringForInputHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 977C56AD30081BFC001EC6C7 /* StringForInputHomeViewController.m */; };
-		977C56B530081BFC001EC6C7 /* BRangeSubStringViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 977C56A530081BFC001EC6C7 /* BRangeSubStringViewController.m */; };
-		977C56B630081BFC001EC6C7 /* TestValueChangeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 977C569530081BFC001EC6C7 /* TestValueChangeModel.m */; };
-		977C56B730081BFC001EC6C7 /* TSDateHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 977C569930081BFC001EC6C7 /* TSDateHomeViewController.m */; };
-		977C56B830081BFC001EC6C7 /* DateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 977C569130081BFC001EC6C7 /* DateViewController.m */; };
-		977C56B930081BFC001EC6C7 /* TestValueChangeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 977C569730081BFC001EC6C7 /* TestValueChangeTableViewCell.m */; };
-		977C56BA30081BFC001EC6C7 /* NSCalendarCJHelperViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 977C569330081BFC001EC6C7 /* NSCalendarCJHelperViewController.m */; };
-		977C56BB30081BFC001EC6C7 /* add_common_icon@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 977C569C30081BFC001EC6C7 /* add_common_icon@3x.png */; };
-		977C56BC30081BFC001EC6C7 /* minus_common_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 977C569D30081BFC001EC6C7 /* minus_common_icon@2x.png */; };
-		977C56BD30081BFC001EC6C7 /* minus_common_icon@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 977C569E30081BFC001EC6C7 /* minus_common_icon@3x.png */; };
-		977C56BE30081BFC001EC6C7 /* add_common_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 977C569B30081BFC001EC6C7 /* add_common_icon@2x.png */; };
 		97A9191E25AFE8510051B902 /* imageOriginColor@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 97A9191525AFE8510051B902 /* imageOriginColor@2x.png */; };
 		97A9191F25AFE8510051B902 /* longVertical.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 97A9191625AFE8510051B902 /* longVertical.jpg */; };
 		97A9192025AFE8510051B902 /* taixi_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 97A9191725AFE8510051B902 /* taixi_icon@2x.png */; };
@@ -719,38 +701,6 @@
 		976794F92580B494002FD0C7 /* KeyboardAutoMoveUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeyboardAutoMoveUpViewController.m; sourceTree = "<group>"; };
 		976CB37D2FFE9A85000505DD /* UITextField+CJForbidKeyboard.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UITextField+CJForbidKeyboard.h"; sourceTree = "<group>"; };
 		976CB37E2FFE9A85000505DD /* UITextField+CJForbidKeyboard.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UITextField+CJForbidKeyboard.m"; sourceTree = "<group>"; };
-		977C567830081B5F001EC6C7 /* ValidateStringViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ValidateStringViewController.h; sourceTree = "<group>"; };
-		977C567930081B5F001EC6C7 /* ValidateStringViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ValidateStringViewController.m; sourceTree = "<group>"; };
-		977C567B30081B5F001EC6C7 /* TSDataVientianeMainViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TSDataVientianeMainViewController.h; sourceTree = "<group>"; };
-		977C567C30081B5F001EC6C7 /* TSDataVientianeMainViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TSDataVientianeMainViewController.m; sourceTree = "<group>"; };
-		977C569030081BFC001EC6C7 /* DateViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DateViewController.h; sourceTree = "<group>"; };
-		977C569130081BFC001EC6C7 /* DateViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DateViewController.m; sourceTree = "<group>"; };
-		977C569230081BFC001EC6C7 /* NSCalendarCJHelperViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NSCalendarCJHelperViewController.h; sourceTree = "<group>"; };
-		977C569330081BFC001EC6C7 /* NSCalendarCJHelperViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NSCalendarCJHelperViewController.m; sourceTree = "<group>"; };
-		977C569430081BFC001EC6C7 /* TestValueChangeModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestValueChangeModel.h; sourceTree = "<group>"; };
-		977C569530081BFC001EC6C7 /* TestValueChangeModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestValueChangeModel.m; sourceTree = "<group>"; };
-		977C569630081BFC001EC6C7 /* TestValueChangeTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestValueChangeTableViewCell.h; sourceTree = "<group>"; };
-		977C569730081BFC001EC6C7 /* TestValueChangeTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestValueChangeTableViewCell.m; sourceTree = "<group>"; };
-		977C569830081BFC001EC6C7 /* TSDateHomeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TSDateHomeViewController.h; sourceTree = "<group>"; };
-		977C569930081BFC001EC6C7 /* TSDateHomeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TSDateHomeViewController.m; sourceTree = "<group>"; };
-		977C569B30081BFC001EC6C7 /* add_common_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "add_common_icon@2x.png"; sourceTree = "<group>"; };
-		977C569C30081BFC001EC6C7 /* add_common_icon@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "add_common_icon@3x.png"; sourceTree = "<group>"; };
-		977C569D30081BFC001EC6C7 /* minus_common_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "minus_common_icon@2x.png"; sourceTree = "<group>"; };
-		977C569E30081BFC001EC6C7 /* minus_common_icon@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "minus_common_icon@3x.png"; sourceTree = "<group>"; };
-		977C56A030081BFC001EC6C7 /* AStringLengthViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AStringLengthViewController.h; sourceTree = "<group>"; };
-		977C56A130081BFC001EC6C7 /* AStringLengthViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AStringLengthViewController.m; sourceTree = "<group>"; };
-		977C56A230081BFC001EC6C7 /* BIndexSubStringViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BIndexSubStringViewController.h; sourceTree = "<group>"; };
-		977C56A330081BFC001EC6C7 /* BIndexSubStringViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BIndexSubStringViewController.m; sourceTree = "<group>"; };
-		977C56A430081BFC001EC6C7 /* BRangeSubStringViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BRangeSubStringViewController.h; sourceTree = "<group>"; };
-		977C56A530081BFC001EC6C7 /* BRangeSubStringViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BRangeSubStringViewController.m; sourceTree = "<group>"; };
-		977C56A630081BFC001EC6C7 /* CMaxSubStringViewController1.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CMaxSubStringViewController1.h; sourceTree = "<group>"; };
-		977C56A730081BFC001EC6C7 /* CMaxSubStringViewController1.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CMaxSubStringViewController1.m; sourceTree = "<group>"; };
-		977C56A830081BFC001EC6C7 /* CMaxSubStringViewController2.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CMaxSubStringViewController2.h; sourceTree = "<group>"; };
-		977C56A930081BFC001EC6C7 /* CMaxSubStringViewController2.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CMaxSubStringViewController2.m; sourceTree = "<group>"; };
-		977C56AA30081BFC001EC6C7 /* DChangeStringViewController1.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DChangeStringViewController1.h; sourceTree = "<group>"; };
-		977C56AB30081BFC001EC6C7 /* DChangeStringViewController1.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DChangeStringViewController1.m; sourceTree = "<group>"; };
-		977C56AC30081BFC001EC6C7 /* StringForInputHomeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StringForInputHomeViewController.h; sourceTree = "<group>"; };
-		977C56AD30081BFC001EC6C7 /* StringForInputHomeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StringForInputHomeViewController.m; sourceTree = "<group>"; };
 		97A9191525AFE8510051B902 /* imageOriginColor@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "imageOriginColor@2x.png"; sourceTree = "<group>"; };
 		97A9191625AFE8510051B902 /* longVertical.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = longVertical.jpg; sourceTree = "<group>"; };
 		97A9191725AFE8510051B902 /* taixi_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "taixi_icon@2x.png"; sourceTree = "<group>"; };
@@ -860,14 +810,13 @@
 		780E46021E5DF87B00980127 /* CJUIKitDemo */ = {
 			isa = PBXGroup;
 			children = (
-				977C567D30081B5F001EC6C7 /* TSDemo_DataVientiane */,
 				1562F38023FD2FC70009FCEA /* AppDelegate */,
 				7852D9DF216F16B000E50A39 /* CommonUI */,
-				80FF8F0A1FC5649E00E437CF /* Modules */,
+				808BF3212019C3E900511F7C /* CommonUtil */,
 				80FF90D71FC5668600E437CF /* CJFoundation */,
+				80FF8F0A1FC5649E00E437CF /* Modules */,
 				789A19681E61B87D008081E3 /* Resources */,
 				780E46031E5DF87B00980127 /* Supporting Files */,
-				808BF3212019C3E900511F7C /* CommonUtil */,
 			);
 			path = CJUIKitDemo;
 			sourceTree = "<group>";
@@ -1871,78 +1820,6 @@
 			path = TSSliderFactory;
 			sourceTree = "<group>";
 		};
-		977C567A30081B5F001EC6C7 /* FormatValidate */ = {
-			isa = PBXGroup;
-			children = (
-				977C567830081B5F001EC6C7 /* ValidateStringViewController.h */,
-				977C567930081B5F001EC6C7 /* ValidateStringViewController.m */,
-			);
-			path = FormatValidate;
-			sourceTree = "<group>";
-		};
-		977C567D30081B5F001EC6C7 /* TSDemo_DataVientiane */ = {
-			isa = PBXGroup;
-			children = (
-				977C567B30081B5F001EC6C7 /* TSDataVientianeMainViewController.h */,
-				977C567C30081B5F001EC6C7 /* TSDataVientianeMainViewController.m */,
-				977C56AE30081BFC001EC6C7 /* String */,
-				977C569A30081BFC001EC6C7 /* Date */,
-				977C567A30081B5F001EC6C7 /* FormatValidate */,
-				977C569F30081BFC001EC6C7 /* Resources */,
-			);
-			name = TSDemo_DataVientiane;
-			path = ../TSDemo_DataVientiane;
-			sourceTree = SOURCE_ROOT;
-		};
-		977C569A30081BFC001EC6C7 /* Date */ = {
-			isa = PBXGroup;
-			children = (
-				977C569830081BFC001EC6C7 /* TSDateHomeViewController.h */,
-				977C569930081BFC001EC6C7 /* TSDateHomeViewController.m */,
-				977C569030081BFC001EC6C7 /* DateViewController.h */,
-				977C569130081BFC001EC6C7 /* DateViewController.m */,
-				977C569230081BFC001EC6C7 /* NSCalendarCJHelperViewController.h */,
-				977C569330081BFC001EC6C7 /* NSCalendarCJHelperViewController.m */,
-				977C569430081BFC001EC6C7 /* TestValueChangeModel.h */,
-				977C569530081BFC001EC6C7 /* TestValueChangeModel.m */,
-				977C569630081BFC001EC6C7 /* TestValueChangeTableViewCell.h */,
-				977C569730081BFC001EC6C7 /* TestValueChangeTableViewCell.m */,
-			);
-			path = Date;
-			sourceTree = "<group>";
-		};
-		977C569F30081BFC001EC6C7 /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				977C569B30081BFC001EC6C7 /* add_common_icon@2x.png */,
-				977C569C30081BFC001EC6C7 /* add_common_icon@3x.png */,
-				977C569D30081BFC001EC6C7 /* minus_common_icon@2x.png */,
-				977C569E30081BFC001EC6C7 /* minus_common_icon@3x.png */,
-			);
-			path = Resources;
-			sourceTree = "<group>";
-		};
-		977C56AE30081BFC001EC6C7 /* String */ = {
-			isa = PBXGroup;
-			children = (
-				977C56A030081BFC001EC6C7 /* AStringLengthViewController.h */,
-				977C56A130081BFC001EC6C7 /* AStringLengthViewController.m */,
-				977C56A230081BFC001EC6C7 /* BIndexSubStringViewController.h */,
-				977C56A330081BFC001EC6C7 /* BIndexSubStringViewController.m */,
-				977C56A430081BFC001EC6C7 /* BRangeSubStringViewController.h */,
-				977C56A530081BFC001EC6C7 /* BRangeSubStringViewController.m */,
-				977C56A630081BFC001EC6C7 /* CMaxSubStringViewController1.h */,
-				977C56A730081BFC001EC6C7 /* CMaxSubStringViewController1.m */,
-				977C56A830081BFC001EC6C7 /* CMaxSubStringViewController2.h */,
-				977C56A930081BFC001EC6C7 /* CMaxSubStringViewController2.m */,
-				977C56AA30081BFC001EC6C7 /* DChangeStringViewController1.h */,
-				977C56AB30081BFC001EC6C7 /* DChangeStringViewController1.m */,
-				977C56AC30081BFC001EC6C7 /* StringForInputHomeViewController.h */,
-				977C56AD30081BFC001EC6C7 /* StringForInputHomeViewController.m */,
-			);
-			path = String;
-			sourceTree = "<group>";
-		};
 		97A9191425AFE8510051B902 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -2131,10 +2008,6 @@
 				782F8771225AE80F001ACE76 /* cjTextField_clear@3x.png in Resources */,
 				97A9192325AFE8510051B902 /* loading@3x.gif in Resources */,
 				156AC8D72406DBBE00A5A23D /* badgeButton_normal@2x.png in Resources */,
-				977C56BB30081BFC001EC6C7 /* add_common_icon@3x.png in Resources */,
-				977C56BC30081BFC001EC6C7 /* minus_common_icon@2x.png in Resources */,
-				977C56BD30081BFC001EC6C7 /* minus_common_icon@3x.png in Resources */,
-				977C56BE30081BFC001EC6C7 /* add_common_icon@2x.png in Resources */,
 				787FDB9520500B5C008A46E3 /* SwitchSliderViewController.xib in Resources */,
 				787FDB8720500B5C008A46E3 /* slider_maximum_trackimage@3x.png in Resources */,
 				787FDB8F20500B5C008A46E3 /* slider_minimum_trackimage@3x.png in Resources */,
@@ -2214,10 +2087,12 @@
 				"${PODS_ROOT}/../../CJBaseUIKit/UIViewController/Resources/cjBackBarButtonItem@3x.png",
 				"${PODS_ROOT}/../../CJBaseUIKit/UIViewController/Resources/cjBackBarButtonItemGray@2x.png",
 				"${PODS_ROOT}/../../CJBaseUIKit/UIViewController/Resources/cjBackBarButtonItemGray@3x.png",
+				"${PODS_CONFIGURATION_BUILD_DIR}/CQDemoKit/CQDemoKit_Privacy.bundle",
 				"${PODS_CONFIGURATION_BUILD_DIR}/CQDemoResource/CQDemoResource.bundle",
 				"${PODS_CONFIGURATION_BUILD_DIR}/IQKeyboardManager/IQKeyboardManager.bundle",
 				"${PODS_ROOT}/PinYin4Objc/PinYin4Objc/Resources/unicode_to_hanyu_pinyin.txt",
 				"${PODS_ROOT}/SAMKeychain/Support/SAMKeychain.bundle",
+				"${PODS_CONFIGURATION_BUILD_DIR}/TSDemo_DataVientiane/TSDemo_DataVientiane.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
@@ -2230,10 +2105,12 @@
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/cjBackBarButtonItem@3x.png",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/cjBackBarButtonItemGray@2x.png",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/cjBackBarButtonItemGray@3x.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/CQDemoKit_Privacy.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/CQDemoResource.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/IQKeyboardManager.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/unicode_to_hanyu_pinyin.txt",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/SAMKeychain.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/TSDemo_DataVientiane.bundle",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -2378,8 +2255,6 @@
 				787FDB8520500B5C008A46E3 /* SwitchSliderViewController.m in Sources */,
 				973E4CBD25A353D200748B44 /* ViewPandownViewController2.m in Sources */,
 				80500388211C3A29002A2306 /* PresentBaseViewController.m in Sources */,
-				977C568730081B5F001EC6C7 /* TSDataVientianeMainViewController.m in Sources */,
-				977C568A30081B5F001EC6C7 /* ValidateStringViewController.m in Sources */,
 				80D0120A210336B900D1EDF0 /* BeChangeViewController.m in Sources */,
 				80FF909F1FC5649F00E437CF /* NestedXibViewController.m in Sources */,
 				80FF91941FC5682B00E437CF /* TypeConvertViewController.m in Sources */,
@@ -2395,18 +2270,6 @@
 				80FF91351FC5668700E437CF /* NSArray+CJConsoleLog.m in Sources */,
 				7857ABB8225482D200B1569C /* CJDemoDatePickerView.m in Sources */,
 				788113C82199631A00D1630D /* PerfectSharedInstanceClass.m in Sources */,
-				977C56AF30081BFC001EC6C7 /* AStringLengthViewController.m in Sources */,
-				977C56B030081BFC001EC6C7 /* CMaxSubStringViewController2.m in Sources */,
-				977C56B130081BFC001EC6C7 /* CMaxSubStringViewController1.m in Sources */,
-				977C56B230081BFC001EC6C7 /* DChangeStringViewController1.m in Sources */,
-				977C56B330081BFC001EC6C7 /* BIndexSubStringViewController.m in Sources */,
-				977C56B430081BFC001EC6C7 /* StringForInputHomeViewController.m in Sources */,
-				977C56B530081BFC001EC6C7 /* BRangeSubStringViewController.m in Sources */,
-				977C56B630081BFC001EC6C7 /* TestValueChangeModel.m in Sources */,
-				977C56B730081BFC001EC6C7 /* TSDateHomeViewController.m in Sources */,
-				977C56B830081BFC001EC6C7 /* DateViewController.m in Sources */,
-				977C56B930081BFC001EC6C7 /* TestValueChangeTableViewCell.m in Sources */,
-				977C56BA30081BFC001EC6C7 /* NSCalendarCJHelperViewController.m in Sources */,
 				78E189A221778A4000B8781A /* AutoLayoutHomeViewController.m in Sources */,
 				78575C872257237900925842 /* TestTextFieldOffsetTableViewCell.m in Sources */,
 				78542E2425B9CA0D00ABE1E5 /* TextSizeViewController.m in Sources */,

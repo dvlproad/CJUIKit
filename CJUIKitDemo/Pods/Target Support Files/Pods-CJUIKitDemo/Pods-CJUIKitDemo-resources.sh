@@ -106,10 +106,12 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_resource "${PODS_ROOT}/../../CJBaseUIKit/UIViewController/Resources/cjBackBarButtonItem@3x.png"
   install_resource "${PODS_ROOT}/../../CJBaseUIKit/UIViewController/Resources/cjBackBarButtonItemGray@2x.png"
   install_resource "${PODS_ROOT}/../../CJBaseUIKit/UIViewController/Resources/cjBackBarButtonItemGray@3x.png"
+  install_resource "${PODS_CONFIGURATION_BUILD_DIR}/CQDemoKit/CQDemoKit_Privacy.bundle"
   install_resource "${PODS_CONFIGURATION_BUILD_DIR}/CQDemoResource/CQDemoResource.bundle"
   install_resource "${PODS_CONFIGURATION_BUILD_DIR}/IQKeyboardManager/IQKeyboardManager.bundle"
   install_resource "${PODS_ROOT}/PinYin4Objc/PinYin4Objc/Resources/unicode_to_hanyu_pinyin.txt"
   install_resource "${PODS_ROOT}/SAMKeychain/Support/SAMKeychain.bundle"
+  install_resource "${PODS_CONFIGURATION_BUILD_DIR}/TSDemo_DataVientiane/TSDemo_DataVientiane.bundle"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_resource "${PODS_ROOT}/../../CJBaseUIKit/CJBaseTableViewCell/Resources/cjCheckBoxGreen2NO.png"
@@ -121,10 +123,12 @@ if [[ "$CONFIGURATION" == "Release" ]]; then
   install_resource "${PODS_ROOT}/../../CJBaseUIKit/UIViewController/Resources/cjBackBarButtonItem@3x.png"
   install_resource "${PODS_ROOT}/../../CJBaseUIKit/UIViewController/Resources/cjBackBarButtonItemGray@2x.png"
   install_resource "${PODS_ROOT}/../../CJBaseUIKit/UIViewController/Resources/cjBackBarButtonItemGray@3x.png"
+  install_resource "${PODS_CONFIGURATION_BUILD_DIR}/CQDemoKit/CQDemoKit_Privacy.bundle"
   install_resource "${PODS_CONFIGURATION_BUILD_DIR}/CQDemoResource/CQDemoResource.bundle"
   install_resource "${PODS_CONFIGURATION_BUILD_DIR}/IQKeyboardManager/IQKeyboardManager.bundle"
   install_resource "${PODS_ROOT}/PinYin4Objc/PinYin4Objc/Resources/unicode_to_hanyu_pinyin.txt"
   install_resource "${PODS_ROOT}/SAMKeychain/Support/SAMKeychain.bundle"
+  install_resource "${PODS_CONFIGURATION_BUILD_DIR}/TSDemo_DataVientiane/TSDemo_DataVientiane.bundle"
 fi
 
 mkdir -p "${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}"

@@ -7,7 +7,7 @@
 //
 
 #import "BIndexSubStringViewController.h"
-#import "CQSubStringUtil.h"
+#import <CJDataVientianeSDK/CJSubStringUtil.h>
 
 @interface BIndexSubStringViewController ()
 
@@ -27,16 +27,16 @@
     // 字符串截取
     {
         CQDMSectionDataModel *sectionDataModel = [[CQDMSectionDataModel alloc] init];
-        sectionDataModel.theme = @"截取字符串";
+        sectionDataModel.theme = @"截取《含表情的》字符串index=0";
         {
             CJDealTextModel *dealTextModel = [[CJDealTextModel alloc] init];
             dealTextModel.placeholder = @"请输入截取的操作对象";
             dealTextModel.text = @"好好👌学习";
             dealTextModel.hopeResultText = @"";
-            dealTextModel.actionTitle = @"【系统方式截取含表情的】字符串index=0";
+            dealTextModel.actionTitle = @"【系统方式】截取《含表情的》字符串index=0";
             dealTextModel.autoExec = YES;
             dealTextModel.actionBlock = ^NSString * _Nonnull(NSString * _Nonnull oldString) {
-                NSString *indexSubstring = [CQSubStringUtil sys_substringToIndex:0 forEmojiString:oldString];
+                NSString *indexSubstring = [oldString substringToIndex:0];
                 return indexSubstring;
             };
             [sectionDataModel.values addObject:dealTextModel];
@@ -46,10 +46,10 @@
             dealTextModel.placeholder = @"请输入截取的操作对象";
             dealTextModel.text = @"好好👌学习";
             dealTextModel.hopeResultText = @"";
-            dealTextModel.actionTitle = @"【自定义方式截取含表情的】字符串index=0";
+            dealTextModel.actionTitle = @"【自定义方式】截取《含表情的》字符串index=0";
             dealTextModel.autoExec = YES;
             dealTextModel.actionBlock = ^NSString * _Nonnull(NSString * _Nonnull oldString) {
-                NSString *indexSubstring = [CQSubStringUtil substringToIndex:0 forEmojiString:oldString];
+                NSString *indexSubstring = [CJSubStringUtil substringToIndex:0 forEmojiString:oldString];
                 return indexSubstring;
             };
             [sectionDataModel.values addObject:dealTextModel];
@@ -61,16 +61,16 @@
     // 字符串截取
     {
         CQDMSectionDataModel *sectionDataModel = [[CQDMSectionDataModel alloc] init];
-        sectionDataModel.theme = @"截取字符串";
+        sectionDataModel.theme = @"截取《含表情的》字符串index=3";
         {
             CJDealTextModel *dealTextModel = [[CJDealTextModel alloc] init];
             dealTextModel.placeholder = @"请输入截取的操作对象";
             dealTextModel.text = @"好好👌学习";
             dealTextModel.hopeResultText = @"好好👌";
-            dealTextModel.actionTitle = @"【系统方式截取含表情的】字符串index=3";
+            dealTextModel.actionTitle = @"【系统方式】截取《含表情的》字符串index=3";
             dealTextModel.autoExec = YES;
             dealTextModel.actionBlock = ^NSString * _Nonnull(NSString * _Nonnull oldString) {
-                NSString *indexSubstring = [CQSubStringUtil sys_substringToIndex:3 forEmojiString:oldString];
+                NSString *indexSubstring = [oldString substringToIndex:3];
                 return indexSubstring;
             };
             [sectionDataModel.values addObject:dealTextModel];
@@ -80,10 +80,10 @@
             dealTextModel.placeholder = @"请输入截取的操作对象";
             dealTextModel.text = @"好好👌学习";
             dealTextModel.hopeResultText = @"好好👌";
-            dealTextModel.actionTitle = @"【自定义方式截取含表情的】字符串index=3";
+            dealTextModel.actionTitle = @"【自定义方式】截取《含表情的》字符串index=3";
             dealTextModel.autoExec = YES;
             dealTextModel.actionBlock = ^NSString * _Nonnull(NSString * _Nonnull oldString) {
-                NSString *indexSubstring = [CQSubStringUtil substringToIndex:3 forEmojiString:oldString];
+                NSString *indexSubstring = [CJSubStringUtil substringToIndex:3 forEmojiString:oldString];
                 return indexSubstring;
             };
             [sectionDataModel.values addObject:dealTextModel];
@@ -95,16 +95,16 @@
     // 字符串截取
     {
         CQDMSectionDataModel *sectionDataModel = [[CQDMSectionDataModel alloc] init];
-        sectionDataModel.theme = @"截取字符串";
+        sectionDataModel.theme = @"截取《含表情的》字符串index=3";
         {
             CJDealTextModel *dealTextModel = [[CJDealTextModel alloc] init];
             dealTextModel.placeholder = @"请输入截取的操作对象";
             dealTextModel.text = @"好👌👌学习";
             dealTextModel.hopeResultText = @"好👌👌";
-            dealTextModel.actionTitle = @"【系统方式截取含表情的】字符串index=3";
+            dealTextModel.actionTitle = @"【系统方式】截取《含表情的》字符串index=3";
             dealTextModel.autoExec = YES;
             dealTextModel.actionBlock = ^NSString * _Nonnull(NSString * _Nonnull oldString) {
-                NSString *indexSubstring = [CQSubStringUtil sys_substringToIndex:3 forEmojiString:oldString];
+                NSString *indexSubstring = [oldString substringToIndex:3];
                 return indexSubstring;
             };
             [sectionDataModel.values addObject:dealTextModel];
@@ -114,10 +114,10 @@
             dealTextModel.placeholder = @"请输入截取的操作对象";
             dealTextModel.text = @"好👌👌学习";
             dealTextModel.hopeResultText = @"好👌👌";
-            dealTextModel.actionTitle = @"【自定义方式截取含表情的】字符串index=3";
+            dealTextModel.actionTitle = @"【自定义方式】截取《含表情的》字符串index=3";
             dealTextModel.autoExec = YES;
             dealTextModel.actionBlock = ^NSString * _Nonnull(NSString * _Nonnull oldString) {
-                NSString *indexSubstring = [CQSubStringUtil substringToIndex:3 forEmojiString:oldString];
+                NSString *indexSubstring = [CJSubStringUtil substringToIndex:3 forEmojiString:oldString];
                 return indexSubstring;
             };
             [sectionDataModel.values addObject:dealTextModel];

@@ -9,8 +9,9 @@
 #import "TestValueChangeTableViewCell.h"
 #import <Masonry/Masonry.h>
 #import <CJDataVientianeSDK/NSString+CJTextSize.h>
-#import "DemoLabelFactory.h"
-#import "DemoTextFieldFactory.h"
+#import <CJBaseUIKit/CJTextField.h>
+#import <CJBaseUIKit/UIColor+CJHex.h>
+#import "CQTSTextFieldFactory.h"
 
 @interface TestValueChangeTableViewCell () {
     
@@ -54,7 +55,11 @@
     
     UIView *parentView = view;
     
-    UILabel *changeExplainLabel = [DemoLabelFactory testExplainLabel];
+    UILabel *changeExplainLabel = [[UILabel alloc] initWithFrame:CGRectZero];
+    changeExplainLabel.backgroundColor = [UIColor cyanColor];
+    changeExplainLabel.textAlignment = NSTextAlignmentLeft;
+    changeExplainLabel.font = [UIFont systemFontOfSize:14];
+    changeExplainLabel.numberOfLines = 0;
     [parentView addSubview:changeExplainLabel];
     [changeExplainLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.mas_equalTo(parentView).mas_offset(0);
@@ -64,9 +69,9 @@
     }];
     self.changeExplainLabel = changeExplainLabel;
     
-    CJTextField *chooseTextTextField = [DemoTextFieldFactory textFieldWhichTextOnlyFromPickerView:nil leftButtonHandle:^(UIButton *button) {
+    CJTextField *chooseTextTextField = [CQTSTextFieldFactory textFieldWithMinusHandle:^(UIButton *button) {
         [self minusAction:button];
-    } rightButtonHandle:^(UIButton *button) {
+    } addHandle:^(UIButton *button) {
         [self addAction:button];
     }];
     [parentView addSubview:chooseTextTextField];
@@ -78,7 +83,11 @@
     }];
     self.chooseTextTextField = chooseTextTextField;
     
-    UILabel *extraResultLabel = [DemoLabelFactory testExplainLabel];
+    UILabel *extraResultLabel = [[UILabel alloc] initWithFrame:CGRectZero];
+    extraResultLabel.backgroundColor = [UIColor cyanColor];
+    extraResultLabel.textAlignment = NSTextAlignmentLeft;
+    extraResultLabel.font = [UIFont systemFontOfSize:14];
+    extraResultLabel.numberOfLines = 0;
     [parentView addSubview:extraResultLabel];
     [extraResultLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.mas_equalTo(chooseTextTextField);

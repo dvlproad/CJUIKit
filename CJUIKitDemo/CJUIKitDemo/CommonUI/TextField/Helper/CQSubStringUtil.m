@@ -52,6 +52,7 @@
 /*
  *  长度计算使用【自定义cj_length算法】的时候的最大字符串
     （中文按占2个字符计算，则从10个中文字中查找不超过5个字符的字符串，应该是2个中文字）
+ *  @brief 此方法的测试见 TSDemo_DataVientiane 中的 CMaxSubStringViewController2.m
  *
  *  @param hopeReplacementString        字符串
  *  @param replacementStringMaxLength   字符长度
@@ -74,6 +75,7 @@
 /*
  *  长度计算使用【系统length算法】的时候的最大字符串
     （如中文按占1个字符计算，则从10个中文字中查找不超过5个字符的字符串，应该是5个中文字）
+ *  @brief 此方法的测试见 TSDemo_DataVientiane 中的 CMaxSubStringViewController1.m
  *
  *  @param hopeReplacementString        字符串
  *  @param replacementStringMaxLength   字符长度

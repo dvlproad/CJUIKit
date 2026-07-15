@@ -14,6 +14,7 @@
 
 /*
  *  根据最大长度获取shouldChange的时候返回的newText
+ *  @brief 此方法的测试见 TSDemo_DataVientiane 中的 DChangeStringViewController1.m
  *
  *  @param oldText              oldText
  *  @param range                range

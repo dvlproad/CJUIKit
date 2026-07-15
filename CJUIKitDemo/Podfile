@@ -47,7 +47,7 @@ target 'CJUIKitDemo' do
 
     pod 'YYText', '~> 1.0.7'
     
-#    pod 'TSDemo_DataVientiane', :path => '../'
+    pod 'TSDemo_DataVientiane', :path => '../'
 
     pod 'CJBaseUIKit',          :path => '../'
     pod 'CJBaseUIKit-Swift',    :path => '../'

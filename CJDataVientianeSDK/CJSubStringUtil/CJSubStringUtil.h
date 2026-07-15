@@ -25,7 +25,7 @@ NS_ASSUME_NONNULL_BEGIN
 + (NSString *)substringToIndex:(NSInteger)index forEmojiString:(NSString *)emojiString;
 
 #pragma mark - 范围子字符串
-/// 获取除选中部分外的其他字符串
+/// 获取除选中部分外的其他字符串(主要提供给 UITextInputLimitCJHelper 中做复制粘贴时候使用）
 + (NSString *)substringExceptRange:(NSRange)range forString:(NSString *)string;
 
 #pragma mark - 最大字符串

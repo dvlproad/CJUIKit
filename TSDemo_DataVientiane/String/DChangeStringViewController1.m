@@ -7,7 +7,9 @@
 //
 
 #import "DChangeStringViewController1.h"
-#import "UITextViewCQHelper.h"
+#import <CJDataVientianeSDK/CJSubStringUtil.h>
+#import <CJDataVientianeSDK/NSString+CJTextLength.h>
+#import <CJDataVientianeSDK/UITextInputLimitCJHelper.h>
 
 @interface DChangeStringViewController1 ()
 
@@ -24,9 +26,17 @@
     
     NSMutableArray *sectionDataModels = [[NSMutableArray alloc] init];
     
-    
+    //NSString *placeholder = @"请输入变更前的完整字符串";
     // 情况1：能插全部
     {
+        //@"限制20长度，在开头插入【一二三123】(能插全部)"
+        //NSString *situationString = @"情况1：能插全部";    // 测试的情况
+        NSInteger maxTextLength = 20;
+        NSRange range = NSMakeRange(0, 0);
+        NSString *replacementString = @"一二三123";
+        //NSString *actionTitle = @"限制20长度，在开头插入【一二三123】(能插全部)";
+        //NSString *actionTitle = [NSString stringWithFormat:@"限制%ld长度，在%@插入【%@】(附{0,0}指开头)", maxTextLength, NSStringFromRange(range), replacementString];
+        
         CQDMSectionDataModel *sectionDataModel = [[CQDMSectionDataModel alloc] init];
         sectionDataModel.theme = @"长度计算使用【系统length算法】的时候的最大字符串\n(注意：以下每个都不能删，都得通过\n以下每个都不能删，都得通过\n以下每个都不能删，都得通过\n)\n情况1：能插全部";
         {
@@ -38,7 +48,7 @@
             dealTextModel.actionTitle = @"限制20长度，在开头插入【一二三123】(能插全部)";
             dealTextModel.autoExec = YES;
             dealTextModel.actionBlock = ^NSString * _Nonnull(NSString * _Nonnull oldString) {
-                UITextInputChangeResultModel *resultModel = [UITextViewCQHelper shouldChange_newTextFromOldText:oldString shouldChangeCharactersInRange:NSMakeRange(0, 0) replacementString:@"一二三123" maxTextLength:20];
+                UITextInputChangeResultModel *resultModel = [[self class] shouldChange_newTextFromOldText:oldString shouldChangeCharactersInRange:range replacementString:replacementString maxTextLength:maxTextLength];
                 NSString *newText = resultModel.hopeNewText;
                 return newText;
             };
@@ -50,6 +60,11 @@
 
     // 情况2：能插部分
     {
+        //NSString *situationString = @"情况2：能插部分";    // 测试的情况
+        NSInteger maxTextLength = 20;
+        NSRange range = NSMakeRange(0, 0);
+        NSString *replacementString = @"一二三四五12345";
+        
         CQDMSectionDataModel *sectionDataModel = [[CQDMSectionDataModel alloc] init];
         sectionDataModel.theme = @"情况2：能插部分";
 
@@ -62,7 +77,7 @@
             dealTextModel.actionTitle = @"限制20长度，在开头插入【一二三四五12345】(能插部分)";
             dealTextModel.autoExec = YES;
             dealTextModel.actionBlock = ^NSString * _Nonnull(NSString * _Nonnull oldString) {
-                UITextInputChangeResultModel *resultModel = [UITextViewCQHelper shouldChange_newTextFromOldText:oldString shouldChangeCharactersInRange:NSMakeRange(0, 0) replacementString:@"一二三四五12345" maxTextLength:20];
+                UITextInputChangeResultModel *resultModel = [[self class] shouldChange_newTextFromOldText:oldString shouldChangeCharactersInRange:range replacementString:replacementString maxTextLength:maxTextLength];
                 NSString *newText = resultModel.hopeNewText;
                 return newText;
             };
@@ -75,6 +90,11 @@
     
     // 情况3：都不能插
     {
+        //NSString *situationString = @"情况3：都不能插";    // 测试的情况
+        NSInteger maxTextLength = 20;
+        NSRange range = NSMakeRange(0, 0);
+        NSString *replacementString = @"一二三四五12345";
+        
         CQDMSectionDataModel *sectionDataModel = [[CQDMSectionDataModel alloc] init];
         sectionDataModel.theme = @"情况3：都不能插";
         
@@ -87,7 +107,7 @@
             dealTextModel.actionTitle = @"限制20长度，在开头插入【一二三四五12345】(都不能插的情况1)";
             dealTextModel.autoExec = YES;
             dealTextModel.actionBlock = ^NSString * _Nonnull(NSString * _Nonnull oldString) {
-                UITextInputChangeResultModel *resultModel = [UITextViewCQHelper shouldChange_newTextFromOldText:oldString shouldChangeCharactersInRange:NSMakeRange(0, 0) replacementString:@"一二三四五12345" maxTextLength:20];
+                UITextInputChangeResultModel *resultModel = [[self class] shouldChange_newTextFromOldText:oldString shouldChangeCharactersInRange:range replacementString:replacementString maxTextLength:maxTextLength];
                 NSString *newText = resultModel.hopeNewText;
                 return newText;
             };
@@ -104,7 +124,7 @@
             dealTextModel.actionTitle = @"限制20长度，在开头插入【一二三四五12345】(都不能插的情况2)";
             dealTextModel.autoExec = YES;
             dealTextModel.actionBlock = ^NSString * _Nonnull(NSString * _Nonnull oldString) {
-                UITextInputChangeResultModel *resultModel = [UITextViewCQHelper shouldChange_newTextFromOldText:oldString shouldChangeCharactersInRange:NSMakeRange(0, 0) replacementString:@"一二三四五12345" maxTextLength:20]; // 未被替换的文本的所占的长度已经超过了最大限制长度（特殊情况：发生在使用setText设置错误数据到文本框）
+                UITextInputChangeResultModel *resultModel = [[self class] shouldChange_newTextFromOldText:oldString shouldChangeCharactersInRange:range replacementString:replacementString maxTextLength:maxTextLength]; // 未被替换的文本的所占的长度已经超过了最大限制长度（特殊情况：发生在使用setText设置错误数据到文本框）
                 NSString *newText = resultModel.hopeNewText;
                 return newText;
             };
@@ -115,6 +135,34 @@
     }
     
     self.sectionDataModels = sectionDataModels;
+}
+
+
+/*
+ *  根据最大长度获取shouldChange的时候返回的newText
+ *  @brief 此方法适合封装为 UITextViewCQHelper 类里的一个方法
+ *
+ *  @param oldText              oldText
+ *  @param range                range
+ *  @param string               string
+ *  @param maxTextLength        maxTextLength(为0的时候不做长度限制)
+ *
+ *  @return newText
+ */
++ (UITextInputChangeResultModel *)shouldChange_newTextFromOldText:(nullable NSString *)oldText
+                                    shouldChangeCharactersInRange:(NSRange)range
+                                                replacementString:(NSString *)string
+                                                    maxTextLength:(NSInteger)maxTextLength
+{
+    UITextInputChangeResultModel *resultModel = [UITextInputLimitCJHelper shouldChange_newTextFromOldText:oldText shouldChangeCharactersInRange:range replacementString:string maxTextLength:maxTextLength substringToIndexBlock:^NSString * _Nonnull(NSString * _Nonnull bString, NSInteger bIndex) {
+        NSString *indexSubstring = [CJSubStringUtil substringToIndex:bIndex forEmojiString:bString];
+        return indexSubstring;
+    } lengthCalculationBlock:^NSInteger(NSString * _Nonnull calculationString) {
+        NSInteger calculationStringLength = calculationString.cj_length;
+        return calculationStringLength;
+    }];
+    
+    return resultModel;
 }
 
 - (void)didReceiveMemoryWarning {

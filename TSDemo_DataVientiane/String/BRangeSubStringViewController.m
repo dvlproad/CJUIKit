@@ -7,7 +7,7 @@
 //
 
 #import "BRangeSubStringViewController.h"
-#import "CQSubStringUtil.h"
+#import <CJDataVientianeSDK/CJSubStringUtil.h>
 
 @interface BRangeSubStringViewController ()
 
@@ -19,63 +19,29 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    self.navigationItem.title = NSLocalizedString(@"长度计算使用【系统length算法】的时候的最大字符串(以下每个都不能删，都得通过)", nil);
+    self.navigationItem.title = NSLocalizedString(@"暂无示例，之前的代码和 CMaxSubStringViewController1 的完全重复了", nil);
     self.fixTextViewHeight = 60;  // 固定textView的视图高度（该值大于44才生效），默认固定为44
     
     NSMutableArray *sectionDataModels = [[NSMutableArray alloc] init];
     
-    // 字符串验证
+    // 
     {
         CQDMSectionDataModel *sectionDataModel = [[CQDMSectionDataModel alloc] init];
-        sectionDataModel.theme = @"长度计算使用【系统length算法】的时候的最大字符串\n(注意：以下每个都不能删，都得通过\n以下每个都不能删，都得通过\n以下每个都不能删，都得通过\n)";
+        sectionDataModel.theme = @"暂无示例，之前的代码和 CMaxSubStringViewController1 的完全重复了";
         {
             CJDealTextModel *dealTextModel = [[CJDealTextModel alloc] init];
-            dealTextModel.placeholder = @"请输入截取的操作对象";
-            dealTextModel.text = @"一二三四五六七八九十01234567890壹贰叁肆伍陆柒捌玖拾";
-            dealTextModel.hopeResultText = @"一二三四五";
-            dealTextModel.actionTitle = @"截取子字符串使其最多字符个数不超过5";
+            dealTextModel.placeholder = @"";
+            dealTextModel.text = @"";
+            dealTextModel.hopeResultText = @"";
+            dealTextModel.actionTitle = @"";
             dealTextModel.autoExec = YES;
             dealTextModel.actionBlock = ^NSString * _Nonnull(NSString * _Nonnull oldString) {
-                NSString *maxSubstring = [CQSubStringUtil sys_maxSubstringFromString:oldString maxLength:5];
-                return maxSubstring;
-            };
-            [sectionDataModel.values addObject:dealTextModel];
-        }
-        {
-            CJDealTextModel *dealTextModel = [[CJDealTextModel alloc] init];
-            dealTextModel.placeholder = @"请输入截取的操作对象";
-            dealTextModel.text = @"一二三四五六七八九十01234567890壹贰叁肆伍陆柒捌玖拾";
-            dealTextModel.hopeResultText = @"一二三四五六七八九十01234567890壹贰叁肆";
-            dealTextModel.actionTitle = @"截取子字符串使其最多字符个数不超过25";
-            dealTextModel.autoExec = YES;
-            dealTextModel.actionBlock = ^NSString * _Nonnull(NSString * _Nonnull oldString) {
-                NSString *maxSubstring = [CQSubStringUtil sys_maxSubstringFromString:oldString maxLength:25];
-                return maxSubstring;
-            };
-            [sectionDataModel.values addObject:dealTextModel];
-        }
-        {
-            CJDealTextModel *dealTextModel = [[CJDealTextModel alloc] init];
-            dealTextModel.placeholder = @"请输入截取的操作对象";
-            dealTextModel.text = @"一二三四五六七八九十01234567890壹贰叁肆伍陆柒捌玖拾";
-            dealTextModel.hopeResultText = @"一二三四五六七八九十01234567890壹贰叁肆伍陆柒捌玖拾";
-            dealTextModel.actionTitle = @"截取子字符串使其最多字符个数不超过45";
-            dealTextModel.autoExec = YES;
-            dealTextModel.actionBlock = ^NSString * _Nonnull(NSString * _Nonnull oldString) {
-                NSString *maxSubstring = [CQSubStringUtil sys_maxSubstringFromString:oldString maxLength:45];
-                return maxSubstring;
-            };
-            [sectionDataModel.values addObject:dealTextModel];
-        }
-        {
-            CJDealTextModel *dealTextModel = [[CJDealTextModel alloc] init];
-            dealTextModel.placeholder = @"请输入截取的操作对象";
-            dealTextModel.text = @"1234567890";
-            dealTextModel.hopeResultText = @"1234567890";
-            dealTextModel.actionTitle = @"截取子字符串使其最多字符个数不超过10";
-            dealTextModel.autoExec = YES;
-            dealTextModel.actionBlock = ^NSString * _Nonnull(NSString * _Nonnull oldString) {
-                NSString *maxSubstring = [CQSubStringUtil sys_maxSubstringFromString:oldString maxLength:10];
+                [CJSubStringUtil substringExceptRange:NSMakeRange(1, 0) forString:@"1234567890"];
+                [CJSubStringUtil substringExceptRange:NSMakeRange(1, 1) forString:@"1234567890"];
+                [CJSubStringUtil substringExceptRange:NSMakeRange(1, 9) forString:@"1234567890"];
+                
+                
+                NSString *maxSubstring = nil;
                 return maxSubstring;
             };
             [sectionDataModel.values addObject:dealTextModel];
