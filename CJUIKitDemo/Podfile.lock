@@ -160,16 +160,6 @@ PODS:
   - CJFoundation/NSString (0.1.6)
   - CJPopupAction (1.5.0)
   - CJPopupView/CJPopoverView (2.1.0)
-  - CQDemoKit (0.9.3):
-    - CQDemoKit/Auxiliary (= 0.9.3)
-    - CQDemoKit/BaseUIKit (= 0.9.3)
-    - CQDemoKit/BaseUtil (= 0.9.3)
-    - CQDemoKit/BaseVC (= 0.9.3)
-    - CQDemoKit/Demo_DataSourceAndDelegate (= 0.9.3)
-    - CQDemoKit/Demo_Resource (= 0.9.3)
-    - CQDemoKit/Demo_RipeView (= 0.9.3)
-    - CQDemoKit/Helper (= 0.9.3)
-    - CQDemoKit/Monitor (= 0.9.3)
   - CQDemoKit/Auxiliary (0.9.3):
     - Masonry
   - CQDemoKit/BaseUIKit (0.9.3):
@@ -221,7 +211,6 @@ PODS:
     - CQDemoKit/Demo_Resource
     - Masonry
   - CQDemoKit/Helper (0.9.3)
-  - CQDemoKit/Monitor (0.9.3)
   - CQDemoResource/Core (0.2.8):
     - CQDemoKit/Demo_Resource
   - CQDemoResource/Images (0.2.8):
@@ -236,8 +225,11 @@ PODS:
   - SAMKeychain (1.5.3)
   - Shimmer (1.0.2)
   - TSDemo_DataVientiane (0.0.1):
+    - CJBaseUIKit/UIButton
+    - CJBaseUIKit/UIColor
+    - CJBaseUIKit/UITextField
     - CJDataVientianeSDK
-    - CQDemoKit
+    - CQDemoKit/BaseVC
     - CQDemoResource/Images
   - UINavigation-SXFixSpace (1.2.4)
   - YYText (1.0.7)
@@ -332,10 +324,10 @@ SPEC CHECKSUMS:
   PinYin4Objc: 3fa9673610368330e2dfb688b1d19a35c3930a78
   SAMKeychain: 483e1c9f32984d50ca961e26818a534283b4cd5c
   Shimmer: c5374be1c2b0c9e292fb05b339a513cf291cac86
-  TSDemo_DataVientiane: d88c317dfd4f7ce6ac72d6645dfc3fa261930b0d
+  TSDemo_DataVientiane: 4def71b05cb90cca4df7b5b8d2d62ac275a25533
   UINavigation-SXFixSpace: 10f223253ebff2ceefa26694e23b7694269763c4
   YYText: 5c461d709e24d55a182d1441c41dc639a18a4849
 
-PODFILE CHECKSUM: cdacc02ff5cf3154cf8227b54364b499d4663a33
+PODFILE CHECKSUM: 2cca13e68afef9f1211b9d963b1a153f7ecf6117
 
 COCOAPODS: 1.16.2

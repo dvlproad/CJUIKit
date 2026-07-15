@@ -7,16 +7,29 @@
 //
 
 #import "DateViewController.h"
-#import <CJBaseHelper/NSDateFormatterCJHelper.h>
 #import <CJDataVientianeSDK/NSCalendarCJHelper.h>
-
-
 
 @interface DateViewController ()
 
 @end
 
 @implementation DateViewController
+
+
+#pragma mark - dateFromString
+- (NSDate *)yyyyMMddHHmmss_dateFromString:(NSString *)dateString {
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
+    NSDate *date = [dateFormatter dateFromString:dateString];
+    return date;
+}
+
+- (NSString *)yyyyMMdd_stringFromDate:(NSDate *)date {
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"yyyy-MM-dd"];
+    NSString *dateString = [dateFormatter stringFromDate:date];
+    return dateString;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -25,7 +38,7 @@
 
     [self setupTestCases];
 
-    NSDate *birthdayDate = [[NSDateFormatterCJHelper sharedInstance] yyyyMMddHHmmss_dateFromString:@"1989-12-27 01:10:22"];
+    NSDate *birthdayDate = [self yyyyMMddHHmmss_dateFromString:@"1989-12-27 01:10:22"];
     NSInteger yearInterval = NSCalendarCJHelper_yearInterval(birthdayDate, [NSDate date]);
     NSInteger age = NSCalendarCJHelper_age(birthdayDate, NO);
     NSLog(@"今年周岁为：%zd, %zd", yearInterval, age);
@@ -105,7 +118,7 @@
                 NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
                 [formatter setDateFormat:@"yyyy-MM-dd"];
                 NSDate *date = [formatter dateFromString:oldString];
-                return [[NSDateFormatterCJHelper sharedInstance] yyyyMMdd_stringFromDate:date];
+                return [self yyyyMMdd_stringFromDate:date];
             };
             [sectionDataModel.values addObject:dealTextModel];
         }

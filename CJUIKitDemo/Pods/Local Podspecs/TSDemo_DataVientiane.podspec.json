@@ -28,8 +28,11 @@
     ]
   },
   "dependencies": {
-    "CQDemoKit": [],
+    "CQDemoKit/BaseVC": [],
     "CQDemoResource/Images": [],
-    "CJDataVientianeSDK": []
+    "CJDataVientianeSDK": [],
+    "CJBaseUIKit/UITextField": [],
+    "CJBaseUIKit/UIColor": [],
+    "CJBaseUIKit/UIButton": []
   }
 }

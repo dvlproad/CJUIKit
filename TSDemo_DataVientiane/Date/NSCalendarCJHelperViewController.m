@@ -8,8 +8,6 @@
 
 #import "NSCalendarCJHelperViewController.h"
 #import "TestValueChangeTableViewCell.h"    // 涉及到文本高度计算
-
-#import <CJBaseHelper/NSDateFormatterCJHelper.h>
 #import <CJDataVientianeSDK/NSCalendarCJHelper.h>
 
 @interface NSCalendarCJHelperViewController () 
@@ -17,6 +15,27 @@
 @end
 
 @implementation NSCalendarCJHelperViewController
+
+- (NSString *)yyyyMMddHHmmss_stringFromDate:(NSDate *)date {
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
+    NSString *dateString = [dateFormatter stringFromDate:date];
+    return dateString;
+}
+
+- (NSString *)yyyyMMdd_stringFromDate:(NSDate *)date {
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"yyyy-MM-dd"];
+    NSString *dateString = [dateFormatter stringFromDate:date];
+    return dateString;
+}
+
+- (NSDate *)yyyyMMddHHmmss_dateFromString:(NSString *)dateString {
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
+    NSDate *date = [dateFormatter dateFromString:dateString];
+    return date;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -144,11 +163,11 @@
             [valueChangeModel setupResultFromValueBlock:^NSString *(id value) {
                 // 获取指定日期所在周的第一天(周日为第一天)
                 NSDate *weekBeginDate = NSCalendarCJHelper_weekBeginDate((NSDate *)value, NO);
-                NSString *weekBeginDateString = [[NSDateFormatterCJHelper sharedInstance] yyyyMMddHHmmss_stringFromDate:weekBeginDate];
+                NSString *weekBeginDateString = [self yyyyMMddHHmmss_stringFromDate:weekBeginDate];
                 
                 // 获取指定日期所在周的最后一天(周六为最后一天)
                 NSDate *weekLastDate = NSCalendarCJHelper_weekLastDate((NSDate *)value, NO);
-                NSString *weekLastDateString = [[NSDateFormatterCJHelper sharedInstance] yyyyMMddHHmmss_stringFromDate:weekLastDate];
+                NSString *weekLastDateString = [self yyyyMMddHHmmss_stringFromDate:weekLastDate];
                 
                 // 打印值
                 NSMutableString *string = [NSMutableString string];
@@ -177,11 +196,11 @@
             [valueChangeModel setupResultFromValueBlock:^NSString *(id value) {
                 // 获取指定日期所在周的第一天(星期一为第一天)
                 NSDate *weekBeginDate = NSCalendarCJHelper_weekBeginDate((NSDate *)value, YES);
-                NSString *weekBeginDateString = [[NSDateFormatterCJHelper sharedInstance] yyyyMMddHHmmss_stringFromDate:weekBeginDate];
+                NSString *weekBeginDateString = [self yyyyMMddHHmmss_stringFromDate:weekBeginDate];
                 
                 // 获取指定日期所在周的最后一天(星期天为最后一天)
                 NSDate *weekLastDate = NSCalendarCJHelper_weekLastDate((NSDate *)value, YES);
-                NSString *weekLastDateString = [[NSDateFormatterCJHelper sharedInstance] yyyyMMddHHmmss_stringFromDate:weekLastDate];
+                NSString *weekLastDateString = [self yyyyMMddHHmmss_stringFromDate:weekLastDate];
                 
                 // 打印值
                 NSMutableString *string = [NSMutableString string];
@@ -220,11 +239,11 @@
             [valueChangeModel setupResultFromValueBlock:^NSString *(id value) {
                 // 获取指定日期所在月的第一天
                 NSDate *monthBeginDate = NSCalendarCJHelper_monthBeginDate((NSDate *)value);
-                NSString *monthBeginDateString = [[NSDateFormatterCJHelper sharedInstance] yyyyMMddHHmmss_stringFromDate:monthBeginDate];
+                NSString *monthBeginDateString = [self yyyyMMddHHmmss_stringFromDate:monthBeginDate];
                 
                 // 获取指定日期所在月的最后一天
                 NSDate *monthLastDate = NSCalendarCJHelper_monthLastDate((NSDate *)value);
-                NSString *monthLastDateString = [[NSDateFormatterCJHelper sharedInstance] yyyyMMddHHmmss_stringFromDate:monthLastDate];
+                NSString *monthLastDateString = [self yyyyMMddHHmmss_stringFromDate:monthLastDate];
                 
                 // 打印值
                 NSMutableString *string = [NSMutableString string];
@@ -253,10 +272,10 @@
 
 - (TestValueChangeModel *)calendarValueChangeModel {
     TestValueChangeModel *valueChangeModel = [[TestValueChangeModel alloc] initWithValue:[NSDate date] textFromValueBlock:^NSString *(id value) {
-        NSString *string = [[NSDateFormatterCJHelper sharedInstance] yyyyMMddHHmmss_stringFromDate:value];
+        NSString *string = [self yyyyMMddHHmmss_stringFromDate:value];
         return string;
     } valueFromTextBlock:^id(NSString *string) {
-        NSDate *date = [[NSDateFormatterCJHelper sharedInstance] yyyyMMddHHmmss_dateFromString:string];
+        NSDate *date = [self yyyyMMddHHmmss_dateFromString:string];
         return date;
     }];
     return valueChangeModel;
