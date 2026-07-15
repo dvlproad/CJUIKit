@@ -7,7 +7,7 @@
 //
 
 #import "NSCalendarCJHelperViewController.h"
-#import "TestValueChangeTableViewCell.h"
+#import "TestValueChangeTableViewCell.h"    // 涉及到文本高度计算
 
 #import <CJBaseHelper/NSDateFormatterCJHelper.h>
 #import <CJDataVientianeSDK/NSCalendarCJHelper.h>

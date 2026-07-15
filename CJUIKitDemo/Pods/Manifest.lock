@@ -133,29 +133,31 @@ PODS:
   - CJBaseUtil/CJPinyinHelper (0.5.2):
     - PinYin4Objc
   - CJBaseUtil/CJQRCodeUtil (0.5.2)
-  - CJDataVientianeSDK (0.0.2):
-    - CJDataVientianeSDK/CJSubStringUtil (= 0.0.2)
-    - CJDataVientianeSDK/FormatValidate (= 0.0.2)
-    - CJDataVientianeSDK/NSCalendarCJHelper (= 0.0.2)
-    - CJDataVientianeSDK/TextLength (= 0.0.2)
-    - CJDataVientianeSDK/UITextInputHeightCJHelper (= 0.0.2)
-    - CJDataVientianeSDK/UITextInputLimitCJHelper (= 0.0.2)
-  - CJDataVientianeSDK/CJSubStringUtil (0.0.2)
-  - CJDataVientianeSDK/FormatValidate (0.0.2)
-  - CJDataVientianeSDK/NSCalendarCJHelper (0.0.2)
-  - CJDataVientianeSDK/TextLength (0.0.2)
-  - CJDataVientianeSDK/UITextInputHeightCJHelper (0.0.2)
-  - CJDataVientianeSDK/UITextInputLimitCJHelper (0.0.2):
+  - CJDataVientianeSDK (0.0.3):
+    - CJDataVientianeSDK/CJSubStringUtil (= 0.0.3)
+    - CJDataVientianeSDK/FormatValidate (= 0.0.3)
+    - CJDataVientianeSDK/NSCalendarCJHelper (= 0.0.3)
+    - CJDataVientianeSDK/TextLength (= 0.0.3)
+    - CJDataVientianeSDK/TextSize (= 0.0.3)
+    - CJDataVientianeSDK/UITextInputHeightCJHelper (= 0.0.3)
+    - CJDataVientianeSDK/UITextInputLimitCJHelper (= 0.0.3)
+  - CJDataVientianeSDK/CJSubStringUtil (0.0.3)
+  - CJDataVientianeSDK/FormatValidate (0.0.3)
+  - CJDataVientianeSDK/NSCalendarCJHelper (0.0.3)
+  - CJDataVientianeSDK/TextLength (0.0.3)
+  - CJDataVientianeSDK/TextSize (0.0.3)
+  - CJDataVientianeSDK/UITextInputHeightCJHelper (0.0.3)
+  - CJDataVientianeSDK/UITextInputLimitCJHelper (0.0.3):
     - CJDataVientianeSDK/CJSubStringUtil
   - CJFile/CJFileManager (0.0.9)
   - CJFile/CJFileModel (0.0.9)
-  - CJFoundation (0.1.5):
-    - CJFoundation/NSDictionary (= 0.1.5)
-    - CJFoundation/NSJSONSerialization (= 0.1.5)
-    - CJFoundation/NSString (= 0.1.5)
-  - CJFoundation/NSDictionary (0.1.5)
-  - CJFoundation/NSJSONSerialization (0.1.5)
-  - CJFoundation/NSString (0.1.5)
+  - CJFoundation (0.1.6):
+    - CJFoundation/NSDictionary (= 0.1.6)
+    - CJFoundation/NSJSONSerialization (= 0.1.6)
+    - CJFoundation/NSString (= 0.1.6)
+  - CJFoundation/NSDictionary (0.1.6)
+  - CJFoundation/NSJSONSerialization (0.1.6)
+  - CJFoundation/NSString (0.1.6)
   - CJPopupAction (1.5.0)
   - CJPopupView/CJPopoverView (2.1.0)
   - CQDemoKit/Auxiliary (0.9.3):
@@ -298,9 +300,9 @@ SPEC CHECKSUMS:
   CJBaseUIKit-Swift: e9fb305e1d7785b919a5877e06c4efd342ef98e6
   CJBaseUtil: 1e6b81026b1b0613a41866825cc055092bfb9faa
   CJBaseUtil-Swift: 837f333ad19be6e2df8467f965c8735560a7c085
-  CJDataVientianeSDK: 776e218e60c6b39495829783b64f6c0b2c428c2a
+  CJDataVientianeSDK: f74cb87e352eb99553277429e008d49e83bdeef5
   CJFile: 6c1e6d55b3b94e8afbaa9f413f131301d15fdc48
-  CJFoundation: e170ae85eff487b91ce5ac7c711bfbc3ec5d9919
+  CJFoundation: acbdf22b8b415dcdaf4e0c50ef6e3e5180ec73b8
   CJPopupAction: 0f0a424a44b46d3582e0d4a90f14f15e70255436
   CJPopupView: c7685f6a0225a89c72d97ea946f2816b5442abaf
   CQDemoKit: 22fc91b3ab0b53b0de98e93eefe0c6778a211f2b

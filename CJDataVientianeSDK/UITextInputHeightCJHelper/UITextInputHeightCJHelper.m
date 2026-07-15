@@ -36,7 +36,7 @@
 //    return placeholderHeight;
     
     NSDictionary *textViewAttributesWithFont = [self __textViewAttributesWithFont:font];
-    CGSize textSizeInView = [self textSizeForText:text withAttributes:textViewAttributesWithFont maxSize:maxSize];
+    CGSize textSizeInView = [self __textSizeForText:text withAttributes:textViewAttributesWithFont maxSize:maxSize];
     
     CGFloat textHeightInTextView = textSizeInView.height + 14;
     
@@ -69,7 +69,7 @@
  *
  *  @return 文本/富文本大小
  */
-+ (CGSize)textSizeForText:(NSString *)text
++ (CGSize)__textSizeForText:(NSString *)text
            withAttributes:(nullable NSDictionary<NSAttributedStringKey, id> *)attributes
                   maxSize:(CGSize)maxSize
 {

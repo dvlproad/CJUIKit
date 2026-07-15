@@ -8,7 +8,6 @@
 
 #import "TestTextFieldOffsetTableViewCell.h"
 #import <Masonry/Masonry.h>
-#import <CJFoundation/NSString+CJTextSize.h>
 #import <CJBaseUIKit/UIImage+CJCreate.h>
 #import <CJBaseUIKit/UIButton+CJMoreProperty.h>
 

@@ -5,7 +5,7 @@
 //  Created by ciyouzen on 7/9/15.
 //  Copyright (c) 2015 dvlproad. All rights reserved.
 //
-//  计算文本在指定参数下得到的结果
+//  文本在指定条件下的所占宽高计算(与字体大小有关)
 
 #import <UIKit/UIKit.h>
 #import <Foundation/Foundation.h>
