@@ -2,7 +2,7 @@
   #提交方法： pod trunk push CJFoundation.podspec --allow-warnings --use-libraries --verbose
 Pod::Spec.new do |s|
   s.name         = "CJFoundation"
-  s.version      = "0.1.5"
+  s.version      = "0.1.6"
   s.summary      = "系统Foundation的扩展"
   s.description  = <<-DESC
                  系统Foundation的扩展，可按需独立引入：
@@ -19,7 +19,7 @@ Pod::Spec.new do |s|
 
   s.platform     = :ios, "9.0"
 
-  s.source       = { :git => "https://github.com/dvlproad/CJUIKit.git", :tag => "CJFoundation_0.1.5" }
+  s.source       = { :git => "https://github.com/dvlproad/CJUIKit.git", :tag => "CJFoundation_0.1.6" }
   # s.source_files  = "CJFoundation/**/*.{h,m}"
   # s.resources     = "CJFoundation/**/*.{png,xib}"
   s.frameworks = 'UIKit'

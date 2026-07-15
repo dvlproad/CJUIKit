@@ -7,7 +7,7 @@
 //
 
 #import "AStringLengthViewController.h"
-#import <CJFoundation/NSString+CJTextLength.h>
+#import <CJDataVientianeSDK/NSString+CJTextLength.h>
 
 
 @interface AStringLengthViewController ()

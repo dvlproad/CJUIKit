@@ -11,12 +11,15 @@
 # ②UITextInputLimitCJHelper.h 复制粘贴新字符串获取的方法
 # 2、CJBaseUIKit/UITextHeightCenterCJHelper/Helper 里的 UITextInputHeightCJHelper.h 文本在指定宽度下的高度计算
 # 3、CJBaseHelper/NSCalendarCJHelper 里的 NSCalendarCJHelper.h 通过 NSCalendar 类，来计算 NSDate 的相等判断或者加减日期等方法的工具
+# 4、CJFoundation/NSString 里的 NSString+CJTextLength.h 和 NSString+CJFormatValidate.h
 
 # 即
 # CJBaseUIKit：从0.9.0开始，
 # 1、①指定位置、指定范围、最大长度字符串获取；1②复制粘贴新字符串获取的方法，已移动到 CJDataVientianeSDK
 # 2、文本在指定宽度下的高度计算，已移动到 CJDataVientianeSDK
 # CJBaseHelper：从0.2.0开始，
+# 1、CJBaseHelper/NSCalendarCJHelper，已移动到 CJDataVientianeSDK
+# CJFoundation：从0.1.6开始，
 # 1、CJBaseHelper/NSCalendarCJHelper，已移动到 CJDataVientianeSDK
 
 
@@ -30,10 +33,12 @@ Pod::Spec.new do |s|
 
   s.description  = <<-DESC
                  Demo，可按需独立引入：
+                 • CJDataVientianeSDK/TextLength - 字符串长度计算
                  • CJDataVientianeSDK/CJSubStringUtil - 指定位置、指定范围、最大长度字符串获取的方法
                  • CJDataVientianeSDK/UITextInputLimitCJHelper - 复制粘贴新字符串获取的方法
-                 • CJDataVientianeSDK/UITextInputHeightCJHelper - 文本在指定宽度下的高度计算
+                 • CJDataVientianeSDK/UITextInputHeightCJHelper - 文本在指定宽度下的高度计算(与字体大小有关)
                  • CJDataVientianeSDK/NSCalendarCJHelper - 通过 NSCalendar 类，来计算 NSDate 的相等判断或者加减日期等方法的工具
+                 • CJDataVientianeSDK/FormatValidate - 字符串格式验证（是否是邮箱、手机号等）
 
                  每个子库可独立引入，详见各子库描述。
                  DESC
@@ -56,6 +61,11 @@ Pod::Spec.new do |s|
   # s.xcconfig = { "HEADER_SEARCH_PATHS" => "$(SDKROOT)/usr/include/libxml2" }
   # s.dependency "JSONKit", "~> 1.4"
 
+  # 字符串长度计算
+  s.subspec 'TextLength' do |ss|
+    ss.source_files = "CJDataVientianeSDK/TextLength/**/*.{h,m}"
+  end
+
   # 指定位置、指定范围、最大长度字符串获取的方法
   s.subspec 'CJSubStringUtil' do |ss|
     ss.source_files = "CJDataVientianeSDK/CJSubStringUtil/**/*.{h,m}"
@@ -67,7 +77,7 @@ Pod::Spec.new do |s|
     ss.dependency 'CJDataVientianeSDK/CJSubStringUtil'
   end
 
-  # 文本在指定宽度下的高度计算
+  # 文本在指定宽度下的高度计算(与字体大小有关)
   s.subspec 'UITextInputHeightCJHelper' do |ss|
     ss.source_files = "CJDataVientianeSDK/UITextInputHeightCJHelper/**/*.{h,m}"
   end
@@ -75,6 +85,11 @@ Pod::Spec.new do |s|
   # 通过 NSCalendar 类，来计算 NSDate 的相等判断或者加减日期等方法的工具
   s.subspec 'NSCalendarCJHelper' do |ss|
     ss.source_files = "CJDataVientianeSDK/NSCalendarCJHelper/**/*.{h,m}"
+  end
+
+  # 字符串格式验证（是否是邮箱、手机号等）
+  s.subspec 'FormatValidate' do |ss|
+    ss.source_files = "CJDataVientianeSDK/FormatValidate/**/*.{h,m}"
   end
 
 end

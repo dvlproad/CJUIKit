@@ -8,7 +8,7 @@
 
 #import "CQSubStringUtil.h"
 #import <CJDataVientianeSDK/CJSubStringUtil.h>
-#import <CJFoundation/NSString+CJTextLength.h>
+#import <CJDataVientianeSDK/NSString+CJTextLength.h>
 
 @implementation CQSubStringUtil
 

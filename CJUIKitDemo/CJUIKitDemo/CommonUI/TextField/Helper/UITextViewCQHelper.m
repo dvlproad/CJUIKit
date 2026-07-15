@@ -7,7 +7,7 @@
 //
 
 #import "UITextViewCQHelper.h"
-#import <CJFoundation/NSString+CJTextLength.h>
+#import <CJDataVientianeSDK/NSString+CJTextLength.h>
 #import "CQSubStringUtil.h"
 
 @implementation UITextViewCQHelper

@@ -1,14 +1,14 @@
 //
-//  NSString+CJValidate.m
+//  NSString+CJFormatValidate.m
 //  CJFoundationDemo
 //
 //  Created by ciyouzen on 6/25/15.
 //  Copyright (c) 2015 dvlproad. All rights reserved.
 //
 
-#import "NSString+CJValidate.h"
+#import "NSString+CJFormatValidate.h"
 
-@implementation NSString (CJValidate)
+@implementation NSString (CJFormatValidate)
 
 /*
 //实例方法是通过对象调用的，当这个对象为空时调用方法的时候就不会执行。所以以下两个方法，当string = nil的时候，如果调用这两个方法，会返回NO，无法返回正确的YES值。

@@ -5,7 +5,7 @@
 //  Created by ciyouzen on 2015/12/23.
 //  Copyright © 2015年 dvlproad. All rights reserved.
 //
-//  文本输入高度计算的帮助方法
+//  文本在指定宽度下的高度计算(与字体大小有关)
 
 #import <Foundation/Foundation.h>
 
