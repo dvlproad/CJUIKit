@@ -140,7 +140,8 @@ PODS:
     - CJDataVientianeSDK/UITextInputLimitCJHelper (= 0.0.1)
   - CJDataVientianeSDK/CJSubStringUtil (0.0.1)
   - CJDataVientianeSDK/UITextInputHeightCJHelper (0.0.1)
-  - CJDataVientianeSDK/UITextInputLimitCJHelper (0.0.1)
+  - CJDataVientianeSDK/UITextInputLimitCJHelper (0.0.1):
+    - CJDataVientianeSDK/CJSubStringUtil
   - CJFile/CJFileManager (0.0.9)
   - CJFile/CJFileModel (0.0.9)
   - CJFoundation (0.1.5):
@@ -288,11 +289,11 @@ SPEC CHECKSUMS:
   AFNetworking: 3bd23d814e976cd148d7d44c3ab78017b744cd58
   CJBaseEffectKit: df0d6d989de6363a14be9d5ebbb2a5e6b8b1588c
   CJBaseHelper: 8080ddf39b5edd71798d5a45a3e03a5484522e2c
-  CJBaseUIKit: c38bb3106b97911dde86c75cf1d6bc0d788d4fe9
+  CJBaseUIKit: ab38b1fe5180327b50807f030d5878f8631382cc
   CJBaseUIKit-Swift: e9fb305e1d7785b919a5877e06c4efd342ef98e6
   CJBaseUtil: 1e6b81026b1b0613a41866825cc055092bfb9faa
   CJBaseUtil-Swift: 837f333ad19be6e2df8467f965c8735560a7c085
-  CJDataVientianeSDK: 62a118cc70c10fd05e10e7556d2edd60e85aff3c
+  CJDataVientianeSDK: 7d1ef0fa9926f158dcaa2f48e6ef71e8f9d0ae53
   CJFile: 6c1e6d55b3b94e8afbaa9f413f131301d15fdc48
   CJFoundation: e170ae85eff487b91ce5ac7c711bfbc3ec5d9919
   CJPopupAction: 0f0a424a44b46d3582e0d4a90f14f15e70255436

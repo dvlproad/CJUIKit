@@ -1,6 +1,6 @@
 # 上传到github公有库:
   #验证方法1：pod lib lint CJDataVientianeSDK.podspec --sources='https://github.com/CocoaPods/Specs.git' --allow-warnings --use-libraries --verbose
-  #验证方法2：pod lib lint CJDataVientianeSDK.podspec --sources=master --allow-warnings --use-libraries --verbose
+  #验证方法2：pod lib lint CJDataVientianeSDK.podspec --sources=cocoapods --allow-warnings --use-libraries --verbose
   #提交方法(github公有库)： pod trunk push CJDataVientianeSDK.podspec --allow-warnings
   
 
@@ -37,10 +37,10 @@ Pod::Spec.new do |s|
 
   # s.social_media_url   = "http://twitter.com/dvlproad"
 
-  s.platform     = :ios, "8.0"
+  s.platform     = :ios, "9.0"
   s.swift_version = '5.0'
 
-  s.source       = { :git => "https://github.com/dvlproad/CJUIKit", :tag => "CJDataVientianeSDK_0.0.1" }
+  s.source       = { :git => "https://github.com/dvlproad/CJUIKit", :tag => "CJDataVientianeSDK_0.0.1_1" }
   # s.source_files  = "CJBaseUtil/*.{h,m}"
   # s.resources = "CJBaseUtil/**/*.{png}"
   s.frameworks = 'UIKit'
@@ -61,6 +61,7 @@ Pod::Spec.new do |s|
   # 复制粘贴新字符串获取的方法
   s.subspec 'UITextInputLimitCJHelper' do |ss|
     ss.source_files = "CJDataVientianeSDK/UITextInputLimitCJHelper/**/*.{h,m}"
+    ss.dependency 'CJDataVientianeSDK/CJSubStringUtil'
   end
 
   # 文本在指定宽度下的高度计算
