@@ -263,6 +263,7 @@
 		976794E9258093EF002FD0C7 /* AStringLengthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 976794E7258093EE002FD0C7 /* AStringLengthViewController.m */; };
 		976794FA2580B494002FD0C7 /* KeyboardAutoMoveUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 976794F92580B494002FD0C7 /* KeyboardAutoMoveUpViewController.m */; };
 		976CB37F2FFE9A85000505DD /* UITextField+CJForbidKeyboard.m in Sources */ = {isa = PBXBuildFile; fileRef = 976CB37E2FFE9A85000505DD /* UITextField+CJForbidKeyboard.m */; };
+		977C55E93007DF7D001EC6C7 /* TSDataVientianeMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 977C55E73007DF7D001EC6C7 /* TSDataVientianeMainViewController.m */; };
 		97A9191E25AFE8510051B902 /* imageOriginColor@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 97A9191525AFE8510051B902 /* imageOriginColor@2x.png */; };
 		97A9191F25AFE8510051B902 /* longVertical.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 97A9191625AFE8510051B902 /* longVertical.jpg */; };
 		97A9192025AFE8510051B902 /* taixi_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 97A9191725AFE8510051B902 /* taixi_icon@2x.png */; };
@@ -743,6 +744,8 @@
 		976794F92580B494002FD0C7 /* KeyboardAutoMoveUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeyboardAutoMoveUpViewController.m; sourceTree = "<group>"; };
 		976CB37D2FFE9A85000505DD /* UITextField+CJForbidKeyboard.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UITextField+CJForbidKeyboard.h"; sourceTree = "<group>"; };
 		976CB37E2FFE9A85000505DD /* UITextField+CJForbidKeyboard.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UITextField+CJForbidKeyboard.m"; sourceTree = "<group>"; };
+		977C55E63007DF7D001EC6C7 /* TSDataVientianeMainViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TSDataVientianeMainViewController.h; sourceTree = "<group>"; };
+		977C55E73007DF7D001EC6C7 /* TSDataVientianeMainViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TSDataVientianeMainViewController.m; sourceTree = "<group>"; };
 		97A9191525AFE8510051B902 /* imageOriginColor@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "imageOriginColor@2x.png"; sourceTree = "<group>"; };
 		97A9191625AFE8510051B902 /* longVertical.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = longVertical.jpg; sourceTree = "<group>"; };
 		97A9191725AFE8510051B902 /* taixi_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "taixi_icon@2x.png"; sourceTree = "<group>"; };
@@ -1607,6 +1610,7 @@
 		80FF8F0A1FC5649E00E437CF /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				977C55E83007DF7D001EC6C7 /* DemoDataVientiane */,
 				784A7213214C9DF000F8D144 /* DemoMore */,
 				8050037F211C3A29002A2306 /* DemosHelper */,
 				80FF91711FC5682A00E437CF /* DemosFoundation */,
@@ -1816,7 +1820,6 @@
 			children = (
 				80FF91721FC5682A00E437CF /* FoundationHomeViewController.h */,
 				80FF91771FC5682A00E437CF /* FoundationHomeViewController.m */,
-				80FF917F1FC5682A00E437CF /* NSDate */,
 				80FF91781FC5682A00E437CF /* NSString */,
 				80FF91731FC5682A00E437CF /* TypeConvert */,
 			);
@@ -1839,7 +1842,6 @@
 				78F406AA25A8C803004971D1 /* StringHomeViewController.h */,
 				78F406A925A8C803004971D1 /* StringHomeViewController.m */,
 				78542E2125B9C9E800ABE1E5 /* TextSize */,
-				78F4072125A8F9AF004971D1 /* StringForInputLimit */,
 				80FF91791FC5682A00E437CF /* AttributedStringViewController.h */,
 				80FF917C1FC5682A00E437CF /* AttributedStringViewController.m */,
 				80FF917A1FC5682A00E437CF /* AttributedStringViewController.xib */,
@@ -1848,8 +1850,6 @@
 				80FF917E1FC5682A00E437CF /* EncryptStringViewController.h */,
 				80FF917B1FC5682A00E437CF /* EncryptStringViewController.m */,
 				80FF917D1FC5682A00E437CF /* EncryptStringViewController.xib */,
-				805598B21FF5D612009DC61C /* ValidateStringViewController.h */,
-				805598B31FF5D612009DC61C /* ValidateStringViewController.m */,
 			);
 			path = NSString;
 			sourceTree = "<group>";
@@ -1914,6 +1914,27 @@
 				7894C2A3256ECAE200C73B5E /* Resources */,
 			);
 			path = TSSliderFactory;
+			sourceTree = "<group>";
+		};
+		977C55E83007DF7D001EC6C7 /* DemoDataVientiane */ = {
+			isa = PBXGroup;
+			children = (
+				977C55E63007DF7D001EC6C7 /* TSDataVientianeMainViewController.h */,
+				977C55E73007DF7D001EC6C7 /* TSDataVientianeMainViewController.m */,
+				977C55EA3007E0B7001EC6C7 /* ValidateLogic */,
+				805598B21FF5D612009DC61C /* ValidateStringViewController.h */,
+				805598B31FF5D612009DC61C /* ValidateStringViewController.m */,
+				80FF917F1FC5682A00E437CF /* NSDate */,
+				78F4072125A8F9AF004971D1 /* StringForInputLimit */,
+			);
+			path = DemoDataVientiane;
+			sourceTree = "<group>";
+		};
+		977C55EA3007E0B7001EC6C7 /* ValidateLogic */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ValidateLogic;
 			sourceTree = "<group>";
 		};
 		97A9191425AFE8510051B902 /* Resources */ = {
@@ -2187,6 +2208,8 @@
 				"${PODS_ROOT}/../../CJBaseUIKit/UIViewController/Resources/cjBackBarButtonItem@3x.png",
 				"${PODS_ROOT}/../../CJBaseUIKit/UIViewController/Resources/cjBackBarButtonItemGray@2x.png",
 				"${PODS_ROOT}/../../CJBaseUIKit/UIViewController/Resources/cjBackBarButtonItemGray@3x.png",
+				"${PODS_CONFIGURATION_BUILD_DIR}/CQDemoResource/CQDemoResource.bundle",
+				"${PODS_CONFIGURATION_BUILD_DIR}/IQKeyboardManager/IQKeyboardManager.bundle",
 				"${PODS_ROOT}/PinYin4Objc/PinYin4Objc/Resources/unicode_to_hanyu_pinyin.txt",
 				"${PODS_ROOT}/SAMKeychain/Support/SAMKeychain.bundle",
 			);
@@ -2201,6 +2224,8 @@
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/cjBackBarButtonItem@3x.png",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/cjBackBarButtonItemGray@2x.png",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/cjBackBarButtonItemGray@3x.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/CQDemoResource.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/IQKeyboardManager.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/unicode_to_hanyu_pinyin.txt",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/SAMKeychain.bundle",
 			);
@@ -2263,6 +2288,7 @@
 				78B6C2D92159D1F100D5864E /* DemoBusFlightModel.m in Sources */,
 				80FF902A1FC5649E00E437CF /* ThirdPartyHomeViewController.m in Sources */,
 				787C287F23223DAA00AF84F4 /* DemoEasyModel.m in Sources */,
+				977C55E93007DF7D001EC6C7 /* TSDataVientianeMainViewController.m in Sources */,
 				78B6C2DF2159D20000D5864E /* DemoUsePermissionModel.m in Sources */,
 				78575C8A2257242100925842 /* TSTextFieldOffsetViewController.m in Sources */,
 				975487A025A9943000DD7080 /* CMaxSubStringViewController1.m in Sources */,

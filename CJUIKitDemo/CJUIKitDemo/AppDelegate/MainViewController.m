@@ -7,6 +7,7 @@
 //
 
 #import "MainViewController.h"
+#import <CQDemoResource/UIImage+CQDemoResource.h>
 
 #import "HomeViewController.h"
 #import "FoundationHomeViewController.h"
@@ -41,7 +42,7 @@
     homeViewController.view.backgroundColor = [UIColor whiteColor];
     homeViewController.navigationItem.title = NSLocalizedString(@"CJBaseUIKit首页", nil);
     homeViewController.tabBarItem.title = NSLocalizedString(@"CJBaseUIKit", nil);
-    homeViewController.tabBarItem.image = [[UIImage imageNamed:@"icons8-home"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    homeViewController.tabBarItem.image = [[UIImage cqresource_imageNamed:@"icons8-home"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     //homeViewController. = @"10";
     UINavigationController *homeNavigationController = [[UINavigationController alloc] initWithRootViewController:homeViewController];
     [self addChildViewController:homeNavigationController];
@@ -50,7 +51,7 @@
     foundationHomeViewController.view.backgroundColor = [UIColor whiteColor];
     foundationHomeViewController.navigationItem.title = NSLocalizedString(@"Foundation首页", nil);
     foundationHomeViewController.tabBarItem.title = NSLocalizedString(@"CJFoundataion", nil);
-    foundationHomeViewController.tabBarItem.image = [[UIImage imageNamed:@"icons8-settings"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    foundationHomeViewController.tabBarItem.image = [[UIImage cqresource_imageNamed:@"icons8-menu"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     UINavigationController *foundationHomeNavigationController = [[UINavigationController alloc] initWithRootViewController:foundationHomeViewController];
     [self addChildViewController:foundationHomeNavigationController];
     
@@ -58,7 +59,7 @@
     helperHomeViewController.view.backgroundColor = [UIColor whiteColor];
     helperHomeViewController.navigationItem.title = NSLocalizedString(@"CJHelper首页", nil);
     helperHomeViewController.tabBarItem.title = NSLocalizedString(@"CJHelper", nil);
-    helperHomeViewController.tabBarItem.image = [[UIImage imageNamed:@"icons8-settings"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    helperHomeViewController.tabBarItem.image = [[UIImage cqresource_imageNamed:@"icons8-calendar"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     UINavigationController *helperHomeNavigationController = [[UINavigationController alloc] initWithRootViewController:helperHomeViewController];
     [self addChildViewController:helperHomeNavigationController];
     
@@ -66,7 +67,7 @@
     utilHomeViewController.view.backgroundColor = [UIColor whiteColor];
     utilHomeViewController.navigationItem.title = NSLocalizedString(@"Util首页", nil);
     utilHomeViewController.tabBarItem.title = NSLocalizedString(@"CJUtil", nil);
-    utilHomeViewController.tabBarItem.image = [[UIImage imageNamed:@"icons8-settings"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    utilHomeViewController.tabBarItem.image = [[UIImage cqresource_imageNamed:@"icons8-folder"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     UINavigationController *utilHomeNavigationController = [[UINavigationController alloc] initWithRootViewController:utilHomeViewController];
     [self addChildViewController:utilHomeNavigationController];
     
@@ -74,16 +75,16 @@
     moreHomeViewController.view.backgroundColor = [UIColor whiteColor];
     moreHomeViewController.navigationItem.title = NSLocalizedString(@"更多", nil);
     moreHomeViewController.tabBarItem.title = NSLocalizedString(@"更多", nil);
-    moreHomeViewController.tabBarItem.image = [[UIImage imageNamed:@"icons8-settings"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    moreHomeViewController.tabBarItem.image = [[UIImage cqresource_imageNamed:@"icons8-settings"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     UINavigationController *moreHomeNavigationController = [[UINavigationController alloc] initWithRootViewController:moreHomeViewController];
     [self addChildViewController:moreHomeNavigationController];
     
     /*
-    UIViewController *secondViewController = [[ThirdPartyHomeViewController alloc] init];
+    UIViewController *secondViewController = [[TSDataVientianeMainViewController alloc] init];
     secondViewController.view.backgroundColor = [UIColor whiteColor];
-    secondViewController.navigationItem.title = NSLocalizedString(@"第三方库", nil);
-    secondViewController.tabBarItem.title = NSLocalizedString(@"第三方库首页", nil);
-    secondViewController.tabBarItem.image = [[UIImage imageNamed:@"icons8-calendar"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    secondViewController.navigationItem.title = NSLocalizedString(@"数据万象", nil);
+    secondViewController.tabBarItem.title = NSLocalizedString(@"数据万象首页", nil);
+    secondViewController.tabBarItem.image = [[UIImage cqresource_imageNamed:@"icons8-home"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     UINavigationController *secondNavigationController = [[UINavigationController alloc] initWithRootViewController:secondViewController];
     [self addChildViewController:secondNavigationController];
     */

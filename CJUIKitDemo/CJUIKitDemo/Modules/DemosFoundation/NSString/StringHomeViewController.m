@@ -7,15 +7,11 @@
 //
 
 #import "StringHomeViewController.h"
+#import <CQDemoKit/CJUIKitToastUtil.h>
 
 #import "EncryptStringViewController.h"
 #import "AttributedStringViewController.h"
 #import "AttributedStringViewController2.h"
-
-#import "ValidateStringViewController.h"
-
-// 文本框输入【长度限制】需要用到的String相关方法
-#import "StringForInputHomeViewController.h"
 
 #import "TextSizeViewController.h"
 
@@ -55,13 +51,6 @@
             [sectionDataModel.values addObject:NSAttributedStringModule];
         }
         
-        {
-            CQDMModuleModel *stringModule = [[CQDMModuleModel alloc] init];
-            stringModule.title = @"字符串类型验证String Validate";
-            stringModule.classEntry = [ValidateStringViewController class];
-            [sectionDataModel.values addObject:stringModule];
-        }
-        
         [sectionDataModels addObject:sectionDataModel];
     }
     
@@ -87,7 +76,10 @@
         {
             CQDMModuleModel *NSStringModule = [[CQDMModuleModel alloc] init];
             NSStringModule.title = @"文本框输入【长度限制】需要用到的String相关方法";
-            NSStringModule.classEntry = [StringForInputHomeViewController class];
+            NSStringModule.content = @"请查看 DataVientiane";
+            NSStringModule.actionBlock = ^{
+                [CJUIKitToastUtil showMessage:@"请查看 DataVientiane"];
+            };
             [sectionDataModel.values addObject:NSStringModule];
         }
         

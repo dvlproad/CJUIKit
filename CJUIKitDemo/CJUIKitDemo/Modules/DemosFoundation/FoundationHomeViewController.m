@@ -10,8 +10,9 @@
 
 // String
 #import "StringHomeViewController.h"
+// 数据万象
+#import "TSDataVientianeMainViewController.h"
 
-#import "DateViewController.h"
 #import "TypeConvertViewController.h"
 
 
@@ -42,16 +43,15 @@
         [sectionDataModels addObject:sectionDataModel];
     }
     
-    
-    //NSDate
+    //DataVientiane
     {
         CQDMSectionDataModel *sectionDataModel = [[CQDMSectionDataModel alloc] init];
-        sectionDataModel.theme = @"NSDate相关";
+        sectionDataModel.theme = @"数据万象相关";
         {
-            CQDMModuleModel *NSDateModule = [[CQDMModuleModel alloc] init];
-            NSDateModule.title = @"NSDate";
-            NSDateModule.classEntry = [DateViewController class];
-            [sectionDataModel.values addObject:NSDateModule];
+            CQDMModuleModel *NSStringModule = [[CQDMModuleModel alloc] init];
+            NSStringModule.title = @"数据万象";
+            NSStringModule.classEntry = [TSDataVientianeMainViewController class];
+            [sectionDataModel.values addObject:NSStringModule];
         }
         
         [sectionDataModels addObject:sectionDataModel];
