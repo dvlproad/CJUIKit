@@ -7,35 +7,13 @@
 //
 
 #import "DateViewController.h"
-#import <IQKeyboardManager/IQKeyboardManager.h>
-#import "CJDemoDateTextField.h"
-#import "CJDemoDateLabel.h"
 
 #import "NSDateFormatterCJHelper.h"
 #import "NSCalendarCJHelper.h"
 
-#import "CJDefaultToolbar.h"
-#import "CJDemoDatePickerView.h"
 
 
-
-@interface DateViewController () {
-    
-}
-@property (nonatomic, strong) CJDemoDateTextField *shortDateTextField;
-@property (nonatomic, strong) CJDemoDateTextField *longDateTextField;
-@property (nonatomic) NSDate *currentTFDate;
-
-@property (nonatomic, strong) CJDemoDateLabel *dateLabel;
-@property (nonatomic) NSDate *currentLabelDate;
-
-@property (nonatomic, weak) IBOutlet UILabel *originCurrentTime1;
-@property (nonatomic, weak) IBOutlet UISwitch *correctConvertSwitch1;
-@property (nonatomic, weak) IBOutlet UILabel *resultCurrentTime1;
-
-@property (nonatomic, weak) IBOutlet UILabel *originCurrentTime2;
-@property (nonatomic, weak) IBOutlet UISwitch *correctConvertSwitch2;
-@property (nonatomic, weak) IBOutlet UILabel *resultCurrentTime2;
+@interface DateViewController ()
 
 @end
 
@@ -43,128 +21,141 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
     self.navigationItem.title = NSLocalizedString(@"日期字符串", nil);
-    
-    [[[IQKeyboardManager sharedManager] disabledToolbarClasses] addObject:[self class]];
-    
-    NSDate *defaultDate = [[NSDateFormatterCJHelper sharedInstance] yyyyMMdd_dateFromString:@"2018-09-27"];
-    self.currentTFDate = defaultDate;
-    
-    [self setupViews];
-    
+    self.fixTextViewHeight = 44;
+
+    [self setupTestCases];
+
     NSDate *birthdayDate = [[NSDateFormatterCJHelper sharedInstance] yyyyMMddHHmmss_dateFromString:@"1989-12-27 01:10:22"];
     NSInteger yearInterval = NSCalendarCJHelper_yearInterval(birthdayDate, [NSDate date]);
     NSInteger age = NSCalendarCJHelper_age(birthdayDate, NO);
     NSLog(@"今年周岁为：%zd, %zd", yearInterval, age);
 }
 
-//参考：http://blog.sina.com.cn/s/blog_708663ad0102wf1z.html
-- (IBAction)getStringFromDate1:(id)sender {
-    NSLog(@"-------------------------------------------");
-    NSString *currentTime = self.originCurrentTime1.text; //2017-04-17 20:20:08
-    NSLog(@"originDateString       = %@", currentTime);
-    
-    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc]init];
-    [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
-    
-    if (self.correctConvertSwitch1.isOn) {
-        [dateFormatter setTimeZone:[NSTimeZone timeZoneWithAbbreviation:@"UTC"]]; //解决NSString转NSDate差8小时的问题
+- (void)setupTestCases {
+    NSMutableArray *sectionDataModels = [[NSMutableArray alloc] init];
+
+    // NSString→NSDate 转换（不加 UTC，本地时区）
+    {
+        CQDMSectionDataModel *sectionDataModel = [[CQDMSectionDataModel alloc] init];
+        sectionDataModel.theme = @"NSString→NSDate 转换（不加 UTC）";
+
+        {
+            CJDealTextModel *dealTextModel = [[CJDealTextModel alloc] init];
+            dealTextModel.placeholder = @"请输入日期字符串";
+            dealTextModel.text = @"2017-04-17 20:20:08";
+            dealTextModel.hopeResultText = @"2017-04-17 20:20:08";
+            dealTextModel.actionTitle = @"string→date→string（不加UTC）";
+            dealTextModel.autoExec = YES;
+            dealTextModel.actionBlock = ^NSString * _Nonnull(NSString * _Nonnull oldString) {
+                NSDateFormatter *parseFormatter = [[NSDateFormatter alloc] init];
+                [parseFormatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
+                NSDate *date = [parseFormatter dateFromString:oldString];
+
+                NSDateFormatter *resultFormatter = [[NSDateFormatter alloc] init];
+                [resultFormatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
+                return [resultFormatter stringFromDate:date];
+            };
+            [sectionDataModel.values addObject:dealTextModel];
+        }
+
+        [sectionDataModels addObject:sectionDataModel];
     }
-    
-    //①string转换为date少了8个小时，加上UTC后，正常
-    NSDate *date = [dateFormatter dateFromString:currentTime];
-    NSLog(@"after convert to date  = %@", date);//错误时候为2017-04-17 12:20:08 +0000，即少了8个小时
-    
-    self.resultCurrentTime1.text = [dateFormatter stringFromDate:date];
-    
-    //②date转换为string又多了8个小时
-    NSDateFormatter *dateFormatter2 = [[NSDateFormatter alloc]init];
-    [dateFormatter2 setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
-    [dateFormatter2 setTimeZone:[NSTimeZone timeZoneWithAbbreviation:@"UTC"]];
-    NSString *dateString = [dateFormatter stringFromDate:self.currentTFDate];
-//    self.resultCurrentTime1.text = [dateFormatter stringFromDate:date];
-    NSLog(@"date convert to string = %@", dateString);
-}
 
-- (IBAction)getStringFromDate2:(id)sender {
-    
-}
+    // NSString→NSDate 转换（加 UTC 校正，少8小时）
+    {
+        CQDMSectionDataModel *sectionDataModel = [[CQDMSectionDataModel alloc] init];
+        sectionDataModel.theme = @"NSString→NSDate 转换（加 UTC 校正）";
 
-- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-    [super touchesBegan:touches withEvent:event];
-    
-    [self.shortDateTextField endEditing:YES];
-    [self.longDateTextField endEditing:YES];
-}
+        {
+            CJDealTextModel *dealTextModel = [[CJDealTextModel alloc] init];
+            dealTextModel.placeholder = @"请输入日期字符串";
+            dealTextModel.text = @"2017-04-17 20:20:08";
+            dealTextModel.hopeResultText = @"2017-04-17 20:20:08";
+            dealTextModel.actionTitle = @"string→date→string（加UTC，少8小时）";
+            dealTextModel.autoExec = YES;
+            dealTextModel.actionBlock = ^NSString * _Nonnull(NSString * _Nonnull oldString) {
+                NSDateFormatter *parseFormatter = [[NSDateFormatter alloc] init];
+                [parseFormatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
+                NSDate *date = [parseFormatter dateFromString:oldString];
 
-#pragma mark - SetupViews & Lazy
-- (void)setupViews {
-    [self.view addSubview:self.shortDateTextField];
-    [self.shortDateTextField setFrame:CGRectMake(20, 100, 180, 30)];
-    
-    [self.view addSubview:self.longDateTextField];
-    [self.longDateTextField setFrame:CGRectMake(20, 150, 280, 30)];
-    
-    [self.view addSubview:self.dateLabel];
-    [self.dateLabel setFrame:CGRectMake(20, 200, 180, 30)];
-}
+                NSDateFormatter *resultFormatter = [[NSDateFormatter alloc] init];
+                [resultFormatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
+                [resultFormatter setTimeZone:[NSTimeZone timeZoneWithAbbreviation:@"UTC"]];
+                return [resultFormatter stringFromDate:date];
+            };
+            [sectionDataModel.values addObject:dealTextModel];
+        }
 
-- (CJDemoDateTextField *)shortDateTextField {
-    if (_shortDateTextField == nil) {
-        __weak typeof(self)weakSelf = self;
-        _shortDateTextField = [[CJDemoDateTextField alloc] initWithConfirmCompleteBlock:^(NSDate * _Nonnull seletedDate, NSString * _Nonnull seletedDateString) {
-            weakSelf.currentTFDate = seletedDate;
-        }];
-        _shortDateTextField.placeholder = NSLocalizedString(@"选择日期", nil);
-        _shortDateTextField.backgroundColor = [UIColor greenColor];
-        _shortDateTextField.clearButtonMode = UITextFieldViewModeUnlessEditing;
-        
-        NSString *dateString = [[NSDateFormatterCJHelper sharedInstance] yyyyMMdd_stringFromDate:self.currentTFDate];
-        [_shortDateTextField updateTextFieldAndDatePickerWithDateString:dateString];
+        [sectionDataModels addObject:sectionDataModel];
     }
-    return _shortDateTextField;
-}
 
-- (CJDemoDateTextField *)longDateTextField {
-    if (_longDateTextField == nil) {
-        __weak typeof(self)weakSelf = self;
-        _longDateTextField = [[CJDemoDateTextField alloc] initWithConfirmCompleteBlock:^(NSDate * _Nonnull seletedDate, NSString * _Nonnull seletedDateString) {
-            weakSelf.currentTFDate = seletedDate;
-        }];
-        _longDateTextField.placeholder = NSLocalizedString(@"选择日期", nil);
-        _longDateTextField.backgroundColor = [UIColor greenColor];
-        _longDateTextField.clearButtonMode = UITextFieldViewModeUnlessEditing;
+    // NSDate→NSString 转换（NSDate 转 string）
+    {
+        CQDMSectionDataModel *sectionDataModel = [[CQDMSectionDataModel alloc] init];
+        sectionDataModel.theme = @"NSDate→NSString 转换";
+
+        {
+            CJDealTextModel *dealTextModel = [[CJDealTextModel alloc] init];
+            dealTextModel.placeholder = @"当前日期";
+            dealTextModel.text = @"2018-09-27";
+            dealTextModel.hopeResultText = @"2018-09-27";
+            dealTextModel.actionTitle = @"date→string（yyyyMMdd）";
+            dealTextModel.autoExec = YES;
+            dealTextModel.actionBlock = ^NSString * _Nonnull(NSString * _Nonnull oldString) {
+                NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+                [formatter setDateFormat:@"yyyy-MM-dd"];
+                NSDate *date = [formatter dateFromString:oldString];
+                return [[NSDateFormatterCJHelper sharedInstance] yyyyMMdd_stringFromDate:date];
+            };
+            [sectionDataModel.values addObject:dealTextModel];
+        }
+
+        [sectionDataModels addObject:sectionDataModel];
     }
-    return _longDateTextField;
-}
 
-- (CJDemoDateLabel *)dateLabel {
-    if (_dateLabel == nil) {
-        __weak typeof(self)weakSelf = self;
-        _dateLabel = [[CJDemoDateLabel alloc] initWithDefaultDate:self.currentLabelDate confirmCompleteBlock:^(NSDate * _Nonnull seletedDate, NSString * _Nonnull seletedDateString) {
-            weakSelf.currentLabelDate = seletedDate;
-        }];
-        _dateLabel.placeholder = NSLocalizedString(@"选择日期", nil);
-        _dateLabel.backgroundColor = [UIColor greenColor];
+    // 年龄计算
+    {
+        CQDMSectionDataModel *sectionDataModel = [[CQDMSectionDataModel alloc] init];
+        sectionDataModel.theme = @"NSDateComponents 年龄计算";
+
+        {
+            CJDealTextModel *dealTextModel = [[CJDealTextModel alloc] init];
+            dealTextModel.placeholder = @"生日日期";
+            dealTextModel.text = @"1989-12-27 01:10:22";
+            dealTextModel.hopeResultText = @"36";
+            dealTextModel.actionTitle = @"birthday→age（周岁）";
+            dealTextModel.autoExec = YES;
+            dealTextModel.actionBlock = ^NSString * _Nonnull(NSString * _Nonnull oldString) {
+                NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+                [formatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
+                NSDate *birthdayDate = [formatter dateFromString:oldString];
+                NSInteger age = NSCalendarCJHelper_age(birthdayDate, NO);
+                return [NSString stringWithFormat:@"%zd", age];
+            };
+            [sectionDataModel.values addObject:dealTextModel];
+        }
+
+        {
+            CJDealTextModel *dealTextModel = [[CJDealTextModel alloc] init];
+            dealTextModel.placeholder = @"生日日期";
+            dealTextModel.text = @"1989-12-27 01:10:22";
+            dealTextModel.actionTitle = @"birthday→yearInterval（年份差）";
+            dealTextModel.autoExec = YES;
+            dealTextModel.actionBlock = ^NSString * _Nonnull(NSString * _Nonnull oldString) {
+                NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+                [formatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
+                NSDate *birthdayDate = [formatter dateFromString:oldString];
+                NSInteger yearInterval = NSCalendarCJHelper_yearInterval(birthdayDate, [NSDate date]);
+                return [NSString stringWithFormat:@"%zd", yearInterval];
+            };
+            [sectionDataModel.values addObject:dealTextModel];
+        }
+
+        [sectionDataModels addObject:sectionDataModel];
     }
-    return _dateLabel;
+
+    self.sectionDataModels = sectionDataModels;
 }
-
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

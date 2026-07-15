@@ -94,45 +94,45 @@ PODS:
   - CJBaseUIKit/UIView/CJShakeAction (0.8.1)
   - CJBaseUIKit/UIViewController (0.8.1)
   - CJBaseUIKit/UIWindow (0.8.1)
-  - CJBaseUtil (0.5.1):
-    - CJBaseUtil/CJAppLastUtil (= 0.5.1)
-    - CJBaseUtil/CJCallUtil (= 0.5.1)
-    - CJBaseUtil/CJDataUtil (= 0.5.1)
-    - CJBaseUtil/CJDateUtil (= 0.5.1)
-    - CJBaseUtil/CJDecimalUtil (= 0.5.1)
-    - CJBaseUtil/CJIndentedStringUtil (= 0.5.1)
-    - CJBaseUtil/CJKeyboardUtil (= 0.5.1)
-    - CJBaseUtil/CJLaunchImageUtil (= 0.5.1)
-    - CJBaseUtil/CJManager (= 0.5.1)
-    - CJBaseUtil/CJPinyinHelper (= 0.5.1)
-    - CJBaseUtil/CJQRCodeUtil (= 0.5.1)
+  - CJBaseUtil (0.5.2):
+    - CJBaseUtil/CJAppLastUtil (= 0.5.2)
+    - CJBaseUtil/CJCallUtil (= 0.5.2)
+    - CJBaseUtil/CJDataUtil (= 0.5.2)
+    - CJBaseUtil/CJDateUtil (= 0.5.2)
+    - CJBaseUtil/CJDecimalUtil (= 0.5.2)
+    - CJBaseUtil/CJIndentedStringUtil (= 0.5.2)
+    - CJBaseUtil/CJKeyboardUtil (= 0.5.2)
+    - CJBaseUtil/CJLaunchImageUtil (= 0.5.2)
+    - CJBaseUtil/CJManager (= 0.5.2)
+    - CJBaseUtil/CJPinyinHelper (= 0.5.2)
+    - CJBaseUtil/CJQRCodeUtil (= 0.5.2)
   - CJBaseUtil-Swift (0.1.1):
     - CJBaseUtil-Swift/FrameworkCJHelper (= 0.1.1)
   - CJBaseUtil-Swift/FrameworkCJHelper (0.1.1)
-  - CJBaseUtil/CJAppLastUtil (0.5.1):
+  - CJBaseUtil/CJAppLastUtil (0.5.2):
     - SAMKeychain
-  - CJBaseUtil/CJCallUtil (0.5.1)
-  - CJBaseUtil/CJDataUtil (0.5.1)
-  - CJBaseUtil/CJDateUtil (0.5.1)
-  - CJBaseUtil/CJDecimalUtil (0.5.1)
-  - CJBaseUtil/CJIndentedStringUtil (0.5.1)
-  - CJBaseUtil/CJKeyboardUtil (0.5.1)
-  - CJBaseUtil/CJLaunchImageUtil (0.5.1)
-  - CJBaseUtil/CJManager (0.5.1):
-    - CJBaseUtil/CJManager/CJConfuseManager (= 0.5.1)
-    - CJBaseUtil/CJManager/CJLocationChangeManager (= 0.5.1)
-    - CJBaseUtil/CJManager/CJModuleManager (= 0.5.1)
-    - CJBaseUtil/CJManager/CJSuspendWindowManager (= 0.5.1)
-    - CJBaseUtil/CJManager/CJTimerManager (= 0.5.1)
-  - CJBaseUtil/CJManager/CJConfuseManager (0.5.1)
-  - CJBaseUtil/CJManager/CJLocationChangeManager (0.5.1):
+  - CJBaseUtil/CJCallUtil (0.5.2)
+  - CJBaseUtil/CJDataUtil (0.5.2)
+  - CJBaseUtil/CJDateUtil (0.5.2)
+  - CJBaseUtil/CJDecimalUtil (0.5.2)
+  - CJBaseUtil/CJIndentedStringUtil (0.5.2)
+  - CJBaseUtil/CJKeyboardUtil (0.5.2)
+  - CJBaseUtil/CJLaunchImageUtil (0.5.2)
+  - CJBaseUtil/CJManager (0.5.2):
+    - CJBaseUtil/CJManager/CJConfuseManager (= 0.5.2)
+    - CJBaseUtil/CJManager/CJLocationChangeManager (= 0.5.2)
+    - CJBaseUtil/CJManager/CJModuleManager (= 0.5.2)
+    - CJBaseUtil/CJManager/CJSuspendWindowManager (= 0.5.2)
+    - CJBaseUtil/CJManager/CJTimerManager (= 0.5.2)
+  - CJBaseUtil/CJManager/CJConfuseManager (0.5.2)
+  - CJBaseUtil/CJManager/CJLocationChangeManager (0.5.2):
     - CJBaseUtil/CJDateUtil
-  - CJBaseUtil/CJManager/CJModuleManager (0.5.1)
-  - CJBaseUtil/CJManager/CJSuspendWindowManager (0.5.1)
-  - CJBaseUtil/CJManager/CJTimerManager (0.5.1)
-  - CJBaseUtil/CJPinyinHelper (0.5.1):
+  - CJBaseUtil/CJManager/CJModuleManager (0.5.2)
+  - CJBaseUtil/CJManager/CJSuspendWindowManager (0.5.2)
+  - CJBaseUtil/CJManager/CJTimerManager (0.5.2)
+  - CJBaseUtil/CJPinyinHelper (0.5.2):
     - PinYin4Objc
-  - CJBaseUtil/CJQRCodeUtil (0.5.1)
+  - CJBaseUtil/CJQRCodeUtil (0.5.2)
   - CJFile/CJFileManager (0.0.9)
   - CJFile/CJFileModel (0.0.9)
   - CJFoundation (0.1.5):
@@ -144,43 +144,57 @@ PODS:
   - CJFoundation/NSString (0.1.5)
   - CJPopupAction (1.5.0)
   - CJPopupView/CJPopoverView (2.1.0)
-  - CQDemoKit/Auxiliary (0.9.0):
+  - CQDemoKit/Auxiliary (0.9.3):
     - Masonry
-  - CQDemoKit/BaseUIKit (0.9.0):
+  - CQDemoKit/BaseUIKit (0.9.3):
     - Masonry
-  - CQDemoKit/BaseUtil (0.9.0)
-  - CQDemoKit/BaseVC (0.9.0):
-    - CQDemoKit/BaseVC/Base (= 0.9.0)
-    - CQDemoKit/BaseVC/Collection (= 0.9.0)
-    - CQDemoKit/BaseVC/ScrollView (= 0.9.0)
-    - CQDemoKit/BaseVC/TabBar (= 0.9.0)
-    - CQDemoKit/BaseVC/TableView (= 0.9.0)
-    - CQDemoKit/BaseVC/TextView (= 0.9.0)
-  - CQDemoKit/BaseVC/Base (0.9.0):
+  - CQDemoKit/BaseUtil (0.9.3)
+  - CQDemoKit/BaseVC (0.9.3):
+    - CQDemoKit/BaseVC/Base (= 0.9.3)
+    - CQDemoKit/BaseVC/Collection (= 0.9.3)
+    - CQDemoKit/BaseVC/ScrollView (= 0.9.3)
+    - CQDemoKit/BaseVC/TabBar (= 0.9.3)
+    - CQDemoKit/BaseVC/TableView (= 0.9.3)
+    - CQDemoKit/BaseVC/TextView (= 0.9.3)
+  - CQDemoKit/BaseVC/Base (0.9.3):
     - CQDemoKit/BaseUIKit
     - Masonry
-  - CQDemoKit/BaseVC/Collection (0.9.0):
+  - CQDemoKit/BaseVC/Collection (0.9.3):
     - CQDemoKit/BaseVC/Base
-  - CQDemoKit/BaseVC/ScrollView (0.9.0):
+  - CQDemoKit/BaseVC/ScrollView (0.9.3):
     - CQDemoKit/BaseVC/Base
-  - CQDemoKit/BaseVC/TabBar (0.9.0):
+  - CQDemoKit/BaseVC/TabBar (0.9.3):
     - CQDemoKit/Helper
-  - CQDemoKit/BaseVC/TableView (0.9.0):
+  - CQDemoKit/BaseVC/TableView (0.9.3):
     - CQDemoKit/BaseVC/Base
-  - CQDemoKit/BaseVC/TextView (0.9.0):
+  - CQDemoKit/BaseVC/TextView (0.9.3):
     - CQDemoKit/BaseUtil
     - CQDemoKit/BaseVC/Base
-  - CQDemoKit/Demo_DataSourceAndDelegate (0.9.0):
+  - CQDemoKit/Demo_DataSourceAndDelegate (0.9.3):
     - CQDemoKit/BaseVC
-  - CQDemoKit/Demo_Resource (0.9.0):
+  - CQDemoKit/Demo_Resource (0.9.3):
     - CQDemoKit/BaseUIKit
     - CQDemoKit/Helper
-  - CQDemoKit/Demo_RipeView (0.9.0):
+  - CQDemoKit/Demo_RipeView (0.9.3):
     - CQDemoKit/BaseUIKit
     - CQDemoKit/BaseUtil
     - CQDemoKit/Demo_DataSourceAndDelegate
     - CQDemoKit/Demo_Resource
-  - CQDemoKit/Helper (0.9.0)
+    - CQDemoKit/Demo_RipeView/ImagePicker (= 0.9.3)
+    - CQDemoKit/Demo_RipeView/RipeCollectionView (= 0.9.3)
+  - CQDemoKit/Demo_RipeView/ImagePicker (0.9.3):
+    - CQDemoKit/BaseUIKit
+    - CQDemoKit/BaseUtil
+    - CQDemoKit/Demo_DataSourceAndDelegate
+    - CQDemoKit/Demo_Resource
+    - Masonry
+  - CQDemoKit/Demo_RipeView/RipeCollectionView (0.9.3):
+    - CQDemoKit/BaseUIKit
+    - CQDemoKit/BaseUtil
+    - CQDemoKit/Demo_DataSourceAndDelegate
+    - CQDemoKit/Demo_Resource
+    - Masonry
+  - CQDemoKit/Helper (0.9.3)
   - IQKeyboardManager (6.5.11)
   - Mantle (2.1.6):
     - Mantle/extobjc (= 2.1.6)
@@ -259,13 +273,13 @@ SPEC CHECKSUMS:
   CJBaseHelper: 8080ddf39b5edd71798d5a45a3e03a5484522e2c
   CJBaseUIKit: 9e39328501c4f627a223ea48fac826cc2d93af27
   CJBaseUIKit-Swift: e9fb305e1d7785b919a5877e06c4efd342ef98e6
-  CJBaseUtil: aa117e552182cbd0829c4c8b1e5a82de159cc14c
+  CJBaseUtil: 1e6b81026b1b0613a41866825cc055092bfb9faa
   CJBaseUtil-Swift: 837f333ad19be6e2df8467f965c8735560a7c085
   CJFile: 6c1e6d55b3b94e8afbaa9f413f131301d15fdc48
   CJFoundation: e170ae85eff487b91ce5ac7c711bfbc3ec5d9919
   CJPopupAction: 0f0a424a44b46d3582e0d4a90f14f15e70255436
   CJPopupView: c7685f6a0225a89c72d97ea946f2816b5442abaf
-  CQDemoKit: b85faf85550efed4200bad7ffc3a20cdc3af3107
+  CQDemoKit: 22fc91b3ab0b53b0de98e93eefe0c6778a211f2b
   IQKeyboardManager: ef43ce1ba1e5aaf4adf222c0a46f39761f246879
   Mantle: 4c0ed6ce47c96eccc4dc3bb071deb3def0e2c3be
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
@@ -276,6 +290,6 @@ SPEC CHECKSUMS:
   UINavigation-SXFixSpace: 10f223253ebff2ceefa26694e23b7694269763c4
   YYText: 5c461d709e24d55a182d1441c41dc639a18a4849
 
-PODFILE CHECKSUM: 431837087349c863d7f0fa79e97404b476695dd3
+PODFILE CHECKSUM: 8ef81adff285a99fc368b3a8d0a4e8cfdc2a6a88
 
 COCOAPODS: 1.16.2

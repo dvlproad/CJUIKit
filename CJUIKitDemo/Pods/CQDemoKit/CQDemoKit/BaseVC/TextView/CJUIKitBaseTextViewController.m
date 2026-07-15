@@ -34,11 +34,15 @@
     }];
     self.tableView = tableView;
     
-    
-    NSMutableArray *sectionDataModels = [[NSMutableArray alloc] init];
-    self.sectionDataModels = sectionDataModels;
-    
     self.tableView.keyboardDismissMode = UIScrollViewKeyboardDismissModeOnDrag;
+}
+
+#pragma mark - Lazy
+- (NSMutableArray<CQDMSectionDataModel *> *)sectionDataModels {
+    if (_sectionDataModels == nil) {
+        _sectionDataModels = [[NSMutableArray alloc] init];
+    }
+    return _sectionDataModels;
 }
 
 #pragma mark - UITableViewDataSource & UITableViewDelegate

@@ -1,1 +1,1 @@
-../../../CQDemoKit/CQDemoKit/Demo_RipeView/CQTSMediaPickerViewController.h
+../../../CQDemoKit/CQDemoKit/Demo_RipeView/ImagePicker/CQTSMediaPickerViewController.h

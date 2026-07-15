@@ -6,8 +6,8 @@
 //  Copyright © 2016年 dvlproad. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "CJUIKitBaseBigTextViewController.h"
 
-@interface DateViewController : UIViewController
+@interface DateViewController : CJUIKitBaseBigTextViewController
 
 @end

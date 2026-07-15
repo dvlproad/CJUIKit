@@ -27,11 +27,16 @@
     
     [self setupViews];
     
-    NSMutableArray *sectionDataModels = [[NSMutableArray alloc] init];
-    self.sectionDataModels = sectionDataModels;
-    
     self.perMaxCount = 3;
 //    self.scrollDirection = UICollectionViewScrollDirectionHorizontal;
+}
+
+#pragma mark - Lazy
+- (NSMutableArray<CQDMSectionDataModel *> *)sectionDataModels {
+    if (_sectionDataModels == nil) {
+        _sectionDataModels = [[NSMutableArray alloc] init];
+    }
+    return _sectionDataModels;
 }
 
 #pragma mark - Setter

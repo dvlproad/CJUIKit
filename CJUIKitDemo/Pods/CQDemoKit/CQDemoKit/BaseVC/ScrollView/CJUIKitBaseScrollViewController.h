@@ -16,6 +16,14 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) UIScrollView *scrollView;
 @property (nonatomic, strong) UIView *containerView;
 
+/*
+#pragma mark - Init
++ (instancetype)new NS_UNAVAILABLE;
+- (instancetype)init NS_DESIGNATED_INITIALIZER;
+- (instancetype)initWithNibName:(nullable NSString *)nibNameOrNil bundle:(nullable NSBundle *)nibBundleOrNil NS_UNAVAILABLE;
+- (instancetype)initWithCoder:(NSCoder *)aDecoder NS_UNAVAILABLE;
+*/
+
 /**
  *  更新ScrollView的高（如果视图滚动异常，请检查你的视图是不是加在了self.view上了。而不是self.containerView上）
  *  @brief  ①如果没有lastBottomView来确认scrollView的高，那么高为根据父视图设置；

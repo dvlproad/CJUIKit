@@ -8,7 +8,6 @@
 
 #import <UIKit/UIKit.h>
 #import "CQDMSectionDataModel.h"    // 在 subspec:BaseVC 下
-//#import "CQTSLocImageDataModel.h"   // 在 subspec:Demo_Resource 下
 
 NS_ASSUME_NONNULL_BEGIN
 
