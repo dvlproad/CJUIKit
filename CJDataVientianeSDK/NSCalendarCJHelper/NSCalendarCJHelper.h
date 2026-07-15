@@ -5,6 +5,7 @@
 //  Created by ciyouzen on 16/12/14.
 //  Copyright (c) 2014年 dvlproad. All rights reserved.
 //
+//  通过 NSCalendar 类，来计算 NSDate 的相等判断或者加减日期等方法的工具
 
 #import <Foundation/Foundation.h>
 #import "CJDateModel.h"

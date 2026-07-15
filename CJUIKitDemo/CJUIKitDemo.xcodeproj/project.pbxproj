@@ -264,6 +264,7 @@
 		976794FA2580B494002FD0C7 /* KeyboardAutoMoveUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 976794F92580B494002FD0C7 /* KeyboardAutoMoveUpViewController.m */; };
 		976CB37F2FFE9A85000505DD /* UITextField+CJForbidKeyboard.m in Sources */ = {isa = PBXBuildFile; fileRef = 976CB37E2FFE9A85000505DD /* UITextField+CJForbidKeyboard.m */; };
 		977C55E93007DF7D001EC6C7 /* TSDataVientianeMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 977C55E73007DF7D001EC6C7 /* TSDataVientianeMainViewController.m */; };
+		977C55ED30080317001EC6C7 /* TSDateHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 977C55EC30080317001EC6C7 /* TSDateHomeViewController.m */; };
 		97A9191E25AFE8510051B902 /* imageOriginColor@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 97A9191525AFE8510051B902 /* imageOriginColor@2x.png */; };
 		97A9191F25AFE8510051B902 /* longVertical.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 97A9191625AFE8510051B902 /* longVertical.jpg */; };
 		97A9192025AFE8510051B902 /* taixi_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 97A9191725AFE8510051B902 /* taixi_icon@2x.png */; };
@@ -746,6 +747,8 @@
 		976CB37E2FFE9A85000505DD /* UITextField+CJForbidKeyboard.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UITextField+CJForbidKeyboard.m"; sourceTree = "<group>"; };
 		977C55E63007DF7D001EC6C7 /* TSDataVientianeMainViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TSDataVientianeMainViewController.h; sourceTree = "<group>"; };
 		977C55E73007DF7D001EC6C7 /* TSDataVientianeMainViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TSDataVientianeMainViewController.m; sourceTree = "<group>"; };
+		977C55EB30080317001EC6C7 /* TSDateHomeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TSDateHomeViewController.h; sourceTree = "<group>"; };
+		977C55EC30080317001EC6C7 /* TSDateHomeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TSDateHomeViewController.m; sourceTree = "<group>"; };
 		97A9191525AFE8510051B902 /* imageOriginColor@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "imageOriginColor@2x.png"; sourceTree = "<group>"; };
 		97A9191625AFE8510051B902 /* longVertical.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = longVertical.jpg; sourceTree = "<group>"; };
 		97A9191725AFE8510051B902 /* taixi_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "taixi_icon@2x.png"; sourceTree = "<group>"; };
@@ -929,23 +932,6 @@
 				78B6C2DA2159D20000D5864E /* Models */,
 			);
 			path = MantleDemo;
-			sourceTree = "<group>";
-		};
-		7819C65B21BA5B7D008A1E10 /* NSCalendarCJHelper */ = {
-			isa = PBXGroup;
-			children = (
-				781C736721BA5E140090080C /* NSCalendarCJHelperViewController.h */,
-				781C736821BA5E140090080C /* NSCalendarCJHelperViewController.m */,
-				781C736A21BA61480090080C /* TestValueChangeTableViewCell.h */,
-				781C736B21BA61480090080C /* TestValueChangeTableViewCell.m */,
-				781C737521BA6A170090080C /* TestValueChangeModel.h */,
-				781C737621BA6A170090080C /* TestValueChangeModel.m */,
-				781C736F21BA65C90090080C /* add_common_icon@2x.png */,
-				781C737021BA65C90090080C /* add_common_icon@3x.png */,
-				781C736E21BA65C90090080C /* minus_common_icon@2x.png */,
-				781C736D21BA65C90090080C /* minus_common_icon@3x.png */,
-			);
-			path = NSCalendarCJHelper;
 			sourceTree = "<group>";
 		};
 		78293EFF21FC2B9C00F70F43 /* UIScrollViewDemo */ = {
@@ -1520,7 +1506,6 @@
 				80500387211C3A29002A2306 /* HelperHomeViewController.h */,
 				80500383211C3A29002A2306 /* HelperHomeViewController.m */,
 				7856F96621F9B2C3004AF751 /* AuthorizationCJHelper */,
-				7819C65B21BA5B7D008A1E10 /* NSCalendarCJHelper */,
 				80500384211C3A29002A2306 /* NSObjectCJHelper */,
 				80500380211C3A29002A2306 /* UIViewControllerCJHelper */,
 			);
@@ -1857,8 +1842,20 @@
 		80FF917F1FC5682A00E437CF /* DateData */ = {
 			isa = PBXGroup;
 			children = (
+				977C55EB30080317001EC6C7 /* TSDateHomeViewController.h */,
+				977C55EC30080317001EC6C7 /* TSDateHomeViewController.m */,
 				80FF91801FC5682A00E437CF /* DateViewController.h */,
 				80FF91811FC5682A00E437CF /* DateViewController.m */,
+				781C736721BA5E140090080C /* NSCalendarCJHelperViewController.h */,
+				781C736821BA5E140090080C /* NSCalendarCJHelperViewController.m */,
+				781C736A21BA61480090080C /* TestValueChangeTableViewCell.h */,
+				781C736B21BA61480090080C /* TestValueChangeTableViewCell.m */,
+				781C737521BA6A170090080C /* TestValueChangeModel.h */,
+				781C737621BA6A170090080C /* TestValueChangeModel.m */,
+				781C736F21BA65C90090080C /* add_common_icon@2x.png */,
+				781C737021BA65C90090080C /* add_common_icon@3x.png */,
+				781C736E21BA65C90090080C /* minus_common_icon@2x.png */,
+				781C736D21BA65C90090080C /* minus_common_icon@3x.png */,
 			);
 			path = DateData;
 			sourceTree = "<group>";
@@ -2249,6 +2246,7 @@
 				78A621ED2135CA50004DA046 /* DemoFloatingWindow.m in Sources */,
 				78A99236257934B100B54E30 /* TextFieldHomeViewController.m in Sources */,
 				807F126020B507A30008B748 /* ViewAnimateViewController.m in Sources */,
+				977C55ED30080317001EC6C7 /* TSDateHomeViewController.m in Sources */,
 				784A7216214C9DF000F8D144 /* MoreHomeViewController.m in Sources */,
 				788113BF2199574900D1630D /* SharedInstanceViewController.m in Sources */,
 				78A74E5123687ACF0023F44B /* PriceFenToYuanViewController.m in Sources */,

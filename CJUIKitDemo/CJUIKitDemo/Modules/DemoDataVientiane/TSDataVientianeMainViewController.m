@@ -11,7 +11,7 @@
 // 文本框输入【长度限制】需要用到的String相关方法
 #import "StringForInputHomeViewController.h"
 
-#import "DateViewController.h"
+#import "TSDateHomeViewController.h"
 
 #import "ValidateStringViewController.h"
 
@@ -37,7 +37,7 @@
     {
         CQDMTabBarModel *tabBarModel = [[CQDMTabBarModel alloc] init];
         tabBarModel.title = NSLocalizedString(@"Date", nil);
-        tabBarModel.classEntry = [DateViewController class];
+        tabBarModel.classEntry = [TSDateHomeViewController class];
         [tabBarModels addObject:tabBarModel];
     }
     {

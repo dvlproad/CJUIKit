@@ -1,29 +1,27 @@
 PODS:
   - AFNetworking/Reachability (4.0.1)
   - CJBaseEffectKit/CJScaleHeadView (0.3.0)
-  - CJBaseHelper (0.1.9):
-    - CJBaseHelper/AppInfoCJHelper (= 0.1.9)
-    - CJBaseHelper/AuthorizationCJHelper (= 0.1.9)
-    - CJBaseHelper/DeviceCJHelper (= 0.1.9)
-    - CJBaseHelper/HookCJHelper (= 0.1.9)
-    - CJBaseHelper/NSCalendarCJHelper (= 0.1.9)
-    - CJBaseHelper/NSDateFormatterCJHelper (= 0.1.9)
-    - CJBaseHelper/NSObjectCJHelper (= 0.1.9)
-    - CJBaseHelper/NSOperationQueueCJHelper (= 0.1.9)
-    - CJBaseHelper/ServerCJHelper (= 0.1.9)
-    - CJBaseHelper/UIViewControllerCJHelper (= 0.1.9)
-    - CJBaseHelper/WebCJHelper (= 0.1.9)
-  - CJBaseHelper/AppInfoCJHelper (0.1.9)
-  - CJBaseHelper/AuthorizationCJHelper (0.1.9)
-  - CJBaseHelper/DeviceCJHelper (0.1.9)
-  - CJBaseHelper/HookCJHelper (0.1.9)
-  - CJBaseHelper/NSCalendarCJHelper (0.1.9)
-  - CJBaseHelper/NSDateFormatterCJHelper (0.1.9)
-  - CJBaseHelper/NSObjectCJHelper (0.1.9)
-  - CJBaseHelper/NSOperationQueueCJHelper (0.1.9)
-  - CJBaseHelper/ServerCJHelper (0.1.9)
-  - CJBaseHelper/UIViewControllerCJHelper (0.1.9)
-  - CJBaseHelper/WebCJHelper (0.1.9)
+  - CJBaseHelper (0.2.0):
+    - CJBaseHelper/AppInfoCJHelper (= 0.2.0)
+    - CJBaseHelper/AuthorizationCJHelper (= 0.2.0)
+    - CJBaseHelper/DeviceCJHelper (= 0.2.0)
+    - CJBaseHelper/HookCJHelper (= 0.2.0)
+    - CJBaseHelper/NSDateFormatterCJHelper (= 0.2.0)
+    - CJBaseHelper/NSObjectCJHelper (= 0.2.0)
+    - CJBaseHelper/NSOperationQueueCJHelper (= 0.2.0)
+    - CJBaseHelper/ServerCJHelper (= 0.2.0)
+    - CJBaseHelper/UIViewControllerCJHelper (= 0.2.0)
+    - CJBaseHelper/WebCJHelper (= 0.2.0)
+  - CJBaseHelper/AppInfoCJHelper (0.2.0)
+  - CJBaseHelper/AuthorizationCJHelper (0.2.0)
+  - CJBaseHelper/DeviceCJHelper (0.2.0)
+  - CJBaseHelper/HookCJHelper (0.2.0)
+  - CJBaseHelper/NSDateFormatterCJHelper (0.2.0)
+  - CJBaseHelper/NSObjectCJHelper (0.2.0)
+  - CJBaseHelper/NSOperationQueueCJHelper (0.2.0)
+  - CJBaseHelper/ServerCJHelper (0.2.0)
+  - CJBaseHelper/UIViewControllerCJHelper (0.2.0)
+  - CJBaseHelper/WebCJHelper (0.2.0)
   - CJBaseUIKit (0.9.0):
     - CJBaseUIKit/CJBaseTableViewCell (= 0.9.0)
     - CJBaseUIKit/CJBaseTableViewHeaderFooterView (= 0.9.0)
@@ -78,6 +76,7 @@ PODS:
     - CJDataVientianeSDK/UITextInputLimitCJHelper
   - CJBaseUIKit/UITextView (0.9.0):
     - CJBaseUIKit/UITextHeightCenterCJHelper
+    - CJDataVientianeSDK/UITextInputHeightCJHelper
   - CJBaseUIKit/UIToolbar (0.9.0):
     - CJBaseUIKit/UIImage
   - CJBaseUIKit/UIView (0.9.0):
@@ -134,13 +133,15 @@ PODS:
   - CJBaseUtil/CJPinyinHelper (0.5.2):
     - PinYin4Objc
   - CJBaseUtil/CJQRCodeUtil (0.5.2)
-  - CJDataVientianeSDK (0.0.1):
-    - CJDataVientianeSDK/CJSubStringUtil (= 0.0.1)
-    - CJDataVientianeSDK/UITextInputHeightCJHelper (= 0.0.1)
-    - CJDataVientianeSDK/UITextInputLimitCJHelper (= 0.0.1)
-  - CJDataVientianeSDK/CJSubStringUtil (0.0.1)
-  - CJDataVientianeSDK/UITextInputHeightCJHelper (0.0.1)
-  - CJDataVientianeSDK/UITextInputLimitCJHelper (0.0.1):
+  - CJDataVientianeSDK (0.0.2):
+    - CJDataVientianeSDK/CJSubStringUtil (= 0.0.2)
+    - CJDataVientianeSDK/NSCalendarCJHelper (= 0.0.2)
+    - CJDataVientianeSDK/UITextInputHeightCJHelper (= 0.0.2)
+    - CJDataVientianeSDK/UITextInputLimitCJHelper (= 0.0.2)
+  - CJDataVientianeSDK/CJSubStringUtil (0.0.2)
+  - CJDataVientianeSDK/NSCalendarCJHelper (0.0.2)
+  - CJDataVientianeSDK/UITextInputHeightCJHelper (0.0.2)
+  - CJDataVientianeSDK/UITextInputLimitCJHelper (0.0.2):
     - CJDataVientianeSDK/CJSubStringUtil
   - CJFile/CJFileManager (0.0.9)
   - CJFile/CJFileModel (0.0.9)
@@ -288,12 +289,12 @@ EXTERNAL SOURCES:
 SPEC CHECKSUMS:
   AFNetworking: 3bd23d814e976cd148d7d44c3ab78017b744cd58
   CJBaseEffectKit: df0d6d989de6363a14be9d5ebbb2a5e6b8b1588c
-  CJBaseHelper: 8080ddf39b5edd71798d5a45a3e03a5484522e2c
-  CJBaseUIKit: ab38b1fe5180327b50807f030d5878f8631382cc
+  CJBaseHelper: 0345964a15b24131605a356f62e8c61d56222002
+  CJBaseUIKit: 603bb6a5d78f3a4760642e63b4840ee7093a7cd9
   CJBaseUIKit-Swift: e9fb305e1d7785b919a5877e06c4efd342ef98e6
   CJBaseUtil: 1e6b81026b1b0613a41866825cc055092bfb9faa
   CJBaseUtil-Swift: 837f333ad19be6e2df8467f965c8735560a7c085
-  CJDataVientianeSDK: 7d1ef0fa9926f158dcaa2f48e6ef71e8f9d0ae53
+  CJDataVientianeSDK: 918b9a894f64d152a59f4277d0e648d3108e27b5
   CJFile: 6c1e6d55b3b94e8afbaa9f413f131301d15fdc48
   CJFoundation: e170ae85eff487b91ce5ac7c711bfbc3ec5d9919
   CJPopupAction: 0f0a424a44b46d3582e0d4a90f14f15e70255436

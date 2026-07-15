@@ -13,7 +13,7 @@
   },
   "source": {
     "git": "https://github.com/dvlproad/CJUIKit.git",
-    "tag": "CJBaseUIKit_0.9.0"
+    "tag": "CJBaseUIKit_0.9.0_1"
   },
   "source_files": "CJBaseUIKit/*.{h,m}",
   "frameworks": "UIKit",
@@ -101,7 +101,8 @@
       "name": "UITextView",
       "source_files": "CJBaseUIKit/UITextView/**/*.{h,m}",
       "dependencies": {
-        "CJBaseUIKit/UITextHeightCenterCJHelper": []
+        "CJBaseUIKit/UITextHeightCenterCJHelper": [],
+        "CJDataVientianeSDK/UITextInputHeightCJHelper": []
       }
     },
     {

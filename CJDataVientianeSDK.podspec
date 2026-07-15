@@ -9,18 +9,20 @@
 # 1、CJBaseUIKit/UITextInputCJHelper/Helper 里的 
 # ①CJSubStringUtil.h  指定位置、指定范围、最大长度字符串获取的方法
 # ②UITextInputLimitCJHelper.h 复制粘贴新字符串获取的方法
-# 2、CJBaseUIKit/UITextHeightCenterCJHelper/Helper 里的 
-# UITextInputHeightCJHelper.h 文本在指定宽度下的高度计算
+# 2、CJBaseUIKit/UITextHeightCenterCJHelper/Helper 里的 UITextInputHeightCJHelper.h 文本在指定宽度下的高度计算
+# 3、CJBaseHelper/NSCalendarCJHelper 里的 NSCalendarCJHelper.h 通过 NSCalendar 类，来计算 NSDate 的相等判断或者加减日期等方法的工具
 
-# 即从0.9.0开始，
+# 即
+# CJBaseUIKit：从0.9.0开始，
 # 1、①指定位置、指定范围、最大长度字符串获取；1②复制粘贴新字符串获取的方法，已移动到 CJDataVientianeSDK
 # 2、文本在指定宽度下的高度计算，已移动到 CJDataVientianeSDK
-
+# CJBaseHelper：从0.2.0开始，
+# 1、CJBaseHelper/NSCalendarCJHelper，已移动到 CJDataVientianeSDK
 
 
 Pod::Spec.new do |s|
   s.name         = "CJDataVientianeSDK"
-  s.version      = "0.0.1"
+  s.version      = "0.0.2"
   s.summary      = "数据万象SDK"
   s.homepage     = "https://github.com/dvlproad/CJUIKit"
   s.license      = "MIT"
@@ -28,9 +30,10 @@ Pod::Spec.new do |s|
 
   s.description  = <<-DESC
                  Demo，可按需独立引入：
-                 • CQDemoKit/CJSubStringUtil - 指定位置、指定范围、最大长度字符串获取的方法
-                 • CQDemoKit/UITextInputLimitCJHelper - 复制粘贴新字符串获取的方法
-                 • CQDemoKit/UITextInputHeightCJHelper - 文本在指定宽度下的高度计算
+                 • CJDataVientianeSDK/CJSubStringUtil - 指定位置、指定范围、最大长度字符串获取的方法
+                 • CJDataVientianeSDK/UITextInputLimitCJHelper - 复制粘贴新字符串获取的方法
+                 • CJDataVientianeSDK/UITextInputHeightCJHelper - 文本在指定宽度下的高度计算
+                 • CJDataVientianeSDK/NSCalendarCJHelper - 通过 NSCalendar 类，来计算 NSDate 的相等判断或者加减日期等方法的工具
 
                  每个子库可独立引入，详见各子库描述。
                  DESC
@@ -40,7 +43,7 @@ Pod::Spec.new do |s|
   s.platform     = :ios, "9.0"
   s.swift_version = '5.0'
 
-  s.source       = { :git => "https://github.com/dvlproad/CJUIKit", :tag => "CJDataVientianeSDK_0.0.1_1" }
+  s.source       = { :git => "https://github.com/dvlproad/CJUIKit", :tag => "CJDataVientianeSDK_0.0.2" }
   # s.source_files  = "CJBaseUtil/*.{h,m}"
   # s.resources = "CJBaseUtil/**/*.{png}"
   s.frameworks = 'UIKit'
@@ -67,6 +70,11 @@ Pod::Spec.new do |s|
   # 文本在指定宽度下的高度计算
   s.subspec 'UITextInputHeightCJHelper' do |ss|
     ss.source_files = "CJDataVientianeSDK/UITextInputHeightCJHelper/**/*.{h,m}"
+  end
+  
+  # 通过 NSCalendar 类，来计算 NSDate 的相等判断或者加减日期等方法的工具
+  s.subspec 'NSCalendarCJHelper' do |ss|
+    ss.source_files = "CJDataVientianeSDK/NSCalendarCJHelper/**/*.{h,m}"
   end
 
 end

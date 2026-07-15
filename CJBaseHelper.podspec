@@ -4,7 +4,7 @@ Pod::Spec.new do |s|
   # pod的本地索引文件：~/Library/Caches/CocoaPods/search_index.json
   # pod的owner操作：https://www.jianshu.com/p/a9b8c2a1f3cf
   s.name         = "CJBaseHelper"
-  s.version      = "0.1.9"
+  s.version      = "0.2.0"
   s.summary      = "自定义的基础帮助类"
   s.homepage     = "https://github.com/dvlproad/CJUIKit.git"
   s.license      = "MIT"
@@ -17,7 +17,6 @@ Pod::Spec.new do |s|
                  • CJBaseHelper/HookCJHelper - Hook帮助类
                  • CJBaseHelper/UIViewControllerCJHelper - 视图控制器帮助类：包含获取当前显示的视图控制器和通过视图找到它所在的视图控制器等
                  • CJBaseHelper/NSDateFormatterCJHelper - NSDateFormatter帮助类
-                 • CJBaseHelper/NSCalendarCJHelper - NSCalendar帮助类
                  • CJBaseHelper/NSOperationQueueCJHelper - NSOperationQueue 多任务处理帮助类（搜索功能常常需要的多线程处理）
                  • CJBaseHelper/WebCJHelper - Web帮助类，包含清除缓存问题等
                  • CJBaseHelper/AuthorizationCJHelper - 权限判断及系统设置打开
@@ -29,9 +28,9 @@ Pod::Spec.new do |s|
 
   # s.social_media_url   = "http://twitter.com/dvlproad"
 
-  s.platform     = :ios, "8.0"
+  s.platform     = :ios, "9.0"
 
-  s.source       = { :git => "https://github.com/dvlproad/CJUIKit.git", :tag => "CJBaseHelper_0.1.9" }
+  s.source       = { :git => "https://github.com/dvlproad/CJUIKit.git", :tag => "CJBaseHelper_0.2.0" }
   # s.source_files  = "CJBaseUtil/*.{h,m}"
   # s.resources = "CJBaseUtil/**/*.{png}"
   s.frameworks = 'UIKit'
@@ -67,11 +66,6 @@ Pod::Spec.new do |s|
   # NSDateFormatter帮助类
   s.subspec 'NSDateFormatterCJHelper' do |ss|
     ss.source_files = "CJBaseHelper/CJBaseHelper/NSDateFormatterCJHelper/**/*.{h,m}"
-  end
-
-  # NSCalendar帮助类
-  s.subspec 'NSCalendarCJHelper' do |ss|
-    ss.source_files = "CJBaseHelper/CJBaseHelper/NSCalendarCJHelper/**/*.{h,m}"
   end
 
   # NSOperationQueue 多任务处理帮助类（搜索功能常常需要的多线程处理）

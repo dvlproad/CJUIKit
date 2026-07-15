@@ -9,7 +9,6 @@
 #import "HelperHomeViewController.h"
 
 #import "NSObjectCJHelperViewController.h"
-#import "NSCalendarCJHelperViewController.h"
 #import "AuthorizationCJHelperViewController.h"
 #import "PresentAViewController.h"
 
@@ -34,12 +33,6 @@
             CQDMModuleModel *helperModule = [[CQDMModuleModel alloc] init];
             helperModule.title = @"NSObjectCJHelper";
             helperModule.classEntry = [NSObjectCJHelperViewController class];
-            [sectionDataModel.values addObject:helperModule];
-        }
-        {
-            CQDMModuleModel *helperModule = [[CQDMModuleModel alloc] init];
-            helperModule.title = @"NSCalendarCJHelper";
-            helperModule.classEntry = [NSCalendarCJHelperViewController class];
             [sectionDataModel.values addObject:helperModule];
         }
         {
