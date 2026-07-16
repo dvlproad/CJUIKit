@@ -11,7 +11,7 @@
 @implementation CJDataUtil (Value)
 
 /* 完整的描述请参见文件头部 */
-+ (NSString *)stringValueForDataSelector:(SEL)dataSelector inDataModel:(id)dataModel {
++ (nullable NSString *)stringValueForDataSelector:(nullable SEL)dataSelector inDataModel:(id)dataModel {
     NSString *resultValue = @"";
     if (dataSelector) {
         if([dataModel respondsToSelector:dataSelector])
@@ -33,7 +33,7 @@
 }
 
 /* 完整的描述请参见文件头部 */
-+ (NSArray *)arrayValueForDataSelector:(SEL)dataSelector inDataModel:(id)dataModel {
++ (nullable NSArray *)arrayValueForDataSelector:(nullable SEL)dataSelector inDataModel:(id)dataModel {
     NSArray *resultArray = nil;
     if (dataSelector) {
         if([dataModel respondsToSelector:dataSelector])

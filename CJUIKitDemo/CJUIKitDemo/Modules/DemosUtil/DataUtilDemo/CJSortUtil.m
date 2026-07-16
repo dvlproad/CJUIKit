@@ -10,7 +10,7 @@
 
 @implementation CJSortUtil
 
-/**
+/*
  *  冒泡排序
  *
  *  @param array        要排序的数组
@@ -35,7 +35,7 @@
 
 
 
-/**
+/*
  *  选择排序
  *
  *  @param array        要排序的数组
@@ -56,7 +56,7 @@
 }
 
 
-/**
+/*
  *  快速排序
  *
  *  @param array        要排序的数组

@@ -8,11 +8,9 @@
 
 #import "TestTextFieldOffsetTableViewCell.h"
 #import <Masonry/Masonry.h>
+#import <CQDemoKit/CQTSMinusAddView.h>
 #import <CJBaseUIKit/UIImage+CJCreate.h>
 #import <CJBaseUIKit/UIButton+CJMoreProperty.h>
-
-#import "DemoLabelFactory.h"
-#import "DemoTextFieldFactory.h"
 
 @interface TestTextFieldOffsetTableViewCell () {
     
@@ -24,10 +22,10 @@
 @property (nonatomic, assign) CGFloat rightViewRightOffset; /**< 右视图距右边框的距离 */
 @property (nonatomic, assign) CGFloat rightViewLeftOffset;  /**< 右视图距文字的距离 */
 
-@property (nonatomic, strong) CJTextField *leftViewLeftOffsetTextField;   /**< 左视图距左边框的距离 */
-@property (nonatomic, strong) CJTextField *leftViewRightOffsetTextField;  /**< 左视图距文字的距离 */
-@property (nonatomic, strong) CJTextField *rightViewRightOffsetTextField; /**< 右视图距右边框的距离 */
-@property (nonatomic, strong) CJTextField *rightViewLeftOffsetTextField;  /**< 右视图距文字的距离 */
+@property (nonatomic, strong) CQTSMinusAddView *leftViewLeftOffsetTextField;   /**< 左视图距左边框的距离 */
+@property (nonatomic, strong) CQTSMinusAddView *leftViewRightOffsetTextField;  /**< 左视图距文字的距离 */
+@property (nonatomic, strong) CQTSMinusAddView *rightViewRightOffsetTextField; /**< 右视图距右边框的距离 */
+@property (nonatomic, strong) CQTSMinusAddView *rightViewLeftOffsetTextField;  /**< 右视图距文字的距离 */
 
 @end
 
@@ -64,7 +62,11 @@
     
     UIView *parentView = view;
     
-    UILabel *changeExplainLabel = [DemoLabelFactory testExplainLabel];
+    UILabel *changeExplainLabel = [[UILabel alloc] initWithFrame:CGRectZero];
+    changeExplainLabel.backgroundColor = [UIColor cyanColor];
+    changeExplainLabel.textAlignment = NSTextAlignmentLeft;
+    changeExplainLabel.font = [UIFont systemFontOfSize:14];
+    changeExplainLabel.numberOfLines = 0;
     [parentView addSubview:changeExplainLabel];
     [changeExplainLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.mas_equalTo(parentView).mas_offset(0);
@@ -120,7 +122,11 @@
     }];
     
     
-    UILabel *extraResultLabel = [DemoLabelFactory testExplainLabel];
+    UILabel *extraResultLabel = [[UILabel alloc] initWithFrame:CGRectZero];
+    extraResultLabel.backgroundColor = [UIColor cyanColor];
+    extraResultLabel.textAlignment = NSTextAlignmentLeft;
+    extraResultLabel.font = [UIFont systemFontOfSize:14];
+    extraResultLabel.numberOfLines = 0;
     [parentView addSubview:extraResultLabel];
     [extraResultLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.mas_equalTo(changeExplainLabel);
@@ -189,75 +195,92 @@
 }
 
 /// 左视图距左边框的距离
-- (CJTextField *)leftViewLeftOffsetTextField {
+- (CQTSMinusAddView *)leftViewLeftOffsetTextField {
     if (_leftViewLeftOffsetTextField == nil) {
-        _leftViewLeftOffsetTextField = [DemoTextFieldFactory textFieldWhichTextOnlyFromPickerView:nil   leftButtonHandle:^(UIButton *button) {
+        _leftViewLeftOffsetTextField = [[CQTSMinusAddView alloc] initWithMinusHandle:^(UIButton *button) {
             self->_leftViewLeftOffset--;
             self->_leftViewLeftOffsetTextField.text = [NSString stringWithFormat:@"%.0f", self->_leftViewLeftOffset];
             [self __updateTFLayout];
-        } rightButtonHandle:^(UIButton *button) {
+        } addHandle:^(UIButton *button) {
             self->_leftViewLeftOffset++;
             self->_leftViewLeftOffsetTextField.text = [NSString stringWithFormat:@"%.0f", self->_leftViewLeftOffset];
             [self __updateTFLayout];
         }];
-        _leftViewLeftOffsetTextField.placeholder = @"左视图距左边框的距离";
+        // textField 没有 minimumScaleFactor 属性
+        NSString *placeholder = @"左视图距左边框的距离";
+        NSMutableAttributedString *attributedPlaceholder = [self __attributedPlaceholder:placeholder];
+        _leftViewLeftOffsetTextField.textField.attributedPlaceholder = attributedPlaceholder;
     }
     return _leftViewLeftOffsetTextField;
 }
 
 /// 左视图距文字的距离
-- (CJTextField *)leftViewRightOffsetTextField {
+- (CQTSMinusAddView *)leftViewRightOffsetTextField {
     if (_leftViewRightOffsetTextField == nil) {
-        _leftViewRightOffsetTextField = [DemoTextFieldFactory textFieldWhichTextOnlyFromPickerView:nil   leftButtonHandle:^(UIButton *button) {
+        _leftViewRightOffsetTextField = [[CQTSMinusAddView alloc] initWithMinusHandle:^(UIButton *button) {
             self->_leftViewRightOffset--;
             self->_leftViewRightOffsetTextField.text = [NSString stringWithFormat:@"%.0f", self->_leftViewRightOffset];
             [self __updateTFLayout];
-        } rightButtonHandle:^(UIButton *button) {
+        } addHandle:^(UIButton *button) {
             self->_leftViewRightOffset++;
             self->_leftViewRightOffsetTextField.text = [NSString stringWithFormat:@"%.0f", self->_leftViewRightOffset];
             [self __updateTFLayout];
         }];
-        _leftViewRightOffsetTextField.placeholder = @"左视图距文字的距离";
+        NSString *placeholder = @"左视图距文字的距离";
+        NSMutableAttributedString *attributedPlaceholder = [self __attributedPlaceholder:placeholder];
+        _leftViewRightOffsetTextField.textField.attributedPlaceholder = attributedPlaceholder;
     }
     return _leftViewRightOffsetTextField;
 }
 
 
 /// 右视图距文字的距离
-- (CJTextField *)rightViewLeftOffsetTextField {
+- (CQTSMinusAddView *)rightViewLeftOffsetTextField {
     if (_rightViewLeftOffsetTextField == nil) {
-        _rightViewLeftOffsetTextField = [DemoTextFieldFactory textFieldWhichTextOnlyFromPickerView:nil   leftButtonHandle:^(UIButton *button) {
+        _rightViewLeftOffsetTextField = [[CQTSMinusAddView alloc] initWithMinusHandle:^(UIButton *button) {
             self->_rightViewLeftOffset--;
             self->_rightViewLeftOffsetTextField.text = [NSString stringWithFormat:@"%.0f", self->_rightViewLeftOffset];
             [self __updateTFLayout];
-        } rightButtonHandle:^(UIButton *button) {
+        } addHandle:^(UIButton *button) {
             self->_rightViewLeftOffset++;
             self->_rightViewLeftOffsetTextField.text = [NSString stringWithFormat:@"%.0f", self->_rightViewLeftOffset];
             [self __updateTFLayout];
         }];
-        _rightViewLeftOffsetTextField.placeholder = @"右视图距文字的距离";
+        NSString *placeholder = @"右视图距文字的距离";
+        NSMutableAttributedString *attributedPlaceholder = [self __attributedPlaceholder:placeholder];
+        _rightViewLeftOffsetTextField.textField.attributedPlaceholder = attributedPlaceholder;
     }
     return _rightViewLeftOffsetTextField;
 }
 
 /// 右视图距右边框的距离
-- (CJTextField *)rightViewRightOffsetTextField {
+- (CQTSMinusAddView *)rightViewRightOffsetTextField {
     if (_rightViewRightOffsetTextField == nil) {
-        _rightViewRightOffsetTextField = [DemoTextFieldFactory textFieldWhichTextOnlyFromPickerView:nil   leftButtonHandle:^(UIButton *button) {
+        _rightViewRightOffsetTextField = [[CQTSMinusAddView alloc] initWithMinusHandle:^(UIButton *button) {
             self->_rightViewRightOffset--;
             self->_rightViewRightOffsetTextField.text = [NSString stringWithFormat:@"%.0f", self->_rightViewRightOffset];
             [self __updateTFLayout];
-        } rightButtonHandle:^(UIButton *button) {
+        } addHandle:^(UIButton *button) {
             self->_rightViewRightOffset++;
             self->_rightViewRightOffsetTextField.text = [NSString stringWithFormat:@"%.0f", self->_rightViewRightOffset];
             [self __updateTFLayout];
         }];
-        _rightViewRightOffsetTextField.placeholder = @"右视图距右边框的距离";
+        NSString *placeholder = @"右视图距右边框的距离";
+        NSMutableAttributedString *attributedPlaceholder = [self __attributedPlaceholder:placeholder];
+        _rightViewRightOffsetTextField.textField.attributedPlaceholder = attributedPlaceholder;
     }
     return _rightViewRightOffsetTextField;
 }
 
 
+#pragma mark - Private Method
+- (NSMutableAttributedString *)__attributedPlaceholder:(NSString *)placeholder {
+    NSMutableAttributedString *attributedPlaceholder = [[NSMutableAttributedString alloc] initWithString:placeholder];
+    [attributedPlaceholder addAttribute:NSFontAttributeName
+                                  value:[UIFont systemFontOfSize:11]
+                                  range:NSMakeRange(0, placeholder.length)];
+    return attributedPlaceholder;
+}
 
 
 

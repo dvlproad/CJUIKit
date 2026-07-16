@@ -1,1 +1,1 @@
-../../../CQDemoKit/CQDemoKit/BaseUIKit/image/CQTSImageLoader.h
+../../../CQDemoKit/CQDemoKit/BaseUIKit/ImageLoader/CQTSImageLoader.h

@@ -139,12 +139,10 @@
         }
         {
             CQDMModuleModel *dataUtilModule = [[CQDMModuleModel alloc] init];
-            dataUtilModule.title = @"DataUtil";
+            dataUtilModule.title = @"PinyinUtil";
             dataUtilModule.classEntry = [DataUtilViewController class];
-            dataUtilModule.isCreateByXib = YES;
             [sectionDataModel.values addObject:dataUtilModule];
         }
-        
         
         {
             CQDMModuleModel *keyboardUtilModule = [[CQDMModuleModel alloc] init];

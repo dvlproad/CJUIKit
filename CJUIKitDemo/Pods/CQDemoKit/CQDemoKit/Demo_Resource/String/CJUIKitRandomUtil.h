@@ -5,6 +5,7 @@
 //  Created by ciyouzen on 2020/11/13.
 //  Copyright © 2020 dvlproad. All rights reserved.
 //
+//  获取随机值的工具(颜色、字符串、中文名字等)
 
 #import <Foundation/Foundation.h>
 

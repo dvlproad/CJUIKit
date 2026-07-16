@@ -6,9 +6,9 @@
 //  Copyright © 2017年 dvlproad. All rights reserved.
 //
 
-#import "CJUIKitBaseTextViewController.h"
+#import "CQTSShortBaseAutoTestMethodViewController.h"
 
-@interface AStringLengthViewController : CJUIKitBaseTextViewController
+@interface AStringLengthViewController : CQTSShortBaseAutoTestMethodViewController
 
 
 @end

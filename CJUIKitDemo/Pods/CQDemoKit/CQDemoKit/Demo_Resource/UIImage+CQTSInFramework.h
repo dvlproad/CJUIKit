@@ -5,6 +5,7 @@
 //  Created by ciyouzen on 2017/2/25.
 //  Copyright © 2017年 dvlproad. All rights reserved.
 //
+//  InFramework中的操作(获取resourceBundle等)
 
 #import <UIKit/UIKit.h>
 

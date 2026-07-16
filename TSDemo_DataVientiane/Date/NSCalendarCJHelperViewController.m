@@ -7,7 +7,6 @@
 //
 
 #import "NSCalendarCJHelperViewController.h"
-#import "TestValueChangeTableViewCell.h"    // 涉及到文本高度计算
 #import <CJDataVientianeSDK/NSCalendarCJHelper.h>
 
 @interface NSCalendarCJHelperViewController () 
@@ -37,21 +36,21 @@
     return date;
 }
 
+
+- (CQTSManualTestMethodModel *)calendarValueChangeModel {
+    CQTSManualTestMethodModel *valueChangeModel = [[CQTSManualTestMethodModel alloc] initWithValue:[NSDate date] textFromValueBlock:^NSString *(id value) {
+        NSString *string = [self yyyyMMddHHmmss_stringFromDate:value];
+        return string;
+    } valueFromTextBlock:^id(NSString *string) {
+        NSDate *date = [self yyyyMMddHHmmss_dateFromString:string];
+        return date;
+    }];
+    return valueChangeModel;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    
-    UITableView *tableView = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStyleGrouped];
-    tableView.keyboardDismissMode = UIScrollViewKeyboardDismissModeOnDrag;  //视图滚动时候自动收起键盘
-    [tableView registerClass:[TestValueChangeTableViewCell class] forCellReuseIdentifier:@"TestValueChangeTableViewCell"];
-    tableView.dataSource = self;
-    tableView.delegate = self;
-    [self.view addSubview:tableView];
-    [tableView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.edges.mas_equalTo(self.view);
-    }];
-    self.tableView = tableView;
-    
     
 //    NSMutableArray *sectionDataModels = [[NSMutableArray alloc] init];
 //    self.sectionDataModels = sectionDataModels;
@@ -62,7 +61,7 @@
         CQDMSectionDataModel *sectionDataModel = [[CQDMSectionDataModel alloc] init];
         sectionDataModel.theme = @"测试字符串";
         {
-            TestValueChangeModel *valueChangeModel = [[TestValueChangeModel alloc] initWithValue:@"20" textFromValueBlock:^NSString *(id value) {
+            CQTSManualTestMethodModel *valueChangeModel = [[CQTSManualTestMethodModel alloc] initWithValue:@"20" textFromValueBlock:^NSString *(id value) {
                 NSString *text = (NSString *)value;
                 return text;
             } valueFromTextBlock:^id(NSString *string) {
@@ -88,7 +87,7 @@
         CQDMSectionDataModel *sectionDataModel = [[CQDMSectionDataModel alloc] init];
         sectionDataModel.theme = @"测试年月日时分秒";
         {
-            TestValueChangeModel *valueChangeModel = [self calendarValueChangeModel];
+            CQTSManualTestMethodModel *valueChangeModel = [self calendarValueChangeModel];
             [valueChangeModel setupChangeExplain:@"测试<日期Year>的加减" minusHandle:^id(id oldValue) {
                 NSDate *oldDate = (NSDate *)oldValue;
                 NSDate *newDate = NSCalendarCJHelper_addYears(-1, oldDate);
@@ -101,7 +100,7 @@
             [sectionDataModel.values addObject:valueChangeModel];
         }
         {
-            TestValueChangeModel *valueChangeModel = [self calendarValueChangeModel];
+            CQTSManualTestMethodModel *valueChangeModel = [self calendarValueChangeModel];
             [valueChangeModel setupChangeExplain:@"测试<日期Month>的加减" minusHandle:^id(id oldValue) {
                 return NSCalendarCJHelper_addMonths(-1, (NSDate *)oldValue);
             } addHandle:^id(id oldValue) {
@@ -110,7 +109,7 @@
             [sectionDataModel.values addObject:valueChangeModel];
         }
         {
-            TestValueChangeModel *valueChangeModel = [self calendarValueChangeModel];
+            CQTSManualTestMethodModel *valueChangeModel = [self calendarValueChangeModel];
             [valueChangeModel setupChangeExplain:@"测试<日期Day>的加减" minusHandle:^id(id oldValue) {
                 return NSCalendarCJHelper_addDays(-1, (NSDate *)oldValue);
             } addHandle:^id(id oldValue) {
@@ -119,7 +118,7 @@
             [sectionDataModel.values addObject:valueChangeModel];
         }
         {
-            TestValueChangeModel *valueChangeModel = [self calendarValueChangeModel];
+            CQTSManualTestMethodModel *valueChangeModel = [self calendarValueChangeModel];
             [valueChangeModel setupChangeExplain:@"测试<日期Hour>的加减" minusHandle:^id(id oldValue) {
                 return NSCalendarCJHelper_addUnits((NSDate *)oldValue, -1, NSCalendarUnitHour);
             } addHandle:^id(id oldValue) {
@@ -128,7 +127,7 @@
             [sectionDataModel.values addObject:valueChangeModel];
         }
         {
-            TestValueChangeModel *valueChangeModel = [self calendarValueChangeModel];
+            CQTSManualTestMethodModel *valueChangeModel = [self calendarValueChangeModel];
             [valueChangeModel setupChangeExplain:@"测试<日期Minute>的加减" minusHandle:^id(id oldValue) {
                 return NSCalendarCJHelper_addUnits((NSDate *)oldValue, -1, NSCalendarUnitMinute);
             } addHandle:^id(id oldValue) {
@@ -137,7 +136,7 @@
             [sectionDataModel.values addObject:valueChangeModel];
         }
         {
-            TestValueChangeModel *valueChangeModel = [self calendarValueChangeModel];
+            CQTSManualTestMethodModel *valueChangeModel = [self calendarValueChangeModel];
             [valueChangeModel setupChangeExplain:@"测试<日期Second>的加减" minusHandle:^id(id oldValue) {
                 return NSCalendarCJHelper_addUnits((NSDate *)oldValue, -1, NSCalendarUnitSecond);
             } addHandle:^id(id oldValue) {
@@ -154,7 +153,7 @@
         CQDMSectionDataModel *sectionDataModel = [[CQDMSectionDataModel alloc] init];
         sectionDataModel.theme = @"测试获取第一天和最后一天";
         {
-            TestValueChangeModel *valueChangeModel = [self calendarValueChangeModel];
+            CQTSManualTestMethodModel *valueChangeModel = [self calendarValueChangeModel];
             [valueChangeModel setupChangeExplain:@"获取第一天和最后一天" minusHandle:^id(id oldValue) {
                 return NSCalendarCJHelper_addDays(-1, (NSDate *)oldValue);
             } addHandle:^id(id oldValue) {
@@ -187,7 +186,7 @@
         CQDMSectionDataModel *sectionDataModel = [[CQDMSectionDataModel alloc] init];
         sectionDataModel.theme = @"测试获取<每周>第一天和最后一天之间的数组";
         {
-            TestValueChangeModel *valueChangeModel = [self calendarValueChangeModel];
+            CQTSManualTestMethodModel *valueChangeModel = [self calendarValueChangeModel];
             [valueChangeModel setupChangeExplain:@"测试获取<每周>第一天和最后一天之间的数组" minusHandle:^id(id oldValue) {
                 return NSCalendarCJHelper_addDays(-1, (NSDate *)oldValue);
             } addHandle:^id(id oldValue) {
@@ -230,7 +229,7 @@
         CQDMSectionDataModel *sectionDataModel = [[CQDMSectionDataModel alloc] init];
         sectionDataModel.theme = @"测试获取<每月>第一天和最后一天之间的数组";
         {
-            TestValueChangeModel *valueChangeModel = [self calendarValueChangeModel];
+            CQTSManualTestMethodModel *valueChangeModel = [self calendarValueChangeModel];
             [valueChangeModel setupChangeExplain:@"测试获取<每月>第一天和最后一天之间的数组" minusHandle:^id(id oldValue) {
                 return NSCalendarCJHelper_addMonths(-1, (NSDate *)oldValue);
             } addHandle:^id(id oldValue) {
@@ -268,47 +267,6 @@
     }
     
     self.sectionDataModels = sectionDataModels;
-}
-
-- (TestValueChangeModel *)calendarValueChangeModel {
-    TestValueChangeModel *valueChangeModel = [[TestValueChangeModel alloc] initWithValue:[NSDate date] textFromValueBlock:^NSString *(id value) {
-        NSString *string = [self yyyyMMddHHmmss_stringFromDate:value];
-        return string;
-    } valueFromTextBlock:^id(NSString *string) {
-        NSDate *date = [self yyyyMMddHHmmss_dateFromString:string];
-        return date;
-    }];
-    return valueChangeModel;
-}
-
-#pragma mark - UITableViewDataSource & UITableViewDelegate
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return self.sectionDataModels.count;
-}
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    CQDMSectionDataModel *sectionDataModel = [self.sectionDataModels objectAtIndex:section];
-    NSArray *dataModels = sectionDataModel.values;
-    
-    return dataModels.count;
-}
-
-- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
-    CQDMSectionDataModel *sectionDataModel = [self.sectionDataModels objectAtIndex:section];
-    
-    NSString *indexTitle = sectionDataModel.theme;
-    return indexTitle;
-}
-
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    CQDMSectionDataModel *sectionDataModel = [self.sectionDataModels objectAtIndex:indexPath.section];
-    NSArray *dataModels = sectionDataModel.values;
-    TestValueChangeModel *valueChangeModel = [dataModels objectAtIndex:indexPath.row];
-    
-    TestValueChangeTableViewCell *cell = (TestValueChangeTableViewCell *)[tableView dequeueReusableCellWithIdentifier:@"TestValueChangeTableViewCell" forIndexPath:indexPath];
-    cell.valueChangeModel = valueChangeModel;
-    
-    return cell;
 }
 
 

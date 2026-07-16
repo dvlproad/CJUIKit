@@ -41,7 +41,7 @@
         sectionDataModel.theme = @"长度计算使用【系统length算法】的时候的最大字符串\n(注意：以下每个都不能删，都得通过\n以下每个都不能删，都得通过\n以下每个都不能删，都得通过\n)\n情况1：能插全部";
         {
             // 情况1：能插全部
-            CJDealTextModel *dealTextModel = [[CJDealTextModel alloc] init];
+            CQTSAutoTestMethodModel *dealTextModel = [[CQTSAutoTestMethodModel alloc] init];
             dealTextModel.placeholder = @"请输入变更前的完整字符串";
             dealTextModel.text = @"向上upup";
             dealTextModel.hopeResultText = @"一二三123向上upup";
@@ -70,7 +70,7 @@
 
         {
             // 情况2：能插部分
-            CJDealTextModel *dealTextModel = [[CJDealTextModel alloc] init];
+            CQTSAutoTestMethodModel *dealTextModel = [[CQTSAutoTestMethodModel alloc] init];
             dealTextModel.placeholder = @"请输入变更前的完整字符串";
             dealTextModel.text = @"向上upup";
             dealTextModel.hopeResultText = @"一二三四五12向上upup";
@@ -100,7 +100,7 @@
         
         {
             // 情况3：都不能插的情况1
-            CJDealTextModel *dealTextModel = [[CJDealTextModel alloc] init];
+            CQTSAutoTestMethodModel *dealTextModel = [[CQTSAutoTestMethodModel alloc] init];
             dealTextModel.placeholder = @"请输入变更前的完整字符串";
             dealTextModel.text = @"好好学习天天向上向上";
             dealTextModel.hopeResultText = @"好好学习天天向上向上";
@@ -117,7 +117,7 @@
         
         {
             // 情况3：都不能插的情况2
-            CJDealTextModel *dealTextModel = [[CJDealTextModel alloc] init];
+            CQTSAutoTestMethodModel *dealTextModel = [[CQTSAutoTestMethodModel alloc] init];
             dealTextModel.placeholder = @"请输入变更前的完整字符串";
             dealTextModel.text = @"好好学习天天向上好好学习天天向上";
             dealTextModel.hopeResultText = @"好好学习天天向上好好";

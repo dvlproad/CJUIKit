@@ -37,10 +37,10 @@
 
 #pragma mark - 将价钱'分'按(四舍五入)处理到价钱'元'的后两位，并最终以(最多)保留2位小数的方式输出价钱'元'(即会对小数部分的结尾是0的小数数字不显示)
 /// 将价钱'分'按(四舍五入)处理到价钱'元'的后两位，并最终以(最多)保留2位小数的方式输出价钱'元'(即会对小数部分的结尾是0的小数数字不显示)
-- (NSMutableArray<CJDealTextModel *> *)dealTextModels_priceYuanToYuanD2_decimalCountMax2_Round {
-    NSMutableArray<CJDealTextModel *> *dealTextModels = [[NSMutableArray alloc] init];
+- (NSMutableArray<CQTSAutoTestMethodModel *> *)dealTextModels_priceYuanToYuanD2_decimalCountMax2_Round {
+    NSMutableArray<CQTSAutoTestMethodModel *> *dealTextModels = [[NSMutableArray alloc] init];
     {
-        CJDealTextModel *dealTextModel = [[CJDealTextModel alloc] init];
+        CQTSAutoTestMethodModel *dealTextModel = [[CQTSAutoTestMethodModel alloc] init];
         dealTextModel.placeholder = @"请输入要验证的值";
         dealTextModel.text = @"9.555";
         dealTextModel.hopeResultText = @"9.56";
@@ -52,7 +52,7 @@
         [dealTextModels addObject:dealTextModel];
     }
     {
-        CJDealTextModel *dealTextModel = [[CJDealTextModel alloc] init];
+        CQTSAutoTestMethodModel *dealTextModel = [[CQTSAutoTestMethodModel alloc] init];
         dealTextModel.placeholder = @"请输入要验证的值";
         dealTextModel.text = @"9.544";
         dealTextModel.hopeResultText = @"9.54";
@@ -64,7 +64,7 @@
         [dealTextModels addObject:dealTextModel];
     }
     {
-        CJDealTextModel *dealTextModel = [[CJDealTextModel alloc] init];
+        CQTSAutoTestMethodModel *dealTextModel = [[CQTSAutoTestMethodModel alloc] init];
         dealTextModel.placeholder = @"请输入要验证的值";
         dealTextModel.text = @"9.50";
         dealTextModel.hopeResultText = @"9.5";

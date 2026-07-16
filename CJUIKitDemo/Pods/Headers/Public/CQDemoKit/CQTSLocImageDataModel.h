@@ -1,1 +1,1 @@
-../../../CQDemoKit/CQDemoKit/Demo_Resource/LocDataModel/CQTSLocImageDataModel.h
+../../../CQDemoKit/CQDemoKit/Demo_Resource/ImageModel/CQTSLocImageDataModel.h

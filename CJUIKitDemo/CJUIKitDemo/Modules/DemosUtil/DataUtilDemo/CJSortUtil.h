@@ -12,21 +12,21 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface CJSortUtil : NSObject
 
-/**
+/*
  *  冒泡排序
  *
  *  @param array        要排序的数组
  */
 + (void)maopaoSortArray:(NSMutableArray *)array;
 
-/**
+/*
  *  选择排序
  *
  *  @param array        要排序的数组
  */
 + (void)choseSortArray:(NSMutableArray *)array;
 
-/**
+/*
  *  快速排序
  *
  *  @param array        要排序的数组

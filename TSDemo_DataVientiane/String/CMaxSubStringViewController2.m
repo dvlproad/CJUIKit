@@ -30,7 +30,7 @@
         CQDMSectionDataModel *sectionDataModel = [[CQDMSectionDataModel alloc] init];
         sectionDataModel.theme = @"长度计算使用【自定义cj_length算法】的时候的最大字符串\n(注意：以下每个都不能删，都得通过\n以下每个都不能删，都得通过\n以下每个都不能删，都得通过\n)";
         {
-            CJDealTextModel *dealTextModel = [[CJDealTextModel alloc] init];
+            CQTSAutoTestMethodModel *dealTextModel = [[CQTSAutoTestMethodModel alloc] init];
             dealTextModel.placeholder = @"请输入截取的操作对象";
             dealTextModel.text = @"一二三四五六七八九十01234567890壹贰叁肆伍陆柒捌玖拾";
             dealTextModel.hopeResultText = @"一二";
@@ -43,7 +43,7 @@
             [sectionDataModel.values addObject:dealTextModel];
         }
         {
-            CJDealTextModel *dealTextModel = [[CJDealTextModel alloc] init];
+            CQTSAutoTestMethodModel *dealTextModel = [[CQTSAutoTestMethodModel alloc] init];
             dealTextModel.placeholder = @"请输入截取的操作对象";
             dealTextModel.text = @"一二三四五六七八九十01234567890壹贰叁肆伍陆柒捌玖拾";
             dealTextModel.hopeResultText = @"一二三四五六七八九十01234";
@@ -56,7 +56,7 @@
             [sectionDataModel.values addObject:dealTextModel];
         }
         {
-            CJDealTextModel *dealTextModel = [[CJDealTextModel alloc] init];
+            CQTSAutoTestMethodModel *dealTextModel = [[CQTSAutoTestMethodModel alloc] init];
             dealTextModel.placeholder = @"请输入截取的操作对象";
             dealTextModel.text = @"一二三四五六七八九十01234567890壹贰叁肆伍陆柒捌玖拾";
             dealTextModel.hopeResultText = @"一二三四五六七八九十01234567890壹贰叁肆伍陆柒";
@@ -69,7 +69,7 @@
             [sectionDataModel.values addObject:dealTextModel];
         }
         {
-            CJDealTextModel *dealTextModel = [[CJDealTextModel alloc] init];
+            CQTSAutoTestMethodModel *dealTextModel = [[CQTSAutoTestMethodModel alloc] init];
             dealTextModel.placeholder = @"请输入截取的操作对象";
             dealTextModel.text = @"1234567890";
             dealTextModel.hopeResultText = @"1234567890";
@@ -92,7 +92,7 @@
         CQDMSectionDataModel *sectionDataModel = [[CQDMSectionDataModel alloc] init];
         sectionDataModel.theme = @"长度计算使用【自定义cj_length算法】的时候的最大字符串\n(注意：以下每个都不能删，都得通过\n以下每个都不能删，都得通过\n以下每个都不能删，都得通过\n)";
         {
-            CJDealTextModel *dealTextModel = [[CJDealTextModel alloc] init];
+            CQTSAutoTestMethodModel *dealTextModel = [[CQTSAutoTestMethodModel alloc] init];
             dealTextModel.placeholder = @"请输入截取的操作对象";
             dealTextModel.text = @"一二三四五六七八九十壹贰叁肆伍陆柒捌";
             dealTextModel.hopeResultText = @"一二三四五六七八九十";
@@ -105,7 +105,7 @@
             [sectionDataModel.values addObject:dealTextModel];
         }
         {
-            CJDealTextModel *dealTextModel = [[CJDealTextModel alloc] init];
+            CQTSAutoTestMethodModel *dealTextModel = [[CQTSAutoTestMethodModel alloc] init];
             dealTextModel.placeholder = @"请输入截取的操作对象";
             dealTextModel.text = @"一二三四五六七八九十壹贰叁肆伍陆柒捌1234567890";
             dealTextModel.hopeResultText = @"一二三四五六七八九十";
@@ -128,7 +128,7 @@
         CQDMSectionDataModel *sectionDataModel = [[CQDMSectionDataModel alloc] init];
         sectionDataModel.theme = @"长度计算使用【中文2，英文1，表情不定】的时候的最大字符串";
         {
-            CJDealTextModel *dealTextModel = [[CJDealTextModel alloc] init];
+            CQTSAutoTestMethodModel *dealTextModel = [[CQTSAutoTestMethodModel alloc] init];
             dealTextModel.placeholder = @"请输入截取的操作对象";
             dealTextModel.text = @"一二👌三四五";
             dealTextModel.hopeResultText = @"一二";
@@ -141,7 +141,7 @@
             [sectionDataModel.values addObject:dealTextModel];
         }
         {
-            CJDealTextModel *dealTextModel = [[CJDealTextModel alloc] init];
+            CQTSAutoTestMethodModel *dealTextModel = [[CQTSAutoTestMethodModel alloc] init];
             dealTextModel.placeholder = @"请输入截取的操作对象";
             dealTextModel.text = @"一👌👌三四五";
             dealTextModel.hopeResultText = @"一";
@@ -154,7 +154,7 @@
             [sectionDataModel.values addObject:dealTextModel];
         }
         {
-            CJDealTextModel *dealTextModel = [[CJDealTextModel alloc] init];
+            CQTSAutoTestMethodModel *dealTextModel = [[CQTSAutoTestMethodModel alloc] init];
             dealTextModel.placeholder = @"请输入截取的操作对象";
             dealTextModel.text = @"一👌👌三四五";
             dealTextModel.hopeResultText = @"一👌";
@@ -167,7 +167,7 @@
             [sectionDataModel.values addObject:dealTextModel];
         }
         {
-            CJDealTextModel *dealTextModel = [[CJDealTextModel alloc] init];
+            CQTSAutoTestMethodModel *dealTextModel = [[CQTSAutoTestMethodModel alloc] init];
             dealTextModel.placeholder = @"请输入截取的操作对象";
             dealTextModel.text = @"一1👌👌三四五";
             dealTextModel.hopeResultText = @"一1";

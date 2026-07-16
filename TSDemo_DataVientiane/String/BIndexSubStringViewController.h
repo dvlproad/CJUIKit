@@ -7,9 +7,9 @@
 //
 //  字符串截取（含表情，不含表情等各种情况）
 
-#import "CJUIKitBaseBigTextViewController.h"
+#import "CQTSLongBaseAutoTestMethodViewController.h"
 
-@interface BIndexSubStringViewController : CJUIKitBaseBigTextViewController
+@interface BIndexSubStringViewController : CQTSLongBaseAutoTestMethodViewController
 
 
 @end

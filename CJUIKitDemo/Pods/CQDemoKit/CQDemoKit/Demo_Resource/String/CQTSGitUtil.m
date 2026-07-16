@@ -21,7 +21,7 @@ NSString *imageUrl = [NSString stringWithFormat:@"%@/%@?raw=true", resourceDir, 
 https://raw.githubusercontent.com/dvlproad/001-UIKit-CQDemo-iOS/master/CQDemoResource/Resources/jpg/cqts_1.jpg
 */
 /*
- * 从Github中获取指定文件夹下的指定资源名的资源 RAW URL
+ * 从Github中获取指定文件夹下的指定资源名的资源 RAW Url
  *
  * @param githubUrl GitHub 仓库的基础 URL，可以是 blob 或 raw 地址
  *                  例如: @"https://github.com/dvlproad/001-UIKit-CQDemo-iOS/blob/master/CQDemoResource/Resources"

@@ -29,7 +29,7 @@
         CQDMSectionDataModel *sectionDataModel = [[CQDMSectionDataModel alloc] init];
         sectionDataModel.theme = @"截取《含表情的》字符串index=0";
         {
-            CJDealTextModel *dealTextModel = [[CJDealTextModel alloc] init];
+            CQTSAutoTestMethodModel *dealTextModel = [[CQTSAutoTestMethodModel alloc] init];
             dealTextModel.placeholder = @"请输入截取的操作对象";
             dealTextModel.text = @"好好👌学习";
             dealTextModel.hopeResultText = @"";
@@ -42,7 +42,7 @@
             [sectionDataModel.values addObject:dealTextModel];
         }
         {
-            CJDealTextModel *dealTextModel = [[CJDealTextModel alloc] init];
+            CQTSAutoTestMethodModel *dealTextModel = [[CQTSAutoTestMethodModel alloc] init];
             dealTextModel.placeholder = @"请输入截取的操作对象";
             dealTextModel.text = @"好好👌学习";
             dealTextModel.hopeResultText = @"";
@@ -63,7 +63,7 @@
         CQDMSectionDataModel *sectionDataModel = [[CQDMSectionDataModel alloc] init];
         sectionDataModel.theme = @"截取《含表情的》字符串index=3";
         {
-            CJDealTextModel *dealTextModel = [[CJDealTextModel alloc] init];
+            CQTSAutoTestMethodModel *dealTextModel = [[CQTSAutoTestMethodModel alloc] init];
             dealTextModel.placeholder = @"请输入截取的操作对象";
             dealTextModel.text = @"好好👌学习";
             dealTextModel.hopeResultText = @"好好👌";
@@ -76,7 +76,7 @@
             [sectionDataModel.values addObject:dealTextModel];
         }
         {
-            CJDealTextModel *dealTextModel = [[CJDealTextModel alloc] init];
+            CQTSAutoTestMethodModel *dealTextModel = [[CQTSAutoTestMethodModel alloc] init];
             dealTextModel.placeholder = @"请输入截取的操作对象";
             dealTextModel.text = @"好好👌学习";
             dealTextModel.hopeResultText = @"好好👌";
@@ -97,7 +97,7 @@
         CQDMSectionDataModel *sectionDataModel = [[CQDMSectionDataModel alloc] init];
         sectionDataModel.theme = @"截取《含表情的》字符串index=3";
         {
-            CJDealTextModel *dealTextModel = [[CJDealTextModel alloc] init];
+            CQTSAutoTestMethodModel *dealTextModel = [[CQTSAutoTestMethodModel alloc] init];
             dealTextModel.placeholder = @"请输入截取的操作对象";
             dealTextModel.text = @"好👌👌学习";
             dealTextModel.hopeResultText = @"好👌👌";
@@ -110,7 +110,7 @@
             [sectionDataModel.values addObject:dealTextModel];
         }
         {
-            CJDealTextModel *dealTextModel = [[CJDealTextModel alloc] init];
+            CQTSAutoTestMethodModel *dealTextModel = [[CQTSAutoTestMethodModel alloc] init];
             dealTextModel.placeholder = @"请输入截取的操作对象";
             dealTextModel.text = @"好👌👌学习";
             dealTextModel.hopeResultText = @"好👌👌";

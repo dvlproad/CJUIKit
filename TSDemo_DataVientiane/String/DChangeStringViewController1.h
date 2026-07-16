@@ -7,9 +7,9 @@
 //
 //  长度计算使用【系统length算法】的时候的最大字符串
 
-#import "CJUIKitBaseBigTextViewController.h"
+#import "CQTSLongBaseAutoTestMethodViewController.h"
 
-@interface DChangeStringViewController1 : CJUIKitBaseBigTextViewController
+@interface DChangeStringViewController1 : CQTSLongBaseAutoTestMethodViewController
 
 
 @end

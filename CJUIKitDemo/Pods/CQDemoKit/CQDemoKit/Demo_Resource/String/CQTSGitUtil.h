@@ -5,6 +5,7 @@
 //  Created by lcQian on 2020/4/7.
 //  Copyright © 2020 dvlproad. All rights reserved.
 //
+//  从git中获取指定资源Url的工具
 
 #import <Foundation/Foundation.h>
 
@@ -13,7 +14,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface CQTSGitUtil : NSObject
 
 /*
- * 从Github中获取指定文件夹下的指定资源名的资源 RAW URL
+ * 从Github中获取指定文件夹下的指定资源名的资源 RAW Url
  *
  * @param githubUrl GitHub 仓库的基础 URL，可以是 blob 或 raw 地址
  *                  例如: @"https://github.com/dvlproad/001-UIKit-CQDemo-iOS/blob/master/CQDemoResource/Resources"

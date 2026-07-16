@@ -168,7 +168,6 @@
 		78F55FFA248818E000B7B27A /* AttributedStringViewController2.m in Sources */ = {isa = PBXBuildFile; fileRef = 78F55FF9248818DF00B7B27A /* AttributedStringViewController2.m */; };
 		8008D7D220E5CF5700F98EF6 /* CallSystemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8008D7D020E5CF5700F98EF6 /* CallSystemViewController.m */; };
 		800E07E12016CCF500799B78 /* DataUtilViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 800E07D82016CCF500799B78 /* DataUtilViewController.m */; };
-		800E07E22016CCF500799B78 /* DataUtilViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 800E07DA2016CCF500799B78 /* DataUtilViewController.xib */; };
 		800E07E42016CCF500799B78 /* DeviceInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 800E07DD2016CCF500799B78 /* DeviceInfoViewController.m */; };
 		800E07E52016CCF500799B78 /* DeviceInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 800E07E02016CCF500799B78 /* DeviceInfo.m */; };
 		800E07E92016CD1500799B78 /* KeyboardUtilViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 800E07E72016CD1500799B78 /* KeyboardUtilViewController.m */; };
@@ -560,7 +559,6 @@
 		8008D7D020E5CF5700F98EF6 /* CallSystemViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CallSystemViewController.m; sourceTree = "<group>"; };
 		800E07D82016CCF500799B78 /* DataUtilViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataUtilViewController.m; sourceTree = "<group>"; };
 		800E07D92016CCF500799B78 /* DataUtilViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataUtilViewController.h; sourceTree = "<group>"; };
-		800E07DA2016CCF500799B78 /* DataUtilViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DataUtilViewController.xib; sourceTree = "<group>"; };
 		800E07DD2016CCF500799B78 /* DeviceInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeviceInfoViewController.m; sourceTree = "<group>"; };
 		800E07DE2016CCF500799B78 /* DeviceInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeviceInfo.h; sourceTree = "<group>"; };
 		800E07DF2016CCF500799B78 /* DeviceInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeviceInfoViewController.h; sourceTree = "<group>"; };
@@ -911,6 +909,8 @@
 			children = (
 				784A7214214C9DF000F8D144 /* MoreHomeViewController.h */,
 				784A7215214C9DF000F8D144 /* MoreHomeViewController.m */,
+				80FF8F0B1FC5649E00E437CF /* DemosThirdParty */,
+				80FF91831FC5682A00E437CF /* DemosOther */,
 			);
 			path = DemoMore;
 			sourceTree = "<group>";
@@ -1387,7 +1387,6 @@
 				786254BF24A9283800E3CCC3 /* CJSortUtil.m */,
 				786254C124A92EBF00E3CCC3 /* CJDataSearchUtil.h */,
 				786254C224A92EBF00E3CCC3 /* CJDataSearchUtil.m */,
-				800E07DA2016CCF500799B78 /* DataUtilViewController.xib */,
 			);
 			path = DataUtilDemo;
 			sourceTree = "<group>";
@@ -1505,8 +1504,6 @@
 				784A7213214C9DF000F8D144 /* DemoMore */,
 				8050037F211C3A29002A2306 /* DemosHelper */,
 				80FF91711FC5682A00E437CF /* DemosFoundation */,
-				80FF91831FC5682A00E437CF /* DemosOther */,
-				80FF8F0B1FC5649E00E437CF /* DemosThirdParty */,
 				80FF91B31FC581DD00E437CF /* DemosUtil */,
 				80FF8FC11FC5649E00E437CF /* DemosView */,
 			);
@@ -1958,7 +1955,6 @@
 				7861852C21D3630B004B71FF /* AppCommon.xcassets in Resources */,
 				787FDB9020500B5C008A46E3 /* icon_ddlb_hd@2x.png in Resources */,
 				7868276021AE926700FCCDE5 /* AppAssets.xcassets in Resources */,
-				800E07E22016CCF500799B78 /* DataUtilViewController.xib in Resources */,
 				80D01210210336E100D1EDF0 /* ChangeViewController.xib in Resources */,
 				800E07EA2016CD1500799B78 /* KeyboardUtilViewController.xib in Resources */,
 				97A9192225AFE8510051B902 /* iamcoming.gif in Resources */,
@@ -2064,6 +2060,7 @@
 				"${PODS_ROOT}/../../CJBaseUIKit/UIViewController/Resources/cjBackBarButtonItem@3x.png",
 				"${PODS_ROOT}/../../CJBaseUIKit/UIViewController/Resources/cjBackBarButtonItemGray@2x.png",
 				"${PODS_ROOT}/../../CJBaseUIKit/UIViewController/Resources/cjBackBarButtonItemGray@3x.png",
+				"${PODS_CONFIGURATION_BUILD_DIR}/CQDemoKit/CQDemoKit_TestMethod.bundle",
 				"${PODS_CONFIGURATION_BUILD_DIR}/CQDemoResource/CQDemoResource.bundle",
 				"${PODS_CONFIGURATION_BUILD_DIR}/IQKeyboardManager/IQKeyboardManager.bundle",
 				"${PODS_ROOT}/PinYin4Objc/PinYin4Objc/Resources/unicode_to_hanyu_pinyin.txt",
@@ -2081,6 +2078,7 @@
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/cjBackBarButtonItem@3x.png",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/cjBackBarButtonItemGray@2x.png",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/cjBackBarButtonItemGray@3x.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/CQDemoKit_TestMethod.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/CQDemoResource.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/IQKeyboardManager.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/unicode_to_hanyu_pinyin.txt",

@@ -49,7 +49,7 @@ Pod::Spec.new do |s|
     'TSDemo_DataVientiane' => ['TSDemo_DataVientiane/**/*.xcassets', 'TSDemo_DataVientiane/**/*.{xib,png,jpg}'] # TSDemo_DataVientiane 为生成boudle的名称，可以随便起，但要记住，库里要用
   }
   #多个依赖就写多行
-  s.dependency 'CQDemoKit/BaseVC'
+  s.dependency 'CQDemoKit/TestMethod'
   s.dependency 'CQDemoResource/Images'
 
   s.dependency 'CJDataVientianeSDK'

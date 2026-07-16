@@ -6,8 +6,8 @@
 //  Copyright © 2016年 dvlproad. All rights reserved.
 //
 
-#import "CJUIKitBaseBigTextViewController.h"
+#import "CQTSLongBaseAutoTestMethodViewController.h"
 
-@interface DateViewController : CJUIKitBaseBigTextViewController
+@interface DateViewController : CQTSLongBaseAutoTestMethodViewController
 
 @end

@@ -31,7 +31,7 @@
         sectionDataModel.theme = @"字符串长度验证--空和nil";
         // 空字符串
         {
-            CJDealTextModel *dealTextModel = [[CJDealTextModel alloc] init];
+            CQTSAutoTestMethodModel *dealTextModel = [[CQTSAutoTestMethodModel alloc] init];
             dealTextModel.placeholder = @"请输入要验证的值";
             dealTextModel.text = @"我是【空字符串】";
             dealTextModel.hopeResultText = @"0";
@@ -45,7 +45,7 @@
             [sectionDataModel.values addObject:dealTextModel];
         }
         {
-            CJDealTextModel *dealTextModel = [[CJDealTextModel alloc] init];
+            CQTSAutoTestMethodModel *dealTextModel = [[CQTSAutoTestMethodModel alloc] init];
             dealTextModel.placeholder = @"请输入要验证的值";
             dealTextModel.text = @"我是【空字符串】";
             dealTextModel.hopeResultText = @"0";
@@ -61,7 +61,7 @@
         
         // nil字符串
         {
-            CJDealTextModel *dealTextModel = [[CJDealTextModel alloc] init];
+            CQTSAutoTestMethodModel *dealTextModel = [[CQTSAutoTestMethodModel alloc] init];
             dealTextModel.placeholder = @"请输入要验证的值";
             dealTextModel.text = @"我是【nil字符串】";
             dealTextModel.hopeResultText = @"0";
@@ -75,7 +75,7 @@
             [sectionDataModel.values addObject:dealTextModel];
         }
         {
-            CJDealTextModel *dealTextModel = [[CJDealTextModel alloc] init];
+            CQTSAutoTestMethodModel *dealTextModel = [[CQTSAutoTestMethodModel alloc] init];
             dealTextModel.placeholder = @"请输入要验证的值";
             dealTextModel.text = @"我是【nil字符串】";
             dealTextModel.hopeResultText = @"0";
@@ -99,7 +99,7 @@
         sectionDataModel.theme = @"字符串长度验证--截取错误的字符串的计算";
         // 截取错误的字符串的计算
         {
-            CJDealTextModel *dealTextModel = [[CJDealTextModel alloc] init];
+            CQTSAutoTestMethodModel *dealTextModel = [[CQTSAutoTestMethodModel alloc] init];
             dealTextModel.placeholder = @"请输入要验证的值";
             dealTextModel.text = @"好好👌 使用系统方法截取前3位的时候的那个值的长度";
             dealTextModel.hopeResultText = @"3";
@@ -113,7 +113,7 @@
             [sectionDataModel.values addObject:dealTextModel];
         }
         {
-            CJDealTextModel *dealTextModel = [[CJDealTextModel alloc] init];
+            CQTSAutoTestMethodModel *dealTextModel = [[CQTSAutoTestMethodModel alloc] init];
             dealTextModel.placeholder = @"请输入要验证的值";
             dealTextModel.text = @"好好👌 使用系统方法截取前3位的时候的那个值的长度（验证系统的length方法处理含表情字符串的时候有bug）";
             dealTextModel.hopeResultText = @"4";
@@ -136,7 +136,7 @@
         CQDMSectionDataModel *sectionDataModel = [[CQDMSectionDataModel alloc] init];
         sectionDataModel.theme = @"字符串长度验证--纯";
         {
-            CJDealTextModel *dealTextModel = [[CJDealTextModel alloc] init];
+            CQTSAutoTestMethodModel *dealTextModel = [[CQTSAutoTestMethodModel alloc] init];
             dealTextModel.placeholder = @"请输入要验证的值";
             dealTextModel.text = @"18012345678";
             dealTextModel.hopeResultText = @"11";
@@ -149,7 +149,7 @@
             [sectionDataModel.values addObject:dealTextModel];
         }
         {
-            CJDealTextModel *dealTextModel = [[CJDealTextModel alloc] init];
+            CQTSAutoTestMethodModel *dealTextModel = [[CQTSAutoTestMethodModel alloc] init];
             dealTextModel.placeholder = @"请输入要验证的值";
             dealTextModel.text = @"18012345678";
             dealTextModel.hopeResultText = @"11";
@@ -164,7 +164,7 @@
         
         
         {
-            CJDealTextModel *dealTextModel = [[CJDealTextModel alloc] init];
+            CQTSAutoTestMethodModel *dealTextModel = [[CQTSAutoTestMethodModel alloc] init];
             dealTextModel.placeholder = @"请输入要验证的值";
             dealTextModel.text = @"一二三四五六七八九十";
             dealTextModel.hopeResultText = @"10";
@@ -177,7 +177,7 @@
             [sectionDataModel.values addObject:dealTextModel];
         }
         {
-            CJDealTextModel *dealTextModel = [[CJDealTextModel alloc] init];
+            CQTSAutoTestMethodModel *dealTextModel = [[CQTSAutoTestMethodModel alloc] init];
             dealTextModel.placeholder = @"请输入要验证的值";
             dealTextModel.text = @"一二三四五六七八九十";
             dealTextModel.hopeResultText = @"20";
@@ -191,7 +191,7 @@
         }
         
         {
-            CJDealTextModel *dealTextModel = [[CJDealTextModel alloc] init];
+            CQTSAutoTestMethodModel *dealTextModel = [[CQTSAutoTestMethodModel alloc] init];
             dealTextModel.placeholder = @"请输入要验证的值";
             dealTextModel.text = @"abcde12345abcde12345";
             dealTextModel.hopeResultText = @"20";
@@ -204,7 +204,7 @@
             [sectionDataModel.values addObject:dealTextModel];
         }
         {
-            CJDealTextModel *dealTextModel = [[CJDealTextModel alloc] init];
+            CQTSAutoTestMethodModel *dealTextModel = [[CQTSAutoTestMethodModel alloc] init];
             dealTextModel.placeholder = @"请输入要验证的值";
             dealTextModel.text = @"abcde12345abcde12345";
             dealTextModel.hopeResultText = @"20";
@@ -225,7 +225,7 @@
         CQDMSectionDataModel *sectionDataModel = [[CQDMSectionDataModel alloc] init];
         sectionDataModel.theme = @"字符串长度验证--混合";
         {
-            CJDealTextModel *dealTextModel = [[CJDealTextModel alloc] init];
+            CQTSAutoTestMethodModel *dealTextModel = [[CQTSAutoTestMethodModel alloc] init];
             dealTextModel.placeholder = @"请输入要验证的值";
             dealTextModel.text = @"一二三四五六七八九十1";
             dealTextModel.hopeResultText = @"11";
@@ -238,7 +238,7 @@
             [sectionDataModel.values addObject:dealTextModel];
         }
         {
-            CJDealTextModel *dealTextModel = [[CJDealTextModel alloc] init];
+            CQTSAutoTestMethodModel *dealTextModel = [[CQTSAutoTestMethodModel alloc] init];
             dealTextModel.placeholder = @"请输入要验证的值";
             dealTextModel.text = @"一二三四五六七八九十1";
             dealTextModel.hopeResultText = @"21";

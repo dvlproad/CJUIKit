@@ -29,7 +29,7 @@
         CQDMSectionDataModel *sectionDataModel = [[CQDMSectionDataModel alloc] init];
         sectionDataModel.theme = @"暂无示例，之前的代码和 CMaxSubStringViewController1 的完全重复了";
         {
-            CJDealTextModel *dealTextModel = [[CJDealTextModel alloc] init];
+            CQTSAutoTestMethodModel *dealTextModel = [[CQTSAutoTestMethodModel alloc] init];
             dealTextModel.placeholder = @"";
             dealTextModel.text = @"";
             dealTextModel.hopeResultText = @"";

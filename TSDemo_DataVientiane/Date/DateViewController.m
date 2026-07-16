@@ -53,7 +53,7 @@
         sectionDataModel.theme = @"NSString→NSDate 转换（不加 UTC）";
 
         {
-            CJDealTextModel *dealTextModel = [[CJDealTextModel alloc] init];
+            CQTSAutoTestMethodModel *dealTextModel = [[CQTSAutoTestMethodModel alloc] init];
             dealTextModel.placeholder = @"请输入日期字符串";
             dealTextModel.text = @"2017-04-17 20:20:08";
             dealTextModel.hopeResultText = @"2017-04-17 20:20:08";
@@ -80,7 +80,7 @@
         sectionDataModel.theme = @"NSString→NSDate 转换（加 UTC 校正）";
 
         {
-            CJDealTextModel *dealTextModel = [[CJDealTextModel alloc] init];
+            CQTSAutoTestMethodModel *dealTextModel = [[CQTSAutoTestMethodModel alloc] init];
             dealTextModel.placeholder = @"请输入日期字符串";
             dealTextModel.text = @"2017-04-17 20:20:08";
             dealTextModel.hopeResultText = @"2017-04-17 20:20:08";
@@ -108,7 +108,7 @@
         sectionDataModel.theme = @"NSDate→NSString 转换";
 
         {
-            CJDealTextModel *dealTextModel = [[CJDealTextModel alloc] init];
+            CQTSAutoTestMethodModel *dealTextModel = [[CQTSAutoTestMethodModel alloc] init];
             dealTextModel.placeholder = @"当前日期";
             dealTextModel.text = @"2018-09-27";
             dealTextModel.hopeResultText = @"2018-09-27";
@@ -132,7 +132,7 @@
         sectionDataModel.theme = @"NSDateComponents 年龄计算";
 
         {
-            CJDealTextModel *dealTextModel = [[CJDealTextModel alloc] init];
+            CQTSAutoTestMethodModel *dealTextModel = [[CQTSAutoTestMethodModel alloc] init];
             dealTextModel.placeholder = @"生日日期";
             dealTextModel.text = @"1989-12-27 01:10:22";
             dealTextModel.hopeResultText = @"36";
@@ -149,7 +149,7 @@
         }
 
         {
-            CJDealTextModel *dealTextModel = [[CJDealTextModel alloc] init];
+            CQTSAutoTestMethodModel *dealTextModel = [[CQTSAutoTestMethodModel alloc] init];
             dealTextModel.placeholder = @"生日日期";
             dealTextModel.text = @"1989-12-27 01:10:22";
             dealTextModel.actionTitle = @"birthday→yearInterval（年份差）";

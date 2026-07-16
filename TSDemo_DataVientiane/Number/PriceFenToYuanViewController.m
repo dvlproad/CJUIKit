@@ -46,10 +46,10 @@
 
 #pragma mark - 将价钱'分'按指定精度处理到价钱'元'的该位(向上取整、向下取整、四舍五入)并始终显示2位小数
 /// 将价钱'分'按指定精度处理到价钱'元'的该位(向上取整、向下取整、四舍五入)并始终显示2位小数
-- (NSMutableArray<CJDealTextModel *> *)dealTextModels_priceFenToYuan0_decimalCount2 {
-    NSMutableArray<CJDealTextModel *> *dealTextModels = [[NSMutableArray alloc] init];
+- (NSMutableArray<CQTSAutoTestMethodModel *> *)dealTextModels_priceFenToYuan0_decimalCount2 {
+    NSMutableArray<CQTSAutoTestMethodModel *> *dealTextModels = [[NSMutableArray alloc] init];
     {
-        CJDealTextModel *dealTextModel = [[CJDealTextModel alloc] init];
+        CQTSAutoTestMethodModel *dealTextModel = [[CQTSAutoTestMethodModel alloc] init];
         dealTextModel.placeholder = @"请输入要验证的值";
         dealTextModel.text = @"1024";
         dealTextModel.hopeResultText = @"11.00";
@@ -61,7 +61,7 @@
         [dealTextModels addObject:dealTextModel];
     }
     {
-        CJDealTextModel *dealTextModel = [[CJDealTextModel alloc] init];
+        CQTSAutoTestMethodModel *dealTextModel = [[CQTSAutoTestMethodModel alloc] init];
         dealTextModel.placeholder = @"请输入要验证的值";
         dealTextModel.text = @"1024";
         dealTextModel.hopeResultText = @"10.00";
@@ -73,7 +73,7 @@
         [dealTextModels addObject:dealTextModel];
     }
     {
-        CJDealTextModel *dealTextModel = [[CJDealTextModel alloc] init];
+        CQTSAutoTestMethodModel *dealTextModel = [[CQTSAutoTestMethodModel alloc] init];
         dealTextModel.placeholder = @"请输入要验证的值";
         dealTextModel.text = @"1024";
         dealTextModel.hopeResultText = @"10.00";
@@ -91,10 +91,10 @@
 
 #pragma mark - 将价钱'分'按指定精度处理到价钱'元'的后一位(向上取整、向下取整、四舍五入)并始终显示2位小数
 /// 将价钱'分'按指定精度处理到价钱'元'的后一位(向上取整、向下取整、四舍五入)并始终显示2位小数
-- (NSMutableArray<CJDealTextModel *> *)dealTextModels_priceFenToYuanD1_decimalCount2 {
-    NSMutableArray<CJDealTextModel *> *dealTextModels = [[NSMutableArray alloc] init];
+- (NSMutableArray<CQTSAutoTestMethodModel *> *)dealTextModels_priceFenToYuanD1_decimalCount2 {
+    NSMutableArray<CQTSAutoTestMethodModel *> *dealTextModels = [[NSMutableArray alloc] init];
     {
-        CJDealTextModel *dealTextModel = [[CJDealTextModel alloc] init];
+        CQTSAutoTestMethodModel *dealTextModel = [[CQTSAutoTestMethodModel alloc] init];
         dealTextModel.placeholder = @"请输入要验证的值";
         dealTextModel.text = @"1024";
         dealTextModel.hopeResultText = @"10.30";
@@ -106,7 +106,7 @@
         [dealTextModels addObject:dealTextModel];
     }
     {
-        CJDealTextModel *dealTextModel = [[CJDealTextModel alloc] init];
+        CQTSAutoTestMethodModel *dealTextModel = [[CQTSAutoTestMethodModel alloc] init];
         dealTextModel.placeholder = @"请输入要验证的值";
         dealTextModel.text = @"1024";
         dealTextModel.hopeResultText = @"10.20";
@@ -118,7 +118,7 @@
         [dealTextModels addObject:dealTextModel];
     }
     {
-        CJDealTextModel *dealTextModel = [[CJDealTextModel alloc] init];
+        CQTSAutoTestMethodModel *dealTextModel = [[CQTSAutoTestMethodModel alloc] init];
         dealTextModel.placeholder = @"请输入要验证的值";
         dealTextModel.text = @"1024";
         dealTextModel.hopeResultText = @"10.20";

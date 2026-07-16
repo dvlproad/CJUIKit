@@ -1,1 +1,0 @@
-../../../CQDemoKit/CQDemoKit/Demo_Resource/CQTSResourceEnum.h

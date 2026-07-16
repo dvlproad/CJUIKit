@@ -105,6 +105,22 @@
  *  @return 视图的显示比例(范围为0.0到1.0)
  */
 + (CGFloat)getVisibleRatioForView:(UIView *)view {
+    // 4. 确保视图的 UIViewController 是可见的
+    UIViewController *viewController = [self findBelongViewControllerForView:view];
+    
+    CGFloat visibleRatio = [self getVisibleRatioForView:view inBelongViewController:viewController];
+    return visibleRatio;
+}
+
+/*
+ *  计算指定视图的可见比例
+ *
+ *  @param view             要判断的视图
+ *  @param viewController   viewController
+ *
+ *  @return 视图的显示比例(范围为0.0到1.0)
+ */
++ (CGFloat)getVisibleRatioForView:(UIView *)view inBelongViewController:(UIViewController *)viewController {
     if (view == nil || view.window == nil) {
         return 0.0;
     }
@@ -128,7 +144,6 @@
     CGFloat visibleRatio = intersectionArea / viewArea;
     
     // 4. 确保视图的 UIViewController 是可见的
-    UIViewController *viewController = [self findBelongViewControllerForView:view];
     if (!viewController) {
         return 0.0;
     }

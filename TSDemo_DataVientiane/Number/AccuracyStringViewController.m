@@ -72,10 +72,10 @@ typedef NS_ENUM(NSUInteger, ValidateStringType) {
 
 #pragma mark - 去除小数部分的尾部多余0的显示
 /// 去除小数部分的尾部多余0的显示
-- (NSMutableArray<CJDealTextModel *> *)dealTextModels_removeDecimalFractionZero {
-    NSMutableArray<CJDealTextModel *> *dealTextModels = [[NSMutableArray alloc] init];
+- (NSMutableArray<CQTSAutoTestMethodModel *> *)dealTextModels_removeDecimalFractionZero {
+    NSMutableArray<CQTSAutoTestMethodModel *> *dealTextModels = [[NSMutableArray alloc] init];
     {
-        CJDealTextModel *dealTextModel = [[CJDealTextModel alloc] init];
+        CQTSAutoTestMethodModel *dealTextModel = [[CQTSAutoTestMethodModel alloc] init];
         dealTextModel.placeholder = @"请输入要验证的值";
         dealTextModel.text = @"0.090222120000";
         dealTextModel.hopeResultText = @"0.09022212";
@@ -88,7 +88,7 @@ typedef NS_ENUM(NSUInteger, ValidateStringType) {
         [dealTextModels addObject:dealTextModel];
     }
     {
-        CJDealTextModel *dealTextModel = [[CJDealTextModel alloc] init];
+        CQTSAutoTestMethodModel *dealTextModel = [[CQTSAutoTestMethodModel alloc] init];
         dealTextModel.placeholder = @"请输入要验证的值";
         dealTextModel.text = @"0.0900";
         dealTextModel.hopeResultText = @"0.09";
@@ -101,7 +101,7 @@ typedef NS_ENUM(NSUInteger, ValidateStringType) {
         [dealTextModels addObject:dealTextModel];
     }
     {
-        CJDealTextModel *dealTextModel = [[CJDealTextModel alloc] init];
+        CQTSAutoTestMethodModel *dealTextModel = [[CQTSAutoTestMethodModel alloc] init];
         dealTextModel.placeholder = @"请输入要验证的值";
         dealTextModel.text = @"10.00";
         dealTextModel.hopeResultText = @"10";
@@ -120,11 +120,11 @@ typedef NS_ENUM(NSUInteger, ValidateStringType) {
 
 #pragma mark - 精确到百分位(向上取整、向下取整、四舍五入)
 /// 精确到百分位(向上取整、向下取整、四舍五入)
-- (NSMutableArray<CJDealTextModel *> *)dealTextModels_accurateToHundredth {
+- (NSMutableArray<CQTSAutoTestMethodModel *> *)dealTextModels_accurateToHundredth {
     NSInteger decimalPlaces = -2;
-    NSMutableArray<CJDealTextModel *> *dealTextModels = [[NSMutableArray alloc] init];
+    NSMutableArray<CQTSAutoTestMethodModel *> *dealTextModels = [[NSMutableArray alloc] init];
     {
-        CJDealTextModel *dealTextModel = [[CJDealTextModel alloc] init];
+        CQTSAutoTestMethodModel *dealTextModel = [[CQTSAutoTestMethodModel alloc] init];
         dealTextModel.placeholder = @"请输入要验证的值";
         dealTextModel.text = @"9.555";
         dealTextModel.hopeResultText = @"9.56";
@@ -137,7 +137,7 @@ typedef NS_ENUM(NSUInteger, ValidateStringType) {
         [dealTextModels addObject:dealTextModel];
     }
     {
-        CJDealTextModel *dealTextModel = [[CJDealTextModel alloc] init];
+        CQTSAutoTestMethodModel *dealTextModel = [[CQTSAutoTestMethodModel alloc] init];
         dealTextModel.placeholder = @"请输入要验证的值";
         dealTextModel.text = @"9.555";
         dealTextModel.hopeResultText = @"9.55";
@@ -150,7 +150,7 @@ typedef NS_ENUM(NSUInteger, ValidateStringType) {
         [dealTextModels addObject:dealTextModel];
     }
     {
-        CJDealTextModel *dealTextModel = [[CJDealTextModel alloc] init];
+        CQTSAutoTestMethodModel *dealTextModel = [[CQTSAutoTestMethodModel alloc] init];
         dealTextModel.placeholder = @"请输入要验证的值";
         dealTextModel.text = @"9.555";
         dealTextModel.hopeResultText = @"9.56";
@@ -163,7 +163,7 @@ typedef NS_ENUM(NSUInteger, ValidateStringType) {
         [dealTextModels addObject:dealTextModel];
     }
     {
-        CJDealTextModel *dealTextModel = [[CJDealTextModel alloc] init];
+        CQTSAutoTestMethodModel *dealTextModel = [[CQTSAutoTestMethodModel alloc] init];
         dealTextModel.placeholder = @"请输入要验证的值";
         dealTextModel.text = @"9.554";
         dealTextModel.hopeResultText = @"9.55";
@@ -194,11 +194,11 @@ typedef NS_ENUM(NSUInteger, ValidateStringType) {
 
 #pragma mark - 精确到个位(向上取整、向下取整、四舍五入)
 /// 精确到个位(向上取整、向下取整、四舍五入)
-- (NSMutableArray<CJDealTextModel *> *)dealTextModels_accurateToUnit {
+- (NSMutableArray<CQTSAutoTestMethodModel *> *)dealTextModels_accurateToUnit {
     NSInteger decimalPlaces = 1;
-    NSMutableArray<CJDealTextModel *> *dealTextModels = [[NSMutableArray alloc] init];
+    NSMutableArray<CQTSAutoTestMethodModel *> *dealTextModels = [[NSMutableArray alloc] init];
     {
-        CJDealTextModel *dealTextModel = [[CJDealTextModel alloc] init];
+        CQTSAutoTestMethodModel *dealTextModel = [[CQTSAutoTestMethodModel alloc] init];
         dealTextModel.placeholder = @"请输入要验证的值";
         dealTextModel.text = @"99.45";
         dealTextModel.hopeResultText = @"100";
@@ -214,7 +214,7 @@ typedef NS_ENUM(NSUInteger, ValidateStringType) {
         [dealTextModels addObject:dealTextModel];
     }
     {
-        CJDealTextModel *dealTextModel = [[CJDealTextModel alloc] init];
+        CQTSAutoTestMethodModel *dealTextModel = [[CQTSAutoTestMethodModel alloc] init];
         dealTextModel.placeholder = @"请输入要验证的值";
         dealTextModel.text = @"99.45";
         dealTextModel.hopeResultText = @"99";
@@ -230,7 +230,7 @@ typedef NS_ENUM(NSUInteger, ValidateStringType) {
         [dealTextModels addObject:dealTextModel];
     }
     {
-        CJDealTextModel *dealTextModel = [[CJDealTextModel alloc] init];
+        CQTSAutoTestMethodModel *dealTextModel = [[CQTSAutoTestMethodModel alloc] init];
         dealTextModel.placeholder = @"请输入要验证的值";
         dealTextModel.text = @"99.45";
         dealTextModel.hopeResultText = @"99";
@@ -246,7 +246,7 @@ typedef NS_ENUM(NSUInteger, ValidateStringType) {
         [dealTextModels addObject:dealTextModel];
     }
     {
-        CJDealTextModel *dealTextModel = [[CJDealTextModel alloc] init];
+        CQTSAutoTestMethodModel *dealTextModel = [[CQTSAutoTestMethodModel alloc] init];
         dealTextModel.placeholder = @"请输入要验证的值";
         dealTextModel.text = @"99.54";
         dealTextModel.hopeResultText = @"100";
@@ -267,11 +267,11 @@ typedef NS_ENUM(NSUInteger, ValidateStringType) {
 
 #pragma mark - 精确到百位(向上取整、向下取整、四舍五入)
 /// 精确到百位(向上取整、向下取整、四舍五入)
-- (NSMutableArray<CJDealTextModel *> *)dealTextModels_accurateToHundred {
+- (NSMutableArray<CQTSAutoTestMethodModel *> *)dealTextModels_accurateToHundred {
     NSInteger decimalPlaces = 3;
-    NSMutableArray<CJDealTextModel *> *dealTextModels = [[NSMutableArray alloc] init];
+    NSMutableArray<CQTSAutoTestMethodModel *> *dealTextModels = [[NSMutableArray alloc] init];
     {
-        CJDealTextModel *dealTextModel = [[CJDealTextModel alloc] init];
+        CQTSAutoTestMethodModel *dealTextModel = [[CQTSAutoTestMethodModel alloc] init];
         dealTextModel.placeholder = @"请输入要验证的值";
         dealTextModel.text = @"1121";
         dealTextModel.hopeResultText = @"1200";
@@ -287,7 +287,7 @@ typedef NS_ENUM(NSUInteger, ValidateStringType) {
         [dealTextModels addObject:dealTextModel];
     }
     {
-        CJDealTextModel *dealTextModel = [[CJDealTextModel alloc] init];
+        CQTSAutoTestMethodModel *dealTextModel = [[CQTSAutoTestMethodModel alloc] init];
         dealTextModel.placeholder = @"请输入要验证的值";
         dealTextModel.text = @"1121";
         dealTextModel.hopeResultText = @"1100";
@@ -303,7 +303,7 @@ typedef NS_ENUM(NSUInteger, ValidateStringType) {
         [dealTextModels addObject:dealTextModel];
     }
     {
-        CJDealTextModel *dealTextModel = [[CJDealTextModel alloc] init];
+        CQTSAutoTestMethodModel *dealTextModel = [[CQTSAutoTestMethodModel alloc] init];
         dealTextModel.placeholder = @"请输入要验证的值";
         dealTextModel.text = @"1121";
         dealTextModel.hopeResultText = @"1100";

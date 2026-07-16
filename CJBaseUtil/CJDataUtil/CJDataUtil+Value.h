@@ -20,7 +20,7 @@ NS_ASSUME_NONNULL_BEGIN
  *
  *  return 数组内元素的属性值（dataSelector为空时，返回元素自身）
  */
-+ (NSString *)stringValueForDataSelector:(SEL)dataSelector inDataModel:(id)dataModel;
++ (nullable NSString *)stringValueForDataSelector:(nullable SEL)dataSelector inDataModel:(id)dataModel;
 
 /*
  *  取数组内元素对应属性值
@@ -30,7 +30,7 @@ NS_ASSUME_NONNULL_BEGIN
  *
  *  return 数组内元素的属性值（dataSelector为空时，返回元素自身）
  */
-+ (NSArray *)arrayValueForDataSelector:(SEL)dataSelector inDataModel:(id)dataModel;
++ (nullable NSArray *)arrayValueForDataSelector:(nullable SEL)dataSelector inDataModel:(id)dataModel;
 
 @end
 

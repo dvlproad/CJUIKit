@@ -28,7 +28,7 @@
     ]
   },
   "dependencies": {
-    "CQDemoKit/BaseVC": [],
+    "CQDemoKit/TestMethod": [],
     "CQDemoResource/Images": [],
     "CJDataVientianeSDK": [],
     "CJBaseUIKit/UITextField": [],

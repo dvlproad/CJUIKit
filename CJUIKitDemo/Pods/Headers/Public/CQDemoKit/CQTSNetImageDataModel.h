@@ -1,1 +1,1 @@
-../../../CQDemoKit/CQDemoKit/Demo_Resource/NetDataModel/CQTSNetImageDataModel.h
+../../../CQDemoKit/CQDemoKit/Demo_Resource/ImageModel/CQTSNetImageDataModel.h

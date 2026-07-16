@@ -7,9 +7,9 @@
 //
 //  长度计算使用【自定义cj_length算法】的时候的最大字符串
 
-#import "CJUIKitBaseBigTextViewController.h"
+#import "CQTSLongBaseAutoTestMethodViewController.h"
 
-@interface CMaxSubStringViewController2 : CJUIKitBaseBigTextViewController
+@interface CMaxSubStringViewController2 : CQTSLongBaseAutoTestMethodViewController
 
 
 @end

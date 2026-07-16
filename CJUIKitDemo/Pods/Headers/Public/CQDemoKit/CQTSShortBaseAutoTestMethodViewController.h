@@ -1,0 +1,1 @@
+../../../CQDemoKit/CQDemoKit/TestMethod/CompareHopeResult/CQTSShortBaseAutoTestMethodViewController.h

@@ -6,9 +6,9 @@
 //  Copyright © 2017年 dvlproad. All rights reserved.
 //
 
-#import "CJUIKitBaseTextViewController.h"
+#import "CQTSShortBaseAutoTestMethodViewController.h"
 
-@interface PriceYuanToYuanViewController : CJUIKitBaseTextViewController {
+@interface PriceYuanToYuanViewController : CQTSShortBaseAutoTestMethodViewController {
     
 }
 
