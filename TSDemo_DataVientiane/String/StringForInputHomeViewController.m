@@ -32,7 +32,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    self.title = NSLocalizedString(@"文本框输入【长度限制】需要用到的String相关方法", nil);
+    self.navigationItem.title = NSLocalizedString(@"字符串/文本框输入【长度限制】", nil);
     
     NSMutableArray *sectionDataModels = [[NSMutableArray alloc] init];
     

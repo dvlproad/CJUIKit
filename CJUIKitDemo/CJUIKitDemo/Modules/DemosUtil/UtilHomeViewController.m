@@ -25,10 +25,6 @@
 #import "DeviceInfoViewController.h"
 #import "DataUtilViewController.h"
 
-#import "AccuracyStringViewController.h"
-#import "PriceFenToYuanViewController.h"
-#import "PriceYuanToYuanViewController.h"
-
 #import "KeyboardUtilViewController.h"
 #import "SharedInstanceViewController.h"
 
@@ -119,31 +115,6 @@
             [sectionDataModel.values addObject:QRCodeModule];
         }
         
-        [sectionDataModels addObject:sectionDataModel];
-    }
-    
-    // 数值 & 价钱 处理
-    {
-        CQDMSectionDataModel *sectionDataModel = [[CQDMSectionDataModel alloc] init];
-        sectionDataModel.theme = @"数值 & 价钱 相关";
-        {
-            CQDMModuleModel *NSAttributedStringModule = [[CQDMModuleModel alloc] init];
-            NSAttributedStringModule.title = @"数值number(取整、去尾0等)";
-            NSAttributedStringModule.classEntry = [AccuracyStringViewController class];
-            [sectionDataModel.values addObject:NSAttributedStringModule];
-        }
-        {
-            CQDMModuleModel *NSAttributedStringModule = [[CQDMModuleModel alloc] init];
-            NSAttributedStringModule.title = @"价钱price(分转元)";
-            NSAttributedStringModule.classEntry = [PriceFenToYuanViewController class];
-            [sectionDataModel.values addObject:NSAttributedStringModule];
-        }
-        {
-            CQDMModuleModel *NSAttributedStringModule = [[CQDMModuleModel alloc] init];
-            NSAttributedStringModule.title = @"价钱price(元转元)";
-            NSAttributedStringModule.classEntry = [PriceYuanToYuanViewController class];
-            [sectionDataModel.values addObject:NSAttributedStringModule];
-        }
         [sectionDataModels addObject:sectionDataModel];
     }
     

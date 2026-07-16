@@ -13,6 +13,8 @@
 
 #import "TSDateHomeViewController.h"
 
+#import "TSNumberHomeViewController.h"
+
 #import "ValidateStringViewController.h"
 
 @interface TSDataVientianeMainViewController () {
@@ -38,6 +40,12 @@
         CQDMTabBarModel *tabBarModel = [[CQDMTabBarModel alloc] init];
         tabBarModel.title = NSLocalizedString(@"Date", nil);
         tabBarModel.classEntry = [TSDateHomeViewController class];
+        [tabBarModels addObject:tabBarModel];
+    }
+    {
+        CQDMTabBarModel *tabBarModel = [[CQDMTabBarModel alloc] init];
+        tabBarModel.title = NSLocalizedString(@"Number", nil);
+        tabBarModel.classEntry = [TSNumberHomeViewController class];
         [tabBarModels addObject:tabBarModel];
     }
     {

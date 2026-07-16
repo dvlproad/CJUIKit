@@ -27,9 +27,14 @@
     textField.textAlignment = NSTextAlignmentCenter;
     textField.backgroundColor = CJColorFromHexString(@"#ffffff");
     
+    NSString *bundleName = @"TSDemo_DataVientiane";
+    NSBundle *frameworkBundle = [NSBundle bundleForClass:[self class]];
+    NSURL *bundleURL = [frameworkBundle URLForResource:bundleName withExtension:@"bundle"];
+    NSBundle *resourceBundle = bundleURL ? [NSBundle bundleWithURL:bundleURL] : nil;
+    
     UIButton *leftButton = [UIButton buttonWithType:UIButtonTypeCustom];
     leftButton.backgroundColor = [UIColor orangeColor];
-    UIImage *leftNormalImage = [UIImage imageNamed:@"minus_common_icon"];
+    UIImage *leftNormalImage = [UIImage imageNamed:@"minus_common_icon" inBundle:resourceBundle compatibleWithTraitCollection:nil];
     [leftButton setImage:leftNormalImage forState:UIControlStateNormal];
     [leftButton setCjTouchUpInsideBlock:^(UIButton *button) {
         if (leftButtonHandle) {
@@ -45,7 +50,7 @@
     
     UIButton *rightButton = [UIButton buttonWithType:UIButtonTypeCustom];
     rightButton.backgroundColor = [UIColor orangeColor];
-    UIImage *rightNormalImage = [UIImage imageNamed:@"add_common_icon"];
+    UIImage *rightNormalImage = [UIImage imageNamed:@"add_common_icon" inBundle:resourceBundle compatibleWithTraitCollection:nil];
     [rightButton setImage:rightNormalImage forState:UIControlStateNormal];
     [rightButton setCjTouchUpInsideBlock:^(UIButton *button) {
         if (rightButtonHandle) {

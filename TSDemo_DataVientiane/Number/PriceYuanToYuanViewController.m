@@ -7,7 +7,7 @@
 //
 
 #import "PriceYuanToYuanViewController.h"
-#import "CJDecimalUtil+Money.h"
+#import <CJDataVientianeSDK/CJDecimalUtil+Money.h>
 
 @interface PriceYuanToYuanViewController ()
 

@@ -20,7 +20,6 @@
 		7802491025828D4C00C7DBAD /* TextViewAutoHeightViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7802490C25828D4B00C7DBAD /* TextViewAutoHeightViewController.m */; };
 		7803DAAE22F7D519001E06B7 /* MJExtensionToModelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7803DAAC22F7D519001E06B7 /* MJExtensionToModelViewController.m */; };
 		7803DAB122F7D578001E06B7 /* MJExtensionToJSONViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7803DAAF22F7D578001E06B7 /* MJExtensionToJSONViewController.m */; };
-		7805E1D72369C5FC00B998EC /* PriceYuanToYuanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7805E1D52369C5FC00B998EC /* PriceYuanToYuanViewController.m */; };
 		7808D59321703C33007FC851 /* ChangeEnvironmentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7808D59221703C33007FC851 /* ChangeEnvironmentViewController.m */; };
 		7808D5B62170919A007FC851 /* LoginChangeEnvironmentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7808D5B52170919A007FC851 /* LoginChangeEnvironmentViewController.m */; };
 		7808D5B921709E6B007FC851 /* UIViewController+CJChangeEnvironment.m in Sources */ = {isa = PBXBuildFile; fileRef = 7808D5B821709E6B007FC851 /* UIViewController+CJChangeEnvironment.m */; };
@@ -129,7 +128,6 @@
 		78A621DC2135C713004DA046 /* SuspendWindowFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 78A621D92135C713004DA046 /* SuspendWindowFactory.m */; };
 		78A621E72135C925004DA046 /* DemoSuspendWindowRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78A621E52135C924004DA046 /* DemoSuspendWindowRootViewController.m */; };
 		78A621ED2135CA50004DA046 /* DemoFloatingWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 78A621EC2135CA50004DA046 /* DemoFloatingWindow.m */; };
-		78A74E5123687ACF0023F44B /* PriceFenToYuanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78A74E5023687ACF0023F44B /* PriceFenToYuanViewController.m */; };
 		78A9923025792EAC00B54E30 /* TSTextFieldBlockViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78A9922F25792EAC00B54E30 /* TSTextFieldBlockViewController.m */; };
 		78A99236257934B100B54E30 /* TextFieldHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78A99235257934B100B54E30 /* TextFieldHomeViewController.m */; };
 		78A992422579502300B54E30 /* TSTextFieldClickViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78A992402579502300B54E30 /* TSTextFieldClickViewController.m */; };
@@ -189,7 +187,6 @@
 		8051E5CE20AAB34E003370AA /* details_icon_huadong@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8051E5CC20AAB34E003370AA /* details_icon_huadong@3x.png */; };
 		8051E5D120AAC172003370AA /* BBXShimmeringSwitchSlider.m in Sources */ = {isa = PBXBuildFile; fileRef = 8051E5D020AAC172003370AA /* BBXShimmeringSwitchSlider.m */; };
 		80582FA120C121B500C01225 /* ImageRotateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80582F9F20C121B500C01225 /* ImageRotateViewController.m */; };
-		8060C48C20E0D5EF0093B14E /* AccuracyStringViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8060C48920E0D5EF0093B14E /* AccuracyStringViewController.m */; };
 		807F126020B507A30008B748 /* ViewAnimateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 807F125E20B507A30008B748 /* ViewAnimateViewController.m */; };
 		807F126C20B5123A0008B748 /* animationBg02.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 807F126A20B512390008B748 /* animationBg02.jpg */; };
 		807F127020B51C390008B748 /* animationBg01.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 807F126F20B51C390008B748 /* animationBg01.jpg */; };
@@ -299,8 +296,6 @@
 		7803DAAD22F7D519001E06B7 /* MJExtensionToModelViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJExtensionToModelViewController.h; sourceTree = "<group>"; };
 		7803DAAF22F7D578001E06B7 /* MJExtensionToJSONViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJExtensionToJSONViewController.m; sourceTree = "<group>"; };
 		7803DAB022F7D578001E06B7 /* MJExtensionToJSONViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJExtensionToJSONViewController.h; sourceTree = "<group>"; };
-		7805E1D52369C5FC00B998EC /* PriceYuanToYuanViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PriceYuanToYuanViewController.m; sourceTree = "<group>"; };
-		7805E1D62369C5FC00B998EC /* PriceYuanToYuanViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PriceYuanToYuanViewController.h; sourceTree = "<group>"; };
 		7808D59121703C33007FC851 /* ChangeEnvironmentViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ChangeEnvironmentViewController.h; sourceTree = "<group>"; };
 		7808D59221703C33007FC851 /* ChangeEnvironmentViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChangeEnvironmentViewController.m; sourceTree = "<group>"; };
 		7808D5B421709199007FC851 /* LoginChangeEnvironmentViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginChangeEnvironmentViewController.h; sourceTree = "<group>"; };
@@ -487,8 +482,6 @@
 		78A621E62135C925004DA046 /* DemoSuspendWindowRootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DemoSuspendWindowRootViewController.h; sourceTree = "<group>"; };
 		78A621EB2135CA4F004DA046 /* DemoFloatingWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DemoFloatingWindow.h; sourceTree = "<group>"; };
 		78A621EC2135CA50004DA046 /* DemoFloatingWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DemoFloatingWindow.m; sourceTree = "<group>"; };
-		78A74E4F23687ACF0023F44B /* PriceFenToYuanViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PriceFenToYuanViewController.h; sourceTree = "<group>"; };
-		78A74E5023687ACF0023F44B /* PriceFenToYuanViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PriceFenToYuanViewController.m; sourceTree = "<group>"; };
 		78A9922E25792EAC00B54E30 /* TSTextFieldBlockViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSTextFieldBlockViewController.h; sourceTree = "<group>"; };
 		78A9922F25792EAC00B54E30 /* TSTextFieldBlockViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSTextFieldBlockViewController.m; sourceTree = "<group>"; };
 		78A99234257934B100B54E30 /* TextFieldHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextFieldHomeViewController.h; sourceTree = "<group>"; };
@@ -600,8 +593,6 @@
 		8051E5D020AAC172003370AA /* BBXShimmeringSwitchSlider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBXShimmeringSwitchSlider.m; sourceTree = "<group>"; };
 		80582F9E20C121B500C01225 /* ImageRotateViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ImageRotateViewController.h; sourceTree = "<group>"; };
 		80582F9F20C121B500C01225 /* ImageRotateViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ImageRotateViewController.m; sourceTree = "<group>"; };
-		8060C48620E0D5EF0093B14E /* AccuracyStringViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccuracyStringViewController.h; sourceTree = "<group>"; };
-		8060C48920E0D5EF0093B14E /* AccuracyStringViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccuracyStringViewController.m; sourceTree = "<group>"; };
 		807F125C20B507A20008B748 /* ViewAnimateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewAnimateViewController.h; sourceTree = "<group>"; };
 		807F125E20B507A30008B748 /* ViewAnimateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewAnimateViewController.m; sourceTree = "<group>"; };
 		807F126A20B512390008B748 /* animationBg02.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = animationBg02.jpg; sourceTree = "<group>"; };
@@ -1465,19 +1456,6 @@
 			path = NSObjectCJHelper;
 			sourceTree = "<group>";
 		};
-		8060C48420E0D5EF0093B14E /* ValueUtilDemo */ = {
-			isa = PBXGroup;
-			children = (
-				8060C48620E0D5EF0093B14E /* AccuracyStringViewController.h */,
-				8060C48920E0D5EF0093B14E /* AccuracyStringViewController.m */,
-				78A74E4F23687ACF0023F44B /* PriceFenToYuanViewController.h */,
-				78A74E5023687ACF0023F44B /* PriceFenToYuanViewController.m */,
-				7805E1D62369C5FC00B998EC /* PriceYuanToYuanViewController.h */,
-				7805E1D52369C5FC00B998EC /* PriceYuanToYuanViewController.m */,
-			);
-			path = ValueUtilDemo;
-			sourceTree = "<group>";
-		};
 		807F125B20B507340008B748 /* ViewAnimateDemo */ = {
 			isa = PBXGroup;
 			children = (
@@ -1799,7 +1777,6 @@
 				808E3C442109C5B0009E3924 /* StringUtilDemo */,
 				80FF91BE1FC581DD00E437CF /* UtilHomeViewController.h */,
 				80FF91BF1FC581DD00E437CF /* UtilHomeViewController.m */,
-				8060C48420E0D5EF0093B14E /* ValueUtilDemo */,
 			);
 			path = DemosUtil;
 			sourceTree = "<group>";
@@ -2131,7 +2108,6 @@
 				807F126020B507A30008B748 /* ViewAnimateViewController.m in Sources */,
 				784A7216214C9DF000F8D144 /* MoreHomeViewController.m in Sources */,
 				788113BF2199574900D1630D /* SharedInstanceViewController.m in Sources */,
-				78A74E5123687ACF0023F44B /* PriceFenToYuanViewController.m in Sources */,
 				80FF909C1FC5649F00E437CF /* NestedXibView.m in Sources */,
 				156AC8D12406D9F800A5A23D /* DemoTagButtonFactory.m in Sources */,
 				786254C324A92EBF00E3CCC3 /* CJDataSearchUtil.m in Sources */,
@@ -2158,7 +2134,6 @@
 				787FDB5820500B01008A46E3 /* TSTextFieldInputViewController.m in Sources */,
 				789A4EE021FAAC76001528B9 /* CJBaseTableViewCell+ConfigureForDataModel.m in Sources */,
 				78A621E72135C925004DA046 /* DemoSuspendWindowRootViewController.m in Sources */,
-				8060C48C20E0D5EF0093B14E /* AccuracyStringViewController.m in Sources */,
 				780C1F2825BC6D910034D770 /* ImageCompressViewController.m in Sources */,
 				7856F97021F9D2C5004AF751 /* BaseTableViewCellViewController.m in Sources */,
 				787FDB9820500B5C008A46E3 /* ShimmeringSwitchSlider.m in Sources */,
@@ -2243,7 +2218,6 @@
 				78514134226854CC0023F0C0 /* ImageGetterViewController.m in Sources */,
 				787FDB6420500B1F008A46E3 /* TextViewController.m in Sources */,
 				780E46051E5DF87B00980127 /* main.m in Sources */,
-				7805E1D72369C5FC00B998EC /* PriceYuanToYuanViewController.m in Sources */,
 				78A992422579502300B54E30 /* TSTextFieldClickViewController.m in Sources */,
 				80582FA120C121B500C01225 /* ImageRotateViewController.m in Sources */,
 				78542E2A25B9DB6B00ABE1E5 /* TextSizeCompareView.m in Sources */,

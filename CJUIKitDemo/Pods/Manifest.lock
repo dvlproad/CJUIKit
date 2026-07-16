@@ -99,7 +99,6 @@ PODS:
     - CJBaseUtil/CJCallUtil (= 0.5.2)
     - CJBaseUtil/CJDataUtil (= 0.5.2)
     - CJBaseUtil/CJDateUtil (= 0.5.2)
-    - CJBaseUtil/CJDecimalUtil (= 0.5.2)
     - CJBaseUtil/CJIndentedStringUtil (= 0.5.2)
     - CJBaseUtil/CJKeyboardUtil (= 0.5.2)
     - CJBaseUtil/CJLaunchImageUtil (= 0.5.2)
@@ -114,7 +113,6 @@ PODS:
   - CJBaseUtil/CJCallUtil (0.5.2)
   - CJBaseUtil/CJDataUtil (0.5.2)
   - CJBaseUtil/CJDateUtil (0.5.2)
-  - CJBaseUtil/CJDecimalUtil (0.5.2)
   - CJBaseUtil/CJIndentedStringUtil (0.5.2)
   - CJBaseUtil/CJKeyboardUtil (0.5.2)
   - CJBaseUtil/CJLaunchImageUtil (0.5.2)
@@ -134,6 +132,7 @@ PODS:
     - PinYin4Objc
   - CJBaseUtil/CJQRCodeUtil (0.5.2)
   - CJDataVientianeSDK (0.0.3):
+    - CJDataVientianeSDK/CJDecimalUtil (= 0.0.3)
     - CJDataVientianeSDK/CJSubStringUtil (= 0.0.3)
     - CJDataVientianeSDK/FormatValidate (= 0.0.3)
     - CJDataVientianeSDK/NSCalendarCJHelper (= 0.0.3)
@@ -141,6 +140,7 @@ PODS:
     - CJDataVientianeSDK/TextSize (= 0.0.3)
     - CJDataVientianeSDK/UITextInputHeightCJHelper (= 0.0.3)
     - CJDataVientianeSDK/UITextInputLimitCJHelper (= 0.0.3)
+  - CJDataVientianeSDK/CJDecimalUtil (0.0.3)
   - CJDataVientianeSDK/CJSubStringUtil (0.0.3)
   - CJDataVientianeSDK/FormatValidate (0.0.3)
   - CJDataVientianeSDK/NSCalendarCJHelper (0.0.3)
@@ -308,9 +308,9 @@ SPEC CHECKSUMS:
   CJBaseHelper: 0345964a15b24131605a356f62e8c61d56222002
   CJBaseUIKit: 603bb6a5d78f3a4760642e63b4840ee7093a7cd9
   CJBaseUIKit-Swift: e9fb305e1d7785b919a5877e06c4efd342ef98e6
-  CJBaseUtil: 1e6b81026b1b0613a41866825cc055092bfb9faa
+  CJBaseUtil: e684378e1b0d7c81a757c105e43330320a457a14
   CJBaseUtil-Swift: 837f333ad19be6e2df8467f965c8735560a7c085
-  CJDataVientianeSDK: e1299887b9e84a2e6e137660bf48593b0d95e7ad
+  CJDataVientianeSDK: 482d891900c1fd5dc4bb6990473c68d276a1395e
   CJFile: 6c1e6d55b3b94e8afbaa9f413f131301d15fdc48
   CJFoundation: acbdf22b8b415dcdaf4e0c50ef6e3e5180ec73b8
   CJPopupAction: 0f0a424a44b46d3582e0d4a90f14f15e70255436
@@ -324,7 +324,7 @@ SPEC CHECKSUMS:
   PinYin4Objc: 3fa9673610368330e2dfb688b1d19a35c3930a78
   SAMKeychain: 483e1c9f32984d50ca961e26818a534283b4cd5c
   Shimmer: c5374be1c2b0c9e292fb05b339a513cf291cac86
-  TSDemo_DataVientiane: 4def71b05cb90cca4df7b5b8d2d62ac275a25533
+  TSDemo_DataVientiane: 1ef1882d54735395eb9bf3a39662737ac4dafc1e
   UINavigation-SXFixSpace: 10f223253ebff2ceefa26694e23b7694269763c4
   YYText: 5c461d709e24d55a182d1441c41dc639a18a4849
 

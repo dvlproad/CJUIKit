@@ -4,7 +4,7 @@
 Pod::Spec.new do |s|
   s.name         = "TSDemo_DataVientiane"
   s.version      = "0.0.1"
-  s.summary      = "列表List演示示例"
+  s.summary      = "数据万象 DataVientiane 的演示示例"
   s.homepage     = "https://gitee.com/dvlproad/CJUIKit.git"
 
   #s.license      = "MIT"
@@ -42,7 +42,6 @@ Pod::Spec.new do |s|
 
   # s.xcconfig = { "HEADER_SEARCH_PATHS" => "$(SDKROOT)/usr/include/libxml2" }
   # s.dependency "JSONKit", "~> 1.4"
-
 
   # TSDemo_DataVientiane
   s.source_files = "TSDemo_DataVientiane/**/*.{h,m}"

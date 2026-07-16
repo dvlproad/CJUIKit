@@ -7,7 +7,7 @@
 //
 
 #import "AccuracyStringViewController.h"
-#import "CJDecimalUtil.h"
+#import <CJDataVientianeSDK/CJDecimalUtil.h>
 
 typedef NS_ENUM(NSUInteger, ValidateStringType) {
     ValidateStringTypeNone = 0,     /**< 不验证 */

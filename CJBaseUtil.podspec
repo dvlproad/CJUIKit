@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
   #验证方法：pod lib lint CJBaseUtil.podspec --allow-warnings --use-libraries --verbose
   s.name         = "CJBaseUtil"
-  s.version      = "0.5.2"
+  s.version      = "0.6.0"
   s.summary      = "自定义的基础工具类"
   s.homepage     = "https://github.com/dvlproad/CJUIKit"
   s.license      = "MIT"
@@ -12,7 +12,6 @@ Pod::Spec.new do |s|
                  • CJBaseUtil/CJIndentedStringUtil - 将 字符串/字典/数组转成含缩进字符串的字符串 的工具
                  • CJBaseUtil/CJAppLastUtil - APP上次信息+账号安全工具
                  • CJBaseUtil/CJDataUtil - 包含排序+SortOrder、分类+SortCategory、搜索+NormalSearch 等的数据处理工具类
-                 • CJBaseUtil/CJDecimalUtil - 小数的处理（常用于价钱Money、距离Distance的计算)
                  • CJBaseUtil/CJDateUtil - 日期工具
                  • CJBaseUtil/CJKeyboardUtil - 键盘工具
                  • CJBaseUtil/CJCallUtil - 拨打电话工具
@@ -32,7 +31,7 @@ Pod::Spec.new do |s|
 
   s.platform     = :ios, "8.0"
 
-  s.source       = { :git => "https://github.com/dvlproad/CJUIKit.git", :tag => "CJBaseUtil_0.5.2" }
+  s.source       = { :git => "https://github.com/dvlproad/CJUIKit.git", :tag => "CJBaseUtil_0.6.0" }
   # s.source_files  = "CJBaseUtil/*.{h,m}"
   # s.resources = "CJBaseUtil/**/*.{png}"
   s.frameworks = 'UIKit'
@@ -60,12 +59,6 @@ Pod::Spec.new do |s|
   # 包含排序+SortOrder、分类+SortCategory、搜索+NormalSearch 等的数据处理工具类
   s.subspec 'CJDataUtil' do |ss|
     ss.source_files = "CJBaseUtil/CJDataUtil/**/*.{h,m}"
-  end
-
-
-  # 小数的处理（常用于价钱Money、距离Distance的计算)
-  s.subspec 'CJDecimalUtil' do |ss|
-    ss.source_files = "CJBaseUtil/CJDecimalUtil/**/*.{h,m}"
   end
 
   # 日期工具

@@ -11,27 +11,36 @@
 # ①CJSubStringUtil.h  指定位置、指定范围、最大长度字符串获取的方法
 # ②UITextInputLimitCJHelper.h 复制粘贴新字符串获取的方法
 # 2、CJBaseUIKit/UITextHeightCenterCJHelper/Helper 里的 UITextInputHeightCJHelper.h 文本在指定宽度下的高度计算
+# 
 # 二、CJBaseHelper
 # 1、CJBaseHelper/NSCalendarCJHelper 里的 NSCalendarCJHelper.h 通过 NSCalendar 类，来计算 NSDate 的相等判断或者加减日期等方法的工具
+# 
 # 三、CJFoundation
 # 1、CJFoundation/NSString 里的 
 # ①NSString+CJTextLength.h 和 NSString+CJFormatValidate.h
 # ②NSString+CJTextSize.h 和 NSString+CJTextSizeInView.h
+# 
+# 四、CJBaseUtil
+# 1、CJBaseUtil/CJDecimalUtil 的 CJDecimalUtil+Distance.h 和 CJDecimalUtil+Money.h
 
 # 即
 # 一、CJBaseUIKit：从0.9.0开始，
 # 1、①指定位置、指定范围、最大长度字符串获取；1②复制粘贴新字符串获取的方法，已移动到 CJDataVientianeSDK
 # 2、文本在指定宽度下的高度计算，已移动到 CJDataVientianeSDK
+# 
 # 二、CJBaseHelper：从0.2.0开始，
 # 1、CJBaseHelper/NSCalendarCJHelper，已移动到 CJDataVientianeSDK
+# 
 # 三、CJFoundation：从0.1.6开始，
 # 1、NSString+CJTextLength.h 和 NSString+CJFormatValidate.h，已移动到 CJDataVientianeSDK
 # 2、NSString+CJTextSize.h 和 NSString+CJTextSizeInView.h，已移动到 CJDataVientianeSDK
-
+# 
+# 四、CJBaseUtil：从0.6.0开始，
+# 1、CJBaseUtil/CJDecimalUtil 的 CJDecimalUtil+Distance.h 和 CJDecimalUtil+Money.h，已移动到 CJDataVientianeSDK
 
 Pod::Spec.new do |s|
   s.name         = "CJDataVientianeSDK"
-  s.version      = "0.0.3"
+  s.version      = "0.0.4"
   s.summary      = "数据万象SDK"
   s.homepage     = "https://github.com/dvlproad/CJUIKit"
   s.license      = "MIT"
@@ -45,6 +54,7 @@ Pod::Spec.new do |s|
                  • CJDataVientianeSDK/UITextInputHeightCJHelper - 文本在指定宽度下的高度计算(与字体大小有关)
                  • CJDataVientianeSDK/TextSize - 文本在指定条件下的所占宽高计算(与字体大小有关)
                  • CJDataVientianeSDK/NSCalendarCJHelper - 通过 NSCalendar 类，来计算 NSDate 的相等判断或者加减日期等方法的工具
+                 • CJDataVientianeSDK/CJDecimalUtil - 小数的处理（常用于价钱Money、距离Distance的计算)
                  • CJDataVientianeSDK/FormatValidate - 字符串格式验证（是否是邮箱、手机号等）
 
                  每个子库可独立引入，详见各子库描述。
@@ -55,9 +65,9 @@ Pod::Spec.new do |s|
   s.platform     = :ios, "9.0"
   s.swift_version = '5.0'
 
-  s.source       = { :git => "https://github.com/dvlproad/CJUIKit", :tag => "CJDataVientianeSDK_0.0.3" }
-  # s.source_files  = "CJBaseUtil/*.{h,m}"
-  # s.resources = "CJBaseUtil/**/*.{png}"
+  s.source       = { :git => "https://github.com/dvlproad/CJUIKit", :tag => "CJDataVientianeSDK_0.0.4" }
+  # s.source_files  = "CJDataVientianeSDK/*.{h,m}"
+  # s.resources = "CJDataVientianeSDK/**/*.{png}"
   s.frameworks = 'UIKit'
 
   # s.library   = "iconv"
@@ -97,6 +107,12 @@ Pod::Spec.new do |s|
   # 通过 NSCalendar 类，来计算 NSDate 的相等判断或者加减日期等方法的工具
   s.subspec 'NSCalendarCJHelper' do |ss|
     ss.source_files = "CJDataVientianeSDK/NSCalendarCJHelper/**/*.{h,m}"
+  end
+  
+  
+  # 小数的处理（常用于价钱Money、距离Distance的计算)
+  s.subspec 'CJDecimalUtil' do |ss|
+    ss.source_files = "CJDataVientianeSDK/CJDecimalUtil/**/*.{h,m}"
   end
 
   # 字符串格式验证（是否是邮箱、手机号等）
