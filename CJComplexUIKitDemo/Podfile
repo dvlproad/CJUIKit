@@ -26,20 +26,14 @@ end
 
 
 target 'CJComplexUIKitDemo' do
-  pod 'CQDemoKit',          '~> 0.9.2',      :subspecs => ['BaseVC', 'Demo_Resource', 'Demo_DataSourceAndDelegate', 'Demo_RipeView']
+  pod 'CQDemoKit',          '~> 0.9.9',      :subspecs => ['BaseVC']
   #pod 'CQDemoKit',          :path => '../../001-UIKit-CQDemo-iOS',      :subspecs => ['BaseVC', 'Demo_DataSourceAndDelegate']
   
-  pod 'CJBaseUIKit',      :subspecs => ['UIColor', 'UINavigationBar', 'UIButton', 'UIImage']
-  pod 'CJBaseUtil',       :subspecs => ['CJDataUtil', 'CJPinyinHelper']
-  pod 'CJBaseHelper',     :subspecs => ['AuthorizationCJHelper']
   pod 'CJFoundation',     :subspecs => ['NSString']
-  pod 'CJOverlayView'
-  pod 'CJPopupAction'
   
   pod 'CJComplexUIKit',           :path => '../'
   
   pod 'AFNetworking/Reachability'
-  pod 'SVProgressHUD'
   #    pod 'SDWebImage', '~> 4.0.0'
   pod 'MJPopupViewController', '~> 0.4'
   

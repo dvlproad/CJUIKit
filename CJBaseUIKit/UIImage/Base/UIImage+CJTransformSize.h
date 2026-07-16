@@ -56,6 +56,7 @@ typedef NS_ENUM(NSUInteger, CJScaleType) {
 - (UIImage *)cj_resizableImageWithCapInsets:(UIEdgeInsets)insets;
 
 
+// 图片压缩，请使用 UIImageCJCompressHelper 类
 /**
  *  压缩图片尺寸,直到图片稍小于指定的最大大小(maxDataLength)
  *  @brief 压缩图片尺寸可以使图片小于指定大小，但会使图片明显模糊(比压缩图片质量模糊)
@@ -64,7 +65,7 @@ typedef NS_ENUM(NSUInteger, CJScaleType) {
  *
  *  @return 图片数据imageData
  */
-- (NSData *)cj_compressSizeWithMaxDataLength:(NSInteger)maxDataLength;
+- (NSData *)cj_compressSizeWithMaxDataLength:(NSInteger)maxDataLength __attribute__((deprecated("请使用 [UIImageCJCompressHelper compressImage:...] 代替")));;
 
 
 

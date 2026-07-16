@@ -28,7 +28,6 @@
 #import "UIImage+CJRotateAngle.h"
 #import "UIImage+CJSplitImageIntoTwoParts.h"
 #import "UIImageCJCategory.h"
-#import "UINavigationBar+CJChangeBG.h"
 #import "UIView+CJDragAction.h"
 #import "UIView+CJPanAction.h"
 

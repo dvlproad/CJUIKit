@@ -1,6 +1,0 @@
-framework module CJPopupAction {
-  umbrella header "CJPopupAction-umbrella.h"
-
-  export *
-  module * { export * }
-}

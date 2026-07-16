@@ -45,17 +45,11 @@
 		80D49F8B20BE7EE0003F642C /* CJDataUtilTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 80D49F8A20BE7EE0003F642C /* CJDataUtilTest.m */; };
 		80D49F8F20BE8574003F642C /* TestCityModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 80D49F8E20BE8574003F642C /* TestCityModel.m */; };
 		80E7E68920AC37CA000F762D /* IjinbuNetworkClient+Login.m in Sources */ = {isa = PBXBuildFile; fileRef = 80E7E68720AC37CA000F762D /* IjinbuNetworkClient+Login.m */; };
-		976CB3502FFE6C9D000505DD /* TestDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 976CB3412FFE6C9D000505DD /* TestDataModel.m */; };
-		976CB3512FFE6C9D000505DD /* TestDataUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 976CB3442FFE6C9D000505DD /* TestDataUtil.m */; };
 		976CB3522FFE6C9D000505DD /* DemoInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 976CB33F2FFE6C9D000505DD /* DemoInfo.m */; };
-		976CB3592FFE6CF6000505DD /* AppInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 976CB3542FFE6CF6000505DD /* AppInfo.m */; };
-		976CB35A2FFE6CF6000505DD /* AppInfoManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 976CB3562FFE6CF6000505DD /* AppInfoManager.m */; };
 		976CB3632FFE710E000505DD /* loading_03.json in Resources */ = {isa = PBXBuildFile; fileRef = 976CB35E2FFE710E000505DD /* loading_03.json */; };
 		976CB3642FFE710E000505DD /* loading_tea.json in Resources */ = {isa = PBXBuildFile; fileRef = 976CB3602FFE710E000505DD /* loading_tea.json */; };
 		976CB3652FFE710E000505DD /* loading_test.json in Resources */ = {isa = PBXBuildFile; fileRef = 976CB3612FFE710E000505DD /* loading_test.json */; };
 		976CB3662FFE710E000505DD /* loading_coffee.json in Resources */ = {isa = PBXBuildFile; fileRef = 976CB35F2FFE710E000505DD /* loading_coffee.json */; };
-		976CB36C2FFE76A0000505DD /* TSAlertManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 976CB36A2FFE76A0000505DD /* TSAlertManager.m */; };
-		976CB36D2FFE76A0000505DD /* CJBaseAlertView+TSPopupAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 976CB3682FFE76A0000505DD /* CJBaseAlertView+TSPopupAction.m */; };
 		976CB3762FFE8262000505DD /* AppAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 976CB36E2FFE8262000505DD /* AppAssets.xcassets */; };
 		976CB3772FFE8262000505DD /* CQControlWidgetTextSectionExample.json in Resources */ = {isa = PBXBuildFile; fileRef = 976CB3722FFE8262000505DD /* CQControlWidgetTextSectionExample.json */; };
 		976CB3782FFE8262000505DD /* bg@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 976CB3702FFE8262000505DD /* bg@2x.jpg */; };
@@ -156,22 +150,10 @@
 		80E7E68820AC37CA000F762D /* IjinbuNetworkClient+Login.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "IjinbuNetworkClient+Login.h"; sourceTree = "<group>"; };
 		976CB33E2FFE6C9D000505DD /* DemoInfo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DemoInfo.h; sourceTree = "<group>"; };
 		976CB33F2FFE6C9D000505DD /* DemoInfo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DemoInfo.m; sourceTree = "<group>"; };
-		976CB3402FFE6C9D000505DD /* TestDataModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestDataModel.h; sourceTree = "<group>"; };
-		976CB3412FFE6C9D000505DD /* TestDataModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestDataModel.m; sourceTree = "<group>"; };
-		976CB3432FFE6C9D000505DD /* TestDataUtil.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestDataUtil.h; sourceTree = "<group>"; };
-		976CB3442FFE6C9D000505DD /* TestDataUtil.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestDataUtil.m; sourceTree = "<group>"; };
-		976CB3532FFE6CF6000505DD /* AppInfo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppInfo.h; sourceTree = "<group>"; };
-		976CB3542FFE6CF6000505DD /* AppInfo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppInfo.m; sourceTree = "<group>"; };
-		976CB3552FFE6CF6000505DD /* AppInfoManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppInfoManager.h; sourceTree = "<group>"; };
-		976CB3562FFE6CF6000505DD /* AppInfoManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppInfoManager.m; sourceTree = "<group>"; };
 		976CB35E2FFE710E000505DD /* loading_03.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = loading_03.json; sourceTree = "<group>"; };
 		976CB35F2FFE710E000505DD /* loading_coffee.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = loading_coffee.json; sourceTree = "<group>"; };
 		976CB3602FFE710E000505DD /* loading_tea.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = loading_tea.json; sourceTree = "<group>"; };
 		976CB3612FFE710E000505DD /* loading_test.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = loading_test.json; sourceTree = "<group>"; };
-		976CB3672FFE76A0000505DD /* CJBaseAlertView+TSPopupAction.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CJBaseAlertView+TSPopupAction.h"; sourceTree = "<group>"; };
-		976CB3682FFE76A0000505DD /* CJBaseAlertView+TSPopupAction.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "CJBaseAlertView+TSPopupAction.m"; sourceTree = "<group>"; };
-		976CB3692FFE76A0000505DD /* TSAlertManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TSAlertManager.h; sourceTree = "<group>"; };
-		976CB36A2FFE76A0000505DD /* TSAlertManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TSAlertManager.m; sourceTree = "<group>"; };
 		976CB36E2FFE8262000505DD /* AppAssets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = AppAssets.xcassets; sourceTree = "<group>"; };
 		976CB36F2FFE8262000505DD /* AppCommon.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = AppCommon.xcassets; sourceTree = "<group>"; };
 		976CB3702FFE8262000505DD /* bg@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "bg@2x.jpg"; sourceTree = "<group>"; };
@@ -242,9 +224,6 @@
 				780E46071E5DF87B00980127 /* AppDelegate.m */,
 				8014A27E1FA2C2E500DDDB5A /* AppDelegate+WindowRootViewController.h */,
 				8014A27F1FA2C2E500DDDB5A /* AppDelegate+WindowRootViewController.m */,
-				976CB3582FFE6CF6000505DD /* Service */,
-				976CB34C2FFE6C9D000505DD /* CommonUtil */,
-				976CB3232FFE6AA4000505DD /* CommonUI */,
 				9791AAD430055AB800040DC0 /* CJSmallCustomView */,
 				80FF8F0A1FC5649E00E437CF /* Modules */,
 				976CB3622FFE710E000505DD /* Resource */,
@@ -332,6 +311,8 @@
 				789A4F2621FAF3A8001528B9 /* CvDemo_Complex.xib */,
 				789A4F3421FAF3A8001528B9 /* CvDemo_Complex+Event.h */,
 				789A4F2421FAF3A8001528B9 /* CvDemo_Complex+Event.m */,
+				976CB33E2FFE6C9D000505DD /* DemoInfo.h */,
+				976CB33F2FFE6C9D000505DD /* DemoInfo.m */,
 				789A4F2321FAF3A8001528B9 /* Detail.h */,
 				789A4F2721FAF3A8001528B9 /* Detail.m */,
 				789A4F3321FAF3A8001528B9 /* Detail.xib */,
@@ -401,62 +382,6 @@
 			path = Modules;
 			sourceTree = "<group>";
 		};
-		976CB3232FFE6AA4000505DD /* CommonUI */ = {
-			isa = PBXGroup;
-			children = (
-				976CB36B2FFE76A0000505DD /* TSAlert */,
-			);
-			path = CommonUI;
-			sourceTree = "<group>";
-		};
-		976CB3422FFE6C9D000505DD /* TestDataModel */ = {
-			isa = PBXGroup;
-			children = (
-				976CB33E2FFE6C9D000505DD /* DemoInfo.h */,
-				976CB33F2FFE6C9D000505DD /* DemoInfo.m */,
-				976CB3402FFE6C9D000505DD /* TestDataModel.h */,
-				976CB3412FFE6C9D000505DD /* TestDataModel.m */,
-			);
-			path = TestDataModel;
-			sourceTree = "<group>";
-		};
-		976CB3452FFE6C9D000505DD /* TestDataUtil */ = {
-			isa = PBXGroup;
-			children = (
-				976CB3422FFE6C9D000505DD /* TestDataModel */,
-				976CB3432FFE6C9D000505DD /* TestDataUtil.h */,
-				976CB3442FFE6C9D000505DD /* TestDataUtil.m */,
-			);
-			path = TestDataUtil;
-			sourceTree = "<group>";
-		};
-		976CB34C2FFE6C9D000505DD /* CommonUtil */ = {
-			isa = PBXGroup;
-			children = (
-				976CB3452FFE6C9D000505DD /* TestDataUtil */,
-			);
-			path = CommonUtil;
-			sourceTree = "<group>";
-		};
-		976CB3572FFE6CF6000505DD /* AppInfo */ = {
-			isa = PBXGroup;
-			children = (
-				976CB3532FFE6CF6000505DD /* AppInfo.h */,
-				976CB3542FFE6CF6000505DD /* AppInfo.m */,
-				976CB3552FFE6CF6000505DD /* AppInfoManager.h */,
-				976CB3562FFE6CF6000505DD /* AppInfoManager.m */,
-			);
-			path = AppInfo;
-			sourceTree = "<group>";
-		};
-		976CB3582FFE6CF6000505DD /* Service */ = {
-			isa = PBXGroup;
-			children = (
-				976CB3572FFE6CF6000505DD /* AppInfo */,
-			);
-			path = Service;
-			sourceTree = "<group>";
-		};
 		976CB3622FFE710E000505DD /* Resource */ = {
 			isa = PBXGroup;
 			children = (
@@ -472,17 +397,6 @@
 				976CB3752FFE8262000505DD /* ThirdPartIcon.xcassets */,
 			);
 			path = Resource;
-			sourceTree = "<group>";
-		};
-		976CB36B2FFE76A0000505DD /* TSAlert */ = {
-			isa = PBXGroup;
-			children = (
-				976CB3672FFE76A0000505DD /* CJBaseAlertView+TSPopupAction.h */,
-				976CB3682FFE76A0000505DD /* CJBaseAlertView+TSPopupAction.m */,
-				976CB3692FFE76A0000505DD /* TSAlertManager.h */,
-				976CB36A2FFE76A0000505DD /* TSAlertManager.m */,
-			);
-			path = TSAlert;
 			sourceTree = "<group>";
 		};
 		976CB3732FFE8262000505DD /* data */ = {
@@ -728,7 +642,6 @@
 				"${BUILT_PRODUCTS_DIR}/CJBaseHelper/CJBaseHelper.framework",
 				"${BUILT_PRODUCTS_DIR}/CJBaseUIKit/CJBaseUIKit.framework",
 				"${BUILT_PRODUCTS_DIR}/CJBaseUtil-Swift/CJBaseUtil_Swift.framework",
-				"${BUILT_PRODUCTS_DIR}/CJBaseUtil/CJBaseUtil.framework",
 				"${BUILT_PRODUCTS_DIR}/CJCollectionViewLayout/CJCollectionViewLayout.framework",
 				"${BUILT_PRODUCTS_DIR}/CJComplexUIKit/CJComplexUIKit.framework",
 				"${BUILT_PRODUCTS_DIR}/CJContainer/CJContainer.framework",
@@ -738,10 +651,8 @@
 				"${BUILT_PRODUCTS_DIR}/CJNetwork/CJNetwork.framework",
 				"${BUILT_PRODUCTS_DIR}/CJNetworkFileModel/CJNetworkFileModel.framework",
 				"${BUILT_PRODUCTS_DIR}/CJOverlayView/CJOverlayView.framework",
-				"${BUILT_PRODUCTS_DIR}/CJPopupAction/CJPopupAction.framework",
 				"${BUILT_PRODUCTS_DIR}/CJPopupCreater/CJPopupCreater.framework",
 				"${BUILT_PRODUCTS_DIR}/CQActionCollectionView/CQActionCollectionView.framework",
-				"${BUILT_PRODUCTS_DIR}/CQBridgeSTOLottie/CQBridgeSTOLottie.framework",
 				"${BUILT_PRODUCTS_DIR}/CQDemoKit/CQDemoKit.framework",
 				"${BUILT_PRODUCTS_DIR}/CQImageAddDeleteListKit/CQImageAddDeleteListKit.framework",
 				"${BUILT_PRODUCTS_DIR}/CQImageKit/CQImageKit.framework",
@@ -755,12 +666,8 @@
 				"${BUILT_PRODUCTS_DIR}/MJPopupViewController/MJPopupViewController.framework",
 				"${BUILT_PRODUCTS_DIR}/Masonry/Masonry.framework",
 				"${BUILT_PRODUCTS_DIR}/OpenUDID/OpenUDID.framework",
-				"${BUILT_PRODUCTS_DIR}/PinYin4Objc/PinYin4Objc.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
-				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
-				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
 				"${BUILT_PRODUCTS_DIR}/YYCache/YYCache.framework",
-				"${BUILT_PRODUCTS_DIR}/lottie-ios/Lottie.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
@@ -768,7 +675,6 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CJBaseHelper.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CJBaseUIKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CJBaseUtil_Swift.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CJBaseUtil.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CJCollectionViewLayout.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CJComplexUIKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CJContainer.framework",
@@ -778,10 +684,8 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CJNetwork.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CJNetworkFileModel.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CJOverlayView.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CJPopupAction.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CJPopupCreater.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CQActionCollectionView.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CQBridgeSTOLottie.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CQDemoKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CQImageAddDeleteListKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CQImageKit.framework",
@@ -795,12 +699,8 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MJPopupViewController.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Masonry.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/OpenUDID.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PinYin4Objc.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YYCache.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Lottie.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -820,8 +720,6 @@
 				789A4F9421FAF3FB001528B9 /* TvDemo_Complex.m in Sources */,
 				789A4F6021FAF3A8001528B9 /* CvDemo_Complex+Event.m in Sources */,
 				780E46081E5DF87B00980127 /* AppDelegate.m in Sources */,
-				976CB36C2FFE76A0000505DD /* TSAlertManager.m in Sources */,
-				976CB36D2FFE76A0000505DD /* CJBaseAlertView+TSPopupAction.m in Sources */,
 				789A4F9A21FAF3FB001528B9 /* TableHomeViewController.m in Sources */,
 				789A4F6521FAF3A8001528B9 /* CustomCollectionViewCell.m in Sources */,
 				789A4F6221FAF3A8001528B9 /* Detail.m in Sources */,
@@ -833,14 +731,10 @@
 				78590D0C215C79DD00F45AD5 /* UploadNoneImagePickerViewController.m in Sources */,
 				789A4F5F21FAF3A8001528B9 /* CvDemo_Complex.m in Sources */,
 				789A4F6821FAF3A8001528B9 /* cvSupplementaryHead.m in Sources */,
-				976CB3502FFE6C9D000505DD /* TestDataModel.m in Sources */,
-				976CB3512FFE6C9D000505DD /* TestDataUtil.m in Sources */,
 				976CB3522FFE6C9D000505DD /* DemoInfo.m in Sources */,
 				80E7E68920AC37CA000F762D /* IjinbuNetworkClient+Login.m in Sources */,
 				789A4F6721FAF3A8001528B9 /* cvSupplementaryFoot.m in Sources */,
 				789A4F9E21FAF3FB001528B9 /* CustomTableViewCell.m in Sources */,
-				976CB3592FFE6CF6000505DD /* AppInfo.m in Sources */,
-				976CB35A2FFE6CF6000505DD /* AppInfoManager.m in Sources */,
 				8014A2801FA2C2E500DDDB5A /* AppDelegate+WindowRootViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

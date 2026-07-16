@@ -7,6 +7,7 @@
 //
 
 #import "TableHomeViewController.h"
+#import <CQDemoKit/CQDMSectionDataModel.h>
 
 //UITableView
 #import "TableViewController.h"
@@ -30,7 +31,7 @@
     
     //UITableView
     {
-        CJSectionDataModel *sectionDataModel = [[CJSectionDataModel alloc] init];
+        CQDMSectionDataModel *sectionDataModel = [[CQDMSectionDataModel alloc] init];
         sectionDataModel.theme = @"UITableView方法了解";
         {
             CQDMModuleModel *TableViewModule = [[CQDMModuleModel alloc] init];

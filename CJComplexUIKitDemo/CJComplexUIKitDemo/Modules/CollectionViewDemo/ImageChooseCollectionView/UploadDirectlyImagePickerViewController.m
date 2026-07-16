@@ -9,11 +9,10 @@
 #import "UploadDirectlyImagePickerViewController.h"
 #import <Masonry/Masonry.h>
 #import <CQDemoKit/CQTSButtonFactory.h>
+#import <CQDemoKit/CJUIKitToastUtil.h>
 
 #import "IjinbuNetworkClient+Login.h"
 #import "IjinbuNetworkClient+UploadFile.h"
-
-#import <SVProgressHUD/SVProgressHUD.h>
 
 @interface UploadDirectlyImagePickerViewController ()
 
@@ -33,7 +32,7 @@
                 NSLog(@"登录成功");
             } else {
                 NSLog(@"登录失败");
-                [SVProgressHUD showErrorWithStatus:@"登录失败"];
+                [CJUIKitToastUtil showMessage:@"登录失败"];
             }
         }];
     });

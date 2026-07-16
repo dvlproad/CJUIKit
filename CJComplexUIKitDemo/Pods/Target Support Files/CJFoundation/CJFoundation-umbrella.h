@@ -15,8 +15,6 @@
 #import "NSString+CJCut.h"
 #import "NSString+CJEncoding.h"
 #import "NSString+CJEncryption.h"
-#import "NSString+CJTextSize.h"
-#import "NSString+CJValidate.h"
 
 FOUNDATION_EXPORT double CJFoundationVersionNumber;
 FOUNDATION_EXPORT const unsigned char CJFoundationVersionString[];

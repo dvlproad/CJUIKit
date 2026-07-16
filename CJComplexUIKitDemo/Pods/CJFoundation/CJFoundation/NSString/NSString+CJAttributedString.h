@@ -9,21 +9,23 @@
 #import <UIKit/UIKit.h>
 #import <Foundation/Foundation.h>
 
+NS_ASSUME_NONNULL_BEGIN
+
 @class CJStringAttributedModel;
 @interface NSString (CJAttributedString)
 
 /**
  *  对字符串中用特殊始止字符包取来的部分，按照指定的字符串配置进行自定义
  *
- *  @param startCharacter           开始的特殊字符
- *  @param endCharacter             结束的特殊字符
- *  @param stringAttributedModel    特殊字符之间的字符串需要进行自定义的那些配置(不需要设置是什么字符,因为这里已约定处理特殊字符之间的)
+ *  @param startCharacter               开始的特殊字符
+ *  @param endCharacter                 结束的特殊字符
+ *  @param middleStringAttributedModel  特殊字符之间的字符串需要进行自定义的那些配置(不需要设置是什么字符,因为这里已约定处理特殊字符之间的)
  *
  *  @return 符合要求的富文本
  */
-- (NSMutableString *)attributedStringForSepicalBetweenStart:(NSString *)startCharacter
-                                                        end:(NSString *)endCharacter
-                                middleStringAttributedModel:(CJStringAttributedModel *)middleStringAttributedModel;
+- (NSAttributedString *)attributedStringForSepicalBetweenStart:(NSString *)startCharacter
+                                                           end:(NSString *)endCharacter
+                                   middleStringAttributedModel:(CJStringAttributedModel *)middleStringAttributedModel;
 
 /**
  *  对字符串中的子字符串们进行自定义设置
@@ -32,7 +34,7 @@
  *
  *  @return 子字符串们经过自定义后的新的字符串
  */
-- (NSAttributedString *)attributedStringWithModels:(NSArray<CJStringAttributedModel *> *)attributedStringModels;
+- (NSMutableAttributedString *)attributedStringWithModels:(NSArray<CJStringAttributedModel *> *)attributedStringModels;
 
 @end
 
@@ -51,3 +53,4 @@
 
 @end
 
+NS_ASSUME_NONNULL_END

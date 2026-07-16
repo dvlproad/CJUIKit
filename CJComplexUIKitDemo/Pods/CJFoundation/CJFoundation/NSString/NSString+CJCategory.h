@@ -10,9 +10,7 @@
 #define NSString_CJCategory_h
 
 #import "NSString+CJAttributedString.h"
-#import "NSString+CJTextSize.h"
 #import "NSString+CJEncoding.h"
 #import "NSString+CJEncryption.h"
-#import "NSString+CJValidate.h"
 
 #endif /* NSString_CJCategory_h */

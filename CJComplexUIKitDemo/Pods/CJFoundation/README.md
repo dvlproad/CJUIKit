@@ -139,6 +139,51 @@
 
 #### 1、CJBaseUIKit更新记录
 
+* 
+
+> 1、增加UITextInputCJHelper：文本长度限制：UITextField 和 UITextView 会需要使用到的字符串处理方法
+>
+> 2、优化CJTextView，增加返回是否应该更新高度的参数
+>
+> 3、更新CJRangeSliderControl，增加slider手势变化的回调（有时候会需要在某种结束后做震动处理）
+
+* 2020-11-28 V
+
+> 1、处理CJTextView
+>
+> 2、UIView+CJAutoMoveUp 完善键盘变化的信息回调
+>
+> 3、添加测试访抖音评论拖动效果
+>
+> 4、UIView+CJPopupInView增加对弹出视图的blankView增加可定制方法
+
+* 2020-11-26 V0.6.6
+
+>1、增加本视图据键盘自动上移的方法：\#import "UIView+CJAutoMoveUp.h"
+>
+>2、重构CJRangeSliderControl ：增加连popoverView都可以允许自定义，并增加弹出框popoverView底部与滑块顶部间距大小属性popoverSpacing
+
+* 2020-11-23 V0.6.4
+
+> 1、为UIView+CJPopupInView 弹出到屏幕window中间增加中心偏移属性
+>
+> 2、CJSearchBarDelegate相关之前已另起放在CQSearchKit库里来处理了
+
+* 2020-11-10 V0.6.2
+
+> 1、优化 CJSliderControl 移动时候，新X的计算方法
+>
+> 2、优化范围滑块 CJRangeSliderControl，增加新功能，使其可以设置初始值，且滑块位置能够滑道对应的初始值处
+
+
+* 2020-04-17 V0.6.1
+
+> 修复弹窗单例时候，在隐藏过后，想再显示，没法继续显示的问题
+
+* 2020-04-15 V0.6.0
+
+> 将CJBaseUIKit中的Toast、Alert、ActionSheet、HUD等组件都转移到CJBaseOverlayKit库中
+
 - 2019-01-21 V0.4.0
 
 > 1. 精简CJBaseUIKit库，转移不一定是Base的库到CJComplexUIKit中
@@ -164,6 +209,10 @@
 
 
 #### 2、CJComplexUIKit更新记录
+
+* 2020-11-02
+
+  > 1、将CJComplexUIKitDemo 中的 图片添加删除上传列表CJImageAddDeletePickUploadCollectionView 改为使用 CQImageAddDeleteListKit 库中的类
 
 - 2018-09-27 V0.2.0
 

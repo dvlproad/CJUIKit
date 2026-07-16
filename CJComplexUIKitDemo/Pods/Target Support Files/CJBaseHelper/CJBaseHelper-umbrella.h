@@ -10,7 +10,6 @@
 #endif
 #endif
 
-#import "AuthorizationCJHelper.h"
 #import "UIViewCJHelper.h"
 #import "UIViewControllerCJHelper.h"
 

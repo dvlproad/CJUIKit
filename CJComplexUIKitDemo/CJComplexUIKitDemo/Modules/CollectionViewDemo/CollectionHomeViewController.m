@@ -35,7 +35,7 @@
     
     //UICollectionView
     {
-        CJSectionDataModel *sectionDataModel = [[CJSectionDataModel alloc] init];
+        CQDMSectionDataModel *sectionDataModel = [[CQDMSectionDataModel alloc] init];
         sectionDataModel.theme = @"UICollectionView相关";
         {
             CQDMModuleModel *complexDemoModule = [[CQDMModuleModel alloc] init];
@@ -49,7 +49,7 @@
     
     //图片选择的集合视图DataScrollView
     {
-        CJSectionDataModel *sectionDataModel = [[CJSectionDataModel alloc] init];
+        CQDMSectionDataModel *sectionDataModel = [[CQDMSectionDataModel alloc] init];
         sectionDataModel.theme = @"DataScrollView(带数据源的滚动视图)";
         {
             CQDMModuleModel *imagePickerCollectionViewModule = [[CQDMModuleModel alloc] init];

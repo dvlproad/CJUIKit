@@ -45,12 +45,23 @@
     // 将 tsview 添加到 viewController.view 中,设置 tsview 的自动布局约束
     [viewController.view addSubview:tsview];
     tsview.translatesAutoresizingMaskIntoConstraints = NO;
+    
+    if (@available(iOS 11.0, *)) {  // iOS 11+ 使用 safeAreaLayoutGuide 适配刘海屏
     [NSLayoutConstraint activateConstraints:@[
         [tsview.topAnchor constraintEqualToAnchor:viewController.view.safeAreaLayoutGuide.topAnchor constant:10],
         [tsview.bottomAnchor constraintEqualToAnchor:viewController.view.bottomAnchor constant:-10],
         [tsview.leadingAnchor constraintEqualToAnchor:viewController.view.leadingAnchor constant:10],
         [tsview.trailingAnchor constraintEqualToAnchor:viewController.view.safeAreaLayoutGuide.trailingAnchor constant:-10]
     ]];
+    } else {
+        // iOS 10 及以下不需要考虑 safe area，直接用 view 自身
+        [NSLayoutConstraint activateConstraints:@[
+            [tsview.topAnchor constraintEqualToAnchor:viewController.view.topAnchor constant:10],
+            [tsview.bottomAnchor constraintEqualToAnchor:viewController.view.bottomAnchor constant:-10],
+            [tsview.leadingAnchor constraintEqualToAnchor:viewController.view.leadingAnchor constant:10],
+            [tsview.trailingAnchor constraintEqualToAnchor:viewController.view.trailingAnchor constant:-10]
+        ]];
+    }
     
     return viewController;
 }

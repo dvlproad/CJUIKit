@@ -9,6 +9,8 @@
 ///iOS里常见的几种信息编码、加密方法 http://www.cnblogs.com/dsxniubility/p/4264777.html
 #import <Foundation/Foundation.h>
 
+NS_ASSUME_NONNULL_BEGIN
+
 @interface NSString (CJEncryption)
 
 - (NSString *)cjMD5; //不可逆
@@ -33,3 +35,5 @@
 + (NSString *)cj_textFromBase64String:(NSString *)base64;
 
 @end
+
+NS_ASSUME_NONNULL_END
