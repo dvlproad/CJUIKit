@@ -19,11 +19,13 @@
 //image
 #import "QRCodeViewController.h"
 
+// DataUtil
+#import "TSDataModelUtilViewController.h"
 
 //其他Util
 #import "CallSystemViewController.h"
 #import "DeviceInfoViewController.h"
-#import "DataUtilViewController.h"
+#import "TSPinyinUtilViewController.h"
 
 #import "KeyboardUtilViewController.h"
 #import "SharedInstanceViewController.h"
@@ -118,6 +120,36 @@
         [sectionDataModels addObject:sectionDataModel];
     }
     
+    // CJDataUtil 功能展示
+    {
+        CQDMSectionDataModel *sectionDataModel = [[CQDMSectionDataModel alloc] init];
+        sectionDataModel.theme = @"CJDataUtil(数据处理工具)";
+        {
+            CQDMModuleModel *dataUtilModule = [[CQDMModuleModel alloc] init];
+            dataUtilModule.title = @"PinyinUtil";
+            dataUtilModule.classEntry = [TSPinyinUtilViewController class];
+            [sectionDataModel.values addObject:dataUtilModule];
+        }
+        {
+            CQDMModuleModel *dataUtilModule = [[CQDMModuleModel alloc] init];
+            dataUtilModule.title = @"CJDataUtil交互式测试示例";
+            dataUtilModule.content = @"请查看 UIKit-Search-iOS 项目";
+            dataUtilModule.classEntry = [TSDataModelUtilViewController class];
+            /*
+            dataUtilModule.actionBlock = ^{
+                NSString *url = @"https://gitee.com/dvlproad/UIKit-Search-iOS";
+                UIPasteboard *pasteboard = [UIPasteboard generalPasteboard];
+                pasteboard.string = url;
+                [CJUIKitToastUtil showMessage:[NSString stringWithFormat:@"已拷贝%@，请自行粘贴跳转网页查看", url]];
+            };
+            */
+            [sectionDataModel.values addObject:dataUtilModule];
+        }
+        
+        [sectionDataModels addObject:sectionDataModel];
+    }
+
+    
     //其他
     {
         
@@ -136,12 +168,6 @@
             deviceInfoModule.classEntry = [DeviceInfoViewController class];
             deviceInfoModule.isCreateByXib = NO;
             [sectionDataModel.values addObject:deviceInfoModule];
-        }
-        {
-            CQDMModuleModel *dataUtilModule = [[CQDMModuleModel alloc] init];
-            dataUtilModule.title = @"PinyinUtil";
-            dataUtilModule.classEntry = [DataUtilViewController class];
-            [sectionDataModel.values addObject:dataUtilModule];
         }
         
         {

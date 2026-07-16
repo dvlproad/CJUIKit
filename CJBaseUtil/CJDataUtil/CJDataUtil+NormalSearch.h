@@ -35,7 +35,7 @@ typedef NS_ENUM(NSUInteger, CJSearchType) {
  */
 + (NSMutableArray<CJSectionDataModel *> *)searchText:(NSString *)searchText
                                  inSectionDataModels:(NSArray<CJSectionDataModel *> *)sectionDataModels
-                             dataModelSearchSelector:(SEL)dataModelSearchSelector
+                             dataModelSearchSelector:(nullable SEL)dataModelSearchSelector
                                       withSearchType:(CJSearchType)searchType
                                        supportPinyin:(BOOL)supportPinyin
                                pinyinFromStringBlock:(NSString *(^)(NSString *string))pinyinFromStringBlock;
@@ -56,9 +56,9 @@ typedef NS_ENUM(NSUInteger, CJSearchType) {
  */
 + (NSMutableArray<CJSectionDataModel *> *)searchText:(NSString *)searchText
                                  inSectionDataModels:(NSArray<CJSectionDataModel *> *)sectionDataModels
-                             dataModelSearchSelector:(SEL)dataModelSearchSelector
-                     andSearchInEveryDataModelMember:(SEL)dataModelMemberSelector
-                       dataModelMemberSearchSelector:(SEL)dataModelMemberSearchSelector
+                             dataModelSearchSelector:(nullable SEL)dataModelSearchSelector
+                     andSearchInEveryDataModelMember:(nullable SEL)dataModelMemberSelector
+                       dataModelMemberSearchSelector:(nullable SEL)dataModelMemberSearchSelector
                                       withSearchType:(CJSearchType)searchType
                                        supportPinyin:(BOOL)supportPinyin
                                pinyinFromStringBlock:(NSString *(^)(NSString *string))pinyinFromStringBlock;
@@ -81,7 +81,7 @@ typedef NS_ENUM(NSUInteger, CJSearchType) {
  */
 + (NSMutableArray *)searchText:(NSString *)searchText
                   inDataModels:(NSArray *)dataModels
-       dataModelSearchSelector:(SEL)dataModelSearchSelector
+       dataModelSearchSelector:(nullable SEL)dataModelSearchSelector
                 withSearchType:(CJSearchType)searchType
                  supportPinyin:(BOOL)supportPinyin
          pinyinFromStringBlock:(NSString *(^)(NSString *string))pinyinFromStringBlock;
@@ -102,9 +102,9 @@ typedef NS_ENUM(NSUInteger, CJSearchType) {
  */
 + (NSMutableArray<NSObject *> *)searchText:(NSString *)searchText
                               inDataModels:(NSArray<NSObject *> *)dataModels
-                   dataModelSearchSelector:(SEL)dataModelSearchSelector
-           andSearchInEveryDataModelMember:(SEL)dataModelMemberSelector
-             dataModelMemberSearchSelector:(SEL)dataModelMemberSearchSelector
+                   dataModelSearchSelector:(nullable SEL)dataModelSearchSelector
+           andSearchInEveryDataModelMember:(nullable SEL)dataModelMemberSelector
+             dataModelMemberSearchSelector:(nullable SEL)dataModelMemberSearchSelector
                             withSearchType:(CJSearchType)searchType
                              supportPinyin:(BOOL)supportPinyin
                      pinyinFromStringBlock:(NSString *(^)(NSString *string))pinyinFromStringBlock;
@@ -127,7 +127,7 @@ typedef NS_ENUM(NSUInteger, CJSearchType) {
  */
 + (BOOL)isContainSearchText:(NSString *)searchText
                 inDataModel:(id)dataModel
-    dataModelSearchSelector:(SEL)dataModelSearchSelector
+    dataModelSearchSelector:(nullable SEL)dataModelSearchSelector
              withSearchType:(CJSearchType)searchType
               supportPinyin:(BOOL)supportPinyin
       pinyinFromStringBlock:(NSString *(^)(NSString *string))pinyinFromStringBlock;
@@ -148,9 +148,9 @@ typedef NS_ENUM(NSUInteger, CJSearchType) {
  */
 + (NSObject *)searchText:(NSString *)searchText
              inDataModel:(NSObject *)dataModel
- dataModelSearchSelector:(SEL)dataModelSearchSelector
-andSearchInEveryDataModelMember:(SEL)dataModelMemberSelector
-dataModelMemberSearchSelector:(SEL)dataModelMemberSearchSelector
+ dataModelSearchSelector:(nullable SEL)dataModelSearchSelector
+andSearchInEveryDataModelMember:(nullable SEL)dataModelMemberSelector
+dataModelMemberSearchSelector:(nullable SEL)dataModelMemberSearchSelector
           withSearchType:(CJSearchType)searchType
            supportPinyin:(BOOL)supportPinyin
    pinyinFromStringBlock:(NSString *(^)(NSString *string))pinyinFromStringBlock;

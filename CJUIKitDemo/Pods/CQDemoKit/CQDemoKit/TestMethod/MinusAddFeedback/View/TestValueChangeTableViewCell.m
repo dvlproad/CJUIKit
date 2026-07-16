@@ -122,7 +122,13 @@
 
 - (void)showExtraResult {
     NSString *extraResultMessage = self.valueChangeModel.extarResultString;
-    self.extraResultLabel.text = extraResultMessage;
+    if (extraResultMessage == nil) {
+        self.extraResultLabel.text = @"（方法返回 nil）";
+    } else if (extraResultMessage.length == 0) {
+        self.extraResultLabel.text = @"（方法返回空字符串）";
+    } else {
+        self.extraResultLabel.text = extraResultMessage;
+    }
 }
 
 

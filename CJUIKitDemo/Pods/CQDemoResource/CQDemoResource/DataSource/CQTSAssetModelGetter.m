@@ -55,7 +55,7 @@
                                                       randomOrder:(BOOL)randomOrder
 {
     if (assetNameOrUrls.count == 0) {
-        return @[];
+        return [NSMutableArray arrayWithArray:@[]];
     }
     
     NSMutableArray<CQTSLocImageDataModel *> *dataModels = [[NSMutableArray alloc] init];
@@ -118,7 +118,7 @@
                                                       randomOrder:(BOOL)randomOrder
 {
     if (assetNameOrUrls.count == 0) {
-        return @[];
+        return [NSMutableArray arrayWithArray:@[]];
     }
     
     NSMutableArray<CQTSNetImageDataModel *> *dataModels = [[NSMutableArray alloc] init];

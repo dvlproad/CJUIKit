@@ -6574,51 +6574,6 @@
 			};
 			name = Release;
 		};
-		0B61440927547E2CD52D9407F43545D9 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = B9C1D760BC8E8634E4EA8B6A7831920D /* CQDemoResource.debug.xcconfig */;
-			buildSettings = {
-				CODE_SIGNING_ALLOWED = NO;
-				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/CQDemoResource";
-				IBSC_MODULE = CQDemoResource;
-				INFOPLIST_FILE = "Target Support Files/CQDemoResource/ResourceBundle-CQDemoResource-CQDemoResource-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				PRODUCT_NAME = CQDemoResource;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				WRAPPER_EXTENSION = bundle;
-			};
-			name = Debug;
-		};
-		0B9403C195F6B505FEC64A64A215EC8C /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = B9C1D760BC8E8634E4EA8B6A7831920D /* CQDemoResource.debug.xcconfig */;
-			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				ENABLE_MODULE_VERIFIER = NO;
-				ENABLE_USER_SCRIPT_SANDBOXING = NO;
-				GCC_PREFIX_HEADER = "Target Support Files/CQDemoResource/CQDemoResource-prefix.pch";
-				GENERATE_INFOPLIST_FILE = NO;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PRIVATE_HEADERS_FOLDER_PATH = "";
-				PRODUCT_MODULE_NAME = CQDemoResource;
-				PRODUCT_NAME = CQDemoResource;
-				PUBLIC_HEADERS_FOLDER_PATH = "";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_INSTALL_OBJC_HEADER = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
 		0D86219BB158786EB17EAAF514F1BD90 /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 6C5D9CD6011951898787795FE52774A0 /* UINavigation-SXFixSpace.release.xcconfig */;
@@ -6837,23 +6792,6 @@
 			};
 			name = Release;
 		};
-		248008DDDCF40586C5F2DA0E3415149D /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 02AACBB4CD70F888E2C73AC979F30106 /* CQDemoKit.debug.xcconfig */;
-			buildSettings = {
-				CODE_SIGNING_ALLOWED = NO;
-				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/CQDemoKit";
-				IBSC_MODULE = CQDemoKit;
-				INFOPLIST_FILE = "Target Support Files/CQDemoKit/ResourceBundle-CQDemoKit_TestMethod-CQDemoKit-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				PRODUCT_NAME = CQDemoKit_TestMethod;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				WRAPPER_EXTENSION = bundle;
-			};
-			name = Debug;
-		};
 		269B455C28310F415275B70B26EA5A6E /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 3FC8D3281C620C57A74AE414C9957678 /* CJBaseEffectKit.release.xcconfig */;
@@ -6873,6 +6811,62 @@
 				PRIVATE_HEADERS_FOLDER_PATH = "";
 				PRODUCT_MODULE_NAME = CJBaseEffectKit;
 				PRODUCT_NAME = CJBaseEffectKit;
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_INSTALL_OBJC_HEADER = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		26CF2796916026E8C33A3ED246C22E59 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FC93EBA605FC57BD50FA9E8C47CFEE32 /* CQDemoResource.release.xcconfig */;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				ENABLE_MODULE_VERIFIER = NO;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				GCC_PREFIX_HEADER = "Target Support Files/CQDemoResource/CQDemoResource-prefix.pch";
+				GENERATE_INFOPLIST_FILE = NO;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_MODULE_NAME = CQDemoResource;
+				PRODUCT_NAME = CQDemoResource;
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_INSTALL_OBJC_HEADER = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		27F3FEC8AE12B84B2D8AE0B03704F45A /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = BE5D984B3BA64EA0C8586DFD6BC6ECEB /* CQDemoKit.release.xcconfig */;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				ENABLE_MODULE_VERIFIER = NO;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				GCC_PREFIX_HEADER = "Target Support Files/CQDemoKit/CQDemoKit-prefix.pch";
+				GENERATE_INFOPLIST_FILE = NO;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_MODULE_NAME = CQDemoKit;
+				PRODUCT_NAME = CQDemoKit;
 				PUBLIC_HEADERS_FOLDER_PATH = "";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
@@ -6912,12 +6906,11 @@
 			};
 			name = Release;
 		};
-		39E16B191D74CE5923C75E54FBD0A523 /* Release */ = {
+		35A3DB5BC7FFD4E3AB6BE2CE06EDB6A0 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = FC93EBA605FC57BD50FA9E8C47CFEE32 /* CQDemoResource.release.xcconfig */;
+			baseConfigurationReference = B9C1D760BC8E8634E4EA8B6A7831920D /* CQDemoResource.debug.xcconfig */;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
-				CLANG_ENABLE_OBJC_WEAK = NO;
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
@@ -6925,7 +6918,7 @@
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_PREFIX_HEADER = "Target Support Files/CQDemoResource/CQDemoResource-prefix.pch";
 				GENERATE_INFOPLIST_FILE = NO;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PRIVATE_HEADERS_FOLDER_PATH = "";
@@ -6937,26 +6930,35 @@
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
 				SWIFT_INSTALL_OBJC_HEADER = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
 			};
-			name = Release;
+			name = Debug;
 		};
-		4F753170F73B427F254813840657C4A2 /* Release */ = {
+		3EA36FBAE72E47B06B54F6CC84021FC9 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = BE5D984B3BA64EA0C8586DFD6BC6ECEB /* CQDemoKit.release.xcconfig */;
+			baseConfigurationReference = 02AACBB4CD70F888E2C73AC979F30106 /* CQDemoKit.debug.xcconfig */;
 			buildSettings = {
-				CODE_SIGNING_ALLOWED = NO;
-				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/CQDemoKit";
-				IBSC_MODULE = CQDemoKit;
-				INFOPLIST_FILE = "Target Support Files/CQDemoKit/ResourceBundle-CQDemoKit_TestMethod-CQDemoKit-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				PRODUCT_NAME = CQDemoKit_TestMethod;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				ENABLE_MODULE_VERIFIER = NO;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				GCC_PREFIX_HEADER = "Target Support Files/CQDemoKit/CQDemoKit-prefix.pch";
+				GENERATE_INFOPLIST_FILE = NO;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_MODULE_NAME = CQDemoKit;
+				PRODUCT_NAME = CQDemoKit;
+				PUBLIC_HEADERS_FOLDER_PATH = "";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_INSTALL_OBJC_HEADER = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				WRAPPER_EXTENSION = bundle;
 			};
-			name = Release;
+			name = Debug;
 		};
 		51A7B98BABB8B700199B3A025D7DCEF9 /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -7071,6 +7073,23 @@
 			};
 			name = Debug;
 		};
+		5892C3D9351B1ACED0A7635118F7EB1A /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FC93EBA605FC57BD50FA9E8C47CFEE32 /* CQDemoResource.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGNING_ALLOWED = NO;
+				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/CQDemoResource";
+				IBSC_MODULE = CQDemoResource;
+				INFOPLIST_FILE = "Target Support Files/CQDemoResource/ResourceBundle-CQDemoResource-CQDemoResource-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				PRODUCT_NAME = CQDemoResource;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Release;
+		};
 		6345743AFDF849691968E3B918FE34E3 /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 26082AA66F6E97753E1D7D7E77157110 /* CJPopupView.release.xcconfig */;
@@ -7099,34 +7118,6 @@
 			};
 			name = Release;
 		};
-		67766EEACC1BACB3F349AAA30FE4B657 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 02AACBB4CD70F888E2C73AC979F30106 /* CQDemoKit.debug.xcconfig */;
-			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				ENABLE_MODULE_VERIFIER = NO;
-				ENABLE_USER_SCRIPT_SANDBOXING = NO;
-				GCC_PREFIX_HEADER = "Target Support Files/CQDemoKit/CQDemoKit-prefix.pch";
-				GENERATE_INFOPLIST_FILE = NO;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PRIVATE_HEADERS_FOLDER_PATH = "";
-				PRODUCT_MODULE_NAME = CQDemoKit;
-				PRODUCT_NAME = CQDemoKit;
-				PUBLIC_HEADERS_FOLDER_PATH = "";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_INSTALL_OBJC_HEADER = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
 		6C47E6B3127BD35FB24C264435BCC63F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 37426931698A7CDA74C705030ACBAB1A /* MJExtension.debug.xcconfig */;
@@ -7154,32 +7145,20 @@
 			};
 			name = Debug;
 		};
-		6D8D9A44149E47C88707273495F5813D /* Release */ = {
+		7452D4E7B8E14BD5CD57DCD5AEDF6B54 /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = BE5D984B3BA64EA0C8586DFD6BC6ECEB /* CQDemoKit.release.xcconfig */;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				ENABLE_MODULE_VERIFIER = NO;
-				ENABLE_USER_SCRIPT_SANDBOXING = NO;
-				GCC_PREFIX_HEADER = "Target Support Files/CQDemoKit/CQDemoKit-prefix.pch";
-				GENERATE_INFOPLIST_FILE = NO;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PRIVATE_HEADERS_FOLDER_PATH = "";
-				PRODUCT_MODULE_NAME = CQDemoKit;
-				PRODUCT_NAME = CQDemoKit;
-				PUBLIC_HEADERS_FOLDER_PATH = "";
+				CODE_SIGNING_ALLOWED = NO;
+				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/CQDemoKit";
+				IBSC_MODULE = CQDemoKit;
+				INFOPLIST_FILE = "Target Support Files/CQDemoKit/ResourceBundle-CQDemoKit_TestMethod-CQDemoKit-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				PRODUCT_NAME = CQDemoKit_TestMethod;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_INSTALL_OBJC_HEADER = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
+				WRAPPER_EXTENSION = bundle;
 			};
 			name = Release;
 		};
@@ -7601,6 +7580,23 @@
 			};
 			name = Release;
 		};
+		AD55346571A785762CF976A6A6CE41CE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B9C1D760BC8E8634E4EA8B6A7831920D /* CQDemoResource.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGNING_ALLOWED = NO;
+				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/CQDemoResource";
+				IBSC_MODULE = CQDemoResource;
+				INFOPLIST_FILE = "Target Support Files/CQDemoResource/ResourceBundle-CQDemoResource-CQDemoResource-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				PRODUCT_NAME = CQDemoResource;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Debug;
+		};
 		B41A52016C55FED703EED8EAA5AB10F1 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = F0CE63EE9376913850AAD849CF94F947 /* IQKeyboardManager.debug.xcconfig */;
@@ -7850,6 +7846,23 @@
 			};
 			name = Release;
 		};
+		D9E949244D1FA0636C1EE02A3CA8A76C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 02AACBB4CD70F888E2C73AC979F30106 /* CQDemoKit.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGNING_ALLOWED = NO;
+				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/CQDemoKit";
+				IBSC_MODULE = CQDemoKit;
+				INFOPLIST_FILE = "Target Support Files/CQDemoKit/ResourceBundle-CQDemoKit_TestMethod-CQDemoKit-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				PRODUCT_NAME = CQDemoKit_TestMethod;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Debug;
+		};
 		E3E09CAF23576B63C8C4F49CE42B10BC /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = EF4A7DE6DC49D510C2CBADED3B8D2FC6 /* CJPopupAction.release.xcconfig */;
@@ -8032,23 +8045,6 @@
 			};
 			name = Release;
 		};
-		FCB09EF058522A4743FA7A36BA746654 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = FC93EBA605FC57BD50FA9E8C47CFEE32 /* CQDemoResource.release.xcconfig */;
-			buildSettings = {
-				CODE_SIGNING_ALLOWED = NO;
-				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/CQDemoResource";
-				IBSC_MODULE = CQDemoResource;
-				INFOPLIST_FILE = "Target Support Files/CQDemoResource/ResourceBundle-CQDemoResource-CQDemoResource-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				PRODUCT_NAME = CQDemoResource;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				WRAPPER_EXTENSION = bundle;
-			};
-			name = Release;
-		};
 		FCD22D4BE4AFD765F944C771B46DD92B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = EBD3328A4E7A4DB69D86D896895617F5 /* TSDemo_DataVientiane.debug.xcconfig */;
@@ -8081,8 +8077,8 @@
 		07C384BDD899E6478AFB5CC9D6363970 /* Build configuration list for PBXNativeTarget "CQDemoKit-CQDemoKit_TestMethod" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				248008DDDCF40586C5F2DA0E3415149D /* Debug */,
-				4F753170F73B427F254813840657C4A2 /* Release */,
+				D9E949244D1FA0636C1EE02A3CA8A76C /* Debug */,
+				7452D4E7B8E14BD5CD57DCD5AEDF6B54 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -8135,8 +8131,8 @@
 		2A13452EB3167387405AB4BD577EB716 /* Build configuration list for PBXNativeTarget "CQDemoResource" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				0B9403C195F6B505FEC64A64A215EC8C /* Debug */,
-				39E16B191D74CE5923C75E54FBD0A523 /* Release */,
+				35A3DB5BC7FFD4E3AB6BE2CE06EDB6A0 /* Debug */,
+				26CF2796916026E8C33A3ED246C22E59 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -8153,8 +8149,8 @@
 		444A830F2D7D02ACE40CF88504D72C4B /* Build configuration list for PBXNativeTarget "CQDemoResource-CQDemoResource" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				0B61440927547E2CD52D9407F43545D9 /* Debug */,
-				FCB09EF058522A4743FA7A36BA746654 /* Release */,
+				AD55346571A785762CF976A6A6CE41CE /* Debug */,
+				5892C3D9351B1ACED0A7635118F7EB1A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -8207,8 +8203,8 @@
 		7822BA02A5B5FA0EDE22F6C94D40A99E /* Build configuration list for PBXNativeTarget "CQDemoKit" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				67766EEACC1BACB3F349AAA30FE4B657 /* Debug */,
-				6D8D9A44149E47C88707273495F5813D /* Release */,
+				3EA36FBAE72E47B06B54F6CC84021FC9 /* Debug */,
+				27F3FEC8AE12B84B2D8AE0B03704F45A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

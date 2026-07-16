@@ -14,7 +14,7 @@
 
 /** 完整的描述请参见文件头部 */
 + (NSArray *)sortOrderInDataArray:(NSArray *)sortedDataSource
-                 withDataSelector:(SEL)dataSelector
+                 withDataSelector:(nullable SEL)dataSelector
             pinyinFromStringBlock:(NSString *(^)(NSString *string))pinyinFromStringBlock
 {
     NSAssert([sortedDataSource isKindOfClass:[NSArray class]], @"[sortedDataSource isKindOfClass:[NSArray class]]不符合");

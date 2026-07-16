@@ -1,5 +1,5 @@
 //
-//  DataUtilViewController.h
+//  TSPinyinUtilViewController.h
 //  CJUIKitDemo
 //
 //  Created by ciyouzen on 2017/12/1.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface DataUtilViewController : UIViewController
+@interface TSPinyinUtilViewController : UIViewController
 
 @end

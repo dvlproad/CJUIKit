@@ -22,7 +22,7 @@ NS_ASSUME_NONNULL_BEGIN
  *  return 排序结果
  */
 + (NSArray *)sortOrderInDataArray:(NSArray *)sortedDataSource
-                 withDataSelector:(SEL)dataSelector
+                 withDataSelector:(nullable SEL)dataSelector
             pinyinFromStringBlock:(NSString *(^)(NSString *string))pinyinFromStringBlock;
 
 @end

@@ -156,7 +156,10 @@
     // cell上的文本内容改变的时候，自动执行validateButton的点击事件
     __weak typeof(cell)weakCell = cell;
     [cell setTextDidChangeBlock:^(NSString *bText) {
-        return [weakCell validateWithTriggerType:CJValidateTriggerTypeTextChanged];
+        [weakCell validateWithTriggerType:CJValidateTriggerTypeTextChanged];
+        // 强制刷新行高以适配 resultLabel 内容变化
+        [weakSelf.tableView beginUpdates];
+        [weakSelf.tableView endUpdates];
     }];
     
     if (dealTextModel.autoExec) {
@@ -192,13 +195,13 @@
     if (textModified) {
         // 文本已修改，执行方法并显示结果，但标记为需自行验证
         NSString *result = dealTextModel.actionBlock(currentText);
-        mcell.resultLabel.text = result;
+        mcell.resultLabel.text = [self __displayTextForResult:result];
         return CQTSMethodValidateResultModified;
     }
     
     // 文本未修改，执行方法并比较结果
     NSString *result = dealTextModel.actionBlock(currentText);
-    mcell.resultLabel.text = result;
+    mcell.resultLabel.text = [self __displayTextForResult:result];
     
     // 无希望处理后的text结果值，所以不比较
     if (dealTextModel.hopeResultText.length == 0) {
@@ -227,6 +230,16 @@
         }
     }
     return validateSuccess ? CQTSMethodValidateResultMatch : CQTSMethodValidateResultMismatch;
+}
+
+- (NSString *)__displayTextForResult:(NSString *)result {
+    if (result == nil) {
+        return @"（方法返回 nil）";
+    }
+    if (result.length == 0) {
+        return @"（方法返回空字符串）";
+    }
+    return result;
 }
 
 - (void)didReceiveMemoryWarning {

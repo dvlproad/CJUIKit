@@ -11,6 +11,8 @@
 
 #import <UIKit/UIKit.h>
 
+NS_ASSUME_NONNULL_BEGIN
+
 typedef NS_OPTIONS(NSInteger, CQTSPhotoMediaOption) {
     CQTSPhotoMediaOptionImage       = 1 << 0,  // image
     CQTSPhotoMediaOptionVideo       = 1 << 1,  // video
@@ -31,3 +33,5 @@ typedef NS_OPTIONS(NSInteger, CQTSPhotoMediaOption) {
 - (void)chooseVideoFromSystem:(UIViewController *)viewController;
 
 @end
+
+NS_ASSUME_NONNULL_END

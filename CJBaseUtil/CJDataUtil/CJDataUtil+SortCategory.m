@@ -16,7 +16,7 @@
 
 /** 完整的描述请参见文件头部 */
 + (CJSortedCategoryResult *)sortCategoryPinyinInDataArray:(NSArray *)sortedDataSource
-                                 withDataSelector:(SEL)dataSelector
+                                 withDataSelector:(nullable SEL)dataSelector
                                        andOrderIt:(BOOL)order
                                     pinyinFromStringBlock:(NSString *(^)(NSString *string))pinyinFromStringBlock
 {

@@ -123,7 +123,7 @@
  */
 + (NSMutableArray *)searchText:(NSString *)searchText
                   inDataModels:(NSArray *)dataModels
-       dataModelSearchSelector:(SEL)dataModelSearchSelector
+       dataModelSearchSelector:(nullable SEL)dataModelSearchSelector
                 withSearchType:(CJSearchType)searchType
                  supportPinyin:(BOOL)supportPinyin
          pinyinFromStringBlock:(NSString *(^)(NSString *string))pinyinFromStringBlock
@@ -208,7 +208,7 @@
  */
 + (BOOL)isContainSearchText:(NSString *)searchText
                 inDataModel:(id)dataModel
-    dataModelSearchSelector:(SEL)dataModelSearchSelector
+    dataModelSearchSelector:(nullable SEL)dataModelSearchSelector
              withSearchType:(CJSearchType)searchType
               supportPinyin:(BOOL)supportPinyin
       pinyinFromStringBlock:(NSString *(^)(NSString *string))pinyinFromStringBlock
@@ -241,9 +241,9 @@
  */
 + (NSObject *)searchText:(NSString *)searchText
              inDataModel:(NSObject *)dataModel
- dataModelSearchSelector:(SEL)dataModelSearchSelector
-andSearchInEveryDataModelMember:(SEL)dataModelMemberSelector
-dataModelMemberSearchSelector:(SEL)dataModelMemberSearchSelector
+ dataModelSearchSelector:(nullable SEL)dataModelSearchSelector
+andSearchInEveryDataModelMember:(nullable SEL)dataModelMemberSelector
+dataModelMemberSearchSelector:(nullable SEL)dataModelMemberSearchSelector
           withSearchType:(CJSearchType)searchType
            supportPinyin:(BOOL)supportPinyin
    pinyinFromStringBlock:(NSString *(^)(NSString *string))pinyinFromStringBlock

@@ -1,24 +1,24 @@
 //
-//  DataUtilViewController.m
+//  TSPinyinUtilViewController.m
 //  CJUIKitDemo
 //
 //  Created by ciyouzen on 2017/12/1.
 //  Copyright © 2017年 dvlproad. All rights reserved.
 //
 
-#import "DataUtilViewController.h"
+#import "TSPinyinUtilViewController.h"
 #import "CJPinyinHelper.h"
 
 #import "CJSortUtil.h"
 
-@interface DataUtilViewController ()
+@interface TSPinyinUtilViewController ()
 
 @property (nonatomic, strong) UITextView *originTextView;
 @property (nonatomic, strong) UITextView *lastTextView;
 
 @end
 
-@implementation DataUtilViewController
+@implementation TSPinyinUtilViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];

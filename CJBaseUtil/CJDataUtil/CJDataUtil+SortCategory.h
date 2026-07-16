@@ -26,7 +26,7 @@ NS_ASSUME_NONNULL_BEGIN
  *  return 分组结果
  */
 + (CJSortedCategoryResult *)sortCategoryPinyinInDataArray:(NSArray *)sortedDataSource
-                                         withDataSelector:(SEL)dataSelector
+                                         withDataSelector:(nullable SEL)dataSelector
                                                andOrderIt:(BOOL)order
                                     pinyinFromStringBlock:(NSString *(^)(NSString *string))pinyinFromStringBlock;
 

@@ -8,13 +8,8 @@
 
 #import "ChangeEnvironmentViewController.h"
 
-#ifdef TEST_CJBASEUIKIT_POD
-#import "CQDMSectionDataModel.h"
-#import "CQDMModuleModel.h"
-#else
-#import <CJBaseUtil/CQDMSectionDataModel.h>   //在CJDataUtil中
-#import <CJBaseUtil/CQDMModuleModel.h>        //在CJDataUtil中
-#endif
+#import <CQDemoKit/CQDMSectionDataModel.h>
+#import <CQDemoKit/CQDMModuleModel.h>
 
 /**
  *  app环境

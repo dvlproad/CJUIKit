@@ -46,10 +46,17 @@
     NSError *error = nil;
     AVAudioSession *audioSession = [AVAudioSession sharedInstance];
     
-    BOOL categorySet = [audioSession setCategory:AVAudioSessionCategoryPlayback
+    BOOL categorySet = NO;
+    if (@available(iOS 10.0, *)) {
+        categorySet = [audioSession setCategory:AVAudioSessionCategoryPlayback
                                           mode:AVAudioSessionModeMoviePlayback
                                        options:0
                                          error:&error];
+    
+    } else {
+        // iOS 10.0 以下
+    }
+
     
     if (!categorySet || error) {
         NSLog(@"配置音频会话失败: %@", error.localizedDescription);

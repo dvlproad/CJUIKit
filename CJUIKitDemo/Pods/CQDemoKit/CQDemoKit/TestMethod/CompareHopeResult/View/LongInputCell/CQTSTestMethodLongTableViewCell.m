@@ -131,7 +131,7 @@
     self.accentLine = accentLine;
     
     // --- 右侧卡片容器 ---
-    UIView *cardContainer = [self _initMethodCardContainer];
+    UIView *cardContainer = [self _setupMethodCardContainer];
     [parentView addSubview:cardContainer];
     [cardContainer mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.mas_equalTo(parentView).mas_offset(10);
@@ -146,7 +146,7 @@
 }
 
 
-- (UIView *)_initMethodCardContainer {
+- (UIView *)_setupMethodCardContainer {
     // --- 卡片容器 ---
     UIView *cardContainer = [UIView new];
     cardContainer.backgroundColor = [UIColor whiteColor];
@@ -167,7 +167,7 @@
     }];
     self.leftVerticalButton = leftVerticalButton;
     
-    UIView *inputOutputContainer = [self __initMethodInputOutputContainer];
+    UIView *inputOutputContainer = [self __setupMethodInputOutputContainer];
     [cardContainer addSubview:inputOutputContainer];
     [inputOutputContainer mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.mas_equalTo(leftVerticalButton.mas_right).mas_offset(0);
@@ -179,7 +179,8 @@
     
     return cardContainer;
 }
-- (UIView *)__initMethodInputOutputContainer {
+
+- (UIView *)__setupMethodInputOutputContainer {
     __weak typeof(self)weakSelf = self;
     
     // --- 卡片中的输入输出容器 ---
@@ -266,6 +267,7 @@
         make.left.mas_equalTo(resultBg).mas_offset(12);
         make.right.mas_equalTo(resultBg).mas_offset(-12);
         make.bottom.mas_equalTo(resultBg).mas_offset(-10);
+        make.height.mas_greaterThanOrEqualTo(24);   // 限制最小高度，避免空字符串的时候不显示
     }];
     self.resultLabel = resultLabel;
     

@@ -167,7 +167,6 @@
 		78F406AB25A8C803004971D1 /* StringHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78F406A925A8C803004971D1 /* StringHomeViewController.m */; };
 		78F55FFA248818E000B7B27A /* AttributedStringViewController2.m in Sources */ = {isa = PBXBuildFile; fileRef = 78F55FF9248818DF00B7B27A /* AttributedStringViewController2.m */; };
 		8008D7D220E5CF5700F98EF6 /* CallSystemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8008D7D020E5CF5700F98EF6 /* CallSystemViewController.m */; };
-		800E07E12016CCF500799B78 /* DataUtilViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 800E07D82016CCF500799B78 /* DataUtilViewController.m */; };
 		800E07E42016CCF500799B78 /* DeviceInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 800E07DD2016CCF500799B78 /* DeviceInfoViewController.m */; };
 		800E07E52016CCF500799B78 /* DeviceInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 800E07E02016CCF500799B78 /* DeviceInfo.m */; };
 		800E07E92016CD1500799B78 /* KeyboardUtilViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 800E07E72016CD1500799B78 /* KeyboardUtilViewController.m */; };
@@ -244,6 +243,9 @@
 		9760EBDE2D70728B00F2E464 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9760EBDD2D70728B00F2E464 /* Images.xcassets */; };
 		976794FA2580B494002FD0C7 /* KeyboardAutoMoveUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 976794F92580B494002FD0C7 /* KeyboardAutoMoveUpViewController.m */; };
 		976CB37F2FFE9A85000505DD /* UITextField+CJForbidKeyboard.m in Sources */ = {isa = PBXBuildFile; fileRef = 976CB37E2FFE9A85000505DD /* UITextField+CJForbidKeyboard.m */; };
+		977E327B3009226100B07C7D /* TSPinyinUtilViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 977E32793009226100B07C7D /* TSPinyinUtilViewController.m */; };
+		977E327E3009226C00B07C7D /* TSDataModelUtilViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 977E327D3009226C00B07C7D /* TSDataModelUtilViewController.m */; };
+		977E327F300922DB00B07C7D /* TestCityModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 80D49F8E20BE8574003F642C /* TestCityModel.m */; };
 		97A9191E25AFE8510051B902 /* imageOriginColor@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 97A9191525AFE8510051B902 /* imageOriginColor@2x.png */; };
 		97A9191F25AFE8510051B902 /* longVertical.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 97A9191625AFE8510051B902 /* longVertical.jpg */; };
 		97A9192025AFE8510051B902 /* taixi_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 97A9191725AFE8510051B902 /* taixi_icon@2x.png */; };
@@ -557,8 +559,6 @@
 		78F55FF9248818DF00B7B27A /* AttributedStringViewController2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AttributedStringViewController2.m; sourceTree = "<group>"; };
 		8008D7CF20E5CF5700F98EF6 /* CallSystemViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CallSystemViewController.h; sourceTree = "<group>"; };
 		8008D7D020E5CF5700F98EF6 /* CallSystemViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CallSystemViewController.m; sourceTree = "<group>"; };
-		800E07D82016CCF500799B78 /* DataUtilViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataUtilViewController.m; sourceTree = "<group>"; };
-		800E07D92016CCF500799B78 /* DataUtilViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataUtilViewController.h; sourceTree = "<group>"; };
 		800E07DD2016CCF500799B78 /* DeviceInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeviceInfoViewController.m; sourceTree = "<group>"; };
 		800E07DE2016CCF500799B78 /* DeviceInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeviceInfo.h; sourceTree = "<group>"; };
 		800E07DF2016CCF500799B78 /* DeviceInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeviceInfoViewController.h; sourceTree = "<group>"; };
@@ -690,6 +690,10 @@
 		976794F92580B494002FD0C7 /* KeyboardAutoMoveUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeyboardAutoMoveUpViewController.m; sourceTree = "<group>"; };
 		976CB37D2FFE9A85000505DD /* UITextField+CJForbidKeyboard.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UITextField+CJForbidKeyboard.h"; sourceTree = "<group>"; };
 		976CB37E2FFE9A85000505DD /* UITextField+CJForbidKeyboard.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UITextField+CJForbidKeyboard.m"; sourceTree = "<group>"; };
+		977E32783009226100B07C7D /* TSPinyinUtilViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TSPinyinUtilViewController.h; sourceTree = "<group>"; };
+		977E32793009226100B07C7D /* TSPinyinUtilViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TSPinyinUtilViewController.m; sourceTree = "<group>"; };
+		977E327C3009226C00B07C7D /* TSDataModelUtilViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TSDataModelUtilViewController.h; sourceTree = "<group>"; };
+		977E327D3009226C00B07C7D /* TSDataModelUtilViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TSDataModelUtilViewController.m; sourceTree = "<group>"; };
 		97A9191525AFE8510051B902 /* imageOriginColor@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "imageOriginColor@2x.png"; sourceTree = "<group>"; };
 		97A9191625AFE8510051B902 /* longVertical.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = longVertical.jpg; sourceTree = "<group>"; };
 		97A9191725AFE8510051B902 /* taixi_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "taixi_icon@2x.png"; sourceTree = "<group>"; };
@@ -1381,8 +1385,8 @@
 		800E07D72016CCF500799B78 /* DataUtilDemo */ = {
 			isa = PBXGroup;
 			children = (
-				800E07D92016CCF500799B78 /* DataUtilViewController.h */,
-				800E07D82016CCF500799B78 /* DataUtilViewController.m */,
+				977E327C3009226C00B07C7D /* TSDataModelUtilViewController.h */,
+				977E327D3009226C00B07C7D /* TSDataModelUtilViewController.m */,
 				786254BE24A9283800E3CCC3 /* CJSortUtil.h */,
 				786254BF24A9283800E3CCC3 /* CJSortUtil.m */,
 				786254C124A92EBF00E3CCC3 /* CJDataSearchUtil.h */,
@@ -1765,6 +1769,7 @@
 		80FF91B31FC581DD00E437CF /* DemosUtil */ = {
 			isa = PBXGroup;
 			children = (
+				977E327A3009226100B07C7D /* OtherUtil */,
 				8008D7CD20E5CF5700F98EF6 /* CallSystemUtilDemo */,
 				800E07D72016CCF500799B78 /* DataUtilDemo */,
 				800E07DB2016CCF500799B78 /* DeviceInfoDemo */,
@@ -1792,6 +1797,15 @@
 				7894C2A3256ECAE200C73B5E /* Resources */,
 			);
 			path = TSSliderFactory;
+			sourceTree = "<group>";
+		};
+		977E327A3009226100B07C7D /* OtherUtil */ = {
+			isa = PBXGroup;
+			children = (
+				977E32783009226100B07C7D /* TSPinyinUtilViewController.h */,
+				977E32793009226100B07C7D /* TSPinyinUtilViewController.m */,
+			);
+			path = OtherUtil;
 			sourceTree = "<group>";
 		};
 		97A9191425AFE8510051B902 /* Resources */ = {
@@ -2229,8 +2243,10 @@
 				80FF909F1FC5649F00E437CF /* NestedXibViewController.m in Sources */,
 				80FF91941FC5682B00E437CF /* TypeConvertViewController.m in Sources */,
 				7808D5B921709E6B007FC851 /* UIViewController+CJChangeEnvironment.m in Sources */,
+				977E327F300922DB00B07C7D /* TestCityModel.m in Sources */,
 				80FF90A71FC5649F00E437CF /* QRCodeViewController.m in Sources */,
 				78B6C2EF2159D8AF00D5864E /* DemoBusPassengerModel.m in Sources */,
+				977E327B3009226100B07C7D /* TSPinyinUtilViewController.m in Sources */,
 				78293F0D21FC2B9C00F70F43 /* KeyboardAvoidingViewController.m in Sources */,
 				78C81479216E0DEC00A6B190 /* SystemComposeViewController.m in Sources */,
 				80FF919C1FC5682B00E437CF /* CountDownTimeViewController.m in Sources */,
@@ -2244,6 +2260,7 @@
 				78575C872257237900925842 /* TestTextFieldOffsetTableViewCell.m in Sources */,
 				78542E2425B9CA0D00ABE1E5 /* TextSizeViewController.m in Sources */,
 				78E189A5217791D200B8781A /* TranslucentLayoutViewController.m in Sources */,
+				977E327E3009226C00B07C7D /* TSDataModelUtilViewController.m in Sources */,
 				780F52E225AB65C600DECB38 /* CQSubStringUtil.m in Sources */,
 				1562F38923FD2FC70009FCEA /* AppDelegate.m in Sources */,
 				7894C2A7256ECAE200C73B5E /* CQAgeRangeSliderControl.m in Sources */,
@@ -2259,7 +2276,6 @@
 				78E189AB21781BD000B8781A /* TranslucentLayoutTableViewController.m in Sources */,
 				78ACAFFF2595088F000FEEEB /* ViewPandownViewController1.m in Sources */,
 				7885FC4A2156681F00B97DAA /* UIView+CJPopupInSuspendWindow.m in Sources */,
-				800E07E12016CCF500799B78 /* DataUtilViewController.m in Sources */,
 				780F51E325AB3D4800DECB38 /* CQShakeUtil.m in Sources */,
 				78C81489216E11AF00A6B190 /* CChildViewController.m in Sources */,
 				80FF919E1FC5682B00E437CF /* OtherHomeViewController.m in Sources */,
