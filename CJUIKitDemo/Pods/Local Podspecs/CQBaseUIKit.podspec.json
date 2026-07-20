@@ -10,7 +10,7 @@
   "authors": {
     "dvlproad": ""
   },
-  "description": "基于 CJBaseUIKit 的二次封装组件：\n• TSButtonFactory - UIButton 工厂\n• DemoTextFieldFactory - 输入框工厂\n• TSSliderFactory - 滑块控件封装\n• CJDemoDatePickerView / CJDemoDateTextField - 日期选择\n• CQBlockTextField - CJTextField 的 block 封装\n• DemoLabelFactory - 标签工厂\n • CQUpdateContentPopupView - 内容更新弹窗\n • ShimmeringSwitchSlider / BBXShimmeringSwitchSlider / BusShimmeringSwitchSlider - 滑块封装（CJSwitchSlider + Shimmer）\n • BBXDAreaCodeTextField / BBXDPasswordTextField / BBXDUserNameTextField - CJTextField 封装",
+  "description": "基于 CJBaseUIKit 的二次封装组件：\n• TSButtonFactory - UIButton 工厂\n• DemoTextFieldFactory - 输入框工厂\n• TSSliderFactory - 滑块控件封装\n• CJDemoDatePickerView / CJDemoDateTextField - 日期选择\n• CQBlockTextField - CJTextField 的 block 封装\n• DemoLabelFactory - 标签工厂\n• CQUpdateContentPopupView - 内容更新弹窗\n• ShimmeringSwitchSlider / BBXShimmeringSwitchSlider / BusShimmeringSwitchSlider - 滑块封装（CJSwitchSlider + Shimmer）\n• BBXDAreaCodeTextField / BBXDPasswordTextField / BBXDUserNameTextField - CJTextField 封装",
   "platforms": {
     "ios": "9.0"
   },

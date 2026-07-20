@@ -1,5 +1,5 @@
 //
-//  SystemComposeViewController.h
+//  DemoChildViewController.h
 //  CJUIKitDemo
 //
 //  Created by ciyouzen on 2018/10/10.
@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SystemComposeViewController : UIViewController
+@interface DemoChildViewController : UIViewController
+
+- (instancetype)initWithTitle:(NSString *)title;
 
 @end

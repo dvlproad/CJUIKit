@@ -7,12 +7,7 @@
 //
 
 #import "CJUIKitBaseViewController.h"
-
-#ifdef TEST_CJBASEHELPER_POD
-#import "UIViewControllerCJHelper.h"
-#else
 #import <CJBaseHelper/UIViewControllerCJHelper.h>
-#endif
 
 
 @interface PresentBaseViewController : CJUIKitBaseViewController {
