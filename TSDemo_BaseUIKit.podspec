@@ -37,6 +37,9 @@ Pod::Spec.new do |s|
   s.resource_bundles = { 'TSDemo_BaseUIKit' => ['TSDemo_BaseUIKit/**/*.xib'] }
   s.prefix_header_contents = '#import <Masonry/Masonry.h>', '#import <CJBaseUIKit/UIColor+CJHex.h>'
 
+  # CQBaseUIKit (二次封装组件)
+  s.dependency 'CQBaseUIKit'
+
   # CQDemoKit
   s.dependency 'CQDemoKit/BaseVC'
   s.dependency 'CQDemoKit/BaseUIKit'

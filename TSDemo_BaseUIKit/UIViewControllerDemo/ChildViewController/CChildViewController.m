@@ -6,7 +6,7 @@
 //
 
 #import "CChildViewController.h"
-#import "DemoLabelFactory.h"
+#import <CQBaseUIKit/DemoLabelFactory.h>
 
 @interface CChildViewController ()
 

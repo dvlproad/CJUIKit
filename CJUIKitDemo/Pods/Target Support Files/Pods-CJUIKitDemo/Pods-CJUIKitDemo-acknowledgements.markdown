@@ -277,6 +277,11 @@ SOFTWARE.
 
 
 
+## CQBaseUIKit
+
+© 2008-2016 dvlproad. All rights reserved.
+
+
 ## CQDemoKit
 
 MIT License

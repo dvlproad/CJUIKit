@@ -9,8 +9,6 @@
 #import "HomeViewController.h"
 
 #import "AutoLayoutHomeViewController.h"
-#import "NestedXibViewController.h"
-#import "BeChangeViewController.h"
 
 //image
 #import "ColorViewController.h"
@@ -43,8 +41,7 @@
 #import "BackCustomItemViewController.h"
 #import "SystemComposeViewController.h"
 
-//ChangeEnvironment
-#import "ChangeEnvHomeViewController.h"
+
 
 @interface HomeViewController ()
 
@@ -93,29 +90,6 @@
         [sectionDataModels addObject:sectionDataModel];
     }
     
-    //Interface
-    {
-        CQDMSectionDataModel *sectionDataModel = [[CQDMSectionDataModel alloc] init];
-        sectionDataModel.theme = @"Interface相关(xib/storyboard)";
-        {
-            CQDMModuleModel *xibModule = [[CQDMModuleModel alloc] init];
-            xibModule.title = @"xib";
-            xibModule.classEntry = [NestedXibViewController class];
-            xibModule.isCreateByXib = YES;
-            
-            [sectionDataModel.values addObject:xibModule];
-        }
-        {
-            CQDMModuleModel *xibModule = [[CQDMModuleModel alloc] init];
-            xibModule.title = @"后视图改变前视图的值的实现事例";
-            xibModule.classEntry = [BeChangeViewController class];
-            xibModule.isCreateByXib = NO;
-            
-            [sectionDataModel.values addObject:xibModule];
-        }
-        
-        [sectionDataModels addObject:sectionDataModel];
-    }
     
     //UIImage
     {
@@ -290,21 +264,6 @@
             systemComposeViewModule.isCreateByXib = NO;
             [sectionDataModel.values addObject:systemComposeViewModule];
         }
-        [sectionDataModels addObject:sectionDataModel];
-    }
-
-    
-    //ChangeEnvironment
-    {
-        CQDMSectionDataModel *sectionDataModel = [[CQDMSectionDataModel alloc] init];
-        sectionDataModel.theme = @"ChangeEnvironment相关";
-        {
-            CQDMModuleModel *xibModule = [[CQDMModuleModel alloc] init];
-            xibModule.title = @"ChangeEnvironment(改变网络环境)";
-            xibModule.classEntry = [ChangeEnvHomeViewController class];
-            [sectionDataModel.values addObject:xibModule];
-        }
-        
         [sectionDataModels addObject:sectionDataModel];
     }
     

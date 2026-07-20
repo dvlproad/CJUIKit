@@ -8,7 +8,7 @@
 
 #import "ButtonCategoryViewController.h"
 #import <CQDemoKit/CJUIKitToastUtil.h>
-#import "TSButtonFactory.h"
+#import <CQBaseUIKit/TSButtonFactory.h>
 #import "UIButton+CJMoreProperty.h"
 
 @interface ButtonCategoryViewController ()

@@ -7,7 +7,7 @@
 //
 
 #import "LockGateKeeperViewController.h"
-#import "TSButtonFactory.h"
+#import <CQBaseUIKit/TSButtonFactory.h>
 
 @interface LockGateKeeperViewController () {
     

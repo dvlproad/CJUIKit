@@ -7,11 +7,11 @@
 //
 
 #import "RangeSliderViewController.h"
-#import "TSRangeSliderControl1.h"
-#import "TSRangeSliderControl2.h"
-#import "CQAgeRangeSliderControl.h"
+#import <CQBaseUIKit/TSRangeSliderControl1.h>
+#import <CQBaseUIKit/TSRangeSliderControl2.h>
+#import <CQBaseUIKit/CQAgeRangeSliderControl.h>
 
-#import "DemoLabelFactory.h"
+#import <CQBaseUIKit/DemoLabelFactory.h>
 
 @interface RangeSliderViewController () {
     

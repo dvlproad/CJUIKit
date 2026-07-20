@@ -1,0 +1,35 @@
+{
+  "name": "CQBaseUIKit",
+  "version": "0.0.1",
+  "summary": "CJBaseUIKit 的二次封装组件",
+  "homepage": "https://gitee.com/dvlproad/CJUIKit.git",
+  "license": {
+    "type": "Copyright",
+    "text": "              © 2008-2016 dvlproad. All rights reserved.\n"
+  },
+  "authors": {
+    "dvlproad": ""
+  },
+  "description": "基于 CJBaseUIKit 的二次封装组件：\n• TSButtonFactory - UIButton 工厂\n• DemoTextFieldFactory - 输入框工厂\n• TSSliderFactory - 滑块控件封装\n• CJDemoDatePickerView / CJDemoDateTextField - 日期选择\n• CQBlockTextField - CJTextField 的 block 封装\n• DemoLabelFactory - 标签工厂",
+  "platforms": {
+    "ios": "9.0"
+  },
+  "source": {
+    "git": "https://gitee.com/dvlproad/CJUIKit.git",
+    "tag": "CQBaseUIKit_0.0.1"
+  },
+  "frameworks": "UIKit",
+  "requires_arc": true,
+  "source_files": "CQBaseUIKit/**/*.{h,m}",
+  "resource_bundles": {
+    "CQBaseUIKit": [
+      "CQBaseUIKit/**/*.png"
+    ]
+  },
+  "dependencies": {
+    "CJBaseUIKit": [],
+    "CJBaseUIKit-Swift/UIView/as": [],
+    "CJDataVientianeSDK": [],
+    "Masonry": []
+  }
+}

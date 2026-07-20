@@ -7,7 +7,7 @@
 //
 
 #import "BBXShimmeringSwitchSlider.h"
-#import "DemoLabelFactory.h"
+#import <CQBaseUIKit/DemoLabelFactory.h>
 
 @interface BBXShimmeringSwitchSlider ()
 

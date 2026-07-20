@@ -11,7 +11,7 @@
 #import <CQDemoKit/CJUIKitToastUtil.h>
 
 #import "UITextField+CJAddInputAccessoryView.h"
-#import "DemoLabelFactory.h"
+#import <CQBaseUIKit/DemoLabelFactory.h>
 
 @interface TSTextFieldAccessoryViewController ()  {
 

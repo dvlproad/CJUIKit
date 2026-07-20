@@ -7,7 +7,7 @@
 //
 
 #import "CJUIKitBaseScrollViewController.h"
-#import "DemoTextFieldFactory.h"
+#import <CQBaseUIKit/DemoTextFieldFactory.h>
 
 @interface TSTextFieldInputViewController : CJUIKitBaseScrollViewController
 

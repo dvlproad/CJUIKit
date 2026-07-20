@@ -7,7 +7,7 @@
 //
 
 #import "SemaphoreGateKeeperViewController.h"
-#import "TSButtonFactory.h"
+#import <CQBaseUIKit/TSButtonFactory.h>
 
 @interface SemaphoreGateKeeperViewController () {
     

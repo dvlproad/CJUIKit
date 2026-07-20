@@ -14,7 +14,7 @@
 #import "UIView+CJPanAction.h"
 #import <CQDemoKit/CQTSRipeTableView.h>
 
-#import "CQCommentsPopView.h"
+#import <CQBaseUIKit/CQCommentsPopView.h>
 
 @interface ViewPandownViewController1 () {
     

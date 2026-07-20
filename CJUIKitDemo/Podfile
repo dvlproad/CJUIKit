@@ -51,6 +51,7 @@ target 'CJUIKitDemo' do
     pod 'CJDataVientianeSDK',   :path => '../'
     
     pod 'TSDemo_BaseUIKit',     :path => '../'
+    pod 'CQBaseUIKit',          :path => '../'
 
     pod 'CJBaseUIKit',          :path => '../'
     pod 'CJBaseUIKit-Swift',    :path => '../'

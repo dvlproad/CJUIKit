@@ -8,7 +8,7 @@
 //  测试文本框自身点击的弹出、属于文本框的左右按钮的点击等
 
 #import "CJUIKitBaseScrollViewController.h"
-#import "DemoTextFieldFactory.h"
+#import <CQBaseUIKit/DemoTextFieldFactory.h>
 
 @interface TSTextFieldClickViewController : CJUIKitBaseScrollViewController
 

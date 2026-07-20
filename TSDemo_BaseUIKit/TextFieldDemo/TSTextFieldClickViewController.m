@@ -15,8 +15,8 @@
 
 #import "BBXDAreaCodeTextField.h"
 
-#import "TSButtonFactory.h"
-#import "DemoLabelFactory.h"
+#import <CQBaseUIKit/TSButtonFactory.h>
+#import <CQBaseUIKit/DemoLabelFactory.h>
 
 @interface TSTextFieldClickViewController () <UITextFieldDelegate> {
 

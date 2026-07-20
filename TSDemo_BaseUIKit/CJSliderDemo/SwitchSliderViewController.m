@@ -14,7 +14,7 @@
 #import "BBXShimmeringSwitchSlider.h"
 #import "BusShimmeringSwitchSlider.h"
 
-#import "DemoLabelFactory.h"
+#import <CQBaseUIKit/DemoLabelFactory.h>
 
 @interface SwitchSliderViewController () {
     

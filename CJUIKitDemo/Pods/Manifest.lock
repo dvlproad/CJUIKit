@@ -160,6 +160,11 @@ PODS:
   - CJFoundation/NSString (0.1.6)
   - CJPopupAction (1.5.0)
   - CJPopupView/CJPopoverView (2.1.0)
+  - CQBaseUIKit (0.0.1):
+    - CJBaseUIKit
+    - CJBaseUIKit-Swift/UIView/as
+    - CJDataVientianeSDK
+    - Masonry
   - CQDemoKit/Auxiliary (0.9.8):
     - Masonry
   - CQDemoKit/BaseUIKit (0.9.8):
@@ -248,6 +253,7 @@ PODS:
     - CJBaseUtil
     - CJPopupAction
     - CJPopupView/CJPopoverView
+    - CQBaseUIKit
     - CQDemoKit/BaseUIKit
     - CQDemoKit/BaseVC
     - CQDemoKit/Demo_RipeView
@@ -279,6 +285,7 @@ DEPENDENCIES:
   - CJFoundation (from `../`)
   - CJPopupAction
   - CJPopupView/CJPopoverView
+  - CQBaseUIKit (from `../`)
   - CQDemoKit/Auxiliary (~> 0.9.0)
   - CQDemoKit/BaseUIKit (~> 0.9.0)
   - CQDemoKit/BaseUtil (~> 0.9.0)
@@ -331,6 +338,8 @@ EXTERNAL SOURCES:
     :path: "../"
   CJFoundation:
     :path: "../"
+  CQBaseUIKit:
+    :path: "../"
   TSDemo_BaseUIKit:
     :path: "../"
   TSDemo_DataVientiane:
@@ -349,6 +358,7 @@ SPEC CHECKSUMS:
   CJFoundation: acbdf22b8b415dcdaf4e0c50ef6e3e5180ec73b8
   CJPopupAction: 0f0a424a44b46d3582e0d4a90f14f15e70255436
   CJPopupView: c7685f6a0225a89c72d97ea946f2816b5442abaf
+  CQBaseUIKit: 16ce4a2931757aa594ff3b426b46803b67a35ac3
   CQDemoKit: 550ddec87d2e945db43110d43fd5cee1c78aa2b3
   CQDemoResource: 2455f939bd1e4550446f88c3b78a508f35fd5147
   IQKeyboardManager: c8665b3396bd0b79402b4c573eac345a31c7d485
@@ -358,11 +368,11 @@ SPEC CHECKSUMS:
   PinYin4Objc: 3fa9673610368330e2dfb688b1d19a35c3930a78
   SAMKeychain: 483e1c9f32984d50ca961e26818a534283b4cd5c
   Shimmer: c5374be1c2b0c9e292fb05b339a513cf291cac86
-  TSDemo_BaseUIKit: b13f04adb6fd5e0bcfdb1b77ed0a6cdfe919c692
+  TSDemo_BaseUIKit: 3ffc176c789e9a69b2de23729fb6c1e3da303c08
   TSDemo_DataVientiane: aa19419d20cb454afa8bfcd00f290b08fbf26f17
   UINavigation-SXFixSpace: 10f223253ebff2ceefa26694e23b7694269763c4
   YYText: 5c461d709e24d55a182d1441c41dc639a18a4849
 
-PODFILE CHECKSUM: 14ff21c60bac22f4509d4a5906e370bc4499e21f
+PODFILE CHECKSUM: acc30eef1a37cdf770163bfc0038cff2a300a5e9
 
 COCOAPODS: 1.16.2

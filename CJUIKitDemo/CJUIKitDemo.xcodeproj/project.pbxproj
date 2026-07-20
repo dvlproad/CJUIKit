@@ -7,9 +7,25 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0258645112AC36EECF906270 /* UIViewController+CJChangeEnvironment.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A03D1706DD9C283D4786D08 /* UIViewController+CJChangeEnvironment.m */; };
+		0FEB1A861FF25264CF8270B4 /* LoginChangeEnvironmentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C93E81871787CF3014E0495B /* LoginChangeEnvironmentViewController.m */; };
+		110A42DC28B75D1430C084DB /* DemoChangeEnvironmentViewModel.h in Sources */ = {isa = PBXBuildFile; fileRef = E3D337865F77646B08E9405B /* DemoChangeEnvironmentViewModel.h */; };
 		1562F38723FD2FC70009FCEA /* APPUIKitSetting.m in Sources */ = {isa = PBXBuildFile; fileRef = 1562F38123FD2FC70009FCEA /* APPUIKitSetting.m */; };
 		1562F38923FD2FC70009FCEA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1562F38623FD2FC70009FCEA /* AppDelegate.m */; };
+		1A668F63E7DC4CFD43C1D24B /* ChangeEnvironmentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FAB4426D21FF9CEB7A214E91 /* ChangeEnvironmentViewController.m */; };
+		34E6931DAE6DEF03A9EC9C83 /* ChangeViewController.h in Sources */ = {isa = PBXBuildFile; fileRef = 651F1BB2D63F775E6A45F3B6 /* ChangeViewController.h */; };
+		38A1651A43EC14DF2A9C4DBF /* DemoChangeEnvironmentViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 45AEBDE947319D3330E3B847 /* DemoChangeEnvironmentViewModel.m */; };
+		425FB5856BFBFF5D26A81230 /* LoginChangeEnvironmentViewController.h in Sources */ = {isa = PBXBuildFile; fileRef = 2C4414DB55DDF0470CF906F2 /* LoginChangeEnvironmentViewController.h */; };
+		42913C8E016295CBB80F6C3B /* NestedXibViewController.h in Sources */ = {isa = PBXBuildFile; fileRef = ADCC83AAB8F47E24D65FA03F /* NestedXibViewController.h */; };
+		4BB6B1418B0AC0F267AF5402 /* ChangeEnvHomeViewController.h in Sources */ = {isa = PBXBuildFile; fileRef = 9922E268136706DAFE97D8AE /* ChangeEnvHomeViewController.h */; };
+		519FD9508413023AB303FFD3 /* NestedXibView.h in Sources */ = {isa = PBXBuildFile; fileRef = 9A7AD9D9DB313FB6D26FBAB9 /* NestedXibView.h */; };
 		574EAE025E3036E31623A125 /* libPods-CJUIKitDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F010C33DEBAF70AA8E83ACAA /* libPods-CJUIKitDemo.a */; };
+		5FC2BABDE6B347A29A7C522D /* ChangeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 40AC7A0702CF7A9F120B5EF1 /* ChangeViewController.m */; };
+		633D02E7B1CFF1830964D813 /* ChangeEnvironmentViewController.h in Sources */ = {isa = PBXBuildFile; fileRef = 812C354C7FC712CD4345D358 /* ChangeEnvironmentViewController.h */; };
+		645215ED7DE095A3CD9560C9 /* BeChangeViewController.h in Sources */ = {isa = PBXBuildFile; fileRef = 0328106C3DD68F4EAE8D39CD /* BeChangeViewController.h */; };
+		6E24BA68865789B99F0BD12F /* YunUncaughtExceptionHandler.h in Sources */ = {isa = PBXBuildFile; fileRef = 631F2055F9091F75D01735ED /* YunUncaughtExceptionHandler.h */; };
+		722EE54CBF8BDC5C6080F8E6 /* UIViewController+CJChangeEnvironment.h in Sources */ = {isa = PBXBuildFile; fileRef = 474AFFDD7AEF4857208AF777 /* UIViewController+CJChangeEnvironment.h */; };
+		74F88DEF8BEA531798FADDA8 /* NestedXibSubViewA.h in Sources */ = {isa = PBXBuildFile; fileRef = B7DC0092AAD8003484A6015C /* NestedXibSubViewA.h */; };
 		7803DAAE22F7D519001E06B7 /* MJExtensionToModelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7803DAAC22F7D519001E06B7 /* MJExtensionToModelViewController.m */; };
 		7803DAB122F7D578001E06B7 /* MJExtensionToJSONViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7803DAAF22F7D578001E06B7 /* MJExtensionToJSONViewController.m */; };
 		780E46051E5DF87B00980127 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 780E46041E5DF87B00980127 /* main.m */; };
@@ -53,6 +69,7 @@
 		78B6C2EF2159D8AF00D5864E /* DemoBusPassengerModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 78B6C2ED2159D8AF00D5864E /* DemoBusPassengerModel.m */; };
 		78F406AB25A8C803004971D1 /* StringHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78F406A925A8C803004971D1 /* StringHomeViewController.m */; };
 		78F55FFA248818E000B7B27A /* AttributedStringViewController2.m in Sources */ = {isa = PBXBuildFile; fileRef = 78F55FF9248818DF00B7B27A /* AttributedStringViewController2.m */; };
+		7A8C727086BAEB47B7255ABD /* NestedXibViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E8B15A780B699CEDD7551A0F /* NestedXibViewController.m */; };
 		8008D7D220E5CF5700F98EF6 /* CallSystemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8008D7D020E5CF5700F98EF6 /* CallSystemViewController.m */; };
 		800E07E42016CCF500799B78 /* DeviceInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 800E07DD2016CCF500799B78 /* DeviceInfoViewController.m */; };
 		800E07E52016CCF500799B78 /* DeviceInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 800E07E02016CCF500799B78 /* DeviceInfo.m */; };
@@ -77,6 +94,8 @@
 		80FF919D1FC5682B00E437CF /* CountDownTimeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 80FF91861FC5682A00E437CF /* CountDownTimeViewController.xib */; };
 		80FF919E1FC5682B00E437CF /* OtherHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80FF91881FC5682A00E437CF /* OtherHomeViewController.m */; };
 		80FF91C51FC581DD00E437CF /* UtilHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80FF91BF1FC581DD00E437CF /* UtilHomeViewController.m */; };
+		8DFEEB64E3A6C9CA0CFBE513 /* DemoCacheUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 683DB5EFF3BFC24475F9C331 /* DemoCacheUtil.m */; };
+		93CE7B05AFBD6C765D9C0013 /* DemoCacheUtil.h in Sources */ = {isa = PBXBuildFile; fileRef = D1C72882BF3B5FC30753A9D3 /* DemoCacheUtil.h */; };
 		9725C153261DA4D80021D5D9 /* TSLayoutPriorityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9725C152261DA4D80021D5D9 /* TSLayoutPriorityViewController.m */; };
 		9725C159261DA5930021D5D9 /* TSLayoutPriorityView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9725C158261DA5930021D5D9 /* TSLayoutPriorityView.m */; };
 		9725C15F261DA7680021D5D9 /* recognize_icon_pass@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9725C15D261DA7680021D5D9 /* recognize_icon_pass@2x.png */; };
@@ -91,7 +110,14 @@
 		977E327E3009226C00B07C7D /* TSDataModelUtilViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 977E327D3009226C00B07C7D /* TSDataModelUtilViewController.m */; };
 		977E327F300922DB00B07C7D /* TestCityModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 80D49F8E20BE8574003F642C /* TestCityModel.m */; };
 		97CC1AA83006A2A9006F9096 /* CJConfuseManager.txt in Resources */ = {isa = PBXBuildFile; fileRef = 97CC1AA73006A2A9006F9096 /* CJConfuseManager.txt */; };
+		ABF4974B1FC9CA1EA0C33D4B /* CJAppVersionUtil.h in Sources */ = {isa = PBXBuildFile; fileRef = B997613F0EFBBEAB1EA5B999 /* CJAppVersionUtil.h */; };
 		B1310F3AB7C9840F13EF1534 /* CountDownTimeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80FF91851FC5682A00E437CF /* CountDownTimeViewController.m */; };
+		C4E14E7E8AA9EC0FBDEA3256 /* ChangeEnvHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D6272E96B1EFCC90B936C58E /* ChangeEnvHomeViewController.m */; };
+		C75BB4AA25FC5DD2C9744634 /* YunUncaughtExceptionHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FB7F72865FEBD4D1B676060 /* YunUncaughtExceptionHandler.m */; };
+		CBAB7A5A33F5040CA801BCFA /* CJAppVersionUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 90378256E8FFB5F3E853E54C /* CJAppVersionUtil.m */; };
+		E4734DFDD69D8076A2DDF5FD /* BeChangeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E226E405083B525BDA621162 /* BeChangeViewController.m */; };
+		EB0EE2A665638AAF6544B37D /* NestedXibView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B19DFDA892DF63719C61B2A /* NestedXibView.m */; };
+		FEF0B857EEBCC1EFBF9AFF64 /* NestedXibSubViewA.m in Sources */ = {isa = PBXBuildFile; fileRef = 42474D321758174F869D6EDC /* NestedXibSubViewA.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -112,11 +138,27 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0328106C3DD68F4EAE8D39CD /* BeChangeViewController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BeChangeViewController.h; path = DemosView/InterfaceDemo/BeChangeViewController.h; sourceTree = "<group>"; };
 		1562F38123FD2FC70009FCEA /* APPUIKitSetting.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APPUIKitSetting.m; sourceTree = "<group>"; };
 		1562F38223FD2FC70009FCEA /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		1562F38423FD2FC70009FCEA /* APPUIKitSetting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APPUIKitSetting.h; sourceTree = "<group>"; };
 		1562F38623FD2FC70009FCEA /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		2740D78252D8CB78F108DB1F /* ChangeViewController.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; name = ChangeViewController.xib; path = DemosView/InterfaceDemo/ChangeViewController.xib; sourceTree = "<group>"; };
+		293419C209177135B8088723 /* NestedXibSubViewA.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; name = NestedXibSubViewA.xib; path = DemosView/InterfaceDemo/NestedXibSubViewA.xib; sourceTree = "<group>"; };
+		29D4B5E28EE8B71A5EE50BF2 /* CJConfuseManager.txt */ = {isa = PBXFileReference; includeInIndex = 1; name = CJConfuseManager.txt; path = CommonUtil/CJConfuseManager.txt; sourceTree = "<group>"; };
+		2C4414DB55DDF0470CF906F2 /* LoginChangeEnvironmentViewController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LoginChangeEnvironmentViewController.h; path = ChangeEnvironmentDemo/LoginChangeEnvironmentViewController.h; sourceTree = "<group>"; };
 		3132573BFCFBEA8B4F3BB86F /* Pods-CJUIKitDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CJUIKitDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-CJUIKitDemo/Pods-CJUIKitDemo.release.xcconfig"; sourceTree = "<group>"; };
+		40AC7A0702CF7A9F120B5EF1 /* ChangeViewController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ChangeViewController.m; path = DemosView/InterfaceDemo/ChangeViewController.m; sourceTree = "<group>"; };
+		42474D321758174F869D6EDC /* NestedXibSubViewA.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = NestedXibSubViewA.m; path = DemosView/InterfaceDemo/NestedXibSubViewA.m; sourceTree = "<group>"; };
+		45AEBDE947319D3330E3B847 /* DemoChangeEnvironmentViewModel.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = DemoChangeEnvironmentViewModel.m; path = ChangeEnvironmentDemo/DemoChangeEnvironmentViewModel.m; sourceTree = "<group>"; };
+		474AFFDD7AEF4857208AF777 /* UIViewController+CJChangeEnvironment.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIViewController+CJChangeEnvironment.h"; path = "ChangeEnvironmentDemo/UIViewController+CJChangeEnvironment.h"; sourceTree = "<group>"; };
+		4B19DFDA892DF63719C61B2A /* NestedXibView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = NestedXibView.m; path = DemosView/InterfaceDemo/NestedXibView.m; sourceTree = "<group>"; };
+		4FB7F72865FEBD4D1B676060 /* YunUncaughtExceptionHandler.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = YunUncaughtExceptionHandler.m; path = CommonUtil/YunUncaughtExceptionHandler.m; sourceTree = "<group>"; };
+		53ED9DEB8EA511B1E6683F8B /* NestedXibViewController.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; name = NestedXibViewController.xib; path = DemosView/InterfaceDemo/NestedXibViewController.xib; sourceTree = "<group>"; };
+		5770B0427551CDD7D8D28E5F /* NestedXibView.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; name = NestedXibView.xib; path = DemosView/InterfaceDemo/NestedXibView.xib; sourceTree = "<group>"; };
+		631F2055F9091F75D01735ED /* YunUncaughtExceptionHandler.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = YunUncaughtExceptionHandler.h; path = CommonUtil/YunUncaughtExceptionHandler.h; sourceTree = "<group>"; };
+		651F1BB2D63F775E6A45F3B6 /* ChangeViewController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ChangeViewController.h; path = DemosView/InterfaceDemo/ChangeViewController.h; sourceTree = "<group>"; };
+		683DB5EFF3BFC24475F9C331 /* DemoCacheUtil.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = DemoCacheUtil.m; path = CommonUtil/DemoCacheUtil.m; sourceTree = "<group>"; };
 		68D73B38201AA01727123963 /* Pods-CJUIKitDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CJUIKitDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CJUIKitDemo/Pods-CJUIKitDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		7803DAAC22F7D519001E06B7 /* MJExtensionToModelViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJExtensionToModelViewController.m; sourceTree = "<group>"; };
 		7803DAAD22F7D519001E06B7 /* MJExtensionToModelViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJExtensionToModelViewController.h; sourceTree = "<group>"; };
@@ -200,6 +242,7 @@
 		78F406AA25A8C803004971D1 /* StringHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StringHomeViewController.h; sourceTree = "<group>"; };
 		78F55FF8248818DF00B7B27A /* AttributedStringViewController2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AttributedStringViewController2.h; sourceTree = "<group>"; };
 		78F55FF9248818DF00B7B27A /* AttributedStringViewController2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AttributedStringViewController2.m; sourceTree = "<group>"; };
+		7B67897272A98D863392D050 /* AppCommon.xcassets */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder.assetcatalog; name = AppCommon.xcassets; path = CommonUtil/AppCommon.xcassets; sourceTree = "<group>"; };
 		8008D7CF20E5CF5700F98EF6 /* CallSystemViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CallSystemViewController.h; sourceTree = "<group>"; };
 		8008D7D020E5CF5700F98EF6 /* CallSystemViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CallSystemViewController.m; sourceTree = "<group>"; };
 		800E07DD2016CCF500799B78 /* DeviceInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeviceInfoViewController.m; sourceTree = "<group>"; };
@@ -246,6 +289,9 @@
 		80FF91891FC5682A00E437CF /* OtherHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OtherHomeViewController.h; sourceTree = "<group>"; };
 		80FF91BE1FC581DD00E437CF /* UtilHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UtilHomeViewController.h; sourceTree = "<group>"; };
 		80FF91BF1FC581DD00E437CF /* UtilHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UtilHomeViewController.m; sourceTree = "<group>"; };
+		812C354C7FC712CD4345D358 /* ChangeEnvironmentViewController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ChangeEnvironmentViewController.h; path = ChangeEnvironmentDemo/ChangeEnvironmentViewController.h; sourceTree = "<group>"; };
+		8BB920FEC635D5BE83E15A56 /* bg@2x.jpg */ = {isa = PBXFileReference; includeInIndex = 1; name = "bg@2x.jpg"; path = "CommonUtil/bg@2x.jpg"; sourceTree = "<group>"; };
+		90378256E8FFB5F3E853E54C /* CJAppVersionUtil.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CJAppVersionUtil.m; path = CommonUtil/CJAppVersionUtil.m; sourceTree = "<group>"; };
 		9725C151261DA4D80021D5D9 /* TSLayoutPriorityViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TSLayoutPriorityViewController.h; sourceTree = "<group>"; };
 		9725C152261DA4D80021D5D9 /* TSLayoutPriorityViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TSLayoutPriorityViewController.m; sourceTree = "<group>"; };
 		9725C157261DA5930021D5D9 /* TSLayoutPriorityView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TSLayoutPriorityView.h; sourceTree = "<group>"; };
@@ -267,7 +313,20 @@
 		977E327C3009226C00B07C7D /* TSDataModelUtilViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TSDataModelUtilViewController.h; sourceTree = "<group>"; };
 		977E327D3009226C00B07C7D /* TSDataModelUtilViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TSDataModelUtilViewController.m; sourceTree = "<group>"; };
 		97CC1AA73006A2A9006F9096 /* CJConfuseManager.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = CJConfuseManager.txt; sourceTree = "<group>"; };
+		9922E268136706DAFE97D8AE /* ChangeEnvHomeViewController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ChangeEnvHomeViewController.h; path = ChangeEnvironmentDemo/ChangeEnvHomeViewController.h; sourceTree = "<group>"; };
+		9A03D1706DD9C283D4786D08 /* UIViewController+CJChangeEnvironment.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIViewController+CJChangeEnvironment.m"; path = "ChangeEnvironmentDemo/UIViewController+CJChangeEnvironment.m"; sourceTree = "<group>"; };
+		9A7AD9D9DB313FB6D26FBAB9 /* NestedXibView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = NestedXibView.h; path = DemosView/InterfaceDemo/NestedXibView.h; sourceTree = "<group>"; };
+		ADCC83AAB8F47E24D65FA03F /* NestedXibViewController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = NestedXibViewController.h; path = DemosView/InterfaceDemo/NestedXibViewController.h; sourceTree = "<group>"; };
+		B7DC0092AAD8003484A6015C /* NestedXibSubViewA.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = NestedXibSubViewA.h; path = DemosView/InterfaceDemo/NestedXibSubViewA.h; sourceTree = "<group>"; };
+		B997613F0EFBBEAB1EA5B999 /* CJAppVersionUtil.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CJAppVersionUtil.h; path = CommonUtil/CJAppVersionUtil.h; sourceTree = "<group>"; };
+		C93E81871787CF3014E0495B /* LoginChangeEnvironmentViewController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = LoginChangeEnvironmentViewController.m; path = ChangeEnvironmentDemo/LoginChangeEnvironmentViewController.m; sourceTree = "<group>"; };
+		D1C72882BF3B5FC30753A9D3 /* DemoCacheUtil.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DemoCacheUtil.h; path = CommonUtil/DemoCacheUtil.h; sourceTree = "<group>"; };
+		D6272E96B1EFCC90B936C58E /* ChangeEnvHomeViewController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ChangeEnvHomeViewController.m; path = ChangeEnvironmentDemo/ChangeEnvHomeViewController.m; sourceTree = "<group>"; };
+		E226E405083B525BDA621162 /* BeChangeViewController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = BeChangeViewController.m; path = DemosView/InterfaceDemo/BeChangeViewController.m; sourceTree = "<group>"; };
+		E3D337865F77646B08E9405B /* DemoChangeEnvironmentViewModel.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DemoChangeEnvironmentViewModel.h; path = ChangeEnvironmentDemo/DemoChangeEnvironmentViewModel.h; sourceTree = "<group>"; };
+		E8B15A780B699CEDD7551A0F /* NestedXibViewController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = NestedXibViewController.m; path = DemosView/InterfaceDemo/NestedXibViewController.m; sourceTree = "<group>"; };
 		F010C33DEBAF70AA8E83ACAA /* libPods-CJUIKitDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CJUIKitDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		FAB4426D21FF9CEB7A214E91 /* ChangeEnvironmentViewController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ChangeEnvironmentViewController.m; path = ChangeEnvironmentDemo/ChangeEnvironmentViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -313,6 +372,27 @@
 			path = AppDelegate;
 			sourceTree = "<group>";
 		};
+		2663EC118EA03CAC078E1F13 /* InterfaceDemo */ = {
+			isa = PBXGroup;
+			children = (
+				0328106C3DD68F4EAE8D39CD /* BeChangeViewController.h */,
+				E226E405083B525BDA621162 /* BeChangeViewController.m */,
+				651F1BB2D63F775E6A45F3B6 /* ChangeViewController.h */,
+				40AC7A0702CF7A9F120B5EF1 /* ChangeViewController.m */,
+				2740D78252D8CB78F108DB1F /* ChangeViewController.xib */,
+				B7DC0092AAD8003484A6015C /* NestedXibSubViewA.h */,
+				42474D321758174F869D6EDC /* NestedXibSubViewA.m */,
+				293419C209177135B8088723 /* NestedXibSubViewA.xib */,
+				9A7AD9D9DB313FB6D26FBAB9 /* NestedXibView.h */,
+				4B19DFDA892DF63719C61B2A /* NestedXibView.m */,
+				5770B0427551CDD7D8D28E5F /* NestedXibView.xib */,
+				ADCC83AAB8F47E24D65FA03F /* NestedXibViewController.h */,
+				E8B15A780B699CEDD7551A0F /* NestedXibViewController.m */,
+				53ED9DEB8EA511B1E6683F8B /* NestedXibViewController.xib */,
+			);
+			name = InterfaceDemo;
+			sourceTree = "<group>";
+		};
 		780E45F71E5DF87B00980127 = {
 			isa = PBXGroup;
 			children = (
@@ -343,6 +423,7 @@
 				80FF8F0A1FC5649E00E437CF /* Modules */,
 				789A19681E61B87D008081E3 /* Resources */,
 				780E46031E5DF87B00980127 /* Supporting Files */,
+				B75BEA3BBC29DC4813344C44 /* CommonUtil */,
 			);
 			path = CJUIKitDemo;
 			sourceTree = "<group>";
@@ -619,6 +700,7 @@
 				8050037F211C3A29002A2306 /* DemosHelper */,
 				80FF91711FC5682A00E437CF /* DemosFoundation */,
 				80FF91B31FC581DD00E437CF /* DemosUtil */,
+				91D4FAA8987DB45A20434D65 /* DemosView */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -721,6 +803,7 @@
 				80FF91891FC5682A00E437CF /* OtherHomeViewController.h */,
 				80FF91881FC5682A00E437CF /* OtherHomeViewController.m */,
 				80FF91841FC5682A00E437CF /* CountDownTimeDemo */,
+				C3F612CC89B794D50E4380A8 /* ChangeEnvironmentDemo */,
 			);
 			path = DemosOther;
 			sourceTree = "<group>";
@@ -752,6 +835,15 @@
 			path = DemosUtil;
 			sourceTree = "<group>";
 		};
+		91D4FAA8987DB45A20434D65 /* DemosView */ = {
+			isa = PBXGroup;
+			children = (
+				2663EC118EA03CAC078E1F13 /* InterfaceDemo */,
+				CCC534593C519C3552194493 /* TextField */,
+			);
+			name = DemosView;
+			sourceTree = "<group>";
+		};
 		9736D92A300A935B006B2028 /* Swift */ = {
 			isa = PBXGroup;
 			children = (
@@ -776,6 +868,46 @@
 				977E32793009226100B07C7D /* TSPinyinUtilViewController.m */,
 			);
 			path = OtherUtil;
+			sourceTree = "<group>";
+		};
+		B75BEA3BBC29DC4813344C44 /* CommonUtil */ = {
+			isa = PBXGroup;
+			children = (
+				B997613F0EFBBEAB1EA5B999 /* CJAppVersionUtil.h */,
+				90378256E8FFB5F3E853E54C /* CJAppVersionUtil.m */,
+				631F2055F9091F75D01735ED /* YunUncaughtExceptionHandler.h */,
+				4FB7F72865FEBD4D1B676060 /* YunUncaughtExceptionHandler.m */,
+				D1C72882BF3B5FC30753A9D3 /* DemoCacheUtil.h */,
+				683DB5EFF3BFC24475F9C331 /* DemoCacheUtil.m */,
+				8BB920FEC635D5BE83E15A56 /* bg@2x.jpg */,
+				29D4B5E28EE8B71A5EE50BF2 /* CJConfuseManager.txt */,
+				7B67897272A98D863392D050 /* AppCommon.xcassets */,
+			);
+			name = CommonUtil;
+			sourceTree = "<group>";
+		};
+		C3F612CC89B794D50E4380A8 /* ChangeEnvironmentDemo */ = {
+			isa = PBXGroup;
+			children = (
+				9922E268136706DAFE97D8AE /* ChangeEnvHomeViewController.h */,
+				D6272E96B1EFCC90B936C58E /* ChangeEnvHomeViewController.m */,
+				812C354C7FC712CD4345D358 /* ChangeEnvironmentViewController.h */,
+				FAB4426D21FF9CEB7A214E91 /* ChangeEnvironmentViewController.m */,
+				E3D337865F77646B08E9405B /* DemoChangeEnvironmentViewModel.h */,
+				45AEBDE947319D3330E3B847 /* DemoChangeEnvironmentViewModel.m */,
+				2C4414DB55DDF0470CF906F2 /* LoginChangeEnvironmentViewController.h */,
+				C93E81871787CF3014E0495B /* LoginChangeEnvironmentViewController.m */,
+				474AFFDD7AEF4857208AF777 /* UIViewController+CJChangeEnvironment.h */,
+				9A03D1706DD9C283D4786D08 /* UIViewController+CJChangeEnvironment.m */,
+			);
+			name = ChangeEnvironmentDemo;
+			sourceTree = "<group>";
+		};
+		CCC534593C519C3552194493 /* TextField */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = TextField;
 			sourceTree = "<group>";
 		};
 		E75FB8B4AF71C8FE7F95B93C /* Pods */ = {
@@ -985,6 +1117,7 @@
 				"${PODS_ROOT}/../../CJBaseUIKit/UIViewController/Resources/cjBackBarButtonItem@3x.png",
 				"${PODS_ROOT}/../../CJBaseUIKit/UIViewController/Resources/cjBackBarButtonItemGray@2x.png",
 				"${PODS_ROOT}/../../CJBaseUIKit/UIViewController/Resources/cjBackBarButtonItemGray@3x.png",
+				"${PODS_CONFIGURATION_BUILD_DIR}/CQBaseUIKit/CQBaseUIKit.bundle",
 				"${PODS_CONFIGURATION_BUILD_DIR}/CQDemoKit/CQDemoKit_TestMethod.bundle",
 				"${PODS_CONFIGURATION_BUILD_DIR}/CQDemoResource/CQDemoResource.bundle",
 				"${PODS_CONFIGURATION_BUILD_DIR}/IQKeyboardManager/IQKeyboardManager.bundle",
@@ -1004,6 +1137,7 @@
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/cjBackBarButtonItem@3x.png",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/cjBackBarButtonItemGray@2x.png",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/cjBackBarButtonItemGray@3x.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/CQBaseUIKit.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/CQDemoKit_TestMethod.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/CQDemoResource.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/IQKeyboardManager.bundle",
@@ -1089,6 +1223,32 @@
 				80FF919E1FC5682B00E437CF /* OtherHomeViewController.m in Sources */,
 				78AB83A921B7CE7100853E21 /* PresentBViewController.m in Sources */,
 				B1310F3AB7C9840F13EF1534 /* CountDownTimeViewController.m in Sources */,
+				ABF4974B1FC9CA1EA0C33D4B /* CJAppVersionUtil.h in Sources */,
+				CBAB7A5A33F5040CA801BCFA /* CJAppVersionUtil.m in Sources */,
+				6E24BA68865789B99F0BD12F /* YunUncaughtExceptionHandler.h in Sources */,
+				C75BB4AA25FC5DD2C9744634 /* YunUncaughtExceptionHandler.m in Sources */,
+				645215ED7DE095A3CD9560C9 /* BeChangeViewController.h in Sources */,
+				E4734DFDD69D8076A2DDF5FD /* BeChangeViewController.m in Sources */,
+				34E6931DAE6DEF03A9EC9C83 /* ChangeViewController.h in Sources */,
+				5FC2BABDE6B347A29A7C522D /* ChangeViewController.m in Sources */,
+				74F88DEF8BEA531798FADDA8 /* NestedXibSubViewA.h in Sources */,
+				FEF0B857EEBCC1EFBF9AFF64 /* NestedXibSubViewA.m in Sources */,
+				519FD9508413023AB303FFD3 /* NestedXibView.h in Sources */,
+				EB0EE2A665638AAF6544B37D /* NestedXibView.m in Sources */,
+				42913C8E016295CBB80F6C3B /* NestedXibViewController.h in Sources */,
+				7A8C727086BAEB47B7255ABD /* NestedXibViewController.m in Sources */,
+				4BB6B1418B0AC0F267AF5402 /* ChangeEnvHomeViewController.h in Sources */,
+				C4E14E7E8AA9EC0FBDEA3256 /* ChangeEnvHomeViewController.m in Sources */,
+				633D02E7B1CFF1830964D813 /* ChangeEnvironmentViewController.h in Sources */,
+				1A668F63E7DC4CFD43C1D24B /* ChangeEnvironmentViewController.m in Sources */,
+				110A42DC28B75D1430C084DB /* DemoChangeEnvironmentViewModel.h in Sources */,
+				38A1651A43EC14DF2A9C4DBF /* DemoChangeEnvironmentViewModel.m in Sources */,
+				425FB5856BFBFF5D26A81230 /* LoginChangeEnvironmentViewController.h in Sources */,
+				0FEB1A861FF25264CF8270B4 /* LoginChangeEnvironmentViewController.m in Sources */,
+				722EE54CBF8BDC5C6080F8E6 /* UIViewController+CJChangeEnvironment.h in Sources */,
+				0258645112AC36EECF906270 /* UIViewController+CJChangeEnvironment.m in Sources */,
+				93CE7B05AFBD6C765D9C0013 /* DemoCacheUtil.h in Sources */,
+				8DFEEB64E3A6C9CA0CFBE513 /* DemoCacheUtil.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

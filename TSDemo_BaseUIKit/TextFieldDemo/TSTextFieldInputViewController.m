@@ -13,10 +13,10 @@
 #import "UIView+CJShake.h"
 #import "CJTextField.h"
 
-#import "TSButtonFactory.h"
+#import <CQBaseUIKit/TSButtonFactory.h>
 
 #import "CJExtraTextTextField.h"
-#import "DemoLabelFactory.h"
+#import <CQBaseUIKit/DemoLabelFactory.h>
 
 
 @interface TSTextFieldInputViewController () <UITextFieldDelegate> {

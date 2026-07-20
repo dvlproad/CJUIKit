@@ -8,7 +8,7 @@
 
 #import "NavigationBarNormalChangeBGViewController.h"
 #import "UINavigationBar+CJChangeBG.h"
-#import "TSButtonFactory.h"
+#import <CQBaseUIKit/TSButtonFactory.h>
 
 @interface NavigationBarNormalChangeBGViewController () {
     

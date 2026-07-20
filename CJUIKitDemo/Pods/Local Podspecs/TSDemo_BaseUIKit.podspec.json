@@ -31,6 +31,7 @@
     "#import <CJBaseUIKit/UIColor+CJHex.h>"
   ],
   "dependencies": {
+    "CQBaseUIKit": [],
     "CQDemoKit/BaseVC": [],
     "CQDemoKit/BaseUIKit": [],
     "CQDemoKit/Demo_RipeView": [],

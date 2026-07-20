@@ -8,7 +8,7 @@
 
 #import "TSTextFieldDelegateViewController.h"
 #import <CJBaseUIKit/UIColor+CJHex.h>
-#import "CQBlockTextField.h"
+#import <CQBaseUIKit/CQBlockTextField.h>
 #import <CQDemoKit/CJUIKitToastUtil.h>
 
 @interface TSTextFieldDelegateViewController () <UITextFieldDelegate>  {

@@ -13,7 +13,6 @@
 #import <CJBaseUIKit/UIImageCJCompressHelper.h>
 #endif
 
-#import "DemoCacheUtil.h"
 
 #import "TwoImageCompareView.h"
 

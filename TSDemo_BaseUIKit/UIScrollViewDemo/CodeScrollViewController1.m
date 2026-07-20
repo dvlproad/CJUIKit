@@ -7,7 +7,7 @@
 //
 
 #import "CodeScrollViewController1.h"
-#import "TSButtonFactory.h"
+#import <CQBaseUIKit/TSButtonFactory.h>
 
 @interface CodeScrollViewController1 ()
 

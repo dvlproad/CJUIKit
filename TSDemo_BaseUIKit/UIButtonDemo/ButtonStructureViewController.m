@@ -7,7 +7,7 @@
 //
 
 #import "ButtonStructureViewController.h"
-#import "TSButtonFactory.h"
+#import <CQBaseUIKit/TSButtonFactory.h>
 #import "UIImage+CJCreate.h"
 #import "UIImage+CJMakeCircle.h"
 
