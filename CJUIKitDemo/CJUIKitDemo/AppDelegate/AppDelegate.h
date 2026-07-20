@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <TSDemo_BaseUIKit/TSDemoAppDelegateProtocol.h>
+#import <TSDemo_BaseUtilHelper/TSDemoAppDelegateProtocol.h>
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate, TSDemoAppDelegateProtocol>
 

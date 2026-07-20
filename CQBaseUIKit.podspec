@@ -21,6 +21,9 @@ Pod::Spec.new do |s|
                    • CJDemoDatePickerView / CJDemoDateTextField - 日期选择
                    • CQBlockTextField - CJTextField 的 block 封装
                    • DemoLabelFactory - 标签工厂
+                   • CQUpdateContentPopupView - 内容更新弹窗
+                   • ShimmeringSwitchSlider / BBXShimmeringSwitchSlider / BusShimmeringSwitchSlider - 滑块封装（CJSwitchSlider + Shimmer）
+                   • BBXDAreaCodeTextField / BBXDPasswordTextField / BBXDUserNameTextField - CJTextField 封装
                    DESC
 
   s.platform     = :ios, "9.0"
@@ -43,4 +46,5 @@ Pod::Spec.new do |s|
 
   # 第三方
   s.dependency 'Masonry'
+  s.dependency 'Shimmer', '~> 1.0.2'
 end

@@ -1,7 +1,7 @@
 CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = NO
 CONFIGURATION_BUILD_DIR = ${PODS_CONFIGURATION_BUILD_DIR}/CQBaseUIKit
 GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
-HEADER_SEARCH_PATHS = $(inherited) "${PODS_ROOT}/Headers/Private" "${PODS_ROOT}/Headers/Private/CQBaseUIKit" "${PODS_ROOT}/Headers/Public" "${PODS_ROOT}/Headers/Public/CJBaseUIKit" "${PODS_ROOT}/Headers/Public/CJDataVientianeSDK" "${PODS_ROOT}/Headers/Public/CQBaseUIKit" "${PODS_ROOT}/Headers/Public/Masonry"
+HEADER_SEARCH_PATHS = $(inherited) "${PODS_ROOT}/Headers/Private" "${PODS_ROOT}/Headers/Private/CQBaseUIKit" "${PODS_ROOT}/Headers/Public" "${PODS_ROOT}/Headers/Public/CJBaseUIKit" "${PODS_ROOT}/Headers/Public/CJDataVientianeSDK" "${PODS_ROOT}/Headers/Public/CQBaseUIKit" "${PODS_ROOT}/Headers/Public/Masonry" "${PODS_ROOT}/Headers/Public/Shimmer"
 OTHER_CFLAGS = $(inherited) -fmodule-map-file="${PODS_CONFIGURATION_BUILD_DIR}/CJBaseUIKit-Swift/CJBaseUIKit_Swift.modulemap"
 PODS_BUILD_DIR = ${BUILD_DIR}
 PODS_CONFIGURATION_BUILD_DIR = ${PODS_BUILD_DIR}/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)

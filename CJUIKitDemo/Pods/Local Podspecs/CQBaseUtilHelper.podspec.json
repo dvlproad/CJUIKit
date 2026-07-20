@@ -1,0 +1,28 @@
+{
+  "name": "CQBaseUtilHelper",
+  "version": "0.0.1",
+  "summary": "CJBaseUtil 和 CJBaseHelper 的二次封装组件",
+  "homepage": "https://gitee.com/dvlproad/CJUIKit.git",
+  "license": {
+    "type": "Copyright",
+    "text": "              © 2008-2016 dvlproad. All rights reserved.\n"
+  },
+  "authors": {
+    "dvlproad": ""
+  },
+  "description": "基于 CJBaseUtil 和 CJBaseHelper 的二次封装组件：\n• UIView+CJPopupInSuspendWindow - 在悬浮窗中弹出自定义视图\n• SuspendWindowFactory - 悬浮窗工厂\n• DemoFloatingWindow - 浮窗基类",
+  "platforms": {
+    "ios": "9.0"
+  },
+  "source": {
+    "git": "https://gitee.com/dvlproad/CJUIKit.git",
+    "tag": "CQBaseUtilHelper_0.0.1"
+  },
+  "frameworks": "UIKit",
+  "requires_arc": true,
+  "source_files": "CQBaseUtilHelper/**/*.{h,m}",
+  "dependencies": {
+    "CJBaseUtil": [],
+    "CQDemoKit/BaseVC": []
+  }
+}

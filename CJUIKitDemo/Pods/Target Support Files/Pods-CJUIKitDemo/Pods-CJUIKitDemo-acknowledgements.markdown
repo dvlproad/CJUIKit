@@ -282,6 +282,11 @@ SOFTWARE.
 © 2008-2016 dvlproad. All rights reserved.
 
 
+## CQBaseUtilHelper
+
+© 2008-2016 dvlproad. All rights reserved.
+
+
 ## CQDemoKit
 
 MIT License
@@ -681,6 +686,11 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 
 ## TSDemo_BaseUIKit
+
+© 2008-2016 dvlproad. All rights reserved.
+
+
+## TSDemo_BaseUtilHelper
 
 © 2008-2016 dvlproad. All rights reserved.
 

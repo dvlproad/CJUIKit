@@ -1,0 +1,43 @@
+{
+  "name": "TSDemo_BaseUtilHelper",
+  "version": "0.0.1",
+  "summary": "CJBaseUtil 和 CJBaseHelper 的演示示例",
+  "homepage": "https://gitee.com/dvlproad/CJUIKit.git",
+  "license": {
+    "type": "Copyright",
+    "text": "              © 2008-2016 dvlproad. All rights reserved.\n"
+  },
+  "authors": {
+    "dvlproad": ""
+  },
+  "description": "CJBaseUtil 和 CJBaseHelper 的演示示例",
+  "platforms": {
+    "ios": "9.0"
+  },
+  "source": {
+    "git": "https://gitee.com/dvlproad/CJUIKit.git",
+    "tag": "TSDemo_BaseUtilHelper_0.0.1"
+  },
+  "frameworks": "UIKit",
+  "requires_arc": true,
+  "source_files": "TSDemo_BaseUtilHelper/**/*.{h,m}",
+  "resource_bundles": {
+    "TSDemo_BaseUtilHelper": [
+      "TSDemo_BaseUtilHelper/**/*.xib",
+      "TSDemo_BaseUtilHelper/**/*.png"
+    ]
+  },
+  "prefix_header_contents": "#import <Masonry/Masonry.h>",
+  "dependencies": {
+    "CQDemoKit/BaseVC": [],
+    "CQDemoKit/BaseUtil": [],
+    "CQDemoKit/Auxiliary": [],
+    "CJBaseUtil": [],
+    "CJBaseHelper": [],
+    "CJBaseUIKit": [],
+    "CQBaseUIKit": [],
+    "CQBaseUtilHelper": [],
+    "TSDemo_BaseUIKit": [],
+    "Masonry": []
+  }
+}

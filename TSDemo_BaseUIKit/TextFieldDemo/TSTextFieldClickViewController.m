@@ -13,7 +13,7 @@
 #import "UIView+CJShake.h"
 #import "CJTextField.h"
 
-#import "BBXDAreaCodeTextField.h"
+#import <CQBaseUIKit/BBXDAreaCodeTextField.h>
 
 #import <CQBaseUIKit/TSButtonFactory.h>
 #import <CQBaseUIKit/DemoLabelFactory.h>

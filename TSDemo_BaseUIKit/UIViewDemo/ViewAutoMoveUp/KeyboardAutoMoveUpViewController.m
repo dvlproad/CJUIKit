@@ -11,7 +11,7 @@
 #import <CQDemoKit/CJUIKitToastUtil.h>
 #import "UIView+CJAutoMoveUp.h"
 
-#import "CQUpdateContentPopupView.h"
+#import <CQBaseUIKit/CQUpdateContentPopupView.h>
 
 
 @interface KeyboardAutoMoveUpViewController () {

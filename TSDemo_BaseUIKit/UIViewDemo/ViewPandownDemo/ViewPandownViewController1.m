@@ -9,7 +9,7 @@
 #import "ViewPandownViewController1.h"
 #import <CQDemoKit/CJUIKitToastUtil.h>
 
-#import "CQUpdateContentPopupView.h"
+#import <CQBaseUIKit/CQUpdateContentPopupView.h>
 
 #import "UIView+CJPanAction.h"
 #import <CQDemoKit/CQTSRipeTableView.h>

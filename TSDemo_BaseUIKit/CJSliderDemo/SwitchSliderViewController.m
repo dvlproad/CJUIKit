@@ -11,8 +11,8 @@
 #import "UIImage+CJTransformSize.h"
 #import "UIColor+CJHex.h"
 
-#import "BBXShimmeringSwitchSlider.h"
-#import "BusShimmeringSwitchSlider.h"
+#import <CQBaseUIKit/BBXShimmeringSwitchSlider.h>
+#import <CQBaseUIKit/BusShimmeringSwitchSlider.h>
 
 #import <CQBaseUIKit/DemoLabelFactory.h>
 

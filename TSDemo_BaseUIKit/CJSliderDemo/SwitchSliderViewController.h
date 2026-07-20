@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "ShimmeringSwitchSlider.h"
+#import <CQBaseUIKit/ShimmeringSwitchSlider.h>
 
 @interface SwitchSliderViewController : UIViewController <CJSliderControlDelegate> {
     

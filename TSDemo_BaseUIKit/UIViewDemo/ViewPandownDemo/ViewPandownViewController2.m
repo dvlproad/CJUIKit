@@ -10,7 +10,7 @@
 #import <CQDemoKit/CJUIKitToastUtil.h>
 //#import <CQPopupContainerAnimation/UIView+CJPopupFrameAnimation.h>
 
-#import "CQUpdateContentPopupView.h"
+#import <CQBaseUIKit/CQUpdateContentPopupView.h>
 
 #import "UIView+CJPanAction.h"
 #import <CQDemoKit/CQTSRipeTableView.h>

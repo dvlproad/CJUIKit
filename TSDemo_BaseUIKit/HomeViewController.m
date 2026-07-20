@@ -29,8 +29,8 @@
 #import "KeyboardAvoidingViewController.h"
 
 //UIWindow
-#import "FloatingWindowViewController.h"
-#import "SuspendWindowViewController.h"
+#import <TSDemo_BaseUtilHelper/FloatingWindowViewController.h>
+#import <TSDemo_BaseUtilHelper/SuspendWindowViewController.h>
 
 #import "NavigationBarHomeViewController.h"
 #import "ImageHomeViewController.h"

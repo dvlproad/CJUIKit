@@ -113,6 +113,7 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_resource "${PODS_ROOT}/PinYin4Objc/PinYin4Objc/Resources/unicode_to_hanyu_pinyin.txt"
   install_resource "${PODS_ROOT}/SAMKeychain/Support/SAMKeychain.bundle"
   install_resource "${PODS_CONFIGURATION_BUILD_DIR}/TSDemo_BaseUIKit/TSDemo_BaseUIKit.bundle"
+  install_resource "${PODS_CONFIGURATION_BUILD_DIR}/TSDemo_BaseUtilHelper/TSDemo_BaseUtilHelper.bundle"
   install_resource "${PODS_CONFIGURATION_BUILD_DIR}/TSDemo_DataVientiane/TSDemo_DataVientiane.bundle"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
@@ -132,6 +133,7 @@ if [[ "$CONFIGURATION" == "Release" ]]; then
   install_resource "${PODS_ROOT}/PinYin4Objc/PinYin4Objc/Resources/unicode_to_hanyu_pinyin.txt"
   install_resource "${PODS_ROOT}/SAMKeychain/Support/SAMKeychain.bundle"
   install_resource "${PODS_CONFIGURATION_BUILD_DIR}/TSDemo_BaseUIKit/TSDemo_BaseUIKit.bundle"
+  install_resource "${PODS_CONFIGURATION_BUILD_DIR}/TSDemo_BaseUtilHelper/TSDemo_BaseUtilHelper.bundle"
   install_resource "${PODS_CONFIGURATION_BUILD_DIR}/TSDemo_DataVientiane/TSDemo_DataVientiane.bundle"
 fi
 

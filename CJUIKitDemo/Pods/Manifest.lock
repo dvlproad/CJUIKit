@@ -165,6 +165,10 @@ PODS:
     - CJBaseUIKit-Swift/UIView/as
     - CJDataVientianeSDK
     - Masonry
+    - Shimmer (~> 1.0.2)
+  - CQBaseUtilHelper (0.0.1):
+    - CJBaseUtil
+    - CQDemoKit/BaseVC
   - CQDemoKit/Auxiliary (0.9.8):
     - Masonry
   - CQDemoKit/BaseUIKit (0.9.8):
@@ -261,6 +265,17 @@ PODS:
     - Masonry
     - Shimmer (~> 1.0.2)
     - UINavigation-SXFixSpace
+  - TSDemo_BaseUtilHelper (0.0.1):
+    - CJBaseHelper
+    - CJBaseUIKit
+    - CJBaseUtil
+    - CQBaseUIKit
+    - CQBaseUtilHelper
+    - CQDemoKit/Auxiliary
+    - CQDemoKit/BaseUtil
+    - CQDemoKit/BaseVC
+    - Masonry
+    - TSDemo_BaseUIKit
   - TSDemo_DataVientiane (0.0.1):
     - CJBaseUIKit/UIButton
     - CJBaseUIKit/UIColor
@@ -286,6 +301,7 @@ DEPENDENCIES:
   - CJPopupAction
   - CJPopupView/CJPopoverView
   - CQBaseUIKit (from `../`)
+  - CQBaseUtilHelper (from `../`)
   - CQDemoKit/Auxiliary (~> 0.9.0)
   - CQDemoKit/BaseUIKit (~> 0.9.0)
   - CQDemoKit/BaseUtil (~> 0.9.0)
@@ -299,6 +315,7 @@ DEPENDENCIES:
   - MJExtension (~> 3.0.13)
   - Shimmer (~> 1.0.2)
   - TSDemo_BaseUIKit (from `../`)
+  - TSDemo_BaseUtilHelper (from `../`)
   - TSDemo_DataVientiane (from `../`)
   - UINavigation-SXFixSpace
   - YYText (~> 1.0.7)
@@ -340,7 +357,11 @@ EXTERNAL SOURCES:
     :path: "../"
   CQBaseUIKit:
     :path: "../"
+  CQBaseUtilHelper:
+    :path: "../"
   TSDemo_BaseUIKit:
+    :path: "../"
+  TSDemo_BaseUtilHelper:
     :path: "../"
   TSDemo_DataVientiane:
     :path: "../"
@@ -358,7 +379,8 @@ SPEC CHECKSUMS:
   CJFoundation: acbdf22b8b415dcdaf4e0c50ef6e3e5180ec73b8
   CJPopupAction: 0f0a424a44b46d3582e0d4a90f14f15e70255436
   CJPopupView: c7685f6a0225a89c72d97ea946f2816b5442abaf
-  CQBaseUIKit: 16ce4a2931757aa594ff3b426b46803b67a35ac3
+  CQBaseUIKit: dba38373bb5c45d2e64e653bc4d35b768a39f1cb
+  CQBaseUtilHelper: c74e44a0b7a0ba739d715d87fe675f5f620fb8c1
   CQDemoKit: 550ddec87d2e945db43110d43fd5cee1c78aa2b3
   CQDemoResource: 2455f939bd1e4550446f88c3b78a508f35fd5147
   IQKeyboardManager: c8665b3396bd0b79402b4c573eac345a31c7d485
@@ -369,10 +391,11 @@ SPEC CHECKSUMS:
   SAMKeychain: 483e1c9f32984d50ca961e26818a534283b4cd5c
   Shimmer: c5374be1c2b0c9e292fb05b339a513cf291cac86
   TSDemo_BaseUIKit: 3ffc176c789e9a69b2de23729fb6c1e3da303c08
+  TSDemo_BaseUtilHelper: e1279551271d07f284d8c318b2dd631454fd1f2f
   TSDemo_DataVientiane: aa19419d20cb454afa8bfcd00f290b08fbf26f17
   UINavigation-SXFixSpace: 10f223253ebff2ceefa26694e23b7694269763c4
   YYText: 5c461d709e24d55a182d1441c41dc639a18a4849
 
-PODFILE CHECKSUM: acc30eef1a37cdf770163bfc0038cff2a300a5e9
+PODFILE CHECKSUM: a22c854a4b2af9afe8f3aac862bf6d6327641345
 
 COCOAPODS: 1.16.2

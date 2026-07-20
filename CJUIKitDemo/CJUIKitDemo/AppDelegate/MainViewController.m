@@ -11,8 +11,8 @@
 
 #import <TSDemo_BaseUIKit/HomeViewController.h>
 #import "FoundationHomeViewController.h"
-#import "UtilHomeViewController.h"
-#import "HelperHomeViewController.h"
+#import <TSDemo_BaseUtilHelper/UtilHomeViewController.h>
+#import <TSDemo_BaseUtilHelper/HelperHomeViewController.h>
 #import "MoreHomeViewController.h"
 
 
