@@ -9,7 +9,7 @@
 #import "MainViewController.h"
 #import <CQDemoResource/UIImage+CQDemoResource.h>
 
-#import "HomeViewController.h"
+#import <TSDemo_BaseUIKit/HomeViewController.h>
 #import "FoundationHomeViewController.h"
 #import "UtilHomeViewController.h"
 #import "HelperHomeViewController.h"

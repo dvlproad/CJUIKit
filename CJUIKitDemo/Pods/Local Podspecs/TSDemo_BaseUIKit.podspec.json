@@ -1,0 +1,50 @@
+{
+  "name": "TSDemo_BaseUIKit",
+  "version": "0.0.1",
+  "summary": "CJBaseUIKit 的演示示例",
+  "homepage": "https://gitee.com/dvlproad/CJUIKit.git",
+  "license": {
+    "type": "Copyright",
+    "text": "              © 2008-2016 dvlproad. All rights reserved.\n"
+  },
+  "authors": {
+    "dvlproad": ""
+  },
+  "description": "CJBaseUIKit 各功能模块的演示示例：\n• UIColor - 颜色分类\n• UIView - 视图分类（拖拽、摇晃、手势等）\n• UIButton - 按钮分类\n• UITextField - 输入框分类\n• UIScrollView - 滚动视图\n• UIViewController - 控制器\n• UINavigationBar - 导航栏\n• UIWindow - 悬浮窗",
+  "platforms": {
+    "ios": "9.0"
+  },
+  "source": {
+    "git": "https://gitee.com/dvlproad/CJUIKit.git",
+    "tag": "TSDemo_BaseUIKit_0.0.1"
+  },
+  "frameworks": "UIKit",
+  "requires_arc": true,
+  "source_files": "TSDemo_BaseUIKit/**/*.{h,m}",
+  "resource_bundles": {
+    "TSDemo_BaseUIKit": [
+      "TSDemo_BaseUIKit/**/*.xib"
+    ]
+  },
+  "prefix_header_contents": [
+    "#import <Masonry/Masonry.h>",
+    "#import <CJBaseUIKit/UIColor+CJHex.h>"
+  ],
+  "dependencies": {
+    "CQDemoKit/BaseVC": [],
+    "CQDemoKit/BaseUIKit": [],
+    "CQDemoKit/Demo_RipeView": [],
+    "CJBaseUIKit": [],
+    "CJBaseUIKit-Swift/UIView/as": [],
+    "CJBaseUtil": [],
+    "CJPopupView/CJPopoverView": [],
+    "CJPopupAction": [],
+    "CJBaseEffectKit/CJScaleHeadView": [],
+    "Masonry": [],
+    "Shimmer": [
+      "~> 1.0.2"
+    ],
+    "IQKeyboardManager": [],
+    "UINavigation-SXFixSpace": []
+  }
+}

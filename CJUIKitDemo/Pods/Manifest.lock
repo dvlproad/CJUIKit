@@ -241,6 +241,20 @@ PODS:
   - PinYin4Objc (1.1.1)
   - SAMKeychain (1.5.3)
   - Shimmer (1.0.2)
+  - TSDemo_BaseUIKit (0.0.1):
+    - CJBaseEffectKit/CJScaleHeadView
+    - CJBaseUIKit
+    - CJBaseUIKit-Swift/UIView/as
+    - CJBaseUtil
+    - CJPopupAction
+    - CJPopupView/CJPopoverView
+    - CQDemoKit/BaseUIKit
+    - CQDemoKit/BaseVC
+    - CQDemoKit/Demo_RipeView
+    - IQKeyboardManager
+    - Masonry
+    - Shimmer (~> 1.0.2)
+    - UINavigation-SXFixSpace
   - TSDemo_DataVientiane (0.0.1):
     - CJBaseUIKit/UIButton
     - CJBaseUIKit/UIColor
@@ -277,6 +291,7 @@ DEPENDENCIES:
   - Masonry
   - MJExtension (~> 3.0.13)
   - Shimmer (~> 1.0.2)
+  - TSDemo_BaseUIKit (from `../`)
   - TSDemo_DataVientiane (from `../`)
   - UINavigation-SXFixSpace
   - YYText (~> 1.0.7)
@@ -316,6 +331,8 @@ EXTERNAL SOURCES:
     :path: "../"
   CJFoundation:
     :path: "../"
+  TSDemo_BaseUIKit:
+    :path: "../"
   TSDemo_DataVientiane:
     :path: "../"
 
@@ -341,10 +358,11 @@ SPEC CHECKSUMS:
   PinYin4Objc: 3fa9673610368330e2dfb688b1d19a35c3930a78
   SAMKeychain: 483e1c9f32984d50ca961e26818a534283b4cd5c
   Shimmer: c5374be1c2b0c9e292fb05b339a513cf291cac86
+  TSDemo_BaseUIKit: b13f04adb6fd5e0bcfdb1b77ed0a6cdfe919c692
   TSDemo_DataVientiane: aa19419d20cb454afa8bfcd00f290b08fbf26f17
   UINavigation-SXFixSpace: 10f223253ebff2ceefa26694e23b7694269763c4
   YYText: 5c461d709e24d55a182d1441c41dc639a18a4849
 
-PODFILE CHECKSUM: 2cca13e68afef9f1211b9d963b1a153f7ecf6117
+PODFILE CHECKSUM: 14ff21c60bac22f4509d4a5906e370bc4499e21f
 
 COCOAPODS: 1.16.2

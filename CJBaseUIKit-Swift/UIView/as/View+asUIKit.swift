@@ -16,7 +16,7 @@ import UIKit
 @available(iOS 13.0, *)
 extension View {
     /// 转换为 UIView（其实是将其包装在一个新建的 UIView 中）
-    func asUIKit() -> UIView {
+    public func asUIKit() -> UIView {
         return embedInUIView()
     }
     

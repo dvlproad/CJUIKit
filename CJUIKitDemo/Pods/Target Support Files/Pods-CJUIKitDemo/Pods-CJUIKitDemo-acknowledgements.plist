@@ -813,6 +813,17 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 			<key>License</key>
 			<string>Copyright</string>
 			<key>Title</key>
+			<string>TSDemo_BaseUIKit</string>
+			<key>Type</key>
+			<string>PSGroupSpecifier</string>
+		</dict>
+		<dict>
+			<key>FooterText</key>
+			<string>© 2008-2016 dvlproad. All rights reserved.
+</string>
+			<key>License</key>
+			<string>Copyright</string>
+			<key>Title</key>
 			<string>TSDemo_DataVientiane</string>
 			<key>Type</key>
 			<string>PSGroupSpecifier</string>

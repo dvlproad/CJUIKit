@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <TSDemo_BaseUIKit/TSDemoAppDelegateProtocol.h>
 
-@interface AppDelegate : UIResponder <UIApplicationDelegate>
+@interface AppDelegate : UIResponder <UIApplicationDelegate, TSDemoAppDelegateProtocol>
 
 @property (strong, nonatomic) UIWindow *window;
 
