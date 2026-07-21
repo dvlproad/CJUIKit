@@ -5,7 +5,7 @@
 //  Created by ciyouzen on 2016/3/26.
 //  Copyright © 2016年 dvlproad. All rights reserved.
 //
-//  输入内容是单行的时候的【方法列表测试视图】
+//  输入内容是单行的时候的【测试方法的列表视图】
 
 #import "CJUIKitBaseViewController.h"
 #import "CQDMSectionDataModel.h"

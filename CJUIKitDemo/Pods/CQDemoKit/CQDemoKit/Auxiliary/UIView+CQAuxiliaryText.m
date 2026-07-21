@@ -13,8 +13,8 @@
 
 - (void)cqdemo_addPromptText:(NSString *)text layout:(CQAuxiliaryAlignment)layout height:(CGFloat)height {
     UILabel *label = [[UILabel alloc] init];
-    label.numberOfLines = 0;
     label.tag = 9004;
+    label.numberOfLines = 0;
     label.text = text;
     label.textColor = [UIColor blackColor];
     label.font = [UIFont systemFontOfSize:16 weight:UIFontWeightBold];
@@ -22,23 +22,28 @@
     [self cqdemo_addPromptView:label layout:layout height:height];
 }
 
-- (void)cqdemo_removePromptText:(CQAuxiliaryRemoveOrder)order {
-    UILabel *label = [self viewWithTag:9004];
+
+- (void)cqdemo_removePrompt:(CQAuxiliaryRemove)order {
+    [self cqdemo_removePromptWithTag:9004 order:order];
+}
+
+- (void)cqdemo_removePromptWithTag:(NSInteger)tag order:(CQAuxiliaryRemove)order {
+    UILabel *label = [self viewWithTag:tag];
     if (label == nil) {
         return;
     }
     
-    if (order == CQAuxiliaryRemoveOrderNegative || order == CQAuxiliaryRemoveOrderAll) {
+    if (order == CQAuxiliaryRemoveLastOne || order == CQAuxiliaryRemoveAll) {
         // 获取所有子视图，过滤出符合 tag 的视图
         NSArray<UIView *> *subviews = [self subviews];
         NSMutableArray<UIView *> *taggedViews = [NSMutableArray array];
         for (UIView *subview in subviews) {
-            if (subview.tag == 9004) {
+            if (subview.tag == tag) {
                 [taggedViews addObject:subview];
             }
         }
         
-        if (order == CQAuxiliaryRemoveOrderAll) {
+        if (order == CQAuxiliaryRemoveAll) {
             // 按从后往前的顺序移除视图
             for (UIView *view in [taggedViews reverseObjectEnumerator]) {
                 [view removeFromSuperview];
@@ -58,6 +63,7 @@
 
 
 - (void)cqdemo_addPromptView:(UIView *)promptView layout:(CQAuxiliaryAlignment)layout height:(CGFloat)height {
+    promptView.tag = 9004;
     [self addSubview:promptView];
 
     if (layout == CQAuxiliaryAlignmentTop ||

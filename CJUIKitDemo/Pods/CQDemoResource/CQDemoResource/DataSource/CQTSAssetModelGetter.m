@@ -23,7 +23,7 @@
 /// @param changeImageNameToNetworkUrl      是否将本地图片名转为其所在的网络地址
 ///
 /// @return 返回图片数据
-+ (NSMutableArray<CQTSLocImageDataModel *> *)localFileModelsWithCount:(NSInteger)count
++ (nullable NSMutableArray<CQTSLocImageDataModel *> *)localFileModelsWithCount:(NSInteger)count
                                                           randomOrder:(BOOL)randomOrder
                                                        folderNames:(NSArray<NSString *> *)folderNames
 //                                          changeImageNameToNetworkUrl:(BOOL)changeImageNameToNetworkUrl
@@ -49,13 +49,13 @@
 /// @param randomOrder                                          顺序是否随机
 ///
 /// @return 返回图片数据
-+ (NSMutableArray<CQTSLocImageDataModel *> *)fileModelsWithTitles:(NSArray<NSString *> *)titles
++ (nullable NSMutableArray<CQTSLocImageDataModel *> *)fileModelsWithTitles:(NSArray<NSString *> *)titles
                                                   assetNameOrUrls:(NSArray<NSString *> *)assetNameOrUrls
                                                             count:(NSInteger)requestCount
                                                       randomOrder:(BOOL)randomOrder
 {
     if (assetNameOrUrls.count == 0) {
-        return [NSMutableArray arrayWithArray:@[]];
+        return nil;
     }
     
     NSMutableArray<CQTSLocImageDataModel *> *dataModels = [[NSMutableArray alloc] init];
@@ -93,7 +93,7 @@
 /// @param folderNames                                          要获取哪些文件夹下的文件
 ///
 /// @return 返回图片数据
-+ (NSMutableArray<CQTSNetImageDataModel *> *)networkFileModelsWithCount:(NSInteger)count
++ (nullable NSMutableArray<CQTSNetImageDataModel *> *)networkFileModelsWithCount:(NSInteger)count
                                                             randomOrder:(BOOL)randomOrder
                                                          folderNames:(NSArray<NSString *> *)folderNames
 {
@@ -112,13 +112,13 @@
 /// @param randomOrder                                          顺序是否随机
 ///
 /// @return 返回图片数据
-+ (NSMutableArray<CQTSNetImageDataModel *> *)fileModelsWithTitles:(NSArray<NSString *> *)titles
++ (nullable NSMutableArray<CQTSNetImageDataModel *> *)fileModelsWithTitles:(NSArray<NSString *> *)titles
                                                         assetUrls:(NSArray<NSString *> *)assetNameOrUrls
                                                             count:(NSInteger)requestCount
                                                       randomOrder:(BOOL)randomOrder
 {
     if (assetNameOrUrls.count == 0) {
-        return [NSMutableArray arrayWithArray:@[]];
+        return nil;
     }
     
     NSMutableArray<CQTSNetImageDataModel *> *dataModels = [[NSMutableArray alloc] init];
@@ -150,7 +150,7 @@
 /// @param randomOrder                                          顺序是否随机
 ///
 /// @return 返回Icon数据
-+ (NSMutableArray<CQTSIconDataModel *> *)iconFileModelsWithCount:(NSInteger)count
++ (nullable NSMutableArray<CQTSIconDataModel *> *)iconFileModelsWithCount:(NSInteger)count
                                                      randomOrder:(BOOL)randomOrder
 {
     NSArray<NSString *> *titles = @[@"X透社", @"新鲜事", @"XX信", @"X角信", @"蓝精灵", @"年轻范", @"XX福", @"X之语", @"我是6个字哈"];
@@ -170,13 +170,13 @@
 /// @param randomOrder                                          顺序是否随机
 ///
 /// @return 返回图片数据
-+ (NSMutableArray<CQTSIconDataModel *> *)fileModelsWithTitles:(NSArray<NSString *> *)titles
++ (nullable NSMutableArray<CQTSIconDataModel *> *)fileModelsWithTitles:(NSArray<NSString *> *)titles
                                                      iconUrls:(NSArray<NSString *> *)assetNameOrUrls
                                                         count:(NSInteger)requestCount
                                                   randomOrder:(BOOL)randomOrder
 {
     if (assetNameOrUrls.count == 0) {
-        return @[];
+        return nil;
     }
     
     NSMutableArray<CQTSIconDataModel *> *dataModels = [[NSMutableArray alloc] init];

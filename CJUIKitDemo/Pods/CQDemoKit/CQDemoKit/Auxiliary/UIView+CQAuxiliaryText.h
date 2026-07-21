@@ -18,24 +18,26 @@ typedef NS_ENUM(NSInteger, CQAuxiliaryAlignment) {
 };
 
 // 辅助文本的移除顺序（当有多个相同tag的辅助文本的时候需要）
-typedef NS_ENUM(NSInteger, CQAuxiliaryRemoveOrder) {
-    CQAuxiliaryRemoveOrderPositive,     // 正序：按添加顺序移除
-    CQAuxiliaryRemoveOrderNegative,     // 逆序：后添加到先移除
-    CQAuxiliaryRemoveOrderAll,          // 所有的都移除
+typedef NS_ENUM(NSInteger, CQAuxiliaryRemove) {
+    CQAuxiliaryRemoveFirstOne,      // 正序且一次只移除一个：按添加顺序移除
+    CQAuxiliaryRemoveLastOne,       // 逆序且一次只移除一个：后添加到先移除
+    CQAuxiliaryRemoveAll,           // 所有的都移除
 };
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface UIView (Prompt)
 
-#pragma mark - 添加辅助文本(含删除）
+#pragma mark - 添加辅助文本
 /// 添加辅助文本
 - (void)cqdemo_addPromptText:(NSString *)text layout:(CQAuxiliaryAlignment)layout height:(CGFloat)height;
-/// 删除辅助文本
-- (void)cqdemo_removePromptText:(CQAuxiliaryRemoveOrder)order;
 
 #pragma mark - 添加任意辅助视图
 - (void)cqdemo_addPromptView:(UIView *)promptView layout:(CQAuxiliaryAlignment)layout height:(CGFloat)height;
+
+#pragma mark - 删除任意辅助文本/视图
+/// 删除辅助文本
+- (void)cqdemo_removePrompt:(CQAuxiliaryRemove)order;
 
 @end
 

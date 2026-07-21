@@ -11,7 +11,8 @@
 
 @implementation CQTSAssetSourceUtil
 
-#pragma mark 资源文件名 / 资源文件Url
+#pragma mark 本地资源文件名
+/// 本地资源图片数组
 + (NSArray<NSString *> *)localFileNames:(NSArray<NSString *> *)folderNames {
     NSArray *resultDictionarys = [CQTSAssetSourceUtil assetDictsWithFolderNames:folderNames];
     
@@ -26,6 +27,66 @@
     return resultImagesNames;
 }
 
+
+/*
+ *  获取指定文件夹下的所有图片
+ *
+ *  @param folderNames  图片源的位置(NSArray<NSString *> *folderNames = @[@"png", @"jpg", @"webp", @"svg"];)
+ *
+ *  @return 本地图片数组
+ */
++ (NSArray<UIImage *> *)localImagesInFolderNames:(NSArray<NSString *> *)folderNames {
+    NSMutableArray<UIImage *> *images = [[NSMutableArray alloc] init];
+    
+    NSArray<NSString *> *imageNames = [CQTSAssetSourceUtil localFileNames:folderNames];
+    NSInteger imageCount = [imageNames count];
+    for (int i = 0; i < imageCount; i++) {
+        NSString *imageName = [imageNames objectAtIndex:i];
+        UIImage *image = [UIImage cqresource_imageNamed:imageName];
+        if (image == nil) {
+            image = [[UIImage alloc] init];
+        }
+        [images addObject:image];
+    }
+    
+    return images;
+}
+
+
+/*
+NSInteger trySelIndex = random();
+NSArray<NSString *> *folderNames = @[@"png", @"jpg", @"webp", @"svg"];
+UIImage *localImageRandom = [CQTSAssetSourceUtil localImageAtIndex:trySelIndex folderNames:folderNames];
+*/
+/*
+ *  获取指定位置的本地图片(为了cell显示的图片不会一直变化)
+ *
+ *  @param trySelIndex  指定位置(随机位置 NSInteger trySelIndex = random();)
+ *  @param folderNames  图片源的位置(NSArray<NSString *> *folderNames = @[@"png", @"jpg", @"webp", @"svg"];)
+ *
+ *  @return 本地图片
+ */
++ (UIImage *)localImageAtIndex:(NSInteger)trySelIndex folderNames:(NSArray<NSString *> *)folderNames {
+    NSArray<NSString *> *imageNames = [CQTSAssetSourceUtil localFileNames:folderNames];
+    NSInteger selIndex = trySelIndex % imageNames.count;    //位置太大的时候，从头循环使用图片
+    NSString *imageName = [imageNames objectAtIndex:selIndex];
+    
+    UIImage *image = [UIImage cqresource_imageNamed:imageName];
+    if (image == nil) {
+        NSLog(@"[%@]:CQDemoResource 加载本地图片失败 image == nil", imageName);
+    }
+    return image;
+}
+
+
+
+
+
+
+
+
+
+#pragma mark 网络资源文件Url
 /// 我自己 github 上的 资源图片
 + (NSArray<NSString *> *)networkFileUrls:(NSArray<NSString *> *)folderNames {
     NSString *githubUrl = @"https://github.com/dvlproad/001-UIKit-CQDemo-iOS/blob/master/CQDemoResource/Resources";
@@ -33,16 +94,50 @@
     NSArray *resultDictionarys = [CQTSAssetSourceUtil assetDictsWithFolderNames:folderNames];
     
     // 创建可变数组存放结果
-    NSMutableArray<NSString *> *imageUrls_github = [NSMutableArray array];
+    NSMutableArray<NSString *> *imageUrls = [NSMutableArray array];
     for (NSDictionary *resultDictionary in resultDictionarys) {
         NSString *folderName = resultDictionary[@"folderName"];
         NSString *imageName = resultDictionary[@"assetName"];
         NSString *fullUrl = [CQTSGitUtil githubAssetUrlFromBaseUrl:githubUrl
                                                         folderName:folderName
                                                          imageName:imageName];
-        [imageUrls_github addObject:fullUrl];
+        [imageUrls addObject:fullUrl];
     }
-    return imageUrls_github;
+    
+    [imageUrls addObjectsFromArray:@[
+        #pragma mark 以下网络图片从 https://stock.tuchong.com 中获取
+        @"https://cdn6-banquan.ituchong.com/weili/l/1113166746308968471.jpeg",
+        @"https://cdn6-banquan.ituchong.com/weili/l/966827220441759777.jpeg",
+        @"https://cdn6-banquan.ituchong.com/weili/l/919795258271596547.jpeg",
+        @"https://cdn6-banquan.ituchong.com/weili/l/57461353849430061.jpeg",
+        
+        #pragma mark 以下网络图片从 https://www.droitstock.com/ 中获取
+        
+        #pragma mark 以下网络图片从 https://www.veer.com 中获取
+    ]];
+    
+    return imageUrls;
+}
+
+/*
+NSInteger trySelIndex = random();
+NSArray<NSString *> *folderNames = @[@"png", @"jpg", @"webp", @"svg"];
+UIImage *imageUrlRandom = [CQTSAssetSourceUtil imageUrlAtIndex:trySelIndex folderNames:folderNames];
+*/
+/*
+ *  获取指定位置的网络图片(为了cell显示的图片不会一直变化)
+ *
+ *  @param trySelIndex  指定位置(随机位置 NSInteger trySelIndex = random();)
+ *  @param folderNames  图片源的位置(NSArray<NSString *> *folderNames = @[@"png", @"jpg", @"webp", @"svg"];)
+ *
+ *  @return 网络图片
+ */
++ (NSString *)imageUrlAtIndex:(NSInteger)trySelIndex folderNames:(NSArray<NSString *> *)folderNames {
+    NSArray<NSString *> *imageUrls = [self networkFileUrls:folderNames];
+    NSInteger selIndex = trySelIndex % imageUrls.count;    //位置太大的时候，从头循环使用图片
+    NSString *imageUrl = [imageUrls objectAtIndex:selIndex];
+    
+    return imageUrl;
 }
 
 + (NSArray<NSDictionary *> *)assetDictsWithFolderNames:(NSArray<NSString *> *)folderNames {
@@ -235,6 +330,9 @@
     return resultDictionarys;
 }
 
+
+
+
 #pragma mark Icon资源文件 Url
 /// 所有的网络测试icon图片地址
 + (NSArray<NSString *> *)iconUrls {
@@ -249,5 +347,25 @@
     ];
     return imageUrls;
 }
+
+/*
+NSInteger trySelIndex = random();
+UIImage *iconUrlRandom = [CQTSAssetSourceUtil iconUrlAtIndex:trySelIndex];
+*/
+/*
+ *  获取指定位置的Icon图片Url(为了cell显示的图片不会一直变化)
+ *
+ *  @param trySelIndex  指定位置(随机位置 NSInteger trySelIndex = random();)
+ *
+ *  @return 网络图片
+ */
++ (NSString *)iconUrlAtIndex:(NSInteger)trySelIndex {
+    NSArray<NSString *> *imageUrls = [self iconUrls];
+    NSInteger selIndex = trySelIndex % imageUrls.count;    //位置太大的时候，从头循环使用图片
+    NSString *imageUrl = [imageUrls objectAtIndex:selIndex];
+    
+    return imageUrl;
+}
+
 
 @end

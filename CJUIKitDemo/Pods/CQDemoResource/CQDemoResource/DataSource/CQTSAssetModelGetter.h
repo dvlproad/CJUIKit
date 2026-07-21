@@ -27,7 +27,7 @@ NS_ASSUME_NONNULL_BEGIN
 /// @param changeImageNameToNetworkUrl      是否将本地图片名转为其所在的网络地址
 ///
 /// @return 返回图片数据
-+ (NSMutableArray<CQTSLocImageDataModel *> *)localFileModelsWithCount:(NSInteger)count
++ (nullable NSMutableArray<CQTSLocImageDataModel *> *)localFileModelsWithCount:(NSInteger)count
                                                           randomOrder:(BOOL)randomOrder
                                                           folderNames:(NSArray<NSString *> *)folderNames;
 
@@ -40,7 +40,7 @@ NS_ASSUME_NONNULL_BEGIN
 /// @param folderNames                                          要获取哪些文件夹下的文件
 ///
 /// @return 返回图片数据
-+ (NSMutableArray<CQTSNetImageDataModel *> *)networkFileModelsWithCount:(NSInteger)count
++ (nullable NSMutableArray<CQTSNetImageDataModel *> *)networkFileModelsWithCount:(NSInteger)count
                                                             randomOrder:(BOOL)randomOrder
                                                             folderNames:(NSArray<NSString *> *)folderNames;
 
@@ -53,7 +53,7 @@ NS_ASSUME_NONNULL_BEGIN
 /// @param randomOrder                                          顺序是否随机
 ///
 /// @return 返回Icon数据
-+ (NSMutableArray<CQTSIconDataModel *> *)iconFileModelsWithCount:(NSInteger)count
++ (nullable NSMutableArray<CQTSIconDataModel *> *)iconFileModelsWithCount:(NSInteger)count
                                                      randomOrder:(BOOL)randomOrder;
 
 @end
