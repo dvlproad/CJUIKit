@@ -14,26 +14,40 @@ PODS:
   - AFNetworking/Serialization (4.0.1)
   - AFNetworking/UIKit (4.0.1):
     - AFNetworking/NSURLSession
+  - CJActionFeatureListKit/ActionDataSource (0.4.2):
+    - CJBaseUIKit/UIColor
+    - Masonry
+  - CJActionFeatureListKit/ActionImage (0.4.2):
+    - CJActionFeatureListKit/ActionDataSource
+    - CJActionFeatureListKit/AddDeleteContainer
+    - CJBaseUIKit/UIColor
+    - CJBaseUtil-Swift/FrameworkCJHelper
+    - CJCollectionViewLayout
+    - CQImageKit
+    - Masonry
+  - CJActionFeatureListKit/AddDeleteContainer (0.4.2):
+    - CJBaseUIKit/UIColor
+    - Masonry
   - CJBaseHelper/UIViewControllerCJHelper (0.2.0)
   - CJBaseUIKit/UIButton (0.9.0)
   - CJBaseUIKit/UIColor (0.9.0)
   - CJBaseUIKit/UIImage (0.9.0)
   - CJBaseUIKit/UIView/CJDragAction (0.9.0)
   - CJBaseUtil-Swift/FrameworkCJHelper (0.1.1)
-  - CJCollectionViewLayout (0.2.8):
-    - CJCollectionViewLayout/CardSwitchLayout (= 0.2.8)
-    - CJCollectionViewLayout/FlowLayout (= 0.2.8)
-    - CJCollectionViewLayout/HorizontalLayout (= 0.2.8)
-    - CJCollectionViewLayout/MainSubLastLayout (= 0.2.8)
-    - CJCollectionViewLayout/MainSubLayout (= 0.2.8)
-    - CJCollectionViewLayout/WaterLayout (= 0.2.8)
-  - CJCollectionViewLayout/CardSwitchLayout (0.2.8)
-  - CJCollectionViewLayout/FlowLayout (0.2.8)
-  - CJCollectionViewLayout/HorizontalLayout (0.2.8):
-    - CJCollectionViewLayout/FlowLayout
-  - CJCollectionViewLayout/MainSubLastLayout (0.2.8)
-  - CJCollectionViewLayout/MainSubLayout (0.2.8)
-  - CJCollectionViewLayout/WaterLayout (0.2.8)
+  - CJCollectionViewLayout (0.3.2):
+    - CJCollectionViewLayout/CoverFlowLayout (= 0.3.2)
+    - CJCollectionViewLayout/FixedRowColumnLayout (= 0.3.2)
+    - CJCollectionViewLayout/HorizontalLayout (= 0.3.2)
+    - CJCollectionViewLayout/MainSubLastLayout (= 0.3.2)
+    - CJCollectionViewLayout/MainSubLayout (= 0.3.2)
+    - CJCollectionViewLayout/WarpFlowLayout (= 0.3.2)
+  - CJCollectionViewLayout/CoverFlowLayout (0.3.2)
+  - CJCollectionViewLayout/FixedRowColumnLayout (0.3.2)
+  - CJCollectionViewLayout/HorizontalLayout (0.3.2):
+    - CJCollectionViewLayout/FixedRowColumnLayout
+  - CJCollectionViewLayout/MainSubLastLayout (0.3.2)
+  - CJCollectionViewLayout/MainSubLayout (0.3.2)
+  - CJCollectionViewLayout/WarpFlowLayout (0.3.2)
   - CJComplexUIKit (0.4.0):
     - CJComplexUIKit/CJBaseCollectionViewCell (= 0.4.0)
     - CJComplexUIKit/CJUploadImageCollectionView (= 0.4.0)
@@ -41,7 +55,7 @@ PODS:
   - CJComplexUIKit/CJUploadImageCollectionView (0.4.0):
     - CJComplexUIKit/CJBaseCollectionViewCell
     - CJNetwork/AFNetworkingUploadComponent
-    - CQImageAddDeleteListKit/AddDeletePickUpload
+    - CQActionFeatureList/AddDeletePickUpload
     - JGActionSheet
   - CJContainer (0.1.0):
     - Masonry
@@ -88,20 +102,21 @@ PODS:
     - CJPopupCreater/Base
     - Masonry
   - CJPopupCreater/EffectAndCornerHelper (0.1.1)
-  - CQActionCollectionView/ActionDataSource (0.4.0):
-    - CJBaseUIKit/UIColor
-    - Masonry
-  - CQActionCollectionView/ActionImage (0.4.0):
-    - CJBaseUIKit/UIColor
-    - CJBaseUtil-Swift/FrameworkCJHelper
-    - CJCollectionViewLayout
-    - CQActionCollectionView/ActionDataSource
-    - CQActionCollectionView/AddDeleteContainer
-    - CQImageKit
-    - Masonry
-  - CQActionCollectionView/AddDeleteContainer (0.4.0):
-    - CJBaseUIKit/UIColor
-    - Masonry
+  - CQActionFeatureList/AddDeletePickUpload (0.2.1):
+    - CJActionFeatureListKit/ActionImage
+    - CQActionFeatureList/AddDeletePickUpload/PhotoChooseUtil (= 0.2.1)
+    - CQActionFeatureList/AddDeletePickUpload/UploadImagePickerUtil (= 0.2.1)
+  - CQActionFeatureList/AddDeletePickUpload/PhotoChooseUtil (0.2.1):
+    - CJActionFeatureListKit/ActionImage
+    - CJBaseHelper/UIViewControllerCJHelper
+    - CQImagePickerKit/ImagePickerController
+    - CQOverlayKit/CQActionSheet
+  - CQActionFeatureList/AddDeletePickUpload/UploadImagePickerUtil (0.2.1):
+    - CJActionFeatureListKit/ActionImage
+    - CJFile/CJFileManager
+    - CJImagePickerKit/CustomImagePickerController
+    - CJImagePickerKit/SystemImagePickerController
+    - CJNetworkFileModel
   - CQDemoKit/BaseUIKit (0.9.9):
     - Masonry
   - CQDemoKit/BaseUtil (0.9.9)
@@ -123,21 +138,6 @@ PODS:
   - CQDemoKit/BaseVC/TableView (0.9.9):
     - CQDemoKit/BaseVC/Base
   - CQDemoKit/Helper (0.9.9)
-  - CQImageAddDeleteListKit/AddDeletePickUpload (0.6.0):
-    - CQActionCollectionView/ActionImage
-    - CQImageAddDeleteListKit/AddDeletePickUpload/PhotoChooseUtil (= 0.6.0)
-    - CQImageAddDeleteListKit/AddDeletePickUpload/UploadImagePickerUtil (= 0.6.0)
-  - CQImageAddDeleteListKit/AddDeletePickUpload/PhotoChooseUtil (0.6.0):
-    - CJBaseHelper/UIViewControllerCJHelper
-    - CQActionCollectionView/ActionImage
-    - CQImagePickerKit/ImagePickerController
-    - CQOverlayKit/CQActionSheet
-  - CQImageAddDeleteListKit/AddDeletePickUpload/UploadImagePickerUtil (0.6.0):
-    - CJFile/CJFileManager
-    - CJImagePickerKit/CustomImagePickerController
-    - CJImagePickerKit/SystemImagePickerController
-    - CJNetworkFileModel
-    - CQActionCollectionView/ActionImage
   - CQImageKit (0.1.1):
     - CJBaseUIKit/UIColor
     - CJBaseUIKit/UIImage
@@ -199,20 +199,20 @@ DEPENDENCIES:
   - AFNetworking/Reachability
   - CJComplexUIKit (from `../`)
   - CJFoundation/NSString
+  - CQActionFeatureList/AddDeletePickUpload
   - CQDemoKit/BaseVC (~> 0.9.9)
-  - CQImageAddDeleteListKit/AddDeletePickUpload
   - IjinbuNetwork
   - MJPopupViewController (~> 0.4)
 
 SPEC REPOS:
   https://gitee.com/dvlproad/dvlproadSpecs:
+    - CJActionFeatureListKit
     - CJCollectionViewLayout
     - CJContainer
     - CJImagePickerKit
     - CJOverlayView
     - CJPopupCreater
-    - CQActionCollectionView
-    - CQImageAddDeleteListKit
+    - CQActionFeatureList
     - CQImageKit
     - CQImagePickerKit
     - CQOverlayKit
@@ -243,11 +243,12 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   AFNetworking: 3bd23d814e976cd148d7d44c3ab78017b744cd58
+  CJActionFeatureListKit: ef62de2b54928a68e53c21d300e42d313fe4a627
   CJBaseHelper: 0345964a15b24131605a356f62e8c61d56222002
   CJBaseUIKit: 082b23d89703a9ff17f6b17f33c23569c2e67581
   CJBaseUtil-Swift: ba15bb3ac8512a9e374078b5e7514e77b9303af5
-  CJCollectionViewLayout: 00c661838ff985134c364036e4bffbf07233c092
-  CJComplexUIKit: d6b3ca468702f95c24f85b3bcd8bffa56ef60040
+  CJCollectionViewLayout: 9a4b91ea0875517982c583d389e8d1f943dd3392
+  CJComplexUIKit: 05ddef7a5f2457dfb74610c4e28f5312d2ac607d
   CJContainer: b7d5d626a05691c9107ce57b5991ab5c066f86a3
   CJFile: 6c1e6d55b3b94e8afbaa9f413f131301d15fdc48
   CJFoundation: acbdf22b8b415dcdaf4e0c50ef6e3e5180ec73b8
@@ -256,9 +257,8 @@ SPEC CHECKSUMS:
   CJNetworkFileModel: 738b736e68e577b4affdf78f8a4a2ded4204364d
   CJOverlayView: 35ff284fb9a9b1a21e0a2f4cb24193ed72fb5215
   CJPopupCreater: eb8af290023be9aeaeb78165c9458d910d022ed3
-  CQActionCollectionView: baf8f21efb647b05396d2461ffd97f74f1c6b4d1
+  CQActionFeatureList: 6389837ef6a1ac89cb348112eb4721b46f169bbe
   CQDemoKit: 0ac1910c174d8d2b4b40367806dce17fe1804d8d
-  CQImageAddDeleteListKit: af21a18fafdeee617fd6acb24967db64903b6ed7
   CQImageKit: 3317046a9157d467b4e6f0d53f8dd0830916180e
   CQImagePickerKit: d2ab8294916b4604a3ba07348adfd52d5732d711
   CQNetworkPublic: daa95989c1d6d8f2d1d50f97285f4b88f0e664d3
@@ -273,6 +273,6 @@ SPEC CHECKSUMS:
   SDWebImage: e9fc87c1aab89a8ab1bbd74eba378c6f53be8abf
   YYCache: 8105b6638f5e849296c71f331ff83891a4942952
 
-PODFILE CHECKSUM: 08d14da36d826d427f7e022bda38d94594aa4bb6
+PODFILE CHECKSUM: 7201f377e92ac0591d60a47ddfa823d7d31ec8d7
 
 COCOAPODS: 1.16.2

@@ -7,8 +7,8 @@
 //
 
 #import "CJUploadImageCollectionView.h"
-#import <CJCollectionViewLayout/CQCollectionViewFlowLayout.h>
-#import <CQActionCollectionView/CJActionCollectionViewDataSource.h>
+#import <CJCollectionViewLayout/CJFixRowColumnLayout.h>
+#import <CJActionFeatureListKit/CJActionCollectionViewDataSource.h>
 #import "CJUploadImageCollectionView+Tap.h"
 #import "CJUploadCollectionViewCell.h"
 
@@ -66,14 +66,14 @@ static NSString * const CJUploadCollectionViewCellAddID = @"CJUploadCollectionVi
         [self.dataModels addObject:item];
     }
     */
-    CQCollectionViewFlowLayout *equalCellSizeSetting = [[CQCollectionViewFlowLayout alloc] init];
+    CJFixRowColumnLayout *equalCellSizeSetting = [[CJFixRowColumnLayout alloc] init];
     //flowLayout.headerReferenceSize = CGSizeMake(110, 135);
     equalCellSizeSetting.minimumInteritemSpacing = 10;
     equalCellSizeSetting.minimumLineSpacing = 15;
     equalCellSizeSetting.sectionInset = UIEdgeInsetsMake(10, 10, 10, 10);
     
     //以下值必须二选一设置（默认cellWidthFromFixedWidth设置后，另外一个自动失效）
-    equalCellSizeSetting.cellWidthFromPerRowMaxShowCount = 4;
+    equalCellSizeSetting.cellWidthFromFixedWidth = 4;
     //equalCellSizeSetting.cellWidthFromFixedWidth = 50;
     
     self.allowsMultipleSelection = YES; //是否打开多选

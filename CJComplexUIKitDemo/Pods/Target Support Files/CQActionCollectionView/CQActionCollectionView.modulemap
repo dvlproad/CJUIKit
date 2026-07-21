@@ -1,6 +1,0 @@
-framework module CQActionCollectionView {
-  umbrella header "CQActionCollectionView-umbrella.h"
-
-  export *
-  module * { export * }
-}

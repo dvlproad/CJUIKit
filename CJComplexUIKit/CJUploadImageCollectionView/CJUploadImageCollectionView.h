@@ -5,13 +5,13 @@
 //  Created by ciyouzen on 2017/1/19.
 //  Copyright © 2017年 dvlproad. All rights reserved.
 //
-// 待废弃，参考改成使用 #import <CQImageAddDeleteListKit/CJImageAddDeletePickUploadCollectionView.h>
+// 待废弃，参考改成使用 #import <CQActionFeatureList/CJImageAddDeletePickUploadCollectionView.h>
 
 
-#import <CQImageAddDeleteListKit/CJImageUploadFileModelsOwner.h>
-#import <CQImageAddDeleteListKit/CJVideoUploadFileModelsOwner.h>
-#import <CQImageAddDeleteListKit/CJImageAddDeletePickCollectionView.h>          // 引入 CJMediaType
-#import <CQImageAddDeleteListKit/CJImageAddDeletePickUploadCollectionView.h>    // 引入 CJUploadActionType
+#import <CQActionFeatureList/CJImageUploadFileModelsOwner.h>
+#import <CQActionFeatureList/CJVideoUploadFileModelsOwner.h>
+#import <CQActionFeatureList/CJImageAddDeletePickCollectionView.h>          // 引入 CJMediaType
+#import <CQActionFeatureList/CJImageAddDeletePickUploadCollectionView.h>    // 引入 CJUploadActionType
 
 ///TODO:将本工程CJTotalDemo中的FileChooseView抽出不含上传请求的部分到CJComplexUIKitDemo中
 @interface CJUploadImageCollectionView : UICollectionView <UIImagePickerControllerDelegate, UINavigationControllerDelegate> {

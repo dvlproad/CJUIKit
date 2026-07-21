@@ -1,9 +1,9 @@
 {
   "name": "CJComplexUIKit",
   "version": "0.4.0",
-  "summary": "自定义的稍微复杂的UI( 内部有 CJUploadImageCollectionView 依赖到了私有的 CQImageAddDeleteListKit )",
+  "summary": "自定义的稍微复杂的UI( 内部有 CJUploadImageCollectionView 依赖到了私有的 CQActionFeatureList )",
   "homepage": "https://github.com/dvlproad/CJUIKit",
-  "description": "自定义的稍微复杂的UI( 内部有 CJUploadImageCollectionView 依赖到了私有的 CQImageAddDeleteListKit )，可按需独立引入：\n• CJComplexUIKit/CJBaseCollectionViewCell - 集合单元格\n• CJComplexUIKit/CJUploadImageCollectionView - 图片选择及上传视图( 内部有 CJUploadImageCollectionView 依赖到了私有的 CQImageAddDeleteListKit )\n\n每个子库可独立引入，详见各子库描述。",
+  "description": "自定义的稍微复杂的UI( 内部有 CJUploadImageCollectionView 依赖到了私有的 CQActionFeatureList )，可按需独立引入：\n• CJComplexUIKit/CJBaseCollectionViewCell - 集合单元格\n• CJComplexUIKit/CJUploadImageCollectionView - 图片选择及上传视图( 内部有 CJUploadImageCollectionView 依赖到了私有的 CQActionFeatureList )\n\n每个子库可独立引入，详见各子库描述。",
   "license": "MIT",
   "authors": {
     "dvlproad": ""
@@ -34,7 +34,7 @@
       "dependencies": {
         "JGActionSheet": [],
         "CJComplexUIKit/CJBaseCollectionViewCell": [],
-        "CQImageAddDeleteListKit/AddDeletePickUpload": [],
+        "CQActionFeatureList/AddDeletePickUpload": [],
         "CJNetwork/AFNetworkingUploadComponent": []
       }
     }

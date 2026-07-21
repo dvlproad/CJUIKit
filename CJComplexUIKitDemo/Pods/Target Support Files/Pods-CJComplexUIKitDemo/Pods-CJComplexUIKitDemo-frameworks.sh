@@ -177,6 +177,7 @@ code_sign_if_enabled() {
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/CJActionFeatureListKit/CJActionFeatureListKit.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/CJBaseHelper/CJBaseHelper.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/CJBaseUIKit/CJBaseUIKit.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/CJBaseUtil-Swift/CJBaseUtil_Swift.framework"
@@ -190,9 +191,8 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/CJNetworkFileModel/CJNetworkFileModel.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/CJOverlayView/CJOverlayView.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/CJPopupCreater/CJPopupCreater.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/CQActionCollectionView/CQActionCollectionView.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/CQActionFeatureList/CQActionFeatureList.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/CQDemoKit/CQDemoKit.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/CQImageAddDeleteListKit/CQImageAddDeleteListKit.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/CQImageKit/CQImageKit.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/CQImagePickerKit/CQImagePickerKit.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/CQNetworkPublic/CQNetworkPublic.framework"
@@ -209,6 +209,7 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/CJActionFeatureListKit/CJActionFeatureListKit.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/CJBaseHelper/CJBaseHelper.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/CJBaseUIKit/CJBaseUIKit.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/CJBaseUtil-Swift/CJBaseUtil_Swift.framework"
@@ -222,9 +223,8 @@ if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/CJNetworkFileModel/CJNetworkFileModel.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/CJOverlayView/CJOverlayView.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/CJPopupCreater/CJPopupCreater.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/CQActionCollectionView/CQActionCollectionView.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/CQActionFeatureList/CQActionFeatureList.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/CQDemoKit/CQDemoKit.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/CQImageAddDeleteListKit/CQImageAddDeleteListKit.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/CQImageKit/CQImageKit.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/CQImagePickerKit/CQImagePickerKit.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/CQNetworkPublic/CQNetworkPublic.framework"

@@ -156,23 +156,25 @@
 - (CGPoint)targetContentOffsetForProposedContentOffset: (CGPoint)proposedContentOffset withScrollingVelocity:(CGPoint)velocity //自动对齐到网格
 {
     //proposedContentOffset是没有对齐到网格时本来应该停下的位置
-    CGFloat offsetY = MAXFLOAT;
-    CGFloat offsetX = MAXFLOAT;
     CGFloat horizontalCenter = proposedContentOffset.x + self.itemSize.width/2;
     CGFloat verticalCenter = proposedContentOffset.y + self.itemSize.height/2;
     CGRect targetRect = CGRectMake(0, 0.0, self.collectionView.bounds.size.width, self.collectionView.bounds.size.height);
-    NSArray* array = [super layoutAttributesForElementsInRect:targetRect];
+    NSArray *array = [super layoutAttributesForElementsInRect:targetRect];
     
     //对当前屏幕中的UICollectionViewLayoutAttributes逐个与屏幕中心进行比较，找出最接近中心的一个
+    CGFloat offsetY = MAXFLOAT;
+    CGFloat offsetX = MAXFLOAT;
     CGPoint offPoint = proposedContentOffset;
     for (UICollectionViewLayoutAttributes* layoutAttributes in array) {
         CGFloat itemHorizontalCenter = layoutAttributes.center.x;
         CGFloat itemVerticalCenter = layoutAttributes.center.y;
-        if (ABS(itemHorizontalCenter - horizontalCenter) && (ABS(offsetX)>ABS(itemHorizontalCenter - horizontalCenter))) {
+        CGFloat horizontalGapToCenter = ABS(itemHorizontalCenter - horizontalCenter); // 当前cell与屏幕中心的水平距离
+        if (horizontalGapToCenter>0 && horizontalGapToCenter<(ABS(offsetX))) {
             offsetX = itemHorizontalCenter - horizontalCenter;
             offPoint = CGPointMake(itemHorizontalCenter, itemVerticalCenter);
         }
-        if (ABS(itemVerticalCenter - verticalCenter) && (ABS(offsetY)>ABS(itemVerticalCenter - verticalCenter))) {
+        CGFloat verticalGapToCenter = ABS(itemVerticalCenter - verticalCenter); // 当前cell与屏幕中心的竖直距离
+        if (verticalGapToCenter>0 && verticalGapToCenter<(ABS(offsetY))) {
             offsetY = itemHorizontalCenter - horizontalCenter;
             offPoint = CGPointMake(itemHorizontalCenter, itemVerticalCenter);
         }

@@ -639,6 +639,7 @@
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-CJComplexUIKitDemo/Pods-CJComplexUIKitDemo-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
+				"${BUILT_PRODUCTS_DIR}/CJActionFeatureListKit/CJActionFeatureListKit.framework",
 				"${BUILT_PRODUCTS_DIR}/CJBaseHelper/CJBaseHelper.framework",
 				"${BUILT_PRODUCTS_DIR}/CJBaseUIKit/CJBaseUIKit.framework",
 				"${BUILT_PRODUCTS_DIR}/CJBaseUtil-Swift/CJBaseUtil_Swift.framework",
@@ -652,9 +653,8 @@
 				"${BUILT_PRODUCTS_DIR}/CJNetworkFileModel/CJNetworkFileModel.framework",
 				"${BUILT_PRODUCTS_DIR}/CJOverlayView/CJOverlayView.framework",
 				"${BUILT_PRODUCTS_DIR}/CJPopupCreater/CJPopupCreater.framework",
-				"${BUILT_PRODUCTS_DIR}/CQActionCollectionView/CQActionCollectionView.framework",
+				"${BUILT_PRODUCTS_DIR}/CQActionFeatureList/CQActionFeatureList.framework",
 				"${BUILT_PRODUCTS_DIR}/CQDemoKit/CQDemoKit.framework",
-				"${BUILT_PRODUCTS_DIR}/CQImageAddDeleteListKit/CQImageAddDeleteListKit.framework",
 				"${BUILT_PRODUCTS_DIR}/CQImageKit/CQImageKit.framework",
 				"${BUILT_PRODUCTS_DIR}/CQImagePickerKit/CQImagePickerKit.framework",
 				"${BUILT_PRODUCTS_DIR}/CQNetworkPublic/CQNetworkPublic.framework",
@@ -672,6 +672,7 @@
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AFNetworking.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CJActionFeatureListKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CJBaseHelper.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CJBaseUIKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CJBaseUtil_Swift.framework",
@@ -685,9 +686,8 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CJNetworkFileModel.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CJOverlayView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CJPopupCreater.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CQActionCollectionView.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CQActionFeatureList.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CQDemoKit.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CQImageAddDeleteListKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CQImageKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CQImagePickerKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CQNetworkPublic.framework",

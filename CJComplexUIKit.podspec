@@ -6,13 +6,13 @@ Pod::Spec.new do |s|
   #验证方法：pod lib lint CJComplexUIKit.podspec --sources=cocoapods,gitee-dvlproad-dvlproadspecs --allow-warnings --use-libraries --verbose
   s.name         = "CJComplexUIKit"
   s.version      = "0.4.0"
-  s.summary      = "自定义的稍微复杂的UI( 内部有 CJUploadImageCollectionView 依赖到了私有的 CQImageAddDeleteListKit )"
+  s.summary      = "自定义的稍微复杂的UI( 内部有 CJUploadImageCollectionView 依赖到了私有的 CQActionFeatureList )"
   s.homepage     = "https://github.com/dvlproad/CJUIKit"
 
   s.description  = <<-DESC
-                 自定义的稍微复杂的UI( 内部有 CJUploadImageCollectionView 依赖到了私有的 CQImageAddDeleteListKit )，可按需独立引入：
+                 自定义的稍微复杂的UI( 内部有 CJUploadImageCollectionView 依赖到了私有的 CQActionFeatureList )，可按需独立引入：
                  • CJComplexUIKit/CJBaseCollectionViewCell - 集合单元格
-                 • CJComplexUIKit/CJUploadImageCollectionView - 图片选择及上传视图( 内部有 CJUploadImageCollectionView 依赖到了私有的 CQImageAddDeleteListKit )
+                 • CJComplexUIKit/CJUploadImageCollectionView - 图片选择及上传视图( 内部有 CJUploadImageCollectionView 依赖到了私有的 CQActionFeatureList )
 
                  每个子库可独立引入，详见各子库描述。
                  DESC
@@ -45,7 +45,7 @@ Pod::Spec.new do |s|
     ss.source_files = "CJComplexUIKit/CJBaseCollectionViewCell/**/*.{h,m}"
   end
 
-  # 图片选择及上传视图( 内部有 CJUploadImageCollectionView 依赖到了私有的 CQImageAddDeleteListKit )
+  # 图片选择及上传视图( 内部有 CJUploadImageCollectionView 依赖到了私有的 CQActionFeatureList )
   s.subspec 'CJUploadImageCollectionView' do |ss|
     ss.source_files = "CJComplexUIKit/CJUploadImageCollectionView/**/*.{h,m}"
     #ss.resources = "CJComplexUIKit/CJDataScrollView/ImagePickerCollectionlView/**/*.{png,xib,bundle}"
@@ -59,7 +59,7 @@ Pod::Spec.new do |s|
     ss.dependency 'JGActionSheet'
     ss.dependency 'CJComplexUIKit/CJBaseCollectionViewCell'
 
-    ss.dependency 'CQImageAddDeleteListKit/AddDeletePickUpload'
+    ss.dependency 'CQActionFeatureList/AddDeletePickUpload'
     ss.dependency 'CJNetwork/AFNetworkingUploadComponent'
   end
 

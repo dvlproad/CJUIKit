@@ -10,13 +10,12 @@
 #endif
 #endif
 
-#import "CJCardSwitchFlowLayout.h"
-#import "CQCollectionViewFlowLayout.h"
-#import "UICollectionView+CJFlowLayoutScrollDirection.h"
+#import "CJCoverFlowLayout.h"
+#import "CJFixRowColumnLayout.h"
 #import "CJCellHorizontalLayout.h"
 #import "CJCellMainSubLastLayout.h"
 #import "CJCellMainSubLayout.h"
-#import "CJCellWaterLayout.h"
+#import "CJWarpFlowLayout.h"
 
 FOUNDATION_EXPORT double CJCollectionViewLayoutVersionNumber;
 FOUNDATION_EXPORT const unsigned char CJCollectionViewLayoutVersionString[];

@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 //#import "CJUploadImageCollectionView.h"
-#import <CQImageAddDeleteListKit/CJImageAddDeletePickUploadCollectionView.h>
+#import <CQActionFeatureList/CJImageAddDeletePickUploadCollectionView.h>
 
 //TODO：选择图片后，情况②是否立即上传，还是等候上传？
 @interface UploadDirectlyImagePickerViewController : UIViewController {

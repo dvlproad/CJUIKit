@@ -1,0 +1,6 @@
+framework module CQActionFeatureList {
+  umbrella header "CQActionFeatureList-umbrella.h"
+
+  export *
+  module * { export * }
+}

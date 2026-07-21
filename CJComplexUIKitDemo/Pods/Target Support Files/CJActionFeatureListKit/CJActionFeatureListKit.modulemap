@@ -1,0 +1,6 @@
+framework module CJActionFeatureListKit {
+  umbrella header "CJActionFeatureListKit-umbrella.h"
+
+  export *
+  module * { export * }
+}
