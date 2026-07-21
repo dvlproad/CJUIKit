@@ -16,7 +16,7 @@ import SwiftUI
 @available(iOS 13.0, *)
 extension UIView {
     /// 将 UIView 转换为 SwiftUI View，并支持动态更新
-    func asSwiftUI(
+    public func asSwiftUI(
         update: @escaping (UIView) -> Void = { _ in }
     ) -> some View {
         UIViewCJRepresentable(
