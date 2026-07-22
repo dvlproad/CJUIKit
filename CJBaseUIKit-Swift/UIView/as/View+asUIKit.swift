@@ -44,7 +44,7 @@ extension UIView {
 
 // MARK: - 使用示例
 @available(iOS 13.0, *)
-class MyContainerViewController: UIViewController {
+class TSSwiftUIAsUIKitViewController: UIViewController {
     
     // MARK: - 容器视图（使用更清晰的命名）
     private let container1: UIView = {
@@ -155,6 +155,6 @@ class MyContainerViewController: UIViewController {
 #if DEBUG
 @available(iOS 17.0, *)
 #Preview {
-    MyContainerViewController()
+    TSSwiftUIAsUIKitViewController()
 }
 #endif

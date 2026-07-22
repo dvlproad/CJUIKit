@@ -125,11 +125,14 @@
 #pragma mark - submitButton
 /*
  *  "重现bug"/"重现bug"的状态选择按钮(默认是bug已重现待修复的状态)
+ *  @param bugHappen                当前状态是否是bug发生的状态
  *  @param fixBugHandle             修复bug要执行的操作
  *  @param reproduceBugHandle       重现bug要执行的操作
  */
-+ (UIButton *)bugButtonWithFixBugHandle:(void(^)(void))fixBugHandle reproduceBugHandle:(void(^)(void))reproduceBugHandle {
-    UIButton *bugStateButton = [CQTSButtonFactory submitButtonWithSubmitTitle:@"重现bug" editTitle:@"修复bug" showEditTitle:YES clickSubmitTitleHandle:^(UIButton * _Nonnull button) {
++ (UIButton *)bugButtonWithBugHappen:(BOOL)bugHappen
+                        fixBugHandle:(void(^)(void))fixBugHandle
+                  reproduceBugHandle:(void(^)(void))reproduceBugHandle {
+    UIButton *bugStateButton = [CQTSButtonFactory submitButtonWithSubmitTitle:@"修复bug" editTitle:@"重现bug" showEditTitle:!bugHappen clickSubmitTitleHandle:^(UIButton * _Nonnull button) {
         button.selected = !button.selected;
         !fixBugHandle ?: fixBugHandle();
     } clickEditTitleHandle:^(UIButton * _Nonnull button) {

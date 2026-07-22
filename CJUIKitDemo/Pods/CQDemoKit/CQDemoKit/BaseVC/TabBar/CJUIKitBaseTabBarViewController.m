@@ -51,13 +51,17 @@
     ③设置角标tabBarItem.badgeValue：如果没有设置图片，角标默认显示在左上角，设置了图片就会在图片的右上角显示
     */
     UIViewController *viewController = nil;
-    Class classEntry = tabBarModel.classEntry;
-    NSString *clsString = NSStringFromClass(tabBarModel.classEntry);
-    if (tabBarModel.isCreateByXib) {
-        NSBundle *xibBundle = tabBarModel.xibBundle;
-        viewController = [[classEntry alloc] initWithNibName:clsString bundle:xibBundle];
+    if (tabBarModel.viewControllerGetterHandle != nil) {
+        viewController = tabBarModel.viewControllerGetterHandle();
     } else {
-        viewController = [[classEntry alloc] init];
+        Class classEntry = tabBarModel.classEntry;
+        NSString *clsString = NSStringFromClass(tabBarModel.classEntry);
+        if (tabBarModel.isCreateByXib) {
+            NSBundle *xibBundle = tabBarModel.xibBundle;
+            viewController = [[classEntry alloc] initWithNibName:clsString bundle:xibBundle];
+        } else {
+            viewController = [[classEntry alloc] init];
+        }
     }
     
     viewController.title = tabBarModel.title;

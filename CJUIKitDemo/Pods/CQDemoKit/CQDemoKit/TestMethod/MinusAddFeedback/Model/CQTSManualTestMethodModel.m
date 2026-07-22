@@ -14,7 +14,6 @@
 @property (nonatomic, copy, readonly) id value;
 @property (nonatomic, copy, readonly) id (^valueFromTextBlock)(NSString *string);
 @property (nonatomic, copy, readonly) NSString* (^textFromValueBlock)(id value);    /**< 将value转给textField用 */
-@property (nonatomic, copy, readonly) NSString* (^resultFromValueBlock)(id value);   /**< 将value转为resultLabel(一般只用textField就可以展示,所以该值一般为nil), */
 
 @property (nonatomic, copy, readonly) id (^minusHandle)(id oldValue);
 @property (nonatomic, copy, readonly) id (^addHandle)(id oldValue);

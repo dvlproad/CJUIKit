@@ -15,6 +15,7 @@
 
 @property (nonatomic, copy, readonly) NSString *changeExplain;  /**< 测试加减项的解释说明 */
 
+@property (nonatomic, copy, readonly) NSString* (^resultFromValueBlock)(id value);   /**< 将value转为resultLabel(一般只用textField就可以展示,所以该值一般为nil), */
 @property (nonatomic, copy, readonly) NSString *extarResultString;/**< 额外的结果信息 */
 
 - (instancetype)initWithValue:(id)value

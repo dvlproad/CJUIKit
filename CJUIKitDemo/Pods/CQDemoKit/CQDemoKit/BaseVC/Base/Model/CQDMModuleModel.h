@@ -14,6 +14,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface CQDMModuleModel : NSObject
 
 @property (nonatomic, copy) NSString *title;
+@property (nonatomic, assign) NSInteger titleLines;
 @property (nullable, nonatomic, copy) NSString *content;
 @property (nonatomic, assign) NSInteger contentLines;
 @property (nullable, nonatomic, strong) UIImage *normalImage;
@@ -28,6 +29,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, assign) BOOL isCreateByXib;               /**< 控制器是否要由interface来生成 */
 @property (nullable, nonatomic, strong) NSBundle *xibBundle;    /**< 控制器由interface生成时候所在的bundle（默认nil，表示是xib的时候，该xib在mainBundle中） */
 @property (nullable, nonatomic, copy) NSString *xibBundleName;  /**< bundle名字(xibBundle为nil时候，才会使用这个值) */
+@property (nullable, nonatomic, copy) UIViewController*(^viewControllerGetterHandle)(void);       /**< 点击后进入的控制器 */
 
 // 视图（如果要测试 SwiftUI ,请参考主工程中的 TSTSSwiftUIView.swift 先将 swiftui 的 view 转成 UIView/UIViewController )
 @property (nullable, nonatomic, copy) UIView*(^viewGetterHandle)(void);       /**< 点击后进入的控制器 里面显示的视图 */

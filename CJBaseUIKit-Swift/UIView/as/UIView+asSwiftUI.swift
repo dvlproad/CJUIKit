@@ -6,7 +6,7 @@
 //  Copyright © 2024 dvlproad. All rights reserved.
 //
 // ============================================================
-// 核心扩展：让所有 UIKit 都可以转成 SwiftUI View
+// 核心扩展：让所有 UIKit 的 UIView 都可以转成 SwiftUI View
 // ============================================================
 
 import UIKit
@@ -60,7 +60,7 @@ struct UIViewCJRepresentable<ViewType: UIView>: UIViewRepresentable {
 
 // MARK: - 使用示例
 @available(iOS 13.0, *)
-struct MyContainerView: View {
+struct TSUIViewAsSwiftUIView: View {
     var body: some View {
         VStack(spacing: 0) {
             // Container 1 - 使用 asUIKit()
@@ -96,5 +96,5 @@ struct MyContainerView: View {
 // MARK: - Preview
 @available(iOS 13.0, *)
 #Preview {
-    MyContainerView()
+    TSUIViewAsSwiftUIView()
 }

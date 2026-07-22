@@ -121,6 +121,10 @@
 }
 
 - (void)showExtraResult {
+    if (self.valueChangeModel.resultFromValueBlock == nil) {
+        return; // 没有需要获取的情况下 extarResultString 始终为 nil ，不需要继续
+    }
+    
     NSString *extraResultMessage = self.valueChangeModel.extarResultString;
     if (extraResultMessage == nil) {
         self.extraResultLabel.text = @"（方法返回 nil）";
