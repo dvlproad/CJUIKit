@@ -6,7 +6,7 @@
 
 Pod::Spec.new do |s|
   s.name         = "CJBaseUIKit-Swift"
-  s.version      = "0.0.4"
+  s.version      = "0.0.5"
   s.summary      = "自定义的基础UI"
   s.homepage     = "https://github.com/dvlproad/CJUIKit"
 
@@ -18,8 +18,6 @@ Pod::Spec.new do |s|
                  • CJBaseUIKit-Swift/UIView/adapt - 自适应宽\高\字体等
                  • CJBaseUIKit-Swift/UIView/as - SwiftUI 与 UIKit 互转的方法
                  • CJBaseUIKit-Swift/UIView/appear - 生命周期
-                 • CJBaseUIKit-Swift/UIView/CJPopupAction - 视图弹窗：UIView的类别，用来实现UIView弹出popupView的一个Uiew的类别
-                 • CJBaseUIKit-Swift/CJAlert - Alert
 
                  每个子库可独立引入，详见各子库描述。
                  DESC
@@ -37,7 +35,7 @@ Pod::Spec.new do |s|
 
   s.platform     = :ios, "10.0"
  
-  s.source       = { :git => "https://github.com/dvlproad/CJUIKit.git", :tag => "CJBaseUIKit-Swift_0.0.4" }
+  s.source       = { :git => "https://github.com/dvlproad/CJUIKit.git", :tag => "CJBaseUIKit-Swift_0.0.5" }
   # s.source_files  = "CJBaseUIKit-Swift/*.{h}"
 
   s.frameworks = "UIKit"
@@ -103,11 +101,6 @@ Pod::Spec.new do |s|
   	# ss.subspec 'CJShakeAction' do |sss|
    #    sss.source_files = "CJBaseUIKit-Swift/UIView/CJShakeAction/**/*.{h,m}"
   	# end
-
-  	# 视图弹窗：UIView的类别，用来实现UIView弹出popupView的一个Uiew的类别
-  	ss.subspec 'CJPopupAction' do |sss|
-      sss.source_files = "CJBaseUIKit-Swift/UIView/CJPopupAction/**/*.{swift}"
-  	end
 
     # 视图手势
   	# ss.subspec 'CJGestureRecognizer' do |sss|
