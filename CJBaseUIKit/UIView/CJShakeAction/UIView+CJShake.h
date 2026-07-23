@@ -5,6 +5,7 @@
 //  Created by ciyouzen on 2017/5/11.
 //  Copyright © 2017年 dvlproad. All rights reserved.
 //
+//  让 UIView 进行各种抖动效果
 
 #import <UIKit/UIKit.h>
 
@@ -16,9 +17,6 @@ typedef NS_ENUM(NSUInteger, CJShakeType) {
     CJShakeTypeEnd,         /** 抖动结束   */
 };
 
-/**
- *  UIView的抖动效果
- */
 @interface UIView (CJShake) {
     
 }

@@ -5,6 +5,7 @@
 //  Created by ciyouzen on 2017/5/20.
 //  Copyright © 2017年 dvlproad. All rights reserved.
 //
+//  悬浮框管理器
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>

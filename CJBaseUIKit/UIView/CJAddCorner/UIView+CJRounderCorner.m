@@ -10,6 +10,7 @@
 
 @implementation UIView (CJRounderCorner)
 
+// 添加圆角（创建一个带圆角的图片，然后作为ImageView插入）
 - (void)cj_addRounderCornerWithRadius:(CGFloat)radius
                                  size:(CGSize)size
                       backgroundColor:(UIColor *)backgroundColor

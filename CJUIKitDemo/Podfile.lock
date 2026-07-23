@@ -92,7 +92,11 @@ PODS:
   - CJBaseUIKit/UIView/CJDragAction (0.9.0)
   - CJBaseUIKit/UIView/CJGestureRecognizer (0.9.0)
   - CJBaseUIKit/UIView/CJShakeAction (0.9.0)
-  - CJBaseUIKit/UIViewController (0.9.0)
+  - CJBaseUIKit/UIViewController (0.9.0):
+    - CJBaseUIKit/UIViewController/BackBarButtonItem (= 0.9.0)
+    - CJBaseUIKit/UIViewController/SystemComposeView (= 0.9.0)
+  - CJBaseUIKit/UIViewController/BackBarButtonItem (0.9.0)
+  - CJBaseUIKit/UIViewController/SystemComposeView (0.9.0)
   - CJBaseUIKit/UIWindow (0.9.0)
   - CJBaseUtil (0.6.0):
     - CJBaseUtil/CJAppLastUtil (= 0.6.0)
@@ -370,7 +374,7 @@ SPEC CHECKSUMS:
   AFNetworking: 3bd23d814e976cd148d7d44c3ab78017b744cd58
   CJBaseEffectKit: df0d6d989de6363a14be9d5ebbb2a5e6b8b1588c
   CJBaseHelper: 0345964a15b24131605a356f62e8c61d56222002
-  CJBaseUIKit: 603bb6a5d78f3a4760642e63b4840ee7093a7cd9
+  CJBaseUIKit: 83ece524e33be2b14a4fe1dab7794553f4f61744
   CJBaseUIKit-Swift: 29fd3ca807564565e13feee1e0e459b3094ca6cc
   CJBaseUtil: 8df26e5a5d58178e25c6238e5ad68c8c21f48890
   CJBaseUtil-Swift: 837f333ad19be6e2df8467f965c8735560a7c085

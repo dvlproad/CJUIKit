@@ -5,6 +5,7 @@
 //  Created by ciyouzen on 7/22/15.
 //  Copyright (c) 2015 dvlproad. All rights reserved.
 //
+//  添加单击和双击手势，可确保单击不会受双击影响
 
 #import <UIKit/UIKit.h>
 

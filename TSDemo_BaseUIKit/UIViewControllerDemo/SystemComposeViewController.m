@@ -30,10 +30,6 @@
 }
 
 - (void)setupViews {
-    UIView *composeView = [[UIView alloc] init];
-    [self.view addSubview:composeView];
-    self.cjComposeView = composeView;
-
     NSArray *titles = @[
         NSLocalizedString(@"Home1第一页", nil),
         NSLocalizedString(@"Home2", nil),
@@ -48,7 +44,6 @@
         DemoChildViewController *vc = [[DemoChildViewController alloc] initWithTitle:title];
         [vcs addObject:vc];
     }
-    self.cjComponentViewControllers = vcs;
 
     __weak typeof(self) weakSelf = self;
     CQHorizontalTabBar *tabBar = [[CQHorizontalTabBar alloc] initWithTitles:titles tabSelectedBlock:^(NSInteger index) {
@@ -56,7 +51,7 @@
         if (!strongSelf) return;
 
         NSInteger oldIndex = strongSelf.tabBar.selectedIndex;
-        [strongSelf cjReplaceChildViewControllerIndex:oldIndex newChildViewControllerIndex:index completeBlock:^(NSInteger index_cur) {
+        [strongSelf cj_replaceChildViewControllerIndex:oldIndex newChildViewControllerIndex:index completeBlock:^(NSInteger index_cur) {
             strongSelf.tabBar.selectedIndex = index;
         }];
     }];
@@ -68,10 +63,13 @@
     }];
     self.tabBar = tabBar;
 
-    [self.cjComposeView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.mas_equalTo(self.tabBar.mas_bottom);
+    UIView *composeView = [[UIView alloc] init];
+    [self.view addSubview:composeView];
+    [composeView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.mas_equalTo(tabBar.mas_bottom);
         make.left.right.bottom.mas_equalTo(self.view);
     }];
+    [self cj_setupComposeView:composeView fromComponentViewControllers:vcs];
 }
 
 @end

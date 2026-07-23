@@ -10,14 +10,21 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface CQHorizontalTabBar : UIView
-
-@property (nonatomic, copy) NSArray<NSString *> *titles;
+@interface CQHorizontalTabBar : UIView {
+    
+}
+@property (nonatomic, copy, readonly) NSArray<NSString *> *titles;
 @property (nonatomic, assign) NSInteger selectedIndex;
 
+#pragma mark - Init
 - (instancetype)initWithTitles:(NSArray<NSString *> *)titles
-              tabSelectedBlock:(void(^)(NSInteger index))tabSelectedBlock;
+              tabSelectedBlock:(void(^)(NSInteger index))tabSelectedBlock NS_DESIGNATED_INITIALIZER;
++ (instancetype)new NS_UNAVAILABLE;
+- (instancetype)init NS_UNAVAILABLE;
+- (instancetype)initWithFrame:(CGRect)frame NS_UNAVAILABLE;
+- (instancetype)initWithCoder:(NSCoder *)aDecoder NS_UNAVAILABLE;
 
+#pragma mark - Action
 - (void)reloadData;
 
 @end

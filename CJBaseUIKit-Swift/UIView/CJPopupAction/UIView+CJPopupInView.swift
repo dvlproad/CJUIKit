@@ -16,14 +16,14 @@ enum CJWindowPosition: NSInteger {
     case center
 }
 
-enum CJAnimationType: NSInteger {
+public enum CJAnimationType: NSInteger {
     case none = 0        //Directly
     case normal          //通过设置frame来实现
     case CATransform3D
 }
 
-typealias CJTapBlankViewCompleteBlock = () -> ()
-typealias CJShowPopupViewCompleteBlock = () -> ()
+public typealias CJTapBlankViewCompleteBlock = () -> ()
+public typealias CJShowPopupViewCompleteBlock = () -> ()
 
 
 
@@ -280,7 +280,7 @@ extension UIView {
      *  @param showPopupViewCompleteBlock   显示弹出视图后的操作
      *  @param tapBlankViewCompleteBlock    点击空白区域后的操作(要自己执行cj_hidePopupView...来隐藏，因为有时候点击背景是不执行隐藏的)
      */
-    func cj_popupInCenterWindow(animationType: CJAnimationType,
+    public func cj_popupInCenterWindow(animationType: CJAnimationType,
                                 popupViewSize: CGSize,
                                 blankBGColor: UIColor,
                                 showPopupViewCompleteBlock: CJShowPopupViewCompleteBlock!,

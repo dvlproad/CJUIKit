@@ -261,7 +261,6 @@
             CQDMModuleModel *systemComposeViewModule = [[CQDMModuleModel alloc] init];
             systemComposeViewModule.title = @"SystemComposeViewController";
             systemComposeViewModule.classEntry = [SystemComposeViewController class];
-            systemComposeViewModule.isCreateByXib = NO;
             [sectionDataModel.values addObject:systemComposeViewModule];
         }
         [sectionDataModels addObject:sectionDataModel];

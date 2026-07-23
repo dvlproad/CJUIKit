@@ -8,7 +8,7 @@
 
 #import "DragViewController.h"
 #import <CQDemoKit/CJUIKitToastUtil.h>
-#import "UIView+CJDragAction.h"
+#import <CJBaseUIKit/UIView+CJDragAction.h>
 
 @interface DragViewController ()
 

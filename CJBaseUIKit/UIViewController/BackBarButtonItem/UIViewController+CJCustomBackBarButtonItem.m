@@ -25,7 +25,10 @@ static NSString * const kcjCustomNavigationBackButtonKey = @"kcjCustomNavigation
 /* 完整的描述请参见文件头部 */
 - (void)cj_setCustomBackBarButtonItemWithTarget:(id)target action:(SEL)action
 {
-    [self cj_setCustomBackBarButtonItemWithNormalImage:nil
+    UIImage *normalImage = [UIImage imageNamed:@"cjBackBarButtonItem"];
+    UIImage *highlightedImage = [UIImage imageNamed:@"cjBackBarButtonItem"];
+    
+    [self cj_setCustomBackBarButtonItemWithNormalImage:normalImage
                                       highlightedImage:nil
                                            normalTitle:nil
                                          selectedTitle:nil
@@ -44,12 +47,8 @@ static NSString * const kcjCustomNavigationBackButtonKey = @"kcjCustomNavigation
                                               action:(SEL)action
 {
     //customBackBarButtonItem
-    if (!normalImage) {
-        normalImage = [UIImage imageNamed:@"cjBackBarButtonItem"];
-    }
-    if (!highlightedImage) {
-        highlightedImage = [UIImage imageNamed:@"cjBackBarButtonItem"];
-    }
+    NSAssert(normalImage != nil || normalTitle != nil, @"请至少设置返回按钮的图片或者文字");
+    
     UIButton *leftButton = [UIButton buttonWithType:UIButtonTypeCustom];
     [leftButton setFrame:CGRectMake(0.0f, 0.0f, 25.0f, 25.0f)];
     [leftButton setImage:normalImage forState:UIControlStateNormal];

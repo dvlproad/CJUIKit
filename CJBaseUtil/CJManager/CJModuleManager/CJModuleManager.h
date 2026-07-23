@@ -5,6 +5,7 @@
 //  Created by ciyouzen on 2018/1/18.
 //  Copyright © 2018年 dvlproad. All rights reserved.
 //
+//  AppDelegate瘦身管理器
 //  对[FRDModuleManager](https://github.com/lincode/FRDModuleManager)进行完善，并使其可以在podspec中使用
 
 @import UIKit;

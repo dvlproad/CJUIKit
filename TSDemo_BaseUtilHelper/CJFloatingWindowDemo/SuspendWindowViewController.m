@@ -58,7 +58,7 @@
     [cjTestButton addTarget:self action:@selector(goNextViewController) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:cjTestButton];
     [cjTestButton mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.mas_equalTo(self.view).mas_offset(20);
+        make.left.mas_equalTo(self.mas_topLayoutGuideBottom).mas_offset(20);
         make.right.mas_equalTo(self.view).mas_offset(-20);
         make.top.mas_equalTo(self.view).mas_offset(100);
         make.height.mas_equalTo(44);

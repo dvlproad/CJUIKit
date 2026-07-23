@@ -32,9 +32,9 @@
     // Do any additional setup after loading the view from its nib.
     //方法②：测试自定义的返回按钮
     UIImage *redImage = [UIImage cj_imageWithColor:CJColorFromHexString(@"#323f83") size:CGSizeMake(40, 40)];
-    [self cj_setCustomBackBarButtonItemWithNormalImage:redImage
-                                      highlightedImage:redImage
-                                           normalTitle:nil
+    [self cj_setCustomBackBarButtonItemWithNormalImage:nil
+                                      highlightedImage:nil
+                                           normalTitle:@"返回"
                                          selectedTitle:nil
                                               withSize:CGSizeZero
                                                 target:self

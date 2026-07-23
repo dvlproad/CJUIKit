@@ -27,6 +27,8 @@
 }
 
 - (void)setCjComponentViewControllers:(NSMutableArray<UIViewController *> *)cjComponentViewControllers {
+    NSAssert(self.cjComposeView != nil, @"请先设置cjComposeView");
+    
     objc_setAssociatedObject(self, @selector(cjComponentViewControllers), cjComponentViewControllers, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     
     for (UIViewController *childViewController in self.childViewControllers) {
@@ -53,9 +55,18 @@
     objc_setAssociatedObject(self, @selector(cjCurrentSelectedIndex), @(cjCurrentSelectedIndex), OBJC_ASSOCIATION_ASSIGN);
 }
 
-- (void)cjReplaceChildViewControllerIndex:(NSInteger)index_old
-              newChildViewControllerIndex:(NSInteger)index_new
-                            completeBlock:(void(^)(NSInteger index_cur))completeBlock;
+
+#pragma mark - Init
+- (void)cj_setupComponentViewControllers:(NSArray<UIViewController *> *)componentViewControllers
+                             composeView:(UIView *)composeView {
+    [self setCjComposeView:composeView];
+    [self setCjComponentViewControllers:componentViewControllers];
+}
+
+#pragma mark - Action
+- (void)cj_replaceChildViewControllerIndex:(NSInteger)index_old
+               newChildViewControllerIndex:(NSInteger)index_new
+                             completeBlock:(void(^)(NSInteger index_cur))completeBlock
 {
     if (index_new == index_old) {
         return;

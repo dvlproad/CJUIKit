@@ -34,6 +34,11 @@
     self.navigationItem.title = NSLocalizedString(@"UIView首页(Drag+Popup+Animate)", nil);
     self.view.backgroundColor = [UIColor whiteColor];
     
+    NSString *bundleName = @"TSDemo_BaseUIKit";
+    NSBundle *frameworkBundle = [NSBundle bundleForClass:[self class]];
+    NSURL *bundleURL = [frameworkBundle URLForResource:bundleName withExtension:@"bundle"];
+    NSBundle *resourceBundle = bundleURL ? [NSBundle bundleWithURL:bundleURL] : nil;
+    
     NSMutableArray *sectionDataModels = [[NSMutableArray alloc] init];
     
     //Drag
@@ -45,6 +50,7 @@
             dragViewModule.title = @"Drag And KeepBounds (视图的拖曳和吸附)";
             dragViewModule.classEntry = [DragViewController class];
             dragViewModule.isCreateByXib = YES;
+            dragViewModule.xibBundle = resourceBundle;
             [sectionDataModel.values addObject:dragViewModule];
         }
         

@@ -4,7 +4,7 @@ Pod::Spec.new do |s|
   # pod的本地索引文件：~/Library/Caches/CocoaPods/search_index.json
   # pod的owner操作：https://www.jianshu.com/p/a9b8c2a1f3cf
   s.name         = "CJBaseUIKit"
-  s.version      = "0.9.0"
+  s.version      = "0.9.1"
   s.summary      = "自定义的基础UI"
   s.homepage     = "https://github.com/dvlproad/CJUIKit"
 
@@ -14,15 +14,17 @@ Pod::Spec.new do |s|
                  • CJBaseUIKit/UIColor - 颜色：用来通过十六进制来设置颜色。 支持@“#123456”、 @“0X123456”、 @“123456”三种格式
                  • CJBaseUIKit/UIImage - 图片
                  • CJBaseUIKit/UINavigationBar - 导航栏
-                 • CJBaseUIKit/UIView - UIView(视图拖动、抖动、根据键盘自动上移、手势、出现动画、转场动画、加圆角等)
+                 • CJBaseUIKit/UIView - UIView(根据键盘自动上移；视图拖动、抖动、单双击手势；出现动画、转场动画；加圆角等)
+                 • CJBaseUIKit/UIView/CJAutoMoveUp - 本视图根据键盘自动上移的方法
                  • CJBaseUIKit/UIView/CJDragAction - 视图拖动
                  • CJBaseUIKit/UIView/CJShakeAction - 视图抖动
-                 • CJBaseUIKit/UIView/CJAutoMoveUp - 本视图根据键盘自动上移的方法
-                 • CJBaseUIKit/UIView/CJGestureRecognizer - 视图手势
+                 • CJBaseUIKit/UIView/CJGestureRecognizer - 视图手势(添加单击和双击手势，可确保单击不会受双击影响)
                  • CJBaseUIKit/UIView/CJAnimation - Animation(出现动画、转场动画。如常见的出现动画：Fade淡入淡出、MoveIn覆盖、Push推挤、Reveal揭开；自定义的出现动画：Cube立方体、SuckEffect吮吸、OglFlip翻转、RippleEffect波纹、PageCurl翻页、PageUnCurl反翻页、CameraIrisHollowOpen开镜头、CameraIrisHollowClose关镜头；转场动画：None无、FlipFromLeft左翻转、FlipFromRight右翻转、CurlUp上翻页、CurlDown下翻页)
                  • CJBaseUIKit/UIView/CJAddCorner - 视图添加圆角
-                 • CJBaseUIKit/UIWindow - UIWindow
-                 • CJBaseUIKit/UIViewController - 自定义返回按钮
+                 • CJBaseUIKit/UIWindow - UIWindow(UIWindow+CJSnapshot.h-对window(包括view)进行截图)
+                 • CJBaseUIKit/UIViewController - UIViewController
+                 • CJBaseUIKit/UIViewController/BackBarButtonItem - UIViewController+CJSystemBackButtonHandler.h-为点击系统返回按钮时，增加额外操作，并且可设置是否中断系统的pop返回到前面视图的操作
+                 • CJBaseUIKit/UIViewController/SystemComposeView - UIViewController+CJSystemComposeView.h-添加childViewController数组以及从哪个切换到哪个的方法
                  • CJBaseUIKit/UILabel - Label
                  • CJBaseUIKit/UIButton - 按钮 及 CJBadgeButton
                  • CJBaseUIKit/UITextField - 文本视图：包含文本框类别及新的自定义文本框
@@ -52,7 +54,7 @@ Pod::Spec.new do |s|
 
   s.platform     = :ios, "9.0"
  
-  s.source       = { :git => "https://github.com/dvlproad/CJUIKit.git", :tag => "CJBaseUIKit_0.9.0_1" }
+  s.source       = { :git => "https://github.com/dvlproad/CJUIKit.git", :tag => "CJBaseUIKit_0.9.1" }
   s.source_files  = "CJBaseUIKit/*.{h,m}"
 
   s.frameworks = "UIKit"
@@ -90,26 +92,26 @@ Pod::Spec.new do |s|
 
 
 
-  # UIView(视图拖动、抖动、根据键盘自动上移、手势、出现动画、转场动画、加圆角等)
+  # UIView(根据键盘自动上移；视图拖动、抖动、单双击手势；出现动画、转场动画；加圆角等)
   s.subspec 'UIView' do |ss|
     ss.source_files = "CJBaseUIKit/UIView/*.{h,m}"
+    
+    # 本视图根据键盘自动上移的方法(UIView+CJAutoMoveUp.h)
+    ss.subspec 'CJAutoMoveUp' do |sss|
+      sss.source_files = "CJBaseUIKit/UIView/CJAutoMoveUp/**/*.{h,m}"
+    end
 
-    # 视图拖动
+    # 视图拖动 UIView+CJDragAction.h-通过给View添加UIPanGestureRecognizer手势，使其可以移动到拖动的位置；UIView+CJPanAction.h-
     ss.subspec 'CJDragAction' do |sss|
       sss.source_files = "CJBaseUIKit/UIView/CJDragAction/**/*.{h,m}"
   	end
 
-    # 视图抖动
+    # 视图抖动(UIView+CJShake.h)-让 UIView 进行各种抖动效果
   	ss.subspec 'CJShakeAction' do |sss|
       sss.source_files = "CJBaseUIKit/UIView/CJShakeAction/**/*.{h,m}"
   	end
 
-    # 本视图根据键盘自动上移的方法
-  	ss.subspec 'CJAutoMoveUp' do |sss|
-      sss.source_files = "CJBaseUIKit/UIView/CJAutoMoveUp/**/*.{h,m}"
-  	end
-
-    # 视图手势
+    # 视图手势(添加单击和双击手势，可确保单击不会受双击影响)
   	ss.subspec 'CJGestureRecognizer' do |sss|
       sss.source_files = "CJBaseUIKit/UIView/CJGestureRecognizer/**/*.{h,m}"
   	end
@@ -125,15 +127,23 @@ Pod::Spec.new do |s|
     end
   end
 
-  # UIWindow
+  # UIWindow(UIWindow+CJSnapshot.h-对window(包括view)进行截图)
   s.subspec 'UIWindow' do |ss|
     ss.source_files = "CJBaseUIKit/UIWindow/**/*.{h,m}"
   end
 
-  # 自定义返回按钮
+  # UIViewController
   s.subspec 'UIViewController' do |ss|
-    ss.source_files = "CJBaseUIKit/UIViewController/**/*.{h,m}"
-    ss.resources = "CJBaseUIKit/UIViewController/Resources/**/*.{png}"
+    # UIViewController+CJSystemBackButtonHandler.h-为点击系统返回按钮时，增加额外操作，并且可设置是否中断系统的pop返回到前面视图的操作
+    ss.subspec 'BackBarButtonItem' do |sss|
+      sss.source_files = "CJBaseUIKit/UIViewController/BackBarButtonItem/**/*.{h,m}"
+      sss.resources = "CJBaseUIKit/UIViewController/BackBarButtonItem/Resources/**/*.{png}"
+    end
+    
+    # UIViewController+CJSystemComposeView.h-添加childViewController数组以及从哪个切换到哪个的方法
+    ss.subspec 'SystemComposeView' do |sss|
+      sss.source_files = "CJBaseUIKit/UIViewController/SystemComposeView/**/*.{h,m}"
+    end
   end
 
   # Label
